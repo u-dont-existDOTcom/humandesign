@@ -10,7 +10,7 @@ from hdmatch.evaluation.astrohd_v13_traditions import (
     build_snapshot, sign_name, RULERS, _hellenistic_planet_testimonies,
     _lilly_planet_testimonies, _parashari_planet_testimonies,
 )
-from hdmatch.evaluation.astrohd_v14_rules import registry, feature_row
+from hdmatch.evaluation.astrohd_v14_rules import registry, feature_row, conditions
 from hdmatch.evaluation.astrohd_v13b_native import lilly_planet_native_strength
 from hdmatch.relationship.western import within_chart_aspects
 
@@ -163,8 +163,8 @@ def numerology() -> dict:
       "maturity":{"raw":maturity_raw,"number":maturity,"chain":maturity_chain,
                   "karmic_debt":maturity_raw if maturity_raw in KARMIC else None},
       "period_cycles":{"numbers":[month_n,day_n,year_n],
-                       "formal_duration_markers":[0,first_end,first_end+27],
-                       "transition_note":"Decoz: first Period lasts 36 minus the single-digit Life Path; second lasts 27 years. Boundary wording is age-based. Here Period 1 and Period 2 are both number 1, so the first boundary does not change the Period number."},
+                       "transition_years":[1994,2024,2051],
+                       "transition_note":"Decoz convention: First Period runs until the first Personal Year 1 on or after the 27th birthday; Second Period lasts 27 years. For this birth date the formal transition year is 2024, then 2051. Periods 1 and 2 are both number 1, so 2024 changes cycle stage without changing the numeric Period theme."},
       "pinnacles":{"numbers":[p1,p2,p3,p4],
                    "age_boundaries":[0,first_end,first_end+9,first_end+18]},
       "challenges":{"numbers":[c1,c2,c3,c4],
@@ -195,6 +195,7 @@ def natal() -> tuple[dict,dict[str,float]]:
           "sidereal_speed":snap.sidereal_speeds[p],
           "sidereal_whole_sign_house":snap.sidereal_whole_houses[p],
           "lilly_native_strength":lilly_planet_native_strength(snap,p),
+          "v14_lilly_conditions":conditions(snap,"lilly",p),
           "strength_testimonies":{
             "hellenistic":_hellenistic_planet_testimonies(snap,p),
             "lilly":_lilly_planet_testimonies(snap,p),
@@ -306,6 +307,7 @@ def main() -> None:
       "natal":natal_out,
       "numerology":numerology(),
       "timing":{
+        "role":"task-local exploratory cross-check only in V2; authoritative frozen timing is PROJECT_TIMING_2020_2041.json generated from current scripts/partner_future_pilot.py",
         "transits_exact_major_aspects_1994_2041":transit_events,
         "secondary_progressions_exact_major_aspects_1994_2041":prog_events,
         "notes":["transits: Jupiter-Saturn-Uranus-Neptune-Pluto to natal Sun-Saturn plus ASC/MC",

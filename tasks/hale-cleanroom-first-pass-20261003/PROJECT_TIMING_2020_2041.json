@@ -1,0 +1,4353 @@
+{
+  "ephemeris": {
+    "semo_18": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+    "sepl_18": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+  },
+  "horizon": [
+    "2020-01-01T00:00:00+00:00",
+    "2042-01-01T00:00:00+00:00"
+  ],
+  "record": {
+    "birth_utc": "1994-01-27T22:35:00+00:00",
+    "exact_birth_time": true,
+    "label": "hale-cleanroom",
+    "natal": {
+      "asc": 215.15248713848266,
+      "houses": [
+        215.15248713848266,
+        243.7489804082361,
+        276.75183556770423,
+        312.20992195252455,
+        345.19769679150306,
+        12.761957204589635,
+        35.152487138482684,
+        63.74898040823609,
+        96.75183556770423,
+        132.20992195252455,
+        165.19769679150306,
+        192.76195720458963
+      ],
+      "mc": 132.20992195252455,
+      "planets": {
+        "Jupiter": 223.13495771133648,
+        "Mars": 299.8216017945098,
+        "Mercury": 323.3427125918169,
+        "Moon": 132.76538367799284,
+        "Neptune": 291.4745723134846,
+        "Pluto": 237.76259532408486,
+        "Saturn": 329.8786588479239,
+        "Sun": 307.77183651591946,
+        "TrueNode": 240.6438908526685,
+        "Uranus": 293.1665943890755,
+        "Venus": 310.37220769151656
+      },
+      "utc": "1994-01-27T22:35:00+00:00"
+    },
+    "progressed_snapshots": [
+      {
+        "progressed_planets": {
+          "Mars": 324.81623364985074,
+          "Mercury": 323.7091625495299,
+          "Moon": 199.0315965363263,
+          "Sun": 340.0373896680781,
+          "Venus": 350.3593452391018
+        },
+        "utc": "2026-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 325.2058163283334,
+          "Mercury": 323.4739479111379,
+          "Moon": 206.33751541870086,
+          "Sun": 340.5346698293519,
+          "Venus": 350.9776066815653
+        },
+        "utc": "2026-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 325.6018875798742,
+          "Mercury": 323.264759273198,
+          "Moon": 213.71034186924078,
+          "Sun": 341.0400888708503,
+          "Venus": 351.6060367517486
+        },
+        "utc": "2027-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 325.99153124528135,
+          "Mercury": 323.08837171248734,
+          "Moon": 220.90023652224946,
+          "Sun": 341.53716704541,
+          "Venus": 352.2241437803649
+        },
+        "utc": "2027-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 326.3876624118078,
+          "Mercury": 322.93876417957773,
+          "Moon": 228.13861066366545,
+          "Sun": 342.04238279378967,
+          "Venus": 352.8524176660287
+        },
+        "utc": "2028-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 326.7795151861669,
+          "Mercury": 322.8199629276452,
+          "Moon": 235.22387532523965,
+          "Sun": 342.54200670314714,
+          "Venus": 353.47378483135327
+        },
+        "utc": "2028-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 327.17569960234846,
+          "Mercury": 322.728975795756,
+          "Moon": 242.30965674088168,
+          "Sun": 343.0470190577521,
+          "Venus": 354.1019009991587
+        },
+        "utc": "2029-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 327.56544719846823,
+          "Mercury": 322.6675880078438,
+          "Moon": 249.20388630789643,
+          "Sun": 343.5436965958226,
+          "Venus": 354.7196974204599
+        },
+        "utc": "2029-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 327.9616751300815,
+          "Mercury": 322.63323773772225,
+          "Moon": 256.1364892083559,
+          "Sun": 344.0485024186864,
+          "Venus": 355.34765222582854
+        },
+        "utc": "2030-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 328.35146016953104,
+          "Mercury": 322.6264761863232,
+          "Moon": 262.88387184566096,
+          "Sun": 344.54497383938497,
+          "Venus": 355.96528715140187
+        },
+        "utc": "2030-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 328.74772047082604,
+          "Mercury": 322.646454161967,
+          "Moon": 269.67298570930575,
+          "Sun": 345.0495665778229,
+          "Venus": 356.59307464469805
+        },
+        "utc": "2031-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 329.1375316436388,
+          "Mercury": 322.6918758480226,
+          "Moon": 276.28606454122064,
+          "Sun": 345.5458245104654,
+          "Venus": 357.2105417002415
+        },
+        "utc": "2031-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 329.5338127001155,
+          "Mercury": 322.76356356276017,
+          "Moon": 282.9461499810068,
+          "Sun": 346.05019601271795,
+          "Venus": 357.8381550950471
+        },
+        "utc": "2032-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 329.9257923894101,
+          "Mercury": 322.8590849666638,
+          "Moon": 289.475423962407,
+          "Sun": 346.5489722335787,
+          "Venus": 358.4588576832551
+        },
+        "utc": "2032-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 330.322082866312,
+          "Mercury": 322.97982569457025,
+          "Moon": 296.02083778707475,
+          "Sun": 347.05311303798186,
+          "Venus": 359.0862895625726
+        },
+        "utc": "2033-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 330.71191271940324,
+          "Mercury": 323.121607894866,
+          "Moon": 302.40795901205195,
+          "Sun": 347.5489177071134,
+          "Venus": 359.70340006632784
+        },
+        "utc": "2033-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 331.10820192198054,
+          "Mercury": 323.2884175893822,
+          "Moon": 308.8511047092262,
+          "Sun": 348.052819560566,
+          "Venus": 0.33064429498749237
+        },
+        "utc": "2034-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 331.49802560610937,
+          "Mercury": 323.47412185251767,
+          "Moon": 315.14226121964947,
+          "Sun": 348.5483849203484,
+          "Venus": 0.9475671311586986
+        },
+        "utc": "2034-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 331.89430377575025,
+          "Mercury": 323.68417648222106,
+          "Moon": 321.49169814588606,
+          "Sun": 349.05203929057706,
+          "Venus": 1.5746175916337906
+        },
+        "utc": "2035-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 332.28411215303146,
+          "Mercury": 323.91105833963684,
+          "Moon": 327.693729298563,
+          "Sun": 349.5473571995569,
+          "Venus": 2.1913470162327227
+        },
+        "utc": "2035-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 332.68037045630564,
+          "Mercury": 324.1616140507283,
+          "Moon": 333.9551181029778,
+          "Sun": 350.0507560948368,
+          "Venus": 2.8181981392344526
+        },
+        "utc": "2036-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 333.072308718727,
+          "Mercury": 324.42854677851875,
+          "Moon": 340.1064352913748,
+          "Sun": 350.5485537733753,
+          "Venus": 3.438134879090164
+        },
+        "utc": "2036-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 333.4685390210949,
+          "Mercury": 324.7170797303531,
+          "Moon": 346.28402244359415,
+          "Sun": 351.05168903666237,
+          "Venus": 4.064780961858411
+        },
+        "utc": "2037-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 333.8582925114611,
+          "Mercury": 325.01861141311394,
+          "Moon": 352.3216692431397,
+          "Sun": 351.5464890951736,
+          "Venus": 4.681107588270292
+        },
+        "utc": "2037-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 334.2544873502988,
+          "Mercury": 325.3425354152743,
+          "Moon": 358.4212227371036,
+          "Sun": 352.0493544557583,
+          "Venus": 5.307544241923618
+        },
+        "utc": "2038-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 334.6442023562931,
+          "Mercury": 325.6777199688514,
+          "Moon": 4.385927098663251,
+          "Sun": 352.5438856981296,
+          "Venus": 5.923662418703932
+        },
+        "utc": "2038-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 335.0403544427684,
+          "Mercury": 326.03471519765975,
+          "Moon": 10.416302410615318,
+          "Sun": 353.04647447650524,
+          "Venus": 6.549884653118965
+        },
+        "utc": "2039-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 335.4300238290931,
+          "Mercury": 326.4013515484803,
+          "Moon": 16.319126231794964,
+          "Sun": 353.54073043922403,
+          "Venus": 7.165789378912544
+        },
+        "utc": "2039-07-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 335.8261259053825,
+          "Mercury": 326.78926346786506,
+          "Moon": 22.29434437256607,
+          "Sun": 354.0430361594259,
+          "Venus": 7.791791984671067
+        },
+        "utc": "2040-01-01T00:00:00+00:00"
+      },
+      {
+        "progressed_planets": {
+          "Mars": 336.21789499817226,
+          "Mercury": 327.1875410667591,
+          "Moon": 28.184419845776947,
+          "Sun": 354.53973930426946,
+          "Venus": 8.410879265541771
+        },
+        "utc": "2040-07-01T00:00:00+00:00"
+      }
+    ],
+    "progression_events": [
+      {
+        "aspect": 120,
+        "moving": "pVenus",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2020-03-19T19:40:14.540863+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2020-07-27T07:42:52.290802+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2020-12-14T21:48:37.591095+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pSun",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2021-02-20T03:08:23.510284+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "pMoon",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2021-02-21T08:29:04.924164+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "pMoon",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2021-04-29T21:50:26.479340+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMoon",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2021-06-16T10:13:33.269806+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMoon",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2021-06-30T18:03:09.658356+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2021-07-10T06:35:53.066254+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "pMoon",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2022-03-27T15:06:50.730743+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "pMoon",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2022-09-07T23:10:42.652130+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2023-01-17T11:27:20.979767+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2023-08-03T02:04:46.159515+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMars",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2024-02-16T06:33:09.012909+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2024-09-15T22:38:47.858734+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2025-03-29T21:23:16.698761+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2025-06-01T17:50:35.350800+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2025-07-16T21:53:21.573944+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2025-07-30T13:44:43.156586+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2026-04-17T15:53:58.488007+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2026-09-25T18:20:47.682953+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2026-09-27T04:30:45.050812+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMercury",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2026-10-21T06:39:01.509247+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMoon",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2027-02-06T04:09:30.691681+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2027-04-13T00:57:35.110931+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2027-06-17T15:35:32.837677+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2027-08-03T03:42:23.177032+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2027-08-17T05:36:40.540924+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMoon",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2027-08-26T14:34:42.671356+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2028-05-13T11:43:30.097504+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2028-10-28T03:50:08.187103+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2028-10-29T15:27:15.527802+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pSun",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2029-02-02T01:03:27.689667+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2029-05-24T05:47:05.690460+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2029-07-31T20:50:33.496857+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2029-09-18T12:54:53.158722+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2029-10-03T06:38:14.501495+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2030-07-13T09:02:16.594391+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2031-01-06T14:28:36.249847+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2031-05-30T20:26:57.661285+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2032-01-06T05:46:40.682831+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMars",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2032-06-09T02:46:22.802582+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2033-04-18T12:53:34.469147+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pVenus",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2033-08-04T16:07:34.676056+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2033-09-17T04:55:38.092804+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMoon",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2033-12-01T01:57:03.291779+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMoon",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2034-02-13T15:25:06.864166+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMercury",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2034-02-25T02:25:11.162567+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "pMoon",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2034-04-07T11:19:09.437714+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "pMoon",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2034-04-23T11:04:49.661407+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2034-05-04T02:33:00.457306+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMoon",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2035-02-23T21:19:52.559052+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "pMoon",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2035-09-03T01:30:36.975861+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2036-02-05T07:56:41.374054+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2036-09-29T01:15:35.176849+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2038-02-12T09:38:47.254486+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2038-10-12T04:36:39.112701+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2038-12-30T15:37:35.115509+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMars",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2039-02-22T02:01:03.603973+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2039-02-24T21:50:02.542877+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "pMoon",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2039-03-13T22:20:14.092255+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pVenus",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2039-12-26T03:12:58.553009+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2040-02-02T08:29:03.605804+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2040-08-20T16:11:22.917023+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "pMoon",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2040-08-22T10:35:18.527985+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "pMoon",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2041-02-01T20:42:30.318146+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2041-04-24T02:20:20.011139+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2041-07-13T18:16:32.127228+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2041-09-08T18:24:39.178619+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "pMoon",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2041-09-25T23:54:14.033661+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "pMoon",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2041-10-07T11:00:21.128082+00:00"
+      }
+    ],
+    "transit_events": [
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2020-01-16T00:06:25.125732+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2020-01-24T09:23:27.513428+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2020-01-29T13:16:22.122803+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2020-03-19T19:52:46.973877+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2020-03-22T20:50:15.142822+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2020-03-31T19:05:57.550049+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2020-05-17T03:46:44.644775+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2020-07-04T14:29:00.289307+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2020-07-07T20:53:10.484619+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2020-07-18T14:09:43.099365+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2020-08-09T08:38:38.389893+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2020-09-12T18:28:27.769775+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2020-11-14T17:07:26.319580+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2020-11-23T16:14:52.144775+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2020-11-26T22:23:13.121338+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2020-12-15T12:07:24.122314+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2020-12-18T17:27:45.802002+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2021-01-11T06:01:03.775635+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2021-01-22T08:48:17.479248+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2021-01-30T23:04:44.820557+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2021-02-02T07:41:26.700439+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2021-02-10T01:47:52.320557+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2021-02-12T10:17:38.258057+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2021-02-13T23:58:51.939697+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2021-02-22T14:50:24.371338+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2021-03-05T11:38:32.127686+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2021-03-20T03:40:08.148193+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2021-04-01T14:00:35.650635+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2021-04-12T21:07:20.167236+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2021-04-22T20:49:14.168701+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2021-04-25T11:16:05.753174+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2021-05-01T17:10:40.118408+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2021-05-12T20:47:03.980713+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2021-05-27T23:30:00.274658+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2021-06-07T16:39:30.684814+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2021-06-14T07:57:19.215088+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2021-06-14T15:56:05.277100+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2021-06-15T08:30:19.720459+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2021-06-23T10:24:00.911865+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2021-07-03T22:25:03.863525+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2021-07-06T20:20:58.428955+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2021-07-29T15:28:49.852295+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2021-07-30T17:38:41.685791+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2021-09-07T15:02:26.173096+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2021-09-23T08:21:18.204346+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2021-10-27T10:54:33.101807+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2021-11-05T10:35:26.458740+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2021-11-12T00:11:08.243408+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2021-11-12T22:14:22.481689+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2021-11-19T02:10:04.193115+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2021-12-17T01:07:16.981201+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2021-12-28T12:51:21.500244+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2022-01-03T19:32:08.045654+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2022-01-08T19:07:46.644287+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2022-01-12T01:10:33.746338+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2022-01-22T22:03:33.848877+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2022-02-25T23:35:50.299072+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2022-03-17T19:54:24.202881+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2022-03-21T05:39:05.416260+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2022-03-29T13:15:33.013916+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2022-04-05T17:32:44.739990+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2022-04-09T01:09:06.734619+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2022-04-16T15:54:18.160400+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2022-05-10T01:27:48.988037+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2022-07-04T14:01:28.714600+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2022-07-25T19:17:37.928467+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2022-08-22T00:56:57.681885+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2022-10-20T12:57:25.037842+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2022-10-30T08:18:41.319580+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2022-12-18T12:03:54.832764+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2023-01-09T22:07:58.179932+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2023-01-15T23:13:12.059326+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2023-02-09T19:27:01.856689+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2023-02-22T05:06:17.435303+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2023-03-02T12:25:52.862549+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2023-03-04T23:23:04.332275+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2023-03-06T12:51:24.796143+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2023-03-14T13:52:08.411865+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2023-04-17T18:41:05.167236+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2023-04-18T12:13:58.641357+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2023-04-27T14:53:07.188721+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2023-05-15T22:37:34.339600+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2023-05-16T04:36:18.204346+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2023-06-09T08:10:17.706299+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2023-06-21T02:56:03.519287+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2023-06-22T15:15:49.383545+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2023-07-07T11:55:41.107178+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2023-07-19T19:50:44.366455+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2023-07-24T01:54:02.449951+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2023-07-27T02:40:57.147217+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2023-08-09T11:08:24.327393+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2023-10-13T20:57:25.916748+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2023-10-16T23:45:28.729248+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2023-10-21T10:37:03.028564+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2023-11-04T05:04:45.809326+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2023-11-24T14:56:23.624268+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2024-01-15T13:10:52.532959+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2024-01-20T09:40:24.298096+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2024-02-05T12:06:45.560303+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2024-02-24T07:05:01.519775+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2024-03-06T02:38:22.899170+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2024-03-09T03:43:50.950928+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2024-03-11T03:17:43.421631+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2024-03-27T22:08:30.479736+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2024-04-26T21:27:30.091553+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2024-04-27T15:39:45.406494+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2024-05-14T11:17:24.195557+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2024-05-17T12:04:49.874268+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2024-05-25T05:03:00.010986+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2024-05-25T10:52:08.741455+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2024-06-12T05:50:19.427490+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2024-06-28T22:54:44.967041+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2024-07-11T04:10:42.974854+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2024-07-20T07:23:15.428467+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2024-07-22T18:26:12.967529+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2024-07-23T04:13:46.226807+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2024-09-14T03:08:32.677002+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2024-10-23T21:59:52.034912+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2024-11-08T09:58:31.285400+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2024-12-08T01:07:02.479248+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2025-01-05T10:53:08.726807+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2025-01-11T20:58:02.171631+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2025-01-17T01:19:01.644287+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2025-02-13T05:20:32.720947+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2025-02-28T04:13:18.541260+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2025-03-06T15:16:06.192627+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2025-03-21T02:54:08.162842+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2025-03-25T18:14:46.102295+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2025-05-10T14:34:58.223877+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2025-05-22T19:51:13.040771+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2025-06-09T08:11:15.384521+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2025-07-02T11:27:16.798096+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2025-07-03T10:00:54.986572+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2025-07-04T15:34:43.831787+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2025-08-07T17:35:12.725830+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2025-09-03T20:50:26.348877+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2025-10-07T03:19:46.688232+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2025-10-30T12:52:17.860107+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2025-11-11T02:15:48.944092+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2025-11-12T11:41:15.604248+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2025-12-16T22:43:34.910889+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2026-01-19T04:53:53.880615+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2026-02-12T09:03:51.536865+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Pluto",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2026-03-28T05:43:07.664795+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2026-04-19T04:11:22.525635+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2026-04-22T17:26:14.505615+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2026-04-23T18:59:54.671631+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2026-05-12T06:32:54.407959+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2026-05-27T03:35:32.281494+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2026-05-31T14:11:16.373291+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2026-06-07T11:07:15.772705+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Pluto",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2026-06-16T04:43:53.038330+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2026-06-29T09:49:28.780518+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2026-07-23T19:54:22.225342+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2026-08-04T15:53:42.235107+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2026-08-16T11:42:06.690674+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2026-08-24T23:32:26.612549+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2026-08-27T13:57:30.750732+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2026-08-29T07:44:22.371826+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2026-09-15T06:27:32.728271+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2026-09-22T19:50:58.538818+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2026-10-16T11:46:06.302490+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2026-10-24T10:57:14.930420+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Pluto",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2027-01-26T18:01:42.008057+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2027-02-01T02:03:01.988525+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2027-02-02T03:59:44.783936+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2027-02-21T02:40:31.439209+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2027-02-26T05:29:32.259521+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2027-05-23T13:20:06.573486+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2027-05-25T04:51:55.557861+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2027-06-20T15:59:01.937256+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2027-07-01T23:18:46.593018+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2027-07-25T14:33:43.077393+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2027-08-19T14:16:52.554932+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Pluto",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2027-09-05T01:36:14.578857+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2027-09-25T14:23:45.531006+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2027-10-31T16:05:59.197998+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2027-11-03T00:33:52.745361+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2027-11-18T18:08:38.939209+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Pluto",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2027-11-28T19:26:57.242432+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2027-12-04T03:56:01.322021+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2028-02-11T11:07:33.570557+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2028-02-13T13:40:29.351807+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2028-02-29T09:04:18.892822+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2028-03-08T04:37:24.781494+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2028-04-11T17:54:59.908447+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2028-04-12T04:42:58.656006+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2028-04-20T08:27:11.195068+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2028-05-06T01:11:08.353271+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2028-05-24T11:36:04.801025+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2028-06-05T17:40:09.027100+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2028-06-17T15:26:08.682861+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Uranus",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2028-07-08T18:59:00.289307+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2028-07-17T16:30:24.224854+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Uranus",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2028-07-20T08:46:03.995361+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2028-07-20T21:57:00.318604+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2028-07-23T08:07:30.604248+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2028-08-23T07:52:52.906494+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2028-09-19T12:07:40.601807+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2028-09-25T04:47:25.953369+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2028-09-29T23:42:11.964111+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2028-10-12T00:33:09.239502+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2028-10-20T14:33:22.642822+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2028-10-23T05:25:11.883545+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2028-10-31T10:23:51.683350+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Uranus",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2028-11-20T15:03:08.031006+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Uranus",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2028-12-03T22:03:35.496826+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2028-12-07T22:46:46.732178+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2028-12-18T07:47:14.747314+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2028-12-19T13:05:15.692139+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2029-01-07T06:53:01.695557+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2029-01-27T22:00:11.810303+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2029-02-02T17:50:21.734619+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2029-03-07T16:45:29.278564+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2029-03-07T19:46:05.863037+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2029-03-08T22:44:27.645264+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2029-04-01T16:35:46.234131+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2029-04-05T21:32:15.186768+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2029-04-07T06:52:11.927490+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2029-04-16T16:41:13.187256+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2029-04-21T02:11:14.066162+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2029-04-22T10:22:02.259521+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2029-04-23T23:53:30.260010+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Uranus",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2029-04-28T00:31:02.677002+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Uranus",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2029-05-08T12:05:55.462646+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2029-05-20T21:43:58.861084+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2029-05-30T05:53:07.188721+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2029-07-21T18:36:25.345459+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2029-07-24T03:35:56.341553+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2029-08-18T00:42:43.055420+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2029-08-19T03:16:25.638428+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2029-09-08T05:52:47.413330+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2029-09-23T09:19:43.721924+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2029-09-23T16:04:36.141357+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2029-10-18T15:29:59.725342+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2029-10-21T01:56:18.900146+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2029-10-23T14:03:22.093506+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2029-10-30T15:38:21.690674+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2029-11-11T13:00:14.776611+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2029-11-20T00:39:07.503662+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2029-11-22T14:47:36.939697+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2029-11-24T08:19:50.863037+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2030-01-16T21:57:14.490967+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2030-01-18T02:37:34.779053+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2030-02-09T19:16:59.696045+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2030-03-20T00:03:59.447021+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2030-04-07T14:27:06.580811+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2030-04-09T03:25:04.083252+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2030-05-08T23:10:08.148193+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Neptune",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2030-05-09T17:28:35.899658+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2030-05-10T08:31:35.855713+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Neptune",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2030-05-29T08:08:50.364990+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2030-05-30T17:10:58.905029+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2030-05-31T03:51:11.282959+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2030-08-15T08:58:56.553955+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2030-08-24T21:22:12.696533+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Neptune",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2030-09-04T09:46:24.539795+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2030-09-15T23:58:07.774658+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2030-09-17T02:36:50.614014+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Neptune",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2030-09-26T03:58:49.742432+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2030-10-22T02:28:12.498779+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2030-10-22T09:07:16.541748+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2030-10-27T13:39:46.505127+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2030-11-27T15:58:58.970947+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2030-12-09T06:19:57.235107+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2030-12-17T12:14:26.986084+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2030-12-18T06:40:15.399170+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2030-12-20T00:29:36.324463+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2031-02-11T08:48:29.014893+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Pluto",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2031-02-19T11:44:00.728760+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Neptune",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2031-03-11T10:52:06.434326+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Pluto",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2031-03-11T11:49:04.281006+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Neptune",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2031-03-26T12:55:28.033447+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Pluto",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2031-03-27T11:22:04.346924+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2031-04-27T13:22:37.196045+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2031-05-18T13:57:39.649658+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2031-06-01T19:04:47.017822+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2031-06-06T01:37:55.103760+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2031-06-19T18:57:33.936768+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2031-06-21T10:21:32.926025+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Pluto",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2031-07-04T05:05:34.918213+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Pluto",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2031-07-22T03:46:56.839600+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Pluto",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2031-08-15T17:13:22.276611+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2031-10-09T02:56:27.249756+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2031-11-14T20:16:17.618408+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2031-12-09T06:52:57.410889+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Pluto",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2031-12-29T20:28:25.352783+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2032-01-13T00:23:40.697021+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Pluto",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2032-01-18T11:43:19.200439+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Pluto",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2032-01-30T15:56:46.475830+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2032-02-12T01:46:37.174072+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2032-02-28T08:18:27.476807+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2032-03-18T21:48:06.053467+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2032-04-10T10:43:02.611084+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2032-05-23T05:13:20.299072+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2032-06-28T04:54:09.371338+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2032-07-13T02:49:15.157471+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2032-08-01T06:15:09.503174+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2032-08-25T14:08:55.638428+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2032-08-31T21:28:33.043213+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Pluto",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2032-09-19T08:19:28.450928+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2032-10-11T00:14:02.596436+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2032-11-29T04:40:47.149658+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Pluto",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2032-11-30T09:14:50.057373+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2032-12-06T17:25:50.775146+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2032-12-15T03:02:32.764893+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2032-12-25T05:43:01.732178+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2033-01-05T21:24:53.206787+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2033-01-17T02:09:26.949463+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2033-01-24T20:54:50.020752+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2033-01-27T05:01:53.104248+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2033-01-28T18:18:40.440674+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2033-03-13T10:26:45.377197+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2033-04-14T06:51:32.376709+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2033-05-18T04:57:28.773193+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2033-05-19T09:03:00.780029+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2033-05-20T07:12:50.196533+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2033-07-20T17:14:23.909912+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2033-08-02T13:58:14.256592+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2033-08-25T06:57:16.798096+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2033-09-14T00:01:13.992920+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2033-11-28T19:30:29.168701+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2033-11-30T22:37:24.781494+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2034-01-03T04:48:32.530518+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2034-02-09T07:22:00.281982+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2034-03-23T03:17:27.271729+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2034-04-20T14:33:06.822510+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2034-05-30T01:31:14.981689+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2034-06-08T22:48:41.099854+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2034-06-15T16:42:10.535889+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2034-06-30T22:29:41.378174+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2034-07-03T20:33:58.238525+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2034-07-06T21:32:25.404053+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2034-08-25T13:45:28.289795+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2034-08-30T05:32:33.863525+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2034-09-05T05:21:17.215576+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2034-09-21T01:20:17.449951+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2034-10-10T15:58:11.839600+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2034-11-01T02:16:08.719482+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2034-12-01T23:12:01.856689+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2035-01-16T07:00:19.720459+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2035-02-01T05:20:09.320068+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2035-02-11T00:26:39.993896+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2035-02-13T19:52:38.074951+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2035-02-18T11:38:45.640869+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2035-04-01T08:02:40.235596+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2035-04-02T01:44:30.941162+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2035-04-29T01:02:18.702393+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2035-04-29T06:45:59.820557+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2035-05-09T07:09:20.906982+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Neptune",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2035-05-12T22:34:23.177490+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2035-05-18T05:23:12.901611+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2035-05-21T18:45:51.910400+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2035-06-02T12:04:27.791748+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2035-06-14T18:26:53.836670+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2035-06-24T00:04:27.132568+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2035-06-26T22:01:04.215088+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2035-06-28T21:28:07.335205+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2035-07-02T08:20:14.923096+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2035-07-23T05:57:20.313721+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2035-08-12T11:10:58.245850+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2035-08-13T05:08:15.428467+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2035-08-27T01:54:32.772217+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2035-08-31T15:08:16.856689+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2035-09-03T17:03:31.981201+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2035-10-11T15:32:54.078369+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Neptune",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2035-10-17T22:53:39.049072+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2035-11-27T14:36:40.726318+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2035-11-30T21:06:11.942139+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2035-12-06T06:25:58.795166+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2036-01-01T14:08:11.802979+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2036-02-04T03:54:31.673584+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2036-02-09T11:17:06.727295+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2036-02-12T15:40:20.343018+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2036-03-13T14:03:12.864990+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Neptune",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2036-03-13T19:15:44.879150+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2036-03-18T22:06:13.370361+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2036-03-21T17:02:00.684814+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2036-04-09T11:32:02.552490+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2036-04-10T07:00:59.930420+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2036-05-05T03:48:40.001221+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2036-05-08T20:31:13.114014+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2036-05-09T02:23:24.766846+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2036-05-13T05:16:09.708252+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Uranus",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2036-05-30T13:43:40.184326+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2036-06-11T20:01:31.351318+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2036-06-23T05:19:22.188721+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2036-07-01T11:29:54.012451+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2036-07-04T00:31:02.677002+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2036-08-19T14:02:54.407959+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2036-08-31T22:19:33.284912+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2036-10-15T00:23:20.592041+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2036-11-26T00:09:25.740967+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2037-02-12T19:05:11.077881+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2037-04-20T19:04:43.062744+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2037-05-23T12:41:43.070068+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2037-06-16T07:47:41.773682+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Saturn",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2037-07-05T21:50:52.166748+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2037-07-21T15:01:39.041748+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2037-08-20T04:45:10.491943+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2037-09-09T03:24:05.416260+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2037-09-11T10:18:20.115967+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2037-10-27T02:20:39.642334+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2037-12-18T15:43:46.007080+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2038-01-26T18:56:53.726807+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2038-02-27T20:06:19.742432+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2038-03-19T01:05:29.205322+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2038-05-02T23:49:05.928955+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Neptune",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2038-05-16T18:26:10.330811+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2038-05-18T10:11:58.121338+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2038-06-11T17:29:41.488037+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2038-06-25T16:54:25.850830+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2038-07-07T15:08:35.313721+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2038-07-19T04:47:14.088135+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2038-07-19T16:50:22.943115+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2038-07-31T12:17:01.563721+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2038-08-04T02:03:07.591553+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2038-08-08T20:02:44.849854+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2038-08-11T08:33:20.994873+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2038-08-13T00:52:57.410889+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2038-10-01T11:42:12.952881+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2038-10-11T17:15:37.078857+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2038-10-25T20:12:25.257568+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Neptune",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2038-10-27T21:04:11.312256+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2038-11-15T14:24:03.658447+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2039-01-17T21:58:26.341553+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Pluto",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2039-01-28T06:16:13.114014+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2039-03-13T00:48:43.297119+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Neptune",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2039-03-18T13:37:16.212158+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Neptune",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2039-03-20T06:46:42.337646+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2039-04-26T06:44:12.703857+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2039-05-23T14:33:18.687744+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2039-06-22T21:17:15.076904+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2039-07-07T08:24:53.426514+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2039-08-03T07:49:54.927979+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2039-08-03T10:54:09.700928+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2039-09-04T03:34:58.992920+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2039-09-09T14:57:37.122803+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2039-10-28T05:58:14.036865+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2039-11-09T18:56:12.857666+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2039-12-08T15:30:32.025146+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2039-12-11T05:03:50.438232+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2040-02-21T23:29:47.420654+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2040-03-02T03:03:36.046143+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2040-03-05T22:48:46.373291+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2040-04-09T11:18:08.031006+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2040-04-18T18:14:49.727783+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2040-05-10T07:31:50.247803+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2040-06-16T21:56:41.861572+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Neptune",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2040-06-17T00:00:03.790283+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2040-08-02T07:13:48.533936+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2040-08-04T22:00:25.323486+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2040-08-19T00:47:28.150635+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2040-08-29T00:38:15.758057+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2040-09-14T04:05:28.546143+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2040-09-14T05:05:07.891846+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Saturn",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2040-09-18T21:28:13.597412+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2040-09-26T07:40:47.149658+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Neptune",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2040-09-30T21:49:10.653076+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2040-10-04T19:32:35.731201+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2040-10-07T09:04:09.993896+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2040-10-18T01:15:17.193604+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2040-11-26T17:54:12.447510+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2040-11-27T16:38:25.426025+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2040-12-08T17:42:38.331299+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2040-12-25T05:07:44.776611+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2040-12-28T00:49:20.211182+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2041-01-10T01:34:03.072510+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2041-01-10T14:48:03.966064+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2041-02-15T07:44:12.154541+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2041-03-10T00:58:28.978271+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2041-03-13T00:39:20.028076+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2041-03-22T05:32:01.893311+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2041-03-22T19:09:04.097900+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Neptune",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2041-04-15T04:25:19.683838+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2041-05-17T07:14:05.343018+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2041-05-19T07:41:46.146240+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Uranus",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2041-06-02T23:15:26.531982+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Neptune",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2041-07-06T00:37:44.776611+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2041-07-18T08:24:16.842041+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2041-07-20T08:49:52.730713+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2041-07-21T10:15:33.343506+00:00"
+      },
+      {
+        "aspect": 180,
+        "moving": "Uranus",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2041-09-02T17:46:26.407471+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2041-09-05T00:21:54.898682+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Jupiter",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2041-09-05T08:00:34.991455+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2041-09-14T19:36:02.384033+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Neptune",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2041-09-16T01:45:46.087646+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2041-09-16T09:50:41.290283+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 215.15248713848266,
+        "target": "ASC",
+        "utc": "2041-10-02T10:42:11.854248+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Uranus",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2041-10-14T04:18:14.512939+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 307.77183651591946,
+        "target": "Sun",
+        "utc": "2041-10-14T20:39:47.274170+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 310.37220769151656,
+        "target": "Venus",
+        "utc": "2041-10-26T20:36:59.512939+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2041-11-04T05:52:32.252197+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 132.76538367799284,
+        "target": "Moon",
+        "utc": "2041-11-06T18:38:06.199951+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Jupiter",
+        "natal_target_lon": 223.13495771133648,
+        "target": "Jupiter",
+        "utc": "2041-11-08T11:03:40.220947+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Saturn",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2041-11-09T22:27:45.032959+00:00"
+      },
+      {
+        "aspect": 120,
+        "moving": "Saturn",
+        "natal_target_lon": 329.8786588479239,
+        "target": "Saturn",
+        "utc": "2041-11-10T10:07:04.127197+00:00"
+      },
+      {
+        "aspect": 0,
+        "moving": "Uranus",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2041-12-22T17:56:23.294678+00:00"
+      },
+      {
+        "aspect": 60,
+        "moving": "Jupiter",
+        "natal_target_lon": 293.1665943890755,
+        "target": "Uranus",
+        "utc": "2041-12-26T09:53:09.605713+00:00"
+      },
+      {
+        "aspect": 90,
+        "moving": "Jupiter",
+        "natal_target_lon": 323.3427125918169,
+        "target": "Mercury",
+        "utc": "2041-12-27T08:13:51.939697+00:00"
+      }
+    ]
+  },
+  "schema": "hale-project-timing-v1",
+  "source_script": "scripts/partner_future_pilot.py",
+  "source_script_sha256": "f8404d036a53faba6434d25d43afd62cebd8946b442b6b5d7b858ef10429d0b4"
+}

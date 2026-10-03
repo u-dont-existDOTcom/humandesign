@@ -1,0 +1,4474 @@
+{
+  "birth_utc": "1994-01-27T22:35:00Z",
+  "classification": "outcome-blind source-grounded feature vector; not a generic personality score",
+  "location": {
+    "latitude": 41.0138429552247,
+    "longitude": 28.9496612548828,
+    "role": "Istanbul city proxy"
+  },
+  "rule_count": 390,
+  "rules": [
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical:regiomontanus/lord:10/own_sign",
+      "rule_id": "lilly/lord:10/own_sign",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical:regiomontanus/lord:10/exaltation",
+      "rule_id": "lilly/lord:10/exaltation",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical:regiomontanus/lord:10/triplicity",
+      "rule_id": "lilly/lord:10/triplicity",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical:regiomontanus/lord:10/term",
+      "rule_id": "lilly/lord:10/term",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical:regiomontanus/lord:10/face",
+      "rule_id": "lilly/lord:10/face",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical:regiomontanus/lord:10/detriment",
+      "rule_id": "lilly/lord:10/detriment",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical:regiomontanus/lord:10/fall",
+      "rule_id": "lilly/lord:10/fall",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical:regiomontanus/lord:10/peregrine",
+      "rule_id": "lilly/lord:10/peregrine",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical:regiomontanus/lord:10/house_1_10",
+      "rule_id": "lilly/lord:10/house_1_10",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical:regiomontanus/lord:10/house_4_7_11",
+      "rule_id": "lilly/lord:10/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical:regiomontanus/lord:10/house_2_5",
+      "rule_id": "lilly/lord:10/house_2_5",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical:regiomontanus/lord:10/house_9",
+      "rule_id": "lilly/lord:10/house_9",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical:regiomontanus/lord:10/house_3",
+      "rule_id": "lilly/lord:10/house_3",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical:regiomontanus/lord:10/house_6_8",
+      "rule_id": "lilly/lord:10/house_6_8",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical:regiomontanus/lord:10/house_12",
+      "rule_id": "lilly/lord:10/house_12",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical:regiomontanus/lord:10/motion",
+      "rule_id": "lilly/lord:10/motion",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical:regiomontanus/lord:10/solar_visibility",
+      "rule_id": "lilly/lord:10/solar_visibility",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "moon_phase",
+      "lineage_key": "tropical:regiomontanus/lord:10/moon_phase",
+      "rule_id": "lilly/lord:10/moon_phase",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:10/benefic_conjunction",
+      "rule_id": "lilly/lord:10/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical:regiomontanus/lord:10/benefic_trine",
+      "rule_id": "lilly/lord:10/benefic_trine",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical:regiomontanus/lord:10/benefic_sextile",
+      "rule_id": "lilly/lord:10/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:10/malefic_conjunction",
+      "rule_id": "lilly/lord:10/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical:regiomontanus/lord:10/malefic_square",
+      "rule_id": "lilly/lord:10/malefic_square",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical:regiomontanus/lord:10/malefic_opposition",
+      "rule_id": "lilly/lord:10/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "lord:10",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical:regiomontanus/lord:11/own_sign",
+      "rule_id": "lilly/lord:11/own_sign",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical:regiomontanus/lord:11/exaltation",
+      "rule_id": "lilly/lord:11/exaltation",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical:regiomontanus/lord:11/triplicity",
+      "rule_id": "lilly/lord:11/triplicity",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical:regiomontanus/lord:11/term",
+      "rule_id": "lilly/lord:11/term",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical:regiomontanus/lord:11/face",
+      "rule_id": "lilly/lord:11/face",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical:regiomontanus/lord:11/detriment",
+      "rule_id": "lilly/lord:11/detriment",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical:regiomontanus/lord:11/fall",
+      "rule_id": "lilly/lord:11/fall",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical:regiomontanus/lord:11/peregrine",
+      "rule_id": "lilly/lord:11/peregrine",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical:regiomontanus/lord:11/house_1_10",
+      "rule_id": "lilly/lord:11/house_1_10",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical:regiomontanus/lord:11/house_4_7_11",
+      "rule_id": "lilly/lord:11/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical:regiomontanus/lord:11/house_2_5",
+      "rule_id": "lilly/lord:11/house_2_5",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical:regiomontanus/lord:11/house_9",
+      "rule_id": "lilly/lord:11/house_9",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical:regiomontanus/lord:11/house_3",
+      "rule_id": "lilly/lord:11/house_3",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical:regiomontanus/lord:11/house_6_8",
+      "rule_id": "lilly/lord:11/house_6_8",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical:regiomontanus/lord:11/house_12",
+      "rule_id": "lilly/lord:11/house_12",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical:regiomontanus/lord:11/motion",
+      "rule_id": "lilly/lord:11/motion",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical:regiomontanus/lord:11/solar_visibility",
+      "rule_id": "lilly/lord:11/solar_visibility",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "moon_phase",
+      "lineage_key": "tropical:regiomontanus/lord:11/moon_phase",
+      "rule_id": "lilly/lord:11/moon_phase",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:11/benefic_conjunction",
+      "rule_id": "lilly/lord:11/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical:regiomontanus/lord:11/benefic_trine",
+      "rule_id": "lilly/lord:11/benefic_trine",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical:regiomontanus/lord:11/benefic_sextile",
+      "rule_id": "lilly/lord:11/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:11/malefic_conjunction",
+      "rule_id": "lilly/lord:11/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical:regiomontanus/lord:11/malefic_square",
+      "rule_id": "lilly/lord:11/malefic_square",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical:regiomontanus/lord:11/malefic_opposition",
+      "rule_id": "lilly/lord:11/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "lord:11",
+      "supported_domain_ids": [
+        "network_pathways"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical:regiomontanus/lord:12/own_sign",
+      "rule_id": "lilly/lord:12/own_sign",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical:regiomontanus/lord:12/exaltation",
+      "rule_id": "lilly/lord:12/exaltation",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical:regiomontanus/lord:12/triplicity",
+      "rule_id": "lilly/lord:12/triplicity",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical:regiomontanus/lord:12/term",
+      "rule_id": "lilly/lord:12/term",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical:regiomontanus/lord:12/face",
+      "rule_id": "lilly/lord:12/face",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical:regiomontanus/lord:12/detriment",
+      "rule_id": "lilly/lord:12/detriment",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical:regiomontanus/lord:12/fall",
+      "rule_id": "lilly/lord:12/fall",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical:regiomontanus/lord:12/peregrine",
+      "rule_id": "lilly/lord:12/peregrine",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical:regiomontanus/lord:12/house_1_10",
+      "rule_id": "lilly/lord:12/house_1_10",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical:regiomontanus/lord:12/house_4_7_11",
+      "rule_id": "lilly/lord:12/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical:regiomontanus/lord:12/house_2_5",
+      "rule_id": "lilly/lord:12/house_2_5",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical:regiomontanus/lord:12/house_9",
+      "rule_id": "lilly/lord:12/house_9",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical:regiomontanus/lord:12/house_3",
+      "rule_id": "lilly/lord:12/house_3",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical:regiomontanus/lord:12/house_6_8",
+      "rule_id": "lilly/lord:12/house_6_8",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical:regiomontanus/lord:12/house_12",
+      "rule_id": "lilly/lord:12/house_12",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical:regiomontanus/lord:12/motion",
+      "rule_id": "lilly/lord:12/motion",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical:regiomontanus/lord:12/solar_visibility",
+      "rule_id": "lilly/lord:12/solar_visibility",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "moon_phase",
+      "lineage_key": "tropical:regiomontanus/lord:12/moon_phase",
+      "rule_id": "lilly/lord:12/moon_phase",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:12/benefic_conjunction",
+      "rule_id": "lilly/lord:12/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical:regiomontanus/lord:12/benefic_trine",
+      "rule_id": "lilly/lord:12/benefic_trine",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical:regiomontanus/lord:12/benefic_sextile",
+      "rule_id": "lilly/lord:12/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:12/malefic_conjunction",
+      "rule_id": "lilly/lord:12/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical:regiomontanus/lord:12/malefic_square",
+      "rule_id": "lilly/lord:12/malefic_square",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical:regiomontanus/lord:12/malefic_opposition",
+      "rule_id": "lilly/lord:12/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "lord:12",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical:regiomontanus/lord:2/own_sign",
+      "rule_id": "lilly/lord:2/own_sign",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical:regiomontanus/lord:2/exaltation",
+      "rule_id": "lilly/lord:2/exaltation",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical:regiomontanus/lord:2/triplicity",
+      "rule_id": "lilly/lord:2/triplicity",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical:regiomontanus/lord:2/term",
+      "rule_id": "lilly/lord:2/term",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical:regiomontanus/lord:2/face",
+      "rule_id": "lilly/lord:2/face",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical:regiomontanus/lord:2/detriment",
+      "rule_id": "lilly/lord:2/detriment",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical:regiomontanus/lord:2/fall",
+      "rule_id": "lilly/lord:2/fall",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical:regiomontanus/lord:2/peregrine",
+      "rule_id": "lilly/lord:2/peregrine",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical:regiomontanus/lord:2/house_1_10",
+      "rule_id": "lilly/lord:2/house_1_10",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical:regiomontanus/lord:2/house_4_7_11",
+      "rule_id": "lilly/lord:2/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical:regiomontanus/lord:2/house_2_5",
+      "rule_id": "lilly/lord:2/house_2_5",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical:regiomontanus/lord:2/house_9",
+      "rule_id": "lilly/lord:2/house_9",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical:regiomontanus/lord:2/house_3",
+      "rule_id": "lilly/lord:2/house_3",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical:regiomontanus/lord:2/house_6_8",
+      "rule_id": "lilly/lord:2/house_6_8",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical:regiomontanus/lord:2/house_12",
+      "rule_id": "lilly/lord:2/house_12",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical:regiomontanus/lord:2/motion",
+      "rule_id": "lilly/lord:2/motion",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical:regiomontanus/lord:2/solar_visibility",
+      "rule_id": "lilly/lord:2/solar_visibility",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "moon_phase",
+      "lineage_key": "tropical:regiomontanus/lord:2/moon_phase",
+      "rule_id": "lilly/lord:2/moon_phase",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:2/benefic_conjunction",
+      "rule_id": "lilly/lord:2/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical:regiomontanus/lord:2/benefic_trine",
+      "rule_id": "lilly/lord:2/benefic_trine",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical:regiomontanus/lord:2/benefic_sextile",
+      "rule_id": "lilly/lord:2/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:2/malefic_conjunction",
+      "rule_id": "lilly/lord:2/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical:regiomontanus/lord:2/malefic_square",
+      "rule_id": "lilly/lord:2/malefic_square",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical:regiomontanus/lord:2/malefic_opposition",
+      "rule_id": "lilly/lord:2/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical:regiomontanus/lord:3/own_sign",
+      "rule_id": "lilly/lord:3/own_sign",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical:regiomontanus/lord:3/exaltation",
+      "rule_id": "lilly/lord:3/exaltation",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical:regiomontanus/lord:3/triplicity",
+      "rule_id": "lilly/lord:3/triplicity",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical:regiomontanus/lord:3/term",
+      "rule_id": "lilly/lord:3/term",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical:regiomontanus/lord:3/face",
+      "rule_id": "lilly/lord:3/face",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical:regiomontanus/lord:3/detriment",
+      "rule_id": "lilly/lord:3/detriment",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical:regiomontanus/lord:3/fall",
+      "rule_id": "lilly/lord:3/fall",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical:regiomontanus/lord:3/peregrine",
+      "rule_id": "lilly/lord:3/peregrine",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical:regiomontanus/lord:3/house_1_10",
+      "rule_id": "lilly/lord:3/house_1_10",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical:regiomontanus/lord:3/house_4_7_11",
+      "rule_id": "lilly/lord:3/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical:regiomontanus/lord:3/house_2_5",
+      "rule_id": "lilly/lord:3/house_2_5",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical:regiomontanus/lord:3/house_9",
+      "rule_id": "lilly/lord:3/house_9",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical:regiomontanus/lord:3/house_3",
+      "rule_id": "lilly/lord:3/house_3",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical:regiomontanus/lord:3/house_6_8",
+      "rule_id": "lilly/lord:3/house_6_8",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical:regiomontanus/lord:3/house_12",
+      "rule_id": "lilly/lord:3/house_12",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical:regiomontanus/lord:3/motion",
+      "rule_id": "lilly/lord:3/motion",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical:regiomontanus/lord:3/solar_visibility",
+      "rule_id": "lilly/lord:3/solar_visibility",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "moon_phase",
+      "lineage_key": "tropical:regiomontanus/lord:3/moon_phase",
+      "rule_id": "lilly/lord:3/moon_phase",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:3/benefic_conjunction",
+      "rule_id": "lilly/lord:3/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical:regiomontanus/lord:3/benefic_trine",
+      "rule_id": "lilly/lord:3/benefic_trine",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical:regiomontanus/lord:3/benefic_sextile",
+      "rule_id": "lilly/lord:3/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:3/malefic_conjunction",
+      "rule_id": "lilly/lord:3/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical:regiomontanus/lord:3/malefic_square",
+      "rule_id": "lilly/lord:3/malefic_square",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical:regiomontanus/lord:3/malefic_opposition",
+      "rule_id": "lilly/lord:3/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "lord:3",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical:regiomontanus/lord:4/own_sign",
+      "rule_id": "lilly/lord:4/own_sign",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical:regiomontanus/lord:4/exaltation",
+      "rule_id": "lilly/lord:4/exaltation",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical:regiomontanus/lord:4/triplicity",
+      "rule_id": "lilly/lord:4/triplicity",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical:regiomontanus/lord:4/term",
+      "rule_id": "lilly/lord:4/term",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical:regiomontanus/lord:4/face",
+      "rule_id": "lilly/lord:4/face",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical:regiomontanus/lord:4/detriment",
+      "rule_id": "lilly/lord:4/detriment",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical:regiomontanus/lord:4/fall",
+      "rule_id": "lilly/lord:4/fall",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical:regiomontanus/lord:4/peregrine",
+      "rule_id": "lilly/lord:4/peregrine",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical:regiomontanus/lord:4/house_1_10",
+      "rule_id": "lilly/lord:4/house_1_10",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical:regiomontanus/lord:4/house_4_7_11",
+      "rule_id": "lilly/lord:4/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical:regiomontanus/lord:4/house_2_5",
+      "rule_id": "lilly/lord:4/house_2_5",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical:regiomontanus/lord:4/house_9",
+      "rule_id": "lilly/lord:4/house_9",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical:regiomontanus/lord:4/house_3",
+      "rule_id": "lilly/lord:4/house_3",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical:regiomontanus/lord:4/house_6_8",
+      "rule_id": "lilly/lord:4/house_6_8",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical:regiomontanus/lord:4/house_12",
+      "rule_id": "lilly/lord:4/house_12",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical:regiomontanus/lord:4/motion",
+      "rule_id": "lilly/lord:4/motion",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical:regiomontanus/lord:4/solar_visibility",
+      "rule_id": "lilly/lord:4/solar_visibility",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "moon_phase",
+      "lineage_key": "tropical:regiomontanus/lord:4/moon_phase",
+      "rule_id": "lilly/lord:4/moon_phase",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:4/benefic_conjunction",
+      "rule_id": "lilly/lord:4/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical:regiomontanus/lord:4/benefic_trine",
+      "rule_id": "lilly/lord:4/benefic_trine",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical:regiomontanus/lord:4/benefic_sextile",
+      "rule_id": "lilly/lord:4/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:4/malefic_conjunction",
+      "rule_id": "lilly/lord:4/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical:regiomontanus/lord:4/malefic_square",
+      "rule_id": "lilly/lord:4/malefic_square",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical:regiomontanus/lord:4/malefic_opposition",
+      "rule_id": "lilly/lord:4/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "resource_motivation",
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical:regiomontanus/lord:6/own_sign",
+      "rule_id": "lilly/lord:6/own_sign",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical:regiomontanus/lord:6/exaltation",
+      "rule_id": "lilly/lord:6/exaltation",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical:regiomontanus/lord:6/triplicity",
+      "rule_id": "lilly/lord:6/triplicity",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical:regiomontanus/lord:6/term",
+      "rule_id": "lilly/lord:6/term",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical:regiomontanus/lord:6/face",
+      "rule_id": "lilly/lord:6/face",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical:regiomontanus/lord:6/detriment",
+      "rule_id": "lilly/lord:6/detriment",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical:regiomontanus/lord:6/fall",
+      "rule_id": "lilly/lord:6/fall",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical:regiomontanus/lord:6/peregrine",
+      "rule_id": "lilly/lord:6/peregrine",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical:regiomontanus/lord:6/house_1_10",
+      "rule_id": "lilly/lord:6/house_1_10",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical:regiomontanus/lord:6/house_4_7_11",
+      "rule_id": "lilly/lord:6/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical:regiomontanus/lord:6/house_2_5",
+      "rule_id": "lilly/lord:6/house_2_5",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical:regiomontanus/lord:6/house_9",
+      "rule_id": "lilly/lord:6/house_9",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical:regiomontanus/lord:6/house_3",
+      "rule_id": "lilly/lord:6/house_3",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical:regiomontanus/lord:6/house_6_8",
+      "rule_id": "lilly/lord:6/house_6_8",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical:regiomontanus/lord:6/house_12",
+      "rule_id": "lilly/lord:6/house_12",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical:regiomontanus/lord:6/motion",
+      "rule_id": "lilly/lord:6/motion",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical:regiomontanus/lord:6/solar_visibility",
+      "rule_id": "lilly/lord:6/solar_visibility",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "moon_phase",
+      "lineage_key": "tropical:regiomontanus/lord:6/moon_phase",
+      "rule_id": "lilly/lord:6/moon_phase",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:6/benefic_conjunction",
+      "rule_id": "lilly/lord:6/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical:regiomontanus/lord:6/benefic_trine",
+      "rule_id": "lilly/lord:6/benefic_trine",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical:regiomontanus/lord:6/benefic_sextile",
+      "rule_id": "lilly/lord:6/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:6/malefic_conjunction",
+      "rule_id": "lilly/lord:6/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical:regiomontanus/lord:6/malefic_square",
+      "rule_id": "lilly/lord:6/malefic_square",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical:regiomontanus/lord:6/malefic_opposition",
+      "rule_id": "lilly/lord:6/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "lord:6",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical:regiomontanus/lord:7/own_sign",
+      "rule_id": "lilly/lord:7/own_sign",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical:regiomontanus/lord:7/exaltation",
+      "rule_id": "lilly/lord:7/exaltation",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical:regiomontanus/lord:7/triplicity",
+      "rule_id": "lilly/lord:7/triplicity",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical:regiomontanus/lord:7/term",
+      "rule_id": "lilly/lord:7/term",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical:regiomontanus/lord:7/face",
+      "rule_id": "lilly/lord:7/face",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical:regiomontanus/lord:7/detriment",
+      "rule_id": "lilly/lord:7/detriment",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical:regiomontanus/lord:7/fall",
+      "rule_id": "lilly/lord:7/fall",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical:regiomontanus/lord:7/peregrine",
+      "rule_id": "lilly/lord:7/peregrine",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical:regiomontanus/lord:7/house_1_10",
+      "rule_id": "lilly/lord:7/house_1_10",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical:regiomontanus/lord:7/house_4_7_11",
+      "rule_id": "lilly/lord:7/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical:regiomontanus/lord:7/house_2_5",
+      "rule_id": "lilly/lord:7/house_2_5",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical:regiomontanus/lord:7/house_9",
+      "rule_id": "lilly/lord:7/house_9",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical:regiomontanus/lord:7/house_3",
+      "rule_id": "lilly/lord:7/house_3",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical:regiomontanus/lord:7/house_6_8",
+      "rule_id": "lilly/lord:7/house_6_8",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical:regiomontanus/lord:7/house_12",
+      "rule_id": "lilly/lord:7/house_12",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical:regiomontanus/lord:7/motion",
+      "rule_id": "lilly/lord:7/motion",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical:regiomontanus/lord:7/solar_visibility",
+      "rule_id": "lilly/lord:7/solar_visibility",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "moon_phase",
+      "lineage_key": "tropical:regiomontanus/lord:7/moon_phase",
+      "rule_id": "lilly/lord:7/moon_phase",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:7/benefic_conjunction",
+      "rule_id": "lilly/lord:7/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical:regiomontanus/lord:7/benefic_trine",
+      "rule_id": "lilly/lord:7/benefic_trine",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical:regiomontanus/lord:7/benefic_sextile",
+      "rule_id": "lilly/lord:7/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical:regiomontanus/lord:7/malefic_conjunction",
+      "rule_id": "lilly/lord:7/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical:regiomontanus/lord:7/malefic_square",
+      "rule_id": "lilly/lord:7/malefic_square",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical:regiomontanus/lord:7/malefic_opposition",
+      "rule_id": "lilly/lord:7/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:mars/own_sign",
+      "rule_id": "lilly/planet:mars/own_sign",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:mars/exaltation",
+      "rule_id": "lilly/planet:mars/exaltation",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical/planet:mars/triplicity",
+      "rule_id": "lilly/planet:mars/triplicity",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical/planet:mars/term",
+      "rule_id": "lilly/planet:mars/term",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical/planet:mars/face",
+      "rule_id": "lilly/planet:mars/face",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical/planet:mars/detriment",
+      "rule_id": "lilly/planet:mars/detriment",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:mars/fall",
+      "rule_id": "lilly/planet:mars/fall",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical/planet:mars/peregrine",
+      "rule_id": "lilly/planet:mars/peregrine",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical/planet:mars/house_1_10",
+      "rule_id": "lilly/planet:mars/house_1_10",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical/planet:mars/house_4_7_11",
+      "rule_id": "lilly/planet:mars/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical/planet:mars/house_2_5",
+      "rule_id": "lilly/planet:mars/house_2_5",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical/planet:mars/house_9",
+      "rule_id": "lilly/planet:mars/house_9",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical/planet:mars/house_3",
+      "rule_id": "lilly/planet:mars/house_3",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical/planet:mars/house_6_8",
+      "rule_id": "lilly/planet:mars/house_6_8",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical/planet:mars/house_12",
+      "rule_id": "lilly/planet:mars/house_12",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical/planet:mars/motion",
+      "rule_id": "lilly/planet:mars/motion",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical/planet:mars/solar_visibility",
+      "rule_id": "lilly/planet:mars/solar_visibility",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical/planet:mars/benefic_conjunction",
+      "rule_id": "lilly/planet:mars/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical/planet:mars/benefic_trine",
+      "rule_id": "lilly/planet:mars/benefic_trine",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical/planet:mars/benefic_sextile",
+      "rule_id": "lilly/planet:mars/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical/planet:mars/malefic_conjunction",
+      "rule_id": "lilly/planet:mars/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical/planet:mars/malefic_square",
+      "rule_id": "lilly/planet:mars/malefic_square",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical/planet:mars/malefic_opposition",
+      "rule_id": "lilly/planet:mars/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:mercury/own_sign",
+      "rule_id": "lilly/planet:mercury/own_sign",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:mercury/exaltation",
+      "rule_id": "lilly/planet:mercury/exaltation",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical/planet:mercury/triplicity",
+      "rule_id": "lilly/planet:mercury/triplicity",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical/planet:mercury/term",
+      "rule_id": "lilly/planet:mercury/term",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical/planet:mercury/face",
+      "rule_id": "lilly/planet:mercury/face",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical/planet:mercury/detriment",
+      "rule_id": "lilly/planet:mercury/detriment",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:mercury/fall",
+      "rule_id": "lilly/planet:mercury/fall",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical/planet:mercury/peregrine",
+      "rule_id": "lilly/planet:mercury/peregrine",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical/planet:mercury/house_1_10",
+      "rule_id": "lilly/planet:mercury/house_1_10",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical/planet:mercury/house_4_7_11",
+      "rule_id": "lilly/planet:mercury/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical/planet:mercury/house_2_5",
+      "rule_id": "lilly/planet:mercury/house_2_5",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical/planet:mercury/house_9",
+      "rule_id": "lilly/planet:mercury/house_9",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical/planet:mercury/house_3",
+      "rule_id": "lilly/planet:mercury/house_3",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical/planet:mercury/house_6_8",
+      "rule_id": "lilly/planet:mercury/house_6_8",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical/planet:mercury/house_12",
+      "rule_id": "lilly/planet:mercury/house_12",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical/planet:mercury/motion",
+      "rule_id": "lilly/planet:mercury/motion",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical/planet:mercury/solar_visibility",
+      "rule_id": "lilly/planet:mercury/solar_visibility",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical/planet:mercury/benefic_conjunction",
+      "rule_id": "lilly/planet:mercury/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical/planet:mercury/benefic_trine",
+      "rule_id": "lilly/planet:mercury/benefic_trine",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical/planet:mercury/benefic_sextile",
+      "rule_id": "lilly/planet:mercury/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical/planet:mercury/malefic_conjunction",
+      "rule_id": "lilly/planet:mercury/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical/planet:mercury/malefic_square",
+      "rule_id": "lilly/planet:mercury/malefic_square",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical/planet:mercury/malefic_opposition",
+      "rule_id": "lilly/planet:mercury/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:saturn/own_sign",
+      "rule_id": "lilly/planet:saturn/own_sign",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:saturn/exaltation",
+      "rule_id": "lilly/planet:saturn/exaltation",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical/planet:saturn/triplicity",
+      "rule_id": "lilly/planet:saturn/triplicity",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical/planet:saturn/term",
+      "rule_id": "lilly/planet:saturn/term",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical/planet:saturn/face",
+      "rule_id": "lilly/planet:saturn/face",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical/planet:saturn/detriment",
+      "rule_id": "lilly/planet:saturn/detriment",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:saturn/fall",
+      "rule_id": "lilly/planet:saturn/fall",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical/planet:saturn/peregrine",
+      "rule_id": "lilly/planet:saturn/peregrine",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical/planet:saturn/house_1_10",
+      "rule_id": "lilly/planet:saturn/house_1_10",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical/planet:saturn/house_4_7_11",
+      "rule_id": "lilly/planet:saturn/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical/planet:saturn/house_2_5",
+      "rule_id": "lilly/planet:saturn/house_2_5",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical/planet:saturn/house_9",
+      "rule_id": "lilly/planet:saturn/house_9",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical/planet:saturn/house_3",
+      "rule_id": "lilly/planet:saturn/house_3",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical/planet:saturn/house_6_8",
+      "rule_id": "lilly/planet:saturn/house_6_8",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical/planet:saturn/house_12",
+      "rule_id": "lilly/planet:saturn/house_12",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical/planet:saturn/motion",
+      "rule_id": "lilly/planet:saturn/motion",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical/planet:saturn/solar_visibility",
+      "rule_id": "lilly/planet:saturn/solar_visibility",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical/planet:saturn/benefic_conjunction",
+      "rule_id": "lilly/planet:saturn/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical/planet:saturn/benefic_trine",
+      "rule_id": "lilly/planet:saturn/benefic_trine",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical/planet:saturn/benefic_sextile",
+      "rule_id": "lilly/planet:saturn/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical/planet:saturn/malefic_conjunction",
+      "rule_id": "lilly/planet:saturn/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical/planet:saturn/malefic_square",
+      "rule_id": "lilly/planet:saturn/malefic_square",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical/planet:saturn/malefic_opposition",
+      "rule_id": "lilly/planet:saturn/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:sun/own_sign",
+      "rule_id": "lilly/planet:sun/own_sign",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:sun/exaltation",
+      "rule_id": "lilly/planet:sun/exaltation",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical/planet:sun/triplicity",
+      "rule_id": "lilly/planet:sun/triplicity",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical/planet:sun/term",
+      "rule_id": "lilly/planet:sun/term",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical/planet:sun/face",
+      "rule_id": "lilly/planet:sun/face",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical/planet:sun/detriment",
+      "rule_id": "lilly/planet:sun/detriment",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:sun/fall",
+      "rule_id": "lilly/planet:sun/fall",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical/planet:sun/peregrine",
+      "rule_id": "lilly/planet:sun/peregrine",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical/planet:sun/house_1_10",
+      "rule_id": "lilly/planet:sun/house_1_10",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical/planet:sun/house_4_7_11",
+      "rule_id": "lilly/planet:sun/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical/planet:sun/house_2_5",
+      "rule_id": "lilly/planet:sun/house_2_5",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical/planet:sun/house_9",
+      "rule_id": "lilly/planet:sun/house_9",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical/planet:sun/house_3",
+      "rule_id": "lilly/planet:sun/house_3",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical/planet:sun/house_6_8",
+      "rule_id": "lilly/planet:sun/house_6_8",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical/planet:sun/house_12",
+      "rule_id": "lilly/planet:sun/house_12",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical/planet:sun/benefic_conjunction",
+      "rule_id": "lilly/planet:sun/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical/planet:sun/benefic_trine",
+      "rule_id": "lilly/planet:sun/benefic_trine",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical/planet:sun/benefic_sextile",
+      "rule_id": "lilly/planet:sun/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical/planet:sun/malefic_conjunction",
+      "rule_id": "lilly/planet:sun/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical/planet:sun/malefic_square",
+      "rule_id": "lilly/planet:sun/malefic_square",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical/planet:sun/malefic_opposition",
+      "rule_id": "lilly/planet:sun/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:venus/own_sign",
+      "rule_id": "lilly/planet:venus/own_sign",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:venus/exaltation",
+      "rule_id": "lilly/planet:venus/exaltation",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "triplicity",
+      "lineage_key": "tropical/planet:venus/triplicity",
+      "rule_id": "lilly/planet:venus/triplicity",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "term",
+      "lineage_key": "tropical/planet:venus/term",
+      "rule_id": "lilly/planet:venus/term",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "face",
+      "lineage_key": "tropical/planet:venus/face",
+      "rule_id": "lilly/planet:venus/face",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "detriment",
+      "lineage_key": "tropical/planet:venus/detriment",
+      "rule_id": "lilly/planet:venus/detriment",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:venus/fall",
+      "rule_id": "lilly/planet:venus/fall",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "peregrine",
+      "lineage_key": "tropical/planet:venus/peregrine",
+      "rule_id": "lilly/planet:venus/peregrine",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "house_1_10",
+      "lineage_key": "tropical/planet:venus/house_1_10",
+      "rule_id": "lilly/planet:venus/house_1_10",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_4_7_11",
+      "lineage_key": "tropical/planet:venus/house_4_7_11",
+      "rule_id": "lilly/planet:venus/house_4_7_11",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_2_5",
+      "lineage_key": "tropical/planet:venus/house_2_5",
+      "rule_id": "lilly/planet:venus/house_2_5",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_9",
+      "lineage_key": "tropical/planet:venus/house_9",
+      "rule_id": "lilly/planet:venus/house_9",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_3",
+      "lineage_key": "tropical/planet:venus/house_3",
+      "rule_id": "lilly/planet:venus/house_3",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "house_6_8",
+      "lineage_key": "tropical/planet:venus/house_6_8",
+      "rule_id": "lilly/planet:venus/house_6_8",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "house_12",
+      "lineage_key": "tropical/planet:venus/house_12",
+      "rule_id": "lilly/planet:venus/house_12",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "motion",
+      "lineage_key": "tropical/planet:venus/motion",
+      "rule_id": "lilly/planet:venus/motion",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "solar_visibility",
+      "lineage_key": "tropical/planet:venus/solar_visibility",
+      "rule_id": "lilly/planet:venus/solar_visibility",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": -1
+    },
+    {
+      "condition": "benefic_conjunction",
+      "lineage_key": "tropical/planet:venus/benefic_conjunction",
+      "rule_id": "lilly/planet:venus/benefic_conjunction",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_trine",
+      "lineage_key": "tropical/planet:venus/benefic_trine",
+      "rule_id": "lilly/planet:venus/benefic_trine",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "benefic_sextile",
+      "lineage_key": "tropical/planet:venus/benefic_sextile",
+      "rule_id": "lilly/planet:venus/benefic_sextile",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_conjunction",
+      "lineage_key": "tropical/planet:venus/malefic_conjunction",
+      "rule_id": "lilly/planet:venus/malefic_conjunction",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_square",
+      "lineage_key": "tropical/planet:venus/malefic_square",
+      "rule_id": "lilly/planet:venus/malefic_square",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "malefic_opposition",
+      "lineage_key": "tropical/planet:venus/malefic_opposition",
+      "rule_id": "lilly/planet:venus/malefic_opposition",
+      "source_id": "lilly",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:2/own_sign",
+      "rule_id": "phaladeepika/lord:2/own_sign",
+      "source_id": "phaladeepika",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "insight_translation",
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:2/exaltation",
+      "rule_id": "phaladeepika/lord:2/exaltation",
+      "source_id": "phaladeepika",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "insight_translation",
+        "resource_motivation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "retrograde",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:2/retrograde",
+      "rule_id": "phaladeepika/lord:2/retrograde",
+      "source_id": "phaladeepika",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "insight_translation",
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "temporal",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:2/temporal",
+      "rule_id": "phaladeepika/lord:2/temporal",
+      "source_id": "phaladeepika",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "insight_translation",
+        "resource_motivation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "directional",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:2/directional",
+      "rule_id": "phaladeepika/lord:2/directional",
+      "source_id": "phaladeepika",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "insight_translation",
+        "resource_motivation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "kendra",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:2/kendra",
+      "rule_id": "phaladeepika/lord:2/kendra",
+      "source_id": "phaladeepika",
+      "subject": "lord:2",
+      "supported_domain_ids": [
+        "insight_translation",
+        "resource_motivation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:4/own_sign",
+      "rule_id": "phaladeepika/lord:4/own_sign",
+      "source_id": "phaladeepika",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "sanctuary_sensory"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:4/exaltation",
+      "rule_id": "phaladeepika/lord:4/exaltation",
+      "source_id": "phaladeepika",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "retrograde",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:4/retrograde",
+      "rule_id": "phaladeepika/lord:4/retrograde",
+      "source_id": "phaladeepika",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "temporal",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:4/temporal",
+      "rule_id": "phaladeepika/lord:4/temporal",
+      "source_id": "phaladeepika",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "directional",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:4/directional",
+      "rule_id": "phaladeepika/lord:4/directional",
+      "source_id": "phaladeepika",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "kendra",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:4/kendra",
+      "rule_id": "phaladeepika/lord:4/kendra",
+      "source_id": "phaladeepika",
+      "subject": "lord:4",
+      "supported_domain_ids": [
+        "sanctuary_sensory"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:7/own_sign",
+      "rule_id": "phaladeepika/lord:7/own_sign",
+      "source_id": "phaladeepika",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:7/exaltation",
+      "rule_id": "phaladeepika/lord:7/exaltation",
+      "source_id": "phaladeepika",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "retrograde",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:7/retrograde",
+      "rule_id": "phaladeepika/lord:7/retrograde",
+      "source_id": "phaladeepika",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "temporal",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:7/temporal",
+      "rule_id": "phaladeepika/lord:7/temporal",
+      "source_id": "phaladeepika",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "directional",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:7/directional",
+      "rule_id": "phaladeepika/lord:7/directional",
+      "source_id": "phaladeepika",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "kendra",
+      "lineage_key": "sidereal_lahiri:whole_sign/lord:7/kendra",
+      "rule_id": "phaladeepika/lord:7/kendra",
+      "source_id": "phaladeepika",
+      "subject": "lord:7",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "sidereal_lahiri/planet:jupiter/own_sign",
+      "rule_id": "phaladeepika/planet:jupiter/own_sign",
+      "source_id": "phaladeepika",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "sidereal_lahiri/planet:jupiter/exaltation",
+      "rule_id": "phaladeepika/planet:jupiter/exaltation",
+      "source_id": "phaladeepika",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "retrograde",
+      "lineage_key": "sidereal_lahiri/planet:jupiter/retrograde",
+      "rule_id": "phaladeepika/planet:jupiter/retrograde",
+      "source_id": "phaladeepika",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "temporal",
+      "lineage_key": "sidereal_lahiri/planet:jupiter/temporal",
+      "rule_id": "phaladeepika/planet:jupiter/temporal",
+      "source_id": "phaladeepika",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "directional",
+      "lineage_key": "sidereal_lahiri/planet:jupiter/directional",
+      "rule_id": "phaladeepika/planet:jupiter/directional",
+      "source_id": "phaladeepika",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "kendra",
+      "lineage_key": "sidereal_lahiri/planet:jupiter/kendra",
+      "rule_id": "phaladeepika/planet:jupiter/kendra",
+      "source_id": "phaladeepika",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "insight_translation"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "sidereal_lahiri/planet:mars/own_sign",
+      "rule_id": "phaladeepika/planet:mars/own_sign",
+      "source_id": "phaladeepika",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "sidereal_lahiri/planet:mars/exaltation",
+      "rule_id": "phaladeepika/planet:mars/exaltation",
+      "source_id": "phaladeepika",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "retrograde",
+      "lineage_key": "sidereal_lahiri/planet:mars/retrograde",
+      "rule_id": "phaladeepika/planet:mars/retrograde",
+      "source_id": "phaladeepika",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "temporal",
+      "lineage_key": "sidereal_lahiri/planet:mars/temporal",
+      "rule_id": "phaladeepika/planet:mars/temporal",
+      "source_id": "phaladeepika",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "directional",
+      "lineage_key": "sidereal_lahiri/planet:mars/directional",
+      "rule_id": "phaladeepika/planet:mars/directional",
+      "source_id": "phaladeepika",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "kendra",
+      "lineage_key": "sidereal_lahiri/planet:mars/kendra",
+      "rule_id": "phaladeepika/planet:mars/kendra",
+      "source_id": "phaladeepika",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "sidereal_lahiri/planet:mercury/own_sign",
+      "rule_id": "phaladeepika/planet:mercury/own_sign",
+      "source_id": "phaladeepika",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "sidereal_lahiri/planet:mercury/exaltation",
+      "rule_id": "phaladeepika/planet:mercury/exaltation",
+      "source_id": "phaladeepika",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "retrograde",
+      "lineage_key": "sidereal_lahiri/planet:mercury/retrograde",
+      "rule_id": "phaladeepika/planet:mercury/retrograde",
+      "source_id": "phaladeepika",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "temporal",
+      "lineage_key": "sidereal_lahiri/planet:mercury/temporal",
+      "rule_id": "phaladeepika/planet:mercury/temporal",
+      "source_id": "phaladeepika",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "directional",
+      "lineage_key": "sidereal_lahiri/planet:mercury/directional",
+      "rule_id": "phaladeepika/planet:mercury/directional",
+      "source_id": "phaladeepika",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "kendra",
+      "lineage_key": "sidereal_lahiri/planet:mercury/kendra",
+      "rule_id": "phaladeepika/planet:mercury/kendra",
+      "source_id": "phaladeepika",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "persuasion_strategy"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "sidereal_lahiri/planet:saturn/own_sign",
+      "rule_id": "phaladeepika/planet:saturn/own_sign",
+      "source_id": "phaladeepika",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "sidereal_lahiri/planet:saturn/exaltation",
+      "rule_id": "phaladeepika/planet:saturn/exaltation",
+      "source_id": "phaladeepika",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "retrograde",
+      "lineage_key": "sidereal_lahiri/planet:saturn/retrograde",
+      "rule_id": "phaladeepika/planet:saturn/retrograde",
+      "source_id": "phaladeepika",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "temporal",
+      "lineage_key": "sidereal_lahiri/planet:saturn/temporal",
+      "rule_id": "phaladeepika/planet:saturn/temporal",
+      "source_id": "phaladeepika",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "directional",
+      "lineage_key": "sidereal_lahiri/planet:saturn/directional",
+      "rule_id": "phaladeepika/planet:saturn/directional",
+      "source_id": "phaladeepika",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "kendra",
+      "lineage_key": "sidereal_lahiri/planet:saturn/kendra",
+      "rule_id": "phaladeepika/planet:saturn/kendra",
+      "source_id": "phaladeepika",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "sidereal_lahiri/planet:venus/own_sign",
+      "rule_id": "phaladeepika/planet:venus/own_sign",
+      "source_id": "phaladeepika",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "persuasion_strategy",
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "sidereal_lahiri/planet:venus/exaltation",
+      "rule_id": "phaladeepika/planet:venus/exaltation",
+      "source_id": "phaladeepika",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "persuasion_strategy",
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "retrograde",
+      "lineage_key": "sidereal_lahiri/planet:venus/retrograde",
+      "rule_id": "phaladeepika/planet:venus/retrograde",
+      "source_id": "phaladeepika",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "persuasion_strategy",
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "temporal",
+      "lineage_key": "sidereal_lahiri/planet:venus/temporal",
+      "rule_id": "phaladeepika/planet:venus/temporal",
+      "source_id": "phaladeepika",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "persuasion_strategy",
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "directional",
+      "lineage_key": "sidereal_lahiri/planet:venus/directional",
+      "rule_id": "phaladeepika/planet:venus/directional",
+      "source_id": "phaladeepika",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "persuasion_strategy",
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "kendra",
+      "lineage_key": "sidereal_lahiri/planet:venus/kendra",
+      "rule_id": "phaladeepika/planet:venus/kendra",
+      "source_id": "phaladeepika",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "persuasion_strategy",
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:jupiter/own_sign",
+      "rule_id": "ptolemy/planet:jupiter/own_sign",
+      "source_id": "ptolemy",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "network_pathways",
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:jupiter/exaltation",
+      "rule_id": "ptolemy/planet:jupiter/exaltation",
+      "source_id": "ptolemy",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "network_pathways",
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:jupiter/fall",
+      "rule_id": "ptolemy/planet:jupiter/fall",
+      "source_id": "ptolemy",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "network_pathways",
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "sect",
+      "lineage_key": "tropical/planet:jupiter/sect",
+      "rule_id": "ptolemy/planet:jupiter/sect",
+      "source_id": "ptolemy",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "network_pathways",
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:mars/own_sign",
+      "rule_id": "ptolemy/planet:mars/own_sign",
+      "source_id": "ptolemy",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:mars/exaltation",
+      "rule_id": "ptolemy/planet:mars/exaltation",
+      "source_id": "ptolemy",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:mars/fall",
+      "rule_id": "ptolemy/planet:mars/fall",
+      "source_id": "ptolemy",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "sect",
+      "lineage_key": "tropical/planet:mars/sect",
+      "rule_id": "ptolemy/planet:mars/sect",
+      "source_id": "ptolemy",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:mercury/own_sign",
+      "rule_id": "ptolemy/planet:mercury/own_sign",
+      "source_id": "ptolemy",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "original_contribution",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:mercury/exaltation",
+      "rule_id": "ptolemy/planet:mercury/exaltation",
+      "source_id": "ptolemy",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "original_contribution",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:mercury/fall",
+      "rule_id": "ptolemy/planet:mercury/fall",
+      "source_id": "ptolemy",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "original_contribution",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:saturn/own_sign",
+      "rule_id": "ptolemy/planet:saturn/own_sign",
+      "source_id": "ptolemy",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:saturn/exaltation",
+      "rule_id": "ptolemy/planet:saturn/exaltation",
+      "source_id": "ptolemy",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:saturn/fall",
+      "rule_id": "ptolemy/planet:saturn/fall",
+      "source_id": "ptolemy",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "sect",
+      "lineage_key": "tropical/planet:saturn/sect",
+      "rule_id": "ptolemy/planet:saturn/sect",
+      "source_id": "ptolemy",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy",
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:sun/own_sign",
+      "rule_id": "ptolemy/planet:sun/own_sign",
+      "source_id": "ptolemy",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:sun/exaltation",
+      "rule_id": "ptolemy/planet:sun/exaltation",
+      "source_id": "ptolemy",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:sun/fall",
+      "rule_id": "ptolemy/planet:sun/fall",
+      "source_id": "ptolemy",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "sect",
+      "lineage_key": "tropical/planet:sun/sect",
+      "rule_id": "ptolemy/planet:sun/sect",
+      "source_id": "ptolemy",
+      "subject": "planet:sun",
+      "supported_domain_ids": [
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:venus/own_sign",
+      "rule_id": "ptolemy/planet:venus/own_sign",
+      "source_id": "ptolemy",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:venus/exaltation",
+      "rule_id": "ptolemy/planet:venus/exaltation",
+      "source_id": "ptolemy",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "fall",
+      "lineage_key": "tropical/planet:venus/fall",
+      "rule_id": "ptolemy/planet:venus/fall",
+      "source_id": "ptolemy",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "sect",
+      "lineage_key": "tropical/planet:venus/sect",
+      "rule_id": "ptolemy/planet:venus/sect",
+      "source_id": "ptolemy",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:jupiter/own_sign",
+      "rule_id": "valens/planet:jupiter/own_sign",
+      "source_id": "valens",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "network_pathways",
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:jupiter/exaltation",
+      "rule_id": "valens/planet:jupiter/exaltation",
+      "source_id": "valens",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "network_pathways",
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "sect",
+      "lineage_key": "tropical/planet:jupiter/sect",
+      "rule_id": "valens/planet:jupiter/sect",
+      "source_id": "valens",
+      "subject": "planet:jupiter",
+      "supported_domain_ids": [
+        "network_pathways",
+        "recognition_entry"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:mars/own_sign",
+      "rule_id": "valens/planet:mars/own_sign",
+      "source_id": "valens",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:mars/exaltation",
+      "rule_id": "valens/planet:mars/exaltation",
+      "source_id": "valens",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "sect",
+      "lineage_key": "tropical/planet:mars/sect",
+      "rule_id": "valens/planet:mars/sect",
+      "source_id": "valens",
+      "subject": "planet:mars",
+      "supported_domain_ids": [
+        "work_energy_range"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:mercury/own_sign",
+      "rule_id": "valens/planet:mercury/own_sign",
+      "source_id": "valens",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "original_contribution",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:mercury/exaltation",
+      "rule_id": "valens/planet:mercury/exaltation",
+      "source_id": "valens",
+      "subject": "planet:mercury",
+      "supported_domain_ids": [
+        "complex_structure",
+        "insight_translation",
+        "original_contribution",
+        "persuasion_strategy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:saturn/own_sign",
+      "rule_id": "valens/planet:saturn/own_sign",
+      "source_id": "valens",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 1
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:saturn/exaltation",
+      "rule_id": "valens/planet:saturn/exaltation",
+      "source_id": "valens",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "sect",
+      "lineage_key": "tropical/planet:saturn/sect",
+      "rule_id": "valens/planet:saturn/sect",
+      "source_id": "valens",
+      "subject": "planet:saturn",
+      "supported_domain_ids": [
+        "retreat_privacy"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "own_sign",
+      "lineage_key": "tropical/planet:venus/own_sign",
+      "rule_id": "valens/planet:venus/own_sign",
+      "source_id": "valens",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "exaltation",
+      "lineage_key": "tropical/planet:venus/exaltation",
+      "rule_id": "valens/planet:venus/exaltation",
+      "source_id": "valens",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 0
+    },
+    {
+      "condition": "sect",
+      "lineage_key": "tropical/planet:venus/sect",
+      "rule_id": "valens/planet:venus/sect",
+      "source_id": "valens",
+      "subject": "planet:venus",
+      "supported_domain_ids": [
+        "romantic_attachment"
+      ],
+      "value": 1
+    }
+  ],
+  "schema": "hale-astrohd-v14-full-rule-vector-clean-v1",
+  "summary_by_source": {
+    "lilly": {
+      "negative": 14,
+      "positive": 36,
+      "zero": 255
+    },
+    "phaladeepika": {
+      "negative": 0,
+      "positive": 18,
+      "zero": 30
+    },
+    "ptolemy": {
+      "negative": 0,
+      "positive": 4,
+      "zero": 19
+    },
+    "valens": {
+      "negative": 0,
+      "positive": 4,
+      "zero": 10
+    }
+  }
+}
