@@ -1,0 +1,101 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-cases-v6",
+  "cases": [
+    {
+      "case_id": "L1",
+      "route_ids": [
+        "G20",
+        "M09"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If I unexpectedly had that extra amount of money, I would compare several possible uses before deciding what I wanted it to accomplish."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "For planning software I care about offline access and simplicity; I would switch if shared reminders became a regular need, but not for search alone."
+        }
+      ]
+    },
+    {
+      "case_id": "L2",
+      "route_ids": [
+        "G23",
+        "M05"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "At a shared meal I scan the room before deciding what, if anything, needs attention."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If my familiar route suddenly changed roads, I'd first think detour or traffic and check the map rather than assume danger."
+        }
+      ]
+    },
+    {
+      "case_id": "L3",
+      "route_ids": [
+        "M09",
+        "G20",
+        "G19"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "With a new planning app I would try it for a day before deciding whether to switch, but that trial itself does not tell you what factors would make me keep it."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "An extra month of living costs would go into an emergency reserve."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If promised help for a move ran long, whether my friend would be left in a bind before a deadline would matter most; if not, I would protect my planned personal time."
+        }
+      ]
+    },
+    {
+      "case_id": "L4",
+      "route_ids": [
+        "M05",
+        "G23",
+        "M11"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "On a familiar route deviation I'd check the map before deciding what the deviation meant; I haven't said what meaning I'd give it."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "At a shared meal I first notice practical unmet things such as someone waiting for a seat or food."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If a friend said covering all the meal ingredients was too much, I'd ask their budget and either split the cost or simplify the meal."
+        }
+      ]
+    },
+    {
+      "case_id": "L5",
+      "route_ids": [
+        "G20",
+        "G23",
+        "M09"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "With extra money I would think through the options before deciding what I wanted the money to do for me."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "At a shared meal I look around first before deciding what deserves my attention; I haven't said what tends to catch it."
+        }
+      ]
+    }
+  ]
+}
