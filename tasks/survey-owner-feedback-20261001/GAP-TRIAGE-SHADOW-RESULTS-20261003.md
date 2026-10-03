@@ -163,14 +163,18 @@ It still does not establish general non-inferiority; the replay/adjudication gat
 
 ## Synthetic semantic quality checks — 2026-10-03
 
-A separate fully synthetic five-case benchmark then isolated specific clarification behaviors by marking all irrelevant routes already addressed. No participant source was read for these cases.
+A separate fully synthetic targeted benchmark isolated specific clarification behaviors by marking all irrelevant routes already addressed. No participant source was read for these cases.
 
-All five expected outcomes passed with `gpt-5.6-sol` / `xhigh`:
+Seven targeted outcomes were tested with `gpt-5.6-sol` / `xhigh`:
 
-- unresolved `M11` value-exchange distinction → `M11` proposed and independently admitted; ~27.0 s total;
-- a noncanonical synthetic answer that already resolved `M11` → `review_ready`; ~8.0 s;
-- an answered `M11` antecedent with unresolved preferred-use distinction → `PREFER-EXCHANGE` proposed and admitted; ~29.0 s;
-- `PREFER-EXCHANGE` without its required `M11` antecedent → no eligible route and `review_ready`; ~8.0 s;
-- a synthetic answer followed by an explicit correction resolving the exchange preference → `review_ready`; ~6.0 s.
+- unresolved `M11` value-exchange distinction → `M11` proposed and independently admitted; ~27 s;
+- a noncanonical synthetic answer that already resolved `M11` → no admitted clarification; independent admission rejected the proposed repeat as already answered / low-information; ~77 s in the repeat run;
+- an answered `M11` antecedent with genuinely unresolved preferred-use distinction → `PREFER-EXCHANGE` proposed and admitted; ~22 s on the refined rerun;
+- `PREFER-EXCHANGE` without its required `M11` antecedent → no eligible route and `review_ready`; ~8 s;
+- a synthetic answer followed by an explicit correction resolving the exchange preference → `review_ready`; ~8 s;
+- `WORK-RECOVERY` with a `G15` antecedent explicitly reporting no tiredness/depletion → `review_ready`, correctly rejecting the probe's tiredness premise; ~7 s;
+- two independent unresolved self-contained routes (`M05` + `M11`) → both proposed and independently admitted in one batch; ~43 s.
 
-This is not yet a full blind non-inferiority study, but it adds direct semantic checks for true unresolved gaps, semantic redundancy without canonical IDs, antecedent gating, and correction handling. The synthetic benchmark is reproducible from `scripts/benchmark_shadow_synthetic_quality.py` and contains no private source.
+The first `PREFER-EXCHANGE` synthetic wording accidentally implied enough willingness to continue the negotiation that the model judged the probe already answered. The fixture was corrected to leave that preference genuinely unresolved, and the targeted rerun then selected/admitted `PREFER-EXCHANGE`. This is test-fixture repair rather than treating a sensible model decision as failure.
+
+This is not yet a full blind non-inferiority study, but it adds direct semantic checks for true unresolved gaps, semantic redundancy without canonical IDs, antecedent gating, unsupported-premise rejection, correction handling, and multi-question batching. The synthetic benchmark is reproducible from `scripts/benchmark_shadow_synthetic_quality.py` and contains no private source.

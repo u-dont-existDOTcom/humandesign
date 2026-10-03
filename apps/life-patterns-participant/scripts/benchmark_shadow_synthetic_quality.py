@@ -110,8 +110,8 @@ def cases(instrument: dict) -> list[tuple[str, dict, str | None]]:
                         "canonical_question_id": "M11",
                         "question_text": route["M11"]["question"],
                         "answer_text": (
-                            "I would ask what amount feels manageable and change the ingredient "
-                            "split so we can still do the meal."
+                            "I would ask what amount feels manageable and listen to their answer "
+                            "before deciding what to do next."
                         ),
                     }
                 ],
@@ -156,6 +156,40 @@ def cases(instrument: dict) -> list[tuple[str, dict, str | None]]:
             ),
             None,
         ),
+        (
+            "unsupported_work_recovery_premise",
+            state_with_targets(
+                instrument,
+                {"WORK-RECOVERY"},
+                [
+                    {
+                        "canonical_question_id": "G15",
+                        "question_text": route["G15"]["question"],
+                        "answer_text": (
+                            "At the end of that day I would usually still feel energetic, "
+                            "not tired or depleted."
+                        ),
+                    }
+                ],
+            ),
+            None,
+        ),
+        (
+            "independent_batch_m05_m11",
+            state_with_targets(
+                instrument,
+                {"M05", "M11"},
+                [
+                    {
+                        "question_text": "What is one ordinary thing you notice when plans change?",
+                        "answer_text": (
+                            "I first notice whether the change affects what I need to do."
+                        ),
+                    }
+                ],
+            ),
+            "BATCH:M05,M11",
+        ),
     ]
 
 
@@ -176,7 +210,11 @@ def main() -> int:
             row = privacy_safe_case_summary(f"case-{index:04d}", state, result)
             row["label"] = label
             row["expected_selected_route_id"] = expected_route
-            row["expectation_met"] = row["selected_route_id"] == expected_route
+            if isinstance(expected_route, str) and expected_route.startswith("BATCH:"):
+                expected = set(expected_route.removeprefix("BATCH:").split(","))
+                row["expectation_met"] = expected.issubset(set(row["admitted_route_ids"]))
+            else:
+                row["expectation_met"] = row["selected_route_id"] == expected_route
             output.append(row)
             print(json.dumps(row, separators=(",", ":")), flush=True)
         print(

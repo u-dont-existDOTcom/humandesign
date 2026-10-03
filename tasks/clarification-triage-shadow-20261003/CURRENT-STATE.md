@@ -32,7 +32,7 @@ Private owner source is never committed.
 - Legacy successful initial Plan+Admission: ~488.155 s. The hardened shadow is therefore about **2.20xâ€“4.36x faster** on this owner case, with substantial stochastic/output-contract variance still to measure.
 - Both the hardened shadow and the actual legacy review selected **M11** as the first canonical clarification route on this owner case.
 - Focused shadow/action tests: **24 passed** after the current approval probe and triage changes.
-- Five fully synthetic semantic quality cases all met their expected outcomes: true unresolved `M11`, semantically redundant `M11`, antecedent-gated `PREFER-EXCHANGE`, missing-antecedent review-ready, and correction-resolved review-ready.
+- Seven targeted synthetic semantic outcomes now cover true unresolved `M11`, semantically redundant `M11`, antecedent-gated `PREFER-EXCHANGE`, missing-antecedent review-ready, correction-resolved review-ready, unsupported `WORK-RECOVERY` premise rejection, and an independently admitted two-question `M05` + `M11` batch. One initial synthetic wording was repaired because it accidentally answered the distinction it was supposed to leave unresolved.
 
 ## Approval / streaming finding
 
@@ -43,9 +43,9 @@ Do not add per-answer Custom GPT writes yet. First exploit the measured ~2.20xâ€
 ## Open quality gate
 
 Before promotion:
-1. build synthetic/development replay cases for answered gaps, true unresolved gaps, unsupported premises, conditions/corrections, dependent follow-ups and review-ready records;
-2. compare legacy and shadow route/question decisions under blind adjudication;
+1. add at least one genuinely dependent multi-question case where candidate 2 must wait for candidate 1's answer, plus broader development records rather than route-isolated fixtures;
+2. compare legacy and shadow route/question decisions under blind adjudication on that broader development replay set;
 3. require zero admitted redundant questions and no material loss of useful clarifications;
 4. only then move evidence synthesis off the critical path or wire triage into live behavior.
 
-Remote experiment head verified: `e40a685800396adbb3dbb85ceb323f1107f40d04`. Do not merge this experiment merely from the owner-case latency result.
+Remote experiment head verified through the synthetic-quality benchmark commit. Do not merge this experiment merely from the owner-case latency result.
