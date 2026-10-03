@@ -61,7 +61,7 @@
   ],
   "pre_attempt_activation": "PASS",
   "contract_freshness": "CURRENT",
-  "result": "LOCAL_COMPLETE_REMOTE_PUBLICATION_PENDING",
+  "result": "COMPLETE_REMOTE_VERIFIED",
   "verification": {
     "focused_shadow_tests": "14 passed",
     "affected_ruff": "PASS",
@@ -69,6 +69,9 @@
     "participant_suite_without_baseline_failure": "127 passed, 1 deselected",
     "prototype_semantic_benchmark_runs": 2,
     "final_cli_semantic_benchmark_run": false,
-    "live_behavior_changed": false
+    "live_behavior_changed": false,
+    "implementation_commit": "bd2d08d975c4ffde824e16ca15447bc690bb8333",
+    "remote_ref_verified": true,
+    "merged": false
   }
 }

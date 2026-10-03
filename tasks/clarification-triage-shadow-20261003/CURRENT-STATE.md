@@ -3,7 +3,7 @@
 - Task: `experiment-gap-triage-shadow-20261003`
 - Branch: `experiment-gap-triage-shadow-20261003`
 - Parent baseline: `2053e58`
-- Status: local implementation and verification complete; commit/push/ref verification pending
+- Status: complete; implementation commit published and exact remote ref verified
 - Assurance lane: iteration, with privacy/no-live-change hard gates
 - Authority: owner request plus `tasks/survey-owner-feedback-20261001/INDEPENDENT-REVIEW-LATENCY-REDESIGN-20261003.md`
 - Preflight: `python3 scripts/task_preflight.py`
@@ -27,7 +27,8 @@ Add a development-only two-call clarification triage and adversarial admission p
 - Complete participant suite: `127 passed, 1 failed`; the sole failure is a parent-baseline mismatch in `test_action_schema_privacy_and_description_limits` because the committed `getLifePatternsReview` OpenAPI description is 314 characters while the existing cap is 300. This experiment did not change the live schema or that test.
 - Participant suite excluding that proven baseline-only assertion: `127 passed, 1 deselected`.
 - Semantic replay: the concurrent prototype commit preserved two privacy-safe private-source shadow runs (about 70.3 s and 121.4 s) in `tasks/survey-owner-feedback-20261001/GAP-TRIAGE-SHADOW-RESULTS-20261003.md`. The hardened final CLI was not rerun semantically; its dry-run path was exercised by tests. No paid Venice/API inference was used.
-- Remaining task work: commit, push `experiment-gap-triage-shadow-20261003`, and verify the remote ref. Do not merge.
+- Publication: implementation commit `bd2d08d975c4ffde824e16ca15447bc690bb8333` was pushed to `experiment-gap-triage-shadow-20261003`; `git ls-remote` returned that exact hash. No merge was performed.
+- Remaining task work: none within the owner request after this closeout receipt is published. No deployment, activation, or merge is authorized.
 
 ## Suspended competing sources
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "experiment-gap-triage-shadow-20261003",
-  "status": "local_complete_remote_publication_pending",
+  "status": "complete_remote_verified",
   "exclusive": true,
   "requiredBranch": "experiment-gap-triage-shadow-20261003",
   "implementationAuthorized": true,
@@ -29,6 +29,12 @@
     "finalBenchmarkCliSemanticRun": false,
     "dryRunCliExercised": true,
     "liveBehaviorChanged": false
+  },
+  "publication": {
+    "branch": "experiment-gap-triage-shadow-20261003",
+    "implementationCommit": "bd2d08d975c4ffde824e16ca15447bc690bb8333",
+    "remoteRefVerified": true,
+    "merged": false
   },
   "suspendedTaskSources": [
     "hybrid-voice-cost-optimization-20260928 ACTIVE-TASK state at parent commit 2053e58",
