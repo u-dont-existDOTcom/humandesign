@@ -717,6 +717,50 @@ The 1994 book is useful for historical provenance and richer interpretation, but
 
 ---
 
+
+
+## Y. Double-digit policy
+
+Decoz gives separate interpretive meanings for double-digit numbers 10-99.
+
+Rule:
+- keep the reduced root as dominant;
+- preserve the generating double digit as a modifier;
+- write, for example, 25/7 rather than only 7.
+
+Special categories:
+- Master Numbers: 11, 22, 33;
+- Karmic Debt: 13, 14, 16, 19;
+- repeated-digit "Power Numbers": 44, 55, 66, 77, 88, 99, which Decoz explicitly does NOT classify as Master Numbers.
+
+Do not import Cheiro's 10-52 compound meanings into Decoz double-digit interpretation.
+
+## Z. Y and W letter rules
+
+Decoz treats Y as context-dependent:
+- Y is a vowel when it functions/sounds as a vowel or is the only vowel sound in its syllable;
+- otherwise Y is a consonant.
+
+W can have an ambivalent phonetic role but Decoz does **not** assign W vowel status in the core Soul Urge/Personality calculation.
+
+Freeze Y classification from the actual pronunciation/spelling before calculating a name.
+
+## AA. Relationship and compatibility scope
+
+Decoz's current curriculum includes:
+- compatibility among profile/core numbers;
+- compatibility among cycles;
+- monthly relationship forecasts.
+
+A full Decoz relationship analysis therefore cannot be reduced to one shared number or a current-name overlay.
+
+For future relationship experiments, freeze:
+- which core-number pairings are scored;
+- which current cycles are included;
+- whether current-name Minor numbers are included;
+before seeing relationship outcomes.
+
+
 # III. OTHER WESTERN/PYTHAGOREAN LINEAGES
 
 "Western/Pythagorean numerology" is not one standardized method.
@@ -894,13 +938,16 @@ Under DECOZ_CURRENT_V1:
 
 # VII. COMPLETENESS CLAIM
 
-This audit is **source-complete enough for all current project questions** involving:
+This audit is **source-complete enough for the currently active calculation questions** involving:
 - personality;
 - public-name effects;
 - name changes;
-- high-level relationship compatibility;
 - life-event timing;
-- turning-point timing.
+- turning-point timing;
+- Decoz relationship methodology at the framework/inventory level.
+
+Important remaining source gap:
+- Cheiro's core number-harmony rules are fully inventoried, but his detailed zodiacal-period **marriage-partner selection** material lives in *When Were You Born?* and was not available here as a fully searchable primary text. Do not claim a source-complete Cheiro marriage-matching implementation until that book is obtained/audited.
 
 It is NOT a claim that every occult application ever written by either author has been implemented.
 
