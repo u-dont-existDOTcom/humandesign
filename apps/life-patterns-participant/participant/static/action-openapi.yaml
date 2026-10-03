@@ -59,7 +59,7 @@
       "get": {
         "operationId": "getLifePatternsReview",
         "summary": "Check saved review status",
-        "description": "Read the saved review state. While queued or processing, use recommended_check_after_seconds for the next participant check-back. Use the returned interval rather than a fixed wait. Current measured fallback is about 10 minutes for an initial pass and about 3 minutes after a clarification; do not poll repeatedly.",
+        "description": "Read the saved review state. While queued or processing, use recommended_check_after_seconds. Current measured fallback is about 10 minutes initially and about 3 minutes after a clarification; do not poll repeatedly.",
         "security": [
           {
             "bearerAuth": []
@@ -96,7 +96,8 @@
               "pattern": "^R-[a-f0-9]{32}$"
             }
           }
-        ]
+        ],
+        "x-openai-isConsequential": false
       }
     },
     "/api/gpt/reviews/{review_id}/clarifications": {
