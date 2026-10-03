@@ -586,6 +586,15 @@ def test_action_schema_privacy_and_description_limits(tmp_path):
         "submitLifePatternsRecords",
     }
     assert "/api/gpt/reviewed-submissions" in schema["paths"]
+    status_read = schema["paths"]["/api/gpt/reviews/{review_id}"]["get"]
+    assert status_read["x-openai-isConsequential"] is False
+    write_ops = [
+        schema["paths"]["/api/gpt/reviews"]["post"],
+        schema["paths"]["/api/gpt/reviews/{review_id}/clarifications"]["post"],
+        schema["paths"]["/api/gpt/reviews/{review_id}/control"]["post"],
+        schema["paths"]["/api/gpt/reviewed-submissions"]["post"],
+    ]
+    assert all(op["x-openai-isConsequential"] is True for op in write_ops)
     assert all(len(op["description"]) <= 300 and len(op["summary"]) <= 300 for op in operations)
     assert "claim_id" not in json.dumps(schema)
     assert "review_worker_token" not in json.dumps(schema)

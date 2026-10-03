@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "task_id": "experiment-gap-triage-shadow-20261003",
+  "guidance_activation": {
+    "status": "ACTIVE",
+    "source": "u-dont-existDOTcom/universal-dev-architecture",
+    "ref": "main",
+    "commit": "live-main-read-2026-10-03",
+    "route": "owner-supplied project AGENTS.md -> live UDA AGENTS.md -> live LESSON-INDEX.md -> task-relevant patterns and dependency graph"
+  },
+  "assurance_lane": "iteration",
+  "targeted_hard_gates": [
+    "participant privacy",
+    "no live behavior change",
+    "independent admission",
+    "exact-source and frozen-route validation"
+  ],
+  "active_lessons": [
+    {
+      "lesson": "codex-github-operating-system",
+      "trigger": "repository implementation, Git commit, and remote branch publication",
+      "required_behavior": "work only on the named task branch, preserve unrelated state, verify tests and diff, publish and verify the remote ref",
+      "failure_condition": "local-only work, unrelated churn, unverified tests, merge, or wrong remote branch",
+      "enforcement": "mechanical"
+    },
+    {
+      "lesson": "development-assurance-lanes",
+      "trigger": "reversible shadow experiment",
+      "required_behavior": "use focused tests during implementation and the full participant suite at the requested checkpoint without release/deploy ceremony",
+      "failure_condition": "live integration or release claims from an experimental branch",
+      "enforcement": "semantic"
+    },
+    {
+      "lesson": "test-efficiency-and-verification-budget",
+      "trigger": "non-trivial participant software tests",
+      "required_behavior": "route test runs through the canonical observer, use focused tests first, and run the participant suite once at completion",
+      "failure_condition": "redundant unchanged full-suite reruns or unmeasured test commands",
+      "enforcement": "mechanical"
+    },
+    {
+      "lesson": "exclusive-active-task-locks",
+      "trigger": "competing historical task sources in a long-running repository",
+      "required_behavior": "bind this branch to the owner-requested experiment and suspend unrelated task selectors",
+      "failure_condition": "task drift or branch/task preflight mismatch",
+      "enforcement": "mechanical"
+    },
+    {
+      "lesson": "parallel-chat-write-isolation",
+      "trigger": "read-only independent agent review",
+      "required_behavior": "root is the sole writer; reviewer performs no mutations",
+      "failure_condition": "concurrent writes on this branch",
+      "enforcement": "mechanical"
+    },
+    {
+      "lesson": "worker-github-publication-and-recovery",
+      "trigger": "owner requires a pushed experiment branch",
+      "required_behavior": "push the exact commit and verify the remote ref/content before completion",
+      "failure_condition": "LOCAL_COMPLETE_REMOTE_UNPUBLISHED or PUBLISHED_UNVERIFIED",
+      "enforcement": "mechanical"
+    }
+  ],
+  "pre_attempt_activation": "PASS",
+  "contract_freshness": "CURRENT",
+  "result": "PUBLISHED_VERIFIED_QUALITY_GATE_OPEN",
+  "verification": {
+    "focused_shadow_tests": "14 passed",
+    "affected_ruff": "PASS",
+    "participant_suite": "130 passed",
+    "participant_suite_without_baseline_failure": "not applicable; full suite passed",
+    "prototype_semantic_benchmark_runs": 5,
+    "final_cli_semantic_benchmark_run": true,
+    "live_behavior_changed": false,
+    "final_cli_semantic_duration_seconds": 112.023,
+    "legacy_initial_semantic_duration_seconds": 488.155,
+    "owner_case_legacy_first_route_match": "M11",
+    "remote_head_verified": "e40a685800396adbb3dbb85ceb323f1107f40d04",
+    "quality_noninferiority": "OPEN_REPLAY_GATE"
+  }
+}
