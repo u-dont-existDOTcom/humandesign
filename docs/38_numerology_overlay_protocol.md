@@ -6,7 +6,7 @@ Status: experimental symbolic overlay. It is **not** part of the current AstroHD
 
 Test whether conventional Pythagorean numerology contributes reproducible, incremental information beyond the existing astrology and Human Design layers.
 
-Numerology must remain identifiable as its own layer so that a visually compelling retrospective fit cannot silently inflate astrology/HD evidence.
+Numerology must remain identifiable as its own layer during testing so that a visually compelling retrospective fit cannot silently inflate astrology/HD evidence. **This separation is an evaluation requirement, not a permanent architecture commitment.** The intended experiment is explicitly allowed to conclude that astrology is materially more accurate when numerology is incorporated, in which case a later frozen fused model should be built and tested.
 
 ## Source convention
 
@@ -115,7 +115,7 @@ For future predictions, freeze the numerology windows before the outcome occurs 
 
 ## Combined AstroHD + numerology model
 
-Numerology is initially an **overlay**, not another free point in a stacked score.
+Numerology is initially an **overlay**, not another free point in a stacked score. The overlay phase exists to measure what numerology contributes. If it supplies repeatable information that repairs astrology's misses or materially improves discrimination, the intended next step is to **fuse the systems into one model** rather than keep them artificially separate.
 
 The first combined evaluation must report:
 
@@ -125,7 +125,7 @@ The first combined evaluation must report:
 4. existing AstroHD combination;
 5. AstroHD + numerology.
 
-A combined score may be promoted only if numerology adds incremental out-of-sample discrimination over the same baseline on new people/events/couples.
+A combined score may be promoted when numerology adds useful incremental discrimination over astrology/HD on development data and that gain survives testing on new people/events/couples. Candidate fusion models may be fitted on declared DEVELOPMENT cases; they must be labeled development rather than blocked until out-of-sample proof exists. Out-of-sample performance determines whether the fusion is validated/generalizable, not whether it may be explored.
 
 Do not award extra evidence merely because multiple symbolic systems can be interpreted to describe the same known event. Their feature families, fitting exposure, and mathematical dependencies must be explicit.
 
