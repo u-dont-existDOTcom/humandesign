@@ -56,7 +56,9 @@ def test_delivery_rules_are_in_the_shipped_instruction_chain():
     text = GUIDE.read_text()
     assert "ACTION-HANDOFF-GUIDE-v1.md" in instruction
     assert "backup and real file link FIRST" in instruction
-    assert "Please click accept on this tool call to submit your results for analysis." in text
+    assert "Please click Allow on this tool call to continue." in text
+    assert text.count("Please click Allow on this tool call to continue.") == 1
+    assert instruction.count("Please click Allow on this tool call to continue.") == 0
     assert "life-patterns-review-handoff.json" in text
     assert "life-patterns-review-receipt.json" in text
     assert "idempotent replay" in text
@@ -65,6 +67,9 @@ def test_delivery_rules_are_in_the_shipped_instruction_chain():
     assert "life-patterns-action-error.json" in text
     assert "not a percentage of 79 routes or 73 facets" in text
     assert "not a guarantee" in text
+    assert "about 15 minutes" in text
+    assert "recommended_check_after_seconds" in text
+    assert "send any message" in text
 
 
 def test_owner_update_checkpoint_rules_are_present():

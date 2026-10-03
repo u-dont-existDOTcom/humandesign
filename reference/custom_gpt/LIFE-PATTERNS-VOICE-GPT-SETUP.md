@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-02.3-review-context-recovery. Development collection surface.
+Version: 2026-10-03.1-review-wait-ux. Development collection surface.
 
 ## Purpose
 
@@ -34,9 +34,9 @@ The deployable instruction block is below 8,000 characters on the repository's c
 2. For a new interview, tap **Start my Life Patterns interview.** The GPT gives the consent/privacy/mode framing and begins after the participant answers those setup questions.
 3. For an existing interview, use one of three safe paths: (a) tap **Find my Life Patterns record in my Library and continue** to explicitly authorize a narrow Library search for canonical Life Patterns schemas only; (b) on ChatGPT web reopen the old interview, type `@`, select **Life Patterns Interview**, and say **Continue my interview**; or (c) explicitly attach/add the prior response record in a new GPT chat. A generic continue request must not search Library, Memory, prior chats, connected apps, or other account-level sources.
 4. Do not provide birth date/time/place or chart information.
-5. Before the first Action, explain that ChatGPT will show permission cards for the Life Patterns Railway service and that **Allow once** authorizes that specific external step. Several cards may appear during a complete run because queue/check/clarification/final submission are separate calls.
+5. Before each Action that can show a permission card, say exactly once: **“Please click Allow on this tool call to continue.”** The UI may label the button **Allow once**. Never print that sentence twice for one tool call.
 6. When the interview appears naturally saturated, **do not freeze yet**. Build the unfrozen v2 candidate plus the durable review handoff envelope, then call `startLifePatternsReview`. Preserve the request ID before the call and the returned review ID afterward. If a later chat turn loses the review ID, replay the exact saved request envelope so the idempotent server returns the same review instead of creating a duplicate.
-7. `queued`/`processing`: wait and check later. `clarification_needed`: ask the returned question exactly, preserve its route ID, send the exact answer with `submitLifePatternsClarification`, then check later. `ready`: proceed to the neutral participant review. `error`: preserve the candidate and report the error without freezing.
+7. `queued`/`processing`: use `recommended_check_after_seconds`; otherwise tell the participant to allow about **15 minutes**. They may leave the chat, and when they return any ordinary continuation message means check this saved review automatically. `clarification_needed`: ask the returned question exactly, preserve its route ID, send the exact answer with `submitLifePatternsClarification`, then give the next returned check-back interval (about 15 minutes if absent). `ready`: proceed to the neutral participant review. `error`: preserve the candidate and report the error without freezing.
 8. After Railway is ready, show the neutral review. A material participant correction creates a new turn and requires a **new independent review** before freeze. With no material correction, freeze `life-patterns-participant-export.json`.
 9. Then ask all three CF-003 secondary questions and freeze `life-patterns-cf003-secondary-v0.json` separately. None of it alters the primary record or score.
 10. Call `submitLifePatternsRecords` once with the ready review ID plus both exact frozen records. On success show the submission ID; on Action failure fall back to both JSON records for manual delivery.
@@ -78,3 +78,12 @@ Before queueing, create both `life-patterns-candidate-backup.json` and `life-pat
 ## Owner hotfix 2026-10-02.3 — large recovered-record review
 
 A `resource_limited / model_context_budget_exceeded` result is an execution limit, not a completed independent review. The Railway admission context now source-preservingly compacts planner-only redundancy while retaining every exact imported source turn, evidence item, addressed-route binding, and any proposed next question. The same existing review can be retried after deployment; do not create a replacement review ID.
+
+
+## Owner hotfix 2026-10-03.1 — review wait UX
+
+The approval prompt is now exactly **“Please click Allow on this tool call to continue.”** and may appear only once per Action call.
+
+The review API returns `recommended_check_after_seconds`. New review passes use a 15-minute check-back target based on observed pilot runtimes; if a pass is still processing after that, the service recommends a shorter follow-up interval. This is a check-back estimate, not a promise of completion.
+
+Custom GPTs cannot proactively notify the participant when an asynchronous review finishes. While a known review is pending, “continue,” “check,” “I'm back,” or another ordinary continuation message should automatically check that saved review. After a clarification answer is submitted, say explicitly that a **new independent pass** is running and can again take about 15 minutes; never imply another clarification will appear in seconds.

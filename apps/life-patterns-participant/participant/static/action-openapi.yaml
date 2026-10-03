@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Life Patterns Independent Review Pilot",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "description": "Asynchronous independent review and exact-source submission for the development pilot."
   },
   "servers": [
@@ -15,7 +15,7 @@
       "post": {
         "operationId": "startLifePatternsReview",
         "summary": "Queue independent review before primary freeze",
-        "description": "Send the exact unfrozen candidate after interview saturation, before final review or CF-003. Preserve the returned private review ID. Queuing returns immediately; the review continues outside this Action.",
+        "description": "Send the exact unfrozen candidate after interview saturation, before final review or CF-003. Preserve the returned private review ID. Queuing returns immediately; use recommended_check_after_seconds to tell the participant when to return rather than inviting repeated polling.",
         "security": [
           {
             "bearerAuth": []
@@ -59,7 +59,7 @@
       "get": {
         "operationId": "getLifePatternsReview",
         "summary": "Check saved review status",
-        "description": "Check only a private review ID from this conversation. Ask any returned clarification exactly. When ready, use the independently admitted review_summary. Pending work requires returning later; do not poll repeatedly.",
+        "description": "Read the saved review state. While queued or processing, use recommended_check_after_seconds for the next participant check-back. A normal pilot review often needs about 10–15 minutes and can take longer; do not poll repeatedly.",
         "security": [
           {
             "bearerAuth": []
@@ -103,7 +103,7 @@
       "post": {
         "operationId": "submitLifePatternsClarification",
         "summary": "Save an exact clarification answer or explicit skip",
-        "description": "Send the answer with the exact clarification_id issued by the review. Reuse operation_id and body for a retry. Set skipped only for an explicit participant skip. This saves the response and queues the next check.",
+        "description": "Send the answer with the exact clarification_id issued by the review. Reuse operation_id and body for a retry. Set skipped only for an explicit participant skip. This saves the response and queues a new independent pass; use recommended_check_after_seconds to tell the participant when to return.",
         "security": [
           {
             "bearerAuth": []
@@ -592,6 +592,11 @@
           },
           "source_review_status": {
             "type": "string"
+          },
+          "recommended_check_after_seconds": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Suggested seconds before the participant checks this same saved review again. Zero means no waiting is recommended because the current state needs participant or final handling."
           }
         },
         "required": [
@@ -600,6 +605,7 @@
           "status",
           "round",
           "duplicate",
+          "recommended_check_after_seconds",
           "clarification",
           "error",
           "review_summary",

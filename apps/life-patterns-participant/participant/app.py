@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 import secrets
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Literal
@@ -376,12 +377,28 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
     def review_public(payload):
         clarification = payload.get("pending_clarification")
+        status = payload["status"]
+        recommended_check_after_seconds = 0
+        if status in {"queued", "processing"}:
+            cycle_started = float(
+                payload.get("cycle_queued_at_unix")
+                or payload.get("created_at_unix")
+                or payload.get("updated_at_unix")
+                or time.time()
+            )
+            age = max(0, time.time() - cycle_started)
+            # Current pilot reviews commonly take ~10–15 minutes. Give one useful
+            # check-back interval rather than inviting repeated manual polling.
+            recommended_check_after_seconds = (
+                max(60, int(900 - age)) if age < 900 else 300
+            )
         return {
             "schema": "life-patterns-gpt-review-status-v1",
             "review_id": payload["review_id"],
-            "status": payload["status"],
+            "status": status,
             "round": payload.get("round", 0),
             "duplicate": bool(payload.get("duplicate", False)),
+            "recommended_check_after_seconds": recommended_check_after_seconds,
             "clarification": clarification
             if payload.get("status") == "clarification_needed"
             else None,
