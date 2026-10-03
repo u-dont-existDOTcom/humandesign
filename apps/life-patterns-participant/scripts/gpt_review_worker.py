@@ -464,6 +464,19 @@ def run_review(
                 pending_answer or "",
             )
 
+            def finalize_after_clarification(saved):
+                # The initial independent pass already reviewed the complete imported
+                # source and admitted this one clarification as the highest-value gap.
+                # After the participant answers (or skips), finalize from that saved
+                # reviewed state instead of opening another clarification loop. This
+                # also keeps the delta pass compact: prior admitted evidence and its
+                # exact source remain available, but the full import need not be sent
+                # to the model again merely for nonredundancy.
+                saved["review_only"] = True
+                saved["review_finalization_after_clarification"] = True
+
+            current = store.change(token, finalize_after_clarification)
+
         before_calls = len(current.get("calls", []))
         for _ in range(2):
             current = engine.advance(token)

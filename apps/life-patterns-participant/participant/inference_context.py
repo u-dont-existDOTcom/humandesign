@@ -343,11 +343,14 @@ def make_context(
         guides = guide_cards(instrument)
     else:
         source_turns = relevant_turns(state, instrument, route_ids, pending_ids)
-        historical_import_recheck = any(
-            str(turn.get("turn_source", "")).startswith("import-")
-            and not turn.get("quarantined")
-            and turn.get("turn_role", "behavioral") == "behavioral"
-            for turn in state.get("turns", [])
+        historical_import_recheck = (
+            not state.get("review_finalization_after_clarification")
+            and any(
+                str(turn.get("turn_source", "")).startswith("import-")
+                and not turn.get("quarantined")
+                and turn.get("turn_role", "behavioral") == "behavioral"
+                for turn in state.get("turns", [])
+            )
         )
         if historical_import_recheck:
             existing_source_ids = {turn["turn_id"] for turn in source_turns}
@@ -411,6 +414,9 @@ def make_context(
         "import_bulk_review": bulk_import,
         "historical_import_recheck": (
             False if bulk_import else historical_import_recheck
+        ),
+        "review_finalization_after_clarification": bool(
+            state.get("review_finalization_after_clarification")
         ),
         "review_only": bool(state.get("review_only") or state.get("review", {}).get("shown_at")),
         "existing_evidence": compact_existing_evidence(state),
@@ -653,6 +659,9 @@ def make_review_context(
         ),
         "pending_turn_ids": planner_context.get("pending_turn_ids", []),
         "review_only": bool(state.get("review_only") or state.get("review", {}).get("shown_at")),
+        "review_finalization_after_clarification": bool(
+            state.get("review_finalization_after_clarification")
+        ),
         "import_bulk_review": bulk_import,
         "proposed_plan": admission_plan,
         "bulk_admission_projection": bulk_projection,

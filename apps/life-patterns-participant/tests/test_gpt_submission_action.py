@@ -569,6 +569,8 @@ def test_local_worker_reuses_existing_engine_with_fake_model():
     assert status == "ready"
     assert clarification2 is None
     assert next_state["phase"] == "review"
+    assert next_state["review_only"] is True
+    assert next_state["review_finalization_after_clarification"] is True
     assert second_fake.count == 2
 
 
