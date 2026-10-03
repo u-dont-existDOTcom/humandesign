@@ -214,15 +214,17 @@ Routing:
 - candidate_evidence_guide is the only facet vocabulary available for this call.
 
 For ordinary new turns, disposition every pending turn and emit only new source-quoted evidence involving
-those turns. For import_bulk_review, inspect ALL supplied imported turns once, set source_review_complete=true,
-emit only material scoped evidence needed for routing/review, and leave other source unassessed rather than
-manufacturing one evidence item per answer. Also populate addressed_routes only when exact imported source
-already answers a candidate route's neutral distinction well enough that asking that canonical route would be
-redundant; list the exact source turn IDs that support that judgment. Do not mark a route addressed from topic
-similarity alone. If deferred_non_import_turn_ids is nonempty, action=process after the complete bulk review so
-those newer turns are handled before selecting a question. Otherwise a complete bulk review must ask a useful
-next question, move to neutral review, or honor a real participant control request; never action=process merely
-to create more import batches.
+those turns. If historical_import_recheck=true, the complete recovered import is supplied again only to prevent
+redundant follow-ups and dropped conditions; do not recode old imported turns as new evidence.
+For import_bulk_review, inspect ALL supplied imported turns once, set source_review_complete=true, emit only
+material narrowly scoped evidence needed for routing/review, and leave other source unassessed rather than
+manufacturing one evidence item per answer. Populate addressed_routes only when exact imported source answers
+a candidate route's neutral distinction well enough that asking it would be redundant; list only the exact
+source turn IDs that support that judgment. Do not mark a route addressed from topic similarity alone.
+If deferred_non_import_turn_ids is nonempty, action=process after the complete bulk review so those newer turns
+are handled before selecting a question. Otherwise a complete bulk review must ask a useful next question,
+move to neutral review, or honor a real participant control request; never action=process merely to create more
+import batches.
 
 Pause/stop require an actual current participant process request. Hold is only for target/birth/chart
 contamination and must not create behavioral evidence. On review_only, do not reopen behavioral questioning.
@@ -238,20 +240,23 @@ premise sufficiency, construct discrimination, nonredundancy, construct alignmen
 and expected information gain. If any fails, reject it. A dependent route also needs the exact
 answer-type antecedent it names; an empty coverage field or nearby topic is not enough.
 
-Approve only if:
-- each quote is exact and each observation keeps actual scope, conditions, temporal change, polarity,
-  relationship context and uncertainty without adding motive/backstory/history;
-- question/editor premises, process complaints and absence of mention are not laundered into personality facts;
-- candidate facets and route IDs are limited to what was supplied for this call;
-- the proposed question passes every compact global admission check above plus its selected route's
-  route-specific admission/interpretation limits;
-- unknown remains unknown, no coverage quota is imposed, and participant corrections are rechecked rather than
-  automatically conceded or defended.
+Evaluate the proposal in separable parts rather than failing a good next question because some optional
+evidence or route-address bookkeeping is overbroad.
+- For every proposed evidence item, include its evidence_id in approved_evidence_ids only when its quote is
+  exact and its observation keeps actual scope, conditions, temporal change, polarity, relationship context
+  and uncertainty without adding motive/backstory/history. Omit unsupported evidence IDs.
+- For every proposed addressed route, include its route_id in approved_addressed_route_ids only when the cited
+  source turns actually answer that route's neutral distinction. Omit topic-only or overbroad mappings.
+- approved, context_supported, no_redundant_question and no_unsupported_extension judge the proposed next
+  question/control/action AFTER unapproved evidence and addressed-route items are dropped. Do not set those
+  overall gates false merely because an optional item is omitted from an approved-ID list.
+- question/editor premises, process complaints and absence of mention are not personality facts; candidate
+  facets and route IDs must be limited to what was supplied; unknown remains unknown; corrections are rechecked.
 
 For import_bulk_review, bulk_source_review_supported=true only if the proposal demonstrably considered the
 complete supplied import and its next question/review is not already answered or contradicted anywhere in it.
-Set addressed_routes_supported=true only if every proposed addressed route is actually answered by the cited
-source turns at that route's neutral scope; reject topic-only or overbroad route-address claims.
+Set addressed_routes_supported=true only when every proposed addressed route appears in
+approved_addressed_route_ids; partial approval is allowed and the engine will retain only the approved subset.
 For pause/stop, verify the cited current answer is a request about the interview. For hold, independently verify
 target information in the cited source; hold must emit no behavioral evidence. Return only admission JSON.
 """
@@ -716,7 +721,12 @@ class Engine:
         # Cost guard: this should only be reachable if the compact-context builder
         # regresses or a source record is exceptionally large. It prevents silent
         # return to six-figure repeated prompts.
-        max_context_chars = 110_000 if bulk_import_review or context.get("review_only") else 35_000
+        large_source_context = bool(
+            bulk_import_review
+            or context.get("review_only")
+            or context.get("historical_import_recheck")
+        )
+        max_context_chars = 110_000 if large_source_context else 35_000
         if context_chars > max_context_chars:
 
             def over_budget(current):
@@ -793,7 +803,7 @@ class Engine:
 
         def invoke(system, payload, schema, *, max_completion_tokens: int):
             payload_chars = serialized_chars(payload)
-            payload_limit = 110_000 if bulk_import_review or context.get("review_only") else 35_000
+            payload_limit = 110_000 if large_source_context else 35_000
             if payload_chars > payload_limit:
                 raise ProviderError("model_context_budget_exceeded")
             request_chars = len(system) + payload_chars + len(canonical(schema.model_json_schema()))
@@ -980,6 +990,45 @@ class Engine:
                         max_completion_tokens=25000,
                     )
                     telemetry.append(call)
+                    proposed_evidence_ids = {item.evidence_id for item in candidate.evidence}
+                    proposed_addressed_ids = {
+                        item.route_id for item in candidate.addressed_routes
+                    }
+                    approved_evidence_ids = set(admission.approved_evidence_ids)
+                    approved_addressed_ids = set(admission.approved_addressed_route_ids)
+                    if not approved_evidence_ids.issubset(proposed_evidence_ids):
+                        raise ValueError(
+                            "Independent admission returned an unknown evidence identifier."
+                        )
+                    if not approved_addressed_ids.issubset(proposed_addressed_ids):
+                        raise ValueError(
+                            "Independent admission returned an unknown addressed-route identifier."
+                        )
+                    telemetry.append(
+                        {
+                            "provider": "deterministic",
+                            "stage": "item_admission",
+                            "proposed_evidence_count": len(proposed_evidence_ids),
+                            "approved_evidence_count": len(approved_evidence_ids),
+                            "proposed_addressed_route_count": len(proposed_addressed_ids),
+                            "approved_addressed_route_count": len(approved_addressed_ids),
+                            "at": utc(),
+                        }
+                    )
+                    candidate = candidate.model_copy(
+                        update={
+                            "evidence": [
+                                item
+                                for item in candidate.evidence
+                                if item.evidence_id in approved_evidence_ids
+                            ],
+                            "addressed_routes": [
+                                item
+                                for item in candidate.addressed_routes
+                                if item.route_id in approved_addressed_ids
+                            ],
+                        }
+                    )
                     if not all(
                         (
                             admission.approved,
@@ -1009,7 +1058,7 @@ class Engine:
                         )
                         raise ValueError(
                             "; ".join(admission.errors)
-                            or "Independent admission did not approve the plan."
+                            or "Independent admission did not approve the plan action."
                         )
                     if (
                         candidate.action in {"stop", "pause"}
@@ -1026,13 +1075,10 @@ class Engine:
                         raise ValueError(
                             "Independent admission did not confirm review of the complete imported source set."
                         )
-                    if (
-                        bulk_import_review
-                        and candidate.addressed_routes
-                        and not admission.addressed_routes_supported
-                    ):
+                    if bulk_import_review and not candidate.evidence:
                         raise ValueError(
-                            "Independent admission did not confirm the bulk addressed-route mappings."
+                            "Independent admission retained no source-grounded evidence "
+                            "from the recovered import."
                         )
                     plan = candidate
                     break

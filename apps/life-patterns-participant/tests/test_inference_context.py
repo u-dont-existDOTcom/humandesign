@@ -55,7 +55,7 @@ def test_bulk_import_context_has_hard_compact_budget():
     assert request_chars < 110_000
 
 
-def test_post_import_clarification_does_not_resend_full_import():
+def test_post_import_clarification_rechecks_full_import_for_nonredundancy():
     instrument = authority()
     state = imported_state()
     fake = Fake()
@@ -97,9 +97,13 @@ def test_post_import_clarification_does_not_resend_full_import():
     context = make_context(state, instrument, ["clarification-1"], bulk_import=False)
     context["additional_pending_batches"] = False
     assert len(context["candidate_routes"]) <= MAX_ROUTE_SHORTLIST
-    assert len(context["turns"]) <= 5
-    assert not any(turn["turn_id"] == "import-0001" for turn in context["turns"])
-    assert serialized_chars(context) < 20_000
+    assert context["historical_import_recheck"] is True
+    assert {turn["turn_id"] for turn in context["turns"]} >= {
+        "import-0001",
+        "import-0096",
+        "clarification-1",
+    }
+    assert serialized_chars(context) < 110_000
 
     pending_guides = {
         route for item in context["candidate_evidence_guide"] for route in item["question_routes"]
@@ -116,7 +120,13 @@ def test_post_import_clarification_does_not_resend_full_import():
         state, instrument, context, ordinary_plan.model_dump(), bulk_import=False
     )
     assert "candidate_routes" not in reviewer
-    assert serialized_chars(reviewer) < 12_000
+    assert reviewer["source_scope"] == "authoritative_server_source_including_recovered_import"
+    assert {turn["turn_id"] for turn in reviewer["turns"]} >= {
+        "import-0001",
+        "import-0096",
+        "clarification-1",
+    }
+    assert serialized_chars(reviewer) < 110_000
 
     pair_chars = (
         len(PLANNER)
@@ -126,7 +136,7 @@ def test_post_import_clarification_does_not_resend_full_import():
         + serialized_chars(reviewer)
         + len(canonical(Admission.model_json_schema()))
     )
-    assert pair_chars < 32_000
+    assert pair_chars < 220_000
 
 
 def test_route_shortlist_is_deterministic_and_dependency_bound():

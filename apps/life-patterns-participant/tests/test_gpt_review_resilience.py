@@ -307,7 +307,84 @@ def test_error_retry_preserves_the_last_successful_worker_state(tmp_path):
         json={"action": "retry", "operation_id": secrets.token_hex(16)},
     )
     assert retry.status_code == 200
-    assert claim_review(c, s.review_worker_token).json()["worker_state"] == old_state
+    reclaimed = claim_review(c, s.review_worker_token).json()["worker_state"]
+    assert reclaimed["phase"] == old_state["phase"]
+    assert reclaimed["calls"] == old_state["calls"]
+    assert reclaimed["model_call_budget_baseline"] == 1
+    assert reclaimed["model_call_budget_epoch"] == 1
+
+
+def test_repaired_semantic_error_retry_starts_new_budget_epoch(tmp_path):
+    s, _, _, c = setup_submission(tmp_path)
+    rid = start_review(c, s.submission_token, candidate_record()).json()["review_id"]
+    job = claim_review(c, s.review_worker_token).json()
+    limited_state = {
+        "phase": "resource_limited",
+        "error": "model_context_budget_exceeded",
+        "stop_reason": "operator_context_compaction_required",
+        "lease": None,
+        "processing": None,
+        "gpt_review_answers_processed": 0,
+        "calls": [
+            {
+                "stage": "Plan" if index % 2 == 0 else "Admission",
+                "provider": "synthetic",
+            }
+            for index in range(12)
+        ],
+    }
+    assert (
+        worker_result(
+            c,
+            s.review_worker_token,
+            rid,
+            job["candidate_sha256"],
+            "resource_limited",
+            worker_state=limited_state,
+            error="model_context_budget_exceeded",
+        ).status_code
+        == 200
+    )
+    first_retry = c.post(
+        f"/api/gpt/reviews/{rid}/control",
+        headers=auth(s.submission_token),
+        json={"action": "retry", "operation_id": secrets.token_hex(16)},
+    )
+    assert first_retry.status_code == 200
+    reclaimed_job = claim_review(c, s.review_worker_token).json()
+    assert reclaimed_job["worker_state"]["model_call_budget_baseline"] == 12
+    assert reclaimed_job["worker_state"]["model_call_budget_epoch"] == 1
+
+    errored_state = dict(reclaimed_job["worker_state"])
+    errored_state["calls"] = list(errored_state["calls"]) + [
+        {"stage": "Plan", "provider": "synthetic"},
+        {"stage": "Admission", "provider": "synthetic"},
+        {"stage": "Plan", "provider": "synthetic"},
+        {"stage": "Admission", "provider": "synthetic"},
+    ]
+    assert (
+        worker_result(
+            c,
+            s.review_worker_token,
+            rid,
+            reclaimed_job["candidate_sha256"],
+            "error",
+            worker_state=errored_state,
+            error="question_or_evidence_admission_not_resolved",
+        ).status_code
+        == 200
+    )
+    second_retry = c.post(
+        f"/api/gpt/reviews/{rid}/control",
+        headers=auth(s.submission_token),
+        json={"action": "retry", "operation_id": secrets.token_hex(16)},
+    )
+    assert second_retry.status_code == 200
+    second_job = claim_review(c, s.review_worker_token).json()
+    assert second_job["worker_state"]["model_call_budget_baseline"] == 16
+    assert second_job["worker_state"]["model_call_budget_epoch"] == 2
+    worker = load_worker_module()
+    assert worker.Engine._budgeted_model_call_count(second_job["worker_state"]) == 0
 
 
 def test_permanent_oversize_result_becomes_an_error_without_blocking_outbox(tmp_path, monkeypatch):
@@ -423,6 +500,7 @@ def test_large_bulk_repair_attempt_keeps_rejected_plan_context_bounded():
             if schema is Admission:
                 self.admissions += 1
                 approved = self.admissions > 1
+                proposed = payload.get("proposed_plan") or {}
                 return Admission(
                     approved=approved,
                     errors=[] if approved else ["Synthetic independent rejection."],
@@ -432,6 +510,12 @@ def test_large_bulk_repair_attempt_keeps_rejected_plan_context_bounded():
                     control_is_participant_request=False,
                     bulk_source_review_supported=True,
                     addressed_routes_supported=True,
+                    approved_evidence_ids=[
+                        item["evidence_id"] for item in proposed.get("evidence", [])
+                    ],
+                    approved_addressed_route_ids=[
+                        item["route_id"] for item in proposed.get("addressed_routes", [])
+                    ],
                 ), {"stage": "Admission"}
 
             self.plan_context_chars.append(
