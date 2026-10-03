@@ -77,3 +77,7 @@ The fast shadow triage already returns up to three clarification candidates that
 This preserves information-based stopping while reducing both remote wait cycles and approval cards. It should be evaluated before making any participant-data POST nonconsequential.
 
 The owner-pilot shadow result strengthens the case: the baseline triage consistently found `M05` and `M11`, while the independent auditor consistently flagged `M09` as an additional material missed route. Those are precisely the kinds of independent gaps that should be gathered in one remote pass instead of forcing three separate 1–3 minute round trips.
+
+## Shadow schema probe
+
+The experimental branch now sets `x-openai-isConsequential: false` **explicitly only on `getLifePatternsReview`**, the authenticated read-only status GET. All participant-data/mutation POSTs remain explicitly `true`. This does not change production yet; it exists so the next private GPT schema test can verify whether the current ChatGPT UI offers **Always allow** for status reads on the owner's account.
