@@ -132,3 +132,31 @@ The same xhigh model/source class now has three useful points:
 - hardened lean shadow: ~112 s, triage ~3,895 completion tokens.
 
 The direction is consistent: preserving complete source and xhigh reasoning while shrinking the **required output contract** materially reduces participant-facing latency. The remaining optimization target is question-selection quality, not weaker reasoning.
+
+## Hardened final-contract semantic replication — later 2026-10-03
+
+The final privacy-hardened benchmark CLI was then run semantically on the same private 81-turn owner source. This closes the earlier provenance gap where only the prototype/lean variants had semantic timing.
+
+Privacy-safe result:
+
+- complete behavioral source turns: 81
+- eligible routes: 69
+- triage context: 105,479 chars
+- admission context: 39,982 chars
+- triage proposed routes: `G15`, `M11`, `M09`
+- independent admission retained only: `M11`
+- triage rejection counts across the candidate review: 2 `already_answered`, 2 `low_information_gain`
+- GapTriage: 177.302 s, 30,904 prompt tokens, 7,113 completion tokens
+- GapAdmission: 45.012 s, 17,278 prompt tokens, 1,605 completion tokens
+- total semantic wall time: 222.314 s (~3m42s)
+
+This final hardened contract is slower than the lean prototype but still ~2.20x faster than the ~488 s legacy initial Plan+Admission, with the same `gpt-5.6-sol` / `xhigh` reasoning configuration and complete source retained.
+
+A privacy-safe read of the actual legacy review establishes that its first clarification was canonical route `M11`; the hardened final shadow also selected `M11`. The live review then used an `M11` missing-piece follow-up and later a different canonical route, which is evidence against an arbitrary one-question cap: later clarification can be semantically distinct even when tied to the same route family.
+
+The benchmark therefore now supports two separate claims:
+
+1. clarification triage can be materially faster than full evidence synthesis without truncating source or lowering reasoning effort;
+2. output/schema hardening itself has latency cost, so the next experiment should optimize the hardened contract rather than rely on the fastest prototype number.
+
+It still does not establish general non-inferiority; the replay/adjudication gate remains required before any live replacement.

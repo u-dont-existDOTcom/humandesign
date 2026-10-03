@@ -27,16 +27,17 @@ Private owner source is never committed.
 - Prototype baseline repeats: ~70.3 s and ~121.4 s.
 - Three planted semantic-redundancy variants: ~97.4–149.8 s; each planted equivalent answer suppressed its intended route despite no canonical route ID.
 - Earlier hardened verbose contract: ~222.3 s.
-- Current hardened lean contract: **112.023 s** total (GapTriage 72.012 s + GapAdmission 40.011 s), with complete 81-turn source, xhigh reasoning and no source truncation.
-- Legacy successful initial Plan+Admission: ~488.155 s. Lean shadow is about **4.36x faster**.
-- The lean shadow's selected route was **M11**, matching the actual legacy review's first canonical clarification route on this owner case.
-- Focused lean shadow tests: **14 passed**.
+- Hardened lean replay: **112.023 s** total (GapTriage 72.012 s + GapAdmission 40.011 s).
+- A later semantic run of the final privacy-hardened benchmark contract took **222.314 s** (177.302 s + 45.012 s). Both retained all 81 behavioral source turns and xhigh reasoning.
+- Legacy successful initial Plan+Admission: ~488.155 s. The hardened shadow is therefore about **2.20x–4.36x faster** on this owner case, with substantial stochastic/output-contract variance still to measure.
+- Both the hardened shadow and the actual legacy review selected **M11** as the first canonical clarification route on this owner case.
+- Focused shadow tests: **14 passed**.
 
 ## Approval / streaming finding
 
 Current official OpenAI app-permission documentation confirms that eligible connected apps/accounts may offer **Always allow** or **Allow low-risk actions**, but current GPT Actions help does not restate the old consequential-flag guarantee. Historical Actions documentation said `x-openai-isConsequential: false` exposes **Always allow**. The experimental schema therefore marks **only the read-only review-status GET** explicitly nonconsequential for a private UI probe. All participant-data or state-changing POSTs remain consequential.
 
-Do not add per-answer Custom GPT writes yet. First exploit the ~4.36x triage speedup and clarification batching. If persistent permission is verified privately, a separate append-only encrypted checkpoint endpoint becomes a reasonable Custom-GPT experiment; the plugin remains the better long-term place for batched/incremental ingestion.
+Do not add per-answer Custom GPT writes yet. First exploit the measured ~2.20x–4.36x triage speedup and clarification batching. If persistent permission is verified privately, a separate append-only encrypted checkpoint endpoint becomes a reasonable Custom-GPT experiment; the plugin remains the better long-term place for batched/incremental ingestion.
 
 ## Open quality gate
 
