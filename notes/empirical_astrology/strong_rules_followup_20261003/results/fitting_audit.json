@@ -1,0 +1,50 @@
+{
+  "original": {
+    "fixed_depth4_cv": {
+      "auc": 0.513607971445568,
+      "balanced_accuracy": 0.5223577235772358
+    },
+    "repetitions": [
+      {
+        "auc": 0.530264723378941,
+        "balanced_accuracy": 0.5487804878048781
+      },
+      {
+        "auc": 0.5275133848899465,
+        "balanced_accuracy": 0.5121951219512195
+      },
+      {
+        "auc": 0.4830458060678168,
+        "balanced_accuracy": 0.5060975609756098
+      }
+    ],
+    "random_label_depth4_apparent_accuracy_mean": 0.7324390243902437,
+    "random_label_depth4_apparent_accuracy_min": 0.6158536585365854,
+    "random_label_depth4_apparent_accuracy_max": 0.8414634146341463,
+    "null_draws": 100
+  },
+  "exact_year": {
+    "fixed_depth4_cv": {
+      "auc": 0.44835319748814556,
+      "balanced_accuracy": 0.45098039215686275
+    },
+    "repetitions": [
+      {
+        "auc": 0.44809688581314877,
+        "balanced_accuracy": 0.4411764705882353
+      },
+      {
+        "auc": 0.5005767012687428,
+        "balanced_accuracy": 0.5098039215686274
+      },
+      {
+        "auc": 0.39638600538254515,
+        "balanced_accuracy": 0.4019607843137255
+      }
+    ],
+    "random_label_depth4_apparent_accuracy_mean": 0.7874509803921569,
+    "random_label_depth4_apparent_accuracy_min": 0.6666666666666666,
+    "random_label_depth4_apparent_accuracy_max": 0.9117647058823529,
+    "null_draws": 100
+  }
+}

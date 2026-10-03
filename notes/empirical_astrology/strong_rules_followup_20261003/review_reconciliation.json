@@ -1,0 +1,15 @@
+{
+  "source_code_sha256": "ce7c201de8173ecfce251f83ee35fd354a263eb9be774922d605ca51cf609c74",
+  "input_sha256": "c00416b688c70c5cc133690341ce7695006c5563e01d7b92a1239203e916cf11",
+  "code_input_hash_check": "PASS",
+  "full_date_format_check": "PASS",
+  "offender_sex_enum_check": "PASS",
+  "reviewer_dispositions": {
+    "pooled_auc": "Retained as descriptive only; main findings use held-out balanced accuracy. No cross-model pooled-AUC significance or confidence interval claimed.",
+    "depth4_shuffled_control": "Already completed separately after the blinded packet was sent; see fitting_audit.json.",
+    "input_formats": "All 164 date strings are explicit full calendar dates in named-month or ISO formats; offender sex codes restricted to M/F/U.",
+    "provenance": "Full result/code/input hashes and selection logs retained; packet was a minimized summary, not the sole evidence.",
+    "sensitivity_intervals": "No exhaustive or quantitative absence claim; no inference that an arbitrary true ruleset would have been detectable.",
+    "generic_profile_arm": "Not launched; would require participant consent and advance disclosure that comparison readings may be generic."
+  }
+}

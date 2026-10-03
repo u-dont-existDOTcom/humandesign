@@ -1,0 +1,923 @@
+{
+  "source_blob": "fca43841a83f6efcfe4d1dde66d6887335954c3c",
+  "input_sha256": "c00416b688c70c5cc133690341ce7695006c5563e01d7b92a1239203e916cf11",
+  "code_sha256": "ce7c201de8173ecfce251f83ee35fd354a263eb9be774922d605ca51cf609c74",
+  "seed": 20261003,
+  "versions": {
+    "numpy": "2.5.2",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0",
+    "swisseph": 20230604
+  },
+  "status": "EXPLORATORY_INTERNAL_ONLY",
+  "audit": {
+    "original_pairs": 82,
+    "exact_year_rematched_pairs": 51,
+    "distinct_matched_years": 30,
+    "unknown_offender_sex_in_matched": 15,
+    "later_year": 62,
+    "equal_year": 19,
+    "earlier_year": 1,
+    "younger_member_pairwise_accuracy_ties_half": 0.8719512195121951
+  },
+  "ephemeris_returned_flags": [
+    260
+  ],
+  "original": {
+    "baselines": {
+      "year_only": {
+        "mean": {
+          "auc": 0.62713166765814,
+          "balanced_accuracy": 0.6036585365853658
+        },
+        "repetitions": [
+          {
+            "auc": 0.6258179654967282,
+            "balanced_accuracy": 0.5975609756097561
+          },
+          {
+            "auc": 0.6291641879833433,
+            "balanced_accuracy": 0.6097560975609756
+          },
+          {
+            "auc": 0.6264128494943486,
+            "balanced_accuracy": 0.6036585365853658
+          }
+        ]
+      },
+      "name_format": {
+        "mean": {
+          "auc": 0.6916022209002577,
+          "balanced_accuracy": 0.6524390243902439
+        },
+        "repetitions": [
+          {
+            "auc": 0.6858268887566925,
+            "balanced_accuracy": 0.6341463414634146
+          },
+          {
+            "auc": 0.7023349196906603,
+            "balanced_accuracy": 0.6585365853658537
+          },
+          {
+            "auc": 0.6866448542534205,
+            "balanced_accuracy": 0.6646341463414633
+          }
+        ]
+      }
+    },
+    "fitting_diagnostic": {
+      "2": {
+        "auc": 0.7209994051160025,
+        "balanced_accuracy": 0.7073170731707317,
+        "leaves": 4
+      },
+      "4": {
+        "auc": 0.8482302201070792,
+        "balanced_accuracy": 0.8048780487804879,
+        "leaves": 10
+      },
+      "depth4_rule_text": "|--- astro_Neptune_sin <= -0.709\n|   |--- astro_Mercury_Pluto_120deg <= 0.050\n|   |   |--- astro_Neptune_Pluto_60deg <= 0.252\n|   |   |   |--- astro_Venus_sign10_fraction <= 0.556\n|   |   |   |   |--- class: 0\n|   |   |   |--- astro_Venus_sign10_fraction >  0.556\n|   |   |   |   |--- class: 1\n|   |   |--- astro_Neptune_Pluto_60deg >  0.252\n|   |   |   |--- astro_Mars_cos <= -0.850\n|   |   |   |   |--- class: 1\n|   |   |   |--- astro_Mars_cos >  -0.850\n|   |   |   |   |--- class: 1\n|   |--- astro_Mercury_Pluto_120deg >  0.050\n|   |   |--- class: 0\n|--- astro_Neptune_sin >  -0.709\n|   |--- astro_Mars_sign1_fraction <= 0.056\n|   |   |--- astro_modality_1_count <= 1.611\n|   |   |   |--- class: 1\n|   |   |--- astro_modality_1_count >  1.611\n|   |   |   |--- astro_Venus_Saturn_90deg <= 0.008\n|   |   |   |   |--- class: 0\n|   |   |   |--- astro_Venus_Saturn_90deg >  0.008\n|   |   |   |   |--- class: 1\n|   |--- astro_Mars_sign1_fraction >  0.056\n|   |   |--- name_consonants=1 <= 0.500\n|   |   |   |--- class: 1\n|   |   |--- name_consonants=1 >  0.500\n|   |   |   |--- class: 0\n",
+      "None": {
+        "auc": 1.0,
+        "balanced_accuracy": 1.0,
+        "leaves": 29
+      },
+      "shuffled_label_apparent_fit": [
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        }
+      ]
+    },
+    "nested": {
+      "mean": {
+        "dob_num": {
+          "auc": 0.5270920087249653,
+          "balanced_accuracy": 0.5528455284552846
+        },
+        "listed_name_num": {
+          "auc": 0.4522605591909578,
+          "balanced_accuracy": 0.46747967479674796
+        },
+        "num_combined": {
+          "auc": 0.472412254610351,
+          "balanced_accuracy": 0.4776422764227642
+        },
+        "astro_aspects": {
+          "auc": 0.5493753718024985,
+          "balanced_accuracy": 0.5548780487804879
+        },
+        "fusion": {
+          "auc": 0.5416666666666666,
+          "balanced_accuracy": 0.5304878048780488
+        },
+        "selected_pipeline": {
+          "auc": 0.5504164187983344,
+          "balanced_accuracy": 0.5447154471544716
+        }
+      },
+      "repetitions": {
+        "dob_num": [
+          {
+            "auc": 0.5460291493158833,
+            "balanced_accuracy": 0.5670731707317074
+          },
+          {
+            "auc": 0.5249107674003569,
+            "balanced_accuracy": 0.5609756097560976
+          },
+          {
+            "auc": 0.5103361094586556,
+            "balanced_accuracy": 0.5304878048780488
+          }
+        ],
+        "listed_name_num": [
+          {
+            "auc": 0.4385038667459845,
+            "balanced_accuracy": 0.4695121951219512
+          },
+          {
+            "auc": 0.49561273051754917,
+            "balanced_accuracy": 0.49390243902439024
+          },
+          {
+            "auc": 0.4226650803093397,
+            "balanced_accuracy": 0.43902439024390244
+          }
+        ],
+        "num_combined": [
+          {
+            "auc": 0.45872992266508034,
+            "balanced_accuracy": 0.475609756097561
+          },
+          {
+            "auc": 0.5402290303390839,
+            "balanced_accuracy": 0.5121951219512195
+          },
+          {
+            "auc": 0.41827781082688875,
+            "balanced_accuracy": 0.44512195121951215
+          }
+        ],
+        "astro_aspects": [
+          {
+            "auc": 0.5409726353361095,
+            "balanced_accuracy": 0.5792682926829269
+          },
+          {
+            "auc": 0.560232004759072,
+            "balanced_accuracy": 0.5670731707317074
+          },
+          {
+            "auc": 0.5469214753123142,
+            "balanced_accuracy": 0.5182926829268293
+          }
+        ],
+        "fusion": [
+          {
+            "auc": 0.5337596668649613,
+            "balanced_accuracy": 0.5487804878048781
+          },
+          {
+            "auc": 0.5694527067221892,
+            "balanced_accuracy": 0.5365853658536586
+          },
+          {
+            "auc": 0.5217876264128495,
+            "balanced_accuracy": 0.5060975609756098
+          }
+        ],
+        "selected_pipeline": [
+          {
+            "auc": 0.5501933372992267,
+            "balanced_accuracy": 0.5731707317073171
+          },
+          {
+            "auc": 0.5541344437834622,
+            "balanced_accuracy": 0.5426829268292683
+          },
+          {
+            "auc": 0.5469214753123142,
+            "balanced_accuracy": 0.5182926829268293
+          }
+        ]
+      },
+      "selection_log": [
+        {
+          "repeat": 0,
+          "fold": 0,
+          "family": "dob_num",
+          "model": "boost3",
+          "inner_auc": 0.6096954392408939
+        },
+        {
+          "repeat": 0,
+          "fold": 1,
+          "family": "astro_aspects",
+          "model": "tree4",
+          "inner_auc": 0.6425432431925938
+        },
+        {
+          "repeat": 0,
+          "fold": 2,
+          "family": "fusion",
+          "model": "extra",
+          "inner_auc": 0.6170798898071626
+        },
+        {
+          "repeat": 0,
+          "fold": 3,
+          "family": "astro_aspects",
+          "model": "tree4",
+          "inner_auc": 0.6363636363636365
+        },
+        {
+          "repeat": 0,
+          "fold": 4,
+          "family": "fusion",
+          "model": "boost3",
+          "inner_auc": 0.6466942148760331
+        },
+        {
+          "repeat": 1,
+          "fold": 0,
+          "family": "astro_aspects",
+          "model": "tree2",
+          "inner_auc": 0.5544405089859635
+        },
+        {
+          "repeat": 1,
+          "fold": 1,
+          "family": "astro_aspects",
+          "model": "extra",
+          "inner_auc": 0.6664183579767996
+        },
+        {
+          "repeat": 1,
+          "fold": 2,
+          "family": "astro_aspects",
+          "model": "extra",
+          "inner_auc": 0.59366391184573
+        },
+        {
+          "repeat": 1,
+          "fold": 3,
+          "family": "fusion",
+          "model": "boost2",
+          "inner_auc": 0.5805785123966943
+        },
+        {
+          "repeat": 1,
+          "fold": 4,
+          "family": "fusion",
+          "model": "boost3",
+          "inner_auc": 0.6363636363636364
+        },
+        {
+          "repeat": 2,
+          "fold": 0,
+          "family": "astro_aspects",
+          "model": "boost2",
+          "inner_auc": 0.5730441396025812
+        },
+        {
+          "repeat": 2,
+          "fold": 1,
+          "family": "astro_aspects",
+          "model": "boost3",
+          "inner_auc": 0.6719037936570403
+        },
+        {
+          "repeat": 2,
+          "fold": 2,
+          "family": "astro_aspects",
+          "model": "rbf",
+          "inner_auc": 0.5957300275482094
+        },
+        {
+          "repeat": 2,
+          "fold": 3,
+          "family": "astro_aspects",
+          "model": "extra",
+          "inner_auc": 0.6205234159779615
+        },
+        {
+          "repeat": 2,
+          "fold": 4,
+          "family": "astro_aspects",
+          "model": "boost2",
+          "inner_auc": 0.7107438016528925
+        }
+      ],
+      "feature_counts": {
+        "dob_num": 72,
+        "listed_name_num": 39,
+        "num_combined": 111,
+        "astro_aspects": 322,
+        "fusion": 433
+      }
+    }
+  },
+  "exact_year": {
+    "baselines": {
+      "year_only": {
+        "mean": {
+          "auc": 0.5,
+          "balanced_accuracy": 0.5
+        },
+        "repetitions": [
+          {
+            "auc": 0.5,
+            "balanced_accuracy": 0.5
+          },
+          {
+            "auc": 0.5,
+            "balanced_accuracy": 0.5
+          },
+          {
+            "auc": 0.5,
+            "balanced_accuracy": 0.5
+          }
+        ]
+      },
+      "name_format": {
+        "mean": {
+          "auc": 0.6876201460976548,
+          "balanced_accuracy": 0.6666666666666666
+        },
+        "repetitions": [
+          {
+            "auc": 0.6872356785851595,
+            "balanced_accuracy": 0.6862745098039216
+          },
+          {
+            "auc": 0.6699346405228759,
+            "balanced_accuracy": 0.6274509803921569
+          },
+          {
+            "auc": 0.705690119184929,
+            "balanced_accuracy": 0.6862745098039216
+          }
+        ]
+      }
+    },
+    "fitting_diagnostic": {
+      "2": {
+        "auc": 0.6372549019607843,
+        "balanced_accuracy": 0.6372549019607843,
+        "leaves": 3
+      },
+      "4": {
+        "auc": 0.7156862745098039,
+        "balanced_accuracy": 0.7156862745098039,
+        "leaves": 5
+      },
+      "depth4_rule_text": "|--- astro_Sun_Venus_0deg <= 0.277\n|   |--- astro_Mercury_Pluto_120deg <= 0.097\n|   |   |--- astro_Sun_cos <= -0.994\n|   |   |   |--- class: 0\n|   |   |--- astro_Sun_cos >  -0.994\n|   |   |   |--- astro_Jupiter_Saturn_90deg <= 0.256\n|   |   |   |   |--- class: 1\n|   |   |   |--- astro_Jupiter_Saturn_90deg >  0.256\n|   |   |   |   |--- class: 0\n|   |--- astro_Mercury_Pluto_120deg >  0.097\n|   |   |--- class: 0\n|--- astro_Sun_Venus_0deg >  0.277\n|   |--- class: 0\n",
+      "None": {
+        "auc": 1.0,
+        "balanced_accuracy": 1.0,
+        "leaves": 20
+      },
+      "shuffled_label_apparent_fit": [
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        },
+        {
+          "auc": 1.0,
+          "balanced_accuracy": 1.0
+        }
+      ]
+    },
+    "nested": {
+      "mean": {
+        "dob_num": {
+          "auc": 0.5044854543124441,
+          "balanced_accuracy": 0.5065359477124183
+        },
+        "listed_name_num": {
+          "auc": 0.4272715622196592,
+          "balanced_accuracy": 0.4444444444444445
+        },
+        "num_combined": {
+          "auc": 0.47891836473151356,
+          "balanced_accuracy": 0.4934640522875817
+        },
+        "astro_aspects": {
+          "auc": 0.46853774189414327,
+          "balanced_accuracy": 0.4705882352941177
+        },
+        "fusion": {
+          "auc": 0.47731641676278364,
+          "balanced_accuracy": 0.48366013071895425
+        },
+        "selected_pipeline": {
+          "auc": 0.4417531718569781,
+          "balanced_accuracy": 0.45751633986928103
+        }
+      },
+      "repetitions": {
+        "dob_num": [
+          {
+            "auc": 0.45117262591311036,
+            "balanced_accuracy": 0.47058823529411764
+          },
+          {
+            "auc": 0.5501730103806229,
+            "balanced_accuracy": 0.5294117647058824
+          },
+          {
+            "auc": 0.5121107266435987,
+            "balanced_accuracy": 0.5196078431372548
+          }
+        ],
+        "listed_name_num": [
+          {
+            "auc": 0.42656670511341793,
+            "balanced_accuracy": 0.4509803921568628
+          },
+          {
+            "auc": 0.418877354863514,
+            "balanced_accuracy": 0.4411764705882353
+          },
+          {
+            "auc": 0.4363706266820454,
+            "balanced_accuracy": 0.4411764705882353
+          }
+        ],
+        "num_combined": [
+          {
+            "auc": 0.4444444444444445,
+            "balanced_accuracy": 0.4411764705882353
+          },
+          {
+            "auc": 0.4671280276816609,
+            "balanced_accuracy": 0.5
+          },
+          {
+            "auc": 0.5251826220684352,
+            "balanced_accuracy": 0.5392156862745098
+          }
+        ],
+        "astro_aspects": [
+          {
+            "auc": 0.48289119569396377,
+            "balanced_accuracy": 0.4803921568627451
+          },
+          {
+            "auc": 0.47673971549404076,
+            "balanced_accuracy": 0.4901960784313726
+          },
+          {
+            "auc": 0.4459823144944252,
+            "balanced_accuracy": 0.4411764705882353
+          }
+        ],
+        "fusion": [
+          {
+            "auc": 0.4692425990003845,
+            "balanced_accuracy": 0.48039215686274506
+          },
+          {
+            "auc": 0.5442137639369473,
+            "balanced_accuracy": 0.5196078431372549
+          },
+          {
+            "auc": 0.41849288735101886,
+            "balanced_accuracy": 0.45098039215686275
+          }
+        ],
+        "selected_pipeline": [
+          {
+            "auc": 0.46847366397539403,
+            "balanced_accuracy": 0.47058823529411764
+          },
+          {
+            "auc": 0.44502114571318724,
+            "balanced_accuracy": 0.4607843137254902
+          },
+          {
+            "auc": 0.4117647058823529,
+            "balanced_accuracy": 0.4411764705882353
+          }
+        ]
+      },
+      "selection_log": [
+        {
+          "repeat": 0,
+          "fold": 0,
+          "family": "astro_aspects",
+          "model": "tree4",
+          "inner_auc": 0.5345384477275058
+        },
+        {
+          "repeat": 0,
+          "fold": 1,
+          "family": "num_combined",
+          "model": "tree2",
+          "inner_auc": 0.5563541666666666
+        },
+        {
+          "repeat": 0,
+          "fold": 2,
+          "family": "num_combined",
+          "model": "tree2",
+          "inner_auc": 0.5120959595959595
+        },
+        {
+          "repeat": 0,
+          "fold": 3,
+          "family": "astro_aspects",
+          "model": "extra",
+          "inner_auc": 0.6380044002143109
+        },
+        {
+          "repeat": 0,
+          "fold": 4,
+          "family": "listed_name_num",
+          "model": "boost2",
+          "inner_auc": 0.5568178382464096
+        },
+        {
+          "repeat": 1,
+          "fold": 0,
+          "family": "listed_name_num",
+          "model": "rbf",
+          "inner_auc": 0.5599919141668251
+        },
+        {
+          "repeat": 1,
+          "fold": 1,
+          "family": "astro_aspects",
+          "model": "rbf",
+          "inner_auc": 0.5250978416057781
+        },
+        {
+          "repeat": 1,
+          "fold": 2,
+          "family": "dob_num",
+          "model": "tree2",
+          "inner_auc": 0.4740740740740741
+        },
+        {
+          "repeat": 1,
+          "fold": 3,
+          "family": "astro_aspects",
+          "model": "extra",
+          "inner_auc": 0.5982292351523121
+        },
+        {
+          "repeat": 1,
+          "fold": 4,
+          "family": "fusion",
+          "model": "boost2",
+          "inner_auc": 0.5325677632261907
+        },
+        {
+          "repeat": 2,
+          "fold": 0,
+          "family": "fusion",
+          "model": "tree2",
+          "inner_auc": 0.595342208905723
+        },
+        {
+          "repeat": 2,
+          "fold": 1,
+          "family": "dob_num",
+          "model": "tree2",
+          "inner_auc": 0.5492881944444444
+        },
+        {
+          "repeat": 2,
+          "fold": 2,
+          "family": "listed_name_num",
+          "model": "rbf",
+          "inner_auc": 0.5779475308641975
+        },
+        {
+          "repeat": 2,
+          "fold": 3,
+          "family": "num_combined",
+          "model": "boost2",
+          "inner_auc": 0.5388365185950413
+        },
+        {
+          "repeat": 2,
+          "fold": 4,
+          "family": "fusion",
+          "model": "tree4",
+          "inner_auc": 0.6006997585280414
+        }
+      ],
+      "feature_counts": {
+        "dob_num": 72,
+        "listed_name_num": 39,
+        "num_combined": 111,
+        "astro_aspects": 322,
+        "fusion": 433
+      }
+    }
+  },
+  "calendar_null": [
+    {
+      "mean": {
+        "dob_num": {
+          "auc": 0.48639202855443187,
+          "balanced_accuracy": 0.47560975609756095
+        },
+        "astro_aspects": {
+          "auc": 0.5357674003569305,
+          "balanced_accuracy": 0.5182926829268293
+        },
+        "selected_pipeline": {
+          "auc": 0.5357674003569305,
+          "balanced_accuracy": 0.5182926829268293
+        }
+      },
+      "repetitions": {
+        "dob_num": [
+          {
+            "auc": 0.48639202855443187,
+            "balanced_accuracy": 0.47560975609756095
+          }
+        ],
+        "astro_aspects": [
+          {
+            "auc": 0.5357674003569305,
+            "balanced_accuracy": 0.5182926829268293
+          }
+        ],
+        "selected_pipeline": [
+          {
+            "auc": 0.5357674003569305,
+            "balanced_accuracy": 0.5182926829268293
+          }
+        ]
+      },
+      "selection_log": [
+        {
+          "repeat": 0,
+          "fold": 0,
+          "family": "astro_aspects",
+          "model": "extra",
+          "inner_auc": 0.5679433337932862
+        },
+        {
+          "repeat": 0,
+          "fold": 1,
+          "family": "astro_aspects",
+          "model": "rbf",
+          "inner_auc": 0.5907777790496249
+        },
+        {
+          "repeat": 0,
+          "fold": 2,
+          "family": "astro_aspects",
+          "model": "tree4",
+          "inner_auc": 0.5547741253364091
+        },
+        {
+          "repeat": 0,
+          "fold": 3,
+          "family": "astro_aspects",
+          "model": "rbf",
+          "inner_auc": 0.5513521453004642
+        },
+        {
+          "repeat": 0,
+          "fold": 4,
+          "family": "astro_aspects",
+          "model": "tree2",
+          "inner_auc": 0.5843363675381618
+        }
+      ],
+      "feature_counts": {
+        "dob_num": 72,
+        "astro_aspects": 322
+      }
+    },
+    {
+      "mean": {
+        "dob_num": {
+          "auc": 0.4352320047590719,
+          "balanced_accuracy": 0.4512195121951219
+        },
+        "astro_aspects": {
+          "auc": 0.5979327781082688,
+          "balanced_accuracy": 0.5609756097560976
+        },
+        "selected_pipeline": {
+          "auc": 0.5979327781082688,
+          "balanced_accuracy": 0.5609756097560976
+        }
+      },
+      "repetitions": {
+        "dob_num": [
+          {
+            "auc": 0.4352320047590719,
+            "balanced_accuracy": 0.4512195121951219
+          }
+        ],
+        "astro_aspects": [
+          {
+            "auc": 0.5979327781082688,
+            "balanced_accuracy": 0.5609756097560976
+          }
+        ],
+        "selected_pipeline": [
+          {
+            "auc": 0.5979327781082688,
+            "balanced_accuracy": 0.5609756097560976
+          }
+        ]
+      },
+      "selection_log": [
+        {
+          "repeat": 0,
+          "fold": 0,
+          "family": "astro_aspects",
+          "model": "rbf",
+          "inner_auc": 0.485153996314965
+        },
+        {
+          "repeat": 0,
+          "fold": 1,
+          "family": "astro_aspects",
+          "model": "extra",
+          "inner_auc": 0.6075831501873431
+        },
+        {
+          "repeat": 0,
+          "fold": 2,
+          "family": "astro_aspects",
+          "model": "tree4",
+          "inner_auc": 0.5100687636165576
+        },
+        {
+          "repeat": 0,
+          "fold": 3,
+          "family": "astro_aspects",
+          "model": "extra",
+          "inner_auc": 0.5661846481858338
+        },
+        {
+          "repeat": 0,
+          "fold": 4,
+          "family": "astro_aspects",
+          "model": "rbf",
+          "inner_auc": 0.5584693932974852
+        }
+      ],
+      "feature_counts": {
+        "dob_num": 72,
+        "astro_aspects": 322
+      }
+    },
+    {
+      "mean": {
+        "dob_num": {
+          "auc": 0.49182034503271854,
+          "balanced_accuracy": 0.475609756097561
+        },
+        "astro_aspects": {
+          "auc": 0.5283313503866747,
+          "balanced_accuracy": 0.524390243902439
+        },
+        "selected_pipeline": {
+          "auc": 0.4785098155859608,
+          "balanced_accuracy": 0.46341463414634143
+        }
+      },
+      "repetitions": {
+        "dob_num": [
+          {
+            "auc": 0.49182034503271854,
+            "balanced_accuracy": 0.475609756097561
+          }
+        ],
+        "astro_aspects": [
+          {
+            "auc": 0.5283313503866747,
+            "balanced_accuracy": 0.524390243902439
+          }
+        ],
+        "selected_pipeline": [
+          {
+            "auc": 0.4785098155859608,
+            "balanced_accuracy": 0.46341463414634143
+          }
+        ]
+      },
+      "selection_log": [
+        {
+          "repeat": 0,
+          "fold": 0,
+          "family": "astro_aspects",
+          "model": "extra",
+          "inner_auc": 0.5785557814736352
+        },
+        {
+          "repeat": 0,
+          "fold": 1,
+          "family": "dob_num",
+          "model": "rbf",
+          "inner_auc": 0.5405079630350342
+        },
+        {
+          "repeat": 0,
+          "fold": 2,
+          "family": "dob_num",
+          "model": "tree2",
+          "inner_auc": 0.5386240468409587
+        },
+        {
+          "repeat": 0,
+          "fold": 3,
+          "family": "astro_aspects",
+          "model": "tree4",
+          "inner_auc": 0.5456436443906485
+        },
+        {
+          "repeat": 0,
+          "fold": 4,
+          "family": "dob_num",
+          "model": "boost2",
+          "inner_auc": 0.5340970995245454
+        }
+      ],
+      "feature_counts": {
+        "dob_num": 72,
+        "astro_aspects": 322
+      }
+    }
+  ]
+}

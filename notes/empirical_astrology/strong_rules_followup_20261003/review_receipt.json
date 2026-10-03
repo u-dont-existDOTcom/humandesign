@@ -1,0 +1,15 @@
+{
+  "requested_model": "claude-opus-5-5",
+  "observed_model_usage": [
+    "claude-opus-5-5"
+  ],
+  "requested_effort": "max",
+  "effective_effort": "not independently attested",
+  "route": "Claude Code subscription, neutral directory, safe-mode, no tools, strict MCP, no session persistence",
+  "exit_code": 0,
+  "packet_sha256": "efe136f94506d368b10ce040c589dd763d88679960a540e743b894e5571dd54d",
+  "raw_output_sha256": "fb16c759f7c932b0d26ecfd0a0d96d4c732da27315d1589a6c2a16391b8a1cbc",
+  "verdict": "AGREES_WITH_EVIDENCE",
+  "material_errors_reported": 0,
+  "review_scope": "Independently assessed frozen protocol, code, aggregate results; did not execute code or review the later depth-4 fitting audit."
+}
