@@ -147,7 +147,34 @@
         "house_phone_numbers",
         "ancestral_reports"
       ],
-      "rule_creep_policy": "current official system frozen; new author addition or omitted rule requires new version"
+      "rule_creep_policy": "current official system frozen; new author addition or omitted rule requires new version",
+      "double_digit_policy": {
+        "range": "10-99",
+        "root_dominates": true,
+        "masters": [
+          11,
+          22,
+          33
+        ],
+        "karmic_debts": [
+          13,
+          14,
+          16,
+          19
+        ],
+        "power_numbers": [
+          44,
+          55,
+          66,
+          77,
+          88,
+          99
+        ]
+      },
+      "letter_rules": {
+        "Y": "vowel when it functions/sounds as a vowel or is the only vowel sound in syllable; otherwise consonant",
+        "W": "not treated as a vowel in core Soul Urge/Personality calculation"
+      }
     }
   },
   "inactive_catalogued_systems": [
@@ -161,5 +188,9 @@
     "impact": "moderate_not_top_major",
     "chronology_source": "owner_recollection",
     "summary": "college-era relationship rupture and significant guilt/depression"
+  },
+  "source_gaps": {
+    "cheiro_detailed_marriage_matching": "Requires source-complete audit of When Were You Born? before implementation.",
+    "historical_western_variants": "Campbell, Jordan, and Javane/Bunker are catalogued but inactive pending primary-book audits."
   }
 }
