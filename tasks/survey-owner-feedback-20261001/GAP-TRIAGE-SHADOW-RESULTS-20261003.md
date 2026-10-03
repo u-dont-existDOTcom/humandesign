@@ -256,3 +256,18 @@ A separate synthetic two-step replay verified the boundary that independent batc
 2. After appending a synthetic canonical `M11` answer that deliberately left preferred negotiation use unresolved, `PREFER-EXCHANGE` became eligible and was admitted on the next pass. Semantic time: ~24.0 s.
 
 This matches the intended batching rule: independent gaps can be returned together, but a follow-up whose usefulness depends on a new answer waits for that answer. The sequence is reproducible from `scripts/benchmark_shadow_dependency_sequence.py` and contains no participant source.
+
+## Fresh replay sets and multi-route stability finding — later 2026-10-03
+
+Two separately frozen route-isolated replay sets passed without further tuning:
+
+- v2: 3/3 scored cases passed (`H8`–`H10`), all adjudicated review-ready; semantic times ~7–10 s.
+- v3: 3/3 scored cases passed (`H11`–`H13`); `H11`/`H12` review-ready and `H13` correctly admitted `M09`; semantic times ~7–29 s.
+
+The first fresh multi-route packet (`J1`–`J5`) was more discriminating. Blind adjudication froze `J1`, `J4`, `J5` as scored targets; `J2` remained unscored because independent evaluators disagreed; `J3` required `M05` while allowing disputed `G20`.
+
+Across two full v4 runs, `J1`, `J3`, and `J4` passed, and the unscored `J2` stayed on the conservative review-ready side. `J5` exposed a real stochastic producer/admission mismatch: triage repeatedly selected the correct `PREFER-EXCHANGE` missing-piece route, but sometimes phrased the single decision boundary as two parallel tasks (“which reasons make you continue, and which make you stop?”). GapAdmission correctly rejected that wording as context-unsupported / multiple-response-task. An isolated repeat also showed that a better phrasing of the same gap could pass every admission gate.
+
+The producer contract was therefore tightened at the generative mistake rather than weakening admission: when source says “it depends on X,” ask for **one deciding boundary** (“What about X would determine whether…?”), not two lists. A focused post-repair J5 rerun generated that form and passed all independent gates.
+
+This repair makes v4 a tuning set. A new untouched post-repair multi-route set is required before promotion.

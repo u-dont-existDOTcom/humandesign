@@ -99,18 +99,38 @@ def main() -> int:
             producer_admission_disagreement = (
                 row["shadow_outcome"] == "no_admitted_candidate"
             )
-            route_ok = (
-                target["route_id"] is None
-                or target["route_id"] in row["admitted_route_ids"]
+            expected_route_ids = target.get("route_ids")
+            required_route_ids = target.get("required_route_ids")
+            allowed_additional = target.get("allowed_additional_route_ids") or []
+            if required_route_ids is not None:
+                admitted = set(row["admitted_route_ids"])
+                required = set(required_route_ids)
+                allowed = required | set(allowed_additional)
+                route_ok = required.issubset(admitted) and admitted.issubset(allowed)
+            elif expected_route_ids is not None:
+                route_ok = row["admitted_route_ids"] == expected_route_ids
+            else:
+                route_ok = (
+                    target["route_id"] is None
+                    or target["route_id"] in row["admitted_route_ids"]
+                )
+            scored = bool(target.get("scored", True))
+            passed = (
+                actual_decision == target["decision"] and route_ok if scored else None
             )
-            passed = actual_decision == target["decision"] and route_ok
             results.append(
                 {
                     "case_id": case["case_id"],
+                    "scored": scored,
                     "expected_decision": target["decision"],
-                    "expected_route_id": target["route_id"],
+                    "expected_route_id": target.get("route_id"),
+                    "expected_route_ids": expected_route_ids,
+                    "required_route_ids": required_route_ids,
+                    "allowed_additional_route_ids": allowed_additional,
                     "actual_decision": actual_decision,
+                    "proposed_route_ids": row["proposed_route_ids"],
                     "admitted_route_ids": row["admitted_route_ids"],
+                    "rejection_code_counts": row["rejection_code_counts"],
                     "producer_admission_disagreement": producer_admission_disagreement,
                     "passed": passed,
                     "semantic_duration_seconds": row["semantic_duration_seconds"],
@@ -118,11 +138,14 @@ def main() -> int:
             )
             print(json.dumps(results[-1], separators=(",", ":")), flush=True)
 
+    scored_results = [item for item in results if item["scored"]]
     receipt = {
         "schema": "life-patterns-shadow-triage-validation-receipt-v1",
         "case_count": len(results),
-        "passed_count": sum(item["passed"] for item in results),
-        "all_passed": all(item["passed"] for item in results),
+        "scored_case_count": len(scored_results),
+        "unscored_case_count": len(results) - len(scored_results),
+        "passed_count": sum(item["passed"] is True for item in scored_results),
+        "all_passed": all(item["passed"] is True for item in scored_results),
         "cases": results,
     }
     print("RECEIPT " + json.dumps(receipt, separators=(",", ":")))

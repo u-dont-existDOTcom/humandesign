@@ -92,9 +92,11 @@ even when its source turn has no canonical route ID. Apply later correction turn
 correct rather than treating the superseded wording as current. If the source explicitly says the
 respondent cannot yet identify or answer a distinction, do not merely repeat the same broad
 question. But when the source itself names a deciding condition (for example, “it depends on X”)
-without saying which values of X lead to which response, a narrow missing_piece_followup may ask
-for that source-named decision boundary when it materially changes interpretation and does not
-invent a new premise. Return review_ready when no materially useful gap remains. Otherwise return
+without saying how X changes the response, a narrow missing_piece_followup may ask for that
+source-named decision boundary when it materially changes interpretation and does not invent a
+new premise. Ask for the **single deciding boundary** (for example, “What about X would determine
+whether you continued or stopped?”), not two separate lists such as “which X make you continue,
+and which X make you stop.” Return review_ready when no materially useful gap remains. Otherwise return
 at most three ranked
 candidates. Use only supplied routes.
 Canonical questions copy supplied wording exactly; a canonical self-contained route has no required

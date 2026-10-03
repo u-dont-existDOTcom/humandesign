@@ -1,0 +1,53 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-expected-v4",
+  "cases": [
+    {
+      "case_id": "J1",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "high",
+      "scored": true
+    },
+    {
+      "case_id": "J2",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "M09"
+      ],
+      "confidence": "disputed",
+      "scored": false,
+      "dispute": "Blind evaluators and repeated independent adjudication disagreed on whether the generic familiarity/complexity answer creates enough unresolved information gain for M09."
+    },
+    {
+      "case_id": "J3",
+      "decision": "clarification_needed",
+      "required_route_ids": [
+        "M05"
+      ],
+      "allowed_additional_route_ids": [
+        "G20"
+      ],
+      "confidence": "mixed",
+      "scored": true,
+      "dispute": "M05 is consensus; G20 is disputed because one adjudicator treated the untouched resource-purpose route as missing coverage only."
+    },
+    {
+      "case_id": "J4",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "M05"
+      ],
+      "confidence": "high",
+      "scored": true
+    },
+    {
+      "case_id": "J5",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "PREFER-EXCHANGE"
+      ],
+      "confidence": "medium",
+      "scored": true
+    }
+  ]
+}

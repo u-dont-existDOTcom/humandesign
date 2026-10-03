@@ -1,0 +1,103 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-cases-v4",
+  "cases": [
+    {
+      "case_id": "J1",
+      "route_ids": [
+        "M05",
+        "M09",
+        "M11"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If my familiar bus suddenly used a road it never uses, I'd assume a detour or traffic issue first and check the map; I wouldn't take the change itself as danger."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "I like a simple familiar offline planning app. I'd switch if I regularly needed shared reminders with other people, but better search alone would not justify extra complexity and migration."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If my friend said paying for all the meal ingredients was too much, I'd ask what budget works and either split the ingredient cost or simplify the meal."
+        }
+      ]
+    },
+    {
+      "case_id": "J2",
+      "route_ids": [
+        "M05",
+        "M09",
+        "M11"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If my familiar bus suddenly used a road it never uses, I'd assume a detour or traffic issue first and check the map; I wouldn't take the change itself as danger."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "I generally like familiar tools and dislike needless complexity."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If my friend said paying for all the meal ingredients was too much, I'd ask what budget works and either split the ingredient cost or simplify the meal."
+        }
+      ]
+    },
+    {
+      "case_id": "J3",
+      "route_ids": [
+        "M05",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "I tend to notice when something changes and I usually think before reacting."
+        }
+      ]
+    },
+    {
+      "case_id": "J4",
+      "route_ids": [
+        "M05",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If I got an extra month of living expenses I'd spend it on travel."
+        },
+        {
+          "question_text": "Correction",
+          "answer_text": "Correction: I would actually keep that amount as an emergency reserve rather than spend it on travel.",
+          "correction_of": "J4-turn-01"
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "I notice unusual things quickly."
+        }
+      ]
+    },
+    {
+      "case_id": "J5",
+      "route_ids": [
+        "M09",
+        "M11",
+        "PREFER-EXCHANGE"
+      ],
+      "turns": [
+        {
+          "canonical_question_id": "M11",
+          "question_text": "You and a friend are planning a meal for just the two of you. You offer to organise and cook it, which will take several hours, and ask your friend to buy the ingredients. They say, “I'd like to do the meal, but paying for all the ingredients feels like too much for me.” What would you say next?",
+          "answer_text": "I'd ask what budget works and change the ingredient split. Whether I keep negotiating after that depends on why they object; I'd need to know their reason before deciding whether to keep trying."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "For planning software I prefer simple and offline, but I'd switch if shared reminders became a weekly need; occasional coordination would not be worth migration and complexity."
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 - Task: `experiment-gap-triage-shadow-20261003`
 - Branch: `experiment-gap-triage-shadow-20261003`
 - Parent baseline: `2053e58`
-- Status: development-only implementation is pushed and remotely verified; owner-case latency, synthetic quality replay and independent blind adjudication are complete; broader non-inferiority validation remains open
+- Status: development-only implementation is pushed and remotely verified; owner-case latency, synthetic quality replay and independent blind adjudication are complete; two fresh route-isolated replay sets passed; a fresh multi-route set exposed and repaired a stochastic one-task/context wording defect; fresh post-repair validation remains open
 - Assurance lane: experiment only; privacy/no-live-change hard gates
 - Authority: owner request plus `tasks/survey-owner-feedback-20261001/INDEPENDENT-REVIEW-LATENCY-REDESIGN-20261003.md`
 - Completion command: `PYTHONPATH=apps/life-patterns-participant python -m pytest apps/life-patterns-participant/tests -q`
@@ -47,9 +47,19 @@ Before promotion:
 1. broaden beyond route-isolated synthetic fixtures to multi-route development records with mixed conditions/corrections and review-ready cases;
 2. compare legacy and shadow route/question decisions under blind adjudication on that broader development replay set;
 3. expand replay around the adjudication-disputed information-gain cases; require zero clear redundant/unsupported admissions and no material loss of independently supported clarifications;
-4. test repeated-run stability and batch-companion invariance;
+4. rerun a fresh post-repair multi-route validation set and repeated-run stability; the J5 tuning case showed that semantically correct gap selection can still fail admission when producer wording turns one decision boundary into two response tasks;
 5. only then move evidence synthesis off the critical path or wire triage into live behavior.
 
 The dependent-follow-up gate is now covered: a synthetic two-step `M11` → `PREFER-EXCHANGE` sequence correctly withheld the dependent probe until the `M11` answer existed, then admitted it on the next pass.
 
 Remote experiment head verified through the synthetic-quality benchmark commit. Do not merge this experiment merely from the owner-case latency result.
+
+## 2026-10-03 later replay checkpoint
+
+- Fresh frozen v2 replay: 3/3 scored cases passed (`H8`–`H10`).
+- Fresh frozen v3 replay: 3/3 scored cases passed (`H11`–`H13`).
+- Multi-route v4 first run: 3/4 scored cases passed; disputed `J2` was correctly unscored. `J5` proposed the adjudicated `PREFER-EXCHANGE` gap but independent admission rejected the generated follow-up as context-unsupported.
+- Multi-route v4 second run reproduced the same participant-facing failure; admission additionally classified the wording as two response tasks.
+- Isolated J5 diagnostics identified the unstable wording pattern: “which reasons make you continue, and which make you stop?” The producer prompt now requires a single deciding-boundary question (“what about X would determine whether…”), preserving the same semantic gap while satisfying the one-response-task gate. A focused rerun produced exactly that form and independent admission passed every gate.
+
+Because J5 directly informed this repair, v4 is now development/tuning evidence. Promotion still requires untouched post-repair cases.

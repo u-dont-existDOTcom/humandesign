@@ -1,0 +1,35 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-cases-v3",
+  "cases": [
+    {
+      "case_id": "H11",
+      "route_ids": ["M09"],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "Keeping access when I have no internet matters a lot to me."
+        }
+      ]
+    },
+    {
+      "case_id": "H12",
+      "route_ids": ["G19"],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "I'd think about whether backing out would leave my friend in a bind."
+        }
+      ]
+    },
+    {
+      "case_id": "H13",
+      "route_ids": ["M09"],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "I don't have strong feelings about planning apps."
+        }
+      ]
+    }
+  ]
+}
