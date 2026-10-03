@@ -1,0 +1,51 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-expected-v6",
+  "cases": [
+    {
+      "case_id": "L1",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "G20"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "L2",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "G23"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "L3",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "M09"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "L4",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "M05"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "L5",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "G20",
+        "G23"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    }
+  ]
+}
