@@ -59,3 +59,11 @@ Repair:
 - On each explicit retry after an operator-side repair, preserve the full historical call ledger but move the call-budget baseline to the current ledger length and increment the bounded execution epoch.
 
 Acceptance adds partial-admission tests: a plan containing one supported and one unsupported evidence/address item must continue with only the supported subset, and post-import clarification planning/review must reattach the complete recovered import while staying under the large-source context guard.
+
+## Live validation after item-level admission repair — 2026-10-03
+
+The same existing owner review was retried after the item-level admission repair was merged and deployed to both Railway and the local independent-review worker. No replacement review was created and the candidate remained unchanged.
+
+The review advanced to `clarification_needed` with no error. The independent source-review status remains pending until that admitted clarification is answered. The returned clarification is canonical route `M11`; the private clarification handle and private review handle are intentionally not committed.
+
+This live result crosses all three previously observed blockers on the same saved review: context budget overflow, repaired-retry budget exhaustion, and whole-plan semantic admission deadlock. It does not by itself complete independent review; completion still requires the participant's exact answer to the admitted clarification and the subsequent review round.
