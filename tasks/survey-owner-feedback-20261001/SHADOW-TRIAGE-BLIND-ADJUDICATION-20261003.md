@@ -22,6 +22,8 @@ Two information-gain cases remained genuinely disputed:
 
 These cases must not be tuned to an assistant-authored expected label. The synthetic benchmark treats the first such expectation as disputed rather than a hard pass/fail target.
 
+After the shadow-only prompt repairs below, the shadow decision matched **all six cases on which both blind Claude adjudicators agreed**. That is a useful development result, but six consensus fixtures are too small to establish general non-inferiority.
+
 ## Robustness defects found and repaired in shadow
 
 1. Self-contained hypothetical scenes were once rejected because the participant had not previously mentioned the scenario. This is incorrect: frozen self-contained scene premises are authorized stimulus. The admission prompt now distinguishes route-supplied hypothetical premises from unsupported respondent-specific assumptions. A rerun approved the canonical M05 candidate with all gates true.
