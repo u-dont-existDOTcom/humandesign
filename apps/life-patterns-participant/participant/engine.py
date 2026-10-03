@@ -251,7 +251,7 @@ evidence or route-address bookkeeping is overbroad.
   question/control/action AFTER unapproved evidence and addressed-route items are dropped. Do not set those
   overall gates false merely because an optional item is omitted from an approved-ID list.
 - question/editor premises, process complaints and absence of mention are not personality facts; candidate
-  facets and route IDs must be limited to what was supplied; unknown remains unknown; corrections are rechecked.
+  facets and route IDs must be limited to what was supplied; unknown remains unknown; no coverage quota is imposed; participant corrections are rechecked.
 
 For import_bulk_review, bulk_source_review_supported=true only if the proposal demonstrably considered the
 complete supplied import and its next question/review is not already answered or contradicted anywhere in it.
