@@ -175,6 +175,13 @@ These cases add evidence for nonredundancy, context/antecedent gating, dependent
 
 The remaining promotion gap is narrower: add an explicit unsupported-premise candidate/refutation case, a condition-preservation case where a clarification remains useful only under a stated condition, and an independent blind adjudication comparing legacy versus shadow choices across the replay set.
 
+### Edge replay follow-up
+
+- A deliberately malformed M11 follow-up inserted an unsupported premise that the respondent had said they would pressure the friend until agreement. Independent GapAdmission rejected it and emitted the expected bounded failure classes, including `unsupported_premise`, `wrong_antecedent`, `context_not_supported`, `low_information_gain` and `unsupported_extension`; ~17.0 s.
+- A deliberately conditional `PREFER-EXCHANGE` source said continued negotiation would depend on why the friend objected, without naming the deciding conditions. GapTriage returned `review_ready`; ~16.0 s. This case is **not counted as a pass yet** because whether the missing condition is materially worth clarifying is a semantic judgment. It is reserved for blind adjudication rather than being relabeled after seeing the model output.
+
+That leaves blind adjudication as the next quality discriminator rather than more ad-hoc prompt tuning.
+
 ## Synthetic semantic quality checks — 2026-10-03
 
 A separate fully synthetic targeted benchmark isolated specific clarification behaviors by marking all irrelevant routes already addressed. No participant source was read for these cases.
