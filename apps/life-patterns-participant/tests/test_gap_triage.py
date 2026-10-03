@@ -117,3 +117,13 @@ def test_gap_admission_only_keeps_independently_approved_candidates():
     validate_admission(admission, triage, state, instrument)
     kept = admitted_candidates(triage, admission)
     assert [item.route_id for item in kept] == [routes[0]["id"]]
+
+    missed_admission = GapAdmission(
+        approved_route_ids=[routes[0]["id"]],
+        missed_material_gap=triage.candidates[1],
+        review_ready_supported=False,
+        errors=[],
+    )
+    validate_admission(missed_admission, triage, state, instrument)
+    combined = admitted_candidates(triage, missed_admission)
+    assert [item.route_id for item in combined] == [routes[0]["id"], routes[1]["id"]]

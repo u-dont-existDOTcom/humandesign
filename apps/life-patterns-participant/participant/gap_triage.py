@@ -120,6 +120,7 @@ def validate_admission(
 def admitted_candidates(triage: GapTriage, admission: GapAdmission) -> list[Question]:
     approved = set(admission.approved_route_ids)
     kept = [item for item in triage.candidates if item.route_id in approved]
-    if kept:
-        return kept
-    return [admission.missed_material_gap] if admission.missed_material_gap else []
+    missed = admission.missed_material_gap
+    if missed is not None and missed.route_id not in {item.route_id for item in kept}:
+        kept.append(missed)
+    return kept[:3]
