@@ -586,6 +586,14 @@ def test_action_schema_privacy_and_description_limits(tmp_path):
         "submitLifePatternsRecords",
     }
     assert "/api/gpt/reviewed-submissions" in schema["paths"]
+    status_get = schema["paths"]["/api/gpt/reviews/{review_id}"]["get"]
+    assert status_get["x-openai-isConsequential"] is False
+    assert all(
+        op.get("x-openai-isConsequential") is True
+        for verbs in schema["paths"].values()
+        for method, op in verbs.items()
+        if method == "post"
+    )
     assert all(len(op["description"]) <= 300 and len(op["summary"]) <= 300 for op in operations)
     assert "claim_id" not in json.dumps(schema)
     assert "review_worker_token" not in json.dumps(schema)
