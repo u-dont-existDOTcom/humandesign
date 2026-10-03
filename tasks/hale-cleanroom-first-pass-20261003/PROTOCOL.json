@@ -1,0 +1,56 @@
+{
+  "schema": "hale-cleanroom-first-pass-v1",
+  "status": "METHOD_FROZEN_BEFORE_HALE_OUTCOME_REVEAL",
+  "classification": "new-person development/clean-room first pass; not validation until outcome comparison",
+  "person_id": "hale-denizden-cleanroom-20261003",
+  "allowed_hale_inputs": {
+    "current_name": "Hale Denizden",
+    "birth_name": "Hatice Baysan",
+    "birth_local": "1994-01-28T00:35:00",
+    "birthplace": "Istanbul, Turkey"
+  },
+  "prohibited_until_prediction_freeze": [
+    "prior chats about Hale", "Memory-derived Hale personality/history",
+    "Life Patterns or survey answers", "prior Hale project artifacts",
+    "known Hale life events or outcome descriptions"
+  ],
+  "prohibited_data_consulted_for_first_pass": false,
+  "base_branch": "origin/chat/v14-cross-rulebook-20260924",
+  "base_commit": "f4fa0b86593e895328a18d13ec90432c8cb99662",
+  "timezone": {
+    "iana": "Europe/Istanbul",
+    "historical_offset": "+02:00",
+    "resolved_utc": "1994-01-27T22:35:00Z",
+    "verification": "Python zoneinfo plus system zdump; 1994 DST began 1994-03-20"
+  },
+  "location": {
+    "latitude": 41.0138429552247,
+    "longitude": 28.9496612548828,
+    "role": "GeoNames Istanbul city point because no hospital/street coordinate was supplied",
+    "source": "GeoNames Istanbul search result",
+    "angle_house_claims": "time-sensitive and coordinate-sensitive; report separately from date-stable planetary findings"
+  },
+  "ephemeris": {
+    "provider": "Swiss Ephemeris 2.10.03",
+    "mode": "FLG_SWIEPH strict; reject Moshier fallback",
+    "sepl_18_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+    "semo_18_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+  },
+  "numerology": {
+    "system": "frozen Pythagorean/Decoz-style",
+    "birth_name_primary": true,
+    "current_name": "static changed-name overlay only; adoption date unknown so no backward timing projection",
+    "y_rule": "consonant per project protocol",
+    "no_middle_name_transit_rule": "Decoz fallback: last name supplies merged Mental/Spiritual Transit",
+    "master_numbers": [11, 22, 33],
+    "karmic_debt_numbers": [13, 14, 16, 19]
+  },
+  "timing": {
+    "astrology_primary": ["secondary progressions: one ephemeris day per tropical year", "exact major transits to natal planets/angles"],
+    "astrology_exploratory_not_promoted": ["solar arcs", "returns"],
+    "numerology": ["Personal Years", "Pinnacles", "Period cycles", "birth-name Transits", "Essences"],
+    "outcome_data_visible_during_window_selection": false
+  },
+  "six_rule_model_role": "secondary Joel-fitted fingerprint only; never a generic Hale personality score",
+  "fusion_rule": "report astrology-only, numerology-only, and fused convergence/complement/contradiction without accuracy claims before outcome data"
+}

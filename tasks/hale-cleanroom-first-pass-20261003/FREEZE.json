@@ -1,0 +1,46 @@
+{
+  "schema": "hale-cleanroom-first-pass-freeze-v1",
+  "status": "FROZEN_BEFORE_HALE_OUTCOME_REVEAL",
+  "freeze_date_utc": "2026-10-03",
+  "person_id": "hale-denizden-cleanroom-20261003",
+  "allowed_hale_specific_inputs": {
+    "current_name": "Hale Denizden",
+    "birth_name": "Hatice Baysan",
+    "birth_local": "1994-01-28T00:35:00+02:00",
+    "birthplace": "Istanbul, Turkey"
+  },
+  "outcome_sources_queried_before_freeze": false,
+  "authority": {
+    "universal_dev_architecture_commit": "e1f1ba7cbec32c87068f1fdf52fc14cd09831932",
+    "uda_agents_blob": "0a88eb99b513c803277509d31d80a703c2409ef8",
+    "uda_lesson_index_blob": "29883a73fd3be0a84a97665d0423b64a4d89cb96",
+    "humandesign_base_branch": "chat/v14-cross-rulebook-20260924",
+    "humandesign_base_commit": "f4fa0b86593e895328a18d13ec90432c8cb99662"
+  },
+  "calculation": {
+    "birth_utc": "1994-01-27T22:35:00Z",
+    "timezone": "Europe/Istanbul",
+    "historical_utc_offset_seconds": 7200,
+    "coordinate_role": "GeoNames Istanbul city point; not exact birth facility",
+    "swisseph_version": "2.10.03",
+    "six_rule_secondary_fingerprint": "1/6; not a generic Hale personality score",
+    "transit_exact_events_1994_2041": 951,
+    "secondary_progression_exact_events_1994_2041": 159
+  },
+  "isolated_interpretation": {
+    "codex_cli": "0.160.0",
+    "model_reported_by_cli": "gpt-6.1-sol",
+    "mode": "ephemeral/read-only working directory",
+    "clean_room_instruction": "Only allowed bundle; do not query parent repos, chats, web, memory, surveys, or Hale outcome data",
+    "observed_activity": "remained within isolated work directory; no prohibited source query observed"
+  },
+  "artifacts_sha256": {
+    "PROTOCOL.json": "915cb312448c6d08287ae39a025a09004411162f70ff2c01b2e6657bba80fe89",
+    "calculate_first_pass.py": "2868937a095165be250833dedecc78cc97f9395c9ce10026975f73f4d9530a0b",
+    "CALCULATIONS.json": "80d81cf6ccef3d7daca5d521b205f6060208055f5fc2d028b2b6e02c06c4faa6",
+    "ISOLATED_INTERPRETATION.md": "e48a53e9a5edc6cf202ab68f751237ba9b6de2535ff05eacaa2c3d7c05c3047c",
+    "FIRST_PASS_PREDICTION_FREEZE.md": "6fa6561aabeeeb886b90c06eb40994ef8c8abf27b8749c0959b6d138f09746b2",
+    "VERIFICATION.md": "f7a772fe6df26de047d680d86eeb7cea61d0176f2f9be07e55a2ea83ebcb7495"
+  },
+  "next_state": "Outcome/personality/history comparison is permitted only after this freeze and may not rewrite the frozen claims."
+}
