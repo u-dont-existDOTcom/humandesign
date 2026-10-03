@@ -3,7 +3,7 @@
 - Task: `experiment-gap-triage-shadow-20261003`
 - Branch: `experiment-gap-triage-shadow-20261003`
 - Parent baseline: `2053e58`
-- Status: development-only implementation is pushed and remotely verified; semantic benchmark and privacy-safe owner-case comparison complete; replay-set quality validation remains open
+- Status: development-only implementation is pushed and remotely verified; owner-case latency, synthetic quality replay and independent blind adjudication are complete; broader non-inferiority validation remains open
 - Assurance lane: experiment only; privacy/no-live-change hard gates
 - Authority: owner request plus `tasks/survey-owner-feedback-20261001/INDEPENDENT-REVIEW-LATENCY-REDESIGN-20261003.md`
 - Completion command: `PYTHONPATH=apps/life-patterns-participant python -m pytest apps/life-patterns-participant/tests -q`
@@ -46,8 +46,9 @@ Do not add per-answer Custom GPT writes yet. First exploit the measured ~2.20xâ€
 Before promotion:
 1. broaden beyond route-isolated synthetic fixtures to multi-route development records with mixed conditions/corrections and review-ready cases;
 2. compare legacy and shadow route/question decisions under blind adjudication on that broader development replay set;
-3. require zero admitted redundant questions and no material loss of useful clarifications;
-4. only then move evidence synthesis off the critical path or wire triage into live behavior.
+3. expand replay around the adjudication-disputed information-gain cases; require zero clear redundant/unsupported admissions and no material loss of independently supported clarifications;
+4. test repeated-run stability and batch-companion invariance;
+5. only then move evidence synthesis off the critical path or wire triage into live behavior.
 
 The dependent-follow-up gate is now covered: a synthetic two-step `M11` â†’ `PREFER-EXCHANGE` sequence correctly withheld the dependent probe until the `M11` answer existed, then admitted it on the next pass.
 
