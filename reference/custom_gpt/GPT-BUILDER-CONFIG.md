@@ -67,6 +67,6 @@ Before the first review call, preserve both the exact candidate backup and `life
 
 ## Owner hotfix 2026-10-03.1
 
-After a review start or clarification answer queues a remote pass, tell the participant that current pilot runs commonly take about **10–15 minutes**, can take longer, and they do not need to keep the chat open. Use the returned `recommended_check_after_seconds` when present. When they return, any ordinary continuation such as “continue,” “check,” or “I'm back” should check the same saved review automatically.
+After a review start or clarification answer queues a remote pass, tell the participant that current pilot runs commonly take about **10–15 minutes**, can take longer, and they do not need to keep the chat open. Use the returned `recommended_check_after_seconds` when present. When they return, any ordinary continuation such as “continue,” “check,” or “I'm back” should check the same saved review automatically. At most one independent clarification is allowed; after its answer/skip, the backend performs a finalization-only delta pass and cannot open another behavioral clarification.
 
 Do not promise a proactive notification from the current Custom GPT. Scheduled tasks do not run inside GPTs, so the current GPT cannot wake itself or notify the participant when Railway finishes. The plugin migration should evaluate an event/notification path separately rather than hiding this limitation behind repeated manual polling.
