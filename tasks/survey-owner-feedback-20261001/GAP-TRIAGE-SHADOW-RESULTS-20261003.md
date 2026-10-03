@@ -99,3 +99,36 @@ This is a useful first adversarial check: each planted equivalent answer suppres
 Across five shadow runs so far (two baseline repeats + three planted-answer variants), the clarification decision remained well below the ~488 s legacy successful initial pass, with no reduction in model or reasoning effort.
 
 Still missing before promotion: planted unsupported-premise/context cases, conditional/correction cases, review-ready cases, and blinded quality adjudication against the legacy question choice.
+
+## Hardened lean-contract replay — 2026-10-03
+
+The earlier hardened shadow contract was re-run semantically on the same private 81-turn owner source, then simplified to remove producer-side source citations/defect labels and to give compact route cards to triage while reserving full route controls for independent admission.
+
+Privacy-safe result:
+
+- complete behavioral source turns: 81
+- eligible routes: 69
+- triage context: 77,702 chars
+- admission context: 39,294 chars
+- triage proposed: `M11`, `M09`, `M05`
+- independent admission retained: `M11`, `M05`
+- `M09` was rejected under `already_answered` / `low_information_gain`
+- GapTriage: 72.012 s, 25,269 prompt tokens, 3,895 completion tokens
+- GapAdmission: 40.011 s, 17,121 prompt tokens, 1,317 completion tokens
+- total semantic wall time: 112.023 s (~1m52s)
+
+For comparison, the successful legacy initial Plan+Admission on this owner review took ~488.155 s (~8m08s), so the lean shadow decision was about 4.36x faster without lowering model or reasoning effort.
+
+A privacy-safe read of the actual legacy review history shows that its **first canonical clarification route was also `M11`**. That is one real-case route-choice agreement between the lean shadow and legacy pipeline. The later legacy history used an `M11` missing-piece follow-up and then another route, which is consistent with the owner's complaint that the sequential endgame can create avoidable wait cycles.
+
+This is useful but still not sufficient for promotion. One owner case cannot establish non-inferiority. The next quality gate remains a synthetic/development replay set with planted redundant, unsupported-premise, conditional/correction, dependent-follow-up and review-ready cases under blinded adjudication.
+
+### Output-contract finding
+
+The same xhigh model/source class now has three useful points:
+
+- legacy full Plan+Admission: ~488 s, initial planner ~15,950 completion tokens;
+- hardened verbose shadow: ~222 s, triage ~7,113 completion tokens;
+- hardened lean shadow: ~112 s, triage ~3,895 completion tokens.
+
+The direction is consistent: preserving complete source and xhigh reasoning while shrinking the **required output contract** materially reduces participant-facing latency. The remaining optimization target is question-selection quality, not weaker reasoning.
