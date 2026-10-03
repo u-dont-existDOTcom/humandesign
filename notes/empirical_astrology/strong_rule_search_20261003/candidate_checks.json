@@ -1,0 +1,211 @@
+{
+  "status": "POST_RESULT_DIAGNOSTIC_NOT_CONFIRMATORY",
+  "n_pairs": 53,
+  "repeats": {
+    "date_numerology": [
+      {
+        "seed": 20261003,
+        "auc": 0.5966536133855465,
+        "balanced_accuracy": 0.5754716981132075
+      },
+      {
+        "seed": 20261017,
+        "auc": 0.6132075471698113,
+        "balanced_accuracy": 0.6037735849056605
+      },
+      {
+        "seed": 20261031,
+        "auc": 0.5179779280882877,
+        "balanced_accuracy": 0.5
+      }
+    ],
+    "name_numerology": [
+      {
+        "seed": 20261003,
+        "auc": 0.6776432894268424,
+        "balanced_accuracy": 0.6792452830188679
+      },
+      {
+        "seed": 20261017,
+        "auc": 0.6575293698825204,
+        "balanced_accuracy": 0.6320754716981132
+      },
+      {
+        "seed": 20261031,
+        "auc": 0.7032751868992525,
+        "balanced_accuracy": 0.6415094339622641
+      }
+    ],
+    "astrology6": [
+      {
+        "seed": 20261003,
+        "auc": 0.6212175151299395,
+        "balanced_accuracy": 0.6037735849056604
+      },
+      {
+        "seed": 20261017,
+        "auc": 0.6119615521537914,
+        "balanced_accuracy": 0.6226415094339622
+      },
+      {
+        "seed": 20261031,
+        "auc": 0.5952296190815237,
+        "balanced_accuracy": 0.5849056603773585
+      }
+    ],
+    "astrology9": [
+      {
+        "seed": 20261003,
+        "auc": 0.6025275898896405,
+        "balanced_accuracy": 0.5471698113207547
+      },
+      {
+        "seed": 20261017,
+        "auc": 0.5487718049127803,
+        "balanced_accuracy": 0.4811320754716981
+      },
+      {
+        "seed": 20261031,
+        "auc": 0.6082235671057317,
+        "balanced_accuracy": 0.5849056603773585
+      }
+    ],
+    "combined_date": [
+      {
+        "seed": 20261003,
+        "auc": 0.5430758276966892,
+        "balanced_accuracy": 0.5471698113207547
+      },
+      {
+        "seed": 20261017,
+        "auc": 0.5558917764328943,
+        "balanced_accuracy": 0.5094339622641509
+      },
+      {
+        "seed": 20261031,
+        "auc": 0.6270914916340334,
+        "balanced_accuracy": 0.6226415094339622
+      }
+    ],
+    "combined_name": [
+      {
+        "seed": 20261003,
+        "auc": 0.7527589889640441,
+        "balanced_accuracy": 0.7264150943396226
+      },
+      {
+        "seed": 20261017,
+        "auc": 0.6512993948024208,
+        "balanced_accuracy": 0.6037735849056604
+      },
+      {
+        "seed": 20261031,
+        "auc": 0.6484514061943752,
+        "balanced_accuracy": 0.5849056603773585
+      }
+    ],
+    "calendar": [
+      {
+        "seed": 20261003,
+        "auc": 0.6062655749377003,
+        "balanced_accuracy": 0.6037735849056605
+      },
+      {
+        "seed": 20261017,
+        "auc": 0.6288714845140619,
+        "balanced_accuracy": 0.6037735849056605
+      },
+      {
+        "seed": 20261031,
+        "auc": 0.5893556425774297,
+        "balanced_accuracy": 0.6226415094339623
+      }
+    ],
+    "name_format": [
+      {
+        "seed": 20261003,
+        "auc": 0.6509433962264151,
+        "balanced_accuracy": 0.5849056603773586
+      },
+      {
+        "seed": 20261017,
+        "auc": 0.6294054823780705,
+        "balanced_accuracy": 0.5660377358490566
+      },
+      {
+        "seed": 20261031,
+        "auc": 0.6840512637949449,
+        "balanced_accuracy": 0.6509433962264151
+      }
+    ]
+  },
+  "calendar_and_name_format": [
+    {
+      "seed": 20261003,
+      "auc": 0.7735849056603774,
+      "balanced_accuracy": 0.7169811320754716
+    },
+    {
+      "seed": 20261017,
+      "auc": 0.6778212887148451,
+      "balanced_accuracy": 0.6132075471698113
+    },
+    {
+      "seed": 20261031,
+      "auc": 0.6317194731221075,
+      "balanced_accuracy": 0.5660377358490566
+    }
+  ],
+  "random_letter_mapping_diagnostic": [
+    {
+      "encoding_id": 0,
+      "auc": 0.5970096119615521,
+      "balanced_accuracy": 0.5566037735849056
+    },
+    {
+      "encoding_id": 1,
+      "auc": 0.6593093627625489,
+      "balanced_accuracy": 0.6226415094339622
+    },
+    {
+      "encoding_id": 2,
+      "auc": 0.720185119259523,
+      "balanced_accuracy": 0.6509433962264151
+    },
+    {
+      "encoding_id": 3,
+      "auc": 0.6480954076183696,
+      "balanced_accuracy": 0.6509433962264151
+    },
+    {
+      "encoding_id": 4,
+      "auc": 0.6002135991456035,
+      "balanced_accuracy": 0.5471698113207547
+    },
+    {
+      "encoding_id": 5,
+      "auc": 0.6530793876824492,
+      "balanced_accuracy": 0.6226415094339622
+    },
+    {
+      "encoding_id": 6,
+      "auc": 0.5765396938412246,
+      "balanced_accuracy": 0.5566037735849056
+    },
+    {
+      "encoding_id": 7,
+      "auc": 0.6794232823068708,
+      "balanced_accuracy": 0.6226415094339622
+    },
+    {
+      "encoding_id": 8,
+      "auc": 0.633499466002136,
+      "balanced_accuracy": 0.5660377358490566
+    },
+    {
+      "encoding_id": 9,
+      "auc": 0.6359914560341758,
+      "balanced_accuracy": 0.5849056603773585
+    }
+  ]
+}

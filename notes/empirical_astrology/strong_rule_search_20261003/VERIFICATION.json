@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "Exact cross-runtime result reproduction and held-out metric consistency, not independent methodological review or external-cohort validation",
+  "independently_regenerated_input_projection": "Exact source-CSV-to-TSV bytes matched",
+  "cross_runtime_result_hashes": {
+    "human_results.json": "5b89c2f4bfe5e719688b1b124c96a2f899e399a3709554c7145c241877bb7c13",
+    "candidate_checks.json": "d2fa6ac94d1ea3fcf478bbf6c90f48c8edad66c2526629f8b7490c9f88433500",
+    "calendar_null.json": "a740c74aa0f226af916c94214f259fbd89751d2cc6e79f354a39e76376853372",
+    "input/pairs.tsv": "b47abae2747943169efced12ffd84f5d61b92e0a4213e08dc0af3e5197b9565d"
+  },
+  "heldout_rows": 3936,
+  "unique_id_family_seed": true,
+  "auc_and_balanced_accuracy_checks": 48,
+  "source_commit": "2bd1528f9eb6d4c54f85bce88b900e35aba411ae",
+  "python_version": "3.12.3",
+  "methodology_cross_family_review": "NOT_RUN",
+  "scientific_status": "EXPLORATORY_NO_STABLE_STRONG_RULE",
+  "parent_task": "OPEN"
+}

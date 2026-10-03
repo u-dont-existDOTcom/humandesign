@@ -1,0 +1,447 @@
+{
+  "status": "EXPLORATORY_INTERNAL_VALIDATION_ONLY",
+  "feature_counts": {
+    "calendar": 4,
+    "name_format": 5,
+    "date_numerology": 76,
+    "name_numerology": 78,
+    "astrology6": 271,
+    "astrology9": 526,
+    "combined_date": 602,
+    "combined_name": 680
+  },
+  "results": {
+    "calendar": {
+      "repeats": [
+        {
+          "seed": 20261003,
+          "nested_tree": {
+            "auc": 0.5657346817370613,
+            "balanced_accuracy": 0.5609756097560976
+          },
+          "fixed_forest": {
+            "auc": 0.5585960737656157,
+            "balanced_accuracy": 0.5365853658536586
+          }
+        },
+        {
+          "seed": 20261017,
+          "nested_tree": {
+            "auc": 0.5815734681737061,
+            "balanced_accuracy": 0.5853658536585366
+          },
+          "fixed_forest": {
+            "auc": 0.5749553837001784,
+            "balanced_accuracy": 0.5609756097560976
+          }
+        },
+        {
+          "seed": 20261031,
+          "nested_tree": {
+            "auc": 0.5566627007733491,
+            "balanced_accuracy": 0.5792682926829268
+          },
+          "fixed_forest": {
+            "auc": 0.5574063057703748,
+            "balanced_accuracy": 0.5182926829268293
+          }
+        }
+      ],
+      "mean_tree_auc": 0.5679902835613723,
+      "mean_tree_balanced_accuracy": 0.5752032520325203,
+      "mean_forest_auc": 0.5636525877453896,
+      "mean_forest_balanced_accuracy": 0.5386178861788619,
+      "whole_data_fit_depth3_leaf8": {
+        "auc": 0.7246430696014278,
+        "balanced_accuracy": 0.6402439024390244
+      },
+      "unrestricted_whole_data_fit": {
+        "auc": 1.0,
+        "balanced_accuracy": 1.0
+      },
+      "sensitivity_gap_le5_n53_nested_tree": {
+        "auc": 0.6062655749377003,
+        "balanced_accuracy": 0.6037735849056605
+      },
+      "whole_data_rules": "|--- birth_year <= 1963.500\n|   |--- doy_cos <= 0.847\n|   |   |--- doy_sin <= -0.838\n|   |   |   |--- class: 0\n|   |   |--- doy_sin >  -0.838\n|   |   |   |--- class: 0\n|   |--- doy_cos >  0.847\n|   |   |--- year_squared <= 0.565\n|   |   |   |--- class: 0\n|   |   |--- year_squared >  0.565\n|   |   |   |--- class: 0\n|--- birth_year >  1963.500\n|   |--- doy_cos <= 0.113\n|   |   |--- doy_cos <= -0.318\n|   |   |   |--- class: 1\n|   |   |--- doy_cos >  -0.318\n|   |   |   |--- class: 1\n|   |--- doy_cos >  0.113\n|   |   |--- year_squared <= 1.565\n|   |   |   |--- class: 0\n|   |   |--- year_squared >  1.565\n|   |   |   |--- class: 1\n"
+    },
+    "name_format": {
+      "repeats": [
+        {
+          "seed": 20261003,
+          "nested_tree": {
+            "auc": 0.6614366448542535,
+            "balanced_accuracy": 0.5914634146341463
+          },
+          "fixed_forest": {
+            "auc": 0.7023349196906603,
+            "balanced_accuracy": 0.6158536585365854
+          }
+        },
+        {
+          "seed": 20261017,
+          "nested_tree": {
+            "auc": 0.6699881023200476,
+            "balanced_accuracy": 0.6036585365853658
+          },
+          "fixed_forest": {
+            "auc": 0.682034503271862,
+            "balanced_accuracy": 0.5853658536585367
+          }
+        },
+        {
+          "seed": 20261031,
+          "nested_tree": {
+            "auc": 0.6796549672813801,
+            "balanced_accuracy": 0.6097560975609757
+          },
+          "fixed_forest": {
+            "auc": 0.6792831647828674,
+            "balanced_accuracy": 0.6158536585365854
+          }
+        }
+      ],
+      "mean_tree_auc": 0.6703599048185603,
+      "mean_tree_balanced_accuracy": 0.6016260162601627,
+      "mean_forest_auc": 0.6878841959151298,
+      "mean_forest_balanced_accuracy": 0.605691056910569,
+      "whole_data_fit_depth3_leaf8": {
+        "auc": 0.7300713860797146,
+        "balanced_accuracy": 0.6524390243902438
+      },
+      "unrestricted_whole_data_fit": {
+        "auc": 0.8645895300416419,
+        "balanced_accuracy": 0.7682926829268293
+      },
+      "sensitivity_gap_le5_n53_nested_tree": {
+        "auc": 0.6509433962264151,
+        "balanced_accuracy": 0.5849056603773586
+      },
+      "whole_data_rules": "|--- name_initials <= 0.500\n|   |--- name_words <= 2.500\n|   |   |--- name_length <= 13.500\n|   |   |   |--- class: 0\n|   |   |--- name_length >  13.500\n|   |   |   |--- class: 1\n|   |--- name_words >  2.500\n|   |   |--- name_length <= 16.500\n|   |   |   |--- class: 1\n|   |   |--- name_length >  16.500\n|   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+    },
+    "date_numerology": {
+      "repeats": [
+        {
+          "seed": 20261003,
+          "nested_tree": {
+            "auc": 0.5074360499702558,
+            "balanced_accuracy": 0.5121951219512195
+          },
+          "fixed_forest": {
+            "auc": 0.558893515764426,
+            "balanced_accuracy": 0.5914634146341463
+          }
+        },
+        {
+          "seed": 20261017,
+          "nested_tree": {
+            "auc": 0.4799970255800119,
+            "balanced_accuracy": 0.5060975609756098
+          },
+          "fixed_forest": {
+            "auc": 0.5468471148126115,
+            "balanced_accuracy": 0.5853658536585367
+          }
+        },
+        {
+          "seed": 20261031,
+          "nested_tree": {
+            "auc": 0.462150505651398,
+            "balanced_accuracy": 0.47560975609756095
+          },
+          "fixed_forest": {
+            "auc": 0.4923408685306365,
+            "balanced_accuracy": 0.5
+          }
+        }
+      ],
+      "mean_tree_auc": 0.48319452706722194,
+      "mean_tree_balanced_accuracy": 0.49796747967479676,
+      "mean_forest_auc": 0.5326938330358914,
+      "mean_forest_balanced_accuracy": 0.5589430894308943,
+      "whole_data_fit_depth3_leaf8": {
+        "auc": 0.6386079714455681,
+        "balanced_accuracy": 0.5914634146341464
+      },
+      "unrestricted_whole_data_fit": {
+        "auc": 0.9972486615110054,
+        "balanced_accuracy": 0.9634146341463414
+      },
+      "sensitivity_gap_le5_n53_nested_tree": {
+        "auc": 0.5966536133855465,
+        "balanced_accuracy": 0.5754716981132075
+      },
+      "whole_data_rules": "|--- date_day=6 <= 0.500\n|   |--- date_att=6 <= 0.500\n|   |   |--- date_digit_sum <= 24.500\n|   |   |   |--- class: 0\n|   |   |--- date_digit_sum >  24.500\n|   |   |   |--- class: 0\n|   |--- date_att=6 >  0.500\n|   |   |--- class: 1\n|--- date_day=6 >  0.500\n|   |--- date_digit_sum <= 30.500\n|   |   |--- class: 1\n|   |--- date_digit_sum >  30.500\n|   |   |--- class: 1\n"
+    },
+    "name_numerology": {
+      "repeats": [
+        {
+          "seed": 20261003,
+          "nested_tree": {
+            "auc": 0.5488548483045806,
+            "balanced_accuracy": 0.5121951219512195
+          },
+          "fixed_forest": {
+            "auc": 0.5712373587150505,
+            "balanced_accuracy": 0.5609756097560976
+          }
+        },
+        {
+          "seed": 20261017,
+          "nested_tree": {
+            "auc": 0.508923259964307,
+            "balanced_accuracy": 0.5060975609756098
+          },
+          "fixed_forest": {
+            "auc": 0.597263533610946,
+            "balanced_accuracy": 0.5853658536585367
+          }
+        },
+        {
+          "seed": 20261031,
+          "nested_tree": {
+            "auc": 0.6061124330755503,
+            "balanced_accuracy": 0.5731707317073171
+          },
+          "fixed_forest": {
+            "auc": 0.6143664485425342,
+            "balanced_accuracy": 0.5792682926829269
+          }
+        }
+      ],
+      "mean_tree_auc": 0.5546301804481459,
+      "mean_tree_balanced_accuracy": 0.5304878048780488,
+      "mean_forest_auc": 0.5942891136228435,
+      "mean_forest_balanced_accuracy": 0.5752032520325204,
+      "whole_data_fit_depth3_leaf8": {
+        "auc": 0.7265020820939916,
+        "balanced_accuracy": 0.6402439024390244
+      },
+      "unrestricted_whole_data_fit": {
+        "auc": 1.0,
+        "balanced_accuracy": 1.0
+      },
+      "sensitivity_gap_le5_n53_nested_tree": {
+        "auc": 0.6776432894268424,
+        "balanced_accuracy": 0.6792452830188679
+      },
+      "whole_data_rules": "|--- name_cyclic_consonants_raw_sum <= 35.500\n|   |--- name_chaldean_vowels=1 <= 0.500\n|   |   |--- name_chaldean_expression_raw_sum <= 36.500\n|   |   |   |--- class: 0\n|   |   |--- name_chaldean_expression_raw_sum >  36.500\n|   |   |   |--- class: 0\n|   |--- name_chaldean_vowels=1 >  0.500\n|   |   |--- class: 0\n|--- name_cyclic_consonants_raw_sum >  35.500\n|   |--- name_cyclic_expression=5 <= 0.500\n|   |   |--- name_cyclic_consonants_raw_sum <= 57.500\n|   |   |   |--- class: 1\n|   |   |--- name_cyclic_consonants_raw_sum >  57.500\n|   |   |   |--- class: 1\n|   |--- name_cyclic_expression=5 >  0.500\n|   |   |--- class: 1\n"
+    },
+    "astrology6": {
+      "repeats": [
+        {
+          "seed": 20261003,
+          "nested_tree": {
+            "auc": 0.5011154074955384,
+            "balanced_accuracy": 0.49390243902439024
+          },
+          "fixed_forest": {
+            "auc": 0.48929208804283164,
+            "balanced_accuracy": 0.49390243902439024
+          }
+        },
+        {
+          "seed": 20261017,
+          "nested_tree": {
+            "auc": 0.5203747769185009,
+            "balanced_accuracy": 0.5182926829268293
+          },
+          "fixed_forest": {
+            "auc": 0.49672813801308746,
+            "balanced_accuracy": 0.5121951219512195
+          }
+        },
+        {
+          "seed": 20261031,
+          "nested_tree": {
+            "auc": 0.5272903033908388,
+            "balanced_accuracy": 0.5
+          },
+          "fixed_forest": {
+            "auc": 0.4492861392028555,
+            "balanced_accuracy": 0.4573170731707317
+          }
+        }
+      ],
+      "mean_tree_auc": 0.516260162601626,
+      "mean_tree_balanced_accuracy": 0.5040650406504065,
+      "mean_forest_auc": 0.4784354550862582,
+      "mean_forest_balanced_accuracy": 0.4878048780487805,
+      "whole_data_fit_depth3_leaf8": {
+        "auc": 0.7892623438429506,
+        "balanced_accuracy": 0.7195121951219512
+      },
+      "unrestricted_whole_data_fit": {
+        "auc": 1.0,
+        "balanced_accuracy": 1.0
+      },
+      "sensitivity_gap_le5_n53_nested_tree": {
+        "auc": 0.6212175151299395,
+        "balanced_accuracy": 0.6037735849056604
+      },
+      "whole_data_rules": "|--- saturn_sin <= -0.543\n|   |--- mars_cos <= 0.309\n|   |   |--- mercury_sin <= -0.122\n|   |   |   |--- class: 0\n|   |   |--- mercury_sin >  -0.122\n|   |   |   |--- class: 0\n|   |--- mars_cos >  0.309\n|   |   |--- mars_cos <= 0.653\n|   |   |   |--- class: 1\n|   |   |--- mars_cos >  0.653\n|   |   |   |--- class: 0\n|--- saturn_sin >  -0.543\n|   |--- saturn_retrograde <= 0.278\n|   |   |--- jupiter_cos <= 0.878\n|   |   |   |--- class: 0\n|   |   |--- jupiter_cos >  0.878\n|   |   |   |--- class: 1\n|   |--- saturn_retrograde >  0.278\n|   |   |--- mars_sin <= 0.548\n|   |   |   |--- class: 1\n|   |   |--- mars_sin >  0.548\n|   |   |   |--- class: 1\n"
+    },
+    "astrology9": {
+      "repeats": [
+        {
+          "seed": 20261003,
+          "nested_tree": {
+            "auc": 0.5389649018441404,
+            "balanced_accuracy": 0.5304878048780488
+          },
+          "fixed_forest": {
+            "auc": 0.6069303985722785,
+            "balanced_accuracy": 0.5853658536585367
+          }
+        },
+        {
+          "seed": 20261017,
+          "nested_tree": {
+            "auc": 0.5124182034503272,
+            "balanced_accuracy": 0.5304878048780488
+          },
+          "fixed_forest": {
+            "auc": 0.6119869125520523,
+            "balanced_accuracy": 0.5853658536585367
+          }
+        },
+        {
+          "seed": 20261031,
+          "nested_tree": {
+            "auc": 0.5246876859012493,
+            "balanced_accuracy": 0.5182926829268293
+          },
+          "fixed_forest": {
+            "auc": 0.597412254610351,
+            "balanced_accuracy": 0.5609756097560976
+          }
+        }
+      ],
+      "mean_tree_auc": 0.5253569303985722,
+      "mean_tree_balanced_accuracy": 0.5264227642276423,
+      "mean_forest_auc": 0.6054431885782273,
+      "mean_forest_balanced_accuracy": 0.5772357723577236,
+      "whole_data_fit_depth3_leaf8": {
+        "auc": 0.758402736466389,
+        "balanced_accuracy": 0.6890243902439024
+      },
+      "unrestricted_whole_data_fit": {
+        "auc": 1.0,
+        "balanced_accuracy": 1.0
+      },
+      "sensitivity_gap_le5_n53_nested_tree": {
+        "auc": 0.6025275898896405,
+        "balanced_accuracy": 0.5471698113207547
+      },
+      "whole_data_rules": "|--- neptune_sin <= -0.709\n|   |--- mars_sin <= -0.722\n|   |   |--- class: 1\n|   |--- mars_sin >  -0.722\n|   |   |--- mars_sin <= 0.548\n|   |   |   |--- class: 0\n|   |   |--- mars_sin >  0.548\n|   |   |   |--- class: 1\n|--- neptune_sin >  -0.709\n|   |--- mars_in_Taurus <= 0.056\n|   |   |--- saturn_in_Scorpio <= 0.500\n|   |   |   |--- class: 0\n|   |   |--- saturn_in_Scorpio >  0.500\n|   |   |   |--- class: 0\n|   |--- mars_in_Taurus >  0.056\n|   |   |--- class: 1\n"
+    },
+    "combined_date": {
+      "repeats": [
+        {
+          "seed": 20261003,
+          "nested_tree": {
+            "auc": 0.51918500892326,
+            "balanced_accuracy": 0.5060975609756098
+          },
+          "fixed_forest": {
+            "auc": 0.6106484235574063,
+            "balanced_accuracy": 0.5792682926829269
+          }
+        },
+        {
+          "seed": 20261017,
+          "nested_tree": {
+            "auc": 0.5419393218322427,
+            "balanced_accuracy": 0.5609756097560976
+          },
+          "fixed_forest": {
+            "auc": 0.617935752528257,
+            "balanced_accuracy": 0.6158536585365855
+          }
+        },
+        {
+          "seed": 20261031,
+          "nested_tree": {
+            "auc": 0.5870761451516955,
+            "balanced_accuracy": 0.5426829268292683
+          },
+          "fixed_forest": {
+            "auc": 0.6006841165972636,
+            "balanced_accuracy": 0.5670731707317074
+          }
+        }
+      ],
+      "mean_tree_auc": 0.5494001586357328,
+      "mean_tree_balanced_accuracy": 0.5365853658536586,
+      "mean_forest_auc": 0.6097560975609757,
+      "mean_forest_balanced_accuracy": 0.58739837398374,
+      "whole_data_fit_depth3_leaf8": {
+        "auc": 0.7639054134443783,
+        "balanced_accuracy": 0.7195121951219512
+      },
+      "unrestricted_whole_data_fit": {
+        "auc": 1.0,
+        "balanced_accuracy": 1.0
+      },
+      "sensitivity_gap_le5_n53_nested_tree": {
+        "auc": 0.5430758276966892,
+        "balanced_accuracy": 0.5471698113207547
+      },
+      "whole_data_rules": "|--- neptune_cos <= -0.705\n|   |--- mars_in_Taurus <= 0.056\n|   |   |--- date_day=6 <= 0.500\n|   |   |   |--- class: 0\n|   |   |--- date_day=6 >  0.500\n|   |   |   |--- class: 1\n|   |--- mars_in_Taurus >  0.056\n|   |   |--- class: 1\n|--- neptune_cos >  -0.705\n|   |--- mars_sin <= -0.722\n|   |   |--- class: 1\n|   |--- mars_sin >  -0.722\n|   |   |--- mars_sin <= 0.548\n|   |   |   |--- class: 0\n|   |   |--- mars_sin >  0.548\n|   |   |   |--- class: 1\n"
+    },
+    "combined_name": {
+      "repeats": [
+        {
+          "seed": 20261003,
+          "nested_tree": {
+            "auc": 0.6023200475907198,
+            "balanced_accuracy": 0.5609756097560976
+          },
+          "fixed_forest": {
+            "auc": 0.6304283164782868,
+            "balanced_accuracy": 0.5670731707317074
+          }
+        },
+        {
+          "seed": 20261017,
+          "nested_tree": {
+            "auc": 0.5701963117192148,
+            "balanced_accuracy": 0.5670731707317074
+          },
+          "fixed_forest": {
+            "auc": 0.6469363474122547,
+            "balanced_accuracy": 0.6402439024390244
+          }
+        },
+        {
+          "seed": 20261031,
+          "nested_tree": {
+            "auc": 0.5553985722784057,
+            "balanced_accuracy": 0.5426829268292683
+          },
+          "fixed_forest": {
+            "auc": 0.6183819155264724,
+            "balanced_accuracy": 0.5914634146341463
+          }
+        }
+      ],
+      "mean_tree_auc": 0.5759716438627801,
+      "mean_tree_balanced_accuracy": 0.5569105691056911,
+      "mean_forest_auc": 0.631915526472338,
+      "mean_forest_balanced_accuracy": 0.5995934959349594,
+      "whole_data_fit_depth3_leaf8": {
+        "auc": 0.8123140987507436,
+        "balanced_accuracy": 0.7621951219512195
+      },
+      "unrestricted_whole_data_fit": {
+        "auc": 1.0,
+        "balanced_accuracy": 1.0
+      },
+      "sensitivity_gap_le5_n53_nested_tree": {
+        "auc": 0.7527589889640441,
+        "balanced_accuracy": 0.7264150943396226
+      },
+      "whole_data_rules": "|--- name_cyclic_consonants_raw_sum <= 35.500\n|   |--- neptune_cos <= -0.707\n|   |   |--- mars_cos <= 0.431\n|   |   |   |--- class: 0\n|   |   |--- mars_cos >  0.431\n|   |   |   |--- class: 0\n|   |--- neptune_cos >  -0.707\n|   |   |--- name_chaldean_consonants_raw_sum <= 26.500\n|   |   |   |--- class: 1\n|   |   |--- name_chaldean_consonants_raw_sum >  26.500\n|   |   |   |--- class: 0\n|--- name_cyclic_consonants_raw_sum >  35.500\n|   |--- venus_in_Gemini <= 0.500\n|   |   |--- date_digit_sum <= 24.500\n|   |   |   |--- class: 0\n|   |   |--- date_digit_sum >  24.500\n|   |   |   |--- class: 1\n|   |--- venus_in_Gemini >  0.500\n|   |   |--- class: 0\n"
+    }
+  }
+}

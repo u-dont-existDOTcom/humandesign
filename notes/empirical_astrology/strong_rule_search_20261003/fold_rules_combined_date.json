@@ -1,0 +1,473 @@
+[
+  {
+    "seed": 20261003,
+    "folds": [
+      {
+        "fold": 0,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.8191715976331362,
+          "balanced_accuracy": 0.7384615384615385
+        },
+        "test_pairs": [
+          3,
+          6,
+          7,
+          9,
+          14,
+          16,
+          23,
+          30,
+          39,
+          43,
+          47,
+          51,
+          55,
+          61,
+          66,
+          74,
+          75
+        ],
+        "rules": "|--- uranus_sin <= -0.429\n|   |--- mercury_conjunction_mars_orb6 <= 0.056\n|   |   |--- class: 1\n|   |--- mercury_conjunction_mars_orb6 >  0.056\n|   |   |--- class: 0\n|--- uranus_sin >  -0.429\n|   |--- sun_square_mars_orb3 <= 0.500\n|   |   |--- date_straight_sum_root=7 <= 0.500\n|   |   |   |--- element_count_1 <= 1.611\n|   |   |   |   |--- class: 0\n|   |   |   |--- element_count_1 >  1.611\n|   |   |   |   |--- class: 0\n|   |   |--- date_straight_sum_root=7 >  0.500\n|   |   |   |--- mars_cos <= -0.851\n|   |   |   |   |--- class: 0\n|   |   |   |--- mars_cos >  -0.851\n|   |   |   |   |--- class: 1\n|   |--- sun_square_mars_orb3 >  0.500\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 1,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.8095857988165681,
+          "balanced_accuracy": 0.7384615384615385
+        },
+        "test_pairs": [
+          4,
+          17,
+          21,
+          24,
+          26,
+          34,
+          36,
+          38,
+          49,
+          52,
+          53,
+          56,
+          57,
+          62,
+          65,
+          80,
+          81
+        ],
+        "rules": "|--- pluto_sin <= 0.277\n|   |--- sun_sin <= -0.263\n|   |   |--- class: 1\n|   |--- sun_sin >  -0.263\n|   |   |--- pluto_cos <= -0.982\n|   |   |   |--- class: 1\n|   |   |--- pluto_cos >  -0.982\n|   |   |   |--- class: 1\n|--- pluto_sin >  0.277\n|   |--- mercury_trine_saturn_orb6 <= 0.056\n|   |   |--- mars_cos <= 0.404\n|   |   |   |--- modality_count_1 <= 2.056\n|   |   |   |   |--- class: 0\n|   |   |   |--- modality_count_1 >  2.056\n|   |   |   |   |--- class: 0\n|   |   |--- mars_cos >  0.404\n|   |   |   |--- mercury_sin <= -0.322\n|   |   |   |   |--- class: 0\n|   |   |   |--- mercury_sin >  -0.322\n|   |   |   |   |--- class: 1\n|   |--- mercury_trine_saturn_orb6 >  0.056\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 2,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.731060606060606,
+          "balanced_accuracy": 0.6818181818181819
+        },
+        "test_pairs": [
+          8,
+          13,
+          19,
+          20,
+          22,
+          27,
+          28,
+          29,
+          40,
+          41,
+          45,
+          48,
+          64,
+          68,
+          69,
+          73
+        ],
+        "rules": "|--- pluto_sin <= 0.240\n|   |--- modality_count_0 <= 2.944\n|   |   |--- class: 0\n|   |--- modality_count_0 >  2.944\n|   |   |--- class: 1\n|--- pluto_sin >  0.240\n|   |--- mars_cos <= 0.309\n|   |   |--- class: 0\n|   |--- mars_cos >  0.309\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 3,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.7460973370064279,
+          "balanced_accuracy": 0.7196969696969697
+        },
+        "test_pairs": [
+          2,
+          10,
+          15,
+          25,
+          37,
+          42,
+          46,
+          50,
+          58,
+          60,
+          63,
+          70,
+          72,
+          77,
+          79,
+          82
+        ],
+        "rules": "|--- neptune_cos <= -0.707\n|   |--- mars_in_Taurus <= 0.056\n|   |   |--- class: 0\n|   |--- mars_in_Taurus >  0.056\n|   |   |--- class: 1\n|--- neptune_cos >  -0.707\n|   |--- pluto_cos <= -0.985\n|   |   |--- class: 1\n|   |--- pluto_cos >  -0.985\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 4,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.7522956841138659,
+          "balanced_accuracy": 0.7121212121212122
+        },
+        "test_pairs": [
+          1,
+          5,
+          11,
+          12,
+          18,
+          31,
+          32,
+          33,
+          35,
+          44,
+          54,
+          59,
+          67,
+          71,
+          76,
+          78
+        ],
+        "rules": "|--- neptune_cos <= -0.673\n|   |--- mars_cos <= 0.144\n|   |   |--- class: 0\n|   |--- mars_cos >  0.144\n|   |   |--- class: 1\n|--- neptune_cos >  -0.673\n|   |--- mars_cos <= -0.836\n|   |   |--- class: 1\n|   |--- mars_cos >  -0.836\n|   |   |--- class: 1\n"
+      }
+    ]
+  },
+  {
+    "seed": 20261017,
+    "folds": [
+      {
+        "fold": 0,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.7022485207100592,
+          "balanced_accuracy": 0.676923076923077
+        },
+        "test_pairs": [
+          8,
+          14,
+          15,
+          18,
+          22,
+          25,
+          34,
+          36,
+          39,
+          48,
+          49,
+          51,
+          57,
+          58,
+          67,
+          76,
+          79
+        ],
+        "rules": "|--- neptune_sin <= -0.740\n|   |--- mars_sin <= -0.722\n|   |   |--- class: 1\n|   |--- mars_sin >  -0.722\n|   |   |--- class: 1\n|--- neptune_sin >  -0.740\n|   |--- mars_in_Taurus <= 0.056\n|   |   |--- class: 0\n|   |--- mars_in_Taurus >  0.056\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 1,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.7738461538461539,
+          "balanced_accuracy": 0.7230769230769232
+        },
+        "test_pairs": [
+          4,
+          5,
+          28,
+          30,
+          33,
+          35,
+          47,
+          53,
+          56,
+          60,
+          63,
+          64,
+          65,
+          66,
+          69,
+          75,
+          82
+        ],
+        "rules": "|--- pluto_sin <= 0.277\n|   |--- mars_cos <= -0.836\n|   |   |--- class: 0\n|   |--- mars_cos >  -0.836\n|   |   |--- class: 1\n|--- pluto_sin >  0.277\n|   |--- mars_cos <= 0.148\n|   |   |--- class: 0\n|   |--- mars_cos >  0.148\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 2,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.8037190082644627,
+          "balanced_accuracy": 0.7272727272727273
+        },
+        "test_pairs": [
+          7,
+          9,
+          20,
+          27,
+          31,
+          32,
+          41,
+          43,
+          54,
+          55,
+          62,
+          70,
+          71,
+          74,
+          78,
+          80
+        ],
+        "rules": "|--- neptune_sin <= -0.709\n|   |--- mercury_sin <= -0.519\n|   |   |--- class: 0\n|   |--- mercury_sin >  -0.519\n|   |   |--- modality_count_2 <= 3.722\n|   |   |   |--- class: 1\n|   |   |--- modality_count_2 >  3.722\n|   |   |   |--- class: 1\n|--- neptune_sin >  -0.709\n|   |--- mars_detriment <= 0.333\n|   |   |--- neptune_sin <= -0.301\n|   |   |   |--- modality_count_2 <= 3.944\n|   |   |   |   |--- class: 0\n|   |   |   |--- modality_count_2 >  3.944\n|   |   |   |   |--- class: 1\n|   |   |--- neptune_sin >  -0.301\n|   |   |   |--- class: 1\n|   |--- mars_detriment >  0.333\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 3,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.8279384756657483,
+          "balanced_accuracy": 0.75
+        },
+        "test_pairs": [
+          1,
+          3,
+          6,
+          11,
+          16,
+          19,
+          23,
+          24,
+          26,
+          29,
+          37,
+          59,
+          68,
+          72,
+          73,
+          81
+        ],
+        "rules": "|--- neptune_sin <= -0.910\n|   |--- neptune_sin <= -0.973\n|   |   |--- class: 1\n|   |--- neptune_sin >  -0.973\n|   |   |--- class: 1\n|--- neptune_sin >  -0.910\n|   |--- element_count_1 <= 1.611\n|   |   |--- element_count_0 <= 2.556\n|   |   |   |--- venus_sin <= 0.569\n|   |   |   |   |--- class: 1\n|   |   |   |--- venus_sin >  0.569\n|   |   |   |   |--- class: 0\n|   |   |--- element_count_0 >  2.556\n|   |   |   |--- uranus_in_Leo <= 0.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- uranus_in_Leo >  0.500\n|   |   |   |   |--- class: 0\n|   |--- element_count_1 >  1.611\n|   |   |--- sun_sin <= 0.808\n|   |   |   |--- date_att=6 <= 0.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- date_att=6 >  0.500\n|   |   |   |   |--- class: 1\n|   |   |--- sun_sin >  0.808\n|   |   |   |--- uranus_conjunction_pluto_orb6 <= 0.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- uranus_conjunction_pluto_orb6 >  0.500\n|   |   |   |   |--- class: 1\n"
+      },
+      {
+        "fold": 4,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.7348484848484849,
+          "balanced_accuracy": 0.6818181818181819
+        },
+        "test_pairs": [
+          2,
+          10,
+          12,
+          13,
+          17,
+          21,
+          38,
+          40,
+          42,
+          44,
+          45,
+          46,
+          50,
+          52,
+          61,
+          77
+        ],
+        "rules": "|--- uranus_sin <= 0.403\n|   |--- modality_count_1 <= 2.722\n|   |   |--- class: 1\n|   |--- modality_count_1 >  2.722\n|   |   |--- class: 1\n|--- uranus_sin >  0.403\n|   |--- mars_cos <= 0.148\n|   |   |--- class: 0\n|   |--- mars_cos >  0.148\n|   |   |--- class: 1\n"
+      }
+    ]
+  },
+  {
+    "seed": 20261031,
+    "folds": [
+      {
+        "fold": 0,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.8150295857988166,
+          "balanced_accuracy": 0.7461538461538462
+        },
+        "test_pairs": [
+          1,
+          5,
+          6,
+          12,
+          13,
+          31,
+          32,
+          34,
+          37,
+          40,
+          45,
+          48,
+          52,
+          58,
+          63,
+          73,
+          76
+        ],
+        "rules": "|--- neptune_sin <= -0.923\n|   |--- class: 1\n|--- neptune_sin >  -0.923\n|   |--- sun_trine_neptune_orb6 <= 0.222\n|   |   |--- saturn_retrograde <= 0.167\n|   |   |   |--- mercury_cos <= -0.914\n|   |   |   |   |--- class: 1\n|   |   |   |--- mercury_cos >  -0.914\n|   |   |   |   |--- class: 0\n|   |   |--- saturn_retrograde >  0.167\n|   |   |   |--- element_count_2 <= 1.056\n|   |   |   |   |--- class: 1\n|   |   |   |--- element_count_2 >  1.056\n|   |   |   |   |--- class: 0\n|   |--- sun_trine_neptune_orb6 >  0.222\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 1,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.7349112426035503,
+          "balanced_accuracy": 0.7153846153846154
+        },
+        "test_pairs": [
+          4,
+          7,
+          11,
+          14,
+          16,
+          21,
+          23,
+          28,
+          36,
+          38,
+          42,
+          49,
+          53,
+          56,
+          59,
+          79,
+          81
+        ],
+        "rules": "|--- neptune_cos <= -0.801\n|   |--- modality_count_1 <= 1.611\n|   |   |--- class: 1\n|   |--- modality_count_1 >  1.611\n|   |   |--- class: 0\n|--- neptune_cos >  -0.801\n|   |--- mercury_trine_pluto_orb6 <= 0.278\n|   |   |--- class: 1\n|   |--- mercury_trine_pluto_orb6 >  0.278\n|   |   |--- class: 0\n"
+      },
+      {
+        "fold": 2,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.8715564738292012,
+          "balanced_accuracy": 0.7727272727272727
+        },
+        "test_pairs": [
+          3,
+          9,
+          20,
+          25,
+          29,
+          35,
+          51,
+          54,
+          57,
+          60,
+          65,
+          69,
+          72,
+          77,
+          80,
+          82
+        ],
+        "rules": "|--- neptune_cos <= -0.673\n|   |--- mars_cos <= 0.148\n|   |   |--- mercury_trine_saturn_orb6 <= 0.056\n|   |   |   |--- saturn_sin <= -0.497\n|   |   |   |   |--- class: 0\n|   |   |   |--- saturn_sin >  -0.497\n|   |   |   |   |--- class: 0\n|   |   |--- mercury_trine_saturn_orb6 >  0.056\n|   |   |   |--- class: 1\n|   |--- mars_cos >  0.148\n|   |   |--- saturn_in_Scorpio <= 0.500\n|   |   |   |--- saturn_retrograde <= 0.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- saturn_retrograde >  0.500\n|   |   |   |   |--- class: 1\n|   |   |--- saturn_in_Scorpio >  0.500\n|   |   |   |--- class: 0\n|--- neptune_cos >  -0.673\n|   |--- mars_sin <= -0.722\n|   |   |--- class: 1\n|   |--- mars_sin >  -0.722\n|   |   |--- mars_sin <= 0.443\n|   |   |   |--- neptune_cos <= -0.565\n|   |   |   |   |--- class: 1\n|   |   |   |--- neptune_cos >  -0.565\n|   |   |   |   |--- class: 0\n|   |   |--- mars_sin >  0.443\n|   |   |   |--- class: 1\n"
+      },
+      {
+        "fold": 3,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.7188934802571165,
+          "balanced_accuracy": 0.7045454545454546
+        },
+        "test_pairs": [
+          2,
+          10,
+          18,
+          26,
+          27,
+          30,
+          46,
+          50,
+          55,
+          62,
+          66,
+          67,
+          68,
+          71,
+          74,
+          78
+        ],
+        "rules": "|--- neptune_sin <= -0.709\n|   |--- mercury_cos <= 0.467\n|   |   |--- class: 1\n|   |--- mercury_cos >  0.467\n|   |   |--- class: 0\n|--- neptune_sin >  -0.709\n|   |--- date_day=6 <= 0.500\n|   |   |--- class: 0\n|   |--- date_day=6 >  0.500\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 4,
+        "parameters": {
+          "max_depth": 3,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.7928145087235997,
+          "balanced_accuracy": 0.7575757575757576
+        },
+        "test_pairs": [
+          8,
+          15,
+          17,
+          19,
+          22,
+          24,
+          33,
+          39,
+          41,
+          43,
+          44,
+          47,
+          61,
+          64,
+          70,
+          75
+        ],
+        "rules": "|--- pluto_sin <= 0.277\n|   |--- mars_sin <= -0.757\n|   |   |--- class: 1\n|   |--- mars_sin >  -0.757\n|   |   |--- mars_sin <= 0.465\n|   |   |   |--- class: 0\n|   |   |--- mars_sin >  0.465\n|   |   |   |--- class: 1\n|--- pluto_sin >  0.277\n|   |--- mars_in_Taurus <= 0.056\n|   |   |--- sun_trine_neptune_orb6 <= 0.222\n|   |   |   |--- class: 0\n|   |   |--- sun_trine_neptune_orb6 >  0.222\n|   |   |   |--- class: 1\n|   |--- mars_in_Taurus >  0.056\n|   |   |--- class: 1\n"
+      }
+    ]
+  }
+]

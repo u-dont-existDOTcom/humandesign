@@ -1,0 +1,46 @@
+{
+  "scope": "Algorithm-level replay from source-transcribed projection, no published p-values replayed",
+  "versions": {
+    "numpy": "2.3.5",
+    "sklearn": "1.8.0",
+    "swe": "2.10.03"
+  },
+  "pairs": 82,
+  "pairs_gap_le5": 53,
+  "newer_case_pairs": 62,
+  "newer_control_pairs": 1,
+  "same_year_pairs": 19,
+  "mean_year_delta": 4.426829268292683,
+  "replayed_53_pair_metrics": {
+    "calendar": {
+      "auc": 0.5315058739765041,
+      "balanced_accuracy": 0.5094339622641509
+    },
+    "numerology": {
+      "auc": 0.4848700605197579,
+      "balanced_accuracy": 0.5188679245283019
+    },
+    "astrology": {
+      "auc": 0.5873976504093984,
+      "balanced_accuracy": 0.5566037735849056
+    },
+    "combined": {
+      "auc": 0.50124599501602,
+      "balanced_accuracy": 0.5283018867924528
+    }
+  },
+  "life_path_counts": {
+    "1": 13,
+    "2": 5,
+    "3": 10,
+    "4": 4,
+    "5": 5,
+    "6": 9,
+    "7": 15,
+    "8": 6,
+    "9": 9,
+    "11": 2,
+    "22": 1,
+    "33": 3
+  }
+}

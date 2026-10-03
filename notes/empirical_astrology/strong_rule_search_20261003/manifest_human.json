@@ -1,0 +1,36 @@
+{
+  "mode": "human",
+  "source_projection_sha256": "b47abae2747943169efced12ffd84f5d61b92e0a4213e08dc0af3e5197b9565d",
+  "code_sha256": "1430196b9e1002677cea176de88b5b4f78f0d2116951f4a0f8188ac25986fe89",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "sklearn": "1.8.0",
+  "swisseph": "2.10.03",
+  "ephemeris_requested": 260,
+  "ephemeris_returned": [
+    260
+  ],
+  "ephemeris": "MOSEPH exploratory noncanonical",
+  "v4_3_compliant": false,
+  "scope": "Group-level diagnostic only; no individual-risk inference",
+  "seeds": [
+    20261003,
+    20261017,
+    20261031
+  ],
+  "unknown_time_samples_UTC_hours": [
+    -14.0,
+    -7.75,
+    -1.5,
+    4.75,
+    11.0,
+    17.25,
+    23.5,
+    29.75,
+    36.0
+  ],
+  "command": [
+    "search_rules.py",
+    "human"
+  ]
+}

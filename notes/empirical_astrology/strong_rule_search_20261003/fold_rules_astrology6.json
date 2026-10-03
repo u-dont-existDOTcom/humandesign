@@ -1,0 +1,473 @@
+[
+  {
+    "seed": 20261003,
+    "folds": [
+      {
+        "fold": 0,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.6533727810650887,
+          "balanced_accuracy": 0.6384615384615384
+        },
+        "test_pairs": [
+          3,
+          6,
+          7,
+          9,
+          14,
+          16,
+          23,
+          30,
+          39,
+          43,
+          47,
+          51,
+          55,
+          61,
+          66,
+          74,
+          75
+        ],
+        "rules": "|--- mercury_in_Aquarius <= 0.556\n|   |--- mars_cos <= -0.564\n|   |   |--- class: 0\n|   |--- mars_cos >  -0.564\n|   |   |--- class: 1\n|--- mercury_in_Aquarius >  0.556\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 1,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.7164497041420118,
+          "balanced_accuracy": 0.6615384615384616
+        },
+        "test_pairs": [
+          4,
+          17,
+          21,
+          24,
+          26,
+          34,
+          36,
+          38,
+          49,
+          52,
+          53,
+          56,
+          57,
+          62,
+          65,
+          80,
+          81
+        ],
+        "rules": "|--- saturn_sin <= -0.497\n|   |--- mercury_sin <= -0.249\n|   |   |--- class: 0\n|   |--- mercury_sin >  -0.249\n|   |   |--- class: 1\n|--- saturn_sin >  -0.497\n|   |--- modality_count_0 <= 1.889\n|   |   |--- class: 0\n|   |--- modality_count_0 >  1.889\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 2,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.8924471992653811,
+          "balanced_accuracy": 0.8409090909090909
+        },
+        "test_pairs": [
+          8,
+          13,
+          19,
+          20,
+          22,
+          27,
+          28,
+          29,
+          40,
+          41,
+          45,
+          48,
+          64,
+          68,
+          69,
+          73
+        ],
+        "rules": "|--- saturn_retrograde <= 0.778\n|   |--- venus_square_saturn_orb6 <= 0.111\n|   |   |--- modality_count_0 <= 2.056\n|   |   |   |--- mercury_in_Pisces <= 0.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- mercury_in_Pisces >  0.500\n|   |   |   |   |--- class: 1\n|   |   |--- modality_count_0 >  2.056\n|   |   |   |--- jupiter_sin <= -0.617\n|   |   |   |   |--- class: 0\n|   |   |   |--- jupiter_sin >  -0.617\n|   |   |   |   |--- class: 1\n|   |--- venus_square_saturn_orb6 >  0.111\n|   |   |--- class: 1\n|--- saturn_retrograde >  0.778\n|   |--- saturn_sin <= -0.440\n|   |   |--- mars_in_Taurus <= 0.500\n|   |   |   |--- saturn_sin <= -0.979\n|   |   |   |   |--- class: 1\n|   |   |   |--- saturn_sin >  -0.979\n|   |   |   |   |--- class: 0\n|   |   |--- mars_in_Taurus >  0.500\n|   |   |   |--- class: 1\n|   |--- saturn_sin >  -0.440\n|   |   |--- mars_cos <= -0.835\n|   |   |   |--- class: 0\n|   |   |--- mars_cos >  -0.835\n|   |   |   |--- mercury_cos <= 0.516\n|   |   |   |   |--- class: 1\n|   |   |   |--- mercury_cos >  0.516\n|   |   |   |   |--- class: 1\n"
+      },
+      {
+        "fold": 3,
+        "parameters": {
+          "max_depth": 3,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.8286271808999082,
+          "balanced_accuracy": 0.7575757575757576
+        },
+        "test_pairs": [
+          2,
+          10,
+          15,
+          25,
+          37,
+          42,
+          46,
+          50,
+          58,
+          60,
+          63,
+          70,
+          72,
+          77,
+          79,
+          82
+        ],
+        "rules": "|--- saturn_sin <= -0.545\n|   |--- mars_cos <= 0.309\n|   |   |--- mercury_sin <= -0.122\n|   |   |   |--- class: 0\n|   |   |--- mercury_sin >  -0.122\n|   |   |   |--- class: 0\n|   |--- mars_cos >  0.309\n|   |   |--- saturn_cos <= 0.019\n|   |   |   |--- class: 0\n|   |   |--- saturn_cos >  0.019\n|   |   |   |--- class: 1\n|--- saturn_sin >  -0.545\n|   |--- saturn_retrograde <= 0.167\n|   |   |--- mars_sin <= -0.035\n|   |   |   |--- class: 1\n|   |   |--- mars_sin >  -0.035\n|   |   |   |--- class: 0\n|   |--- saturn_retrograde >  0.167\n|   |   |--- mercury_cos <= -0.154\n|   |   |   |--- class: 1\n|   |   |--- mercury_cos >  -0.154\n|   |   |   |--- class: 1\n"
+      },
+      {
+        "fold": 4,
+        "parameters": {
+          "max_depth": 3,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.814279155188246,
+          "balanced_accuracy": 0.7424242424242424
+        },
+        "test_pairs": [
+          1,
+          5,
+          11,
+          12,
+          18,
+          31,
+          32,
+          33,
+          35,
+          44,
+          54,
+          59,
+          67,
+          71,
+          76,
+          78
+        ],
+        "rules": "|--- saturn_sin <= -0.497\n|   |--- mars_cos <= 0.231\n|   |   |--- mercury_sin <= -0.122\n|   |   |   |--- class: 0\n|   |   |--- mercury_sin >  -0.122\n|   |   |   |--- class: 0\n|   |--- mars_cos >  0.231\n|   |   |--- sun_sin <= -0.462\n|   |   |   |--- class: 0\n|   |   |--- sun_sin >  -0.462\n|   |   |   |--- class: 1\n|--- saturn_sin >  -0.497\n|   |--- mercury_cos <= -0.914\n|   |   |--- class: 1\n|   |--- mercury_cos >  -0.914\n|   |   |--- sun_conjunction_mercury_orb3 <= 0.222\n|   |   |   |--- class: 1\n|   |   |--- sun_conjunction_mercury_orb3 >  0.222\n|   |   |   |--- class: 0\n"
+      }
+    ]
+  },
+  {
+    "seed": 20261017,
+    "folds": [
+      {
+        "fold": 0,
+        "parameters": {
+          "max_depth": 3,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.7589349112426035,
+          "balanced_accuracy": 0.7230769230769231
+        },
+        "test_pairs": [
+          8,
+          14,
+          15,
+          18,
+          22,
+          25,
+          34,
+          36,
+          39,
+          48,
+          49,
+          51,
+          57,
+          58,
+          67,
+          76,
+          79
+        ],
+        "rules": "|--- venus_sin <= 0.992\n|   |--- saturn_retrograde <= 0.778\n|   |   |--- mercury_in_Pisces <= 0.056\n|   |   |   |--- class: 0\n|   |   |--- mercury_in_Pisces >  0.056\n|   |   |   |--- class: 1\n|   |--- saturn_retrograde >  0.778\n|   |   |--- mercury_conjunction_mars_orb6 <= 0.222\n|   |   |   |--- class: 1\n|   |   |--- mercury_conjunction_mars_orb6 >  0.222\n|   |   |   |--- class: 0\n|--- venus_sin >  0.992\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 1,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.7550295857988165,
+          "balanced_accuracy": 0.7230769230769232
+        },
+        "test_pairs": [
+          4,
+          5,
+          28,
+          30,
+          33,
+          35,
+          47,
+          53,
+          56,
+          60,
+          63,
+          64,
+          65,
+          66,
+          69,
+          75,
+          82
+        ],
+        "rules": "|--- mars_cos <= 0.081\n|   |--- saturn_sin <= -0.497\n|   |   |--- class: 0\n|   |--- saturn_sin >  -0.497\n|   |   |--- class: 1\n|--- mars_cos >  0.081\n|   |--- mercury_in_Aquarius <= 0.056\n|   |   |--- class: 1\n|   |--- mercury_in_Aquarius >  0.056\n|   |   |--- class: 0\n"
+      },
+      {
+        "fold": 2,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.637741046831956,
+          "balanced_accuracy": 0.6363636363636364
+        },
+        "test_pairs": [
+          7,
+          9,
+          20,
+          27,
+          31,
+          32,
+          41,
+          43,
+          54,
+          55,
+          62,
+          70,
+          71,
+          74,
+          78,
+          80
+        ],
+        "rules": "|--- mercury_in_Aquarius <= 0.556\n|   |--- sun_sin <= -0.971\n|   |   |--- class: 0\n|   |--- sun_sin >  -0.971\n|   |   |--- class: 1\n|--- mercury_in_Aquarius >  0.556\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 3,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.7115472910927457,
+          "balanced_accuracy": 0.6666666666666667
+        },
+        "test_pairs": [
+          1,
+          3,
+          6,
+          11,
+          16,
+          19,
+          23,
+          24,
+          26,
+          29,
+          37,
+          59,
+          68,
+          72,
+          73,
+          81
+        ],
+        "rules": "|--- saturn_retrograde <= 0.778\n|   |--- mercury_sin <= -0.407\n|   |   |--- class: 0\n|   |--- mercury_sin >  -0.407\n|   |   |--- class: 1\n|--- saturn_retrograde >  0.778\n|   |--- saturn_sin <= 0.356\n|   |   |--- class: 1\n|   |--- saturn_sin >  0.356\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 4,
+        "parameters": {
+          "max_depth": 3,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.8064738292011019,
+          "balanced_accuracy": 0.7348484848484849
+        },
+        "test_pairs": [
+          2,
+          10,
+          12,
+          13,
+          17,
+          21,
+          38,
+          40,
+          42,
+          44,
+          45,
+          46,
+          50,
+          52,
+          61,
+          77
+        ],
+        "rules": "|--- saturn_sin <= -0.362\n|   |--- mars_in_Taurus <= 0.444\n|   |   |--- mercury_sin <= -0.357\n|   |   |   |--- class: 0\n|   |   |--- mercury_sin >  -0.357\n|   |   |   |--- class: 0\n|   |--- mars_in_Taurus >  0.444\n|   |   |--- mercury_sin <= -0.416\n|   |   |   |--- class: 0\n|   |   |--- mercury_sin >  -0.416\n|   |   |   |--- class: 1\n|--- saturn_sin >  -0.362\n|   |--- venus_in_Gemini <= 0.500\n|   |   |--- venus_cos <= 0.895\n|   |   |   |--- class: 1\n|   |   |--- venus_cos >  0.895\n|   |   |   |--- class: 0\n|   |--- venus_in_Gemini >  0.500\n|   |   |--- class: 0\n"
+      }
+    ]
+  },
+  {
+    "seed": 20261031,
+    "folds": [
+      {
+        "fold": 0,
+        "parameters": {
+          "max_depth": 1,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.623076923076923,
+          "balanced_accuracy": 0.6230769230769231
+        },
+        "test_pairs": [
+          1,
+          5,
+          6,
+          12,
+          13,
+          31,
+          32,
+          34,
+          37,
+          40,
+          45,
+          48,
+          52,
+          58,
+          63,
+          73,
+          76
+        ],
+        "rules": "|--- saturn_retrograde <= 0.278\n|   |--- class: 0\n|--- saturn_retrograde >  0.278\n|   |--- class: 1\n"
+      },
+      {
+        "fold": 1,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.7939644970414201,
+          "balanced_accuracy": 0.7230769230769232
+        },
+        "test_pairs": [
+          4,
+          7,
+          11,
+          14,
+          16,
+          21,
+          23,
+          28,
+          36,
+          38,
+          42,
+          49,
+          53,
+          56,
+          59,
+          79,
+          81
+        ],
+        "rules": "|--- saturn_retrograde <= 0.778\n|   |--- mercury_in_Pisces <= 0.056\n|   |   |--- sun_sin <= -0.462\n|   |   |   |--- jupiter_sin <= -0.184\n|   |   |   |   |--- class: 0\n|   |   |   |--- jupiter_sin >  -0.184\n|   |   |   |   |--- class: 0\n|   |   |--- sun_sin >  -0.462\n|   |   |   |--- venus_sin <= 0.358\n|   |   |   |   |--- class: 1\n|   |   |   |--- venus_sin >  0.358\n|   |   |   |   |--- class: 0\n|   |--- mercury_in_Pisces >  0.056\n|   |   |--- class: 1\n|--- saturn_retrograde >  0.778\n|   |--- jupiter_cos <= -0.395\n|   |   |--- class: 0\n|   |--- jupiter_cos >  -0.395\n|   |   |--- modality_count_0 <= 2.056\n|   |   |   |--- class: 1\n|   |   |--- modality_count_0 >  2.056\n|   |   |   |--- class: 1\n"
+      },
+      {
+        "fold": 2,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.8352846648301194,
+          "balanced_accuracy": 0.7878787878787878
+        },
+        "test_pairs": [
+          3,
+          9,
+          20,
+          25,
+          29,
+          35,
+          51,
+          54,
+          57,
+          60,
+          65,
+          69,
+          72,
+          77,
+          80,
+          82
+        ],
+        "rules": "|--- mercury_in_Pisces <= 0.056\n|   |--- saturn_sin <= -0.497\n|   |   |--- sun_sin <= 0.944\n|   |   |   |--- element_count_2 <= 0.556\n|   |   |   |   |--- class: 1\n|   |   |   |--- element_count_2 >  0.556\n|   |   |   |   |--- class: 0\n|   |   |--- sun_sin >  0.944\n|   |   |   |--- class: 1\n|   |--- saturn_sin >  -0.497\n|   |   |--- venus_cos <= -0.153\n|   |   |   |--- modality_count_0 <= 1.833\n|   |   |   |   |--- class: 0\n|   |   |   |--- modality_count_0 >  1.833\n|   |   |   |   |--- class: 1\n|   |   |--- venus_cos >  -0.153\n|   |   |   |--- venus_opposition_saturn_orb6 <= 0.111\n|   |   |   |   |--- class: 0\n|   |   |   |--- venus_opposition_saturn_orb6 >  0.111\n|   |   |   |   |--- class: 1\n|--- mercury_in_Pisces >  0.056\n|   |--- saturn_sin <= -0.122\n|   |   |--- class: 1\n|   |--- saturn_sin >  -0.122\n|   |   |--- class: 1\n"
+      },
+      {
+        "fold": 3,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.8700642791551882,
+          "balanced_accuracy": 0.7803030303030303
+        },
+        "test_pairs": [
+          2,
+          10,
+          18,
+          26,
+          27,
+          30,
+          46,
+          50,
+          55,
+          62,
+          66,
+          67,
+          68,
+          71,
+          74,
+          78
+        ],
+        "rules": "|--- saturn_sin <= -0.543\n|   |--- mars_cos <= 0.309\n|   |   |--- mars_cos <= -0.948\n|   |   |   |--- class: 0\n|   |   |--- mars_cos >  -0.948\n|   |   |   |--- venus_cos <= -0.437\n|   |   |   |   |--- class: 0\n|   |   |   |--- venus_cos >  -0.437\n|   |   |   |   |--- class: 0\n|   |--- mars_cos >  0.309\n|   |   |--- mars_cos <= 0.653\n|   |   |   |--- class: 1\n|   |   |--- mars_cos >  0.653\n|   |   |   |--- class: 0\n|--- saturn_sin >  -0.543\n|   |--- saturn_retrograde <= 0.111\n|   |   |--- mars_cos <= -0.657\n|   |   |   |--- mars_cos <= -0.970\n|   |   |   |   |--- class: 0\n|   |   |   |--- mars_cos >  -0.970\n|   |   |   |   |--- class: 1\n|   |   |--- mars_cos >  -0.657\n|   |   |   |--- modality_count_0 <= 2.167\n|   |   |   |   |--- class: 0\n|   |   |   |--- modality_count_0 >  2.167\n|   |   |   |   |--- class: 1\n|   |--- saturn_retrograde >  0.111\n|   |   |--- mars_sin <= 0.549\n|   |   |   |--- mars_sin <= -0.525\n|   |   |   |   |--- class: 1\n|   |   |   |--- mars_sin >  -0.525\n|   |   |   |   |--- class: 0\n|   |   |--- mars_sin >  0.549\n|   |   |   |--- class: 1\n"
+      },
+      {
+        "fold": 4,
+        "parameters": {
+          "max_depth": 3,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.752754820936639,
+          "balanced_accuracy": 0.6818181818181819
+        },
+        "test_pairs": [
+          8,
+          15,
+          17,
+          19,
+          22,
+          24,
+          33,
+          39,
+          41,
+          43,
+          44,
+          47,
+          61,
+          64,
+          70,
+          75
+        ],
+        "rules": "|--- saturn_sin <= 0.184\n|   |--- mars_detriment <= 0.667\n|   |   |--- modality_count_1 <= 1.722\n|   |   |   |--- class: 0\n|   |   |--- modality_count_1 >  1.722\n|   |   |   |--- class: 0\n|   |--- mars_detriment >  0.667\n|   |   |--- class: 1\n|--- saturn_sin >  0.184\n|   |--- modality_count_0 <= 1.778\n|   |   |--- class: 0\n|   |--- modality_count_0 >  1.778\n|   |   |--- jupiter_sin <= -0.261\n|   |   |   |--- class: 1\n|   |   |--- jupiter_sin >  -0.261\n|   |   |   |--- class: 1\n"
+      }
+    ]
+  }
+]

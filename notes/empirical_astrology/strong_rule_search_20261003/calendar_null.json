@@ -1,0 +1,482 @@
+[
+  {
+    "panel": 0,
+    "family": "date_numerology",
+    "tree": {
+      "auc": 0.4306216537775134,
+      "balanced_accuracy": 0.45121951219512196
+    },
+    "forest": {
+      "auc": 0.36600237953599046,
+      "balanced_accuracy": 0.4024390243902439
+    }
+  },
+  {
+    "panel": 0,
+    "family": "astrology6",
+    "tree": {
+      "auc": 0.45977096966091613,
+      "balanced_accuracy": 0.4634146341463415
+    },
+    "forest": {
+      "auc": 0.5169541939321832,
+      "balanced_accuracy": 0.524390243902439
+    }
+  },
+  {
+    "panel": 0,
+    "family": "astrology9",
+    "tree": {
+      "auc": 0.43813206424747164,
+      "balanced_accuracy": 0.45731707317073167
+    },
+    "forest": {
+      "auc": 0.5017846519928614,
+      "balanced_accuracy": 0.47560975609756095
+    }
+  },
+  {
+    "panel": 0,
+    "family": "combined_date",
+    "tree": {
+      "auc": 0.43813206424747164,
+      "balanced_accuracy": 0.45731707317073167
+    },
+    "forest": {
+      "auc": 0.5004461629982153,
+      "balanced_accuracy": 0.5
+    }
+  },
+  {
+    "panel": 1,
+    "family": "date_numerology",
+    "tree": {
+      "auc": 0.4582093991671624,
+      "balanced_accuracy": 0.47560975609756095
+    },
+    "forest": {
+      "auc": 0.39812611540749554,
+      "balanced_accuracy": 0.46341463414634143
+    }
+  },
+  {
+    "panel": 1,
+    "family": "astrology6",
+    "tree": {
+      "auc": 0.45597858417608567,
+      "balanced_accuracy": 0.46341463414634143
+    },
+    "forest": {
+      "auc": 0.44244497323022014,
+      "balanced_accuracy": 0.4573170731707317
+    }
+  },
+  {
+    "panel": 1,
+    "family": "astrology9",
+    "tree": {
+      "auc": 0.4069750148720999,
+      "balanced_accuracy": 0.41463414634146345
+    },
+    "forest": {
+      "auc": 0.44497323022010704,
+      "balanced_accuracy": 0.47560975609756095
+    }
+  },
+  {
+    "panel": 1,
+    "family": "combined_date",
+    "tree": {
+      "auc": 0.4189470553242118,
+      "balanced_accuracy": 0.4207317073170732
+    },
+    "forest": {
+      "auc": 0.4143367043426532,
+      "balanced_accuracy": 0.4329268292682927
+    }
+  },
+  {
+    "panel": 2,
+    "family": "date_numerology",
+    "tree": {
+      "auc": 0.47984830458060684,
+      "balanced_accuracy": 0.5
+    },
+    "forest": {
+      "auc": 0.37098453301606193,
+      "balanced_accuracy": 0.36585365853658536
+    }
+  },
+  {
+    "panel": 2,
+    "family": "astrology6",
+    "tree": {
+      "auc": 0.5258774538964902,
+      "balanced_accuracy": 0.5121951219512195
+    },
+    "forest": {
+      "auc": 0.5101130279595478,
+      "balanced_accuracy": 0.5060975609756098
+    }
+  },
+  {
+    "panel": 2,
+    "family": "astrology9",
+    "tree": {
+      "auc": 0.45337596668649616,
+      "balanced_accuracy": 0.47560975609756095
+    },
+    "forest": {
+      "auc": 0.48051754907792976,
+      "balanced_accuracy": 0.4817073170731707
+    }
+  },
+  {
+    "panel": 2,
+    "family": "combined_date",
+    "tree": {
+      "auc": 0.45337596668649616,
+      "balanced_accuracy": 0.47560975609756095
+    },
+    "forest": {
+      "auc": 0.5156157049375372,
+      "balanced_accuracy": 0.5
+    }
+  },
+  {
+    "panel": 3,
+    "family": "date_numerology",
+    "tree": {
+      "auc": 0.43701665675193335,
+      "balanced_accuracy": 0.46951219512195125
+    },
+    "forest": {
+      "auc": 0.3735127900059489,
+      "balanced_accuracy": 0.39634146341463417
+    }
+  },
+  {
+    "panel": 3,
+    "family": "astrology6",
+    "tree": {
+      "auc": 0.5185901249256394,
+      "balanced_accuracy": 0.5060975609756098
+    },
+    "forest": {
+      "auc": 0.5355443188578226,
+      "balanced_accuracy": 0.5304878048780488
+    }
+  },
+  {
+    "panel": 3,
+    "family": "astrology9",
+    "tree": {
+      "auc": 0.5063206424747174,
+      "balanced_accuracy": 0.49390243902439024
+    },
+    "forest": {
+      "auc": 0.5058744794765022,
+      "balanced_accuracy": 0.5
+    }
+  },
+  {
+    "panel": 3,
+    "family": "combined_date",
+    "tree": {
+      "auc": 0.4883254015466984,
+      "balanced_accuracy": 0.4878048780487805
+    },
+    "forest": {
+      "auc": 0.47010707911957167,
+      "balanced_accuracy": 0.4695121951219512
+    }
+  },
+  {
+    "panel": 4,
+    "family": "date_numerology",
+    "tree": {
+      "auc": 0.485202260559191,
+      "balanced_accuracy": 0.4878048780487805
+    },
+    "forest": {
+      "auc": 0.5163593099345628,
+      "balanced_accuracy": 0.5182926829268293
+    }
+  },
+  {
+    "panel": 4,
+    "family": "astrology6",
+    "tree": {
+      "auc": 0.5698988697204046,
+      "balanced_accuracy": 0.5548780487804879
+    },
+    "forest": {
+      "auc": 0.5941403926234383,
+      "balanced_accuracy": 0.5792682926829269
+    }
+  },
+  {
+    "panel": 4,
+    "family": "astrology9",
+    "tree": {
+      "auc": 0.5205978584176085,
+      "balanced_accuracy": 0.5426829268292683
+    },
+    "forest": {
+      "auc": 0.5895300416418798,
+      "balanced_accuracy": 0.5731707317073171
+    }
+  },
+  {
+    "panel": 4,
+    "family": "combined_date",
+    "tree": {
+      "auc": 0.5205978584176085,
+      "balanced_accuracy": 0.5426829268292683
+    },
+    "forest": {
+      "auc": 0.5437239738251042,
+      "balanced_accuracy": 0.5121951219512195
+    }
+  },
+  {
+    "panel": 5,
+    "family": "date_numerology",
+    "tree": {
+      "auc": 0.3874182034503272,
+      "balanced_accuracy": 0.4329268292682927
+    },
+    "forest": {
+      "auc": 0.36511005353955983,
+      "balanced_accuracy": 0.4451219512195122
+    }
+  },
+  {
+    "panel": 5,
+    "family": "astrology6",
+    "tree": {
+      "auc": 0.5043872694824509,
+      "balanced_accuracy": 0.5
+    },
+    "forest": {
+      "auc": 0.4504759071980963,
+      "balanced_accuracy": 0.43902439024390244
+    }
+  },
+  {
+    "panel": 5,
+    "family": "astrology9",
+    "tree": {
+      "auc": 0.5182926829268293,
+      "balanced_accuracy": 0.5121951219512195
+    },
+    "forest": {
+      "auc": 0.4806662700773349,
+      "balanced_accuracy": 0.4695121951219512
+    }
+  },
+  {
+    "panel": 5,
+    "family": "combined_date",
+    "tree": {
+      "auc": 0.4959101725163593,
+      "balanced_accuracy": 0.49390243902439024
+    },
+    "forest": {
+      "auc": 0.4482450922070197,
+      "balanced_accuracy": 0.46341463414634143
+    }
+  },
+  {
+    "panel": 6,
+    "family": "date_numerology",
+    "tree": {
+      "auc": 0.485202260559191,
+      "balanced_accuracy": 0.47560975609756095
+    },
+    "forest": {
+      "auc": 0.45255800118976797,
+      "balanced_accuracy": 0.4695121951219512
+    }
+  },
+  {
+    "panel": 6,
+    "family": "astrology6",
+    "tree": {
+      "auc": 0.43203450327186205,
+      "balanced_accuracy": 0.45731707317073167
+    },
+    "forest": {
+      "auc": 0.5437239738251041,
+      "balanced_accuracy": 0.5060975609756098
+    }
+  },
+  {
+    "panel": 6,
+    "family": "astrology9",
+    "tree": {
+      "auc": 0.511451516954194,
+      "balanced_accuracy": 0.5
+    },
+    "forest": {
+      "auc": 0.5320493753718025,
+      "balanced_accuracy": 0.5060975609756098
+    }
+  },
+  {
+    "panel": 6,
+    "family": "combined_date",
+    "tree": {
+      "auc": 0.5092207019631172,
+      "balanced_accuracy": 0.4878048780487805
+    },
+    "forest": {
+      "auc": 0.5144259369422963,
+      "balanced_accuracy": 0.5060975609756098
+    }
+  },
+  {
+    "panel": 7,
+    "family": "date_numerology",
+    "tree": {
+      "auc": 0.4277215942891137,
+      "balanced_accuracy": 0.4329268292682927
+    },
+    "forest": {
+      "auc": 0.4552349791790601,
+      "balanced_accuracy": 0.4207317073170732
+    }
+  },
+  {
+    "panel": 7,
+    "family": "astrology6",
+    "tree": {
+      "auc": 0.469214753123141,
+      "balanced_accuracy": 0.46341463414634143
+    },
+    "forest": {
+      "auc": 0.5171029149315882,
+      "balanced_accuracy": 0.4817073170731707
+    }
+  },
+  {
+    "panel": 7,
+    "family": "astrology9",
+    "tree": {
+      "auc": 0.537180249851279,
+      "balanced_accuracy": 0.5182926829268293
+    },
+    "forest": {
+      "auc": 0.5648423557406306,
+      "balanced_accuracy": 0.5487804878048781
+    }
+  },
+  {
+    "panel": 7,
+    "family": "combined_date",
+    "tree": {
+      "auc": 0.539039262343843,
+      "balanced_accuracy": 0.5182926829268293
+    },
+    "forest": {
+      "auc": 0.5343545508625818,
+      "balanced_accuracy": 0.5426829268292683
+    }
+  },
+  {
+    "panel": 8,
+    "family": "date_numerology",
+    "tree": {
+      "auc": 0.5913890541344436,
+      "balanced_accuracy": 0.5914634146341463
+    },
+    "forest": {
+      "auc": 0.559562760261749,
+      "balanced_accuracy": 0.5609756097560976
+    }
+  },
+  {
+    "panel": 8,
+    "family": "astrology6",
+    "tree": {
+      "auc": 0.4783610945865556,
+      "balanced_accuracy": 0.5121951219512195
+    },
+    "forest": {
+      "auc": 0.4892177275431291,
+      "balanced_accuracy": 0.46341463414634143
+    }
+  },
+  {
+    "panel": 8,
+    "family": "astrology9",
+    "tree": {
+      "auc": 0.48564842355740634,
+      "balanced_accuracy": 0.49390243902439024
+    },
+    "forest": {
+      "auc": 0.49635633551457464,
+      "balanced_accuracy": 0.5
+    }
+  },
+  {
+    "panel": 8,
+    "family": "combined_date",
+    "tree": {
+      "auc": 0.4869125520523498,
+      "balanced_accuracy": 0.49390243902439024
+    },
+    "forest": {
+      "auc": 0.4889202855443189,
+      "balanced_accuracy": 0.49390243902439024
+    }
+  },
+  {
+    "panel": 9,
+    "family": "date_numerology",
+    "tree": {
+      "auc": 0.4361243307555027,
+      "balanced_accuracy": 0.4634146341463415
+    },
+    "forest": {
+      "auc": 0.4285395597858418,
+      "balanced_accuracy": 0.4817073170731707
+    }
+  },
+  {
+    "panel": 9,
+    "family": "astrology6",
+    "tree": {
+      "auc": 0.45545806067816774,
+      "balanced_accuracy": 0.46341463414634143
+    },
+    "forest": {
+      "auc": 0.44118084473527663,
+      "balanced_accuracy": 0.4817073170731707
+    }
+  },
+  {
+    "panel": 9,
+    "family": "astrology9",
+    "tree": {
+      "auc": 0.4598453301606187,
+      "balanced_accuracy": 0.4695121951219512
+    },
+    "forest": {
+      "auc": 0.4341909577632362,
+      "balanced_accuracy": 0.47560975609756095
+    }
+  },
+  {
+    "panel": 9,
+    "family": "combined_date",
+    "tree": {
+      "auc": 0.48163295657346816,
+      "balanced_accuracy": 0.475609756097561
+    },
+    "forest": {
+      "auc": 0.42616002379535983,
+      "balanced_accuracy": 0.45121951219512196
+    }
+  }
+]

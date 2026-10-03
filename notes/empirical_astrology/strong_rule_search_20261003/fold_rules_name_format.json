@@ -1,0 +1,473 @@
+[
+  {
+    "seed": 20261003,
+    "folds": [
+      {
+        "fold": 0,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.8177514792899409,
+          "balanced_accuracy": 0.7230769230769231
+        },
+        "test_pairs": [
+          3,
+          6,
+          7,
+          9,
+          14,
+          16,
+          23,
+          30,
+          39,
+          43,
+          47,
+          51,
+          55,
+          61,
+          66,
+          74,
+          75
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_length <= 13.500\n|   |   |--- name_length <= 11.500\n|   |   |   |--- name_length <= 10.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  10.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_length >  11.500\n|   |   |   |--- name_length <= 12.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  12.500\n|   |   |   |   |--- class: 0\n|   |--- name_length >  13.500\n|   |   |--- name_words <= 2.500\n|   |   |   |--- name_length <= 14.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  14.500\n|   |   |   |   |--- class: 0\n|   |   |--- name_words >  2.500\n|   |   |   |--- name_length <= 17.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  17.500\n|   |   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 1,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.7254437869822485,
+          "balanced_accuracy": 0.6615384615384616
+        },
+        "test_pairs": [
+          4,
+          17,
+          21,
+          24,
+          26,
+          34,
+          36,
+          38,
+          49,
+          52,
+          53,
+          56,
+          57,
+          62,
+          65,
+          80,
+          81
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_length <= 13.500\n|   |   |--- class: 0\n|   |--- name_length >  13.500\n|   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 2,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.7446051423324149,
+          "balanced_accuracy": 0.6742424242424243
+        },
+        "test_pairs": [
+          8,
+          13,
+          19,
+          20,
+          22,
+          27,
+          28,
+          29,
+          40,
+          41,
+          45,
+          48,
+          64,
+          68,
+          69,
+          73
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_length <= 15.500\n|   |   |--- name_nonascii <= 0.500\n|   |   |   |--- name_length <= 12.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  12.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_nonascii >  0.500\n|   |   |   |--- class: 1\n|   |--- name_length >  15.500\n|   |   |--- name_length <= 17.500\n|   |   |   |--- name_words <= 2.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_words >  2.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_length >  17.500\n|   |   |   |--- name_length <= 18.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  18.500\n|   |   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 3,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.7464416896235079,
+          "balanced_accuracy": 0.6666666666666666
+        },
+        "test_pairs": [
+          2,
+          10,
+          15,
+          25,
+          37,
+          42,
+          46,
+          50,
+          58,
+          60,
+          63,
+          70,
+          72,
+          77,
+          79,
+          82
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_words <= 2.500\n|   |   |--- name_length <= 14.500\n|   |   |   |--- name_length <= 13.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  13.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_length >  14.500\n|   |   |   |--- class: 0\n|   |--- name_words >  2.500\n|   |   |--- name_length <= 17.500\n|   |   |   |--- class: 1\n|   |   |--- name_length >  17.500\n|   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 4,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.7765151515151515,
+          "balanced_accuracy": 0.6818181818181818
+        },
+        "test_pairs": [
+          1,
+          5,
+          11,
+          12,
+          18,
+          31,
+          32,
+          33,
+          35,
+          44,
+          54,
+          59,
+          67,
+          71,
+          76,
+          78
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_words <= 2.500\n|   |   |--- name_length <= 14.500\n|   |   |   |--- name_length <= 13.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  13.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_length >  14.500\n|   |   |   |--- class: 0\n|   |--- name_words >  2.500\n|   |   |--- name_length <= 17.500\n|   |   |   |--- class: 1\n|   |   |--- name_length >  17.500\n|   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      }
+    ]
+  },
+  {
+    "seed": 20261017,
+    "folds": [
+      {
+        "fold": 0,
+        "parameters": {
+          "max_depth": 3,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.7282840236686391,
+          "balanced_accuracy": 0.6538461538461539
+        },
+        "test_pairs": [
+          8,
+          14,
+          15,
+          18,
+          22,
+          25,
+          34,
+          36,
+          39,
+          48,
+          49,
+          51,
+          57,
+          58,
+          67,
+          76,
+          79
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_length <= 16.500\n|   |   |--- name_length <= 12.500\n|   |   |   |--- class: 0\n|   |   |--- name_length >  12.500\n|   |   |   |--- class: 1\n|   |--- name_length >  16.500\n|   |   |--- name_length <= 18.500\n|   |   |   |--- class: 1\n|   |   |--- name_length >  18.500\n|   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 1,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.7414201183431953,
+          "balanced_accuracy": 0.6538461538461539
+        },
+        "test_pairs": [
+          4,
+          5,
+          28,
+          30,
+          33,
+          35,
+          47,
+          53,
+          56,
+          60,
+          63,
+          64,
+          65,
+          66,
+          69,
+          75,
+          82
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_words <= 2.500\n|   |   |--- name_length <= 14.500\n|   |   |   |--- name_length <= 13.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  13.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_length >  14.500\n|   |   |   |--- class: 0\n|   |--- name_words >  2.500\n|   |   |--- name_length <= 17.500\n|   |   |   |--- class: 1\n|   |   |--- name_length >  17.500\n|   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 2,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.8141643709825528,
+          "balanced_accuracy": 0.7272727272727273
+        },
+        "test_pairs": [
+          7,
+          9,
+          20,
+          27,
+          31,
+          32,
+          41,
+          43,
+          54,
+          55,
+          62,
+          70,
+          71,
+          74,
+          78,
+          80
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_length <= 13.500\n|   |   |--- name_length <= 11.500\n|   |   |   |--- name_length <= 10.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  10.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_length >  11.500\n|   |   |   |--- name_length <= 12.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  12.500\n|   |   |   |   |--- class: 0\n|   |--- name_length >  13.500\n|   |   |--- name_words <= 2.500\n|   |   |   |--- name_length <= 14.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  14.500\n|   |   |   |   |--- class: 0\n|   |   |--- name_words >  2.500\n|   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 3,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.7724977043158862,
+          "balanced_accuracy": 0.6818181818181819
+        },
+        "test_pairs": [
+          1,
+          3,
+          6,
+          11,
+          16,
+          19,
+          23,
+          24,
+          26,
+          29,
+          37,
+          59,
+          68,
+          72,
+          73,
+          81
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_words <= 2.500\n|   |   |--- name_length <= 14.500\n|   |   |   |--- name_length <= 13.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  13.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_length >  14.500\n|   |   |   |--- name_length <= 15.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  15.500\n|   |   |   |   |--- class: 0\n|   |--- name_words >  2.500\n|   |   |--- name_length <= 18.500\n|   |   |   |--- name_length <= 17.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  17.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_length >  18.500\n|   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 4,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.7766299357208448,
+          "balanced_accuracy": 0.696969696969697
+        },
+        "test_pairs": [
+          2,
+          10,
+          12,
+          13,
+          17,
+          21,
+          38,
+          40,
+          42,
+          44,
+          45,
+          46,
+          50,
+          52,
+          61,
+          77
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_words <= 2.500\n|   |   |--- name_length <= 14.500\n|   |   |   |--- name_length <= 13.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  13.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_length >  14.500\n|   |   |   |--- name_length <= 16.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  16.500\n|   |   |   |   |--- class: 0\n|   |--- name_words >  2.500\n|   |   |--- name_length <= 14.500\n|   |   |   |--- class: 0\n|   |   |--- name_length >  14.500\n|   |   |   |--- name_length <= 16.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  16.500\n|   |   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      }
+    ]
+  },
+  {
+    "seed": 20261031,
+    "folds": [
+      {
+        "fold": 0,
+        "parameters": {
+          "max_depth": 1,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.6384615384615384,
+          "balanced_accuracy": 0.6384615384615384
+        },
+        "test_pairs": [
+          1,
+          5,
+          6,
+          12,
+          13,
+          31,
+          32,
+          34,
+          37,
+          40,
+          45,
+          48,
+          52,
+          58,
+          63,
+          73,
+          76
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 1,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.7692307692307692,
+          "balanced_accuracy": 0.6846153846153846
+        },
+        "test_pairs": [
+          4,
+          7,
+          11,
+          14,
+          16,
+          21,
+          23,
+          28,
+          36,
+          38,
+          42,
+          49,
+          53,
+          56,
+          59,
+          79,
+          81
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_words <= 2.500\n|   |   |--- name_length <= 14.500\n|   |   |   |--- name_length <= 13.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  13.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_length >  14.500\n|   |   |   |--- name_length <= 15.500\n|   |   |   |   |--- class: 0\n|   |   |   |--- name_length >  15.500\n|   |   |   |   |--- class: 0\n|   |--- name_words >  2.500\n|   |   |--- name_nonascii <= 0.500\n|   |   |   |--- name_length <= 18.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  18.500\n|   |   |   |   |--- class: 1\n|   |   |--- name_nonascii >  0.500\n|   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 2,
+        "parameters": {
+          "max_depth": 4,
+          "min_samples_leaf": 8
+        },
+        "training": {
+          "auc": 0.7630853994490358,
+          "balanced_accuracy": 0.7045454545454546
+        },
+        "test_pairs": [
+          3,
+          9,
+          20,
+          25,
+          29,
+          35,
+          51,
+          54,
+          57,
+          60,
+          65,
+          69,
+          72,
+          77,
+          80,
+          82
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_length <= 13.500\n|   |   |--- name_length <= 10.500\n|   |   |   |--- class: 0\n|   |   |--- name_length >  10.500\n|   |   |   |--- name_length <= 11.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  11.500\n|   |   |   |   |--- class: 0\n|   |--- name_length >  13.500\n|   |   |--- name_words <= 2.500\n|   |   |   |--- name_length <= 14.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  14.500\n|   |   |   |   |--- class: 0\n|   |   |--- name_words >  2.500\n|   |   |   |--- name_length <= 17.500\n|   |   |   |   |--- class: 1\n|   |   |   |--- name_length >  17.500\n|   |   |   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 3,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 4
+        },
+        "training": {
+          "auc": 0.741505968778696,
+          "balanced_accuracy": 0.6818181818181819
+        },
+        "test_pairs": [
+          2,
+          10,
+          18,
+          26,
+          27,
+          30,
+          46,
+          50,
+          55,
+          62,
+          66,
+          67,
+          68,
+          71,
+          74,
+          78
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_length <= 13.500\n|   |   |--- class: 0\n|   |--- name_length >  13.500\n|   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      },
+      {
+        "fold": 4,
+        "parameters": {
+          "max_depth": 2,
+          "min_samples_leaf": 12
+        },
+        "training": {
+          "auc": 0.7185491276400366,
+          "balanced_accuracy": 0.6515151515151515
+        },
+        "test_pairs": [
+          8,
+          15,
+          17,
+          19,
+          22,
+          24,
+          33,
+          39,
+          41,
+          43,
+          44,
+          47,
+          61,
+          64,
+          70,
+          75
+        ],
+        "rules": "|--- name_initials <= 0.500\n|   |--- name_words <= 2.500\n|   |   |--- class: 1\n|   |--- name_words >  2.500\n|   |   |--- class: 1\n|--- name_initials >  0.500\n|   |--- class: 0\n"
+      }
+    ]
+  }
+]
