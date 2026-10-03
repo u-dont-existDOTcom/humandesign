@@ -617,9 +617,9 @@ class Store:
                         )
                     except (TypeError, ValueError):
                         budget_epoch = 0
-                    if current == "resource_limited" and prior_model_calls and budget_epoch == 0:
+                    if prior_model_calls:
                         worker_state["model_call_budget_baseline"] = prior_model_calls
-                        worker_state["model_call_budget_epoch"] = 1
+                        worker_state["model_call_budget_epoch"] = budget_epoch + 1
                         worker_state["model_call_budget_reset_reason"] = payload.get("error")
                     if current == "resource_limited" and worker_state.get(
                         "phase"

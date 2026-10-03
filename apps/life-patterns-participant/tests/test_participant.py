@@ -66,6 +66,17 @@ class Fake:
         if self.fail:
             raise ProviderError("synthetic_failure")
         if schema is Admission:
+            proposed = payload.get("proposed_plan") or {}
+            evidence_ids = [
+                item.get("evidence_id")
+                for item in proposed.get("evidence", [])
+                if item.get("evidence_id")
+            ]
+            addressed_ids = [
+                item.get("route_id")
+                for item in proposed.get("addressed_routes", [])
+                if item.get("route_id")
+            ]
             return Admission(
                 approved=True,
                 errors=[],
@@ -74,7 +85,11 @@ class Fake:
                 no_unsupported_extension=True,
                 control_is_participant_request=False,
                 bulk_source_review_supported=bool(payload.get("import_bulk_review")),
-                addressed_routes_supported=bool(payload.get("import_bulk_review")),
+                addressed_routes_supported=(
+                    bool(payload.get("import_bulk_review")) or not addressed_ids
+                ),
+                approved_evidence_ids=evidence_ids,
+                approved_addressed_route_ids=addressed_ids,
             ), {"stage": "Admission"}
         pending = payload["pending_turn_ids"]
         turns = {t["turn_id"]: t for t in payload["turns"]}
@@ -728,6 +743,8 @@ def test_hold_is_distinct_from_stop_and_excludes_target_source(setup):
                 no_unsupported_extension=True,
                 control_is_participant_request=False,
                 target_information_detected=True,
+                approved_evidence_ids=[],
+                approved_addressed_route_ids=[],
             ), {"stage": "Admission"}
         plan, meta = original(system, payload, schema, model, effort)
         plan.action = "hold"
@@ -1059,6 +1076,13 @@ def test_bulk_addressed_routes_are_persisted_only_after_admission(setup):
                         source_turn_ids=[payload["pending_turn_ids"][0]],
                     )
                 ]
+            if schema is Admission and payload.get("import_bulk_review"):
+                result = result.model_copy(
+                    update={
+                        "approved_addressed_route_ids": ["G19"],
+                        "addressed_routes_supported": True,
+                    }
+                )
             return result, telemetry
 
     fake = AddressingFake()
@@ -1083,6 +1107,59 @@ def test_bulk_addressed_routes_are_persisted_only_after_admission(setup):
     assert state["phase"] == "awaiting_answer"
     internal = app.state.store.read(c.cookies.get("lp_session"))
     assert internal["addressed_routes"]["G19"] == ["import-0001"]
+
+
+def test_bulk_admission_filters_optional_items_instead_of_rejecting_action(setup):
+    _, _, app, c = setup
+
+    class PartialAdmissionFake(Fake):
+        def call(self, system, payload, schema, model, effort):
+            result, telemetry = super().call(system, payload, schema, model, effort)
+            if schema is Plan and payload.get("import_bulk_review"):
+                first = result.evidence[0]
+                result.evidence.append(first.model_copy(update={"evidence_id": "drop-me"}))
+                source_id = payload["pending_turn_ids"][0]
+                result.addressed_routes = [
+                    AddressedRoute(route_id="G19", source_turn_ids=[source_id]),
+                    AddressedRoute(route_id="G20", source_turn_ids=[source_id]),
+                ]
+            if schema is Admission and payload.get("import_bulk_review"):
+                proposed = payload["proposed_plan"]
+                result = result.model_copy(
+                    update={
+                        "approved": True,
+                        "no_unsupported_extension": True,
+                        "approved_evidence_ids": [proposed["evidence"][0]["evidence_id"]],
+                        "approved_addressed_route_ids": ["G19"],
+                        "addressed_routes_supported": False,
+                    }
+                )
+            return result, telemetry
+
+    fake = PartialAdmissionFake()
+    app.state.engine.provider = fake
+    state = join((setup[0], fake, app, c))
+    state = c.post(
+        "/api/import",
+        json={
+            "record": {
+                "turns": [
+                    {"question_text": "Old question", "answer_text": "Old answer"},
+                    {"question_text": "Other question", "answer_text": "Other answer"},
+                ]
+            },
+            "source_type": "edited_response_record",
+        },
+    ).json()
+    state = command(c, state, "consent").json()
+    state = c.post("/api/next", json={}).json()
+    if state["phase"] == "planning":
+        state = wait_phase(c, {"awaiting_answer", "review", "error"}, timeout=3)
+    assert state["phase"] == "awaiting_answer"
+    internal = app.state.store.read(c.cookies.get("lp_session"))
+    assert set(internal["addressed_routes"]) == {"G19"}
+    assert "drop-me" not in {item["evidence_id"] for item in internal["evidence"]}
+    assert len(internal["evidence"]) == 1
 
 
 def test_oversized_import_hits_cost_guard_before_model_call(setup):

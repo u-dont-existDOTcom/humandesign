@@ -343,6 +343,22 @@ def make_context(
         guides = guide_cards(instrument)
     else:
         source_turns = relevant_turns(state, instrument, route_ids, pending_ids)
+        historical_import_recheck = any(
+            str(turn.get("turn_source", "")).startswith("import-")
+            and not turn.get("quarantined")
+            and turn.get("turn_role", "behavioral") == "behavioral"
+            for turn in state.get("turns", [])
+        )
+        if historical_import_recheck:
+            existing_source_ids = {turn["turn_id"] for turn in source_turns}
+            source_turns.extend(
+                turn_context_card(turn)
+                for turn in state.get("turns", [])
+                if str(turn.get("turn_source", "")).startswith("import-")
+                and turn["turn_id"] not in existing_source_ids
+                and not turn.get("quarantined")
+                and turn.get("turn_role", "behavioral") == "behavioral"
+            )
         turn_map = {turn["turn_id"]: turn for turn in state.get("turns", [])}
         answered_route_ids_for_pending = {
             turn_map[turn_id].get("canonical_question_id")
@@ -393,6 +409,9 @@ def make_context(
         "turns": source_turns,
         "pending_turn_ids": pending_ids,
         "import_bulk_review": bulk_import,
+        "historical_import_recheck": (
+            False if bulk_import else historical_import_recheck
+        ),
         "review_only": bool(state.get("review_only") or state.get("review", {}).get("shown_at")),
         "existing_evidence": compact_existing_evidence(state),
         "correction_relevant_evidence": (
@@ -573,11 +592,16 @@ def make_review_context(
     if state.get("review_only") or state.get("review", {}).get("shown_at"):
         source_turn_ids.update(evidence_source_ids(state.get("evidence", [])))
 
-    if bulk_import:
+    if bulk_import or planner_context.get("historical_import_recheck"):
         source_turn_ids.update(
             turn["turn_id"]
             for turn in state.get("turns", [])
-            if not turn.get("quarantined") and turn.get("turn_role", "behavioral") == "behavioral"
+            if (
+                bulk_import
+                or str(turn.get("turn_source", "")).startswith("import-")
+            )
+            and not turn.get("quarantined")
+            and turn.get("turn_role", "behavioral") == "behavioral"
         )
 
     source_turn_ids = correction_closure(state, source_turn_ids)
@@ -623,6 +647,8 @@ def make_review_context(
         "source_scope": (
             "complete_imported_record"
             if bulk_import
+            else "authoritative_server_source_including_recovered_import"
+            if planner_context.get("historical_import_recheck")
             else "authoritative_server_source_for_proposal"
         ),
         "pending_turn_ids": planner_context.get("pending_turn_ids", []),

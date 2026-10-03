@@ -359,6 +359,8 @@ class Admission(StrictModel):
     target_information_detected: bool = False
     bulk_source_review_supported: bool = False
     addressed_routes_supported: bool = False
+    approved_evidence_ids: list[str] = Field(default_factory=list)
+    approved_addressed_route_ids: list[str] = Field(default_factory=list)
 
 
 def semantic_turns(state: dict) -> list[dict]:

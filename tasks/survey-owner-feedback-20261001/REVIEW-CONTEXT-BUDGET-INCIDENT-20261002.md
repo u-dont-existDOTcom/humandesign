@@ -43,3 +43,19 @@ After the repair-context fix was deployed, the same review successfully crossed 
 A subsequent diagnostic retry then stopped immediately as `resource_limited / study_model_call_limit_reached`. This was a separate state-machine defect: the explicit operator retry preserved historical Plan/Admission telemetry (correct for audit) but the call guard counted those old attempts against the new repaired execution epoch. The retry therefore had no usable call budget.
 
 Repair: retain the complete historical call ledger, but when `controlLifePatternsReview(action=retry)` is explicitly invoked after a repaired `error` or `resource_limited` state, store the current semantic-call count as `model_call_budget_baseline`. The Engine counts only calls after that baseline against the existing per-epoch maximum. This does not increase the automatic retry count: another epoch still requires the existing explicit retry control after the underlying error is repaired.
+
+## Semantic-admission recurrence — 2026-10-03
+
+After the context and retry-budget defects were removed, privacy-safe saved-state telemetry showed the remaining rejection shape without exposing participant text or model prose. Both proposals selected the same next route, and the reviewer independently marked the next question context-supported and nonredundant and confirmed the complete imported-source review. The whole plan still failed because the planner proposed a large evidence set plus many addressed-route mappings and the reviewer judged some extensions unsupported and some route-address mappings insufficiently supported. The repair proposal reduced the counts but reproduced the same global failure.
+
+This identified a composition defect: optional evidence coding and route-address bookkeeping were coupled to the admission of an otherwise acceptable next action. One overbroad optional item could invalidate the whole source review.
+
+Repair:
+- Extend the independent admission result with explicit approved evidence IDs and approved addressed-route IDs.
+- Treat evidence items and route-address mappings as independently admissible: retain only IDs the reviewer approves; never convert a rejected optional item into evidence or addressed-route state.
+- Keep the action/question gates strict. `approved`, context support, nonredundancy, and unsupported-extension checks now judge the next action after unapproved optional items are dropped.
+- Require at least one independently admitted source-grounded evidence item before a complete recovered import can leave the bulk-review phase.
+- Keep the complete recovered import in later planner and reviewer contexts for nonredundancy checks, so correctness no longer depends on every historical route being preclassified as addressed during one large pass. Old imported turns remain ineligible as *new* evidence on later turns; they are reattached only as authoritative context.
+- On each explicit retry after an operator-side repair, preserve the full historical call ledger but move the call-budget baseline to the current ledger length and increment the bounded execution epoch.
+
+Acceptance adds partial-admission tests: a plan containing one supported and one unsupported evidence/address item must continue with only the supported subset, and post-import clarification planning/review must reattach the complete recovered import while staying under the large-source context guard.
