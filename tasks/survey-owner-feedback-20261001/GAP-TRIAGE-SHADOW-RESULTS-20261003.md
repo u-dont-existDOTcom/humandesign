@@ -160,3 +160,17 @@ The benchmark therefore now supports two separate claims:
 2. output/schema hardening itself has latency cost, so the next experiment should optimize the hardened contract rather than rely on the fastest prototype number.
 
 It still does not establish general non-inferiority; the replay/adjudication gate remains required before any live replacement.
+
+## Synthetic semantic quality checks — 2026-10-03
+
+A separate fully synthetic five-case benchmark then isolated specific clarification behaviors by marking all irrelevant routes already addressed. No participant source was read for these cases.
+
+All five expected outcomes passed with `gpt-5.6-sol` / `xhigh`:
+
+- unresolved `M11` value-exchange distinction → `M11` proposed and independently admitted; ~27.0 s total;
+- a noncanonical synthetic answer that already resolved `M11` → `review_ready`; ~8.0 s;
+- an answered `M11` antecedent with unresolved preferred-use distinction → `PREFER-EXCHANGE` proposed and admitted; ~29.0 s;
+- `PREFER-EXCHANGE` without its required `M11` antecedent → no eligible route and `review_ready`; ~8.0 s;
+- a synthetic answer followed by an explicit correction resolving the exchange preference → `review_ready`; ~6.0 s.
+
+This is not yet a full blind non-inferiority study, but it adds direct semantic checks for true unresolved gaps, semantic redundancy without canonical IDs, antecedent gating, and correction handling. The synthetic benchmark is reproducible from `scripts/benchmark_shadow_synthetic_quality.py` and contains no private source.

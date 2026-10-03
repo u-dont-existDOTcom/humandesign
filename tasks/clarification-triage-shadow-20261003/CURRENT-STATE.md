@@ -31,7 +31,8 @@ Private owner source is never committed.
 - A later semantic run of the final privacy-hardened benchmark contract took **222.314 s** (177.302 s + 45.012 s). Both retained all 81 behavioral source turns and xhigh reasoning.
 - Legacy successful initial Plan+Admission: ~488.155 s. The hardened shadow is therefore about **2.20x–4.36x faster** on this owner case, with substantial stochastic/output-contract variance still to measure.
 - Both the hardened shadow and the actual legacy review selected **M11** as the first canonical clarification route on this owner case.
-- Focused shadow tests: **14 passed**.
+- Focused shadow/action tests: **24 passed** after the current approval probe and triage changes.
+- Five fully synthetic semantic quality cases all met their expected outcomes: true unresolved `M11`, semantically redundant `M11`, antecedent-gated `PREFER-EXCHANGE`, missing-antecedent review-ready, and correction-resolved review-ready.
 
 ## Approval / streaming finding
 
