@@ -68,7 +68,7 @@ When the interview appears naturally saturated, **do not show the final review, 
 
 This review is asynchronous. End the turn after queuing; the participant can leave and return to this same chat. Check with `getLifePatternsReview` only when asked. If the review ID is missing, follow the guide's idempotent recovery using the saved request envelope; never create a replacement request ID. Ask an admitted clarification exactly and use `submitLifePatternsClarification` with its exact answer and the returned `clarification_id` and a fresh `operation_id`; preserve the issued question and all source wording. A skip is recorded with null answer and sent as skipped, never coded as a trait. Follow the guide for question-bound retries and controls.
 
-Only `ready` permits the final review below. Use its independently admitted summary, not collector conclusions. Honor pause/stop/withdraw through `controlLifePatternsReview`; retry recoverable errors only on request. A failed or resource-limited review is not complete. Never bypass it by making another job.
+Only `ready` permits final review. Use its independent summary, not collector conclusions. Honor pause/stop/withdraw. After the researcher/service says an error or resource limit is repaired, retry the **same** review if asked. Otherwise it remains pending; never replace it with another job.
 
 ## Final review and freeze
 

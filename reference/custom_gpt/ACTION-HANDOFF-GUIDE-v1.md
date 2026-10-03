@@ -122,5 +122,5 @@ When asked to check, call `getLifePatternsReview` with that review ID.
   `process_feedback`; conditions remain intact in the exact answer text.
   Then end the turn; check later only on a new participant request.
 - `ready`: use the returned independently admitted `review_summary` for the neutral review below.
-- `error` or `resource_limited`: preserve the unfrozen record and report the actual status; never call it complete.
-Honor pause/stop through `controlLifePatternsReview`; explicit consent withdrawal uses `withdraw`. Stop cancels pending processing, not just conversation. Resume only when asked. For a resolved recoverable `error`, use `retry` on request. Never bypass a resource limit or stop with a new job.
+- `error` or `resource_limited`: preserve the unfrozen record and report the actual status; never call it complete. A resource limit is not a scientific or semantic result.
+Honor pause/stop through `controlLifePatternsReview`; explicit consent withdrawal uses `withdraw`. Stop cancels pending processing, not just conversation. Resume only when asked. After the researcher/service has repaired a recoverable `error` **or** `resource_limited` condition, use `retry` on the same review ID when requested; never bypass it with a new job.

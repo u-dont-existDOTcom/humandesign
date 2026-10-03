@@ -449,3 +449,57 @@ def test_review_correction_adds_corrected_evidence_facet_to_guide_and_reviewer()
     review = make_review_context(state, instrument, context, proposed, bulk_import=False)
     assert "e-corrected" in {item["evidence_id"] for item in review["correction_relevant_evidence"]}
     assert facet in {item["facet_id"] for item in review["selected_evidence_guide"]}
+
+
+def test_bulk_admission_compacts_only_redundant_projection_material():
+    instrument = authority()
+    state = imported_state(turn_count=96)
+    state["collection_preferences"]["retrospective_questions_welcome"] = True
+    pending = [turn["turn_id"] for turn in state["turns"]]
+    planner_context = make_context(state, instrument, pending, bulk_import=True)
+    route_ids = [route["id"] for route in planner_context["candidate_routes"]]
+    exact_quote = state["turns"][0]["answer_text"][:40]
+    proposed = {
+        "action": "review",
+        "dispositions": [
+            {
+                "turn_id": turn_id,
+                "status": "unassessed",
+                "conditions": [],
+                "process_feedback_quotes": [],
+                "reason": "Implicit unassessed source after complete review. " + ("x" * 250),
+            }
+            for turn_id in pending
+        ],
+        "evidence": [
+            {
+                "evidence_id": "bulk-e1",
+                "source_quotes": [{"turn_id": pending[0], "quote": exact_quote}],
+                "candidate_facet_ids": [],
+                "amends_evidence_ids": [],
+                "observation": "Synthetic scoped observation",
+            }
+        ],
+        "question": None,
+        "control_quote": None,
+        "addressed_routes": [
+            {"route_id": route_id, "source_turn_ids": [pending[0]]}
+            for route_id in route_ids
+        ],
+        "source_review_complete": True,
+        "reason": "Synthetic complete-source proposal.",
+    }
+
+    review = make_review_context(
+        state, instrument, planner_context, proposed, bulk_import=True
+    )
+
+    assert len(review["turns"]) == 96
+    assert {turn["turn_id"] for turn in review["turns"]} == set(pending)
+    assert review["proposed_plan"]["evidence"] == proposed["evidence"]
+    assert review["proposed_plan"]["addressed_routes"] == proposed["addressed_routes"]
+    assert review["proposed_plan"]["dispositions"] == []
+    assert review["bulk_admission_projection"].startswith("implicit_unassessed")
+    assert {route["id"] for route in review["selected_routes"]} == set(route_ids)
+    assert all("interpretation_limit" not in route for route in review["selected_routes"])
+    assert serialized_chars(review) < 110_000

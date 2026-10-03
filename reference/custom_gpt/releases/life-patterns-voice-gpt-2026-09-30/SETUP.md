@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-02.2-action-handoff-resilience. Development collection surface.
+Version: 2026-10-02.3-review-context-recovery. Development collection surface.
 
 ## Purpose
 
@@ -74,3 +74,7 @@ Do not run a substantive owner interview in Builder Preview. Use a normal saved 
 The participant must be warned before the first Railway Action that ChatGPT will show one or more external-action permission cards and that **Allow once** is the expected approval for each step they choose to continue. Do not promise an exact count.
 
 Before queueing, create both `life-patterns-candidate-backup.json` and `life-patterns-review-handoff.json`; the latter preserves the exact three-field request including `request_id`. After queue success preserve `life-patterns-review-receipt.json` when file creation is available. If `review_id` is lost later, replay the exact saved handoff body; server idempotency returns the existing review rather than starting another one.
+
+## Owner hotfix 2026-10-02.3 — large recovered-record review
+
+A `resource_limited / model_context_budget_exceeded` result is an execution limit, not a completed independent review. The Railway admission context now source-preservingly compacts planner-only redundancy while retaining every exact imported source turn, evidence item, addressed-route binding, and any proposed next question. The same existing review can be retried after deployment; do not create a replacement review ID.
