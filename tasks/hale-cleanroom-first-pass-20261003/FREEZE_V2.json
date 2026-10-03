@@ -1,0 +1,74 @@
+{
+  "schema": "hale-cleanroom-first-pass-freeze-v2",
+  "status": "FROZEN_BEFORE_HALE_OUTCOME_REVEAL",
+  "freeze_date_utc": "2026-10-03",
+  "person_id": "hale-denizden-cleanroom-20261003",
+  "supersedes": {
+    "v1_commit": "165506e8bb4de7ac52504683cbe2382b38334813",
+    "reason": "Pre-reveal methodological reconciliation: correct Decoz Period-cycle boundary, include V1.4 solar-visibility and angle dependency qualifiers, use one uniform project-native 2020-2041 timing run, and distinguish retrospective-blind from prospective windows.",
+    "hale_outcome_data_seen_between_v1_and_v2": false
+  },
+  "allowed_hale_specific_inputs": {
+    "current_name": "Hale Denizden",
+    "birth_name": "Hatice Baysan",
+    "birth_local": "1994-01-28T00:35:00+02:00",
+    "birthplace": "Istanbul, Turkey"
+  },
+  "prohibited_outcome_sources_queried_before_v2": false,
+  "birth_time_source": {
+    "source": "user supplied",
+    "documentary_verification": "unknown",
+    "uncertainty_range": "unknown",
+    "angle_house_claims": "conditional on the stated time and city coordinate proxy"
+  },
+  "authority": {
+    "uda_agents_blob": "0a88eb99b513c803277509d31d80a703c2409ef8",
+    "uda_lesson_index_blob": "29883a73fd3be0a84a97665d0423b64a4d89cb96",
+    "humandesign_base_branch": "chat/v14-cross-rulebook-20260924",
+    "humandesign_base_commit": "f4fa0b86593e895328a18d13ec90432c8cb99662"
+  },
+  "calculation": {
+    "birth_utc": "1994-01-27T22:35:00Z",
+    "timezone": "Europe/Istanbul",
+    "historical_utc_offset_seconds": 7200,
+    "coordinate_role": "GeoNames Istanbul city point; not exact birth facility",
+    "swisseph_version": "2.10.03",
+    "sepl_18_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+    "semo_18_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+    "six_rule_secondary_fingerprint": "1/6; Joel-fitted comparison only",
+    "project_timing_horizon": ["2020-01-01", "2041-12-31"],
+    "project_timing_exact_transits": 500,
+    "project_timing_secondary_progressions": 71,
+    "prospective_cutoff": "2026-10-03"
+  },
+  "method_roles": {
+    "astrology_primary": "direct source-grounded Lilly/Hellenistic/Jyotish natal framework",
+    "astrology_secondary": "pre-existing target-blind project-domain map; corroborative only",
+    "astrology_tertiary": "Joel-fitted V1.4 six-rule fingerprint; non-generic",
+    "numerology": "frozen Pythagorean/Decoz-style overlay",
+    "fusion": "convergence/complementarity/contradiction reported without accuracy claim"
+  },
+  "cross_family_review": {
+    "model_requested": "Claude Opus via local Claude CLI",
+    "packet_outcome_blind": true,
+    "first_pass_review_sha256": "949a06fb3bb64723eef36c2345c1bffe8bf3d8130754624826036a11dd23380f",
+    "reconciliation_review_sha256": "d56ab43f31cfbb14905032d1103f996fc70fb9de06b7b19221279d8138f61b00",
+    "final_reconciliation_sha256": "b48a659f0149277db942bd5755287ae3618821513c835056a635e28d5aac96c1"
+  },
+  "artifacts_sha256": {
+    "PROTOCOL.json": "915cb312448c6d08287ae39a025a09004411162f70ff2c01b2e6657bba80fe89",
+    "calculate_first_pass.py": "9c209dcbffbad576b9c6ef1a00660068b6626d8f3a2bc04d6e53b081a3cac7cd",
+    "CALCULATIONS.json": "8ff727409b9c655a2c919575d4b7a9c52db6afbc6b6105cd7bc28e2506cd559f",
+    "calculate_domain_votes.py": "92ff21d41d3abadf5c94263b0147be73e8bfa602a951739c9b79f5e36b2e9aef",
+    "ASTRO_DOMAIN_VOTES.json": "988b5896e3bff8cfe3d5399f733d3c6d4e1cad525884dda4e8306f96eb0fdb55",
+    "evaluate_full_v14_library.py": "76b722ad68a6797a3188b780a3af1d24bf6fba876ce9ef0f2b8043653b3455ba",
+    "ASTRO_V14_FULL_RULE_VECTOR.json": "6aabe0e36dec78c9cea351b811a9a261e9f72ef561212160e700cdc56aedcb97",
+    "generate_project_timing.py": "534baf1fedc506b820dcaf4a0ea21250b0a47d845ff61af5a003447f04249398",
+    "PROJECT_TIMING_2020_2041.json": "c069a70313831796d2ef537430d2e298a71eb6cac53f2d07f2aaf381e3ecfadb",
+    "build_timing_windows_v2.py": "96e91891483d91401c9ae81c0e58e95a4e506302e714d5c231fa03c102502491",
+    "TIMING_WINDOWS_V2.json": "6cf81fe16b9332b07154936bbab7bdb9477ef13197406087dc1e365f5a40c5f2",
+    "FIRST_PASS_PREDICTION_FREEZE_V2.md": "b4af506d0348c8a846017f882b95456fd4a897dc16b3f1ddec3a941ed6191157",
+    "FIRST_PASS_PREDICTION_RECORD_V2.md": "53c77abc4494c5d8f17d0ac7cdb3264c2343e58598af851e713d74f49cd0776f"
+  },
+  "next_state": "Hale outcome/personality/history comparison is permitted only after this V2 freeze and may not rewrite these claims. Later fitted revisions are development evidence and require new untouched cases for validation."
+}

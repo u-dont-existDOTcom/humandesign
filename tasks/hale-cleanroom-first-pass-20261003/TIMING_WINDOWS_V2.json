@@ -1,0 +1,1741 @@
+{
+  "astrology_source": "PROJECT_TIMING_2020_2041.json generated from current scripts/partner_future_pilot.py",
+  "freeze_date": "2026-10-03",
+  "schema": "hale-cleanroom-timing-windows-v2",
+  "selection_rule": {
+    "rule": "Select multi-year clusters with slow-planet transit and/or secondary-progression density plus a numerology phase marker. Retrograde repeats of one moving/aspect/target family are collapsed. Jupiter alone cannot define a window. Angle-target events are flagged conditional on the supplied birth time.",
+    "status": "outcome_blind",
+    "unselected_comparison_periods": [
+      "2025",
+      "2034",
+      "2038-2039"
+    ]
+  },
+  "windows": [
+    {
+      "end": "2024-12-31",
+      "essences": {
+        "2020": {
+          "compound": 19,
+          "karmic_debt": 19,
+          "master": null,
+          "reduced": 1
+        },
+        "2021": {
+          "compound": 7,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 7
+        },
+        "2022": {
+          "compound": 10,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 1
+        },
+        "2023": {
+          "compound": 18,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 9
+        },
+        "2024": {
+          "compound": 18,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 9
+        }
+      },
+      "evaluation_status": "retrospective_blind",
+      "id": "W1",
+      "personal_years": {
+        "2020": 6,
+        "2021": 7,
+        "2022": 8,
+        "2023": 9,
+        "2024": 1
+      },
+      "progression_families": [
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2020-03-19T19:40:14.540863+00:00",
+          "last_exact_utc": "2020-03-19T19:40:14.540863+00:00",
+          "moving": "pVenus",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2020-07-27T07:42:52.290802+00:00",
+          "last_exact_utc": "2020-07-27T07:42:52.290802+00:00",
+          "moving": "pMoon",
+          "target": "Mars"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2020-12-14T21:48:37.591095+00:00",
+          "last_exact_utc": "2020-12-14T21:48:37.591095+00:00",
+          "moving": "pMoon",
+          "target": "ASC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2021-02-20T03:08:23.510284+00:00",
+          "last_exact_utc": "2021-02-20T03:08:23.510284+00:00",
+          "moving": "pSun",
+          "target": "ASC"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2021-02-21T08:29:04.924164+00:00",
+          "last_exact_utc": "2021-02-21T08:29:04.924164+00:00",
+          "moving": "pMoon",
+          "target": "Sun"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2021-04-29T21:50:26.479340+00:00",
+          "last_exact_utc": "2021-04-29T21:50:26.479340+00:00",
+          "moving": "pMoon",
+          "target": "Venus"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2021-06-16T10:13:33.269806+00:00",
+          "last_exact_utc": "2021-06-16T10:13:33.269806+00:00",
+          "moving": "pMoon",
+          "target": "MC"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2021-06-30T18:03:09.658356+00:00",
+          "last_exact_utc": "2021-06-30T18:03:09.658356+00:00",
+          "moving": "pMoon",
+          "target": "Moon"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2021-07-10T06:35:53.066254+00:00",
+          "last_exact_utc": "2021-07-10T06:35:53.066254+00:00",
+          "moving": "pMoon",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2022-03-27T15:06:50.730743+00:00",
+          "last_exact_utc": "2022-03-27T15:06:50.730743+00:00",
+          "moving": "pMoon",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2022-09-07T23:10:42.652130+00:00",
+          "last_exact_utc": "2022-09-07T23:10:42.652130+00:00",
+          "moving": "pMoon",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2023-01-17T11:27:20.979767+00:00",
+          "last_exact_utc": "2023-01-17T11:27:20.979767+00:00",
+          "moving": "pMoon",
+          "target": "ASC"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2023-08-03T02:04:46.159515+00:00",
+          "last_exact_utc": "2023-08-03T02:04:46.159515+00:00",
+          "moving": "pMoon",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2024-02-16T06:33:09.012909+00:00",
+          "last_exact_utc": "2024-02-16T06:33:09.012909+00:00",
+          "moving": "pMars",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2024-09-15T22:38:47.858734+00:00",
+          "last_exact_utc": "2024-09-15T22:38:47.858734+00:00",
+          "moving": "pMoon",
+          "target": "Mars"
+        }
+      ],
+      "start": "2020-01-01",
+      "transit_families": [
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2020-01-16T00:06:25.125732+00:00",
+          "last_exact_utc": "2020-01-16T00:06:25.125732+00:00",
+          "moving": "Saturn",
+          "target": "Uranus"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2020-01-24T09:23:27.513428+00:00",
+          "last_exact_utc": "2020-11-26T22:23:13.121338+00:00",
+          "moving": "Pluto",
+          "target": "Uranus"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2020-03-19T19:52:46.973877+00:00",
+          "last_exact_utc": "2020-12-15T12:07:24.122314+00:00",
+          "moving": "Saturn",
+          "target": "Mars"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2020-03-31T19:05:57.550049+00:00",
+          "last_exact_utc": "2020-03-31T19:05:57.550049+00:00",
+          "moving": "Uranus",
+          "target": "ASC"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2020-05-17T03:46:44.644775+00:00",
+          "last_exact_utc": "2021-03-05T11:38:32.127686+00:00",
+          "moving": "Uranus",
+          "target": "Sun"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2020-07-18T14:09:43.099365+00:00",
+          "last_exact_utc": "2021-04-25T11:16:05.753174+00:00",
+          "moving": "Uranus",
+          "target": "Venus"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2021-01-30T23:04:44.820557+00:00",
+          "last_exact_utc": "2021-01-30T23:04:44.820557+00:00",
+          "moving": "Saturn",
+          "target": "ASC"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2021-02-22T14:50:24.371338+00:00",
+          "last_exact_utc": "2021-11-12T22:14:22.481689+00:00",
+          "moving": "Saturn",
+          "target": "Sun"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2021-03-20T03:40:08.148193+00:00",
+          "last_exact_utc": "2021-12-17T01:07:16.981201+00:00",
+          "moving": "Saturn",
+          "target": "Venus"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2021-04-12T21:07:20.167236+00:00",
+          "last_exact_utc": "2022-01-03T19:32:08.045654+00:00",
+          "moving": "Saturn",
+          "target": "MC"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2021-04-22T20:49:14.168701+00:00",
+          "last_exact_utc": "2022-01-08T19:07:46.644287+00:00",
+          "moving": "Saturn",
+          "target": "Moon"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2021-05-01T17:10:40.118408+00:00",
+          "last_exact_utc": "2022-01-12T01:10:33.746338+00:00",
+          "moving": "Saturn",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2021-05-27T23:30:00.274658+00:00",
+          "last_exact_utc": "2022-03-17T19:54:24.202881+00:00",
+          "moving": "Uranus",
+          "target": "MC"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2021-06-07T16:39:30.684814+00:00",
+          "last_exact_utc": "2022-03-29T13:15:33.013916+00:00",
+          "moving": "Uranus",
+          "target": "Moon"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 5,
+          "first_exact_utc": "2021-06-14T15:56:05.277100+00:00",
+          "last_exact_utc": "2023-01-15T23:13:12.059326+00:00",
+          "moving": "Neptune",
+          "target": "Uranus"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2021-06-15T08:30:19.720459+00:00",
+          "last_exact_utc": "2022-04-05T17:32:44.739990+00:00",
+          "moving": "Uranus",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2022-04-16T15:54:18.160400+00:00",
+          "last_exact_utc": "2023-01-09T22:07:58.179932+00:00",
+          "moving": "Saturn",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2023-03-06T12:51:24.796143+00:00",
+          "last_exact_utc": "2023-03-06T12:51:24.796143+00:00",
+          "moving": "Saturn",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 5,
+          "first_exact_utc": "2023-03-14T13:52:08.411865+00:00",
+          "last_exact_utc": "2024-11-08T09:58:31.285400+00:00",
+          "moving": "Pluto",
+          "target": "Mars"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2023-04-27T14:53:07.188721+00:00",
+          "last_exact_utc": "2024-01-20T09:40:24.298096+00:00",
+          "moving": "Saturn",
+          "target": "ASC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2024-03-27T22:08:30.479736+00:00",
+          "last_exact_utc": "2024-12-08T01:07:02.479248+00:00",
+          "moving": "Saturn",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2024-05-14T11:17:24.195557+00:00",
+          "last_exact_utc": "2024-05-14T11:17:24.195557+00:00",
+          "moving": "Uranus",
+          "target": "Uranus"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2024-05-17T12:04:49.874268+00:00",
+          "last_exact_utc": "2024-05-17T12:04:49.874268+00:00",
+          "moving": "Uranus",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2024-06-12T05:50:19.427490+00:00",
+          "last_exact_utc": "2024-07-22T18:26:12.967529+00:00",
+          "moving": "Neptune",
+          "target": "Mars"
+        }
+      ]
+    },
+    {
+      "end": "2026-10-02",
+      "essences": {
+        "2026": {
+          "compound": 18,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 9
+        }
+      },
+      "evaluation_status": "retrospective_blind",
+      "id": "W2R",
+      "personal_years": {
+        "2026": 3
+      },
+      "progression_families": [
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2026-04-17T15:53:58.488007+00:00",
+          "last_exact_utc": "2026-04-17T15:53:58.488007+00:00",
+          "moving": "pMoon",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2026-09-25T18:20:47.682953+00:00",
+          "last_exact_utc": "2026-09-25T18:20:47.682953+00:00",
+          "moving": "pMoon",
+          "target": "Mars"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2026-09-27T04:30:45.050812+00:00",
+          "last_exact_utc": "2026-09-27T04:30:45.050812+00:00",
+          "moving": "pMoon",
+          "target": "Saturn"
+        }
+      ],
+      "start": "2026-01-01",
+      "transit_families": [
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2026-01-19T04:53:53.880615+00:00",
+          "last_exact_utc": "2026-01-19T04:53:53.880615+00:00",
+          "moving": "Neptune",
+          "target": "Mars"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2026-02-12T09:03:51.536865+00:00",
+          "last_exact_utc": "2026-02-12T09:03:51.536865+00:00",
+          "moving": "Saturn",
+          "target": "Mars"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2026-03-28T05:43:07.664795+00:00",
+          "last_exact_utc": "2026-06-16T04:43:53.038330+00:00",
+          "moving": "Pluto",
+          "target": "ASC"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2026-04-19T04:11:22.525635+00:00",
+          "last_exact_utc": "2026-04-19T04:11:22.525635+00:00",
+          "moving": "Saturn",
+          "target": "Sun"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2026-04-22T17:26:14.505615+00:00",
+          "last_exact_utc": "2026-04-22T17:26:14.505615+00:00",
+          "moving": "Uranus",
+          "target": "Mars"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2026-04-23T18:59:54.671631+00:00",
+          "last_exact_utc": "2026-04-23T18:59:54.671631+00:00",
+          "moving": "Uranus",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2026-05-12T06:32:54.407959+00:00",
+          "last_exact_utc": "2026-05-12T06:32:54.407959+00:00",
+          "moving": "Saturn",
+          "target": "Venus"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2026-05-31T14:11:16.373291+00:00",
+          "last_exact_utc": "2026-09-22T19:50:58.538818+00:00",
+          "moving": "Saturn",
+          "target": "MC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2026-06-07T11:07:15.772705+00:00",
+          "last_exact_utc": "2026-09-15T06:27:32.728271+00:00",
+          "moving": "Saturn",
+          "target": "Moon"
+        }
+      ]
+    },
+    {
+      "end": "2027-12-31",
+      "essences": {
+        "2026": {
+          "compound": 18,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 9
+        },
+        "2027": {
+          "compound": 18,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 9
+        }
+      },
+      "evaluation_status": "prospective_from_freeze",
+      "id": "W2P",
+      "personal_years": {
+        "2026": 3,
+        "2027": 4
+      },
+      "progression_families": [
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2026-10-21T06:39:01.509247+00:00",
+          "last_exact_utc": "2026-10-21T06:39:01.509247+00:00",
+          "moving": "pMercury",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2027-02-06T04:09:30.691681+00:00",
+          "last_exact_utc": "2027-02-06T04:09:30.691681+00:00",
+          "moving": "pMoon",
+          "target": "ASC"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2027-04-13T00:57:35.110931+00:00",
+          "last_exact_utc": "2027-04-13T00:57:35.110931+00:00",
+          "moving": "pMoon",
+          "target": "Sun"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2027-06-17T15:35:32.837677+00:00",
+          "last_exact_utc": "2027-06-17T15:35:32.837677+00:00",
+          "moving": "pMoon",
+          "target": "Venus"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2027-08-03T03:42:23.177032+00:00",
+          "last_exact_utc": "2027-08-03T03:42:23.177032+00:00",
+          "moving": "pMoon",
+          "target": "MC"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2027-08-17T05:36:40.540924+00:00",
+          "last_exact_utc": "2027-08-17T05:36:40.540924+00:00",
+          "moving": "pMoon",
+          "target": "Moon"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2027-08-26T14:34:42.671356+00:00",
+          "last_exact_utc": "2027-08-26T14:34:42.671356+00:00",
+          "moving": "pMoon",
+          "target": "Jupiter"
+        }
+      ],
+      "start": "2026-10-03",
+      "transit_families": [
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2026-10-16T11:46:06.302490+00:00",
+          "last_exact_utc": "2027-02-02T03:59:44.783936+00:00",
+          "moving": "Saturn",
+          "target": "Venus"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2027-01-26T18:01:42.008057+00:00",
+          "last_exact_utc": "2027-11-28T19:26:57.242432+00:00",
+          "moving": "Pluto",
+          "target": "ASC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2027-02-21T02:40:31.439209+00:00",
+          "last_exact_utc": "2027-02-21T02:40:31.439209+00:00",
+          "moving": "Saturn",
+          "target": "MC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2027-02-26T05:29:32.259521+00:00",
+          "last_exact_utc": "2027-02-26T05:29:32.259521+00:00",
+          "moving": "Saturn",
+          "target": "Moon"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2027-05-23T13:20:06.573486+00:00",
+          "last_exact_utc": "2027-11-03T00:33:52.745361+00:00",
+          "moving": "Saturn",
+          "target": "Uranus"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2027-05-25T04:51:55.557861+00:00",
+          "last_exact_utc": "2027-10-31T16:05:59.197998+00:00",
+          "moving": "Saturn",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2027-07-01T23:18:46.593018+00:00",
+          "last_exact_utc": "2027-12-04T03:56:01.322021+00:00",
+          "moving": "Uranus",
+          "target": "Sun"
+        }
+      ]
+    },
+    {
+      "end": "2030-12-31",
+      "essences": {
+        "2028": {
+          "compound": 12,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 3
+        },
+        "2029": {
+          "compound": 12,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 3
+        },
+        "2030": {
+          "compound": 3,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 3
+        }
+      },
+      "evaluation_status": "prospective_from_freeze",
+      "id": "W3",
+      "personal_years": {
+        "2028": 5,
+        "2029": 6,
+        "2030": 7
+      },
+      "progression_families": [
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2028-05-13T11:43:30.097504+00:00",
+          "last_exact_utc": "2028-05-13T11:43:30.097504+00:00",
+          "moving": "pMoon",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2028-10-28T03:50:08.187103+00:00",
+          "last_exact_utc": "2028-10-28T03:50:08.187103+00:00",
+          "moving": "pMoon",
+          "target": "Mars"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2028-10-29T15:27:15.527802+00:00",
+          "last_exact_utc": "2028-10-29T15:27:15.527802+00:00",
+          "moving": "pMoon",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2029-02-02T01:03:27.689667+00:00",
+          "last_exact_utc": "2029-02-02T01:03:27.689667+00:00",
+          "moving": "pSun",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2029-05-24T05:47:05.690460+00:00",
+          "last_exact_utc": "2029-05-24T05:47:05.690460+00:00",
+          "moving": "pMoon",
+          "target": "Sun"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2029-07-31T20:50:33.496857+00:00",
+          "last_exact_utc": "2029-07-31T20:50:33.496857+00:00",
+          "moving": "pMoon",
+          "target": "Venus"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2029-09-18T12:54:53.158722+00:00",
+          "last_exact_utc": "2029-09-18T12:54:53.158722+00:00",
+          "moving": "pMoon",
+          "target": "MC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2029-10-03T06:38:14.501495+00:00",
+          "last_exact_utc": "2029-10-03T06:38:14.501495+00:00",
+          "moving": "pMoon",
+          "target": "Moon"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2030-07-13T09:02:16.594391+00:00",
+          "last_exact_utc": "2030-07-13T09:02:16.594391+00:00",
+          "moving": "pMoon",
+          "target": "Mercury"
+        }
+      ],
+      "start": "2028-01-01",
+      "transit_families": [
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2028-02-11T11:07:33.570557+00:00",
+          "last_exact_utc": "2028-02-11T11:07:33.570557+00:00",
+          "moving": "Saturn",
+          "target": "Uranus"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2028-02-13T13:40:29.351807+00:00",
+          "last_exact_utc": "2028-02-13T13:40:29.351807+00:00",
+          "moving": "Saturn",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2028-02-29T09:04:18.892822+00:00",
+          "last_exact_utc": "2029-01-07T06:53:01.695557+00:00",
+          "moving": "Pluto",
+          "target": "Sun"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2028-04-11T17:54:59.908447+00:00",
+          "last_exact_utc": "2028-04-11T17:54:59.908447+00:00",
+          "moving": "Saturn",
+          "target": "Mars"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2028-04-12T04:42:58.656006+00:00",
+          "last_exact_utc": "2028-04-12T04:42:58.656006+00:00",
+          "moving": "Saturn",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2028-04-20T08:27:11.195068+00:00",
+          "last_exact_utc": "2028-04-20T08:27:11.195068+00:00",
+          "moving": "Uranus",
+          "target": "Sun"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2028-05-06T01:11:08.353271+00:00",
+          "last_exact_utc": "2029-03-07T16:45:29.278564+00:00",
+          "moving": "Neptune",
+          "target": "Sun"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2028-05-24T11:36:04.801025+00:00",
+          "last_exact_utc": "2029-02-02T17:50:21.734619+00:00",
+          "moving": "Saturn",
+          "target": "ASC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2028-06-05T17:40:09.027100+00:00",
+          "last_exact_utc": "2029-03-07T19:46:05.863037+00:00",
+          "moving": "Uranus",
+          "target": "Venus"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2028-06-17T15:26:08.682861+00:00",
+          "last_exact_utc": "2029-03-08T22:44:27.645264+00:00",
+          "moving": "Saturn",
+          "target": "Sun"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2028-07-08T18:59:00.289307+00:00",
+          "last_exact_utc": "2029-04-28T00:31:02.677002+00:00",
+          "moving": "Uranus",
+          "target": "MC"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2028-07-20T08:46:03.995361+00:00",
+          "last_exact_utc": "2029-05-08T12:05:55.462646+00:00",
+          "moving": "Uranus",
+          "target": "Moon"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2028-07-20T21:57:00.318604+00:00",
+          "last_exact_utc": "2029-04-01T16:35:46.234131+00:00",
+          "moving": "Saturn",
+          "target": "Venus"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2029-04-16T16:41:13.187256+00:00",
+          "last_exact_utc": "2029-04-16T16:41:13.187256+00:00",
+          "moving": "Saturn",
+          "target": "MC"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2029-04-21T02:11:14.066162+00:00",
+          "last_exact_utc": "2029-04-21T02:11:14.066162+00:00",
+          "moving": "Saturn",
+          "target": "Moon"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 5,
+          "first_exact_utc": "2029-04-22T10:22:02.259521+00:00",
+          "last_exact_utc": "2030-12-18T06:40:15.399170+00:00",
+          "moving": "Pluto",
+          "target": "Venus"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2029-04-23T23:53:30.260010+00:00",
+          "last_exact_utc": "2029-04-23T23:53:30.260010+00:00",
+          "moving": "Saturn",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2029-05-20T21:43:58.861084+00:00",
+          "last_exact_utc": "2030-03-20T00:03:59.447021+00:00",
+          "moving": "Neptune",
+          "target": "Venus"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2029-07-21T18:36:25.345459+00:00",
+          "last_exact_utc": "2030-04-07T14:27:06.580811+00:00",
+          "moving": "Saturn",
+          "target": "Uranus"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2029-07-24T03:35:56.341553+00:00",
+          "last_exact_utc": "2030-04-09T03:25:04.083252+00:00",
+          "moving": "Saturn",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2030-05-09T17:28:35.899658+00:00",
+          "last_exact_utc": "2030-09-26T03:58:49.742432+00:00",
+          "moving": "Neptune",
+          "target": "MC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2030-05-29T08:08:50.364990+00:00",
+          "last_exact_utc": "2030-09-04T09:46:24.539795+00:00",
+          "moving": "Neptune",
+          "target": "Moon"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2030-05-30T17:10:58.905029+00:00",
+          "last_exact_utc": "2030-05-30T17:10:58.905029+00:00",
+          "moving": "Saturn",
+          "target": "Mars"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2030-05-31T03:51:11.282959+00:00",
+          "last_exact_utc": "2030-05-31T03:51:11.282959+00:00",
+          "moving": "Saturn",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2030-08-15T08:58:56.553955+00:00",
+          "last_exact_utc": "2030-10-27T13:39:46.505127+00:00",
+          "moving": "Saturn",
+          "target": "Sun"
+        }
+      ]
+    },
+    {
+      "end": "2033-12-31",
+      "essences": {
+        "2031": {
+          "compound": 16,
+          "karmic_debt": 16,
+          "master": null,
+          "reduced": 7
+        },
+        "2032": {
+          "compound": 16,
+          "karmic_debt": 16,
+          "master": null,
+          "reduced": 7
+        },
+        "2033": {
+          "compound": 23,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 5
+        }
+      },
+      "evaluation_status": "prospective_from_freeze",
+      "id": "W4",
+      "personal_years": {
+        "2031": 8,
+        "2032": 9,
+        "2033": 1
+      },
+      "progression_families": [
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2031-01-06T14:28:36.249847+00:00",
+          "last_exact_utc": "2031-01-06T14:28:36.249847+00:00",
+          "moving": "pMoon",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2031-05-30T20:26:57.661285+00:00",
+          "last_exact_utc": "2031-05-30T20:26:57.661285+00:00",
+          "moving": "pMoon",
+          "target": "ASC"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2032-01-06T05:46:40.682831+00:00",
+          "last_exact_utc": "2032-01-06T05:46:40.682831+00:00",
+          "moving": "pMoon",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2032-06-09T02:46:22.802582+00:00",
+          "last_exact_utc": "2032-06-09T02:46:22.802582+00:00",
+          "moving": "pMars",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2033-04-18T12:53:34.469147+00:00",
+          "last_exact_utc": "2033-04-18T12:53:34.469147+00:00",
+          "moving": "pMoon",
+          "target": "Mars"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2033-08-04T16:07:34.676056+00:00",
+          "last_exact_utc": "2033-08-04T16:07:34.676056+00:00",
+          "moving": "pVenus",
+          "target": "Mars"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2033-09-17T04:55:38.092804+00:00",
+          "last_exact_utc": "2033-09-17T04:55:38.092804+00:00",
+          "moving": "pMoon",
+          "target": "ASC"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2033-12-01T01:57:03.291779+00:00",
+          "last_exact_utc": "2033-12-01T01:57:03.291779+00:00",
+          "moving": "pMoon",
+          "target": "Sun"
+        }
+      ],
+      "start": "2031-01-01",
+      "transit_families": [
+        {
+          "aspect": 180,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2031-02-19T11:44:00.728760+00:00",
+          "last_exact_utc": "2031-12-29T20:28:25.352783+00:00",
+          "moving": "Pluto",
+          "target": "MC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2031-03-11T10:52:06.434326+00:00",
+          "last_exact_utc": "2031-03-11T10:52:06.434326+00:00",
+          "moving": "Neptune",
+          "target": "MC"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2031-03-11T11:49:04.281006+00:00",
+          "last_exact_utc": "2032-01-18T11:43:19.200439+00:00",
+          "moving": "Pluto",
+          "target": "Moon"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2031-03-26T12:55:28.033447+00:00",
+          "last_exact_utc": "2031-03-26T12:55:28.033447+00:00",
+          "moving": "Neptune",
+          "target": "Moon"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 5,
+          "first_exact_utc": "2031-03-27T11:22:04.346924+00:00",
+          "last_exact_utc": "2032-11-30T09:14:50.057373+00:00",
+          "moving": "Pluto",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2031-04-27T13:22:37.196045+00:00",
+          "last_exact_utc": "2031-04-27T13:22:37.196045+00:00",
+          "moving": "Saturn",
+          "target": "Sun"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2031-05-18T13:57:39.649658+00:00",
+          "last_exact_utc": "2031-05-18T13:57:39.649658+00:00",
+          "moving": "Saturn",
+          "target": "Venus"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2031-06-01T19:04:47.017822+00:00",
+          "last_exact_utc": "2031-06-01T19:04:47.017822+00:00",
+          "moving": "Saturn",
+          "target": "MC"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2031-06-06T01:37:55.103760+00:00",
+          "last_exact_utc": "2031-06-06T01:37:55.103760+00:00",
+          "moving": "Saturn",
+          "target": "Moon"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2031-06-19T18:57:33.936768+00:00",
+          "last_exact_utc": "2032-03-18T21:48:06.053467+00:00",
+          "moving": "Uranus",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2032-05-23T05:13:20.299072+00:00",
+          "last_exact_utc": "2032-05-23T05:13:20.299072+00:00",
+          "moving": "Saturn",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2032-07-13T02:49:15.157471+00:00",
+          "last_exact_utc": "2032-07-13T02:49:15.157471+00:00",
+          "moving": "Saturn",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2032-08-01T06:15:09.503174+00:00",
+          "last_exact_utc": "2033-05-20T07:12:50.196533+00:00",
+          "moving": "Uranus",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2032-08-31T21:28:33.043213+00:00",
+          "last_exact_utc": "2033-05-18T04:57:28.773193+00:00",
+          "moving": "Saturn",
+          "target": "ASC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2033-07-20T17:14:23.909912+00:00",
+          "last_exact_utc": "2033-07-20T17:14:23.909912+00:00",
+          "moving": "Saturn",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2033-08-25T06:57:16.798096+00:00",
+          "last_exact_utc": "2033-11-28T19:30:29.168701+00:00",
+          "moving": "Uranus",
+          "target": "ASC"
+        }
+      ]
+    },
+    {
+      "end": "2037-12-31",
+      "essences": {
+        "2035": {
+          "compound": 23,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 5
+        },
+        "2036": {
+          "compound": 23,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 5
+        },
+        "2037": {
+          "compound": 23,
+          "karmic_debt": null,
+          "master": null,
+          "reduced": 5
+        }
+      },
+      "evaluation_status": "prospective_from_freeze",
+      "id": "W5",
+      "personal_years": {
+        "2035": 3,
+        "2036": 4,
+        "2037": 5
+      },
+      "progression_families": [
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2035-02-23T21:19:52.559052+00:00",
+          "last_exact_utc": "2035-02-23T21:19:52.559052+00:00",
+          "moving": "pMoon",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2035-09-03T01:30:36.975861+00:00",
+          "last_exact_utc": "2035-09-03T01:30:36.975861+00:00",
+          "moving": "pMoon",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2036-02-05T07:56:41.374054+00:00",
+          "last_exact_utc": "2036-02-05T07:56:41.374054+00:00",
+          "moving": "pMoon",
+          "target": "ASC"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2036-09-29T01:15:35.176849+00:00",
+          "last_exact_utc": "2036-09-29T01:15:35.176849+00:00",
+          "moving": "pMoon",
+          "target": "Jupiter"
+        }
+      ],
+      "start": "2035-01-01",
+      "transit_families": [
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2035-02-18T11:38:45.640869+00:00",
+          "last_exact_utc": "2035-05-09T07:09:20.906982+00:00",
+          "moving": "Saturn",
+          "target": "Mars"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2035-05-12T22:34:23.177490+00:00",
+          "last_exact_utc": "2036-03-13T19:15:44.879150+00:00",
+          "moving": "Neptune",
+          "target": "Uranus"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2035-05-18T05:23:12.901611+00:00",
+          "last_exact_utc": "2036-03-18T22:06:13.370361+00:00",
+          "moving": "Neptune",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2035-07-02T08:20:14.923096+00:00",
+          "last_exact_utc": "2035-07-02T08:20:14.923096+00:00",
+          "moving": "Saturn",
+          "target": "ASC"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2035-07-23T05:57:20.313721+00:00",
+          "last_exact_utc": "2035-07-23T05:57:20.313721+00:00",
+          "moving": "Saturn",
+          "target": "Sun"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2035-08-12T11:10:58.245850+00:00",
+          "last_exact_utc": "2035-08-12T11:10:58.245850+00:00",
+          "moving": "Saturn",
+          "target": "Venus"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2035-08-13T05:08:15.428467+00:00",
+          "last_exact_utc": "2036-05-30T13:43:40.184326+00:00",
+          "moving": "Uranus",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2035-08-27T01:54:32.772217+00:00",
+          "last_exact_utc": "2035-08-27T01:54:32.772217+00:00",
+          "moving": "Saturn",
+          "target": "MC"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2035-08-31T15:08:16.856689+00:00",
+          "last_exact_utc": "2036-05-05T03:48:40.001221+00:00",
+          "moving": "Saturn",
+          "target": "Moon"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2035-09-03T17:03:31.981201+00:00",
+          "last_exact_utc": "2036-05-13T05:16:09.708252+00:00",
+          "moving": "Saturn",
+          "target": "Jupiter"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2036-08-19T14:02:54.407959+00:00",
+          "last_exact_utc": "2036-08-19T14:02:54.407959+00:00",
+          "moving": "Saturn",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2036-10-15T00:23:20.592041+00:00",
+          "last_exact_utc": "2037-07-05T21:50:52.166748+00:00",
+          "moving": "Saturn",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2037-08-20T04:45:10.491943+00:00",
+          "last_exact_utc": "2037-08-20T04:45:10.491943+00:00",
+          "moving": "Saturn",
+          "target": "ASC"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2037-09-11T10:18:20.115967+00:00",
+          "last_exact_utc": "2037-12-18T15:43:46.007080+00:00",
+          "moving": "Uranus",
+          "target": "Uranus"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2037-10-27T02:20:39.642334+00:00",
+          "last_exact_utc": "2037-10-27T02:20:39.642334+00:00",
+          "moving": "Saturn",
+          "target": "Jupiter"
+        }
+      ]
+    },
+    {
+      "end": "2041-12-31",
+      "essences": {
+        "2040": {
+          "compound": 19,
+          "karmic_debt": 19,
+          "master": null,
+          "reduced": 1
+        },
+        "2041": {
+          "compound": 19,
+          "karmic_debt": 19,
+          "master": null,
+          "reduced": 1
+        }
+      },
+      "evaluation_status": "prospective_from_freeze",
+      "id": "W6",
+      "personal_years": {
+        "2040": 8,
+        "2041": 9
+      },
+      "progression_families": [
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2040-02-02T08:29:03.605804+00:00",
+          "last_exact_utc": "2040-02-02T08:29:03.605804+00:00",
+          "moving": "pMoon",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2040-08-20T16:11:22.917023+00:00",
+          "last_exact_utc": "2040-08-20T16:11:22.917023+00:00",
+          "moving": "pMoon",
+          "target": "Mars"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2040-08-22T10:35:18.527985+00:00",
+          "last_exact_utc": "2040-08-22T10:35:18.527985+00:00",
+          "moving": "pMoon",
+          "target": "Saturn"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2041-02-01T20:42:30.318146+00:00",
+          "last_exact_utc": "2041-02-01T20:42:30.318146+00:00",
+          "moving": "pMoon",
+          "target": "ASC"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2041-04-24T02:20:20.011139+00:00",
+          "last_exact_utc": "2041-04-24T02:20:20.011139+00:00",
+          "moving": "pMoon",
+          "target": "Sun"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2041-07-13T18:16:32.127228+00:00",
+          "last_exact_utc": "2041-07-13T18:16:32.127228+00:00",
+          "moving": "pMoon",
+          "target": "Venus"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2041-09-08T18:24:39.178619+00:00",
+          "last_exact_utc": "2041-09-08T18:24:39.178619+00:00",
+          "moving": "pMoon",
+          "target": "MC"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2041-09-25T23:54:14.033661+00:00",
+          "last_exact_utc": "2041-09-25T23:54:14.033661+00:00",
+          "moving": "pMoon",
+          "target": "Moon"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2041-10-07T11:00:21.128082+00:00",
+          "last_exact_utc": "2041-10-07T11:00:21.128082+00:00",
+          "moving": "pMoon",
+          "target": "Jupiter"
+        }
+      ],
+      "start": "2040-01-01",
+      "transit_families": [
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2040-03-02T03:03:36.046143+00:00",
+          "last_exact_utc": "2040-05-10T07:31:50.247803+00:00",
+          "moving": "Uranus",
+          "target": "Mars"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2040-03-05T22:48:46.373291+00:00",
+          "last_exact_utc": "2040-08-29T00:38:15.758057+00:00",
+          "moving": "Saturn",
+          "target": "Venus"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2040-04-09T11:18:08.031006+00:00",
+          "last_exact_utc": "2040-08-02T07:13:48.533936+00:00",
+          "moving": "Saturn",
+          "target": "Sun"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2040-06-17T00:00:03.790283+00:00",
+          "last_exact_utc": "2041-04-15T04:25:19.683838+00:00",
+          "moving": "Neptune",
+          "target": "ASC"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2040-08-19T00:47:28.150635+00:00",
+          "last_exact_utc": "2041-06-02T23:15:26.531982+00:00",
+          "moving": "Uranus",
+          "target": "ASC"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2040-09-14T05:05:07.891846+00:00",
+          "last_exact_utc": "2040-09-14T05:05:07.891846+00:00",
+          "moving": "Saturn",
+          "target": "MC"
+        },
+        {
+          "aspect": 60,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2040-09-18T21:28:13.597412+00:00",
+          "last_exact_utc": "2040-09-18T21:28:13.597412+00:00",
+          "moving": "Saturn",
+          "target": "Moon"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2040-10-18T01:15:17.193604+00:00",
+          "last_exact_utc": "2041-07-21T10:15:33.343506+00:00",
+          "moving": "Uranus",
+          "target": "Sun"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2040-12-25T05:07:44.776611+00:00",
+          "last_exact_utc": "2041-09-14T19:36:02.384033+00:00",
+          "moving": "Saturn",
+          "target": "Uranus"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 3,
+          "first_exact_utc": "2040-12-28T00:49:20.211182+00:00",
+          "last_exact_utc": "2041-09-16T09:50:41.290283+00:00",
+          "moving": "Saturn",
+          "target": "Mercury"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2041-07-06T00:37:44.776611+00:00",
+          "last_exact_utc": "2041-09-16T01:45:46.087646+00:00",
+          "moving": "Neptune",
+          "target": "Sun"
+        },
+        {
+          "aspect": 180,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2041-09-02T17:46:26.407471+00:00",
+          "last_exact_utc": "2041-09-02T17:46:26.407471+00:00",
+          "moving": "Uranus",
+          "target": "Venus"
+        },
+        {
+          "aspect": 0,
+          "birth_time_sensitive": true,
+          "exact_hit_count": 2,
+          "first_exact_utc": "2041-10-14T04:18:14.512939+00:00",
+          "last_exact_utc": "2041-12-22T17:56:23.294678+00:00",
+          "moving": "Uranus",
+          "target": "MC"
+        },
+        {
+          "aspect": 90,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2041-11-09T22:27:45.032959+00:00",
+          "last_exact_utc": "2041-11-09T22:27:45.032959+00:00",
+          "moving": "Saturn",
+          "target": "Mars"
+        },
+        {
+          "aspect": 120,
+          "birth_time_sensitive": false,
+          "exact_hit_count": 1,
+          "first_exact_utc": "2041-11-10T10:07:04.127197+00:00",
+          "last_exact_utc": "2041-11-10T10:07:04.127197+00:00",
+          "moving": "Saturn",
+          "target": "Saturn"
+        }
+      ]
+    }
+  ]
+}

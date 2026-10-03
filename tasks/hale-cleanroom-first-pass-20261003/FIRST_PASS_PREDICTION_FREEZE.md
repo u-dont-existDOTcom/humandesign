@@ -1,6 +1,8 @@
-# Hale Denizden — clean-room astrology + numerology first-pass prediction freeze
+# Hale Denizden — clean-room astrology + numerology first-pass prediction freeze — SUPERSEDED
 
-**Status:** FROZEN_BEFORE_HALE_OUTCOME_REVEAL  
+> **Do not score this V1 record.** It was superseded before any Hale outcome/personality/history reveal by `FIRST_PASS_PREDICTION_FREEZE_V2.md` / `FREEZE_V2.json` after pre-reveal method corrections.
+
+**Status:** SUPERSEDED_PRE_REVEAL_BY_FREEZE_V2
 **Case role:** new-person development/generalization case, not a claim of validated astrology or numerology  
 **Freeze date:** 2026-10-03 UTC  
 **Allowed Hale-specific inputs:** Hale Denizden; birth name Hatice Baysan; 1994-01-28 00:35 local; Istanbul, Turkey.  

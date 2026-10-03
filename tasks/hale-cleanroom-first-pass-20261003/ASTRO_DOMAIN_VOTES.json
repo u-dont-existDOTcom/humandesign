@@ -1,0 +1,698 @@
+{
+  "domains": [
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "complex_structure",
+      "traditions": [
+        {
+          "mapped": true,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 2,
+          "sign": 1,
+          "testimonies": {
+            "mercury:angular_house": 1,
+            "mercury:direct": 1
+          },
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 1,
+          "sign": 1,
+          "testimonies": {
+            "mercury:kendra": 1
+          },
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 2,
+        "domain_collapse_nonstack": 1,
+        "raw_independent_testimony_stack": 3
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "recurring_mystery",
+      "traditions": [
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 0,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 0
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "original_contribution",
+      "traditions": [
+        {
+          "mapped": true,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 0,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 0
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "insight_translation",
+      "traditions": [
+        {
+          "mapped": true,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 5,
+          "sign": 1,
+          "testimonies": {
+            "mercury:angular_house": 1,
+            "mercury:direct": 1,
+            "saturn:angular_house": 1,
+            "saturn:direct": 1,
+            "saturn:own_sign": 1
+          },
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 5,
+          "sign": 1,
+          "testimonies": {
+            "jupiter:kendra": 1,
+            "jupiter:trikona": 1,
+            "mars:exaltation": 1,
+            "mars:kendra": 1,
+            "mercury:kendra": 1
+          },
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 2,
+        "domain_collapse_nonstack": 1,
+        "raw_independent_testimony_stack": 10
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "persuasion_strategy",
+      "traditions": [
+        {
+          "mapped": true,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 2,
+          "sign": 1,
+          "testimonies": {
+            "mercury:angular_house": 1,
+            "mercury:direct": 1
+          },
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 2,
+          "sign": 1,
+          "testimonies": {
+            "mercury:kendra": 1,
+            "venus:kendra": 1
+          },
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 2,
+        "domain_collapse_nonstack": 1,
+        "raw_independent_testimony_stack": 4
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "recognition_entry",
+      "traditions": [
+        {
+          "mapped": true,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": -2,
+          "sign": -1,
+          "testimonies": {
+            "sun:cadent_house": -1,
+            "sun:detriment": -1
+          },
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": -1,
+        "domain_collapse_nonstack": -1,
+        "raw_independent_testimony_stack": -2
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "network_pathways",
+      "traditions": [
+        {
+          "mapped": true,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 2,
+          "sign": 1,
+          "testimonies": {
+            "mercury:angular_house": 1,
+            "mercury:direct": 1
+          },
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 1,
+        "domain_collapse_nonstack": 1,
+        "raw_independent_testimony_stack": 2
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "role_projection",
+      "traditions": [
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 0,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 0
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "immediate_body_signal",
+      "traditions": [
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 0,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 0
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "autonomy_direction",
+      "traditions": [
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 0,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 0
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "sanctuary_sensory",
+      "traditions": [
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 3,
+          "sign": 1,
+          "testimonies": {
+            "saturn:angular_house": 1,
+            "saturn:direct": 1,
+            "saturn:own_sign": 1
+          },
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 2,
+          "sign": 1,
+          "testimonies": {
+            "saturn:own_sign": 1,
+            "saturn:trikona": 1
+          },
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 2,
+        "domain_collapse_nonstack": 1,
+        "raw_independent_testimony_stack": 5
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "romantic_attachment",
+      "traditions": [
+        {
+          "mapped": true,
+          "raw_net": 1,
+          "sign": 1,
+          "testimonies": {
+            "venus:sect": 1
+          },
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {
+            "venus:cadent_house": -1,
+            "venus:direct": 1
+          },
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 3,
+          "sign": 1,
+          "testimonies": {
+            "mars:exaltation": 1,
+            "mars:kendra": 1,
+            "venus:kendra": 1
+          },
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 2,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 4
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "emotion_permeability",
+      "traditions": [
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 0,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 0
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "work_energy_range",
+      "traditions": [
+        {
+          "mapped": true,
+          "raw_net": 2,
+          "sign": 1,
+          "testimonies": {
+            "mars:exaltation": 1,
+            "mars:sect": 1
+          },
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 4,
+          "sign": 0,
+          "testimonies": {
+            "mars:cadent_house": -1,
+            "mars:direct": 1,
+            "mars:exaltation": 1,
+            "saturn:angular_house": 1,
+            "saturn:direct": 1,
+            "saturn:own_sign": 1
+          },
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 4,
+          "sign": 1,
+          "testimonies": {
+            "mars:exaltation": 1,
+            "mars:kendra": 1,
+            "saturn:own_sign": 1,
+            "saturn:trikona": 1
+          },
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 2,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 10
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "consequential_effort",
+      "traditions": [
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 0,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 0
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "correction_threshold",
+      "traditions": [
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 0,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 0
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "retreat_privacy",
+      "traditions": [
+        {
+          "mapped": true,
+          "raw_net": 1,
+          "sign": 1,
+          "testimonies": {
+            "saturn:domicile": 1
+          },
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 3,
+          "sign": 0,
+          "testimonies": {
+            "saturn:angular_house": 1,
+            "saturn:direct": 1,
+            "saturn:own_sign": 1,
+            "venus:cadent_house": -1,
+            "venus:direct": 1
+          },
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 2,
+          "sign": 1,
+          "testimonies": {
+            "saturn:own_sign": 1,
+            "saturn:trikona": 1
+          },
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 2,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 6
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "value_tension",
+      "traditions": [
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 0,
+        "domain_collapse_nonstack": 0,
+        "raw_independent_testimony_stack": 0
+      }
+    },
+    {
+      "behavior_weight": 1.0,
+      "domain_id": "resource_motivation",
+      "traditions": [
+        {
+          "mapped": false,
+          "raw_net": 0,
+          "sign": 0,
+          "testimonies": {},
+          "tradition": "hellenistic_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 5,
+          "sign": 1,
+          "testimonies": {
+            "jupiter:angular_house": 1,
+            "jupiter:direct": 1,
+            "saturn:angular_house": 1,
+            "saturn:direct": 1,
+            "saturn:own_sign": 1
+          },
+          "tradition": "lilly_traditional_western"
+        },
+        {
+          "mapped": true,
+          "raw_net": 2,
+          "sign": 1,
+          "testimonies": {
+            "mars:exaltation": 1,
+            "mars:kendra": 1
+          },
+          "tradition": "parashari_jyotish"
+        }
+      ],
+      "votes": {
+        "cross_tradition_convergence_stack": 2,
+        "domain_collapse_nonstack": 1,
+        "raw_independent_testimony_stack": 7
+      }
+    }
+  ],
+  "note": "Generic equal-domain inspection of the pre-existing target-blind consensus map; no Hale outcomes used. These domains originated in the project ontology and are corroborative, not a complete generic personality taxonomy.",
+  "totals": {
+    "cross_tradition_convergence_stack": 16.0,
+    "domain_collapse_nonstack": 5.0,
+    "raw_independent_testimony_stack": 49.0
+  }
+}

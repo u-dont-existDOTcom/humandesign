@@ -1,7 +1,9 @@
 {
   "schema": "hale-cleanroom-first-pass-freeze-v1",
-  "status": "FROZEN_BEFORE_HALE_OUTCOME_REVEAL",
+  "status": "SUPERSEDED_PRE_REVEAL_BY_FREEZE_V2",
   "freeze_date_utc": "2026-10-03",
+  "superseded_by": "FREEZE_V2.json",
+  "artifact_hash_scope": "The V1 artifact hashes below identify the original V1 commit 165506e8bb4de7ac52504683cbe2382b38334813; several working-tree files were subsequently revised for V2, so use Git history to reproduce V1 and FREEZE_V2.json for current scoring.",
   "person_id": "hale-denizden-cleanroom-20261003",
   "allowed_hale_specific_inputs": {
     "current_name": "Hale Denizden",
