@@ -144,3 +144,11 @@ Before promotion, on synthetic/development replay records:
 - no participant data in timing/diagnostic logs.
 
 The purpose is to reduce unnecessary work and latency, not reasoning quality.
+
+## Shadow implementation receipt — 2026-10-03
+
+Stage 4 now has a development-only implementation in `participant/shadow_triage.py` and `scripts/benchmark_shadow_triage.py`. Gap/Triage reads the complete exact behavioral source plus eligible frozen route authority and emits at most three ranked question candidates. A fresh GapAdmission call receives the complete source, the selected route controls, and only the candidate fields needed for refutation; it does not receive the producer's verdict, defect labels, or claimed material effect. Deterministic validation enforces source references, route authority, candidate ordering/dependencies, exact admission gate/failure-code agreement, and triage-ranked selection.
+
+The benchmark persists only ordinal case IDs, counts, route IDs, bounded rejection codes, token counts, and timing. It excludes participant text, source-turn IDs, paths, prompts, raw model output, exception text, and content-derived hashes, and writes mode 0600. It supports a no-model dry run and optional strict privacy-safe legacy comparison. The experiment is not imported by the participant engine, HTTP API, queued review worker, deployment entry point, or Custom GPT bundle, so it does not control live behavior.
+
+Local verification: 14 focused tests pass; affected Ruff checks pass; 127 participant tests pass. One additional participant assertion has a proven parent-baseline failure because the committed `getLifePatternsReview` OpenAPI description is 314 characters against its existing 300-character test cap; neither file is changed here. Two earlier prototype shadow runs are preserved in `GAP-TRIAGE-SHADOW-RESULTS-20261003.md`; the hardened final CLI was not rerun semantically. The latency/non-inferiority promotion targets above therefore remain unevaluated for the final contract.

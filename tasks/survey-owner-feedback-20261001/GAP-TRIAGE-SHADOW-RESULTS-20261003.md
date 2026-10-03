@@ -67,6 +67,8 @@ The main latency reduction came from output-contract reduction, not source trunc
 
 This does **not** yet establish non-inferior clarification quality. Route/wording quality must be compared blind against the legacy reviewer on a replay set before promotion. The experiment currently supports the architectural claim that full evidence synthesis need not sit on the clarification-decision critical path.
 
+These measurements came from the initial prototype committed as `d725c26`. The final branch supersedes that prototype runner/schema with the more strictly independent, privacy-allowlisted implementation in `participant/shadow_triage.py` and `scripts/benchmark_shadow_triage.py`; it does not represent these prototype timings as measurements of the hardened final contract. The final CLI dry-run is tested, but a real semantic replay of the hardened contract remains future work.
+
 ## Prior-work map
 
 A bounded research-before-reinvention scan found directly relevant established ideas:
