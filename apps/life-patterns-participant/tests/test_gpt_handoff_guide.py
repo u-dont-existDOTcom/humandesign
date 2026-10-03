@@ -67,11 +67,11 @@ def test_delivery_rules_are_in_the_shipped_instruction_chain():
     assert "life-patterns-action-error.json" in text
     assert "not a percentage of 79 routes or 73 facets" in text
     assert "not a guarantee" in text
-    assert "about 15 minutes" in text
+    assert "about **10 minutes**" in text
     assert "recommended_check_after_seconds" in text
     assert "send any message" in text
-    assert "finalization-only delta pass" in text
-    assert "at most one independent clarification round" in instruction
+    assert "materially useful" in text
+    assert "question-count cap" in instruction
 
 
 def test_owner_update_checkpoint_rules_are_present():

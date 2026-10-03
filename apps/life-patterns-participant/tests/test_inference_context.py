@@ -461,61 +461,6 @@ def test_review_correction_adds_corrected_evidence_facet_to_guide_and_reviewer()
     assert facet in {item["facet_id"] for item in review["selected_evidence_guide"]}
 
 
-def test_post_clarification_finalization_uses_reviewed_delta_not_full_import():
-    instrument = authority()
-    state = imported_state()
-    for turn in state["turns"]:
-        state["dispositions"][turn["turn_id"]] = {
-            "turn_id": turn["turn_id"],
-            "status": "unassessed",
-            "conditions": [],
-            "process_feedback_quotes": [],
-            "reason": "Synthetic prior complete-source review.",
-        }
-    state["evidence"] = [
-        {
-            "evidence_id": "prior-admitted",
-            "source_quotes": [
-                {"turn_id": "import-0001", "quote": state["turns"][0]["answer_text"]}
-            ],
-            "observation": "Synthetic admitted prior evidence.",
-            "conditions": [],
-            "time_frame": "historical",
-            "relationship_context": "general",
-            "candidate_facet_ids": [],
-            "supported_scope": "fixture",
-            "unsupported_extensions": [],
-            "review_status": "independent_semantic_admission_passed",
-        }
-    ]
-    state["turns"].append(
-        {
-            "turn_id": "clarification-1",
-            "sequence": 97,
-            "turn_source": "railway_participant",
-            "canonical_question_id": "G23",
-            "question_wording_status": "rendered_v2",
-            "question_text": "Synthetic admitted clarification",
-            "answer_text": "Synthetic clarification answer.",
-            "correction_of": None,
-        }
-    )
-    state["review_only"] = True
-    state["review_finalization_after_clarification"] = True
-
-    context = make_context(state, instrument, ["clarification-1"], bulk_import=False)
-
-    ids = {turn["turn_id"] for turn in context["turns"]}
-    assert context["review_only"] is True
-    assert context["review_finalization_after_clarification"] is True
-    assert context["historical_import_recheck"] is False
-    assert "clarification-1" in ids
-    assert "import-0001" in ids
-    assert "import-0050" not in ids
-    assert len(context["turns"]) < 15
-    assert serialized_chars(context) < 35_000
-
-
 def test_bulk_admission_compacts_only_redundant_projection_material():
     instrument = authority()
     state = imported_state(turn_count=96)

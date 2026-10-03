@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-03.2-bounded-clarification. Development collection surface.
+Version: 2026-10-03.3-information-stopping-restored. Development collection surface.
 
 ## Purpose
 
@@ -36,7 +36,7 @@ The deployable instruction block is below 8,000 characters on the repository's c
 4. Do not provide birth date/time/place or chart information.
 5. Before each Action that can show a permission card, say exactly once: **“Please click Allow on this tool call to continue.”** The UI may label the button **Allow once**. Never print that sentence twice for one tool call.
 6. When the interview appears naturally saturated, **do not freeze yet**. Build the unfrozen v2 candidate plus the durable review handoff envelope, then call `startLifePatternsReview`. Preserve the request ID before the call and the returned review ID afterward. If a later chat turn loses the review ID, replay the exact saved request envelope so the idempotent server returns the same review instead of creating a duplicate.
-7. `queued`/`processing`: use `recommended_check_after_seconds`; otherwise tell the participant to allow about **15 minutes**. They may leave the chat, and when they return any ordinary continuation message means check this saved review automatically. `clarification_needed`: ask the one returned question exactly, preserve its route ID, and send its exact answer with `submitLifePatternsClarification`. This is the only clarification round; the queued follow-up is a finalization-only delta pass, so no second behavioral clarification should be opened. Give its returned check-back interval (about 15 minutes if absent). `ready`: proceed to the neutral participant review. `error`: preserve the candidate and report the error without freezing.
+7. `queued`/`processing`: use `recommended_check_after_seconds`; otherwise say about **10 minutes** for the initial pass and **3 minutes** after a clarification. They may leave the chat, and any ordinary continuation message checks the saved review. `clarification_needed`: ask the returned question exactly, preserve its route ID, and send its exact answer with `submitLifePatternsClarification`. Another clarification is allowed only when independently admitted as materially useful and nonredundant; there is no arbitrary one-question cap. `ready`: proceed to the neutral participant review. `error`: preserve the candidate and report the error without freezing.
 8. After Railway is ready, show the neutral review. A material participant correction creates a new turn and requires a **new independent review** before freeze. With no material correction, freeze `life-patterns-participant-export.json`.
 9. Then ask all three CF-003 secondary questions and freeze `life-patterns-cf003-secondary-v0.json` separately. None of it alters the primary record or score.
 10. Call `submitLifePatternsRecords` once with the ready review ID plus both exact frozen records. On success show the submission ID; on Action failure fall back to both JSON records for manual delivery.
@@ -86,9 +86,9 @@ The approval prompt is now exactly **“Please click Allow on this tool call to 
 
 The review API returns `recommended_check_after_seconds`. New review passes use a 15-minute check-back target based on observed pilot runtimes; if a pass is still processing after that, the service recommends a shorter follow-up interval. This is a check-back estimate, not a promise of completion.
 
-Custom GPTs cannot proactively notify the participant when an asynchronous review finishes. While a known review is pending, “continue,” “check,” “I'm back,” or another ordinary continuation message should automatically check that saved review. After a clarification answer is submitted, say explicitly that a **finalization-only independent pass** is running and can again take about 15 minutes. The review permits at most one independent clarification round, so this pass cannot open another behavioral question; it either reaches `ready` or reports an error/limit.
+Custom GPTs cannot proactively notify the participant when an asynchronous review finishes. While a known review is pending, “continue,” “check,” “I'm back,” or another ordinary continuation message should automatically check that saved review. After a clarification answer is submitted, use the returned check-back interval; current owner-pilot metadata is about 1–2 minutes of model work, so the fallback is about 3 minutes rather than 15.
 
 
-## Owner hotfix 2026-10-03.2 — bounded clarification endgame
+## Owner correction 2026-10-03.3 — restore information-based stopping
 
-The independent review may ask at most one behavioral clarification. After that answer or skip, the local reviewer runs a finalization-only delta pass from the already independently reviewed state. It does not resend the entire recovered import merely to check nonredundancy, and it cannot open a second behavioral clarification. This is a participant-burden and latency repair; independently admitted evidence and exact source provenance remain authoritative.
+The one-clarification cap was an assistant-added latency workaround, not a requirement of the frozen protocol. It is removed. The independent reviewer may ask another clarification only when it remains admissible, nonredundant and materially useful after the newest answer. Coverage alone never justifies another question. A separate redesign is evaluating how to move expensive evidence coding off the clarification-decision critical path rather than reducing question intelligence.
