@@ -58,6 +58,7 @@ def test_delivery_rules_are_in_the_shipped_instruction_chain():
     assert "backup and real file link FIRST" in instruction
     assert "Please click Allow on this tool call to continue." in text
     assert text.count("Please click Allow on this tool call to continue.") == 1
+    assert instruction.count("Please click Allow on this tool call to continue.") == 0
     assert "life-patterns-review-handoff.json" in text
     assert "life-patterns-review-receipt.json" in text
     assert "idempotent replay" in text
