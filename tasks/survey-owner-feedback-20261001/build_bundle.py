@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CUSTOM = ROOT / 'reference/custom_gpt'
 RELEASE = CUSTOM / 'releases/life-patterns-voice-gpt-2026-09-30'
 MANIFEST = CUSTOM / 'life_patterns_voice_gpt_manifest_v2.json'
-VERSION = '2026-10-03.1-review-wait-ux'
+VERSION = '2026-10-03.2-bounded-clarification'
 m = json.loads(MANIFEST.read_text())
 m['version'] = VERSION
 for field in ('instructions', 'builder_config', 'action_schema'):
@@ -85,7 +85,7 @@ update_files['UPDATE-MANIFEST.json'] = (json.dumps({
     'existing_bearer_key_changes': False,
     'files': {name: hashlib.sha256(data).hexdigest() for name,data in update_files.items()},
 }, indent=2)+'\n').encode()
-update_zip = RELEASE.parent/'Life-Patterns-GPT-review-wait-ux-update-2026-10-03.zip'
+update_zip = RELEASE.parent/'Life-Patterns-GPT-bounded-clarification-update-2026-10-03.zip'
 with zipfile.ZipFile(update_zip, 'w', zipfile.ZIP_DEFLATED) as z:
     for name,data in sorted(update_files.items()):
         info=zipfile.ZipInfo(name,(2026,10,1,0,0,0))
