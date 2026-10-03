@@ -16,7 +16,7 @@ The source supplied 332 records with day-precision dates of birth. A living + in
 
 Final analyzed offender count: **82**.
 
-Important limitation: the source's Wikipedia category fields can be historical. Therefore the cohort should be read as a high-confidence **incarceration/life/death-sentence evidence cohort**, not as a fully hand-audited census proving that every person was physically in prison on 2026-10-03.
+Important limitation: the source's Wikipedia category fields can be historical. Therefore the cohort should be read as a high-confidence **incarceration/life/death-sentence evidence cohort**, not as a fully hand-audited census proving that every person was physically in prison on 2026-10-03. The broader screened table contains **90 unique candidates**; obvious known release-status and collective-record problems are explicitly flagged there.
 
 ### Positive-outcome comparison side
 
@@ -136,6 +136,7 @@ The next scientifically useful step is not to add more symbols until something b
 ## Interpretation limits
 
 - Public achievement is not subjective happiness.
+- Cross-source DOB spot checks found disagreements for some names (for example Kristen Gilbert and Elias Abuelazam between the source dataset and CUE). That does not establish which source is wrong, but it is enough to require source-by-source DOB verification before treating the weak Life Path bump as publication-quality evidence.
 - Serial killers are not representative of all murderers.
 - Prison/status metadata is imperfect and should be hand-verified before a publication-quality analysis.
 - Birth-year, sex, geography, socioeconomic background, and cohort effects can confound public-biography comparisons.
@@ -144,6 +145,7 @@ The next scientifically useful step is not to add more symbols until something b
 
 ## Reproducibility
 
+- Broader screened offender candidates: `offender_candidates.csv` (90 rows)
 - Exact analyzed rows: `paired_cohort.csv`
 - Machine-readable results: `results.json`
 - Reproduction code: `run_analysis.py`
