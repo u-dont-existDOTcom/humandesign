@@ -1,8 +1,4 @@
-## Active shadow clarification-triage experiment — 2026-10-03
-
-Task `experiment-gap-triage-shadow-20261003` on branch `experiment-gap-triage-shadow-20261003` has implemented stage 4 of `tasks/survey-owner-feedback-20261001/INDEPENDENT-REVIEW-LATENCY-REDESIGN-20261003.md`: a development-only Gap/Triage call, separate adversarial GapAdmission call, privacy-safe benchmark CLI, and tests. Implementation commit `bd2d08d975c4ffde824e16ca15447bc690bb8333` was pushed to the named remote branch and its exact ref was verified. Live participant behavior, the review worker, API, Custom GPT bundle, deployment, provider configuration, and inference enablement are unchanged; no merge was performed. Completion command: `PYTHONPATH=apps/life-patterns-participant python -m pytest apps/life-patterns-participant/tests -q`. Detailed recovery and test state is in `tasks/clarification-triage-shadow-20261003/CURRENT-STATE.md`.
-
-## Prior owner-test follow-up — 2026-10-01
+## Current owner-test follow-up — 2026-10-01
 
 Delivery hotfix v2026-10-01.5-feedback-recovery is merged and deployed on the existing participant service. A subsequent owner test exposed a separate context-loss failure: after updating/reopening the GPT, the new chat saw zero behavioral turns. Bundle v2026-10-02.1-context-resilience therefore adds an explicit pre-Update source checkpoint and owner-testing rule: substantive tests use a normal saved conversation, and an in-progress interview must create/verify `life-patterns-live-recovery-checkpoint.json` before any builder Update. An empty post-loss candidate is diagnostic only and never replaces prior nonempty source. Read `tasks/survey-owner-feedback-20261001/CONTEXT-LOSS-INCIDENT-20261002.md`.
 

@@ -67,8 +67,6 @@ The main latency reduction came from output-contract reduction, not source trunc
 
 This does **not** yet establish non-inferior clarification quality. Route/wording quality must be compared blind against the legacy reviewer on a replay set before promotion. The experiment currently supports the architectural claim that full evidence synthesis need not sit on the clarification-decision critical path.
 
-These measurements came from the initial prototype committed as `d725c26`. The final branch supersedes that prototype runner/schema with the more strictly independent, privacy-allowlisted implementation in `participant/shadow_triage.py` and `scripts/benchmark_shadow_triage.py`; it does not represent these prototype timings as measurements of the hardened final contract. The final CLI dry-run is tested, but a real semantic replay of the hardened contract remains future work.
-
 ## Prior-work map
 
 A bounded research-before-reinvention scan found directly relevant established ideas:
@@ -87,3 +85,17 @@ Disposition: **compose/adapt**, not invent from scratch. Use information-gain st
 3. Verify zero accepted redundant questions against full source.
 4. Only then test moving evidence coding off the critical path in shadow mode.
 5. Keep incremental per-turn/batched ingestion as a plugin-oriented transport experiment; do not add dozens of Custom GPT Action approvals.
+
+## Planted nonredundancy replay
+
+Three additional **private local** replay variants appended one synthetic noncanonical Q&A that clearly answered one baseline candidate's neutral distinction. The synthetic wording and the owner's source were not committed; only route-level outcomes are recorded.
+
+- **M05 answered in source** → triage proposed `M11`, `M09`; admission approved both; `M05` was not proposed. Total semantic wall time ~97.4 s.
+- **M11 answered in source** → triage proposed `M05`, `M09`; admission approved both; `M11` was not proposed. Total semantic wall time ~118.5 s.
+- **M09 answered in source** → triage proposed `M05`, `M11`; admission approved both; `M09` was not proposed. Total semantic wall time ~149.8 s.
+
+This is a useful first adversarial check: each planted equivalent answer suppressed exactly the route it was designed to make redundant even though the appended turn had **no canonical route ID**, so the exclusion came from semantic full-source review rather than the deterministic presented-route filter.
+
+Across five shadow runs so far (two baseline repeats + three planted-answer variants), the clarification decision remained well below the ~488 s legacy successful initial pass, with no reduction in model or reasoning effort.
+
+Still missing before promotion: planted unsupported-premise/context cases, conditional/correction cases, review-ready cases, and blinded quality adjudication against the legacy question choice.

@@ -106,14 +106,6 @@ Production telemetry records prompt/completion tokens plus request/context chara
 
 Do not consume Venice credit for ordinary semantic development probes. `scripts/codex_dev_probe.py` runs the planner or admission prompt through the subscription-authenticated Codex CLI and validates the returned JSON locally. It is a development harness only; it is not a participant/public inference backend.
 
-`scripts/benchmark_shadow_triage.py` exercises the separate clarification-only experiment described in the 2026-10-03 latency redesign note. It gives a small-output Gap/Triage proposal to a fresh adversarial GapAdmission call, or skips admission when triage proposes no question. The module is deliberately absent from the participant engine, API, queued review worker, deployment image entry point, and Custom GPT bundle, so running or installing this source does not change live behavior.
-
-Use `--dry-run` first to validate exact-source ingestion and context size without invoking a model. A semantic run uses the same subscription-authenticated, tool-disabled Codex isolation as the local review worker. The output file is mode 0600 and contains only ordinal case IDs, aggregate counts, route IDs, bounded rejection codes, token counts, and timings. It never contains input paths, participant text, source-turn IDs, prompts, raw model output, exception text, or content-derived hashes. Optional legacy results must use the CLI's strict privacy-safe schema and the same ordinal case order.
-
-Example:
-
-`PYTHONPATH=apps/life-patterns-participant python apps/life-patterns-participant/scripts/benchmark_shadow_triage.py PRIVATE_RECORD.json --output /tmp/shadow-triage-report.json --dry-run`
-
 Railway Cloud Agents can host Codex with available Codex credentials, so the same dev harness may be run there when that agent is reachable. Railway Agent itself is separately token-metered and is not treated as free inference. A Cloud Agent VM also has VM cost while awake; sleep it when not in use.
 
 ### Mode comparison
