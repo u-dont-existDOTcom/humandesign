@@ -48,7 +48,8 @@ Read in this order:
 22. `docs/20_forward_blind_prospective_validation.md`
 23. `docs/21_forward_blind_execution_checklist.md`
 24. `reference/substructure/SOURCES_NEEDED.md`
-25. `reference/relationship/ra_partnership_analysis_2005.md`\n26. `docs/38_numerology_overlay_protocol.md`
+25. `reference/relationship/ra_partnership_analysis_2005.md`
+26. `docs/38_numerology_overlay_protocol.md`
 
 The earlier protocol/scoring and behavioral-target files in `reference/core/` remain historical/normative background only where they do not conflict with V4.3/V3.6. Never silently downgrade to V4.1/V3.2 or V3.5 because the existing implementation is easier.
 
@@ -129,7 +130,8 @@ Relationship/connection analysis is a separate research module under `src/hdmatc
 - Treat Electromagnetic as attraction/spark mechanics, not as universal positive compatibility.
 - Do not invent a soulmate probability or compatibility percentage and attribute it to Ra.
 - Sun/Earth-to-Node geometry may be reported as context; it must not be interpreted automatically as lover/soulmate status.
-- Relationship outputs MUST NOT add support to natal `NetInformation`, alter natal prevalence, or break V4.3 dependency controls.\n- Numerology is a separate experimental overlay governed by `docs/38_numerology_overlay_protocol.md`; it does not add support to AstroHD, AstroRRF, V4.3, or relationship scores unless a later frozen combined model demonstrates incremental out-of-sample value.
+- Relationship outputs MUST NOT add support to natal `NetInformation`, alter natal prevalence, or break V4.3 dependency controls.
+- Numerology is a separate experimental layer during evaluation, governed by `docs/38_numerology_overlay_protocol.md`. Separation is not the end goal: development fitting may test fused astrology/HD/numerology models, and a fused model should replace the separated baseline if it produces a real incremental gain that survives new-case testing. Do not count the same retrospective fit twice while evaluating that gain.
 - If one partner's time is unknown, enumerate every exact stable natal state in the declared local-day window and report invariant versus time-dependent pair mechanics. Never select the time that gives the nicest relationship story.
 - A known couple whose history was already inspected is a DEVELOPMENT case. It cannot validate a relationship model fitted or refined on that same couple.
 - Respect third-party privacy: pair mechanics may be computed from supplied data, but avoid presenting speculative private psychological claims about an absent partner as established facts.
