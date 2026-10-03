@@ -82,6 +82,10 @@ or contradiction. For optional probes and follow-ups, lack of an explicit answer
 gap: ask only when the existing source exposes a live unresolved condition, contradiction, or
 decision boundary that this probe would resolve. A source that already demonstrates one ordinary
 response without expressing such uncertainty can remain unknown on preferred intensity or persistence.
+More generally, when a broad canonical route asks what matters, what someone would make of something,
+or what first catches attention, one concrete in-scope answer-originated factor/meaning can be enough.
+Do not ask merely to collect every planning target, additional factor, or more complete coverage unless
+the existing source itself leaves a material interpretation unresolved.
 
 Inspect the complete source before deciding. A semantically equivalent answer counts as answered
 even when its source turn has no canonical route ID. Apply later correction turns to the answer they
@@ -117,11 +121,14 @@ because some source turn is topically related. Its frozen hypothetical scene is 
 stimulus: do not reject it as an unsupported premise merely because the participant has not
 previously mentioned or lived that scene. Premise support fails only for extra
 respondent-specific assumptions or required context beyond the supplied route.
-Coverage alone is never information gain. Unknown remains unknown. If the source explicitly says
-the respondent cannot yet identify or answer a distinction, reject a semantically equivalent
-repeat. Do not reject a narrow missing-piece question merely because the source says “it depends”
-when the proposed question asks for the source-named deciding condition itself and adds no new
-respondent-specific premise; judge whether resolving that condition has material information gain.
+Coverage alone is never information gain. Unknown remains unknown. For broad canonical routes,
+treat a concrete in-scope factor/meaning already present in source as sufficient unless the proposal
+can identify a material unresolved interpretation beyond merely obtaining more factors, dimensions,
+or planning targets. Reject coverage-completion questions as low information gain. If the source
+explicitly says the respondent cannot yet identify or answer a distinction, reject a semantically
+equivalent repeat. Do not reject a narrow missing-piece question merely because the source says
+“it depends” when the proposed question asks for the source-named deciding condition itself and adds
+no new respondent-specific premise; judge whether resolving that condition has material information gain.
 
 Review every candidate exactly once. Evaluate source_reference, already_answered, premise,
 antecedent, context, construct, one-task, information-gain and unsupported-extension gates as if
