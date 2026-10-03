@@ -63,3 +63,17 @@ Before changing production:
 - verify a fresh participant/account does not inherit someone else's permission;
 - verify withdraw invalidates/deletes provisional checkpoint material as designed;
 - keep final review/freeze/submission actions consequential.
+
+## Stronger near-term way to reduce approval cards: batch independent clarifications
+
+The fast shadow triage already returns up to three clarification candidates that must be mutually independent enough to ask in one round. This gives a lower-risk route to fewer approvals than relabeling data writes:
+
+1. Railway does one fast source-complete triage + independent admission.
+2. It returns a small ordered batch of independently valid questions.
+3. ChatGPT asks those questions **one at a time locally**, so the conversational UX remains natural and no Railway call occurs between them.
+4. ChatGPT sends the exact answers/skips back in one consequential batch Action.
+5. Railway reconciles the batch and either reaches `ready` or, only if an answer creates a genuinely new dependent/material gap, returns another batch.
+
+This preserves information-based stopping while reducing both remote wait cycles and approval cards. It should be evaluated before making any participant-data POST nonconsequential.
+
+The owner-pilot shadow result strengthens the case: the baseline triage consistently found `M05` and `M11`, while the independent auditor consistently flagged `M09` as an additional material missed route. Those are precisely the kinds of independent gaps that should be gathered in one remote pass instead of forcing three separate 1–3 minute round trips.
