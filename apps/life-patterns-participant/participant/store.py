@@ -595,12 +595,35 @@ class Store:
                         "Retry is only available after a recoverable worker "
                         "or resource-limit error."
                     )
-                if current == "resource_limited":
-                    worker_state = payload.get("worker_state")
-                    if (
-                        isinstance(worker_state, dict)
-                        and worker_state.get("phase") == "resource_limited"
-                    ):
+                worker_state = payload.get("worker_state")
+                if isinstance(worker_state, dict):
+                    calls = worker_state.get("calls") or []
+                    prior_model_calls = sum(
+                        1
+                        for call in calls
+                        if isinstance(call, dict)
+                        and call.get("stage") in {"Plan", "Admission"}
+                        and call.get("provider") != "deterministic"
+                    )
+                    # The historical calls stay in the audit trail. A deliberate
+                    # retry after an operator-side repair gets a fresh bounded call
+                    # epoch instead of immediately exhausting the same review on
+                    # attempts spent diagnosing the repaired infrastructure fault.
+                    # A zero-call transport error needs no epoch metadata and stays
+                    # byte-for-byte compatible with the prior resumable state.
+                    try:
+                        budget_epoch = max(
+                            0, int(worker_state.get("model_call_budget_epoch", 0) or 0)
+                        )
+                    except (TypeError, ValueError):
+                        budget_epoch = 0
+                    if current == "resource_limited" and prior_model_calls and budget_epoch == 0:
+                        worker_state["model_call_budget_baseline"] = prior_model_calls
+                        worker_state["model_call_budget_epoch"] = 1
+                        worker_state["model_call_budget_reset_reason"] = payload.get("error")
+                    if current == "resource_limited" and worker_state.get(
+                        "phase"
+                    ) == "resource_limited":
                         worker_state["phase"] = "ready"
                         worker_state["error"] = None
                         worker_state["stop_reason"] = None
