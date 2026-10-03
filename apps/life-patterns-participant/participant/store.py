@@ -311,6 +311,7 @@ class Store:
                 "effort": effort,
                 "created_at_unix": now,
                 "updated_at_unix": now,
+                "cycle_queued_at_unix": now,
                 "round": 0,
                 "claim_attempts": 0,
                 "clarification_history": [],
@@ -525,6 +526,7 @@ class Store:
                 pending_clarification=None,
                 status="queued",
                 updated_at_unix=now,
+                cycle_queued_at_unix=now,
                 error=None,
                 round=len(payload["clarification_history"]),
             )
@@ -589,6 +591,8 @@ class Store:
                 payload["status"] = payload.get("resume_status", "queued")
                 if payload["status"] in {"paused", "processing"}:
                     payload["status"] = "queued"
+                if payload["status"] == "queued":
+                    payload["cycle_queued_at_unix"] = now
             elif action == "retry":
                 if current not in {"error", "resource_limited"}:
                     raise Conflict(
@@ -629,7 +633,11 @@ class Store:
                         worker_state["stop_reason"] = None
                         worker_state["lease"] = None
                         worker_state["processing"] = None
-                payload.update(status="queued", error=None)
+                payload.update(
+                    status="queued",
+                    error=None,
+                    cycle_queued_at_unix=now,
+                )
             else:
                 raise ValueError("Unknown review control.")
             payload["updated_at_unix"] = now
