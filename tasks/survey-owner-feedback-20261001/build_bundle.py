@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CUSTOM = ROOT / 'reference/custom_gpt'
 RELEASE = CUSTOM / 'releases/life-patterns-voice-gpt-2026-09-30'
 MANIFEST = CUSTOM / 'life_patterns_voice_gpt_manifest_v2.json'
-VERSION = '2026-10-02.3-review-context-recovery'
+VERSION = '2026-10-03.1-review-wait-ux'
 m = json.loads(MANIFEST.read_text())
 m['version'] = VERSION
 for field in ('instructions', 'builder_config', 'action_schema'):
@@ -56,20 +56,22 @@ print(json.dumps({'version':VERSION,'instructions_strict':m['instructions']['str
                   'files':len(allowed),'zip_sha256':hashlib.sha256(out.read_bytes()).hexdigest()},indent=2))
 
 # Current update adds one handoff guide; prior five knowledge files remain unchanged.
-update_readme = '''# Update the installed GPT: large-record review recovery
+update_readme = '''# Update the installed GPT: review wait + approval UX
 
 1. Replace Instructions with INSTRUCTIONS-life-patterns-voice-interviewer-v2.md.
-2. Replace the existing Knowledge file ACTION-HANDOFF-GUIDE-v1.md with knowledge/ACTION-HANDOFF-GUIDE-v1.md. Keep the other five Knowledge files unchanged.
-3. Reimport ACTION-life-patterns-submission-openapi.yaml into the EXISTING Action. Keep the same schema URL and Bearer credential; do not create a second Action.
-4. Keep Code Interpreter & Data Analysis enabled; save/update the GPT.
+2. Replace ACTION-HANDOFF-GUIDE-v1.md in Knowledge.
+3. Replace GPT-BUILDER-CONFIG.md only as owner setup documentation; it is not a Knowledge file.
+4. Reimport ACTION-life-patterns-submission-openapi.yaml into the EXISTING Action. Keep the same schema URL and Bearer credential; do not create a second Action.
+5. Keep Code Interpreter & Data Analysis enabled; save/update the GPT.
 
-This bundle includes the prior Action-approval and durable review-handoff repair. Before Railway Actions, the GPT explains the permission cards and that several per-step approvals can appear.
+Participant-facing changes:
+- The approval sentence is exactly: “Please click Allow on this tool call to continue.”
+- Say it once per Action call only. The UI may label the button “Allow once.”
+- New review and clarification passes expose recommended_check_after_seconds. Current pilot runs commonly take about 10–15 minutes and can take longer.
+- After a queued pass, tell the participant they can leave the chat and return in about 15 minutes. Any ordinary continuation message should check the same saved review automatically.
+- After a clarification answer is submitted, explicitly say a new remote review pass is running; do not imply the next question/result should appear immediately.
 
-Large recovered records now keep every exact imported source turn while compacting only redundant admission-transport material. A `resource_limited / model_context_budget_exceeded` result remains pending, not complete. After the service-side repair is deployed, the GPT can `retry` the SAME saved review ID; it must not start a replacement review.
-
-Before queueing, the GPT still creates `life-patterns-candidate-backup.json` and `life-patterns-review-handoff.json`; after queue success it preserves `life-patterns-review-receipt.json` when possible.
-
-Frozen v7 question wording, source evidence semantics, independent admission, and CF-003 ordering are unchanged.
+This bundle includes the prior context-budget, retry-budget, item-level admission, and durable review-handoff repairs. It does not change frozen v7 question wording, primary/CF-003 ordering, or the participant's source record.
 '''
 update_files = {name: (RELEASE/name).read_bytes() for name in (
     'INSTRUCTIONS-life-patterns-voice-interviewer-v2.md',
@@ -83,7 +85,7 @@ update_files['UPDATE-MANIFEST.json'] = (json.dumps({
     'existing_bearer_key_changes': False,
     'files': {name: hashlib.sha256(data).hexdigest() for name,data in update_files.items()},
 }, indent=2)+'\n').encode()
-update_zip = RELEASE.parent/'Life-Patterns-GPT-review-context-recovery-update-2026-10-02.zip'
+update_zip = RELEASE.parent/'Life-Patterns-GPT-review-wait-ux-update-2026-10-03.zip'
 with zipfile.ZipFile(update_zip, 'w', zipfile.ZIP_DEFLATED) as z:
     for name,data in sorted(update_files.items()):
         info=zipfile.ZipInfo(name,(2026,10,1,0,0,0))
