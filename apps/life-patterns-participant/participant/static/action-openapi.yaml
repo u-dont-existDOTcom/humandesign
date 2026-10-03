@@ -96,7 +96,8 @@
               "pattern": "^R-[a-f0-9]{32}$"
             }
           }
-        ]
+        ],
+        "x-openai-isConsequential": false
       }
     },
     "/api/gpt/reviews/{review_id}/clarifications": {
