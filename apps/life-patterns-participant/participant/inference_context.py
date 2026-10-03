@@ -415,6 +415,47 @@ def serialized_chars(context: dict) -> int:
     return len(json.dumps(context, ensure_ascii=False, separators=(",", ":")))
 
 
+def rejected_plan_summary(proposed_plan: dict) -> dict:
+    """Bound repair context without removing authoritative source or route material.
+
+    A rejected bulk plan can be very large because it may repeat one disposition
+    per imported turn and many addressed-route bindings. The next planner call
+    already receives the full source and route/guide authority again, so the
+    repair handoff needs only enough identity to avoid blind repetition.
+    """
+    question = proposed_plan.get("question")
+    evidence = proposed_plan.get("evidence") or []
+    return {
+        "action": proposed_plan.get("action"),
+        "source_review_complete": bool(proposed_plan.get("source_review_complete")),
+        "question": question,
+        "evidence": [
+            {
+                "evidence_id": item.get("evidence_id"),
+                "source_turn_ids": sorted(
+                    {
+                        str(quote.get("turn_id"))
+                        for quote in item.get("source_quotes", [])
+                        if isinstance(quote, dict) and quote.get("turn_id")
+                    }
+                ),
+                "candidate_facet_ids": item.get("candidate_facet_ids") or [],
+                "amends_evidence_ids": item.get("amends_evidence_ids") or [],
+            }
+            for item in evidence
+            if isinstance(item, dict)
+        ],
+        "addressed_routes": [
+            {
+                "route_id": item.get("route_id"),
+                "source_turn_ids": item.get("source_turn_ids") or [],
+            }
+            for item in (proposed_plan.get("addressed_routes") or [])
+            if isinstance(item, dict)
+        ],
+    }
+
+
 def full_route_cards(instrument: dict, route_ids: Iterable[str]) -> list[dict]:
     wanted = set(route_ids)
     return [
