@@ -33,7 +33,7 @@ This note does not authorize plugin publication, public sharing, or a production
 
 ## Review-endgame UX target — 2026-10-03
 
-The current GPT fallback is now bounded: one slow independent pass may return at most one clarification; after the participant answers or skips it, a finalization-only delta pass runs from the already reviewed state and cannot open another behavioral clarification. This removes indefinite clarification loops while retaining independent admission of the clarification answer.
+The one-clarification hard cap was removed after review showed it traded scientific quality for UX by counting questions rather than information. The current GPT instead retains the protocol's information-based stopping rule while the review pipeline is redesigned so clarification triage is not coupled to full evidence coding.
 
 For the plugin prototype, improve further rather than reproducing chat polling:
 - render a persistent **Review in progress** status surface that can refresh from Railway without the participant repeatedly asking;

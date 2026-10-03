@@ -244,7 +244,7 @@ def test_review_queue_works_while_public_inference_is_dark(tmp_path):
     )
     assert started.status_code == 200
     assert started.json()["status"] == "queued"
-    assert 840 <= started.json()["recommended_check_after_seconds"] <= 900
+    assert 540 <= started.json()["recommended_check_after_seconds"] <= 600
     health = client.get("/healthz").json()
     assert health["participant_enabled"] is False
     assert health["gpt_review_queue_enabled"] is True
@@ -317,7 +317,7 @@ def test_clarification_round_trip_and_final_turn_binding(tmp_path):
     )
     assert answer.status_code == 200
     assert answer.json()["status"] == "queued"
-    assert 840 <= answer.json()["recommended_check_after_seconds"] <= 900
+    assert 120 <= answer.json()["recommended_check_after_seconds"] <= 180
 
     second_job = claim_review(client, settings.review_worker_token).json()
     assert second_job["clarification_history"][-1]["answer_text"].startswith("I usually pause")
@@ -569,8 +569,6 @@ def test_local_worker_reuses_existing_engine_with_fake_model():
     assert status == "ready"
     assert clarification2 is None
     assert next_state["phase"] == "review"
-    assert next_state["review_only"] is True
-    assert next_state["review_finalization_after_clarification"] is True
     assert second_fake.count == 2
 
 

@@ -387,10 +387,13 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
                 or time.time()
             )
             age = max(0, time.time() - cycle_started)
-            # Current pilot reviews commonly take ~10–15 minutes. Give one useful
-            # check-back interval rather than inviting repeated manual polling.
+            # Measured owner-pilot metadata: the successful initial 81-turn pass
+            # took about 8 minutes, while later clarification passes took about
+            # 1-2 minutes. Use phase-aware check-back targets; these are not
+            # completion promises.
+            target = 600 if int(payload.get("round", 0)) == 0 else 180
             recommended_check_after_seconds = (
-                max(60, int(900 - age)) if age < 900 else 300
+                max(60, int(target - age)) if age < target else 120
             )
         return {
             "schema": "life-patterns-gpt-review-status-v1",

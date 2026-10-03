@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CUSTOM = ROOT / 'reference/custom_gpt'
 RELEASE = CUSTOM / 'releases/life-patterns-voice-gpt-2026-09-30'
 MANIFEST = CUSTOM / 'life_patterns_voice_gpt_manifest_v2.json'
-VERSION = '2026-10-03.2-bounded-clarification'
+VERSION = '2026-10-03.3-information-stopping-restored'
 m = json.loads(MANIFEST.read_text())
 m['version'] = VERSION
 for field in ('instructions', 'builder_config', 'action_schema'):
@@ -67,9 +67,9 @@ update_readme = '''# Update the installed GPT: review wait + approval UX
 Participant-facing changes:
 - The approval sentence is exactly: “Please click Allow on this tool call to continue.”
 - Say it once per Action call only. The UI may label the button “Allow once.”
-- New review and clarification passes expose recommended_check_after_seconds. Current pilot runs commonly take about 10–15 minutes and can take longer.
-- After a queued pass, tell the participant they can leave the chat and return in about 15 minutes. Any ordinary continuation message should check the same saved review automatically.
-- At most one independent clarification is allowed. After its answer/skip, explicitly say a finalization-only delta pass is running; it cannot open another behavioral clarification.
+- Review status exposes recommended_check_after_seconds. Current measured fallback is about 10 minutes for the initial pass and about 3 minutes after a clarification.
+- Participants may leave the chat; any ordinary continuation message should check the same saved review automatically.
+- The assistant-added one-clarification cap is removed. Another clarification is allowed only when the independent reviewer finds it admissible, nonredundant and materially useful; coverage alone is not enough.
 
 This bundle includes the prior context-budget, retry-budget, item-level admission, and durable review-handoff repairs. It does not change frozen v7 question wording, primary/CF-003 ordering, or the participant's source record.
 '''
@@ -85,7 +85,7 @@ update_files['UPDATE-MANIFEST.json'] = (json.dumps({
     'existing_bearer_key_changes': False,
     'files': {name: hashlib.sha256(data).hexdigest() for name,data in update_files.items()},
 }, indent=2)+'\n').encode()
-update_zip = RELEASE.parent/'Life-Patterns-GPT-bounded-clarification-update-2026-10-03.zip'
+update_zip = RELEASE.parent/'Life-Patterns-GPT-information-stopping-update-2026-10-03.zip'
 with zipfile.ZipFile(update_zip, 'w', zipfile.ZIP_DEFLATED) as z:
     for name,data in sorted(update_files.items()):
         info=zipfile.ZipInfo(name,(2026,10,1,0,0,0))
