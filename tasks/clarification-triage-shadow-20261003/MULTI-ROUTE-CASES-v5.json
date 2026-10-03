@@ -1,0 +1,140 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-cases-v5",
+  "cases": [
+    {
+      "case_id": "K1",
+      "route_ids": [
+        "G19",
+        "M09",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If helping a friend with a move ran long, I'd care most about whether leaving would strand them before something time-critical. If they could manage without me, I'd protect the time I'd set aside for myself."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "For planning apps, offline access and low complexity matter a lot. I'd accept a harder migration if shared reminders became something I needed every week, but better search by itself would not be enough."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "An extra month of ordinary living costs would go into an emergency reserve so an unexpected expense would not disrupt my basics."
+        }
+      ]
+    },
+    {
+      "case_id": "K2",
+      "route_ids": [
+        "M05",
+        "G23",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If a familiar route suddenly changed roads, roadwork signs would make me think detour; without any clue I'd check the map before deciding what the change meant."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "At a shared meal I usually notice first whether someone is waiting for a seat, food, or another practical thing that has not been handled."
+        }
+      ]
+    },
+    {
+      "case_id": "K3",
+      "route_ids": [
+        "M05",
+        "M11"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "I notice route changes quickly, but that by itself does not tell you what meaning I give them."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "When someone objects to a cost I usually ask why before deciding what to do."
+        }
+      ]
+    },
+    {
+      "case_id": "K4",
+      "route_ids": [
+        "M11",
+        "PREFER-EXCHANGE",
+        "M09"
+      ],
+      "turns": [
+        {
+          "canonical_question_id": "M11",
+          "question_text": "You and a friend are planning a meal for just the two of you. You offer to organise and cook it, which will take several hours, and ask your friend to buy the ingredients. They say, “I'd like to do the meal, but paying for all the ingredients feels like too much for me.” What would you say next?",
+          "answer_text": "I'd ask what budget works and offer to split the ingredients or simplify the meal. If their objection were only the money, I'd make one workable alternative; if they no longer wanted the meal, I'd stop trying to negotiate it."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "I prefer simple offline planning tools, but I'd switch if shared reminders became a weekly need. Better search alone would not justify the migration and extra complexity."
+        }
+      ]
+    },
+    {
+      "case_id": "K5",
+      "route_ids": [
+        "G19",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "If promised help ran into my personal time, how close my friend was to being done would matter, but I cannot yet say what amount of remaining work would make me stay versus leave."
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "An extra month of living costs would be kept as an emergency buffer."
+        }
+      ]
+    },
+    {
+      "case_id": "K6",
+      "route_ids": [
+        "M09",
+        "G23",
+        "M05"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "I would never switch away from a familiar planning app because extra complexity is not worth it."
+        },
+        {
+          "question_text": "Correction",
+          "answer_text": "Correction: I would switch if shared reminders became a weekly need, but not just for better search; I still care about offline access and simplicity.",
+          "correction_of": "K6-turn-01"
+        },
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "At a shared meal I first notice practical unmet things, like someone lacking a seat or something still needing to be served."
+        }
+      ]
+    },
+    {
+      "case_id": "K7",
+      "route_ids": [
+        "M05",
+        "M11",
+        "PREFER-EXCHANGE"
+      ],
+      "turns": [
+        {
+          "question_text": "Synthetic source question",
+          "answer_text": "I notice when a familiar route changes, but I have not said what I would make of the deviation."
+        },
+        {
+          "canonical_question_id": "M11",
+          "question_text": "You and a friend are planning a meal for just the two of you. You offer to organise and cook it, which will take several hours, and ask your friend to buy the ingredients. They say, “I'd like to do the meal, but paying for all the ingredients feels like too much for me.” What would you say next?",
+          "answer_text": "I'd ask what budget works and adjust the split. Whether I keep negotiating after that depends on the reason they object, but I have not worked out what kinds of reason would make me continue versus stop."
+        }
+      ]
+    }
+  ]
+}
