@@ -1,6 +1,6 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-03.3-information-stopping-restored",
+  "version": "2026-10-03.4-readonly-status-approval",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
     "sha256": "2c058fe53732a96f64b9966762c505c1c42851d44995312659508f1b2b845149"
@@ -59,7 +59,7 @@
   },
   "action_schema": {
     "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
-    "sha256": "88ed31535ba74f7cc076176feb781bc04dd7f653311e03557513da8a1a53fa40",
+    "sha256": "d7e3a53058d41eecf43e3e8ec68d565ce43bf55f2d3aaa001dfa25177536d4da",
     "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
     "authentication": "api_key_bearer",
     "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",
