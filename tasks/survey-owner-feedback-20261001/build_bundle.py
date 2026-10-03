@@ -69,7 +69,7 @@ Participant-facing changes:
 - Say it once per Action call only. The UI may label the button “Allow once.”
 - New review and clarification passes expose recommended_check_after_seconds. Current pilot runs commonly take about 10–15 minutes and can take longer.
 - After a queued pass, tell the participant they can leave the chat and return in about 15 minutes. Any ordinary continuation message should check the same saved review automatically.
-- After a clarification answer is submitted, explicitly say a new remote review pass is running; do not imply the next question/result should appear immediately.
+- At most one independent clarification is allowed. After its answer/skip, explicitly say a finalization-only delta pass is running; it cannot open another behavioral clarification.
 
 This bundle includes the prior context-budget, retry-budget, item-level admission, and durable review-handoff repairs. It does not change frozen v7 question wording, primary/CF-003 ordering, or the participant's source record.
 '''
