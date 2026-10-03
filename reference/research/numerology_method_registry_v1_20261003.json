@@ -1,0 +1,165 @@
+{
+  "version": "numerology_method_registry_v1_20261003",
+  "date": "2026-10-03",
+  "active_systems": {
+    "CHEIRO_CHALDEAN_V1": {
+      "canonical_sources": [
+        "Cheiro - Cheiro's Book of Numbers",
+        "Cheiro - When Were You Born? (supplementary zodiacal-period interpretation)"
+      ],
+      "core_inputs": [
+        "birth_day",
+        "birth_month_zodiac_period",
+        "birth_year",
+        "contextual_used_name"
+      ],
+      "name_table": {
+        "1": [
+          "A",
+          "I",
+          "J",
+          "Q",
+          "Y"
+        ],
+        "2": [
+          "B",
+          "K",
+          "R"
+        ],
+        "3": [
+          "C",
+          "G",
+          "L",
+          "S"
+        ],
+        "4": [
+          "D",
+          "M",
+          "T"
+        ],
+        "5": [
+          "E",
+          "H",
+          "N",
+          "X"
+        ],
+        "6": [
+          "U",
+          "V",
+          "W"
+        ],
+        "7": [
+          "O",
+          "Z"
+        ],
+        "8": [
+          "F",
+          "P"
+        ],
+        "9": []
+      },
+      "main_layers": [
+        "birth_number",
+        "birth_day_compound",
+        "zodiacal_period_number",
+        "birth_year_current",
+        "contextual_name_number",
+        "compound_numbers_10_52",
+        "birth_name_harmony",
+        "harmonic_number_families",
+        "lucky_date_series",
+        "compound_future_date_method",
+        "periodicity",
+        "ordinal_life_year"
+      ],
+      "default_excluded": [
+        "health_herbs",
+        "horse_racing",
+        "colors_jewels_music",
+        "place_name_compatibility"
+      ],
+      "rule_creep_policy": "newly found rule requires new version; cannot rescue frozen miss"
+    },
+    "DECOZ_CURRENT_V1": {
+      "canonical_sources": [
+        "World Numerology current official calculation pages",
+        "Hans Decoz current course materials",
+        "World Numerology current forecasting/name-change pages",
+        "Numerology: Key to Your Inner Self (historical background)"
+      ],
+      "core_date_layers": [
+        "life_path",
+        "birthday",
+        "period_cycles",
+        "pinnacles",
+        "challenges",
+        "attitude",
+        "sun_number",
+        "age_digit"
+      ],
+      "core_birth_name_layers": [
+        "expression",
+        "heart_desire",
+        "personality",
+        "maturity",
+        "bridges",
+        "karmic_lessons",
+        "hidden_passions",
+        "subconscious_self",
+        "balance",
+        "rational_thought",
+        "cornerstone",
+        "first_vowel",
+        "capstone",
+        "planes_of_expression"
+      ],
+      "current_name_layers": [
+        "minor_expression",
+        "minor_heart_desire",
+        "minor_personality",
+        "current_name_planes"
+      ],
+      "forecast_layers": [
+        "physical_transit",
+        "mental_transit",
+        "spiritual_transit",
+        "essence",
+        "personal_year",
+        "personal_month",
+        "personal_day",
+        "duality",
+        "period_pinnacle_boundaries",
+        "age_digit"
+      ],
+      "masters": [
+        11,
+        22,
+        33
+      ],
+      "karmic_debts": [
+        13,
+        14,
+        16,
+        19
+      ],
+      "default_excluded": [
+        "lost_objects",
+        "house_phone_numbers",
+        "ancestral_reports"
+      ],
+      "rule_creep_policy": "current official system frozen; new author addition or omitted rule requires new version"
+    }
+  },
+  "inactive_catalogued_systems": [
+    "BALLIETT_HISTORICAL_WESTERN",
+    "CAMPBELL_YOUR_DAYS_ARE_NUMBERED",
+    "JORDAN_ROMANCE_IN_YOUR_NAME",
+    "JAVANE_BUNKER_DIVINE_TRIANGLE"
+  ],
+  "owner_2008_label": {
+    "year": 2008,
+    "impact": "moderate_not_top_major",
+    "chronology_source": "owner_recollection",
+    "summary": "college-era relationship rupture and significant guilt/depression"
+  }
+}
