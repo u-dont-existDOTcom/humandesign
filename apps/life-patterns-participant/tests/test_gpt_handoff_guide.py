@@ -67,7 +67,7 @@ def test_delivery_rules_are_in_the_shipped_instruction_chain():
     assert "life-patterns-action-error.json" in text
     assert "not a percentage of 79 routes or 73 facets" in text
     assert "not a guarantee" in text
-    assert "about **15 minutes**" in text
+    assert "about 15 minutes" in text
     assert "recommended_check_after_seconds" in text
     assert "send any message" in text
 

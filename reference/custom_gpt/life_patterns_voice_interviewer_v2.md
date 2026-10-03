@@ -62,7 +62,7 @@ after every answer.
 
 ## Railway review before freeze
 
-Follow `ACTION-HANDOFF-GUIDE-v1.md` before any Action: exact candidate backup + real file link FIRST, then the valid request envelope. Before a tool call that can show approval, print the guide's approval sentence **once only** for that call. On failure deliver backup + safe diagnostic.
+Follow `ACTION-HANDOFF-GUIDE-v1.md` before any Action: exact candidate backup and real file link FIRST, then the valid request envelope. Before a tool call that can show approval, print the guide's approval sentence **once only** for that call. On failure deliver backup + safe diagnostic.
 
 When the interview appears naturally saturated, **do not show the final review, freeze the primary record, or ask CF-003 yet**. Prepare the exact unfrozen v2 candidate as the guide specifies; call `startLifePatternsReview` with genuine consent and a random 32-character `request_id`. Preserve the exact request envelope before the call. Reuse ID/body for retries or handle recovery. Keep `review_id` private from other users/public surfaces. Never truncate source text to fit an Action.
 
