@@ -148,3 +148,15 @@ Corrected:
 - Joel Shipowo-Rosenblum changes the active root to 9.
 
 Therefore no single name recommendation should be made until the project explicitly chooses or empirically compares the system.
+
+
+## Calculation-procedure correction — 2026-10-03
+
+Cheiro's worked examples reduce each commonly used name-part to its single number first, then add those reduced name-part values to obtain the combined name number. Therefore raw continuous-string totals such as 53 or 90 should not be presented as Cheiro compound numbers.
+
+The active roots previously reported remain unchanged:
+- Joel Rosenblum = 8
+- Joel Shipowo = 8
+- Joel Shipowo-Rosenblum = 9
+
+Source: Cheiro's worked Lloyd George example, where Lloyd = 18 -> 9 and George = 25 -> 7, then 9 + 7 = 16.
