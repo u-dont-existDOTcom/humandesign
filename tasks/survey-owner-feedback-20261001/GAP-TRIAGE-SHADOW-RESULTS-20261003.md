@@ -182,6 +182,36 @@ The remaining promotion gap is narrower: add an explicit unsupported-premise can
 
 That leaves blind adjudication as the next quality discriminator rather than more ad-hoc prompt tuning.
 
+## Blind adjudication and reconciliation
+
+A fresh Claude Sonnet/high context received only the governing clarification rule, the relevant frozen route wording/limits, and seven synthetic cases. It was not shown shadow outputs, legacy outputs, benchmark timing, prompt history or the producer's expected answers before freezing its judgments.
+
+Frozen adjudication:
+- A general planning answer with M11 still unresolved → clarify canonical `M11` (medium confidence).
+- A semantically complete M11 answer → `review_ready` (high).
+- An actual M11 answer that negotiates one workable split but does not expose unresolved persistence conditions → `review_ready` (medium).
+- PREFER-EXCHANGE without a bound M11 antecedent → `review_ready` (high).
+- A later correction that supersedes an apparent negotiation-persistence answer → `review_ready` (high).
+- An M11 answer that explicitly says continued negotiation depends on *why* the friend objects, without naming which reasons lead to continue vs stop → clarify `PREFER-EXCHANGE` with a narrow missing-piece follow-up (medium).
+- A proposed follow-up falsely asserting that the respondent said they would pressure the friend → inadmissible.
+
+Reconciliation exposed two real shadow defects **before tuning**:
+1. it over-asked PREFER-EXCHANGE when source showed one ordinary negotiated adjustment but no source-exposed unresolved condition;
+2. it under-asked when source explicitly exposed an unresolved deciding condition (“depends on why”) whose boundary could materially change interpretation.
+
+The development prompt was then changed to distinguish **missing coverage** from a **source-exposed conditional gap**. Optional probes/follow-ups now require the source itself to expose a live unresolved condition, contradiction or decision boundary; a narrow missing-piece follow-up is allowed when it asks for that source-named boundary without inventing a new premise.
+
+Post-repair replay:
+- A → M11 clarification;
+- B → ready;
+- C → ready;
+- D → ready;
+- E → ready;
+- F → PREFER-EXCHANGE clarification;
+- G → independently rejected with unsupported-premise/context/information-gain failures.
+
+So the repaired shadow matched the frozen adjudication across all seven development cases. Because C/F directly informed the prompt repair, **these cases are now development/tuning cases and cannot validate promotion**. The next promotion evidence must use fresh untouched synthetic/development cases or separately frozen adjudication targets that were not used to tune this prompt.
+
 ## Synthetic semantic quality checks — 2026-10-03
 
 A separate fully synthetic targeted benchmark isolated specific clarification behaviors by marking all irrelevant routes already addressed. No participant source was read for these cases.
