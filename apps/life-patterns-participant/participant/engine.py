@@ -900,6 +900,20 @@ class Engine:
                     if candidate.question and candidate.question.route_id in addressed_ids:
                         raise ValueError("A route cannot be both addressed and the next question.")
                     validate_plan(candidate, state, instrument, pending)
+                    telemetry.append(
+                        {
+                            "provider": "deterministic",
+                            "stage": "plan_shape",
+                            "action": candidate.action,
+                            "evidence_count": len(candidate.evidence),
+                            "addressed_route_count": len(candidate.addressed_routes),
+                            "question_route_id": (
+                                candidate.question.route_id if candidate.question else None
+                            ),
+                            "source_review_complete": candidate.source_review_complete,
+                            "at": utc(),
+                        }
+                    )
                     if bulk_import_review and not candidate.source_review_complete:
                         raise ValueError(
                             "Imported-source review must explicitly confirm the complete source set was reviewed."
@@ -965,6 +979,25 @@ class Engine:
                             admission.no_unsupported_extension,
                         )
                     ):
+                        telemetry.append(
+                            {
+                                "provider": "deterministic",
+                                "stage": "admission_rejection",
+                                "error_code": "independent_admission_rejected",
+                                "approved": admission.approved,
+                                "context_supported": admission.context_supported,
+                                "no_redundant_question": admission.no_redundant_question,
+                                "no_unsupported_extension": admission.no_unsupported_extension,
+                                "bulk_source_review_supported": (
+                                    admission.bulk_source_review_supported
+                                ),
+                                "addressed_routes_supported": (
+                                    admission.addressed_routes_supported
+                                ),
+                                "error_count": len(admission.errors),
+                                "at": utc(),
+                            }
+                        )
                         raise ValueError(
                             "; ".join(admission.errors)
                             or "Independent admission did not approve the plan."
@@ -995,6 +1028,35 @@ class Engine:
                     plan = candidate
                     break
                 except ValueError as exc:
+                    reason = str(exc)
+                    rejection_code = {
+                        "Independent admission did not confirm review of the complete imported source set.": (
+                            "bulk_source_review_not_confirmed"
+                        ),
+                        "Independent admission did not confirm the bulk addressed-route mappings.": (
+                            "addressed_routes_not_confirmed"
+                        ),
+                        "A hypothetical behavior is not an interview stop request.": (
+                            "control_request_not_confirmed"
+                        ),
+                        "A privacy hold requires separately confirmed target exposure.": (
+                            "target_exposure_not_confirmed"
+                        ),
+                        "Imported-source review must explicitly confirm the complete source set was reviewed.": (
+                            "planner_source_review_incomplete"
+                        ),
+                        "Complete bulk import review cannot create another import-processing pass.": (
+                            "planner_invalid_bulk_process"
+                        ),
+                    }.get(reason, "semantic_validation_rejected")
+                    telemetry.append(
+                        {
+                            "provider": "deterministic",
+                            "stage": "semantic_rejection",
+                            "error_code": rejection_code,
+                            "at": utc(),
+                        }
+                    )
                     # A rejected imported-source plan can itself be tens of thousands
                     # of characters. Never append that whole plan to the already-large
                     # source context for the repair attempt. Reattach the complete

@@ -496,4 +496,10 @@ def test_large_bulk_repair_attempt_keeps_rejected_plan_context_bounded():
     assert len(state["turns"]) == 96
     repairs = [call for call in state["calls"] if call.get("stage") == "repair_projection"]
     assert repairs and repairs[-1]["context_chars"] < 110_000
+    rejections = [
+        call for call in state["calls"] if call.get("stage") == "admission_rejection"
+    ]
+    assert len(rejections) == 1
+    assert rejections[0]["approved"] is False
+    assert rejections[0]["error_code"] == "independent_admission_rejected"
     assert "error_code" not in receipt
