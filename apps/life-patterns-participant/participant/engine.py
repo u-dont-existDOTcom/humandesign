@@ -273,6 +273,15 @@ class Engine:
             and call.get("provider") != "deterministic"
         )
 
+    @classmethod
+    def _budgeted_model_call_count(cls, state: dict) -> int:
+        baseline = state.get("model_call_budget_baseline", 0)
+        try:
+            baseline = max(0, int(baseline))
+        except (TypeError, ValueError):
+            baseline = 0
+        return max(0, cls._model_call_count(state.get("calls", [])) - baseline)
+
     @staticmethod
     def _revision(state: dict, revision: int) -> None:
         if state["revision"] != revision:
@@ -609,7 +618,7 @@ class Engine:
                 and s["lease"]["expires"] > time.time()
             ):
                 raise Conflict("A saved operation is already being processed.")
-            model_calls = self._model_call_count(s.get("calls", []))
+            model_calls = self._budgeted_model_call_count(s)
             reserve = 0 if s.get("review_only") else 4
             usable_limit = max(0, self.maximum_calls - reserve)
             if model_calls >= usable_limit:
@@ -856,9 +865,9 @@ class Engine:
 
         try:
             for attempt in range(2):  # initial proposal plus one protocol-authorized repair
-                used_calls = self._model_call_count(
-                    state.get("calls", [])
-                ) + self._model_call_count(telemetry)
+                used_calls = self._budgeted_model_call_count(state) + self._model_call_count(
+                    telemetry
+                )
                 reserve = 0 if context.get("review_only") else 4
                 if used_calls + 2 > max(0, self.maximum_calls - reserve):
                     raise ProviderError("study_model_call_limit_reached")

@@ -256,7 +256,11 @@ def test_error_retry_preserves_the_last_successful_worker_state(tmp_path):
     rid = start_review(c, s.submission_token, candidate_record()).json()["review_id"]
     job = claim_review(c, s.review_worker_token).json()
     route = first_route()
-    old_state = {"phase": "awaiting_answer", "gpt_review_answers_processed": 0, "calls": []}
+    old_state = {
+        "phase": "awaiting_answer",
+        "gpt_review_answers_processed": 0,
+        "calls": [{"stage": "Plan", "provider": "synthetic"}],
+    }
     worker_result(
         c,
         s.review_worker_token,
@@ -348,7 +352,13 @@ def test_resource_limited_review_can_retry_same_review_after_operator_repair(tmp
         "lease": None,
         "processing": None,
         "gpt_review_answers_processed": 0,
-        "calls": [{"stage": "Plan", "provider": "synthetic"}],
+        "calls": [
+            {
+                "stage": "Plan" if index % 2 == 0 else "Admission",
+                "provider": "synthetic",
+            }
+            for index in range(12)
+        ],
     }
     result = worker_result(
         c,
@@ -376,6 +386,11 @@ def test_resource_limited_review_can_retry_same_review_after_operator_repair(tmp
     assert reclaimed["worker_state"]["phase"] == "ready"
     assert reclaimed["worker_state"]["error"] is None
     assert reclaimed["worker_state"]["stop_reason"] is None
+    assert reclaimed["worker_state"]["model_call_budget_baseline"] == 12
+    assert reclaimed["worker_state"]["model_call_budget_epoch"] == 1
+    worker = load_worker_module()
+    assert worker.Engine._budgeted_model_call_count(reclaimed["worker_state"]) == 0
+    assert worker.Engine._model_call_count(reclaimed["worker_state"]["calls"]) == 12
 
 
 

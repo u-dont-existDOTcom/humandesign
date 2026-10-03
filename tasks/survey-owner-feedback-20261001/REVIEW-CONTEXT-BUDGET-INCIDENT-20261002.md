@@ -35,3 +35,11 @@ A privacy-safe diagnostics follow-up records only proposal shape and admission b
 
 ## Acceptance
 Synthetic large-import regression must show every exact source turn retained, all addressed route IDs retained, semantic evidence unchanged, and the compact admission payload under the configured guard where the prior composition exceeded it. A separate reject-once regression must force independent admission to reject the first large bulk proposal, then prove the second planner call remains under the 110,000-character guard and can complete the same review. Existing ordinary review/clarification/submission tests must remain green.
+
+## Retry-budget recurrence — 2026-10-03
+
+After the repair-context fix was deployed, the same review successfully crossed the formerly failing repair boundary: two planner calls and two independent-admission calls all ran, and both repair-context projections stayed below the 110,000-character guard. The remaining outcome was semantic admission unresolved after the protocol-authorized repair, not another context overflow.
+
+A subsequent diagnostic retry then stopped immediately as `resource_limited / study_model_call_limit_reached`. This was a separate state-machine defect: the explicit operator retry preserved historical Plan/Admission telemetry (correct for audit) but the call guard counted those old attempts against the new repaired execution epoch. The retry therefore had no usable call budget.
+
+Repair: retain the complete historical call ledger, but when `controlLifePatternsReview(action=retry)` is explicitly invoked after a repaired `error` or `resource_limited` state, store the current semantic-call count as `model_call_budget_baseline`. The Engine counts only calls after that baseline against the existing per-epoch maximum. This does not increase the automatic retry count: another epoch still requires the existing explicit retry control after the underlying error is repaired.
