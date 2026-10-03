@@ -26,5 +26,12 @@ This explains why the first repair reduced the admission payload substantially b
 - Record a privacy-safe repair-projection telemetry marker so another recurrence can be located without exposing participant text or model output.
 - Permit `retry` on the **same review ID** after a resource-limit repair, resetting only the worker execution phase from `resource_limited` to `ready`; do not create a new review.
 
+## Live validation after second repair — 2026-10-03
+The same existing review was retried after the repair-pass bound was deployed. It crossed the previous failure boundary: planner 1 completed, admission 1 completed, the bounded repair projection remained below the context guard, planner 2 completed, and admission 2 completed. The resulting status changed from `resource_limited / model_context_budget_exceeded` to `error / question_or_evidence_admission_not_resolved`.
+
+That is evidence that the context-budget defect is repaired. The remaining blocker is now a genuine semantic-admission disagreement after both protocol-authorized proposals, not another transport/context overflow.
+
+A privacy-safe diagnostics follow-up records only proposal shape and admission booleans/error classes—never participant text, model prose, source quotes, or the private review handle—so the semantic rejection can be located without exposing the review content.
+
 ## Acceptance
 Synthetic large-import regression must show every exact source turn retained, all addressed route IDs retained, semantic evidence unchanged, and the compact admission payload under the configured guard where the prior composition exceeded it. A separate reject-once regression must force independent admission to reject the first large bulk proposal, then prove the second planner call remains under the 110,000-character guard and can complete the same review. Existing ordinary review/clarification/submission tests must remain green.
