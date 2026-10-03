@@ -86,9 +86,12 @@ response without expressing such uncertainty can remain unknown on preferred int
 Inspect the complete source before deciding. A semantically equivalent answer counts as answered
 even when its source turn has no canonical route ID. Apply later correction turns to the answer they
 correct rather than treating the superseded wording as current. If the source explicitly says the
-respondent cannot yet identify or answer a distinction, do not ask a semantically equivalent
-clarification unless a materially different concrete context makes it newly answerable. Return
-review_ready when no materially useful gap remains. Otherwise return at most three ranked
+respondent cannot yet identify or answer a distinction, do not merely repeat the same broad
+question. But when the source itself names a deciding condition (for example, “it depends on X”)
+without saying which values of X lead to which response, a narrow missing_piece_followup may ask
+for that source-named decision boundary when it materially changes interpretation and does not
+invent a new premise. Return review_ready when no materially useful gap remains. Otherwise return
+at most three ranked
 candidates. Use only supplied routes.
 Canonical questions copy supplied wording exactly; a canonical self-contained route has no required
 antecedent, so leave antecedent_turn_ids empty. Repair/follow-up wording stays narrowly tied to its
@@ -116,8 +119,9 @@ previously mentioned or lived that scene. Premise support fails only for extra
 respondent-specific assumptions or required context beyond the supplied route.
 Coverage alone is never information gain. Unknown remains unknown. If the source explicitly says
 the respondent cannot yet identify or answer a distinction, reject a semantically equivalent
-clarification unless a materially different concrete context makes that distinction newly
-answerable.
+repeat. Do not reject a narrow missing-piece question merely because the source says “it depends”
+when the proposed question asks for the source-named deciding condition itself and adds no new
+respondent-specific premise; judge whether resolving that condition has material information gain.
 
 Review every candidate exactly once. Evaluate source_reference, already_answered, premise,
 antecedent, context, construct, one-task, information-gain and unsupported-extension gates as if
