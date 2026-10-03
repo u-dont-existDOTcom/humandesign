@@ -1,0 +1,89 @@
+{
+  "schema": "murderer-birth-pattern-pilot-v1",
+  "status": "EXPLORATORY_NEGATIVE_WITH_WEAK_UNCONFIRMED_NUMEROLOGY_BUMP",
+  "date": "2026-10-03",
+  "cohort": {
+    "paired_rows": 82,
+    "offender_definition": "Living convicted serial-killer records with life/death-sentence, named-inmate, or explicit incarceration evidence in the source dataset; obvious released/collective-name false positives excluded from the analyzed pair set.",
+    "control_definition": "Nobel laureates used only as a high-accomplishment public-life proxy, not a measure of subjective happiness.",
+    "control_matching": "Greedy same-sex where offender sex known, nearest unused birth year within 12 years; primary person-to-person sensitivity subset restricted to year gap <=5.",
+    "age_matched_pairs_le_5y": 53
+  },
+  "birth_time_policy": "No houses, Ascendant, MC, or exact-time Moon claims. Date-only astrology used noon UT planetary longitudes for Sun, Mercury, Venus, Mars, Jupiter, Saturn and compact element/modality counts.",
+  "numerology_policy": "DOB-only Pythagorean-style reductions with 11/22/33 preserved. Name numerology excluded because canonical birth/legal names and aliases are inconsistently documented.",
+  "tests": {
+    "same_year_calendar_null": {
+      "n_offenders": 82,
+      "monte_carlo_draws_for_distribution_tests": 10000,
+      "life_path_omnibus": {
+        "p": 0.05599440055994401
+      },
+      "sun_sign_omnibus": {
+        "p": 0.8968103189681031
+      },
+      "life_path_7": {
+        "observed": 15,
+        "expected": 9.1,
+        "raw_p": 0.0505,
+        "fdr_q": 0.303
+      },
+      "life_path_33": {
+        "observed": 3,
+        "expected": 0.79,
+        "raw_p": 0.0393,
+        "fdr_q": 0.303
+      },
+      "mutable_planet_count": {
+        "planets": [
+          "Sun",
+          "Mercury",
+          "Venus",
+          "Mars",
+          "Jupiter",
+          "Saturn"
+        ],
+        "observed_mean": 2.1463414634146343,
+        "null_mean": 2.053507317073172,
+        "p": 0.4330566943305669,
+        "observed_ge4": 13,
+        "null_expected_ge4": 8.7605,
+        "p_ge4": 0.13158684131586842
+      },
+      "repeated_random_same_year_control_classification": {
+        "control_redraws": 100,
+        "mean_cross_validated_auc": {
+          "calendar": 0.46693039857227847,
+          "numerology": 0.4629483938132064,
+          "astrology_date_only": 0.5095999405116003,
+          "combined": 0.4624033313503867
+        },
+        "interpretation": "No stable out-of-sample separation from same-year random birth dates."
+      }
+    },
+    "nobel_high_achievement_proxy_gap_le_5y": {
+      "pairs": 53,
+      "group_cross_validation": "5-fold, pair-grouped, L2 logistic regression C=0.25",
+      "auc": {
+        "calendar": 0.5315058739765041,
+        "numerology": 0.4848700605197579,
+        "astrology_date_only": 0.5873976504093984,
+        "combined": 0.50124599501602
+      },
+      "balanced_accuracy": {
+        "calendar": 0.509,
+        "numerology": 0.519,
+        "astrology_date_only": 0.557,
+        "combined": 0.528
+      },
+      "paired_label_permutation_250": {
+        "calendar_p": 0.21115537848605578,
+        "numerology_p": 0.5856573705179283,
+        "astrology_date_only_p": 0.09561752988047809,
+        "combined_p": 0.5219123505976095
+      },
+      "interpretation": "Only date-only astrology showed a small exploratory bump; it was not conventionally significant and becomes less persuasive after considering multiple feature families."
+    }
+  },
+  "conclusion": "No validated numerology/astrology algorithm separates this offender cohort from controls. Life Path 7 and 33 are preregistration candidates only; the current data do not support using birth patterns to infer individual violence or dangerousness.",
+  "next_test_if_continued": "Freeze Life Path 7/33 and the exact date-only astrology feature set, then test them once on a new independently sourced offender cohort and exact-year matched non-offender people without retuning."
+}
