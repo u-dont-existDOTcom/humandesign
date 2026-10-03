@@ -548,6 +548,35 @@ def make_review_context(
         and turn.get("turn_role", "behavioral") == "behavioral"
     ]
 
+    admission_plan = proposed_plan
+    selected_routes = full_route_cards(instrument, route_ids)
+    bulk_projection = None
+    if bulk_import:
+        # The admission pass already receives every exact imported source turn.
+        # Omit planner-emitted unassessed dispositions because source_review_complete
+        # makes their meaning deterministic, and use compact route cards for routes
+        # that are only being marked addressed. Keep full route controls for the
+        # actual proposed next question. This is a source-preserving, semantics-preserving transport projection:
+        # no source text, evidence, addressed-route binding, or question is removed.
+        admission_plan = json.loads(json.dumps(proposed_plan))
+        admission_plan["dispositions"] = [
+            item
+            for item in admission_plan.get("dispositions", [])
+            if item.get("status") != "unassessed"
+            or item.get("conditions")
+            or item.get("process_feedback_quotes")
+        ]
+        full_question_ids = {route_id} if route_id else set()
+        selected_routes = full_route_cards(instrument, full_question_ids)
+        selected_full_ids = {item["id"] for item in selected_routes}
+        for addressed_id in addressed_route_ids:
+            if addressed_id in selected_full_ids:
+                continue
+            route = route_map.get(addressed_id)
+            if route is not None:
+                selected_routes.append(route_card(route, include_limits=False))
+        bulk_projection = "implicit_unassessed_dispositions_omitted_and_addressed_routes_compacted"
+
     return {
         "turns": turns,
         "source_scope": (
@@ -558,8 +587,9 @@ def make_review_context(
         "pending_turn_ids": planner_context.get("pending_turn_ids", []),
         "review_only": bool(state.get("review_only") or state.get("review", {}).get("shown_at")),
         "import_bulk_review": bulk_import,
-        "proposed_plan": proposed_plan,
-        "selected_routes": full_route_cards(instrument, route_ids),
+        "proposed_plan": admission_plan,
+        "bulk_admission_projection": bulk_projection,
+        "selected_routes": selected_routes,
         "selected_evidence_guide": evidence_guide_for_facets(
             instrument,
             facet_ids

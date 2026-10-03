@@ -333,3 +333,44 @@ def test_permanent_oversize_result_becomes_an_error_without_blocking_outbox(tmp_
     assert worker.process_one("https://testserver", "private-worker-token", outbox=box)
     assert len(calls) == 2 and calls[1]["status"] == "error" and calls[1]["worker_state"] is None
     assert box.read() is None
+
+
+def test_resource_limited_review_can_retry_same_review_after_operator_repair(tmp_path):
+    s, _, _, c = setup_submission(tmp_path)
+    rid = start_review(c, s.submission_token, candidate_record()).json()["review_id"]
+    job = claim_review(c, s.review_worker_token).json()
+    limited_state = {
+        "phase": "resource_limited",
+        "error": "model_context_budget_exceeded",
+        "stop_reason": "operator_context_compaction_required",
+        "lease": None,
+        "processing": None,
+        "gpt_review_answers_processed": 0,
+        "calls": [{"stage": "Plan", "provider": "synthetic"}],
+    }
+    result = worker_result(
+        c,
+        s.review_worker_token,
+        rid,
+        job["candidate_sha256"],
+        "resource_limited",
+        worker_state=limited_state,
+        error="model_context_budget_exceeded",
+    )
+    assert result.status_code == 200
+    status = c.get(f"/api/gpt/reviews/{rid}", headers=auth(s.submission_token)).json()
+    assert status["status"] == "resource_limited"
+
+    retry = c.post(
+        f"/api/gpt/reviews/{rid}/control",
+        headers=auth(s.submission_token),
+        json={"action": "retry", "operation_id": secrets.token_hex(16)},
+    )
+    assert retry.status_code == 200
+    assert retry.json()["review_id"] == rid
+    assert retry.json()["status"] == "queued"
+    reclaimed = claim_review(c, s.review_worker_token).json()
+    assert reclaimed["review_id"] == rid
+    assert reclaimed["worker_state"]["phase"] == "ready"
+    assert reclaimed["worker_state"]["error"] is None
+    assert reclaimed["worker_state"]["stop_reason"] is None

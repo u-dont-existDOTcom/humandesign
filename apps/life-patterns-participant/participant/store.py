@@ -590,8 +590,22 @@ class Store:
                 if payload["status"] in {"paused", "processing"}:
                     payload["status"] = "queued"
             elif action == "retry":
-                if current != "error":
-                    raise Conflict("Retry is only available after a recoverable worker error.")
+                if current not in {"error", "resource_limited"}:
+                    raise Conflict(
+                        "Retry is only available after a recoverable worker "
+                        "or resource-limit error."
+                    )
+                if current == "resource_limited":
+                    worker_state = payload.get("worker_state")
+                    if (
+                        isinstance(worker_state, dict)
+                        and worker_state.get("phase") == "resource_limited"
+                    ):
+                        worker_state["phase"] = "ready"
+                        worker_state["error"] = None
+                        worker_state["stop_reason"] = None
+                        worker_state["lease"] = None
+                        worker_state["processing"] = None
                 payload.update(status="queued", error=None)
             else:
                 raise ValueError("Unknown review control.")
