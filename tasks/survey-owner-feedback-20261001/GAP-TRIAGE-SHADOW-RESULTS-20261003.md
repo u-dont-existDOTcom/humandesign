@@ -161,6 +161,20 @@ The benchmark therefore now supports two separate claims:
 
 It still does not establish general non-inferiority; the replay/adjudication gate remains required before any live replacement.
 
+## Synthetic quality replay — later 2026-10-03
+
+Five synthetic/development cases exercised distinct failure and eligibility classes without using or committing participant wording:
+
+- **True unresolved M11** → triage proposed `M11`; independent admission retained `M11`; ~27.0 s total.
+- **Semantically answered M11** → `review_ready`; no admission call needed; ~8.0 s.
+- **Dependent PREFER-EXCHANGE with valid M11 antecedent** → triage proposed and admission retained `PREFER-EXCHANGE`; ~29.0 s.
+- **PREFER-EXCHANGE without its required M11 antecedent** → route was deterministically ineligible and triage returned `review_ready`; ~8.0 s.
+- **Correction case where later source superseded the apparent negotiation preference** → triage returned `review_ready`; ~6.0 s.
+
+These cases add evidence for nonredundancy, context/antecedent gating, dependent-follow-up eligibility and later-source correction handling. They remain development fixtures, not participant-validation evidence.
+
+The remaining promotion gap is narrower: add an explicit unsupported-premise candidate/refutation case, a condition-preservation case where a clarification remains useful only under a stated condition, and an independent blind adjudication comparing legacy versus shadow choices across the replay set.
+
 ## Synthetic semantic quality checks — 2026-10-03
 
 A separate fully synthetic targeted benchmark isolated specific clarification behaviors by marking all irrelevant routes already addressed. No participant source was read for these cases.
