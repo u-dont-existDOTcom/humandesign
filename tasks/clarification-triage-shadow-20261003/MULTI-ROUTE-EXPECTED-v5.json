@@ -1,0 +1,65 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-expected-v5",
+  "cases": [
+    {
+      "case_id": "K1",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "high",
+      "scored": true
+    },
+    {
+      "case_id": "K2",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "high",
+      "scored": true
+    },
+    {
+      "case_id": "K3",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "M05",
+        "M11"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "K4",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "disputed",
+      "scored": false,
+      "dispute": "Blind Sonnet judged PREFER-EXCHANGE still materially unresolved; blind Opus judged the bound M11 answer already sufficient to settle it."
+    },
+    {
+      "case_id": "K5",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "disputed",
+      "scored": false,
+      "dispute": "Blind Sonnet treated the stated threshold as a permissible unknown; blind Opus judged the source-exposed threshold a material G19 missing-piece gap."
+    },
+    {
+      "case_id": "K6",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "high",
+      "scored": true
+    },
+    {
+      "case_id": "K7",
+      "decision": "clarification_needed",
+      "required_route_ids": [
+        "M05"
+      ],
+      "allowed_additional_route_ids": [
+        "PREFER-EXCHANGE"
+      ],
+      "confidence": "mixed",
+      "scored": true,
+      "dispute": "Both blind adjudicators require M05. Opus also admits the source-exposed PREFER-EXCHANGE boundary; Sonnet treats that unknown as optional."
+    }
+  ]
+}
