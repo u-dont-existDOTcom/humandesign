@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-03.1-review-wait-ux. Development collection surface.
+Version: 2026-10-03.2-bounded-clarification. Development collection surface.
 
 ## Purpose
 
@@ -87,3 +87,8 @@ The approval prompt is now exactly **“Please click Allow on this tool call to 
 The review API returns `recommended_check_after_seconds`. New review passes use a 15-minute check-back target based on observed pilot runtimes; if a pass is still processing after that, the service recommends a shorter follow-up interval. This is a check-back estimate, not a promise of completion.
 
 Custom GPTs cannot proactively notify the participant when an asynchronous review finishes. While a known review is pending, “continue,” “check,” “I'm back,” or another ordinary continuation message should automatically check that saved review. After a clarification answer is submitted, say explicitly that a **finalization-only independent pass** is running and can again take about 15 minutes. The review permits at most one independent clarification round, so this pass cannot open another behavioral question; it either reaches `ready` or reports an error/limit.
+
+
+## Owner hotfix 2026-10-03.2 — bounded clarification endgame
+
+The independent review may ask at most one behavioral clarification. After that answer or skip, the local reviewer runs a finalization-only delta pass from the already independently reviewed state. It does not resend the entire recovered import merely to check nonredundancy, and it cannot open a second behavioral clarification. This is a participant-burden and latency repair; independently admitted evidence and exact source provenance remain authoritative.
