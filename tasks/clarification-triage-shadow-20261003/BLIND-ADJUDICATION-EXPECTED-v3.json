@@ -1,0 +1,23 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-expected-v3",
+  "cases": [
+    {
+      "case_id": "H11",
+      "decision": "review_ready",
+      "route_id": null,
+      "confidence": "high"
+    },
+    {
+      "case_id": "H12",
+      "decision": "review_ready",
+      "route_id": null,
+      "confidence": "high"
+    },
+    {
+      "case_id": "H13",
+      "decision": "clarification_needed",
+      "route_id": "M09",
+      "confidence": "high"
+    }
+  ]
+}
