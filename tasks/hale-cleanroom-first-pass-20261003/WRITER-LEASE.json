@@ -1,11 +1,20 @@
 {
   "schema_version": 1,
-  "status": "active",
+  "status": "complete",
   "exclusive_writer": true,
   "owned_branch": "research/hale-cleanroom-v2-chat-20261003",
   "integration_branch": "chat/v14-cross-rulebook-20260924",
   "integration_base_sha": "f4fa0b86593e895328a18d13ec90432c8cb99662",
   "starting_v1_commit": "165506e8bb4de7ac52504683cbe2382b38334813",
   "scope": "Clean-room Hale astrology+numerology V2 reconciliation and freeze before any Hale outcome/history reveal.",
-  "other_writer_state": "The original research/hale-cleanroom-20261003 worktree experienced unexpected concurrent file creation; V2 moved here and only explicitly reconciled files were copied."
+  "other_writer_state": "The original research/hale-cleanroom-20261003 worktree experienced unexpected concurrent file creation; V2 moved here and only explicitly reconciled files were copied.",
+  "final_report_sha256": "740208a21bceea4d8d82ce1024e4fae229e06dc0ba5bb73f409a4f8544ef5289",
+  "final_freeze_sha256": "d5bef45f9e2687b7e52a66e553d639eb79995e8291346b9543000248c019879f",
+  "validation": "21 focused tests passed; deterministic calculation/timing hashes reproduced; JSON/hash/diff checks passed",
+  "stop_admission": {
+    "owner_outcome": "SATISFIED_FOR_FIRST_PASS_FREEZE",
+    "remaining_gap": "Outcome comparison is intentionally post-freeze and requires the owner's Hale evidence; no pre-freeze calculation work remains.",
+    "next_actor": "owner plus analysis chat for post-freeze comparison",
+    "claim_boundary": "development/generalization case; no astrology or numerology validation claim"
+  }
 }
