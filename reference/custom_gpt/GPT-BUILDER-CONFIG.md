@@ -37,7 +37,7 @@ A Custom GPT cannot send a message before the user sends or taps something. When
 - explain the research purpose, that responses may be shared with Joel, and that the chart-blind interview will receive an independent study-AI review before final freeze;
 - say voice or text is fine and the participant may pause, skip, correct, or stop;
 - say birth/chart information will not be requested or used;
-- explain **before the first Action** that ChatGPT will show Railway permission cards, the card may show `life-patterns-participant-production.up.railway.app`, and the participant should choose **Allow once** when they want that step to proceed; explain that several separate approvals may appear across review/check/clarification/final submission;
+- explain that Railway Action calls may show permission cards from `life-patterns-participant-production.up.railway.app`; immediately before each such call say exactly once **“Please click Allow on this tool call to continue.”** (the UI may label the button **Allow once**);
 - request research-use consent covering independent review/final submission, expected voice/text/mixed mode, and permission for useful earlier-life comparison questions;
 - then begin without requiring another “ready” message.
 
@@ -48,7 +48,7 @@ For a participant with an existing interview, there are three safe resume paths:
 
 A generic continue request must not search Library, Memory, chat history, connected apps, or other account-level sources.
 
-Schema 1.2 adds review start, status, clarification, pause/stop/withdraw controls and strict reviewed submission. Import the existing schema URL again; JSON OpenAPI is valid at that YAML endpoint. The same Bearer key remains valid. Treat review IDs as private.
+Schema 1.2.3 adds review start, status, clarification, pause/stop/withdraw controls, strict reviewed submission, and `recommended_check_after_seconds` so the GPT can give a real check-back interval instead of asking participants to guess. Import the existing schema URL again; JSON OpenAPI is valid at that YAML endpoint. The same Bearer key remains valid. Treat review IDs as private.
 
 ## Delivery hotfix 2026-10-01.5
 
@@ -63,3 +63,10 @@ Use Builder Preview only for short smoke tests. For any interview whose answers 
 ## Owner hotfix 2026-10-02.2
 
 Before the first review call, preserve both the exact candidate backup and `life-patterns-review-handoff.json`, which contains the exact three-field request envelope and durable `request_id`. After a successful queue, preserve the returned review handle in a private transport receipt when possible. If the handle is later missing, replay the exact saved start-review request so server idempotency returns the existing review; never mint a new ID merely to recover state.
+
+
+## Owner hotfix 2026-10-03.1
+
+After a review start or clarification answer queues a remote pass, tell the participant that current pilot runs commonly take about **10–15 minutes**, can take longer, and they do not need to keep the chat open. Use the returned `recommended_check_after_seconds` when present. When they return, any ordinary continuation such as “continue,” “check,” or “I'm back” should check the same saved review automatically.
+
+Do not promise a proactive notification from the current Custom GPT. Scheduled tasks do not run inside GPTs, so the current GPT cannot wake itself or notify the participant when Railway finishes. The plugin migration should evaluate an event/notification path separately rather than hiding this limitation behind repeated manual polling.
