@@ -1,6 +1,6 @@
 # Life Patterns Voice GPT — latest bundle
 
-Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, with the 2026-10-01.5 progress and recoverable-handoff hotfix.
+Built from the current `chat/hybrid-voice-cost-optimization-20260928` parent, including the 2026-10-03 review wait/approval UX fixes.
 
 ## Configure the GPT builder
 
@@ -46,7 +46,9 @@ For an existing interview there are three safe paths:
 
 When the GPT thinks the primary interview is saturated, it must **not freeze yet**. It sends an unfrozen v2 candidate through `startLifePatternsReview`, receives a review ID immediately, and lets the participant leave while the independent review runs.
 
-Later, **Check my independent Life Patterns review** calls `getLifePatternsReview`. If one clarification is returned, the GPT asks it exactly and submits only the participant's answer with `submitLifePatternsClarification`. When Railway returns `ready`, the GPT performs the neutral participant review. Any material correction starts a new independent review; otherwise the primary record is frozen.
+The current pilot review usually needs about **10–15 minutes** and can take longer. The GPT tells the participant they may leave the chat and uses the service's `recommended_check_after_seconds` instead of making them guess. When they return, any ordinary continuation such as “continue,” “check,” or “I'm back” checks the same saved review automatically.
+
+If a clarification is returned, the GPT asks it exactly and submits only the participant's answer with `submitLifePatternsClarification`. That answer starts another independent pass, so the GPT gives another check-back interval rather than implying the next result should appear immediately. When Railway returns `ready`, the GPT performs the neutral participant review. Any material correction starts a new independent review; otherwise the primary record is frozen.
 
 Only after that reviewed freeze are all three CF-003 questions asked and frozen separately. Final `submitLifePatternsRecords` includes the ready review ID plus both exact frozen records. The server rejects a final primary whose behavioral turns differ from the reviewed record.
 
@@ -60,4 +62,4 @@ The three questions cover:
 
 See `MANIFEST.json` and `SETUP.md` for exact hashes and protocol details.
 
-Delivery hotfix: exact candidate backup before review, explicit tool approval wording, field-level value-free error diagnostics, and an honest stage/count footer. Hybrid question redesign is a separate unactivated development candidate; frozen v7 source remains unchanged.
+Delivery hotfix: exact candidate backup before review, the single approval line **“Please click Allow on this tool call to continue.”**, review check-back timing, field-level value-free error diagnostics, and an honest stage/count footer. Hybrid question redesign is a separate unactivated development candidate; frozen v7 source remains unchanged.
