@@ -33,6 +33,7 @@ Private owner source is never committed.
 - Both the hardened shadow and the actual legacy review selected **M11** as the first canonical clarification route on this owner case.
 - Focused shadow/action tests: **24 passed** after the current approval probe and triage changes.
 - Seven targeted synthetic semantic outcomes now cover true unresolved `M11`, semantically redundant `M11`, antecedent-gated `PREFER-EXCHANGE`, missing-antecedent review-ready, correction-resolved review-ready, unsupported `WORK-RECOVERY` premise rejection, and an independently admitted two-question `M05` + `M11` batch. One initial synthetic wording was repaired because it accidentally answered the distinction it was supposed to leave unresolved.
+- Direct legacy-vs-shadow replay on those same synthetic fixtures matched on the useful single-route decisions; shadow additionally rejected a semantically redundant `M11` that legacy still asked and admitted both independent `M05` + `M11` questions in one batch where legacy could expose only one.
 
 ## Approval / streaming finding
 
@@ -43,9 +44,11 @@ Do not add per-answer Custom GPT writes yet. First exploit the measured ~2.20xâ€
 ## Open quality gate
 
 Before promotion:
-1. add at least one genuinely dependent multi-question case where candidate 2 must wait for candidate 1's answer, plus broader development records rather than route-isolated fixtures;
+1. broaden beyond route-isolated synthetic fixtures to multi-route development records with mixed conditions/corrections and review-ready cases;
 2. compare legacy and shadow route/question decisions under blind adjudication on that broader development replay set;
 3. require zero admitted redundant questions and no material loss of useful clarifications;
 4. only then move evidence synthesis off the critical path or wire triage into live behavior.
+
+The dependent-follow-up gate is now covered: a synthetic two-step `M11` â†’ `PREFER-EXCHANGE` sequence correctly withheld the dependent probe until the `M11` answer existed, then admitted it on the next pass.
 
 Remote experiment head verified through the synthetic-quality benchmark commit. Do not merge this experiment merely from the owner-case latency result.

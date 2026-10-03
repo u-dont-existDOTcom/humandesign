@@ -178,3 +178,30 @@ Seven targeted outcomes were tested with `gpt-5.6-sol` / `xhigh`:
 The first `PREFER-EXCHANGE` synthetic wording accidentally implied enough willingness to continue the negotiation that the model judged the probe already answered. The fixture was corrected to leave that preference genuinely unresolved, and the targeted rerun then selected/admitted `PREFER-EXCHANGE`. This is test-fixture repair rather than treating a sensible model decision as failure.
 
 This is not yet a full blind non-inferiority study, but it adds direct semantic checks for true unresolved gaps, semantic redundancy without canonical IDs, antecedent gating, unsupported-premise rejection, correction handling, and multi-question batching. The synthetic benchmark is reproducible from `scripts/benchmark_shadow_synthetic_quality.py` and contains no private source.
+
+## Legacy-vs-shadow synthetic comparison
+
+The unchanged legacy Plan+Admission pipeline was then run on the same seven synthetic cases with the same `gpt-5.6-sol` / `xhigh` configuration. This gives a direct development comparison rather than judging the shadow only against hand-written expectations.
+
+Privacy-safe outcome comparison:
+
+- unresolved `M11`: both legacy and shadow selected `M11`;
+- semantically redundant `M11`: **legacy still selected `M11`**, while the shadow's independent admission rejected the repeat as already answered / low-information;
+- antecedent-supported `PREFER-EXCHANGE`: both selected `PREFER-EXCHANGE` after the refined synthetic answer;
+- missing `PREFER-EXCHANGE` antecedent: both reached review-ready/no question;
+- explicit correction resolving exchange preference: both reached review-ready/no question;
+- unsupported `WORK-RECOVERY` tiredness premise: both reached review-ready/no question;
+- two independent unresolved routes `M05` + `M11`: legacy selected only `M05` because its live contract is single-question, while shadow proposed and independently admitted **both** in one batch.
+
+Legacy semantic wall times on these route-isolated synthetic cases were approximately 25–76 s per case. The key result here is qualitative rather than latency: the shadow did not lose the useful route choices the legacy made, rejected one redundant question the legacy still asked, and exposed the intended independent batching advantage. These fixtures remain development evidence rather than a substitute for broader blind replay/adjudication.
+
+The legacy comparison is reproducible from `scripts/benchmark_legacy_synthetic_quality.py`; it reads only the committed synthetic fixtures and produces route/timing metadata.
+
+## Dependent clarification sequence
+
+A separate synthetic two-step replay verified the boundary that independent batching must not cross. With only `M11` and its dependent `PREFER-EXCHANGE` route left unresolved:
+
+1. Before any `M11` answer existed, only `M11` was eligible and admitted; `PREFER-EXCHANGE` was not batched prematurely. Semantic time: ~27.0 s.
+2. After appending a synthetic canonical `M11` answer that deliberately left preferred negotiation use unresolved, `PREFER-EXCHANGE` became eligible and was admitted on the next pass. Semantic time: ~24.0 s.
+
+This matches the intended batching rule: independent gaps can be returned together, but a follow-up whose usefulness depends on a new answer waits for that answer. The sequence is reproducible from `scripts/benchmark_shadow_dependency_sequence.py` and contains no participant source.
