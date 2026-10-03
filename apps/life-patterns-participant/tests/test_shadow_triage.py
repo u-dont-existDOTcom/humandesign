@@ -454,6 +454,38 @@ def test_triage_rejects_noncontiguous_or_forward_candidate_dependencies():
         validate_gap_triage(triage, state, instrument, context)
 
 
+def test_canonical_self_contained_gap_cannot_invent_antecedent():
+    instrument = authority()
+    state = imported_state(instrument)
+    context = make_gap_triage_context(state, instrument)
+    route = next(
+        row
+        for row in context["candidate_routes"]
+        if row["candidate_mode"] == "unasked" and row["self_contained"]
+    )
+    triage = GapTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapCandidate(
+                candidate_id="C1",
+                rank=1,
+                question=Question(
+                    route_id=route["id"],
+                    route_type="canonical",
+                    text=route["question"],
+                    antecedent_turn_ids=[context["turns"][0]["turn_id"]],
+                    equivalent_context=False,
+                    missing_distinction="Unresolved.",
+                    why_useful="Material.",
+                ),
+                depends_on_candidate_ids=[],
+            )
+        ],
+    )
+    with pytest.raises(ValueError, match="self-contained route cannot cite"):
+        validate_gap_triage(triage, state, instrument, context)
+
+
 def test_benchmark_dry_run_output_and_console_are_privacy_safe(tmp_path):
     private_input = tmp_path / "participant-private-name.json"
     private_input.write_text(json.dumps(source_record()), encoding="utf-8")

@@ -18,6 +18,10 @@ from participant.shadow_triage import privacy_safe_case_summary, run_shadow_tria
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 WORKER = Path(__file__).resolve().with_name("gpt_review_worker.py")
+# Blind Claude Opus and Sonnet adjudicators disagreed on whether this generic
+# coordination answer leaves enough information gain to justify M11. Do not
+# tune the shadow model to an assistant-authored expected label.
+DISPUTED_EXPECTATION_LABELS = {"unresolved_m11"}
 
 
 def load_worker_module():
@@ -190,6 +194,114 @@ def cases(instrument: dict) -> list[tuple[str, dict, str | None]]:
             ),
             "BATCH:M05,M11",
         ),
+        (
+            "mixed_m05_and_prefer_exchange",
+            state_with_targets(
+                instrument,
+                {"M05", "PREFER-EXCHANGE"},
+                [
+                    {
+                        "canonical_question_id": "M11",
+                        "question_text": route["M11"]["question"],
+                        "answer_text": (
+                            "I would ask what amount feels manageable and listen to their "
+                            "answer before deciding what to do next."
+                        ),
+                    },
+                    {
+                        "question_text": "How do you react to ordinary schedule changes?",
+                        "answer_text": (
+                            "I usually check what changed before deciding whether it matters."
+                        ),
+                    },
+                ],
+            ),
+            "BATCH:M05,PREFER-EXCHANGE",
+        ),
+        (
+            "mixed_review_ready",
+            state_with_targets(
+                instrument,
+                {"M05", "M11", "WORK-RECOVERY"},
+                [
+                    {
+                        "question_text": (
+                            "On a route I know well, if the driver takes a road that route "
+                            "normally never uses, what would I make of it?"
+                        ),
+                        "answer_text": (
+                            "I would think there is probably a detour or traffic issue and "
+                            "look for more information before assuming danger."
+                        ),
+                    },
+                    {
+                        "question_text": (
+                            "If a friend says paying for all meal ingredients is too much, "
+                            "what would I say?"
+                        ),
+                        "answer_text": (
+                            "I would ask their budget and suggest a split or cheaper meal so "
+                            "the plan works for both of us."
+                        ),
+                    },
+                    {
+                        "canonical_question_id": "G15",
+                        "question_text": route["G15"]["question"],
+                        "answer_text": (
+                            "I would usually still feel energetic, not tired or depleted."
+                        ),
+                    },
+                ],
+            ),
+            None,
+        ),
+        (
+            "explicit_unknown_prefer_exchange",
+            state_with_targets(
+                instrument,
+                {"M11", "PREFER-EXCHANGE"},
+                [
+                    {
+                        "canonical_question_id": "M11",
+                        "question_text": route["M11"]["question"],
+                        "answer_text": (
+                            "I would ask what budget works and try another arrangement. "
+                            "Whether I keep negotiating after that depends on the situation, "
+                            "but I cannot say yet what makes me keep going versus stop."
+                        ),
+                    }
+                ],
+            ),
+            None,
+        ),
+        (
+            "mixed_correction_leaves_m05",
+            state_with_targets(
+                instrument,
+                {"M05", "M11"},
+                [
+                    {
+                        "question_text": (
+                            "If a friend says the ingredient cost is too much, what would I do?"
+                        ),
+                        "answer_text": "I would probably insist that the original split is fair.",
+                    },
+                    {
+                        "question_text": "Correction",
+                        "answer_text": (
+                            "Actually I would ask what they can afford and renegotiate the "
+                            "split rather than insist."
+                        ),
+                        "correction_of": "syn-01",
+                    },
+                    {
+                        "question_text": "What do I notice when a plan changes?",
+                        "answer_text": "Mostly whether I need to adjust my timing.",
+                    },
+                ],
+            ),
+            "M05",
+        ),
     ]
 
 
@@ -212,9 +324,16 @@ def main() -> int:
             row["expected_selected_route_id"] = expected_route
             if isinstance(expected_route, str) and expected_route.startswith("BATCH:"):
                 expected = set(expected_route.removeprefix("BATCH:").split(","))
-                row["expectation_met"] = expected.issubset(set(row["admitted_route_ids"]))
+                expectation_met = expected.issubset(set(row["admitted_route_ids"]))
             else:
-                row["expectation_met"] = row["selected_route_id"] == expected_route
+                expectation_met = row["selected_route_id"] == expected_route
+            row["expectation_status"] = (
+                "disputed"
+                if label in DISPUTED_EXPECTATION_LABELS
+                else "met"
+                if expectation_met
+                else "failed"
+            )
             output.append(row)
             print(json.dumps(row, separators=(",", ":")), flush=True)
         print(
@@ -222,7 +341,13 @@ def main() -> int:
                 {
                     "schema": "life-patterns-shadow-synthetic-quality-v1",
                     "case_count": len(output),
-                    "all_expectations_met": all(row["expectation_met"] for row in output),
+                    "disputed_expectation_count": sum(
+                        row["expectation_status"] == "disputed" for row in output
+                    ),
+                    "all_non_disputed_expectations_met": all(
+                        row["expectation_status"] in {"met", "disputed"}
+                        for row in output
+                    ),
                     "cases": output,
                 },
                 separators=(",", ":"),
