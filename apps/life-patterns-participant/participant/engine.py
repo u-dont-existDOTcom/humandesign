@@ -228,6 +228,8 @@ import batches.
 
 Pause/stop require an actual current participant process request. Hold is only for target/birth/chart
 contamination and must not create behavioral evidence. On review_only, do not reopen behavioral questioning.
+When review_finalization_after_clarification=true, code the supplied clarification conservatively and move to
+neutral review; do not ask another behavioral question. Unknown may remain unknown.
 Return only JSON matching the provided schema.
 """
 

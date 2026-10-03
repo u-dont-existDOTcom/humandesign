@@ -29,3 +29,16 @@ Keep the current GPT operational for the present owner test while applying the A
 
 ## Non-goal
 This note does not authorize plugin publication, public sharing, or a production cutover. Those are separate owner-visible release actions after parity testing.
+
+
+## Review-endgame UX target — 2026-10-03
+
+The current GPT fallback is now bounded: one slow independent pass may return at most one clarification; after the participant answers or skips it, a finalization-only delta pass runs from the already reviewed state and cannot open another behavioral clarification. This removes indefinite clarification loops while retaining independent admission of the clarification answer.
+
+For the plugin prototype, improve further rather than reproducing chat polling:
+- render a persistent **Review in progress** status surface that can refresh from Railway without the participant repeatedly asking;
+- show the next expected check time / elapsed state directly in that surface;
+- when supported by the user's ChatGPT plan/app-event path, offer an optional review-ready notification;
+- keep ordinary return-to-chat checking as the universal fallback, so installation or notification permission is not required for completion.
+
+Do not make proactive notification a scientific or completion prerequisite. It is a UX enhancement layered over the same durable review state.

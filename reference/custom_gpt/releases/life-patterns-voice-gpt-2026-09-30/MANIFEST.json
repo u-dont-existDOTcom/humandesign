@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-03.1-review-wait-ux",
+  "version": "2026-10-03.2-bounded-clarification",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "1e68dd65733e46808194eeddd3383a63e93f337ccdf4cb4f0da3f7cf88608da0"
+    "sha256": "f97f0f16974d357e15db1d50273e43da13f42cd841318418fe1439f7965445da"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "301d99de1616f4de85d33e2716be64d76ba6d10e056666d5c5f12e0eef044ef3",
-    "characters": 7836,
-    "strict_linebreak_count": 7931
+    "sha256": "794c44bdd15b990e63108d766cd997ad9184705d7ec46370c039f66381895f3a",
+    "characters": 7892,
+    "strict_linebreak_count": 7987
   },
   "knowledge_files": [
     {
@@ -34,7 +34,7 @@
     },
     {
       "path": "reference/custom_gpt/ACTION-HANDOFF-GUIDE-v1.md",
-      "sha256": "9dd93c0e458f2aab709dd6ed30baa4699f3ea12bb9e003760bf175d66c6a9cf1"
+      "sha256": "f8cb967a49336801d1262b9416b9dad05a4483bdd53645a574ddfafa94adcab1"
     }
   ],
   "birth_or_chart_material_in_bundle": false,
