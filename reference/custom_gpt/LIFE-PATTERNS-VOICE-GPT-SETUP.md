@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-03.3-information-stopping-restored. Development collection surface.
+Version: 2026-10-03.4-readonly-status-approval. Development collection surface.
 
 ## Purpose
 

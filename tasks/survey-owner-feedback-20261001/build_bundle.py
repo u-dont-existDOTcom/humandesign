@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CUSTOM = ROOT / 'reference/custom_gpt'
 RELEASE = CUSTOM / 'releases/life-patterns-voice-gpt-2026-09-30'
 MANIFEST = CUSTOM / 'life_patterns_voice_gpt_manifest_v2.json'
-VERSION = '2026-10-03.3-information-stopping-restored'
+VERSION = '2026-10-03.4-readonly-status-approval'
 m = json.loads(MANIFEST.read_text())
 m['version'] = VERSION
 for field in ('instructions', 'builder_config', 'action_schema'):
@@ -29,7 +29,12 @@ m['action_schema']['operation_ids'] = ['startLifePatternsReview','getLifePattern
 m['handoff'] = 'Queue candidate before freeze; retrieve independent review/clarifications; participant review; primary freeze; separate CF-003; strict reviewed submission.'
 MANIFEST.write_text(json.dumps(m, indent=2, ensure_ascii=False)+'\n')
 setup = CUSTOM/'LIFE-PATTERNS-VOICE-GPT-SETUP.md'
-setup.write_text(setup.read_text().replace('Version: 2026-10-01.4.', f'Version: {VERSION}.'))
+setup_text = setup.read_text()
+setup_lines = setup_text.splitlines()
+if len(setup_lines) > 2 and setup_lines[2].startswith('Version: '):
+    suffix = ' Development collection surface.' if 'Development collection surface.' in setup_lines[2] else ''
+    setup_lines[2] = f'Version: {VERSION}.' + suffix
+setup.write_text('\n'.join(setup_lines) + ('\n' if setup_text.endswith('\n') else ''))
 files = {
     CUSTOM/'life_patterns_voice_interviewer_v2.md': RELEASE/'INSTRUCTIONS-life-patterns-voice-interviewer-v2.md',
     CUSTOM/'GPT-BUILDER-CONFIG.md': RELEASE/'GPT-BUILDER-CONFIG.md',
@@ -56,7 +61,7 @@ print(json.dumps({'version':VERSION,'instructions_strict':m['instructions']['str
                   'files':len(allowed),'zip_sha256':hashlib.sha256(out.read_bytes()).hexdigest()},indent=2))
 
 # Current update adds one handoff guide; prior five knowledge files remain unchanged.
-update_readme = '''# Update the installed GPT: review wait + approval UX
+update_readme = '''# Update the installed GPT: read-only status approval + review UX
 
 1. Replace Instructions with INSTRUCTIONS-life-patterns-voice-interviewer-v2.md.
 2. Replace ACTION-HANDOFF-GUIDE-v1.md in Knowledge.
@@ -65,6 +70,8 @@ update_readme = '''# Update the installed GPT: review wait + approval UX
 5. Keep Code Interpreter & Data Analysis enabled; save/update the GPT.
 
 Participant-facing changes:
+- The read-only review-status GET is explicitly marked nonconsequential. On accounts/surfaces where ChatGPT offers persistent approval for eligible low-risk actions, this can reduce repeated approval prompts for status checks.
+- All participant-data/state-changing POST actions remain consequential and still require the platform's normal approval behavior.
 - The approval sentence is exactly: “Please click Allow on this tool call to continue.”
 - Say it once per Action call only. The UI may label the button “Allow once.”
 - Review status exposes recommended_check_after_seconds. Current measured fallback is about 10 minutes for the initial pass and about 3 minutes after a clarification.
@@ -85,7 +92,7 @@ update_files['UPDATE-MANIFEST.json'] = (json.dumps({
     'existing_bearer_key_changes': False,
     'files': {name: hashlib.sha256(data).hexdigest() for name,data in update_files.items()},
 }, indent=2)+'\n').encode()
-update_zip = RELEASE.parent/'Life-Patterns-GPT-information-stopping-update-2026-10-03.zip'
+update_zip = RELEASE.parent/'Life-Patterns-GPT-readonly-status-approval-update-2026-10-03.zip'
 with zipfile.ZipFile(update_zip, 'w', zipfile.ZIP_DEFLATED) as z:
     for name,data in sorted(update_files.items()):
         info=zipfile.ZipInfo(name,(2026,10,1,0,0,0))
