@@ -22,7 +22,12 @@ from .domain import (
     utc,
     validate_plan,
 )
-from .inference_context import make_context, make_review_context, serialized_chars
+from .inference_context import (
+    make_context,
+    make_review_context,
+    rejected_plan_summary,
+    serialized_chars,
+)
 from .store import Conflict, Store, canonical, digest
 
 PAYMENT_ERROR = "provider_http_402"
@@ -990,8 +995,58 @@ class Engine:
                     plan = candidate
                     break
                 except ValueError as exc:
-                    context["previous_rejected_plan"] = candidate.model_dump()
-                    context["required_repair"] = str(exc)
+                    # A rejected imported-source plan can itself be tens of thousands
+                    # of characters. Never append that whole plan to the already-large
+                    # source context for the repair attempt. Reattach the complete
+                    # authoritative source/routes/guide as before, plus only a bounded
+                    # identity summary and a bounded repair reason.
+                    rejected = candidate.model_dump()
+                    context.pop("previous_rejected_plan", None)
+                    context["previous_rejected_plan_summary"] = rejected_plan_summary(rejected)
+                    repair = str(exc)
+                    if len(repair) > 4000:
+                        repair = (
+                            "The prior proposal failed independent semantic admission. "
+                            "Create a fresh proposal that satisfies every supplied source, "
+                            "route, evidence, nonredundancy, and admission constraint."
+                        )
+                    context["required_repair"] = repair
+                    repair_chars = serialized_chars(context)
+                    telemetry.append(
+                        {
+                            "provider": "deterministic",
+                            "stage": "repair_projection",
+                            "error_code": "semantic_plan_rejected_before_commit",
+                            "context_chars": repair_chars,
+                            "at": utc(),
+                        }
+                    )
+                    if repair_chars > max_context_chars:
+                        # Final fail-safe: source + route authority stays untouched; only
+                        # the rejected-plan identity is reduced further.
+                        context["previous_rejected_plan_summary"] = {
+                            "action": rejected.get("action"),
+                            "source_review_complete": bool(
+                                rejected.get("source_review_complete")
+                            ),
+                            "question_route_id": (rejected.get("question") or {}).get(
+                                "route_id"
+                            ),
+                            "evidence_ids": [
+                                item.get("evidence_id")
+                                for item in rejected.get("evidence", [])
+                                if isinstance(item, dict)
+                            ],
+                            "addressed_route_ids": [
+                                item.get("route_id")
+                                for item in rejected.get("addressed_routes", [])
+                                if isinstance(item, dict)
+                            ],
+                        }
+                        context["required_repair"] = (
+                            "The prior proposal failed independent semantic admission. "
+                            "Create a fresh proposal satisfying all supplied constraints."
+                        )
             if plan is None:
                 raise ProviderError("question_or_evidence_admission_not_resolved")
         except Exception as exc:

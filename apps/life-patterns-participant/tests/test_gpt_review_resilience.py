@@ -1,8 +1,10 @@
 from __future__ import annotations
+
+import json
 import secrets
 import pytest
 from participant.store import Conflict
-from participant.domain import Plan
+from participant.domain import Admission, Plan
 from test_gpt_submission_action import (
     setup_submission,
     candidate_record,
@@ -374,3 +376,124 @@ def test_resource_limited_review_can_retry_same_review_after_operator_repair(tmp
     assert reclaimed["worker_state"]["phase"] == "ready"
     assert reclaimed["worker_state"]["error"] is None
     assert reclaimed["worker_state"]["stop_reason"] is None
+
+
+
+def test_large_bulk_repair_attempt_keeps_rejected_plan_context_bounded():
+    worker = load_worker_module()
+    source = candidate_record()
+    seed = source["turns"][0]
+    source["turns"] = [
+        dict(
+            seed,
+            turn_id=f"bulk-{index:03d}",
+            canonical_question_id=None,
+            answer_text=(
+                "Synthetic source answer with conditions and an exception; "
+                "it stays descriptive and contains no participant data. "
+                f"Fixture {index}."
+            ),
+        )
+        for index in range(96)
+    ]
+
+    class RejectAdmissionOnce:
+        configured = True
+
+        def __init__(self):
+            self.admissions = 0
+            self.plan_context_chars = []
+
+        def call(self, system, payload, schema, model, effort):
+            if schema is Admission:
+                self.admissions += 1
+                approved = self.admissions > 1
+                return Admission(
+                    approved=approved,
+                    errors=[] if approved else ["Synthetic independent rejection."],
+                    context_supported=True,
+                    no_redundant_question=True,
+                    no_unsupported_extension=True,
+                    control_is_participant_request=False,
+                    bulk_source_review_supported=True,
+                    addressed_routes_supported=True,
+                ), {"stage": "Admission"}
+
+            self.plan_context_chars.append(
+                len(json.dumps(payload, ensure_ascii=False, separators=(",", ":")))
+            )
+            pending = payload["pending_turn_ids"]
+            turns = {turn["turn_id"]: turn for turn in payload["turns"]}
+            question_route = payload["candidate_routes"][0]
+            guide_facet = payload["candidate_evidence_guide"][0]["facet_id"]
+            addressed = [
+                {"route_id": route["id"], "source_turn_ids": [pending[0]]}
+                for route in payload["candidate_routes"]
+                if route["id"] != question_route["id"]
+            ]
+            data = {
+                    "action": "ask",
+                    "dispositions": [
+                        {
+                            "turn_id": turn_id,
+                            "status": "unassessed",
+                            "conditions": [],
+                            "process_feedback_quotes": [],
+                            "reason": "Synthetic complete-source disposition. " + ("x" * 220),
+                        }
+                        for turn_id in pending
+                    ],
+                    "evidence": [
+                        {
+                            "evidence_id": "bulk-repair-e1",
+                            "source_quotes": [
+                                {"turn_id": pending[0], "quote": turns[pending[0]]["answer_text"]}
+                            ],
+                            "observation": "Describes the response in the supplied scenario.",
+                            "evidence_type": "usual_response_self_report",
+                            "conditions": [],
+                            "time_frame": "current self-report",
+                            "relationship_context": "scenario",
+                            "candidate_facet_ids": [guide_facet],
+                            "supported_scope": "This answer only.",
+                            "unsupported_extensions": ["No global ability claim."],
+                        }
+                    ],
+                    "question": {
+                        "route_id": question_route["id"],
+                        "route_type": "canonical",
+                        "text": question_route["question"],
+                        "antecedent_turn_ids": [],
+                        "equivalent_context": False,
+                        "missing_distinction": "Synthetic unresolved distinction.",
+                        "why_useful": "Synthetic repair-path test.",
+                    },
+                    "control_quote": None,
+                    "addressed_routes": addressed,
+                    "source_review_complete": True,
+                    "reason": "Synthetic bulk review candidate.",
+                }
+            return Plan.model_validate(data), {"stage": "Plan"}
+
+    provider = RejectAdmissionOnce()
+    job = {
+        "review_id": "R-" + ("a" * 32),
+        "candidate_sha256": "b" * 64,
+        "candidate_record": source,
+        "worker_state": None,
+        "clarification_history": [],
+        "round": 0,
+        "model": "openai-gpt-56-sol",
+        "effort": "xhigh",
+    }
+    status, receipt, state, clarification = worker.run_review(job, provider=provider)
+
+    assert status == "clarification_needed"
+    assert clarification is not None
+    assert provider.admissions == 2
+    assert len(provider.plan_context_chars) == 2
+    assert max(provider.plan_context_chars) < 110_000
+    assert len(state["turns"]) == 96
+    repairs = [call for call in state["calls"] if call.get("stage") == "repair_projection"]
+    assert repairs and repairs[-1]["context_chars"] < 110_000
+    assert "error_code" not in receipt
