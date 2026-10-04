@@ -1,26 +1,12 @@
 {
   "schemaVersion": 1,
-  "taskId": "NUMEROLOGY-BOOK-AUDIT-20261004",
-  "status": "complete",
+  "taskId": "NUMEROLOGY-OWNER-COMPARISON-20261004",
+  "status": "active",
   "exclusive": true,
   "requiredBranch": "research/six-rule-life-timing-20261001",
-  "ownerAuthority": "Explicit four-book source-first audit request of 2026-10-04, followed by continue",
-  "checkpoint": "state/NUMEROLOGY-BOOK-AUDIT-20261004.md",
-  "preflightCommand": "python3 scripts/numerology_book_audit_verify.py --preflight",
-  "completionCommand": "python3 scripts/numerology_book_audit_verify.py",
-  "completionBoundary": "source-audited frozen specifications, comparison, subsequent empirical design, verified branch publication and delivered report; no merge or deployment requested",
-  "supersededLock": {
-    "taskId": "participant-session-v1",
-    "sourceCommit": "a25f90019c3bcfa2b5a0e92f4309f6b0b8d0509f",
-    "reason": "Legacy participant-session lock is unrelated to newer explicit owner request on this branch; other branches unchanged"
-  },
-  "suspendedTaskSources": [
-    "legacy participant-session-v1 lock and completion commands",
-    "other worktrees and interview implementation queues",
-    "owner-history fitting until methodology freeze",
-    "global release roadmap"
-  ],
-  "ownerOutcome": "SATISFIED",
-  "completionReceipt": "artifacts/numerology/20261004/DELIVERY_RECEIPT.json",
-  "finalSourceCommit": "151f48c9ce614c92f6d7d8081a4169a405f183f6"
+  "ownerAuthority": "2026-10-04 explicit request to compare systems and combinations against previously reported life history, following the completed source audit",
+  "checkpoint": "state/NUMEROLOGY-OWNER-COMPARISON-20261004.md",
+  "completionBoundary": "Executed source-grounded retrospective comparisons, preserved uncertainty and false predictions, verified saved results and usable delivery; no predictive-validation claim",
+  "supersededCompletedTask": "NUMEROLOGY-BOOK-AUDIT-20261004",
+  "sourceBaseline": "adb967d7e81e65020b6667183ce76b1d68a9f94e"
 }

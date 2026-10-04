@@ -1,0 +1,33 @@
+{
+  "task_id": "NUMEROLOGY-OWNER-COMPARISON-20261004",
+  "status": "REGISTERED_BEFORE_FIRST_NEW_RESULT_INSPECTION",
+  "base_commit": "adb967d7e81e65020b6667183ce76b1d68a9f94e",
+  "method_entry_point": "reference/research/numerology_method_registry_v2_1_20261004.json",
+  "classification": "RETROSPECTIVE_OWNER_DEVELOPMENT",
+  "owner_request": "Find which system or combinations improve the predictions for my life using prior reported history.",
+  "calculation_script": "scripts/numerology_owner_comparison.py",
+  "source_methods_changed": false,
+  "new_combinations_are_separate_adapters": true,
+  "outcomes_already_known": true,
+  "human_validation_claim_allowed": false,
+  "name_components": ["Joel","Edward","Sane","Todd","Daniel","Rosenblum"],
+  "current_name_components": ["Joel","Rosenblum"],
+  "explicit_input_branches": ["Javane/Bunker W after D in Edward: literal vowel branch versus ordinary consonant sensitivity; no pronunciation observation claimed", "Campbell intermediate masters retained or rooted", "Jordan birth-start versus displayed-age-minus-one tape", "Pinnacle boundary at computed age versus inclusive closing year", "all date states across reported uncertain intervals"],
+  "comparison_layers": ["author-specific core chart calculations and defined hierarchy", "all calculable annual/month/date/transit/Essence/period/Pinnacle/Challenge/Triangle/recurrence layers", "full contextual interpretation and unresolved-layer ledger", "bounded coarse impact diagnostics separate from full-author claims"],
+  "diagnostic_family": {
+    "unit": "calendar year,2000–2026",
+    "base_adapters": ["CHEIRO_YEAR_HARMONY","CHEIRO_BIRTH_SEED_RECURRENCE","CAMPBELL_CHANGE_PY","LEGACY_WESTERN_CHANGE_SET","JB_MAJOR_AGE_MARK","JB_ANY_AGE_MARK"],
+    "combinations": "every pairwise AND and OR of these six flags; not averaging numbers or selecting rules after a miss",
+    "expected_model_count": 36,
+    "not_full_author_forecasting_models": true,
+    "major_years": [2002,2005,2010,2013,2014,2018,2020,2026],
+    "explicit_lower_impact_event_years": [2008,2022],
+    "unknown_years_are_negatives": false,
+    "error": "one unit per missed major year or flagged lower-impact contrast; unknown-year outputs reported separately, no precision estimate",
+    "positive_and_negative_selection_limits": "These are selected historical impact labels, not observation-complete years or an all-event cohort. A numerical best adapter is not a validated best system."
+  },
+  "full_arm_readiness_limits": ["Exact full Decoz81-Duality interpretation bank not in frozen audit package", "Campbell and Javane/Bunker external-horoscope fusion lacks author-specified unique scoring", "conditional constructive/adverse interpretations often have no independent selector", "historic actual-use-name adoption dates and full relationship-partner inputs incomplete"],
+  "preserve": {"2008":"moderate_not_top_major","2018":"major","2029":"prospective_not_hit","old_false_predictions":true,"frozen_audit_blobs":true},
+  "privacy": "Do not commit private Library behavioral profiles or newly retrieved intimate third-party details. Existing public-safe canonical history and derived calculations only.",
+  "launch_scope": "No recruitment, prospective human experiment, new paid service, merge or deployment. Existing local subscription reviewer route may check bounded public-safe reasoning."
+}
