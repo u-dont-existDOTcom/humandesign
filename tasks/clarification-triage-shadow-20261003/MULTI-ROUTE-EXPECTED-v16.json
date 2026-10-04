@@ -1,0 +1,15 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-expected-v16",
+  "cases": [
+    {"case_id":"Y1","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"Y2","decision":"clarification_needed","route_ids":["M09","G19"],"confidence":"consensus","scored":true},
+    {"case_id":"Y3","decision":"clarification_needed","route_ids":["G20"],"confidence":"consensus","scored":true},
+    {"case_id":"Y4","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"Y5","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"Y6","decision":"clarification_needed","route_ids":["M09"],"confidence":"consensus","scored":true},
+    {"case_id":"Y7","decision":"clarification_needed","route_ids":["PREFER-EXCHANGE"],"confidence":"consensus","scored":true},
+    {"case_id":"Y8","decision":"clarification_needed","route_ids":["PREFER-EXCHANGE"],"confidence":"consensus","scored":true},
+    {"case_id":"Y9","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"Y10","decision":"clarification_needed","required_route_ids":["G23"],"allowed_additional_route_ids":["M05"],"confidence":"mixed","scored":true,"dispute":"Both blind adjudicators require G23; Opus additionally selected M05."}
+  ]
+}
