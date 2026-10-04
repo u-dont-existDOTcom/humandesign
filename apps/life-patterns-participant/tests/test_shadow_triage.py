@@ -24,6 +24,7 @@ from participant.shadow_triage import (
     GapTriage,
     make_gap_match_audit_context,
     make_gap_triage_context,
+    normalize_gap_triage_bindings,
     privacy_safe_case_summary,
     run_shadow_triage,
     validate_gap_admission,
@@ -411,6 +412,94 @@ def test_triage_context_audits_presented_route_as_exact_source_question_match():
     )
     assert match["turn_ids"] == ["presented-g19"]
     assert "presented-g19" in match["context_turn_ids"]
+
+
+def test_repair_only_missing_antecedent_is_normalized_from_presented_route():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "presented-g19",
+            "turn_role": "behavioral",
+            "canonical_question_id": "G19",
+            "question_text": "Friend-move question.",
+            "answer_text": "I would talk with my friend first.",
+        }
+    )
+    context = make_gap_triage_context(state, instrument)
+    triage = GapTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapCandidate(
+                candidate_id="C1",
+                rank=1,
+                source_anchor_turn_ids=["presented-g19"],
+                question=Question(
+                    route_id="G19",
+                    route_type="missing_piece_followup",
+                    text=(
+                        "In the friend-move situation, what would actually matter in deciding "
+                        "whether to keep helping or change the arrangement?"
+                    ),
+                    antecedent_turn_ids=[],
+                    equivalent_context=False,
+                    missing_distinction="The deciding factor remains unresolved.",
+                    why_useful="It could change interpretation of the source response.",
+                ),
+                depends_on_candidate_ids=[],
+            )
+        ],
+    )
+    assert normalize_gap_triage_bindings(triage, context) == ["C1"]
+    assert triage.candidates[0].question.antecedent_turn_ids == ["presented-g19"]
+    validate_gap_triage(triage, state, instrument, context)
+
+
+def test_repair_only_nonempty_wrong_antecedent_is_not_overwritten():
+    instrument = authority()
+    state = imported_state(instrument)
+    wrong_turn_id = state["turns"][0]["turn_id"]
+    state["turns"].append(
+        {
+            "turn_id": "presented-g19",
+            "turn_role": "behavioral",
+            "canonical_question_id": "G19",
+            "question_text": "Friend-move question.",
+            "answer_text": "I would talk with my friend first.",
+        }
+    )
+    context = make_gap_triage_context(state, instrument)
+    triage = GapTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapCandidate(
+                candidate_id="C1",
+                rank=1,
+                source_anchor_turn_ids=["presented-g19"],
+                question=Question(
+                    route_id="G19",
+                    route_type="missing_piece_followup",
+                    text=(
+                        "In the friend-move situation, what would actually matter in deciding "
+                        "whether to keep helping or change the arrangement?"
+                    ),
+                    antecedent_turn_ids=[wrong_turn_id],
+                    equivalent_context=False,
+                    missing_distinction="The deciding factor remains unresolved.",
+                    why_useful="It could change interpretation of the source response.",
+                ),
+                depends_on_candidate_ids=[],
+            )
+        ],
+    )
+    assert normalize_gap_triage_bindings(triage, context) == []
+    with pytest.raises(ValueError, match="presented route as antecedent"):
+        validate_gap_triage(triage, state, instrument, context)
+
+
+def test_triage_prompt_requires_nonadjacent_repair_context():
+    assert "understandable without adjacency" in GAP_TRIAGE_PROMPT
+    assert "presented_turn_ids" in GAP_TRIAGE_PROMPT
 
 
 def test_match_audit_context_includes_nearby_route_contradiction():

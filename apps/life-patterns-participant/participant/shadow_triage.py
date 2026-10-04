@@ -309,8 +309,15 @@ context_match_turn_ids when a source question conservatively matches a required 
 route despite lacking its canonical ID. If you select that dependent route, use the actual matching
 turn ID(s) as antecedent_turn_ids and set equivalent_context true; admission will independently
 verify the binding. Never select a dependent route merely because such a context match exists.
-Repair/follow-up wording stays narrowly tied to its route. Name dependencies between candidates
-so dependent questions are not batched as independent.
+For any route card whose candidate_mode is repair_only, use a noncanonical repair/follow-up
+route_type and include at least one of that card's presented_turn_ids in antecedent_turn_ids. The
+pipeline can deterministically fill an omitted repair-only antecedent from those exact presented
+IDs, but it will not replace a nonempty wrong binding. Because clarification questions may be
+asked long after their source turn, every noncanonical repair/follow-up must re-name enough of the
+source scene
+and unresolved cue to be understandable without adjacency; do not rely on bare references such as
+"that", "it", or "the turn". Repair/follow-up wording stays narrowly tied to its route. Name
+dependencies between candidates so dependent questions are not batched as independent.
 Do not explain or quote your evidence beyond the required source_anchor_turn_ids, emit defect
 labels,
 build an evidence ledger, map routes, summarize the participant, or discuss the source. Return only
@@ -552,6 +559,26 @@ def make_gap_triage_context(state: dict, instrument: dict) -> dict:
     }
 
 
+def normalize_gap_triage_bindings(triage: GapTriage, context: dict) -> list[str]:
+    """Fill omitted repair-only antecedent metadata from exact presented-route IDs."""
+
+    routes = {str(route["id"]): route for route in context["candidate_routes"]}
+    normalized: list[str] = []
+    for candidate in triage.candidates:
+        route = routes.get(candidate.question.route_id)
+        if route is None or route.get("candidate_mode") != "repair_only":
+            continue
+        if candidate.question.antecedent_turn_ids:
+            continue
+        presented = list(dict.fromkeys(route.get("presented_turn_ids") or []))
+        if not presented:
+            continue
+        candidate.question.antecedent_turn_ids = presented
+        candidate.question.equivalent_context = False
+        normalized.append(candidate.candidate_id)
+    return normalized
+
+
 def validate_gap_triage(triage: GapTriage, state: dict, instrument: dict, context: dict) -> None:
     if triage.decision == "review_ready":
         if triage.candidates:
@@ -776,6 +803,7 @@ def run_shadow_triage(
         GAP_TRIAGE_PROMPT, triage_context, GapTriage, model, effort
     )
     triage = GapTriage.model_validate(triage_value)
+    normalized_repair_bindings = normalize_gap_triage_bindings(triage, triage_context)
     validate_gap_triage(triage, state, instrument, triage_context)
 
     admission_context = make_gap_admission_context(state, instrument, triage_context, triage)
@@ -811,6 +839,7 @@ def run_shadow_triage(
         "triage": triage,
         "admission": admission,
         "match_audit": match_audit,
+        "normalized_repair_binding_candidate_ids": normalized_repair_bindings,
         "calls": calls,
         "triage_context_chars": serialized_chars(triage_context),
         "admission_context_chars": (
@@ -929,6 +958,9 @@ def privacy_safe_case_summary(case_id: str, state: dict, result: dict[str, Any])
         "proposed_route_ids": [candidate.question.route_id for candidate in triage.candidates],
         "admitted_route_ids": approved,
         "recovered_omission_route_ids": recovered,
+        "normalized_repair_binding_candidate_ids": list(
+            result.get("normalized_repair_binding_candidate_ids", [])
+        ),
         "rejection_code_counts": dict(sorted(failure_counts.items())),
         "semantic_calls": calls,
         "semantic_duration_seconds": round(

@@ -131,6 +131,9 @@ def main() -> int:
                     "proposed_route_ids": row["proposed_route_ids"],
                     "admitted_route_ids": row["admitted_route_ids"],
                     "rejection_code_counts": row["rejection_code_counts"],
+                    "normalized_repair_binding_candidate_ids": row.get(
+                        "normalized_repair_binding_candidate_ids", []
+                    ),
                     "producer_admission_disagreement": producer_admission_disagreement,
                     "passed": passed,
                     "semantic_duration_seconds": row["semantic_duration_seconds"],
