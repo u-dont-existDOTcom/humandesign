@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "freeze_id": "NUMEROLOGY_SOURCE_FREEZE_V2_20261004",
+  "status": "FROZEN_WITH_EXPLICIT_SOURCE_BRANCHES",
+  "source_snapshot_commit": "91026b68b99870ac0e2980134d13b8844657bafd",
+  "freeze_time_authority": "GitHub server timestamp of the commit first creating this manifest",
+  "systems": [
+    "CHEIRO_CHALDEAN_V2",
+    "CAMPBELL_YOUR_DAYS_V1",
+    "JORDAN_ROMANCE_NAME_V1",
+    "JAVANE_BUNKER_DIVINE_TRIANGLE_V1"
+  ],
+  "inherited_unchanged_systems": [
+    "CHEIRO_CHALDEAN_V1",
+    "DECOZ_CURRENT_V1"
+  ],
+  "immutable_baseline_files": {
+    "reference/research/NUMEROLOGY_METHODOLOGY_AUDIT_V1_20261003.md": "e09a0201eab09078ee8df34204b9a02d90cb45a0",
+    "reference/research/numerology_method_registry_v1_20261003.json": "9cf4a28bab2f8c9714c1c01fb503e918b3e29734"
+  },
+  "files": {
+    "reference/research/NUMEROLOGY_BOOK_AUDIT_V2_20261004.md": "cd271da2b020c1a1839ac1f93146da8e4fa9559c",
+    "reference/research/numerology_method_registry_v2_20261004.json": "f11005a3083a6aaad0b7cca2561faa764720ddb8",
+    "reference/research/numerology_v2_20261004/CAMPBELL_YOUR_DAYS_V1.md": "f4a977dd0d0b23a3d8ac68d779eabfe4de000454",
+    "reference/research/numerology_v2_20261004/CHEIRO_CHALDEAN_V2.md": "59ad7c4d74db26f3fb9e323d6729360eca69206d",
+    "reference/research/numerology_v2_20261004/JAVANE_BUNKER_DIVINE_TRIANGLE_V1.md": "060d34eaca823ecd7120b37cac1f523fc43fb19c",
+    "reference/research/numerology_v2_20261004/JORDAN_ROMANCE_NAME_V1.md": "0c681edf57f4fd9d75cd44e19b518365e5df5afd",
+    "reference/research/numerology_v2_20261004/SOURCE_RECONCILIATION.md": "2aeaa2269c29a5c2948c9805e4bb6a5b2e8e8658",
+    "reference/research/numerology_v2_20261004/ambiguities.json": "ee8c039e2f2d7467469e26270f4811fc3c333cce",
+    "reference/research/numerology_v2_20261004/formula_fixtures.json": "7662b00a0b508e7ce2c7cfb0e633bec2a98891eb",
+    "reference/research/numerology_v2_20261004/independent_review.md": "5785f798f977c774ad72594af91117a922374333",
+    "reference/research/numerology_v2_20261004/source_coverage.json": "c54f00b1ac176f1eccda780d3efc0cfec7b7daf4",
+    "scripts/numerology_book_reference.py": "c5058ea6805afa88f1d5a18c23ec467e6c763dca",
+    "tests/test_numerology_book_reference.py": "2ef8791c2a0eec8df6fdddddd2dba477a1b42cd8"
+  },
+  "precedence": [
+    "SOURCE_RECONCILIATION.md for enumerated corrections",
+    "per-system source specification",
+    "compact registry/index summaries"
+  ],
+  "promotion": "This manifest promotes the exact candidate-specification blobs plus reconciliation. Candidate headings describe their drafting state, not a later unfrozen state.",
+  "branch_policy": "The source branch set is frozen. An empirical operational choice must be separately frozen before outcomes; unknown selectors remain unknown. No post-outcome branch switching, averaging, new rule or repair of a frozen miss.",
+  "empirical_design_authored_before_this_freeze": false,
+  "owner_history_fit_performed": false,
+  "peripherals": "catalogued but disabled unless separately preregistered and safe",
+  "assurance": {
+    "source_inventory": "complete supplied-source pass",
+    "arithmetic": "75 fixtures and68 four-value rows;23 test methods passed",
+    "cross_family_review": "NOT_RUN_PLATFORM_BLOCKED",
+    "predictive_validity": "NOT_TESTED",
+    "production_inference_engine": "NOT_CLAIMED"
+  },
+  "future_discovery": "Any genuinely omitted or revised source rule requires a new explicit system/version or correction delta; old predictions remain unchanged."
+}
