@@ -22,6 +22,7 @@ from participant.shadow_triage import (
     GapMatchAudit,
     GapMatchedRouteReview,
     GapTriage,
+    make_gap_match_audit_context,
     make_gap_triage_context,
     privacy_safe_case_summary,
     run_shadow_triage,
@@ -327,6 +328,30 @@ def test_triage_context_adds_conservative_source_question_route_hints():
     ]
 
 
+def test_triage_context_audits_presented_route_as_exact_source_question_match():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "presented-g19",
+            "turn_role": "behavioral",
+            "canonical_question_id": "G19",
+            "question_text": (
+                "You promised to help a friend move, but it is taking longer than expected "
+                "and using your personal time. What would matter most in deciding what to do?"
+            ),
+            "answer_text": "I would talk it through with my friend first and see how they feel.",
+        }
+    )
+    context = make_gap_triage_context(state, instrument)
+    route = next(row for row in context["candidate_routes"] if row["id"] == "G19")
+    assert route["candidate_mode"] == "repair_only"
+    assert route["source_question_match_turn_ids"] == ["presented-g19"]
+    assert {"route_id": "G19", "turn_ids": ["presented-g19"]} in (
+        context["source_question_matches"]
+    )
+
+
 def test_triage_context_has_complete_source_and_no_evidence_deliverables():
     instrument = authority()
     context = make_gap_triage_context(imported_state(instrument), instrument)
@@ -428,6 +453,185 @@ def test_admission_recovers_source_matched_gap_omitted_by_triage():
     assert summary["shadow_outcome"] == "clarification_recommended"
     assert summary["admitted_route_ids"] == ["M09"]
     assert summary["recovered_omission_route_ids"] == ["M09"]
+
+
+def test_match_audit_can_recover_proposed_route_rejected_only_on_answer_completeness():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "near-g19",
+            "turn_role": "behavioral",
+            "question_text": (
+                "You promised to help a friend move, and it is running long into your own "
+                "personal time. They are open to changing the arrangement. What matters most "
+                "when deciding what to do?"
+            ),
+            "answer_text": "I would talk it through with my friend first and see how they feel.",
+        }
+    )
+    triage_context = make_gap_triage_context(state, instrument)
+    route = next(row for row in triage_context["candidate_routes"] if row["id"] == "G19")
+    triage = GapTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapCandidate(
+                candidate_id="C1",
+                rank=1,
+                source_anchor_turn_ids=["near-g19"],
+                question=Question(
+                    route_id="G19",
+                    route_type="canonical",
+                    text=route["question"],
+                    antecedent_turn_ids=[],
+                    equivalent_context=False,
+                    missing_distinction="The deciding factor remains unstated.",
+                    why_useful="It could change interpretation of the response.",
+                ),
+            )
+        ],
+    )
+    match_context = make_gap_match_audit_context(
+        state, instrument, triage_context, triage
+    )
+    assert {"route_id": "G19", "source_turn_ids": ["near-g19"]} in match_context["pairs"]
+
+    admission = GapAdmission(
+        source_review_complete=True,
+        reviews=[
+            GapCandidateAdmission(
+                candidate_id="C1",
+                route_id="G19",
+                approved=False,
+                source_references_valid=True,
+                not_already_answered=False,
+                premise_supported=True,
+                antecedent_supported=True,
+                context_supported=True,
+                construct_discriminating=True,
+                one_response_task=True,
+                material_information_gain=False,
+                independent_for_batch=True,
+                no_unsupported_extension=True,
+                failure_codes=["already_answered", "low_information_gain"],
+            )
+        ],
+    )
+    audit = GapMatchAudit(
+        reviews=[
+            GapMatchedRouteReview(
+                route_id="G19",
+                source_turn_ids=["near-g19"],
+                status="preliminary_gap",
+                independent_for_batch=True,
+            )
+        ]
+    )
+    summary = privacy_safe_case_summary(
+        "case-0001",
+        state,
+        {
+            "triage": triage,
+            "admission": admission,
+            "match_audit": audit,
+            "calls": [],
+            "triage_context_chars": 0,
+            "admission_context_chars": 0,
+            "match_audit_context_chars": 0,
+            "eligible_route_count": len(triage_context["candidate_routes"]),
+        },
+    )
+    assert summary["admitted_route_ids"] == ["G19"]
+    assert summary["recovered_omission_route_ids"] == ["G19"]
+
+
+def test_match_audit_does_not_override_non_answer_admission_failure():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "near-g19",
+            "turn_role": "behavioral",
+            "question_text": (
+                "You promised to help a friend move, and it is running long into your own "
+                "personal time. They are open to changing the arrangement. What matters most "
+                "when deciding what to do?"
+            ),
+            "answer_text": "I would talk it through with my friend first and see how they feel.",
+        }
+    )
+    triage_context = make_gap_triage_context(state, instrument)
+    route = next(row for row in triage_context["candidate_routes"] if row["id"] == "G19")
+    triage = GapTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapCandidate(
+                candidate_id="C1",
+                rank=1,
+                source_anchor_turn_ids=["near-g19"],
+                question=Question(
+                    route_id="G19",
+                    route_type="canonical",
+                    text=route["question"],
+                    antecedent_turn_ids=[],
+                    equivalent_context=False,
+                    missing_distinction="The deciding factor remains unstated.",
+                    why_useful="It could change interpretation of the response.",
+                ),
+            )
+        ],
+    )
+    admission = GapAdmission(
+        source_review_complete=True,
+        reviews=[
+            GapCandidateAdmission(
+                candidate_id="C1",
+                route_id="G19",
+                approved=False,
+                source_references_valid=True,
+                not_already_answered=False,
+                premise_supported=False,
+                antecedent_supported=True,
+                context_supported=True,
+                construct_discriminating=True,
+                one_response_task=True,
+                material_information_gain=False,
+                independent_for_batch=True,
+                no_unsupported_extension=True,
+                failure_codes=[
+                    "already_answered",
+                    "unsupported_premise",
+                    "low_information_gain",
+                ],
+            )
+        ],
+    )
+    audit = GapMatchAudit(
+        reviews=[
+            GapMatchedRouteReview(
+                route_id="G19",
+                source_turn_ids=["near-g19"],
+                status="preliminary_gap",
+                independent_for_batch=True,
+            )
+        ]
+    )
+    summary = privacy_safe_case_summary(
+        "case-0001",
+        state,
+        {
+            "triage": triage,
+            "admission": admission,
+            "match_audit": audit,
+            "calls": [],
+            "triage_context_chars": 0,
+            "admission_context_chars": 0,
+            "match_audit_context_chars": 0,
+            "eligible_route_count": len(triage_context["candidate_routes"]),
+        },
+    )
+    assert summary["admitted_route_ids"] == []
+    assert summary["recovered_omission_route_ids"] == []
 
 
 def test_selected_candidate_follows_triage_rank_not_admission_review_order():

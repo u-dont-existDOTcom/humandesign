@@ -413,6 +413,7 @@ def _shadow_route_cards(state: dict, instrument: dict) -> list[dict]:
         if route_id in presented:
             card["candidate_mode"] = "repair_only"
             card["presented_turn_ids"] = presented[route_id]
+            card["source_question_match_turn_ids"] = presented[route_id]
         else:
             card["candidate_mode"] = "unasked"
         cards.append(card)
@@ -575,14 +576,12 @@ def make_gap_admission_context(
 def make_gap_match_audit_context(
     state: dict, instrument: dict, triage_context: dict, triage: GapTriage
 ) -> dict:
-    proposed_ids = {candidate.question.route_id for candidate in triage.candidates}
     pairs = [
         {
             "route_id": str(match["route_id"]),
             "source_turn_ids": [str(turn_id) for turn_id in match["turn_ids"]],
         }
         for match in triage_context.get("source_question_matches", [])
-        if str(match["route_id"]) not in proposed_ids
     ]
     route_ids = {pair["route_id"] for pair in pairs}
     seed_turn_ids = {
@@ -756,7 +755,13 @@ def _ordered_admitted_routes(
     fallback = len(source_order) + 1
     ranked: dict[str, tuple[int, bool]] = {}
 
-    approved_ids = {review.candidate_id for review in admission.reviews if review.approved}
+    admission_by_candidate = {review.candidate_id: review for review in admission.reviews}
+    candidate_by_route = {
+        candidate.question.route_id: candidate for candidate in triage.candidates
+    }
+    approved_ids = {
+        review.candidate_id for review in admission.reviews if review.approved
+    }
     for candidate in triage.candidates:
         if candidate.candidate_id not in approved_ids:
             continue
@@ -767,11 +772,24 @@ def _ordered_admitted_routes(
         )
         ranked[route_id] = (position, False)
 
+    answer_completeness_codes = {"already_answered", "low_information_gain"}
     for review in match_audit.reviews:
         if review.status != "preliminary_gap" or not review.independent_for_batch:
             continue
         if review.route_id in ranked:
             continue
+
+        proposed = candidate_by_route.get(review.route_id)
+        if proposed is not None:
+            admission_review = admission_by_candidate.get(proposed.candidate_id)
+            if admission_review is None:
+                continue
+            non_answer_failures = set(admission_review.failure_codes).difference(
+                answer_completeness_codes
+            )
+            if non_answer_failures:
+                continue
+
         position = min(
             source_order.get(turn_id, fallback) for turn_id in review.source_turn_ids
         )
