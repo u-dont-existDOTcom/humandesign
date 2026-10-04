@@ -133,6 +133,7 @@ class ApprovedFake:
                         candidate_id="C1",
                         route_id=self.selected_route["id"],
                         approved=True,
+                        question_approved=True,
                         source_references_valid=True,
                         not_already_answered=True,
                         premise_supported=True,
@@ -169,6 +170,7 @@ class RejectedFake(ApprovedFake):
                         candidate_id="C1",
                         route_id=self.selected_route["id"],
                         approved=False,
+                        question_approved=True,
                         source_references_valid=True,
                         not_already_answered=False,
                         premise_supported=True,
@@ -274,6 +276,7 @@ class TwoCandidateFake(ApprovedFake):
                     candidate_id=candidate["candidate_id"],
                     route_id=candidate["question"]["route_id"],
                     approved=True,
+                    question_approved=True,
                     source_references_valid=True,
                     not_already_answered=True,
                     premise_supported=True,
@@ -746,6 +749,7 @@ def test_match_audit_can_recover_proposed_route_rejected_only_on_answer_complete
                 candidate_id="C1",
                 route_id="G19",
                 approved=False,
+                question_approved=True,
                 source_references_valid=True,
                 not_already_answered=False,
                 premise_supported=True,
@@ -831,6 +835,7 @@ def test_match_audit_does_not_override_non_answer_admission_failure():
                 candidate_id="C1",
                 route_id="G19",
                 approved=False,
+                question_approved=True,
                 source_references_valid=True,
                 not_already_answered=False,
                 premise_supported=False,
@@ -951,6 +956,7 @@ def test_admitted_batch_order_follows_source_anchor_order_not_model_rank():
                 candidate_id=candidate.candidate_id,
                 route_id=candidate.question.route_id,
                 approved=True,
+                question_approved=True,
                 source_references_valid=True,
                 not_already_answered=True,
                 premise_supported=True,
@@ -984,6 +990,37 @@ def test_admitted_batch_order_follows_source_anchor_order_not_model_rank():
     assert summary["selected_route_id"] == routes[1]["id"]
 
 
+def test_wording_failure_does_not_erase_admitted_gap_spec():
+    instrument = authority()
+    state = imported_state(instrument)
+    result = run_shadow_triage(
+        state, instrument, ApprovedFake(), model="gpt-5.6-sol", effort="xhigh"
+    )
+    triage = result["triage"]
+    original = result["admission"].reviews[0]
+    review = original.model_copy(
+        update={
+            "approved": True,
+            "question_approved": False,
+            "construct_discriminating": False,
+            "failure_codes": ["not_construct_discriminating"],
+        }
+    )
+    admission = GapAdmission(source_review_complete=True, reviews=[review])
+    validate_gap_admission(admission, triage)
+    summary = privacy_safe_case_summary(
+        "case-0001",
+        state,
+        {
+            **result,
+            "admission": admission,
+        },
+    )
+    route_id = triage.candidates[0].question.route_id
+    assert summary["admitted_route_ids"] == [route_id]
+    assert summary["question_rejected_route_ids"] == [route_id]
+
+
 def test_admission_gate_and_failure_codes_must_match_exactly():
     instrument = authority()
     state = imported_state(instrument)
@@ -998,6 +1035,7 @@ def test_admission_gate_and_failure_codes_must_match_exactly():
                 candidate_id="C1",
                 route_id=triage.candidates[0].question.route_id,
                 approved=False,
+                question_approved=True,
                 source_references_valid=True,
                 not_already_answered=False,
                 premise_supported=True,

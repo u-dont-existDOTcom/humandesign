@@ -115,8 +115,11 @@ def main() -> int:
                     or target["route_id"] in row["admitted_route_ids"]
                 )
             scored = bool(target.get("scored", True))
+            question_ok = not row.get("question_rejected_route_ids")
             passed = (
-                actual_decision == target["decision"] and route_ok if scored else None
+                actual_decision == target["decision"] and route_ok and question_ok
+                if scored
+                else None
             )
             results.append(
                 {
@@ -130,6 +133,9 @@ def main() -> int:
                     "actual_decision": actual_decision,
                     "proposed_route_ids": row["proposed_route_ids"],
                     "admitted_route_ids": row["admitted_route_ids"],
+                    "question_rejected_route_ids": row.get(
+                        "question_rejected_route_ids", []
+                    ),
                     "rejection_code_counts": row["rejection_code_counts"],
                     "normalized_repair_binding_candidate_ids": row.get(
                         "normalized_repair_binding_candidate_ids", []
