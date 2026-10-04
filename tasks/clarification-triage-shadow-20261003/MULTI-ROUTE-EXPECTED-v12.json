@@ -1,0 +1,15 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-expected-v12",
+  "cases": [
+    {"case_id":"T1","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"T2","decision":"clarification_needed","route_ids":["M09"],"confidence":"consensus","scored":true},
+    {"case_id":"T3","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"T4","decision":"clarification_needed","route_ids":["PREFER-EXCHANGE"],"confidence":"consensus","scored":true},
+    {"case_id":"T5","decision":"clarification_needed","route_ids":["G20"],"confidence":"consensus","scored":true},
+    {"case_id":"T6","decision":"clarification_needed","route_ids":["M05","M09"],"confidence":"consensus","scored":true},
+    {"case_id":"T7","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"T8","decision":"clarification_needed","route_ids":["G19","M05"],"confidence":"consensus","scored":true},
+    {"case_id":"T9","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"T10","decision":"clarification_needed","route_ids":["G20"],"confidence":"consensus","scored":true}
+  ]
+}
