@@ -1,0 +1,162 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-cases-v7",
+  "cases": [
+    {
+      "case_id": "N1",
+      "route_ids": [
+        "M05",
+        "M09",
+        "G19"
+      ],
+      "turns": [
+        {
+          "question_text": "Imagine you're riding a route you know well and the driver turns onto a road that route never normally uses. What does that mean to you?",
+          "answer_text": "Mostly that there's a practical reason I can't see from my seat, like roadwork or a backup. I'd glance at the map, see where we're heading, and go back to what I was doing."
+        },
+        {
+          "question_text": "You use a simple offline planning app you know well. A more complex app offers shared reminders and better search, but moving over would take about an hour. What matters when you decide whether to switch?",
+          "answer_text": "Reliability matters most to me. I use mine on the train with no signal, so anything that needs a connection is a deal-breaker. An hour of migration wouldn't bother me, but I wouldn't give up working offline for search. I'd stay where I am."
+        }
+      ]
+    },
+    {
+      "case_id": "N2",
+      "route_ids": [
+        "G20",
+        "M11",
+        "G23"
+      ],
+      "turns": [
+        {
+          "question_text": "Your basic needs are covered and you unexpectedly receive extra money equal to about one month of ordinary living costs. What would you most want that money to do?",
+          "answer_text": "The first thing I'd do is move it into my savings account so it's out of my checking and I don't spend it by accident."
+        },
+        {
+          "question_text": "You offer to spend several hours cooking and organising a meal for a friend, and the friend says paying for all the ingredients would be too much. What would you say next?",
+          "answer_text": "I'd say that's reasonable, so let's split the grocery bill and I'll still do all the cooking and setup."
+        }
+      ]
+    },
+    {
+      "case_id": "N3",
+      "route_ids": [
+        "M09",
+        "G19",
+        "M05"
+      ],
+      "turns": [
+        {
+          "question_text": "You have a familiar, simple, offline planning app and could move to a more complex one with shared reminders and better search, which would take about an hour to migrate. What matters in deciding whether to switch?",
+          "answer_text": "I'd begin by reading a few reviews and checking whether there's an import tool that works."
+        },
+        {
+          "question_text": "You promised to help a friend move, and it's running long into your own personal time. What matters in deciding what to do?",
+          "answer_text": "I'd check in with my friend about how much is left."
+        }
+      ]
+    },
+    {
+      "case_id": "N4",
+      "route_ids": [
+        "M05",
+        "G23",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "On a route you ride regularly, the driver takes a road the route normally never uses. What meaning do you make of that?",
+          "answer_text": "I'd take it as a sign that something is wrong with the trip, maybe even a threat."
+        },
+        {
+          "question_text": "Is there anything you'd like to change about your last answer?",
+          "answer_text": "Yes, scratch that. I jumped straight to danger. I'd assume the driver is avoiding traffic or roadwork and I'd just watch the unfamiliar streets go by.",
+          "correction_of": "N4-turn-01"
+        }
+      ]
+    },
+    {
+      "case_id": "N5",
+      "route_ids": [
+        "M09",
+        "G19",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "You could keep your familiar offline planning app or move to a more complex one with shared reminders and better search, at the cost of about an hour of migration. What matters in deciding whether to switch?",
+          "answer_text": "Whether I'd switch depends on whether my sister would actually use the shared reminders."
+        },
+        {
+          "question_text": "You promised to help a friend move and it's running long into your own personal time. What matters in deciding what to do?",
+          "answer_text": "I said I'd help, so I'd stay until the truck is unloaded and the big furniture is in place. Then I'd head home, and I'd say at the start if I had a hard stop."
+        }
+      ]
+    },
+    {
+      "case_id": "N6",
+      "route_ids": [
+        "M11",
+        "PREFER-EXCHANGE",
+        "G23"
+      ],
+      "turns": [
+        {
+          "question_text": "You offer a friend several hours of cooking and organising a meal for the two of you, and the friend says paying for all the ingredients is too much. What would you say next?",
+          "answer_text": "I'd say that's fair, buying everything is a lot. Maybe we split the groceries, or I could do a smaller menu. Let's see what you'd be comfortable with.",
+          "canonical_question_id": "M11"
+        }
+      ]
+    },
+    {
+      "case_id": "N7",
+      "route_ids": [
+        "M11",
+        "PREFER-EXCHANGE",
+        "G19"
+      ],
+      "turns": [
+        {
+          "question_text": "You offer a friend several hours of cooking and organising a meal for the two of you, and the friend says paying for all the ingredients is too much. What would you say next?",
+          "answer_text": "I'd say fair enough and offer to cover half the ingredients. If that didn't work for them, I'd happily keep trading ideas until we landed on something we both liked. A few rounds doesn't bother me, and I'd rather get it right than drop it.",
+          "canonical_question_id": "M11"
+        }
+      ]
+    },
+    {
+      "case_id": "N8",
+      "route_ids": [
+        "G20",
+        "G19",
+        "M05"
+      ],
+      "turns": [
+        {
+          "question_text": "Your basic needs are covered and you get unexpected extra money equal to one month of ordinary living costs. What would you most want it to do?",
+          "answer_text": "Part of me wants to save it so I feel secure. Another part wants to spend it on something that makes this year feel different. Those two pull against each other and I haven't figured out which one wins."
+        },
+        {
+          "question_text": "You promised to help a friend move and it's running long into your personal time. What matters in deciding what to do?",
+          "answer_text": "I'd want to stay because I'm a good friend, but I'd also resent losing my whole evening. Both of those feel true at once."
+        }
+      ]
+    },
+    {
+      "case_id": "N9",
+      "route_ids": [
+        "G23",
+        "M05",
+        "M09"
+      ],
+      "turns": [
+        {
+          "question_text": "At a casual meal with people you know and no assigned job, what tends to catch your attention first?",
+          "answer_text": "The food. I notice what's laid out and whether people have started eating."
+        },
+        {
+          "question_text": "On a route you know well, the driver takes a road the route never normally uses. What do you make of it?",
+          "answer_text": "I honestly don't know what I'd make of it. It's never happened to me and I'd rather not guess."
+        }
+      ]
+    }
+  ]
+}
