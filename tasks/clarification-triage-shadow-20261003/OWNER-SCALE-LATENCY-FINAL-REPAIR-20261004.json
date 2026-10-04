@@ -1,0 +1,82 @@
+{
+  "schema": "life-patterns-shadow-triage-benchmark-v1",
+  "shadow_only": true,
+  "live_behavior_changed": false,
+  "model_calls_executed": true,
+  "model": "gpt-5.6-sol",
+  "effort": "xhigh",
+  "cases": [
+    {
+      "case_id": "case-0001",
+      "behavioral_turn_count": 81,
+      "eligible_route_count": 76,
+      "triage_context_chars": 95951,
+      "admission_context_chars": 38705,
+      "match_audit_context_chars": 95728,
+      "triage_decision": "clarification_needed",
+      "shadow_outcome": "clarification_recommended",
+      "selected_route_id": "A0",
+      "proposed_route_ids": [
+        "PREFER-PERSUADE",
+        "A0",
+        "AFTER-CHOICE"
+      ],
+      "admitted_route_ids": [
+        "A0",
+        "AFTER-CHOICE",
+        "PREFER-PERSUADE"
+      ],
+      "question_repaired_route_ids": [
+        "AFTER-CHOICE"
+      ],
+      "question_rejected_route_ids": [],
+      "recovered_omission_route_ids": [],
+      "normalized_repair_binding_candidate_ids": [],
+      "rejection_code_counts": {
+        "unsupported_extension": 1
+      },
+      "semantic_calls": [
+        {
+          "stage": "GapTriage",
+          "duration_seconds": 152.156,
+          "prompt_tokens": 31686,
+          "completion_tokens": 8141
+        },
+        {
+          "stage": "GapAdmission",
+          "duration_seconds": 115.022,
+          "prompt_tokens": 17657,
+          "completion_tokens": 5980
+        },
+        {
+          "stage": "GapMatchAudit",
+          "duration_seconds": 248.174,
+          "prompt_tokens": 29333,
+          "completion_tokens": 13043
+        },
+        {
+          "stage": "GapQuestionRender",
+          "duration_seconds": 22.008,
+          "prompt_tokens": 8991,
+          "completion_tokens": 568
+        },
+        {
+          "stage": "GapQuestionReview",
+          "duration_seconds": 17.008,
+          "prompt_tokens": 9000,
+          "completion_tokens": 146
+        }
+      ],
+      "semantic_duration_seconds": 554.368,
+      "legacy_comparison": null
+    }
+  ],
+  "aggregate": {
+    "case_count": 1,
+    "median_semantic_duration_seconds": 554.368,
+    "p90_semantic_duration_seconds": 554.368,
+    "legacy_comparison_count": 0,
+    "legacy_decision_match_rate": null,
+    "clarification_selected_route_match_rate": null
+  }
+}
