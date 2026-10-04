@@ -1,0 +1,266 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-cases-v9",
+  "cases": [
+    {
+      "case_id": "P1",
+      "route_ids": [
+        "M09",
+        "G19",
+        "G23"
+      ],
+      "turns": [
+        {
+          "question_text": "Imagine you use a simple planning app you know well that works offline. A more complex app offers shared reminders and better search, but moving your data over would take about an hour. What would matter most in deciding whether to switch?",
+          "answer_text": "It would depend on whether the people I plan things with would actually use the shared reminders. If they would, I'd make the switch. If it would only be me using it, the extra features wouldn't be worth it.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        },
+        {
+          "question_text": "You promised to help a friend move, and it is running well into your own free time. What would matter in deciding what to do?",
+          "answer_text": "I'd check how tired I am and look at the clock first, and then see where things stand.",
+          "canonical_question_id": "G19",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "P2",
+      "route_ids": [
+        "M05",
+        "G20",
+        "G19"
+      ],
+      "turns": [
+        {
+          "question_text": "You are riding in a car on a route you know well, and the driver turns onto a road that route normally never uses. What do you make of that?",
+          "answer_text": "I'd assume there was an ordinary reason, like a closure or heavy traffic. I wouldn't read anything more into it than a practical detour.",
+          "canonical_question_id": "M05",
+          "correction_of": null
+        },
+        {
+          "question_text": "Say your basic needs are covered and you unexpectedly receive extra money equal to one month of your ordinary living costs. What would you most want that money to do for you?",
+          "answer_text": "I'd want it to be a cushion, so that an unexpected bill wouldn't stress me out for a while.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "P3",
+      "route_ids": [
+        "M09",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "You use a familiar, simple, offline planning app. Another app is more complex, with shared reminders and better search, and switching would take about an hour of migration. What matters in deciding whether to switch?",
+          "answer_text": "I'd stay with the simple offline one. I know it and it does the job.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        },
+        {
+          "question_text": "Is there anything you'd like to change about what you said about the planning apps?",
+          "answer_text": "Yes, that was too quick. The hour of migration isn't the issue for me. I'd switch if the shared reminders worked smoothly with my roommate, and otherwise I'd stay.",
+          "canonical_question_id": null,
+          "correction_of": "M09"
+        },
+        {
+          "question_text": "Suppose your basic needs are covered and you get unexpected extra money equal to one month of ordinary living costs. What would you most want it to do?",
+          "answer_text": "I'd want it to knock down some debt so that my monthly payments feel lighter.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "P4",
+      "route_ids": [
+        "G23",
+        "M05",
+        "G19"
+      ],
+      "turns": [
+        {
+          "question_text": "At a casual shared meal with people you know well, where nobody has an assigned job, what tends to catch your attention first?",
+          "answer_text": "Honestly I can't say. I've never paid attention to what I notice first, and I couldn't give you a real answer.",
+          "canonical_question_id": "G23",
+          "correction_of": null
+        },
+        {
+          "question_text": "On a familiar route, the driver takes a road that the route normally never uses. What meaning would you make of that?",
+          "answer_text": "I'd guess they were avoiding something on the usual road, like a blockage, and I'd leave it at that.",
+          "canonical_question_id": "M05",
+          "correction_of": null
+        },
+        {
+          "question_text": "You promised to help a friend move, and it is running long into your personal time. What matters in deciding what to do?",
+          "answer_text": "If it runs a little long, I'd stay and finish. If it runs really long, there's a point where I'd head out.",
+          "canonical_question_id": "G19",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "P5",
+      "route_ids": [
+        "M11",
+        "PREFER-EXCHANGE",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "You offer a friend several hours of cooking and organising for a shared meal, and the friend says paying for all the ingredients would be too much. What would you say next?",
+          "answer_text": "I'd say I'm happy to keep doing the cooking and organising, and suggest we split the ingredient costs. I'd cover the staples and they could bring the drinks and dessert.",
+          "canonical_question_id": "M11",
+          "correction_of": null
+        },
+        {
+          "question_text": "Say your basic needs are covered and you receive unexpected extra money equal to one month of living costs. What would you most want it to do?",
+          "answer_text": "I'd put it toward a trip I've been postponing for a couple of years.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "P6",
+      "route_ids": [
+        "M11",
+        "PREFER-EXCHANGE",
+        "G23"
+      ],
+      "turns": [
+        {
+          "question_text": "You offer a friend several hours of cooking and organising for a shared meal, and the friend says paying for all the ingredients is too much. What would you say next?",
+          "answer_text": "I'd ask them first what they had in mind for the meal and the budget, and then go from there.",
+          "canonical_question_id": "M11",
+          "correction_of": null
+        },
+        {
+          "question_text": "At a casual meal with familiar people and no assigned job, what do you tend to notice first?",
+          "answer_text": "The smell of the food, and who is already talking with whom.",
+          "canonical_question_id": "G23",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "P7",
+      "route_ids": [
+        "M09",
+        "G19",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "You have a familiar, simple, offline planning app. A more complex one offers shared reminders and better search, with about an hour of migration. What matters in deciding whether to switch?",
+          "answer_text": "I'd read reviews of the complex app first.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        },
+        {
+          "question_text": "A friend's move that you promised to help with is running long into your personal time. What matters in deciding what to do?",
+          "answer_text": "I'd check how much of my evening is left.",
+          "canonical_question_id": "G19",
+          "correction_of": null
+        },
+        {
+          "question_text": "With your basic needs covered, you unexpectedly receive extra money equal to one month of ordinary living costs. What would you most want it to do?",
+          "answer_text": "I'd want it to buy me time, like a month of turning down freelance work so I can rest and focus on one project.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "P8",
+      "route_ids": [
+        "M05",
+        "G23",
+        "M09"
+      ],
+      "turns": [
+        {
+          "question_text": "On a route you know well, the driver takes a road the route normally never uses. What meaning do you make of that?",
+          "answer_text": "I'd ask the driver why before I decided anything about it.",
+          "canonical_question_id": "M05",
+          "correction_of": null
+        },
+        {
+          "question_text": "At a casual shared meal with familiar people and no assigned job, what tends to catch your attention first?",
+          "answer_text": "Sometimes it's the people and sometimes it's the food. It changes from day to day.",
+          "canonical_question_id": "G23",
+          "correction_of": null
+        },
+        {
+          "question_text": "You use a simple, familiar, offline planning app. A more complex app has shared reminders and better search, and migration takes about an hour. What matters in deciding whether to switch?",
+          "answer_text": "I'd stick with the offline one. The familiar app already does what I need, and an hour of migration isn't worth it for features I wouldn't use.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "P9",
+      "route_ids": [
+        "G19",
+        "G20",
+        "M05"
+      ],
+      "turns": [
+        {
+          "question_text": "You promised to help a friend move, and it is running long into your personal time. What matters in deciding what to do?",
+          "answer_text": "It depends on whether my friend would be stuck without me. If they would, I'd stay until the job is done. If they have other help lined up, I'd feel fine leaving.",
+          "canonical_question_id": "G19",
+          "correction_of": null
+        },
+        {
+          "question_text": "With basic needs covered, you unexpectedly receive extra money equal to one month of ordinary living costs. What would you most want it to do?",
+          "answer_text": "I'd spend it on something fun, like new gear for a hobby.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        },
+        {
+          "question_text": "Is there anything you'd like to revise about what you wanted the extra money to do?",
+          "answer_text": "Yes. I said that too fast. I'd rather keep it set aside for emergencies and not spend it.",
+          "canonical_question_id": null,
+          "correction_of": "G20"
+        }
+      ]
+    },
+    {
+      "case_id": "P10",
+      "route_ids": [
+        "M05",
+        "G23",
+        "M09"
+      ],
+      "turns": [
+        {
+          "question_text": "On a familiar route, the driver takes a road the route normally never uses. What do you make of it?",
+          "answer_text": "I wouldn't think anything of it. Drivers pick different roads all the time.",
+          "canonical_question_id": "M05",
+          "correction_of": null
+        },
+        {
+          "question_text": "Does an unexpected route change how you behave as a passenger?",
+          "answer_text": "Yes, I'd get uneasy and start following the map closely until we were back on a road I recognise.",
+          "canonical_question_id": null,
+          "correction_of": null
+        },
+        {
+          "question_text": "At a casual meal with familiar people and no assigned job, what do you notice first?",
+          "answer_text": "I look at who is already there and who I haven't seen in a while.",
+          "canonical_question_id": "G23",
+          "correction_of": null
+        },
+        {
+          "question_text": "A simple, familiar, offline planning app versus a more complex one with shared reminders and better search, with about an hour of migration: what matters in deciding whether to switch?",
+          "answer_text": "It depends on whether the people I plan things with would actually use the shared reminders.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        }
+      ]
+    }
+  ]
+}
