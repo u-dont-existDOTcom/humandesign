@@ -1,0 +1,48 @@
+{
+  "task": "NUMEROLOGY-BOOK-AUDIT-20261004",
+  "overall_status": "OPEN",
+  "owner_history_fitting_performed": false,
+  "frozen_systems": [],
+  "completed_source_passes": {
+    "Cheiro_When_Were_You_Born": {
+      "pages": 140,
+      "body_printed": "1-122",
+      "source_sha256": "5044709ef15aebaa8f48db8d6d18a3eecd5e9eb8342007137c41d88664a6de12",
+      "result": "15-rule additive CHEIRO_CHALDEAN_V2 candidate; period/mental/physical affinity, central-opposite mapping, twelve monthly prose exceptions, disabled colors/health/stone tables. No new name calculation or year-recurrence formula. V1 unchanged.",
+      "verification": "All fifteen chapters and peripheral layers read; diagram plates visually inspected; broad-table and chapter endpoints disagree in a few places. No empirical fitting.",
+      "publication_state": "Full derived JSON and MD exist in conversation working artifacts, not yet copied to GitHub; this checkpoint preserves substantive findings, not a claim that those artifacts are remotely published."
+    },
+    "Campbell_Your_Days_Are_Numbered": {
+      "source_leaves": 260,
+      "body_printed": "1-246 plus unnumbered backcover",
+      "source_sha256": "3c5a3e88456767f29a11dbbb13e8f8a0b679330787fc21cff42708a0f1fb0f96",
+      "result": "38-rule candidate with24 separate interpretation-layer inventories, all31 birthday entries,26-letter Planes,18 ambiguity branches. Late astrological addendump246 included.",
+      "verification": "Complete provided text read, including frontmatter, all chapters, examples, final addendum and backcover. Upload contains no page images; OCR/table-layout issues retained rather than visually certified.",
+      "publication_state": "Full derived JSON and MD exist in conversation working artifacts, not yet copied to GitHub."
+    }
+  },
+  "Campbell_material_findings": [
+    "Primary triad Soul Urge / Expression / Life Path; Expression is ability, Life Path also called Destiny. Quiescent Self is private fantasy, explicitly not public Personality.",
+    "Literal alphabet K11/V22; compact arithmetic and Inclusion bin2/4; explicit transit durations K2/V4. Preserve master qualitative flags and competing arithmetic paths where outcomes differ.",
+    "W vowel only following another vowel in one sound; Y phonetic/syllable-dependent. First vowel includes long/short/diphthong and separate planetary rulers.",
+    "Ruling Passion subtracts2 from5 count; Washington ties accepted, Ford None conflicts with a6/9 tie.",
+    "Cornerstone, first-name Key, squared Key/birthday, and Eccentric Angle are distinct layers.",
+    "Life Cycles use month/day/year and1PersonalYear nearest age28/56, with progressed-Moon-return rationale and nearest-vs-next ambiguity; NOT silently Decoz36-minus-LP plus27.",
+    "Pinnacles four sums; duration36-minus-LP,9,9,rest; master-LifePath duration not exemplified. Two sub-Challenges plus lifelong final; no fourthChallenge.",
+    "Calendar PY beginsJanuary1, full force at1PersonalMonth, delayed change if1PY falls inside letter period. September overlaps and strengthens yearly quality; months strongest5th-25th.",
+    "Immediate Period has all name parts running concurrently, birthday letter boundaries versus calendar years. Essence equal PY is liable to negative overload, not automatically a positive match.",
+    "Name change leaves natal basis/Path/lessons; new external-development angle may be large, absorption better part of a year. Legal act alone not the switch.",
+    "Marriage compares Soul first, then Paths, lacks, Cycles/Pinnacles/PY; business instead favors sameExpression/differentSoul. Element6 has Earth/Air alternatives.",
+    "p246 maps Soul toMoon, Ability toAscendant, Path toSun, Corner toMercury, firstVowel toVenus, Birthday toMars, Key toJupiter, KarmicLessons toSaturn, Challenge toUranus, Quiescent toNeptune. No quantitative hybrid model; Pluto unresolved.",
+    "Author explicitly admits incomplete letter-combination knowledge and cautions against exact prediction from the short table. Freeze that limitation."
+  ],
+  "remaining": [
+    "Full Jordan source audit",
+    "Full Javane/Bunker source audit including diagrams and personal/temporary1-78 entries",
+    "Formula fixtures and reproducibility code",
+    "Independent neutral Claude review",
+    "All-system freeze manifest and cross-system incompatible-prediction matrix",
+    "Only then empirical design",
+    "Policy/stale historical annotation; exact derived-artifact GitHub publication and final delivery"
+  ]
+}
