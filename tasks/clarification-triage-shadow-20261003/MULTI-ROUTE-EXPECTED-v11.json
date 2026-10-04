@@ -1,0 +1,76 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-expected-v11",
+  "cases": [
+    {
+      "case_id": "S1",
+      "decision": "clarification_needed",
+      "route_ids": ["G19"],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "S2",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "S3",
+      "decision": "clarification_needed",
+      "route_ids": ["M05", "G19"],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "S4",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "S5",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "disputed",
+      "scored": false,
+      "dispute": "Sonnet judged the M11 answer sufficient and PREFER-EXCHANGE optional; Opus judged negotiation persistence materially unresolved and selected PREFER-EXCHANGE."
+    },
+    {
+      "case_id": "S6",
+      "decision": "clarification_needed",
+      "route_ids": ["G20"],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "S7",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "S8",
+      "decision": "clarification_needed",
+      "route_ids": ["G23", "M09"],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "S9",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "S10",
+      "decision": "clarification_needed",
+      "route_ids": ["PREFER-EXCHANGE"],
+      "confidence": "consensus",
+      "scored": true
+    }
+  ]
+}
