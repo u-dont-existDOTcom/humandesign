@@ -304,8 +304,13 @@ return
 at most three ranked
 candidates. Use only supplied routes.
 Canonical questions copy supplied wording exactly; a canonical self-contained route has no required
-antecedent, so leave antecedent_turn_ids empty. Repair/follow-up wording stays narrowly tied to its
-route. Name dependencies between candidates so dependent questions are not batched as independent.
+antecedent, so leave antecedent_turn_ids empty. A dependent route may include
+context_match_turn_ids when a source question conservatively matches a required context-source
+route despite lacking its canonical ID. If you select that dependent route, use the actual matching
+turn ID(s) as antecedent_turn_ids and set equivalent_context true; admission will independently
+verify the binding. Never select a dependent route merely because such a context match exists.
+Repair/follow-up wording stays narrowly tied to its route. Name dependencies between candidates
+so dependent questions are not batched as independent.
 Do not explain or quote your evidence beyond the required source_anchor_turn_ids, emit defect
 labels,
 build an evidence ledger, map routes, summarize the participant, or discuss the source. Return only
@@ -435,16 +440,42 @@ def _shadow_route_cards(state: dict, instrument: dict) -> list[dict]:
         state.get("collection_preferences", {}).get("retrospective_questions_welcome") is True
     )
 
+    all_routes = list(bank(instrument)["questions"])
+    context_source_ids = {
+        str(source_id)
+        for route in all_routes
+        for source_id in (route.get("context_sources") or [])
+    }
+    context_source_cards = [
+        route_card(route, include_limits=False)
+        for route in all_routes
+        if str(route["id"]) in context_source_ids
+    ]
+    context_source_matches = _source_question_route_matches(turns, context_source_cards)
+
     cards: list[dict] = []
-    for route in bank(instrument)["questions"]:
+    for route in all_routes:
         route_id = str(route["id"])
         if route_id in addressed:
             continue
         if route.get("kind") == "optional_retrospective" and not retrospective_ok:
             continue
         self_contained = str(route.get("context_requirement", "")).startswith("Self-contained")
-        context_answered = bool(set(route.get("context_sources") or []).intersection(answered))
-        if route_id not in presented and not self_contained and not context_answered:
+        context_sources = [str(value) for value in (route.get("context_sources") or [])]
+        context_answered = bool(set(context_sources).intersection(answered))
+        context_match_turn_ids = list(
+            dict.fromkeys(
+                turn_id
+                for source_id in context_sources
+                for turn_id in context_source_matches.get(source_id, [])
+            )
+        )
+        if (
+            route_id not in presented
+            and not self_contained
+            and not context_answered
+            and not context_match_turn_ids
+        ):
             continue
         # Triage gets the compact route menu. Full interpretation/context controls are
         # attached only for selected candidates in the independent admission call.
@@ -455,6 +486,13 @@ def _shadow_route_cards(state: dict, instrument: dict) -> list[dict]:
             card["source_question_match_turn_ids"] = presented[route_id]
         else:
             card["candidate_mode"] = "unasked"
+        if context_match_turn_ids:
+            card["context_match_turn_ids"] = context_match_turn_ids
+            card["context_match_route_ids"] = [
+                source_id
+                for source_id in context_sources
+                if context_source_matches.get(source_id)
+            ]
         cards.append(card)
 
     question_matches = _source_question_route_matches(turns, cards)

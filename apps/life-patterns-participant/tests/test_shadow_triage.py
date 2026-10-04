@@ -333,6 +333,60 @@ def test_triage_context_adds_conservative_source_question_route_hints():
         assert {"near-m09", "near-g19"}.issubset(set(match["context_turn_ids"]))
 
 
+
+def test_semantic_context_match_exposes_dependent_route_with_equivalent_binding():
+    instrument = authority()
+    state = imported_state(instrument)
+    before = make_gap_triage_context(state, instrument)
+    assert "PREFER-EXCHANGE" not in {
+        route["id"] for route in before["candidate_routes"]
+    }
+
+    state["turns"].append(
+        {
+            "turn_id": "near-m11",
+            "turn_role": "behavioral",
+            "question_text": (
+                "You plan and cook a meal for two for hours and ask your friend to buy the "
+                "groceries, but they say covering all the ingredients is too much. "
+                "What do you say back?"
+            ),
+            "answer_text": (
+                "I would say that is fair, then see how the conversation goes. "
+                "Maybe I would offer more, or maybe we would skip the meal."
+            ),
+        }
+    )
+    context = make_gap_triage_context(state, instrument)
+    routes = {route["id"]: route for route in context["candidate_routes"]}
+    route = routes["PREFER-EXCHANGE"]
+    assert route["context_match_route_ids"] == ["M11"]
+    assert route["context_match_turn_ids"] == ["near-m11"]
+
+    triage = GapTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapCandidate(
+                candidate_id="C1",
+                rank=1,
+                source_anchor_turn_ids=["near-m11"],
+                question=Question(
+                    route_id="PREFER-EXCHANGE",
+                    route_type="canonical",
+                    text=route["question"],
+                    antecedent_turn_ids=["near-m11"],
+                    equivalent_context=True,
+                    missing_distinction="Negotiation persistence remains unresolved.",
+                    why_useful=(
+                        "It distinguishes continuing negotiation from dropping the exchange."
+                    ),
+                ),
+            )
+        ],
+    )
+    validate_gap_triage(triage, state, instrument, context)
+
+
 def test_triage_context_audits_presented_route_as_exact_source_question_match():
     instrument = authority()
     state = imported_state(instrument)
