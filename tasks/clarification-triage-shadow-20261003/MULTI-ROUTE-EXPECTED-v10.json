@@ -1,0 +1,94 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-expected-v10",
+  "cases": [
+    {
+      "case_id": "R1",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "M09"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "R2",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "R3",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "M05"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "R4",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "R5",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "G20"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "R6",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "R7",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "M09",
+        "G19"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "R8",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "M11",
+        "M05"
+      ],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "R9",
+      "decision": "review_ready",
+      "route_ids": [],
+      "confidence": "consensus",
+      "scored": true
+    },
+    {
+      "case_id": "R10",
+      "decision": "clarification_needed",
+      "required_route_ids": [
+        "G19"
+      ],
+      "allowed_additional_route_ids": [
+        "M11",
+        "PREFER-EXCHANGE"
+      ],
+      "confidence": "mixed",
+      "scored": true,
+      "dispute": "Both blind adjudicators require G19. Opus additionally admits M11 and PREFER-EXCHANGE; Sonnet does not."
+    }
+  ]
+}

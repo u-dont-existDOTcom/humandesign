@@ -1,0 +1,233 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-cases-v10",
+  "cases": [
+    {
+      "case_id": "R1",
+      "route_ids": [
+        "M09",
+        "G19",
+        "G23"
+      ],
+      "turns": [
+        {
+          "question_text": "You've got a simple offline planning app you like, and a newer one with shared reminders and better search, but switching means about an hour of moving things over and a steeper learning curve. What would matter in deciding whether to move?",
+          "answer_text": "I'd probably try the new one out for a few days and read some reviews before doing anything.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        },
+        {
+          "question_text": "You told a friend you'd help sort things for their move, but it's dragging on and eating into time you'd set aside for yourself. They're flexible about the plan. What would matter most in deciding what to do?",
+          "answer_text": "Mostly how stressed my friend is about their deadline versus how badly I need that downtime. If they're really up against it I'd stay longer, otherwise I'd scale back.",
+          "canonical_question_id": "G19",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "R2",
+      "route_ids": [
+        "M11",
+        "PREFER-EXCHANGE",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "You and a friend are planning dinner for two. You offered to plan and cook for hours and asked them to buy the ingredients, but they say covering all of it feels like too much. What do you say next?",
+          "answer_text": "I'd say, 'That's fair, what kind of budget would feel okay to you? Maybe you cover the wine and dessert and I'll handle the rest.' Though if it still felt like a stretch for them I might just drop the idea and suggest something cheaper another time.",
+          "canonical_question_id": "M11",
+          "correction_of": null
+        },
+        {
+          "question_text": "Suppose your needs are all covered and you receive extra money worth about a month of your normal living costs, with no strings. What would you most want it to do for you?",
+          "answer_text": "Pay for a proper week away somewhere quiet so I can actually rest.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "R3",
+      "route_ids": [
+        "M05",
+        "G23",
+        "G19"
+      ],
+      "turns": [
+        {
+          "question_text": "You're on a bus you take all the time, and the driver abruptly turns down a street that route never uses to reach your stop. What do you make of it?",
+          "answer_text": "I'd check my map app and maybe ask the driver where we're headed.",
+          "canonical_question_id": "M05",
+          "correction_of": null
+        },
+        {
+          "question_text": "You show up at a relaxed shared meal with people you know, and everyone's getting things ready without anyone assigning you anything. What do you notice first?",
+          "answer_text": "Whether the table's being set up and who looks like they don't have anything to do. I tend to notice if someone's stuck on their own in the kitchen.",
+          "canonical_question_id": "G23",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "R4",
+      "route_ids": [
+        "G20",
+        "M09",
+        "M11"
+      ],
+      "turns": [
+        {
+          "question_text": "Imagine your basic needs are covered and you suddenly get roughly a month's worth of living costs as a no-strings windfall. What would you most want it to do for you?",
+          "answer_text": "I honestly can't answer that one, I've never thought about it and I don't know what I'd want.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        },
+        {
+          "question_text": "Your current planner is simple, familiar and works offline but can't share reminders. The new one shares reminders and searches better, but it's more complex and would take an hour to migrate to. What matters in deciding whether to switch?",
+          "answer_text": "Whether I'd really use shared reminders with anyone, and whether the hour of moving is a one-off. I wouldn't give up the offline reliability without a strong reason.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "R5",
+      "route_ids": [
+        "G20",
+        "M05",
+        "G19"
+      ],
+      "turns": [
+        {
+          "question_text": "Suppose you unexpectedly receive extra money equal to about one month of your normal living costs, with nothing owed. What would you most want that money to do for you?",
+          "answer_text": "Pay down part of my credit card so I feel lighter.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        },
+        {
+          "question_text": "Thinking about that windfall again, what would you most want it to do for you?",
+          "answer_text": "Actually, scratch that. I'd want to look into a few options and run some numbers before deciding anything.",
+          "canonical_question_id": "G20",
+          "correction_of": "G20"
+        },
+        {
+          "question_text": "On a route you know well, the bus driver suddenly takes a road it normally never uses for your destination. What would you make of that?",
+          "answer_text": "I'd assume there's a closure or an accident and they're detouring. I'd only get uneasy if we kept heading away from my stop.",
+          "canonical_question_id": "M05",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "R6",
+      "route_ids": [
+        "M11",
+        "PREFER-EXCHANGE",
+        "G23"
+      ],
+      "turns": [
+        {
+          "question_text": "You've offered to plan and cook a multi-hour dinner for you and a friend, asking them to buy the ingredients, and they say that paying for everything feels like too much. What's your next line?",
+          "answer_text": "I'd just say, 'What would feel comfortable for you to chip in?'",
+          "canonical_question_id": "M11",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "R7",
+      "route_ids": [
+        "M09",
+        "G19",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "Your familiar offline planner covers your usual needs but can't share reminders; a newer app can, with better search, though it's more complex and the move takes an hour. What would matter in deciding to switch?",
+          "answer_text": "I'd read a few reviews and try it out for a bit and then see.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        },
+        {
+          "question_text": "You promised to help a friend sort their things for a move, but it's running long and cutting into your own planned time. They're open to adjusting. What would matter most when deciding what to do?",
+          "answer_text": "I'd sit down and talk it through with my friend first and see how they feel.",
+          "canonical_question_id": "G19",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "R8",
+      "route_ids": [
+        "M11",
+        "M05",
+        "PREFER-EXCHANGE"
+      ],
+      "turns": [
+        {
+          "question_text": "You offered to cook a long meal for you and a friend and asked them to buy the ingredients, but they say covering it all is too much. What would you say next?",
+          "answer_text": "I'd tell them not to worry, I'll buy everything myself. And I'd also ask them to chip in half the cost like we planned, since that's only fair.",
+          "canonical_question_id": "M11",
+          "correction_of": null
+        },
+        {
+          "question_text": "You're on a route you know well and the driver turns onto a road that route normally never uses for where you're going. What do you make of that?",
+          "answer_text": "I'd want to figure out what's going on, so I'd look at the map and ask where we're heading.",
+          "canonical_question_id": "M05",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "R9",
+      "route_ids": [
+        "M09",
+        "G20",
+        "G23",
+        "M05"
+      ],
+      "turns": [
+        {
+          "question_text": "A newer planning app offers shared reminders and better search, but your current one is simple, familiar and offline, and switching costs about an hour. What matters to you in deciding?",
+          "answer_text": "Mostly whether I'd actually use the shared reminders with other people, and whether the hour of moving over is a one-off.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        },
+        {
+          "question_text": "Say you get a surprise sum worth about a month of your regular living costs, no debts or taxes attached, and you're already comfortable. What do you most want it to do for you?",
+          "answer_text": "Put it toward a trip to see my sister. I haven't seen her in years.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        },
+        {
+          "question_text": "You walk into a casual shared meal with people you know and nobody has given you a job. What catches your attention first?",
+          "answer_text": "Whether someone's already handling drinks. I tend to spot what's missing, like chairs or plates.",
+          "canonical_question_id": "G23",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "R10",
+      "route_ids": [
+        "M11",
+        "PREFER-EXCHANGE",
+        "G19",
+        "G23"
+      ],
+      "turns": [
+        {
+          "question_text": "You've offered to organise and cook for hours for a meal with one friend and asked them to buy the ingredients, and they say paying for it all feels like too much. What do you say?",
+          "answer_text": "Maybe I'd offer to split the cost, or maybe I'd just drop it and do something else. I honestly go back and forth on that sort of thing.",
+          "canonical_question_id": "M11",
+          "correction_of": null
+        },
+        {
+          "question_text": "You promised to help a friend sort things for a move, but it's taking longer than expected and cutting into your own time, and they're open to changing things. What would matter most in deciding what to do?",
+          "answer_text": "I'd figure out what's best at that point.",
+          "canonical_question_id": "G19",
+          "correction_of": null
+        }
+      ]
+    }
+  ]
+}
