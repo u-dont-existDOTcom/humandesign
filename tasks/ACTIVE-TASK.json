@@ -1,18 +1,23 @@
 {
   "schemaVersion": 1,
-  "taskId": "participant-session-v1",
+  "taskId": "NUMEROLOGY-BOOK-AUDIT-20261004",
   "status": "active",
   "exclusive": true,
-  "requiredBranch": "participant-session-v1",
-  "preflightCommand": "python scripts/task_preflight.py",
-  "completionCommand": "python -m pytest tests/unit/test_participant_session.py tests/unit/test_astronomy_reference.py tests/unit/test_progressions.py",
+  "requiredBranch": "research/six-rule-life-timing-20261001",
+  "ownerAuthority": "Explicit four-book source-first audit request of 2026-10-04, followed by continue",
+  "checkpoint": "state/NUMEROLOGY-BOOK-AUDIT-20261004.md",
+  "preflightCommand": "python3 scripts/numerology_book_audit_verify.py --preflight",
+  "completionCommand": "python3 scripts/numerology_book_audit_verify.py",
+  "completionBoundary": "source-audited frozen specifications, comparison, subsequent empirical design, verified branch publication and delivered report; no merge or deployment requested",
+  "supersededLock": {
+    "taskId": "participant-session-v1",
+    "sourceCommit": "a25f90019c3bcfa2b5a0e92f4309f6b0b8d0509f",
+    "reason": "Legacy participant-session lock is unrelated to newer explicit owner request on this branch; other branches unchanged"
+  },
   "suspendedTaskSources": [
-    "relationship and partner future-timing work",
-    "additional future ephemeris extension",
-    "century_global participant ranking until reusable generic cache certification",
-    "outcome/timing astrology claims mixed into the natal behavioral score",
-    "choosing a zodiac/progression convention after participant evidence is visible",
-    "angles/houses in strong confirmatory claims until the Ascendant/MC discrepancy is audited",
-    "unrelated roadmap selection"
+    "legacy participant-session-v1 lock and completion commands",
+    "other worktrees and interview implementation queues",
+    "owner-history fitting until methodology freeze",
+    "global release roadmap"
   ]
 }

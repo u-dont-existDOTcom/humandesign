@@ -58,3 +58,17 @@ Current completion: bootstrap and project-source recovery DONE; raw inputs ident
 Runtime: sandbox can read supplied attachments and run local calculations; direct shell network DNS to GitHub failed. Authorized GitHub connector read/write works and is the publication transport. This is not an owner gate. Existing general CURRENT-STATE.md concerns older unrelated HD release work and does not supersede this branch-specific owner task. No state/ACTIVE-TASK.json exists on this branch; no competing active writer has been established.
 
 Next executable action: extract and read the four supplied source boundaries, starting with edition/page inventories and then completing all author layers. Parent remains OPEN; continue autonomously, checkpoint rather than asking which book first.
+
+## Resume receipt — 2026-10-04
+
+Live authority reloaded: UDA main `9a173657d49685da014ac81ef131f6a99fb9edde`; requested project branch `a25f90019c3bcfa2b5a0e92f4309f6b0b8d0509f`. All eight required project artifacts reread in full. Graph dependency closure is recorded in the companion activation JSON; source interpretation, full-source reconstruction, immutable V1, independent review and destination-bound completion are active.
+
+Actual current task lock is `tasks/ACTIVE-TASK.json`, not `state/ACTIVE-TASK.json`. Its legacy participant-session task was superseded on this branch by the explicit current owner audit request; its original remains in Git. Preflight: `python3 scripts/numerology_book_audit_verify.py --preflight`. Acceptance: `python3 scripts/numerology_book_audit_verify.py` (deliberately FAIL until full artifacts and full gate exist). No participant code, model fit, deployment or other branch changed.
+
+A dedicated clean worktree now owns the requested branch. Authenticated owner-machine Git/gh is an available publication route; the GitHub connector remains a fallback. PUBLIC repository visibility was verified, so raw uploaded books and extracted full transcripts stay private working inputs. Only derived audits, rules, short evidence anchors, provenance and tests are eligible for publication. This replaces the obsolete sandbox-network-only route note above.
+
+Source recovery verified: Cheiro 140 PDF pages; Jordan 388; Campbell 260 numbered text leaves without page images; Javane/Bunker EPUB contains explicit printed-page anchors. Jordan's supplied copyright leaf is the eleventh printing (2003), despite the attachment's 1978 filename. Campbell's text identifies the 23rd printing (1985), original 1931 and renewal 1958. Full source/edition inventory and all four substantive audits remain OPEN.
+
+Independent-review route preflight: Claude Code sign-in via existing subscription; safe-mode, tool-disable, maximum effort and neutral-workspace flags are supported. No review has yet been run. Do not report it as passed or expose owner-history material in reviewer packets.
+
+Stop admission: parent outcome OPEN; safe next action is complete sequential source audit and publish per-book checkpoints, not owner clarification. Initial clock receipt 2026-10-04 03:01:08 UTC.
