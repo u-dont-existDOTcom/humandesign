@@ -1115,6 +1115,7 @@ def run_shadow_triage(
     *,
     model: str,
     effort: str,
+    match_audit_policy: Literal["blocking", "defer_if_admitted"] = "blocking",
 ) -> dict[str, Any]:
     """Run triage and, when needed, admission without mutating participant state."""
 
@@ -1127,9 +1128,6 @@ def run_shadow_triage(
     validate_gap_triage(triage, state, instrument, triage_context)
 
     admission_context = make_gap_admission_context(state, instrument, triage_context, triage)
-    match_audit_context = make_gap_match_audit_context(
-        state, instrument, triage_context, triage
-    )
     calls = [{"shadow_stage": "GapTriage", **dict(triage_call)}]
     if triage.candidates:
         admission_value, admission_call = provider.call(
@@ -1141,20 +1139,36 @@ def run_shadow_triage(
         admission = GapAdmission(source_review_complete=True, reviews=[])
     validate_gap_admission(admission, triage)
 
-    if match_audit_context["pairs"]:
-        audit_value, audit_call = provider.call(
-            GAP_MATCH_AUDIT_PROMPT,
-            match_audit_context,
-            GapMatchAuditResponse,
-            model,
-            effort,
-        )
-        audit_response = GapMatchAuditResponse.model_validate(audit_value)
-        match_audit = bind_gap_match_audit(audit_response, match_audit_context)
-        calls.append({"shadow_stage": "GapMatchAudit", **dict(audit_call)})
-    else:
+    admitted_gap_exists = any(review.approved for review in admission.reviews)
+    match_audit_deferred = (
+        match_audit_policy == "defer_if_admitted" and admitted_gap_exists
+    )
+    deferred_match_audit_pair_count = (
+        len(triage_context.get("source_question_matches", []))
+        if match_audit_deferred
+        else 0
+    )
+    if match_audit_deferred:
+        match_audit_context = {"pairs": []}
         match_audit = GapMatchAudit(reviews=[])
-    validate_gap_match_audit(match_audit, match_audit_context)
+    else:
+        match_audit_context = make_gap_match_audit_context(
+            state, instrument, triage_context, triage
+        )
+        if match_audit_context["pairs"]:
+            audit_value, audit_call = provider.call(
+                GAP_MATCH_AUDIT_PROMPT,
+                match_audit_context,
+                GapMatchAuditResponse,
+                model,
+                effort,
+            )
+            audit_response = GapMatchAuditResponse.model_validate(audit_value)
+            match_audit = bind_gap_match_audit(audit_response, match_audit_context)
+            calls.append({"shadow_stage": "GapMatchAudit", **dict(audit_call)})
+        else:
+            match_audit = GapMatchAudit(reviews=[])
+        validate_gap_match_audit(match_audit, match_audit_context)
 
     (
         render_context,
@@ -1230,6 +1244,8 @@ def run_shadow_triage(
         "triage": triage,
         "admission": admission,
         "match_audit": match_audit,
+        "match_audit_deferred": match_audit_deferred,
+        "deferred_match_audit_pair_count": deferred_match_audit_pair_count,
         "final_questions": final_questions,
         "question_repaired_route_ids": question_repaired_route_ids,
         "question_rejected_route_ids": question_rejected_route_ids,
@@ -1369,6 +1385,10 @@ def privacy_safe_case_summary(case_id: str, state: dict, result: dict[str, Any])
             result.get("question_rejected_route_ids", [])
         ),
         "recovered_omission_route_ids": recovered,
+        "match_audit_deferred": bool(result.get("match_audit_deferred", False)),
+        "deferred_match_audit_pair_count": int(
+            result.get("deferred_match_audit_pair_count", 0)
+        ),
         "normalized_repair_binding_candidate_ids": list(
             result.get("normalized_repair_binding_candidate_ids", [])
         ),

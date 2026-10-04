@@ -1,0 +1,67 @@
+{
+  "schema": "life-patterns-shadow-triage-benchmark-v1",
+  "shadow_only": true,
+  "live_behavior_changed": false,
+  "model_calls_executed": true,
+  "model": "gpt-5.6-sol",
+  "effort": "xhigh",
+  "match_audit_policy": "defer_if_admitted",
+  "cases": [
+    {
+      "case_id": "case-0001",
+      "behavioral_turn_count": 81,
+      "eligible_route_count": 76,
+      "triage_context_chars": 95951,
+      "admission_context_chars": 38859,
+      "match_audit_context_chars": 0,
+      "triage_decision": "clarification_needed",
+      "shadow_outcome": "clarification_recommended",
+      "selected_route_id": "A0",
+      "proposed_route_ids": [
+        "A0",
+        "G20",
+        "PREFER-PERSUADE"
+      ],
+      "admitted_route_ids": [
+        "A0",
+        "G20"
+      ],
+      "question_repaired_route_ids": [],
+      "question_rejected_route_ids": [],
+      "recovered_omission_route_ids": [],
+      "match_audit_deferred": true,
+      "deferred_match_audit_pair_count": 54,
+      "normalized_repair_binding_candidate_ids": [],
+      "rejection_code_counts": {
+        "already_answered": 1,
+        "low_information_gain": 1,
+        "not_construct_discriminating": 1,
+        "unsupported_extension": 1
+      },
+      "semantic_calls": [
+        {
+          "stage": "GapTriage",
+          "duration_seconds": 168.521,
+          "prompt_tokens": 31685,
+          "completion_tokens": 8711
+        },
+        {
+          "stage": "GapAdmission",
+          "duration_seconds": 113.018,
+          "prompt_tokens": 17667,
+          "completion_tokens": 6010
+        }
+      ],
+      "semantic_duration_seconds": 281.539,
+      "legacy_comparison": null
+    }
+  ],
+  "aggregate": {
+    "case_count": 1,
+    "median_semantic_duration_seconds": 281.539,
+    "p90_semantic_duration_seconds": 281.539,
+    "legacy_comparison_count": 0,
+    "legacy_decision_match_rate": null,
+    "clarification_selected_route_match_rate": null
+  }
+}

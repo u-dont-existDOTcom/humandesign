@@ -736,6 +736,69 @@ def test_shadow_pipeline_uses_separate_triage_and_admission_without_mutating_sta
     assert "question_text" not in encoded
 
 
+def test_critical_path_defers_match_audit_after_gap_spec_is_admitted():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "near-m09",
+            "turn_role": "behavioral",
+            "question_text": (
+                "Your familiar planning app works offline, but another app has shared "
+                "reminders and better search. What matters in deciding whether to switch?"
+            ),
+            "answer_text": "I would compare the migration cost with the collaboration benefit.",
+        }
+    )
+    fake = ApprovedFake()
+    result = run_shadow_triage(
+        state,
+        instrument,
+        fake,
+        model="gpt-5.6-sol",
+        effort="xhigh",
+        match_audit_policy="defer_if_admitted",
+    )
+    summary = privacy_safe_case_summary("case-0001", state, result)
+    assert [call["shadow_stage"] for call in result["calls"]] == [
+        "GapTriage",
+        "GapAdmission",
+    ]
+    assert result["match_audit_deferred"] is True
+    assert result["deferred_match_audit_pair_count"] >= 1
+    assert summary["match_audit_deferred"] is True
+    assert summary["admitted_route_ids"] == [fake.selected_route["id"]]
+
+
+def test_critical_path_still_audits_before_no_question_stopping():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "near-m09",
+            "turn_role": "behavioral",
+            "question_text": (
+                "Your familiar planning app works offline, but another app has shared "
+                "reminders and better search. What matters in deciding whether to switch?"
+            ),
+            "answer_text": "I would start by reading reviews and testing the import tool.",
+        }
+    )
+    fake = OmissionRecoveryFake()
+    result = run_shadow_triage(
+        state,
+        instrument,
+        fake,
+        model="gpt-5.6-sol",
+        effort="xhigh",
+        match_audit_policy="defer_if_admitted",
+    )
+    summary = privacy_safe_case_summary("case-0001", state, result)
+    assert result["match_audit_deferred"] is False
+    assert any(call["shadow_stage"] == "GapMatchAudit" for call in result["calls"])
+    assert summary["admitted_route_ids"] == ["M09"]
+
+
 def test_wording_repair_runs_only_after_gap_admission_and_can_restore_readiness():
     instrument = authority()
     state = imported_state(instrument)

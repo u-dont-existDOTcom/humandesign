@@ -181,6 +181,11 @@ def main() -> int:
     parser.add_argument("--legacy-results", type=Path)
     parser.add_argument("--model", default="gpt-5.6-sol")
     parser.add_argument("--effort", default="xhigh")
+    parser.add_argument(
+        "--match-audit-policy",
+        choices=("blocking", "defer_if_admitted"),
+        default="blocking",
+    )
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -210,6 +215,7 @@ def main() -> int:
                 provider,
                 model=args.model,
                 effort=args.effort,
+                match_audit_policy=args.match_audit_policy,
             )
             row = privacy_safe_case_summary(case_id, state, result)
             row["legacy_comparison"] = _legacy_comparison(row, legacy.get(case_id))
@@ -235,6 +241,7 @@ def main() -> int:
                 "model_calls_executed": True,
                 "model": args.model,
                 "effort": args.effort,
+                "match_audit_policy": args.match_audit_policy,
                 "cases": cases,
                 "aggregate": _aggregate(cases),
             }
