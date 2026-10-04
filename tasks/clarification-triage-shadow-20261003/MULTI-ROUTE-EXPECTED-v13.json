@@ -1,0 +1,15 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-expected-v13",
+  "cases": [
+    {"case_id":"U1","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"U2","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"U3","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"U4","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"U5","decision":"clarification_needed","route_ids":["M09","G20"],"confidence":"consensus","scored":true},
+    {"case_id":"U6","decision":"clarification_needed","route_ids":["M05"],"confidence":"consensus","scored":true},
+    {"case_id":"U7","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"U8","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"U9","decision":"clarification_needed","route_ids":["M09","G20"],"confidence":"consensus","scored":true},
+    {"case_id":"U10","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true}
+  ]
+}
