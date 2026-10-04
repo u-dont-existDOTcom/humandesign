@@ -1,5 +1,7 @@
 # Chaldean / Cheiro life-event retrodiagnostic — owner development case
 
+> Historical development analysis. Correction recorded 2026-10-04: 2008 is moderately consequential, not top-major (approximate-memory chronology), not UNKNOWN. The original descriptive background-year tally is preserved as a historical snapshot, not a negative control or specificity estimate. No fit was rerun. The frozen four-book audit and policy now control future methodology.
+
 Date: 2026-10-03
 Status: retrospective development analysis; not validation.
 
@@ -157,7 +159,7 @@ Cheiro's stated rule of adding the digit-sum of a year to itself gives:
 
 Known result:
 - 2018 is a major hit (Bee relationship / life change).
-- 2008 is currently UNKNOWN, not a confirmed false positive.
+- 2008 is now classified by the owner as moderately consequential, not top-major; chronology is approximate memory. The former UNKNOWN label is superseded. It is not a major-event hit merely because it appears in the sequence.
 - 2029 is prospective.
 
 This is worth preserving prospectively but one past hit is not validation.

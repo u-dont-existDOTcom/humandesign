@@ -1,5 +1,7 @@
 # Numerology system comparison and method correction
 
+> Correction precedence (2026-10-04): the componentwise procedure correction at the end controls the archived raw-sum examples below. Raw 53/90 totals are not Cheiro combined compounds; the applicable sums are 7+1=8 and 7+1+1=9. Also, Decoz's Minor label is relative to the birth core, not a claim of negligible practical effect. For the complete separately frozen systems and source limits, use reference/research/NUMEROLOGY_BOOK_AUDIT_V2_20261004.md. No prior prediction was rescored.
+
 Date: 2026-10-03
 Status: methodology correction for all future numerology work in this project.
 

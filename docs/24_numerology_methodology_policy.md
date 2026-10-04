@@ -1,97 +1,78 @@
 # Numerology methodology and versioning policy
 
-Date: 2026-10-03
-Status: required for future numerology experiments.
+Updated: 2026-10-04. Required for future numerology work.
 
-Canonical inventory:
-- `reference/research/NUMEROLOGY_METHODOLOGY_AUDIT_V1_20261003.md`
-- `reference/research/numerology_method_registry_v1_20261003.json`
+## Canonical source inventories
 
-## Active systems
+- Historical, immutable V1: `reference/research/NUMEROLOGY_METHODOLOGY_AUDIT_V1_20261003.md` and `reference/research/numerology_method_registry_v1_20261003.json`.
+- Four-book audit: `reference/research/NUMEROLOGY_BOOK_AUDIT_V2_20261004.md` and `reference/research/numerology_method_registry_v2_20261004.json`.
+- Exact source freeze: `reference/research/numerology_v2_20261004/freeze_manifest.json`.
+- Mandatory corrections and explicit branches: `SOURCE_RECONCILIATION.md` and `ambiguities.json` in that directory. Reconciliation controls its enumerated statements; then the per-author specification controls; compact indexes are not substitute algorithms.
+- Post-freeze empirical design: `EMPIRICAL_COMPARISON_DESIGN.md` and `empirical_admission_contract.json` in that directory.
 
-Only these are active unless explicitly versioned otherwise:
+## Separate frozen systems
 
-- `CHEIRO_CHALDEAN_V1`
-- `DECOZ_CURRENT_V1`
+Allowed source systems are:
 
-They are separate models. Never merge their numbers or meanings by default.
+- `CHEIRO_CHALDEAN_V1` — unchanged historical baseline;
+- `CHEIRO_CHALDEAN_V2` — V1 plus the explicit When Were You Born? delta;
+- `DECOZ_CURRENT_V1` — unchanged current-source snapshot from the V1 audit;
+- `CAMPBELL_YOUR_DAYS_V1`;
+- `JORDAN_ROMANCE_NAME_V1`;
+- `JAVANE_BUNKER_DIVINE_TRIANGLE_V1`.
 
-## Before any test
+These are separate author systems, not interchangeable names for a generic Pythagorean or Chaldean method. Cheiro V2 does not rewrite V1. A new author is not an update to Decoz. Do not average incompatible outputs.
 
-Freeze:
-1. system ID;
-2. exact name role/context;
-3. letter-value table;
-4. reduction/compound policy;
-5. included personality layers;
-6. included timing cycles;
-7. event/personality target;
-8. operating threshold or comparison rule;
-9. chronology source quality.
+“Frozen source system” means a complete inventory within its declared source boundary, including unresolved alternatives. It does not mean every author instruction is single-valued, every interpretive sentence has been implemented, or predictive validity has been established.
 
-## No rule creep
+## Two freezes before any human test
 
-A rule discovered after outcomes are inspected:
-- cannot be added to the current frozen version;
-- must be documented as a new version;
-- prior predictions/misses remain unchanged.
+The source freeze precedes operational design. A separate operational freeze, before target outcomes are inspected, must bind:
 
-A rule from another numerologist or lineage is never silently imported because it shares the labels "Pythagorean" or "Chaldean."
+1. system ID and exact source/interpretation/code identities;
+2. exact birth/current/public/private/legal/married/spiritual/nickname roles and actual usage dates;
+3. letter mapping, pronunciation mask, component boundaries and any explicitly labeled normalization convention;
+4. reduction, intermediate compound and master-number policies;
+5. every task-relevant personality, timing and relationship layer, its hierarchy and interpretation resource;
+6. all applicable ambiguity choices or finite registered sensitivity sets;
+7. independent target, outcome ontology, conditions and positive/adverse manifestation selectors;
+8. forecast windows, coverage, threshold, scoring and uncertainty rules;
+9. chronology-quality and observed-negative protocols, cohort splits and stopping rules.
 
-## Fair system comparison
+UNKNOWN input or an unresolved selector is not permission to infer the value that fits. Report branches separately or withhold the affected forecast. Sensitivity analysis must report all registered alternatives; never choose the best branch after the event.
 
-A "Cheiro vs Decoz" comparison must use the complete relevant frozen layers of each system.
+## No rule creep or silent correction
 
-Do not compare:
-- full Cheiro timing against Decoz Personal Year alone;
-- full Decoz profile against Cheiro Name Number alone.
+A newly found, changed or omitted source rule requires an explicit new version or correction delta with provenance. Preserve the original frozen files, predictions, misses and scoring results. Do not revise an old prediction and retain its original timestamp. Correct data errors in a versioned record, preserving original and corrected evaluations and the chronology of the discovery.
+
+No rule from Campbell, Jordan, Javane/Bunker, Balliett, another website or an AI-generated interpretation enters Cheiro or Decoz merely because a tradition label overlaps. Do not activate a new rule to rescue an attractive retrospective interpretation.
+
+## Full-system comparisons
+
+Use complete relevant frozen layers on each side. Full Cheiro timing versus Decoz Personal Year alone is not a full comparison; neither is full Decoz personality versus Cheiro Name Number alone. A difficult relevant layer cannot be recategorized as peripheral to obtain a PASS.
+
+The full Decoz forecasting arm requires its exact 81-Duality interpretation resource or a verified official implementation, as well as all other relevant frozen layers. The four supplied books do not fill this Decoz-specific resource gap. A subset arm may be disclosed as a subset, but cannot satisfy the full-system comparison contract.
+
+Retain each author's actual astrology/Tarot integration. Do not add modern natal-chart calculations to Cheiro's fixed period lookup or Javane/Bunker's correspondences. Campbell's p246 qualitative hybrid requires a separately specified operational adapter to test her overall stars-plus-numbers claim. A numerology-only Campbell arm must disclose that scope and is not a complete test of that overall claim. Undefined fusion weights are not supplied by choosing the later best fit.
 
 ## Name rules
 
-### Cheiro
-Use the name actually most used in the outcome context.
-Public, private, trade and pet-name contexts may differ.
-Freeze context before outcome inspection.
+Cheiro uses the name actually used in the relevant context, with its own partwise arithmetic. Decoz uses the full birth name for core numbers, Transits and Essence, and the actual everyday introduction name for current-name Minor overlays. Legal registration alone does not establish active use. “Minor” denotes relative hierarchy, not a demonstrated negligible effect.
 
-### Decoz
-Use:
-- full birth name for core name numbers, Transits and Essence;
-- actual everyday introduction name for Minor numbers/current-name planes.
-A legal name is not automatically the current-use name.
+Campbell, Jordan and Javane/Bunker retain their respective birth-name cores but differ in overlays, vowel rules, calculations and claims about change. Their exact specifications control. Do not calculate a consonant sum in one system and silently interpret it as another system's construct.
 
-## Chronology evidence
+## Chronology, negatives and symmetric error accounting
 
-Historical event dates must be labeled:
-- documentary/contemporaneous;
-- strongly anchored memory;
-- approximate memory;
-- uncertain.
+Dates carry one of: documentary/contemporaneous; strongly anchored memory; approximate memory; uncertain. Impact is coded separately and without seeing numerical predictions. Later documentary corrections do not retroactively make an original memory-based forecast precise.
 
-Later documentary corrections supersede memory labels, and interpretations that depended on the old chronology must be withdrawn.
+Unknown/unremembered periods remain **UNKNOWN**, never negatives. Confirmed non-event periods need an independent observation protocol. False alarms and misses count as heavily as hits; report coverage, abstentions, duplicate/overlapping windows and full error counts. Unbounded or mutually opposite claims cannot earn automatic credit. The post-freeze design supplies the precise proposed scoring definitions.
 
-## Background periods
+Owner history is DEVELOPMENT only. 2008 is **moderately consequential, not top-major**, with approximate-memory chronology; 2018 remains major and 2029 prospective. Do not increase impact because a year falls in a recurrence sequence. Archived background-year tallies are not specificity estimates.
 
-Unknown/unremembered periods remain UNKNOWN.
-Never convert them to negatives merely because no event has been recalled.
+## Peripheral and high-stakes boundaries
 
-## Peripheral modules
-
-Excluded by default:
-
-Cheiro:
-- health/herbs;
-- horse racing;
-- colors/jewels/music;
-- place-name/house optimization.
-
-Decoz:
-- lost objects;
-- house/telephone numbers;
-- ancestral reports.
-
-Activating any excluded module requires an explicit new experiment version.
+Peripheral modules are inventoried but disabled unless explicitly relevant and preregistered. These include health/herbs, gambling, colors/jewels/music, house/place/telephone optimization, lost objects, ancestral and other out-of-task applications. Their historical inclusion is not medical, financial, safety or relationship advice. Any activation requires a separate experiment version and applicable safety/authorization checks.
 
 ## Validation boundary
 
-Owner-history retrodiction is development evidence.
-A numerology model becomes predictive evidence only through frozen prospective or cross-person testing with explicit false-positive accounting.
+A complete source audit, arithmetic tests and an independent claim review have distinct scopes; none is a human predictive result. Evidence requires frozen cross-person or prospective testing, appropriate controls, observed negatives, equal attention to false positives and misses, and a prespecified meaningful effect. No empirical superiority, causal name-change benefit, or high-stakes personal recommendation follows from this audit.

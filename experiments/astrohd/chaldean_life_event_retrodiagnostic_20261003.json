@@ -68,7 +68,8 @@
     "2008": {
       "impact": "moderate_not_top_major",
       "source": "owner_recollection",
-      "summary": "college-era relationship rupture; significant guilt/depression; not among top life events"
+      "summary": "college-era relationship rupture; significant guilt/depression; not among top life events",
+      "chronology_quality": "approximate memory"
     },
     "2018": {
       "impact": "major",
@@ -79,5 +80,13 @@
       "impact": "prospective_unknown",
       "source": "pre_event_prediction"
     }
+  },
+  "historical_snapshot_annotation": {
+    "date": "2026-10-04",
+    "old_tallies_preserved": true,
+    "new_fit_performed": false,
+    "background_counts_are_observed_negatives": false,
+    "specificity_claim_admissible": false,
+    "explanation": "The original unlabeled-background tally includes 2008, subsequently labeled moderate. Preserve original arithmetic as historical development output; do not use it as a current negative-control tally or recompute a stronger result."
   }
 }
