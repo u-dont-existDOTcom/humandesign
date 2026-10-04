@@ -1,0 +1,1641 @@
+{
+  "scope": "COARSE_IMPACT_ADAPTERS_NOT_FULL_AUTHORS",
+  "calendar_years": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "major_years": [
+    2002,
+    2005,
+    2010,
+    2013,
+    2014,
+    2018,
+    2020,
+    2026
+  ],
+  "explicit_lower_impact_event_years": [
+    2008,
+    2022
+  ],
+  "models_tested": 36,
+  "unlabelled_years_are_unknown": true,
+  "results": [
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY",
+      "flagged_years": [
+        2000,
+        2002,
+        2005,
+        2008,
+        2009,
+        2011,
+        2014,
+        2017,
+        2018,
+        2020,
+        2023,
+        2026
+      ],
+      "coverage_years": 12,
+      "major_year_hits": [
+        2002,
+        2005,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2010,
+        2013
+      ],
+      "lower_impact_false_flags": [
+        2008
+      ],
+      "lower_impact_correct_not_flags": [
+        2022
+      ],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2009,
+        2011,
+        2017,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE",
+      "flagged_years": [
+        2008,
+        2018
+      ],
+      "coverage_years": 2,
+      "major_year_hits": [
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2005,
+        2010,
+        2013,
+        2014,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2008
+      ],
+      "lower_impact_correct_not_flags": [
+        2022
+      ],
+      "observed_impact_errors": 8,
+      "unknown_flagged_years": [],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CAMPBELL_CHANGE_PY",
+      "flagged_years": [
+        2000,
+        2004,
+        2005,
+        2009,
+        2013,
+        2014,
+        2018,
+        2022,
+        2023
+      ],
+      "coverage_years": 9,
+      "major_year_hits": [
+        2005,
+        2013,
+        2014,
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2010,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2022
+      ],
+      "lower_impact_correct_not_flags": [
+        2008
+      ],
+      "observed_impact_errors": 5,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2009,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "LEGACY_WESTERN_CHANGE_SET",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2009,
+        2011,
+        2013,
+        2014,
+        2018,
+        2020,
+        2022,
+        2023
+      ],
+      "coverage_years": 12,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020
+      ],
+      "major_year_misses": [
+        2010,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2022
+      ],
+      "lower_impact_correct_not_flags": [
+        2008
+      ],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2009,
+        2011,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "JB_MAJOR_AGE_MARK",
+      "flagged_years": [
+        2002,
+        2004,
+        2007,
+        2008,
+        2011,
+        2013,
+        2014,
+        2016,
+        2017,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 15,
+      "major_year_hits": [
+        2002,
+        2013,
+        2014,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2005,
+        2010,
+        2018
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 5,
+      "unknown_flagged_years": [
+        2004,
+        2007,
+        2011,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2007,
+        2008,
+        2011,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 18,
+      "major_year_hits": [
+        2002,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2005,
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 4,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2007,
+        2011,
+        2015,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY__AND__CHEIRO_BIRTH_SEED_RECURRENCE",
+      "flagged_years": [
+        2008,
+        2018
+      ],
+      "coverage_years": 2,
+      "major_year_hits": [
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2005,
+        2010,
+        2013,
+        2014,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2008
+      ],
+      "lower_impact_correct_not_flags": [
+        2022
+      ],
+      "observed_impact_errors": 8,
+      "unknown_flagged_years": [],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY__OR__CHEIRO_BIRTH_SEED_RECURRENCE",
+      "flagged_years": [
+        2000,
+        2002,
+        2005,
+        2008,
+        2009,
+        2011,
+        2014,
+        2017,
+        2018,
+        2020,
+        2023,
+        2026
+      ],
+      "coverage_years": 12,
+      "major_year_hits": [
+        2002,
+        2005,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2010,
+        2013
+      ],
+      "lower_impact_false_flags": [
+        2008
+      ],
+      "lower_impact_correct_not_flags": [
+        2022
+      ],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2009,
+        2011,
+        2017,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY__AND__CAMPBELL_CHANGE_PY",
+      "flagged_years": [
+        2000,
+        2005,
+        2009,
+        2014,
+        2018,
+        2023
+      ],
+      "coverage_years": 6,
+      "major_year_hits": [
+        2005,
+        2014,
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2010,
+        2013,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [],
+      "lower_impact_correct_not_flags": [
+        2008,
+        2022
+      ],
+      "observed_impact_errors": 5,
+      "unknown_flagged_years": [
+        2000,
+        2009,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY__OR__CAMPBELL_CHANGE_PY",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2008,
+        2009,
+        2011,
+        2013,
+        2014,
+        2017,
+        2018,
+        2020,
+        2022,
+        2023,
+        2026
+      ],
+      "coverage_years": 15,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2009,
+        2011,
+        2017,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY__AND__LEGACY_WESTERN_CHANGE_SET",
+      "flagged_years": [
+        2000,
+        2002,
+        2005,
+        2009,
+        2011,
+        2014,
+        2018,
+        2020,
+        2023
+      ],
+      "coverage_years": 9,
+      "major_year_hits": [
+        2002,
+        2005,
+        2014,
+        2018,
+        2020
+      ],
+      "major_year_misses": [
+        2010,
+        2013,
+        2026
+      ],
+      "lower_impact_false_flags": [],
+      "lower_impact_correct_not_flags": [
+        2008,
+        2022
+      ],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2009,
+        2011,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY__OR__LEGACY_WESTERN_CHANGE_SET",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2008,
+        2009,
+        2011,
+        2013,
+        2014,
+        2017,
+        2018,
+        2020,
+        2022,
+        2023,
+        2026
+      ],
+      "coverage_years": 15,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2009,
+        2011,
+        2017,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY__AND__JB_MAJOR_AGE_MARK",
+      "flagged_years": [
+        2002,
+        2008,
+        2011,
+        2014,
+        2017,
+        2020,
+        2023,
+        2026
+      ],
+      "coverage_years": 8,
+      "major_year_hits": [
+        2002,
+        2014,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2005,
+        2010,
+        2013,
+        2018
+      ],
+      "lower_impact_false_flags": [
+        2008
+      ],
+      "lower_impact_correct_not_flags": [
+        2022
+      ],
+      "observed_impact_errors": 5,
+      "unknown_flagged_years": [
+        2011,
+        2017,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY__OR__JB_MAJOR_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2007,
+        2008,
+        2009,
+        2011,
+        2013,
+        2014,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 19,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2007,
+        2009,
+        2011,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY__AND__JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2008,
+        2011,
+        2014,
+        2017,
+        2018,
+        2020,
+        2023,
+        2026
+      ],
+      "coverage_years": 10,
+      "major_year_hits": [
+        2002,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2005,
+        2010,
+        2013
+      ],
+      "lower_impact_false_flags": [
+        2008
+      ],
+      "lower_impact_correct_not_flags": [
+        2022
+      ],
+      "observed_impact_errors": 4,
+      "unknown_flagged_years": [
+        2000,
+        2011,
+        2017,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_YEAR_HARMONY__OR__JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2007,
+        2008,
+        2009,
+        2011,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 20,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2007,
+        2009,
+        2011,
+        2015,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE__AND__CAMPBELL_CHANGE_PY",
+      "flagged_years": [
+        2018
+      ],
+      "coverage_years": 1,
+      "major_year_hits": [
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2005,
+        2010,
+        2013,
+        2014,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [],
+      "lower_impact_correct_not_flags": [
+        2008,
+        2022
+      ],
+      "observed_impact_errors": 7,
+      "unknown_flagged_years": [],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE__OR__CAMPBELL_CHANGE_PY",
+      "flagged_years": [
+        2000,
+        2004,
+        2005,
+        2008,
+        2009,
+        2013,
+        2014,
+        2018,
+        2022,
+        2023
+      ],
+      "coverage_years": 10,
+      "major_year_hits": [
+        2005,
+        2013,
+        2014,
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2010,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 6,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2009,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE__AND__LEGACY_WESTERN_CHANGE_SET",
+      "flagged_years": [
+        2018
+      ],
+      "coverage_years": 1,
+      "major_year_hits": [
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2005,
+        2010,
+        2013,
+        2014,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [],
+      "lower_impact_correct_not_flags": [
+        2008,
+        2022
+      ],
+      "observed_impact_errors": 7,
+      "unknown_flagged_years": [],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE__OR__LEGACY_WESTERN_CHANGE_SET",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2008,
+        2009,
+        2011,
+        2013,
+        2014,
+        2018,
+        2020,
+        2022,
+        2023
+      ],
+      "coverage_years": 13,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020
+      ],
+      "major_year_misses": [
+        2010,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 4,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2009,
+        2011,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE__AND__JB_MAJOR_AGE_MARK",
+      "flagged_years": [
+        2008
+      ],
+      "coverage_years": 1,
+      "major_year_hits": [],
+      "major_year_misses": [
+        2002,
+        2005,
+        2010,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2008
+      ],
+      "lower_impact_correct_not_flags": [
+        2022
+      ],
+      "observed_impact_errors": 9,
+      "unknown_flagged_years": [],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE__OR__JB_MAJOR_AGE_MARK",
+      "flagged_years": [
+        2002,
+        2004,
+        2007,
+        2008,
+        2011,
+        2013,
+        2014,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 16,
+      "major_year_hits": [
+        2002,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2005,
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 4,
+      "unknown_flagged_years": [
+        2004,
+        2007,
+        2011,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE__AND__JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2008,
+        2018
+      ],
+      "coverage_years": 2,
+      "major_year_hits": [
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2005,
+        2010,
+        2013,
+        2014,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2008
+      ],
+      "lower_impact_correct_not_flags": [
+        2022
+      ],
+      "observed_impact_errors": 8,
+      "unknown_flagged_years": [],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE__OR__JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2007,
+        2008,
+        2011,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 18,
+      "major_year_hits": [
+        2002,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2005,
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 4,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2007,
+        2011,
+        2015,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CAMPBELL_CHANGE_PY__AND__LEGACY_WESTERN_CHANGE_SET",
+      "flagged_years": [
+        2000,
+        2004,
+        2005,
+        2009,
+        2013,
+        2014,
+        2018,
+        2022,
+        2023
+      ],
+      "coverage_years": 9,
+      "major_year_hits": [
+        2005,
+        2013,
+        2014,
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2010,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2022
+      ],
+      "lower_impact_correct_not_flags": [
+        2008
+      ],
+      "observed_impact_errors": 5,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2009,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CAMPBELL_CHANGE_PY__OR__LEGACY_WESTERN_CHANGE_SET",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2009,
+        2011,
+        2013,
+        2014,
+        2018,
+        2020,
+        2022,
+        2023
+      ],
+      "coverage_years": 12,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020
+      ],
+      "major_year_misses": [
+        2010,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2022
+      ],
+      "lower_impact_correct_not_flags": [
+        2008
+      ],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2009,
+        2011,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CAMPBELL_CHANGE_PY__AND__JB_MAJOR_AGE_MARK",
+      "flagged_years": [
+        2004,
+        2013,
+        2014,
+        2022,
+        2023
+      ],
+      "coverage_years": 5,
+      "major_year_hits": [
+        2013,
+        2014
+      ],
+      "major_year_misses": [
+        2002,
+        2005,
+        2010,
+        2018,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2022
+      ],
+      "lower_impact_correct_not_flags": [
+        2008
+      ],
+      "observed_impact_errors": 7,
+      "unknown_flagged_years": [
+        2004,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CAMPBELL_CHANGE_PY__OR__JB_MAJOR_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2007,
+        2008,
+        2009,
+        2011,
+        2013,
+        2014,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 19,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2007,
+        2009,
+        2011,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CAMPBELL_CHANGE_PY__AND__JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2004,
+        2013,
+        2014,
+        2018,
+        2022,
+        2023
+      ],
+      "coverage_years": 7,
+      "major_year_hits": [
+        2013,
+        2014,
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2005,
+        2010,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2022
+      ],
+      "lower_impact_correct_not_flags": [
+        2008
+      ],
+      "observed_impact_errors": 6,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CAMPBELL_CHANGE_PY__OR__JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2007,
+        2008,
+        2009,
+        2011,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 20,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2007,
+        2009,
+        2011,
+        2015,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "LEGACY_WESTERN_CHANGE_SET__AND__JB_MAJOR_AGE_MARK",
+      "flagged_years": [
+        2002,
+        2004,
+        2011,
+        2013,
+        2014,
+        2020,
+        2022,
+        2023
+      ],
+      "coverage_years": 8,
+      "major_year_hits": [
+        2002,
+        2013,
+        2014,
+        2020
+      ],
+      "major_year_misses": [
+        2005,
+        2010,
+        2018,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2022
+      ],
+      "lower_impact_correct_not_flags": [
+        2008
+      ],
+      "observed_impact_errors": 5,
+      "unknown_flagged_years": [
+        2004,
+        2011,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "LEGACY_WESTERN_CHANGE_SET__OR__JB_MAJOR_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2007,
+        2008,
+        2009,
+        2011,
+        2013,
+        2014,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 19,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2007,
+        2009,
+        2011,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "LEGACY_WESTERN_CHANGE_SET__AND__JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2011,
+        2013,
+        2014,
+        2018,
+        2020,
+        2022,
+        2023
+      ],
+      "coverage_years": 10,
+      "major_year_hits": [
+        2002,
+        2013,
+        2014,
+        2018,
+        2020
+      ],
+      "major_year_misses": [
+        2005,
+        2010,
+        2026
+      ],
+      "lower_impact_false_flags": [
+        2022
+      ],
+      "lower_impact_correct_not_flags": [
+        2008
+      ],
+      "observed_impact_errors": 4,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2011,
+        2023
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "LEGACY_WESTERN_CHANGE_SET__OR__JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2005,
+        2007,
+        2008,
+        2009,
+        2011,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 20,
+      "major_year_hits": [
+        2002,
+        2005,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 3,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2007,
+        2009,
+        2011,
+        2015,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "JB_MAJOR_AGE_MARK__AND__JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2002,
+        2004,
+        2007,
+        2008,
+        2011,
+        2013,
+        2014,
+        2016,
+        2017,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 15,
+      "major_year_hits": [
+        2002,
+        2013,
+        2014,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2005,
+        2010,
+        2018
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 5,
+      "unknown_flagged_years": [
+        2004,
+        2007,
+        2011,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "JB_MAJOR_AGE_MARK__OR__JB_ANY_AGE_MARK",
+      "flagged_years": [
+        2000,
+        2002,
+        2004,
+        2007,
+        2008,
+        2011,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "coverage_years": 18,
+      "major_year_hits": [
+        2002,
+        2013,
+        2014,
+        2018,
+        2020,
+        2026
+      ],
+      "major_year_misses": [
+        2005,
+        2010
+      ],
+      "lower_impact_false_flags": [
+        2008,
+        2022
+      ],
+      "lower_impact_correct_not_flags": [],
+      "observed_impact_errors": 4,
+      "unknown_flagged_years": [
+        2000,
+        2004,
+        2007,
+        2011,
+        2015,
+        2016,
+        2017,
+        2019,
+        2023,
+        2025
+      ],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    }
+  ],
+  "candidate_selection_is_retrospective": true,
+  "thresholds_or_author_rules_fitted": false,
+  "limitations": [
+    "2008/2022 are impact contrasts, not absence of any events",
+    "historical event selection incomplete",
+    "one person already revealed",
+    "calendar year collapses distinct events",
+    "birth-year age mapping is not exact occurrence timing",
+    "zero-cost unknown years prevent estimating predictive precision"
+  ]
+}
