@@ -23,6 +23,10 @@ from participant.shadow_triage import (
     GapMatchAuditResponse,
     GapMatchedRouteJudgment,
     GapMatchedRouteReview,
+    GapQuestionRenderResponse,
+    GapQuestionReviewResponse,
+    GapQuestionWordingJudgment,
+    GapRenderedQuestionText,
     GapTriage,
     make_gap_match_audit_context,
     make_gap_triage_context,
@@ -189,6 +193,68 @@ class RejectedFake(ApprovedFake):
         )
 
 
+class WordingRepairFake(ApprovedFake):
+    def call(self, system, payload, schema, model, effort):
+        if schema is GapTriage:
+            return super().call(system, payload, schema, model, effort)
+        self.calls.append((system, payload))
+        assert self.selected_route is not None
+        if schema is GapAdmission:
+            return (
+                GapAdmission(
+                    source_review_complete=True,
+                    reviews=[
+                        GapCandidateAdmission(
+                            candidate_id="C1",
+                            route_id=self.selected_route["id"],
+                            approved=True,
+                            question_approved=False,
+                            source_references_valid=True,
+                            not_already_answered=True,
+                            premise_supported=True,
+                            antecedent_supported=True,
+                            context_supported=True,
+                            construct_discriminating=True,
+                            one_response_task=True,
+                            material_information_gain=True,
+                            independent_for_batch=True,
+                            no_unsupported_extension=False,
+                            failure_codes=["unsupported_extension"],
+                        )
+                    ],
+                ),
+                {"duration_seconds": 12.0, "prompt_tokens": 8000, "completion_tokens": 180},
+            )
+        if schema is GapQuestionRenderResponse:
+            return (
+                GapQuestionRenderResponse(
+                    questions=[
+                        GapRenderedQuestionText(
+                            text=spec["route_authority"]["question"]
+                        )
+                        for spec in payload["render_specs"]
+                    ]
+                ),
+                {"duration_seconds": 4.0, "prompt_tokens": 1200, "completion_tokens": 80},
+            )
+        assert schema is GapQuestionReviewResponse
+        return (
+            GapQuestionReviewResponse(
+                reviews=[
+                    GapQuestionWordingJudgment(
+                        approved=True,
+                        construct_discriminating=True,
+                        one_response_task=True,
+                        no_unsupported_extension=True,
+                        failure_codes=[],
+                    )
+                    for _ in payload["items"]
+                ]
+            ),
+            {"duration_seconds": 3.0, "prompt_tokens": 1000, "completion_tokens": 60},
+        )
+
+
 class ReadyFake:
     def __init__(self) -> None:
         self.count = 0
@@ -217,19 +283,47 @@ class OmissionRecoveryFake:
                 {"duration_seconds": 8.0, "prompt_tokens": 10000, "completion_tokens": 80},
             )
 
-        assert schema is GapMatchAuditResponse
-        matched = []
-        for pair in payload["pairs"]:
-            route_id = pair["route_id"]
-            matched.append(
-                GapMatchedRouteJudgment(
-                    status="preliminary_gap" if route_id == "M09" else "answered",
-                    independent_for_batch=True,
+        if schema is GapMatchAuditResponse:
+            matched = []
+            for pair in payload["pairs"]:
+                route_id = pair["route_id"]
+                matched.append(
+                    GapMatchedRouteJudgment(
+                        status="preliminary_gap" if route_id == "M09" else "answered",
+                        independent_for_batch=True,
+                    )
                 )
+            return (
+                GapMatchAuditResponse(reviews=matched),
+                {"duration_seconds": 12.0, "prompt_tokens": 11000, "completion_tokens": 220},
             )
+        if schema is GapQuestionRenderResponse:
+            return (
+                GapQuestionRenderResponse(
+                    questions=[
+                        GapRenderedQuestionText(
+                            text=spec["route_authority"]["question"]
+                        )
+                        for spec in payload["render_specs"]
+                    ]
+                ),
+                {"duration_seconds": 4.0, "prompt_tokens": 1200, "completion_tokens": 80},
+            )
+        assert schema is GapQuestionReviewResponse
         return (
-            GapMatchAuditResponse(reviews=matched),
-            {"duration_seconds": 12.0, "prompt_tokens": 11000, "completion_tokens": 220},
+            GapQuestionReviewResponse(
+                reviews=[
+                    GapQuestionWordingJudgment(
+                        approved=True,
+                        construct_discriminating=True,
+                        one_response_task=True,
+                        no_unsupported_extension=True,
+                        failure_codes=[],
+                    )
+                    for _ in payload["items"]
+                ]
+            ),
+            {"duration_seconds": 3.0, "prompt_tokens": 1000, "completion_tokens": 60},
         )
 
 
@@ -642,6 +736,25 @@ def test_shadow_pipeline_uses_separate_triage_and_admission_without_mutating_sta
     assert "question_text" not in encoded
 
 
+def test_wording_repair_runs_only_after_gap_admission_and_can_restore_readiness():
+    instrument = authority()
+    state = imported_state(instrument)
+    fake = WordingRepairFake()
+    result = run_shadow_triage(
+        state, instrument, fake, model="gpt-5.6-sol", effort="xhigh"
+    )
+    summary = privacy_safe_case_summary("case-0001", state, result)
+    assert [call["shadow_stage"] for call in result["calls"]] == [
+        "GapTriage",
+        "GapAdmission",
+        "GapQuestionRender",
+        "GapQuestionReview",
+    ]
+    assert summary["admitted_route_ids"] == [fake.selected_route["id"]]
+    assert summary["question_repaired_route_ids"] == [fake.selected_route["id"]]
+    assert summary["question_rejected_route_ids"] == []
+
+
 def test_all_rejected_candidates_remain_unresolved_not_review_ready():
     instrument = authority()
     state = imported_state(instrument)
@@ -692,8 +805,10 @@ def test_admission_recovers_source_matched_gap_omitted_by_triage():
         state, instrument, fake, model="gpt-5.6-sol", effort="xhigh"
     )
     summary = privacy_safe_case_summary("case-0001", state, result)
-    assert len(fake.calls) == 2
+    assert len(fake.calls) == 4
     assert fake.calls[1][1]["pairs"]
+    assert fake.calls[2][1]["render_specs"]
+    assert fake.calls[3][1]["items"]
     assert summary["triage_decision"] == "review_ready"
     assert summary["shadow_outcome"] == "clarification_recommended"
     assert summary["admitted_route_ids"] == ["M09"]
@@ -1014,6 +1129,9 @@ def test_wording_failure_does_not_erase_admitted_gap_spec():
         {
             **result,
             "admission": admission,
+            "question_rejected_route_ids": [
+                triage.candidates[0].question.route_id
+            ],
         },
     )
     route_id = triage.candidates[0].question.route_id
