@@ -322,10 +322,15 @@ def test_triage_context_adds_conservative_source_question_route_hints():
     routes = {route["id"]: route for route in context["candidate_routes"]}
     assert routes["M09"]["source_question_match_turn_ids"] == ["near-m09"]
     assert routes["G19"]["source_question_match_turn_ids"] == ["near-g19"]
-    assert context["source_question_matches"][:2] == [
-        {"route_id": "M09", "turn_ids": ["near-m09"]},
-        {"route_id": "G19", "turn_ids": ["near-g19"]},
+    assert [
+        (match["route_id"], match["turn_ids"])
+        for match in context["source_question_matches"][:2]
+    ] == [
+        ("M09", ["near-m09"]),
+        ("G19", ["near-g19"]),
     ]
+    for match in context["source_question_matches"][:2]:
+        assert {"near-m09", "near-g19"}.issubset(set(match["context_turn_ids"]))
 
 
 def test_triage_context_audits_presented_route_as_exact_source_question_match():
@@ -347,9 +352,103 @@ def test_triage_context_audits_presented_route_as_exact_source_question_match():
     route = next(row for row in context["candidate_routes"] if row["id"] == "G19")
     assert route["candidate_mode"] == "repair_only"
     assert route["source_question_match_turn_ids"] == ["presented-g19"]
-    assert {"route_id": "G19", "turn_ids": ["presented-g19"]} in (
-        context["source_question_matches"]
+    match = next(
+        item for item in context["source_question_matches"] if item["route_id"] == "G19"
     )
+    assert match["turn_ids"] == ["presented-g19"]
+    assert "presented-g19" in match["context_turn_ids"]
+
+
+def test_match_audit_context_includes_nearby_route_contradiction():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].extend(
+        [
+            {
+                "turn_id": "meal-match",
+                "turn_role": "behavioral",
+                "question_text": (
+                    "You arrive at a relaxed dinner with friends and nobody assigned you "
+                    "anything. What do you notice first?"
+                ),
+                "answer_text": "I head toward the kitchen and see what is missing.",
+            },
+            {
+                "turn_id": "intervening-planner",
+                "turn_role": "behavioral",
+                "question_text": "How would you test a new planning app?",
+                "answer_text": "I would try it briefly.",
+            },
+            {
+                "turn_id": "meal-contradiction",
+                "turn_role": "behavioral",
+                "question_text": (
+                    "At a gathering like that, where does your attention usually go?"
+                ),
+                "answer_text": (
+                    "Mostly the people. I do not really look at the kitchen or what needs doing."
+                ),
+            },
+        ]
+    )
+    triage_context = make_gap_triage_context(state, instrument)
+    match = next(
+        item for item in triage_context["source_question_matches"] if item["route_id"] == "G23"
+    )
+    assert match["turn_ids"] == ["meal-match"]
+    assert "meal-contradiction" in match["context_turn_ids"]
+
+    audit_context = make_gap_match_audit_context(
+        state,
+        instrument,
+        triage_context,
+        GapTriage(decision="review_ready", candidates=[]),
+    )
+    pair = next(item for item in audit_context["pairs"] if item["route_id"] == "G23")
+    assert "meal-contradiction" in pair["context_turn_ids"]
+    source_ids = {turn["turn_id"] for turn in audit_context["source_turns"]}
+    assert {"meal-match", "meal-contradiction"}.issubset(source_ids)
+
+
+def test_contradictory_match_audit_recovers_route():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "meal-match",
+            "turn_role": "behavioral",
+            "question_text": "At a casual meal, what catches your attention first?",
+            "answer_text": "I notice the kitchen and what is missing.",
+        }
+    )
+    triage = GapTriage(decision="review_ready", candidates=[])
+    admission = GapAdmission(source_review_complete=True, reviews=[])
+    audit = GapMatchAudit(
+        reviews=[
+            GapMatchedRouteReview(
+                route_id="G23",
+                source_turn_ids=["meal-match"],
+                status="contradictory_gap",
+                independent_for_batch=True,
+            )
+        ]
+    )
+    summary = privacy_safe_case_summary(
+        "case-0001",
+        state,
+        {
+            "triage": triage,
+            "admission": admission,
+            "match_audit": audit,
+            "calls": [],
+            "triage_context_chars": 0,
+            "admission_context_chars": 0,
+            "match_audit_context_chars": 0,
+            "eligible_route_count": 1,
+        },
+    )
+    assert summary["admitted_route_ids"] == ["G23"]
+    assert summary["recovered_omission_route_ids"] == ["G23"]
 
 
 def test_triage_context_has_complete_source_and_no_evidence_deliverables():
@@ -494,7 +593,8 @@ def test_match_audit_can_recover_proposed_route_rejected_only_on_answer_complete
     match_context = make_gap_match_audit_context(
         state, instrument, triage_context, triage
     )
-    assert {"route_id": "G19", "source_turn_ids": ["near-g19"]} in match_context["pairs"]
+    pair = next(item for item in match_context["pairs"] if item["route_id"] == "G19")
+    assert pair["source_turn_ids"] == ["near-g19"]
 
     admission = GapAdmission(
         source_review_complete=True,
