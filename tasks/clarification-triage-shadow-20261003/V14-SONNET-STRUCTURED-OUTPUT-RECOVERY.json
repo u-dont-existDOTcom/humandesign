@@ -1,0 +1,13 @@
+{
+  "schema": "life-patterns-structured-output-recovery-v1",
+  "boundary": "v14 blind Sonnet adjudication attempt 2",
+  "source_output_sha256": "0944586b8a031d03694c491746dd56bed0d8f32fb6838041bb8fae1287a124a7",
+  "authorized_transform": "remove exactly one outer Markdown json fence and change nothing inside",
+  "admitted_output_sha256": "276b85381970b04e89fa380ed34668e964d062b8b3784335723f0a4594dfa460",
+  "admitted_output_path": "V14-SONNET-ADJUDICATION-ATTEMPT2-ADMITTED.json",
+  "model": "Claude Sonnet",
+  "effort": "high",
+  "attempt": 2,
+  "status": "ADMITTED",
+  "validation": "strict JSON after authorized wrapper removal; schema v14; V1-V10 exactly once; decision values restricted to review_ready or clarification_needed"
+}

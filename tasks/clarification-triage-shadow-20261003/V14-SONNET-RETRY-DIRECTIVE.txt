@@ -1,0 +1,8 @@
+Fresh source-bound adjudication attempt. You have no access to any prior adjudicator output.
+
+STRICT SERIALIZATION REQUIREMENT:
+For every case, the decision field MUST be exactly one of these two literal strings:
+- "review_ready"
+- "clarification_needed"
+Do not use synonyms such as "ask_clarification". All other substantive rules and source authority follow unchanged.
+

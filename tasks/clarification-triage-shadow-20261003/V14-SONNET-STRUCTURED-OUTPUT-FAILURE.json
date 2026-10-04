@@ -1,0 +1,14 @@
+{
+  "schema": "life-patterns-structured-output-failure-v1",
+  "classification": "STRUCTURED_OUTPUT_SCHEMA_VALIDATION_FAILURE",
+  "boundary": "v14 blind Sonnet adjudication attempt 1",
+  "input_sha256": "3e6d74f0c6161a2c78453e8e4dff632bc975f7a87f1f7e0c6aa18f99ad977985",
+  "raw_output_sha256": "aa3af1a4cbbe7c439843a4feefa833f1e039f93a3becedc4400931debbefd36d",
+  "raw_output_path": "V14-SONNET-ADJUDICATION-ATTEMPT1-INVALID.json",
+  "model": "Claude Sonnet",
+  "effort": "high",
+  "attempt": 1,
+  "validator_error": "decision must be exactly review_ready or clarification_needed; output used ask_clarification for V1,V2,V3,V4,V5,V10",
+  "semantic_disposition": "unadmitted; do not score or reconcile as an adjudication",
+  "next_directive": "fresh blind attempt with exact enum constraint only"
+}

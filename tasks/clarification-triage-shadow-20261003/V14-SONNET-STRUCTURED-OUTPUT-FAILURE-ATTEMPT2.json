@@ -1,0 +1,13 @@
+{
+  "schema": "life-patterns-structured-output-failure-v1",
+  "classification": "STRUCTURED_OUTPUT_FENCE_WRAPPER_FAILURE",
+  "boundary": "v14 blind Sonnet adjudication attempt 2",
+  "input_sha256": "581960975b9d9ffd972cb78c6fc2221072bd5ca8fbcb9b25485915b39fb5b521",
+  "raw_output_sha256": "0944586b8a031d03694c491746dd56bed0d8f32fb6838041bb8fae1287a124a7",
+  "raw_output_path": "V14-SONNET-ADJUDICATION-ATTEMPT2-FENCED.txt",
+  "model": "Claude Sonnet",
+  "effort": "high",
+  "attempt": 2,
+  "validator_error": "JSON was surrounded by a Markdown code block instead of being returned bare",
+  "semantic_disposition": "unadmitted pending the separately authorized wrapper-removal transform"
+}

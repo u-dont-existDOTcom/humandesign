@@ -1,0 +1,13 @@
+{
+  "schema": "life-patterns-structured-output-recovery-v1",
+  "boundary": "v14 blind Opus adjudication attempt 2",
+  "directive": "fresh serialization-only retry with exact decision enum and bare JSON; substantive packet unchanged",
+  "input_sha256": "bdef5c2141a69542a4f88fa78ced0a41a3b3fce31b931a1fd9714d02b93517c2",
+  "raw_output_sha256": "bbc44e62082de4ebbeaaa658394bdf18ac6cf372d1d4b294644b28764ee916d5",
+  "admitted_output_path": "V14-OPUS-ADJUDICATION-ATTEMPT2-ADMITTED.json",
+  "model": "Claude Opus 5.5",
+  "effort": "max",
+  "attempt": 2,
+  "status": "ADMITTED",
+  "validation": "strict JSON; schema v14; V1-V10 exactly once; decision values restricted to review_ready or clarification_needed"
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-expected-v14",
+  "cases": [
+    {"case_id":"V1","decision":"clarification_needed","route_ids":["M09"],"confidence":"consensus","scored":true},
+    {"case_id":"V2","decision":"clarification_needed","required_route_ids":["G20"],"allowed_additional_route_ids":["G19"],"confidence":"mixed","scored":true,"dispute":"Both blind adjudicators require G20; Opus additionally selected G19."},
+    {"case_id":"V3","decision":"clarification_needed","route_ids":["M09"],"confidence":"consensus","scored":true},
+    {"case_id":"V4","decision":"clarification_needed","route_ids":["G19"],"confidence":"consensus","scored":true},
+    {"case_id":"V5","decision":"clarification_needed","route_ids":["PREFER-EXCHANGE"],"confidence":"consensus","scored":true},
+    {"case_id":"V6","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"V7","decision":"review_ready","route_ids":[],"confidence":"disputed","scored":false,"dispute":"Sonnet selected M11; Opus judged review-ready."},
+    {"case_id":"V8","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"V9","decision":"review_ready","route_ids":[],"confidence":"consensus","scored":true},
+    {"case_id":"V10","decision":"clarification_needed","route_ids":["M05"],"confidence":"consensus","scored":true}
+  ]
+}

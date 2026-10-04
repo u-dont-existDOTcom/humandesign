@@ -1,0 +1,7 @@
+{
+  "schema": "life-patterns-structured-output-repair-directive-v1",
+  "source_output_sha256": "0944586b8a031d03694c491746dd56bed0d8f32fb6838041bb8fae1287a124a7",
+  "authorized_transform": "Remove exactly one outer Markdown json code block from this exact source artifact and change nothing inside it.",
+  "forbidden": ["semantic changes", "key or value changes", "enum substitutions", "internal JSON rewriting"],
+  "admission": "The inner payload must parse strictly as JSON, use schema life-patterns-shadow-triage-adjudication-v14, contain V1 through V10 exactly once, and use only review_ready or clarification_needed for decision."
+}
