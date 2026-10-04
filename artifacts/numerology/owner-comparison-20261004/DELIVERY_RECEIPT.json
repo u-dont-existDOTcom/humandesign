@@ -1,0 +1,25 @@
+{
+  "source_revision": "52aae11da1b49042ba4f2480cabd893b1406aff4",
+  "archive_path": "/mnt/hdd/home/joel/T\u00e9l\u00e9chargements/Numerology-Owner-Comparison-20261004-52aae11d.zip",
+  "archive_sha256": "1fd81b032199dec11d1d082fc4326e10d040b4ceae1fa0a722f6af13296961a3",
+  "archive_bytes": 312710,
+  "reader_path": "/mnt/hdd/home/joel/T\u00e9l\u00e9chargements/Numerology-Owner-Comparison-20261004-52aae11d.html",
+  "reader_sha256": "01dd66390d078a53fc5da5d7d5b3a968c7d986de92cf056ce0ea510184fd551b",
+  "payload_file_count": 67,
+  "crc_and_payload_hashes": "PASS",
+  "portable_tests": [
+    {
+      "pattern": "test_numerology_owner*.py",
+      "status": "PASS",
+      "output": "............................\n----------------------------------------------------------------------\nRan 28 tests in 0.017s\n\nOK"
+    },
+    {
+      "pattern": "test_numerology_book_*.py",
+      "status": "PASS",
+      "output": "............................................................\n----------------------------------------------------------------------\nRan 60 tests in 0.041s\n\nOK"
+    }
+  ],
+  "html_static_structure": "PASS",
+  "raw_books_included": false,
+  "unvalidated_full_system_winner_claimed": false
+}

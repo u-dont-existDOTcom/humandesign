@@ -1,5 +1,5 @@
 {
-  "status": "ACTIVE",
+  "status": "CLOSEOUT_CHECKED",
   "task_id": "NUMEROLOGY-OWNER-COMPARISON-20261004",
   "activation": "Owner per-turn GitHub bootstrap; live UDA AGENTS.md,LESSON-INDEX.md and repoAGENTS.md retrieved on resumed turn.",
   "uda_agents_blob": "0a88eb99b513c803277509d31d80a703c2409ef8",
@@ -35,5 +35,12 @@
       "evidence": "Taskcheckpoint and closure receipt.",
       "enforcement": "semantic"
     }
-  ]
+  ],
+  "stop_admission": {
+    "owner_task": "Executed comparison of existing reported history; a winning full-system ranking is not established.",
+    "remaining_scientific_uncertainty": "No observation-complete negative-year dataset or fully bound full-author interpretation engines; cannot create these facts by further curve-fitting.",
+    "next_action": "Verify publication and supply the actual artifact links in this turn.",
+    "owner_question_required": false,
+    "no_background_work_claimed": true
+  }
 }

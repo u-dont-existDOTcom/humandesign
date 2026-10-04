@@ -1,0 +1,36 @@
+{
+  "task_id": "NUMEROLOGY-OWNER-COMPARISON-20261004",
+  "status": "PASS",
+  "head": "52aae11da1b49042ba4f2480cabd893b1406aff4",
+  "findings": [],
+  "tests": [
+    {
+      "pattern": "test_numerology_owner*.py",
+      "status": "PASS",
+      "output": "............................\n----------------------------------------------------------------------\nRan 28 tests in 0.017s\n\nOK"
+    },
+    {
+      "pattern": "test_numerology_book_*.py",
+      "status": "PASS",
+      "output": "............................................................\n----------------------------------------------------------------------\nRan 60 tests in 0.042s\n\nOK"
+    }
+  ],
+  "files_sha256": {
+    "experiments/numerology/owner_comparison_20261004/manifest.json": "f81b71b917474212e5eae12cf315380bcfac583fbef9be5de1e980cb1a63c792",
+    "experiments/numerology/owner_comparison_20261004/OWNER_COMPARISON_REPORT.md": "37fb10d01c5f84090ad77a18ed4ea4352dabc6013daa75b43aef646e31b9c5b0",
+    "experiments/numerology/owner_comparison_20261004/LAYER_COVERAGE_AND_SOURCE_NOTES.md": "da7055942594faf7aebd6ab9d6f1b8d7ad42ee6f5e2b2f1a934f4cfd1142149b",
+    "experiments/numerology/owner_comparison_20261004/core_charts.json": "547e4f9e86ab5eb42828810609375c3de3e9e891dadb03a7c80658feb92b40ff",
+    "experiments/numerology/owner_comparison_20261004/event_feature_comparison.json": "3659f397b6c80d610a7e5ab4208a3bfa9579fff719df20f4457f975c1c1f73e5",
+    "experiments/numerology/owner_comparison_20261004/coarse_adapter_combinations.json": "4dfce149c989b9ac192fd0906ac5eedf557e9129f46b7b195731997d6f4d0c68",
+    "experiments/numerology/owner_comparison_20261004/posthoc_context_checks.json": "fa384a623ccaea1fbf4f15f223044b695d4345af0fc8daa0067a79bf457d6681",
+    "experiments/numerology/owner_comparison_20261004/transparency_controls.json": "220d54c132eb3eab3fa5761d8496f8c29ae5b8cc2a4fb62dae78240b5a5325e7",
+    "experiments/numerology/owner_comparison_20261004/ancillary_chart_context.json": "d52cdc81ac621799a93034100ecd4e9a523274f085ea6136f5dd7b765802b8ba",
+    "experiments/numerology/owner_comparison_20261004/REVIEW.md": "8683b01d6ecc8dd8161c91a56408256b971f1b0e4239f17281e2bd0ac7e75f8d",
+    "experiments/numerology/owner_comparison_20261004/review_receipt.json": "5fb0050efd4b7f79f6a80754536119d8b295d6eea111c0c3ade25768f4bb659c"
+  },
+  "accepted_scope": "Reproducible retrospective arithmetic, declared limited combination tests, reconciled contextual report and explicit evidence limits.",
+  "full_five_author_forecast_comparison_complete": false,
+  "predictive_validation": false,
+  "unknown_years_are_negatives": false,
+  "external_actions": "No merge/deployment/trial authorized or claimed."
+}
