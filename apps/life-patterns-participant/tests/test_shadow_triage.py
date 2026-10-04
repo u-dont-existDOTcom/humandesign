@@ -20,6 +20,8 @@ from participant.shadow_triage import (
     GapCandidate,
     GapCandidateAdmission,
     GapMatchAudit,
+    GapMatchAuditResponse,
+    GapMatchedRouteJudgment,
     GapMatchedRouteReview,
     GapTriage,
     make_gap_match_audit_context,
@@ -213,20 +215,18 @@ class OmissionRecoveryFake:
                 {"duration_seconds": 8.0, "prompt_tokens": 10000, "completion_tokens": 80},
             )
 
-        assert schema is GapMatchAudit
+        assert schema is GapMatchAuditResponse
         matched = []
         for pair in payload["pairs"]:
             route_id = pair["route_id"]
             matched.append(
-                GapMatchedRouteReview(
-                    route_id=route_id,
-                    source_turn_ids=list(pair["source_turn_ids"]),
+                GapMatchedRouteJudgment(
                     status="preliminary_gap" if route_id == "M09" else "answered",
                     independent_for_batch=True,
                 )
             )
         return (
-            GapMatchAudit(reviews=matched),
+            GapMatchAuditResponse(reviews=matched),
             {"duration_seconds": 12.0, "prompt_tokens": 11000, "completion_tokens": 220},
         )
 

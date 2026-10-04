@@ -201,6 +201,17 @@ class GapCandidateAdmission(StrictModel):
     failure_codes: list[GapFailureCode] = Field(default_factory=list)
 
 
+class GapMatchedRouteJudgment(StrictModel):
+    status: Literal[
+        "answered", "preliminary_gap", "contradictory_gap", "preserve_unknown"
+    ]
+    independent_for_batch: bool
+
+
+class GapMatchAuditResponse(StrictModel):
+    reviews: list[GapMatchedRouteJudgment] = Field(default_factory=list, max_length=80)
+
+
 class GapMatchedRouteReview(StrictModel):
     route_id: str
     source_turn_ids: list[str] = Field(min_length=1, max_length=4)
@@ -407,7 +418,10 @@ For a route asking what matters, "it depends on whether X" names X and is answer
 branch outcomes, factor ranking, or the eventual choice unless the route asks for them. A richer
 answer being possible is not a gap. Later correction turns supersede the answer they correct.
 Mark independent_for_batch false only when a recovered clarification depends on another current
-batch route or another recovered route. Review every supplied pair exactly once. Return JSON only.
+batch route or another recovered route. Return exactly one review for every supplied pair, in the
+same order as the pairs. Each review returns only status and independent_for_batch. Do not echo,
+copy, rewrite, or return route IDs, source turn IDs, or context turn IDs; those bindings remain
+deterministic caller-owned data. Return JSON only.
 """
 
 
@@ -724,6 +738,27 @@ def make_gap_match_audit_context(
     }
 
 
+def bind_gap_match_audit(
+    response: GapMatchAuditResponse, context: dict
+) -> GapMatchAudit:
+    pairs = list(context.get("pairs", []))
+    if len(response.reviews) != len(pairs):
+        raise ValueError("Gap match audit must review every supplied pair exactly once.")
+    return GapMatchAudit(
+        reviews=[
+            GapMatchedRouteReview(
+                route_id=str(pair["route_id"]),
+                source_turn_ids=[
+                    str(turn_id) for turn_id in pair["source_turn_ids"]
+                ],
+                status=judgment.status,
+                independent_for_batch=judgment.independent_for_batch,
+            )
+            for pair, judgment in zip(pairs, response.reviews, strict=True)
+        ]
+    )
+
+
 def validate_gap_match_audit(audit: GapMatchAudit, context: dict) -> None:
     expected = {
         str(pair["route_id"]): [str(turn_id) for turn_id in pair["source_turn_ids"]]
@@ -825,11 +860,12 @@ def run_shadow_triage(
         audit_value, audit_call = provider.call(
             GAP_MATCH_AUDIT_PROMPT,
             match_audit_context,
-            GapMatchAudit,
+            GapMatchAuditResponse,
             model,
             effort,
         )
-        match_audit = GapMatchAudit.model_validate(audit_value)
+        audit_response = GapMatchAuditResponse.model_validate(audit_value)
+        match_audit = bind_gap_match_audit(audit_response, match_audit_context)
         calls.append({"shadow_stage": "GapMatchAudit", **dict(audit_call)})
     else:
         match_audit = GapMatchAudit(reviews=[])
