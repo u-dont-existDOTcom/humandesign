@@ -98,6 +98,7 @@ class ApprovedFake:
                         GapCandidate(
                             candidate_id="C1",
                             rank=1,
+                            source_anchor_turn_ids=[payload["turns"][0]["turn_id"]],
                             question=Question(
                                 route_id=route["id"],
                                 route_type="canonical",
@@ -212,6 +213,7 @@ class TwoCandidateFake(ApprovedFake):
                     GapCandidate(
                         candidate_id=f"C{index}",
                         rank=index,
+                        source_anchor_turn_ids=[payload["turns"][0]["turn_id"]],
                         question=Question(
                             route_id=route["id"],
                             route_type="canonical",
@@ -289,6 +291,9 @@ def test_shadow_pipeline_uses_separate_triage_and_admission_without_mutating_sta
     assert "decision" not in fake.calls[1][1]["proposed_candidates"][0]
     assert "defect_flags" not in fake.calls[1][1]["proposed_candidates"][0]
     assert "material_change" not in fake.calls[1][1]["proposed_candidates"][0]
+    assert fake.calls[1][1]["proposed_candidates"][0]["source_anchor_turn_ids"] == [
+        fake.calls[0][1]["turns"][0]["turn_id"]
+    ]
     summary = privacy_safe_case_summary("case-0001", state, result)
     encoded = json.dumps(summary)
     assert summary["shadow_outcome"] == "clarification_recommended"
@@ -422,6 +427,39 @@ def test_complete_81_turn_source_reaches_both_calls_and_excludes_nonbehavioral_s
     assert all(turn["question_text"] != "Collection mode?" for turn in fake.calls[0][1]["turns"])
 
 
+def test_triage_rejects_unknown_source_anchor_turn():
+    instrument = authority()
+    state = imported_state(instrument)
+    context = make_gap_triage_context(state, instrument)
+    route = next(
+        row
+        for row in context["candidate_routes"]
+        if row["candidate_mode"] == "unasked" and row["self_contained"]
+    )
+    triage = GapTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapCandidate(
+                candidate_id="C1",
+                rank=1,
+                source_anchor_turn_ids=["missing-source-anchor"],
+                question=Question(
+                    route_id=route["id"],
+                    route_type="canonical",
+                    text=route["question"],
+                    antecedent_turn_ids=[],
+                    equivalent_context=False,
+                    missing_distinction="Unresolved.",
+                    why_useful="Material.",
+                ),
+                depends_on_candidate_ids=[],
+            )
+        ],
+    )
+    with pytest.raises(ValueError, match="unknown source anchor turn"):
+        validate_gap_triage(triage, state, instrument, context)
+
+
 def test_triage_rejects_noncontiguous_or_forward_candidate_dependencies():
     instrument = authority()
     state = imported_state(instrument)
@@ -437,6 +475,7 @@ def test_triage_rejects_noncontiguous_or_forward_candidate_dependencies():
             GapCandidate(
                 candidate_id="C1",
                 rank=1,
+                source_anchor_turn_ids=[context["turns"][0]["turn_id"]],
                 question=Question(
                     route_id=route["id"],
                     route_type="canonical",
@@ -469,6 +508,7 @@ def test_canonical_self_contained_gap_cannot_invent_antecedent():
             GapCandidate(
                 candidate_id="C1",
                 rank=1,
+                source_anchor_turn_ids=[context["turns"][0]["turn_id"]],
                 question=Question(
                     route_id=route["id"],
                     route_type="canonical",
