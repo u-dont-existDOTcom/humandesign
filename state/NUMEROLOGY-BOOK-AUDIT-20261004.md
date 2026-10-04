@@ -1,32 +1,28 @@
-# Four-book numerology audit — recovery checkpoint
+# Four-book numerology audit — completed outcome
 
 Task ID: NUMEROLOGY-BOOK-AUDIT-20261004
 Branch: research/six-rule-life-timing-20261001
-Status: SOURCE_AUDIT_AND_DESIGN_FINISHED; VERIFIED_PUBLICATION_AND_DELIVERY_IN_PROGRESS.
-Preflight: `python3 scripts/numerology_book_audit_verify.py --preflight`
-Pre-commit: `python3 scripts/numerology_book_audit_verify.py --working-tree`
+Status: COMPLETE — source audit, explicit errata, separate systems, comparison, proposed empirical design, bounded independent review, branch publication and usable artifact delivery.
+Final source revision:151f48c9ce614c92f6d7d8081a4169a405f183f6.
 Acceptance: `python3 scripts/numerology_book_audit_verify.py`
+Delivery receipt: `artifacts/numerology/20261004/DELIVERY_RECEIPT.json`.
 
-## Current evidence, not stale run status
+## Delivered outcome
 
-The four-book source inventory and comparison are frozen at af2cbf287635a682d1cdb36597d5a9c47784743c. All thirteen original payloads and both V1 baseline files remain byte-identical. Do not repeat the audit or read an earlier progress file as evidence of unfinished source reading.
+The complete derived ZIP, integrated offline HTML reader and short HTML summary were placed in the OS-designated Downloads directory. Exact copies, SHA-256 hashes and the source-commit acceptance receipt are saved under artifacts/numerology/20261004. The packet contains43files. ZIP CRC and all payload hashes pass; the extracted packet passes all60tests; both HTML readers have no executable/external asset tags and their local navigation targets resolve.
 
-The independent Claude review COMPLETED successfully. Runtime model claude-opus-5-5; requested effort max, effective backend effort unknown; neutral safe-mode subscription route, no task tools. Its original verdict was FINDS_ERROR. All five material findings were accepted and repaired by the producer using source pages and deterministic counterexamples. The review did not independently re-audit every primary page, and no second independent approval of the repairs is claimed. CLOSEOUT_REVIEW.md, text-only raw response, machine receipt and claim ledger preserve this boundary.
+The original four-source freeze remains af2cbf287635a682d1cdb36597d5a9c47784743c. All thirteen frozen payloads and both immutable V1 baseline files remain unchanged. The effective entry point is reference/research/numerology_method_registry_v2_1_20261004.json, which binds explicit audit-annotation errata without adding author rules or rewriting predictions. V2.1 withdraws the false Jordan final-Pinnacle conflict:9,3,3,9 are Pinnacles;11/2 is adjacent Reality.
 
-The mandatory V2.1 audit-annotation erratum withdraws the incorrect Jordan Doyle final-Pinnacle conflict:9,3,3,9 are the Pinnacles;11/2 is adjacent Reality. No author formula or old participant prediction changed. The effective entry point is reference/research/numerology_method_registry_v2_1_20261004.json; its erratum precedes the original reconciliation for the enumerated items only.
+The independent Claude check completed successfully on model claude-opus-5-5, requested max effort; effective effort unknown. Its original verdict FINDS_ERROR is preserved. Five material findings were repaired and verified by the producing worker using primary source pages and deterministic counterexamples. No second independent approval or full-primary-corpus independent certification is claimed. CLOSEOUT_REVIEW.md, text-only response, machine receipt and claim ledger preserve exact scope and dispositions. No reviewer is still running.
 
-The post-freeze design now uses equal FP/FN cost, identical observation-complete primary cells, complete binary primary coverage, both calendar and birthday/age timing anchors, and symmetric Campbell/Javane-Bunker horoscope scope. The original full Decoz resource requirement remains open. These are operational study prerequisites, not missing chapters in the four-book audit.
+The proposed empirical design now requires equal FP/FN costs, common observation-complete cells, complete binary primary coverage, separate robustness on both timing anchors, and symmetric source-faithful external-horoscope adapters for the two relevant full-author arms. All60 task-local tests pass:23 original arithmetic,19 audit-control and18 errata/design tests. These are source/engineering checks, not human predictive validation.
 
-All60 task-local tests and working-tree artifact acceptance PASS. The final report, policy, effective registry, explicit source corrections, proposed study design and review receipts are written. Remote branch and local pre-edit head matched0c5c1df0e23f195d054cbad6614809992362610e; no competing branch writer was observed.
+## Remaining limitations are not unfinished audit deliverables
 
-## Finish the authorized delivery
+Campbell's supplied source is text-only OCR, not a facsimile. Genuine unresolved author instructions remain explicit. The unchanged full Decoz arm needs exact interpretation resources; future full-author operational readers and relevant horoscope adapters need separate implementation/input choices and validation. No trial has launched; no owner-history refit, participant prediction, survey revision, recruitment, merge or deployment was performed or authorized here.
 
-Commit the current verified final source/design/closeout files, push this branch, and run committed-artifact acceptance at that exact head. Build the complete derived ZIP and static HTML reader/summary with the exact-head acceptance receipt using scripts/numerology_book_audit_bundle.py. Deliver to the OS-designated Downloads directory, verify ZIP CRC/payload hashes, and save the exact deliverable bytes plus a receipt in this repository. Update task completion state only after actual delivery and remote readback. No new model review is running or needed for routine packaging.
+2008 remains moderate/not top-major with approximate-memory chronology;2018major;2029prospective and non-confirmatory for this cross-person comparison. UNKNOWN periods are not negatives. All author systems remain separate; no averaging, imported rules or outcome-selected rescue.
 
-## Scope and open limitations
+Raw books/full transcripts, private reviewer reasoning and credentials are not included. The artifact-storage/closeout commit follows the identified source revision: this is intentional provenance, not a claim that the ZIP contains its own later receipt commit. GitHub readback verifies publication at the final delivery boundary.
 
-No owner-history refit, participant predictions, recruitment, trial, survey change, merge or deployment.2008 moderate/not top-major with approximate chronology;2018 major;2029 prospective and non-confirmatory for the cross-person study. UNKNOWN periods are not negatives. CHEIRO_CHALDEAN_V1 and DECOZ_CURRENT_V1 remain unchanged. Do not average or silently combine author systems.
-
-Campbell supplied text only, not facsimile images. Genuine source ambiguities remain; exact full Decoz interpretation resources and operational reading/horoscope adapters are separate prerequisites for a future test. Source arithmetic, hash checks and this bounded independent review do not establish human predictive validity.
-
-Raw books, full source transcripts, private reviewer reasoning/logs and credentials are excluded from publication. Other worktrees and global release/participant-session queues remain suspended. Parent outcome remains OPEN only for the concrete publication/delivery actions above; no owner clarification is required.
+Stop admission: parent audit/design outcome SATISFIED. No mandatory owner action remains. A new empirical implementation, individual reanalysis or added source requires its own explicit task scope; do not silently restart old interview/global release queues on this completed branch.

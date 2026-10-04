@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "task_id": "NUMEROLOGY-BOOK-AUDIT-20261004",
+  "source_revision": "151f48c9ce614c92f6d7d8081a4169a405f183f6",
+  "status": "DELIVERED_AND_PORTABLE_TESTED",
+  "native_downloads_delivery": true,
+  "download_directory_resolver": "xdg-user-dir DOWNLOAD",
+  "delivered_basenames": [
+    "Numerology-Four-Book-Audit-V2-20261004-151f48c9.zip",
+    "Numerology-Audit-Reader-20261004-151f48c9.html",
+    "Numerology-Audit-Summary-20261004-151f48c9.html"
+  ],
+  "repository_artifacts_sha256": {
+    "artifacts/numerology/20261004/Numerology-Four-Book-Audit-V2-20261004-151f48c9.zip": "fad116b6e3f14517315d186f7e0c087d1ccbebd1e552643abc745adb080fe574",
+    "artifacts/numerology/20261004/Numerology-Audit-Reader-20261004-151f48c9.html": "7eaad3b6fa9f5d9623310f7b7dc5dec02a08ddab203c2496939aa1e54d6d299c",
+    "artifacts/numerology/20261004/Numerology-Audit-Summary-20261004-151f48c9.html": "2768dc0ca939fa8ed0c2d307cdab5d173614d68b85bbc6c97cbe212def3b37c3"
+  },
+  "zip_crc_and_payload_hashes": "PASS",
+  "payload_file_count": 43,
+  "portable_tests": {
+    "status": "PASS",
+    "method_count": 60,
+    "output": "............................................................\n----------------------------------------------------------------------\nRan 60 tests in 0.043s\n\nOK"
+  },
+  "static_reader_checks": "PASS_NO_EXECUTABLE_OR_EXTERNAL_ASSET_TAGS_LOCAL_ANCHORS_RESOLVE",
+  "raw_books_included": false,
+  "source_acceptance": "COMMITTED_SOURCE_ACCEPTANCE.json",
+  "publication_boundary": "same authorized task branch; no merge, deployment or human trial",
+  "metadata_commit_note": "This receipt and the exact generated artifact bytes are committed after the source revision; the ZIP intentionally identifies its exact source revision, not its later storage commit."
+}

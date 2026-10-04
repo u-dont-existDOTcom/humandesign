@@ -1,0 +1,17 @@
+{
+  "task": "NUMEROLOGY-BOOK-AUDIT-20261004",
+  "mode": "committed_artifact_acceptance",
+  "status": "PASS",
+  "head": "151f48c9ce614c92f6d7d8081a4169a405f183f6",
+  "source_freeze_commit": "af2cbf287635a682d1cdb36597d5a9c47784743c",
+  "findings": [],
+  "tests": {
+    "status": "PASS",
+    "output": "............................................................\n----------------------------------------------------------------------\nRan 60 tests in 0.044s\n\nOK"
+  },
+  "mechanical_scope": "artifact identity, declared coverage, immutable baselines, protocol controls and source arithmetic",
+  "semantic_completeness_certified_by_this_script": false,
+  "predictive_validity_tested": false,
+  "study_launch_ready": false,
+  "remote_publication_verified_by_this_script": false
+}

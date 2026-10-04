@@ -1,6 +1,6 @@
 {
   "task": "NUMEROLOGY-BOOK-AUDIT-20261004",
-  "overall_status": "SOURCE_AUDIT_DESIGN_AND_RECONCILIATION_COMPLETE_DELIVERY_PENDING",
+  "overall_status": "COMPLETE",
   "verified_recovery_head": "af2cbf287635a682d1cdb36597d5a9c47784743c",
   "source_snapshot": "91026b68b99870ac0e2980134d13b8844657bafd",
   "freeze_manifest": "reference/research/numerology_v2_20261004/freeze_manifest.json",
@@ -59,9 +59,7 @@
     "full_primary_corpus_independently_certified": false,
     "receipt": "reference/research/numerology_v2_20261004/closeout_review_receipt.json"
   },
-  "remaining": [
-    "exact-head branch publication/readback",
-    "complete derived packet delivery and archived receipt"
-  ],
-  "effective_registry": "reference/research/numerology_method_registry_v2_1_20261004.json"
+  "remaining": [],
+  "effective_registry": "reference/research/numerology_method_registry_v2_1_20261004.json",
+  "delivery_receipt": "artifacts/numerology/20261004/DELIVERY_RECEIPT.json"
 }
