@@ -20,6 +20,7 @@ BASE = "reference/research/numerology_v2_20261004/"
 SELECTION = [
     "reference/research/NUMEROLOGY_BOOK_AUDIT_V2_20261004.md",
     "reference/research/numerology_method_registry_v2_20261004.json",
+    "reference/research/numerology_method_registry_v2_1_20261004.json",
     "reference/research/NUMEROLOGY_METHODOLOGY_AUDIT_V1_20261003.md",
     "reference/research/numerology_method_registry_v1_20261003.json",
     BASE,
@@ -30,6 +31,8 @@ SELECTION = [
     "notes/NUMEROLOGY_NAME_LAYER_CORRECTION_20261003.md",
     "experiments/astrohd/chaldean_life_event_retrodiagnostic_20261003.json",
     "scripts/numerology_book_reference.py",
+    "scripts/numerology_audit_protocol_checks.py",
+    "tests/test_numerology_book_errata.py",
     "scripts/numerology_book_audit_verify.py",
     "scripts/numerology_book_audit_bundle.py",
     "tests/test_numerology_book_reference.py",
@@ -73,7 +76,7 @@ Branch: research/six-rule-life-timing-20261001
 
 Open **NUMEROLOGY_AUDIT_READER.html** for the integrated offline reader, or **SUMMARY.html** for the short conclusions. No internet, login, scripts, fonts or raw book downloads are needed to read these derived reports.
 
-The canonical main audit is reference/research/NUMEROLOGY_BOOK_AUDIT_V2_20261004.md. The registry is reference/research/numerology_method_registry_v2_20261004.json. Full per-author specifications, the mandatory reconciliation, ambiguities, exact source freeze, arithmetic fixtures, independent closeout review and post-freeze empirical design are under reference/research/numerology_v2_20261004/.
+The canonical main audit is reference/research/NUMEROLOGY_BOOK_AUDIT_V2_20261004.md. The effective registry is reference/research/numerology_method_registry_v2_1_20261004.json; the original V2 registry and source freeze remain intact as its baseline. Full per-author specifications, the mandatory reconciliation, ambiguities, exact source freeze, arithmetic fixtures, independent closeout review and post-freeze empirical design are under reference/research/numerology_v2_20261004/.
 
 The inherited V1 audit and registry are included because Cheiro V2 and the comparison depend on them. The policy and bounded historical annotations are included. Raw copyrighted books, complete transcripts, credentials, private reviewer logs and new participant data are not included. Original book hashes and page locators identify the supplied sources; this packet is an audit, not a substitute facsimile.
 
@@ -85,7 +88,7 @@ python3 -m unittest discover -s tests -p 'test_numerology_book_*.py' -v
 
 Run that command in the extracted packet directory. The full audit acceptance command additionally needs the actual Git checkout, task lock and history; an extracted ZIP is not a Git repository. Its exact-head acceptance result is included under verification/ when supplied at build time.
 
-The source freeze does not make unresolved author instructions single-valued. SOURCE_RECONCILIATION.md controls its enumerated corrections. No author mixing, outcome-selected branch, retrospective rescue, empirical superiority or causal name-change claim is authorized. The proposed study has not launched; its separate operational prerequisites are listed explicitly.
+The source freeze does not make unresolved author instructions single-valued. AUDIT_ERRATA_V2_1_20261004.md controls its enumerated corrections, then SOURCE_RECONCILIATION.md. The V2.1 registry is the effective entry point; original V2 bytes are historical and immutable. No author mixing, outcome-selected branch, retrospective rescue, empirical superiority or causal name-change claim is authorized. The proposed study has not launched; its separate operational prerequisites are listed explicitly.
 
 PACKET_MANIFEST.json gives SHA-256 hashes of the payload files. It does not include itself. The separately recorded ZIP hash verifies the outer delivery object.
 """
@@ -99,7 +102,8 @@ PACKET_MANIFEST.json gives SHA-256 hashes of the payload files. It does not incl
     sections = [
         ("summary", "Conclusions and remaining limits", BASE + "AUDIT_COMPLETION_REPORT.md"),
         ("audit", "Complete audit and cross-system matrix", SELECTION[0]),
-        ("reconciliation", "Mandatory source reconciliation", BASE + "SOURCE_RECONCILIATION.md"),
+        ("errata", "Mandatory V2.1 audit errata", BASE + "AUDIT_ERRATA_V2_1_20261004.md"),
+        ("reconciliation", "Original source reconciliation", BASE + "SOURCE_RECONCILIATION.md"),
         ("cheiro", "Cheiro — V2 delta", BASE + "CHEIRO_CHALDEAN_V2.md"),
         ("campbell", "Campbell — Your Days Are Numbered", BASE + "CAMPBELL_YOUR_DAYS_V1.md"),
         ("jordan", "Jordan — The Romance in Your Name", BASE + "JORDAN_ROMANCE_NAME_V1.md"),
@@ -116,6 +120,9 @@ PACKET_MANIFEST.json gives SHA-256 hashes of the payload files. It does not incl
         return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Numerology — Four-book methodology audit</title><style>{style}</style></head><body><main><h1>Four-book numerology methodology audit</h1><p>Separated author systems • source-first freeze • no owner-history refit</p><small>Source revision {revision}. Derived research packet, 4 October 2026.</small><nav><ol>{toc}</ol></nav>{body}</main></body></html>'.encode()
     data["NUMEROLOGY_AUDIT_READER.html"] = document(sections)
     data["SUMMARY.html"] = document(sections[:1])
+    for name in ("NUMEROLOGY_AUDIT_READER.html", "SUMMARY.html"):
+        if b"<script" in data[name].lower():
+            raise RuntimeError("Unexpected executable script in static reader")
     payload_manifest = {"schema_version":1,"source_revision":revision,"source_freeze_commit":"af2cbf287635a682d1cdb36597d5a9c47784743c","files":{name:hashlib.sha256(content).hexdigest() for name,content in sorted(data.items())},"raw_books_included":False,"html_has_scripts_or_external_assets":False}
     data["PACKET_MANIFEST.json"] = (json.dumps(payload_manifest,indent=2)+"\n").encode()
     output = args.output_dir.expanduser().resolve()

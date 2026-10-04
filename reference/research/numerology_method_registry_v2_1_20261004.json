@@ -1,0 +1,30 @@
+{
+  "version": "numerology_method_registry_v2_1_20261004",
+  "status": "FROZEN_SOURCE_AUDIT_WITH_EXPLICIT_ANNOTATION_ERRATA",
+  "errata_id": "NUMEROLOGY_AUDIT_ERRATA_V2_1_20261004",
+  "baseline_registry": "reference/research/numerology_method_registry_v2_20261004.json",
+  "baseline_freeze_manifest": "reference/research/numerology_v2_20261004/freeze_manifest.json",
+  "baseline_commit": "af2cbf287635a682d1cdb36597d5a9c47784743c",
+  "systems": [
+    "CHEIRO_CHALDEAN_V1",
+    "CHEIRO_CHALDEAN_V2",
+    "DECOZ_CURRENT_V1",
+    "CAMPBELL_YOUR_DAYS_V1",
+    "JORDAN_ROMANCE_NAME_V1",
+    "JAVANE_BUNKER_DIVINE_TRIANGLE_V1"
+  ],
+  "precedence": [
+    "reference/research/numerology_v2_20261004/AUDIT_ERRATA_V2_1_20261004.md",
+    "reference/research/numerology_v2_20261004/SOURCE_RECONCILIATION.md",
+    "per-author frozen specifications"
+  ],
+  "method_rule_changes": [],
+  "new_participant_predictions": false,
+  "owner_history_fit": false,
+  "mandatory_files_sha256": {
+    "reference/research/numerology_v2_20261004/AUDIT_ERRATA_V2_1_20261004.md": "723a1f3da8b8ac16c20ecf037902664069d6f93695a81f52cb060c25e8718963",
+    "reference/research/numerology_v2_20261004/source_audit_overrides_v2_1.json": "697d5ac1d4625fc346e37c188bcc6b9d20dfef25bc22172bcac71564e6586c3a",
+    "scripts/numerology_audit_protocol_checks.py": "8a146867bb2b40f9653d98ede1f8ca0a91a1fd0cb993b8ec632703cd1f8b00cc",
+    "tests/test_numerology_book_errata.py": "d71e0cb916916001f143c07a50e11e29206333fbda066b709a9a1e6beff72343"
+  }
+}

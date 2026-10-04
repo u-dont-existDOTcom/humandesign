@@ -7,7 +7,7 @@ Updated: 2026-10-04. Required for future numerology work.
 - Historical, immutable V1: `reference/research/NUMEROLOGY_METHODOLOGY_AUDIT_V1_20261003.md` and `reference/research/numerology_method_registry_v1_20261003.json`.
 - Four-book audit: `reference/research/NUMEROLOGY_BOOK_AUDIT_V2_20261004.md` and `reference/research/numerology_method_registry_v2_20261004.json`.
 - Exact source freeze: `reference/research/numerology_v2_20261004/freeze_manifest.json`.
-- Mandatory corrections and explicit branches: `SOURCE_RECONCILIATION.md` and `ambiguities.json` in that directory. Reconciliation controls its enumerated statements; then the per-author specification controls; compact indexes are not substitute algorithms.
+- Effective entry point: `reference/research/numerology_method_registry_v2_1_20261004.json`. Its mandatory `AUDIT_ERRATA_V2_1_20261004.md` and machine overrides control their enumerated audit corrections; then original `SOURCE_RECONCILIATION.md` controls; then the per-author specification and remaining `ambiguities.json` entries. In particular, J-A07 is a withdrawn audit error, not a source branch. Compact indexes are not substitute algorithms.
 - Post-freeze empirical design: `EMPIRICAL_COMPARISON_DESIGN.md` and `empirical_admission_contract.json` in that directory.
 
 ## Separate frozen systems
@@ -53,7 +53,7 @@ Use complete relevant frozen layers on each side. Full Cheiro timing versus Deco
 
 The full Decoz forecasting arm requires its exact 81-Duality interpretation resource or a verified official implementation, as well as all other relevant frozen layers. The four supplied books do not fill this Decoz-specific resource gap. A subset arm may be disclosed as a subset, but cannot satisfy the full-system comparison contract.
 
-Retain each author's actual astrology/Tarot integration. Do not add modern natal-chart calculations to Cheiro's fixed period lookup or Javane/Bunker's correspondences. Campbell's p246 qualitative hybrid requires a separately specified operational adapter to test her overall stars-plus-numbers claim. A numerology-only Campbell arm must disclose that scope and is not a complete test of that overall claim. Undefined fusion weights are not supplied by choosing the later best fit.
+Retain each author's actual astrology/Tarot integration. Do not add modern natal-chart calculations to Cheiro's fixed period lookup or Javane/Bunker's correspondences. Campbell's p246 qualitative hybrid and Javane/Bunker's source-suggested independent-horoscope comparison require symmetric, explicitly specified operational adapters for the overall full-author comparison. Birth-time/place and their quality must be available where the adapter needs them. A numerology-only subset is not a full-author arm in that study; a separately scoped subset experiment cannot later rescue its misses by adding the omitted overlay. Undefined fusion weights are not supplied by choosing the later best fit.
 
 ## Name rules
 
@@ -65,7 +65,7 @@ Campbell, Jordan and Javane/Bunker retain their respective birth-name cores but 
 
 Dates carry one of: documentary/contemporaneous; strongly anchored memory; approximate memory; uncertain. Impact is coded separately and without seeing numerical predictions. Later documentary corrections do not retroactively make an original memory-based forecast precise.
 
-Unknown/unremembered periods remain **UNKNOWN**, never negatives. Confirmed non-event periods need an independent observation protocol. False alarms and misses count as heavily as hits; report coverage, abstentions, duplicate/overlapping windows and full error counts. Unbounded or mutually opposite claims cannot earn automatic credit. The post-freeze design supplies the precise proposed scoring definitions.
+Unknown/unremembered periods remain **UNKNOWN**, never negatives. Confirmed non-event periods need an independent observation protocol. Primary scoring uses independently observation-complete windows with identical cells across arms, equal FP/FN costs and utility -(FP+FN), not the withdrawn TP-FP-FN reward. Any abstention prevents admission to the full-coverage primary score; selective comparisons use identical subsets with limited claims. Report duplicate/overlapping windows and full error counts. Timing conclusions must meet the registered criteria on both calendar and birthday/age grids, reported separately. Unbounded or mutually opposite claims cannot earn automatic credit. The post-freeze design supplies the precise proposed scoring definitions.
 
 Owner history is DEVELOPMENT only. 2008 is **moderately consequential, not top-major**, with approximate-memory chronology; 2018 remains major and 2029 prospective. Do not increase impact because a year falls in a recurrence sequence. Archived background-year tallies are not specificity estimates.
 

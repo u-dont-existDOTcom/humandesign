@@ -1,6 +1,6 @@
 {
   "task": "NUMEROLOGY-BOOK-AUDIT-20261004",
-  "overall_status": "SOURCE_FREEZE_COMPLETE_POST_FREEZE_CLOSEOUT_IN_PROGRESS",
+  "overall_status": "SOURCE_AUDIT_DESIGN_AND_RECONCILIATION_COMPLETE_DELIVERY_PENDING",
   "verified_recovery_head": "af2cbf287635a682d1cdb36597d5a9c47784743c",
   "source_snapshot": "91026b68b99870ac0e2980134d13b8844657bafd",
   "freeze_manifest": "reference/research/numerology_v2_20261004/freeze_manifest.json",
@@ -46,20 +46,22 @@
     }
   },
   "source_reference_tests": {
-    "methods": 23,
-    "status": "PASS",
-    "reexecuted_after_recovery": true
+    "original_source_methods": 23,
+    "total_task_methods": 60,
+    "status": "PASS"
   },
   "review": {
-    "prior_cross_family": "NOT_RUN_PLATFORM_BLOCKED",
-    "current_authentication_preflight": "AVAILABLE",
-    "reviewer_launched": false
+    "status": "COMPLETED_WITH_PRODUCER_RECONCILIATION",
+    "original_verdict": "FINDS_ERROR",
+    "effective_model": "claude-opus-5-5",
+    "requested_effort": "max",
+    "effective_effort": null,
+    "full_primary_corpus_independently_certified": false,
+    "receipt": "reference/research/numerology_v2_20261004/closeout_review_receipt.json"
   },
   "remaining": [
-    "post-freeze empirical comparison design",
-    "policy and bounded historical annotations",
-    "artifact acceptance checker and regression tests",
-    "independent claim check if available",
-    "verified GitHub publication and complete owner delivery"
-  ]
+    "exact-head branch publication/readback",
+    "complete derived packet delivery and archived receipt"
+  ],
+  "effective_registry": "reference/research/numerology_method_registry_v2_1_20261004.json"
 }

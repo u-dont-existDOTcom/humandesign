@@ -1,78 +1,109 @@
 {
   "schema_version": 1,
-  "status": "CANDIDATE_FOR_INDEPENDENT_CHECK",
+  "status": "INDEPENDENT_CHECK_COMPLETE_PRODUCER_REPAIRS_EXPLICIT",
   "claims": [
     {
       "id": "C01",
       "type": "source_content",
       "claim": "Cheiro V2 adds numerical/mental versus period/physical affinity, not a new year recurrence.",
-      "anchor": "Cheiro C2-03\u201309,13\u201315; pp93\u2013108"
+      "anchor": "Cheiro C2-03\u201309,13\u201315; pp93\u2013108",
+      "original_reviewer_verdict": "UNVERIFIABLE",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     },
     {
       "id": "C02",
       "type": "source_content",
       "claim": "Campbell Quiescent Self is private rest/fantasy, not public Personality.",
-      "anchor": "Campbell C07;pp27\u201333"
+      "anchor": "Campbell C07;pp27\u201333",
+      "original_reviewer_verdict": "PASS",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     },
     {
       "id": "C03",
       "type": "source_content",
       "claim": "Campbell literal K11/V22 differs from compact examples and fixed K2/V4 transit durations.",
-      "anchor": "Campbell C03/C34;pp16\u201317,232"
+      "anchor": "Campbell C03/C34;pp16\u201317,232",
+      "original_reviewer_verdict": "UNVERIFIABLE_IN_PART",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     },
     {
       "id": "C04",
       "type": "source_content",
       "claim": "Campbell cycles near28/56 and p246 astro position correlations differ from Decoz.",
-      "anchor": "Campbell C25/C37"
+      "anchor": "Campbell C25/C37",
+      "original_reviewer_verdict": "UNVERIFIABLE_IN_PART",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     },
     {
       "id": "C05",
       "type": "source_content",
       "claim": "Jordan reduces11/22 but retains qualitative importance; AEIOUonly Heart excludes Y/W.",
-      "anchor": "Jordan J02/J06;pp64\u201365,110"
+      "anchor": "Jordan J02/J06;pp64\u201365,110",
+      "original_reviewer_verdict": "PASS_BOUNDED",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     },
     {
       "id": "C06",
       "type": "source_content",
       "claim": "Jordan supplies three eight-hour periods, not proven accuracy at that resolution.",
-      "anchor": "Jordan J19;pp249\u2013252"
+      "anchor": "Jordan J19;pp249\u2013252",
+      "original_reviewer_verdict": "PASS",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     },
     {
       "id": "C07",
       "type": "source_content",
       "claim": "JB ordinary core and Triangle use distinct arithmetic; Triangle sequential given names,9years perline,no surname.",
-      "anchor": "JB02/JB09;pp14\u201317,51\u201356"
+      "anchor": "JB02/JB09;pp14\u201317,51\u201356",
+      "original_reviewer_verdict": "PASS_BOUNDED",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     },
     {
       "id": "C08",
       "type": "source_content",
       "claim": "JB year birthday-to-birthday,three four-month periods and minorPM; masters11/22/33/44 and1\u201378personal/temporarybanks.",
-      "anchor": "JB06/JB16\u201317;pp38\u201342,123\u2013264"
+      "anchor": "JB06/JB16\u201317;pp38\u201342,123\u2013264",
+      "original_reviewer_verdict": "UNVERIFIABLE_IN_PART",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     },
     {
       "id": "C09",
       "type": "source_content",
       "claim": "Source reconciliation withdraws Sagittarius diagram criticism and preserves Jordan19\u219210\u21921.",
-      "anchor": "SOURCE_RECONCILIATION.md"
+      "anchor": "SOURCE_RECONCILIATION.md",
+      "original_reviewer_verdict": "PASS_BOUNDED",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     },
     {
       "id": "C10",
       "type": "evidence_boundary",
       "claim": "All major source layers inventoried is a supplied-source audit claim, not unique formulas everywhere,fullreadingengine,independent all-page certification or predictive validity.",
-      "anchor": "coverage and sourcespec limits"
+      "anchor": "coverage and sourcespec limits",
+      "original_reviewer_verdict": "UNVERIFIABLE",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     },
     {
       "id": "C11",
       "type": "project_design",
-      "claim": "Full relevant arms, no silent subset, fixedconditions,UNKNOWNnotnegative,FP/FNequal,coverage/multiplewindow controls andpersonclusters support a fair proposed comparison.",
-      "anchor": "EMPIRICAL_COMPARISON_DESIGN.md and empirical_admission_contract.json"
+      "claim": "Revised proposed design uses equal-cost error, common observation-complete cells, full binary primary coverage, both timing anchors, symmetric full-author horoscope scope, and no outcome-based rescue.",
+      "anchor": "EMPIRICAL_COMPARISON_DESIGN.md and empirical_admission_contract.json",
+      "original_reviewer_verdict": "FAIL",
+      "reconciliation": "Material findings D2-D5 repaired by producer; counterexamples covered by18 new errata/design tests. No second independent approval claimed.",
+      "original_claim_preserved": "Full relevant arms, no silent subset, fixedconditions,UNKNOWNnotnegative,FP/FNequal,coverage/multiplewindow controls andpersonclusters support a fair proposed comparison."
     },
     {
       "id": "C12",
       "type": "evidence_boundary",
       "claim": "Decozfull81Duality/resources and Campbelloverallhybridadapter remain operational prerequisites; the design is not launched.",
-      "anchor": "immutable inheritedscope;postfreezedesign"
+      "anchor": "immutable inheritedscope;postfreezedesign",
+      "original_reviewer_verdict": "PASS",
+      "reconciliation": "See CLOSEOUT_REVIEW.md; unverifiable scopes remain outside independent review, not retrospectively PASS."
     }
+  ],
+  "additional_load_bearing_claims": [
+    "Doyle J-A07 is withdrawn audit error via explicit V2.1 overlay",
+    "WWYB ablation includes period-personality as well as relationships",
+    "Full primary-corpus review was not within reviewer access",
+    "All60 task-local tests are engineering/source checks, not human validity"
   ]
 }

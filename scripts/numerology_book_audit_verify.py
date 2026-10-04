@@ -16,6 +16,8 @@ import sys
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+import numerology_audit_protocol_checks as protocol
 BRANCH = "research/six-rule-life-timing-20261001"
 TASK = "NUMEROLOGY-BOOK-AUDIT-20261004"
 FREEZE_COMMIT = "af2cbf287635a682d1cdb36597d5a9c47784743c"
@@ -136,15 +138,16 @@ def validate_design(data: dict[str, Any]) -> list[str]:
     for key, value in expected.items():
         if controls.get(key) != value:
             errors.append(f"EMPIRICAL_CONTROL_VIOLATION: {key}")
-    costs = [controls.get(k) for k in ("false_positive_cost", "false_negative_cost", "true_positive_reward")]
-    if any(type(v) not in (int, float) for v in costs) or costs != [1, 1, 1]:
+    costs = [controls.get(k) for k in ("false_positive_cost", "false_negative_cost")]
+    if any(type(v) not in (int, float) for v in costs) or costs != [1, 1]:
         errors.append("SYMMETRIC_ERROR_ACCOUNTING_CHANGED")
     if data.get("owner_2008", {}).get("impact") != "moderate_not_top_major" or data.get("owner_2008", {}).get("chronology_quality") != "approximate memory":
         errors.append("OWNER_2008_CORRECTION_LOST")
     prerequisites = {p.get("id"): p for p in data.get("open_launch_prerequisites", [])}
-    required = {"official_decoz_resources", "campbell_hybrid_scope", "operational_interpretation_freeze", "independent_implementation_review", "cohort_observation_and_privacy", "endpoints_and_precision", "sealed_execution_release"}
+    required = {"official_decoz_resources", "campbell_hybrid_scope", "javane_bunker_hybrid_scope", "operational_interpretation_freeze", "independent_implementation_review", "cohort_observation_and_privacy", "endpoints_and_precision", "sealed_execution_release"}
     if set(prerequisites) != required or any(p.get("status") != "OPEN" or not p.get("requires") for p in prerequisites.values()):
         errors.append("LAUNCH_PREREQUISITES_MISREPRESENTED")
+    errors.extend(protocol.validate_reconciled_contract(data))
     return errors
 
 
@@ -186,6 +189,7 @@ def validate_task(root: Path, preflight: bool, working_tree: bool) -> list[str]:
     if preflight:
         return errors
     errors.extend(validate_sources(root))
+    errors.extend(protocol.validate_effective_overlay(root))
     design = load_json(root, BASE + "empirical_admission_contract.json", errors)
     errors.extend(validate_design(design))
     for name in ["EMPIRICAL_COMPARISON_DESIGN.md", "AUDIT_COMPLETION_REPORT.md", "closeout_claim_ledger.json", "closeout_review_receipt.json"]:

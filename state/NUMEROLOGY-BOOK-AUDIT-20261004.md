@@ -1,40 +1,32 @@
-# Four-book numerology audit — current recovery checkpoint
+# Four-book numerology audit — recovery checkpoint
 
 Task ID: NUMEROLOGY-BOOK-AUDIT-20261004
 Branch: research/six-rule-life-timing-20261001
-Owner outcome: OPEN — source audit/freeze and post-freeze design drafts are written; independent closeout review and final publication/delivery remain.
+Status: SOURCE_AUDIT_AND_DESIGN_FINISHED; VERIFIED_PUBLICATION_AND_DELIVERY_IN_PROGRESS.
 Preflight: `python3 scripts/numerology_book_audit_verify.py --preflight`
-Pre-commit check: `python3 scripts/numerology_book_audit_verify.py --working-tree`
+Pre-commit: `python3 scripts/numerology_book_audit_verify.py --working-tree`
 Acceptance: `python3 scripts/numerology_book_audit_verify.py`
 
-## Completed and preserved
+## Current evidence, not stale run status
 
-The exact four-source freeze is commit `af2cbf287635a682d1cdb36597d5a9c47784743c`, following audit snapshot `91026b68b99870ac0e2980134d13b8844657bafd`. All13 frozen payload blobs and both immutable V1 baseline blobs match. The actual four original upload SHA-256 values were recomputed and match the inventory. All major source specifications, full comparison, ambiguity registry, reconciliation and arithmetic fixtures are in GitHub. Do not repeat the four-book audit from stale historical checkpoints.
+The four-book source inventory and comparison are frozen at af2cbf287635a682d1cdb36597d5a9c47784743c. All thirteen original payloads and both V1 baseline files remain byte-identical. Do not repeat the audit or read an earlier progress file as evidence of unfinished source reading.
 
-The post-freeze EMPIRICAL_COMPARISON_DESIGN.md, machine admission contract, completion-report draft, policy update and bounded historical annotations are now written. The design explicitly distinguishes a complete source inventory from an operational reading engine and a launched experiment. Full Decoz resources and Campbell's overall stars-plus-numbers adapter remain named operational prerequisites. No participant trial, owner-history refit, causal name-change recommendation, empirical-superiority result, merge or deployment was performed.
+The independent Claude review COMPLETED successfully. Runtime model claude-opus-5-5; requested effort max, effective backend effort unknown; neutral safe-mode subscription route, no task tools. Its original verdict was FINDS_ERROR. All five material findings were accepted and repaired by the producer using source pages and deterministic counterexamples. The review did not independently re-audit every primary page, and no second independent approval of the repairs is claimed. CLOSEOUT_REVIEW.md, text-only raw response, machine receipt and claim ledger preserve this boundary.
 
-The temporary acceptance placeholder has been replaced with artifact/hash/coverage/history/control checks. All42 tests pass:23 source-arithmetic tests and19 gate/control tests. A pre-commit acceptance run fails only because the independent closeout review has not yet been disposed. That failure is expected and is not a release PASS. The portable derived-packet builder is written but has not built or delivered the final packet.
+The mandatory V2.1 audit-annotation erratum withdraws the incorrect Jordan Doyle final-Pinnacle conflict:9,3,3,9 are the Pinnacles;11/2 is adjacent Reality. No author formula or old participant prediction changed. The effective entry point is reference/research/numerology_method_registry_v2_1_20261004.json; its erratum precedes the original reconciliation for the enumerated items only.
 
-## Live independent reviewer — do not relaunch
+The post-freeze design now uses equal FP/FN cost, identical observation-complete primary cells, complete binary primary coverage, both calendar and birthday/age timing anchors, and symmetric Campbell/Javane-Bunker horoscope scope. The original full Decoz resource requirement remains open. These are operational study prerequisites, not missing chapters in the four-book audit.
 
-A fresh Claude Code subscription review has actually been launched in an empty neutral workspace with safe-mode, no task tools, no MCP, no session persistence and requested effort max. Runtime model readback is `claude-opus-5-5`; effective backend effort is not independently reported. Session: `1e5aa6fc-5c48-4eb7-ae93-09370fe28ff3`. Parent process2261288, reviewer process2261296, on the authorized owner laptop. Neutral workspace: `/tmp/numerology-independent-claim-check-20261004`.
+All60 task-local tests and working-tree artifact acceptance PASS. The final report, policy, effective registry, explicit source corrections, proposed study design and review receipts are written. Remote branch and local pre-edit head matched0c5c1df0e23f195d054cbad6614809992362610e; no competing branch writer was observed.
 
-The reviewer received the full derived specifications, current mandatory reconciliation, bounded primary passages,12-claim ledger, proposed report/design/contract and owner constraints. No prior reviewer verdict was included. It is NOT an independent re-audit of the entire primary corpus. The earlier freeze-bound unavailable-review receipt remains unchanged and historically true.
+## Finish the authorized delivery
 
-Liveness was verified through saved runtime output: init names the correct model and empty tools; later output contains hundreds of increasing `system:thinking_tokens` events. Latest checked estimate104150tokens. A slow max-effort reviewer is still working; do not kill, mark unavailable or relaunch it because of elapsed time. Use the existing runtime/output. Two compound terminal calls received platform safety-status blocks; ordinary file reads and other authorized task commands remain available. Do not retry those blocked commands in disguised form. No other route or paid API fallback was used.
+Commit the current verified final source/design/closeout files, push this branch, and run committed-artifact acceptance at that exact head. Build the complete derived ZIP and static HTML reader/summary with the exact-head acceptance receipt using scripts/numerology_book_audit_bundle.py. Deliver to the OS-designated Downloads directory, verify ZIP CRC/payload hashes, and save the exact deliverable bytes plus a receipt in this repository. Update task completion state only after actual delivery and remote readback. No new model review is running or needed for routine packaging.
 
-## Finish in order
+## Scope and open limitations
 
-1. Read the existing review's final answer once saved; retain exact response identity and perform at most one reconciliation round. Fix or explicitly settle material findings using the supplied sources. Do not modify any frozen source blob; any actual post-freeze source correction needs a separate explicit delta.
-2. Create CLOSEOUT_REVIEW.md and closeout_review_receipt.json with actual model/effort/route/scope, claim dispositions and no unsupported all-primary-corpus certification. Update the ledger and summary only as warranted.
-3. Run pre-commit acceptance and42tests; commit the finished design/closeout. Default acceptance then verifies that design creation follows the source freeze in Git history.
-4. Push the exact task branch and verify remote readback. Build the full packet at the exact committed revision with its acceptance receipt. The OS-designated Downloads directory resolves to `/mnt/hdd/home/joel/Téléchargements`; place the ZIP, integrated HTML reader and concise HTML summary there and verify hashes/ZIP contents.
-5. Commit the final verification/delivery and task-completion receipts. Deliver a concise owner summary with direct usable artifacts and the specific remaining source/operational limits, not another open-ended plan.
+No owner-history refit, participant predictions, recruitment, trial, survey change, merge or deployment.2008 moderate/not top-major with approximate chronology;2018 major;2029 prospective and non-confirmatory for the cross-person study. UNKNOWN periods are not negatives. CHEIRO_CHALDEAN_V1 and DECOZ_CURRENT_V1 remain unchanged. Do not average or silently combine author systems.
 
-## Immutable constraints
+Campbell supplied text only, not facsimile images. Genuine source ambiguities remain; exact full Decoz interpretation resources and operational reading/horoscope adapters are separate prerequisites for a future test. Source arithmetic, hash checks and this bounded independent review do not establish human predictive validity.
 
-Keep CHEIRO_CHALDEAN_V1 and DECOZ_CURRENT_V1 unchanged; keep all four source systems separate and explicit source branches frozen. No outcome-selected rules, averaged disagreements or ignored false positives. 2008 remains moderate, not top-major, with approximate-memory chronology;2018major and2029prospective. Unknown years are not negatives. Old descriptive background tallies are historical, not specificity estimates.
-
-Campbell has no source images in the supplied ZIP. Its omitted numbered-range leaves124/126 are blank and125 is the PartII heading, not an omitted calculation chapter. All native-source uncertainty remains disclosed. Raw books/full transcripts/private logs/credentials stay out of the public repository. Other worktrees and unrelated global queues are suspended.
-
-Stop admission: parent OPEN; next action is the existing review's completion/reconciliation and verified artifact delivery. No owner clarification is required. Do not invent a merge, deployment, study-launch or new permission gate.
+Raw books, full source transcripts, private reviewer reasoning/logs and credentials are excluded from publication. Other worktrees and global release/participant-session queues remain suspended. Parent outcome remains OPEN only for the concrete publication/delivery actions above; no owner clarification is required.

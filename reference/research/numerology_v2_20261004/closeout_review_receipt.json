@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "status": "CHECKED_WITH_RECONCILIATION",
+  "reviewer_original_verdict": "FINDS_ERROR",
+  "reviewer_requested_model": "opus",
+  "reviewer_effective_model": "claude-opus-5-5",
+  "requested_effort": "max",
+  "effective_effort": null,
+  "route": "existing Claude Code subscription authentication",
+  "cli_version": "2.1.286",
+  "neutral_workspace": true,
+  "safe_mode": true,
+  "task_tools": [],
+  "mcp_servers": [],
+  "prior_verdicts_disclosed": false,
+  "session_id": "1e5aa6fc-5c48-4eb7-ae93-09370fe28ff3",
+  "successful_completion": true,
+  "independent_passes": 1,
+  "text_segments": 2,
+  "duration_ms": 1243095,
+  "review_boundary": "Four derived source specifications, mandatory reconciliation, bounded primary excerpts, original completion report/design/admission contract and12claims. Internal calculations and design logic checked; full original sources, images, inherited V1 and Git/code identities were not supplied.",
+  "full_primary_corpus_independently_certified": false,
+  "human_predictive_validity_checked": false,
+  "input_packet_sha256": "3e142b307c64416d4b904cca09edfb879e32d1200ba0a67114b67485a4d9f1b2",
+  "original_input_files_sha256": {
+    "CHEIRO_CHALDEAN_V2.md": "2420bfd89a0a839833f54b8bc5854c585aaf0714e3e34f934b859f4d06b4d1b7",
+    "CAMPBELL_YOUR_DAYS_V1.md": "a66a5b0931e1b25f8fe583c1ff7124cd624cedc6f2970be74598f8c912fdc6f8",
+    "JORDAN_ROMANCE_NAME_V1.md": "d1d0be5778c0376c5b2f6a043f832dd91cabd7ab748f367f7efdfe8fc24d7534",
+    "JAVANE_BUNKER_DIVINE_TRIANGLE_V1.md": "87667745c8c27ede4c5dbc0c055470458a2aa65925ee25b39d7d4357af763653",
+    "SOURCE_RECONCILIATION.md": "adf05f944555340a9405994fe6e5d4a3a8fcaf65cb3ed4ed2e591c6ba728ee67",
+    "source_coverage.json": "21542f02712fa85664770e2880a35f8bf4fc8c3e9cabc233d448496f99dab40b",
+    "ambiguities.json": "cc6bfc104f2228341cca21b08a9271e67804e8df4531f26aed4de2897a6cf78b",
+    "AUDIT_COMPLETION_REPORT.md": "f98fe5cb7160bf509b03cee5ab40b77b9ea7ff910646af4285aa2802b75473c0",
+    "EMPIRICAL_COMPARISON_DESIGN.md": "03062f5a0637bf22bba8ce7efaa258d6c60c2f9d0ccfcadcd615f74644cb382e",
+    "empirical_admission_contract.json": "33a89af84e771a98d69ebb8f4fa07fdd3831a3ea0554907080876b5ed466ba82",
+    "closeout_claim_ledger.json": "30fbcfd496a98e76de7ae411763297df70ba312727c2c469d56d15c4be2e9256"
+  },
+  "raw_text_answer_path": "CLOSEOUT_REVIEW_RAW.md",
+  "raw_text_answer_sha256": "a4e0fb9f7819e0b8371443e97732d75c3b4d64d01bdca9c7b6ae845980aa6521",
+  "claim_original_dispositions": {
+    "C01": "UNVERIFIABLE",
+    "C02": "PASS",
+    "C03": "UNVERIFIABLE_IN_PART",
+    "C04": "UNVERIFIABLE_IN_PART",
+    "C05": "PASS_BOUNDED",
+    "C06": "PASS",
+    "C07": "PASS_BOUNDED",
+    "C08": "UNVERIFIABLE_IN_PART",
+    "C09": "PASS_BOUNDED",
+    "C10": "UNVERIFIABLE",
+    "C11": "FAIL",
+    "C12": "PASS"
+  },
+  "material_findings": {
+    "D1": {
+      "disposition": "ACCEPTED_REPAIRED_BY_PRODUCER",
+      "evidence": "AUDIT_ERRATA_V2_1_20261004.md E01; native Jordan262-263; source errata tests"
+    },
+    "D2": {
+      "disposition": "ACCEPTED_REPAIRED_BY_PRODUCER",
+      "evidence": "EMPIRICAL_COMPARISON_DESIGN.md section7; equal-cost counterexamples"
+    },
+    "D3": {
+      "disposition": "ACCEPTED_REPAIRED_BY_PRODUCER",
+      "evidence": "Design sections6-7; observation-complete/no-abstention/common-cell tests"
+    },
+    "D4": {
+      "disposition": "ACCEPTED_REPAIRED_BY_PRODUCER",
+      "evidence": "Design section7; dual-anchor and boundary-artifact tests"
+    },
+    "D5": {
+      "disposition": "ACCEPTED_REPAIRED_BY_PRODUCER",
+      "evidence": "Design section3; symmetric horoscope contract test"
+    }
+  },
+  "unresolved_blocking_findings": [],
+  "second_independent_approval_of_repairs": false,
+  "producer_reconciliation_path": "CLOSEOUT_REVIEW.md",
+  "effective_registry": "reference/research/numerology_method_registry_v2_1_20261004.json",
+  "preserved_original_review_receipt": "independent_review.md",
+  "scope_limit": "Source inventory and operational launch are distinct. Unreviewed primary-page completeness remains a limitation, not a new method or evidence of human prediction.",
+  "corrected_artifacts_sha256": {
+    "AUDIT_ERRATA_V2_1_20261004.md": "723a1f3da8b8ac16c20ecf037902664069d6f93695a81f52cb060c25e8718963",
+    "EMPIRICAL_COMPARISON_DESIGN.md": "b8d4ea5b37a96f72553b26ee08a373d3e4b372047324b9fc85269c4ae0260bab",
+    "empirical_admission_contract.json": "53256d8c18ba709ab6a7faa9a15ac94dabceaea3e91c870152d4c0057c0f8f3b",
+    "AUDIT_COMPLETION_REPORT.md": "c80e2de93f308b9eda6c929bfc37adb40aece530124bcbeb1e003adb6c9c5af2",
+    "CLOSEOUT_REVIEW.md": "997fab48f731ef8ba1c3fbfc59cfb7b01ac93c9082a78a84337e17ea63712a64"
+  }
+}
