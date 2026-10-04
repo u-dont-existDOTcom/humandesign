@@ -1,0 +1,417 @@
+{
+  "status": "POST_RESULT_REVIEW_RECONCILIATION",
+  "original_coarse_family_changed": false,
+  "already_registered_simpler_separators": [
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE__AND__CAMPBELL_CHANGE_PY",
+      "flagged_years": [
+        2018
+      ],
+      "coverage_years": 1,
+      "major_year_hits": [
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2005,
+        2010,
+        2013,
+        2014,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [],
+      "lower_impact_correct_not_flags": [
+        2008,
+        2022
+      ],
+      "observed_impact_errors": 7,
+      "unknown_flagged_years": [],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    },
+    {
+      "adapter_id": "CHEIRO_BIRTH_SEED_RECURRENCE__AND__LEGACY_WESTERN_CHANGE_SET",
+      "flagged_years": [
+        2018
+      ],
+      "coverage_years": 1,
+      "major_year_hits": [
+        2018
+      ],
+      "major_year_misses": [
+        2002,
+        2005,
+        2010,
+        2013,
+        2014,
+        2020,
+        2026
+      ],
+      "lower_impact_false_flags": [],
+      "lower_impact_correct_not_flags": [
+        2008,
+        2022
+      ],
+      "observed_impact_errors": 7,
+      "unknown_flagged_years": [],
+      "interpretation": "Retrospective selected impact contrast, not all-events discrimination. Unlabelled years never count as negatives."
+    }
+  ],
+  "root_match_years": [
+    2008,
+    2018
+  ],
+  "root_match_and_cheiro_recurrence_years": [
+    2008,
+    2018
+  ],
+  "exact_match_years": [
+    2018
+  ],
+  "counterfactual_age_plus_one_match_years": [],
+  "shift_status": "UNSOURCED_ROBUSTNESS_PROBE_NOT_AN_ADMITTED_JB_AGE_BRANCH",
+  "matching_algebra_2018": "1+29+digit_sum(year) = L12+29 iff digit_sum(year)+1=12. Shared birthday-side29 cancels.",
+  "possible_experience_compounds_within_observed_PY_range": [
+    34,
+    36,
+    41
+  ],
+  "romance_vocabulary_lower_bound": {
+    "selected_source_compounds": [
+      34,
+      37,
+      38,
+      39,
+      41,
+      42
+    ],
+    "years": [
+      2002,
+      2005,
+      2006,
+      2007,
+      2009,
+      2011,
+      2014,
+      2015,
+      2016,
+      2018,
+      2019,
+      2020,
+      2023,
+      2024,
+      2025
+    ],
+    "count": 15,
+    "denominator": 27,
+    "definition": "Explicit temporary love/romance/marriage content in these six source rows, not an exhaustive calibrated classifier. Selected after results; other layers can add further coverage."
+  },
+  "third_period16_windows_by_W_branch": {
+    "literal_DW_vowel": [
+      {
+        "start": "2005-09-29",
+        "end_exclusive": "2006-01-29"
+      },
+      {
+        "start": "2014-09-29",
+        "end_exclusive": "2015-01-29"
+      },
+      {
+        "start": "2023-09-29",
+        "end_exclusive": "2024-01-29"
+      }
+    ],
+    "ordinary_W_consonant_sensitivity": [
+      {
+        "start": "2001-09-29",
+        "end_exclusive": "2002-01-29"
+      },
+      {
+        "start": "2010-09-29",
+        "end_exclusive": "2011-01-29"
+      },
+      {
+        "start": "2019-09-29",
+        "end_exclusive": "2020-01-29"
+      }
+    ]
+  },
+  "corrected_2005_essence": {
+    "raw": 36,
+    "root": 9,
+    "both_jordan_index_branches": true
+  },
+  "corrected_2020": {
+    "Jan01_to_Jan28": {
+      "JB_year": 42,
+      "completed_age": 34,
+      "experience": 29
+    },
+    "Jan29_to_Dec31": {
+      "JB_year": 34,
+      "completed_age": 35,
+      "experience": 53
+    }
+  },
+  "Jordan_2013_onset_2014_birth_branches": {
+    "birth_start": 24,
+    "display_age_minus_one": 22,
+    "both_roots": [
+      6,
+      4
+    ]
+  },
+  "2014_escalation_interval_straddle": {
+    "reported_window": [
+      "2014-09-01",
+      "2014-11-30"
+    ],
+    "literal_period_until_Sep28": 15,
+    "literal_period_from_Sep29": 16
+  },
+  "2010_ego_death_window_W_sensitivity": {
+    "ordinary_W_period16_start": "2010-09-29",
+    "overlap_with_broad_Aug01_Sep30_interval_days": 2,
+    "exact_event_date_known": false
+  },
+  "January2026_context": {
+    "prebirthday_minor": 55,
+    "prebirthday_annual39_major50_repeated_in_birthday_year": 2016,
+    "postbirthday_minor34_allows_romance_and_quarrels": true
+  },
+  "source_minor_major_clarification": "JB pp56\u201357 says minor-process experiences may be just as important as major-process experiences; labels primarily distinguish current versus longer-range effects, not subjective impact classes.",
+  "rows": [
+    {
+      "birthday_year": 2000,
+      "annual_compound": 32,
+      "experience_compounds": [
+        16
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2001,
+      "annual_compound": 33,
+      "experience_compounds": [],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2002,
+      "annual_compound": 34,
+      "experience_compounds": [
+        1,
+        53
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2003,
+      "annual_compound": 35,
+      "experience_compounds": [],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2004,
+      "annual_compound": 36,
+      "experience_compounds": [
+        1,
+        53
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2005,
+      "annual_compound": 37,
+      "experience_compounds": [],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2006,
+      "annual_compound": 38,
+      "experience_compounds": [],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2007,
+      "annual_compound": 39,
+      "experience_compounds": [
+        31,
+        36
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2008,
+      "annual_compound": 40,
+      "experience_compounds": [
+        6,
+        31
+      ],
+      "root_match": true,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2009,
+      "annual_compound": 41,
+      "experience_compounds": [],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2010,
+      "annual_compound": 33,
+      "experience_compounds": [],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2011,
+      "annual_compound": 34,
+      "experience_compounds": [
+        1,
+        53
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2012,
+      "annual_compound": 35,
+      "experience_compounds": [],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2013,
+      "annual_compound": 36,
+      "experience_compounds": [
+        53
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2014,
+      "annual_compound": 37,
+      "experience_compounds": [
+        29
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2015,
+      "annual_compound": 38,
+      "experience_compounds": [
+        62
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2016,
+      "annual_compound": 39,
+      "experience_compounds": [
+        50
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2017,
+      "annual_compound": 40,
+      "experience_compounds": [
+        50
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2018,
+      "annual_compound": 41,
+      "experience_compounds": [
+        41
+      ],
+      "root_match": true,
+      "exact_match": true
+    },
+    {
+      "birthday_year": 2019,
+      "annual_compound": 42,
+      "experience_compounds": [
+        29
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2020,
+      "annual_compound": 34,
+      "experience_compounds": [
+        53
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2021,
+      "annual_compound": 35,
+      "experience_compounds": [],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2022,
+      "annual_compound": 36,
+      "experience_compounds": [
+        53
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2023,
+      "annual_compound": 37,
+      "experience_compounds": [
+        29
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2024,
+      "annual_compound": 38,
+      "experience_compounds": [],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2025,
+      "annual_compound": 39,
+      "experience_compounds": [
+        50,
+        55
+      ],
+      "root_match": false,
+      "exact_match": false
+    },
+    {
+      "birthday_year": 2026,
+      "annual_compound": 40,
+      "experience_compounds": [
+        34,
+        50
+      ],
+      "root_match": false,
+      "exact_match": false
+    }
+  ]
+}

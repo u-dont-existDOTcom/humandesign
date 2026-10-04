@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "CHECKED_WITH_RECONCILIATION",
+  "original_verdict": "FINDS_ERROR",
+  "reviewed_input_commit": "66c2f73fc2bf28147459d6e5b31e961b1301f8d6",
+  "review_boundary": "Initial contextual report,36 coarse candidate outputs, post-result hypotheses, transparency controls, initial calculation script and bounded source anchors. Not every original source or companion script.",
+  "requested_model": "opus",
+  "effective_model": "claude-opus-5-5",
+  "requested_effort": "max",
+  "effective_backend_effort_independently_reported": false,
+  "route": "existing authenticated Claude Code subscription",
+  "task_tools": [],
+  "packet_sha256": "ee21345d8ec37f85802654eb6e8dad2331d8aaa8a06c3a7947a4272865dcf4c3",
+  "original_answer_sha256": "e2d53db611cff2c399b6243f9d3c9eeb6c5467d762274efb5b3ed4dfe1318916",
+  "process_exit_code": 0,
+  "session_id": "850d840d-2e2b-4494-938d-e2a546068dbc",
+  "duration_ms": [
+    887026
+  ],
+  "prior_review_verdict_supplied": false,
+  "full_primary_corpus_reviewed": false,
+  "full_author_predictive_superiority_established": false,
+  "independent_second_approval_claimed": false,
+  "findings": {
+    "F1": {
+      "status": "RECONCILED",
+      "evidence": "REVIEW.md; review_reconciliation_checks.json; regression tests"
+    },
+    "F2": {
+      "status": "RECONCILED",
+      "evidence": "REVIEW.md; review_reconciliation_checks.json; regression tests"
+    },
+    "F3": {
+      "status": "RECONCILED",
+      "evidence": "REVIEW.md; review_reconciliation_checks.json; regression tests"
+    },
+    "F4": {
+      "status": "RECONCILED",
+      "evidence": "REVIEW.md; review_reconciliation_checks.json; regression tests"
+    },
+    "F5": {
+      "status": "RECONCILED",
+      "evidence": "REVIEW.md; review_reconciliation_checks.json; regression tests"
+    },
+    "F6": {
+      "status": "RECONCILED",
+      "evidence": "REVIEW.md; review_reconciliation_checks.json; regression tests"
+    },
+    "F7": {
+      "status": "RECONCILED",
+      "evidence": "REVIEW.md; review_reconciliation_checks.json; regression tests"
+    }
+  },
+  "F5_qualification": "Counterfactual age shift is not a source-supported method branch. Its result is retained only as a labelled robustness probe.",
+  "unresolved_blocking_findings": [],
+  "remaining_scientific_limits": [
+    "selected incomplete history",
+    "no untouched outcome test",
+    "no full-author predictive ranking",
+    "missing or nonunique operational interpretation resources"
+  ],
+  "original_author_methods_changed": false
+}
