@@ -19,6 +19,8 @@ from participant.shadow_triage import (
     GapAdmission,
     GapCandidate,
     GapCandidateAdmission,
+    GapMatchAudit,
+    GapMatchedRouteReview,
     GapTriage,
     make_gap_triage_context,
     privacy_safe_case_summary,
@@ -197,6 +199,36 @@ class ReadyFake:
         )
 
 
+class OmissionRecoveryFake:
+    def __init__(self) -> None:
+        self.calls: list[tuple[str, dict]] = []
+
+    def call(self, system, payload, schema, model, effort):
+        self.calls.append((system, payload))
+        if schema is GapTriage:
+            return (
+                GapTriage(decision="review_ready", candidates=[]),
+                {"duration_seconds": 8.0, "prompt_tokens": 10000, "completion_tokens": 80},
+            )
+
+        assert schema is GapMatchAudit
+        matched = []
+        for pair in payload["pairs"]:
+            route_id = pair["route_id"]
+            matched.append(
+                GapMatchedRouteReview(
+                    route_id=route_id,
+                    source_turn_ids=list(pair["source_turn_ids"]),
+                    status="preliminary_gap" if route_id == "M09" else "answered",
+                    independent_for_batch=True,
+                )
+            )
+        return (
+            GapMatchAudit(reviews=matched),
+            {"duration_seconds": 12.0, "prompt_tokens": 11000, "completion_tokens": 220},
+        )
+
+
 class TwoCandidateFake(ApprovedFake):
     def call(self, system, payload, schema, model, effort):
         self.calls.append((system, payload))
@@ -257,6 +289,42 @@ class TwoCandidateFake(ApprovedFake):
             GapAdmission(source_review_complete=True, reviews=reviews),
             {"duration_seconds": 15.0, "prompt_tokens": 11500, "completion_tokens": 300},
         )
+
+
+def test_triage_context_adds_conservative_source_question_route_hints():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].extend(
+        [
+            {
+                "turn_id": "near-m09",
+                "turn_role": "behavioral",
+                "question_text": (
+                    "You have a familiar simple offline planning app and could move to a more "
+                    "complex one with shared reminders and better search, which would take about "
+                    "an hour to migrate. What matters in deciding whether to switch?"
+                ),
+                "answer_text": "I would begin by reading reviews and checking the import tool.",
+            },
+            {
+                "turn_id": "near-g19",
+                "turn_role": "behavioral",
+                "question_text": (
+                    "You promised to help a friend move, and it is running long into your own "
+                    "personal time. What matters in deciding what to do?"
+                ),
+                "answer_text": "I would first ask how much is left.",
+            },
+        ]
+    )
+    context = make_gap_triage_context(state, instrument)
+    routes = {route["id"]: route for route in context["candidate_routes"]}
+    assert routes["M09"]["source_question_match_turn_ids"] == ["near-m09"]
+    assert routes["G19"]["source_question_match_turn_ids"] == ["near-g19"]
+    assert context["source_question_matches"][:2] == [
+        {"route_id": "M09", "turn_ids": ["near-m09"]},
+        {"route_id": "G19", "turn_ids": ["near-g19"]},
+    ]
 
 
 def test_triage_context_has_complete_source_and_no_evidence_deliverables():
@@ -334,6 +402,34 @@ def test_review_ready_skips_empty_admission_round_trip():
     )
 
 
+def test_admission_recovers_source_matched_gap_omitted_by_triage():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "near-m09",
+            "turn_role": "behavioral",
+            "question_text": (
+                "You have a familiar simple offline planning app and could move to a more "
+                "complex one with shared reminders and better search, which would take about "
+                "an hour to migrate. What matters in deciding whether to switch?"
+            ),
+            "answer_text": "I would begin by reading reviews and checking the import tool.",
+        }
+    )
+    fake = OmissionRecoveryFake()
+    result = run_shadow_triage(
+        state, instrument, fake, model="gpt-5.6-sol", effort="xhigh"
+    )
+    summary = privacy_safe_case_summary("case-0001", state, result)
+    assert len(fake.calls) == 2
+    assert fake.calls[1][1]["pairs"]
+    assert summary["triage_decision"] == "review_ready"
+    assert summary["shadow_outcome"] == "clarification_recommended"
+    assert summary["admitted_route_ids"] == ["M09"]
+    assert summary["recovered_omission_route_ids"] == ["M09"]
+
+
 def test_selected_candidate_follows_triage_rank_not_admission_review_order():
     instrument = authority()
     state = imported_state(instrument)
@@ -348,6 +444,97 @@ def test_selected_candidate_follows_triage_rank_not_admission_review_order():
     ]
     assert summary["admitted_route_ids"] == proposed
     assert summary["selected_route_id"] == proposed[0]
+
+
+def test_admitted_batch_order_follows_source_anchor_order_not_model_rank():
+    instrument = authority()
+    state = imported_state(instrument)
+    first_turn_id = state["turns"][0]["turn_id"]
+    state["turns"].append(
+        {
+            "turn_id": "later-behavioral-turn",
+            "turn_role": "behavioral",
+            "question_text": "Later synthetic question.",
+            "answer_text": "Later synthetic answer.",
+        }
+    )
+    context = make_gap_triage_context(state, instrument)
+    routes = [
+        route
+        for route in context["candidate_routes"]
+        if route["candidate_mode"] == "unasked" and route["self_contained"]
+    ][:2]
+    triage = GapTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapCandidate(
+                candidate_id="C1",
+                rank=1,
+                source_anchor_turn_ids=["later-behavioral-turn"],
+                question=Question(
+                    route_id=routes[0]["id"],
+                    route_type="canonical",
+                    text=routes[0]["question"],
+                    antecedent_turn_ids=[],
+                    equivalent_context=False,
+                    missing_distinction="Later source gap.",
+                    why_useful="Material.",
+                ),
+            ),
+            GapCandidate(
+                candidate_id="C2",
+                rank=2,
+                source_anchor_turn_ids=[first_turn_id],
+                question=Question(
+                    route_id=routes[1]["id"],
+                    route_type="canonical",
+                    text=routes[1]["question"],
+                    antecedent_turn_ids=[],
+                    equivalent_context=False,
+                    missing_distinction="Earlier source gap.",
+                    why_useful="Material.",
+                ),
+            ),
+        ],
+    )
+    admission = GapAdmission(
+        source_review_complete=True,
+        reviews=[
+            GapCandidateAdmission(
+                candidate_id=candidate.candidate_id,
+                route_id=candidate.question.route_id,
+                approved=True,
+                source_references_valid=True,
+                not_already_answered=True,
+                premise_supported=True,
+                antecedent_supported=True,
+                context_supported=True,
+                construct_discriminating=True,
+                one_response_task=True,
+                material_information_gain=True,
+                independent_for_batch=True,
+                no_unsupported_extension=True,
+                failure_codes=[],
+            )
+            for candidate in triage.candidates
+        ],
+    )
+    summary = privacy_safe_case_summary(
+        "case-0001",
+        state,
+        {
+            "triage": triage,
+            "admission": admission,
+            "match_audit": GapMatchAudit(reviews=[]),
+            "calls": [],
+            "triage_context_chars": 0,
+            "admission_context_chars": 0,
+            "match_audit_context_chars": 0,
+            "eligible_route_count": len(context["candidate_routes"]),
+        },
+    )
+    assert summary["admitted_route_ids"] == [routes[1]["id"], routes[0]["id"]]
+    assert summary["selected_route_id"] == routes[1]["id"]
 
 
 def test_admission_gate_and_failure_codes_must_match_exactly():

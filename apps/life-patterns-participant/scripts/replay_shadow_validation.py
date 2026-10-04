@@ -96,9 +96,9 @@ def main() -> int:
                 if row["shadow_outcome"] == "clarification_recommended"
                 else "review_ready"
             )
-            producer_admission_disagreement = (
-                row["shadow_outcome"] == "no_admitted_candidate"
-            )
+            producer_admission_disagreement = bool(
+                row.get("recovered_omission_route_ids")
+            ) or row["shadow_outcome"] == "no_admitted_candidate"
             expected_route_ids = target.get("route_ids")
             required_route_ids = target.get("required_route_ids")
             allowed_additional = target.get("allowed_additional_route_ids") or []
