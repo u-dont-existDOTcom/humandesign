@@ -161,3 +161,7 @@ Cheiro's birth-year periodicity generates a sparse sequence of candidate-importa
 - Do not promote a system because one attractive anecdote fits.
 - The current project has no demonstrated general numerology-system winner; owner-history comparisons remain development evidence.
 - Numerology itself has not established empirical predictive validity. These are symbolic-model hypotheses suitable for blinded comparison, not factual psychological assessment.
+
+## Input clarification — pronunciation
+
+2026-10-05: The participant's source-name Y pronunciation was confirmed by the owner as matching the pronunciation assumed in the blind freeze. This resolves the previously noted pronunciation ambiguity in favor of the main Decoz/Javane-Bunker branch already frozen; no personality or life-history outcome was supplied with this clarification, and no prediction was changed.
