@@ -1,0 +1,81 @@
+.................FF.F.                                                   [100%]
+=================================== FAILURES ===================================
+______________ test_action_schema_privacy_and_description_limits _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-joel/pytest-14/test_action_schema_privacy_and0')
+
+    def test_action_schema_privacy_and_description_limits(tmp_path):
+        settings, _, _, client = setup_submission(tmp_path)
+        response = client.get("/action-openapi.yaml")
+        assert response.status_code == 200
+        schema = response.json()
+        operations = [op for verbs in schema["paths"].values() for op in verbs.values()]
+>       assert {op["operationId"] for op in operations} == {
+            "startLifePatternsReview",
+            "getLifePatternsReview",
+            "submitLifePatternsClarification",
+            "controlLifePatternsReview",
+            "submitLifePatternsRecords",
+        }
+E       AssertionError: assert {'controlLife...ternsRecords'} == {'controlLife...ternsRecords'}
+E         
+E         Extra items in the left set:
+E         'submitLifePatternsClarificationBatch'
+E         Use -v to get more diff
+
+apps/life-patterns-participant/tests/test_gpt_submission_action.py:581: AssertionError
+________ test_documented_backup_builder_preserves_all_79_source_answers ________
+
+tmp_path = PosixPath('/tmp/pytest-of-joel/pytest-14/test_documented_backup_builder0')
+
+    def test_documented_backup_builder_preserves_all_79_source_answers(tmp_path):
+        candidate = candidate_record()
+        seed = candidate["turns"][0]
+        candidate["turns"] = [
+            dict(
+                seed,
+                turn_id=f"synthetic-{i}",
+                answer_text=f"  Answer {i}; if rested, perhaps …\nnot always.  ",
+            )
+            for i in range(79)
+        ]
+        before = copy.deepcopy(candidate)
+        code = GUIDE.read_text().split("```python\n", 1)[1].split("```", 1)[0]
+        destination = tmp_path / "candidate.json"
+        handoff = tmp_path / "handoff.json"
+        code = code.replace(
+            "Path('/mnt/data/life-patterns-candidate-backup.json')", f"Path({str(destination)!r})"
+        ).replace(
+            "Path('/mnt/data/life-patterns-review-handoff.json')", f"Path({str(handoff)!r})"
+        )
+        scope = {"candidate": candidate}
+        exec(compile(code, str(GUIDE), "exec"), scope)
+        assert json.loads(destination.read_text()) == before
+        saved_handoff = json.loads(handoff.read_text())
+        assert saved_handoff == scope["body"]
+        assert saved_handoff["candidate_record"] == before
+        assert len(saved_handoff["request_id"]) == 32
+>       assert set(saved_handoff) == {"request_id", "research_use_consented", "candidate_record"}
+E       AssertionError: assert {'candidate_r...iew_protocol'} == {'candidate_r...se_consented'}
+E         
+E         Extra items in the left set:
+E         'review_protocol'
+E         Use -v to get more diff
+
+apps/life-patterns-participant/tests/test_gpt_handoff_guide.py:38: AssertionError
+___________ test_delivery_rules_are_in_the_shipped_instruction_chain ___________
+
+    def test_delivery_rules_are_in_the_shipped_instruction_chain():
+        # These checks establish instruction presence, not participant-visible compliance.
+        instruction = (ROOT / "reference/custom_gpt/life_patterns_voice_interviewer_v2.md").read_text()
+        text = GUIDE.read_text()
+        assert "ACTION-HANDOFF-GUIDE-v1.md" in instruction
+>       assert "backup and real file link FIRST" in instruction
+E       AssertionError: assert 'backup and real file link FIRST' in '# Life Patterns Interview — pilot\n\nConduct a neutral Life Patterns interview; no diagnosis or personality verdict.\...ata Export.\n\nAfter final freeze, never recode from target information. Later clarifications require a new version.\n'
+
+apps/life-patterns-participant/tests/test_gpt_handoff_guide.py:58: AssertionError
+=========================== short test summary info ============================
+FAILED apps/life-patterns-participant/tests/test_gpt_submission_action.py::test_action_schema_privacy_and_description_limits
+FAILED apps/life-patterns-participant/tests/test_gpt_handoff_guide.py::test_documented_backup_builder_preserves_all_79_source_answers
+FAILED apps/life-patterns-participant/tests/test_gpt_handoff_guide.py::test_delivery_rules_are_in_the_shipped_instruction_chain
+3 failed, 19 passed in 2.66s

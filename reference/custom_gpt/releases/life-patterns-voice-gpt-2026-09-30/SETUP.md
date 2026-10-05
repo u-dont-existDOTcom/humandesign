@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-03.4-readonly-status-approval. Development collection surface.
+Version: 2026-10-05.1-fast-review-stages. Development collection surface.
 
 ## Purpose
 
@@ -92,3 +92,7 @@ Custom GPTs cannot proactively notify the participant when an asynchronous revie
 ## Owner correction 2026-10-03.3 — restore information-based stopping
 
 The one-clarification cap was an assistant-added latency workaround, not a requirement of the frozen protocol. It is removed. The independent reviewer may ask another clarification only when it remains admissible, nonredundant and materially useful after the newest answer. Coverage alone never justifies another question. A separate redesign is evaluating how to move expensive evidence coding off the clarification-decision critical path rather than reducing question intelligence.
+
+## Fast review update — 2026-10-05
+
+Update the existing GPT, not a new GPT. Replace Instructions, the Action schema, and ACTION-HANDOFF-GUIDE-v1.md in Knowledge using the new fast-review bundle. Keep the same Bearer credential and the other five Knowledge files unchanged. New requests use fast-batch-v1; existing review request envelopes remain unchanged on recovery. The server returns individual stage ranges and check-back guidance; first questions and final evidence review are separate. Independent batch questions are asked one at a time locally and answered in one Action. No fixed lifetime clarification cap is introduced.

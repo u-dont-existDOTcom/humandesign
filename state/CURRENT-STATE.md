@@ -1,3 +1,13 @@
+# Active fast review release
+
+Task: fast-review-release-20261005. Owner authorized integration, live deployment, updated GPT and per-stage estimates.
+Current branch: release/fast-review-guidance-20261005.
+Checkpoint: tasks/fast-review-release-20261005/PLAN.md.
+Completion command: PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q
+Earlier task state below is retained as history, not current task selection.
+
+---
+
 ## Current owner-test follow-up — 2026-10-01
 
 Delivery hotfix v2026-10-01.5-feedback-recovery is merged and deployed on the existing participant service. A subsequent owner test exposed a separate context-loss failure: after updating/reopening the GPT, the new chat saw zero behavioral turns. Bundle v2026-10-02.1-context-resilience therefore adds an explicit pre-Update source checkpoint and owner-testing rule: substantive tests use a normal saved conversation, and an in-progress interview must create/verify `life-patterns-live-recovery-checkpoint.json` before any builder Update. An empty post-loss candidate is diagnostic only and never replaces prior nonempty source. Read `tasks/survey-owner-feedback-20261001/CONTEXT-LOSS-INCIDENT-20261002.md`.

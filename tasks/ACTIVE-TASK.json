@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "taskId": "hybrid-voice-cost-optimization-20260928",
-  "requiredBranch": "chat/hybrid-voice-cost-optimization-20260928",
+  "taskId": "fast-review-release-20261005",
+  "requiredBranch": "release/fast-review-guidance-20261005",
   "implementationAuthorized": true,
-  "assuranceLane": "iteration dark preview behind hard disabled inference; live enable remains release",
-  "status": "asynchronous_review_pilot_live_owner_gpt_update_pending",
+  "assuranceLane": "release: owner requested finish live integration and participant wait guidance",
+  "status": "implementation_active",
   "ownerOutcome": "Use voice-first ChatGPT when it improves answer richness; keep Railway for durable provenance and only useful clarifications; reduce API cost enough for the Venice daily allowance; use subscription Codex for development probes rather than paid API.",
   "parentTaskRef": "chat/participant-railway-venice-20260927-2234@dabcb1a6b60e7fd85d5765a780f2c9f933ff61b5",
   "currentMethod": "tasks/hybrid-voice-cost-optimization-20260928/VOICE-FIRST-HYBRID-PILOT.md",
@@ -146,5 +146,12 @@
     "hybrid_draft_runtime_active": false,
     "knowledge_files": 6,
     "original_failed_field": "unknown"
-  }
+  },
+  "checkpoint": "tasks/fast-review-release-20261005/PLAN.md",
+  "exclusive": true,
+  "completionCommand": "PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q",
+  "suspendedTaskSources": [
+    "unrelated research roadmaps",
+    "prior shadow-only promotion waits superseded by current owner request"
+  ]
 }
