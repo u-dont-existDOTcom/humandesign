@@ -1,0 +1,113 @@
+{
+  "classification": "synthetic test, no participant data",
+  "tested_script_sha256": "7ff67253d5dd422c5ad758aa03420857198cd74ac129778caa09b66d2f86882e",
+  "payload": {
+    "conditions": {
+      "when timing is asked": false,
+      "when exact date/localization is asked": false,
+      "when requested": false
+    },
+    "passes": [
+      {
+        "id": "P00_authority",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P00b_information_firewall",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P01_input",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P01b_time_sensitivity",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P02_ephemeris",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P03_inventory",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P04_geometry",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P05_lilly",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P06_hellenistic",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P07_jyotish",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P08_houses_rulers",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P09_domains",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P10_contradictions",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P11_topic",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P14_special_candidates",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P16_completeness",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      },
+      {
+        "id": "P17_synthesis",
+        "status": "UNAVAILABLE",
+        "reason": "not run"
+      }
+    ],
+    "claim_ledger": [
+      {
+        "claim_id": "FABRICATED",
+        "claim": "unsupported test-only conclusion",
+        "support_refs": [
+          "nonexistent-file.json#/fake"
+        ],
+        "counterevidence_refs": [],
+        "dependency_group": "fake",
+        "stability_class": "DATE_STABLE",
+        "evidence_status": "SOURCE_GROUNDED"
+      }
+    ]
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"valid\": true,\n  \"required_passes_checked\": 17\n}\n"
+}

@@ -27,7 +27,7 @@ def test_person_life_ruleset_index_is_mandatory_and_complete():
         "relationship_pair_analysis",
     } <= ids
     assert data["catalog"] == "reference/research/CURRENT_PERSON_LIFE_RULESET_CATALOG_V1.json"
-    assert data["astrology_deep_analysis_protocol"] == "reference/research/ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V1.json"
+    assert data["astrology_deep_analysis_protocol"] == "reference/research/ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V2.json"
     assert all(row["must_consider"] is True for row in data["families"])
 
 
@@ -49,5 +49,5 @@ def test_agents_bootstrap_requires_person_life_index():
     assert "## Person-life ruleset activation" in agents
     assert "CURRENT_PERSON_LIFE_RULESET_INDEX_V1.json" in agents
     assert "CURRENT_PERSON_LIFE_RULESET_CATALOG_V1.json" in agents
-    assert "ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V1.json" in agents
+    assert "ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V2.json" in agents
     assert "Do not silently omit an older retained ruleset" in agents

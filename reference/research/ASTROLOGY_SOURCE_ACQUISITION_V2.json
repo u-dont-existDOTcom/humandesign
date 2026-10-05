@@ -1,0 +1,367 @@
+{
+  "schema_version": 2,
+  "date": "2026-10-05",
+  "scope": "Finite starting corpus for auditing existing core and closing prioritized natal/timing gaps; not a claim to contain all astrology",
+  "priority_policy": {
+    "P0": "Audit existing source foundations first",
+    "P1": "Close high-impact missing conditional/natal/timing families next",
+    "P2": "Second-wave comparative/technical sources; not a prerequisite to every narrow reading"
+  },
+  "purchase_authorized": false,
+  "restricted_fulltexts_in_repository": false,
+  "sources": [
+    {
+      "id": "LILLY1647",
+      "priority": "P0",
+      "title": "William Lilly — Christian Astrology",
+      "required_edition": "1647 facsimile, Books I–III; Wellcome copy b30338724",
+      "role": "Primary, English early-modern source",
+      "source_url": "https://wellcomecollection.org/works/s7z7c46y",
+      "coverage_need": [
+        "source vocabulary, dignity and aspect conditions",
+        "Book III natal judgement and predictive synthesis",
+        "directions, profections, revolutions, transits"
+      ],
+      "status": "DOWNLOADED_PARSER_CHECKED_NOT_SOURCE_AUDITED",
+      "download_url": "https://archive.org/download/b30338724/b30338724.pdf",
+      "filename": "Lilly-1647-Christian-Astrology-I-III.pdf",
+      "access_basis": "PUBLIC_DOMAIN_MARK_WELLCOME",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "copy_caveat": "Wellcome catalog notes last leaf wanting. This is a usable three-book witness, not a certified complete physical copy. Identify that leaf before declaring its source audit complete. Houlding CA_DH.pdf is a useful Books I–II derivative, not a substitute for Book III.",
+      "downloaded_bytes": 141842963,
+      "downloaded_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "pdf_pages": 894,
+      "checked": "PDF signature, local file hash and pdfinfo parsing; selected front/end text only. Not every page, table, formula or argument was audited."
+    },
+    {
+      "id": "PTOLEMY1940",
+      "priority": "P0",
+      "title": "Ptolemy — Tetrabiblos",
+      "required_edition": "F. E. Robbins, 1940, all four books; retain notes/page anchors",
+      "role": "Primary translation; compare Greek when a disputed term changes a rule",
+      "source_url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/home.html",
+      "coverage_need": [
+        "dignity, sect, aspect relations and applications",
+        "explicit natal and topical judgement",
+        "division of times"
+      ],
+      "status": "ONLINE_TEXT_VERIFIED_LOCAL_CAPTURE_FAILED",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "HOST_IDENTIFIES_PUBLIC_DOMAIN_TRANSLATION",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "infoaccess_md5": "c7151e1e7b087bf74eb6eefce5a67c0c",
+      "infoaccess_failure": "Reader busy on initial attempt and one retry; direct-download fallback reports no fast-download record."
+    },
+    {
+      "id": "VALENSRILEY",
+      "priority": "P0",
+      "title": "Vettius Valens — Anthologies",
+      "required_edition": "Mark Riley preliminary/unperfected translation; all nine books, K/P markers",
+      "role": "Primary translation, with explicit translator caveats",
+      "source_url": "https://www.skyscript.co.uk/valens_riley.html",
+      "coverage_need": [
+        "whole-sign/topical structure and source-native combinations",
+        "Lots, time-lord methods, distributions and worked examples"
+      ],
+      "status": "DOWNLOADED_PARSER_CHECKED_NOT_SOURCE_AUDITED",
+      "download_url": "https://www.skyscript.co.uk/pdf/pubs/texts/valens/riley/docs/Vettius_Valens_Riley.pdf",
+      "filename": "Valens-Anthology-Riley.pdf",
+      "access_basis": "TRANSLATOR_AUTHORIZED_PUBLIC_DOWNLOAD_LOCAL_STUDY",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "copy_caveat": "Riley explicitly calls the translation preliminary/unperfected. Kroll/Pingree pagination and editorial angle brackets must remain attached; reformatting does not add independent testimony.",
+      "downloaded_bytes": 3022929,
+      "downloaded_sha256": "1abcb8f24a6b649c8e1c66ab0c398f99e8128c09000c7c8cca863a7c3a32ec6b",
+      "pdf_pages": 174,
+      "checked": "PDF signature, local file hash and pdfinfo parsing; selected front/end text only. Not every page, table, formula or argument was audited.",
+      "identity_check": "PDF page 3 begins Anthologies Book I; last page has END. Whole nine-book section inventory remains to be audited."
+    },
+    {
+      "id": "PHALA1950",
+      "priority": "P0",
+      "title": "Mantreswara — Phaladeepika",
+      "required_edition": "V. Subrahmanya Sastri, 2nd revised/enlarged edition, 1950, adhyayas I–XXVIII",
+      "role": "Primary Sanskrit/English source",
+      "source_url": "https://www.wisdomlib.org/hinduism/book/phaladeepika-by-mantreswara-text-and-translation/d/doc1621576.html",
+      "coverage_need": [
+        "planetary strengths and qualifications",
+        "house/topic rules, combinations and timing passages"
+      ],
+      "status": "DOWNLOADED_PARSER_CHECKED_NOT_SOURCE_AUDITED",
+      "download_url": "https://www.wisdomlib.org/uploads/ocr/essays/phaladeepika/phaladeepika-2nd-ed-1950-by-v-subrahmanya-sastri-text.pdf",
+      "filename": "Phaladeepika-Sastri-1950.pdf",
+      "access_basis": "PUBLICLY_HOSTED_HISTORICAL_EDITION_LOCAL_RESEARCH_NO_REPUBLICATION",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "downloaded_bytes": 34219409,
+      "downloaded_sha256": "f4b0b71735c788457a4fb4bf98524c058af89b095a72617bcf50546578018fd1",
+      "pdf_pages": 473,
+      "checked": "PDF signature, local file hash and pdfinfo parsing; selected front/end text only. Not every page, table, formula or argument was audited.",
+      "identity_check": "PDF page 4: Mantreswara, V. Subrahmanya Sastri, Second Edition Revised and Enlarged, 1950, Adhyayas I–XXVIII."
+    },
+    {
+      "id": "DOROTHEUS_DYKES2",
+      "priority": "P1",
+      "title": "Dorotheus — Carmen Astrologicum",
+      "required_edition": "Benjamin Dykes, current second updated edition, all five books plus Greek excerpts and errata; verify copyright-page date",
+      "role": "Primary translated witness; preserve Arabic/Persian transmission and editorial layers",
+      "source_url": "https://bendykes.com/product/dorotheuss-carmen-astrologicum/",
+      "coverage_need": [
+        "triplicity rulers and topical judgement",
+        "transits/profections and conditional combinations",
+        "separate natal Books I–IV from inception material in V"
+      ],
+      "status": "PUBLISHER_VERIFIED_FULL_COPY_PENDING",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "PUBLISHER_OR_AUTHORIZED_LIBRARY_ACCESS_NEEDED",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "infoaccess_note": "Only a different Pingree witness was found; it failed retrieval. Do not silently substitute it for the requested Dykes edition."
+    },
+    {
+      "id": "RHETORIUS_HOLDEN",
+      "priority": "P1",
+      "title": "Rhetorius the Egyptian — Astrological Compendium",
+      "required_edition": "James Herschel Holden translation, AFA, 2009; include Teucer appendices",
+      "role": "Primary translated compendium",
+      "source_url": "https://astrologers.com/product/rhetorius-the-egyptian/",
+      "coverage_need": [
+        "systematic topical reading",
+        "planet/house/ruler conditions and Hellenistic technical definitions"
+      ],
+      "status": "PUBLISHER_VERIFIED_FULL_COPY_PENDING",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "PUBLISHER_OR_AUTHORIZED_LIBRARY_ACCESS_NEEDED",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED"
+    },
+    {
+      "id": "ITA_DYKES",
+      "priority": "P1",
+      "title": "Introductions to Traditional Astrology: Abu Ma’shar & al-Qabisi",
+      "required_edition": "Benjamin Dykes translation/compilation; complete eight-book structure, glossary, appendices",
+      "role": "Primary excerpts/translations plus separately labelled modern commentary",
+      "source_url": "https://bendykes.com/product/introductions-to-traditional-astrology-abu-mashar-al-qabisi/",
+      "coverage_need": [
+        "reception, aversion, connections and failed connections",
+        "solar phases, sect, conditions, Lots and predictive vocabulary"
+      ],
+      "status": "PUBLISHER_VERIFIED_FULL_COPY_PENDING",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "PUBLISHER_OR_AUTHORIZED_LIBRARY_ACCESS_NEEDED",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED"
+    },
+    {
+      "id": "ABUMASHAR_PNIV",
+      "priority": "P1",
+      "title": "Abu Ma’shar — On the Revolutions of the Years of Nativities",
+      "required_edition": "Persian Nativities IV, Benjamin Dykes, complete Arabic-based translation; NOT only Persian Nativities III",
+      "role": "Primary translated annual/multiscale prediction system",
+      "source_url": "https://bendykes.com/product/pn4-on-the-revolutions-of-the-years-of-nativities/",
+      "coverage_need": [
+        "annual and monthly revolutions",
+        "profections, distributions, fardars, transits",
+        "source-native synthesis across timescales"
+      ],
+      "status": "PUBLISHER_VERIFIED_FULL_COPY_PENDING",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "PUBLISHER_OR_AUTHORIZED_LIBRARY_ACCESS_NEEDED",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "copy_caveat": "Publisher says PN IV replaces the partial Latin version published as PN III. PN III can be an auxiliary witness, not the main completeness target."
+    },
+    {
+      "id": "BPHS_SANTHANAM",
+      "priority": "P1",
+      "title": "Brihat Parasara Hora Sastra",
+      "required_edition": "R. Santhanam, Ranjan Publications, BOTH volumes; preserve chapter list/recension. ISBN family 9788188230600; verify exact copy",
+      "role": "Primary received Sanskrit text plus translation/commentary; not an uncontested single ancient recension",
+      "source_url": "https://www.amazon.com/Brihat-Parasara-Hora-Sastra-Maharshi/dp/818823060X",
+      "coverage_need": [
+        "vargas, dashas, yogas, avasthas and house-ruler results",
+        "distinguish graha drishti/rasi aspects and all stated prerequisites"
+      ],
+      "status": "EDITION_IDENTIFIED_FULL_COPY_PENDING",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "OWNED_OR_LICENSED_LIBRARY_OR_PURCHASE_REQUIRED",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "copy_caveat": "Different translations/recensions have different chapter inventories. Do not merge slokas, dasha definitions or varga rules across copies without a named comparison branch.",
+      "source_url_verification": "BIBLIOGRAPHIC_RECORD_ONLY; automated retailer page access was blocked. Verify an authorized exact edition before purchase or import."
+    },
+    {
+      "id": "PAULUS_GREENBAUM",
+      "priority": "P2",
+      "title": "Late Classical Astrology: Paulus Alexandrinus and Olympiodorus",
+      "required_edition": "Dorian Gieseler Greenbaum, ARHAT, 2001; Paulus plus commentary and scholia, not Paulus alone",
+      "role": "Primary translated texts; preserve commentator versus base-author attribution",
+      "source_url": "http://www.classicalastrology.org/paulus.html",
+      "coverage_need": [
+        "Lots and introductory technical definitions",
+        "commentary that makes terse base rules operational"
+      ],
+      "status": "INFOACCESS_RECORD_FOUND_RETRIEVAL_FAILED",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "FULL_COPY_ACCESS_NOT_YET_ESTABLISHED",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "infoaccess_md5": "5b89ada7aac7785017efe87813614fc6",
+      "infoaccess_failure": "no_usable_catalog_path",
+      "source_url_verification": "AUTHOR_SITE_LISTING_DISCOVERED_BUT_CURRENT_FETCH_502; do not treat as a working download."
+    },
+    {
+      "id": "BRIHAT1885",
+      "priority": "P2",
+      "title": "Varahamihira — The Brihat Jataka",
+      "required_edition": "N. Chidambaram Iyer, 1885; Harvard/Google scan",
+      "role": "Primary historical English translation; qualification/comparison source for Jyotish",
+      "source_url": "https://archive.org/details/brihatjatakavar00iyergoog",
+      "coverage_need": [
+        "classical natal combinations and judgement",
+        "comparison witness, not automatic replacement for BPHS/Phaladeepika"
+      ],
+      "status": "DOWNLOADED_PARSER_CHECKED_NOT_SOURCE_AUDITED",
+      "download_url": "https://archive.org/download/brihatjatakavar00iyergoog/brihatjatakavar00iyergoog.pdf",
+      "filename": "Brihat-Jataka-Iyer-1885.pdf",
+      "access_basis": "PUBLIC_DOMAIN_HISTORICAL_SCAN",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "downloaded_bytes": 12570922,
+      "downloaded_sha256": "8d4d6c3a8a9ab51f85ea5f45343dc8ab2e771ea8a4c729882028fb0945f7a0e6",
+      "pdf_pages": 305,
+      "checked": "PDF signature, local file hash and pdfinfo parsing; selected front/end text only. Not every page, table, formula or argument was audited."
+    },
+    {
+      "id": "HAYANA2020",
+      "priority": "P2",
+      "title": "Balabhadra — The Jewel of Annual Astrology (Hayanaratna)",
+      "required_edition": "Martin Gansten, 2020, parallel Sanskrit–English critical edition, Brill; DOI 10.1163/9789004433717",
+      "role": "Primary critical edition/translation for a SEPARATE Tajika module",
+      "source_url": "https://astrology.martingansten.com/books/",
+      "coverage_need": [
+        "Tajika annual charts and historical transmission",
+        "keep Sanskritized Perso-Arabic method separate from Parashari rules"
+      ],
+      "status": "OPEN_ACCESS_VERIFIED_DOWNLOAD_403",
+      "download_url": "https://library.oapen.org/bitstream/handle/20.500.12657/42540/9789004433717.pdf?sequence=1&isAllowed=y",
+      "filename": "Hayanaratna-Gansten-2020.pdf",
+      "access_basis": "CC_BY_4_0_PUBLISHER_OPEN_ACCESS",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "access_note": "Open-access entitlement verified at author page; both OAPEN and Brill direct PDF requests returned 403. This is transport failure, not paywall or no source."
+    },
+    {
+      "id": "GANSTEN_PD",
+      "priority": "P2",
+      "title": "Martin Gansten — Primary Directions: Astrology’s Old Master Technique",
+      "required_edition": "The Wessex Astrologer, 2009; complete text/formula appendices",
+      "role": "Modern technical guide, not an independent ancient tradition",
+      "source_url": "https://astrology.martingansten.com/primary-directions/",
+      "coverage_need": [
+        "geometry, direction variants, timing keys and software conventions",
+        "implementation cross-check for ancient/medieval directions"
+      ],
+      "status": "AUTHOR_VERIFIED_FULL_COPY_PENDING",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "PUBLISHER_OR_AUTHORIZED_LIBRARY_ACCESS_NEEDED",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED"
+    },
+    {
+      "id": "GANSTEN_ANNUAL",
+      "priority": "P2",
+      "title": "Martin Gansten — Annual Predictive Techniques of the Greek, Arabic and Indian Astrologers",
+      "required_edition": "The Wessex Astrologer; pin copyright-page edition on acquisition",
+      "role": "Modern synthesis/implementation companion, not original author testimony",
+      "source_url": "https://astrology.martingansten.com/books/",
+      "coverage_need": [
+        "integrating directions, profections, returns, transits and yearly subdivisions",
+        "compare synthesis against underlying primary texts"
+      ],
+      "status": "AUTHOR_VERIFIED_FULL_COPY_PENDING",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "PUBLISHER_OR_AUTHORIZED_LIBRARY_ACCESS_NEEDED",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED"
+    },
+    {
+      "id": "HANDS_TRANSITS",
+      "priority": "P2",
+      "title": "Robert Hand — Planets in Transit: Life Cycles for Living",
+      "required_edition": "Schiffer/Whitford Press edition, ISBN 9780924608261, 544 pages; pin copy edition",
+      "role": "Modern psychological transit interpretation; not attributed to Lilly/Valens",
+      "source_url": "https://schifferbooks.com/products/planets-in-transit-r",
+      "coverage_need": [
+        "explicit modern transit interpretations",
+        "natal planets, angles and house transits as a separate modern family"
+      ],
+      "status": "PUBLISHER_VERIFIED_FULL_COPY_PENDING",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "PUBLISHER_OR_AUTHORIZED_LIBRARY_ACCESS_NEEDED",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED"
+    },
+    {
+      "id": "LEO1906",
+      "priority": "P2",
+      "title": "Alan Leo — The Progressed Horoscope",
+      "required_edition": "1906 library-digitized edition; includes The Art and Practice of Directing",
+      "role": "Historical modern progression/direction source; compare variants rather than importing its worldview",
+      "source_url": "https://archive.org/details/bub_gb_OY7ZLx4jQmcC",
+      "coverage_need": [
+        "secondary progressions and directing conventions",
+        "separate modern progression methods from ancient time lords"
+      ],
+      "status": "DOWNLOADED_PARSER_CHECKED_NOT_SOURCE_AUDITED",
+      "download_url": "https://archive.org/download/bub_gb_OY7ZLx4jQmcC/bub_gb_OY7ZLx4jQmcC.pdf",
+      "filename": "Leo-Progressed-Horoscope-1906.pdf",
+      "access_basis": "PUBLIC_DOMAIN_HISTORICAL_EDITION",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED",
+      "downloaded_bytes": 17063289,
+      "downloaded_sha256": "a5cc01d76e49f9e1afcb090779b772a761f7146d06e02c125d9680d7aa07b470",
+      "pdf_pages": 336,
+      "checked": "PDF signature, local file hash and pdfinfo parsing; selected front/end text only. Not every page, table, formula or argument was audited."
+    },
+    {
+      "id": "BONATTI_NATIVITIES",
+      "priority": "P2",
+      "title": "Guido Bonatti — Bonatti on Nativities",
+      "required_edition": "Benjamin Dykes translation of the natal treatise; complete volume rather than a short considerations excerpt",
+      "role": "Primary medieval synthesis as a later audit extension",
+      "source_url": "https://bendykes.com/product/bonatti-on-nativities/",
+      "coverage_need": [
+        "topical judgement and synthesis",
+        "directions/profections and medieval rules with exceptions"
+      ],
+      "status": "PUBLISHER_VERIFIED_FULL_COPY_PENDING",
+      "download_url": null,
+      "filename": null,
+      "access_basis": "PUBLISHER_OR_AUTHORIZED_LIBRARY_ACCESS_NEEDED",
+      "source_audit_status": "NOT_READ_IN_FULL_NOT_SOURCE_AUDITED"
+    }
+  ],
+  "comparison_witnesses": [
+    {
+      "id": "DOROTHEUS_PINGREE1976",
+      "title": "Dorotheus, Carmen Astrologicum, David Pingree 1976",
+      "role": "Alternative textual witness; do not silently replace Dykes current edition",
+      "infoaccess_md5": "28738b569870c3fd51aaa836cd78672f",
+      "infoaccess_status": "FAILED_NO_USABLE_CATALOG_PATH"
+    },
+    {
+      "id": "PTOLEMY_INFOACCESS",
+      "title": "Manetho / Ptolemy Tetrabiblos, Waddell/Robbins, listed 1964",
+      "role": "Catalog metadata candidate, not verified substitute for complete 1940 Robbins text",
+      "infoaccess_md5": "c7151e1e7b087bf74eb6eefce5a67c0c",
+      "infoaccess_status": "FAILED_READER_BUSY_RETRY_PENDING"
+    }
+  ],
+  "acquisition_summary": {
+    "downloaded_primary_or_historical_books": 5,
+    "source_titles_in_priority_plan": 17,
+    "full_source_audits_completed": 0,
+    "raw_book_files_committed": false,
+    "privacy": "Raw texts kept in a private source directory, outside Git and outside the delivery ZIP.",
+    "local_destination_convention": "$HOME/Documents/astrology/source-audit-20261005",
+    "scoped_local_inventory": "Title-pattern filename search under Documents, Downloads and repository data; not a proof of absence from every local or Library location."
+  },
+  "acquisition_method": "Existing holdings metadata check -> primary/translator/library source lookup -> authorized local InfoAccess MCP search and actual retrieval attempts -> public-source download where permitted -> parser/hash verification -> explicit remaining Work actions."
+}

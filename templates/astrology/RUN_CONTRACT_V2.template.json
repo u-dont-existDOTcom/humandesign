@@ -1,0 +1,17 @@
+{
+  "schema_version": 2,
+  "task_id": "REPLACE_WITH_CASE_OR_METHOD_TASK",
+  "evidence_mode": "DEVELOPMENT",
+  "protocol_sha256": "REPLACE_WITH_REAL_FILE_SHA256",
+  "catalog_sha256": "REPLACE_WITH_REAL_FILE_SHA256",
+  "input_manifest_sha256": "REPLACE_WITH_REAL_FILE_SHA256",
+  "anchor_artifact_ids": {
+    "protocol_sha256": "protocol",
+    "catalog_sha256": "catalog",
+    "input_manifest_sha256": "inputs"
+  },
+  "catalog_dispositions": [],
+  "modules": [],
+  "precommit_record": "REQUIRED_OUTSIDE_THIS_MUTABLE_TEMPLATE_BEFORE_OUTCOME_EVALUATION",
+  "template_only": true
+}

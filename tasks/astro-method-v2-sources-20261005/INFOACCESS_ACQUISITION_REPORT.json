@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-05",
+  "server": {
+    "name": "InfoAccess",
+    "version": "1.8.0",
+    "availability": "LIVE_HANDSHAKE_AND_CALLS_VERIFIED",
+    "route": "Existing owner-authorized local HTTP MCP configuration, not a newly installed plugin"
+  },
+  "private_credentials_disclosed": false,
+  "purchases": false,
+  "successful_infoaccess_full_file_retrievals": 0,
+  "search_findings": [
+    {
+      "case": "structured title/author searches",
+      "result": "Six exact field combinations returned zero records; relaxed query searches were then used. Zero records were not treated as absence of the books."
+    },
+    {
+      "case": "Carmen astrologicum",
+      "md5": "28738b569870c3fd51aaa836cd78672f",
+      "match": "Pingree edition witness, NOT requested Dykes second edition",
+      "result": "no_usable_catalog_path on actual retrieval"
+    },
+    {
+      "case": "Tetrabiblos",
+      "md5": "c7151e1e7b087bf74eb6eefce5a67c0c",
+      "match": "Waddell/Robbins combined Manetho/Tetrabiblos; catalog lists 1964, EPUB language unverified",
+      "result": "reader busy twice; direct-download fallback no fast-download record"
+    },
+    {
+      "case": "Late Classical Astrology",
+      "md5": "5b89ada7aac7785017efe87813614fc6",
+      "match": "Greenbaum 2001 PDF, language metadata unverified",
+      "result": "no_usable_catalog_path on actual retrieval"
+    },
+    {
+      "case": "Dykes",
+      "result": "285 source records scanned, 58 policy-matched files inspected across offsets 0 and 25; no Benjamin Dykes target among them"
+    },
+    {
+      "case": "Persian Nativities",
+      "result": "Zero eligible results in a bounded 1000-record scan; incomplete search coverage, not a global absence conclusion"
+    },
+    {
+      "case": "Phaladeepika / Rhetorius / Gansten",
+      "result": "Some relaxed searches returned internal server errors; use exact title/edition metadata and primary-provider alternatives"
+    },
+    {
+      "case": "Lilly",
+      "result": "Relaxed query produced unrelated titles; they were rejected, not downloaded"
+    }
+  ],
+  "retrieval_operations": [
+    {
+      "title": "Dorotheus Pingree witness",
+      "operation_id": "2a4e0f41-8333-4d78-99b3-5e5907395d8f",
+      "final_state": "failed",
+      "failure_code": "no_usable_catalog_path"
+    },
+    {
+      "title": "Robbins Ptolemy witness",
+      "operation_id": "71fa088a-e062-45b7-a22d-43b41e2b55ca",
+      "final_state": "failed",
+      "failure_code": "upstream_error",
+      "attempts": 2,
+      "direct_file_fallback": "no fast-download record"
+    },
+    {
+      "title": "Paulus/Greenbaum",
+      "operation_id": "48c4cbcb-0b0f-4c77-8ebb-cc9823c09261",
+      "final_state": "failed",
+      "failure_code": "no_usable_catalog_path"
+    }
+  ],
+  "next_action": "Use the verified public sources already acquired. For remaining editions use authorized publisher/library/owned-copy access or refreshed, correctly identified InfoAccess records; do not repeat unchanged failing MD5s indefinitely or republish books."
+}

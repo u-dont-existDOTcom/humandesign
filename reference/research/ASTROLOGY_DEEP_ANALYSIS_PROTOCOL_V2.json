@@ -1,0 +1,92 @@
+{
+  "schema_version": 2,
+  "protocol_id": "astrology_deep_analysis_v2_20261005",
+  "status": "CURRENT_RESEARCH_PROCEDURE",
+  "normative_prose": "reference/research/ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V2.md",
+  "supersedes_procedural_guidance": "astrology_deep_analysis_v1",
+  "historical_prediction_or_model_rules_changed": false,
+  "source_model_promotion": false,
+  "coverage_map_parent": "reference/research/ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V1.json",
+  "coverage_map_rule": "Retain all twenty V1 pass families, but derive applicability from a predeclared task contract; require evidence integrity rather than receipt-controlled conditions or free-text DONE assertions.",
+  "evidence_modes": [
+    "DEVELOPMENT",
+    "RETROSPECTIVE_BLIND",
+    "PROSPECTIVE",
+    "DESCRIPTIVE"
+  ],
+  "separate_assurance_dimensions": [
+    "coverage_accounting",
+    "actual_execution",
+    "source_and_semantic_fidelity",
+    "discrimination",
+    "independent_predictive_evidence"
+  ],
+  "delivery_classes": [
+    "INVALID_RECEIPT",
+    "SCOPED_WITH_GAPS",
+    "DECLARED_PROFILE_EXECUTED"
+  ],
+  "scientific_validity_from_receipt": "NEVER",
+  "retained_candidate_policy": "Every catalog family must be considered for relevance. Retention is not mandatory operational use or validation. Preserve all versions, misses and endpoint restrictions.",
+  "finite_corpus_policy": "Completeness is relative to a frozen edition/section/technique inventory, never to all possible astrology.",
+  "rule_spec_fields": [
+    "id",
+    "source_locator",
+    "source_genre",
+    "reference_frame",
+    "prerequisites",
+    "antecedents",
+    "exceptions",
+    "modifiers",
+    "calculation_conventions",
+    "output_type",
+    "consequent",
+    "dependency_groups",
+    "interpretation_bridge",
+    "implementation_status",
+    "fixtures",
+    "ambiguities"
+  ],
+  "claim_axes": [
+    "target",
+    "direction",
+    "time_or_resolution",
+    "source_fidelity",
+    "exposure_mode",
+    "computed_support",
+    "counterevidence",
+    "dependency",
+    "input_robustness",
+    "predictive_evidence"
+  ],
+  "timing_information_rule": "Freeze forecasts before outcomes. Future ephemeris positions known at issue time may be used under the frozen model; later outcome observations or post-outcome parameter choices may not. Historical candidate rules remain unchanged.",
+  "receipt_contract_required_fields": [
+    "schema_version",
+    "task_id",
+    "evidence_mode",
+    "protocol_sha256",
+    "catalog_sha256",
+    "input_manifest_sha256",
+    "anchor_artifact_ids",
+    "modules",
+    "catalog_dispositions"
+  ],
+  "module_required_fields": [
+    "id",
+    "required",
+    "checks",
+    "expected_rule_ids"
+  ],
+  "validator": "scripts/validate_astrology_deep_analysis_receipt_v2.py",
+  "validator_scope": "Verifies identity/reference integrity and declared execution coverage. Does not certify semantic entailment, actual blinding, author authenticity, astronomical correctness or scientific validity.",
+  "next_source_stage": "Acquire editions, inventory all sections, extract conditional RuleSpecs with exceptions and dependencies, then implement and replay source examples before new-person application.",
+  "not_done_by_this_revision": [
+    "complete source corpus read",
+    "complete classical/Jyotish engine",
+    "empirical astrology validation",
+    "participant outcome collection",
+    "production deployment",
+    "independent Claude review"
+  ],
+  "catalog_disposition_rule": "Exactly cover current, exploratory and negative/superseded catalog entries; selected entries link to real planned modules. Machine checks membership, not semantic adequacy of relevance judgments."
+}
