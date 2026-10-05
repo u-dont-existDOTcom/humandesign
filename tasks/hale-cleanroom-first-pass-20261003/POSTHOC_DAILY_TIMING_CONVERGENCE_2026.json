@@ -1,0 +1,47 @@
+{
+  "candidate_count": 1,
+  "candidate_dates": [
+    {
+      "local_date": "2026-09-23",
+      "lunar_angle_trigger": {
+        "aspect": 180,
+        "distance_hours_from_local_noon": 15.736420463055556,
+        "exact_local": "2026-09-22T20:15:48.886333+03:00",
+        "moving": "Moon",
+        "target": "MC"
+      },
+      "progression": {
+        "aspect": 90,
+        "distance_hours_from_local_noon": 57.34657859805556,
+        "exact_local": "2026-09-25T21:20:47.682953+03:00",
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2026-09-25T18:20:47.682953+00:00"
+      },
+      "slow_angle": {
+        "aspect": 120,
+        "distance_hours_from_local_noon": 13.150405883888888,
+        "exact_local": "2026-09-22T22:50:58.538818+03:00",
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2026-09-22T19:50:58.538818+00:00"
+      }
+    }
+  ],
+  "method_status": "POST_OUTCOME_DEVELOPMENT_NOT_VALIDATION",
+  "provenance": {
+    "lunar_trigger_and_three_family_rule": "added after outcome exposure; discovery only",
+    "slow_transits_and_progressions": "PROJECT_TIMING_2020_2041.json; frozen before Hale outcome/history reveal in this clean-room sequence"
+  },
+  "rule": {
+    "any_frozen_secondary_progression_exact_major_aspect_within_hours_of_local_noon": 72,
+    "require_all_three_families": true,
+    "slow_outer_or_jupiter_saturn_exact_major_aspect_to_ASC_or_MC_within_hours_of_local_noon": 24,
+    "transiting_moon_exact_major_aspect_to_ASC_or_MC_within_hours_of_local_noon": 24
+  },
+  "schema": "hale-postoutcome-daily-timing-convergence-v1",
+  "timezone": "Europe/Istanbul",
+  "year": 2026
+}
