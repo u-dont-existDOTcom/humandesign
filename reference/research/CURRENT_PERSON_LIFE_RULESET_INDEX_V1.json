@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "index_id": "current_person_life_ruleset_index_v1",
+  "status": "CURRENT_ROUTING_INDEX",
+  "owner_instruction": "Important rulesets must not be forgotten. Before asking about or analyzing anyone's life, always look at the current merged ruleset index and consider every applicable retained rule family.",
+  "activation_contract": {
+    "trigger": "Any person-specific life analysis, including natal/personality interpretation, retrospective life-event analysis, event timing, future timing, name/numerology analysis, or relationship/life-course interpretation.",
+    "required_before_substantive_reasoning": true,
+    "required_dispositions": [
+      "APPLIED",
+      "NOT_APPLICABLE",
+      "UNAVAILABLE",
+      "SUPERSEDED"
+    ],
+    "rule": "Every listed family marked must_consider=true must receive one disposition before the analysis is delivered. Development candidates are considered but remain explicitly development evidence.",
+    "no_silent_omission": true,
+    "no_status_laundering": true,
+    "no_retuning_after_miss": true
+  },
+  "families": [
+    {
+      "family_id": "source_grounded_astrology_v14_full_library",
+      "label": "Broad source-grounded natal astrology rule library",
+      "must_consider": true,
+      "priority": "PRIMARY_ASTROLOGY_WHEN_BIRTH_DATA_AVAILABLE",
+      "apply_when": "Reliable birth date/time/place are available and astrology is relevant to the life question.",
+      "authority": {
+        "repository": "u-dont-existDOTcom/humandesign",
+        "ref": "chat/v14-cross-rulebook-20260924",
+        "commit": "f4fa0b86593e895328a18d13ec90432c8cb99662",
+        "primary_path": "src/hdmatch/evaluation/astrohd_v14_rules.py",
+        "result_path": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-STAGED-RESULT-20260925.md"
+      },
+      "interpretation_boundary": "Use the broader Lilly/Hellenistic/Jyotish source-grounded library as the primary astrology layer on a new person. Preserve contradictions and nulls; overlapping traditions are not independent observations."
+    },
+    {
+      "family_id": "astrohd_v14_six_rule_owner_fitted_signature",
+      "label": "Six-rule owner-fitted astrology signature",
+      "must_consider": true,
+      "priority": "SECONDARY_FINGERPRINT_ONLY",
+      "apply_when": "Exact natal data are available.",
+      "authority": {
+        "repository": "u-dont-existDOTcom/humandesign",
+        "ref": "chat/v14-cross-rulebook-20260924",
+        "commit": "f4fa0b86593e895328a18d13ec90432c8cb99662",
+        "primary_path": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json"
+      },
+      "interpretation_boundary": "This model was fitted to Joel. Calculate it as a secondary fingerprint/comparator; never present its score as a generic validated life/personality score for a new person."
+    },
+    {
+      "family_id": "numerology_source_audit_v2_1",
+      "label": "Source-complete frozen numerology method registry",
+      "must_consider": true,
+      "priority": "PRIMARY_NUMEROLOGY_ROUTER",
+      "apply_when": "Birth date or name data are available and numerology can address the question.",
+      "authority": {
+        "repository": "u-dont-existDOTcom/humandesign",
+        "ref": "same_commit_as_index",
+        "primary_path": "reference/research/numerology_method_registry_v2_1_20261004.json",
+        "policy_path": "docs/24_numerology_methodology_policy.md"
+      },
+      "included_systems": [
+        "CHEIRO_CHALDEAN_V1",
+        "CHEIRO_CHALDEAN_V2",
+        "DECOZ_CURRENT_V1",
+        "CAMPBELL_YOUR_DAYS_V1",
+        "JORDAN_ROMANCE_NAME_V1",
+        "JAVANE_BUNKER_DIVINE_TRIANGLE_V1"
+      ],
+      "interpretation_boundary": "Do not default silently to one numerology author when another frozen source method is materially applicable. Distinguish author rules, shared arithmetic, development fit, and unsupported combinations."
+    },
+    {
+      "family_id": "numerology_name_layers",
+      "label": "Birth-name and actually-used current-name layering",
+      "must_consider": true,
+      "priority": "NAME_LAYER_CONTROL",
+      "apply_when": "The person has changed names, uses a nickname/current name, or the question compares possible names.",
+      "authority": {
+        "repository": "u-dont-existDOTcom/humandesign",
+        "ref": "same_commit_as_index",
+        "primary_path": "notes/NUMEROLOGY_NAME_LAYER_CORRECTION_20261003.md",
+        "policy_path": "docs/24_numerology_methodology_policy.md"
+      },
+      "interpretation_boundary": "Birth-name core remains primary. Decoz current/minor name means the name actually used to introduce oneself; legal-only unused names do not silently replace that layer."
+    },
+    {
+      "family_id": "merged_timing_candidates",
+      "label": "Cumulative merged life-event timing candidates",
+      "must_consider": true,
+      "priority": "TIMING_ROUTER",
+      "apply_when": "The question involves dated past events, life periods, event localization, or future timing.",
+      "authority": {
+        "repository": "u-dont-existDOTcom/humandesign",
+        "ref": "same_commit_as_index",
+        "primary_path": "reference/research/current_merged_timing_candidate_ruleset_v1.json",
+        "summary_path": "reference/research/CURRENT_MERGED_TIMING_CANDIDATE_RULESET_V1.md"
+      },
+      "interpretation_boundary": "Run every candidate whose declared endpoint/scope is applicable. Preserve hits, misses, false peaks, and transfer failures. A strong development match is retained but not upgraded to validation."
+    },
+    {
+      "family_id": "timing_model_controls",
+      "label": "Timing-model causal and false-positive controls",
+      "must_consider": true,
+      "priority": "TIMING_METHOD_CONTROL",
+      "apply_when": "Any event-timing ruleset is interpreted or compared.",
+      "authority": {
+        "repository": "u-dont-existDOTcom/humandesign",
+        "ref": "same_commit_as_index",
+        "primary_path": "notes/TIMING_MODEL_LESSONS_20261002.md"
+      },
+      "interpretation_boundary": "Separate broad state detection from exact-day localization, use causal windows for prospective claims, preserve false positives and endpoint morphology, and do not treat background unknown periods as confirmed negatives."
+    },
+    {
+      "family_id": "human_design_v4_3_core",
+      "label": "Current Human Design V4.3/V3.6 research core",
+      "must_consider": true,
+      "priority": "HD_LAYER_WHEN_RELEVANT",
+      "apply_when": "Human Design is part of the requested life/personality analysis or the task explicitly asks for the combined AstroHD/HD layer.",
+      "authority": {
+        "repository": "u-dont-existDOTcom/humandesign",
+        "ref": "same_commit_as_index",
+        "primary_path": "reference/core/v4_3_scoring_algorithm.md",
+        "target_path": "reference/core/behavioral_target_combined_v3_6.md"
+      },
+      "interpretation_boundary": "Keep engineering validation, human reverse-match validation, forward-blind validation, and relationship validation separate. Do not infer human validity from synthetic recoverability."
+    }
+  ],
+  "update_rule": {
+    "when_new_strong_ruleset_found": "Append or version it in the relevant cumulative registry and add/update this index if it introduces a new family or changes routing.",
+    "when_ruleset_superseded": "Mark supersession explicitly; do not delete historical evidence.",
+    "when_transfer_fails": "Record the miss and retain the frozen version unless explicitly superseded; do not repair it in place.",
+    "owner_should_not_need_to_remind_worker": true
+  }
+}

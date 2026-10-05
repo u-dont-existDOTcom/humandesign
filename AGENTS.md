@@ -124,6 +124,12 @@ Relationship/connection analysis is a separate research module under `src/hdmatc
 - A known couple whose history was already inspected is a DEVELOPMENT case. It cannot validate a relationship model fitted or refined on that same couple.
 - Respect third-party privacy: pair mechanics may be computed from supplied data, but avoid presenting speculative private psychological claims about an absent partner as established facts.
 
+## Person-life ruleset activation
+
+Before any person-specific life analysis—natal/personality interpretation, retrospective life-event analysis, event timing, future timing, name/numerology analysis, or relationship/life-course interpretation—read `reference/research/CURRENT_PERSON_LIFE_RULESET_INDEX_V1.json` before substantive reasoning. Every family in that index with `must_consider: true` must receive one current-task disposition: `APPLIED`, `NOT_APPLICABLE`, `UNAVAILABLE`, or `SUPERSEDED`. Do not silently omit an older retained ruleset because the current chat is focused on a newer method. Development candidates must be considered when applicable but must keep their development/validation status.
+
+When a very strong matching ruleset is found, preserve it in the appropriate cumulative registry and update the person-life index when routing changes. Record misses, false positives, transfer failures, and supersession beside successes. Do not retune a frozen candidate in place after a miss. The owner should not need to remind a future worker to look at previously retained rulesets.
+
 ## Non-negotiable research rules
 - Never use the answer key during blind recovery.
 - Never put secret answer keys under the decoder project root during a blind run.
