@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "registry_id": "current_merged_timing_candidate_ruleset_v1",
+  "status": "CURRENT_DEVELOPMENT_CANDIDATE_REGISTRY",
+  "updated_utc": "2026-10-05",
+  "purpose": "Retain strong matching timing rulesets as reusable frozen candidates without upgrading post-outcome development matches into validation.",
+  "owner_instruction": "Whenever a very good matching ruleset is found, save it into the current merged candidate ruleset.",
+  "operating_rules": [
+    "Store the exact executable rule or an exact source artifact reference, not only an interpretation.",
+    "Record whether the motivating outcome was known before the rule was created.",
+    "Retain misses, false positives, ties, and transfer failures next to successes.",
+    "Do not silently retune an existing candidate after a transfer miss; create a separately versioned candidate.",
+    "Endpoint-specific rules are routed only to their declared endpoint and are not blended into generic timing by default.",
+    "A development candidate remains unvalidated until it succeeds under an untouched prospective or cross-person protocol."
+  ],
+  "routing": {
+    "generic_high_activation_day": [
+      "daily_three_family_angle_activation_v1"
+    ],
+    "sudden_father_loss": [
+      "father_loss_v4_sudden"
+    ]
+  },
+  "candidates": [
+    {
+      "rule_id": "daily_three_family_angle_activation_v1",
+      "status": "RETAINED_DEVELOPMENT_CANDIDATE_NOT_GENERALIZED",
+      "endpoint_scope": "generic high-activation day; does not identify event type",
+      "origin": {
+        "person": "Hale Denizden",
+        "motivating_event": "father heart attack",
+        "event_date": "2026-09-23",
+        "outcome_known_when_rule_created": true,
+        "source_branch": "research/hale-heartattack-timing-20261005",
+        "source_commit": "d9d6f78",
+        "source_artifact": "tasks/hale-cleanroom-first-pass-20261003/POSTHOC_DAILY_TIMING_CONVERGENCE_2026.json"
+      },
+      "frozen_rule": {
+        "major_aspects": [
+          0,
+          60,
+          90,
+          120,
+          180
+        ],
+        "slow_movers": [
+          "Jupiter",
+          "Saturn",
+          "Uranus",
+          "Neptune",
+          "Pluto"
+        ],
+        "slow_target": [
+          "ASC",
+          "MC"
+        ],
+        "slow_exact_hit_within_hours_of_local_noon": 24,
+        "progressed_movers": [
+          "pSun",
+          "pMoon",
+          "pMercury",
+          "pVenus",
+          "pMars"
+        ],
+        "progressed_targets": [
+          "Sun",
+          "Moon",
+          "Mercury",
+          "Venus",
+          "Mars",
+          "Jupiter",
+          "Saturn",
+          "ASC",
+          "MC"
+        ],
+        "progression_exact_hit_within_hours_of_local_noon": 72,
+        "lunar_mover": "Moon",
+        "lunar_target": [
+          "ASC",
+          "MC"
+        ],
+        "lunar_exact_hit_within_hours_of_local_noon": 24,
+        "require_all_three_families": true
+      },
+      "evidence": [
+        {
+          "case": "Hale 2026",
+          "evaluation_class": "post_outcome_development",
+          "candidate_count_in_year": 1,
+          "candidate_dates": [
+            "2026-09-23"
+          ],
+          "target_date": "2026-09-23",
+          "target_match": true
+        },
+        {
+          "case": "Joel father death 2002",
+          "evaluation_class": "fixed_rule_cross_person_replay_outcome_already_known",
+          "civil_timezone": "America/New_York",
+          "candidate_count_in_year": 2,
+          "candidate_dates": [
+            "2002-04-08",
+            "2002-04-09"
+          ],
+          "target_date": "2002-06-05",
+          "target_match": false,
+          "target_day_components": {
+            "lunar_angle_trigger": "PASS: Moon square natal ASC at 2002-06-05T03:54:50Z, 12.09h from New York local noon",
+            "progression": "MISS: nearest pSun square natal Saturn 2002-05-12T21:18:27Z, 570.69h away",
+            "slow_angle": "MISS: nearest Jupiter opposite natal ASC 2002-04-09T09:09:24Z, 1374.84h away"
+          }
+        }
+      ],
+      "interpretation": "Strong one-case localization in Hale but failed the first unchanged owner transfer. Retain for future testing; do not treat as a general day predictor."
+    },
+    {
+      "rule_id": "father_loss_v4_sudden",
+      "status": "RETAINED_ENDPOINT_SPECIFIC_DEVELOPMENT_CANDIDATE",
+      "endpoint_scope": "sudden father-loss timing state; not a generic death predictor and not a forecast of a living father's death",
+      "origin": {
+        "person": "Joel Rosenblum",
+        "motivating_event": "father died suddenly in a car crash",
+        "event_date": "2002-06-05",
+        "outcome_known_when_rule_created": true,
+        "source_artifacts": [
+          "notes/FATHER_LOSS_TIMING_V4_DEVELOPMENT_FREEZE_20261002.md",
+          "notes/FATHER_LOSS_TIMING_V4_DEVELOPMENT_RESULT_20261002.md"
+        ]
+      },
+      "frozen_rule_summary": {
+        "window": "trailing 120-day causal state in corrected result",
+        "stage_A": "father-specific state using Sun/Saturn natural father pair plus 4th/derived father-loss structure",
+        "stage_B": "sudden-rupture state using Uranus-related hard activation",
+        "dependency_control": "duplicate physical contacts count once"
+      },
+      "evidence": [
+        {
+          "case": "Joel father death 2002",
+          "evaluation_class": "post_outcome_development",
+          "candidate_days_evaluated_through_event": 6337,
+          "target_date": "2002-06-05",
+          "target_score": 16.875,
+          "target_rank": "tied #1",
+          "first_day_reaching_same_top_score": "2002-05-26",
+          "strongest_known_1998_1999_false_cluster": 6.25,
+          "earlier_false_cluster_late_1987_early_1988": 12.5
+        }
+      ],
+      "interpretation": "Strong endpoint-specific state detector on its motivating case, but not an exact-day locator and not independently validated."
+    }
+  ],
+  "current_transfer_result": {
+    "question": "How does daily_three_family_angle_activation_v1 perform on Joel's father's death date?",
+    "answer": "MISS",
+    "target_date": "2002-06-05",
+    "fixed_rule_changed_for_test": false
+  }
+}

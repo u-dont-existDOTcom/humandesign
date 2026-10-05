@@ -1,0 +1,166 @@
+{
+  "birth": {
+    "asc": 277.9489002776866,
+    "houses": [
+      277.9489002776866,
+      318.42816535830553,
+      359.6268113718366,
+      31.868524652101257,
+      56.31590924424182,
+      77.06377878393971,
+      97.94890027768662,
+      138.42816535830553,
+      179.62681137183654,
+      211.86852465210126,
+      236.31590924424182,
+      257.0637787839397
+    ],
+    "lat": 39.9526,
+    "lon": -75.1652,
+    "mc": 211.86852465210126,
+    "planets": {
+      "Jupiter": 298.1028988351278,
+      "Mars": 356.76521213394034,
+      "Mercury": 295.4736485163462,
+      "Moon": 42.61473792826824,
+      "Neptune": 272.4860650942728,
+      "Pluto": 214.73124532463066,
+      "Saturn": 236.97491986492201,
+      "Sun": 309.47018524115543,
+      "Uranus": 256.80567425795994,
+      "Venus": 356.31093444776513
+    },
+    "utc": "1985-01-29T10:25:00+00:00"
+  },
+  "candidate_count": 2,
+  "candidate_dates": [
+    {
+      "local_date": "2002-04-08",
+      "lunar_angle_trigger": {
+        "aspect": 120,
+        "distance_hours_from_local_noon": 3.2678619475,
+        "moving": "Moon",
+        "natal_target_lon": 211.86852465210126,
+        "target": "MC",
+        "utc": "2002-04-08T12:43:55.696989+00:00"
+      },
+      "progression": {
+        "aspect": 0,
+        "distance_hours_from_local_noon": 26.037398338333333,
+        "moving": "pMoon",
+        "natal_target_lon": 277.9489002776866,
+        "target": "ASC",
+        "utc": "2002-04-07T13:57:45.365982+00:00"
+      },
+      "slow_angle": {
+        "aspect": 180,
+        "distance_hours_from_local_noon": 17.15657806388889,
+        "moving": "Jupiter",
+        "natal_target_lon": 277.9489002776866,
+        "target": "ASC",
+        "utc": "2002-04-09T09:09:23.681030+00:00"
+      }
+    },
+    {
+      "local_date": "2002-04-09",
+      "lunar_angle_trigger": {
+        "aspect": 60,
+        "distance_hours_from_local_noon": 14.96980292361111,
+        "moving": "Moon",
+        "natal_target_lon": 277.9489002776866,
+        "target": "ASC",
+        "utc": "2002-04-09T01:01:48.709475+00:00"
+      },
+      "progression": {
+        "aspect": 0,
+        "distance_hours_from_local_noon": 50.03739833833334,
+        "moving": "pMoon",
+        "natal_target_lon": 277.9489002776866,
+        "target": "ASC",
+        "utc": "2002-04-07T13:57:45.365982+00:00"
+      },
+      "slow_angle": {
+        "aspect": 180,
+        "distance_hours_from_local_noon": 6.8434219361111115,
+        "moving": "Jupiter",
+        "natal_target_lon": 277.9489002776866,
+        "target": "ASC",
+        "utc": "2002-04-09T09:09:23.681030+00:00"
+      }
+    }
+  ],
+  "civil_timezone": "America/New_York",
+  "ephemeris": {
+    "root": "/home/joel/humandesign/data/ephemeris",
+    "semo_18_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+    "sepl_18_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+    "version": "2.10.03"
+  },
+  "event_evaluation": {
+    "matches_candidate_rule": false,
+    "matching_candidate": null,
+    "nearest_families": {
+      "lunar_angle_trigger": {
+        "aspect": 90,
+        "distance_hours_from_local_noon": 12.08607997,
+        "moving": "Moon",
+        "natal_target_lon": 277.9489002776866,
+        "target": "ASC",
+        "utc": "2002-06-05T03:54:50.112108+00:00"
+      },
+      "progression": {
+        "aspect": 90,
+        "distance_hours_from_local_noon": 570.6925973891666,
+        "moving": "pSun",
+        "natal_target_lon": 236.97491986492201,
+        "target": "Saturn",
+        "utc": "2002-05-12T21:18:26.649399+00:00"
+      },
+      "slow_angle": {
+        "aspect": 180,
+        "distance_hours_from_local_noon": 1374.8434219361113,
+        "moving": "Jupiter",
+        "natal_target_lon": 277.9489002776866,
+        "target": "ASC",
+        "utc": "2002-04-09T09:09:23.681030+00:00"
+      }
+    },
+    "reported_date": "2002-06-05",
+    "thresholds_hours": {
+      "lunar_angle_trigger": 24,
+      "progression": 72,
+      "slow_angle": 24
+    }
+  },
+  "method_status": "fixed_candidate_rule_evaluation",
+  "rule": {
+    "major_aspects": [
+      0,
+      60,
+      90,
+      120,
+      180
+    ],
+    "progressed_movers": [
+      "pSun",
+      "pMoon",
+      "pMercury",
+      "pVenus",
+      "pMars"
+    ],
+    "progression_major_aspect_to_natal_planets_or_angles_hours": 72,
+    "require_all_three_families": true,
+    "slow_major_aspect_to_ASC_or_MC_hours": 24,
+    "slow_movers": [
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptune",
+      "Pluto"
+    ],
+    "transiting_moon_major_aspect_to_ASC_or_MC_hours": 24
+  },
+  "rule_id": "daily_three_family_angle_activation_v1",
+  "schema": "three-family-daily-timing-evaluation-v1",
+  "year": 2002
+}

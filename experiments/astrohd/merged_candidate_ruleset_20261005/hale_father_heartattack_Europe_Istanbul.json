@@ -1,0 +1,165 @@
+{
+  "birth": {
+    "asc": 215.15248713848266,
+    "houses": [
+      215.15248713848266,
+      243.7489804082361,
+      276.75183556770423,
+      312.20992195252455,
+      345.19769679150306,
+      12.761957204589635,
+      35.152487138482684,
+      63.74898040823609,
+      96.75183556770423,
+      132.20992195252455,
+      165.19769679150306,
+      192.76195720458963
+    ],
+    "lat": 41.0138429552247,
+    "lon": 28.9496612548828,
+    "mc": 132.20992195252455,
+    "planets": {
+      "Jupiter": 223.13495771133648,
+      "Mars": 299.8216017945098,
+      "Mercury": 323.3427125918169,
+      "Moon": 132.76538367799284,
+      "Neptune": 291.4745723134846,
+      "Pluto": 237.76259532408486,
+      "Saturn": 329.8786588479239,
+      "Sun": 307.77183651591946,
+      "Uranus": 293.1665943890755,
+      "Venus": 310.37220769151656
+    },
+    "utc": "1994-01-27T22:35:00+00:00"
+  },
+  "candidate_count": 1,
+  "candidate_dates": [
+    {
+      "local_date": "2026-09-23",
+      "lunar_angle_trigger": {
+        "aspect": 180,
+        "distance_hours_from_local_noon": 15.736419372222223,
+        "moving": "Moon",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2026-09-22T17:15:48.890260+00:00"
+      },
+      "progression": {
+        "aspect": 90,
+        "distance_hours_from_local_noon": 57.3466329575,
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2026-09-25T18:20:47.878647+00:00"
+      },
+      "slow_angle": {
+        "aspect": 120,
+        "distance_hours_from_local_noon": 13.150428771944444,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2026-09-22T19:50:58.456421+00:00"
+      }
+    }
+  ],
+  "civil_timezone": "Europe/Istanbul",
+  "ephemeris": {
+    "root": "/home/joel/humandesign/data/ephemeris",
+    "semo_18_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+    "sepl_18_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+    "version": "2.10.03"
+  },
+  "event_evaluation": {
+    "matches_candidate_rule": true,
+    "matching_candidate": {
+      "local_date": "2026-09-23",
+      "lunar_angle_trigger": {
+        "aspect": 180,
+        "distance_hours_from_local_noon": 15.736419372222223,
+        "moving": "Moon",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2026-09-22T17:15:48.890260+00:00"
+      },
+      "progression": {
+        "aspect": 90,
+        "distance_hours_from_local_noon": 57.3466329575,
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2026-09-25T18:20:47.878647+00:00"
+      },
+      "slow_angle": {
+        "aspect": 120,
+        "distance_hours_from_local_noon": 13.150428771944444,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2026-09-22T19:50:58.456421+00:00"
+      }
+    },
+    "nearest_families": {
+      "lunar_angle_trigger": {
+        "aspect": 180,
+        "distance_hours_from_local_noon": 15.736419372222223,
+        "moving": "Moon",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2026-09-22T17:15:48.890260+00:00"
+      },
+      "progression": {
+        "aspect": 90,
+        "distance_hours_from_local_noon": 57.3466329575,
+        "moving": "pMoon",
+        "natal_target_lon": 299.8216017945098,
+        "target": "Mars",
+        "utc": "2026-09-25T18:20:47.878647+00:00"
+      },
+      "slow_angle": {
+        "aspect": 120,
+        "distance_hours_from_local_noon": 13.150428771944444,
+        "moving": "Saturn",
+        "natal_target_lon": 132.20992195252455,
+        "target": "MC",
+        "utc": "2026-09-22T19:50:58.456421+00:00"
+      }
+    },
+    "reported_date": "2026-09-23",
+    "thresholds_hours": {
+      "lunar_angle_trigger": 24,
+      "progression": 72,
+      "slow_angle": 24
+    }
+  },
+  "method_status": "fixed_candidate_rule_evaluation",
+  "rule": {
+    "major_aspects": [
+      0,
+      60,
+      90,
+      120,
+      180
+    ],
+    "progressed_movers": [
+      "pSun",
+      "pMoon",
+      "pMercury",
+      "pVenus",
+      "pMars"
+    ],
+    "progression_major_aspect_to_natal_planets_or_angles_hours": 72,
+    "require_all_three_families": true,
+    "slow_major_aspect_to_ASC_or_MC_hours": 24,
+    "slow_movers": [
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptune",
+      "Pluto"
+    ],
+    "transiting_moon_major_aspect_to_ASC_or_MC_hours": 24
+  },
+  "rule_id": "daily_three_family_angle_activation_v1",
+  "schema": "three-family-daily-timing-evaluation-v1",
+  "year": 2026
+}

@@ -133,6 +133,7 @@ Relationship/connection analysis is a separate research module under `src/hdmatc
 - Performance on those same development humans is not evidence of predictive validity.
 - Keep a final untouched human test cohort.
 - Report failures, ties, unresolved intervals, and negative results.
+- When a timing ruleset produces a very strong development match, retain its exact frozen definition in `reference/research/current_merged_timing_candidate_ruleset_v1.json` with provenance, false positives, and transfer results; retention does not imply validation, and transfer misses must not be silently retuned away.
 - Timezone is not independently identifiable from personality when local tuples resolve to the same UTC instant.
 - Do not report a single minute when the scored state is stable across a wider interval.
 - Missing support is not contradiction.
