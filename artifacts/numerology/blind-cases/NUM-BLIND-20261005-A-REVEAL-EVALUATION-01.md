@@ -21,6 +21,18 @@ Disposition:
 - Do not reinterpret previously noted symbolic factors after reveal as if they had forecast the undisclosed adverse outcome class.
 - Timing signals remain timing signals only; they do not retrospectively identify the event type.
 
+
+## Chronology clarification after first reveal
+
+A later owner clarification establishes that the important adverse life-course pattern was already present **well before the early 30s**, including throughout the participant's 20s as far as the owner knows, and continued worsening into the early 30s through approximately 2017.
+
+Research consequence:
+- the frozen age-32/33 numerology transition must **not** be credited as predicting onset;
+- a distinct worsening or discrete event in the early-30s window can be evaluated only if independently dated and matched to the frozen event definition;
+- preserve the earlier broad transition signal, but do not upgrade it merely because severe problems were present during that period.
+
+The detailed chronology and sensitive outcome key remain outside Git.
+
 ## Research consequence
 
 This case is negative evidence against treating a coherent symbolic personality reading as an adequate account of a person's life.
