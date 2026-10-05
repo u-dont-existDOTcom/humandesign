@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "status": "RESOLVED_ROUTING_METADATA_NOT_APPLICATION_EVIDENCE",
+  "selected": [
+    "codex-github-operating-system",
+    "development-assurance-lanes",
+    "independent-evaluation-separation",
+    "task-time-lesson-activation",
+    "parallel-chat-write-isolation",
+    "cross-family-reasoning-check"
+  ],
+  "normalized_selected": [
+    "codex-github-operating-system",
+    "development-assurance-lanes",
+    "independent-evaluation-separation",
+    "task-time-lesson-activation",
+    "parallel-chat-write-isolation",
+    "cross-family-reasoning-check"
+  ],
+  "supersession_redirects": [],
+  "ordered_rules": [
+    {
+      "rule_id": "codex-github-operating-system",
+      "canonical_path": "patterns/codex-github-operating-system.md",
+      "trigger": "Repository-governed development, recovery, GitHub mutation, verification, continuation, or release work.",
+      "enforcement_phase": [
+        "retrieval",
+        "action",
+        "persistence",
+        "delivery",
+        "release"
+      ]
+    },
+    {
+      "rule_id": "development-assurance-lanes",
+      "canonical_path": "patterns/development-assurance-lanes.md",
+      "trigger": "Software/product development needs an iteration, decision, or release assurance level.",
+      "enforcement_phase": [
+        "reasoning",
+        "action",
+        "release"
+      ]
+    },
+    {
+      "rule_id": "independent-evaluation-separation",
+      "canonical_path": "patterns/independent-evaluation-separation.md",
+      "trigger": "An evaluator checks an artifact or conclusion it did not produce and must not be anchored by the producer's rationale, prior verdicts, or repair history.",
+      "enforcement_phase": [
+        "reasoning",
+        "release"
+      ]
+    },
+    {
+      "rule_id": "instruction-composition-and-portable-intelligence",
+      "canonical_path": "patterns/instruction-composition-and-portable-intelligence.md",
+      "trigger": "Instruction maintenance, inheritance, deduplication, transfer, public/internal composition, or bootstrap changes.",
+      "enforcement_phase": [
+        "retrieval",
+        "reasoning",
+        "persistence"
+      ]
+    },
+    {
+      "rule_id": "task-time-lesson-activation",
+      "canonical_path": "patterns/task-time-lesson-activation.md",
+      "trigger": "A task is governed by durable lessons or owner corrections that must be activated and enforced before consequential work.",
+      "enforcement_phase": [
+        "retrieval",
+        "reasoning",
+        "action",
+        "handoff",
+        "delivery"
+      ]
+    },
+    {
+      "rule_id": "durable-write-checkpoints",
+      "canonical_path": "patterns/durable-write-checkpoints.md",
+      "trigger": "A repository mutation, publication, or worker output is not yet durably retrievable and verified at its required destination.",
+      "enforcement_phase": [
+        "persistence",
+        "publication",
+        "delivery"
+      ]
+    },
+    {
+      "rule_id": "worker-self-remediation-before-owner-interruption",
+      "canonical_path": "patterns/worker-self-remediation-before-owner-interruption.md",
+      "trigger": "An execution worker is blocked by routine permissions, configuration, transport, credentials, setup, or recoverable execution friction and the owner might otherwise be asked to perform manual remediation.",
+      "enforcement_phase": [
+        "reasoning",
+        "action",
+        "handoff",
+        "delivery"
+      ]
+    },
+    {
+      "rule_id": "worker-github-publication-and-recovery",
+      "canonical_path": "patterns/worker-github-publication-and-recovery.md",
+      "trigger": "A repository worker or child branch produces output that another coordinator/integrator must retrieve, or GitHub publication/retrieval fails.",
+      "enforcement_phase": [
+        "action",
+        "handoff",
+        "persistence",
+        "publication",
+        "delivery"
+      ]
+    },
+    {
+      "rule_id": "parallel-chat-write-isolation",
+      "canonical_path": "patterns/parallel-chat-write-isolation.md",
+      "trigger": "Two or more chats, agents, or workers may mutate the same repository task concurrently.",
+      "enforcement_phase": [
+        "action",
+        "persistence",
+        "handoff",
+        "publication",
+        "delivery"
+      ]
+    },
+    {
+      "rule_id": "cross-family-reasoning-check",
+      "canonical_path": "patterns/cross-family-reasoning-check.md",
+      "trigger": "A reasoning-heavy conclusion would be costly or hard to undo if wrong and cannot be settled by tests, computation, or sources.",
+      "enforcement_phase": [
+        "reasoning",
+        "pre-action",
+        "final-delivery"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "task-time-lesson-activation",
+      "relation": "requires",
+      "to": "instruction-composition-and-portable-intelligence"
+    },
+    {
+      "from": "durable-write-checkpoints",
+      "relation": "requires",
+      "to": "codex-github-operating-system"
+    },
+    {
+      "from": "worker-github-publication-and-recovery",
+      "relation": "requires",
+      "to": "codex-github-operating-system"
+    },
+    {
+      "from": "worker-github-publication-and-recovery",
+      "relation": "requires",
+      "to": "durable-write-checkpoints"
+    },
+    {
+      "from": "worker-github-publication-and-recovery",
+      "relation": "requires",
+      "to": "worker-self-remediation-before-owner-interruption"
+    },
+    {
+      "from": "parallel-chat-write-isolation",
+      "relation": "requires",
+      "to": "codex-github-operating-system"
+    },
+    {
+      "from": "parallel-chat-write-isolation",
+      "relation": "requires",
+      "to": "worker-github-publication-and-recovery"
+    },
+    {
+      "from": "cross-family-reasoning-check",
+      "relation": "requires",
+      "to": "development-assurance-lanes"
+    },
+    {
+      "from": "cross-family-reasoning-check",
+      "relation": "requires",
+      "to": "independent-evaluation-separation"
+    }
+  ],
+  "limits": [
+    "Resolution proves declared dependency expansion only.",
+    "Canonical prose and current owner/project authority remain normative.",
+    "Activation and application require separate task-time evidence."
+  ],
+  "uda_ref": "9a173657d49685da014ac81ef131f6a99fb9edde",
+  "index_routed_not_graph_mapped": [
+    "exclusive-active-task-locks",
+    "human-readable-operational-references"
+  ],
+  "timing": "Dependency expansion recorded at review closeout; operative lessons were read before substantive review. This is not retroactive application proof."
+}

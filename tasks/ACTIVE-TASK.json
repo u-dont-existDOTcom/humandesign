@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "taskId": "experiment-gap-triage-shadow-20261003",
-  "status": "pro_review_in_progress",
+  "status": "pro_review_complete_integration_open",
   "exclusive": true,
   "requiredBranch": "pro/gap-triage-review-20261005",
   "implementationAuthorized": true,
   "assuranceLane": "iteration shadow-only; remote experiment branch publication; no merge or live behavior change",
   "ownerOutcome": "Implement the task-note clarification triage experiment with separate independent admission, a privacy-safe benchmark CLI, tests, participant-suite verification, and publication to the named experiment branch without merging.",
   "currentMethod": "tasks/survey-owner-feedback-20261001/INDEPENDENT-REVIEW-LATENCY-REDESIGN-20261003.md",
-  "checkpoint": "tasks/clarification-triage-shadow-20261003/PRO-REVIEW-20261005.md",
+  "checkpoint": "tasks/clarification-triage-shadow-20261003/CURRENT-STATE.md",
   "preflightCommand": "python3 scripts/task_preflight.py",
   "completionCommand": "PYTHONPATH=apps/life-patterns-participant python -m pytest apps/life-patterns-participant/tests -q",
   "constraints": [
@@ -19,21 +19,11 @@
     "Do not invoke paid Venice inference, deploy, merge, or enable participant inference."
   ],
   "verification": {
-    "focusedShadowTests": "14 passed",
-    "affectedRuff": "PASS",
-    "participantSuite": "130 passed",
-    "participantSuiteBaselineFailure": null,
-    "participantSuiteExcludingBaselineFailure": "not needed; full suite passed",
-    "realSemanticBenchmarkExecuted": true,
-    "semanticBenchmarkProvenance": "Hardened lean shadow CLI replayed privately on the 81-turn owner source; privacy-safe aggregate/route metadata only.",
-    "finalBenchmarkCliSemanticRun": true,
-    "dryRunCliExercised": true,
-    "liveBehaviorChanged": false,
-    "finalBenchmarkSemanticDurationSeconds": 112.023,
-    "legacyInitialSemanticDurationSeconds": 488.155,
-    "ownerCaseLegacyFirstRouteMatch": "M11",
-    "remoteHeadVerified": "e40a685800396adbb3dbb85ceb323f1107f40d04",
-    "publicationStatus": "PUBLISHED_VERIFIED"
+    "receipt": "tasks/clarification-triage-shadow-20261003/PRO-ACCEPTANCE-RECEIPT-20261005.json",
+    "reviewAccepted": true,
+    "participantSuite": "160 passed",
+    "semanticCases": "6/6 full-bank",
+    "liveBehaviorChanged": false
   },
   "suspendedTaskSources": [
     "hybrid-voice-cost-optimization-20260928 ACTIVE-TASK state at parent commit 2053e58",

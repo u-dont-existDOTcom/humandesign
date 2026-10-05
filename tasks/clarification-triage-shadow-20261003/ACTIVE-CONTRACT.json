@@ -5,8 +5,8 @@
     "status": "ACTIVE",
     "source": "u-dont-existDOTcom/universal-dev-architecture",
     "ref": "main",
-    "commit": "live-main-read-2026-10-03",
-    "route": "owner-supplied project AGENTS.md -> live UDA AGENTS.md -> live LESSON-INDEX.md -> task-relevant patterns and dependency graph"
+    "commit": "9a173657d49685da014ac81ef131f6a99fb9edde",
+    "route": "Current owner request -> live UDA and project bootstrap -> applicable patterns -> executable Pro review"
   },
   "assurance_lane": "iteration",
   "targeted_hard_gates": [
@@ -61,19 +61,19 @@
   ],
   "pre_attempt_activation": "PASS",
   "contract_freshness": "CURRENT",
-  "result": "PUBLISHED_VERIFIED_QUALITY_GATE_OPEN",
+  "result": "PRO_REVIEW_COMPLETE_CONTROLLED_INTEGRATION_ACCEPTED",
   "verification": {
-    "focused_shadow_tests": "14 passed",
-    "affected_ruff": "PASS",
-    "participant_suite": "130 passed",
-    "participant_suite_without_baseline_failure": "not applicable; full suite passed",
-    "prototype_semantic_benchmark_runs": 5,
-    "final_cli_semantic_benchmark_run": true,
-    "live_behavior_changed": false,
-    "final_cli_semantic_duration_seconds": 112.023,
-    "legacy_initial_semantic_duration_seconds": 488.155,
-    "owner_case_legacy_first_route_match": "M11",
-    "remote_head_verified": "e40a685800396adbb3dbb85ceb323f1107f40d04",
-    "quality_noninferiority": "OPEN_REPLAY_GATE"
+    "receipt": "PRO-ACCEPTANCE-RECEIPT-20261005.json",
+    "codeCommit": "a39228f89c12a3a03742efd5b067a7477dffadc2",
+    "participantSuite": "160 passed",
+    "semanticCases": "6/6",
+    "liveBehaviorChanged": false
+  },
+  "owner_override": "insetad of claude you can use this pro pass now to check it",
+  "stop_admission": {
+    "current_owner_review_request": "SATISFIED after actual source review, reproduced repairs and verified tests",
+    "parent_product_outcome": "OPEN; integration not performed",
+    "boundary": "Completed requested Pro review within inherited shadow-only task; no claim of deployment or full product completion",
+    "next_action_artifact": "PRO-INTEGRATION-CONTRACT-20261005.md"
   }
 }

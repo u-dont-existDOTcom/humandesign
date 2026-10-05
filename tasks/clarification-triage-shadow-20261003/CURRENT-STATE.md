@@ -1,65 +1,16 @@
-# Shadow clarification triage experiment — current state
+# Fast clarification review — current state
 
-- Task: `experiment-gap-triage-shadow-20261003`
-- Branch: `experiment-gap-triage-shadow-20261003`
-- Parent baseline: `2053e58`
-- Status: development-only implementation is pushed and remotely verified; owner-case latency, synthetic quality replay and independent blind adjudication are complete; two fresh route-isolated replay sets passed; a fresh multi-route set exposed and repaired a stochastic one-task/context wording defect; fresh post-repair validation remains open
-- Assurance lane: experiment only; privacy/no-live-change hard gates
-- Authority: owner request plus `tasks/survey-owner-feedback-20261001/INDEPENDENT-REVIEW-LATENCY-REDESIGN-20261003.md`
-- Completion command: `PYTHONPATH=apps/life-patterns-participant python -m pytest apps/life-patterns-participant/tests -q`
+Task: `experiment-gap-triage-shadow-20261003`
+Branch: `pro/gap-triage-review-20261005`
+Preflight: `python3 scripts/task_preflight.py`
+Completion check: `PYTHONPATH=apps/life-patterns-participant python -m pytest apps/life-patterns-participant/tests -q`
 
-## Required outcome
+The owner-authorized Pro review is complete and accepted after repairs. Current authority and detailed results: `PRO-REVIEW-20261005.md`; machine receipt: `PRO-ACCEPTANCE-RECEIPT-20261005.json`. The owner's Pro-instead-of-Claude instruction supersedes the earlier quota wait for this review. It does not make this a cross-family or untouched blind review.
 
-Test whether clarification selection can be separated from full evidence synthesis without reducing reasoning effort or source fidelity. Do not connect this experiment to the live participant engine, review worker, HTTP API, deployment, or Custom GPT bundle until quality is shown non-inferior.
+Six new deterministic regression probes passed after failing at the baseline. Full participant suite: 160 passed. Six new full-bank semantic cases: 6/6. Repaired 81-turn first-batch benchmark: 114.164 seconds, xhigh, three usable questions, zero wording rejections. Full final review is not completed by this stage; deferred audit is explicitly pending.
 
-## Current implementation
+Reviewed/repaired code commit: `a39228f89c12a3a03742efd5b067a7477dffadc2`. Application code was unchanged during final semantic checks and timing.
 
-1. `participant/shadow_triage.py` contains a source-complete GapTriage producer plus independent GapAdmission refuter. The lean producer returns only ranked questions/dependencies; it does not emit evidence, per-turn dispositions, route maps, source citations or defect prose.
-2. Triage receives compact route authority; full interpretation/context controls are attached only for selected candidates in independent admission.
-3. `scripts/benchmark_shadow_triage.py` runs private replays while persisting only privacy-safe aggregate/route metadata.
-4. `tests/test_shadow_triage.py` covers full-source propagation, admission independence, no mutation, route/dependency/gate validation, review-ready/all-rejected outcomes, 81-turn-class input and privacy-safe output.
-5. Production remains unchanged by this branch. The branch also contains a separate read-only `getLifePatternsReview` approval probe for testing whether current ChatGPT offers persistent **Always allow** on a nonconsequential status read.
+Parent product outcome remains OPEN: production integration and deployment have not occurred; no new GPT ZIP exists from this review. Follow `PRO-INTEGRATION-CONTRACT-20261005.md`. Preserve the experiment's no-live-change boundary until the actual adapter and applicable release checks have been completed; do not silently replace the old worker with a summary of shadow results.
 
-## Semantic evidence
-
-Private owner source is never committed.
-
-- Prototype baseline repeats: ~70.3 s and ~121.4 s.
-- Three planted semantic-redundancy variants: ~97.4–149.8 s; each planted equivalent answer suppressed its intended route despite no canonical route ID.
-- Earlier hardened verbose contract: ~222.3 s.
-- Hardened lean replay: **112.023 s** total (GapTriage 72.012 s + GapAdmission 40.011 s).
-- A later semantic run of the final privacy-hardened benchmark contract took **222.314 s** (177.302 s + 45.012 s). Both retained all 81 behavioral source turns and xhigh reasoning.
-- Legacy successful initial Plan+Admission: ~488.155 s. The hardened shadow is therefore about **2.20x–4.36x faster** on this owner case, with substantial stochastic/output-contract variance still to measure.
-- Both the hardened shadow and the actual legacy review selected **M11** as the first canonical clarification route on this owner case.
-- Focused shadow/action tests: **24 passed** after the current approval probe and triage changes.
-- Seven targeted synthetic semantic outcomes now cover true unresolved `M11`, semantically redundant `M11`, antecedent-gated `PREFER-EXCHANGE`, missing-antecedent review-ready, correction-resolved review-ready, unsupported `WORK-RECOVERY` premise rejection, and an independently admitted two-question `M05` + `M11` batch. One initial synthetic wording was repaired because it accidentally answered the distinction it was supposed to leave unresolved.
-- Direct legacy-vs-shadow replay on those same synthetic fixtures matched on the useful single-route decisions; shadow additionally rejected a semantically redundant `M11` that legacy still asked and admitted both independent `M05` + `M11` questions in one batch where legacy could expose only one.
-
-## Approval / streaming finding
-
-Current official OpenAI app-permission documentation confirms that eligible connected apps/accounts may offer **Always allow** or **Allow low-risk actions**, but current GPT Actions help does not restate the old consequential-flag guarantee. Historical Actions documentation said `x-openai-isConsequential: false` exposes **Always allow**. The experimental schema therefore marks **only the read-only review-status GET** explicitly nonconsequential for a private UI probe. All participant-data or state-changing POSTs remain consequential.
-
-Do not add per-answer Custom GPT writes yet. First exploit the measured ~2.20x–4.36x triage speedup and clarification batching. If persistent permission is verified privately, a separate append-only encrypted checkpoint endpoint becomes a reasonable Custom-GPT experiment; the plugin remains the better long-term place for batched/incremental ingestion.
-
-## Open quality gate
-
-Before promotion:
-1. broaden beyond route-isolated synthetic fixtures to multi-route development records with mixed conditions/corrections and review-ready cases;
-2. compare legacy and shadow route/question decisions under blind adjudication on that broader development replay set;
-3. expand replay around the adjudication-disputed information-gain cases; require zero clear redundant/unsupported admissions and no material loss of independently supported clarifications;
-4. rerun a fresh post-repair multi-route validation set and repeated-run stability; the J5 tuning case showed that semantically correct gap selection can still fail admission when producer wording turns one decision boundary into two response tasks;
-5. only then move evidence synthesis off the critical path or wire triage into live behavior.
-
-The dependent-follow-up gate is now covered: a synthetic two-step `M11` → `PREFER-EXCHANGE` sequence correctly withheld the dependent probe until the `M11` answer existed, then admitted it on the next pass.
-
-Remote experiment head verified through the synthetic-quality benchmark commit. Do not merge this experiment merely from the owner-case latency result.
-
-## 2026-10-03 later replay checkpoint
-
-- Fresh frozen v2 replay: 3/3 scored cases passed (`H8`–`H10`).
-- Fresh frozen v3 replay: 3/3 scored cases passed (`H11`–`H13`).
-- Multi-route v4 first run: 3/4 scored cases passed; disputed `J2` was correctly unscored. `J5` proposed the adjudicated `PREFER-EXCHANGE` gap but independent admission rejected the generated follow-up as context-unsupported.
-- Multi-route v4 second run reproduced the same participant-facing failure; admission additionally classified the wording as two response tasks.
-- Isolated J5 diagnostics identified the unstable wording pattern: “which reasons make you continue, and which make you stop?” The producer prompt now requires a single deciding-boundary question (“what about X would determine whether…”), preserving the same semantic gap while satisfying the one-response-task gate. A focused rerun produced exactly that form and independent admission passed every gate.
-
-Because J5 directly informed this repair, v4 is now development/tuning evidence. Promotion still requires untouched post-repair cases.
+Historical validation versions and other repository roadmaps are evidence, not competing current task selectors. Do not restart completed runs or wait for Claude again solely because an older checkpoint says so.

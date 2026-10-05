@@ -1,0 +1,85 @@
+{
+  "schema": "life-patterns-pro-semantic-evaluation-v1",
+  "synthetic_only": true,
+  "code_unchanged_during_run": true,
+  "cases": [
+    {
+      "case_id": "PRO1",
+      "expected_decision": "review_ready",
+      "actual_decision": "review_ready",
+      "expected_route_ids": [],
+      "ready_route_ids": [],
+      "full_menu_count": 78,
+      "semantic_seconds": 18.029,
+      "passed": true
+    },
+    {
+      "case_id": "PRO2",
+      "expected_decision": "clarification_needed",
+      "actual_decision": "clarification_needed",
+      "expected_route_ids": [
+        "G20"
+      ],
+      "ready_route_ids": [
+        "G20"
+      ],
+      "full_menu_count": 78,
+      "semantic_seconds": 33.03,
+      "passed": true
+    },
+    {
+      "case_id": "PRO3",
+      "expected_decision": "clarification_needed",
+      "actual_decision": "clarification_needed",
+      "expected_route_ids": [
+        "PREFER-EXCHANGE"
+      ],
+      "ready_route_ids": [
+        "PREFER-EXCHANGE"
+      ],
+      "full_menu_count": 78,
+      "semantic_seconds": 34.027,
+      "passed": true
+    },
+    {
+      "case_id": "PRO4",
+      "expected_decision": "review_ready",
+      "actual_decision": "review_ready",
+      "expected_route_ids": [],
+      "ready_route_ids": [],
+      "full_menu_count": 78,
+      "semantic_seconds": 17.014,
+      "passed": true
+    },
+    {
+      "case_id": "PRO5",
+      "expected_decision": "review_ready",
+      "actual_decision": "review_ready",
+      "expected_route_ids": [],
+      "ready_route_ids": [],
+      "full_menu_count": 78,
+      "semantic_seconds": 17.014,
+      "passed": true
+    },
+    {
+      "case_id": "PRO6",
+      "expected_decision": "clarification_needed",
+      "actual_decision": "clarification_needed",
+      "expected_route_ids": [
+        "G20",
+        "G19"
+      ],
+      "ready_route_ids": [
+        "G20",
+        "G19"
+      ],
+      "full_menu_count": 78,
+      "semantic_seconds": 41.026,
+      "passed": true
+    }
+  ],
+  "passed_count": 6,
+  "case_count": 6,
+  "all_passed": true,
+  "limits": "Pro-authored requirement probes, not untouched independent human validation; one application-model run per case."
+}
