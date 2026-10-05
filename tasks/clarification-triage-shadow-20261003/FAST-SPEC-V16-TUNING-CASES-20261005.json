@@ -1,0 +1,144 @@
+{
+  "schema": "life-patterns-shadow-triage-validation-cases-v16",
+  "cases": [
+    {
+      "case_id": "Y1",
+      "route_ids": [
+        "M09",
+        "G20",
+        "G23"
+      ],
+      "turns": [
+        {
+          "question_text": "Your current planning app is simple, familiar, works offline, and handles your ordinary needs, but it cannot share reminders with other people. A new app adds shared reminders and better search, but moving everything would take about an hour and the new app is more complex. What would matter in deciding whether to switch?",
+          "answer_text": "Mainly whether I actually have someone I need to share reminders with. If my partner needed to see the grocery and bill reminders, I'd happily spend the hour. If not, the offline reliability and simplicity win and I'd stay put.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        },
+        {
+          "question_text": "Your basic needs are covered, and you unexpectedly receive extra money equal to about one month of your ordinary living costs, with no debt, tax, or repayment obligation attached. What would you most want that money to do for you?",
+          "answer_text": "I'd want it to buy me a trip to visit my sister abroad, which I keep postponing because the flights are expensive.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "Y2",
+      "route_ids": [
+        "M09",
+        "G19",
+        "G23"
+      ],
+      "turns": [
+        {
+          "question_text": "Your current planning app is simple, familiar, works offline, and handles your ordinary needs, but it cannot share reminders with other people. A new app adds shared reminders and better search, but moving everything would take about an hour and the new app is more complex. What would matter in deciding whether to switch?",
+          "answer_text": "I'd want to try the new one for a few days alongside the old one before making up my mind.",
+          "canonical_question_id": "M09",
+          "correction_of": null
+        },
+        {
+          "question_text": "You promised to help a friend sort things for a move, but it is taking longer than expected and using up time you had set aside for yourself. Your friend is open to changing the arrangement. What would matter most in deciding what to do?",
+          "answer_text": "I'd sit down with my friend and ask them what they think we should do.",
+          "canonical_question_id": "G19",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "Y4",
+      "route_ids": [
+        "M05",
+        "G23",
+        "G19"
+      ],
+      "turns": [
+        {
+          "question_text": "On a bus or car route you know well, the driver suddenly turns onto a road that route normally never uses for your destination. What would you make of that?",
+          "answer_text": "I really don't know what I'd make of it. I can't say how I'd read that, so I'd rather not guess.",
+          "canonical_question_id": "M05",
+          "correction_of": null
+        },
+        {
+          "question_text": "You arrive at a casual shared meal with a few friends or acquaintances you know. People are getting things ready, and nobody has asked you to take on any particular job. What tends to catch your attention first?",
+          "answer_text": "Whether there are drinks out and who is already in the kitchen. If someone looks swamped at the stove, I notice that quickly.",
+          "canonical_question_id": "G23",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "Y7",
+      "route_ids": [
+        "M11",
+        "PREFER-EXCHANGE",
+        "G19"
+      ],
+      "turns": [
+        {
+          "question_text": "You and a friend are planning a meal for just the two of you. You offer to organise and cook it, which will take several hours, and ask your friend to buy the ingredients. They say, \"I'd like to do the meal, but paying for all the ingredients feels like too much for me.\" What would you say next?",
+          "answer_text": "I'd say, \"No problem, let's split the grocery bill, and you can bring dessert or wine instead.\"",
+          "canonical_question_id": "M11",
+          "correction_of": null
+        },
+        {
+          "question_text": "In that meal-cost discussion, how much do you usually want to keep negotiating toward an arrangement you and your friend can both accept?",
+          "answer_text": "It really varies. Sometimes I'd keep working at it until we found something, other times I'd drop it right away and cover it myself. Both are about equally likely for me.",
+          "canonical_question_id": "PREFER-EXCHANGE",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "Y8",
+      "route_ids": [
+        "M11",
+        "PREFER-EXCHANGE",
+        "G20"
+      ],
+      "turns": [
+        {
+          "question_text": "Imagine you've offered to cook a long dinner for you and one friend and asked them to pick up the groceries, but they tell you covering all of it would be too much for them. What do you say in response?",
+          "answer_text": "I'd tell them that's fair, and ask what amount they'd be comfortable with so we can adjust.",
+          "canonical_question_id": null,
+          "correction_of": null
+        },
+        {
+          "question_text": "In that meal-cost discussion, how much do you usually want to keep negotiating toward an arrangement you and your friend can both accept?",
+          "answer_text": "I'd first want to find out how tight money is for them right now.",
+          "canonical_question_id": "PREFER-EXCHANGE",
+          "correction_of": null
+        }
+      ]
+    },
+    {
+      "case_id": "Y10",
+      "route_ids": [
+        "G23",
+        "M05",
+        "G20",
+        "G19"
+      ],
+      "turns": [
+        {
+          "question_text": "You arrive at a casual shared meal with a few friends or acquaintances you know. People are getting things ready, and nobody has asked you to take on any particular job. What tends to catch your attention first?",
+          "answer_text": "Mostly the usual things that people notice, the obvious stuff.",
+          "canonical_question_id": "G23",
+          "correction_of": null
+        },
+        {
+          "question_text": "On a bus or car route you know well, the driver suddenly turns onto a road that route normally never uses for your destination. What would you make of that?",
+          "answer_text": "I'd want to find out what's going on.",
+          "canonical_question_id": "M05",
+          "correction_of": null
+        },
+        {
+          "question_text": "Your basic needs are covered, and you unexpectedly receive extra money equal to about one month of your ordinary living costs, with no debt, tax, or repayment obligation attached. What would you most want that money to do for you?",
+          "answer_text": "I'd use it to finally replace my old laptop, because it slows down my freelance work.",
+          "canonical_question_id": "G20",
+          "correction_of": null
+        }
+      ]
+    }
+  ]
+}

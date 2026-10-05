@@ -35,6 +35,7 @@ from participant.shadow_triage import (
     GapSpecTriage,
     GapTriage,
     make_gap_match_audit_context,
+    make_gap_spec_admission_context,
     make_gap_spec_triage_context,
     make_gap_triage_context,
     normalize_gap_spec_bindings,
@@ -405,6 +406,97 @@ class FastSpecApprovedFake:
                 ],
             ),
             {"duration_seconds": 10.0, "prompt_tokens": 7500, "completion_tokens": 120},
+        )
+
+
+class FastSpecRetryWordingFake:
+    def __init__(self) -> None:
+        self.calls: list[tuple[str, dict]] = []
+        self.selected_route: dict | None = None
+        self.review_count = 0
+
+    def call(self, system, payload, schema, model, effort):
+        self.calls.append((system, payload))
+        if schema is GapSpecTriage:
+            route = next(
+                row
+                for row in payload["candidate_routes"]
+                if row["candidate_mode"] == "repair_only"
+                and row["id"] == "G19"
+            )
+            self.selected_route = route
+            anchor = route["presented_turn_ids"][0]
+            return (
+                GapSpecTriage(
+                    decision="clarification_needed",
+                    candidates=[
+                        GapSpecCandidate(
+                            candidate_id="C1",
+                            rank=1,
+                            source_anchor_turn_ids=[anchor],
+                            route_id=route["id"],
+                            antecedent_turn_ids=[],
+                            equivalent_context=False,
+                            missing_distinction=(
+                                "The route-requested deciding factor remains unresolved."
+                            ),
+                        )
+                    ],
+                ),
+                {"duration_seconds": 8.0, "prompt_tokens": 6000, "completion_tokens": 100},
+            )
+        if schema is GapSpecAdmission:
+            assert self.selected_route is not None
+            return (
+                GapSpecAdmission(
+                    source_review_complete=True,
+                    reviews=[
+                        GapSpecAdmissionReview(
+                            candidate_id="C1",
+                            route_id=self.selected_route["id"],
+                            approved=True,
+                            source_references_valid=True,
+                            not_already_answered=True,
+                            premise_supported=True,
+                            antecedent_supported=True,
+                            context_supported=True,
+                            material_information_gain=True,
+                            independent_for_batch=True,
+                            failure_codes=[],
+                        )
+                    ],
+                ),
+                {"duration_seconds": 5.0, "prompt_tokens": 4000, "completion_tokens": 80},
+            )
+        if schema is GapQuestionRenderResponse:
+            return (
+                GapQuestionRenderResponse(
+                    questions=[
+                        GapRenderedQuestionText(
+                            text=spec["route_authority"]["question"]
+                        )
+                        for spec in payload["render_specs"]
+                    ]
+                ),
+                {"duration_seconds": 2.0, "prompt_tokens": 1000, "completion_tokens": 50},
+            )
+        assert schema is GapQuestionReviewResponse
+        self.review_count += 1
+        approved = self.review_count > 1
+        return (
+            GapQuestionReviewResponse(
+                reviews=[
+                    GapQuestionWordingJudgment(
+                        approved=approved,
+                        construct_discriminating=True,
+                        one_response_task=True,
+                        no_unsupported_extension=approved,
+                        failure_codes=[] if approved else ["unsupported_extension"],
+                    )
+                    for _ in payload["items"]
+                ]
+            ),
+            {"duration_seconds": 2.0, "prompt_tokens": 1000, "completion_tokens": 50},
         )
 
 
@@ -1080,6 +1172,98 @@ def test_fast_spec_repair_binding_keeps_equivalent_context():
     ]
     assert candidate.equivalent_context is True
     assert normalized == ["C1"]
+
+
+def test_fast_spec_admission_includes_required_context_route_authority():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].extend(
+        [
+            {
+                "turn_id": "meal-exchange-paraphrase",
+                "turn_role": "behavioral",
+                "canonical_question_id": None,
+                "question_text": (
+                    "Imagine you've offered to cook a long dinner for you and one friend and "
+                    "asked them to pick up the groceries, but they tell you covering all of "
+                    "it would be too much for them. What do you say in response?"
+                ),
+                "answer_text": "I would ask what amount they could comfortably cover.",
+            },
+            {
+                "turn_id": "exchange-preference",
+                "turn_role": "behavioral",
+                "canonical_question_id": "PREFER-EXCHANGE",
+                "question_text": next(
+                    route["question"]
+                    for route in bank(instrument)["questions"]
+                    if route["id"] == "PREFER-EXCHANGE"
+                ),
+                "answer_text": "I would first want to know how tight money is.",
+            },
+        ]
+    )
+    triage_context = make_gap_spec_triage_context(state, instrument)
+    triage = GapSpecTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapSpecCandidate(
+                candidate_id="C1",
+                rank=1,
+                source_anchor_turn_ids=["exchange-preference"],
+                route_id="PREFER-EXCHANGE",
+                antecedent_turn_ids=[],
+                equivalent_context=False,
+                missing_distinction="The usual persistence tendency remains unresolved.",
+            )
+        ],
+    )
+    normalize_gap_spec_bindings(triage, triage_context)
+    admission_context = make_gap_spec_admission_context(
+        state, instrument, triage_context, triage
+    )
+    assert [route["id"] for route in admission_context["selected_routes"]] == [
+        "PREFER-EXCHANGE"
+    ]
+    assert [route["id"] for route in admission_context["required_context_routes"]] == [
+        "M11"
+    ]
+    assert triage.candidates[0].equivalent_context is True
+    assert "meal-exchange-paraphrase" in triage.candidates[0].antecedent_turn_ids
+
+
+def test_fast_spec_wording_retry_preserves_admitted_gap():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "g19-presented",
+            "turn_role": "behavioral",
+            "canonical_question_id": "G19",
+            "question_text": next(
+                route["question"]
+                for route in bank(instrument)["questions"]
+                if route["id"] == "G19"
+            ),
+            "answer_text": "I would ask my friend what they think we should do.",
+        }
+    )
+    fake = FastSpecRetryWordingFake()
+    result = run_shadow_fast_spec_path(
+        state, instrument, fake, model="gpt-5.6-sol", effort="xhigh"
+    )
+    summary = privacy_safe_case_summary("case-0001", state, result)
+    assert summary["admitted_route_ids"] == ["G19"]
+    assert summary["question_rejected_route_ids"] == []
+    assert summary["question_repaired_route_ids"] == ["G19"]
+    assert [call["shadow_stage"] for call in result["calls"]] == [
+        "GapSpecTriage",
+        "GapSpecAdmission",
+        "GapQuestionRender",
+        "GapQuestionReview",
+        "GapQuestionRenderRetry",
+        "GapQuestionReviewRetry",
+    ]
 
 
 def test_fast_spec_path_defers_omission_audit_after_admitted_gap():
