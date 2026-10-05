@@ -23,7 +23,11 @@ def test_person_life_ruleset_index_is_mandatory_and_complete():
         "merged_timing_candidates",
         "timing_model_controls",
         "human_design_v4_3_core",
+        "cf003_planetary_dominance",
+        "relationship_pair_analysis",
     } <= ids
+    assert data["catalog"] == "reference/research/CURRENT_PERSON_LIFE_RULESET_CATALOG_V1.json"
+    assert data["astrology_deep_analysis_protocol"] == "reference/research/ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V1.json"
     assert all(row["must_consider"] is True for row in data["families"])
 
 
@@ -44,4 +48,6 @@ def test_agents_bootstrap_requires_person_life_index():
     agents = (ROOT / "AGENTS.md").read_text()
     assert "## Person-life ruleset activation" in agents
     assert "CURRENT_PERSON_LIFE_RULESET_INDEX_V1.json" in agents
+    assert "CURRENT_PERSON_LIFE_RULESET_CATALOG_V1.json" in agents
+    assert "ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V1.json" in agents
     assert "Do not silently omit an older retained ruleset" in agents

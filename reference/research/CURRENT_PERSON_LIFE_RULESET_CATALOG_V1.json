@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "catalog_id": "current_person_life_ruleset_catalog_v1",
+  "status": "CURRENT_CONSOLIDATED_CATALOG",
+  "coverage_basis": {
+    "audited_refs": [
+      "research/six-rule-life-timing-20261001",
+      "chat/v14-cross-rulebook-20260924",
+      "chat/cf003-secondary-module-20260929",
+      "research/hale-cleanroom-20261003",
+      "research/hale-heartattack-timing-20261005"
+    ],
+    "audit_date_utc": "2026-10-05",
+    "rule": "Catalog important retained/current candidates and material negative/superseded evidence separately; do not promote a failed search into a live ruleset.",
+    "targeted_candidate_inventory_count": 126,
+    "broad_person_life_inventory_count": 538,
+    "inventory_note": "Counts are filename/history discovery inventories, not proof that no differently named historical artifact exists."
+  },
+  "current_or_retained": [
+    {
+      "id": "astrohd_v14_full_source_library",
+      "kind": "natal_astrology",
+      "status": "PRIMARY_DEVELOPMENT_LIBRARY",
+      "ref": "chat/v14-cross-rulebook-20260924",
+      "path": "src/hdmatch/evaluation/astrohd_v14_rules.py",
+      "notes": "390 operational source-rule instances / 361 deduplicated in the V1.4 work; Lilly, Ptolemy, Valens, Phaladeepika."
+    },
+    {
+      "id": "astrohd_v14_six_rule_signature",
+      "kind": "natal_astrology",
+      "status": "OWNER_FITTED_SECONDARY",
+      "ref": "chat/v14-cross-rulebook-20260924",
+      "path": "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-SIX-RULE-MODEL-20260925.json"
+    },
+    {
+      "id": "cf003_planetary_dominance",
+      "kind": "empirical_astrology",
+      "status": "DEVELOPMENT_SECONDARY_NOT_PROSPECTIVELY_FROZEN",
+      "ref": "chat/cf003-secondary-module-20260929",
+      "path": "notes/empirical_astrology/master_v2/CF003_SECONDARY_MODULE_DECISION_20260929.md",
+      "notes": "Use only under its independent behavioral-target contract; not a free-form personality rescue rule."
+    },
+    {
+      "id": "numerology_registry_v2_1",
+      "kind": "numerology",
+      "status": "FROZEN_SOURCE_AUDIT",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "reference/research/numerology_method_registry_v2_1_20261004.json"
+    },
+    {
+      "id": "name_layer_control",
+      "kind": "numerology_name",
+      "status": "CURRENT",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "notes/NUMEROLOGY_NAME_LAYER_CORRECTION_20261003.md"
+    },
+    {
+      "id": "timing_candidate_registry",
+      "kind": "life_event_timing",
+      "status": "CURRENT_CUMULATIVE",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "reference/research/current_merged_timing_candidate_ruleset_v1.json"
+    },
+    {
+      "id": "relationship_timing_v3_empirical",
+      "kind": "relationship_timing",
+      "status": "RETAINED_DEVELOPMENT_WITH_FORWARD_FREEZE",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "notes/RELATIONSHIP_TIMING_V3_EMPIRICAL_FREEZE_20261001.md"
+    },
+    {
+      "id": "father_loss_v4_sudden",
+      "kind": "parental_event_timing",
+      "status": "RETAINED_DEVELOPMENT",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "notes/FATHER_LOSS_TIMING_V4_DEVELOPMENT_FREEZE_20261002.md"
+    },
+    {
+      "id": "inner_transition_two_channel_v4",
+      "kind": "inner_transition_timing",
+      "status": "RETAINED_DEVELOPMENT",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "notes/INNER_TRANSITION_TWO_CHANNEL_V4_20261003.md"
+    },
+    {
+      "id": "daily_three_family_angle_activation_v1",
+      "kind": "generic_day_localization",
+      "status": "RETAINED_DEVELOPMENT_NOT_GENERALIZED",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "reference/research/current_merged_timing_candidate_ruleset_v1.json"
+    },
+    {
+      "id": "six_rule_carrier_timing_v1",
+      "kind": "six_rule_timing",
+      "status": "RETAINED_EXPLORATORY",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "notes/SIX_RULE_LIFE_TIMING_HYPOTHESIS_20261001.md"
+    },
+    {
+      "id": "human_design_v4_3_v3_6",
+      "kind": "human_design",
+      "status": "CURRENT_RESEARCH_CORE",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "reference/core/v4_3_scoring_algorithm.md"
+    },
+    {
+      "id": "astrohd_relationship_overlay",
+      "kind": "relationship_pair_analysis",
+      "status": "CURRENT_DESCRIPTIVE_COMPOSITION_NOT_VALIDATED_OUTCOME_MODEL",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "docs/23_astrohd_relationship_overlay.md",
+      "notes": "Canonical HD partnership mechanics plus separate Western synastry/house-overlay layer; pair histories cannot change natal charts or weights."
+    }
+  ],
+  "material_negative_or_superseded": [
+    {
+      "id": "relationship_timing_v2",
+      "status": "SUPERSEDED_BY_V3_FOR_FUTURE_MONITORING",
+      "path": "notes/RELATIONSHIP_TIMING_V2_FREEZE_20261001.md"
+    },
+    {
+      "id": "relationship_timing_v3_hand_weighted",
+      "status": "FAILED_DEVELOPMENT_CANDIDATE",
+      "path": "notes/RELATIONSHIP_TIMING_V3_HAND_WEIGHTED_FAILURE_20261001.md"
+    },
+    {
+      "id": "maternal_loss_blind_models",
+      "status": "MISS",
+      "path": "experiments/astrohd/historical_timing_M01_reveal_evaluation_20261002.json"
+    },
+    {
+      "id": "father_loss_initial_blind_model",
+      "status": "MISS_REPAIRED_ONLY_POST_REVEAL",
+      "path": "notes/FATHER_LOSS_TIMING_BLIND_FREEZE_20261002.md"
+    },
+    {
+      "id": "spiritual_transition_blind_model",
+      "status": "MISS_AFTER_CHRONOLOGY_CORRECTION",
+      "path": "notes/SPIRITUAL_TRANSITION_TIMING_BLIND_FREEZE_20261002.md"
+    },
+    {
+      "id": "adb_pair_timing_v1_v2_v3",
+      "status": "NEGATIVE_DEVELOPMENT; DO_NOT PROMOTE COEFFICIENTS",
+      "path": "reference/research/adb_exact_pair_timing_v3_summary.md"
+    },
+    {
+      "id": "strong_rule_offender_laureate_search",
+      "status": "NEGATIVE_HELD_OUT_RESULT; NOT A LIVE PERSON_RULE",
+      "ref": "commit 91169b39aca4ecd20ff3890fb08689579fa78904",
+      "path": "notes/empirical_astrology/strong_rules_followup_20261003/REPORT.md",
+      "notes": "Strong in-sample tree collapsed to chance held-out; preserve as anti-overfitting evidence."
+    },
+    {
+      "id": "castille_wedding_timing_v1",
+      "status": "FROZEN_DESIGN_WITHOUT_RESULT_IN_AUDITED_BRANCH",
+      "path": "reference/research/castille_wedding_timing_freeze_v1.md"
+    },
+    {
+      "id": "cf004_southern_inversion",
+      "status": "SOURCE_BLOCKED_AGGREGATE_ONLY; NOT A LIVE PERSON_RULE",
+      "ref": "pro/correlation-source-replay-adjudication-20260929",
+      "path": "notes/empirical_astrology/master_v2/CF004_SOURCE_REPLAY_20260929.md",
+      "notes": "Headline aggregate arithmetic reproduced, but 138/141 paired scores and corrected source exports are missing; printed discrepancies remain."
+    },
+    {
+      "id": "cf005_event_aspect_tables",
+      "status": "CONDITIONAL_AGGREGATE_REPLAY_ONLY; NOT AN INDIVIDUAL_RISK_RULE",
+      "ref": "pro/correlation-source-replay-adjudication-20260929",
+      "path": "notes/empirical_astrology/master_v2/CF005_SOURCE_TABLE_REPLAY_20260929.md",
+      "notes": "Some aggregate/event-aspect table arithmetic reproduces, but person-level independence/control/null requirements remain unavailable."
+    }
+  ],
+  "important_exploratory_not_default": [
+    {
+      "id": "cf001_prominence_karaka_kendra",
+      "status": "EXPLORATORY_ONLY",
+      "ref": "pro/correlation-source-replay-adjudication-20260929",
+      "path": "reference/empirical_astrology/literature_model_v1b_decision.json",
+      "scope": "public prominence only",
+      "rule": "D1 OR D9 AtmaKaraka-PutraKaraka kendra under the frozen historical convention",
+      "boundary": "No personality transport; separately commissioned prominence hypothesis only."
+    },
+    {
+      "id": "cf002_tightness_applying",
+      "status": "EXPLORATORY_SOURCE_INCOMPLETE",
+      "ref": "pro/correlation-source-replay-adjudication-20260929",
+      "path": "reference/empirical_astrology/literature_model_v1b_decision.json",
+      "scope": "original outcome only after full-text recovery",
+      "boundary": "No executable 1\u00b0/2\u00b0 allowance or general applying/tightness rule is promoted."
+    },
+    {
+      "id": "cf006_sectors",
+      "status": "EXPLORATORY_ONLY",
+      "ref": "pro/correlation-source-replay-adjudication-20260929",
+      "path": "reference/empirical_astrology/literature_model_v1b_decision.json",
+      "scope": "profession/eminence only",
+      "boundary": "No sector geometry, occupation/planet combination, or eminence threshold selected for person-level use."
+    },
+    {
+      "id": "cf007_personality_aspect_moderators",
+      "status": "INACTIVE_SECONDARY_TEMPLATE",
+      "ref": "pro/correlation-source-replay-adjudication-20260929",
+      "path": "reference/empirical_astrology/literature_model_v1b_decision.json",
+      "scope": "personality only",
+      "boundary": "Aspect-to-trait mapping is deliberately empty; tightness/applying/angularity templates require a new frozen version and untouched replication."
+    },
+    {
+      "id": "literature_model_v1b_theory_neutral",
+      "status": "RESEARCH_BASELINE_NOT_PERSON_READING_RULE",
+      "ref": "pro/correlation-source-replay-adjudication-20260929",
+      "path": "reference/empirical_astrology/literature_model_v1b_decision.json",
+      "scope": "same-hospital birth-time-distance/personality association",
+      "boundary": "Executable astrology feature list is empty; retain as research architecture, not an astrology reading model."
+    },
+    {
+      "id": "numerology_owner_comparison_20261004",
+      "status": "BOUNDED_RETROSPECTIVE_NO_FULL_SYSTEM_WINNER",
+      "ref": "research/six-rule-life-timing-20261001",
+      "path": "artifacts/numerology/owner-comparison-20261004/Numerology-Comparison-Summary-20261004.md",
+      "scope": "owner development history only",
+      "boundary": "Retain source-specific correspondences (including Javane/Bunker 2018 41/5) and contrary evidence, but no system/combination demonstrated better overall prediction and no limited filter is promoted as a general life forecaster."
+    }
+  ]
+}

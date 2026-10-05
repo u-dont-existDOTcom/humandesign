@@ -16,6 +16,9 @@ def test_current_merged_candidate_registry_preserves_success_and_transfer_miss()
     rules = {r["rule_id"]: r for r in data["candidates"]}
     assert "daily_three_family_angle_activation_v1" in rules
     assert "father_loss_v4_sudden" in rules
+    assert "relationship_timing_v3_empirical" in rules
+    assert "inner_transition_two_channel_v4" in rules
+    assert "six_rule_carrier_timing_v1" in rules
 
     daily = rules["daily_three_family_angle_activation_v1"]
     assert daily["frozen_rule"]["slow_exact_hit_within_hours_of_local_noon"] == 24

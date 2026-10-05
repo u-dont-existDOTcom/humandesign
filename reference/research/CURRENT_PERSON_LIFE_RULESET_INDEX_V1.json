@@ -123,6 +123,34 @@
         "target_path": "reference/core/behavioral_target_combined_v3_6.md"
       },
       "interpretation_boundary": "Keep engineering validation, human reverse-match validation, forward-blind validation, and relationship validation separate. Do not infer human validity from synthetic recoverability."
+    },
+    {
+      "family_id": "cf003_planetary_dominance",
+      "label": "CF-003 adjusted planetary-dominance secondary module",
+      "must_consider": true,
+      "priority": "SECONDARY_EMPIRICAL_ASTROLOGY_CANDIDATE",
+      "apply_when": "Behavioral dominance/personality ranking is being tested and the independent CF-003 target prerequisites are available.",
+      "authority": {
+        "repository": "u-dont-existDOTcom/humandesign",
+        "ref": "chat/cf003-secondary-module-20260929",
+        "commit": "fb680dd06cb0520b3a42380bf78438f6bb81471c",
+        "primary_path": "notes/empirical_astrology/master_v2/CF003_SECONDARY_MODULE_DECISION_20260929.md"
+      },
+      "interpretation_boundary": "Development/secondary only; predictor and behavioral target must remain independently frozen. Do not use free-form chart-conditioned interpretation as a substitute."
+    },
+    {
+      "family_id": "relationship_pair_analysis",
+      "label": "Two-person AstroHD/HD relationship composition",
+      "must_consider": true,
+      "priority": "PAIR_LAYER_WHEN_TWO_PEOPLE_ARE_ASKED_ABOUT",
+      "apply_when": "Two people are being compared or a relationship/pair question supplies both charts/birth records.",
+      "authority": {
+        "repository": "u-dont-existDOTcom/humandesign",
+        "ref": "same_commit_as_index",
+        "primary_path": "docs/23_astrohd_relationship_overlay.md",
+        "hd_path": "docs/18_relationship_analysis.md"
+      },
+      "interpretation_boundary": "Preserve both natal charts independently; run canonical HD partnership mechanics and Western synastry separately; no compatibility percentage or outcome claim unless separately validated."
     }
   ],
   "update_rule": {
@@ -130,5 +158,8 @@
     "when_ruleset_superseded": "Mark supersession explicitly; do not delete historical evidence.",
     "when_transfer_fails": "Record the miss and retain the frozen version unless explicitly superseded; do not repair it in place.",
     "owner_should_not_need_to_remind_worker": true
-  }
+  },
+  "catalog": "reference/research/CURRENT_PERSON_LIFE_RULESET_CATALOG_V1.json",
+  "astrology_deep_analysis_protocol": "reference/research/ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V1.json",
+  "astrology_source_completeness_frontier": "reference/research/ASTROLOGY_SOURCE_COMPLETENESS_FRONTIER_V1.json"
 }

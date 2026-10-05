@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "protocol_id": "astrology_deep_analysis_v1",
+  "status": "CURRENT_DEVELOPMENT_PROTOCOL",
+  "purpose": "Make deep person-specific astrology analysis coverage-driven rather than salience-driven, so important rule families cannot be silently overlooked.",
+  "governing_principles": [
+    "Compute first, interpret second.",
+    "Coverage before salience: a striking aspect never waives the remaining passes.",
+    "Use source-native rules before modern synthesis.",
+    "Separate date-stable planets from birth-time-sensitive angles/houses.",
+    "Preserve contradictions and nulls; do not average them away.",
+    "Do not count the same astronomy multiple times merely because several traditions describe it.",
+    "State detection, endpoint classification, and exact-day localization are separate timing tasks.",
+    "Every required pass receives APPLIED, NOT_APPLICABLE, UNAVAILABLE, or SUPERSEDED before synthesis."
+  ],
+  "required_passes": [
+    {
+      "id": "P00_authority",
+      "title": "Ruleset authority and routing",
+      "required": true,
+      "checks": [
+        "load CURRENT_PERSON_LIFE_RULESET_INDEX_V1.json",
+        "load CURRENT_PERSON_LIFE_RULESET_CATALOG_V1.json",
+        "disposition every must-consider family"
+      ]
+    },
+    {
+      "id": "P00b_information_firewall",
+      "title": "Information firewall / evidence class",
+      "required": true,
+      "checks": [
+        "classify analysis as clean-room, retrospective-blind, development, or prospective",
+        "for a new clean-room person, freeze first-pass predictions before opening biography/survey/history",
+        "record exactly which outcome data were visible before each model change"
+      ]
+    },
+    {
+      "id": "P01_input",
+      "title": "Birth-input provenance and uncertainty",
+      "required": true,
+      "checks": [
+        "civil date/time/place",
+        "historical timezone",
+        "birth-time source quality",
+        "time uncertainty",
+        "location precision",
+        "current question/endpoint"
+      ]
+    },
+    {
+      "id": "P01b_time_sensitivity",
+      "title": "Birth-time and location sensitivity",
+      "required": true,
+      "checks": [
+        "recompute ASC/MC and house-sensitive claims across declared birth-time uncertainty",
+        "distinguish date-stable planets/aspects from time-sensitive angles/houses",
+        "downgrade or set-valued report any claim that changes materially across uncertainty",
+        "if documentary time uncertainty is unknown, label angular/house conclusions conditional"
+      ]
+    },
+    {
+      "id": "P02_ephemeris",
+      "title": "Astronomy provenance",
+      "required": true,
+      "checks": [
+        "verified Swiss Ephemeris files/flags",
+        "UTC instant",
+        "tropical and Lahiri sidereal states when tradition requires",
+        "ASC/MC and tradition-specific houses when time supports them"
+      ]
+    },
+    {
+      "id": "P03_inventory",
+      "title": "Complete chart inventory",
+      "required": true,
+      "checks": [
+        "Sun through Saturn",
+        "Uranus Neptune Pluto as modern/timing context",
+        "true node when used",
+        "ASC MC DSC IC",
+        "all planet signs/degrees/speeds",
+        "house positions in each active tradition"
+      ]
+    },
+    {
+      "id": "P04_geometry",
+      "title": "Aspect and angular geometry",
+      "required": true,
+      "checks": [
+        "all major planet-planet aspects under frozen orb policy",
+        "all major planet-angle aspects",
+        "tightest aspects ranked mechanically",
+        "do not omit hard aspects because interpretation is inconvenient",
+        "emit a complete aspect ledger, not only interpreted aspects",
+        "apply one frozen orb policy per aspect family and record near-boundary cases"
+      ]
+    },
+    {
+      "id": "P05_lilly",
+      "title": "Lilly source-native strength/debility",
+      "required": true,
+      "checks": [
+        "domicile/exaltation/triplicity/term/face",
+        "detriment/fall/peregrine",
+        "house strength/debility",
+        "direct/retrograde",
+        "solar visibility",
+        "Moon phase where applicable",
+        "partile benefic/malefic conditions",
+        "bounded native totals plus component ledger"
+      ]
+    },
+    {
+      "id": "P06_hellenistic",
+      "title": "Hellenistic/Ptolemy/Valens testimonies",
+      "required": true,
+      "checks": [
+        "domicile/exaltation/fall where encoded",
+        "sect support",
+        "planetary joys where encoded",
+        "whole-sign house/ruler context",
+        "keep unimplemented techniques explicit"
+      ]
+    },
+    {
+      "id": "P07_jyotish",
+      "title": "Phaladeepika/Jyotish testimonies",
+      "required": true,
+      "checks": [
+        "Lahiri sidereal sign/house",
+        "own sign/exaltation/debilitation where encoded",
+        "retrograde/temporal/directional strength",
+        "kendra/trikona/upachaya/dusthana where current source module supports",
+        "do not invent dashas/vargas/yogas absent a frozen implementation"
+      ]
+    },
+    {
+      "id": "P08_houses_rulers",
+      "title": "House-ruler topology",
+      "required": true,
+      "checks": [
+        "rulers of all 12 houses under each active tradition",
+        "where each ruler is placed",
+        "repeated rulers / concentrated house control",
+        "angular/cadent/succedent structure",
+        "topic-specific derived houses only with declared source rule",
+        "dispositor/rulership chains under the active tradition",
+        "reception only when a frozen source-native implementation exists; otherwise mark unavailable"
+      ]
+    },
+    {
+      "id": "P09_domains",
+      "title": "Behavior/domain mapping",
+      "required": true,
+      "checks": [
+        "run full V1.4 source-grounded rule vector",
+        "run target-blind domain map where allowed",
+        "record positive negative and null domains",
+        "six-rule owner-fitted fingerprint only as secondary comparator"
+      ]
+    },
+    {
+      "id": "P10_contradictions",
+      "title": "Contradiction and dependency audit",
+      "required": true,
+      "checks": [
+        "positive and negative testimonies for same planet/domain",
+        "public/private tensions",
+        "sect vs dignity vs house contradictions",
+        "collapse duplicate astronomy across traditions",
+        "label unresolved rather than force one narrative"
+      ]
+    },
+    {
+      "id": "P11_topic",
+      "title": "Question-specific significator pass",
+      "required": true,
+      "checks": [
+        "identify endpoint before selecting significators",
+        "run every retained endpoint-specific module applicable from merged timing registry",
+        "do not use relationship/father/spiritual modules outside scope without justification"
+      ]
+    },
+    {
+      "id": "P12_timing_state",
+      "title": "Long/medium timing state",
+      "required": "when timing is asked",
+      "checks": [
+        "slow transits",
+        "secondary progressions",
+        "solar arcs where frozen",
+        "profections where frozen",
+        "numerology timing if requested",
+        "preserve causal vs centered-window distinction"
+      ]
+    },
+    {
+      "id": "P13_timing_trigger",
+      "title": "Fast trigger and day localization",
+      "required": "when exact date/localization is asked",
+      "checks": [
+        "fast transits including Moon/Venus/Mars only under a predeclared trigger rule",
+        "run generic daily timing candidate when applicable",
+        "separate fast trigger from slower state qualification",
+        "scan false-positive burden over declared control horizon"
+      ]
+    },
+    {
+      "id": "P14_special_candidates",
+      "title": "Retained experimental candidates",
+      "required": true,
+      "checks": [
+        "CF-003 when its behavioral-target prerequisites exist",
+        "relationship V3 when relationship timing is asked",
+        "father-loss V4 only for sudden father-loss development comparison",
+        "inner-transition V4 only for matching reported phenomenology",
+        "record transfer misses"
+      ]
+    },
+    {
+      "id": "P15_cross_system",
+      "title": "Astrology/numerology/HD fusion",
+      "required": "when requested",
+      "checks": [
+        "astrology-only result first",
+        "numerology-only result first",
+        "HD-only result where applicable",
+        "convergence complement contradiction",
+        "no double-counted symbolic agreement"
+      ]
+    },
+    {
+      "id": "P16_completeness",
+      "title": "Pre-synthesis completeness gate",
+      "required": true,
+      "checks": [
+        "every required pass has disposition",
+        "every UNAVAILABLE names missing implementation/data",
+        "every strong claim traceable to computed testimony",
+        "nulls/misses included",
+        "no newly noticed aspect added only after outcome reveal without post-hoc label",
+        "coverage receipt includes each subcheck, not only a pass-level label",
+        "strongest omitted/unavailable frontier technique stated when it could materially change the question"
+      ]
+    },
+    {
+      "id": "P17_synthesis",
+      "title": "Layered synthesis",
+      "required": true,
+      "checks": [
+        "high-confidence convergences",
+        "important tensions",
+        "time-sensitive versus date-stable claims",
+        "what is distinctive vs generic",
+        "explicit uncertainties",
+        "development/validation status",
+        "emit a claim ledger: each substantive claim has support references, counterevidence references, dependency group, time-sensitivity/stability class, and evidence status"
+      ]
+    }
+  ],
+  "depth_frontier_not_yet_default": [
+    "Hellenistic Lots and time-lord techniques such as zodiacal releasing",
+    "full reception/bonification/maltreatment/overcoming doctrine beyond encoded atomic rules",
+    "primary directions and fully source-grounded annual revolutions/solar returns",
+    "fixed stars, antiscia and other specialized traditional techniques",
+    "Jyotish nakshatras, Vimshottari dasha, vargas, yogas and full graha drishti",
+    "additional house systems/traditions beyond the frozen source contracts"
+  ],
+  "frontier_rule": "These techniques demonstrate how much deeper astrology can go, but they are UNAVAILABLE rather than improvised until separately source-audited, implemented, frozen, and tested.",
+  "synthesis_gate": {
+    "allowed_statuses": [
+      "APPLIED",
+      "NOT_APPLICABLE",
+      "UNAVAILABLE",
+      "SUPERSEDED"
+    ],
+    "block_if_missing_required_pass": true,
+    "require_evidence_for_applied": true,
+    "require_reason_for_non_applied": true,
+    "require_subcheck_disposition": true,
+    "subcheck_statuses": [
+      "DONE",
+      "NOT_APPLICABLE",
+      "UNAVAILABLE",
+      "SUPERSEDED"
+    ],
+    "prohibit_source_complete_claim_without_source_registry": true
+  },
+  "completion_levels": {
+    "CURRENT_RULESET_COMPLETE": "All active rulesets in the current routing index/catalog and every active deep-protocol pass/subcheck were dispositioned.",
+    "SOURCE_TRADITION_COMPLETE": "Requires a separate source-completeness registry showing the relevant source corpora/technique families have been exhaustively audited. NOT ACHIEVED by V1.",
+    "FRONTIER_EXPLORATORY": "One or more not-yet-frozen technique families were explored; they must be separated from the frozen core and cannot retroactively make the core complete."
+  },
+  "current_source_completeness": "CURRENT_RULESET_COMPLETE can be achieved; SOURCE_TRADITION_COMPLETE is NOT_YET_ACHIEVED.",
+  "source_completeness_frontier": "reference/research/ASTROLOGY_SOURCE_COMPLETENESS_FRONTIER_V1.json",
+  "claim_ledger_contract": {
+    "required_for_saved_substantive_analysis": true,
+    "fields": [
+      "claim_id",
+      "claim",
+      "support_refs",
+      "counterevidence_refs",
+      "dependency_group",
+      "stability_class",
+      "evidence_status"
+    ],
+    "allowed_stability_class": [
+      "DATE_STABLE",
+      "BIRTH_TIME_SENSITIVE",
+      "TIMING_WINDOW",
+      "EXPLORATORY_FRONTIER"
+    ],
+    "allowed_evidence_status": [
+      "SOURCE_GROUNDED",
+      "DEVELOPMENT",
+      "RETROSPECTIVE_BLIND",
+      "PROSPECTIVE",
+      "UNVALIDATED_SYMBOLIC",
+      "UNRESOLVED"
+    ],
+    "rule": "A claim with no supporting computed/source reference cannot appear as a chart-derived conclusion. Contradicting testimony must be linked rather than omitted."
+  }
+}

@@ -19,6 +19,15 @@
     ],
     "sudden_father_loss": [
       "father_loss_v4_sudden"
+    ],
+    "relationship_activation": [
+      "relationship_timing_v3_empirical"
+    ],
+    "inner_spiritual_transition": [
+      "inner_transition_two_channel_v4"
+    ],
+    "six_rule_carrier_activation": [
+      "six_rule_carrier_timing_v1"
     ]
   },
   "candidates": [
@@ -147,6 +156,129 @@
         }
       ],
       "interpretation": "Strong endpoint-specific state detector on its motivating case, but not an exact-day locator and not independently validated."
+    },
+    {
+      "rule_id": "relationship_timing_v3_empirical",
+      "status": "RETAINED_DEVELOPMENT_CANDIDATE_WITH_FORWARD_FREEZE",
+      "endpoint_scope": "major relationship/romance activation by month, not outcome valence",
+      "origin": {
+        "person": "Joel Rosenblum",
+        "outcome_known_when_rule_created": true,
+        "source_artifacts": [
+          "notes/RELATIONSHIP_TIMING_V3_EMPIRICAL_FREEZE_20261001.md",
+          "notes/RELATIONSHIP_TIMING_V3_FUTURE_SCAN_20261001.md"
+        ]
+      },
+      "frozen_rule_summary": {
+        "targets": [
+          "natal Venus",
+          "natal Moon / 7th ruler",
+          "ASC/DSC axis"
+        ],
+        "timing_families": [
+          "slow transits",
+          "annual profection relevance",
+          "secondary progressions",
+          "solar arcs",
+          "fast Venus/Mars triggers"
+        ],
+        "window": "3-month centered",
+        "estimator": "L2 logistic discriminant, C=1.0, balanced, liblinear",
+        "tiers": "A >=99th, B >=95th, C >=90th percentile of development background"
+      },
+      "evidence": [
+        {
+          "case": "owner relationship windows",
+          "evaluation_class": "development blocked leave-one-event-era-out",
+          "heldout_event_percentiles": [
+            92.9,
+            100.0,
+            100.0,
+            90.5
+          ],
+          "mean_event_era_average_precision_approx": 0.48
+        },
+        {
+          "case": "future forecast",
+          "evaluation_class": "forward development forecast frozen 2026-10-01",
+          "first_tier_A": "2028-06 through 2028-09, peak 2028-09"
+        }
+      ],
+      "interpretation": "Best retained owner relationship-timing development model; supersedes V2 for future relationship-peak monitoring, not validated."
+    },
+    {
+      "rule_id": "inner_transition_two_channel_v4",
+      "status": "RETAINED_ENDPOINT_SPECIFIC_DEVELOPMENT_CANDIDATE",
+      "endpoint_scope": "reported ego-boundary/transpersonal and self-axis inner-transition timing states",
+      "origin": {
+        "person": "Joel Rosenblum",
+        "outcome_known_when_rule_created": true,
+        "source_artifact": "notes/INNER_TRANSITION_TWO_CHANNEL_V4_20261003.md"
+      },
+      "frozen_rule_summary": {
+        "channel_A": "15-day trailing transpersonal saturation, tight transit/progression/solar-arc contacts",
+        "channel_B": "60-day trailing self-axis restructuring using slow transits + pSun/pMoon + solar arcs to Sun/ASC/MC",
+        "dependency_control": "one strongest contact per moving body; no future contacts"
+      },
+      "evidence": [
+        {
+          "case": "2010 ego-death era",
+          "evaluation_class": "post-reveal development",
+          "result": "Channel A local peak ~99.5th percentile 2010-08-30"
+        },
+        {
+          "case": "early Jan 2013 reported nibbana breakthrough",
+          "evaluation_class": "post-reveal development",
+          "result": "Channel B Jan 7-14 peak ~98.97th percentile; ~1.40% comparable 8-day windows equal/exceed"
+        }
+      ],
+      "interpretation": "Retain two distinct phenomenological channels; rare but not unique; not validation."
+    },
+    {
+      "rule_id": "six_rule_carrier_timing_v1",
+      "status": "RETAINED_EXPLORATORY_CANDIDATE",
+      "endpoint_scope": "timing extension of Joel-fitted six-rule natal signature; generic domain activation and romance carrier scans",
+      "origin": {
+        "person": "Joel Rosenblum",
+        "outcome_known_when_rule_created": "mixed; Jan/Feb 2026 windows frozen before reveal, carrier model itself owner-fitted",
+        "source_artifacts": [
+          "notes/SIX_RULE_LIFE_TIMING_HYPOTHESIS_20261001.md",
+          "notes/SIX_RULE_ROMANCE_PERIOD_SCAN_20261001.md"
+        ]
+      },
+      "frozen_rule_summary": {
+        "slow_movers": [
+          "Jupiter",
+          "Saturn",
+          "Uranus",
+          "Neptune",
+          "Pluto"
+        ],
+        "carriers": [
+          "Jupiter",
+          "Venus",
+          "Mars",
+          "Saturn",
+          "Moon"
+        ],
+        "major_aspects": [
+          0,
+          60,
+          90,
+          120,
+          180
+        ],
+        "orb_deg": 1.0,
+        "Mars": "short trigger only"
+      },
+      "evidence": [
+        {
+          "case": "owner 2026 carrier density",
+          "evaluation_class": "exploratory",
+          "result": "January highest 2026 slow-carrier density; romance scan produced many comparable historical peaks, so not specific"
+        }
+      ],
+      "interpretation": "Retain because it is the direct timing transform of the six-rule signature, but rank below empirically contrastive timing models when endpoint-specific alternatives exist."
     }
   ],
   "current_transfer_result": {

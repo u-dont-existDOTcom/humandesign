@@ -1,0 +1,61 @@
+You are independently reviewing a research-method design for a HumanDesign/astrology repository. No personal participant data are included.
+
+OWNER GOAL
+Make person-specific astrology analysis deep and coverage-driven so important previously discovered rulesets and major astrology technique families are not silently forgotten. A fresh worker should not later say "I overlooked this aspect" merely because it improvised from salience.
+
+CURRENT DESIGN
+There are now three layers:
+1) a consolidated person-life ruleset catalog: important retained/current natal, timing, numerology, HD, and empirical candidates plus material failed/superseded models;
+2) a mandatory routing index requiring every must-consider family to receive APPLIED / NOT_APPLICABLE / UNAVAILABLE / SUPERSEDED before person-life analysis;
+3) ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V1 with required passes and a mechanical receipt validator that blocks a saved deep-analysis artifact if required passes are missing.
+
+REQUIRED ASTROLOGY PASSES
+P00 authority/ruleset routing
+P01 birth input provenance: historical timezone, time source/uncertainty, location precision
+P02 ephemeris provenance: verified Swiss files/flags, UTC, tropical/Lahiri, angles/houses when supported
+P03 complete chart inventory: Sun-Saturn, outer planets context, node when used, ASC/MC/DSC/IC, signs/degrees/speeds/houses
+P04 geometry: all frozen major planet-planet and planet-angle aspects; tight aspects ranked mechanically
+P05 Lilly: domicile/exaltation/triplicity/term/face; detriment/fall/peregrine; house; motion; solar visibility; Moon phase; frozen partile benefic/malefic conditions; component ledger
+P06 Hellenistic/Ptolemy/Valens: encoded dignities, sect, joys, whole-sign/ruler context; unimplemented techniques explicit
+P07 Phaladeepika/Jyotish: Lahiri sign/house; own/exalt/debilitation; retrograde/temporal/directional; kendra/trikona/upachaya/dusthana where encoded; no improvised dashas/vargas/yogas
+P08 house-ruler topology: all 12 rulers, placements, concentrated rulership, angular/cadent/succedent, derived houses only if source-grounded/topic-specific
+P09 domains: run full source-grounded V1.4 vector; target-blind domain map where allowed; positives/negatives/nulls; owner-fitted six-rule only secondary
+P10 contradiction/dependency audit: preserve mixed testimonies; deduplicate same astronomy across traditions
+P11 question-specific significators: endpoint declared first; run applicable retained endpoint modules only
+P12 timing state when asked: slow transits, secondary progressions, frozen solar arcs/profections, causal-vs-centered distinction
+P13 day trigger when exact date asked: fast Moon/Venus/Mars only under predeclared trigger; slower-state qualification; false-positive scan
+P14 retained experimental candidates: CF-003 only with prerequisites; relationship V3; father-loss V4; inner-transition V4; transfer misses
+P15 cross-system fusion when requested: astrology-only/numerology-only/HD-only first; then convergence/complement/contradiction; no double counting
+P16 completeness gate: all required passes statused; UNAVAILABLE names missing implementation/data; strong claims computed; nulls/misses included; post-outcome additions labeled
+P17 layered synthesis: convergences, tensions, time-sensitive vs stable, distinctive vs generic, uncertainty, development/validation status
+
+CURRENT EXECUTABLE NATAL CORE
+V1.4 source-grounded atomic library uses Lilly, Ptolemy, Valens and Phaladeepika. It includes many traditional strength conditions and house-lord mappings but is explicitly not all of astrology.
+
+EXPLICIT FRONTIER CURRENTLY MARKED UNAVAILABLE
+- Hellenistic Lots and time-lord techniques such as zodiacal releasing
+- fuller reception / bonification / maltreatment / overcoming doctrine
+- primary directions and fully source-grounded annual revolutions / solar returns
+- fixed stars, antiscia and other specialized traditional techniques
+- Jyotish nakshatras, Vimshottari dasha, vargas, yogas and full graha drishti
+- additional house systems/traditions beyond frozen contracts
+
+CURRENT RETAINED RULE FAMILIES IN CATALOG
+- V1.4 full source-grounded natal library
+- V1.4 six-rule owner-fitted signature (secondary only)
+- CF-003 planetary dominance (development secondary under independent behavioral target)
+- frozen numerology registry V2.1 + name layer
+- cumulative timing candidate registry: Hale daily three-family trigger, sudden father-loss V4, relationship timing V3 empirical, inner-transition two-channel V4, six-rule carrier timing V1
+- HD V4.3/V3.6 when relevant
+Negative/superseded models remain visible and are not promoted.
+
+MECHANICAL GATE
+A JSON receipt validator requires every active required pass to exist. APPLIED requires evidence. NOT_APPLICABLE/UNAVAILABLE/SUPERSEDED requires a reason.
+
+REVIEW TASK
+1. Give verdict AGREES / FINDS_ERROR / UNCERTAIN on whether this materially reduces omission risk.
+2. Identify any major astrology-analysis family or structural failure mode missing from the protocol that is important enough to add NOW rather than leave to future source expansion.
+3. Distinguish omissions in the *coverage protocol* from astrology techniques that can appropriately remain explicit UNAVAILABLE frontier items.
+4. Look for ways this can still pass mechanically while doing shallow analysis.
+5. Recommend the smallest concrete changes that would make it more fool-proof without turning it into an unbounded "run every astrology technique ever" requirement.
+6. Do not assess whether astrology itself is scientifically valid; assess method coverage/provenance/anti-cherry-picking.

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "frontier_id": "astrology_source_completeness_frontier_v1",
+  "status": "OPEN_NOT_SOURCE_COMPLETE",
+  "audited_executable_core": {
+    "sources": [
+      "William Lilly — Christian Astrology (selected frozen strength/significator rules)",
+      "Ptolemy — Tetrabiblos (selected frozen strength/sect rules)",
+      "Vettius Valens — Anthology (selected frozen strength/significator rules)",
+      "Phaladeepika (selected frozen strength/significator rules)"
+    ],
+    "implementation": "AstroHD V1.4 + V1.3 tradition modules",
+    "boundary": "The current implementation is a deliberately selected source-grounded rule library, not an exhaustive transcription of each source."
+  },
+  "material_frontier": [
+    {
+      "family": "reception_disposition_and_aspect_condition",
+      "priority": "HIGH",
+      "reason": "Can materially alter interpretation of otherwise identical sign/house/aspect geometry; current protocol has only partial rulership/dispositor structure and selected partile conditions."
+    },
+    {
+      "family": "hellenistic_bonification_maltreatment_overcoming",
+      "priority": "HIGH",
+      "reason": "Major source-native condition families not represented by the current atomic V1.4 strength vector."
+    },
+    {
+      "family": "hellenistic_lots",
+      "priority": "MEDIUM_HIGH",
+      "reason": "Topic-specific significators such as Fortune/Spirit can add a distinct chart layer; no frozen project implementation."
+    },
+    {
+      "family": "time_lords_and_annual_profections_general",
+      "priority": "HIGH_FOR_TIMING",
+      "reason": "Profections appear in relationship timing, but there is no general source-complete timing framework."
+    },
+    {
+      "family": "solar_returns_annual_revolutions",
+      "priority": "HIGH_FOR_TIMING",
+      "reason": "Potential annual context layer; current project does not treat it as a globally frozen timing family."
+    },
+    {
+      "family": "primary_directions",
+      "priority": "HIGH_FOR_CLASSICAL_TIMING",
+      "reason": "Classical exact-timing family not currently frozen in the project."
+    },
+    {
+      "family": "fixed_stars_antiscia_specialized_points",
+      "priority": "MEDIUM",
+      "reason": "Can generate additional traditional testimonies but require their own source/orb/fame-selection controls."
+    },
+    {
+      "family": "jyotish_nakshatras_dashas_vargas_yogas_drishti",
+      "priority": "HIGH_IF_JYOTISH_DEPTH_REQUESTED",
+      "reason": "Large portions of Jyotish predictive/natal method remain outside the limited Phaladeepika strength layer."
+    },
+    {
+      "family": "additional_traditional_sources_and_house_doctrines",
+      "priority": "MEDIUM",
+      "reason": "Current four-source library cannot be called exhaustive of medieval/Hellenistic/Jyotish astrology as a whole."
+    },
+    {
+      "family": "modern_minor_aspects_harmonics_midpoints",
+      "priority": "SEPARATE_TRADITION",
+      "reason": "Not part of the frozen traditional source contract; if admitted, they need a separate preregistered family to avoid combinatorial cherry-picking."
+    }
+  ],
+  "admission_rule": "A frontier family becomes part of the default deep protocol only after source audit, explicit calculation convention, dependency/orb policy, deterministic implementation, tests, and a versioned promotion event. Until then it is reported as UNAVAILABLE when materially relevant.",
+  "next_research_step": "Perform a source-complete methodology audit for each active tradition, analogous to the completed numerology book audit, before claiming SOURCE_TRADITION_COMPLETE."
+}
