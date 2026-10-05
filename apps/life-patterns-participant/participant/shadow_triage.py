@@ -304,7 +304,7 @@ class GapMatchAuditResponse(StrictModel):
 
 class GapMatchedRouteReview(StrictModel):
     route_id: str
-    source_turn_ids: list[str] = Field(min_length=1, max_length=4)
+    source_turn_ids: list[str] = Field(min_length=1, max_length=1000)
     status: Literal[
         "answered", "preliminary_gap", "contradictory_gap", "preserve_unknown"
     ]
@@ -318,6 +318,12 @@ class GapAdmission(StrictModel):
 
 class GapMatchAudit(StrictModel):
     reviews: list[GapMatchedRouteReview] = Field(default_factory=list, max_length=80)
+    # Caller-owned evidence: the detector response cannot populate these fields.
+    admission_reviews: list[GapSpecAdmissionReview] = Field(default_factory=list, max_length=80)
+    admission_source_review_complete: bool = False
+    admitted_specs: list[GapSpecCandidate] = Field(default_factory=list, max_length=80)
+    unreviewed_route_ids: list[str] = Field(default_factory=list, max_length=80)
+    prior_admission_blocked_route_ids: list[str] = Field(default_factory=list, max_length=80)
 
 
 class GapRenderedQuestionText(StrictModel):
@@ -385,8 +391,11 @@ turn for that route. For a dependent route, bind a real answered antecedent; sup
 context_match_turn_ids may be used when they are genuinely equivalent context.
 context_candidate_turn_ids are lower-confidence antecedent candidates only: they may be used when
 no stronger binding exists, but independent admission must still verify semantic context. A
-self-contained unasked route needs no antecedent. Name candidate dependencies only when a later
-candidate actually depends on an earlier candidate's answer.
+self-contained unasked route needs no antecedent. A dependent route in the menu is NOT proof
+that its required context exists. With no supplied match, use a real answered source turn only if
+it semantically supplies that context, set equivalent_context true, and let independent admission
+verify it. If there is no such turn, do not propose the route. Name candidate dependencies only
+when a later candidate actually depends on an earlier candidate's answer.
 
 missing_distinction states the single unresolved route-level distinction, not proposed wording.
 Return review_ready with no candidates when no materially useful gap remains. Return only JSON.
@@ -663,7 +672,9 @@ def _complete_behavioral_source(state: dict) -> list[dict]:
     ]
 
 
-def _shadow_route_cards(state: dict, instrument: dict) -> list[dict]:
+def _shadow_route_cards(
+    state: dict, instrument: dict, *, allow_semantic_context: bool = False
+) -> list[dict]:
     """Return routes eligible for an unasked question or a bounded repair.
 
     Previously presented routes remain available only as repair/follow-up
@@ -726,6 +737,7 @@ def _shadow_route_cards(state: dict, instrument: dict) -> list[dict]:
             and not self_contained
             and not context_answered
             and not context_match_turn_ids
+            and not (allow_semantic_context and turns)
         ):
             continue
         # Triage gets the compact route menu. Full interpretation/context controls are
@@ -769,9 +781,13 @@ def _shadow_route_cards(state: dict, instrument: dict) -> list[dict]:
     return cards
 
 
-def make_gap_triage_context(state: dict, instrument: dict) -> dict:
+def make_gap_triage_context(
+    state: dict, instrument: dict, *, allow_semantic_context: bool = False
+) -> dict:
     turns = _complete_behavioral_source(state)
-    candidate_routes = _shadow_route_cards(state, instrument)
+    candidate_routes = _shadow_route_cards(
+        state, instrument, allow_semantic_context=allow_semantic_context
+    )
     source_question_matches = [
         {
             "route_id": str(route["id"]),
@@ -834,7 +850,7 @@ def _gap_spec_route_card(route: dict, turns: list[dict]) -> dict:
 def make_gap_spec_triage_context(state: dict, instrument: dict) -> dict:
     """Return a smaller source-complete context for spec-only triage."""
 
-    full = make_gap_triage_context(state, instrument)
+    full = make_gap_triage_context(state, instrument, allow_semantic_context=True)
     turns = full["turns"]
     authority_by_id = {
         str(route["id"]): route for route in bank(instrument)["questions"]
@@ -1467,6 +1483,7 @@ def make_gap_question_render_context(
     }
     admission_by_route = {review.route_id: review for review in admission.reviews}
     audit_by_route = {review.route_id: review for review in match_audit.reviews}
+    recovered_specs = {spec.route_id: spec for spec in match_audit.admitted_specs}
     compact_route_by_id = {
         str(route["id"]): route for route in triage_context["candidate_routes"]
     }
@@ -1496,14 +1513,15 @@ def make_gap_question_render_context(
             missing_distinction = candidate.question.missing_distinction
             why_useful = candidate.question.why_useful
             original_question_text = candidate.question.text
+            equivalent_context = candidate.question.equivalent_context
         else:
-            if audit_review is None:
-                raise ValueError("Recovered route has no deterministic audit binding.")
-            source_anchor_turn_ids = list(audit_review.source_turn_ids)
-            antecedent_turn_ids = list(audit_review.source_turn_ids)
-            missing_distinction = (
-                "The route-requested response remains preliminary or contradictory in source."
-            )
+            recovered_spec = recovered_specs.get(route_id)
+            if audit_review is None or recovered_spec is None:
+                raise ValueError("Recovered route lacks independently admitted source bindings.")
+            source_anchor_turn_ids = list(recovered_spec.source_anchor_turn_ids)
+            antecedent_turn_ids = list(recovered_spec.antecedent_turn_ids)
+            equivalent_context = recovered_spec.equivalent_context
+            missing_distinction = recovered_spec.missing_distinction
             why_useful = "Resolving it would settle the admitted route-level gap."
             original_question_text = None
 
@@ -1528,6 +1546,7 @@ def make_gap_question_render_context(
                     authority_by_id[route_id], include_limits=True
                 ),
                 "candidate_mode": compact_route.get("candidate_mode"),
+                "equivalent_context": equivalent_context,
                 "source_anchor_turn_ids": source_anchor_turn_ids,
                 "antecedent_turn_ids": antecedent_turn_ids,
                 "source_turns": _source_turn_cards_for_ids(state, relevant_ids),
@@ -1578,13 +1597,12 @@ def bind_gap_rendered_questions(
         if candidate is not None:
             question = candidate.question.model_copy(update={"text": rendered.text})
         else:
-            candidate_mode = spec.get("candidate_mode")
             question = Question(
                 route_id=route_id,
                 route_type="missing_piece_followup",
                 text=rendered.text,
                 antecedent_turn_ids=list(spec.get("antecedent_turn_ids") or []),
-                equivalent_context=candidate_mode != "repair_only",
+                equivalent_context=bool(spec.get("equivalent_context", False)),
                 missing_distinction=spec["admitted_gap_spec"]["missing_distinction"],
                 why_useful=spec["admitted_gap_spec"]["why_useful"],
             )
@@ -1638,6 +1656,84 @@ def validate_gap_question_review(
             raise ValueError("Gap question review failure codes do not match failed gates.")
         if review.approved != (not expected_codes):
             raise ValueError("Gap question review approval is inconsistent with wording gates.")
+
+
+def admit_gap_match_audit(
+    state: dict,
+    instrument: dict,
+    triage: GapTriage,
+    admission: GapAdmission,
+    audit: GapMatchAudit,
+    provider: SemanticProvider,
+    *,
+    model: str,
+    effort: str,
+) -> tuple[GapMatchAudit, list[dict]]:
+    """Refute newly detected omissions against complete source before they can be asked.
+
+    The local detector is a proposal source, not an admission authority. It cannot
+    reverse an existing independent veto in the same pass. Excess proposals remain
+    explicit deferred work rather than being mistaken for a completed review.
+    """
+    proposed_ids = {c.question.route_id for c in triage.candidates}
+    approved_ids = {r.route_id for r in admission.reviews if r.approved}
+    candidates = [
+        r for r in audit.reviews
+        if r.status in {"preliminary_gap", "contradictory_gap"}
+        and r.independent_for_batch and r.route_id not in proposed_ids
+    ]
+    audit.prior_admission_blocked_route_ids = [
+        r.route_id for r in audit.reviews
+        if r.status in {"preliminary_gap", "contradictory_gap"}
+        and r.route_id in proposed_ids and r.route_id not in approved_ids
+    ]
+    order = {str(t["turn_id"]): i for i, t in enumerate(_complete_behavioral_source(state))}
+    candidates.sort(key=lambda r: (min(order[x] for x in r.source_turn_ids), r.route_id))
+    context = make_gap_spec_triage_context(state, instrument)
+    capacity = max(0, MAX_GAP_CANDIDATES - len(approved_ids))
+    calls: list[dict] = []
+    audit.admission_reviews = []
+    audit.admitted_specs = []
+    audit.unreviewed_route_ids = []
+    accepted = 0
+    offset = 0
+    while offset < len(candidates) and accepted < capacity:
+        chunk = candidates[offset:offset + min(MAX_GAP_CANDIDATES, capacity - accepted)]
+        offset += len(chunk)
+        specs = GapSpecTriage(
+            decision="clarification_needed",
+            candidates=[
+                GapSpecCandidate(
+                    candidate_id=f"C{i}", rank=i, route_id=r.route_id,
+                    # Bounded navigation anchors; admission still receives every exact turn.
+                    source_anchor_turn_ids=list(r.source_turn_ids[-2:]),
+                    missing_distinction=(
+                        "A source-matched response may be preliminary or contradictory. "
+                        "Determine whether the exact route-requested distinction is still "
+                        "unresolved after reviewing all source, including later answers."
+                    ),
+                ) for i, r in enumerate(chunk, 1)
+            ],
+        )
+        normalize_gap_spec_bindings(specs, context)
+        validate_gap_spec_triage(specs, context)
+        payload = make_gap_spec_admission_context(state, instrument, context, specs)
+        value, call = provider.call(
+            GAP_SPEC_ADMISSION_PROMPT, payload, GapSpecAdmission, model, effort
+        )
+        reviewed = GapSpecAdmission.model_validate(value)
+        validate_gap_spec_admission(reviewed, specs)
+        audit.admission_reviews.extend(reviewed.reviews)
+        approved = {r.route_id for r in reviewed.reviews if r.approved}
+        audit.admitted_specs.extend(c for c in specs.candidates if c.route_id in approved)
+        accepted += len(approved)
+        calls.append({"shadow_stage": "GapMatchAdmission", **dict(call)})
+    audit.unreviewed_route_ids = [r.route_id for r in candidates[offset:]]
+    audit.admission_source_review_complete = not audit.unreviewed_route_ids
+    # Each admitted group was source-complete even when another group remains pending.
+    if audit.admission_reviews:
+        audit.admission_source_review_complete = True
+    return audit, calls
 
 
 def run_shadow_fast_spec_path(
@@ -1713,6 +1809,14 @@ def run_shadow_fast_spec_path(
             calls.append({"shadow_stage": "GapMatchAudit", **dict(audit_call)})
         else:
             match_audit = GapMatchAudit(reviews=[])
+
+    if match_audit.reviews:
+        match_audit, audit_admission_calls = admit_gap_match_audit(
+            state, instrument, triage, admission, match_audit, provider,
+            model=model, effort=effort,
+        )
+        calls.extend(audit_admission_calls)
+        match_audit_pending = match_audit_pending or bool(match_audit.unreviewed_route_ids)
 
     (
         render_context,
@@ -1938,6 +2042,14 @@ def run_shadow_triage(
     else:
         match_audit = GapMatchAudit(reviews=[])
 
+    if match_audit.reviews:
+        match_audit, audit_admission_calls = admit_gap_match_audit(
+            state, instrument, triage, admission, match_audit, provider,
+            model=model, effort=effort,
+        )
+        calls.extend(audit_admission_calls)
+        match_audit_pending = match_audit_pending or bool(match_audit.unreviewed_route_ids)
+
     (
         render_context,
         final_questions,
@@ -2096,7 +2208,6 @@ def _ordered_admitted_routes(
     fallback = len(source_order) + 1
     ranked: dict[str, tuple[int, bool]] = {}
 
-    admission_by_candidate = {review.candidate_id: review for review in admission.reviews}
     candidate_by_route = {
         candidate.question.route_id: candidate for candidate in triage.candidates
     }
@@ -2113,7 +2224,9 @@ def _ordered_admitted_routes(
         )
         ranked[route_id] = (position, False)
 
-    answer_completeness_codes = {"already_answered", "low_information_gain"}
+    recovered_approved = {
+        r.route_id for r in match_audit.admission_reviews if r.approved
+    } if match_audit.admission_source_review_complete else set()
     for review in match_audit.reviews:
         if (
             review.status not in {"preliminary_gap", "contradictory_gap"}
@@ -2123,21 +2236,8 @@ def _ordered_admitted_routes(
         if review.route_id in ranked:
             continue
 
-        proposed = candidate_by_route.get(review.route_id)
-        if proposed is not None:
-            admission_review = admission_by_candidate.get(proposed.candidate_id)
-            if admission_review is None:
-                continue
-            gap_failure_codes = set(admission_review.failure_codes).difference(
-                {
-                    "not_construct_discriminating",
-                    "multiple_response_tasks",
-                    "unsupported_extension",
-                }
-            )
-            non_answer_failures = gap_failure_codes.difference(answer_completeness_codes)
-            if non_answer_failures:
-                continue
+        if review.route_id in candidate_by_route or review.route_id not in recovered_approved:
+            continue
 
         position = min(
             source_order.get(turn_id, fallback) for turn_id in review.source_turn_ids
@@ -2159,7 +2259,24 @@ def privacy_safe_case_summary(case_id: str, state: dict, result: dict[str, Any])
     approved, recovered = _ordered_admitted_routes(
         state, triage, admission, match_audit
     )
-    failure_counts = Counter(code for review in admission.reviews for code in review.failure_codes)
+    final_questions = result.get("final_questions", {})
+    ready_routes = [route_id for route_id in approved if route_id in final_questions]
+    pending = bool(result.get("match_audit_pending", False) or match_audit.unreviewed_route_ids)
+    unresolved_audit = bool(match_audit.prior_admission_blocked_route_ids)
+    if ready_routes:
+        outcome = "clarification_recommended"
+    elif approved:
+        outcome = "question_generation_failed"
+    elif pending:
+        outcome = "review_pending"
+    elif triage.decision != "review_ready" or unresolved_audit:
+        outcome = "no_admitted_candidate"
+    else:
+        outcome = "review_ready"
+    failure_counts = Counter(
+        code for review in [*admission.reviews, *match_audit.admission_reviews]
+        for code in review.failure_codes
+    )
     calls = []
     for call in result["calls"]:
         calls.append(
@@ -2177,17 +2294,15 @@ def privacy_safe_case_summary(case_id: str, state: dict, result: dict[str, Any])
         "triage_context_chars": int(result["triage_context_chars"]),
         "admission_context_chars": int(result["admission_context_chars"]),
         "match_audit_context_chars": int(result["match_audit_context_chars"]),
-        "match_audit_pending": bool(result.get("match_audit_pending", False)),
+        "match_audit_pending": pending,
         "match_audit_pair_count": int(result.get("match_audit_pair_count", 0)),
         "triage_decision": triage.decision,
-        "shadow_outcome": (
-            "clarification_recommended"
-            if approved
-            else "review_ready"
-            if triage.decision == "review_ready"
-            else "no_admitted_candidate"
-        ),
-        "selected_route_id": approved[0] if approved else None,
+        "shadow_outcome": outcome,
+        "selected_route_id": ready_routes[0] if ready_routes else None,
+        "ready_question_route_ids": ready_routes,
+        "final_review_completed": False,
+        "unreviewed_omission_route_ids": list(match_audit.unreviewed_route_ids),
+        "prior_admission_blocked_route_ids": list(match_audit.prior_admission_blocked_route_ids),
         "proposed_route_ids": [candidate.question.route_id for candidate in triage.candidates],
         "admitted_route_ids": approved,
         "question_repaired_route_ids": list(

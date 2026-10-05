@@ -1,0 +1,28 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_paraphrased_antecedent_does_not_remove_unasked_dependent_route_from_fast_menu _
+
+    def test_paraphrased_antecedent_does_not_remove_unasked_dependent_route_from_fast_menu():
+        instrument = authority()
+        state = imported_state(instrument)
+        state["turns"].append({
+            "turn_id": "supper-paraphrase", "turn_role": "behavioral",
+            "canonical_question_id": None,
+            "question_text": (
+                "Imagine you've offered to cook a long dinner for you and one friend and "
+                "asked them to pick up the groceries, but they tell you covering all of "
+                "it would be too much for them. What do you say in response?"
+            ),
+            "answer_text": (
+                "I'd ask about a smaller contribution. I cannot settle whether I usually "
+                "want to keep working out a deal or abandon it at that point."
+            ),
+        })
+        context = make_gap_spec_triage_context(state, instrument)
+>       assert "PREFER-EXCHANGE" in {r["id"] for r in context["candidate_routes"]}
+E       AssertionError: assert 'PREFER-EXCHANGE' in {'A0', 'B0', 'D0', 'E0', 'F0', 'G01', ...}
+
+apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py:183: AssertionError
+=========================== short test summary info ============================
+FAILED apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py::test_paraphrased_antecedent_does_not_remove_unasked_dependent_route_from_fast_menu
+1 failed, 5 deselected in 0.12s

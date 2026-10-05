@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "taskId": "experiment-gap-triage-shadow-20261003",
-  "status": "shadow_experiment_published_quality_gate_open",
+  "status": "pro_review_in_progress",
   "exclusive": true,
-  "requiredBranch": "experiment-gap-triage-shadow-20261003",
+  "requiredBranch": "pro/gap-triage-review-20261005",
   "implementationAuthorized": true,
   "assuranceLane": "iteration shadow-only; remote experiment branch publication; no merge or live behavior change",
   "ownerOutcome": "Implement the task-note clarification triage experiment with separate independent admission, a privacy-safe benchmark CLI, tests, participant-suite verification, and publication to the named experiment branch without merging.",
   "currentMethod": "tasks/survey-owner-feedback-20261001/INDEPENDENT-REVIEW-LATENCY-REDESIGN-20261003.md",
-  "checkpoint": "tasks/clarification-triage-shadow-20261003/CURRENT-STATE.md",
+  "checkpoint": "tasks/clarification-triage-shadow-20261003/PRO-REVIEW-20261005.md",
   "preflightCommand": "python3 scripts/task_preflight.py",
   "completionCommand": "PYTHONPATH=apps/life-patterns-participant python -m pytest apps/life-patterns-participant/tests -q",
   "constraints": [
@@ -39,5 +39,9 @@
     "hybrid-voice-cost-optimization-20260928 ACTIVE-TASK state at parent commit 2053e58",
     "repository-global research roadmap",
     "unrelated worktrees and release queues"
-  ]
+  ],
+  "ownerReviewOverride": {
+    "exact_user_instruction": "insetad of claude you can use this pro pass now to check it",
+    "scope": "Replace pending Claude evaluation with the current Pro review; no cross-family or untouched-blind claim."
+  }
 }

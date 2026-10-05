@@ -105,11 +105,11 @@ def main() -> int:
             # Participant-facing decision is based on independently admitted
             # questions. A producer proposal rejected by admission means no
             # clarification is shown, while the disagreement remains diagnostic.
-            actual_decision = (
-                "clarification_needed"
-                if row["shadow_outcome"] == "clarification_recommended"
-                else "review_ready"
-            )
+            actual_decision = {
+                "clarification_recommended": "clarification_needed",
+                "review_ready": "review_ready",
+            }.get(row["shadow_outcome"], row["shadow_outcome"])
+            delivered_routes = row["ready_question_route_ids"]
             producer_admission_disagreement = (
                 row["shadow_outcome"] == "no_admitted_candidate"
             )
@@ -117,16 +117,16 @@ def main() -> int:
             required_route_ids = target.get("required_route_ids")
             allowed_additional = target.get("allowed_additional_route_ids") or []
             if required_route_ids is not None:
-                admitted = set(row["admitted_route_ids"])
+                admitted = set(delivered_routes)
                 required = set(required_route_ids)
                 allowed = required | set(allowed_additional)
                 route_ok = required.issubset(admitted) and admitted.issubset(allowed)
             elif expected_route_ids is not None:
-                route_ok = row["admitted_route_ids"] == expected_route_ids
+                route_ok = delivered_routes == expected_route_ids
             else:
                 route_ok = (
                     target["route_id"] is None
-                    or target["route_id"] in row["admitted_route_ids"]
+                    or target["route_id"] in delivered_routes
                 )
             scored = bool(target.get("scored", True))
             question_ok = not row.get("question_rejected_route_ids")
@@ -147,6 +147,7 @@ def main() -> int:
                     "actual_decision": actual_decision,
                     "proposed_route_ids": row["proposed_route_ids"],
                     "admitted_route_ids": row["admitted_route_ids"],
+                    "ready_question_route_ids": delivered_routes,
                     "question_rejected_route_ids": row.get(
                         "question_rejected_route_ids", []
                     ),

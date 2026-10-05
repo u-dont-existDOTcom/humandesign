@@ -282,6 +282,17 @@ class ReadyFake:
         )
 
 
+def approved_recovery_admission(payload):
+    return GapSpecAdmission(source_review_complete=True, reviews=[
+        GapSpecAdmissionReview(
+            candidate_id=c["candidate_id"], route_id=c["route_id"], approved=True,
+            source_references_valid=True, not_already_answered=True, premise_supported=True,
+            antecedent_supported=True, context_supported=True, material_information_gain=True,
+            independent_for_batch=True, failure_codes=[],
+        ) for c in payload["proposed_gap_specs"]
+    ]), {"duration_seconds": 2.0, "prompt_tokens": 1000, "completion_tokens": 80}
+
+
 class OmissionRecoveryFake:
     def __init__(self) -> None:
         self.calls: list[tuple[str, dict]] = []
@@ -294,6 +305,8 @@ class OmissionRecoveryFake:
                 {"duration_seconds": 8.0, "prompt_tokens": 10000, "completion_tokens": 80},
             )
 
+        if schema is GapSpecAdmission:
+            return approved_recovery_admission(payload)
         if schema is GapMatchAuditResponse:
             matched = []
             for pair in payload["pairs"]:
@@ -512,6 +525,8 @@ class FastSpecOmissionRecoveryFake:
                 GapSpecTriage(decision="review_ready", candidates=[]),
                 {"duration_seconds": 8.0, "prompt_tokens": 6000, "completion_tokens": 50},
             )
+        if schema is GapSpecAdmission:
+            return approved_recovery_admission(payload)
         if schema is GapMatchAuditResponse:
             reviews = [
                 GapMatchedRouteJudgment(
@@ -895,6 +910,13 @@ def test_contradictory_match_audit_recovers_route():
     triage = GapTriage(decision="review_ready", candidates=[])
     admission = GapAdmission(source_review_complete=True, reviews=[])
     audit = GapMatchAudit(
+        admission_source_review_complete=True,
+        admission_reviews=[GapSpecAdmissionReview(
+            candidate_id="C1", route_id="G23", approved=True,
+            source_references_valid=True, not_already_answered=True, premise_supported=True,
+            antecedent_supported=True, context_supported=True, material_information_gain=True,
+            independent_for_batch=True, failure_codes=[],
+        )],
         reviews=[
             GapMatchedRouteReview(
                 route_id="G23",
@@ -1320,6 +1342,7 @@ def test_fast_spec_path_runs_omission_audit_before_no_question_stop():
     assert [call["shadow_stage"] for call in result["calls"]] == [
         "GapSpecTriage",
         "GapMatchAudit",
+        "GapMatchAdmission",
         "GapQuestionRender",
         "GapQuestionReview",
     ]
@@ -1399,17 +1422,18 @@ def test_admission_recovers_source_matched_gap_omitted_by_triage():
         state, instrument, fake, model="gpt-5.6-sol", effort="xhigh"
     )
     summary = privacy_safe_case_summary("case-0001", state, result)
-    assert len(fake.calls) == 4
+    assert len(fake.calls) == 5
     assert fake.calls[1][1]["pairs"]
-    assert fake.calls[2][1]["render_specs"]
-    assert fake.calls[3][1]["items"]
+    assert fake.calls[2][1]["proposed_gap_specs"]
+    assert fake.calls[3][1]["render_specs"]
+    assert fake.calls[4][1]["items"]
     assert summary["triage_decision"] == "review_ready"
     assert summary["shadow_outcome"] == "clarification_recommended"
     assert summary["admitted_route_ids"] == ["M09"]
     assert summary["recovered_omission_route_ids"] == ["M09"]
 
 
-def test_match_audit_can_recover_proposed_route_rejected_only_on_answer_completeness():
+def test_match_audit_cannot_override_full_source_admission_rejection():
     instrument = authority()
     state = imported_state(instrument)
     state["turns"].append(
@@ -1497,8 +1521,9 @@ def test_match_audit_can_recover_proposed_route_rejected_only_on_answer_complete
             "eligible_route_count": len(triage_context["candidate_routes"]),
         },
     )
-    assert summary["admitted_route_ids"] == ["G19"]
-    assert summary["recovered_omission_route_ids"] == ["G19"]
+    assert summary["admitted_route_ids"] == []
+    assert summary["recovered_omission_route_ids"] == []
+    assert summary["shadow_outcome"] == "no_admitted_candidate"
 
 
 def test_match_audit_does_not_override_non_answer_admission_failure():
@@ -1688,6 +1713,7 @@ def test_admitted_batch_order_follows_source_anchor_order_not_model_rank():
             "triage": triage,
             "admission": admission,
             "match_audit": GapMatchAudit(reviews=[]),
+            "final_questions": {c.question.route_id: c.question for c in triage.candidates},
             "calls": [],
             "triage_context_chars": 0,
             "admission_context_chars": 0,

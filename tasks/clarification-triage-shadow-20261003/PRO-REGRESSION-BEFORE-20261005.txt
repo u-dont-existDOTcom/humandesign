@@ -1,0 +1,142 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_____ test_rejected_wording_is_not_reported_as_a_selected_usable_question ______
+
+    def test_rejected_wording_is_not_reported_as_a_selected_usable_question():
+        instrument = authority()
+        state = imported_state(instrument)
+        append_route(state, instrument)
+        original = copy.deepcopy(state)
+        fake = AlwaysRejectWording()
+        result = run_shadow_fast_spec_path(
+            state, instrument, fake, model="gpt-5.6-sol", effort="xhigh"
+        )
+        row = privacy_safe_case_summary("case-0001", state, result)
+        assert fake.review_count == 2
+        assert result["final_questions"] == {}
+        assert state == original
+>       assert row["selected_route_id"] is None
+E       AssertionError: assert 'G19' is None
+
+apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py:73: AssertionError
+_____ test_an_omission_detector_cannot_overrule_independent_gap_rejection ______
+
+    def test_an_omission_detector_cannot_overrule_independent_gap_rejection():
+        instrument = authority()
+        state = imported_state(instrument)
+        result = run_shadow_triage(
+            state, instrument, RejectedFake(), model="gpt-5.6-sol", effort="xhigh"
+        )
+        candidate = result["triage"].candidates[0]
+        audit = GapMatchAudit(reviews=[GapMatchedRouteReview(
+            route_id=candidate.question.route_id,
+            source_turn_ids=candidate.source_anchor_turn_ids,
+            status="preliminary_gap", independent_for_batch=True,
+        )])
+        admitted, _ = _ordered_admitted_routes(state, result["triage"], result["admission"], audit)
+>       assert admitted == [], "An omission hint is not an independent full-source admission."
+E       AssertionError: An omission hint is not an independent full-source admission.
+E       assert ['A0'] == []
+E         
+E         Left contains one more item: 'A0'
+E         Use -v to get more diff
+
+apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py:90: AssertionError
+_ test_recovered_gap_gets_independent_admission_over_all_source_before_rendering _
+
+    def test_recovered_gap_gets_independent_admission_over_all_source_before_rendering():
+        instrument = authority()
+        state = imported_state(instrument)
+        append_route(state, instrument, "M09", "planning-scene")
+        for n in range(8):
+            state["turns"].append({"turn_id": f"filler-{n}", "turn_role": "behavioral",
+                                   "question_text": "An unrelated situation?", "answer_text": "No detail."})
+        state["turns"].append({"turn_id": "distant-answer", "turn_role": "behavioral",
+                               "question_text": "Anything to add about the software switch?",
+                               "answer_text": "I only care about reliable offline access, not the trial."})
+        fake = RecoveryWithAdmission()
+        result = run_shadow_fast_spec_path(
+            state, instrument, fake, model="gpt-5.6-sol", effort="xhigh"
+        )
+>       assert len(fake.admission_payloads) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+E        +    where [] = <test_shadow_triage_pro_review.RecoveryWithAdmission object at 0x76a0024f4bf0>.admission_payloads
+
+apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py:127: AssertionError
+__________ test_deferred_audit_cannot_be_reported_as_completed_review __________
+
+    def test_deferred_audit_cannot_be_reported_as_completed_review():
+        instrument = authority()
+        state = imported_state(instrument)
+        append_route(state, instrument, "M09")
+        result = run_shadow_triage(
+            state, instrument, ReadyFake(), model="gpt-5.6-sol", effort="xhigh",
+            match_audit_mode="deferred",
+        )
+        assert result["match_audit_pending"]
+        row = privacy_safe_case_summary("case-0001", state, result)
+>       assert row["shadow_outcome"] == "review_pending"
+E       AssertionError: assert 'review_ready' == 'review_pending'
+E         
+E         - review_pending
+E         + review_ready
+
+apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py:143: AssertionError
+______ test_match_audit_binds_all_presented_turns_without_four_turn_crash ______
+
+    def test_match_audit_binds_all_presented_turns_without_four_turn_crash():
+        instrument = authority()
+        state = imported_state(instrument)
+        for n in range(5):
+            append_route(state, instrument, "G19", f"same-route-{n}")
+        context = make_gap_triage_context(state, instrument)
+        result = run_shadow_triage(
+            imported_state(instrument), instrument, ReadyFake(), model="gpt-5.6-sol", effort="xhigh"
+        )
+        audit_context = make_gap_match_audit_context(state, instrument, context, result["triage"])
+        response = GapMatchAuditResponse(reviews=[
+            GapMatchedRouteJudgment(status="answered", independent_for_batch=True)
+            for _ in audit_context["pairs"]
+        ])
+>       audit = bind_gap_match_audit(response, audit_context)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+response = GapMatchAuditResponse(reviews=[GapMatchedRouteJudgment(status='answered', independent_for_batch=True)])
+context = {'current_batch_route_ids': [], 'experiment': 'shadow_gap_match_audit_v1', 'pairs': [{'context_turn_ids': ['import-000...nadjacent. IDs alone are not semantic evidence.', 'context_sources': [], 'family': 'competing_commitments', ...}], ...}
+
+    def bind_gap_match_audit(
+        response: GapMatchAuditResponse, context: dict
+    ) -> GapMatchAudit:
+        pairs = list(context.get("pairs", []))
+        if len(response.reviews) != len(pairs):
+            raise ValueError("Gap match audit must review every supplied pair exactly once.")
+        return GapMatchAudit(
+            reviews=[
+>               GapMatchedRouteReview(
+                    route_id=str(pair["route_id"]),
+                    source_turn_ids=[
+                        str(turn_id) for turn_id in pair["source_turn_ids"]
+                    ],
+                    status=judgment.status,
+                    independent_for_batch=judgment.independent_for_batch,
+                )
+                for pair, judgment in zip(pairs, response.reviews, strict=True)
+            ]
+        )
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for GapMatchedRouteReview
+E       source_turn_ids
+E         List should have at most 4 items after validation, not 5 [type=too_long, input_value=['same-route-0', 'same-ro...oute-3', 'same-route-4'], input_type=list]
+E           For further information visit https://errors.pydantic.dev/2.13/v/too_long
+
+apps/life-patterns-participant/participant/shadow_triage.py:1347: ValidationError
+=========================== short test summary info ============================
+FAILED apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py::test_rejected_wording_is_not_reported_as_a_selected_usable_question
+FAILED apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py::test_an_omission_detector_cannot_overrule_independent_gap_rejection
+FAILED apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py::test_recovered_gap_gets_independent_admission_over_all_source_before_rendering
+FAILED apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py::test_deferred_audit_cannot_be_reported_as_completed_review
+FAILED apps/life-patterns-participant/tests/test_shadow_triage_pro_review.py::test_match_audit_binds_all_presented_turns_without_four_turn_crash
+5 failed in 0.28s

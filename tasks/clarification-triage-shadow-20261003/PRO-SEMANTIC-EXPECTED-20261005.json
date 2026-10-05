@@ -1,0 +1,42 @@
+{
+  "schema": "life-patterns-pro-review-targets-v1",
+  "cases": [
+    {
+      "case_id": "PRO1",
+      "decision": "review_ready",
+      "route_ids": []
+    },
+    {
+      "case_id": "PRO2",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "G20"
+      ]
+    },
+    {
+      "case_id": "PRO3",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "PREFER-EXCHANGE"
+      ]
+    },
+    {
+      "case_id": "PRO4",
+      "decision": "review_ready",
+      "route_ids": []
+    },
+    {
+      "case_id": "PRO5",
+      "decision": "review_ready",
+      "route_ids": []
+    },
+    {
+      "case_id": "PRO6",
+      "decision": "clarification_needed",
+      "route_ids": [
+        "G20",
+        "G19"
+      ]
+    }
+  ]
+}
