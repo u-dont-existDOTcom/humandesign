@@ -31,6 +31,7 @@ from participant.domain import (
 from participant.shadow_triage import (
     privacy_safe_case_summary,
     privacy_safe_dry_run_summary,
+    run_shadow_fast_spec_path,
     run_shadow_triage,
 )
 from participant.store import canonical
@@ -182,6 +183,16 @@ def main() -> int:
     parser.add_argument("--model", default="gpt-5.6-sol")
     parser.add_argument("--effort", default="xhigh")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--defer-match-audit",
+        action="store_true",
+        help="Return the first clarification batch without blocking on the broad match audit.",
+    )
+    parser.add_argument(
+        "--fast-spec-path",
+        action="store_true",
+        help="Use spec-only triage/admission and deterministic canonical question rendering.",
+    )
     args = parser.parse_args()
 
     try:
@@ -204,13 +215,23 @@ def main() -> int:
                 cases.append(privacy_safe_dry_run_summary(case_id, state, instrument))
                 continue
             assert provider is not None
-            result = run_shadow_triage(
-                state,
-                instrument,
-                provider,
-                model=args.model,
-                effort=args.effort,
-            )
+            if args.fast_spec_path:
+                result = run_shadow_fast_spec_path(
+                    state,
+                    instrument,
+                    provider,
+                    model=args.model,
+                    effort=args.effort,
+                )
+            else:
+                result = run_shadow_triage(
+                    state,
+                    instrument,
+                    provider,
+                    model=args.model,
+                    effort=args.effort,
+                    match_audit_mode="deferred" if args.defer_match_audit else "inline",
+                )
             row = privacy_safe_case_summary(case_id, state, result)
             row["legacy_comparison"] = _legacy_comparison(row, legacy.get(case_id))
             cases.append(row)

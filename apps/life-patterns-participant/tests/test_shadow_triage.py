@@ -12,9 +12,11 @@ from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
-from participant.domain import Question, import_record, load_instrument, new_state
+from participant.domain import Question, bank, import_record, load_instrument, new_state
 from participant.shadow_triage import (
     GAP_ADMISSION_PROMPT,
+    GAP_SPEC_ADMISSION_PROMPT,
+    GAP_SPEC_TRIAGE_PROMPT,
     GAP_TRIAGE_PROMPT,
     GapAdmission,
     GapCandidate,
@@ -27,11 +29,19 @@ from participant.shadow_triage import (
     GapQuestionReviewResponse,
     GapQuestionWordingJudgment,
     GapRenderedQuestionText,
+    GapSpecAdmission,
+    GapSpecAdmissionReview,
+    GapSpecCandidate,
+    GapSpecTriage,
     GapTriage,
     make_gap_match_audit_context,
+    make_gap_spec_triage_context,
     make_gap_triage_context,
+    normalize_gap_spec_bindings,
     normalize_gap_triage_bindings,
     privacy_safe_case_summary,
+    run_shadow_deferred_match_audit,
+    run_shadow_fast_spec_path,
     run_shadow_triage,
     validate_gap_admission,
     validate_gap_triage,
@@ -296,6 +306,135 @@ class OmissionRecoveryFake:
             return (
                 GapMatchAuditResponse(reviews=matched),
                 {"duration_seconds": 12.0, "prompt_tokens": 11000, "completion_tokens": 220},
+            )
+        if schema is GapQuestionRenderResponse:
+            return (
+                GapQuestionRenderResponse(
+                    questions=[
+                        GapRenderedQuestionText(
+                            text=spec["route_authority"]["question"]
+                        )
+                        for spec in payload["render_specs"]
+                    ]
+                ),
+                {"duration_seconds": 4.0, "prompt_tokens": 1200, "completion_tokens": 80},
+            )
+        assert schema is GapQuestionReviewResponse
+        return (
+            GapQuestionReviewResponse(
+                reviews=[
+                    GapQuestionWordingJudgment(
+                        approved=True,
+                        construct_discriminating=True,
+                        one_response_task=True,
+                        no_unsupported_extension=True,
+                        failure_codes=[],
+                    )
+                    for _ in payload["items"]
+                ]
+            ),
+            {"duration_seconds": 3.0, "prompt_tokens": 1000, "completion_tokens": 60},
+        )
+
+
+class FastSpecApprovedFake:
+    def __init__(self) -> None:
+        self.calls: list[tuple[str, dict]] = []
+        self.selected_route: dict | None = None
+
+    def call(self, system, payload, schema, model, effort):
+        self.calls.append((system, payload))
+        if schema is GapSpecTriage:
+            assert system == GAP_SPEC_TRIAGE_PROMPT
+            route = next(
+                (
+                    row
+                    for row in payload["candidate_routes"]
+                    if row["candidate_mode"] == "unasked"
+                    and row["self_contained"]
+                    and row.get("source_question_match_turn_ids")
+                ),
+                next(
+                    row
+                    for row in payload["candidate_routes"]
+                    if row["candidate_mode"] == "unasked" and row["self_contained"]
+                ),
+            )
+            self.selected_route = route
+            anchor = (
+                route.get("source_question_match_turn_ids")
+                or [payload["turns"][0]["turn_id"]]
+            )[0]
+            return (
+                GapSpecTriage(
+                    decision="clarification_needed",
+                    candidates=[
+                        GapSpecCandidate(
+                            candidate_id="C1",
+                            rank=1,
+                            source_anchor_turn_ids=[anchor],
+                            route_id=route["id"],
+                            antecedent_turn_ids=[],
+                            equivalent_context=False,
+                            missing_distinction="A material route distinction remains unresolved.",
+                        )
+                    ],
+                ),
+                {"duration_seconds": 15.0, "prompt_tokens": 7000, "completion_tokens": 180},
+            )
+        assert schema is GapSpecAdmission
+        assert system == GAP_SPEC_ADMISSION_PROMPT
+        assert self.selected_route is not None
+        return (
+            GapSpecAdmission(
+                source_review_complete=True,
+                reviews=[
+                    GapSpecAdmissionReview(
+                        candidate_id="C1",
+                        route_id=self.selected_route["id"],
+                        approved=True,
+                        source_references_valid=True,
+                        not_already_answered=True,
+                        premise_supported=True,
+                        antecedent_supported=True,
+                        context_supported=True,
+                        material_information_gain=True,
+                        independent_for_batch=True,
+                        failure_codes=[],
+                    )
+                ],
+            ),
+            {"duration_seconds": 10.0, "prompt_tokens": 7500, "completion_tokens": 120},
+        )
+
+
+class FastSpecOmissionRecoveryFake:
+    def __init__(self) -> None:
+        self.calls: list[tuple[str, dict]] = []
+
+    def call(self, system, payload, schema, model, effort):
+        self.calls.append((system, payload))
+        if schema is GapSpecTriage:
+            assert system == GAP_SPEC_TRIAGE_PROMPT
+            return (
+                GapSpecTriage(decision="review_ready", candidates=[]),
+                {"duration_seconds": 8.0, "prompt_tokens": 6000, "completion_tokens": 50},
+            )
+        if schema is GapMatchAuditResponse:
+            reviews = [
+                GapMatchedRouteJudgment(
+                    status=(
+                        "preliminary_gap"
+                        if pair["route_id"] == "M09"
+                        else "answered"
+                    ),
+                    independent_for_batch=True,
+                )
+                for pair in payload["pairs"]
+            ]
+            return (
+                GapMatchAuditResponse(reviews=reviews),
+                {"duration_seconds": 12.0, "prompt_tokens": 6500, "completion_tokens": 100},
             )
         if schema is GapQuestionRenderResponse:
             return (
@@ -734,6 +873,277 @@ def test_shadow_pipeline_uses_separate_triage_and_admission_without_mutating_sta
     assert PRIVATE_SENTINEL not in encoded
     assert "import-0001" not in encoded
     assert "question_text" not in encoded
+
+
+def test_deferred_match_audit_does_not_block_first_batch():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "near-m09",
+            "turn_role": "behavioral",
+            "question_text": (
+                "Your current planning app is familiar and offline, while a new one has shared "
+                "reminders and better search but takes an hour to migrate. "
+                "What matters in deciding?"
+            ),
+            "answer_text": "I would start by reading reviews and checking the import tool.",
+        }
+    )
+    fake = ApprovedFake()
+    result = run_shadow_triage(
+        state,
+        instrument,
+        fake,
+        model="gpt-5.6-sol",
+        effort="xhigh",
+        match_audit_mode="deferred",
+    )
+    assert [call["shadow_stage"] for call in result["calls"]] == [
+        "GapTriage",
+        "GapAdmission",
+    ]
+    assert result["match_audit_pending"] is True
+    assert result["match_audit_pair_count"] > 0
+    summary = privacy_safe_case_summary("case-0001", state, result)
+    assert summary["shadow_outcome"] == "clarification_recommended"
+    assert summary["match_audit_pending"] is True
+
+
+def test_deferred_match_audit_can_run_later_from_same_triage():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "near-m09",
+            "turn_role": "behavioral",
+            "question_text": (
+                "Your current planning app is familiar and offline, while a new one has shared "
+                "reminders and better search but takes an hour to migrate. "
+                "What matters in deciding?"
+            ),
+            "answer_text": "I would start by reading reviews and checking the import tool.",
+        }
+    )
+    initial = run_shadow_triage(
+        state,
+        instrument,
+        ApprovedFake(),
+        model="gpt-5.6-sol",
+        effort="xhigh",
+        match_audit_mode="deferred",
+    )
+
+    class AuditFake:
+        def call(self, system, payload, schema, model, effort):
+            assert schema is GapMatchAuditResponse
+            return (
+                GapMatchAuditResponse(
+                    reviews=[
+                        GapMatchedRouteJudgment(
+                            status="answered",
+                            independent_for_batch=True,
+                        )
+                        for _ in payload["pairs"]
+                    ]
+                ),
+                {"duration_seconds": 5.0, "prompt_tokens": 1000, "completion_tokens": 50},
+            )
+
+    deferred = run_shadow_deferred_match_audit(
+        state,
+        instrument,
+        initial["triage"],
+        AuditFake(),
+        model="gpt-5.6-sol",
+        effort="xhigh",
+    )
+    assert deferred["match_audit_pair_count"] == len(deferred["match_audit"].reviews)
+    assert deferred["match_audit_pair_count"] > 0
+    assert [call["shadow_stage"] for call in deferred["calls"]] == ["GapMatchAudit"]
+
+
+def test_fast_spec_repair_binding_keeps_required_canonical_context():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].extend(
+        [
+            {
+                "turn_id": "meal-exchange",
+                "turn_role": "behavioral",
+                "canonical_question_id": "M11",
+                "question_text": next(
+                    route["question"]
+                    for route in bank(instrument)["questions"]
+                    if route["id"] == "M11"
+                ),
+                "answer_text": "I would suggest splitting the groceries.",
+            },
+            {
+                "turn_id": "exchange-preference",
+                "turn_role": "behavioral",
+                "canonical_question_id": "PREFER-EXCHANGE",
+                "question_text": next(
+                    route["question"]
+                    for route in bank(instrument)["questions"]
+                    if route["id"] == "PREFER-EXCHANGE"
+                ),
+                "answer_text": "Sometimes I keep negotiating and sometimes I stop.",
+            },
+        ]
+    )
+    context = make_gap_spec_triage_context(state, instrument)
+    route = next(
+        row for row in context["candidate_routes"] if row["id"] == "PREFER-EXCHANGE"
+    )
+    triage = GapSpecTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapSpecCandidate(
+                candidate_id="C1",
+                rank=1,
+                source_anchor_turn_ids=["exchange-preference"],
+                route_id="PREFER-EXCHANGE",
+                antecedent_turn_ids=[],
+                equivalent_context=False,
+                missing_distinction="The usual persistence tendency remains unresolved.",
+            )
+        ],
+    )
+    normalized = normalize_gap_spec_bindings(triage, context)
+    candidate = triage.candidates[0]
+    assert route["candidate_mode"] == "repair_only"
+    assert route["canonical_context_turn_ids"] == ["meal-exchange"]
+    assert candidate.antecedent_turn_ids == ["exchange-preference", "meal-exchange"]
+    assert candidate.equivalent_context is False
+    assert normalized == ["C1"]
+
+
+def test_fast_spec_repair_binding_keeps_equivalent_context():
+    instrument = authority()
+    state = imported_state(instrument)
+    m11_question = (
+        "Imagine you've offered to cook a long dinner for you and one friend and "
+        "asked them to pick up the groceries, but they tell you covering all of "
+        "it would be too much for them. What do you say in response?"
+    )
+    prefer_question = next(
+        route["question"]
+        for route in bank(instrument)["questions"]
+        if route["id"] == "PREFER-EXCHANGE"
+    )
+    state["turns"].extend(
+        [
+            {
+                "turn_id": "meal-exchange-paraphrase",
+                "turn_role": "behavioral",
+                "canonical_question_id": None,
+                "question_text": m11_question,
+                "answer_text": "I would ask what amount they could comfortably cover.",
+            },
+            {
+                "turn_id": "exchange-preference",
+                "turn_role": "behavioral",
+                "canonical_question_id": "PREFER-EXCHANGE",
+                "question_text": prefer_question,
+                "answer_text": "I would first want to know how tight money is.",
+            },
+        ]
+    )
+    context = make_gap_spec_triage_context(state, instrument)
+    route = next(
+        row for row in context["candidate_routes"] if row["id"] == "PREFER-EXCHANGE"
+    )
+    triage = GapSpecTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapSpecCandidate(
+                candidate_id="C1",
+                rank=1,
+                source_anchor_turn_ids=["exchange-preference"],
+                route_id="PREFER-EXCHANGE",
+                antecedent_turn_ids=[],
+                equivalent_context=False,
+                missing_distinction="The usual persistence tendency remains unresolved.",
+            )
+        ],
+    )
+    normalized = normalize_gap_spec_bindings(triage, context)
+    candidate = triage.candidates[0]
+    assert route["candidate_mode"] == "repair_only"
+    assert route.get("canonical_context_turn_ids") is None
+    assert route.get("context_match_turn_ids") is None
+    assert route["context_candidate_turn_ids"] == ["meal-exchange-paraphrase"]
+    assert candidate.antecedent_turn_ids == [
+        "exchange-preference",
+        "meal-exchange-paraphrase",
+    ]
+    assert candidate.equivalent_context is True
+    assert normalized == ["C1"]
+
+
+def test_fast_spec_path_defers_omission_audit_after_admitted_gap():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "near-m09",
+            "turn_role": "behavioral",
+            "question_text": (
+                "You have a familiar simple offline planning app and could move to a more "
+                "complex one with shared reminders and better search, which would take about "
+                "an hour to migrate. What matters in deciding whether to switch?"
+            ),
+            "answer_text": "I would begin by reading reviews and checking the import tool.",
+        }
+    )
+    fake = FastSpecApprovedFake()
+    result = run_shadow_fast_spec_path(
+        state, instrument, fake, model="gpt-5.6-sol", effort="xhigh"
+    )
+    summary = privacy_safe_case_summary("case-0001", state, result)
+    assert [call["shadow_stage"] for call in result["calls"]] == [
+        "GapSpecTriage",
+        "GapSpecAdmission",
+    ]
+    assert fake.selected_route is not None
+    assert summary["admitted_route_ids"] == [fake.selected_route["id"]]
+    assert summary["match_audit_pending"] is True
+    assert summary["match_audit_pair_count"] >= 0
+    assert summary["question_rejected_route_ids"] == []
+
+
+def test_fast_spec_path_runs_omission_audit_before_no_question_stop():
+    instrument = authority()
+    state = imported_state(instrument)
+    state["turns"].append(
+        {
+            "turn_id": "near-m09",
+            "turn_role": "behavioral",
+            "question_text": (
+                "You have a familiar simple offline planning app and could move to a more "
+                "complex one with shared reminders and better search, which would take about "
+                "an hour to migrate. What matters in deciding whether to switch?"
+            ),
+            "answer_text": "I would begin by reading reviews and checking the import tool.",
+        }
+    )
+    fake = FastSpecOmissionRecoveryFake()
+    result = run_shadow_fast_spec_path(
+        state, instrument, fake, model="gpt-5.6-sol", effort="xhigh"
+    )
+    summary = privacy_safe_case_summary("case-0001", state, result)
+    assert [call["shadow_stage"] for call in result["calls"]] == [
+        "GapSpecTriage",
+        "GapMatchAudit",
+        "GapQuestionRender",
+        "GapQuestionReview",
+    ]
+    assert summary["triage_decision"] == "review_ready"
+    assert summary["shadow_outcome"] == "clarification_recommended"
+    assert summary["admitted_route_ids"] == ["M09"]
+    assert summary["recovered_omission_route_ids"] == ["M09"]
+    assert summary["match_audit_pending"] is False
 
 
 def test_wording_repair_runs_only_after_gap_admission_and_can_restore_readiness():

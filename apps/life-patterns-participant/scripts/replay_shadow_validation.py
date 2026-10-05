@@ -14,7 +14,11 @@ import tempfile
 from pathlib import Path
 
 from participant.domain import bank, load_instrument, new_state
-from participant.shadow_triage import privacy_safe_case_summary, run_shadow_triage
+from participant.shadow_triage import (
+    privacy_safe_case_summary,
+    run_shadow_fast_spec_path,
+    run_shadow_triage,
+)
 
 HERE = Path(__file__).resolve()
 REPO_ROOT = HERE.parents[3]
@@ -66,6 +70,7 @@ def main() -> int:
     parser.add_argument("expected", type=Path)
     parser.add_argument("--model", default="gpt-5.6-sol")
     parser.add_argument("--effort", default="xhigh")
+    parser.add_argument("--fast-spec-path", action="store_true")
     args = parser.parse_args()
 
     case_doc = json.loads(args.cases.read_text(encoding="utf-8"))
@@ -79,13 +84,22 @@ def main() -> int:
         provider = worker.CodexCliProvider()
         for case in case_doc["cases"]:
             state = _state(case, instrument, args.model, args.effort)
-            result = run_shadow_triage(
-                state,
-                instrument,
-                provider,
-                model=args.model,
-                effort=args.effort,
-            )
+            if args.fast_spec_path:
+                result = run_shadow_fast_spec_path(
+                    state,
+                    instrument,
+                    provider,
+                    model=args.model,
+                    effort=args.effort,
+                )
+            else:
+                result = run_shadow_triage(
+                    state,
+                    instrument,
+                    provider,
+                    model=args.model,
+                    effort=args.effort,
+                )
             row = privacy_safe_case_summary(case["case_id"], state, result)
             target = expected[case["case_id"]]
             # Participant-facing decision is based on independently admitted
