@@ -18,7 +18,7 @@ BASE = "https://life-patterns-participant-production.up.railway.app"
 PROJECT = "97658d58-84ab-40c8-ab1d-1be06600c4b5"
 SERVICE = "30746eb8-07c9-42e7-8825-152124b9337d"
 ENVIRONMENT = "b9916074-da51-46a1-8d7d-fd618b3c3d2a"
-DEST = Path(__file__).with_name("LIVE-CANARY.json")
+DEST = Path(__file__).with_name("LIVE-COMPLETE-RECORD-CANARY.json")
 
 
 def main() -> int:
@@ -58,7 +58,17 @@ def main() -> int:
         "freeze": {"record_state": "candidate", "frozen_before_birth_or_chart_reveal": False,
                    "birth_or_chart_data_in_this_export": False},
     }
-    report = {"synthetic_only": True, "final_submission_attempted": False, "observations": []}
+    # This is an explicitly complete synthetic source, not a two-answer sample
+    # that leaves the rest of the instrument unspecified. Unknowns stay unknown.
+    source["turns"].extend(
+        {"turn_id": "synthetic-unavailable-" + rid,
+         "question_text": route["question"],
+         "answer_text": "I cannot give an answer to this question. Please leave it unknown rather than repeat it.",
+         "canonical_question_id": rid, "turn_role": "behavioral"}
+        for rid, route in routes.items() if rid not in {"M09", "G19"}
+    )
+    report = {"synthetic_only": True, "final_submission_attempted": False,
+              "synthetic_source_turn_count": len(source["turns"]), "observations": []}
     rid = None
     start = time.monotonic()
     try:
@@ -91,6 +101,7 @@ def main() -> int:
                     raise RuntimeError("canary_test_round_budget_not_participant_cap")
                 questions = state.get("clarifications") or [state["clarification"]]
                 report.setdefault("batch_question_counts", []).append(len(questions))
+                report.setdefault("synthetic_batch_routes", []).append([q["route_id"] for q in questions])
                 # An explicit automated skip exercises the real exact-answer transport
                 # without inventing additional autobiographical evidence.
                 answers = [{"clarification_id": q["clarification_id"], "answer_text": "", "skipped": True}

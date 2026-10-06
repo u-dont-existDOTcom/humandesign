@@ -1,0 +1,25 @@
+{
+  "deployment_id": "ab7ffe99-4a52-4828-a2d7-313365997c22",
+  "source_commit": "499ee11611a929b8653f8f326d324f26ae482336",
+  "health": {
+    "status": "ok",
+    "version": "railway-participant-v2.2-cost-hybrid-20260928",
+    "provider": "venice",
+    "provider_configured": false,
+    "participant_enabled": false,
+    "gpt_submission_enabled": true,
+    "gpt_review_queue_enabled": true,
+    "fast_review_enabled": true,
+    "review_protocols": [
+      "legacy-v1",
+      "fast-batch-v1"
+    ],
+    "review_worker_configured": true,
+    "persistence": "encrypted_sqlite",
+    "instrument_version": "a54c578c2fe3eb68bd96fe6cb07956cc0ccb02903e38a7a34c3f0a6643ba274e"
+  },
+  "live_action_schema_sha256": "e842fec5d4d0dfa0437dc6ff3e11543cda437ff27eba0f31cdb321c460b75d99",
+  "live_action_matches_package_source": true,
+  "local_worker_active": true,
+  "previous_deployment_retained": "f7bdf215-e302-486c-a570-6f918e3d3d19"
+}
