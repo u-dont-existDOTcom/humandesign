@@ -1,0 +1,5 @@
+# Live canary scope
+
+The first actual-provider canary had only two source answers. It verified a two-question fast batch, the new batch POST, saved reconciliation and full Engine synthesis/admission, but did not reach final-ready within its three-round test budget. It ended with a fourth clarification and was withdrawn successfully. This is not reported as an end-to-end completion pass, nor is the test budget imposed on participants. The returned routes were not logged, so no specific cause for those further questions is asserted.
+
+The next bounded live check uses the complete frozen bank as a labelled synthetic source. M09/G19 retain the two procedural answers; every other route has an explicit inability-to-answer response, which the rules require preserving as unknown. Source/expected intent is fixed before this run. The same code and model settings remain unchanged. The check records synthetic route IDs, stage timing and final-ready/withdrawal, without storing personal data or making a research submission.

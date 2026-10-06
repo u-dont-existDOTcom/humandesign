@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Life Patterns Independent Review Pilot",
-    "version": "1.2.3",
+    "version": "1.3.0",
     "description": "Asynchronous independent review and exact-source submission for the development pilot."
   },
   "servers": [
@@ -15,7 +15,7 @@
       "post": {
         "operationId": "startLifePatternsReview",
         "summary": "Queue independent review before primary freeze",
-        "description": "Send the exact unfrozen candidate after interview saturation, before final review or CF-003. Preserve the returned private review ID. Queuing returns immediately; use recommended_check_after_seconds to tell the participant when to return rather than inviting repeated polling.",
+        "description": "Queue the exact unfrozen candidate with review_protocol fast-batch-v1. Preserve its private review ID. Show the returned stage estimate and recommended_check_after_seconds. First questions and full final review are separate stages; queued is not ready.",
         "security": [
           {
             "bearerAuth": []
@@ -59,7 +59,7 @@
       "get": {
         "operationId": "getLifePatternsReview",
         "summary": "Check saved review status",
-        "description": "Read the saved review state. For queued or processing, use recommended_check_after_seconds; fallback is about 10 minutes initially and 3 minutes after a clarification. Do not poll repeatedly.",
+        "description": "Read the same saved review. Report review_stage_label, wait_guidance and recommended_check_after_seconds. Stage estimates are not deadlines. Queued/offline/overdue work has no reliable remaining-time promise. Do not poll repeatedly.",
         "security": [
           {
             "bearerAuth": []
@@ -253,6 +253,61 @@
           }
         }
       }
+    },
+    "/api/gpt/reviews/{review_id}/clarification-batches": {
+      "post": {
+        "operationId": "submitLifePatternsClarificationBatch",
+        "summary": "Save an ordered batch of exact answers or skips",
+        "description": "Ask supplied questions one at a time locally. Send exact answers/skips in batch order with the issued batch_id. An answered prefix may be sent early if a later question no longer fits; unasked remainder is invalidated, not skipped. Reuse operation_id and identical body on retries.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Saved result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewStatus"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Access credentials are missing or invalid."
+          },
+          "409": {
+            "description": "The request is stale or conflicts with saved state."
+          },
+          "422": {
+            "description": "Invalid data; saved source remains unchanged."
+          }
+        },
+        "x-openai-isConsequential": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClarificationBatchAnswers"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "review_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^R-[a-f0-9]{32}$"
+            }
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -349,6 +404,14 @@
                 "additionalProperties": true
               }
             }
+          },
+          "review_protocol": {
+            "type": "string",
+            "enum": [
+              "legacy-v1",
+              "fast-batch-v1"
+            ],
+            "description": "Use fast-batch-v1 for a new review. Recover an existing request with its unchanged saved body, including an omitted legacy protocol."
           }
         },
         "required": [
@@ -381,7 +444,8 @@
               "record_state": "candidate",
               "frozen_before_birth_or_chart_reveal": false
             }
-          }
+          },
+          "review_protocol": "fast-batch-v1"
         }
       },
       "ClarificationAnswer": {
@@ -598,6 +662,111 @@
             "type": "integer",
             "minimum": 0,
             "description": "Suggested seconds before the participant checks this same saved review again. Zero means no waiting is recommended because the current state needs participant or final handling."
+          },
+          "review_protocol": {
+            "type": "string"
+          },
+          "batch_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "clarifications": {
+            "anyOf": [
+              {
+                "type": "array",
+                "maxItems": 3,
+                "items": {
+                  "$ref": "#/components/schemas/Clarification"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "final_review_completed": {
+            "type": "boolean"
+          },
+          "review_stage": {
+            "type": "string"
+          },
+          "review_stage_label": {
+            "type": "string"
+          },
+          "estimate_basis": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stage_elapsed_seconds": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "worker_heartbeat_age_seconds": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "estimate_exceeded": {
+            "type": "boolean"
+          },
+          "worker_status_uncertain": {
+            "type": "boolean"
+          },
+          "wait_guidance": {
+            "type": "string"
+          },
+          "estimated_stage_seconds": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "low": {
+                    "type": "integer"
+                  },
+                  "high": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "low",
+                  "high"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "estimated_remaining_seconds": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "low": {
+                    "type": "integer"
+                  },
+                  "high": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "low",
+                  "high"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "required": [
@@ -691,6 +860,58 @@
           "stored_encrypted",
           "independent_review_completed",
           "inference_started"
+        ]
+      },
+      "BatchAnswer": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "clarification_id": {
+            "type": "string",
+            "pattern": "^Q-[a-f0-9]{32}$"
+          },
+          "answer_text": {
+            "type": "string",
+            "maxLength": 20000
+          },
+          "skipped": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "clarification_id",
+          "answer_text",
+          "skipped"
+        ]
+      },
+      "ClarificationBatchAnswers": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "batch_id": {
+            "type": "string",
+            "pattern": "^B-[a-f0-9]{32}$"
+          },
+          "operation_id": {
+            "type": "string",
+            "minLength": 16,
+            "maxLength": 80,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "description": "Random per-operation identifier. Reuse the exact identifier and body when retrying."
+          },
+          "answers": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "$ref": "#/components/schemas/BatchAnswer"
+            }
+          }
+        },
+        "required": [
+          "batch_id",
+          "operation_id",
+          "answers"
         ]
       }
     }

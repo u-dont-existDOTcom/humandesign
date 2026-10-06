@@ -582,6 +582,7 @@ def test_action_schema_privacy_and_description_limits(tmp_path):
         "startLifePatternsReview",
         "getLifePatternsReview",
         "submitLifePatternsClarification",
+        "submitLifePatternsClarificationBatch",
         "controlLifePatternsReview",
         "submitLifePatternsRecords",
     }

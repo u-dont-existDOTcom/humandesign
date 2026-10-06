@@ -248,6 +248,8 @@ def turn_context_card(turn: dict) -> dict:
         "canonical_question_id": turn.get("canonical_question_id"),
         "question_wording_status": turn.get("question_wording_status"),
     }
+    if turn.get("answer_status") == "skipped":
+        card["answer_status"] = "skipped"
     for key in ("antecedent_turn_ids", "conditions", "corrections", "process_feedback"):
         value = turn.get(key)
         if value:

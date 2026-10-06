@@ -1,0 +1,100 @@
+........................................................................ [  7%]
+........................................................................ [ 14%]
+...................................................sss.................. [ 21%]
+........................ss......................................F.FF.... [ 28%]
+........................................................................ [ 35%]
+........................................................................ [ 42%]
+........................................................................ [ 49%]
+........................................................................ [ 56%]
+........................................................................ [ 63%]
+........................................................................ [ 70%]
+.............................................s.......................... [ 77%]
+........................................................................ [ 84%]
+........................................................................ [ 91%]
+........................................................................ [ 98%]
+...........                                                              [100%]
+=================================== FAILURES ===================================
+_____________ test_instructions_orient_then_resume_without_restart _____________
+
+    def test_instructions_orient_then_resume_without_restart() -> None:
+        text = (CUSTOM / "life_patterns_voice_interviewer_v2.md").read_text(encoding="utf-8")
+        normalized = " ".join(text.split())
+        assert "On the first message, orient them before behavioral questions" in normalized
+        assert "responses may be shared with Joel" in normalized
+        assert "consent to research use, independent review and final submission" in normalized
+        assert "without another “ready” step" in normalized
+        assert "Resume only from sources allowed by `RECOVERY-GUIDE-v2.md`" in normalized
+        assert "generic “continue” request never authorizes account-level lookup" in normalized
+        assert "Library search is allowed only when the participant explicitly asks" in normalized
+        assert "Never claim a source you did not actually retrieve" in normalized
+        assert "startLifePatternsReview" in text
+>       assert "getLifePatternsReview" in text
+E       AssertionError: assert 'getLifePatternsReview' in '# Life Patterns Interview — pilot\n\nConduct a neutral Life Patterns interview; no diagnosis or personality verdict.\...ata Export.\n\nAfter final freeze, never recode from target information. Later clarifications require a new version.\n'
+
+tests/unit/test_custom_gpt_onboarding_resume.py:49: AssertionError
+___________ test_manifest_pins_builder_config_and_instruction_budget ___________
+
+    def test_manifest_pins_builder_config_and_instruction_budget() -> None:
+        manifest = json.loads((CUSTOM / "life_patterns_voice_gpt_manifest_v2.json").read_text())
+        cfg = ROOT / manifest["builder_config"]["path"]
+        instructions = ROOT / manifest["instructions"]["path"]
+        recovery = next(
+            item
+            for item in manifest["knowledge_files"]
+            if item["path"].endswith("RECOVERY-GUIDE-v2.md")
+        )
+        recovery_path = ROOT / recovery["path"]
+        action = ROOT / manifest["action_schema"]["path"]
+        assert manifest["runtime_actions_required"] is True
+        assert manifest["action_schema"]["operation_id"] == "submitLifePatternsRecords"
+>       assert manifest["action_schema"]["operation_ids"] == [
+            "startLifePatternsReview",
+            "getLifePatternsReview",
+            "submitLifePatternsClarification",
+            "controlLifePatternsReview",
+            "submitLifePatternsRecords",
+        ]
+E       AssertionError: assert ['startLifePa...ternsRecords'] == ['startLifePa...ternsRecords']
+E         
+E         At index 3 diff: 'submitLifePatternsClarificationBatch' != 'controlLifePatternsReview'
+E         Left contains one more item: 'submitLifePatternsRecords'
+E         Use -v to get more diff
+
+tests/unit/test_custom_gpt_onboarding_resume.py:99: AssertionError
+_______ test_release_zip_contains_builder_config_and_resume_instructions _______
+
+    def test_release_zip_contains_builder_config_and_resume_instructions() -> None:
+        with zipfile.ZipFile(ZIP) as archive:
+            assert archive.testzip() is None
+            names = archive.namelist()
+            config_name = next(name for name in names if name.endswith("/GPT-BUILDER-CONFIG.md"))
+            instructions_name = next(
+                name
+                for name in names
+                if name.endswith("/INSTRUCTIONS-life-patterns-voice-interviewer-v2.md")
+            )
+            config = archive.read(config_name).decode()
+            instructions = " ".join(archive.read(instructions_name).decode().split())
+            assert "Start my Life Patterns interview." in config
+            assert "Find my Life Patterns record in my Library and continue." in config
+            assert "Continue my interview from this chat or a record I attach." in config
+            assert "Check my independent Life Patterns review." in config
+            assert "Library search is allowed only when the participant explicitly asks" in instructions
+            assert "startLifePatternsReview" in instructions
+>           assert "getLifePatternsReview" in instructions
+E           AssertionError: assert 'getLifePatternsReview' in '# Life Patterns Interview — pilot Conduct a neutral Life Patterns interview; no diagnosis or personality verdict. ## ...unt-data Export. After final freeze, never recode from target information. Later clarifications require a new version.'
+
+tests/unit/test_custom_gpt_onboarding_resume.py:140: AssertionError
+=========================== short test summary info ============================
+SKIPPED [1] tests/unit/test_astrohd_v15_decoder.py:217: Production Swiss files are required for direct astronomy tests
+SKIPPED [1] tests/unit/test_astrohd_v15_decoder.py:226: Production Swiss files are required for direct astronomy tests
+SKIPPED [1] tests/unit/test_astrohd_v15_decoder.py:246: Production Swiss files are required for direct astronomy tests
+SKIPPED [1] tests/unit/test_chart_design_ephemeris.py:156: official Swiss Ephemeris smoke-test files are not installed
+SKIPPED [1] tests/unit/test_chart_design_ephemeris.py:180: official Swiss Ephemeris smoke-test files are not installed
+SKIPPED [1] tests/unit/test_natal_pilot_app.py:828: official Swiss Ephemeris files are not installed
+FAILED tests/unit/test_custom_gpt_onboarding_resume.py::test_instructions_orient_then_resume_without_restart
+FAILED tests/unit/test_custom_gpt_onboarding_resume.py::test_manifest_pins_builder_config_and_instruction_budget
+FAILED tests/unit/test_custom_gpt_onboarding_resume.py::test_release_zip_contains_builder_config_and_resume_instructions
+3 failed, 1010 passed, 6 skipped in 15.97s
+
+EXIT_CODE=1

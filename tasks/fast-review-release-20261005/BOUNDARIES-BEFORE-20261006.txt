@@ -1,0 +1,49 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_______ test_explicit_batch_skip_stays_visible_and_is_not_a_reopened_gap _______
+
+tmp_path = PosixPath('/tmp/pytest-of-joel/pytest-19/test_explicit_batch_skip_stays0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7939023fb080>
+
+    def test_explicit_batch_skip_stays_visible_and_is_not_a_reopened_gap(tmp_path, monkeypatch):
+        settings, fake, app, client, worker, box, _ = setup_fast(tmp_path, monkeypatch)
+        review_id = start_fast(client, settings)["review_id"]
+        worker.process_one("https://testserver", settings.review_worker_token, outbox=box)
+        batch = view(client, settings, review_id)
+        skipped_route = batch["clarifications"][0]["route_id"]
+        response, _ = answer_batch(client, settings, batch, count=1, skip=True)
+        assert response.status_code == 200
+        worker.process_one("https://testserver", settings.review_worker_token, outbox=box)
+        source = fake.seen_sources[-1][-1]
+        assert source["answer_text"] is None
+>       assert source.get("answer_status") == "skipped"
+E       AssertionError: assert None == 'skipped'
+E        +  where None = <built-in method get of dict object at 0x793901844f00>('answer_status')
+E        +    where <built-in method get of dict object at 0x793901844f00> = {'answer_text': None, 'canonical_question_id': 'G19', 'question_text': 'You promised to help a friend sort things for ... arrangement. What would matter most in deciding what to do?', 'question_wording_status': 'server_admitted_exact', ...}.get
+
+apps/life-patterns-participant/tests/test_fast_review_release_boundaries.py:19: AssertionError
+_____ test_unmeasured_integrated_stage_estimates_are_labelled_provisional ______
+
+    def test_unmeasured_integrated_stage_estimates_are_labelled_provisional():
+        for stage in ("reconciliation", "omission_audit", "final_synthesis", "final_admission"):
+            info = review_guidance({
+                "status": "processing", "review_protocol": "fast-batch-v1",
+                "review_stage": stage, "stage_started_at_unix": 1000,
+                "worker_heartbeat_at_unix": 1020,
+            }, now=1020)
+>           assert "provisional" in info["estimate_basis"].lower()
+E           AssertionError: assert 'provisional' in 'limited_pilot_observations_not_a_guarantee'
+E            +  where 'limited_pilot_observations_not_a_guarantee' = <built-in method lower of str object at 0x793903acacd0>()
+E            +    where <built-in method lower of str object at 0x793903acacd0> = 'limited_pilot_observations_not_a_guarantee'.lower
+
+apps/life-patterns-participant/tests/test_fast_review_release_boundaries.py:32: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /mnt/hdd/var/tmp/humandesign-fast-review-release-20261005/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/life-patterns-participant/tests/test_fast_review_release_boundaries.py::test_explicit_batch_skip_stays_visible_and_is_not_a_reopened_gap
+FAILED apps/life-patterns-participant/tests/test_fast_review_release_boundaries.py::test_unmeasured_integrated_stage_estimates_are_labelled_provisional
+2 failed, 1 warning in 1.52s

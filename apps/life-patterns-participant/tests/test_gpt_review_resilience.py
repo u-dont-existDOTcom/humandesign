@@ -203,6 +203,8 @@ def test_full_action_worker_clarification_and_submission_round_trip(tmp_path, mo
     monkeypatch.setattr(worker, "CodexCliProvider", lambda **kwargs: fake)
 
     def transport(method, url, token, body=None, **kwargs):
+        if url.endswith("/result"):
+            assert "clarifications" not in body  # Keep legacy server request shape.
         response = c.request(method, urlparse(url).path, headers=auth(token), json=body)
         if response.status_code >= 400:
             raise worker.TransportError(response.status_code)

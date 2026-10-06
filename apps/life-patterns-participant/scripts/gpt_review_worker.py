@@ -12,24 +12,23 @@ This is intentionally a development/pilot route, not a public inference API.
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
 import os
 import secrets
-import signal
-import threading
-import fcntl
-from contextlib import contextmanager
 import shutil
+import signal
 import subprocess
 import tempfile
+import threading
 import time
 import urllib.error
 import urllib.request
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
 from cryptography.fernet import Fernet
-
 from participant.domain import import_record, load_instrument, new_state, utc
 from participant.engine import Engine
 from participant.store import Store, canonical
@@ -423,7 +422,7 @@ def prepare_state(job: dict, instrument: dict, instrument_version: str) -> tuple
     return state, pending_answer
 
 
-def run_review(
+def run_legacy_review(
     job: dict, provider=None, authority_dir: Path | None = None
 ) -> tuple[str, dict, dict | None, dict | None]:
     with tempfile.TemporaryDirectory(prefix="life-patterns-review-state-") as folder:
@@ -520,6 +519,25 @@ def run_review(
         return state_name, receipt, worker_state, None
 
 
+def run_review(job: dict, provider=None, authority_dir: Path | None = None, progress=None):
+    from participant.fast_review import PROTOCOL, run_fast_review
+    if job.get("review_protocol") != PROTOCOL:
+        return run_legacy_review(job, provider=provider, authority_dir=authority_dir)
+    with tempfile.TemporaryDirectory(prefix="life-patterns-fast-authority-") as folder:
+        root = authority_dir or authority_copy(Path(folder))
+        instrument = job.get("instrument") or load_instrument(root)
+        local_store = Store(Path(folder)/"instrument.sqlite3", Fernet.generate_key().decode())
+        version = local_store.pin_instrument(instrument)
+        if job.get("instrument_version") not in {None, version}:
+            raise RuntimeError("review_instrument_hash_mismatch")
+        def legacy(prepared, provider):
+            return run_legacy_review(prepared, provider=provider, authority_dir=root)
+        status, receipt, state, question = run_fast_review(
+            job, provider or CodexCliProvider(), instrument, version, legacy, progress
+        )
+        return status, receipt, strip_worker_state(state) if state else None, question
+
+
 class EncryptedOutbox:
     def __init__(self, folder: Path):
         self.folder = folder
@@ -582,6 +600,7 @@ def process_one(
                     receipt={
                         "instrument_version": failed["receipt"].get("instrument_version"),
                         "paid_api": False,
+                        "source_revision": failed["receipt"].get("source_revision"),
                         "error_code": "worker_result_rejected_by_server",
                     },
                 )
@@ -603,6 +622,17 @@ def process_one(
     stop = threading.Event()
     done = threading.Event()
     last_lease = time.monotonic()
+    current_stage = {"value": job.get("review_stage")}
+
+    def progress(stage):
+        current_stage["value"] = stage
+        try:
+            http_json("POST", base_url + f"/api/review-worker/jobs/{job['review_id']}/heartbeat",
+                      worker_token, {"claim_id": job["claim_id"], "review_stage": stage})
+        except TransportError as exc:
+            if exc.status in {401, 409}:
+                stop.set()
+                raise
 
     def heartbeat():
         nonlocal last_lease
@@ -612,7 +642,8 @@ def process_one(
                     "POST",
                     base_url + f"/api/review-worker/jobs/{job['review_id']}/heartbeat",
                     worker_token,
-                    {"claim_id": job["claim_id"]},
+                    {"claim_id": job["claim_id"], **({"review_stage": current_stage["value"]}
+                        if current_stage["value"] else {})},
                 )
                 last_lease = time.monotonic()
             except TransportError as exc:
@@ -629,7 +660,7 @@ def process_one(
     thread.start()
     try:
         result_status, receipt, worker_state, clarification = run_review(
-            job, provider=CodexCliProvider(stop_event=stop), authority_dir=authority_dir
+            job, provider=CodexCliProvider(stop_event=stop), authority_dir=authority_dir, progress=progress
         )
         error = receipt.get("error_code")
     except Exception:
@@ -649,6 +680,14 @@ def process_one(
         thread.join(timeout=35)
     if stop.is_set():
         return True
+    clarifications = None
+    if job.get("review_protocol") == "fast-batch-v1":
+        from participant.fast_review import public_question, source_revision
+        receipt["source_revision"] = source_revision(job["candidate_sha256"], job.get("clarification_history", []))
+        if result_status == "clarification_needed" and worker_state:
+            pending = (worker_state.get("fast_review") or {}).get("pending_questions") or []
+            if pending:
+                clarifications = [public_question(q) for q in pending]
     outbox.save(
         {
             "review_id": job["review_id"],
@@ -659,6 +698,7 @@ def process_one(
                 "worker_state": worker_state,
                 "receipt": receipt,
                 "clarification": clarification,
+                **({"clarifications": clarifications} if clarifications is not None else {}),
                 "error": error,
             },
         }

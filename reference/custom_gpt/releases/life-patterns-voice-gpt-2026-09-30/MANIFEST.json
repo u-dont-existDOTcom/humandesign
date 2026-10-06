@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-03.4-readonly-status-approval",
+  "version": "2026-10-05.1-fast-review-stages",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "2c058fe53732a96f64b9966762c505c1c42851d44995312659508f1b2b845149"
+    "sha256": "0dacbf5f48529cb82773cacb85004b62228756a3e56b119d394ffb1c95f0755b"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "cd8151fac89a475e5c4e15090b800ca60a2fe2a39104e006c1aa8292a9b64587",
-    "characters": 7874,
-    "strict_linebreak_count": 7969
+    "sha256": "a8cca1b163d6143ec28193566470bfd0b360fe6984f0492dd45acbd320996c40",
+    "characters": 7902,
+    "strict_linebreak_count": 7999
   },
   "knowledge_files": [
     {
@@ -34,7 +34,7 @@
     },
     {
       "path": "reference/custom_gpt/ACTION-HANDOFF-GUIDE-v1.md",
-      "sha256": "73c8406a684eda61a35a2982fbd557900d226b5c8d70078584a024a927983ca5"
+      "sha256": "aaf260a6191567841af91b204281d66e56cd587404ac8ff291bafc95e749d14e"
     }
   ],
   "birth_or_chart_material_in_bundle": false,
@@ -59,7 +59,7 @@
   },
   "action_schema": {
     "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
-    "sha256": "d7e3a53058d41eecf43e3e8ec68d565ce43bf55f2d3aaa001dfa25177536d4da",
+    "sha256": "e842fec5d4d0dfa0437dc6ff3e11543cda437ff27eba0f31cdb321c460b75d99",
     "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
     "authentication": "api_key_bearer",
     "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",
@@ -68,6 +68,7 @@
       "startLifePatternsReview",
       "getLifePatternsReview",
       "submitLifePatternsClarification",
+      "submitLifePatternsClarificationBatch",
       "controlLifePatternsReview",
       "submitLifePatternsRecords"
     ]

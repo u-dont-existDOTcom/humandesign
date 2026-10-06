@@ -1,0 +1,47 @@
+{
+  "schema": "life-patterns-fast-review-release-receipt-v1",
+  "status": "DEPLOYED_AND_GPT_UPDATE_DELIVERED",
+  "review_protocol": "fast-batch-v1",
+  "source_commit": "499ee11611a929b8653f8f326d324f26ae482336",
+  "railway_deployment": "ab7ffe99-4a52-4828-a2d7-313365997c22",
+  "local_reviewer_deployed": true,
+  "live_schema_matches_update": true,
+  "all_runtime_guidance_fields_in_action_schema": true,
+  "frozen_instrument_changed": false,
+  "paid_api_inference_enabled": false,
+  "participant_suite_passed": 170,
+  "repository_suite_passed": 1013,
+  "repository_suite_skipped": 6,
+  "live_complete_record_canary": {
+    "synthetic_only": true,
+    "source_turns": 79,
+    "first_batch_questions": 2,
+    "first_batch_visible_seconds": 81.05,
+    "final_ready_visible_seconds": 428.18,
+    "polling_included": true,
+    "batch_rounds": 1,
+    "full_final_review_completed": true,
+    "withdrawal_verified": true,
+    "research_submission_attempted": false
+  },
+  "initial_short_canary": {
+    "batch_transport_verified": true,
+    "final_ready_verified": false,
+    "reason": "three-round test budget reached; not a participant cap",
+    "withdrawal_verified": true
+  },
+  "update_package": {
+    "zip_filename": "Life-Patterns-GPT-fast-review-update-2026-10-05.zip",
+    "sha256": "810ecf7f4b937eef72db5572399a07cba40d82dec3d5afdff92aac5ef231c7a9",
+    "bytes": 20639,
+    "local_downloads_delivery": true,
+    "extracted_update_folder_created": true
+  },
+  "gpt_editor_updated": false,
+  "remaining_owner_action": "Apply the three supplied replacements in the existing GPT editor and select Update.",
+  "automatic_notifications": false,
+  "timing_limits": "Limited-pilot planning estimates. Several integrated-stage ranges are provisional. Queue time is not included or guaranteed.",
+  "integration_pr": 79,
+  "integration_branch": "chat/hybrid-voice-cost-optimization-20260928",
+  "integration_state": "Check GitHub PR state for protected merge receipt; runtime and artifact delivery are verified."
+}

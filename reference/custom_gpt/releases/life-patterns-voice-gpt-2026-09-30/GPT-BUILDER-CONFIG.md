@@ -70,3 +70,7 @@ Before the first review call, preserve both the exact candidate backup and `life
 After a review start or clarification answer queues a remote pass, use `recommended_check_after_seconds`. Current measured fallback is about **10 minutes** for the initial pass and **3 minutes** after a clarification. Participants do not need to keep the chat open; “continue,” “check,” or “I'm back” checks the same saved review automatically. Do not impose an arbitrary clarification-count cap: another question is allowed only when independently admitted as materially useful and nonredundant.
 
 Do not promise a proactive notification from the current Custom GPT. Scheduled tasks do not run inside GPTs, so the current GPT cannot wake itself or notify the participant when Railway finishes. The plugin migration should evaluate an event/notification path separately rather than hiding this limitation behind repeated manual polling.
+
+## Fast review update — 2026-10-05
+
+Update the existing GPT, not a new GPT. Replace Instructions, the Action schema, and ACTION-HANDOFF-GUIDE-v1.md in Knowledge using the new fast-review bundle. Keep the same Bearer credential and the other five Knowledge files unchanged. New requests use fast-batch-v1; existing review request envelopes remain unchanged on recovery. The server returns individual stage ranges and check-back guidance; first questions and final evidence review are separate. Independent batch questions are asked one at a time locally and answered in one Action. No fixed lifetime clarification cap is introduced.

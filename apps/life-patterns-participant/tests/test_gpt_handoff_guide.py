@@ -34,8 +34,9 @@ def test_documented_backup_builder_preserves_all_79_source_answers(tmp_path):
     saved_handoff = json.loads(handoff.read_text())
     assert saved_handoff == scope["body"]
     assert saved_handoff["candidate_record"] == before
+    assert saved_handoff["review_protocol"] == "fast-batch-v1"
     assert len(saved_handoff["request_id"]) == 32
-    assert set(saved_handoff) == {"request_id", "research_use_consented", "candidate_record"}
+    assert set(saved_handoff) == {"request_id", "research_use_consented", "candidate_record", "review_protocol"}
     assert candidate == before
 
 

@@ -8,10 +8,10 @@ import os
 import secrets
 import sqlite3
 import time
+from collections.abc import Callable
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
-from collections.abc import Callable
 
 from cryptography.fernet import Fernet
 
@@ -279,6 +279,7 @@ class Store:
         model: str,
         effort: str,
         maximum_jobs: int = 50,
+        review_protocol: str = "legacy-v1",
     ) -> tuple[str, dict, bool]:
         # The legacy SQL column holds the idempotency-key digest. The actual
         # source digest remains in the encrypted payload. Equal answers from two
@@ -293,7 +294,8 @@ class Store:
             ).fetchone()
             if row:
                 payload = self.decode(row[1])
-                if payload["candidate_sha256"] != candidate_sha256:
+                if (payload["candidate_sha256"] != candidate_sha256
+                    or payload.get("review_protocol", "legacy-v1") != review_protocol):
                     raise Conflict("A review request ID was reused for different source data.")
                 db.commit()
                 return row[0], payload, True
@@ -306,6 +308,8 @@ class Store:
                 "candidate_sha256": candidate_sha256,
                 "candidate_record": candidate_record,
                 "status": "queued",
+                "review_protocol": review_protocol,
+                "review_stage": "initial_triage" if review_protocol == "fast-batch-v1" else "legacy_review",
                 "instrument_version": instrument_version,
                 "model": model,
                 "effort": effort,
@@ -370,13 +374,15 @@ class Store:
                 updated_at_unix=now,
                 worker_heartbeat_at_unix=now,
             )
+            payload["stage_started_at_unix"] = now
             payload["claim_attempts"] = int(payload.get("claim_attempts", 0)) + 1
             payload["lease_until"] = now + lease_seconds
             self._save_review(db, payload, payload["lease_until"])
             db.commit()
         return payload
 
-    def renew_gpt_review(self, review_id: str, claim_id: str, lease_seconds: int = 180) -> dict:
+    def renew_gpt_review(self, review_id: str, claim_id: str, lease_seconds: int = 180,
+                         review_stage: str | None = None) -> dict:
         now = time.time()
         with self.connection() as db:
             db.execute("BEGIN IMMEDIATE")
@@ -387,6 +393,13 @@ class Store:
                 raise Missing("Unknown GPT review.")
             payload = self.decode(row[0])
             self._require_review_claim(payload, claim_id, now)
+            if review_stage is not None:
+                from .review_timing import STAGES
+                if review_stage not in STAGES:
+                    raise ValueError("Unknown review stage.")
+                if payload.get("review_stage") != review_stage:
+                    payload["review_stage"] = review_stage
+                    payload["stage_started_at_unix"] = now
             payload.update(
                 worker_heartbeat_at_unix=now, updated_at_unix=now, lease_until=now + lease_seconds
             )
@@ -414,8 +427,10 @@ class Store:
         receipt: dict,
         clarification: dict | None = None,
         error: str | None = None,
+        clarifications: list[dict] | None = None,
     ) -> dict:
         if status not in {
+            "queued",
             "clarification_needed",
             "ready",
             "error",
@@ -432,6 +447,7 @@ class Store:
                     "state": worker_state,
                     "receipt": receipt,
                     "clarification": clarification,
+                    **({"clarifications": clarifications} if clarifications is not None else {}),
                     "error": error,
                 }
             )
@@ -454,6 +470,16 @@ class Store:
             self._require_review_claim(payload, claim_id, now)
             if payload["candidate_sha256"] != candidate_sha256:
                 raise Conflict("The worker result does not match the queued candidate.")
+            if payload.get("review_protocol") == "fast-batch-v1":
+                from .fast_review import source_revision
+                expected = source_revision(candidate_sha256, payload["clarification_history"])
+                if receipt.get("source_revision") != expected:
+                    raise Conflict("The worker result refers to a stale review source revision.")
+            if status == "queued":
+                if (payload.get("review_protocol") != "fast-batch-v1"
+                    or receipt.get("next_stage") != "final_synthesis"):
+                    raise ValueError("Only a fast-stage transition can requeue work.")
+                payload.update(review_stage="final_synthesis", cycle_queued_at_unix=now)
             payload.update(status=status, updated_at_unix=now, error=error, lease_until=None)
             if status == "error":
                 # A failed delivery/analysis cannot destroy the last valid source
@@ -469,11 +495,18 @@ class Store:
             if status == "clarification_needed":
                 if not clarification:
                     raise ValueError("A clarification result needs one admitted question.")
-                payload["pending_clarification"] = dict(clarification) | {
-                    "clarification_id": "Q-" + secrets.token_hex(16)
-                }
+                questions = clarifications or [clarification]
+                if not 1 <= len(questions) <= 3 or questions[0] != clarification:
+                    raise ValueError("Invalid clarification batch.")
+                pending = [dict(q) | {"clarification_id": "Q-" + secrets.token_hex(16)}
+                           for q in questions]
+                payload["pending_clarifications"] = pending
+                payload["pending_batch_id"] = "B-" + secrets.token_hex(16)
+                payload["pending_clarification"] = pending[0]
             else:
                 payload["pending_clarification"] = None
+                payload["pending_clarifications"] = []
+                payload["pending_batch_id"] = None
             self._save_review(db, payload)
             db.commit()
         return payload
@@ -529,7 +562,55 @@ class Store:
                 cycle_queued_at_unix=now,
                 error=None,
                 round=len(payload["clarification_history"]),
+                pending_clarifications=[], pending_batch_id=None,
+                review_stage="reconciliation" if payload.get("review_protocol") == "fast-batch-v1" else "legacy_followup",
             )
+            self._save_review(db, payload)
+            db.commit()
+        return payload
+
+    def add_gpt_review_batch_answers(self, review_id: str, batch_id: str,
+                                     answers: list[dict], operation_id: str) -> dict:
+        """Atomically accept an ordered prefix; invalidate any unasked remainder."""
+        if not 1 <= len(answers) <= 3:
+            raise ValueError("A batch needs one to three answers or explicit skips.")
+        signature = digest(canonical({"batch": batch_id, "answers": answers}))
+        now = time.time()
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            row = db.execute("SELECT payload FROM gpt_review_jobs WHERE id=?", (review_id,)).fetchone()
+            if not row:
+                raise Missing("Unknown GPT review.")
+            payload = self.decode(row[0])
+            operations = payload.setdefault("operations", {})
+            if operation_id in operations:
+                if operations[operation_id] != signature:
+                    raise Conflict("A batch operation ID was reused for different content.")
+                db.commit()
+                return payload
+            pending = payload.get("pending_clarifications") or []
+            if (payload["status"] != "clarification_needed"
+                or payload.get("pending_batch_id") != batch_id
+                or len(answers) > len(pending)):
+                raise Conflict("This batch is stale or no longer awaiting answers.")
+            for question, answer in zip(pending[:len(answers)], answers, strict=True):
+                if question["clarification_id"] != answer["clarification_id"]:
+                    raise Conflict("Answers must match the current batch in its original order.")
+                text, skipped = answer.get("answer_text", ""), answer.get("skipped", False)
+                if (not skipped and not text.strip()) or (skipped and text):
+                    raise ValueError("Provide an exact answer or an explicit empty skip.")
+            for question, answer in zip(pending[:len(answers)], answers, strict=True):
+                skipped = answer.get("skipped", False)
+                payload["clarification_history"].append(dict(question) | {
+                    "answer_text": None if skipped else answer["answer_text"],
+                    "answer_status": "skipped" if skipped else "answered",
+                    "answered_at_unix": now,
+                })
+            operations[operation_id] = signature
+            payload.update(status="queued", updated_at_unix=now, cycle_queued_at_unix=now,
+                           review_stage="reconciliation", error=None,
+                           pending_clarification=None, pending_clarifications=[], pending_batch_id=None,
+                           round=len(payload["clarification_history"]))
             self._save_review(db, payload)
             db.commit()
         return payload
@@ -572,6 +653,7 @@ class Store:
                         worker_receipts=[],
                         completed_claims={},
                         pending_clarification=None,
+                        pending_clarifications=[], pending_batch_id=None,
                         claim_id=None,
                         lease_until=None,
                         updated_at_unix=now,

@@ -1,0 +1,41 @@
+{
+  "schema": "life-patterns-pro-review-acceptance-v1",
+  "owner_instruction": "insetad of claude you can use this pro pass now to check it",
+  "review_type": "owner-authorized Pro review; disclosed prior development context; not cross-family or blind",
+  "reviewed_base": "2bc0365b532d0347c5243aa798ffd35a059eb15f",
+  "repaired_code_commit": "a39228f89c12a3a03742efd5b067a7477dffadc2",
+  "module_sha256": "50131d312d1de45cc083b2c055faf20b30b65058a5600cbf548aca846145bcc1",
+  "decision": "ACCEPTED_AFTER_REPAIRS_FOR_CONTROLLED_INTEGRATION",
+  "review_request_status": "SATISFIED",
+  "parent_product_status": "OPEN",
+  "claude_wait_superseded": true,
+  "new_contract_regressions": {
+    "failed_before": 6,
+    "passed_after": 6
+  },
+  "focused_tests_passed": 44,
+  "participant_suite_tests_passed": 160,
+  "focused_tests_included_in_participant_suite": true,
+  "full_bank_semantic_cases_passed": 6,
+  "full_bank_semantic_cases_total": 6,
+  "owner_scale": {
+    "behavioral_turns": 81,
+    "route_cards": 78,
+    "semantic_seconds": 114.164,
+    "model": "gpt-5.6-sol",
+    "effort": "xhigh",
+    "usable_questions": 3,
+    "wording_rejections": 0,
+    "deferred_audit_pending": true,
+    "final_review_completed": false
+  },
+  "live_behavior_changed": false,
+  "gpt_package_generated": false,
+  "merge_or_deployment_performed": false,
+  "next_engineering_task": "Integrate the accepted first-clarification stage with live review state, deferred audit, final synthesis and transport; see PRO-INTEGRATION-CONTRACT-20261005.md.",
+  "limits": [
+    "One application-model sample per synthetic case and one repaired owner-scale measurement.",
+    "New probes were Pro-authored after code inspection, not independent human validation.",
+    "No latency guarantee for all interviews or full final evidence synthesis."
+  ]
+}
