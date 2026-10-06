@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01k",
+  "previous_comparisons": 8,
+  "new_comparisons": 3,
+  "cumulative_comparisons": 11,
+  "rhetorius_source_file_sha256": "fa587dd2b04245c63198c9438c9edd9f8164b0a165b824f386e4c890f3dd5e86",
+  "rhetorius_edition": "Holden2009, fourth translation revision, supplied198-page witness",
+  "reading_route": "Owner OCR plus visually inspected original PDF140-141/printed152-153",
+  "file_receipts": [
+    "turn498file0"
+  ],
+  "comparisons": [
+    {
+      "id": "X09",
+      "topic": "Precision of offspring/marriage counts",
+      "ptolemy": {
+        "chapters": [
+          "IV.5",
+          "IV.6"
+        ],
+        "pdf_pages": [
+          419,
+          421,
+          433
+        ],
+        "claim": "One versus more-than-one marriage and single versus two-or-more offspring; count conditions retain their source qualifications."
+      },
+      "rhetorius": {
+        "chapters": [
+          104
+        ],
+        "pdf_pages": [
+          140,
+          141
+        ],
+        "printed_pages": [
+          152,
+          153
+        ],
+        "claim": "Expresses difficulty with numerical claims for siblings, wives and children, recommends many, but immediately says he will still attempt as much as possible. Holden separately quotes a Byzantine epitomator."
+      },
+      "classification": "PRECISION_CAUTION_WITH_CONTINUING_ATTEMPT_NOT_BLANKET_REJECTION",
+      "project_implication": "Do not say either source supplies calibrated exact counts; do not quote Rhetorius's hesitation as abandonment of the attempt."
+    },
+    {
+      "id": "X10",
+      "topic": "Planet-group labels require the target",
+      "ptolemy": {
+        "chapters": [
+          "IV.6"
+        ],
+        "pdf_pages": [
+          433,
+          435
+        ],
+        "claim": "Moon/Jupiter/Venus give children; Sun/Mars/Saturn limit; Mercury common; Anonymous glosses sect as outcome groups."
+      },
+      "rhetorius": {
+        "chapters": [
+          105
+        ],
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          153
+        ],
+        "claim": "Sibling enquiry uses Jupiter/Venus/Mercury as favourable qualified significators; conditional Saturn/Mars/Moon branches are adverse."
+      },
+      "classification": "DIFFERENT_TOPIC_AND_CONDITIONS_NOT_A_DIRECT_LOGICAL_CONTRADICTION",
+      "project_implication": "A global reusable benefic/sect grouping would erase source-topical role differences. No independent predictive corroboration."
+    },
+    {
+      "id": "X11",
+      "topic": "Sterile-sign scope",
+      "ptolemy": {
+        "chapters": [
+          "IV.6"
+        ],
+        "pdf_pages": [
+          433
+        ],
+        "claim": "Names Leo and Virgo as examples of sterile places in offspring enquiry; not an asserted exhaustive list."
+      },
+      "rhetorius": {
+        "chapters": [
+          106
+        ],
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          153
+        ],
+        "claim": "Names Gemini/Leo/Virgo/Capricorn/Sagittarius in a third-sign sibling enquiry."
+      },
+      "classification": "BROADER_LIST_IN_DIFFERENT_TOPIC; NOT_PROOF_OF_CONTRADICTION",
+      "project_implication": "Keep each list and its scope; do not augment Ptolemy's examples silently or claim all five apply to its offspring calculation."
+    }
+  ],
+  "full_rhetorius_audit_completed": false,
+  "empirical_corroboration_claimed": false
+}

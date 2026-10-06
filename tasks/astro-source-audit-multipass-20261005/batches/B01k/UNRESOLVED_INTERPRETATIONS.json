@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "status": "OPEN_DEFINITIONS_NOT_SILENTLY_RESOLVED",
+  "issues": [
+    {
+      "id": "B01k.U01",
+      "topic": "Reference-frame overloading",
+      "pdf_support_pages": [
+        421
+      ],
+      "problem": "Same east/west term denotes horizon-relative solar quadrants and lunar phase quadrants. Exact phase boundaries remain unassigned.",
+      "required_handling": "Use body-specific frames, abstain on undefined boundaries."
+    },
+    {
+      "id": "B01k.U02",
+      "topic": "Age disjunction",
+      "pdf_support_pages": [
+        417,
+        419
+      ],
+      "problem": "Young marriage OR younger partner, and late marriage OR older partner; no numerical age boundary.",
+      "required_handling": "Preserve alternatives and leave later endpoint scoring explicit."
+    },
+    {
+      "id": "B01k.U03",
+      "topic": "Marriage-count co-triggering",
+      "pdf_support_pages": [
+        419,
+        421
+      ],
+      "problem": "Single figure OR one application and composite sign OR multiple applications can support opposite count categories.",
+      "required_handling": "Keep co-triggering; do not invent priority or exact number."
+    },
+    {
+      "id": "B01k.U04",
+      "topic": "Application and visibility predicates",
+      "pdf_support_pages": [
+        417,
+        419,
+        421
+      ],
+      "problem": "Propinquity/testimony, oriental planets, under-rays and exact application windows need conventions;15-degree figure is commentary.",
+      "required_handling": "Do not use a generic conjunction or a single universal orb."
+    },
+    {
+      "id": "B01k.U05",
+      "topic": "Spouse versus native",
+      "pdf_support_pages": [
+        419,
+        421,
+        429,
+        431
+      ],
+      "problem": "Planetary descriptions refer first to spouses, later to native dispositions.",
+      "required_handling": "Attach explicit subject and enquiry role."
+    },
+    {
+      "id": "B01k.U06",
+      "topic": "Cross-chart exchange",
+      "pdf_support_pages": [
+        420,
+        421,
+        423
+      ],
+      "problem": "Multiple commentator readings and no complete numeric scoring of luminary pairings.",
+      "required_handling": "Preserve Robbins preference; no generic one-chart substitution."
+    },
+    {
+      "id": "B01k.U07",
+      "topic": "Mixed testimony",
+      "pdf_support_pages": [
+        423,
+        435
+      ],
+      "problem": "Both beneficent and maleficent testimony may occur; numerical weighting and tie priority are not supplied.",
+      "required_handling": "Return both supports with unresolved mixture."
+    },
+    {
+      "id": "B01k.U08",
+      "topic": "Venus-Mars-Saturn local scope",
+      "pdf_support_pages": [
+        423,
+        425,
+        427
+      ],
+      "problem": "With, common signs, them, relative east/west and inherited kin-configuration predicates remain partly under-specified.",
+      "required_handling": "Keep local context and do not replace with isolated planetary conjunction rules."
+    },
+    {
+      "id": "B01k.U09",
+      "topic": "Exaltation rationale and common signs",
+      "pdf_support_pages": [
+        424,
+        425
+      ],
+      "problem": "Robbins corrects the main exaltation-trine rationale; separate note3 calls Capricorn Saturn's house in a Venus-Mars discussion.",
+      "required_handling": "Do not silently rewrite author or commentator; record both."
+    },
+    {
+      "id": "B01k.U10",
+      "topic": "Historical sexual and social claims",
+      "pdf_support_pages": [
+        421,
+        425,
+        427,
+        429,
+        431
+      ],
+      "problem": "Derogatory/abusive social categories and sexual-role assertions are not modern validated identity or clinical constructs.",
+      "required_handling": "Source archive only, no person-level classifier or safety inference."
+    },
+    {
+      "id": "B01k.U11",
+      "topic": "Male passion-restraint antecedent",
+      "pdf_support_pages": [
+        429
+      ],
+      "problem": "Venus/Jupiter aspect clause follows Saturn-alone clause without expressly repeating Saturn; no-Saturn clause follows.",
+      "required_handling": "Preserve competing scope readings rather than flattening."
+    },
+    {
+      "id": "B01k.U12",
+      "topic": "Saturn versus Jupiter variant",
+      "pdf_support_pages": [
+        430,
+        431
+      ],
+      "problem": "Robbins adopts Saturn; Camerarius Jupiter in female-disposition absence clause.",
+      "required_handling": "Keep version-specific branch; no smooth correction."
+    },
+    {
+      "id": "B01k.U13",
+      "topic": "Child topical locus/fallback",
+      "pdf_support_pages": [
+        433
+      ],
+      "problem": "Midheaven/succedent relations and exact opposite-place/house conventions require definition.",
+      "required_handling": "Do not default to fifth house or convert unknown primary calculation into fallback."
+    },
+    {
+      "id": "B01k.U14",
+      "topic": "Child groups and Mercury",
+      "pdf_support_pages": [
+        433,
+        435
+      ],
+      "problem": "Contextual giving/limiting groups differ from day/night sect; Mercury association and phase can conflict.",
+      "required_handling": "Retain topic classification and both Mercury qualifiers."
+    },
+    {
+      "id": "B01k.U15",
+      "topic": "Child plurality and sterile places",
+      "pdf_support_pages": [
+        432,
+        433
+      ],
+      "problem": "AND/OR structure, alone, and places/signs variants; named sterile signs are examples.",
+      "required_handling": "No exhaustive list or exact count invented."
+    },
+    {
+      "id": "B01k.U16",
+      "topic": "Child outcome dimensions",
+      "pdf_support_pages": [
+        435,
+        437
+      ],
+      "problem": "Birth, duration, harm, status, affection, inheritance and relations among children are distinct; other-sect and harmony scopes are not fully defined.",
+      "required_handling": "No opposite conclusion from lack of favourable testimony; keep endpoints separate."
+    },
+    {
+      "id": "B01k.U17",
+      "topic": "Turned child reference",
+      "pdf_support_pages": [
+        437
+      ],
+      "problem": "The giver planet becomes a horoscope within the parent enquiry; mapping multiple children and house system is not specified.",
+      "required_handling": "Do not claim an independently calculated natal chart of the child."
+    },
+    {
+      "id": "B01k.U18",
+      "topic": "Timing still incomplete",
+      "pdf_support_pages": [
+        417,
+        433,
+        437
+      ],
+      "problem": "These chapters give age classes and relative conditions, not a complete calendar-dated marriage/childbirth engine.",
+      "required_handling": "Retain IV.10 dependency and existing frozen timing models unchanged."
+    }
+  ]
+}

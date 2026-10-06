@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch_id": "B01k",
+  "parent_status": "OPEN_MULTIPASS_OWNER_AUTHORIZED",
+  "base_commit": "52a6abe9aee9bc70b467dbe4802650cd779e3090",
+  "writer_branch": "research/astro-source-audit-b01k-20261006",
+  "scope": "Complete the declared English Ptolemy IV.5-IV.6 source-only batch and relevant translator notes; source-bound comparisons when useful; no individual interpretation.",
+  "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "authority": {
+    "uda_default_commit": "991c7a08b7d9f831327d9075175b8d70c34c37e6",
+    "uda_agents_blob": "0a88eb99b513c803277509d31d80a703c2409ef8",
+    "project_agents_blob": "15efee1556a0a44ea2b6e4af0596a7e0cb8c24c3",
+    "activation": "Live root AGENTS and LESSON-INDEX plus source provenance, recovery, task-time activation and delivery/continuation patterns read; current project architecture, checkpoint and multiple-pass contract reconciled against fetched research head."
+  },
+  "active_lessons": [
+    {
+      "id": "source-provenance",
+      "required": "Keep source text, translator notes, historical descriptions, calculation conventions and project implications distinct; no unseen personal history or chart is used.",
+      "failure": "Unattributed modern rule, erased qualification or retrospective rescue.",
+      "repair": "Recheck exact passage and narrow or mark unresolved.",
+      "enforcement": "semantic"
+    },
+    {
+      "id": "read-before-count",
+      "required": "Complete both declared English chapter spans and relevant notes; distinguish read from merely located pages.",
+      "failure": "A heading or extracted keyword counted as full chapter.",
+      "repair": "Read remaining source and update coverage.",
+      "enforcement": "semantic+mechanical"
+    },
+    {
+      "id": "preservation",
+      "required": "Add B01k; change only four existing progress files; keep raw books/OCR outside Git and frozen candidates unchanged.",
+      "failure": "Change outside allowlist or raw source admitted to Git.",
+      "repair": "Remove only this task unwanted delta; preserve other writers.",
+      "enforcement": "mechanical"
+    },
+    {
+      "id": "unknown-and-evidence",
+      "required": "Do not convert ambiguous historical predicates or unknown astronomy into false or into claims of validation; tests only support bounded reference behavior.",
+      "failure": "Missing qualification becomes an applicable rule; tests represented as empirical evidence.",
+      "repair": "Tri-state gates/explicit ambiguity and scoped reporting.",
+      "enforcement": "semantic+mechanical"
+    },
+    {
+      "id": "delivery",
+      "required": "Commit and read back the authorized research increment and deliver report/usable packet locally and in chat.",
+      "failure": "Unverified write or branch path used instead of deliverable.",
+      "repair": "Verify exact remote bytes and materialize files.",
+      "enforcement": "mechanical"
+    }
+  ],
+  "allowed_existing_changes": [
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json"
+  ],
+  "not_authorized": [
+    "personal predictions",
+    "change prior freezes or retained models",
+    "modern clinical or sexual-identity classifier",
+    "raw source/full OCR Git storage",
+    "new spending",
+    "production deployment"
+  ],
+  "new_ocr_calls": 0,
+  "independent_review_claimed": false,
+  "prepublication_gate": {
+    "source_provenance": "PASS: RULES, coverage, reading/image receipts, intrasource qualifications and source comparisons",
+    "verification": "PASS: 345 actual integrated checks, including59 new checks; bounded source-reference/integrity behavior only",
+    "preservation": "PASS: PROTECTED_CONTENT_VERIFICATION.json; exact four-path existing-file allowlist",
+    "delivery": "ADMITTED_FOR_AUTHORIZED_RESEARCH_PUBLICATION; final head/readback and owner file delivery required before final answer, with separate publication receipt"
+  },
+  "reactivation_after_context_resume": "Current UDA activation/obligation guidance reloaded; isolated clean baseline and exact transfer reconciled before integration."
+}

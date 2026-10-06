@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01k",
+  "roles": {
+    "male_native_marriage": {
+      "referent": "Moon",
+      "subject_described": "wife",
+      "rule_refs": [
+        "PT.R64.IV.05.R408"
+      ]
+    },
+    "female_native_marriage": {
+      "referent": "Sun",
+      "subject_described": "husband"
+    },
+    "male_native_love_disposition": {
+      "referent": "Mars",
+      "subject_described": "native"
+    },
+    "female_native_love_disposition": {
+      "referent": "Venus",
+      "subject_described": "native"
+    }
+  },
+  "spouse_profiles": {
+    "male_native": {
+      "Saturn": {
+        "referent": "Moon",
+        "subject": "wife",
+        "descriptors": [
+          "hardworking",
+          "stern"
+        ],
+        "rule_ref": "PT.R64.IV.05.R417"
+      },
+      "Jupiter": {
+        "referent": "Moon",
+        "subject": "wife",
+        "descriptors": [
+          "dignified",
+          "good managers"
+        ],
+        "rule_ref": "PT.R64.IV.05.R418"
+      },
+      "Mars": {
+        "referent": "Moon",
+        "subject": "wife",
+        "descriptors": [
+          "bold",
+          "unruly"
+        ],
+        "rule_ref": "PT.R64.IV.05.R419"
+      },
+      "Venus": {
+        "referent": "Moon",
+        "subject": "wife",
+        "descriptors": [
+          "cheerful",
+          "beautiful",
+          "charming"
+        ],
+        "rule_ref": "PT.R64.IV.05.R420"
+      },
+      "Mercury": {
+        "referent": "Moon",
+        "subject": "wife",
+        "descriptors": [
+          "intelligent",
+          "keen"
+        ],
+        "rule_ref": "PT.R64.IV.05.R421"
+      }
+    },
+    "female_native": {
+      "Saturn": {
+        "referent": "Sun",
+        "subject": "husband",
+        "descriptors": [
+          "sedate",
+          "useful",
+          "industrious"
+        ],
+        "rule_ref": "PT.R64.IV.05.R428"
+      },
+      "Jupiter": {
+        "referent": "Sun",
+        "subject": "husband",
+        "descriptors": [
+          "dignified",
+          "magnanimous"
+        ],
+        "rule_ref": "PT.R64.IV.05.R429"
+      },
+      "Mars": {
+        "referent": "Sun",
+        "subject": "husband",
+        "descriptors": [
+          "men of action",
+          "lacking in affection",
+          "unruly"
+        ],
+        "rule_ref": "PT.R64.IV.05.R430"
+      },
+      "Venus": {
+        "referent": "Sun",
+        "subject": "husband",
+        "descriptors": [
+          "neat",
+          "handsome"
+        ],
+        "rule_ref": "PT.R64.IV.05.R431"
+      },
+      "Mercury": {
+        "referent": "Sun",
+        "subject": "husband",
+        "descriptors": [
+          "thrifty",
+          "practical"
+        ],
+        "rule_ref": "PT.R64.IV.05.R432"
+      }
+    }
+  },
+  "relationship_continuity_quality": {
+    "HARMONIOUS:BENEFIC": {
+      "rule_ref": "PT.R64.IV.05.R441",
+      "continuity": "lasting baseline",
+      "quality": [
+        "pleasant",
+        "agreeable",
+        "profitable"
+      ]
+    },
+    "HARMONIOUS:MALEFIC": {
+      "rule_ref": "PT.R64.IV.05.R442",
+      "continuity": "lasting baseline is not reclassified as divorce here",
+      "quality": [
+        "quarrelsome",
+        "unpleasant",
+        "unprofitable"
+      ]
+    },
+    "INHARMONIOUS:BENEFIC": {
+      "rule_ref": "PT.R64.IV.05.R443",
+      "continuity": "not completely terminated; renewals and recollections",
+      "quality": [
+        "kindness",
+        "affection"
+      ]
+    },
+    "INHARMONIOUS:MALEFIC": {
+      "rule_ref": "PT.R64.IV.05.R444",
+      "continuity": "divorce",
+      "quality": [
+        "abuse",
+        "violence"
+      ]
+    }
+  },
+  "quadrants": {
+    "Moon": {
+      "frame": "directed lunar elongation from Sun",
+      "eastern_open_intervals_deg": [
+        [
+          0,
+          90
+        ],
+        [
+          180,
+          270
+        ]
+      ],
+      "western_open_intervals_deg": [
+        [
+          90,
+          180
+        ],
+        [
+          270,
+          360
+        ]
+      ],
+      "boundaries_deg": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "boundary_policy": "UNRESOLVED; do not assign exact phase boundaries",
+      "rule_ref": "PT.R64.IV.05.R437"
+    },
+    "Sun": {
+      "frame": "horizon-relative quadrants",
+      "rule_ref": "PT.R64.IV.05.R436",
+      "implementation": "CALLER_QUALIFICATION_REQUIRED; lunar phase function cannot be substituted"
+    }
+  },
+  "children": {
+    "groups": {
+      "giving": [
+        "Moon",
+        "Jupiter",
+        "Venus"
+      ],
+      "limiting": [
+        "Sun",
+        "Mars",
+        "Saturn"
+      ],
+      "common": [
+        "Mercury"
+      ]
+    },
+    "group_rule_ref": "PT.R64.IV.06.R483",
+    "route_rule_ref": "PT.R64.IV.06.R481",
+    "fecund_examples": [
+      "Pisces",
+      "Scorpio",
+      "Cancer"
+    ],
+    "sterile_examples": [
+      "Leo",
+      "Virgo"
+    ],
+    "sterile_list_exhaustive": false,
+    "multiplicity_wording": "bicorporeal AND feminine, OR fecund",
+    "separate_outcomes": [
+      "whether offspring is given",
+      "number category",
+      "historical sex category",
+      "survival/duration",
+      "injury",
+      "status",
+      "affection toward parents",
+      "inheritance",
+      "relations among siblings"
+    ]
+  },
+  "not_a_probability_model": true,
+  "requires_caller_qualified_antecedents": true
+}

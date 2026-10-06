@@ -25,7 +25,7 @@
     {
       "id": "P2",
       "title": "Map every section",
-      "status": "PTOLEMY_61_INDEXED;42_ENGLISH_SECTIONS_READ_MAPPED",
+      "status": "PTOLEMY_61_INDEXED;44_ENGLISH_SECTIONS_READ_MAPPED",
       "output": [
         "SECTION_DISCOVERY.json"
       ],
@@ -34,7 +34,7 @@
     {
       "id": "P3",
       "title": "Read and extract conditional rules",
-      "status": "ENGLISH_I_III_COMPLETE_AND_IV1_IV4;407_SOURCE_RECORDS;REMAINDER_OPEN",
+      "status": "ENGLISH_I_III_COMPLETE_AND_IV1_IV6;500_SOURCE_RECORDS;REMAINDER_OPEN",
       "output": [
         "per-source RuleSpecs and unresolved-term ledger"
       ],
@@ -43,7 +43,7 @@
     {
       "id": "P4",
       "title": "Reconcile authors and test calculations",
-      "status": "252_SOURCE_REFERENCE_CHECKS;EIGHT_TARGETED_RHETORIUS_COMPARISONS;FULL_RECONCILIATION_PENDING",
+      "status": "311_SOURCE_REFERENCE_CHECKS;ELEVEN_TARGETED_RHETORIUS_COMPARISONS;FULL_RECONCILIATION_PENDING",
       "output": [
         "cross-source comparison and worked-example fixtures"
       ],
@@ -66,7 +66,7 @@
         "PTOLEMY1940_REPRINT1964"
       ],
       "scope": "Book I foundational vocabulary and conditions first; then natal III/IV; Book II separately mundane. All 61 TOC sections remain accounted for.",
-      "next": "IV.5-IV.6; start Of Marriage on PDF417/printed393; stop before IV.7 Of Friends and Enemies on shared PDF437/printed413",
+      "next": "IV.7-IV.8; start Of Friends and Enemies on PDF437/printed413; travel starts PDF447/printed423; stop before IV.9 on PDF451/printed427",
       "completed_subbatches": [
         {
           "id": "B01",
@@ -146,6 +146,15 @@
           "tests": 61,
           "test_scope": "Caller-qualified route reconciliation, source lookup and record integrity; not a chart or prediction engine.",
           "targeted_cross_source_comparisons": 4
+        },
+        {
+          "id": "B01k",
+          "scope": "Full English IV.5-IV.6 and relevant notes; targeted Rhetorius104-106 comparison",
+          "source_records": 93,
+          "new_predictions": 0,
+          "tests": 59,
+          "test_scope": "Phase-reference geometry, caller-qualified source lookups, unknown/absent and co-triggered flags, provenance/coverage. Not a natal/fertility or relationship-safety engine.",
+          "targeted_cross_source_comparisons": 3
         }
       ]
     },
