@@ -1,0 +1,404 @@
+[
+  {
+    "case_id": "OPENING",
+    "messages": [
+      {
+        "role": "user",
+        "text": "Start my Life Patterns interview."
+      }
+    ],
+    "state": {
+      "research_consent": null,
+      "source": null
+    }
+  },
+  {
+    "case_id": "PARTIAL_SEARCH",
+    "messages": [
+      {
+        "role": "user",
+        "text": "Find my Life Patterns record in my Library and continue."
+      }
+    ],
+    "state": {
+      "library_authorized": true,
+      "searches_run": [
+        "one filename query"
+      ],
+      "retrieved_candidates": [
+        {
+          "filename": "old-a.json",
+          "record": {
+            "schema": "life-patterns-railway-visible-conversation-recovery-v1",
+            "historical_interview_status": "completed_under_then_current_protocol",
+            "participant_answer_count": 2,
+            "turns": [
+              {
+                "turn_id": "source-1",
+                "question_text": "Synthetic question 1?",
+                "answer_text": "Synthetic exact answer 1.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-2",
+                "question_text": "Synthetic question 2?",
+                "answer_text": "Synthetic exact answer 2.",
+                "turn_role": "behavioral"
+              }
+            ]
+          }
+        },
+        {
+          "filename": "old-b.json",
+          "record": {
+            "schema": "life-patterns-railway-visible-conversation-recovery-v1",
+            "historical_interview_status": "completed_under_then_current_protocol",
+            "participant_answer_count": 2,
+            "turns": [
+              {
+                "turn_id": "source-1",
+                "question_text": "Synthetic question 1?",
+                "answer_text": "Synthetic exact answer 1.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-2",
+                "question_text": "Synthetic question 2?",
+                "answer_text": "Synthetic exact answer 2.",
+                "turn_role": "behavioral"
+              }
+            ]
+          }
+        }
+      ],
+      "library_search_has_more": true,
+      "next_cursor": "synthetic-more-results"
+    }
+  },
+  {
+    "case_id": "VERIFIED_SUCCESSOR",
+    "messages": [
+      {
+        "role": "user",
+        "text": "Find my Life Patterns record in my Library and continue. I consent to research use, independent review and final submission."
+      }
+    ],
+    "state": {
+      "library_authorized": true,
+      "searches_run": [
+        "canonical aliases",
+        "all three allowed schema queries",
+        "newest metadata"
+      ],
+      "all_relevant_pages_read": true,
+      "research_consent": true,
+      "review_envelope": null,
+      "same_participant_verified": true,
+      "retrieved_candidates": [
+        {
+          "filename": "old-a.json",
+          "record": {
+            "schema": "life-patterns-railway-visible-conversation-recovery-v1",
+            "historical_interview_status": "completed_under_then_current_protocol",
+            "participant_answer_count": 2,
+            "turns": [
+              {
+                "turn_id": "source-1",
+                "question_text": "Synthetic question 1?",
+                "answer_text": "Synthetic exact answer 1.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-2",
+                "question_text": "Synthetic question 2?",
+                "answer_text": "Synthetic exact answer 2.",
+                "turn_role": "behavioral"
+              }
+            ]
+          }
+        },
+        {
+          "filename": "old-b.json",
+          "record": {
+            "schema": "life-patterns-railway-visible-conversation-recovery-v1",
+            "historical_interview_status": "completed_under_then_current_protocol",
+            "participant_answer_count": 2,
+            "turns": [
+              {
+                "turn_id": "source-1",
+                "question_text": "Synthetic question 1?",
+                "answer_text": "Synthetic exact answer 1.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-2",
+                "question_text": "Synthetic question 2?",
+                "answer_text": "Synthetic exact answer 2.",
+                "turn_role": "behavioral"
+              }
+            ]
+          }
+        },
+        {
+          "filename": "full-four.json",
+          "record": {
+            "schema": "life-patterns-railway-visible-conversation-recovery-v1",
+            "historical_interview_status": "completed_under_then_current_protocol",
+            "participant_answer_count": 4,
+            "turns": [
+              {
+                "turn_id": "source-1",
+                "question_text": "Synthetic question 1?",
+                "answer_text": "Synthetic exact answer 1.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-2",
+                "question_text": "Synthetic question 2?",
+                "answer_text": "Synthetic exact answer 2.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-3",
+                "question_text": "Synthetic question 3?",
+                "answer_text": "Synthetic exact answer 3.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-4",
+                "question_text": "Synthetic question 4?",
+                "answer_text": "Synthetic exact answer 4.",
+                "turn_role": "behavioral"
+              }
+            ],
+            "notes": [
+              "This later source supersedes the earlier two-answer source as the completed interview."
+            ]
+          }
+        },
+        {
+          "filename": "five-recovery.json",
+          "record": {
+            "schema": "life-patterns-railway-visible-conversation-recovery-v1",
+            "historical_interview_status": "completed_under_then_current_protocol",
+            "participant_answer_count": 5,
+            "turns": [
+              {
+                "turn_id": "source-1",
+                "question_text": "Synthetic question 1?",
+                "answer_text": "Synthetic exact answer 1.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-2",
+                "question_text": "Synthetic question 2?",
+                "answer_text": "Synthetic exact answer 2.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-3",
+                "question_text": "Synthetic question 3?",
+                "answer_text": "Synthetic exact answer 3.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-4",
+                "question_text": "Synthetic question 4?",
+                "answer_text": "Synthetic exact answer 4.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-5",
+                "question_text": "Synthetic question 5?",
+                "answer_text": "Synthetic exact answer 5.",
+                "turn_role": "behavioral"
+              }
+            ],
+            "source_provenance": [
+              {
+                "source": "full-four.json",
+                "answer_count": 4
+              }
+            ]
+          }
+        },
+        {
+          "filename": "current-candidate.json",
+          "record": {
+            "schema": "life-patterns-full-survey-participant-export-v2",
+            "historical_interview_status": "completed_under_then_current_protocol",
+            "participant_answer_count": 5,
+            "turns": [
+              {
+                "turn_id": "source-1",
+                "question_text": "Synthetic question 1?",
+                "answer_text": "Synthetic exact answer 1.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-2",
+                "question_text": "Synthetic question 2?",
+                "answer_text": "Synthetic exact answer 2.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-3",
+                "question_text": "Synthetic question 3?",
+                "answer_text": "Synthetic exact answer 3.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-4",
+                "question_text": "Synthetic question 4?",
+                "answer_text": "Synthetic exact answer 4.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-5",
+                "question_text": "Synthetic question 5?",
+                "answer_text": "Synthetic exact answer 5.",
+                "turn_role": "behavioral"
+              }
+            ],
+            "source_provenance": [
+              {
+                "source": "full-four.json",
+                "answer_count": 4
+              }
+            ],
+            "freeze": {
+              "record_state": "candidate",
+              "frozen_before_birth_or_chart_reveal": false
+            },
+            "unrecovered_current_test_gap": {
+              "present": true,
+              "note": "Some later test turns were not recovered."
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "EFFORT_PROGRESS",
+    "messages": [
+      {
+        "role": "user",
+        "text": "How much more answering do you need from me?"
+      }
+    ],
+    "state": {
+      "research_consent": true,
+      "interview_status": "in_progress",
+      "distinct_planned_tasks_completed": 12,
+      "currently_useful_remaining_questions": 4,
+      "plausible_conditional_extra_questions": 3,
+      "reliable_reply_timing_available": false,
+      "no_remote_review_started": true
+    }
+  },
+  {
+    "case_id": "CONFLICT",
+    "messages": [
+      {
+        "role": "user",
+        "text": "Find my Life Patterns record in my Library and continue."
+      }
+    ],
+    "state": {
+      "library_authorized": true,
+      "all_relevant_pages_read": true,
+      "same_participant_verified": true,
+      "retrieved_candidates": [
+        {
+          "filename": "copy-one.json",
+          "uploaded_at": "2026-10-01T10:00:00Z",
+          "record": {
+            "schema": "life-patterns-railway-visible-conversation-recovery-v1",
+            "historical_interview_status": "completed_under_then_current_protocol",
+            "participant_answer_count": 5,
+            "turns": [
+              {
+                "turn_id": "source-1",
+                "question_text": "Synthetic question 1?",
+                "answer_text": "Synthetic exact answer 1.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-2",
+                "question_text": "Synthetic question 2?",
+                "answer_text": "Synthetic exact answer 2.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-3",
+                "question_text": "Synthetic question 3?",
+                "answer_text": "Synthetic exact answer 3.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-4",
+                "question_text": "Synthetic question 4?",
+                "answer_text": "Synthetic exact answer 4.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-5",
+                "question_text": "Synthetic question 5?",
+                "answer_text": "Synthetic exact answer 5.",
+                "turn_role": "behavioral"
+              }
+            ],
+            "source_provenance": [
+              {
+                "source": "full-four.json",
+                "answer_count": 4
+              }
+            ]
+          }
+        },
+        {
+          "filename": "copy-two.json",
+          "uploaded_at": "2026-10-02T10:00:00Z",
+          "record": {
+            "schema": "life-patterns-railway-visible-conversation-recovery-v1",
+            "historical_interview_status": "completed_under_then_current_protocol",
+            "participant_answer_count": 5,
+            "turns": [
+              {
+                "turn_id": "source-1",
+                "question_text": "Synthetic question 1?",
+                "answer_text": "Synthetic exact answer 1.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-2",
+                "question_text": "Synthetic question 2?",
+                "answer_text": "Synthetic exact answer 2.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-3",
+                "question_text": "Synthetic question 3?",
+                "answer_text": "A different substantive answer with no correction link.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-4",
+                "question_text": "Synthetic question 4?",
+                "answer_text": "Synthetic exact answer 4.",
+                "turn_role": "behavioral"
+              },
+              {
+                "turn_id": "source-5",
+                "question_text": "Synthetic question 5?",
+                "answer_text": "Synthetic exact answer 5.",
+                "turn_role": "behavioral"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

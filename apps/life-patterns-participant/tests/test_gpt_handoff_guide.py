@@ -66,7 +66,9 @@ def test_delivery_rules_are_in_the_shipped_instruction_chain():
     assert "Allow once" in text
     assert "life-patterns-participant-production.up.railway.app" in text
     assert "life-patterns-action-error.json" in text
-    assert "not a percentage of 79 routes or 73 facets" in text
+    assert "Do not count every bank route as necessary" in text
+    assert "of current plan" in text
+    assert "remaining question range" in text
     assert "not a guarantee" in text
     assert "about **10 minutes**" in text
     assert "recommended_check_after_seconds" in text

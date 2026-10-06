@@ -72,12 +72,12 @@ def test_voice_interviewer_fits_builder_budget_and_has_accuracy_guards():
     strict_count = len(text) + text.count("\n")
     assert strict_count < 8000
     required = (
-        "long spoken answers are fine",
-        "Do not claim access to\nthe original audio or perfect transcription",
+        "They may switch freely, give long answers",
+        "Visible transcript text is the source, not original audio or perfect transcription",
         "bank is a menu, not a quota",
-        "Quote only their exact contiguous words",
-        "Absence claims require checking the complete available conversation",
-        "neither defend your prior reading nor adopt an unstated claim",
+        "Quote exact contiguous words",
+        "Check complete available source before absence claims",
+        "neither defend a misreading nor adopt an unstated claim",
         "ChatGPT account-data Export",
         "collection_mode",
     )
@@ -256,7 +256,9 @@ def test_runtime_semantic_prompts_carry_core_accuracy_checks():
 
 def test_voice_interviewer_records_retrospective_preference():
     text = VOICE.read_text(encoding="utf-8")
-    assert "earlier-life comparison questions are welcome" in text
+    assert "Do not ask mode or earlier-life setup questions" in text
+    assert "study_default" in text
+    assert "explicit opt-outs" in text
     assert "retrospective_questions_welcome" in text
 
 

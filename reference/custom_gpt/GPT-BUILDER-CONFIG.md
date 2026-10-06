@@ -38,11 +38,11 @@ A Custom GPT cannot send a message before the user sends or taps something. When
 - say voice or text is fine and the participant may pause, skip, correct, or stop;
 - say birth/chart information will not be requested or used;
 - explain that Railway Action calls may show permission cards from `life-patterns-participant-production.up.railway.app`; immediately before each such call say exactly once **“Please click Allow on this tool call to continue.”** (the UI may label the button **Allow once**);
-- request research-use consent covering independent review/final submission, expected voice/text/mixed mode, and permission for useful earlier-life comparison questions;
+- request ONLY research-use consent covering independent review/final submission when needed; say “You are welcome to type or talk.” Do not ask mode or early-life setup questions; earlier-life comparisons default to welcome with skip/opt-out preserved;
 - then begin without requiring another “ready” message.
 
 For a participant with an existing interview, there are three safe resume paths:
-- **Library fallback:** use starter 2. This explicitly authorizes a narrow Library search for canonical Life Patterns export/recovery schemas only. One exact candidate may be imported automatically; multiple candidates require participant selection. Never use a merely similar behavioral/interview file.
+- **Library fallback:** use starter 2. This explicitly authorizes a narrow Library search for canonical Life Patterns export/recovery schemas only. Search and compare actual source/provenance first. A unique verified successor or equivalent duplicate is selected automatically; only conflicting or unrelated lineages require participant selection. Never use a merely similar behavioral/interview file.
 - **Same-chat automatic resume (web):** reopen the old interview, type `@`, select **Life Patterns Interview**, then say “Continue my interview.” The GPT uses only that conversation's visible interview context.
 - **New-chat attachment:** explicitly attach/add the participant's interview record, then use starter 3.
 
@@ -50,7 +50,7 @@ A generic continue request must not search Library, Memory, chat history, connec
 
 Schema 1.2.3 adds review start, status, clarification, pause/stop/withdraw controls, strict reviewed submission, and `recommended_check_after_seconds` so the GPT can give a real check-back interval instead of asking participants to guess. Import the existing schema URL again; JSON OpenAPI is valid at that YAML endpoint. The same Bearer key remains valid. Treat review IDs as private.
 
-## Delivery hotfix 2026-10-01.5
+## Historical delivery hotfix 2026-10-01.5 (superseded where noted below)
 
 Add `ACTION-HANDOFF-GUIDE-v1.md` as the sixth Knowledge file. Replace Instructions and reimport the existing Action schema (1.2.1); keep the same Bearer credential. This adds exact backup before the first review call, actionable error paths, the explicit approval sentence, honest stage/count progress, and a bottom status footer. Existing five Knowledge files and frozen v7 measurement wording are unchanged. A separate hybrid question candidate is under development; this delivery fix does not silently activate it.
 
@@ -74,3 +74,9 @@ Do not promise a proactive notification from the current Custom GPT. Scheduled t
 ## Fast review update — 2026-10-05
 
 Update the existing GPT, not a new GPT. Replace Instructions, the Action schema, and ACTION-HANDOFF-GUIDE-v1.md in Knowledge using the new fast-review bundle. Keep the same Bearer credential and the other five Knowledge files unchanged. New requests use fast-batch-v1; existing review request envelopes remain unchanged on recovery. The server returns individual stage ranges and check-back guidance; first questions and final evidence review are separate. Independent batch questions are asked one at a time locally and answered in one Action. No fixed lifetime clarification cap is introduced.
+
+## Current collection correction — 2026-10-06
+
+Replace Instructions and BOTH Knowledge guides: RECOVERY-GUIDE-v2.md and ACTION-HANDOFF-GUIDE-v1.md. Keep the four scientific/reference Knowledge files, Action schema and Bearer credential unchanged. The opening has only the research consent question, never a mode selector or earlier-life opt-in question. Default is study-default welcome, not fabricated express permission; explicit opt-outs win. Mode metadata remains unknown unless actually supported.
+
+Progress now includes the provisional remaining questions AND answering minutes to independent review, grounded in the current revisable plan. A count/topic footer alone is not progress. Recovery searches all canonical schemas/aliases and compares duplicates and successors before selecting. A historically complete imported record goes straight to independent review, not a new local interview. These Instructions override old collection/setup wording in historical examples; frozen question and evidence semantics are unchanged.

@@ -1,3 +1,14 @@
+# Current collection correction — 2026-10-06
+
+Task: gpt-intro-progress-recovery-20261006.
+Branch: fix/gpt-intro-progress-recovery-20261006-0345.
+Checkpoint: tasks/gpt-intro-progress-recovery-20261006/PLAN.md.
+Completion command: python -m pytest tests/unit/test_custom_gpt_collection_ux.py tests/unit/test_custom_gpt_onboarding_resume.py tests/unit/test_custom_gpt_cf003_required.py -q
+
+Current owner correction supersedes the historical mode/earlier-life setup and unconditional multiple-candidate choice. Update Instructions plus RECOVERY-GUIDE-v2.md and ACTION-HANDOFF-GUIDE-v1.md. Use a real provisional remaining-question/time plan; historically complete source proceeds to review. Backend/frozen instrument unchanged. Earlier records below remain provenance, not current task selectors.
+
+---
+
 # Active fast review release
 
 Task: fast-review-release-20261005. Owner authorized integration, live deployment, updated GPT and per-stage estimates.

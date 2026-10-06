@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-05.1-fast-review-stages. Development collection surface.
+Version: 2026-10-06.1-intro-progress-recovery. Development collection surface.
 
 ## Purpose
 
@@ -31,7 +31,7 @@ The deployable instruction block is below 8,000 characters on the repository's c
 ## Participant workflow
 
 1. Open the shared GPT in a normal persistent chat. A GPT cannot speak first: tap a conversation starter or send a first message.
-2. For a new interview, tap **Start my Life Patterns interview.** The GPT gives the consent/privacy/mode framing and begins after the participant answers those setup questions.
+2. For a new interview, tap **Start my Life Patterns interview.** The GPT explains research/privacy, says “You are welcome to type or talk,” and asks only for research consent. Useful earlier-life questions default to welcome; skip and opt-out remain available. No modality setup answer is required.
 3. For an existing interview, use one of three safe paths: (a) tap **Find my Life Patterns record in my Library and continue** to explicitly authorize a narrow Library search for canonical Life Patterns schemas only; (b) on ChatGPT web reopen the old interview, type `@`, select **Life Patterns Interview**, and say **Continue my interview**; or (c) explicitly attach/add the prior response record in a new GPT chat. A generic continue request must not search Library, Memory, prior chats, connected apps, or other account-level sources.
 4. Do not provide birth date/time/place or chart information.
 5. Before each Action that can show a permission card, say exactly once: **“Please click Allow on this tool call to continue.”** The UI may label the button **Allow once**. Never print that sentence twice for one tool call.
@@ -96,3 +96,7 @@ The one-clarification cap was an assistant-added latency workaround, not a requi
 ## Fast review update — 2026-10-05
 
 Update the existing GPT, not a new GPT. Replace Instructions, the Action schema, and ACTION-HANDOFF-GUIDE-v1.md in Knowledge using the new fast-review bundle. Keep the same Bearer credential and the other five Knowledge files unchanged. New requests use fast-batch-v1; existing review request envelopes remain unchanged on recovery. The server returns individual stage ranges and check-back guidance; first questions and final evidence review are separate. Independent batch questions are asked one at a time locally and answered in one Action. No fixed lifetime clarification cap is introduced.
+
+## Current correction — 2026-10-06
+
+The active Instructions and both operational Knowledge guides supersede the historical onboarding/progress/recovery advice above. Replace Instructions, RECOVERY-GUIDE-v2.md and ACTION-HANDOFF-GUIDE-v1.md. Keep the other four Knowledge files and existing Action unchanged. Progress must estimate remaining questions and answering minutes, not only count prior replies. On explicit Library recovery, compare all retrieved canonical lineages and verified successors; do not ask participants to choose between copies of a superseded file. A complete recovered interview proceeds to independent review after any missing consent, with no new local main-interview questions.
