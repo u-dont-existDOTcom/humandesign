@@ -1,0 +1,1799 @@
+{
+  "schema_version": 2,
+  "batch_id": "B01b",
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "status": "B01B_ENGLISH_SCOPE_REVIEWED_NOT_MODEL_PROMOTION",
+  "scope": "English I.9-I.16, with specified Robbins notes; stops before I.17",
+  "records_count": 32,
+  "fixed_star_table_entries": 95,
+  "independent_predictions_count": 0,
+  "records_are_not_statistical_independence_units": true,
+  "records": [
+    {
+      "id": "PT.R64.I.09.R25",
+      "title": "Fixed-star natures use planetary analogies, with locality within the figure",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.9",
+        "pdf_english_pages": [
+          71,
+          73,
+          75,
+          77,
+          79,
+          81,
+          83
+        ],
+        "printed_english_pages": [
+          47,
+          49,
+          51,
+          53,
+          55,
+          57,
+          59
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "a star or group identified within the described celestial figure",
+          "consult its own localized entry"
+        ]
+      },
+      "consequent": {
+        "table": "FIXED_STAR_TABLE.json",
+        "descriptive_groups": 95
+      },
+      "modifiers": [
+        "Where stated, retain the explicitly lesser planetary analogue; a general constellation group is not a substitute for a specific subgroup."
+      ],
+      "ambiguities": [
+        "A modern catalogue identity and membership of many historical groups have not been resolved."
+      ],
+      "calculation_conventions": {
+        "numeric_mixture_weights": null,
+        "epoch": null,
+        "orb": null
+      },
+      "output_type": "COMPLETE_CHAPTER_LOOKUP_TABLE",
+      "dependency_groups": [
+        "PT.I.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not read these as properties of persons with the corresponding Sun sign.",
+        "No default conjunction trigger or current-epoch coordinates are licensed by this chapter alone."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.09.R26",
+      "title": "Constellation-name and modern-star identifications in notes are a distinct layer",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.9",
+        "pdf_english_pages": [
+          71,
+          73,
+          75,
+          77,
+          79,
+          81
+        ],
+        "printed_english_pages": [
+          47,
+          49,
+          51,
+          53,
+          55,
+          57
+        ],
+        "attribution_layer": "ROBBINS_TRANSLATOR_NOTES",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "TRANSLATOR_COMMENTARY",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "resolve a historical star/figure label"
+      },
+      "consequent": "Use the stated Robbins identifications as separately attributed annotations; retain unassigned group members as unresolved.",
+      "modifiers": [],
+      "ambiguities": [
+        "A note that Vega is in Lyra does not identify every star of the Lyra row with Vega.",
+        "The printed Argo note names Canopus and Var; no unsupported correction or catalogue mapping is inserted."
+      ],
+      "calculation_conventions": {},
+      "output_type": "IDENTIFICATION_AND_PROVENANCE",
+      "dependency_groups": [
+        "PT.I.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not turn a translator note into a verbatim author statement."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.09.R27",
+      "title": "Fixed-star nature catalogue is not an executable event predictor",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.9",
+        "pdf_english_pages": [
+          71,
+          83
+        ],
+        "printed_english_pages": [
+          47,
+          59
+        ],
+        "attribution_layer": "PROJECT_SCOPE_ASSESSMENT_OF_READ_CHAPTER",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "PROJECT_SOURCE_SCOPE_ASSESSMENT_NOT_AUTHOR_RULE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "apply the I.9 catalogue to a natal or timing question"
+      },
+      "consequent": "This chapter supplies analogical natures; application requires separately sourced conditions.",
+      "modifiers": [],
+      "ambiguities": [
+        "No universal natal orb, aspect-admission policy, epoch or exact identity catalogue is specified in the read chapter."
+      ],
+      "calculation_conventions": {},
+      "output_type": "IMPLEMENTATION_GAP",
+      "dependency_groups": [
+        "PT.I.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "This is a bounded absence claim about I.9 only, not all of Ptolemy or astrology.",
+        "Preserve discovery without presenting it as a validated model."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.10.R28",
+      "title": "Seasonal qualitative sequence",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.10",
+        "pdf_english_pages": [
+          83
+        ],
+        "printed_english_pages": [
+          59
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "season": "spring/summer/autumn/winter"
+      },
+      "consequent": {
+        "spring": "MOIST",
+        "summer": "HOT",
+        "autumn": "DRY",
+        "winter": "COLD"
+      },
+      "modifiers": [
+        "The source ties the sequence to warming, drying, and distance of the Sun from the zenith."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.10.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Historical humoral/seasonal description, not a contemporary climate rule or a person trait."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.10.R29",
+      "title": "Aries starting point is an adopted equinoctial origin",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.10",
+        "pdf_english_pages": [
+          83,
+          85
+        ],
+        "printed_english_pages": [
+          59,
+          61
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "choose a starting point for the circular zodiac"
+      },
+      "consequent": "The circle has no natural first point; the vernal-equinox sign Aries is adopted as the beginning, with the seasons following.",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "origin": "VERNAL_EQUINOX",
+        "extent_in_note_degrees": 30
+      },
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.10.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not silently equate the equinoctial sign with the visible Aries constellation."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.10.R30",
+      "title": "Translator explicitly distinguishes the tropical sign and constellation",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.10",
+        "pdf_english_pages": [
+          84
+        ],
+        "printed_english_pages": [
+          60
+        ],
+        "attribution_layer": "ROBBINS_TRANSLATOR_NOTE_ON_FACING_PAGE",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "TRANSLATOR_COMMENTARY",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "identify the Aries reference frame"
+      },
+      "consequent": "Robbins distinguishes the 30-degree interval beginning at the vernal equinox from the actual constellation.",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "REFERENCE_FRAME_NOTE",
+      "dependency_groups": [
+        "PT.I.10.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "The supplied English footnote on printed p.60 is the authority for this distinction."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.10.R31",
+      "title": "Four life-age qualities are qualitative, not numerical age boundaries",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.10",
+        "pdf_english_pages": [
+          85
+        ],
+        "printed_english_pages": [
+          61
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "life_stage": "earliest / through prime / decline / final"
+      },
+      "consequent": [
+        "MOIST",
+        "HOT",
+        "DRY",
+        "COLD"
+      ],
+      "modifiers": [],
+      "ambiguities": [
+        "No numerical ages or transition dates supplied here."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.10.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not import the seven ages mentioned elsewhere as though this passage specified them."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.10.R32",
+      "title": "Cardinal regions and winds have contextual qualities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.10",
+        "pdf_english_pages": [
+          85,
+          87
+        ],
+        "printed_english_pages": [
+          61,
+          63
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "region": "east/south/west/north"
+      },
+      "consequent": {
+        "east": "DRY",
+        "south": "HOT",
+        "west": "MOIST",
+        "north": "COLD"
+      },
+      "modifiers": [
+        "East/Apeliotes dries; south/Notus heats and rarefies; west/Zephyrus moistens; north/Boreas cools and condenses.",
+        "Rationale explicitly invokes the inclination of the inhabited world and solar culmination."
+      ],
+      "ambiguities": [
+        "Generalization beyond the geographical frame is not specified.",
+        "A mapping to modern house-cusp strengths is not specified."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.10.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "No automatic southern-hemisphere reversal or globally uniform climate inference."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.10.R33",
+      "title": "Similar circumstances intensify a quality; contrary ones mix and weaken it",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.10",
+        "pdf_english_pages": [
+          87,
+          89
+        ],
+        "printed_english_pages": [
+          63,
+          65
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "a stated planetary quality",
+          "seasonal, age or angular condition similar or contrary to it"
+        ]
+      },
+      "consequent": {
+        "similar": "purer quality and stronger effectiveness",
+        "contrary": "mixed quality and weaker effectiveness"
+      },
+      "modifiers": [
+        "Heating in heat and moistening in moisture are explicit examples; heating in cold and moistening in dry conditions are contrary examples."
+      ],
+      "ambiguities": [
+        "No numerical multiplier or full aggregation algorithm."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.10.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Stronger quality does not automatically mean more favorable outcome.",
+        "Do not conflate this with the distinct sect mechanism in I.7."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.11.R34",
+      "title": "Unmixed sign properties precede relationships with planets",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.11",
+        "pdf_english_pages": [
+          89
+        ],
+        "printed_english_pages": [
+          65
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "study qualities of zodiacal divisions"
+      },
+      "consequent": "First distinguish the signs themselves and their mutual relations; their familiarity with the luminaries and planets is an additional layer.",
+      "modifiers": [
+        "Robbins explains familiarity as a general relationship term, including aspects."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.11.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Sign quality, planetary quality and their relation are not three independent observations."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.11.R35",
+      "title": "Solstitial signs",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.11",
+        "pdf_english_pages": [
+          91
+        ],
+        "printed_english_pages": [
+          67
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "sign_in": [
+          "Cancer",
+          "Capricorn"
+        ]
+      },
+      "consequent": "SOLSTITIAL",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "interval_degrees": 30,
+        "starts": [
+          "summer solstice",
+          "winter solstice"
+        ]
+      },
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.11.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Preserve solstitial separately from equinoctial, rather than erasing both under a modern modal label."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.11.R36",
+      "title": "Equinoctial signs",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.11",
+        "pdf_english_pages": [
+          91
+        ],
+        "printed_english_pages": [
+          67
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "sign_in": [
+          "Aries",
+          "Libra"
+        ]
+      },
+      "consequent": "EQUINOCTIAL",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "starts": [
+          "spring equinox",
+          "autumn equinox"
+        ]
+      },
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.11.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "The account is historical astronomy; no extra personality conclusion."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.11.R37",
+      "title": "Solid signs and settled seasonal effects",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.11",
+        "pdf_english_pages": [
+          91
+        ],
+        "printed_english_pages": [
+          67
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "sign_in": [
+          "Taurus",
+          "Leo",
+          "Scorpio",
+          "Aquarius"
+        ]
+      },
+      "consequent": "SOLID",
+      "modifiers": [
+        "They follow equinoctial/solstitial signs, and seasonal qualities affect observers more firmly."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.11.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": [
+        "Ptolemy expressly denies that the weather must be more intemperate at that time."
+      ]
+    },
+    {
+      "id": "PT.R64.I.11.R38",
+      "title": "Bicorporeal signs and transitions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.11",
+        "pdf_english_pages": [
+          91,
+          93
+        ],
+        "printed_english_pages": [
+          67,
+          69
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "sign_in": [
+          "Gemini",
+          "Virgo",
+          "Sagittarius",
+          "Pisces"
+        ]
+      },
+      "consequent": "BICORPOREAL",
+      "modifiers": [
+        "Between solid and solstitial/equinoctial signs, sharing the properties of the preceding and following seasonal states."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.11.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not replace this explanation with an unsupported flexibility/personality diagnosis."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.12.R39",
+      "title": "Alternating sign gender and sect from Aries",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.12",
+        "pdf_english_pages": [
+          93
+        ],
+        "printed_english_pages": [
+          69
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "sign_index_from_Aries_zero_based": "integer 0..11"
+      },
+      "consequent": {
+        "even": "MASCULINE_DIURNAL",
+        "odd": "FEMININE_NOCTURNAL"
+      },
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "Aries": 0,
+        "direction": "zodiacal sign order"
+      },
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.12.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "These are source categories, not claims about a modern person’s gender, superiority, sexuality or social value."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.12.R40",
+      "title": "Reported alternative: alternation begins at rising sign",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.12",
+        "pdf_english_pages": [
+          93,
+          95
+        ],
+        "printed_english_pages": [
+          69,
+          71
+        ],
+        "attribution_layer": "PTOLEMY_REPORTING_OTHER_PRACTITIONERS_AS_TRANSLATED",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "explicit choice of reported Ascendant-origin alternative",
+          "rising sign and queried sign known"
+        ]
+      },
+      "consequent": "Treat the rising sign as masculine, then alternate through following signs.",
+      "modifiers": [
+        "Robbins notes that the same sign will not always belong to the same sect in this scheme."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.12.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Alternative convention, not an independent extra vote on top of the Aries-origin scheme."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.12.R41",
+      "title": "Reported alternative: quadrants set gender",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.12",
+        "pdf_english_pages": [
+          95
+        ],
+        "printed_english_pages": [
+          71
+        ],
+        "attribution_layer": "PTOLEMY_REPORTING_OTHER_PRACTITIONERS_AS_TRANSLATED",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "explicit choice of reported quadrant alternative",
+          "actual horizon/meridian quadrant known"
+        ]
+      },
+      "consequent": {
+        "asc_to_mc": "MASCULINE_MATUTINAL",
+        "dsc_to_ic": "MASCULINE_MATUTINAL",
+        "other_two": "FEMININE_EVENING"
+      },
+      "modifiers": [],
+      "ambiguities": [
+        "No fixed 90-degree zodiac-house shortcut or boundary tie convention is supplied here."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.12.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Require actual quadrant membership; unknown angles remain unknown."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.12.R42",
+      "title": "Lunar-origin analogy is mentioned, not fully specified",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.12",
+        "pdf_english_pages": [
+          93,
+          95
+        ],
+        "printed_english_pages": [
+          69,
+          71
+        ],
+        "attribution_layer": "PTOLEMY_REPORTING_OTHER_PRACTITIONERS_AS_TRANSLATED",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "passage": "comparison with beginning solstitial signs at the Moon’s sign"
+      },
+      "consequent": "Ptolemy reports this analogy while explaining alternative starting points.",
+      "modifiers": [],
+      "ambiguities": [
+        "No complete stand-alone lunar-origin classification algorithm is given in the passage."
+      ],
+      "calculation_conventions": {},
+      "output_type": "INCOMPLETE_REPORTED_VARIANT",
+      "dependency_groups": [
+        "PT.I.12.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.12.R43",
+      "title": "Shape-derived sign descriptions deferred to topical use",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.12",
+        "pdf_english_pages": [
+          95
+        ],
+        "printed_english_pages": [
+          71
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "shape-derived epithet such as four-footed, terrestrial, commanding or fecund",
+          "a prediction for which it is useful"
+        ]
+      },
+      "consequent": "The author does not enumerate these here; he permits explaining them in the relevant predictive context.",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "DEFERRED_TOPICAL_DEPENDENCY",
+      "dependency_groups": [
+        "PT.I.12.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not invent a complete epithet table from background knowledge or mark this family as wholly absent from the work."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.13.R44",
+      "title": "Four stated aspect intervals",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.13",
+        "pdf_english_pages": [
+          97
+        ],
+        "printed_english_pages": [
+          73
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "sign_separation": "two / three / four / six intervals"
+      },
+      "consequent": {
+        "2": {
+          "name": "SEXTILE",
+          "degrees": 60
+        },
+        "3": {
+          "name": "QUARTILE",
+          "degrees": 90
+        },
+        "4": {
+          "name": "TRINE",
+          "degrees": 120
+        },
+        "6": {
+          "name": "OPPOSITION",
+          "degrees": 180
+        }
+      },
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "whole_sign_fixture": "shortest modular interval count, signs indexed from Aries",
+        "orb": null
+      },
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not infer an orb, out-of-sign aspect policy, or near-exact planetary-contact strength."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.13.R45",
+      "title": "Conjunction is absent from this four-aspect list, not erased from the whole work",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.13",
+        "pdf_english_pages": [
+          96,
+          97
+        ],
+        "printed_english_pages": [
+          72,
+          73
+        ],
+        "attribution_layer": "ROBBINS_TRANSLATOR_NOTE_ON_FACING_PAGE",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "TRANSLATOR_COMMENTARY",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "classify conjunction within I.13"
+      },
+      "consequent": "Robbins says the author lists four here and does not class conjunction as an aspect here, although conjunction is treated comparably throughout the work.",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "TERMINOLOGY_BOUNDARY",
+      "dependency_groups": [
+        "PT.I.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Keep same-sign co-presence distinct from an exact conjunction; neither is a fifth listed I.13 aspect.",
+        "Do not remove conjunctions from other admitted methods."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.13.R46",
+      "title": "Musical and geometric rationale retains the textual ambiguity",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.13",
+        "pdf_english_pages": [
+          97,
+          98,
+          99
+        ],
+        "printed_english_pages": [
+          73,
+          74,
+          75
+        ],
+        "attribution_layer": "PTOLEMY_MAIN_TEXT_AND_EXPLICITLY_SEPARATE_ROBBINS_FACING_NOTE",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "explanation": "half/third of opposition; sesquialter and sesquitertian ratios"
+      },
+      "consequent": "The source gives geometrical and musical proportions as the reason for recognizing the listed aspects.",
+      "modifiers": [],
+      "ambiguities": [
+        "The words adding trine after one third of 180 degrees are questioned in Robbins’s note on printed p.74; do not silently repair the wording."
+      ],
+      "calculation_conventions": {
+        "unambiguous_relations": [
+          "180/2=90",
+          "180/3=60",
+          "90/60=3/2",
+          "120/90=4/3"
+        ]
+      },
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "The explanatory ratios are not empirical performance evidence."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.13.R47",
+      "title": "Harmony assignments are stated independently of an implementation shortcut",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.13",
+        "pdf_english_pages": [
+          99
+        ],
+        "printed_english_pages": [
+          75
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "aspect": "SEXTILE/TRINE/QUARTILE/OPPOSITION"
+      },
+      "consequent": {
+        "SEXTILE": "HARMONIOUS",
+        "TRINE": "HARMONIOUS",
+        "QUARTILE": "DISHARMONIOUS",
+        "OPPOSITION": "DISHARMONIOUS"
+      },
+      "modifiers": [],
+      "ambiguities": [
+        "The next record preserves the tension in the accompanying polarity rationale."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not equate harmony with guaranteed favorable life events."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.13.R48",
+      "title": "Opposition/polarity rationale requires an unresolved-note entry",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.13",
+        "pdf_english_pages": [
+          93,
+          99
+        ],
+        "printed_english_pages": [
+          69,
+          75
+        ],
+        "attribution_layer": "PROJECT_COMPARISON_OF_TWO_READ_PASSAGES",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "PROJECT_SOURCE_SCOPE_ASSESSMENT_NOT_AUTHOR_RULE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "I.12 alternating sign polarity",
+          "I.13 explanation of disharmony by opposite kinds"
+        ]
+      },
+      "consequent": "Under the gender-polarity reading, opposition spans six signs and preserves polarity, despite the printed rationale grouping it with opposite kinds.",
+      "modifiers": [],
+      "ambiguities": [
+        "A different intended sense of kinds, a textual issue, or a translation issue would require additional source work; none is selected here."
+      ],
+      "calculation_conventions": {},
+      "output_type": "INTERNAL_INTERPRETATION_TENSION",
+      "dependency_groups": [
+        "PT.I.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Preserve the source’s disharmony label without using the questioned rationale as a computational equivalence.",
+        "This is not a claim to have corrected the Greek author."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.14.R49",
+      "title": "Commanding/obeying familiarity and its stated rationale",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.14",
+        "pdf_english_pages": [
+          99,
+          101
+        ],
+        "printed_english_pages": [
+          75,
+          77
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "equal distance from the same equinoctial sign",
+          "source relationship considered"
+        ]
+      },
+      "consequent": "The summer-half member commands and the winter-half member obeys; the text connects the pair to equal ascension periods and parallels.",
+      "modifiers": [],
+      "ambiguities": [
+        "Exact astronomical reconstruction of the sign/degree relation and latitude conventions remains open."
+      ],
+      "calculation_conventions": {
+        "frame": "source sign relationships, not an imported degree-reflection algorithm"
+      },
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "These names alone do not predict social dominance or obedience."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.14.R50",
+      "title": "Robbins’s five directed commanding pairs",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.14",
+        "pdf_english_pages": [
+          99
+        ],
+        "printed_english_pages": [
+          75
+        ],
+        "attribution_layer": "ROBBINS_TRANSLATOR_NOTE",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "TRANSLATOR_COMMENTARY",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "scheme": "Robbins I.14 note"
+      },
+      "consequent": [
+        [
+          "Taurus",
+          "Pisces"
+        ],
+        [
+          "Gemini",
+          "Aquarius"
+        ],
+        [
+          "Cancer",
+          "Capricorn"
+        ],
+        [
+          "Leo",
+          "Sagittarius"
+        ],
+        [
+          "Virgo",
+          "Scorpio"
+        ]
+      ],
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "first_member": "COMMANDING",
+        "second_member": "OBEYING"
+      },
+      "output_type": "DIRECTED_SIGN_PAIR_TABLE",
+      "dependency_groups": [
+        "PT.I.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Preserve the printed table even where a modern antiscia/contra-antiscia convention would use different pairs."
+      ],
+      "source_exceptions": [
+        "Aries and Libra are excluded in the note."
+      ]
+    },
+    {
+      "id": "PT.R64.I.14.R51",
+      "title": "Summer and winter halves in the source edition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.14",
+        "pdf_english_pages": [
+          100,
+          101
+        ],
+        "printed_english_pages": [
+          76,
+          77
+        ],
+        "attribution_layer": "ROBBINS_TRANSLATOR_NOTE_PLUS_PTOLEMY_RATIONALE",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "TRANSLATOR_COMMENTARY",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "classification": "hemisphere as used in I.14"
+      },
+      "consequent": {
+        "summer": [
+          "Aries",
+          "Taurus",
+          "Gemini",
+          "Cancer",
+          "Leo",
+          "Virgo"
+        ],
+        "winter": [
+          "Libra",
+          "Scorpio",
+          "Sagittarius",
+          "Capricorn",
+          "Aquarius",
+          "Pisces"
+        ]
+      },
+      "modifiers": [
+        "Day exceeding night versus the reverse is the author’s rationale."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not confuse these zodiacal halves with a newly inferred geographical-hemisphere correction."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.15.R52",
+      "title": "Equal power and beholding as seasonal/horizon familiarity",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.15",
+        "pdf_english_pages": [
+          101
+        ],
+        "printed_english_pages": [
+          77
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "parts equally removed from the same solstitial sign",
+          "compare Sun’s occupation of these parts"
+        ]
+      },
+      "consequent": "Equal days, nights and seasonal-hour lengths, with rising/setting from the same horizon parts, underlie equal power and beholding.",
+      "modifiers": [],
+      "ambiguities": [
+        "No exact-degree antiscion orb is stated."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.15.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not translate equal power into equal numerical prediction weight."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.15.R53",
+      "title": "Robbins’s five unordered equal-power pairs",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.15",
+        "pdf_english_pages": [
+          101
+        ],
+        "printed_english_pages": [
+          77
+        ],
+        "attribution_layer": "ROBBINS_TRANSLATOR_NOTE",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "TRANSLATOR_COMMENTARY",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "scheme": "Robbins I.15 note"
+      },
+      "consequent": [
+        [
+          "Gemini",
+          "Leo"
+        ],
+        [
+          "Taurus",
+          "Virgo"
+        ],
+        [
+          "Aries",
+          "Libra"
+        ],
+        [
+          "Pisces",
+          "Scorpio"
+        ],
+        [
+          "Aquarius",
+          "Sagittarius"
+        ]
+      ],
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SYMMETRIC_SIGN_PAIR_TABLE",
+      "dependency_groups": [
+        "PT.I.15.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not silently substitute modern adjacent-sign antiscia pairs."
+      ],
+      "source_exceptions": [
+        "Cancer and Capricorn are left without mates in the note."
+      ]
+    },
+    {
+      "id": "PT.R64.I.15.R54",
+      "title": "Seasonal hours depend on actual daylight or darkness duration",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.15",
+        "pdf_english_pages": [
+          101
+        ],
+        "printed_english_pages": [
+          77
+        ],
+        "attribution_layer": "ROBBINS_TRANSLATOR_NOTE",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "TRANSLATOR_COMMENTARY",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "ordinary alternating day and night",
+          "duration of the relevant day or night known"
+        ]
+      },
+      "consequent": "One seasonal hour is one twelfth of the day or of the night.",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "division": 12,
+        "fixed_60_minute_assumption": false
+      },
+      "output_type": "UNIT_DEFINITION",
+      "dependency_groups": [
+        "PT.I.15.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "A 900-minute daylight span implies 75-minute daytime hours, not 60.",
+        "No extrapolation to polar no-rise/no-set periods without a separate convention."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.16.R55",
+      "title": "Disjunct signs lack all specified familiarities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.16",
+        "pdf_english_pages": [
+          101,
+          103
+        ],
+        "printed_english_pages": [
+          77,
+          79
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "no commanding/obeying relation",
+          "no beholding/equal-power relation",
+          "no opposition, trine, quartile or sextile"
+        ]
+      },
+      "consequent": "The source calls such divisions disjunct or alien and describes them as one or five signs apart.",
+      "modifiers": [
+        "Neighboring signs are described as turned away; a five-sign division divides the circumference unequally."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "fixture": "explicit sign-pair tables plus four sign aspects, not a continuous-degree orb test"
+      },
+      "output_type": "SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.16.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "One absent relation is not by itself evidence that every familiarity is absent.",
+        "Same-sign co-presence is not classified as alien merely because it is outside the four listed aspects."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.16.R56",
+      "title": "No unlisted minor-aspect family admitted by this chapter pair",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.16",
+        "pdf_english_pages": [
+          97,
+          103
+        ],
+        "printed_english_pages": [
+          73,
+          79
+        ],
+        "attribution_layer": "PROJECT_SCOPE_ASSESSMENT_AND_ROBBINS_NOTE",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; English body and specified notes, not an independent translation of Greek"
+      },
+      "source_genre": "PROJECT_SOURCE_SCOPE_ASSESSMENT_NOT_AUTHOR_RULE",
+      "reference_frame": "Source-specific historical vocabulary and geometry; not a validated modern physical/personality model",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "implement the read I.13/I.16 sign-relation definitions"
+      },
+      "consequent": "The enumerated framework is limited to the stated four aspects plus the other named familiarities.",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_BOUNDARY",
+      "dependency_groups": [
+        "PT.I.16.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No person outcome, health/mortality classification, causal effect, numerical strength or probability is inferred from this source record."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "No semi-sextile/quincunx/quintile prediction is smuggled into this source profile.",
+        "This does not prohibit separately sourced techniques in a separately frozen profile."
+      ],
+      "source_exceptions": []
+    }
+  ]
+}

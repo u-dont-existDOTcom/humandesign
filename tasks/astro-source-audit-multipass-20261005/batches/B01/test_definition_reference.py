@@ -60,9 +60,10 @@ class DefinitionsTest(unittest.TestCase):
     def test_all_eight_chapters_have_dispositions(self):
         d=json.loads((B.parents[1]/"SECTION_DISCOVERY.json").read_text())
         self.assertEqual(len(d["sections"]),61)
-        read=[x for x in d["sections"] if x["status"]=="READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE"]
+        read=[x for x in d["sections"] if x["status"]=="READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE" and x["book"]=="I" and 1 <= x["chapter"] <= 8]
         self.assertEqual([x["chapter"] for x in read],list(range(1,9)))
-        self.assertEqual(sum(x["status"]=="INDEXED_NOT_READ" for x in d["sections"]),53)
+        self.assertEqual(sum(x["status"]=="INDEXED_NOT_READ" for x in d["sections"]),d["indexed_unread_count"])
+        self.assertEqual(d["read_sections_count"] + d["indexed_unread_count"],61)
     def test_superior_phase_not_extended_to_mercury_venus(self):
         self.assertEqual(m.record("R22")["antecedents"]["planet"],["SATURN","JUPITER","MARS"])
     def test_same_quality_and_opposite_quality_rules_both_retained(self):

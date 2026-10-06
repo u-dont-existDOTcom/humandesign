@@ -1,0 +1,116 @@
+{
+  "schema_version": 2,
+  "batch_id": "B01b",
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "source_edition": "ROBBINS_1940_REPRINT_1964",
+  "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "english_pdf_pages": [
+    71,
+    73,
+    75,
+    77,
+    79,
+    81,
+    83,
+    85,
+    87,
+    89,
+    91,
+    93,
+    95,
+    97,
+    99,
+    101,
+    103
+  ],
+  "printed_english_pages": [
+    47,
+    49,
+    51,
+    53,
+    55,
+    57,
+    59,
+    61,
+    63,
+    65,
+    67,
+    69,
+    71,
+    73,
+    75,
+    77,
+    79
+  ],
+  "section_spans": {
+    "I.9": [
+      71,
+      73,
+      75,
+      77,
+      79,
+      81,
+      83
+    ],
+    "I.10": [
+      83,
+      85,
+      87,
+      89
+    ],
+    "I.11": [
+      89,
+      91,
+      93
+    ],
+    "I.12": [
+      93,
+      95
+    ],
+    "I.13": [
+      97,
+      99
+    ],
+    "I.14": [
+      99,
+      101
+    ],
+    "I.15": [
+      101
+    ],
+    "I.16": [
+      101,
+      103
+    ]
+  },
+  "supporting_facing_note_pages": [
+    84,
+    96,
+    98,
+    100
+  ],
+  "visual_checks_pdf_pages": [
+    75,
+    81,
+    99,
+    101
+  ],
+  "body_coverage": "All English main text I.9-I.16 read in source order; shared pages include only the specified section boundaries. Fixed-star description table accounts for all 95 descriptive groups.",
+  "stop_boundary": "PDF103 printed79, immediately before heading I.17",
+  "not_read": [
+    "Independent Greek translation",
+    "Complete critical apparatus",
+    "I.17 onward; incidental next heading is a locator, not completed reading"
+  ],
+  "ocr_policy": "Existing Ptolemy text layer with page-image checks; no new OCR",
+  "exposure_boundary": "Source-only work, no new participant outcomes opened; existing conversation contains known histories, so this is not an independent blinded person prediction",
+  "same_conversation_review_not_independent_cross_family": true,
+  "status": "READ_AND_EXTRACTED_FOR_DECLARED_ENGLISH_SCOPE",
+  "source_records_count": 32,
+  "fixed_star_descriptive_groups": 95,
+  "source_rules_sha256": "e31eb3952dd10f1a354f35919f60e4406ef1dffac435b60f5bf3a29a8a00fa2b",
+  "fixed_star_table_sha256": "b79dc38186d5c9d97c41ca36442cf30470288cb3a75608188a8d6ee9ec08ebca",
+  "runtime_rules_promoted": 0,
+  "person_predictions_added": 0,
+  "note_checks": "English notes on facing pages84,96,98,100 read from existing text layer; failed supplementary render display is not counted as visual inspection."
+}

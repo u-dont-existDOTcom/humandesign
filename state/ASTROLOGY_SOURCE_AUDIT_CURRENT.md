@@ -1,22 +1,30 @@
 # Current astrology source audit
 
-**Parent: OPEN, owner-authorized multi-pass source audit.** Latest completed unit: Ptolemy *Tetrabiblos*, Robbins 1940 translation / supplied 1964 reprint, English Book I chapters 1-8. No person predictions or model promotion.
+**Parent: OPEN, owner-authorized multi-pass source audit.** Latest completed unit: Ptolemy *Tetrabiblos*, Robbins translation 1940 / supplied 1964 reprint, English Book I chapters 1–16. No person predictions or runtime-model promotion.
 
-## Durable recovery entry points
+## Recovery entry points
 - `tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json` — last verified unit and next range.
-- `tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json` — five passes and source tracks.
-- `tasks/astro-source-audit-multipass-20261005/DRIVE_INTAKE.json` — all 13 source identities, edition caveats and digests.
-- `tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json` — 61 Ptolemy contents sections; 8 read, 53 unread.
-- `tasks/astro-source-audit-multipass-20261005/batches/B01/RULES.json` — 24 source-only records.
-- `tasks/astro-source-audit-multipass-20261005/batches/B01/READING_RECEIPT.json` — exact English scope, note/image checks and exclusions.
+- `tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json` — five audit passes and source tracks.
+- `tasks/astro-source-audit-multipass-20261005/DRIVE_INTAKE.json` — preserved historical13-file intake.
+- `tasks/astro-source-audit-multipass-20261005/SOURCE_WITNESS_UPDATES_20261006.json` — controlling source-witness update for the replacement Rhetorius; use together with the historical intake.
+- `tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json` — 61 Ptolemy sections; 16 read, 45 unread.
+- `tasks/astro-source-audit-multipass-20261005/batches/B01/RULES.json` — unchanged 24 source records, I.1–I.8.
+- `tasks/astro-source-audit-multipass-20261005/batches/B01b/RULES.json` — 32 additional records, I.9–I.16.
+- `tasks/astro-source-audit-multipass-20261005/batches/B01b/FIXED_STAR_TABLE.json` — complete 95 descriptive star/asterism groups in I.9, with weaker-analogue qualifiers and translator notes separated.
+- `tasks/astro-source-audit-multipass-20261005/batches/B01b/READING_RECEIPT.json` — exact English scope, page boundaries, note checks and exclusions.
 
 ## Completed and not to repeat
-All 13 private source files hash-verified after recovery. Intake found 9 book-length files / 8 works, 1 preview, 3 auxiliaries. Rhetorius has 151 unavailable-page placeholders out of 203 pages. BPHS is Sharma, not Santhanam. Primary Directions is an excerpt and interview, not the full book. Current source-only definitions have 18 passing tests; they are not runtime predictors.
+All 13 original private sources were hash-verified. B01 and B01b now total 56 source records plus 95 star-table entries. The entries are not independent statistical predictions. There are 49 isolated definition tests (18 prior + 31 new); run the recorded broader regression suite at integration.
 
-## Next batch
-B01b: Ptolemy I.9-I.16. Begin English PDF p.71 / printed p.47, verify all chapter boundaries, read/extract in source order, stop before I.17. Record ambiguous fixed-star identifications and reference-frame issues rather than importing modern defaults. Do not reopen participant data or select rules to fit known events. Missing other books do not block this available batch.
+The replacement Rhetorius is an image-only 198-page file, not the 150-page truncated Files preview. Its copyright page identifies2009 / fourth translation edition/first published edition, not filename 2005. Visual footer mapping found193of 222numbered pages. Six gaps were recovered from the old preview into a private supplement, with 6/6 render matches; combined coverage is199/222, leaving 23 absent. The old preview and its 151-placeholder detection remain unchanged historical evidence. See `RHETORIUS_REPLACEMENT_AUDIT_20261006.json` and `RHETORIUS_SIX_PAGE_RECOVERY.json`. The replacement plus supplement has continuous printed pages1–103; whole-book completeness is not claimed.
+
+Other source limitations remain: BPHS is Sharma, not Santhanam; the primary-directions source is an excerpt/interview, not the complete requested book. The owner could not obtain further books. These gaps do not block available reading batches.
+
+## Next executable batch
+**B01c: Ptolemy I.17–I.24.** Begin at the I.17 heading on English PDF103 / printed79; verify all table/section boundaries and stop before BookII. Topics: planetary houses/domiciles, triangles, exaltations, alternative terms, places/degrees, faces/chariots, applications/separations and related powers. Preserve alternative tables and translator qualifications; do not choose variants to fit known people.
+
+## Important unresolved findings from B01b
+The fixed-star catalogue has no admitted natal trigger/orb/epoch bridge yet. Keep constellation figures distinct from tropical signs, and group membership distinct from identifying an entire group with its brightest star. I.13 classifies opposition as disharmonious while its polarity explanation is in tension with I.12 under a gender-parity reading; retain the explanation as unresolved rather than silently correcting it. Robbins’s explicit I.14 and I.15 pair tables are source-specific and must not be replaced with modern reflection formulae. Seasonal hours are day-or-night duration divided by 12, not automatically 60 minutes.
 
 ## Invariants
-Use current UDA bootstrap and the current HumanDesign V2 source-audit procedure. Preserve source/translator/project layers, full citation locators, unknown states and every old candidate/model freeze. Raw source books and full extracted text remain outside Git. This is source audit, not a new person-reading receipt. A completed chapter batch does not complete the book, corpus, implementation or validation.
-
-No background process is running; the next continuation resumes the exact next unit.
+Use live UDA/project authority and the V2 source-audit procedure. Preserve source/translator/project layers, complete conditional qualifications, unknown states, and old candidate/model freezes. Raw books, supplements and full extracted text stay outside Git. This is source audit, not a person-reading receipt. No background work is running. A completed chapter batch does not complete the book, corpus, implementation or validation.

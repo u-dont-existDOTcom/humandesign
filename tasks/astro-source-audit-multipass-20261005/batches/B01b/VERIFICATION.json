@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-10-06",
+  "batch_id": "B01b",
+  "status": "SOURCE_BATCH_COMPLETE_PARENT_OPEN",
+  "base_commit": "07d7e0427cdfdfd53f17eaa1289c7fbb18101cad",
+  "source_records_added": 32,
+  "source_records_total": 56,
+  "fixed_star_descriptive_groups": 95,
+  "ptolemy_sections_read": 16,
+  "ptolemy_sections_total": 61,
+  "tests": {
+    "new_b01b_definition_tests": 31,
+    "prior_b01_definition_tests": 18,
+    "existing_methodology_regression_tests": 34,
+    "total_passed": 83,
+    "last_exit_code": 0,
+    "initial_failure_retained_in": "TEST_SCOPE_MAINTENANCE.json",
+    "interpretation": "Definition/integrity/regression checks; not empirical validation"
+  },
+  "protected_content_verification": "PROTECTED_CONTENT_VERIFICATION.json",
+  "rhetorius": {
+    "replacement_pdf_pages": 198,
+    "supplement_pages": 6,
+    "source_render_matches": 6,
+    "combined_numbered_pages": 199,
+    "numbered_pages_unavailable": 23
+  },
+  "person_predictions_added": 0,
+  "runtime_rules_promoted": 0,
+  "raw_books_committed": false,
+  "scope_receipt": "READING_RECEIPT.json",
+  "next_batch": "B01c: Ptolemy I.17-I.24; start PDF103 printed79",
+  "artifact_sha256": {
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/test_b01b_definitions.py": "eb78ff6a058ba64010111859763d7be23a4cb40c96a4ee85d862f9b69b6fc1d9",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/WRITER-LEASE.json": "71d0de7a59901f77990ab41998c8968e4c86b09d51b0159f9175bd02ab0618cb",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/UNRESOLVED_TERMS_AND_VARIANTS.json": "652b4e115a96abd0a043a9e17c0d6144e29839f001769d8d91c1ce480d65cb50",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/PROTECTED_CONTENT_VERIFICATION.json": "731e4370c73f123b78534e8111afe739a544eaf907f44f6c30ff40ae39ecaf82",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/REPORT.md": "ad9f606ba5e0770a08cbd1f90ce628809af7a472194eb4ecdbff135fb03da8d2",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/FIXED_STAR_TABLE.json": "b79dc38186d5c9d97c41ca36442cf30470288cb3a75608188a8d6ee9ec08ebca",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/TEST_SCOPE_MAINTENANCE.json": "7413f843cb81253301922fdcbfcb937dc9e641ece28ac9f48cd335310ce9b237",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/b01b_definitions.py": "894fedac2d5b42b70592ad9ddcf9db5ad4dbabb756a8f6647731b36a9871c5c6",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/APPLY_CHECKPOINT.py": "8e4ccce703e9a0ce36f9887e5e7b509ec1f122b48e2f62a89b2f0e6e48b4229b",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/READING_RECEIPT.json": "fdfc74582e7a845eb3e9402dec1ea3fc82366c0fea3131481164763ed8476931",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01b/RULES.json": "e31eb3952dd10f1a354f35919f60e4406ef1dffac435b60f5bf3a29a8a00fa2b"
+  }
+}

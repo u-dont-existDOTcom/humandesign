@@ -1,0 +1,9 @@
+{
+  "change": "Scope B01 read-list assertion to its8chapters and check evolving global unread count against current discovery metadata, with61total. Prior global8read/53unread snapshot is not a permanent cap on research progress.",
+  "observed_before_fix": "82 passed,1 failed: global read-sections list grew from8 to16",
+  "before_sha256": "c42a7661b8416a6edaf3769de5fedfcce74d46b2184d8d5ad25dfba599d45581",
+  "after_sha256": "a471f86be8473157937a22d02d87f9f43666dc808a5c0be7fdc5ac989b44a8fa",
+  "source_rules_changed": false,
+  "empirical_models_changed": false,
+  "rule": "Retain the same8-chapter expectation inside its declared historical scope."
+}

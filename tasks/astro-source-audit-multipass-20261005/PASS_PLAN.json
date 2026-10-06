@@ -12,17 +12,20 @@
     {
       "id": "P1",
       "title": "Acquire and qualify sources",
-      "status": "COMPLETE_INTAKE_WITH_DECLARED_GAPS",
+      "status": "COMPLETE_INTAKE_WITH_GAPS; RHETORIUS_REPLACEMENT_AND_SIX_PAGE_SUPPLEMENT_QUALIFIED",
       "output": [
         "DRIVE_INTAKE.json",
-        "RHETORIUS_PREVIEW_DETECTION.json"
+        "RHETORIUS_PREVIEW_DETECTION.json",
+        "SOURCE_WITNESS_UPDATES_20261006.json",
+        "RHETORIUS_REPLACEMENT_AUDIT_20261006.json",
+        "RHETORIUS_SIX_PAGE_RECOVERY.json"
       ],
       "done_when": "Every supplied file has an identity, digest, reading route, completeness caveat and source-list disposition. Not full-text reading."
     },
     {
       "id": "P2",
       "title": "Map every section",
-      "status": "PTOLEMY_CONTENTS_INDEXED_61; B01_8_ENGLISH_SECTIONS_MAPPED",
+      "status": "PTOLEMY_61_INDEXED; I_1_TO_I_16_READ; 45_UNREAD",
       "output": [
         "SECTION_DISCOVERY.json"
       ],
@@ -31,7 +34,7 @@
     {
       "id": "P3",
       "title": "Read and extract conditional rules",
-      "status": "B01_COMPLETE_24_SOURCE_RECORDS; OTHER_UNITS_UNREAD",
+      "status": "B01_AND_B01B_COMPLETE: 56_SOURCE_RECORDS_PLUS_95_STAR_GROUP_TABLE_ENTRIES",
       "output": [
         "per-source RuleSpecs and unresolved-term ledger"
       ],
@@ -40,7 +43,7 @@
     {
       "id": "P4",
       "title": "Reconcile authors and test calculations",
-      "status": "B01_ISOLATED_DEFINITION_TESTS_18_PASSED; CROSS_AUTHOR_RECONCILIATION_PENDING",
+      "status": "49_ISOLATED_DEFINITION_TESTS; CROSS_AUTHOR_RECONCILIATION_PENDING",
       "output": [
         "cross-source comparison and worked-example fixtures"
       ],
@@ -63,7 +66,7 @@
         "PTOLEMY1940_REPRINT1964"
       ],
       "scope": "Book I foundational vocabulary and conditions first; then natal III/IV; Book II separately mundane. All 61 TOC sections remain accounted for.",
-      "next": "B01b: Ptolemy I.9-I.16; exact English spans from PDF p.71 onward, stop before I.17",
+      "next": "B01c: Ptolemy I.17-I.24, starting English PDF103 / printed79; preserve source tables and variants; stop before BookII.",
       "completed_subbatches": [
         {
           "id": "B01",
@@ -71,6 +74,14 @@
           "source_records": 24,
           "new_predictions": 0,
           "tests": 18
+        },
+        {
+          "id": "B01b",
+          "scope": "English I.9-I.16 + bounded Robbins notes",
+          "source_records": 32,
+          "fixed_star_descriptive_groups": 95,
+          "new_predictions": 0,
+          "tests": 31
         }
       ]
     },
@@ -125,7 +136,8 @@
         "PAULUS_GREENBAUM",
         "BONATTI_NATIVITIES"
       ],
-      "scope": "Gap recovery in parallel when authorized access is available; these do not block independent available batches."
+      "scope": "Gap recovery in parallel when authorized access is available; these do not block independent available batches.",
+      "rhetorius_status": "198-page replacement plus six-page old-witness supplement; 199/222 numbered pages available, 23 absent. Available opening1-103 can proceed."
     }
   ],
   "checkpoint_fields": [
