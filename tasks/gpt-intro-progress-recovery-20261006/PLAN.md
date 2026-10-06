@@ -13,3 +13,5 @@ Verify focused package/behavioral tests then required suite/CI for integration. 
 Pre-probe admission: five owner-reported instruction failures reproduced before repair; intended rules and both guides now agree; four frozen Knowledge files and existing Action bytes unchanged. Only synthetic neutral inputs may enter the existing isolated subscription model probe. No owner source is passed to that probe.
 
 Checkpoint: current Instructions 7,920 strict characters; five original contract regressions reproduced; 1,018 root tests pass (six unrelated astronomy-data skips), 170 participant tests pass, lint/typecheck pass. Five isolated synthetic next-reply probes pass targeted checks, with no claim of live GPT UI verification. Scientific/runtime sources are unchanged. Package ready; proceed to same-repository integration and delivery.
+
+Completed: merged through the tested PR and exact integrated package bytes read back; ZIP and extracted folder verified in Downloads. See MERGE-READBACK.json and DELIVERY-RECEIPT.json. Remaining action is applying the three replacements in the private GPT editor, not re-running this engineering work.
