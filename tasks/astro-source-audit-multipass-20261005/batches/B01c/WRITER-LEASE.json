@@ -1,0 +1,21 @@
+{
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch": "B01c",
+  "status": "SOURCE_BATCH_VERIFIED_READY_FOR_PUBLICATION",
+  "base_commit": "05a7f5781320e5c8ba114fdbf2b1dc6ec2e59c08",
+  "branch": "research/astro-source-audit-b01c-20261006",
+  "scope": [
+    "qualify user OCR",
+    "read/extract Ptolemy I17-I24",
+    "bounded Rhetorius vocabulary comparison",
+    "definition tests and durable checkpoint"
+  ],
+  "excluded": [
+    "participant histories",
+    "fitted model changes",
+    "raw books in Git",
+    "unrequested acquisition or spending"
+  ],
+  "parent_outcome": "OPEN; wider source corpus remains under the owner-authorized multipass plan",
+  "stop_boundary": "Completed Book I chapter batch; source-only work, no process scheduled or running after publication"
+}

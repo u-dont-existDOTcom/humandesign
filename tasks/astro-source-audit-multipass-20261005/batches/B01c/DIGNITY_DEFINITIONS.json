@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "domiciles": {
+    "SUN": [
+      "LEO"
+    ],
+    "MOON": [
+      "CANCER"
+    ],
+    "SATURN": [
+      "CAPRICORN",
+      "AQUARIUS"
+    ],
+    "JUPITER": [
+      "SAGITTARIUS",
+      "PISCES"
+    ],
+    "MARS": [
+      "SCORPIO",
+      "ARIES"
+    ],
+    "VENUS": [
+      "LIBRA",
+      "TAURUS"
+    ],
+    "MERCURY": [
+      "GEMINI",
+      "VIRGO"
+    ]
+  },
+  "exaltation_and_depression": {
+    "SUN": {
+      "exaltation": "ARIES",
+      "depression": "LIBRA"
+    },
+    "MOON": {
+      "exaltation": "TAURUS",
+      "depression": "SCORPIO"
+    },
+    "SATURN": {
+      "exaltation": "LIBRA",
+      "depression": "ARIES"
+    },
+    "JUPITER": {
+      "exaltation": "CANCER",
+      "depression": "CAPRICORN"
+    },
+    "MARS": {
+      "exaltation": "CAPRICORN",
+      "depression": "CANCER"
+    },
+    "VENUS": {
+      "exaltation": "PISCES",
+      "depression": "VIRGO"
+    },
+    "MERCURY": {
+      "exaltation": "VIRGO",
+      "depression": "PISCES"
+    }
+  },
+  "triangles": [
+    {
+      "signs": [
+        "ARIES",
+        "LEO",
+        "SAGITTARIUS"
+      ],
+      "primary_day": "SUN",
+      "primary_night": "JUPITER",
+      "constant_ruler": null,
+      "co_ruler_day": null,
+      "co_ruler_night": null,
+      "direction": "NORTH_WEST"
+    },
+    {
+      "signs": [
+        "TAURUS",
+        "VIRGO",
+        "CAPRICORN"
+      ],
+      "primary_day": "VENUS",
+      "primary_night": "MOON",
+      "constant_ruler": null,
+      "co_ruler_day": null,
+      "co_ruler_night": null,
+      "direction": "SOUTH_EAST"
+    },
+    {
+      "signs": [
+        "GEMINI",
+        "LIBRA",
+        "AQUARIUS"
+      ],
+      "primary_day": "SATURN",
+      "primary_night": "MERCURY",
+      "constant_ruler": null,
+      "co_ruler_day": null,
+      "co_ruler_night": null,
+      "direction": "NORTH_EAST"
+    },
+    {
+      "signs": [
+        "CANCER",
+        "SCORPIO",
+        "PISCES"
+      ],
+      "primary_day": "MARS",
+      "primary_night": "MARS",
+      "constant_ruler": "MARS",
+      "co_ruler_day": "VENUS",
+      "co_ruler_night": "MOON",
+      "direction": "SOUTH_WEST"
+    }
+  ],
+  "source_pages": {
+    "domiciles": [
+      103,
+      105,
+      107
+    ],
+    "triangles": [
+      107,
+      109,
+      111
+    ],
+    "exaltations": [
+      113,
+      115
+    ]
+  },
+  "exaltation_degrees": null,
+  "third_participating_ruler_for_every_triangle": null,
+  "warning": "No exaltation degrees or uniform third-ruler scheme imported. Ancient qualitative rationale is not modern astronomy or validated prediction."
+}

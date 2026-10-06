@@ -1,0 +1,2629 @@
+{
+  "schema_version": 2,
+  "batch_id": "B01c",
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "status": "ENGLISH_I17_I24_AUDITED_NOT_MODEL_PROMOTION",
+  "scope": "English main text I.17-I.24 plus identified Robbins notes; stop before Book II on PDF141",
+  "records_count": 53,
+  "independent_predictions_count": 0,
+  "records_are_not_statistical_independence_units": true,
+  "records": [
+    {
+      "id": "PT.R64.I.17.R57",
+      "title": "Planetary houses are zodiacal domiciles in this chapter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.17",
+        "pdf_support_pages": [
+          103
+        ],
+        "printed_support_pages": [
+          79
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "topic": "planet-sign familiarity"
+      },
+      "consequent": "The listed affinities are houses, triangles, exaltations, terms and related conditions.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not substitute the twelve mundane houses for planetary domiciles."
+      ],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.17.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.17.R58",
+      "title": "Complete seven-planet domicile allocation",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.17",
+        "pdf_support_pages": [
+          103,
+          105,
+          107
+        ],
+        "printed_support_pages": [
+          79,
+          81,
+          83
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "planet": "one of the seven"
+      },
+      "consequent": {
+        "table": "DIGNITY_DEFINITIONS.json#/domiciles"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "LOOKUP_TABLE",
+      "dependency_groups": [
+        "PT.I.17.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.17.R59",
+      "title": "Solar and lunar semicircles",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.17",
+        "pdf_support_pages": [
+          103
+        ],
+        "printed_support_pages": [
+          79
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "ordered_signs": "zodiac"
+      },
+      "consequent": {
+        "solar_inclusive": [
+          "LEO",
+          "VIRGO",
+          "LIBRA",
+          "SCORPIO",
+          "SAGITTARIUS",
+          "CAPRICORN"
+        ],
+        "lunar_inclusive": [
+          "AQUARIUS",
+          "PISCES",
+          "ARIES",
+          "TAURUS",
+          "GEMINI",
+          "CANCER"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.17.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "This is not the day/night division by the local horizon."
+      ]
+    },
+    {
+      "id": "PT.R64.I.17.R60",
+      "title": "Luminary allocation rationale",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.17",
+        "pdf_support_pages": [
+          103
+        ],
+        "printed_support_pages": [
+          79
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "topic": "Cancer and Leo allocation"
+      },
+      "consequent": "The author links their northerly/higher and warm character to the luminaries, assigning masculine Leo to Sun and feminine Cancer to Moon.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "HISTORICAL_RATIONALE",
+      "dependency_groups": [
+        "PT.I.17.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "No automatic hemisphere reversal or modern biological inference."
+      ]
+    },
+    {
+      "id": "PT.R64.I.17.R61",
+      "title": "Saturn allocation rationale",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.17",
+        "pdf_support_pages": [
+          105
+        ],
+        "printed_support_pages": [
+          81
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "planet": "SATURN"
+      },
+      "consequent": "Cold character, distance from the luminaries and opposition support the Capricorn/Aquarius allocation.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "HISTORICAL_RATIONALE",
+      "dependency_groups": [
+        "PT.I.17.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.17.R62",
+      "title": "Jupiter allocation rationale",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.17",
+        "pdf_support_pages": [
+          105
+        ],
+        "printed_support_pages": [
+          81
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "planet": "JUPITER"
+      },
+      "consequent": "Moderation, fecund/windy signs and trines to the luminary houses support Sagittarius/Pisces.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "HISTORICAL_RATIONALE",
+      "dependency_groups": [
+        "PT.I.17.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.17.R63",
+      "title": "Mars allocation and a non-exclusive aspect rationale",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.17",
+        "pdf_support_pages": [
+          105
+        ],
+        "printed_support_pages": [
+          81
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "planet": "MARS"
+      },
+      "consequent": "Dryness and destructive quality are linked to Scorpio/Aries and their squares to the luminary houses.",
+      "modifiers": [
+        "Robbins notes that Aries also trines Leo and Scorpio also trines Cancer."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "HISTORICAL_RATIONALE",
+      "dependency_groups": [
+        "PT.I.17.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "A selected square rationale does not erase other simultaneous relationships."
+      ]
+    },
+    {
+      "id": "PT.R64.I.17.R64",
+      "title": "Venus allocation rationale and source elongation statement",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.17",
+        "pdf_support_pages": [
+          105,
+          107
+        ],
+        "printed_support_pages": [
+          81,
+          83
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "planet": "VENUS"
+      },
+      "consequent": "Temperate/fertile quality, sextiles and the stated limit of two signs from the Sun support Libra/Taurus.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "HISTORICAL_RATIONALE",
+      "dependency_groups": [
+        "PT.I.17.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "The stated sign-count limit is not a newly computed modern ephemeris bound."
+      ]
+    },
+    {
+      "id": "PT.R64.I.17.R65",
+      "title": "Mercury allocation rationale and source elongation statement",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.17",
+        "pdf_support_pages": [
+          107
+        ],
+        "printed_support_pages": [
+          83
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "planet": "MERCURY"
+      },
+      "consequent": "The remaining Gemini/Virgo are adjacent to the luminary houses; the author states Mercury remains within one sign of the Sun.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "HISTORICAL_RATIONALE",
+      "dependency_groups": [
+        "PT.I.17.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.18.R66",
+      "title": "Four equilateral sign triangles",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.18",
+        "pdf_support_pages": [
+          107,
+          109,
+          111
+        ],
+        "printed_support_pages": [
+          83,
+          85,
+          87
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "topic": "triangle familiarity"
+      },
+      "consequent": {
+        "table": "DIGNITY_DEFINITIONS.json#/triangles"
+      },
+      "modifiers": [
+        "Record the geometrical rationale independently from later elemental or numerical weighting."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "LOOKUP_TABLE",
+      "dependency_groups": [
+        "PT.I.18.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.18.R67",
+      "title": "First triangle: Sun by day, Jupiter by night",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.18",
+        "pdf_support_pages": [
+          107,
+          109
+        ],
+        "printed_support_pages": [
+          83,
+          85
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "sign_in": [
+          "ARIES",
+          "LEO",
+          "SAGITTARIUS"
+        ]
+      },
+      "consequent": {
+        "DAY": "SUN",
+        "NIGHT": "JUPITER"
+      },
+      "modifiers": [
+        "Mars is explicitly excluded from governance here because he is not of the solar sect."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.18.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not automatically add Saturn as a third participating ruler from another author."
+      ]
+    },
+    {
+      "id": "PT.R64.I.18.R68",
+      "title": "Second triangle: Venus by day, Moon by night",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.18",
+        "pdf_support_pages": [
+          109
+        ],
+        "printed_support_pages": [
+          85
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "sign_in": [
+          "TAURUS",
+          "VIRGO",
+          "CAPRICORN"
+        ]
+      },
+      "consequent": {
+        "DAY": "VENUS",
+        "NIGHT": "MOON"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.18.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.18.R69",
+      "title": "Third triangle: Saturn by day, Mercury by night",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.18",
+        "pdf_support_pages": [
+          111
+        ],
+        "printed_support_pages": [
+          87
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "sign_in": [
+          "GEMINI",
+          "LIBRA",
+          "AQUARIUS"
+        ]
+      },
+      "consequent": {
+        "DAY": "SATURN",
+        "NIGHT": "MERCURY"
+      },
+      "modifiers": [
+        "Jupiter appears in the directional explanation through shared diurnal sect; that is not an explicit identical third-ruler table."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.18.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.18.R70",
+      "title": "Fourth triangle: Mars with a sect-dependent co-ruler",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.18",
+        "pdf_support_pages": [
+          111
+        ],
+        "printed_support_pages": [
+          87
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "sign_in": [
+          "CANCER",
+          "SCORPIO",
+          "PISCES"
+        ]
+      },
+      "consequent": {
+        "constant": "MARS",
+        "co_ruler_DAY": "VENUS",
+        "co_ruler_NIGHT": "MOON"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.18.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not flatten this to Mars-only, nor substitute a different author's day/night/third arrangement."
+      ]
+    },
+    {
+      "id": "PT.R64.I.18.R71",
+      "title": "Triangle directions and admixtures",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.18",
+        "pdf_support_pages": [
+          109,
+          111
+        ],
+        "printed_support_pages": [
+          85,
+          87
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "triangle_index": "1..4"
+      },
+      "consequent": {
+        "1": {
+          "primary": "NORTH",
+          "mixed": "NORTH_WEST",
+          "causes": [
+            "Jupiter",
+            "Mars",
+            "lunar/western affinity"
+          ]
+        },
+        "2": {
+          "primary": "SOUTH",
+          "mixed": "SOUTH_EAST",
+          "causes": [
+            "Venus",
+            "Saturn/Capricorn"
+          ]
+        },
+        "3": {
+          "primary": "EAST",
+          "mixed": "NORTH_EAST",
+          "causes": [
+            "Saturn",
+            "Jupiter sect affinity"
+          ]
+        },
+        "4": {
+          "primary": "WEST",
+          "mixed": "SOUTH_WEST",
+          "causes": [
+            "Mars/Moon",
+            "Venus"
+          ]
+        }
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "HISTORICAL_RATIONALE",
+      "dependency_groups": [
+        "PT.I.18.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Direction, ruler and sect explanation share dependencies; they are not three independent confirmations."
+      ]
+    },
+    {
+      "id": "PT.R64.I.19.R72",
+      "title": "Seven exaltations and opposite depressions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.19",
+        "pdf_support_pages": [
+          113,
+          115
+        ],
+        "printed_support_pages": [
+          89,
+          91
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "planet": "one of the seven"
+      },
+      "consequent": {
+        "table": "DIGNITY_DEFINITIONS.json#/exaltation_and_depression"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "specific_exaltation_degrees": null
+      },
+      "output_type": "LOOKUP_TABLE",
+      "dependency_groups": [
+        "PT.I.19.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "This passage supplies signs, not exaltation degree points or dignity scores."
+      ]
+    },
+    {
+      "id": "PT.R64.I.19.R73",
+      "title": "Sun, Saturn and Moon exaltation rationales",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.19",
+        "pdf_support_pages": [
+          113
+        ],
+        "printed_support_pages": [
+          89
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "topic": "luminary/Saturn exaltations"
+      },
+      "consequent": "Sun gains northern height/heat from Aries; Saturn is placed contrarily; Moon begins increasing light after conjunction in Aries into Taurus.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "HISTORICAL_RATIONALE",
+      "dependency_groups": [
+        "PT.I.19.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.19.R74",
+      "title": "Jupiter and Mars exaltation contrast",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.19",
+        "pdf_support_pages": [
+          113,
+          115
+        ],
+        "printed_support_pages": [
+          89,
+          91
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "topic": "Jupiter/Mars exaltations"
+      },
+      "consequent": "Jupiter's fecund northerly quality is associated with Cancer, Mars's fiery/southerly quality with Capricorn; depressions reverse the signs.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "HISTORICAL_RATIONALE",
+      "dependency_groups": [
+        "PT.I.19.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.19.R75",
+      "title": "Venus and Mercury exaltation contrast",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.19",
+        "pdf_support_pages": [
+          115
+        ],
+        "printed_support_pages": [
+          91
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "topic": "Venus/Mercury exaltations"
+      },
+      "consequent": "Venus's moisture is associated with Pisces and spring; drier Mercury with Virgo and autumn; depressions reverse the signs.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "HISTORICAL_RATIONALE",
+      "dependency_groups": [
+        "PT.I.19.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.19.R76",
+      "title": "Exaltation is not orbital aphelion or perihelion",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.19",
+        "pdf_support_pages": [
+          113
+        ],
+        "printed_support_pages": [
+          89
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "term": "exaltation"
+      },
+      "consequent": "Robbins distinguishes power in the astrological placement from orbital distance extrema.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "TRANSLATOR_QUALIFICATION",
+      "dependency_groups": [
+        "PT.I.19.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.20.R77",
+      "title": "Two prevalent term systems are identified, not equated",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.20",
+        "pdf_support_pages": [
+          115
+        ],
+        "printed_support_pages": [
+          91
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "topic": "terms"
+      },
+      "consequent": {
+        "Egyptian_basis": "chiefly domicile governance",
+        "Chaldean_basis": "triplicity governance"
+      },
+      "modifiers": [
+        "This is the author's characterization, not a claim of a complete modern historical reconstruction."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.20.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.20.R78",
+      "title": "Egyptian ordering critique preserves its examples",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.20",
+        "pdf_support_pages": [
+          117
+        ],
+        "printed_support_pages": [
+          93
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "claim": "a single consistent precedence rationale explains the Egyptian table"
+      },
+      "consequent": {
+        "counterexamples": [
+          "Libra: Saturn rather than domicile lord Venus",
+          "Aries: Jupiter rather than domicile lord Mars",
+          "Capricorn: Mercury rather than triangle governor Venus",
+          "Cancer: Mars rather than exaltation lord Jupiter",
+          "Aquarius: Mercury rather than Saturn with both domicile/triplicity",
+          "Capricorn: Mercury despite no stated governance relation"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_CRITIQUE",
+      "dependency_groups": [
+        "PT.I.20.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.20.R79",
+      "title": "Matching total planetary years does not fix every local term",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.20",
+        "pdf_support_pages": [
+          117,
+          119
+        ],
+        "printed_support_pages": [
+          93,
+          95
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "claim": "sum of terms determines their correct per-sign distribution"
+      },
+      "consequent": "Ptolemy objects that the same aggregate sums survive many rearrangements of per-sign allocations.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_CRITIQUE",
+      "dependency_groups": [
+        "PT.I.20.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Passing row/global sums is a necessary transcription check, not sufficient semantic verification."
+      ]
+    },
+    {
+      "id": "PT.R64.I.20.R80",
+      "title": "Critique of arithmetic rising-time justification",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.20",
+        "pdf_support_pages": [
+          119
+        ],
+        "printed_support_pages": [
+          95
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "claim": "rising-time schedule validates the assigned term totals"
+      },
+      "consequent": "The author rejects evenly increasing ascensions as inaccurate, contrasts Virgo/Libra and Leo/Scorpio with tabular values, and criticizes fractional adjustments made to rescue the theory.",
+      "modifiers": [
+        "Robbins defines a time as one equatorial degree rising and refers to Almagest II.8."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "source_claimed_approximate_values": {
+          "VIRGO_LIBRA": "38 1/3 times each",
+          "LEO_SCORPIO": "35 times each"
+        },
+        "actual_modern_rising_times_computed": false
+      },
+      "output_type": "SOURCE_CRITIQUE",
+      "dependency_groups": [
+        "PT.I.20.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.20.R81",
+      "title": "Egyptian terms: adopted table preserved despite critique",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.20",
+        "pdf_support_pages": [
+          121
+        ],
+        "printed_support_pages": [
+          97
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "system": "EGYPTIAN_ROBBINS_ADOPTED"
+      },
+      "consequent": {
+        "table": "TERMS_TABLES.json#/tables/EGYPTIAN_ROBBINS_ADOPTED"
+      },
+      "modifiers": [
+        "Five non-luminary planets in each sign; English lengths transcribed visually. Greek-facing table includes cumulative totals."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The Latin apparatus reports manuscript/editorial choices, including Capricorn variants; not fully collated here."
+      ],
+      "calculation_conventions": {},
+      "output_type": "LOOKUP_TABLE",
+      "dependency_groups": [
+        "PT.I.20.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.21.R82",
+      "title": "Chaldean sequence rotates triplicity groups",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.21",
+        "pdf_support_pages": [
+          122,
+          123,
+          125
+        ],
+        "printed_support_pages": [
+          98,
+          99,
+          101
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "system": "CHALDEAN",
+        "triangle": "one of four"
+      },
+      "consequent": {
+        "groups_in_cyclic_order": [
+          [
+            "JUPITER"
+          ],
+          [
+            "VENUS"
+          ],
+          [
+            "SATURN",
+            "MERCURY"
+          ],
+          [
+            "MARS"
+          ]
+        ]
+      },
+      "modifiers": [
+        "The relevant triangle's group leads; the two members of the Saturn/Mercury group remain together."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Robbins disputes Proclus's attachment of the result clause: ease of understanding without a diagram versus inability without one. This is a translation/scope variant, not a different computed sequence."
+      ],
+      "calculation_conventions": {
+        "group_rotation": true
+      },
+      "output_type": "ALGORITHMIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.21.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.21.R83",
+      "title": "Chaldean Saturn/Mercury ordering depends on sect",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.21",
+        "pdf_support_pages": [
+          125
+        ],
+        "printed_support_pages": [
+          101
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "system": "CHALDEAN"
+      },
+      "consequent": {
+        "DAY": [
+          "SATURN",
+          "MERCURY"
+        ],
+        "NIGHT": [
+          "MERCURY",
+          "SATURN"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.21.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not rotate individual planets in a way that splits the two-ruler group."
+      ]
+    },
+    {
+      "id": "PT.R64.I.21.R84",
+      "title": "Chaldean lengths and exact global sums",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.21",
+        "pdf_support_pages": [
+          125
+        ],
+        "printed_support_pages": [
+          101
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "ordered_planets": "five from the declared Chaldean construction"
+      },
+      "consequent": {
+        "lengths": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "totals": "TERMS_TABLES.json#/chaldean_construction/source_totals"
+      },
+      "modifiers": [
+        "Robbins note on PDF122/printed98 calls this less optimistic than Egyptian/Ptolemaic allocations because malefics receive more terms/first places; a commentator's comparison, not measured life outcomes."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "ALGORITHMIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.21.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.21.R85",
+      "title": "Egyptian credibility argument is based on reported examples",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.21",
+        "pdf_support_pages": [
+          125,
+          127
+        ],
+        "printed_support_pages": [
+          101,
+          103
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "comparison": "Egyptian vs Chaldean terms"
+      },
+      "consequent": "Ptolemy favors the Egyptian collection's reported usefulness and agreement with recorded nativities but still criticizes its unexplained arrangement.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_EVIDENCE_CLAIM",
+      "dependency_groups": [
+        "PT.I.21.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "This report is not an untouched validation sample for our project."
+      ]
+    },
+    {
+      "id": "PT.R64.I.21.R86",
+      "title": "Damaged manuscript is reported as the provenance of a rationale",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.21",
+        "pdf_support_pages": [
+          127
+        ],
+        "printed_support_pages": [
+          103
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "topic": "new term arrangement rationale"
+      },
+      "consequent": "Ptolemy describes a damaged, verbose ancient manuscript whose end tables were more legible and whose general scheme he could recover.",
+      "modifiers": [
+        "Robbins comments on roll versus codex preservation conditionally."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "This passage does not itself establish independent authenticity or supply the lost manuscript."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_PROVENANCE_CLAIM",
+      "dependency_groups": [
+        "PT.I.21.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.21.R87",
+      "title": "Term ordering privileges double lordship",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.21",
+        "pdf_support_pages": [
+          127,
+          129
+        ],
+        "printed_support_pages": [
+          103,
+          105
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "qualifications": [
+          "exaltation",
+          "triplicity",
+          "domicile"
+        ]
+      },
+      "consequent": "Generally prefer a planet with two rulerships in the sign, including a malefic; otherwise put malefics last and prioritize exaltation, then triplicity, then domicile, following sign order.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Narrative leaves tie-breaking and some traversal details underspecified; use the explicit adopted table for a fixture, not a silently completed generative algorithm."
+      ],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.21.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.21.R88",
+      "title": "Cancer/Mars and Leo/Saturn allocation qualification",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.21",
+        "pdf_support_pages": [
+          129
+        ],
+        "printed_support_pages": [
+          105
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "condition": "luminaries receive no terms"
+      },
+      "consequent": "The text says Cancer is assigned to Mars and Leo to Saturn because they were deprived of their share in the order, preserving the order appropriate to them.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not read this automatically as the first term: the adopted Leo table starts with Jupiter. Resolve the scope of the exception before building a generator."
+      ],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.21.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.21.R89",
+      "title": "Term lengths: defaults, double-prerogative bonus, compensation",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.21",
+        "pdf_support_pages": [
+          129,
+          131
+        ],
+        "printed_support_pages": [
+          105,
+          107
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "no_double_prerogative_in_scope": true
+      },
+      "consequent": {
+        "default": {
+          "JUPITER": 7,
+          "VENUS": 7,
+          "SATURN": 5,
+          "MARS": 5,
+          "MERCURY": 6
+        },
+        "double_prerogative_bonus": 1,
+        "compensation": "Subtract added degrees from single-prerogative planets, generally Saturn/Jupiter because of slower motion."
+      },
+      "modifiers": [
+        "Scope includes the sign and following signs within the quadrant. Venus alone has the Taurus triplicity for terms because Moon is excluded."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Exact bonus recipients/compensation ordering and quadrant traversal need further collation before a generative reconstruction."
+      ],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.21.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.21.R90",
+      "title": "Ptolemy terms: adopted table with apparatus alternatives",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.21",
+        "pdf_support_pages": [
+          130,
+          131
+        ],
+        "printed_support_pages": [
+          106,
+          107
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "system": "PTOLEMY_ROBBINS_ADOPTED"
+      },
+      "consequent": {
+        "table": "TERMS_TABLES.json#/tables/PTOLEMY_ROBBINS_ADOPTED"
+      },
+      "modifiers": [
+        "English five-planet length rows independently transcribed from the rendered page. Greek-facing cumulatives are a separate check."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Multiple table cells have apparatus alternatives; the default here identifies Robbins's adopted witness, not a universal Ptolemaic table."
+      ],
+      "calculation_conventions": {},
+      "output_type": "LOOKUP_TABLE",
+      "dependency_groups": [
+        "PT.I.21.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.22.R91",
+      "title": "Twelfth-sign places are described as another practice",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.22",
+        "pdf_support_pages": [
+          133
+        ],
+        "printed_support_pages": [
+          109
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "reported_practice": "places"
+      },
+      "consequent": {
+        "size_degrees": 2.5,
+        "assignment": "signs in order"
+      },
+      "modifiers": [
+        "This is a described alternative, subsequently rejected/omitted by the author in this section."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "REPORTED_NOT_ADOPTED_METHOD",
+      "dependency_groups": [
+        "PT.I.22.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.22.R92",
+      "title": "Single-degree planetary assignments are also reported",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.22",
+        "pdf_support_pages": [
+          133
+        ],
+        "printed_support_pages": [
+          109
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "reported_practice": "degrees"
+      },
+      "consequent": "Others distribute individual degrees among planets following the Chaldean order of terms.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No fully specified degree table is printed in this paragraph."
+      ],
+      "calculation_conventions": {},
+      "output_type": "REPORTED_NOT_ADOPTED_METHOD",
+      "dependency_groups": [
+        "PT.I.22.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.22.R93",
+      "title": "Author declines the finer place/degree systems",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.22",
+        "pdf_support_pages": [
+          133
+        ],
+        "printed_support_pages": [
+          109
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "topic": "reported finer subdivisions"
+      },
+      "consequent": "Ptolemy says their arguments are plausible rather than natural and unfounded, and omits them.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "EXPLICIT_SOURCE_NON_ADOPTION",
+      "dependency_groups": [
+        "PT.I.22.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not count a mention of dodecatemoria as Ptolemy endorsing their predictive use."
+      ]
+    },
+    {
+      "id": "PT.R64.I.22.R94",
+      "title": "Zodiac origin is anchored to equinoxes and solstices",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.22",
+        "pdf_support_pages": [
+          133,
+          135
+        ],
+        "printed_support_pages": [
+          109,
+          111
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "topic": "where sign powers originate"
+      },
+      "consequent": "The author explicitly prefers seasonal starting points and says substituting others while retaining the same sign qualities produces error.",
+      "modifiers": [
+        "Robbins distinguishes equal 30-degree ecliptic divisions from actual constellations and discusses precession."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.22.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not merge this argument silently with a sidereal frame. No automatic latitude/hemisphere adaptation is derived here."
+      ]
+    },
+    {
+      "id": "PT.R64.I.22.R95",
+      "title": "Starting sign of twelfth-parts has a textual variant",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.22",
+        "pdf_support_pages": [
+          132,
+          133
+        ],
+        "printed_support_pages": [
+          108,
+          109
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "reported_practice": "2.5-degree places"
+      },
+      "consequent": "Robbins notes that one manuscript and printed editions add an instruction to begin with the sign occupied by the star.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "TRANSLATOR_TEXTUAL_VARIANT",
+      "dependency_groups": [
+        "PT.I.22.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "An editorial variant is not a second independent predictor."
+      ]
+    },
+    {
+      "id": "PT.R64.I.23.R96",
+      "title": "Proper face is a relation to a luminary, not merely a decan",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.23",
+        "pdf_support_pages": [
+          135
+        ],
+        "printed_support_pages": [
+          111
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "planet": "individual planet",
+        "aspect": "same relation as its domicile to a luminary's domicile"
+      },
+      "consequent": "A planet is in proper face when it preserves the corresponding relation to Sun or Moon.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Implementation needs the intended aspect/side convention; this paragraph is not a general 10-degree-decan table."
+      ],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.23.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.23.R97",
+      "title": "Venus proper-face example includes side conditions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.23",
+        "pdf_support_pages": [
+          135
+        ],
+        "printed_support_pages": [
+          111
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "planet": "VENUS"
+      },
+      "consequent": {
+        "solar_case": {
+          "aspect": "SEXTILE",
+          "phase": "OCCIDENTAL_TO_SUN"
+        },
+        "lunar_case": {
+          "aspect": "SEXTILE",
+          "phase": "ORIENTAL_TO_MOON"
+        }
+      },
+      "modifiers": [
+        "Robbins explains Libra-Leo and Taurus-Cancer relations."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.23.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "A sextile without its stated orientation is insufficient for the complete example."
+      ]
+    },
+    {
+      "id": "PT.R64.I.23.R98",
+      "title": "Scholiast adds stricter proper-face requirements",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.23",
+        "pdf_support_pages": [
+          134
+        ],
+        "printed_support_pages": [
+          110
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "variant": "SCHOLIAST"
+      },
+      "consequent": "Robbins says the scholiast additionally requires own domicile and the necessary relation to both luminaries, unlike Ptolemy's one-luminary formulation.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "TRANSLATOR_REPORTED_VARIANT",
+      "dependency_groups": [
+        "PT.I.23.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not silently impose the scholiast's stricter conjunction of conditions on the author."
+      ]
+    },
+    {
+      "id": "PT.R64.I.23.R99",
+      "title": "Chariots/thrones require two or more familiarities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.23",
+        "pdf_support_pages": [
+          135,
+          137
+        ],
+        "printed_support_pages": [
+          111,
+          113
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "same_location_familiarities_count_at_least": 2
+      },
+      "consequent": "The author calls these chariots/thrones and explains the increased effectiveness through similarity and cooperation.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "threshold": 2,
+        "numeric_strength_bonus": null
+      },
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.23.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not replace with any one dignity or add another author's under-beams immunity automatically."
+      ]
+    },
+    {
+      "id": "PT.R64.I.23.R100",
+      "title": "Rejoicing may arise indirectly through same-sect affinity",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.23",
+        "pdf_support_pages": [
+          137
+        ],
+        "printed_support_pages": [
+          113
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "own_familiarity": false,
+        "containing_sign_has_affinity_with_same_sect_planet": true
+      },
+      "consequent": "The planet rejoices through a less-direct sympathy.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.23.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "This is not identical to the planetary-joy house list."
+      ]
+    },
+    {
+      "id": "PT.R64.I.23.R101",
+      "title": "Alien opposite-sect placement weakens proper power",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.23",
+        "pdf_support_pages": [
+          137
+        ],
+        "printed_support_pages": [
+          113
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "region": "alien and belonging to opposite sect"
+      },
+      "consequent": "A large part of proper power is said to be impaired, producing a mixed/different temperament.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "numeric_penalty": null
+      },
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.23.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Weakness of action is not automatically bad morals or a medical condition."
+      ]
+    },
+    {
+      "id": "PT.R64.I.24.R102",
+      "title": "Application/separation: order and proximity",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.24",
+        "pdf_support_pages": [
+          137,
+          139
+        ],
+        "printed_support_pages": [
+          113,
+          115
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "interval": "not great"
+      },
+      "consequent": "Leading bodies apply to following bodies; following bodies separate from preceding bodies.",
+      "modifiers": [
+        "Robbins glosses preceding as more occidental and application as same/closely approaching meridian."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No single numeric orb is stated in the author's paragraph. Exact phase/motion implementation is not specified here."
+      ],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.24.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.24.R103",
+      "title": "Conjunction and traditional aspects both support the relation",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.24",
+        "pdf_support_pages": [
+          139
+        ],
+        "printed_support_pages": [
+          115
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "mode": [
+          "bodily conjunction",
+          "one of the traditional aspects"
+        ]
+      },
+      "consequent": "Application/separation may occur bodily or by aspect.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.24.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not restrict the whole definition to conjunction alone."
+      ]
+    },
+    {
+      "id": "PT.R64.I.24.R104",
+      "title": "Bodily passages require an additional latitude check",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.24",
+        "pdf_support_pages": [
+          138,
+          139
+        ],
+        "printed_support_pages": [
+          114,
+          115
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "mode": "BODILY"
+      },
+      "consequent": "Observe latitudes and accept bodily passages on the same side of the ecliptic.",
+      "modifiers": [
+        "Robbins glosses both north or both south, then describes this as same latitude."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Same sign of latitude is not identical to equal numeric latitude. Zero latitude and a tolerance for equality are unresolved."
+      ],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.24.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Source-condition fixture only; no physical collision claim."
+      ]
+    },
+    {
+      "id": "PT.R64.I.24.R105",
+      "title": "Aspect passages do not need that bodily latitude restriction",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.24",
+        "pdf_support_pages": [
+          139
+        ],
+        "printed_support_pages": [
+          115
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "mode": "ASPECT"
+      },
+      "consequent": "The author says the latitude check is superfluous for rays meeting at the earth's centre.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_EXCEPTION",
+      "dependency_groups": [
+        "PT.I.24.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Preserve the bodily/aspect distinction; the ray rationale is historical doctrine."
+      ]
+    },
+    {
+      "id": "PT.R64.I.24.R106",
+      "title": "Quality assessment combines nature, containing sign, Sun and angles",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.24",
+        "pdf_support_pages": [
+          139
+        ],
+        "printed_support_pages": [
+          115
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "task": "assess planetary quality"
+      },
+      "consequent": "Examine both intrinsic nature and containing signs and configurations to the Sun and angles together.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "combination_weights": null
+      },
+      "output_type": "SOURCE_SYNTHESIS_PRINCIPLE",
+      "dependency_groups": [
+        "PT.I.24.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.24.R107",
+      "title": "Phase and motion jointly modify power",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.24",
+        "pdf_support_pages": [
+          139,
+          141
+        ],
+        "printed_support_pages": [
+          115,
+          117
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "comparison": "planetary power"
+      },
+      "consequent": {
+        "strongest_case": [
+          "ORIENTAL",
+          "ADDING_TO_PROPER_MOTION"
+        ],
+        "weaker_case": [
+          "OCCIDENTAL",
+          "DIMINISHING_SPEED"
+        ]
+      },
+      "modifiers": [
+        "Robbins explains the motion language through epicycles."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not equate this entire conjunction of conditions to direct versus retrograde alone. No scalar threshold is supplied."
+      ],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.24.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.I.24.R108",
+      "title": "Horizon relations give a graded power hierarchy",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.24",
+        "pdf_support_pages": [
+          141
+        ],
+        "printed_support_pages": [
+          117
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "reference": "local horizon and culmination"
+      },
+      "consequent": "Most powerful at or approaching midheaven; second on the horizon or in the succedent place; greater in the orient, less at lower culmination or other relations to the orient; powerless if without aspect to the orient.",
+      "modifiers": [
+        "Robbins glosses succedent as the 30-degree place rising after the horoscopic sign and no aspect by reference to I.16."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No exact angular approach orb, full house-strength score or interpolation is supplied."
+      ],
+      "calculation_conventions": {},
+      "output_type": "CONDITIONAL_SOURCE_DEFINITION",
+      "dependency_groups": [
+        "PT.I.24.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not replace this with an imported house-system weighting."
+      ]
+    },
+    {
+      "id": "PT.R64.I.24.R109",
+      "title": "Numerical orb suggestions belong to later commentators",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.24",
+        "pdf_support_pages": [
+          137
+        ],
+        "printed_support_pages": [
+          113
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "locator_precision": "Chapter and complete supporting English paragraphs/notes; facing Greek not independently translated"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/seasonal doctrine in this edition; not a physical or empirical endorsement",
+      "antecedents": {
+        "term": "interval not great"
+      },
+      "consequent": {
+        "Ashmand_reported_planet_orbs_deg": {
+          "SATURN": 10,
+          "JUPITER": 12,
+          "MARS": 7.5,
+          "SUN": 17,
+          "VENUS": 8,
+          "MERCURY": 7.5,
+          "MOON": 12.5
+        },
+        "anonymous_commentator_max_deg": 15
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "TRANSLATOR_REPORTED_VARIANT",
+      "dependency_groups": [
+        "PT.I.24.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "Source-only definition/rationale; no modern personality, clinical, mortality, event probability or fitted weight is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_UNLESS_EXPLICITLY_COVERED_BY_BOUNDED_FIXTURE",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "These are reported alternatives, not an author-specified single common orb."
+      ]
+    }
+  ]
+}

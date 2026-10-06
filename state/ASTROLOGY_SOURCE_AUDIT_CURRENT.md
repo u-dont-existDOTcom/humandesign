@@ -1,30 +1,26 @@
 # Current astrology source audit
 
-**Parent: OPEN, owner-authorized multi-pass source audit.** Latest completed unit: Ptolemy *Tetrabiblos*, Robbins translation 1940 / supplied 1964 reprint, English Book I chapters 1–16. No person predictions or runtime-model promotion.
+**Parent OPEN: owner-authorized multi-pass source audit.** English Ptolemy Book I, all 24 chapters, has now been read/extracted. No person predictions or runtime-model promotion.
 
-## Recovery entry points
-- `tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json` — last verified unit and next range.
-- `tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json` — five audit passes and source tracks.
-- `tasks/astro-source-audit-multipass-20261005/DRIVE_INTAKE.json` — preserved historical13-file intake.
-- `tasks/astro-source-audit-multipass-20261005/SOURCE_WITNESS_UPDATES_20261006.json` — controlling source-witness update for the replacement Rhetorius; use together with the historical intake.
-- `tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json` — 61 Ptolemy sections; 16 read, 45 unread.
-- `tasks/astro-source-audit-multipass-20261005/batches/B01/RULES.json` — unchanged 24 source records, I.1–I.8.
-- `tasks/astro-source-audit-multipass-20261005/batches/B01b/RULES.json` — 32 additional records, I.9–I.16.
-- `tasks/astro-source-audit-multipass-20261005/batches/B01b/FIXED_STAR_TABLE.json` — complete 95 descriptive star/asterism groups in I.9, with weaker-analogue qualifiers and translator notes separated.
-- `tasks/astro-source-audit-multipass-20261005/batches/B01b/READING_RECEIPT.json` — exact English scope, page boundaries, note checks and exclusions.
+## Canonical recovery
+- `tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json` — current counts and exact next section.
+- `tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json` — source tracks and five passes.
+- `tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json` — 61 Ptolemy sections: 24 read, 37 unread.
+- `tasks/astro-source-audit-multipass-20261005/batches/B01c/REPORT.md` — newest result and limitations.
+- `tasks/astro-source-audit-multipass-20261005/batches/B01c/RULES.json`, `TERMS_TABLES.json`, `DIGNITY_DEFINITIONS.json`, `READING_RECEIPT.json`, `BOUNDED_RHETORIUS_COMPARISON.json` — exact current evidence.
+- `tasks/astro-source-audit-multipass-20261005/RHETORIUS_OCR_RECHECK_20261006.json` — controlling qualification following the owner's OCR upload; read with the original intake and replacement/supplement receipts.
 
-## Completed and not to repeat
-All 13 original private sources were hash-verified. B01 and B01b now total 56 source records plus 95 star-table entries. The entries are not independent statistical predictions. There are 49 isolated definition tests (18 prior + 31 new); run the recorded broader regression suite at integration.
+## Completed, do not repeat
+Ptolemy B01/B01b/B01c contain 24 + 32 + 53 = 109 source records. The earlier 95 descriptive fixed-star groups remain separate. Two adopted term tables have 120 visually transcribed cells; the Chaldean day/night construction adds 120 computed cells. These are not independent predictions. There are 85 source-definition tests plus 34 prior methodology tests.
 
-The replacement Rhetorius is an image-only 198-page file, not the 150-page truncated Files preview. Its copyright page identifies2009 / fourth translation edition/first published edition, not filename 2005. Visual footer mapping found193of 222numbered pages. Six gaps were recovered from the old preview into a private supplement, with 6/6 render matches; combined coverage is199/222, leaving 23 absent. The old preview and its 151-placeholder detection remain unchanged historical evidence. See `RHETORIUS_REPLACEMENT_AUDIT_20261006.json` and `RHETORIUS_SIX_PAGE_RECOVERY.json`. The replacement plus supplement has continuous printed pages1–103; whole-book completeness is not claimed.
+Owner OCR `RHETORIUS_HOLDEN_OWNER_OCR_20261006.txt` was hash-matched and saved beside the private books. It is the searchable prose aid; images govern ambiguous numbers, tables, and continuity checks. Never equate an unrecognized OCR footer with missing content. The exact current PDF has 198 pages, despite a 150-page preview surface. Rechecked physical transitions include printed103 to105 and112 to114 and occur in the owner OCR too. The prior 23-gap list is copy-specific, not a claim about every copy or a new complete text collation. The six-page supplement and old preview remain preserved. Reading available material does not wait for another upload.
 
-Other source limitations remain: BPHS is Sharma, not Santhanam; the primary-directions source is an excerpt/interview, not the complete requested book. The owner could not obtain further books. These gaps do not block available reading batches.
+BPHS remains the Sharma edition. Primary Directions remains an excerpt/interview. Other unavailable books do not block this source track.
 
 ## Next executable batch
-**B01c: Ptolemy I.17–I.24.** Begin at the I.17 heading on English PDF103 / printed79; verify all table/section boundaries and stop before BookII. Topics: planetary houses/domiciles, triangles, exaltations, alternative terms, places/degrees, faces/chariots, applications/separations and related powers. Preserve alternative tables and translator qualifications; do not choose variants to fit known people.
+**B01d: Ptolemy III.1–III.3.** Start English PDF245/printed221; read through the end of III.3 before III.4 on shared PDF265/printed241. This follows the existing plan to cover natal III/IV after foundation I. The 13 BookII mundane/general chapters remain explicitly deferred to their own pass, not forgotten. No later chapter is counted read merely because its heading was inspected.
 
-## Important unresolved findings from B01b
-The fixed-star catalogue has no admitted natal trigger/orb/epoch bridge yet. Keep constellation figures distinct from tropical signs, and group membership distinct from identifying an entire group with its brightest star. I.13 classifies opposition as disharmonious while its polarity explanation is in tension with I.12 under a gender-parity reading; retain the explanation as unresolved rather than silently correcting it. Robbins’s explicit I.14 and I.15 pair tables are source-specific and must not be replaced with modern reflection formulae. Seasonal hours are day-or-night duration divided by 12, not automatically 60 minutes.
+## New implementation cautions
+Egyptian/Ptolemaic term tables share global totals but differ across153/360degrees: aggregate checksum alone cannot certify a table. Chaldean rotations must keep Saturn/Mercury in a single sect-ordered group. Ptolemy reports then rejects finer twelfth-parts while Rhetorius adopts them. Triplicity roles, proper face and chariots differ by author/interpretation. Do not merge conventions without a versioned decision. Complete Greek/Latin apparatus collation, numerical angular thresholds, some term-generation details and latitude equality/zero cases remain open.
 
-## Invariants
-Use live UDA/project authority and the V2 source-audit procedure. Preserve source/translator/project layers, complete conditional qualifications, unknown states, and old candidate/model freezes. Raw books, supplements and full extracted text stay outside Git. This is source audit, not a person-reading receipt. No background work is running. A completed chapter batch does not complete the book, corpus, implementation or validation.
+Raw books/OCR/full text stay outside Git. Preserve source/commentary/project layers and old candidate/model freezes. This is source audit, not a clean-room person experiment. No background process is running; the next authorized pass resumes the exact checkpoint.

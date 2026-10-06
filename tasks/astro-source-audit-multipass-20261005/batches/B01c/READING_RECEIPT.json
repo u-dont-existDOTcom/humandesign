@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01c",
+  "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "edition": "ROBBINS_1940_REPRINT_1964",
+  "status": "ENGLISH_I17_I24_MAIN_TEXT_READ_EXTRACTED_AND_TABLES_CHECKED",
+  "english_pdf_pages": [
+    103,
+    105,
+    107,
+    109,
+    111,
+    113,
+    115,
+    117,
+    119,
+    121,
+    123,
+    125,
+    127,
+    129,
+    131,
+    133,
+    135,
+    137,
+    139,
+    141
+  ],
+  "chapter_spans": {
+    "I.17": {
+      "english_pdf_pages": [
+        103,
+        105,
+        107
+      ],
+      "printed_pages": [
+        79,
+        81,
+        83
+      ]
+    },
+    "I.18": {
+      "english_pdf_pages": [
+        107,
+        109,
+        111
+      ],
+      "printed_pages": [
+        83,
+        85,
+        87
+      ]
+    },
+    "I.19": {
+      "english_pdf_pages": [
+        113,
+        115
+      ],
+      "printed_pages": [
+        89,
+        91
+      ]
+    },
+    "I.20": {
+      "english_pdf_pages": [
+        115,
+        117,
+        119,
+        121
+      ],
+      "printed_pages": [
+        91,
+        93,
+        95,
+        97
+      ]
+    },
+    "I.21": {
+      "english_pdf_pages": [
+        123,
+        125,
+        127,
+        129,
+        131
+      ],
+      "printed_pages": [
+        99,
+        101,
+        103,
+        105,
+        107
+      ]
+    },
+    "I.22": {
+      "english_pdf_pages": [
+        133,
+        135
+      ],
+      "printed_pages": [
+        109,
+        111
+      ]
+    },
+    "I.23": {
+      "english_pdf_pages": [
+        135,
+        137
+      ],
+      "printed_pages": [
+        111,
+        113
+      ]
+    },
+    "I.24": {
+      "english_pdf_pages": [
+        137,
+        139,
+        141
+      ],
+      "printed_pages": [
+        113,
+        115,
+        117
+      ]
+    }
+  },
+  "start_boundary": "I.17 heading on PDF103/printed79; prior I.16 paragraph not recounted",
+  "end_boundary": "End of I.24 above BOOK II heading on PDF141/printed117; the shared-page Book II body is not counted read",
+  "facing_pages_checked_for_English_notes": [
+    104,
+    106,
+    108,
+    110,
+    112,
+    114,
+    116,
+    118,
+    120,
+    122,
+    124,
+    126,
+    128,
+    130,
+    132,
+    134,
+    136,
+    138,
+    140
+  ],
+  "table_visual_checks": [
+    120,
+    121,
+    130,
+    131
+  ],
+  "other_visual_checks": [
+    119,
+    122,
+    124,
+    128,
+    132,
+    134,
+    136,
+    137,
+    138,
+    140,
+    141
+  ],
+  "not_claimed": [
+    "Independent Greek translation",
+    "Full Latin/Greek critical-apparatus collation",
+    "Full historical introduction audit",
+    "BooksII-IV read",
+    "Person predictions or empirical efficacy"
+  ],
+  "source_records_added": 53,
+  "table_cells_visually_transcribed": 120,
+  "chaldean_day_night_cells_computed_from_source_recipe": 120,
+  "source_rules_sha256": "26721b669ddfb50e27c297fc023b8f3a384663c032023fd875020a6014dc39e0",
+  "terms_tables_sha256": "d746542262f44c5c009d9cc1479020baa405d724e9e5295268824ab0de0a419e",
+  "exposure": "Existing context contains historical participants; no new participant source/outcome was opened, and this is not an independently blinded person experiment.",
+  "ocr_policy": "Existing Ptolemy text layer plus page images; user-supplied Rhetorius OCR; no new OCR run."
+}

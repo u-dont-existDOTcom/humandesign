@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "status": "TARGETED_CROSS_SOURCE_PASS_NOT_FULL_RHETORIUS_AUDIT",
+  "ptolemy_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "rhetorius_pdf_sha256": "fa587dd2b04245c63198c9438c9edd9f8164b0a165b824f386e4c890f3dd5e86",
+  "rhetorius_ocr_sha256": "40e9079274d6ced431a8b48d8105ad3d0b830a877acfedd54c73dcff8362d599",
+  "source_selection_reason": "Definitions encountered in consecutive Ptolemy reading and supplied OCR, not participant outcome fitting",
+  "rhetorius_scope_read_for_comparison": [
+    "chapter9",
+    "chapter10 opening definitions",
+    "chapter18",
+    "chapter29",
+    "chapter43"
+  ],
+  "records": [
+    {
+      "id": "PT_RH_01",
+      "topic": "Twelfth-parts: reporting versus endorsing",
+      "ptolemy": {
+        "chapter": "I.22",
+        "pdf_pages": [
+          133
+        ],
+        "position": "Reports 2.5-degree places and degree allocations, then rejects/omits these finer schemes."
+      },
+      "rhetorius": {
+        "chapter": "18",
+        "ocr_segments": [
+          20,
+          21
+        ],
+        "printed_pages": [
+          17,
+          18
+        ],
+        "position": "Calls dodecatemories necessary, compares x12 and x13, favors x12/2.5-degree agreement and attributes that rule to Ptolemy."
+      },
+      "relation": "ADOPTION_CONTRADICTION_WITH_PARTIAL_DESCRIPTION_OVERLAP",
+      "action": "Retain Rhetorius technique for its own source profile. Ptolemy's description is not an endorsement. Do not claim two agreeing independent authorities."
+    },
+    {
+      "id": "PT_RH_02",
+      "topic": "Triangle rulers",
+      "ptolemy": {
+        "chapter": "I.18",
+        "pdf_pages": [
+          107,
+          109,
+          111
+        ],
+        "position": "First three triangles specify day/night principals; fourth has Mars plus Venus(day)/Moon(night)."
+      },
+      "rhetorius": {
+        "chapter": "9",
+        "printed_pages": [
+          8,
+          9
+        ],
+        "ocr_segments": [
+          11,
+          12
+        ],
+        "position": "Each triangle has day/night/third-common rulers. Fourth gives Venus/Mars/Moon in those roles."
+      },
+      "relation": "PARTLY_SHARED_DISTINCT_ROLE_ASSIGNMENT",
+      "action": "Preserve typed roles. A third participating ruler, constant ruler and co-ruler are not silently equivalent."
+    },
+    {
+      "id": "PT_RH_03",
+      "topic": "Chariots",
+      "ptolemy": {
+        "chapter": "I.23",
+        "pdf_pages": [
+          135,
+          137
+        ],
+        "position": "Two or more familiarities with the containing place."
+      },
+      "rhetorius": {
+        "chapter": "43",
+        "printed_pages": [
+          25
+        ],
+        "ocr_segments": [
+          28
+        ],
+        "position": "Own domicile or exaltation or terms; rejoicing continues under the beams with stated benefic/malefic qualifications."
+      },
+      "relation": "THRESHOLD_AND_CONSEQUENT_DIFFERENCE",
+      "action": "Do not merge the OR condition into the Ptolemy two-or-more rule. The under-beams claim is Rhetorius-specific here."
+    },
+    {
+      "id": "PT_RH_04",
+      "topic": "Proper face is not a universal synonym for decan",
+      "ptolemy": {
+        "chapter": "I.23",
+        "pdf_pages": [
+          134,
+          135
+        ],
+        "position": "Luminary relation and orientation; a note records the stricter scholiast variant."
+      },
+      "rhetorius": {
+        "chapters": [
+          "10",
+          "29"
+        ],
+        "printed_pages": [
+          9,
+          22
+        ],
+        "ocr_segments": [
+          12,
+          25
+        ],
+        "position": "Uses face with decans in chapter10 and proper face with luminary/domicile relations in chapter29."
+      },
+      "relation": "CONTEXT_DEPENDENT_TERMINOLOGY",
+      "action": "Namespace the definitions by chapter/meaning. Do not collapse the two uses into one boolean."
+    }
+  ],
+  "runtime_rule_promotions": 0
+}

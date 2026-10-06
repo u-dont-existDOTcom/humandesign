@@ -1,0 +1,1464 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-10-06",
+  "status": "OWNER_OCR_ACCEPTED_AS_READING_AID; COPY_SPECIFIC_GAPS_NOT_A_BLOCKER",
+  "owner_statement": "the pages are in the pdf, i think your ocr tool was failing. i OCR'd it for you. continue",
+  "file": {
+    "name": "rhetorius.txt",
+    "sha256": "40e9079274d6ced431a8b48d8105ad3d0b830a877acfedd54c73dcff8362d599",
+    "bytes": 393721,
+    "formfeed_segments_including_trailing_empty": 198,
+    "source_role": "User-provided OCR derivative, not a separate independent book witness",
+    "private_copy_filename": "RHETORIUS_HOLDEN_OWNER_OCR_20261006.txt",
+    "private_copy_sha256_verified": true
+  },
+  "reference_pdf": {
+    "sha256": "fa587dd2b04245c63198c9438c9edd9f8164b0a165b824f386e4c890f3dd5e86",
+    "pdf_pages": 198,
+    "same_as_prior_audited_attached_copy": true,
+    "current_drive_revision_fetched": false
+  },
+  "reading_route": "Use owner OCR for prose; verify tables, glyphs, ambiguous numerals, and apparent discontinuities against page images. Do not rerun whole-book OCR.",
+  "footer_only_parser_control": {
+    "reference_body_pages": 193,
+    "numeric_footers_matching_reference": 183,
+    "present_text_with_missing_or_unrecognized_numeric_footer": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      192
+    ],
+    "conclusion": "Missing text-layer footers do not imply missing PDF pages. The first nine printed page labels and page192 are not captured by this simple footer parser despite nonempty corresponding segments."
+  },
+  "directly_rechecked_transitions": [
+    {
+      "pdf_pages": [
+        46,
+        47
+      ],
+      "visible_printed_pages": [
+        43,
+        46
+      ],
+      "also_in_owner_ocr": true
+    },
+    {
+      "pdf_pages": [
+        100,
+        101
+      ],
+      "visible_printed_pages": [
+        103,
+        105
+      ],
+      "also_in_owner_ocr": true,
+      "body_observation": "Printed103 ends its main text mid-word; next PDF page starts a different mid-word continuation."
+    },
+    {
+      "pdf_pages": [
+        108,
+        109
+      ],
+      "visible_printed_pages": [
+        112,
+        114
+      ],
+      "also_in_owner_ocr": true
+    }
+  ],
+  "prior_global_footer_audit": {
+    "unmapped_numbered_pages_after_supplement": [
+      104,
+      113,
+      115,
+      116,
+      128,
+      129,
+      132,
+      140,
+      148,
+      160,
+      161,
+      170,
+      176,
+      177,
+      178,
+      181,
+      186,
+      191,
+      198,
+      201,
+      214,
+      218,
+      219
+    ],
+    "count": 23,
+    "scope": "The exact examined replacement and six-page supplement; not all copies, editions, or a new full-body collation."
+  },
+  "response_to_correction": {
+    "accepted": "The OCR is readable. Parser limitations must not be mistaken for source loss, and available reading continues.",
+    "not_established": "The OCR does not itself supply text for the rechecked copy-specific gaps or establish completeness of an alternative PDF.",
+    "wording_repair": "Use copy-specific page/continuity gap instead of an unqualified statement that the book lacks pages. Preserve the earlier audit as evidence, not as a claim about every possible copy."
+  },
+  "raw_source_committed": false,
+  "ocr_run_by_assistant_this_turn": false,
+  "footer_comparison": [
+    {
+      "pdf_page": 4,
+      "prior_visually_mapped_printed_page": 1,
+      "ocr_numeric_footer": null,
+      "text_segment_nonempty": true,
+      "footer_matches": false
+    },
+    {
+      "pdf_page": 5,
+      "prior_visually_mapped_printed_page": 2,
+      "ocr_numeric_footer": null,
+      "text_segment_nonempty": true,
+      "footer_matches": false
+    },
+    {
+      "pdf_page": 6,
+      "prior_visually_mapped_printed_page": 3,
+      "ocr_numeric_footer": null,
+      "text_segment_nonempty": true,
+      "footer_matches": false
+    },
+    {
+      "pdf_page": 7,
+      "prior_visually_mapped_printed_page": 4,
+      "ocr_numeric_footer": null,
+      "text_segment_nonempty": true,
+      "footer_matches": false
+    },
+    {
+      "pdf_page": 8,
+      "prior_visually_mapped_printed_page": 5,
+      "ocr_numeric_footer": null,
+      "text_segment_nonempty": true,
+      "footer_matches": false
+    },
+    {
+      "pdf_page": 9,
+      "prior_visually_mapped_printed_page": 6,
+      "ocr_numeric_footer": null,
+      "text_segment_nonempty": true,
+      "footer_matches": false
+    },
+    {
+      "pdf_page": 10,
+      "prior_visually_mapped_printed_page": 7,
+      "ocr_numeric_footer": null,
+      "text_segment_nonempty": true,
+      "footer_matches": false
+    },
+    {
+      "pdf_page": 11,
+      "prior_visually_mapped_printed_page": 8,
+      "ocr_numeric_footer": null,
+      "text_segment_nonempty": true,
+      "footer_matches": false
+    },
+    {
+      "pdf_page": 12,
+      "prior_visually_mapped_printed_page": 9,
+      "ocr_numeric_footer": null,
+      "text_segment_nonempty": true,
+      "footer_matches": false
+    },
+    {
+      "pdf_page": 13,
+      "prior_visually_mapped_printed_page": 10,
+      "ocr_numeric_footer": 10,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 14,
+      "prior_visually_mapped_printed_page": 11,
+      "ocr_numeric_footer": 11,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 15,
+      "prior_visually_mapped_printed_page": 12,
+      "ocr_numeric_footer": 12,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 16,
+      "prior_visually_mapped_printed_page": 13,
+      "ocr_numeric_footer": 13,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 17,
+      "prior_visually_mapped_printed_page": 14,
+      "ocr_numeric_footer": 14,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 18,
+      "prior_visually_mapped_printed_page": 15,
+      "ocr_numeric_footer": 15,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 19,
+      "prior_visually_mapped_printed_page": 16,
+      "ocr_numeric_footer": 16,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 20,
+      "prior_visually_mapped_printed_page": 17,
+      "ocr_numeric_footer": 17,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 21,
+      "prior_visually_mapped_printed_page": 18,
+      "ocr_numeric_footer": 18,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 22,
+      "prior_visually_mapped_printed_page": 19,
+      "ocr_numeric_footer": 19,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 23,
+      "prior_visually_mapped_printed_page": 20,
+      "ocr_numeric_footer": 20,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 24,
+      "prior_visually_mapped_printed_page": 21,
+      "ocr_numeric_footer": 21,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 25,
+      "prior_visually_mapped_printed_page": 22,
+      "ocr_numeric_footer": 22,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 26,
+      "prior_visually_mapped_printed_page": 23,
+      "ocr_numeric_footer": 23,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 27,
+      "prior_visually_mapped_printed_page": 24,
+      "ocr_numeric_footer": 24,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 28,
+      "prior_visually_mapped_printed_page": 25,
+      "ocr_numeric_footer": 25,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 29,
+      "prior_visually_mapped_printed_page": 26,
+      "ocr_numeric_footer": 26,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 30,
+      "prior_visually_mapped_printed_page": 27,
+      "ocr_numeric_footer": 27,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 31,
+      "prior_visually_mapped_printed_page": 28,
+      "ocr_numeric_footer": 28,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 32,
+      "prior_visually_mapped_printed_page": 29,
+      "ocr_numeric_footer": 29,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 33,
+      "prior_visually_mapped_printed_page": 30,
+      "ocr_numeric_footer": 30,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 34,
+      "prior_visually_mapped_printed_page": 31,
+      "ocr_numeric_footer": 31,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 35,
+      "prior_visually_mapped_printed_page": 32,
+      "ocr_numeric_footer": 32,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 36,
+      "prior_visually_mapped_printed_page": 33,
+      "ocr_numeric_footer": 33,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 37,
+      "prior_visually_mapped_printed_page": 34,
+      "ocr_numeric_footer": 34,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 38,
+      "prior_visually_mapped_printed_page": 35,
+      "ocr_numeric_footer": 35,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 39,
+      "prior_visually_mapped_printed_page": 36,
+      "ocr_numeric_footer": 36,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 40,
+      "prior_visually_mapped_printed_page": 37,
+      "ocr_numeric_footer": 37,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 41,
+      "prior_visually_mapped_printed_page": 38,
+      "ocr_numeric_footer": 38,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 42,
+      "prior_visually_mapped_printed_page": 39,
+      "ocr_numeric_footer": 39,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 43,
+      "prior_visually_mapped_printed_page": 40,
+      "ocr_numeric_footer": 40,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 44,
+      "prior_visually_mapped_printed_page": 41,
+      "ocr_numeric_footer": 41,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 45,
+      "prior_visually_mapped_printed_page": 42,
+      "ocr_numeric_footer": 42,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 46,
+      "prior_visually_mapped_printed_page": 43,
+      "ocr_numeric_footer": 43,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 47,
+      "prior_visually_mapped_printed_page": 46,
+      "ocr_numeric_footer": 46,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 48,
+      "prior_visually_mapped_printed_page": 47,
+      "ocr_numeric_footer": 47,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 49,
+      "prior_visually_mapped_printed_page": 49,
+      "ocr_numeric_footer": 49,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 50,
+      "prior_visually_mapped_printed_page": 50,
+      "ocr_numeric_footer": 50,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 51,
+      "prior_visually_mapped_printed_page": 53,
+      "ocr_numeric_footer": 53,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 52,
+      "prior_visually_mapped_printed_page": 54,
+      "ocr_numeric_footer": 54,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 53,
+      "prior_visually_mapped_printed_page": 55,
+      "ocr_numeric_footer": 55,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 54,
+      "prior_visually_mapped_printed_page": 56,
+      "ocr_numeric_footer": 56,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 55,
+      "prior_visually_mapped_printed_page": 57,
+      "ocr_numeric_footer": 57,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 56,
+      "prior_visually_mapped_printed_page": 58,
+      "ocr_numeric_footer": 58,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 57,
+      "prior_visually_mapped_printed_page": 59,
+      "ocr_numeric_footer": 59,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 58,
+      "prior_visually_mapped_printed_page": 60,
+      "ocr_numeric_footer": 60,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 59,
+      "prior_visually_mapped_printed_page": 61,
+      "ocr_numeric_footer": 61,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 60,
+      "prior_visually_mapped_printed_page": 62,
+      "ocr_numeric_footer": 62,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 61,
+      "prior_visually_mapped_printed_page": 63,
+      "ocr_numeric_footer": 63,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 62,
+      "prior_visually_mapped_printed_page": 64,
+      "ocr_numeric_footer": 64,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 63,
+      "prior_visually_mapped_printed_page": 65,
+      "ocr_numeric_footer": 65,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 64,
+      "prior_visually_mapped_printed_page": 66,
+      "ocr_numeric_footer": 66,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 65,
+      "prior_visually_mapped_printed_page": 67,
+      "ocr_numeric_footer": 67,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 66,
+      "prior_visually_mapped_printed_page": 68,
+      "ocr_numeric_footer": 68,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 67,
+      "prior_visually_mapped_printed_page": 69,
+      "ocr_numeric_footer": 69,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 68,
+      "prior_visually_mapped_printed_page": 70,
+      "ocr_numeric_footer": 70,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 69,
+      "prior_visually_mapped_printed_page": 71,
+      "ocr_numeric_footer": 71,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 70,
+      "prior_visually_mapped_printed_page": 72,
+      "ocr_numeric_footer": 72,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 71,
+      "prior_visually_mapped_printed_page": 73,
+      "ocr_numeric_footer": 73,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 72,
+      "prior_visually_mapped_printed_page": 74,
+      "ocr_numeric_footer": 74,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 73,
+      "prior_visually_mapped_printed_page": 75,
+      "ocr_numeric_footer": 75,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 74,
+      "prior_visually_mapped_printed_page": 76,
+      "ocr_numeric_footer": 76,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 75,
+      "prior_visually_mapped_printed_page": 77,
+      "ocr_numeric_footer": 77,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 76,
+      "prior_visually_mapped_printed_page": 78,
+      "ocr_numeric_footer": 78,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 77,
+      "prior_visually_mapped_printed_page": 79,
+      "ocr_numeric_footer": 79,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 78,
+      "prior_visually_mapped_printed_page": 80,
+      "ocr_numeric_footer": 80,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 79,
+      "prior_visually_mapped_printed_page": 82,
+      "ocr_numeric_footer": 82,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 80,
+      "prior_visually_mapped_printed_page": 83,
+      "ocr_numeric_footer": 83,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 81,
+      "prior_visually_mapped_printed_page": 84,
+      "ocr_numeric_footer": 84,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 82,
+      "prior_visually_mapped_printed_page": 85,
+      "ocr_numeric_footer": 85,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 83,
+      "prior_visually_mapped_printed_page": 86,
+      "ocr_numeric_footer": 86,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 84,
+      "prior_visually_mapped_printed_page": 87,
+      "ocr_numeric_footer": 87,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 85,
+      "prior_visually_mapped_printed_page": 88,
+      "ocr_numeric_footer": 88,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 86,
+      "prior_visually_mapped_printed_page": 89,
+      "ocr_numeric_footer": 89,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 87,
+      "prior_visually_mapped_printed_page": 90,
+      "ocr_numeric_footer": 90,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 88,
+      "prior_visually_mapped_printed_page": 91,
+      "ocr_numeric_footer": 91,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 89,
+      "prior_visually_mapped_printed_page": 92,
+      "ocr_numeric_footer": 92,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 90,
+      "prior_visually_mapped_printed_page": 93,
+      "ocr_numeric_footer": 93,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 91,
+      "prior_visually_mapped_printed_page": 94,
+      "ocr_numeric_footer": 94,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 92,
+      "prior_visually_mapped_printed_page": 95,
+      "ocr_numeric_footer": 95,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 93,
+      "prior_visually_mapped_printed_page": 96,
+      "ocr_numeric_footer": 96,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 94,
+      "prior_visually_mapped_printed_page": 97,
+      "ocr_numeric_footer": 97,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 95,
+      "prior_visually_mapped_printed_page": 98,
+      "ocr_numeric_footer": 98,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 96,
+      "prior_visually_mapped_printed_page": 99,
+      "ocr_numeric_footer": 99,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 97,
+      "prior_visually_mapped_printed_page": 100,
+      "ocr_numeric_footer": 100,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 98,
+      "prior_visually_mapped_printed_page": 101,
+      "ocr_numeric_footer": 101,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 99,
+      "prior_visually_mapped_printed_page": 102,
+      "ocr_numeric_footer": 102,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 100,
+      "prior_visually_mapped_printed_page": 103,
+      "ocr_numeric_footer": 103,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 101,
+      "prior_visually_mapped_printed_page": 105,
+      "ocr_numeric_footer": 105,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 102,
+      "prior_visually_mapped_printed_page": 106,
+      "ocr_numeric_footer": 106,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 103,
+      "prior_visually_mapped_printed_page": 107,
+      "ocr_numeric_footer": 107,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 104,
+      "prior_visually_mapped_printed_page": 108,
+      "ocr_numeric_footer": 108,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 105,
+      "prior_visually_mapped_printed_page": 109,
+      "ocr_numeric_footer": 109,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 106,
+      "prior_visually_mapped_printed_page": 110,
+      "ocr_numeric_footer": 110,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 107,
+      "prior_visually_mapped_printed_page": 111,
+      "ocr_numeric_footer": 111,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 108,
+      "prior_visually_mapped_printed_page": 112,
+      "ocr_numeric_footer": 112,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 109,
+      "prior_visually_mapped_printed_page": 114,
+      "ocr_numeric_footer": 114,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 110,
+      "prior_visually_mapped_printed_page": 117,
+      "ocr_numeric_footer": 117,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 111,
+      "prior_visually_mapped_printed_page": 118,
+      "ocr_numeric_footer": 118,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 112,
+      "prior_visually_mapped_printed_page": 119,
+      "ocr_numeric_footer": 119,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 113,
+      "prior_visually_mapped_printed_page": 120,
+      "ocr_numeric_footer": 120,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 114,
+      "prior_visually_mapped_printed_page": 121,
+      "ocr_numeric_footer": 121,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 115,
+      "prior_visually_mapped_printed_page": 122,
+      "ocr_numeric_footer": 122,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 116,
+      "prior_visually_mapped_printed_page": 123,
+      "ocr_numeric_footer": 123,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 117,
+      "prior_visually_mapped_printed_page": 124,
+      "ocr_numeric_footer": 124,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 118,
+      "prior_visually_mapped_printed_page": 125,
+      "ocr_numeric_footer": 125,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 119,
+      "prior_visually_mapped_printed_page": 126,
+      "ocr_numeric_footer": 126,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 120,
+      "prior_visually_mapped_printed_page": 127,
+      "ocr_numeric_footer": 127,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 121,
+      "prior_visually_mapped_printed_page": 130,
+      "ocr_numeric_footer": 130,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 122,
+      "prior_visually_mapped_printed_page": 131,
+      "ocr_numeric_footer": 131,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 123,
+      "prior_visually_mapped_printed_page": 133,
+      "ocr_numeric_footer": 133,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 124,
+      "prior_visually_mapped_printed_page": 134,
+      "ocr_numeric_footer": 134,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 125,
+      "prior_visually_mapped_printed_page": 135,
+      "ocr_numeric_footer": 135,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 126,
+      "prior_visually_mapped_printed_page": 136,
+      "ocr_numeric_footer": 136,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 127,
+      "prior_visually_mapped_printed_page": 137,
+      "ocr_numeric_footer": 137,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 128,
+      "prior_visually_mapped_printed_page": 138,
+      "ocr_numeric_footer": 138,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 129,
+      "prior_visually_mapped_printed_page": 139,
+      "ocr_numeric_footer": 139,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 130,
+      "prior_visually_mapped_printed_page": 141,
+      "ocr_numeric_footer": 141,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 131,
+      "prior_visually_mapped_printed_page": 142,
+      "ocr_numeric_footer": 142,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 132,
+      "prior_visually_mapped_printed_page": 143,
+      "ocr_numeric_footer": 143,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 133,
+      "prior_visually_mapped_printed_page": 144,
+      "ocr_numeric_footer": 144,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 134,
+      "prior_visually_mapped_printed_page": 145,
+      "ocr_numeric_footer": 145,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 135,
+      "prior_visually_mapped_printed_page": 146,
+      "ocr_numeric_footer": 146,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 136,
+      "prior_visually_mapped_printed_page": 147,
+      "ocr_numeric_footer": 147,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 137,
+      "prior_visually_mapped_printed_page": 149,
+      "ocr_numeric_footer": 149,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 138,
+      "prior_visually_mapped_printed_page": 150,
+      "ocr_numeric_footer": 150,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 139,
+      "prior_visually_mapped_printed_page": 151,
+      "ocr_numeric_footer": 151,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 140,
+      "prior_visually_mapped_printed_page": 152,
+      "ocr_numeric_footer": 152,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 141,
+      "prior_visually_mapped_printed_page": 153,
+      "ocr_numeric_footer": 153,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 142,
+      "prior_visually_mapped_printed_page": 154,
+      "ocr_numeric_footer": 154,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 143,
+      "prior_visually_mapped_printed_page": 155,
+      "ocr_numeric_footer": 155,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 144,
+      "prior_visually_mapped_printed_page": 156,
+      "ocr_numeric_footer": 156,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 145,
+      "prior_visually_mapped_printed_page": 157,
+      "ocr_numeric_footer": 157,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 146,
+      "prior_visually_mapped_printed_page": 158,
+      "ocr_numeric_footer": 158,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 147,
+      "prior_visually_mapped_printed_page": 159,
+      "ocr_numeric_footer": 159,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 148,
+      "prior_visually_mapped_printed_page": 162,
+      "ocr_numeric_footer": 162,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 149,
+      "prior_visually_mapped_printed_page": 163,
+      "ocr_numeric_footer": 163,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 150,
+      "prior_visually_mapped_printed_page": 164,
+      "ocr_numeric_footer": 164,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 151,
+      "prior_visually_mapped_printed_page": 165,
+      "ocr_numeric_footer": 165,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 152,
+      "prior_visually_mapped_printed_page": 166,
+      "ocr_numeric_footer": 166,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 153,
+      "prior_visually_mapped_printed_page": 167,
+      "ocr_numeric_footer": 167,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 154,
+      "prior_visually_mapped_printed_page": 168,
+      "ocr_numeric_footer": 168,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 155,
+      "prior_visually_mapped_printed_page": 169,
+      "ocr_numeric_footer": 169,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 156,
+      "prior_visually_mapped_printed_page": 171,
+      "ocr_numeric_footer": 171,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 157,
+      "prior_visually_mapped_printed_page": 172,
+      "ocr_numeric_footer": 172,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 158,
+      "prior_visually_mapped_printed_page": 173,
+      "ocr_numeric_footer": 173,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 159,
+      "prior_visually_mapped_printed_page": 174,
+      "ocr_numeric_footer": 174,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 160,
+      "prior_visually_mapped_printed_page": 175,
+      "ocr_numeric_footer": 175,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 161,
+      "prior_visually_mapped_printed_page": 179,
+      "ocr_numeric_footer": 179,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 162,
+      "prior_visually_mapped_printed_page": 180,
+      "ocr_numeric_footer": 180,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 163,
+      "prior_visually_mapped_printed_page": 182,
+      "ocr_numeric_footer": 182,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 164,
+      "prior_visually_mapped_printed_page": 183,
+      "ocr_numeric_footer": 183,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 165,
+      "prior_visually_mapped_printed_page": 184,
+      "ocr_numeric_footer": 184,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 166,
+      "prior_visually_mapped_printed_page": 185,
+      "ocr_numeric_footer": 185,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 167,
+      "prior_visually_mapped_printed_page": 187,
+      "ocr_numeric_footer": 187,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 168,
+      "prior_visually_mapped_printed_page": 188,
+      "ocr_numeric_footer": 188,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 169,
+      "prior_visually_mapped_printed_page": 189,
+      "ocr_numeric_footer": 189,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 170,
+      "prior_visually_mapped_printed_page": 190,
+      "ocr_numeric_footer": 190,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 171,
+      "prior_visually_mapped_printed_page": 192,
+      "ocr_numeric_footer": null,
+      "text_segment_nonempty": true,
+      "footer_matches": false
+    },
+    {
+      "pdf_page": 172,
+      "prior_visually_mapped_printed_page": 193,
+      "ocr_numeric_footer": 193,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 173,
+      "prior_visually_mapped_printed_page": 194,
+      "ocr_numeric_footer": 194,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 174,
+      "prior_visually_mapped_printed_page": 195,
+      "ocr_numeric_footer": 195,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 175,
+      "prior_visually_mapped_printed_page": 196,
+      "ocr_numeric_footer": 196,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 176,
+      "prior_visually_mapped_printed_page": 197,
+      "ocr_numeric_footer": 197,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 177,
+      "prior_visually_mapped_printed_page": 199,
+      "ocr_numeric_footer": 199,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 178,
+      "prior_visually_mapped_printed_page": 200,
+      "ocr_numeric_footer": 200,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 179,
+      "prior_visually_mapped_printed_page": 202,
+      "ocr_numeric_footer": 202,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 180,
+      "prior_visually_mapped_printed_page": 203,
+      "ocr_numeric_footer": 203,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 181,
+      "prior_visually_mapped_printed_page": 204,
+      "ocr_numeric_footer": 204,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 182,
+      "prior_visually_mapped_printed_page": 205,
+      "ocr_numeric_footer": 205,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 183,
+      "prior_visually_mapped_printed_page": 206,
+      "ocr_numeric_footer": 206,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 184,
+      "prior_visually_mapped_printed_page": 207,
+      "ocr_numeric_footer": 207,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 185,
+      "prior_visually_mapped_printed_page": 208,
+      "ocr_numeric_footer": 208,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 186,
+      "prior_visually_mapped_printed_page": 209,
+      "ocr_numeric_footer": 209,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 187,
+      "prior_visually_mapped_printed_page": 210,
+      "ocr_numeric_footer": 210,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 188,
+      "prior_visually_mapped_printed_page": 211,
+      "ocr_numeric_footer": 211,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 189,
+      "prior_visually_mapped_printed_page": 212,
+      "ocr_numeric_footer": 212,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 190,
+      "prior_visually_mapped_printed_page": 213,
+      "ocr_numeric_footer": 213,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 191,
+      "prior_visually_mapped_printed_page": 215,
+      "ocr_numeric_footer": 215,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 192,
+      "prior_visually_mapped_printed_page": 216,
+      "ocr_numeric_footer": 216,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 193,
+      "prior_visually_mapped_printed_page": 217,
+      "ocr_numeric_footer": 217,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 194,
+      "prior_visually_mapped_printed_page": 220,
+      "ocr_numeric_footer": 220,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 195,
+      "prior_visually_mapped_printed_page": 221,
+      "ocr_numeric_footer": 221,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    },
+    {
+      "pdf_page": 196,
+      "prior_visually_mapped_printed_page": 222,
+      "ocr_numeric_footer": 222,
+      "text_segment_nonempty": true,
+      "footer_matches": true
+    }
+  ]
+}

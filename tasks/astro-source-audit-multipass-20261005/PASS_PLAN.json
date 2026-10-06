@@ -25,7 +25,7 @@
     {
       "id": "P2",
       "title": "Map every section",
-      "status": "PTOLEMY_61_INDEXED; I_1_TO_I_16_READ; 45_UNREAD",
+      "status": "PTOLEMY_61_INDEXED; ALL24_BOOK_I_ENGLISH_SECTIONS_READ_MAPPED",
       "output": [
         "SECTION_DISCOVERY.json"
       ],
@@ -34,7 +34,7 @@
     {
       "id": "P3",
       "title": "Read and extract conditional rules",
-      "status": "B01_AND_B01B_COMPLETE: 56_SOURCE_RECORDS_PLUS_95_STAR_GROUP_TABLE_ENTRIES",
+      "status": "BOOK_I_COMPLETE_109_SOURCE_RECORDS; OTHER_PTOLEMY_BOOKS_UNREAD",
       "output": [
         "per-source RuleSpecs and unresolved-term ledger"
       ],
@@ -43,7 +43,7 @@
     {
       "id": "P4",
       "title": "Reconcile authors and test calculations",
-      "status": "49_ISOLATED_DEFINITION_TESTS; CROSS_AUTHOR_RECONCILIATION_PENDING",
+      "status": "85_SOURCE_DEFINITION_TESTS; FOUR_TARGETED_RHETORIUS_COMPARISONS; FULL_RECONCILIATION_PENDING",
       "output": [
         "cross-source comparison and worked-example fixtures"
       ],
@@ -66,7 +66,7 @@
         "PTOLEMY1940_REPRINT1964"
       ],
       "scope": "Book I foundational vocabulary and conditions first; then natal III/IV; Book II separately mundane. All 61 TOC sections remain accounted for.",
-      "next": "B01c: Ptolemy I.17-I.24, starting English PDF103 / printed79; preserve source tables and variants; stop before BookII.",
+      "next": "III.1-III.3, English PDF245/printed221 through end III.3 before III.4 on shared PDF265/printed241",
       "completed_subbatches": [
         {
           "id": "B01",
@@ -82,6 +82,13 @@
           "fixed_star_descriptive_groups": 95,
           "new_predictions": 0,
           "tests": 31
+        },
+        {
+          "id": "B01c",
+          "scope": "English I17-I24 and bounded notes; targeted Rhetorius comparisons",
+          "source_records": 53,
+          "new_predictions": 0,
+          "tests": 36
         }
       ]
     },
