@@ -1,11 +1,11 @@
-# Tendency-first repair — current task
+# Tendency-first release — verified, editor application remaining
 
 Task: tendency-first-elicitation-20261006.
 Branch: fix/tendency-first-review-20261006-1839.
 Checkpoint: tasks/tendency-first-elicitation-20261006/PLAN.md.
 Completion command: PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q
 
-Earlier hybrid drafts were not active. This task separately versions new TF1 questions and keeps v7 history unchanged; live review and GPT collection must both use the policy. Skips suppress successors. Prior entries below are historical.
+The tendency-first policy is merged and live. Final evidence: tasks/tendency-first-elicitation-20261006/RESULT.md and LIVE-TENDENCY-CANARY-POSTFIX.json. All 181 participant tests and 1,018 repository tests passed (six astronomy-data skips). The full synthetic live review reached ready after one skipped general-tendency clarification. Package 2026-10-06.2-tendency-first is delivered to Downloads. Only the owner private-editor step remains: replace Instructions and add TENDENCY-FIRST-GUIDE-v1.json; keep six prior Knowledge files, Action and credential, then Update. No repeated meal question or main-interview restart. Prior entries below are historical.
 
 ---
 

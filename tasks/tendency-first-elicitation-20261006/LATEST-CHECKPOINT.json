@@ -1,0 +1,25 @@
+{
+  "owner_outcome": "ENGINEERING_COMPLETE_OWNER_EDITOR_APPLY_REMAINING",
+  "tested_and_deployed_commit": "6df272853fea549765b87ca8bd307856990b1f2c",
+  "deployment_id": "f9579339-d126-46e2-ac6a-38359f800e27",
+  "worker_release": "release.tendency-first-6df2728",
+  "live_test": "LIVE-TENDENCY-CANARY-POSTFIX.json",
+  "last_observed_stage": {
+    "elapsed_seconds": 249.0,
+    "status": "ready",
+    "stage": "ready",
+    "range": null,
+    "check_after_seconds": 0,
+    "guidance_present": true
+  },
+  "first_batch_count": [
+    1
+  ],
+  "ready": true,
+  "test_withdrawn": true,
+  "next_action": "Replace Instructions and add TENDENCY-FIRST-GUIDE-v1.json to the existing GPT; retain six prior Knowledge files, Action and credential; select Update.",
+  "private_gpt_editor_updated": false,
+  "package_version": "2026-10-06.2-tendency-first",
+  "owner_source_must_not_be_reinterviewed": true,
+  "merge_commit": "bc734f1f36d5b92daf87d8e0b8aa8eef3db155de"
+}

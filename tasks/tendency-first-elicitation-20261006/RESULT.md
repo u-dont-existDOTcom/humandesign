@@ -1,5 +1,7 @@
 # Tendency-first question selection — 2026-10-06
 
+**Current status: merged, deployed, and verified through a full synthetic live review. The update package is delivered; applying the two changes in the private GPT editor remains the owner-only step.**
+
 ## Diagnosis
 The October 1 question-alignment audit explicitly classified the meal-cost M11 scenario as a replacement candidate and drafted a direct general-pattern question. Later fast-review and intro/progress/recovery releases left that draft unactivated. The reviewer was therefore faithfully enforcing the old stimulus rather than implementing the requested tendency-first interview. Completing a scene was being accepted as information gain without requiring a material unresolved person-level pattern. Prior engineering/transport passes did not prove that requested elicitation behavior.
 
@@ -33,3 +35,12 @@ Two narrow deterministic reproductions failed before repair: explicit imported s
 The follow-up live fixture adds one substantive, entirely synthetic friendship-pattern answer. This permits a genuine source-grounded review rather than attempting to certify an all-unknown source. The original failed fixture/report remains intact. Completion of the new live test is recorded only in its actual returned report.
 
 Final post-repair verification: all 181 participant tests passed; the repository suite passed 1,018 tests with six astronomy-data skips; mypy passed across 220 source files. These results include typed skip preservation and rejection of historical stop control; a fresh live test is still required for the changed deployment.
+
+## Final live and delivery closeout
+The patched API and local reviewer were deployed from 6df272853fea549765b87ca8bd307856990b1f2c. The independent service health, successful Railway deployment, exact worker file hashes and unchanged Action schema were checked. The application and GPT-package bytes in the integrated branch match the tested commit.
+
+The follow-up live test used 73 explicitly synthetic source turns, including one substantive friendship-pattern answer, one unresolved general-arrangement answer, and explicit unknowns elsewhere. It returned a single general-tendency clarification in 54.78 seconds: “When sharing work or costs with someone, what approach do you usually use to work out an arrangement?” The test skipped that question. No further batch was issued; reconciliation, omission checking, full synthesis and final independent admission reached ready in approximately 249 seconds (4 minutes 9 seconds), including polling. The test record was then withdrawn. These are observed timings for this fixture, not general turnaround guarantees. No real participant source was read, changed or submitted by this test.
+
+The existing stage-specific estimates remain, separate from answering effort and queue time. The original failed live report is preserved, and this success does not retroactively turn it into a pass. No cross-family or empirical personality validation is claimed.
+
+Delivery: `Life-Patterns-GPT-tendency-first-update-2026-10-06.zip` and its extracted folder are verified in the owner's Downloads directory. Version 2026-10-06.2-tendency-first. Replace Instructions and add `TENDENCY-FIRST-GUIDE-v1.json`; retain the existing six Knowledge files, Action and Bearer credential. The private editor has not been modified. The meal question already skipped by the owner is not a request to answer again, and no main-interview restart is required.
