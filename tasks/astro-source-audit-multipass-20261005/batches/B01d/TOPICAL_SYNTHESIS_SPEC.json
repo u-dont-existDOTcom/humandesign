@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "status": "SOURCE_SPECIFICATION_FOR_LATER_COMPILATION_NOT_RUNTIME_MODEL",
+  "source": "Ptolemy III.1–III.5, Robbins 1964 witness",
+  "nodes": [
+    {
+      "id": "SCOPE",
+      "instruction": "Distinguish universal/individual and initial/subsequent starting-points.",
+      "rule_ids": [
+        "PT.R64.III.01.R110",
+        "PT.R64.III.01.R112"
+      ]
+    },
+    {
+      "id": "TOPIC",
+      "instruction": "Select the subject and source-defined relevant place before a ruling planet.",
+      "rule_ids": [
+        "PT.R64.III.03.R131"
+      ]
+    },
+    {
+      "id": "FAMILIARITY",
+      "instruction": "Retain five distinct relation forms; preserve unknowns and source variants.",
+      "rule_ids": [
+        "PT.R64.III.02.R123"
+      ]
+    },
+    {
+      "id": "RULERS",
+      "instruction": "Compare topical claims; preserve co-rulership, not a single global chart score.",
+      "rule_ids": [
+        "PT.R64.III.03.R132"
+      ]
+    },
+    {
+      "id": "QUALITY",
+      "instruction": "Read the natures of rulers and relevant signs/places.",
+      "rule_ids": [
+        "PT.R64.III.03.R133"
+      ]
+    },
+    {
+      "id": "MAGNITUDE",
+      "instruction": "Evaluate cosmic and natal capacity separately from beneficence.",
+      "rule_ids": [
+        "PT.R64.III.03.R134"
+      ]
+    },
+    {
+      "id": "MIXTURE",
+      "instruction": "Compare opposing powers; equal joint rulers blend, separated rulers may sequence.",
+      "rule_ids": [
+        "PT.R64.III.04.R152",
+        "PT.R64.III.04.R153"
+      ]
+    },
+    {
+      "id": "TIMING",
+      "instruction": "Qualify a major timing factor by original topical familiarity, then examine relative solar/angular position. Exact timing requires further method.",
+      "rule_ids": [
+        "PT.R64.III.04.R154",
+        "PT.R64.III.03.R136"
+      ]
+    },
+    {
+      "id": "DERIVED",
+      "instruction": "Label parent/sibling significator-based reference frames explicitly; do not invent actual birth data.",
+      "rule_ids": [
+        "PT.R64.III.04.R151",
+        "PT.R64.III.05.R164"
+      ]
+    }
+  ],
+  "dependency_edges": [
+    [
+      "SCOPE",
+      "TOPIC"
+    ],
+    [
+      "TOPIC",
+      "FAMILIARITY"
+    ],
+    [
+      "FAMILIARITY",
+      "RULERS"
+    ],
+    [
+      "RULERS",
+      "QUALITY"
+    ],
+    [
+      "RULERS",
+      "MAGNITUDE"
+    ],
+    [
+      "QUALITY",
+      "MIXTURE"
+    ],
+    [
+      "MAGNITUDE",
+      "MIXTURE"
+    ],
+    [
+      "FAMILIARITY",
+      "TIMING"
+    ],
+    [
+      "MIXTURE",
+      "TIMING"
+    ],
+    [
+      "TOPIC",
+      "DERIVED"
+    ]
+  ],
+  "separate_outputs": [
+    "nature/quality",
+    "strength/magnitude",
+    "relative onset",
+    "subject identity",
+    "source uncertainty"
+  ],
+  "not_admitted": [
+    "global strongest planet as every topical ruler",
+    "Lilly face replacing phase/aspect",
+    "source-relative early/late treated as exact dates",
+    "derived parent reference presented as the parent's observed natal chart",
+    "failure of favorable testimony presented as proof of the contrary",
+    "modern medical or mortality prediction"
+  ]
+}

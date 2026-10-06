@@ -25,7 +25,7 @@
     {
       "id": "P2",
       "title": "Map every section",
-      "status": "PTOLEMY_61_INDEXED; ALL24_BOOK_I_ENGLISH_SECTIONS_READ_MAPPED",
+      "status": "PTOLEMY_61_INDEXED; ENGLISH_I24_AND_III5_READ_MAPPED",
       "output": [
         "SECTION_DISCOVERY.json"
       ],
@@ -34,7 +34,7 @@
     {
       "id": "P3",
       "title": "Read and extract conditional rules",
-      "status": "BOOK_I_COMPLETE_109_SOURCE_RECORDS; OTHER_PTOLEMY_BOOKS_UNREAD",
+      "status": "ENGLISH_I_COMPLETE_AND_III1_III5;164_SOURCE_RECORDS;REMAINDER_OPEN",
       "output": [
         "per-source RuleSpecs and unresolved-term ledger"
       ],
@@ -43,7 +43,7 @@
     {
       "id": "P4",
       "title": "Reconcile authors and test calculations",
-      "status": "85_SOURCE_DEFINITION_TESTS; FOUR_TARGETED_RHETORIUS_COMPARISONS; FULL_RECONCILIATION_PENDING",
+      "status": "108_SOURCE_DEFINITION_AND_INTEGRITY_TESTS;FOUR_PRIOR_RHETORIUS_COMPARISONS;FULL_RECONCILIATION_PENDING",
       "output": [
         "cross-source comparison and worked-example fixtures"
       ],
@@ -66,7 +66,7 @@
         "PTOLEMY1940_REPRINT1964"
       ],
       "scope": "Book I foundational vocabulary and conditions first; then natal III/IV; Book II separately mundane. All 61 TOC sections remain accounted for.",
-      "next": "III.1-III.3, English PDF245/printed221 through end III.3 before III.4 on shared PDF265/printed241",
+      "next": "III.6-III.9; start III.6 on English PDF279/printed255; stop before III.10 on shared PDF295/printed271",
       "completed_subbatches": [
         {
           "id": "B01",
@@ -89,6 +89,22 @@
           "source_records": 53,
           "new_predictions": 0,
           "tests": 36
+        },
+        {
+          "id": "B01d",
+          "scope": "English III.1-III.3, identified Robbins notes and scoped definition fragments",
+          "source_records": 27,
+          "new_predictions": 0,
+          "tests": 23,
+          "test_scope": "Shared new suite also covers B01e record integrity; count once."
+        },
+        {
+          "id": "B01e",
+          "scope": "English III.4-III.5, parental/sibling qualifications and topical mixture",
+          "source_records": 28,
+          "new_predictions": 0,
+          "tests": 0,
+          "test_scope": "Covered by B01d shared suite, not an additional 23 tests."
         }
       ]
     },

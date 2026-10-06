@@ -1,0 +1,1316 @@
+{
+  "schema_version": 2,
+  "batch_id": "B01e",
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "status": "BOUNDED_ENGLISH_SOURCE_AUDIT_NOT_MODEL_PROMOTION",
+  "chapters": [
+    "III.4",
+    "III.5"
+  ],
+  "records_count": 28,
+  "independent_predictions_count": 0,
+  "records_are_not_statistical_independence_units": true,
+  "records": [
+    {
+      "id": "PT.R64.III.04.R137",
+      "title": "Father and mother each have two natural significators",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          265
+        ],
+        "printed_support_pages": [
+          241
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "associated with the person of the father",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "topic": "parents"
+      },
+      "consequent": {
+        "father": [
+          "SUN",
+          "SATURN"
+        ],
+        "mother": [
+          "MOON",
+          "VENUS"
+        ],
+        "instruction": "Inspect their relations to each other and the other stars."
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "TOPIC_SIGNIFICATOR_DEFINITION",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.04.R138",
+      "title": "Parental fortune and rank require attendance and condition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          265,
+          267
+        ],
+        "printed_support_pages": [
+          241,
+          243
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "fortune and wealth",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "luminaries": "attended by beneficial and same-sect planets",
+        "locations": "same or following signs"
+      },
+      "consequent": "The source associates this with conspicuous parental circumstances, especially morning attendants for Sun and evening attendants for Moon, with the luminaries well placed.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "This passage's attendance definition is not automatically interchangeable with all doryphory definitions elsewhere."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.04.R139",
+      "title": "Saturn and Venus add a qualified happiness testimony",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          267
+        ],
+        "printed_support_pages": [
+          243
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "proper faces",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "parental_significators": "Saturn and Venus"
+      },
+      "consequent": "When in the orient and their proper faces, or at the angles, the text adds conspicuous happiness according to each parent's appropriate significator.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Logical grouping of the orient, face and angle clauses must remain explicit, not silently reduced to any favorable condition."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Proper face follows I.23; not an automatic decan synonym."
+      ]
+    },
+    {
+      "id": "PT.R64.III.04.R140",
+      "title": "Unattended luminaries and unfavorable significators",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          267
+        ],
+        "printed_support_pages": [
+          243
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "alone and without attendants",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "luminaries": "alone and unattended"
+      },
+      "consequent": "Low parental station and obscurity are indicated, especially if Venus or Saturn is not favorably situated.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.04.R141",
+      "title": "Wrong-sect or impaired attendance is intermediate, not a binary absence",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          267
+        ],
+        "printed_support_pages": [
+          243
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "moderate station and changing fortunes",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "attendance": "present but off-sect, or by ill-placed off-sect benefics"
+      },
+      "consequent": "Predict moderate station and changing fortunes; examples include Mars rising close after Sun and Saturn after Moon.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.04.R142",
+      "title": "Inheritance must be distinguished from parental wealth",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          267
+        ],
+        "printed_support_pages": [
+          243
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "patrimony intact",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "fortune_lot": "in agreement with favorable attendants of a luminary"
+      },
+      "consequent": "The source says the children receive the patrimony intact.",
+      "modifiers": [],
+      "source_exceptions": [
+        "For the adverse branch it requires disagreement/opposition AND absence of attendance or malefic attendance, and then calls the estate useless or harmful."
+      ],
+      "ambiguities": [
+        "Agreement is not numerically defined here; the Lot formula is deferred.",
+        "The printed note refers to III.12, whereas the later note in III.5 points to III.10; keep the discrepancy rather than silently editing the source."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.04.R143",
+      "title": "Favorable paternal longevity conditions retain a strength qualification",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          267,
+          269
+        ],
+        "printed_support_pages": [
+          243,
+          245
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "though it does not indicate a short life",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "any": [
+          {
+            "benefic": "Jupiter or Venus",
+            "relation": "aspect whatever to Sun AND Saturn"
+          },
+          {
+            "Saturn_to_Sun": [
+              "CONJUNCTION",
+              "SEXTILE",
+              "TRINE"
+            ]
+          }
+        ],
+        "strength": "both in power"
+      },
+      "consequent": "The author conjectures long paternal life. If they are weak, the meaning is not the same, but it does NOT thereby indicate short life.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Scope of both across the two alternatives requires care."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Historical source claim only; no mortality assurance for a living person."
+      ]
+    },
+    {
+      "id": "PT.R64.III.04.R144",
+      "title": "Paternal adversity is a conditional branch with different angular outcomes",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          269
+        ],
+        "printed_support_pages": [
+          245
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "if they are declining from the angles",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "prior_favorable_condition": "not present",
+        "any": [
+          "Mars overcomes Sun or Saturn",
+          "Mars rises in succession to them",
+          "Saturn squares or opposes Sun"
+        ]
+      },
+      "consequent": "Cadent conditions give paternal weakness; angular/succedent conditions give shortened life or injury. Ascendant/MC and their succedents are assigned the former; DSC/IC and their succedents the latter.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pronoun they and interaction with the preceding strength conditions must be resolved in any complete implementation."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "No modern diagnosis, risk probability, or exact death date follows from this record."
+      ]
+    },
+    {
+      "id": "PT.R64.III.04.R145",
+      "title": "Paternal adverse-event descriptions must retain alternatives",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          269
+        ],
+        "printed_support_pages": [
+          245
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "in the way described",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "condition": "the specified adverse relations of Mars/Saturn to the paternal significators"
+      },
+      "consequent": {
+        "Mars_to_Sun": "sudden death OR sight injury",
+        "Mars_to_Saturn": "peril of death OR chills and fever OR injury by cutting/cauterizing",
+        "Saturn_to_Sun": "death by disease and humoral illnesses"
+      },
+      "modifiers": [
+        "Robbins specifies square or opposition for the immediately referenced Mars relation."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "HISTORICAL_EVENT_DESCRIPTION",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not replace the source's alternatives with a particular modern accident or cardiac diagnosis.",
+        "Research-only/non-admitted for practical mortality or clinical forecasting."
+      ]
+    },
+    {
+      "id": "PT.R64.III.04.R146",
+      "title": "Overcoming requires a separately declared directional definition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          269
+        ],
+        "printed_support_pages": [
+          245
+        ],
+        "attribution_layer": "ROBBINS_CITING_ANONYMOUS_COMMENTATOR",
+        "passage_anchor": "stars are said to overcome",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "term": "overcome"
+      },
+      "consequent": "Robbins cites the anonymous commentator's lower-number-of-degrees account and right-over-left precedence.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Cannot safely implement as raw longitude less-than across Aries wrap or without sign/aspect conditions."
+      ],
+      "output_type": "TRANSLATOR_DEFINITION",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.04.R147",
+      "title": "Maternal favorable longevity has its own significators",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          271
+        ],
+        "printed_support_pages": [
+          247
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "In the case of the mother",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "any": [
+          {
+            "Jupiter": "any aspect to Moon AND Venus"
+          },
+          {
+            "Venus_to_Moon": [
+              "SEXTILE",
+              "TRINE",
+              "CONJUNCTION"
+            ]
+          }
+        ],
+        "strength": "in power"
+      },
+      "consequent": "The source signifies long maternal life.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Historical source claim only; not a modern longevity prediction."
+      ]
+    },
+    {
+      "id": "PT.R64.III.04.R148",
+      "title": "Maternal adversity is not a mechanical copy of the paternal branch",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          271
+        ],
+        "printed_support_pages": [
+          247
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "moon by herself",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "any": [
+          "Mars rises after, squares or opposes Moon or Venus",
+          "Saturn similarly regards Moon alone"
+        ]
+      },
+      "consequent": "Diminishing/cadent configurations threaten misfortune or sickness; increasing/angular configurations give short life or injury, distinguished by eastern versus western angles.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not add Saturn-to-Venus as though this sentence explicitly included it.",
+        "Increasing/diminishing here is not independently resolved to a universal motion/phase rule by this extraction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.04.R149",
+      "title": "Maternal adverse-event descriptions preserve phase and target differences",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          271
+        ],
+        "printed_support_pages": [
+          247
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "waxing moon",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "condition": "the preceding adverse configurations"
+      },
+      "consequent": {
+        "Mars_to_waxing_Moon": "sudden maternal death OR eyesight injury",
+        "Mars_to_waning_Moon": "death from abortions or similar events, and cutting/cauterizing injury",
+        "Mars_to_Venus": "fever, obscure illnesses and sudden disease attacks",
+        "Saturn_to_Moon_orient": "chills and fever",
+        "Saturn_to_Moon_occident": "uterine ulcers and cancers"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "HISTORICAL_EVENT_DESCRIPTION",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Retain historical medical vocabulary without inferring equivalence to modern diagnoses.",
+        "Do not apply these source claims to living parents as clinical or mortality forecasts."
+      ]
+    },
+    {
+      "id": "PT.R64.III.04.R150",
+      "title": "Event kind also depends on sign and preferred sect significator",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          271,
+          273
+        ],
+        "printed_support_pages": [
+          247,
+          249
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "by day particularly the sun",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "topic": "particular parental inquiry"
+      },
+      "consequent": {
+        "signs": "consider the signs of the planets assigned a causative role",
+        "day_focus": {
+          "father": "SUN",
+          "mother": "VENUS"
+        },
+        "night_focus": {
+          "father": "SATURN",
+          "mother": "MOON"
+        }
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Preferential attention is not a command to delete the other natural significator."
+      ],
+      "output_type": "TOPICAL_MODIFIER",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.04.R151",
+      "title": "A derived parental reference is not a newly observed parental birth chart",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          273
+        ],
+        "printed_support_pages": [
+          249
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "as though it were a nativity",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "topic": "further details of a parent"
+      },
+      "consequent": "Use the parental place of the sect as a horoscope and investigate as a natal scheme; Robbins's cited commentator identifies this as the significant planet.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "DERIVED_REFERENCE_METHOD",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Label the derived reference. Do not substitute an invented parental DOB/time or a universal 4th/10th-house rule."
+      ]
+    },
+    {
+      "id": "PT.R64.III.04.R152",
+      "title": "Conflicting rulers are compared for power, not discarded",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          273
+        ],
+        "printed_support_pages": [
+          249
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "bring about opposite effects",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "rulers": "different in nature or producing contrary effects"
+      },
+      "consequent": "Identify which have more claims through their relative power in the particular case, and use their natures to guide judgement.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No universal numerical formula for combining these claims is supplied."
+      ],
+      "output_type": "AUTHOR_CONFLICT_RESOLUTION",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.04.R153",
+      "title": "Equally weighted rulers may blend or succeed each other",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          273,
+          275
+        ],
+        "printed_support_pages": [
+          249,
+          251
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "when they are separated",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "rulership_claims": "equal"
+      },
+      "consequent": "When rulers are together, combine their natures; when separated, allocate their proper events in succession, first the more oriental and then the occidental.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Together/separated and chronological scale need explicit convention; do not assume numerical cancellation or invent dates."
+      ],
+      "output_type": "AUTHOR_SYNTHESIS_RULE",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.04.R154",
+      "title": "Natal topic relevance qualifies later timing factors",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.4",
+        "pdf_support_pages": [
+          275
+        ],
+        "printed_support_pages": [
+          251
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "no great influence",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "planet": "candidate influence on a specific topic"
+      },
+      "consequent": "A planet must originally have familiarity with the queried place to exert an important effect; one with no initial share has no great influence. Timing depends instead on its distance from Sun and cosmic angles, not original dominance alone.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "DEPENDENCY_AND_TIMING_ELIGIBILITY",
+      "dependency_groups": [
+        "PT.III.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Preserve the qualification no GREAT influence rather than turning it into literally no possible effect.",
+        "Do not activate every slow transit equally for every event topic."
+      ]
+    },
+    {
+      "id": "PT.R64.III.05.R155",
+      "title": "Siblings inquiry is bounded and not an exact-count recipe",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.5",
+        "pdf_support_pages": [
+          275
+        ],
+        "printed_support_pages": [
+          251
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "exact number",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "topic": "blood-brethren in this translation"
+      },
+      "consequent": "The author limits inquiry to the general subject and warns against seeking exact numbers and particulars beyond possibility.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The maternal reference must not be silently extended to adopted or all paternal half-sibling cases."
+      ],
+      "output_type": "SCOPE_LIMIT",
+      "dependency_groups": [
+        "PT.III.5.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.05.R156",
+      "title": "Sibling reference place has an explicit textual difficulty",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.5",
+        "pdf_support_pages": [
+          275,
+          277
+        ],
+        "printed_support_pages": [
+          251,
+          253
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "culminating sign",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "place_description": "culminating sign, the maternal place, containing Venus by day or Moon by night"
+      },
+      "consequent": "The same sign and its succeeding sign are described as the mother's children and hence the native's siblings. Robbins retains the manuscript reading but calls both it and Camerarius's alternative extremely difficult.",
+      "modifiers": [
+        "Camerarius inserts and before the maternal place; it is an alternative, not the adopted text."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not replace this with a generic third-house rule.",
+        "Do not silently choose between natal MC, a derived maternal culminating sign, or an additional independent maternal place."
+      ],
+      "output_type": "UNRESOLVED_REFERENCE_FRAME",
+      "dependency_groups": [
+        "PT.III.5.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.05.R157",
+      "title": "Benefic testimony gives relative sibling abundance",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.5",
+        "pdf_support_pages": [
+          277
+        ],
+        "printed_support_pages": [
+          253
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "abundance of brethren",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "place": "sibling place admitted under an explicit interpretation",
+        "benefics": "aspect it"
+      },
+      "consequent": "Conjecture abundance from the number of giving planets and whether their signs are simple or bicorporeal.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No complete exact integer mapping is supplied."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.5.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.05.R158",
+      "title": "Malefic overcoming or opposition gives relative scarcity",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.5",
+        "pdf_support_pages": [
+          277
+        ],
+        "printed_support_pages": [
+          253
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "dearth of brethren",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "malefics": "overcome or oppose the giving factors"
+      },
+      "consequent": "Sibling scarcity is indicated, particularly with Sun among them.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Pronoun references and the unresolved sibling place must remain qualified."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.5.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.05.R159",
+      "title": "First-born and first-reared are alternatives",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.5",
+        "pdf_support_pages": [
+          277
+        ],
+        "printed_support_pages": [
+          253
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "first-born or the first to be reared",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "opposition": "angular, especially at horoscope",
+        "planet_at_Ascendant": "Saturn or Mars"
+      },
+      "consequent": "Saturn gives first-born OR first-reared; Mars gives a reduced sibling number through death of others.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.5.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not equate birth order and surviving/reared sibling order.",
+        "Historical source only; not a mortality forecast."
+      ]
+    },
+    {
+      "id": "PT.R64.III.05.R160",
+      "title": "Sibling status and lifespan use different conditions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.5",
+        "pdf_support_pages": [
+          277
+        ],
+        "printed_support_pages": [
+          253
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "favourable mundane",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "giving_planets": "identified"
+      },
+      "consequent": "A favorable stated mundane position gives distinguished siblings, the reverse humble/inconspicuous; malefic overcoming or following gives short-lived siblings.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Robbins refers mundane back to III.3, where he distinguishes cosmic from natal. Do not silently translate this word into one universal house-strength convention."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.5.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not reinterpret social status as affection or moral worth."
+      ]
+    },
+    {
+      "id": "PT.R64.III.05.R161",
+      "title": "Sex and birth sequence use different frames",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.5",
+        "pdf_support_pages": [
+          277
+        ],
+        "printed_support_pages": [
+          253
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "male planets in the mundane sense",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "giving_planets": "identified"
+      },
+      "consequent": "Masculine/feminine planets in the stated mundane sense give males/females; farther-east givers indicate earlier siblings and farther-west later ones.",
+      "modifiers": [
+        "Robbins's note specifically gives horizon quadrants for the masculine sense."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No justification for substituting only natal planet gender or sign parity."
+      ],
+      "output_type": "HISTORICAL_CLASSIFICATION",
+      "dependency_groups": [
+        "PT.III.5.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not present historical astrological sex assignment as biological evidence."
+      ]
+    },
+    {
+      "id": "PT.R64.III.05.R162",
+      "title": "Friendship and co-residence are distinct outcomes",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.5",
+        "pdf_support_pages": [
+          277,
+          279
+        ],
+        "printed_support_pages": [
+          253,
+          255
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "live together",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "giving_planets": "in harmonious aspect to the ruler of the sibling place"
+      },
+      "consequent": "Siblings are friendly; an additional harmonious relation to the Lot of Fortune indicates living together.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.5.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not use co-residence as a substitute for affection, or infer one from the other."
+      ]
+    },
+    {
+      "id": "PT.R64.III.05.R163",
+      "title": "Sibling discord retains its own geometric alternative",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.5",
+        "pdf_support_pages": [
+          279
+        ],
+        "printed_support_pages": [
+          255
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "disjunct signs",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "relevant_relations": "disjunct signs or opposition"
+      },
+      "consequent": "The text describes quarrelsome, jealous and usually scheming siblings.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Preserve the relational targets from the preceding sentence rather than expanding this to every disjunct planet in the chart."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.III.5.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.05.R164",
+      "title": "Individual sibling detail uses a derived significator horoscope",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.5",
+        "pdf_support_pages": [
+          279
+        ],
+        "printed_support_pages": [
+          255
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "planet which gives brethren",
+        "locator_precision": "English paragraphs at the listed printed/PDF pages; short anchor locates the passage; paraphrases are not quotations"
+      },
+      "source_genre": "NATAL_METHOD_AND_TOPICAL_JUDGEMENT",
+      "reference_frame": "This edition of historical geocentric astrology; source claims are preserved, not endorsed as empirical or medical facts.",
+      "antecedents": {
+        "further_inquiry": "individual sibling details"
+      },
+      "consequent": "Take the planet giving the sibling as horoscope and examine the remaining factors as in a nativity.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "DERIVED_REFERENCE_METHOD",
+      "dependency_groups": [
+        "PT.III.5.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No new person-level score, clinical/forensic inference, event probability or numerical predictive weight supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any helper below is an explicitly scoped definition fragment, not the complete source method",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "This is not a separately calculated actual birth chart of that sibling."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-10-06",
+  "batch_ids": [
+    "B01d",
+    "B01e"
+  ],
+  "base_commit": "c1ff514b1ce1a5978ddcf66c6b635abe05881c7c",
+  "status": "ENGLISH_III1_III5_SOURCE_BATCHES_COMPLETE_PARENT_OPEN",
+  "source_records_added": 55,
+  "source_records_by_batch": {
+    "B01d": 27,
+    "B01e": 28
+  },
+  "source_records_total": 164,
+  "ptolemy_sections_read": 29,
+  "ptolemy_sections_total": 61,
+  "ptolemy_sections_unread": 32,
+  "book_I_english_read": 24,
+  "book_III_english_read": 5,
+  "tests": {
+    "new_source_definition_and_integrity_checks": 23,
+    "prior_source_definition_checks": 85,
+    "prior_methodology_checks": 34,
+    "total_passed": 142,
+    "exit_code": 0,
+    "interpretation": "Bounded definition/integrity checks, not empirical validation or a complete rectifier"
+  },
+  "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "protected_content_verification": "PROTECTED_CONTENT_VERIFICATION.json",
+  "new_ocr_calls": 0,
+  "person_predictions_added": 0,
+  "runtime_rules_promoted": 0,
+  "raw_books_or_full_ocr_committed": false,
+  "independent_review_claimed": false,
+  "next_batch": "B01f:III.6-III.9,EnglishPDF279/printed255 through beforeIII.10 onPDF295/printed271",
+  "artifact_sha256": {
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/UNRESOLVED_INTERPRETATIONS.json": "d6a559e560140f4034588c687396405a9ab53e0f7001142bb87a233dc4d63308",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/TOPICAL_SYNTHESIS_SPEC.json": "87616029730558a242dbf46c811f174775f25b98d80ae4f13c030887dfad137c",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/WRITER-LEASE.json": "5ed31c3b8b1fcc410b516946398f373578a24177cbed1bf0372bc4d24dd1ee02",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/PROTECTED_CONTENT_VERIFICATION.json": "45f69f5c9cc012dc6866be1f8fb60a99963cfe226d3eccc7a37eb1ce826d6ad2",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/b01d_definitions.py": "11260373f8218be6a7067c2a1656c693b29e1e29f8ccd12c8a4174d5055b3091",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/test_b01d_definitions.py": "d6d7b537bb150f5ad4e44b28c9596479a0320f17306f88cc5b90c796f1cccaf6",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/REPORT.md": "9a52faedfa0c22d304e28b944e550b39b84009ebe02658885fe3f4667a2e7734",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/APPLY_CHECKPOINT.py": "0f9baa3fd9bb6e478ff14579e29c72ecfe1f11739371ce32304593238651cc09",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/READING_RECEIPT.json": "5ff1b4c858e8f23b0fb9071dc82a0b5cc8e498065cfbe2e8fd2b49c95075363b",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/RULES.json": "d9fe58821fba4c874a943a33913266a6a0434800605d1cbac38e736a1880934b",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/SOURCE_PAGE_QC.json": "29994b9aa484325583d052b67ae1fa66972af20753a4503d9ff327ec3e5d75bd",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01e/UNRESOLVED_INTERPRETATIONS.json": "84fa2a05b7ab16782f9ccfa11c626d47765656a0feb3616fd82aa05943c1a159",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01e/INTRASOURCE_QUALIFICATIONS.json": "6d12ed4c00d8d663935fdd2586ab5392b50952b08a5edd09d4782e09e48cee23",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01e/REPORT.md": "e62da50f35fc5994789fc67abd7cce513bdd48cd7904ec43feaa2da7e46c6451",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01e/READING_RECEIPT.json": "3e1cce4841eb4a9231a51dcd1e4e7b255997f2382ebf67d790b83e03ef036426",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01e/RULES.json": "f5046e1e238ac37b8c74093131b8d82f452ed2b58c68ac058559b8c27877c1f6"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01d",
+  "status": "BOUNDED_ENGLISH_MAIN_TEXT_READ_EXTRACTED_WITH_UNRESOLVED_INTERPRETATIONS",
+  "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "edition": "ROBBINS_1940_REPRINT_1964",
+  "chapter_spans": {
+    "III.1": {
+      "english_pdf_pages": [
+        245,
+        247,
+        249,
+        251,
+        253
+      ],
+      "printed_pages": [
+        221,
+        223,
+        225,
+        227,
+        229
+      ]
+    },
+    "III.2": {
+      "english_pdf_pages": [
+        253,
+        255,
+        257,
+        259
+      ],
+      "printed_pages": [
+        229,
+        231,
+        233,
+        235
+      ]
+    },
+    "III.3": {
+      "english_pdf_pages": [
+        259,
+        261,
+        263,
+        265
+      ],
+      "printed_pages": [
+        235,
+        237,
+        239,
+        241
+      ]
+    }
+  },
+  "english_pdf_pages": [
+    245,
+    247,
+    249,
+    251,
+    253,
+    255,
+    257,
+    259,
+    261,
+    263,
+    265
+  ],
+  "source_records_added": 27,
+  "source_rules_sha256": "d9fe58821fba4c874a943a33913266a6a0434800605d1cbac38e736a1880934b",
+  "attribution": "Main text as translated by Robbins; English notes identified separately. No independent Greek translation or exhaustive critical apparatus collation.",
+  "exposure": "Prior participants exist in inherited conversation. No participant data/history was opened or used for source extraction; this is not a clean-room person experiment.",
+  "ocr_calls": 0,
+  "input_route": "Existing supplied PDF text layer, original page renders and file citations. No fresh acquisition or OCR.",
+  "visual_qc": "All eighteen odd-numbered English pages PDF245..279 inspected, via contact sheet and larger single-page views for ambiguous passages; no table occurs in this span.",
+  "facing_page_english_notes_read": [
+    254,
+    258
+  ],
+  "not_claimed": [
+    "Complete Tetrabiblos audit",
+    "Implementation of the complete rectification method",
+    "Automatic full natal synthesis",
+    "Empirical validation",
+    "Any new person prediction"
+  ],
+  "start_boundary": "III.1 heading, PDF245 / printed221",
+  "end_boundary": "End of III.3 on PDF265 / printed241, before III.4 heading"
+}

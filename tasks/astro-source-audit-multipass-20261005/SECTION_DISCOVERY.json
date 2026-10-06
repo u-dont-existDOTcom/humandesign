@@ -6,9 +6,9 @@
     4
   ],
   "sections_count": 61,
-  "read_sections_count": 24,
-  "indexed_unread_count": 37,
-  "body_locators_warning": "English Book I spans verified; all later sections remain unread. III.1 start heading checked at PDF245; table of contents locators alone are not reading.",
+  "read_sections_count": 29,
+  "indexed_unread_count": 32,
+  "body_locators_warning": "English Book I and III.1-III.5 spans verified. Book II, III.6-III.14 and IV remain unread; boundaries/contents alone do not count as reading.",
   "sections": [
     {
       "unit_id": "PT.R64.I.01",
@@ -722,10 +722,27 @@
       "title": "Introduction",
       "contents_print_start": 220,
       "estimated_first_english_pdf_page": 245,
-      "status": "INDEXED_NOT_READ",
+      "status": "READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE",
       "genre": "NATAL",
-      "locator_status": "TOC_ONLY_NOT_BODY_VERIFIED",
-      "rule_ids": []
+      "locator_status": "ENGLISH_SPANS_VERIFIED",
+      "rule_ids": [
+        "PT.R64.III.01.R110",
+        "PT.R64.III.01.R111",
+        "PT.R64.III.01.R112",
+        "PT.R64.III.01.R113",
+        "PT.R64.III.01.R114",
+        "PT.R64.III.01.R115",
+        "PT.R64.III.01.R116",
+        "PT.R64.III.01.R117"
+      ],
+      "english_pdf_pages": [
+        245,
+        247,
+        249,
+        251,
+        253
+      ],
+      "source_batch": "B01d"
     },
     {
       "unit_id": "PT.R64.III.02",
@@ -734,10 +751,28 @@
       "title": "Of the Degree of the Horoscopic Point",
       "contents_print_start": 228,
       "estimated_first_english_pdf_page": 253,
-      "status": "INDEXED_NOT_READ",
+      "status": "READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE",
       "genre": "NATAL",
-      "locator_status": "TOC_ONLY_NOT_BODY_VERIFIED",
-      "rule_ids": []
+      "locator_status": "ENGLISH_SPANS_VERIFIED",
+      "rule_ids": [
+        "PT.R64.III.02.R118",
+        "PT.R64.III.02.R119",
+        "PT.R64.III.02.R120",
+        "PT.R64.III.02.R121",
+        "PT.R64.III.02.R122",
+        "PT.R64.III.02.R123",
+        "PT.R64.III.02.R124",
+        "PT.R64.III.02.R125",
+        "PT.R64.III.02.R126",
+        "PT.R64.III.02.R127"
+      ],
+      "english_pdf_pages": [
+        253,
+        255,
+        257,
+        259
+      ],
+      "source_batch": "B01d"
     },
     {
       "unit_id": "PT.R64.III.03",
@@ -746,10 +781,27 @@
       "title": "The Subdivision of the Science of Nativities",
       "contents_print_start": 234,
       "estimated_first_english_pdf_page": 259,
-      "status": "INDEXED_NOT_READ",
+      "status": "READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE",
       "genre": "NATAL",
-      "locator_status": "TOC_ONLY_NOT_BODY_VERIFIED",
-      "rule_ids": []
+      "locator_status": "ENGLISH_SPANS_VERIFIED",
+      "rule_ids": [
+        "PT.R64.III.03.R128",
+        "PT.R64.III.03.R129",
+        "PT.R64.III.03.R130",
+        "PT.R64.III.03.R131",
+        "PT.R64.III.03.R132",
+        "PT.R64.III.03.R133",
+        "PT.R64.III.03.R134",
+        "PT.R64.III.03.R135",
+        "PT.R64.III.03.R136"
+      ],
+      "english_pdf_pages": [
+        259,
+        261,
+        263,
+        265
+      ],
+      "source_batch": "B01d"
     },
     {
       "unit_id": "PT.R64.III.04",
@@ -758,10 +810,38 @@
       "title": "Of Parents",
       "contents_print_start": 240,
       "estimated_first_english_pdf_page": 265,
-      "status": "INDEXED_NOT_READ",
+      "status": "READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE",
       "genre": "NATAL",
-      "locator_status": "TOC_ONLY_NOT_BODY_VERIFIED",
-      "rule_ids": []
+      "locator_status": "ENGLISH_SPANS_VERIFIED",
+      "rule_ids": [
+        "PT.R64.III.04.R137",
+        "PT.R64.III.04.R138",
+        "PT.R64.III.04.R139",
+        "PT.R64.III.04.R140",
+        "PT.R64.III.04.R141",
+        "PT.R64.III.04.R142",
+        "PT.R64.III.04.R143",
+        "PT.R64.III.04.R144",
+        "PT.R64.III.04.R145",
+        "PT.R64.III.04.R146",
+        "PT.R64.III.04.R147",
+        "PT.R64.III.04.R148",
+        "PT.R64.III.04.R149",
+        "PT.R64.III.04.R150",
+        "PT.R64.III.04.R151",
+        "PT.R64.III.04.R152",
+        "PT.R64.III.04.R153",
+        "PT.R64.III.04.R154"
+      ],
+      "english_pdf_pages": [
+        265,
+        267,
+        269,
+        271,
+        273,
+        275
+      ],
+      "source_batch": "B01e"
     },
     {
       "unit_id": "PT.R64.III.05",
@@ -770,10 +850,27 @@
       "title": "Of Brothers and Sisters",
       "contents_print_start": 250,
       "estimated_first_english_pdf_page": 275,
-      "status": "INDEXED_NOT_READ",
+      "status": "READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE",
       "genre": "NATAL",
-      "locator_status": "TOC_ONLY_NOT_BODY_VERIFIED",
-      "rule_ids": []
+      "locator_status": "ENGLISH_SPANS_VERIFIED",
+      "rule_ids": [
+        "PT.R64.III.05.R155",
+        "PT.R64.III.05.R156",
+        "PT.R64.III.05.R157",
+        "PT.R64.III.05.R158",
+        "PT.R64.III.05.R159",
+        "PT.R64.III.05.R160",
+        "PT.R64.III.05.R161",
+        "PT.R64.III.05.R162",
+        "PT.R64.III.05.R163",
+        "PT.R64.III.05.R164"
+      ],
+      "english_pdf_pages": [
+        275,
+        277,
+        279
+      ],
+      "source_batch": "B01e"
     },
     {
       "unit_id": "PT.R64.III.06",
