@@ -1,0 +1,52 @@
+UP035 [*] Import from `collections.abc` instead: `Callable`
+  --> apps/life-patterns-participant/participant/engine.py:12:1
+   |
+10 | import urllib.error
+11 | import urllib.request
+12 | from typing import Any, Callable
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 | from urllib.parse import urlparse
+   |
+help: Import from `collections.abc`
+   |
+11 | import urllib.request
+   - from typing import Any, Callable
+12 + from typing import Any
+13 + from collections.abc import Callable
+14 | from urllib.parse import urlparse
+   |
+
+SIM105 Use `contextlib.suppress(Exception)` instead of `try`-`except`-`pass`
+   --> apps/life-patterns-participant/participant/engine.py:116:17
+    |
+114 |                   last_emit = now
+115 |                   # Only numeric liveness metadata, never model/participant/reasoning text.
+116 | /                 try:
+117 | |                     on_activity({"model_activity_at": utc(), "stream_events_received": events})
+118 | |                 except Exception:
+119 | |                     pass  # optional UI telemetry must not corrupt a paid provider response
+    | |________________________^
+120 |
+121 |           try:
+    |
+help: Replace `try`-`except`-`pass` with `with contextlib.suppress(Exception): ...`
+
+UP035 [*] Import from `collections.abc` instead: `Iterable`
+  --> apps/life-patterns-participant/participant/inference_context.py:11:1
+   |
+10 | import json
+11 | from typing import Iterable
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+12 |
+13 | from .domain import bank, guide
+   |
+help: Import from `collections.abc`
+   |
+10 | import json
+   - from typing import Iterable
+11 + from collections.abc import Iterable
+12 |
+   |
+
+Found 3 errors.
+[*] 2 fixable with the `--fix` option.

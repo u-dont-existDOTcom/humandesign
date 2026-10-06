@@ -21,6 +21,20 @@ STAGES = {
 }
 
 
+# Do not describe extrapolated integrated-stage ranges as measured quantiles.
+ESTIMATE_BASIS = {
+    "initial_triage": "limited pilot; two 81-turn first-batch runs around 112-114 seconds",
+    "gap_admission": "limited pilot stage timings; broad planning range, not a deadline",
+    "question_render": "limited pilot wording-stage timings; retries can take longer",
+    "reconciliation": "provisional; informed by legacy follow-up timings, not calibrated batch timings",
+    "omission_audit": "provisional; informed by a prior omission-audit run, not a calibrated distribution",
+    "final_synthesis": "provisional; informed by legacy full-review timings, not a measured synthesis-only range",
+    "final_admission": "provisional; informed by earlier independent-review timings",
+    "legacy_review": "limited pilot; prior complete-review observation around eight minutes",
+    "legacy_followup": "limited pilot; earlier follow-up observations around one to two minutes",
+}
+
+
 def review_guidance(payload: dict, *, now: float | None = None) -> dict:
     now = time.time() if now is None else now
     status = payload["status"]
@@ -74,7 +88,7 @@ def review_guidance(payload: dict, *, now: float | None = None) -> dict:
         else:
             recommended = max(30, int(check - age))
             note = (
-                f"Estimated stage duration: {format_range(lower, upper)} from its start. "
+                f"Provisional stage estimate: {format_range(lower, upper)} from its start. "
                 f"Check again in about {format_check(recommended)}. "
                 "This is a limited-pilot estimate, not a deadline; larger records can take longer."
             )
@@ -104,7 +118,7 @@ def review_guidance(payload: dict, *, now: float | None = None) -> dict:
             if remaining is not None and not overdue and not stale
             else None
         ),
-        "estimate_basis": "limited_pilot_observations_not_a_guarantee" if waiting else None,
+        "estimate_basis": ESTIMATE_BASIS[stage] if waiting else None,
         "stage_elapsed_seconds": age if status == "processing" else None,
         "worker_heartbeat_age_seconds": heartbeat_age if status == "processing" else None,
         "estimate_exceeded": bool(overdue),

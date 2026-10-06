@@ -698,6 +698,13 @@ def _shadow_route_cards(
         if route_id:
             presented.setdefault(str(route_id), []).append(str(turn["turn_id"]))
     addressed = set(state.get("addressed_routes", {}))
+    # An explicit skip is not an unanswered gap to pursue again. Keep its source
+    # in the record, but do not re-offer that route during this review.
+    skipped_routes = {
+        str(turn["canonical_question_id"])
+        for turn in turns
+        if turn.get("canonical_question_id") and turn.get("answer_status") == "skipped"
+    }
     retrospective_ok = (
         state.get("collection_preferences", {}).get("retrospective_questions_welcome") is True
     )
@@ -718,7 +725,7 @@ def _shadow_route_cards(
     cards: list[dict] = []
     for route in all_routes:
         route_id = str(route["id"])
-        if route_id in addressed:
+        if route_id in addressed or route_id in skipped_routes:
             continue
         if route.get("kind") == "optional_retrospective" and not retrospective_ok:
             continue

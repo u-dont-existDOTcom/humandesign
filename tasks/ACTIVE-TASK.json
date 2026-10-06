@@ -4,8 +4,8 @@
   "requiredBranch": "release/fast-review-guidance-20261005",
   "implementationAuthorized": true,
   "assuranceLane": "release: owner requested finish live integration and participant wait guidance",
-  "status": "implementation_active",
-  "ownerOutcome": "Use voice-first ChatGPT when it improves answer richness; keep Railway for durable provenance and only useful clarifications; reduce API cost enough for the Venice daily allowance; use subscription Codex for development probes rather than paid API.",
+  "status": "ready_for_live_verification",
+  "ownerOutcome": "Finish the Pro-reviewed fast clarification flow in the live pilot, preserve useful clarification and full review, reduce wait/approval loops, give honest stage-specific check-back estimates, and deliver the replacement GPT update.",
   "parentTaskRef": "chat/participant-railway-venice-20260927-2234@dabcb1a6b60e7fd85d5765a780f2c9f933ff61b5",
   "currentMethod": "tasks/hybrid-voice-cost-optimization-20260928/VOICE-FIRST-HYBRID-PILOT.md",
   "receipts": [
@@ -121,7 +121,7 @@
     "gptAsyncReviewLiveSmoke": "queued -> processing -> admitted clarification; synthetic review withdrawn",
     "gptAsyncReviewClaude": "Initial FINDS_ERROR; one reconciliation AGREES for bounded pilot; residual recovery fixes tested"
   },
-  "nextAction": "Owner applies the v2026-10-02.1 context-resilience update (Instructions/Builder config/ACTION-HANDOFF-GUIDE; Action key/schema unchanged), then attaches the private recovered 79+current-test source in a normal saved GPT conversation and reconfirms consent. Do not ask more questions merely to replace lost context; read the source first. Separately trial the hybrid wording before changing frozen measurement authority.",
+  "nextAction": "Deploy exact tested server and worker, run a synthetic end-to-end canary, verify delivery, merge into the existing integration branch, and deliver the GPT archive.",
   "stopAdmission": {
     "parentOutcome": "OPEN_HYBRID_COLLECTION_EXPERIMENT",
     "currentOperation": "ASYNCHRONOUS_REVIEW_PILOT_DEPLOYED_AND_LIVE_TESTED",
@@ -153,5 +153,14 @@
   "suspendedTaskSources": [
     "unrelated research roadmaps",
     "prior shadow-only promotion waits superseded by current owner request"
-  ]
+  ],
+  "currentRelease": {
+    "implementation_tests": 170,
+    "repository_tests": 1013,
+    "repository_skips": 6,
+    "deployed": false,
+    "private_participant_records_modified": false,
+    "new_paid_inference": false,
+    "notes": "New skips remain explicit in source and cannot become reopened fast gaps. Uncalibrated integrated-stage ranges are explicitly provisional."
+  }
 }
