@@ -25,7 +25,7 @@
     {
       "id": "P2",
       "title": "Map every section",
-      "status": "PTOLEMY_61_INDEXED; ENGLISH_I24_AND_III5_READ_MAPPED",
+      "status": "PTOLEMY_61_INDEXED;ENGLISH_I24_AND_III10_READ_MAPPED",
       "output": [
         "SECTION_DISCOVERY.json"
       ],
@@ -34,7 +34,7 @@
     {
       "id": "P3",
       "title": "Read and extract conditional rules",
-      "status": "ENGLISH_I_COMPLETE_AND_III1_III5;164_SOURCE_RECORDS;REMAINDER_OPEN",
+      "status": "ENGLISH_I_COMPLETE_AND_III1_III10;227_SOURCE_RECORDS;REMAINDER_OPEN",
       "output": [
         "per-source RuleSpecs and unresolved-term ledger"
       ],
@@ -43,7 +43,7 @@
     {
       "id": "P4",
       "title": "Reconcile authors and test calculations",
-      "status": "108_SOURCE_DEFINITION_AND_INTEGRITY_TESTS;FOUR_PRIOR_RHETORIUS_COMPARISONS;FULL_RECONCILIATION_PENDING",
+      "status": "147_SOURCE_REFERENCE_AND_INTEGRITY_CHECKS;FOUR_PRIOR_RHETORIUS_COMPARISONS;FULL_RECONCILIATION_PENDING",
       "output": [
         "cross-source comparison and worked-example fixtures"
       ],
@@ -66,7 +66,7 @@
         "PTOLEMY1940_REPRINT1964"
       ],
       "scope": "Book I foundational vocabulary and conditions first; then natal III/IV; Book II separately mundane. All 61 TOC sections remain accounted for.",
-      "next": "III.6-III.9; start III.6 on English PDF279/printed255; stop before III.10 on shared PDF295/printed271",
+      "next": "III.11-III.12; start III.11 on English PDF331/printed307; stop before III.13 on shared PDF357/printed333",
       "completed_subbatches": [
         {
           "id": "B01",
@@ -105,6 +105,22 @@
           "new_predictions": 0,
           "tests": 0,
           "test_scope": "Covered by B01d shared suite, not an additional 23 tests."
+        },
+        {
+          "id": "B01f",
+          "scope": "English III.6-III.9 and identified notes; historical source-only birth doctrines",
+          "source_records": 29,
+          "new_predictions": 0,
+          "tests": 0,
+          "test_scope": "Shared39-check suite is counted under B01g."
+        },
+        {
+          "id": "B01g",
+          "scope": "Full English III.10; Fortune convention, conditional prorogation and worked numerical examples",
+          "source_records": 34,
+          "new_predictions": 0,
+          "tests": 39,
+          "test_scope": "Source-reference arithmetic and B01f/B01g integrity; not a complete directions engine."
         }
       ]
     },

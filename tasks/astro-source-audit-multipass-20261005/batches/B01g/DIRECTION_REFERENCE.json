@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "scope": "English III.10 and individually attributed translator notes",
+  "prorogative_regions": {
+    "source_definitions": [
+      "Thirty-degree region from five above actual rising horizon to twenty-five following",
+      "Dexter sextile region (Good Daemon)",
+      "Quartile region (Midheaven)",
+      "Trine region (God)",
+      "Opposite region (Occident)"
+    ],
+    "priority": [
+      "MIDHEAVEN",
+      "ORIENT",
+      "SUCCEDENT_TO_MIDHEAVEN",
+      "OCCIDENT",
+      "PRECEDING_MIDHEAVEN"
+    ],
+    "house_number_gloss": {
+      "MIDHEAVEN": 10,
+      "ORIENT": 1,
+      "SUCCEDENT_TO_MIDHEAVEN": 11,
+      "OCCIDENT": 7,
+      "PRECEDING_MIDHEAVEN": 9
+    },
+    "gloss_source": "Robbins note on PDF296-297, printed272-273",
+    "geometry_status": "NOT_COMPILED; no undeclared modern equal/whole-sign/quadrant house system",
+    "boundary_status": "SOURCE_DESCRIPTION_RETAINED_NO_UNSPECIFIED_EQUALITY_POLICY"
+  },
+  "fortune": {
+    "formula": "(ascendant + moon - sun) % 360",
+    "same_for_day_and_night": true,
+    "main_text_pdf_pages": [
+      299,
+      301
+    ],
+    "adopted_profile": "ROBBINS_MAIN_TEXT",
+    "variant_note_pdf_page": 301,
+    "check_invariant": "(fortune - moon) % 360 == (ascendant - sun) % 360"
+  },
+  "units": {
+    "equinoctial_time": "One degree of equator passage",
+    "equinoctial_hour": 15,
+    "ordinary_day_or_night_hour": "One-twelfth respective day/night interval",
+    "ordinary_hours_per_quadrant": 6,
+    "historical_year_key": "One equinoctial time per solar year in this source technique; not an empirical claim"
+  },
+  "rounded_examples": [
+    {
+      "case": "RISING",
+      "source_pdf_pages": [
+        319,
+        321
+      ],
+      "initial_signed_distance": 148,
+      "target_signed_ordinary_hours": 6,
+      "horary_magnitude": 17,
+      "expected_interval": 46
+    },
+    {
+      "case": "MIDHEAVEN",
+      "source_pdf_pages": [
+        321
+      ],
+      "initial_signed_distance": 58,
+      "target_signed_ordinary_hours": 0,
+      "horary_magnitude": 17,
+      "expected_interval": 58
+    },
+    {
+      "case": "SETTING",
+      "source_pdf_pages": [
+        323
+      ],
+      "initial_signed_distance": -32,
+      "target_signed_ordinary_hours": -6,
+      "horary_magnitude": 17,
+      "expected_interval": 70
+    },
+    {
+      "case": "THREE_HOURS_WEST_OF_MERIDIAN",
+      "source_pdf_pages": [
+        323,
+        325
+      ],
+      "initial_signed_distance": 13,
+      "target_signed_ordinary_hours": -3,
+      "horary_magnitude": 17,
+      "expected_interval": 64
+    }
+  ],
+  "example_coordinate_convention": "East-positive and west-negative meridian distance; project notation chosen to reproduce explicitly described source arithmetic. No generic shortest-arc convention.",
+  "note_precision_track": {
+    "attribution": "Robbins reporting Almagest values, not a new independent Almagest collation",
+    "horary_magnitude_sexagesimal": [
+      17,
+      6,
+      30
+    ],
+    "initial_meridian_distance_sexagesimal": [
+      147,
+      44,
+      0
+    ],
+    "reported_rising_interval_sexagesimal": [
+      45,
+      5,
+      0
+    ],
+    "reported_setting_interval_sexagesimal": [
+      70,
+      23,
+      0
+    ],
+    "derived_meridian_interval_sexagesimal": [
+      57,
+      44,
+      0
+    ],
+    "ocr_correction": {
+      "pdf_page": 321,
+      "raw_text_layer": "147 times 14 min.",
+      "page_image": "147 times 44 min.",
+      "status": "IMAGE_GOVERNS"
+    },
+    "do_not_replace_main_rounded_examples": true
+  },
+  "interpolation": {
+    "source_pdf_pages": [
+      325,
+      327,
+      329
+    ],
+    "kind": "SOURCE_STATED_APPROXIMATE_SHORTCUT",
+    "formula": "start + (hours_from_start/6)*(end-start)",
+    "main_example_endpoints": [
+      58,
+      70
+    ],
+    "checks": [
+      {
+        "hours_from_mid": 3,
+        "interval": 64
+      },
+      {
+        "hours_from_mid": 2,
+        "interval": 62
+      },
+      {
+        "hours_from_occident": 2,
+        "interval": 66
+      }
+    ]
+  },
+  "conditional_ray_windows": {
+    "JUPITER": {
+      "max_following_degrees": 12
+    },
+    "VENUS": {
+      "max_following_degrees": 8
+    },
+    "scope": "Only distance component after a qualifying square/trine/opposition protective ray has been independently established."
+  },
+  "pending_for_complete_engine": [
+    "Prorogator selection ambiguity resolution",
+    "Modern frame/house conventions",
+    "Actual ephemeris and historical table parity",
+    "Complete above/below-horizon routing and wrap handling",
+    "Latitude-aware body/aspect distinctions",
+    "All mitigation/affliction conditions",
+    "IV.10 temporal ingress context"
+  ],
+  "personal_forecasts_added": 0,
+  "full_direction_engine_implemented": false
+}

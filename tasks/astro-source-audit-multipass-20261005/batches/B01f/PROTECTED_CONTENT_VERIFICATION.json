@@ -1,0 +1,16 @@
+{
+  "base_commit": "3fcaf407adb1807ae8db3cd5ffa683867aa7d80c",
+  "all_existing_mutations_equal_to_allowed_checkpoint_set": true,
+  "allowed_existing_paths": [
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json"
+  ],
+  "checked_tracked_paths_count": 353,
+  "all_equal_to_base": true,
+  "method": "Byte-for-byte git show comparison for protected scopes plus full tracked diff allowlist",
+  "private_source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "private_source_exists_and_matches": true,
+  "raw_source_committed": false
+}

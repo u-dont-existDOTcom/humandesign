@@ -1,0 +1,1332 @@
+{
+  "schema_version": 2,
+  "batch_id": "B01f",
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "status": "ENGLISH_III6_III9_AUDITED_NOT_MODEL_PROMOTION",
+  "records_count": 29,
+  "independent_predictions_count": 0,
+  "records": [
+    {
+      "id": "PT.R64.III.06.R165",
+      "title": "Sex inquiry is explicitly multi-factor and epoch-sensitive",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.6",
+        "pdf_support_pages": [
+          279
+        ],
+        "printed_support_pages": [
+          255
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "no simple theory",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "inquiry": "Historical male/female birth classification"
+      },
+      "consequent": "Observe both luminaries, the horoscopic point and their related/ruling stars; conception is emphasized, birth treated more generally.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.6.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not translate the historical sex claim into gender identity, orientation or a modern biological test."
+      ]
+    },
+    {
+      "id": "PT.R64.III.06.R166",
+      "title": "All-or-most testimony is stated without a complete weighting rule",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.6",
+        "pdf_support_pages": [
+          279,
+          281
+        ],
+        "printed_support_pages": [
+          255,
+          257
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "all or the most",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "inputs": "Three places and their rulers"
+      },
+      "consequent": "The author directs an overall predominance judgement of masculinized or feminized conditions.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No numerical weighting, tie rule or fully specified vote universe is supplied here."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.6.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Count source factors, not scientifically independent observations."
+      ]
+    },
+    {
+      "id": "PT.R64.III.06.R167",
+      "title": "Four distinct classification layers must not be flattened",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.6",
+        "pdf_support_pages": [
+          281
+        ],
+        "printed_support_pages": [
+          257
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "from the nature of the signs",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "reference": "Earlier foundational definitions, particularly I.6"
+      },
+      "consequent": {
+        "layers": [
+          "Nature of occupied signs",
+          "Nature of planets",
+          "Eastern/western cosmic situation",
+          "Morning/evening solar relation"
+        ]
+      },
+      "modifiers": [
+        "Eastern and morning conditions masculinize in this framework; western and evening conditions feminize."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Conflicting intrinsic and positional classifications require the earlier definitions and declared synthesis, not an automatic Sun-sign shortcut."
+      ],
+      "output_type": "SOURCE_DEPENDENCY_MAP",
+      "dependency_groups": [
+        "PT.III.6.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.07.R168",
+      "title": "Multiple-birth testimony requires a compound arrangement",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.7",
+        "pdf_support_pages": [
+          281
+        ],
+        "printed_support_pages": [
+          257
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "two or the three places",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "places": [
+          "SUN",
+          "MOON",
+          "HOROSCOPE"
+        ]
+      },
+      "consequent": "Births of two or more are associated with two or three relevant places in bicorporeal signs, especially with similarly placed rulers or mixed bicorporeal and paired/grouped arrangements.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The text says 'same two places' while listing luminaries and horoscope; retain the list and numerical wording rather than silently repairing it."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.07.R169",
+      "title": "More than two and exact number are separate claims",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.7",
+        "pdf_support_pages": [
+          281,
+          283
+        ],
+        "printed_support_pages": [
+          257,
+          259
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "more than two",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "conditions": "Dominant places in bicorporeal signs and most planets similarly configured"
+      },
+      "consequent": "The text associates this with more than two conceived, and directs number to the star causing the numerical property.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No general planet-to-exact-number algorithm is provided; Robbins identifies the governing planet as a gloss."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.07.R170",
+      "title": "Offspring sex retains the preceding multi-factor method",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.7",
+        "pdf_support_pages": [
+          283
+        ],
+        "printed_support_pages": [
+          259
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "ways stated above",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "inquiry": "Sexes in a multiple birth"
+      },
+      "consequent": "Use the planets' relations to Sun, Moon and horoscope under III.6 rather than infer sexes solely from a multiple-birth label.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SOURCE_DEPENDENCY_MAP",
+      "dependency_groups": [
+        "PT.III.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.07.R171",
+      "title": "Changing Ascendant to Midheaven changes whose birth is described",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.7",
+        "pdf_support_pages": [
+          283
+        ],
+        "printed_support_pages": [
+          259
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "mothers with such genitures",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "arrangement": "The multiple-birth configuration includes Midheaven with luminaries rather than the horoscopic angle"
+      },
+      "consequent": "The judgement refers to mothers with those genitures conceiving twins or more.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Keep being a multiple-birth child distinct from later producing multiple offspring."
+      ]
+    },
+    {
+      "id": "PT.R64.III.07.R172",
+      "title": "Four named triple-birth arrangements retained as a conditional table",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.7",
+        "pdf_support_pages": [
+          283
+        ],
+        "printed_support_pages": [
+          259
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "geniture of the Kings",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "inherited_conditions": "The stated places/configurations, bicorporeal conditions and preceding multiple-birth context"
+      },
+      "consequent": {
+        "table_ref": "BIRTH_DOCTRINE_TABLES.json#/named_triple_arrangements"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not strip inherited antecedents or turn three listed planets into an unconditional exact-number prediction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_TABLE",
+      "dependency_groups": [
+        "PT.III.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.07.R173",
+      "title": "Development and portent claims have frequency qualifications",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.7",
+        "pdf_support_pages": [
+          283,
+          285
+        ],
+        "printed_support_pages": [
+          259,
+          261
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "generally happens",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "context": "Preceding named multiple-birth cases"
+      },
+      "consequent": "The text says children generally are not completely developed and bear bodily marks; it also associates unusual local occurrences with portentous manifestation.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "No modern diagnosis, causal mechanism or deterministic probability is supplied."
+      ]
+    },
+    {
+      "id": "PT.R64.III.07.R174",
+      "title": "Mythic identity and maximal-survival claim belong to commentary",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.7",
+        "pdf_support_pages": [
+          283
+        ],
+        "printed_support_pages": [
+          259
+        ],
+        "attribution_layer": "ROBBINS_NOTES_REPORTING_COMMENTATORS_AND_VARIANTS",
+        "passage_anchor": "various interpretations",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "source_layer": "Robbins's notes quoting later discussion"
+      },
+      "consequent": "The Kings label is uncertain; Cardanus's remark about three surviving children is reported in a note, and some witnesses add Dionysus while the adopted text omits it.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "COMMENTARY_AND_VARIANT",
+      "dependency_groups": [
+        "PT.III.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not attribute Cardanus's maximum to an independently demonstrated biological fact or to the main-text rule."
+      ]
+    },
+    {
+      "id": "PT.R64.III.08.R175",
+      "title": "Opening adverse configuration is not sufficient for the chapter's endpoint",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.8",
+        "pdf_support_pages": [
+          285
+        ],
+        "printed_support_pages": [
+          261
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "even though they are not",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "configuration": "Luminaries remote/unrelated to horoscope; angles separated by malefics"
+      },
+      "consequent": "The source explicitly says this also occurs in humble or unlucky nativities that are not the special births discussed here, and requires further examination.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "No inverse inference from an ordinary difficult chart to disability or the chapter's historical label."
+      ]
+    },
+    {
+      "id": "PT.R64.III.08.R176",
+      "title": "Syzygy and rulership are additional gates, with an unresolved referent",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.8",
+        "pdf_support_pages": [
+          285
+        ],
+        "printed_support_pages": [
+          261
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "last preceding new or full moon",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "after": "Opening configuration"
+      },
+      "consequent": "Examine preceding syzygy and its lord and the birth luminaries; the text links all-or-most unrelated places to the next adverse testimony.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "'Places of the birth' and pronoun/reference scope are not a completely resolved computational list."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.08.R177",
+      "title": "Source's animal-form branch preserved literally, not made into a human classifier",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.8",
+        "pdf_support_pages": [
+          285,
+          287
+        ],
+        "printed_support_pages": [
+          261,
+          263
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "four-footed or animal-shaped",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "inherited": "Preceding configuration and syzygy conditions",
+        "additional": "Luminaries in animal-form signs; both malefics angular"
+      },
+      "consequent": {
+        "historical_claim": "The text claims nonhuman offspring and distinguishes wild, sacred and useful kinds by malefic/benefic/Mercury witnesses.",
+        "branch_ref": "BIRTH_DOCTRINE_TABLES.json#/chapter_III8_witness_branches"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Unendorsed historical claim, never applied to classify a real person or human-like image.",
+        "Do not disguise the literal statement as a validated metaphor."
+      ]
+    },
+    {
+      "id": "PT.R64.III.08.R178",
+      "title": "Human-form branch and benefic mitigations are separate",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.8",
+        "pdf_support_pages": [
+          287
+        ],
+        "printed_support_pages": [
+          263
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "signs of human form",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "inherited": "Other configurations maintained",
+        "branch": "Luminaries in human-form signs"
+      },
+      "consequent": "The source gives human offspring under its historical adverse terminology, differentiates absence of benefic witness from Jupiter/Venus witness, and relates specific form to the signs occupied by the malefics.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Keep the historical language in attribution; no modern identity or clinical conclusion follows."
+      ]
+    },
+    {
+      "id": "PT.R64.III.08.R179",
+      "title": "Mercury alone and Mercury with benefics have different consequents",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.8",
+        "pdf_support_pages": [
+          287,
+          289
+        ],
+        "printed_support_pages": [
+          263,
+          265
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "along with the foregoing",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "branch": "Human-form branch"
+      },
+      "consequent": "Mercury with the foregoing benefics is associated with prophetic speech and earnings; Mercury alone with toothlessness and impaired speech/hearing, while retaining cleverness.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not retain the attractive prophetic interpretation while dropping the branch conditions or contrary alternatives."
+      ]
+    },
+    {
+      "id": "PT.R64.III.08.R180",
+      "title": "Translator's sign list, disability gloss and manuscript addition are separate evidence",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.8",
+        "pdf_support_pages": [
+          285,
+          287
+        ],
+        "printed_support_pages": [
+          261,
+          263
+        ],
+        "attribution_layer": "ROBBINS_NOTES_REPORTING_GLOSSES_AND_VARIANTS",
+        "passage_anchor": "only human signs",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "source_layer": "Robbins footnotes"
+      },
+      "consequent": {
+        "reported_glosses": [
+          "Cardanus/Whalley take the angles here as Ascendant and Midheaven.",
+          "Robbins lists Virgo, Gemini, Sagittarius and Aquarius as human signs.",
+          "A note glosses harpocratiacs; later manuscripts add apes to the animals list."
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "COMMENTARY_AND_VARIANT",
+      "dependency_groups": [
+        "PT.III.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not import a different modern human-sign classification without an explicitly versioned interpretation."
+      ]
+    },
+    {
+      "id": "PT.R64.III.09.R181",
+      "title": "Children not reared is not a single purely biological endpoint",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          288,
+          289
+        ],
+        "printed_support_pages": [
+          264,
+          265
+        ],
+        "attribution_layer": "PTOLEMY_MAIN_TEXT_WITH_SEPARATELY_IDENTIFIED_ROBBINS_SCOPE_NOTE",
+        "passage_anchor": "because they are exposed",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "chapter_scope": "Children not reared"
+      },
+      "consequent": "Robbins identifies both failure to survive and abandonment/exposure; the text differentiates this inquiry from ordinary length-of-life calculations.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "ENDPOINT_DEFINITION",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not merge abandonment, adoption, stillbirth and infant death into one scored event."
+      ]
+    },
+    {
+      "id": "PT.R64.III.09.R182",
+      "title": "Subannual and ordinary life duration require separate time-unit interpretation",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          289
+        ],
+        "printed_support_pages": [
+          265
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "one circuit of the sun",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "contrast": "Ordinary lifespan and this early-life inquiry"
+      },
+      "consequent": "A solar circuit defines the ordinary year-scale inquiry, while months, days and hours are also possible measures in the shorter inquiry.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No numerical severity-to-month/day/hour selector is specified here."
+      ],
+      "output_type": "TIME_SCALE_DEFINITION",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.09.R183",
+      "title": "Initial non-rearing claim is a conjunction of conditions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          289,
+          291
+        ],
+        "printed_support_pages": [
+          265,
+          267
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "equality of distance",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "all": [
+          "A luminary angular",
+          "Malefic conjunct or opposite by degree and equality of distance",
+          "No beneficent planet in aspect",
+          "Luminary lord in malefics' places"
+        ]
+      },
+      "consequent": "The text assigns its immediate non-rearing/death testimony to this compound configuration.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Scope of equality for conjunction versus opposition and 'places of the malefics' requires declared interpretation."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not turn one malefic contact into the entire antecedent."
+      ]
+    },
+    {
+      "id": "PT.R64.III.09.R184",
+      "title": "Cardanus's isosceles explanation is a latitude-aware opposition example",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          290
+        ],
+        "printed_support_pages": [
+          266
+        ],
+        "attribution_layer": "ROBBINS_REPORTING_CARDANUS_INTERPRETATION",
+        "passage_anchor": "Cardanus",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "example": "Moon 10 Aries, latitude +3; Saturn or Mars 10 Libra, latitude -3"
+      },
+      "consequent": "Robbins reports Cardanus interpreting equality of leg as opposition both in longitude and in latitude; the anonymous commentator did not explain the phrase.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "COMMENTARY_GEOMETRY_EXAMPLE",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "This is a named interpretation and synthetic geometric example, not a universally resolved source definition."
+      ],
+      "calculation_conventions": {
+        "longitude_separation_degrees": 180,
+        "latitude_pair_degrees": [
+          3,
+          -3
+        ],
+        "latitude_is_not_declination": true
+      }
+    },
+    {
+      "id": "PT.R64.III.09.R185",
+      "title": "Multiple affliction is an alternative to exact equal-distance condition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          291
+        ],
+        "printed_support_pages": [
+          267
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "without the equality",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "conditions": "Close following rays; two malefics afflicting one or both luminaries by the listed succession/opposition combinations"
+      },
+      "consequent": "The text retains non-survival testimony even without exact equality when afflictions multiply.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Closeness and aggregation are not given a fixed numerical orb/weight."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not require the single-contact branch's exact condition for every alternative, or drop the need for the alternative conditions."
+      ]
+    },
+    {
+      "id": "PT.R64.III.09.R186",
+      "title": "Affliction priority is directional and planet-pair-specific",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          291,
+          293
+        ],
+        "printed_support_pages": [
+          267,
+          269
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars especially",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "mode": "Following versus opposing/superior"
+      },
+      "consequent": {
+        "table_ref": "BIRTH_DOCTRINE_TABLES.json#/directional_luminary_affliction"
+      },
+      "modifiers": [
+        "Emphasized further when the malefics rule the luminary or horoscope places."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TABLE",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.09.R187",
+      "title": "Two angular isosceles oppositions specify another distinct testimony",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          293
+        ],
+        "printed_support_pages": [
+          269
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "two oppositions",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "all": [
+          "Luminaries angular",
+          "Two oppositions",
+          "Malefics in isosceles configuration"
+        ]
+      },
+      "consequent": "The source describes the infants as born dead or half-dead.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Retain the historical alternative wording without equating it to a particular modern diagnosis."
+      ]
+    },
+    {
+      "id": "PT.R64.III.09.R188",
+      "title": "Prior benefic relationship delays the adverse endpoint in unspecified units",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          293
+        ],
+        "printed_support_pages": [
+          269
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "months or days",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "context": "The adverse configurations",
+        "modifier": "Luminaries separating from a benefic or otherwise related to it; rays before them"
+      },
+      "consequent": "A period is related to degrees between prorogator and nearest malefic rays, with months, days or hours depending on severity and planetary power.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Selection of units, precise ray reference and severity thresholds remain unresolved."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "No calculated exact lifespan; do not substitute the following chapter's year-per-time key here."
+      ]
+    },
+    {
+      "id": "PT.R64.III.09.R189",
+      "title": "Reversing benefic/malefic ray order changes the outcome to rescue",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          293
+        ],
+        "printed_support_pages": [
+          269
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "taken up and will live",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "rays": "Malefic rays before luminaries; benefic rays behind"
+      },
+      "consequent": "The exposed child is said to be taken up and survive.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "A mitigating branch is part of the source, not an optional positive gloss."
+      ]
+    },
+    {
+      "id": "PT.R64.III.09.R190",
+      "title": "Dominance differentiates later conditions of a rescued child",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          293
+        ],
+        "printed_support_pages": [
+          269
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "other parents",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "context": "Rescue/survival branch",
+        "comparison": "Malefic versus benefic dominance"
+      },
+      "consequent": "Malefic dominance is associated with affliction/subjection; benefic dominance with being raised as the supposed child of other parents.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Historical supposititious-child language is not identical to every modern legal adoption."
+      ]
+    },
+    {
+      "id": "PT.R64.III.09.R191",
+      "title": "Own-parent rearing is a more specific rescue branch",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          293
+        ],
+        "printed_support_pages": [
+          269
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "their own parents",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "all": [
+          "A benefic rising or applying to Moon",
+          "A malefic setting"
+        ]
+      },
+      "consequent": "The text says the child will be reared by its own parents under this configuration.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.09.R192",
+      "title": "Multiple births inherit the same modifiers rather than an independent rule set",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          293,
+          295
+        ],
+        "printed_support_pages": [
+          269,
+          271
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "multiple births",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "scope": "Planets paired/grouped in multiple-birth configurations"
+      },
+      "consequent": "Apply the same judgements; a relevant setting planet gives the historical imperfect/half-dead testimony, and malefic dominance the non-rearing/non-survival testimony.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_TESTIMONY",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not score the repeated rule once per chapter as independent confirmation."
+      ]
+    },
+    {
+      "id": "PT.R64.III.09.R193",
+      "title": "Antiochus definition in Robbins's note is not a silent Ptolemaic global rule",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.9",
+        "pdf_support_pages": [
+          291
+        ],
+        "printed_support_pages": [
+          267
+        ],
+        "attribution_layer": "ROBBINS_REPORTING_ANTIOCHUS",
+        "passage_anchor": "Antiochus",
+        "locator_precision": "Supporting English paragraphs/notes; anchor locates, paraphrase is not quotation. Facing Greek not independently translated."
+      },
+      "source_genre": "HISTORICAL_NATAL_METHOD_AND_TESTIMONY",
+      "reference_frame": "Source-specific historical astrology, not empirical, medical, biological or identity evidence.",
+      "antecedents": {
+        "source_layer": "Robbins note reporting Antiochus"
+      },
+      "consequent": "The note enumerates ray strikes, surrounding, application, gluing and governance by a badly placed malefic, naming places 6,3,2,8,12.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "COMMENTARY_DEFINITION",
+      "dependency_groups": [
+        "PT.III.9.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "NO_MODERN_PERSON_OUTCOME_BRIDGE_ADMITTED",
+        "description": "Records preserve source claims; there is no new calibrated score, identity classification, health advice or mortality forecast."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY_EXCEPT_NAMED_ARITHMETIC_OR_GEOMETRY_FIXTURES",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Retain provenance and do not replace every Ptolemy affliction predicate with this catalogue automatically."
+      ]
+    }
+  ]
+}

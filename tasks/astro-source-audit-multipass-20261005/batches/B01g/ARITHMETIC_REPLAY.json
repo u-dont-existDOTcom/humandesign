@@ -1,0 +1,40 @@
+{
+  "attribution": "Supplied numerical examples and separate Robbins-note precision; no independent ephemeris/Almagest recomputation",
+  "local_test_exit_code": 0,
+  "local_new_tests_passed": 39,
+  "rounded_expected_and_obtained": [
+    {
+      "case": "RISING",
+      "expected": 46,
+      "obtained": 46
+    },
+    {
+      "case": "MIDHEAVEN",
+      "expected": 58,
+      "obtained": 58
+    },
+    {
+      "case": "SETTING",
+      "expected": 70,
+      "obtained": 70
+    },
+    {
+      "case": "THREE_HOURS_WEST_OF_MERIDIAN",
+      "expected": 64,
+      "obtained": 64
+    }
+  ],
+  "notes_expected": {
+    "rising_sexagesimal": [
+      45,
+      5,
+      0
+    ],
+    "setting_sexagesimal": [
+      70,
+      23,
+      0
+    ]
+  },
+  "interpretive_validity_tested": false
+}

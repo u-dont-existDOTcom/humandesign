@@ -1,0 +1,2 @@
+# B01g: Ptolemy III.10
+English III.10 is read/extracted through the final paragraph before III.11 on PDF331/printed307. This batch adds 34 source records and 39 shared definition/integrity tests covering B01f/B01g. See `../B01f/REPORT.md` for the integrated report and `../B01f/VERIFICATION.json` for the integration run. The helper is a bounded source-arithmetic replay, not a full directions engine or a validated longevity predictor.

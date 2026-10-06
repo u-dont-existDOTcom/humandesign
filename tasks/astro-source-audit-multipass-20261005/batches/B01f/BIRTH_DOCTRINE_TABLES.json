@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "admission": "HISTORICAL_SOURCE_RECORD_ONLY_NO_PERSON_CLASSIFICATION",
+  "named_triple_arrangements": [
+    {
+      "label": "Kings",
+      "planets": [
+        "SATURN",
+        "JUPITER",
+        "MARS"
+      ],
+      "source_claim": {
+        "males": 3,
+        "females": 0
+      },
+      "conditions": "Bicorporeal placement and relation to the preceding relevant places; maternal-reference context retained."
+    },
+    {
+      "label": "Graces",
+      "planets": [
+        "VENUS",
+        "MOON",
+        "MERCURY"
+      ],
+      "source_claim": {
+        "males": 0,
+        "females": 3
+      },
+      "conditions": "Same arrangement context; Mercury specifically feminized."
+    },
+    {
+      "label": "Dioscuri",
+      "planets": [
+        "SATURN",
+        "JUPITER",
+        "VENUS"
+      ],
+      "source_claim": {
+        "males": 2,
+        "females": 1
+      },
+      "conditions": "Same preceding arrangement; not a freestanding three-planet rule."
+    },
+    {
+      "label": "Demeter and Kore",
+      "planets": [
+        "VENUS",
+        "MOON",
+        "MARS"
+      ],
+      "source_claim": {
+        "males": 1,
+        "females": 2
+      },
+      "conditions": "Same preceding arrangement; Dionysus addition belongs to reported variant only."
+    }
+  ],
+  "chapter_III8_witness_branches": {
+    "animal_form_source_branch": {
+      "malefic_witness_no_benefic": "Wild/harmful animal in the author's literal account.",
+      "jupiter_or_venus": "Kinds treated as sacred, examples dogs/cats.",
+      "mercury": "Animals useful to people, examples birds/swine/oxen/goats."
+    },
+    "human_form_source_branch": {
+      "no_benefic_witness": "Author's irrational/nondescript description.",
+      "jupiter_or_venus": "Author's honored/seemly variant, with historical bodily examples.",
+      "mercury_also_with_benefics": "Prophetic speech and earning from it.",
+      "mercury_alone": "Toothlessness and impaired hearing/speech, with cleverness."
+    },
+    "guardrail": "These statements document the source only. No code applies them to a person, image or diagnostic question."
+  },
+  "directional_luminary_affliction": {
+    "following": {
+      "MARS": "SUN",
+      "SATURN": "MOON"
+    },
+    "opposition_or_superior": {
+      "SATURN": "SUN",
+      "MARS": "MOON"
+    },
+    "inherited_conditions": "III.9 preceding compound affliction context; rulership of lights/horoscope intensifies the stated testimony.",
+    "no_global_inverse_rule": true
+  }
+}

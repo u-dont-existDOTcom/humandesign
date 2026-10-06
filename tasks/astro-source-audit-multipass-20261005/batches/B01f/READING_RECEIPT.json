@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01f",
+  "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "edition": "ROBBINS_1940_REPRINT_1964",
+  "status": "ENGLISH_MAIN_TEXT_AND_IDENTIFIED_NOTES_READ_EXTRACTED",
+  "english_pdf_pages": [
+    279,
+    281,
+    283,
+    285,
+    287,
+    289,
+    291,
+    293,
+    295
+  ],
+  "chapter_spans": {
+    "III.6": {
+      "english_pdf_pages": [
+        279,
+        281
+      ],
+      "printed_pages": [
+        255,
+        257
+      ]
+    },
+    "III.7": {
+      "english_pdf_pages": [
+        281,
+        283,
+        285
+      ],
+      "printed_pages": [
+        257,
+        259,
+        261
+      ]
+    },
+    "III.8": {
+      "english_pdf_pages": [
+        285,
+        287,
+        289
+      ],
+      "printed_pages": [
+        261,
+        263,
+        265
+      ]
+    },
+    "III.9": {
+      "english_pdf_pages": [
+        289,
+        291,
+        293,
+        295
+      ],
+      "printed_pages": [
+        265,
+        267,
+        269,
+        271
+      ]
+    }
+  },
+  "start_boundary": "III.6 heading on PDF279/printed255; preceding III.5 not recounted",
+  "end_boundary": "End III.9 above III.10 on PDF295/printed271",
+  "facing_pages_checked_for_english_notes": [
+    282,
+    288,
+    290
+  ],
+  "visual_reading": "Rendered all English pages at 1.7x and inspected contact sheets; enlarged critical latitude note and numerical example page.",
+  "independent_greek_translation": false,
+  "full_critical_apparatus_collation": false,
+  "new_ocr_calls": 0,
+  "source_records_added": 29,
+  "person_predictions_added": 0,
+  "scope_note": "Earlier/later paragraphs on shared boundary pages are not counted as newly completed chapters.",
+  "raw_source_policy": "Books, full text and page images remain outside Git.",
+  "source_rules_sha256": "3f3838ab05b07c48ad923fbf2f0b14712f9bcec63898b88c7b634f69cc5025e8",
+  "facing_pages_screened_for_notes_not_greek_translation": [
+    280,
+    282,
+    284,
+    286,
+    288,
+    290,
+    292,
+    294
+  ]
+}

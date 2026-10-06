@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch_ids": [
+    "B01f",
+    "B01g"
+  ],
+  "parent_outcome": "OPEN_SOURCE_CORPUS_AUDIT",
+  "authority": "Current continue request under owner-authorized multiple passes",
+  "base_commit": "3fcaf407adb1807ae8db3cd5ffa683867aa7d80c",
+  "branch": "research/astro-source-audit-b01f-20261006",
+  "scope": "Read/extract English Ptolemy III.6-III.9, then III.10 through the paragraph before III.11; defined calculation/example fixtures only.",
+  "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "active_lessons": [
+    {
+      "rule": "live_authority",
+      "behavior": "Live UDA root/index and task-relevant patterns, project AGENTS/architecture/current checkpoint recovered before extraction.",
+      "evidence": "Tool reads in this turn; preserved base commit.",
+      "enforcement": "semantic"
+    },
+    {
+      "rule": "source_scope_provenance",
+      "behavior": "Paraphrase actual conditions and qualifiers; main text, Robbins notes, later commentators and project calculations separately attributed.",
+      "failure": "Unqualified modern identity/medical prediction, unattributed commentary or invented numerical thresholds.",
+      "enforcement": "semantic"
+    },
+    {
+      "rule": "preservation",
+      "behavior": "Only new source batches and four continuation files may change; all prior source records, input/person freezes and runtime models unchanged.",
+      "enforcement": "mechanical"
+    },
+    {
+      "rule": "literal_execution",
+      "behavior": "Read actual chapter text and images; replay numerical examples rather than calling an index entry complete.",
+      "enforcement": "semantic_and_mechanical"
+    },
+    {
+      "rule": "owner_ocr_correction",
+      "behavior": "Use available text layer and rendered images, not new OCR; do not repeat accepted missing-page debate.",
+      "enforcement": "semantic"
+    },
+    {
+      "rule": "scope_of_tests",
+      "behavior": "Definition/arithmetical integrity is not empirical validation; code returns no person-level mortality/sex/species forecast.",
+      "enforcement": "semantic_and_mechanical"
+    },
+    {
+      "rule": "continuity_delivery",
+      "behavior": "Save exact first unfinished chapter, publish guarded research-branch update, deliver report and packet locally and in Chat.",
+      "enforcement": "mechanical"
+    }
+  ],
+  "outcome_exposure": "Previous conversation contains participant histories; this is source-only extraction, not independent person blinding. No additional participant data consulted.",
+  "no_background_run": true,
+  "closeout": {
+    "source_execution": "English III.6-III.10 read;63 conditional records; numerical examples replayed",
+    "preservation": "PASS: protected byte comparison and existing-file allowlist",
+    "verification": "PASS:181 focused tests; no predictive validity claim",
+    "delivery": "Report and packet staged for guarded branch publication and local delivery",
+    "remaining_gap": "27 Ptolemy sections plus remaining corpus/reconciliation/implementation",
+    "stop_boundary": "Existing owner-approved multi-pass contract; parent OPEN; no unattended run"
+  }
+}
