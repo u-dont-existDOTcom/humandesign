@@ -1,0 +1,36 @@
+{
+  "schema": "life-patterns-fast-review-delivery-readback-v1",
+  "verification_turn_started_utc": "2026-10-06T01:27:03Z",
+  "repository_integration_commit": "c06713febb1de31b51e8241469e9271a92a66b14",
+  "runtime_source_commit": "499ee11611a929b8653f8f326d324f26ae482336",
+  "health": {
+    "status": "ok",
+    "version": "railway-participant-v2.2-cost-hybrid-20260928",
+    "provider": "venice",
+    "provider_configured": false,
+    "participant_enabled": false,
+    "gpt_submission_enabled": true,
+    "gpt_review_queue_enabled": true,
+    "fast_review_enabled": true,
+    "review_protocols": [
+      "legacy-v1",
+      "fast-batch-v1"
+    ],
+    "review_worker_configured": true,
+    "persistence": "encrypted_sqlite",
+    "instrument_version": "a54c578c2fe3eb68bd96fe6cb07956cc0ccb02903e38a7a34c3f0a6643ba274e"
+  },
+  "installed_worker_files_verified": 22,
+  "worker_active": true,
+  "installed_worker_matches_release": true,
+  "live_schema_sha256": "e842fec5d4d0dfa0437dc6ff3e11543cda437ff27eba0f31cdb321c460b75d99",
+  "live_schema_matches_delivered_package": true,
+  "update_package_sha256": "810ecf7f4b937eef72db5572399a07cba40d82dec3d5afdff92aac5ef231c7a9",
+  "update_package_bytes": 20639,
+  "downloads_archive_and_extracted_files_match": true,
+  "unchanged_successful_suites_not_repeated": true,
+  "private_participant_records_read_or_modified": false,
+  "new_inference_executed": false,
+  "gpt_editor_updated": false,
+  "remaining_action": "Apply delivered instructions, handoff Knowledge file and existing Action schema in the existing GPT editor; select Update."
+}
