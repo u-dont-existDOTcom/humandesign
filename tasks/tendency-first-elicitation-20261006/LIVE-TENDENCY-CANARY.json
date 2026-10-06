@@ -1,0 +1,172 @@
+{
+  "synthetic_only": true,
+  "final_submission_attempted": false,
+  "synthetic_source_turn_count": 73,
+  "observations": [
+    {
+      "elapsed_seconds": 0.91,
+      "status": "queued",
+      "stage": "initial_triage",
+      "range": {
+        "low": 60,
+        "high": 180
+      },
+      "check_after_seconds": 180,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 11.66,
+      "status": "processing",
+      "stage": "initial_triage",
+      "range": {
+        "low": 60,
+        "high": 180
+      },
+      "check_after_seconds": 172,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 22.52,
+      "status": "processing",
+      "stage": "omission_audit",
+      "range": {
+        "low": 120,
+        "high": 480
+      },
+      "check_after_seconds": 292,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 55.9,
+      "status": "processing",
+      "stage": "gap_admission",
+      "range": {
+        "low": 15,
+        "high": 90
+      },
+      "check_after_seconds": 51,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 77.31,
+      "status": "processing",
+      "stage": "question_render",
+      "range": {
+        "low": 15,
+        "high": 90
+      },
+      "check_after_seconds": 52,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 98.7,
+      "status": "clarification_needed",
+      "stage": "clarification_needed",
+      "range": null,
+      "check_after_seconds": 0,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 99.52,
+      "status": "queued",
+      "stage": "reconciliation",
+      "range": {
+        "low": 60,
+        "high": 240
+      },
+      "check_after_seconds": 180,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 110.9,
+      "status": "processing",
+      "stage": "reconciliation",
+      "range": {
+        "low": 60,
+        "high": 240
+      },
+      "check_after_seconds": 180,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 121.64,
+      "status": "processing",
+      "stage": "omission_audit",
+      "range": {
+        "low": 120,
+        "high": 480
+      },
+      "check_after_seconds": 297,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 165.68,
+      "status": "processing",
+      "stage": "final_synthesis",
+      "range": {
+        "low": 300,
+        "high": 720
+      },
+      "check_after_seconds": 594,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 295.06,
+      "status": "processing",
+      "stage": "final_admission",
+      "range": {
+        "low": 60,
+        "high": 180
+      },
+      "check_after_seconds": 170,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 305.73,
+      "status": "processing",
+      "stage": "final_synthesis",
+      "range": {
+        "low": 300,
+        "high": 720
+      },
+      "check_after_seconds": 591,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 371.5,
+      "status": "processing",
+      "stage": "final_admission",
+      "range": {
+        "low": 60,
+        "high": 180
+      },
+      "check_after_seconds": 179,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 414.7,
+      "status": "stopped",
+      "stage": "stopped",
+      "range": null,
+      "check_after_seconds": 0,
+      "guidance_present": true
+    }
+  ],
+  "batch_question_counts": [
+    1
+  ],
+  "synthetic_batch_routes": [
+    [
+      "TF1-M11"
+    ]
+  ],
+  "synthetic_question_texts": [
+    [
+      "Could you state explicitly how you usually work out an arrangement when sharing work or costs with someone?"
+    ]
+  ],
+  "review_reached_ready": false,
+  "error_type": "RuntimeError",
+  "error_code": "unexpected_review_state_stopped",
+  "synthetic_review_withdrawn": true
+}

@@ -435,7 +435,7 @@ class Engine:
                     if not retrospective_questions_welcome and s.get("pending_question"):
                         route_id = s["pending_question"].get("route_id")
                         route = next(
-                            (q for q in bank(instrument)["questions"] if q["id"] == route_id),
+                            (q for q in bank(instrument, s)["questions"] if q["id"] == route_id),
                             None,
                         )
                         if route and route.get("kind") == "optional_retrospective":
@@ -656,7 +656,8 @@ class Engine:
         # Use the frozen bank's first self-contained route as the canonical opening, then let
         # Venice adapt only after the participant has actually supplied evidence.
         if not state["turns"] and not state["source_records"] and not state["evidence"]:
-            first = bank(instrument)["questions"][0]
+            from .question_policy import selectable
+            first = next(q for q in bank(instrument, state)["questions"] if selectable(q, state))
             if not first["context_requirement"].startswith("Self-contained"):
                 raise RuntimeError(
                     "Frozen survey bank no longer begins with a self-contained route."

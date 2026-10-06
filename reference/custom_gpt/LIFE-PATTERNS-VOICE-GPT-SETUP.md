@@ -1,6 +1,6 @@
 # Life Patterns voice-first ChatGPT collector
 
-Version: 2026-10-06.1-intro-progress-recovery. Development collection surface.
+Version: 2026-10-06.2-tendency-first. Development collection surface.
 
 ## Purpose
 
@@ -100,3 +100,7 @@ Update the existing GPT, not a new GPT. Replace Instructions, the Action schema,
 ## Current correction — 2026-10-06
 
 The active Instructions and both operational Knowledge guides supersede the historical onboarding/progress/recovery advice above. Replace Instructions, RECOVERY-GUIDE-v2.md and ACTION-HANDOFF-GUIDE-v1.md. Keep the other four Knowledge files and existing Action unchanged. Progress must estimate remaining questions and answering minutes, not only count prior replies. On explicit Library recovery, compare all retrieved canonical lineages and verified successors; do not ask participants to choose between copies of a superseded file. A complete recovered interview proceeds to independent review after any missing consent, with no new local main-interview questions.
+
+## Current elicitation policy
+
+The seventh Knowledge file is `TENDENCY-FIRST-GUIDE-v1.json`. It supplies direct usual-pattern questions and prospective admission rules. Add it and replace Instructions; retain the other six files, Action and credential. TF1 question IDs never imply automatic old-facet equivalence. The backend now applies the same policy to clarification selection and full-review fallback. This does not restart or rewrite an existing interview.

@@ -709,7 +709,7 @@ def _shadow_route_cards(
         state.get("collection_preferences", {}).get("retrospective_questions_welcome") is True
     )
 
-    all_routes = list(bank(instrument)["questions"])
+    all_routes = list(bank(instrument, state)["questions"])
     context_source_ids = {
         str(source_id)
         for route in all_routes
@@ -723,7 +723,10 @@ def _shadow_route_cards(
     context_source_matches = _source_question_route_matches(turns, context_source_cards)
 
     cards: list[dict] = []
+    from .question_policy import selectable
     for route in all_routes:
+        if not selectable(route, state):
+            continue
         route_id = str(route["id"])
         if route_id in addressed or route_id in skipped_routes:
             continue
@@ -860,7 +863,7 @@ def make_gap_spec_triage_context(state: dict, instrument: dict) -> dict:
     full = make_gap_triage_context(state, instrument, allow_semantic_context=True)
     turns = full["turns"]
     authority_by_id = {
-        str(route["id"]): route for route in bank(instrument)["questions"]
+        str(route["id"]): route for route in bank(instrument, state)["questions"]
     }
     candidate_routes = [
         _gap_spec_route_card(route, turns) for route in full["candidate_routes"]
@@ -1037,7 +1040,7 @@ def make_gap_spec_admission_context(
 ) -> dict:
     selected_ids = {candidate.route_id for candidate in triage.candidates}
     authority = {
-        str(route["id"]): route for route in bank(instrument)["questions"]
+        str(route["id"]): route for route in bank(instrument, state)["questions"]
     }
     context_source_ids = {
         str(source_id)
@@ -1308,7 +1311,7 @@ def make_gap_admission_context(
         "proposed_candidates": proposed_candidates,
         "selected_routes": [
             route_card(route, include_limits=True)
-            for route in bank(instrument)["questions"]
+            for route in bank(instrument, state)["questions"]
             if route["id"] in selected_ids
         ],
         "global_admission_gates": triage_context["global_admission_gates"],
@@ -1350,7 +1353,7 @@ def make_gap_match_audit_context(
         "source_turns": source_turns,
         "routes": [
             route_card(route, include_limits=True)
-            for route in bank(instrument)["questions"]
+            for route in bank(instrument, state)["questions"]
             if route["id"] in route_ids
         ],
         "current_batch_route_ids": [
@@ -1495,7 +1498,7 @@ def make_gap_question_render_context(
         str(route["id"]): route for route in triage_context["candidate_routes"]
     }
     authority_by_id = {
-        str(route["id"]): route for route in bank(instrument)["questions"]
+        str(route["id"]): route for route in bank(instrument, state)["questions"]
     }
 
     final_questions: dict[str, Question] = {}
@@ -1753,6 +1756,8 @@ def run_shadow_fast_spec_path(
 ) -> dict[str, Any]:
     """Run the two-call spec-only first-batch path with the broad audit deferred."""
 
+    from .question_policy import PolicyProvider
+    provider = PolicyProvider(provider, state)
     triage_context = make_gap_spec_triage_context(state, instrument)
     triage_value, triage_call = provider.call(
         GAP_SPEC_TRIAGE_PROMPT,

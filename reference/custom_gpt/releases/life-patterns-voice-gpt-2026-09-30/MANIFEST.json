@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-06.1-intro-progress-recovery",
+  "version": "2026-10-06.2-tendency-first",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "ee2ac50ca17af99cf63af0b4c6c16ccd4f5e13aa9c56107ef9ea9bda3115c620"
+    "sha256": "8a1ac7fe4de0c13d8c68edd33bbebf8f8ec390f18a48745835ecf16fd1f30a77"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "668b35dadcf788a01d793196d0437726fb9d6a7f734f79e9182949eb471c5e75",
-    "characters": 7835,
-    "strict_linebreak_count": 7920
+    "sha256": "2e8acfc7c6a2b8dd4f24530e29ab30496e3f0f41952322172209a8db1929bd87",
+    "characters": 7903,
+    "strict_linebreak_count": 7988
   },
   "knowledge_files": [
     {
@@ -35,6 +35,10 @@
     {
       "path": "reference/custom_gpt/ACTION-HANDOFF-GUIDE-v1.md",
       "sha256": "6bdd7db374be3c1d848b108a1756615588a33105e501026bc8636ac468e51dc4"
+    },
+    {
+      "path": "reference/custom_gpt/TENDENCY-FIRST-GUIDE-v1.json",
+      "sha256": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611"
     }
   ],
   "birth_or_chart_material_in_bundle": false,

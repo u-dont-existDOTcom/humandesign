@@ -1,0 +1,1 @@
+The existing batch transport fake now proposes TF1-M11 and TF1-G19 instead of retired M09/G19. Its assertions for exact Q&A, batching, idempotency, skip, stale result rejection, full evidence review and submission are unchanged. Separate regressions require the previous canonical meal question to be rejected. No semantic test is passed merely by renaming IDs.

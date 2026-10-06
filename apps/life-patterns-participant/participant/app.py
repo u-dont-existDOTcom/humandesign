@@ -624,8 +624,10 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
     @app.get("/healthz")
     def health():
+        from .question_policy import identity
         return {
             "status": "ok",
+            "question_policy": identity(),
             "version": VERSION,
             "provider": "venice",
             "provider_configured": provider.configured,
@@ -859,11 +861,14 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             if questions[0] != clarification or (not fast and len(questions) > 1):
                 raise ValueError("The batch does not match the review protocol.")
             pinned = store.instrument(queued.get("instrument_version", version))
-            routes = {row["id"]: row for row in bank(pinned)["questions"]}
+            from .question_policy import selectable
+            routes = {row["id"]: row for row in bank(pinned, body.worker_state)["questions"]}
             for question in questions:
                 route = routes.get(question["route_id"])
                 if route is None:
                     raise ValueError("Worker returned an unknown survey route.")
+                if not selectable(route, body.worker_state or {}):
+                    raise ValueError("Worker returned a retired or skipped elicitation route.")
                 if question["route_type"] == "canonical" and question["question_text"] != route["question"]:
                     raise ValueError("Canonical worker question does not match the frozen bank.")
                 if target_exposure(question["question_text"]):

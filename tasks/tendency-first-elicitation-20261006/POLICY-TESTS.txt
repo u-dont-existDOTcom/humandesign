@@ -1,0 +1,28 @@
+.F................                                                       [100%]
+=================================== FAILURES ===================================
+___ test_fast_and_full_fallback_select_direct_patterns_not_retired_scenarios ___
+
+    def test_fast_and_full_fallback_select_direct_patterns_not_retired_scenarios():
+        state = state_for_policy()
+        state["turns"] = [{"turn_id":"t1", "turn_source":"import-1", "question_text":"Q", "answer_text":"A", "canonical_question_id":None}]
+        instrument = authority()
+        fast = make_gap_spec_triage_context(state, instrument)
+        full = make_context(state, instrument, ["t1"], bulk_import=True)
+        for context in (fast, full):
+            routes = {q["id"]:q for q in context["candidate_routes"]}
+            assert "M11" not in routes and "M09" not in routes
+            assert routes["TF1-M11"]["question"] == "When sharing work or costs with someone, how do you usually work out an arrangement?"
+>           assert routes["TF1-M11"]["planning_targets"] == []
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'planning_targets'
+
+apps/life-patterns-participant/tests/test_tendency_first_policy.py:44: KeyError
+=============================== warnings summary ===============================
+../humandesign-fast-review-release-20261005/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /mnt/hdd/var/tmp/humandesign-fast-review-release-20261005/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/life-patterns-participant/tests/test_tendency_first_policy.py::test_fast_and_full_fallback_select_direct_patterns_not_retired_scenarios
+1 failed, 17 passed, 1 warning in 2.33s
