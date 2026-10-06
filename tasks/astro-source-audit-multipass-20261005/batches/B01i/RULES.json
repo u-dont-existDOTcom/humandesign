@@ -1,0 +1,2940 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01i",
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "status": "ENGLISH_SOURCE_EXTRACTION_COMPLETE_IN_DECLARED_CHAPTERS",
+  "records_count": 61,
+  "independent_predictions_count": 0,
+  "records": [
+    {
+      "id": "PT.R64.III.13.R273",
+      "title": "Intellectual and sensory inquiry begin from different referents",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          357
+        ],
+        "printed_support_pages": [
+          333
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "reason and the mind",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topic": "qualities of the soul"
+      },
+      "consequent": "Inspect Mercury for reason/intellect and the Moon for the sensory/non-rational portion, with planets involved in her applications and separations.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "TOPICAL_SELECTION_METHOD",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Source psychic terminology is not mapped automatically to intelligence tests, diagnoses or modern trait scales."
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R274",
+      "title": "Psychic judgement requires multiple contextual layers",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          357,
+          359
+        ],
+        "printed_support_pages": [
+          333,
+          335
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "no simple or offhand manner",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "inherited": "Mercury/Moon topic inquiry"
+      },
+      "consequent": "Combine signs holding Mercury/Moon or their dominators, related planets' solar and angular configurations, and their particular natures.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SYNTHESIS_METHOD",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.13.R275",
+      "title": "Three sign-mode descriptions retain mixed traits and a membership uncertainty",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          359
+        ],
+        "printed_support_pages": [
+          335
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "solstitial signs",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "scope": "relevant signs within the Mercury/Moon/ruler method"
+      },
+      "consequent": "Solstitial: public/political involvement, turbulence, ambition, piety, mobility and inventive inquiry. Bicorporeal: complexity, changeability, versatility and music alongside fickleness/laziness. Solid: justice, firmness and patience alongside grudges, contention, greed and inflexibility.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Robbins writes solstitial, while the source term and earlier equinoctial/solstitial distinction require reconciliation; do not silently define this row as all four modern cardinal signs."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/sign_mode_bundles"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R276",
+      "title": "Orient, Ascendant and proper face provide a contextual modifier",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          359
+        ],
+        "printed_support_pages": [
+          335
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "in proper face",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "conditions": "orient or horoscope position, particularly proper face"
+      },
+      "consequent": "The source gives openness, liberality, simplicity, self-will, strength, nobility and keenness.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Proper face refers to source I.23, not automatically decan rulership."
+      ],
+      "output_type": "MODIFIER",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.13.R277",
+      "title": "Morning stations and culmination mix cognitive efficacy and severity",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          359
+        ],
+        "printed_support_pages": [
+          335
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Morning stations",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "conditions": "morning stations and culminations"
+      },
+      "consequent": "The bundle includes calculation, patience, memory, firmness, intelligence, magnanimity and accomplishment, together with inflexibility, roughness, punishment and criticism.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "MODIFIER",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.13.R278",
+      "title": "Precessions and settings are a distinct but motion-ambiguous row",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          359,
+          361
+        ],
+        "printed_support_pages": [
+          335,
+          337
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Precessions and settings",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "conditions": "source precessions/settings"
+      },
+      "consequent": "The text lists changeability, instability, weakness, low endurance, emotionality, humility, cowardice, deceit, bullying, dullness and sluggishness.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Robbins's advances-versus-retrogression explanation explicitly refers back to III.11 ambiguity. Not the precession of the equinoxes; no automatic speed-sign mapping."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.13.R279",
+      "title": "Hidden-investigation modifier does not imply strong memory or industriousness",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          361
+        ],
+        "printed_support_pages": [
+          337
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Evening stations",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "alternatives": [
+          "evening stations",
+          "under-earth culmination",
+          "Mercury/Venus evening settings by day or morning settings by night"
+        ]
+      },
+      "consequent": "Nobility and wisdom coexist with mediocre memory and little painstaking labour; activities include mysteries, hidden inquiry, meteorology, instruments/machines, astrology, philosophy, omens and dreams.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Interests, cognitive strengths, memory and willingness to labour are different assertions."
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R280",
+      "title": "Familiarity and shared rule qualify expression of psychic character",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          361
+        ],
+        "printed_support_pages": [
+          337
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "same planets rule the two places",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "governors": "in own/familiar places or sects",
+        "reinforcement": "same planets relate to Mercury by aspect and to lunar application/separation"
+      },
+      "consequent": "Characters are expressed openly, without impediment, spontaneously and effectively.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Distinguish Mercury/Moon as initial referents from the planets selected to govern them; the note at p337 and final note at p361 have different scopes."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.13.R281",
+      "title": "Alien positions can obscure a nature while dominators act powerfully",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          361,
+          363
+        ],
+        "printed_support_pages": [
+          337,
+          339
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "places alien to them",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "governors": "alien places"
+      },
+      "consequent": "Their own natural qualities become obscure, indistinct, imperfect or ineffective, while dominating or overcoming planets act vigorously and harmfully.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITION_DEPENDENT_EXPRESSION",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.13.R282",
+      "title": "Effectiveness and moral character are independent judgement dimensions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          363
+        ],
+        "printed_support_pages": [
+          339
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "if those planets are in power",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "source_branch_A": "malefic-related character and those planets powerful",
+        "source_branch_B": "same but overcome by opposites",
+        "source_branch_C": "benefic-related character and unopposed",
+        "source_branch_D": "same but dominated"
+      },
+      "consequent": "A: wrongful action may be successful and unimpeded. B: it becomes ineffective and punishable. C: kindness brings happiness/repute. D: gentle and compassionate people may instead be wronged or despised.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SOURCE_FOUR_BRANCH_COMPARISON",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "No diagnosis, moral accusation or individual forensic classification is licensed."
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R283",
+      "title": "Single and paired descriptions require actual topical domination",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          363,
+          365
+        ],
+        "printed_support_pages": [
+          339,
+          341
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn alone is ruler",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "prerequisite": "selected planetary domination of the soul topic, not merely presence of two planets in aspect"
+      },
+      "consequent": "Use the ensuing single/paired planet accounts only in this kind of domination, and keep their honourable and contrary-position branches separate.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No complete numerical decision rule for mixed dignity, tied rulers or three-plus planetary mixtures is given in these paragraphs."
+      ],
+      "output_type": "PROFILE_APPLICATION_SCOPE",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.13.R284",
+      "title": "Dignified-position explanatory catalogue is later commentary",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          364,
+          365
+        ],
+        "printed_support_pages": [
+          340,
+          341
+        ],
+        "attribution_layer": "ROBBINS_NOTE_REPORTING_BOUCHE_LECLERCQ",
+        "passage_anchor": "Bouche",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "scope": "Robbins footnote explaining honourable placement"
+      },
+      "consequent": "Robbins reports Bouché-Leclercq's effective-position catalogue: natal circles, zodiac, other planets, motion/Sun; examples include solid sign, congruent sex/quadrant, proper domains including decans, non-fall, angularity or helpful aspect and avoidance of disjunct place.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "COMMENTARY_NOT_MAIN_RULE",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not attribute the commentary's entire checklist or an invented weighted sum to Ptolemy's main text."
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R285",
+      "title": "Saturn: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          363,
+          365
+        ],
+        "printed_support_pages": [
+          339,
+          341
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn alone",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Saturn"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/0/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R286",
+      "title": "Saturn: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          363,
+          365
+        ],
+        "printed_support_pages": [
+          339,
+          341
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn alone",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Saturn"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/0/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R287",
+      "title": "Saturn + Jupiter: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          365,
+          367
+        ],
+        "printed_support_pages": [
+          341,
+          343
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn, allied with Jupiter",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Saturn",
+          "Jupiter"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/1/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R288",
+      "title": "Saturn + Jupiter: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          365,
+          367
+        ],
+        "printed_support_pages": [
+          341,
+          343
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn, allied with Jupiter",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Saturn",
+          "Jupiter"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/1/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R289",
+      "title": "Saturn + Mars: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          367
+        ],
+        "printed_support_pages": [
+          343
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn, allied with Mars",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Saturn",
+          "Mars"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/2/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R290",
+      "title": "Saturn + Mars: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          367
+        ],
+        "printed_support_pages": [
+          343
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn, allied with Mars",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Saturn",
+          "Mars"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/2/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R291",
+      "title": "Saturn + Venus: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          369
+        ],
+        "printed_support_pages": [
+          345
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Allied with Venus",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Saturn",
+          "Venus"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/3/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R292",
+      "title": "Saturn + Venus: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          369
+        ],
+        "printed_support_pages": [
+          345
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Allied with Venus",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Saturn",
+          "Venus"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/3/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R293",
+      "title": "Saturn + Mercury: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          369,
+          371
+        ],
+        "printed_support_pages": [
+          345,
+          347
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn, in familiarity with Mercury",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Saturn",
+          "Mercury"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/4/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R294",
+      "title": "Saturn + Mercury: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          369,
+          371
+        ],
+        "printed_support_pages": [
+          345,
+          347
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn, in familiarity with Mercury",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Saturn",
+          "Mercury"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/4/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R295",
+      "title": "Jupiter: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          371,
+          373
+        ],
+        "printed_support_pages": [
+          347,
+          349
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "If Jupiter alone",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Jupiter"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/5/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R296",
+      "title": "Jupiter: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          371,
+          373
+        ],
+        "printed_support_pages": [
+          347,
+          349
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "If Jupiter alone",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Jupiter"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/5/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R297",
+      "title": "Jupiter + Mars: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          373
+        ],
+        "printed_support_pages": [
+          349
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter allied with",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Jupiter",
+          "Mars"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/6/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R298",
+      "title": "Jupiter + Mars: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          373
+        ],
+        "printed_support_pages": [
+          349
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter allied with",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Jupiter",
+          "Mars"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/6/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R299",
+      "title": "Jupiter + Venus: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          373,
+          375
+        ],
+        "printed_support_pages": [
+          349,
+          351
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter, allied with Venus",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Jupiter",
+          "Venus"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/7/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R300",
+      "title": "Jupiter + Venus: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          373,
+          375
+        ],
+        "printed_support_pages": [
+          349,
+          351
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter, allied with Venus",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Jupiter",
+          "Venus"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/7/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R301",
+      "title": "Jupiter + Mercury: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          375,
+          377
+        ],
+        "printed_support_pages": [
+          351,
+          353
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter allied with Mercury",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Jupiter",
+          "Mercury"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/8/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R302",
+      "title": "Jupiter + Mercury: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          375,
+          377
+        ],
+        "printed_support_pages": [
+          351,
+          353
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter allied with Mercury",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Jupiter",
+          "Mercury"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/8/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R303",
+      "title": "Mars: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          377
+        ],
+        "printed_support_pages": [
+          353
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars alone",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Mars"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/9/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R304",
+      "title": "Mars: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          377
+        ],
+        "printed_support_pages": [
+          353
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars alone",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Mars"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/9/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R305",
+      "title": "Mars + Venus: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          377,
+          379
+        ],
+        "printed_support_pages": [
+          353,
+          355
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Allied with Venus",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Mars",
+          "Venus"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/10/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R306",
+      "title": "Mars + Venus: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          377,
+          379
+        ],
+        "printed_support_pages": [
+          353,
+          355
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Allied with Venus",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Mars",
+          "Venus"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/10/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R307",
+      "title": "Mars + Mercury: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          379,
+          381
+        ],
+        "printed_support_pages": [
+          355,
+          357
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Allied with Mercury",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Mars",
+          "Mercury"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/11/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R308",
+      "title": "Mars + Mercury: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          379,
+          381
+        ],
+        "printed_support_pages": [
+          355,
+          357
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Allied with Mercury",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Mars",
+          "Mercury"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/11/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R309",
+      "title": "Venus: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          381
+        ],
+        "printed_support_pages": [
+          357
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "If Venus alone",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Venus"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/12/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R310",
+      "title": "Venus: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          381
+        ],
+        "printed_support_pages": [
+          357
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "If Venus alone",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Venus"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/12/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R311",
+      "title": "Venus + Mercury: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          381,
+          383
+        ],
+        "printed_support_pages": [
+          357,
+          359
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Joined with Mercury",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Venus",
+          "Mercury"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/13/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R312",
+      "title": "Venus + Mercury: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          381,
+          383
+        ],
+        "printed_support_pages": [
+          357,
+          359
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Joined with Mercury",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Venus",
+          "Mercury"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/13/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R313",
+      "title": "Mercury: honourable positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          383,
+          385
+        ],
+        "printed_support_pages": [
+          359,
+          361
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury, by himself",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Mercury"
+        ],
+        "placement_branch": "HONOURABLE"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/14/placement_branches/HONOURABLE"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R314",
+      "title": "Mercury: contrary positions",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          383,
+          385
+        ],
+        "printed_support_pages": [
+          359,
+          361
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury, by himself",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "topical_authority": "source-qualified domination of Mercury/Moon topic",
+        "selected_planets": [
+          "Mercury"
+        ],
+        "placement_branch": "CONTRARY"
+      },
+      "consequent": "Preserve the complete condition-dependent descriptor bundle in the linked table, including supportive and adverse features that coexist.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Not a generic conjunction profile, numerical score, criminality diagnosis or claim about a person. No weight or calibration is supplied."
+      ],
+      "table_refs": [
+        "SOUL_PROFILE_TABLES.json#/profiles/14/placement_branches/CONTRARY"
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R315",
+      "title": "Context changes the interpretation of a repeated Greek character word",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          373
+        ],
+        "printed_support_pages": [
+          349
+        ],
+        "attribution_layer": "ROBBINS_EDITORIAL_NOTE",
+        "passage_anchor": "two distinct senses",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "scope": "Robbins on good character versus simplicity"
+      },
+      "consequent": "Robbins distinguishes a word's good-character sense from guileless simplicity reaching folly; adjacent contexts use different senses.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "LEXICAL_SCOPE",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "A dictionary match across passages is not sufficient for one shared behavioral code."
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R316",
+      "title": "The moon’s nodal phase supplements rather than replaces the ruler mixture",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          385
+        ],
+        "printed_support_pages": [
+          361
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "bendings of its northern",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "Moon": "at northern/southern bendings or at nodes"
+      },
+      "consequent": "Bendings are linked to versatility, resourcefulness and change; nodes to keenness, activity and excitability.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No numerical vicinity/orb or quantitative contribution is supplied."
+      ],
+      "output_type": "MODIFIER",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.13.R317",
+      "title": "Lunar illumination gives a second distinct supplementary modifier",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          385
+        ],
+        "printed_support_pages": [
+          361
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "increases of its illumination",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "Moon": "rising/waxing versus waning/occultation"
+      },
+      "consequent": "Rising/waxing contributes natural endowment, renown, firmness and frankness; waning/occultation sluggishness, dullness, less fixity, caution and less renown.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "MODIFIER",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.13.R318",
+      "title": "Robbins distinguishes five actual rulers from assisting luminaries",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          385
+        ],
+        "printed_support_pages": [
+          361
+        ],
+        "attribution_layer": "ROBBINS_EDITORIAL_NOTE",
+        "passage_anchor": "actual rulers are the five planets",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "scope": "final note on the lunar modifier"
+      },
+      "consequent": "The note identifies the five planets as actual rulers in these lists and the luminaries as assisting; it compares the bodily chapter.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SCOPE_OF_TABLE",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "The fifteen combinations enumerate five singles and ten pairs, not twenty-eight combinations of seven bodies."
+      ]
+    },
+    {
+      "id": "PT.R64.III.13.R319",
+      "title": "The Sun modifies a familiar psychic ruler without making effort and success identical",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.13",
+        "pdf_support_pages": [
+          385,
+          387
+        ],
+        "printed_support_pages": [
+          361,
+          363
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "sun also aids",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "Sun": "familiar with the planet governing psychic temperament"
+      },
+      "consequent": "In honourable position it modifies toward justice, success, honour, dignity and piety; in contrary/alien position toward humility, greater industry, less prominence, harshness, obstinacy, harder life and less success.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "MODIFIER",
+      "dependency_groups": [
+        "PT.III.13.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Greater work and lower success coexist in the contrary branch."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R320",
+      "title": "Historical pathological enquiry retains Mercury/Moon compound prerequisites",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          387
+        ],
+        "printed_support_pages": [
+          363
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "positions of Mercury and the moon",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "primary": "Mercury/Moon unrelated to one another or to the eastern horizon",
+        "additional": "overcome, surrounded, or opposed by unfamiliar injurious planets"
+      },
+      "consequent": "The source associates psychic afflictions with this compound configuration and refers back to planetary natures familiar to the places.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Mere Moon–Mercury disjunction is not the complete stated antecedent."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R321",
+      "title": "The source’s mean-and-extremes taxonomy is not a modern diagnosis",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          387,
+          389
+        ],
+        "printed_support_pages": [
+          363,
+          365
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "extremes of character",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "scope": "historical discussion of mild and extreme soul affections"
+      },
+      "consequent": "Milder deviations are discussed in prior character descriptions; excesses/deficiencies around a mean and more disproportionate conditions are distinguished.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "HISTORICAL_TAXONOMY",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not apply the source's pathological labels to modern traits or identities."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R322",
+      "title": "Day/night reversal differentiates two source diagnostic labels",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          389
+        ],
+        "printed_support_pages": [
+          365
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn by day",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "inherited": "Mercury/Moon unrelated to each other or Ascendant and the preceding injurious relation",
+        "branch_A": "angular Saturn by day or Mars by night",
+        "branch_B": "same conditions but Saturn by night or Mars by day governs"
+      },
+      "consequent": "A is called epileptic; B violently insane, especially in Cancer/Virgo/Pisces.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Historical conditional labels only, not diagnosis or a causal medical model."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R323",
+      "title": "A lunar phase branch joins historical possession and fluid language",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          389
+        ],
+        "printed_support_pages": [
+          365
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "water on the brain",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "inherited": "same adverse positional framework",
+        "phase": "Saturn controls Moon at conjunction or Mars at full Moon",
+        "reinforcement": "Sagittarius/Pisces"
+      },
+      "consequent": "The source couples demonic seizure with water-on-brain language.",
+      "modifiers": [
+        "Robbins says Ptolemy apparently identifies these; his note calls the setting a superstition of Roman Egypt."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not infer possession, modern hydrocephalus, or any personal disorder."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R324",
+      "title": "A latent incurable branch is separate from a conspicuous one",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          389,
+          391
+        ],
+        "printed_support_pages": [
+          365,
+          367
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "latent and obscure",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "malefics": "alone govern the specified configuration"
+      },
+      "consequent": "The described affliction is labelled incurable but hidden/obscure.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Visibility and prognosis are separate source dimensions."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R325",
+      "title": "Opposing east/west configurations alter prognosis and visibility separately",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          391
+        ],
+        "printed_support_pages": [
+          367
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "curable, but noticeable",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "malefics": "in western parts",
+        "benefics": "Jupiter/Venus familiar, angular in east"
+      },
+      "consequent": "The source calls these conditions curable yet noticeable; Jupiter gives treatment/diet/drug routes, Venus oracular/divine assistance.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The edition's apparatus lists a variant lacking the favourable-to-display reading; the adopted English says noticeable."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Do not substitute hidden for noticeable or recommend treatment from a chart."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R326",
+      "title": "Reverse east/west configuration is both grave and visible in the source",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          391
+        ],
+        "printed_support_pages": [
+          367
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "angular in the east",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "malefics": "angular east",
+        "benefics": "setting"
+      },
+      "consequent": "The text calls the conditions incurable, conspicuous and notorious, with recurrent attacks/peril, alienation and other manifestations appropriate to its historical categories.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": []
+    },
+    {
+      "id": "PT.R64.III.14.R327",
+      "title": "Source place-ruler examples are category-specific",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          391
+        ],
+        "printed_support_pages": [
+          367
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "places that possess the configuration",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "inherited": "preceding pathological configuration"
+      },
+      "consequent": "Sun/Mars places support the madness category; Jupiter/Mercury places the epilepsy category; Venus divine possession/confession; Saturn/Moon fluids/demonic seizures.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "Repeated outcomes across III.12 and III.14 are not independent observations or a modern diagnostic code."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R328",
+      "title": "The passive-affection inquiry changes its primary referent",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          393
+        ],
+        "printed_support_pages": [
+          369
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "instead of Mercury",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "new_topic": "source's passive/sexual excess-and-deficiency discussion"
+      },
+      "consequent": "Substitute the Sun for Mercury while retaining the Moon and examining relations from Mars and Venus.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SUBJECT_AND_SIGNIFICATOR_CHANGE",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "The author's natural/unnatural and male/female judgments are historical categories, not modern diagnostic or moral findings."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R329",
+      "title": "Unattended luminaries in masculine signs form one source branch",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          393
+        ],
+        "printed_support_pages": [
+          369
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "unattended in masculine signs",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "luminaries": "unattended in source-masculine signs"
+      },
+      "consequent": "The text assigns increased virility/activity with different moralized descriptions for men and women; masculinized Mars or Venus extends the sexual-conduct claims.",
+      "modifiers": [
+        "The extension covers either Mars or Venus or both."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "No inference about a real person's sexual orientation, gender, consent or conduct."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R330",
+      "title": "Venus-only versus added Mars differentiates private and public expression",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          393,
+          395
+        ],
+        "printed_support_pages": [
+          369,
+          371
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Venus alone",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "inherited": "preceding masculinized sexual-category configuration",
+        "branch_A": "Venus alone masculinized",
+        "branch_B": "Mars likewise masculinized"
+      },
+      "consequent": "A is described as secret; B open, sometimes including public recognition of female partners as wives in the historical account.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "No actual identity or behavior is inferred from this classification."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R331",
+      "title": "Feminine luminary branch is distinct rather than silently reversed",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          395
+        ],
+        "printed_support_pages": [
+          371
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "unattended in feminine signs",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "luminaries": "unattended in source-feminine signs"
+      },
+      "consequent": "The text assigns the converse moralized sex-role characterization; feminized Venus adds private conduct claims and feminized Mars adds open expression.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_CLAIM",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "The historical bundle conflates gender expression, sexual conduct and pathology; no modern equivalence is asserted."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R332",
+      "title": "Relative phases of Mars and Venus modify publicity and sex-role language",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          395
+        ],
+        "printed_support_pages": [
+          371
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "rising and morning positions",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "Mars_Venus": "rising/morning versus setting/evening"
+      },
+      "consequent": "The source assigns virility and notoriety to rising/morning and femininity/sedateness to setting/evening.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "HISTORICAL_MODIFIER",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "No modern gender measurement or clinical classification is constructed."
+      ]
+    },
+    {
+      "id": "PT.R64.III.14.R333",
+      "title": "Final modifiers preserve restraint, publicity and foresight as different outputs",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "III.14",
+        "pdf_support_pages": [
+          395,
+          397
+        ],
+        "printed_support_pages": [
+          371,
+          373
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "while Jupiter aids",
+        "locator_precision": "English main text and separately attributed English notes at the specified PDF/printed pages. Paraphrases and structured lists are not quotations."
+      },
+      "source_genre": "NATAL_CONSTITUTION_AND_CONDITIONAL_JUDGEMENT",
+      "reference_frame": "Historical geocentric astrology in this witness. Bodily, moral, sexual and pathological descriptions are the source's claims, not findings about any person.",
+      "antecedents": {
+        "inherited": "foregoing passive-affection framework",
+        "modifier_planet": "Saturn, Jupiter or Mercury"
+      },
+      "consequent": "Saturn increases licentiousness/impurity/reproach; Jupiter decorum/restraint/modesty; Mercury notoriety, emotional instability, versatility and foresight.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "MODIFIER",
+      "dependency_groups": [
+        "PT.III.14.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "No calibrated probability, clinical/identity/forensic classifier or modern behavioral score is supplied."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; any companion helper is a bounded table/geometry reference, not the source judgement engine",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true,
+      "project_guardrails": [
+        "The word foresight is part of a mixed bundle, not proof of an exclusively favourable Mercury effect."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch_ids": [
+    "B01h",
+    "B01i"
+  ],
+  "parent_status": "OPEN_MULTIPASS_OWNER_AUTHORIZED",
+  "base_commit": "e3b523ebb6d5839be5b976d9c526ca6c70d16cd5",
+  "writer_branch": "research/astro-source-audit-b01h-20261006",
+  "scope": "Complete scheduled III.11-III.12 and continue the source-only English reading/extraction through III.13-III.14, finishing Book III. No actual-person analysis.",
+  "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "authority": {
+    "uda_default_commit": "991c7a08b7d9f831327d9075175b8d70c34c37e6",
+    "uda_agents_blob": "0a88eb99b513c803277509d31d80a703c2409ef8",
+    "project_agents_blob": "15efee1556a0a44ea2b6e4af0596a7e0cb8c24c3",
+    "activation": "Live GitHub AGENTS/LESSON-INDEX, source-provenance and task-activation patterns; current fetched UDA recovery/continuation; current project checkpoint and existing multiple-pass plan."
+  },
+  "active_lessons": [
+    {
+      "id": "source-interpretation-provenance",
+      "required": "Preserve main text, translator commentary, uncertainty and historical terminology separately; anchor claims to pages; no modern clinical or identity inference.",
+      "evidence_required": "Conditional source records, attributed notes, complete section receipts and unresolved ledger."
+    },
+    {
+      "id": "recovery-and-preservation",
+      "required": "Read canonical checkpoint, isolate writer, preserve old models and batches.",
+      "evidence_required": "Baseline/protected-byte check; only four declared existing progress files changed."
+    },
+    {
+      "id": "read-before-count",
+      "required": "Count only fully read/extracted English chapters; partial/shared next page does not complete another chapter.",
+      "evidence_required": "Four chapter spans and per-paragraph disposition."
+    },
+    {
+      "id": "verification-scope",
+      "required": "Tests check source tables, lookup behavior and integrity, not empirical validity or independent semantic review.",
+      "evidence_required": "Actual local and integrated test outputs."
+    },
+    {
+      "id": "delivery",
+      "required": "Publish to authorized research branch and deliver actual report/packet; no ongoing process claimed.",
+      "evidence_required": "Remote-head/readback and local/sandbox artifacts."
+    }
+  ],
+  "allowed_existing_changes": [
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json"
+  ],
+  "not_authorized": [
+    "alter historical predictions",
+    "retune retained candidates",
+    "clinical guidance",
+    "raw book/full OCR Git storage",
+    "new paid purchase",
+    "production deployment"
+  ],
+  "new_ocr_calls": 0,
+  "independent_review_claimed": false,
+  "prepublication_gate": {
+    "source_provenance": "PASS: source locators and attributed commentary in RULES, tables and receipts; semantic assessment by current chat, not independent review",
+    "preservation": "PASS: PROTECTED_CONTENT_VERIFICATION.json",
+    "read_before_count": "PASS: complete four-section English reading and coverage receipts; Book IV remains unread",
+    "verification_scope": "PASS: 225 actual checks; no predictive-validity claim",
+    "delivery": "PENDING_PUBLICATION_AND_OWNER_DELIVERY"
+  },
+  "reactivation_after_context_resume": "Current fetched UDA task-activation guidance and exact project checkpoint reloaded; transferred bytes reconciled before extraction."
+}

@@ -1,8 +1,8 @@
 {
   "task_id": "astro-source-audit-multipass-20261005",
   "parent_status": "OPEN_MULTIPASS_OWNER_AUTHORIZED",
-  "completed": "Source intake; Ptolemy English I.1-I.24 and III.1-III.10; prior Rhetorius witness/OCR qualifications retained",
-  "current": "B01f/B01g complete: birth chapters and complete III.10 source audit with bounded directional arithmetic; parent corpus audit OPEN",
+  "completed": "Source intake; full English Ptolemy Book I and Book III; prior source and Rhetorius witness/OCR qualifications retained",
+  "current": "B01h/B01i complete: bodily and psychic constitution source audit; parent corpus audit OPEN",
   "counts": {
     "files": 13,
     "book_length_files": 9,
@@ -12,10 +12,10 @@
     "full_source_rule_audits_completed": 0,
     "rules_promoted": 0,
     "ptolemy_indexed_sections": 61,
-    "ptolemy_read_sections": 34,
-    "ptolemy_unread_sections": 27,
-    "source_records": 227,
-    "isolated_definition_tests": 147,
+    "ptolemy_read_sections": 38,
+    "ptolemy_unread_sections": 23,
+    "source_records": 333,
+    "isolated_definition_tests": 191,
     "incomplete_book_witnesses": 1,
     "retained_old_preview_files": 1,
     "private_supplement_files": 1,
@@ -28,32 +28,35 @@
     "targeted_cross_source_comparisons": 4,
     "terms_table_cells_directly_transcribed": 120,
     "chaldean_cells_computed": 120,
-    "ptolemy_book_III_read_sections": 10
+    "ptolemy_book_III_read_sections": 14,
+    "ptolemy_english_natal_books_completed": 1,
+    "psychic_single_pair_profiles": 15,
+    "psychic_placement_branches": 30
   },
-  "next_batch": "B01h",
+  "next_batch": "B01j",
   "next_source": "PTOLEMY1940_REPRINT1964",
-  "next_range": "III.11-III.12; start III.11 on English PDF331/printed307; stop before III.13 on shared PDF357/printed333",
+  "next_range": "IV.1-IV.4; Book IV heading on PDF397/printed373 through before IV.5 on shared PDF417/printed393",
   "next_actor": "Next authorized source-audit continuation; no new upload needed",
   "no_background_run": true,
   "missing_sources_do_not_block_available_batches": true,
-  "last_verified_unit": "III.10 closing paragraph on English PDF331/printed307 before III.11",
-  "source_rule_records": 227,
+  "last_verified_unit": "III.14 closing sentence on PDF397/printed373 before Book IV",
+  "source_rule_records": 333,
   "person_predictions_added": 0,
   "fixed_star_table_entries": 95,
   "source_witness_updates": "SOURCE_WITNESS_UPDATES_20261006.json",
-  "counting_note": "227 source records; 95 earlier separate star groups; four earlier Rhetorius comparisons; none is an independent prediction or validation trial.",
+  "counting_note": "333 source records; 15 psychic single/pair profiles with 30 condition branches; 95 earlier separate star groups and four earlier Rhetorius comparisons. Counts are not independent predictions or validation trials.",
   "rhetorius_ocr_recheck": "RHETORIUS_OCR_RECHECK_20261006.json",
   "rhetorius_coverage_claim_scope": "Exact inspected PDF and supplement, not every copy. New OCR has text on pages with unrecognized footer labels; independently rechecked copy-specific discontinuities remain. See latest recheck.",
   "latest_reports": [
-    "batches/B01f/REPORT.md",
-    "batches/B01f/VERIFICATION.json"
+    "batches/B01h/REPORT.md",
+    "batches/B01h/VERIFICATION.json"
   ],
   "stop_admission": {
     "parent_status": "OPEN",
-    "remaining_gap": "Remaining readable source chapters; full cross-author reconciliation; later compilation and evaluation.",
-    "next_action": "III.11-III.12; start III.11 on English PDF331/printed307; stop before III.13 on shared PDF357/printed333",
-    "authority": "Owner-approved multi-pass source audit and this continuation.",
-    "executed_this_increment": "Read III.6-III.9 and continued through all III.10;63 records and39 new bounded checks.",
-    "delivery_boundary": "Completed source-reading increment under the existing multi-pass pause contract; parent is not completed and no background work is claimed."
+    "remaining_gap": "Ptolemy II/IV and other books; fuller cross-author reconciliation; later compilation/evaluation.",
+    "next_action": "IV.1-IV.4; Book IV heading on PDF397/printed373 through before IV.5 on shared PDF417/printed393",
+    "authority": "Owner-approved multi-pass audit and current continue request.",
+    "executed_this_increment": "Read/extract III.11-III.14:106 records, complete15/30 profile inventory and44 new bounded checks.",
+    "delivery_boundary": "Completed source-reading increment under the existing multiple-pass pause contract; no parent-completion or background-work claim."
   }
 }

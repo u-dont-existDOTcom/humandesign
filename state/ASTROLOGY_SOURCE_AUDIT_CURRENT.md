@@ -1,26 +1,31 @@
 # Current astrology source audit
 
-**Parent OPEN: owner-authorized multi-pass source audit.** English Ptolemy Book I (24/24) and III.1-III.10 are read/extracted. No personal predictions, fitted-model changes or runtime promotion.
+**Parent OPEN: owner-authorized multi-pass source audit.** Full English Ptolemy Book I (24/24) and Book III (14/14) are read/extracted. No personal predictions, fitted-model changes or runtime promotion.
 
 ## Canonical recovery
-- `tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json` — exact next section/counts.
-- `tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json` — five passes and all source tracks.
-- `tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json` — 61 Ptolemy sections:34 read,27 unread.
-- `tasks/astro-source-audit-multipass-20261005/batches/B01f/REPORT.md` — integrated B01f/B01g report.
-- `tasks/astro-source-audit-multipass-20261005/batches/B01f/VERIFICATION.json` — actual integration tests and source/protected-content verification.
-- Task `batches/B01f/RULES.json`, `BIRTH_DOCTRINE_TABLES.json`, `READING_RECEIPT.json`, `UNRESOLVED_INTERPRETATIONS.json` — historical birth doctrines.
-- Task `batches/B01g/RULES.json`, `DIRECTION_REFERENCE.json`, `ARITHMETIC_REPLAY.json`, `READING_RECEIPT.json`, `UNRESOLVED_INTERPRETATIONS.json` — full III.10 source audit and bounded arithmetic.
-- `tasks/astro-source-audit-multipass-20261005/RHETORIUS_OCR_RECHECK_20261006.json` — controlling copy-specific qualification; original witness/supplement receipts preserved.
+- `tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json` — exact next section and counts.
+- Task `PASS_PLAN.json` and `SECTION_DISCOVERY.json` — five passes;61 indexed Ptolemy sections,38 read,23 unread.
+- Task `batches/B01h/REPORT.md` and `VERIFICATION.json` — integrated B01h/B01i report and actual tests.
+- `batches/B01h/RULES.json`, `BODY_REFERENCE_TABLES.json`, `SECTION_COVERAGE.json` and reading/unresolved receipts.
+- `batches/B01i/RULES.json`, `SOUL_PROFILE_TABLES.json`, `INTRASOURCE_QUALIFICATIONS.json`, reference helper/tests and reading/unresolved receipts.
+- Prior batches and Rhetorius OCR/witness receipts are preserved unchanged.
 
 ## Completed; do not repeat
-B01/B01b/B01c/B01d/B01e/B01f/B01g contain24+32+53+27+28+29+34=227 source records.95 earlier fixed-star groups are separate. Egyptian/Ptolemaic terms have120 directly transcribed cells and the Chaldean reconstruction120 computed cells. Four earlier Rhetorius comparisons are not a full Rhetorius audit.147 source-reference/integrity checks plus34 methodology checks are expected; the latest verification records the actual run. None measures predictive validity.
+Previous227 source records plus B01h45 and B01i61 =333. There are15 psychic single/pair profiles with30 placement branches. Nine bodily-description rows, five phase modifiers, four quadrants and seven planetary body-correspondence rows are structured source tables, not independent observations. Earlier95 fixed-star groups, term tables and four targeted Rhetorius comparisons remain separate.191 source/reference checks plus34 methodology checks are expected; the latest verification records the actual run. No predictive validity follows.
 
-Owner Rhetorius OCR remains the private search aid. Images govern ambiguous numbers and continuity; an unreadable footer is not missing content. The replacement is198 physical PDF pages despite the150-page preview. The23-gap count concerns the inspected copy plus six-page supplement. The owner acknowledges the gaps: do not reopen that debate or demand another upload. Available material remains usable. BPHS remains Sharma; Primary Directions remains an excerpt/interview; unavailable books do not block other tracks.
+Rhetorius copy-specific gaps are acknowledged and retained: do not reopen the debate or require another upload. Owner OCR is the private searchable aid; original images govern ambiguous text. BPHS remains Sharma; Primary Directions remains an excerpt/interview. Missing books do not block available tracks. No new OCR is needed.
 
 ## Next executable batch
-**B01h: English III.11-III.12.** Start at III.11 heading onPDF331/printed307; end beforeIII.13 onPDF357/printed333. Headings verified, chapters not yet audited. Preserve historical physical/medical descriptions as source material, not diagnoses. BookII's13 mundane/general chapters remain deferred; BookIV is unread.
+**B01j: English IV.1-IV.4.** Start at Book IV heading on PDF397/printed373; stop before IV.5 on shared PDF417/printed393. These are introduction, material fortune, status/dignity and action/occupation. The headings are located, not counted as audited. All13 BookII mundane/general chapters remain deferred to their separate pass; all10 BookIV sections remain unaudited.
 
-## New source implementation cautions
+## New B01h/B01i cautions
+Bodily constitutional temperament is not a modern personality scale. Source bodily enquiry uses Ascendant/Moon/rulers, and psychic enquiry Mercury/Moon/rulers plus contextual modifiers. The15 single/pair profiles require source-topical domination; bare conjunction is insufficient. Honourable does not mean morally good; contrary does not delete every talent or virtue. Keep both branches and their mixed traits. The helper only retrieves caller-qualified source references and abstains on unknown/mixed or three-plus conditions; it does not establish qualification.
+
+The III.11 forward-motion note and III.13 precessions note must not become one unexamined signed-speed rule. The III.13 solstitial label's exact membership remains unresolved. Robbins's detailed dignity checklist is commentary reporting Bouché-Leclercq, not a direct new weighted rule. Context can reverse a shared word's character meaning. Five actual planetary rulers and two luminary referents/assistants are distinct roles.
+
+Injuries/disease terminology and sexual-role categories remain historical, not modern identity/clinical classifications. Mitigation, visibility, cure, social reproach, concealment and benefit are different outcomes. The adopted III.14 text is curable but noticeable; the alternate reading is preserved separately. Mars has a conditional speech-relief branch. Geometric bendings are quadrature to the nodes, without a supplied near-point orb or medical implication. No individual is assessed.
+
+## Prior B01f/B01g cautions retained
 III.6-III.9 retain multifactor preconditions, subject changes, non-sufficient adverse patterns and rescue/rearing alternatives. No modern identity/medical classifier is admitted. Cardanus's latitude explanation of the isosceles opposition is commentary, not an undisputed Ptolemaic definition.
 
 III.10 separates spatial eligibility, significator selection, direction method, encounter timing and outcome. Adopted Robbins main text uses Fortune=(ASC+Moon-Sun)mod360 both by day and night; other transmitted wording remains separately identified. Equal60-degree ecliptic intervals yield rounded46/58/70/64 equinoctial times at different temporal positions. Ordinary hours are seasonal. The exact PDF321 note reads147;44, not OCR147;14; finer-note replay gives45;05 and70;23, kept apart from rounded main examples. Interpolation is explicitly approximate. Jupiter12/Venus8 are conditional following-ray limits, not generic aspect orbs. Latitude mismatch concerns bodily encounters. Under-beams exclusion affects help and harm. III.10's final past-event candidate selection is development, not independent validation. IV.10 ingress/time-division dependencies remain pending.
