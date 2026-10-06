@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-source-audit-multipass-20261005",
+  "owner_authority": [
+    "Source-complete deep-methodology goal in this conversation",
+    "Owner supplied the Drive corpus",
+    "Owner explicitly permits multiple passes"
+  ],
+  "parent_outcome": "OPEN; substantive source audit continues over checkpointed passes",
+  "governing_method": "ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V2",
+  "passes": [
+    {
+      "id": "P1",
+      "title": "Acquire and qualify sources",
+      "status": "COMPLETE_INTAKE_WITH_DECLARED_GAPS",
+      "output": [
+        "DRIVE_INTAKE.json",
+        "RHETORIUS_PREVIEW_DETECTION.json"
+      ],
+      "done_when": "Every supplied file has an identity, digest, reading route, completeness caveat and source-list disposition. Not full-text reading."
+    },
+    {
+      "id": "P2",
+      "title": "Map every section",
+      "status": "PTOLEMY_CONTENTS_INDEXED_61; B01_8_ENGLISH_SECTIONS_MAPPED",
+      "output": [
+        "SECTION_DISCOVERY.json"
+      ],
+      "done_when": "Every contents section has an exact locator, genre, prerequisites and source/commentary distinction; unread/missing units remain explicit. Confirm image-only TOCs and actual text spans."
+    },
+    {
+      "id": "P3",
+      "title": "Read and extract conditional rules",
+      "status": "B01_COMPLETE_24_SOURCE_RECORDS; OTHER_UNITS_UNREAD",
+      "output": [
+        "per-source RuleSpecs and unresolved-term ledger"
+      ],
+      "done_when": "Each readable in-scope unit has been read and all operational conditions, modifiers, exceptions, contrary rules and worked examples dispositioned. No person histories."
+    },
+    {
+      "id": "P4",
+      "title": "Reconcile authors and test calculations",
+      "status": "B01_ISOLATED_DEFINITION_TESTS_18_PASSED; CROSS_AUTHOR_RECONCILIATION_PENDING",
+      "output": [
+        "cross-source comparison and worked-example fixtures"
+      ],
+      "done_when": "Agreements, disagreements and dependent reuses are linked without erasing variants; calculations checked with declared calendars, frames and uncertainty."
+    },
+    {
+      "id": "P5",
+      "title": "Compile, freeze and evaluate",
+      "status": "NOT_STARTED",
+      "output": [
+        "versioned implemented profiles and candidate-registry updates"
+      ],
+      "done_when": "Implemented rules have boundary/negative tests and source links, then separately frozen person-level comparisons. New rules retained, not automatically validated."
+    }
+  ],
+  "batches": [
+    {
+      "id": "B01",
+      "sources": [
+        "PTOLEMY1940_REPRINT1964"
+      ],
+      "scope": "Book I foundational vocabulary and conditions first; then natal III/IV; Book II separately mundane. All 61 TOC sections remain accounted for.",
+      "next": "B01b: Ptolemy I.9-I.16; exact English spans from PDF p.71 onward, stop before I.17",
+      "completed_subbatches": [
+        {
+          "id": "B01",
+          "scope": "English I.1-I.8 + bounded translator notes",
+          "source_records": 24,
+          "new_predictions": 0,
+          "tests": 18
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "sources": [
+        "LILLY1647"
+      ],
+      "scope": "Verify missing-leaf scope; cover definitions in I, retain horary II as separate genre, and systematically audit natal III. Existing selected strength table is not full coverage."
+    },
+    {
+      "id": "B03",
+      "sources": [
+        "VALENSRILEY",
+        "DOROTHEUS_DYKES2"
+      ],
+      "scope": "Hellenistic conditional judgement, rulers, Lots and timing; preserve translator and transmission layers."
+    },
+    {
+      "id": "B04",
+      "sources": [
+        "ITA_DYKES",
+        "ABUMASHAR_PNIV"
+      ],
+      "scope": "Visual/page-scoped reading of definitions, reception and full annual/monthly synthesis; build readable derivatives only as needed, never pretend image-only means absent."
+    },
+    {
+      "id": "B05",
+      "sources": [
+        "PHALA1950",
+        "BPHS_SHARMA_VOL1",
+        "BPHS_SHARMA_VOL2",
+        "BRIHAT1885"
+      ],
+      "scope": "Source-native Jyotish with Sharma-specific chapter inventory; Santhanam remains separate optional comparison, not silently substituted."
+    },
+    {
+      "id": "B06",
+      "sources": [
+        "HAYANA2020",
+        "GANSTEN_ANNUAL",
+        "HANDS_TRANSITS_WHITFORD_0914918249",
+        "LEO1906"
+      ],
+      "scope": "Tajika annual system and modern technical/interpretive companions, each separately attributed."
+    },
+    {
+      "id": "B07",
+      "sources": [
+        "RHETORIUS_HOLDEN",
+        "GANSTEN_PD",
+        "PAULUS_GREENBAUM",
+        "BONATTI_NATIVITIES"
+      ],
+      "scope": "Gap recovery in parallel when authorized access is available; these do not block independent available batches."
+    }
+  ],
+  "checkpoint_fields": [
+    "exact source/edition/hash",
+    "last verified page/chapter/verse",
+    "units read vs merely indexed",
+    "rule IDs added",
+    "unresolved definitions/variants",
+    "tests run",
+    "remaining gaps",
+    "next executable range"
+  ],
+  "pause_contract": "User permits multiple passes. At each completed pass/batch, save progress and stop at the declared boundary when returning; no claim of background execution. Next continuation resumes exact first unfinished unit.",
+  "rule_retention": "Retain newly extracted source rules under source-specific IDs. Promote strong fitted combinations only to versioned development candidates with misses/transfer history. Never overwrite historical freezes."
+}

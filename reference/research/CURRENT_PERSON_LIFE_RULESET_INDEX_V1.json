@@ -164,5 +164,8 @@
   "astrology_source_completeness_frontier": "reference/research/ASTROLOGY_SOURCE_COMPLETENESS_FRONTIER_V1.json",
   "astrology_deep_analysis_protocol_v1_legacy": "reference/research/ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V1.json",
   "astrology_source_acquisition_plan": "reference/research/ASTROLOGY_SOURCE_ACQUISITION_V2.json",
-  "v2_method_boundary": "Current research procedure only. Actual source audit, semantic faithfulness, execution and predictive validation are separate; historical candidate rules remain unchanged."
+  "v2_method_boundary": "Current research procedure only. Actual source audit, semantic faithfulness, execution and predictive validation are separate; historical candidate rules remain unchanged.",
+  "astrology_source_audit_current": "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+  "astrology_source_intake": "tasks/astro-source-audit-multipass-20261005/DRIVE_INTAKE.json",
+  "source_extraction_boundary": "New source records are retained in the source-audit task; they are not automatically promoted into runtime or fitted timing candidates."
 }

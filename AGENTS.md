@@ -130,6 +130,8 @@ Before any person-specific life analysis—natal/personality interpretation, ret
 
 For a substantive astrology reading, load the current procedure `reference/research/ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V2.json` and its normative prose. V2 preserves the twenty V1 coverage families while requiring a predeclared task contract, complete catalog disposition, conditional source rules and evidence integrity. Saved new analyses use `scripts/validate_astrology_deep_analysis_receipt_v2.py` with the externally preserved contract hash. Accounted-for gaps are not executed work, and a mechanical receipt does not certify source semantics, actual blinding or predictive validity. Use `reference/research/ASTROLOGY_SOURCE_ACQUISITION_V2.json` for the bounded corpus and access state. Keep V1 files and every historical prediction/model frozen for replay; these procedural changes do not deploy a new runtime model.
 
+For source-book audit continuation, first read `state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md` and its exact chapter checkpoint. Source intake/extraction is not runtime model promotion.
+
 When a very strong matching ruleset is found, preserve it in the appropriate cumulative registry and update the person-life index when routing changes. Record misses, false positives, transfer failures, and supersession beside successes. Do not retune a frozen candidate in place after a miss. The owner should not need to remind a future worker to look at previously retained rulesets.
 
 ## Non-negotiable research rules

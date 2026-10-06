@@ -1,0 +1,1287 @@
+{
+  "schema_version": 2,
+  "batch_id": "B01",
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "status": "B01_ENGLISH_SCOPE_REVIEWED_NOT_MODEL_PROMOTION",
+  "scope": "English I.1-I.8 and bounded translator notes",
+  "records_count": 24,
+  "independent_predictions_count": 0,
+  "records_are_not_statistical_independence_units": true,
+  "records": [
+    {
+      "id": "PT.R64.I.01.R01",
+      "title": "Astronomy certainty is not interpretive certainty",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.1",
+        "pdf_english_pages": [
+          27,
+          29
+        ],
+        "printed_english_pages": [
+          3,
+          5
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ARGUMENT",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "infer terrestrial effects"
+      },
+      "consequent": "Ptolemy calls interpretation less self-sufficient and less certain than celestial calculation.",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "METHODOLOGICAL_LIMIT",
+      "dependency_groups": [
+        "PT.I.1.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.02.R02",
+      "title": "Synthesis requires positions, timing and combined qualities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.2",
+        "pdf_english_pages": [
+          33,
+          35,
+          37
+        ],
+        "printed_english_pages": [
+          9,
+          11,
+          13
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ARGUMENT",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "accurate celestial movements, positions and times",
+          "studied planetary qualities",
+          "assessment of combined influences"
+        ]
+      },
+      "consequent": "Judgment concerns a mixture, not one isolated configuration.",
+      "modifiers": [],
+      "ambiguities": [
+        "No numerical composition algorithm is specified."
+      ],
+      "calculation_conventions": {},
+      "output_type": "METHOD_PREREQUISITE",
+      "dependency_groups": [
+        "PT.I.2.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.02.R03",
+      "title": "Birth chart alone does not exhaust natal explanation",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.2",
+        "pdf_english_pages": [
+          41,
+          43
+        ],
+        "printed_english_pages": [
+          17,
+          19
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ARGUMENT",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "natal judgment"
+      },
+      "consequent": "Non-celestial context includes ancestry/species, place, upbringing and customs.",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "METHODOLOGICAL_LIMIT",
+      "dependency_groups": [
+        "PT.I.2.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Historical ethnological stereotypes are not admitted to a modern person model.",
+        "Missing context in a blinded test remains missing; do not open concealed outcomes."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.02.R04",
+      "title": "Error is not exclusively practitioner incompetence",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.2",
+        "pdf_english_pages": [
+          37,
+          39,
+          41
+        ],
+        "printed_english_pages": [
+          13,
+          15,
+          17
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ARGUMENT",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "evaluate unsuccessful judgment"
+      },
+      "consequent": "After discussing incompetent practice, Ptolemy also acknowledges complexity and imperfectly comparable examples as limits.",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "METHODOLOGICAL_LIMIT",
+      "dependency_groups": [
+        "PT.I.2.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Source arguments are not independent evidence of predictive efficacy.",
+        "A measured miss cannot be presumed to have an overlooked astrological explanation."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.03.R05",
+      "title": "Conditional outcomes and opposing influences",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.3",
+        "pdf_english_pages": [
+          47,
+          49,
+          51,
+          53,
+          55,
+          57
+        ],
+        "printed_english_pages": [
+          23,
+          25,
+          27,
+          29,
+          31,
+          33
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ARGUMENT",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "interpret predicted terrestrial outcomes"
+      },
+      "consequent": "Ptolemy rejects blanket irreversible fatalism and allows opposing conditions to alter some outcomes.",
+      "modifiers": [],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "METHODOLOGICAL_LIMIT",
+      "dependency_groups": [
+        "PT.I.3.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Historical medical/remedial arguments are not treatment advice.",
+        "Do not invent an unobserved intervention to rescue a miss."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.03.R06",
+      "title": "Collective and individual scope differ",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.3",
+        "pdf_english_pages": [
+          49
+        ],
+        "printed_english_pages": [
+          25
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ARGUMENT",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "task": "attribute shared events to individual nativities"
+      },
+      "consequent": "A stronger collective cause may dominate an individual condition.",
+      "modifiers": [],
+      "ambiguities": [
+        "No executable threshold for the relative strength of causes is provided."
+      ],
+      "calculation_conventions": {},
+      "output_type": "METHODOLOGICAL_LIMIT",
+      "dependency_groups": [
+        "PT.I.3.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.04.R07",
+      "title": "Sun intrinsic qualities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.4",
+        "pdf_english_pages": [
+          59
+        ],
+        "printed_english_pages": [
+          35
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "SUN"
+      },
+      "consequent": {
+        "primary": "HEATING",
+        "secondary": "DRYING_TO_A_DEGREE"
+      },
+      "modifiers": [
+        "Configuration modifies intrinsic quality in amount (I.4/I.8)."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "quantification": "QUALITATIVE_NO_NUMERIC_WEIGHTS"
+      },
+      "output_type": "HISTORICAL_QUALITY_DEFINITION",
+      "dependency_groups": [
+        "PT.I.4.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.04.R08",
+      "title": "Moon intrinsic qualities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.4",
+        "pdf_english_pages": [
+          59
+        ],
+        "printed_english_pages": [
+          35
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "MOON"
+      },
+      "consequent": {
+        "primary": "HUMIDIFYING",
+        "secondary": "MODERATE_HEATING"
+      },
+      "modifiers": [
+        "Configuration modifies intrinsic quality in amount (I.4/I.8)."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "quantification": "QUALITATIVE_NO_NUMERIC_WEIGHTS"
+      },
+      "output_type": "HISTORICAL_QUALITY_DEFINITION",
+      "dependency_groups": [
+        "PT.I.4.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.04.R09",
+      "title": "Saturn intrinsic qualities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.4",
+        "pdf_english_pages": [
+          59,
+          61
+        ],
+        "printed_english_pages": [
+          35,
+          37
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "SATURN"
+      },
+      "consequent": {
+        "primary": "COOLING",
+        "secondary": "MODERATE_DRYING"
+      },
+      "modifiers": [
+        "Configuration modifies intrinsic quality in amount (I.4/I.8)."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "quantification": "QUALITATIVE_NO_NUMERIC_WEIGHTS"
+      },
+      "output_type": "HISTORICAL_QUALITY_DEFINITION",
+      "dependency_groups": [
+        "PT.I.4.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.04.R10",
+      "title": "Mars intrinsic qualities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.4",
+        "pdf_english_pages": [
+          61
+        ],
+        "printed_english_pages": [
+          37
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "MARS"
+      },
+      "consequent": {
+        "primary": [
+          "DRYING",
+          "BURNING"
+        ],
+        "secondary": null
+      },
+      "modifiers": [
+        "Configuration modifies intrinsic quality in amount (I.4/I.8)."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "quantification": "QUALITATIVE_NO_NUMERIC_WEIGHTS"
+      },
+      "output_type": "HISTORICAL_QUALITY_DEFINITION",
+      "dependency_groups": [
+        "PT.I.4.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.04.R11",
+      "title": "Jupiter intrinsic qualities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.4",
+        "pdf_english_pages": [
+          61
+        ],
+        "printed_english_pages": [
+          37
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "JUPITER"
+      },
+      "consequent": {
+        "primary": [
+          "HEATING",
+          "HUMIDIFYING"
+        ],
+        "relative_priority": "HEATING_GREATER",
+        "temperament": "TEMPERATE"
+      },
+      "modifiers": [
+        "Configuration modifies intrinsic quality in amount (I.4/I.8)."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "quantification": "QUALITATIVE_NO_NUMERIC_WEIGHTS"
+      },
+      "output_type": "HISTORICAL_QUALITY_DEFINITION",
+      "dependency_groups": [
+        "PT.I.4.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.04.R12",
+      "title": "Venus intrinsic qualities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.4",
+        "pdf_english_pages": [
+          61
+        ],
+        "printed_english_pages": [
+          37
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "VENUS"
+      },
+      "consequent": {
+        "primary": "HUMIDIFYING",
+        "secondary": "MODERATE_HEATING",
+        "temperament": "TEMPERATE"
+      },
+      "modifiers": [
+        "Configuration modifies intrinsic quality in amount (I.4/I.8)."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "quantification": "QUALITATIVE_NO_NUMERIC_WEIGHTS"
+      },
+      "output_type": "HISTORICAL_QUALITY_DEFINITION",
+      "dependency_groups": [
+        "PT.I.4.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.04.R13",
+      "title": "Mercury intrinsic qualities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.4",
+        "pdf_english_pages": [
+          63
+        ],
+        "printed_english_pages": [
+          39
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "MERCURY"
+      },
+      "consequent": {
+        "primary": "VARIABLE_DRYING_OR_HUMIDIFYING",
+        "secondary": null
+      },
+      "modifiers": [
+        "Configuration modifies intrinsic quality in amount (I.4/I.8)."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {
+        "quantification": "QUALITATIVE_NO_NUMERIC_WEIGHTS"
+      },
+      "output_type": "HISTORICAL_QUALITY_DEFINITION",
+      "dependency_groups": [
+        "PT.I.4.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.05.R14",
+      "title": "Beneficent, maleficent and common classes",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.5",
+        "pdf_english_pages": [
+          63
+        ],
+        "printed_english_pages": [
+          39
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "ONE_OF_SEVEN"
+      },
+      "consequent": {
+        "beneficent": [
+          "JUPITER",
+          "VENUS",
+          "MOON"
+        ],
+        "maleficent": [
+          "SATURN",
+          "MARS"
+        ],
+        "common": [
+          "SUN",
+          "MERCURY"
+        ],
+        "common_condition": "join influence with associated planets"
+      },
+      "modifiers": [],
+      "ambiguities": [
+        "Association geometry and blending weights are unspecified here.",
+        "Do not overwrite a different author-specific benefic list."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.5.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.06.R15",
+      "title": "Intrinsic historical masculine/feminine categories",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.6",
+        "pdf_english_pages": [
+          65
+        ],
+        "printed_english_pages": [
+          41
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "ONE_OF_SEVEN"
+      },
+      "consequent": {
+        "feminine": [
+          "MOON",
+          "VENUS"
+        ],
+        "masculine": [
+          "SUN",
+          "SATURN",
+          "JUPITER",
+          "MARS"
+        ],
+        "common": [
+          "MERCURY"
+        ]
+      },
+      "modifiers": [
+        "Solar relation and horizon quadrant are separate modifiers."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.6.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Labels describe historical planetary categories, not a person's sex, gender identity, worth or stereotyped traits."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.06.R16",
+      "title": "Solar-phase modification of historical category",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.6",
+        "pdf_english_pages": [
+          65
+        ],
+        "printed_english_pages": [
+          41
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [
+        "Verified solar-phase convention."
+      ],
+      "antecedents": {
+        "solar_phase": "MORNING_PRECEDING_OR_EVENING_FOLLOWING"
+      },
+      "consequent": {
+        "MORNING_PRECEDING": "MASCULINE",
+        "EVENING_FOLLOWING": "FEMININE"
+      },
+      "modifiers": [],
+      "ambiguities": [
+        "Physical visibility and a half-zodiac longitude proxy differ.",
+        "The note attributes a longitude shortcut to Cardanus, not to Ptolemy.",
+        "Precedence over intrinsic categories is not numerically specified."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.6.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.06.R17",
+      "title": "Horizon-quadrant modification",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.6",
+        "pdf_english_pages": [
+          65
+        ],
+        "printed_english_pages": [
+          41
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [
+        "Declared horizon/diurnal-motion frame and boundaries."
+      ],
+      "antecedents": {
+        "quadrant": "KNOWN"
+      },
+      "consequent": {
+        "orient_to_MC": "MASCULINE",
+        "occident_to_IC": "MASCULINE",
+        "other_two_quadrants": "FEMININE"
+      },
+      "modifiers": [],
+      "ambiguities": [
+        "Robbins reports a competing entire eastern/western-half classification via Cardanus.",
+        "Do not select a variant by its fit to a person."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.6.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.07.R18",
+      "title": "Fixed planetary sect membership",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.7",
+        "pdf_english_pages": [
+          67
+        ],
+        "printed_english_pages": [
+          43
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "NOT_MERCURY"
+      },
+      "consequent": {
+        "diurnal": [
+          "SUN",
+          "JUPITER",
+          "SATURN"
+        ],
+        "nocturnal": [
+          "MOON",
+          "VENUS",
+          "MARS"
+        ]
+      },
+      "modifiers": [
+        "Membership is not a complete sect-strength score."
+      ],
+      "ambiguities": [],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.7.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.07.R19",
+      "title": "Mercury sect depends on morning/evening status",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.7",
+        "pdf_english_pages": [
+          67
+        ],
+        "printed_english_pages": [
+          43
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [
+        "Solar phase supplied independently of desired outcome."
+      ],
+      "antecedents": {
+        "planet": "MERCURY",
+        "solar_phase": "MORNING_OR_EVENING"
+      },
+      "consequent": {
+        "MORNING": "DIURNAL",
+        "EVENING": "NOCTURNAL",
+        "UNKNOWN_OR_BOUNDARY": "UNRESOLVED"
+      },
+      "modifiers": [],
+      "ambiguities": [
+        "Chart-level morning/evening detection is a separate implementation task."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.7.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.07.R20",
+      "title": "Sect moderates malefic excess",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.7",
+        "pdf_english_pages": [
+          67
+        ],
+        "printed_english_pages": [
+          43
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "planet": "SATURN_OR_MARS",
+        "sect_context": "APPROPRIATE"
+      },
+      "consequent": "Saturn/day and Mars/night are explained through opposing qualities that moderate their excess, not by the same-kind argument used for benefics.",
+      "modifiers": [],
+      "ambiguities": [
+        "No numeric bonus or calibrated probability is supplied.",
+        "An in-sect malefic is not declared uniformly harmless."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.7.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.07.R24",
+      "title": "Same-kind association reinforces beneficent temperaments",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.7",
+        "pdf_english_pages": [
+          67
+        ],
+        "printed_english_pages": [
+          43
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "all": [
+          "star of good temperament",
+          "associated influence of similar nature"
+        ]
+      },
+      "consequent": "In the rationale for sect, similar qualities reinforce beneficent influence; this is distinguished from the opposing-quality moderation assigned to Saturn and Mars.",
+      "modifiers": [],
+      "ambiguities": [
+        "No universal numeric bonus, aspect orb, or complete association algorithm is specified in I.7."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.7.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [
+        "Do not substitute this qualitative rule for a calibrated outcome prediction."
+      ],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.08.R21",
+      "title": "Four lunar-phase qualities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.8",
+        "pdf_english_pages": [
+          69
+        ],
+        "printed_english_pages": [
+          45
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [],
+      "antecedents": {
+        "phase_interval": "KNOWN"
+      },
+      "consequent": {
+        "NEW_TO_FIRST_QUARTER": "MOISTURE",
+        "FIRST_QUARTER_TO_FULL": "HEAT",
+        "FULL_TO_LAST_QUARTER": "DRYNESS",
+        "LAST_QUARTER_TO_NEW": "COLD"
+      },
+      "modifiers": [
+        "Intrinsic lunar quality is modified, not erased."
+      ],
+      "ambiguities": [
+        "Inclusive endpoints at exact new/quarter/full phases are unspecified.",
+        "Robbins explains occultation as new moon in a note."
+      ],
+      "calculation_conventions": {
+        "projection": "PROJECT CONVENTION: (Moon longitude - Sun longitude) mod 360; open quarter intervals; exact 0/90/180/270 are BOUNDARY_UNRESOLVED",
+        "not_source_supplied": "Modern longitude formula and endpoint handling"
+      },
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.8.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "BOUNDED_DEFINITION_FIXTURE; NOT_RUNTIME_PREDICTION",
+      "fixtures": [
+        "tasks/astro-source-audit-multipass-20261005/batches/B01/test_definition_reference.py"
+      ],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.08.R22",
+      "title": "Superior-planet station-based phase sequence",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.8",
+        "pdf_english_pages": [
+          69
+        ],
+        "printed_english_pages": [
+          45
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [
+        "Resolve heliacal rising/setting, evening rising, stations and wording concerning oriental aspects."
+      ],
+      "antecedents": {
+        "planet": [
+          "SATURN",
+          "JUPITER",
+          "MARS"
+        ],
+        "phase_terms": "RESOLVED"
+      },
+      "consequent": {
+        "rising_to_first_station": "MOISTURE",
+        "first_station_to_evening_rising": "HEAT",
+        "evening_rising_to_second_station": "DRYNESS",
+        "second_station_to_setting": "COLD"
+      },
+      "modifiers": [],
+      "ambiguities": [
+        "Robbins identifies the three planets and reports a manuscript gloss.",
+        "Do not extend to Venus/Mercury by analogy.",
+        "No universal visibility angle or event-timing weight is given."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.8.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    },
+    {
+      "id": "PT.R64.I.08.R23",
+      "title": "Configurations modify quantity",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "I.8",
+        "pdf_english_pages": [
+          69
+        ],
+        "printed_english_pages": [
+          45
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS; notes separately attributed",
+        "locator_precision": "CHAPTER_AND_SUPPORT_PAGES; not a claim to translate the facing Greek"
+      },
+      "source_genre": "FOUNDATIONAL_ASTROLOGICAL_DOCTRINE",
+      "reference_frame": "Historical geocentric/humoral doctrine; not a modern physical or causal validation",
+      "prerequisites": [
+        "Keep intrinsic and situational qualities separate."
+      ],
+      "antecedents": {
+        "task": "combine planetary qualities"
+      },
+      "consequent": "Intrinsic power generally persists but its amount is changed by the bodies sharing the configuration.",
+      "modifiers": [],
+      "ambiguities": [
+        "No universal summation weights or cancellation formula is specified."
+      ],
+      "calculation_conventions": {},
+      "output_type": "SOURCE_SYMBOLIC_DEFINITION",
+      "dependency_groups": [
+        "PT.I.8.historical_doctrine"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_PERSON_OUTCOMES",
+        "description": "No personal outcome, health, event-type or mortality predictor; no numeric weights or probabilities supplied."
+      },
+      "implementation_status": "NOT_IMPLEMENTED",
+      "fixtures": [],
+      "unknown_is_not_false": true,
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "project_guardrails": [],
+      "source_exceptions": []
+    }
+  ],
+  "revision_note": "Interrupted 23-record draft verified against the current user-supplied PDF; added omitted benefic-affinity rationale, narrowed locators and separated project safeguards from source exceptions."
+}

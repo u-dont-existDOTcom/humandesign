@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "B01_SOURCE_SCOPE_COMPLETE_PARENT_AUDIT_OPEN",
+  "research_base": "90a31f601330088d513ca38b635f83f00ac60714",
+  "tests": {
+    "passed": 52,
+    "new_b01_tests": 18,
+    "existing_procedure_tests": 34,
+    "scope": "definition mappings, source references, uncertainty states and previously existing receipt/index controls; not predictive validity"
+  },
+  "source_integrity": "All 13 private file bytes rehashed in this continuation; metadata matches supplied folder",
+  "source_sections": {
+    "ptolemy_contents_indexed": 61,
+    "read_and_extracted": 8,
+    "still_unread": 53
+  },
+  "source_records": 24,
+  "new_independent_predictions": 0,
+  "runtime_models_promoted": 0,
+  "protected_unchanged": [
+    "reference/research/ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V2.json",
+    "reference/research/ASTROLOGY_DEEP_ANALYSIS_PROTOCOL_V2.md",
+    "reference/research/current_merged_timing_candidate_ruleset_v1.json",
+    "reference/research/CURRENT_PERSON_LIFE_RULESET_CATALOG_V1.json"
+  ],
+  "review_limits": [
+    "same conversation source re-read, not independent model review",
+    "English I.1-I.8 and selected translator notes only; no independent Greek translation",
+    "not a full-book or entire-corpus audit"
+  ],
+  "artifacts_sha256": {
+    "batches/B01/RULES.json": "9e05b7cf6c3ef0cb0a9660e664bca1298ad4d2dccc7deaba46d49aabbf3ad1c3",
+    "batches/B01/READING_RECEIPT.json": "f5b92b98ecb9605259050790100439f1fb902f307fce2c5080ccec9827c80986",
+    "SECTION_DISCOVERY.json": "5e8e2c8be06ce75b56b87858fe0ee156a14e78d4c4aec3e9066bf0fd17282b5f",
+    "PROGRESS_REPORT_20261006.md": "86f5c1b40c9efefd518f6fe88751bb61872f13004805dcbe5c046efe459fe571"
+  }
+}
