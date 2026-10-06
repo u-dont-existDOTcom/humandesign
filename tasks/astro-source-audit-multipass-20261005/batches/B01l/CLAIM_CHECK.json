@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "review": "Current-chat point-of-use semantic check, not independent reviewer",
+  "claims": [
+    {
+      "id": "completion",
+      "evidence": "READING_RECEIPT.json and SECTION_COVERAGE.json",
+      "checked_scope": "Both full English chapters and associated notes read; not full Greek collation.",
+      "status": "PASS_WITH_STATED_LIMITS"
+    },
+    {
+      "id": "dynamic_pair",
+      "evidence": "Ptolemy PDF441-443, note on443",
+      "checked_scope": "III.10 prorogation across two nativities, not ordinary transit or natal aspect.",
+      "status": "PASS_WITH_STATED_LIMITS"
+    },
+    {
+      "id": "seventeen_degree",
+      "evidence": "Ptolemy PDF439 main,441 note",
+      "checked_scope": "About17 apart and within17 are distinct visible phrases; no hard gate adopted.",
+      "status": "PASS_WITH_STATED_LIMITS"
+    },
+    {
+      "id": "authority_benefit",
+      "evidence": "Ptolemy PDF441",
+      "checked_scope": "Different determinants and outputs; not automatically same beneficiary.",
+      "status": "PASS_WITH_STATED_LIMITS"
+    },
+    {
+      "id": "travel_gate",
+      "evidence": "Ptolemy PDF447 main and note",
+      "checked_scope": "Moon OR; Mars AND/OR; note house set3,6,7,9,12.",
+      "status": "PASS_WITH_STATED_LIMITS"
+    },
+    {
+      "id": "mercury_context",
+      "evidence": "Ptolemy PDF449 and451",
+      "checked_scope": "Favorable/adverse parent clauses retained, not unconditional Mercury claim.",
+      "status": "PASS_WITH_STATED_LIMITS"
+    },
+    {
+      "id": "ingress_uncertainty",
+      "evidence": "Ptolemy PDF451 note2",
+      "checked_scope": "Presumably remains a tentative translator addition.",
+      "status": "PASS_WITH_STATED_LIMITS"
+    },
+    {
+      "id": "rhetorius_variants",
+      "evidence": "Rhetorius PDF19-20/printed16-17;84/printed87",
+      "checked_scope": "Three bounded comparisons with different scope; no independent empirical evidence.",
+      "status": "PASS_WITH_STATED_LIMITS"
+    }
+  ],
+  "preservation_gate": "Exact base/changed-path check must pass before commit",
+  "empirical_validation_claimed": false
+}

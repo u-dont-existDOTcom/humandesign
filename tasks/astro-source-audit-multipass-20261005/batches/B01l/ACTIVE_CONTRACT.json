@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch_id": "B01l",
+  "parent_status": "OPEN_MULTIPASS_OWNER_AUTHORIZED",
+  "base_commit": "8a5db171e197958adc5d0d44d6585f35b9b5e1ab",
+  "writer_branch": "research/astro-source-audit-b01l-20261006",
+  "scope": "Read/extract full English IV.7-IV.8, relevant notes, bounded Rhetorius comparisons and reference-definition tests; no person readings or live model changes.",
+  "authority": {
+    "uda_default_commit": "991c7a08b7d9f831327d9075175b8d70c34c37e6",
+    "uda_agents_blob": "0a88eb99b513c803277509d31d80a703c2409ef8",
+    "project_agents_blob": "15efee1556a0a44ea2b6e4af0596a7e0cb8c24c3",
+    "activation": "Live bootstrap/index, project architecture/checkpoint and source-provenance/recovery/lesson-activation/delivery/continuation patterns read in current turn."
+  },
+  "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "active_obligations": [
+    "Preserve exact source roles, qualifications, translator layers and disagreements.",
+    "All scope sections and notes read before completeness count.",
+    "Keep unknown astronomical predicates distinct from known absence; no numeric thresholds without attribution.",
+    "Add this batch; change only four existing progress files; preserve older batches/fitted rules/personal freezes.",
+    "Verify tests, remote publication and deliver usable source-analysis artifacts; raw books remain private."
+  ],
+  "allowed_existing_changes": [
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json"
+  ],
+  "status": "BATCH_COMPLETE_PARENT_OPEN",
+  "stop_boundary": "Owner-approved multi-pass batch boundary; parent remains open; no unattended work promised.",
+  "application_evidence": {
+    "source_scope": "READING_RECEIPT.json and SECTION_COVERAGE.json",
+    "semantic_claims": "CLAIM_CHECK.json; scoped self-check, not independent review",
+    "preservation": "PROTECTED_CONTENT_VERIFICATION.json",
+    "tests": "VERIFICATION.json",
+    "publication_and_delivery": "Required before final delivery; publication receipt outside commit avoids circular commit ID."
+  }
+}

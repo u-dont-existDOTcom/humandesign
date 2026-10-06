@@ -1,11 +1,12 @@
 # Current astrology source audit
 
-**Parent OPEN: owner-authorized multi-pass source audit.** Full English Ptolemy Book I (24/24), Book III (14/14) and IV.1-IV.6 are read/extracted. No personal predictions, fitted-model changes or runtime promotion.
+**Parent OPEN: owner-authorized multi-pass source audit.** Full English Ptolemy Book I (24/24), Book III (14/14) and IV.1-IV.8 are read/extracted. No personal predictions, fitted-model changes or runtime promotion.
 
 ## Canonical recovery
 - `tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json` — exact next section and counts.
-- Task `PASS_PLAN.json` and `SECTION_DISCOVERY.json` — five passes;61 indexed Ptolemy sections,44 read,17 unread.
-- Task `batches/B01k/REPORT.md`, `VERIFICATION.json`, `RULES.json`, `RELATIONSHIP_FAMILY_TABLES.json`, `CROSS_SOURCE_COMPARISONS.json` and reading/uncertainty receipts — current marriage/children batch.
+- Task `PASS_PLAN.json` and `SECTION_DISCOVERY.json` — five passes;61 indexed Ptolemy sections,46 read,15 unread.
+- Task `batches/B01l/REPORT.md`, `VERIFICATION.json`, `RULES.json`, `ASSOCIATION_TRAVEL_TABLES.json` and comparison/reading receipts — current friendship/travel batch.
+- Prior `batches/B01k/REPORT.md`, `VERIFICATION.json`, `RULES.json`, `RELATIONSHIP_FAMILY_TABLES.json`, `CROSS_SOURCE_COMPARISONS.json` and reading/uncertainty receipts — current marriage/children batch.
 - Prior `batches/B01j/REPORT.md`, `VERIFICATION.json`, `RULES.json`, `EXTERNAL_FORTUNE_TABLES.json`, `CROSS_SOURCE_COMPARISONS.json` and reading/unresolved receipts — current wealth/status/action batch.
 - Prior `batches/B01h/REPORT.md` and `VERIFICATION.json` retain BookIII completion evidence.
 - `batches/B01h/RULES.json`, `BODY_REFERENCE_TABLES.json`, `SECTION_COVERAGE.json` and reading/unresolved receipts.
@@ -13,12 +14,22 @@
 - Prior batches and Rhetorius OCR/witness receipts are preserved unchanged.
 
 ## Completed; do not repeat
-Previous407 source records plus B01k93 =500. B01k has10 conditional spouse profiles,4 continuity/quality cells and3 targeted comparisons (11 total). B01j has19 occupation branches, five acquisition-channel rows, four honour-basis rows, four sign-form modifier classes and four Moon-Mercury groups covering ten signs. Four new targeted comparisons bring the total to eight. There are15 psychic single/pair profiles with30 placement branches. Nine bodily-description rows, five phase modifiers, four quadrants and seven planetary body-correspondence rows are structured source tables, not independent observations. Earlier95 fixed-star groups, term tables and four targeted Rhetorius comparisons remain separate.311 source/reference checks plus34 methodology checks are expected; the latest verification records the actual run. No predictive validity follows.
+Previous500 source records plus B01l71 =571. B01l adds10 temporary encounter rows and3 targeted comparisons (14 total). B01k has10 conditional spouse profiles,4 continuity/quality cells and3 targeted comparisons (11 total). B01j has19 occupation branches, five acquisition-channel rows, four honour-basis rows, four sign-form modifier classes and four Moon-Mercury groups covering ten signs. Four new targeted comparisons bring the total to eight. There are15 psychic single/pair profiles with30 placement branches. Nine bodily-description rows, five phase modifiers, four quadrants and seven planetary body-correspondence rows are structured source tables, not independent observations. Earlier95 fixed-star groups, term tables and four targeted Rhetorius comparisons remain separate.375 source/reference checks plus34 methodology checks are expected; the latest verification records the actual run. No predictive validity follows.
 
 Rhetorius copy-specific gaps are acknowledged and retained: do not reopen the debate or require another upload. Owner OCR is the private searchable aid; original images govern ambiguous text. BPHS remains Sharma; Primary Directions remains an excerpt/interview. Missing books do not block available tracks. No new OCR is needed.
 
 ## Next executable batch
-**B01l: English IV.7-IV.8.** Start Of Friends and Enemies on PDF437/printed413; travel starts PDF447/printed423; stop before IV.9 on PDF451/printed427. Headings located only. Four BookIV and all13 BookII chapters remain unaudited.
+**B01m: English IV.9.** Start quality of death at PDF451/printed427 and stop before division of times at PDF461/printed437. Historical source analysis only, no personal death or medical predictions. IV.10 and both transmitted endings remain next; all13 BookII chapters remain separately scheduled.
+
+## New B01l cautions
+IV.7 separates lasting affinities/enmities from temporary acquaintances/quarrels; both charts require Sun/Moon/ASC/Fortune roles. Choice, need and pleasure/pain are distinct bases; authority over a relationship and benefit from it have separate determinants. Co-sign/exchange and weaker aspect-only routes are not flattened. About17degrees apart in main text and within17 in Robbins’s note remain distinct; no numerical tolerance or full-chart pair aggregation is frozen.
+
+The ten temporary pair descriptions require cross-nativity prorogations. Robbins expressly referencesIII.10 with departure in one chart and arrival in the other. Do not reuse as natal-conjunction or secondary-progression/transit rules. Epoch/latitude/time-key details and duration endpoints remain unresolved. Greater intensity is not automatically greater benefit. The slavery passage is retained in historical context, not converted into employment guidance.
+
+IV.8 starts with luminaries/angles, especially Moon. Mars requires a setting/declining-from-MC condition AND hard relation to luminaries. Fortune extends preceding travel context; no triggered branch is not a no-travel forecast. Residence abroad, activity quality, return, direction, frequency, hazards and timing are different outputs. Robbins’s broad travel-house set3,6,7,9,12 belongs to his note, not a ninth-only substitution. Dominance/mixture applies in every case. Mercury can add gain in benefic context and danger in adverse context. Desert/hard-going alternative has no separately supplied sign class; preserve ambiguity. Ingress target is Robbins’s presumably gloss, not explicit main text.
+
+Rhetorius16-17 retains sympathetic disjunctions and squares; do not silently insert those exceptions into Ptolemy’s different qualified framework or count source reuse as independent evidence. Rhetorius57 ninth-house method is not equivalent to Ptolemy’s angular/cadent enquiry. Source-only helpers do not evaluate real people or travel safety.
+
 
 ## New B01k cautions
 In IV.5, eastern lunar quadrants are phases (new/full to quarters), but eastern solar quadrants are horizon-relative. Do not reuse the lunar formula for the Sun; exact phase endpoints remain unresolved. Age predictions are disjunctions: early marriage OR younger partner, not both. Single/multiple marriage clauses may co-trigger; no priority supplied.

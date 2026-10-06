@@ -25,7 +25,7 @@
     {
       "id": "P2",
       "title": "Map every section",
-      "status": "PTOLEMY_61_INDEXED;44_ENGLISH_SECTIONS_READ_MAPPED",
+      "status": "PTOLEMY_61_INDEXED;46_ENGLISH_SECTIONS_READ_MAPPED",
       "output": [
         "SECTION_DISCOVERY.json"
       ],
@@ -34,7 +34,7 @@
     {
       "id": "P3",
       "title": "Read and extract conditional rules",
-      "status": "ENGLISH_I_III_COMPLETE_AND_IV1_IV6;500_SOURCE_RECORDS;REMAINDER_OPEN",
+      "status": "ENGLISH_I_III_COMPLETE_AND_IV1_IV8;571_SOURCE_RECORDS;REMAINDER_OPEN",
       "output": [
         "per-source RuleSpecs and unresolved-term ledger"
       ],
@@ -43,7 +43,7 @@
     {
       "id": "P4",
       "title": "Reconcile authors and test calculations",
-      "status": "311_SOURCE_REFERENCE_CHECKS;ELEVEN_TARGETED_RHETORIUS_COMPARISONS;FULL_RECONCILIATION_PENDING",
+      "status": "375_SOURCE_REFERENCE_CHECKS;FOURTEEN_TARGETED_RHETORIUS_COMPARISONS;FULL_RECONCILIATION_PENDING",
       "output": [
         "cross-source comparison and worked-example fixtures"
       ],
@@ -66,7 +66,7 @@
         "PTOLEMY1940_REPRINT1964"
       ],
       "scope": "Book I foundational vocabulary and conditions first; then natal III/IV; Book II separately mundane. All 61 TOC sections remain accounted for.",
-      "next": "IV.7-IV.8; start Of Friends and Enemies on PDF437/printed413; travel starts PDF447/printed423; stop before IV.9 on PDF451/printed427",
+      "next": "IV.9; start Of the Quality of Death on PDF451/printed427; stop before IV.10 on PDF461/printed437. Historical source extraction only.",
       "completed_subbatches": [
         {
           "id": "B01",
@@ -154,6 +154,15 @@
           "new_predictions": 0,
           "tests": 59,
           "test_scope": "Phase-reference geometry, caller-qualified source lookups, unknown/absent and co-triggered flags, provenance/coverage. Not a natal/fertility or relationship-safety engine.",
+          "targeted_cross_source_comparisons": 3
+        },
+        {
+          "id": "B01l",
+          "scope": "Full English IV.7-IV.8 and relevant notes; Rhetorius16-17 and57 opening ninth-house comparison",
+          "source_records": 71,
+          "new_predictions": 0,
+          "tests": 64,
+          "test_scope": "Source-table lookup, method/role gates, three-valued clauses, declared-frame distance probe, unknown handling and record integrity; not natal/directions or travel-risk engine.",
           "targeted_cross_source_comparisons": 3
         }
       ]

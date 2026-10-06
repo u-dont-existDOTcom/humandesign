@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "base_commit": "8a5db171e197958adc5d0d44d6585f35b9b5e1ab",
+  "changed_existing_paths": [
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json"
+  ],
+  "other_tracked_paths_unchanged": 975,
+  "verification_method": "git diff --name-only against exact base; all existing changes confined to four allowed progress paths",
+  "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "source_bytes_verified_on_owner_filesystem": true,
+  "prior_source_batches_changed": false,
+  "runtime_or_fitted_candidates_or_personal_freezes_changed": false
+}

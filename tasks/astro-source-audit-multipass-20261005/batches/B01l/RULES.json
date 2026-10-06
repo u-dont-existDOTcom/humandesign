@@ -1,0 +1,3442 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01l",
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "status": "ENGLISH_SOURCE_EXTRACTION_COMPLETE_IN_DECLARED_CHAPTERS",
+  "records_count": 71,
+  "independent_predictions_count": 0,
+  "records": [
+    {
+      "id": "PT.R64.IV.07.R501",
+      "title": "Two levels of relationship duration and depth",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          437
+        ],
+        "printed_support_pages": [
+          413
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "deeper and more lasting",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "enquiry": "friendly and adverse relations"
+      },
+      "consequent": {
+        "durable": [
+          "sympathies",
+          "hostilities"
+        ],
+        "occasional": [
+          "acquaintances",
+          "quarrels"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SOURCE_ORGANIZATION",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R502",
+      "title": "Authoritative places in both nativities",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          437
+        ],
+        "printed_support_pages": [
+          413
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "both nativities",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "enquiry": "important relations",
+        "required_charts": 2
+      },
+      "consequent": {
+        "places": [
+          "Sun",
+          "Moon",
+          "Ascendant",
+          "Lot of Fortune"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Pairing and aggregation of all versus most places are not fully specified."
+      ],
+      "output_type": "SOURCE_SELECTION_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R503",
+      "title": "Co-sign or exchanged-place affiliation",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          437,
+          439
+        ],
+        "printed_support_pages": [
+          413,
+          415
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "exchange",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "all_or_most_relevant_places": {
+          "any_of": [
+            "fall in the same zodiacal signs",
+            "exchange places"
+          ]
+        }
+      },
+      "consequent": {
+        "source_claim": "secure indissoluble sympathy unbroken by quarrel"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Exchange is not defined as a unique matching algorithm; do not automatically assume mutual reception."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R504",
+      "title": "Approximately seventeen-degree horoscopic qualification",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          439
+        ],
+        "printed_support_pages": [
+          415
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "about 17",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding co-sign/exchange sympathy rule",
+        "horoscopic_regions": "about 17 degrees apart"
+      },
+      "consequent": {
+        "effect": "particularly emphasizes the preceding sympathy claim"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Main text says about17 apart; Robbins later interprets within17. No tolerance or inclusive boundary supplied."
+      ],
+      "output_type": "QUALIFIER",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R505",
+      "title": "Disjunct or opposite authoritative places",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          439
+        ],
+        "printed_support_pages": [
+          415
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "deepest enmities",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "relevant_places": {
+          "any_of": [
+            "disjunct signs",
+            "opposite signs"
+          ]
+        }
+      },
+      "consequent": {
+        "source_claim": "deep enmity and lasting contention"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No full mixed-pair aggregation prescription."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.durable_relations"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R506",
+      "title": "Lesser sympathy through trine or sextile",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          439
+        ],
+        "printed_support_pages": [
+          415
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "merely in signs",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "neither_previous_configuration": true,
+        "sign_aspect": {
+          "any_of": [
+            "trine",
+            "sextile"
+          ]
+        }
+      },
+      "consequent": {
+        "source_claim": "lesser sympathies"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Neither-previous context is required; not a generic ranking of every trine below any conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R507",
+      "title": "Lesser antipathy through square",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          439
+        ],
+        "printed_support_pages": [
+          415
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "in quartile",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "neither_previous_configuration": true,
+        "sign_aspect": "square"
+      },
+      "consequent": {
+        "source_claim": "lesser antipathies"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Not a statement that all squares in every tradition or topic are equally harmful."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R508",
+      "title": "Temporary discord during malefic passages",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          439
+        ],
+        "printed_support_pages": [
+          415
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "spells of silence",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "friendship",
+        "malefics": "passing through the relevant configurations"
+      },
+      "consequent": {
+        "source_claim": [
+          "occasional silence",
+          "disparaging talk"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Target geometry, orb and exact onset not specified."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R509",
+      "title": "Truces during benefic ingresses",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          439
+        ],
+        "printed_support_pages": [
+          415
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "truces and reconciliations",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "enmity",
+        "benefics": "ingress upon relevant configurations"
+      },
+      "consequent": {
+        "source_claim": [
+          "truces",
+          "reconciliations"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not erase the longer-term enmity classification."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R510",
+      "title": "Three bases of friendship and enmity",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          439
+        ],
+        "printed_support_pages": [
+          415
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "three classes",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "enquiry": "basis of a relationship"
+      },
+      "consequent": {
+        "bases": [
+          "preference",
+          "need",
+          "pleasure and pain"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SOURCE_TAXONOMY",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R511",
+      "title": "All-basis compound relation",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          439
+        ],
+        "printed_support_pages": [
+          415
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "compounded of all three",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "all_or_most_authoritative_places": "familiar or dissociated"
+      },
+      "consequent": {
+        "familiar": "friendship compounded of all three bases",
+        "dissociated": "enmity compounded of all three bases"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No numerical majority threshold or forced homogeneous classification in a mixed chart set."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R512",
+      "title": "Luminary relation signifies choice",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          439
+        ],
+        "printed_support_pages": [
+          415
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "luminaries only",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "relevant_family": "luminaries only",
+        "relation": "familiar or adverse"
+      },
+      "consequent": {
+        "basis": "choice",
+        "friendship": "best and surest",
+        "enmity": "worst and faithless"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Neither best nor surest is a measured accuracy or probability."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R513",
+      "title": "Fortune relation signifies need",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          441
+        ],
+        "printed_support_pages": [
+          417
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "through need",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "relevant_family": "Lots of Fortune",
+        "relation": "familiar"
+      },
+      "consequent": {
+        "basis": "need"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "This is not equivalent to affection, altruism or financial wealth."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R514",
+      "title": "Horoscopic relation signifies pleasure or pain",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          441
+        ],
+        "printed_support_pages": [
+          417
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "pleasure or pain",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "relevant_family": "horoscopic places",
+        "relation": "familiar"
+      },
+      "consequent": {
+        "basis": "pleasure or pain"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Pleasure and pain are not narrowed automatically to sexual attraction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R515",
+      "title": "Observe elevation and planetary regard",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          441
+        ],
+        "printed_support_pages": [
+          417
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "their elevations",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "relevant_places": "in aspect"
+      },
+      "consequent": {
+        "inspect": [
+          "elevation of configuration",
+          "planetary regard"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SOURCE_SELECTION_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R516",
+      "title": "Direction and authority can be asymmetric",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          441
+        ],
+        "printed_support_pages": [
+          417
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "greater authority",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "nativity": "that in which elevation of the configuration occurs",
+        "relative_place": "same sign as succedent place or nearest sign"
+      },
+      "consequent": {
+        "assign_to_that_native": "greater authority and direction over friendship or enmity"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Robbins explicitly calls the passage obscure. No executable winner criterion is adopted."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R517",
+      "title": "Benefit and advantage can be asymmetric",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          441
+        ],
+        "printed_support_pages": [
+          417
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "greater benefit",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "nativity": "more favorable planetary regard for benevolence and power"
+      },
+      "consequent": {
+        "assign_to_that_native": [
+          "greater benefit from friendship",
+          "greater success in enmity"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Greater authority and greater benefit need not go to the same person."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R518",
+      "title": "Occasional relations use one-chart to other-chart prorogations",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          441,
+          443
+        ],
+        "printed_support_pages": [
+          417,
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "prorogations",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "enquiry": "occasional individual associations or oppositions",
+        "inputs": "movements in each nativity"
+      },
+      "consequent": {
+        "examine_when": "prorogations of planets of one nativity reach places of the other"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "A single natal aspect or same-calendar-date transit is not this cross-chart operation.",
+        "No complete chart-to-chart geometry implemented in this batch."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R519",
+      "title": "Conditional duration of occasional relations",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "completion of the prorogation",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "occasional relation arising at preceding cross-chart encounter"
+      },
+      "consequent": {
+        "shortest_termination": "completion of prorogation",
+        "longest_termination": "another approaching planet reaches the place"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Precise onset, completion, time key and encounter competition require an explicit directional implementation; do not invent a fixed number of years."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R520",
+      "title": "Saturn-Jupiter cross-nativity encounter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn and",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding occasional cross-chart prorogation method",
+        "pair": [
+          "Saturn",
+          "Jupiter"
+        ],
+        "condition": "approach each other’s places"
+      },
+      "consequent": {
+        "relation": "friendship",
+        "bases": [
+          "introductions",
+          "agriculture",
+          "inheritance"
+        ],
+        "duration_qualification": null
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pair label does not authorize applying this row to a bare natal conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.occasional_pair_table"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R521",
+      "title": "Saturn-Mars cross-nativity encounter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn and",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding occasional cross-chart prorogation method",
+        "pair": [
+          "Saturn",
+          "Mars"
+        ],
+        "condition": "approach each other’s places"
+      },
+      "consequent": {
+        "relation": "enmity",
+        "bases": [
+          "intentional quarrels",
+          "scheming"
+        ],
+        "duration_qualification": null
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pair label does not authorize applying this row to a bare natal conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.occasional_pair_table"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R522",
+      "title": "Saturn-Venus cross-nativity encounter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn and",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding occasional cross-chart prorogation method",
+        "pair": [
+          "Saturn",
+          "Venus"
+        ],
+        "condition": "approach each other’s places"
+      },
+      "consequent": {
+        "relation": "association",
+        "bases": [
+          "kinsfolk"
+        ],
+        "duration_qualification": "quickly cools"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pair label does not authorize applying this row to a bare natal conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.occasional_pair_table"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R523",
+      "title": "Saturn-Mercury cross-nativity encounter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn and",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding occasional cross-chart prorogation method",
+        "pair": [
+          "Saturn",
+          "Mercury"
+        ],
+        "condition": "approach each other’s places"
+      },
+      "consequent": {
+        "relation": "marriage or partnership",
+        "bases": [
+          "giving and receiving",
+          "trade",
+          "mysteries"
+        ],
+        "duration_qualification": null
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pair label does not authorize applying this row to a bare natal conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.occasional_pair_table"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R524",
+      "title": "Jupiter-Mars cross-nativity encounter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter and",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding occasional cross-chart prorogation method",
+        "pair": [
+          "Jupiter",
+          "Mars"
+        ],
+        "condition": "approach each other’s places"
+      },
+      "consequent": {
+        "relation": "association",
+        "bases": [
+          "dignities",
+          "management of property"
+        ],
+        "duration_qualification": null
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pair label does not authorize applying this row to a bare natal conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.occasional_pair_table"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R525",
+      "title": "Jupiter-Venus cross-nativity encounter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter and",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding occasional cross-chart prorogation method",
+        "pair": [
+          "Jupiter",
+          "Venus"
+        ],
+        "condition": "approach each other’s places"
+      },
+      "consequent": {
+        "relation": "friendship",
+        "bases": [
+          "women",
+          "religious rites",
+          "oracles",
+          "similar matters"
+        ],
+        "duration_qualification": null
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pair label does not authorize applying this row to a bare natal conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.occasional_pair_table"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R526",
+      "title": "Jupiter-Mercury cross-nativity encounter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter and",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding occasional cross-chart prorogation method",
+        "pair": [
+          "Jupiter",
+          "Mercury"
+        ],
+        "condition": "approach each other’s places"
+      },
+      "consequent": {
+        "relation": "association",
+        "bases": [
+          "learned discussion",
+          "philosophic inclination"
+        ],
+        "duration_qualification": null
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pair label does not authorize applying this row to a bare natal conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.occasional_pair_table"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R527",
+      "title": "Mars-Venus cross-nativity encounter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars and",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding occasional cross-chart prorogation method",
+        "pair": [
+          "Mars",
+          "Venus"
+        ],
+        "condition": "approach each other’s places"
+      },
+      "consequent": {
+        "relation": "association",
+        "bases": [
+          "love",
+          "adultery",
+          "illegitimate relations"
+        ],
+        "duration_qualification": "unsure and briefly flourishing"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pair label does not authorize applying this row to a bare natal conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.occasional_pair_table"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R528",
+      "title": "Mars-Mercury cross-nativity encounter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars and",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding occasional cross-chart prorogation method",
+        "pair": [
+          "Mars",
+          "Mercury"
+        ],
+        "condition": "approach each other’s places"
+      },
+      "consequent": {
+        "relation": "enmities, noisy disputes and lawsuits",
+        "bases": [
+          "business",
+          "poisonings"
+        ],
+        "duration_qualification": null
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pair label does not authorize applying this row to a bare natal conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.occasional_pair_table"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R529",
+      "title": "Venus-Mercury cross-nativity encounter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443,
+          445
+        ],
+        "printed_support_pages": [
+          419,
+          421
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "domain of the",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding occasional cross-chart prorogation method",
+        "pair": [
+          "Venus",
+          "Mercury"
+        ],
+        "condition": "approach each other’s places"
+      },
+      "consequent": {
+        "relation": "association",
+        "bases": [
+          "art or a domain of the Muses",
+          "introduction by letter",
+          "women"
+        ],
+        "duration_qualification": null
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The pair label does not authorize applying this row to a bare natal conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.occasional_pair_table"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R530",
+      "title": "Intensity from relation to principal places",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          445
+        ],
+        "printed_support_pages": [
+          421
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "intensity or relaxation",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "enquiry": "intensity of occasional acquaintance or opposition",
+        "encounter_places": "upon angles, Lots of Fortune, or houses of luminaries"
+      },
+      "consequent": {
+        "source_claim": "more conspicuous indications"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Main-text houses of luminaries must be reconciled with footnote identifying Sun/Moon places; do not silently replace with Cancer/Leo."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R531",
+      "title": "Remote encounters give inconspicuous indications",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          445
+        ],
+        "printed_support_pages": [
+          421
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "removed from them",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "encounter_places": "removed from preceding principal places"
+      },
+      "consequent": {
+        "source_claim": "insignificant indications"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not convert low prominence into no association or into positive evidence."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R532",
+      "title": "Injury versus benefit is a separate modifier",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          445
+        ],
+        "printed_support_pages": [
+          421
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "more injurious or more beneficial",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "enquiry": "effect on associates",
+        "input": "good or bad character of planets regarding named places"
+      },
+      "consequent": {
+        "infer": "more injurious or more beneficial association"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SOURCE_SYNTHESIS_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R533",
+      "title": "Historical slavery enquiry uses Evil Daemon",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          445
+        ],
+        "printed_support_pages": [
+          421
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "special topic",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "enquiry": "enslaved persons and masters’ sympathy or antipathy"
+      },
+      "consequent": {
+        "inspect": "Evil Daemon place and natural suitability of planets regarding it at natal position, ingress and opposition"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Historical relationship under coercion is not automatically modern employment or friendship.",
+        "Suitability wording is difficult per translator."
+      ],
+      "output_type": "SOURCE_SELECTION_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R534",
+      "title": "Rulers connect slave topic to principal places",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          445
+        ],
+        "printed_support_pages": [
+          421
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "lords of the sign",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding historical slavery enquiry",
+        "rulers": "harmoniously or adversely configured to principal natal places"
+      },
+      "consequent": {
+        "effect": "particular emphasis within enquiry"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The identity of principal authoritative places is disputed in the note; do not substitute a chart ruler without attribution."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R535",
+      "title": "Anonymous gloss for acquaintances",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          437
+        ],
+        "printed_support_pages": [
+          413
+        ],
+        "attribution_layer": "ROBBINS_REPORTING_ANONYMOUS_COMMENTATOR",
+        "passage_anchor": "second",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "synastria in this passage"
+      },
+      "consequent": {
+        "gloss": "second and moderate type of friendship"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "TRANSLATOR_NOTE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R536",
+      "title": "Overcoming gloss is directional, not a strength score",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          440
+        ],
+        "printed_support_pages": [
+          416
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "passage_anchor": "star to the right",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "elevation or overcoming"
+      },
+      "consequent": {
+        "gloss": "star to the right elevated over star to the left, following it in diurnal motion",
+        "reference": "Porphyry, Introduction pp188-189 Wolf"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No independent Porphyry text collation performed."
+      ],
+      "output_type": "TRANSLATOR_NOTE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R537",
+      "title": "About versus within seventeen degrees",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          441
+        ],
+        "printed_support_pages": [
+          417
+        ],
+        "attribution_layer": "ROBBINS_INTERPRETATION_AND_REPORTED_PROCLUS",
+        "passage_anchor": "within 17",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "obscure same/succeeding-sign authority passage"
+      },
+      "consequent": {
+        "Robbins_inference": "horoscopes within17 may occupy successive signs",
+        "reported_Proclus": "authority belongs to place approached by elevation or succedent place in same/nearest sign"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Keep main text about17 apart distinct from this within17 gloss; no hard cut-off adopted."
+      ],
+      "output_type": "TEXTUAL_QUALIFICATION",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R538",
+      "title": "More favorable aspect example in note",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          441
+        ],
+        "printed_support_pages": [
+          417
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "passage_anchor": "trine is generally",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "more favorable planetary regard"
+      },
+      "consequent": {
+        "example": "trine generally more favorable than quartile"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "TRANSLATOR_NOTE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R539",
+      "title": "Directional cross-chart method cross-reference",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          443
+        ],
+        "printed_support_pages": [
+          419
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "passage_anchor": "point of departure",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "prorogation between nativities"
+      },
+      "consequent": {
+        "method": "III.10 with departure in one nativity and arrival in the other"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Reference identifies family, not all implementation choices for different birth epochs, latitudes or angles."
+      ],
+      "output_type": "METHOD_CROSS_REFERENCE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R540",
+      "title": "Principal four places footnote",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          445
+        ],
+        "printed_support_pages": [
+          421
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "passage_anchor": "those named at the beginning",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "four principal authoritative places"
+      },
+      "consequent": {
+        "places": [
+          "Ascendant",
+          "Lot of Fortune",
+          "Sun",
+          "Moon"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "TRANSLATOR_NOTE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R541",
+      "title": "Slavery chapter-division variant",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          445
+        ],
+        "printed_support_pages": [
+          421
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "passage_anchor": "new chapter",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "edition_difference": "Camerarius and some manuscripts"
+      },
+      "consequent": {
+        "variant": "insert Of Slaves heading within IV.7"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "TEXTUAL_QUALIFICATION",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R542",
+      "title": "Evil Daemon identified as twelfth house",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          445
+        ],
+        "printed_support_pages": [
+          421
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "passage_anchor": "twelfth house",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "Evil Daemon"
+      },
+      "consequent": {
+        "gloss": "twelfth house immediately preceding horoscope"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "TRANSLATOR_NOTE",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.07.R543",
+      "title": "Slavery passage remains textually difficult",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.7",
+        "pdf_support_pages": [
+          445,
+          446,
+          447
+        ],
+        "printed_support_pages": [
+          421,
+          422,
+          423
+        ],
+        "attribution_layer": "ROBBINS_REPORTING_BOUCHE_LECLERCQ_AND_OTHER_TRANSLATORS",
+        "passage_anchor": "passage has difficulties",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "natural suitability and authoritative places"
+      },
+      "consequent": {
+        "reported_interpretation": "observe temperament of planets in/aspecting/opposing twelfth place",
+        "competing_renderings": [
+          "principal places",
+          "their places of dominion and power",
+          "ruler of nativity"
+        ],
+        "reported_Proclus": "principal places of the nativity"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No definitive resolution by the anonymous commentator; do not treat a listed translation as adopted certainty."
+      ],
+      "output_type": "TEXTUAL_QUALIFICATION",
+      "dependency_groups": [
+        "PT.IV.7.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R544",
+      "title": "Travel begins from both luminaries, especially Moon",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          447
+        ],
+        "printed_support_pages": [
+          423
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "both of them",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "enquiry": "foreign travel"
+      },
+      "consequent": {
+        "inspect": "positions of both luminaries relative to angles, particularly Moon"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SOURCE_SELECTION_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R545",
+      "title": "Moon setting or declining from angles",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          447
+        ],
+        "printed_support_pages": [
+          423
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "journeys abroad",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "any_of": [
+          "Moon setting",
+          "Moon declining from angles"
+        ]
+      },
+      "consequent": {
+        "any_of": [
+          "journeys abroad",
+          "changes of place"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Relocation and travel are alternatives, not proof of permanent emigration."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R546",
+      "title": "Mars travel branch has two conjunctive requirements",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          447
+        ],
+        "printed_support_pages": [
+          423
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars too sometimes",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "all_of": [
+          {
+            "any_of": [
+              "Mars setting",
+              "Mars declining from Midheaven"
+            ]
+          },
+          {
+            "any_of": [
+              "Mars opposite luminaries",
+              "Mars square luminaries"
+            ]
+          }
+        ]
+      },
+      "consequent": {
+        "source_claim": "sometimes similar force for journeys/change of place"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not drop the hard-luminary-aspect requirement or equate setting with every angular position."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R547",
+      "title": "Fortune extends travel to residence and life abroad",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          447
+        ],
+        "printed_support_pages": [
+          423
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "whole lives abroad",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "Lot_of_Fortune": "also in signs that cause travel",
+        "context": "preceding travel indications"
+      },
+      "consequent": {
+        "source_claim": [
+          "whole lives abroad",
+          "personal relations abroad",
+          "business abroad"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No modern country-border definition or unconditional inference from any Fortune position."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R548",
+      "title": "Benefic support modifies travel and return",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          447
+        ],
+        "printed_support_pages": [
+          423
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "return quick",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "benefics": {
+          "any_of": [
+            "regard aforementioned travel places",
+            "succeed these places"
+          ]
+        }
+      },
+      "consequent": {
+        "activities_abroad": [
+          "honorable",
+          "profitable"
+        ],
+        "return": [
+          "quick",
+          "unimpeded"
+        ]
+      },
+      "modifiers": [
+        "Apply explicit dominance/mixture rule below."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Succeed is not silently converted into same-sign conjunction."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R549",
+      "title": "Malefic support modifies travel and return",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          447
+        ],
+        "printed_support_pages": [
+          423
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "return difficult",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "malefics": "regard aforementioned travel places"
+      },
+      "consequent": {
+        "journeys": [
+          "laborious",
+          "injurious",
+          "dangerous"
+        ],
+        "return": "difficult"
+      },
+      "modifiers": [
+        "Apply explicit dominance/mixture rule below."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R550",
+      "title": "Every travel branch is subject to mixture and dominance",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          447,
+          449
+        ],
+        "printed_support_pages": [
+          423,
+          425
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "in every case",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "travel interpretations",
+        "evidence": "planets aspecting same relevant places"
+      },
+      "consequent": {
+        "synthesis": "mixture assessed through dominance as previously explained"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No flat benefic-minus-malefic total or fixed weighting supplied here."
+      ],
+      "output_type": "SOURCE_SYNTHESIS_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R551",
+      "title": "Eastern lower-quadrant direction",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          449
+        ],
+        "printed_support_pages": [
+          425
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "eastern and southern",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "luminaries": "lower parts of eastern quadrants"
+      },
+      "consequent": {
+        "source_claim": "travel toward east and south"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No azimuth tolerance, map projection or exact country inference supplied.",
+        "Do not automatically import lunar-phase meaning of eastern from IV.5."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R552",
+      "title": "Western quadrant or occident direction",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          449
+        ],
+        "printed_support_pages": [
+          425
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "north and the west",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "luminaries": {
+          "any_of": [
+            "western quadrants",
+            "occident itself"
+          ]
+        }
+      },
+      "consequent": {
+        "source_claim": "travel toward north and west"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Mixed luminary positions have no supplied arbitration; broad directions are not destinations."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R553",
+      "title": "Single-figure route frequency",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          449
+        ],
+        "printed_support_pages": [
+          425
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "long intervals",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "travel_causing_signs_or_their_rulers": "single-figure signs"
+      },
+      "consequent": {
+        "source_claim": [
+          "journeys at long intervals",
+          "occasional journeys"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The elliptic wording concerning planets/rulers needs a declared reading; do not merge with dual-figure branch."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R554",
+      "title": "Double-form route frequency and duration",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          449
+        ],
+        "printed_support_pages": [
+          425
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "continuously",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "travel_causing_signs_or_their_rulers": {
+          "any_of": [
+            "bicorporeal",
+            "double form"
+          ]
+        }
+      },
+      "consequent": {
+        "source_claim": [
+          "continuous travel",
+          "very long duration"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Bicorporeal and double-form categories need source-native membership, not an unexamined modern mutable-sign synonym."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R555",
+      "title": "Jupiter-Venus topical rulership favors travel",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          449
+        ],
+        "printed_support_pages": [
+          425
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "rulers of the places",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "Jupiter_and_Venus": "rulers of travel-governing places and luminaries"
+      },
+      "consequent": {
+        "journey": [
+          "safe",
+          "pleasant"
+        ],
+        "support_channels": {
+          "any_of": [
+            "chief men of country",
+            "resources of friends"
+          ]
+        },
+        "other_support": [
+          "favorable weather",
+          "abundant supplies"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "A bare Jupiter-Venus conjunction does not establish topical rulership.",
+        "No travel-safety advice follows from this historical claim."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R556",
+      "title": "Mercury in benefic ruler configuration",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          449
+        ],
+        "printed_support_pages": [
+          425
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury is added",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "context": "preceding Jupiter-Venus travel-ruler configuration",
+        "Mercury": "added"
+      },
+      "consequent": {
+        "source_claim": [
+          "often profit",
+          "gain",
+          "gifts",
+          "honor"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The frequency qualifier often is retained; not universal."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R557",
+      "title": "Saturn-Mars control of luminaries",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          449
+        ],
+        "printed_support_pages": [
+          425
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "particularly if",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "Saturn_and_Mars": "control luminaries"
+      },
+      "consequent": {
+        "source_claim": [
+          "unprofitable results",
+          "great dangers"
+        ]
+      },
+      "modifiers": [
+        "Especially when Saturn and Mars oppose one another."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Mutual opposition strengthens this branch but is not worded as necessary.",
+        "No birth chart evaluated."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R558",
+      "title": "Adverse travel qualification: watery",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          449
+        ],
+        "printed_support_pages": [
+          425
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "watery signs",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "parent": "Saturn-Mars control of luminaries",
+        "source_sign_class": "watery"
+      },
+      "consequent": {
+        "historical_hazards": [
+          "unfortunate voyages",
+          "shipwreck"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Sign memberships and thresholds not specified here."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.adverse_travel"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R559",
+      "title": "Adverse travel qualification: unallocated_alternative",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          449,
+          451
+        ],
+        "printed_support_pages": [
+          425,
+          427
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "desert places",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "parent": "Saturn-Mars control of luminaries",
+        "source_sign_class": "unallocated_alternative"
+      },
+      "consequent": {
+        "historical_hazards": [
+          "hard going",
+          "desert places"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Sign memberships and thresholds not specified here.",
+        "No extra sign class is supplied for this alternative; not silently reassigned to earth."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.adverse_travel"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R560",
+      "title": "Adverse travel qualification: solid",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          451
+        ],
+        "printed_support_pages": [
+          427
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "solid signs",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "parent": "Saturn-Mars control of luminaries",
+        "source_sign_class": "solid"
+      },
+      "consequent": {
+        "historical_hazards": [
+          "falls from heights",
+          "assaults of winds"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Sign memberships and thresholds not specified here."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.adverse_travel"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R561",
+      "title": "Adverse travel qualification: solstitial_or_equinoctial",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          451
+        ],
+        "printed_support_pages": [
+          427
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "solstitial and equinoctial",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "parent": "Saturn-Mars control of luminaries",
+        "source_sign_class": "solstitial_or_equinoctial"
+      },
+      "consequent": {
+        "historical_hazards": [
+          "lack of provisions",
+          "unhealthy conditions"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Sign memberships and thresholds not specified here."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.adverse_travel"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R562",
+      "title": "Adverse travel qualification: human_form",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          451
+        ],
+        "printed_support_pages": [
+          427
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "human form",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "parent": "Saturn-Mars control of luminaries",
+        "source_sign_class": "human_form"
+      },
+      "consequent": {
+        "historical_hazards": [
+          "piracy",
+          "plots",
+          "robberies"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Sign memberships and thresholds not specified here."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.adverse_travel"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R563",
+      "title": "Adverse travel qualification: terrestrial",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          451
+        ],
+        "printed_support_pages": [
+          427
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "terrestrial signs",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "parent": "Saturn-Mars control of luminaries",
+        "source_sign_class": "terrestrial"
+      },
+      "consequent": {
+        "historical_hazards": [
+          "attacks of beasts",
+          "earthquakes"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Sign memberships and thresholds not specified here."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.adverse_travel"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R564",
+      "title": "Mercury in adverse travel configuration",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          451
+        ],
+        "printed_support_pages": [
+          427
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury is present",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "parent": "preceding adverse travel sequence",
+        "Mercury": "present at same time"
+      },
+      "consequent": {
+        "historical_hazards": [
+          "weather",
+          "dangerous accusations",
+          "bites of reptiles and other poisonous creatures"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Immediate scope of terrestrial versus entire adverse sequence remains unresolved; not a universal Mercury rule."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R565",
+      "title": "Differentiate causes through topical rulers",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          451
+        ],
+        "printed_support_pages": [
+          427
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "differentiation in the cause",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "enquiry": "particular quality/cause of beneficial or harmful travel events"
+      },
+      "consequent": {
+        "inspect_rulership_of": [
+          "action",
+          "property",
+          "body",
+          "dignity"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SOURCE_SYNTHESIS_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R566",
+      "title": "Timing by ingresses of five planets",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          451
+        ],
+        "printed_support_pages": [
+          427
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "five planets",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "enquiry": "occasions of strongest manifestation of preceding travel events"
+      },
+      "consequent": {
+        "timing_family": "ingresses of the five planets"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Target of ingress is not explicit in main text; see separately attributed presumably gloss.",
+        "No date can be inferred merely from natal travel indication."
+      ],
+      "output_type": "TIMING_RULE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R567",
+      "title": "Robbins travel-place expansion",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          447
+        ],
+        "printed_support_pages": [
+          423
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "passage_anchor": "third, sixth, ninth",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "setting or declining from angles"
+      },
+      "consequent": {
+        "setting_house": 7,
+        "cadent_houses": [
+          3,
+          6,
+          9,
+          12
+        ],
+        "travel_signs": "zodiacal signs falling on those places"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Requires explicit house-frame selection; do not replace the five-place set by ninth house alone."
+      ],
+      "output_type": "TRANSLATOR_NOTE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R568",
+      "title": "Historical travel-context note",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          447
+        ],
+        "printed_support_pages": [
+          423
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "passage_anchor": "insecurity and uncertainty",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "topic": "attention devoted to travel"
+      },
+      "consequent": {
+        "translator_context": "travel in antiquity was more insecure and uncertain than in translator’s day"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "TRANSLATOR_NOTE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R569",
+      "title": "Mixture cross-reference to parents chapter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          449
+        ],
+        "printed_support_pages": [
+          425
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "passage_anchor": "iii. 4 ad fin",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "dominance/mixture qualification"
+      },
+      "consequent": {
+        "cross_reference": "III.4 closing discussion"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "METHOD_CROSS_REFERENCE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R570",
+      "title": "Topical cause cross-references",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          451
+        ],
+        "printed_support_pages": [
+          427
+        ],
+        "attribution_layer": "ROBBINS_NOTE",
+        "passage_anchor": "respectively",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "topics": [
+          "action",
+          "property",
+          "body",
+          "dignity"
+        ]
+      },
+      "consequent": {
+        "references": [
+          "IV.4",
+          "IV.2",
+          "III.11",
+          "IV.3"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "METHOD_CROSS_REFERENCE",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.08.R571",
+      "title": "Ingress target is translator inference",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.8",
+        "pdf_support_pages": [
+          451
+        ],
+        "printed_support_pages": [
+          427
+        ],
+        "attribution_layer": "ROBBINS_TENTATIVE_NOTE",
+        "passage_anchor": "Presumably",
+        "locator_precision": "Verified English page images; structured prose is paraphrase, not quotation."
+      },
+      "source_genre": "NATAL_PAIR_RELATIONS_AND_FOREIGN_TRAVEL",
+      "reference_frame": "Source-specific natal places and two independently supplied nativities where required; directions are not silently replaced by secondary progressions or ordinary transits.",
+      "antecedents": {
+        "term": "ingresses of five planets"
+      },
+      "consequent": {
+        "Robbins_inference": "presumably into signs that cause travel"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Tentative supplied target is not an explicit main-text prescription."
+      ],
+      "output_type": "TEXTUAL_QUALIFICATION",
+      "dependency_groups": [
+        "PT.IV.8.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical claims only. No modern friendship, identity, employment, travel-safety or medical advice, and no personal outcome inferred in this audit."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; bounded helper retrieves references or reconciles supplied predicates, not natal charts or validated predictions",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    }
+  ]
+}
