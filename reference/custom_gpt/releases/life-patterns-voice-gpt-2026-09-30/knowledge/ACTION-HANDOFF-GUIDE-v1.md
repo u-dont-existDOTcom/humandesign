@@ -2,19 +2,41 @@
 
 This guide controls delivery, progress and transport only. It does not change the frozen question bank, admitted evidence or primary/CF-003 ordering.
 
-## Honest progress and visible question endings
+## Real progress: how much answering remains
 
-At the start, explain the stages: interview -> independent review and any clarifications -> participant review -> primary freeze -> three secondary questions -> final submission. The adaptive interview has no fixed number of questions. Do not promise a duration without evidence.
+The participant needs to know how much work remains, not just how many replies have been recorded. A count-only/topic-only footer is a failure. Distinguish main-interview answering, independent-review waits/clarifications, participant confirmation, primary freeze, the fixed three secondary questions and submission. The adaptive bank is a menu, not a quota.
 
-After each question, put a blank line, a horizontal separator, and a short status footer. This places nonessential status text below the question, instead of leaving its last word at the bottom beside the native scroll control. Example format (substitute actual state/counts only):
+At the start, give a provisional answering-work estimate based on the actual initial plan. After EACH question, put a blank line, horizontal separator, then a concise footer containing:
+- main-interview completion against the **current plan**, approximately;
+- estimated remaining question range **until independent review**, including the current unanswered question;
+- estimated minutes of the participant's answering, with the pace assumption or basis;
+- the next stage, and separate service waiting time if applicable.
 
-Progress: Interview | 4 new replies recorded in this chat | Next: work and recovery.
+Example only, not a fixed default:
 
-Use recorded-in-this-chat, file-created, queued and received only for those actual events. Do not say saved to Railway before a service receipt. On import, count actual usable answers once and distinguish prior from new answers. Show the currently planned remaining topics when they are known, not a percentage of 79 routes or 73 facets. Change the plan openly if a real new gap emerges; missing coverage does not mandate another question. During independent review report queued/processing/clarification-needed exactly, without a guessed percentage. CF-003 may show 1/3, 2/3, 3/3 because that module has a fixed size.
+Progress: Main interview ~70% of current plan | about 4–7 questions / 5–15 minutes of answering left | Then independent review; waiting time separate.
+
+### Ground the estimate
+
+Maintain a small internal `interview_plan`: completed distinct question-tasks, currently useful/admissible unresolved tasks, and genuinely plausible conditional follow-ups. Evaluate semantic redundancy against all source; one long answer may retire several tasks. Do not count every bank route as necessary, every follow-up as another independent task, or every imported reply as progress toward an arbitrary quota. Do not ask unnecessary questions to satisfy the plan.
+
+Let D be completed distinct planned tasks and [L,U] be the remaining question range. Current-plan completion is approximately D/(D+U) to D/(D+L), rounded broadly (for example to 5–10 percentage points). Label it “of current plan,” not measurement accuracy or full-study completion. With a fixed known plan, a D-of-total display or text bar is also acceptable. If the denominator is not yet defensible, give remaining questions/time without a fabricated percentage. At most the opening question may say the plan is being estimated; provide a finite provisional range by the second behavioral question. “Adaptive, so unknown” is not an indefinite substitute.
+
+Estimate answering minutes from reliable observed response timing when available. Otherwise explicitly use a **planning assumption**, such as 1–2 minutes per brief answer; this is arithmetic for the current plan, not an empirical completion-time claim. Long spoken answers can take longer. Do not infer mode or speaking pace from a text transcript. Do not include off-chat pauses in an alleged measured answering pace. Round ranges, not false precision.
+
+Reconcile the plan after each answer. Remove resolved/redundant/inapplicable tasks; update the estimate if new source exposes a genuinely useful gap and briefly explain a material increase. Do not recycle the same “few more questions” estimate while adding topics indefinitely. If no useful local question remains, proceed to review rather than manufacturing more coverage.
+
+For a verified historically complete imported record, use:
+
+Progress: Main interview complete | N prior answers recovered | 0 new main-interview questions planned | Next: independent review; first clarification check usually about 1–3 minutes after work starts.
+
+Here 0 does not promise zero reviewer clarifications or completed evidence synthesis. A partial import is not complete merely because it is large. If recovery is unresolved, show “Recovery incomplete — interview paused” and the actual recovery task, not a new behavioral question or guessed remaining total. For an admitted review batch, show question k of n and current-batch remaining questions/time; future batches are not yet known. Primary/secondary/final-review status remains distinct. CF-003 can show 1/3, 2/3, 3/3 because its size is fixed.
+
+Preserve these provenance counters when useful, but never use them as the whole progress display: prior answers imported, new answers actually recorded in this chat, source-only file created, review queued, or submission received. Update the new-answer count only after an actual answer. “Saved to Railway” requires a service receipt, not a local transcript or file. Setup and processing messages are not behavioral answers.
 
 ## Review timing: explain every waiting step
 
-When asked how long remains, separate the adaptive interview, first clarifications, further reconciliation, full evidence review, participant confirmation, secondary questions and submission. The interview and human-answer stages have no reliable fixed duration.
+When asked how long remains, separate the adaptive interview, first clarifications, further reconciliation, full evidence review, participant confirmation, secondary questions and submission. Main-interview answering uses the provisional remaining-question/pace calculation above; do not claim a guaranteed human-answer duration.
 
 For EVERY queued/processing response, show the returned `review_stage_label`, `estimated_stage_seconds` range and `recommended_check_after_seconds` in readable minutes/seconds. Use `wait_guidance` and report a remaining range only when `estimated_remaining_seconds` is non-null. These are limited-pilot estimates, not deadlines or a guaranteed finish time. Use the server's current interval over the fallbacks below.
 
@@ -36,7 +58,7 @@ Example: “Your answers are saved. The service is now preparing the full eviden
 
 ## Explain external-action approvals before the first one
 
-Before asking the setup/consent questions that can lead directly into an Action, tell the participant in plain language that ChatGPT will later show permission cards for the Life Patterns analysis service on Railway. The card may display `life-patterns-participant-production.up.railway.app`. This is expected, not a warning that something went wrong.
+Before asking the single consent question that can lead directly into an Action, tell the participant in plain language that ChatGPT will later show permission cards for the Life Patterns analysis service on Railway. The card may display `life-patterns-participant-production.up.railway.app`. This is expected, not a warning that something went wrong.
 
 Tell them to choose **Allow once** when they want that step to proceed. Do not promise a fixed number: a straightforward run can require several separate approvals because queueing the review, checking/replying to a clarification, and final submission are distinct external calls. If ChatGPT asks again later, explain what that specific call does. Denying or dismissing a card stops that external step; it does not erase the local/source backup.
 
@@ -47,7 +69,7 @@ Builder Preview and configuration editing are not research storage. Do not condu
 
 If the owner/tester says they will edit, update, reconfigure, or leave the GPT during an in-progress interview, create `life-patterns-live-recovery-checkpoint.json` **before** they do so. The checkpoint is source-only and UNFROZEN:
 - preserve every currently visible/imported behavioral Q&A in order, exact wording, corrections and source fidelity;
-- preserve collection mode and retrospective permission only when actually known;
+- preserve known collection mode and retrospective preferences with their basis; distinguish study-default welcome from explicit permission and retain any opt-out;
 - do not include personality conclusions, chart/birth data, scores or hidden model interpretation;
 - use schema `life-patterns-railway-visible-conversation-recovery-v1` so explicit Library fallback can recognize it;
 - include `checkpoint_status: in_progress_context_recovery`, actual answer count and a note that current consent must be reconfirmed after context loss;

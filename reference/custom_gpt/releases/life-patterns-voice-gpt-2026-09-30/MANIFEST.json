@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-05.1-fast-review-stages",
+  "version": "2026-10-06.1-intro-progress-recovery",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
-    "sha256": "0dacbf5f48529cb82773cacb85004b62228756a3e56b119d394ffb1c95f0755b"
+    "sha256": "ee2ac50ca17af99cf63af0b4c6c16ccd4f5e13aa9c56107ef9ea9bda3115c620"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "a8cca1b163d6143ec28193566470bfd0b360fe6984f0492dd45acbd320996c40",
-    "characters": 7902,
-    "strict_linebreak_count": 7999
+    "sha256": "668b35dadcf788a01d793196d0437726fb9d6a7f734f79e9182949eb471c5e75",
+    "characters": 7835,
+    "strict_linebreak_count": 7920
   },
   "knowledge_files": [
     {
@@ -26,7 +26,7 @@
     },
     {
       "path": "reference/custom_gpt/RECOVERY-GUIDE-v2.md",
-      "sha256": "35821f073047a8e677ef9331064ba6e5d905572afd71572426d034a647f8f51e"
+      "sha256": "b1f7236e1dd26673cae2f7d34a27f9a3f34bb71f5b4a35d7f4186526e5b65eca"
     },
     {
       "path": "reference/empirical_astrology/cf003_secondary_question_module_v0.json",
@@ -34,7 +34,7 @@
     },
     {
       "path": "reference/custom_gpt/ACTION-HANDOFF-GUIDE-v1.md",
-      "sha256": "aaf260a6191567841af91b204281d66e56cd587404ac8ff291bafc95e749d14e"
+      "sha256": "6bdd7db374be3c1d848b108a1756615588a33105e501026bc8636ac468e51dc4"
     }
   ],
   "birth_or_chart_material_in_bundle": false,

@@ -1,0 +1,38 @@
+{
+  "schema": "collection-ux-probe-evaluation-v1",
+  "synthetic_only": true,
+  "case_count": 5,
+  "passed_count": 5,
+  "cases": [
+    {
+      "case_id": "OPENING",
+      "passed": true,
+      "next_step": "Await the participant\u2019s explicit consent; no external operation. If consent is declined, stop."
+    },
+    {
+      "case_id": "PARTIAL_SEARCH",
+      "passed": true,
+      "next_step": "Continue the authorized canonical Library search using cursor synthetic-more-results; search all required filename aliases and all three canonical schema identifiers, follow remaining pagination, then compare complete candidates and provenance before selecting any source."
+    },
+    {
+      "case_id": "VERIFIED_SUCCESSOR",
+      "passed": true,
+      "next_step": "Select and import current-candidate.json; preserve its unrecovered-later-test-turns caveat, plan 0 new main-interview questions, and next prepare the exact unfrozen candidate and review-handoff backups before requesting permission to start independent review."
+    },
+    {
+      "case_id": "EFFORT_PROGRESS",
+      "passed": true,
+      "next_step": "Continue with the next useful behavioral question in the current interview plan."
+    },
+    {
+      "case_id": "CONFLICT",
+      "passed": true,
+      "next_step": "Await the participant\u2019s choice between the two genuinely conflicting source lineages; do not select a source or ask behavioral questions."
+    }
+  ],
+  "limits": [
+    "One isolated application-model response per fixture, not a live private Custom GPT or actual Library pagination run.",
+    "Opening question-count estimate was model-provisional and is not empirical duration evidence.",
+    "Controlled progress case supplies its actual task plan; range arithmetic and waiting-time separation were checked."
+  ]
+}

@@ -1,0 +1,34 @@
+............F........................................................... [ 42%]
+........................................................................ [ 84%]
+..........................                                               [100%]
+=================================== FAILURES ===================================
+___________ test_delivery_rules_are_in_the_shipped_instruction_chain ___________
+
+    def test_delivery_rules_are_in_the_shipped_instruction_chain():
+        # These checks establish instruction presence, not participant-visible compliance.
+        instruction = (ROOT / "reference/custom_gpt/life_patterns_voice_interviewer_v2.md").read_text()
+        text = GUIDE.read_text()
+        assert "ACTION-HANDOFF-GUIDE-v1.md" in instruction
+        assert "backup and real file link FIRST" in instruction
+        assert "Please click Allow on this tool call to continue." in text
+        assert text.count("Please click Allow on this tool call to continue.") == 1
+        assert instruction.count("Please click Allow on this tool call to continue.") == 0
+        assert "life-patterns-review-handoff.json" in text
+        assert "life-patterns-review-receipt.json" in text
+        assert "idempotent replay" in text
+        assert "Allow once" in text
+        assert "life-patterns-participant-production.up.railway.app" in text
+        assert "life-patterns-action-error.json" in text
+>       assert "not a percentage of 79 routes or 73 facets" in text
+E       AssertionError: assert 'not a percentage of 79 routes or 73 facets' in '# Action handoff, progress and recovery — v1\n\nThis guide controls delivery, progress and transport only. It does no...or** `resource_limited` condition, use `retry` on the same review ID when requested; never bypass it with a new job.\n'
+
+apps/life-patterns-participant/tests/test_gpt_handoff_guide.py:69: AssertionError
+=============================== warnings summary ===============================
+../humandesign-fast-review-release-20261005/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  <PINNED_TEST_ENV>/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/life-patterns-participant/tests/test_gpt_handoff_guide.py::test_delivery_rules_are_in_the_shipped_instruction_chain
+1 failed, 169 passed, 1 warning in 18.12s

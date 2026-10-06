@@ -1,0 +1,67 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+___________ test_one_consent_question_not_mode_or_retrospective_form ___________
+
+    def test_one_consent_question_not_mode_or_retrospective_form():
+        s = text('life_patterns_voice_interviewer_v2.md')
+>       assert 'Ask together for (1)' not in s
+E       AssertionError: assert 'Ask together for (1)' not in '# Life Patt...w version.\n'
+E         
+E         'Ask together for (1)' is contained here:
+E            or stop. Ask together for (1) consent to
+E           research use, independent review and final submission, (2) voice/typing/mixed mode, and
+E           (3) whether useful earlier-life comparison questions are welcome. Before those answers, warn: ChatGPT may later show several Railway permission cards (possibly `life-patterns-participant-production.up.railway.app`). Choose **Allow once** for each step they want to continue; denying stops only that step, not the preserved interview. If consent is declined, stop.
+E           Keep setup in `collection_mode` and `retro...
+E         
+E         ...Full output truncated (84 lines hidden), use '-vv' to show
+
+tests/unit/test_custom_gpt_collection_ux.py:14: AssertionError
+________ test_remaining_effort_is_mandatory_in_the_active_instructions _________
+
+    def test_remaining_effort_is_mandatory_in_the_active_instructions():
+        s = text('life_patterns_voice_interviewer_v2.md')
+>       assert 'estimated remaining questions AND answering minutes' in s
+E       AssertionError: assert 'estimated remaining questions AND answering minutes' in '# Life Patterns Interview — pilot\n\nConduct a neutral Life Patterns interview; no diagnosis or personality verdict.\...ata Export.\n\nAfter final freeze, never recode from target information. Later clarifications require a new version.\n'
+
+tests/unit/test_custom_gpt_collection_ux.py:25: AssertionError
+_______ test_completed_source_routes_to_review_without_local_reinterview _______
+
+    def test_completed_source_routes_to_review_without_local_reinterview():
+        s = text('life_patterns_voice_interviewer_v2.md')
+>       assert 'completed/saturated interview goes directly to independent review' in s
+E       AssertionError: assert 'completed/saturated interview goes directly to independent review' in '# Life Patterns Interview — pilot\n\nConduct a neutral Life Patterns interview; no diagnosis or personality verdict.\...ata Export.\n\nAfter final freeze, never recode from target information. Later clarifications require a new version.\n'
+
+tests/unit/test_custom_gpt_collection_ux.py:32: AssertionError
+___________ test_recovery_compares_lineages_before_offering_choices ____________
+
+    def test_recovery_compares_lineages_before_offering_choices():
+        s = text('RECOVERY-GUIDE-v2.md')
+>       assert 'ask which one to use before reading/importing their answers' not in s
+E       AssertionError: assert 'ask which o...heir answers' not in '# Life Patt...ere wrong.\n'
+E         
+E         'ask which one to u...rting their answers' is contained here:
+E           chema and ask which one to use before reading/importing their answers. If none is found, say so; do not substitute a near match.
+E           - A generic request such as “continue my interview” is not authorization to search Library or other account-level sources.
+E           - If no allowed source is present, say that the prior interview is not available in this chat. On ChatGPT web, instruct the participant to reopen the old interview, type `@`, select Life Patterns Interview, and continue there; alternatively they may attach/ad...
+E         
+E         ...Full output truncated (29 lines hidden), use '-vv' to show
+
+tests/unit/test_custom_gpt_collection_ux.py:38: AssertionError
+___ test_footer_has_plan_math_and_distinguishes_complete_and_recovery_states ___
+
+    def test_footer_has_plan_math_and_distinguishes_complete_and_recovery_states():
+        s = text('ACTION-HANDOFF-GUIDE-v1.md')
+        for phrase in ('D/(D+U)', 'planning assumption', 'count-only/topic-only footer is a failure',
+                       'remaining questions/time', 'Recovery incomplete — interview paused',
+                       '0 new main-interview questions planned', 'current-batch remaining'):
+>           assert phrase in s
+E           AssertionError: assert 'D/(D+U)' in '# Action handoff, progress and recovery — v1\n\nThis guide controls delivery, progress and transport only. It does no...or** `resource_limited` condition, use `retry` on the same review ID when requested; never bypass it with a new job.\n'
+
+tests/unit/test_custom_gpt_collection_ux.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED tests/unit/test_custom_gpt_collection_ux.py::test_one_consent_question_not_mode_or_retrospective_form
+FAILED tests/unit/test_custom_gpt_collection_ux.py::test_remaining_effort_is_mandatory_in_the_active_instructions
+FAILED tests/unit/test_custom_gpt_collection_ux.py::test_completed_source_routes_to_review_without_local_reinterview
+FAILED tests/unit/test_custom_gpt_collection_ux.py::test_recovery_compares_lineages_before_offering_choices
+FAILED tests/unit/test_custom_gpt_collection_ux.py::test_footer_has_plan_math_and_distinguishes_complete_and_recovery_states
+5 failed in 0.07s
