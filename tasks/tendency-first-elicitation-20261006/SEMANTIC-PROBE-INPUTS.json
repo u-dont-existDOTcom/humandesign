@@ -1,0 +1,33 @@
+{
+  "synthetic_only": true,
+  "policy": {
+    "version": "tendency-first-v1-20261006",
+    "sha256": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611"
+  },
+  "cases": [
+    {
+      "id": "general_answer_already_complete",
+      "question": "When sharing work or costs with someone, how do you usually work out an arrangement?",
+      "answer": "I usually ask what contribution each person can comfortably make, explain what I can offer, and adjust the plan together. With family I am more flexible. I do not have one fixed division for every situation.",
+      "route": "TF1-M11",
+      "skipped": false,
+      "expected": "No repeated question about arrangements or meal role-play."
+    },
+    {
+      "id": "unresolved_general_reference",
+      "question": "When sharing work or costs with someone, how do you usually work out an arrangement?",
+      "answer": "My usual way of arranging it is that same approach I meant earlier.",
+      "route": "TF1-M11",
+      "skipped": false,
+      "expected": "Ask a direct clarification of the usual approach, not the old meal-cost hypothetical."
+    },
+    {
+      "id": "legacy_meal_skipped",
+      "question": "You and a friend are planning a meal for just the two of you. You offer to organise and cook it, which will take several hours, and ask your friend to buy the ingredients. They say, \"I'd like to do the meal, but paying for all the ingredients feels like too much for me.\" What would you say next?",
+      "answer": null,
+      "route": "M11",
+      "skipped": true,
+      "expected": "No M11, TF1-M11, PREFER-EXCHANGE or TF1-PREFER-EXCHANGE question; do not evade skip."
+    }
+  ]
+}

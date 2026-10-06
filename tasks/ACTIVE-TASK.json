@@ -1,19 +1,12 @@
 {
-  "schemaVersion": 1,
-  "taskId": "gpt-intro-progress-recovery-20261006",
+  "schema_version": 1,
+  "taskId": "tendency-first-elicitation-20261006",
+  "status": "active",
   "exclusive": true,
-  "requiredBranch": "fix/gpt-intro-progress-recovery-20261006-0345",
-  "status": "tested_package_ready_for_integration",
-  "implementationAuthorized": true,
-  "assuranceLane": "collection correction and package integration",
-  "ownerOutcome": "One consent setup, actual remaining-effort progress, verified canonical Library successor recovery",
-  "checkpoint": "tasks/gpt-intro-progress-recovery-20261006/PLAN.md",
-  "preflightCommand": "python3 scripts/task_preflight.py",
-  "completionCommand": "python -m pytest tests/unit/test_custom_gpt_collection_ux.py tests/unit/test_custom_gpt_onboarding_resume.py tests/unit/test_custom_gpt_cf003_required.py -q",
+  "requiredBranch": "fix/tendency-first-review-20261006-1839",
+  "completionCommand": "PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q",
   "suspendedTaskSources": [
-    "old shadow validation loops and Claude wait",
-    "historical release locks",
-    "unrelated research and calibration worktrees"
+    "tasks/gpt-intro-progress-recovery-20261006/PLAN.md"
   ],
-  "nextAction": "Publish and merge the collection-only update, verify delivered artifacts; owner applies three GPT replacements."
+  "goal": "Activate direct usual-pattern elicitation and reject irrelevant scene-completion clarifications while preserving records and skips."
 }

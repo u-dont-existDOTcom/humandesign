@@ -1,0 +1,13 @@
+# Tendency-first elicitation repair
+
+Owner correction: the live independent reviewer still asks the same example scenario questions instead of general tendencies; a skipped meal-cost question must stay skipped. The prior Oct 1 hybrid drafts were not activated by transport/recovery releases.
+
+Parent outcome OPEN. Iteration first, then existing release gates for controlled pilot deployment. Current UDA root/index and relevant activation, composition, isolation, test efficiency and continuation rules entered through live GitHub/gh reads this turn. Repository/scientific authority read from integration 52ef9d4.
+
+Method: keep frozen v7 sources and historical evidence unchanged. Add a separately versioned elicitation policy with distinct TF1 route IDs for direct usual-pattern self-reports. Old replaced/demoted prompts remain available for historical interpretation, not new selection. Context probes need actual pattern-relevant uncertainty, never hypothetical-completion or coverage alone. New TF1 answers cannot automatically inherit old scenario facet scores. An explanation must identify the real neutral distinction without claiming validated diagnostic power. No forced examples or self-labels. No broad re-interview of a completed source. Prior skip suppresses its replacement too.
+
+Simpler alternatives: another GPT-only wording reminder cannot affect server-issued questions; silently replacing frozen prompts would corrupt provenance. A small policy view shared by producer, admission, full-review fallback and HTTP validator preserves existing source/transport boundaries without a new service. No extra provider/judge prerequisite or paid inference is introduced.
+
+Acceptance: selected and delivered questions use active general-tendency wording; adequate existing general reports suppress new questions; new-version IDs are not a reason to repeat. Source-related skip suppresses retired and successor routes. Legacy records remain exact. No false facet equivalence. HTTP acceptance/worker continuation agree, in-flight answers preserved, complete review still required. Tests include old meal scenario refusal and positive direct general response; unchanged bank hashes verified. Deliver exact updated GPT package to Downloads after live readback; do not claim private GPT editor changed.
+
+Refinement: automatic equivalence is prohibited, not all use of new answers. The existing independent evidence admission may retain a legacy facet when exact answer content satisfies that facet’s actual contract; otherwise retain an unscored neutral observation. No blanket exclusion of TF1 evidence from analysis.

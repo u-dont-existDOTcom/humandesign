@@ -31,6 +31,7 @@ from typing import Any
 from cryptography.fernet import Fernet
 from participant.domain import import_record, load_instrument, new_state, utc
 from participant.engine import Engine
+from participant.question_policy import activate, PolicyProvider
 from participant.store import Store, canonical
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -394,6 +395,7 @@ def prepare_state(job: dict, instrument: dict, instrument_version: str) -> tuple
     pending_answer = None
     if prior is None:
         state = new_state(instrument_version, job["model"], job["effort"])
+        activate(state)
         import_record(
             state,
             job["candidate_record"],
@@ -408,6 +410,7 @@ def prepare_state(job: dict, instrument: dict, instrument_version: str) -> tuple
         return state, None
 
     state = json.loads(canonical(prior))
+    activate(state)
     if state.get("instrument_version") != instrument_version:
         raise RuntimeError("prior_worker_instrument_version_mismatch")
     processed = int(state.get("gpt_review_answers_processed") or 0)
@@ -436,6 +439,7 @@ def run_legacy_review(
         state, pending_answer = prepare_state(job, instrument, instrument_version)
         token, current = store.create(state, 2)
         provider = provider or CodexCliProvider()
+        provider = PolicyProvider(provider, state)
         engine = Engine(store, provider, maximum_calls=12)
 
         has_new_answer = bool(job.get("worker_state")) and len(
@@ -475,6 +479,7 @@ def run_legacy_review(
             "model": job["model"],
             "effort": job["effort"],
             "instrument_version": instrument_version,
+            "question_policy": state["question_policy"],
             "paid_api": False,
             "production_backend": False,
             "round": job.get("round", 0),

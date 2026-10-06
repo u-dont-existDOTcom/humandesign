@@ -1,0 +1,133 @@
+FFFF....F............                                                    [100%]
+=================================== FAILURES ===================================
+___________ test_fast_http_worker_batch_final_review_and_submission ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-joel/pytest-34/test_fast_http_worker_batch_fi0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7664b6125370>
+
+    def test_fast_http_worker_batch_final_review_and_submission(tmp_path, monkeypatch):
+        s, fake, app, c, worker, box, stages = setup_fast(tmp_path, monkeypatch)
+        started = start_fast(c, s)
+        rid = started["review_id"]
+        assert started["recommended_check_after_seconds"] == 180
+        assert started["final_review_completed"] is False
+        assert worker.process_one("https://testserver", s.review_worker_token, outbox=box)
+        questions = view(c, s, rid)
+>       assert questions["status"] == "clarification_needed"
+E       AssertionError: assert 'error' == 'clarification_needed'
+E         
+E         - clarification_needed
+E         + error
+
+apps/life-patterns-participant/tests/test_fast_review_integration.py:194: AssertionError
+_ test_partial_batch_invalidates_unasked_remainder_without_fabricated_skips[False] _
+
+tmp_path = PosixPath('/tmp/pytest-of-joel/pytest-34/test_partial_batch_invalidates0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7664b51fa2d0>
+skip = False
+
+    @pytest.mark.parametrize("skip", [False, True])
+    def test_partial_batch_invalidates_unasked_remainder_without_fabricated_skips(
+        tmp_path, monkeypatch, skip
+    ):
+        s, fake, app, c, worker, box, _ = setup_fast(tmp_path, monkeypatch)
+        rid = start_fast(c, s)["review_id"]
+        worker.process_one("https://testserver", s.review_worker_token, outbox=box)
+        before = view(c, s, rid)
+>       r, _ = answer_batch(c, s, before, count=1, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+apps/life-patterns-participant/tests/test_fast_review_integration.py:245: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7664b4371190>
+settings = Settings(database=PosixPath('/tmp/pytest-of-joel/pytest-34/test_partial_batch_invalidates0/data.sqlite3'), encryption_...e_cookies=False, maximum_sessions=50, maximum_calls=12, live_enabled=False, public_origin='', fast_review_enabled=True)
+state = {'batch_id': None, 'clarification': None, 'clarifications': None, 'duplicate': False, ...}
+
+    def answer_batch(client, settings, state, *, count=None, skip=False):
+>       qs = state["clarifications"][:count]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: 'NoneType' object is not subscriptable
+
+apps/life-patterns-participant/tests/test_fast_review_integration.py:166: TypeError
+_ test_partial_batch_invalidates_unasked_remainder_without_fabricated_skips[True] _
+
+tmp_path = PosixPath('/tmp/pytest-of-joel/pytest-34/test_partial_batch_invalidates1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7664b43cf7a0>
+skip = True
+
+    @pytest.mark.parametrize("skip", [False, True])
+    def test_partial_batch_invalidates_unasked_remainder_without_fabricated_skips(
+        tmp_path, monkeypatch, skip
+    ):
+        s, fake, app, c, worker, box, _ = setup_fast(tmp_path, monkeypatch)
+        rid = start_fast(c, s)["review_id"]
+        worker.process_one("https://testserver", s.review_worker_token, outbox=box)
+        before = view(c, s, rid)
+>       r, _ = answer_batch(c, s, before, count=1, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+apps/life-patterns-participant/tests/test_fast_review_integration.py:245: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7664b36e3290>
+settings = Settings(database=PosixPath('/tmp/pytest-of-joel/pytest-34/test_partial_batch_invalidates1/data.sqlite3'), encryption_...e_cookies=False, maximum_sessions=50, maximum_calls=12, live_enabled=False, public_origin='', fast_review_enabled=True)
+state = {'batch_id': None, 'clarification': None, 'clarifications': None, 'duplicate': False, ...}
+
+    def answer_batch(client, settings, state, *, count=None, skip=False):
+>       qs = state["clarifications"][:count]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: 'NoneType' object is not subscriptable
+
+apps/life-patterns-participant/tests/test_fast_review_integration.py:166: TypeError
+________ test_bad_order_has_no_partial_commit_and_withdraw_clears_batch ________
+
+tmp_path = PosixPath('/tmp/pytest-of-joel/pytest-34/test_bad_order_has_no_partial_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7664b43bb140>
+
+    def test_bad_order_has_no_partial_commit_and_withdraw_clears_batch(tmp_path, monkeypatch):
+        s, _, app, c, worker, box, _ = setup_fast(tmp_path, monkeypatch)
+        rid = start_fast(c, s)["review_id"]
+        worker.process_one("https://testserver", s.review_worker_token, outbox=box)
+        state = view(c, s, rid)
+        qs = state["clarifications"]
+        body = {
+            "batch_id": state["batch_id"],
+            "operation_id": secrets.token_hex(16),
+            "answers": [
+                {"clarification_id": q["clarification_id"], "answer_text": "Exact."}
+>               for q in reversed(qs)
+                         ^^^^^^^^^^^^
+            ],
+        }
+E       TypeError: 'NoneType' object is not reversible
+
+apps/life-patterns-participant/tests/test_fast_review_integration.py:267: TypeError
+_______ test_explicit_batch_skip_stays_visible_and_is_not_a_reopened_gap _______
+
+tmp_path = PosixPath('/tmp/pytest-of-joel/pytest-34/test_explicit_batch_skip_stays0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7664b31c66f0>
+
+    def test_explicit_batch_skip_stays_visible_and_is_not_a_reopened_gap(tmp_path, monkeypatch):
+        settings, fake, app, client, worker, box, _ = setup_fast(tmp_path, monkeypatch)
+        review_id = start_fast(client, settings)["review_id"]
+        worker.process_one("https://testserver", settings.review_worker_token, outbox=box)
+        batch = view(client, settings, review_id)
+>       skipped_route = batch["clarifications"][0]["route_id"]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: 'NoneType' object is not subscriptable
+
+apps/life-patterns-participant/tests/test_fast_review_release_boundaries.py:13: TypeError
+=============================== warnings summary ===============================
+../humandesign-fast-review-release-20261005/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /mnt/hdd/var/tmp/humandesign-fast-review-release-20261005/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/life-patterns-participant/tests/test_fast_review_integration.py::test_fast_http_worker_batch_final_review_and_submission
+FAILED apps/life-patterns-participant/tests/test_fast_review_integration.py::test_partial_batch_invalidates_unasked_remainder_without_fabricated_skips[False]
+FAILED apps/life-patterns-participant/tests/test_fast_review_integration.py::test_partial_batch_invalidates_unasked_remainder_without_fabricated_skips[True]
+FAILED apps/life-patterns-participant/tests/test_fast_review_integration.py::test_bad_order_has_no_partial_commit_and_withdraw_clears_batch
+FAILED apps/life-patterns-participant/tests/test_fast_review_release_boundaries.py::test_explicit_batch_skip_stays_visible_and_is_not_a_reopened_gap
+5 failed, 16 passed, 1 warning in 1.96s

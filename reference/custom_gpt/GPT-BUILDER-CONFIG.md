@@ -80,3 +80,7 @@ Update the existing GPT, not a new GPT. Replace Instructions, the Action schema,
 Replace Instructions and BOTH Knowledge guides: RECOVERY-GUIDE-v2.md and ACTION-HANDOFF-GUIDE-v1.md. Keep the four scientific/reference Knowledge files, Action schema and Bearer credential unchanged. The opening has only the research consent question, never a mode selector or earlier-life opt-in question. Default is study-default welcome, not fabricated express permission; explicit opt-outs win. Mode metadata remains unknown unless actually supported.
 
 Progress now includes the provisional remaining questions AND answering minutes to independent review, grounded in the current revisable plan. A count/topic footer alone is not progress. Recovery searches all canonical schemas/aliases and compares duplicates and successors before selecting. A historically complete imported record goes straight to independent review, not a new local interview. These Instructions override old collection/setup wording in historical examples; frozen question and evidence semantics are unchanged.
+
+## Active tendency-first elicitation — 2026-10-06
+
+Add `TENDENCY-FIRST-GUIDE-v1.json` as the seventh Knowledge file and replace Instructions. The six existing Knowledge files, Action and credential remain. New selection uses the versioned TF1 usual-pattern questions, with examples only when needed. The frozen v7 bank is historical source/probe authority, not a mandate to role-play retired scenarios. The earlier draft-only wording status is superseded for this policy.

@@ -12,6 +12,7 @@ from collections.abc import Callable
 from .domain import Plan, import_record, new_state, utc, validate_plan
 from .shadow_triage import privacy_safe_case_summary, run_shadow_fast_spec_path
 from .store import canonical, digest
+from .question_policy import activate
 
 PROTOCOL = "fast-batch-v1"
 
@@ -64,6 +65,7 @@ def _source_state(job: dict, instrument: dict, version: str) -> dict:
         if history:
             raise RuntimeError("fast_history_without_saved_state")
         state = new_state(version, job["model"], job["effort"])
+        activate(state)
         import_record(
             state,
             job["candidate_record"],
@@ -84,6 +86,7 @@ def _source_state(job: dict, instrument: dict, version: str) -> dict:
         }
         return state
     state = copy.deepcopy(prior)
+    activate(state)
     meta = state.get("fast_review") or {}
     if meta.get("protocol") != PROTOCOL or state.get("instrument_version") != version:
         raise RuntimeError("fast_review_saved_state_version_mismatch")
@@ -220,6 +223,7 @@ def run_fast_review(
         "model": job["model"],
         "effort": job["effort"],
         "instrument_version": version,
+        "question_policy": state["question_policy"],
         "paid_api": False,
         "production_backend": False,
         "review_protocol": PROTOCOL,

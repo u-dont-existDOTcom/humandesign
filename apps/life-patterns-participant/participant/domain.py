@@ -64,8 +64,9 @@ def load_instrument(root: Path) -> dict:
     return result
 
 
-def bank(instrument: dict) -> dict:
-    return strict_json(instrument["interviewer-bank-v7.json"])
+def bank(instrument: dict, state: dict | None = None) -> dict:
+    from .question_policy import view
+    return view(strict_json(instrument["interviewer-bank-v7.json"]), state)
 
 
 def guide(instrument: dict) -> list[dict]:
@@ -161,7 +162,11 @@ def import_record(
                 walk(value)
 
     walk(record)
-    questions = bank(instrument)["questions"]
+    if record.get("question_policy") is not None:
+        from .question_policy import active
+        state["question_policy"] = copy.deepcopy(record["question_policy"])
+        active(state)  # validate identity; do not infer it from a title or participant text
+    questions = bank(instrument, state)["questions"]
     known = {q["id"] for q in questions}
     exact_question_ids = {
         str(q["question"]).strip(): q["id"] for q in questions if isinstance(q.get("question"), str)
@@ -385,7 +390,7 @@ def semantic_turns(state: dict) -> list[dict]:
 
 def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str]) -> None:
     turns = {t["turn_id"]: t for t in state["turns"]}
-    routes = {q["id"]: q for q in bank(instrument)["questions"]}
+    routes = {q["id"]: q for q in bank(instrument, state)["questions"]}
     facets = {g["facet_id"] for g in guide(instrument)}
     disposition_ids = [x.turn_id for x in plan.dispositions]
     if len(disposition_ids) != len(set(disposition_ids)) or any(
@@ -479,6 +484,9 @@ def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str])
         if q is None or q.route_id not in routes:
             raise ValueError("A question must belong to the full canonical bank.")
         route = routes[q.route_id]
+        from .question_policy import selectable
+        if not selectable(route, state):
+            raise ValueError("This retired or skipped route is not available for new elicitation.")
         if q.route_type == "canonical" and q.text != route["question"]:
             raise ValueError("Canonical wording must match the bank exactly.")
         if target_exposure(q.text):
@@ -503,7 +511,7 @@ def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str])
 
 
 def export_record(state: dict, instrument: dict, final: bool = False) -> dict:
-    routes = bank(instrument)["questions"]
+    routes = bank(instrument, state)["questions"]
     answered = {
         t.get("canonical_question_id")
         for t in state["turns"]
@@ -515,6 +523,8 @@ def export_record(state: dict, instrument: dict, final: bool = False) -> dict:
     reviewed = bool(state["review"].get("confirmed"))
     return {
         "schema": "life-patterns-full-survey-participant-export-v2",
+        **({"question_policy": copy.deepcopy(state["question_policy"])}
+           if state.get("question_policy") else {}),
         "session_id": state["session_id"],
         "survey_authority": {
             "engine_version": VERSION,

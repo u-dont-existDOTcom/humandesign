@@ -74,7 +74,7 @@ def covered_facets(state: dict) -> set[str]:
 
 
 def eligible_routes(state: dict, instrument: dict) -> list[dict]:
-    questions = bank(instrument)["questions"]
+    questions = bank(instrument, state)["questions"]
     answered = answered_route_ids(state)
     presented = presented_route_ids(state)
     addressed = set(state.get("addressed_routes", {}))
@@ -82,6 +82,9 @@ def eligible_routes(state: dict, instrument: dict) -> list[dict]:
     ranked: list[tuple[int, dict]] = []
     for position, route in enumerate(questions):
         route_id = route["id"]
+        from .question_policy import selectable
+        if not selectable(route, state):
+            continue
         if route_id in presented or route_id in addressed:
             continue
         if (
@@ -134,6 +137,7 @@ def route_cards(
     pending_ids: Iterable[str] = (),
     limit: int = MAX_ROUTE_SHORTLIST,
 ) -> list[dict]:
+    from .question_policy import selectable
     if bulk_import:
         retrospective_ok = (
             state.get("collection_preferences", {}).get("retrospective_questions_welcome") is True
@@ -142,14 +146,15 @@ def route_cards(
         already_addressed = set(state.get("addressed_routes", {}))
         routes = [
             route
-            for route in bank(instrument)["questions"]
-            if route["id"] not in already_presented
+            for route in bank(instrument, state)["questions"]
+            if selectable(route, state)
+            and route["id"] not in already_presented
             and route["id"] not in already_addressed
             and (route.get("kind") != "optional_retrospective" or retrospective_ok)
         ]
         return [route_card(route, include_limits=False) for route in routes]
 
-    questions = bank(instrument)["questions"]
+    questions = bank(instrument, state)["questions"]
     route_map = {route["id"]: route for route in questions}
     turn_map = {turn["turn_id"]: turn for turn in state.get("turns", [])}
     pending_route_ids = {
@@ -185,7 +190,7 @@ def route_cards(
     # itself shows that the original scene/question was not answerable.
     for route_id in pending_route_ids:
         route = route_map.get(route_id)
-        if not route:
+        if not route or not selectable(route, state):
             continue
         if (
             route.get("kind") == "optional_retrospective"
@@ -223,7 +228,12 @@ def route_cards(
 
 
 def guide_cards(instrument: dict, route_ids: Iterable[str] | None = None) -> list[dict]:
-    wanted = None if route_ids is None else set(route_ids)
+    # Retrieve historical interpretation constraints, never assign their facets
+    # merely because a new route shares a topic or predecessor identifier.
+    from .question_policy import source_route_id
+    wanted = None if route_ids is None else {
+        source_route_id(str(route_id)) for route_id in route_ids
+    }
     cards = []
     for item in guide(instrument):
         routes = set(item.get("question_routes") or [])
@@ -268,7 +278,7 @@ def relevant_turns(
     pending_ids: Iterable[str],
 ) -> list[dict]:
     wanted_ids = set(pending_ids)
-    route_map = {row["id"]: row for row in bank(instrument)["questions"]}
+    route_map = {row["id"]: row for row in bank(instrument, state)["questions"]}
     bank_route_sources: set[str] = set()
     for route_id in route_ids:
         bank_route_sources.update(route_map.get(route_id, {}).get("context_sources") or [])
@@ -477,7 +487,9 @@ def rejected_plan_summary(proposed_plan: dict) -> dict:
     }
 
 
-def full_route_cards(instrument: dict, route_ids: Iterable[str]) -> list[dict]:
+def full_route_cards(
+    instrument: dict, route_ids: Iterable[str], state: dict | None = None
+) -> list[dict]:
     wanted = set(route_ids)
     return [
         {
@@ -493,7 +505,7 @@ def full_route_cards(instrument: dict, route_ids: Iterable[str]) -> list[dict]:
             "context_binding_rule": route.get("context_binding_rule"),
             "live_pilot_guards": route.get("live_pilot_guards") or [],
         }
-        for route in bank(instrument)["questions"]
+        for route in bank(instrument, state)["questions"]
         if route["id"] in wanted
     ]
 
@@ -527,7 +539,7 @@ def make_review_context(
         if isinstance(item, dict) and item.get("route_id")
     ]
     route_ids = ([route_id] if route_id else []) + addressed_route_ids
-    route_map = {row["id"]: row for row in bank(instrument)["questions"]}
+    route_map = {row["id"]: row for row in bank(instrument, state)["questions"]}
     facet_ids = {
         str(facet)
         for item in proposed_plan.get("evidence", [])
@@ -616,7 +628,7 @@ def make_review_context(
     ]
 
     admission_plan = proposed_plan
-    selected_routes = full_route_cards(instrument, route_ids)
+    selected_routes = full_route_cards(instrument, route_ids, state)
     bulk_projection = None
     if bulk_import:
         # The admission pass already receives every exact imported source turn.
@@ -634,7 +646,7 @@ def make_review_context(
             or item.get("process_feedback_quotes")
         ]
         full_question_ids = {route_id} if route_id else set()
-        selected_routes = full_route_cards(instrument, full_question_ids)
+        selected_routes = full_route_cards(instrument, full_question_ids, state)
         selected_full_ids = {item["id"] for item in selected_routes}
         for addressed_id in addressed_route_ids:
             if addressed_id in selected_full_ids:

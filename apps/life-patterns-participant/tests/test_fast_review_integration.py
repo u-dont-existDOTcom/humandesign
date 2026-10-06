@@ -58,7 +58,7 @@ class FastFake(Fake):
                             "equivalent_context": False,
                             "missing_distinction": "Synthetic material missing factor.",
                         }
-                        for i, rid in enumerate(["M09", "G19"], 1)
+                        for i, rid in enumerate(["TF1-M11", "TF1-G19"], 1)
                     ],
                 }
             ), meta

@@ -1,3 +1,14 @@
+# Tendency-first repair — current task
+
+Task: tendency-first-elicitation-20261006.
+Branch: fix/tendency-first-review-20261006-1839.
+Checkpoint: tasks/tendency-first-elicitation-20261006/PLAN.md.
+Completion command: PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q
+
+Earlier hybrid drafts were not active. This task separately versions new TF1 questions and keeps v7 history unchanged; live review and GPT collection must both use the policy. Skips suppress successors. Prior entries below are historical.
+
+---
+
 # Current collection correction — 2026-10-06
 
 Task: gpt-intro-progress-recovery-20261006.
