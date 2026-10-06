@@ -1,0 +1,139 @@
+{
+  "synthetic_only": true,
+  "final_submission_attempted": false,
+  "synthetic_source_turn_count": 73,
+  "observations": [
+    {
+      "elapsed_seconds": 1.02,
+      "status": "queued",
+      "stage": "initial_triage",
+      "range": {
+        "low": 60,
+        "high": 180
+      },
+      "check_after_seconds": 180,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 11.56,
+      "status": "processing",
+      "stage": "initial_triage",
+      "range": {
+        "low": 60,
+        "high": 180
+      },
+      "check_after_seconds": 180,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 33.17,
+      "status": "processing",
+      "stage": "gap_admission",
+      "range": {
+        "low": 15,
+        "high": 90
+      },
+      "check_after_seconds": 52,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 43.88,
+      "status": "processing",
+      "stage": "question_render",
+      "range": {
+        "low": 15,
+        "high": 90
+      },
+      "check_after_seconds": 56,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 54.78,
+      "status": "clarification_needed",
+      "stage": "clarification_needed",
+      "range": null,
+      "check_after_seconds": 0,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 55.59,
+      "status": "queued",
+      "stage": "reconciliation",
+      "range": {
+        "low": 60,
+        "high": 240
+      },
+      "check_after_seconds": 180,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 66.3,
+      "status": "processing",
+      "stage": "reconciliation",
+      "range": {
+        "low": 60,
+        "high": 240
+      },
+      "check_after_seconds": 178,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 77.0,
+      "status": "processing",
+      "stage": "omission_audit",
+      "range": {
+        "low": 120,
+        "high": 480
+      },
+      "check_after_seconds": 296,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 120.01,
+      "status": "processing",
+      "stage": "final_synthesis",
+      "range": {
+        "low": 300,
+        "high": 720
+      },
+      "check_after_seconds": 594,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 238.33,
+      "status": "processing",
+      "stage": "final_admission",
+      "range": {
+        "low": 60,
+        "high": 180
+      },
+      "check_after_seconds": 164,
+      "guidance_present": true
+    },
+    {
+      "elapsed_seconds": 249.0,
+      "status": "ready",
+      "stage": "ready",
+      "range": null,
+      "check_after_seconds": 0,
+      "guidance_present": true
+    }
+  ],
+  "batch_question_counts": [
+    1
+  ],
+  "synthetic_batch_routes": [
+    [
+      "TF1-M11"
+    ]
+  ],
+  "synthetic_question_texts": [
+    [
+      "When sharing work or costs with someone, what approach do you usually use to work out an arrangement?"
+    ]
+  ],
+  "review_reached_ready": true,
+  "batch_rounds": 1,
+  "elapsed_seconds": 249.0,
+  "synthetic_review_withdrawn": true
+}
