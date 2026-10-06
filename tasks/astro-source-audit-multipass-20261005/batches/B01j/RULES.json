@@ -1,0 +1,3681 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01j",
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "status": "ENGLISH_SOURCE_EXTRACTION_COMPLETE_IN_DECLARED_CHAPTERS",
+  "records_count": 74,
+  "independent_predictions_count": 0,
+  "records": [
+    {
+      "id": "PT.R64.IV.01.R334",
+      "title": "External circumstances follow constitution",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.1",
+        "pdf_support_pages": [
+          397
+        ],
+        "printed_support_pages": [
+          373
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "external",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "scope": "order of inquiry"
+      },
+      "consequent": "After constitutional topics, consider material fortune and honour as external circumstances; the source associates the former with body and the latter with soul.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SOURCE_ORGANIZATION",
+      "dependency_groups": [
+        "PT.IV.1.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R335",
+      "title": "Fortune computation repeated for both sects",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          397,
+          399
+        ],
+        "printed_support_pages": [
+          373,
+          375
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Lot of For",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "topic": "material acquisition",
+        "sect": [
+          "day",
+          "night"
+        ]
+      },
+      "consequent": {
+        "formula": "(ASC + Moon - Sun) modulo 360",
+        "role": "starting point for material acquisitions"
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Robbins questions the authenticity of the following formula clause; retain this witness rather than silently reverse nocturnal Fortune."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family",
+        "PT.III.10.Fortune_formula"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R336",
+      "title": "Robbins questions the repeated formula clause",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          397
+        ],
+        "printed_support_pages": [
+          373
+        ],
+        "attribution_layer": "ROBBINS_NOTE_OR_REPORTED_COMMENTARY",
+        "passage_anchor": "authenticity",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "scope": "note to Fortune formula"
+      },
+      "consequent": "Robbins calls the clause through nativities doubtful because it appears to refer to the III.10 passage he labels an interpolation.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "TEXTUAL_QUALIFICATION",
+      "dependency_groups": [
+        "PT.IV.2.source_family",
+        "PT.III.10.Fortune_formula"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R337",
+      "title": "Fortune requires topical rulers and their relational condition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          399
+        ],
+        "printed_support_pages": [
+          375
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "lordship",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "topic": "material fortune",
+        "prior": "Fortune located"
+      },
+      "consequent": "Take rulers of the sign and examine their power/familiarity and the planets aspecting or overcoming them, including same/opposite sect.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The earlier multi-mode rulership references must be retained; not automatically a single domicile lord or a generic strongest planet."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R338",
+      "title": "Powerful Fortune governors and wealth",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          399
+        ],
+        "printed_support_pages": [
+          375
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "in power",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "planet governs Fortune",
+          "planet in power"
+        ]
+      },
+      "consequent": "Wealth is signified.",
+      "modifiers": [
+        "Particularly when the luminaries give proper testimony."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No calibrated probability, wealth amount or poverty converse is supplied."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R339",
+      "title": "Saturn: source of acquisition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          399
+        ],
+        "printed_support_pages": [
+          375
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Saturn governs material fortune",
+          "power and related testimonies assessed in chapter context"
+        ]
+      },
+      "consequent": {
+        "acquisition_channels": [
+          "building",
+          "agriculture",
+          "shipping ventures"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R340",
+      "title": "Jupiter: source of acquisition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          399
+        ],
+        "printed_support_pages": [
+          375
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Jupiter governs material fortune",
+          "power and related testimonies assessed in chapter context"
+        ]
+      },
+      "consequent": {
+        "acquisition_channels": [
+          "fiduciary relationships",
+          "guardianships",
+          "priesthoods"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R341",
+      "title": "Mars: source of acquisition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          399
+        ],
+        "printed_support_pages": [
+          375
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Mars governs material fortune",
+          "power and related testimonies assessed in chapter context"
+        ]
+      },
+      "consequent": {
+        "acquisition_channels": [
+          "military operations",
+          "command"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R342",
+      "title": "Venus: source of acquisition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          399
+        ],
+        "printed_support_pages": [
+          375
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Venus",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Venus governs material fortune",
+          "power and related testimonies assessed in chapter context"
+        ]
+      },
+      "consequent": {
+        "acquisition_channels": [
+          "gifts from friends",
+          "gifts from women"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R343",
+      "title": "Mercury: source of acquisition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          399
+        ],
+        "printed_support_pages": [
+          375
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Mercury governs material fortune",
+          "power and related testimonies assessed in chapter context"
+        ]
+      },
+      "consequent": {
+        "acquisition_channels": [
+          "eloquence",
+          "trade"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R344",
+      "title": "Saturn–Jupiter inheritance and adoption branch",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          399
+        ],
+        "printed_support_pages": [
+          375
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "inheritances",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Saturn associated with material fortune",
+          "Jupiter aspects Saturn"
+        ]
+      },
+      "consequent": "Inheritance; in the enhanced configuration, adoption and inheritance of others possessions.",
+      "modifiers": [
+        "Particularly upon the upper angles, with Jupiter in a bicorporeal sign OR holding the Moon application."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Preserve particularly as emphasis; the exact scope of the enhanced conditions for adoption needs an implementation decision, not outcome-led selection."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R345",
+      "title": "Retention is separate from acquisition",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          399
+        ],
+        "printed_support_pages": [
+          375
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "retain",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Fortune rulership established",
+          "same-sect planets testify to ruling planets/rulership"
+        ]
+      },
+      "consequent": "Possessions retained without loss.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Mixed same/opposite-sect testimonies need the broader condition/mixture method."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R346",
+      "title": "Loss through contrary-sect overcoming or following",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          399,
+          401
+        ],
+        "printed_support_pages": [
+          375,
+          377
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "opposite sect",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Fortune governing places established",
+          "opposite-sect planets overcome governing places OR rise after them"
+        ]
+      },
+      "consequent": "Loss of possessions.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Rising-after and governing-place geometry are not reduced here to an unexamined longitude shortcut."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R347",
+      "title": "General material timing from angular approaches",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          401
+        ],
+        "printed_support_pages": [
+          377
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "general time",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "topic": "timing of material-fortune effect"
+      },
+      "consequent": "Use approaches of causative planets to angles and succedent signs.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "This passage does not supply a modern transit/progression choice, date conversion or orb; III.10 and IV.10 dependencies remain."
+      ],
+      "output_type": "TIMING_DEPENDENCY",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.02.R348",
+      "title": "Two reported readings of material timing",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.2",
+        "pdf_support_pages": [
+          401
+        ],
+        "printed_support_pages": [
+          377
+        ],
+        "attribution_layer": "ROBBINS_NOTE_OR_REPORTED_COMMENTARY",
+        "passage_anchor": "inheritance falls",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "scope": "Robbins note 1"
+      },
+      "consequent": "Robbins reports Bouche-Leclercq interpreting when inheritance falls due and Ashmand interpreting duration of wealth.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "INTERPRETATION_VARIANTS",
+      "dependency_groups": [
+        "PT.IV.2.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R349",
+      "title": "Status inquiry starts from luminaries and attendance",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          401
+        ],
+        "printed_support_pages": [
+          377
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "dignity and happiness",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "topic": "honour/status and associated fortune"
+      },
+      "consequent": "Observe the luminaries and the familiarity of their attending planets; this is not the material-acquisition inquiry or essential dignity alone.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "TOPICAL_SELECTION_METHOD",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R350",
+      "title": "Kingship branch and its emphasized attendance",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          401
+        ],
+        "printed_support_pages": [
+          377
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "children will be kings",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "both luminaries in masculine signs",
+          "both OR one luminary angular"
+        ]
+      },
+      "consequent": "The source assigns kingship.",
+      "modifiers": [
+        "Particularly when the sect luminary is attended by the five planets, matutine to Sun and vespertine to Moon."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Particularly is an emphasis, not silently promoted to a universal necessary-condition quantifier; exact attendance definition and contemporary social target are unresolved."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R351",
+      "title": "Strengthened and continuing rulership",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          401
+        ],
+        "printed_support_pages": [
+          377
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "world",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "preceding high-status configuration",
+          "attending planets angular OR aspect the superior angle"
+        ]
+      },
+      "consequent": "Continuing great power and world-rulership in the source historical categories.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R352",
+      "title": "Dexter attendance enhances high-status branch",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          401,
+          403
+        ],
+        "printed_support_pages": [
+          377,
+          379
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "dexter",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "preceding high-status configuration",
+          "attendants in dexter aspect to superior angles"
+        ]
+      },
+      "consequent": "A further favourable qualification of fortune.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Singular superior angle and plural superior angles are retained from this witness; not collapsed without defining the geometry."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R353",
+      "title": "Sun masculine / Moon feminine modification",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          403
+        ],
+        "printed_support_pages": [
+          379
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "sun alone",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "other preceding conditions retained",
+          "Sun masculine sign",
+          "Moon feminine sign",
+          "one luminary angular"
+        ]
+      },
+      "consequent": "Generals with power of life and death, rather than the preceding kingship category.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Historical office categories cannot be silently relabelled as modern leadership scores."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R354",
+      "title": "Partial dignities when attendants lack angular connections",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          403
+        ],
+        "printed_support_pages": [
+          379
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "partial dignities",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "preceding modified configuration",
+          "attendants neither angular NOR witnessing to angles"
+        ]
+      },
+      "consequent": "Greatness with partial dignities: chaplets, superintendence or military command, not first rank.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R355",
+      "title": "Civil advancement despite nonangular luminaries",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          403
+        ],
+        "printed_support_pages": [
+          379
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "civil leadership",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "luminaries not angular",
+          "most attendants angular OR aspect angles"
+        ]
+      },
+      "consequent": "Civil leadership and moderate career advancement, without the more conspicuous honours.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R356",
+      "title": "Obscurity when attendant angular familiarity is absent",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          403
+        ],
+        "printed_support_pages": [
+          379
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "without preferment",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "nonangular-luminary context",
+          "attendants not associated with angles"
+        ]
+      },
+      "consequent": "Obscure actions and lack of preferment.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R357",
+      "title": "Lowest-status composite negative branch",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          403
+        ],
+        "printed_support_pages": [
+          379
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "entirely humble",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "neither luminary angular",
+          "neither luminary in a masculine sign",
+          "neither attended by benefics"
+        ]
+      },
+      "consequent": "The source lowest fortune category.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not convert a single failed positive prerequisite into this compound negative branch; modern class inference is not admitted."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R358",
+      "title": "Intermediate status grades require detailed synthesis",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          403,
+          405
+        ],
+        "printed_support_pages": [
+          379,
+          381
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "intermediate",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "scope": "between listed status configurations"
+      },
+      "consequent": "Estimate intermediate grades from luminary specifics, variation in attendance and the government of attendance; no exhaustive numerical ladder is supplied.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SYNTHESIS_METHOD",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R359",
+      "title": "Independence and security qualify status separately",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          405
+        ],
+        "printed_support_pages": [
+          381
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "security",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "topic": "quality of dignity",
+        "branches": {
+          "same_sect_or_benefic_attendance": "greater independence and security",
+          "contrary_sect_or_malefic_attendance": "dependency and less security"
+        }
+      },
+      "consequent": "Status level and its security/dependency are distinct dimensions.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "A malefic of the same sect or a benefic of the opposite sect can engage contrary indications; no weights or precedence are supplied here."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R360",
+      "title": "Saturn: basis of honour",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          405
+        ],
+        "printed_support_pages": [
+          381
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Saturn",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "attendance_governor_any_of": [
+          "Saturn"
+        ]
+      },
+      "consequent": {
+        "basis_of_honour": [
+          "wealth",
+          "amassing riches"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R361",
+      "title": "Jupiter / Venus: basis of honour",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          405
+        ],
+        "printed_support_pages": [
+          381
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Jupiter",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "attendance_governor_any_of": [
+          "Jupiter",
+          "Venus"
+        ]
+      },
+      "consequent": {
+        "basis_of_honour": [
+          "favours",
+          "gifts",
+          "honours",
+          "magnanimity"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R362",
+      "title": "Mars: basis of honour",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          405
+        ],
+        "printed_support_pages": [
+          381
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "attendance_governor_any_of": [
+          "Mars"
+        ]
+      },
+      "consequent": {
+        "basis_of_honour": [
+          "generalships",
+          "victories",
+          "fear of subordinates"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R363",
+      "title": "Mercury: basis of honour",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          405
+        ],
+        "printed_support_pages": [
+          381
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "attendance_governor_any_of": [
+          "Mercury"
+        ]
+      },
+      "consequent": {
+        "basis_of_honour": [
+          "intelligence",
+          "education",
+          "care and management of affairs"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R364",
+      "title": "Attendance explanation is reported commentary",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          401
+        ],
+        "printed_support_pages": [
+          377
+        ],
+        "attribution_layer": "ROBBINS_NOTE_OR_REPORTED_COMMENTARY",
+        "passage_anchor": "Porphyry",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "scope": "Robbins note 2"
+      },
+      "consequent": "The note reports the luminary-specific second of three Porphyry/Hephaestion attendance modes: luminary at ASC or MC, an own-sect planet casting a ray in the stated direction, regardless of luminary domicile.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "This is not a fully collated Porphyry source, and must not silently replace the main-text five-planet language."
+      ],
+      "output_type": "REPORTED_DEFINITION",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R365",
+      "title": "Dexter direction in the translator note",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          402
+        ],
+        "printed_support_pages": [
+          378
+        ],
+        "attribution_layer": "ROBBINS_NOTE_OR_REPORTED_COMMENTARY",
+        "passage_anchor": "Dexter",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "scope": "Robbins explanatory note"
+      },
+      "consequent": "Dexter/right is in the direction of the daily movement of the heavens.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "REPORTED_DEFINITION",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.03.R366",
+      "title": "Historical office glosses remain commentary",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.3",
+        "pdf_support_pages": [
+          401,
+          402,
+          403
+        ],
+        "printed_support_pages": [
+          377,
+          378,
+          379
+        ],
+        "attribution_layer": "ROBBINS_NOTE_OR_REPORTED_COMMENTARY",
+        "passage_anchor": "officers",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "scope": "Robbins notes concerning kings and lesser dignities"
+      },
+      "consequent": "Robbins/Cumont relate the expressions to emperors, high imperial officers, priestly chaplets, court/civil positions and commanders of troops; these explanatory historical identifications are separate from main text.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "HISTORICAL_GLOSS",
+      "dependency_groups": [
+        "PT.IV.3.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R367",
+      "title": "Two sources for selecting the ruler of action",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          405
+        ],
+        "printed_support_pages": [
+          381
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "two methods",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "topic": "action/pursuit ruler"
+      },
+      "consequent": "Inspect the planet making its morning appearance nearest the Sun and the planet at culmination, particularly with the Moon application.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Nearest appearance, qualification window, culminating sign versus degree and lunar-application criterion require explicit source-grounded conventions. No seven-day window is given in this selection passage."
+      ],
+      "output_type": "TOPICAL_SELECTION_METHOD",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R368",
+      "title": "One planet satisfying both routes is used once",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          405
+        ],
+        "printed_support_pages": [
+          381
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "same star",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "appearance route qualified",
+          "culmination route qualified",
+          "same planet in both"
+        ]
+      },
+      "consequent": "Employ that planet alone; not two independent testimonies.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "ROUTE_RECONCILIATION",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R369",
+      "title": "Only one populated route uses its qualified planet",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          405,
+          407
+        ],
+        "printed_support_pages": [
+          381,
+          383
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "only the one",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "one selection route has qualified planet",
+          "other route known to have none"
+        ]
+      },
+      "consequent": "Use the planet satisfying the populated route alone.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "ROUTE_RECONCILIATION",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R370",
+      "title": "Different route rulers are both retained",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          407
+        ],
+        "printed_support_pages": [
+          383
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "employ them",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "appearance route qualified",
+          "culmination/lunar route qualified",
+          "different planets"
+        ]
+      },
+      "consequent": "Employ both; give precedence to the stronger with more claims to domination under the previously stated method.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No arbitrary numerical weights or winner-take-all exclusion; equal/unknown claims are not a license to invent a preferred planet."
+      ],
+      "output_type": "ROUTE_RECONCILIATION",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R371",
+      "title": "Fallback only after both primary routes are absent",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          407
+        ],
+        "printed_support_pages": [
+          383
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "occasional pursuits",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "no qualifying appearance planet",
+          "no planet at culmination"
+        ]
+      },
+      "consequent": "Use the ruler of the culminating region for occasional pursuits; the source says such people are mostly inactive.",
+      "modifiers": [
+        "Some manuscripts specify morning appearance in this absence sentence."
+      ],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Missing computation is not known absence. Do not infer unemployment, laziness or incapacity from an unimplemented route."
+      ],
+      "output_type": "FALLBACK_METHOD",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R372",
+      "title": "Three action-quality planets are not the five character rulers",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          407
+        ],
+        "printed_support_pages": [
+          383
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "three",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "topic": "quality rather than selection of action"
+      },
+      "consequent": "Delineate from Mars, Venus and Mercury and their signs.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The preceding selection is phrased more broadly; this paragraph does not provide standalone action profiles for Saturn/Jupiter or a rule converting a selected outer planet into one of these three."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R373",
+      "title": "Mercury action baseline",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          407
+        ],
+        "printed_support_pages": [
+          383
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mercury"
+        ],
+        "branch": "BASE"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "scribes",
+          "men of business",
+          "calculators",
+          "teachers",
+          "merchants",
+          "bankers",
+          "soothsayers",
+          "astrologers",
+          "sacrificers",
+          "work through documents, interpretation, giving and taking"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R374",
+      "title": "Mercury with Saturn testimony",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          407
+        ],
+        "printed_support_pages": [
+          383
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mercury"
+        ],
+        "branch": "SATURN_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "managers of others property",
+          "interpreters of dreams",
+          "temple frequenters for prophecy and inspiration"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R375",
+      "title": "Mercury with Jupiter testimony",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          407,
+          409
+        ],
+        "printed_support_pages": [
+          383,
+          385
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mercury"
+        ],
+        "branch": "JUPITER_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "law-makers",
+          "orators",
+          "sophists",
+          "familiarity with great persons"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R376",
+      "title": "Venus action baseline",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          409
+        ],
+        "printed_support_pages": [
+          385
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Venus",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Venus"
+        ],
+        "branch": "BASE"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "flower perfumes",
+          "unguents",
+          "wine",
+          "colours",
+          "dyes",
+          "spices",
+          "adornments",
+          "sellers of unguents",
+          "weavers of chaplets",
+          "innkeepers",
+          "wine-merchants",
+          "druggists",
+          "weavers",
+          "dealers in spices",
+          "painters",
+          "dyers",
+          "sellers of clothing"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R377",
+      "title": "Venus with Saturn testimony",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          409
+        ],
+        "printed_support_pages": [
+          385
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Venus",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Venus"
+        ],
+        "branch": "SATURN_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "dealers in pleasure/adornment goods",
+          "sorcerers",
+          "poisoners",
+          "panders",
+          "similar sources of livelihood"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R378",
+      "title": "Venus with Jupiter testimony",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          409
+        ],
+        "printed_support_pages": [
+          385
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Venus",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Venus"
+        ],
+        "branch": "JUPITER_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "athletes",
+          "wearers of the wreath",
+          "persons deemed worthy of honours",
+          "advancement through women"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R379",
+      "title": "Mars with a solar aspect: fire crafts",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          409
+        ],
+        "printed_support_pages": [
+          385
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mars"
+        ],
+        "branch": "SUN_ASPECT",
+        "Sun_aspect": true
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "cooks",
+          "moulders",
+          "cauterizers",
+          "smiths",
+          "workers in mines"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R380",
+      "title": "Mars without the Sun: iron crafts",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          409
+        ],
+        "printed_support_pages": [
+          385
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mars"
+        ],
+        "branch": "WITHOUT_SUN",
+        "Sun_aspect": false
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "shipbuilders",
+          "carpenters",
+          "farmers",
+          "quarrymen",
+          "stone-dressers",
+          "jewellers",
+          "splitters of wood",
+          "subordinate workers"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The source moves from in aspect to not with; do not narrow the first to conjunction or invent a new orb."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R381",
+      "title": "Mars with Saturn testimony",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          409
+        ],
+        "printed_support_pages": [
+          385
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mars"
+        ],
+        "branch": "SATURN_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "seamen",
+          "drawers of water",
+          "tunnelers",
+          "painters",
+          "gamekeepers",
+          "cooks",
+          "embalmers"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R382",
+      "title": "Mars with Jupiter testimony",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          409,
+          411
+        ],
+        "printed_support_pages": [
+          385,
+          387
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mars",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mars"
+        ],
+        "branch": "JUPITER_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "soldiers",
+          "servants",
+          "publicans",
+          "innkeepers",
+          "ferrymen",
+          "assistants at sacrifice"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R383",
+      "title": "Mercury–Venus joint action",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          411
+        ],
+        "printed_support_pages": [
+          387
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mercury",
+          "Venus"
+        ],
+        "branch": "BASE",
+        "emphasis": "particularly when they have exchanged places"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "arts of the Muses",
+          "musical instruments",
+          "melodies",
+          "poems",
+          "rhythm",
+          "theatre workers",
+          "actors",
+          "dealers in slaves",
+          "makers of musical instruments",
+          "chorus members",
+          "string makers",
+          "painters",
+          "dancers",
+          "weavers",
+          "wax-moulders"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R384",
+      "title": "Mercury–Venus with Saturn",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          411
+        ],
+        "printed_support_pages": [
+          387
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mercury",
+          "Venus"
+        ],
+        "branch": "SATURN_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "preceding Mercury–Venus callings",
+          "dealers in feminine finery"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R385",
+      "title": "Mercury–Venus with Jupiter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          411
+        ],
+        "printed_support_pages": [
+          387
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mercury",
+          "Venus"
+        ],
+        "branch": "JUPITER_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "lawyers",
+          "supervisors of counting houses",
+          "public officers",
+          "teachers of children",
+          "leaders of the populace"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R386",
+      "title": "Mercury–Mars joint action",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          411
+        ],
+        "printed_support_pages": [
+          387
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mercury",
+          "Mars"
+        ],
+        "branch": "BASE"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "sculptors",
+          "armourers",
+          "makers of sacred monuments",
+          "modellers",
+          "wrestlers",
+          "physicians",
+          "surgeons",
+          "accusers",
+          "adulterers",
+          "evil-doers",
+          "forgers"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R387",
+      "title": "Mercury–Mars with Saturn",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          411
+        ],
+        "printed_support_pages": [
+          387
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mercury",
+          "Mars"
+        ],
+        "branch": "SATURN_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "murderers",
+          "sneak-thieves",
+          "burglars",
+          "pirates",
+          "cattle-thieves",
+          "villains"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R388",
+      "title": "Mercury–Mars with Jupiter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          411,
+          413
+        ],
+        "printed_support_pages": [
+          387,
+          389
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Mercury",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Mercury",
+          "Mars"
+        ],
+        "branch": "JUPITER_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "men-at-arms",
+          "duellists",
+          "energetic and clever persons",
+          "busybodies making a living by meddling in others affairs"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R389",
+      "title": "Venus–Mars joint action",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          413
+        ],
+        "printed_support_pages": [
+          389
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Venus",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Venus",
+          "Mars"
+        ],
+        "branch": "BASE"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "dyers",
+          "perfumers",
+          "workers in tin",
+          "workers in lead",
+          "workers in gold",
+          "workers in silver",
+          "farmers",
+          "dancers in armour",
+          "druggists",
+          "physicians using drugs"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R390",
+      "title": "Venus–Mars with Saturn",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          413
+        ],
+        "printed_support_pages": [
+          389
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Venus",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Venus",
+          "Mars"
+        ],
+        "branch": "SATURN_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "attendants of sacred animals",
+          "persons who bury people",
+          "mourners",
+          "funeral pipers",
+          "fanatics at mysteries, laments and bloody rites"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R391",
+      "title": "Venus–Mars with Jupiter",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          413
+        ],
+        "printed_support_pages": [
+          389
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "Venus",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "source-qualified action rulership"
+        ],
+        "rulers": [
+          "Venus",
+          "Mars"
+        ],
+        "branch": "JUPITER_TESTIFIES"
+      },
+      "consequent": {
+        "historical_activity_examples": [
+          "temple frequenters",
+          "omen interpreters",
+          "bearers of sacred instruments",
+          "supervisors of women",
+          "interpreters of marriages and matches",
+          "livelihood through these occupations with pleasure-seeking and recklessness"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R392",
+      "title": "Sign form modifies action: anthropomorphic",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          413
+        ],
+        "printed_support_pages": [
+          389
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "anthropomorphic",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "action ruler selected",
+          "action ruler in anthropomorphic source class"
+        ]
+      },
+      "consequent": {
+        "activity_modifiers": [
+          "scientific pursuits",
+          "pursuits useful to humans"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Membership belongs to this source vocabulary, not an automatic modern element/sign taxonomy."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R393",
+      "title": "Sign form modifies action: quadrupedal",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          413
+        ],
+        "printed_support_pages": [
+          389
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "quadrupedal",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "action ruler selected",
+          "action ruler in quadrupedal source class"
+        ]
+      },
+      "consequent": {
+        "activity_modifiers": [
+          "mines",
+          "commerce",
+          "building",
+          "carpentry"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Membership belongs to this source vocabulary, not an automatic modern element/sign taxonomy."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R394",
+      "title": "Sign form modifies action: solstitial_and_equinoctial",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          413,
+          415
+        ],
+        "printed_support_pages": [
+          389,
+          391
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "solstitial",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "action ruler selected",
+          "action ruler in solstitial_and_equinoctial source class"
+        ]
+      },
+      "consequent": {
+        "activity_modifiers": [
+          "interpretation",
+          "barter",
+          "measuring",
+          "agriculture",
+          "religion"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Membership belongs to this source vocabulary, not an automatic modern element/sign taxonomy."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R395",
+      "title": "Sign form modifies action: terrestrial_and_aquatic",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          415
+        ],
+        "printed_support_pages": [
+          391
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "terrestrial",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "action ruler selected",
+          "action ruler in terrestrial_and_aquatic source class"
+        ]
+      },
+      "consequent": {
+        "activity_modifiers": [
+          "activities in or with liquids",
+          "botanical pursuits",
+          "shipbuilding",
+          "burial",
+          "pickling",
+          "salting"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Membership belongs to this source vocabulary, not an automatic modern element/sign taxonomy."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R396",
+      "title": "Sign membership comes from an identified explanatory witness",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          413,
+          415
+        ],
+        "printed_support_pages": [
+          389,
+          391
+        ],
+        "attribution_layer": "ROBBINS_NOTE_OR_REPORTED_COMMENTARY",
+        "passage_anchor": "Hephaestion",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "scope": "Robbins sign-class notes"
+      },
+      "consequent": {
+        "anthropomorphic": [
+          "Gemini",
+          "Virgo",
+          "Sagittarius (partly)",
+          "Libra"
+        ],
+        "quadrupedal": [
+          "Leo",
+          "Sagittarius"
+        ],
+        "solstitial_equinoctial": [
+          "Cancer",
+          "Capricorn",
+          "Aries",
+          "Libra"
+        ],
+        "terrestrial": [
+          "Aries",
+          "Taurus",
+          "Scorpio",
+          "Sagittarius"
+        ],
+        "aquatic": [
+          "Pisces"
+        ],
+        "amphibious": [
+          "Cancer",
+          "Capricorn"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Do not silently add Aries/Taurus to this printed quadrupedal list or turn terrestrial into Earth-element signs; the notes depend on Hephaestion and are not an independently collated source."
+      ],
+      "output_type": "REPORTED_CLASSIFICATION",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R397",
+      "title": "Moon–Mercury special action in Taurus, Capricorn, Cancer",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          415
+        ],
+        "printed_support_pages": [
+          391
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "moon holds",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Moon holds place of action",
+          "Moon moving away from conjunction",
+          "together with Mercury",
+          "sign in listed set"
+        ],
+        "signs": [
+          "Taurus",
+          "Capricorn",
+          "Cancer"
+        ]
+      },
+      "consequent": {
+        "historical_roles": [
+          "soothsayers",
+          "makers of sacrifices",
+          "lekanomancy practitioners"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Numerical limits of moving-away/together/holding are not supplied. Gemini and Aquarius receive no assignment in this four-group list."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R398",
+      "title": "Moon–Mercury special action in Sagittarius, Pisces",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          415
+        ],
+        "printed_support_pages": [
+          391
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "moon holds",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Moon holds place of action",
+          "Moon moving away from conjunction",
+          "together with Mercury",
+          "sign in listed set"
+        ],
+        "signs": [
+          "Sagittarius",
+          "Pisces"
+        ]
+      },
+      "consequent": {
+        "historical_roles": [
+          "necromancers",
+          "people said to arouse daemons"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Numerical limits of moving-away/together/holding are not supplied. Gemini and Aquarius receive no assignment in this four-group list."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R399",
+      "title": "Moon–Mercury special action in Virgo, Scorpio",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          415
+        ],
+        "printed_support_pages": [
+          391
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "moon holds",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Moon holds place of action",
+          "Moon moving away from conjunction",
+          "together with Mercury",
+          "sign in listed set"
+        ],
+        "signs": [
+          "Virgo",
+          "Scorpio"
+        ]
+      },
+      "consequent": {
+        "historical_roles": [
+          "magicians",
+          "astrologers",
+          "prophets",
+          "people said to have second sight"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Numerical limits of moving-away/together/holding are not supplied. Gemini and Aquarius receive no assignment in this four-group list."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R400",
+      "title": "Moon–Mercury special action in Libra, Aries, Leo",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          415
+        ],
+        "printed_support_pages": [
+          391
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "moon holds",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "Moon holds place of action",
+          "Moon moving away from conjunction",
+          "together with Mercury",
+          "sign in listed set"
+        ],
+        "signs": [
+          "Libra",
+          "Aries",
+          "Leo"
+        ]
+      },
+      "consequent": {
+        "historical_roles": [
+          "people said to be inspired by gods",
+          "dream interpreters",
+          "exorcists"
+        ]
+      },
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Numerical limits of moving-away/together/holding are not supplied. Gemini and Aquarius receive no assignment in this four-group list."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R401",
+      "title": "Species of action and its amplitude are separate",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          415
+        ],
+        "printed_support_pages": [
+          391
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "amplitude",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "topic": "synthesis of action"
+      },
+      "consequent": "Estimate type by combinations, magnitude by the power of its rulers.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [],
+      "output_type": "SYNTHESIS_METHOD",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R402",
+      "title": "Independence versus subordination",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          415
+        ],
+        "printed_support_pages": [
+          391
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "independent",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "branches": {
+          "rulers_rising_or_angular": "independent actions",
+          "rulers_setting_or_declining": "subordinate actions"
+        }
+      },
+      "consequent": "Relation to phase/angles qualifies autonomy, not the identity of the craft.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Mixed phase and angular indications require synthesis; no branch-priority shortcut or generic ambition trait follows."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R403",
+      "title": "Overcoming qualifies action outcomes",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          415
+        ],
+        "printed_support_pages": [
+          391
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "profitable",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "branches": {
+          "benefics_overcome_action_rulers": "great, glorious, profitable, unerring, gracious",
+          "malefics_overcome_action_rulers": "mean, inglorious, profitless, fallible"
+        }
+      },
+      "consequent": "Distinct magnitude, recognition, gain and reliability descriptions.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Overcoming is not silently replaced by any aspect; comparison with Rhetorius preserves wording difference."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R404",
+      "title": "Saturn opposition phrase remains unresolved",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          415,
+          417
+        ],
+        "printed_support_pages": [
+          391,
+          393
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "mixtures of colours",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "all": [
+          "action enquiry context",
+          "Saturn opposes"
+        ]
+      },
+      "consequent": "The main text gives cold and mixtures of colours.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Meaning is unresolved. Do not rewrite it as career delay, mood depression or an ordinary technical deficiency."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R405",
+      "title": "Mars opposition and both-malefic branch",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          417
+        ],
+        "printed_support_pages": [
+          393
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "temerity",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "branches": {
+          "Mars_opposition": "temerity and notoriety",
+          "both_Saturn_and_Mars": "utter ruin of action"
+        }
+      },
+      "consequent": "Opposition-based action qualifications in the chapter closing context.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "Both branch inherits the closing adverse-configuration context; not a claim about any occurrence of Mars and Saturn."
+      ],
+      "output_type": "CONDITIONAL_SOURCE_RULE",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R406",
+      "title": "General growth/decline timing",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          417
+        ],
+        "printed_support_pages": [
+          393
+        ],
+        "attribution_layer": "PTOLEMY_AS_TRANSLATED_BY_ROBBINS",
+        "passage_anchor": "period of increase",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "topic": "time of increase or decrease in action"
+      },
+      "consequent": "Use positions of the effect-producing planets relative to eastern and western angles from time to time.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "No computed event dates or explicit modern progression key in this closing passage; link earlier IV.2 and pending IV.10."
+      ],
+      "output_type": "TIMING_DEPENDENCY",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    },
+    {
+      "id": "PT.R64.IV.04.R407",
+      "title": "Occupation and closing phrase glosses are not main-text replacements",
+      "source_locator": {
+        "work_id": "PTOLEMY_TETRABIBLOS",
+        "source_id": "PTOLEMY1940_REPRINT1964",
+        "edition_id": "ROBBINS_1940_REPRINT_1964",
+        "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+        "chapter_or_verse": "IV.4",
+        "pdf_support_pages": [
+          409,
+          411,
+          413,
+          415,
+          417
+        ],
+        "printed_support_pages": [
+          385,
+          387,
+          389,
+          391,
+          393
+        ],
+        "attribution_layer": "ROBBINS_NOTE_OR_REPORTED_COMMENTARY",
+        "passage_anchor": "commentator",
+        "locator_precision": "English main text or expressly attributed note. Structured wording is paraphrase, not an exact quotation."
+      },
+      "source_genre": "NATAL_EXTERNAL_CIRCUMSTANCES",
+      "reference_frame": "Source-native geocentric tropical zodiac, natal angles, solar phases and author-specific rulership/attendance. Numerical conventions remain unresolved where not specified.",
+      "antecedents": {
+        "scope": "Robbins explanatory notes"
+      },
+      "consequent": "Notes distinguish corpse-openers from the broad embalmer label, probable public fiscal offices, possible marriage agents, liquid-vessel divination, preserved-fish/embalming senses, and the anonymous commentator/Proclus readings of cold and colour mixtures. The timing footnote points to IV.2.",
+      "modifiers": [],
+      "source_exceptions": [],
+      "ambiguities": [
+        "The commentators do not resolve every expression. Do not manufacture modern occupations from historical terms."
+      ],
+      "output_type": "LEXICAL_AND_TIMING_QUALIFICATIONS",
+      "dependency_groups": [
+        "PT.IV.4.source_family"
+      ],
+      "interpretation_bridge": {
+        "status": "UNDEFINED_FOR_MODERN_PERSON_OUTCOMES",
+        "description": "Historical occupational and status categories are not calibrated modern scores or findings about an actual person."
+      },
+      "implementation_status": "SOURCE_RECORD_ONLY; companion helper implements only caller-qualified reference selection, not chart qualification or prediction",
+      "admission": "SOURCE_AUDIT_ONLY_NOT_ADMITTED_TO_FROZEN_PREDICTION_MODELS",
+      "unknown_is_not_false": true
+    }
+  ]
+}

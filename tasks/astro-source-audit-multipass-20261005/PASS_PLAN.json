@@ -25,7 +25,7 @@
     {
       "id": "P2",
       "title": "Map every section",
-      "status": "PTOLEMY_61_INDEXED;ENGLISH_I24_AND_III14_READ_MAPPED",
+      "status": "PTOLEMY_61_INDEXED;42_ENGLISH_SECTIONS_READ_MAPPED",
       "output": [
         "SECTION_DISCOVERY.json"
       ],
@@ -34,7 +34,7 @@
     {
       "id": "P3",
       "title": "Read and extract conditional rules",
-      "status": "ENGLISH_BOOKS_I_AND_III_COMPLETE;333_SOURCE_RECORDS;REMAINDER_OPEN",
+      "status": "ENGLISH_I_III_COMPLETE_AND_IV1_IV4;407_SOURCE_RECORDS;REMAINDER_OPEN",
       "output": [
         "per-source RuleSpecs and unresolved-term ledger"
       ],
@@ -43,7 +43,7 @@
     {
       "id": "P4",
       "title": "Reconcile authors and test calculations",
-      "status": "191_SOURCE_REFERENCE_AND_INTEGRITY_CHECKS;FOUR_PRIOR_RHETORIUS_COMPARISONS;FULL_RECONCILIATION_PENDING",
+      "status": "252_SOURCE_REFERENCE_CHECKS;EIGHT_TARGETED_RHETORIUS_COMPARISONS;FULL_RECONCILIATION_PENDING",
       "output": [
         "cross-source comparison and worked-example fixtures"
       ],
@@ -66,7 +66,7 @@
         "PTOLEMY1940_REPRINT1964"
       ],
       "scope": "Book I foundational vocabulary and conditions first; then natal III/IV; Book II separately mundane. All 61 TOC sections remain accounted for.",
-      "next": "IV.1-IV.4; Book IV heading on PDF397/printed373 through before IV.5 on shared PDF417/printed393",
+      "next": "IV.5-IV.6; start Of Marriage on PDF417/printed393; stop before IV.7 Of Friends and Enemies on shared PDF437/printed413",
       "completed_subbatches": [
         {
           "id": "B01",
@@ -137,6 +137,15 @@
           "new_predictions": 0,
           "tests": 44,
           "test_scope": "Table/lookup/geometry and B01h/B01i integrity; no complete personality or clinical engine."
+        },
+        {
+          "id": "B01j",
+          "scope": "Full English IV.1-IV.4 and relevant notes; targeted Rhetorius23-25/82 comparisons",
+          "source_records": 74,
+          "new_predictions": 0,
+          "tests": 61,
+          "test_scope": "Caller-qualified route reconciliation, source lookup and record integrity; not a chart or prediction engine.",
+          "targeted_cross_source_comparisons": 4
         }
       ]
     },

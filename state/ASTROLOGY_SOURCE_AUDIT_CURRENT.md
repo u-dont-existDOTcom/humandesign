@@ -1,22 +1,30 @@
 # Current astrology source audit
 
-**Parent OPEN: owner-authorized multi-pass source audit.** Full English Ptolemy Book I (24/24) and Book III (14/14) are read/extracted. No personal predictions, fitted-model changes or runtime promotion.
+**Parent OPEN: owner-authorized multi-pass source audit.** Full English Ptolemy Book I (24/24), Book III (14/14) and IV.1-IV.4 are read/extracted. No personal predictions, fitted-model changes or runtime promotion.
 
 ## Canonical recovery
 - `tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json` — exact next section and counts.
-- Task `PASS_PLAN.json` and `SECTION_DISCOVERY.json` — five passes;61 indexed Ptolemy sections,38 read,23 unread.
-- Task `batches/B01h/REPORT.md` and `VERIFICATION.json` — integrated B01h/B01i report and actual tests.
+- Task `PASS_PLAN.json` and `SECTION_DISCOVERY.json` — five passes;61 indexed Ptolemy sections,42 read,19 unread.
+- Task `batches/B01j/REPORT.md`, `VERIFICATION.json`, `RULES.json`, `EXTERNAL_FORTUNE_TABLES.json`, `CROSS_SOURCE_COMPARISONS.json` and reading/unresolved receipts — current wealth/status/action batch.
+- Prior `batches/B01h/REPORT.md` and `VERIFICATION.json` retain BookIII completion evidence.
 - `batches/B01h/RULES.json`, `BODY_REFERENCE_TABLES.json`, `SECTION_COVERAGE.json` and reading/unresolved receipts.
 - `batches/B01i/RULES.json`, `SOUL_PROFILE_TABLES.json`, `INTRASOURCE_QUALIFICATIONS.json`, reference helper/tests and reading/unresolved receipts.
 - Prior batches and Rhetorius OCR/witness receipts are preserved unchanged.
 
 ## Completed; do not repeat
-Previous227 source records plus B01h45 and B01i61 =333. There are15 psychic single/pair profiles with30 placement branches. Nine bodily-description rows, five phase modifiers, four quadrants and seven planetary body-correspondence rows are structured source tables, not independent observations. Earlier95 fixed-star groups, term tables and four targeted Rhetorius comparisons remain separate.191 source/reference checks plus34 methodology checks are expected; the latest verification records the actual run. No predictive validity follows.
+Previous333 source records plus B01j74 =407. B01j has19 occupation branches, five acquisition-channel rows, four honour-basis rows, four sign-form modifier classes and four Moon-Mercury groups covering ten signs. Four new targeted comparisons bring the total to eight. There are15 psychic single/pair profiles with30 placement branches. Nine bodily-description rows, five phase modifiers, four quadrants and seven planetary body-correspondence rows are structured source tables, not independent observations. Earlier95 fixed-star groups, term tables and four targeted Rhetorius comparisons remain separate.252 source/reference checks plus34 methodology checks are expected; the latest verification records the actual run. No predictive validity follows.
 
 Rhetorius copy-specific gaps are acknowledged and retained: do not reopen the debate or require another upload. Owner OCR is the private searchable aid; original images govern ambiguous text. BPHS remains Sharma; Primary Directions remains an excerpt/interview. Missing books do not block available tracks. No new OCR is needed.
 
 ## Next executable batch
-**B01j: English IV.1-IV.4.** Start at Book IV heading on PDF397/printed373; stop before IV.5 on shared PDF417/printed393. These are introduction, material fortune, status/dignity and action/occupation. The headings are located, not counted as audited. All13 BookII mundane/general chapters remain deferred to their separate pass; all10 BookIV sections remain unaudited.
+**B01k: English IV.5-IV.6.** Start Of Marriage on PDF417/printed393; IV.6 Of Children begins PDF433/printed409; stop before IV.7 Of Friends and Enemies on shared PDF437/printed413. These headings are verified, not audited. Six BookIV sections and all13 BookII mundane/general sections remain unread.
+
+## New B01j cautions
+Material acquisition, retention/loss, status level, security, source of power, occupation type, amplitude and time are separate outputs. IV.2 repeats same-formula Fortune but Robbins doubts the clause; the historical formula stays frozen. An inheritance match is not automatically a duration/retention match. Dignity/status here is not essential dignity or moral goodness.
+
+IV.4 has two ruler-selection routes. A shared planet counts once; distinct planets are both retained, with source-grounded precedence when known. Fallback requires two known-absent routes; unknown astronomy is not absence. Only three planets have listed action-quality profiles; a selected Saturn/Jupiter has no invented conversion. The helper only reconciles caller-supplied evidence and retrieves rows; it does not determine astronomical qualification.
+
+Rhetorius23-25 has multiple attendance definitions. Rhetorius82 adds a seven-day before/after appearance window and extra action routes, while expressly reusing Ptolemy for later sign/Moon-Mercury material. Source dependence is not independent corroboration. Aspected versus overcoming is a verified translation/witness-level difference, not a claimed Greek collation. Source terrestrial/quadrupedal class lists are not silently replaced with modern element memberships. Cold/colour-mixture wording remains unresolved. IV.10 timing dependencies remain pending.
 
 ## New B01h/B01i cautions
 Bodily constitutional temperament is not a modern personality scale. Source bodily enquiry uses Ascendant/Moon/rulers, and psychic enquiry Mercury/Moon/rulers plus contextual modifiers. The15 single/pair profiles require source-topical domination; bare conjunction is insufficient. Honourable does not mean morally good; contrary does not delete every talent or virtue. Keep both branches and their mixed traits. The helper only retrieves caller-qualified source references and abstains on unknown/mixed or three-plus conditions; it does not establish qualification.

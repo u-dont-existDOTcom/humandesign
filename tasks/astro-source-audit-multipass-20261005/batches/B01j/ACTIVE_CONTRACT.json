@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch_id": "B01j",
+  "parent_status": "OPEN_MULTIPASS_OWNER_AUTHORIZED",
+  "base_commit": "cb5defe17dafc0c7f3e220432609f5eccf8ffaec",
+  "writer_branch": "research/astro-source-audit-b01j-20261006",
+  "scope": "Ptolemy IV.1-IV.4: entire English main text and relevant English notes, with bounded Rhetorius 23-25/82 comparisons; no person histories or predictions.",
+  "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "authority": {
+    "uda_default_commit": "991c7a08b7d9f831327d9075175b8d70c34c37e6",
+    "uda_agents_blob": "0a88eb99b513c803277509d31d80a703c2409ef8",
+    "project_agents_blob": "15efee1556a0a44ea2b6e4af0596a7e0cb8c24c3",
+    "activation": "Live default AGENTS/LESSON-INDEX; live fetched provenance, task-activation, recovery, delivery and continuation patterns; current project AGENTS, ARCHITECTURE and source checkpoint."
+  },
+  "active_lessons": [
+    {
+      "id": "source-provenance",
+      "trigger": "source extraction",
+      "required": "Keep main text, notes, transmitted variants and project interpretations separate; exact pages and conditional clauses.",
+      "failure": "Unmarked correction, lost condition, fabricated source rule.",
+      "repair": "Recheck exact source; preserve uncertainty.",
+      "enforcement": "semantic"
+    },
+    {
+      "id": "no-outcome-contamination",
+      "trigger": "source-only audit",
+      "required": "No personal histories, classifications, case fitting or runtime promotion.",
+      "failure": "Person outcomes shape source extraction.",
+      "repair": "Remove outcome-dependent records; do not claim independent review.",
+      "enforcement": "semantic"
+    },
+    {
+      "id": "read-before-count",
+      "trigger": "chapter completion",
+      "required": "Finish actual English span and associated notes; headings alone are not chapter reading.",
+      "failure": "Unread section counted.",
+      "repair": "Read remaining span or lower coverage.",
+      "enforcement": "semantic and mechanical"
+    },
+    {
+      "id": "preservation",
+      "trigger": "repository writes",
+      "required": "Isolated writer; previous files unchanged except four progress checkpoints.",
+      "failure": "Unexpected existing-path diff.",
+      "repair": "Isolate unintended changes; do not discard others work.",
+      "enforcement": "mechanical"
+    },
+    {
+      "id": "verification-scope",
+      "trigger": "code and report",
+      "required": "Test bounded helpers and records without claiming chart qualification or empirical accuracy.",
+      "failure": "Lookup tests presented as prediction validation.",
+      "repair": "Narrow claim and identify pending implementation.",
+      "enforcement": "semantic and mechanical"
+    },
+    {
+      "id": "delivery",
+      "trigger": "increment complete",
+      "required": "Verified research-branch publication; usable report and record packet in sandbox and owner Downloads.",
+      "failure": "Only repository navigation or unverified success claim.",
+      "repair": "Finish delivery and exact readback.",
+      "enforcement": "mechanical"
+    }
+  ],
+  "allowed_existing_changes": [
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "tasks/astro-source-audit-multipass-20261005/SECTION_DISCOVERY.json"
+  ],
+  "excluded": [
+    "runtime model changes",
+    "personal prediction edits",
+    "paid acquisition",
+    "raw books or full OCR committed",
+    "production deployment"
+  ],
+  "new_ocr_calls": 0,
+  "independent_review_claimed": false,
+  "phase": "SOURCE_EXTRACTION_AND_INTEGRATION_VERIFIED",
+  "reactivation_after_context_resume": "Current fetched task-activation guidance and exact research-branch checkpoint reloaded; isolated worktree reconciled at cb5defe before transfer. Source audit already completed; resume integration, not repeat reading.",
+  "prepublication_gate": {
+    "source_provenance": "PASS: RULES, section coverage, 11 English page-image checks, exact witness hashes and four attributed comparisons; semantic review by current chat, not independent",
+    "no_outcome_contamination": "PASS: source-only records and caller-qualified helpers, no personal inputs or forecasts",
+    "read_before_count": "PASS: four complete English chapter spans; marriage/children headings located but not counted",
+    "preservation": "PASS: all 941 other tracked paths unchanged; PROTECTED_CONTENT_VERIFICATION.json",
+    "verification_scope": "PASS: 286 focused checks; no chart-qualification or empirical-validity claim",
+    "delivery": "FILES_PREPARED; publication/readback and owner placement to be verified before final delivery"
+  }
+}

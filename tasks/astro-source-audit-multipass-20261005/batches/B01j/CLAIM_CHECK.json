@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "review_type": "CURRENT_CHAT_SOURCE_SEMANTIC_RECHECK_NOT_INDEPENDENT",
+  "checks": [
+    {
+      "claim": "Four complete English sections read",
+      "evidence": "READING_RECEIPT chapter boundaries and eleven image checks",
+      "disposition": "SUPPORTED_IN_DECLARED_SCOPE"
+    },
+    {
+      "claim": "Two route candidates remain when different",
+      "evidence": "PDF405/407 main text; route reference tests",
+      "disposition": "SUPPORTED"
+    },
+    {
+      "claim": "Occupation and material fortune/status are distinct",
+      "evidence": "PDF397/399/401/405/415; separate tables",
+      "disposition": "SUPPORTED"
+    },
+    {
+      "claim": "Four targeted comparisons are not independent confirmations",
+      "evidence": "CROSS_SOURCE_COMPARISONS; Rhetorius printed135 explicit attribution",
+      "disposition": "SUPPORTED"
+    },
+    {
+      "claim": "No dates, modern identities or empirical accuracy measured",
+      "evidence": "No person-specific computation; reference-only code; runtime not changed",
+      "disposition": "SCOPE_LIMIT"
+    }
+  ]
+}

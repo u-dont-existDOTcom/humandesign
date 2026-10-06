@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "count": 4,
+  "source_scope": "Targeted comparisons only; not full Rhetorius extraction",
+  "full_rhetorius_audit": false,
+  "rhetorius_pdf_sha256": "fa587dd2b04245c63198c9438c9edd9f8164b0a165b824f386e4c890f3dd5e86",
+  "rhetorius_owner_ocr_sha256": "40e9079274d6ced431a8b48d8105ad3d0b830a877acfedd54c73dcff8362d599",
+  "comparisons": [
+    {
+      "id": "PT_RH.B01j.C05",
+      "topic": "Attendance is not one cross-author predicate",
+      "relation": "MULTIPLE_SOURCE_NATIVE_DEFINITIONS",
+      "ptolemy": {
+        "chapter": "IV.3",
+        "pdf_pages": [
+          401,
+          403,
+          405
+        ],
+        "printed_pages": [
+          377,
+          379,
+          381
+        ],
+        "summary": "Luminary attendance supports status gradations; the note reports a specific Porphyry/Hephaestion luminary mode."
+      },
+      "rhetorius": {
+        "chapters": [
+          "23",
+          "24",
+          "25"
+        ],
+        "pdf_pages": [
+          23,
+          24
+        ],
+        "printed_pages": [
+          20,
+          21
+        ],
+        "summary": "Begins with angular dignified planet attended by another dignified planet, then gives luminary and sect alternatives; distinguishes out-of-sect attendance and gives trine/square attendance greater force than sextile."
+      },
+      "disposition": "Keep each definition with author and scope. The note explicitly says definitions vary; no generic doryphory score can replace these without a declared choice.",
+      "independent_empirical_corroboration": false
+    },
+    {
+      "id": "PT_RH.B01j.C06",
+      "topic": "Action-ruler admission differs",
+      "relation": "ADDITIONAL_METHOD_AND_CONDITIONS",
+      "ptolemy": {
+        "chapter": "IV.4",
+        "pdf_pages": [
+          405,
+          407
+        ],
+        "printed_pages": [
+          381,
+          383
+        ],
+        "summary": "Two admission routes: nearest morning appearance and culmination/lunar relation; reconcile both, then conditional fallback."
+      },
+      "rhetorius": {
+        "chapters": [
+          "82"
+        ],
+        "pdf_pages": [
+          124,
+          125
+        ],
+        "printed_pages": [
+          134,
+          135
+        ],
+        "summary": "Includes several effective houses, sixth house, Fortune, lunar application and morning/evening appearance seven days before or after; also reports Anubio lunar-syzygy and dispositor approaches."
+      },
+      "disposition": "Seven-day window and additional admission routes remain Rhetorius-specific here, not retroactively supplied to Ptolemy. Full Rhetorius compilation is pending.",
+      "independent_empirical_corroboration": false
+    },
+    {
+      "id": "PT_RH.B01j.C07",
+      "topic": "Explicit Ptolemy reuse carries variants",
+      "relation": "EXPLICIT_REUSE_WITH_VARIANTS",
+      "ptolemy": {
+        "chapter": "IV.4",
+        "pdf_pages": [
+          413,
+          415
+        ],
+        "printed_pages": [
+          389,
+          391
+        ],
+        "summary": "Sign-form modifiers and Moon–Mercury four-group special-role list."
+      },
+      "rhetorius": {
+        "chapters": [
+          "82"
+        ],
+        "pdf_pages": [
+          125,
+          126
+        ],
+        "printed_pages": [
+          135,
+          136
+        ],
+        "summary": "Introduces the corresponding material as Ptolemy teaching; closely repeats groups. Holden notes solstitial/equinoctial and measuring/agriculture differences, plus pickling/fishing and other translation distinctions."
+      },
+      "disposition": "Track explicit literary dependence. Repetition is not independent observational corroboration, and variants are retained rather than averaged away.",
+      "independent_empirical_corroboration": false
+    },
+    {
+      "id": "PT_RH.B01j.C08",
+      "topic": "Overcoming versus aspect and obscure closing phrase",
+      "relation": "RENDERED_PREDICATE_VARIANT",
+      "ptolemy": {
+        "chapter": "IV.4",
+        "pdf_pages": [
+          415,
+          417
+        ],
+        "printed_pages": [
+          391,
+          393
+        ],
+        "summary": "Uses benefic/malefic overcoming for amplitude/outcomes and leaves cold/colour-mixture phrase with commentator explanation."
+      },
+      "rhetorius": {
+        "chapters": [
+          "82",
+          "note on shared 83 opening page"
+        ],
+        "pdf_pages": [
+          126,
+          127
+        ],
+        "printed_pages": [
+          136,
+          137
+        ],
+        "summary": "Corresponding English text uses aspected; closing Saturn phrase differs and Holden calls it corrupt."
+      },
+      "disposition": "This is a verified translation/witness-level difference, not independently established Greek doctrinal disagreement. Neither arbitrary aspect substitution nor invented repair of the closing phrase is admitted.",
+      "independent_empirical_corroboration": false
+    }
+  ]
+}

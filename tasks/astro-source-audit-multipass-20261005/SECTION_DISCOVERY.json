@@ -6,9 +6,9 @@
     4
   ],
   "sections_count": 61,
-  "read_sections_count": 38,
-  "indexed_unread_count": 23,
-  "body_locators_warning": "English Books I and III spans read/extracted. Book IV start and IV.5 boundary located, not counted as chapter reading. Book II and all Book IV remain unaudited.",
+  "read_sections_count": 42,
+  "indexed_unread_count": 19,
+  "body_locators_warning": "English Books I and III and IV.1-IV.4 fully read/extracted. IV.5/IV.6/IV.7 headings located only; remaining six BookIV sections and all13 BookII sections remain unaudited.",
   "sections": [
     {
       "unit_id": "PT.R64.I.01",
@@ -1260,10 +1260,17 @@
       "title": "Introduction",
       "contents_print_start": 372,
       "estimated_first_english_pdf_page": 397,
-      "status": "INDEXED_NOT_READ",
+      "status": "READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE",
       "genre": "NATAL",
-      "locator_status": "TOC_ONLY_NOT_BODY_VERIFIED",
-      "rule_ids": []
+      "locator_status": "ENGLISH_SPANS_VERIFIED",
+      "rule_ids": [
+        "PT.R64.IV.01.R334"
+      ],
+      "english_pdf_pages": [
+        397
+      ],
+      "reading_receipt": "batches/B01j/READING_RECEIPT.json",
+      "boundary": "Introduction only between its heading and IV.2"
     },
     {
       "unit_id": "PT.R64.IV.02",
@@ -1272,10 +1279,32 @@
       "title": "Of Material Fortune",
       "contents_print_start": 372,
       "estimated_first_english_pdf_page": 397,
-      "status": "INDEXED_NOT_READ",
+      "status": "READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE",
       "genre": "NATAL",
-      "locator_status": "TOC_ONLY_NOT_BODY_VERIFIED",
-      "rule_ids": []
+      "locator_status": "ENGLISH_SPANS_VERIFIED",
+      "rule_ids": [
+        "PT.R64.IV.02.R335",
+        "PT.R64.IV.02.R336",
+        "PT.R64.IV.02.R337",
+        "PT.R64.IV.02.R338",
+        "PT.R64.IV.02.R339",
+        "PT.R64.IV.02.R340",
+        "PT.R64.IV.02.R341",
+        "PT.R64.IV.02.R342",
+        "PT.R64.IV.02.R343",
+        "PT.R64.IV.02.R344",
+        "PT.R64.IV.02.R345",
+        "PT.R64.IV.02.R346",
+        "PT.R64.IV.02.R347",
+        "PT.R64.IV.02.R348"
+      ],
+      "english_pdf_pages": [
+        397,
+        399,
+        401
+      ],
+      "reading_receipt": "batches/B01j/READING_RECEIPT.json",
+      "boundary": "IV.2 heading to before IV.3; include its note on shared PDF401"
     },
     {
       "unit_id": "PT.R64.IV.03",
@@ -1284,10 +1313,36 @@
       "title": "Of the Fortune of Dignity",
       "contents_print_start": 376,
       "estimated_first_english_pdf_page": 401,
-      "status": "INDEXED_NOT_READ",
+      "status": "READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE",
       "genre": "NATAL",
-      "locator_status": "TOC_ONLY_NOT_BODY_VERIFIED",
-      "rule_ids": []
+      "locator_status": "ENGLISH_SPANS_VERIFIED",
+      "rule_ids": [
+        "PT.R64.IV.03.R349",
+        "PT.R64.IV.03.R350",
+        "PT.R64.IV.03.R351",
+        "PT.R64.IV.03.R352",
+        "PT.R64.IV.03.R353",
+        "PT.R64.IV.03.R354",
+        "PT.R64.IV.03.R355",
+        "PT.R64.IV.03.R356",
+        "PT.R64.IV.03.R357",
+        "PT.R64.IV.03.R358",
+        "PT.R64.IV.03.R359",
+        "PT.R64.IV.03.R360",
+        "PT.R64.IV.03.R361",
+        "PT.R64.IV.03.R362",
+        "PT.R64.IV.03.R363",
+        "PT.R64.IV.03.R364",
+        "PT.R64.IV.03.R365",
+        "PT.R64.IV.03.R366"
+      ],
+      "english_pdf_pages": [
+        401,
+        403,
+        405
+      ],
+      "reading_receipt": "batches/B01j/READING_RECEIPT.json",
+      "boundary": "IV.3 heading to before IV.4; include English notes on facing PDF402"
     },
     {
       "unit_id": "PT.R64.IV.04",
@@ -1296,10 +1351,63 @@
       "title": "Of the Quality of Action",
       "contents_print_start": 380,
       "estimated_first_english_pdf_page": 405,
-      "status": "INDEXED_NOT_READ",
+      "status": "READ_EXTRACTED_BOUNDED_ENGLISH_SCOPE",
       "genre": "NATAL",
-      "locator_status": "TOC_ONLY_NOT_BODY_VERIFIED",
-      "rule_ids": []
+      "locator_status": "ENGLISH_SPANS_VERIFIED",
+      "rule_ids": [
+        "PT.R64.IV.04.R367",
+        "PT.R64.IV.04.R368",
+        "PT.R64.IV.04.R369",
+        "PT.R64.IV.04.R370",
+        "PT.R64.IV.04.R371",
+        "PT.R64.IV.04.R372",
+        "PT.R64.IV.04.R373",
+        "PT.R64.IV.04.R374",
+        "PT.R64.IV.04.R375",
+        "PT.R64.IV.04.R376",
+        "PT.R64.IV.04.R377",
+        "PT.R64.IV.04.R378",
+        "PT.R64.IV.04.R379",
+        "PT.R64.IV.04.R380",
+        "PT.R64.IV.04.R381",
+        "PT.R64.IV.04.R382",
+        "PT.R64.IV.04.R383",
+        "PT.R64.IV.04.R384",
+        "PT.R64.IV.04.R385",
+        "PT.R64.IV.04.R386",
+        "PT.R64.IV.04.R387",
+        "PT.R64.IV.04.R388",
+        "PT.R64.IV.04.R389",
+        "PT.R64.IV.04.R390",
+        "PT.R64.IV.04.R391",
+        "PT.R64.IV.04.R392",
+        "PT.R64.IV.04.R393",
+        "PT.R64.IV.04.R394",
+        "PT.R64.IV.04.R395",
+        "PT.R64.IV.04.R396",
+        "PT.R64.IV.04.R397",
+        "PT.R64.IV.04.R398",
+        "PT.R64.IV.04.R399",
+        "PT.R64.IV.04.R400",
+        "PT.R64.IV.04.R401",
+        "PT.R64.IV.04.R402",
+        "PT.R64.IV.04.R403",
+        "PT.R64.IV.04.R404",
+        "PT.R64.IV.04.R405",
+        "PT.R64.IV.04.R406",
+        "PT.R64.IV.04.R407"
+      ],
+      "english_pdf_pages": [
+        405,
+        407,
+        409,
+        411,
+        413,
+        415,
+        417
+      ],
+      "reading_receipt": "batches/B01j/READING_RECEIPT.json",
+      "boundary": "IV.4 heading to before IV.5; PDF417 notes1-2 are included, marriage notes3-4 excluded from this audit"
     },
     {
       "unit_id": "PT.R64.IV.05",

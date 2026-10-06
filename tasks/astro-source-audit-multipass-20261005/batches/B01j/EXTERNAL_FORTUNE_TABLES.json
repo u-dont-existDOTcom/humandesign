@@ -1,0 +1,616 @@
+{
+  "schema_version": 1,
+  "source_id": "PTOLEMY1940_REPRINT1964",
+  "source_file_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "table_semantics": "Paraphrased source lists and caller-qualified lookup. Neither frequencies nor independent predictions.",
+  "wealth_channels": [
+    {
+      "planet": "Saturn",
+      "channels": [
+        "building",
+        "agriculture",
+        "shipping ventures"
+      ],
+      "rule_id": "PT.R64.IV.02.R339"
+    },
+    {
+      "planet": "Jupiter",
+      "channels": [
+        "fiduciary relationships",
+        "guardianships",
+        "priesthoods"
+      ],
+      "rule_id": "PT.R64.IV.02.R340"
+    },
+    {
+      "planet": "Mars",
+      "channels": [
+        "military operations",
+        "command"
+      ],
+      "rule_id": "PT.R64.IV.02.R341"
+    },
+    {
+      "planet": "Venus",
+      "channels": [
+        "gifts from friends",
+        "gifts from women"
+      ],
+      "rule_id": "PT.R64.IV.02.R342"
+    },
+    {
+      "planet": "Mercury",
+      "channels": [
+        "eloquence",
+        "trade"
+      ],
+      "rule_id": "PT.R64.IV.02.R343"
+    }
+  ],
+  "bases_of_honour": [
+    {
+      "governor_any_of": [
+        "Saturn"
+      ],
+      "basis": [
+        "wealth",
+        "amassing riches"
+      ],
+      "rule_id": "PT.R64.IV.03.R360"
+    },
+    {
+      "governor_any_of": [
+        "Jupiter",
+        "Venus"
+      ],
+      "basis": [
+        "favours",
+        "gifts",
+        "honours",
+        "magnanimity"
+      ],
+      "rule_id": "PT.R64.IV.03.R361"
+    },
+    {
+      "governor_any_of": [
+        "Mars"
+      ],
+      "basis": [
+        "generalships",
+        "victories",
+        "fear of subordinates"
+      ],
+      "rule_id": "PT.R64.IV.03.R362"
+    },
+    {
+      "governor_any_of": [
+        "Mercury"
+      ],
+      "basis": [
+        "intelligence",
+        "education",
+        "care and management of affairs"
+      ],
+      "rule_id": "PT.R64.IV.03.R363"
+    }
+  ],
+  "occupation_branches": [
+    {
+      "id": "PT.IV4.ACTION.01",
+      "rulers": [
+        "Mercury"
+      ],
+      "branch": "BASE",
+      "historical_activity_examples": [
+        "scribes",
+        "men of business",
+        "calculators",
+        "teachers",
+        "merchants",
+        "bankers",
+        "soothsayers",
+        "astrologers",
+        "sacrificers",
+        "work through documents, interpretation, giving and taking"
+      ],
+      "rule_id": "PT.R64.IV.04.R373",
+      "pdf_support_pages": [
+        407
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.02",
+      "rulers": [
+        "Mercury"
+      ],
+      "branch": "SATURN_TESTIFIES",
+      "historical_activity_examples": [
+        "managers of others property",
+        "interpreters of dreams",
+        "temple frequenters for prophecy and inspiration"
+      ],
+      "rule_id": "PT.R64.IV.04.R374",
+      "pdf_support_pages": [
+        407
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.03",
+      "rulers": [
+        "Mercury"
+      ],
+      "branch": "JUPITER_TESTIFIES",
+      "historical_activity_examples": [
+        "law-makers",
+        "orators",
+        "sophists",
+        "familiarity with great persons"
+      ],
+      "rule_id": "PT.R64.IV.04.R375",
+      "pdf_support_pages": [
+        407,
+        409
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.04",
+      "rulers": [
+        "Venus"
+      ],
+      "branch": "BASE",
+      "historical_activity_examples": [
+        "flower perfumes",
+        "unguents",
+        "wine",
+        "colours",
+        "dyes",
+        "spices",
+        "adornments",
+        "sellers of unguents",
+        "weavers of chaplets",
+        "innkeepers",
+        "wine-merchants",
+        "druggists",
+        "weavers",
+        "dealers in spices",
+        "painters",
+        "dyers",
+        "sellers of clothing"
+      ],
+      "rule_id": "PT.R64.IV.04.R376",
+      "pdf_support_pages": [
+        409
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.05",
+      "rulers": [
+        "Venus"
+      ],
+      "branch": "SATURN_TESTIFIES",
+      "historical_activity_examples": [
+        "dealers in pleasure/adornment goods",
+        "sorcerers",
+        "poisoners",
+        "panders",
+        "similar sources of livelihood"
+      ],
+      "rule_id": "PT.R64.IV.04.R377",
+      "pdf_support_pages": [
+        409
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.06",
+      "rulers": [
+        "Venus"
+      ],
+      "branch": "JUPITER_TESTIFIES",
+      "historical_activity_examples": [
+        "athletes",
+        "wearers of the wreath",
+        "persons deemed worthy of honours",
+        "advancement through women"
+      ],
+      "rule_id": "PT.R64.IV.04.R378",
+      "pdf_support_pages": [
+        409
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.07",
+      "rulers": [
+        "Mars"
+      ],
+      "branch": "SUN_ASPECT",
+      "historical_activity_examples": [
+        "cooks",
+        "moulders",
+        "cauterizers",
+        "smiths",
+        "workers in mines"
+      ],
+      "rule_id": "PT.R64.IV.04.R379",
+      "pdf_support_pages": [
+        409
+      ],
+      "extra_conditions": {
+        "Sun_aspect": true
+      }
+    },
+    {
+      "id": "PT.IV4.ACTION.08",
+      "rulers": [
+        "Mars"
+      ],
+      "branch": "WITHOUT_SUN",
+      "historical_activity_examples": [
+        "shipbuilders",
+        "carpenters",
+        "farmers",
+        "quarrymen",
+        "stone-dressers",
+        "jewellers",
+        "splitters of wood",
+        "subordinate workers"
+      ],
+      "rule_id": "PT.R64.IV.04.R380",
+      "pdf_support_pages": [
+        409
+      ],
+      "extra_conditions": {
+        "Sun_aspect": false
+      }
+    },
+    {
+      "id": "PT.IV4.ACTION.09",
+      "rulers": [
+        "Mars"
+      ],
+      "branch": "SATURN_TESTIFIES",
+      "historical_activity_examples": [
+        "seamen",
+        "drawers of water",
+        "tunnelers",
+        "painters",
+        "gamekeepers",
+        "cooks",
+        "embalmers"
+      ],
+      "rule_id": "PT.R64.IV.04.R381",
+      "pdf_support_pages": [
+        409
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.10",
+      "rulers": [
+        "Mars"
+      ],
+      "branch": "JUPITER_TESTIFIES",
+      "historical_activity_examples": [
+        "soldiers",
+        "servants",
+        "publicans",
+        "innkeepers",
+        "ferrymen",
+        "assistants at sacrifice"
+      ],
+      "rule_id": "PT.R64.IV.04.R382",
+      "pdf_support_pages": [
+        409,
+        411
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.11",
+      "rulers": [
+        "Mercury",
+        "Venus"
+      ],
+      "branch": "BASE",
+      "historical_activity_examples": [
+        "arts of the Muses",
+        "musical instruments",
+        "melodies",
+        "poems",
+        "rhythm",
+        "theatre workers",
+        "actors",
+        "dealers in slaves",
+        "makers of musical instruments",
+        "chorus members",
+        "string makers",
+        "painters",
+        "dancers",
+        "weavers",
+        "wax-moulders"
+      ],
+      "rule_id": "PT.R64.IV.04.R383",
+      "pdf_support_pages": [
+        411
+      ],
+      "extra_conditions": {
+        "emphasis": "particularly when they have exchanged places"
+      }
+    },
+    {
+      "id": "PT.IV4.ACTION.12",
+      "rulers": [
+        "Mercury",
+        "Venus"
+      ],
+      "branch": "SATURN_TESTIFIES",
+      "historical_activity_examples": [
+        "preceding Mercury–Venus callings",
+        "dealers in feminine finery"
+      ],
+      "rule_id": "PT.R64.IV.04.R384",
+      "pdf_support_pages": [
+        411
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.13",
+      "rulers": [
+        "Mercury",
+        "Venus"
+      ],
+      "branch": "JUPITER_TESTIFIES",
+      "historical_activity_examples": [
+        "lawyers",
+        "supervisors of counting houses",
+        "public officers",
+        "teachers of children",
+        "leaders of the populace"
+      ],
+      "rule_id": "PT.R64.IV.04.R385",
+      "pdf_support_pages": [
+        411
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.14",
+      "rulers": [
+        "Mercury",
+        "Mars"
+      ],
+      "branch": "BASE",
+      "historical_activity_examples": [
+        "sculptors",
+        "armourers",
+        "makers of sacred monuments",
+        "modellers",
+        "wrestlers",
+        "physicians",
+        "surgeons",
+        "accusers",
+        "adulterers",
+        "evil-doers",
+        "forgers"
+      ],
+      "rule_id": "PT.R64.IV.04.R386",
+      "pdf_support_pages": [
+        411
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.15",
+      "rulers": [
+        "Mercury",
+        "Mars"
+      ],
+      "branch": "SATURN_TESTIFIES",
+      "historical_activity_examples": [
+        "murderers",
+        "sneak-thieves",
+        "burglars",
+        "pirates",
+        "cattle-thieves",
+        "villains"
+      ],
+      "rule_id": "PT.R64.IV.04.R387",
+      "pdf_support_pages": [
+        411
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.16",
+      "rulers": [
+        "Mercury",
+        "Mars"
+      ],
+      "branch": "JUPITER_TESTIFIES",
+      "historical_activity_examples": [
+        "men-at-arms",
+        "duellists",
+        "energetic and clever persons",
+        "busybodies making a living by meddling in others affairs"
+      ],
+      "rule_id": "PT.R64.IV.04.R388",
+      "pdf_support_pages": [
+        411,
+        413
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.17",
+      "rulers": [
+        "Venus",
+        "Mars"
+      ],
+      "branch": "BASE",
+      "historical_activity_examples": [
+        "dyers",
+        "perfumers",
+        "workers in tin",
+        "workers in lead",
+        "workers in gold",
+        "workers in silver",
+        "farmers",
+        "dancers in armour",
+        "druggists",
+        "physicians using drugs"
+      ],
+      "rule_id": "PT.R64.IV.04.R389",
+      "pdf_support_pages": [
+        413
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.18",
+      "rulers": [
+        "Venus",
+        "Mars"
+      ],
+      "branch": "SATURN_TESTIFIES",
+      "historical_activity_examples": [
+        "attendants of sacred animals",
+        "persons who bury people",
+        "mourners",
+        "funeral pipers",
+        "fanatics at mysteries, laments and bloody rites"
+      ],
+      "rule_id": "PT.R64.IV.04.R390",
+      "pdf_support_pages": [
+        413
+      ],
+      "extra_conditions": {}
+    },
+    {
+      "id": "PT.IV4.ACTION.19",
+      "rulers": [
+        "Venus",
+        "Mars"
+      ],
+      "branch": "JUPITER_TESTIFIES",
+      "historical_activity_examples": [
+        "temple frequenters",
+        "omen interpreters",
+        "bearers of sacred instruments",
+        "supervisors of women",
+        "interpreters of marriages and matches",
+        "livelihood through these occupations with pleasure-seeking and recklessness"
+      ],
+      "rule_id": "PT.R64.IV.04.R391",
+      "pdf_support_pages": [
+        413
+      ],
+      "extra_conditions": {}
+    }
+  ],
+  "action_sign_classes": [
+    {
+      "class": "anthropomorphic",
+      "activity_modifiers": [
+        "scientific pursuits",
+        "pursuits useful to humans"
+      ],
+      "rule_id": "PT.R64.IV.04.R392"
+    },
+    {
+      "class": "quadrupedal",
+      "activity_modifiers": [
+        "mines",
+        "commerce",
+        "building",
+        "carpentry"
+      ],
+      "rule_id": "PT.R64.IV.04.R393"
+    },
+    {
+      "class": "solstitial_and_equinoctial",
+      "activity_modifiers": [
+        "interpretation",
+        "barter",
+        "measuring",
+        "agriculture",
+        "religion"
+      ],
+      "rule_id": "PT.R64.IV.04.R394"
+    },
+    {
+      "class": "terrestrial_and_aquatic",
+      "activity_modifiers": [
+        "activities in or with liquids",
+        "botanical pursuits",
+        "shipbuilding",
+        "burial",
+        "pickling",
+        "salting"
+      ],
+      "rule_id": "PT.R64.IV.04.R395"
+    }
+  ],
+  "moon_mercury_groups": [
+    {
+      "signs": [
+        "Taurus",
+        "Capricorn",
+        "Cancer"
+      ],
+      "roles": [
+        "soothsayers",
+        "makers of sacrifices",
+        "lekanomancy practitioners"
+      ],
+      "rule_id": "PT.R64.IV.04.R397"
+    },
+    {
+      "signs": [
+        "Sagittarius",
+        "Pisces"
+      ],
+      "roles": [
+        "necromancers",
+        "people said to arouse daemons"
+      ],
+      "rule_id": "PT.R64.IV.04.R398"
+    },
+    {
+      "signs": [
+        "Virgo",
+        "Scorpio"
+      ],
+      "roles": [
+        "magicians",
+        "astrologers",
+        "prophets",
+        "people said to have second sight"
+      ],
+      "rule_id": "PT.R64.IV.04.R399"
+    },
+    {
+      "signs": [
+        "Libra",
+        "Aries",
+        "Leo"
+      ],
+      "roles": [
+        "people said to be inspired by gods",
+        "dream interpreters",
+        "exorcists"
+      ],
+      "rule_id": "PT.R64.IV.04.R400"
+    }
+  ],
+  "lookup_limits": [
+    "Bare conjunction does not establish action rulership.",
+    "The lists preserve historic moral, religious and servile categories; no actual-person classification is made.",
+    "Multiple returned rows remain conditional source descriptions, not a synthesized or validated reading."
+  ]
+}
