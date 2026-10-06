@@ -12,9 +12,9 @@ from test_fast_review_integration import setup_fast, start_fast, view
 from test_participant import authority
 
 MEAL_PATTERN = (
-    "When sharing work or costs with someone, "
-    "how do you usually work out an arrangement?"
+    "When sharing work or costs with someone, how do you usually work out an arrangement?"
 )
+
 
 def state_for_policy():
     state = new_state("test", "model", "xhigh")
@@ -54,10 +54,7 @@ def test_fast_and_full_fallback_select_direct_patterns_not_retired_scenarios():
     for context in (fast, full):
         routes = {q["id"]: q for q in context["candidate_routes"]}
         assert "M11" not in routes and "M09" not in routes
-        assert (
-            routes["TF1-M11"]["question"]
-            == MEAL_PATTERN
-        )
+        assert routes["TF1-M11"]["question"] == MEAL_PATTERN
         assert routes["TF1-M11"].get("planning_targets", []) == []
     reviewed = make_review_context(
         state,
@@ -158,3 +155,76 @@ def test_http_worker_delivers_policy_question_and_retains_policy_in_saved_state(
     assert result["clarifications"][0]["route_id"].startswith("TF1-")
     assert "usually" in result["clarifications"][0]["question_text"]
     assert app.state.store.gpt_review_read(rid)["worker_state"]["question_policy"] == identity()
+
+
+def test_imported_skip_keeps_status_and_blocks_successor():
+    state = state_for_policy()
+    record = {
+        "turns": [
+            {
+                "turn_id": "old",
+                "question_text": "Original meal question.",
+                "answer_text": None,
+                "canonical_question_id": "M11",
+                "answer_status": "skipped",
+            }
+        ]
+    }
+    original = copy.deepcopy(record)
+    import_record(state, record, "prior_json", authority())
+    assert record == original
+    assert state["turns"][0]["answer_status"] == "skipped"
+    routes = {
+        row["id"] for row in make_gap_spec_triage_context(state, authority())["candidate_routes"]
+    }
+    assert not {"M11", "TF1-M11", "PREFER-EXCHANGE", "TF1-PREFER-EXCHANGE"} & routes
+
+
+def test_historical_import_control_cannot_stop_current_queued_review():
+    state = state_for_policy()
+    record = {
+        "turns": [
+            {
+                "turn_id": "old",
+                "question_text": "Earlier interview item",
+                "answer_text": "Please leave it unknown rather than repeat it.",
+            }
+        ]
+    }
+    import_record(state, record, "prior_json", authority())
+    state["gpt_review_answers_processed"] = 0
+    tid = state["turns"][0]["turn_id"]
+    plan = Plan(
+        action="stop",
+        dispositions=[],
+        evidence=[],
+        question=None,
+        control_quote={"turn_id": tid, "quote": "Please leave it unknown rather than repeat it."},
+        source_review_complete=True,
+        reason="Incorrectly promoted historical item skip",
+    )
+    with pytest.raises(ValueError, match="Historical imported"):
+        validate_plan(plan, state, authority(), [tid])
+
+
+def test_current_explicit_review_stop_is_still_valid():
+    state = state_for_policy()
+    state["gpt_review_answers_processed"] = 1
+    state["turns"] = [
+        {
+            "turn_id": "review-answer-0001",
+            "turn_source": "import-fast-review-clarification",
+            "question_text": "Current clarification",
+            "answer_text": "Stop this interview now.",
+        }
+    ]
+    plan = Plan(
+        action="stop",
+        dispositions=[],
+        evidence=[],
+        question=None,
+        control_quote={"turn_id": "review-answer-0001", "quote": "Stop this interview now."},
+        source_review_complete=True,
+        reason="Current explicit stop",
+    )
+    validate_plan(plan, state, authority(), ["review-answer-0001"])

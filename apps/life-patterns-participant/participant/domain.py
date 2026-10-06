@@ -272,12 +272,20 @@ def import_record(
                 if isinstance(raw.get("corrections", []), list)
                 else [],
                 "process_feedback": copy.deepcopy(raw.get("process_feedback", [])),
-                "answer_status": "unassessed",
+                "answer_status": "skipped" if raw.get("answer_status") == "skipped" else "unassessed",
                 "recorded_at": raw.get("recorded_at"),
                 "original_record": copy.deepcopy(raw),
                 "correction_of": correction_of,
             }
         )
+        if raw.get("answer_status") == "skipped":
+            state["dispositions"][turn_id] = {
+                "turn_id": turn_id,
+                "status": "skipped",
+                "conditions": [],
+                "process_feedback_quotes": [],
+                "reason": "Explicit skip preserved from the imported source record.",
+            }
         if turn_role == "collection_metadata":
             state["dispositions"][turn_id] = {
                 "turn_id": turn_id,
@@ -459,6 +467,10 @@ def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str])
     if plan.action == "review" and not state["turns"]:
         raise ValueError("A new interview needs an admissible first question.")
     process_ids = {d.turn_id for d in plan.dispositions if d.status in {"process_only", "skipped"}}
+    process_ids.update(
+        turn_id for turn_id, disposition in state.get("dispositions", {}).items()
+        if disposition.get("status") in {"process_only", "skipped"}
+    )
     if any(q.turn_id in process_ids for e in plan.evidence for q in e.source_quotes):
         raise ValueError("Process-only feedback and skipped answers are not personality evidence.")
     if plan.action in {"pause", "stop", "hold"}:
@@ -475,6 +487,14 @@ def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str])
             raise ValueError(
                 "A control action needs an exact current source quote in its permitted field."
             )
+    if plan.action in {"pause", "stop"} and "gpt_review_answers_processed" in state:
+        source = turns[plan.control_quote.turn_id]
+        if source.get("turn_source") == "import-1":
+            raise ValueError(
+                "Historical imported text cannot pause or stop the current queued review."
+            )
+        if source.get("answer_status") == "skipped":
+            raise ValueError("An item skip cannot pause or stop the entire review.")
     if plan.action == "hold" and plan.evidence:
         raise ValueError("A target-information hold must not emit behavioral evidence.")
     if any(turns[q.turn_id].get("quarantined") for e in plan.evidence for q in e.source_quotes):

@@ -24,3 +24,12 @@ The new route identifiers do not automatically grant legacy facet scores. The in
 The GPT package is version 2026-10-06.2-tendency-first. Replace Instructions and add TENDENCY-FIRST-GUIDE-v1.json as the seventh Knowledge file. Existing six Knowledge files, Action and credential remain. Consent-only opening, useful progress and latest-source recovery are preserved. The private GPT editor is not changed by repository work.
 
 Deployment and live test receipts are recorded separately when actually completed. No real participant record was read or modified by the regression probes. This repair does not request a new answer to the user's skipped question or restart their review.
+
+## Follow-up after interrupted release
+The first live synthetic test delivered the intended direct usual-pattern question after 98.7 seconds and did not repeat it after a skip, but later stopped rather than reaching ready. Its report is retained as a failed whole-pipeline check, not a passing result. Exact withdrawn model output was not retained, so no precise model attribution is claimed.
+
+Two narrow deterministic reproductions failed before repair: explicit imported skip status was reset to unassessed, and historical imported text could pass the current stop-action validation. The repaired import preserves a typed skip without changing original words; queued reviews reject pause/stop control quotes drawn from historical import-1 source, while current explicit participant controls remain permitted. Existing skipped/process-only source cannot be scored as personality evidence. Thirty-five affected tests passed after these repairs.
+
+The follow-up live fixture adds one substantive, entirely synthetic friendship-pattern answer. This permits a genuine source-grounded review rather than attempting to certify an all-unknown source. The original failed fixture/report remains intact. Completion of the new live test is recorded only in its actual returned report.
+
+Final post-repair verification: all 181 participant tests passed; the repository suite passed 1,018 tests with six astronomy-data skips; mypy passed across 220 source files. These results include typed skip preservation and rejection of historical stop control; a fresh live test is still required for the changed deployment.

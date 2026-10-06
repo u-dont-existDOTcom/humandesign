@@ -1,0 +1,32 @@
+{
+  "source_commit": "feaea21bed0e5ddf06cbd98b3e89635081965dc2",
+  "deployment_id": "6e1b33aa-1588-4992-a8c5-04d4f67ebec8",
+  "health": {
+    "status": "ok",
+    "question_policy": {
+      "version": "tendency-first-v1-20261006",
+      "sha256": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611"
+    },
+    "version": "railway-participant-v2.2-cost-hybrid-20260928",
+    "provider": "venice",
+    "provider_configured": false,
+    "participant_enabled": false,
+    "gpt_submission_enabled": true,
+    "gpt_review_queue_enabled": true,
+    "fast_review_enabled": true,
+    "review_protocols": [
+      "legacy-v1",
+      "fast-batch-v1"
+    ],
+    "review_worker_configured": true,
+    "persistence": "encrypted_sqlite",
+    "instrument_version": "a54c578c2fe3eb68bd96fe6cb07956cc0ccb02903e38a7a34c3f0a6643ba274e"
+  },
+  "worker_active": true,
+  "worker_release": "release.tendency-first-feaea21",
+  "prior_worker_release_retained": true,
+  "atomic_link_switch": true,
+  "shared_encrypted_state_untouched": true,
+  "action_schema_unchanged": true,
+  "private_gpt_editor_updated": false
+}
