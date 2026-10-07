@@ -61,3 +61,12 @@ def test_footer_has_plan_math_and_distinguishes_complete_and_recovery_states():
         "current-batch remaining",
     ):
         assert phrase in s
+
+
+def test_every_behavioral_question_must_show_its_neutral_purpose():
+    s = text("life_patterns_voice_interviewer_v2.md")
+    assert "Before EVERY behavioral question: `What this tests: <neutral purpose>`" in s
+    assert "Use `participant_purpose`; else name its target/family plainly" in s
+    assert "Show each returned clarification as `What this tests: {participant_purpose}`" in s
+    assert "then `question_text` verbatim" in s
+    assert "No scoring/chart targets/diagnostic claims" in s

@@ -468,6 +468,7 @@ class Question(StrictModel):
     route_id: str
     route_type: Literal["canonical", "context_repair", "missing_piece_followup"]
     text: str = Field(min_length=1, max_length=3000)
+    participant_purpose: str | None = Field(default=None, min_length=1, max_length=700)
     antecedent_turn_ids: list[str]
     equivalent_context: bool
     missing_distinction: str
@@ -633,12 +634,15 @@ def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str])
         if q is None or q.route_id not in routes:
             raise ValueError("A question must belong to the full canonical bank.")
         route = routes[q.route_id]
-        from .question_policy import selectable
+        from .question_policy import participant_purpose, selectable
         if not selectable(route, state):
             raise ValueError("This retired or skipped route is not available for new elicitation.")
         if q.route_type == "canonical" and q.text != route["question"]:
             raise ValueError("Canonical wording must match the bank exactly.")
-        if target_exposure(q.text):
+        # Purpose is deterministic route metadata, not model-authored interpretation.
+        # Keep it separate from exact recorded question wording.
+        q.participant_purpose = participant_purpose(route)
+        if target_exposure(q.text) or target_exposure(q.participant_purpose):
             raise ValueError("Birth-related questions are excluded.")
         if any(i not in turns for i in q.antecedent_turn_ids):
             raise ValueError("Invented antecedent identifier.")

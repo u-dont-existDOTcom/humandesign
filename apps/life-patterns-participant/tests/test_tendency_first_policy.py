@@ -160,6 +160,11 @@ def test_http_worker_delivers_policy_question_and_retains_policy_in_saved_state(
     assert result["status"] == "clarification_needed", result
     assert result["clarifications"][0]["route_id"].startswith("TF1-")
     assert "usually" in result["clarifications"][0]["question_text"]
+    assert result["clarifications"][0]["participant_purpose"]
+    assert (
+        result["clarifications"][0]["participant_purpose"]
+        not in result["clarifications"][0]["question_text"]
+    )
     assert app.state.store.gpt_review_read(rid)["worker_state"]["question_policy"] == identity()
 
 
@@ -476,3 +481,28 @@ def test_top_level_historical_question_id_is_verified_route_metadata():
     import_record(state, record, "prior_json", authority())
     assert state["turns"][0]["canonical_question_id"] == "G15"
     assert state["turns"][0]["id_basis"] == "verified_historical_route"
+
+
+def test_every_live_route_has_participant_safe_purpose_without_mutating_frozen_bank():
+    instrument = authority()
+    state = state_for_policy()
+    routes = bank(instrument, state)["questions"]
+    assert len(routes) == 104
+    forbidden = (
+        "astrology", "human design", "birth chart", "score direction", "TF1-", "D14.", "X08."
+    )
+    for route in routes:
+        purpose = route.get("participant_purpose")
+        assert isinstance(purpose, str) and purpose.strip(), route["id"]
+        lowered = purpose.casefold()
+        assert not any(token.casefold() in lowered for token in forbidden), (route["id"], purpose)
+    g17 = next(route for route in routes if route["id"] == "TF1-G17")
+    assert "low-stakes factual errors" in g17["participant_purpose"]
+    assert "practical consequences" in g17["participant_purpose"]
+
+
+def test_presentation_purpose_overlay_does_not_change_question_policy_identity():
+    assert identity() == {
+        "version": "tendency-first-v1-20261006",
+        "sha256": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611",
+    }

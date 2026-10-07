@@ -23,10 +23,20 @@ def source_revision(candidate_sha256: str, history: list[dict]) -> str:
 
 
 def public_question(question: dict) -> dict:
+    from .question_policy import active_participant_purpose
+
+    purpose = str(question.get("participant_purpose") or "").strip()
+    if not purpose:
+        purpose = active_participant_purpose(str(question["route_id"])) or str(
+            question.get("missing_distinction") or ""
+        ).strip()
+    if not purpose:
+        purpose = "the specific recurring response or preference this clarification is resolving."
     return {
         "route_id": question["route_id"],
         "route_type": question["route_type"],
         "question_text": question["text"],
+        "participant_purpose": purpose,
         "antecedent_turn_ids": question.get("antecedent_turn_ids", []),
     }
 

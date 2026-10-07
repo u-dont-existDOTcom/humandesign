@@ -25,6 +25,15 @@ def _policy() -> tuple[dict, str]:
     return value, hashlib.sha256(raw).hexdigest()
 
 
+@lru_cache(maxsize=1)
+def _purpose_overlay() -> dict[str, str]:
+    path = Path(__file__).with_name("static").joinpath("question-purposes-v1.json")
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if value.get("version") != "participant-purpose-v1-20261007":
+        raise ValueError("Question-purpose overlay version mismatch.")
+    return {str(k): str(v) for k, v in value.get("purposes", {}).items()}
+
+
 def identity() -> dict:
     return {"version": VERSION, "sha256": _policy()[1]}
 
@@ -46,6 +55,43 @@ def activate(state: dict) -> None:
 
 def source_route_id(route_id: str) -> str:
     return route_id[len(PREFIX) :] if route_id.startswith(PREFIX) else route_id
+
+
+def participant_purpose(route: dict) -> str:
+    """Return a participant-safe explanation of the person-level distinction being tested.
+
+    Frozen historical route text is never rewritten. Active policy routes carry curated
+    wording; legacy probes receive a conservative fallback from their neutral planning
+    target/family so every live question has a purpose without exposing route codes or
+    answer directions.
+    """
+
+    explicit = str(route.get("participant_purpose") or "").strip()
+    if explicit:
+        return explicit
+    curated = str(_purpose_overlay().get(str(route.get("id") or ""), "")).strip()
+    if curated:
+        return curated
+    targets = []
+    for raw in route.get("planning_targets") or []:
+        label = str(raw).split(".", 1)[-1].replace("_", " ").strip()
+        if label and label not in targets:
+            targets.append(label)
+    family = str(route.get("family") or "").replace("_", " ").strip()
+    if targets:
+        detail = " and ".join(targets[:2])
+        return f"your usual pattern around {detail} in the situation this question asks about."
+    if family:
+        return f"your usual pattern around {family} in the situation this question asks about."
+    return "the specific recurring response or preference this question asks about."
+
+
+def active_participant_purpose(route_id: str) -> str | None:
+    for route in _policy()[0]["questions"]:
+        if str(route.get("id")) == route_id:
+            return participant_purpose(route)
+    return None
+
 
 def route_lineage_ids(route_id: str) -> set[str]:
     """Return historical + active policy IDs for one substantive route lineage."""
@@ -79,6 +125,7 @@ def view(base: dict, state: dict | None) -> dict:
     result = copy.deepcopy(base)
     retired = set(policy["retired_from_new_elicitation"])
     for route in result["questions"]:
+        route["participant_purpose"] = participant_purpose(route)
         route["elicitation_retired"] = route["id"] in retired
         if not route["elicitation_retired"]:
             route["admission"] = (
@@ -87,7 +134,10 @@ def view(base: dict, state: dict | None) -> dict:
                 "person's reported usual pattern; not to complete a hypothetical scene. "
                 "An adequate general answer settles the question."
             )
-    result["questions"] = copy.deepcopy(policy["questions"]) + result["questions"]
+    active_questions = copy.deepcopy(policy["questions"])
+    for route in active_questions:
+        route["participant_purpose"] = participant_purpose(route)
+    result["questions"] = active_questions + result["questions"]
     result["question_policy"] = identity()
     return result
 

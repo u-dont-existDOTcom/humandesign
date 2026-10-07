@@ -177,6 +177,7 @@ class WorkerClarification(Body):
     route_id: str = Field(min_length=1, max_length=100)
     route_type: Literal["canonical", "context_repair", "missing_piece_followup"]
     question_text: str = Field(min_length=1, max_length=3000)
+    participant_purpose: str | None = Field(default=None, min_length=1, max_length=700)
     antecedent_turn_ids: list[str] = Field(default_factory=list, max_length=100)
 
 
@@ -248,15 +249,33 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
     store = Store(settings.database, settings.encryption_key)
     instrument = instrument or load_instrument(settings.authority)
     version = store.pin_instrument(instrument)
-    from .question_policy import activate
+    from .question_policy import activate, participant_purpose
 
     migration_state = new_state(version, settings.model, settings.effort)
     activate(migration_state)
+    migration_routes = {
+        str(route["id"]): route for route in bank(instrument, migration_state)["questions"]
+    }
     retired_routes = {
-        str(route["id"])
-        for route in bank(instrument, migration_state)["questions"]
+        route_id
+        for route_id, route in migration_routes.items()
         if route.get("elicitation_retired")
     }
+
+    def with_participant_purpose(question: dict | None) -> dict | None:
+        if not isinstance(question, dict):
+            return question
+        result = dict(question)
+        route = migration_routes.get(str(result.get("route_id") or ""))
+        if route is not None:
+            # Recompute from canonical route authority so stale saved questions gain the
+            # explanation on read without replacing the review or changing question_text.
+            result["participant_purpose"] = participant_purpose(route)
+        elif not str(result.get("participant_purpose") or "").strip():
+            result["participant_purpose"] = (
+                "the specific recurring response or preference this clarification is resolving."
+            )
+        return result
     def stale_canonical_question(payload: dict, pending: list[dict]) -> bool:
         canonical_ids = {
             str(question.get("route_id"))
@@ -437,7 +456,9 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         reject_target_fields(record)
 
     def review_public(payload):
-        clarification = payload.get("pending_clarification")
+        clarification = with_participant_purpose(payload.get("pending_clarification"))
+        raw_clarifications = payload.get("pending_clarifications") or []
+        clarifications = [with_participant_purpose(item) for item in raw_clarifications]
         status = payload["status"]
         return {
             "schema": "life-patterns-gpt-review-status-v1",
@@ -448,7 +469,9 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             **review_guidance(payload),
             "review_protocol": payload.get("review_protocol", "legacy-v1"),
             "batch_id": payload.get("pending_batch_id") if status == "clarification_needed" else None,
-            "clarifications": payload.get("pending_clarifications") if status == "clarification_needed" else None,
+            "clarifications": (
+                clarifications if status == "clarification_needed" and clarifications else None
+            ),
             "final_review_completed": status == "ready",
 
             "clarification": clarification
@@ -906,16 +929,24 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             pinned = store.instrument(queued.get("instrument_version", version))
             from .question_policy import selectable
             routes = {row["id"]: row for row in bank(pinned, body.worker_state)["questions"]}
+            from .question_policy import participant_purpose
             for question in questions:
                 route = routes.get(question["route_id"])
                 if route is None:
                     raise ValueError("Worker returned an unknown survey route.")
                 if not selectable(route, body.worker_state or {}):
                     raise ValueError("Worker returned a retired or skipped elicitation route.")
-                if question["route_type"] == "canonical" and question["question_text"] != route["question"]:
+                if not str(question.get("participant_purpose") or "").strip():
+                    question["participant_purpose"] = participant_purpose(route)
+                if (
+                    question["route_type"] == "canonical"
+                    and question["question_text"] != route["question"]
+                ):
                     raise ValueError("Canonical worker question does not match the frozen bank.")
                 if target_exposure(question["question_text"]):
                     raise ValueError("Birth/chart questions are not permitted.")
+            clarification = questions[0]
+            clarifications = questions if body.clarifications else None
             if not body.worker_state or body.worker_state.get("phase") != "awaiting_answer":
                 raise ValueError("Clarification results require the saved awaiting-answer state.")
             if fast:
