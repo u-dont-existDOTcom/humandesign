@@ -29,9 +29,15 @@ from pathlib import Path
 from typing import Any
 
 from cryptography.fernet import Fernet
-from participant.domain import import_record, load_instrument, new_state, normalize_state_route_ids, utc
+from participant.domain import (
+    import_record,
+    load_instrument,
+    new_state,
+    normalize_state_route_ids,
+    utc,
+)
 from participant.engine import Engine
-from participant.question_policy import activate, PolicyProvider
+from participant.question_policy import PolicyProvider, activate
 from participant.store import Store, canonical
 
 REPO_ROOT = Path(__file__).resolve().parents[3]

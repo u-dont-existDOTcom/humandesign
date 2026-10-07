@@ -525,7 +525,7 @@ class Store:
             rows = db.execute(
                 "SELECT id,payload FROM gpt_review_jobs WHERE status='clarification_needed'"
             ).fetchall()
-            for review_id, encoded in rows:
+            for _review_id, encoded in rows:
                 payload = self.decode(encoded)
                 if payload.get("review_protocol") != "fast-batch-v1":
                     continue

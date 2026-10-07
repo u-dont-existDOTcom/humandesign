@@ -10,9 +10,9 @@ import copy
 from collections.abc import Callable
 
 from .domain import Plan, import_record, new_state, normalize_state_route_ids, utc, validate_plan
+from .question_policy import activate
 from .shadow_triage import privacy_safe_case_summary, run_shadow_fast_spec_path
 from .store import canonical, digest
-from .question_policy import activate
 
 PROTOCOL = "fast-batch-v1"
 
