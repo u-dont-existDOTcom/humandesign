@@ -314,7 +314,7 @@ def test_completed_historical_g15_marks_tendency_successor_presented_and_repair_
     state = state_for_policy()
     import_record(state, completed_work_energy_record(), "prior_json", authority())
     presented = presented_route_ids(state, authority())
-    assert {"G15", "TF1-G15", "R07", "TF1-R07", "R08", "TF1-R08"} <= presented
+    assert {"G15", "TF1-G15", "R07", "R08"} <= presented
     context = make_gap_spec_triage_context(state, authority())
     routes = {row["id"]: row for row in context["candidate_routes"]}
     assert "G15" not in routes

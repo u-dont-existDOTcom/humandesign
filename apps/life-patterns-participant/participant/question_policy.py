@@ -63,6 +63,11 @@ def turn_lineage_ids(turn: dict, known_source_ids: set[str] | None = None) -> se
 
     from .domain import resolved_turn_route_id
 
+    explicit = turn.get("canonical_question_id")
+    if isinstance(explicit, str) and explicit:
+        base = source_route_id(explicit)
+        if known_source_ids is None or base in known_source_ids:
+            return route_lineage_ids(base)
     route_id = resolved_turn_route_id(turn, known_source_ids)
     return route_lineage_ids(route_id) if route_id else set()
 
