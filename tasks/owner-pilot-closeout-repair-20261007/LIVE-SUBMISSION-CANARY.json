@@ -1,0 +1,39 @@
+{
+  "synthetic_only": true,
+  "human_record_modified": false,
+  "events": [
+    {
+      "status": "queued",
+      "stage": "initial_triage",
+      "elapsed_seconds": 0.0
+    },
+    {
+      "status": "processing",
+      "stage": "omission_audit",
+      "elapsed_seconds": 21.7
+    },
+    {
+      "status": "processing",
+      "stage": "final_synthesis",
+      "elapsed_seconds": 32.4
+    },
+    {
+      "status": "processing",
+      "stage": "final_admission",
+      "elapsed_seconds": 97.2
+    },
+    {
+      "status": "ready",
+      "stage": "ready",
+      "elapsed_seconds": 118.6
+    }
+  ],
+  "full_review_ready": true,
+  "malformed_rejected_before_storage": true,
+  "stored_encrypted": true,
+  "receipt_has_submission_id": true,
+  "exact_retry_idempotent": true,
+  "primary_hash_matches": true,
+  "synthetic_record_retained_and_marked": true,
+  "success": true
+}
