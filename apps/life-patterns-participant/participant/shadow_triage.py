@@ -14,7 +14,13 @@ from typing import Any, Literal, Protocol
 from pydantic import Field
 
 from .domain import Plan, Question, StrictModel, bank, validate_plan
-from .inference_context import correction_closure, route_card, serialized_chars, turn_context_card
+from .inference_context import (
+    correction_closure,
+    route_card,
+    serialized_chars,
+    turn_context_card,
+    turn_route_ids,
+)
 
 MAX_GAP_CANDIDATES = 3
 MATCH_AUDIT_CONTEXT_RADIUS = 2
@@ -398,6 +404,10 @@ verify it. If there is no such turn, do not propose the route. Name candidate de
 when a later candidate actually depends on an earlier candidate's answer.
 
 missing_distinction states the single unresolved route-level distinction, not proposed wording.
+When historical_source_completed is true, missing newer wording or an unrecovered later test turn is
+not itself a gap. For a route with historical_family_turn_ids, inspect those exact family turns
+before proposing a clarification and anchor the proposed gap to the relevant family source. Do not
+repeat an older answered distinction under a new version ID.
 Return review_ready with no candidates when no materially useful gap remains. Return only JSON.
 """
 
@@ -427,6 +437,14 @@ satisfy the requested function. For preference/intensity/persistence targets, ma
 possibilities with no usual tendency, selection condition, or settled inclination remain
 unresolved. Explicit cannot-answer remains unknown; missing coverage alone is never information
 gain. Later corrections supersede corrected answers.
+
+When historical_source_completed is true, treat the completed source as a strong nonredundancy
+guard. A newer prompt version being absent is not an unanswered distinction. An
+unrecovered_current_test_gap is a provenance gap only: it does not authorize repeating a distinction
+already answered in the authoritative historical source. When historical_family_turn_ids are
+supplied, compare those exact turns before approving the route. A clarification must identify a
+genuinely unresolved person-level distinction whose plausible answers would materially alter the
+review; exact-version completion, added richness, or another matched repetition is insufficient.
 
 Set approved true iff all seven gates pass. failure_codes must contain exactly the failed gate
 codes. Review every supplied candidate exactly once and return only JSON.
@@ -687,29 +705,30 @@ def _shadow_route_cards(
         for turn in state.get("turns", [])
         if not turn.get("quarantined") and turn.get("turn_role", "behavioral") == "behavioral"
     ]
-    answered = {
-        str(turn["canonical_question_id"])
-        for turn in turns
-        if turn.get("canonical_question_id") and (turn.get("answer_text") or "").strip()
-    }
+    answered: set[str] = set()
     presented: dict[str, list[str]] = {}
+    skipped_routes: set[str] = set()
     for turn in turns:
-        route_id = turn.get("canonical_question_id")
-        if route_id:
-            presented.setdefault(str(route_id), []).append(str(turn["turn_id"]))
+        lineage = turn_route_ids(turn, state, instrument)
+        if (turn.get("answer_text") or "").strip():
+            answered.update(lineage)
+        for route_id in lineage:
+            presented.setdefault(route_id, []).append(str(turn["turn_id"]))
+        if turn.get("answer_status") == "skipped":
+            skipped_routes.update(lineage)
     addressed = set(state.get("addressed_routes", {}))
-    # An explicit skip is not an unanswered gap to pursue again. Keep its source
-    # in the record, but do not re-offer that route during this review.
-    skipped_routes = {
-        str(turn["canonical_question_id"])
-        for turn in turns
-        if turn.get("canonical_question_id") and turn.get("answer_status") == "skipped"
-    }
     retrospective_ok = (
         state.get("collection_preferences", {}).get("retrospective_questions_welcome") is True
     )
 
     all_routes = list(bank(instrument, state)["questions"])
+    from .question_policy import source_route_id
+
+    family_by_source: dict[str, str] = {}
+    for item in all_routes:
+        family = item.get("family")
+        if family:
+            family_by_source[source_route_id(str(item["id"]))] = str(family)
     context_source_ids = {
         str(source_id)
         for route in all_routes
@@ -753,6 +772,18 @@ def _shadow_route_cards(
         # Triage gets the compact route menu. Full interpretation/context controls are
         # attached only for selected candidates in the independent admission call.
         card = route_card(route, include_limits=False)
+        family = str(route.get("family") or "")
+        if family:
+            family_turn_ids = [
+                str(turn["turn_id"])
+                for turn in turns
+                if any(
+                    family_by_source.get(source_route_id(lineage_id)) == family
+                    for lineage_id in turn_route_ids(turn, state, instrument)
+                )
+            ]
+            if family_turn_ids:
+                card["historical_family_turn_ids"] = list(dict.fromkeys(family_turn_ids))
         if route_id in presented:
             card["candidate_mode"] = "repair_only"
             card["presented_turn_ids"] = presented[route_id]
@@ -791,6 +822,22 @@ def _shadow_route_cards(
     return cards
 
 
+def _historical_source_guard(state: dict) -> dict[str, bool]:
+    statuses = [
+        str(source.get("historical_interview_status") or "").lower()
+        for source in state.get("source_records", [])
+    ]
+    return {
+        "historical_source_completed": any(
+            "completed" in status or "saturated" in status for status in statuses
+        ),
+        "unrecovered_current_test_gap_present": any(
+            source.get("unrecovered_current_test_gap_present") is True
+            for source in state.get("source_records", [])
+        ),
+    }
+
+
 def make_gap_triage_context(
     state: dict, instrument: dict, *, allow_semantic_context: bool = False
 ) -> dict:
@@ -817,6 +864,7 @@ def make_gap_triage_context(
         "source_question_matches": source_question_matches,
         "candidate_routes": candidate_routes,
         "maximum_candidates": MAX_GAP_CANDIDATES,
+        **_historical_source_guard(state),
         "global_admission_gates": [
             "context_binding",
             "premise_sufficiency",
@@ -842,6 +890,7 @@ def _gap_spec_route_card(route: dict, turns: list[dict]) -> dict:
         "context_match_turn_ids",
         "context_match_route_ids",
         "source_question_match_turn_ids",
+        "historical_family_turn_ids",
     ):
         if route.get(key):
             card[key] = list(route[key])
@@ -890,6 +939,10 @@ def make_gap_spec_triage_context(state: dict, instrument: dict) -> dict:
         "source_scope": "complete_exact_behavioral_source",
         "turns": turns,
         "source_question_matches": full["source_question_matches"],
+        "historical_source_completed": full.get("historical_source_completed", False),
+        "unrecovered_current_test_gap_present": full.get(
+            "unrecovered_current_test_gap_present", False
+        ),
         "candidate_routes": candidate_routes,
         "maximum_candidates": MAX_GAP_CANDIDATES,
     }
@@ -990,6 +1043,16 @@ def validate_gap_spec_triage(triage: GapSpecTriage, context: dict) -> None:
             raise ValueError("Gap-spec source anchors must be unique.")
         if not set(candidate.source_anchor_turn_ids).issubset(valid_turn_ids):
             raise ValueError("Gap-spec candidate cited an unknown source anchor.")
+        if (
+            context.get("historical_source_completed")
+            and route.get("historical_family_turn_ids")
+            and not set(candidate.source_anchor_turn_ids).intersection(
+                route["historical_family_turn_ids"]
+            )
+        ):
+            raise ValueError(
+                "Completed-source clarification must anchor the relevant historical route family."
+            )
         if len(candidate.antecedent_turn_ids) != len(set(candidate.antecedent_turn_ids)):
             raise ValueError("Gap-spec antecedents must be unique.")
         if not set(candidate.antecedent_turn_ids).issubset(valid_turn_ids):
@@ -1075,6 +1138,25 @@ def make_gap_spec_admission_context(
             for route_id in sorted(context_source_ids)
             if route_id in authority
         ],
+        "historical_source_completed": triage_context.get(
+            "historical_source_completed", False
+        ),
+        "unrecovered_current_test_gap_present": triage_context.get(
+            "unrecovered_current_test_gap_present", False
+        ),
+        "historical_family_turn_ids": {
+            route_id: list(
+                next(
+                    (
+                        route.get("historical_family_turn_ids", [])
+                        for route in triage_context["candidate_routes"]
+                        if str(route["id"]) == route_id
+                    ),
+                    [],
+                )
+            )
+            for route_id in sorted(selected_ids)
+        },
     }
 
 
