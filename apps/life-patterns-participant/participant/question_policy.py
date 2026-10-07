@@ -47,6 +47,25 @@ def activate(state: dict) -> None:
 def source_route_id(route_id: str) -> str:
     return route_id[len(PREFIX) :] if route_id.startswith(PREFIX) else route_id
 
+def route_lineage_ids(route_id: str) -> set[str]:
+    """Return historical + active policy IDs for one substantive route lineage."""
+
+    base = source_route_id(route_id)
+    out = {base}
+    for question in _policy()[0]["questions"]:
+        if source_route_id(str(question.get("source_route_id") or "")) == base:
+            out.add(str(question["id"]))
+    return out
+
+
+def turn_lineage_ids(turn: dict, known_source_ids: set[str] | None = None) -> set[str]:
+    """Resolve a saved/imported turn to its current route lineage."""
+
+    from .domain import resolved_turn_route_id
+
+    route_id = resolved_turn_route_id(turn, known_source_ids)
+    return route_lineage_ids(route_id) if route_id else set()
+
 
 def view(base: dict, state: dict | None) -> dict:
     if not active(state):
@@ -73,20 +92,27 @@ def selectable(route: dict, state: dict) -> bool:
         return True
     if route.get("elicitation_retired"):
         return False
-    skipped = {
-        source_route_id(str(turn["canonical_question_id"]))
-        for turn in state.get("turns", [])
-        if turn.get("canonical_question_id")
-        and not turn.get("quarantined")
-        and (
-            turn.get("answer_status") == "skipped"
-            or state.get("dispositions", {}).get(turn.get("turn_id"), {}).get("status") == "skipped"
-        )
-    }
     original = source_route_id(str(route["id"]))
+    relevant_sources = {
+        original,
+        *(source_route_id(str(item)) for item in route.get("context_sources", [])),
+    }
+    if original == "PREFER-EXCHANGE":
+        relevant_sources.add("M11")
+    skipped: set[str] = set()
+    for turn in state.get("turns", []):
+        if turn.get("quarantined"):
+            continue
+        if not (
+            turn.get("answer_status") == "skipped"
+            or state.get("dispositions", {}).get(turn.get("turn_id"), {}).get("status")
+            == "skipped"
+        ):
+            continue
+        for route_id in turn_lineage_ids(turn, relevant_sources):
+            skipped.add(source_route_id(route_id))
     if original in skipped or (original == "PREFER-EXCHANGE" and "M11" in skipped):
         return False
-    # A dependent variant must not circumvent a skip of its required source.
     return not skipped.intersection(
         source_route_id(str(item)) for item in route.get("context_sources", [])
     )
@@ -106,6 +132,9 @@ def prompt(state: dict) -> str:
         "In queued reviews, import-1 is historical source, not a current control request. "
         "Do not pause/stop from an old quotation or an item-specific unknown/skip. "
         "Current explicit participant stop/pause actions remain authoritative.\n"
+        "A verified historical route ID and its active TF1 successor are one substantive "
+        "lineage for nonredundancy. Missing newer wording or an unrecovered later retest "
+        "never makes an already addressed distinction unanswered.\n"
     )
 
 
