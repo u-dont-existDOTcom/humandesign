@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "private_source_committed": false,
+  "exact_private_candidate_turn_count": 81,
+  "historical_source_completed": true,
+  "historical_unrecovered_gap_present": true,
+  "deterministic_route_resolution": {
+    "G15_resolved": true,
+    "R07_including_retest_count": 2,
+    "R08_including_retest_count": 2,
+    "legacy_G15_selectable": false,
+    "TF1_G15_mode": "repair_only",
+    "TF1_G15_historical_family_turn_count": 7
+  },
+  "semantic_fast_review": {
+    "elapsed_seconds": 116.869,
+    "g15_or_tf1_g15_returned": false,
+    "selected_route_id": "TF1-G02",
+    "selected_question_antecedent_count": 2,
+    "semantic_duration_seconds": 110.165
+  },
+  "scope_note": "The exact 81-turn Library candidate was used privately on the owner machine. Participant source text and candidate hash are intentionally not committed."
+}
