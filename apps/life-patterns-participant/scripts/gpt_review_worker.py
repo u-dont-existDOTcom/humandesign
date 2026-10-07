@@ -29,9 +29,15 @@ from pathlib import Path
 from typing import Any
 
 from cryptography.fernet import Fernet
-from participant.domain import import_record, load_instrument, new_state, utc
+from participant.domain import (
+    import_record,
+    load_instrument,
+    new_state,
+    normalize_state_route_ids,
+    utc,
+)
 from participant.engine import Engine
-from participant.question_policy import activate, PolicyProvider
+from participant.question_policy import PolicyProvider, activate
 from participant.store import Store, canonical
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -403,6 +409,7 @@ def prepare_state(job: dict, instrument: dict, instrument_version: str) -> tuple
             instrument,
             job["candidate_record"].get("collection_mode", "unknown"),
         )
+        normalize_state_route_ids(state, instrument)
         state["consent"] = True
         state["consented_at"] = utc()
         state["phase"] = "ready"
@@ -411,6 +418,7 @@ def prepare_state(job: dict, instrument: dict, instrument_version: str) -> tuple
 
     state = json.loads(canonical(prior))
     activate(state)
+    normalize_state_route_ids(state, instrument)
     if state.get("instrument_version") != instrument_version:
         raise RuntimeError("prior_worker_instrument_version_mismatch")
     processed = int(state.get("gpt_review_answers_processed") or 0)

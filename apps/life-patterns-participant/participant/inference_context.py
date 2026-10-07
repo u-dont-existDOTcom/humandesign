@@ -10,31 +10,63 @@ from __future__ import annotations
 import json
 from typing import Iterable
 
-from .domain import bank, guide
+from .domain import bank, guide, resolved_turn_route_id
 
 MAX_ROUTE_SHORTLIST = 12
 RECENT_TURN_COUNT = 4
 
 
-def answered_route_ids(state: dict) -> set[str]:
+def _known_source_route_ids(state: dict, instrument: dict) -> set[str]:
+    from .question_policy import source_route_id
+
     return {
-        str(turn["canonical_question_id"])
-        for turn in state.get("turns", [])
-        if turn.get("canonical_question_id")
-        and turn.get("answer_text") is not None
-        and not turn.get("quarantined")
-        and turn.get("turn_role", "behavioral") == "behavioral"
+        source_route_id(str(route["id"]))
+        for route in bank(instrument, state)["questions"]
     }
 
 
-def presented_route_ids(state: dict) -> set[str]:
-    return {
-        str(turn["canonical_question_id"])
-        for turn in state.get("turns", [])
-        if turn.get("canonical_question_id")
-        and not turn.get("quarantined")
-        and turn.get("turn_role", "behavioral") == "behavioral"
-    }
+def turn_route_ids(turn: dict, state: dict, instrument: dict) -> set[str]:
+    from .question_policy import route_lineage_ids
+
+    route_id = resolved_turn_route_id(turn, _known_source_route_ids(state, instrument))
+    return route_lineage_ids(route_id) if route_id else set()
+
+
+def answered_route_ids(state: dict, instrument: dict | None = None) -> set[str]:
+    if instrument is None:
+        return {
+            str(turn["canonical_question_id"])
+            for turn in state.get("turns", [])
+            if turn.get("canonical_question_id")
+            and turn.get("answer_text") is not None
+            and not turn.get("quarantined")
+            and turn.get("turn_role", "behavioral") == "behavioral"
+        }
+    out: set[str] = set()
+    for turn in state.get("turns", []):
+        if (
+            turn.get("answer_text") is not None
+            and not turn.get("quarantined")
+            and turn.get("turn_role", "behavioral") == "behavioral"
+        ):
+            out.update(turn_route_ids(turn, state, instrument))
+    return out
+
+
+def presented_route_ids(state: dict, instrument: dict | None = None) -> set[str]:
+    if instrument is None:
+        return {
+            str(turn["canonical_question_id"])
+            for turn in state.get("turns", [])
+            if turn.get("canonical_question_id")
+            and not turn.get("quarantined")
+            and turn.get("turn_role", "behavioral") == "behavioral"
+        }
+    out: set[str] = set()
+    for turn in state.get("turns", []):
+        if not turn.get("quarantined") and turn.get("turn_role", "behavioral") == "behavioral":
+            out.update(turn_route_ids(turn, state, instrument))
+    return out
 
 
 def correction_closure(state: dict, seed_ids: Iterable[str]) -> set[str]:
@@ -75,8 +107,8 @@ def covered_facets(state: dict) -> set[str]:
 
 def eligible_routes(state: dict, instrument: dict) -> list[dict]:
     questions = bank(instrument, state)["questions"]
-    answered = answered_route_ids(state)
-    presented = presented_route_ids(state)
+    answered = answered_route_ids(state, instrument)
+    presented = presented_route_ids(state, instrument)
     addressed = set(state.get("addressed_routes", {}))
 
     ranked: list[tuple[int, dict]] = []
@@ -142,7 +174,7 @@ def route_cards(
         retrospective_ok = (
             state.get("collection_preferences", {}).get("retrospective_questions_welcome") is True
         )
-        already_presented = presented_route_ids(state)
+        already_presented = presented_route_ids(state, instrument)
         already_addressed = set(state.get("addressed_routes", {}))
         routes = [
             route
@@ -157,13 +189,11 @@ def route_cards(
     questions = bank(instrument, state)["questions"]
     route_map = {route["id"]: route for route in questions}
     turn_map = {turn["turn_id"]: turn for turn in state.get("turns", [])}
-    pending_route_ids = {
-        turn_map[turn_id].get("canonical_question_id")
-        for turn_id in pending_ids
-        if turn_id in turn_map
-        and turn_map[turn_id].get("canonical_question_id")
-        and not turn_map[turn_id].get("quarantined")
-    }
+    pending_route_ids: set[str] = set()
+    for turn_id in pending_ids:
+        turn = turn_map.get(turn_id)
+        if turn and not turn.get("quarantined"):
+            pending_route_ids.update(turn_route_ids(turn, state, instrument))
 
     eligible = eligible_routes(state, instrument)
     fresh = [
@@ -256,6 +286,7 @@ def turn_context_card(turn: dict) -> dict:
         "question_text": turn.get("question_text"),
         "answer_text": turn.get("answer_text"),
         "canonical_question_id": turn.get("canonical_question_id"),
+        "historical_question_id": turn.get("historical_question_id"),
         "question_wording_status": turn.get("question_wording_status"),
     }
     if turn.get("answer_status") == "skipped":
@@ -288,7 +319,7 @@ def relevant_turns(
         if turn.get("turn_role", "behavioral") == "behavioral":
             wanted_ids.add(turn["turn_id"])
     for turn in turns:
-        if turn.get("canonical_question_id") in bank_route_sources:
+        if turn_route_ids(turn, state, instrument).intersection(bank_route_sources):
             wanted_ids.add(turn["turn_id"])
 
     route_targets = {
@@ -372,11 +403,12 @@ def make_context(
                 and turn.get("turn_role", "behavioral") == "behavioral"
             )
         turn_map = {turn["turn_id"]: turn for turn in state.get("turns", [])}
-        answered_route_ids_for_pending = {
-            turn_map[turn_id].get("canonical_question_id")
-            for turn_id in pending_ids
-            if turn_id in turn_map and turn_map[turn_id].get("canonical_question_id")
-        }
+        answered_route_ids_for_pending: set[str] = set()
+        for turn_id in pending_ids:
+            if turn_id in turn_map:
+                answered_route_ids_for_pending.update(
+                    turn_route_ids(turn_map[turn_id], state, instrument)
+                )
         guides = guide_cards(instrument, set(route_ids) | answered_route_ids_for_pending)
         correction_scope = correction_closure(state, pending_ids)
         correction_relevant_evidence = [

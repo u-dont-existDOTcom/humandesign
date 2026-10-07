@@ -511,6 +511,68 @@ class Store:
             db.commit()
         return payload
 
+    def requeue_stale_gpt_review_questions(
+        self, retired_route_ids: set[str]
+    ) -> int:
+        """Re-run fast reviews whose persisted question is no longer selectable."""
+
+        if not retired_route_ids:
+            return 0
+        now = time.time()
+        refreshed = 0
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            rows = db.execute(
+                "SELECT id,payload FROM gpt_review_jobs WHERE status='clarification_needed'"
+            ).fetchall()
+            for _review_id, encoded in rows:
+                payload = self.decode(encoded)
+                if payload.get("review_protocol") != "fast-batch-v1":
+                    continue
+                pending = payload.get("pending_clarifications") or []
+                if not pending and payload.get("pending_clarification"):
+                    pending = [payload["pending_clarification"]]
+                if not any(
+                    str(question.get("route_id")) in retired_route_ids
+                    for question in pending
+                    if isinstance(question, dict)
+                ):
+                    continue
+                worker_state = payload.get("worker_state")
+                if isinstance(worker_state, dict):
+                    worker_state["phase"] = "ready"
+                    worker_state["pending_question"] = None
+                    meta = worker_state.setdefault("fast_review", {})
+                    meta.update(
+                        stage="triage",
+                        pending_questions=[],
+                        deferred_audit_pending=True,
+                        final_review_completed=False,
+                        policy_refresh_required=True,
+                    )
+                payload.update(
+                    status="queued",
+                    updated_at_unix=now,
+                    cycle_queued_at_unix=now,
+                    worker_state=worker_state,
+                    pending_clarification=None,
+                    pending_clarifications=[],
+                    pending_batch_id=None,
+                    claim_id=None,
+                    lease_until=None,
+                    error=None,
+                    review_stage=(
+                        "reconciliation"
+                        if payload.get("clarification_history")
+                        else "initial_triage"
+                    ),
+                )
+                payload["policy_refresh_reason"] = "persisted_retired_clarification"
+                self._save_review(db, payload)
+                refreshed += 1
+            db.commit()
+        return refreshed
+
     def add_gpt_review_answer(
         self,
         review_id: str,

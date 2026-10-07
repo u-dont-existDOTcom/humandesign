@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "focused_tests": {"passed": 25, "failed": 0},
+  "participant_tests": {"passed": 187, "failed": 0},
+  "repository_tests": {"passed": 1018, "skipped": 6, "failed": 0},
+  "scoped_changed_file_lint": "pass",
+  "mypy_source_files": 220,
+  "mypy": "pass",
+  "root_declared_lint": {
+    "status": "preexisting_failure_outside_task_scope",
+    "reported_errors": 883,
+    "changed_files_in_src_tests_scripts": 0
+  },
+  "exact_private_81_turn_regression": "no_G15_or_TF1_G15_returned",
+  "private_source_committed": false,
+  "deployment": "pending"
+}

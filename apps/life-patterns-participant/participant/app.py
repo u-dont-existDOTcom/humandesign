@@ -247,12 +247,23 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
     store = Store(settings.database, settings.encryption_key)
     instrument = instrument or load_instrument(settings.authority)
     version = store.pin_instrument(instrument)
+    from .question_policy import activate
+
+    migration_state = new_state(version, settings.model, settings.effort)
+    activate(migration_state)
+    retired_routes = {
+        str(route["id"])
+        for route in bank(instrument, migration_state)["questions"]
+        if route.get("elicitation_retired")
+    }
+    app_policy_refresh_count = store.requeue_stale_gpt_review_questions(retired_routes)
     provider = provider or Venice(settings.gateway_url, settings.gateway_token)
     engine = Engine(store, provider, settings.maximum_calls)
     app = FastAPI(
         title="Life Patterns", version=VERSION, docs_url=None, redoc_url=None, openapi_url=None
     )
     app.state.store, app.state.engine = store, engine
+    app.state.policy_refresh_count = app_policy_refresh_count
     app.add_middleware(BodyLimit)
 
     def ready():
