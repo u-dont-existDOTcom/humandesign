@@ -1,0 +1,24 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01c/test_b01c_definitions.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01d/test_b01d_definitions.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01g/test_b01g_reference.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01i/test_b01i_reference.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01j/test_b01j_reference.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01k/test_b01k_reference.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01l/test_b01l_reference.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01n/test_b01n_reference.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01o/test_b01o_reference.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01p/test_b01p_reference.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B01q/test_b01q_reference.py"
+  ],
+  "exit_code": 0,
+  "stdout": "........................................................................ [ 13%]\n........................................................................ [ 27%]\n........................................................................ [ 41%]\n........................................................................ [ 54%]\n........................................................................ [ 68%]\n........................................................................ [ 82%]\n........................................................................ [ 95%]\n......................                                                   [100%]\n526 passed in 0.46s\n",
+  "stderr": "",
+  "wall_seconds": 2.2208,
+  "scope": "All available mounted source-batch tests; no full-host/application suite or independent semantic review."
+}

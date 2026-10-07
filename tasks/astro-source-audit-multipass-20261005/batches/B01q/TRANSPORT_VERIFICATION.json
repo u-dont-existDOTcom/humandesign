@@ -1,0 +1,28 @@
+{
+  "purpose": "Transport/recovery integrity; separate from source/reference test counts",
+  "scenarios": [
+    {
+      "scenario": "restore_then_idempotent",
+      "exit_code": 0,
+      "stdout": "Verified 35 research members; restored 35 missing files. No runtime or progress changes.\n",
+      "stderr": "",
+      "result": "PASS"
+    },
+    {
+      "scenario": "conflict_preserved",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Preserve conflicting file: tasks/astro-source-audit-multipass-20261005/batches/B01p/SOURCE_PAGE_QC.json\n",
+      "result": "PASS"
+    },
+    {
+      "scenario": "part_corruption_rejected",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Part digest mismatch\n",
+      "result": "PASS"
+    }
+  ],
+  "archive_sha256": "aa88fafac0d0a948f02bde4eb4f520be75a37b4ddc181562f899fb267182c42d",
+  "member_count": 35
+}
