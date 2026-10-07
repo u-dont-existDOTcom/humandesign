@@ -1,0 +1,2372 @@
+{
+  "schema_version": 2,
+  "batch_id": "B02a",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "status": "BOOK_I_CHAPTERS_I_VII_SOURCE_EXTRACTED_NOT_RUNTIME_PROMOTION",
+  "scope": "Full English chapters I-VII; To the Reader and Epistle to the Student; selected author errata and edition/contents mapping.",
+  "records_count": 91,
+  "independent_predictions_count": 0,
+  "records_are_not_statistical_independence_units": true,
+  "records": [
+    {
+      "id": "LI.1647.READER.R001",
+      "title": "Three books have different purposes",
+      "kind": "scope",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "FRONT_MATTER",
+        "chapter": "READER",
+        "pdf_pages": [
+          20,
+          21,
+          22
+        ],
+        "printed_pages": [],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Book I introduces calculation, houses, planets, signs and technical terms; Book II handles horary questions; Book III handles nativities.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.READER.R002",
+      "title": "Seven prerequisites for learning",
+      "kind": "method",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "FRONT_MATTER",
+        "chapter": "READER",
+        "pdf_pages": [
+          20,
+          21
+        ],
+        "printed_pages": [],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Learn the ephemeris and chart erection, house topics, essential and accidental fortitudes, natural and accidental significators, signs, conditioned planetary descriptions and technical terms, especially chapters XX and XXI.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Apply these distinctions before judgement.",
+      "qualifications_and_limits": "Competence prerequisites are not evidence that a judgement is correct.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.READER.R003",
+      "title": "Declared dependence is not a translation",
+      "kind": "provenance",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "FRONT_MATTER",
+        "chapter": "READER",
+        "pdf_pages": [
+          21
+        ],
+        "printed_pages": [],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Lilly calls the introductory method his own, not a translation, while naming earlier authors with whose work he compared his notes.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "This is author-reported provenance; individual dependencies must still be located.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.READER.R004",
+      "title": "Horary reconciliation is author intervention",
+      "kind": "provenance",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "FRONT_MATTER",
+        "chapter": "READER",
+        "pdf_pages": [
+          21,
+          22
+        ],
+        "printed_pages": [],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Lilly says he consulted named printed and manuscript authorities, reconciled disagreements, corrected translation problems and sometimes judges differently from the ancients.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Do not count Lilly and the authorities he reuses as automatically independent testimony.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.READER.R005",
+      "title": "Natal method includes stated disagreement with Ptolemy",
+      "kind": "provenance",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "FRONT_MATTER",
+        "chapter": "READER",
+        "pdf_pages": [
+          22,
+          23
+        ],
+        "printed_pages": [],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "He names Leovitius as a major source of method and material for nativities, lists other sources, and acknowledges dissenting from Ptolemy in favour of reason and experience.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Preserve the disagreement instead of harmonizing the authors by default; experience is his claim, not an independently audited dataset.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.READER.R006",
+      "title": "Scope is not all astrology",
+      "kind": "scope",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "FRONT_MATTER",
+        "chapter": "READER",
+        "pdf_pages": [
+          23,
+          24
+        ],
+        "printed_pages": [],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Lilly distinguishes the subjects treated here from elections, conjunctions, eclipses, comets and annual/monthly or weather material not fully methodized in this volume.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Do not infer complete coverage of those techniques from the title Christian Astrology.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.READER.R007",
+      "title": "Correct the author-listed errata before use",
+      "kind": "method",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "FRONT_MATTER",
+        "chapter": "READER",
+        "pdf_pages": [
+          26
+        ],
+        "printed_pages": [],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The reader is asked to correct the errata before entering the discourse.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "The errata list is PDF888; maintain original and corrected readings separately and do not apply uncertain page/line targets by guess.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.STUDENT.R008",
+      "title": "Historical practice ethics",
+      "kind": "practice_ethics",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "FRONT_MATTER",
+        "chapter": "STUDENT",
+        "pdf_pages": [
+          27
+        ],
+        "printed_pages": [],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The student is urged not to terrify the miserable with harsh judgement, not to let wealth procure a false judgement, and not to betray secrets.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "The surrounding Christian, political and spiritual framing is retained as historical framing, not an empirical basis for calculation.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.01.R009",
+      "title": "Classical planets and nodes",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 1,
+        "pdf_pages": [
+          59
+        ],
+        "printed_pages": [
+          25
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Seven bodies are listed as planets: Saturn, Jupiter, Mars, Sun, Venus, Mercury and Moon; the Dragon head and tail are expressly nodes, not planets.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "This is the source taxonomy, not a modern astronomical classification.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.01.R010",
+      "title": "Zodiac units and order",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 1,
+        "pdf_pages": [
+          59,
+          60
+        ],
+        "printed_pages": [
+          25,
+          26
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "There are twelve signs from Aries onward, each thirty degrees; a degree contains sixty minutes, and the circle contains 360 degrees.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.01.R011",
+      "title": "Longitude example and sinister sextile",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 1,
+        "pdf_pages": [
+          60
+        ],
+        "printed_pages": [
+          26
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Gemini 10 degrees is longitude70; adding60 degrees gives Leo10 at longitude130.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "CALCULATION_CASES.json"
+    },
+    {
+      "id": "LI.1647.I.01.R012",
+      "title": "Five ordinary configurations",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 1,
+        "pdf_pages": [
+          60,
+          61
+        ],
+        "printed_pages": [
+          26,
+          27
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Sextile, square, trine and opposition use60,90,120,180 degrees; conjunction is occupancy of the same degree and minute.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Exact configurations in this introductory description.",
+      "qualifications_and_limits": "Later orb and application chapters must be retained; this definition alone does not supply an orb.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#aspects"
+    },
+    {
+      "id": "LI.1647.I.01.R013",
+      "title": "Qualities of ordinary aspects",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 1,
+        "pdf_pages": [
+          60,
+          61
+        ],
+        "printed_pages": [
+          26,
+          27
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Sextile is moderately good; square is enmity and not good; trine denotes unity, concord and friendship; opposition is bad.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use within the source enquiry, not as an unconditional modern personality classifier.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.01.R014",
+      "title": "Conjunction depends on the question",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 1,
+        "pdf_pages": [
+          61
+        ],
+        "printed_pages": [
+          27
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Conjunction is good or ill according to the nature of the question demanded.",
+      "statement_type": "paraphrase",
+      "prerequisites": "The enquiry must be identified.",
+      "qualifications_and_limits": "Do not assign one universal positive or negative value to all conjunctions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.01.R015",
+      "title": "Opposite signs",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 1,
+        "pdf_pages": [
+          61
+        ],
+        "printed_pages": [
+          27
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Aries/Libra, Taurus/Scorpio, Gemini/Sagittarius, Cancer/Capricorn, Leo/Aquarius and Virgo/Pisces are opposite pairs.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.01.R016",
+      "title": "Ephemeris reference epoch",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 1,
+        "pdf_pages": [
+          61
+        ],
+        "printed_pages": [
+          27
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The ephemeris gives daily positions at noon, with other hours obtained by correction and equation.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "No modern civil timezone, calendar conversion or time scale is supplied by this introductory definition.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.01.R017",
+      "title": "Latitude-specific teaching table",
+      "kind": "scope",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 1,
+        "pdf_pages": [
+          61
+        ],
+        "printed_pages": [
+          27
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The January1646 ephemeris and52-degree house table are supplied for teaching, with a stated adequacy claim for England on the indicated side of Newark upon Trent.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Do not use that historical local approximation as a universal latitude-independent house calculation.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.02.R018",
+      "title": "Latitude-column letters",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 2,
+        "pdf_pages": [
+          62,
+          63
+        ],
+        "printed_pages": [
+          28,
+          29
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "M and S indicate meridional/south and septentrional/north latitude; A and D indicate ascending and descending latitude.",
+      "statement_type": "paraphrase",
+      "prerequisites": "The letter must come from the latitude annotation.",
+      "qualifications_and_limits": "D is not automatically direct motion.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.02.R019",
+      "title": "Motion-column letters",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 2,
+        "pdf_pages": [
+          63
+        ],
+        "printed_pages": [
+          29
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "R identifies retrograde motion; Di or D identifies direct motion.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read the motion column, not the latitude heading.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.02.R020",
+      "title": "Solar ecliptic latitude",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 2,
+        "pdf_pages": [
+          62,
+          63
+        ],
+        "printed_pages": [
+          28,
+          29
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The Sun has no latitude in this ecliptic reference system.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.02.R021",
+      "title": "Dragon tail need not be separately tabulated",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 2,
+        "pdf_pages": [
+          62
+        ],
+        "printed_pages": [
+          28
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The Dragon tail is in the sign and degree opposite the head even though not entered separately in the ephemeris.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Same node convention and epoch.",
+      "qualifications_and_limits": "The chapter does not select a modern mean-node or true-node implementation.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.02.R022",
+      "title": "Sign change at thirty degrees",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 2,
+        "pdf_pages": [
+          62
+        ],
+        "printed_pages": [
+          28
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "A planet that has passed thirty degrees proceeds in order into the next sign.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.02.R023",
+      "title": "Read latitude separately from longitude",
+      "kind": "method",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 2,
+        "pdf_pages": [
+          62,
+          63
+        ],
+        "printed_pages": [
+          28,
+          29
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The daily degree/minute entries and the lower latitude table have different meanings; use the heading to identify north/south and ascending/descending.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.03.R024",
+      "title": "Aspect-table roles",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 3,
+        "pdf_pages": [
+          64
+        ],
+        "printed_pages": [
+          30
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Six columns contain lunar aspects and their times, and the outer column contains mutual aspects of the other planets.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.03.R025",
+      "title": "Solar-relative phase labels",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 3,
+        "pdf_pages": [
+          64
+        ],
+        "printed_pages": [
+          30
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Occidental is explained as setting after the Sun and oriental as rising before it.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Preserve the local definition; no visibility threshold is added.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.03.R026",
+      "title": "Noon-origin day",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 3,
+        "pdf_pages": [
+          64,
+          65
+        ],
+        "printed_pages": [
+          30,
+          31
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The ephemeris day runs from noon to the next noon;14 hours after Tuesday noon means02:00 on Wednesday.",
+      "statement_type": "paraphrase",
+      "prerequisites": "A dated local noon origin.",
+      "qualifications_and_limits": "A clock conversion is not a Gregorian/Julian conversion or a civil-UTC conversion.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "CALCULATION_CASES.json"
+    },
+    {
+      "id": "LI.1647.I.03.R027",
+      "title": "Zero and24 hours",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 3,
+        "pdf_pages": [
+          65
+        ],
+        "printed_pages": [
+          31
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Zero after noon means noon; the next noon begins a new dated day rather than being called24 hours after the old noon.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.03.R028",
+      "title": "Lunar phase sequence",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 3,
+        "pdf_pages": [
+          65
+        ],
+        "printed_pages": [
+          31
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Conjunction with the Sun is the change/new Moon; the next square is first quarter, opposition full Moon, and the following square last quarter.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.03.R029",
+      "title": "Printed lunar-distance labels",
+      "kind": "witness_issue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 3,
+        "pdf_pages": [
+          65
+        ],
+        "printed_pages": [
+          31
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "This witness describes Apogaeon as nearest Earth and Perigaeon as most remote.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Image confirms the printed wording. This terminology is not silently corrected or used in astronomical computation; interpretation remains a witness issue.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.03.R030",
+      "title": "Additional aspects are introduced for recognition",
+      "kind": "scope",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 3,
+        "pdf_pages": [
+          65,
+          66
+        ],
+        "printed_pages": [
+          31,
+          32
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The additional aspects listed are semisextile30, quintile72, tredecile108, biquintile144 and quincunx150 degrees; Lilly says he seldom uses more than the ordinary five and explains these for recognition.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Do not treat mere listing as equal operational endorsement.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#aspects"
+    },
+    {
+      "id": "LI.1647.I.03.R031",
+      "title": "Twelve house-table pages",
+      "kind": "method",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 3,
+        "pdf_pages": [
+          66
+        ],
+        "printed_pages": [
+          32
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Each large page is headed by a solar sign; the relevant page is used to erect the figure.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "This is a table-reading instruction, not the complete geometry of a house system.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R032",
+      "title": "Geometrical house membership",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          67
+        ],
+        "printed_pages": [
+          33
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The space from the first cusp to the second is the first house, and analogously for the other spaces.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Geometrical position must remain separate from the later assignment of virtue near a cusp.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R033",
+      "title": "Five-degree cusp virtue",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          67
+        ],
+        "printed_pages": [
+          33
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "A planet within five degrees of a house cusp is assigned virtue to the house whose cusp is nearest, with a promise of further treatment.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Retain its geometrical house and the relevant cusp separately.",
+      "qualifications_and_limits": "Exact five-degree equality, directional reach, overlaps, sign boundaries and later qualifications are not resolved by this one sentence.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R034",
+      "title": "Erection inputs",
+      "kind": "method",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          68
+        ],
+        "printed_pages": [
+          34
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Identify year, month, weekday, hour or fraction, the noon Sun position and the corresponding table time.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R035",
+      "title": "Solar-degree rounding restricted to horary",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          68
+        ],
+        "printed_pages": [
+          34
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "For table entry, minutes exceeding30 select the next degree and minutes below30 the current degree; Lilly asserts no error for a horary question.",
+      "statement_type": "paraphrase",
+      "prerequisites": "This is the local horary approximation.",
+      "qualifications_and_limits": "Exactly30 minutes is not specified, and natal accuracy must not inherit this tolerance.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R036",
+      "title": "Table-time addition and wrap",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          69
+        ],
+        "printed_pages": [
+          35
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Add the elapsed question time to the tabulated time corresponding to the Sun degree; subtract24 hours when needed and find the remaining or nearest table entry.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Tie handling and exact24-hour handling require a declared computation convention.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R037",
+      "title": "First erection example",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          68,
+          69,
+          70,
+          71
+        ],
+        "printed_pages": [
+          34,
+          35,
+          36,
+          37
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "January6 at13:30 uses Capricorn26d39m rounded to27, table19h56m plus1h30m yielding21h26m and the six quoted cusps.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "CALCULATION_CASES.json"
+    },
+    {
+      "id": "LI.1647.I.04.R038",
+      "title": "Opposite cusp completion",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          70,
+          71
+        ],
+        "printed_pages": [
+          36,
+          37
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Opposite houses receive opposite signs at the same degree and minute:10/4,11/5,12/6,1/7,2/8,3/9.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R039",
+      "title": "Intercepted signs",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          71
+        ],
+        "printed_pages": [
+          37
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "A sign absent from the cusps but included between two house cusps is called intercepted; Aries in the worked chart is the example.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R040",
+      "title": "Placement relative to cusp degrees",
+      "kind": "method",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          71,
+          72
+        ],
+        "printed_pages": [
+          37,
+          38
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Place the planet within or before the relevant house according to its degree relative to the cusp and preserve a retrograde marker.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "The explanatory placements use noon longitudes until corrected in the next chapter.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R041",
+      "title": "Noon chart is not yet event-time corrected",
+      "kind": "scope",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          72,
+          73
+        ],
+        "printed_pages": [
+          38,
+          39
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Lilly explicitly says the planets in this erected chart have not yet been rectified to the hour and promises the correction procedure.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R042",
+      "title": "Lunar separation and application",
+      "kind": "method",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          72,
+          73
+        ],
+        "printed_pages": [
+          38,
+          39
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "After placing the planets, inspect what the Moon last separated from and to what she next applies.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "This observation must retain event timing and meridian convention; it is not an extra independent chart.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R043",
+      "title": "Second erection example",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          73,
+          74
+        ],
+        "printed_pages": [
+          39,
+          40
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "January17 at23:20 combines20h42m and11h20m to make32h02m, reduces to8h02m and uses the nearby8h00m row.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "CALCULATION_CASES.json"
+    },
+    {
+      "id": "LI.1647.I.04.R044",
+      "title": "Repeated and intercepted signs are allowed",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          75
+        ],
+        "printed_pages": [
+          41
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Two or nearly three signs in one house, or one sign on several cusps, are not by themselves mistakes.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R045",
+      "title": "Morning clock equivalence",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          75
+        ],
+        "printed_pages": [
+          41
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "January26 at09:45 is equivalent to January25 at21h45m after noon.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "The following example takes the Sun from January26 noon despite the previous-noon time origin; retain both printed choices rather than silently reconciling their epoch.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.04.R046",
+      "title": "Third table-time example",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          75,
+          76
+        ],
+        "printed_pages": [
+          41,
+          42
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The printed third example adds21h18m and21h45m, reduces43h03m to19h03m and selects the nearby19h01m entry.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "CALCULATION_CASES.json"
+    },
+    {
+      "id": "LI.1647.I.04.R047",
+      "title": "Solar position sanity check",
+      "kind": "sanity_check",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 4,
+        "pdf_pages": [
+          76
+        ],
+        "printed_pages": [
+          42
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The four intervals noon/sunset/midnight/sunrise correspond respectively to house groups9-8-7,6-5-4,3-2-1 and12-11-10.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Event boundaries and local solar noon are not silently equated with civil clock hours.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.05.R048",
+      "title": "Signed daily motion",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          76,
+          77
+        ],
+        "printed_pages": [
+          42,
+          43
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "For direct motion subtract the earlier noon longitude from the later; for retrograde find the magnitude in the opposite direction and retain the reversal.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Full-circle wrap and sign changes require explicit unit handling.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.05.R049",
+      "title": "Daily examples",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          77,
+          78
+        ],
+        "printed_pages": [
+          43,
+          44
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The examples give Saturn2m, Jupiter6m retrograde, Mars46m, Sun61m, Venus69m, Mercury87m, Moon12d07m and the head46m backwards.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "CALCULATION_CASES.json"
+    },
+    {
+      "id": "LI.1647.I.05.R050",
+      "title": "Cross-sign lunar motion",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          77
+        ],
+        "printed_pages": [
+          43
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Capricorn20d54m to Aquarius3d01m gives12d07m of daily motion.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Existing OCR misread the prose3 as2; the original image agrees with the arithmetic. This is not a source contradiction.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.05.R051",
+      "title": "Head motion may change direction",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          78
+        ],
+        "printed_pages": [
+          44
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The head sometimes moves forward and sometimes backward and should be observed in the ephemeris.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "No modern mean/true-node choice is explicitly named.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.05.R052",
+      "title": "Different precision for questions and nativities",
+      "kind": "scope",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          78
+        ],
+        "printed_pages": [
+          44
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Whole degrees may suffice for non-lunar horary placements in this teaching passage, but nativities require degrees/minutes and the Sun minutes/seconds because its motion sets annual revolutions.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Do not weaken the project verified ephemeris path or claim these historical tolerances validate approximation.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.05.R053",
+      "title": "Hourly proportional table",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          79
+        ],
+        "printed_pages": [
+          45
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The hourly rate is the daily rate divided by24; units propagate from degrees/minutes/seconds/thirds to the next smaller sexagesimal units.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#hourly_motion_table"
+    },
+    {
+      "id": "LI.1647.I.05.R054",
+      "title": "Solar and Martian hourly examples",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          79,
+          80
+        ],
+        "printed_pages": [
+          45,
+          46
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Daily61 arcminutes becomes2m32s30thirds per hour;46 arcminutes becomes1m55s.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "CALCULATION_CASES.json"
+    },
+    {
+      "id": "LI.1647.I.05.R055",
+      "title": "Mercury sum and truncation",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          80
+        ],
+        "printed_pages": [
+          46
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "For87 arcminutes, combine the60 and27 rows; the exact sum is3m37s30thirds, while Lilly drops the thirds and uses3m37s.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.05.R056",
+      "title": "Lunar sum and truncation",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          80
+        ],
+        "printed_pages": [
+          46
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "For12d07m daily, combine the12-degree and7-minute components to obtain30m17s30thirds per hour; the text permits discarding seconds/thirds in the lunar example.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.05.R057",
+      "title": "Meridian offset for positions",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          80
+        ],
+        "printed_pages": [
+          46
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "For the cited Eichstadius ephemeris, add50 minutes of time to the London elapsed time because the source meridian is east of London.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "This is the author-specified source-to-London offset, not a universal offset or modern time zone.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.05.R058",
+      "title": "Worked solar correction drops time and precision",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          80,
+          81
+        ],
+        "printed_pages": [
+          46,
+          47
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Although the total adjusted time is2h20m, the example uses two hours at2m32s and yields a5m04s increment, explicitly omitting the remaining20 minutes.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Exact proportional arithmetic with all given inputs differs; preserve both rather than replacing the printed result.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "CALCULATION_CASES.json"
+    },
+    {
+      "id": "LI.1647.I.05.R059",
+      "title": "Worked lunar correction is rounded",
+      "kind": "worked_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          81
+        ],
+        "printed_pages": [
+          47
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The example adds two hours of rounded30-arcminute motion to the Moon20d54m and reports21d54m.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Not the result of the full2h20m and12d07m/day linear calculation.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.05.R060",
+      "title": "Routine shorthand is labelled as shorthand",
+      "kind": "scope",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          81
+        ],
+        "printed_pages": [
+          47
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "For many figures Lilly describes approximate six-hour increments of15 arcminutes for Sun/Venus/Mercury and about3 degrees plus minutes for the Moon, while allowing fuller multiplication/division.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Do not generalize to all planets, exact natal timing or actual modern astronomy.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.05.R061",
+      "title": "Meridian offset has opposite sign for aspect times",
+      "kind": "calculation_convention",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 5,
+        "pdf_pages": [
+          81
+        ],
+        "printed_pages": [
+          47
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "For a tabulated aspect at14h after source noon, subtract50 minutes to obtain13h10m after London noon.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "The image reads50 in both statements; OCR30 in the explanatory sentence is an extraction error.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.06.R062",
+      "title": "Four quadrants and house divisions",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 6,
+        "pdf_pages": [
+          81,
+          82
+        ],
+        "printed_pages": [
+          47,
+          48
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The meridian and horizon supply four quadrants, each divided into three houses, beginning from the east.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "The prose alone is not a complete mathematical derivation of the chosen house system.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.06.R063",
+      "title": "Quadrant correspondences",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 6,
+        "pdf_pages": [
+          82
+        ],
+        "printed_pages": [
+          48
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The four quadrants receive named directional, seasonal, age and temperament correspondences, with houses12/11/10,9/8/7,6/5/4 and3/2/1 respectively.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#quadrants"
+    },
+    {
+      "id": "LI.1647.I.06.R064",
+      "title": "House groups",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 6,
+        "pdf_pages": [
+          82
+        ],
+        "printed_pages": [
+          48
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Angles are1,10,7,4; succedents11,2,8,5; cadents3,12,9,6, with the broad class hierarchy stated.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#house_groups"
+    },
+    {
+      "id": "LI.1647.I.06.R065",
+      "title": "Individual house ordering",
+      "kind": "conditional_order",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 6,
+        "pdf_pages": [
+          82
+        ],
+        "printed_pages": [
+          48
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The explicit strength order is1,10,7,4,11,5,9,3,2,8,6,12.",
+      "statement_type": "paraphrase",
+      "prerequisites": "The accompanying comparison assumes two planets equally dignified.",
+      "qualifications_and_limits": "Retain alongside the broader class statement rather than forcing all succedents ahead of all cadents.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#house_strength_order"
+    },
+    {
+      "id": "LI.1647.I.06.R066",
+      "title": "Strength means effectiveness in the assigned topic",
+      "kind": "method",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 6,
+        "pdf_pages": [
+          82
+        ],
+        "printed_pages": [
+          48
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Greater house power means greater power to effect what the planet signifies.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Effectiveness does not by itself supply favourable quality, moral character or calibrated probability.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.06.R067",
+      "title": "Principal significator from the relevant cusp",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 6,
+        "pdf_pages": [
+          82,
+          83
+        ],
+        "printed_pages": [
+          48,
+          49
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The Ascendant ruler or the ruler of the sign on the house relevant to the question is the significator being discussed.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Do not replace a topic-specific significator by one generic dominant planet.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.06.R068",
+      "title": "Relational co-significator",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 6,
+        "pdf_pages": [
+          83
+        ],
+        "printed_pages": [
+          49
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "A planet in aspect or conjunction with the principal significator participates more or less and may assist or disturb the desired outcome.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "This relational use differs from the natural house co-significator labels in chapterVII.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.06.R069",
+      "title": "House almuten and figure almuten differ",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 6,
+        "pdf_pages": [
+          83
+        ],
+        "printed_pages": [
+          49
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "A house almuten has most dignities in the sign on the relevant cusp; the figure almuten has most essential and accidental power in the entire figure.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "No numerical dignity weights or universal tie break are supplied here.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.06.R070",
+      "title": "Node aliases",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 6,
+        "pdf_pages": [
+          83
+        ],
+        "printed_pages": [
+          49
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The Dragon head and tail are also called Anabibazon and Catabibazon.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Verify typography when using historical aliases as identifiers; numeric node geometry remains separate.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.06.R071",
+      "title": "Three coordinate quantities",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 6,
+        "pdf_pages": [
+          83
+        ],
+        "printed_pages": [
+          49
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Longitude is measured from Aries along the sign order, latitude north/south of the ecliptic, and declination north/south of the equator.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.07.R072",
+      "title": "House topics are prerequisites, not decoration",
+      "kind": "method",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          84
+        ],
+        "printed_pages": [
+          50
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Knowing planets and signs without house judgement is compared to possessions with nowhere to put them; the house of the enquiry must be identified.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Historical source statement; no empirical validation inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.07.R073",
+      "title": "House 1: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          84,
+          85
+        ],
+        "printed_pages": [
+          50,
+          51
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "life; stature, colour, complexion, form and shape of querent or native; in eclipses, great conjunctions and annual Aries ingress: common people/general state of the kingdom.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/1"
+    },
+    {
+      "id": "LI.1647.I.07.R074",
+      "title": "House 2: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          85,
+          86
+        ],
+        "printed_pages": [
+          51,
+          52
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "estate, wealth/poverty, movable goods, lending, gain and loss; law: querent assistants; duel: querent second; eclipse: wealth of people; ingress: ammunition, allies, support and magazines.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/2"
+    },
+    {
+      "id": "LI.1647.I.07.R075",
+      "title": "House 3: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          86
+        ],
+        "printed_pages": [
+          52
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "siblings, cousins, kin, neighbours, small/inland journeys, removals, letters, rumours and messengers; none separately specified in this passage.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/3"
+    },
+    {
+      "id": "LI.1647.I.07.R076",
+      "title": "House 4: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          86,
+          87
+        ],
+        "printed_pages": [
+          52,
+          53
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "fathers, land, houses, inheritance, tillage, hidden treasure, end of things, towns/cities/castles, gardens and nature of ground; sign represents town and its lord the governor in the relevant enquiry.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/4"
+    },
+    {
+      "id": "LI.1647.I.07.R077",
+      "title": "House 5: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          87
+        ],
+        "printed_pages": [
+          53
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "children, pregnancy, childbirth enquiry, banquets, alehouses, taverns, plays, ambassadors and state agents; father wealth; health of querent child; ammunition of a besieged town.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/5"
+    },
+    {
+      "id": "LI.1647.I.07.R078",
+      "title": "House 6: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          87,
+          88
+        ],
+        "printed_pages": [
+          53,
+          54
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "servants, galley slaves, small cattle, illness nature/cause/duration/curability, labourers and agricultural occupations; father siblings; none separately specified in this passage.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/6"
+    },
+    {
+      "id": "LI.1647.I.07.R079",
+      "title": "House 7: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          88
+        ],
+        "printed_pages": [
+          54
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "marriage, love, partner description, public enemies, defendant, opposing army, quarrels/duels, artist/astrologer, physician, theft, thieves and fugitives; annual ingress: war/peace and victory.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/7"
+    },
+    {
+      "id": "LI.1647.I.07.R080",
+      "title": "House 8: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          88,
+          89
+        ],
+        "printed_pages": [
+          54,
+          55
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "estates of deceased, death quality, wills, legacies, dowry/portion and recovery, fear/anguish, heir; duels: adversary second; law: defendant friends.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/8"
+    },
+    {
+      "id": "LI.1647.I.07.R081",
+      "title": "House 9: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          89
+        ],
+        "printed_pages": [
+          55
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "long or overseas journeys, clergy/religion, dreams/visions, foreign countries, books, learning, church livings and spouse kin; none separately specified in this passage.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/9"
+    },
+    {
+      "id": "LI.1647.I.07.R082",
+      "title": "House 10: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          89
+        ],
+        "printed_pages": [
+          55
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "kings, rulers, judges, officers, commanders, mother, honour, preferment, dignity, office and trade/profession; kingdoms, empires, duchies and counties; London mayor example occurs under11.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/10"
+    },
+    {
+      "id": "LI.1647.I.07.R083",
+      "title": "House 11: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          90
+        ],
+        "printed_pages": [
+          56
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "friends, friendship, hope, trust, confidence, praise/blame and fidelity; ruler favourites/counsellors/allies/treasure/ammunition/soldiery; republican council; London common council.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/11"
+    },
+    {
+      "id": "LI.1647.I.07.R084",
+      "title": "House 12: source-specific topics and correspondences",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          90
+        ],
+        "printed_pages": [
+          56
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "private enemies, historical witchcraft allegations, great cattle, sorrow, imprisonment, self-undoing and secret malice; none separately specified in this passage.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Identify the enquiry and its house role before interpretation.",
+      "qualifications_and_limits": "Body, colour, gender and social classifications are preserved as historical claims, not modern medical/demographic conclusions.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "structured_artifact": "TABLES.json#houses/12"
+    },
+    {
+      "id": "LI.1647.I.07.R085",
+      "title": "House natural co-significators are not cusp rulers",
+      "kind": "definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          85,
+          86,
+          87,
+          88,
+          89,
+          90
+        ],
+        "printed_pages": [
+          51,
+          52,
+          53,
+          54,
+          55,
+          56
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The passage assigns signs and planets as natural co-significators of houses, and also names planetary joys.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read these separately from the cusp ruler definition in chapterVI.",
+      "qualifications_and_limits": "These roles can name different planets; no replacement of the actual cusp ruler is licensed.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.07.R086",
+      "title": "Marks on face: conditions and author claim",
+      "kind": "historical_claim",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          84,
+          85
+        ],
+        "printed_pages": [
+          50,
+          51
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Saturn or Mars in the first is connected with a blemish; placement on the body follows the ascending sign, with upper/middle/lower subdivisions for the head example. Lilly claims hundreds of examples.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "The claimed examples are not furnished as an auditable validation dataset; no numeric boundaries for early/middle/late are supplied.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.07.R087",
+      "title": "London is an explicitly contextual house example",
+      "kind": "contextual_example",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          90
+        ],
+        "printed_pages": [
+          56
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "For London, the10th is the Lord Mayor, the11th the Common Council, and the Ascendant the commoners.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "This historical example is not a generic mapping for any modern administrative system.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.07.R088",
+      "title": "Concluding Ptolemaic attribution is a claim",
+      "kind": "provenance",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          90
+        ],
+        "printed_pages": [
+          56
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Lilly attributes his house account to Ptolemaic doctrine and his experience, and says he did not find verity in other Arabian divisions.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Within the specified source chapter and enquiry.",
+      "qualifications_and_limits": "Attribution and personal assessment are preserved; agreement with the already extracted Ptolemy rules has not been established by that sentence.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.07.R089",
+      "title": "Saturn first-house branch is not unconditionally adverse",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          85
+        ],
+        "printed_pages": [
+          51
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Moderately fortified Saturn in the first with the specified benevolent aspect is associated with a sober constitution and usually long life.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Fortification and benevolent aspect are both required.",
+      "qualifications_and_limits": "Keep distinct from the first-house mark claim and do not issue health or longevity advice.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.07.R090",
+      "title": "Mars third-house qualification",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          86
+        ],
+        "printed_pages": [
+          52
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Mars in the third is not very unfortunate unless joined with Saturn.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Third-house enquiry and the Saturn qualification.",
+      "qualifications_and_limits": "Reduced unfavourableness is not automatically a fully favourable prediction.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.07.R091",
+      "title": "Physician combination is local to sixth house",
+      "kind": "conditional_rule",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 7,
+        "pdf_pages": [
+          88
+        ],
+        "printed_pages": [
+          54
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The source associates Mars and Venus conjoined in the sixth house with a good physician.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Both named planets, conjunction and sixth-house placement.",
+      "qualifications_and_limits": "This is not a diagnosis, treatment recommendation, or a universal talent inference.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    }
+  ]
+}

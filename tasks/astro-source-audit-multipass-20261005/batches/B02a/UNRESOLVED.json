@@ -1,0 +1,126 @@
+{
+  "batch_id": "B02a",
+  "count": 20,
+  "items": [
+    {
+      "id": "LI.B02a.U01",
+      "issue": "Noon date and modern time",
+      "source": "I.1-I.5",
+      "disposition": "No silent Julian/Gregorian, local apparent/mean, UTC or DST interpretation. Reproductions retain the source date labels."
+    },
+    {
+      "id": "LI.B02a.U02",
+      "issue": "Exact half degree",
+      "source": "I.4 p34",
+      "disposition": "The greater-than/below30-minute rule does not resolve exactly30. Reference helper returns unresolved."
+    },
+    {
+      "id": "LI.B02a.U03",
+      "issue": "Nearest table entry",
+      "source": "I.4 pp35,39,41",
+      "disposition": "The three selected rows are preserved; global interpolation/tie policy is not supplied by these examples."
+    },
+    {
+      "id": "LI.B02a.U04",
+      "issue": "Morning example solar epoch",
+      "source": "I.4 p41",
+      "disposition": "Previous-noon elapsed time accompanies the same-civil-day noon Sun in the printed worked example. Do not conceal the discrepancy."
+    },
+    {
+      "id": "LI.B02a.U05",
+      "issue": "Full cusp virtue predicate",
+      "source": "I.4 p33",
+      "disposition": "The5-degree sentence promises later treatment. Preserve physical membership separately; directional, sign-boundary, exact equality and overlap choices remain open."
+    },
+    {
+      "id": "LI.B02a.U06",
+      "issue": "House astronomical geometry",
+      "source": "I.4-I.6",
+      "disposition": "Reading quoted cusps and validating their order is not the implementation of Regiomontanus or any other astronomical cusp calculation."
+    },
+    {
+      "id": "LI.B02a.U07",
+      "issue": "Latitude applicability",
+      "source": "I.1 p27",
+      "disposition": "The52-degree teaching table is not transferable unchanged to arbitrary latitudes."
+    },
+    {
+      "id": "LI.B02a.U08",
+      "issue": "Node model",
+      "source": "I.2 p28;I.5 p44",
+      "disposition": "The head is allowed forward/backward motion; the modern true/mean-node convention is not identified by name here."
+    },
+    {
+      "id": "LI.B02a.U09",
+      "issue": "Apogaeon and Perigaeon wording",
+      "source": "I.3 p31",
+      "disposition": "Original image gives nearest and most-remote descriptions respectively. No semantic correction has been inserted into source records or computation."
+    },
+    {
+      "id": "LI.B02a.U10",
+      "issue": "Unmapped early errata targets",
+      "source": "Errata PDF888",
+      "disposition": "Several page/line pointers do not unambiguously match the currently read sentence. Preserve the pointers; do not guess replacements or assert the edition is errata-free."
+    },
+    {
+      "id": "LI.B02a.U11",
+      "issue": "Definition versus later use",
+      "source": "I.1 andI.3",
+      "disposition": "Exact aspect definitions and recognition-only extra aspects do not settle later orbs, applications, exclusions or all operational uses elsewhere in the book."
+    },
+    {
+      "id": "LI.B02a.U12",
+      "issue": "House class versus rank",
+      "source": "I.6 p48",
+      "disposition": "Keep broad angular/succedent/cadent ranking and the finer printed order separately. Ninth/third precede second/eighth in the finer order."
+    },
+    {
+      "id": "LI.B02a.U13",
+      "issue": "Eleventh-house equivalence",
+      "source": "I.7 p56",
+      "disposition": "Equivalent-to7th-or4th statement coexists with the explicit prior ordinal rank. No harmonizing numerical weights are invented."
+    },
+    {
+      "id": "LI.B02a.U14",
+      "issue": "Natural versus accidental roles",
+      "source": "I.6-I.7",
+      "disposition": "Keep natural house co-significators, relational co-significators, actual cusp rulers, joys and almutens separate."
+    },
+    {
+      "id": "LI.B02a.U15",
+      "issue": "Dignity counts and ties",
+      "source": "I.6 p49",
+      "disposition": "House/figure almutens and equally dignified comparison do not here define a complete weighted dignity score or tie rule."
+    },
+    {
+      "id": "LI.B02a.U16",
+      "issue": "Historical causal and outcome vocabulary",
+      "source": "I.7 pp50-56",
+      "disposition": "Body, sickness, moral, gender, religious and class descriptions remain historical claims. No modern diagnosis, identity or risk estimate follows."
+    },
+    {
+      "id": "LI.B02a.U17",
+      "issue": "Claimed experience and dependence",
+      "source": "ToReader andI.7",
+      "disposition": "Author claims of experience and Ptolemaic derivation do not establish independent empirical validation or exact agreement with Ptolemy."
+    },
+    {
+      "id": "LI.B02a.U18",
+      "issue": "Final leaf scope",
+      "source": "Wellcome catalog and terminal leaves",
+      "disposition": "Catalog notes last leaf wanting and describes last leaf as possibly blank. Surviving index ending and errata are present; exact lost-leaf contents remain unproved."
+    },
+    {
+      "id": "LI.B02a.U19",
+      "issue": "Whole-book chapter numbering",
+      "source": "Contents and later BookI headings",
+      "disposition": "Later Roman heading labels and contents page numbers require reconciliation as each next chapter is read; no complete chapter-level denominator is claimed."
+    },
+    {
+      "id": "LI.B02a.U20",
+      "issue": "Table precision versus actual motion",
+      "source": "I.5 pp43-47",
+      "disposition": "Exact Fraction arithmetic reproduces the stated linear daily-motion model, not accelerated real motion, modern Swiss ephemeris parity, or historical table astronomical accuracy."
+    }
+  ]
+}

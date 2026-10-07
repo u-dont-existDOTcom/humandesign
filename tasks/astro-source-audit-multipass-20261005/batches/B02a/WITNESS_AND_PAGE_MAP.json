@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "pdf_pages": 894,
+  "bytes": 141842963,
+  "pdfinfo": {
+    "encrypted": false,
+    "javascript": false,
+    "version": "1.5"
+  },
+  "authority": "Previously acquired1647 Wellcome witness b30338724; current bytes rehashed and match source acquisition manifest.",
+  "public_catalog": "https://wellcomecollection.org/works/s7z7c46y",
+  "catalog_physical_extent": "24 unnumbered leaves,25-832 pages,11 pages,12 unnumbered leaves(last blank?)",
+  "catalog_copy_note": "Last leaf wanting.",
+  "missing_leaf_conclusion": "Content of missing final leaf not established. This does not prevent reading verified opening pages; do not call witness physically complete or assert an absent substantive chapter.",
+  "page_offset_observation": "PDF=printed+34 is verified for the opening25-56 and sampled later labels. Not a page-by-page collation of all894pages.",
+  "blocks": [
+    {
+      "label": "opening_binding_and_preliminaries",
+      "pdf_start": 1,
+      "pdf_end": 14,
+      "verification_scope": "Main title on13 image/text; other pages not body reading"
+    },
+    {
+      "label": "dedication",
+      "pdf_start": 15,
+      "pdf_end": 18,
+      "verification_scope": "Located; not doctrinally extracted"
+    },
+    {
+      "label": "To_the_Reader",
+      "pdf_start": 19,
+      "pdf_end": 26,
+      "verification_scope": "Text read; methodological clauses extracted"
+    },
+    {
+      "label": "Epistle_to_Student",
+      "pdf_start": 27,
+      "pdf_end": 27,
+      "verification_scope": "Text read; practice ethics extracted"
+    },
+    {
+      "label": "sample_ephemeris",
+      "pdf_start": 28,
+      "pdf_end": 29,
+      "verification_scope": "Located; complete symbol/table transcription pending"
+    },
+    {
+      "label": "52_degree_house_tables",
+      "pdf_start": 30,
+      "pdf_end": 41,
+      "verification_scope": "Located; three quoted output rows used through body examples, not complete astronomical parity"
+    },
+    {
+      "label": "commendatory_and_intervening_material",
+      "pdf_start": 42,
+      "pdf_end": 46,
+      "verification_scope": "Located only"
+    },
+    {
+      "label": "contents",
+      "pdf_start": 47,
+      "pdf_end": 58,
+      "verification_scope": "Text read for three-book routing; original OCR retained privately"
+    },
+    {
+      "label": "BookI",
+      "pdf_start": 59,
+      "pdf_end": 162,
+      "verification_scope": "OnlyI-VII read/extracted, throughPDF90"
+    },
+    {
+      "label": "BookII_horary",
+      "pdf_start": 163,
+      "pdf_end": 520,
+      "verification_scope": "Boundary and terminal material located; not full source audit"
+    },
+    {
+      "label": "BookIII_separate_title",
+      "pdf_start": 521,
+      "pdf_end": 522,
+      "verification_scope": "Title image verified; adjacent verso located"
+    },
+    {
+      "label": "BookIII_natal",
+      "pdf_start": 523,
+      "pdf_end": 866,
+      "verification_scope": "Boundary and terminal source blocks located; not full source audit"
+    },
+    {
+      "label": "author_catalogue_and_afterword",
+      "pdf_start": 867,
+      "pdf_end": 878,
+      "verification_scope": "Located only"
+    },
+    {
+      "label": "alphabetical_table",
+      "pdf_start": 879,
+      "pdf_end": 887,
+      "verification_scope": "End/FINIS text located; not full entry audit"
+    },
+    {
+      "label": "errata",
+      "pdf_start": 888,
+      "pdf_end": 888,
+      "verification_scope": "Original image inspected; not every target reconciled"
+    },
+    {
+      "label": "terminal_blanks_and_binding",
+      "pdf_start": 889,
+      "pdf_end": 894,
+      "verification_scope": "Text layer empty or binding noise; no substantive-page absence inferred"
+    }
+  ],
+  "book_i_opening": [
+    {
+      "chapter": 1,
+      "pdf_start": 59,
+      "pdf_end_inclusive": 61,
+      "printed_start": 25,
+      "printed_end": 27,
+      "status": "READ_EXTRACTED"
+    },
+    {
+      "chapter": 2,
+      "pdf_start": 61,
+      "pdf_end_inclusive": 63,
+      "printed_start": 27,
+      "printed_end": 29,
+      "status": "READ_EXTRACTED"
+    },
+    {
+      "chapter": 3,
+      "pdf_start": 64,
+      "pdf_end_inclusive": 66,
+      "printed_start": 30,
+      "printed_end": 32,
+      "status": "READ_EXTRACTED"
+    },
+    {
+      "chapter": 4,
+      "pdf_start": 67,
+      "pdf_end_inclusive": 76,
+      "printed_start": 33,
+      "printed_end": 42,
+      "status": "READ_EXTRACTED"
+    },
+    {
+      "chapter": 5,
+      "pdf_start": 76,
+      "pdf_end_inclusive": 81,
+      "printed_start": 42,
+      "printed_end": 47,
+      "status": "READ_EXTRACTED"
+    },
+    {
+      "chapter": 6,
+      "pdf_start": 81,
+      "pdf_end_inclusive": 83,
+      "printed_start": 47,
+      "printed_end": 49,
+      "status": "READ_EXTRACTED"
+    },
+    {
+      "chapter": 7,
+      "pdf_start": 84,
+      "pdf_end_inclusive": 90,
+      "printed_start": 50,
+      "printed_end": 56,
+      "status": "READ_EXTRACTED"
+    }
+  ],
+  "navigation_not_reading": true
+}

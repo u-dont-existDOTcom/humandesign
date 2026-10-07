@@ -1,0 +1,75 @@
+{
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "image_pages_actually_viewed": [
+    59,
+    65,
+    69,
+    70,
+    74,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    85,
+    88,
+    90,
+    521,
+    888
+  ],
+  "checks": [
+    {
+      "pdf_page": 77,
+      "existing_ocr": "2 degr.1 min. in the explanatory sum",
+      "image": "3 degr.1 min.",
+      "class": "OCR_ERROR_RESOLVED",
+      "effect": "Moon12d07m daily motion agrees with the source, not an author arithmetic error"
+    },
+    {
+      "pdf_page": 81,
+      "existing_ocr": "30min offset in one explanatory sentence",
+      "image": "50min",
+      "class": "OCR_ERROR_RESOLVED",
+      "effect": "Source position/aspect offset consistently50min in this examined passage"
+    },
+    {
+      "pdf_page": 65,
+      "image": "Apogaeon nearest;Perigaeon most remote",
+      "class": "PRINTED_WITNESS_RETAINED",
+      "effect": "No astronomical label remapping"
+    },
+    {
+      "pdf_page": 82,
+      "image": "1 10 7 4 11 5 9 3 2 8 6 12",
+      "class": "ORDINAL_TABLE_IMAGE_CONFIRMED",
+      "effect": "Do not sort by generic house class instead"
+    },
+    {
+      "pdf_page": 88,
+      "image": "Mars and Venus conjoined in sixth:good physician",
+      "class": "GLYPHS_IMAGE_CONFIRMED",
+      "effect": "Mercury is the natural co-significator but is not Venus in this conjunction clause"
+    },
+    {
+      "pdf_page": 69,
+      "image": "The XI table numeral and wording read17 degrees6 minutes",
+      "class": "CUSP_VALUE_IMAGE_CONFIRMED",
+      "effect": "Use Pisces17d06m in quoted cusp replay"
+    },
+    {
+      "pdf_page": 79,
+      "image": "Hourly table has61 rows; sexagesimal third-unit heading",
+      "class": "TABLE_IMAGE_CHECKED",
+      "effect": "61 row arithmetic reconstruction, no claim of a new ephemeris"
+    },
+    {
+      "pdf_page": 888,
+      "image": "Errata page survives",
+      "class": "PHYSICAL_PAGE_CONFIRMED",
+      "effect": "Catalog last-leaf caveat does not justify claiming this errata page is absent"
+    }
+  ],
+  "new_ocr_runs": 0,
+  "not_claimed": "Every rendered image was inspected, or every character on each viewed image independently transcribed."
+}

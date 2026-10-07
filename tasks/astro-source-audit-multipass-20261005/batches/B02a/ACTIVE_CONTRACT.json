@@ -1,0 +1,81 @@
+{
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch_id": "B02a",
+  "status": "SOURCE_BATCH_VERIFIED",
+  "parent_outcome": "OPEN",
+  "baseline_commit": "89bcf224f0c8a6506a2bb331e7cfbba17637d83f",
+  "scope": "Recover LILLY1647 Wellcome witness and its contents/page map; read opening Book I definitions in order with relevant front matter and errata; keep II horary and III natal separate. Existing Ptolemy/source/model/freeze records unchanged.",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "started_utc": "2026-10-07T12:37:03Z",
+  "authority": [
+    {
+      "path": "UDA/AGENTS.md",
+      "blob": "c27948c88cf7553f95241cbae7edab27f87689d2"
+    },
+    {
+      "path": "humandesign/AGENTS.md",
+      "blob": "15efee1556a0a44ea2b6e4af0596a7e0cb8c24c3"
+    },
+    {
+      "path": "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+      "blob": "c787b0568a25f796b10e9e1eb856859027a330b2"
+    }
+  ],
+  "active_contract": [
+    {
+      "rule": "source-interpretation-provenance",
+      "trigger": "historical text extraction",
+      "required": "Preserve source words and qualifications separately from modern interpretation; original image checks for tables/symbols and ambiguous OCR; no secret person inputs.",
+      "failure": "Strong claim unsupported by located passage or inferred rule represented as Lilly",
+      "repair": "Narrow/relabel and retain ambiguity",
+      "enforcement": "semantic"
+    },
+    {
+      "rule": "source-audit-checkpoint",
+      "trigger": "resume existing multipass task",
+      "required": "Retain all61 completed Ptolemy sections; new source independent IDs; no runtime model promotion",
+      "failure": "Retreading chapters or replacing prior evidence",
+      "repair": "restore exact baseline",
+      "enforcement": "mechanical"
+    },
+    {
+      "rule": "verification-and-recovery",
+      "trigger": "repository mutation",
+      "required": "New isolated batch and tests; serialize expected-head publication; count actual test runs only",
+      "failure": "stale branch overwrite or unverified write",
+      "repair": "reconcile current ref before mutation",
+      "enforcement": "mechanical"
+    },
+    {
+      "rule": "owner-delivery",
+      "trigger": "usable audit results",
+      "required": "Give actual report/packet; place locally when authorized available; readable summary not repo navigation",
+      "failure": "artifact location claimed without verified file",
+      "repair": "verify or use actual sandbox files",
+      "enforcement": "mechanical"
+    },
+    {
+      "rule": "parent-continuation",
+      "trigger": "available reading next step",
+      "required": "Source reading/extraction beyond intake before pass delivery; no owner personality request or invented wait",
+      "failure": "Only plan/source inventory delivered without next executable work",
+      "repair": "execute reading and persist exact next range",
+      "enforcement": "semantic"
+    }
+  ],
+  "access_notes": [
+    "Conversation-shell network DNS failed; container download failed; source recovered by native Remote Desktop file read plus bounded read-only PDF analysis on named owner computer. No prior denied shell-bootstrap payload retried."
+  ],
+  "predictions_added": 0,
+  "models_promoted": 0,
+  "phase_result": "I-VII actual reading/extraction and worked-example computation performed, not merely intake or planning.",
+  "publication_status": "READY_FOR_SERIALIZED_EXPECTED_HEAD_PUBLICATION",
+  "continuation": "Next source chapter retained; no unattended work asserted. Multiple-pass owner authorization remains active.",
+  "gates": {
+    "source_and_qualifiers": "PASS: RULES and UNKNOWN dispositions; no personal history used",
+    "actual_scope_execution": "PASS:91 source records,12house rows,61table rows,3time examples and8daily motions",
+    "tests": "PASS:105 source-reference and34 retained procedure checks on owner host; duplicated reference rerun not counted twice",
+    "preservation": "PASS: exact prior-state backup, protected bytes and tracked-diff allowlist",
+    "delivery": "PENDING: repository publication and verified actual files"
+  }
+}
