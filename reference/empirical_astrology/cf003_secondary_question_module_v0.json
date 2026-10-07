@@ -36,8 +36,9 @@
     "fields": [
       "whether the participant knew their rising sign before the interview",
       "whether the participant had previously received a natal-chart reading",
-      "whether ChatGPT Memory was enabled during the interview"
+      "whether birth/chart/Human Design information was actually visible in the current conversation or authorized imported source before freeze (record source location/type only, never values)"
     ],
-    "prospective_analysis_note": "Before prospective activation, preregister how prior chart familiarity is excluded or stratified rather than deciding after outcomes are seen."
+    "prospective_analysis_note": "Before prospective activation, preregister how prior chart familiarity is excluded or stratified rather than deciding after outcomes are seen.",
+    "memory_note": "Memory status is not collected for this Custom GPT workflow. Do not ask the participant to change a Memory setting; record only target information actually visible in the authorized interview context."
   }
 }

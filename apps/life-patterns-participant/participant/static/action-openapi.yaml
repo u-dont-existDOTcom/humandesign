@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Life Patterns Independent Review Pilot",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "description": "Asynchronous independent review and exact-source submission for the development pilot."
   },
   "servers": [
@@ -15,7 +15,7 @@
       "post": {
         "operationId": "startLifePatternsReview",
         "summary": "Queue independent review before primary freeze",
-        "description": "Queue the exact unfrozen candidate with review_protocol fast-batch-v1. Preserve its private review ID. Show the returned stage estimate and recommended_check_after_seconds. First questions and full final review are separate stages; queued is not ready.",
+        "description": "Before calling, explain that one Allow sends the exact unfrozen record now; later clarification and final-storage calls are separate. Then say exactly: Please click Allow on this tool call to continue. Preserve the returned review ID.",
         "security": [
           {
             "bearerAuth": []
@@ -104,7 +104,7 @@
       "post": {
         "operationId": "submitLifePatternsClarification",
         "summary": "Save an exact clarification answer or explicit skip",
-        "description": "Send the answer with the exact clarification_id issued by the review. Reuse operation_id and body for a retry. Set skipped only for an explicit participant skip. This saves the response and queues a new independent pass; use recommended_check_after_seconds to tell the participant when to return.",
+        "description": "Before calling, explain that this saves one clarification and a later status-retrieval call remains; another permission card may appear. Say exactly once: Please click Allow on this tool call to continue. Reuse operation_id on retries.",
         "security": [
           {
             "bearerAuth": []
@@ -214,7 +214,7 @@
       "post": {
         "operationId": "submitLifePatternsRecords",
         "summary": "Submit independently reviewed frozen records",
-        "description": "After ready, participant review and primary freeze, ask the three CF-003 questions and freeze them separately. Submit the ready review ID and both exact records. A successful receipt confirms storage, not scientific validity.",
+        "description": "Before calling, explain this is one final storage call and one Allow is expected. Say exactly once: Please click Allow on this tool call to continue. Send both exact frozen records as raw JSON strings, without markdown.",
         "security": [
           {
             "bearerAuth": []
@@ -258,7 +258,7 @@
       "post": {
         "operationId": "submitLifePatternsClarificationBatch",
         "summary": "Save an ordered batch of exact answers or skips",
-        "description": "Ask supplied questions one at a time locally. Send exact answers/skips in batch order with the issued batch_id. An answered prefix may be sent early if a later question no longer fits; unasked remainder is invalidated, not skipped. Reuse operation_id and identical body on retries.",
+        "description": "Before calling, explain this round has two calls: save answers now, retrieve later on return. Say: Please click Allow on this tool call to continue. After queued/processing, end the turn; do not call status automatically.",
         "security": [
           {
             "bearerAuth": []
@@ -643,6 +643,38 @@
                           "quote"
                         ]
                       }
+                    },
+                    "measured_distinction": {
+                      "type": "string"
+                    },
+                    "measurement_labels": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "source_measurements": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "turn_id": {
+                            "type": "string"
+                          },
+                          "measurement_label": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "turn_id",
+                          "measurement_label"
+                        ]
+                      }
+                    },
+                    "split_for_display": {
+                      "type": "boolean"
                     }
                   },
                   "required": [
@@ -651,7 +683,11 @@
                     "conditions",
                     "time_frame",
                     "relationship_context",
-                    "source_quotes"
+                    "source_quotes",
+                    "measured_distinction",
+                    "measurement_labels",
+                    "source_measurements",
+                    "split_for_display"
                   ]
                 }
               },
@@ -772,6 +808,44 @@
                 "type": "null"
               }
             ]
+          },
+          "action_forecast": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "phase": {
+                "type": "string"
+              },
+              "known_service_calls_before_next_stable_result": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "permission_cards_may_appear": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "low": {
+                    "type": "integer"
+                  },
+                  "high": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "low",
+                  "high"
+                ]
+              },
+              "participant_message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "phase",
+              "known_service_calls_before_next_stable_result",
+              "permission_cards_may_appear",
+              "participant_message"
+            ]
           }
         },
         "required": [
@@ -784,7 +858,8 @@
           "clarification",
           "error",
           "review_summary",
-          "source_review_status"
+          "source_review_status",
+          "action_forecast"
         ]
       },
       "Submission": {
@@ -799,22 +874,22 @@
             "type": "string",
             "pattern": "^R-[a-f0-9]{32}$"
           },
-          "primary_record": {
-            "type": "object",
-            "additionalProperties": true,
-            "description": "Exact frozen primary source, plus participant_review.summary_shown=true and confirmed=true."
+          "primary_record_json": {
+            "type": "string",
+            "maxLength": 1500000,
+            "description": "Exact frozen primary record serialized as one raw JSON object string; no markdown fences, summary or truncation."
           },
-          "cf003_record": {
-            "type": "object",
-            "additionalProperties": true,
-            "description": "Separate frozen three-question CF-003 record linked to this exact primary."
+          "cf003_record_json": {
+            "type": "string",
+            "maxLength": 500000,
+            "description": "Exact frozen CF-003 secondary record serialized as one raw JSON object string; no markdown fences, summary or truncation."
           }
         },
         "required": [
           "research_use_consented",
           "review_id",
-          "primary_record",
-          "cf003_record"
+          "primary_record_json",
+          "cf003_record_json"
         ]
       },
       "Receipt": {

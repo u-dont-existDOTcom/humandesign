@@ -62,3 +62,15 @@ def test_release_zip_contains_required_cf003_bundle() -> None:
         manifest = json.loads(archive.read(manifest_name))
         assert "ask all three CF-003 questions before chart reveal" in instructions
         assert manifest["secondary_modules"]["cf003"]["required_in_this_bundle"] is True
+
+
+def test_cf003_metadata_records_actual_exposure_not_memory_setting():
+    module_path = (
+        ROOT / "reference/empirical_astrology/cf003_secondary_question_module_v0.json"
+    )
+    module = json.loads(module_path.read_text())
+    metadata = module["post_freeze_metadata"]
+    joined = " ".join(metadata["fields"] + [metadata.get("memory_note", "")])
+    assert all("ChatGPT Memory" not in field for field in metadata["fields"])
+    assert "actually visible" in joined
+    assert "Memory status is not collected" in joined

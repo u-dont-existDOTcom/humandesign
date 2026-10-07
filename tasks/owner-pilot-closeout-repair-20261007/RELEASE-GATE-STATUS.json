@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "task": "owner-pilot-closeout-repair-20261007",
+  "integration_base_sha": "6d5778b0dc02fa74a4ed7313a41961e86f3de4ed",
+  "participant_tests": {
+    "passed": 204,
+    "failed": 0
+  },
+  "repository_tests": {
+    "passed": 1021,
+    "skipped": 6,
+    "failed": 0
+  },
+  "scoped_changed_file_lint": "pass_with_documented_legacy_E501_UP035_SIM105_exclusions",
+  "declared_root_lint": {
+    "status": "preexisting_failure_outside_changed_root_scope",
+    "reported_errors": 883,
+    "changed_root_scope_findings": 0
+  },
+  "mypy_source_files": 220,
+  "mypy": "pass",
+  "git_diff_check": "pass",
+  "task_acceptance": {
+    "status": "preexisting_incomplete",
+    "missing_known_month_oracle_artifacts": 5,
+    "project_venv_missing": true
+  },
+  "uda_unittests": {
+    "passed": 141,
+    "failed": 0
+  },
+  "uda_audit": "pass_no_findings",
+  "private_exact_review_readback": {
+    "status": "ready",
+    "summary_entries": 6,
+    "entries_labeled": 6,
+    "entries_split_for_display": 1,
+    "action_forecast_known_calls": 1,
+    "review_mutated": false
+  },
+  "gpt_update_packet": "Life-Patterns-GPT-owner-pilot-closeout-repair-2026-10-07.zip",
+  "gpt_update_packet_sha256": "2212dfe4880ceb01dfc0556b4df548c14860d8505f286fbe6c3672cf526ad98a",
+  "private_data_in_package": false,
+  "deployment": "pending",
+  "local_reviewer_install": "pending",
+  "custom_gpt_editor_update": "owner_only_pending"
+}

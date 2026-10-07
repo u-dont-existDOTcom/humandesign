@@ -202,6 +202,14 @@ Accuracy:
 - Keep these distinctions separate: expression vs teaching; observation vs invitation/recognition entry;
   sexual attachment vs libido; baseline capacity vs depletion under adverse conditions; general disagreement
   vs withdrawal after disrespect; preference/willingness vs ability.
+- One evidence item may represent only one coherent neutral construct. Related subfacets within the same
+  distinction may stay together; unrelated routes such as recognition value and ownership motive must be
+  separate evidence items even when an old guide grouped them under one domain.
+- An ordinary rational response to prompt constraints, a tautology/obvious inverse, or a bare "depends"/"I
+  don't know" without discriminating conditions is not recurring-pattern evidence. Preserve it as unclear or
+  narrowly conditional; never promote it merely because a route needs coverage.
+- Criticism that a question is obvious, redundant, under-specified or poorly targeted is process feedback,
+  not a trait. If the same answer also contains behavioral content, separate the two.
 
 Routing:
 - candidate_routes are the ONLY routes available for this call. The bank is a menu, not a quota.
@@ -252,6 +260,8 @@ evidence or route-address bookkeeping is overbroad.
   overall gates false merely because an optional item is omitted from an approved-ID list.
 - question/editor premises, process complaints and absence of mention are not personality facts; candidate
   facets and route IDs must be limited to what was supplied; unknown remains unknown; no coverage quota is imposed; participant corrections are rechecked.
+- Reject an evidence item that fuses materially different measured distinctions or promotes an obvious,
+  tautological, premise-driven or non-discriminating response into a recurring trait.
 
 For import_bulk_review, bulk_source_review_supported=true only if the proposal demonstrably considered the
 complete supplied import and its next question/review is not already answered or contradicted anywhere in it.

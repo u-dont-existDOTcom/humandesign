@@ -71,7 +71,7 @@ Do not run a substantive owner interview in Builder Preview. Use a normal saved 
 
 ## Owner hotfix 2026-10-02.2 — approval explanation and durable review handle
 
-The participant must be warned before the first Railway Action that ChatGPT will show one or more external-action permission cards and that **Allow once** is the expected approval for each step they choose to continue. Do not promise an exact count.
+Before the first Railway Action, warn that ChatGPT will show external-action permission cards and **Allow once** is expected for each chosen step. Do not promise one lifetime total, but state the known current phase: a clarification round normally saves the answer batch and later retrieves status (a second card may appear); final storage is one call.
 
 Before queueing, create both `life-patterns-candidate-backup.json` and `life-patterns-review-handoff.json`; the latter preserves the exact three-field request including `request_id`. After queue success preserve `life-patterns-review-receipt.json` when file creation is available. If `review_id` is lost later, replay the exact saved handoff body; server idempotency returns the existing review rather than starting another one.
 

@@ -93,6 +93,25 @@ def active_participant_purpose(route_id: str) -> str | None:
     return None
 
 
+def lineage_participant_purpose(
+    route_id: str | None, routes_by_id: dict[str, dict] | None = None
+) -> str | None:
+    """Return one participant-safe purpose for a historical/active route lineage."""
+
+    if not route_id:
+        return None
+    base = source_route_id(str(route_id))
+    for route in _policy()[0]["questions"]:
+        if source_route_id(str(route.get("source_route_id") or "")) == base:
+            return participant_purpose(route)
+    for candidate in (str(route_id), base):
+        route = (routes_by_id or {}).get(candidate)
+        if route is not None:
+            return participant_purpose(route)
+    curated = str(_purpose_overlay().get(str(route_id), "")).strip()
+    return curated or None
+
+
 def route_lineage_ids(route_id: str) -> set[str]:
     """Return historical + active policy IDs for one substantive route lineage."""
 

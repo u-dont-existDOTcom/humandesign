@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import secrets
 from dataclasses import dataclass
@@ -21,6 +22,7 @@ from .domain import (
     load_instrument,
     new_state,
     normalize_state_route_ids,
+    resolved_turn_route_id,
     strict_json,
     target_exposure,
     utc,
@@ -197,8 +199,12 @@ class WorkerReviewResult(Body):
 class GptSubmission(Body):
     research_use_consented: Literal[True]
     review_id: str | None = Field(default=None, pattern=r"^R-[a-f0-9]{32}$")
-    primary_record: dict
-    cf003_record: dict
+    # Object fields remain backward-compatible for internal clients. The Custom GPT
+    # Action uses JSON strings because free-form object parameters were not exposed.
+    primary_record: dict | None = None
+    cf003_record: dict | None = None
+    primary_record_json: str | None = Field(default=None, min_length=2, max_length=1_500_000)
+    cf003_record_json: str | None = Field(default=None, min_length=2, max_length=500_000)
 
 
 class GptReviewedSubmission(GptSubmission):
@@ -249,13 +255,74 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
     store = Store(settings.database, settings.encryption_key)
     instrument = instrument or load_instrument(settings.authority)
     version = store.pin_instrument(instrument)
-    from .question_policy import activate, participant_purpose
+    from .question_policy import (
+        activate,
+        lineage_participant_purpose,
+        participant_purpose,
+    )
 
     migration_state = new_state(version, settings.model, settings.effort)
     activate(migration_state)
     migration_routes = {
         str(route["id"]): route for route in bank(instrument, migration_state)["questions"]
     }
+    migration_route_ids = set(migration_routes)
+    evidence_guide_by_facet = {
+        str(row.get("facet_id")): row
+        for row in json.loads(instrument["EVIDENCE-GUIDE-v7.json"])
+        if row.get("facet_id")
+    }
+
+    def public_review_entry(entry: dict, worker_state: dict) -> dict:
+        turns_by_id = {
+            str(turn.get("turn_id")): turn for turn in worker_state.get("turns", [])
+        }
+        source_measurements = []
+        labels = []
+        for quote in entry.get("source_quotes", []):
+            turn_id = str(quote.get("turn_id") or "")
+            turn = turns_by_id.get(turn_id, {})
+            route_id = resolved_turn_route_id(
+                turn, migration_route_ids, allow_historical_turn_id=True
+            )
+            label = lineage_participant_purpose(route_id, migration_routes)
+            if label:
+                source_measurements.append(
+                    {"turn_id": turn_id, "measurement_label": label}
+                )
+                if label not in labels:
+                    labels.append(label)
+        if not labels:
+            for facet_id in entry.get("candidate_facet_ids", []):
+                facet = evidence_guide_by_facet.get(str(facet_id), {})
+                for route_id in facet.get("question_routes", []):
+                    label = lineage_participant_purpose(str(route_id), migration_routes)
+                    if label and label not in labels:
+                        labels.append(label)
+        supported_scope = str(entry.get("supported_scope") or "").strip()
+        if not labels and supported_scope:
+            labels.append(supported_scope)
+        if not labels:
+            labels.append("the specific recurring pattern supported by these quoted answers.")
+        return {
+            key: entry.get(key)
+            for key in (
+                "evidence_id",
+                "observation",
+                "conditions",
+                "time_frame",
+                "relationship_context",
+                "source_quotes",
+            )
+        } | {
+            "measured_distinction": supported_scope or labels[0],
+            "measurement_labels": labels,
+            "source_measurements": source_measurements,
+            "split_for_display": (
+                len(labels) > 1
+                and "D19.status_ownership" in entry.get("candidate_facet_ids", [])
+            ),
+        }
     retired_routes = {
         route_id
         for route_id, route in migration_routes.items()
@@ -481,17 +548,7 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             if payload.get("status") in {"error", "resource_limited"}
             else None,
             "review_summary": [
-                {
-                    key: entry.get(key)
-                    for key in (
-                        "evidence_id",
-                        "observation",
-                        "conditions",
-                        "time_frame",
-                        "relationship_context",
-                        "source_quotes",
-                    )
-                }
+                public_review_entry(entry, payload.get("worker_state") or {})
                 for entry in (payload.get("worker_state") or {}).get("evidence", [])
                 if entry.get("review_status") == "independent_semantic_admission_passed"
             ]
@@ -519,8 +576,48 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         return expected
 
     def validate_gpt_submission(body):
-        primary = body.primary_record
-        secondary = body.cf003_record
+        def exact_record(object_value, json_value, label, json_field):
+            try:
+                parsed = strict_json(json_value) if json_value is not None else None
+            except ValueError as exc:
+                code = (
+                    "dict_type"
+                    if str(exc) == "JSON must contain one object"
+                    else "json_invalid"
+                )
+                raise RequestValidationError(
+                    [
+                        {
+                            "type": code,
+                            "loc": ("body", json_field),
+                            "msg": "Invalid JSON record transport.",
+                            "input": None,
+                        }
+                    ]
+                ) from exc
+            if object_value is None and parsed is None:
+                raise RequestValidationError(
+                    [
+                        {
+                            "type": "missing",
+                            "loc": ("body", json_field),
+                            "msg": f"{label} is required.",
+                            "input": None,
+                        }
+                    ]
+                )
+            if object_value is not None and parsed is not None:
+                if canonical(object_value) != canonical(parsed):
+                    raise ValueError(f"{label} object and JSON string do not match.")
+                return object_value
+            return object_value if object_value is not None else parsed
+
+        primary = exact_record(
+            body.primary_record, body.primary_record_json, "Primary record", "primary_record_json"
+        )
+        secondary = exact_record(
+            body.cf003_record, body.cf003_record_json, "CF-003 record", "cf003_record_json"
+        )
         if primary.get("schema") != "life-patterns-full-survey-participant-export-v2":
             raise ValueError("Primary record schema is not the current Life Patterns export.")
         if (primary.get("consent") or {}).get("research_use_consented") is not True:

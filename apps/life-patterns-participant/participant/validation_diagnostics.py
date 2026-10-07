@@ -18,6 +18,8 @@ SAFE_FIELDS = frozenset(
         "review_id",
         "primary_record",
         "cf003_record",
+        "primary_record_json",
+        "cf003_record_json",
         "answer_text",
         "clarification_id",
         "operation_id",
@@ -77,11 +79,34 @@ def safe_validation_diagnostic(errors: list[dict[str, Any]]) -> dict[str, Any]:
         code = item.get("type", "invalid_field")
         if code not in HINTS:
             code = "invalid_field"
+        json_record_transport = any(
+            part in {"primary_record_json", "cf003_record_json"} for part in path
+        )
+        hint = HINTS.get(code, "Check this field against the published schema.")
+        if json_record_transport:
+            hint = {
+                "missing": (
+                    "The exact frozen record JSON string is missing. Use the corresponding "
+                    "saved record; never reconstruct or summarize it."
+                ),
+                "json_invalid": (
+                    "This field must contain one valid raw JSON object string, without "
+                    "markdown fences or truncation. Preserve all source words."
+                ),
+                "dict_type": (
+                    "This string must decode to one complete JSON object, not a list or "
+                    "scalar. Preserve the exact frozen record."
+                ),
+                "string_too_long": (
+                    "The exact record exceeds the published transport limit. Never truncate "
+                    "it; keep the file intact and report the diagnostic."
+                ),
+            }.get(code, hint)
         fields.append(
             {
                 "path": ".".join(path),
                 "code": code,
-                "hint": HINTS.get(code, "Check this field against the published schema."),
+                "hint": hint,
             }
         )
     summary = "; ".join(f"{field['path']}: {field['code']}" for field in fields[:3])
