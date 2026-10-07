@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "exclusive_writer": true,
+  "owned_branch": "fix/question-purpose-conditional-20261007",
+  "integration_branch": "chat/hybrid-voice-cost-optimization-20260928",
+  "scope": "Suppress redundant question-purpose explanations while retaining them for opaque scenarios/follow-ups.",
+  "completion_note": "Corrected conditional-purpose presentation and built superseding same-GPT update packet; backend redeploy not required."
+}
