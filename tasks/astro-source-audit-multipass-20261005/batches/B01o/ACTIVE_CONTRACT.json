@@ -1,0 +1,47 @@
+{
+  "batch_id": "B01o",
+  "date_utc": "2026-10-07",
+  "start_clock_utc": "2026-10-07T02:09:02Z",
+  "base_commit": "ce054e8334bd23b56c962e68f27d2005eeb002c7",
+  "uda_commit": "991c7a08b7d9f831327d9075175b8d70c34c37e6",
+  "parent_status": "OPEN",
+  "authority": "Owner continue under source-complete multi-pass audit; save work in HumanDesign",
+  "scope": "Restore hash-verified B01n records, synchronize lagged progress mirrors, run recovered reference suite, then read/extract English Ptolemy II.1-II.2 and supplied notes. Further contiguous reading may be checkpointed separately.",
+  "exclusions": [
+    "No Hale or other participant records",
+    "No raw books/OCR/images committed",
+    "No modification of frozen predictions/fitted rules/runtime",
+    "No modern ethnic/religious/clinical classifier",
+    "No new OCR unless actual image reading fails"
+  ],
+  "active_lessons": [
+    {
+      "source": "patterns/source-interpretation-provenance.md",
+      "required": "Source main text vs Robbins notes vs our inference separately; conditions/variants retained; image checks for ambiguous text",
+      "failure": "Unanchored or upgraded claim",
+      "repair": "Recheck page and narrow/correct the record",
+      "enforcement": "semantic"
+    },
+    {
+      "source": "patterns/context-compaction-resilience.md",
+      "required": "Recover latest actual Git state and complete unfinished integration without rereading completed chapters",
+      "failure": "Double count or lost mirror",
+      "repair": "Hash-preserving recovery and checkpoint sync",
+      "enforcement": "mechanical"
+    },
+    {
+      "source": "patterns/task-time-lesson-activation.md",
+      "required": "Check actual delivered records against active scope",
+      "failure": "A receipt substitutes for evidence",
+      "repair": "Run checks and correct claims",
+      "enforcement": "semantic"
+    },
+    {
+      "source": "patterns/human-readable-operational-references.md",
+      "required": "Deliver actual report and packet, locally when available; verify Git writes",
+      "failure": "Only repository navigation or unsupported completion claim",
+      "repair": "Materialize and read back",
+      "enforcement": "mechanical"
+    }
+  ]
+}

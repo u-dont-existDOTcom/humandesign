@@ -25,7 +25,7 @@
     {
       "id": "P2",
       "title": "Map every section",
-      "status": "PTOLEMY_61_INDEXED;47_ENGLISH_SECTIONS_READ_MAPPED",
+      "status": "PTOLEMY_61_INDEXED;50_ENGLISH_SECTIONS_READ_MAPPED",
       "output": [
         "SECTION_DISCOVERY.json"
       ],
@@ -34,7 +34,7 @@
     {
       "id": "P3",
       "title": "Read and extract conditional rules",
-      "status": "ENGLISH_I_III_COMPLETE_AND_IV1_IV9;630_SOURCE_RECORDS;REMAINDER_OPEN",
+      "status": "ENGLISH_I_III_IV_AND_II1_II2_COMPLETE;745_RECORDS;REMAINDER_OPEN",
       "output": [
         "per-source RuleSpecs and unresolved-term ledger"
       ],
@@ -43,7 +43,7 @@
     {
       "id": "P4",
       "title": "Reconcile authors and test calculations",
-      "status": "439_SOURCE_REFERENCE_CHECKS;SEVENTEEN_TARGETED_RHETORIUS_COMPARISONS;FULL_RECONCILIATION_PENDING",
+      "status": "550_SOURCE_REFERENCE_CHECKS_PLUS34_METHODOLOGY;TWENTY_TARGETED_COMPARISONS;LATEST_EXECUTION_IN_B01o_VERIFICATION",
       "output": [
         "cross-source comparison and worked-example fixtures"
       ],
@@ -66,7 +66,7 @@
         "PTOLEMY1940_REPRINT1964"
       ],
       "scope": "Book I foundational vocabulary and conditions first; then natal III/IV; Book II separately mundane. All 61 TOC sections remain accounted for.",
-      "next": "Full English IV.10 and both transmitted endings: PDF461/printed437 through PDF483/printed459; stop before Index on PDF485/printed461.",
+      "next": "Full English II.3 from PDF153/printed129 through final city-foundation paragraphs and note1 on PDF185/printed161; stop before II.4 heading (note2 belongs to II.4).",
       "completed_subbatches": [
         {
           "id": "B01",
@@ -173,6 +173,24 @@
           "tests": 64,
           "test_scope": "Source-only typed lookup, caller-qualified logic, selection/fallback handling, role and attribution checks. No mortality, medical, or violence forecast.",
           "targeted_cross_source_comparisons": 3
+        },
+        {
+          "id": "B01n",
+          "scope": "Full English IV.10 and both endings;Rhetorius46/49 and selected54 comparison",
+          "source_records": 78,
+          "new_predictions": 0,
+          "tests": 86,
+          "test_scope": "Exact rational/sign arithmetic, caller-qualified role logic and source integrity; not natal geometry or predictive validity.",
+          "targeted_cross_source_comparisons": 3
+        },
+        {
+          "id": "B01o",
+          "scope": "Full English II.1-II.2 and relevant English notes; B01n lossless restoration and mirror reconciliation",
+          "source_records": 37,
+          "new_predictions": 0,
+          "tests": 25,
+          "test_scope": "Context-bound glossary/taxonomy retrieval, source attribution, unknown handling, scope and artifact integrity; no population or personal prediction.",
+          "targeted_cross_source_comparisons": 0
         }
       ]
     },

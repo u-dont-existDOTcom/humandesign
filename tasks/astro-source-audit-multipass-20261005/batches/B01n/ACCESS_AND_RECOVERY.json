@@ -1,0 +1,17 @@
+{
+  "prior_batch": "B01m",
+  "prior_commit": "fc9b500a21842d1c8f940d8465822f4b0c8b6396",
+  "prior_reading_and_publication_verified": true,
+  "prior_work_repeated": false,
+  "new_batch": "B01n",
+  "source_reading_complete": true,
+  "desktop_sync": "BLOCKED_DESKTOP_CONNECTION",
+  "full_host_test_suite": "NOT_RERUN",
+  "workaround_executed": "Container source analysis/tests and GitHub archival publication",
+  "pending_on_next_execution": [
+    "Materialize B01n archive without overwriting mismatched files.",
+    "Run APPLY_PROGRESS_MIRRORS.py on research worktree to reconcile PASS_PLAN and SECTION_DISCOVERY.",
+    "Run full retained suite plus B01n; record actual count, not a sum of historical runs."
+  ],
+  "next_reading": "B01o:II.1-II.2. Do not reread IV.9/IV.10 merely because their user-facing delivery was interrupted."
+}

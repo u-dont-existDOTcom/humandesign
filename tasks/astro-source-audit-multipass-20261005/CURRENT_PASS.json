@@ -1,8 +1,8 @@
 {
   "task_id": "astro-source-audit-multipass-20261005",
   "parent_status": "OPEN_MULTIPASS_OWNER_AUTHORIZED",
-  "completed": "Source intake; full English Ptolemy Books I/III/IV including both transmitted endings; prior witness qualifications retained",
-  "current": "B01n reading and container checks complete; complete artifacts archived after desktop connection became unavailable",
+  "completed": "Source intake; full English Ptolemy Books I/III/IV including both endings and II.1-II.2; B01n archive restored and progress mirrors synchronized",
+  "current": "B01o English II.1-II.2 complete; previous timing recovery resolved; parent audit OPEN",
   "counts": {
     "files": 13,
     "book_length_files": 9,
@@ -12,10 +12,10 @@
     "full_source_rule_audits_completed": 0,
     "rules_promoted": 0,
     "ptolemy_indexed_sections": 61,
-    "ptolemy_read_sections": 48,
-    "ptolemy_unread_sections": 13,
-    "source_records": 708,
-    "isolated_definition_tests": 525,
+    "ptolemy_read_sections": 50,
+    "ptolemy_unread_sections": 11,
+    "source_records": 745,
+    "isolated_definition_tests": 550,
     "incomplete_book_witnesses": 1,
     "retained_old_preview_files": 1,
     "private_supplement_files": 1,
@@ -41,44 +41,48 @@
     "quality_of_death_conditional_examples": 20,
     "general_planetary_age_rows": 7,
     "topical_timing_origins": 5,
-    "emphasized_ingress_time_levels": 4
+    "emphasized_ingress_time_levels": 4,
+    "ptolemy_book_II_read_sections": 2,
+    "general_context_glossary_entries": 5,
+    "retained_historical_region_portraits": 6
   },
-  "next_batch": "B01o",
+  "next_batch": "B01p",
   "next_source": "PTOLEMY1940_REPRINT1964",
-  "next_range": "English II.1-II.2 from PDF141/printed117; II.2 at PDF145/printed121; stop before II.3 on PDF153/printed129. Historical source scope, no modern demographic classifier.",
-  "next_actor": "Next authorized continuation; restore archive and reconcile mirrors before new reading; no new source upload needed",
+  "next_range": "Full English II.3 from PDF153/printed129 through final city-foundation paragraphs and note1 on PDF185/printed161; stop before II.4 heading (note2 belongs to II.4).",
+  "next_actor": "Next authorized source-audit continuation; no further restoration or upload needed",
   "no_background_run": true,
   "missing_sources_do_not_block_available_batches": true,
-  "last_verified_unit": "IV.10 both English conclusions and relevant notes on PDF483/printed459; II.1-II.3 headings only located",
-  "source_rule_records": 708,
+  "last_verified_unit": "II.2 final paragraph and explanatory note on PDF151/printed127; next II.3 start/end headings located only",
+  "source_rule_records": 745,
   "person_predictions_added": 0,
   "fixed_star_table_entries": 95,
   "source_witness_updates": "SOURCE_WITNESS_UPDATES_20261006.json",
-  "counting_note": "708 source records; table rows are not independent observations.525 cumulative source-test inventory means439 prior plus86 new, not a fresh full-suite result. Current actual local run150; previous full checkpoint473 remains historical.",
+  "counting_note": "745 Ptolemy source records; no independent human observations or predictive successes.550 source-reference tests plus34 methodology tests; actual latest execution is recorded in batches/B01o/VERIFICATION.json.",
   "rhetorius_ocr_recheck": "RHETORIUS_OCR_RECHECK_20261006.json",
   "rhetorius_coverage_claim_scope": "Exact inspected PDF and supplement, not every copy. User OCR remains a reading aid; copy-specific discontinuities acknowledged.",
   "latest_reports": [
-    "batches/B01n/REPORT.md",
-    "batches/B01n/VERIFICATION.json"
+    "batches/B01o/REPORT.md",
+    "batches/B01o/VERIFICATION.json",
+    "batches/B01o/B01n_RECOVERY_VERIFICATION.json"
   ],
   "archived_artifacts": "batches/B01n/B01n-source-audit.json.xz",
   "restore_script": "batches/B01n/RESTORE_BATCH.py",
   "secondary_progress_mirrors": {
-    "status": "PENDING_MATERIALIZATION_AND_GUARDED_REFRESH",
+    "status": "SYNCHRONIZED_THROUGH_B01o",
     "paths": [
       "PASS_PLAN.json",
       "SECTION_DISCOVERY.json"
     ],
-    "explanation": "These two mirrors still carry the previous47-section state; this primary checkpoint and B01n archive are current. Do not repeat completed reading.",
-    "action": "Run materialized batches/B01n/APPLY_PROGRESS_MIRRORS.py; then full repository suite."
+    "explanation": "Both mirrors now contain all completed English sections through II.2; B01n ordinary artifacts have been restored hash-identically.",
+    "action": "No recovery rerun needed; continue first unread unit."
   },
   "stop_admission": {
     "parent_status": "OPEN",
-    "remaining_gap": "All13 BookII chapters; other books; full reconciliation/compilation/evaluation. Desktop full-suite rerun and secondary-mirror materialization remain unperformed.",
-    "next_action": "Restore archived B01n, refresh mirrors and run available full tests; then B01oII.1-II.2.",
-    "authority": "Owner-approved multi-pass audit and continuation.",
-    "executed_this_increment": "78 records,7 age rows,5 topic origins,4 ingress levels,3 targeted comparisons;150 actual local checks (86new+64adjacent). Primary checkpoint and lossless archive saved through working GitHub connection.",
-    "delivery_boundary": "Completed reading increment; desktop authentication prevents host integration/zero-click delivery, but GitHub archive and downloadable full packet provide durable usable results. No unattended work claimed."
+    "remaining_gap": "Eleven BookII chapters, other supplied books, full cross-source reconciliation, compilation and evaluation.",
+    "next_action": "Full English II.3 from PDF153/printed129 through final city-foundation paragraphs and note1 on PDF185/printed161; stop before II.4 heading (note2 belongs to II.4).",
+    "authority": "Owner-authorized multi-pass source audit and current continuation.",
+    "executed_this_increment": "Restored21-member timing archive, refreshed lagged mirrors, ran recovered559-check suite; read/extracted37 new source records with25 new checks and saved first-unread boundary.",
+    "delivery_boundary": "Completed source-reading batch under the existing owner-approved multiple-pass contract; parent remains OPEN and no unattended execution is claimed."
   },
-  "archive_storage": "Four hash-checked base64 ASCII parts under batches/B01n; RESTORE_BATCH.py reconstructs and verifies the original XZ archive and all21 complete source-analysis members."
+  "archive_storage": "Original B01n archive parts retained unchanged. All21 member files now materialized as ordinary inspectable files with matching digests."
 }

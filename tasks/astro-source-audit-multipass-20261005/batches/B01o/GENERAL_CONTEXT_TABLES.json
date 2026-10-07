@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "scope": "Historical text retrieval only; no chart, population or personal classifier",
+  "enquiry_division": {
+    "source_records": [
+      "PT.R64.II.1.R710",
+      "PT.R64.II.1.R711"
+    ],
+    "general": [
+      "whole races",
+      "countries",
+      "cities"
+    ],
+    "genethlialogical": [
+      "individual people"
+    ],
+    "source_priority": "general before individual"
+  },
+  "general_enquiry_axes": {
+    "spatial": {
+      "source_record": "PT.R64.II.1.R712",
+      "adopted": [
+        "whole countries",
+        "cities"
+      ],
+      "reported_variant": {
+        "source_record": "PT.R64.II.1.R713",
+        "second_part": "both countries and cities"
+      }
+    },
+    "circumstance": {
+      "greater_more_periodic": {
+        "source_record": "PT.R64.II.1.R714",
+        "examples": [
+          "wars",
+          "famines",
+          "pestilences",
+          "earthquakes",
+          "deluges"
+        ]
+      },
+      "lesser_more_occasional": {
+        "source_record": "PT.R64.II.1.R715",
+        "examples": [
+          "seasonal temperature",
+          "storm intensity",
+          "heat",
+          "winds",
+          "crops"
+        ]
+      }
+    },
+    "priority_source_record": "PT.R64.II.1.R717",
+    "axes_are_separate": true
+  },
+  "glossary": [
+    {
+      "term": "climes",
+      "context": "II.1_NOTE1",
+      "meaning": "latitudes or general regions determined by latitude",
+      "not_equivalent_by_default": "modern climate classification",
+      "source_record": "PT.R64.II.1.R721"
+    },
+    {
+      "term": "proper regions",
+      "context": "II.1_NOTE2",
+      "meaning": "such as planetary houses (I.17) or terms (I.20-I.21)",
+      "not_equivalent_by_default": "natal angular houses or terrestrial countries",
+      "source_record": "PT.R64.II.1.R722",
+      "examples_not_exhaustive": true
+    },
+    {
+      "term": "transits",
+      "context": "II.1_NOTE3",
+      "meaning": "passage of a heavenly body through the zodiac",
+      "not_equivalent_by_default": "a complete modern natal transit algorithm",
+      "source_record": "PT.R64.II.1.R723"
+    },
+    {
+      "term": "parallels",
+      "context": "II.2_NOTE5",
+      "meaning": "latitude; north or south position",
+      "not_equivalent_by_default": "declination aspect between two planets",
+      "source_record": "PT.R64.II.2.R726"
+    },
+    {
+      "term": "angles",
+      "context": "II.2_NOTE5",
+      "meaning": "east or west position",
+      "not_equivalent_by_default": "ASC/MC/DSC/IC as a universal sense of the word",
+      "source_record": "PT.R64.II.2.R726"
+    }
+  ],
+  "historical_region_portraits": [
+    {
+      "key": "south",
+      "source_record": "PT.R64.II.2.R729",
+      "individual_use_admitted": false,
+      "source_universality_qualification": "PT.R64.II.2.R743"
+    },
+    {
+      "key": "north",
+      "source_record": "PT.R64.II.2.R731",
+      "individual_use_admitted": false,
+      "source_universality_qualification": "PT.R64.II.2.R743"
+    },
+    {
+      "key": "middle",
+      "source_record": "PT.R64.II.2.R732",
+      "individual_use_admitted": false,
+      "source_universality_qualification": "PT.R64.II.2.R743"
+    },
+    {
+      "key": "southern_middle",
+      "source_record": "PT.R64.II.2.R733",
+      "individual_use_admitted": false,
+      "source_universality_qualification": "PT.R64.II.2.R743"
+    },
+    {
+      "key": "east",
+      "source_record": "PT.R64.II.2.R735",
+      "individual_use_admitted": false,
+      "source_universality_qualification": "PT.R64.II.2.R743"
+    },
+    {
+      "key": "west",
+      "source_record": "PT.R64.II.2.R739",
+      "individual_use_admitted": false,
+      "source_universality_qualification": "PT.R64.II.2.R743"
+    }
+  ],
+  "local_modifiers": {
+    "geographical": [
+      "situation",
+      "height",
+      "lowness",
+      "adjacency"
+    ],
+    "examples": [
+      {
+        "factor": "plain country",
+        "tendency": "horsemanship"
+      },
+      {
+        "factor": "sea proximity",
+        "tendency": "seamanship"
+      },
+      {
+        "factor": "rich soil",
+        "tendency": "civilization"
+      }
+    ],
+    "source_records": [
+      "PT.R64.II.2.R740",
+      "PT.R64.II.2.R741",
+      "PT.R64.II.2.R742"
+    ]
+  },
+  "no_individual_or_group_prediction_implemented": true,
+  "no_empirical_validation_claimed": true
+}

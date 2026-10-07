@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "scope": "Source-reference tables only; no native-specific forecasting engine",
+  "natural_ages": [
+    {
+      "planet": "Moon",
+      "source_age_label": "infancy",
+      "duration_years": 4,
+      "nominal_start_year": 0,
+      "nominal_end_year": 4,
+      "source_record": "PT.R64.IV.10.R638",
+      "qualities": [
+        "Supple and unstable body",
+        "Rapid growth",
+        "Usually moist food",
+        "Changing condition",
+        "Unformed or inarticulate soul"
+      ],
+      "scope": "GENERAL_BASELINE_NOT_INDIVIDUAL_PREDICTION",
+      "boundary_status": "Cumulative arithmetic only; initial about-four wording does not supply a precise calendar boundary."
+    },
+    {
+      "planet": "Mercury",
+      "source_age_label": "childhood",
+      "duration_years": 10,
+      "nominal_start_year": 4,
+      "nominal_end_year": 14,
+      "source_record": "PT.R64.IV.10.R639",
+      "qualities": [
+        "Formation of intellect and reasoning",
+        "Elementary learning",
+        "Emergence of individual character and faculties",
+        "Instruction, guidance and first exercises"
+      ],
+      "scope": "GENERAL_BASELINE_NOT_INDIVIDUAL_PREDICTION",
+      "boundary_status": "Cumulative arithmetic only; initial about-four wording does not supply a precise calendar boundary."
+    },
+    {
+      "planet": "Venus",
+      "source_age_label": "youth",
+      "duration_years": 8,
+      "nominal_start_year": 14,
+      "nominal_end_year": 22,
+      "source_record": "PT.R64.IV.10.R640",
+      "qualities": [
+        "Maturation of reproductive passages",
+        "Impulse toward love",
+        "Intense desire and sexual impulse",
+        "Guile and impetuous blindness in the source portrayal"
+      ],
+      "scope": "GENERAL_BASELINE_NOT_INDIVIDUAL_PREDICTION",
+      "boundary_status": "Cumulative arithmetic only; initial about-four wording does not supply a precise calendar boundary."
+    },
+    {
+      "planet": "Sun",
+      "source_age_label": "young manhood",
+      "duration_years": 19,
+      "nominal_start_year": 22,
+      "nominal_end_year": 41,
+      "source_record": "PT.R64.IV.10.R641",
+      "qualities": [
+        "Direction and mastery of activity",
+        "Desire for substance, glory and status",
+        "Movement from playful error toward seriousness, decorum and ambition"
+      ],
+      "scope": "GENERAL_BASELINE_NOT_INDIVIDUAL_PREDICTION",
+      "boundary_status": "Cumulative arithmetic only; initial about-four wording does not supply a precise calendar boundary."
+    },
+    {
+      "planet": "Mars",
+      "source_age_label": "manhood",
+      "duration_years": 15,
+      "nominal_start_year": 41,
+      "nominal_end_year": 56,
+      "source_record": "PT.R64.IV.10.R642",
+      "qualities": [
+        "Severity, cares and troubles of soul/body",
+        "Sense of passing the prime",
+        "Labor toward an undertaking worth noting before the end"
+      ],
+      "scope": "GENERAL_BASELINE_NOT_INDIVIDUAL_PREDICTION",
+      "boundary_status": "Cumulative arithmetic only; initial about-four wording does not supply a precise calendar boundary."
+    },
+    {
+      "planet": "Jupiter",
+      "source_age_label": "elderly age",
+      "duration_years": 12,
+      "nominal_start_year": 56,
+      "nominal_end_year": 68,
+      "source_record": "PT.R64.IV.10.R643",
+      "qualities": [
+        "Renunciation of manual toil, turmoil and risk",
+        "Decorum, foresight and retirement",
+        "Deliberation, counsel and consolation",
+        "Honor, praise and independence with modesty and dignity"
+      ],
+      "scope": "GENERAL_BASELINE_NOT_INDIVIDUAL_PREDICTION",
+      "boundary_status": "Cumulative arithmetic only; initial about-four wording does not supply a precise calendar boundary."
+    },
+    {
+      "planet": "Saturn",
+      "source_age_label": "old age",
+      "duration_years": null,
+      "nominal_start_year": 68,
+      "nominal_end_year": null,
+      "source_record": "PT.R64.IV.10.R644",
+      "qualities": [
+        "Cooling and impediment of bodily and psychic motions",
+        "Diminished impulse, enjoyment, desire and speed",
+        "Decline, weakness and irritability in the historical portrait"
+      ],
+      "scope": "GENERAL_BASELINE_NOT_INDIVIDUAL_PREDICTION",
+      "boundary_status": "Cumulative arithmetic only; initial about-four wording does not supply a precise calendar boundary."
+    }
+  ],
+  "topical_origins": [
+    {
+      "origin": "ASC",
+      "topics": [
+        "body",
+        "journeys abroad"
+      ],
+      "source_record": "PT.R64.IV.10.R651"
+    },
+    {
+      "origin": "Fortune",
+      "topics": [
+        "property"
+      ],
+      "source_record": "PT.R64.IV.10.R652"
+    },
+    {
+      "origin": "Moon",
+      "topics": [
+        "affections of soul",
+        "marriage"
+      ],
+      "source_record": "PT.R64.IV.10.R653"
+    },
+    {
+      "origin": "Sun",
+      "topics": [
+        "dignities",
+        "glory"
+      ],
+      "source_record": "PT.R64.IV.10.R654"
+    },
+    {
+      "origin": "MC",
+      "topics": [
+        "actions",
+        "friendships",
+        "begetting children",
+        "other conduct of life"
+      ],
+      "source_record": "PT.R64.IV.10.R655"
+    }
+  ],
+  "emphasized_ingress_scales": [
+    {
+      "planet": "Saturn",
+      "level": "general",
+      "exclusive": false,
+      "source_record": "PT.R64.IV.10.R679"
+    },
+    {
+      "planet": "Jupiter",
+      "level": "annual",
+      "exclusive": false,
+      "source_record": "PT.R64.IV.10.R680"
+    },
+    {
+      "planet": "Sun",
+      "level": "monthly",
+      "exclusive": false,
+      "source_record": "PT.R64.IV.10.R681"
+    },
+    {
+      "planet": "Mars",
+      "level": "monthly",
+      "exclusive": false,
+      "source_record": "PT.R64.IV.10.R682"
+    },
+    {
+      "planet": "Venus",
+      "level": "monthly",
+      "exclusive": false,
+      "source_record": "PT.R64.IV.10.R683"
+    },
+    {
+      "planet": "Mercury",
+      "level": "monthly",
+      "exclusive": false,
+      "source_record": "PT.R64.IV.10.R684"
+    },
+    {
+      "planet": "Moon",
+      "level": "daily",
+      "exclusive": false,
+      "source_record": "PT.R64.IV.10.R685"
+    }
+  ],
+  "period_conventions": {
+    "ROBBINS_MAIN": {
+      "annual": "one_year_per_sign",
+      "monthly_days_per_sign": "28",
+      "daily_days_per_sign": "7/3",
+      "authority": "adopted English main text; rates disputed in note"
+    },
+    "REPORTED_ALTERNATIVE": {
+      "annual": "one_year_per_sign",
+      "monthly_days_per_sign": "30",
+      "daily_days_per_sign": "5/2",
+      "authority": "paired editorial alternative in Robbins note; monthly30 lacks manuscript support according to note; daily5/2 found in two MSS; not equal authority to main"
+    }
+  },
+  "general_time_roles": [
+    "prorogatory_place",
+    "encounter_lord",
+    "term_lord"
+  ],
+  "ending_witnesses": [
+    {
+      "key": "PARISINUS_2425",
+      "scope": "Full detailed timed outcomes left to judgment of temperament",
+      "source_pages": [
+        483
+      ]
+    },
+    {
+      "key": "MADPROC_CAM",
+      "scope": "Detailed list omitted; skilled combination of astrologer contribution and mixture",
+      "source_pages": [
+        483
+      ],
+      "editorial_note": "Robbins links to the Paraphrase"
+    }
+  ],
+  "no_flat_compatibility_score": true,
+  "no_probability_calibration": true,
+  "no_generic_transit_only_forecast": true
+}

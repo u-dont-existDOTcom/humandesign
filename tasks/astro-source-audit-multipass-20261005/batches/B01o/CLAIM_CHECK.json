@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "review": "Producing conversation point-of-use source check, not independent review",
+  "items": [
+    {
+      "claim": "Both spatial units and event-circumstance classes are separate",
+      "pages": [
+        143
+      ],
+      "status": "SUPPORTED"
+    },
+    {
+      "claim": "Climes/proper regions/transits/parallels/angles are context-specific notes",
+      "pages": [
+        145
+      ],
+      "status": "SUPPORTED; proper-region examples not exhaustive"
+    },
+    {
+      "claim": "Six historical group portraits retained, not modern classifier",
+      "pages": [
+        147,
+        149,
+        151
+      ],
+      "status": "SOURCE_RECORDS_ONLY; no modern empirical claim"
+    },
+    {
+      "claim": "Named middle subgroup and two frankness interpretations belong to commentary",
+      "pages": [
+        149
+      ],
+      "status": "SUPPORTED_WITH_ATTRIBUTION"
+    },
+    {
+      "claim": "Local modifiers and explicit not-every-individual limit",
+      "pages": [
+        151
+      ],
+      "status": "SUPPORTED; prevalence unknown"
+    },
+    {
+      "claim": "Recovery and test counts",
+      "evidence": [
+        "B01n_RECOVERY_VERIFICATION.json",
+        "VERIFICATION.json"
+      ],
+      "status": "PASS; actual recovered559 and final584 observed;25 new checks, no predictive-validity claim"
+    },
+    {
+      "claim": "No protected historical edits",
+      "evidence": "PROTECTED_CONTENT_VERIFICATION.json",
+      "status": "PASS; only four allowed existing progress files changed; all21 recovered timing members retain original digests"
+    }
+  ]
+}

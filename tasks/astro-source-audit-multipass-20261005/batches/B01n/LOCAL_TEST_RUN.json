@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "pytest",
+    "-q",
+    "/mnt/data/astro-source-audit-resume/tasks/astro-source-audit-multipass-20261005/batches/B01n/test_b01n_reference.py",
+    "/mnt/data/astro-source-audit-resume/tasks/astro-source-audit-multipass-20261005/batches/B01l/test_b01l_reference.py"
+  ],
+  "exit_code": 0,
+  "stdout": "........................................................................ [ 48%]\n........................................................................ [ 96%]\n......                                                                   [100%]\n150 passed in 0.12s\n",
+  "stderr": "",
+  "wall_seconds": 1.7268,
+  "new_checks": 86,
+  "available_adjacent_regression_checks": 64,
+  "total_passed": 150,
+  "scope": "Bounded source/reference arithmetic, caller-supplied conditions and artifact integrity. Full repository suite not run in this container."
+}
