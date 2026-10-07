@@ -9,7 +9,7 @@ from __future__ import annotations
 import copy
 from collections.abc import Callable
 
-from .domain import Plan, import_record, new_state, utc, validate_plan
+from .domain import Plan, import_record, new_state, normalize_state_route_ids, utc, validate_plan
 from .shadow_triage import privacy_safe_case_summary, run_shadow_fast_spec_path
 from .store import canonical, digest
 from .question_policy import activate
@@ -58,36 +58,80 @@ class ProgressProvider:
         return self.provider.call(system, payload, schema, model, effort)
 
 
+def _rebuild_source_state(job: dict, instrument: dict, version: str) -> dict:
+    """Rebuild semantic state from immutable source + admitted clarification history."""
+
+    history = job.get("clarification_history") or []
+    state = new_state(version, job["model"], job["effort"])
+    activate(state)
+    import_record(
+        state,
+        job["candidate_record"],
+        "prior_json",
+        instrument,
+        job["candidate_record"].get("collection_mode", "unknown"),
+    )
+    normalize_state_route_ids(state, instrument)
+    state.update(
+        consent=True,
+        consented_at=utc(),
+        phase="ready",
+        gpt_review_answers_processed=len(history),
+    )
+    for index, item in enumerate(history, 1):
+        skipped = item.get("answer_status") == "skipped"
+        tid = f"review-answer-{index:04d}"
+        state["turns"].append(
+            {
+                "turn_id": tid,
+                "sequence": len(state["turns"]) + 1,
+                "turn_source": "import-fast-review-clarification",
+                "canonical_question_id": item.get("route_id"),
+                "route_type": item.get("route_type", "missing_piece_followup"),
+                "id_basis": "server_admitted_question",
+                "question_wording_status": "server_admitted_exact",
+                "question_text": item.get("question_text"),
+                "answer_text": None if skipped else item.get("answer_text"),
+                "answer_status": "skipped" if skipped else "unassessed",
+                "antecedent_turn_ids": item.get("antecedent_turn_ids", []),
+                "conditions": [],
+                "corrections": [],
+                "process_feedback": [],
+                "correction_of": None,
+                "recorded_at": item.get("answered_at_unix"),
+            }
+        )
+        if skipped:
+            state["dispositions"][tid] = {
+                "turn_id": tid,
+                "status": "skipped",
+                "reason": "Participant explicitly skipped.",
+            }
+    state["fast_review"] = {
+        "protocol": PROTOCOL,
+        "stage": "triage",
+        "pending_questions": [],
+        "source_revision": source_revision(job["candidate_sha256"], history),
+        "deferred_audit_pending": bool(history),
+        "final_review_completed": False,
+        "policy_refresh_required": False,
+    }
+    return state
+
+
 def _source_state(job: dict, instrument: dict, version: str) -> dict:
     history = job.get("clarification_history") or []
     prior = job.get("worker_state")
     if prior is None:
         if history:
             raise RuntimeError("fast_history_without_saved_state")
-        state = new_state(version, job["model"], job["effort"])
-        activate(state)
-        import_record(
-            state,
-            job["candidate_record"],
-            "prior_json",
-            instrument,
-            job["candidate_record"].get("collection_mode", "unknown"),
-        )
-        state.update(
-            consent=True, consented_at=utc(), phase="ready", gpt_review_answers_processed=0
-        )
-        state["fast_review"] = {
-            "protocol": PROTOCOL,
-            "stage": "triage",
-            "pending_questions": [],
-            "source_revision": source_revision(job["candidate_sha256"], []),
-            "deferred_audit_pending": False,
-            "final_review_completed": False,
-        }
-        return state
+        return _rebuild_source_state(job, instrument, version)
     state = copy.deepcopy(prior)
     activate(state)
+    normalize_state_route_ids(state, instrument)
     meta = state.get("fast_review") or {}
+    if meta.get("policy_refresh_required"):
+        return _rebuild_source_state(job, instrument, version)
     if meta.get("protocol") != PROTOCOL or state.get("instrument_version") != version:
         raise RuntimeError("fast_review_saved_state_version_mismatch")
     processed = int(state.get("gpt_review_answers_processed", 0))
@@ -163,6 +207,9 @@ def run_fast_review(
     history = job.get("clarification_history") or []
     prior = job.get("worker_state") or {}
     prior_meta = prior.get("fast_review") or {}
+    policy_refresh_required = bool(prior_meta.get("policy_refresh_required"))
+    if policy_refresh_required:
+        prior_meta = {}
     revision = source_revision(job["candidate_sha256"], history)
     # After full synthesis starts, preserve the Engine's own evidence/clarification
     # continuation mechanics. Existing legacy jobs never enter this adapter.
