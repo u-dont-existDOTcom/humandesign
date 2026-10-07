@@ -36,8 +36,8 @@ The Action first queues the unfrozen, chart-blind primary record for independent
 A Custom GPT cannot send a message before the user sends or taps something. When the participant taps a starter or sends any first message, the GPT Instructions require it to immediately:
 - explain the research purpose, that responses may be shared with Joel, and that the chart-blind interview will receive an independent study-AI review before final freeze;
 - say voice or text is fine and the participant may pause, skip, correct, or stop;
-- say birth/chart information will not be requested or used;
-- explain that Railway Action calls may show permission cards from `life-patterns-participant-production.up.railway.app`; immediately before each such call say exactly once **“Please click Allow on this tool call to continue.”** (the UI may label the button **Allow once**);
+- say birth/chart information will not be requested or used, only visible/authorized chat source is considered, and no ChatGPT Memory setting needs to be changed;
+- explain that Railway Action calls may show permission cards from `life-patterns-participant-production.up.railway.app`; give the known phase-local sequence (clarification rounds normally save answers, then later retrieve status; final storage is one call), and immediately before each call say exactly once **“Please click Allow on this tool call to continue.”** (the UI may say **Allow once**);
 - request ONLY research-use consent covering independent review/final submission when needed; say “You are welcome to type or talk.” Do not ask mode or early-life setup questions; earlier-life comparisons default to welcome with skip/opt-out preserved;
 - then begin without requiring another “ready” message.
 

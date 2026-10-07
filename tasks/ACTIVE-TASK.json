@@ -1,13 +1,15 @@
 {
   "schema_version": 1,
-  "taskId": "tendency-first-elicitation-20261006",
-  "status": "completed",
+  "taskId": "owner-pilot-closeout-repair-20261007",
+  "status": "active",
   "exclusive": true,
-  "requiredBranch": "fix/tendency-first-review-20261006-1839",
+  "requiredBranch": "fix/owner-pilot-closeout-repair-20261007",
   "completionCommand": "PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q",
   "suspendedTaskSources": [
-    "tasks/gpt-intro-progress-recovery-20261006/PLAN.md"
+    "completed tendency-first task",
+    "unrelated astrology audit queues",
+    "repository-global roadmap selection"
   ],
-  "goal": "Activate direct usual-pattern elicitation and reject irrelevant scene-completion clarifications while preserving records and skips.",
-  "remaining_owner_action": "Replace Instructions and add TENDENCY-FIRST-GUIDE-v1.json to the existing GPT; retain six prior Knowledge files, Action and credential; select Update."
+  "goal": "Repair the real owner-pilot Life Patterns closeout and submission flow without reconstructing private answers.",
+  "remaining_owner_action": "NONE until a verified same-GPT editor packet is delivered; then apply the private editor update."
 }

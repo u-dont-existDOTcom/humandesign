@@ -526,6 +526,74 @@ def semantic_turns(state: dict) -> list[dict]:
     ]
 
 
+def evidence_routes_coherent(
+    source_quotes: list[Quote],
+    candidate_facet_ids: list[str],
+    turns: dict[str, dict],
+    routes: dict[str, dict],
+    instrument: dict,
+) -> bool:
+    """Reject disconnected tasks while preserving declared coherent multi-route facets."""
+
+    from .question_policy import source_route_id
+
+    resolved = []
+    known = set(routes)
+    for quote in source_quotes:
+        turn = turns.get(quote.turn_id, {})
+        route_id = resolved_turn_route_id(
+            turn, known, allow_historical_turn_id=True
+        )
+        if route_id:
+            base = source_route_id(route_id)
+            if base not in resolved:
+                resolved.append(base)
+    if len(resolved) < 2:
+        return True
+    # Frozen guide authority permits a few deliberately multi-route constructs.
+    # D19 is the owner-observed exception: recognition value and ownership motive
+    # must be reported separately despite the historical composite facet.
+    incoherent_composites = {"D19.status_ownership"}
+    guide = {
+        str(row.get("facet_id")): row
+        for row in json.loads(instrument["EVIDENCE-GUIDE-v7.json"])
+        if row.get("facet_id")
+    }
+    resolved_set = set(resolved)
+    for facet_id in candidate_facet_ids:
+        if facet_id in incoherent_composites:
+            continue
+        authority = guide.get(facet_id, {})
+        facet_routes = {
+            source_route_id(str(route_id))
+            for route_id in authority.get("question_routes", [])
+        }
+        if resolved_set.issubset(facet_routes):
+            return True
+    graph = {route_id: set() for route_id in resolved}
+    for route_id in resolved:
+        route = routes.get(route_id) or routes.get("TF1-" + route_id) or {}
+        contexts = {source_route_id(str(x)) for x in route.get("context_sources", [])}
+        for other in resolved:
+            if other == route_id:
+                continue
+            other_route = routes.get(other) or routes.get("TF1-" + other) or {}
+            other_contexts = {
+                source_route_id(str(x)) for x in other_route.get("context_sources", [])
+            }
+            if other in contexts or route_id in other_contexts:
+                graph[route_id].add(other)
+                graph[other].add(route_id)
+    seen = {resolved[0]}
+    frontier = [resolved[0]]
+    while frontier:
+        current = frontier.pop()
+        for neighbor in graph[current] - seen:
+            seen.add(neighbor)
+            frontier.append(neighbor)
+    return seen == set(resolved)
+
+
 def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str]) -> None:
     turns = {t["turn_id"]: t for t in state["turns"]}
     routes = {q["id"]: q for q in bank(instrument, state)["questions"]}
@@ -592,6 +660,12 @@ def validate_plan(plan: Plan, state: dict, instrument: dict, pending: list[str])
         for q in e.source_quotes:
             if q.turn_id not in turns or q.quote not in (turns[q.turn_id].get("answer_text") or ""):
                 raise ValueError("Evidence quote not found in exact respondent answer.")
+        if not evidence_routes_coherent(
+            e.source_quotes, e.candidate_facet_ids, turns, routes, instrument
+        ):
+            raise ValueError(
+                "One evidence item cannot fuse disconnected measured distinctions; split it."
+            )
     if plan.action == "process" and not pending:
         raise ValueError("No pending import batch remains to process.")
     if plan.action == "review" and not state["turns"]:

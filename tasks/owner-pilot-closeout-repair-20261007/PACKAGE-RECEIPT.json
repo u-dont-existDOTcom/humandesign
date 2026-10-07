@@ -1,0 +1,29 @@
+{
+  "version": "2026-10-07.3-owner-pilot-closeout",
+  "supersedes": [
+    "2026-10-07.1-question-purpose",
+    "2026-10-07.2-question-purpose-conditional"
+  ],
+  "same_existing_gpt": true,
+  "same_existing_review": true,
+  "knowledge_replacements": [
+    "ACTION-HANDOFF-GUIDE-v1.md",
+    "TENDENCY-FIRST-GUIDE-v1.json",
+    "cf003_secondary_question_module_v0.json"
+  ],
+  "action_schema_version": "1.5.0",
+  "existing_bearer_key_changes": false,
+  "private_data_in_package": false,
+  "instructions_strict_linebreak_count": 7922,
+  "files": {
+    "INSTRUCTIONS-life-patterns-voice-interviewer-v2.md": "47d65343a0988a8af169b5c3217cc414133947d08b1c952510ddbf1f01e57368",
+    "knowledge/ACTION-HANDOFF-GUIDE-v1.md": "d0c80c04ebc8aa4aa5cb13ae67af086d3f4c6617acb7ba470a0c19a712bb6d77",
+    "knowledge/TENDENCY-FIRST-GUIDE-v1.json": "3d3ff3709a797662689e1c940dc5bca26282496fabc121d68823bf7033b8ea7d",
+    "knowledge/cf003_secondary_question_module_v0.json": "0e2298e256d98860ae76fb23659bdc99d25cf06e0bd15022271ffda501009301",
+    "ACTION-life-patterns-submission-openapi.yaml": "8767a5d3c5a0400164e6dcd773c01756c1ef92e4150bf3b914c4b17a44fc8dd4",
+    "UPDATE-EXISTING-GPT.md": "97c846981573b03b062fc353a81f07758729965b1edcef1151b79be8a12eaae2"
+  },
+  "archive": "Life-Patterns-GPT-owner-pilot-closeout-repair-2026-10-07.zip",
+  "archive_sha256": "2212dfe4880ceb01dfc0556b4df548c14860d8505f286fbe6c3672cf526ad98a",
+  "archive_bytes": 26586
+}

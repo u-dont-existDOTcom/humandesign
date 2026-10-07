@@ -59,7 +59,7 @@ def test_delivery_rules_are_in_the_shipped_instruction_chain():
     assert "backup and real file link FIRST" in instruction
     assert "Please click Allow on this tool call to continue." in text
     assert text.count("Please click Allow on this tool call to continue.") == 1
-    assert instruction.count("Please click Allow on this tool call to continue.") == 0
+    assert instruction.count("Please click Allow on this tool call to continue.") == 1
     assert "life-patterns-review-handoff.json" in text
     assert "life-patterns-review-receipt.json" in text
     assert "idempotent replay" in text
@@ -75,6 +75,10 @@ def test_delivery_rules_are_in_the_shipped_instruction_chain():
     assert "send any message" in text
     assert "materially useful" in text
     assert "question-count cap" in instruction
+    assert "two external service calls" in text
+    assert "first Allow does not finish the round" in text
+    assert "one final storage call" in text
+    assert "primary_record_json" in text and "cf003_record_json" in text
 
 
 def test_owner_update_checkpoint_rules_are_present():

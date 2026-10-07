@@ -1,0 +1,8 @@
+# Active lesson contract
+
+- **Owner pilot evidence is the product endpoint.** Trigger: repeated UX and semantic failures in a real completed run. Required: fix the observable flow, not just documentation. Failure: the same GPT can still silently wait for a later Allow, show unlabeled evidence, ask obsolete Memory metadata, or omit final records. Repair: consumer-boundary tests plus live readback.
+- **Exact source and privacy.** Required: inspect private owner answers locally, commit no private quotes/identifiers/content hashes, and never reconstruct missing frozen records. Failure: public Git contains source text or a retry invents records. Repair: aggregate-only audit and explicit unresolved recovery state.
+- **Task-time semantic enforcement.** Required: one final evidence item must have one neutral construct, and labels must reflect actual source-route authority. Failure: unrelated observations are fused or a process complaint is called a trait. Repair: split/reject and preserve process feedback separately.
+- **Executable-frontier coherence.** Required: each nonfinal stage tells the participant the exact next external call(s), timing, and whether another permission card may appear. Failure: user can click Allow, leave, and unknowingly stall at another card. Repair: phase-local forecast at the last visible boundary.
+- **Assurance proportionality.** Use focused tests during iteration; full release/deploy gates only after candidate behavior is repaired. Do not run unrelated astronomy assurance.
+- **Continuation.** Diagnosis is nonterminal. Continue through merged/deployed/package-delivered repair unless blocked by a genuine owner-only private GPT-editor step or unavailable exact participant artifact.

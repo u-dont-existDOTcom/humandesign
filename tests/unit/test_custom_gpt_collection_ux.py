@@ -72,3 +72,17 @@ def test_question_purpose_is_conditional_not_redundant():
     assert "Ask returned `question_text` verbatim" in s
     assert "Before EVERY behavioral question" not in s
     assert "scoring/chart targets/diagnostic claims" in s
+
+
+def test_closeout_flow_explains_calls_measurement_labels_and_memory_boundary():
+    s = text("life_patterns_voice_interviewer_v2.md")
+    assert "2 external calls remain in this round" in s
+    assert "END THE TURN" in s
+    assert "never launch the later retrieval or leave a surprise card" in s
+    assert "1 final storage call / 1 expected Allow card" in s
+    assert "Please click Allow on this tool call to continue." in s
+    assert "What this measures:" in s
+    assert "measurement_labels" in s and "split_for_display" in s
+    assert "never ask whether Memory was enabled" in s
+    assert "primary_record_json" in s and "cf003_record_json" in s
+    assert len(s) + s.count("\n") <= 8000

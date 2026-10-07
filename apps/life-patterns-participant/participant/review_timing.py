@@ -35,6 +35,46 @@ ESTIMATE_BASIS = {
 }
 
 
+def action_forecast(status: str) -> dict:
+    if status == "clarification_needed":
+        return {
+            "phase": "clarification_round",
+            "known_service_calls_before_next_stable_result": 2,
+            "permission_cards_may_appear": {"low": 1, "high": 2},
+            "participant_message": (
+                "This clarification round has two external service calls: first save the "
+                "answer batch, then retrieve the updated review after processing. The first "
+                "Allow does not finish the round; another permission card may appear later."
+            ),
+        }
+    if status in {"queued", "processing"}:
+        return {
+            "phase": "review_wait",
+            "known_service_calls_before_next_stable_result": 1,
+            "permission_cards_may_appear": {"low": 0, "high": 1},
+            "participant_message": (
+                "After the suggested wait, one status-retrieval call remains. ChatGPT may "
+                "show another permission card for that call; do not start a second review."
+            ),
+        }
+    if status == "ready":
+        return {
+            "phase": "final_confirmation_and_storage",
+            "known_service_calls_before_next_stable_result": 1,
+            "permission_cards_may_appear": {"low": 1, "high": 1},
+            "participant_message": (
+                "After confirmation and the local three-question secondary module, one final "
+                "storage call remains and one Allow card is expected."
+            ),
+        }
+    return {
+        "phase": status,
+        "known_service_calls_before_next_stable_result": 0,
+        "permission_cards_may_appear": {"low": 0, "high": 0},
+        "participant_message": "No external service call is currently scheduled.",
+    }
+
+
 def review_guidance(payload: dict, *, now: float | None = None) -> dict:
     now = time.time() if now is None else now
     status = payload["status"]
@@ -125,6 +165,7 @@ def review_guidance(payload: dict, *, now: float | None = None) -> dict:
         "worker_status_uncertain": bool(stale or queue_delayed),
         "recommended_check_after_seconds": recommended,
         "wait_guidance": note,
+        "action_forecast": action_forecast(status),
     }
 
 

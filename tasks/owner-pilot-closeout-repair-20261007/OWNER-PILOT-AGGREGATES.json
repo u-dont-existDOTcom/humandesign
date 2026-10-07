@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "privacy": "aggregate_only_no_private_source_or_quotes",
+  "development_participants": 1,
+  "answers_inspected": 79,
+  "explicit_depends_answers": 13,
+  "explicit_uncertainty_answers": 9,
+  "answers_10_words_or_fewer": 31,
+  "answers_5_words_or_fewer": 10,
+  "answers_3_words_or_fewer": 6,
+  "recorded_design_feedback_events": 4,
+  "feedback_route_ids": [
+    "WORKING-METHOD",
+    "ROMANCE-FADE",
+    "B0",
+    "G10"
+  ],
+  "ready_review_entries": 6,
+  "pre_repair_entries_with_participant_measurement_label": 0,
+  "pre_repair_entries_fusing_disconnected_source_tasks": 1,
+  "population_inference_permitted": false,
+  "response_derived_redesign_route_classes": {
+    "premise_or_tautology_risk": [
+      "WORKING-METHOD",
+      "ROOM-EFFECT",
+      "CORRECTION-REASON",
+      "R13",
+      "M11"
+    ],
+    "conditional_without_boundary": [
+      "G09",
+      "G15",
+      "ROUTINE-CHANGE",
+      "M09"
+    ],
+    "answer_presence_not_semantic_sufficiency": [
+      "G04",
+      "STATUS",
+      "M03",
+      "G03",
+      "G02"
+    ],
+    "repeat_only_missing_clause": [
+      "B0"
+    ],
+    "obvious_inverse_or_duplicate": [
+      "ROMANCE-FADE"
+    ]
+  },
+  "blanket_minimum_answer_length_added": false
+}

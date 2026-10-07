@@ -386,6 +386,10 @@ SOURCE-FIRST rule:
 - for preference, intensity, or persistence targets, materially opposed possibilities with no usual
   tendency, selection condition, or settled inclination remain unresolved;
 - contradictory non-superseded answers to materially equivalent route tasks remain unresolved.
+- participant criticism that a prompt is obvious, redundant, under-specified or aimed at the wrong
+  construct is process evidence about the instrument, not a reason to force an answer;
+- when materially different answers would mostly follow ordinary logic already supplied by the prompt,
+  the route lacks useful discrimination and should not be selected merely to obtain a response.
 
 Use source_question_matches only as navigation hints. A hint never proves a gap, and absence of a
 hint proves nothing. Continue the source-first scan after the first gap and return up to three
@@ -429,6 +433,10 @@ For every candidate evaluate exactly these gates:
   than merely adding coverage, richness, ranking, branch detail, or another optional factor;
 - independent_for_batch: the gap can be asked in the current batch without first needing another
   current candidate answered.
+
+material_information_gain must fail when the proposed clarification merely asks for an obvious inverse,
+restates an answered scene, solicits a generic rational response to stipulated constraints, or pressures
+the participant to choose a trait pole after they supplied meaningful context dependence.
 
 Answeredness is judged at the exact frozen route task. One in-scope factor can answer a
 what-matters route. A procedure alone does not answer the deciding factor/meaning unless its
@@ -658,6 +666,8 @@ Each question must:
 - re-name enough of a bound scene for dependent or repair/follow-up questions;
 - for a procedural source answer, ask for the route-requested response after/behind the procedure,
   not for unrelated branch outcomes;
+- acknowledge clauses already supplied and ask only the single missing feeling, threshold, condition or
+  response; never restate the whole scene as though the participant had not answered it;
 - for preference/intensity/persistence gaps, ask the usual tendency or settled inclination within
   the exact bound context, not general persuasion or unrelated disagreement behavior.
 
