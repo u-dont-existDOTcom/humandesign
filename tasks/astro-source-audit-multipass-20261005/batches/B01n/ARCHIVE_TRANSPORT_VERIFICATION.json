@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01n",
+  "archive_sha256": "5b4c2004602e2aa5b187f1b13eb7f552b91179bacfca30b2b7fa3eb31e4c31eb",
+  "archive_bytes": 30120,
+  "member_count": 21,
+  "checks": [
+    {
+      "check": "restore_from_four_parts",
+      "pass": true,
+      "stdout": "Verified 21 members; restored 21 missing files. No runtime/model changes.",
+      "all_21_member_bytes_equal": true
+    },
+    {
+      "check": "idempotent_restore",
+      "pass": true,
+      "stdout": "Verified 21 members; restored 0 missing files. No runtime/model changes."
+    },
+    {
+      "check": "conflict_aborts_before_any_write",
+      "pass": true,
+      "stderr": "Preserve conflicting file: tasks/astro-source-audit-multipass-20261005/batches/B01n/RULES.json"
+    },
+    {
+      "check": "altered_part_rejected_before_materialization",
+      "pass": true,
+      "stderr": "Encoded part digest mismatch"
+    }
+  ],
+  "archive_member_files_changed": false,
+  "interpretation": "Transport/restoration checks only, separate from the150 source/reference checks. No raw sources included."
+}
