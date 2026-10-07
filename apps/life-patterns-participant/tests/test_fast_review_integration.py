@@ -438,3 +438,53 @@ def test_persisted_retired_question_requeues_without_fake_answer_and_rebuilds(
     assert after["status"] == "clarification_needed"
     assert all(q["route_id"] != "G15" for q in after["clarifications"])
     assert store.gpt_review_read(rid)["clarification_history"] == []
+
+
+def test_service_startup_migrates_persisted_retired_question(tmp_path):
+    settings, _, _, _ = setup_submission(tmp_path)
+    settings = replace(settings, fast_review_enabled=True)
+    first_app = create_app(settings, provider=FastFake(), instrument=authority())
+    first_client = TestClient(first_app)
+    rid = start_fast(first_client, settings)["review_id"]
+    store = first_app.state.store
+    payload = store.gpt_review_read(rid)
+    stale_question = {
+        "route_id": "G15",
+        "route_type": "canonical",
+        "question_text": "Synthetic legacy G15 question.",
+        "antecedent_turn_ids": [],
+        "clarification_id": "Q-startup-stale",
+    }
+    state = new_state(payload["instrument_version"], payload["model"], payload["effort"])
+    activate(state)
+    state.update(phase="awaiting_answer", gpt_review_answers_processed=0)
+    state["fast_review"] = {
+        "protocol": PROTOCOL,
+        "stage": "triage",
+        "pending_questions": [{"route_id": "G15"}],
+        "source_revision": source_revision(payload["candidate_sha256"], []),
+        "deferred_audit_pending": False,
+        "final_review_completed": False,
+    }
+    with store.connection() as db:
+        row = db.execute(
+            "SELECT payload FROM gpt_review_jobs WHERE id=?", (rid,)
+        ).fetchone()
+        current = store.decode(row[0])
+        current.update(
+            status="clarification_needed",
+            worker_state=state,
+            pending_clarification=stale_question,
+            pending_clarifications=[stale_question],
+            pending_batch_id="B-startup-stale",
+        )
+        store._save_review(db, current)
+        db.commit()
+
+    second_app = create_app(settings, provider=FastFake(), instrument=authority())
+    assert second_app.state.policy_refresh_count == 1
+    refreshed = second_app.state.store.gpt_review_read(rid)
+    assert refreshed["status"] == "queued"
+    assert refreshed["clarification_history"] == []
+    assert refreshed["pending_clarifications"] == []
+    assert refreshed["worker_state"]["fast_review"]["policy_refresh_required"] is True
