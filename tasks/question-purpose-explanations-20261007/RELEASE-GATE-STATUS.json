@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "task": "question-purpose-explanations-20261007",
+  "integration_base_sha": "0e9a744a1d299a893dffcc690e718df2d2d3133c",
+  "focused_tests": {"passed": 64, "failed": 0},
+  "participant_tests": {"passed": 193, "failed": 0},
+  "repository_tests": {"passed": 1019, "skipped": 6, "failed": 0},
+  "scoped_ruff_excluding_preexisting_E501": "pass",
+  "mypy_source_files": 220,
+  "mypy": "pass",
+  "git_diff_check": "pass",
+  "runtime_question_policy_sha256": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611",
+  "runtime_question_policy_identity_unchanged": true,
+  "existing_pending_clarification_enrichment_regression": "pass_without_replacement_or_history_change",
+  "action_openapi_version": "1.4.0",
+  "gpt_update_packet": "reference/custom_gpt/releases/Life-Patterns-GPT-question-purpose-update-2026-10-07.zip",
+  "gpt_update_packet_sha256": "3c0d8ae07eec628a1791a321b4eac305eab2578c23b7807dae30cbbdbb8e9b87",
+  "deployment": "pending",
+  "custom_gpt_editor_update": "pending"
+}

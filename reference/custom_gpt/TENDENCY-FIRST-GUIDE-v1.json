@@ -12,7 +12,7 @@
     "Legacy v7 questions and evidence retain their original scope. TF1 answers are versioned usual-pattern self-reports; no automatic old-facet or score equivalence is claimed. A TF1 route ID never supplies an old facet. Independently admit a facet only if exact answer content satisfies its actual evidence contract; otherwise retain the observation with candidate_facet_ids=[] rather than discarding it.",
     "Only source-exposed, material ambiguity in a reported pattern can justify a retained context probe. Prefer the participant’s actual context. Never manufacture a new scenario to make a follow-up eligible.",
     "Respect skips, opt-outs and uncertainty. A skipped old item may not be reopened under its new ID or via a dependent variant.",
-    "When explaining a question, name its actual neutral purpose without revealing answer directions or inventing validated diagnostic power. Do not say it has no purpose for understanding the person and then insist they answer it."
+    "Before every participant-facing behavioral question, show its actual neutral person-level purpose. Keep the explanation separate from the exact question wording; do not reveal answer directions, scoring, chart targets, or invent validated diagnostic power."
   ],
   "retired_from_new_elicitation": [
     "A0",
@@ -59,7 +59,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original A0 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how you balance uninterrupted time on your own with seeking company when your time is yours."
     },
     {
       "id": "TF1-G19",
@@ -73,7 +74,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G19 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how you balance helping other people with protecting plans and time you had set aside."
     },
     {
       "id": "TF1-F0",
@@ -87,7 +89,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original F0 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how much you adapt the way you express the same preference to different people."
     },
     {
       "id": "TF1-G05",
@@ -101,7 +104,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G05 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how persuasion tends to work for you when you actually try to change someone’s view or plan."
     },
     {
       "id": "TF1-M11",
@@ -115,7 +119,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original M11 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how you negotiate shared work or costs and look for an arrangement both people can accept."
     },
     {
       "id": "TF1-G06",
@@ -129,7 +134,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G06 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how you enter unassigned group roles—stepping in, offering a contribution, waiting, or another pattern."
     },
     {
       "id": "TF1-G01",
@@ -143,7 +149,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G01 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "your usual way of making sense of messy or conflicting information."
     },
     {
       "id": "TF1-G02",
@@ -157,7 +164,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G02 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how you tailor an explanation once you understand something."
     },
     {
       "id": "TF1-D0",
@@ -171,7 +179,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original D0 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "your tolerance for and interest in repetitive, fine-grained practice."
     },
     {
       "id": "TF1-G10",
@@ -185,7 +194,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G10 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how much you adapt your own working style to a group’s established way of doing things."
     },
     {
       "id": "TF1-M03",
@@ -199,7 +209,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original M03 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how reliably you follow through on small voluntary commitments after initial enthusiasm fades."
     },
     {
       "id": "TF1-B0",
@@ -213,7 +224,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original B0 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how strongly other people’s moods tend to affect your own emotional state."
     },
     {
       "id": "TF1-G15",
@@ -227,7 +239,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G15 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "your usual energy response to different kinds and amounts of activity."
     },
     {
       "id": "TF1-G16",
@@ -241,7 +254,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G16 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "what kinds of meaning or motivation make sustained effort feel worth continuing."
     },
     {
       "id": "TF1-G18",
@@ -255,7 +269,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G18 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "what drives your need for more social contact versus time alone after being with people."
     },
     {
       "id": "TF1-G17",
@@ -269,7 +284,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G17 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "your usual threshold for correcting low-stakes factual errors, and whether practical consequences change that threshold."
     },
     {
       "id": "TF1-STATUS",
@@ -283,7 +299,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original STATUS scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how intrinsically rewarding other people’s recognition is to you when practical benefits are removed."
     },
     {
       "id": "TF1-ROUTINE-CHANGE",
@@ -297,7 +314,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original ROUTINE-CHANGE scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "your preference for novelty versus familiarity when both are genuinely available."
     },
     {
       "id": "TF1-G23",
@@ -311,7 +329,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G23 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "what you naturally notice first in a group when nobody has assigned you a role."
     },
     {
       "id": "TF1-G04",
@@ -325,7 +344,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G04 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how you troubleshoot when an existing method or set of instructions fails."
     },
     {
       "id": "TF1-G22",
@@ -339,7 +359,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G22 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how easily you resume focused attention after an interruption."
     },
     {
       "id": "TF1-M05",
@@ -353,7 +374,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original M05 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "what cues create your sense that something may be off or wrong."
     },
     {
       "id": "TF1-G20",
@@ -367,7 +389,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original G20 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "what you most want extra money or resources to enable in your life."
     },
     {
       "id": "TF1-M01",
@@ -381,7 +404,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original M01 scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how external urgency or pressure affects you when the real deadline has not changed."
     },
     {
       "id": "TF1-PREFER-EXCHANGE",
@@ -395,7 +419,8 @@
       "context_requirement": "Self-contained usual-pattern question; prior source still controls nonredundancy.",
       "admission": "Tendency-first policy: a material unresolved recurring response or preference, not completion of a hypothetical or missing coverage. Check the complete source. Do not re-ask after an adequate general answer, explicit unknown or skip.",
       "interpretation_limit": "Only the person’s reported usual pattern with their conditions and uncertainty. Not an objectively demonstrated trait, skill or diagnostic result. Independently verify any facet against the exact answer and original contract; no automatic equivalence to the original PREFER-EXCHANGE scenario contract.",
-      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration."
+      "context_binding_rule": "Examples illustrate the question and never establish biography, recurrence or independent corroboration.",
+      "participant_purpose": "how inclined you are to keep negotiating when another person rejects your proposed division of work or costs."
     }
   ]
 }

@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import pytest
 from fastapi.testclient import TestClient
 from participant.app import create_app
-from participant.domain import new_state
+from participant.domain import bank, new_state
 from participant.fast_review import PROTOCOL, source_revision
 from participant.question_policy import activate
 from participant.review_timing import review_guidance
@@ -583,3 +583,44 @@ def test_startup_requeues_active_canonical_successor_already_present_in_stripped
     assert refreshed["policy_refresh_reason"] == "persisted_canonical_already_presented"
     assert refreshed["worker_state"]["fast_review"]["policy_refresh_required"] is True
     assert refreshed["review_stage"] == "reconciliation"
+
+
+def test_existing_saved_clarification_gets_purpose_on_read_without_replacement(
+    tmp_path, monkeypatch
+):
+    settings, _, app, client, _, _, _ = setup_fast(tmp_path, monkeypatch)
+    rid = start_fast(client, settings)["review_id"]
+    store = app.state.store
+    payload = store.gpt_review_read(rid)
+    state = new_state(payload["instrument_version"], payload["model"], payload["effort"])
+    activate(state)
+    route = next(row for row in bank(authority(), state)["questions"] if row["id"] == "TF1-G17")
+    old_question = {
+        "route_id": "TF1-G17",
+        "route_type": "missing_piece_followup",
+        "question_text": route["question"],
+        "antecedent_turn_ids": ["e00000094-G17-answer"],
+        "clarification_id": "Q-" + "a" * 32,
+    }
+    with store.connection() as db:
+        row = db.execute("SELECT payload FROM gpt_review_jobs WHERE id=?", (rid,)).fetchone()
+        current = store.decode(row[0])
+        current.update(
+            status="clarification_needed",
+            pending_clarification=old_question,
+            pending_clarifications=[old_question],
+            pending_batch_id="B-existing-g17",
+        )
+        store._save_review(db, current)
+        db.commit()
+
+    before = store.gpt_review_read(rid)
+    assert "participant_purpose" not in before["pending_clarification"]
+    public = view(client, settings, rid)
+    assert public["review_id"] == rid
+    assert public["clarification"]["clarification_id"] == old_question["clarification_id"]
+    assert public["clarification"]["question_text"] == old_question["question_text"]
+    assert "low-stakes factual errors" in public["clarification"]["participant_purpose"]
+    after = store.gpt_review_read(rid)
+    assert after["pending_clarification"] == old_question
+    assert after["clarification_history"] == []

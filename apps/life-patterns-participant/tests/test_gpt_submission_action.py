@@ -8,7 +8,6 @@ from pathlib import Path
 
 from cryptography.fernet import Fernet
 from fastapi.testclient import TestClient
-
 from participant.app import Settings, create_app
 from participant.domain import bank
 from test_participant import Fake, authority
@@ -598,6 +597,9 @@ def test_action_schema_privacy_and_description_limits(tmp_path):
     assert all(len(op["description"]) <= 300 and len(op["summary"]) <= 300 for op in operations)
     assert "claim_id" not in json.dumps(schema)
     assert "review_worker_token" not in json.dumps(schema)
+    clarification = schema["components"]["schemas"]["Clarification"]
+    assert "participant_purpose" in clarification["properties"]
+    assert "participant_purpose" in clarification["required"]
     privacy = client.get("/privacy")
     assert privacy.status_code == 200
     assert "researcher's ChatGPT-authenticated Codex CLI" in privacy.text

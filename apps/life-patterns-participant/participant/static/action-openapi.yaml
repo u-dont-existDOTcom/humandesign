@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Life Patterns Independent Review Pilot",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "Asynchronous independent review and exact-source submission for the development pilot."
   },
   "servers": [
@@ -526,6 +526,10 @@
           "question_text": {
             "type": "string"
           },
+          "participant_purpose": {
+            "type": "string",
+            "description": "Neutral plain-language explanation of the person-level pattern this question is testing; show it immediately before question_text."
+          },
           "antecedent_turn_ids": {
             "type": "array",
             "items": {
@@ -538,6 +542,7 @@
           "route_id",
           "route_type",
           "question_text",
+          "participant_purpose",
           "antecedent_turn_ids"
         ]
       },
