@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "page_images": [
+    {
+      "pdf_page": 451,
+      "printed_page": 427,
+      "render_scale": 1.8,
+      "image_sha256": "c8312aef82b31b6c0d6d2218a155aeaebe4a446b4987135a960903bf26e5514f",
+      "status": "VISUALLY_READ"
+    },
+    {
+      "pdf_page": 453,
+      "printed_page": 429,
+      "render_scale": 1.8,
+      "image_sha256": "99d5d8d61241ab5ff82a66f2fb9577241eeea9f23bfc5cbb4e8b82eb102f8811",
+      "status": "VISUALLY_READ"
+    },
+    {
+      "pdf_page": 455,
+      "printed_page": 431,
+      "render_scale": 1.8,
+      "image_sha256": "9befee48a512af05371e4581af0eae5261e7f0736fa3cd7dc533f80d845188a9",
+      "status": "VISUALLY_READ"
+    },
+    {
+      "pdf_page": 457,
+      "printed_page": 433,
+      "render_scale": 1.8,
+      "image_sha256": "6dce743e5c006f2a2b7fdbc0583a5331521a36b41fa5fbc645172d65c10b61af",
+      "status": "VISUALLY_READ"
+    },
+    {
+      "pdf_page": 459,
+      "printed_page": 435,
+      "render_scale": 1.8,
+      "image_sha256": "e40e9fd51271039decedc759e6ed3640e4e41b09b5cf2b723024fa25925d0d7d",
+      "status": "VISUALLY_READ"
+    },
+    {
+      "pdf_page": 461,
+      "printed_page": 437,
+      "render_scale": 1.8,
+      "image_sha256": "69b18a4c4bdc151a0a1fd9e0302853febb33db3e55f16cef13f43fc99b47134c",
+      "status": "VISUALLY_READ"
+    }
+  ],
+  "readability_corrections": [
+    {
+      "pdf_page": 453,
+      "text_layer": "accident",
+      "image": "occident",
+      "disposition": "Use image. No interpretive emendation."
+    },
+    {
+      "pdf_page": 457,
+      "text_layer": "oppooition / indurations and assorted character corruption",
+      "image": "opposition / indurations",
+      "disposition": "Indurations is present in image and must not be silently replaced by a more expected medical word."
+    },
+    {
+      "pdf_page": 459,
+      "text_layer": "accident",
+      "image": "occident",
+      "disposition": "Image correction; duplicate occident/opposition-to-horoscope wording remains genuinely ambiguous."
+    }
+  ],
+  "image_verified_semantic_ambiguities": [
+    {
+      "pdf_page": 457,
+      "issue": "Ascendant reading in main text versus occident reading attributed to Melanchthon in note",
+      "status": "GENUINE_WITNESS_INTERPRETATION_DIFFERENCE_NOT_OCR"
+    },
+    {
+      "pdf_page": 461,
+      "issue": "together and in this state are in opposition",
+      "status": "GENUINE_RELATION_TARGET_AMBIGUITY_NOT_REPAIRED"
+    }
+  ],
+  "source_images_committed": false
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01m",
+  "review_kind": "SOURCE_ANCHORED_SELF_CHECK_NOT_INDEPENDENT",
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "IV.9 full English and explanatory-note scope completed;59records,47sections,630cumulative.",
+      "support": [
+        "READING_RECEIPT.json",
+        "SECTION_COVERAGE.json",
+        "RULES.json"
+      ],
+      "scope_limit": "Mechanical count and image/read-boundary self-check; not independent interpretation.",
+      "status": "PASS_BOUNDED_SOURCE_SELF_CHECK"
+    },
+    {
+      "id": "C02",
+      "claim": "Selected mechanism/place precedes occupying/approaching-carrier choice.",
+      "support": [
+        "Ptolemy IV.9 PDF451–453 printed427–429;R572–579"
+      ],
+      "scope_limit": "No claim of a complete III.10 or actual chart evaluator.",
+      "status": "PASS_BOUNDED_SOURCE_SELF_CHECK"
+    },
+    {
+      "id": "C03",
+      "claim": "Afflicted Jupiter modifies adverse Saturn/Mars circumstances rather than automatically protecting.",
+      "support": [
+        "Ptolemy IV.9 PDF457,459,461;R602,R622"
+      ],
+      "scope_limit": "Prerequisites preserved; no extrapolation to a named person.",
+      "status": "PASS_BOUNDED_SOURCE_SELF_CHECK"
+    },
+    {
+      "id": "C04",
+      "claim": "Natural branch, its negation, and violent branch are not equivalent Boolean complements.",
+      "support": [
+        "Ptolemy IV.9 PDF455;R592–597"
+      ],
+      "scope_limit": "Reference logic only; modern forensic/medical equivalence not supplied.",
+      "status": "PASS_BOUNDED_SOURCE_SELF_CHECK"
+    },
+    {
+      "id": "C05",
+      "claim": "Affliction/magnitude/kind, burial and location are separate source endpoints.",
+      "support": [
+        "Ptolemy IV.9 PDF455,457,461;R598,R624–630"
+      ],
+      "scope_limit": "No duplicate counting as independent observations.",
+      "status": "PASS_BOUNDED_SOURCE_SELF_CHECK"
+    },
+    {
+      "id": "C06",
+      "claim": "ASC versus occident in the prison example is a real translated-witness distinction.",
+      "support": [
+        "Ptolemy IV.9 PDF457 note1;R603",
+        "SOURCE_PAGE_QC.json"
+      ],
+      "scope_limit": "Not independently adjudicated from manuscripts.",
+      "status": "PASS_BOUNDED_SOURCE_SELF_CHECK"
+    },
+    {
+      "id": "C07",
+      "claim": "Together AND opposition has an unresolved relational target.",
+      "support": [
+        "Ptolemy IV.9 PDF461;R623"
+      ],
+      "scope_limit": "Do not silently emend AND to OR.",
+      "status": "PASS_BOUNDED_SOURCE_SELF_CHECK"
+    },
+    {
+      "id": "C08",
+      "claim": "Rhetorius distinguishes non-public same outcomes from a separate peaceful-only-benefics branch.",
+      "support": [
+        "Rhetorius77 PDF120 printed127",
+        "CROSS_SOURCE_COMPARISONS.json#comparisons"
+      ],
+      "scope_limit": "Different conditions retained; not a prevention/survival inference.",
+      "status": "PASS_BOUNDED_SOURCE_SELF_CHECK"
+    },
+    {
+      "id": "C09",
+      "claim": "Critodemus terms reportedly includedSun and require a separately sourced table.",
+      "support": [
+        "Rhetorius77 PDF119 printed126 note1"
+      ],
+      "scope_limit": "Holden attribution, not a complete independently checked Critodemus table.",
+      "status": "PASS_BOUNDED_SOURCE_SELF_CHECK"
+    },
+    {
+      "id": "C10",
+      "claim": "Earlier artifacts preserved; actual remote tests and publication need executable evidence.",
+      "support": [
+        "VERIFICATION.json",
+        "PROTECTED_CONTENT_VERIFICATION.json"
+      ],
+      "scope_limit": "Only claimed complete after test and publication readback; no independent model review.",
+      "status": "PASS_TESTS_AND_PRESERVATION_VERIFIED;PUBLICATION_READBACK_REQUIRED"
+    }
+  ],
+  "result": "SOURCE_ANCHORED_SELF_CHECK;TESTS_AND_PRESERVATION_VERIFIED;PUBLICATION_NOT_YET_CLAIMED"
+}

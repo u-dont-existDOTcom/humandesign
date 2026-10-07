@@ -1,11 +1,12 @@
 # Current astrology source audit
 
-**Parent OPEN: owner-authorized multi-pass source audit.** Full English Ptolemy Book I (24/24), Book III (14/14) and IV.1-IV.8 are read/extracted. No personal predictions, fitted-model changes or runtime promotion.
+**Parent OPEN: owner-authorized multi-pass source audit.** Full English Ptolemy Book I (24/24), Book III (14/14) and IV.1-IV.9 are read/extracted. No personal predictions, fitted-model changes or runtime promotion.
 
 ## Canonical recovery
 - `tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json` — exact next section and counts.
-- Task `PASS_PLAN.json` and `SECTION_DISCOVERY.json` — five passes;61 indexed Ptolemy sections,46 read,15 unread.
-- Task `batches/B01l/REPORT.md`, `VERIFICATION.json`, `RULES.json`, `ASSOCIATION_TRAVEL_TABLES.json` and comparison/reading receipts — current friendship/travel batch.
+- Task `PASS_PLAN.json` and `SECTION_DISCOVERY.json` — five passes;61 indexed Ptolemy sections,47 read,14 unread.
+- Task `batches/B01m/REPORT.md`, `VERIFICATION.json`, `RULES.json`, `QUALITY_OF_DEATH_TABLES.json` and comparison/reading receipts — current quality-of-death source batch.
+- Prior `batches/B01l/REPORT.md`, `VERIFICATION.json`, `RULES.json`, `ASSOCIATION_TRAVEL_TABLES.json` and comparison/reading receipts — current friendship/travel batch.
 - Prior `batches/B01k/REPORT.md`, `VERIFICATION.json`, `RULES.json`, `RELATIONSHIP_FAMILY_TABLES.json`, `CROSS_SOURCE_COMPARISONS.json` and reading/uncertainty receipts — current marriage/children batch.
 - Prior `batches/B01j/REPORT.md`, `VERIFICATION.json`, `RULES.json`, `EXTERNAL_FORTUNE_TABLES.json`, `CROSS_SOURCE_COMPARISONS.json` and reading/unresolved receipts — current wealth/status/action batch.
 - Prior `batches/B01h/REPORT.md` and `VERIFICATION.json` retain BookIII completion evidence.
@@ -14,12 +15,20 @@
 - Prior batches and Rhetorius OCR/witness receipts are preserved unchanged.
 
 ## Completed; do not repeat
-Previous500 source records plus B01l71 =571. B01l adds10 temporary encounter rows and3 targeted comparisons (14 total). B01k has10 conditional spouse profiles,4 continuity/quality cells and3 targeted comparisons (11 total). B01j has19 occupation branches, five acquisition-channel rows, four honour-basis rows, four sign-form modifier classes and four Moon-Mercury groups covering ten signs. Four new targeted comparisons bring the total to eight. There are15 psychic single/pair profiles with30 placement branches. Nine bodily-description rows, five phase modifiers, four quadrants and seven planetary body-correspondence rows are structured source tables, not independent observations. Earlier95 fixed-star groups, term tables and four targeted Rhetorius comparisons remain separate.375 source/reference checks plus34 methodology checks are expected; the latest verification records the actual run. No predictive validity follows.
+Previous571 source records plus B01m59 =630. B01m adds5 source cause spectra,20 conditional examples and3 targeted comparisons (17 total). B01l adds10 temporary encounter rows and3 targeted comparisons (14 total). B01k has10 conditional spouse profiles,4 continuity/quality cells and3 targeted comparisons (11 total). B01j has19 occupation branches, five acquisition-channel rows, four honour-basis rows, four sign-form modifier classes and four Moon-Mercury groups covering ten signs. Four new targeted comparisons bring the total to eight. There are15 psychic single/pair profiles with30 placement branches. Nine bodily-description rows, five phase modifiers, four quadrants and seven planetary body-correspondence rows are structured source tables, not independent observations. Earlier95 fixed-star groups, term tables and four targeted Rhetorius comparisons remain separate.439 source/reference checks plus34 methodology checks are expected; the latest verification records the actual run. No predictive validity follows.
 
 Rhetorius copy-specific gaps are acknowledged and retained: do not reopen the debate or require another upload. Owner OCR is the private searchable aid; original images govern ambiguous text. BPHS remains Sharma; Primary Directions remains an excerpt/interview. Missing books do not block available tracks. No new OCR is needed.
 
 ## Next executable batch
-**B01m: English IV.9.** Start quality of death at PDF451/printed427 and stop before division of times at PDF461/printed437. Historical source analysis only, no personal death or medical predictions. IV.10 and both transmitted endings remain next; all13 BookII chapters remain separately scheduled.
+**B01n: full English IV.10 and both transmitted endings.** Start division of times on PDF461/printed437; both English conclusions occur on PDF483/printed459. Stop before Index on PDF485/printed461. These boundaries are located only, not yet audited. All13 BookII chapters remain separately scheduled.
+
+## New B01m cautions
+IV.9 depends on III.10 mechanism/place selection: occourse place or occident, then occupants first and first-approaching fallback only when occupants are known absent. Unknown astronomy is not absence; the eighth-house ruler is not an automatic Ptolemaic substitute. Five cause spectra require topical qualification and remain historical categories, not diagnoses. Generic benefic identity is not a protective override; afflicted Jupiter can modify an adverse example’s publicity.
+
+Natural/own classification has positive conditions and a no-qualifying-overcoming exclusion. Anonymous same-sect-domicile gloss is separate. No branch firing is not evidence of the opposite real-world outcome. Affliction, magnitude, kind, multiplicity, burial and geography remain distinct. Saturn’s prison-locator main text says ASC while Melanchthon’s alternative says occident; neither is selected after observing an outcome. The closing together-AND-opposition clause has an unresolved target; do not emend to conjunction-OR-opposition.
+
+Sign groups, constellation forms, and angular positions are not interchangeable. Intensifiers stay separate from necessities. In the adopted Mars/Venus sentence dying because of women differs from dying as murderers of women; never convert to an unconditional violence/personality label. Rhetorius77 uses an alternative Critodemus terms scheme reportedly including Sun; existing term tables cannot substitute. His same-deaths-not-public and peaceful-only-benefics clauses have different antecedents. Chapter57/77 overlap is source reuse, not independent confirmation. Targeted available paragraphs only; no complete Rhetorius77 audit or new personal forecast.
+
 
 ## New B01l cautions
 IV.7 separates lasting affinities/enmities from temporary acquaintances/quarrels; both charts require Sun/Moon/ASC/Fortune roles. Choice, need and pleasure/pain are distinct bases; authority over a relationship and benefit from it have separate determinants. Co-sign/exchange and weaker aspect-only routes are not flattened. About17degrees apart in main text and within17 in Robbins’s note remain distinct; no numerical tolerance or full-chart pair aggregation is frozen.
