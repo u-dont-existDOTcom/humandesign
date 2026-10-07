@@ -16,6 +16,38 @@ from .store import Conflict, canonical
 
 VERSION = "railway-participant-v2.2-cost-hybrid-20260928"
 COLLECTION_MODES = {"railway_text", "chatgpt_voice", "chatgpt_text", "mixed", "unknown"}
+HISTORICAL_ROUTE_ALIASES = {
+    "R07-retest": "R07",
+    "R08-retest": "R08",
+}
+
+
+def _historical_route_from_record(raw: dict) -> str | None:
+    source = raw.get("source")
+    if not isinstance(source, dict):
+        return None
+    value = source.get("historical_question_id")
+    if not isinstance(value, str) or not value.strip():
+        return None
+    value = value.strip()
+    return HISTORICAL_ROUTE_ALIASES.get(value, value)
+
+
+def resolved_turn_route_id(turn: dict, known_route_ids: set[str] | None = None) -> str | None:
+    """Return verified route identity without rewriting historical source bytes."""
+
+    value = turn.get("canonical_question_id")
+    if isinstance(value, str) and value:
+        route_id = HISTORICAL_ROUTE_ALIASES.get(value, value)
+        if known_route_ids is None or route_id in known_route_ids:
+            return route_id
+    original = turn.get("original_record")
+    if isinstance(original, dict):
+        route_id = _historical_route_from_record(original)
+        if route_id and (known_route_ids is None or route_id in known_route_ids):
+            return route_id
+    return None
+
 SOURCES = {
     "INTERVIEW-PROTOCOL-v6.md": "5dc95763f65441d67c87b21116e00d7f2df04223",
     "interviewer-bank-v7.json": "cf6c60ec7206e07ee62b6148549e6d755bef8ac1",
@@ -182,6 +214,11 @@ def import_record(
             "source_fidelity": record.get("source_fidelity"),
             "upstream_evidence_authority": record.get("evidence_authority"),
             "upstream_evidence_admitted": False,
+            "historical_interview_status": record.get("historical_interview_status"),
+            "unrecovered_current_test_gap_present": bool(
+                isinstance(record.get("unrecovered_current_test_gap"), dict)
+                and record["unrecovered_current_test_gap"].get("present") is True
+            ),
             "record_as_received": copy.deepcopy(record),
         }
     )
@@ -229,8 +266,20 @@ def import_record(
             )
         old_id = raw.get("canonical_question_id", raw.get("question_id"))
         recorded = old_id in known
-        exact_id = exact_question_ids.get((q or "").strip()) if not recorded else None
-        resolved_id = old_id if recorded else exact_id
+        historical_id = _historical_route_from_record(raw)
+        historical_recorded = historical_id in known if historical_id else False
+        exact_id = (
+            exact_question_ids.get((q or "").strip())
+            if not recorded and not historical_recorded
+            else None
+        )
+        resolved_id = (
+            str(old_id)
+            if recorded
+            else historical_id
+            if historical_recorded
+            else exact_id
+        )
         turn_role = raw.get("turn_role", "behavioral")
         if turn_role not in {"behavioral", "collection_metadata"}:
             turn_role = "behavioral"
@@ -257,9 +306,16 @@ def import_record(
                 "id_basis": (
                     "recorded"
                     if recorded
+                    else "verified_historical_route"
+                    if historical_recorded
                     else "exact_canonical_question_text"
                     if exact_id
                     else "unknown"
+                ),
+                "historical_question_id": (
+                    raw.get("source", {}).get("historical_question_id")
+                    if isinstance(raw.get("source"), dict)
+                    else None
                 ),
                 "turn_role": turn_role,
                 "route_type": "imported_unknown_route",
@@ -386,6 +442,7 @@ def semantic_turns(state: dict) -> list[dict]:
                 "question_text",
                 "answer_text",
                 "canonical_question_id",
+                "historical_question_id",
                 "question_wording_status",
                 "antecedent_turn_ids",
                 "correction_of",
