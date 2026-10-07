@@ -488,3 +488,98 @@ def test_service_startup_migrates_persisted_retired_question(tmp_path):
     assert refreshed["clarification_history"] == []
     assert refreshed["pending_clarifications"] == []
     assert refreshed["worker_state"]["fast_review"]["policy_refresh_required"] is True
+
+
+def test_startup_requeues_active_canonical_successor_already_present_in_stripped_history(
+    tmp_path,
+):
+    settings, _, _, _ = setup_submission(tmp_path)
+    settings = replace(settings, fast_review_enabled=True)
+    first_app = create_app(settings, provider=FastFake(), instrument=authority())
+    first_client = TestClient(first_app)
+    candidate = {
+        "schema": "life-patterns-full-survey-participant-export-v2",
+        "collection_mode": "chatgpt_text",
+        "historical_interview_status": "completed_under_then_current_protocol",
+        "source_type": "combined_recovered_record",
+        "source_fidelity": "Synthetic verified recovery fixture.",
+        "consent": {"research_use_consented": True},
+        "turns": [
+            {
+                "turn_id": "e00000094-G15-answer",
+                "question_text": "Older worthwhile-work baseline wording.",
+                "answer_text": "Generally good unless tired.",
+            }
+        ],
+        "participant_review": {"summary_shown": False},
+        "freeze": {
+            "record_state": "candidate",
+            "frozen_before_birth_or_chart_reveal": False,
+        },
+    }
+    started = first_client.post(
+        "/api/gpt/reviews",
+        headers=auth(settings.submission_token),
+        json={
+            "research_use_consented": True,
+            "candidate_record": candidate,
+            "request_id": secrets.token_hex(16),
+            "review_protocol": PROTOCOL,
+        },
+    )
+    assert started.status_code == 200, started.text
+    rid = started.json()["review_id"]
+    store = first_app.state.store
+    payload = store.gpt_review_read(rid)
+    stale_question = {
+        "route_id": "TF1-G15",
+        "route_type": "canonical",
+        "question_text": "What kinds of activity tend to leave you energized or drained?",
+        "antecedent_turn_ids": ["import-0001"],
+        "clarification_id": "Q-active-stale",
+    }
+    state = new_state(payload["instrument_version"], payload["model"], payload["effort"])
+    activate(state)
+    state.update(phase="awaiting_answer", gpt_review_answers_processed=1)
+    state["fast_review"] = {
+        "protocol": PROTOCOL,
+        "stage": "legacy_continuation",
+        "pending_questions": [],
+        "source_revision": source_revision(payload["candidate_sha256"], []),
+        "deferred_audit_pending": False,
+        "final_review_completed": False,
+    }
+    with store.connection() as db:
+        row = db.execute(
+            "SELECT payload FROM gpt_review_jobs WHERE id=?", (rid,)
+        ).fetchone()
+        current = store.decode(row[0])
+        current.update(
+            status="clarification_needed",
+            worker_state=state,
+            pending_clarification=stale_question,
+            pending_clarifications=[stale_question],
+            pending_batch_id="B-active-stale",
+            clarification_history=[
+                {
+                    "route_id": "TF1-M11",
+                    "route_type": "missing_piece_followup",
+                    "question_text": "Prior synthetic clarification.",
+                    "answer_text": None,
+                    "answer_status": "skipped",
+                }
+            ],
+            round=1,
+        )
+        store._save_review(db, current)
+        db.commit()
+
+    second_app = create_app(settings, provider=FastFake(), instrument=authority())
+    assert second_app.state.policy_refresh_count == 1
+    refreshed = second_app.state.store.gpt_review_read(rid)
+    assert refreshed["status"] == "queued"
+    assert len(refreshed["clarification_history"]) == 1
+    assert refreshed["pending_clarifications"] == []
+    assert refreshed["policy_refresh_reason"] == "persisted_canonical_already_presented"
+    assert refreshed["worker_state"]["fast_review"]["policy_refresh_required"] is True
+    assert refreshed["review_stage"] == "reconciliation"

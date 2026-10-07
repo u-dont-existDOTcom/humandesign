@@ -23,17 +23,34 @@ HISTORICAL_ROUTE_ALIASES = {
 
 
 def _historical_route_from_record(raw: dict) -> str | None:
-    source = raw.get("source")
-    if not isinstance(source, dict):
-        return None
-    value = source.get("historical_question_id")
+    value = raw.get("historical_question_id")
+    if not isinstance(value, str) or not value.strip():
+        source = raw.get("source")
+        value = source.get("historical_question_id") if isinstance(source, dict) else None
     if not isinstance(value, str) or not value.strip():
         return None
     value = value.strip()
     return HISTORICAL_ROUTE_ALIASES.get(value, value)
 
 
-def resolved_turn_route_id(turn: dict, known_route_ids: set[str] | None = None) -> str | None:
+def _historical_route_from_turn_id(raw: dict, known_route_ids: set[str]) -> str | None:
+    """Recover route identity only from our stable historical turn-id convention."""
+
+    value = raw.get("turn_id")
+    if not isinstance(value, str):
+        return None
+    for route_id in sorted(known_route_ids, key=len, reverse=True):
+        if value.endswith(f"-{route_id}-answer"):
+            return HISTORICAL_ROUTE_ALIASES.get(route_id, route_id)
+    return None
+
+
+def resolved_turn_route_id(
+    turn: dict,
+    known_route_ids: set[str] | None = None,
+    *,
+    allow_historical_turn_id: bool = False,
+) -> str | None:
     """Return verified route identity without rewriting historical source bytes."""
 
     value = turn.get("canonical_question_id")
@@ -46,6 +63,10 @@ def resolved_turn_route_id(turn: dict, known_route_ids: set[str] | None = None) 
         route_id = _historical_route_from_record(original)
         if route_id and (known_route_ids is None or route_id in known_route_ids):
             return route_id
+        if allow_historical_turn_id and known_route_ids is not None:
+            route_id = _historical_route_from_turn_id(original, known_route_ids)
+            if route_id:
+                return route_id
     return None
 
 def normalize_state_route_ids(state: dict, instrument: dict) -> list[str]:
@@ -53,23 +74,43 @@ def normalize_state_route_ids(state: dict, instrument: dict) -> list[str]:
 
     base = strict_json(instrument["interviewer-bank-v7.json"])
     known = {str(route["id"]) for route in base.get("questions", [])}
+    exact_question_ids = {
+        str(route["question"]).strip(): str(route["id"])
+        for route in base.get("questions", [])
+        if isinstance(route.get("question"), str)
+    }
+    historical_completed = any(
+        "completed" in str(source.get("historical_interview_status") or "").lower()
+        or "saturated" in str(source.get("historical_interview_status") or "").lower()
+        for source in state.get("source_records", [])
+    )
     changed: list[str] = []
     for turn in state.get("turns", []):
-        resolved = resolved_turn_route_id(turn, known)
+        resolved = resolved_turn_route_id(
+            turn, known, allow_historical_turn_id=historical_completed
+        )
+        if not resolved:
+            resolved = exact_question_ids.get(str(turn.get("question_text") or "").strip())
         if not resolved:
             continue
         if turn.get("canonical_question_id") == resolved:
             continue
         turn["canonical_question_id"] = resolved
         original = turn.get("original_record")
-        historical = (
-            original.get("source", {}).get("historical_question_id")
-            if isinstance(original, dict) and isinstance(original.get("source"), dict)
+        historical = _historical_route_from_record(original) if isinstance(original, dict) else None
+        turn_id_route = (
+            _historical_route_from_turn_id(original, known)
+            if historical_completed and isinstance(original, dict)
             else None
         )
         if historical:
             turn["historical_question_id"] = historical
             turn["id_basis"] = "verified_historical_route"
+        elif turn_id_route:
+            turn["historical_question_id"] = turn_id_route
+            turn["id_basis"] = "verified_historical_turn_id"
+        else:
+            turn["id_basis"] = "exact_canonical_question_text"
         changed.append(str(turn.get("turn_id")))
     return changed
 
@@ -293,9 +334,15 @@ def import_record(
         recorded = old_id in known
         historical_id = _historical_route_from_record(raw)
         historical_recorded = historical_id in known if historical_id else False
+        historical_status = str(record.get("historical_interview_status") or "").lower()
+        historical_completed = "completed" in historical_status or "saturated" in historical_status
+        turn_id_route = (
+            _historical_route_from_turn_id(raw, known) if historical_completed else None
+        )
+        turn_id_recorded = turn_id_route in known if turn_id_route else False
         exact_id = (
             exact_question_ids.get((q or "").strip())
-            if not recorded and not historical_recorded
+            if not recorded and not historical_recorded and not turn_id_recorded
             else None
         )
         resolved_id = (
@@ -303,6 +350,8 @@ def import_record(
             if recorded
             else historical_id
             if historical_recorded
+            else turn_id_route
+            if turn_id_recorded
             else exact_id
         )
         turn_role = raw.get("turn_role", "behavioral")
@@ -333,15 +382,13 @@ def import_record(
                     if recorded
                     else "verified_historical_route"
                     if historical_recorded
+                    else "verified_historical_turn_id"
+                    if turn_id_recorded
                     else "exact_canonical_question_text"
                     if exact_id
                     else "unknown"
                 ),
-                "historical_question_id": (
-                    raw.get("source", {}).get("historical_question_id")
-                    if isinstance(raw.get("source"), dict)
-                    else None
-                ),
+                "historical_question_id": historical_id or turn_id_route,
                 "turn_role": turn_role,
                 "route_type": "imported_unknown_route",
                 "question_wording_status": "declared_original_unverified"
