@@ -10,7 +10,9 @@ from urllib.parse import urlparse
 import pytest
 from fastapi.testclient import TestClient
 from participant.app import create_app
+from participant.domain import new_state
 from participant.fast_review import PROTOCOL, source_revision
+from participant.question_policy import activate
 from participant.review_timing import review_guidance
 from participant.shadow_triage import (
     GapMatchAuditResponse,
@@ -362,3 +364,77 @@ def test_heartbeat_does_not_restart_same_stage_clock(tmp_path, monkeypatch):
         if previous is not None:
             assert current == previous
         previous = current
+
+
+def test_persisted_retired_question_requeues_without_fake_answer_and_rebuilds(
+    tmp_path, monkeypatch
+):
+    settings, _, app, client, worker, box, _ = setup_fast(tmp_path, monkeypatch)
+    rid = start_fast(client, settings)["review_id"]
+    store = app.state.store
+    payload = store.gpt_review_read(rid)
+    stale_question = {
+        "route_id": "G15",
+        "route_type": "canonical",
+        "question_text": (
+            "Imagine an ordinary day where you do about six hours of mentally demanding "
+            "computer work that you find worthwhile. What would your energy usually be like?"
+        ),
+        "antecedent_turn_ids": [],
+        "clarification_id": "Q-stale-synthetic",
+    }
+    state = new_state(payload["instrument_version"], payload["model"], payload["effort"])
+    activate(state)
+    state.update(
+        phase="awaiting_answer",
+        gpt_review_answers_processed=0,
+        pending_question={
+            "route_id": "G15",
+            "route_type": "canonical",
+            "text": stale_question["question_text"],
+            "antecedent_turn_ids": [],
+        },
+    )
+    state["fast_review"] = {
+        "protocol": PROTOCOL,
+        "stage": "triage",
+        "pending_questions": [
+            {
+                "route_id": "G15",
+                "route_type": "canonical",
+                "text": stale_question["question_text"],
+                "antecedent_turn_ids": [],
+            }
+        ],
+        "source_revision": source_revision(payload["candidate_sha256"], []),
+        "deferred_audit_pending": False,
+        "final_review_completed": False,
+    }
+    with store.connection() as db:
+        row = db.execute(
+            "SELECT payload FROM gpt_review_jobs WHERE id=?", (rid,)
+        ).fetchone()
+        current = store.decode(row[0])
+        current.update(
+            status="clarification_needed",
+            worker_state=state,
+            pending_clarification=stale_question,
+            pending_clarifications=[stale_question],
+            pending_batch_id="B-stale-synthetic",
+        )
+        store._save_review(db, current)
+        db.commit()
+
+    assert store.requeue_stale_gpt_review_questions({"G15"}) == 1
+    refreshed = store.gpt_review_read(rid)
+    assert refreshed["status"] == "queued"
+    assert refreshed["clarification_history"] == []
+    assert refreshed["pending_clarifications"] == []
+    assert refreshed["worker_state"]["fast_review"]["policy_refresh_required"] is True
+    assert refreshed["worker_state"]["phase"] == "ready"
+
+    assert worker.process_one("https://testserver", settings.review_worker_token, outbox=box)
+    after = view(client, settings, rid)
+    assert after["status"] == "clarification_needed"
+    assert all(q["route_id"] != "G15" for q in after["clarifications"])
+    assert store.gpt_review_read(rid)["clarification_history"] == []
