@@ -2,9 +2,19 @@
   "schema_version": 1,
   "task": "question-purpose-explanations-20261007",
   "integration_base_sha": "0e9a744a1d299a893dffcc690e718df2d2d3133c",
-  "focused_tests": {"passed": 64, "failed": 0},
-  "participant_tests": {"passed": 193, "failed": 0},
-  "repository_tests": {"passed": 1019, "skipped": 6, "failed": 0},
+  "focused_tests": {
+    "passed": 64,
+    "failed": 0
+  },
+  "participant_tests": {
+    "passed": 193,
+    "failed": 0
+  },
+  "repository_tests": {
+    "passed": 1019,
+    "skipped": 6,
+    "failed": 0
+  },
   "scoped_ruff_excluding_preexisting_E501": "pass",
   "mypy_source_files": 220,
   "mypy": "pass",
@@ -15,6 +25,15 @@
   "action_openapi_version": "1.4.0",
   "gpt_update_packet": "reference/custom_gpt/releases/Life-Patterns-GPT-question-purpose-update-2026-10-07.zip",
   "gpt_update_packet_sha256": "3c0d8ae07eec628a1791a321b4eac305eab2578c23b7807dae30cbbdbb8e9b87",
-  "deployment": "pending",
-  "custom_gpt_editor_update": "pending"
+  "deployment": "success",
+  "custom_gpt_editor_update": "owner_only_pending",
+  "railway_deployment_id": "58fcdb2f-cf66-4850-bf6a-faa114ed52a7",
+  "railway_deployment_created_at": "2026-10-07T04:53:07.706Z",
+  "railway_cli_message": "Life Patterns participant question purpose explanations 653734a",
+  "railway_live_action_schema_sha256": "85b66cd4adbca3bf825b930e65ad2502faf55debc236b335b2199f1ee788ae8d",
+  "railway_live_action_schema_matches_tested": true,
+  "railway_live_question_policy_sha256": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611",
+  "local_reviewer_purpose_code_matches_repo": true,
+  "local_reviewer_active": true,
+  "owner_package_delivery": "Downloads zip plus extracted folder"
 }
