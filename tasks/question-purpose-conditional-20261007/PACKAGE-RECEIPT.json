@@ -1,0 +1,23 @@
+{
+  "version": "2026-10-07.2-question-purpose-conditional",
+  "supersedes": "2026-10-07.1-question-purpose",
+  "same_existing_gpt": true,
+  "same_existing_review": true,
+  "knowledge_replacements": [
+    "TENDENCY-FIRST-GUIDE-v1.json"
+  ],
+  "action_schema_changed_from_previous_packet": false,
+  "existing_bearer_key_changes": false,
+  "backend_redeploy_required": false,
+  "private_data_in_package": false,
+  "instructions_strict_linebreak_count": 7991,
+  "files": {
+    "INSTRUCTIONS-life-patterns-voice-interviewer-v2.md": "64b9bd02f4fea64303cc639aec24a3f85687077b365ff84f862d967a9f271862",
+    "knowledge/TENDENCY-FIRST-GUIDE-v1.json": "3d3ff3709a797662689e1c940dc5bca26282496fabc121d68823bf7033b8ea7d",
+    "ACTION-life-patterns-submission-openapi.yaml": "85b66cd4adbca3bf825b930e65ad2502faf55debc236b335b2199f1ee788ae8d",
+    "UPDATE-EXISTING-GPT.md": "a21f7becd8cb29b94b61da09bc962d71bf91d1b1738b0cf7f7ad101363b4b683"
+  },
+  "archive": "Life-Patterns-GPT-question-purpose-conditional-update-2026-10-07.zip",
+  "archive_sha256": "d115265a4d541c45a63771bcba5029106cacb626bdc0a2a591d0cba2d6ede3e1",
+  "archive_bytes": 14839
+}

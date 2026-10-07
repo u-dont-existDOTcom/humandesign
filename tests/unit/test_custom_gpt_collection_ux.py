@@ -63,10 +63,12 @@ def test_footer_has_plan_math_and_distinguishes_complete_and_recovery_states():
         assert phrase in s
 
 
-def test_every_behavioral_question_must_show_its_neutral_purpose():
+def test_question_purpose_is_conditional_not_redundant():
     s = text("life_patterns_voice_interviewer_v2.md")
-    assert "Before EVERY behavioral question: `What this tests: <neutral purpose>`" in s
-    assert "Use `participant_purpose`; else name its target/family plainly" in s
-    assert "Show each returned clarification as `What this tests: {participant_purpose}`" in s
-    assert "then `question_text` verbatim" in s
-    assert "No scoring/chart targets/diagnostic claims" in s
+    assert "Ask direct questions alone" in s
+    assert "only when a scenario/example/follow-up is unclear" in s
+    assert "Never paraphrase" in s
+    assert "otherwise omit it" in s
+    assert "Ask returned `question_text` verbatim" in s
+    assert "Before EVERY behavioral question" not in s
+    assert "scoring/chart targets/diagnostic claims" in s
