@@ -1,0 +1,36 @@
+{
+  "status": "PTOLEMY_ENGLISH_EXTRACTION_COMPLETE_PARENT_CORPUS_OPEN",
+  "base_commit": "a7a3bdae5c6f5f85aa7006bd5797dbe0388272d9",
+  "source_sha256": "10b44f40e47409215aa3d6c4ec2863ebc3982b81d33b4d4e5e2a065761ab7fec",
+  "new_records": 184,
+  "new_batches": {
+    "B01r": 100,
+    "B01s": 84
+  },
+  "source_records_total": 1066,
+  "source_sections_read": 61,
+  "source_sections_unread": 0,
+  "retained_source_batches": 19,
+  "new_unresolved_issues": 34,
+  "tests": {
+    "actual_passed": 649,
+    "new_passed": 92,
+    "retained_passed": 557,
+    "log": "SOURCE_REFERENCE_TEST_RUN.txt",
+    "receipt": "LOCAL_TEST_RUN.json"
+  },
+  "snapshot_protected_paths_checked": 46,
+  "snapshot_protected_paths_unchanged": true,
+  "remote_b01_b01m_header_blob_checks": {
+    "B01": "1f4e36174a84893e0b0f8cc2985d9a60600421a5",
+    "B01m": "a5699cf73e414956eda7e3eaafca4f02973a23f6"
+  },
+  "scope_limits": [
+    "English translation and identified notes; no independent Greek collation",
+    "Source-reference tests, not full application or runtime forecasting",
+    "No independent semantic reviewer or empirical validation",
+    "No personal outcomes used, no model/runtime/freeze promotion",
+    "No automatic owner-host Downloads placement"
+  ],
+  "next_source": "LILLY1647 full I-III witness and exact page/contents mapping"
+}
