@@ -20,6 +20,7 @@ from .domain import (
     import_record,
     load_instrument,
     new_state,
+    normalize_state_route_ids,
     strict_json,
     target_exposure,
     utc,
@@ -256,7 +257,38 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         for route in bank(instrument, migration_state)["questions"]
         if route.get("elicitation_retired")
     }
-    app_policy_refresh_count = store.requeue_stale_gpt_review_questions(retired_routes)
+    def stale_canonical_question(payload: dict, pending: list[dict]) -> bool:
+        canonical_ids = {
+            str(question.get("route_id"))
+            for question in pending
+            if isinstance(question, dict) and question.get("route_type") == "canonical"
+        }
+        if not canonical_ids:
+            return False
+        candidate = payload.get("candidate_record")
+        if not isinstance(candidate, dict):
+            return False
+        check_state = new_state(
+            version,
+            str(payload.get("model") or settings.model),
+            str(payload.get("effort") or settings.effort),
+        )
+        activate(check_state)
+        import_record(
+            check_state,
+            candidate,
+            "prior_json",
+            instrument,
+            candidate.get("collection_mode", "unknown"),
+        )
+        normalize_state_route_ids(check_state, instrument)
+        from .inference_context import presented_route_ids
+
+        return bool(canonical_ids.intersection(presented_route_ids(check_state, instrument)))
+
+    app_policy_refresh_count = store.requeue_stale_gpt_review_questions(
+        retired_routes, stale_question=stale_canonical_question
+    )
     provider = provider or Venice(settings.gateway_url, settings.gateway_token)
     engine = Engine(store, provider, settings.maximum_calls)
     app = FastAPI(

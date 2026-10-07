@@ -512,11 +512,11 @@ class Store:
         return payload
 
     def requeue_stale_gpt_review_questions(
-        self, retired_route_ids: set[str]
+        self, retired_route_ids: set[str], *, stale_question=None
     ) -> int:
         """Re-run fast reviews whose persisted question is no longer selectable."""
 
-        if not retired_route_ids:
+        if not retired_route_ids and stale_question is None:
             return 0
         now = time.time()
         refreshed = 0
@@ -532,11 +532,15 @@ class Store:
                 pending = payload.get("pending_clarifications") or []
                 if not pending and payload.get("pending_clarification"):
                     pending = [payload["pending_clarification"]]
-                if not any(
+                retired = any(
                     str(question.get("route_id")) in retired_route_ids
                     for question in pending
                     if isinstance(question, dict)
-                ):
+                )
+                derived_stale = bool(
+                    stale_question is not None and stale_question(payload, pending)
+                )
+                if not retired and not derived_stale:
                     continue
                 worker_state = payload.get("worker_state")
                 if isinstance(worker_state, dict):
@@ -567,7 +571,11 @@ class Store:
                         else "initial_triage"
                     ),
                 )
-                payload["policy_refresh_reason"] = "persisted_retired_clarification"
+                payload["policy_refresh_reason"] = (
+                    "persisted_retired_clarification"
+                    if retired
+                    else "persisted_canonical_already_presented"
+                )
                 self._save_review(db, payload)
                 refreshed += 1
             db.commit()

@@ -385,3 +385,94 @@ def test_completed_g15_repair_binds_actual_historical_baseline_not_empty_anteced
     assert normalized == ["C1"]
     assert triage.candidates[0].antecedent_turn_ids == ["import-0001"]
     validate_gap_spec_triage(triage, context)
+
+
+def stripped_completed_work_energy_record():
+    return {
+        "historical_interview_status": "completed_under_then_current_protocol",
+        "source_type": "combined_recovered_record",
+        "source_fidelity": "Synthetic verified recovery fixture.",
+        "unrecovered_current_test_gap": {
+            "present": True,
+            "note": "Synthetic provenance gap only.",
+        },
+        "turns": [
+            {
+                "turn_id": "e00000094-G15-answer",
+                "question_text": "Older six-hour-equivalent worthwhile-work baseline wording.",
+                "answer_text": "Generally good unless tired.",
+            },
+            {
+                "turn_id": "e00000154-R07-answer",
+                "question_text": "Older two-day mentally demanding work comparison wording.",
+                "answer_text": "Probably fine.",
+            },
+            {
+                "turn_id": "e00000174-WORK-RECOVERY-answer",
+                "question_text": "Older recovery wording.",
+                "answer_text": "Rest usually raises my energy.",
+            },
+            {
+                "turn_id": "e00000176-R08-answer",
+                "question_text": "Older prolonged-work comparison wording.",
+                "answer_text": "Pretty good.",
+            },
+            {
+                "turn_id": "RECOVERED-CURRENT-TEST-0001",
+                "question_text": next(
+                    q["question"] for q in bank(authority())["questions"] if q["id"] == "R07"
+                ),
+                "answer_text": "Probably good; another activity can be more tiring.",
+            },
+        ],
+    }
+
+
+def test_stripped_completed_recovery_resolves_stable_turn_ids_and_exact_retest_text():
+    state = state_for_policy()
+    record = stripped_completed_work_energy_record()
+    original = copy.deepcopy(record)
+    instrument = authority()
+    import_record(state, record, "prior_json", instrument)
+    assert record == original
+    assert [turn["canonical_question_id"] for turn in state["turns"]] == [
+        "G15",
+        "R07",
+        "WORK-RECOVERY",
+        "R08",
+        "R07",
+    ]
+    assert [turn["id_basis"] for turn in state["turns"][:4]] == [
+        "verified_historical_turn_id",
+        "verified_historical_turn_id",
+        "verified_historical_turn_id",
+        "verified_historical_turn_id",
+    ]
+    assert state["turns"][4]["id_basis"] == "exact_canonical_question_text"
+    context = make_context(
+        state,
+        instrument,
+        [turn["turn_id"] for turn in state["turns"]],
+        bulk_import=True,
+    )
+    candidate_ids = {route["id"] for route in context["candidate_routes"]}
+    assert "G15" not in candidate_ids
+    assert "TF1-G15" not in candidate_ids
+
+
+def test_top_level_historical_question_id_is_verified_route_metadata():
+    state = state_for_policy()
+    record = {
+        "historical_interview_status": "completed",
+        "turns": [
+            {
+                "turn_id": "generic-turn",
+                "question_text": "Old wording.",
+                "answer_text": "Answer.",
+                "historical_question_id": "G15",
+            }
+        ],
+    }
+    import_record(state, record, "prior_json", authority())
+    assert state["turns"][0]["canonical_question_id"] == "G15"
+    assert state["turns"][0]["id_basis"] == "verified_historical_route"
