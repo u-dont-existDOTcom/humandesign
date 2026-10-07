@@ -2,7 +2,7 @@
 
 ## Current status
 
-The local release candidate is complete and verified. Railway deployment, local reviewer installation, live readback and package delivery remain before engineering closeout. The private Custom GPT editor update will remain the final owner-only product-surface gate.
+Backend/reviewer deployment and live synthetic final submission are verified; the cumulative update is delivered. See CLOSEOUT.md and live receipts. Private GPT editor installation and actual participant resubmission from the exact frozen files remain; no real final-submission success is claimed.
 
 ## Repaired behavior
 

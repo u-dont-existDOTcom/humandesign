@@ -41,7 +41,14 @@
   "gpt_update_packet": "Life-Patterns-GPT-owner-pilot-closeout-repair-2026-10-07.zip",
   "gpt_update_packet_sha256": "2212dfe4880ceb01dfc0556b4df548c14860d8505f286fbe6c3672cf526ad98a",
   "private_data_in_package": false,
-  "deployment": "pending",
-  "local_reviewer_install": "pending",
-  "custom_gpt_editor_update": "owner_only_pending"
+  "deployment": "success",
+  "local_reviewer_install": "active_exact_source_match",
+  "custom_gpt_editor_update": "owner_only_pending",
+  "railway_deployment_id": "d9aa2ad6-5b7c-42cd-875c-6cbb46992fc2",
+  "live_schema_version": "1.5.0",
+  "live_schema_matches_source": true,
+  "live_submission_canary": "passed_full_review_storage_hash_and_exact_retry",
+  "real_frozen_records_recovered": false,
+  "real_final_submission": "not_attempted_in_this_continuation",
+  "fresh_real_review_http_readback": "blocked_by_tool_safety_no_request_executed"
 }

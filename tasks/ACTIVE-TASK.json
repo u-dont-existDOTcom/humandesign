@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "taskId": "owner-pilot-closeout-repair-20261007",
-  "status": "active",
+  "status": "awaiting_owner_editor_application",
   "exclusive": true,
-  "requiredBranch": "fix/owner-pilot-closeout-repair-20261007",
+  "requiredBranch": "ops/owner-pilot-live-closeout-20261007",
   "completionCommand": "PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q",
   "suspendedTaskSources": [
     "completed tendency-first task",
@@ -11,5 +11,5 @@
     "repository-global roadmap selection"
   ],
   "goal": "Repair the real owner-pilot Life Patterns closeout and submission flow without reconstructing private answers.",
-  "remaining_owner_action": "NONE until a verified same-GPT editor packet is delivered; then apply the private editor update."
+  "remaining_owner_action": "Install delivered cumulative package in same GPT, then retry final submission from both exact frozen files in the same saved survey chat."
 }
