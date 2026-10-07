@@ -48,6 +48,31 @@ def resolved_turn_route_id(turn: dict, known_route_ids: set[str] | None = None) 
             return route_id
     return None
 
+def normalize_state_route_ids(state: dict, instrument: dict) -> list[str]:
+    """Backfill only verified derived route metadata for old saved review states."""
+
+    base = strict_json(instrument["interviewer-bank-v7.json"])
+    known = {str(route["id"]) for route in base.get("questions", [])}
+    changed: list[str] = []
+    for turn in state.get("turns", []):
+        resolved = resolved_turn_route_id(turn, known)
+        if not resolved:
+            continue
+        if turn.get("canonical_question_id") == resolved:
+            continue
+        turn["canonical_question_id"] = resolved
+        original = turn.get("original_record")
+        historical = (
+            original.get("source", {}).get("historical_question_id")
+            if isinstance(original, dict) and isinstance(original.get("source"), dict)
+            else None
+        )
+        if historical:
+            turn["historical_question_id"] = historical
+            turn["id_basis"] = "verified_historical_route"
+        changed.append(str(turn.get("turn_id")))
+    return changed
+
 SOURCES = {
     "INTERVIEW-PROTOCOL-v6.md": "5dc95763f65441d67c87b21116e00d7f2df04223",
     "interviewer-bank-v7.json": "cf6c60ec7206e07ee62b6148549e6d755bef8ac1",
