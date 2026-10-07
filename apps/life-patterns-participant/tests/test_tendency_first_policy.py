@@ -5,9 +5,15 @@ import json
 
 import pytest
 from participant.domain import Plan, Question, bank, import_record, new_state, validate_plan
-from participant.inference_context import make_context, make_review_context
+from participant.inference_context import make_context, make_review_context, presented_route_ids
 from participant.question_policy import PolicyProvider, activate, identity
-from participant.shadow_triage import make_gap_spec_triage_context
+from participant.shadow_triage import (
+    GapSpecCandidate,
+    GapSpecTriage,
+    make_gap_spec_triage_context,
+    normalize_gap_spec_bindings,
+    validate_gap_spec_triage,
+)
 from test_fast_review_integration import setup_fast, start_fast, view
 from test_participant import authority
 
@@ -228,3 +234,154 @@ def test_current_explicit_review_stop_is_still_valid():
         reason="Current explicit stop",
     )
     validate_plan(plan, state, authority(), ["review-answer-0001"])
+
+
+def completed_work_energy_record():
+    return {
+        "historical_interview_status": "completed_under_then_current_protocol",
+        "unrecovered_current_test_gap": {
+            "present": True,
+            "note": "Synthetic provenance gap; earlier distinctions stay authoritative.",
+        },
+        "turns": [
+            {
+                "turn_id": "old-g15",
+                "question_text": "Earlier ordinary worthwhile-work energy baseline.",
+                "answer_text": "Generally good unless tired.",
+                "canonical_question_id": None,
+                "source": {"historical_question_id": "G15"},
+            },
+            {
+                "turn_id": "old-r07",
+                "question_text": "Earlier two-day longer-work comparison.",
+                "answer_text": "Probably fine.",
+                "canonical_question_id": None,
+                "source": {"historical_question_id": "R07"},
+            },
+            {
+                "turn_id": "old-r08",
+                "question_text": "Earlier prolonged-work comparison.",
+                "answer_text": "Pretty good.",
+                "canonical_question_id": None,
+                "source": {"historical_question_id": "R08"},
+            },
+            {
+                "turn_id": "old-r09",
+                "question_text": "Earlier stopping-cue question.",
+                "answer_text": "I stop when too tired or getting nowhere.",
+                "canonical_question_id": None,
+                "source": {"historical_question_id": "R09"},
+            },
+            {
+                "turn_id": "old-recovery",
+                "question_text": "Earlier recovery question.",
+                "answer_text": "Rest usually raises my energy.",
+                "canonical_question_id": None,
+                "source": {"historical_question_id": "WORK-RECOVERY"},
+            },
+            {
+                "turn_id": "later-r07",
+                "question_text": "Later matched two-day work retest.",
+                "answer_text": "Probably good.",
+                "canonical_question_id": None,
+                "source": {"historical_question_id": "R07-retest"},
+            },
+            {
+                "turn_id": "later-r08",
+                "question_text": "Later matched prolonged-work retest.",
+                "answer_text": "Same as before.",
+                "canonical_question_id": None,
+                "source": {"historical_question_id": "R08-retest"},
+            },
+        ],
+    }
+
+
+def test_import_resolves_nested_historical_route_ids_and_retest_aliases():
+    state = state_for_policy()
+    record = completed_work_energy_record()
+    original = copy.deepcopy(record)
+    import_record(state, record, "prior_json", authority())
+    assert record == original
+    route_ids = [turn["canonical_question_id"] for turn in state["turns"]]
+    assert route_ids == ["G15", "R07", "R08", "R09", "WORK-RECOVERY", "R07", "R08"]
+    assert all(turn["id_basis"] == "verified_historical_route" for turn in state["turns"])
+    assert state["source_records"][0]["historical_interview_status"].startswith("completed")
+    assert state["source_records"][0]["unrecovered_current_test_gap_present"] is True
+
+
+def test_completed_historical_g15_marks_tendency_successor_presented_and_repair_only():
+    state = state_for_policy()
+    import_record(state, completed_work_energy_record(), "prior_json", authority())
+    presented = presented_route_ids(state, authority())
+    assert {"G15", "TF1-G15", "R07", "TF1-R07", "R08", "TF1-R08"} <= presented
+    context = make_gap_spec_triage_context(state, authority())
+    routes = {row["id"]: row for row in context["candidate_routes"]}
+    assert "G15" not in routes
+    assert routes["TF1-G15"]["candidate_mode"] == "repair_only"
+    assert routes["TF1-G15"]["presented_turn_ids"] == ["import-0001"]
+    assert set(routes["TF1-G15"]["historical_family_turn_ids"]) >= {
+        "import-0001",
+        "import-0002",
+        "import-0003",
+        "import-0004",
+        "import-0005",
+        "import-0006",
+        "import-0007",
+    }
+    assert context["historical_source_completed"] is True
+    assert context["unrecovered_current_test_gap_present"] is True
+
+
+def test_completed_source_rejects_g15_gap_anchored_outside_relevant_family():
+    state = state_for_policy()
+    record = completed_work_energy_record()
+    record["turns"].append(
+        {
+            "turn_id": "other",
+            "question_text": "An unrelated social question.",
+            "answer_text": "An unrelated answer.",
+            "canonical_question_id": None,
+            "source": {"historical_question_id": "G23"},
+        }
+    )
+    import_record(state, record, "prior_json", authority())
+    context = make_gap_spec_triage_context(state, authority())
+    triage = GapSpecTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapSpecCandidate(
+                candidate_id="C1",
+                rank=1,
+                route_id="TF1-G15",
+                source_anchor_turn_ids=["import-0008"],
+                antecedent_turn_ids=["import-0001"],
+                equivalent_context=False,
+                missing_distinction="Synthetic version-only gap.",
+            )
+        ],
+    )
+    with pytest.raises(ValueError, match="relevant historical route family"):
+        validate_gap_spec_triage(triage, context)
+
+
+def test_completed_g15_repair_binds_actual_historical_baseline_not_empty_antecedent():
+    state = state_for_policy()
+    import_record(state, completed_work_energy_record(), "prior_json", authority())
+    context = make_gap_spec_triage_context(state, authority())
+    triage = GapSpecTriage(
+        decision="clarification_needed",
+        candidates=[
+            GapSpecCandidate(
+                candidate_id="C1",
+                rank=1,
+                route_id="TF1-G15",
+                source_anchor_turn_ids=["import-0001"],
+                missing_distinction="A genuinely unresolved synthetic condition.",
+            )
+        ],
+    )
+    normalized = normalize_gap_spec_bindings(triage, context)
+    assert normalized == ["C1"]
+    assert triage.candidates[0].antecedent_turn_ids == ["import-0001"]
+    validate_gap_spec_triage(triage, context)
