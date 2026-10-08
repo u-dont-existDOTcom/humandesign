@@ -24,6 +24,44 @@ async function download(path,filename){
   }catch(error){el("status").textContent=error.message;}
 }
 
+async function refreshQuestionFeedback(){
+  try{
+    const result=await request("/api/admin/question-feedback");
+    const target=el("question-feedback");target.replaceChildren();
+    const routes=Object.entries(result.by_route||{}).map(([r,n])=>`${r}: ${n}`).join(" · ");
+    el("feedback-summary").textContent=`${result.total} question feedback item(s). ${routes}`;
+    result.feedback.forEach(item=>{
+      const article=document.createElement("article");
+      const heading=document.createElement("h3");
+      heading.textContent=`${item.route_id} · ${item.issue_hint} · ${item.capture_method}`;
+      const question=document.createElement("p");
+      question.textContent=`Question: ${item.question_text||"unmapped historical prompt"}`;
+      const comment=document.createElement("blockquote");
+      comment.textContent=item.feedback_text+(item.feedback_truncated?" [excerpt]":"");
+      const origin=document.createElement("small");
+      origin.textContent=`Source: ${item.source_type} · Turn: ${item.turn_id}`;
+      const disposition=document.createElement("select");
+      for(const [code,label] of [["new","New"],["triaging","Investigating"],["revision_proposed","Revision proposed"],["resolved","Resolved"],["dismissed","Dismissed"]]){
+        const option=document.createElement("option");option.value=code;option.textContent=label;
+        if(item.status===code)option.selected=true;disposition.append(option);
+      }
+      const revision=document.createElement("input");
+      revision.placeholder="Proposed question-version ID (when applicable)";
+      revision.value=item.revision_id||"";revision.maxLength=120;
+      const save=document.createElement("button");save.textContent="Save review status";save.className="secondary";
+      save.onclick=async()=>{
+        try{
+          await request(`/api/admin/question-feedback/${encodeURIComponent(item.feedback_id)}/disposition`,{status:disposition.value,revision_id:revision.value});
+          await refreshQuestionFeedback();
+        }catch(error){el("status").textContent=error.message;}
+      };
+      article.append(heading,question,comment,origin,disposition,revision,save);
+      target.append(article);
+    });
+    if(!result.total)target.textContent="No consenting records with identified question feedback yet.";
+  }catch(error){el("status").textContent=error.message;}
+}
+
 async function refreshSubmissions(){
   try{
     const result=await request("/api/admin/gpt-submissions");
@@ -85,5 +123,8 @@ el("copy").onclick=async()=>{
 };
 el("refresh").onclick=refresh;
 el("submissions-refresh").onclick=refreshSubmissions;
+el("feedback-refresh").onclick=refreshQuestionFeedback;
+el("feedback-download").onclick=()=>download("/api/admin/question-feedback","life-patterns-question-feedback.json");
 refresh();
 refreshSubmissions();
+refreshQuestionFeedback();
