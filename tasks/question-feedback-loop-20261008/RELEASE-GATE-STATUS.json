@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "task": "question-feedback-loop-20261008",
+  "integration_base_sha": "a4d43a280bf4860642873d3d6e204630ad89770a",
+  "participant_tests": {
+    "passed": 215,
+    "failed": 0
+  },
+  "repository_tests": {
+    "passed": 1021,
+    "skipped": 6,
+    "failed": 0
+  },
+  "focused_question_feedback_tests": {
+    "passed": 8
+  },
+  "question_revision_tests": {
+    "passed": 3
+  },
+  "scoped_lint": "pass_with_existing_project_E501_UP035_SIM105_exclusions",
+  "new_feedback_module_mypy": "pass_with_dependencies_skipped",
+  "full_participant_strict_mypy": "preexisting_legacy_type_debt_not_claimed_green",
+  "question_revisions": {
+    "drafted": 9,
+    "proposed_legacy_retirements": 3,
+    "activated": 0
+  },
+  "live_backend_deployment": "pending",
+  "custom_gpt_editor_update": "owner_only_pending",
+  "privacy": "no participant source committed"
+}

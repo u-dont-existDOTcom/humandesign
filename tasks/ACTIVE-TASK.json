@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "taskId": "owner-pilot-closeout-repair-20261007",
-  "status": "awaiting_owner_editor_application",
+  "taskId": "question-feedback-loop-20261008",
+  "status": "active",
   "exclusive": true,
-  "requiredBranch": "ops/owner-pilot-live-closeout-20261007",
+  "requiredBranch": "fix/question-feedback-loop-20261008",
   "completionCommand": "PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q",
   "suspendedTaskSources": [
-    "completed tendency-first task",
-    "unrelated astrology audit queues",
-    "repository-global roadmap selection"
+    "owner-pilot private GPT editor application remains a separate pending owner step",
+    "unrelated astrology/research tasks"
   ],
-  "goal": "Repair the real owner-pilot Life Patterns closeout and submission flow without reconstructing private answers.",
-  "remaining_owner_action": "Install delivered cumulative package in same GPT, then retry final submission from both exact frozen files in the same saved survey chat."
+  "goal": "Surface consented participant question objections to the researcher and produce versioned actual question-rewrite drafts while protecting old studies.",
+  "remaining_owner_action": "After live deployment, apply latest cumulative GPT editor packet; separately evaluate versioned wording candidates before prospective activation.",
+  "supersedes_active_task": "owner-pilot-closeout-repair-20261007"
 }

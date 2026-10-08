@@ -97,6 +97,11 @@ class Access(Body):
     token: str = Field(min_length=32, max_length=128)
 
 
+class QuestionFeedbackDisposition(Body):
+    status: Literal["new", "triaging", "revision_proposed", "resolved", "dismissed"]
+    revision_id: str = Field(default="", max_length=120, pattern=r"^[a-zA-Z0-9._/-]*$")
+
+
 class Operation(Body):
     revision: int = Field(ge=0)
     operation_id: str = Field(min_length=12, max_length=80, pattern=r"^[a-zA-Z0-9_-]+$")
@@ -1146,6 +1151,29 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
     def gpt_submissions(request: Request):
         admin(request)
         return {"submissions": store.gpt_submission_overview()}
+
+    @app.get("/api/admin/question-feedback")
+    def question_feedback(request: Request):
+        admin(request)
+        from .question_feedback import researcher_feedback_overview
+
+        return researcher_feedback_overview(store)
+
+    @app.post("/api/admin/question-feedback/{feedback_id}/disposition")
+    def set_feedback_disposition(
+        request: Request, feedback_id: str, body: QuestionFeedbackDisposition
+    ):
+        admin(request)
+        if body.status == "revision_proposed" and not body.revision_id:
+            raise ValueError("Proposed question revisions require a version identifier.")
+        from .question_feedback import researcher_feedback_overview
+
+        current = researcher_feedback_overview(store)["feedback"]
+        if feedback_id not in {item["feedback_id"] for item in current}:
+            raise HTTPException(status_code=404, detail="Question feedback item unavailable.")
+        return store.set_question_feedback_disposition(
+            feedback_id, body.status, body.revision_id
+        )
 
     @app.get("/api/admin/gpt-submissions/{submission_id}/primary")
     def gpt_submission_primary(request: Request, submission_id: str):

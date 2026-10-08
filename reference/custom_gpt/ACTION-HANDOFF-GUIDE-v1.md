@@ -192,3 +192,9 @@ body = {
 ```
 
 Do not send markdown fences, filenames, summaries or links in those fields. Explain that this phase has **one final storage call and one expected Allow card**, then show the exact approval sentence directly above the Action. Only the success receipt permits saying the records were received.
+
+## Question-design objections returned to the researcher
+
+An explicit complaint such as “this repeats an earlier question,” “there is too little context,” or “what is the point of this?” is instrument feedback—not a personality answer. Preserve its exact words in the corresponding turn's `process_feedback` array, along with the unchanged original question, route identifier when known, and any independent behavioral answer. Do not make up a route, answer or inferred trait. If the person gives only criticism, do not force a behavioral answer; preserve that condition.
+
+The consented interview candidate already sent for Railway independent review carries these annotations. The private researcher admin page now lists route-linked objections from existing queued reviews, clarification history, submissions and Railway sessions. There is **no additional approval card or separate transmission** just for this feedback. Before any research submission consent, no automatic transmission occurs; local/source backups remain the only record. The researcher must assess objections before proposing a separately versioned new question. No criticism automatically changes a frozen instrument or an existing participant's review.

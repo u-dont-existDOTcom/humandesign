@@ -69,6 +69,12 @@ class Store:
                 );
                 CREATE INDEX IF NOT EXISTS idx_gpt_review_status
                     ON gpt_review_jobs(status, created);
+                CREATE TABLE IF NOT EXISTS question_feedback_dispositions (
+                    feedback_id TEXT PRIMARY KEY,
+                    status TEXT NOT NULL,
+                    revision_id TEXT NOT NULL,
+                    updated_at_unix REAL NOT NULL
+                );
             """)
         os.chmod(path, 0o600)
 
@@ -259,6 +265,32 @@ class Store:
                 }
             )
         return result
+
+    def question_feedback_dispositions(self) -> dict[str, dict[str, str]]:
+        with self.connection() as db:
+            rows = db.execute(
+                "SELECT feedback_id,status,revision_id "
+                "FROM question_feedback_dispositions"
+            ).fetchall()
+        return {
+            row[0]: {"status": row[1], "revision_id": row[2]}
+            for row in rows
+        }
+
+    def set_question_feedback_disposition(
+        self, feedback_id: str, status: str, revision_id: str
+    ) -> dict[str, str]:
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            db.execute(
+                "INSERT INTO question_feedback_dispositions VALUES (?,?,?,?) "
+                "ON CONFLICT(feedback_id) DO UPDATE SET "
+                "status=excluded.status, revision_id=excluded.revision_id, "
+                "updated_at_unix=excluded.updated_at_unix",
+                (feedback_id, status, revision_id, time.time()),
+            )
+            db.commit()
+        return {"feedback_id": feedback_id, "status": status, "revision_id": revision_id}
 
     def gpt_submission_read(self, submission_id: str) -> dict:
         with self.connection() as db:
