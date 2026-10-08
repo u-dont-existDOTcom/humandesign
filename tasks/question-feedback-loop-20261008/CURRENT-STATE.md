@@ -1,12 +1,9 @@
-# Question feedback loop recovery — 2026-10-08
+# Question-feedback loop — backend delivered; proposed question wordings remain non-live
 
-Task ID: question-feedback-loop-20261008.
-Owner outcome: distinguish literal question rewrites from question-admission rules; deliver consented objections to researcher for review.
-Branch: fix/question-feedback-loop-20261008.
-Baseline: integration a4d43a2 (owner-pilot closeout, v1 active).
-
-Decisions: keep frozen v7 and active TF1 v1 unchanged. New prospective v2 wording and three retirements are a development draft only. Feedback is delivered through existing consented Railway review/submit flows, never a new per-criticism Action. Private admin displays exact comments but no private data is committed.
-
-Completed: consent-based feedback extraction, private inbox and persistent research dispositions; GPT process-feedback handoff wording; nine-question v2 draft/crosswalk; 215 participant and 1,021 repository tests passed. Remaining: merge/deploy/readback and deliver the cumulative packet and crosswalk. After delivery, private GPT editor remains owner-only and automatic issue filing/email is not provided.
-
-Next safe action: reconcile focused/full test logs, run scoped lint, commit+merge, deploy backend to existing Railway participant service, verify private admin auth/readback and local artifact delivery.
+Task: question-feedback-loop-20261008.
+Integration commit: e45e859d325c49af9ea0c657926ef1d8f264b0ee; live Railway deployment: 48b43d03-930a-4a37-8cfc-d4c704ee977d (SUCCESS).
+Engineering: researcher-authenticated feedback inbox and status dispositions merged, deployed and privately read back. Existing reviews and submissions preserved. Root tests 1,021 pass / six astronomy skips; participant tests 215 pass.
+Participant GPT: cumulative update packet delivered to owner's Downloads; private editor not changed.
+Question wording: nine actual rewrites and three proposed route retirements in a separately versioned development draft. Frozen v7 and active TF1 v1 unchanged.
+Current next owner-only boundary: apply updated GPT instructions/Knowledge for future complaints. A new prospective v2 instrument trial/activation is separate and not automatically authorized by this repair.
+The actual human final-record submission from the prior pilot remains pending its own real success receipt.

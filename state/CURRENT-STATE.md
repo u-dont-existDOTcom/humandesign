@@ -1,3 +1,11 @@
+# Live question-feedback return path — deployed 2026-10-08
+
+Task: question-feedback-loop-20261008. Current checkpoint: tasks/question-feedback-loop-20261008/CURRENT-STATE.md and CLOSEOUT.md.
+
+The private Life Patterns researcher Question feedback inbox is live. Production authenticated readback returned nine consented feedback entries, with the original sessions/submissions preserved. The cumulative GPT editor update is in Downloads; owner must apply it for robust future objection capture. Nine question wordings are rewritten only as a separately versioned **development candidate**, not active/pinned question changes; cognitive testing and explicit prospective activation remain separate work. The prior owner's real final frozen-record submission is still unconfirmed. Historical state below is retained but superseded as active task selection.
+
+---
+
 # Current Life Patterns owner-pilot repair
 
 Task: owner-pilot-closeout-repair-20261007. Recovery: tasks/owner-pilot-closeout-repair-20261007/CURRENT-STATE.md.
