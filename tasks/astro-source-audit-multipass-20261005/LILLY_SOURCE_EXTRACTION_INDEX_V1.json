@@ -3,7 +3,7 @@
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
   "status": "OPEN_BOOK_I_PARTIAL",
-  "records_count": 230,
+  "records_count": 391,
   "read_numbered_chapters": [
     1,
     2,
@@ -18,7 +18,11 @@
     11,
     12,
     13,
-    14
+    14,
+    15,
+    16,
+    17,
+    18
   ],
   "chapter_count_complete_book_not_established": true,
   "batches": [
@@ -35,14 +39,24 @@
       "records_count": 139,
       "sha256": "6310881c1163fca8ed98316948546f3f74816c1cd31e389b53b94145e742f93b",
       "scope": "BookI.VIII-XIV including nodes; targeted later table/errata comparisons separately marked"
+    },
+    {
+      "id": "B02c",
+      "path": "batches/B02c/RULES.json",
+      "records_count": 161,
+      "sha256": "c10c17da49f53e58022e17e3003474180ab4826d3285227edc05ea0dde038138",
+      "scope": "XV; first XVI divisions; second XVI sign profiles; XVII; XVIII including table explanation, ending before XIX onPDF139."
     }
   ],
   "next": {
-    "pdf_page": 118,
-    "printed_page": 84,
-    "heading": "Chap.XV Another briefe Description of the shapes and formes of the Planets"
+    "pdf_page": 139,
+    "printed_page": 105,
+    "heading": "Chap.XIX Of severall Termes, Aspects, words of Art, Accidents..."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
-  "empirical_validations": 0
+  "empirical_validations": 0,
+  "read_headed_units_count": 19,
+  "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261008.md"
 }

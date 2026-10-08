@@ -1,23 +1,25 @@
-# Astrology source audit — latest reconciled publication checkpoint (2026-10-08)
+# Latest astrology source audit — 8 October 2026
 
-**Parent outcome: OPEN. The B02b Lilly planetary source extraction is published and tested.** This file supersedes the *next-reading* field in the older `state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md`, which remains at B02a because the attempted replacement was blocked by platform safety checks. Do not overwrite or retry that blocked replacement without fresh permitted authority. This is a separate truthful checkpoint, not a claim that the older file changed.
+Parent OPEN. **Ptolemy English Books I–IV complete: 61 sections, 1066 records. Lilly Book I read/extracted through XVIII, including both XVI headings: 391 records. Combined: 1457 source records, not independent predictions.**
 
-## Completed and recoverable from Git
+## Current completed batch
+B02c covers PDF118–139, from XV through the full dignity-table explanation before XIX: five headed units, 161 records R231–R391. All22 page images and existing text were read. Source data, tables, comparisons, new uncertainty ledger, reading receipt, code and tests are ordinary files under `tasks/astro-source-audit-multipass-20261005/batches/B02c/`. The source index includes all three Lilly batches. No source book is committed.
 
-- Ptolemy Robbins English Tetrabiblos I–IV: 61/61 sections and 1,066 source records, unchanged.
-- Lilly 1647 Wellcome witness: Book I I–VII (B02a, 91 records), and **VIII–XIV including the Head/Tail appendix** (B02b, 139 further records); Lilly cumulative **230**. Latest source index: `tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json`.
-- B02b plain inspectable files published in `tasks/astro-source-audit-multipass-20261005/batches/B02b/` include `RULES.json`, `PLANETS.json`, `TABLE_AUDIT.json`, `build_reference_data.py`, `lilly_planet_reference.py`, its unit tests, `READING_RECEIPT.json`, `TEXT_IMAGE_CHECKS.json`, `TEST_RUN.txt`, `REPORT.md`, `README.md` and `CONVERSATION_HANDOFF.md`.
-- The three data outputs regenerated on the owner computer with SHA256 matching their prepared freeze: PLANETS f2addd093777b2c32b1152ee5bdab22a95eefee46987bc7dce5d3514bb41d80b; RULES 6310881c1163fca8ed98316948546f3f74816c1cd31e389b53b94145e742f93b; TABLE_AUDIT 6d7619715d7ccac94c4d2de2cae13a24d7f101283372fd6e98ceccbc79af9e99.
-- Host tests freshly run: B02b 46/46; B02a 105/105; V2 procedure/index checks 34/34. **185 distinct checks passed**, no duplicate rerun counted. No whole-application tests, astronomical parity, independent source-semantic adjudication or predictive validation.
+Actual checks:61 new B02c +105 retained B02a +46 retained B02b +34 methodology/index =246 distinct passing tests. The61 also passed in the conversation container; duplication is not additional evidence. No full application run, independent semantic reviewer, astronomical parity or predictive validation is claimed.
 
-## Honest remaining synchronization gap
+## Distinctions preserved
+Lilly's later dignity table supplies unique assignments without overwriting the earlier lists:26 term cells differ (25 prior nonunique/unassigned plus Sagittarius numbered degree20);20 face cells differ. Lilly p104 and Robbins Ptolemy p107 assign different rulers across66/360 numbered cells; attribution alone is not identity or a validated winner. Ordinal degrees and continuous longitude remain separate.
 
-The old `CURRENT_PASS.json`, `PASS_PLAN.json` and primary `state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md` still point at B02a; attempts to replace those exact payloads were blocked by platform safety checks. Read this newer checkpoint and the updated Lilly source index for B02b status. The B02b `UNRESOLVED.json` and `CROSS_SOURCE_COMPARISONS.json` were also blocked as individual repository writes; copies remain in the linked conversation B02b ZIP packet. Do not falsely claim they are in Git. The report and handoff summarize their important dispositions; no source rule was promoted on the basis of those comparisons. No unapproved safety-tool bypass was attempted.
+Domicile, exaltation, triplicity, term and face components do not imply uniformly good character or circumstances. Domicile's favourable analogy has impediment exceptions. Unimpeded angular exaltation can describe arrogance. Whole-sign exaltation and day/night triplicity rules are retained. Antiscia require exact degree/minute geometry; no contact orb or timing score is invented. Matched-modality clauses require both Ascendant and ruler; mixed pairs are unspecified.
 
-## Exact next source action
+Twenty-four B02c issues remain explicit. Printed page labels are not a uniform PDF-minus34 map; XVI is repeated and94/95 labels are swapped. One Jupiter hair token remains uncertain and unused as an executable condition.
 
-Read Lilly **Book I, chapter XV**, starting PDF 118 / printed 84, then continue the next source definitions by their actual headings. The old source may repeat chapter number XVI, so do not use arithmetic chapter numbering alone. Existing Book I I–XIV and all Ptolemy English chapters must not be restarted. Keep horary Book II distinct from natal Book III.
+## Recovery / boundaries
+Legacy `state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md`, `CURRENT_PASS.json` and `PASS_PLAN.json` remain at B02a after previously blocked replacement actions. This dated checkpoint and current Lilly index supersede their resume instructions; do not repeat completed work or retry those blocked payloads. Prior blocked B02b auxiliary payloads remain in their delivered packet and were not republished here. The new B02c records concern separately read material. One auxiliary image-crop action this turn was blocked and not retried; whole-page images sufficed.
 
-Source PDF: `Lilly-1647-Christian-Astrology-I-III.pdf` in the already verified private astrology source directory, 894 pages, SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. Catalogued missing final leaf remains unresolved but does not block these chapters. Do not commit copyrighted scans or personal outcome data.
+Public repository visibility was verified. Private host/device routing remains in the conversation delivery appendix, not the public handoff. No automatic Downloads placement is claimed. The next worker can use the saved source acquisition identity, exact book hash and delivered private appendix.
 
-The larger owner goal—full source audit, cross-author reconciliation, executable ruleset review, and untouched predictive evaluation—remains OPEN. This is a completed bounded source pass and a requested conversation handoff, not a declaration that astrology has been validated.
+## Next authorized action
+**Lilly XIX, PDF139/printed105, at the chapter heading following the table explanation.** The opening/PDF140 were retrieved incidentally but XIX is NOT read/extracted in full. Complete its technical definitions, tables and conditions before proceeding. No owner personality/history information is needed.
+
+Reload live UDA AGENTS/LESSON-INDEX and applicable guidance, then HumanDesign AGENTS/architecture and these checkpoints after a new turn or context loss. Keep all personal histories, frozen predictions, fitted models, runtime and numerology methods unchanged during source extraction. Wider corpus reading, reconciliation, executable integration and later untouched evaluation remain OPEN. No unattended work is promised.

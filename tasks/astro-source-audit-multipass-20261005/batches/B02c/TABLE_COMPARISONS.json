@@ -1,0 +1,1402 @@
+{
+  "schema_version": 1,
+  "scope": "source-allocation comparison, not prediction accuracy",
+  "earlier_planets_sha256": "f2addd093777b2c32b1152ee5bdab22a95eefee46987bc7dce5d3514bb41d80b",
+  "lilly_p104_table_sha256": "de32718421f67e158bfd52fd8aaaf670d1f4b12fc6ac2f3b0b2149b840f2058c",
+  "earlier_vs_later_lilly": {
+    "profile": "LILLY_1647_P104_TABLE",
+    "mutates_source": false,
+    "comparison_coordinate": "integer numbered degrees",
+    "comparison": {
+      "terms": {
+        "compared_cells": 360,
+        "differences_count": 26,
+        "earlier_nonunique_cells": 25,
+        "differences": [
+          {
+            "sign": "Gemini",
+            "numbered_degree": 21,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 1,
+            "earlier_owners": [
+              "Saturn",
+              "Mercury"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 2,
+            "earlier_owners": [
+              "Saturn",
+              "Mercury"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 3,
+            "earlier_owners": [
+              "Saturn",
+              "Mercury"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 4,
+            "earlier_owners": [
+              "Saturn",
+              "Mercury"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 5,
+            "earlier_owners": [
+              "Saturn",
+              "Mercury"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 6,
+            "earlier_owners": [
+              "Saturn",
+              "Mercury"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 8,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 9,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 10,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 11,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 12,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Leo",
+            "numbered_degree": 13,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 1,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 2,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 3,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 4,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 5,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 6,
+            "earlier_owners": [],
+            "later_owner": "Mercury",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 8,
+            "earlier_owners": [
+              "Venus",
+              "Mercury"
+            ],
+            "later_owner": "Venus",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 9,
+            "earlier_owners": [
+              "Venus",
+              "Mercury"
+            ],
+            "later_owner": "Venus",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 10,
+            "earlier_owners": [
+              "Venus",
+              "Mercury"
+            ],
+            "later_owner": "Venus",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 11,
+            "earlier_owners": [
+              "Venus",
+              "Mercury"
+            ],
+            "later_owner": "Venus",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 12,
+            "earlier_owners": [
+              "Venus",
+              "Mercury"
+            ],
+            "later_owner": "Venus",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Virgo",
+            "numbered_degree": 13,
+            "earlier_owners": [
+              "Venus",
+              "Mercury"
+            ],
+            "later_owner": "Venus",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Sagittarius",
+            "numbered_degree": 20,
+            "earlier_owners": [
+              "Mercury"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "single_different_owner"
+          }
+        ]
+      },
+      "faces": {
+        "compared_cells": 360,
+        "differences_count": 20,
+        "earlier_nonunique_cells": 20,
+        "differences": [
+          {
+            "sign": "Aquarius",
+            "numbered_degree": 1,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Aquarius",
+            "numbered_degree": 2,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Aquarius",
+            "numbered_degree": 3,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Aquarius",
+            "numbered_degree": 4,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Aquarius",
+            "numbered_degree": 5,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Aquarius",
+            "numbered_degree": 6,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Aquarius",
+            "numbered_degree": 7,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Aquarius",
+            "numbered_degree": 8,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Aquarius",
+            "numbered_degree": 9,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Aquarius",
+            "numbered_degree": 10,
+            "earlier_owners": [],
+            "later_owner": "Venus",
+            "earlier_status": "unassigned"
+          },
+          {
+            "sign": "Pisces",
+            "numbered_degree": 1,
+            "earlier_owners": [
+              "Saturn",
+              "Venus"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Pisces",
+            "numbered_degree": 2,
+            "earlier_owners": [
+              "Saturn",
+              "Venus"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Pisces",
+            "numbered_degree": 3,
+            "earlier_owners": [
+              "Saturn",
+              "Venus"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Pisces",
+            "numbered_degree": 4,
+            "earlier_owners": [
+              "Saturn",
+              "Venus"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Pisces",
+            "numbered_degree": 5,
+            "earlier_owners": [
+              "Saturn",
+              "Venus"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Pisces",
+            "numbered_degree": 6,
+            "earlier_owners": [
+              "Saturn",
+              "Venus"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Pisces",
+            "numbered_degree": 7,
+            "earlier_owners": [
+              "Saturn",
+              "Venus"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Pisces",
+            "numbered_degree": 8,
+            "earlier_owners": [
+              "Saturn",
+              "Venus"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Pisces",
+            "numbered_degree": 9,
+            "earlier_owners": [
+              "Saturn",
+              "Venus"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          },
+          {
+            "sign": "Pisces",
+            "numbered_degree": 10,
+            "earlier_owners": [
+              "Saturn",
+              "Venus"
+            ],
+            "later_owner": "Saturn",
+            "earlier_status": "multiple"
+          }
+        ]
+      }
+    }
+  },
+  "robbins_vs_lilly": {
+    "robbins_pdf_page": 131,
+    "robbins_printed_page": 107,
+    "lilly_pdf_page": 138,
+    "lilly_printed_page": 104,
+    "rows": [
+      {
+        "sign": "Aries",
+        "lilly_p104": [
+          [
+            "Jupiter",
+            6
+          ],
+          [
+            "Venus",
+            14
+          ],
+          [
+            "Mercury",
+            21
+          ],
+          [
+            "Mars",
+            26
+          ],
+          [
+            "Saturn",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Jupiter",
+            6
+          ],
+          [
+            "Venus",
+            14
+          ],
+          [
+            "Mercury",
+            21
+          ],
+          [
+            "Mars",
+            26
+          ],
+          [
+            "Saturn",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Taurus",
+        "lilly_p104": [
+          [
+            "Venus",
+            8
+          ],
+          [
+            "Mercury",
+            15
+          ],
+          [
+            "Jupiter",
+            22
+          ],
+          [
+            "Saturn",
+            26
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Venus",
+            8
+          ],
+          [
+            "Mercury",
+            15
+          ],
+          [
+            "Jupiter",
+            22
+          ],
+          [
+            "Saturn",
+            24
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Gemini",
+        "lilly_p104": [
+          [
+            "Mercury",
+            7
+          ],
+          [
+            "Jupiter",
+            14
+          ],
+          [
+            "Venus",
+            21
+          ],
+          [
+            "Saturn",
+            25
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Mercury",
+            7
+          ],
+          [
+            "Jupiter",
+            13
+          ],
+          [
+            "Venus",
+            20
+          ],
+          [
+            "Mars",
+            26
+          ],
+          [
+            "Saturn",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Cancer",
+        "lilly_p104": [
+          [
+            "Mars",
+            6
+          ],
+          [
+            "Jupiter",
+            13
+          ],
+          [
+            "Mercury",
+            20
+          ],
+          [
+            "Venus",
+            27
+          ],
+          [
+            "Saturn",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Mars",
+            6
+          ],
+          [
+            "Jupiter",
+            13
+          ],
+          [
+            "Mercury",
+            20
+          ],
+          [
+            "Venus",
+            27
+          ],
+          [
+            "Saturn",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Leo",
+        "lilly_p104": [
+          [
+            "Saturn",
+            6
+          ],
+          [
+            "Mercury",
+            13
+          ],
+          [
+            "Venus",
+            19
+          ],
+          [
+            "Jupiter",
+            25
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Jupiter",
+            6
+          ],
+          [
+            "Mercury",
+            13
+          ],
+          [
+            "Saturn",
+            19
+          ],
+          [
+            "Venus",
+            25
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Virgo",
+        "lilly_p104": [
+          [
+            "Mercury",
+            7
+          ],
+          [
+            "Venus",
+            13
+          ],
+          [
+            "Jupiter",
+            18
+          ],
+          [
+            "Saturn",
+            24
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Mercury",
+            7
+          ],
+          [
+            "Venus",
+            13
+          ],
+          [
+            "Jupiter",
+            18
+          ],
+          [
+            "Saturn",
+            24
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Libra",
+        "lilly_p104": [
+          [
+            "Saturn",
+            6
+          ],
+          [
+            "Venus",
+            11
+          ],
+          [
+            "Jupiter",
+            19
+          ],
+          [
+            "Mercury",
+            24
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Saturn",
+            6
+          ],
+          [
+            "Venus",
+            11
+          ],
+          [
+            "Mercury",
+            16
+          ],
+          [
+            "Jupiter",
+            24
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Scorpio",
+        "lilly_p104": [
+          [
+            "Mars",
+            6
+          ],
+          [
+            "Jupiter",
+            14
+          ],
+          [
+            "Venus",
+            21
+          ],
+          [
+            "Mercury",
+            27
+          ],
+          [
+            "Saturn",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Mars",
+            6
+          ],
+          [
+            "Venus",
+            13
+          ],
+          [
+            "Jupiter",
+            21
+          ],
+          [
+            "Mercury",
+            27
+          ],
+          [
+            "Saturn",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Sagittarius",
+        "lilly_p104": [
+          [
+            "Jupiter",
+            8
+          ],
+          [
+            "Venus",
+            14
+          ],
+          [
+            "Mercury",
+            19
+          ],
+          [
+            "Saturn",
+            25
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Jupiter",
+            8
+          ],
+          [
+            "Venus",
+            14
+          ],
+          [
+            "Mercury",
+            19
+          ],
+          [
+            "Saturn",
+            25
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Capricorn",
+        "lilly_p104": [
+          [
+            "Venus",
+            6
+          ],
+          [
+            "Mercury",
+            12
+          ],
+          [
+            "Jupiter",
+            19
+          ],
+          [
+            "Mars",
+            25
+          ],
+          [
+            "Saturn",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Venus",
+            6
+          ],
+          [
+            "Mercury",
+            12
+          ],
+          [
+            "Jupiter",
+            19
+          ],
+          [
+            "Saturn",
+            25
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Aquarius",
+        "lilly_p104": [
+          [
+            "Saturn",
+            6
+          ],
+          [
+            "Mercury",
+            12
+          ],
+          [
+            "Venus",
+            20
+          ],
+          [
+            "Jupiter",
+            25
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Saturn",
+            6
+          ],
+          [
+            "Mercury",
+            12
+          ],
+          [
+            "Venus",
+            20
+          ],
+          [
+            "Jupiter",
+            25
+          ],
+          [
+            "Mars",
+            30
+          ]
+        ]
+      },
+      {
+        "sign": "Pisces",
+        "lilly_p104": [
+          [
+            "Venus",
+            8
+          ],
+          [
+            "Jupiter",
+            14
+          ],
+          [
+            "Mercury",
+            20
+          ],
+          [
+            "Mars",
+            26
+          ],
+          [
+            "Saturn",
+            30
+          ]
+        ],
+        "robbins_p107": [
+          [
+            "Venus",
+            8
+          ],
+          [
+            "Jupiter",
+            14
+          ],
+          [
+            "Mercury",
+            20
+          ],
+          [
+            "Mars",
+            25
+          ],
+          [
+            "Saturn",
+            30
+          ]
+        ]
+      }
+    ],
+    "compared_numbered_cells": 360,
+    "different_numbered_cells": 66,
+    "different_arc_length_if_uniform_degree_segments": 66,
+    "identical_sign_rows": [
+      "Aries",
+      "Cancer",
+      "Virgo",
+      "Sagittarius",
+      "Aquarius"
+    ],
+    "differences": [
+      {
+        "sign": "Taurus",
+        "numbered_cell": 25,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Taurus",
+        "numbered_cell": 26,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Gemini",
+        "numbered_cell": 14,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Gemini",
+        "numbered_cell": 21,
+        "lilly": "Venus",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Gemini",
+        "numbered_cell": 22,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Gemini",
+        "numbered_cell": 23,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Gemini",
+        "numbered_cell": 24,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Gemini",
+        "numbered_cell": 25,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Gemini",
+        "numbered_cell": 27,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Gemini",
+        "numbered_cell": 28,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Gemini",
+        "numbered_cell": 29,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Gemini",
+        "numbered_cell": 30,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 1,
+        "lilly": "Saturn",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 2,
+        "lilly": "Saturn",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 3,
+        "lilly": "Saturn",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 4,
+        "lilly": "Saturn",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 5,
+        "lilly": "Saturn",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 6,
+        "lilly": "Saturn",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 14,
+        "lilly": "Venus",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 15,
+        "lilly": "Venus",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 16,
+        "lilly": "Venus",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 17,
+        "lilly": "Venus",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 18,
+        "lilly": "Venus",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 19,
+        "lilly": "Venus",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 20,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 21,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 22,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 23,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 24,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Leo",
+        "numbered_cell": 25,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Libra",
+        "numbered_cell": 12,
+        "lilly": "Jupiter",
+        "robbins": "Mercury"
+      },
+      {
+        "sign": "Libra",
+        "numbered_cell": 13,
+        "lilly": "Jupiter",
+        "robbins": "Mercury"
+      },
+      {
+        "sign": "Libra",
+        "numbered_cell": 14,
+        "lilly": "Jupiter",
+        "robbins": "Mercury"
+      },
+      {
+        "sign": "Libra",
+        "numbered_cell": 15,
+        "lilly": "Jupiter",
+        "robbins": "Mercury"
+      },
+      {
+        "sign": "Libra",
+        "numbered_cell": 16,
+        "lilly": "Jupiter",
+        "robbins": "Mercury"
+      },
+      {
+        "sign": "Libra",
+        "numbered_cell": 20,
+        "lilly": "Mercury",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Libra",
+        "numbered_cell": 21,
+        "lilly": "Mercury",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Libra",
+        "numbered_cell": 22,
+        "lilly": "Mercury",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Libra",
+        "numbered_cell": 23,
+        "lilly": "Mercury",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Libra",
+        "numbered_cell": 24,
+        "lilly": "Mercury",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 7,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 8,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 9,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 10,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 11,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 12,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 13,
+        "lilly": "Jupiter",
+        "robbins": "Venus"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 15,
+        "lilly": "Venus",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 16,
+        "lilly": "Venus",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 17,
+        "lilly": "Venus",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 18,
+        "lilly": "Venus",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 19,
+        "lilly": "Venus",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 20,
+        "lilly": "Venus",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Scorpio",
+        "numbered_cell": 21,
+        "lilly": "Venus",
+        "robbins": "Jupiter"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 20,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 21,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 22,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 23,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 24,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 25,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 26,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 27,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 28,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 29,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Capricorn",
+        "numbered_cell": 30,
+        "lilly": "Saturn",
+        "robbins": "Mars"
+      },
+      {
+        "sign": "Pisces",
+        "numbered_cell": 26,
+        "lilly": "Mars",
+        "robbins": "Saturn"
+      }
+    ],
+    "interpretation": "The two tables labelled according to Ptolemy are not identical. This does not establish which better represents Ptolemy or which predicts better. Manuscript/translation history not independently adjudicated.",
+    "coordinate_limit": "Convert the Robbins row lengths to cumulative endpoints; integer numbered cell n represents its nth degree segment. This alignment compares allocations and does not decide an exact longitude-boundary ownership."
+  },
+  "earlier_source_mutated": false,
+  "runtime_promotions": 0,
+  "empirical_validations": 0
+}

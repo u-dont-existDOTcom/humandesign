@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "status": "SOURCE_BATCH_VERIFIED_PREPUBLICATION",
+  "baseline": "f234a44691fcb28355a73a66de79ffde0e97dd17",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "new_source_records": 161,
+  "lilly_source_records": 391,
+  "ptolemy_source_records": 1066,
+  "combined_source_records": 1457,
+  "new_headed_units": 5,
+  "new_tests": 61,
+  "retained_tests": {
+    "B02a": 105,
+    "B02b": 46,
+    "methodology": 34
+  },
+  "distinct_tests_actually_passed": 246,
+  "duplicate_reruns_counted_again": false,
+  "full_application_rerun": false,
+  "independent_semantic_review": false,
+  "astronomical_parity": false,
+  "predictive_validation": false,
+  "all_22_source_page_images_inspected": true,
+  "new_ocr": false,
+  "earlier_lists_vs_later_table": {
+    "different_term_cells": 26,
+    "earlier_nonunique_term_cells": 25,
+    "different_face_cells": 20
+  },
+  "robbins_vs_lilly_different_degree_cells": 66,
+  "new_unresolved_issues": 24,
+  "runtime_models_promoted": 0,
+  "personal_outcomes_inspected": false,
+  "tracked_existing_files_changed": [
+    "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261008.md",
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json"
+  ],
+  "other_tracked_files_unchanged": true,
+  "legacy_blocked_replacements_retried": false,
+  "auxiliary_crop_block_retried": false,
+  "repository_visibility_verified": "public",
+  "private_host_locators_in_public_handoff": false,
+  "owner_downloads_placement": false,
+  "next": {
+    "pdf_page": 139,
+    "printed_page": 105,
+    "heading": "XIX after dignity-table explanation"
+  }
+}

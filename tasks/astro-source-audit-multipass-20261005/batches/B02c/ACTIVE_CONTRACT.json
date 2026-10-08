@@ -1,0 +1,37 @@
+{
+  "task": "astro-source-audit-multipass-20261005",
+  "batch": "B02c",
+  "parent_outcome": "OPEN",
+  "start_utc": "2026-10-08 01:47:42 UTC",
+  "baseline": "f234a44691fcb28355a73a66de79ffde0e97dd17",
+  "scope": "Lilly XV, both XVI headings, XVII and XVIII through the table explanation on PDF139; source extraction only",
+  "activation": {
+    "trigger": "Current owner requirement and source-audit continuation",
+    "status": "ACTIVE",
+    "UDA_root_blob": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "HD_root_blob": "15efee1556a0a44ea2b6e4af0596a7e0cb8c24c3",
+    "source_provenance_blob": "bb58d19c1999afcfdb39a134f24402ed4784926a",
+    "activation_pattern_blob": "f7a4a5ee15e958f5e41ca0cee385fc84a35c9181",
+    "git_operating_pattern_blob": "da3c76476991f68d20049344569059f2fe3428b3",
+    "delivery_pattern_blob": "be1be0b3a082e7175284463e521f71897ffb5e04",
+    "post_compaction_root_refreshed": true
+  },
+  "obligations": [
+    {"id":"resume","due":"reading","required":"Do not repeat completed Ptolemy/B02a/B02b. Reconcile dated checkpoint and current index.","evidence":"READING_RECEIPT.json plus unchanged earlier records","enforcement":"semantic"},
+    {"id":"source","due":"extraction","required":"Preserve prerequisites, alternatives, exceptions, source uncertainty and images; no silent modernization.","evidence":"RULES.json, TEXT_IMAGE_CHECKS.json, UNRESOLVED.json","enforcement":"semantic"},
+    {"id":"preserve","due":"publication","required":"Keep person data, historical freezes, fitted models, runtime and earlier source lists unchanged.","evidence":"Git tracked-diff allowlist and input digests","enforcement":"mechanical"},
+    {"id":"ambiguity","due":"helper implementation","required":"Choose explicit table profile; keep ordinal and continuous coordinates separate; unknown does not become favourable or absent.","evidence":"reference code and61 new tests","enforcement":"mechanical and semantic"},
+    {"id":"blocked_actions","due":"execution","required":"Do not retry blocked legacy replacements, prior B02b payloads or this turn's auxiliary crop.","evidence":"New B02c scope; legacy files unchanged; whole-page reading","enforcement":"action-boundary"},
+    {"id":"tests","due":"publication","required":"Report tests actually executed, not inherited cumulative counts or predictive accuracy.","evidence":"HOST_TEST_RECEIPT.json,61+105+46+34 passing logs","enforcement":"mechanical"},
+    {"id":"delivery","due":"final","required":"Publish source work and supply usable report/packet/handoff; keep private host handles out of public repo.","evidence":"public visibility check, redacted repository handoff, private conversation appendix, publication/readback receipts","enforcement":"mechanical and semantic"},
+    {"id":"final_clock","due":"final answer","required":"Second live clock reading in final first line with elapsed; no fabricated completion/background execution.","evidence":"actual final answer; still due until delivery","enforcement":"output boundary"}
+  ],
+  "semantic_review": "Writer checked complete source units and all22 page images. This is not an independent reviewer or evidence of predictive validity.",
+  "continuation": {
+    "parent_gap": "Later Lilly chapters and wider corpus/reconciliation/implementation/untouched evaluation remain open.",
+    "next_action": "Read XIX beginning at the heading on PDF139/printed105, then extract and verify its full applicable unit.",
+    "owner_data_needed": false,
+    "unattended_work_promised": false,
+    "phase_delivery": "Owner authorized multiple source passes; this five-unit pass delivers completed source artifacts and exact next unread point, not a claim that the parent is satisfied."
+  }
+}

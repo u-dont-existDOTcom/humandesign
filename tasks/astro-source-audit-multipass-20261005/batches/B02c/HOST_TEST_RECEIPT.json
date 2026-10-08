@@ -1,0 +1,73 @@
+{
+  "runs": [
+    {
+      "label": "new_reference",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_lilly_sign_dignity_reference.py",
+        "-v"
+      ],
+      "cwd_role": "B02c",
+      "exit_code": 0,
+      "log": "HOST_NEW_REFERENCE.txt"
+    },
+    {
+      "label": "retained_foundation",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_lilly_foundation_reference.py",
+        "-v"
+      ],
+      "cwd_role": "B02a",
+      "exit_code": 0,
+      "log": "HOST_RETAINED_FOUNDATION.txt"
+    },
+    {
+      "label": "retained_planet",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_lilly_planet_reference.py",
+        "-v"
+      ],
+      "cwd_role": "B02b",
+      "exit_code": 0,
+      "log": "HOST_RETAINED_PLANET.txt"
+    },
+    {
+      "label": "retained_methodology",
+      "command": [
+        "/home/joel/humandesign/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_astrology_receipt_v2.py",
+        "tests/test_astrology_deep_analysis_protocol.py",
+        "tests/test_person_life_ruleset_index.py",
+        "tests/test_person_life_ruleset_catalog.py",
+        "tests/test_current_merged_timing_candidate_ruleset.py"
+      ],
+      "cwd_role": "repository",
+      "exit_code": 0,
+      "log": "HOST_RETAINED_METHODOLOGY.txt"
+    }
+  ],
+  "scope": "Bounded source-reference and five repository methodology files; not full application; duplicate local run not additional distinct tests."
+}
