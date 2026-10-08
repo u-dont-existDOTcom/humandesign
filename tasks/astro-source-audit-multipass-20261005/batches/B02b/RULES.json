@@ -1,0 +1,3566 @@
+{
+  "schema_version": 2,
+  "batch_id": "B02b",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "status": "BOOK_I_VIII_XIV_EXTRACTED_NOT_RUNTIME_PROMOTION",
+  "scope": "All seven planetary chapters through the final nodes passage; targeted table138 comparisons only, not fullXVIII audit.",
+  "records_count": 139,
+  "independent_predictions_count": 0,
+  "records_are_not_statistical_independence_units": true,
+  "records": [
+    {
+      "id": "LI.1647.I.08.R092",
+      "title": "Saturn: named body and astronomical description",
+      "kind": "historical_astronomy",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          91
+        ],
+        "printed_pages": [
+          57
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"names\": [\"Saturne\", \"Chronos\", \"Phaenon\", \"Falcifer\"], \"appearance\": \"Highest planet between Jupiter and firmament; pale, wan, leaden or ashy; not bright or sparkling.\", \"period\": \"29 years 157 days or thereabouts\", \"mean_motion\": \"2 arcminutes 1 arcsecond\", \"diurnal_motion\": \"3, 4, 5 or 6 arcminutes, seldom more\", \"latitude_north\": \"2 degrees 48 arcminutes\", \"latitude_south\": \"2 degrees 49 arcminutes\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical numbers and visibility claims, not a replacement for Swiss Ephemeris. Discrepant units/claims remain explicit.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R093",
+      "title": "Saturn: houses, exaltation, fall and triplicity",
+      "kind": "dignity_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          91,
+          92
+        ],
+        "printed_pages": [
+          57,
+          58
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"domiciles\": {\"Capricorn\": \"night house\", \"Aquarius\": \"day house\"}, \"exaltation\": {\"sign\": \"Libra\", \"degree\": null}, \"fall\": {\"sign\": \"Aries\", \"degree\": null}, \"detriment\": \"Not explicitly listed in this planetary chapter; do not infer an explicit source statement from opposite domiciles.\", \"sign_joy\": \"Aquarius\", \"triplicity\": {\"element\": \"air\", \"time\": \"day\"}}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Separate sign domicile from mundane house; missing exact exaltation/fall degrees are not supplied by analogy.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R094",
+      "title": "Saturn: terms and faces as printed",
+      "kind": "degree_table",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          91,
+          92
+        ],
+        "printed_pages": [
+          57,
+          58
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Retain 12 enumerated term rows and 5 face rows in PLANETS.json under Saturn; no silent repair of conflicts with the later synoptic table.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ordinal degrees and conflicting witnesses are retained; a term/face alone does not establish the entire well-dignified branch.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R095",
+      "title": "Saturn: direction and station durations",
+      "kind": "motion_state",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          92
+        ],
+        "printed_pages": [
+          58
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"retrograde_days\": 140, \"first_station_days\": 5, \"second_station_days\": 5}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Approximate durations are not exact ephemeris-derived station windows.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R096",
+      "title": "Saturn: intrinsic nature",
+      "kind": "nature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          92
+        ],
+        "printed_pages": [
+          58
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Diurnal, cold and dry, melancholic, earthly, masculine; greater Infortune, author of solitariness, malevolent.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Intrinsic nature is distinct from qualifying condition and from topic-specific effects.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R097",
+      "title": "Saturn: well-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          92
+        ],
+        "printed_pages": [
+          58
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Profound imagination; severe acts; reserved words; sparing in speech and giving; patient labour; grave argument; studious and solicitous in acquiring worldly goods; austere actions.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Saturn is the relevant significator AND the chapter's well-placed/well-dignified condition is established; boundary definition not supplied by these portraits alone.",
+      "qualifications_and_limits": "Retain adverse/unflattering parts within the well-placed branch; no generic moral positivity.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R098",
+      "title": "Saturn: ill-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          92
+        ],
+        "printed_pages": [
+          58
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Envious, covetous, jealous, mistrustful, timorous, sordid, outwardly dissembling, sluggish, suspicious, stubborn, contemptuous of women, a concealed liar, malicious, murmuring, never content and ever repining.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Saturn qualifies as significator AND the ill-placed/ill-dignified condition is established; unknown is not ill.",
+      "qualifications_and_limits": "Retain historical moral/religious vocabulary as source characterisation, not a diagnosis or factual claim about an absent person.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R099",
+      "title": "Saturn: corporature and phase modifiers",
+      "kind": "conditional_corporature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          92,
+          93
+        ],
+        "printed_pages": [
+          58,
+          59
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"general\": \"Middle stature; cold/dry body; pale, swarthy or muddy complexion; little black downward-looking eyes; broad forehead; black or dark rough hair; large ears; hanging brows; thick lips and nose; sparse beard; unpleasant countenance; head forward or stooping; broad, sometimes crooked shoulders; short lank belly; lean short thighs; ill-shaped knees/feet, sometimes striking together.\", \"oriental\": \"Shorter stature but decent and well composed.\", \"occidental\": \"Darker and leaner, less hair.\", \"latitude_and_station\": \"Wanting latitude: leaner. Great latitude: fatter or fleshier. South latitude: fleshier but quick in motion. North latitude: hairy and much flesh. First station: a little fat. Second station: fat, ill-favoured and weak; Lilly tells the reader to observe this last station distinction in the other planets.\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not infer an actual person's appearance, health or ethnicity from this catalogue. Preserve solar figure/phase distinction and lunar missing branches.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R100",
+      "title": "Saturn: human roles and professions",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          93
+        ],
+        "printed_pages": [
+          59
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"people\": [\"husbandmen\", \"clowns\", \"beggars\", \"day-labourers\", \"old men\", \"fathers\", \"grandfathers\", \"monks\", \"Jesuits\", \"sectarists\"], \"professions\": [\"curriers\", \"night-farmers\", \"underground miners\", \"tinners\", \"potters\", \"broom-men\", \"plumbers\", \"brick-makers\", \"maltsters\", \"chimney-sweepers\", \"sextons\", \"corpse-bearers\", \"scavengers\", \"hostlers\", \"colliers\", \"carters\", \"gardeners\", \"ditchers\", \"chandlers\", \"black-cloth dyers\", \"herdsmen\", \"shepherds\", \"cow-keepers\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Natural correspondences are not sufficient to select a native's occupation; any embedded conjunction condition is retained.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R101",
+      "title": "Saturn: illnesses and body parts",
+      "kind": "historical_medical_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          93
+        ],
+        "printed_pages": [
+          59
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Right-ear and teeth impediments; quartan agues from cold/dry/melancholic distempers; leprosies, rheums, consumptions, black jaundice, palsies, tremblings, vain fears, fantasies, dropsy, hand/foot gout, apoplexies, dog-hunger, excessive hemorrhoidal flux. Ruptures qualified by Scorpio or Leo and an ill aspect with Venus. Body rulership: Principally the spleen.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical classifications only. No medical diagnosis, prevention/treatment claim, dosage, or patient application.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R102",
+      "title": "Saturn: plants and materia",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          93
+        ],
+        "printed_pages": [
+          59
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"herbs\": [\"bearsfoot\", \"starwort\", \"wolf-bane\", \"hemlock\", \"fern\", \"white and black hellebore\", \"henbane\", \"ceterach or finger-fern\", \"clotbur or burdock\", \"parsnip\", \"dragon\", \"pulse\", \"vervain\", \"mandrake\", \"poppy\", \"moss\", \"nightshade\", \"bythwind [historical name unresolved]\", \"angelica\", \"sage\", \"box\", \"tutsan\", \"orage or golden herb\", \"spinach\", \"shepherds purse\", \"cumin\", \"horsetail\", \"fumitory\"], \"trees\": [\"tamarisk\", \"savine\", \"sene\", \"capers\", \"rue or herbgrace\", \"polypody\", \"willow or sallow\", \"yew\", \"cypress\", \"hemp\", \"pine\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical names/taxonomy remain; spelling-normalized and unresolved names labelled. No modern species identifications or efficacy recommendations.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R103",
+      "title": "Saturn: animals, places and materials",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          94
+        ],
+        "printed_pages": [
+          60
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"beasts\": [\"ass\", \"cat\", \"hare\", \"mouse\", \"mole\", \"elephant\", \"bear\", \"dog\", \"wolf\", \"basilisk\", \"crocodile\", \"scorpion\", \"toad\", \"serpent\", \"adder\", \"hog\", \"creeping creatures said to breed from putrefaction in earth, water or ruins\"], \"birds\": [\"bat or blude-black\", \"crow\", \"lapwing\", \"owl\", \"gnat\", \"crane\", \"peacock\", \"grasshopper\", \"thrush\", \"blackbird\", \"ostrich\", \"cuckoo\"], \"fish\": [\"eel\", \"tortoise\", \"shellfish\"], \"places\": [\"deserts\", \"woods\", \"obscure valleys\", \"caves\", \"dens\", \"holes\", \"mountains\", \"burial places/churchyards\", \"ruined buildings\", \"coal mines\", \"sinks\", \"dirty/stinking muddy places\", \"wells\", \"houses of offices\"], \"metals\": [\"lead\", \"loadstone\", \"dross of metals\", \"dust and rubbish\"], \"stones\": [\"sapphire\", \"lapis lazuli\", \"black/ashy unpolishable country stones\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Taxonomic placement follows source lists, including mythical creatures and non-birds in bird lists; not a modern taxonomic assertion.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R104",
+      "title": "Saturn: colours and savours",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          93
+        ],
+        "printed_pages": [
+          59
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Sour, bitter, sharp; dark/ashy colour occurs in appearance and stone descriptions, not a separate numeric colour code.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical source claims; no empirical or modern scientific validity inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R105",
+      "title": "Saturn: weather and wind",
+      "kind": "conditional_mundane",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          94
+        ],
+        "printed_pages": [
+          60
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Cloudy, dark, obscure, cold and hurtful air; thick black condensed clouds. Further treatment promised elsewhere. Wind: East quarter and eastern winds.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Weather-domain assertions are not automatically natal timing rules; retain season/sign/association qualifiers.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R106",
+      "title": "Saturn: orb, year categories and gestation",
+      "kind": "timing_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          94,
+          95
+        ],
+        "printed_pages": [
+          60,
+          61
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"orb_degrees_before_and_after\": 9, \"years\": {\"greatest\": \"465\", \"greater\": \"57\", \"mean\": \"43 1/2\", \"least\": \"30\"}, \"age\": \"Decrepit old men, fathers and grandfathers, with analogous age in plants/trees/creatures.\", \"conception_months\": [1, 8]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Year kinds, age analogy, gestational months and aspect reach are different quantities; no lifespan model or paired-orb aggregation implemented.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R107",
+      "title": "Saturn: regions, symbolic numbers, angel and weekday",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          95
+        ],
+        "printed_pages": [
+          61
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"countries\": \"Late authors are credited with Bavaria, Saxony, Stiria, Romandiola, Ravenna, Constantia, Ingoldstad.\", \"angel\": \"Cassiel, alias Captiel\", \"numbers\": [], \"weekday\": \"Saturday\", \"hours_on_own_weekday\": [1, 8]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ruling hours begin from sunrise, not midnight; numeric correspondences do not modify frozen Pythagorean numerology.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R108",
+      "title": "Saturn: stated friendship and enmity",
+      "kind": "relation_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          95
+        ],
+        "printed_pages": [
+          61
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"friends\": [\"Jupiter\", \"Sun\", \"Mercury\"], \"enemies\": [\"Mars\", \"Venus\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Keep direction and omissions; do not symmetrize conflicting statements.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R109",
+      "title": "Jupiter: named body and astronomical description",
+      "kind": "historical_astronomy",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          95
+        ],
+        "printed_pages": [
+          61
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"names\": [\"Jupiter\", \"Zeus\", \"Phaeton\"], \"appearance\": \"Next to Saturn; greatest in appearance except Sun, Moon and Venus; bright, clear, azure.\", \"period\": \"12 years\", \"mean_motion\": \"4 arcminutes 59 arcseconds\", \"diurnal_motion\": \"8, 10, 12 or 14 arcminutes, hardly more\", \"latitude_north\": \"1 degree 38 arcminutes\", \"latitude_south\": \"1 degree 40 arcminutes\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical numbers and visibility claims, not a replacement for Swiss Ephemeris. Discrepant units/claims remain explicit.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R110",
+      "title": "Jupiter: houses, exaltation, fall and triplicity",
+      "kind": "dignity_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          95,
+          96
+        ],
+        "printed_pages": [
+          61,
+          62
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"domiciles\": {\"Sagittarius\": \"day house\", \"Pisces\": \"night house\"}, \"exaltation\": {\"sign\": \"Cancer\", \"degree\": null}, \"fall\": {\"sign\": \"Capricorn\", \"degree\": null}, \"detriment\": [\"Gemini\", \"Virgo\"], \"triplicity\": {\"element\": \"fire\", \"time\": \"night\"}}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Separate sign domicile from mundane house; missing exact exaltation/fall degrees are not supplied by analogy.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R111",
+      "title": "Jupiter: terms and faces as printed",
+      "kind": "degree_table",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          95,
+          96
+        ],
+        "printed_pages": [
+          61,
+          62
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Retain 12 enumerated term rows and 5 face rows in PLANETS.json under Jupiter; no silent repair of conflicts with the later synoptic table.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ordinal degrees and conflicting witnesses are retained; a term/face alone does not establish the entire well-dignified branch.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R112",
+      "title": "Jupiter: direction and station durations",
+      "kind": "motion_state",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          96
+        ],
+        "printed_pages": [
+          62
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"retrograde_days\": 120, \"first_station_days\": 5, \"second_station_days\": 4}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Approximate durations are not exact ephemeris-derived station windows.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R113",
+      "title": "Jupiter: intrinsic nature",
+      "kind": "nature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          96,
+          97
+        ],
+        "printed_pages": [
+          62,
+          63
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Diurnal, masculine, temperately hot and moist, airy, sanguine; greater Fortune, author of temperance, modesty, sobriety and justice.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Intrinsic nature is distinct from qualifying condition and from topic-specific effects.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R114",
+      "title": "Jupiter: well-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          96,
+          97
+        ],
+        "printed_pages": [
+          62,
+          63
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Magnanimous, faithful, bashful, honourably aspiring; fair dealing, wishing to benefit all, glorious/honourable/religious deeds; sweet affable conversation; indulgent to wife and children; reverent to aged people; charitable to the poor, liberal, just, wise, prudent, thankful and virtuous, hating sordid actions. The explicit application is Jupiter as a person's significator in a question, or lord of the Ascendant in a nativity, and well dignified.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Jupiter is the relevant significator AND the chapter's well-placed/well-dignified condition is established; boundary definition not supplied by these portraits alone.",
+      "qualifications_and_limits": "Retain adverse/unflattering parts within the well-placed branch; no generic moral positivity.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R115",
+      "title": "Jupiter: ill-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          96,
+          97
+        ],
+        "printed_pages": [
+          62,
+          63
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Wastes patrimony; lets others cheat him; hypocritically religious; tenacious in false religious tenets; ignorant, careless, cold to friends, dull in capacity, schismatic, abasing himself and unnecessarily crouching or stooping.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Jupiter qualifies as significator AND the ill-placed/ill-dignified condition is established; unknown is not ill.",
+      "qualifications_and_limits": "Retain historical moral/religious vocabulary as source characterisation, not a diagnosis or factual claim about an absent person.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R116",
+      "title": "Jupiter: corporature and phase modifiers",
+      "kind": "conditional_corporature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          97
+        ],
+        "printed_pages": [
+          63
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"general\": \"Upright tall body; brown/ruddy pleasant complexion; oval or long full fleshy face; high forehead; large grey eyes; soft auburn-brown hair, much beard; large deep belly; strong thighs/legs, long least-comely feet; sober grave speech.\", \"oriental\": \"Clearer honey or white/red sanguine complexion, large eyes and fleshier body, usually mole/scar in right foot.\", \"occidental\": \"Pure pleasant complexion, shorter stature, light brown/dark flaxen hair; smooth or bald around temple/forehead.\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not infer an actual person's appearance, health or ethnicity from this catalogue. Preserve solar figure/phase distinction and lunar missing branches.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R117",
+      "title": "Jupiter: human roles and professions",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          97
+        ],
+        "printed_pages": [
+          63
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"people\": [\"judges\", \"senators\", \"counsellors\", \"ecclesiastical men\", \"bishops\", \"priests\", \"ministers\", \"cardinals\", \"chancellors\", \"doctors of civil law\", \"university scholars/students\"], \"professions\": [\"lawyers\", \"clothiers\", \"woollen-drapers\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Natural correspondences are not sufficient to select a native's occupation; any embedded conjunction condition is retained.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R118",
+      "title": "Jupiter: illnesses and body parts",
+      "kind": "historical_medical_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          97
+        ],
+        "printed_pages": [
+          63
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Pleurisies; liver and left-ear infirmities; apoplexies; lung inflammation; palpitation/trembling of heart; cramps; backbone pains; veins/ribs and corruption of blood; squinzies; windiness; putrefaction or fevers through excessive blood. Body rulership: Liver; air among elements.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical classifications only. No medical diagnosis, prevention/treatment claim, dosage, or patient application.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R119",
+      "title": "Jupiter: plants and materia",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          98
+        ],
+        "printed_pages": [
+          64
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"herbs\": [\"cloves\", \"clove-gillyflowers\", \"mace\", \"nutmeg\", \"sugar\", \"strawberry\", \"balsam\", \"betony\", \"centaury\", \"flax\", \"arsmart\", \"fumitory\", \"lungwort\", \"pimpernel\", \"walwort\", \"organy or wild marjoram\", \"rhubarb\", \"self-heal\", \"borage\", \"bugloss\", \"wheat\", \"willow-herb\", \"thorough-leaf\", \"violets\", \"laskwort [reading/identity unresolved]\", \"liverwort\", \"basil\", \"pomegranate\", \"peony\", \"liquorice\", \"mint\", \"mastic\", \"daisy\", \"feverfew\", \"saffron\"], \"trees\": [\"cherry\", \"birch\", \"mulberry\", \"coral-tree\", \"oak\", \"barberry\", \"olive\", \"gooseberry\", \"almond\", \"ivy\", \"manna\", \"mace\", \"vine\", \"fig\", \"ash\", \"pear\", \"hazel\", \"beech\", \"pine\", \"raisins\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical names/taxonomy remain; spelling-normalized and unresolved names labelled. No modern species identifications or efficacy recommendations.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R120",
+      "title": "Jupiter: animals, places and materials",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          98
+        ],
+        "printed_pages": [
+          64
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"beasts\": [\"sheep\", \"hart/stag\", \"doe\", \"ox\", \"elephant\", \"dragon\", \"tiger\", \"unicorn\", \"mild/gentle beasts of great benefit to mankind\"], \"birds\": [\"stork\", \"snipe\", \"lark\", \"eagle\", \"stock-dove\", \"partridge\", \"bees\", \"pheasant\", \"peacock\", \"hen\"], \"fish\": [\"dolphin\", \"whale\", \"serpent\", \"sheath-fish or river-whale\"], \"places\": [\"church altars\", \"public conventions\", \"synods\", \"convocations\", \"neat sweet places\", \"wardrobes\", \"courts of justice\", \"oratories\"], \"metals\": [\"tin\"], \"stones\": [\"amethyst\", \"sapphire\", \"emerald\", \"hyacinth\", \"topaz\", \"crystal\", \"bezoar\", \"marble\", \"free-stone\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Taxonomic placement follows source lists, including mythical creatures and non-birds in bird lists; not a modern taxonomic assertion.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R121",
+      "title": "Jupiter: colours and savours",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          97
+        ],
+        "printed_pages": [
+          63
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Sweet or well-scented, non-extreme/non-offensive odours; sea-green or blue, purple, ash, mixed yellow and green.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical source claims; no empirical or modern scientific validity inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R122",
+      "title": "Jupiter: weather and wind",
+      "kind": "conditional_mundane",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          98
+        ],
+        "printed_pages": [
+          64
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Serenity, pleasant/healthful north winds; gentle beams said to allay prior malignant weather. Wind: North wind tending east.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Weather-domain assertions are not automatically natal timing rules; retain season/sign/association qualifiers.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R123",
+      "title": "Jupiter: orb, year categories and gestation",
+      "kind": "timing_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          98,
+          99
+        ],
+        "printed_pages": [
+          64,
+          65
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"orb_degrees_before_and_after\": 9, \"years\": {\"greatest\": \"428\", \"greater\": \"79\", \"mean\": \"45\", \"least\": \"12\"}, \"age\": \"Middle age or full judgement and discretion.\", \"conception_months\": [2, 10]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Year kinds, age analogy, gestational months and aspect reach are different quantities; no lifespan model or paired-orb aggregation implemented.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R124",
+      "title": "Jupiter: regions, symbolic numbers, angel and weekday",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          99
+        ],
+        "printed_pages": [
+          65
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"countries\": \"Second climate; Babylon, Persia, Hungary, Spain, Cullen.\", \"angel\": \"Zadkiel\", \"numbers\": [3], \"weekday\": \"Thursday\", \"hours_on_own_weekday\": [1, 8]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ruling hours begin from sunrise, not midnight; numeric correspondences do not modify frozen Pythagorean numerology.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R125",
+      "title": "Jupiter: stated friendship and enmity",
+      "kind": "relation_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          99
+        ],
+        "printed_pages": [
+          65
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"friends\": [\"Saturn\", \"Sun\", \"Venus\", \"Mercury\", \"Moon\"], \"enemies\": [\"Mars\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Keep direction and omissions; do not symmetrize conflicting statements.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R126",
+      "title": "Mars: named body and astronomical description",
+      "kind": "historical_astronomy",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          99
+        ],
+        "printed_pages": [
+          65
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"names\": [\"Mars\", \"Mavors\", \"Aris\", \"Pyrois\", \"Gradivus\"], \"appearance\": \"After Jupiter; smaller body than Jupiter or Venus; shining fiery sparkling appearance.\", \"period\": \"1 year 321 days or thereabouts\", \"mean_motion\": \"Printed 31 degrees 27 minutes; retained as a dimensional discrepancy, not silently converted.\", \"diurnal_motion\": \"32, 34, 36, 38, 40, 42 or 44 arcminutes, seldom more\", \"latitude_north\": \"4 degrees 31 arcminutes\", \"latitude_south\": \"6 degrees 47 arcminutes\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical numbers and visibility claims, not a replacement for Swiss Ephemeris. Discrepant units/claims remain explicit.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R127",
+      "title": "Mars: houses, exaltation, fall and triplicity",
+      "kind": "dignity_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          99,
+          100
+        ],
+        "printed_pages": [
+          65,
+          66
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"domiciles\": {\"Aries\": \"day house\", \"Scorpio\": \"night house\"}, \"exaltation\": {\"sign\": \"Capricorn\", \"degree\": 28}, \"fall\": {\"sign\": \"Cancer\", \"degree\": 28}, \"detriment\": [\"Libra\", \"Taurus\"], \"triplicity\": {\"element\": \"water\", \"time\": \"wholly; no day/night split in this clause\"}}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Separate sign domicile from mundane house; missing exact exaltation/fall degrees are not supplied by analogy.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R128",
+      "title": "Mars: terms and faces as printed",
+      "kind": "degree_table",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          99,
+          100
+        ],
+        "printed_pages": [
+          65,
+          66
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Retain 12 enumerated term rows and 6 face rows in PLANETS.json under Mars; no silent repair of conflicts with the later synoptic table.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ordinal degrees and conflicting witnesses are retained; a term/face alone does not establish the entire well-dignified branch.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R129",
+      "title": "Mars: direction and station durations",
+      "kind": "motion_state",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          99
+        ],
+        "printed_pages": [
+          65
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"retrograde_days\": 80, \"first_station_days\": \"2 or 3\", \"second_station_days\": \"2 before direction; after, 1\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Approximate durations are not exact ephemeris-derived station windows.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R130",
+      "title": "Mars: intrinsic nature",
+      "kind": "nature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          100
+        ],
+        "printed_pages": [
+          66
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Masculine, nocturnal, hot and dry, choleric, fiery; lesser Infortune; author of quarrels, strife and contentions.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Intrinsic nature is distinct from qualifying condition and from topic-specific effects.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R131",
+      "title": "Mars: well-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          100
+        ],
+        "printed_pages": [
+          66
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Invincible in war and courage; unwilling to be exceeded; subject to no reason; bold, confident, immovable, contentious; claims honour, valiant, loves war, hazards himself to perils, unwilling to obey or submit, reports own acts largely; values victory above other things, yet prudent in his own affairs.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Mars is the relevant significator AND the chapter's well-placed/well-dignified condition is established; boundary definition not supplied by these portraits alone.",
+      "qualifications_and_limits": "Retain adverse/unflattering parts within the well-placed branch; no generic moral positivity.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R132",
+      "title": "Mars: ill-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          100
+        ],
+        "printed_pages": [
+          66
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Immodest or dishonest prattler; loves slaughter/quarrels, murder and theft; promotes sedition/fights; highway-thief, wavering, traitorous, turbulent, perjured, obscene, rash, inhumane, ungrateful, treacherous, oppressive, ravenous, cheating, furious and violent.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Mars qualifies as significator AND the ill-placed/ill-dignified condition is established; unknown is not ill.",
+      "qualifications_and_limits": "Retain historical moral/religious vocabulary as source characterisation, not a diagnosis or factual claim about an absent person.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R133",
+      "title": "Mars: corporature and phase modifiers",
+      "kind": "conditional_corporature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          101
+        ],
+        "printed_pages": [
+          67
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"general\": \"Middle stature, strong big-boned and lean rather than fat; brown/ruddy/high complexion; round face; red/sandy-flaxen often curling hair; sharp hazel piercing eyes; bold confident face, active and fearless.\", \"oriental\": \"Valiant; some white with red complexion; decent tallness and hairy body.\", \"occidental\": \"Very ruddy but middling stature; little head, smooth unhaired body, yellow stiff hair and drier humours.\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not infer an actual person's appearance, health or ethnicity from this catalogue. Preserve solar figure/phase distinction and lunar missing branches.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R134",
+      "title": "Mars: human roles and professions",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          101
+        ],
+        "printed_pages": [
+          67
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"people\": [\"tyrants\", \"oppressive princes\", \"usurpers\", \"new conquerors\", \"generals\", \"colonels\", \"captains\", \"commanding soldiers\"], \"professions\": [\"soldiers\", \"physicians\", \"apothecaries\", \"surgeons\", \"alchemists\", \"gunners\", \"butchers\", \"marshals\", \"sergeants\", \"bailiffs\", \"hangmen\", \"thieves\", \"smiths\", \"bakers\", \"armourers\", \"watchmakers\", \"botchers\", \"tailors\", \"sword/knife cutlers\", \"barbers\", \"dyers\", \"cooks\", \"carpenters\", \"gamesters\", \"bear-wards\", \"tanners\", \"curriers\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Natural correspondences are not sufficient to select a native's occupation; any embedded conjunction condition is retained.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R135",
+      "title": "Mars: illnesses and body parts",
+      "kind": "historical_medical_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          101
+        ],
+        "printed_pages": [
+          67
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Gall and left ear; tertian or pestilent burning fevers; head megrims, carbuncles, plague/sores, burnings, ringworms, blisters, frenzies/sudden mental distempers, yellow jaundice, bloody flux, fistulas; genital wounds/diseases, kidney/bladder stone, scars/smallpox on face, iron injuries, shingles; diseases from excessive choler, anger or passion. Body rulership: Gall/choler and left ear in the illness catalogue.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical classifications only. No medical diagnosis, prevention/treatment claim, dosage, or patient application.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R136",
+      "title": "Mars: plants and materia",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          101,
+          102
+        ],
+        "printed_pages": [
+          67,
+          68
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"herbs\": [\"nettle\", \"thistles\", \"rest-harrow or cammock\", \"devils-milk or petty spurge\", \"white/red brambles [white vulgar name unresolved]\", \"lingwort\", \"onions\", \"scammony\", \"garlic\", \"mustard\", \"pepper\", \"ginger\", \"leeks\", \"ditander\", \"horehound\", \"hemlock\", \"red sanders\", \"tamarind\", \"herbs drawing choler by sympathy\", \"radish\", \"castoreum\", \"arsmart\", \"asarum\", \"carduus benedictus\", \"cantharides\"], \"trees\": [\"prickly trees\", \"thorn\", \"chestnut\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical names/taxonomy remain; spelling-normalized and unresolved names labelled. No modern species identifications or efficacy recommendations.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R137",
+      "title": "Mars: animals, places and materials",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          102
+        ],
+        "printed_pages": [
+          68
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"beasts\": [\"panther\", \"tiger\", \"mastiff\", \"vulture\", \"fox\", \"warlike/ravenous/bold creatures\", \"castor\", \"horse\", \"mule\", \"ostrich\", \"goat\", \"wolf\", \"leopard\", \"wild ass\", \"gnats\", \"flies\", \"lapwing\", \"cockatrice\", \"griffon\", \"bear\"], \"birds\": [\"hawk\", \"vulture\", \"kite/glead\", \"ravenous fowl\", \"raven\", \"cormorant\", \"owl\", \"eagle according to some\", \"crow\", \"magpie\"], \"fish\": [\"pike\", \"shark\", \"barbel\", \"fork-fish\", \"stinking worms\", \"scorpions\"], \"places\": [\"smith shops\", \"furnaces\", \"slaughterhouses\", \"brick/charcoal burning places\", \"chimneys\", \"forges\"], \"metals\": [\"iron\", \"antimony\", \"arsenic\", \"brimstone\", \"ochre\"], \"stones\": [\"adamant\", \"loadstone\", \"bloodstone\", \"jasper\", \"multicoloured amethyst\", \"touchstone\", \"red lead/vermilion\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Taxonomic placement follows source lists, including mythical creatures and non-birds in bird lists; not a modern taxonomic assertion.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R138",
+      "title": "Mars: colours and savours",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          101
+        ],
+        "printed_pages": [
+          67
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Red, yellow, fiery/shining saffron; bitter, sharp, tongue-burning tastes; choler.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical source claims; no empirical or modern scientific validity inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R139",
+      "title": "Mars: weather and wind",
+      "kind": "conditional_mundane",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          102
+        ],
+        "printed_pages": [
+          68
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Red clouds, thunder, lightning, fiery impressions and pestilent air, particularly following dryness/fair weather; improper/unwholesome mists. Wind: Western winds.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Weather-domain assertions are not automatically natal timing rules; retain season/sign/association qualifiers.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R140",
+      "title": "Mars: orb, year categories and gestation",
+      "kind": "timing_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          102
+        ],
+        "printed_pages": [
+          68
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"orb_degrees_before_and_after\": 7, \"years\": {\"greatest\": \"264\", \"greater\": \"66\", \"mean\": \"40\", \"least\": \"15\"}, \"age\": \"Flourishing youth, from 41 to 56 (the printed age range at page68).\", \"conception_months\": [3]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Year kinds, age analogy, gestational months and aspect reach are different quantities; no lifespan model or paired-orb aggregation implemented.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R141",
+      "title": "Mars: regions, symbolic numbers, angel and weekday",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          102
+        ],
+        "printed_pages": [
+          68
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"countries\": \"Saromatia, Lombardy, Batavia, Ferraria, Gothland; third climate.\", \"angel\": \"Samael\", \"numbers\": [], \"weekday\": \"Tuesday\", \"hours_on_own_weekday\": [1, 8]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ruling hours begin from sunrise, not midnight; numeric correspondences do not modify frozen Pythagorean numerology.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.10.R142",
+      "title": "Mars: stated friendship and enmity",
+      "kind": "relation_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 10,
+        "pdf_pages": [
+          102
+        ],
+        "printed_pages": [
+          68
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"friends\": [\"Venus\"], \"enemies\": [\"Saturn\", \"Jupiter\", \"Sun\", \"Mercury\", \"Moon\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Keep direction and omissions; do not symmetrize conflicting statements.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R143",
+      "title": "Sun: named body and astronomical description",
+      "kind": "historical_astronomy",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          103
+        ],
+        "printed_pages": [
+          69
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"names\": [\"Sol\", \"Titan\", \"Ilios\", \"Phoebus\", \"Apollo\", \"Pean\", \"Osyris\", \"Diespiter\"], \"appearance\": \"Middle of the seven planets; colour not restated because visible to everyone.\", \"period\": \"One year, 365 days and certain hours\", \"mean_motion\": \"59 arcminutes 8 arcseconds\", \"diurnal_motion\": \"Sometimes 57 arcminutes 16 arcseconds; maximum has over-writing/ink disturbance; printed errata must be kept separate.\", \"latitude_north\": \"0: always in the ecliptic\", \"latitude_south\": \"0: always in the ecliptic\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical numbers and visibility claims, not a replacement for Swiss Ephemeris. Discrepant units/claims remain explicit.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R144",
+      "title": "Sun: houses, exaltation, fall and triplicity",
+      "kind": "dignity_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          103
+        ],
+        "printed_pages": [
+          69
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"domiciles\": {\"Leo\": \"only house\"}, \"exaltation\": {\"sign\": \"Aries\", \"degree\": 19}, \"fall\": {\"sign\": \"Libra\", \"degree\": 19}, \"detriment\": [\"Aquarius\"], \"triplicity\": {\"element\": \"fire\", \"time\": \"day\"}}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Separate sign domicile from mundane house; missing exact exaltation/fall degrees are not supplied by analogy.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R145",
+      "title": "Sun: terms and faces as printed",
+      "kind": "degree_table",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          103
+        ],
+        "printed_pages": [
+          69
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Retain 0 enumerated term rows and 5 face rows in PLANETS.json under Sun; no silent repair of conflicts with the later synoptic table.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ordinal degrees and conflicting witnesses are retained; a term/face alone does not establish the entire well-dignified branch.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R146",
+      "title": "Sun: direction and station durations",
+      "kind": "motion_state",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          103
+        ],
+        "printed_pages": [
+          69
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"retrograde_days\": 0, \"first_station_days\": null, \"second_station_days\": null, \"qualification\": \"Always direct, varying in speed.\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Approximate durations are not exact ephemeris-derived station windows.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R147",
+      "title": "Sun: intrinsic nature",
+      "kind": "nature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          104
+        ],
+        "printed_pages": [
+          70
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Hot and dry but more temperate than Mars; masculine, diurnal; equivalent to a Fortune IF well dignified.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Intrinsic nature is distinct from qualifying condition and from topic-specific effects.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R148",
+      "title": "Sun: well-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          104
+        ],
+        "printed_pages": [
+          70
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Faithful and punctual in promises; desires rule; prudent, excellent judgement, majestic/stately; industrious for honour and patrimony yet willing to part with it; grave few words, confidence and self-command; thoughtful, secret, trustworthy, deliberate, great-hearted yet affable/tractable/humane; loves magnificence and honour, no sordid thoughts.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Sun is the relevant significator AND the chapter's well-placed/well-dignified condition is established; boundary definition not supplied by these portraits alone.",
+      "qualifications_and_limits": "Retain adverse/unflattering parts within the well-placed branch; no generic moral positivity.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R149",
+      "title": "Sun: ill-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          104
+        ],
+        "printed_pages": [
+          70
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Arrogant, proud, disdains others, boasts pedigree; purblind sight/judgement, restless, troublesome, domineering, vain, expensive and foolish; no gravity in words or sobriety in acts; wastes patrimony and lives on others' charity while feeling entitled by gentle birth.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Sun qualifies as significator AND the ill-placed/ill-dignified condition is established; unknown is not ill.",
+      "qualifications_and_limits": "Retain historical moral/religious vocabulary as source characterisation, not a diagnosis or factual claim about an absent person.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R150",
+      "title": "Sun: corporature and phase modifiers",
+      "kind": "conditional_corporature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          104
+        ],
+        "printed_pages": [
+          70
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"general\": \"Good large strong body, yellow/saffron complexion, round large forehead, large sharp piercing eyes; well-composed, lovely rather than beautiful; heat, yellowish hair and early baldness, much beard, high ruddy complexion, fleshiness; repeats bountiful/honest/sincere/well-minded/great-hearted/humane traits with spirit, not loquacious.\", \"oriental\": \"Only in the figure or its oriental quarter; not before itself at solar rising.\", \"occidental\": \"Likewise a figure/quadrant description, distinct from other planets' appearance before or after the Sun.\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not infer an actual person's appearance, health or ethnicity from this catalogue. Preserve solar figure/phase distinction and lunar missing branches.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R151",
+      "title": "Sun: human roles and professions",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          105
+        ],
+        "printed_pages": [
+          71
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"people\": [\"kings\", \"princes\", \"emperors\", \"dukes\", \"marquesses\", \"earls\", \"barons\", \"lieutenants/deputies\", \"magistrates\", \"gentlemen\", \"courtiers\", \"honour-seekers\", \"justices\", \"mayors\", \"sheriffs\", \"constables\", \"great huntsmen\", \"noble-house stewards\", \"principal local magistrate, even a petty constable where no greater officer exists\"], \"professions\": [\"goldsmiths\", \"braziers\", \"pewterers\", \"coppersmiths\", \"money minters\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Natural correspondences are not sufficient to select a native's occupation; any embedded conjunction condition is retained.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R152",
+      "title": "Sun: illnesses and body parts",
+      "kind": "historical_medical_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          105
+        ],
+        "printed_pages": [
+          71
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Facial pimples; palpitation/trembling; brain/heart diseases; tympanies; eye infirmities; cramps; sudden swoonings; mouth diseases and bad breath; catarrhs and rotten fevers. Body rulership: Heart, brain, vital spirit, right eye in men and left eye in women.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical classifications only. No medical diagnosis, prevention/treatment claim, dosage, or patient application.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R153",
+      "title": "Sun: plants and materia",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          105
+        ],
+        "printed_pages": [
+          71
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"herbs\": [\"saffron\", \"laurel\", \"pomecitron\", \"vine\", \"enula-campana\", \"St Johns wort\", \"amber\", \"musk\", \"ginger\", \"rue\", \"balm\", \"marigold\", \"rosemary\", \"ros solis\", \"cinnamon\", \"celandine\", \"eyebright\", \"peony\", \"barley\", \"cinquefoil\", \"spikenard\", \"lignum aloes\", \"arsenic\"], \"trees\": [\"ash\", \"palm\", \"laurel\", \"myrrh\", \"frankincense\", \"cane\", \"cedar\", \"heliotrope\", \"orange\", \"lemon\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical names/taxonomy remain; spelling-normalized and unresolved names labelled. No modern species identifications or efficacy recommendations.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R154",
+      "title": "Sun: animals, places and materials",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          105,
+          106
+        ],
+        "printed_pages": [
+          71,
+          72
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"beasts\": [\"lion\", \"horse\", \"ram\", \"crocodile\", \"bull\", \"goat\", \"glowworms\"], \"birds\": [\"eagle\", \"cock\", \"phoenix\", \"nightingale\", \"peacock\", \"swan\", \"buzzard\", \"cantharis\", \"goshawk\"], \"fish\": [\"sea-calf/sea-fox\", \"crabfish\", \"starfish\"], \"places\": [\"houses/courts/palaces of princes\", \"theatres\", \"magnificent clear decent structures\", \"halls\", \"dining rooms\"], \"metals\": [\"gold\"], \"stones\": [\"hyacinth\", \"chrysolite\", \"adamant\", \"carbuncle\", \"aetites\", \"pantaure if such a stone exists\", \"ruby\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Taxonomic placement follows source lists, including mythical creatures and non-birds in bird lists; not a modern taxonomic assertion.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R155",
+      "title": "Sun: colours and savours",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          105
+        ],
+        "printed_pages": [
+          71
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Yellow/gold, scarlet/clear red, purple according to some; sour and sweet mixture or aromatic, somewhat bitter/stiptic/sharp yet comforting.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical source claims; no empirical or modern scientific validity inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R156",
+      "title": "Sun: weather and wind",
+      "kind": "conditional_mundane",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          106
+        ],
+        "printed_pages": [
+          72
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "According to season: gentle moistening showers in spring; summer extreme heat if with Mars; autumn mists; winter small rain. Wind: East.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Weather-domain assertions are not automatically natal timing rules; retain season/sign/association qualifiers.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R157",
+      "title": "Sun: orb, year categories and gestation",
+      "kind": "timing_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          106
+        ],
+        "printed_pages": [
+          72
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"orb_degrees_before_and_after\": 15, \"years\": {\"greatest\": \"1460\", \"greater\": \"120\", \"mean\": \"69\", \"least\": \"19\"}, \"age\": \"Youth or full strength.\", \"conception_months\": [4]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Year kinds, age analogy, gestational months and aspect reach are different quantities; no lifespan model or paired-orb aggregation implemented.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R158",
+      "title": "Sun: regions, symbolic numbers, angel and weekday",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          106
+        ],
+        "printed_pages": [
+          72
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"countries\": \"Italy, Sicily, Bohemia, Phoenicia, Chaldea; fourth climate.\", \"angel\": \"Michael\", \"numbers\": [1, 4], \"weekday\": \"Sunday\", \"hours_on_own_weekday\": [1, 8]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ruling hours begin from sunrise, not midnight; numeric correspondences do not modify frozen Pythagorean numerology.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R159",
+      "title": "Sun: stated friendship and enmity",
+      "kind": "relation_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          106
+        ],
+        "printed_pages": [
+          72
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"friends\": [\"Jupiter\", \"Mars\", \"Venus\", \"Mercury\", \"Moon\"], \"enemies\": [\"Saturn\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Keep direction and omissions; do not symmetrize conflicting statements.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R160",
+      "title": "Venus: named body and astronomical description",
+      "kind": "historical_astronomy",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          106,
+          107
+        ],
+        "printed_pages": [
+          72,
+          73
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"names\": [\"Venus\", \"Cytherea\", \"Aphrodite\", \"Phosphoros\", \"Vesperugo\", \"Erycina [errata spelling\", \"body type partly disturbed]\", \"Hesperus as evening star\", \"Lucifer as morning star\"], \"appearance\": \"Bright/shining; evening star after sunset, morning star before sunrise.\", \"period\": \"Not specified here\", \"mean_motion\": \"59 arcminutes 8 arcseconds\", \"diurnal_motion\": \"62, 64, 65, 66, 70, 74, 76 arcminutes; says never more than 82\", \"latitude_north\": \"Says maximum north/south 2 degrees 2 arcminutes, then reports 8 degrees 36 arcminutes north in February 1643\", \"latitude_south\": \"See contradictory maximum/observation statement\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical numbers and visibility claims, not a replacement for Swiss Ephemeris. Discrepant units/claims remain explicit.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R161",
+      "title": "Venus: houses, exaltation, fall and triplicity",
+      "kind": "dignity_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          107
+        ],
+        "printed_pages": [
+          73
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"domiciles\": {\"Taurus\": \"house\", \"Libra\": \"house\"}, \"exaltation\": {\"sign\": \"Pisces\", \"degree\": 27}, \"fall\": {\"sign\": \"Virgo\", \"degree\": 27}, \"detriment\": [\"Aries\", \"Scorpio\"], \"triplicity\": {\"element\": \"earth\", \"time\": \"day\"}}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Separate sign domicile from mundane house; missing exact exaltation/fall degrees are not supplied by analogy.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R162",
+      "title": "Venus: terms and faces as printed",
+      "kind": "degree_table",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          107
+        ],
+        "printed_pages": [
+          73
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Retain 12 enumerated term rows and 5 face rows in PLANETS.json under Venus; no silent repair of conflicts with the later synoptic table.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ordinal degrees and conflicting witnesses are retained; a term/face alone does not establish the entire well-dignified branch.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R163",
+      "title": "Venus: direction and station durations",
+      "kind": "motion_state",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          107
+        ],
+        "printed_pages": [
+          73
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"retrograde_days\": 42, \"first_station_days\": 2, \"second_station_days\": 2}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Approximate durations are not exact ephemeris-derived station windows.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R164",
+      "title": "Venus: intrinsic nature",
+      "kind": "nature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          107,
+          108
+        ],
+        "printed_pages": [
+          73,
+          74
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Feminine, temperately cold and moist, nocturnal, lesser Fortune, author of mirth and jollity; air and water; phlegm with blood, spirit and generative seed.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Intrinsic nature is distinct from qualifying condition and from topic-specific effects.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R165",
+      "title": "Venus: well-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          107,
+          108
+        ],
+        "printed_pages": [
+          73,
+          74
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Quiet, not litigious/quarrelsome/wrangling, not vicious; pleasant, neat, spruce, merry in speech/acts, clean clothing; more drinking than gluttony; amorous and often involved in love, zealous affections, musical, enjoys baths, honest merry meetings, masques and plays; easy belief, not given to labour, sociable, cheerful, unsuspicious, virtuous; sometimes suspected with no cause.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Venus is the relevant significator AND the chapter's well-placed/well-dignified condition is established; boundary definition not supplied by these portraits alone.",
+      "qualifications_and_limits": "Retain adverse/unflattering parts within the well-placed branch; no generic moral positivity.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R166",
+      "title": "Venus: ill-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          107,
+          108
+        ],
+        "printed_pages": [
+          73,
+          74
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Riotous, expensive, sexually loose, disregards reputation, seeks unlawful beds, incest/adultery; fanatic, unreliable and disreputable; spends in taverns/loose company, lazy and careless about life/religion; called atheist/natural man by the source.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Venus qualifies as significator AND the ill-placed/ill-dignified condition is established; unknown is not ill.",
+      "qualifications_and_limits": "Retain historical moral/religious vocabulary as source characterisation, not a diagnosis or factual claim about an absent person.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R167",
+      "title": "Venus: corporature and phase modifiers",
+      "kind": "conditional_corporature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          108
+        ],
+        "printed_pages": [
+          74
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"general\": \"Fair but not tall stature; white somewhat darkened complexion; lovely darkish eyes, round not large face, smooth abundant light-brown hair; attractive mouth/cherry lips, fleshy face, wandering and also steadfast eye descriptions; well-shaped body, neat grooming and dress, cheek dimple and amorous look.\", \"oriental\": \"Tends to uprightness/tallness without corpulence or great height; neatly composed, attractive man or woman.\", \"occidental\": \"Shorter but decent and comely, liked by all.\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not infer an actual person's appearance, health or ethnicity from this catalogue. Preserve solar figure/phase distinction and lunar missing branches.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R168",
+      "title": "Venus: human roles and professions",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          108,
+          109
+        ],
+        "printed_pages": [
+          74,
+          75
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"people\": [\"wives\", \"mothers\", \"virgins\"], \"professions\": [\"musicians\", \"gamesters\", \"silk sellers\", \"mercers\", \"linen-drapers\", \"painters\", \"jewellers\", \"players\", \"lapidaries\", \"embroiderers\", \"women-tailors\", \"choristers\", \"fiddlers\", \"pipers\", \"ballad-singers WHEN joined with Moon\", \"perfumers\", \"seamsters\", \"picture-drawers\", \"gravers\", \"upholsterers\", \"limners\", \"glovers\", \"sellers of adornments for women's body/face\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Natural correspondences are not sufficient to select a native's occupation; any embedded conjunction condition is retained.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R169",
+      "title": "Venus: illnesses and body parts",
+      "kind": "historical_medical_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          109
+        ],
+        "printed_pages": [
+          75
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Matrix/generative members; kidneys, belly, back and navel; gonorrhea/running of reins; French or Spanish pox, inordinate-lust disease, priapism, impotence, hernias, diabetes/pining disease. Body rulership: Matrix/generative members and related parts in the disease catalogue.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical classifications only. No medical diagnosis, prevention/treatment claim, dosage, or patient application.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R170",
+      "title": "Venus: plants and materia",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          109
+        ],
+        "printed_pages": [
+          75
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"herbs\": [\"evergreen myrtle\", \"white/yellow lily\", \"lily-of-the-valley\", \"water-lily\", \"satyrion/cuckoo-pintle\", \"maidenhair\", \"violet\", \"white/yellow daffodil\", \"mugwort\", \"ladies-mantle\", \"sanicle\", \"balm\", \"vervain\", \"millet\", \"valerian\", \"thyme\", \"amber\", \"ladanum\", \"civet/musk\", \"coriander\", \"French wheat\"], \"trees\": [\"sweet apple\", \"white rose\", \"fig\", \"white sycamore\", \"wild ash\", \"turpentine-tree\", \"olive\", \"sweet orange\", \"walnut\", \"almond\", \"peach\", \"apricot\", \"plum\", \"raisins\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical names/taxonomy remain; spelling-normalized and unresolved names labelled. No modern species identifications or efficacy recommendations.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R171",
+      "title": "Venus: animals, places and materials",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          109
+        ],
+        "printed_pages": [
+          75
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"beasts\": [\"hart\", \"panther\", \"small cattle\", \"coney\", \"calf\", \"goat\"], \"birds\": [\"stock-dove\", \"wagtail\", \"sparrow\", \"hen\", \"nightingale\", \"thrush\", \"pelican\", \"partridge\", \"ficedula/grape-eating bird\", \"wren\", \"eagle\", \"swan\", \"swallow\", \"ousel/blackbird\", \"magpie\"], \"fish\": [\"dolphin\"], \"places\": [\"gardens\", \"fountains\", \"bridal chambers\", \"fair lodgings\", \"beds\", \"hangings\", \"dancing schools\", \"wardrobes\"], \"metals\": [\"copper, especially Corinthian and white\", \"brass\", \"latten ware\"], \"stones\": [\"cornelian\", \"sky-coloured sapphire\", \"white/red coral\", \"marcasite\", \"alabaster\", \"lapis lazuli, with claim of expelling melancholy\", \"beryl\", \"chrysolite\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Taxonomic placement follows source lists, including mythical creatures and non-birds in bird lists; not a modern taxonomic assertion.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R172",
+      "title": "Venus: colours and savours",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          109
+        ],
+        "printed_pages": [
+          75
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "White/milky sky-colour mixed with brown or little green; pleasant, moist, sweet, delectable; unctuous aromatic smells inciting wantonness.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical source claims; no empirical or modern scientific validity inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R173",
+      "title": "Venus: weather and wind",
+      "kind": "conditional_mundane",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          110
+        ],
+        "printed_pages": [
+          76
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Etesias; summer serenity/clear weather, winter rain or snow. Wind: Hot/moist south wind.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Weather-domain assertions are not automatically natal timing rules; retain season/sign/association qualifiers.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R174",
+      "title": "Venus: orb, year categories and gestation",
+      "kind": "timing_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          110
+        ],
+        "printed_pages": [
+          76
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"orb_degrees_before_and_after\": 7, \"years\": {\"greatest\": \"151\", \"greater\": \"82\", \"mean\": \"45\", \"least\": \"8\"}, \"age\": \"Youth from 14 to 28.\", \"conception_months\": [5]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Year kinds, age analogy, gestational months and aspect reach are different quantities; no lifespan model or paired-orb aggregation implemented.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R175",
+      "title": "Venus: regions, symbolic numbers, angel and weekday",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          110
+        ],
+        "printed_pages": [
+          76
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"countries\": \"Arabia, Austria, Campania, Vienna, greater Poland, Turing, Parthia, Media, Cyprus; sixth climate.\", \"angel\": \"Anael\", \"numbers\": [], \"weekday\": \"Friday\", \"hours_on_own_weekday\": [1, 8]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ruling hours begin from sunrise, not midnight; numeric correspondences do not modify frozen Pythagorean numerology.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R176",
+      "title": "Mercury: named body and astronomical description",
+      "kind": "historical_astronomy",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          110
+        ],
+        "printed_pages": [
+          76
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"names\": [\"Hermes\", \"Stilbon\", \"Cyllenius\", \"Archas\"], \"appearance\": \"Least planet, dusky silver, rarely visible; text says ever distant above 27 degrees from Sun [retained witness wording].\", \"period\": \"Not specified here\", \"mean_motion\": \"59 arcminutes 8 arcseconds\", \"diurnal_motion\": \"Sometimes 1 degree 40 arcminutes; never more; also lists 66,68,70,80,86,100 arcminutes\", \"latitude_north\": \"3 degrees 33 arcminutes\", \"latitude_south\": \"3 degrees 33 arcminutes\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical numbers and visibility claims, not a replacement for Swiss Ephemeris. Discrepant units/claims remain explicit.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R177",
+      "title": "Mercury: houses, exaltation, fall and triplicity",
+      "kind": "dignity_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          110,
+          111
+        ],
+        "printed_pages": [
+          76,
+          77
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"domiciles\": {\"Gemini\": \"house\", \"Virgo\": \"house\"}, \"exaltation\": {\"sign\": \"Virgo\", \"degree\": 15}, \"fall\": {\"sign\": \"Pisces\", \"degree\": null}, \"detriment\": [\"Sagittarius\", \"Pisces\"], \"triplicity\": {\"element\": \"air\", \"time\": \"night\"}}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Separate sign domicile from mundane house; missing exact exaltation/fall degrees are not supplied by analogy.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R178",
+      "title": "Mercury: terms and faces as printed",
+      "kind": "degree_table",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          110,
+          111
+        ],
+        "printed_pages": [
+          76,
+          77
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Retain 12 enumerated term rows and 5 face rows in PLANETS.json under Mercury; no silent repair of conflicts with the later synoptic table.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ordinal degrees and conflicting witnesses are retained; a term/face alone does not establish the entire well-dignified branch.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R179",
+      "title": "Mercury: direction and station durations",
+      "kind": "motion_state",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          110
+        ],
+        "printed_pages": [
+          76
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"retrograde_days\": 24, \"first_station_days\": \"one day, without distinct phase in this clause\", \"second_station_days\": null}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Approximate durations are not exact ephemeris-derived station windows.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R180",
+      "title": "Mercury: intrinsic nature",
+      "kind": "nature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          111,
+          112
+        ],
+        "printed_pages": [
+          77,
+          78
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Not fixed masculine/feminine: takes either according to conjunction with a masculine/feminine planet. Intrinsically cold/dry/melancholic; good with good, ill with evil; water, mixed humours and animal spirit; author of subtlety, tricks/devices/perjury.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Intrinsic nature is distinct from qualifying condition and from topic-specific effects.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R181",
+      "title": "Mercury: well-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          111,
+          112
+        ],
+        "printed_pages": [
+          77,
+          78
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Subtle political brain, intellect and cogitation; excellent learned/discreet disputant/logician, eloquent; searches mysteries/learning, sharp/witty, learns without teacher, aims at excellence in every science, travels/sees foreign places, unwearied fancy and occult curiosity, ingenious wonders, divination/secret knowledge; if a merchant, exceptional trade and wealth-making inventions.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Mercury is the relevant significator AND the chapter's well-placed/well-dignified condition is established; boundary definition not supplied by these portraits alone.",
+      "qualifications_and_limits": "Retain adverse/unflattering parts within the well-placed branch; no generic moral positivity.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R182",
+      "title": "Mercury: ill-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          111,
+          112
+        ],
+        "printed_pages": [
+          77,
+          78
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Troublesome wit/heretical; tongue and pen against everyone; wastes estate/time on pointless experiments; lies, boasts, prattles, busies himself and carries tales; wicked/necromantic arts; credulous, foolish, inconstant place/opinion, cheating/theft, news-mongering, pretends knowledge without solid learning; idle words, easily perverted verbal divine without judgement.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Mercury qualifies as significator AND the ill-placed/ill-dignified condition is established; unknown is not ill.",
+      "qualifications_and_limits": "Retain historical moral/religious vocabulary as source characterisation, not a diagnosis or factual claim about an absent person.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R183",
+      "title": "Mercury: corporature and phase modifiers",
+      "kind": "conditional_corporature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          112
+        ],
+        "printed_pages": [
+          78
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"general\": \"Tall straight thin/spare body, high forehead, narrow long face/nose, fair neither black nor grey eyes, thin lips, little beard but abundant dark-brown/black hair, long arms/fingers/hands, olive/chestnut complexion.\", \"oriental\": \"Honey/sunburnt complexion; not tall but well-jointed, small eyes/little hair and well-composed, with swarthy complexion and self-serving speech.\", \"occidental\": \"Tawny face, lank body, slender limbs, hollow sparkling red/fire eyes, dry frame.\", \"association\": \"Any aspect imports the other planet's influence more than in other planets: Saturn heavy, Jupiter temperate, Mars rash, Sun genteel, Venus jesting, Moon shifting. The opening gender rule specifies conjunction, not merely every aspect.\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not infer an actual person's appearance, health or ethnicity from this catalogue. Preserve solar figure/phase distinction and lunar missing branches.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R184",
+      "title": "Mercury: human roles and professions",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          112
+        ],
+        "printed_pages": [
+          78
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"people\": [\"literate men\", \"philosophers\", \"mathematicians\", \"astrologers\", \"merchants\", \"secretaries\", \"scriveners\", \"diviners\", \"sculptors\", \"poets\", \"orators\", \"advocates\", \"schoolmasters\"], \"professions\": [\"stationers\", \"printers\", \"money exchangers\", \"attorneys\", \"imperial ambassadors\", \"commissioners\", \"clerks\", \"artificers\", \"accountants\", \"solicitors\", \"sometimes thieves\", \"prattling muddy ministers\", \"unlearned busy sectaries\", \"grammarians\", \"tailors\", \"carriers\", \"messengers\", \"footmen\", \"usurers\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Natural correspondences are not sufficient to select a native's occupation; any embedded conjunction condition is retained.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R185",
+      "title": "Mercury: illnesses and body parts",
+      "kind": "historical_medical_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          112,
+          113
+        ],
+        "printed_pages": [
+          78,
+          79
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Vertigo/lethargy/giddiness, madness/lightness/brain disease, ptisick; stammering/tongue defects; vain imagination, memory defects, hoarseness, dry cough, excessive spittle, head/nose snuffling; hand/foot gout, dumbness, tongue-evil and disorders of fancy/intellect. Body rulership: Animal spirit, intellectual faculties and tongue/brain/lungs/memory relations.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical classifications only. No medical diagnosis, prevention/treatment claim, dosage, or patient application.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R186",
+      "title": "Mercury: plants and materia",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          113
+        ],
+        "printed_pages": [
+          79
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"herbs\": [\"beans\", \"three-leaved grass\", \"adders-tongue\", \"dragonwort\", \"twopenny grass\", \"lungwort\", \"anise\", \"cubebs\", \"marjoram\", \"vervain\", \"reed\", \"treacle\", \"hiera\", \"diambra\"], \"trees\": [\"walnut\", \"filbert\", \"elder\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical names/taxonomy remain; spelling-normalized and unresolved names labelled. No modern species identifications or efficacy recommendations.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R187",
+      "title": "Mercury: animals, places and materials",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          113
+        ],
+        "printed_pages": [
+          79
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"beasts\": [\"hyena\", \"ape\", \"fox\", \"squirrel\", \"weasel\", \"spider\", \"greyhound\", \"hermaphrodite in the historical mixed-sex catalogue\", \"cunning creatures\"], \"birds\": [\"linnet\", \"parrot\", \"popinjay\", \"swallow\", \"magpie\", \"beetle\", \"ants\", \"locusts\", \"bees\", \"serpent\", \"crane\"], \"fish\": [\"fork-fish\", \"mullet\"], \"places\": [\"tradesmen shops\", \"markets\", \"fairs\", \"schools\", \"common halls\", \"bowling alleys\", \"ordinaries\", \"tennis courts\"], \"metals\": [\"quicksilver\"], \"stones\": [\"millstone\", \"marcasite/firestone\", \"agate\", \"topaz\", \"vitriol\", \"multicoloured stones\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Taxonomic placement follows source lists, including mythical creatures and non-birds in bird lists; not a modern taxonomic assertion.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R188",
+      "title": "Mercury: colours and savours",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          113
+        ],
+        "printed_pages": [
+          79
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "New/mixed colours, grey/sky mixture like stock-dove neck, linsey-woolsey; mixed tastes without one name, often subtle/spirit-quickening/penetrating.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical source claims; no empirical or modern scientific validity inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R189",
+      "title": "Mercury: weather and wind",
+      "kind": "conditional_mundane",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          113,
+          114
+        ],
+        "printed_pages": [
+          79,
+          80
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Windy/stormy/violent/boisterous; rain, hail, lightning, thunder/tempests, earthquakes in hot countries; MUST observe sign and season. Wind: Wind signified by the planet to which he applies.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Weather-domain assertions are not automatically natal timing rules; retain season/sign/association qualifiers.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R190",
+      "title": "Mercury: orb, year categories and gestation",
+      "kind": "timing_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          114
+        ],
+        "printed_pages": [
+          80
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"orb_degrees_before_and_after\": 7, \"years\": {\"greatest\": \"450\", \"greater\": \"76\", \"mean\": \"48\", \"least\": \"20\"}, \"age\": \"Not separately specified here.\", \"conception_months\": [6]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Year kinds, age analogy, gestational months and aspect reach are different quantities; no lifespan model or paired-orb aggregation implemented.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R191",
+      "title": "Mercury: regions, symbolic numbers, angel and weekday",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          114
+        ],
+        "printed_pages": [
+          80
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"countries\": \"Greece, Flanders, Egypt, Paris.\", \"angel\": \"Raphael\", \"numbers\": [], \"weekday\": \"Wednesday\", \"hours_on_own_weekday\": [1, 8]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ruling hours begin from sunrise, not midnight; numeric correspondences do not modify frozen Pythagorean numerology.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R192",
+      "title": "Moon: named body and astronomical description",
+      "kind": "historical_astronomy",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          114
+        ],
+        "printed_pages": [
+          80
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"names\": [\"Lucina\", \"Cynthia\", \"Diana\", \"Phoebe\", \"Latona\", \"Noctiluca\", \"Proserpina\"], \"appearance\": \"Nearest planet to Earth; colour treated as commonly known.\", \"period\": \"27 days 7 hours 43 minutes or thereabouts\", \"mean_motion\": \"13 degrees 10 arcminutes 36 arcseconds\", \"diurnal_motion\": \"Variable; says never exceeds 15 degrees 2 arcminutes in 24 hours\", \"latitude_north\": \"5 degrees 17 arcminutes or thereabouts\", \"latitude_south\": \"5 degrees 12 arcminutes or thereabouts\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical numbers and visibility claims, not a replacement for Swiss Ephemeris. Discrepant units/claims remain explicit.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R193",
+      "title": "Moon: houses, exaltation, fall and triplicity",
+      "kind": "dignity_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          114,
+          115
+        ],
+        "printed_pages": [
+          80,
+          81
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"domiciles\": {\"Cancer\": \"only house\"}, \"exaltation\": {\"sign\": \"Taurus\", \"degree\": 3}, \"fall\": {\"sign\": \"Scorpio\", \"degree\": 3}, \"detriment\": [\"Capricorn\"], \"triplicity\": {\"element\": \"earth\", \"time\": \"night\"}}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Separate sign domicile from mundane house; missing exact exaltation/fall degrees are not supplied by analogy.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R194",
+      "title": "Moon: terms and faces as printed",
+      "kind": "degree_table",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          114,
+          115
+        ],
+        "printed_pages": [
+          80,
+          81
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Retain 0 enumerated term rows and 5 face rows in PLANETS.json under Moon; no silent repair of conflicts with the later synoptic table.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ordinal degrees and conflicting witnesses are retained; a term/face alone does not establish the entire well-dignified branch.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R195",
+      "title": "Moon: direction and station durations",
+      "kind": "motion_state",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          114
+        ],
+        "printed_pages": [
+          80
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"retrograde_days\": 0, \"first_station_days\": null, \"second_station_days\": null, \"qualification\": \"Always direct; LESS than 13 degrees 10 arcminutes in 24 hours is called equivalent to a retrograde planet. Distinguish analogy from physical motion and from the stated mean including 36 arcseconds.\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Approximate durations are not exact ephemeris-derived station windows.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R196",
+      "title": "Moon: intrinsic nature",
+      "kind": "nature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          115
+        ],
+        "printed_pages": [
+          81
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Feminine, nocturnal, cold, moist and phlegmatic.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Intrinsic nature is distinct from qualifying condition and from topic-specific effects.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R197",
+      "title": "Moon: well-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          115
+        ],
+        "printed_pages": [
+          81
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Composed, soft/tender; loves honest ingenious sciences, searches/delights in novelty; inclined to move home, unsteadfast, concerned with present, timorous, prodigal/easily frightened; peace-loving and wants freedom from cares; if a mechanic, learns many occupations and tries many trades.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Moon is the relevant significator AND the chapter's well-placed/well-dignified condition is established; boundary definition not supplied by these portraits alone.",
+      "qualifications_and_limits": "Retain adverse/unflattering parts within the well-placed branch; no generic moral positivity.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R198",
+      "title": "Moon: ill-placed manners",
+      "kind": "conditional_profile",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          115
+        ],
+        "printed_pages": [
+          81
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Vagabond/idle, hates work, drunken/sottish, lacks spirit/foresight, content to live beggarly/carelessly, satisfied in no condition, good or bad.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Moon qualifies as significator AND the ill-placed/ill-dignified condition is established; unknown is not ill.",
+      "qualifications_and_limits": "Retain historical moral/religious vocabulary as source characterisation, not a diagnosis or factual claim about an absent person.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R199",
+      "title": "Moon: corporature and phase modifiers",
+      "kind": "conditional_corporature",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          115
+        ],
+        "printed_pages": [
+          81
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"general\": \"Fair stature, whitish colour, round face, grey somewhat louring eyes, much head/face/body hair, often one eye larger, short fleshy hands and plump/corpulent/phlegmatic body.\", \"oriental\": \"No separate oriental corporature paragraph in this chapter.\", \"occidental\": \"No separate occidental corporature paragraph in this chapter.\", \"eye_qualification\": \"Sun impediment in nativity or question usually indicates blemish in/near eye; succedent impediment is near eye; unfortunate in angles WITH nebulous fixed stars concerns sight. Do not merge cosmetic blemish with vision impairment.\"}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not infer an actual person's appearance, health or ethnicity from this catalogue. Preserve solar figure/phase distinction and lunar missing branches.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R200",
+      "title": "Moon: human roles and professions",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          115
+        ],
+        "printed_pages": [
+          81
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"people\": [\"queens\", \"countesses\", \"ladies\", \"women generally\", \"common people\", \"travellers\", \"pilgrims\"], \"professions\": [\"sailors\", \"fishermen\", \"fishmongers\", \"brewers\", \"tapsters\", \"vintners\", \"letter carriers\", \"coachmen\", \"huntsmen\", \"messengers\", \"papal legates according to some\", \"mariners\", \"millers\", \"ale-wives\", \"maltsters\", \"drunkards\", \"oyster-wives\", \"fisherwomen\", \"chare-women\", \"tripe-women\", \"street commodity sellers\", \"midwives\", \"nurses\", \"hackney-men\", \"watermen\", \"water-bearers\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Natural correspondences are not sufficient to select a native's occupation; any embedded conjunction condition is retained.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R201",
+      "title": "Moon: illnesses and body parts",
+      "kind": "historical_medical_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          115,
+          116
+        ],
+        "printed_pages": [
+          81,
+          82
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Apoplexies, palsy, colic/bellyache, left-side diseases, stones/bladder/generative members, women's menses/liver, dropsy, belly fluxes, cold rheumatic disease/stomach, wrist/foot gout, sciatica, worms, eye rheums/injuries, surfeits, rotten coughs, convulsions, falling sickness, kings-evil, abscesses, smallpox/measles. Body rulership: Left eye of men/right eye of women and the other parts explicitly listed under disease.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical classifications only. No medical diagnosis, prevention/treatment claim, dosage, or patient application.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R202",
+      "title": "Moon: plants and materia",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          116
+        ],
+        "printed_pages": [
+          82
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"herbs\": [\"colwort\", \"cabbage\", \"melon\", \"gourd\", \"pumpkin\", \"onion\", \"mandrake\", \"poppy\", \"lettuce\", \"rape\", \"mushrooms\", \"endive\"], \"trees\": [\"linden\", \"round/shady/broad-leaved little-fruitful trees/herbs\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical names/taxonomy remain; spelling-normalized and unresolved names labelled. No modern species identifications or efficacy recommendations.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R203",
+      "title": "Moon: animals, places and materials",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          116
+        ],
+        "printed_pages": [
+          82
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"beasts\": [\"water creatures\", \"frog\", \"otter\", \"snail\", \"weasel\", \"coney\"], \"birds\": [\"sea fowl\", \"cuckoo\", \"goose\", \"duck\", \"night-owl\"], \"fish\": [\"oyster\", \"cockle\", \"shellfish\", \"crab\", \"lobster\", \"tortoise\", \"eel\"], \"places\": [\"fields\", \"fountains\", \"baths\", \"sea havens\", \"highways\", \"deserts\", \"port towns\", \"rivers\", \"fishponds\", \"standing pools\", \"bogs\", \"common shores\", \"brooks\", \"springs\", \"ship harbours/docks\"], \"metals\": [\"silver\"], \"stones\": [\"selenite\", \"soft stones\", \"crystals\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Taxonomic placement follows source lists, including mythical creatures and non-birds in bird lists; not a modern taxonomic assertion.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R204",
+      "title": "Moon: colours and savours",
+      "kind": "correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          116
+        ],
+        "printed_pages": [
+          82
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "White, pale yellowish white, pale green, silvery; fresh or tasteless/unripe or brain-moistening flavours.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Historical source claims; no empirical or modern scientific validity inferred.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R205",
+      "title": "Moon: weather and wind",
+      "kind": "conditional_mundane",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          116
+        ],
+        "printed_pages": [
+          82
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "With Saturn cold air; Jupiter serene; Mars winds/red clouds; Sun according to season; Venus and Mercury showers/winds. Wind: North in Hermetic operation; when strongest in the scheme/lunation, wind according to next applying planet.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Weather-domain assertions are not automatically natal timing rules; retain season/sign/association qualifiers.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R206",
+      "title": "Moon: orb, year categories and gestation",
+      "kind": "timing_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          117
+        ],
+        "printed_pages": [
+          83
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"orb_degrees_before_and_after\": 12, \"years\": {\"greatest\": \"320\", \"greater\": \"108\", \"mean\": \"66\", \"least\": \"25\"}, \"age\": \"Not separately specified here.\", \"conception_months\": [7]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Year kinds, age analogy, gestational months and aspect reach are different quantities; no lifespan model or paired-orb aggregation implemented.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R207",
+      "title": "Moon: regions, symbolic numbers, angel and weekday",
+      "kind": "historical_correspondence_catalogue",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          117
+        ],
+        "printed_pages": [
+          83
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"countries\": \"Holland, Zealand, Denmark, Nuremberg, Flanders.\", \"angel\": \"Gabriel\", \"numbers\": [], \"weekday\": \"Monday\", \"hours_on_own_weekday\": [1, 8]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Ruling hours begin from sunrise, not midnight; numeric correspondences do not modify frozen Pythagorean numerology.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R208",
+      "title": "Moon: stated friendship and enmity",
+      "kind": "relation_reference",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          117
+        ],
+        "printed_pages": [
+          83
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "{\"friends\": null, \"enemies\": [\"Saturn\", \"Mars\"]}",
+      "statement_type": "paraphrase",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Keep direction and omissions; do not symmetrize conflicting statements.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R209",
+      "title": "Own term or face prevents peregrine designation",
+      "kind": "conditional_definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          91,
+          92
+        ],
+        "printed_pages": [
+          57,
+          58
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "A planet in its own term OR own face cannot be called peregrine or void of essential dignity; Lilly extends the Saturn example to the other planets.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Planet occupies its own enumerated term or face under a declared resolved degree-table convention.",
+      "qualifications_and_limits": "This establishes a negative condition for peregrine, not full well-dignified status or favourable interpretation.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R210",
+      "title": "Station-body distinction explicitly extends to other planets",
+      "kind": "scope",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          93
+        ],
+        "printed_pages": [
+          59
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The first/second-station corporature contrast is followed by a direction to observe it in all the other planets.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not infer astronomical retrogradation or station cycles for Sun/Moon contrary to their explicit direct-only passages.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R211",
+      "title": "Founding duration is not a natal lifespan",
+      "kind": "conditional_timing",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          94,
+          95
+        ],
+        "printed_pages": [
+          60,
+          61
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The 465-year example concerns buildings, towns/cities, families or principalities founded with Saturn essentially AND accidentally strong; it is called a probable conjecture of honourable continuance without sensible alteration.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Not an age prediction for an individual and not an empirically demonstrated duration.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R212",
+      "title": "Natal years require lordship and condition",
+      "kind": "conditional_timing",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          94,
+          95
+        ],
+        "printed_pages": [
+          60,
+          61
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "With Saturn well dignified as Lord of the Geniture, 57 years is the natal example; middling dignity gives 43 in the prose (43 1/2 in the table); weak lord of the nativity gives 30, hardly more.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Preserve table/prose half-year difference; no personal mortality forecast or all-planets summation.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.08.R213",
+      "title": "Herb-gathering conditions and eleventh-house wording",
+      "kind": "reported_practice",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 8,
+        "pdf_pages": [
+          94
+        ],
+        "printed_pages": [
+          60
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The herb-gathering account is explicitly reported as ancient practice: face east in Saturn's hour, preferably in an angle, then lists Ascendant, tenth or eleventh, Moon applying by trine or sextile. Eleventh is included despite the earlier angular classification; do not silently reclassify it.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Historical practice, not treatment advice or botanical efficacy evidence.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R214",
+      "title": "Profile explicitly requires significator role",
+      "kind": "application_gate",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          96,
+          97
+        ],
+        "printed_pages": [
+          62,
+          63
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The end of the favourable Jupiter portrait expressly refers to Jupiter as significator of a man in a question, or lord of the Ascendant in a nativity, AND well dignified.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Presence in a natal chart is not sufficient. Other topic-specific rulers remain later work.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.09.R215",
+      "title": "Herb-gathering essential OR accidental power",
+      "kind": "reported_practice",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 9,
+        "pdf_pages": [
+          99
+        ],
+        "printed_pages": [
+          65
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Herb-gathering condition: Jupiter powerful by essential OR accidental dignities, Moon in some good aspect, and preferably in one of his dignities. It is not modern efficacy evidence.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not silently replace OR with AND or import this into medical efficacy.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R216",
+      "title": "Rejected solar terms are not an extra source-endorsed dignity",
+      "kind": "rejected_variant",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          103
+        ],
+        "printed_pages": [
+          69
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "He rejects the opinion that occupying any of the six northern signs gives the Sun terms; records it to reject it, not to endorse an extra dignity.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "The Moon chapter reiterates that the two luminaries have no terms assigned in this framework.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.11.R217",
+      "title": "Solar orientality is a figure relation",
+      "kind": "frame_definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 11,
+        "pdf_pages": [
+          104
+        ],
+        "printed_pages": [
+          70
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "For the Sun itself, oriental/occidental concerns the figure or its quarter. Other planets are oriental when rising/appearing before the Sun, occidental when seen after its setting.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not run a self-relative solar-phase formula for the Sun.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.12.R218",
+      "title": "Ballad-singer correspondence requires Moon association",
+      "kind": "conditional_correspondence",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 12,
+        "pdf_pages": [
+          108
+        ],
+        "printed_pages": [
+          74
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The Venus profession list attaches ballad-singers to Venus joined with the Moon.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "This is a local qualification, not an unconditional Venus-only occupation.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R219",
+      "title": "Gender by conjunction and general assimilation by aspect differ",
+      "kind": "conditional_definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          111,
+          112
+        ],
+        "printed_pages": [
+          77,
+          78
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Gender follows conjunction with masculine/feminine planets in the opening definition. The next page says Mercury more usually partakes of the other planet's influence when it has any aspect.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Different predicates; neither default mixed-sex nor a universal all-aspects gender rule.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R220",
+      "title": "Six specific assimilation modifiers",
+      "kind": "conditional_modifiers",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 13,
+        "pdf_pages": [
+          112
+        ],
+        "printed_pages": [
+          78
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Any aspect imports the other planet's influence more than in other planets: Saturn heavy, Jupiter temperate, Mars rash, Sun genteel, Venus jesting, Moon shifting. The opening gender rule specifies conjunction, not merely every aspect.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "No weights, majority vote or rule for contradictory simultaneous modifiers is supplied in this passage.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R221",
+      "title": "Slow Moon analogy is not physical retrograde",
+      "kind": "conditional_definition",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          114
+        ],
+        "printed_pages": [
+          80
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Always direct; LESS than 13 degrees 10 arcminutes in 24 hours is called equivalent to a retrograde planet. Distinguish analogy from physical motion and from the stated mean including 36 arcseconds.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Use a strict LESS-than threshold. Do not substitute the larger stated mean, including 36 arcseconds, or reverse computed longitude speed.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R222",
+      "title": "Different eye outcomes remain separate",
+      "kind": "conditional_historical_medical",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          115
+        ],
+        "printed_pages": [
+          81
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Sun impediment in nativity or question usually indicates blemish in/near eye; succedent impediment is near eye; unfortunate in angles WITH nebulous fixed stars concerns sight. Do not merge cosmetic blemish with vision impairment.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Do not collapse visible blemish and sight impairment; no real-person clinical inference.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R223",
+      "title": "Head and Tail doctrine attributed to ancients",
+      "kind": "reported_variant",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          117
+        ],
+        "printed_pages": [
+          83
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Head masculine, Jupiter/Venus-like, intrinsically fortunate, but good with good and evil with evil according to the ancients. Tail feminine/opposite: bad with good planets, good with malignant planets.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "This is the opinion Lilly reports before explicitly disagreeing; do not label it his preferred practice.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R224",
+      "title": "Lilly preferred Head interpretation",
+      "kind": "author_reported_observation",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          117
+        ],
+        "printed_pages": [
+          83
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Lilly says he instead always found the Head equivalent to a Fortune, lessening malefic signification when joined to evil planets and increasing good when joined to good planets.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Author-reported experience is not a new outcome dataset or independent validation.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R225",
+      "title": "Lilly preferred Tail with malefics",
+      "kind": "author_reported_observation",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          117
+        ],
+        "printed_pages": [
+          83
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Lilly reports Tail conjunction with evil planets as doubling, trebling or greatly increasing their malice.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Rhetorical strength language is not a calibrated numeric multiplier or probability.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.14.R226",
+      "title": "Tail with a benefic significator: trouble is not identical to failure",
+      "kind": "conditional_author_observation",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": 14,
+        "pdf_pages": [
+          117
+        ],
+        "printed_pages": [
+          83
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Even with a principal significator promising the matter soon, Tail conjunction with a Fortune signifying in the question is said to produce rubs, disputes and obstacles. Unless principal significators were angular AND well fortified essentially, matters many times unexpectedly came to nothing.",
+      "statement_type": "paraphrase",
+      "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+      "qualifications_and_limits": "Separate delay/conflict, apparent hopelessness, eventual perfection and collapse. Exception to the failure branch does not promise smooth or guaranteed success.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R227",
+      "title": "Printed term list discrepancy",
+      "kind": "audit_observation",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": "MULTIPLE_TARGETED_PASSAGES",
+        "pdf_pages": [
+          107,
+          110,
+          138
+        ],
+        "printed_pages": [
+          73,
+          76,
+          104
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "Our enumeration of the planet-specific term lists has a Gemini21 gap; the Leo/Virgo Mercury labels produce additional overlaps and gaps. The later summary at PDF138 differs.",
+      "statement_type": "analyst_comparison_of_source_passages",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Analyst/source-collation observation, not a new historical interpretive rule.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R228",
+      "title": "Printed face discrepancy",
+      "kind": "audit_observation",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": "MULTIPLE_TARGETED_PASSAGES",
+        "pdf_pages": [
+          92,
+          107,
+          138
+        ],
+        "printed_pages": [
+          58,
+          73,
+          104
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The Venus final face is printed Pisces1..10, already assigned to Saturn; Aquarius1..10 receives none in these planet lists. The later summary assigns that Aquarius face to Venus.",
+      "statement_type": "analyst_comparison_of_source_passages",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Analyst/source-collation observation, not a new historical interpretive rule.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R229",
+      "title": "Venus latitude inconsistency",
+      "kind": "audit_observation",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": "MULTIPLE_TARGETED_PASSAGES",
+        "pdf_pages": [
+          107
+        ],
+        "printed_pages": [
+          73
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The same paragraph states a greatest latitude of2d02m then reports8d36m north in February1643.",
+      "statement_type": "analyst_comparison_of_source_passages",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Analyst/source-collation observation, not a new historical interpretive rule.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.13.R230",
+      "title": "Mars mean-motion unit discrepancy",
+      "kind": "audit_observation",
+      "source_locator": {
+        "work_id": "CHRISTIAN_ASTROLOGY",
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "edition": "1647 English original, Wellcome b30338724",
+        "book": "I",
+        "chapter": "MULTIPLE_TARGETED_PASSAGES",
+        "pdf_pages": [
+          99,
+          888
+        ],
+        "printed_pages": [
+          65,
+          "unnumbered errata"
+        ],
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+      },
+      "source_statement": "The visible line says31degrees27minutes despite nearby minute-scale daily values. The surviving errata at PDF888 explicitly says page65 line21 read31min. Preserve both layers; do not silently insert27seconds or claim modern astronomical parity.",
+      "statement_type": "analyst_comparison_of_source_passages",
+      "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+      "qualifications_and_limits": "Analyst/source-collation observation, not a new historical interpretive rule.",
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    }
+  ]
+}
