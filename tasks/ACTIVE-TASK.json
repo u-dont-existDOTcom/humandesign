@@ -1,15 +1,17 @@
 {
   "schema_version": 1,
   "taskId": "question-feedback-loop-20261008",
-  "status": "active",
+  "status": "backend_delivered_owner_editor_pending",
   "exclusive": true,
-  "requiredBranch": "fix/question-feedback-loop-20261008",
+  "requiredBranch": "ops/question-feedback-live-closeout-20261008",
   "completionCommand": "PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q",
   "suspendedTaskSources": [
     "owner-pilot private GPT editor application remains a separate pending owner step",
     "unrelated astrology/research tasks"
   ],
   "goal": "Surface consented participant question objections to the researcher and produce versioned actual question-rewrite drafts while protecting old studies.",
-  "remaining_owner_action": "After live deployment, apply latest cumulative GPT editor packet; separately evaluate versioned wording candidates before prospective activation.",
-  "supersedes_active_task": "owner-pilot-closeout-repair-20261007"
+  "remaining_owner_action": "Apply the delivered cumulative GPT packet to the same GPT for future objection capture. The versioned v2 question wording proposal remains non-active until prospective study approval/validation.",
+  "supersedes_active_task": "owner-pilot-closeout-repair-20261007",
+  "deployment_receipt": "tasks/question-feedback-loop-20261008/LIVE-DEPLOYMENT-RECEIPT.json",
+  "engineering_completion": "live_backend_verified"
 }

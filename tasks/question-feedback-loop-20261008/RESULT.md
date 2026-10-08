@@ -16,7 +16,7 @@ Nine TF1 question wordings have been rewritten in `tendency-first-v2-development
 
 ## What counts as done vs not done
 
-- Backend inbox, status tracking and private admin UI: implemented; see deployment receipt after live release.
+- Backend inbox, status tracking and private admin UI: implemented, merged and deployed; production authenticated readback returned 9 existing feedback items. See LIVE-DEPLOYMENT-RECEIPT.json.
 - Exact complaint capture on new GPT conversations: requires applying the cumulative private GPT update; the server cannot force a GPT to follow textual instructions before that editor update.
 - Nine versioned wording revisions: actual files exist, tested structurally, but not live. Do not claim participant use or predictive validity.
 - Automatic feedback-to-question-change: intentionally not implemented; changes require research review, versioning and validation.
@@ -24,3 +24,7 @@ Nine TF1 question wordings have been rewritten in `tendency-first-v2-development
 ## Assurance
 
 Focused tests cover authorization, consent, queued review (not only successful final submissions), mixed complaint/behavior distinction, untagged explicit objection detection, synthetic exclusions, withdrawal behavior, UI safely escaped rendering and v2 frozen-v1 preservation. Broader suite and deployment outcome are tracked in RELEASE-GATE-STATUS.json.
+
+## Live closeout
+
+The Railway deployment succeeded with exact tested merged source. Both public health and researcher admin UI returned 200; unauthorized feedback endpoint returned 401; authorized feedback returned 200 with 9 entries. Remaining user work: private GPT editor application. New v2 wording is not active. See CLOSEOUT.md and deployment/delivery receipts.

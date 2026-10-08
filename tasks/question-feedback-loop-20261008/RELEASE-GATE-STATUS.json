@@ -25,7 +25,29 @@
     "proposed_legacy_retirements": 3,
     "activated": 0
   },
-  "live_backend_deployment": "pending",
+  "live_backend_deployment": "SUCCESS",
   "custom_gpt_editor_update": "owner_only_pending",
-  "privacy": "no participant source committed"
+  "privacy": "no participant source committed",
+  "integration_merge_commit": "e45e859d325c49af9ea0c657926ef1d8f264b0ee",
+  "hosted_ci": {
+    "verify": "pass",
+    "survey_browser": "pass"
+  },
+  "railway_deployment_id": "48b43d03-930a-4a37-8cfc-d4c704ee977d",
+  "deployed_source_commit": "e45e859d325c49af9ea0c657926ef1d8f264b0ee",
+  "deployment_method": "verified_minimal_732KiB_build_context_from_exact_merged_commit",
+  "previous_deployment_preserved": "d9aa2ad6-5b7c-42cd-875c-6cbb46992fc2",
+  "live_readback": {
+    "health_http": 200,
+    "researcher_admin_http": 200,
+    "feedback_unauthenticated_http": 401,
+    "feedback_authenticated_http": 200,
+    "consented_feedback_items": 9,
+    "submission_count": 1,
+    "session_count": 4,
+    "human_interview_mutated": false,
+    "researcher_sensitive_values_logged": false
+  },
+  "owner_delivery": "OS_Downloads_verified",
+  "prospective_v2_question_texts_activated": false
 }
