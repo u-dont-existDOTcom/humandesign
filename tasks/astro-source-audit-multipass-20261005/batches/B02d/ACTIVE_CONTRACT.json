@@ -1,0 +1,35 @@
+{
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch": "B02d",
+  "base": "fff0d113b349a32250eb6a1d729857260cce310d",
+  "parent_status": "OPEN",
+  "scope": "Read/extract XIX-XXI, completion of Lilly Book I numbered teaching text, PDF139-162. Preserve every conditional definition, worked example and table; verify uncertain glyphs on images. No person data or runtime promotion.",
+  "authority": "Owner continue plus explicit multipass authorization; live UDA root/index and relevant source-provenance, operating-system, recovery, activation, delivery passages retrieved; HumanDesign AGENTS, architecture and latest checkpoint read.",
+  "active_obligations": [
+    {
+      "rule": "Source fidelity",
+      "test": "Separate main text, examples, our mathematical convention, and unresolved contradictions; preserve scope and modifiers.",
+      "enforcement": "semantic"
+    },
+    {
+      "rule": "No outcomes",
+      "test": "Do not inspect participant data, fit, change frozen models or previous extracted rules.",
+      "enforcement": "scope and diff allowlist"
+    },
+    {
+      "rule": "Source observation",
+      "test": "No new OCR; exact PDF hash, selected page images and text; table cells not inferred from OCR.",
+      "enforcement": "hash and page receipts"
+    },
+    {
+      "rule": "Reproducibility",
+      "test": "Self-contained source data and bounded pure reference code; focused tests, no accuracy inflation.",
+      "enforcement": "mechanical plus claim check"
+    },
+    {
+      "rule": "Recovery/delivery",
+      "test": "Save actual completed scope, next unread heading, publication readback, usable handoff and packet. Do not retry historic blocked payloads.",
+      "enforcement": "mechanical"
+    }
+  ]
+}

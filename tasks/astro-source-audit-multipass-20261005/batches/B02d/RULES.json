@@ -1,0 +1,5499 @@
+{
+  "schema_version": 2,
+  "batch_id": "B02d",
+  "records_count": 176,
+  "first_record_number": 392,
+  "last_record_number": 567,
+  "records": [
+    {
+      "id": "LI.1647.I.XIX.R392",
+      "title": "Principal rays and conjunction terminology",
+      "kind": "definition",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          139,
+          140
+        ],
+        "printed_pages": [
+          105,
+          106
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "sextile": 60,
+        "square": 90,
+        "trine": 120,
+        "opposition": 180,
+        "conjunction": "same sign, degree and minute; coition, synod, congress"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Lilly calls conjunction an aspect improperly and refers to other new aspects mentioned earlier; this is not a whole-book absence claim."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R393",
+      "title": "Reconciliation and the two adverse aspects",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          140
+        ],
+        "printed_pages": [
+          106
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Square signifies imperfect enmity: reconciliation remains possible with assistance from the other significators. Opposition signifies perfect hatred: no peace expected before the suit ends or the challenge has been fought.",
+      "prerequisites": [
+        "Question about reconciling two adversaries; the planets are their main significators."
+      ],
+      "qualifications_and_limits": [
+        "Do not infer innate character or relationship safety from an arbitrary natal square/opposition. Later reception/perfection qualifications are retained separately."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R394",
+      "title": "Favourable aspects and conjunction polarity",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          140
+        ],
+        "printed_pages": [
+          106
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Sextile and trine argue love, unity and friendship, trine more forcibly; conjunctions are good or bad according to friendship/enmity of the planets.",
+      "prerequisites": [
+        "Relevant significators in the enquiry."
+      ],
+      "qualifications_and_limits": [
+        "No numerical force ratio or independent-evidence multiplier is supplied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R395",
+      "title": "Partile definition and examples",
+      "kind": "definition_and_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          140,
+          141
+        ],
+        "printed_pages": [
+          106,
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "definition": "exact separation corresponding to the aspect",
+        "examples": [
+          "Venus Aries 9, Jupiter Leo 9: trine",
+          "Sun Taurus 1, Moon Cancer 1: sextile"
+        ],
+        "interpretation": "Near completion when signifying good; equally present evil when mischief is threatened."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Degree-based examples do not specify a universal one-degree orb or settle all minute/second tolerances."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R396",
+      "title": "Platick rays use both planets moieties",
+      "kind": "definition_and_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "definition": "Within the half-sum of the two planets' orbs",
+        "example": "Venus Taurus 10 and Saturn Virgo 18: eight degrees from trine; moieties four plus five give nine."
+      },
+      "prerequisites": [
+        "The planets signify the matter."
+      ],
+      "qualifications_and_limits": [
+        "Two orb columns are printed; select a declared profile, never retrospectively whichever fits."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R397",
+      "title": "Saturn orb alternatives",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "p107_first_column": 600,
+        "p107_other_authors_column": 540
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Arcminutes; alternative full orbs, not two corroborating indicators."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R398",
+      "title": "Jupiter orb alternatives",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "p107_first_column": 720,
+        "p107_other_authors_column": 540
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Arcminutes; alternative full orbs, not two corroborating indicators."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R399",
+      "title": "Mars orb alternatives",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "p107_first_column": 450,
+        "p107_other_authors_column": 420
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Arcminutes; alternative full orbs, not two corroborating indicators."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R400",
+      "title": "Sun orb alternatives",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "p107_first_column": 1020,
+        "p107_other_authors_column": 900
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Arcminutes; alternative full orbs, not two corroborating indicators."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R401",
+      "title": "Venus orb alternatives",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "p107_first_column": 480,
+        "p107_other_authors_column": 420
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Arcminutes; alternative full orbs, not two corroborating indicators."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R402",
+      "title": "Mercury orb alternatives",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "p107_first_column": 420,
+        "p107_other_authors_column": 420
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Arcminutes; alternative full orbs, not two corroborating indicators."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R403",
+      "title": "Moon orb alternatives",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "p107_first_column": 750,
+        "p107_other_authors_column": 720
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Arcminutes; alternative full orbs, not two corroborating indicators."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R404",
+      "title": "Application with both direct",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The swifter planet applies to the slower/ponderous one: Mercury Aries 5 to Mars Aries 10.",
+      "prerequisites": [
+        "Both direct; appropriate relative motion."
+      ],
+      "qualifications_and_limits": [
+        "Positions alone do not prove the future order of encounters."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R405",
+      "title": "Application with both retrograde",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Mercury Aries 10 to Mars Aries 9, Mercury remaining retrograde through conjunction, is an ill application associated with sudden perfection OR breaking off according to their signification.",
+      "prerequisites": [
+        "Both retrograde and conjunction reached before Mercury turns direct."
+      ],
+      "qualifications_and_limits": [
+        "Do not turn ill application into an unconditional non-occurrence prediction."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R406",
+      "title": "Mixed-motion application",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          141
+        ],
+        "printed_pages": [
+          107
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Direct Mars Aries 15 to retrograde Mercury Aries 17: ill application, great atmospheric change or sudden alteration in a question.",
+      "prerequisites": [
+        "Direct planet lower, retrograde planet higher."
+      ],
+      "qualifications_and_limits": [
+        "Weather and question outcomes are different reference frames; no exact forecast from these illustrative coordinates."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R407",
+      "title": "Application and weight hierarchy",
+      "kind": "definition_and_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lighter planets apply to more ponderous ones; superior planets do not apply to inferior ones unless retrograde. Saturn Aries 10 receives applications from Mars at degree 7 of Aries, Gemini, Cancer, Leo or Libra by conjunction, sextile, square, trine or opposition respectively.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Exact contact described at matching degree and minute; a complete event calculation requires both trajectories."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R408",
+      "title": "Dexter and sinister rays",
+      "kind": "definition",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142,
+          143
+        ],
+        "printed_pages": [
+          108,
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Sinister rays follow sign succession; dexter run against succession and are described as more forcible.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The direction belongs to the ray-casting source planet. No multiplier is specified."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R409",
+      "title": "Aries aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          11,
+          10,
+          9
+        ],
+        "sinister_sextile_square_trine": [
+          3,
+          4,
+          5
+        ],
+        "opposition": 7
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R410",
+      "title": "Taurus aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          12,
+          11,
+          10
+        ],
+        "sinister_sextile_square_trine": [
+          4,
+          5,
+          6
+        ],
+        "opposition": 8
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R411",
+      "title": "Gemini aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          1,
+          12,
+          11
+        ],
+        "sinister_sextile_square_trine": [
+          5,
+          6,
+          7
+        ],
+        "opposition": 9
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R412",
+      "title": "Cancer aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          2,
+          1,
+          12
+        ],
+        "sinister_sextile_square_trine": [
+          6,
+          7,
+          8
+        ],
+        "opposition": 10
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R413",
+      "title": "Leo aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          3,
+          2,
+          1
+        ],
+        "sinister_sextile_square_trine": [
+          7,
+          8,
+          9
+        ],
+        "opposition": 11
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R414",
+      "title": "Virgo aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          4,
+          3,
+          2
+        ],
+        "sinister_sextile_square_trine": [
+          8,
+          9,
+          10
+        ],
+        "opposition": 12
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R415",
+      "title": "Libra aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          5,
+          4,
+          3
+        ],
+        "sinister_sextile_square_trine": [
+          9,
+          10,
+          11
+        ],
+        "opposition": 1
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R416",
+      "title": "Scorpio aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          6,
+          5,
+          4
+        ],
+        "sinister_sextile_square_trine": [
+          10,
+          11,
+          12
+        ],
+        "opposition": 2
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R417",
+      "title": "Sagittarius aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          7,
+          6,
+          5
+        ],
+        "sinister_sextile_square_trine": [
+          11,
+          12,
+          1
+        ],
+        "opposition": 3
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R418",
+      "title": "Capricorn aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          8,
+          7,
+          6
+        ],
+        "sinister_sextile_square_trine": [
+          12,
+          1,
+          2
+        ],
+        "opposition": 4
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R419",
+      "title": "Aquarius aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          9,
+          8,
+          7
+        ],
+        "sinister_sextile_square_trine": [
+          1,
+          2,
+          3
+        ],
+        "opposition": 5
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R420",
+      "title": "Pisces aspect table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          142
+        ],
+        "printed_pages": [
+          108
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "dexter_sextile_square_trine": [
+          10,
+          9,
+          8
+        ],
+        "sinister_sextile_square_trine": [
+          2,
+          3,
+          4
+        ],
+        "opposition": 6
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sign numbers 1..12; exact rays require like degrees, not merely any positions in those signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R421",
+      "title": "Aries signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        2,
+        8
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R422",
+      "title": "Taurus signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        1,
+        3,
+        7,
+        9
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R423",
+      "title": "Gemini signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        2,
+        8
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R424",
+      "title": "Cancer signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        5,
+        11
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R425",
+      "title": "Leo signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        4,
+        6,
+        10,
+        12
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R426",
+      "title": "Virgo signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        5,
+        11
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R427",
+      "title": "Libra signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        8,
+        2
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R428",
+      "title": "Scorpio signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        7,
+        9,
+        1,
+        3
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R429",
+      "title": "Sagittarius signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        8,
+        2
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R430",
+      "title": "Capricorn signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        5,
+        11
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R431",
+      "title": "Aquarius signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        10,
+        12,
+        4,
+        6
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R432",
+      "title": "Pisces signs not beholding, raw table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          143
+        ],
+        "printed_pages": [
+          109
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        5,
+        11
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is the literal listed subset, not a repaired complete geometric non-aspect list. Unlisted is not automatically aspected."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R433",
+      "title": "Initial versus full separation",
+      "kind": "definition_and_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          144
+        ],
+        "printed_pages": [
+          110
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "initial_example": "Saturn and Jupiter Aries 10:25; Jupiter at 10:31 or 10:32 is separating.",
+        "full_clearance_examples": [
+          "Saturn 9-degree orb and Jupiter 9-degree orb: total clearance nine degrees.",
+          "Sun 15 and Moon 12: clearance thirteen degrees thirty minutes."
+        ]
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "A six-minute initial departure and full moiety clearance are different predicates. These examples use the alternative orb column."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R434",
+      "title": "Separation timing in a marriage question",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          144
+        ],
+        "printed_pages": [
+          110
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Recently separated significators suggest a recent chance of marriage now suspended by dislike or rupture. Greater separation accompanies alienation; degrees left to full clearance supply a count of weeks, days, months or years.",
+      "prerequisites": [
+        "The two planets are the marriage significators at the question time."
+      ],
+      "qualifications_and_limits": [
+        "Unit choice is not specified by this passage. A precise date cannot be obtained by choosing units after seeing an event."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R435",
+      "title": "Separation timing modifiers",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          144
+        ],
+        "printed_pages": [
+          110
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Both significators in moveable signs, angular and swift hasten the time; common signs require longer, fixed signs longer still.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Keep the joint conditions; mixed modalities and absolute duration multipliers are unspecified."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R436",
+      "title": "Prohibition",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          144,
+          145
+        ],
+        "printed_pages": [
+          110,
+          111
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Before two applying principals perfect their aspect, a third planet interposes body or aspect, hindering and retarding the matter.",
+      "prerequisites": [
+        "Principals signify completion of the question.",
+        "Intervention occurs before perfection."
+      ],
+      "qualifications_and_limits": [
+        "Hindering/retarding is not automatically permanent impossibility."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R437",
+      "title": "Bodily prohibition example",
+      "kind": "worked_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          145
+        ],
+        "printed_pages": [
+          111
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Mars Aries 7, Saturn Aries 12, Sun Aries 6: the faster Sun reaches Mars and then Saturn before Mars reaches Saturn.",
+      "prerequisites": [
+        "Asserted encounter order, not just a static three-planet arrangement."
+      ],
+      "qualifications_and_limits": [
+        "The statement that combustion is the greatest misfortune belongs to this explanatory passage."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R438",
+      "title": "Aspect prohibition example",
+      "kind": "worked_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          145
+        ],
+        "printed_pages": [
+          111
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Mars Aries 7, Saturn Aries 15, Sun Gemini 5: the faster Sun reaches dexter sextiles to Mars and Saturn before the principal conjunction; analogous square, trine or opposition intervention.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No numerical speeds are provided. Do not manufacture precise time differences."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R439",
+      "title": "Refranation",
+      "kind": "definition_and_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          145
+        ],
+        "printed_pages": [
+          111
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Mars Aries 7 approaches Saturn Aries 12 but turns retrograde before reaching degree 10 or 11; Saturn continues direct, and the promised conjunction is not effected.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Reversal before the promised encounter, not mere slowness."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R440",
+      "title": "Translation, introductory definition",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          145
+        ],
+        "printed_pages": [
+          111
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A light planet separates from a weightier planet and presently joins another weightier one, bodily or by aspect. Mercury Aries 16 takes Mars Aries 15 toward Saturn Aries 20.",
+      "prerequisites": [
+        "Intermediary is the appropriate lighter carrier."
+      ],
+      "qualifications_and_limits": [
+        "XXI adds explicit reception and no-intervening-contact conditions for its perfection route; retain both scopes."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R441",
+      "title": "Translation, represented means",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          145
+        ],
+        "printed_pages": [
+          111
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The person represented by the translating planet procures the assistance represented by the source planet for the receiving matter; useful in marriage, lawsuits and ordinary questions.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Subject is question-specific mediation, not a generic personality trait."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R442",
+      "title": "Mutual reception and examples",
+      "kind": "definition_and_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          146
+        ],
+        "printed_pages": [
+          112
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "definition": "Two relevant planets in each other's essential dignities; by domicile is strongest.",
+        "examples": [
+          "Sun Aries and Mars Leo: domicile.",
+          "Venus Aries and Sun Taurus: triplicity if by day.",
+          "Venus Aries numbered degree 24 and Mars Gemini numbered degree 16: terms."
+        ]
+      },
+      "prerequisites": [
+        "Planets are significators in the matter."
+      ],
+      "qualifications_and_limits": [
+        "Can involve triplicity, term, face or another essential dignity. Direction and day/night conditions must be preserved."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R443",
+      "title": "Reception despite adverse or missing aspect",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          146
+        ],
+        "printed_pages": [
+          112
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Mutual reception of the principal significators can bring the thing to pass suddenly and without great trouble to both parties, despite no aspect, denial by aspects or doubtful square/opposition testimony.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Retain beside XXI's much more qualified and often regrettable opposition-perfection description; do not erase the tension."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R444",
+      "title": "Peregrine definition and examples",
+      "kind": "definition_and_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          146
+        ],
+        "printed_pages": [
+          112
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "No essential dignity in the occupied sign degree. Saturn at Aries 10 is peregrine, but at 27/28 etc. is in its term and not peregrine. The Sun in Cancer has no dignity throughout that sign.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Fall and peregrinity need not be mutually exclusive. Reception versus own-dignity treatment remains separate."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R445",
+      "title": "Peregrine theft heuristic",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          146
+        ],
+        "printed_pages": [
+          112
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "An angular or second-house peregrine planet very often signifies the thief.",
+      "prerequisites": [
+        "A theft question."
+      ],
+      "qualifications_and_limits": [
+        "Historical heuristic; do not infer criminality in a person from natal placement."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R446",
+      "title": "Void of course",
+      "kind": "definition_and_qualification",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          146
+        ],
+        "printed_pages": [
+          112
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A planet has separated from a planet and does not forthwith, while it remains in that sign, apply to another; most commonly observed for the Moon. Business seldom proceeds handsomely.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Apply is not silently replaced by perfect an exact contact. Later strong-significator and sign exceptions are separately retained."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R447",
+      "title": "Frustration",
+      "kind": "definition_and_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          146,
+          147
+        ],
+        "printed_pages": [
+          112,
+          113
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A swift planet would join a heavier one, but that heavier planet joins a third first: Mercury Aries 10, Mars 12, Jupiter 13, with Mars meeting Jupiter before Mercury reaches Mars.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Which encounter comes first requires trajectories or an explicitly supplied event ordering."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R448",
+      "title": "Hayz as actually printed",
+      "kind": "definition",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          147
+        ],
+        "printed_pages": [
+          113
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "day_branch": "masculine diurnal planet by day above the earth in a masculine sign",
+        "night_branch": "feminine nocturnal planet by night UNDER the earth in a feminine sign",
+        "use": "querent content at question time when the significator so qualifies"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The nocturnal below-earth wording was checked on the image and is not replaced with another school's above-earth convention."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R449",
+      "title": "Superior and inferior planets",
+      "kind": "definition",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          147
+        ],
+        "printed_pages": [
+          113
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "superior": [
+          "Saturn",
+          "Jupiter",
+          "Mars"
+        ],
+        "inferior": [
+          "Venus",
+          "Mercury",
+          "Moon"
+        ],
+        "reference": "geocentric orb of the Sun"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical cosmological classification, not a modern physical distance ranking."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R450",
+      "title": "Combustion definition and contradictory example",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          147,
+          148
+        ],
+        "printed_pages": [
+          113,
+          114
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "condition": "same sign as Sun, no more than eight degrees thirty minutes either side in the stated definition",
+        "examples": [
+          "Jupiter Aries 10, Sun Aries 18: eight degrees, called combust.",
+          "Jupiter Aries 28, Sun Aries 18: ten degrees, also called combust in print."
+        ],
+        "restriction": "bodily conjunction in one sign, not sextile/square/trine/opposition; Sun cannot itself be combust"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Second example conflicts with the threshold, confirmed on image. Do not alter 28 to 26 or expand threshold silently. Exact threshold boundary and cazimi precedence remain explicit conventions."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R451",
+      "title": "Combustion direction, moiety and represented state",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          147
+        ],
+        "printed_pages": [
+          113
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The Sun hastening toward a conjunction afflicts more than receding; Lilly uses the Sun's moiety, not Jupiter's (the latter would be four degrees thirty). He acknowledges disagreement and asks the reader to use what proves truest. Combust querent significator denotes fear and being overpowered by a great person.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Author-endorsed development selection is not untouched validation; no retrospective orb shopping."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R452",
+      "title": "Under the beams and cazimi",
+      "kind": "definitions_and_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          147
+        ],
+        "printed_pages": [
+          113
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "beams": "until fully seventeen degrees from the Sun either side",
+        "cazimi": "within seventeen minutes forward or backward; fortified",
+        "example": "Sun Taurus 15:30 and Mercury Taurus 15:25: five minutes"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Same-sign requirement is explicit for combustion, not independently restated for beams. Boundary and overlap policies are not a ready-made signed outcome score."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R453",
+      "title": "Orientality of superior planets",
+      "kind": "definition",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          148
+        ],
+        "printed_pages": [
+          114
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Saturn, Jupiter and Mars are oriental from conjunction to opposition and occidental from opposition to conjunction; oriental rises before the Sun, occidental is visible above the horizon or sets after sunset.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "A longitude proxy is not automatically a full observed-visibility calculation."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R454",
+      "title": "Orientality and elongation of Mercury and Venus",
+      "kind": "definition",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          148
+        ],
+        "printed_pages": [
+          114
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Oriental when in fewer degrees of the Sun's sign or its preceding sign, occidental when in more degrees or the next sign. Stated maximum elongations are Mercury 28 degrees, Venus 48, with some allowing a few more; no sextile/square/trine/opposition to Sun.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "These are source bounds, not newly verified Swiss Ephemeris results."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R455",
+      "title": "Moon oriental versus occidental",
+      "kind": "definition",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          148
+        ],
+        "printed_pages": [
+          114
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Oriental from opposition to conjunction, occidental from conjunction to opposition, explained by the Moon's greater speed.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Increasing light and occidental are alternative descriptions of one table condition, not two score increments."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R456",
+      "title": "Bodily besieging",
+      "kind": "definition_and_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          148
+        ],
+        "printed_pages": [
+          114
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A planet between the bodies of Saturn and Mars: Saturn Aries 15, Mars Aries 10, Venus Aries 13. The adverse represented condition requires Venus to be significatrix in that figure.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The image reads Aries, not the Capricorn inferred by the text layer. This local definition is bodily, unlike the broader Rhetorius aspect-pattern definition."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R457",
+      "title": "Selection of ancient accidents",
+      "kind": "methodology",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          148
+        ],
+        "printed_pages": [
+          114
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lilly says he omits other accidents described by the ancients because he regards them as of little purpose in judgement.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This does not identify a complete excluded list or empirically prove the excluded techniques useless."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R458",
+      "title": "Direct, retrograde and stationary",
+      "kind": "definitions",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          148
+        ],
+        "printed_pages": [
+          114
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "direct": "forward from degree 13 to 14 etc.",
+        "retrograde": "backward from 10 to 9,8,7 etc.",
+        "stationary": "moves not at all; superior planets said to do so two, three or four days before retrogradation"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "An approximate historical stationary interval is not an astronomical exact-zero-speed plateau."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R459",
+      "title": "Fortitude/debility E01",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "E01",
+        "column": "essential_fortitude",
+        "condition": "own domicile OR mutual reception by domicile",
+        "magnitude": 5,
+        "qualification": "One table row, not five for each alternative."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R460",
+      "title": "Fortitude/debility E02",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "E02",
+        "column": "essential_fortitude",
+        "condition": "exaltation OR reception by exaltation",
+        "magnitude": 4,
+        "qualification": "One table row; do not stack the alternatives."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R461",
+      "title": "Fortitude/debility E03",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "E03",
+        "column": "essential_fortitude",
+        "condition": "own triplicity",
+        "magnitude": 3,
+        "qualification": "Use the declared day/night source profile."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R462",
+      "title": "Fortitude/debility E04",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "E04",
+        "column": "essential_fortitude",
+        "condition": "own term",
+        "magnitude": 2,
+        "qualification": "Use an identified table and degree convention."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R463",
+      "title": "Fortitude/debility E05",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "E05",
+        "column": "essential_fortitude",
+        "condition": "own face",
+        "magnitude": 1,
+        "qualification": "Source calls this sufficient to avoid peregrinity."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R464",
+      "title": "Fortitude/debility D01",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "D01",
+        "column": "essential_debility",
+        "condition": "detriment",
+        "magnitude": 5,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R465",
+      "title": "Fortitude/debility D02",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "D02",
+        "column": "essential_debility",
+        "condition": "fall",
+        "magnitude": 4,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R466",
+      "title": "Fortitude/debility D03",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "D03",
+        "column": "essential_debility",
+        "condition": "peregrine",
+        "magnitude": 5,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R467",
+      "title": "Fortitude/debility A01",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A01",
+        "column": "accidental_fortitude",
+        "condition": "house 1 OR 10",
+        "magnitude": 5,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R468",
+      "title": "Fortitude/debility A02",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A02",
+        "column": "accidental_fortitude",
+        "condition": "house 7 OR 4 OR 11",
+        "magnitude": 4,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R469",
+      "title": "Fortitude/debility A03",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A03",
+        "column": "accidental_fortitude",
+        "condition": "house 2 OR 5",
+        "magnitude": 3,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R470",
+      "title": "Fortitude/debility A04",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A04",
+        "column": "accidental_fortitude",
+        "condition": "house 9",
+        "magnitude": 2,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R471",
+      "title": "Fortitude/debility A05",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A05",
+        "column": "accidental_fortitude",
+        "condition": "house 3",
+        "magnitude": 1,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R472",
+      "title": "Fortitude/debility A06",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A06",
+        "column": "accidental_fortitude",
+        "condition": "direct",
+        "magnitude": 4,
+        "qualification": "Sun and Moon explicitly excluded: always direct, this row is void for them."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R473",
+      "title": "Fortitude/debility A07",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A07",
+        "column": "accidental_fortitude",
+        "condition": "swift",
+        "magnitude": 2,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R474",
+      "title": "Fortitude/debility A08",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A08",
+        "column": "accidental_fortitude",
+        "condition": "Saturn/Jupiter/Mars oriental",
+        "magnitude": 2,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R475",
+      "title": "Fortitude/debility A09",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A09",
+        "column": "accidental_fortitude",
+        "condition": "Mercury/Venus occidental",
+        "magnitude": 2,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R476",
+      "title": "Fortitude/debility A10",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A10",
+        "column": "accidental_fortitude",
+        "condition": "Moon increasing OR occidental",
+        "magnitude": 2,
+        "qualification": "Aliases in one row."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R477",
+      "title": "Fortitude/debility A11",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A11",
+        "column": "accidental_fortitude",
+        "condition": "free of combustion AND Sun beams",
+        "magnitude": 5,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R478",
+      "title": "Fortitude/debility A12",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A12",
+        "column": "accidental_fortitude",
+        "condition": "cazimi",
+        "magnitude": 5,
+        "qualification": "Overlap precedence with combustion is not specified in this table."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R479",
+      "title": "Fortitude/debility A13",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A13",
+        "column": "accidental_fortitude",
+        "condition": "partile conjunction Jupiter and Venus",
+        "magnitude": 5,
+        "qualification": "Wording does not settle per-contact repetition or both-versus-either universally."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R480",
+      "title": "Fortitude/debility A14",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A14",
+        "column": "accidental_fortitude",
+        "condition": "partile conjunction North Node",
+        "magnitude": 4,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R481",
+      "title": "Fortitude/debility A15",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A15",
+        "column": "accidental_fortitude",
+        "condition": "partile trine Jupiter and Venus",
+        "magnitude": 4,
+        "qualification": "Do not invent a repeated-contact sum."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R482",
+      "title": "Fortitude/debility A16",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A16",
+        "column": "accidental_fortitude",
+        "condition": "partile sextile Jupiter and Venus",
+        "magnitude": 3,
+        "qualification": "Do not invent a repeated-contact sum."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R483",
+      "title": "Fortitude/debility A17",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A17",
+        "column": "accidental_fortitude",
+        "condition": "conjunction Cor Leonis at Leo 24",
+        "magnitude": 6,
+        "qualification": "Historical position, no contemporary precession update or orb invented."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R484",
+      "title": "Fortitude/debility A18",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "A18",
+        "column": "accidental_fortitude",
+        "condition": "conjunction Spica Virginis at Libra 18",
+        "magnitude": 5,
+        "qualification": "Virginis is part of the star name; listed position is Libra."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R485",
+      "title": "Fortitude/debility B01",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B01",
+        "column": "accidental_debility",
+        "condition": "house 12",
+        "magnitude": 5,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R486",
+      "title": "Fortitude/debility B02",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B02",
+        "column": "accidental_debility",
+        "condition": "house 8 OR 6",
+        "magnitude": 2,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R487",
+      "title": "Fortitude/debility B03",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B03",
+        "column": "accidental_debility",
+        "condition": "retrograde",
+        "magnitude": 5,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R488",
+      "title": "Fortitude/debility B04",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B04",
+        "column": "accidental_debility",
+        "condition": "slow",
+        "magnitude": 2,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R489",
+      "title": "Fortitude/debility B05",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B05",
+        "column": "accidental_debility",
+        "condition": "Saturn/Jupiter/Mars occidental",
+        "magnitude": 2,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R490",
+      "title": "Fortitude/debility B06",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B06",
+        "column": "accidental_debility",
+        "condition": "Mercury/Venus oriental",
+        "magnitude": 2,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R491",
+      "title": "Fortitude/debility B07",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B07",
+        "column": "accidental_debility",
+        "condition": "Moon decreasing",
+        "magnitude": 2,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R492",
+      "title": "Fortitude/debility B08",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B08",
+        "column": "accidental_debility",
+        "condition": "combust",
+        "magnitude": 5,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R493",
+      "title": "Fortitude/debility B09",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B09",
+        "column": "accidental_debility",
+        "condition": "under Sun beams",
+        "magnitude": 4,
+        "qualification": "Nested geometrical zones do not authorize blindly adding both debilities."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R494",
+      "title": "Fortitude/debility B10",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B10",
+        "column": "accidental_debility",
+        "condition": "partile conjunction Saturn OR Mars",
+        "magnitude": 5,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R495",
+      "title": "Fortitude/debility B11",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B11",
+        "column": "accidental_debility",
+        "condition": "partile conjunction South Node",
+        "magnitude": 4,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R496",
+      "title": "Fortitude/debility B12",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B12",
+        "column": "accidental_debility",
+        "condition": "besieged by Saturn and Mars",
+        "magnitude": 5,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R497",
+      "title": "Fortitude/debility B13",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B13",
+        "column": "accidental_debility",
+        "condition": "partile opposition Saturn OR Mars",
+        "magnitude": 4,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R498",
+      "title": "Fortitude/debility B14",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B14",
+        "column": "accidental_debility",
+        "condition": "partile square Saturn OR Mars",
+        "magnitude": 3,
+        "qualification": ""
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R499",
+      "title": "Fortitude/debility B15",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          149
+        ],
+        "printed_pages": [
+          115
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "id": "B15",
+        "column": "accidental_debility",
+        "condition": "conjunction Caput Algol at Taurus 20 OR within five degrees",
+        "magnitude": 5,
+        "qualification": "The explicit five-degree allowance belongs to this row, not automatically all fixed stars."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Printed magnitude retained; no predictive probability or global sum implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R500",
+      "title": "Use of strength table deferred",
+      "kind": "methodology",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lilly postpones explaining the table until an example later in the book.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The mere presence of numbers does not settle all stacking, overlap or comparison rules."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R501",
+      "title": "Aries fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          8,
+          15,
+          30
+        ],
+        "feminine_endpoints": [
+          9,
+          22
+        ],
+        "light_dark_raw": "d3 l8 d16 l20 v24 l29 v30",
+        "pitted": [
+          6,
+          11,
+          16,
+          23,
+          29
+        ],
+        "lame_deficient": [],
+        "increasing_fortune": [
+          19
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R502",
+      "title": "Taurus fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          11,
+          21,
+          30
+        ],
+        "feminine_endpoints": [
+          5,
+          17,
+          24
+        ],
+        "light_dark_raw": "d3 l7 v12 l15 v20 l28 v30",
+        "pitted": [
+          5,
+          12,
+          24,
+          25
+        ],
+        "lame_deficient": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "increasing_fortune": [
+          3,
+          15,
+          27
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R503",
+      "title": "Gemini fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          16,
+          26
+        ],
+        "feminine_endpoints": [
+          5,
+          22,
+          30
+        ],
+        "light_dark_raw": "l4 d7 l12 v16 l22 d27 v30",
+        "pitted": [
+          2,
+          12,
+          17,
+          26,
+          30
+        ],
+        "lame_deficient": [],
+        "increasing_fortune": [
+          11
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R504",
+      "title": "Cancer fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          2,
+          10,
+          23,
+          30
+        ],
+        "feminine_endpoints": [
+          8,
+          12,
+          27
+        ],
+        "light_dark_raw": "l12 d14 v18 sm20 l28 v30",
+        "pitted": [
+          12,
+          17,
+          23,
+          26,
+          30
+        ],
+        "lame_deficient": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "increasing_fortune": [
+          1,
+          2,
+          3,
+          4,
+          15
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R505",
+      "title": "Leo fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          5,
+          15,
+          30
+        ],
+        "feminine_endpoints": [
+          8,
+          23
+        ],
+        "light_dark_raw": "d10 sm20 v25 l30",
+        "pitted": [
+          6,
+          13,
+          15,
+          22,
+          23,
+          28
+        ],
+        "lame_deficient": [
+          18,
+          27,
+          28
+        ],
+        "increasing_fortune": [
+          2,
+          5,
+          7,
+          19
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R506",
+      "title": "Virgo fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          12,
+          30
+        ],
+        "feminine_endpoints": [
+          8,
+          20
+        ],
+        "light_dark_raw": "d5 l8 v10 l16 sm22 l27 d30",
+        "pitted": [
+          8,
+          13,
+          16,
+          21,
+          22
+        ],
+        "lame_deficient": [],
+        "increasing_fortune": [
+          3,
+          14,
+          20
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R507",
+      "title": "Libra fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          5,
+          20,
+          30
+        ],
+        "feminine_endpoints": [
+          15,
+          27
+        ],
+        "light_dark_raw": "l5 d10 l18 d21 l27 v30",
+        "pitted": [
+          1,
+          7,
+          20,
+          30
+        ],
+        "lame_deficient": [],
+        "increasing_fortune": [
+          3,
+          15,
+          21
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R508",
+      "title": "Scorpio fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          4,
+          17,
+          30
+        ],
+        "feminine_endpoints": [
+          14,
+          25
+        ],
+        "light_dark_raw": "d3 l8 v14 l22 sm24 v29 d30",
+        "pitted": [
+          9,
+          10,
+          22,
+          23,
+          27
+        ],
+        "lame_deficient": [
+          19,
+          28
+        ],
+        "increasing_fortune": [
+          7,
+          18,
+          20
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R509",
+      "title": "Sagittarius fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          2,
+          12,
+          30
+        ],
+        "feminine_endpoints": [
+          5,
+          24
+        ],
+        "light_dark_raw": "l9 d12 l19 sm23 l30",
+        "pitted": [
+          7,
+          12,
+          15,
+          24,
+          27,
+          30
+        ],
+        "lame_deficient": [
+          1,
+          7,
+          8,
+          18,
+          19
+        ],
+        "increasing_fortune": [
+          13,
+          20
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R510",
+      "title": "Capricorn fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          11,
+          30
+        ],
+        "feminine_endpoints": [
+          19
+        ],
+        "light_dark_raw": "d7 l10 s15 l19 d22 v25 d30",
+        "pitted": [
+          7,
+          17,
+          22,
+          24,
+          29
+        ],
+        "lame_deficient": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "increasing_fortune": [
+          12,
+          13,
+          14,
+          20
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R511",
+      "title": "Aquarius fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          5,
+          21,
+          27
+        ],
+        "feminine_endpoints": [
+          15,
+          25,
+          30
+        ],
+        "light_dark_raw": "sm4 l9 d13 l21 v25 l30",
+        "pitted": [
+          1,
+          12,
+          17,
+          22,
+          24,
+          29
+        ],
+        "lame_deficient": [
+          18,
+          19
+        ],
+        "increasing_fortune": [
+          7,
+          16,
+          17,
+          20
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R512",
+      "title": "Pisces fine-degree table",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          150
+        ],
+        "printed_pages": [
+          116
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "masculine_endpoints": [
+          10,
+          23,
+          30
+        ],
+        "feminine_endpoints": [
+          20,
+          28
+        ],
+        "light_dark_raw": "d6 l12 d18 l22 v25 l28 d30",
+        "pitted": [
+          4,
+          9,
+          24,
+          27,
+          28
+        ],
+        "lame_deficient": [],
+        "increasing_fortune": [
+          13,
+          20
+        ],
+        "blank_policy": "empty means no entry in this table, not universal absence"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classifications only; no modern diagnostic, gender-identification or wealth guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R513",
+      "title": "Degree sex as a conditional tiebreaker",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          151
+        ],
+        "printed_pages": [
+          117
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "When angles, planet sex and signs leave equal testimony in the question, inspect the Moon, relevant significator and relevant house cusp in masculine/feminine degrees to poise judgement.",
+      "prerequisites": [
+        "The preceding testimony is tied."
+      ],
+      "qualifications_and_limits": [
+        "Examples concern fetal sex or sex of a thief; historical claims, not modern identification tools. Do not use as an unrestricted rescue after an observed failure."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R514",
+      "title": "Light and dark degrees",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          151
+        ],
+        "printed_pages": [
+          117
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Light rising degrees describe a fairer appearance; dark degrees an obscurer complexion. Conditional upon already being deformed, dark increases and light moderates the imperfection.",
+      "prerequisites": [
+        "Relevant ascendant in a nativity or question."
+      ],
+      "qualifications_and_limits": [
+        "Appearance and impairment assertions are historical; no modern diagnostic inference."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R515",
+      "title": "Void and smoky degrees",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          151,
+          152
+        ],
+        "printed_pages": [
+          117,
+          118
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Moon OR Ascendant in void degrees describes small understanding regardless of appearance; smoky degrees describe mixed complexion, stature and condition, neither extreme.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Void degrees are not void-of-course motion. Historical judgement of intellect is not validated measurement."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R516",
+      "title": "Aries light-degree worked reading",
+      "kind": "worked_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          152
+        ],
+        "printed_pages": [
+          118
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "First three degrees dark, next through eight light, through sixteen dark, through twenty light, through twenty-four void, through twenty-nine light, final degree void.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Endpoint language preserved in the raw table; exact continuous-boundary policy remains a declared implementation choice."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R517",
+      "title": "Pitted degrees and assistance",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          152
+        ],
+        "printed_pages": [
+          118
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Sun OR Ascendant degree OR Ascendant lord in a pitted degree describes the questioner at a stand and needing help, like a person unable to leave a ditch without assistance.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Sun is the checked glyph; do not substitute Moon by analogy. This does not certify a psychological state."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R518",
+      "title": "Azimene search starts from an observed condition",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          152
+        ],
+        "printed_pages": [
+          118
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "If the person is observed impaired or chronically diseased, and the figure yields no immediate explanation, inspect Ascendant, Moon, Ascendant lord or principal lord in deficient degrees.",
+      "prerequisites": [
+        "The impairment is already observed; the source proposes explanatory search."
+      ],
+      "qualifications_and_limits": [
+        "This is retrospective selection, not a frozen forward test. Preserve the direction of inference and do not use for clinical advice."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R519",
+      "title": "Fortune-increasing degrees",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          152
+        ],
+        "printed_pages": [
+          118
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Second-house cusp OR second-house lord OR Jupiter OR Lot of Fortune in these degrees is an argument of wealth.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The text names the fifth column; the fortune column is sixth when counting the sign column. No empirical wealth probability follows."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R520",
+      "title": "Aries planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          153
+        ],
+        "printed_pages": [
+          119
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Breast,arms",
+        "Jupiter": "Neck,throat,heart,belly",
+        "Mars": "Belly,head",
+        "Sun": "Thighs",
+        "Venus": "Reins,feet",
+        "Mercury": "Secrets,legs",
+        "Moon": "Knees,head"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R521",
+      "title": "Taurus planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          153
+        ],
+        "printed_pages": [
+          119
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Heart,breast,belly",
+        "Jupiter": "Shoulders,arms,belly,neck",
+        "Mars": "Reins,throat",
+        "Sun": "Knees",
+        "Venus": "Secret-members,head",
+        "Mercury": "Thighs,feet",
+        "Moon": "Legs,throat"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R522",
+      "title": "Gemini planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          153
+        ],
+        "printed_pages": [
+          119
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Belly,heart",
+        "Jupiter": "Breast,reins,secrets",
+        "Mars": "Secrets,arms,breast",
+        "Sun": "Legs,ankles",
+        "Venus": "Thighs,throat",
+        "Mercury": "Knees,head",
+        "Moon": "Feet,shoulders,arms,thighs"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R523",
+      "title": "Cancer planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          153
+        ],
+        "printed_pages": [
+          119
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Reins,belly,secrets",
+        "Jupiter": "Heart,secrets,thighs",
+        "Mars": "[printed matter obscured; handwriting: Thighs,Breast]",
+        "Sun": "Knees,[two printed tokens obscured]",
+        "Venus": "Knees,shoulders,arms",
+        "Mercury": "Legs,throat,eyes",
+        "Moon": "Head,breast,stomach"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R524",
+      "title": "Leo planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          153
+        ],
+        "printed_pages": [
+          119
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Secrets,reins",
+        "Jupiter": "Belly,thighs,knees",
+        "Mars": "Knees,[uncertain middle token Hiar/Hair],belly",
+        "Sun": "Head",
+        "Venus": "Legs,breast,heart",
+        "Mercury": "Feet,arms,shoulders,throat",
+        "Moon": "Throat,stomach,heart"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R525",
+      "title": "Virgo planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          153
+        ],
+        "printed_pages": [
+          119
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Thighs,secrets,feet",
+        "Jupiter": "Reins,knees",
+        "Mars": "Legs,belly",
+        "Sun": "Throat",
+        "Venus": "Feet,stomach,heart,belly",
+        "Mercury": "Head,breast,heart",
+        "Moon": "Arms,shoulders,bowels"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R526",
+      "title": "Libra planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          153
+        ],
+        "printed_pages": [
+          119
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Knees,thighs",
+        "Jupiter": "Secrets,legs,head,eyes",
+        "Mars": "Feet,reins,secrets",
+        "Sun": "Shoulders,arms",
+        "Venus": "Head,mal.guts",
+        "Mercury": "Throat,heart,stomach,belly",
+        "Moon": "Breast,reins,heart,belly"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R527",
+      "title": "Scorpio planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          153
+        ],
+        "printed_pages": [
+          119
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Knees,legs",
+        "Jupiter": "Thighs,feet",
+        "Mars": "Head,secrets,arms,thighs",
+        "Sun": "Breast,heart",
+        "Venus": "Throat,reins,secrets",
+        "Mercury": "Shoulders,arms,bowels,back",
+        "Moon": "Stomach,heart,secrets,belly"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R528",
+      "title": "Sagittarius planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          154
+        ],
+        "printed_pages": [
+          120
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Legs,feet",
+        "Jupiter": "Knees,head,thighs",
+        "Mars": "Throat,thighs,hands,feet",
+        "Sun": "Heart,belly",
+        "Venus": "Shoulders,arms,secrets,thighs",
+        "Mercury": "Breast,reins,heart,secrets",
+        "Moon": "Bowels,thighs,back"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R529",
+      "title": "Capricorn planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          154
+        ],
+        "printed_pages": [
+          120
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Head,feet",
+        "Jupiter": "Legs,neck,eyes,knees",
+        "Mars": "Arms,shoulders,knees,legs",
+        "Sun": "Belly,back",
+        "Venus": "Breast,heart,thighs",
+        "Mercury": "Stomach,heart,secrets",
+        "Moon": "Reins,knees,thighs"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R530",
+      "title": "Aquarius planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          154
+        ],
+        "printed_pages": [
+          120
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Neck,head",
+        "Jupiter": "Feet,arms,shoulders,breast",
+        "Mars": "Breast,legs,heart",
+        "Sun": "Reins,secrets",
+        "Venus": "Heart,knees",
+        "Mercury": "Bowels,thighs,heart",
+        "Moon": "Secrets,legs,ankles"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R531",
+      "title": "Pisces planetary body-correspondence row",
+      "kind": "table_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          154
+        ],
+        "printed_pages": [
+          120
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Arms,shoulders,neck",
+        "Jupiter": "Head,breast,heart",
+        "Mars": "Heart,feet,belly,ankles",
+        "Sun": "Secrets,thighs",
+        "Venus": "Belly,legs,neck,throat",
+        "Mercury": "Reins,knees,secrets,thighs",
+        "Moon": "Thighs,feet"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R532",
+      "title": "Attributed Hermes rationale and topical use",
+      "kind": "attribution_and_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          154,
+          155
+        ],
+        "printed_pages": [
+          120,
+          121
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lilly reports understanding the body table after reading Hermes aphorism 88: affliction concerns the part assigned to the afflicted sign. In a sickness question find the sick person's significator, its sign, and the corresponding part; Saturn in Gemini is the example of belly or heart.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Hermes attribution is reported through Lilly, not independently verified from a Hermes edition; not clinical guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R533",
+      "title": "Domicile-relative anatomical sequence",
+      "kind": "method_and_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          155
+        ],
+        "printed_pages": [
+          121
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Planet in own sign governs head, second sign neck, third arms/shoulders, and so successively. Saturn Capricorn/Aquarius/Pisces and Jupiter Sagittarius/Capricorn/Aquarius illustrate the first three positions.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Multiple domiciles and extra table entries are not all derived by this short rationale. Do not overwrite the actual table."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R534",
+      "title": "Moon Aries explanation and counting tension",
+      "kind": "example_with_uncertainty",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          155
+        ],
+        "printed_pages": [
+          121
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Moon in Aries is assigned head because of Aries and knees because Aries is called the ninth sign from Cancer.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Forward offset is nine signs but inclusive ordinal place is tenth. Preserve source wording and both quantities instead of silently correcting the author."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R535",
+      "title": "Severity and proximity",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          155
+        ],
+        "printed_pages": [
+          121
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "More sign affliction, or proximity to azimene/pitted/deficient degrees, is said to increase the mark, scar or infirmity.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No radius or quantitative dose-response is specified; historical assertion, not a clinical risk scale."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R536",
+      "title": "Radicality alternatives",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          155,
+          156
+        ],
+        "printed_pages": [
+          121,
+          122
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The hour lord and Ascendant lord are of one triplicity, are the same planet, OR are of the same nature. Examples: Mars hour with a water sign rising; Mars hour with Aries rising; Mars hour with Leo rising, Mars and Sun both hot and dry.",
+      "prerequisites": [
+        "Horary question at its proposal time."
+      ],
+      "qualifications_and_limits": [
+        "The triplicity wording and example need explicit implementation; not an automatic natal-chart exclusion rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R537",
+      "title": "Early Ascendant caution and exception",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          156
+        ],
+        "printed_pages": [
+          122
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "At rising degrees 0, 1 or 2, especially short-ascension signs Capricorn through Gemini, avoid judgement unless the querent is very young AND body, complexion, moles/scars agree with the rising sign.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Degree-label boundaries and very young threshold are not specified; bodily agreement is historical interpretive evidence, not verified diagnostic information."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R538",
+      "title": "Late Ascendant caution and exceptions",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          156
+        ],
+        "printed_pages": [
+          122
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "At rising degrees 27,28,29 judgement is unsafe, except when the querent's age corresponds to the degrees OR the figure uses a certain event time rather than a propounded question.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not apply the horary refusal automatically to a timed event or natal chart; exact continuous boundaries remain a declared policy."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R539",
+      "title": "Late Moon and attributed via-combusta caution",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          156
+        ],
+        "printed_pages": [
+          122
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Caution with Moon in late degrees, especially Gemini, Scorpio or Capricorn; some also warn of the last fifteen Libra or first fifteen Scorpio degrees, the via combusta.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No late-degree threshold here. The via-combusta addition is attributed to some, not silently made Lilly's categorical universal rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R540",
+      "title": "Void-of-course qualifications",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          156
+        ],
+        "printed_pages": [
+          122
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Matters proceed hardly when the Moon is void of course, EXCEPT if principal significators are very strong; she nevertheless performs somewhat in Taurus, Cancer, Sagittarius or Pisces.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "These exceptions concern the judgement, not a redefinition of the motion state. They are not a promise that every desired event occurs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R541",
+      "title": "Seventh-house artist caution, topic restriction",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          156
+        ],
+        "printed_pages": [
+          122
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Afflicted seventh cusp or retrograde/impeded seventh lord suggests the astrologer's judgement will give little content, when the matter belongs to another house and NOT the seventh.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not erase the topical exception, or equate querent satisfaction with predictive accuracy."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R542",
+      "title": "Saturn rising caution",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          156
+        ],
+        "printed_pages": [
+          122
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Saturn in the Ascendant, especially retrograde: the matter seldom or never comes to good.",
+      "prerequisites": [
+        "Reported among Arabian rules, Alkindus and others."
+      ],
+      "qualifications_and_limits": [
+        "Horary pre-judgement context; historical prescriptions, not an empirically calibrated abstention rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R543",
+      "title": "Saturn seventh alternatives",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          157
+        ],
+        "printed_pages": [
+          123
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Saturn seventh either corrupts the astrologer's judgement OR signifies a sequence of misfortunes.",
+      "prerequisites": [
+        "Reported among Arabian rules, Alkindus and others."
+      ],
+      "qualifications_and_limits": [
+        "Horary pre-judgement context; historical prescriptions, not an empirically calibrated abstention rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R544",
+      "title": "Combust Ascendant lord caution",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          157
+        ],
+        "printed_pages": [
+          123
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Combust Ascendant lord: the question will not take or the querent be regulated.",
+      "prerequisites": [
+        "Reported among Arabian rules, Alkindus and others."
+      ],
+      "qualifications_and_limits": [
+        "Horary pre-judgement context; historical prescriptions, not an empirically calibrated abstention rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R545",
+      "title": "Seventh lord impaired",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          157
+        ],
+        "printed_pages": [
+          123
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Unfortunate seventh lord, in fall or malefic terms: astrologer scarcely gives solid judgement.",
+      "prerequisites": [
+        "Reported among Arabian rules, Alkindus and others."
+      ],
+      "qualifications_and_limits": [
+        "Horary pre-judgement context; historical prescriptions, not an empirically calibrated abstention rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XIX.R546",
+      "title": "Equal testimony requires deferral",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XIX",
+        "pdf_pages": [
+          157
+        ],
+        "printed_pages": [
+          123
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "With equal fortunate and unfortunate testimony, defer opinion until a better-informing question; the balance cannot be known.",
+      "prerequisites": [
+        "Reported among Arabian rules, Alkindus and others."
+      ],
+      "qualifications_and_limits": [
+        "Horary pre-judgement context; historical prescriptions, not an empirically calibrated abstention rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XX.R547",
+      "title": "Querent, quesited and significator",
+      "kind": "definitions",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XX",
+        "pdf_pages": [
+          157
+        ],
+        "printed_pages": [
+          123
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Querent asks; quesited is the person or thing sought. The topic's house ruler signifies its matter; rising sign and its ruler always belong to the asker.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Actor/subject roles matter; an identical planetary arrangement cannot be interpreted without the actual question."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XX.R548",
+      "title": "Querent appearance and conditions are synthesized",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XX",
+        "pdf_pages": [
+          157
+        ],
+        "printed_pages": [
+          123
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Rising sign contributes bodily form. Conditions mix its lord, the Moon, the planet in the Ascendant, and planets aspecting the Moon or Ascendant lord.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Equally mixed is source wording, not a fully specified numerical weighting or a licence to count one observation repeatedly."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XX.R549",
+      "title": "Topic-first chain and represented helpers",
+      "kind": "methodology",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XX",
+        "pdf_pages": [
+          157,
+          158
+        ],
+        "printed_pages": [
+          123,
+          124
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Identify the house appropriate to the matter, its sign/ruler, ruler's place and dignity, relation to Ascendant lord, helpers and impediments, and their house positions/rulerships. These identify the relations of assisting or hindering people.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not substitute a generic strongest planet for a topic-qualified significator."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XX.R550",
+      "title": "Moon cosignificator and rejected extension",
+      "kind": "methodology_and_disagreement",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XX",
+        "pdf_pages": [
+          158
+        ],
+        "printed_pages": [
+          124
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Moon is cosignificator with querent/Ascendant lord in every question. Lilly expressly disapproves adding the planet from which the Moon separated as another querent significator, reporting no truth found in his practice.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The rejection concerns this automatic role assignment, not every use of separation. Author experience is development testimony."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XX.R551",
+      "title": "Reported applying-planet quesited extension",
+      "kind": "reported_alternative",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XX",
+        "pdf_pages": [
+          158
+        ],
+        "printed_pages": [
+          124
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Others similarly joined the planet to which the Moon applied with the lord of the quesited house.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Reported practice; the preceding explicit rejection must not be mechanically expanded to this separate sentence or rewritten as endorsement."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XX.R552",
+      "title": "Separate judgement questions",
+      "kind": "methodology",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XX",
+        "pdf_pages": [
+          158
+        ],
+        "printed_pages": [
+          124
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "After positions, applications, separations and aspects are considered, ask whether the matter occurs, by whose means, when, AND whether proceeding is good for the querent.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Occurrence, mechanism, timing and benefit are distinct outputs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R553",
+      "title": "Perfection route organisation",
+      "kind": "organisation",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          158,
+          159
+        ],
+        "printed_pages": [
+          124,
+          125
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The chapter announces four means and discusses conjunction, aspect routes, translation and collection, followed by a qualified ancient house-dwelling rule.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Preserve headings and ensuing qualifications rather than use the count to discard a later clause."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R554",
+      "title": "Conjunction perfection and angularity",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          159
+        ],
+        "printed_pages": [
+          125
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ascendant lord and topic lord hasten to conjunction in the first house or an angle without prohibition or refranation before perfection: the thing comes to pass without hindrance. Speed and essential or accidental strength hasten it; succedent placement delays, cadent brings much delay, difficulty and struggle.",
+      "prerequisites": [
+        "Relevant principal significators.",
+        "No intervention or reversal before the promised encounter."
+      ],
+      "qualifications_and_limits": [
+        "No numerical duration supplied; cadent is difficulty/delay, not automatic impossibility."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R555",
+      "title": "Sextile/trine perfection prerequisites",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          159
+        ],
+        "printed_pages": [
+          125
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Principals apply by sextile or trine from good houses with essential dignity and no malefic aspect intervening before the partile aspect.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "An applying trine alone does not satisfy all conditions. Exact good-house/strength qualification needs an explicit source profile."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R556",
+      "title": "Square perfection prerequisites",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          159
+        ],
+        "printed_pages": [
+          125
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "An applying square perfects provided EACH planet has dignity in its occupied degrees and they apply from proper good houses; otherwise not.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not reduce to square always prevents completion. The relevant degree convention must be explicit."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R557",
+      "title": "Opposition perfection, occurrence versus benefit",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          159
+        ],
+        "printed_pages": [
+          125
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Sometimes perfected by opposition when there is mutual reception by domicile, friendly houses, and Moon separates from the quesited significator and presently applies to the Ascendant lord. Lilly rarely sees perfection this way without the querent better off had it not happened.",
+      "prerequisites": [
+        "Mutual reception by HOUSE, friendly houses, directed Moon transfer."
+      ],
+      "qualifications_and_limits": [
+        "Retain the tension with XIX's broad easy-reception assertion; no retrospective preferred rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R558",
+      "title": "Opposition regret examples",
+      "kind": "author_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          159
+        ],
+        "printed_pages": [
+          125
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "marriage": "Perfection can coexist with continual quarrelling and blame for the choice.",
+        "money": "A promised debt/portion is obtained, but legal costs exceed its value."
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Examples separate event attainment from net benefit; not relationship-safety or financial advice."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R559",
+      "title": "Translation perfection prerequisites",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          159,
+          160
+        ],
+        "printed_pages": [
+          125,
+          126
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Principals have separated from conjunction, sextile or trine. A third planet separates from one who receives it by domicile, triplicity OR term, then applies to the other before meeting ANY other conjunction or aspect.",
+      "prerequisites": [
+        "Reception direction is source principal receiving intermediary.",
+        "No intervening encounter."
+      ],
+      "qualifications_and_limits": [
+        "Do not silently add face/exaltation to this locally enumerated list or omit reception by borrowing the shorter XIX definition."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R560",
+      "title": "Translation identifies practical mediator",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          160
+        ],
+        "printed_pages": [
+          126
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The translating planet or its represented person brings the matter to perfection; its house rulership identifies means: second lord a purse, third lord kin or neighbour.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The intermediary's role is not another independent natal character score."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R561",
+      "title": "Collection prerequisites and direction",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          160
+        ],
+        "printed_pages": [
+          126
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Principals do not behold each other; both cast aspects to a planet heavier than both; BOTH PRINCIPALS RECEIVE THAT COLLECTOR in their essential dignities. The common mediator completes what they cannot arrange themselves.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not silently reverse to collector receives principals. Actual application/event order and mixed dignity cases need specified conventions."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R562",
+      "title": "House dwelling alone rejected",
+      "kind": "qualified_rejection",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          160,
+          161
+        ],
+        "printed_pages": [
+          126,
+          127
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ancients infer attainment when topic significator dwells in Ascendant, such as tenth lord for an office. Lilly rejects this alone unless the Moon also transfers the desired matter's light to the Ascendant lord.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Retain rejected claim as attributed/rejected, not an extra positive rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R563",
+      "title": "Application inclination versus separation privation",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          161
+        ],
+        "printed_pages": [
+          127
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Applying principals show willingness and continued negotiation/probability of perfection; separation generally deprivation/little hope, notwithstanding favourable dwelling.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Inclination or further treaty is not identical to accomplished outcome; translation/collection routes retain their own prerequisites."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R564",
+      "title": "Querent house topics",
+      "kind": "table_row_group",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          161
+        ],
+        "printed_pages": [
+          127
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "1": "querent",
+        "2": "estate",
+        "3": "kindred",
+        "4": "father",
+        "5": "children",
+        "6": "servant/sickness",
+        "7": "wife",
+        "8": "manner of death",
+        "9": "religion/journeys",
+        "10": "esteem/honour",
+        "11": "friends",
+        "12": "secret enemies"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No event or clinical inference from the mapping alone."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R565",
+      "title": "Seventh-house subject turned topics",
+      "kind": "worked_mapping",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          161
+        ],
+        "printed_pages": [
+          127
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "base_topics": [
+          "querent",
+          "estate",
+          "kindred",
+          "father",
+          "children",
+          "servant/sickness",
+          "wife",
+          "manner of death",
+          "religion/journeys",
+          "esteem/honour",
+          "friends",
+          "secret enemies"
+        ],
+        "partner_origin": 7,
+        "partner_topics": [
+          "person",
+          "estate",
+          "brethren/kindred",
+          "father",
+          "children/fertility",
+          "sickness/servants",
+          "sweetheart",
+          "death",
+          "journey",
+          "mother",
+          "friends",
+          "sorrow/care/private enemies"
+        ],
+        "partner_radical_houses": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "minister_or_wifes_brother_origin": 9,
+        "king_asked_about_origin": 10,
+        "asker_origin_regardless_rank": 1,
+        "natal_native_origin_regardless_rank": 1
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Relative tenth is called mother in this example, whereas radical tenth above is esteem/honour. Do not assume all semantic labels rotate identically."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R566",
+      "title": "General turning and role-dependent origin",
+      "kind": "method_and_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          161,
+          162
+        ],
+        "printed_pages": [
+          127,
+          128
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Subject house becomes first and following houses second etc. Minister or wife's brother uses ninth; king asked about tenth. But a king AS ASKER uses the Ascendant, and nativities use the native's Ascendant, king or beggar.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not turn every royal natal chart from the tenth. Relative indices and ordinal counts must be explicit."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.I.XXI.R567",
+      "title": "End of introduction and postponed Fortune calculation",
+      "kind": "scope_boundary",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "I",
+        "section_key": "I.XXI",
+        "pdf_pages": [
+          162
+        ],
+        "printed_pages": [
+          128
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Learning is to recognise error and when to judge, not memorize every word. Fortune calculation is postponed to the first example, with author criticism of its treatment elsewhere.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not import a Fortune formula and attribute it to this passage; Book II examples remain unread."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    }
+  ]
+}
