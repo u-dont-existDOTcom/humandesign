@@ -1,3 +1,9 @@
+# Researcher feedback attribution corrected — 2026-10-09
+
+The Life Patterns private researcher dashboard now separates direct/grounded survey-design objections from reviewer-extracted contextual remarks. User normality inquiries about the typicality of a response are no longer actionable question-rewrite evidence. The original source preserves a combined question/answer pair but cannot prove missing intermediate assistant messages. Feedback displays the full preserved answer context and provenance; optional researcher status choices are documented and collapsed. Production Railway deployment SUCCESS, authenticated live readback 8 possible issues + 2 contextual remarks, original review and answer bytes untouched. Details: tasks/feedback-context-triage-20261009/RESULT.md and LIVE-RECEIPT.json. The prior owner 84+3 human submission remains complete and verified.
+
+---
+
 # Life Patterns follow-up verified — 2026-10-09
 
 The owner's previously pending real survey submission is now verified against Railway production storage: exactly one primary-record hash match, 84 primary behavioral turns, and 3 CF-003 turns; received 2026-10-09 20:35:15 UTC. The local private receipt contains the sensitive identifying handle; no actual private responses are in Git. **Do not re-submit this interview.**
