@@ -1,0 +1,7 @@
+- Authority: user's current request supersedes prior closeout; goal remains OPEN until access, submission, inspectability and feedback path are usable.
+- Study integrity: preserve exact question/answer text, question route, chronology, frozen historical bank, blinded scoring and process-feedback separation. No winner claim from tuned or unvalidated retrospective fit. Enforce via exact byte/source comparison and model-version ledger.
+- Repair destination boundary: a private file on owner's PC and a test-only synthetic receipt do not prove the real human record was stored. Verify authenticated production success and exact record hashes, while avoiding private data in logs/Git.
+- Automatic learning is scoped: correct syntactic/unambiguous defects in independent versioned proposal, require supervised admission for subjective/scientifically material shifts. A proposed new question is not yet validated or retroactively rescored.
+- Access: admin requires secret. Fix sign-in/no-prompt UI without exposing admin token to public files, logs, chat or Git history.
+- Notifications: use actual configured mail/automation route, never fabricate successful email delivery or background monitoring. Notify owner only for consequential unresolved decisions.
+- No owner approval loop for ordinary reversible engineering; keep immutable source/version and privacy boundaries.

@@ -1,0 +1,64 @@
+.......................................................F................ [ 32%]
+.....................F.................................................. [ 65%]
+........................................................................ [ 98%]
+...                                                                      [100%]
+=================================== FAILURES ===================================
+______ test_voice_interviewer_fits_builder_budget_and_has_accuracy_guards ______
+
+    def test_voice_interviewer_fits_builder_budget_and_has_accuracy_guards():
+        text = VOICE.read_text(encoding="utf-8")
+        strict_count = len(text) + text.count("\n")
+        assert strict_count < 8000
+        required = (
+            "They may switch freely, give long answers",
+            "Visible transcript text is the source, not original audio or perfect transcription",
+            "bank is a menu, not a quota",
+            "Quote exact contiguous words",
+            "Check complete available source before absence claims",
+            "neither defend a misreading nor adopt an unstated claim",
+            "ChatGPT account-data Export",
+            "collection_mode",
+        )
+        for phrase in required:
+>           assert " ".join(phrase.split()) in " ".join(text.split())
+E           AssertionError: assert 'bank is a menu, not a quota' in '# Life Patterns Interview — pilot Conduct a neutral Life Patterns interview; no diagnosis or personality verdict. ## ...PT account-data Export. Never recode from target information after freeze; later clarifications require a new version.'
+E            +  where 'bank is a menu, not a quota' = <built-in method join of str object at 0xb45b98>(['bank', 'is', 'a', 'menu,', 'not', 'a', ...])
+E            +    where <built-in method join of str object at 0xb45b98> = ' '.join
+E            +    and   ['bank', 'is', 'a', 'menu,', 'not', 'a', ...] = <built-in method split of str object at 0x77613c913320>()
+E            +      where <built-in method split of str object at 0x77613c913320> = 'bank is a menu, not a quota'.split
+E            +  and   '# Life Patterns Interview — pilot Conduct a neutral Life Patterns interview; no diagnosis or personality verdict. ## ...PT account-data Export. Never recode from target information after freeze; later clarifications require a new version.' = <built-in method join of str object at 0xb45b98>(['#', 'Life', 'Patterns', 'Interview', '—', 'pilot', ...])
+E            +    where <built-in method join of str object at 0xb45b98> = ' '.join
+E            +    and   ['#', 'Life', 'Patterns', 'Interview', '—', 'pilot', ...] = <built-in method split of str object at 0x16b859d0>()
+E            +      where <built-in method split of str object at 0x16b859d0> = '# Life Patterns Interview — pilot\n\nConduct a neutral Life Patterns interview; no diagnosis or personality verdict.\...count-data Export.\n\nNever recode from target information after freeze; later clarifications require a new version.\n'.split
+
+apps/life-patterns-participant/tests/test_hybrid_voice_cost.py:85: AssertionError
+_____ test_action_schema_exposes_string_records_and_phase_permission_help ______
+
+tmp_path = PosixPath('/tmp/pytest-of-joel/pytest-48/test_action_schema_exposes_str0')
+
+    def test_action_schema_exposes_string_records_and_phase_permission_help(tmp_path):
+        _, _, _, client = setup_submission(tmp_path)
+        schema = client.get("/action-openapi.yaml").json()
+        submission = schema["components"]["schemas"]["Submission"]
+        assert "primary_record" not in submission["properties"]
+        assert "cf003_record" not in submission["properties"]
+        assert {"primary_record_json", "cf003_record_json"}.issubset(submission["required"])
+        operations = {
+            op["operationId"]: op
+            for verbs in schema["paths"].values()
+            for op in verbs.values()
+        }
+>       assert "one final storage call" in operations["submitLifePatternsRecords"]["description"]
+E       AssertionError: assert 'one final storage call' in 'Submit both exact frozen records. A missing ready review_id is recovered ONLY from a unique full behavioral source match. Composite references without a full turns array are rejected. One final Action/Allow card; never invent data.'
+
+apps/life-patterns-participant/tests/test_owner_pilot_closeout_repair.py:316: AssertionError
+=============================== warnings summary ===============================
+../humandesign-fast-review-release-20261005/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /mnt/hdd/var/tmp/humandesign-fast-review-release-20261005/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/life-patterns-participant/tests/test_hybrid_voice_cost.py::test_voice_interviewer_fits_builder_budget_and_has_accuracy_guards
+FAILED apps/life-patterns-participant/tests/test_owner_pilot_closeout_repair.py::test_action_schema_exposes_string_records_and_phase_permission_help
+2 failed, 217 passed, 1 warning in 30.56s

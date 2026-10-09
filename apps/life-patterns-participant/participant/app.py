@@ -213,7 +213,9 @@ class GptSubmission(Body):
 
 
 class GptReviewedSubmission(GptSubmission):
-    review_id: str = Field(pattern=r"^R-[a-f0-9]{32}$")
+    # Optional only for exact-source recovery against one existing ready review.
+    # This endpoint never accepts an unreviewed final submission.
+    pass
 
 
 class BodyLimit:
@@ -580,6 +582,52 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             )
         return expected
 
+    def reviewed_turn_mismatches(primary: dict, review: dict) -> list[tuple[int, list[str]]]:
+        """Exact behavior authority; additive clarification process notes are not traits."""
+        actual_turns = behavioral_content(primary)
+        expected_turns = expected_review_behavioral(review)
+        if len(actual_turns) != len(expected_turns):
+            return [(0, ["turn_count"]) ]
+        original_count = len(behavioral_content(review["candidate_record"]))
+        disagreements = []
+        for index, (actual, expected) in enumerate(
+            zip(actual_turns, expected_turns, strict=True), 1
+        ):
+            changed = [key for key in expected if actual.get(key) != expected.get(key)]
+            if index > original_count and changed == ["process_feedback"]:
+                notes = actual.get("process_feedback")
+                if (
+                    expected.get("process_feedback") == []
+                    and isinstance(notes, list)
+                    and all(isinstance(note, str) and 0 < len(note) <= 4000 for note in notes)
+                ):
+                    changed = []
+            if changed:
+                disagreements.append((index, changed))
+        return disagreements
+
+    def recover_ready_review_id(primary: dict) -> str:
+        """Proof of full source possession; never search by biography or route alone."""
+        if (
+            primary.get("schema") != "life-patterns-full-survey-participant-export-v2"
+            or (primary.get("consent") or {}).get("research_use_consented") is not True
+            or (primary.get("freeze") or {}).get("frozen_before_birth_or_chart_reveal") is not True
+        ):
+            raise ValueError("Review recovery requires an exact, frozen, consented primary record.")
+        reject_target_fields(primary)
+        candidates = [
+            row["review_id"]
+            for row in store.ready_gpt_review_candidates()
+            if (row.get("candidate_record") or {}).get("consent", {}).get("research_use_consented")
+            and not reviewed_turn_mismatches(primary, row)
+        ]
+        if len(candidates) != 1:
+            raise ValueError(
+                "Cannot uniquely match this frozen primary to an existing ready review. "
+                "Provide the original review handle; do not reconstruct or start a new review."
+            )
+        return candidates[0]
+
     def validate_gpt_submission(body):
         def exact_record(object_value, json_value, label, json_field):
             try:
@@ -638,21 +686,17 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             review = store.gpt_review_read(body.review_id)
             if review.get("status") != "ready":
                 raise ValueError("The independent Railway review is not ready.")
-            actual_turns = behavioral_content(primary)
-            expected_turns = expected_review_behavioral(review)
-            if len(actual_turns) != len(expected_turns):
-                raise ValueError(
-                    "Final primary turn count does not match the independently reviewed record."
-                )
-            for index, (actual, expected) in enumerate(zip(actual_turns, expected_turns, strict=True), 1):
-                changed = [key for key in expected if actual.get(key) != expected.get(key)]
-                if changed:
+            disagreements = reviewed_turn_mismatches(primary, review)
+            if disagreements:
+                index, changed = disagreements[0]
+                if index == 0:
                     raise ValueError(
-                        "Final primary does not match the independently reviewed record at behavioral turn "
-                        + str(index)
-                        + ": "
-                        + ", ".join(changed)
+                        "Final primary turn count does not match the independently reviewed record."
                     )
+                raise ValueError(
+                    "Final primary does not match the independently reviewed record at "
+                    f"behavioral turn {index}: " + ", ".join(changed)
+                )
             checked = primary.get("participant_review") or {}
             if checked.get("summary_shown") is not True or checked.get("confirmed") is not True:
                 raise ValueError(
@@ -1138,8 +1182,24 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
     @app.post("/api/gpt/reviewed-submissions")
     def gpt_reviewed_submission(request: Request, body: GptReviewedSubmission):
-        # New GPT schema uses this strict endpoint. The original storage-only
-        # endpoint remains compatible and labels its receipts as unreviewed.
+        # This endpoint always binds a ready independent review. A lost opaque
+        # handle may be recovered only by matching the entire exact frozen source.
+        gpt_submitter(request)
+        if body.review_id is None:
+            if (
+                body.primary_record is not None
+                and body.primary_record_json is not None
+                and canonical(body.primary_record) != canonical(strict_json(body.primary_record_json))
+            ):
+                raise ValueError("Primary object and JSON transport disagree.")
+            primary = (
+                strict_json(body.primary_record_json)
+                if body.primary_record_json is not None
+                else body.primary_record
+            )
+            if not isinstance(primary, dict):
+                raise ValueError("Exact complete primary record is required for review recovery.")
+            body = body.model_copy(update={"review_id": recover_ready_review_id(primary)})
         return gpt_submission(request, body)
 
     @app.get("/api/admin/sessions")

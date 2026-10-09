@@ -1,3 +1,9 @@
+# Active Life Patterns owner survey recovery — 2026-10-09
+
+Task `survey-recovery-autonomy-20261009`: source-bound 84-turn owner frozen-record submission, dashboard login repair, all-question interpretation atlas, old/new mapping comparison and future automated feedback triage. Read `tasks/survey-recovery-autonomy-20261009/CURRENT-STATE.md` and RESULT.md. Existing recorded consent survives failed transport; do not repeat survey or independently reviewed source. Exact 82-turn base and all sensitive files are owner-private local only; never commit them. Current branch `fix/survey-recovery-autonomy-20261009`; live merge/deploy and real human receipt pending at this checkpoint. Older sections below are historical.
+
+---
+
 # Live question-feedback return path — deployed 2026-10-08
 
 Task: question-feedback-loop-20261008. Current checkpoint: tasks/question-feedback-loop-20261008/CURRENT-STATE.md and CLOSEOUT.md.

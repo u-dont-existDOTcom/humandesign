@@ -364,6 +364,17 @@ class Store:
             db.commit()
         return review_id, payload, False
 
+    def ready_gpt_review_candidates(self) -> list[dict]:
+        """Internal bounded exact-source recovery; never exposed as a list to GPT."""
+        with self.connection() as db:
+            rows = db.execute(
+                "SELECT payload FROM gpt_review_jobs WHERE status='ready' "
+                "ORDER BY created DESC LIMIT 51"
+            ).fetchall()
+        if len(rows) > 50:
+            raise Conflict("Too many ready reviews for deterministic recovery.")
+        return [self.decode(row[0]) for row in rows]
+
     def gpt_review_read(self, review_id: str) -> dict:
         with self.connection() as db:
             row = db.execute(

@@ -37,7 +37,7 @@ def test_builder_config_has_user_facing_start_paths() -> None:
 def test_instructions_orient_then_resume_without_restart() -> None:
     text = (CUSTOM / "life_patterns_voice_interviewer_v2.md").read_text(encoding="utf-8")
     normalized = " ".join(text.split())
-    assert "On the first message, orient them before behavioral questions" in normalized
+    assert "At first contact, explain experimental research" in normalized
     assert "responses may be shared with Joel" in normalized
     assert "consent to research use, independent review and final submission" in normalized
     assert "without another “ready” step" in normalized
@@ -52,7 +52,7 @@ def test_instructions_orient_then_resume_without_restart() -> None:
     assert "If the participant makes a material correction" in text
     assert "start a **new** independent review" in text
     assert "submitLifePatternsRecords" in text
-    assert "ready review ID" in text
+    assert "exact server recovery" in text
     assert "submission ID" in text
     assert "life-patterns-participant-export.json" in text
     assert "life-patterns-cf003-secondary-v0.json" in text
