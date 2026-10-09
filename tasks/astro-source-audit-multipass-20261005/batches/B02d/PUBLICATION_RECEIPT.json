@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "task": "Lilly B02d Book I XIX\u2013XXI",
+  "research_commit_verified_on_remote": "9631f6206cb797bcbd636eb6f7f2fdc5c9519cbe",
+  "integration_branch": "research/six-rule-life-timing-20261001",
+  "remote_head_at_delivery": "9631f6206cb797bcbd636eb6f7f2fdc5c9519cbe",
+  "owner_delivery": "COMPLETED_ON_AUTHORIZED_FILESYSTEM",
+  "delivered_artifacts": [
+    {
+      "basename": "Astrology-Lilly-Book-I-Complete-20261009.md",
+      "sha256": "a6b3b50d8f9b1c949d89d352b6284d6ceb438d2346e34d042a8b546f72f8cba6",
+      "bytes": 8149
+    },
+    {
+      "basename": "Astrology-Lilly-Research-Handoff-20261009.md",
+      "sha256": "714754252ea273348e6cf1c69e6a7059e61481ca7591ff18049766ae5c7296dc",
+      "bytes": 5599
+    },
+    {
+      "basename": "Astrology-Lilly-Book-I-Complete-Records-20261009.zip",
+      "sha256": "cb336559dab5dc774d834e51589745177a6c35e373bc05dbde4dce537282ab8b",
+      "bytes": 71687
+    }
+  ],
+  "source_record_count": 176,
+  "total_lilly_records": 567,
+  "all_ptolemy_lilly_records": 1633,
+  "focused_tests": {
+    "new": 27,
+    "retained_lilly": 212,
+    "methodology": 34,
+    "total_distinct": 273
+  },
+  "next_mapped_section": {
+    "book": "II",
+    "chapter": "XXII",
+    "starts_pdf_page": 163,
+    "next_chapter_starts_pdf_page": 177,
+    "read_and_extracted": false
+  },
+  "validation_claim": "Source-record and narrow reference tests; no predictive accuracy or complete astrology-engine testing",
+  "source_book_copyright": "Original scanned PDF outside Git; only normalized research records committed",
+  "public_repository_secret_paths_included": false,
+  "open_parent_task": true,
+  "resume": "Begin Book II chapter XXII PDF 163 through PDF 176; do not repeat fully read Book I or Ptolemy."
+}
