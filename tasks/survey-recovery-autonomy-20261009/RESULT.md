@@ -22,4 +22,4 @@
 
 ## Current remaining boundaries
 
-Merge and deploy exact tested backend/admin UI to Railway, verify 200/401 production and source match. Then submit the separately materialized REAL human record through production using previously recorded genuine research/final-submission consent; verify live receipt and idempotency and preserve all receipts privately. Deliver cumulative Custom GPT update in Downloads; private GPT editor still requires owner. No completed live submitted data claim until proof.
+Backend was merged/deployed successfully and authenticated/unauthenticated readback passed; see CLOSEOUT.md and live receipts. The direct real human production POST was blocked by host tool safety before execution. The two derived exact JSONs and cumulative Custom GPT update are verified in Downloads for the approved owner-only private GPT Action/Allow handoff. No human submission receipt, GUI launcher verification or future scheduled email is claimed.
