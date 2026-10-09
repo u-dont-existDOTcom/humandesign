@@ -1,0 +1,2851 @@
+{
+  "schema_version": 2,
+  "batch_id": "B02f",
+  "records_count": 107,
+  "first_record_number": 668,
+  "last_record_number": 774,
+  "records": [
+    {
+      "id": "LI.1647.II.XXIV.R668",
+      "title": "At-home question: asker and unrelated familiar person",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          181
+        ],
+        "printed_sequence": [
+          147
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ascendant and its lord represent the asker; seventh and its lord represent the familiar person to be visited, when not related.",
+      "prerequisites": [
+        "Question is whether the asker will find that person at home."
+      ],
+      "qualifications_and_limits": [
+        "Do not use this seventh-house assignment for every possible absent-person question."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R669",
+      "title": "At-home question: relatives replace generic seventh",
+      "kind": "source_role_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          181,
+          188
+        ],
+        "printed_sequence": [
+          147,
+          154
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "unrelated_familiar": 7,
+        "father": 4,
+        "mother": 10,
+        "child": 5,
+        "sibling": 3,
+        "neighbour": 3
+      },
+      "prerequisites": [
+        "Choose the actual relationship before selecting the house ruler."
+      ],
+      "qualifications_and_limits": [
+        "Sibling/neighbour illustration is in XXV p154; the named roles are not a complete arbitrary-relationship ontology."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R670",
+      "title": "Presence and angularity",
+      "kind": "source_reference_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          181
+        ],
+        "printed_sequence": [
+          147
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "angular": {
+          "houses": [
+            1,
+            4,
+            7,
+            10
+          ],
+          "claim": "at home"
+        },
+        "succedent": {
+          "houses": [
+            2,
+            5,
+            8,
+            11
+          ],
+          "claim": "not far from home"
+        },
+        "cadent": {
+          "houses": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "claim": "far from home"
+        }
+      },
+      "prerequisites": [
+        "The planet must be the relevant person's significator."
+      ],
+      "qualifications_and_limits": [
+        "These are historical claims, not a method for finding an actual missing person."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R671",
+      "title": "Meeting or learning location on intended visit day",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          181
+        ],
+        "printed_sequence": [
+          147
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "If the Ascendant lord applies to the seventh lord by a perfect aspect on the intended visit day, the asker meets the person en route OR hears where the person is.",
+      "prerequisites": [
+        "Relevant at-home enquiry; same-day contact."
+      ],
+      "qualifications_and_limits": [
+        "The two possible outcomes must not be narrowed to an inevitable face-to-face meeting."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R672",
+      "title": "Intermediary supplies whereabouts",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          181
+        ],
+        "printed_sequence": [
+          147
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A planet or Moon separating from the seventh lord and transferring light to the Ascendant lord signifies an intermediary who supplies the location.",
+      "prerequisites": [
+        "Direction is from the sought person toward the asker."
+      ],
+      "qualifications_and_limits": [
+        "The short passage does not independently settle every translation prerequisite defined elsewhere."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R673",
+      "title": "Historical description of the intermediary",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          181
+        ],
+        "printed_sequence": [
+          147
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Describe the translating planet; gender testimony uses planet, sign and quarter, with the greater masculine testimony giving a man, the contrary a woman.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical classification only; no modern identity inference and no numerical tie rule supplied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R674",
+      "title": "Sudden occurrence: chart origin",
+      "kind": "time_origin",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          182
+        ],
+        "printed_sequence": [
+          148
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Erect the figure for the occurrence time, else when it was first heard of.",
+      "prerequisites": [
+        "Enquiry is about the meaning of a sudden occurrence, rumour or report."
+      ],
+      "qualifications_and_limits": [
+        "This is not automatically the separate question-receipt convention at pp166-167."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R675",
+      "title": "Sudden occurrence: three candidate rulers",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          182
+        ],
+        "printed_sequence": [
+          148
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Compare ruler of the Sun's sign, ruler of the Moon's sign, and ruler of the life house/Ascendant; consider the one most powerful in the Ascendant.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No complete numerical strength ranking or tie-breaker supplied; power in Ascendant does not imply bodily presence there, as XXV illustrates."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R676",
+      "title": "Sudden occurrence: favourable condition",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          182
+        ],
+        "printed_sequence": [
+          148
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Selected significator in sextile or trine to Sun, Jupiter or Venus indicates no evil following the event or report.",
+      "prerequisites": [
+        "Significator selected through the preceding three-ruler enquiry."
+      ],
+      "qualifications_and_limits": [
+        "Do not use an arbitrary benefic aspect as an unconditional event verdict."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R677",
+      "title": "Sudden occurrence: adverse condition",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          182
+        ],
+        "printed_sequence": [
+          148
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "If the selected planet is weak, combust, or in square, opposition or conjunction of Mars, Saturn or Mercury, some misfortune follows; its nature and occasion depend on the afflictor's position and nature.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Mercury is expressly included locally; mixed favourable/adverse conditions are not algorithmically resolved."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R678",
+      "title": "Sudden occurrence: house-derived occasions",
+      "kind": "reference_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          182
+        ],
+        "printed_sequence": [
+          148
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "3": "neighbour or kinsman",
+        "2": "loss of substance",
+        "4": "parental discontent or land/houses",
+        "5": "discord in tavern/company or through a child"
+      },
+      "prerequisites": [
+        "The relevant planet afflicts the selected significator."
+      ],
+      "qualifications_and_limits": [
+        "These are alternative occasions, not independent outcomes to accumulate."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R679",
+      "title": "Marks: author's reported motivation and success",
+      "kind": "author_experience_claim",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          182,
+          184
+        ],
+        "printed_sequence": [
+          148,
+          150
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lilly calls the apparent accuracy of marks a chief reason for his deep engagement with astrology and reports successful informal trials in company.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Author-reported experience, not blinded measurement, a count of trials, or independent evidence."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R680",
+      "title": "Marks: five source inputs",
+      "kind": "reference_inputs",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          182,
+          183
+        ],
+        "printed_sequence": [
+          148,
+          149
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        "Ascendant sign",
+        "Ascendant-lord sign",
+        "sixth-cusp sign",
+        "sixth-lord sign",
+        "Moon sign"
+      ],
+      "prerequisites": [
+        "Horary figure has been erected for a demand."
+      ],
+      "qualifications_and_limits": [
+        "Each is said to locate another mark on the sign-represented body part; no deduplication or base-rate model is specified."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R681",
+      "title": "Marks: source examples for sign body regions",
+      "kind": "reference_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          182
+        ],
+        "printed_sequence": [
+          148
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Taurus": "neck",
+        "Gemini": "arms"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not infer a disease, or silently substitute the fixed house-to-body sequence."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R682",
+      "title": "Marks: Saturn and Mars modifiers",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          183
+        ],
+        "printed_sequence": [
+          149
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Saturn indicates a dark/black mark; Mars a scar or cut in a fiery sign, otherwise a red mole. Greater affliction of sign or planet makes the mark larger/more conspicuous.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No measured size, colour threshold or clinical classification is supplied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R683",
+      "title": "Marks: right side clause",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          183
+        ],
+        "printed_sequence": [
+          149
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Masculine sign AND masculine planet places the mark on the right side.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Mixed testimonies are not specified in this clause."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R684",
+      "title": "Marks: contrary side clause",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          183
+        ],
+        "printed_sequence": [
+          149
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The contrary is judged when the sign is feminine and its lord is in a feminine sign.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The feminine clause does not repeat the masculine clause's planet-nature predicate; preserve this asymmetry."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R685",
+      "title": "Marks: visibility and hemisphere",
+      "kind": "reference_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          183
+        ],
+        "printed_sequence": [
+          149
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "houses_7_through_12": "front/visible/outside of member",
+        "houses_1_through_6": "back/not visible/inside of member"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Literal numbered-house groups; no inferred actual observer visibility or cusp equality convention."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R686",
+      "title": "Marks: longitudinal position within member",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          183
+        ],
+        "printed_sequence": [
+          149
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Few degrees ascending or occupied by the ruler signify upper part; middle degrees middle part; latter degrees or Moon/first/sixth lord near sign end signify lower part.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No numerical cutoff for few/middle/latter is supplied; do not invent 0-10/10-20/20-30 bins."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R687",
+      "title": "Marks: qualifications and clock warning",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          183,
+          184
+        ],
+        "printed_sequence": [
+          149,
+          150
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Claims depend on a radical question, correctly taken time and a person of sufficient age, not an infant. Short ascensions, invisible Sun and faulty clocks can mislead the Ascendant.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No numerical sufficient age or allowed clock uncertainty; do not retrofit these exclusions to excuse a failed prediction."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R688",
+      "title": "Short-ascension illustrative durations",
+      "kind": "author_examples",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          184
+        ],
+        "printed_sequence": [
+          150
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Pisces_and_Aries": "three quarters of an hour and a few minutes each",
+        "Aquarius_and_Taurus": "an hour and odd minutes"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical local examples, not latitude-independent astronomical constants."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R689",
+      "title": "Marks for a spouse use turned places",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          184
+        ],
+        "printed_sequence": [
+          150
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Use seventh sign/lord for the wife and twelfth sign/lord for her sixth, adding four source indications.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Twelfth is sixth counted inclusively from seventh; no new independent person-case implied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R690",
+      "title": "House-body correspondence remains separate from sign-body",
+      "kind": "reference_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          184
+        ],
+        "printed_sequence": [
+          150
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "1": "face",
+        "2": "neck",
+        "3": "arms and shoulders",
+        "4": "breast and paps",
+        "5": "heart"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "First house means face whatever its sign; the text continues in order but only these five are explicitly enumerated here."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R691",
+      "title": "Eye mark: lunar syzygy and additional conditions",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          184
+        ],
+        "printed_sequence": [
+          150
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Moon conjunct or opposite Sun frequently indicates a mark near an eye; the stronger assertion adds angular conjunction/opposition and an adverse Mars aspect to either luminary.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not drop the added conditions, or turn the statement into medical advice."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R692",
+      "title": "General absent stranger: a different first-house frame",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "For a general absent-person question with no relation to the asker, first house, its lord and Moon signify the absent party.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Local exception to the seventh-house at-home role; the exact question matters."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R693",
+      "title": "Absent person: eighth significator and cusp proximity",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Eighth lord, a planet in the eighth, or one within five degrees of its cusp signify death or its quality in this enquiry.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical investigation only, not an actual missing-person or mortality classifier; exact five-degree equality and side not specified locally."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R694",
+      "title": "Absent person: adverse union or opposition configurations",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Bodily union of Ascendant lord, Moon and eighth lord/occupant, or opposing configurations in eighth-second or twelfth-sixth, argues deceased OR sick near death.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not collapse the disjunction to certain death. Ambiguous three-planet grouping is retained."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R695",
+      "title": "Absent person: further adverse testimonies",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Translation first lord to eighth, especially deep/lame/deficient degrees; reverse translation; eighth lord in Ascendant; or first lord and Moon in fourth are death testimonies.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Separate source configurations, not independence-proven evidence; conflicting surviving-state indications remain relevant."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R696",
+      "title": "Absent person: past separation from house 6 lord",
+      "kind": "conditional_reference_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "recent sickness",
+      "prerequisites": [
+        "Ascendant lord has separated from an adverse aspect of the named lord."
+      ],
+      "qualifications_and_limits": [
+        "Past state is not an assertion of present death."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R697",
+      "title": "Absent person: past separation from house 8 lord",
+      "kind": "conditional_reference_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "danger of death but NOT dead",
+      "prerequisites": [
+        "Ascendant lord has separated from an adverse aspect of the named lord."
+      ],
+      "qualifications_and_limits": [
+        "Past state is not an assertion of present death."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R698",
+      "title": "Absent person: past separation from house 12 lord",
+      "kind": "conditional_reference_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "mental trouble/fear of imprisonment or arrests",
+      "prerequisites": [
+        "Ascendant lord has separated from an adverse aspect of the named lord."
+      ],
+      "qualifications_and_limits": [
+        "Past state is not an assertion of present death."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R699",
+      "title": "Absent person: past separation from house 2 lord",
+      "kind": "conditional_reference_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "money shortage",
+      "prerequisites": [
+        "Ascendant lord has separated from an adverse aspect of the named lord."
+      ],
+      "qualifications_and_limits": [
+        "Past state is not an assertion of present death."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R700",
+      "title": "Absent person: past separation from house 7 lord",
+      "kind": "conditional_reference_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "quarrel/contention",
+      "prerequisites": [
+        "Ascendant lord has separated from an adverse aspect of the named lord."
+      ],
+      "qualifications_and_limits": [
+        "Past state is not an assertion of present death."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R701",
+      "title": "Absent person: past separation from house 9 lord",
+      "kind": "conditional_reference_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "journey trouble",
+      "prerequisites": [
+        "Ascendant lord has separated from an adverse aspect of the named lord."
+      ],
+      "qualifications_and_limits": [
+        "Past state is not an assertion of present death."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R702",
+      "title": "Absent person: past separation from house 3 lord",
+      "kind": "conditional_reference_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "journey trouble",
+      "prerequisites": [
+        "Ascendant lord has separated from an adverse aspect of the named lord."
+      ],
+      "qualifications_and_limits": [
+        "Past state is not an assertion of present death."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R703",
+      "title": "Absent person: journey-specific alternatives",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Sea journey trouble may be winds or pirates; land travel trouble thieves or bad roads.",
+      "prerequisites": [
+        "Prior adverse separation from third/ninth lord."
+      ],
+      "qualifications_and_limits": [
+        "Location mode is contextual input, not a fitted after-the-fact choice."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R704",
+      "title": "Absent person: contrary survival observation",
+      "kind": "author_experience_claim",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185
+        ],
+        "printed_sequence": [
+          151
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lilly reports finding the person alive with Ascendant lord in ninth, tenth or eleventh despite rumours of death.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Author observation; no independently verified denominator or precedence against all earlier adverse conditions."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R705",
+      "title": "News: ephemeris contact route",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          185,
+          186
+        ],
+        "printed_sequence": [
+          151,
+          152
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "After judging the absent person alive, inspect when eleventh lord and Ascendant lord reach trine or sextile; news around that time, possibly that day.",
+      "prerequisites": [
+        "Survival considered first; actual ephemeris contact needed."
+      ],
+      "qualifications_and_limits": [
+        "This is not the same as symbolic degrees converted to time."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R706",
+      "title": "News: symbolic lunar-distance route",
+      "kind": "symbolic_unit_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          186
+        ],
+        "printed_sequence": [
+          152
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "moveable": "days",
+        "common": "weeks",
+        "fixed": "months"
+      },
+      "prerequisites": [
+        "Moon applies by sextile/trine to Ascendant lord; use degrees remaining."
+      ],
+      "qualifications_and_limits": [
+        "No day length/calendar-month convention, fractional rounding or mixed-sign rule supplied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXIV.R707",
+      "title": "Second question figure reused for four teachings",
+      "kind": "figure_scope",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXIV",
+        "pdf_pages": [
+          186
+        ],
+        "printed_sequence": [
+          152
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        "finding someone at home",
+        "sudden occurrence",
+        "marks on body",
+        "absent person dead or alive"
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "One diagram; later conditional reuses are not four independent observed trials."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R708",
+      "title": "Woman's son: actual enquiry and significators",
+      "kind": "worked_case",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          187
+        ],
+        "printed_sequence": [
+          153
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A woman at Lilly's country house asks whether her son is at his master's or her own home. Venus represents her; fifth-house Pisces makes Jupiter the son's significator.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Reported historical case, not a present participant or natal interpretation."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R709",
+      "title": "Son at mother's home: two stated testimonies",
+      "kind": "worked_case",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          187
+        ],
+        "printed_sequence": [
+          153
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Jupiter in Ascendant and Moon applying dexter sextile to fourth-lord Saturn indicate the boy at the mother's dwelling; author reports she found him there.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "A reported confirmation, not blinded validation; two testimonies are not two cases."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R710",
+      "title": "Counterfactual son at master's home",
+      "kind": "counterfactual_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          187
+        ],
+        "printed_sequence": [
+          153
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Jupiter in tenth OR Moon separating from Jupiter and next applying a good/indifferent Sun aspect with Sun angular would have indicated the master's.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Explicit hypothetical branch, not something that happened."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R711",
+      "title": "Actual meeting: source date and time report",
+      "kind": "reported_case_timing",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          187,
+          188
+        ],
+        "printed_sequence": [
+          153,
+          154
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Jupiter and Venus are reported to trine on July 25 about two after noon; mother returned and met son about three that afternoon.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Author's report; historical date/time not converted to UTC or independently recalculated. Prediction, traveller action and report are not blinded."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R712",
+      "title": "Meeting versus news: distance qualification",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          187,
+          188
+        ],
+        "printed_sequence": [
+          153,
+          154
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Near sextile/trine day expect letter/news when distances allow; nearby people meet on the same day even without prior intention.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No numerical near/far threshold; the statement need not promise direct meeting across impossible distances."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R713",
+      "title": "Counterfactual neighbour or sibling",
+      "kind": "counterfactual_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          188
+        ],
+        "printed_sequence": [
+          154
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Third-lord Jupiter would represent neighbour, brother or sister; its angularity would indicate at home.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Same figure, hypothetical different question, not another confirmation."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R714",
+      "title": "Counterfactual unrelated visitor: cusp exclusion",
+      "kind": "counterfactual_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          188
+        ],
+        "printed_sequence": [
+          154
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Seventh-lord Mars represents the stranger. It remains in second, more than five degrees before third cusp, and is not admitted third-house signification.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Negative boundary example supports exclusion beyond five degrees; does not settle exact equality."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R715",
+      "title": "Counterfactual stranger: location layers",
+      "kind": "counterfactual_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          188,
+          189
+        ],
+        "printed_sequence": [
+          154,
+          155
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Second house is succedent so near, not at home; northern quarter plus easterly Sagittarius gives northeast. A furlong or one/two fields is suggested. Rural sign places imply rising ground; in town Mars places imply smiths/butchers northeast of home.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Urban/rural context must be supplied; illustrative distance is not a universal conversion."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R716",
+      "title": "Sudden-occurrence hypothetical: Venus selection",
+      "kind": "counterfactual_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          189
+        ],
+        "printed_sequence": [
+          155
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "For hypothetical event time, Sun rules itself, Jupiter Moon's Pisces, Venus Ascendant Libra. Venus has domicile and term rights at Ascendant and trines cusp and angular Jupiter, yielding a favourable reading.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Power at Ascendant is not bodily occupation. The literal term attribution is retained without selecting an unannounced term table."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R717",
+      "title": "Sudden-occurrence hypothetical: nearer opposition",
+      "kind": "counterfactual_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          189
+        ],
+        "printed_sequence": [
+          155
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Had Venus been nearer opposition to second-house Mars, the author would indicate loss or contention over money.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No cutoff for nearer; hypothetical, not a second event."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R718",
+      "title": "Mother's marks in the worked figure",
+      "kind": "reported_case_marks",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          189,
+          190
+        ],
+        "printed_sequence": [
+          155,
+          156
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        "right face near mouth: Jupiter in Ascendant and masculine Libra/Jupiter",
+        "lower reins/haunches: later Libra degrees",
+        "forehead near hair: early Aries sixth cusp",
+        "right thigh middle/back: masculine Mars in Sagittarius below earth",
+        "extremity under left foot: Moon Pisces26:43 below earth"
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Preserve sign-body and house-body channels separately. These are author-described marks, not examined photographs or clinical findings."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R719",
+      "title": "Son's turned marks",
+      "kind": "reported_case_marks",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          190
+        ],
+        "printed_sequence": [
+          156
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Fifth Pisces ninth degree is son's Ascendant: left cheek and foot near ankle; tenth Leo4 as sixth from fifth: right side below breast.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Multiple channels, one reported person. No natal-birth data or disease diagnosis."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R720",
+      "title": "Hypothetical absent person: favourable survival reasoning",
+      "kind": "counterfactual_example",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          190
+        ],
+        "printed_sequence": [
+          156
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Treat same Ascendant, Jupiter there, Venus and Moon as absent-person significators. Absence of the listed eighth/sixth afflictions, translations and fourth-house placements permits favourable judgment; Venus's preceding Mars opposition indicates past money trouble/fever, Jupiter relief.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is expressly a supposed question, not a separately observed missing person."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R721",
+      "title": "Long-ascension square in news example",
+      "kind": "interpretive_equivalence",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          190,
+          191
+        ],
+        "printed_sequence": [
+          156,
+          157
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Mercury eleventh lord applying square to Ascendant Jupiter, both in long-ascension signs, is said equivalent to trine.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Source interpretive equivalence, not a change of the actual 90-degree geometry."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXV.R722",
+      "title": "News timing in hypothetical: ten weeks OR ten days",
+      "kind": "counterfactual_timing",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXV",
+        "pdf_pages": [
+          191
+        ],
+        "printed_sequence": [
+          157
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "About ten degrees to the square gives about ten weeks; if the person is known nearby, ten days because the signs are moveable.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Different from blindly applying the earlier moveable=days table. No quantitative distance threshold; no physical contact time computed."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R723",
+      "title": "Ship enquiry: topic location differs from earlier placement",
+      "kind": "source_method_disagreement",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          191
+        ],
+        "printed_sequence": [
+          157
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lilly reports that earlier authors put shipping under ninth because of voyages, but he places this judgment with first-house matters because most safety reasoning uses Ascendant, its lord and Moon.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Reported earlier classification and Lilly's selected method remain distinct; does not abolish every ninth-house travel enquiry."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R724",
+      "title": "Ship and people have different significators",
+      "kind": "role_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          191
+        ],
+        "printed_sequence": [
+          157
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Ascendant_sign": [
+          "ship",
+          "goods"
+        ],
+        "Moon": [
+          "ship",
+          "goods"
+        ],
+        "Ascendant_lord": [
+          "people_sailing"
+        ]
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "One body can occupy multiple roles; roles are not independent astronomical observations."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R725",
+      "title": "Ship: adverse configuration and reception exception",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          191
+        ],
+        "printed_sequence": [
+          157
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The opening all-unfortunate case includes malefic in Ascendant with eighth dignities, Ascendant lord in eighth badly configured with eighth/twelfth/fourth/sixth lord, or Moon combust/below earth. Ship loss and drowned crew are asserted, except reception permits some sailors to escape the wreck.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The introductory all-unfortunate language and following disjunctions are preserved; no complete Boolean classifier or actual maritime prediction."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R726",
+      "title": "Ship: all-free and mixed outcomes",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          191
+        ],
+        "printed_sequence": [
+          157
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "all_significators_free": "men and goods safe, strengthened by reception",
+        "Ascendant_and_Moon_unfortunate_but_Ascendant_lord_fortunate": "ship lost but people saved"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Vessel survival, cargo and human survival cannot be interchangeable scoring targets."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R727",
+      "title": "Ship correspondence: Aries",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "breast of ship",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R728",
+      "title": "Ship correspondence: Taurus",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "under breast toward water",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R729",
+      "title": "Ship correspondence: Gemini",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "roother or stern",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R730",
+      "title": "Ship correspondence: Cancer",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "bottom or floor",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R731",
+      "title": "Ship correspondence: Leo",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "top above water",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R732",
+      "title": "Ship correspondence: Virgo",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "belly",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R733",
+      "title": "Ship correspondence: Libra",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "between wind and water / sometimes above and below water",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R734",
+      "title": "Ship correspondence: Scorpio",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "where seamen lodge or do their office",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R735",
+      "title": "Ship correspondence: Sagittarius",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "mariners themselves",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R736",
+      "title": "Ship correspondence: Capricorn",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "ends of ship",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R737",
+      "title": "Ship correspondence: Aquarius",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "master or captain",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R738",
+      "title": "Ship correspondence: Pisces",
+      "kind": "ship_correspondence_row",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "oars",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical mapping attributed to some authors; not engineering or navigational guidance."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R739",
+      "title": "Ship parts: fortunate and unfortunate branches",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Fortunate signs/Moon/ruler are associated with no defect or repair, while afflicted signs/Moon/sign ruler indicate damaged parts to warn about.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The fortunate paragraph nevertheless also literally says the ship will receive any detriment; this inconsistent wording is left unresolved, not silently negated."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R740",
+      "title": "Departing ship: angular fortunes and weakened infortunes",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192
+        ],
+        "printed_sequence": [
+          158
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Fortunes in or falling into angles, with infortunes remote, cadent, combust or under beams, signify safe arrival with cargo; infortunes angular or succedent bring hindrance in the sign-corresponding part.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Departure assessment distinguished from status of a ship already missing."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R741",
+      "title": "Departing ship: Saturn and qualified Mars damage",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          192,
+          193
+        ],
+        "printed_sequence": [
+          158,
+          159
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Saturn in the adverse branch signifies splitting, drowning or injury from impact/grounding. Mars in essential dignity OR beholding its own dignity OR in an earthly sign similarly signifies grave damage.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not turn essential dignity into unconditional protection: here it qualifies adverse action."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R742",
+      "title": "Ship damaged but most survive",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          193
+        ],
+        "printed_sequence": [
+          159
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Benefic rays to the malefic places, with angular rulers (especially Ascendant) and Moon's sign ruler free, mitigate to hard labour and much damage while most goods and people survive.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Mitigation is not proof of no damage; precise strength thresholds and competing conditions remain unspecified."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R743",
+      "title": "Ship: enemy fear versus additional violence",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          193
+        ],
+        "printed_sequence": [
+          159
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Mars afflicting angular lords and Moon dispositor signifies fear of pirates/enemies. Further afflicted signs add bloodshed, quarrels, theft and cargo pilfering, especially signs assigned upper ship parts.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Fear, conflict and actual loss are distinct outputs; upper-part membership is not fully formalized by this paragraph."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R744",
+      "title": "Ship: Saturn theft branch",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          193
+        ],
+        "printed_sequence": [
+          159
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Saturn afflicting analogously signifies theft and unexplained depletion but no bloodshed.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not carry Mars's bloodshed into this explicitly contrasting branch."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R745",
+      "title": "Ship: underwater damage",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          193
+        ],
+        "printed_sequence": [
+          159
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Saturn, Mars or South Node afflicting signs assigned bottom/underwater parts signifies breaking, sinking or a dangerous leak.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Disjunct outcomes retained; no modern risk probability."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R746",
+      "title": "Ship: aerial-fire branch",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          193
+        ],
+        "printed_sequence": [
+          159
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Mars afflicting signs at Midheaven points to fire, thunder/lightning or falling aerial matter, with fiery signs AND nearby violent fixed stars specified.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The added sign/star conditions must not disappear; no distance to star specified."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R747",
+      "title": "Ship: fourth-house fire and hostile attack",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          193,
+          194
+        ],
+        "printed_sequence": [
+          159,
+          160
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Mars or the infortune in fourth-house sign indicates bottom fire; Mars there in Gemini/Libra/Aquarius signifies fire or destruction during enemy combat/grappling.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Enemy source of fire is a conditional refinement, not every fourth-house Mars interpretation."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R748",
+      "title": "Ship: Saturn Midheaven or seventh",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          194
+        ],
+        "printed_sequence": [
+          160
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Saturn replacing Mars at Midheaven indicates contrary winds, leaks, torn/bad sails, scaled by strength and benefic distance; Saturn seventh points to stern damage.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No quantitative relation between strength, distance and damage is supplied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R749",
+      "title": "Ship: Ascendant damage",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          194
+        ],
+        "printed_sequence": [
+          160
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Infortune in Ascendant points to damage at the forepart, greater or less with the significator's condition.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This house-based location is separate from the sign-to-part table."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R750",
+      "title": "Ship: retrograde return or harbour stop",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          194
+        ],
+        "printed_sequence": [
+          160
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Retrograde Ascendant lord means forward progress then return or harbour entry soon after setting out. Moveable Ascendant lord retrograde AND fourth lord retrograde strengthens return to original port through contrary winds.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No absolute time or objective wind forecast supplied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R751",
+      "title": "Ship: return can be without loss",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          194
+        ],
+        "printed_sequence": [
+          160
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Retrogradation as sole impediment gives return without loss; with another misfortune, return for repairs and danger.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not code all retrogradation or all returns as damage/loss."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R752",
+      "title": "Ship: eighth lord and crew hierarchy",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          194
+        ],
+        "printed_sequence": [
+          160
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Eighth lord afflicting Ascendant lord indicates harm, especially if Ascendant lord in eighth. Afflicting Moon dispositor, Ascendant lord AND Moon imports death of captain, mate and principal officers.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical claims only; no personal mortality prognosis; preserve the expanded conjunction of prerequisites."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R753",
+      "title": "Ship: commercial result separate from physical loss",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          194,
+          195
+        ],
+        "printed_sequence": [
+          160,
+          161
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Fortune AND second lord unfortunate signify poor sale/market or loss on goods. Head, Jupiter or Venus in relevant second-house/Fortune relationships signify profit, stronger with essential strength.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Node/planet grammar does not give the Head a literal domicile lordship; source alternatives are not a complete executable Boolean formula. Physical safety does not itself establish profit."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R754",
+      "title": "Ship: journey duration",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          195
+        ],
+        "printed_sequence": [
+          161
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Slow Ascendant lord and Moon-sign lord and their dispositors signify a long voyage; quick signifies fast arrival and return sooner than expected.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Qualitative speeds and relative expectation, not a numerical speed or date algorithm."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R755",
+      "title": "Ship: merchant versus sailors dispute",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          195
+        ],
+        "printed_sequence": [
+          161
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ascendant lord and Moon-sign lord in square/opposition WITHOUT reception signify discord; the more dignified party prevails: Ascendant lord for sailors, Moon-sign lord for merchant.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Actual role and relative dignity required; ties are not resolved."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R756",
+      "title": "Ship: provisions and ambiguous removed-from-second language",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          195
+        ],
+        "printed_sequence": [
+          161
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Second lord removed beyond its second (Taurus example Venus beyond Gemini), or removed from second to Moon's place (Moon Virgo example lord not Libra), or Fortune dispositor not with Fortune indicates scant provisions.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The first two conditions are textually awkward; do not normalize them into one invented distance predicate."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R757",
+      "title": "Ship: kind of shortage",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          195
+        ],
+        "printed_sequence": [
+          161
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "In the shortage branch, watery signs give lack of fresh water; earthly/airy signs lack of food and fire.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Fiery-sign branch not supplied. These are source categories, not practical provisioning advice."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R758",
+      "title": "First ship: reported context and question",
+      "kind": "reported_case",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          196
+        ],
+        "printed_sequence": [
+          162
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "December1644 merchant's ship trading to Spain was rumoured lost after storms; insurance was unobtainable despite an offer of60 in100. A friend asks. Lilly judges recent danger but present recovery.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Author's historical case report, no verified insurance data or contemporary recommendation."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R759",
+      "title": "First ship: damaged hull evidence",
+      "kind": "reported_case",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          196,
+          197
+        ],
+        "printed_sequence": [
+          162,
+          163
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Cancer Ascendant11:33, Saturn's square and three Saturn-like rising stars yield a heavy/slow unsound vessel and former damage; the account reports confirmation. South Node in ninth adds journey distress, Saturn in Aries breast damage.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "South Node, not Saturn, is the ninth-house symbol in this passage. Reported confirmation is not independent verification."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R760",
+      "title": "First ship: mitigation and recovery reasoning",
+      "kind": "reported_case",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          196,
+          197
+        ],
+        "printed_sequence": [
+          162,
+          163
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Exalted Moon in eleventh interposes a sextile toward Ascendant before opposed Sun/Mercury rays; applying trines, proximity to Jupiter, relevant significators above earth and no angular infortunes support vessel/crew survival.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Past damage and present survival coexist; no independent cases generated from each contributing feature."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R761",
+      "title": "First ship: localization and reported resolution",
+      "kind": "reported_case",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          197
+        ],
+        "printed_sequence": [
+          163
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Fixed Taurus Moon eleventh and application to Capricorn Mercury in west angle lead to southwest coast near Ireland/Wales and a harbour for repairs; report confirms west and harbour.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Reported west/harbour is less specific than all the proposed geography. Do not count full location prediction as independently verified."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R762",
+      "title": "First ship: news deadline",
+      "kind": "reported_case_timing",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          197,
+          198
+        ],
+        "printed_sequence": [
+          163,
+          164
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Near applying trines, angular targets and swiftness lead to news that night OR in two days, reported as fulfilled.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Alternative deadline, no dated letter or independent contact-time calculation."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R763",
+      "title": "First ship: merchandise and reception",
+      "kind": "reported_case",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          198
+        ],
+        "printed_sequence": [
+          164
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Fortune disposed by Mars, Mercury in reception with Mars and Moon applying to second-lord Sun encourage a favourable financial result.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Commercial inference separate from the report of vessel survival. Exact reception convention not specified locally."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R764",
+      "title": "First ship: antiscion claims",
+      "kind": "source_geometry_claim",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          198
+        ],
+        "printed_sequence": [
+          164
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Jupiter's antiscion in ninth degree of Leo is called the second cusp; Mars's antiscion is said to fall on the very Ascendant degree. Roles cited: Mars eleventh lord/Fortune dispositor, Jupiter tenth lord.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Retain printed chart coordinates and source claims separately. Exact-minute equality is not assumed from the prose."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R765",
+      "title": "Moon applying to retrograde planet",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          198
+        ],
+        "printed_sequence": [
+          164
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Good aspect of Moon to a retrograde planet usually brings a speedy unexpected ending one way or another.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Speed/completion is not intrinsically benefit or safety. Generic favourable hope is given separately."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R766",
+      "title": "Ship concluding favourable checklist",
+      "kind": "source_summary",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          198
+        ],
+        "printed_sequence": [
+          164
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ascendant free from infortunes; Ascendant lord, Moon and dispositors above earth; Ascendant lord ninth/tenth/eleventh; or trine/sextile to Jupiter or eleventh lord are good signs.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Summary shares evidence with preceding example and is not an independent observed case."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R767",
+      "title": "Second ship: opposite reported outcome",
+      "kind": "reported_case",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          199,
+          200
+        ],
+        "printed_sequence": [
+          165,
+          166
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A1646 chart is judged mostly/all investment lost and ship probably wrecked; author says it proved so. Ascendant and Moon signify vessel/crew in this opening.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Different local role compression from the earlier separated hull/crew roles; no independent outcome documentation."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R768",
+      "title": "Second ship: sequence matters more than favourable aspect label",
+      "kind": "reported_case",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          199
+        ],
+        "printed_sequence": [
+          165
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Moon separated square from eighth/ninth-lord Saturn, was void, then trines that same eighth lord before opposing Mercury twelfth/fourth lord; the trine does not cancel the adverse subject.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Later contacts involve sign changes; retain void-at-question versus future application distinction."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R769",
+      "title": "Second ship: additional weak dispositors and money factors",
+      "kind": "reported_case",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          199
+        ],
+        "printed_sequence": [
+          165
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Moon dispositor Mercury detriment and approaching combustion; its dispositor Jupiter below earth with Mars/malefic terms; Mars fallen near second cusp; Fortune sixth with retrograde second-house dispositor not beholding; further squares accompany the loss judgment.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No invented aggregation weights, no counting correlated dispositor roles as separate successful predictions."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R770",
+      "title": "Second ship: below-earth closing statement",
+      "kind": "source_summary",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          199,
+          200
+        ],
+        "printed_sequence": [
+          165,
+          166
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Principal significators below earth are adverse, most of all fourth-house placement, called a sure sinking testimony.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Source confidence is not a modern safety claim; retain earlier mitigation qualifications and no empirical calibration."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R771",
+      "title": "Question time: arrival/first greeting rejected",
+      "kind": "rejected_time_origin",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          200
+        ],
+        "printed_sequence": [
+          166
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lilly rejects automatically using a visit's first arrival or greeting, since conversation can end with no actual question being asked.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Rejected attributed alternative, not a live rule to add to a model."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R772",
+      "title": "Question time: actual request",
+      "kind": "time_origin",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          200
+        ],
+        "printed_sequence": [
+          166
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Use the moment the querent propounds the desire to the astrologer.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical question chart, not native birth time or arbitrary first mention of a person."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R773",
+      "title": "Question time: delayed letter",
+      "kind": "time_origin",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          200
+        ],
+        "printed_sequence": [
+          166
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "For a letter delivered earlier and read four/five hours later, use hour/minute when opened and the querent's intention is perceived, not mere delivery time.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Does not define modern asynchronous AI first-read/reprocessing semantics; those would require a separately declared convention."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVI.R774",
+      "title": "Self-question: reported objection and author's alternative",
+      "kind": "source_disagreement",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVI",
+        "pdf_pages": [
+          200,
+          201
+        ],
+        "printed_sequence": [
+          166,
+          167
+        ]
+      },
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lilly reports Bonatus and others warning against judging one's own question; he conjectures concern about partiality. He permits a genuinely troubling self-question at its arising time if impartial, urging all favour to one's cause be laid aside.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The reason attributed to Bonatus is Lilly's conjecture, not a checked quotation from Bonatus. Self-reported success is not blinded evidence."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    }
+  ]
+}

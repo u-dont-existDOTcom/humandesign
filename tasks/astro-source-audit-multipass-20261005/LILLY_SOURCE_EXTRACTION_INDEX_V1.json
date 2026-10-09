@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_XXII_XXIII_READ_OTHER_SECTIONS_OPEN",
-  "records_count": 667,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XXVI_READ_OTHER_SECTIONS_OPEN",
+  "records_count": 774,
   "read_numbered_chapters": [
     1,
     2,
@@ -27,7 +27,10 @@
     20,
     21,
     22,
-    23
+    23,
+    24,
+    25,
+    26
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -65,17 +68,25 @@
       "records_count": 100,
       "sha256": "195eaca0ddbc5925e0f8b1318a5e50acb43be2d4579c1c11d58b98dba3ea1fce",
       "scope": "BookII.XXII-XXIII PDF163-180; first question, timing scales, Fortune, short recap; no new personal outcome analysis."
+    },
+    {
+      "id": "B02f",
+      "path": "batches/B02f/RULES.json",
+      "records_count": 107,
+      "sha256": "c24615731bedb12b37745f7907f86a72f9c4092b1e619ed98767ccea68b91dd2",
+      "scope": "BookII XXIV-XXVI, PDF181 through201 top; presence, marks, absent persons, mother/son case, ships and question receipt time; ends before XXVII."
     }
   ],
   "next": {
-    "pdf_page": 181,
-    "printed_page": 147,
-    "heading": "BookII ChapXXIV If one shall find the Party at home he would speak withall"
+    "pdf_page": 201,
+    "printed_page": 167,
+    "heading": "BookII ChapXXVII Whether the Querent shall be Rich, or have a competent Fortune?",
+    "position": "after self-question paragraph; do not restart upper paragraph"
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 24,
+  "read_headed_units_count": 27,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
   "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261009.md",
   "body_table_or_medical_claims_validated": false

@@ -1,0 +1,43 @@
+{
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch": "B02f",
+  "base": "e126cc55d2321676e5eae6360f9c1a49959d5c99",
+  "parent_status": "OPEN_MULTIPASS_AUTHORIZED",
+  "scope": "Read and extract Lilly BookII XXIV-XXVI including the question-receipt-time subsection: PDF181-201, stop before XXVII heading. Later source excerpts retrieved only for boundary discovery are not counted as extracted.",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "active_controls": [
+    {
+      "rule": "source-provenance",
+      "required": "Keep attributed rule, worked example, hypothetical reuse, reported confirmation, uncertainty and our calculation distinct. Retain conditions and contradicting cases.",
+      "enforcement": "semantic plus data assertions"
+    },
+    {
+      "rule": "no-person-data",
+      "required": "No participant histories, astrology/numerology refitting or previous freeze edits.",
+      "enforcement": "diff allowlist"
+    },
+    {
+      "rule": "verified-reading",
+      "required": "Use original PDF text and glyph/table/chart images; no new OCR. Record actual inspected pages.",
+      "enforcement": "page/image receipt"
+    },
+    {
+      "rule": "test-scope",
+      "required": "Pure reference helpers and focused arithmetic/condition tests, not validated predictive scoring.",
+      "enforcement": "tests and no-promotion claims"
+    },
+    {
+      "rule": "durable-delivery",
+      "required": "Publish ordinary files, updated latest checkpoint/index, verify remote; deliver report/packet/handoff. Do not retry historic restricted payloads.",
+      "enforcement": "hashes, nonforce Git push, readback"
+    }
+  ],
+  "current_authority": "Live default-branch UDA AGENTS and LESSON-INDEX, source-interpretation-provenance, task-time activation, operating-system continuation; HumanDesign source-audit policy, architecture, live checkpoint and B02e handoff.",
+  "prepublication_admission": {
+    "source_provenance": "PASS: source records distinguish actual reports, hypothetical reuse, unresolved syntax and coordinate discrepancies",
+    "no_person_data": "PASS: no participant data read; prior-tracked diff only index and source checkpoint",
+    "source_reading": "PASS: exact source digest,21 original page images and text, no OCR",
+    "test_scope": "PASS:95 distinct focused checks; no full-engine or accuracy claim",
+    "persistence": "OPEN: prepared ordinary files; commit/push/readback and owner files still due"
+  }
+}

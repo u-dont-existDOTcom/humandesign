@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "status": "PREPUBLICATION_SOURCE_BATCH_CHECKS_PASSED",
+  "base": "e126cc55d2321676e5eae6360f9c1a49959d5c99",
+  "batch": "B02f",
+  "new_records": 107,
+  "lilly_records": 774,
+  "ptolemy_records": 1066,
+  "combined_records": 1840,
+  "source_scanned_pages": 21,
+  "new_ocr": false,
+  "unresolved_issues": 28,
+  "historical_cases": 3,
+  "all_historical_charts_partial": true,
+  "source_chart_calendars_resolved": false,
+  "tests_distinct": 95,
+  "test_breakdown": {
+    "new_B02f": 31,
+    "retained_B02e": 30,
+    "retained_methodology": 34
+  },
+  "test_reruns_not_double_counted": true,
+  "all_six_source_index_hashes_verified": true,
+  "exact_arithmetic": {
+    "mother_case_fortune": [
+      "Gemini",
+      15,
+      3
+    ],
+    "printed_fortune_matches": true,
+    "ship_mars_antiscion": [
+      "Cancer",
+      10,
+      34
+    ],
+    "ship_mars_antiscion_to_ascendant_arcminutes": 59,
+    "ship_moon_mercury_trine_residual_arcminutes": 21,
+    "ship_moon_sun_trine_residual_arcminutes": 65,
+    "jupiter_exact_antiscion": null,
+    "jupiter_limit": "Jupiter minute field absent; ninth-degree source assertion retained without zero-filling",
+    "physical_contact_times_computed": false,
+    "historical_calendar_resolved": false,
+    "predictive_validation": false
+  },
+  "prior_source_datasets_frozen": true,
+  "current_participant_outcomes_inspected": false,
+  "runtime_promoted": false,
+  "full_application_tests": false,
+  "independent_source_semantic_review": false,
+  "astronomical_ephemeris_parity": false,
+  "predictive_validation": false,
+  "only_prior_tracked_paths_changed": [
+    "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261009.md",
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json"
+  ],
+  "legacy_blocked_replacements_retried": false,
+  "next": {
+    "pdf_page": 201,
+    "printed_page": 167,
+    "chapter": "XXVII",
+    "position": "heading after self-question paragraph"
+  },
+  "owner_delivery_status": "NOT_YET_PERFORMED"
+}

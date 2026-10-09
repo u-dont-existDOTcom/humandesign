@@ -1,0 +1,61 @@
+{
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "at_home_roles": {
+    "unrelated_familiar": 7,
+    "father": 4,
+    "mother": 10,
+    "child": 5,
+    "sibling": 3,
+    "neighbour": 3
+  },
+  "general_absent_unrelated_origin": 1,
+  "presence_rows": {
+    "angular": {
+      "houses": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "claim": "at home"
+    },
+    "succedent": {
+      "houses": [
+        2,
+        5,
+        8,
+        11
+      ],
+      "claim": "not far from home"
+    },
+    "cadent": {
+      "houses": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "claim": "far from home"
+    }
+  },
+  "ship_roles": {
+    "Ascendant_sign": [
+      "ship",
+      "goods"
+    ],
+    "Moon": [
+      "ship",
+      "goods"
+    ],
+    "Ascendant_lord": [
+      "people_sailing"
+    ]
+  },
+  "event_afflictor_examples": {
+    "3": "neighbour or kinsman",
+    "2": "loss of substance",
+    "4": "parental discontent or land/houses",
+    "5": "discord in tavern/company or through a child"
+  }
+}
