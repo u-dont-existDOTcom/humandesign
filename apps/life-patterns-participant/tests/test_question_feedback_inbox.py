@@ -185,7 +185,7 @@ def test_only_consenting_nonsynthetic_reviews_expose_derived_process_feedback(tm
         )
     response = client.get("/api/admin/question-feedback", headers=auth(settings.admin_token)).json()
     assert response["total"] == 1
-    assert response["feedback"][0]["capture_method"] == "process_feedback"
+    assert response["feedback"][0]["capture_method"] == "derived_process_feedback"
     assert response["feedback"][0]["route_id"] == "G10"
     with store.connection() as db:
         payload["candidate_record"]["evidence_authority"] = "synthetic_release_canary"
@@ -260,3 +260,87 @@ def test_researcher_can_track_feedback_to_a_versioned_revision(tmp_path):
         ).status_code
         == 404
     )
+
+
+def test_reviewer_normality_question_is_context_not_instrument_defect(tmp_path):
+    """A respondent asking if their own behavior is typical is not question critique."""
+    settings, _, app, client = setup_submission(tmp_path)
+    candidate = candidate_record()
+    started = start_review(client, settings.submission_token, candidate)
+    assert started.status_code == 200
+    review_id = started.json()["review_id"]
+    store = app.state.store
+    with store.connection() as db:
+        raw = db.execute("SELECT payload FROM gpt_review_jobs WHERE id=?", (review_id,)).fetchone()[0]
+        state = store.decode(raw)
+        state["worker_state"] = {"turns": [
+            {
+                "turn_id": "import-0001",
+                "canonical_question_id": "A0",
+                "question_text": "A friend wants to meet. What would you do?",
+                "answer_text": "It depends on how recently we met. Isn't this normal?",
+                "derived_process_feedback": ["Isn't this normal?"],
+            },
+            {
+                "turn_id": "import-0002",
+                "canonical_question_id": "G10",
+                "question_text": "You join a group. What changes?",
+                "answer_text": "I told you my constraint already. It depends on the schedule.",
+                "derived_process_feedback": ["I just told you about that constraint."],
+            },
+        ]}
+        db.execute(
+            "UPDATE gpt_review_jobs SET payload=? WHERE id=?",
+            (store.encode(state), review_id),
+        )
+    before=store.gpt_review_read(review_id)
+    response = client.get('/api/admin/question-feedback', headers=auth(settings.admin_token))
+    assert response.status_code == 200
+    data=response.json()
+    assert data['total']==1
+    assert data['contextual_notes_count']==1
+    normality=data['contextual_notes'][0]
+    assert normality['route_id']=='A0'
+    assert normality['feedback_actionability']=='context_only_normality_question'
+    assert normality['capture_method']=='derived_process_feedback'
+    assert normality['recorded_answer_context'].startswith('It depends on how recently')
+    assert 'not a separately recorded reply' in normality['provenance_label']
+    critique=data['feedback'][0]
+    assert critique['route_id']=='G10'
+    assert critique['feedback_actionability']=='possible_question_design_issue'
+    assert critique['recorded_answer_context'].startswith('I told you')
+    assert store.gpt_review_read(review_id)==before
+
+
+def test_uncorroborated_model_inference_needs_context_not_auto_repair(tmp_path):
+    settings, _, app, client=setup_submission(tmp_path)
+    review_id=start_review(client,settings.submission_token,candidate_record()).json()['review_id']
+    with app.state.store.connection() as db:
+        raw=db.execute('SELECT payload FROM gpt_review_jobs WHERE id=?',(review_id,)).fetchone()[0]
+        record=app.state.store.decode(raw)
+        record['worker_state']={'turns':[{
+            'turn_id':'t1','question_text':'What would you do?',
+            'answer_text':'I would choose a reasonable option. That seems obvious.',
+            'derived_process_feedback':['That seems obvious.'],
+        }]}
+        db.execute('UPDATE gpt_review_jobs SET payload=? WHERE id=?',(app.state.store.encode(record),review_id))
+    response=client.get('/api/admin/question-feedback',headers=auth(settings.admin_token)).json()
+    assert response['total']==0
+    assert response['contextual_notes_count']==1
+    assert response['contextual_notes'][0]['feedback_actionability']=='context_only_unanchored_model_inference'
+
+
+def test_dashboard_explains_tracking_and_keeps_context_reviewer_visible(tmp_path):
+    settings, _, _, client=setup_submission(tmp_path)
+    html=client.get('/admin').text
+    script=client.get('/assets/admin.js').text
+    assert 'feedback-contextual-section' in html
+    assert 'feedback-contextual-count' in html
+    assert 'Researcher tracking (optional)' in script
+    for phrase in ('New: not assessed','Investigating: checking source/context',
+                   'Revision proposed: draft wording exists','Resolved: handled','Dismissed: not an actionable'):
+        assert phrase in script
+    assert 'recorded_answer_context' in script
+    assert 'preserved answer, not a complete chat transcript' in script
+    assert 'textContent=item.feedback_text' in script
+    assert 'innerHTML' not in script

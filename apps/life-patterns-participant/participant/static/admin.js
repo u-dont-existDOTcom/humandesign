@@ -37,41 +37,80 @@ async function download(path,filename){
   }catch(error){el("status").textContent=error.message;}
 }
 
+function renderFeedbackItem(item, contextOnly){
+  const article=document.createElement("article");
+  const heading=document.createElement("h3");
+  heading.textContent=(contextOnly?"Context only":"Potential question issue")+` · ${item.route_id}`;
+  const question=document.createElement("p");
+  const promptLabel=item.source_type==="review_derived"
+    ?"Survey prompt associated with the imported record (the remark may refer to a later follow-up)"
+    :"Recorded question";
+  question.textContent=`${promptLabel}: ${item.question_text||"historical question unavailable"}`;
+  const description=document.createElement("p");
+  description.textContent=contextOnly
+    ?"This remark does not clearly criticize the survey question. It is not an automatic rewrite request."
+    :"A reported or reviewer-inferred concern. Its wording is not proof that the question is defective.";
+  const quotation=document.createElement("blockquote");
+  quotation.textContent=item.feedback_text+(item.feedback_truncated?" [excerpt]":"");
+  const origin=document.createElement("small");
+  origin.textContent=`${item.provenance_label||"Source annotation"} · ${item.source_type} · Turn ${item.turn_id}`;
+  article.append(heading,question,description,quotation,origin);
+
+  const fullAnswer=item.recorded_answer_context||"";
+  if(fullAnswer){
+    const context=document.createElement("details");
+    const trigger=document.createElement("summary");
+    trigger.textContent="Show original recorded answer/context";
+    const answer=document.createElement("blockquote");
+    answer.textContent=fullAnswer+(item.answer_context_truncated?" [truncated]":"");
+    const caution=document.createElement("p");
+    caution.textContent="This is the preserved answer, not a complete chat transcript. It may omit intervening assistant messages; the isolated remark is not a separate recorded answer.";
+    context.append(trigger,answer,caution);
+    article.append(context);
+  }
+  if(!contextOnly){
+    const controls=document.createElement("details");
+    const toggle=document.createElement("summary");
+    const current={new:"New",triaging:"Investigating",revision_proposed:"Revision proposed",resolved:"Resolved",dismissed:"Dismissed"};
+    toggle.textContent=`Researcher tracking (optional) — ${current[item.status]||"New"}`;
+    const help=document.createElement("p");
+    help.textContent="New: not assessed; Investigating: checking source/context; Revision proposed: draft wording exists (not live); Resolved: handled; Dismissed: not an actionable question defect. These labels do not change questions or participant answers. You do not need to select one.";
+    const disposition=document.createElement("select");
+    for(const [code,label] of [["new","New — awaiting review"],["triaging","Investigating — checking context"],["revision_proposed","Revision proposed — draft only"],["resolved","Resolved — addressed"],["dismissed","Dismissed — not a question defect"]]){
+      const option=document.createElement("option");
+      option.value=code;option.textContent=label;
+      if(item.status===code)option.selected=true;
+      disposition.append(option);
+    }
+    const revision=document.createElement("input");
+    revision.placeholder="Draft version ID (only for Revision proposed)";
+    revision.value=item.revision_id||"";revision.maxLength=120;
+    const save=document.createElement("button");
+    save.className="secondary";save.textContent="Save researcher status";
+    save.onclick=async()=>{
+      try{
+        await request(`/api/admin/question-feedback/${encodeURIComponent(item.feedback_id)}/disposition`,{status:disposition.value,revision_id:revision.value});
+        await refreshQuestionFeedback();
+      }catch(error){el("status").textContent=error.message;}
+    };
+    controls.append(toggle,help,disposition,revision,save);
+    article.append(controls);
+  }
+  return article;
+}
+
 async function refreshQuestionFeedback(){
   try{
     const result=await request("/api/admin/question-feedback");
     const target=el("question-feedback");target.replaceChildren();
-    const routes=Object.entries(result.by_route||{}).map(([r,n])=>`${r}: ${n}`).join(" · ");
-    el("feedback-summary").textContent=`${result.total} question feedback item(s). ${routes}`;
-    result.feedback.forEach(item=>{
-      const article=document.createElement("article");
-      const heading=document.createElement("h3");
-      heading.textContent=`${item.route_id} · ${item.issue_hint} · ${item.capture_method}`;
-      const question=document.createElement("p");
-      question.textContent=`Question: ${item.question_text||"unmapped historical prompt"}`;
-      const comment=document.createElement("blockquote");
-      comment.textContent=item.feedback_text+(item.feedback_truncated?" [excerpt]":"");
-      const origin=document.createElement("small");
-      origin.textContent=`Source: ${item.source_type} · Turn: ${item.turn_id}`;
-      const disposition=document.createElement("select");
-      for(const [code,label] of [["new","New"],["triaging","Investigating"],["revision_proposed","Revision proposed"],["resolved","Resolved"],["dismissed","Dismissed"]]){
-        const option=document.createElement("option");option.value=code;option.textContent=label;
-        if(item.status===code)option.selected=true;disposition.append(option);
-      }
-      const revision=document.createElement("input");
-      revision.placeholder="Proposed question-version ID (when applicable)";
-      revision.value=item.revision_id||"";revision.maxLength=120;
-      const save=document.createElement("button");save.textContent="Save review status";save.className="secondary";
-      save.onclick=async()=>{
-        try{
-          await request(`/api/admin/question-feedback/${encodeURIComponent(item.feedback_id)}/disposition`,{status:disposition.value,revision_id:revision.value});
-          await refreshQuestionFeedback();
-        }catch(error){el("status").textContent=error.message;}
-      };
-      article.append(heading,question,comment,origin,disposition,revision,save);
-      target.append(article);
-    });
-    if(!result.total)target.textContent="No consenting records with identified question feedback yet.";
+    const contextual=el("feedback-contextual");contextual.replaceChildren();
+    const notes=result.contextual_notes||[];
+    el("feedback-summary").textContent=`${result.total} possible question-design concerns · ${notes.length} other conversational remarks. Tracking is optional; feedback does not automatically change the frozen questionnaire.`;
+    for(const item of result.feedback||[])target.append(renderFeedbackItem(item,false));
+    for(const item of notes)contextual.append(renderFeedbackItem(item,true));
+    el("feedback-contextual-count").textContent=`Other remarks retained for context (${notes.length})`;
+    el("feedback-contextual-section").hidden=notes.length===0;
+    if(!result.total)target.textContent="No actionable question criticisms currently identified.";
   }catch(error){el("status").textContent=error.message;}
 }
 

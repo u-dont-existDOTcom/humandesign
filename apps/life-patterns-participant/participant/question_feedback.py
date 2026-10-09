@@ -28,6 +28,36 @@ _DIRECT_COMPLAINT = re.compile(
 )
 
 
+# A respondent asking whether their *own answer* is normal is not thereby
+# criticizing question wording, duplication or psychometric usefulness.
+_RESPONSE_NORMALITY = re.compile(
+    r"^\s*(?:is(?:n['’]t| not)? (?:that|this|it) (?:pretty |quite )?normal|"
+    r"is (?:my|that) (?:response|reaction|answer) normal|"
+    r"(?:doesn't|does not) (?:everyone|most people) (?:do|feel|think) that)"
+    r"\s*[?!.]*\s*$",
+    re.I,
+)
+# Model-derived snippets require literal evidence of a question-design target.
+# Non-explicit snippets remain inspectable as context, not improvement tasks.
+_DESIGN_REFERENT = re.compile(
+    r"\b(?:questions?|ask(?:ing|ed)?|re[ -]?ask(?:ing|ed)?|repeat(?:ed|ing)?|"
+    r"already (?:answered|told|explained)|i just told you|you just asked|"
+    r"not enough (?:context|detail|information)|ambiguous|under[- ]specified)\b",
+    re.I,
+)
+
+
+def feedback_actionability(item: dict[str, Any]) -> str:
+    """Conservative distinction between instrument objections and conversational asides."""
+
+    quote = str(item.get("feedback_text") or "").strip()
+    if _RESPONSE_NORMALITY.fullmatch(quote):
+        return "context_only_normality_question"
+    if item.get("source_type") == "review_derived" and not _DESIGN_REFERENT.search(quote):
+        return "context_only_unanchored_model_inference"
+    return "possible_question_design_issue"
+
+
 def feedback_issue(text: str) -> str:
     """Triage hint only; do not infer a personality property."""
 
@@ -98,7 +128,11 @@ def collect_feedback(
         for field in ("process_feedback", "derived_process_feedback"):
             parts.extend((part, field) for part in _explicit_feedback_parts(turn.get(field)))
         original = turn.get("answer_text")
-        if isinstance(original, str) and _DIRECT_COMPLAINT.search(original):
+        if (
+            isinstance(original, str)
+            and not turn.get("_skip_auto_answer_scan")
+            and _DIRECT_COMPLAINT.search(original)
+        ):
             parts.append((original.strip(), "explicit_objection_in_answer"))
         for part, evidence_source in parts:
             # De-duplicate a tagged objection also present verbatim in the answer.
@@ -122,6 +156,16 @@ def collect_feedback(
                     "source_id": source_id,
                     "turn_id": turn_id,
                     "observed_at_unix": observed_at,
+                    "recorded_answer_context": (original or "")[:5000]
+                    if isinstance(original, str) else "",
+                    "answer_context_truncated": isinstance(original, str) and len(original) > 5000,
+                    "provenance_label": (
+                        "Reviewer-extracted phrase (not a separately recorded reply)"
+                        if source_type == "review_derived"
+                        else "Explicit source annotation"
+                        if evidence_source in {"process_feedback", "derived_process_feedback"}
+                        else "Explicit critique within answer"
+                    ),
                 }
             )
     return entries
@@ -194,8 +238,9 @@ def researcher_feedback_overview(store: Any) -> dict[str, Any]:
                         "turn_id": turn.get("turn_id"),
                         "canonical_question_id": turn.get("canonical_question_id"),
                         "question_text": turn.get("question_text"),
-                        "answer_text": None,
-                        "process_feedback": turn["derived_process_feedback"],
+                        "answer_text": turn.get("answer_text"),
+                        "_skip_auto_answer_scan": True,
+                        "derived_process_feedback": turn["derived_process_feedback"],
                     }
                 ],
             }
@@ -237,18 +282,31 @@ def researcher_feedback_overview(store: Any) -> dict[str, Any]:
             observed_at=created,
         ):
             found.setdefault(item["feedback_id"], item)
+    contextual_notes = []
+    possible_issues = []
+    for item in found.values():
+        item["feedback_actionability"] = feedback_actionability(item)
+        if item["feedback_actionability"].startswith("context_only_"):
+            contextual_notes.append(item)
+        else:
+            possible_issues.append(item)
     dispositions = store.question_feedback_dispositions()
-    for feedback in found.values():
+    for feedback in possible_issues:
         feedback.update(dispositions.get(feedback["feedback_id"], {
             "status": "new", "revision_id": "",
         }))
     ordered = sorted(
-        found.values(),
+        possible_issues,
         key=lambda row: float(row.get("observed_at_unix") or 0),
         reverse=True,
     )
+    contextual_notes.sort(
+        key=lambda row: float(row.get("observed_at_unix") or 0), reverse=True
+    )
     return {
         "total": len(ordered),
+        "contextual_notes_count": len(contextual_notes),
+        "contextual_notes": contextual_notes,
         "by_route": dict(Counter(row["route_id"] for row in ordered).most_common()),
         "by_issue_hint": dict(Counter(row["issue_hint"] for row in ordered)),
         "feedback": ordered,
