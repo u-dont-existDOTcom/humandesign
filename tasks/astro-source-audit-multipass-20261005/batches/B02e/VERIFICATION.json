@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "PREPUBLICATION_SOURCE_AND_REFERENCE_CHECKS_PASS",
+  "baseline": "888cce311751b15af0c2f8f665e8e1d6be094ea6",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_scope": {
+    "book": "II",
+    "chapters": [
+      "XXII",
+      "XXIII"
+    ],
+    "pdf_pages": [
+      163,
+      180
+    ],
+    "number_of_pages": 18,
+    "original_page_images_inspected": 18
+  },
+  "new_records": 100,
+  "lilly_records": 667,
+  "ptolemy_records": 1066,
+  "combined_records": 1733,
+  "fortune_table_rows": 28,
+  "unresolved_issues": 25,
+  "tests": {
+    "new_B02e": 30,
+    "retained_B02d": 27,
+    "retained_methodology": 34,
+    "distinct_executed": 91,
+    "duplicate_reruns_counted_again": false
+  },
+  "source_index_all_five_batch_hashes_verified": true,
+  "deterministic_data_regeneration_passed": true,
+  "source_physical_complete_witness_claimed": false,
+  "full_application_tests": false,
+  "independent_semantic_review": false,
+  "ephemeris_parity": false,
+  "actual_moving_target_encounter_times_computed": false,
+  "predictive_validation": false,
+  "new_model_promotions": 0,
+  "current_person_data_consulted": false,
+  "new_ocr_performed": false,
+  "previous_source_and_runtime_files_unchanged": true,
+  "legacy_blocked_payloads_retried": false,
+  "tracked_diff_allowlist": [
+    "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261009.md",
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json"
+  ],
+  "next": {
+    "chapter": "II.XXIV",
+    "pdf_page": 181,
+    "printed_page": 147,
+    "fully_extracted": false
+  },
+  "owner_artifact_delivery": "PENDING_PUBLICATION_AND_PLACEMENT"
+}

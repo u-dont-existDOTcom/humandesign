@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_ENGLISH_EXTRACTION_BOOKS_II_III_OPEN",
-  "records_count": 567,
+  "status": "BOOK_I_COMPLETE_BOOK_II_XXII_XXIII_READ_OTHER_SECTIONS_OPEN",
+  "records_count": 667,
   "read_numbered_chapters": [
     1,
     2,
@@ -25,7 +25,9 @@
     18,
     19,
     20,
-    21
+    21,
+    22,
+    23
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -56,17 +58,24 @@
       "records_count": 176,
       "sha256": "70c309b3e342abad588fd1c21cf13b7e226d8d1892bd4095f39b28c00e06bb8f",
       "scope": "Book I XIX-XXI, PDF139-162 / printed105-128; definitions, tables, horary perfection; ends before Book II XXII"
+    },
+    {
+      "id": "B02e",
+      "path": "batches/B02e/RULES.json",
+      "records_count": 100,
+      "sha256": "195eaca0ddbc5925e0f8b1318a5e50acb43be2d4579c1c11d58b98dba3ea1fce",
+      "scope": "BookII.XXII-XXIII PDF163-180; first question, timing scales, Fortune, short recap; no new personal outcome analysis."
     }
   ],
   "next": {
-    "pdf_page": 163,
-    "printed_page": 129,
-    "heading": "Book II Chap XXII \u2014 Questions concerning the first House"
+    "pdf_page": 181,
+    "printed_page": 147,
+    "heading": "BookII ChapXXIV If one shall find the Party at home he would speak withall"
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 22,
+  "read_headed_units_count": 24,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
   "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261009.md",
   "body_table_or_medical_claims_validated": false

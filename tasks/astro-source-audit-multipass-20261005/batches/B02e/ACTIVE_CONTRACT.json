@@ -1,0 +1,41 @@
+{
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch": "B02e",
+  "baseline": "888cce311751b15af0c2f8f665e8e1d6be094ea6",
+  "scope": "Read and extract Lilly Book II XXII-XXIII, PDF163-180, including first worked question and Fortune calculation; source-only, no personal data or runtime model change.",
+  "authority": {
+    "UDA_root_sha": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "source_provenance_sha": "bb58d19c1999afcfdb39a134f24402ed4784926a",
+    "continuation_pattern_sha": "352c213933dbbe005a82f6c54ed602a83fdca93c",
+    "project_AGENTS_sha": "15efee1556a0a44ea2b6e4af0596a7e0cb8c24c3"
+  },
+  "active_obligations": [
+    {
+      "rule": "Source fidelity",
+      "acceptance": "Page-specific qualifiers, alternatives and discrepancies separated from computation and modern inference; images checked for glyphs and tables."
+    },
+    {
+      "rule": "No participant-data use",
+      "acceptance": "No Hale/Joel outcome, survey, chart or fitted-model inspection; same examples as source, no model promotion."
+    },
+    {
+      "rule": "Preserve frozen work",
+      "acceptance": "New B02e plus current index/checkpoint only; no changes to earlier rule datasets or blocked legacy payloads."
+    },
+    {
+      "rule": "Typed verification",
+      "acceptance": "Arithmetic and source structure checks are not empirical validation or independent review."
+    },
+    {
+      "rule": "Persistence/delivery",
+      "acceptance": "Durable branch publication, remote readback, exact next source heading and complete usable artifact packet."
+    }
+  ],
+  "pre_delivery_gate": {
+    "source_fidelity": "PASS: page-linked records, explicit alternatives, visual checks and narrow arithmetic; no independent semantic certification claimed",
+    "outcome_separation": "PASS: only historical source case consulted, no current personal data or predictions",
+    "preservation": "PASS: earlier files unchanged, old index batch hashes verified, exact tracked diff allowlist",
+    "reproducibility": "PASS: deterministic generator,30 new+61 retained checks actually passed",
+    "durability_delivery": "PENDING: publication, exact remote readback, owner report and packet placement"
+  }
+}

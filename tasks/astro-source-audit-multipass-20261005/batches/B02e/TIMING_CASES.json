@@ -1,0 +1,128 @@
+{
+  "source_pages": [
+    164,
+    165,
+    168,
+    171,
+    172,
+    175,
+    176
+  ],
+  "general_eight_degree_example": {
+    "moveable": "8 weeks",
+    "common": "8 months",
+    "fixed": "8 years",
+    "qualification": "only example and general; bounded by other concurring significators"
+  },
+  "house_age": {
+    "order": [
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "default_years_per_house": 5,
+    "long_life_alternative_years_per_house": 6,
+    "selection": "extra year only when source life significators very strong; not adjudicated here",
+    "explicit_examples": [
+      [
+        [
+          11,
+          10
+        ],
+        5,
+        15
+      ],
+      [
+        [
+          8,
+          7
+        ],
+        20,
+        30
+      ],
+      [
+        [
+          6,
+          5,
+          4
+        ],
+        30,
+        45
+      ],
+      [
+        [
+          3,
+          2,
+          1
+        ],
+        45,
+        60
+      ]
+    ]
+  },
+  "case_intervals": [
+    {
+      "id": "T1",
+      "pages": [
+        171
+      ],
+      "geometry": "Sun4:18 Aries minus ninth cusp2:08 Aries",
+      "exact_arcminutes": 130,
+      "author_timing": "left within two months",
+      "direction": "Sun already past cusp, not future cusp perfection"
+    },
+    {
+      "id": "T2",
+      "pages": [
+        174,
+        175
+      ],
+      "geometry": "Moon21:18 Virgo minus Mercury opposition point14:57 Virgo",
+      "exact_arcminutes": 381,
+      "author_timing": "about six months and somewhat more before question"
+    },
+    {
+      "id": "T3",
+      "pages": [
+        172,
+        175
+      ],
+      "geometry": "Jupiter trine point24:24 Virgo minus Moon21:18 Virgo",
+      "exact_arcminutes": 186,
+      "author_timing": "almost/about three years after question",
+      "qualification": "printed chart difference slightly over3 degrees; source prose approximate"
+    },
+    {
+      "id": "T4",
+      "pages": [
+        175
+      ],
+      "geometry": "end Aries30:00 minus Sun4:18 Aries",
+      "exact_arcminutes": 1542,
+      "author_timing": "about26 months, one month for each of about26 degrees",
+      "qualification": "exact remainder25:42; author rounds"
+    },
+    {
+      "id": "T5",
+      "pages": [
+        175,
+        176
+      ],
+      "geometry": "Mars opposition point28:40 Virgo minus Moon21:18 Virgo",
+      "exact_arcminutes": 442,
+      "author_timing": "about3 years and3 quarters",
+      "alternative_author_scale": "might allow one year per degree because question general",
+      "mean_formula": "UNSPECIFIED; do not replace with an exact half-year rule"
+    }
+  ],
+  "no_calendar_conversion": "The chart dual day notation and unspecified timing units are not converted to modern dated forecasts."
+}

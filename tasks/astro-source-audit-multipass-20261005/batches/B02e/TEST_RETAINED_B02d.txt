@@ -1,0 +1,32 @@
+test_body_table_is_historical_only (test_lilly_horary_reference.IntegrityTests.test_body_table_is_historical_only) ... ok
+test_degree_raw_tokens_preserved (test_lilly_horary_reference.IntegrityTests.test_degree_raw_tokens_preserved) ... ok
+test_no_deployed_status (test_lilly_horary_reference.IntegrityTests.test_no_deployed_status) ... ok
+test_source_metadata_and_complete_ids (test_lilly_horary_reference.IntegrityTests.test_source_metadata_and_complete_ids) ... ok
+test_source_scoped_and_not_promoted (test_lilly_horary_reference.IntegrityTests.test_source_scoped_and_not_promoted) ... ok
+test_strength_lookup_not_aggregated (test_lilly_horary_reference.IntegrityTests.test_strength_lookup_not_aggregated) ... ok
+test_unresolved_not_auto_repaired (test_lilly_horary_reference.IntegrityTests.test_unresolved_not_auto_repaired) ... ok
+test_exact_partile_is_not_broad_one_degree (test_lilly_horary_reference.OrbTests.test_exact_partile_is_not_broad_one_degree) ... ok
+test_first_orb_column (test_lilly_horary_reference.OrbTests.test_first_orb_column) ... ok
+test_moiety_example_changes_with_profile (test_lilly_horary_reference.OrbTests.test_moiety_example_changes_with_profile) ... ok
+test_no_default_and_no_fake_planet (test_lilly_horary_reference.OrbTests.test_no_default_and_no_fake_planet) ... ok
+test_other_authors_column (test_lilly_horary_reference.OrbTests.test_other_authors_column) ... ok
+test_reject_synthetic_aspect (test_lilly_horary_reference.OrbTests.test_reject_synthetic_aspect) ... ok
+test_strict_within_and_outside (test_lilly_horary_reference.OrbTests.test_strict_within_and_outside) ... ok
+test_wrapping_and_bad_coordinates (test_lilly_horary_reference.OrbTests.test_wrapping_and_bad_coordinates) ... ok
+test_all_twelve_geometric_table_rows (test_lilly_horary_reference.SignSourceTests.test_all_twelve_geometric_table_rows) ... ok
+test_invalid_sign_rejected (test_lilly_horary_reference.SignSourceTests.test_invalid_sign_rejected) ... ok
+test_literal_nonbeholding_not_completed_by_inference (test_lilly_horary_reference.SignSourceTests.test_literal_nonbeholding_not_completed_by_inference) ... ok
+test_rays_aries (test_lilly_horary_reference.SignSourceTests.test_rays_aries) ... ok
+test_subject_and_asker_not_interchangeable (test_lilly_horary_reference.SignSourceTests.test_subject_and_asker_not_interchangeable) ... ok
+test_turning_complete_twelve_house_rotation (test_lilly_horary_reference.SignSourceTests.test_turning_complete_twelve_house_rotation) ... ok
+test_author_ten_degree_conflict_kept (test_lilly_horary_reference.SolarTests.test_author_ten_degree_conflict_kept) ... ok
+test_combust_requires_same_sign_in_literal_definition (test_lilly_horary_reference.SolarTests.test_combust_requires_same_sign_in_literal_definition) ... ok
+test_exact_boundaries_unresolved (test_lilly_horary_reference.SolarTests.test_exact_boundaries_unresolved) ... ok
+test_literal_zones (test_lilly_horary_reference.SolarTests.test_literal_zones) ... ok
+test_no_absolute_angle_as_proxy (test_lilly_horary_reference.SolarTests.test_no_absolute_angle_as_proxy) ... ok
+test_unwritten_intermediate_range_not_treated_as_attested_example (test_lilly_horary_reference.SolarTests.test_unwritten_intermediate_range_not_treated_as_attested_example) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.004s
+
+OK
