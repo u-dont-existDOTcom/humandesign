@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "task": "survey-recovery-autonomy-20261009",
+  "integration_merge_sha": "bbef9765bb36e08e045def44267bebd8a91c3479",
+  "railway_deployment_id": "e87656e2-d6ab-4e6b-b2e9-540257528e5c",
+  "railway_status": "SUCCESS",
+  "live_action_schema_version": "1.6.0",
+  "live_schema_sha256": "4acb8efa5344527b0f3e44f15e949f39c3e142920e2e86ed0a0137077fc81fa3",
+  "source_schema_matches_live": true,
+  "health_http": 200,
+  "admin_page_http": 200,
+  "unauthorized_researcher_feedback_http": 401,
+  "authorized_researcher_feedback_http": 200,
+  "researcher_feedback_count": 9,
+  "existing_submission_count": 1,
+  "existing_session_count": 4,
+  "test_results": {
+    "participant_passed": 220,
+    "repository_passed": 1021,
+    "astronomy_skipped": 6
+  },
+  "local_real_source_rehearsal": {
+    "http": 200,
+    "exact_matching_ready_review": true,
+    "turns": 84,
+    "cf003_turns": 3,
+    "idempotent_retry": true,
+    "isolated_database_copy": true
+  },
+  "actual_human_production_submission": "BLOCKED_BY_TOOL_SAFETY_BEFORE_EXECUTION",
+  "actual_human_submission_receipt": null,
+  "private_source_answers_committed": false,
+  "private_token_committed": false,
+  "bundle_sha256": "4f93bc658d848abf24cd8fc889cab819cd29d1b88cfb33bc29c366ff6e61b82c",
+  "owner_local_delivery": true,
+  "private_gpt_editor_change": "OWNER_ONLY_PENDING",
+  "scheduled_feedback_review": {
+    "created": true,
+    "daily_local_hour": 8,
+    "first_run_observed": false,
+    "email_sent": false
+  },
+  "active_tf1_question_policy_changed": false
+}
