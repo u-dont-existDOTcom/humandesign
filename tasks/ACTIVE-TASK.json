@@ -1,15 +1,16 @@
 {
   "schema_version": 1,
   "taskId": "survey-recovery-autonomy-20261009",
-  "status": "backend_live_owner_gpt_final_allow_pending",
-  "exclusive": true,
+  "status": "completed_owner_submission_verified",
+  "exclusive": false,
   "requiredBranch": "ops/survey-recovery-live-closeout-20261009",
   "completionCommand": "PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q",
   "supersedes_active_task": "question-feedback-loop-20261008",
   "goal": "Restore real 84-turn frozen survey submission, usable researcher login, automated feedback review, complete question/interpretation inspection and honest model comparison.",
-  "remaining_owner_action": "Apply delivered cumulative GPT package in existing private GPT, attach separately materialized 84-turn primary and relinked 3-turn CF003 from OS Downloads in the SAME saved survey chat, click Allow once for final storage. No re-interview or new review; require real receipt.",
+  "remaining_owner_action": "None for the original 84-turn submission or dashboard access. Future question-version scientific trials are separate decisions.",
   "private_source_policy": "Private source/credentials/review IDs stay outside Git.",
   "engineering_completion": "backend_merged_deployed_and_verified",
-  "actual_human_submission_state": "not_submitted_tool_safety_blocked",
-  "completion_receipt": "tasks/survey-recovery-autonomy-20261009/RELEASE-GATE-STATUS.json"
+  "actual_human_submission_state": "verified_encrypted_production_exact_primary_84_cf003_3",
+  "completion_receipt": "tasks/survey-recovery-autonomy-20261009/RELEASE-GATE-STATUS.json",
+  "desktop_launcher_repair": "tasks/survey-recovery-autonomy-20261009/RESEARCHER-LAUNCHER-REPAIR-20261009.md"
 }

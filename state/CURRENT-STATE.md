@@ -1,3 +1,11 @@
+# Life Patterns follow-up verified — 2026-10-09
+
+The owner's previously pending real survey submission is now verified against Railway production storage: exactly one primary-record hash match, 84 primary behavioral turns, and 3 CF-003 turns; received 2026-10-09 20:35:15 UTC. The local private receipt contains the sensitive identifying handle; no actual private responses are in Git. **Do not re-submit this interview.**
+
+The researcher dashboard's earlier desktop launcher failed through a clipboard/short-lived terminal path. The replacement one-click desktop app was tested against the active Wayland session and loaded the secured dashboard (online HTTP 200 requests for admin, feedback, sessions and submissions); no account password is needed. A mode-0600 feedback HTML snapshot with 10 entries is present in the user's Downloads. The web URL remains authenticated; the launcher uses existing authorized Railway credentials. Generic scripts/tests and operational receipt: `tasks/survey-recovery-autonomy-20261009/RESEARCHER-LAUNCHER-REPAIR-20261009.md`. This closes the prior owner survey completion/dashboard-access gaps; future prospective question validation is separate.
+
+---
+
 # Active Life Patterns owner survey recovery — 2026-10-09
 
 Task `survey-recovery-autonomy-20261009`: backend merged and deployed (live receipt in task folder), private dashboard login, full question atlas, owner 84-answer interpretation, mapping comparison and daily conditional feedback watch delivered. 82+2 materialized primary and relinked CF-003 are verified owner-private OS Downloads files; all original frozen sources stay unchanged. **Actual human final submission NOT STORED:** current session direct POST was blocked by tool safety before execution; no real receipt. The only remaining step is the user applying the cumulative GPT update in the same existing GPT, attaching the two derived JSONs in the same saved interview conversation and clicking Allow on the normal final Action. New review or reinterview is unnecessary. Scheduled feedback watch has not yet run or sent email. Details in task `CURRENT-STATE.md`, `CLOSEOUT.md` and `RELEASE-GATE-STATUS.json`. Older sections below are historical.
