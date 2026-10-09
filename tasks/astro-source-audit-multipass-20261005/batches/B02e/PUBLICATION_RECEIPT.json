@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "status": "RESEARCH_PUBLISHED_AND_OWNER_FILES_VERIFIED",
+  "research_commit": "2f4beffc5c73c58ad36dba4eae9360138d0e6471",
+  "integration_branch": "research/six-rule-life-timing-20261001",
+  "native_github_readback": [
+    "REPORT.md"
+  ],
+  "new_source_records": 100,
+  "total_lilly_records": 667,
+  "combined_ptolemy_lilly_records": 1733,
+  "tests_distinct_actually_passed": 91,
+  "tests_breakdown": {
+    "new": 30,
+    "retained_B02d": 27,
+    "retained_methodology": 34
+  },
+  "previous_source_model_and_runtime_files_unchanged": true,
+  "new_model_promotions": 0,
+  "predictive_validation_claimed": false,
+  "original_book_copied_to_repository": false,
+  "legacy_blocked_payloads_retried": false,
+  "owner_downloads_placement": true,
+  "artifacts": [
+    {
+      "basename": "Astrology-Lilly-First-Question-Fortune-20261009.md",
+      "bytes": 8667,
+      "sha256": "1553699e9b4671e3e37d4398dd25ea1982c769e9f2211c92f7cc77ffcf0eef1a"
+    },
+    {
+      "basename": "Astrology-Lilly-Handoff-B02e-20261009.md",
+      "bytes": 6352,
+      "sha256": "4e2f0fc2d0712a48d8a05874d039e3096b071d6593a328185eb16080e67ba383"
+    },
+    {
+      "basename": "Astrology-Lilly-First-Question-Fortune-Records-20261009.zip",
+      "bytes": 59403,
+      "sha256": "476a7c32236ea906cea11ddc0ab7cc9fdf34f92bb50f093af90548be8585ff4c"
+    },
+    {
+      "basename": "Astrology-Lilly-Continuation-B02e-20261009.md",
+      "bytes": 4221,
+      "sha256": "d18bff9bf65fd9ccd072657f07a6a82c87f4d12db87fb2133a05308749529e3d"
+    }
+  ],
+  "packet_member_count": 23,
+  "packet_scope": "Complete substantive B02e source records, data, generator, reference code and tests, verification logs, report, detailed handoff and updated current index/state. Late publication receipt and the compact optional handoff are outside this already verified ZIP.",
+  "conversation_artifact": {
+    "basename": "Astrology-Lilly-Continuation-B02e-20261009.md",
+    "sha256": "d18bff9bf65fd9ccd072657f07a6a82c87f4d12db87fb2133a05308749529e3d",
+    "exact_same_bytes_confirmed_in_active_container": true
+  },
+  "source_calculation_notes": [
+    "Fortune Aquarius10:27 exactly reproduced",
+    "Static angular gaps do not establish actual planetary contact times",
+    "One7:22gap has a3.75year source estimate plus explicitly reported1year/degree alternative with no exact mean formula"
+  ],
+  "next": {
+    "book": "II",
+    "chapter": "XXIV",
+    "pdf_page": 181,
+    "printed_page": 147,
+    "fully_extracted": false
+  },
+  "parent_status": "OPEN_MULTIPASS_SOURCE_AUDIT",
+  "background_work_promised": false
+}
