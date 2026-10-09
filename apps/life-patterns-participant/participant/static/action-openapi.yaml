@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Life Patterns Independent Review Pilot",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "description": "Asynchronous independent review and exact-source submission for the development pilot."
   },
   "servers": [
@@ -214,7 +214,7 @@
       "post": {
         "operationId": "submitLifePatternsRecords",
         "summary": "Submit independently reviewed frozen records",
-        "description": "Before calling, explain this is one final storage call and one Allow is expected. Say exactly once: Please click Allow on this tool call to continue. Send both exact frozen records as raw JSON strings, without markdown.",
+        "description": "Before the one final storage call, say exactly: Please click Allow on this tool call to continue. Send both complete frozen records. If review_id is absent, recover only by unique exact-source ready-review match. Materialize any composite lacking full turns; never invent data.",
         "security": [
           {
             "bearerAuth": []
@@ -872,7 +872,8 @@
           },
           "review_id": {
             "type": "string",
-            "pattern": "^R-[a-f0-9]{32}$"
+            "pattern": "^R-[a-f0-9]{32}$",
+            "description": "Optional: when missing, the service recovers a UNIQUE ready independent review by comparing every behavioral turn in the full frozen primary record. It never matches on name, DOB or partial source."
           },
           "primary_record_json": {
             "type": "string",
@@ -887,7 +888,6 @@
         },
         "required": [
           "research_use_consented",
-          "review_id",
           "primary_record_json",
           "cf003_record_json"
         ]

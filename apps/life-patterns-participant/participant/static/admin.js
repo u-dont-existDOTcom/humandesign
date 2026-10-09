@@ -2,19 +2,32 @@
 const el=id=>document.getElementById(id);
 const suppliedKey=new URLSearchParams(location.hash.slice(1)).get("key");
 if(suppliedKey){sessionStorage.setItem("lp_admin",suppliedKey);history.replaceState(null,"","/admin");}
-const key=suppliedKey||sessionStorage.getItem("lp_admin")||"";
-const headers={Authorization:`Bearer ${key}`,"Content-Type":"application/json"};
+let key=suppliedKey||sessionStorage.getItem("lp_admin")||"";
+const headers=()=>({Authorization:`Bearer ${key}`,"Content-Type":"application/json"});
+function showAuth(){
+  el("researcher-access").hidden=false;
+  el("researcher-key-label").hidden=Boolean(key);
+  el("researcher-unlock").hidden=Boolean(key);
+  el("researcher-lock").hidden=!key;
+}
+function clearAuth(message){
+  key="";sessionStorage.removeItem("lp_admin");showAuth();
+  el("status").textContent=message||"Researcher access key required. No record counts have been loaded.";
+}
 
 async function request(path,body){
-  const response=await fetch(path,{method:body===undefined?"GET":"POST",headers,body:body===undefined?undefined:JSON.stringify(body)});
+  if(!key)throw new Error("Researcher access required. Enter your private key to load counts.");
+  const response=await fetch(path,{method:body===undefined?"GET":"POST",headers:headers(),body:body===undefined?undefined:JSON.stringify(body)});
   const value=await response.json();
+  if(response.status===401){clearAuth("Researcher key was rejected. Please unlock again.");throw new Error("Researcher access required.");}
   if(!response.ok)throw new Error(value.detail||"Request failed");
   return value;
 }
 
 async function download(path,filename){
   try{
-    const response=await fetch(path,{headers});
+    if(!key)throw new Error("Researcher access required.");
+    const response=await fetch(path,{headers:headers()});
     if(!response.ok)throw new Error((await response.json()).detail);
     const blob=await response.blob();
     const url=URL.createObjectURL(blob);
@@ -121,10 +134,17 @@ el("copy").onclick=async()=>{
   try{await navigator.clipboard.writeText(el("link").value);el("status").textContent="Invitation copied. Send it only to its participant.";}
   catch{el("link").select();el("status").textContent="Copy the selected invitation link.";}
 };
+el("researcher-unlock").onclick=async()=>{
+  const supplied=el("researcher-key").value.trim();
+  if(!supplied){clearAuth("Enter the researcher access key to view records.");return;}
+  key=supplied;el("researcher-key").value="";sessionStorage.setItem("lp_admin",key);showAuth();
+  await refresh();await refreshSubmissions();await refreshQuestionFeedback();
+};
+el("researcher-lock").onclick=()=>clearAuth("Researcher session locked. No records have been loaded.");
 el("refresh").onclick=refresh;
 el("submissions-refresh").onclick=refreshSubmissions;
 el("feedback-refresh").onclick=refreshQuestionFeedback;
 el("feedback-download").onclick=()=>download("/api/admin/question-feedback","life-patterns-question-feedback.json");
-refresh();
-refreshSubmissions();
-refreshQuestionFeedback();
+showAuth();
+if(key){refresh();refreshSubmissions();refreshQuestionFeedback();}
+else{el("status").textContent="Researcher access required. No record counts have been loaded.";}

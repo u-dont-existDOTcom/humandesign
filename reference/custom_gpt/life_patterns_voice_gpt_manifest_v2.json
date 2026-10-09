@@ -1,15 +1,15 @@
 {
   "schema": "life-patterns-voice-gpt-bundle-v1",
-  "version": "2026-10-08.1-question-feedback-inbox",
+  "version": "2026-10-09.1-recovery-access-autonomy",
   "builder_config": {
     "path": "reference/custom_gpt/GPT-BUILDER-CONFIG.md",
     "sha256": "86fbf1102423fadcd03b45a9d09adcb1c1ddee45a0bd3b05874aa7e3c77255e2"
   },
   "instructions": {
     "path": "reference/custom_gpt/life_patterns_voice_interviewer_v2.md",
-    "sha256": "f844b41c4c31720d78fc1017cc78f0fff0a35e8d43f567857096843e5751191e",
-    "characters": 7928,
-    "strict_linebreak_count": 7979
+    "sha256": "7705fe6a031c08e5fe0264ffc690cb709245a44524aaa7a08e050a2df13b1cde",
+    "characters": 7920,
+    "strict_linebreak_count": 7971
   },
   "knowledge_files": [
     {
@@ -34,7 +34,7 @@
     },
     {
       "path": "reference/custom_gpt/ACTION-HANDOFF-GUIDE-v1.md",
-      "sha256": "9d90302684d79ad57e950b72f898c02961558210a73723ea609fe420b769d2fb"
+      "sha256": "3719c669b9436c495332162ce3491504a24fba01018a4c9d8a6a4d0cbc23d8e4"
     },
     {
       "path": "reference/custom_gpt/TENDENCY-FIRST-GUIDE-v1.json",
@@ -63,7 +63,7 @@
   },
   "action_schema": {
     "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
-    "sha256": "8767a5d3c5a0400164e6dcd773c01756c1ef92e4150bf3b914c4b17a44fc8dd4",
+    "sha256": "4acb8efa5344527b0f3e44f15e949f39c3e142920e2e86ed0a0137077fc81fa3",
     "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
     "authentication": "api_key_bearer",
     "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",

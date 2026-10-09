@@ -1,17 +1,12 @@
 {
   "schema_version": 1,
-  "taskId": "question-feedback-loop-20261008",
-  "status": "backend_delivered_owner_editor_pending",
+  "taskId": "survey-recovery-autonomy-20261009",
+  "status": "active",
   "exclusive": true,
-  "requiredBranch": "ops/question-feedback-live-closeout-20261008",
+  "requiredBranch": "fix/survey-recovery-autonomy-20261009",
   "completionCommand": "PYTHONPATH=apps/life-patterns-participant .venv/bin/python -m pytest apps/life-patterns-participant/tests -q",
-  "suspendedTaskSources": [
-    "owner-pilot private GPT editor application remains a separate pending owner step",
-    "unrelated astrology/research tasks"
-  ],
-  "goal": "Surface consented participant question objections to the researcher and produce versioned actual question-rewrite drafts while protecting old studies.",
-  "remaining_owner_action": "Apply the delivered cumulative GPT packet to the same GPT for future objection capture. The versioned v2 question wording proposal remains non-active until prospective study approval/validation.",
-  "supersedes_active_task": "owner-pilot-closeout-repair-20261007",
-  "deployment_receipt": "tasks/question-feedback-loop-20261008/LIVE-DEPLOYMENT-RECEIPT.json",
-  "engineering_completion": "live_backend_verified"
+  "supersedes_active_task": "question-feedback-loop-20261008",
+  "goal": "Restore real 84-turn frozen survey submission, usable researcher login, automated feedback review, complete question/interpretation inspection and honest model comparison.",
+  "remaining_owner_action": "NONE for backend, study submission or private local artifacts; applying cumulative GPT update in private editor remains owner-only after delivery.",
+  "private_source_policy": "Private source/credentials/review IDs stay outside Git."
 }

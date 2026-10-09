@@ -185,13 +185,23 @@ assert json.loads(primary_record_json) == primary
 assert json.loads(cf003_record_json) == secondary
 body = {
     "research_use_consented": True,
-    "review_id": review_id,
+    # Include `review_id` only when already verified. The strict reviewed
+    # endpoint recovers a lost handle from one exact complete ready review.
+    **({"review_id": review_id} if review_id else {}),
     "primary_record_json": primary_record_json,
     "cf003_record_json": cf003_record_json,
 }
 ```
 
 Do not send markdown fences, filenames, summaries or links in those fields. Explain that this phase has **one final storage call and one expected Allow card**, then show the exact approval sentence directly above the Action. Only the success receipt permits saying the records were received.
+
+## Recover complete frozen primary before final submission
+
+Some valid frozen interview exports are **source-preserving composites** with `base_record` (a verified Library filename/id and expected count) plus `appended_turns`, but no top-level `turns`. The reviewed Action deliberately rejects that composite. Do NOT treat the error as missing interview answers or restart collection. With participant's explicit Library permission (or if the exact base is already attached), retrieve the named **exact** frozen base. Require verified source identity, 82 expected base turns (or the actually recorded count), correct sequence, and distinct appended IDs. Form a **new separately versioned materialization** with `turns = deep_copy(base.turns) + deep_copy(composite.appended_turns)`; preserve the original composite and exact text and record their hashes/provenance. Do not paraphrase, silently drop process feedback, fill missing answers, or edit the original files. If base cannot be verified, stop with a specific missing-file report.
+
+If CF-003 was frozen and its `primary_record_sha256` refers to the original composite, create a separately versioned **hash-only relinked copy**: preserve the exact three answers, original secondary and old hash in derivation metadata; recompute only `primary_record_sha256` over the canonical new materialized primary object (UTF-8 JSON sorted keys, compact separators, no ASCII escaping). Verify that CF-003 `turns` are byte/content-identical to the original and that the two new copies parse back exactly.
+
+An opaque ready `review_id` is helpful but **no longer mandatory** for `submitLifePatternsRecords`. If missing, omit `review_id` rather than guessing or searching unrelated accounts: Railway now recovers it **only** by matching every exact behavioral question/answer/route/condition to one uniquely matching saved ready independent review. A nonunique match, incomplete `turns`, different behavioral wording, or other source mismatch still fails before storage. Clarification `process_feedback` may be retained as separate process notes; no behavioral text may differ. This recovery is part of the same one final storage call; no additional Allow card is needed. Only the actual encrypted-storage receipt confirms success.
 
 ## Question-design objections returned to the researcher
 
