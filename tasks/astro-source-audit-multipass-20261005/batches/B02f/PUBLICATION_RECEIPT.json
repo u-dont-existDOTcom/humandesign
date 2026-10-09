@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "RESEARCH_PUBLISHED_READ_BACK_AND_OWNER_FILES_VERIFIED",
+  "research_commit": "8e6699215eacdc0796d1b78ea12764fca7f706a0",
+  "integration_branch": "research/six-rule-life-timing-20261001",
+  "native_github_readback": [
+    "REPORT.md"
+  ],
+  "new_source_records": 107,
+  "lilly_records": 774,
+  "ptolemy_lilly_records": 1840,
+  "tests_actually_passed": 95,
+  "test_breakdown": {
+    "new_B02f": 31,
+    "retained_B02e": 30,
+    "retained_methodology": 34
+  },
+  "unresolved_issues": 28,
+  "historical_cases": 3,
+  "hypothetical_reuses_not_validation_cases": true,
+  "previous_source_model_and_runtime_unchanged": true,
+  "runtime_promotions": 0,
+  "predictive_validation_claimed": false,
+  "legacy_blocked_payloads_retried": false,
+  "raw_source_scan_committed": false,
+  "owner_downloads_placement": true,
+  "artifacts": [
+    {
+      "basename": "Astrology-Lilly-Presence-Ships-20261009.md",
+      "bytes": 9139,
+      "sha256": "ffd530ef786cbe303628fae770fa68cdd0acf1dc0a7b809aa3ac00b17722ee60"
+    },
+    {
+      "basename": "Astrology-Lilly-Handoff-B02f-20261009.md",
+      "bytes": 6427,
+      "sha256": "ecd38bb3fece25ba5dd6be7949e52a53351defa1cfceb30615d8a1cd44a6a95b"
+    },
+    {
+      "basename": "Astrology-Lilly-Presence-Ships-Records-20261009.zip",
+      "bytes": 62904,
+      "sha256": "27bf6343dc8c3f45db8d081681827614e55d0085ad308852e0477a51ee680a9a"
+    }
+  ],
+  "packet_member_count": 23,
+  "packet_scope": "Complete substantive source batch, source data, builder, code/tests, scoped test logs, receipts, report and detailed handoff, plus updated index and dated state; this later publication receipt is outside the already verified packet.",
+  "conversation_artifact": {
+    "basename": "Astrology-Lilly-Handoff-B02f-20261009.md",
+    "bytes": 6427,
+    "sha256": "ecd38bb3fece25ba5dd6be7949e52a53351defa1cfceb30615d8a1cd44a6a95b",
+    "exact_same_bytes_confirmed_in_active_container": true
+  },
+  "prepublication_labels": "Earlier active contract, manifest and verification retain their preparation-stage state; this receipt records completed subsequent publication and delivery.",
+  "next": {
+    "book": "II",
+    "chapter": "XXVII",
+    "pdf_page": 201,
+    "printed_page": 167,
+    "position": "heading after self-question paragraph",
+    "fully_extracted": false
+  },
+  "parent_outcome": "OPEN_MULTIPASS_SOURCE_AUDIT",
+  "background_work_promised": false
+}
