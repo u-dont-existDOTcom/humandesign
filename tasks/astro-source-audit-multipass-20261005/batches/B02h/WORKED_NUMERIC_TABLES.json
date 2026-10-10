@@ -1,0 +1,1273 @@
+{
+  "schema_version": "b02h-independent-numeric-transcription-1.0",
+  "provenance": "Direct original whole-page PNG reading, followed by original-PDF400dpi chart crops. No prior producer records or modern ephemerides used.",
+  "layers_policy": {
+    "transcription": "Keep printed numbers and actual precision; glyph/sign basis and residual ambiguity explicit.",
+    "house_location": "Diagram wedge, exact-longitude relationship to cusps, and prose house influence are separate fields.",
+    "arithmetic": "Subtraction of transcribed longitudes only; not an ephemeris or elapsed-clock-time computation.",
+    "judgment": "Source qualitative degrees, timing scales, directions, dignity, and orb language kept separately.",
+    "parity": "No modern sky, weekday/calendar, timezone, latitude, longitude, or planetary-hour parity computation."
+  },
+  "chart_count": 2,
+  "main_coordinate_entry_count": 44,
+  "charts": [
+    {
+      "id": "CH01",
+      "case_id": "EX01",
+      "source": {
+        "pdf_page": 230,
+        "literal_visible_folio": "196",
+        "anchor": "Where an absent Brother was?; circular chart"
+      },
+      "chapter_association": "XXX, with figure and setup printed before the explicit chapter heading onPDF231",
+      "figure_type": "Circular outer boundary, traditional twelve-house divisions around a central panel",
+      "whole_page_evidence": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-230.png",
+      "high_resolution_evidence": "/workspace/scratch/bd2460f96de0/b02h-example-review/evidence/p230-hi.png",
+      "datetime": {
+        "raw_center_lines": [
+          "Friday.7.Novem:",
+          "1645",
+          "hora: meridiana",
+          "Quaestion:"
+        ],
+        "source_date_components": {
+          "year": 1645,
+          "month": 11,
+          "day": 7
+        },
+        "source_weekday": "Friday",
+        "time_as_printed": "hora: meridiana",
+        "time_translation": "noon",
+        "numeric_clock_expansion": "12:00",
+        "time_expansion_status": "Translation of the source noon label, not a measured modern clock timestamp.",
+        "calendar_style": null,
+        "time_zone": null,
+        "latitude": null,
+        "longitude": null,
+        "chart_location_explicit_in_center": null,
+        "geographic_context_from_prose": [
+          "Querent and absent brother are connected with London.",
+          "Brother's journey was into the West of England.",
+          "Lilly explicitly reduces an ephemeris time to the London meridian onPDF232."
+        ],
+        "modern_calendar_conversion_performed": false,
+        "weekday_parity_checked": false
+      },
+      "cusps": {
+        "H01": {
+          "raw_visible_transcription": "♑ 20 27",
+          "sign": "Capricorn",
+          "degrees": 20,
+          "minutes": 27,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H02": {
+          "raw_visible_transcription": "♓ 14.52",
+          "sign": "Pisces",
+          "degrees": 14,
+          "minutes": 52,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H03": {
+          "raw_visible_transcription": "♉ 2.0",
+          "sign": "Taurus",
+          "degrees": 2,
+          "minutes": 0,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H04": {
+          "raw_visible_transcription": "♉ 25.28",
+          "sign": "Taurus",
+          "degrees": 25,
+          "minutes": 28,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H05": {
+          "raw_visible_transcription": "♊ 9.36",
+          "sign": "Gemini",
+          "degrees": 9,
+          "minutes": 36,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H06": {
+          "raw_visible_transcription": "♊ 24.54",
+          "sign": "Gemini",
+          "degrees": 24,
+          "minutes": 54,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H07": {
+          "raw_visible_transcription": "♋ 20 27",
+          "sign": "Cancer",
+          "degrees": 20,
+          "minutes": 27,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H08": {
+          "raw_visible_transcription": "♍ 14.52",
+          "sign": "Virgo",
+          "degrees": 14,
+          "minutes": 52,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H09": {
+          "raw_visible_transcription": "♏ 2.0",
+          "sign": "Scorpio",
+          "degrees": 2,
+          "minutes": 0,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H10": {
+          "raw_visible_transcription": "♏ 25.28",
+          "sign": "Scorpio",
+          "degrees": 25,
+          "minutes": 28,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H11": {
+          "raw_visible_transcription": "♐ 9.36",
+          "sign": "Sagittarius",
+          "degrees": 9,
+          "minutes": 36,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H12": {
+          "raw_visible_transcription": "♐ 24.54",
+          "sign": "Sagittarius",
+          "degrees": 24,
+          "minutes": 54,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        }
+      },
+      "planets": {
+        "Saturn": {
+          "raw_visible_transcription": "♄ 29 13; ♈; ℞",
+          "sign": "Aries",
+          "degrees": 29,
+          "minutes": 13,
+          "sign_reading_basis": "explicit_adjacent_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 2,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "The Aries glyph and retrograde mark are printed beneath the coordinate.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": "℞",
+          "motion": "retrograde"
+        },
+        "Jupiter": {
+          "raw_visible_transcription": "♃ [4, with possible joined leading1] 55",
+          "sign": null,
+          "degrees": null,
+          "minutes": 55,
+          "sign_reading_basis": "sign_not_adjacent; conditional diagram assignment",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 6,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "The Jupiter glyph itself resembles joined numerals. Both assigned reader and root independently inspected the original crops and could not certify a separate tens digit. Canonical degree and sign stay null.",
+          "unresolved_items": [
+            "Plausible degree readings4 and14 remain unresolved. Initial24 is retained only as explicitly provisional; it is especially vulnerable to counting part of the Jupiter glyph as a digit.",
+            "No sign is separately printed beside the entry. If the degree is14 or4, sixth-wedge boundaries Gemini24:54–Cancer20:27 locate it in Cancer. If24, the geometric reading is Gemini24:55; Cancer24:55 would lie beyond the seventh cusp."
+          ],
+          "tentative_degrees": null,
+          "degree_reading_candidates": [
+            4,
+            14,
+            24
+          ],
+          "candidate_readings": [
+            {
+              "degrees": 4,
+              "minutes": 55,
+              "diagram_derived_sign": "Cancer",
+              "status": "plausible unresolved"
+            },
+            {
+              "degrees": 14,
+              "minutes": 55,
+              "diagram_derived_sign": "Cancer",
+              "status": "plausible unresolved"
+            },
+            {
+              "degrees": 24,
+              "minutes": 55,
+              "diagram_derived_sign": "Gemini",
+              "status": "initial provisional reading; possible glyph missegmentation"
+            }
+          ],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Mars": {
+          "raw_visible_transcription": "♂ 29.10",
+          "sign": "Scorpio",
+          "degrees": 29,
+          "minutes": 10,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 10,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "No independent adjacent body-sign glyph; the coordinate lies in the Scorpio portion of the tenth wedge.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Sun": {
+          "raw_visible_transcription": "☉ 25.28 at the ♏ MC line",
+          "sign": "Scorpio",
+          "degrees": 25,
+          "minutes": 28,
+          "sign_reading_basis": "shared_sign_and_coordinate_with_MC",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 10,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "The solar entry sits on the MC line; the printed25:28 is shared with the cusp notation. Do not count it as an independently duplicated measurement.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Venus": {
+          "raw_visible_transcription": "♀ 28 53",
+          "sign": "Sagittarius",
+          "degrees": 28,
+          "minutes": 53,
+          "sign_reading_basis": "diagram_derived_and_confirmed_by_prose",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 12,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "The entry is in the twelfth wedge; prose onPDF232–233 explicitly names Sagittarius and the impending Capricorn ingress.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Mercury": {
+          "raw_visible_transcription": "☿ 8.28",
+          "sign": "Scorpio",
+          "degrees": 8,
+          "minutes": 28,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 9,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "No adjacent independent body-sign label; Scorpio8:28 is within the ninth wedge.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Moon": {
+          "raw_visible_transcription": "☽ 15.29",
+          "sign": "Scorpio",
+          "degrees": 15,
+          "minutes": 29,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 9,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "Tight high-resolution crop clearly supports15:29, not25:29.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        }
+      },
+      "nodes": {
+        "NorthNode": {
+          "raw_visible_transcription": "☊ 14 ♌",
+          "sign": "Leo",
+          "degrees": 14,
+          "minutes": null,
+          "sign_reading_basis": "explicit_adjacent_sign",
+          "numeric_precision": "whole_degree_printed_only_minutes_unspecified",
+          "diagram_wedge": 7,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "No minute value is printed; do not fill00.",
+          "unresolved_items": []
+        },
+        "SouthNode": {
+          "raw_visible_transcription": "☋ 14 ♒",
+          "sign": "Aquarius",
+          "degrees": 14,
+          "minutes": null,
+          "sign_reading_basis": "explicit_adjacent_sign",
+          "numeric_precision": "whole_degree_printed_only_minutes_unspecified",
+          "diagram_wedge": 1,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "No minute value is printed; do not fill00.",
+          "unresolved_items": []
+        }
+      },
+      "lots": {
+        "PartOfFortune": {
+          "raw_visible_transcription": "⊗ 10.28",
+          "sign": "Capricorn",
+          "degrees": 10,
+          "minutes": 28,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 12,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "At degree10:28, the location between Sagittarius24:54 and Capricorn20:27 specifies Capricorn; no fortune formula is stated in this span.",
+          "unresolved_items": []
+        }
+      },
+      "other_visible_sign_labels": [
+        {
+          "sign": "Libra",
+          "diagram_wedge": 8,
+          "role": "Standalone intercepted-sign label, not a planet or cusp coordinate."
+        },
+        {
+          "sign": "Aquarius",
+          "diagram_wedge": 1,
+          "role": "Printed with south node; intercepted between first and second cusp signs."
+        },
+        {
+          "sign": "Aries",
+          "diagram_wedge": 2,
+          "role": "Printed with Saturn; intercepted between second and third cusp signs."
+        },
+        {
+          "sign": "Leo",
+          "diagram_wedge": 7,
+          "role": "Printed with north node; intercepted between seventh and eighth cusp signs."
+        }
+      ],
+      "source_timing_statements": [
+        {
+          "source": {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "anchor": "true time of the trine aspect"
+          },
+          "raw": "five of the clocke ... in the afternoon",
+          "reading": "17:00 in the cited ephemeris convention",
+          "precision": "source clock hour",
+          "verified_against_original_ephemeris": false
+        },
+        {
+          "source": {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "anchor": "with reduction to our London Meridian"
+          },
+          "raw": "a little after foure",
+          "reading": "a little after16:00 at the London meridian",
+          "precision": "approximate; no reduction minutes supplied",
+          "recomputed": false
+        },
+        {
+          "source": {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "anchor": "about the very moment of time"
+          },
+          "raw": "about four",
+          "reading": "reported carrier episode about16:00 in the surrounding afternoon context",
+          "precision": "approximate",
+          "endpoint_id": "EP01"
+        },
+        {
+          "source": {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "anchor": "wanted one degree"
+          },
+          "raw": "one degree ... less then one week",
+          "reading": "qualitative degree-to-week judgment",
+          "exact_minute_arithmetic_is_separate": true
+        },
+        {
+          "source": {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "anchor": "Tuesday following"
+          },
+          "raw": "the Tuesday following",
+          "reading": "source-relative weekday only",
+          "calendar_date_printed": null,
+          "endpoint_id": "EP02"
+        }
+      ],
+      "diagram_prose_comparisons": [
+        {
+          "topic": "Venus ingress distance",
+          "diagram": "Venus Sagittarius28:53",
+          "prose": "wanted one degree of getting out of Sagittarius",
+          "status": "Retain both: exact remaining1:07 versus qualitative one degree.",
+          "arithmetic_ref": "AR04"
+        },
+        {
+          "topic": "Moon/Jupiter separation",
+          "diagram": "Moon Scorpio15:29; Jupiter canonical degree/sign null; plausible4:55 or14:55 with derived Cancer sign, initial provisional24:55 with derived Gemini sign",
+          "prose": "Moon separated from a dexter trine of Jupiter",
+          "status": "Do not use the prose to overwrite an uncertain printed Jupiter degree. ArithmeticAR01 contains explicitly conditional alternatives."
+        },
+        {
+          "topic": "Moon next Sun contact",
+          "diagram": "Moon Scorpio15:29, Sun/MC Scorpio25:28",
+          "prose": "Moon next applies to conjunction of Sun on the MC cusp",
+          "status": "Printed figures permit a9:59 longitude gap; this is not9h59m and does not establish a contact time.",
+          "arithmetic_ref": "AR02"
+        }
+      ]
+    },
+    {
+      "id": "CH02",
+      "case_id": "EX02",
+      "hypothetical_reuse_case_id": "HY01",
+      "source": {
+        "pdf_page": 234,
+        "literal_visible_folio": "200",
+        "anchor": "Square figure above A Report that Cambridge was taken by the King's Forces; if true?"
+      },
+      "chapter_association": "XXXI",
+      "figure_type": "Square outer boundary with twelve house divisions around a central panel",
+      "whole_page_evidence": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-234.png",
+      "high_resolution_evidence": "/workspace/scratch/bd2460f96de0/b02h-example-review/evidence/p234-hi.png",
+      "datetime": {
+        "raw_center_date": "11. Apr: 1643",
+        "raw_center_time": "4ʰ 31 P.M.",
+        "source_date_components": {
+          "year": 1643,
+          "month": 4,
+          "day": 11
+        },
+        "source_weekday_word": null,
+        "time_hour_as_printed": 4,
+        "time_minute_as_printed": 31,
+        "meridiem_as_printed": "P.M.",
+        "clock_expansion": "16:31",
+        "clock_expansion_status": "Notation expansion only; no timezone conversion.",
+        "calendar_style": null,
+        "time_zone": null,
+        "latitude": null,
+        "longitude": null,
+        "chart_location_explicit_in_center": null,
+        "modern_calendar_conversion_performed": false,
+        "weekday_parity_checked": false
+      },
+      "day_hour_lords": {
+        "raw_annotation": "Dñs { diei ♂ / hor. ♀ }",
+        "day_lord": "Mars",
+        "hour_lord": "Venus",
+        "basis": "Printed glyph labels; not recomputed from the date, hour, or planetary-hour system.",
+        "other_center_mark": "A small flourish/abbreviation-like mark occurs above the left side of the day/hour label; it is not assigned a coordinate or planetary meaning here."
+      },
+      "moon_annotation": {
+        "raw": "☽ a ✶ ♃ ad □ ♀",
+        "expansion": "Moon from sextile Jupiter to square Venus",
+        "basis": "Direct center annotation, corroborated by the prose transfer and the final paragraph's recent sextile / applying square."
+      },
+      "cusps": {
+        "H01": {
+          "raw_visible_transcription": "♎ 4.37",
+          "sign": "Libra",
+          "degrees": 4,
+          "minutes": 37,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H02": {
+          "raw_visible_transcription": "♎ 26.37",
+          "sign": "Libra",
+          "degrees": 26,
+          "minutes": 37,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H03": {
+          "raw_visible_transcription": "♏ 26.7",
+          "sign": "Scorpio",
+          "degrees": 26,
+          "minutes": 7,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H04": {
+          "raw_visible_transcription": "♑ 6.10",
+          "sign": "Capricorn",
+          "degrees": 6,
+          "minutes": 10,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H05": {
+          "raw_visible_transcription": "♒ 14.48",
+          "sign": "Aquarius",
+          "degrees": 14,
+          "minutes": 48,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H06": {
+          "raw_visible_transcription": "♓ 12.41",
+          "sign": "Pisces",
+          "degrees": 12,
+          "minutes": 41,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H07": {
+          "raw_visible_transcription": "♈ 4.37",
+          "sign": "Aries",
+          "degrees": 4,
+          "minutes": 37,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H08": {
+          "raw_visible_transcription": "♈ 26.37",
+          "sign": "Aries",
+          "degrees": 26,
+          "minutes": 37,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H09": {
+          "raw_visible_transcription": "♉ 26.7",
+          "sign": "Taurus",
+          "degrees": 26,
+          "minutes": 7,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H10": {
+          "raw_visible_transcription": "♋ 6.10",
+          "sign": "Cancer",
+          "degrees": 6,
+          "minutes": 10,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H11": {
+          "raw_visible_transcription": "♌ 14.48",
+          "sign": "Leo",
+          "degrees": 14,
+          "minutes": 48,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        },
+        "H12": {
+          "raw_visible_transcription": "♍ 12.41",
+          "sign": "Virgo",
+          "degrees": 12,
+          "minutes": 41,
+          "sign_reading_basis": "explicit_cusp_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": null,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "House number follows the standard consecutive divisions visible in this figure; no cusp was computed.",
+          "unresolved_items": []
+        }
+      },
+      "planets": {
+        "Saturn": {
+          "raw_visible_transcription": "♄ 2.7",
+          "sign": "Aries",
+          "degrees": 2,
+          "minutes": 7,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 6,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "Drawn before the seventh cusp. The prose says Saturn vitiates that cusp; the exact longitude lies2:30 short of it.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Jupiter": {
+          "raw_visible_transcription": "♃ 8.28",
+          "sign": "Aries",
+          "degrees": 8,
+          "minutes": 28,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 7,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "The prose independently calls Jupiter placed in the seventh.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Mars": {
+          "raw_visible_transcription": "♂ 1.50",
+          "sign": "Cancer",
+          "degrees": 1,
+          "minutes": 50,
+          "sign_reading_basis": "nearby_explicit_Cancer_cusp_label_and_prose",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 9,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "Drawn before the tenth cusp,4:20 short in longitude; the prose says he vitiates that cusp and enters his fall Cancer.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Sun": {
+          "raw_visible_transcription": "☉ 1.23",
+          "sign": "Taurus",
+          "degrees": 1,
+          "minutes": 23,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 8,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "At degree1:23 in the eighth wedge Aries26:37–Taurus26:07, the sign is Taurus.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Venus": {
+          "raw_visible_transcription": "♀ 15",
+          "sign": "Pisces",
+          "degrees": 15,
+          "minutes": null,
+          "sign_reading_basis": "diagram_derived_and_prose_exaltation_context",
+          "numeric_precision": "whole_degree_printed_only_minutes_unspecified",
+          "diagram_wedge": 6,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "Only degree15 is printed. The source does not print00 minutes.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Mercury": {
+          "raw_visible_transcription": "☿ 5.40",
+          "sign": "Aries",
+          "degrees": 5,
+          "minutes": 40,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 7,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "The coordinate is inside the seventh wedge Aries4:37–Aries26:37.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        },
+        "Moon": {
+          "raw_visible_transcription": "☽ 12.43; ♊",
+          "sign": "Gemini",
+          "degrees": 12,
+          "minutes": 43,
+          "sign_reading_basis": "explicit_adjacent_sign",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 9,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "The prose explicitly calls Moon cadent and in Gemini.",
+          "unresolved_items": [],
+          "motion_mark_as_printed": null,
+          "motion": null
+        }
+      },
+      "nodes": {
+        "NorthNode": {
+          "raw_visible_transcription": "☊ 2.4",
+          "sign": "Libra",
+          "degrees": 2,
+          "minutes": 4,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 12,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "Drawn before the ascendant. The prose calls it on the cusp; arithmetic leaves2:33 to Libra4:37.",
+          "unresolved_items": []
+        },
+        "SouthNode": {
+          "raw_visible_transcription": "☋ 2.4",
+          "sign": "Aries",
+          "degrees": 2,
+          "minutes": 4,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 6,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "Drawn beside Saturn before the seventh cusp; no separate prose claim here.",
+          "unresolved_items": []
+        }
+      },
+      "lots": {
+        "PartOfFortune": {
+          "raw_visible_transcription": "⊗ 15.57",
+          "sign": "Scorpio",
+          "degrees": 15,
+          "minutes": 57,
+          "sign_reading_basis": "diagram_derived_from_wedge_and_cusps",
+          "numeric_precision": "degree_and_minute",
+          "diagram_wedge": 2,
+          "source_proximity_or_role_statement": null,
+          "reading_note": "The second wedge runs Libra26:37 to Scorpio26:07; degree15:57 is therefore Scorpio. No lot formula is supplied in this span.",
+          "unresolved_items": []
+        }
+      },
+      "other_visible_sign_labels": [
+        {
+          "sign": "Sagittarius",
+          "diagram_wedge": 3,
+          "role": "Standalone intercepted-sign label, not another body or cusp coordinate."
+        },
+        {
+          "sign": "Gemini",
+          "diagram_wedge": 9,
+          "role": "Printed with Moon; intercepted between ninth and tenth cusp signs."
+        }
+      ],
+      "diagram_prose_comparisons": [
+        {
+          "topic": "Mars at tenth cusp",
+          "diagram": "Mars Cancer1:50; MC Cancer6:10",
+          "prose": "Mars did vitiate the cusp of the tenth",
+          "status": "Compatible qualitative cusp influence claim; not an exact conjunction. No missing threshold is supplied.",
+          "arithmetic_ref": "AR05"
+        },
+        {
+          "topic": "Saturn at seventh cusp",
+          "diagram": "Saturn Aries2:07; seventh Aries4:37",
+          "prose": "Saturn did vitiate the cusp of the seventh",
+          "status": "Compatible qualitative cusp influence claim; distinguish printed longitude from drawn house and source influence.",
+          "arithmetic_ref": "AR06"
+        },
+        {
+          "topic": "North node on ascendant",
+          "diagram": "North node Libra2:04; ascendant Libra4:37",
+          "prose": "north node on the cusp of the ascendant",
+          "status": "Qualitative on-cusp statement; exact gap2:33.",
+          "arithmetic_ref": "AR07"
+        },
+        {
+          "topic": "Moon/Jupiter platick sextile",
+          "diagram": "Moon Gemini12:43; Jupiter Aries8:28",
+          "prose": "platick sextile, lately separated and yet within orbs",
+          "status": "Their longitude separation is64:15,4:15 past the exact sextile; no source orb boundary is printed.",
+          "arithmetic_ref": "AR09"
+        },
+        {
+          "topic": "Moon/Venus applying square",
+          "diagram": "Moon Gemini12:43; Venus Pisces15 with minutes absent",
+          "prose": "Moon applies by dexter square in signs of short ascensions",
+          "status": "No exact-minute square gap can be given without an assumption about Venus' omitted minutes.",
+          "arithmetic_ref": "AR10"
+        }
+      ]
+    }
+  ],
+  "source_defined_or_source_referenced_calculations": [
+    {
+      "id": "TURN01",
+      "layer": "house_number_expansion",
+      "source": {
+        "pdf_page": 231,
+        "literal_visible_folio": "197",
+        "anchor": "eighth as to the ascendant of the quesited"
+      },
+      "source_rule": "Use eighth from the brother's ascendant, which is radical third.",
+      "expansion": "((3 + 8 - 2) mod12) +1 =10",
+      "result": "radical tenth",
+      "source_named_lord": "Mars",
+      "note": "The number10 is inclusive arithmetic expansion; the source explicitly gives Mars and the relative eighth wording."
+    },
+    {
+      "id": "TIME01",
+      "layer": "source_reported_ephemeris_and_meridian_reduction",
+      "source": {
+        "pdf_page": 232,
+        "literal_visible_folio": "198",
+        "anchor": "Ephemeris of Eichstadius ... London Meridian"
+      },
+      "source_inputs": "1645 November7, Venus-Saturn trine; cited ephemeris five in the afternoon.",
+      "source_result": "A little after four on the London meridian.",
+      "exact_reduction_minutes": null,
+      "original_ephemeris_checked": false,
+      "recomputed": false
+    },
+    {
+      "id": "TIME02",
+      "layer": "source_qualitative_symbolic_timing",
+      "source": {
+        "pdf_page": 233,
+        "literal_visible_folio": "199",
+        "anchor": "one degree ... might well denote a week"
+      },
+      "source_inputs": [
+        "Venus is described as one degree short of Sagittarius' end.",
+        "Sagittarius is bicorporeal/common.",
+        "Nature of this question."
+      ],
+      "source_scale": "One degree might denote a week.",
+      "source_forecast": "Home in less than one week.",
+      "separate_exact_residual_reference": "AR04",
+      "universal_rate": false
+    },
+    {
+      "id": "TIME03",
+      "layer": "source_relative_weekday_report",
+      "source": {
+        "pdf_page": 233,
+        "literal_visible_folio": "199",
+        "anchor": "Tuesday following"
+      },
+      "source_result": "Brother came home the Tuesday following.",
+      "source_astrological_circumstance": "Moon came to Venus' body; Venus now Capricorn, own terms and diurnal triplicity.",
+      "printed_calendar_date": null,
+      "printed_clock_time": null,
+      "modern_calendar_or_contact_time_computed": false
+    },
+    {
+      "id": "DIR01",
+      "layer": "source_qualitative_direction_inference",
+      "source": {
+        "pdf_page": 232,
+        "literal_visible_folio": "198",
+        "anchor": "leaving Sagittarius ... entring Capricorn"
+      },
+      "inputs": [
+        "Known trip to West of England.",
+        "Sagittarius called northeast.",
+        "Capricorn called south.",
+        "Venus leaving first and entering second."
+      ],
+      "source_result": "Southeast part of the county visited.",
+      "numeric_formula_given": false
+    },
+    {
+      "id": "DIST01",
+      "layer": "source_qualitative_distance_inference",
+      "source": {
+        "pdf_page": 232,
+        "literal_visible_folio": "198",
+        "anchor": "Orientall quarter of Heaven"
+      },
+      "inputs": [
+        "Venus not far removed from ascendant.",
+        "Venus in oriental quarter."
+      ],
+      "source_result": "Not above one or two days' journey from London.",
+      "numeric_distance_formula_given": false
+    }
+  ],
+  "arithmetic_checks": [
+    {
+      "id": "AR01",
+      "layer": "conditional_exact_longitude_arithmetic_only",
+      "source": {
+        "pdf_page": 230,
+        "literal_visible_folio": "196",
+        "anchor": "Moon and Jupiter entries"
+      },
+      "inputs": {
+        "Moon": "Scorpio15:29",
+        "Jupiter": "Degree unresolved; sign conditional on diagram wedge"
+      },
+      "operation": "Subtract each provisional Jupiter longitude from Moon Scorpio15:29, then subtract120:00 for a trine residual.",
+      "result": null,
+      "conditional_alternatives": [
+        {
+          "Jupiter": "Cancer4:55",
+          "Moon_minus_Jupiter": "130:34",
+          "beyond_120_degree_trine": "10:34",
+          "reading_status": "plausible unresolved"
+        },
+        {
+          "Jupiter": "Cancer14:55",
+          "Moon_minus_Jupiter": "120:34",
+          "beyond_120_degree_trine": "0:34",
+          "reading_status": "plausible unresolved"
+        },
+        {
+          "Jupiter": "Gemini24:55",
+          "Moon_minus_Jupiter": "140:34",
+          "beyond_120_degree_trine": "20:34",
+          "reading_status": "initial provisional degree reading; possible Jupiter-glyph missegmentation"
+        }
+      ],
+      "status": "Every row is conditional on an uncertain Jupiter reading; no canonical residual is certified. Do not use the prose or any residual to validate the reading.",
+      "source_judgment_separate": "Moon separated from dexter trine of Jupiter,PDF231.",
+      "time_or_modern_sky_claim": false
+    },
+    {
+      "id": "AR02",
+      "layer": "exact_longitude_arithmetic_only",
+      "source": {
+        "pdf_page": 230,
+        "literal_visible_folio": "196",
+        "anchor": "Moon and Sun/MC entries"
+      },
+      "inputs": {
+        "Moon": "Scorpio15:29",
+        "Sun/MC": "Scorpio25:28"
+      },
+      "operation": "25:28 − 15:29",
+      "result": "9:59 longitude short of conjunction",
+      "status": "Printed longitudes only; not a clock interval.",
+      "source_judgment_separate": "Moon next applies to Sun conjunction on the MC,PDF231.",
+      "time_or_modern_sky_claim": false
+    },
+    {
+      "id": "AR03",
+      "layer": "exact_longitude_arithmetic_only",
+      "source": {
+        "pdf_page": 230,
+        "literal_visible_folio": "196",
+        "anchor": "Venus and Saturn entries"
+      },
+      "inputs": {
+        "Venus": "Sagittarius28:53",
+        "Saturn": "Aries29:13"
+      },
+      "operation": "(Aries29:13 − Sagittarius28:53) mod360° =120:20; subtract120:00",
+      "result": "0:20 from exact trine",
+      "status": "The mutual application direction comes from the source retrogradation account, not from static arithmetic alone.",
+      "source_judgment_separate": "Very sudden / same-day news,PDF232.",
+      "time_or_modern_sky_claim": false
+    },
+    {
+      "id": "AR04",
+      "layer": "exact_longitude_arithmetic_only",
+      "source": {
+        "pdf_page": 230,
+        "literal_visible_folio": "196",
+        "anchor": "Venus28:53"
+      },
+      "inputs": {
+        "Venus": "Sagittarius28:53",
+        "boundary": "Capricorn0:00"
+      },
+      "operation": "30:00 − 28:53",
+      "result": "1:07 remaining to Capricorn",
+      "status": "Exact coordinate subtraction; do not replace the source's rounded/qualitative one-degree description.",
+      "source_judgment_separate": "One degree may denote a week in this common sign and this question; less than a week predicted,PDF233.",
+      "time_or_modern_sky_claim": false
+    },
+    {
+      "id": "AR05",
+      "layer": "exact_longitude_arithmetic_only",
+      "source": {
+        "pdf_page": 234,
+        "literal_visible_folio": "200",
+        "anchor": "Mars and tenth cusp"
+      },
+      "inputs": {
+        "Mars": "Cancer1:50",
+        "MC": "Cancer6:10"
+      },
+      "operation": "6:10 − 1:50",
+      "result": "4:20 short of tenth cusp",
+      "status": "No numeric cusp-effect threshold inferred.",
+      "source_judgment_separate": "Mars vitiates tenth cusp.",
+      "time_or_modern_sky_claim": false
+    },
+    {
+      "id": "AR06",
+      "layer": "exact_longitude_arithmetic_only",
+      "source": {
+        "pdf_page": 234,
+        "literal_visible_folio": "200",
+        "anchor": "Saturn and seventh cusp"
+      },
+      "inputs": {
+        "Saturn": "Aries2:07",
+        "seventh": "Aries4:37"
+      },
+      "operation": "4:37 − 2:07",
+      "result": "2:30 short of seventh cusp",
+      "status": "No numeric cusp-effect threshold inferred.",
+      "source_judgment_separate": "Saturn vitiates seventh cusp.",
+      "time_or_modern_sky_claim": false
+    },
+    {
+      "id": "AR07",
+      "layer": "exact_longitude_arithmetic_only",
+      "source": {
+        "pdf_page": 234,
+        "literal_visible_folio": "200",
+        "anchor": "North node and ascendant"
+      },
+      "inputs": {
+        "NorthNode": "Libra2:04",
+        "Ascendant": "Libra4:37"
+      },
+      "operation": "4:37 − 2:04",
+      "result": "2:33 short of ascendant",
+      "status": "Source uses qualitative on-cusp wording.",
+      "source_judgment_separate": "North node on ascendant signifies good to Parliament.",
+      "time_or_modern_sky_claim": false
+    },
+    {
+      "id": "AR08",
+      "layer": "exact_longitude_arithmetic_only",
+      "source": {
+        "pdf_page": 234,
+        "literal_visible_folio": "200",
+        "anchor": "Mars and Saturn"
+      },
+      "inputs": {
+        "Mars": "Cancer1:50",
+        "Saturn": "Aries2:07"
+      },
+      "operation": "Cancer1:50 − Aries2:07 =89:43; subtract from90:00",
+      "result": "0:17 short of exact square",
+      "status": "Static angular residual only; motion and future perfection are not independently calculated.",
+      "source_judgment_separate": "Saturn afflicts Mars by square; enemies' division and thwarted plans,PDF234–235.",
+      "time_or_modern_sky_claim": false
+    },
+    {
+      "id": "AR09",
+      "layer": "exact_longitude_arithmetic_only",
+      "source": {
+        "pdf_page": 234,
+        "literal_visible_folio": "200",
+        "anchor": "Moon and Jupiter"
+      },
+      "inputs": {
+        "Moon": "Gemini12:43",
+        "Jupiter": "Aries8:28"
+      },
+      "operation": "Gemini12:43 − Aries8:28 =64:15; subtract60:00",
+      "result": "4:15 beyond exact sextile",
+      "status": "Source says recently separated, platick, and still within orbs; no orb maximum supplied.",
+      "source_judgment_separate": "Translation and hypothetical male siblings/concord.",
+      "time_or_modern_sky_claim": false
+    },
+    {
+      "id": "AR10",
+      "layer": "explicitly_incomplete_longitude_arithmetic",
+      "source": {
+        "pdf_page": 234,
+        "literal_visible_folio": "200",
+        "anchor": "Moon and Venus"
+      },
+      "inputs": {
+        "Moon": "Gemini12:43",
+        "Venus": "Pisces15, minute not printed"
+      },
+      "operation": "Cannot form a single exact residual without a Venus-minute assumption. If Venus minutes are in00–59, the Moon's sign-degree gap to the corresponding Gemini square point is2:17–3:16.",
+      "result": null,
+      "conditional_range_if_ordinary_whole_degree_notation": "2:17–3:16",
+      "status": "Do not silently make Venus15 into15:00. The range is an analyst conditional arithmetic interval, not a source figure or timing prediction.",
+      "source_judgment_separate": "Applying dexter square in short-ascension signs.",
+      "time_or_modern_sky_claim": false
+    }
+  ],
+  "reported_endpoint_episode_count": 2,
+  "reported_endpoints": [
+    {
+      "id": "EP01",
+      "case_id": "EX01",
+      "type": "reported_carrier_news_episode",
+      "source": {
+        "pdf_page": 232,
+        "literal_visible_folio": "198",
+        "anchor": "He hath since confidently affirmed"
+      },
+      "reporting_chain": [
+        "Carrier tells querent",
+        "Querent subsequently confidently affirms the episode",
+        "Lilly relays this affirmation"
+      ],
+      "time_as_reported": "about four, same-day context",
+      "components": [
+        "Carrier came casually to where the querent was.",
+        "Carrier said the absent brother was living.",
+        "Carrier said the absent brother was in health."
+      ],
+      "independent_case": false,
+      "independently_verified": false,
+      "candidate_refs": [
+        "C011"
+      ],
+      "paired_forecast_refs": [
+        "C005",
+        "C009"
+      ]
+    },
+    {
+      "id": "EP02",
+      "case_id": "EX01",
+      "type": "reported_return_home_episode",
+      "source": {
+        "pdf_page": 233,
+        "literal_visible_folio": "199",
+        "anchor": "But he came home the Tuesday following"
+      },
+      "reporting_chain": [
+        "Lilly narrates the return; no separate named witness is given."
+      ],
+      "time_as_reported": "Tuesday following",
+      "components": [
+        "Brother returned home.",
+        "Moon came to Venus' body according to the source.",
+        "Venus was in Capricorn, own terms, and diurnal triplicity according to the source."
+      ],
+      "independent_case": false,
+      "independently_verified": false,
+      "candidate_refs": [
+        "C016"
+      ],
+      "paired_forecast_refs": [
+        "C014",
+        "C015"
+      ]
+    }
+  ],
+  "other_author_descriptions": [
+    {
+      "case_id": "EX01",
+      "source": {
+        "pdf_page": 231,
+        "literal_visible_folio": "197",
+        "anchor": "lean, spare of body"
+      },
+      "kind": "querent physique",
+      "candidate_ref": "C002"
+    },
+    {
+      "case_id": "EX01",
+      "source": {
+        "pdf_page": 233,
+        "literal_visible_folio": "199",
+        "anchor": "alwayes did, and doe agree lovingly"
+      },
+      "kind": "ongoing brotherly concord",
+      "candidate_ref": "C017"
+    }
+  ],
+  "case_without_reported_endpoint": {
+    "case_id": "EX02",
+    "note": "The source states false-capture and future-non-capture judgments, but this span contains no separate later checking narrative."
+  },
+  "hypothetical_reuse": {
+    "case_id": "HY01",
+    "uses_chart": "CH02",
+    "actual_new_case": false,
+    "reported_endpoint_count": 0
+  },
+  "internal_book_references": [
+    {
+      "id": "CROSSREF01",
+      "source": {
+        "pdf_page": 235,
+        "literal_visible_folio": "201",
+        "anchor": "as you may see page89"
+      },
+      "literal_referenced_folio": "89",
+      "topic": "Signs called prolific / fruitful",
+      "target_read_in_this_assignment": false
+    },
+    {
+      "id": "CROSSREF02",
+      "source": {
+        "pdf_page": 235,
+        "literal_visible_folio": "201",
+        "anchor": "as you may see page88"
+      },
+      "literal_referenced_folio": "88",
+      "topic": "Feminine and masculine signs",
+      "target_read_in_this_assignment": false
+    }
+  ],
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "root_integration_note": "Root visually checked both original figures and key high-resolution crops. Source-reader transcription is retained; no guessed canonical Jupiter longitude or absent minutes were added."
+}

@@ -1,0 +1,792 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/b02h_general_source_check",
+  "review_completed_at_utc": "2026-10-10T03:04:54.309891+00:00",
+  "verdict": "CORRECTIONS_REQUIRED",
+  "review_scope": "R897–R971 general third-house records, PDF221 below divider through PDF230 above divider",
+  "candidate_identity": {
+    "captured_at_utc": "2026-10-10T03:02:57.187816+00:00",
+    "source_candidate_path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+    "candidate_file_sha256_at_capture": "9e496f49b9e31f6d595fad0356f5297950fea82bc5dda7d1f060529b6015b0c4",
+    "candidate_file_bytes_at_capture": 114994,
+    "initial_read_bytes": 114994,
+    "candidate_total_records_at_capture": 75,
+    "reviewed_records_count": 75,
+    "reviewed_records_canonical_sha256": "f4f761626038de52bdad70089ebd63996c56614a824590273f2a7dbbe937cd72"
+  },
+  "source_first_notes_path": "/workspace/scratch/bd2460f96de0/b02h-general-review/SOURCE_FIRST_NOTES.md",
+  "source_first_notes_sha256": "1ffc3dd432412e748e6d1ee4fe00fff9ee10b75499d89d3026730cfd50279669",
+  "source_first_receipt_path": "/workspace/scratch/bd2460f96de0/b02h-general-review/READING_RECEIPT.json",
+  "independence": {
+    "source_first_candidate_blind": true,
+    "producer_saw_source_first_notes_before_candidate_review": true,
+    "final_candidate_blind": false,
+    "cross_model_family": false
+  },
+  "summary": {
+    "reviewed_records": 75,
+    "source_note_units_mapped": 66,
+    "findings": 5,
+    "high": 1,
+    "medium": 3,
+    "low": 1,
+    "affected_records": 5,
+    "records_without_material_discrepancy_identified": 70,
+    "wholly_unrepresented_general_source_subsections": 0
+  },
+  "findings": [
+    {
+      "finding_id": "B02h-GR-F01",
+      "severity": "high",
+      "type": "logical_condition_inconsistency",
+      "record_ids": [
+        "LI.1647.II.XXIX.R943"
+      ],
+      "fields": [
+        "source_statement"
+      ],
+      "candidate_fragment": "with neither or both supplying any favourable sextile/trine to the Ascendant degree",
+      "source_evidence": [
+        {
+          "pdf_page": 226,
+          "printed_page": 192,
+          "original_page_image": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-226.png",
+          "source_excerpt": "and did not either the one or other, or both cast their favourable sextile or trine to the degree ascending"
+        }
+      ],
+      "diagnosis": "The main statement can include the case in which both bodies supply a favourable contact. Its qualification correctly says neither does, so the record is internally inconsistent. The source requires absence of the favourable Ascendant contact from each body, in addition to the Moon-Mercury square/opposition.",
+      "required_correction": "Replace the main negation with an unambiguous neither-Moon-nor-Mercury condition; preserve the ascending degree as target and the Moon-Mercury hard aspect.",
+      "suggested_source_statement": "Moon and Mercury square/opposite, and neither Moon nor Mercury casting a favourable sextile or trine to the Ascendant degree, is interpreted as false news deliberately reported to frighten Lilly's side.",
+      "confidence": "high",
+      "status": "requires_correction"
+    },
+    {
+      "finding_id": "B02h-GR-F02",
+      "severity": "medium",
+      "type": "source_modality_weakened",
+      "record_ids": [
+        "LI.1647.II.XXIX.R903"
+      ],
+      "fields": [
+        "title",
+        "source_statement",
+        "qualifications_and_limits"
+      ],
+      "candidate_fragment": "apparent present unity does not promise continuation; Lilly says hatred or grumbling usually follows",
+      "source_evidence": [
+        {
+          "pdf_page": 222,
+          "printed_page": 188,
+          "original_page_image": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-222.png",
+          "source_excerpt": "yet will it not continue, but usually mortall hatred or untoward grumbling doth afterward arise"
+        }
+      ],
+      "diagnosis": "The source makes a stronger conditional non-continuation claim than does not promise. Usually qualifies the subsequent hatred/grumbling, not the preceding will-not-continue clause. Preserve the historical claim without endorsing it.",
+      "required_correction": "Restore the source conditional will-not-continue modality and keep usually attached to the ensuing hatred/grumbling only. Revise the can-fail title and avoid letting the qualification soften the source assertion.",
+      "suggested_title": "Present concord will not continue in the stated adverse context",
+      "suggested_source_statement": "In the preceding adverse third-house configuration, Lilly says apparent present unity will not continue; mortal hatred or untoward grumbling usually arises afterward.",
+      "suggested_qualifications_and_limits": [
+        "Usually qualifies the subsequent hatred or grumbling. The conditional non-continuation claim is historical source wording, not a demonstrated fact; no date or duration is supplied."
+      ],
+      "source_first_note_correction": "Frozen note A06 itself used the looser need-not-continue wording. This direct original-image recheck supersedes that reading; the frozen notes remain unchanged as an audit record.",
+      "confidence": "high",
+      "status": "requires_correction"
+    },
+    {
+      "finding_id": "B02h-GR-F03",
+      "severity": "medium",
+      "type": "outcome_and_duration_omission",
+      "record_ids": [
+        "LI.1647.II.XXIX.R966"
+      ],
+      "fields": [
+        "source_statement"
+      ],
+      "candidate_fragment": "a strong argument of untoward relatives, discord and wrangling",
+      "source_evidence": [
+        {
+          "pdf_page": 229,
+          "printed_page": 195,
+          "original_page_image": "/workspace/scratch/bd2460f96de0/b02h-general-review/detail-images/p-229-240dpi.png",
+          "source_excerpt": "and of no unity betwixt them, but continuall discord, wrangling and jangling"
+        }
+      ],
+      "diagnosis": "The condition and separate South Node alternative are preserved, but the outcome omits no unity and the durative continual. Generic discord does not fully retain the source claim about the relationship and its persistence.",
+      "required_correction": "Restore no unity and continual discord under the existing strong-argument modality; retain the Saturn/Mars dignity condition and independent South Node alternative.",
+      "suggested_source_statement": "Saturn or Mars out of essential dignities in third, OR South Node there, is a strong argument of untoward or cross relatives, no unity between them, and continual discord, wrangling and jangling.",
+      "confidence": "high",
+      "status": "requires_correction"
+    },
+    {
+      "finding_id": "B02h-GR-F04",
+      "severity": "medium",
+      "type": "author_experience_changed_to_judgement",
+      "record_ids": [
+        "LI.1647.II.XXIX.R942"
+      ],
+      "fields": [
+        "source_statement"
+      ],
+      "candidate_fragment": "Void-of-course Moon made Lilly judge news of no moment",
+      "source_evidence": [
+        {
+          "pdf_page": 226,
+          "printed_page": 192,
+          "original_page_image": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-226.png",
+          "source_excerpt": "if the Moon was voyd of course, the Newes proved of no moment, usually vaine or meer lyes, and very soon contradicted"
+        }
+      ],
+      "diagnosis": "Lilly describes what the news proved to be in his stated experience. The candidate recasts that retrospective experience claim as a judgement he made. Its author_experience_claim kind is appropriate, but the main wording should match that evidential status. This remains the author's report, not independent confirmation.",
+      "required_correction": "Use retrospective reported-experience wording, preserving no moment, usually, and soon contradicted.",
+      "suggested_source_statement": "In Lilly's account, when the Moon was void of course, the news proved of no moment, usually vain or mere lies and very soon contradicted.",
+      "confidence": "high",
+      "status": "requires_correction"
+    },
+    {
+      "finding_id": "B02h-GR-F05",
+      "severity": "low",
+      "type": "technical_title_scope_narrowed",
+      "record_ids": [
+        "LI.1647.II.XXIX.R949"
+      ],
+      "fields": [
+        "title"
+      ],
+      "candidate_fragment": "overrides own-sign strength here",
+      "source_evidence": [
+        {
+          "pdf_page": 227,
+          "printed_page": 193,
+          "original_page_image": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-227.png",
+          "source_excerpt": "though he strong in the"
+        },
+        {
+          "pdf_page": 228,
+          "printed_page": 194,
+          "original_page_image": "/workspace/scratch/bd2460f96de0/b02h-general-review/detail-images/p-228-240dpi.png",
+          "source_excerpt": "Signe wherein he is."
+        }
+      ],
+      "diagnosis": "Own-sign strength can denote domicile, but the source says strong in the sign wherein he is without limiting the dignity to domicile. The record body already preserves the broader wording. This is a technical scope mismatch in the title, not a request for stylistic rewriting.",
+      "required_correction": "Replace own-sign strength in the title with sign strength; retain the existing source_statement.",
+      "suggested_title": "Afflicted or cadent Ascendant lord: contrary judgement despite sign strength",
+      "confidence": "high",
+      "status": "requires_correction"
+    }
+  ],
+  "coverage": {
+    "mapping": {
+      "A01": [
+        "LI.1647.II.THIRD_HOUSE_PREAMBLE.R897"
+      ],
+      "A02": [
+        "LI.1647.II.XXIX.R898"
+      ],
+      "A03": [
+        "LI.1647.II.XXIX.R899"
+      ],
+      "A04": [
+        "LI.1647.II.XXIX.R900"
+      ],
+      "A05": [
+        "LI.1647.II.XXIX.R901"
+      ],
+      "A06": [
+        "LI.1647.II.XXIX.R902",
+        "LI.1647.II.XXIX.R903"
+      ],
+      "A07": [
+        "LI.1647.II.XXIX.R904",
+        "LI.1647.II.XXIX.R905"
+      ],
+      "B01": [
+        "LI.1647.II.XXIX.R906",
+        "LI.1647.II.XXIX.R907"
+      ],
+      "B02": [
+        "LI.1647.II.XXIX.R908"
+      ],
+      "B03": [
+        "LI.1647.II.XXIX.R909"
+      ],
+      "B04": [
+        "LI.1647.II.XXIX.R910"
+      ],
+      "B05": [
+        "LI.1647.II.XXIX.R911"
+      ],
+      "B06": [
+        "LI.1647.II.XXIX.R912"
+      ],
+      "B07": [
+        "LI.1647.II.XXIX.R913"
+      ],
+      "B08": [
+        "LI.1647.II.XXIX.R914"
+      ],
+      "B09": [
+        "LI.1647.II.XXIX.R915"
+      ],
+      "B10": [
+        "LI.1647.II.XXIX.R916"
+      ],
+      "B11": [
+        "LI.1647.II.XXIX.R917"
+      ],
+      "B12": [
+        "LI.1647.II.XXIX.R918"
+      ],
+      "B13": [
+        "LI.1647.II.XXIX.R919",
+        "LI.1647.II.XXIX.R920"
+      ],
+      "B14": [
+        "LI.1647.II.XXIX.R921"
+      ],
+      "B15": [
+        "LI.1647.II.XXIX.R922"
+      ],
+      "B16": [
+        "LI.1647.II.XXIX.R923"
+      ],
+      "B17": [
+        "LI.1647.II.XXIX.R924"
+      ],
+      "B18": [
+        "LI.1647.II.XXIX.R925"
+      ],
+      "B19": [
+        "LI.1647.II.XXIX.R926"
+      ],
+      "B20": [
+        "LI.1647.II.XXIX.R927",
+        "LI.1647.II.XXIX.R928"
+      ],
+      "B21": [
+        "LI.1647.II.XXIX.R929"
+      ],
+      "B22": [
+        "LI.1647.II.XXIX.R930"
+      ],
+      "B23": [
+        "LI.1647.II.XXIX.R931"
+      ],
+      "B24": [
+        "LI.1647.II.XXIX.R932",
+        "LI.1647.II.XXIX.R933"
+      ],
+      "B25": [
+        "LI.1647.II.XXIX.R934",
+        "LI.1647.II.XXIX.R935",
+        "LI.1647.II.XXIX.R936"
+      ],
+      "B26": [
+        "LI.1647.II.XXIX.R937",
+        "LI.1647.II.XXIX.R938"
+      ],
+      "C01": [
+        "LI.1647.II.XXIX.R939"
+      ],
+      "C02": [
+        "LI.1647.II.XXIX.R940"
+      ],
+      "C03": [
+        "LI.1647.II.XXIX.R941"
+      ],
+      "C04": [
+        "LI.1647.II.XXIX.R942"
+      ],
+      "C05": [
+        "LI.1647.II.XXIX.R943"
+      ],
+      "C06": [
+        "LI.1647.II.XXIX.R944"
+      ],
+      "C07": [
+        "LI.1647.II.XXIX.R945"
+      ],
+      "C08": [
+        "LI.1647.II.XXIX.R946"
+      ],
+      "C09": [
+        "LI.1647.II.XXIX.R947"
+      ],
+      "D01": [
+        "LI.1647.II.XXIX.R948"
+      ],
+      "D02": [
+        "LI.1647.II.XXIX.R949"
+      ],
+      "D03": [
+        "LI.1647.II.XXIX.R950"
+      ],
+      "D04": [
+        "LI.1647.II.XXIX.R951"
+      ],
+      "D05": [
+        "LI.1647.II.XXIX.R952"
+      ],
+      "D06": [
+        "LI.1647.II.XXIX.R953"
+      ],
+      "D07": [
+        "LI.1647.II.XXIX.R954"
+      ],
+      "E01": [
+        "LI.1647.II.XXIX.R955"
+      ],
+      "E02": [
+        "LI.1647.II.XXIX.R956"
+      ],
+      "E03": [
+        "LI.1647.II.XXIX.R957"
+      ],
+      "E04": [
+        "LI.1647.II.XXIX.R958"
+      ],
+      "F01": [
+        "LI.1647.II.XXIX.R959"
+      ],
+      "F02": [
+        "LI.1647.II.XXIX.R960"
+      ],
+      "F03": [
+        "LI.1647.II.XXIX.R961"
+      ],
+      "F04": [
+        "LI.1647.II.XXIX.R962"
+      ],
+      "F05": [
+        "LI.1647.II.XXIX.R963"
+      ],
+      "F06": [
+        "LI.1647.II.XXIX.R964",
+        "LI.1647.II.XXIX.R965"
+      ],
+      "F07": [
+        "LI.1647.II.XXIX.R966"
+      ],
+      "G01": [
+        "LI.1647.II.XXIX.R967"
+      ],
+      "G02": [
+        "LI.1647.II.XXIX.R968",
+        "LI.1647.II.XXIX.R969"
+      ],
+      "G03": [
+        "LI.1647.II.XXIX.R969"
+      ],
+      "G04": [
+        "LI.1647.II.XXIX.R968"
+      ],
+      "G05": [
+        "LI.1647.II.XXIX.R969"
+      ],
+      "G06": [
+        "LI.1647.II.XXIX.R970",
+        "LI.1647.II.XXIX.R971"
+      ]
+    },
+    "gaps": [],
+    "statement": "All66 frozen source-note units have candidate counterparts and all75 general records are covered. No wholly omitted general subsection or independent clause group was identified. Specific missing or weakened subclauses are recorded as findings F02–F04."
+  },
+  "records": [
+    {
+      "record_id": "LI.1647.II.THIRD_HOUSE_PREAMBLE.R897",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R898",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R899",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R900",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R901",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R902",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R903",
+      "status": "correction_required",
+      "finding_ids": [
+        "B02h-GR-F02"
+      ]
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R904",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R905",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R906",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R907",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R908",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R909",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R910",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R911",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R912",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R913",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R914",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R915",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R916",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R917",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R918",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R919",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R920",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R921",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R922",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R923",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R924",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R925",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R926",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R927",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R928",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R929",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R930",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R931",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R932",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R933",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R934",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R935",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R936",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R937",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R938",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R939",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R940",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R941",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R942",
+      "status": "correction_required",
+      "finding_ids": [
+        "B02h-GR-F04"
+      ]
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R943",
+      "status": "correction_required",
+      "finding_ids": [
+        "B02h-GR-F01"
+      ]
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R944",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R945",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R946",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R947",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R948",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R949",
+      "status": "correction_required",
+      "finding_ids": [
+        "B02h-GR-F05"
+      ]
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R950",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R951",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R952",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R953",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R954",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R955",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R956",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R957",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R958",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R959",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R960",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R961",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R962",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R963",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R964",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R965",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R966",
+      "status": "correction_required",
+      "finding_ids": [
+        "B02h-GR-F03"
+      ]
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R967",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R968",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R969",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R970",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R971",
+      "status": "no_material_discrepancy_identified_in_assigned_scope",
+      "finding_ids": []
+    }
+  ],
+  "limitations": [
+    "Source-first notes were frozen before candidate access. The producer then read those notes during production. This is a post-candidate source comparison, not a final candidate-blind review.",
+    "Separate agent in the same inherited model family; no different-model independence claim.",
+    "Authority packet was the frozen notes, the 75 candidate general records, and original pages221–230 within the bounded general-rule span. No prior reviewer conclusions, other producer files, or repository instructions were used as source authority.",
+    "Original whole-page images221–230 were read in source-first work; pages223,224,228,229 additionally inspected at240dpi. Candidate phase rechecked whole pages222,226,227 and240dpi229. Earlier original-image observations remain part of this review.",
+    "Worked heading/chart below the PDF230 divider, ChapterXXX on231 and subsequent examples were outside this comparison. Candidate references to the dual-eighth example on231 in R906/R937 are not independently certified here.",
+    "External definitions/existence of B02h-U unresolved IDs were not inspected; only the qualifications carried in these records were reviewed.",
+    "No runtime prediction, contemporary validation, medical advice, personal data, ephemerides, repository edit, or Git mutation occurred. All source outcomes remain historical author claims.",
+    "The cancelled word before naturally ill on224 and ufortunate on228 remain unresolved, together with the documented house-frame and grammatical scope ambiguities. These cannot become clean machine predicates merely because this review otherwise finds coverage."
+  ],
+  "repository_or_candidate_modified": false,
+  "diagnostic_only": true
+}

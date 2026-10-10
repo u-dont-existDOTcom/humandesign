@@ -1,0 +1,62 @@
+{
+  "status": "SOURCE_AND_FINAL_CLAIM_REVIEW_COMPLETE_ALL_REQUIRED_CORRECTIONS_APPLIED",
+  "general": {
+    "first_candidate": "independent_review/general/GENERAL_CANDIDATE.json",
+    "first_candidate_sha256": "9e496f49b9e31f6d595fad0356f5297950fea82bc5dda7d1f060529b6015b0c4",
+    "frozen_source_notes": "independent_review/general/SOURCE_FIRST_NOTES.md",
+    "diagnosis": "independent_review/general/DIAGNOSIS.json",
+    "bounded_correction_check": "independent_review/general/CORRECTION_CHECK.json",
+    "accepted_corrections": [
+      "R943: neither Moon nor Mercury supplies favourable sextile/trine to Ascendant degree",
+      "R903: will not continue; usually qualifies later hatred/grumbling",
+      "R966: no unity and continual discord retained",
+      "R942: reported retrospective experience, not only judgement",
+      "R949: sign strength, not only own-sign dignity"
+    ],
+    "additional_root_correction": "After the bounded correction check, the R903 title and limit were aligned to its corrected main statement; no remaining conflicting can-fail title.",
+    "producer_saw_frozen_source_notes": true,
+    "candidate_blind_review_claim": false
+  },
+  "examples": {
+    "source_first_notes": "independent_review/examples/SOURCE_FIRST_NOTES.md",
+    "candidate_count": 37,
+    "admitted_records": "R972–R1008",
+    "numeric_rows": 44,
+    "root_original_pages_checked": [
+      230,
+      231,
+      232,
+      233,
+      234,
+      235
+    ],
+    "root_boundary_checked": [
+      236
+    ],
+    "numeric_resolution": "Root and source reader retain null Jupiter degree/sign. Conditional4/14/provisional24, missing node/Venus minutes and inferred body-sign basis preserved.",
+    "raw_candidates_unchanged": true
+  },
+  "independence_limit": "Separate contexts in same model family. Root inherited user biographies; no overall blinding or independent empirical validation claimed.",
+  "final_claim_review": {
+    "first_diagnosis": "independent_review/final/DIAGNOSIS_FIRST.json",
+    "post_freeze_history_addendum": "independent_review/final/ADDENDUM.json",
+    "frozen_files_sha256": {
+      "DIAGNOSIS_FIRST.json": "41542e5092b56c932e791bfda523fed874577e3ad85fdaec8fbc229b47e33036",
+      "DIAGNOSIS_FIRST.md": "f783f04a3c107a364e0a5dca6017eb2505380dfbf0d19306d7b05aa1fbc5fa55",
+      "ADDENDUM.json": "a90daaac850eb48b2e77a8e405d77ff893802e4e28a7c7a5fcb34d78e4437621",
+      "ADDENDUM.md": "c9ee1dff68dd7b234c0f14d27ae54adff04bc69fbff22b31dcf772de72af2680"
+    },
+    "report_sha256": "41f54c3158a15542334a55252279e6df10a0259be9903058e0861f9f1822d3f4",
+    "pre_correction_claim_ledger_sha256": "14fec931e895f77e20543edfaf7ed8c204fc73b18d17478d96214a891e52ff30",
+    "corrected_claim_ledger_sha256": "f3d4ed8c2bfa012ef97f1c8666d6012db7b2c58e0c682ba4791c2a0707ef0583",
+    "material_semantic_or_numeric_corrections": 0,
+    "required_ledger_correction": {
+      "claim": "C02",
+      "status": "APPLIED",
+      "change": "Added ../../PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json; numerical claim and report unchanged."
+    },
+    "C09_post_freeze_status": "PASS",
+    "source_reading_scope": "Claim-focused inspection of all original pages221–236 and five original-render crops; not a second complete extraction.",
+    "reviewer_authority": "Diagnostic only; root retains publication and delivery responsibility."
+  }
+}

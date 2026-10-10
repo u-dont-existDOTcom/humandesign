@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "review_id": "B02h-final-claim-check-history-addendum",
+  "reviewer": "/root/b02h_final_claim_check",
+  "stage": "POST_FIRST_DIAGNOSIS_FREEZE_RECONCILIATION",
+  "first_diagnosis_sha256": "41542e5092b56c932e791bfda523fed874577e3ad85fdaec8fbc229b47e33036",
+  "first_diagnosis_unchanged": true,
+  "sequence": [
+    "First diagnosis completed against report, ledger and direct authoritative evidence.",
+    "DIAGNOSIS_FIRST.json and DIAGNOSIS_FIRST.md were written and frozen.",
+    "Only then were prior general reviewer conclusions, source-note receipts and example provenance records opened.",
+    "This addendum resolves the deliberately pending process-history questions; the first findings remain unchanged."
+  ],
+  "checked_files_sha256": {
+    "independent_review/general/DIAGNOSIS.json": "82ac9d5c164f777de3f0d13657928da2e2cd89711110b9ceb550afd5c00ba9ff",
+    "independent_review/general/CORRECTION_CHECK.json": "e28aab54421977e539c493b7312ddd219b5e86f6bba051ad9a89c962de29ac7d",
+    "independent_review/general/GENERAL_CANDIDATE.json": "9e496f49b9e31f6d595fad0356f5297950fea82bc5dda7d1f060529b6015b0c4",
+    "independent_review/general/SOURCE_FIRST_NOTES.md": "1ffc3dd432412e748e6d1ee4fe00fff9ee10b75499d89d3026730cfd50279669",
+    "independent_review/general/READING_RECEIPT.json": "3e8ee6d663020ef100b7d6920eb4dcaf2330e11cece18bbb01895d7dfc40174e",
+    "independent_review/examples/READING_RECEIPT.json": "49a48485e389fccf10849bb0cfa493838ecbeccfedb6df48b1501a981bfbedd3",
+    "independent_review/examples/SOURCE_FIRST_NOTES.freeze.json": "1993c4dcc06fb08393c63135eba3e408c4776b8f860a78d0e6ad7c8e36412420",
+    "independent_review/examples/SOURCE_FIRST_NOTES.md": "113ffa9a23b590b21c5c64b467b48224ce8a0d39b2e3a555df1a0bf370bfbfd1",
+    "independent_review/examples/NUMERIC_TABLES.json": "1e374291cee0cf0dab0179383bc53138d9a41ff59db1585f998515adc24fb092",
+    "RULES.json": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc"
+  },
+  "findings": [
+    {
+      "claim": "C09",
+      "status": "PASS",
+      "confidence": "high",
+      "finding": "The saved general diagnosis contains five findings affecting R943,R903,R966,R942,R949. Its mapping covers66 unique source-note units and75 candidate records. Counting actual source-note identifiers confirms66; their hash matches the receipt and diagnosis. The correction check records all five core corrections satisfied, with a nonblocking R903 title/qualification residual. Current RULES corrects that residual as well: the title says present unity will not continue in the adverse context, and usually is attached only to subsequent hatred/grumbling. All five identified fields differ from the captured75-record candidate in the required direction. No sixth newly counted material correction is implied."
+    },
+    {
+      "claim": "Source-first process and C08 reader attribution",
+      "status": "PASS_AS_DOCUMENTED_PROVENANCE",
+      "confidence": "high for retained documentary consistency; not independent observation of every prior action",
+      "finding": "The general receipt freezes notes before candidate capture and discloses that the producer saw them before final comparison. The example receipt and matching notes-freeze hash document source-first notes before the37 candidates, with44 coordinate rows. Its numeric Jupiter record and receipt retain4/14 as plausible and24 as explicitly provisional, with canonical degree/sign null, matching the report. Same-model-family and post-composition information exposure are accurately disclosed."
+    }
+  ],
+  "new_material_corrections": [],
+  "outstanding_correction_from_first_diagnosis": {
+    "claim": "C02",
+    "severity": "LOW_EVIDENCE_LEDGER_COMPLETENESS",
+    "action": "Add ../../PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json to evidence_files unless already handled by root. The numeric claim itself passes."
+  },
+  "limitations": [
+    "The history check establishes documentary consistency and the recorded sequence, not different-model independence or a fully blinded evaluation.",
+    "No new original-PDF hash, external historical corroboration, ephemeris/calendar parity, publication or owner delivery check was performed.",
+    "First-stage direct-source findings are not replaced with prior reviewers’ verdicts."
+  ],
+  "authority": "DIAGNOSTIC_ONLY; root reconciles, publishes and delivers."
+}

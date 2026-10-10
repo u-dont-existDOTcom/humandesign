@@ -1,0 +1,146 @@
+{
+  "status": "STATIC_PRINTED_ARITHMETIC_ONLY",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "charts": {
+    "CH01": {
+      "opposite_cusp_pairs_exact": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "Fortune": {
+        "computed": [
+          "Capricorn",
+          10,
+          28
+        ],
+        "printed_matches": true,
+        "profile": "Lilly_XXIII_p143_144_same_by_day_and_night",
+        "profile_is_retained_from_XXIII_not_restated_here": true
+      },
+      "skipped_incomplete_exact_positions": [
+        "Jupiter",
+        "NorthNode",
+        "SouthNode"
+      ],
+      "geometric_houses_from_printed_cusps": {
+        "Saturn": 2,
+        "Mars": 10,
+        "Sun": 10,
+        "Venus": 12,
+        "Mercury": 9,
+        "Moon": 9,
+        "PartOfFortune": 12
+      },
+      "house_note": "Half-open geometric sectors only; source cusp influence and drawn placement remain separate."
+    },
+    "CH02": {
+      "opposite_cusp_pairs_exact": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "Fortune": {
+        "computed": [
+          "Scorpio",
+          15,
+          57
+        ],
+        "printed_matches": true,
+        "profile": "Lilly_XXIII_p143_144_same_by_day_and_night",
+        "profile_is_retained_from_XXIII_not_restated_here": true
+      },
+      "skipped_incomplete_exact_positions": [
+        "Venus"
+      ],
+      "geometric_houses_from_printed_cusps": {
+        "Saturn": 6,
+        "Jupiter": 7,
+        "Mars": 9,
+        "Sun": 8,
+        "Mercury": 7,
+        "Moon": 9,
+        "NorthNode": 12,
+        "SouthNode": 6,
+        "PartOfFortune": 2
+      },
+      "house_note": "Half-open geometric sectors only; source cusp influence and drawn placement remain separate."
+    }
+  },
+  "absent_brother": {
+    "radical_eighth": 8,
+    "eighth_from_brother_third": 10,
+    "Moon_to_printed_Sun_MC_gap_arcminutes": 599,
+    "Sun_MC_separation_arcminutes": 0,
+    "Sun_MC_shared_printed_entry_not_independent_measurements": true,
+    "Venus_Saturn_trine_residual_arcminutes": 20,
+    "Venus_to_Capricorn_gap_arcminutes": 67,
+    "source_described_degrees_to_ingress": 1,
+    "source_qualitative_week_conversion_not_executed": true,
+    "Jupiter_canonical_longitude": null,
+    "Jupiter_canonical_trine_residual": null,
+    "Jupiter_conditional_readings": [
+      {
+        "degree": 4,
+        "sign_if_diagram_sector_is_used": "Cancer",
+        "minutes": 55,
+        "directed_Moon_minus_Jupiter_arcminutes": 7834,
+        "signed_residual_from_trine_arcminutes": 634,
+        "status": "CONDITIONAL_UNCERTAIN_INPUT_NOT_CANONICAL"
+      },
+      {
+        "degree": 14,
+        "sign_if_diagram_sector_is_used": "Cancer",
+        "minutes": 55,
+        "directed_Moon_minus_Jupiter_arcminutes": 7234,
+        "signed_residual_from_trine_arcminutes": 34,
+        "status": "CONDITIONAL_UNCERTAIN_INPUT_NOT_CANONICAL"
+      },
+      {
+        "degree": 24,
+        "sign_if_diagram_sector_is_used": "Gemini",
+        "minutes": 55,
+        "directed_Moon_minus_Jupiter_arcminutes": 8434,
+        "signed_residual_from_trine_arcminutes": 1234,
+        "status": "CONDITIONAL_UNCERTAIN_INPUT_NOT_CANONICAL"
+      }
+    ]
+  },
+  "cambridge": {
+    "Mars_to_MC_gap_arcminutes": 260,
+    "Saturn_to_seventh_gap_arcminutes": 150,
+    "NorthNode_to_Ascendant_gap_arcminutes": 153,
+    "Mars_Saturn_square_residual_arcminutes": 17,
+    "Moon_Jupiter_sextile_residual_arcminutes": 255,
+    "Moon_Venus_exact_square_gap": null,
+    "Moon_Venus_conditional_gap_arcminutes": {
+      "minimum": 137,
+      "maximum": 196,
+      "assumption": "Venus15 means degree15 with an unprinted integer minute00–59. Not a certified source precision or rounded-value model."
+    },
+    "cusp_influence_threshold_inferred": null,
+    "angle_signs": [
+      "Libra",
+      "Capricorn",
+      "Aries",
+      "Cancer"
+    ],
+    "all_angles_movable": true,
+    "short_ascension_signs_in_hypothetical_square": [
+      "Gemini",
+      "Pisces"
+    ]
+  },
+  "physical_contact_times_computed": false,
+  "modern_calendar_resolved": false,
+  "historical_events_independently_verified": false,
+  "predictive_accuracy_tested": false,
+  "source_predictions_replaced_by_arithmetic": false
+}

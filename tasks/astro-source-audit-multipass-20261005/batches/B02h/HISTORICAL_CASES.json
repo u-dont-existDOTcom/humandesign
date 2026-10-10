@@ -1,0 +1,163 @@
+{
+  "printed_charts": 2,
+  "actual_historical_enquiries": 2,
+  "explicit_hypothetical_reuses": 1,
+  "reported_operational_endpoint_episodes": 2,
+  "independent_validation_cases": 0,
+  "counting_note": "One carrier episode contains arrival, approximate time and news of life/health. Homecoming is another episode in the same enquiry. Multiple records are not independent cases.",
+  "cases": {
+    "EX01": {
+      "chart": "CH01",
+      "name": "Absent London brother,1645",
+      "source_pages": [
+        230,
+        231,
+        232,
+        233
+      ],
+      "question_known_information": [
+        "Brother went into West of England",
+        "No news for many weeks",
+        "London home"
+      ],
+      "requested_endpoints": [
+        "alive/dead",
+        "soldier killing only if dead",
+        "news time if alive",
+        "location if alive",
+        "return home"
+      ],
+      "reported_endpoint_episodes": [
+        {
+          "id": "EP01",
+          "case_id": "EX01",
+          "type": "reported_carrier_news_episode",
+          "source": {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "anchor": "He hath since confidently affirmed"
+          },
+          "reporting_chain": [
+            "Carrier tells querent",
+            "Querent subsequently confidently affirms the episode",
+            "Lilly relays this affirmation"
+          ],
+          "time_as_reported": "about four, same-day context",
+          "components": [
+            "Carrier came casually to where the querent was.",
+            "Carrier said the absent brother was living.",
+            "Carrier said the absent brother was in health."
+          ],
+          "independent_case": false,
+          "independently_verified": false,
+          "candidate_refs": [
+            "C011"
+          ],
+          "paired_forecast_refs": [
+            "C005",
+            "C009"
+          ]
+        },
+        {
+          "id": "EP02",
+          "case_id": "EX01",
+          "type": "reported_return_home_episode",
+          "source": {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "anchor": "But he came home the Tuesday following"
+          },
+          "reporting_chain": [
+            "Lilly narrates the return; no separate named witness is given."
+          ],
+          "time_as_reported": "Tuesday following",
+          "components": [
+            "Brother returned home.",
+            "Moon came to Venus' body according to the source.",
+            "Venus was in Capricorn, own terms, and diurnal triplicity according to the source."
+          ],
+          "independent_case": false,
+          "independently_verified": false,
+          "candidate_refs": [
+            "C016"
+          ],
+          "paired_forecast_refs": [
+            "C014",
+            "C015"
+          ]
+        }
+      ],
+      "additional_author_descriptions": [
+        {
+          "case_id": "EX01",
+          "source": {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "anchor": "lean, spare of body"
+          },
+          "kind": "querent physique",
+          "candidate_ref": "C002"
+        },
+        {
+          "case_id": "EX01",
+          "source": {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "anchor": "alwayes did, and doe agree lovingly"
+          },
+          "kind": "ongoing brotherly concord",
+          "candidate_ref": "C017"
+        }
+      ],
+      "location_confirmation": null,
+      "one_or_two_days_distance_confirmation": null,
+      "original_prediction_freeze_available": false,
+      "independent_external_verification": false
+    },
+    "EX02": {
+      "chart": "CH02",
+      "name": "Cambridge capture rumour,1643",
+      "source_pages": [
+        233,
+        234,
+        235
+      ],
+      "judgements": [
+        {
+          "target": "alleged existing capture",
+          "claim": "not taken; report false",
+          "separate_confirmed_result": null
+        },
+        {
+          "target": "future capture by king or forces",
+          "claim": "should not be taken",
+          "forecast_horizon": null,
+          "separate_confirmed_result": null
+        },
+        {
+          "target": "beneficiary of the report",
+          "claim": "good for Parliament and no benefit for enemies",
+          "separate_confirmed_result": null
+        }
+      ],
+      "reported_endpoint_episodes": [],
+      "original_prediction_freeze_available": false,
+      "independent_external_verification": false
+    }
+  },
+  "hypothetical": {
+    "HY01": {
+      "reuses_chart": "CH02",
+      "source_page": 235,
+      "actual_enquiry": false,
+      "topics": [
+        "sibling abundance",
+        "female predominance with brother indications",
+        "exact count withheld",
+        "concord"
+      ],
+      "reported_endpoints": [],
+      "independent_case": false
+    }
+  }
+}

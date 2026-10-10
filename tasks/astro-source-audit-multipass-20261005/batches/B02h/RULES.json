@@ -6,7 +6,7 @@
   "status": "SOURCE_ONLY_NOT_RUNTIME_OR_VALIDATION",
   "scope": "Third-house preamble below PDF221 divider through PDF235; XXIX–XXXI including unnumbered sections and example preambles.",
   "general_records_count": 75,
-  "records_count": 75,
+  "records_count": 112,
   "rules": [
     {
       "id": "LI.1647.II.THIRD_HOUSE_PREAMBLE.R897",
@@ -244,7 +244,7 @@
     },
     {
       "id": "LI.1647.II.XXIX.R903",
-      "title": "Present concord can fail later",
+      "title": "Adverse third-house context: present unity will not continue",
       "kind": "conditional_source_rule",
       "source_locator": {
         "source_id": "LILLY1647_WELLCOME_B30338724",
@@ -267,12 +267,12 @@
       "statement_type": "editor_normalized_paraphrase",
       "source_attribution": "Lilly",
       "scope_group": "agreement",
-      "source_statement": "In the preceding adverse third-house configuration, apparent present unity does not promise continuation; Lilly says hatred or grumbling usually follows.",
+      "source_statement": "In the preceding adverse third-house configuration, Lilly says apparent present unity will not continue; hatred or grumbling usually follows.",
       "prerequisites": [
         "The preceding adverse third-house context applies."
       ],
       "qualifications_and_limits": [
-        "Usually is retained; no deterministic date or categorical universal."
+        "Usually qualifies subsequent hatred/grumbling. No interval or claim outside this adverse source context is supplied."
       ],
       "temporal_target": "Present unity versus later continuation; no duration",
       "unresolved_ids": [],
@@ -1711,7 +1711,7 @@
       "statement_type": "editor_normalized_paraphrase",
       "source_attribution": "Lilly",
       "scope_group": "reports_lilly_wartime",
-      "source_statement": "Void-of-course Moon made Lilly judge news of no moment, usually vain or mere lies and soon contradicted.",
+      "source_statement": "Lilly reports that with void-of-course Moon the news proved of no moment, usually vain or mere lies and soon contradicted.",
       "prerequisites": [],
       "qualifications_and_limits": [
         "Usually is retained. Inconsequence and falsity are not equivalent outcomes."
@@ -1746,7 +1746,7 @@
       "statement_type": "editor_normalized_paraphrase",
       "source_attribution": "Lilly",
       "scope_group": "reports_lilly_wartime",
-      "source_statement": "Moon and Mercury square/opposite, with neither or both supplying any favourable sextile/trine to the Ascendant degree, is interpreted as false news deliberately reported to frighten Lilly's side.",
+      "source_statement": "Moon and Mercury square/opposite, with neither Moon nor Mercury casting a favourable sextile/trine to the Ascendant degree, is interpreted as false news deliberately reported to frighten Lilly's side.",
       "prerequisites": [],
       "qualifications_and_limits": [
         "Meaning: neither body supplies such a favourable contact; it is not merely that both fail to do so jointly. The degree target and missing-favourable-contact condition are necessary."
@@ -1953,7 +1953,7 @@
     },
     {
       "id": "LI.1647.II.XXIX.R949",
-      "title": "Afflicted or cadent first lord overrides own-sign strength here",
+      "title": "Afflicted or cadent first lord overrides sign strength here",
       "kind": "conditional_source_rule",
       "source_locator": {
         "source_id": "LILLY1647_WELLCOME_B30338724",
@@ -2597,7 +2597,7 @@
       "statement_type": "editor_normalized_paraphrase",
       "source_attribution": "Lilly",
       "scope_group": "siblings",
-      "source_statement": "Saturn or Mars out of essential dignities in third, OR South Node there, is a strong argument of untoward relatives, discord and wrangling.",
+      "source_statement": "Saturn or Mars out of essential dignities in third, OR South Node there, is a strong argument of untoward relatives, no unity, and continual discord and wrangling.",
       "prerequisites": [],
       "qualifications_and_limits": [
         "Unlike the earlier compound dignity phrase, the South Node is a separate alternative here. Historical characterization, not actual observation."
@@ -2808,6 +2808,2790 @@
       ],
       "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
       "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXX.R972",
+      "title": "Absent brother: one historical figure and conditional questions",
+      "kind": "historical_case_context_and_questions",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          230,
+          231
+        ],
+        "printed_sequence_expected": [
+          196,
+          197
+        ],
+        "visible_printed_labels": [
+          "196",
+          "197"
+        ],
+        "passage_anchor": "Where an absent Brother was?",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 230,
+            "literal_visible_folio": "196",
+            "passage_anchor": "Where an absent Brother was?",
+            "page_location": "Lower half, heading and circular chart"
+          },
+          {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "passage_anchor": "In November 1645. a Citizen of London",
+            "page_location": "Top narrative and three numbered questions above Chap.XXX"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "A London citizen had gone into the West of England and no news had been received for many weeks. His brother asked whether he was alive or dead; if dead, whether soldiers had killed him; if alive, when news would come and where he was; and when he would return home. The source connects the soldier question to the kingdom then being full of soldiery. The printed figure is dated Friday7 November1645, at hora meridiana.",
+      "prerequisites": [],
+      "source_alternatives": [
+        "Living versus dead is the first requested decision; being killed by soldiers is conditional on a judgment of death."
+      ],
+      "qualifications_and_limits": [
+        "No modern calendar or timezone convention is stated by the chart.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [
+        "B02h-U24"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C001",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Querent: the brother who asks; Saturn is lord of the ascending sign.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [
+        "CH01.datetime"
+      ],
+      "evidence_status": "Historical narrative and requested outputs only; no death, killing, or illness is established by the questions.",
+      "dependency_rules": [],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R973",
+      "title": "Asker's physique: source description and rationale",
+      "kind": "interpretive_method_with_author_description",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          231
+        ],
+        "printed_sequence_expected": [
+          197
+        ],
+        "visible_printed_labels": [
+          "197"
+        ],
+        "passage_anchor": "The Ascendant doth here represent the shape and forme",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "passage_anchor": "The Ascendant doth here represent the shape and forme",
+            "page_location": "First paragraph below the chapter heading"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "For the querent's shape and form, consider the ascending sign together with Saturn, its lord. Since both are dry, Lilly describes this querent as lean, spare-bodied, and Saturnine.",
+      "prerequisites": [
+        "Consider both the ascending sign and its lord.",
+        "The source calls both dry in this figure."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C002",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Querent: the brother who asks; Saturn is lord of the ascending sign.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "The interpretive association is source reasoning; the physical description is retrospective author testimony about this querent, not an independently verified diagnosis.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R972"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R974",
+      "title": "Absent brother: Taurus third cusp and Venus",
+      "kind": "case_significator_assignment",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          231
+        ],
+        "printed_sequence_expected": [
+          197
+        ],
+        "visible_printed_labels": [
+          "197"
+        ],
+        "passage_anchor": "is the Ascendant of the third House",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "passage_anchor": "is the Ascendant of the third House",
+            "page_location": "Second paragraph; opening Taurus glyph"
+          },
+          {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "passage_anchor": "did represent the absent Brother",
+            "page_location": "Same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Treat radical third as the absent brother's ascendant; because Taurus is on it, Venus represents the absent brother or quesited.",
+      "prerequisites": [
+        "The person sought is the asking person's brother.",
+        "Taurus is the third cusp sign in this figure."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C003",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Querent: the brother who asks; Saturn is lord of the ascending sign.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [
+        "CH01.cusps.H03"
+      ],
+      "evidence_status": "Explicit source house turning and significator assignment.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R972"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R975",
+      "title": "Moon excluded only from description of the parties",
+      "kind": "qualified_limitation_of_significator_use",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          231
+        ],
+        "printed_sequence_expected": [
+          197
+        ],
+        "visible_printed_labels": [
+          "197"
+        ],
+        "passage_anchor": "neither applyed to one significator or other",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "passage_anchor": "neither applyed to one significator or other",
+            "page_location": "Middle paragraph, after Venus assignment"
+          },
+          {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "passage_anchor": "I mean in description of the parties",
+            "page_location": "End of same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Because the Moon applied to neither principal significator, Lilly gives her little part in describing the two people.",
+      "prerequisites": [
+        "Moon does not apply to either principal significator in this example."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The source explicitly limits this exclusion to description of the parties.",
+        "The Moon is used in subsequent life, timing, and return judgments.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C004",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Querent: the brother who asks; Saturn is lord of the ascending sign.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "A limited methodological statement, not exclusion of the Moon from the whole question.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R974"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R976",
+      "title": "Living and healthy judgement checks both eighth lords",
+      "kind": "historical_judgment_from_combined_conditions",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          231
+        ],
+        "printed_sequence_expected": [
+          197
+        ],
+        "visible_printed_labels": [
+          "197"
+        ],
+        "passage_anchor": "no manner of way afflicted",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "passage_anchor": "no manner of way afflicted",
+            "page_location": "Final long paragraph"
+          },
+          {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "passage_anchor": "her next application",
+            "page_location": "Same paragraph"
+          },
+          {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "passage_anchor": "was alive and had no manner of casualty",
+            "page_location": "Same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Lilly judges the absent brother alive, unharmed by casualty, and healthy because Venus is unafflicted by either Mercury, lord of the figure's eighth, or Mars, lord of the eighth from the brother's ascendant, while the Moon has a good separation from a dexter trine of Jupiter and next applies to conjunction with the Sun on the medium-coeli cusp.",
+      "prerequisites": [
+        "Venus is the brother's significatrix.",
+        "Venus is not afflicted by radical-eighth lord Mercury.",
+        "Venus is not afflicted by Mars, eighth lord relative to the brother.",
+        "The Moon's separation from a dexter trine of Jupiter is called good.",
+        "The Moon's next application is conjunction with the Sun upon the MC cusp."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Printed Jupiter degree reading is to remain distinct from the prose aspect; see numeric-table reading status.",
+        "No numeric definition of affliction is supplied in this passage.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Alive and healthy at enquiry; no casualty judged",
+      "unresolved_ids": [
+        "B02h-U20",
+        "B02h-U21",
+        "B02h-U23"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C005",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        },
+        {
+          "radical_house": 8,
+          "role": "Eighth of the radical figure, whose lord is Mercury.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 10,
+          "role": "Mars rules the eighth from the quesited's ascendant. Radical number10 is the inclusive turned-house expansion of the source wording.",
+          "basis": "derived_house_number_from_source_role",
+          "turned_house": {
+            "relative_to_radical_house": 3,
+            "number": 8,
+            "formula": "((3 + 8 - 2) mod 12) + 1 = 10"
+          }
+        },
+        {
+          "radical_house": 10,
+          "role": "Medium coeli cusp with the Sun.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [
+        "TURN01"
+      ],
+      "numeric_table_references": [
+        "CH01.planets",
+        "AR01",
+        "AR02"
+      ],
+      "evidence_status": "Source judgment/forecast of present condition; the later carrier report is separately recorded in C011.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R974"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R977",
+      "title": "Living judgement closes only the conditional killing enquiry",
+      "kind": "conditional_stop_instruction",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          231
+        ],
+        "printed_sequence_expected": [
+          197
+        ],
+        "visible_printed_labels": [
+          "197"
+        ],
+        "passage_anchor": "Having judged the man to be alive",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 231,
+            "literal_visible_folio": "197",
+            "passage_anchor": "Having judged the man to be alive",
+            "page_location": "Last sentence of page"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Once the man has been judged alive, do not continue to judge the remainder of the first query: the conditional question of death at soldiers' hands.",
+      "prerequisites": [
+        "A judgment that the brother is alive has already been reached."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "This closes only the remainder of the first query, not the location, news, or return queries.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C006",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "Source workflow instruction with a condition, not a reported endpoint.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R972",
+        "LI.1647.II.XXX.R976"
+      ],
+      "generality": "source_method_demonstrated_in_case"
+    },
+    {
+      "id": "LI.1647.II.XXX.R978",
+      "title": "Mutual application includes retrograde Saturn",
+      "kind": "historical_timing_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          232
+        ],
+        "printed_sequence_expected": [
+          198
+        ],
+        "visible_printed_labels": [
+          "198"
+        ],
+        "passage_anchor": "doe apply to each other by a friendly",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "doe apply to each other by a friendly",
+            "page_location": "First paragraph"
+          },
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "though a ponderous Planet",
+            "page_location": "Same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "The friendly trine by mutual application of Venus and Saturn is a very good indication of sudden news. Saturn, although ponderous, is retrograde and at a higher degree of his sign than Venus, so his retrogradation brings him to meet her.",
+      "prerequisites": [
+        "Venus is third-house lady and the absent brother's significatrix.",
+        "Saturn is ascendant lord and the querent's significator.",
+        "Their signs and degrees give a friendly trine.",
+        "Saturn is retrograde and at more degrees of his sign than Venus."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The source explicitly includes the slower planet's retrogradation in the mutual application.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C007",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Querent: the brother who asks; Saturn is lord of the ascending sign.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        }
+      ],
+      "source_defined_calculations": [
+        "AR03"
+      ],
+      "numeric_table_references": [
+        "CH01.planets.Saturn",
+        "CH01.planets.Venus"
+      ],
+      "evidence_status": "Source inference of very sudden news, not yet a reported occurrence.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R974"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R979",
+      "title": "Eichstadius timing and London-meridian reduction are source reports",
+      "kind": "source_referenced_calculation_not_recomputed",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          232
+        ],
+        "printed_sequence_expected": [
+          198
+        ],
+        "visible_printed_labels": [
+          "198"
+        ],
+        "passage_anchor": "Ephemeris of Eichstadius 1645. Novemb. 7.",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "Ephemeris of Eichstadius 1645. Novemb. 7.",
+            "page_location": "Middle of first paragraph"
+          },
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "with reduction to our London Meridian",
+            "page_location": "Following lines"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Lilly cites Eichstadius' ephemeris for7 November1645 as putting the Venus-Saturn trine at five that afternoon; he states that reducing this to the London meridian gives a little after four.",
+      "prerequisites": [
+        "The date is the same day as the question."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The ephemeris meridian and exact reduction minutes are not printed in this passage.",
+        "Do not replace “a little after four” with exactly16:00.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Five in the afternoon, reduced to a little after four; source-reported clock conventions",
+      "unresolved_ids": [
+        "B02h-U24"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C008",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [],
+      "source_defined_calculations": [
+        "TIME01"
+      ],
+      "numeric_table_references": [
+        "CH01.datetime",
+        "CH01.source_timing_statements"
+      ],
+      "evidence_status": "Author-reported ephemeris result and meridian reduction. Neither the ephemeris entry nor modern sky parity was independently checked here.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R978"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R980",
+      "title": "Same-day news forecast is qualified as probable",
+      "kind": "historical_forecast",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          232
+        ],
+        "printed_sequence_expected": [
+          198
+        ],
+        "visible_printed_labels": [
+          "198"
+        ],
+        "passage_anchor": "it was probable he should heare of him that very day",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "it was probable he should heare of him that very day",
+            "page_location": "Later part of first paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Lilly tells the querent he will probably hear about his brother that day, expressly relying on the two parties' significators meeting in a friendly trine.",
+      "prerequisites": [
+        "The two principal significators meet in a friendly trine on the question day."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The source calls the result probable.",
+        "This sentence says the trine meeting is the only stated reason for this particular forecast.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Probably that same day",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C009",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Querent: the brother who asks; Saturn is lord of the ascending sign.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        }
+      ],
+      "source_defined_calculations": [
+        "TIME01"
+      ],
+      "numeric_table_references": [],
+      "evidence_status": "Same-day news forecast, later paired with C011; not an independent case.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R978",
+        "LI.1647.II.XXX.R979"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R981",
+      "title": "Practical advice to seek information from carriers",
+      "kind": "historical_advice",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          232
+        ],
+        "printed_sequence_expected": [
+          198
+        ],
+        "visible_printed_labels": [
+          "198"
+        ],
+        "passage_anchor": "goe to the Carriers of those Countries",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "goe to the Carriers of those Countries",
+            "page_location": "Middle-lower part of first paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Lilly advises the querent to visit carriers from the countries where he knew his brother had been and ask when they had seen him.",
+      "prerequisites": [
+        "The querent knows countries/regions in which the brother had been."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C010",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "Reported advice. The subsequent account does not establish that the querent followed this advice; it says a carrier came casually to him.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R972",
+        "LI.1647.II.XXX.R980"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R982",
+      "title": "One reported carrier episode: time, life and health news",
+      "kind": "reported_endpoint_querent_testimony_relayed_by_author",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          232
+        ],
+        "printed_sequence_expected": [
+          198
+        ],
+        "visible_printed_labels": [
+          "198"
+        ],
+        "passage_anchor": "He hath since confidently affirmed",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "He hath since confidently affirmed",
+            "page_location": "Italic sentence at end of news paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Lilly reports the querent's later confident affirmation that about four a carrier came casually to where he was and told him the brother was living and in health.",
+      "prerequisites": [],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Arrival time, arrival of the carrier, and the news of health/life belong to one reported episode.",
+        "“About four” is approximate.",
+        "No independent documentary or medical confirmation is supplied here.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "About four on the question day, source-reported",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C011",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [],
+      "source_defined_calculations": [],
+      "numeric_table_references": [
+        "EP01"
+      ],
+      "evidence_status": "Dependent reported news endpoint for this same question; the health/life statement is carrier information conveyed through the querent and Lilly.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R976",
+        "LI.1647.II.XXX.R980"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R983",
+      "title": "Southeast location is within the already known destination county",
+      "kind": "historical_location_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          232
+        ],
+        "printed_sequence_expected": [
+          198
+        ],
+        "visible_printed_labels": [
+          "198"
+        ],
+        "passage_anchor": "His Journey was into the West",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "His Journey was into the West",
+            "page_location": "Beginning of lower paragraph"
+          },
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "leaving",
+            "page_location": "Sagittarius-to-Capricorn direction sentence"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Given the known journey into the West, Venus leaving Sagittarius, called a northeast sign, and entering Capricorn, called a south sign, leads Lilly to place the brother in the southeast part of the county to which he had gone.",
+      "prerequisites": [
+        "The trip's westward destination region is already known.",
+        "Venus represents the brother.",
+        "Venus is leaving Sagittarius for Capricorn.",
+        "Source directions: Sagittarius=northeast; Capricorn=south."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The southeast judgment is within the destination county, not a new unqualified bearing from London.",
+        "No numerical method combining the two directions is stated.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Current location within the visited county",
+      "unresolved_ids": [
+        "B02h-U25"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C012",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        }
+      ],
+      "source_defined_calculations": [
+        "DIR01"
+      ],
+      "numeric_table_references": [
+        "CH01.planets.Venus"
+      ],
+      "evidence_status": "Source location inference; no separate confirmation of this exact location is reported.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R972",
+        "LI.1647.II.XXX.R974"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R984",
+      "title": "Distance expressed as one or two days of travel",
+      "kind": "historical_distance_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          232
+        ],
+        "printed_sequence_expected": [
+          198
+        ],
+        "visible_printed_labels": [
+          "198"
+        ],
+        "passage_anchor": "not farre removed from the Ascendant",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "not farre removed from the Ascendant",
+            "page_location": "Lower paragraph"
+          },
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "one or two dayes journey from London",
+            "page_location": "Same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Because Venus is not far from the ascendant and lies in the oriental quarter of heaven, Lilly judges that the brother is at most one or two days' journey from London.",
+      "prerequisites": [
+        "Venus is not far removed from the ascendant.",
+        "Venus is in the oriental quarter."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Distance is given as travel time; no mileage or speed is supplied.",
+        "No exact angular-to-travel-time conversion is supplied.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Distance as one or two days' travel",
+      "unresolved_ids": [
+        "B02h-U25"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C013",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        },
+        {
+          "radical_house": 1,
+          "role": "Ascendant used as proximity reference.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [
+        "DIST01"
+      ],
+      "numeric_table_references": [],
+      "evidence_status": "Source travel-distance inference, not a measured distance or separate reported result.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R974"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R985",
+      "title": "Sign change interpreted as return to property at home",
+      "kind": "historical_homecoming_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          232,
+          233
+        ],
+        "printed_sequence_expected": [
+          198,
+          199
+        ],
+        "visible_printed_labels": [
+          "198",
+          "199"
+        ],
+        "passage_anchor": "essentiall Dignities by Triplicity and Terme",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 232,
+            "literal_visible_folio": "198",
+            "passage_anchor": "essentiall Dignities by Triplicity and Terme",
+            "page_location": "Last portion of page"
+          },
+          {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "passage_anchor": "to his owne house in London",
+            "page_location": "Opening continuation"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Venus leaves Sagittarius for Capricorn, where the source assigns her essential dignity by triplicity and term. Lilly interprets this as the brother leaving the place where he had no possession or habitation and returning to his own London house, where he had property.",
+      "prerequisites": [
+        "Venus signifies the absent brother.",
+        "The impending ingress is Sagittarius to Capricorn.",
+        "The source assigns Venus triplicity and term dignity in Capricorn.",
+        "The question's known home is London."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Retain source-specific dignity and residence context.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C014",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [
+        "CH01.planets.Venus"
+      ],
+      "evidence_status": "Source forecast/inference of a change of place and return to owned habitation.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R974",
+        "LI.1647.II.XXX.R983"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R986",
+      "title": "One degree and a week: question-specific timing judgement",
+      "kind": "qualified_source_timing_conversion",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          233
+        ],
+        "printed_sequence_expected": [
+          199
+        ],
+        "visible_printed_labels": [
+          "199"
+        ],
+        "passage_anchor": "wanted one degree of getting out",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "passage_anchor": "wanted one degree of getting out",
+            "page_location": "Opening paragraph"
+          },
+          {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "passage_anchor": "one degree in that Signe",
+            "page_location": "Same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Lilly says Venus lacks one degree of leaving Sagittarius and predicts return in less than one week. Sagittarius is bicorporeal/common; one degree in that sign and in the nature of this question may denote a week.",
+      "prerequisites": [
+        "Venus is near the end of Sagittarius.",
+        "Sagittarius is bicorporeal/common.",
+        "The nature of this question supports the degree-to-week scale."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The wording is “might well denote,” not an invariant one-degree-equals-one-week law.",
+        "The forecast is less than a week.",
+        "The figure's28:53 yields1:07 to the boundary; retain that arithmetic separately from the source's qualitative “one degree.”",
+        "No exact-minute proportional timing or precise arrival date/time is given.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Less than one week forecast",
+      "unresolved_ids": [
+        "B02h-U26"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C015",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [],
+      "source_defined_calculations": [
+        "TIME02",
+        "AR04"
+      ],
+      "numeric_table_references": [
+        "CH01.planets.Venus"
+      ],
+      "evidence_status": "Historical return forecast based on a qualified symbolic timing scale.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R985"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R987",
+      "title": "Reported homecoming the following Tuesday",
+      "kind": "reported_endpoint_author_narrative_with_astrological_circumstance",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          233
+        ],
+        "printed_sequence_expected": [
+          199
+        ],
+        "visible_printed_labels": [
+          "199"
+        ],
+        "passage_anchor": "But he came home the Tuesday following",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "passage_anchor": "But he came home the Tuesday following",
+            "page_location": "Italic return sentence near upper third"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "The brother is reported to have returned the following Tuesday, when the Moon came to Venus' body and Venus had entered Capricorn, her own terms, and her diurnal triplicity.",
+      "prerequisites": [],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The return and described Moon-Venus circumstance are one dependent episode.",
+        "The date and time of that Tuesday are not printed.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Tuesday following, source-relative weekday only",
+      "unresolved_ids": [
+        "B02h-U24"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C016",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [],
+      "source_defined_calculations": [
+        "TIME03"
+      ],
+      "numeric_table_references": [
+        "EP02"
+      ],
+      "evidence_status": "Reported return endpoint plus author-stated accompanying astrological condition; no modern parity computation is implied.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R985",
+        "LI.1647.II.XXX.R986"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R988",
+      "title": "Author's testimony of existing brotherly concord",
+      "kind": "author_relationship_testimony_with_interpretation",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          233
+        ],
+        "printed_sequence_expected": [
+          199
+        ],
+        "visible_printed_labels": [
+          "199"
+        ],
+        "passage_anchor": "There being an amicable aspect betwixt",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "passage_anchor": "There being an amicable aspect betwixt",
+            "page_location": "Paragraph after the return sentence"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Lilly connects the amicable Saturn-Venus aspect between the brothers' significators with his statement that they always did, and still do, agree lovingly.",
+      "prerequisites": [
+        "Saturn and Venus represent the two brothers.",
+        "Their aspect is amicable."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Always did and still do, author's relationship description",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C017",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Querent: the brother who asks; Saturn is lord of the ascending sign.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 3,
+          "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+          "basis": "source_explicit",
+          "turned_house": {
+            "relative_to": "absent brother",
+            "number": 1
+          }
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "Author testimony about an ongoing relationship, tied to this existing case; not a new chart or separate future event.",
+      "dependency_rules": [
+        "LI.1647.II.XXX.R974",
+        "LI.1647.II.XXX.R978"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXX.R989",
+      "title": "Vary third-house judgement with the actual question",
+      "kind": "methodological_instruction",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXX",
+        "pdf_pages": [
+          233
+        ],
+        "printed_sequence_expected": [
+          199
+        ],
+        "visible_printed_labels": [
+          "199"
+        ],
+        "passage_anchor": "vary your judgment according to the position",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "passage_anchor": "vary your judgment according to the position",
+            "page_location": "Final sentence before ChapterXXXI"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_absent_brother",
+      "source_statement": "Vary the judgment with the positions of the significators and the matter asked. Lilly presents the worked method as applicable to matters belonging to the third house.",
+      "prerequisites": [
+        "Attend to both actual significator positions and the question's subject."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The worked outcomes are not invariant outputs regardless of placements or matter.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C018",
+      "case_id": "EX01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 3,
+          "role": "General domain of questions to which the demonstrated method may be adapted.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "Explicit source method and scope instruction.",
+      "dependency_rules": [],
+      "generality": "source_general_method_limited_to_third_house"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R990",
+      "title": "Cambridge rumour: historical enquiry and second figure",
+      "kind": "historical_case_context_and_question",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          233,
+          234
+        ],
+        "printed_sequence_expected": [
+          199,
+          200
+        ],
+        "visible_printed_labels": [
+          "199",
+          "200"
+        ],
+        "passage_anchor": "In the yeer 1643. His Majesties Army",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "passage_anchor": "In the yeer 1643. His Majesties Army",
+            "page_location": "Narrative below ChapterXXXI heading"
+          },
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "A Report that Cambridge was taken",
+            "page_location": "Caption under the square chart"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_cambridge_rumour",
+      "source_statement": "In1643, amid reports that the king had taken Cambridge, a person aligned with Lilly's side asked whether the news was true. Lilly says he erected the following figure. Its caption asks whether the report of capture by the king's forces is true; its center is dated11 April1643,4h31 P.M.",
+      "prerequisites": [],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "No modern timezone or calendar conversion is printed.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [
+        "B02h-U21",
+        "B02h-U24"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C019",
+      "case_id": "EX02",
+      "house_numbering_and_roles": [],
+      "source_defined_calculations": [],
+      "numeric_table_references": [
+        "CH02.datetime"
+      ],
+      "evidence_status": "Historical question narrative and printed chart metadata, not evidence that Cambridge had been captured.",
+      "dependency_rules": [],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R991",
+      "title": "Cambridge capture report judged false",
+      "kind": "historical_judgment_of_report_falsity",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          233,
+          235
+        ],
+        "printed_sequence_expected": [
+          199,
+          201
+        ],
+        "visible_printed_labels": [
+          "199",
+          "201"
+        ],
+        "passage_anchor": "All that we heard was untruth",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "passage_anchor": "All that we heard was untruth",
+            "page_location": "Italic judgment after narrative"
+          },
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "I judged Cambridge was not taken",
+            "page_location": "Conclusion of continued rumor judgment"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_cambridge_rumour",
+      "source_statement": "Lilly states his judgment that Cambridge had not been taken and that the reports of its capture were untrue. He repeats this conclusion after giving the figure's rationale.",
+      "prerequisites": [],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Alleged prior/current capture",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C020",
+      "case_id": "EX02",
+      "house_numbering_and_roles": [],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "Source judgment about the report, not a separately narrated checked outcome.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R990"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R992",
+      "title": "Future non-capture is an additional forecast",
+      "kind": "historical_prospective_forecast",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          233
+        ],
+        "printed_sequence_expected": [
+          199
+        ],
+        "visible_printed_labels": [
+          "199"
+        ],
+        "passage_anchor": "neither was, or should be taken by Him or his Forces",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 233,
+            "literal_visible_folio": "199",
+            "passage_anchor": "neither was, or should be taken by Him or his Forces",
+            "page_location": "Final italic lines of the chapter narrative"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_cambridge_rumour",
+      "source_statement": "In addition to rejecting the alleged existing capture, Lilly states that Cambridge should not be taken by the king or his forces.",
+      "prerequisites": [],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Keep the prospective “should” separate from the judgment about whether an alleged capture had already occurred.",
+        "No forecast horizon or future date is specified.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Future non-capture, horizon unspecified",
+      "unresolved_ids": [
+        "B02h-U27"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C021",
+      "case_id": "EX02",
+      "house_numbering_and_roles": [],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "Prospective source forecast; no separately narrated later military confirmation is supplied in this span.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R990",
+        "LI.1647.II.XXXI.R991"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R993",
+      "title": "Movable angles plus afflicted cusps: combined first argument",
+      "kind": "historical_false_report_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          234
+        ],
+        "printed_sequence_expected": [
+          200
+        ],
+        "visible_printed_labels": [
+          "200"
+        ],
+        "passage_anchor": "the Angles were all moveable",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "the Angles were all moveable",
+            "page_location": "First paragraph below caption"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_cambridge_rumour",
+      "source_statement": "All four angles are movable, Mars vitiates the tenth cusp, and Saturn vitiates the seventh cusp: Lilly calls this one argument that the report is false.",
+      "prerequisites": [
+        "All angles have movable signs.",
+        "Mars vitiates the tenth cusp.",
+        "Saturn vitiates the seventh cusp."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Treat the three observations as the source's combined first argument.",
+        "The text does not claim that Mars or Saturn occupies the exact cusp minute.",
+        "No numeric threshold for “vitiate” is supplied here.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [
+        "B02h-U23"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C022",
+      "case_id": "EX02",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Movable angle: Libra.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 4,
+          "role": "Movable angle: Capricorn.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 7,
+          "role": "Movable angle vitiated by Saturn.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 10,
+          "role": "Movable angle vitiated by Mars.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [
+        "AR05",
+        "AR06"
+      ],
+      "numeric_table_references": [
+        "CH02.cusps",
+        "CH02.planets.Mars",
+        "CH02.planets.Saturn"
+      ],
+      "evidence_status": "Source inference of report falsity.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R990"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R994",
+      "title": "Cadent Moon in Gemini: second argument",
+      "kind": "historical_false_report_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          234
+        ],
+        "printed_sequence_expected": [
+          200
+        ],
+        "visible_printed_labels": [
+          "200"
+        ],
+        "passage_anchor": "I found the Moon cadent",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "I found the Moon cadent",
+            "page_location": "Second judgment paragraph, Moon printed as glyph"
+          },
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "a Signe wherein she nothing delights",
+            "page_location": "Same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_cambridge_rumour",
+      "source_statement": "The Moon is cadent and in Gemini, where the source says she does not delight. Lilly treats this as a second strong indication of a false rumor.",
+      "prerequisites": [
+        "Moon cadent.",
+        "Moon in Gemini.",
+        "The source characterizes Gemini as a sign in which Moon does not delight."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Do not replace “nothing delights” with an unprinted formal dignity category.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C023",
+      "case_id": "EX02",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 9,
+          "role": "Moon drawn in this cadent house; the word “cadent” is explicit, house9 follows the diagram.",
+          "basis": "diagram_derived"
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [
+        "CH02.planets.Moon"
+      ],
+      "evidence_status": "Source inference of report falsity.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R990"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R995",
+      "title": "Cambridge political sides and significators",
+      "kind": "case_political_role_assignment",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          234
+        ],
+        "printed_sequence_expected": [
+          200
+        ],
+        "visible_printed_labels": [
+          "200"
+        ],
+        "passage_anchor": "the first house signified that honourable Society",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "the first house signified that honourable Society",
+            "page_location": "Third paragraph"
+          },
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "our Enemies Ascendant, viz. the seventh",
+            "page_location": "Same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_cambridge_rumour",
+      "source_statement": "The first house represents Parliament / Lilly's side and Venus is its significatrix; the seventh is the enemies' ascendant and Mars their significator.",
+      "prerequisites": [],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "These are the author's perspective and roles in this particular question.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C024",
+      "case_id": "EX02",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Parliament / the author's side / querent side in this case; Venus rules the ascendant.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 7,
+          "role": "The king's forces / enemies in the author's case perspective; Mars rules their ascendant.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "Source case-role assignment; no modern political or factual assessment is being made.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R990"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R996",
+      "title": "North node described on Ascendant: benefit to Parliament",
+      "kind": "historical_side_benefit_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          234
+        ],
+        "printed_sequence_expected": [
+          200
+        ],
+        "visible_printed_labels": [
+          "200"
+        ],
+        "passage_anchor": "on the cusp of the Ascendant, a Signe of good to the Parliament",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "on the cusp of the Ascendant, a Signe of good to the Parliament",
+            "page_location": "Opening sentence of third paragraph, north-node glyph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_cambridge_rumour",
+      "source_statement": "The north node on the ascendant cusp signifies good to Parliament, because Parliament is represented by the first house in this question.",
+      "prerequisites": [
+        "Parliament is assigned the first house.",
+        "The north node is described as on the ascendant cusp."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Printed north-node2:04 Libra and ascendant4:37 Libra differ by2:33; retain the source's qualitative “on” beside the exact arithmetic.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [
+        "B02h-U23"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C025",
+      "case_id": "EX02",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Parliament / the author's side / querent side in this case; Venus rules the ascendant.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [
+        "AR07"
+      ],
+      "numeric_table_references": [
+        "CH02.nodes.NorthNode",
+        "CH02.cusps.H01"
+      ],
+      "evidence_status": "Source inference of benefit to the author's side.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R995"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R997",
+      "title": "Side comparison: Venus exalted, Mars in fall and squared",
+      "kind": "case_rationale_dignity_and_affliction_comparison",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          234
+        ],
+        "printed_sequence_expected": [
+          200
+        ],
+        "visible_printed_labels": [
+          "200"
+        ],
+        "passage_anchor": "in her Exaltation",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "in her Exaltation",
+            "page_location": "Middle of third paragraph"
+          },
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "entring his Fall",
+            "page_location": "Same paragraph"
+          },
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "afflicted by",
+            "page_location": "Saturn square clause"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_cambridge_rumour",
+      "source_statement": "Venus, ascendant lady and the author's side's significatrix, is in exaltation. Mars, seventh-house lord for the enemies, enters Cancer, his fall, and is afflicted by Saturn's square. These observations form part of the source's side-comparison rationale.",
+      "prerequisites": [
+        "Use the case roles of the first and seventh houses."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The source does not state a separate numerical strength score.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C026",
+      "case_id": "EX02",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Parliament / the author's side / querent side in this case; Venus rules the ascendant.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 7,
+          "role": "The king's forces / enemies in the author's case perspective; Mars rules their ascendant.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [
+        "AR08"
+      ],
+      "numeric_table_references": [
+        "CH02.planets.Venus",
+        "CH02.planets.Mars",
+        "CH02.planets.Saturn"
+      ],
+      "evidence_status": "Source diagnostic/rationale statements, leading into the benefit expectation recorded in C027.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R995"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R998",
+      "title": "Moon carries Jupiter's light to Venus: benefit expectation",
+      "kind": "historical_translation_of_light_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          234,
+          235
+        ],
+        "printed_sequence_expected": [
+          200,
+          201
+        ],
+        "visible_printed_labels": [
+          "200",
+          "201"
+        ],
+        "passage_anchor": "transferring his light and vertue",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 234,
+            "literal_visible_folio": "200",
+            "passage_anchor": "transferring his light and vertue",
+            "page_location": "End of third paragraph"
+          },
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "our side from this report or Rumor",
+            "page_location": "Opening continuation"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_cambridge_rumour",
+      "source_statement": "The Moon separates from Jupiter, situated in the seventh, and transfers his light and virtue to Venus. Lilly consequently expects good to his side from the report and no benefit to the enemies.",
+      "prerequisites": [
+        "Moon separates from Jupiter.",
+        "Jupiter is in the seventh.",
+        "Moon transfers Jupiter's light to Venus.",
+        "Venus signifies the author's side."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The figure's center describes Moon from sextile Jupiter to square Venus.",
+        "The prose benefit expectation is tied to this rumor, not every possible matter.",
+        "Venus' minute is not printed, so an exact-minute Moon-Venus aspect distance is not source-secure.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [
+        "B02h-U22",
+        "B02h-U24"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C027",
+      "case_id": "EX02",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Parliament / the author's side / querent side in this case; Venus rules the ascendant.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 7,
+          "role": "The king's forces / enemies in the author's case perspective; Mars rules their ascendant.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 7,
+          "role": "Jupiter, donor in the stated translation, is here.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [
+        "AR09",
+        "AR10"
+      ],
+      "numeric_table_references": [
+        "CH02.moon_annotation"
+      ],
+      "evidence_status": "Source forecast/inference of differential benefit; no distinct later confirmation is narrated.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R995",
+        "LI.1647.II.XXXI.R997"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R999",
+      "title": "Mars-Saturn square interpreted as enemy division",
+      "kind": "historical_interpretation_of_enemy_division",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          235
+        ],
+        "printed_sequence_expected": [
+          201
+        ],
+        "visible_printed_labels": [
+          "201"
+        ],
+        "passage_anchor": "so full of division and treason",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "so full of division and treason",
+            "page_location": "Opening paragraph"
+          },
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "thwarting one anothers Designes",
+            "page_location": "Same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; historical example",
+      "scope_group": "worked_cambridge_rumour",
+      "source_statement": "The Mars-Saturn square assures Lilly that the enemies are divided, treasonous, and obstructing one another's designs, so they will gain no good from this report.",
+      "prerequisites": [
+        "Mars and Saturn are in square in the case figure."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "These are the source author's wartime interpretations, not verified charges or independently established events.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C028",
+      "case_id": "EX02",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 7,
+          "role": "The king's forces / enemies in the author's case perspective; Mars rules their ascendant.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [
+        "AR08"
+      ],
+      "numeric_table_references": [],
+      "evidence_status": "Source interpretation and forecast about the enemy side; part of the rationale for C020.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R995",
+        "LI.1647.II.XXXI.R997"
+      ],
+      "generality": "worked_example_only"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R1000",
+      "title": "Same chart hypothetically reused for siblings",
+      "kind": "explicit_counterfactual_chart_reuse",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          235
+        ],
+        "printed_sequence_expected": [
+          201
+        ],
+        "visible_printed_labels": [
+          "201"
+        ],
+        "passage_anchor": "Had this Question been propounded",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "Had this Question been propounded",
+            "page_location": "Paragraph beginning below the rumor conclusion"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; explicit hypothetical reinterpretation",
+      "scope_group": "hypothetical_siblings",
+      "source_statement": "The author asks the reader to reuse the same figure hypothetically for a question about whether the querent should have brothers or sisters, converting the interpretation to that subject.",
+      "prerequisites": [],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The conditional wording does not establish a second actual question for this chart.",
+        "No new chart date, time, or figure is supplied.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule.",
+        "Explicit hypothetical reuse of Cambridge chart; no additional actual enquiry, chart or reported sibling outcome."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C029",
+      "case_id": "HY01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Hypothetical sibling querent, represented by Venus as ascendant lord.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 3,
+          "role": "Siblings / kin in the explicitly hypothetical reinterpretation; Scorpio is on the cusp and Mars its lord.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "Counterfactual teaching application only; no reported sibling outcomes.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R990"
+      ],
+      "generality": "hypothetical_reinterpretation"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R1001",
+      "title": "Hypothetical sibling chain: third-cusp Scorpio",
+      "kind": "source_classification_applied_to_hypothetical",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          235
+        ],
+        "printed_sequence_expected": [
+          201
+        ],
+        "visible_printed_labels": [
+          "201"
+        ],
+        "passage_anchor": "The Signe of the third is a fruitfull Signe",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "The Signe of the third is a fruitfull Signe",
+            "page_location": "First short line after hypothetical introduction, Scorpio glyph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; explicit hypothetical reinterpretation",
+      "scope_group": "hypothetical_siblings",
+      "source_statement": "Scorpio, the sign on the third cusp in this figure, is classified as fruitful.",
+      "prerequisites": [
+        "Hypothetical siblings question.",
+        "Scorpio on the third cusp."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule.",
+        "Explicit hypothetical reuse of Cambridge chart; no additional actual enquiry, chart or reported sibling outcome."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C030",
+      "case_id": "HY01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 3,
+          "role": "Siblings / kin in the explicitly hypothetical reinterpretation; Scorpio is on the cusp and Mars its lord.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [
+        "CH02.cusps.H03",
+        "CROSSREF01"
+      ],
+      "evidence_status": "Source fertility classification used in the hypothetical inference; not a modern biological claim.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R1000"
+      ],
+      "generality": "source_classification_applied_in_hypothetical"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R1002",
+      "title": "Hypothetical sibling chain: Mars in Cancer",
+      "kind": "source_classification_applied_to_hypothetical",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          235
+        ],
+        "printed_sequence_expected": [
+          201
+        ],
+        "visible_printed_labels": [
+          "201"
+        ],
+        "passage_anchor": "Wherein the Lord of the third is posited",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "Wherein the Lord of the third is posited",
+            "page_location": "Next short line, Cancer glyph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; explicit hypothetical reinterpretation",
+      "scope_group": "hypothetical_siblings",
+      "source_statement": "Cancer, containing Mars, lord of the third, is also classified as fruitful.",
+      "prerequisites": [
+        "Mars rules the third.",
+        "Mars is in Cancer."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule.",
+        "Explicit hypothetical reuse of Cambridge chart; no additional actual enquiry, chart or reported sibling outcome."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C031",
+      "case_id": "HY01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 3,
+          "role": "Siblings / kin in the explicitly hypothetical reinterpretation; Scorpio is on the cusp and Mars its lord.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [
+        "CH02.planets.Mars",
+        "CROSSREF01"
+      ],
+      "evidence_status": "Source fertility classification within the hypothetical, not an observed reproductive outcome.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R1000",
+        "LI.1647.II.XXXI.R1001"
+      ],
+      "generality": "source_classification_applied_in_hypothetical"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R1003",
+      "title": "Hypothetical sibling chain: Moon applies to Venus in Pisces",
+      "kind": "source_application_and_fertility_classification",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          235
+        ],
+        "printed_sequence_expected": [
+          201
+        ],
+        "visible_printed_labels": [
+          "201"
+        ],
+        "passage_anchor": "Applies to",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "Applies to",
+            "page_location": "Moon-glyph line following the Cancer line"
+          },
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "who is placed in a fruitfull Sign",
+            "page_location": "Same sentence"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; explicit hypothetical reinterpretation",
+      "scope_group": "hypothetical_siblings",
+      "source_statement": "The Moon applies to Venus, who occupies a fruitful sign. The paragraph directs the reader to printed page89 for the signs called prolific or fruitful; the figure supplies Venus' Pisces placement.",
+      "prerequisites": [
+        "The Moon applies to Venus.",
+        "Venus is in a sign the source classes as fruitful."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The referenced classification page89 is outside this assigned span and was not independently reread here.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule.",
+        "Explicit hypothetical reuse of Cambridge chart; no additional actual enquiry, chart or reported sibling outcome."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [
+        "B02h-U21"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C032",
+      "case_id": "HY01",
+      "house_numbering_and_roles": [],
+      "source_defined_calculations": [],
+      "numeric_table_references": [
+        "CH02.planets.Moon",
+        "CH02.planets.Venus",
+        "CROSSREF01"
+      ],
+      "evidence_status": "Source hypothetical fertility argument and internal cross-reference.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R1000"
+      ],
+      "generality": "source_classification_applied_in_hypothetical"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R1004",
+      "title": "Hypothetical abundance of siblings or kindred",
+      "kind": "counterfactual_sibling_abundance_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          235
+        ],
+        "printed_sequence_expected": [
+          201
+        ],
+        "visible_printed_labels": [
+          "201"
+        ],
+        "passage_anchor": "from hence you might have assured the Querent",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "from hence you might have assured the Querent",
+            "page_location": "Middle fertility paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; explicit hypothetical reinterpretation",
+      "scope_group": "hypothetical_siblings",
+      "source_statement": "From the fruitful third sign, fruitful placement of the third lord, and Moon's application to Venus in a fruitful sign, the hypothetical querent could be told to expect both brothers and sisters, or plentiful/numerous kin.",
+      "prerequisites": [
+        "Fruitful third-cusp sign.",
+        "Third lord in a fruitful sign.",
+        "Moon applies to Venus in a fruitful sign."
+      ],
+      "source_alternatives": [
+        "The source gives “both Brothers and Sisters, or a plentiful numerous Kindred”; do not turn the second phrasing into an independent observed outcome."
+      ],
+      "qualifications_and_limits": [
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule.",
+        "Explicit hypothetical reuse of Cambridge chart; no additional actual enquiry, chart or reported sibling outcome."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C033",
+      "case_id": "HY01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Hypothetical sibling querent, represented by Venus as ascendant lord.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 3,
+          "role": "Siblings / kin in the explicitly hypothetical reinterpretation; Scorpio is on the cusp and Mars its lord.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "Counterfactual inference only, with no actual count or reported sibling endpoint.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R1001",
+        "LI.1647.II.XXXI.R1002",
+        "LI.1647.II.XXXI.R1003"
+      ],
+      "generality": "hypothetical_reinterpretation"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R1005",
+      "title": "Hypothetical female predominance and its local sign context",
+      "kind": "counterfactual_female_predominance_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          235
+        ],
+        "printed_sequence_expected": [
+          201
+        ],
+        "visible_printed_labels": [
+          "201"
+        ],
+        "passage_anchor": "more Sisters then Brothers",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "more Sisters then Brothers",
+            "page_location": "Continuation of fertility paragraph"
+          },
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "because all the Signes are Feminine",
+            "page_location": "Same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; explicit hypothetical reinterpretation",
+      "scope_group": "hypothetical_siblings",
+      "source_statement": "The hypothetical reading expects more sisters than brothers because the signs involved in the fertility indications are feminine and Mars, third lord, is in a feminine sign. The source refers to printed page88 for sign gender.",
+      "prerequisites": [
+        "The relevant fertility signs are feminine.",
+        "Mars, lord of the third, is in a feminine sign."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The next clause expressly describes Gemini as masculine, so “all the signs” cannot safely mean every sign in the whole chart.",
+        "The following masculine indications qualify female predominance, rather than eliminate brother(s).",
+        "Scope of “all the Signes” is contextual, not expressly enumerated in this clause.",
+        "Printed page88 is referenced but not independently reread in this assignment.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule.",
+        "Explicit hypothetical reuse of Cambridge chart; no additional actual enquiry, chart or reported sibling outcome."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [
+        "B02h-U28"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C034",
+      "case_id": "HY01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 3,
+          "role": "Siblings / kin in the explicitly hypothetical reinterpretation; Scorpio is on the cusp and Mars its lord.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [],
+      "numeric_table_references": [
+        "CROSSREF02"
+      ],
+      "evidence_status": "Counterfactual comparative prediction; no exact female or male count.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R1004"
+      ],
+      "generality": "hypothetical_reinterpretation"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R1006",
+      "title": "Masculine indications still permit brothers",
+      "kind": "counterfactual_male_sibling_indication",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          235
+        ],
+        "printed_sequence_expected": [
+          201
+        ],
+        "visible_printed_labels": [
+          "201"
+        ],
+        "passage_anchor": "who is Dispositor of",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "who is Dispositor of",
+            "page_location": "Moon and Mars glyph clause in middle paragraph"
+          },
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "in a",
+            "page_location": "Platick-sextile-Jupiter clause"
+          },
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "having a Brother or Brethren",
+            "page_location": "End of same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; explicit hypothetical reinterpretation",
+      "scope_group": "hypothetical_siblings",
+      "source_statement": "The Moon, dispositor of Mars, is in masculine Gemini and in platick sextile with Jupiter. Jupiter is a masculine planet, angular, and in a masculine sign and house. These qualify the sister-predominance judgment by indicating a brother or brothers.",
+      "prerequisites": [
+        "Moon disposes Mars.",
+        "Moon is in masculine Gemini.",
+        "Moon is in platick sextile with Jupiter.",
+        "Jupiter is masculine, angular, and in a masculine sign and house."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The source does not claim an exact sextile.",
+        "The final paragraph says the Moon has lately separated and remains within Jupiter's sextile orbs.",
+        "No numerical orb threshold is supplied in this span.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule.",
+        "Explicit hypothetical reuse of Cambridge chart; no additional actual enquiry, chart or reported sibling outcome."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [
+        "B02h-U23"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C035",
+      "case_id": "HY01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 3,
+          "role": "Siblings / kin in the explicitly hypothetical reinterpretation; Scorpio is on the cusp and Mars its lord.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 7,
+          "role": "Jupiter's angular and masculine house in this figure.",
+          "basis": "diagram_and_source_combined"
+        }
+      ],
+      "source_defined_calculations": [
+        "AR09"
+      ],
+      "numeric_table_references": [
+        "CH02.planets.Moon",
+        "CH02.planets.Jupiter"
+      ],
+      "evidence_status": "Counterfactual brother(s) indication, not a new case or report of actual siblings.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R1005"
+      ],
+      "generality": "hypothetical_reinterpretation"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R1007",
+      "title": "Exact sibling count expressly withheld",
+      "kind": "explicit_limit_on_predicting_exact_count",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          235
+        ],
+        "printed_sequence_expected": [
+          201
+        ],
+        "visible_printed_labels": [
+          "201"
+        ],
+        "passage_anchor": "It were too nice a poynt in Art",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "It were too nice a poynt in Art",
+            "page_location": "Paragraph beginning after sibling-sex discussion"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; explicit hypothetical reinterpretation",
+      "scope_group": "hypothetical_siblings",
+      "source_statement": "Lilly declines to predict a certain number of siblings: he intends general satisfaction and leaves determination of the precise number to divine Providence.",
+      "prerequisites": [],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "Do not convert plentiful/numerous kin into an exact count.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule.",
+        "Explicit hypothetical reuse of Cambridge chart; no additional actual enquiry, chart or reported sibling outcome."
+      ],
+      "temporal_target": "Not specified locally",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C036",
+      "case_id": "HY01",
+      "house_numbering_and_roles": [],
+      "source_defined_calculations": [],
+      "numeric_table_references": [],
+      "evidence_status": "Explicit source limit on the interpretation, not missing outcome evidence.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R1004",
+        "LI.1647.II.XXXI.R1005",
+        "LI.1647.II.XXXI.R1006"
+      ],
+      "generality": "source_method_limit_in_hypothetical"
+    },
+    {
+      "id": "LI.1647.II.XXXI.R1008",
+      "title": "Hypothetical concord includes a qualified applying square",
+      "kind": "counterfactual_kin_harmony_inference",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXXI",
+        "pdf_pages": [
+          235
+        ],
+        "printed_sequence_expected": [
+          201
+        ],
+        "visible_printed_labels": [
+          "201"
+        ],
+        "passage_anchor": "The third house no wayes afflicted",
+        "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+        "specific_passages": [
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "The third house no wayes afflicted",
+            "page_location": "Final paragraph"
+          },
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "in Signes of short ascensions",
+            "page_location": "Moon-to-Venus clause"
+          },
+          {
+            "pdf_page": 235,
+            "literal_visible_folio": "201",
+            "passage_anchor": "agreement, concord and unity",
+            "page_location": "Conclusion of same paragraph"
+          }
+        ]
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly; explicit hypothetical reinterpretation",
+      "scope_group": "hypothetical_siblings",
+      "source_statement": "The source combines an unafflicted third house, no ill aspect between querent's Venus and third lord Mars, those planets being in signs of the same nature, Moon applying by dexter square to Venus in signs of short ascensions, and Moon having recently separated from but remaining within the sextile orbs of Jupiter. These argue agreement, concord, and unity between the hypothetical querent and kin, including brothers or sisters he should have in future.",
+      "prerequisites": [
+        "Third house not afflicted.",
+        "No ill aspect between Venus and Mars.",
+        "Venus and Mars occupy signs of the same nature.",
+        "Moon applies to Venus by dexter square in signs of short ascensions.",
+        "Moon has recently separated from Jupiter's sextile but remains within its orbs."
+      ],
+      "source_alternatives": [],
+      "qualifications_and_limits": [
+        "The qualified square is explicitly part of favorable concord evidence here.",
+        "This concerns the hypothetical future siblings and kin, not independently reported family harmony.",
+        "Read the source's elliptical “no wayes afflicted, or any ill aspect” with its apparent negation scope; do not make an ill aspect a positive prerequisite.",
+        "No numerical orb threshold is supplied.",
+        "Venus' minutes are absent in the diagram.",
+        "The first two negated clauses are grammatically elliptical in the print.",
+        "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule.",
+        "Explicit hypothetical reuse of Cambridge chart; no additional actual enquiry, chart or reported sibling outcome."
+      ],
+      "temporal_target": "Hypothetical current/future kin and future siblings; no interval",
+      "unresolved_ids": [
+        "B02h-U22",
+        "B02h-U23",
+        "B02h-U29"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "candidate_origin": "B02h.examples.C037",
+      "case_id": "HY01",
+      "house_numbering_and_roles": [
+        {
+          "radical_house": 1,
+          "role": "Hypothetical sibling querent, represented by Venus as ascendant lord.",
+          "basis": "source_explicit"
+        },
+        {
+          "radical_house": 3,
+          "role": "Siblings / kin in the explicitly hypothetical reinterpretation; Scorpio is on the cusp and Mars its lord.",
+          "basis": "source_explicit"
+        }
+      ],
+      "source_defined_calculations": [
+        "AR09",
+        "AR10"
+      ],
+      "numeric_table_references": [],
+      "evidence_status": "Counterfactual harmony inference with multiple combined conditions; no reported endpoint.",
+      "dependency_rules": [
+        "LI.1647.II.XXXI.R1000",
+        "LI.1647.II.XXXI.R1006"
+      ],
+      "generality": "hypothetical_reinterpretation"
     }
   ]
 }

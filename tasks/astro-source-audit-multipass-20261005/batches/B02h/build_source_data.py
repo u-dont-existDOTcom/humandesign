@@ -51,9 +51,9 @@ rec("Ascendant malefics and fault", [222], "Saturn, Mars or South Node in the As
 rec("Third-house adverse bodies and dignity exception", [222], "if they be in the third, unlesse in their own essentiall dignities",
     "Saturn, Mars or South Node in third gives little good from the other party unless in own essential dignities; worse if peregrine, retrograde, combust or in any malevolent configuration with another planet.",
     limits=["Worsening predicates are alternatives. The node's inclusion in the dignity-qualified phrase does not supply it an invented domicile or dignity table."], issues=["B02h-U03"])
-rec("Present concord can fail later", [222], "although at present there be unity",
-    "In the preceding adverse third-house configuration, apparent present unity does not promise continuation; Lilly says hatred or grumbling usually follows.",
-    requires=["The preceding adverse third-house context applies."], temporal="Present unity versus later continuation; no duration", limits=["Usually is retained; no deterministic date or categorical universal."])
+rec("Adverse third-house context: present unity will not continue", [222], "although at present there be unity",
+    "In the preceding adverse third-house configuration, Lilly says apparent present unity will not continue; hatred or grumbling usually follows.",
+    requires=["The preceding adverse third-house context applies."], temporal="Present unity versus later continuation; no duration", limits=["Usually qualifies subsequent hatred/grumbling. No interval or claim outside this adverse source context is supplied."])
 rec("Saturn or South Node character attribution", [222], "Saturn or South Node in the third",
     "Saturn or South Node in third characterizes neighbours as clowns and kin as covetous or sparing, most assuredly out of essential dignities.",
     limits=["Historical moral attribution, not an observed personal trait. Source dignity language is retained without inventing node dignities."], issues=["B02h-U03"])
@@ -177,10 +177,10 @@ rec("Lilly's wartime enemy-benefit alternative", [226], "if the Moon applyed to 
     kind="author_experience_claim", attribution="Lilly's partisan wartime judgement",
     limits=["Does not by itself state that the report is false; political benefit and report truth are different targets."])
 rec("Void-of-course Moon and inconsequential reports", [226], "Moon was voyd of course",
-    "Void-of-course Moon made Lilly judge news of no moment, usually vain or mere lies and soon contradicted.",
+    "Lilly reports that with void-of-course Moon the news proved of no moment, usually vain or mere lies and soon contradicted.",
     kind="author_experience_claim", limits=["Usually is retained. Inconsequence and falsity are not equivalent outcomes."], temporal="Near-term contradiction claimed; no fixed interval")
 rec("Moon-Mercury hard aspect plus absent favourable Ascendant contact", [226], "Moon and Mercury in square or opposition",
-    "Moon and Mercury square/opposite, with neither or both supplying any favourable sextile/trine to the Ascendant degree, is interpreted as false news deliberately reported to frighten Lilly's side.",
+    "Moon and Mercury square/opposite, with neither Moon nor Mercury casting a favourable sextile/trine to the Ascendant degree, is interpreted as false news deliberately reported to frighten Lilly's side.",
     limits=["Meaning: neither body supplies such a favourable contact; it is not merely that both fail to do so jointly. The degree target and missing-favourable-contact condition are necessary."])
 rec("News question time depends on who asks", [227], "the houre when I first heard the newes",
     {"self_heard_news": "moment of first hearing the news or rumour", "another_person_proposes_question": "exact moment the question is proposed"},
@@ -201,7 +201,7 @@ GROUP = "rumours_ancients"
 rec("Ancients' angularity, fixity and favourable-contact alternatives", [227,228], "Consider the Lord of the Ascendant and the Moon",
     "Consider Ascendant lord and Moon and which is angular; OR Moon's dispositor angular and fixed; OR any of these succedent and fixed; OR in sextile/trine to Jupiter, Venus or Sun: the rumours are judged true and very good.",
     attribution="Ancients as reported by Lilly", limits=["The reach of fixed sign across the opening angular alternatives is not formally unambiguous. Sun is explicitly in the favourable list."], issues=["B02h-U12"])
-rec("Afflicted or cadent first lord overrides own-sign strength here", [227,228], "if you find the Lord of the Ascendant afflicted",
+rec("Afflicted or cadent first lord overrides sign strength here", [227,228], "if you find the Lord of the Ascendant afflicted",
     "Ascendant lord afflicted by Infortunes OR cadent gives the contrary judgement, though strong in its sign.",
     attribution="Ancients as reported by Lilly", limits=["Do not erase the contrary clause by selecting sign strength alone."])
 rec("Fixed angles and applying Moon/Mercury", [228], "Rumours are for the most part true",
@@ -258,7 +258,7 @@ rec("Last aspect and unity", [229], "the last aspect the Lord of the third, and 
 rec("Which party supplies concord", [229], "where the Fortunes are placed",
     {"Fortunes_in_Ascendant": "concord expected from querent", "Fortunes_in_third": "concord from brother, sister or kindred"}, kind="conditional_reference_table")
 rec("Discord in third with separate node alternative", [229], "Saturn or Mars out of their essentiall Dignities in the third, or South Node therein",
-    "Saturn or Mars out of essential dignities in third, OR South Node there, is a strong argument of untoward relatives, discord and wrangling.",
+    "Saturn or Mars out of essential dignities in third, OR South Node there, is a strong argument of untoward relatives, no unity, and continual discord and wrangling.",
     limits=["Unlike the earlier compound dignity phrase, the South Node is a separate alternative here. Historical characterization, not actual observation."])
 
 GROUP = "short_journey"

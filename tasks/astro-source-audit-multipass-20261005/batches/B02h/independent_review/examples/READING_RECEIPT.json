@@ -1,0 +1,223 @@
+{
+  "schema_version": "b02h-source-reading-receipt-1.0",
+  "completed_at_utc": "2026-10-10T03:07:24.498800+00:00",
+  "agent_task": "/root/b02h_worked_examples",
+  "source_pdf": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+  "source_pdf_sha256_supplied_previously_verified": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_pdf_rehashed_or_redownloaded": false,
+  "skill_used": "pdf; read-only source workflow, no PDF authoring",
+  "page_reading_receipts": [
+    {
+      "pdf_page": 230,
+      "literal_visible_folio": "196",
+      "original_whole_page_png": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-230.png",
+      "dimensions": [
+        1174,
+        1630
+      ],
+      "whole_page_visually_inspected": true,
+      "ocr_aid": "/workspace/scratch/bd2460f96de0/source-reading/p230.txt",
+      "extraction_topic": "Whole page read to locate boundary; extract only Where an absent Brother was? heading and chart, after prior short-journey text.",
+      "boundary_only": false
+    },
+    {
+      "pdf_page": 231,
+      "literal_visible_folio": "197",
+      "original_whole_page_png": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-231.png",
+      "dimensions": [
+        1174,
+        1630
+      ],
+      "whole_page_visually_inspected": true,
+      "ocr_aid": "/workspace/scratch/bd2460f96de0/source-reading/p231.txt",
+      "extraction_topic": "Narrative setup and three questions; Chap.XXX heading; description, significators, Moon limitation, life/health judgment, conditional stop.",
+      "boundary_only": false
+    },
+    {
+      "pdf_page": 232,
+      "literal_visible_folio": "198",
+      "original_whole_page_png": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-232.png",
+      "dimensions": [
+        1174,
+        1630
+      ],
+      "whole_page_visually_inspected": true,
+      "ocr_aid": "/workspace/scratch/bd2460f96de0/source-reading/p232.txt",
+      "extraction_topic": "When hear of him; mutual trine, ephemeris/meridian account, carrier advice and report; where he was, direction/distance/ingress.",
+      "boundary_only": false
+    },
+    {
+      "pdf_page": 233,
+      "literal_visible_folio": "199",
+      "original_whole_page_png": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-233.png",
+      "dimensions": [
+        1174,
+        1630
+      ],
+      "whole_page_visually_inspected": true,
+      "ocr_aid": "/workspace/scratch/bd2460f96de0/source-reading/p233.txt",
+      "extraction_topic": "Homecoming continuation, symbolic week, reported Tuesday return, brotherly concord, variation instruction; Chap.XXXI narrative and past/future judgments.",
+      "boundary_only": false
+    },
+    {
+      "pdf_page": 234,
+      "literal_visible_folio": "200",
+      "original_whole_page_png": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-234.png",
+      "dimensions": [
+        1174,
+        1630
+      ],
+      "whole_page_visually_inspected": true,
+      "ocr_aid": "/workspace/scratch/bd2460f96de0/source-reading/p234.txt",
+      "extraction_topic": "Complete Cambridge figure; caption; false-rumor arguments, political roles, node and ruler states, light transfer continuation.",
+      "boundary_only": false
+    },
+    {
+      "pdf_page": 235,
+      "literal_visible_folio": "201",
+      "original_whole_page_png": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-235.png",
+      "dimensions": [
+        1174,
+        1630
+      ],
+      "whole_page_visually_inspected": true,
+      "ocr_aid": "/workspace/scratch/bd2460f96de0/source-reading/p235.txt",
+      "extraction_topic": "End of rumor rationale; explicit hypothetical chart reuse for siblings; fertility, sex indications, exact-number limit, qualified-square harmony paragraph.",
+      "boundary_only": false
+    },
+    {
+      "pdf_page": 236,
+      "literal_visible_folio": "202",
+      "original_whole_page_png": "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-236.png",
+      "dimensions": [
+        1174,
+        1630
+      ],
+      "whole_page_visually_inspected": true,
+      "ocr_aid": "/workspace/scratch/bd2460f96de0/source-reading/p236.txt",
+      "extraction_topic": "Boundary-only: fourth-house heading and Chap.XXXII visible. No fourth-house rule included.",
+      "boundary_only": true
+    }
+  ],
+  "source_first_sequence": [
+    "Read PDF skill and confirmed original page/text files.",
+    "Read supplied OCR as an aid and visually inspected original whole pages230–236.",
+    "Rendered original PDF230 and234 directly at400dpi and visually inspected complete chart crops, rotated quadrants, and tight glyph crops.",
+    "Wrote and froze independent SOURCE_FIRST_NOTES.md before any normalized candidate file existed.",
+    "Created normalized candidates and numeric tables without consulting prior producer records.",
+    "Root independently inspected the original whole pages and the Jupiter/Moon crops; Jupiter degree remained unresolved by both readers.",
+    "Validated file parsing, candidate/source references, complete chart rows, printed-precision retention, simple longitude arithmetic, and the unchanged notes freeze."
+  ],
+  "freeze": {
+    "file": "/workspace/scratch/bd2460f96de0/b02h-example-review/SOURCE_FIRST_NOTES.md",
+    "sha256": "113ffa9a23b590b21c5c64b467b48224ce8a0d39b2e3a555df1a0bf370bfbfd1",
+    "frozen_at_utc": "2026-10-10T02:54:59.624012+00:00",
+    "normalized_candidate_file_existed_at_freeze": false,
+    "bytes": 17778
+  },
+  "exact_scope": {
+    "first_included": {
+      "pdf_page": 230,
+      "literal_visible_folio": "196",
+      "heading": "Where an absent Brother was?",
+      "note": "After horizontal rule ending earlier short-journey material."
+    },
+    "explicit_chapter_XXX_heading": {
+      "pdf_page": 231,
+      "literal_visible_folio": "197",
+      "heading": "Judgment upon the preceding Figure."
+    },
+    "last_included": {
+      "pdf_page": 235,
+      "literal_visible_folio": "201",
+      "anchor": "Final hypothetical sibling/kin concord paragraph, ending have."
+    },
+    "next_boundary": {
+      "pdf_page": 236,
+      "literal_visible_folio": "202",
+      "heading": "Of the fourth House, and the Judgment depending thereupon.",
+      "next_chapter": "XXXII",
+      "next_chapter_title": "To find a thing hid or mislaid."
+    }
+  },
+  "coverage_counts": {
+    "whole_pages_inspected": 7,
+    "substantive_pages_included": 6,
+    "boundary_only_pages": 1,
+    "candidate_records": 37,
+    "printed_charts": 2,
+    "actual_question_narratives": 2,
+    "hypothetical_reinterpretations": 1,
+    "main_coordinate_rows": 44,
+    "cusp_rows": 24,
+    "planet_rows": 14,
+    "node_rows": 4,
+    "part_of_fortune_rows": 2,
+    "fully_read_degree_minute_rows": 40,
+    "rows_with_omitted_minutes": 3,
+    "rows_with_uncertain_degree": 1,
+    "source_defined_or_referenced_calculation_records": 6,
+    "arithmetic_records": 10,
+    "dependent_reported_operational_endpoint_episodes": 2,
+    "other_author_descriptions": 2
+  },
+  "material_uncertainties": [
+    "CH01 Jupiter canonical degree and sign remain null. The raw glyph plausibly permits4:55 or14:55; initial24:55 is retained only provisionally because it may count part of the Jupiter glyph. Conditional sign and residual scenarios are provided, not a certified Jupiter longitude.",
+    "CH01 nodes have14 degrees but no printed minutes; CH02 Venus has15 degrees but no printed minutes. No00 minutes were inserted.",
+    "Body signs without adjacent sign glyphs are labeled diagram-derived; they are not passed off as explicit body-sign text.",
+    "The source describes Venus as one degree short of leaving Sagittarius, whereas the printed28:53 leaves1:07. Qualitative judgment and exact arithmetic remain separate.",
+    "Cusp influence wording is qualitative: CH02 Mars is4:20 short of MC, Saturn2:30 short of seventh, north node2:33 short of ascendant. No numeric influence threshold is invented.",
+    "No numeric orb threshold, exact travel-distance scale, original-ephemeris meridian reduction minutes, or modern calendar/sky parity is supplied or recomputed.",
+    "CH02 center has a small abbreviation/flourish-like mark above the day/hour label that is not assigned an astrological coordinate.",
+    "Printed folios88 and89 are internal references only; not reread as part of this assigned span."
+  ],
+  "verification": {
+    "json_parsed": true,
+    "source_notes_freeze_unchanged": true,
+    "candidate_ids_unique_and_sequential": true,
+    "candidate_dependencies_resolve": true,
+    "candidate_numeric_references_resolve": true,
+    "all_requested_chart_coordinate_rows_present": true,
+    "omitted_and_uncertain_precision_preserved": true,
+    "simple_arithmetic_verified": {
+      "AR02": true,
+      "AR03": true,
+      "AR04": true,
+      "AR05": true,
+      "AR06": true,
+      "AR07": true,
+      "AR08": true,
+      "AR09": true,
+      "AR10_conditional_bounds": true,
+      "AR01_Cancer4_55": true,
+      "AR01_Cancer14_55": true,
+      "AR01_Gemini24_55": true
+    }
+  },
+  "not_done": [
+    "No repository edits",
+    "No publishing",
+    "No personal-case consultation",
+    "No new ephemerides",
+    "No modern sky/calendar parity",
+    "No original-source rehash or download",
+    "No prior producer-record/rationale consultation"
+  ],
+  "deliverables": [
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02h-example-review/SOURCE_FIRST_NOTES.md",
+      "sha256": "113ffa9a23b590b21c5c64b467b48224ce8a0d39b2e3a555df1a0bf370bfbfd1",
+      "bytes": 17778
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02h-example-review/CANDIDATE_RULES.json",
+      "sha256": "1c5ea75c3392744cfb505af72e5d1b6453bebfb81546c5f5a8f2672d06ce8fa2",
+      "bytes": 85686
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02h-example-review/NUMERIC_TABLES.json",
+      "sha256": "1e374291cee0cf0dab0179383bc53138d9a41ff59db1585f998515adc24fb092",
+      "bytes": 50191
+    }
+  ]
+}

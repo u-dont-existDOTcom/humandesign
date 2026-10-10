@@ -1,0 +1,150 @@
+{
+  "report": "AUDIT_REPORT.md",
+  "report_sha256": "41f54c3158a15542334a55252279e6df10a0259be9903058e0861f9f1822d3f4",
+  "review_scope": "Evidence for substantive report claims. Publication/delivery remain pending separate live receipts; no final success claim yet.",
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Complete third-house scope,112 records; next236 preamble and XXXII",
+      "evidence_files": [
+        "RULES.json",
+        "SECTION_COVERAGE.json",
+        "READING_RECEIPT.json"
+      ],
+      "original_pdf_pages": [
+        221,
+        230,
+        235,
+        236
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "Lilly total1008; Ptolemy1066; combined2074",
+      "evidence_files": [
+        "RULES.json",
+        "../B02g/RULES.json",
+        "../../LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+        "../../PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json"
+      ],
+      "original_pdf_pages": []
+    },
+    {
+      "id": "C03",
+      "claim": "Turning and explicit original6/8/12 coexist; worked example checks both eighth lords",
+      "evidence_files": [
+        "QUERY_REFERENCES.json",
+        "RULES.json"
+      ],
+      "original_pdf_pages": [
+        223,
+        225,
+        226,
+        231
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "Distress while healthy, illness prerequisite and fear/death modalities differ",
+      "evidence_files": [
+        "RULES.json"
+      ],
+      "original_pdf_pages": [
+        223,
+        224,
+        225
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "News truth, harm, tone, beneficiary and secrecy are distinct; glyph lists preserved",
+      "evidence_files": [
+        "RULES.json"
+      ],
+      "original_pdf_pages": [
+        226,
+        227,
+        228
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "Question time differentiates hearing, proposal and advice disclosure",
+      "evidence_files": [
+        "QUERY_REFERENCES.json",
+        "RETAINED_SOURCE_EXCERPTS.json"
+      ],
+      "original_pdf_pages": [
+        227,
+        228
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Two historical questions, one hypothetical reuse, two dependent reported episodes; Cambridge no separately reported confirmation",
+      "evidence_files": [
+        "HISTORICAL_CASES.json",
+        "RULES.json"
+      ],
+      "original_pdf_pages": [
+        230,
+        231,
+        232,
+        233,
+        234,
+        235
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "Exact arithmetic table and conditional Jupiter/omitted Venus precision",
+      "evidence_files": [
+        "WORKED_NUMERIC_TABLES.json",
+        "ARITHMETIC_CHECKS.json",
+        "lilly_third_house_arithmetic.py"
+      ],
+      "original_pdf_pages": [
+        230,
+        234
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "Source-first general comparison found five corrections; subsequent R903 residual wording also corrected",
+      "evidence_files": [
+        "independent_review/general/DIAGNOSIS.json",
+        "independent_review/general/CORRECTION_CHECK.json",
+        "independent_review/general/GENERAL_CANDIDATE.json",
+        "RULES.json"
+      ],
+      "original_pdf_pages": [
+        222,
+        226,
+        229
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "115 distinct focused tests,24 new and91 retained, not predictive accuracy",
+      "evidence_files": [
+        "TEST_RUN_SUMMARY.json",
+        "TEST_B02h.txt",
+        "TEST_retained_B02g.txt",
+        "TEST_retained_B02f.txt",
+        "TEST_retained_methodology.txt"
+      ],
+      "original_pdf_pages": []
+    },
+    {
+      "id": "C11",
+      "claim": "29 source and interpretation limitations,11 context groups,23 retained excerpts and8 within-Lilly comparisons",
+      "evidence_files": [
+        "UNRESOLVED.json",
+        "APPLICABILITY_AND_RELATIONS.json",
+        "RETAINED_SOURCE_EXCERPTS.json",
+        "CROSS_SOURCE_COMPARISONS.json"
+      ],
+      "original_pdf_pages": []
+    }
+  ]
+}

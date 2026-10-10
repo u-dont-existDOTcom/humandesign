@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/b02h_general_source_check",
+  "completed_at_utc": "2026-10-10T03:06:21.845480+00:00",
+  "verdict": "PASS_BOUNDED_CORE_CORRECTIONS_WITH_NONBLOCKING_RESIDUAL",
+  "scope": "Only the five changed rows R903,R942,R943,R949,R966 were re-inspected; no full repeated review or extra assurance gate.",
+  "updated_candidate_file_sha256": "8db75fe91fb3c77c0ad9112427d7d92a6187f59e74c67a0875a385e05e217403",
+  "updated_candidate_capture_utc": "2026-10-10T03:05:13.055779+00:00",
+  "updated_snapshot_path": "/workspace/scratch/bd2460f96de0/b02h-general-review/CORRECTION_REVIEW_SNAPSHOT.json",
+  "original_candidate_snapshot_path": "/workspace/scratch/bd2460f96de0/b02h-general-review/CANDIDATE_REVIEW_SNAPSHOT.json",
+  "original_candidate_file_sha256": "9e496f49b9e31f6d595fad0356f5297950fea82bc5dda7d1f060529b6015b0c4",
+  "original_diagnosis_path": "/workspace/scratch/bd2460f96de0/b02h-general-review/DIAGNOSIS.json",
+  "original_diagnosis_sha256": "82ac9d5c164f777de3f0d13657928da2e2cd89711110b9ceb550afd5c00ba9ff",
+  "original_diagnosis_unchanged": true,
+  "checks": [
+    {
+      "record_id": "LI.1647.II.XXIX.R903",
+      "original_finding_id": "B02h-GR-F02",
+      "status": "core_fixed_with_nonblocking_residual",
+      "material_correction_satisfied": true,
+      "fields_changed": [
+        "source_statement"
+      ],
+      "explanation": "The source statement now says present unity will not continue in the preceding adverse third-house context, and usually modifies the later hatred/grumbling. The historical conditional is preserved."
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R942",
+      "original_finding_id": "B02h-GR-F04",
+      "status": "fixed",
+      "material_correction_satisfied": true,
+      "fields_changed": [
+        "source_statement"
+      ],
+      "explanation": "The record now says Lilly reports that the news proved of no moment; retrospective reported experience is retained, along with usually and soon contradicted."
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R943",
+      "original_finding_id": "B02h-GR-F01",
+      "status": "fixed",
+      "material_correction_satisfied": true,
+      "fields_changed": [
+        "source_statement"
+      ],
+      "explanation": "Neither Moon nor Mercury casts the favourable sextile/trine to the Ascendant degree. The main statement now agrees with the qualification and retains the required hard aspect."
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R949",
+      "original_finding_id": "B02h-GR-F05",
+      "status": "fixed",
+      "material_correction_satisfied": true,
+      "fields_changed": [
+        "title"
+      ],
+      "explanation": "Title now uses sign strength without narrowing the local sign strength to own-sign/domicile strength."
+    },
+    {
+      "record_id": "LI.1647.II.XXIX.R966",
+      "original_finding_id": "B02h-GR-F03",
+      "status": "fixed",
+      "material_correction_satisfied": true,
+      "fields_changed": [
+        "source_statement"
+      ],
+      "explanation": "No unity and continual discord are restored under strong argument; the Saturn/Mars dignity condition and separate South Node alternative remain."
+    }
+  ],
+  "material_corrections_satisfied": 5,
+  "open_material_corrections": 0,
+  "residual_nonblocking_notes": [
+    {
+      "record_id": "LI.1647.II.XXIX.R903",
+      "severity": "low",
+      "blocking": false,
+      "fields": [
+        "title",
+        "qualifications_and_limits"
+      ],
+      "observed_title": "Present concord can fail later",
+      "observed_qualification": [
+        "Usually is retained; no deterministic date or categorical universal."
+      ],
+      "note": "The title still says can fail later and the qualification still says no categorical universal. These are less precise than the now-correct source_statement. The explicit source_statement is sufficient to resolve the material modality finding; do not claim all originally suggested wording changes were made.",
+      "suggested_title": "Present concord will not continue in the stated adverse context",
+      "suggested_qualification": "Usually modifies the subsequent hatred or grumbling. The conditional non-continuation assertion is historical source wording; no date or duration is supplied."
+    }
+  ],
+  "limitations": [
+    "This is a bounded check of the identified repairs, not a new full-candidate or final candidate-blind source review.",
+    "Producer had access to source-first notes. Same inherited model-family limitation continues.",
+    "Other records, newly added examples, external unresolved-ID definitions, runtime and validation remain outside this correction check.",
+    "Unresolved original readings and house-frame/grammar ambiguities documented in the source-first notes and diagnosis remain.",
+    "No candidate or repository edits were performed by this reviewer."
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "review_id": "B02h-final-claim-check-first-diagnosis",
+  "reviewer": "/root/b02h_final_claim_check",
+  "authority": "DIAGNOSTIC_ONLY_NO_IMPLEMENTATION_PUBLICATION_OR_DELIVERY_AUTHORITY",
+  "stage": "FIRST_DIAGNOSIS_FROZEN_BEFORE_PRIOR_REVIEW_RECORDS",
+  "date_context": "2026-10-10; no clock polling",
+  "model_context": "Fresh assigned reviewer context, same model family; no claim of different-model independence or overall blinding.",
+  "information_disclosed": [
+    "Parent task and ACTIVE_CONTRACT",
+    "Project AGENTS and current source-audit state",
+    "Activated UDA source-interpretation-provenance and independent-evaluation-separation instructions",
+    "Report and claim ledger, including their embedded process summaries",
+    "Minimum current source records, numeric/reference code, evidence ledgers, actual test logs, retained record excerpts and current indexes",
+    "Original page images and direct-original chart crops"
+  ],
+  "information_withheld_until_freeze": [
+    "independent_review/general/* reviewer diagnoses, candidates and correction checks",
+    "Prior source-reader note/conclusion files",
+    "Publication and delivery receipts under preparation"
+  ],
+  "artifact_root": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h",
+  "checked_artifact_sha256": {
+    "AUDIT_REPORT.md": "41f54c3158a15542334a55252279e6df10a0259be9903058e0861f9f1822d3f4",
+    "CLAIM_LEDGER.json": "14fec931e895f77e20543edfaf7ed8c204fc73b18d17478d96214a891e52ff30"
+  },
+  "supporting_hashes_at_freeze": {
+    "AUDIT_REPORT.md": "41f54c3158a15542334a55252279e6df10a0259be9903058e0861f9f1822d3f4",
+    "CLAIM_LEDGER.json": "14fec931e895f77e20543edfaf7ed8c204fc73b18d17478d96214a891e52ff30",
+    "RULES.json": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+    "WORKED_NUMERIC_TABLES.json": "1e3c3d980ef96d979a70ff3c9ea78a3322da303507dfd6c1fb6bd434e36d31c8",
+    "ARITHMETIC_CHECKS.json": "d6f3d091913c31fb56ef5bff142c046cad8038e1f823a71b4dcf5cd3b4586ce8",
+    "lilly_third_house_arithmetic.py": "d37b51024bbe947f0c2a494c23ec71ccfc93a13826d17fc41a16d164552ff4c7",
+    "lilly_third_house_reference.py": "f0ab90670cb18a3769a145a2b9c5e6edfce8dff5981206092640ca53b5b72064"
+  },
+  "checked_report_ledger_unchanged_at_freeze": true,
+  "original_pages_actually_viewed": [
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236
+  ],
+  "original_page_review_scope": "Focused claim-bearing passages; PDF236 only boundary heading and preamble. Viewing16 pages does not represent a new full extraction audit.",
+  "original_image_paths": [
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-221.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-222.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-223.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-224.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-225.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-226.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-227.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-228.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-229.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-230.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-231.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-232.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-233.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-234.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-235.png",
+    "/workspace/scratch/bd2460f96de0/b02h-source-pages/p-236.png"
+  ],
+  "additional_original_render_crops_actually_viewed": [
+    "p230-chart.png",
+    "p234-chart.png",
+    "p230-moon_mercury-tight.png",
+    "p230-jupiter-tight.png",
+    "p230-jupiter-upright.png"
+  ],
+  "crop_root": "/workspace/scratch/bd2460f96de0/b02h-example-review/evidence",
+  "claims": [
+    {
+      "id": "C01",
+      "status": "PASS_WITH_SCOPE_LIMIT",
+      "confidence": "high",
+      "finding": "The stated physical boundary is correct: third-house heading/preamble below PDF221 divider, XXIX on222, example heading/chart on230 before XXX on231, XXXI preamble on233 through hypothetical sibling reuse on235; fourth-house preamble and XXXII begin236. RULES has112 unique contiguous IDs R897–R1008,75 general and37 example records. SECTION_COVERAGE names all10 physical section units.",
+      "evidence": [
+        "Original PDF221–236 page images",
+        "RULES.json",
+        "SECTION_COVERAGE.json",
+        "READING_RECEIPT.json"
+      ],
+      "limit": "This is a focused final claim check, not a new line-by-line certification of all112 records. The producer reading-process claim is supported by its receipt, not independently observed in real time."
+    },
+    {
+      "id": "C02",
+      "status": "PASS_WITH_LEDGER_CORRECTION",
+      "confidence": "high",
+      "finding": "Actual retained B02a–B02h record counts sum91+139+161+176+100+107+122+112=1008. Current Lilly index records_count is1008. Current Ptolemy index source_records is1066. Combined inventory2074 is correct.",
+      "evidence": [
+        "B02a–B02h/RULES.json",
+        "../../LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+        "../../PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json"
+      ],
+      "required_correction": "Add ../../PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json to C02 evidence_files; the ledger currently omits the authority for the Ptolemy component. This does not change the reported number."
+    },
+    {
+      "id": "C03",
+      "status": "PASS",
+      "confidence": "high",
+      "finding": "PDF223 turns third into brother first and fourth into substance;225–226 extend to father, child and servant. PDF226 explicitly retains original-figure sixth/eighth/twelfth after acknowledging derived houses. PDF231 checks both Mercury, original eighth lord, and Mars, eighth from brother. Inclusive3+8 gives original10. Code returns12 mappings and separate6/8/12 metadata, with null precedence.",
+      "evidence": [
+        "Original PDF223,225,226,231",
+        "RULES R906,R934–R938,R976",
+        "QUERY_REFERENCES.json",
+        "lilly_third_house_reference.py"
+      ]
+    },
+    {
+      "id": "C04",
+      "status": "PASS",
+      "confidence": "high",
+      "finding": "Source and records distinguish healthy distress without reception, distress followed by easy escape with reception, already-ill prerequisite for likely future death, significator-in-eighth fear of dying, adverse-tenth concern that death already occurred, attempted estate acquisition and effort to escape. Report retains those modalities. R903 currently preserves will not continue and attaches usually only to subsequent hatred/grumbling, matching PDF222.",
+      "evidence": [
+        "Original PDF222–225",
+        "RULES R903,R909–R913,R921,R923,R926,R933"
+      ]
+    },
+    {
+      "id": "C05",
+      "status": "PASS",
+      "confidence": "high",
+      "finding": "Original PDF226 visibly includes sextile/trine/conjunction in the Moon-to-Ascendant-lord application, and separates report truth/tone/partisan beneficiary. PDF227 opening no-harm alternative is Jupiter or Venus in Ascendant; Moon/Mercury dignity-and-aspect is separate. PDF228 secrecy sentence is epistemic. Advice includes Sun/Jupiter/Venus/north node versus Saturn/Mars/south node, and Haly requires all three movable-sign conditions. PDF229 says house, not hour. Obscured PDF224 word and PDF228 ufortunate remain unresolved appropriately.",
+      "evidence": [
+        "Original PDF224,226–229",
+        "RULES R917,R939–R940,R945,R952,R954,R956–R958,R961–R963"
+      ]
+    },
+    {
+      "id": "C06",
+      "status": "PASS",
+      "confidence": "high",
+      "finding": "PDF227 explicitly distinguishes first hearing from another person proposing the question; PDF228 specifies beginning to disclose advice. Reference code describes anchors without calculating timestamps. Retained R772–R774 contain actual-request, delayed-letter understanding and self-question qualifications.",
+      "evidence": [
+        "Original PDF227–228",
+        "QUERY_REFERENCES.json",
+        "lilly_third_house_reference.py",
+        "RETAINED_SOURCE_EXCERPTS.json R772–R774"
+      ],
+      "limit": "Earlier timing pages were not reread in the original; checked against the23-record retained excerpt set, which matches the original retained registry objects."
+    },
+    {
+      "id": "C07",
+      "status": "PASS",
+      "confidence": "high",
+      "finding": "PDF230–233 contains one actual absent-brother enquiry; source reports a carrier episode and the subsequent Tuesday homecoming in that same enquiry. The carrier chain supplies arrival, approximate time and reported life/health, not independent cases. Southeast is within the already visited county, and one/two days is distance from London, without separate location or distance confirmation. PDF233–235 states past noncapture and future noncapture judgements for Cambridge, then rationale, with no separate checking narrative or forecast horizon in this span. PDF235 introduces sibling reasoning counterfactually and refuses exact count.",
+      "evidence": [
+        "Original PDF230–235",
+        "HISTORICAL_CASES.json",
+        "RULES R972–R1008"
+      ],
+      "limit": "No external historical truth, prediction freeze, calendar conversion or empirical performance was checked or established."
+    },
+    {
+      "id": "C08",
+      "status": "PASS_WITH_RETAINED_UNCERTAINTY",
+      "confidence": "high for arithmetic and missing precision; limited for first-figure Jupiter glyph",
+      "finding": "Manually repeated all10 report table calculations from original printed inputs; values match. Fortune outputs Capricorn10:28 and Scorpio15:57. Residuals67,20,599,260,150,153,17,255 arcminutes are correct. Conditional Jupiter residuals634,34,1234 arcminutes and omitted-Venus range137–196 are correct. Moon15:29 is legible. Jupiter glyph/degree segmentation is not sufficiently secure here to replace the canonical null; no numerical residual was used to choose a reading. First nodes and second Venus omit minutes. Both the direct exact_longitude rejection and pure reconcile replay behave as described, with replay equal to saved ARITHMETIC_CHECKS.",
+      "evidence": [
+        "Original PDF230,234 and original-render chart/tight crops",
+        "WORKED_NUMERIC_TABLES.json",
+        "ARITHMETIC_CHECKS.json",
+        "lilly_third_house_arithmetic.py"
+      ],
+      "limit": "This supports static longitude arithmetic only, with sector-derived signs labelled. It does not establish physical contact time, ephemeris/calendar parity, historical outcomes or the first Jupiter longitude. The report attribution of specific readings to prior readers awaits process-history review."
+    },
+    {
+      "id": "C09",
+      "status": "UNCERTAIN_PENDING_POST_FREEZE_HISTORY_CHECK",
+      "confidence": "not yet adjudicated",
+      "finding": "Current R903 and the glyph/house-sensitive current wording were checked against originals and are correct. The historical assertion that the general comparison found five corrections and used66 frozen source units has intentionally not yet been checked against prior reviewer records.",
+      "evidence": [
+        "AUDIT_REPORT.md as evaluation object",
+        "Current RULES R903 and original PDF222,226,229"
+      ],
+      "next_action": "Only after this file is frozen, inspect the specified prior-review records and record any finding in ADDENDUM, without rewriting this first diagnosis."
+    },
+    {
+      "id": "C10",
+      "status": "PASS",
+      "confidence": "high",
+      "finding": "The actual logs show24 B02h,28 B02g,31 B02f and32 methodology passes, total115. The first83 named test identities are distinct. Methodology log names four distinct test modules; static inspection finds4+9+3+2 test functions with one15-case parametrization, giving32 executed cases. Log hashes all match TEST_RUN_SUMMARY. No duplicate run or unittest subtest was added to the count.",
+      "evidence": [
+        "TEST_RUN_SUMMARY.json",
+        "TEST_B02h.txt",
+        "TEST_retained_B02g.txt",
+        "TEST_retained_B02f.txt",
+        "TEST_retained_methodology.txt",
+        "Four methodology test modules listed in the log"
+      ],
+      "limit": "This verifies the recorded focused test count and scope; no fresh full suite or predictive validation was run."
+    },
+    {
+      "id": "C11",
+      "status": "PASS",
+      "confidence": "high",
+      "finding": "Files contain29 issues,11 applicability groups,23 unique retained records and8 within-Lilly comparisons. All23 retained record objects match their earlier batch registry objects exactly. The numeric tables have44 rows:24 cusps,14 planets,4 nodes,2 lots.",
+      "evidence": [
+        "UNRESOLVED.json",
+        "APPLICABILITY_AND_RELATIONS.json",
+        "RETAINED_SOURCE_EXCERPTS.json",
+        "CROSS_SOURCE_COMPARISONS.json",
+        "WORKED_NUMERIC_TABLES.json"
+      ],
+      "limit": "Comparison count was checked, not all comparison arguments reaudited. Final archive construction/usability remains with separate distribution verification."
+    },
+    {
+      "id": "ADDED_C12_PUBLICATION_SCOPE",
+      "status": "PASS_NO_FALSE_SUCCESS_CLAIM",
+      "confidence": "high",
+      "finding": "The report routes publication and delivery to separate receipts and leaves the parent audit open. It does not assert a completed live remote write or owner delivery. Those actions and the final packet remain outside this diagnostic authority.",
+      "evidence": [
+        "AUDIT_REPORT.md Result and scope; Verification, artifacts and continuation",
+        "CLAIM_LEDGER.json review_scope",
+        "ACTIVE_CONTRACT.json stop_admission"
+      ]
+    },
+    {
+      "id": "ADDED_C13_SOURCE_AND_INDEPENDENCE_SCOPE",
+      "status": "PASS_WITH_EXPLICIT_LIMITS",
+      "confidence": "high for wording",
+      "finding": "Report says source hash was verified in B02g and reused, without claiming a new hash run. It explicitly says same model family and discloses inherited biographical exposure, while denying different-model or fully blinded historical evaluation.",
+      "evidence": [
+        "AUDIT_REPORT.md Source and reading evidence",
+        "ACTIVE_CONTRACT.json"
+      ],
+      "limit": "No full-PDF hash, original894-page count, producer reading chronology, participant-file exclusion or protected-path diff was newly independently verified here; root retains those responsibilities."
+    }
+  ],
+  "material_semantic_or_numeric_failures": [],
+  "required_corrections": [
+    {
+      "severity": "LOW_EVIDENCE_LEDGER_COMPLETENESS",
+      "claim": "C02",
+      "action": "Add ../../PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json to evidence_files; leave1066 and2074 unchanged."
+    }
+  ],
+  "strongest_remaining_weakness": "Canonical first-figure Jupiter longitude remains unresolved; original ephemeris/contact times, historical outcomes and predictive validity remain unverified as the report states. The process-history claim C09 is deliberately pending the post-freeze check.",
+  "publication_delivery_status": "NOT_EVALUATED_PENDING_ROOT_SEPARATE_RECEIPTS",
+  "own_mutations": "Only files under /workspace/scratch/bd2460f96de0/b02h-final-review/; no Git changes or external messages."
+}

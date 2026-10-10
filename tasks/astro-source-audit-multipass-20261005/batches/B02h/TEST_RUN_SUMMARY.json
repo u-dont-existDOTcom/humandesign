@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "suite": "B02h",
+      "distinct_tests": 24,
+      "exit_code": 0,
+      "log": "TEST_B02h.txt",
+      "sha256": "7af4e4360dcfaada54a46cebed733ca6c2a3a7842f2696c7ab91e8b3cdecb839"
+    },
+    {
+      "suite": "retained_B02g",
+      "distinct_tests": 28,
+      "exit_code": 0,
+      "log": "TEST_retained_B02g.txt",
+      "sha256": "eebf240109f74f99b0f0870c8172b4142f5ecb8d48987706092722e4ff355c72"
+    },
+    {
+      "suite": "retained_B02f",
+      "distinct_tests": 31,
+      "exit_code": 0,
+      "log": "TEST_retained_B02f.txt",
+      "sha256": "9e27480d1ef017ef3d65fe43dffaaa77e980f7350ee319d1d02317d011998006"
+    },
+    {
+      "suite": "retained_methodology",
+      "distinct_tests": 32,
+      "exit_code": 0,
+      "log": "TEST_retained_methodology.txt",
+      "sha256": "bda4589e4426e887a8a1187f3579eb94d84756fe6646c06e814e8f16df237c5f"
+    }
+  ],
+  "new_distinct_tests": 24,
+  "retained_distinct_tests": 91,
+  "total_distinct_tests": 115,
+  "subtests_or_reruns_counted_as_additional": false,
+  "assurance": "Source/data integrity and bounded static calculations; no predictive validation or complete engine claim."
+}
