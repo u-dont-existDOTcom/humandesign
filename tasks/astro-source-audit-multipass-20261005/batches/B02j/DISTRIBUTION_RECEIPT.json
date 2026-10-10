@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "batch": "B02j",
+  "status": "PACKET_BUILT_AND_ACTUALLY_VERIFIED",
+  "source_core_commit": "15c8945821221fc159ebfda79c6ad2536c9f6c7b",
+  "deliverables_manifest": {
+    "schema_version": 1,
+    "source_core_commit": "15c8945821221fc159ebfda79c6ad2536c9f6c7b",
+    "zip_entry_count": 113,
+    "manifest_hashed_files": 112,
+    "zip_metadata": "Fixed timestamps, sorted member paths, regular-file modes, DEFLATE level9. Byte reproducibility assumes fixed input files and compatible Python/zlib runtime.",
+    "files": [
+      {
+        "filename": "Astrology-Lilly-Fifth-House-20261010.md",
+        "relative_path": "deliverables/Astrology-Lilly-Fifth-House-20261010.md",
+        "bytes": 25535,
+        "sha256": "1616b2b13916b69b57434909689ce3ad37a61f4db0b57f35ddd40695f00f16b1"
+      },
+      {
+        "filename": "Astrology-Lilly-Fifth-House-Records-20261010.zip",
+        "relative_path": "deliverables/Astrology-Lilly-Fifth-House-Records-20261010.zip",
+        "bytes": 5704868,
+        "sha256": "20bdc0301b2d9d3f5a6a16cd13c2a3efb5058778c396af7885d9e5196f9156f1"
+      },
+      {
+        "filename": "Astrology-Lilly-Handoff-B02j-20261010.md",
+        "relative_path": "deliverables/Astrology-Lilly-Handoff-B02j-20261010.md",
+        "bytes": 9184,
+        "sha256": "07d132b59299ea79c95f1c4c7681bee139b8ec88c9cf93931bdc7fec896a4006"
+      }
+    ]
+  },
+  "packet_usability": {
+    "status": "PASS",
+    "declared_hashes_matched": 112,
+    "zip_entries_extracted": 113,
+    "test_count": 36,
+    "test_exit_code": 0,
+    "new_unique_tests_added": 0,
+    "all_extracted_files_unchanged_after_tests": true,
+    "receipt_sha256": "53a3d1d7dfc4e65429c3f0182a660d84eb587fcb9b41bdeaa0dec3be44841f4a",
+    "test_log_sha256": "204a9a52a3b161bdf2585deb6575c3e02dfc42d8bcaebaddcfbea5cdf2e98a4c"
+  },
+  "publication_binding": "This receipt precedes the distribution commit. FINAL_PUBLICATION_RECEIPT.json and DELIVERY_RECEIPT.json will bind the fetched distribution revision and exact delivered bytes.",
+  "verification_driver": {
+    "path": "delivery_verification/verify_b02j_packet.py",
+    "bytes": 8965,
+    "sha256": "a515283d9bf432aa1b9065b895ec1509e139d8c5cc186dfc375ff4cc939b978a",
+    "packet_membership": "Post-build verifier; outside the ZIP it verifies. The ZIP contains its own test suite and source-core inputs."
+  },
+  "source_semantics_changed_after_review": false,
+  "source_core_metadata_followup": "Only RETAINED_TEST_IDENTITY_CHECK.json changed after the preceding source-core publication; its duplicated method suffixes and repair are preserved.",
+  "archive_is_fixed": "Do not rebuild from a later delivery checkout and call it the same packet. Reproduction requires the recorded source-core inputs, generated handoff and exact publication receipt.",
+  "owner_delivery_pending": true
+}
