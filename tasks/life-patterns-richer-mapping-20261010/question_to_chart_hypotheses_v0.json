@@ -1,0 +1,673 @@
+{
+  "schema": "life-patterns-question-target-bridge-development-v0",
+  "status": "DRAFT_UNSCORED_NOT_LIVE_NOT_VALIDATED",
+  "input_versions": {
+    "active_v1": "tendency-first-v1-20261006",
+    "active_v1_sha256": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611",
+    "existing_proposed_v2_sha256": "9b6f1262fa3d1f09ae9adeb94d1527c0a20f5dd49594ae6c071afb1bc063be07"
+  },
+  "scope": "human_design_theory_separate_from_astrohd_six_rule_astrology",
+  "epistemology": "Predictions from a theoretical source are not evidence those predictions match real people or birth data.",
+  "blinding": "No chart predicate/true DOB/time/owner answer data may be shown to the interviewer or used to select answers.",
+  "testing_rule": "No re-tuning on owner-known chart; pre-freeze chart features, predictions, codebook, missingness and decoys; evaluate on untouched people against non-HD baselines.",
+  "score_status": "NOT_ADMITTED_FOR_ANY_BIRTH_RANKING",
+  "theory_hypotheses": [
+    {
+      "hypothesis_id": "HD-TYPE-PROJECTOR",
+      "source_feature_label": "Type: Projector",
+      "chart_predicate": {
+        "feature": "type",
+        "equals": "Projector"
+      },
+      "theory_claim": "Recognition for a specific contribution followed by an invitation matters for entering interpersonal roles; not simply liking praise.",
+      "theory_source_url": "https://jovianarchive.com/pages/projector-human-design",
+      "dependency_cluster": "TYPE_ENTRY",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-AUTH-SPLENIC",
+      "source_feature_label": "Authority: Splenic",
+      "chart_predicate": {
+        "feature": "authority",
+        "equals": "Splenic"
+      },
+      "theory_claim": "A quick and non-repeating felt safety/correctness signal may precede reasoning, versus clarity emerging after time.",
+      "theory_source_url": "https://jovianarchive.com/pages/splenic-authority-in-human-design-the-bodys-quiet-instant-knowing",
+      "dependency_cluster": "DECISION_TIMING",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-AUTH-EMOTIONAL",
+      "source_feature_label": "Authority: Emotional",
+      "chart_predicate": {
+        "feature": "authority",
+        "equals": "Emotional"
+      },
+      "theory_claim": "For personally consequential decisions, clarity may change over time with an emotional wave rather than being immediate.",
+      "theory_source_url": "https://jovianarchive.com/pages/projector-human-design",
+      "dependency_cluster": "DECISION_TIMING",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-SP-OPEN",
+      "source_feature_label": "Solar Plexus: undefined",
+      "chart_predicate": {
+        "feature": "center",
+        "name": "Solar Plexus",
+        "defined": false
+      },
+      "theory_claim": "A close person’s mood may be felt or amplified, with relief or return toward baseline after separation; distinct from empathy.",
+      "theory_source_url": "https://jovianarchive.com/blogs/human-design-daily-life/type-childhood-the-emotional-system",
+      "dependency_cluster": "EMOTIONAL_CONDITIONING",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-ROOT-OPEN",
+      "source_feature_label": "Root: undefined",
+      "chart_predicate": {
+        "feature": "center",
+        "name": "Root",
+        "defined": false
+      },
+      "theory_claim": "Interpersonal urgency can create pressure to hurry even when the objective deadline has not changed.",
+      "theory_source_url": "https://jovianarchive.com/pages/the-nine-centers-of-the-bodygraph-in-human-design",
+      "dependency_cluster": "EXTERNAL_PRESSURE",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-SACRAL-DEFINED",
+      "source_feature_label": "Sacral: defined",
+      "chart_predicate": {
+        "feature": "center",
+        "name": "Sacral",
+        "defined": true
+      },
+      "theory_claim": "Sustained access to work energy for suitably engaging activity; effects of prolonged extreme load are a separate question.",
+      "theory_source_url": "https://jovianarchive.com/pages/the-nine-centers-of-the-bodygraph-in-human-design",
+      "dependency_cluster": "WORK_ENERGY",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-HEART-DEFINED",
+      "source_feature_label": "Heart/Ego: defined",
+      "chart_predicate": {
+        "feature": "center",
+        "name": "Heart",
+        "defined": true
+      },
+      "theory_claim": "Reliable willpower for consciously accepted meaningful commitments; not every casual promise or obligation.",
+      "theory_source_url": "https://jovianarchive.com/blogs/human-design-basics/the-9-centers-in-human-design",
+      "dependency_cluster": "COMMITMENT",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-CH-16-48",
+      "source_feature_label": "Channel: 16–48",
+      "chart_predicate": {
+        "feature": "channel",
+        "equals": "16-48"
+      },
+      "theory_claim": "Fine-detail practice/refinement can be intrinsically compelling, separable from instrumental rehearsal to avoid future mistakes.",
+      "theory_source_url": "https://jovianarchive.com/pages/channels-in-human-design-the-life-force",
+      "dependency_cluster": "PRACTICE_REFINEMENT",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-CH-43-23",
+      "source_feature_label": "Channel: 43–23",
+      "chart_predicate": {
+        "feature": "channel",
+        "equals": "43-23"
+      },
+      "theory_claim": "Distinctive insights are converted into communicable expression; ordinary politeness or summarizing for an audience is insufficient.",
+      "theory_source_url": "https://jovianarchive.com/blogs/chart-interpretations-components/how-to-read-your-human-design-chart-a-step-by-step-intro",
+      "dependency_cluster": "INSIGHT_EXPRESSION",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-CH-58-18",
+      "source_feature_label": "Channel: 58–18",
+      "chart_predicate": {
+        "feature": "channel",
+        "equals": "58-18"
+      },
+      "theory_claim": "Repeated impulse to detect and improve patterns/problems; distinguish noticing flaws from choosing to speak up, and stakes.",
+      "theory_source_url": "https://jovianarchive.com/blogs/human-design-daily-life/understanding-the-logic-circuit-group",
+      "dependency_cluster": "CORRECTION",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-CH-52-9",
+      "source_feature_label": "Channel: 52–9",
+      "chart_predicate": {
+        "feature": "channel",
+        "equals": "52-9"
+      },
+      "theory_claim": "Ability/drive to sustain concentrated attention on a worthy task; ease of resuming after interruption alone is not sufficient.",
+      "theory_source_url": "https://jovianarchive.com/blogs/human-design-daily-life/understanding-the-logic-circuit-group",
+      "dependency_cluster": "CONCENTRATION",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    },
+    {
+      "hypothesis_id": "HD-G-DEFINED",
+      "source_feature_label": "G Center: defined",
+      "chart_predicate": {
+        "feature": "center",
+        "name": "G",
+        "defined": true
+      },
+      "theory_claim": "Relative stability of identity/direction across environments, not mere refusal to change a working style.",
+      "theory_source_url": "https://jovianarchive.com/blogs/human-design-basics/the-9-centers-in-human-design",
+      "dependency_cluster": "IDENTITY_DIRECTION",
+      "epistemic_status": "HD_SOURCE_THEORY_ONLY_NOT_HUMAN_VALIDATED",
+      "scoring_status": "UNSCORED_PROSPECTIVE_DRAFT"
+    }
+  ],
+  "current_question_contracts": [
+    {
+      "question_id": "TF1-A0",
+      "source_route_id": "A0",
+      "original_question": "When your time is your own, do you usually protect uninterrupted time, look for company, or vary depending on who and what is involved?",
+      "original_question_sha256": "23da72af813b4b54686c4d99ff409cfb0695e23a1a8ff6e6358e2fccdb4a1942",
+      "measured_construct": "company preference conditioned on closeness and available solitude",
+      "discriminating_contrast": "frequency of company-seeking vs protected solo time at comparable opportunity",
+      "important_confounders": "recent contact, obligations, money and energy",
+      "defect_or_limit": "broad_context",
+      "draft_revised_question": "",
+      "draft_revision_origin": "none",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G19",
+      "source_route_id": "G19",
+      "original_question": "When someone wants more of your time than you had planned to give, how do you usually balance helping them with your own plans?",
+      "original_question_sha256": "a5d9cacd63b1b709c586d68c97f2ada6b33f611d4904d25fcf16949d91a84ba9",
+      "measured_construct": "boundaries under competing commitments",
+      "discriminating_contrast": "helping vs protecting prior plans when request consequences are matched",
+      "important_confounders": "emergency, obligation, relationship and negotiation options",
+      "defect_or_limit": "mixed_context",
+      "draft_revised_question": "",
+      "draft_revision_origin": "none",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-F0",
+      "source_route_id": "F0",
+      "original_question": "Beyond what ordinary politeness calls for, how much do you usually change the way you express the same preference to different people?",
+      "original_question_sha256": "088d500eea103bfb85548a04870a57e4e993b7a6fbab33824e9b443f1d2b18d5",
+      "measured_construct": "voluntary audience-specific expression adaptation",
+      "discriminating_contrast": "choice of explanation for different audiences beyond ordinary courtesy",
+      "important_confounders": "communication skill, safety, trust and social norms",
+      "defect_or_limit": "weak_target_alignment",
+      "draft_revised_question": "",
+      "draft_revision_origin": "none",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G05",
+      "source_route_id": "G05",
+      "original_question": "When you actually try to persuade someone, how does it usually go?",
+      "original_question_sha256": "f2443b340a1d06756ef3e14dedbd0ac2105d540726fe1eeda921d03c95077a0d",
+      "measured_construct": "reported persuasion outcomes and engagement",
+      "discriminating_contrast": "willingness to try versus actual influence success and feedback",
+      "important_confounders": "self-rated skill, selection of easy targets, urgency, relationship",
+      "defect_or_limit": "mixed_constructs",
+      "draft_revised_question": "When you try to persuade someone about a shared plan, how often does the other person actually change position, and what tends to make the difference?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-M11",
+      "source_route_id": "M11",
+      "original_question": "When sharing work or costs with someone, how do you usually work out an arrangement?",
+      "original_question_sha256": "968b20ae228af652629c3087dd44f1496873e480b1a1968aece289cf079d2daf",
+      "measured_construct": "criteria for allocating shared work or costs",
+      "discriminating_contrast": "relative contribution, equality, need and agreement-seeking",
+      "important_confounders": "fairness conventions and actual power to decide",
+      "defect_or_limit": "obvious_normative_response",
+      "draft_revised_question": "When negotiating how to share work or costs, what considerations usually carry the most weight for you?",
+      "draft_revision_origin": "existing_v2_development",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G06",
+      "source_route_id": "G06",
+      "original_question": "In group work without assigned roles, what do you usually do: step in, offer a particular contribution, wait for a clearer role, or something else?",
+      "original_question_sha256": "3a2652521e192688ca3cd06fc6479ccba01377b70442e07ff71290ba5e42110a",
+      "measured_construct": "entry into unassigned group roles",
+      "discriminating_contrast": "independent initiative versus waiting to be asked for specific contribution",
+      "important_confounders": "task competence, hierarchy and cultural politeness",
+      "defect_or_limit": "target_mismatch",
+      "draft_revised_question": "In a group where you have something useful to contribute, what usually determines whether you speak up before anyone asks or wait for someone to request your help?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [
+        "HD-TYPE-PROJECTOR"
+      ],
+      "target_link_status": "needs_new_evidence_then_theory_link_trial",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G01",
+      "source_route_id": "G01",
+      "original_question": "When information is messy or conflicting, what is your usual first move?",
+      "original_question_sha256": "aeab41f812fa6be61b11b5196e674550245701abe35c360703b4c92039aeb8bc",
+      "measured_construct": "first approach to ambiguous information",
+      "discriminating_contrast": "self-organizing, asking, testing and seeking tools under similar constraints",
+      "important_confounders": "task size, urgency, expertise and external assistance",
+      "defect_or_limit": "broad_construct",
+      "draft_revised_question": "",
+      "draft_revision_origin": "none",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G02",
+      "source_route_id": "G02",
+      "original_question": "When explaining something you understand, how do you usually decide what to include for the listener?",
+      "original_question_sha256": "7d3aa944248586c6965affbfa34cdc73a8a7fb2df0003053de83b004e311f024",
+      "measured_construct": "tailoring information for listeners",
+      "discriminating_contrast": "original insight-to-expression versus ordinary listener-tailoring",
+      "important_confounders": "listener knowledge, teachability, professional role",
+      "defect_or_limit": "target_mismatch",
+      "draft_revised_question": "When an idea feels new to you, what usually happens between first understanding it and trying to put it into words for someone else?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [
+        "HD-CH-43-23"
+      ],
+      "target_link_status": "needs_new_evidence_then_theory_link_trial",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-D0",
+      "source_route_id": "D0",
+      "original_question": "When practising a skill, how do you usually feel about repeating and refining a small detail?",
+      "original_question_sha256": "973461cb1881588d706bbeafac775c49642e98246d973558c510d20cc3ef5a4f",
+      "measured_construct": "motivation for repeated fine-detail refinement",
+      "discriminating_contrast": "intrinsic enjoyment of refinement vs practice only for a practical goal",
+      "important_confounders": "novice level, performance stakes, available time",
+      "defect_or_limit": "instrumental_intrinsic_confound",
+      "draft_revised_question": "If your skill is already adequate and there is no outside reward, when do you still find yourself refining small details?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [
+        "HD-CH-16-48"
+      ],
+      "target_link_status": "needs_new_evidence_then_theory_link_trial",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G10",
+      "source_route_id": "G10",
+      "original_question": "When joining a group with a different way of doing things, how much of your own usual approach tends to change?",
+      "original_question_sha256": "a3a17499dce582064f6851b64e8d559fc2dd6b5155fda4f5ead81bdb79c8ae73",
+      "measured_construct": "adaptation to established group practices",
+      "discriminating_contrast": "own preference retention vs negotiated adjustment",
+      "important_confounders": "role authority, group constraints and consequences",
+      "defect_or_limit": "normative_context",
+      "draft_revised_question": "When you join a group with routines different from yours, how do you decide what to adapt and what to keep?",
+      "draft_revision_origin": "existing_v2_development",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-M03",
+      "source_route_id": "M03",
+      "original_question": "How do small voluntary commitments usually play out for you after the initial enthusiasm fades?",
+      "original_question_sha256": "138627f05fa49e2df96b7064558487033488406019446e92352d900eb2ff3beb",
+      "measured_construct": "follow-through when enthusiasm changes",
+      "discriminating_contrast": "serious voluntary commitments versus small casual promises",
+      "important_confounders": "objective feasibility, obligation to others, uncertainty",
+      "defect_or_limit": "target_mismatch",
+      "draft_revised_question": "For an important commitment you freely accepted and could realistically keep, what usually happens if your enthusiasm fades?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [
+        "HD-HEART-DEFINED"
+      ],
+      "target_link_status": "needs_new_evidence_then_theory_link_trial",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-B0",
+      "source_route_id": "B0",
+      "original_question": "How do other people’s moods usually affect your own?",
+      "original_question_sha256": "4a529d0c630fc509c5b99d819b77b33aeb144824d03cc29b17b65de84d084b94",
+      "measured_construct": "mood coupling with other people",
+      "discriminating_contrast": "in-the-moment mood absorption versus independent emotional changes, and recovery after separation",
+      "important_confounders": "empathy, conflict, baseline mood and distress",
+      "defect_or_limit": "incomplete_contrast",
+      "draft_revised_question": "When someone close is upset but not upset with you, what happens to your own mood while you are together and after you part?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [
+        "HD-SP-OPEN"
+      ],
+      "target_link_status": "needs_new_evidence_then_theory_link_trial",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G15",
+      "source_route_id": "G15",
+      "original_question": "What kinds of activity tend to leave you energized or drained?",
+      "original_question_sha256": "1d9823f9cb6f50353cf293d91cfdfc93bdd44839ac20280f464c46551fdbeffd",
+      "measured_construct": "work-energy response across task loads",
+      "discriminating_contrast": "sustainable ordinary engagement versus exhaustion under comparable prolonged demand",
+      "important_confounders": "sleep, health, task interest, duration and exertion",
+      "defect_or_limit": "multi_construct_energy",
+      "draft_revised_question": "When you work on something worthwhile at an ordinary pace for several hours, what happens to your energy afterward? How does unusually long or intense work differ?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [
+        "HD-SACRAL-DEFINED"
+      ],
+      "target_link_status": "needs_new_evidence_then_theory_link_trial",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G16",
+      "source_route_id": "G16",
+      "original_question": "What usually makes sustained effort feel worth continuing for you?",
+      "original_question_sha256": "8063dc75930767cffe3e781f2de6cee2c067bcc505f9e3caf541109ab5599b3f",
+      "measured_construct": "persistence motives for meaningful tasks",
+      "discriminating_contrast": "effort for purpose, progress, recognition or commitment",
+      "important_confounders": "importance, rewards and prior obligations",
+      "defect_or_limit": "non_specific_target",
+      "draft_revised_question": "",
+      "draft_revision_origin": "none",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G18",
+      "source_route_id": "G18",
+      "original_question": "After time with people, including company you enjoyed, what usually makes you want more company versus time on your own?",
+      "original_question_sha256": "873498e07d0144e37a966263f05bde651384f5f676b95ac5149a053b9bd9cd30",
+      "measured_construct": "social recovery vs reflective withdrawal",
+      "discriminating_contrast": "withdrawal to think/process versus recovery from fatigue",
+      "important_confounders": "social demands, sleep, group size and intimacy",
+      "defect_or_limit": "weak_target_alignment",
+      "draft_revised_question": "",
+      "draft_revision_origin": "none",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G17",
+      "source_route_id": "G17",
+      "original_question": "When you notice a minor factual error that has no practical consequence, how much do you usually feel pulled to correct it? Important misinformation can be different; describe that difference only if it helps explain your pattern.",
+      "original_question_sha256": "0e0791382cb2d347a48dcf2bf1a8ea87f8d54b62a0bb31055f34775f9e7e9ad0",
+      "measured_construct": "correction impulse across practical stakes",
+      "discriminating_contrast": "noticed trivial mistakes vs consequential errors; internal pull vs interpersonal correction",
+      "important_confounders": "risk, social receptiveness and personal expertise",
+      "defect_or_limit": "target_mismatch",
+      "draft_revised_question": "When you notice a harmless mistake versus one with important consequences, how does your immediate urge to correct it differ from what you actually do?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [
+        "HD-CH-58-18"
+      ],
+      "target_link_status": "needs_new_evidence_then_theory_link_trial",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-STATUS",
+      "source_route_id": "STATUS",
+      "original_question": "How important is recognition from other people to you, apart from its practical benefits?",
+      "original_question_sha256": "3801e5358109c49e01a1b8400a985c922d35a6109b28b16d683795f4a0ff1f18",
+      "measured_construct": "intrinsic reward from others’ recognition",
+      "discriminating_contrast": "personal appreciation vs being specifically invited into a meaningful role",
+      "important_confounders": "relationship closeness, flattery, practical benefit",
+      "defect_or_limit": "target_mismatch",
+      "draft_revised_question": "Apart from practical benefits, how, if at all, does recognition from people close to you affect you differently from recognition from others?",
+      "draft_revision_origin": "existing_v2_development",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-ROUTINE-CHANGE",
+      "source_route_id": "ROUTINE-CHANGE",
+      "original_question": "When you genuinely have a choice, do you usually seek new experiences, prefer familiar ones, or have different patterns in different areas?",
+      "original_question_sha256": "e8257134c5c39301ccda9775ccb4c000f95cf49774e6d49c6331c2b3b0c57f61",
+      "measured_construct": "preference for novelty across life domains",
+      "discriminating_contrast": "new vs familiar when both equally available and meaningful",
+      "important_confounders": "affordability, accessibility, social context",
+      "defect_or_limit": "broad_context",
+      "draft_revised_question": "In which parts of life do you usually prefer familiar routines, and in which do you tend to seek something new when both are available?",
+      "draft_revision_origin": "existing_v2_development",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G23",
+      "source_route_id": "G23",
+      "original_question": "In a group where nobody has assigned you a role, what do you usually find yourself noticing first?",
+      "original_question_sha256": "f32c7d581c8109f5102b8afd335e0e420bb4ee33878d0ea5102b94506a00f426",
+      "measured_construct": "first attention in an unassigned group",
+      "discriminating_contrast": "noticing needs, people, roles, resources or errors first",
+      "important_confounders": "scene dependence and social desirability",
+      "defect_or_limit": "under_specified",
+      "draft_revised_question": "In a group task that has not been organized yet, what do you usually notice before anyone has decided what to do? Include a recent example and what you did with that observation.",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G04",
+      "source_route_id": "G04",
+      "original_question": "When a method or set of instructions fails, how do you usually approach working out what to try next?",
+      "original_question_sha256": "d800a78c3c69748c170f43b5e2bdebe60f70b5fc8032f78477d4f0f789a60d0a",
+      "measured_construct": "method for diagnosing failure",
+      "discriminating_contrast": "check evidence, isolate causes, try alternatives, consult others",
+      "important_confounders": "task difficulty and expertise",
+      "defect_or_limit": "low_discrimination",
+      "draft_revised_question": "When an approach fails, what is the first thing you usually check, and how does that differ between a familiar task and one you have never done?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G22",
+      "source_route_id": "G22",
+      "original_question": "When something interrupts an activity you are absorbed in, how do you usually return to it?",
+      "original_question_sha256": "efb1342c62f90049f4e598fe5f83d0740b581faaf70c65c8a523c364eef48d6f",
+      "measured_construct": "resuming attention after interruption",
+      "discriminating_contrast": "ease of reacquisition vs sustained focus without interruption",
+      "important_confounders": "interruptions themselves, sleep, motivation and ADHD/health factors",
+      "defect_or_limit": "target_mismatch",
+      "draft_revised_question": "For a problem you consider worth solving, how often can you stay deeply focused without switching tasks, and what changes when you are interrupted?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [
+        "HD-CH-52-9"
+      ],
+      "target_link_status": "needs_new_evidence_then_theory_link_trial",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-M05",
+      "source_route_id": "M05",
+      "original_question": "When you get a sense that something is off, what do you usually notice that gives you that impression?",
+      "original_question_sha256": "dff539be3588872f53192ef097dd7ac52ebeb04c7a3d988ce4ec8a7b23611607",
+      "measured_construct": "first signals of possible danger or mismatch",
+      "discriminating_contrast": "immediate bodily alert vs later reasoned inference",
+      "important_confounders": "prior experience, anxiety and objective cues",
+      "defect_or_limit": "target_mismatch",
+      "draft_revised_question": "When you first suspect something may be unsafe, what usually alerts you, if anything, and how does that impression change as you learn more?",
+      "draft_revision_origin": "new_mapping_audit",
+      "hypothesis_ids_behind_blind_wall": [
+        "HD-AUTH-SPLENIC"
+      ],
+      "target_link_status": "needs_new_evidence_then_theory_link_trial",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-G20",
+      "source_route_id": "G20",
+      "original_question": "What do you usually want extra money or resources to make possible in your life?",
+      "original_question_sha256": "52fccbd48d4e43fd3b929b07d48e240872150c294645d4a98dc051390fdbf375",
+      "measured_construct": "preferred function of extra resources",
+      "discriminating_contrast": "autonomy/control vs status/security/helping others",
+      "important_confounders": "economic constraint and family obligations",
+      "defect_or_limit": "non_specific_target",
+      "draft_revised_question": "",
+      "draft_revision_origin": "none",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-M01",
+      "source_route_id": "M01",
+      "original_question": "How do other people’s urgency or pressure usually affect you when the actual deadline has not changed?",
+      "original_question_sha256": "37fe4daab3dcbf277fb3339c294377c44d8d5f3ef4d1dd52e97bafc21d997a5f",
+      "measured_construct": "external urgency effects with unchanged deadline",
+      "discriminating_contrast": "speeding up under other people’s pressure vs objective urgency",
+      "important_confounders": "real consequences of delaying and power dynamics",
+      "defect_or_limit": "near_source_construct",
+      "draft_revised_question": "",
+      "draft_revision_origin": "none",
+      "hypothesis_ids_behind_blind_wall": [
+        "HD-ROOT-OPEN"
+      ],
+      "target_link_status": "question_near_claim_still_unscored",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    },
+    {
+      "question_id": "TF1-PREFER-EXCHANGE",
+      "source_route_id": "PREFER-EXCHANGE",
+      "original_question": "When someone objects to your proposed division of work or costs, how inclined are you usually to keep negotiating?",
+      "original_question_sha256": "aadb3fd764e0d0fcb9458c38a382b0b4d9eb1e6ae1a2f5e1cdb819a4e813082e",
+      "measured_construct": "willingness to negotiate contested allocation",
+      "discriminating_contrast": "continuing vs withdrawing after disagreement, separate from negotiation success",
+      "important_confounders": "power, importance, practicality and fairness",
+      "defect_or_limit": "not_direct_chart_target",
+      "draft_revised_question": "",
+      "draft_revision_origin": "none",
+      "hypothesis_ids_behind_blind_wall": [],
+      "target_link_status": "no_chart_claim",
+      "evidence_rule": "Do not code a trait without an answer supporting one side plus its conditions; otherwise unknown or mixed. A self-report is never observed performance.",
+      "contrast_rule": "Missing/conditional replies are not contradictions. A chart with the feature absent does not automatically predict the opposite behavior.",
+      "participant_blinding": "Keep chart hypotheses and feature predicates out of the interviewer or participant questionnaire."
+    }
+  ],
+  "supplement_question_candidates": [
+    {
+      "draft_id": "NEW-DECISION-TIMING",
+      "candidate_question": "On a consequential choice with no urgent deadline, what first tells you yes or no, and how—if at all—does that sense change over the next day or two?",
+      "hypothesis_ids": [
+        "HD-AUTH-SPLENIC",
+        "HD-AUTH-EMOTIONAL"
+      ],
+      "coding_limit": "Separate quick bodily reaction from emotional evolution and deliberate analysis; allow none/variable.",
+      "status": "NOT_ASKED_NOT_ACTIVE_NOT_SCORED"
+    },
+    {
+      "draft_id": "NEW-RECOGNIZED-ENTRY",
+      "candidate_question": "Think of times you had useful input for a group. What determines whether you volunteer it immediately or wait until someone asks for your contribution?",
+      "hypothesis_ids": [
+        "HD-TYPE-PROJECTOR"
+      ],
+      "coding_limit": "Evidence must distinguish invitation/recognition from courtesy, role hierarchy and being asked to help.",
+      "status": "NOT_ASKED_NOT_ACTIVE_NOT_SCORED"
+    },
+    {
+      "draft_id": "NEW-EMOTIONAL-TIMING",
+      "candidate_question": "When you care about a decision, does the answer usually feel stable from the beginning, or change with your feelings over time? Describe exceptions.",
+      "hypothesis_ids": [
+        "HD-AUTH-EMOTIONAL"
+      ],
+      "coding_limit": "Do not count deliberate research or indecisiveness as an emotional wave.",
+      "status": "NOT_ASKED_NOT_ACTIVE_NOT_SCORED"
+    },
+    {
+      "draft_id": "NEW-IDENTITY-DIRECTION",
+      "candidate_question": "Across major changes of work, home or social circles, which parts of your sense of direction have stayed stable and which have changed?",
+      "hypothesis_ids": [
+        "HD-G-DEFINED"
+      ],
+      "coding_limit": "No identity label and no assumption that stable direction is better.",
+      "status": "NOT_ASKED_NOT_ACTIVE_NOT_SCORED"
+    }
+  ],
+  "non_evidence_critical": [
+    "unanswered item",
+    "normative response with no contrast",
+    "participant objects to a question",
+    "unrelated context answer",
+    "response conditioned on incentives not matched",
+    "two correlated routes same pattern",
+    "chart feature absent (not automatic inverse)",
+    "post-target-reveal researcher interpretation"
+  ]
+}

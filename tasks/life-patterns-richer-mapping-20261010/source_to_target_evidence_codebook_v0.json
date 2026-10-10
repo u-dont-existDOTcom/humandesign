@@ -1,0 +1,149 @@
+{
+  "schema": "life-patterns-theory-evidence-codebook-v0",
+  "status": "UNSCORED_HYPOTHESES_NO_INFERENCE",
+  "theory_bridge_sha256": "26814bbde4d1a466460c67cb1323beff2789666016a8e86322560e6ff7c2a775",
+  "interpretation": "These examples are prospective operationalizations of source claims and potential contradictions, not empirically demonstrated causal correlates.",
+  "admission_policy": [
+    "Use only exact answer quotes from blinded respondents; never ask for birth/chart clues.",
+    "No fact inferred merely from job/sex/occupation/age/education or prompt premise.",
+    "A matched repeated counterexample can challenge a positive claim; unknown and chart absence are not negative scores.",
+    "Allow partial conditional coding and abstain; do not transform missing into opposite pole.",
+    "Dependent questions count as one evidence family, not multiple independent hits.",
+    "Blinded neutral coder must not see target features, rule weights, true-chart rank, or expected answers.",
+    "No numeric weights or probabilities until independently estimated from a separate training cohort and frozen."
+  ],
+  "hypotheses": [
+    {
+      "hypothesis_id": "HD-TYPE-PROJECTOR",
+      "positive_evidence_if_multiple_situations": "Repeated real role entry becomes easier or more effective when invited on the basis of specific recognized contribution, contrasted with matched uninvited advice.",
+      "possible_counterevidence_not_automatic_inverse": "Matched self-initiated/solicited contributions show no invitation-related difference across occasions.",
+      "must_abstain_if": "Praise without invitation; ordinary politeness; role hierarchy; one anecdote without counterfactual.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-AUTH-SPLENIC",
+      "positive_evidence_if_multiple_situations": "A subtle bodily signal usually precedes explicit reasoning on real consequential decisions, is immediate and does not recur with deliberation.",
+      "possible_counterevidence_not_automatic_inverse": "Matched real choices are repeatedly decided only after delayed emotional shifts, with no reported early bodily signal.",
+      "must_abstain_if": "Learned bodily vocabulary; obvious danger cues; general anxious feelings; theoretical authority labels.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-AUTH-EMOTIONAL",
+      "positive_evidence_if_multiple_situations": "The reported yes/no about real important choices predictably changes as emotions settle over time rather than feeling decisively clear at the outset.",
+      "possible_counterevidence_not_automatic_inverse": "Decisions across matched important choices have immediate stable clarity despite emotional changes.",
+      "must_abstain_if": "More information arriving over time; avoidance of accountability; minor preferences.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-SP-OPEN",
+      "positive_evidence_if_multiple_situations": "Person reports mood intensification in proximity to an upset other, then return toward baseline after separation in comparable situations.",
+      "possible_counterevidence_not_automatic_inverse": "No detectable affective shifts across repeated exposure to others’ strong moods, with context and relationship controlled.",
+      "must_abstain_if": "General compassion, interpersonal conflict directed at participant, preexisting mood, acute mental-health changes.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-ROOT-OPEN",
+      "positive_evidence_if_multiple_situations": "Imposed urgency changes felt pressure/pace despite constant objective deadline, and pressure drops when interpersonal urgency is removed.",
+      "possible_counterevidence_not_automatic_inverse": "Equal objective deadlines and workload produce similar pace despite different external urgency signals across cases.",
+      "must_abstain_if": "Urgent requests with genuine penalties; practical prioritization; medical anxiety.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-SACRAL-DEFINED",
+      "positive_evidence_if_multiple_situations": "Reports sustainable interest-matched ordinary work compared with similarly engaged peers, with clear duration and recovery qualifiers.",
+      "possible_counterevidence_not_automatic_inverse": "Repeating large depletion during ordinary feasible workloads despite sleep, health, motivation and workload matching.",
+      "must_abstain_if": "Extraordinary all-night work, health or sleep disorders, noncomparable work intensity, success/self-image.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-HEART-DEFINED",
+      "positive_evidence_if_multiple_situations": "Freely adopted important feasible commitments are repeatedly delivered after enthusiasm wanes, with separately reported selection threshold.",
+      "possible_counterevidence_not_automatic_inverse": "Repeated failures of deeply chosen feasible important promises without changed conditions or external obstacles.",
+      "must_abstain_if": "Casual favors, imposed duties, coercion, inaccessible resources and moral judgments.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-CH-16-48",
+      "positive_evidence_if_multiple_situations": "Repeatedly initiates optional fine-detail refinement after competence is adequate and despite no external reward, not only to prevent known mistakes.",
+      "possible_counterevidence_not_automatic_inverse": "Across valued skills, no tendency toward voluntary refinement once sufficient for the purpose.",
+      "must_abstain_if": "Required rehearsal, performance pressure, one language-learning example, perfectionism label alone.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-CH-43-23",
+      "positive_evidence_if_multiple_situations": "New personally generated insight is frequently translated into a communicable explanation and changes others’ understanding according to actual examples.",
+      "possible_counterevidence_not_automatic_inverse": "Insights are not expressed or repeatedly fail to become communicable even in receptive contexts.",
+      "must_abstain_if": "Summarizing public information, courtesy explanations, teacher title, success judged by speaker alone.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-CH-58-18",
+      "positive_evidence_if_multiple_situations": "Notices recurring correctable flaws and feels improvement impulse across real stakes, independent of whether speaking up would be appreciated.",
+      "possible_counterevidence_not_automatic_inverse": "Consistently lacks improvement impulse for noticed consequential, feasible-to-correct problems.",
+      "must_abstain_if": "One trivial error, duty-bound correction, criticism for status, objective harm judgments after the fact.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-CH-52-9",
+      "positive_evidence_if_multiple_situations": "Sustains stationary concentration on intrinsically valuable tasks over time with controls for interests and interruptions.",
+      "possible_counterevidence_not_automatic_inverse": "Repeated inability to remain on any meaningful interest-matched task despite suitable conditions.",
+      "must_abstain_if": "Ability to resume after interruption, hyperfocus on entertainment, sleep/health factors, motivational inconsistency.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    },
+    {
+      "hypothesis_id": "HD-G-DEFINED",
+      "positive_evidence_if_multiple_situations": "Narrative reports stable personally chosen direction across materially different life contexts and relationships.",
+      "possible_counterevidence_not_automatic_inverse": "Multiple concrete life contexts show radically externally determined direction changes without self-directed continuity.",
+      "must_abstain_if": "A single fixed career label, moral desirability of consistency, personality inventory self-description without examples.",
+      "unknown_is_valid": true,
+      "chart_feature_absence_does_not_imply_opposite": true,
+      "score_weight": null,
+      "probability": null,
+      "status": "PROVISIONAL_NOT_ACTIVE"
+    }
+  ]
+}
