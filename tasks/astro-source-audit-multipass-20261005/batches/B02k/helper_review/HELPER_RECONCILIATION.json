@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "record_type": "bounded_changed_item_reconciliation",
+  "review_id": "B02k-source-a-helper-review-01",
+  "reviewer": "source-a",
+  "status": "H-A01_AND_H-A02_RESOLVED_IN_REVIEWED_HELPER",
+  "context": "Second-reader changed-item check using the existing source-first context and the frozen diagnosis; not a fresh-context independent full-source evaluation.",
+  "authority": "Root requested one bounded reconciliation of the two repaired helper findings. Root remains sole repository/publication writer.",
+  "original_review_artifacts": [
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/HELPER_DIAGNOSIS.md",
+      "sha256": "5f51b532971dd3221777c1ff774dcb0b7352785e77773c56e257eed5fb851a89",
+      "preserved": true
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/HELPER_DIAGNOSIS.json",
+      "sha256": "574fcfc8d6e602ff81b06706177af0136727604854483250341b7f15ede5f14d",
+      "preserved": true
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/HELPER_PROBES.py",
+      "sha256": "5b3cb87289dc205f8ec8500f943cb030680cbbdbe66d89ffe4db0660708c1356",
+      "preserved": true
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/HELPER_PROBES.json",
+      "sha256": "9ac8a0ee319eba6b8ba8e4a031df8369c0d54738256da4963723eb0c69bcde3e",
+      "preserved": true
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/HELPER_REVIEW_RECEIPT.json",
+      "sha256": "d9b8e15c60af366f6197200091f0cc0fd88a96c2b924dc5ca918757d2e7097a9",
+      "preserved": true
+    }
+  ],
+  "before_helper_sha256": "972076c053dc8ad340d6369ecdbf3893f3b1d1354231a087d0ade88b2a1f180f",
+  "reviewed_helper": {
+    "path": "/workspace/scratch/43f75264c32e/humandesign-b02k/tasks/astro-source-audit-multipass-20261005/batches/B02k/lilly_sixth_opening_reference.py",
+    "sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+  },
+  "source_recheck": {
+    "pdf_page": 286,
+    "printed_page": 252,
+    "path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png",
+    "sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+    "method": "Direct original-page image inspection in this changed-item pass",
+    "anchor": "Opening paragraph, for the most part when the Moon decreases in light and motion; Saturn aspect clause and unless exception"
+  },
+  "changed_items": [
+    {
+      "finding_id": "H-A01",
+      "disposition": "RESOLVED_BY_REPAIR",
+      "component": "remaining_degrees_in_sign",
+      "code_lines": [
+        125,
+        141
+      ],
+      "original_finding": "Individually admitted Fraction DMS components could sum to or exceed 30 degrees and produce an invalid remainder.",
+      "current_change": "After complete components are summed, the helper rejects positions outside 0 <= position < 30.",
+      "evidence": [
+        "Static reading confirms the aggregate guard before subtraction.",
+        "The selected regression rejects (Fraction(59, 2), 59, 0), the original beyond-sign counterexample.",
+        "The same regression rejects (Fraction(59, 2), 30, 0), the exact 30-degree boundary."
+      ],
+      "scope_preserved": "The missing-component return occurs before the aggregate calculation, and time_unit remains None. This is a within-sign arithmetic repair, not a source timing-unit resolution.",
+      "test": "test_lilly_sixth_opening.RemainingArc.test_individually_valid_fractional_components_must_not_reach_next_sign"
+    },
+    {
+      "finding_id": "H-A02",
+      "disposition": "RESOLVED_BY_REPAIR",
+      "component": "declining_moon_saturn_predicate",
+      "code_lines": [
+        149,
+        162
+      ],
+      "original_finding": "disease_already_decreasing did not retain or define the full 'in its decrease and leaving' exception.",
+      "source_defined_content": "The source includes the exception 'unlesse the disease be in its decrease and leaving the Patient or Querent', an explicit conjunction, square or opposition to Saturn, and the assertion's 'for the most part' qualification.",
+      "current_change": "The input disease_decreasing_and_leaving is expressly documented as a caller-qualified aggregate for the whole phrase. The aspect input is named moon_applying_conjunction_square_or_opposition_to_saturn.",
+      "evidence": [
+        "Fresh visual check of PDF286 / printed252 confirms the retained complete exception and Saturn target.",
+        "The docstring says knowledge of decreasing alone does not establish the aggregate and directs None when the full phrase is unresolved.",
+        "The docstring retains 'for the most part' and limits a matched prerequisite from becoming a certainty claim.",
+        "The selected regression gives SATISFIED for aggregate False, CONTRADICTED for True, and UNKNOWN for None when the positive prerequisites hold."
+      ],
+      "scope_preserved": "The aggregate preserves the source phrase without imposing a separate clinical model. The function continues to match caller-qualified prerequisites only.",
+      "test": "test_lilly_sixth_opening.SourcePredicateQualifications.test_already_declining_exception_blocks_adverse_moon_clause"
+    }
+  ],
+  "verification": {
+    "selected_tests": [
+      "test_lilly_sixth_opening.RemainingArc.test_individually_valid_fractional_components_must_not_reach_next_sign",
+      "test_lilly_sixth_opening.SourcePredicateQualifications.test_already_declining_exception_blocks_adverse_moon_clause"
+    ],
+    "tests_run": 2,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "log": "test_individually_valid_fractional_components_must_not_reach_next_sign (test_lilly_sixth_opening.RemainingArc.test_individually_valid_fractional_components_must_not_reach_next_sign) ... ok\ntest_already_declining_exception_blocks_adverse_moon_clause (test_lilly_sixth_opening.SourcePredicateQualifications.test_already_declining_exception_blocks_adverse_moon_clause) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+    "file_hashes": {
+      "lilly_sixth_opening_reference.py": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5",
+      "test_lilly_sixth_opening.py": "3d3186e86772b16903f914f168c38c58ca952578aa4458e388cad994115e64db"
+    },
+    "whole_suite_executed": false,
+    "reference_tables_or_rules_loaded": false,
+    "bytecode_writes_disabled": true
+  },
+  "test_budget": {
+    "classification": "focused_changed_items",
+    "process_count": 1,
+    "test_methods_executed": 2,
+    "telemetry": "not_applicable",
+    "rationale": "One tiny pure-function process; the test runner reported 0.000 seconds. No repetition, broad suite, table loading, or mutation testing."
+  },
+  "rules": {
+    "live_uda_agents_main_sha": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "lesson_index_main_sha": "9055c85c1278c3775b2fdb440f2725e8d4ef030d",
+    "source_provenance_sha": "bb58d19c1999afcfdb39a134f24402ed4784926a",
+    "whole_argument_sha": "9a0ef18ba93c6f3a3c5578522b6e36463c777e96"
+  },
+  "limits": {
+    "new_diagnosis": false,
+    "new_source_extraction": false,
+    "source_catalogue_reaudit": false,
+    "whole_suite_claim": false,
+    "predictive_or_clinical_validation": false,
+    "repository_edits": false,
+    "publication": false
+  },
+  "reconciliation_conclusion": "Both original findings were valid for the originally reviewed helper and are now resolved by the inspected repairs. The frozen historical diagnosis and probes are preserved; no finding is retroactively erased.",
+  "stop_admission": {
+    "bounded_request": "SATISFIED",
+    "remaining_items_for_this_reviewer": [],
+    "root_parent_work": "Root retains integration and publication work outside this read-only assignment.",
+    "boundary": "Explicit bounded changed-item review with no repository edits; this artifact completes the authorized check."
+  }
+}

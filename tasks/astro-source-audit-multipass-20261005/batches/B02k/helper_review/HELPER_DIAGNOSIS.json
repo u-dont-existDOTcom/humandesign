@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "record_type": "frozen_source_helper_diagnosis",
+  "review_id": "B02k-source-a-helper-review-01",
+  "reviewer": "source-a",
+  "context_classification": "second-reader implementation check using existing source-first context; not fresh-context independent full-source evaluation",
+  "freeze_status": "FROZEN_BEFORE_PRODUCER_TEST_INSPECTION_AND_BEFORE_EXECUTION",
+  "reviewed_file": {
+    "path": "/workspace/scratch/43f75264c32e/humandesign-b02k/tasks/astro-source-audit-multipass-20261005/batches/B02k/lilly_sixth_opening_reference.py",
+    "sha256": "972076c053dc8ad340d6369ecdbf3893f3b1d1354231a087d0ade88b2a1f180f"
+  },
+  "source": {
+    "path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+    "sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "edition": "1647",
+    "visual_checks": [
+      {
+        "pdf_page": 114,
+        "printed_page": 80,
+        "sha256": "73a3ca62a7ff61ebd9867192cd57c45db91a5ace086419c62151196050239c8a",
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf114.png"
+      },
+      {
+        "pdf_page": 277,
+        "printed_page": 243,
+        "sha256": "b5f924a334c628f3c7c4086a695125a33bcf5f16680fba46b4839121e2248355",
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf277.png"
+      },
+      {
+        "pdf_page": 283,
+        "printed_page": 249,
+        "sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46",
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf283.png"
+      },
+      {
+        "pdf_page": 284,
+        "printed_page": 250,
+        "sha256": "78a7d14efc1e25b3960ffda8ea527b47cdb1c909e53e12e91ca1906d3132c667",
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf284.png"
+      },
+      {
+        "pdf_page": 286,
+        "printed_page": 252,
+        "sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png"
+      }
+    ]
+  },
+  "provenance": {
+    "live_uda_agents_main_sha": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "producer_tests_inspected_before_freeze": false,
+    "code_executed_before_freeze": false,
+    "source_catalogue_or_repository_edited": false,
+    "source_images_basis": "original-page image inspection, not OCR alone",
+    "findings_basis": "visual source comparison and static reading of the helper",
+    "test_results_at_freeze": "none"
+  },
+  "overall": "Two bounded changes are warranted: validate the aggregate within-sign coordinate and retain the complete decreasing-and-leaving exception. Other requested mechanisms are faithful within the stated caller-qualified, non-predictive scope.",
+  "findings": [
+    {
+      "id": "H-A01",
+      "severity": "medium",
+      "type": "implementation_input_domain_gap",
+      "status": "CHANGE_NEEDED",
+      "component": "remaining_degrees_in_sign",
+      "code_lines": [
+        125,
+        139
+      ],
+      "source_anchor": {
+        "pdf_page": 283,
+        "printed_page": 249,
+        "location": "upper-middle paragraph beginning If an infortunate Planet be in the sixt; question When, or how long",
+        "excerpt": "see how many degrees the malevolent Planet wants ere he can get out of the Signe"
+      },
+      "source_defined_content": "A remaining within-sign arc is used in an account whose months/weeks/days unit depends on the sign's nature and quality.",
+      "assistant_diagnosis": "The helper admits exact Fraction values for every DMS component and checks components independently, but it never checks their sum. Individually admitted inputs can encode 30 degrees or more, contradicting the function's own within-sign domain and yielding zero or negative remaining arc.",
+      "static_counterexample": {
+        "degrees": "Fraction(59, 2)",
+        "minutes": 59,
+        "seconds": 0,
+        "derived_position": "1829/60 degrees",
+        "derived_return": "-29/60 degrees",
+        "executed_before_freeze": false
+      },
+      "requested_change": "Validate 0 <= summed position < 30, or explicitly restrict the DMS representation enough to guarantee this. Preserve unknown components and unresolved time units.",
+      "scope_limit": "This is an implementation-domain finding. It does not attribute a Fraction API or an exact DMS validation rule to Lilly."
+    },
+    {
+      "id": "H-A02",
+      "severity": "medium",
+      "type": "source_qualification_loss",
+      "status": "CHANGE_NEEDED",
+      "component": "declining_moon_saturn_predicate",
+      "code_lines": [
+        147,
+        153
+      ],
+      "source_anchor": {
+        "pdf_page": 286,
+        "printed_page": 252,
+        "location": "opening paragraph, clause beginning for the most part when the Moon decreases in light and motion",
+        "excerpt": "unlesse the disease be in its decrease and leaving the Patient or Querent"
+      },
+      "source_defined_content": "The exception retains both 'in its decrease' and 'leaving' within the same phrase. The main prerequisites name declining light and motion, and conjunction, square or opposition to Saturn; the assertion is qualified 'for the most part'.",
+      "assistant_diagnosis": "The interface and docstring reduce the exception to disease_already_decreasing. Nothing defines that input as the entire source phrase. A caller who knows only decreasing=True, with leaving unknown, gets CONTRADICTED and is thus allowed to treat the exception as established. The source qualification has been lost at the input contract.",
+      "requested_change": "Use an explicitly defined caller-qualified aggregate such as disease_decreasing_and_leaving, or represent both parts and negate their conjunction with three-valued semantics. If separate inputs are used, do not replace NOT(decreasing AND leaving) with NOT(decreasing) AND NOT(leaving).",
+      "ambiguity_preserved": "The wording may describe one diminishing/leaving process rather than two independent clinical observations. A verbatim-qualified aggregate preserves that reading without inventing a clinical model.",
+      "additional_contract_note": "The function name supplies Saturn context; make explicit that applying_conjunction_square_or_opposition is specifically Moon-to-Saturn. This is contract clarification, not a separate finding.",
+      "scope_limit": "SATISFIED/CONTRADICTED/UNKNOWN must describe prerequisite matching only. None of these values validates the source's adverse prognosis or removes 'for the most part'."
+    }
+  ],
+  "checks_without_blocking_findings": [
+    {
+      "id": "HC-A01",
+      "component": "select_source_time",
+      "result": "FAITHFUL_WITH_CONSERVATIVE_SELECTION_POLICY",
+      "source_anchor": {
+        "pdf_page": 277,
+        "printed_page": 243,
+        "location": "XLIV opening, first/Secondly/Thirdly paragraphs"
+      },
+      "source_defined_content": "Prefer the first enforced bed or repose time, excluding first slight symptoms; if unavailable, use the first urine inquiry carried to someone, physician or not; if no such time is obtainable, the physician's first speaking, access, or urine receipt are alternatives without a stated precedence.",
+      "assistant_assessment": "Known earlier availability selects that stage; earlier unknown availability blocks silent fallback. At stage 3 all known candidates are retained, distinct tokens do not get an invented rank, and unknown alternatives remain explicit. Same-token selection relies on the caller's declared token identity contract.",
+      "qualification": "UNKNOWN and CHOICE_UNRESOLVED are implementation labels. Stage-3 UNKNOWN reports unresolved selection, not that no source-admissible candidate exists. Lilly does not require establishing all three alternatives' availability before considering one."
+    },
+    {
+      "id": "HC-A02",
+      "component": "moon_speed_comparisons",
+      "result": "FAITHFUL",
+      "source_anchors": [
+        {
+          "pdf_page": 114,
+          "printed_page": 80,
+          "location": "Chapter XIII, Motion and following slow-motion paragraph"
+        },
+        {
+          "pdf_page": 286,
+          "printed_page": 252,
+          "location": "opening less-than-mean-motion clause"
+        }
+      ],
+      "source_defined_content": "The stated mean is 13 degrees 10 minutes 36 seconds. The separate retrograde analogy is strictly less than 13 degrees 10 minutes in 24 hours, while the Moon is explicitly never physically retrograde.",
+      "assistant_assessment": "47436 and 47400 arcseconds are distinct strict thresholds. The code preserves the 36-second interval, equality is outside each less-than predicate, and missing speed yields unknown. It claims comparisons only, not the full aspect-qualified PDF286 rule.",
+      "qualification": "Below stated mean is not silently equated with the distinct 'decreases in light and motion' condition."
+    },
+    {
+      "id": "HC-A03",
+      "component": "remaining_degrees_in_sign: missingness and units",
+      "result": "FAITHFUL_APART_FROM_H-A01",
+      "source_anchor": {
+        "pdf_page": 283,
+        "printed_page": 249,
+        "location": "same remaining-degrees paragraph"
+      },
+      "source_defined_content": "The text gives months, weeks or days according to nature and quality of the sign.",
+      "assistant_assessment": "Missing degree, minute, or second components remain unknown; explicit zeros can be supplied. The helper returns exact remaining arc only and leaves time_unit=None, avoiding an invented time conversion.",
+      "qualification": "This strict missing-coordinate policy is a conservative data contract, not an explicit seventeenth-century rule about data entry. The helper does not evaluate the surrounding sixth-house, malefic, or sign-transition prerequisites."
+    },
+    {
+      "id": "HC-A04",
+      "component": "benevolent_sixth_predicate",
+      "result": "FAITHFUL",
+      "source_anchor": {
+        "pdf_page": 284,
+        "printed_page": 250,
+        "location": "opening paragraph, so likewise clause",
+        "excerpt": "a Benevolent Planet well fortified in the sixt, and he not author of the Disease"
+      },
+      "assistant_assessment": "All three positive prerequisites and the explicit non-author exclusion are retained. Unknown authorship stays unknown when other prerequisites hold; established authorship contradicts this predicate. No outcome is calculated.",
+      "qualification": "The source's awkward following 'is not, or will be permanent' wording is outside this prerequisite helper and is not repaired here."
+    }
+  ],
+  "post_freeze_plan": {
+    "scope": "Read producer tests only after both diagnosis files are written and hashed; then execute a small pure-function probe covering the diagnosed gaps and requested edge cases.",
+    "repository_writes": "none; disable Python bytecode writes",
+    "whole_suite_claim": "not permitted; REFERENCE_TABLES/RULES were not yet written at assignment",
+    "original_diagnosis_policy": "immutable; any reconciliation belongs in a separate changed-items artifact"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "review_id": "B02k-source-a-helper-review-01",
+  "status": "LOCAL_BOUNDED_REVIEW_COMPLETE_TWO_CHANGES_REQUESTED",
+  "review_context": "second-reader implementation check using existing source-first context, not fresh-context independent full-source evaluation",
+  "sequence": [
+    "Read live UDA and applicable provenance, whole-argument and testing guidance",
+    "Read helper and original source images",
+    "Write and hash immutable diagnosis files",
+    "Inspect producer tests",
+    "Execute one bounded 17-probe pure-function process",
+    "Verify diagnosis hashes unchanged and record this receipt"
+  ],
+  "artifacts": [
+    {
+      "name": "HELPER_DIAGNOSIS.md",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/HELPER_DIAGNOSIS.md",
+      "bytes": 8147,
+      "sha256": "5f51b532971dd3221777c1ff774dcb0b7352785e77773c56e257eed5fb851a89"
+    },
+    {
+      "name": "HELPER_DIAGNOSIS.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/HELPER_DIAGNOSIS.json",
+      "bytes": 11098,
+      "sha256": "574fcfc8d6e602ff81b06706177af0136727604854483250341b7f15ede5f14d"
+    },
+    {
+      "name": "HELPER_PROBES.py",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/HELPER_PROBES.py",
+      "bytes": 6753,
+      "sha256": "5b3cb87289dc205f8ec8500f943cb030680cbbdbe66d89ffe4db0660708c1356"
+    },
+    {
+      "name": "HELPER_PROBES.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/HELPER_PROBES.json",
+      "bytes": 6824,
+      "sha256": "9ac8a0ee319eba6b8ba8e4a031df8369c0d54738256da4963723eb0c69bcde3e"
+    }
+  ],
+  "producer_test_read_after_freeze": {
+    "path": "/workspace/scratch/43f75264c32e/humandesign-b02k/tasks/astro-source-audit-multipass-20261005/batches/B02k/test_lilly_sixth_opening.py",
+    "sha256": "f090d0faca7053dece6402839f057edd9b536e844e82fd00fe41828d86cb816d",
+    "executed": false
+  },
+  "whole_suite_run": false,
+  "tables_or_rules_loaded": false,
+  "repository_edits": false,
+  "publication_or_merge_performed": false,
+  "open_findings": [
+    "H-A01",
+    "H-A02"
+  ],
+  "changed_items_required": false,
+  "explanation": "Probes confirmed rather than changed the frozen diagnosis. H-A01 was reproduced dynamically. H-A02 is a source qualification and input-contract defect. Passing probe assertions include deliberate reproduction of the H-A01 defect."
+}

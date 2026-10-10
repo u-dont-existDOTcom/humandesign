@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "batch": "B02k",
+  "reader": "A",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_freeze": "SOURCE_FREEZE_RECEIPT.json",
+  "candidate_file": "CANDIDATE_RULES.json",
+  "candidate_count": 73,
+  "numbered_chapters": [
+    "XLIV"
+  ],
+  "scope": "PDF277 sixth-house heading and XLIV opening through PDF282, plus the first body line on PDF283 completing the Pisces exception; stop before the Moon-application sentence.",
+  "parent_block_boundary": "PDF277 sixth-house heading through PDF292 immediately before DARIOT Abridged.; not complete Chapter XLIV or complete sixth house.",
+  "admitted_pdf_pages": [
+    277,
+    278,
+    279,
+    280,
+    281,
+    282
+  ],
+  "continuation_only_pdf_pages": [
+    283
+  ],
+  "visible_pagination_anomaly": {
+    "pdf_page": 280,
+    "visible_printed_label": "244",
+    "expected_sequence_page": 246,
+    "status": "PRESERVED_WITHOUT_EMENDATION"
+  },
+  "section_unit_count": 10,
+  "sections": [
+    {
+      "id": "A-S01",
+      "chapter": "XLIV",
+      "title": "Sixth-house/XLIV opening, timing hierarchy and initial observations",
+      "pdf_pages": [
+        277
+      ],
+      "printed_pages": [
+        243
+      ],
+      "visible_printed_labels": {
+        "277": "243"
+      },
+      "candidate_ids": [
+        "A001",
+        "A002",
+        "A003",
+        "A004",
+        "A005",
+        "A006"
+      ],
+      "source_note_sections": [
+        "S-A01"
+      ],
+      "covered_source_functions": [
+        "Sixth-house scope and full introductory function",
+        "Preferred forced-bed/repose time and explicit first-symptom exclusion",
+        "Urine-delivery fallback independent of physician status",
+        "Physician-contact/urine fallback, figure and exact Moon hour",
+        "All four specified observation groups"
+      ],
+      "known_substantive_omissions": [],
+      "status": "SOURCE_IMAGES_READ_AND_CANDIDATES_EXTRACTED"
+    },
+    {
+      "id": "A-S02",
+      "chapter": "XLIV",
+      "title": "What part of the Body is afflicted",
+      "pdf_pages": [
+        277,
+        278
+      ],
+      "printed_pages": [
+        243,
+        244
+      ],
+      "visible_printed_labels": {
+        "277": "243",
+        "278": "244"
+      },
+      "candidate_ids": [
+        "A007",
+        "A008",
+        "A009",
+        "A010"
+      ],
+      "source_note_sections": [
+        "S-A02"
+      ],
+      "covered_source_functions": [
+        "Complete first-house condition across the page turn",
+        "Explicit printed119 cross-reference, preserved as outside current reading",
+        "Cancer/Saturn illustration and alternative bodily assignments",
+        "Conditional infallibility assertion with each corroboration alternative",
+        "Sixth-house/Moon separation and application method and humoural result"
+      ],
+      "known_substantive_omissions": [],
+      "status": "SOURCE_IMAGES_READ_AND_CANDIDATES_EXTRACTED"
+    },
+    {
+      "id": "A-S03",
+      "chapter": "XLIV",
+      "title": "From what cause the Sicknesse is",
+      "pdf_pages": [
+        278,
+        279
+      ],
+      "printed_pages": [
+        244,
+        245
+      ],
+      "visible_printed_labels": {
+        "278": "244",
+        "279": "245"
+      },
+      "candidate_ids": [
+        "A011",
+        "A012",
+        "A013",
+        "A014"
+      ],
+      "source_note_sections": [
+        "S-A03"
+      ],
+      "covered_source_functions": [
+        "Fiery rule with exact descending-in-sixth wording",
+        "Earthly long/tedious diseases with may-occasionally qualification",
+        "Airy corrupt-blood/gout association",
+        "Moist cold/moist-cause association without silently enumerating signs"
+      ],
+      "known_substantive_omissions": [],
+      "status": "SOURCE_IMAGES_READ_AND_CANDIDATES_EXTRACTED"
+    },
+    {
+      "id": "A-S04",
+      "chapter": "XLIV",
+      "title": "Diseases signified by the Houses",
+      "pdf_pages": [
+        279
+      ],
+      "printed_pages": [
+        245
+      ],
+      "visible_printed_labels": {
+        "279": "245"
+      },
+      "candidate_ids": [
+        "A015",
+        "A016",
+        "A017",
+        "A018",
+        "A019",
+        "A020",
+        "A021",
+        "A022",
+        "A023",
+        "A024",
+        "A025",
+        "A026"
+      ],
+      "source_note_sections": [
+        "S-A04"
+      ],
+      "covered_source_functions": [
+        "All twelve numbered house rows, including reproductive/excretory terms and named historical diseases"
+      ],
+      "known_substantive_omissions": [],
+      "status": "SOURCE_IMAGES_READ_AND_CANDIDATES_EXTRACTED"
+    },
+    {
+      "id": "A-S05",
+      "chapter": "XLIV",
+      "title": "Diseases signified by the Signes",
+      "pdf_pages": [
+        279,
+        280
+      ],
+      "printed_pages": [
+        245,
+        246
+      ],
+      "visible_printed_labels": {
+        "279": "245",
+        "280": "244"
+      },
+      "candidate_ids": [
+        "A027",
+        "A028",
+        "A029",
+        "A030",
+        "A031",
+        "A032",
+        "A033",
+        "A034",
+        "A035",
+        "A036",
+        "A037",
+        "A038"
+      ],
+      "source_note_sections": [
+        "S-A05",
+        "SOURCE_ONLY_SUPPLEMENT_02"
+      ],
+      "covered_source_functions": [
+        "All twelve zodiac rows",
+        "Cancer row completed across279-280",
+        "Every row's anatomical, disease, causal and qualifying content retained",
+        "PDF280 visible244 preserved beside expected sequence246",
+        "Original errata p245 l penult target resolved to Cancer; body Scabbinesse and errata scabbinesse retained as lexically agreeing witnesses."
+      ],
+      "known_substantive_omissions": [],
+      "status": "SOURCE_IMAGES_READ_AND_CANDIDATES_EXTRACTED"
+    },
+    {
+      "id": "A-S06",
+      "chapter": "XLIV",
+      "title": "Diseases of the Planets",
+      "pdf_pages": [
+        280,
+        281
+      ],
+      "printed_pages": [
+        246,
+        247
+      ],
+      "visible_printed_labels": {
+        "280": "244",
+        "281": "247"
+      },
+      "candidate_ids": [
+        "A039",
+        "A040",
+        "A041",
+        "A042",
+        "A043",
+        "A044",
+        "A045"
+      ],
+      "source_note_sections": [
+        "S-A06"
+      ],
+      "covered_source_functions": [
+        "All seven planetary rows",
+        "Sun/Moon sex-specific eye laterality retained",
+        "Saturn cold-disease cause, Jupiter wind/blood alternatives and all named items",
+        "Venus reproductive and post-eating-vomiting alternatives; Moon belly-flux viz clause"
+      ],
+      "known_substantive_omissions": [],
+      "status": "SOURCE_IMAGES_READ_AND_CANDIDATES_EXTRACTED"
+    },
+    {
+      "id": "A-S07",
+      "chapter": "XLIV",
+      "title": "Transition from location/cause to duration and its stated purpose",
+      "pdf_pages": [
+        281
+      ],
+      "printed_pages": [
+        247
+      ],
+      "visible_printed_labels": {
+        "281": "247"
+      },
+      "candidate_ids": [
+        "A046"
+      ],
+      "source_note_sections": [
+        "S-A07"
+      ],
+      "covered_source_functions": [
+        "Source's ease-of-discovery claim",
+        "Access/recess and duration notification",
+        "Conditional comfort-if-life and penitence/preparation-if-death theological purposes"
+      ],
+      "known_substantive_omissions": [],
+      "status": "SOURCE_IMAGES_READ_AND_CANDIDATES_EXTRACTED"
+    },
+    {
+      "id": "A-S08",
+      "chapter": "XLIV",
+      "title": "Whether the Disease will be long or short: seasons",
+      "pdf_pages": [
+        281
+      ],
+      "printed_pages": [
+        247
+      ],
+      "visible_printed_labels": {
+        "281": "247"
+      },
+      "candidate_ids": [
+        "A047",
+        "A048",
+        "A049",
+        "A050"
+      ],
+      "source_note_sections": [
+        "S-A08"
+      ],
+      "covered_source_functions": [
+        "All four seasons",
+        "Usually, reputed and for-the-most-part qualifications preserved"
+      ],
+      "known_substantive_omissions": [],
+      "status": "SOURCE_IMAGES_READ_AND_CANDIDATES_EXTRACTED"
+    },
+    {
+      "id": "A-S09",
+      "chapter": "XLIV",
+      "title": "Whether the Disease will be long or short: planetary duration",
+      "pdf_pages": [
+        281,
+        282
+      ],
+      "printed_pages": [
+        247,
+        248
+      ],
+      "visible_printed_labels": {
+        "281": "247",
+        "282": "248"
+      },
+      "candidate_ids": [
+        "A051",
+        "A052",
+        "A053",
+        "A054",
+        "A055",
+        "A056",
+        "A057",
+        "A058"
+      ],
+      "source_note_sections": [
+        "S-A08"
+      ],
+      "covered_source_functions": [
+        "Saturn cold/dry sentence completed across281-282 with general solar regulation",
+        "Mars/Sun hot/dry class with lunar-motion duration",
+        "All seven planets in six duration-list entries, preserving Jupiter/Sun grouping",
+        "Venus mean, Mercury variability and Moon recurrence examples"
+      ],
+      "known_substantive_omissions": [],
+      "status": "SOURCE_IMAGES_READ_AND_CANDIDATES_EXTRACTED"
+    },
+    {
+      "id": "A-S10",
+      "chapter": "XLIV",
+      "title": "Signes of a long or short Sicknesse",
+      "pdf_pages": [
+        282,
+        283
+      ],
+      "printed_pages": [
+        248,
+        249
+      ],
+      "visible_printed_labels": {
+        "282": "248",
+        "283": "249"
+      },
+      "candidate_ids": [
+        "A059",
+        "A060",
+        "A061",
+        "A062",
+        "A063",
+        "A064",
+        "A065",
+        "A066",
+        "A067",
+        "A068",
+        "A069",
+        "A070",
+        "A071",
+        "A072",
+        "A073"
+      ],
+      "source_note_sections": [
+        "S-A09",
+        "SOURCE_ONLY_SUPPLEMENT_01"
+      ],
+      "covered_source_functions": [
+        "Fixed/moveable/common sixth-sign distinctions",
+        "Last-degree alternative outcomes and fixed-sign expulsion difficulty",
+        "Sixth-lord evil/fortune alternatives",
+        "Both relative-strength directions and their source reasoning",
+        "Saturn fixed/retrograde/slow claims and unedited moveable/terms/speed exception",
+        "Moveable sixth plus Moon likewise plus no-other-impediment package",
+        "Common-sign continuation and complete Pisces exception across282-283 with first-person attribution"
+      ],
+      "known_substantive_omissions": [],
+      "status": "SOURCE_IMAGES_READ_AND_CANDIDATES_EXTRACTED"
+    }
+  ],
+  "known_substantive_omissions": [],
+  "limitations": [
+    "Completeness is local to the declared A boundary and this image reading, not the entire chapter or book.",
+    "The source-defined printed119 table dependency was not read in this assigned span.",
+    "All records remain non-executable historical source claims.",
+    "The frozen source notes remain separate from candidate wording and later interpretations."
+  ],
+  "source_supplements": [
+    "SOURCE_ONLY_SUPPLEMENT_01.md",
+    "SOURCE_ONLY_SUPPLEMENT_02.md"
+  ],
+  "catalogue_lookup_metadata": {
+    "record_count": 31,
+    "house_rows": 12,
+    "sign_rows": 12,
+    "planet_rows": 7,
+    "namespaces_separate": true,
+    "source_items": "Source vocabulary retained, long s normalized; item segmentation is editorial.",
+    "metadata_does_not_add_rule_count": true
+  },
+  "errata_witnesses": [
+    {
+      "source_pdf_page": 888,
+      "target_pdf_page": 279,
+      "target_printed_page": 245,
+      "candidate_id": "A030",
+      "status": "TARGET_RESOLVED_BODY_ERRATA_AGREE"
+    }
+  ],
+  "unresolved_file": "UNRESOLVED.json",
+  "unresolved_count": 18
+}

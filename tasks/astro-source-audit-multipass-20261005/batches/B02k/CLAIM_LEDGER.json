@@ -1,0 +1,759 @@
+{
+  "batch": "B02k",
+  "report_file": "AUDIT_REPORT.md",
+  "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+  "verification_item_count": 42,
+  "unit_semantics": "Each item binds a complete paragraph or table including its subclaims; table rows and qualifications must all be checked. This is not a count of statistically independent claims.",
+  "whole_report_coverage_requirement": "Check every item and independently scan the entire report for any factual claim not represented in these units. Diagnose unsupported source readings separately from arithmetic, inventory and procedural assertions.",
+  "items": [
+    {
+      "id": "C01",
+      "section": "Result and exact scope",
+      "text": "The **opening sixth-house sickness block in Lilly’s Book II, Chapter XLIV is extracted**. It begins with the sixth-house heading, topic list, chapter title and opening on **PDF277 / printed243**. It ends with the paragraph concluding “shew death” on **PDF292 / printed258**, immediately before **“DARIOT Abridged.”** Every intervening numbered or unnumbered passage within that span is included. **Chapter XLIV continues beyond this batch and remains incomplete.** [Original PDF277–292; `SECTION_COVERAGE.json`.]",
+      "evidence_files": [
+        "SECTION_COVERAGE.json",
+        "READING_RECEIPT.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "7fe36ede4e056da1406895c637bbc92c2aba3dca37ed2d7cfd775bc07e85f63b"
+    },
+    {
+      "id": "C02",
+      "section": "Result and exact scope",
+      "text": "This is a historical source audit of Lilly’s statements, their conditions, their textual witnesses and the limited operations that can be reproduced from them. **Predictive accuracy remains unevaluated.** No patient is assessed, no treatment is selected and no survival probability is calculated. The records and code are reference material, with no promotion into the project’s prediction runtime. [Evidence: `RULES.json`, `COUNTS.json`, `lilly_sixth_opening_reference.py`.]",
+      "evidence_files": [
+        "RULES.json",
+        "COUNTS.json",
+        "lilly_sixth_opening_reference.py"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "evidence_and_implementation_scope",
+      "text_sha256": "ae0312db56aa8b93a659933024dc3d98c0958b77774f345ad6c418b9a7e364cc"
+    },
+    {
+      "id": "C03",
+      "section": "Result and exact scope",
+      "text": "| Measure | Inventory |\n|---|---:|\n| New source records | 192, R1358–R1549 |\n| Cumulative Lilly records | 1,549 |\n| Retained Ptolemy records | 1,066 |\n| Combined Lilly and retained Ptolemy records | 2,615 |\n| General, methodological or illustrative records in this batch | 192 |\n| Worked-narrative records / dated enquiries / horoscope figures | 0 / 0 / 0 |\n| Editorial coverage units / admitted PDF pages | 11 / 16 |\n| House, sign and planet catalogue rows | 12 + 12 + 7 = 31 |\n| Typed limit-register entries | 37 |\n| Retained limits or anomalies / source-resolved entries | 33 / 4 |\n| Distinct focused tests in the final source suite | 33 |\n\n[Evidence: `COUNTS.json`, `SECTION_COVERAGE.json`, `REFERENCE_TABLES.json`, `UNRESOLVED.json`, `TEST_RUN_SUMMARY.json`, `PTOLEMY_COUNT_RECEIPT.json`.]",
+      "evidence_files": [
+        "COUNTS.json",
+        "SECTION_COVERAGE.json",
+        "REFERENCE_TABLES.json",
+        "UNRESOLVED.json",
+        "TEST_RUN_SUMMARY.json",
+        "PTOLEMY_COUNT_RECEIPT.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "inventory",
+      "text_sha256": "5122932f7e59a196e181f69ceea99a16598eacbaafd79343466bacf2dc6a481f"
+    },
+    {
+      "id": "C04",
+      "section": "Result and exact scope",
+      "text": "The 192 records are an extraction inventory, not 192 independent predictions. One paragraph may supply several conditions, qualifications or alternatives; repeated astronomical carriers do not become independent evidence merely because they occupy separate records. The eleven coverage units are editorial aids, not eleven numbered chapters. Four retained callback records are included for reference without adding them again to the cumulative count. [Evidence: `RULES.json`, `SECTION_COVERAGE.json`, `RETAINED_SOURCE_EXCERPTS.json`.]",
+      "evidence_files": [
+        "RULES.json",
+        "SECTION_COVERAGE.json",
+        "RETAINED_SOURCE_EXCERPTS.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "count_semantics",
+      "text_sha256": "9c992a938238485f43272f6e32e8f43f8049094435f713f0a0651320c0aaeb36"
+    },
+    {
+      "id": "C05",
+      "section": "1. The selected time is part of the method",
+      "text": "Lilly gives an ordered sequence for selecting the figure’s time:\n\n| Priority | Source event | Qualification |\n|---|---|---|\n| First | The first time illness compelled bed or repose | Obtain the hour as nearly as possible |\n| Second | The first carrying of the sick person’s urine to someone to enquire about the disease | Used if the first time cannot be obtained; the recipient need not be a physician |\n| Third | The physician’s first speaking with the patient, first access to the patient, or first receipt of the urine | Used if the earlier evidence cannot be obtained; the three alternatives have no stated internal ranking |\n\n[XLIV, printed243 / PDF277; R1359–R1361.]",
+      "evidence_files": [
+        "RULES.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1359",
+        "R1360",
+        "R1361"
+      ],
+      "original_pdf_pages": [
+        277
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "26524c05f5b82caa3cce343e06689acd30c298b3956bf635778ae428ed7cb29f"
+    },
+    {
+      "id": "C06",
+      "section": "1. The selected time is part of the method",
+      "text": "The first slight sensation of illness is expressly excluded from the preferred onset time. Lilly asks for the point when the person was sufficiently oppressed to be forced to bed or rest. After selecting the time, he directs construction of the figure and exact rectification of the Moon’s position to that hour. The selected event therefore needs to remain part of the provenance of any later calculation. [XLIV, printed243 / PDF277; R1359, R1362.]",
+      "evidence_files": [
+        "RULES.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1359",
+        "R1362"
+      ],
+      "original_pdf_pages": [
+        277
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "38d7f1af49789140ffdc41ee36dc923f25d65b3d13ddc8beb4592fde549f6c6d"
+    },
+    {
+      "id": "C07",
+      "section": "1. The selected time is part of the method",
+      "text": "The time helper distinguishes **unavailable** from **unknown**. It does not silently fall through an earlier stage whose availability is unknown. Within the third stage it retains known alternatives; different supplied time tokens remain an unresolved choice. If another alternative’s availability is unknown, the selection status remains unknown while the known candidates remain visible. These are conservative implementation policies for unresolved evidence, not extra priority rules attributed to Lilly. [Implementation: `select_source_time`; focused time-selection tests.]",
+      "evidence_files": [
+        "lilly_sixth_opening_reference.py",
+        "test_lilly_sixth_opening.py"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "implementation_policy",
+      "text_sha256": "f39410b9214f911fd358ff614ffb0fe6dd8df49f2faa5d33808e09633ffab01e"
+    },
+    {
+      "id": "C08",
+      "section": "1. The selected time is part of the method",
+      "text": "Before judging the bodily location, Lilly also requires observations of the ascendant and its occupants, the sixth house and its occupants, the Moon’s sign and house, and the planet affecting the Moon together with that planet’s house and lordship. The records preserve these as required observations. This passage supplies no weighted formula for combining them. [XLIV, printed243 / PDF277; R1363.]",
+      "evidence_files": [
+        "RULES.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1363"
+      ],
+      "original_pdf_pages": [
+        277
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "7b8f53202470360bfb482647ab8cd84d339ac543dd1101dc301c5cc322a4558e"
+    },
+    {
+      "id": "C09",
+      "section": "2. The correspondence tables must retain their own meanings",
+      "text": "The opening block gives three separate catalogues: **twelve houses**, **twelve signs**, and **seven planets**. Their historical disease and bodily correspondences are stored under separate lookup namespaces. A query for a house cannot silently fall back to a sign with a superficially similar association. The list lengths describe the printed catalogues, not evidence that the correspondences are medically valid. [XLIV, printed244–247 / PDF278–281; `REFERENCE_TABLES.json`.]",
+      "evidence_files": [
+        "RULES.json",
+        "REFERENCE_TABLES.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [
+        278,
+        279,
+        280,
+        281
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "123d44a800d31b83661af00ca40adfa8c094d6eb5dbdfa5045707f51da6ed33a"
+    },
+    {
+      "id": "C10",
+      "section": "2. The correspondence tables must retain their own meanings",
+      "text": "A fourth structure is relevant because Lilly explicitly refers back to the **planet-in-sign body table on printed page119 / PDF153**. In that retained table, Saturn in Cancer corresponds to **Reins, Belly, Secrets**. This is a different lookup from either the generic Cancer disease list or Saturn’s generic disease list. The current helper admits that one callback cell; it does not fill other cells from an assumed pattern. [XLIV, printed243–244 / PDF277–278; R1364–R1366; retained R523; `CROSS_SOURCE_COMPARISONS.json`.]",
+      "evidence_files": [
+        "RULES.json",
+        "REFERENCE_TABLES.json",
+        "RETAINED_SOURCE_EXCERPTS.json",
+        "CROSS_SOURCE_COMPARISONS.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1364",
+        "R1365",
+        "R1366",
+        "LI.1647.I.XIX.R523"
+      ],
+      "original_pdf_pages": [
+        277,
+        278,
+        153
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "b0c7fa038a2b467f2de61e5d9a949c1642765f1e51f500374b9aa582dc1471e8"
+    },
+    {
+      "id": "C11",
+      "section": "2. The correspondence tables must retain their own meanings",
+      "text": "Lilly’s Cancer-rising, Saturn-in-Cancer illustration combines the first house’s association with the head and the members signified by Saturn in that sign. He offers alternative ailments and then says the judgment becomes more certain—using “infallible” language—if one of the specified corroborating significators or the sixth sign indicates the same member. The illustration is hypothetical; no dated patient, chart or independently observed endpoint accompanies it. [XLIV, printed244 / PDF278; R1365–R1366.]",
+      "evidence_files": [
+        "RULES.json",
+        "COUNTS.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1365",
+        "R1366"
+      ],
+      "original_pdf_pages": [
+        278
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "6a8694c5a3897e5c2be69bcd29e2639959613198653ae6698e48e359dddfdecc"
+    },
+    {
+      "id": "C12",
+      "section": "2. The correspondence tables must retain their own meanings",
+      "text": "A future evaluation would need to distinguish a bodily location inferred from the chart from a symptom already supplied by the questioner, and would need to define what counts as corroboration. That is an evaluation requirement inferred from the source’s use of inputs and overlapping correspondences. It is not a scoring method printed by Lilly. [Source basis: R1363–R1367; evidence classification in `RULES.json`.]",
+      "evidence_files": [
+        "RULES.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1363",
+        "R1364",
+        "R1365",
+        "R1366",
+        "R1367"
+      ],
+      "original_pdf_pages": [
+        277,
+        278
+      ],
+      "claim_type": "audit_inference",
+      "text_sha256": "57ca4559dbb1076b197f30964e89d45699c4417373d59b66e99e9fbf29d14b37"
+    },
+    {
+      "id": "C13",
+      "section": "3. Mean lunar motion and the retrograde analogy differ",
+      "text": "The duration discussion uses the Moon travelling in twenty-four hours **less than her mean motion** while in an aspect or conjunction with the ascendant’s ruler. The numerical mean is not printed in that local sentence. The audit explicitly links it to Lilly’s earlier statement on **printed80 / PDF114**, which gives **13°10′36″**. [XLIV, printed251–252 / PDF285–286; R1467; retained R192; `CROSS_SOURCE_COMPARISONS.json`.]",
+      "evidence_files": [
+        "RULES.json",
+        "RETAINED_SOURCE_EXCERPTS.json",
+        "CROSS_SOURCE_COMPARISONS.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1467",
+        "LI.1647.I.14.R192"
+      ],
+      "original_pdf_pages": [
+        285,
+        286,
+        114
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "9b0815b72318b531fcd0c59462cda6101f4ba9eedb798431014275c9b782121f"
+    },
+    {
+      "id": "C14",
+      "section": "3. Mean lunar motion and the retrograde analogy differ",
+      "text": "The earlier page separately calls travel of **less than 13°10′ in twenty-four hours** equivalent to a retrograde planet, while saying the Moon is always direct. The threshold for that analogy is **36 arcseconds lower** than the stated mean. Both comparisons are strict: equality does not satisfy “less than.” [Printed80 / PDF114; retained R195 and R221; `ARITHMETIC_CHECKS.json`.]",
+      "evidence_files": [
+        "RETAINED_SOURCE_EXCERPTS.json",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "record_ids_or_local_ids": [
+        "LI.1647.I.14.R195",
+        "LI.1647.I.14.R221"
+      ],
+      "original_pdf_pages": [
+        114
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "eee55c5278c05efcca83c1c4af635723acc0af9fb6d29db5973eeadb49cbb8d8"
+    },
+    {
+      "id": "C15",
+      "section": "3. Mean lunar motion and the retrograde analogy differ",
+      "text": "| Supplied daily motion | Below stated mean, 13°10′36″? | Below analogy threshold, 13°10′00″? |\n|---|---|---|\n| 13°09′59″ | Yes | Yes |\n| 13°10′00″ | Yes | No |\n| 13°10′18″ | Yes | No |\n| 13°10′36″ | No | No |\n\nThese are controlled arithmetic examples, not reconstructed historical observations. The two threshold comparisons therefore cannot be merged into one boolean without changing at least some results. [Executed calculations: `ARITHMETIC_CHECKS.json`; focused lunar-motion tests.]",
+      "evidence_files": [
+        "ARITHMETIC_CHECKS.json",
+        "test_lilly_sixth_opening.py",
+        "TEST_RUN_SUMMARY.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "executed_arithmetic",
+      "text_sha256": "220571aa59cbf818a3b3f6b541e634f7272085486f4c8003474faabaa0f1ef12"
+    },
+    {
+      "id": "C16",
+      "section": "3. Mean lunar motion and the retrograde analogy differ",
+      "text": "The helper returns only those two comparisons. It does not infer physical retrogradation, compute a horoscope, or evaluate the full aspect-qualified illness rule. Nor does it silently equate “below the mean” with the neighbouring phrase “decreases in light and motion”: those are separately stated source conditions. [Printed80 / PDF114 and printed251–252 / PDF285–286; R1467–R1469; `lilly_sixth_opening_reference.py`.]",
+      "evidence_files": [
+        "RULES.json",
+        "lilly_sixth_opening_reference.py",
+        "RETAINED_SOURCE_EXCERPTS.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1467",
+        "R1468",
+        "R1469"
+      ],
+      "original_pdf_pages": [
+        114,
+        285,
+        286
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "442dce6a286d682e7c8b647c4ba2179b03c10b7871b767473360cc13cef076e5"
+    },
+    {
+      "id": "C17",
+      "section": "4. Remaining arc does not by itself choose a duration",
+      "text": "For an unfortunate planet in the sixth moving from one sign into another, Lilly says the disease will alter. If asked when, he directs counting the degrees remaining before the planet leaves the sign and judging that many **months, weeks or days according to the sign’s nature and quality**. The local passage supplies no complete choice among those units and no rule for rounding a partial degree. The initial alteration is not expressly assigned a favourable or unfavourable direction. [XLIV, printed249 / PDF283; R1437–R1438.]",
+      "evidence_files": [
+        "RULES.json",
+        "UNRESOLVED.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1437",
+        "R1438"
+      ],
+      "original_pdf_pages": [
+        283
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "236a77b0ecfc7f8f040d0af7ee7deeda10fce62d314f8feab5cafa2777f335a9"
+    },
+    {
+      "id": "C18",
+      "section": "4. Remaining arc does not by itself choose a duration",
+      "text": "The reference helper can calculate an exact remaining arc when all coordinate components are supplied. For example, **29°30′00″ leaves ½° in the sign**, while the time unit remains unknown. Omitted minutes or seconds remain missing. The helper also rejects a combined position of 30° or more, even when each fractional component separately lies below its own limit. This domain check is an implementation safeguard, not a data-entry rule attributed to the seventeenth-century text. [Executed example and rejected counterexamples: `ARITHMETIC_CHECKS.json`; `remaining_degrees_in_sign` and its focused tests.]",
+      "evidence_files": [
+        "ARITHMETIC_CHECKS.json",
+        "lilly_sixth_opening_reference.py",
+        "test_lilly_sixth_opening.py"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "implementation_and_arithmetic",
+      "text_sha256": "74318fb64e1483b3fef04b08890275a1fa68ff8bf83fb444b8a811bce2bea61b"
+    },
+    {
+      "id": "C19",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "text": "The source distinguishes **present danger, increasing illness, duration, recovery, recovery after delay, relapse, and death**. Some passages describe recovery despite a long or grievous illness. Others express danger or probability rather than certainty. These distinctions remain in the individual records; a future evaluator would need separately defined endpoints instead of a single success label. [XLIV, printed249–258 / PDF283–292; `RULES.json`.]",
+      "evidence_files": [
+        "RULES.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292
+      ],
+      "claim_type": "source_distinction_and_audit_inference",
+      "text_sha256": "f9ec796dcb104154bb4c208c119aeaa58ae7f15849763756ef44b83fb2789286"
+    },
+    {
+      "id": "C20",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "text": "The benevolent-planet clause on printed250 requires the planet to be **well fortified in the sixth and not the author of the disease**. That last condition is essential to matching the clause. The outcome wording in the image is “the Disease is not, or will be permanent.” The record preserves it without inserting another “not”; whether the first negative has shared scope or a word is absent remains unresolved. The helper checks the prerequisites only and does not resolve this outcome wording. [PDF284; R1444; U-ROOT01; `evidence/pdf284-permanence.png`.]",
+      "evidence_files": [
+        "RULES.json",
+        "UNRESOLVED.json",
+        "lilly_sixth_opening_reference.py",
+        "evidence/pdf284-permanence.png"
+      ],
+      "record_ids_or_local_ids": [
+        "R1444"
+      ],
+      "original_pdf_pages": [
+        284
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "4a405cce63d37d3585b1bf3fdc01613a571bfed70c4adee4072b3f651ff0c5c3"
+    },
+    {
+      "id": "C21",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "text": "For the Moon decreasing in light and motion and coming to conjunction, square or opposition of Saturn, Lilly’s adverse statement is qualified **“for the most part”** and excepts a disease already **“in its decrease and leaving the Patient or Querent.”** The helper’s exception input represents that whole phrase. Knowing only that the disease is decreasing does not establish the full exception; an unresolved aggregate remains unknown. A satisfied prerequisite is not a certain prognosis. [Printed252 / PDF286; R1469; `evidence/pdf286-saturn-exception.png`; reference helper.]",
+      "evidence_files": [
+        "RULES.json",
+        "lilly_sixth_opening_reference.py",
+        "test_lilly_sixth_opening.py",
+        "evidence/pdf286-saturn-exception.png"
+      ],
+      "record_ids_or_local_ids": [
+        "R1469"
+      ],
+      "original_pdf_pages": [
+        286
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "3bf91c61ac378f99d3b9e3d2b8bd429b2ab465768d5443ce9f67c749a1e04f96"
+    },
+    {
+      "id": "C22",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "text": "Aspect names also need their context. With **Mars ruling the ascendant and placed in the sixth**, Lilly says there is no great danger when Mars is in sextile or trine to Venus, and extends that statement even to square or opposition. Conjunction is not named in this particular sentence. A universal rule that every square or opposition must add danger would misrepresent this passage. [Printed252 / PDF286; R1475.]",
+      "evidence_files": [
+        "RULES.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1475"
+      ],
+      "original_pdf_pages": [
+        286
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "0cbee1ea2bb9db521ce1f493009ed2d9bd79254de8f477aaf87afb2ee8d9e239"
+    },
+    {
+      "id": "C23",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "text": "Reception can change the outcome without removing duration. One recovery testimony requires reception between the first and eighth rulers and neither being infortunated by malignant planets. A later death-probability passage allows possible escape through reception with the planet in the eighth, while retaining a very long and grievous disease. The exact reach of that later exception across every preceding alternative is not fully restated and remains a scope question. [Printed254,257 / PDF288,291; R1497, R1535.]",
+      "evidence_files": [
+        "RULES.json",
+        "UNRESOLVED.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1497",
+        "R1535"
+      ],
+      "original_pdf_pages": [
+        288,
+        291
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "4acdaff1f2334cebfa6ba6c5eaae62c560615dab9a22e2f51f154066e41c63d6"
+    },
+    {
+      "id": "C24",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "text": "Lilly’s common-sign duration statement has an explicit **Pisces-on-the-sixth-cusp exception**. He says he has found that placement equivalent to a movable sign. The final words continue from PDF282 onto the first line of PDF283; that continuation is included in the record. This is Lilly’s generalized first-person experience claim, not a counted or independently checked series. [Printed248–249 / PDF282–283; R1429–R1430.]",
+      "evidence_files": [
+        "RULES.json",
+        "SECTION_COVERAGE.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1429",
+        "R1430"
+      ],
+      "original_pdf_pages": [
+        282,
+        283
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "cfa13d341d49a390382d5bad6f6ab11f511e1c1bcc1d892e2c024de0375e2c40"
+    },
+    {
+      "id": "C25",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "text": "A recovery condition on printed255 assigns freedom from misfortune to **the ascendant’s ruler**: after the Moon applies to that ruler by trine or sextile, the text says “and he be cleer of all misfortune,” followed by an alternative absence-of-impediment clause especially concerning the eighth or sixth lord. Both the subject and the printed “or” matter. The freedom condition is not reassigned to the Moon. [PDF289; R1505; `evidence/pdf289-ascendant-lord-pronoun.png`.]",
+      "evidence_files": [
+        "RULES.json",
+        "evidence/pdf289-ascendant-lord-pronoun.png"
+      ],
+      "record_ids_or_local_ids": [
+        "R1505"
+      ],
+      "original_pdf_pages": [
+        289
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "f48db01e5bec1365753d8b4a861fe53af4e5853c58a7b119a02e49d9d25f7dad"
+    },
+    {
+      "id": "C26",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "text": "Another passage, with the sixth ruler in the eighth and the eighth ruler in the sixth and a sextile or trine between them, says “you shall not doubt of the death of the Patient at that time,” then explains that Nature is not so overcome or weak that the sick cannot overcome the illness. The historical sense of “doubt” or a possible textual tension remains open. The extraction retains both the phrase and the survival-oriented explanation; it does not silently substitute “life,” “fear,” or “no death.” [Printed249 / PDF283; R1440; U-B01.]",
+      "evidence_files": [
+        "RULES.json",
+        "UNRESOLVED.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1440"
+      ],
+      "original_pdf_pages": [
+        283
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "6b4a6fcbb2e4eabe951a4dd19af10f636aa3802a9a786ccfef00649f6dbd74ad"
+    },
+    {
+      "id": "C27",
+      "section": "6. Printed words, handwriting and errata are separate witnesses",
+      "text": "The scan contains ink alterations as well as an authorial errata page. The packet keeps the visible original layer, the observed handwriting and the errata instruction distinct. A legible correction elsewhere in the book does not make an overwritten original phrase fully legible, and an unattributed handwritten alteration does not automatically become Lilly’s wording. [Original PDF288,290,291,888; source-layer fields in `RULES.json`; `TEXTUAL_CHECKS.json`.]",
+      "evidence_files": [
+        "RULES.json",
+        "TEXTUAL_CHECKS.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [
+        288,
+        290,
+        291,
+        888
+      ],
+      "claim_type": "source_witness_policy",
+      "text_sha256": "6dd835512ba261135f89fc03dba9aa53989849a42616f1c2694d5de8efadc4b8"
+    },
+    {
+      "id": "C28",
+      "section": "6. Printed words, handwriting and errata are separate witnesses",
+      "text": "| Errata target | Instruction or reading | Treatment in this batch |\n|---|---|---|\n| Printed245, penultimate line | Read “scabbinesse” | The Cancer row on PDF279 already reads Scabbinesse; body and errata agree on that word |\n| Printed254, lines18–19 | Read “placed” | Retain the placement wording with the separate errata witness |\n| Printed256, line8 | Delete “all hopes of escape”; read “feare of danger” | Use the corrected reading in the reception-qualified little-hope clause; preserve the obscured original layer |\n| Printed257, line23 | Read “eight” | Preserve the corrected eighth-lord reading in the antiscion clause and the altered original layer |\n\nThe errata target for Scabbinesse names the penultimate line; the nearby marginal mark is not treated as a newly supplied line number. The agreement does not establish an otherwise unobserved earlier printing error. [Original PDF279,288,290,291,888; `TEXTUAL_CHECKS.json`; `evidence/pdf888-admitted-errata.png`.]",
+      "evidence_files": [
+        "TEXTUAL_CHECKS.json",
+        "RULES.json",
+        "evidence/pdf888-admitted-errata.png"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [
+        279,
+        288,
+        290,
+        291,
+        888
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "a595e4faedbf1931395b2a315eb88004f74fc3c9e9143f7e42e6c86022d9a690"
+    },
+    {
+      "id": "C29",
+      "section": "6. Printed words, handwriting and errata are separate witnesses",
+      "text": "On PDF280 the visible printed page label is **244**, although its position in the sequence corresponds to **246**. Each affected record retains the visible label and the expected sequence separately. A citation to PDF280 therefore remains unambiguous without rewriting the scan’s pagination. [Original PDF280; `SOURCE_IMAGE_MANIFEST.json`; `evidence/pdf280-visible-page-label.png`; source locators in `RULES.json`.]",
+      "evidence_files": [
+        "RULES.json",
+        "SOURCE_IMAGE_MANIFEST.json",
+        "evidence/pdf280-visible-page-label.png"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [
+        280
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "594c244254bb035d80fe4c7247e43b1808490e3a74f727756b781f5bb389f1ad"
+    },
+    {
+      "id": "C30",
+      "section": "6. Printed words, handwriting and errata are separate witnesses",
+      "text": "Near the end of the admitted span, the combustion passage names **Saturn or Mercury**. The Mercury glyph was checked in an enlarged original image and is not normalized to Mars. The passage also combines eighth-house placement, Leo or Libra, aspects and the Pleiades in a way whose complete AND/OR grouping is not resolved. Its words are retained as source prose, without declaring one executable configuration. [Printed258 / PDF292; R1548; U-B16; `evidence/pdf292-combustion-clause.png`.]",
+      "evidence_files": [
+        "RULES.json",
+        "UNRESOLVED.json",
+        "evidence/pdf292-combustion-clause.png"
+      ],
+      "record_ids_or_local_ids": [
+        "R1548"
+      ],
+      "original_pdf_pages": [
+        292
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "6e5182aa87dca7dc06e486a7839c33c07468ea3821fbe0faf86a440edd8990e9"
+    },
+    {
+      "id": "C31",
+      "section": "7. Historical star labels are not modern exact coordinates",
+      "text": "The admitted passages provide these historical labels:\n\n| Source name or preserved spelling | Sign | Source degree wording |\n|---|---|---|\n| Antares | Sagittarius | Fourth degree |\n| Lans/Lanx Australis | Scorpio | About the ninth |\n| Palilicium | Gemini | Four |\n| Caput Medusae | Taurus | Twenty |\n| Pleiades | Taurus | Twenty-four |\n\nThe first four are examples in the discussion of a malevolent planet or violent fixed star near the ascending degree. The Pleiades occur in the later combustion passage. The spelling uncertainty in Lans/Lanx Australis remains visible. [Printed257–258 / PDF291–292; R1538, R1548; `REFERENCE_TABLES.json`.]",
+      "evidence_files": [
+        "RULES.json",
+        "REFERENCE_TABLES.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1538",
+        "R1548"
+      ],
+      "original_pdf_pages": [
+        291,
+        292
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "0c9bceb3da2203121e4f09fb916831705cfda3f04aac095bb4809fcf3d497fc4"
+    },
+    {
+      "id": "C32",
+      "section": "7. Historical star labels are not modern exact coordinates",
+      "text": "These labels supply no minutes or seconds, no modern-epoch conversion and no numerical definition of “near.” The wording also does not establish a unique ordinal-to-continuous-degree convention. Those fields remain missing. The helper retrieves the printed label and its uncertainty; it does not turn it into a present-day star position or manufacture an orb. [R1538, R1548; U-B14; `REFERENCE_TABLES.json`, `lilly_sixth_opening_reference.py`.]",
+      "evidence_files": [
+        "RULES.json",
+        "UNRESOLVED.json",
+        "REFERENCE_TABLES.json",
+        "lilly_sixth_opening_reference.py"
+      ],
+      "record_ids_or_local_ids": [
+        "R1538",
+        "R1548"
+      ],
+      "original_pdf_pages": [
+        291,
+        292
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "4fd7b76f37d907d4570de849e2b81605b1447f0b079343be1e4b7c604ad244d2"
+    },
+    {
+      "id": "C33",
+      "section": "8. What the evidence supports and what remains open",
+      "text": "The block contains historical humoral, moral, sexual and supernatural attributions as well as planetary correspondences. Those statements remain attributed to the historical source. Reproducing them does not establish a modern diagnosis, a cause of illness, a treatment effect or a factual allegation about any person. General descriptions of medicines having worked and Lilly’s generalized claims of experience are not supplied as independently documented patient outcomes. [For examples, printed244–251 / PDF278–285; R1432–R1434, R1441 and surrounding records; `COUNTS.json`.]",
+      "evidence_files": [
+        "RULES.json",
+        "COUNTS.json"
+      ],
+      "record_ids_or_local_ids": [
+        "R1432",
+        "R1433",
+        "R1434",
+        "R1441"
+      ],
+      "original_pdf_pages": [
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285
+      ],
+      "claim_type": "historical_evidence_classification",
+      "text_sha256": "eac27423582c25459e997edfbb0eb701d6b0d1503dc392f19b392bebc4d4a3b7"
+    },
+    {
+      "id": "C34",
+      "section": "8. What the evidence supports and what remains open",
+      "text": "The arguments of death invoke natal positions, profection and the five hylegical places. A recovery testimony invokes a later crisis. The records preserve those dependencies, but the local paragraphs do not complete the later nativity or crisis methods. The next “DARIOT Abridged” material is still outside this batch. Those dependencies cannot be treated as implemented merely because their names have been extracted. [Printed255–258 / PDF289–292; `CROSS_SOURCE_COMPARISONS.json`, `UNRESOLVED.json`.]",
+      "evidence_files": [
+        "RULES.json",
+        "CROSS_SOURCE_COMPARISONS.json",
+        "UNRESOLVED.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [
+        289,
+        290,
+        291,
+        292
+      ],
+      "claim_type": "source_and_analysis",
+      "text_sha256": "56106021b3007f19a408dc08595ae60e00ed15de299736fea8b5f40444a09a89"
+    },
+    {
+      "id": "C35",
+      "section": "8. What the evidence supports and what remains open",
+      "text": "The unresolved register now contains **37 typed entries**. **33** retain wording, grammar, terminology, implementation, attribution, precision or evidence limits; **4** are separately marked as resolved callbacks or errata readings. These are not 37 alleged errors in Lilly. The original-layer legibility question can remain open even when the errata supplies a usable corrected reading. Further qualifications also remain attached directly to individual records. [Evidence: `UNRESOLVED.json`, `RULES.json`.]",
+      "evidence_files": [
+        "UNRESOLVED.json",
+        "RULES.json",
+        "COUNTS.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "register_semantics",
+      "text_sha256": "e61fc9e920822409830bd9f426fe1024076118b486c312d73c1219f49bb75be1"
+    },
+    {
+      "id": "C36",
+      "section": "8. What the evidence supports and what remains open",
+      "text": "The four resolved register entries concern the targeted printed119 table callback, agreement of the Cancer-row Scabbinesse with the errata, the declared mean-motion reference value, and the retained placement/antiscion errata layer. Resolution here is limited to that source question. It does not validate the associated disease or outcome claim. [U-A02, U-A18, U-B05 and U-B18 in `UNRESOLVED.json`; `RETAINED_SOURCE_EXCERPTS.json`, `TEXTUAL_CHECKS.json`.]",
+      "evidence_files": [
+        "UNRESOLVED.json",
+        "RETAINED_SOURCE_EXCERPTS.json",
+        "TEXTUAL_CHECKS.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "resolved_source_scope",
+      "text_sha256": "836534d89e35885e2e53aa73257812480b2713977ef015df21e8741b0ff94f3f"
+    },
+    {
+      "id": "C37",
+      "section": "9. Verification and reproducibility",
+      "text": "The source file is the retained 1647 Wellcome scan, identified as **LILLY1647_WELLCOME_B30338724**: **894 PDF pages, 141,842,963 bytes**, SHA256 **2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b**. Its hash was recomputed this turn. The original PDF remains external to the records packet; locating crops, source identifiers, page anchors and image hashes are included. The catalogue locator is recorded in `SOURCES.md`. [Evidence: `READING_RECEIPT.json`, `SOURCE_IMAGE_MANIFEST.json`.]",
+      "evidence_files": [
+        "READING_RECEIPT.json",
+        "SOURCE_IMAGE_MANIFEST.json",
+        "SOURCES.md"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "source_identity",
+      "text_sha256": "33508177a72674c87fe1d9d2984ab12830fb589b7aa516c8ae48a63ef052c7c6"
+    },
+    {
+      "id": "C38",
+      "section": "9. Verification and reproducibility",
+      "text": "Root inspected all sixteen admitted original page images and froze source notes before reading the candidate records or independent findings. The two source readers retained their own source notes and extraction artifacts. A separate evaluator also froze a full-span source-first reading before receiving the candidate report. That separation is within the same model family; no cross-family or external-expert validation is claimed. [Evidence: `ROOT_SOURCE_FIRST_FREEZE.json`, `READING_RECEIPT.json`, retained source-reader receipts and `independent_review/SOURCE_FIRST_RECEIPT.json`.]",
+      "evidence_files": [
+        "ROOT_SOURCE_FIRST_FREEZE.json",
+        "READING_RECEIPT.json",
+        "independent_review/SOURCE_FIRST_RECEIPT.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "observed_review_provenance",
+      "text_sha256": "0b737284807e59dfc2268372bc88254a1299c42c162c2d6fbe308f7695a434fa"
+    },
+    {
+      "id": "C39",
+      "section": "9. Verification and reproducibility",
+      "text": "The reference implementation is intentionally limited to selecting source-time evidence, preserving three-valued prerequisites, comparing the two declared lunar thresholds, calculating remaining within-sign arc, and routing exact historical lookups. Full rule combination, astronomical reconstruction, clinical interpretation and calibrated prediction are outside it. A source anchor’s presence and record coverage can be checked mechanically; the correctness of the actual wording requires original-image comparison. [Evidence: `lilly_sixth_opening_reference.py`, `test_lilly_sixth_opening.py`, `READING_RECEIPT.json`.]",
+      "evidence_files": [
+        "lilly_sixth_opening_reference.py",
+        "test_lilly_sixth_opening.py",
+        "READING_RECEIPT.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "verification_limits",
+      "text_sha256": "4dab9f065b53db48dc8a247b7f5564df78e568cd8beafb2cebae4db407ee9603"
+    },
+    {
+      "id": "C40",
+      "section": "9. Verification and reproducibility",
+      "text": "The actual final focused-suite execution ran **33 tests**, with **0 failures, 0 errors and 0 skips**. It covers eight time-selection tests, five lunar-motion tests, four prerequisite tests, five remaining-arc tests, five lookup tests and six record-integrity tests. The earlier 32-test run is retained as history, not added to the final total. A repeat execution, including one in an extracted archive, likewise reuses existing test identities. [Evidence: `TEST_B02k.txt`, `TEST_RUN_SUMMARY.json`, `test_lilly_sixth_opening.py`; historical execution in `helper_review/INITIAL_TEST_RUN_SUMMARY.json`.]",
+      "evidence_files": [
+        "TEST_B02k.txt",
+        "TEST_RUN_SUMMARY.json",
+        "test_lilly_sixth_opening.py",
+        "helper_review/INITIAL_TEST_RUN_SUMMARY.json"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "actual_test_results",
+      "text_sha256": "27e7981f69098e5a4385873ec8796e9291084c06b09d8c6e13ed1a35b788178e"
+    },
+    {
+      "id": "C41",
+      "section": "9. Verification and reproducibility",
+      "text": "To reproduce the bounded suite after extracting the packet, run **`python run_verification.py`** from the folder containing this report, the helper and its JSON companions. Python’s standard library is sufficient for that test run. The execution writes its own log and summary. Historical source images require no test-time download, and the test suite does not require the full original PDF. Source-image rendering is a separate provenance operation. [Implementation: `run_verification.py`, `test_lilly_sixth_opening.py`, `lilly_sixth_opening_reference.py`.]",
+      "evidence_files": [
+        "run_verification.py",
+        "test_lilly_sixth_opening.py",
+        "lilly_sixth_opening_reference.py"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [],
+      "claim_type": "reproduction_instruction",
+      "text_sha256": "6425e337dbe2b42f79962fe712489968f0657277fb1ba9216602005ce05603f7"
+    },
+    {
+      "id": "C42",
+      "section": "Continuation",
+      "text": "Resume on **PDF292 / printed258**, immediately below the completed “shew death” paragraph, with **“DARIOT Abridged.” Include its full italic introduction**, beginning “In regard I have ever affected Dariot his Method of judgment in sicknesses,” before continuing onto PDF293. The heading and introduction were inspected to establish the boundary but have not been extracted here. The cumulative Lilly inventory is now 1,549; the next new record number is R1550. Chapter XLIV and the wider multi-author, multipass audit remain open. [Evidence: `SECTION_COVERAGE.json`, `LILLY_SOURCE_EXTRACTION_INDEX_SNAPSHOT.json`, `CONTINUE_HANDOFF.md`.]",
+      "evidence_files": [
+        "SECTION_COVERAGE.json",
+        "LILLY_SOURCE_EXTRACTION_INDEX_SNAPSHOT.json",
+        "CONTINUE_HANDOFF.md"
+      ],
+      "record_ids_or_local_ids": [],
+      "original_pdf_pages": [
+        292
+      ],
+      "claim_type": "continuation_boundary",
+      "text_sha256": "9b85a37e331810f872f507451bacb60cf3ed70b4f7c1b1d04c4277988d4dfd90"
+    }
+  ]
+}

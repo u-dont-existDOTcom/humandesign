@@ -1,0 +1,1221 @@
+{
+  "batch": "B02k",
+  "register_entries_count": 37,
+  "retained_limit_or_anomaly_entries_count": 33,
+  "source_resolved_entries_count": 4,
+  "count_semantics": "Typed register entries, not a count of source errors. Resolved callbacks/errata are separated from retained grammar, terminology, implementation, evidence and witness limits.",
+  "issues": [
+    {
+      "id": "U-A01",
+      "type": "source_defined_content",
+      "category": "pagination_anomaly",
+      "pdf_pages": [
+        280
+      ],
+      "printed_pages": [
+        246
+      ],
+      "visible_printed_labels": {
+        "280": "244"
+      },
+      "anchor": "PDF280 visibly prints 244 between visible245 and247.",
+      "source_defined_content": "PDF280's header is 244; the sequentially expected page is246.",
+      "assistant_identified_gap": null,
+      "status": "RETAINED_SOURCE_ANOMALY",
+      "candidate_ids": [
+        "A030",
+        "A031",
+        "A032",
+        "A033",
+        "A034",
+        "A035",
+        "A036",
+        "A037",
+        "A038",
+        "A039",
+        "A040",
+        "A041"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1387",
+        "LI.1647.II.XLIV.R1388",
+        "LI.1647.II.XLIV.R1389",
+        "LI.1647.II.XLIV.R1390",
+        "LI.1647.II.XLIV.R1391",
+        "LI.1647.II.XLIV.R1392",
+        "LI.1647.II.XLIV.R1393",
+        "LI.1647.II.XLIV.R1394",
+        "LI.1647.II.XLIV.R1395",
+        "LI.1647.II.XLIV.R1396",
+        "LI.1647.II.XLIV.R1397",
+        "LI.1647.II.XLIV.R1398"
+      ],
+      "reader_status": "RETAINED_SOURCE_ANOMALY",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A02",
+      "type": "source_defined_content",
+      "category": "explicit_cross_reference",
+      "pdf_pages": [
+        278
+      ],
+      "printed_pages": [
+        244
+      ],
+      "visible_printed_labels": {
+        "278": "244"
+      },
+      "anchor": "Table beforegoing page 119",
+      "source_defined_content": "The passage explicitly cites the preceding table on printed page119; the numeral119 was verified against an enlarged crop.",
+      "assistant_identified_gap": "The cited table itself was not read in A's assigned span; no imported body-mapping detail is treated as checked here.",
+      "status": "RESOLVED_TARGETED_SOURCE_CALLBACK",
+      "candidate_ids": [
+        "A007"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1364"
+      ],
+      "reader_status": "DEPENDENCY_OUTSIDE_ASSIGNED_READING",
+      "resolution": "Root re-read original PDF153/printed119; retained R523 supplies the Saturn/Cancer cell. Other table cells are not silently imported.",
+      "source_resolved": true
+    },
+    {
+      "id": "U-A03",
+      "type": "assistant_identified_gap",
+      "category": "condition_grouping",
+      "pdf_pages": [
+        277,
+        278
+      ],
+      "printed_pages": [
+        243,
+        244
+      ],
+      "visible_printed_labels": {
+        "277": "243",
+        "278": "244"
+      },
+      "anchor": "If the first house be afflicted by the presence of an evill Planet; and he Retrograde ... or in square or opposition",
+      "source_defined_content": "The rule starts on PDF277 and continues with states/aspects and lords of houses4,6,8,12 on PDF278.",
+      "assistant_identified_gap": "The source's prose does not furnish explicit boolean parentheses; the extractor has retained the list instead of choosing a computational interpretation.",
+      "status": "UNRESOLVED_NON_EXECUTABLE",
+      "candidate_ids": [
+        "A007"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1364"
+      ],
+      "reader_status": "UNRESOLVED_NON_EXECUTABLE",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A04",
+      "type": "source_defined_content",
+      "category": "retained_source_wording",
+      "pdf_pages": [
+        278
+      ],
+      "printed_pages": [
+        244
+      ],
+      "visible_printed_labels": {
+        "278": "244"
+      },
+      "anchor": "ascending in the first, and descending in the sixt of the same nature",
+      "source_defined_content": "The scan reads descending in the sixt.",
+      "assistant_identified_gap": "No silent change to seventh, another house, or a different cusp operation is authorized by this passage. Whether an erratum exists is not determined in this local reading.",
+      "status": "RETAINED_WITHOUT_EMENDATION",
+      "candidate_ids": [
+        "A011"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1368"
+      ],
+      "reader_status": "RETAINED_WITHOUT_EMENDATION",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A05",
+      "type": "assistant_identified_gap",
+      "category": "historical_terminology_mapping",
+      "pdf_pages": [
+        278,
+        279,
+        280,
+        281,
+        282
+      ],
+      "printed_pages": [
+        244,
+        245,
+        246,
+        247,
+        248
+      ],
+      "visible_printed_labels": {
+        "278": "244",
+        "279": "245",
+        "280": "244",
+        "281": "247",
+        "282": "248"
+      },
+      "anchor": "Disease/body-part/humour labels throughout the tables and surrounding prose",
+      "source_defined_content": "The source uses historical names and mixes anatomy, symptoms, diseases and claimed causes.",
+      "assistant_identified_gap": "No modern diagnostic equivalence or coding system has been established by this extraction. Terms such as Kings-Evill, Noli me tangere, Miseraicks, Iliack-passion, Chin-coughs and Cardiack Passion are retained rather than medically translated.",
+      "status": "TRANSLATION_NOT_ATTEMPTED",
+      "candidate_ids": [
+        "A008",
+        "A010",
+        "A011",
+        "A012",
+        "A013",
+        "A014",
+        "A015",
+        "A016",
+        "A017",
+        "A018",
+        "A019",
+        "A020",
+        "A021",
+        "A022",
+        "A023",
+        "A024",
+        "A025",
+        "A026",
+        "A027",
+        "A028",
+        "A029",
+        "A030",
+        "A031",
+        "A032",
+        "A033",
+        "A034",
+        "A035",
+        "A036",
+        "A037",
+        "A038",
+        "A039",
+        "A040",
+        "A041",
+        "A042",
+        "A043",
+        "A044",
+        "A045",
+        "A049",
+        "A053",
+        "A058",
+        "A063"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1365",
+        "LI.1647.II.XLIV.R1367",
+        "LI.1647.II.XLIV.R1368",
+        "LI.1647.II.XLIV.R1369",
+        "LI.1647.II.XLIV.R1370",
+        "LI.1647.II.XLIV.R1371",
+        "LI.1647.II.XLIV.R1372",
+        "LI.1647.II.XLIV.R1373",
+        "LI.1647.II.XLIV.R1374",
+        "LI.1647.II.XLIV.R1375",
+        "LI.1647.II.XLIV.R1376",
+        "LI.1647.II.XLIV.R1377",
+        "LI.1647.II.XLIV.R1378",
+        "LI.1647.II.XLIV.R1379",
+        "LI.1647.II.XLIV.R1380",
+        "LI.1647.II.XLIV.R1381",
+        "LI.1647.II.XLIV.R1382",
+        "LI.1647.II.XLIV.R1383",
+        "LI.1647.II.XLIV.R1384",
+        "LI.1647.II.XLIV.R1385",
+        "LI.1647.II.XLIV.R1386",
+        "LI.1647.II.XLIV.R1387",
+        "LI.1647.II.XLIV.R1388",
+        "LI.1647.II.XLIV.R1389",
+        "LI.1647.II.XLIV.R1390",
+        "LI.1647.II.XLIV.R1391",
+        "LI.1647.II.XLIV.R1392",
+        "LI.1647.II.XLIV.R1393",
+        "LI.1647.II.XLIV.R1394",
+        "LI.1647.II.XLIV.R1395",
+        "LI.1647.II.XLIV.R1396",
+        "LI.1647.II.XLIV.R1397",
+        "LI.1647.II.XLIV.R1398",
+        "LI.1647.II.XLIV.R1399",
+        "LI.1647.II.XLIV.R1400",
+        "LI.1647.II.XLIV.R1401",
+        "LI.1647.II.XLIV.R1402",
+        "LI.1647.II.XLIV.R1406",
+        "LI.1647.II.XLIV.R1410",
+        "LI.1647.II.XLIV.R1415",
+        "LI.1647.II.XLIV.R1420"
+      ],
+      "reader_status": "TRANSLATION_NOT_ATTEMPTED",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A06",
+      "type": "source_defined_content",
+      "category": "author_certainty_claim",
+      "pdf_pages": [
+        278
+      ],
+      "printed_pages": [
+        244
+      ],
+      "visible_printed_labels": {
+        "278": "244"
+      },
+      "anchor": "more certaine, and I dare say infallible",
+      "source_defined_content": "Lilly strengthens his own certainty when one of the same-member corroboration alternatives holds.",
+      "assistant_identified_gap": "The author's infallibility claim is not independent predictive evidence; no validation was performed here.",
+      "status": "ATTRIBUTION_RETAINED",
+      "candidate_ids": [
+        "A009"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1366"
+      ],
+      "reader_status": "ATTRIBUTION_RETAINED",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A07",
+      "type": "assistant_identified_gap",
+      "category": "unspecified_last_degree_threshold",
+      "pdf_pages": [
+        282
+      ],
+      "printed_pages": [
+        248
+      ],
+      "visible_printed_labels": {
+        "282": "248"
+      },
+      "anchor": "The last degrees of any Signe",
+      "source_defined_content": "The passage refers to last degrees on the sixth cusp and allows end or change for better or worse.",
+      "assistant_identified_gap": "This local passage gives no numerical threshold for last degrees; no whole-book absence claim or arbitrary threshold is supplied.",
+      "status": "NON_EXECUTABLE_PARAMETER_UNRESOLVED",
+      "candidate_ids": [
+        "A062"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1419"
+      ],
+      "reader_status": "NON_EXECUTABLE_PARAMETER_UNRESOLVED",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A08",
+      "type": "assistant_identified_gap",
+      "category": "unspecified_strength_comparison",
+      "pdf_pages": [
+        282
+      ],
+      "printed_pages": [
+        248
+      ],
+      "visible_printed_labels": {
+        "282": "248"
+      },
+      "anchor": "stronger then the Lord of the ascendant; more weak then",
+      "source_defined_content": "The source provides two directional comparisons, sixth lord stronger or weaker than ascendant lord.",
+      "assistant_identified_gap": "The local passage supplies no strength formula or equal-strength disposition. Imported dignity weights or tie-breaking would be later interpretation, not this extracted content.",
+      "status": "NON_EXECUTABLE_PARAMETER_UNRESOLVED",
+      "candidate_ids": [
+        "A066",
+        "A067"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1423",
+        "LI.1647.II.XLIV.R1424"
+      ],
+      "reader_status": "NON_EXECUTABLE_PARAMETER_UNRESOLVED",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A09",
+      "type": "assistant_identified_gap",
+      "category": "saturn_exception_grouping_and_conjunction",
+      "pdf_pages": [
+        282
+      ],
+      "printed_pages": [
+        248
+      ],
+      "visible_printed_labels": {
+        "282": "248"
+      },
+      "anchor": "in a moveable Sign and in any of his Termes, or swift in motion; or will he greatly prolong",
+      "source_defined_content": "The source combines moveable sign, own terms and speed, then prints he is not then much unfortunate, or will he greatly prolong the Disease.",
+      "assistant_identified_gap": "The exact conjunction is retained. No silent nor substitution, AND/OR parenthesization, speed threshold, or terms-system selection is made.",
+      "status": "UNRESOLVED_NON_EXECUTABLE",
+      "candidate_ids": [
+        "A070"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1427"
+      ],
+      "reader_status": "UNRESOLVED_NON_EXECUTABLE",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A10",
+      "type": "assistant_identified_gap",
+      "category": "fixed_in_sign_interpretation",
+      "pdf_pages": [
+        282
+      ],
+      "printed_pages": [
+        248
+      ],
+      "visible_printed_labels": {
+        "282": "248"
+      },
+      "anchor": "Saturn ... fixed in the Signe he is in",
+      "source_defined_content": "The text uses fixed in the Signe he is in in its sixth-lord Saturn prolongation rule.",
+      "assistant_identified_gap": "This extraction does not choose between formal interpretations of fixed; the exact wording remains attached.",
+      "status": "UNRESOLVED_NON_EXECUTABLE",
+      "candidate_ids": [
+        "A068"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1425"
+      ],
+      "reader_status": "UNRESOLVED_NON_EXECUTABLE",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A11",
+      "type": "assistant_identified_gap",
+      "category": "fortune_like_nature_scope",
+      "pdf_pages": [
+        282
+      ],
+      "printed_pages": [
+        248
+      ],
+      "visible_printed_labels": {
+        "282": "248"
+      },
+      "anchor": "but if in the like nature a Fortune be there",
+      "source_defined_content": "The Fortune alternative follows the sixth lord of evil influence placed in the sixth.",
+      "assistant_identified_gap": "The exact reach of in the like nature is not translated into a hidden list of required placements, rulerships or dignities.",
+      "status": "UNRESOLVED_NON_EXECUTABLE",
+      "candidate_ids": [
+        "A065"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1422"
+      ],
+      "reader_status": "UNRESOLVED_NON_EXECUTABLE",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A12",
+      "type": "assistant_identified_gap",
+      "category": "moon_likewise_scope",
+      "pdf_pages": [
+        282
+      ],
+      "printed_pages": [
+        248
+      ],
+      "visible_printed_labels": {
+        "282": "248"
+      },
+      "anchor": "a moveable Signe in the sixt, and the Moon likewise, and no impediment otherwayes appearing",
+      "source_defined_content": "The phrase combines a moveable sixth sign, Moon likewise and absence of other impediment.",
+      "assistant_identified_gap": "The precise reach of likewise is retained as prose; no added same-house requirement or undisclosed definition of other impediments is imposed.",
+      "status": "UNRESOLVED_NON_EXECUTABLE",
+      "candidate_ids": [
+        "A071"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1428"
+      ],
+      "reader_status": "UNRESOLVED_NON_EXECUTABLE",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A13",
+      "type": "assistant_identified_gap",
+      "category": "duration_relation_and_exception",
+      "pdf_pages": [
+        282,
+        283
+      ],
+      "printed_pages": [
+        248,
+        249
+      ],
+      "visible_printed_labels": {
+        "282": "248",
+        "283": "249"
+      },
+      "anchor": "a common Signe, a mediocrity; common Signes doe more long continue ... except Pisces",
+      "source_defined_content": "The passage gives common signs a middling duration with recurring alteration, later says they prolong infirmity, and explicitly excepts Pisces on the sixth cusp as equivalent to a moveable sign.",
+      "assistant_identified_gap": "These statements need not be contradictory, but their comparative baseline and any formal priority are not stated here. Both and the complete Pisces exception are preserved without a fabricated reconciliation.",
+      "status": "RELATION_NOT_FORMALIZED",
+      "candidate_ids": [
+        "A061",
+        "A072",
+        "A073"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1418",
+        "LI.1647.II.XLIV.R1429",
+        "LI.1647.II.XLIV.R1430"
+      ],
+      "reader_status": "RELATION_NOT_FORMALIZED",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A14",
+      "type": "assistant_identified_gap",
+      "category": "venus_comparator",
+      "pdf_pages": [
+        282
+      ],
+      "printed_pages": [
+        248
+      ],
+      "visible_printed_labels": {
+        "282": "248"
+      },
+      "anchor": "Venus a meane betwixt both",
+      "source_defined_content": "The compact duration list gives Venus a mean betwixt both.",
+      "assistant_identified_gap": "The exact referents of both and any quantitative midpoint remain unresolved; surrounding long/short context is not promoted into a numeric calculation.",
+      "status": "UNRESOLVED_NON_EXECUTABLE",
+      "candidate_ids": [
+        "A056"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1413"
+      ],
+      "reader_status": "UNRESOLVED_NON_EXECUTABLE",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A15",
+      "type": "assistant_identified_gap",
+      "category": "third_fallback_internal_order",
+      "pdf_pages": [
+        277
+      ],
+      "printed_pages": [
+        243
+      ],
+      "visible_printed_labels": {
+        "277": "243"
+      },
+      "anchor": "first speaking with, or accesse to the Patient, or when first the Urine was brought unto him",
+      "source_defined_content": "The third fallback supplies physician speech/access and urine delivery alternatives after the earlier timing evidence is unavailable.",
+      "assistant_identified_gap": "No internal ranking or tie policy among these third-fallback events is supplied; the extractor does not invent one.",
+      "status": "UNRESOLVED_NON_EXECUTABLE",
+      "candidate_ids": [
+        "A004"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1361"
+      ],
+      "reader_status": "UNRESOLVED_NON_EXECUTABLE",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A16",
+      "type": "assistant_identified_gap",
+      "category": "external_definitions_and_aggregation",
+      "pdf_pages": [
+        277,
+        278,
+        279,
+        282
+      ],
+      "printed_pages": [
+        243,
+        244,
+        245,
+        248
+      ],
+      "visible_printed_labels": {
+        "277": "243",
+        "278": "244",
+        "279": "245",
+        "282": "248"
+      },
+      "anchor": "afflicted; evil influence; significators; rectified; Termes; swift; no impediment",
+      "source_defined_content": "The local section uses inherited astrological vocabulary and qualitative relations.",
+      "assistant_identified_gap": "This source pass does not establish a complete calculator, threshold set, interaction weights, combination rules or operational definitions from the rest of the book. Unresolved formalization is not a reason to suppress the literal source content.",
+      "status": "NON_EXECUTABLE_SOURCE_RECORDS",
+      "candidate_ids": [
+        "A005",
+        "A006",
+        "A007",
+        "A008",
+        "A009",
+        "A010",
+        "A011",
+        "A012",
+        "A013",
+        "A014",
+        "A051",
+        "A052",
+        "A053",
+        "A054",
+        "A055",
+        "A057",
+        "A058",
+        "A059",
+        "A060",
+        "A061",
+        "A063",
+        "A064",
+        "A065",
+        "A066",
+        "A067",
+        "A068",
+        "A069",
+        "A070",
+        "A071"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1362",
+        "LI.1647.II.XLIV.R1363",
+        "LI.1647.II.XLIV.R1364",
+        "LI.1647.II.XLIV.R1365",
+        "LI.1647.II.XLIV.R1366",
+        "LI.1647.II.XLIV.R1367",
+        "LI.1647.II.XLIV.R1368",
+        "LI.1647.II.XLIV.R1369",
+        "LI.1647.II.XLIV.R1370",
+        "LI.1647.II.XLIV.R1371",
+        "LI.1647.II.XLIV.R1408",
+        "LI.1647.II.XLIV.R1409",
+        "LI.1647.II.XLIV.R1410",
+        "LI.1647.II.XLIV.R1411",
+        "LI.1647.II.XLIV.R1412",
+        "LI.1647.II.XLIV.R1414",
+        "LI.1647.II.XLIV.R1415",
+        "LI.1647.II.XLIV.R1416",
+        "LI.1647.II.XLIV.R1417",
+        "LI.1647.II.XLIV.R1418",
+        "LI.1647.II.XLIV.R1420",
+        "LI.1647.II.XLIV.R1421",
+        "LI.1647.II.XLIV.R1422",
+        "LI.1647.II.XLIV.R1423",
+        "LI.1647.II.XLIV.R1424",
+        "LI.1647.II.XLIV.R1425",
+        "LI.1647.II.XLIV.R1426",
+        "LI.1647.II.XLIV.R1427",
+        "LI.1647.II.XLIV.R1428"
+      ],
+      "reader_status": "NON_EXECUTABLE_SOURCE_RECORDS",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A17",
+      "type": "assistant_identified_gap",
+      "category": "evidence_class_boundary",
+      "pdf_pages": [
+        278,
+        281,
+        282,
+        283
+      ],
+      "printed_pages": [
+        244,
+        247,
+        248,
+        249
+      ],
+      "visible_printed_labels": {
+        "278": "244",
+        "281": "247",
+        "282": "248",
+        "283": "249"
+      },
+      "anchor": "I dare say infallible; usually; reputed; for the most part; I ever found",
+      "source_defined_content": "The source includes author certainty, frequency/modality terms, theological purpose, and a first-person Pisces observation.",
+      "assistant_identified_gap": "This reading inventories those claims and preserves their qualifiers; it performs no clinical, historical-case or predictive validation. Lilly's self-report is not counted as an independent evidence stream.",
+      "status": "VALIDATION_OUTSIDE_SOURCE_EXTRACTION",
+      "candidate_ids": [
+        "A046",
+        "A047",
+        "A048",
+        "A049",
+        "A050",
+        "A073"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1403",
+        "LI.1647.II.XLIV.R1404",
+        "LI.1647.II.XLIV.R1405",
+        "LI.1647.II.XLIV.R1406",
+        "LI.1647.II.XLIV.R1407",
+        "LI.1647.II.XLIV.R1430"
+      ],
+      "reader_status": "VALIDATION_OUTSIDE_SOURCE_EXTRACTION",
+      "source_resolved": false
+    },
+    {
+      "id": "U-A18",
+      "type": "source_defined_content",
+      "category": "body_errata_witnesses",
+      "pdf_pages": [
+        279,
+        888
+      ],
+      "printed_pages": [
+        245
+      ],
+      "visible_printed_labels": {
+        "279": "245",
+        "888": "unnumbered errata"
+      },
+      "anchor": "p 245 l penult. r scabbinesse; Cancer row Scabbinesse",
+      "source_defined_content": "Original PDF888 directs scabbinesse at the penultimate line of printed245. Original PDF279 penultimate body line begins the Cancer row with Scabbinesse.",
+      "assistant_identified_gap": "The two witnesses agree lexically after case normalization. No earlier erroneous word, prior correction event, or printing-state history is inferred.",
+      "status": "TARGET_RESOLVED_BODY_ERRATA_AGREE",
+      "candidate_ids": [
+        "A030"
+      ],
+      "source_reader": "A",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1387"
+      ],
+      "reader_status": "TARGET_RESOLVED_BODY_ERRATA_AGREE",
+      "source_resolved": true
+    },
+    {
+      "id": "U-B01",
+      "type": "lexical_or_source_tension",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The sixth/eighth exchange with sextile/trine says not doubt of the death, then explains Nature is not overcome and the sick shall overcome it.",
+      "assistant_identified_gap": "The historical sense of doubt or textual inconsistency is not settled by this reading.",
+      "affected_candidate_ids": [
+        "B010"
+      ],
+      "pdf_pages": [
+        283
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1440"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B02",
+      "type": "conditional_scope",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The Venus/Scorpio clause and female-question branch follow the Moon-sixth/ill-Venus condition; the source uses etc.",
+      "assistant_identified_gap": "Which earlier conditions persist into each branch, and what etc. expands, remain unresolved.",
+      "affected_candidate_ids": [
+        "B003",
+        "B004"
+      ],
+      "pdf_pages": [
+        283
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1433",
+        "LI.1647.II.XLIV.R1434"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B03",
+      "type": "timing_unit_selection",
+      "origin": "source_defined_content",
+      "status": "open",
+      "source_defined_content": "The source maps remaining sign-exit degrees to as many months, weeks, or days according to sign nature and quality.",
+      "assistant_identified_gap": "This passage does not choose a determinate unit or rounding rule. This is an absence only within this passage, not a whole-book absence claim.",
+      "affected_candidate_ids": [
+        "B008"
+      ],
+      "pdf_pages": [
+        283
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1438"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B04",
+      "type": "compound_condition_grouping",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "Several long sentences combine commas, and, or, and shifting pronouns.",
+      "assistant_identified_gap": "Exact grouping of the listed factors is not consistently determined by the punctuation.",
+      "affected_candidate_ids": [
+        "B009",
+        "B017",
+        "B018",
+        "B025",
+        "B028",
+        "B038",
+        "B092",
+        "B105",
+        "B106",
+        "B107",
+        "B110",
+        "B112",
+        "B119"
+      ],
+      "pdf_pages": [
+        283,
+        284,
+        285,
+        286,
+        290,
+        291,
+        292
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1439",
+        "LI.1647.II.XLIV.R1447",
+        "LI.1647.II.XLIV.R1448",
+        "LI.1647.II.XLIV.R1455",
+        "LI.1647.II.XLIV.R1458",
+        "LI.1647.II.XLIV.R1468",
+        "LI.1647.II.XLIV.R1522",
+        "LI.1647.II.XLIV.R1535",
+        "LI.1647.II.XLIV.R1536",
+        "LI.1647.II.XLIV.R1537",
+        "LI.1647.II.XLIV.R1540",
+        "LI.1647.II.XLIV.R1542",
+        "LI.1647.II.XLIV.R1549"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B05",
+      "type": "motion_reference_value",
+      "origin": "assistant_identified_gap",
+      "status": "RESOLVED_REFERENCE_VALUE",
+      "source_defined_content": "Moon’s slowness is defined relative to mean motion over twenty-four hours.",
+      "assistant_identified_gap": "No numerical mean motion is stated in this passage; do not import a threshold.",
+      "affected_candidate_ids": [
+        "B037"
+      ],
+      "pdf_pages": [
+        285,
+        286
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1467"
+      ],
+      "reader_status": "open",
+      "resolution": "Root re-read original PDF114/printed80: the stated mean is13d10m36s per24h. The separate analogy threshold is13d10m. The reference helper explicitly declares this same-work callback; source wording remains unchanged.",
+      "source_resolved": true
+    },
+    {
+      "id": "U-B06",
+      "type": "qualitative_strength_and_distance",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The source uses powerfully, strong, weaker, more strongly dignified, more potent, near, or rays.",
+      "assistant_identified_gap": "No numeric scoring, comparative cutoff, or orb for these words is supplied at these points. Any operational specification would be an additional dependency.",
+      "affected_candidate_ids": [
+        "B013",
+        "B014",
+        "B034",
+        "B044",
+        "B059",
+        "B071",
+        "B076",
+        "B080",
+        "B101",
+        "B108",
+        "B114",
+        "B115"
+      ],
+      "pdf_pages": [
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        291,
+        292
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1443",
+        "LI.1647.II.XLIV.R1444",
+        "LI.1647.II.XLIV.R1464",
+        "LI.1647.II.XLIV.R1474",
+        "LI.1647.II.XLIV.R1489",
+        "LI.1647.II.XLIV.R1501",
+        "LI.1647.II.XLIV.R1506",
+        "LI.1647.II.XLIV.R1510",
+        "LI.1647.II.XLIV.R1531",
+        "LI.1647.II.XLIV.R1538",
+        "LI.1647.II.XLIV.R1544",
+        "LI.1647.II.XLIV.R1545"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B07",
+      "type": "technical_definition_dependency",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The source invokes Azimene degrees, benevolent house of heaven, translation of light, crisis, profection, five hylegical places, and lord of the figure.",
+      "assistant_identified_gap": "These specific passages do not supply a complete definition/selection algorithm. No absence claim about the entire book is made.",
+      "affected_candidate_ids": [
+        "B018",
+        "B031",
+        "B057",
+        "B078",
+        "B081",
+        "B083",
+        "B085"
+      ],
+      "pdf_pages": [
+        284,
+        285,
+        287,
+        289,
+        290
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1448",
+        "LI.1647.II.XLIV.R1461",
+        "LI.1647.II.XLIV.R1487",
+        "LI.1647.II.XLIV.R1508",
+        "LI.1647.II.XLIV.R1511",
+        "LI.1647.II.XLIV.R1513",
+        "LI.1647.II.XLIV.R1515"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B08",
+      "type": "grammatical_referent",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "Retrograde immediately follows a benevolent planet in a Moon-or-ascendant-lord aspect sentence.",
+      "assistant_identified_gap": "The nearest reading is the benevolent planet, but attachment is not fixed as executable interpretation.",
+      "affected_candidate_ids": [
+        "B048"
+      ],
+      "pdf_pages": [
+        286
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1478"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B09",
+      "type": "variant_preservation",
+      "origin": "source_defined_content",
+      "status": "open",
+      "source_defined_content": "One conditional occidental-Saturn disease rule gives recovery; the next clause nevertheless calls occidental Saturn unlucky.",
+      "assistant_identified_gap": "No explicit precedence rule combines these different-scope statements.",
+      "affected_candidate_ids": [
+        "B061",
+        "B062"
+      ],
+      "pdf_pages": [
+        287,
+        288
+      ],
+      "disposition": "Retain both conditional recovery and general qualification; do not manufacture contradiction or override.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1491",
+        "LI.1647.II.XLIV.R1492"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B10",
+      "type": "attributed_variant",
+      "origin": "source_defined_content",
+      "status": "open",
+      "source_defined_content": "Moon conjunct Jupiter is elsewhere a good recovery argument; some say Moon conjunct Saturn or Jupiter gives no escape unless Saturn retrograde and Jupiter direct.",
+      "assistant_identified_gap": "The anonymous attribution and interaction of the printed or with the two-planet exception are not resolved.",
+      "affected_candidate_ids": [
+        "B073",
+        "B104"
+      ],
+      "pdf_pages": [
+        288,
+        291
+      ],
+      "disposition": "Retain the attributed variant and independent Jupiter-recovery rule, with no invented precedence.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1503",
+        "LI.1647.II.XLIV.R1534"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B11",
+      "type": "contextual_scope",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "Moon doing more hurt in increase appears in a Moon/Mars comparison, while the succedent Moon safety condition explicitly requires increasing light/motion.",
+      "assistant_identified_gap": "The comparison must not be widened into an unrestricted adverse rule for every increasing Moon.",
+      "affected_candidate_ids": [
+        "B066",
+        "B076"
+      ],
+      "pdf_pages": [
+        288,
+        289
+      ],
+      "disposition": "Preserve local context and both source conditions; neither is silently an unconditional override.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1496",
+        "LI.1647.II.XLIV.R1506"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B12",
+      "type": "hylegical_exception_grouping",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The source says unless reception intervenes between Infortunes, and Fortunes interject comfortable aspects, then escape may occur as by a divine miracle.",
+      "assistant_identified_gap": "Exact AND/OR scope of the exception is not settled for formal application.",
+      "affected_candidate_ids": [
+        "B083"
+      ],
+      "pdf_pages": [
+        289,
+        290
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1513"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B13",
+      "type": "obscured_original_with_source_erratum",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "PDF290 contains crossed/overwritten print. PDF888 identifies all hopes of escape for deletion and gives feare of danger.",
+      "assistant_identified_gap": "The original obscured phrase is not completely directly legible; the handwriting’s author and authority are unknown.",
+      "affected_candidate_ids": [
+        "B085"
+      ],
+      "pdf_pages": [
+        290
+      ],
+      "disposition": "Use the source-authored erratum for the corrected reading while retaining original/handwriting/errata separately. The corrected reading is settled; original-layer paleography remains open.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1515"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B14",
+      "type": "fixed_star_paleography_and_epoch",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The star list gives Antares, Lans/Lanx Australis, Palilicium, Caput Medusae, and historical degree/sign values.",
+      "assistant_identified_gap": "The Lans/Lanx spelling and the exact proximity threshold remain open; no current epoch coordinates are inferred.",
+      "affected_candidate_ids": [
+        "B108"
+      ],
+      "pdf_pages": [
+        291,
+        292
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1538"
+      ],
+      "reader_status": "open",
+      "additional_limit": "Source degree labels do not supply minutes, seconds, modern-epoch coordinates or a uniquely specified ordinal-to-continuous-degree conversion.",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B15",
+      "type": "listed_or_combined_testimonies",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "Saturn opposite eighth lord is followed by Moon fourth with Mars, or Moon ascendant near rising degree.",
+      "assistant_identified_gap": "It is unresolved whether these are separate testimonies or one combined configuration with alternatives.",
+      "affected_candidate_ids": [
+        "B114"
+      ],
+      "pdf_pages": [
+        292
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1544"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B16",
+      "type": "alternative_sign_and_aspect_grouping",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The final combustion rule lists eighth house, Leo or Libra, square/opposition Saturn or Mercury, and Pleiades at 24 Taurus or other violent stars.",
+      "assistant_identified_gap": "The exact grouping cannot be forced into one all-conjunctive condition because the sign positions may be alternative branches.",
+      "affected_candidate_ids": [
+        "B118"
+      ],
+      "pdf_pages": [
+        292
+      ],
+      "disposition": "Preserve all listed clauses with unresolved grouping and executable=false. Mercury is visually verified, not an unresolved Mars alternative.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1548"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B17",
+      "type": "historical_evidence_class",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The source makes moral, sexual, supernatural, and treatment-effect attributions.",
+      "assistant_identified_gap": "These general historical assertions are not independently verified clinical examples; the extraction cannot supply modern diagnostic or individual-person claims.",
+      "affected_candidate_ids": [
+        "B002",
+        "B003",
+        "B004",
+        "B011",
+        "B013",
+        "B015",
+        "B042",
+        "B097"
+      ],
+      "pdf_pages": [
+        283,
+        284,
+        286,
+        290,
+        291
+      ],
+      "disposition": "Keep historical attribution, exact scope, and no executable/clinical inference. This is an evidence-class boundary, not a proposed correction of source content.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1432",
+        "LI.1647.II.XLIV.R1433",
+        "LI.1647.II.XLIV.R1434",
+        "LI.1647.II.XLIV.R1441",
+        "LI.1647.II.XLIV.R1443",
+        "LI.1647.II.XLIV.R1445",
+        "LI.1647.II.XLIV.R1472",
+        "LI.1647.II.XLIV.R1527"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B18",
+      "type": "source_errata_layer",
+      "origin": "source_defined_content",
+      "status": "resolved_with_separate_layers",
+      "source_defined_content": "PDF888 directs p254 lines18–19 read placed and p257 line23 read eight.",
+      "assistant_identified_gap": "Overmarked or faulty original characters should not be silently conflated with their source-authored correction.",
+      "affected_candidate_ids": [
+        "B069",
+        "B105"
+      ],
+      "pdf_pages": [
+        288,
+        291
+      ],
+      "disposition": "Correction admitted with explicit original/handwriting/errata layers; no unresolved substantive effect on the respective placement/eighth-lord conditions.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1499",
+        "LI.1647.II.XLIV.R1535"
+      ],
+      "reader_status": "resolved_with_separate_layers",
+      "source_resolved": true
+    },
+    {
+      "id": "U-ROOT01",
+      "type": "source_negative_scope",
+      "source_reader": "ROOT",
+      "status": "RETAINED_WITHOUT_EMENDATION",
+      "source_resolved": false,
+      "reader_status": "IDENTIFIED_DURING_ROOT_IMAGE_CHECK",
+      "candidate_ids": [
+        "B014"
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1444"
+      ],
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "issue": "The source prints the Disease is not, or will be permanent. The earlier negative may have shared scope or the text may lack a word; neither interpretation is established in this batch.",
+      "handling": "Preserve the phrase and its prerequisites. Do not insert a second not or turn the outcome into an executable duration predicate.",
+      "source_anchor": "the Disease is not, or will be permanent"
+    }
+  ]
+}

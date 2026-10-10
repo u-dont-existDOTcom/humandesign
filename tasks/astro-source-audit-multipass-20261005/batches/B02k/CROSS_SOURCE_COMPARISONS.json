@@ -1,0 +1,62 @@
+{
+  "batch": "B02k",
+  "comparison_type": "Targeted within-Lilly callbacks; not a completed multi-author synthesis.",
+  "comparisons": [
+    {
+      "id": "CB01",
+      "new_records": [
+        "LI.1647.II.XLIV.R1364",
+        "LI.1647.II.XLIV.R1365",
+        "LI.1647.II.XLIV.R1366"
+      ],
+      "new_source_pages": [
+        277,
+        278
+      ],
+      "retained_record": "LI.1647.I.XIX.R523",
+      "retained_source_page": 153,
+      "source_connection": "Lilly expressly names printed page119 for planet-in-sign body members.",
+      "result": "Saturn/Cancer cell is Reins, Belly, Secrets. The separate house/sign/planet disease catalogues are not substituted for this cell.",
+      "uncertainty": "The illustration adds symptoms and offers alternatives; the cell alone is not a diagnosis. Other altered cells remain unfilled.",
+      "new_record_count_increment": 0
+    },
+    {
+      "id": "CB02",
+      "new_record": "LI.1647.II.XLIV.R1467",
+      "new_source_pages": [
+        285,
+        286
+      ],
+      "retained_records": [
+        "LI.1647.I.14.R192",
+        "LI.1647.I.14.R195",
+        "LI.1647.I.14.R221"
+      ],
+      "retained_source_page": 114,
+      "source_connection": "XLIV names the Moon's mean motion without a number; the audit explicitly uses Lilly's earlier stated mean.",
+      "result": "Mean13°10′36″ differs from the strict under13°10′ analogy. The same-work link is declared by the audit, not an explicit printed page-reference in XLIV.",
+      "uncertainty": "This does not establish actual physical retrogradation or compute the full aspect-qualified sickness rule.",
+      "new_record_count_increment": 0
+    }
+  ],
+  "future_dependencies": [
+    {
+      "source_pdf_pages": [
+        289,
+        290
+      ],
+      "dependency": "Natal positions, profection and five hylegical places; local prerequisites retained, later nativity method not completed in this block."
+    },
+    {
+      "source_pdf_page": 289,
+      "dependency": "Crisis timing is invoked without completing the later Dariot material."
+    },
+    {
+      "source_pdf_page": 292,
+      "dependency": "DARIOT Abridged heading and full italic introduction are the next extraction, not admitted records in B02k."
+    }
+  ],
+  "retained_excerpt_file": "RETAINED_SOURCE_EXCERPTS.json",
+  "retained_excerpt_count": 4,
+  "additional_source_records": 0
+}

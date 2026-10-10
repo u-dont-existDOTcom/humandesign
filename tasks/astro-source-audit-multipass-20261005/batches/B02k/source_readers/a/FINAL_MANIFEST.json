@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "reader": "A",
+  "status": "LOCAL_COMPLETE_REMOTE_UNPUBLISHED",
+  "candidate_count": 73,
+  "section_count": 10,
+  "unresolved_count": 18,
+  "catalogue_rows": {
+    "house": 12,
+    "sign": 12,
+    "planet": 7
+  },
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "boundary": "PDF277 sixth-house heading through PDF282, plus PDF283 first body line completing the Pisces exception; before the following Moon-application sentence.",
+  "source_only_freeze_preserved": true,
+  "post_initial_candidate_source_supplement": "Original PDF888 errata, printed245 penultimate line; body/errata agreement attached to A030.",
+  "verification": {
+    "required_fields_and_json": "PASS",
+    "unique_contiguous_ids": "PASS",
+    "all_condition_logic_non_executable": "PASS",
+    "all_uncertainty_references_resolve": "PASS",
+    "section_coverage_maps_each_candidate_once": "PASS",
+    "catalogue_namespaces_and_key_counts": "PASS",
+    "source_freeze_hashes_unchanged": "PASS",
+    "PDF280_visible244_preserved": "PASS",
+    "source_comparison": "Same-reader bounded image recheck of277-283 and errata888; not independent review."
+  },
+  "publication_authority": "Root is sole repository/publication writer. These files are local handoff evidence, not published completion.",
+  "files": [
+    {
+      "name": "CANDIDATE_RULES.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/CANDIDATE_RULES.json",
+      "bytes": 99684,
+      "sha256": "db99d460c33b8b3834258716b59c7d5f22331da30bdf85c611b9db971d2dc6e4"
+    },
+    {
+      "name": "SECTION_COVERAGE.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/SECTION_COVERAGE.json",
+      "bytes": 11653,
+      "sha256": "1c86bd76e98cf3a63f589caa0595f2f63f88fc8286f695e9396b3fa87fa8d5e2"
+    },
+    {
+      "name": "UNRESOLVED.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/UNRESOLVED.json",
+      "bytes": 15049,
+      "sha256": "b2c82f0fdd5be74b7b1e042a82f7aa90605bad17b108b508086a987f6320fe44"
+    },
+    {
+      "name": "SOURCE_ONLY_NOTES.md",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/SOURCE_ONLY_NOTES.md",
+      "bytes": 22666,
+      "sha256": "66a6fe37092301c5dccdfc9ba7190b7b5c373598b6a96bacdaa2a2eecf29071e"
+    },
+    {
+      "name": "SOURCE_ONLY_SUPPLEMENT_01.md",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/SOURCE_ONLY_SUPPLEMENT_01.md",
+      "bytes": 1613,
+      "sha256": "456714f477801723042cae0723b48b61be43338db576505e34c38ad696573260"
+    },
+    {
+      "name": "SOURCE_ONLY_SUPPLEMENT_02.md",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/SOURCE_ONLY_SUPPLEMENT_02.md",
+      "bytes": 2228,
+      "sha256": "c5de04aad3c5de67424c8c1508f2641907d6b44247d313494766899fd097d558"
+    },
+    {
+      "name": "SOURCE_FREEZE_RECEIPT.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/SOURCE_FREEZE_RECEIPT.json",
+      "bytes": 1068,
+      "sha256": "d2ad0d0581efdf8d9a23f99e98b59b27a6bdccec7651c78937b89dbf0878c81c"
+    },
+    {
+      "name": "SOURCE_SUPPLEMENT_RECEIPT_02.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/SOURCE_SUPPLEMENT_RECEIPT_02.json",
+      "bytes": 1822,
+      "sha256": "7776962142af7515096ed696847d907b862f7a1d7463f13ce5ee1bf33b170320"
+    },
+    {
+      "name": "boundary-map.md",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-a/boundary-map.md",
+      "bytes": 6668,
+      "sha256": "ef855b2edda1a593419d6b8cf0dd2adb57d7800a3beaa538ad03ece711a24b57"
+    }
+  ],
+  "stop_admission": {
+    "parent_outcome": "OPEN",
+    "remaining_parent_gap": "Root must review/reconcile, publish and integrate the full B02k source block.",
+    "a_assignment": "SATISFIED_LOCAL_HANDOFF",
+    "next_action": "Root integrates and reviews the exact candidate artifacts; A remains available for a later bounded implementation review.",
+    "responsible_actor": "Root, sole repository/publication writer",
+    "authority_boundary": "A may write only its source-a directory and must not publish, merge, deliver to the owner device, or run broad tests.",
+    "action_performed": "Frozen source notes, boundary supplements,73 candidate records,10 coverage sections,18 typed unresolved items and31 keyed catalogue rows completed and mechanically checked.",
+    "reason_to_end_this_worker_turn": "The complete authorized A source-reading handoff is concrete and retrievable; the next shared-state action belongs to the sole writer, not this worker."
+  },
+  "governance_activation": {
+    "route": "Root directive required live UDA retrieval before substantive source work.",
+    "live_root_AGENTS_blob_sha": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "source_provenance_pattern_blob_sha": "bb58d19c1999afcfdb39a134f24402ed4784926a",
+    "whole_argument_pattern_blob_sha": "9a0ef18ba93c6f3a3c5578522b6e36463c777e96",
+    "application_evidence": [
+      "Original source-only notes frozen before candidate derivation and unchanged by later supplements.",
+      "Each record carries point-of-use source page, visible page label, section and locating anchor.",
+      "All source table rows, conditions, exceptions and material ambiguities are retained; every condition_logic is non-executable.",
+      "Original body and errata witnesses remain separate; no semantic emendation is invented.",
+      "Source-a isolated writes only; local completion is not claimed as publication."
+    ]
+  }
+}

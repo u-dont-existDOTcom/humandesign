@@ -1,0 +1,91 @@
+{
+  "batch": "B02k",
+  "method": "Root original-image comparison; targeted full PDF888 errata inspection; reader layer records retained",
+  "checks": [
+    {
+      "id": "TX01",
+      "pdf_page": 280,
+      "visible_printed_label": "244",
+      "expected_sequence_page": 246,
+      "status": "SOURCE_PAGINATION_ANOMALY_RETAINED"
+    },
+    {
+      "id": "TX02",
+      "pdf_pages": [
+        279,
+        888
+      ],
+      "target": "printed245 penultimate line",
+      "instruction": "r. scabbinesse",
+      "body_word": "Scabbinesse",
+      "result": "BODY_AND_ERRATA_AGREE_CASE_NORMALIZED",
+      "limit": "No unobserved earlier incorrect printing or line-number conversion inferred."
+    },
+    {
+      "id": "TX03",
+      "pdf_pages": [
+        288,
+        888
+      ],
+      "target": "printed254 lines18 and19",
+      "instruction": "r. placed",
+      "result": "CORRECTED_READING_RETAINED_WITH_SEPARATE_LAYERS"
+    },
+    {
+      "id": "TX04",
+      "pdf_pages": [
+        290,
+        888
+      ],
+      "target": "printed256 line8",
+      "instruction": "dele all hopes of escape, r. feare of danger",
+      "record_id": "LI.1647.II.XLIV.R1515",
+      "result": "ERRATA_CORRECTION_READ_DIRECTLY",
+      "original_layer_limit": "The overwritten phrase is not asserted fully legible; the errata identifies the deleted words."
+    },
+    {
+      "id": "TX05",
+      "pdf_pages": [
+        291,
+        888
+      ],
+      "target": "printed257 line23",
+      "instruction": "r. eight",
+      "record_id": "LI.1647.II.XLIV.R1535",
+      "result": "ERRATA_EIGHTH_LORD_READING_RETAINED",
+      "original_layer_limit": "Original altered word and handwriting are separately retained."
+    },
+    {
+      "id": "TX06",
+      "pdf_page": 292,
+      "record_id": "LI.1647.II.XLIV.R1548",
+      "reading": "Saturn or Mercury",
+      "result": "MERCURY_GLYPH_CONFIRMED",
+      "limit": "Full compound-condition grouping remains unresolved; no substitution of Mars."
+    },
+    {
+      "id": "TX07",
+      "pdf_page": 289,
+      "record_id": "LI.1647.II.XLIV.R1505",
+      "reading": "and he be cleer of all misfortune",
+      "result": "HE_REFERS_TO_ASCENDANT_LORD",
+      "limit": "Printed OR between freedom clauses retained."
+    },
+    {
+      "id": "TX08",
+      "pdf_page": 284,
+      "record_id": "LI.1647.II.XLIV.R1444",
+      "reading": "the Disease is not, or will be permanent",
+      "result": "LITERAL_WORDING_RETAINED",
+      "limit": "No second not inserted; negative scope or absent word unresolved."
+    },
+    {
+      "id": "TX09",
+      "pdf_page": 888,
+      "targeted_printed_page": 258,
+      "result": "NO_PAGE258_ENTRY_FOUND_ON_THIS_ERRATA_PAGE",
+      "limit": "Bounded inspected-page result, not a whole-book or other-edition absence claim."
+    }
+  ],
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+}

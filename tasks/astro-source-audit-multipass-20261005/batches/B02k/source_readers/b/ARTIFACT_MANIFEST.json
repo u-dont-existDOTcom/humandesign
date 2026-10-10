@@ -1,0 +1,71 @@
+{
+  "schema": "b02k.reader_b_artifact_manifest.v1",
+  "reader": "B",
+  "candidate_count": 119,
+  "issue_count": 18,
+  "open_issue_or_boundary_count": 17,
+  "resolved_separately_layered_issue_count": 1,
+  "page_count": 10,
+  "paragraph_regions": 34,
+  "source_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_first_frozen_files_unchanged": true,
+  "checks": {
+    "json_parse": true,
+    "required_fields": true,
+    "unique_contiguous_ids": true,
+    "dependencies_resolve": true,
+    "issue_ids_resolve": true,
+    "paragraph_coverage_covers_all_candidates": true,
+    "admitted_pdf_page_range": true,
+    "printed_label_mapping": true,
+    "all_non_executable": true
+  },
+  "verification_limit": "These are schema, coverage-reference, and frozen-byte checks; semantic source fidelity requires the separate direct reading and root/independent reconciliation.",
+  "artifacts": [
+    {
+      "filename": "SOURCE_FIRST_NOTES.md",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/SOURCE_FIRST_NOTES.md",
+      "bytes": 23921,
+      "sha256": "d69efe9e1e3a69590b9e6cc54a209d7a26db38d511e58e8b367dd6c30263d018"
+    },
+    {
+      "filename": "SOURCE_FIRST_FREEZE.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/SOURCE_FIRST_FREEZE.json",
+      "bytes": 3499,
+      "sha256": "978bbe0f2fde8384072fe5f0edb8f7bae1b90e106ad711dd211b09f7df0d6916"
+    },
+    {
+      "filename": "CANDIDATE_RULES.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/CANDIDATE_RULES.json",
+      "bytes": 115082,
+      "sha256": "1e7aeb6e83f300393f85dccdbe4f3712168dd83f857ddc60f3d74208f7c121b1"
+    },
+    {
+      "filename": "SECTION_COVERAGE.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/SECTION_COVERAGE.json",
+      "bytes": 19963,
+      "sha256": "84bbe87c0c045a4bc6a9455560980b501565035330c3f7f75f86ccd516965946"
+    },
+    {
+      "filename": "UNRESOLVED.json",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/UNRESOLVED.json",
+      "bytes": 12335,
+      "sha256": "02998e1bc0dd2bf35b28869d6fb3018c94a328e29232a131b3bd17f13e9a78c3"
+    },
+    {
+      "filename": "SOURCE_POST_FREEZE_SUPPLEMENT.md",
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/SOURCE_POST_FREEZE_SUPPLEMENT.md",
+      "bytes": 6507,
+      "sha256": "4f099ba081471ca8ce92bf19c370f00bc258a6b46a471c0890e59a7de5d1ec41"
+    }
+  ],
+  "stop_admission": {
+    "reader_task": "SATISFIED: source-first freeze, candidates, coverage, typed issues, and errata supplement complete",
+    "parent_outcome": "OPEN: root integration, independent reconciliation, and publication remain with root",
+    "next_action": "Root reads and integrates the completed reader-B evidence files",
+    "responsible_actor": "root",
+    "authority_boundary": "Parent explicitly designated root sole repository writer/publisher; reader B worked only in its assigned directory and made no Git or owner-device mutations",
+    "independent_authorized_work_completed": true,
+    "owner_input_required": false
+  }
+}

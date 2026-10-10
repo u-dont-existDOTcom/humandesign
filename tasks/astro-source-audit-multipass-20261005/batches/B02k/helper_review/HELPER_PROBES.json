@@ -1,0 +1,242 @@
+{
+  "record_type": "bounded_post_freeze_probe_results",
+  "review_id": "B02k-source-a-helper-review-01",
+  "diagnosis_frozen_before_test_inspection": true,
+  "diagnosis_hashes": {
+    "HELPER_DIAGNOSIS.md": "5f51b532971dd3221777c1ff774dcb0b7352785e77773c56e257eed5fb851a89",
+    "HELPER_DIAGNOSIS.json": "574fcfc8d6e602ff81b06706177af0136727604854483250341b7f15ede5f14d"
+  },
+  "helper_sha256": "972076c053dc8ad340d6369ecdbf3893f3b1d1354231a087d0ade88b2a1f180f",
+  "producer_tests_inspected_after_freeze": true,
+  "producer_tests_executed": false,
+  "whole_suite_executed": false,
+  "reference_tables_or_rules_loaded": false,
+  "repository_writes": false,
+  "bytecode_writes_disabled": true,
+  "telemetry": "Not applicable: one tiny pure-function process, no concurrency or broad suite.",
+  "probe_count": 17,
+  "probes": [
+    {
+      "probe": "earlier_unknown_blocks_fallback",
+      "observed": [
+        "UNKNOWN",
+        1,
+        []
+      ],
+      "expected": [
+        "UNKNOWN",
+        1,
+        []
+      ],
+      "passed": true,
+      "meaning": "Availability unknown does not authorize fallback."
+    },
+    {
+      "probe": "second_stage_unknown_blocks_third",
+      "observed": [
+        "UNKNOWN",
+        2
+      ],
+      "expected": [
+        "UNKNOWN",
+        2
+      ],
+      "passed": true,
+      "meaning": "Ordered fallback also preserves unknown at stage 2."
+    },
+    {
+      "probe": "third_stage_retains_candidates_and_unknown",
+      "observed": [
+        "UNKNOWN",
+        [
+          "a",
+          "b"
+        ],
+        [
+          "physician_first_urine_receipt"
+        ]
+      ],
+      "expected": [
+        "UNKNOWN",
+        [
+          "a",
+          "b"
+        ],
+        [
+          "physician_first_urine_receipt"
+        ]
+      ],
+      "passed": true,
+      "meaning": "The conservative UNKNOWN status retains both known, unranked candidates."
+    },
+    {
+      "probe": "third_stage_distinct_known_times",
+      "observed": "CHOICE_UNRESOLVED",
+      "expected": "CHOICE_UNRESOLVED",
+      "passed": true,
+      "meaning": "No preferred physician alternative is invented."
+    },
+    {
+      "probe": "lunar_motion_94799/2",
+      "observed": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true,
+      "meaning": "Distinct strict thresholds and missing speed."
+    },
+    {
+      "probe": "lunar_motion_47400",
+      "observed": [
+        true,
+        false
+      ],
+      "expected": [
+        true,
+        false
+      ],
+      "passed": true,
+      "meaning": "Distinct strict thresholds and missing speed."
+    },
+    {
+      "probe": "lunar_motion_47418",
+      "observed": [
+        true,
+        false
+      ],
+      "expected": [
+        true,
+        false
+      ],
+      "passed": true,
+      "meaning": "Distinct strict thresholds and missing speed."
+    },
+    {
+      "probe": "lunar_motion_47436",
+      "observed": [
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false
+      ],
+      "passed": true,
+      "meaning": "Distinct strict thresholds and missing speed."
+    },
+    {
+      "probe": "lunar_motion_None",
+      "observed": [
+        null,
+        null
+      ],
+      "expected": [
+        null,
+        null
+      ],
+      "passed": true,
+      "meaning": "Distinct strict thresholds and missing speed."
+    },
+    {
+      "probe": "coordinate_missing_seconds",
+      "observed": {
+        "remaining_degrees": null,
+        "time_unit": null
+      },
+      "expected": {
+        "remaining_degrees": null,
+        "time_unit": null
+      },
+      "passed": true,
+      "meaning": "Missing seconds are not replaced with zero."
+    },
+    {
+      "probe": "exact_arc_unknown_time_unit",
+      "observed": {
+        "remaining_degrees": {
+          "fraction": "1/2",
+          "numerator": 1,
+          "denominator": 2
+        },
+        "time_unit": null
+      },
+      "expected": {
+        "remaining_degrees": {
+          "fraction": "1/2",
+          "numerator": 1,
+          "denominator": 2
+        },
+        "time_unit": null
+      },
+      "passed": true,
+      "meaning": "Arc arithmetic does not select months, weeks or days."
+    },
+    {
+      "probe": "H-A01_negative_remainder_reproduced",
+      "observed": {
+        "remaining_degrees": {
+          "fraction": "-29/60",
+          "numerator": -29,
+          "denominator": 60
+        },
+        "time_unit": null
+      },
+      "expected": {
+        "remaining_degrees": {
+          "fraction": "-29/60",
+          "numerator": -29,
+          "denominator": 60
+        },
+        "time_unit": null
+      },
+      "passed": true,
+      "meaning": "Confirmed defect: admitted components sum beyond the within-sign domain. This probe passes by reproducing the defect, not by approving it."
+    },
+    {
+      "probe": "benevolent_author_False",
+      "observed": "SATISFIED",
+      "expected": "SATISFIED",
+      "passed": true,
+      "meaning": "Explicit non-author exclusion preserves all three states."
+    },
+    {
+      "probe": "benevolent_author_True",
+      "observed": "CONTRADICTED",
+      "expected": "CONTRADICTED",
+      "passed": true,
+      "meaning": "Explicit non-author exclusion preserves all three states."
+    },
+    {
+      "probe": "benevolent_author_None",
+      "observed": "UNKNOWN",
+      "expected": "UNKNOWN",
+      "passed": true,
+      "meaning": "Explicit non-author exclusion preserves all three states."
+    },
+    {
+      "probe": "H-A02_current_exception_True",
+      "observed": "CONTRADICTED",
+      "expected": "CONTRADICTED",
+      "passed": true,
+      "meaning": "Current API can establish the exception from decreasing alone; leaving has no separately named or composite-defined input."
+    },
+    {
+      "probe": "H-A02_current_exception_None",
+      "observed": "UNKNOWN",
+      "expected": "UNKNOWN",
+      "passed": true,
+      "meaning": "Current API can establish the exception from decreasing alone; leaving has no separately named or composite-defined input."
+    }
+  ],
+  "current_saturn_predicate_signature": "(*, light_decreasing, motion_decreasing, applying_conjunction_square_or_opposition, disease_already_decreasing)",
+  "producer_test_findings": [
+    "Existing RemainingArc invalid-coordinate test checks individually invalid components, but no aggregate Fraction overflow case.",
+    "Existing declining-exception test uses disease_already_decreasing alone and therefore repeats the same incomplete source phrase.",
+    "SourceLookups and SourceRecordIntegrity were read but not run; their data dependencies are outside this pure-function probe."
+  ],
+  "diagnosis_reconciliation": "No initial finding was withdrawn or materially changed. H-A01 is dynamically reproduced; H-A02 remains a source/input-contract finding."
+}

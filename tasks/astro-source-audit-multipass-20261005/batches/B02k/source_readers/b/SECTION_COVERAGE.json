@@ -1,0 +1,899 @@
+{
+  "schema": "b02k.section_coverage.v1",
+  "reader": "B",
+  "chapter": "XLIV",
+  "scope": "historical horary source only",
+  "source_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_first_notes_sha256": "d69efe9e1e3a69590b9e6cc54a209d7a26db38d511e58e8b367dd6c30263d018",
+  "independence": "Original pages read and source notes frozen before candidate creation; no B02j schema or prior candidate extraction consulted.",
+  "boundary": {
+    "chapter": "XLIV",
+    "start": "PDF283 after Pisces carryover: If the Moon apply by ill aspect",
+    "end": "PDF292 before DARIOT Abridged; includes complete paragraph ending shew death",
+    "context_only": [
+      282,
+      "283 opening Pisces carryover"
+    ]
+  },
+  "boundary_refinement": "Reader A owns the complete common-sign/Pisces sentence across PDF282–283. Reader B starts at the next Moon ill-aspect rule; no duplicate Pisces candidate.",
+  "excluded": [
+    {
+      "pdf_page": 292,
+      "starts_at": "DARIOT Abridged.",
+      "reason": "Admitted boundary excludes the heading, introduction, and all following Dariot material."
+    }
+  ],
+  "supplementary_source_pages": [
+    {
+      "pdf_page": 888,
+      "visible_label": "ERRATA",
+      "role": "Source-authored errata for printed pages 254, 256, 257 only; inspected after source-first freeze."
+    }
+  ],
+  "anchor_policy": "Anchor phrases use ordinary s for long-s and join line/page-break words; glyph names are expanded in paraphrase/conditions, not invented as exact quoted words. Coverage locator labels are descriptive navigation aids, not certified quotations.",
+  "sections": [
+    {
+      "section": "Signes of a long or short Sicknesse (continuation)",
+      "candidate_ids": [
+        "B001",
+        "B002",
+        "B003",
+        "B004",
+        "B005",
+        "B006",
+        "B007",
+        "B008",
+        "B009",
+        "B010",
+        "B011",
+        "B012",
+        "B013",
+        "B014",
+        "B015",
+        "B016",
+        "B017",
+        "B018",
+        "B019",
+        "B020",
+        "B021",
+        "B022",
+        "B023",
+        "B024",
+        "B025",
+        "B026",
+        "B027",
+        "B028",
+        "B029",
+        "B030",
+        "B031",
+        "B032",
+        "B033",
+        "B034",
+        "B035",
+        "B036",
+        "B037",
+        "B038",
+        "B039",
+        "B040",
+        "B041",
+        "B042",
+        "B043",
+        "B044",
+        "B045",
+        "B046",
+        "B047",
+        "B048",
+        "B049",
+        "B050",
+        "B051",
+        "B052",
+        "B053",
+        "B054",
+        "B055",
+        "B056",
+        "B057"
+      ],
+      "candidate_count": 57
+    },
+    {
+      "section": "Testimonies that the Querent shall live and not dye of the infirmity now afflicting",
+      "candidate_ids": [
+        "B058",
+        "B059",
+        "B060",
+        "B061",
+        "B062",
+        "B063",
+        "B064",
+        "B065",
+        "B066",
+        "B067",
+        "B068",
+        "B069",
+        "B070",
+        "B071",
+        "B072",
+        "B073",
+        "B074",
+        "B075",
+        "B076",
+        "B077",
+        "B078",
+        "B079",
+        "B080"
+      ],
+      "candidate_count": 23
+    },
+    {
+      "section": "Arguments of Death",
+      "candidate_ids": [
+        "B081",
+        "B082",
+        "B083",
+        "B084",
+        "B085",
+        "B086",
+        "B087",
+        "B088",
+        "B089",
+        "B090",
+        "B091",
+        "B092",
+        "B093",
+        "B094",
+        "B095",
+        "B096",
+        "B097",
+        "B098",
+        "B099",
+        "B100",
+        "B101",
+        "B102",
+        "B103",
+        "B104",
+        "B105",
+        "B106",
+        "B107",
+        "B108",
+        "B109",
+        "B110",
+        "B111",
+        "B112",
+        "B113",
+        "B114",
+        "B115",
+        "B116",
+        "B117",
+        "B118",
+        "B119"
+      ],
+      "candidate_count": 39
+    }
+  ],
+  "page_coverage": [
+    {
+      "pdf_page": 283,
+      "visible_printed_label": "249",
+      "original_full_page_viewed": true,
+      "candidate_ids": [
+        "B001",
+        "B002",
+        "B003",
+        "B004",
+        "B005",
+        "B006",
+        "B007",
+        "B008",
+        "B009",
+        "B010",
+        "B011",
+        "B012"
+      ]
+    },
+    {
+      "pdf_page": 284,
+      "visible_printed_label": "250",
+      "original_full_page_viewed": true,
+      "candidate_ids": [
+        "B012",
+        "B013",
+        "B014",
+        "B015",
+        "B016",
+        "B017",
+        "B018",
+        "B019",
+        "B020",
+        "B021",
+        "B022",
+        "B023",
+        "B024",
+        "B025"
+      ]
+    },
+    {
+      "pdf_page": 285,
+      "visible_printed_label": "251",
+      "original_full_page_viewed": true,
+      "candidate_ids": [
+        "B025",
+        "B026",
+        "B027",
+        "B028",
+        "B029",
+        "B030",
+        "B031",
+        "B032",
+        "B033",
+        "B034",
+        "B035",
+        "B036",
+        "B037"
+      ]
+    },
+    {
+      "pdf_page": 286,
+      "visible_printed_label": "252",
+      "original_full_page_viewed": true,
+      "candidate_ids": [
+        "B037",
+        "B038",
+        "B039",
+        "B040",
+        "B041",
+        "B042",
+        "B043",
+        "B044",
+        "B045",
+        "B046",
+        "B047",
+        "B048",
+        "B049"
+      ]
+    },
+    {
+      "pdf_page": 287,
+      "visible_printed_label": "253",
+      "original_full_page_viewed": true,
+      "candidate_ids": [
+        "B049",
+        "B050",
+        "B051",
+        "B052",
+        "B053",
+        "B054",
+        "B055",
+        "B056",
+        "B057",
+        "B058",
+        "B059",
+        "B060",
+        "B061"
+      ]
+    },
+    {
+      "pdf_page": 288,
+      "visible_printed_label": "254",
+      "original_full_page_viewed": true,
+      "candidate_ids": [
+        "B061",
+        "B062",
+        "B063",
+        "B064",
+        "B065",
+        "B066",
+        "B067",
+        "B068",
+        "B069",
+        "B070",
+        "B071",
+        "B072",
+        "B073",
+        "B074"
+      ]
+    },
+    {
+      "pdf_page": 289,
+      "visible_printed_label": "255",
+      "original_full_page_viewed": true,
+      "candidate_ids": [
+        "B074",
+        "B075",
+        "B076",
+        "B077",
+        "B078",
+        "B079",
+        "B080",
+        "B081",
+        "B082",
+        "B083"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "original_full_page_viewed": true,
+      "candidate_ids": [
+        "B083",
+        "B084",
+        "B085",
+        "B086",
+        "B087",
+        "B088",
+        "B089",
+        "B090",
+        "B091",
+        "B092",
+        "B093",
+        "B094",
+        "B095",
+        "B096",
+        "B097"
+      ]
+    },
+    {
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "original_full_page_viewed": true,
+      "candidate_ids": [
+        "B097",
+        "B098",
+        "B099",
+        "B100",
+        "B101",
+        "B102",
+        "B103",
+        "B104",
+        "B105",
+        "B106",
+        "B107",
+        "B108"
+      ]
+    },
+    {
+      "pdf_page": 292,
+      "visible_printed_label": "258",
+      "original_full_page_viewed": true,
+      "candidate_ids": [
+        "B108",
+        "B109",
+        "B110",
+        "B111",
+        "B112",
+        "B113",
+        "B114",
+        "B115",
+        "B116",
+        "B117",
+        "B118",
+        "B119"
+      ]
+    }
+  ],
+  "paragraph_coverage": [
+    {
+      "pdf_page": 283,
+      "visible_printed_label": "249",
+      "region": "Opening continuation after A-owned Pisces sentence",
+      "start_locator": "If the Moon apply by ill aspect",
+      "end_locator": "if a woman ask",
+      "candidate_ids": [
+        "B001",
+        "B002",
+        "B003",
+        "B004"
+      ]
+    },
+    {
+      "pdf_page": 283,
+      "visible_printed_label": "249",
+      "region": "Remaining body paragraph",
+      "start_locator": "If the Lord of the sixt apply",
+      "end_locator": "threatens great",
+      "candidate_ids": [
+        "B005",
+        "B006",
+        "B007",
+        "B008",
+        "B009",
+        "B010",
+        "B011",
+        "B012"
+      ]
+    },
+    {
+      "pdf_page": 284,
+      "visible_printed_label": "250",
+      "region": "Top carryover and fortified/benevolent qualifiers",
+      "start_locator": "danger in the Sicknesse",
+      "end_locator": "will be permanent",
+      "candidate_ids": [
+        "B012",
+        "B013",
+        "B014"
+      ]
+    },
+    {
+      "pdf_page": 284,
+      "visible_printed_label": "250",
+      "region": "Long body paragraph to recovery carryover",
+      "start_locator": "Many times it happens",
+      "end_locator": "Lord of the twelfth",
+      "candidate_ids": [
+        "B015",
+        "B016",
+        "B017",
+        "B018",
+        "B019",
+        "B020",
+        "B021",
+        "B022",
+        "B023",
+        "B024",
+        "B025"
+      ]
+    },
+    {
+      "pdf_page": 285,
+      "visible_printed_label": "251",
+      "region": "Top carryover and first paragraph",
+      "start_locator": "sixt or eighth",
+      "end_locator": "otherwise qualified",
+      "candidate_ids": [
+        "B025",
+        "B026",
+        "B027",
+        "B028",
+        "B029",
+        "B030"
+      ]
+    },
+    {
+      "pdf_page": 285,
+      "visible_printed_label": "251",
+      "region": "Angular/motion/affliction paragraph",
+      "start_locator": "The Lord of the ascendant in an Angle",
+      "end_locator": "so doth also the Moon",
+      "candidate_ids": [
+        "B031",
+        "B032",
+        "B033",
+        "B034",
+        "B035",
+        "B036",
+        "B037"
+      ]
+    },
+    {
+      "pdf_page": 286,
+      "visible_printed_label": "252",
+      "region": "Moon carryover paragraph",
+      "start_locator": "when she is slow in motion",
+      "end_locator": "look for the contrary",
+      "candidate_ids": [
+        "B037",
+        "B038",
+        "B039",
+        "B040",
+        "B041"
+      ]
+    },
+    {
+      "pdf_page": 286,
+      "visible_printed_label": "252",
+      "region": "Scorpio/luminaries/Mars paragraph",
+      "start_locator": "When you find Scorpio ascending",
+      "end_locator": "no great danger",
+      "candidate_ids": [
+        "B042",
+        "B043",
+        "B044",
+        "B045"
+      ]
+    },
+    {
+      "pdf_page": 286,
+      "visible_printed_label": "252",
+      "region": "Sixth lord and Moon adverse paragraph",
+      "start_locator": "If the Lord of the sixt be Combust",
+      "end_locator": "at the same",
+      "candidate_ids": [
+        "B046",
+        "B047",
+        "B048",
+        "B049"
+      ]
+    },
+    {
+      "pdf_page": 287,
+      "visible_printed_label": "253",
+      "region": "Top continuation and usually/no-danger alternatives",
+      "start_locator": "same time",
+      "end_locator": "the infirmity is placed",
+      "candidate_ids": [
+        "B049",
+        "B050",
+        "B051",
+        "B052"
+      ]
+    },
+    {
+      "pdf_page": 287,
+      "visible_printed_label": "253",
+      "region": "First lying down/Moon signs/translation",
+      "start_locator": "At the time of ones first lying down",
+      "end_locator": "signifying the infirmity",
+      "candidate_ids": [
+        "B053",
+        "B054",
+        "B055",
+        "B056",
+        "B057"
+      ]
+    },
+    {
+      "pdf_page": 287,
+      "visible_printed_label": "253",
+      "region": "Survival heading and opening paragraph",
+      "start_locator": "When it is demanded seriously",
+      "end_locator": "recovered",
+      "candidate_ids": [
+        "B058",
+        "B059",
+        "B060",
+        "B061"
+      ]
+    },
+    {
+      "pdf_page": 288,
+      "visible_printed_label": "254",
+      "region": "Top survival continuation and Mars comparison",
+      "start_locator": "yet you must ever understand",
+      "end_locator": "Occidentall",
+      "candidate_ids": [
+        "B061",
+        "B062",
+        "B063",
+        "B064",
+        "B065",
+        "B066"
+      ]
+    },
+    {
+      "pdf_page": 288,
+      "visible_printed_label": "254",
+      "region": "Reception and benefic place paragraph",
+      "start_locator": "When you find there is any reception",
+      "end_locator": "health and life",
+      "candidate_ids": [
+        "B067",
+        "B068",
+        "B069",
+        "B070",
+        "B071",
+        "B072"
+      ]
+    },
+    {
+      "pdf_page": 288,
+      "visible_printed_label": "254",
+      "region": "Moon/Jupiter and fall maxim carryover",
+      "start_locator": "a good argument of recovery",
+      "end_locator": "able",
+      "candidate_ids": [
+        "B073",
+        "B074"
+      ]
+    },
+    {
+      "pdf_page": 289,
+      "visible_printed_label": "255",
+      "region": "Fall maxim carryover and Moon configurations",
+      "start_locator": "able therein to expresse",
+      "end_locator": "it doth argue life",
+      "candidate_ids": [
+        "B074",
+        "B075",
+        "B076",
+        "B077"
+      ]
+    },
+    {
+      "pdf_page": 289,
+      "visible_printed_label": "255",
+      "region": "Void of course/crisis/onset/relative potency",
+      "start_locator": "When at the first falling sick",
+      "end_locator": "confide of his escape",
+      "candidate_ids": [
+        "B078",
+        "B079",
+        "B080"
+      ]
+    },
+    {
+      "pdf_page": 289,
+      "visible_printed_label": "255",
+      "region": "Arguments of Death heading and natal/profection paragraph",
+      "start_locator": "When the ascendant at time of first falling sick",
+      "end_locator": "and twelfth",
+      "candidate_ids": [
+        "B081",
+        "B082"
+      ]
+    },
+    {
+      "pdf_page": 289,
+      "visible_printed_label": "255",
+      "region": "Five hylegical places paragraph",
+      "start_locator": "When the five Hylegicall places",
+      "end_locator": "interject their",
+      "candidate_ids": [
+        "B083"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Hylegical exception carryover",
+      "start_locator": "their comfortable aspects",
+      "end_locator": "the party sick may escape",
+      "candidate_ids": [
+        "B083"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Planetary hour sentence",
+      "start_locator": "He will be infinitely oppressed",
+      "end_locator": "a cold one",
+      "candidate_ids": [
+        "B084"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Combust lords and reception/fortunate Moon",
+      "start_locator": "The Lord of the ascendant and of the Figure Combust",
+      "end_locator": "a little hopes remaines",
+      "candidate_ids": [
+        "B085"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Conjunction eighth lord",
+      "start_locator": "The Lord of the ascendant and the Moon",
+      "end_locator": "threatens death",
+      "candidate_ids": [
+        "B086"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Angular eighth lord",
+      "start_locator": "The Lord of the eighth in an Angle",
+      "end_locator": "Infortune",
+      "candidate_ids": [
+        "B087"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Applications to eighth",
+      "start_locator": "The application of the Moon",
+      "end_locator": "denotes death",
+      "candidate_ids": [
+        "B088",
+        "B089"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Transfer, placements, conjunctions",
+      "start_locator": "The Moon transferring",
+      "end_locator": "sick person then",
+      "candidate_ids": [
+        "B090",
+        "B091",
+        "B092",
+        "B093",
+        "B094",
+        "B095"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Luminary of time and peril carryover",
+      "start_locator": "Have speciall consideration",
+      "end_locator": "usually",
+      "candidate_ids": [
+        "B096",
+        "B097"
+      ]
+    },
+    {
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "region": "Peril attribution carryover and first question",
+      "start_locator": "usually by reason",
+      "end_locator": "Combust in the ascendant",
+      "candidate_ids": [
+        "B097",
+        "B098"
+      ]
+    },
+    {
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "region": "Unfortunate lords",
+      "start_locator": "The Lord of the ascendant and of the eighth unfortunate",
+      "end_locator": "prenote death",
+      "candidate_ids": [
+        "B099"
+      ]
+    },
+    {
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "region": "Eighth lord tenth",
+      "start_locator": "The Lord of the eighth in the tenth house",
+      "end_locator": "argue death",
+      "candidate_ids": [
+        "B100"
+      ]
+    },
+    {
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "region": "Hour lord/retrograde/cadents/some say",
+      "start_locator": "A Planet very strong",
+      "end_locator": "Jupiter Direct",
+      "candidate_ids": [
+        "B101",
+        "B102",
+        "B103",
+        "B104"
+      ]
+    },
+    {
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "region": "Aspect/reception/Moon/placement/star sequence",
+      "start_locator": "When the Lord of the Ascendant",
+      "end_locator": "Caput Medusae",
+      "candidate_ids": [
+        "B105",
+        "B106",
+        "B107",
+        "B108"
+      ]
+    },
+    {
+      "pdf_page": 292,
+      "visible_printed_label": "258",
+      "region": "Star carryover to staged Moon rule",
+      "start_locator": "in twenty Taurus",
+      "end_locator": "otherwise he or she will escape",
+      "candidate_ids": [
+        "B108",
+        "B109",
+        "B110",
+        "B111",
+        "B112",
+        "B113",
+        "B114",
+        "B115",
+        "B116"
+      ]
+    },
+    {
+      "pdf_page": 292,
+      "visible_printed_label": "258",
+      "region": "Final complete included paragraph",
+      "start_locator": "Any malevolent in the sixt",
+      "end_locator": "shew death",
+      "candidate_ids": [
+        "B117",
+        "B118",
+        "B119"
+      ]
+    }
+  ],
+  "reader_coverage_assessment": "Every observed rule, qualifier, source list, and judgment instruction in the assigned span is represented by the paragraph mapping, subject to typed unresolved readings and root integration/review. This is not a claim of clinical validity or an executable rule set.",
+  "candidate_count": 119,
+  "all_condition_logic_executable": false,
+  "source_variants_preserved": [
+    [
+      "B061",
+      "B062"
+    ],
+    [
+      "B073",
+      "B104"
+    ],
+    [
+      "B049",
+      "B050"
+    ]
+  ],
+  "cross_page_dependencies": [
+    {
+      "pages": [
+        282,
+        283
+      ],
+      "owner": "reader A",
+      "description": "Common-sign/Pisces sentence; B context only."
+    },
+    {
+      "candidate_id": "B012",
+      "pages": [
+        283,
+        284
+      ]
+    },
+    {
+      "candidate_id": "B025",
+      "pages": [
+        284,
+        285
+      ]
+    },
+    {
+      "candidate_id": "B037",
+      "pages": [
+        285,
+        286
+      ]
+    },
+    {
+      "candidate_id": "B049",
+      "pages": [
+        286,
+        287
+      ]
+    },
+    {
+      "candidate_id": "B061",
+      "pages": [
+        287,
+        288
+      ]
+    },
+    {
+      "candidate_id": "B074",
+      "pages": [
+        288,
+        289
+      ]
+    },
+    {
+      "candidate_id": "B083",
+      "pages": [
+        289,
+        290
+      ]
+    },
+    {
+      "candidate_id": "B097",
+      "pages": [
+        290,
+        291
+      ]
+    },
+    {
+      "candidate_id": "B108",
+      "pages": [
+        291,
+        292
+      ]
+    }
+  ]
+}

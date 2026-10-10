@@ -1,0 +1,130 @@
+{
+  "counted_as_new_records": false,
+  "purpose": "Targeted same-work callbacks, with original pages114 and153 re-read this turn",
+  "excerpts": [
+    {
+      "batch": "B02b",
+      "original_rules_sha256": "6310881c1163fca8ed98316948546f3f74816c1cd31e389b53b94145e742f93b",
+      "record": {
+        "id": "LI.1647.I.14.R192",
+        "title": "Moon: named body and astronomical description",
+        "kind": "historical_astronomy",
+        "source_locator": {
+          "work_id": "CHRISTIAN_ASTROLOGY",
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "edition": "1647 English original, Wellcome b30338724",
+          "book": "I",
+          "chapter": 14,
+          "pdf_pages": [
+            114
+          ],
+          "printed_pages": [
+            80
+          ],
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+        },
+        "source_statement": "{\"names\": [\"Lucina\", \"Cynthia\", \"Diana\", \"Phoebe\", \"Latona\", \"Noctiluca\", \"Proserpina\"], \"appearance\": \"Nearest planet to Earth; colour treated as commonly known.\", \"period\": \"27 days 7 hours 43 minutes or thereabouts\", \"mean_motion\": \"13 degrees 10 arcminutes 36 arcseconds\", \"diurnal_motion\": \"Variable; says never exceeds 15 degrees 2 arcminutes in 24 hours\", \"latitude_north\": \"5 degrees 17 arcminutes or thereabouts\", \"latitude_south\": \"5 degrees 12 arcminutes or thereabouts\"}",
+        "statement_type": "paraphrase",
+        "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+        "qualifications_and_limits": "Historical numbers and visibility claims, not a replacement for Swiss Ephemeris. Discrepant units/claims remain explicit.",
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "batch": "B02b",
+      "original_rules_sha256": "6310881c1163fca8ed98316948546f3f74816c1cd31e389b53b94145e742f93b",
+      "record": {
+        "id": "LI.1647.I.14.R195",
+        "title": "Moon: direction and station durations",
+        "kind": "motion_state",
+        "source_locator": {
+          "work_id": "CHRISTIAN_ASTROLOGY",
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "edition": "1647 English original, Wellcome b30338724",
+          "book": "I",
+          "chapter": 14,
+          "pdf_pages": [
+            114
+          ],
+          "printed_pages": [
+            80
+          ],
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+        },
+        "source_statement": "{\"retrograde_days\": 0, \"first_station_days\": null, \"second_station_days\": null, \"qualification\": \"Always direct; LESS than 13 degrees 10 arcminutes in 24 hours is called equivalent to a retrograde planet. Distinguish analogy from physical motion and from the stated mean including 36 arcseconds.\"}",
+        "statement_type": "paraphrase",
+        "prerequisites": "Read within the identified historical source domain; no person-level selection is implied.",
+        "qualifications_and_limits": "Approximate durations are not exact ephemeris-derived station windows.",
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "batch": "B02b",
+      "original_rules_sha256": "6310881c1163fca8ed98316948546f3f74816c1cd31e389b53b94145e742f93b",
+      "record": {
+        "id": "LI.1647.I.14.R221",
+        "title": "Slow Moon analogy is not physical retrograde",
+        "kind": "conditional_definition",
+        "source_locator": {
+          "work_id": "CHRISTIAN_ASTROLOGY",
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "edition": "1647 English original, Wellcome b30338724",
+          "book": "I",
+          "chapter": 14,
+          "pdf_pages": [
+            114
+          ],
+          "printed_pages": [
+            80
+          ],
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+        },
+        "source_statement": "Always direct; LESS than 13 degrees 10 arcminutes in 24 hours is called equivalent to a retrograde planet. Distinguish analogy from physical motion and from the stated mean including 36 arcseconds.",
+        "statement_type": "paraphrase",
+        "prerequisites": "Use only in the indicated enquiry after establishing the relevant significator; no actual person is analysed.",
+        "qualifications_and_limits": "Use a strict LESS-than threshold. Do not substitute the larger stated mean, including 36 arcseconds, or reverse computed longitude speed.",
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "batch": "B02d",
+      "original_rules_sha256": "70c309b3e342abad588fd1c21cf13b7e226d8d1892bd4095f39b28c00e06bb8f",
+      "record": {
+        "id": "LI.1647.I.XIX.R523",
+        "title": "Cancer planetary body-correspondence row",
+        "kind": "table_row",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "I",
+          "section_key": "I.XIX",
+          "pdf_pages": [
+            153
+          ],
+          "printed_pages": [
+            119
+          ]
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": {
+          "Saturn": "Reins,belly,secrets",
+          "Jupiter": "Heart,secrets,thighs",
+          "Mars": "[printed matter obscured; handwriting: Thighs,Breast]",
+          "Sun": "Knees,[two printed tokens obscured]",
+          "Venus": "Knees,shoulders,arms",
+          "Mercury": "Legs,throat,eyes",
+          "Moon": "Head,breast,stomach"
+        },
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "Historical planet-by-sign correspondences. Ink-altered/uncertain cells remain unknown, not completed by a presumed rule."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    }
+  ]
+}

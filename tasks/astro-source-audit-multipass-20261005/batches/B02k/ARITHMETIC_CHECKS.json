@@ -1,0 +1,77 @@
+{
+  "batch": "B02k",
+  "execution": "python build_analysis_evidence.py",
+  "executed_successfully": true,
+  "input_class": "Controlled examples for exact source-reference arithmetic; no historical horoscope is computed.",
+  "stated_mean": {
+    "dms": "13°10′36″",
+    "arcseconds": 47436,
+    "source_pdf_page": 114,
+    "retained_record": "LI.1647.I.14.R192"
+  },
+  "retrograde_analogy": {
+    "dms": "13°10′00″",
+    "strictly_less_than": true,
+    "arcseconds": 47400,
+    "source_pdf_page": 114,
+    "retained_records": [
+      "LI.1647.I.14.R195",
+      "LI.1647.I.14.R221"
+    ]
+  },
+  "threshold_difference_arcseconds": 36,
+  "motion_comparisons": [
+    {
+      "input_dms": "13°09′59″",
+      "input_arcseconds_per_24_hours": 47399,
+      "below_stated_mean": true,
+      "under_retrograde_analogy_threshold": true
+    },
+    {
+      "input_dms": "13°10′00″",
+      "input_arcseconds_per_24_hours": 47400,
+      "below_stated_mean": true,
+      "under_retrograde_analogy_threshold": false
+    },
+    {
+      "input_dms": "13°10′18″",
+      "input_arcseconds_per_24_hours": 47418,
+      "below_stated_mean": true,
+      "under_retrograde_analogy_threshold": false
+    },
+    {
+      "input_dms": "13°10′36″",
+      "input_arcseconds_per_24_hours": 47436,
+      "below_stated_mean": false,
+      "under_retrograde_analogy_threshold": false
+    }
+  ],
+  "remaining_arc_example": {
+    "input_dms": "29°30′00″",
+    "remaining_degrees_exact": "1/2",
+    "time_unit": null,
+    "source_pdf_page": 283,
+    "record_id": "LI.1647.II.XLIV.R1438"
+  },
+  "aggregate_domain_counterexamples_rejected": [
+    {
+      "coordinates": [
+        "59/2",
+        "59",
+        "0"
+      ],
+      "exception": "Combined coordinate outside its within-sign range"
+    },
+    {
+      "coordinates": [
+        "59/2",
+        "30",
+        "0"
+      ],
+      "exception": "Combined coordinate outside its within-sign range"
+    }
+  ],
+  "arithmetic_checks_are_not_additional_unittest_identities": true,
+  "predictive_or_clinical_validation": false,
+  "helper_sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+}

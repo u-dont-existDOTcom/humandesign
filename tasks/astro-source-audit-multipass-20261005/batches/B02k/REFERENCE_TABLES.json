@@ -1,0 +1,968 @@
+{
+  "batch": "B02k",
+  "source_only": true,
+  "clinical_mapping": false,
+  "catalogue_counts": {
+    "house": 12,
+    "sign": 12,
+    "planet": 7
+  },
+  "extra_retained_callback_cells": 1,
+  "historical_star_labels": 5,
+  "namespaces": {
+    "house": {
+      "1": {
+        "record_id": "LI.1647.II.XLIV.R1372",
+        "source_items": [
+          "The Head",
+          "the Eyes",
+          "the Face",
+          "Eares",
+          "stinking Breath",
+          "sore Mouth",
+          "Noli me tangere"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "2": {
+        "record_id": "LI.1647.II.XLIV.R1373",
+        "source_items": [
+          "The Throat",
+          "Neck",
+          "Kings-Evill"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "3": {
+        "record_id": "LI.1647.II.XLIV.R1374",
+        "source_items": [
+          "Shoulders",
+          "Armes",
+          "Hands"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "4": {
+        "record_id": "LI.1647.II.XLIV.R1375",
+        "source_items": [
+          "The Stomack",
+          "Brest",
+          "Lungs"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "5": {
+        "record_id": "LI.1647.II.XLIV.R1376",
+        "source_items": [
+          "The Back",
+          "hinder part of the Shoulders",
+          "Stomack",
+          "Liver",
+          "Heart",
+          "Sides"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "6": {
+        "record_id": "LI.1647.II.XLIV.R1377",
+        "source_items": [
+          "Lower part of the Belly",
+          "Guts",
+          "Liver and Reynes"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "7": {
+        "record_id": "LI.1647.II.XLIV.R1378",
+        "source_items": [
+          "Hammes",
+          "Flank",
+          "small Guts",
+          "Bladder",
+          "Matrix",
+          "members of Generation"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "8": {
+        "record_id": "LI.1647.II.XLIV.R1379",
+        "source_items": [
+          "The Back-bone",
+          "Arse",
+          "Groine"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "9": {
+        "record_id": "LI.1647.II.XLIV.R1380",
+        "source_items": [
+          "The Huckle-Bone, or, the Hips"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "10": {
+        "record_id": "LI.1647.II.XLIV.R1381",
+        "source_items": [
+          "The Knees",
+          "the Hamme of ones Leg behind the Knee"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "11": {
+        "record_id": "LI.1647.II.XLIV.R1382",
+        "source_items": [
+          "The Shank",
+          "Legge from the Knee to the Ancle",
+          "Shin-Bone"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "12": {
+        "record_id": "LI.1647.II.XLIV.R1383",
+        "source_items": [
+          "The Feet, and all Diseases incident to them"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Houses",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      }
+    },
+    "sign": {
+      "Aries": {
+        "record_id": "LI.1647.II.XLIV.R1384",
+        "source_items": [
+          "All Diseases incident to the Head (as in the first House is signified)",
+          "such as proceed or have originall from Choller",
+          "small Pocks",
+          "Pushes",
+          "Pimples"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Taurus": {
+        "record_id": "LI.1647.II.XLIV.R1385",
+        "source_items": [
+          "Diseases in the Neck and Throat, having their beginning from Melancholly, as in the second House"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Gemini": {
+        "record_id": "LI.1647.II.XLIV.R1386",
+        "source_items": [
+          "Shoulders, Armes, Hands, proceeding from Blood distempered"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279
+          ],
+          "printed_sequence_expected": [
+            245
+          ],
+          "visible_printed_labels": [
+            "245"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Cancer": {
+        "record_id": "LI.1647.II.XLIV.R1387",
+        "source_items": [
+          "Scabbinesse",
+          "Cancers in the Brest",
+          "Hurts in the Brest",
+          "ill Digestion in the Stomack, Spleen, Lungs, upper part of the Belly",
+          "Cold and Moisture being the cause",
+          "Surfets, &c."
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            279,
+            280
+          ],
+          "printed_sequence_expected": [
+            245,
+            246
+          ],
+          "visible_printed_labels": [
+            "245",
+            "244"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Leo": {
+        "record_id": "LI.1647.II.XLIV.R1388",
+        "source_items": [
+          "Back-bone",
+          "Sides",
+          "Ribs",
+          "Heart",
+          "lower part of the Brest",
+          "such infirmities as proceed from Choller and excesse of Blood"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Virgo": {
+        "record_id": "LI.1647.II.XLIV.R1389",
+        "source_items": [
+          "Shewes Melancholly",
+          "Diseases in the Guts, and Belly-akes",
+          "Fluxes, &c.",
+          "impediments in the Miseraicks",
+          "Wind-chollick"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Libra": {
+        "record_id": "LI.1647.II.XLIV.R1390",
+        "source_items": [
+          "Great Heats in the Back, or the Stone in the Reines or Kidneys",
+          "Surfets by drinking or eating, or from too much Venery",
+          "Diseases in the Buttocks, Joints, Hammes and Hanches"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Scorpio": {
+        "record_id": "LI.1647.II.XLIV.R1391",
+        "source_items": [
+          "The Groin and parts about the privy Members",
+          "the Arse",
+          "Bladder",
+          "Pyles",
+          "Stone in the Bladder",
+          "Strangury"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Sagittarius": {
+        "record_id": "LI.1647.II.XLIV.R1392",
+        "source_items": [
+          "The Hippes",
+          "Hammes",
+          "Buttocks",
+          "Fistula's",
+          "Itches",
+          "Sciatica's"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Capricorn": {
+        "record_id": "LI.1647.II.XLIV.R1393",
+        "source_items": [
+          "The Knees",
+          "back part of the Hammes",
+          "Scurfs and Itches in and about the Knees, proceeding of Melancholly"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Aquarius": {
+        "record_id": "LI.1647.II.XLIV.R1394",
+        "source_items": [
+          "The Legs",
+          "Shin-bone and Calves of the Legs, with the Ancles"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Pisces": {
+        "record_id": "LI.1647.II.XLIV.R1395",
+        "source_items": [
+          "The Ancle-bone and Feet",
+          "Gouts",
+          "Swellings in those parts"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases signified by the Signes",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      }
+    },
+    "planet": {
+      "Saturn": {
+        "record_id": "LI.1647.II.XLIV.R1396",
+        "source_items": [
+          "noyse or rumbling in the right Eare and Head",
+          "Deafnesse",
+          "the Tooth-ach",
+          "paine in the Bones, in the Bladder",
+          "all cold Diseases proceeding from a deflux of the Humours",
+          "the Gout",
+          "Scab",
+          "Melanchollick infirmities",
+          "Leprosie",
+          "Palsie",
+          "Consumptions",
+          "black-Jaundies",
+          "quartan Agues",
+          "the Iliack-passion",
+          "Dropsie",
+          "Chin-coughs",
+          "Catarres of Rheums falling upon the Lungs and Pectorals"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases of the Planets",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Jupiter": {
+        "record_id": "LI.1647.II.XLIV.R1397",
+        "source_items": [
+          "The Lungs",
+          "Ribs",
+          "Grissels",
+          "Liver",
+          "the Pulse",
+          "the Seed",
+          "Arteries",
+          "Apoplexies",
+          "Pluresies",
+          "wringings at the Heart",
+          "Convulsions",
+          "Inflamations of the Liver",
+          "Diseases in the Head",
+          "prickings and shootings neer or upon the Ridg-bone",
+          "all windinesse in the Veines and Body, or any Diseases arising from putrifaction in the Blood, &c."
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases of the Planets",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Mars": {
+        "record_id": "LI.1647.II.XLIV.R1398",
+        "source_items": [
+          "The left Eare",
+          "Gall",
+          "Reines",
+          "Privities and Stones",
+          "the Plague",
+          "wounds in the Face",
+          "Imposthumations",
+          "burning-Feavers",
+          "yellow-Jaundies",
+          "Carbuncles",
+          "Fistula's",
+          "Epilepsies",
+          "bloody-Flux",
+          "Calentures",
+          "St. Anthonies fire"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            280
+          ],
+          "printed_sequence_expected": [
+            246
+          ],
+          "visible_printed_labels": [
+            "244"
+          ],
+          "passage_anchor": "Diseases of the Planets",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Sun": {
+        "record_id": "LI.1647.II.XLIV.R1399",
+        "source_items": [
+          "The Braine",
+          "Heart",
+          "Eye-sight",
+          "right Eye of a man, left of a woman",
+          "Cramps",
+          "Swoonings or sudden tremblings at the Heart",
+          "the Cardiack Passion",
+          "Fluxes in the Eyes",
+          "Catarres",
+          "red Choller"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            281
+          ],
+          "printed_sequence_expected": [
+            247
+          ],
+          "visible_printed_labels": [
+            "247"
+          ],
+          "passage_anchor": "Diseases of the Planets",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Venus": {
+        "record_id": "LI.1647.II.XLIV.R1400",
+        "source_items": [
+          "The Matrix",
+          "Genitals",
+          "Paps",
+          "Throat",
+          "Liver",
+          "Sperme, or Seed in man or woman",
+          "Suffocations or Defections in the Matrix",
+          "Pissing Disease",
+          "Gonorrhaea",
+          "Debility in the Act of Generation",
+          "Strangury",
+          "weaknesse of Stomack and Liver",
+          "French or Spanish Pocks",
+          "imbecility or desire to vomit, or that Disease when presently after eating, all comes up againe"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            281
+          ],
+          "printed_sequence_expected": [
+            247
+          ],
+          "visible_printed_labels": [
+            "247"
+          ],
+          "passage_anchor": "Diseases of the Planets",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Mercury": {
+        "record_id": "LI.1647.II.XLIV.R1401",
+        "source_items": [
+          "The Braine",
+          "Spirit",
+          "Fancy",
+          "Imagination",
+          "Speech",
+          "Tongue",
+          "Fingers",
+          "Hands",
+          "privation of Sense",
+          "Madnesse",
+          "Lethargy",
+          "Stammering",
+          "Hoarcenesse",
+          "Coughes",
+          "falling Evill",
+          "aboundance of Spettle, &c."
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            281
+          ],
+          "printed_sequence_expected": [
+            247
+          ],
+          "visible_printed_labels": [
+            "247"
+          ],
+          "passage_anchor": "Diseases of the Planets",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      },
+      "Moon": {
+        "record_id": "LI.1647.II.XLIV.R1402",
+        "source_items": [
+          "Left Eye of man, right Eye of a woman",
+          "the Braine",
+          "the Intestines or small Guts",
+          "the Bladder",
+          "Taste",
+          "falling-Sicknesse",
+          "Palsie",
+          "Collick",
+          "Menstrues in women",
+          "Apostems",
+          "Fluxes of the Belly, viz. Loosenesse",
+          "all coagulated, crude Humours in any part of the Body"
+        ],
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XLIV.opening",
+          "pdf_pages": [
+            281
+          ],
+          "printed_sequence_expected": [
+            247
+          ],
+          "visible_printed_labels": [
+            "247"
+          ],
+          "passage_anchor": "Diseases of the Planets",
+          "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+        }
+      }
+    },
+    "retained_planet_sign": {
+      "Saturn|Cancer": {
+        "record_id": "LI.1647.I.XIX.R523",
+        "source_items": [
+          "Reins",
+          "Belly",
+          "Secrets"
+        ],
+        "source_pdf_page": 153,
+        "printed_page": 119,
+        "new_record": false,
+        "provenance": "Retained source row, original image re-read; case and long-s normalized."
+      }
+    },
+    "historical_fixed_star": {
+      "Antares": {
+        "record_id": "LI.1647.II.XLIV.R1538",
+        "sign": "Sagittarius",
+        "source_degree_number": 4,
+        "source_degree_label_normalized": "in the fourth Sagittarius",
+        "minutes": null,
+        "seconds": null,
+        "modern_epoch_longitude": null,
+        "ordinal_to_continuous_degree_convention": null,
+        "nearness_threshold": null,
+        "precision_note": "A historical degree label, not a modern exact coordinate; about remains in the Australis label."
+      },
+      "Lans/Lanx Australis": {
+        "record_id": "LI.1647.II.XLIV.R1538",
+        "sign": "Scorpio",
+        "source_degree_number": 9,
+        "source_degree_label_normalized": "about the ninth of Scorpio",
+        "minutes": null,
+        "seconds": null,
+        "modern_epoch_longitude": null,
+        "ordinal_to_continuous_degree_convention": null,
+        "nearness_threshold": null,
+        "precision_note": "A historical degree label, not a modern exact coordinate; about remains in the Australis label."
+      },
+      "Palilicium": {
+        "record_id": "LI.1647.II.XLIV.R1538",
+        "sign": "Gemini",
+        "source_degree_number": 4,
+        "source_degree_label_normalized": "in four Gemini",
+        "minutes": null,
+        "seconds": null,
+        "modern_epoch_longitude": null,
+        "ordinal_to_continuous_degree_convention": null,
+        "nearness_threshold": null,
+        "precision_note": "A historical degree label, not a modern exact coordinate; about remains in the Australis label."
+      },
+      "Caput Medusae": {
+        "record_id": "LI.1647.II.XLIV.R1538",
+        "sign": "Taurus",
+        "source_degree_number": 20,
+        "source_degree_label_normalized": "in twenty Taurus",
+        "minutes": null,
+        "seconds": null,
+        "modern_epoch_longitude": null,
+        "ordinal_to_continuous_degree_convention": null,
+        "nearness_threshold": null,
+        "precision_note": "A historical degree label, not a modern exact coordinate; about remains in the Australis label."
+      },
+      "Pleiades": {
+        "record_id": "LI.1647.II.XLIV.R1548",
+        "sign": "Taurus",
+        "source_degree_number": 24,
+        "source_degree_label_normalized": "in 24 Taurus",
+        "minutes": null,
+        "seconds": null,
+        "modern_epoch_longitude": null,
+        "ordinal_to_continuous_degree_convention": null,
+        "nearness_threshold": null,
+        "precision_note": "A historical degree label, not a modern exact coordinate; about remains in the Australis label."
+      }
+    }
+  }
+}

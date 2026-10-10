@@ -1,0 +1,2952 @@
+[
+  {
+    "id": "A001",
+    "chapter": "XLIV",
+    "section": "sixth_house_heading_and_opening",
+    "pdf_pages": [
+      277
+    ],
+    "printed_pages": [
+      243
+    ],
+    "visible_printed_labels": {
+      "277": "243"
+    },
+    "anchor": "Of the sixt House, and its QUESTIONS; Viz. Sicknesse, Servants, small Cattle; THAT which I hold convenient to write of Sicknesse",
+    "kind": "source_context",
+    "conditions": [],
+    "condition_logic": {
+      "status": "source_context_only",
+      "expression": "Heading and introductory declaration; not a conditional rule.",
+      "executable": false
+    },
+    "assertion": "The sixth-house heading lists sickness, servants and small cattle. Chapter XLIV is titled Judgment of Sicknesse by Astrology, and Lilly opens by introducing what he holds convenient to write of sickness. The sickness procedure begins after this opening.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": []
+  },
+  {
+    "id": "A002",
+    "chapter": "XLIV",
+    "section": "timing_and_observation",
+    "pdf_pages": [
+      277
+    ],
+    "printed_pages": [
+      243
+    ],
+    "visible_printed_labels": {
+      "277": "243"
+    },
+    "anchor": "That in the first place; not that moment; enforced to take his Bed, or to repose",
+    "kind": "method",
+    "conditions": [
+      "Seeking the first-choice inception time for this sickness judgment."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Use the nearest obtainable hour of first enforced bed or repose because of illness.",
+      "executable": false
+    },
+    "assertion": "Lilly first requires the exact time of first falling sick, as nearly as the hour can be obtained: when the person first became so ill or extremely oppressed that bed or repose was compelled.",
+    "exceptions": [
+      "He expressly excludes the first moment the patient merely felt a smatch of illness."
+    ],
+    "uncertainty": [],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A001"
+    ]
+  },
+  {
+    "id": "A003",
+    "chapter": "XLIV",
+    "section": "timing_and_observation",
+    "pdf_pages": [
+      277
+    ],
+    "printed_pages": [
+      243
+    ],
+    "visible_printed_labels": {
+      "277": "243"
+    },
+    "anchor": "Secondly, if that cannot be had; whether the party enquired of was Physitian or not",
+    "kind": "method",
+    "conditions": [
+      "The first-choice time in A002 cannot be obtained."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Fallback 2 applies only when fallback 1's preferred time is unavailable.",
+      "executable": false
+    },
+    "assertion": "Lilly next accepts the time when the sick person's urine was first carried to somebody to enquire about the disease; that somebody need not be a physician.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A002"
+    ]
+  },
+  {
+    "id": "A004",
+    "chapter": "XLIV",
+    "section": "timing_and_observation",
+    "pdf_pages": [
+      277
+    ],
+    "printed_pages": [
+      243
+    ],
+    "visible_printed_labels": {
+      "277": "243"
+    },
+    "anchor": "Thirdly, if no such thing can be had; his owne first speaking with, or accesse to the Patient",
+    "kind": "method",
+    "conditions": [
+      "The prior timing evidence cannot be obtained."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Take first physician speech with or access to the patient, or first urine delivery to that physician; no internal ranking among these alternatives is supplied.",
+      "executable": false
+    },
+    "assertion": "Lilly's third fallback is the physician's own first speaking with or access to the patient, or the time the urine was first brought to that physician.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A15"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A002",
+      "A003"
+    ]
+  },
+  {
+    "id": "A005",
+    "chapter": "XLIV",
+    "section": "timing_and_observation",
+    "pdf_pages": [
+      277
+    ],
+    "printed_pages": [
+      243
+    ],
+    "visible_printed_labels": {
+      "277": "243"
+    },
+    "anchor": "let a Figure be erected accordingly; the place of the Moon exactly rectified to the very houre",
+    "kind": "method",
+    "conditions": [
+      "A time has been selected by the stated hierarchy."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Construct the figure for the selected time and rectify the Moon's place to that hour.",
+      "executable": false
+    },
+    "assertion": "Lilly directs erection of a figure accordingly and exact rectification of the Moon's position to the very hour.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A002",
+      "A003",
+      "A004"
+    ]
+  },
+  {
+    "id": "A006",
+    "chapter": "XLIV",
+    "section": "timing_and_observation",
+    "pdf_pages": [
+      277
+    ],
+    "printed_pages": [
+      243
+    ],
+    "visible_printed_labels": {
+      "277": "243"
+    },
+    "anchor": "First, the ascendant; Secondly, the sixt house; Thirdly, the Signe and house; Fourthly, how she is affected or afflicted",
+    "kind": "method",
+    "conditions": [
+      "Seeking where the disease is in the figure."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Inspect all four stated classes of observations; the source does not supply a weighted aggregation formula.",
+      "executable": false
+    },
+    "assertion": "Observe the ascendant and its occupants; the sixth house and its occupants; the Moon's sign and house; and how the Moon is affected or afflicted, by which planet, the house containing that planet, and which house it rules.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A005"
+    ]
+  },
+  {
+    "id": "A007",
+    "chapter": "XLIV",
+    "section": "afflicted_body_part",
+    "pdf_pages": [
+      277,
+      278
+    ],
+    "printed_pages": [
+      243,
+      244
+    ],
+    "visible_printed_labels": {
+      "277": "243",
+      "278": "244"
+    },
+    "anchor": "If the first house be afflicted by the presence of an evill Planet; and he Retrograde, Combust, Peregrine, slow in motion; Table beforegoing page 119",
+    "kind": "rule",
+    "conditions": [
+      "An evil planet is present and afflicts the first house.",
+      "The following description lists retrograde, combust, peregrine, slow motion, or square/opposition to a planet ruling house 4, 6, 8 or 12."
+    ],
+    "condition_logic": {
+      "status": "source_grouping_unresolved",
+      "expression": "Source grammar: evil-planet presence AND the subsequent state/aspect list; the precise nesting and alternatives are retained without executable normalization.",
+      "executable": false
+    },
+    "assertion": "Lilly locates the disease in the head or in the body part(s) signified by the planet(s) in the ascending sign, and explicitly refers the reader to the preceding table on printed page119.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A02",
+      "U-A03",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A006",
+      "source:printed119_table"
+    ]
+  },
+  {
+    "id": "A008",
+    "chapter": "XLIV",
+    "section": "afflicted_body_part",
+    "pdf_pages": [
+      278
+    ],
+    "printed_pages": [
+      244
+    ],
+    "visible_printed_labels": {
+      "278": "244"
+    },
+    "anchor": "as if the Signe ascending be Cancer, and Saturn therein; because that first house signifies in mans Body the Head",
+    "kind": "illustration",
+    "conditions": [
+      "Cancer ascends and Saturn is placed there in Lilly's worked illustration."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Apply the source's hypothetical Cancer/Saturn illustration; this is not a reported patient case.",
+      "executable": false
+    },
+    "assertion": "Lilly says one may judge an afflicted head or diseases incident to it because the first house signifies the head and Saturn afflicts that house. He also names belly looseness or flux, imperfection in the Reynes or Secrets, cold raw matter in the stomach, or a rotten cough, because Saturn in Cancer signifies those members.",
+    "exceptions": [
+      "The outcomes are alternatives in the source illustration, not a requirement that all occur together."
+    ],
+    "uncertainty": [
+      "U-A05",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A007",
+      "source:printed119_table"
+    ]
+  },
+  {
+    "id": "A009",
+    "chapter": "XLIV",
+    "section": "afflicted_body_part",
+    "pdf_pages": [
+      278
+    ],
+    "printed_pages": [
+      244
+    ],
+    "visible_printed_labels": {
+      "278": "244"
+    },
+    "anchor": "more certaine, and I dare say infallible; if either the Lord of the ascendant, the Moon, or Lord of the sixt",
+    "kind": "certainty_qualification",
+    "conditions": [
+      "The Cancer/Saturn illustration and affected member in A008 are in view.",
+      "Either the ascendant lord, Moon, or sixth lord is in a sign and there signifies the same member as Saturn, or the sixth sign represents that member."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "The specified corroboration alternatives strengthen Lilly's claimed certainty of the preceding judgment.",
+      "executable": false
+    },
+    "assertion": "Lilly says the judgment becomes more certain, and in his words he dare say infallible, when one of the named corroborating same-member conditions holds.",
+    "exceptions": [
+      "The infallibility language belongs to Lilly and is conditional on the corroboration; this extraction does not validate it."
+    ],
+    "uncertainty": [
+      "U-A06",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A008"
+    ]
+  },
+  {
+    "id": "A010",
+    "chapter": "XLIV",
+    "section": "afflicted_body_part",
+    "pdf_pages": [
+      278
+    ],
+    "printed_pages": [
+      244
+    ],
+    "visible_printed_labels": {
+      "278": "244"
+    },
+    "anchor": "The same course and manner; from whom the Lord of the sixt last separated, to whom he next applyes; predominant and peccant",
+    "kind": "method",
+    "conditions": [
+      "Continuing the bodily-location and disease-quality inquiry."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Combine the sixth-house observations with the Moon's sign, house, separation and application.",
+      "executable": false
+    },
+    "assertion": "Lilly repeats the approach for the sixth: its sign, occupant planets, the member each signifies in its sign, the sixth lord's last separation and next application. Along with the Moon's sign, house, separation and application, these support his judgment of the afflicted part, the sickness's nature/quality, and the humour most predominant and peccant.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A006",
+      "A007"
+    ]
+  },
+  {
+    "id": "A011",
+    "chapter": "XLIV",
+    "section": "causes_by_sign_quality",
+    "pdf_pages": [
+      278
+    ],
+    "printed_pages": [
+      244
+    ],
+    "visible_printed_labels": {
+      "278": "244"
+    },
+    "anchor": "The Significators in Signes fiery; ascending in the first, and descending in the sixt of the same nature",
+    "kind": "rule",
+    "conditions": [
+      "Significators are in fiery signs.",
+      "The text adds signs ascending in the first and descending in the sixth of the same nature."
+    ],
+    "condition_logic": {
+      "status": "source_grouping_unresolved",
+      "expression": "Retain the source's significator/cusp conjunction and its exact 'descending in the sixt' wording without emendation or executable nesting.",
+      "executable": false
+    },
+    "assertion": "Lilly associates this fiery-sign configuration with hectic fevers and choler as principally predominant in the sickness.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A04",
+      "U-A05",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ]
+  },
+  {
+    "id": "A012",
+    "chapter": "XLIV",
+    "section": "causes_by_sign_quality",
+    "pdf_pages": [
+      278
+    ],
+    "printed_pages": [
+      244
+    ],
+    "visible_printed_labels": {
+      "278": "244"
+    },
+    "anchor": "The Significators in earthly Signes; such Diseases as may occasionally proceed from Melancholly",
+    "kind": "rule",
+    "conditions": [
+      "Significators are in earthly signs."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Source association for earthly signs.",
+      "executable": false
+    },
+    "assertion": "Lilly assigns long and tedious agues or fevers of great continuance, or diseases that may occasionally proceed from melancholy, consumptions, and the source's open-ended etcetera.",
+    "exceptions": [
+      "The source says may occasionally; it does not assert that every disease has this cause."
+    ],
+    "uncertainty": [
+      "U-A05",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ]
+  },
+  {
+    "id": "A013",
+    "chapter": "XLIV",
+    "section": "causes_by_sign_quality",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "The Significators in ayery Signes; Blood putrified or corrupted",
+    "kind": "rule",
+    "conditions": [
+      "Significators are in airy signs."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Source association for airy signs.",
+      "executable": false
+    },
+    "assertion": "Lilly assigns putrefied or corrupted blood, gouty diseases, leprosies, and hand and foot gout.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ]
+  },
+  {
+    "id": "A014",
+    "chapter": "XLIV",
+    "section": "causes_by_sign_quality",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "The Significators in moyst Signes; some cold and moyst cause or causes",
+    "kind": "rule",
+    "conditions": [
+      "Significators are in moist signs."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Source association for moist signs; no explicit modern enumeration of water signs is added.",
+      "executable": false
+    },
+    "assertion": "Lilly says the disease proceeds from some cold and moist cause or causes, and names coughs, rottenness in the stomach and those parts disaffected, with an open-ended etcetera.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ]
+  },
+  {
+    "id": "A015",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 1: The Head, the Eyes, the Face, Eares",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 1."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 1 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-1 row assigns: Head, eyes, face, ears; stinking breath, sore mouth, and Noli me tangere.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 1
+    },
+    "source_items": [
+      "The Head",
+      "the Eyes",
+      "the Face",
+      "Eares",
+      "stinking Breath",
+      "sore Mouth",
+      "Noli me tangere"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A016",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 2: The Throat, Neck, Kings-Evill",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 2."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 2 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-2 row assigns: Throat, neck and Kings-Evill.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 2
+    },
+    "source_items": [
+      "The Throat",
+      "Neck",
+      "Kings-Evill"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A017",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 3: Shoulders, Armes, Hands",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 3."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 3 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-3 row assigns: Shoulders, arms and hands.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 3
+    },
+    "source_items": [
+      "Shoulders",
+      "Armes",
+      "Hands"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A018",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 4: The Stomack, Brest, Lungs",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 4."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 4 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-4 row assigns: Stomach, breast and lungs.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 4
+    },
+    "source_items": [
+      "The Stomack",
+      "Brest",
+      "Lungs"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A019",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 5: The Back, hinder part of the Shoulders",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 5."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 5 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-5 row assigns: Back, hinder part of shoulders, stomach, liver, heart and sides.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 5
+    },
+    "source_items": [
+      "The Back",
+      "hinder part of the Shoulders",
+      "Stomack",
+      "Liver",
+      "Heart",
+      "Sides"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A020",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 6: Lower part of the Belly, Guts, Liver and Reynes",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 6."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 6 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-6 row assigns: Lower belly, guts, liver and Reynes.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 6
+    },
+    "source_items": [
+      "Lower part of the Belly",
+      "Guts",
+      "Liver and Reynes"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A021",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 7: Hammes, Flank, small Guts, Bladder, Matrix",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 7."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 7 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-7 row assigns: Hammes, flank, small guts, bladder, matrix and members of generation.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 7
+    },
+    "source_items": [
+      "Hammes",
+      "Flank",
+      "small Guts",
+      "Bladder",
+      "Matrix",
+      "members of Generation"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A022",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 8: The Back-bone, Arse, Groine",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 8."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 8 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-8 row assigns: Backbone, arse and groin.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 8
+    },
+    "source_items": [
+      "The Back-bone",
+      "Arse",
+      "Groine"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A023",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 9: The Huckle-Bone, or, the Hips",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 9."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 9 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-9 row assigns: Huckle-bone or hips.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 9
+    },
+    "source_items": [
+      "The Huckle-Bone, or, the Hips"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A024",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 10: The Knees, the Hamme of ones Leg behind the Knee",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 10."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 10 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-10 row assigns: Knees and the ham of one's leg behind the knee.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 10
+    },
+    "source_items": [
+      "The Knees",
+      "the Hamme of ones Leg behind the Knee"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A025",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 11: The Shank, Legge from the Knee to the Ancle",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 11."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 11 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-11 row assigns: Shank, leg from knee to ankle, and shinbone.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 11
+    },
+    "source_items": [
+      "The Shank",
+      "Legge from the Knee to the Ancle",
+      "Shin-Bone"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A026",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_houses",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Houses; 12: The Feet, and all Diseases incident to them",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for house 12."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "House 12 association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's house-12 row assigns: Feet and all diseases incident to them.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "house",
+      "value": 12
+    },
+    "source_items": [
+      "The Feet, and all Diseases incident to them"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A027",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Signes; Aries glyph: All Diseases incident to the Head",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Aries."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Aries association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Aries row assigns: All diseases incident to the head, as signified in the first house; diseases proceeding or originating from choler; small pocks, Pushes and pimples.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Aries"
+    },
+    "source_items": [
+      "All Diseases incident to the Head (as in the first House is signified)",
+      "such as proceed or have originall from Choller",
+      "small Pocks",
+      "Pushes",
+      "Pimples"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A028",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Signes; Taurus glyph: Diseases in the Neck and Throat",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Taurus."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Taurus association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Taurus row assigns: Diseases of neck and throat, beginning from melancholy, as in the second house.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Taurus"
+    },
+    "source_items": [
+      "Diseases in the Neck and Throat, having their beginning from Melancholly, as in the second House"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A029",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      279
+    ],
+    "printed_pages": [
+      245
+    ],
+    "visible_printed_labels": {
+      "279": "245"
+    },
+    "anchor": "Diseases signified by the Signes; Gemini glyph: Shoulders, Armes, Hands, proceeding from Blood distempered",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Gemini."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Gemini association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Gemini row assigns: Shoulders, arms and hands; proceeding from distempered blood.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Gemini"
+    },
+    "source_items": [
+      "Shoulders, Armes, Hands, proceeding from Blood distempered"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A030",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      279,
+      280
+    ],
+    "printed_pages": [
+      245,
+      246
+    ],
+    "visible_printed_labels": {
+      "279": "245",
+      "280": "244"
+    },
+    "anchor": "Diseases signified by the Signes; Cancer glyph: Scabbinesse, Cancers in the Brest; Belly, Cold and Moisture being the cause",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Cancer."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Cancer association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Cancer row assigns: Scabbiness, cancers and hurts in the breast, ill digestion in stomach, spleen, lungs and upper belly; cold and moisture as cause; surfeits, etc.",
+    "exceptions": [
+      "The Cancer entry crosses PDF279-280 and includes its cold/moisture and surfeit ending on PDF280."
+    ],
+    "uncertainty": [
+      "U-A05",
+      "U-A01",
+      "U-A18"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010",
+      "source:PDF888_errata_p245_penult"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Cancer"
+    },
+    "source_items": [
+      "Scabbinesse",
+      "Cancers in the Brest",
+      "Hurts in the Brest",
+      "ill Digestion in the Stomack, Spleen, Lungs, upper part of the Belly",
+      "Cold and Moisture being the cause",
+      "Surfets, &c."
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative.",
+    "source_variants": [
+      {
+        "type": "body_and_errata_witnesses",
+        "body": {
+          "pdf_page": 279,
+          "printed_page": 245,
+          "location": "penultimate body-text line, Cancer row",
+          "reading": "Scabbinesse"
+        },
+        "errata": {
+          "pdf_page": 888,
+          "locator": "p 245 l penult. r scabbinesse",
+          "reading": "scabbinesse"
+        },
+        "disposition": "LEXICAL_AGREEMENT_CASE_DIFFERENCE_ONLY",
+        "limits": "No different erroneous reading or corrected printing-state history is inferred."
+      }
+    ]
+  },
+  {
+    "id": "A031",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases signified by the Signes; Leo glyph: Back-bone, Sides, Ribs, Heart, lower part of the Brest",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Leo."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Leo association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Leo row assigns: Backbone, sides, ribs, heart and lower breast; infirmities proceeding from choler and excess of blood.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Leo"
+    },
+    "source_items": [
+      "Back-bone",
+      "Sides",
+      "Ribs",
+      "Heart",
+      "lower part of the Brest",
+      "such infirmities as proceed from Choller and excesse of Blood"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A032",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases signified by the Signes; Virgo glyph: Shewes Melancholly; impediments in the Miseraicks",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Virgo."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Virgo association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Virgo row assigns: Melancholy, diseases in guts, bellyaches, fluxes, etc.; impediments in the Miseraicks and wind colic.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Virgo"
+    },
+    "source_items": [
+      "Shewes Melancholly",
+      "Diseases in the Guts, and Belly-akes",
+      "Fluxes, &c.",
+      "impediments in the Miseraicks",
+      "Wind-chollick"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A033",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases signified by the Signes; Libra glyph: Great Heats in the Back; Surfets by drinking or eating",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Libra."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Libra association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Libra row assigns: Great heats in the back or stone in the reins/kidneys; surfeits from drinking, eating or too much venery; diseases of buttocks, joints, hams and haunches.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Libra"
+    },
+    "source_items": [
+      "Great Heats in the Back, or the Stone in the Reines or Kidneys",
+      "Surfets by drinking or eating, or from too much Venery",
+      "Diseases in the Buttocks, Joints, Hammes and Hanches"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A034",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases signified by the Signes; Scorpio glyph: The Groin and parts about the privy Members",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Scorpio."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Scorpio association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Scorpio row assigns: Groin and parts about the privy members; arse, bladder, piles, stone in the bladder and strangury.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Scorpio"
+    },
+    "source_items": [
+      "The Groin and parts about the privy Members",
+      "the Arse",
+      "Bladder",
+      "Pyles",
+      "Stone in the Bladder",
+      "Strangury"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A035",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases signified by the Signes; Sagittarius glyph: The Hippes, Hammes, Buttocks, Fistula's, Itches, Sciatica's",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Sagittarius."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Sagittarius association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Sagittarius row assigns: Hips, hams, buttocks, fistulas, itches and Sciatica's.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Sagittarius"
+    },
+    "source_items": [
+      "The Hippes",
+      "Hammes",
+      "Buttocks",
+      "Fistula's",
+      "Itches",
+      "Sciatica's"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A036",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases signified by the Signes; Capricorn glyph: The Knees, back part of the Hammes; proceeding of Melancholly",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Capricorn."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Capricorn association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Capricorn row assigns: Knees and back of hams; scurfs and itches in/about the knees proceeding from melancholy.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Capricorn"
+    },
+    "source_items": [
+      "The Knees",
+      "back part of the Hammes",
+      "Scurfs and Itches in and about the Knees, proceeding of Melancholly"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A037",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases signified by the Signes; Aquarius glyph: The Legs, Shin-bone and Calves of the Legs, with the Ancles",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Aquarius."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Aquarius association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Aquarius row assigns: Legs, shinbone, calves and ankles.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Aquarius"
+    },
+    "source_items": [
+      "The Legs",
+      "Shin-bone and Calves of the Legs, with the Ancles"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A038",
+    "chapter": "XLIV",
+    "section": "diseases_signified_by_signs",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases signified by the Signes; Pisces glyph: The Ancle-bone and Feet, Gouts, Swellings in those parts",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Pisces."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Pisces association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Pisces row assigns: Ankle-bone and feet; gouts and swellings in those parts.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "sign",
+      "value": "Pisces"
+    },
+    "source_items": [
+      "The Ancle-bone and Feet",
+      "Gouts",
+      "Swellings in those parts"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A039",
+    "chapter": "XLIV",
+    "section": "diseases_of_planets",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases of the Planets; Saturn glyph: of noyse or rumbling in the right Eare and Head",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Saturn."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Saturn association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Saturn row assigns: Noise or rumbling in right ear and head; deafness, toothache, pain in bones and bladder; all cold diseases proceeding from a deflux of humours; gout, scab, melancholy infirmities, leprosy, palsy, consumptions, black jaundice, quartan agues, Iliack-passion, dropsy, Chin-coughs, and catarrhs of rheums falling upon lungs and pectorals.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "planet",
+      "value": "Saturn"
+    },
+    "source_items": [
+      "noyse or rumbling in the right Eare and Head",
+      "Deafnesse",
+      "the Tooth-ach",
+      "paine in the Bones, in the Bladder",
+      "all cold Diseases proceeding from a deflux of the Humours",
+      "the Gout",
+      "Scab",
+      "Melanchollick infirmities",
+      "Leprosie",
+      "Palsie",
+      "Consumptions",
+      "black-Jaundies",
+      "quartan Agues",
+      "the Iliack-passion",
+      "Dropsie",
+      "Chin-coughs",
+      "Catarres of Rheums falling upon the Lungs and Pectorals"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A040",
+    "chapter": "XLIV",
+    "section": "diseases_of_planets",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases of the Planets; Jupiter glyph: The Lungs, Ribs, Grissels, Liver, the Pulse, the Seed, Arteries",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Jupiter."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Jupiter association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Jupiter row assigns: Lungs, ribs, Grissels, liver, pulse, seed, arteries; apoplexies, pleurisies, wringings at heart, convulsions, inflammations of liver, diseases in head, prickings/shootings near or upon the ridge-bone; all windiness in veins/body, or any diseases arising from putrefaction in blood, etc.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "planet",
+      "value": "Jupiter"
+    },
+    "source_items": [
+      "The Lungs",
+      "Ribs",
+      "Grissels",
+      "Liver",
+      "the Pulse",
+      "the Seed",
+      "Arteries",
+      "Apoplexies",
+      "Pluresies",
+      "wringings at the Heart",
+      "Convulsions",
+      "Inflamations of the Liver",
+      "Diseases in the Head",
+      "prickings and shootings neer or upon the Ridg-bone",
+      "all windinesse in the Veines and Body, or any Diseases arising from putrifaction in the Blood, &c."
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A041",
+    "chapter": "XLIV",
+    "section": "diseases_of_planets",
+    "pdf_pages": [
+      280
+    ],
+    "printed_pages": [
+      246
+    ],
+    "visible_printed_labels": {
+      "280": "244"
+    },
+    "anchor": "Diseases of the Planets; Mars glyph: The left Eare, Gall, Reines, Privities and Stones",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Mars."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Mars association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Mars row assigns: Left ear, gall, reins, privities and stones; plague, face wounds, imposthumations, burning fevers, yellow jaundice, carbuncles, fistulas, epilepsies, bloody flux, calentures and St. Anthony's fire.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A01"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "planet",
+      "value": "Mars"
+    },
+    "source_items": [
+      "The left Eare",
+      "Gall",
+      "Reines",
+      "Privities and Stones",
+      "the Plague",
+      "wounds in the Face",
+      "Imposthumations",
+      "burning-Feavers",
+      "yellow-Jaundies",
+      "Carbuncles",
+      "Fistula's",
+      "Epilepsies",
+      "bloody-Flux",
+      "Calentures",
+      "St. Anthonies fire"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A042",
+    "chapter": "XLIV",
+    "section": "diseases_of_planets",
+    "pdf_pages": [
+      281
+    ],
+    "printed_pages": [
+      247
+    ],
+    "visible_printed_labels": {
+      "281": "247"
+    },
+    "anchor": "Diseases of the Planets; Sun glyph: right Eye of a man, left of a woman; Swoonings or sudden tremblings",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Sun."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Sun association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Sun row assigns: Brain, heart, eyesight; man's right eye and woman's left; cramps, swoonings or sudden tremblings at heart; Cardiack Passion, fluxes in eyes, catarrhs and red choler.",
+    "exceptions": [
+      "The right/left eye assignment is stated in the source's man/woman terms; no extension to other categories is supplied."
+    ],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "planet",
+      "value": "Sun"
+    },
+    "source_items": [
+      "The Braine",
+      "Heart",
+      "Eye-sight",
+      "right Eye of a man, left of a woman",
+      "Cramps",
+      "Swoonings or sudden tremblings at the Heart",
+      "the Cardiack Passion",
+      "Fluxes in the Eyes",
+      "Catarres",
+      "red Choller"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A043",
+    "chapter": "XLIV",
+    "section": "diseases_of_planets",
+    "pdf_pages": [
+      281
+    ],
+    "printed_pages": [
+      247
+    ],
+    "visible_printed_labels": {
+      "281": "247"
+    },
+    "anchor": "Diseases of the Planets; Venus glyph: The Matrix, Genitals, Paps; when presently after eating, all comes up againe",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Venus."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Venus association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Venus row assigns: Matrix, genitals, paps, throat, liver, sperm or seed in man or woman; suffocations or defections in matrix, Pissing Disease, gonorrhoea, debility in the act of generation, strangury, weak stomach/liver, French or Spanish pocks, imbecility or desire to vomit, or the disease in which everything comes up immediately after eating.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "planet",
+      "value": "Venus"
+    },
+    "source_items": [
+      "The Matrix",
+      "Genitals",
+      "Paps",
+      "Throat",
+      "Liver",
+      "Sperme, or Seed in man or woman",
+      "Suffocations or Defections in the Matrix",
+      "Pissing Disease",
+      "Gonorrhaea",
+      "Debility in the Act of Generation",
+      "Strangury",
+      "weaknesse of Stomack and Liver",
+      "French or Spanish Pocks",
+      "imbecility or desire to vomit, or that Disease when presently after eating, all comes up againe"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A044",
+    "chapter": "XLIV",
+    "section": "diseases_of_planets",
+    "pdf_pages": [
+      281
+    ],
+    "printed_pages": [
+      247
+    ],
+    "visible_printed_labels": {
+      "281": "247"
+    },
+    "anchor": "Diseases of the Planets; Mercury glyph: The Braine, Spirit, Fancy, Imagination, Speech, Tongue",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Mercury."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Mercury association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Mercury row assigns: Brain, spirit, fancy, imagination, speech, tongue, fingers and hands; privation of sense, madness, lethargy, stammering, hoarseness, coughs, falling evil and abundance of spittle, etc.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "planet",
+      "value": "Mercury"
+    },
+    "source_items": [
+      "The Braine",
+      "Spirit",
+      "Fancy",
+      "Imagination",
+      "Speech",
+      "Tongue",
+      "Fingers",
+      "Hands",
+      "privation of Sense",
+      "Madnesse",
+      "Lethargy",
+      "Stammering",
+      "Hoarcenesse",
+      "Coughes",
+      "falling Evill",
+      "aboundance of Spettle, &c."
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A045",
+    "chapter": "XLIV",
+    "section": "diseases_of_planets",
+    "pdf_pages": [
+      281
+    ],
+    "printed_pages": [
+      247
+    ],
+    "visible_printed_labels": {
+      "281": "247"
+    },
+    "anchor": "Diseases of the Planets; Moon glyph: Left Eye of man, right Eye of a woman; viz. Loosenesse",
+    "kind": "table_assignment",
+    "conditions": [
+      "Association row for Moon."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Moon association in the source table.",
+      "executable": false
+    },
+    "assertion": "Lilly's Moon row assigns: Man's left eye and woman's right; brain, intestines/small guts, bladder and taste; falling sickness, palsy, colic, menstruation in women, apostems, belly fluxes (namely looseness), and all coagulated crude humours in any body part.",
+    "exceptions": [
+      "The right/left eye assignment is stated in the source's man/woman terms; no extension to other categories is supplied."
+    ],
+    "uncertainty": [
+      "U-A05"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A010"
+    ],
+    "lookup_key": {
+      "namespace": "planet",
+      "value": "Moon"
+    },
+    "source_items": [
+      "Left Eye of man, right Eye of a woman",
+      "the Braine",
+      "the Intestines or small Guts",
+      "the Bladder",
+      "Taste",
+      "falling-Sicknesse",
+      "Palsie",
+      "Collick",
+      "Menstrues in women",
+      "Apostems",
+      "Fluxes of the Belly, viz. Loosenesse",
+      "all coagulated, crude Humours in any part of the Body"
+    ],
+    "source_items_transcription": "Source-wording list segments: long s and ligatures normalized, line-wrap hyphenation joined, source vocabulary retained; list segmentation, capitalization and glyph-name lookup keys are editorial metadata, not modern diagnostic mappings. The original page image remains authoritative."
+  },
+  {
+    "id": "A046",
+    "chapter": "XLIV",
+    "section": "purpose_of_duration_judgment",
+    "pdf_pages": [
+      281
+    ],
+    "printed_pages": [
+      247
+    ],
+    "visible_printed_labels": {
+      "281": "247"
+    },
+    "anchor": "From what precedes, it's easie to discover; the better to comfort him if life be ordained",
+    "kind": "source_context",
+    "conditions": [
+      "The affected member, disease quality, cause and original rise have been considered."
+    ],
+    "condition_logic": {
+      "status": "source_context_only",
+      "expression": "Source's stated purpose, including its conditional alternatives; not a present-day care instruction.",
+      "executable": false
+    },
+    "assertion": "Lilly claims the preceding material makes discovery of those features easy and says it is requisite to acquaint the sick person with disease length/shortness and access or recess: to comfort them if life is ordained, or make them more penitent and prepared for heaven if apparent testimonies of death are seen.",
+    "exceptions": [
+      "The comfort and penitence alternatives are conditional and theological statements in the source."
+    ],
+    "uncertainty": [
+      "U-A17"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A007",
+      "A010",
+      "A039",
+      "A040",
+      "A041",
+      "A042",
+      "A043",
+      "A044",
+      "A045"
+    ]
+  },
+  {
+    "id": "A047",
+    "chapter": "XLIV",
+    "section": "duration_seasons",
+    "pdf_pages": [
+      281
+    ],
+    "printed_pages": [
+      247
+    ],
+    "visible_printed_labels": {
+      "281": "247"
+    },
+    "anchor": "Sicknesses happening in the Winter are usually more long",
+    "kind": "rule",
+    "conditions": [
+      "A sickness occurs in winter."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Seasonal association with the source's usually qualifier.",
+      "executable": false
+    },
+    "assertion": "Lilly says winter sicknesses are usually longer and of long continuance.",
+    "exceptions": [
+      "Usually, not an unqualified every-case claim."
+    ],
+    "uncertainty": [
+      "U-A17"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A048",
+    "chapter": "XLIV",
+    "section": "duration_seasons",
+    "pdf_pages": [
+      281
+    ],
+    "printed_pages": [
+      247
+    ],
+    "visible_printed_labels": {
+      "281": "247"
+    },
+    "anchor": "in the Summer more short",
+    "kind": "rule",
+    "conditions": [
+      "A sickness occurs in summer."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Seasonal association, contrasting with the preceding winter statement.",
+      "executable": false
+    },
+    "assertion": "Lilly says sicknesses occurring in summer are shorter.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A17"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046",
+      "A047"
+    ]
+  },
+  {
+    "id": "A049",
+    "chapter": "XLIV",
+    "section": "duration_seasons",
+    "pdf_pages": [
+      281
+    ],
+    "printed_pages": [
+      247
+    ],
+    "visible_printed_labels": {
+      "281": "247"
+    },
+    "anchor": "in the Spring they are reputed healthfull",
+    "kind": "rule",
+    "conditions": [
+      "A sickness occurs in spring."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Preserve the source's reputed status.",
+      "executable": false
+    },
+    "assertion": "Lilly says spring sicknesses are reputed healthful.",
+    "exceptions": [
+      "Reputed is the source's qualification and is not changed to an empirical finding."
+    ],
+    "uncertainty": [
+      "U-A05",
+      "U-A17"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A050",
+    "chapter": "XLIV",
+    "section": "duration_seasons",
+    "pdf_pages": [
+      281
+    ],
+    "printed_pages": [
+      247
+    ],
+    "visible_printed_labels": {
+      "281": "247"
+    },
+    "anchor": "in the Autumne, for the most part Diseases mortall and pernicious are stirred up",
+    "kind": "rule",
+    "conditions": [
+      "Autumn is the season under consideration."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Seasonal association qualified by for the most part.",
+      "executable": false
+    },
+    "assertion": "Lilly says that in autumn, for the most part, mortal and pernicious diseases are stirred up.",
+    "exceptions": [
+      "For the most part is retained."
+    ],
+    "uncertainty": [
+      "U-A17"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A051",
+    "chapter": "XLIV",
+    "section": "duration_planetary_causes",
+    "pdf_pages": [
+      281,
+      282
+    ],
+    "printed_pages": [
+      247,
+      248
+    ],
+    "visible_printed_labels": {
+      "281": "247",
+      "282": "248"
+    },
+    "anchor": "cold and dry Diseases which proceed from Saturn; generally are regulated by the Sun",
+    "kind": "rule",
+    "conditions": [
+      "Cold and dry diseases proceed from Saturn, are stirred up by him, or have him as author."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Source's cold/dry Saturn class; the sentence is complete only across PDF281-282.",
+      "executable": false
+    },
+    "assertion": "Lilly calls these Saturnian cold and dry diseases more permanent and long, and says they are generally regulated by the Sun.",
+    "exceptions": [
+      "Generally qualifies the solar regulation claim."
+    ],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A052",
+    "chapter": "XLIV",
+    "section": "duration_planetary_causes",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "hot and dry Diseases; influence of Mars and the Sun; motion of the Moon",
+    "kind": "rule",
+    "conditions": [
+      "Hot and dry diseases are procreated from the influence of Mars and the Sun, in the source's wording."
+    ],
+    "condition_logic": {
+      "status": "source_grouping_unresolved",
+      "expression": "Retain the Mars-and-Sun class wording without deciding an executable joint-versus-alternative trigger.",
+      "executable": false
+    },
+    "assertion": "Lilly says these hot and dry diseases are short and determined by the Moon's motion.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A053",
+    "chapter": "XLIV",
+    "section": "duration_planetary_list",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "Saturn produceth chronick Infirmities",
+    "kind": "table_assignment",
+    "conditions": [
+      "Saturn is the planet named in this duration list."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Saturn's duration association in the compact list.",
+      "executable": false
+    },
+    "assertion": "Lilly associates Saturn with chronic infirmities.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A051"
+    ]
+  },
+  {
+    "id": "A054",
+    "chapter": "XLIV",
+    "section": "duration_planetary_list",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "Jupiter and Sun short",
+    "kind": "table_assignment",
+    "conditions": [
+      "Jupiter or Sun is the named duration-list entry."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "The source groups Jupiter and Sun under the single short-duration assignment.",
+      "executable": false
+    },
+    "assertion": "Lilly associates Jupiter and the Sun with short infirmities.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A052"
+    ]
+  },
+  {
+    "id": "A055",
+    "chapter": "XLIV",
+    "section": "duration_planetary_list",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "Mars more short, violent and quick",
+    "kind": "table_assignment",
+    "conditions": [
+      "Mars is the planet named in this duration list."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Mars's comparative duration and severity association.",
+      "executable": false
+    },
+    "assertion": "Lilly assigns Mars infirmities that are more short, violent and quick.",
+    "exceptions": [
+      "The source supplies no numerical comparator or duration threshold."
+    ],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A052"
+    ]
+  },
+  {
+    "id": "A056",
+    "chapter": "XLIV",
+    "section": "duration_planetary_list",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "Venus a meane betwixt both",
+    "kind": "table_assignment",
+    "conditions": [
+      "Venus is the planet named in this duration list."
+    ],
+    "condition_logic": {
+      "status": "source_comparison_unresolved",
+      "expression": "Retain 'a meane betwixt both' as an unquantified comparative relation.",
+      "executable": false
+    },
+    "assertion": "Lilly's Venus entry is 'a meane betwixt both'. The exact referents and numerical force of that comparison remain unresolved in this extraction.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A14"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A053",
+      "A054",
+      "A055"
+    ]
+  },
+  {
+    "id": "A057",
+    "chapter": "XLIV",
+    "section": "duration_planetary_list",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "Mercury divers and unconstant",
+    "kind": "table_assignment",
+    "conditions": [
+      "Mercury is the planet named in this duration list."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Mercury's duration-pattern association.",
+      "executable": false
+    },
+    "assertion": "Lilly assigns Mercury diverse and inconstant infirmities.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A058",
+    "chapter": "XLIV",
+    "section": "duration_planetary_list",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "the Moon such as do againe revert; Falling-sicknesse, Giddinesse, Swimming of the Head, Gouts",
+    "kind": "table_assignment",
+    "conditions": [
+      "Moon is the planet named in this duration list."
+    ],
+    "condition_logic": {
+      "status": "source_table_assignment",
+      "expression": "Moon's recurring-infirmity association, with source examples retained.",
+      "executable": false
+    },
+    "assertion": "Lilly assigns the Moon infirmities that recur, with falling sickness, giddiness, swimming of the head, and gouts as examples, followed by etcetera.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A059",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "If the Signe of the sixt be fixed, expect a long Disease",
+    "kind": "rule",
+    "conditions": [
+      "The sixth-house sign is fixed."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Fixed sixth-house sign.",
+      "executable": false
+    },
+    "assertion": "Lilly says to expect a long disease.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A060",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "a moveable Signe, short continuance",
+    "kind": "rule",
+    "conditions": [
+      "The sixth-house sign is moveable."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Moveable sixth-house sign.",
+      "executable": false
+    },
+    "assertion": "Lilly assigns short continuance.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A061",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "a common Signe, a mediocrity; but for the most part, an alteration",
+    "kind": "rule",
+    "conditions": [
+      "The sixth-house sign is common."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Common sixth-house sign; duration and recurrence qualifications are read together.",
+      "executable": false
+    },
+    "assertion": "Lilly assigns a mediocrity, neither too long nor short, but for the most part an alteration of the disease and its return.",
+    "exceptions": [
+      "Read together with the later common-sign prolongation clause and its Pisces exception in A072-A073; no automatic conflict resolution is supplied."
+    ],
+    "uncertainty": [
+      "U-A13",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A062",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "The last degrees of any Signe being upon the cusp of the sixt house",
+    "kind": "rule",
+    "conditions": [
+      "Last degrees of any sign are on the sixth-house cusp."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "The source gives alternative outcomes, not a forced beneficial endpoint.",
+      "executable": false
+    },
+    "assertion": "Lilly says the disease is nearly at an end, or is altering for better or worse.",
+    "exceptions": [
+      "The source permits deterioration as well as improvement."
+    ],
+    "uncertainty": [
+      "U-A07"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A063",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "fixed Signes doe argue the humour not to be expulsed without much time and difficulty",
+    "kind": "rule",
+    "conditions": [
+      "Fixed signs are relevant in the surrounding duration discussion."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Retain the broad fixed-sign wording in its local context; no new house restriction is fabricated.",
+      "executable": false
+    },
+    "assertion": "Lilly says fixed signs indicate that the humour will not be expelled without much time and difficulty.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A059"
+    ]
+  },
+  {
+    "id": "A064",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "When the Lord of the sixt is of evill influence, and placed in the sixt",
+    "kind": "rule",
+    "conditions": [
+      "The sixth lord is of evil influence.",
+      "The sixth lord is placed in the sixth."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Both stated conditions apply.",
+      "executable": false
+    },
+    "assertion": "Lilly calls this an ill omen or unlucky sign of durable and great sickness.",
+    "exceptions": [
+      "The following Fortune-in-like-nature alternative in A065 must be retained as a separate qualification."
+    ],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046",
+      "A065"
+    ]
+  },
+  {
+    "id": "A065",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "but if in the like nature a Fortune be there",
+    "kind": "rule",
+    "conditions": [
+      "A Fortune is there in the like nature, in the source's wording following the sixth-lord placement rule."
+    ],
+    "condition_logic": {
+      "status": "source_grouping_unresolved",
+      "expression": "Scope of 'in the like nature' is not silently expanded or reduced.",
+      "executable": false
+    },
+    "assertion": "Lilly says the disease will soon be cured and is not mortal under this Fortune alternative.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A11",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A066",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "When the Lord of the sixt is stronger then the Lord of the ascendant; Nature is weaker then the Disease",
+    "kind": "rule",
+    "conditions": [
+      "The sixth lord is stronger than the ascendant lord."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Relative strength comparison as stated; no metric or equality policy is supplied here.",
+      "executable": false
+    },
+    "assertion": "Lilly says the disease is like to increase and directs advice to take fit remedies because, in his account, nature is weaker than the disease. This is his historical instruction, not a recommendation by the extractor.",
+    "exceptions": [
+      "Like to preserves the source's modality."
+    ],
+    "uncertainty": [
+      "U-A08",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A067",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "if the Lord of the sixt house be more weak then the Lord of the ascendant",
+    "kind": "rule",
+    "conditions": [
+      "The sixth lord is weaker than the ascendant lord."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Relative strength comparison as stated; no metric or equality policy is supplied here.",
+      "executable": false
+    },
+    "assertion": "Lilly says one may be assured that nature will overcome the disease's malignity without much assistance from the physician.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A08",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A068",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "When Saturn is Lord of the sixt house, and fixed in the Signe he is in",
+    "kind": "rule",
+    "conditions": [
+      "Saturn rules the sixth house.",
+      "Saturn is fixed in the Signe he is in, in the source's wording."
+    ],
+    "condition_logic": {
+      "status": "source_grouping_unresolved",
+      "expression": "The 'fixed in the Signe' phrase is retained without selecting a modern formal meaning.",
+      "executable": false
+    },
+    "assertion": "Lilly says Saturn under this description extremely prolongs the disease.",
+    "exceptions": [
+      "The moveable/terms or swift-motion exception in A070 remains attached to the Saturn discussion."
+    ],
+    "uncertainty": [
+      "U-A10",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046",
+      "A070"
+    ]
+  },
+  {
+    "id": "A069",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "if he be Retrograde or slow in motion, he performes the same",
+    "kind": "rule",
+    "conditions": [
+      "Saturn is the sixth lord in the preceding sentence.",
+      "He is retrograde or slow in motion."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Continue the preceding subject, Saturn as sixth lord; retrograde OR slow in motion.",
+      "executable": false
+    },
+    "assertion": "Lilly says Saturn retrograde or slow in motion performs the same prolongation.",
+    "exceptions": [
+      "The subject and sixth-lord context carry from A068; the following exception A070 is retained."
+    ],
+    "uncertainty": [
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A068",
+      "A070"
+    ]
+  },
+  {
+    "id": "A070",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "but if he be in a moveable Sign and in any of his Termes, or swift in motion",
+    "kind": "rule_exception",
+    "conditions": [
+      "Saturn is the sixth lord in the surrounding discussion.",
+      "The source gives moveable sign and any of his terms, or swift motion."
+    ],
+    "condition_logic": {
+      "status": "source_grouping_unresolved",
+      "expression": "Grouping is unresolved: preserve '(moveable sign and own terms), or swift motion' as source wording without asserting an executable formula.",
+      "executable": false
+    },
+    "assertion": "Lilly presents a mitigating exception whose conclusion reads: 'he is not then much unfortunate, or will he greatly prolong the Disease.' The printed 'or will he' is retained rather than silently corrected.",
+    "exceptions": [
+      "The conjunction wording and the AND/OR grouping remain unresolved; this is not executable.",
+      "No numerical speed threshold or chosen terms system is supplied in this passage."
+    ],
+    "uncertainty": [
+      "U-A09",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A071",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282
+    ],
+    "printed_pages": [
+      248
+    ],
+    "visible_printed_labels": {
+      "282": "248"
+    },
+    "anchor": "a moveable Signe in the sixt, and the Moon likewise, and no impediment otherwayes appearing",
+    "kind": "rule",
+    "conditions": [
+      "A moveable sign is in the sixth.",
+      "The Moon is likewise, in the source's wording.",
+      "No other impediment appears."
+    ],
+    "condition_logic": {
+      "status": "source_grouping_unresolved",
+      "expression": "All listed conditions are retained; the reach of 'likewise' and definition of impediment are not machine-resolved.",
+      "executable": false
+    },
+    "assertion": "Lilly says the disease continues only a while.",
+    "exceptions": [
+      "The no-other-impediment condition is essential and is not omitted."
+    ],
+    "uncertainty": [
+      "U-A12",
+      "U-A16"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A060"
+    ]
+  },
+  {
+    "id": "A072",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282,
+      283
+    ],
+    "printed_pages": [
+      248,
+      249
+    ],
+    "visible_printed_labels": {
+      "282": "248",
+      "283": "249"
+    },
+    "anchor": "common Signes doe more long continue any infirmity, except Pisces",
+    "kind": "rule",
+    "conditions": [
+      "Common signs are relevant in the surrounding duration discussion."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "Common-sign prolongation with the explicit Pisces-on-sixth-cusp exception retained.",
+      "executable": false
+    },
+    "assertion": "Lilly says common signs make an infirmity continue longer, except Pisces on the sixth cusp as stated in the completed following clause.",
+    "exceptions": [
+      "Pisces on the sixth cusp is excepted and treated as equivalent to a moveable sign in A073.",
+      "The earlier mediocrity/recurrence statement A061 remains in the source; this extractor does not impose a conflict hierarchy."
+    ],
+    "uncertainty": [
+      "U-A13"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A061",
+      "A073"
+    ]
+  },
+  {
+    "id": "A073",
+    "chapter": "XLIV",
+    "section": "signs_long_short_sickness",
+    "pdf_pages": [
+      282,
+      283
+    ],
+    "printed_pages": [
+      248,
+      249
+    ],
+    "visible_printed_labels": {
+      "282": "248",
+      "283": "249"
+    },
+    "anchor": "except Pisces, for that being upon the cusp of the sixt, I ever found / it equivalent to a moveable Signe",
+    "kind": "author_report_exception",
+    "conditions": [
+      "Pisces is on the sixth-house cusp."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_non_executable",
+      "expression": "The source's explicit exception; the predicate completes on PDF283 before the next Moon-application sentence.",
+      "executable": false
+    },
+    "assertion": "Lilly says that with Pisces on the sixth cusp he has ever found it equivalent to a moveable sign. This is his first-person observational assertion, not independent corroboration.",
+    "exceptions": [
+      "The statement qualifies common-sign prolongation; it is not generalized here beyond Pisces on the sixth cusp."
+    ],
+    "uncertainty": [
+      "U-A13",
+      "U-A17"
+    ],
+    "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+    "dependencies": [
+      "A060"
+    ]
+  }
+]
