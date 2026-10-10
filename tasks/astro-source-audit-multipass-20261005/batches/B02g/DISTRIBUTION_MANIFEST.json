@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "batch": "B02g",
+  "source_commit": "4fbdc84e8dcd90d56edee1731010b7db9333edd9",
+  "source_tree": "383ef91784fb6e16c8fd8547d08d74c5df180938",
+  "artifacts": [
+    {
+      "filename": "Astrology-Lilly-Wealth-20261010.md",
+      "repository_path": "tasks/astro-source-audit-multipass-20261005/batches/B02g/deliverables/Astrology-Lilly-Wealth-20261010.md",
+      "bytes": 18629,
+      "sha256": "aa33ef5d9918caeab5a2ebfd94919e00e660de582c766a748bfee6bb635bf9b0"
+    },
+    {
+      "filename": "Astrology-Lilly-Wealth-Records-20261010.zip",
+      "repository_path": "tasks/astro-source-audit-multipass-20261005/batches/B02g/deliverables/Astrology-Lilly-Wealth-Records-20261010.zip",
+      "bytes": 194907,
+      "sha256": "1b271ea1f3966f199b2c8d79274e8b3ea3c1dc702abc27879866533ba90e4830"
+    },
+    {
+      "filename": "Astrology-Lilly-Handoff-B02g-20261010.md",
+      "repository_path": "tasks/astro-source-audit-multipass-20261005/batches/B02g/deliverables/Astrology-Lilly-Handoff-B02g-20261010.md",
+      "bytes": 8666,
+      "sha256": "38a4f918994ab296794d713408928abd5ea8ef65b8ce04b52c618da91e627b75"
+    }
+  ],
+  "zip_members": 54,
+  "archive_integrity": "All members readable; all 53 non-self packet hashes match after extraction",
+  "standalone_usability": {
+    "status": "PASS",
+    "tests": 28,
+    "exit_code": 0,
+    "log": "PACKET_USABILITY.txt",
+    "distinct_total_still": 121
+  },
+  "publication_receipt_sha256": "2366b2cc73fc194534cfb4e349f209419b881cd08bf6f05c4f09bdaf88d70adf",
+  "owner_delivery": "Requires later DELIVERY_RECEIPT.json; not yet implied by archive creation."
+}

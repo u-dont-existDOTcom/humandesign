@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "batch": "B02g",
+  "publication_state": "SOURCE_SNAPSHOT_PUBLISHED_AND_VERIFIED",
+  "repository": "u-dont-existDOTcom/humandesign",
+  "canonical_branch": "research/six-rule-life-timing-20261001",
+  "isolated_branch": "research/lilly-wealth-b02g-20261010",
+  "source_commit": "4fbdc84e8dcd90d56edee1731010b7db9333edd9",
+  "source_tree": "383ef91784fb6e16c8fd8547d08d74c5df180938",
+  "local_execution_commit": "3084dc6bd6115767caefedc3ed3cf368e1fc7dee",
+  "local_execution_tree": "383ef91784fb6e16c8fd8547d08d74c5df180938",
+  "identical_full_git_trees": true,
+  "commit_identity_difference": "API commit preserves existing remote checkpoint parent 080e0149; local execution commit has base 3df3a7f as parent. The complete trees match exactly.",
+  "base_commit": "3df3a7f6f16f9d90700edc7af79e14c76ceaecd9",
+  "remote_checkpoint_parent": "080e0149a522fd01c74d5cdefe7a673332d4ef81",
+  "expected_sha_nonforce_updates": true,
+  "payload_files": 49,
+  "manifest_sha256": "328ce2d785d1c31931039459b2338bb3ab5bf214e0d6a7a3d4e19d430c0dd677",
+  "readback": {
+    "REPORT.md": "Exact complete text equality at source commit",
+    "RULES.json": "Exact complete text equality at source commit",
+    "LILLY_SOURCE_EXTRACTION_INDEX_V1.json": "Exact complete text equality at source commit",
+    "canonical_MANIFEST.json": "Exact complete text equality using canonical branch ref"
+  },
+  "diff_scope": "Only B02g, the Lilly extraction index and new dated state; all earlier source batches, participant files, fitted models and freezes unchanged.",
+  "raw_source_in_git": false,
+  "distribution_and_owner_delivery": "Later receipts establish packet distribution and owner filesystem delivery; not implied by this source publication."
+}
