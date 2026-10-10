@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "batch": "B02j",
+  "status": "SOURCE_DISTRIBUTION_AND_OWNER_DELIVERY_VERIFIED",
+  "source_core_commit": "15c8945821221fc159ebfda79c6ad2536c9f6c7b",
+  "distribution_commit": "32d1476fccecb1975e69298fc2c1f92ad9f6ca08",
+  "distribution_tree": "3c13c7ffa690c107b2bd0ad4f47faa1c7077c8b2",
+  "repository": "u-dont-existDOTcom/humandesign",
+  "canonical_branch": "research/six-rule-life-timing-20261001",
+  "isolated_branch": "research/lilly-fifth-house-b02j-20261010",
+  "expected_sha_nonforce_updates": true,
+  "both_distribution_refs_fetched_and_full_tree_verified": true,
+  "packet_actual_extraction": {
+    "entries": 113,
+    "manifest_payload_hashes_matched": 112,
+    "existing_tests_passed": 36,
+    "exit_code": 0,
+    "new_unique_test_methods": 0,
+    "post_test_files_unchanged": true
+  },
+  "owner_delivery": {
+    "directory": "Téléchargements",
+    "file_count": 3,
+    "source_revision": "32d1476fccecb1975e69298fc2c1f92ad9f6ca08",
+    "exact_http_manifest_git_blob_and_disk_hashes_matched": true,
+    "receipt_sha256": "772ffb81232a891fc802a8b04fdb103eee97d7a3aebcea47f5f941d79b653f75"
+  },
+  "source_inventory": {
+    "new": 201,
+    "ids": "R1157–R1357",
+    "general": 166,
+    "worked_case_records": 35,
+    "enquiries": 2,
+    "charts": 2,
+    "lilly": 1357,
+    "retained_ptolemy": 1066,
+    "combined": 2423,
+    "typed_limit_entries": 64
+  },
+  "recovery_limit": "Two independent raw source-first files remain unavailable; their identities and declarations survive. Exact initial diagnosis, claim-check, diagnostic receipt and independent test log were recovered by original SHA256.",
+  "self_reference_policy": "This file records publication and delivery already verified before this receipt is committed. Its containing closeout revision is identified by Git history and the final response after a fetched full-tree and protected-inventory comparison.",
+  "parent_audit_status": "OPEN",
+  "completed_batch_pause_authorized": true,
+  "runtime_promotions": 0,
+  "predictive_accuracy_evaluated": false
+}

@@ -91,12 +91,25 @@
     "independent": "source-first complete block and frozen final claim check; no producer context"
   },
   "test_lane": "Source-data and bounded reference arithmetic; no runtime/model edits. Run new focused suite once at source checkpoint and actual extracted-packet usability once. Reuse dependencies only if needed; no full application or predictive-evaluation claim.",
-  "phase": "SOURCE_COMPLETE_RECONCILED_PREPARING_SOURCE_CORE_PUBLICATION",
+  "phase": "COMPLETE_VERIFIED_PUBLISHED_DELIVERED",
   "stop_admission": {
     "parent_outcome": "OPEN",
     "pause_authority": "Existing owner-authorized PASS_PLAN pause_contract permits completed source-sized batches.",
     "current_completion_requirement": "Complete fifth-house block, verify, publish and deliver usable report/packet/handoff.",
-    "finalization_admitted": false
+    "finalization_admitted": true,
+    "completed_batch": "Lilly II XXXIX–XLIII and every intervening unnumbered passage",
+    "remaining_admitted_source_units": 0,
+    "completion_evidence": [
+      "PACKET_USABILITY.json",
+      "DELIVERY_RECEIPT.json",
+      "FINAL_PUBLICATION_RECEIPT.json",
+      "FINAL_PRESERVATION_CHECK.json",
+      "CLOSEOUT.md"
+    ],
+    "source_core_commit": "15c8945821221fc159ebfda79c6ad2536c9f6c7b",
+    "distribution_commit": "32d1476fccecb1975e69298fc2c1f92ad9f6ca08",
+    "next_pass": "PDF277 / printed243: sixth-house heading, topic line and XLIV including opening paragraph.",
+    "containing_receipt_publication": "Fetch and compare the containing closeout revision before the final response."
   },
   "recovery_limit": "Two independent raw source-first artifacts remain unavailable; exact initial diagnosis/claim-check/diagnostic-receipt and independent test bytes recovered by original hashes."
 }

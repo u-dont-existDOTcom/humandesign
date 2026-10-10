@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "batch": "B02j",
+  "status": "PASS",
+  "base_commit": "220b2e981de80ed986d8fdfd369b7d3b1f1c34ca",
+  "compared_distribution_commit": "32d1476fccecb1975e69298fc2c1f92ad9f6ca08",
+  "protected_files": 1459,
+  "protected_inventory_sha256": "bf33dd07a5e744d8a21b2ab73e1edd3e0f3b28feff4f44060d4ee045ca30f4bf",
+  "protected_inventory_encoding": "UTF-8 JSON mapping repository paths to git ls-tree mode/type/object strings; sort_keys=True and separators=(',', ':').",
+  "protected_paths_modes_types_and_objects_identical": true,
+  "earlier_lilly_index_entries_compared": 9,
+  "earlier_lilly_index_entries_unchanged": true,
+  "earlier_lilly_record_count": 1156,
+  "new_lilly_record_count": 1357,
+  "cumulative_index_sha256": "228db75937d1bf67679de404902634190ea83d8f7ebaaffaa24f937e26285834",
+  "allowed_write_locations": [
+    "tasks/astro-source-audit-multipass-20261005/batches/B02j/",
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+    "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02j.md"
+  ],
+  "closeout_index_modifications": false,
+  "final_publication_enforcement": "The publisher must repeat this protected-inventory and prior-index comparison on the fetched containing closeout commit before the final response; no additional repository mutation is required to encode a self-reference."
+}
