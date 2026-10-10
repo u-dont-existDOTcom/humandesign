@@ -1,0 +1,94 @@
+{
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch": "B02h",
+  "owner_request": "continue the published source audit",
+  "turn_start": "2026-10-10T02:43:28+00:00",
+  "start_time_source": "Visible user message submission time; no intermediate clock reads",
+  "parent_status": "OPEN_MULTIPASS_AUTHORIZED",
+  "base": "1dca5c960e3b49b4a2c6a8f708e8d31c38b9e622",
+  "integration_branch": "research/six-rule-life-timing-20261001",
+  "isolated_branch": "research/lilly-third-house-b02h-20261010",
+  "scope": "Complete Lilly third-house section: third-house heading/preamble below divider on PDF221 through PDF235; stop before fourth-house heading on PDF236. Includes XXIX, XXX and XXXI and all intervening unnumbered sections and example preambles.",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_identity_provenance": "Same retained original used and hash-verified in B02g; no new source download or source edit.",
+  "activation": {
+    "status": "ACTIVE",
+    "route": "Current owner continuation; live default-branch UDA AGENTS and LESSON-INDEX fetched this turn, project AGENTS and V2 source protocol reloaded; actual canonical ref matches completed B02g.",
+    "uda_root_blob": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "uda_index_blob": "b83848f61516389cf997d142bdd411f1c52a5024",
+    "relevant_current_patterns": [
+      "source-interpretation-provenance",
+      "independent-evaluation-separation",
+      "task-time-lesson-activation",
+      "worker-github-publication-and-recovery",
+      "human-readable-operational-references",
+      "context-compaction-resilience"
+    ]
+  },
+  "active_controls": [
+    {
+      "rule": "source-provenance",
+      "required": "Anchor source statements to original pages/passages; retain all conditions, alternative conjunctions, reception direction, radical/turned-house context, target and temporal resolution. Historical source claims remain distinct from our calculations and outside corroboration.",
+      "failure": "Unsupported paraphrase, silent emendation, wrong frame or stronger outcome claim",
+      "repair": "Reopen source, correct dependents or preserve uncertainty",
+      "enforcement": "Semantic review and source-data assertions"
+    },
+    {
+      "rule": "verified-reading",
+      "required": "Inspect original whole-page images with existing text; disclose actually read pages separately from rendered pages and boundary previews.",
+      "failure": "Glyph guessed from damaged text or rendering counted as reading",
+      "repair": "Inspect original at sufficient resolution; record disagreement",
+      "enforcement": "Reading receipts and source check"
+    },
+    {
+      "rule": "genre-and-exposure",
+      "required": "Historical horary source intake only; no present-person health, safety, financial or political forecasts. No participant-data reads or runtime/model/freeze edits. Supplied memory already includes biographies; no unexposed or blinded claim.",
+      "failure": "Personal fitting, current advice or false independence claim",
+      "repair": "Remove unsupported use and retain source-only meaning",
+      "enforcement": "Diff allowlist and semantic review"
+    },
+    {
+      "rule": "bounded-calculation",
+      "required": "Reuse existing geometry; compute only explicit reference relationships and static printed-coordinate arithmetic. Keep missing minutes, house interpretation, source timing discretion and calendar/ephemeris parity unresolved where unsupported.",
+      "failure": "Invented thresholds, civil dates or predictive validation",
+      "repair": "Restrict calculation to supported inputs; retain gaps",
+      "enforcement": "Focused meaningful tests and arithmetic reconciliation"
+    },
+    {
+      "rule": "independent-claim-check",
+      "required": "Source reader freezes findings before seeing candidate rationale. Final fresh checker receives report and claim ledger plus minimum authoritative sources, then findings are reconciled.",
+      "failure": "Producer review called independent or key claims unchecked",
+      "repair": "Run bounded separate-context diagnosis and resolve actual findings",
+      "enforcement": "Frozen findings, dispositions and reconciliation"
+    },
+    {
+      "rule": "durable-delivery",
+      "required": "Publish authorized new B02h files and updated Lilly index/new dated state; verify exact remote content; deliver report, usable packet and handoff to owner Downloads. Never replay historical restricted payloads.",
+      "failure": "Local-only completion, missing companion, stale frontier, restricted replay",
+      "repair": "Use current authorized GitHub API route, verify bytes and destination",
+      "enforcement": "Manifests, remote readback, packet usability and delivery receipts"
+    }
+  ],
+  "allowed_repo_writes": [
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/",
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+    "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02h.md"
+  ],
+  "protected_paths": [
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "all earlier source batch files and dated checkpoints",
+    "participant inputs, fitted models and prediction freezes"
+  ],
+  "publication_preflight": "Previous turn verified shell reads/fetch and connected GitHub Git-data writes. Same authorized repository/branch scope; use expected-SHA nonforce updates; do not retry credentialless shell push.",
+  "phase": "SOURCE_READING_AND_EXTRACTION",
+  "stop_admission": {
+    "parent_outcome": "OPEN source-complete multi-author audit",
+    "pause_authority": "Existing PASS_PLAN.json pause_contract: at each completed pass/batch, save progress and stop at declared boundary when returning; next continuation resumes exact first unfinished unit. INTAKE_AND_PASS_PLAN specifies source-sized batches.",
+    "current_completion_requirement": "Complete source span, verify extraction/calculations, publish and deliver usable third-house batch.",
+    "future_source_start": "Fourth-house heading/preamble on PDF236, followed by Chapter XXXII on that page; confirm exact boundary before closeout.",
+    "finalization_admitted": false
+  }
+}

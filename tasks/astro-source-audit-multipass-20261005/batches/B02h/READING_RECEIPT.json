@@ -1,0 +1,80 @@
+{
+  "batch": "B02h",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "identity_verification": "Retained source; hash checked in B02g, not rehashed this turn.",
+  "rendered_original_pdf_pages": [
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236
+  ],
+  "root_original_whole_pages_visually_read_for_extraction": [
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235
+  ],
+  "root_boundary_page_visually_read_not_extracted": [
+    236
+  ],
+  "root_existing_text_read": [
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235
+  ],
+  "root_render_dpi": 115,
+  "new_ocr": false,
+  "boundaries": {
+    "start": "PDF221/printed187 third-house heading and entire preamble below divider",
+    "internal": "PDF230 above divider ends general rules; heading and chart below belong to XXX; XXX numbered heading on231",
+    "end": "PDF235/printed201 end of hypothetical sibling discussion",
+    "next": "PDF236/printed202 fourth-house heading/preamble, followed by XXXII on that page"
+  },
+  "review_roles": {
+    "general_source_checker": "Fresh separate agent; source-first notes frozen before candidate access; root then read those notes in production; subsequent comparison is not candidate-blind.",
+    "worked_example_reader": "Fresh separate agent extracting from original; root independently reads all example pages.",
+    "reference_helper": "Implementation agent, not independent evaluator."
+  },
+  "exposure": "User biographies existed in inherited memory. No participant records were read for this batch; no unexposed/blinded claim.",
+  "limits": [
+    "Reading and transcription do not validate historical predictions.",
+    "Rendered pages are distinguished from actually inspected pages.",
+    "Glyph-specific additional reading will be recorded separately."
+  ]
+}
