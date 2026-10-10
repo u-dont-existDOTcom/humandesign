@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "batch": "B02i",
+  "status": "PASS_ACTUAL_EXTRACTED_ARCHIVE",
+  "source_core_commit": "73bc36b2cf7553cb769f5d30489d19f8a5893c18",
+  "archive": {
+    "filename": "Astrology-Lilly-Property-Treasure-Records-20261010.zip",
+    "bytes": 1550276,
+    "sha256": "23cc7a7880fffdd1a257ccd1eb75242cdea726090e73283a1359417372dec062"
+  },
+  "actual_fresh_archive_extraction": true,
+  "zip_crc_check": "PASS",
+  "unique_safe_archive_paths": true,
+  "archive_members": 119,
+  "manifested_packet_content_files_verified": 118,
+  "all_archive_members_declared": true,
+  "all_manifested_bytes_rechecked_after_tests": true,
+  "report_matches_published_core_and_packet": true,
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "verify_packet.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "B02i",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "standalone_tests_passed": 29,
+  "pythonpath_removed_for_standalone_run": true,
+  "standard_library_suite": true,
+  "distinct_focused_tests_remain": 111,
+  "archive_repeat_counted_as_additional": false,
+  "log": "TEST_PACKET_USABILITY.txt",
+  "log_sha256": "2e72e06e7845c3bc1c58628dbc4dabd3100521b2f63aaa5a89067ded023b5c47",
+  "extraction_directory_scope": "Fresh task-owned scratch directory; original files not used as the standalone test root.",
+  "owner_delivery_verified_by_this_check": false,
+  "scope": "Packet bytes and standalone bounded source/calculation checks. No empirical predictive validation or owner-copy transport proof."
+}

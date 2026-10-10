@@ -1,0 +1,61 @@
+{
+  "source_revision": "73bc36b2cf7553cb769f5d30489d19f8a5893c18",
+  "source_manifest_sha256": "6c1c3c905f205e0c13f3fb561abb8995c3cb8a531e6677029c0d3554bd90bbb0",
+  "source_publication_receipt_sha256": "ce1f9988e9ea06132887f034237c9630583e29cc1524c5b356af9834fe286877",
+  "stage": "LOCAL_DELIVERABLES_BUILT_FROM_RECORDED_PUBLISHED_SOURCE",
+  "files": [
+    {
+      "filename": "Astrology-Lilly-Property-Treasure-20261010.md",
+      "path": "deliverables/Astrology-Lilly-Property-Treasure-20261010.md",
+      "bytes": 22532,
+      "sha256": "863d14ba22da942f689d1e330e40997d1c7a2d7bcce4d437a4f9c1a6caa9ee27"
+    },
+    {
+      "filename": "Astrology-Lilly-Property-Treasure-Records-20261010.zip",
+      "path": "deliverables/Astrology-Lilly-Property-Treasure-Records-20261010.zip",
+      "bytes": 1550276,
+      "sha256": "23cc7a7880fffdd1a257ccd1eb75242cdea726090e73283a1359417372dec062"
+    },
+    {
+      "filename": "Astrology-Lilly-Handoff-B02i-20261010.md",
+      "path": "deliverables/Astrology-Lilly-Handoff-B02i-20261010.md",
+      "bytes": 6795,
+      "sha256": "04d7f9060941ce4ab41188edaf6e07c2de90e47303aa5de405ab118691246182"
+    }
+  ],
+  "counts": {
+    "source_records": 148,
+    "record_range": "R1009–R1156",
+    "general_records": 119,
+    "narrative_records": 29,
+    "lilly_records": 1156,
+    "ptolemy_records": 1066,
+    "combined_records": 2222,
+    "unresolved": 50,
+    "source_resolved": 6,
+    "new_tests": 29,
+    "retained_tests": 82,
+    "focused_tests": 111,
+    "charts": 1,
+    "coordinate_entries": 22,
+    "source_id": "LILLY1647_WELLCOME_B30338724",
+    "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "source_identity_receipt": "Full retained original SHA256 recomputed this owner turn; match.",
+    "count_sources": [
+      "B02i/RULES.json",
+      "B02i/UNRESOLVED.json",
+      "B02i/TEST_RUN_SUMMARY.json",
+      "B02i/WORKED_NUMERIC_TABLES.json",
+      "context/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+      "context/PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json"
+    ]
+  },
+  "owner_destination": "OS-designated Downloads",
+  "report_matches_core": true,
+  "report_copy_method": "exact manifested AUDIT_REPORT.md bytes; no re-rendering or normalization",
+  "actual_archive_reextraction_verified": false,
+  "standalone_packet_test_run_recorded_here": false,
+  "distribution_published_by_this_program": false,
+  "owner_delivery_verified": false,
+  "next_stage": "Root records actual archive verification, distribution publication and owner-copy readback separately"
+}
