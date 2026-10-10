@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "batch": "B02g",
+  "status": "COMPLETED_SOURCE_BATCH_AND_OWNER_DELIVERY",
+  "parent_status": "OPEN_MULTI_AUTHOR_SOURCE_AUDIT",
+  "source_commit": "4fbdc84e8dcd90d56edee1731010b7db9333edd9",
+  "distribution_commit": "5d2aa0e004598333ba45ccaba50e815d2a4a8e7a",
+  "source_scope": "Lilly Book II XXVII–XXVIII, complete second-house block",
+  "new_records": 122,
+  "lilly_records": 896,
+  "ptolemy_records": 1066,
+  "combined_records": 1962,
+  "unresolved_items": 32,
+  "selected_retrospective_cases": 1,
+  "independent_validation_cases": 0,
+  "distinct_focused_tests": 121,
+  "new_tests": 28,
+  "retained_tests": 93,
+  "final_ledger_claims_pass": 33,
+  "review_limits": "Independent model source/claim check, with frozen findings and targeted repair; operational histories checked through retained attestations. Remote publication and owner delivery verified separately by root.",
+  "obligations": [
+    {
+      "control": "source-provenance",
+      "status": "SATISFIED",
+      "evidence": "RULES.json, READING_RECEIPT.json, SECTION_COVERAGE.json and source reviews"
+    },
+    {
+      "control": "verified-reading",
+      "status": "SATISFIED",
+      "evidence": "All 21 original pages in the extraction span read; separate-reader scope and boundary previews disclosed"
+    },
+    {
+      "control": "genre-and-exposure",
+      "status": "SATISFIED",
+      "evidence": "Horary source research only; no personal fitting, false blinding claim or runtime promotion; protected prior files unchanged"
+    },
+    {
+      "control": "bounded-calculation",
+      "status": "SATISFIED",
+      "evidence": "ARITHMETIC_CHECKS.json, VERIFICATION.json, four actual focused test logs and separate packet usability log"
+    },
+    {
+      "control": "independent-claim-check",
+      "status": "SATISFIED_WITH_DISCLOSED_LIMITS",
+      "evidence": "review/final_claim_check findings, dispositions, targeted reconciliation and whitespace-only formatting receipt"
+    },
+    {
+      "control": "durable-delivery",
+      "status": "SATISFIED",
+      "evidence": "Identical local/remote Git trees; exact file readbacks; PUBLICATION_RECEIPT.json and DELIVERY_RECEIPT.json; all three owner artifacts hash-verified"
+    }
+  ],
+  "manifest_snapshot_unchanged": true,
+  "prior_source_batches_and_personal_freezes_unchanged": true,
+  "raw_pdf_text_images_outside_git": true,
+  "historical_restricted_payloads_retried": false,
+  "lesson_disposition": "Existing provenance, bounded-calculation and delivery controls applied. New doctrine-specific findings remain task-local; no universal methodological or predictive claim is promoted.",
+  "stop_admission": {
+    "finalization_admitted": true,
+    "authority": "Existing owner pause_contract in PASS_PLAN.json permits saving and returning at completed source-sized batch boundaries; INTAKE_AND_PASS_PLAN.md specifies source-sized passes.",
+    "remaining_parent_work": "Other Lilly chapters and authors, then separately designed predictive evaluation.",
+    "next_source_to_extract": {
+      "pdf_page": 221,
+      "printed_page": 187,
+      "position": "Below the horizontal rule: third-house heading and its complete preamble",
+      "then": "Chapter XXIX on PDF 222 / printed 188",
+      "boundary_previously_previewed": true,
+      "not_yet_extracted": true
+    },
+    "no_background_execution_claim": true
+  },
+  "receipt_publication": "The final worker must verify these receipt bytes on the canonical research branch before returning; this file does not contain a circular self-commit claim."
+}

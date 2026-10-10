@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "batch": "B02g",
+  "status": "OWNER_FILESYSTEM_DELIVERY_VERIFIED",
+  "distribution_commit": "5d2aa0e004598333ba45ccaba50e815d2a4a8e7a",
+  "distribution_tree": "7fba20dc8692ad79cfcf700ddc3921abd331ec36",
+  "local_distribution_commit": "2efeacd3aba664a97f904a617b35fdc37025f1ac",
+  "identical_full_git_trees": true,
+  "canonical_and_isolated_refs_verified_at_distribution_commit": true,
+  "destination": {
+    "kind": "Owner OS-designated Downloads directory",
+    "label": "Téléchargements",
+    "resolution": "xdg-user-dir DOWNLOAD on the authorized owner computer"
+  },
+  "transport": "Retrieved each artifact over HTTPS from the exact published revision; HTTP status, size and SHA256 checked before creation; destination bytes read and hashed after creation.",
+  "files": [
+    {
+      "filename": "Astrology-Lilly-Wealth-20261010.md",
+      "bytes": 18629,
+      "sha256": "aa33ef5d9918caeab5a2ebfd94919e00e660de582c766a748bfee6bb635bf9b0",
+      "operation": "created_verified",
+      "http_status": 200
+    },
+    {
+      "filename": "Astrology-Lilly-Wealth-Records-20261010.zip",
+      "bytes": 194907,
+      "sha256": "1b271ea1f3966f199b2c8d79274e8b3ea3c1dc702abc27879866533ba90e4830",
+      "operation": "created_verified",
+      "http_status": 200
+    },
+    {
+      "filename": "Astrology-Lilly-Handoff-B02g-20261010.md",
+      "bytes": 8666,
+      "sha256": "38a4f918994ab296794d713408928abd5ea8ef65b8ce04b52c618da91e627b75",
+      "operation": "created_verified",
+      "http_status": 200
+    }
+  ],
+  "all_verified": true,
+  "process_exit_code": 0,
+  "existing_different_files_overwritten": false,
+  "archive_usability": {
+    "integrity": "54 archive members readable; all 53 non-self content hashes matched after extraction",
+    "tests": 28,
+    "result": "PASS",
+    "counting_limit": "Repeat usability run does not increase the original 121 distinct focused tests.",
+    "log": "PACKET_USABILITY.txt"
+  },
+  "raw_source_delivered_in_archive": false
+}
