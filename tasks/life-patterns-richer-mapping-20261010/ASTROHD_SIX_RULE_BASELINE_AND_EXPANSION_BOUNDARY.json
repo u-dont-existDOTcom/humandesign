@@ -1,0 +1,98 @@
+{
+  "schema": "astrohd-theory-to-behavior-expansion-boundary-v0",
+  "status": "DEVELOPMENT_RESEARCH_PROTOCOL_ONLY_NOT_A_NEW_MODEL",
+  "frozen_baseline_sha256": "89b3766fcfd1c6935335bd13dba9ff812e7f3f7df1ec887e63512b2200c5e076",
+  "frozen_baseline_version": "astrohd-v15-bridge-1.0",
+  "source_paths": {
+    "original_bridge": "reference/research/astrohd_v15_behavioral_bridge.json"
+  },
+  "original_six_clauses_unchanged": [
+    {
+      "original_rule_id": "lilly/lord:3/house_1_10",
+      "original_behavioral_domains": [
+        "insight_translation"
+      ],
+      "source_prediction_paraphrase": "Present clause supports the affirmative sharing-understanding pole.",
+      "changed_in_this_version": false,
+      "new_rules_added": false,
+      "admitted_as_independent_validation": false
+    },
+    {
+      "original_rule_id": "lilly/planet:saturn/benefic_trine",
+      "original_behavioral_domains": [
+        "retreat_privacy"
+      ],
+      "source_prediction_paraphrase": "Present clause supports the affirmative solitude/privacy pole.",
+      "changed_in_this_version": false,
+      "new_rules_added": false,
+      "admitted_as_independent_validation": false
+    },
+    {
+      "original_rule_id": "lilly/planet:venus/house_2_5",
+      "original_behavioral_domains": [
+        "romantic_attachment"
+      ],
+      "source_prediction_paraphrase": "Present clause supports the affirmative romantic-connection pole.",
+      "changed_in_this_version": false,
+      "new_rules_added": false,
+      "admitted_as_independent_validation": false
+    },
+    {
+      "original_rule_id": "phaladeepika/planet:venus/directional",
+      "original_behavioral_domains": [
+        "persuasion_strategy",
+        "romantic_attachment"
+      ],
+      "source_prediction_paraphrase": "Present clause supports at least one of the two inherited alternatives; explicit contradiction requires both to be contradicted.",
+      "changed_in_this_version": false,
+      "new_rules_added": false,
+      "admitted_as_independent_validation": false
+    },
+    {
+      "original_rule_id": "lilly/lord:10/benefic_conjunction",
+      "original_behavioral_domains": [
+        "recognition_entry"
+      ],
+      "source_prediction_paraphrase": "Present clause supports the affirmative invitation/appointment pole.",
+      "changed_in_this_version": false,
+      "new_rules_added": false,
+      "admitted_as_independent_validation": false
+    },
+    {
+      "original_rule_id": "lilly/lord:7/house_4_7_11",
+      "original_behavioral_domains": [
+        "romantic_attachment"
+      ],
+      "source_prediction_paraphrase": "Present clause supports the affirmative romantic-connection pole.",
+      "changed_in_this_version": false,
+      "new_rules_added": false,
+      "admitted_as_independent_validation": false
+    }
+  ],
+  "domain_count_original": 5,
+  "new_astro_claims": [],
+  "no_new_clause_inference": "Richer text answers cannot add independent chart bits when scored through the same fixed six Boolean astrology clauses.",
+  "required_claim_for_expansion": [
+    "Extract a new objective astronomical predicate directly from a specified classical source, including page/section, edition/translation and exact eligibility conditions.",
+    "Freeze its chart-side truth definition independent of every known person and birth time; record conjunction/dependency with old six rules.",
+    "Specify a falsifiable behavioral proposition and plausible alternative from source, not extrapolate from owner anecdotes or chart knowing.",
+    "Design respondent-blind question and behavioral evidence threshold with negative and unknown rules; pre-register each before new-person testing.",
+    "Verify chart computation for selected universe/timezones and report stable time intervals (not arbitrary isolated minutes).",
+    "Compare to original six-rule baseline and independent non-astrological controls on untouched people, with all negative/null cases."
+  ],
+  "candidate_sources": [
+    {
+      "work": "William Lilly Christian Astrology",
+      "policy": "source-read_complete_applied_rules_not_yet_frozen_for_new_cohort"
+    },
+    {
+      "work": "Phaladeepika",
+      "policy": "primary_text_source_edition_page_and_translation_required"
+    },
+    {
+      "work": "Other Hellenistic/Jyotish sources",
+      "policy": "separate_rulesets_and_dependency_audit_before_prospective_admission"
+    }
+  ],
+  "warning": "Owner historical six-rule fit is DEVELOPMENT. Do not call expanding after seeing their DOB or outcomes prospective validation."
+}

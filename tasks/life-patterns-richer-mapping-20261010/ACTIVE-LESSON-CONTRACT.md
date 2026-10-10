@@ -1,0 +1,7 @@
+- Source wording != inferred trait: distinguish exact answer, operational behavioral code, and contested HD theory claim.
+- Avoid target leakage: do not inspect or fit known owner's DOB/chart while designing question-to-feature rules. Historical V3.6 mapping is development evidence only, not an untouched validation source.
+- Question defect is information-quality issue not automatic proof of failure: rate confusion, trivial/normative response, domain scope, mixed constructs, false repeat, asymmetric alternatives, and chart mismatch; repair with explicit contrasts.
+- Keep existing live v1 and historical v7 source/version unchanged. New bridge and wording are explicitly unscored prospective development candidates.
+- Negative evidence requires explicit behavior opposing source prediction and appropriate context; unknown/conditional and model overlap do not become negative or multiple independent hits.
+- Owner sees a usable artifact in Downloads, not an opaque PR or hidden status; statuses reflect actual tests/release.
+- Compare methodology with COSMIN content validity and gold-standard psychological test guidance without claiming the custom Life Patterns interview is itself a validated measure.

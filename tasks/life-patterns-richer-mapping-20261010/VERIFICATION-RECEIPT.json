@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "development_draft_unscored_not_live",
+  "active_question_count": 25,
+  "nominal_theory_hypotheses": 12,
+  "current_questions_with_potential_chart_links": 10,
+  "current_questions_with_no_chart_links": 15,
+  "candidate_wording_revisions": 16,
+  "new_supplemental_questions": 4,
+  "source_input_hashes": {
+    "live_v1": "080c5cc8b0776dbb52dc286e0eb302c80453f138821d76d50e724e8123251611",
+    "existing_v2": "9b6f1262fa3d1f09ae9adeb94d1527c0a20f5dd49594ae6c071afb1bc063be07",
+    "astrohd_frozen_v15": "89b3766fcfd1c6935335bd13dba9ff812e7f3f7df1ec887e63512b2200c5e076"
+  },
+  "artifact_sha256": {
+    "question_to_chart_hypotheses_v0.json": "26814bbde4d1a466460c67cb1323beff2789666016a8e86322560e6ff7c2a775",
+    "source_to_target_evidence_codebook_v0.json": "9b94f2da4054c9da97dc43bfe7fb5ce9db37159a49ffc529ed93eae87295e717",
+    "ASTROHD_SIX_RULE_BASELINE_AND_EXPANSION_BOUNDARY.json": "415d3897bcc8df0a5f00dbc9d2e226137d0edbfef7d8e0fd926be96b5eefa6cb",
+    "RESEARCHER_MAPPING_AUDIT.html": "5e5c752e8dfa65f4b70b4e30267180313b6583bf4444e11400f5205737742f2b",
+    "RICHER_MAPPING_AND_QUESTION_DEFECT_AUDIT.md": "ec3de9aaa788b943e216c6634a50127c7568bda6d7d8178911f202e410adb062",
+    "ASTROHD_SIX_RULE_EXPANSION_ASSESSMENT.md": "2a018a6d5de566ed6ec94764031378b628be6d8a5806839e8e9c3ae1c32b0ffc"
+  },
+  "owner_delivery": "verified_HTML_and_files_in_OS_Downloads",
+  "researcher_guide_link": "installed_and_verified",
+  "private_owner_personal_data_committed": false,
+  "scoring_new_claims": false,
+  "live_GPT_change": false,
+  "live_Railway_change": false,
+  "validation_status": "PASS: 6 focused question/bridge tests; 1027 repository tests passed, 6 unrelated astronomy-data skips; scoped Ruff clean; owner report verified installed.",
+  "additional_artifacts": {
+    "DECISION_AND_NEXT_VALIDATION.md": "8c317313769ab54bd84a5ec755f41016da02719f3205de27c4f51bdd1faf20f2"
+  },
+  "repository_tests": {
+    "passed": 1027,
+    "skipped": 6,
+    "failed": 0
+  },
+  "new_study_started": false
+}
