@@ -1,9 +1,9 @@
 # Lilly B02k working checkpoint
 
-Parent OPEN. Source reading in progress. Sixth-house heading and XLIV opening on PDF277 through the paragraph before DARIOT Abridged on PDF292 are admitted. No source-record count or completed chapter is claimed yet.
+Parent OPEN. Full admitted opening block of XLIV has been read from original images: PDF277 through292 before DARIOT Abridged. Root and readers A/B have frozen source notes. The separate evaluator has frozen original source notes and configuration before seeing candidates.
 
-Root owns the isolated branch. Source readers A and B have complementary ranges; the fresh-context evaluator has the full admitted span. All freeze notes will be copied into this batch before candidate reconciliation.
+First durable reading checkpoint: d23aa7d14f7f0276b6f7cb5c3e9b06407e53dea8. Root owns research/lilly-sixth-house-b02k-20261010; canonical integration remains at the B02j baseline pending completed batch.
 
-Exact source: Wellcome b30338724, SHA256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Original source remains outside Git; page renders are allowed evidence derivatives.
+Candidate extraction by A/B is in progress. No completed source-record count is claimed yet. Root is preparing source callbacks, bounded helpers, and exact errata reconciliation.
 
-Next: finish source-only reading, freeze notes, compile conditional records from R1358 onward.
+Next: compile A/B candidates from R1358, verify source anchors and uncertainty, run focused helper/data tests, then freeze report and full claim ledger for independent review. Preserve the original source-first files unchanged.

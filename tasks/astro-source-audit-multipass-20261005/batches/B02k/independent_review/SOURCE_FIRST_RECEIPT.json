@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.0",
+  "task": "lilly-sixth-house-b02k-20261010",
+  "evaluator": "/root/sixth_independent",
+  "phase": "SOURCE_FIRST_FROZEN",
+  "source": {
+    "path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+    "sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "expected_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "sha256_match": true,
+    "bytes": 141842963,
+    "pdf_page_count": 894,
+    "page_count_tool": "pdfinfo",
+    "expected_page_count": 894,
+    "page_count_match": true
+  },
+  "scope": {
+    "first_pdf_page": 277,
+    "last_pdf_page": 292,
+    "first_logical_printed_page": 243,
+    "last_logical_printed_page": 258,
+    "first_anchor": "Of the sixt House, and its Questions; Chapter XLIV opening",
+    "last_anchor": "shew death.",
+    "exclude": "DARIOT Abridged heading and introduction on PDF 292"
+  },
+  "independence": {
+    "fresh_context": true,
+    "same_model_family": true,
+    "cross_family": false,
+    "human_expert": false,
+    "producer_candidate_seen_before_freeze": false,
+    "producer_source_records_seen_before_freeze": false,
+    "claim_ledger_seen_before_freeze": false,
+    "prior_verdicts_or_repair_rationale_seen_before_freeze": false,
+    "source_findings_transmitted_before_freeze": false,
+    "claim_status": "Provenance assertion about actual context, not independent identity attestation"
+  },
+  "inspection": {
+    "main_unique_pages": 16,
+    "main_required_pages": 16,
+    "main_complete": true,
+    "supplemental_unique_pages": 1,
+    "direct_original_main_page_rereads": 4,
+    "total_image_inspections": 21,
+    "main_pages": [
+      {
+        "pdf_page": 277,
+        "logical_printed_page": 243,
+        "visible_printed_page": 243,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf277.png",
+        "sha256": "b5f924a334c628f3c7c4086a695125a33bcf5f16680fba46b4839121e2248355",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 278,
+        "logical_printed_page": 244,
+        "visible_printed_page": 244,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf278.png",
+        "sha256": "9cd1438e0920821ad76919a6acc9db682aeb6b23368324a00e76ddbf2118d490",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 279,
+        "logical_printed_page": 245,
+        "visible_printed_page": 245,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf279.png",
+        "sha256": "020a7f9fcfe0a503279b901d3caa7a2490a86a1a577da412fbcc85222f14ff22",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 280,
+        "logical_printed_page": 246,
+        "visible_printed_page": 244,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf280.png",
+        "sha256": "f3e0dcd9f6296c0de2ceed57115744ad248375996e5dc3e0eeefc33c21971cb1",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 281,
+        "logical_printed_page": 247,
+        "visible_printed_page": 247,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf281.png",
+        "sha256": "e0dc5d7282a42efb6fa7618722c6f76715fed10e71c01e9afad87c9b030e4a71",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 282,
+        "logical_printed_page": 248,
+        "visible_printed_page": 248,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf282.png",
+        "sha256": "8882ffb79eb4356cb3d8e86c867092a50f5ca22b6760796b582e73869238bf74",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 283,
+        "logical_printed_page": 249,
+        "visible_printed_page": 249,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf283.png",
+        "sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 284,
+        "logical_printed_page": 250,
+        "visible_printed_page": 250,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf284.png",
+        "sha256": "78a7d14efc1e25b3960ffda8ea527b47cdb1c909e53e12e91ca1906d3132c667",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 285,
+        "logical_printed_page": 251,
+        "visible_printed_page": 251,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf285.png",
+        "sha256": "632a364ce2f6cfc945db45848b8084c063cc86c4706da74970ee29b6fdebdaf2",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 286,
+        "logical_printed_page": 252,
+        "visible_printed_page": 252,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png",
+        "sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 287,
+        "logical_printed_page": 253,
+        "visible_printed_page": 253,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf287.png",
+        "sha256": "33eda9bd800f32ba1e1592a987d54356ebfe5cd5506a09d752193d9db27824be",
+        "dimensions": [
+          1029,
+          1428
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 288,
+        "logical_printed_page": 254,
+        "visible_printed_page": 254,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf288.png",
+        "sha256": "97cd53a98ecf1e60ca4c4324fcc73e6fe581b69aa4abf89dbbcb3f1e0d95848e",
+        "dimensions": [
+          1055,
+          1427
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 289,
+        "logical_printed_page": 255,
+        "visible_printed_page": 255,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf289.png",
+        "sha256": "af739545338eb4e1b0a42adbeffafea7ce30f4242bcdd4ea17c4fc348ff17169",
+        "dimensions": [
+          1055,
+          1427
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 290,
+        "logical_printed_page": 256,
+        "visible_printed_page": 256,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf290.png",
+        "sha256": "91a7bd95c996e7a338a2a59373239e9af80ea74adadb48be7b62395c9cecb890",
+        "dimensions": [
+          1055,
+          1427
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 291,
+        "logical_printed_page": 257,
+        "visible_printed_page": 257,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+        "sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+        "dimensions": [
+          1055,
+          1427
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      },
+      {
+        "pdf_page": 292,
+        "logical_printed_page": 258,
+        "visible_printed_page": 258,
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+        "sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+        "dimensions": [
+          1055,
+          1427
+        ],
+        "visually_inspected": true,
+        "inspection_extent": "Entire page; only through shew death. is admitted on PDF 292"
+      }
+    ],
+    "additional_images": [
+      {
+        "pdf_page": 283,
+        "path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/syntax-283.png",
+        "sha256": "ccbbdd7bc8cc90b8d610ea6b873f6c7f999d109d7a9d646e5cffe3b0dc00eb70",
+        "dimensions": [
+          1730,
+          2400
+        ],
+        "visually_inspected": true,
+        "purpose": "Direct-original larger reread: reciprocal sixth/eighth-lord sentence"
+      },
+      {
+        "pdf_page": 284,
+        "path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/syntax-284.png",
+        "sha256": "276152e2e912a7803f1e16cda0e9ef947badacfe68c5597eb33de7ad1bc7cf87",
+        "dimensions": [
+          1730,
+          2400
+        ],
+        "visually_inspected": true,
+        "purpose": "Direct-original larger reread: permanence wording"
+      },
+      {
+        "pdf_page": 290,
+        "path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf290-original-detail.png",
+        "sha256": "8b8e338ce7d52830edfdc2bf9092bfd649ca8faca2cd4979d51cd64d811a91ce",
+        "dimensions": [
+          1774,
+          2400
+        ],
+        "visually_inspected": true,
+        "purpose": "Direct-original larger reread: crossed-out phrase and marginal correction"
+      },
+      {
+        "pdf_page": 291,
+        "path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf291-original-detail.png",
+        "sha256": "16b7ab99ef9842b753c427b7a9962eb34c0f15acfc8acefdc53694f0f6443c87",
+        "dimensions": [
+          1774,
+          2400
+        ],
+        "visually_inspected": true,
+        "purpose": "Direct-original larger reread: fixed-star labels and conditions"
+      },
+      {
+        "pdf_page": 888,
+        "path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf888-errata.png",
+        "sha256": "47154e5b5f778db5c252059c532a29134adf98f45ffcd113735187d602fc35b1",
+        "dimensions": [
+          1774,
+          2400
+        ],
+        "visually_inspected": true,
+        "purpose": "Direct-original supplemental errata search after all main pages were read"
+      }
+    ],
+    "boundary_note": "Full boundary page seen; DARIOT heading/intro used only as exclusion marker, not admitted doctrine",
+    "ocr_used": false,
+    "other_editions_consulted": false
+  },
+  "errata_search": {
+    "pdf_page": 888,
+    "targets_actually_searched": [
+      "Printed page numbers 243 through 258",
+      "Obscured phrase after after on printed page 256"
+    ],
+    "entries_observed": [
+      {
+        "printed_page": 245,
+        "locator": "penultimate line",
+        "reported_reading": "scabbinesse",
+        "precise_token_match_completed": false
+      },
+      {
+        "printed_page": 254,
+        "locator": "lines 18 and 19",
+        "reported_reading": "placed",
+        "precise_token_match_completed": false
+      },
+      {
+        "printed_page": 256,
+        "locator": "line 8",
+        "delete": "all hopes of escape",
+        "read": "feare of danger",
+        "precise_token_match_completed": true
+      },
+      {
+        "printed_page": 257,
+        "locator": "line 22",
+        "reported_reading": "eight",
+        "precise_token_match_completed": false
+      }
+    ],
+    "absence_claim_limited_to": "No printed-249 or printed-250 correction found on the one errata page inspected; no broader absence claim"
+  },
+  "governance": {
+    "state": "ACTIVE",
+    "bootstrap_transport": "Connected GitHub github_fetch_file",
+    "repository": "u-dont-existDOTcom/universal-dev-architecture",
+    "ref": "main",
+    "path": "AGENTS.md",
+    "blob_sha": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "snapshot_path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/UDA_BOOTSTRAP.md",
+    "snapshot_sha256": "14e330c08a063088349f00ebf33c7d8592637ef5be2193068fa88447a80f56d8",
+    "local_guidance_declared_commit": "d6190a06fe16049d998b4a9c78977ceaecdef1b9",
+    "local_commit_provenance": "Parent supplied; guidance file hashes independently recorded",
+    "guidance_files": [
+      {
+        "path": "LESSON-INDEX.md",
+        "sha256": "eb5225f846ca8ce0a5b66d1c88ce989283b8ad5db3889ea209c3439b430a9cb1",
+        "inspection": "Index routing or task-relevant canonical content; operating-system continuation/stop section read"
+      },
+      {
+        "path": "patterns/independent-evaluation-separation.md",
+        "sha256": "6bbcb7c0736993d5e1f31b7710084054db55cbed107f53aa6926c512b7efc241",
+        "inspection": "Index routing or task-relevant canonical content; operating-system continuation/stop section read"
+      },
+      {
+        "path": "patterns/source-interpretation-provenance.md",
+        "sha256": "356e634647351e471e58b1395189f59b170b74905da652e97a8388e82808cebe",
+        "inspection": "Index routing or task-relevant canonical content; operating-system continuation/stop section read"
+      },
+      {
+        "path": "patterns/whole-argument-reconstruction.md",
+        "sha256": "3ca531fa51a2df5275b5a46be0adc849e78d4a9f68fb3d31f4a3c965670ddd62",
+        "inspection": "Index routing or task-relevant canonical content; operating-system continuation/stop section read"
+      },
+      {
+        "path": "patterns/task-time-lesson-activation.md",
+        "sha256": "2e82f5d42ec64fa3fe882e2095bb7f428a217269ec86e4fc8b30301485edd935",
+        "inspection": "Index routing or task-relevant canonical content; operating-system continuation/stop section read"
+      },
+      {
+        "path": "patterns/codex-github-operating-system.md",
+        "sha256": "ed7b30200fe0345dca7651389baa140b86c4f6ebfc6ec455f214a584d89075f8",
+        "inspection": "Index routing or task-relevant canonical content; operating-system continuation/stop section read"
+      }
+    ],
+    "activation_contract": "SOURCE_FIRST_NOTES.md / Activated constraints",
+    "limits": "Semantic application assertions do not prove universal behavioral enforcement"
+  },
+  "frozen_artifacts": {
+    "notes": {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/SOURCE_FIRST_NOTES.md",
+      "sha256": "f6f111d4f5d80e60f0cd1059af2689e181c9d6e9bb3cfb016cd4a74ab09f27d2",
+      "bytes": 37358
+    },
+    "evaluation_config": {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/EVALUATION_CONFIG.json",
+      "sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "bytes": 1205
+    }
+  },
+  "clinical_validation": "NOT_PERFORMED",
+  "predictive_validation": "NOT_PERFORMED",
+  "next_action": "Parent checkpoints original frozen bytes, then supplies frozen candidate and claim ledger for one initial independent evaluation; no candidate access before this receipt exists."
+}

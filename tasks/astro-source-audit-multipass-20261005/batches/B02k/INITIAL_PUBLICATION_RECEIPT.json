@@ -1,0 +1,71 @@
+{
+  "published_commit": "d23aa7d14f7f0276b6f7cb5c3e9b06407e53dea8",
+  "remote_branch": "research/lilly-sixth-house-b02k-20261010",
+  "expected_parent": "094fc89cc12fcef43c655b9d87524c0641ee0802",
+  "fetched_remote_commit": true,
+  "exact_files_compared": 14,
+  "file_checks": [
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/.gitignore",
+      "sha256": "a51104264729e7b362ea8c739de0ada29ba6e4f6047580ec3a3fd330ad20fd47"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/ACTIVE_CONTRACT.json",
+      "sha256": "803a994e2398173fe581d2e4733774d2246a62b04b19b17cc0f1781defe79231"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/RETAINED_LILLY_INDEX_BEFORE.json",
+      "sha256": "228db75937d1bf67679de404902634190ea83d8f7ebaaffaa24f937e26285834"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/ROOT_SOURCE_FIRST_FREEZE.json",
+      "sha256": "21a0d144632e9b5d8efa65b16c42b63ccbaa767fb94cda82bc95b61f9a41e865"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/ROOT_SOURCE_FIRST_NOTES.md",
+      "sha256": "3082d782e19feb9fda8cbe4c9039b20876f76d17c966a81e43f955218d0491e0"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/TASK_ENVELOPE.json",
+      "sha256": "a2cd29fcbbe9d279aaa822d77040d85b0da5d11accb78468e5166ba8995ee1e6"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/WORKING_CHECKPOINT.md",
+      "sha256": "4c83e64f5820d79ece241bd3475ac13c5b7ab3fe4003ae18c134d664f67031f1"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/WRITER_LEASE.json",
+      "sha256": "7dc1f92fd9ad720b388c99af21e374f1e0e4d34ca4dda51b3267ee4d941ff86e"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/source_readers/a/SOURCE_FREEZE_RECEIPT.json",
+      "sha256": "d2ad0d0581efdf8d9a23f99e98b59b27a6bdccec7651c78937b89dbf0878c81c"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/source_readers/a/SOURCE_ONLY_NOTES.md",
+      "sha256": "66a6fe37092301c5dccdfc9ba7190b7b5c373598b6a96bacdaa2a2eecf29071e"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/source_readers/a/SOURCE_ONLY_SUPPLEMENT_01.md",
+      "sha256": "456714f477801723042cae0723b48b61be43338db576505e34c38ad696573260"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/source_readers/a/boundary-map.md",
+      "sha256": "ef855b2edda1a593419d6b8cf0dd2adb57d7800a3beaa538ad03ece711a24b57"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/source_readers/b/SOURCE_FIRST_FREEZE.json",
+      "sha256": "978bbe0f2fde8384072fe5f0edb8f7bae1b90e106ad711dd211b09f7df0d6916"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02k/source_readers/b/SOURCE_FIRST_NOTES.md",
+      "sha256": "d69efe9e1e3a69590b9e6cc54a209d7a26db38d511e58e8b367dd6c30263d018"
+    }
+  ],
+  "protected_baseline_files_unchanged": 1586,
+  "deferred_reproducible_metadata": [
+    "PROTECTED_BASELINE.json",
+    "UDA_COMPILED_CONTRACT.json"
+  ],
+  "independent_freeze_not_yet_produced": true
+}
