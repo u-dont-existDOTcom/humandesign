@@ -1,0 +1,135 @@
+{
+  "method": "Independent integer/Fraction recomputation directly from the receipt DMS and coordinate strings; no source page consulted",
+  "checks": [
+    {
+      "check": "declared mean DMS to arcseconds",
+      "observed": 47436,
+      "expected": 47436,
+      "pass": true
+    },
+    {
+      "check": "declared analogy DMS to arcseconds",
+      "observed": 47400,
+      "expected": 47400,
+      "pass": true
+    },
+    {
+      "check": "declared threshold separation",
+      "observed": 36,
+      "expected": 36,
+      "pass": true
+    },
+    {
+      "check": "strict comparison marker",
+      "observed": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "check": "13\u00b009\u203259\u2033 DMS conversion",
+      "observed": 47399,
+      "expected": 47399,
+      "pass": true
+    },
+    {
+      "check": "13\u00b009\u203259\u2033 below mean",
+      "observed": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "check": "13\u00b009\u203259\u2033 under analogy",
+      "observed": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "check": "13\u00b010\u203200\u2033 DMS conversion",
+      "observed": 47400,
+      "expected": 47400,
+      "pass": true
+    },
+    {
+      "check": "13\u00b010\u203200\u2033 below mean",
+      "observed": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "check": "13\u00b010\u203200\u2033 under analogy",
+      "observed": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "check": "13\u00b010\u203218\u2033 DMS conversion",
+      "observed": 47418,
+      "expected": 47418,
+      "pass": true
+    },
+    {
+      "check": "13\u00b010\u203218\u2033 below mean",
+      "observed": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "check": "13\u00b010\u203218\u2033 under analogy",
+      "observed": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "check": "13\u00b010\u203236\u2033 DMS conversion",
+      "observed": 47436,
+      "expected": 47436,
+      "pass": true
+    },
+    {
+      "check": "13\u00b010\u203236\u2033 below mean",
+      "observed": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "check": "13\u00b010\u203236\u2033 under analogy",
+      "observed": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "check": "exact remaining arc",
+      "observed": "1/2",
+      "expected": "1/2",
+      "pass": true
+    },
+    {
+      "check": "time unit left unresolved",
+      "observed": null,
+      "expected": null,
+      "pass": true
+    },
+    {
+      "check": "aggregate rejected coordinate 1 reaches or exceeds 30 degrees",
+      "observed": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "check": "aggregate rejected coordinate 2 reaches or exceeds 30 degrees",
+      "observed": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "check": "receipt helper SHA256 matches frozen helper",
+      "observed": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5",
+      "expected": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5",
+      "pass": true
+    }
+  ],
+  "all_passed": true,
+  "historical_generator_execution_claim_verified": false,
+  "generator_execution_limit": "The candidate names python build_analysis_evidence.py; that generator is not in the frozen manifest and was not executed. The numerical outputs and helper hash, rather than the historical generator execution event, were independently checked.",
+  "candidate_unittest_identities_added": 0
+}

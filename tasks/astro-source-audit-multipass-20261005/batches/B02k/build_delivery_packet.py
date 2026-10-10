@@ -15,6 +15,7 @@ EXCLUDED_NAMES = {
     "ARCHIVE_CONTENT_MANIFEST.json", "DELIVERABLES_MANIFEST.json", "DELIVERY_RECEIPT.json",
     "PACKET_USABILITY.json", "TEST_PACKET_USABILITY.txt", "FINAL_PRESERVATION_CHECK.json",
     "FINAL_PUBLICATION_RECEIPT.json", "FINAL_RESPONSE.md", "FINAL_RESPONSE_TEMPLATE.md",
+    "GATE_EVIDENCE_DRAFT.json",
 }
 
 
@@ -84,12 +85,12 @@ def main():
     for source, filename in files:
         shutil.copyfile(source, destination / filename)
     outputs = []
-    for path in sorted(destination.iterdir()):
-        if path.is_file():
-            data = path.read_bytes()
-            outputs.append({"path": str(path.relative_to(BATCH)), "filename": path.name,
-                            "bytes": len(data), "sha256": sha(data),
-                            "git_blob_sha": hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()})
+    expected_outputs = [zip_path, *(destination / filename for _, filename in files)]
+    for path in sorted(expected_outputs):
+        data = path.read_bytes()
+        outputs.append({"path": str(path.relative_to(BATCH)), "filename": path.name,
+                        "bytes": len(data), "sha256": sha(data),
+                        "git_blob_sha": hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()})
     (BATCH / "DELIVERABLES_MANIFEST.json").write_text(json.dumps({"batch": "B02k", "files": outputs}, indent=2) + "\n")
     print(json.dumps({"archive": str(zip_path), "verified_payload_files": len(verified),
                       "standalone_tests": summary["tests_run"], "output_files": len(outputs),

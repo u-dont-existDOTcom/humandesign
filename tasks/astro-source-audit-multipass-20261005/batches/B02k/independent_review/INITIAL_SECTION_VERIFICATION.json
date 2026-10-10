@@ -1,0 +1,504 @@
+{
+  "schema": "b02k.initial_section_verification.v1",
+  "candidate_manifest_sha256": "9cc2299b54c514c07c6e330471d791bb7597875c5730c4116e9e703fd51976c0",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+  "coverage_basis": "Every admitted original paragraph and table row, not a sample of known weak spots.",
+  "sections": [
+    {
+      "id": "S01",
+      "title": "Sixth-house/XLIV opening, timing hierarchy and initial observations",
+      "verdict": "PASS",
+      "pdf_pages": [
+        277
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1358",
+        "LI.1647.II.XLIV.R1359",
+        "LI.1647.II.XLIV.R1360",
+        "LI.1647.II.XLIV.R1361",
+        "LI.1647.II.XLIV.R1362",
+        "LI.1647.II.XLIV.R1363"
+      ],
+      "reason": "Candidate S01 combines independent source-map S00 and S01: heading/title, three time bases and all four observations. This is a segmentation choice, not an omission.",
+      "known_omissions": []
+    },
+    {
+      "id": "S02",
+      "title": "What part of the Body is afflicted",
+      "verdict": "PASS",
+      "pdf_pages": [
+        277,
+        278
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1364",
+        "LI.1647.II.XLIV.R1365",
+        "LI.1647.II.XLIV.R1366",
+        "LI.1647.II.XLIV.R1367"
+      ],
+      "reason": "The opening first-house clause and its continuation, illustration, corroboration and sixth-house extension are covered.",
+      "known_omissions": []
+    },
+    {
+      "id": "S03",
+      "title": "From what cause the Sicknesse is",
+      "verdict": "PASS",
+      "pdf_pages": [
+        278,
+        279
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1368",
+        "LI.1647.II.XLIV.R1369",
+        "LI.1647.II.XLIV.R1370",
+        "LI.1647.II.XLIV.R1371"
+      ],
+      "reason": "All elemental-cause paragraphs, including the PDF278–279 continuation, are covered.",
+      "known_omissions": []
+    },
+    {
+      "id": "S04",
+      "title": "Diseases signified by the Houses",
+      "verdict": "PASS",
+      "pdf_pages": [
+        279
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1372",
+        "LI.1647.II.XLIV.R1373",
+        "LI.1647.II.XLIV.R1374",
+        "LI.1647.II.XLIV.R1375",
+        "LI.1647.II.XLIV.R1376",
+        "LI.1647.II.XLIV.R1377",
+        "LI.1647.II.XLIV.R1378",
+        "LI.1647.II.XLIV.R1379",
+        "LI.1647.II.XLIV.R1380",
+        "LI.1647.II.XLIV.R1381",
+        "LI.1647.II.XLIV.R1382",
+        "LI.1647.II.XLIV.R1383"
+      ],
+      "reason": "All twelve house rows are represented once and their complete item lists were checked.",
+      "known_omissions": []
+    },
+    {
+      "id": "S05",
+      "title": "Diseases signified by the Signes",
+      "verdict": "PASS",
+      "pdf_pages": [
+        279,
+        280
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1384",
+        "LI.1647.II.XLIV.R1385",
+        "LI.1647.II.XLIV.R1386",
+        "LI.1647.II.XLIV.R1387",
+        "LI.1647.II.XLIV.R1388",
+        "LI.1647.II.XLIV.R1389",
+        "LI.1647.II.XLIV.R1390",
+        "LI.1647.II.XLIV.R1391",
+        "LI.1647.II.XLIV.R1392",
+        "LI.1647.II.XLIV.R1393",
+        "LI.1647.II.XLIV.R1394",
+        "LI.1647.II.XLIV.R1395"
+      ],
+      "reason": "All twelve sign rows are represented once. Cancer crosses PDF279–280; the anomalous printed244 label is retained.",
+      "known_omissions": []
+    },
+    {
+      "id": "S06",
+      "title": "Diseases of the Planets",
+      "verdict": "PASS",
+      "pdf_pages": [
+        280,
+        281
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1396",
+        "LI.1647.II.XLIV.R1397",
+        "LI.1647.II.XLIV.R1398",
+        "LI.1647.II.XLIV.R1399",
+        "LI.1647.II.XLIV.R1400",
+        "LI.1647.II.XLIV.R1401",
+        "LI.1647.II.XLIV.R1402"
+      ],
+      "reason": "All seven planet rows are present, including the PDF280–281 division and opposite sex-specific Sun/Moon eye assignments.",
+      "known_omissions": []
+    },
+    {
+      "id": "S07",
+      "title": "Transition from location/cause to duration and its stated purpose",
+      "verdict": "PASS",
+      "pdf_pages": [
+        281
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1403"
+      ],
+      "reason": "The candidate separates the unheaded synthesis/purpose transition that was included in independent source-map S06.",
+      "known_omissions": []
+    },
+    {
+      "id": "S08",
+      "title": "Whether the Disease will be long or short: seasons and planetary duration",
+      "verdict": "PASS",
+      "pdf_pages": [
+        281,
+        282
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1404",
+        "LI.1647.II.XLIV.R1405",
+        "LI.1647.II.XLIV.R1406",
+        "LI.1647.II.XLIV.R1407",
+        "LI.1647.II.XLIV.R1408",
+        "LI.1647.II.XLIV.R1409",
+        "LI.1647.II.XLIV.R1410",
+        "LI.1647.II.XLIV.R1411",
+        "LI.1647.II.XLIV.R1412",
+        "LI.1647.II.XLIV.R1413",
+        "LI.1647.II.XLIV.R1414",
+        "LI.1647.II.XLIV.R1415"
+      ],
+      "reason": "The complete season and planetary-duration discussion is covered, including the PDF281–282 transition.",
+      "known_omissions": []
+    },
+    {
+      "id": "S09",
+      "title": "Signes of a long or short Sicknesse",
+      "verdict": "PASS",
+      "pdf_pages": [
+        282,
+        283,
+        284,
+        285,
+        286,
+        287
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1416",
+        "LI.1647.II.XLIV.R1417",
+        "LI.1647.II.XLIV.R1418",
+        "LI.1647.II.XLIV.R1419",
+        "LI.1647.II.XLIV.R1420",
+        "LI.1647.II.XLIV.R1421",
+        "LI.1647.II.XLIV.R1422",
+        "LI.1647.II.XLIV.R1423",
+        "LI.1647.II.XLIV.R1424",
+        "LI.1647.II.XLIV.R1425",
+        "LI.1647.II.XLIV.R1426",
+        "LI.1647.II.XLIV.R1427",
+        "LI.1647.II.XLIV.R1428",
+        "LI.1647.II.XLIV.R1429",
+        "LI.1647.II.XLIV.R1430",
+        "LI.1647.II.XLIV.R1431",
+        "LI.1647.II.XLIV.R1432",
+        "LI.1647.II.XLIV.R1433",
+        "LI.1647.II.XLIV.R1434",
+        "LI.1647.II.XLIV.R1435",
+        "LI.1647.II.XLIV.R1436",
+        "LI.1647.II.XLIV.R1437",
+        "LI.1647.II.XLIV.R1438",
+        "LI.1647.II.XLIV.R1439",
+        "LI.1647.II.XLIV.R1440",
+        "LI.1647.II.XLIV.R1441",
+        "LI.1647.II.XLIV.R1442",
+        "LI.1647.II.XLIV.R1443",
+        "LI.1647.II.XLIV.R1444",
+        "LI.1647.II.XLIV.R1445",
+        "LI.1647.II.XLIV.R1446",
+        "LI.1647.II.XLIV.R1447",
+        "LI.1647.II.XLIV.R1448",
+        "LI.1647.II.XLIV.R1449",
+        "LI.1647.II.XLIV.R1450",
+        "LI.1647.II.XLIV.R1451",
+        "LI.1647.II.XLIV.R1452",
+        "LI.1647.II.XLIV.R1453",
+        "LI.1647.II.XLIV.R1454",
+        "LI.1647.II.XLIV.R1455",
+        "LI.1647.II.XLIV.R1456",
+        "LI.1647.II.XLIV.R1457",
+        "LI.1647.II.XLIV.R1458",
+        "LI.1647.II.XLIV.R1459",
+        "LI.1647.II.XLIV.R1460",
+        "LI.1647.II.XLIV.R1461",
+        "LI.1647.II.XLIV.R1462",
+        "LI.1647.II.XLIV.R1463",
+        "LI.1647.II.XLIV.R1464",
+        "LI.1647.II.XLIV.R1465",
+        "LI.1647.II.XLIV.R1466",
+        "LI.1647.II.XLIV.R1467",
+        "LI.1647.II.XLIV.R1468",
+        "LI.1647.II.XLIV.R1469",
+        "LI.1647.II.XLIV.R1470",
+        "LI.1647.II.XLIV.R1471",
+        "LI.1647.II.XLIV.R1472",
+        "LI.1647.II.XLIV.R1473",
+        "LI.1647.II.XLIV.R1474",
+        "LI.1647.II.XLIV.R1475",
+        "LI.1647.II.XLIV.R1476",
+        "LI.1647.II.XLIV.R1477",
+        "LI.1647.II.XLIV.R1478",
+        "LI.1647.II.XLIV.R1479",
+        "LI.1647.II.XLIV.R1480",
+        "LI.1647.II.XLIV.R1481",
+        "LI.1647.II.XLIV.R1482",
+        "LI.1647.II.XLIV.R1483",
+        "LI.1647.II.XLIV.R1484",
+        "LI.1647.II.XLIV.R1485",
+        "LI.1647.II.XLIV.R1486",
+        "LI.1647.II.XLIV.R1487"
+      ],
+      "reason": "The full long/short section through the upper PDF287 translation-of-light passage is covered, including all cross-page qualifications and the initial Pisces carryover.",
+      "known_omissions": []
+    },
+    {
+      "id": "S10",
+      "title": "Testimonies that the Querent shall live and not dye of the infirmity now afflicting",
+      "verdict": "PASS",
+      "pdf_pages": [
+        287,
+        288,
+        289
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1488",
+        "LI.1647.II.XLIV.R1489",
+        "LI.1647.II.XLIV.R1490",
+        "LI.1647.II.XLIV.R1491",
+        "LI.1647.II.XLIV.R1492",
+        "LI.1647.II.XLIV.R1493",
+        "LI.1647.II.XLIV.R1494",
+        "LI.1647.II.XLIV.R1495",
+        "LI.1647.II.XLIV.R1496",
+        "LI.1647.II.XLIV.R1497",
+        "LI.1647.II.XLIV.R1498",
+        "LI.1647.II.XLIV.R1499",
+        "LI.1647.II.XLIV.R1500",
+        "LI.1647.II.XLIV.R1501",
+        "LI.1647.II.XLIV.R1502",
+        "LI.1647.II.XLIV.R1503",
+        "LI.1647.II.XLIV.R1504",
+        "LI.1647.II.XLIV.R1505",
+        "LI.1647.II.XLIV.R1506",
+        "LI.1647.II.XLIV.R1507",
+        "LI.1647.II.XLIV.R1508",
+        "LI.1647.II.XLIV.R1509",
+        "LI.1647.II.XLIV.R1510"
+      ],
+      "reason": "All survival testimonies from lower PDF287 through upper PDF289 are covered, with reception, dignity, affliction and crisis qualifications.",
+      "known_omissions": []
+    },
+    {
+      "id": "S11",
+      "title": "Arguments of Death",
+      "verdict": "PASS",
+      "pdf_pages": [
+        289,
+        290,
+        291,
+        292
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1511",
+        "LI.1647.II.XLIV.R1512",
+        "LI.1647.II.XLIV.R1513",
+        "LI.1647.II.XLIV.R1514",
+        "LI.1647.II.XLIV.R1515",
+        "LI.1647.II.XLIV.R1516",
+        "LI.1647.II.XLIV.R1517",
+        "LI.1647.II.XLIV.R1518",
+        "LI.1647.II.XLIV.R1519",
+        "LI.1647.II.XLIV.R1520",
+        "LI.1647.II.XLIV.R1521",
+        "LI.1647.II.XLIV.R1522",
+        "LI.1647.II.XLIV.R1523",
+        "LI.1647.II.XLIV.R1524",
+        "LI.1647.II.XLIV.R1525",
+        "LI.1647.II.XLIV.R1526",
+        "LI.1647.II.XLIV.R1527",
+        "LI.1647.II.XLIV.R1528",
+        "LI.1647.II.XLIV.R1529",
+        "LI.1647.II.XLIV.R1530",
+        "LI.1647.II.XLIV.R1531",
+        "LI.1647.II.XLIV.R1532",
+        "LI.1647.II.XLIV.R1533",
+        "LI.1647.II.XLIV.R1534",
+        "LI.1647.II.XLIV.R1535",
+        "LI.1647.II.XLIV.R1536",
+        "LI.1647.II.XLIV.R1537",
+        "LI.1647.II.XLIV.R1538",
+        "LI.1647.II.XLIV.R1539",
+        "LI.1647.II.XLIV.R1540",
+        "LI.1647.II.XLIV.R1541",
+        "LI.1647.II.XLIV.R1542",
+        "LI.1647.II.XLIV.R1543",
+        "LI.1647.II.XLIV.R1544",
+        "LI.1647.II.XLIV.R1545",
+        "LI.1647.II.XLIV.R1546",
+        "LI.1647.II.XLIV.R1547",
+        "LI.1647.II.XLIV.R1548",
+        "LI.1647.II.XLIV.R1549"
+      ],
+      "reason": "All material from Arguments of Death through the final shew death sentence is covered. Nondeath duration/danger statements keep their actual outcomes. Dariot remains outside scope.",
+      "known_omissions": []
+    }
+  ],
+  "source_first_map_difference": "CandidateS01 combines independentS00+S01; candidateS07 separately represents the transition within independentS06. Later headings are offset. Both maps cover the same content; equal unit counts do not imply identical segmentation.",
+  "whole_report_outside_ledger_blocks": [
+    {
+      "id": "H01",
+      "line": 1,
+      "text": "# Lilly’s sixth-house opening: sickness, duration, recovery and death testimonies",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C01",
+        "C19"
+      ]
+    },
+    {
+      "id": "H02",
+      "line": 3,
+      "text": "## Result and exact scope",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "id": "H03",
+      "line": 27,
+      "text": "## 1. The selected time is part of the method",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "id": "H04",
+      "line": 45,
+      "text": "## 2. The correspondence tables must retain their own meanings",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "id": "H05",
+      "line": 55,
+      "text": "## 3. Mean lunar motion and the retrograde analogy differ",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "id": "H06",
+      "line": 72,
+      "text": "## 4. Remaining arc does not by itself choose a duration",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "id": "H07",
+      "line": 78,
+      "text": "## 5. Conditions and exceptions change the source’s prognosis",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "id": "H08",
+      "line": 96,
+      "text": "## 6. Printed words, handwriting and errata are separate witnesses",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ]
+    },
+    {
+      "id": "H09",
+      "line": 113,
+      "text": "## 7. Historical star labels are not modern exact coordinates",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C31",
+        "C32"
+      ]
+    },
+    {
+      "id": "H10",
+      "line": 129,
+      "text": "## 8. What the evidence supports and what remains open",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "id": "H11",
+      "line": 139,
+      "text": "## 9. Verification and reproducibility",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41"
+      ]
+    },
+    {
+      "id": "H12",
+      "line": 151,
+      "text": "## Continuation",
+      "verdict": "PASS",
+      "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+      "covered_by": [
+        "C42"
+      ]
+    }
+  ],
+  "additional_unmatched_checkable_report_claims": []
+}

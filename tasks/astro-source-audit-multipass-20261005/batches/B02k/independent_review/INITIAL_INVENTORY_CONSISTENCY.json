@@ -1,0 +1,477 @@
+{
+  "kind": "mechanical_consistency_checks_not_semantic_or_predictive_validation",
+  "candidate_manifest_sha256": "9cc2299b54c514c07c6e330471d791bb7597875c5730c4116e9e703fd51976c0",
+  "checks": {
+    "192_unique_contiguous_ids": true,
+    "local_canonical_map_complete": true,
+    "source_locator_metadata": true,
+    "visible_labels_and_expected_sequence": true,
+    "record_kind_counts": true,
+    "all_reference_only_nonindependent_no_case": true,
+    "coverage_192_once": true,
+    "coverage_11_units_16_pages": true,
+    "coverage_page_locations": true,
+    "all_unresolved_references_exist": true,
+    "all_register_record_references_exist": true,
+    "dependency_mapping": true,
+    "catalogue_12_12_7": true,
+    "catalogue_items_and_locators_match_records": true,
+    "37_register_33_retained_4_resolved": true,
+    "retained_1357_count": true,
+    "cumulative_1549_count": true,
+    "new_batch_exact_record_hash": true,
+    "ptolemy_inventory_1066_19_batches": true,
+    "combined_2615": true,
+    "four_retained_excerpts_not_new": true,
+    "continuation_consistent": true,
+    "all16_original_navigation_images_match_manifest": true
+  },
+  "all_pass": true,
+  "table_rows": [
+    {
+      "namespace": "house",
+      "key": "1",
+      "record_id": "LI.1647.II.XLIV.R1372",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 1
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "2",
+      "record_id": "LI.1647.II.XLIV.R1373",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 2
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "3",
+      "record_id": "LI.1647.II.XLIV.R1374",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 3
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "4",
+      "record_id": "LI.1647.II.XLIV.R1375",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 4
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "5",
+      "record_id": "LI.1647.II.XLIV.R1376",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 5
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "6",
+      "record_id": "LI.1647.II.XLIV.R1377",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 6
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "7",
+      "record_id": "LI.1647.II.XLIV.R1378",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 7
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "8",
+      "record_id": "LI.1647.II.XLIV.R1379",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 8
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "9",
+      "record_id": "LI.1647.II.XLIV.R1380",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 9
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "10",
+      "record_id": "LI.1647.II.XLIV.R1381",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 10
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "11",
+      "record_id": "LI.1647.II.XLIV.R1382",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 11
+      }
+    },
+    {
+      "namespace": "house",
+      "key": "12",
+      "record_id": "LI.1647.II.XLIV.R1383",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "house",
+        "value": 12
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Aries",
+      "record_id": "LI.1647.II.XLIV.R1384",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Aries"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Taurus",
+      "record_id": "LI.1647.II.XLIV.R1385",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Taurus"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Gemini",
+      "record_id": "LI.1647.II.XLIV.R1386",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Gemini"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Cancer",
+      "record_id": "LI.1647.II.XLIV.R1387",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Cancer"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Leo",
+      "record_id": "LI.1647.II.XLIV.R1388",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Leo"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Virgo",
+      "record_id": "LI.1647.II.XLIV.R1389",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Virgo"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Libra",
+      "record_id": "LI.1647.II.XLIV.R1390",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Libra"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Scorpio",
+      "record_id": "LI.1647.II.XLIV.R1391",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Scorpio"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Sagittarius",
+      "record_id": "LI.1647.II.XLIV.R1392",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Sagittarius"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Capricorn",
+      "record_id": "LI.1647.II.XLIV.R1393",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Capricorn"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Aquarius",
+      "record_id": "LI.1647.II.XLIV.R1394",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Aquarius"
+      }
+    },
+    {
+      "namespace": "sign",
+      "key": "Pisces",
+      "record_id": "LI.1647.II.XLIV.R1395",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "sign",
+        "value": "Pisces"
+      }
+    },
+    {
+      "namespace": "planet",
+      "key": "Saturn",
+      "record_id": "LI.1647.II.XLIV.R1396",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "planet",
+        "value": "Saturn"
+      }
+    },
+    {
+      "namespace": "planet",
+      "key": "Jupiter",
+      "record_id": "LI.1647.II.XLIV.R1397",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "planet",
+        "value": "Jupiter"
+      }
+    },
+    {
+      "namespace": "planet",
+      "key": "Mars",
+      "record_id": "LI.1647.II.XLIV.R1398",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "planet",
+        "value": "Mars"
+      }
+    },
+    {
+      "namespace": "planet",
+      "key": "Sun",
+      "record_id": "LI.1647.II.XLIV.R1399",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "planet",
+        "value": "Sun"
+      }
+    },
+    {
+      "namespace": "planet",
+      "key": "Venus",
+      "record_id": "LI.1647.II.XLIV.R1400",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "planet",
+        "value": "Venus"
+      }
+    },
+    {
+      "namespace": "planet",
+      "key": "Mercury",
+      "record_id": "LI.1647.II.XLIV.R1401",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "planet",
+        "value": "Mercury"
+      }
+    },
+    {
+      "namespace": "planet",
+      "key": "Moon",
+      "record_id": "LI.1647.II.XLIV.R1402",
+      "same_items": true,
+      "same_locator": true,
+      "lookup_key": {
+        "namespace": "planet",
+        "value": "Moon"
+      }
+    }
+  ],
+  "full_admitted_page_images": [
+    {
+      "page": 277,
+      "sha256": "b5f924a334c628f3c7c4086a695125a33bcf5f16680fba46b4839121e2248355",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 278,
+      "sha256": "9cd1438e0920821ad76919a6acc9db682aeb6b23368324a00e76ddbf2118d490",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 279,
+      "sha256": "020a7f9fcfe0a503279b901d3caa7a2490a86a1a577da412fbcc85222f14ff22",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 280,
+      "sha256": "f3e0dcd9f6296c0de2ceed57115744ad248375996e5dc3e0eeefc33c21971cb1",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 281,
+      "sha256": "e0dc5d7282a42efb6fa7618722c6f76715fed10e71c01e9afad87c9b030e4a71",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 282,
+      "sha256": "8882ffb79eb4356cb3d8e86c867092a50f5ca22b6760796b582e73869238bf74",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 283,
+      "sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 284,
+      "sha256": "78a7d14efc1e25b3960ffda8ea527b47cdb1c909e53e12e91ca1906d3132c667",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 285,
+      "sha256": "632a364ce2f6cfc945db45848b8084c063cc86c4706da74970ee29b6fdebdaf2",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 286,
+      "sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 287,
+      "sha256": "33eda9bd800f32ba1e1592a987d54356ebfe5cd5506a09d752193d9db27824be",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 288,
+      "sha256": "97cd53a98ecf1e60ca4c4324fcc73e6fe581b69aa4abf89dbbcb3f1e0d95848e",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 289,
+      "sha256": "af739545338eb4e1b0a42adbeffafea7ce30f4242bcdd4ea17c4fc348ff17169",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 290,
+      "sha256": "91a7bd95c996e7a338a2a59373239e9af80ea74adadb48be7b62395c9cecb890",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 291,
+      "sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+      "matches": true,
+      "bytes_match": true
+    },
+    {
+      "page": 292,
+      "sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+      "matches": true,
+      "bytes_match": true
+    }
+  ],
+  "resolved_register_ids": [
+    "U-A02",
+    "U-A18",
+    "U-B05",
+    "U-B18"
+  ]
+}

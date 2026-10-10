@@ -1,0 +1,329 @@
+{
+  "schema": "b02k.initial_diagnosis.v1",
+  "phase": "INITIAL_IMMUTABLE_DIAGNOSIS",
+  "candidate_manifest_sha256": "9cc2299b54c514c07c6e330471d791bb7597875c5730c4116e9e703fd51976c0",
+  "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+  "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+  "overall_verdict": "PASS_WITH_STATED_SOURCE_AND_REVIEW_LIMITS",
+  "verdict_scope": "Historical source preservation, bounded report claims and declared helper behaviour; no source-doctrine or predictive validation.",
+  "canonical_records": {
+    "checked": 192,
+    "pass": 192,
+    "fail": 0
+  },
+  "report_verification_items": {
+    "checked": 42,
+    "pass": 42,
+    "fail": 0,
+    "table_rows": 27
+  },
+  "whole_report_missing_claim_scan": {
+    "unmatched_checkable_claims": 0,
+    "headings_checked": 12
+  },
+  "confirmed_source_fidelity_defects": [],
+  "confirmed_implementation_defects": [],
+  "required_candidate_changes": [],
+  "required_review_publication_disclosure": "Carry the domain/timing exposure record from INITIAL_REVIEW_RECEIPT.json; do not describe the current main evaluation as fully blind or cross-family/expert validation.",
+  "source_first_refinements": [
+    {
+      "id": "SF-REF01",
+      "classification": "source-supported correction to evaluator’s own provisional source-first locator",
+      "affected_frozen_artifacts": [
+        "SOURCE_FIRST_NOTES.md",
+        "SOURCE_FIRST_RECEIPT.json"
+      ],
+      "original_frozen_locator": "printed257, line22, eight",
+      "corrected_locator": "printed257, line23, r eight",
+      "original_page": 888,
+      "body_target_pdf_page": 291,
+      "body_record_id": "LI.1647.II.XLIV.R1535",
+      "source_anchor": "p257 l23 r eight",
+      "source_evidence_sha256": "47154e5b5f778db5c252059c532a29134adf98f45ffcd113735187d602fc35b1",
+      "candidate_crop_sha256": "d19279a2a4994f3f1929f0790752efd8b637dd03d5e530f0b2abb890e8e57754",
+      "reason": "The earlier freeze expressly left this line-number locator unreconciled. The initial comparison reopened original PDF888 and the matched body passage; line23 is clearly legible. Candidate R1535, TX05, U-B18 and C28 already use23.",
+      "candidate_change_required": false,
+      "frozen_bytes_changed": false,
+      "required_treatment": "Retain the original frozen bytes and publish this dated-phase refinement separately; do not silently correct the source-first record."
+    }
+  ],
+  "genuine_ambiguities_and_variants_retained": [
+    {
+      "id": "A01",
+      "record_ids": [
+        "R1364"
+      ],
+      "pdf_pages": [
+        277,
+        278
+      ],
+      "anchor": "If the first house be afflicted",
+      "preserved_issue": "Compact evil-planet/state/aspect grouping; explicit printed119 dependency.",
+      "disposition": "PASS with nonexecutable source prose; callback independently checked on PDF153."
+    },
+    {
+      "id": "A02",
+      "record_ids": [
+        "R1425",
+        "R1427",
+        "R1428"
+      ],
+      "pdf_pages": [
+        282
+      ],
+      "anchor": "fixed in the Signe; or will he greatly prolong; Moon likewise",
+      "preserved_issue": "Formal sense of fixed, Saturn exception grouping/conjunction, and likewise scope.",
+      "disposition": "PASS; no unprinted formalization or nor emendation."
+    },
+    {
+      "id": "A03",
+      "record_ids": [
+        "R1418",
+        "R1429",
+        "R1430"
+      ],
+      "pdf_pages": [
+        282,
+        283
+      ],
+      "anchor": "common Signes; except Pisces",
+      "preserved_issue": "Common-sign duration comparisons and explicit Pisces exception.",
+      "disposition": "PASS; all statements retained without forced contradiction or quantitative reconciliation."
+    },
+    {
+      "id": "A04",
+      "record_ids": [
+        "R1440"
+      ],
+      "pdf_pages": [
+        283
+      ],
+      "anchor": "not doubt of the death; Nature is not so much",
+      "preserved_issue": "Apparent lexical/textual tension with the survival-oriented rationale.",
+      "disposition": "PASS; intended sense remains unresolved."
+    },
+    {
+      "id": "A05",
+      "record_ids": [
+        "R1444"
+      ],
+      "pdf_pages": [
+        284
+      ],
+      "anchor": "the Disease is not, or will be permanent",
+      "preserved_issue": "Negative scope or absent word.",
+      "disposition": "PASS; literal phrase and not-author prerequisite preserved."
+    },
+    {
+      "id": "A06",
+      "record_ids": [
+        "R1491",
+        "R1492",
+        "R1496",
+        "R1506"
+      ],
+      "pdf_pages": [
+        287,
+        288,
+        289
+      ],
+      "anchor": "Saturn Occidentall; Moon in her encrease",
+      "preserved_issue": "Different local scopes for occidental-Saturn and increasing-Moon judgments.",
+      "disposition": "PASS; conditional and general claims remain distinct."
+    },
+    {
+      "id": "A07",
+      "record_ids": [
+        "R1499",
+        "R1515",
+        "R1535"
+      ],
+      "pdf_pages": [
+        288,
+        290,
+        291,
+        888
+      ],
+      "anchor": "placed; feare of danger; eight",
+      "preserved_issue": "Printed, handwritten and errata witnesses; obscured base type.",
+      "disposition": "PASS; corrected readings usable only at matched targets, underlying legibility remains separately limited."
+    },
+    {
+      "id": "A08",
+      "record_ids": [
+        "R1503",
+        "R1534"
+      ],
+      "pdf_pages": [
+        288,
+        291
+      ],
+      "anchor": "some say",
+      "preserved_issue": "Reported Saturn-or-Jupiter alternative with Saturn-retrograde/Jupiter-direct exception.",
+      "disposition": "PASS; anonymous attribution and separate Jupiter-recovery testimony retained."
+    },
+    {
+      "id": "A09",
+      "record_ids": [
+        "R1535",
+        "R1536",
+        "R1537",
+        "R1542",
+        "R1544",
+        "R1548",
+        "R1549"
+      ],
+      "pdf_pages": [
+        291,
+        292
+      ],
+      "anchor": "probable; one argument; applying; combustion",
+      "preserved_issue": "Reception-exception scope and several compact conjunction/disjunction sequences.",
+      "disposition": "PASS; no universal executable grouping asserted."
+    },
+    {
+      "id": "A10",
+      "record_ids": [
+        "R1538",
+        "R1548"
+      ],
+      "pdf_pages": [
+        291,
+        292
+      ],
+      "anchor": "Lans/Lanx Australis; Pleiades in24",
+      "preserved_issue": "Star spelling, approximate historical degrees, ordinal convention and proximity.",
+      "disposition": "PASS; missing precision remains missing; Mercury glyph itself is verified."
+    }
+  ],
+  "diagnostic_coverage_and_presentation_notes": [
+    {
+      "id": "COV-01",
+      "classification": "diagnostic test-coverage weakness, not demonstrated current defect",
+      "severity": "LOW",
+      "claim_ids": [
+        "C03",
+        "C09",
+        "C32",
+        "C40"
+      ],
+      "record_ids": [],
+      "source_page_anchor": "Not a source-reading defect; test_lilly_sixth_opening.py catalogue assertions.",
+      "finding": "The retained sign test checks count rather than all exact identities; many table contents and precision fields are unasserted.",
+      "current_evidence": "Fresh code probes checked current twelve sign identities,37 routes and all five stars’ null precision; main evaluator checked source contents. No failing current observation.",
+      "requested_change": "No mandatory candidate change. If these tests are later relied on for regression protection, retain exact key/precision checks rather than overstating existing coverage."
+    },
+    {
+      "id": "COV-02",
+      "classification": "verification limit already acknowledged in report",
+      "severity": "INFORMATIONAL",
+      "claim_ids": [
+        "C39",
+        "C40"
+      ],
+      "record_ids": [],
+      "source_page_anchor": "Not a source-reading defect; SourceRecordIntegrity tests versus PDF277–292.",
+      "finding": "Structural anchors, flags and coverage sets do not establish historical meaning or complete clause preservation.",
+      "current_evidence": "The main evaluator completed the independent full-span visual comparison and192 per-record checks. C39 states the structural/semantic distinction accurately.",
+      "requested_change": "None; keep the report’s limit and do not describe passing tests as source or predictive validation."
+    },
+    {
+      "id": "COV-03",
+      "classification": "diagnostic test-coverage weakness, not demonstrated current defect",
+      "severity": "LOW",
+      "claim_ids": [
+        "C07",
+        "C18",
+        "C20",
+        "C21",
+        "C40"
+      ],
+      "record_ids": [],
+      "source_page_anchor": "Not a source-reading defect; bounded API validation branches.",
+      "finding": "Several invalid-input, Fraction, unknown-namespace and nested-return cases are absent from the retained33 tests.",
+      "current_evidence": "One-shot fresh-context supplemental probes passed. Those audit assertions add0 candidate unittest identities.",
+      "requested_change": "No mandatory change; any later regression-test expansion must be described as new test identities, not retroactively added to this33-test count."
+    },
+    {
+      "id": "EVID-01",
+      "classification": "optional evidence-presentation improvement",
+      "severity": "LOW",
+      "claim_ids": [
+        "C13",
+        "C14"
+      ],
+      "record_ids": [
+        "LI.1647.I.14.R192",
+        "LI.1647.I.14.R195",
+        "LI.1647.I.14.R221"
+      ],
+      "source_page_anchor": "Original PDF114/printed80, Moon Motion and following always-direct/less-than13d10m paragraph.",
+      "finding": "The packaged pdf114-moon-motion crop shows the stated mean but cuts off the complete analogy-threshold line near its lower edge.",
+      "current_evidence": "The full original PDF114 was independently rendered and read; C14 is supported. The packet explicitly calls crops locating evidence and keeps the full PDF external.",
+      "requested_change": "Optional: extend or supplement the crop if it is intended to display both thresholds together. This is not an extraction or report-fact failure under the stated external-PDF boundary."
+    }
+  ],
+  "independence": {
+    "model_limit": "Same-model-family separate-context evaluation, not cross-family, external-expert or standards-compliant IV&V.",
+    "source_first_phase": {
+      "candidate_or_producer_rationale_seen_before_freeze": false,
+      "main_unique_pages": 16,
+      "supplemental_errata_pages": 1,
+      "larger_direct_original_rereads": 4,
+      "total_actual_image_inspections": 21,
+      "frozen_bytes_preserved": true,
+      "publication_checkpoint_reported_by_parent": "d53f351caf5e19f4c31c29ce615e3dcf994cc798"
+    },
+    "initial_candidate_phase": {
+      "prior_verdict_exposure_occurred": true,
+      "mechanism": "A collaboration.list_agents call intended to check a free delegation slot unexpectedly returned a completed producer helper-reconciliation summary.",
+      "timing": "After source-first freeze and candidate receipt, before initial diagnosis freeze.",
+      "exposed_domain": "Two earlier helper findings/repairs: aggregate within-sign coordinate boundary and the full decreasing-and-leaving exception input.",
+      "mitigation": "Exposure was immediately disclosed to parent. No producer rationale files, live canonical repository or other-worker files were opened. All source judgments stayed anchored to original images. A fresh-context helper reviewer received no exposed summary.",
+      "claim_limit": "The source-first phase remains source-only. This later main evaluation is not represented as fully blind; the exposure can affect the current context beyond its immediate topic and is not erased by subsequent agreement.",
+      "parent_direction": "Continue the same initial exhaustive source/report pass, preserve the source-first freeze, and disclose independence by domain and timing."
+    },
+    "fresh_code_check": {
+      "agent": "/root/sixth_independent/code_audit",
+      "fork_turns": "none",
+      "received_accidentally_exposed_summary": false,
+      "read_original_source_pages": false,
+      "scope": "Frozen helper, runner, tests, data and execution/arithmetic claims; no source-fidelity or clinical judgment.",
+      "frozen_outputs": {
+        "codecheck/CODE_CHECK.md": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49",
+        "codecheck/CODE_CHECK.json": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+      }
+    }
+  },
+  "material_limits": [
+    "No clinical, causal, treatment, survival-probability or predictive validity was evaluated. Source preservation, hashes, tests and reviewer agreement supply none of those forms of validation.",
+    "No human specialist or different model family participated. Shared training and model blind spots remain.",
+    "The initial main context had the recorded post-freeze helper-summary exposure. Only the original source-first phase and fresh code-check context have their respective information-separation claims.",
+    "The original supplied copy was read; no full other-edition collation or original-language Ptolemy review was attempted.",
+    "The Ptolemy1066 and prior Lilly1357 counts were checked as retained-index arithmetic, not by reopening all retained source records.",
+    "Root/other-reader prior process statements are supported by supplied execution/freeze receipts; this evaluator did not directly observe their private reading acts or independently verify the reported publication commit through Git.",
+    "Packet reference flags and bounded helper behaviour do not establish that no wider runtime consumer exists. Global integration behaviour was outside the permitted review boundary.",
+    "The arithmetic receipt’s numerical contents were independently reproduced. Its named original build_analysis_evidence.py execution event was not independently replayed because that generator is outside the frozen candidate.",
+    "The strongest remaining source weakness is intended syntax/lexical sense in compact or apparently defective passages, especially R1440 andR1444. A preservation PASS does not settle those meanings."
+  ],
+  "frozen_code_check": {
+    "codecheck/CODE_CHECK.md": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49",
+    "codecheck/CODE_CHECK.json": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+  },
+  "item_verification_artifacts": {
+    "INITIAL_RECORD_VERIFICATION.json": "ffde2d323f674962448f637ba8b48f30c77020ba57c312b5ed4e0d3c5e4ceb70",
+    "INITIAL_SECTION_VERIFICATION.json": "ed053d4671c7fe8e75d345417c6b9c821606079e52cd359d23d1d2b997122b2a",
+    "INITIAL_CLAIM_VERIFICATION.json": "60511e1e28b1e151585b31a4f95e12dd7814435c71b56d9be5ec68df3b20845b",
+    "INITIAL_REGISTER_VERIFICATION.json": "82259484fa258b2c24b5a9c7b1e2b29dbd59c39ab0461c882ac1549379e27644",
+    "INITIAL_REVIEW_RECEIPT.json": "b6c5e0080e3af13012d70f1393bdfb52f9e9eb84eb7f5415805b6d809df68f33",
+    "INITIAL_INPUT_HASH_VERIFICATION.json": "3bdc285225d408c3412ee8ac025a45104bf0eb0506459c623ff7dc3568137f94",
+    "INITIAL_CANONICAL_FIELD_CHECK.json": "15e7990618307e4ff8c9af2d46136261acd3154bbb341bf790943217223f7242",
+    "INITIAL_LEDGER_COVERAGE_CHECK.json": "276a1f35c864b073d6a05c3a0a3fecce448b9540834b9ca6a3b312cdb0e26755",
+    "INITIAL_INVENTORY_CONSISTENCY.json": "48a98e03c679d519b6c9f9bb45647463c857598df8f93e8d7fc2250693c9a13d"
+  },
+  "repair_budget": {
+    "initial_passes_used": 1,
+    "changed_item_cycles_used": 0,
+    "maximum_changed_item_cycles": 2
+  }
+}

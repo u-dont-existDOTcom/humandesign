@@ -1,0 +1,97 @@
+{
+  "batch": "B02k",
+  "stage": "SOURCE_AND_REPORT_ACCEPTED; PUBLICATION_AND_DELIVERY_PENDING",
+  "decision": "PASS_WITH_EXPLICIT_LIMITS",
+  "candidate_manifest_sha256": "9cc2299b54c514c07c6e330471d791bb7597875c5730c4116e9e703fd51976c0",
+  "candidate_files_unchanged": 44,
+  "source_record_hashes_matched": 192,
+  "report_whole_item_hashes_matched": 42,
+  "report_table_data_rows_checked": 27,
+  "unmatched_report_claims": 0,
+  "independent_frozen_support_files_verified": 31,
+  "root_original_image_dependency_hashes_matched": 19,
+  "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+  "rules_sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4",
+  "code_sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5",
+  "test_count": 33,
+  "required_candidate_changes": [],
+  "review_cycles": {
+    "initial_exhaustive_passes": 1,
+    "changed_item_cycles_used": 0,
+    "changed_item_cycles_limit": 2
+  },
+  "independence": {
+    "model_limit": "Same-model-family separate-context evaluation, not cross-family, external-expert or standards-compliant IV&V.",
+    "source_first_phase": {
+      "candidate_or_producer_rationale_seen_before_freeze": false,
+      "main_unique_pages": 16,
+      "supplemental_errata_pages": 1,
+      "larger_direct_original_rereads": 4,
+      "total_actual_image_inspections": 21,
+      "frozen_bytes_preserved": true,
+      "publication_checkpoint_reported_by_parent": "d53f351caf5e19f4c31c29ce615e3dcf994cc798"
+    },
+    "initial_candidate_phase": {
+      "prior_verdict_exposure_occurred": true,
+      "mechanism": "A collaboration.list_agents call intended to check a free delegation slot unexpectedly returned a completed producer helper-reconciliation summary.",
+      "timing": "After source-first freeze and candidate receipt, before initial diagnosis freeze.",
+      "exposed_domain": "Two earlier helper findings/repairs: aggregate within-sign coordinate boundary and the full decreasing-and-leaving exception input.",
+      "mitigation": "Exposure was immediately disclosed to parent. No producer rationale files, live canonical repository or other-worker files were opened. All source judgments stayed anchored to original images. A fresh-context helper reviewer received no exposed summary.",
+      "claim_limit": "The source-first phase remains source-only. This later main evaluation is not represented as fully blind; the exposure can affect the current context beyond its immediate topic and is not erased by subsequent agreement.",
+      "parent_direction": "Continue the same initial exhaustive source/report pass, preserve the source-first freeze, and disclose independence by domain and timing."
+    },
+    "fresh_code_check": {
+      "agent": "/root/sixth_independent/code_audit",
+      "fork_turns": "none",
+      "received_accidentally_exposed_summary": false,
+      "read_original_source_pages": false,
+      "scope": "Frozen helper, runner, tests, data and execution/arithmetic claims; no source-fidelity or clinical judgment.",
+      "frozen_outputs": {
+        "codecheck/CODE_CHECK.md": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49",
+        "codecheck/CODE_CHECK.json": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+      }
+    }
+  },
+  "review_material_limits": [
+    "No clinical, causal, treatment, survival-probability or predictive validity was evaluated. Source preservation, hashes, tests and reviewer agreement supply none of those forms of validation.",
+    "No human specialist or different model family participated. Shared training and model blind spots remain.",
+    "The initial main context had the recorded post-freeze helper-summary exposure. Only the original source-first phase and fresh code-check context have their respective information-separation claims.",
+    "The original supplied copy was read; no full other-edition collation or original-language Ptolemy review was attempted.",
+    "The Ptolemy1066 and prior Lilly1357 counts were checked as retained-index arithmetic, not by reopening all retained source records.",
+    "Root/other-reader prior process statements are supported by supplied execution/freeze receipts; this evaluator did not directly observe their private reading acts or independently verify the reported publication commit through Git.",
+    "Packet reference flags and bounded helper behaviour do not establish that no wider runtime consumer exists. Global integration behaviour was outside the permitted review boundary.",
+    "The arithmetic receipt’s numerical contents were independently reproduced. Its named original build_analysis_evidence.py execution event was not independently replayed because that generator is outside the frozen candidate.",
+    "The strongest remaining source weakness is intended syntax/lexical sense in compact or apparently defective passages, especially R1440 andR1444. A preservation PASS does not settle those meanings."
+  ],
+  "source_first_refinement": {
+    "id": "SF-REF01",
+    "decision": "ACCEPT",
+    "root_evidence": "Root directly viewed the original PDF888 errata crop after diagnosis freeze: p257 l23 r eight. Candidate already correct; original evaluator freeze unchanged."
+  },
+  "diagnostic_note_disposition": [
+    {
+      "id": "COV-01",
+      "disposition": "RETAIN_LIMIT_NO_CURRENT_DEFECT",
+      "reason": "Fresh code probes checked current twelve sign identities,37 routes and all five stars’ null precision; main evaluator checked source contents. No failing current observation."
+    },
+    {
+      "id": "COV-02",
+      "disposition": "RETAIN_LIMIT_NO_CURRENT_DEFECT",
+      "reason": "The main evaluator completed the independent full-span visual comparison and192 per-record checks. C39 states the structural/semantic distinction accurately."
+    },
+    {
+      "id": "COV-03",
+      "disposition": "RETAIN_LIMIT_NO_CURRENT_DEFECT",
+      "reason": "One-shot fresh-context supplemental probes passed. Those audit assertions add0 candidate unittest identities."
+    },
+    {
+      "id": "EVID-01",
+      "disposition": "OPTIONAL_PRESENTATION_NOT_REQUIRED_FOR_THIS_BATCH",
+      "reason": "The full original PDF114 was independently rendered and read; C14 is supported. The packet explicitly calls crops locating evidence and keeps the full PDF external."
+    }
+  ],
+  "root_review_basis": "Root full original-source reading before compilation; complete frozen diagnosis, all42 claim reasons, item/material-evidence bindings and actual source-supported refinement. Reviewer verdict alone is not treated as truth.",
+  "parent_status": "OPEN",
+  "whole_XLIV_complete": false,
+  "clinical_or_predictive_validation": false
+}

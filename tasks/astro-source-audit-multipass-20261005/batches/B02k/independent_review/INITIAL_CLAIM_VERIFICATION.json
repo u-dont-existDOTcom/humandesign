@@ -1,0 +1,2716 @@
+{
+  "schema": "b02k.initial_claim_verification.v1",
+  "candidate_manifest_sha256": "9cc2299b54c514c07c6e330471d791bb7597875c5730c4116e9e703fd51976c0",
+  "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+  "claim_ledger_sha256": "22b9943ba95c0576db928fd2f63f373c0f97e78ff50ce367feb03ffddae9955d",
+  "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+  "verification_item_count": 42,
+  "pass_count": 42,
+  "fail_count": 0,
+  "table_data_rows_explicitly_checked": 27,
+  "table_unit_ids": [
+    "C03",
+    "C05",
+    "C15",
+    "C28",
+    "C31"
+  ],
+  "unit_semantics": "42 full paragraph/table units; neither individual statistical claims nor independent evidence observations.",
+  "items": [
+    {
+      "id": "C01",
+      "verdict": "PASS",
+      "section": "Result and exact scope",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The **opening sixth-house sickness block in Lilly’s Book II, Chapter XLIV is extracted**. It begins with the sixth-house heading, topic list, chapter title and opening on **PDF277 / printed243**. It ends with the paragraph concluding “shew death” on **PDF292 / printed258**, immediately before **“DARIOT Abridged.”** Every intervening numbered or unnumbered passage within that span is included. **Chapter XLIV continues beyond this batch and remains incomplete.** [Original PDF277–292; `SECTION_COVERAGE.json`.]",
+      "text_sha256": "7fe36ede4e056da1406895c637bbc92c2aba3dca37ed2d7cfd775bc07e85f63b",
+      "ledger_item_sha256": "e8891641094f8dc698b10d1cd5c5439fbdb55831b01159c99b48bb1875562faf",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "All 192 canonical records were compared against all sixteen admitted original pages. The heading, topic list and final shew death sentence are present, with no substantive omitted passage identified. The Dariot boundary is visible and excluded; XLIV is not declared complete.",
+      "source_evidence": [
+        {
+          "pdf_page": 277,
+          "logical_printed_page": 243,
+          "visible_printed_label": "243",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf277.png",
+          "image_sha256": "b5f924a334c628f3c7c4086a695125a33bcf5f16680fba46b4839121e2248355",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 278,
+          "logical_printed_page": 244,
+          "visible_printed_label": "244",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf278.png",
+          "image_sha256": "9cd1438e0920821ad76919a6acc9db682aeb6b23368324a00e76ddbf2118d490",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 279,
+          "logical_printed_page": 245,
+          "visible_printed_label": "245",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf279.png",
+          "image_sha256": "020a7f9fcfe0a503279b901d3caa7a2490a86a1a577da412fbcc85222f14ff22",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 280,
+          "logical_printed_page": 246,
+          "visible_printed_label": "244",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf280.png",
+          "image_sha256": "f3e0dcd9f6296c0de2ceed57115744ad248375996e5dc3e0eeefc33c21971cb1",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 281,
+          "logical_printed_page": 247,
+          "visible_printed_label": "247",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf281.png",
+          "image_sha256": "e0dc5d7282a42efb6fa7618722c6f76715fed10e71c01e9afad87c9b030e4a71",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 282,
+          "logical_printed_page": 248,
+          "visible_printed_label": "248",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf282.png",
+          "image_sha256": "8882ffb79eb4356cb3d8e86c867092a50f5ca22b6760796b582e73869238bf74",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 283,
+          "logical_printed_page": 249,
+          "visible_printed_label": "249",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf283.png",
+          "image_sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 284,
+          "logical_printed_page": 250,
+          "visible_printed_label": "250",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf284.png",
+          "image_sha256": "78a7d14efc1e25b3960ffda8ea527b47cdb1c909e53e12e91ca1906d3132c667",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 285,
+          "logical_printed_page": 251,
+          "visible_printed_label": "251",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf285.png",
+          "image_sha256": "632a364ce2f6cfc945db45848b8084c063cc86c4706da74970ee29b6fdebdaf2",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 286,
+          "logical_printed_page": 252,
+          "visible_printed_label": "252",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png",
+          "image_sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 287,
+          "logical_printed_page": 253,
+          "visible_printed_label": "253",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf287.png",
+          "image_sha256": "33eda9bd800f32ba1e1592a987d54356ebfe5cd5506a09d752193d9db27824be",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 288,
+          "logical_printed_page": 254,
+          "visible_printed_label": "254",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf288.png",
+          "image_sha256": "97cd53a98ecf1e60ca4c4324fcc73e6fe581b69aa4abf89dbbcb3f1e0d95848e",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 289,
+          "logical_printed_page": 255,
+          "visible_printed_label": "255",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf289.png",
+          "image_sha256": "af739545338eb4e1b0a42adbeffafea7ce30f4242bcdd4ea17c4fc348ff17169",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 290,
+          "logical_printed_page": 256,
+          "visible_printed_label": "256",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf290.png",
+          "image_sha256": "91a7bd95c996e7a338a2a59373239e9af80ea74adadb48be7b62395c9cecb890",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 291,
+          "logical_printed_page": 257,
+          "visible_printed_label": "257",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+          "image_sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 292,
+          "logical_printed_page": 258,
+          "visible_printed_label": "258",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+          "image_sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "SECTION_COVERAGE.json",
+          "sha256": "5786ddb13b68e2a2ad5f53565342704a7c3d55eea5aab2faa236fcd4ef0a7938"
+        },
+        {
+          "path": "READING_RECEIPT.json",
+          "sha256": "06758fb0c13369894078e1c074376dfaf68f64b9549b73091623a82f0c47d360"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C02",
+      "verdict": "PASS",
+      "section": "Result and exact scope",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "This is a historical source audit of Lilly’s statements, their conditions, their textual witnesses and the limited operations that can be reproduced from them. **Predictive accuracy remains unevaluated.** No patient is assessed, no treatment is selected and no survival probability is calculated. The records and code are reference material, with no promotion into the project’s prediction runtime. [Evidence: `RULES.json`, `COUNTS.json`, `lilly_sixth_opening_reference.py`.]",
+      "text_sha256": "ae0312db56aa8b93a659933024dc3d98c0958b77774f345ad6c418b9a7e364cc",
+      "ledger_item_sha256": "71138d739bd3b22a8d32315eeede13dcfca92a9b3aeddf4909197c6604d27d6b",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "evidence_and_implementation_scope",
+      "reason": "All records carry reference-only/nonindependent/no-case metadata, and the inspected helper performs no patient assessment, treatment selection, survival probability or full prediction. PASS is bounded to this supplied packet and its declared status; no audit of consumers elsewhere in the project runtime was performed.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "COUNTS.json",
+          "sha256": "f78ccad142ef66ad6a639f381c551e1a630cb5499831b0ffabd4d1117e4e12c8"
+        },
+        {
+          "path": "lilly_sixth_opening_reference.py",
+          "sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C03",
+      "verdict": "PASS",
+      "section": "Result and exact scope",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "| Measure | Inventory |\n|---|---:|\n| New source records | 192, R1358–R1549 |\n| Cumulative Lilly records | 1,549 |\n| Retained Ptolemy records | 1,066 |\n| Combined Lilly and retained Ptolemy records | 2,615 |\n| General, methodological or illustrative records in this batch | 192 |\n| Worked-narrative records / dated enquiries / horoscope figures | 0 / 0 / 0 |\n| Editorial coverage units / admitted PDF pages | 11 / 16 |\n| House, sign and planet catalogue rows | 12 + 12 + 7 = 31 |\n| Typed limit-register entries | 37 |\n| Retained limits or anomalies / source-resolved entries | 33 / 4 |\n| Distinct focused tests in the final source suite | 33 |\n\n[Evidence: `COUNTS.json`, `SECTION_COVERAGE.json`, `REFERENCE_TABLES.json`, `UNRESOLVED.json`, `TEST_RUN_SUMMARY.json`, `PTOLEMY_COUNT_RECEIPT.json`.]",
+      "text_sha256": "5122932f7e59a196e181f69ceea99a16598eacbaafd79343466bacf2dc6a481f",
+      "ledger_item_sha256": "9ba2fcf955dcf55b9f80d864e03c3f28023837ae5bf75d035174df6b1232b0c5",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "inventory",
+      "reason": "Each inventory row was recomputed against the frozen records, indexes, coverage, register and test evidence. All numbers and ranges agree. Retained Ptolemy is an inventory carry, not a new source review; 192 records and 33 tests are different counts.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "COUNTS.json",
+          "sha256": "f78ccad142ef66ad6a639f381c551e1a630cb5499831b0ffabd4d1117e4e12c8"
+        },
+        {
+          "path": "SECTION_COVERAGE.json",
+          "sha256": "5786ddb13b68e2a2ad5f53565342704a7c3d55eea5aab2faa236fcd4ef0a7938"
+        },
+        {
+          "path": "REFERENCE_TABLES.json",
+          "sha256": "d3e2476aa8ce05ff8fcb2c1fd1642abc6fbd8fea0df4f561aff15c077d03212e"
+        },
+        {
+          "path": "UNRESOLVED.json",
+          "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+        },
+        {
+          "path": "TEST_RUN_SUMMARY.json",
+          "sha256": "b638dbba461196e863b4bd95cc2a9e05cd8bca899c7fc2501978c1db0d53d9f7"
+        },
+        {
+          "path": "PTOLEMY_COUNT_RECEIPT.json",
+          "sha256": "715ade7a3f32deb3a2d3be862be57fc47acb29c0410fa5fa665db0b12d5e2233"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        },
+        {
+          "path": "INITIAL_INVENTORY_CONSISTENCY.json",
+          "sha256": "48a98e03c679d519b6c9f9bb45647463c857598df8f93e8d7fc2250693c9a13d"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item.",
+      "table_header_checked": "| Measure | Inventory |",
+      "table_rows": [
+        {
+          "row": 1,
+          "text": "| New source records | 192, R1358–R1549 |",
+          "verdict": "PASS",
+          "reason": "192 unique contiguous canonical IDs R1358–R1549."
+        },
+        {
+          "row": 2,
+          "text": "| Cumulative Lilly records | 1,549 |",
+          "verdict": "PASS",
+          "reason": "Retained1357 + new192 =1549; before-index batches are unchanged."
+        },
+        {
+          "row": 3,
+          "text": "| Retained Ptolemy records | 1,066 |",
+          "verdict": "PASS",
+          "reason": "Nineteen retained Ptolemy batch counts and four book counts both sum to1066."
+        },
+        {
+          "row": 4,
+          "text": "| Combined Lilly and retained Ptolemy records | 2,615 |",
+          "verdict": "PASS",
+          "reason": "1549 +1066 =2615; no independent-prediction interpretation."
+        },
+        {
+          "row": 5,
+          "text": "| General, methodological or illustrative records in this batch | 192 |",
+          "verdict": "PASS",
+          "reason": "All192 are general, methodological or illustrative; metadata and source comparison agree."
+        },
+        {
+          "row": 6,
+          "text": "| Worked-narrative records / dated enquiries / horoscope figures | 0 / 0 / 0 |",
+          "verdict": "PASS",
+          "reason": "No worked narrative, dated enquiry or horoscope figure in the admitted original span."
+        },
+        {
+          "row": 7,
+          "text": "| Editorial coverage units / admitted PDF pages | 11 / 16 |",
+          "verdict": "PASS",
+          "reason": "Eleven editorial units cover all16 pages; not eleven chapters."
+        },
+        {
+          "row": 8,
+          "text": "| House, sign and planet catalogue rows | 12 + 12 + 7 = 31 |",
+          "verdict": "PASS",
+          "reason": "Twelve house, twelve sign and seven planet rows =31."
+        },
+        {
+          "row": 9,
+          "text": "| Typed limit-register entries | 37 |",
+          "verdict": "PASS",
+          "reason": "UNRESOLVED.json has37 actual entries."
+        },
+        {
+          "row": 10,
+          "text": "| Retained limits or anomalies / source-resolved entries | 33 / 4 |",
+          "verdict": "PASS",
+          "reason": "Exactly33 retained entries and4 explicitly source-resolved entries."
+        },
+        {
+          "row": 11,
+          "text": "| Distinct focused tests in the final source suite | 33 |",
+          "verdict": "PASS",
+          "reason": "AST/log/summary/fresh discovery agree on33 distinct unittest IDs."
+        }
+      ],
+      "surrounding_qualification_disposition": "PASS: complete paragraph/table unit includes all introduction, evidence and explanatory qualifications, not only the data rows."
+    },
+    {
+      "id": "C04",
+      "verdict": "PASS",
+      "section": "Result and exact scope",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The 192 records are an extraction inventory, not 192 independent predictions. One paragraph may supply several conditions, qualifications or alternatives; repeated astronomical carriers do not become independent evidence merely because they occupy separate records. The eleven coverage units are editorial aids, not eleven numbered chapters. Four retained callback records are included for reference without adding them again to the cumulative count. [Evidence: `RULES.json`, `SECTION_COVERAGE.json`, `RETAINED_SOURCE_EXCERPTS.json`.]",
+      "text_sha256": "9c992a938238485f43272f6e32e8f43f8049094435f713f0a0651320c0aaeb36",
+      "ledger_item_sha256": "4ca26f30795b17a3f9bbc2bf63c4cdb49fdaa8fcd3e9d25413b62f7ba4a37851",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "count_semantics",
+      "reason": "Canonical flags, paragraph-level segmentation and the four retained callbacks support the stated count semantics. The eleven coverage units are editorial functions, with the source heading and transition grouped differently from the independent source map without losing content.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "SECTION_COVERAGE.json",
+          "sha256": "5786ddb13b68e2a2ad5f53565342704a7c3d55eea5aab2faa236fcd4ef0a7938"
+        },
+        {
+          "path": "RETAINED_SOURCE_EXCERPTS.json",
+          "sha256": "cd8ef885530cb5b5124341ff929712eee26d46b4cf514997ca89f2e5af1fb07e"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "INITIAL_INVENTORY_CONSISTENCY.json",
+          "sha256": "48a98e03c679d519b6c9f9bb45647463c857598df8f93e8d7fc2250693c9a13d"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C05",
+      "verdict": "PASS",
+      "section": "1. The selected time is part of the method",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "Lilly gives an ordered sequence for selecting the figure’s time:\n\n| Priority | Source event | Qualification |\n|---|---|---|\n| First | The first time illness compelled bed or repose | Obtain the hour as nearly as possible |\n| Second | The first carrying of the sick person’s urine to someone to enquire about the disease | Used if the first time cannot be obtained; the recipient need not be a physician |\n| Third | The physician’s first speaking with the patient, first access to the patient, or first receipt of the urine | Used if the earlier evidence cannot be obtained; the three alternatives have no stated internal ranking |\n\n[XLIV, printed243 / PDF277; R1359–R1361.]",
+      "text_sha256": "26524c05f5b82caa3cce343e06689acd30c298b3956bf635778ae428ed7cb29f",
+      "ledger_item_sha256": "6bc4be3368bc6e7b8b3a43f4f0f1f68682976594a8c029ef84c66a4313bbe969",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "All three priority rows and their qualifications match the opening on PDF277. The first event is bed/repose, the second urine enquiry to any recipient, and the third physician alternatives follow failure to obtain the earlier evidence. No internal third-stage priority is printed.",
+      "source_evidence": [
+        {
+          "pdf_page": 277,
+          "logical_printed_page": 243,
+          "visible_printed_label": "243",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf277.png",
+          "image_sha256": "b5f924a334c628f3c7c4086a695125a33bcf5f16680fba46b4839121e2248355",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item.",
+      "table_header_checked": "| Priority | Source event | Qualification |",
+      "table_rows": [
+        {
+          "row": 1,
+          "text": "| First | The first time illness compelled bed or repose | Obtain the hour as nearly as possible |",
+          "verdict": "PASS",
+          "reason": "Forced bed/repose time, with hour as near as possible; slight first sensation excluded."
+        },
+        {
+          "row": 2,
+          "text": "| Second | The first carrying of the sick person’s urine to someone to enquire about the disease | Used if the first time cannot be obtained; the recipient need not be a physician |",
+          "verdict": "PASS",
+          "reason": "First urine enquiry if onset time unavailable; recipient need not be physician."
+        },
+        {
+          "row": 3,
+          "text": "| Third | The physician’s first speaking with the patient, first access to the patient, or first receipt of the urine | Used if the earlier evidence cannot be obtained; the three alternatives have no stated internal ranking |",
+          "verdict": "PASS",
+          "reason": "Physician first speech/access/urine-receipt alternatives after earlier evidence unavailable; no internal rank."
+        }
+      ],
+      "surrounding_qualification_disposition": "PASS: complete paragraph/table unit includes all introduction, evidence and explanatory qualifications, not only the data rows."
+    },
+    {
+      "id": "C06",
+      "verdict": "PASS",
+      "section": "1. The selected time is part of the method",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The first slight sensation of illness is expressly excluded from the preferred onset time. Lilly asks for the point when the person was sufficiently oppressed to be forced to bed or rest. After selecting the time, he directs construction of the figure and exact rectification of the Moon’s position to that hour. The selected event therefore needs to remain part of the provenance of any later calculation. [XLIV, printed243 / PDF277; R1359, R1362.]",
+      "text_sha256": "38d7f1af49789140ffdc41ee36dc923f25d65b3d13ddc8beb4592fde549f6c6d",
+      "ledger_item_sha256": "304dc4193287713532f145b2abf3f3a8bc9a991b1037f4a12f4b340e12235c18",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "The preferred onset excludes the first slight sensation and selects forced bed/rest. The figure and Moon are explicitly tied to that hour. The provenance consequence is a reasonable audit inference and does not add a printed timing rule.",
+      "source_evidence": [
+        {
+          "pdf_page": 277,
+          "logical_printed_page": 243,
+          "visible_printed_label": "243",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf277.png",
+          "image_sha256": "b5f924a334c628f3c7c4086a695125a33bcf5f16680fba46b4839121e2248355",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C07",
+      "verdict": "PASS",
+      "section": "1. The selected time is part of the method",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The time helper distinguishes **unavailable** from **unknown**. It does not silently fall through an earlier stage whose availability is unknown. Within the third stage it retains known alternatives; different supplied time tokens remain an unresolved choice. If another alternative’s availability is unknown, the selection status remains unknown while the known candidates remain visible. These are conservative implementation policies for unresolved evidence, not extra priority rules attributed to Lilly. [Implementation: `select_source_time`; focused time-selection tests.]",
+      "text_sha256": "f39410b9214f911fd358ff614ffb0fe6dd8df49f2faa5d33808e09633ffab01e",
+      "ledger_item_sha256": "4ad922d1cb245da3b0de1f0643b29ea8369f0a3ddef5c145cf1f71ba0ffd0e7e",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "implementation_policy",
+      "reason": "The fresh code check confirmed unknown-versus-unavailable semantics, third-stage alternatives, conflict status and retention of known candidates when another alternative is unknown. The report labels these choices as implementation policy.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "lilly_sixth_opening_reference.py",
+          "sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+        },
+        {
+          "path": "test_lilly_sixth_opening.py",
+          "sha256": "3d3186e86772b16903f914f168c38c58ca952578aa4458e388cad994115e64db"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C08",
+      "verdict": "PASS",
+      "section": "1. The selected time is part of the method",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "Before judging the bodily location, Lilly also requires observations of the ascendant and its occupants, the sixth house and its occupants, the Moon’s sign and house, and the planet affecting the Moon together with that planet’s house and lordship. The records preserve these as required observations. This passage supplies no weighted formula for combining them. [XLIV, printed243 / PDF277; R1363.]",
+      "text_sha256": "7b8f53202470360bfb482647ab8cd84d339ac543dd1101dc301c5cc322a4558e",
+      "ledger_item_sha256": "6d867b804f7bc5308f4ebf95fae8cc521a8d708b446c4a4298ece9856791c86d",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "All four observations are visible on PDF277 and retained in R1363. No weighted combining formula is supplied in that paragraph; the absence claim is local.",
+      "source_evidence": [
+        {
+          "pdf_page": 277,
+          "logical_printed_page": 243,
+          "visible_printed_label": "243",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf277.png",
+          "image_sha256": "b5f924a334c628f3c7c4086a695125a33bcf5f16680fba46b4839121e2248355",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C09",
+      "verdict": "PASS",
+      "section": "2. The correspondence tables must retain their own meanings",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The opening block gives three separate catalogues: **twelve houses**, **twelve signs**, and **seven planets**. Their historical disease and bodily correspondences are stored under separate lookup namespaces. A query for a house cannot silently fall back to a sign with a superficially similar association. The list lengths describe the printed catalogues, not evidence that the correspondences are medically valid. [XLIV, printed244–247 / PDF278–281; `REFERENCE_TABLES.json`.]",
+      "text_sha256": "123d44a800d31b83661af00ca40adfa8c094d6eb5dbdfa5045707f51da6ed33a",
+      "ledger_item_sha256": "e1d0e80491a100362ff64f2e0eef12d2faa43bffc045f281533378e2e5f455c5",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "The original catalogues contain 12 house, 12 sign and 7 planet rows. Their exact JSON namespaces and lookup routing were checked. This does not support medical validity.",
+      "source_evidence": [
+        {
+          "pdf_page": 278,
+          "logical_printed_page": 244,
+          "visible_printed_label": "244",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf278.png",
+          "image_sha256": "9cd1438e0920821ad76919a6acc9db682aeb6b23368324a00e76ddbf2118d490",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 279,
+          "logical_printed_page": 245,
+          "visible_printed_label": "245",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf279.png",
+          "image_sha256": "020a7f9fcfe0a503279b901d3caa7a2490a86a1a577da412fbcc85222f14ff22",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 280,
+          "logical_printed_page": 246,
+          "visible_printed_label": "244",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf280.png",
+          "image_sha256": "f3e0dcd9f6296c0de2ceed57115744ad248375996e5dc3e0eeefc33c21971cb1",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 281,
+          "logical_printed_page": 247,
+          "visible_printed_label": "247",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf281.png",
+          "image_sha256": "e0dc5d7282a42efb6fa7618722c6f76715fed10e71c01e9afad87c9b030e4a71",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "REFERENCE_TABLES.json",
+          "sha256": "d3e2476aa8ce05ff8fcb2c1fd1642abc6fbd8fea0df4f561aff15c077d03212e"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        },
+        {
+          "path": "INITIAL_INVENTORY_CONSISTENCY.json",
+          "sha256": "48a98e03c679d519b6c9f9bb45647463c857598df8f93e8d7fc2250693c9a13d"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C10",
+      "verdict": "PASS",
+      "section": "2. The correspondence tables must retain their own meanings",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "A fourth structure is relevant because Lilly explicitly refers back to the **planet-in-sign body table on printed page119 / PDF153**. In that retained table, Saturn in Cancer corresponds to **Reins, Belly, Secrets**. This is a different lookup from either the generic Cancer disease list or Saturn’s generic disease list. The current helper admits that one callback cell; it does not fill other cells from an assumed pattern. [XLIV, printed243–244 / PDF277–278; R1364–R1366; retained R523; `CROSS_SOURCE_COMPARISONS.json`.]",
+      "text_sha256": "b0c7fa038a2b467f2de61e5d9a949c1642765f1e51f500374b9aa582dc1471e8",
+      "ledger_item_sha256": "51fece0bd5a8809bd3fea8c2d8a8804aef6c3304d49a83d31dc81f100e72e95b",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "The explicit printed119 reference is on PDF278. Direct rendering of original PDF153 confirms Saturn/Cancer = Reins, Belly, Secrets. The helper supplies just this retained callback cell and keeps it apart from generic sign/planet catalogues.",
+      "source_evidence": [
+        {
+          "pdf_page": 277,
+          "logical_printed_page": 243,
+          "visible_printed_label": "243",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf277.png",
+          "image_sha256": "b5f924a334c628f3c7c4086a695125a33bcf5f16680fba46b4839121e2248355",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 278,
+          "logical_printed_page": 244,
+          "visible_printed_label": "244",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf278.png",
+          "image_sha256": "9cd1438e0920821ad76919a6acc9db682aeb6b23368324a00e76ddbf2118d490",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 153,
+          "image_path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf153-callback-original.png",
+          "image_sha256": "cd9aba1794ea9dd4ed45779a1e5df712026f1e76edd6454df58b68ab72aa6b51",
+          "visually_inspected_in_initial_candidate_comparison": true,
+          "extent": "Targeted same-work callback",
+          "render_origin": "Rendered directly from the exact original PDF; no OCR authority or other edition."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "REFERENCE_TABLES.json",
+          "sha256": "d3e2476aa8ce05ff8fcb2c1fd1642abc6fbd8fea0df4f561aff15c077d03212e"
+        },
+        {
+          "path": "RETAINED_SOURCE_EXCERPTS.json",
+          "sha256": "cd8ef885530cb5b5124341ff929712eee26d46b4cf514997ca89f2e5af1fb07e"
+        },
+        {
+          "path": "CROSS_SOURCE_COMPARISONS.json",
+          "sha256": "6fa585641119dead8e5ef541673f8a0a27dc14dad4a0a63d11390961e9c65bf7"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C11",
+      "verdict": "PASS",
+      "section": "2. The correspondence tables must retain their own meanings",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "Lilly’s Cancer-rising, Saturn-in-Cancer illustration combines the first house’s association with the head and the members signified by Saturn in that sign. He offers alternative ailments and then says the judgment becomes more certain—using “infallible” language—if one of the specified corroborating significators or the sixth sign indicates the same member. The illustration is hypothetical; no dated patient, chart or independently observed endpoint accompanies it. [XLIV, printed244 / PDF278; R1365–R1366.]",
+      "text_sha256": "6a8694c5a3897e5c2be69bcd29e2639959613198653ae6698e48e359dddfdecc",
+      "ledger_item_sha256": "8c95167eabbba912bd4fb6a845432152fac0f486cac71b009c1448270590f75b",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "PDF278 supplies the Cancer-rising/Saturn illustration, alternative ailments and same-member corroboration with infallible wording. No dated patient, chart or independently observed outcome accompanies the illustration in the admitted source.",
+      "source_evidence": [
+        {
+          "pdf_page": 278,
+          "logical_printed_page": 244,
+          "visible_printed_label": "244",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf278.png",
+          "image_sha256": "9cd1438e0920821ad76919a6acc9db682aeb6b23368324a00e76ddbf2118d490",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "COUNTS.json",
+          "sha256": "f78ccad142ef66ad6a639f381c551e1a630cb5499831b0ffabd4d1117e4e12c8"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C12",
+      "verdict": "PASS",
+      "section": "2. The correspondence tables must retain their own meanings",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "A future evaluation would need to distinguish a bodily location inferred from the chart from a symptom already supplied by the questioner, and would need to define what counts as corroboration. That is an evaluation requirement inferred from the source’s use of inputs and overlapping correspondences. It is not a scoring method printed by Lilly. [Source basis: R1363–R1367; evidence classification in `RULES.json`.]",
+      "text_sha256": "57ca4559dbb1076b197f30964e89d45699c4417373d59b66e99e9fbf29d14b37",
+      "ledger_item_sha256": "fc14186c2aa70baa29bf8e892783ec5978cfb6a31eb704fb345f769dad3a7d83",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "audit_inference",
+      "reason": "The paragraph is explicitly an audit inference, grounded in the source’s supplied symptoms and overlapping correspondences. It does not falsely attribute a scoring rule to Lilly.",
+      "source_evidence": [
+        {
+          "pdf_page": 277,
+          "logical_printed_page": 243,
+          "visible_printed_label": "243",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf277.png",
+          "image_sha256": "b5f924a334c628f3c7c4086a695125a33bcf5f16680fba46b4839121e2248355",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 278,
+          "logical_printed_page": 244,
+          "visible_printed_label": "244",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf278.png",
+          "image_sha256": "9cd1438e0920821ad76919a6acc9db682aeb6b23368324a00e76ddbf2118d490",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C13",
+      "verdict": "PASS",
+      "section": "3. Mean lunar motion and the retrograde analogy differ",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The duration discussion uses the Moon travelling in twenty-four hours **less than her mean motion** while in an aspect or conjunction with the ascendant’s ruler. The numerical mean is not printed in that local sentence. The audit explicitly links it to Lilly’s earlier statement on **printed80 / PDF114**, which gives **13°10′36″**. [XLIV, printed251–252 / PDF285–286; R1467; retained R192; `CROSS_SOURCE_COMPARISONS.json`.]",
+      "text_sha256": "9b0815b72318b531fcd0c59462cda6101f4ba9eedb798431014275c9b782121f",
+      "ledger_item_sha256": "d1d447b40d3b78808dd8c5775a7e27d64d1b34939b76a0b75b48a82f3e3a1a1f",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "PDF285–286 retains the 24-hour below-mean motion plus aspect/conjunction prerequisite without a local numeric value. Direct original PDF114 separately states 13 degrees 10 minutes 36 seconds; the audit labels that same-work link as its callback.",
+      "source_evidence": [
+        {
+          "pdf_page": 285,
+          "logical_printed_page": 251,
+          "visible_printed_label": "251",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf285.png",
+          "image_sha256": "632a364ce2f6cfc945db45848b8084c063cc86c4706da74970ee29b6fdebdaf2",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 286,
+          "logical_printed_page": 252,
+          "visible_printed_label": "252",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png",
+          "image_sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 114,
+          "image_path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf114-callback-original.png",
+          "image_sha256": "2be118599245609558d6d22cf607700bea3b5b5f52e3e76432e959341c8db140",
+          "visually_inspected_in_initial_candidate_comparison": true,
+          "extent": "Targeted same-work callback",
+          "render_origin": "Rendered directly from the exact original PDF; no OCR authority or other edition."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "RETAINED_SOURCE_EXCERPTS.json",
+          "sha256": "cd8ef885530cb5b5124341ff929712eee26d46b4cf514997ca89f2e5af1fb07e"
+        },
+        {
+          "path": "CROSS_SOURCE_COMPARISONS.json",
+          "sha256": "6fa585641119dead8e5ef541673f8a0a27dc14dad4a0a63d11390961e9c65bf7"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C14",
+      "verdict": "PASS",
+      "section": "3. Mean lunar motion and the retrograde analogy differ",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The earlier page separately calls travel of **less than 13°10′ in twenty-four hours** equivalent to a retrograde planet, while saying the Moon is always direct. The threshold for that analogy is **36 arcseconds lower** than the stated mean. Both comparisons are strict: equality does not satisfy “less than.” [Printed80 / PDF114; retained R195 and R221; `ARITHMETIC_CHECKS.json`.]",
+      "text_sha256": "eee55c5278c05efcca83c1c4af635723acc0af9fb6d29db5973eeadb49cbb8d8",
+      "ledger_item_sha256": "1a7b05619ae2c4f34ac12509a413062f3d48d66c4481b17ae67fcfac69d13037",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "Original PDF114 explicitly says always direct and separately gives less than 13 degrees 10 minutes in 24 hours as a retrograde analogy. Subtracting the two source-stated values gives 36 arcseconds; less than is strict.",
+      "source_evidence": [
+        {
+          "pdf_page": 114,
+          "image_path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf114-callback-original.png",
+          "image_sha256": "2be118599245609558d6d22cf607700bea3b5b5f52e3e76432e959341c8db140",
+          "visually_inspected_in_initial_candidate_comparison": true,
+          "extent": "Targeted same-work callback",
+          "render_origin": "Rendered directly from the exact original PDF; no OCR authority or other edition."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RETAINED_SOURCE_EXCERPTS.json",
+          "sha256": "cd8ef885530cb5b5124341ff929712eee26d46b4cf514997ca89f2e5af1fb07e"
+        },
+        {
+          "path": "ARITHMETIC_CHECKS.json",
+          "sha256": "a08ea0aca4d99f065286becbefdb5bd523264678c0de55a66334b45838a47234"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C15",
+      "verdict": "PASS",
+      "section": "3. Mean lunar motion and the retrograde analogy differ",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "| Supplied daily motion | Below stated mean, 13°10′36″? | Below analogy threshold, 13°10′00″? |\n|---|---|---|\n| 13°09′59″ | Yes | Yes |\n| 13°10′00″ | Yes | No |\n| 13°10′18″ | Yes | No |\n| 13°10′36″ | No | No |\n\nThese are controlled arithmetic examples, not reconstructed historical observations. The two threshold comparisons therefore cannot be merged into one boolean without changing at least some results. [Executed calculations: `ARITHMETIC_CHECKS.json`; focused lunar-motion tests.]",
+      "text_sha256": "220571aa59cbf818a3b3f6b541e634f7272085486f4c8003474faabaa0f1ef12",
+      "ledger_item_sha256": "fc09c85253c306570243589c22a3e961ddec013e260f792638790354597be0cc",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "executed_arithmetic",
+      "reason": "All four numerical rows were independently recomputed: 47399 -> true/true; 47400 -> true/false; 47418 -> true/false; 47436 -> false/false. They are controlled values, not historical observations.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "ARITHMETIC_CHECKS.json",
+          "sha256": "a08ea0aca4d99f065286becbefdb5bd523264678c0de55a66334b45838a47234"
+        },
+        {
+          "path": "test_lilly_sixth_opening.py",
+          "sha256": "3d3186e86772b16903f914f168c38c58ca952578aa4458e388cad994115e64db"
+        },
+        {
+          "path": "TEST_RUN_SUMMARY.json",
+          "sha256": "b638dbba461196e863b4bd95cc2a9e05cd8bca899c7fc2501978c1db0d53d9f7"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item.",
+      "table_header_checked": "| Supplied daily motion | Below stated mean, 13°10′36″? | Below analogy threshold, 13°10′00″? |",
+      "table_rows": [
+        {
+          "row": 1,
+          "text": "| 13°09′59″ | Yes | Yes |",
+          "verdict": "PASS",
+          "reason": "47399 <47436 and <47400: Yes/Yes."
+        },
+        {
+          "row": 2,
+          "text": "| 13°10′00″ | Yes | No |",
+          "verdict": "PASS",
+          "reason": "47400 <47436 but equals47400: Yes/No."
+        },
+        {
+          "row": 3,
+          "text": "| 13°10′18″ | Yes | No |",
+          "verdict": "PASS",
+          "reason": "47418 <47436 but >47400: Yes/No."
+        },
+        {
+          "row": 4,
+          "text": "| 13°10′36″ | No | No |",
+          "verdict": "PASS",
+          "reason": "47436 equals47436 and exceeds47400: No/No."
+        }
+      ],
+      "surrounding_qualification_disposition": "PASS: complete paragraph/table unit includes all introduction, evidence and explanatory qualifications, not only the data rows."
+    },
+    {
+      "id": "C16",
+      "verdict": "PASS",
+      "section": "3. Mean lunar motion and the retrograde analogy differ",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The helper returns only those two comparisons. It does not infer physical retrogradation, compute a horoscope, or evaluate the full aspect-qualified illness rule. Nor does it silently equate “below the mean” with the neighbouring phrase “decreases in light and motion”: those are separately stated source conditions. [Printed80 / PDF114 and printed251–252 / PDF285–286; R1467–R1469; `lilly_sixth_opening_reference.py`.]",
+      "text_sha256": "442dce6a286d682e7c8b647c4ba2179b03c10b7871b767473360cc13cef076e5",
+      "ledger_item_sha256": "2f2f71b925449a2b20c521e3c16777e00290785d1ccdd990ef5d98efcb9bec36",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "The fresh code check confirms the helper only compares the supplied motion with two declared constants. Original PDF285–286 separately states decrease in light/motion, so the report correctly refuses to collapse that condition into below-mean speed.",
+      "source_evidence": [
+        {
+          "pdf_page": 114,
+          "image_path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf114-callback-original.png",
+          "image_sha256": "2be118599245609558d6d22cf607700bea3b5b5f52e3e76432e959341c8db140",
+          "visually_inspected_in_initial_candidate_comparison": true,
+          "extent": "Targeted same-work callback",
+          "render_origin": "Rendered directly from the exact original PDF; no OCR authority or other edition."
+        },
+        {
+          "pdf_page": 285,
+          "logical_printed_page": 251,
+          "visible_printed_label": "251",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf285.png",
+          "image_sha256": "632a364ce2f6cfc945db45848b8084c063cc86c4706da74970ee29b6fdebdaf2",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 286,
+          "logical_printed_page": 252,
+          "visible_printed_label": "252",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png",
+          "image_sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "lilly_sixth_opening_reference.py",
+          "sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+        },
+        {
+          "path": "RETAINED_SOURCE_EXCERPTS.json",
+          "sha256": "cd8ef885530cb5b5124341ff929712eee26d46b4cf514997ca89f2e5af1fb07e"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C17",
+      "verdict": "PASS",
+      "section": "4. Remaining arc does not by itself choose a duration",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "For an unfortunate planet in the sixth moving from one sign into another, Lilly says the disease will alter. If asked when, he directs counting the degrees remaining before the planet leaves the sign and judging that many **months, weeks or days according to the sign’s nature and quality**. The local passage supplies no complete choice among those units and no rule for rounding a partial degree. The initial alteration is not expressly assigned a favourable or unfavourable direction. [XLIV, printed249 / PDF283; R1437–R1438.]",
+      "text_sha256": "236a77b0ecfc7f8f040d0af7ee7deeda10fce62d314f8feab5cafa2777f335a9",
+      "ledger_item_sha256": "4eb4490b0185c83e5de114866f8787a082e0635c6f119c86325affb70e9f8b1a",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "Original PDF283 gives sign exit, degree counting and months/weeks/days by sign nature/quality, but no determinate unit or rounding rule in that passage. Alteration is not assigned an initial favourable/unfavourable direction.",
+      "source_evidence": [
+        {
+          "pdf_page": 283,
+          "logical_printed_page": 249,
+          "visible_printed_label": "249",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf283.png",
+          "image_sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "UNRESOLVED.json",
+          "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C18",
+      "verdict": "PASS",
+      "section": "4. Remaining arc does not by itself choose a duration",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The reference helper can calculate an exact remaining arc when all coordinate components are supplied. For example, **29°30′00″ leaves ½° in the sign**, while the time unit remains unknown. Omitted minutes or seconds remain missing. The helper also rejects a combined position of 30° or more, even when each fractional component separately lies below its own limit. This domain check is an implementation safeguard, not a data-entry rule attributed to the seventeenth-century text. [Executed example and rejected counterexamples: `ARITHMETIC_CHECKS.json`; `remaining_degrees_in_sign` and its focused tests.]",
+      "text_sha256": "74318fb64e1483b3fef04b08890275a1fa68ff8bf83fb444b8a811bce2bea61b",
+      "ledger_item_sha256": "76ffe1318cfd93b99534c5dfc6ed6ca8544b1ef40b8af7104d463e8ef1dd7641",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "implementation_and_arithmetic",
+      "reason": "Exact Fraction arithmetic gives 1/2 degree remaining for 29,30,0. Missing components stay unknown and aggregate coordinates at or beyond 30 are rejected. These are explicit API policies, not added historical rules.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "ARITHMETIC_CHECKS.json",
+          "sha256": "a08ea0aca4d99f065286becbefdb5bd523264678c0de55a66334b45838a47234"
+        },
+        {
+          "path": "lilly_sixth_opening_reference.py",
+          "sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+        },
+        {
+          "path": "test_lilly_sixth_opening.py",
+          "sha256": "3d3186e86772b16903f914f168c38c58ca952578aa4458e388cad994115e64db"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C19",
+      "verdict": "PASS",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The source distinguishes **present danger, increasing illness, duration, recovery, recovery after delay, relapse, and death**. Some passages describe recovery despite a long or grievous illness. Others express danger or probability rather than certainty. These distinctions remain in the individual records; a future evaluator would need separately defined endpoints instead of a single success label. [XLIV, printed249–258 / PDF283–292; `RULES.json`.]",
+      "text_sha256": "f9ec796dcb104154bb4c208c119aeaa58ae7f15849763756ef44b83fb2789286",
+      "ledger_item_sha256": "61ca128c5ba3dfe22b7579fb3dafb99bb703921961e1c079476103e0c94bf535",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_distinction_and_audit_inference",
+      "reason": "The complete original span and record kinds preserve duration, severity/danger, recovery, delayed recovery, relapse, qualitative probability and death as different outcomes. The future endpoint requirement is marked as inference.",
+      "source_evidence": [
+        {
+          "pdf_page": 283,
+          "logical_printed_page": 249,
+          "visible_printed_label": "249",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf283.png",
+          "image_sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 284,
+          "logical_printed_page": 250,
+          "visible_printed_label": "250",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf284.png",
+          "image_sha256": "78a7d14efc1e25b3960ffda8ea527b47cdb1c909e53e12e91ca1906d3132c667",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 285,
+          "logical_printed_page": 251,
+          "visible_printed_label": "251",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf285.png",
+          "image_sha256": "632a364ce2f6cfc945db45848b8084c063cc86c4706da74970ee29b6fdebdaf2",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 286,
+          "logical_printed_page": 252,
+          "visible_printed_label": "252",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png",
+          "image_sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 287,
+          "logical_printed_page": 253,
+          "visible_printed_label": "253",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf287.png",
+          "image_sha256": "33eda9bd800f32ba1e1592a987d54356ebfe5cd5506a09d752193d9db27824be",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 288,
+          "logical_printed_page": 254,
+          "visible_printed_label": "254",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf288.png",
+          "image_sha256": "97cd53a98ecf1e60ca4c4324fcc73e6fe581b69aa4abf89dbbcb3f1e0d95848e",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 289,
+          "logical_printed_page": 255,
+          "visible_printed_label": "255",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf289.png",
+          "image_sha256": "af739545338eb4e1b0a42adbeffafea7ce30f4242bcdd4ea17c4fc348ff17169",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 290,
+          "logical_printed_page": 256,
+          "visible_printed_label": "256",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf290.png",
+          "image_sha256": "91a7bd95c996e7a338a2a59373239e9af80ea74adadb48be7b62395c9cecb890",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 291,
+          "logical_printed_page": 257,
+          "visible_printed_label": "257",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+          "image_sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 292,
+          "logical_printed_page": 258,
+          "visible_printed_label": "258",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+          "image_sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C20",
+      "verdict": "PASS",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The benevolent-planet clause on printed250 requires the planet to be **well fortified in the sixth and not the author of the disease**. That last condition is essential to matching the clause. The outcome wording in the image is “the Disease is not, or will be permanent.” The record preserves it without inserting another “not”; whether the first negative has shared scope or a word is absent remains unresolved. The helper checks the prerequisites only and does not resolve this outcome wording. [PDF284; R1444; U-ROOT01; `evidence/pdf284-permanence.png`.]",
+      "text_sha256": "4a405cce63d37d3585b1bf3fdc01613a571bfed70c4adee4072b3f651ff0c5c3",
+      "ledger_item_sha256": "75b67958ade19ff7b56e9f7d06deb0d43e1da92e5bb1832fd035dfb05a085888",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "Original PDF284 visibly requires well-fortified benefic in sixth and not author of disease; its outcome reads not, or will be permanent. R1444 and the helper retain the prerequisites without silently repairing the uncertain outcome.",
+      "source_evidence": [
+        {
+          "pdf_page": 284,
+          "logical_printed_page": 250,
+          "visible_printed_label": "250",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf284.png",
+          "image_sha256": "78a7d14efc1e25b3960ffda8ea527b47cdb1c909e53e12e91ca1906d3132c667",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "UNRESOLVED.json",
+          "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+        },
+        {
+          "path": "lilly_sixth_opening_reference.py",
+          "sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+        },
+        {
+          "path": "evidence/pdf284-permanence.png",
+          "sha256": "bd1355dc4c1c370e7904f8343b559e1bc804055b206c2f49d801c7003e1725b7"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C21",
+      "verdict": "PASS",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "For the Moon decreasing in light and motion and coming to conjunction, square or opposition of Saturn, Lilly’s adverse statement is qualified **“for the most part”** and excepts a disease already **“in its decrease and leaving the Patient or Querent.”** The helper’s exception input represents that whole phrase. Knowing only that the disease is decreasing does not establish the full exception; an unresolved aggregate remains unknown. A satisfied prerequisite is not a certain prognosis. [Printed252 / PDF286; R1469; `evidence/pdf286-saturn-exception.png`; reference helper.]",
+      "text_sha256": "3bf91c61ac378f99d3b9e3d2b8bd429b2ab465768d5443ce9f67c749a1e04f96",
+      "ledger_item_sha256": "f0a4d181880b5ca46228518cebb3adfb7d8b32ea61252f13be05f06cd017c157",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "Original PDF286 contains for the most part and the full in its decrease and leaving the Patient or Querent exception. The fresh code audit confirms the caller supplies that full aggregate, and SATISFIED concerns prerequisites rather than certainty.",
+      "source_evidence": [
+        {
+          "pdf_page": 286,
+          "logical_printed_page": 252,
+          "visible_printed_label": "252",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png",
+          "image_sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "lilly_sixth_opening_reference.py",
+          "sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+        },
+        {
+          "path": "test_lilly_sixth_opening.py",
+          "sha256": "3d3186e86772b16903f914f168c38c58ca952578aa4458e388cad994115e64db"
+        },
+        {
+          "path": "evidence/pdf286-saturn-exception.png",
+          "sha256": "3477273040ca4c854329136540c167d5956c5bcec3b1eb1cf96507f6748f490c"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C22",
+      "verdict": "PASS",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "Aspect names also need their context. With **Mars ruling the ascendant and placed in the sixth**, Lilly says there is no great danger when Mars is in sextile or trine to Venus, and extends that statement even to square or opposition. Conjunction is not named in this particular sentence. A universal rule that every square or opposition must add danger would misrepresent this passage. [Printed252 / PDF286; R1475.]",
+      "text_sha256": "0cbee1ea2bb9db521ce1f493009ed2d9bd79254de8f477aaf87afb2ee8d9e239",
+      "ledger_item_sha256": "fd1e690fd79fc3f48510d4e959201e0b96555fe4288e79d0a947feba0e1982df",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "Original PDF286 names Mars as ascendant ruler in sixth, sextile/trine to Venus, and even square/opposition. Conjunction is absent from this sentence. The local exception defeats a proposed unconditional adverse-aspect rule.",
+      "source_evidence": [
+        {
+          "pdf_page": 286,
+          "logical_printed_page": 252,
+          "visible_printed_label": "252",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png",
+          "image_sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C23",
+      "verdict": "PASS",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "Reception can change the outcome without removing duration. One recovery testimony requires reception between the first and eighth rulers and neither being infortunated by malignant planets. A later death-probability passage allows possible escape through reception with the planet in the eighth, while retaining a very long and grievous disease. The exact reach of that later exception across every preceding alternative is not fully restated and remains a scope question. [Printed254,257 / PDF288,291; R1497, R1535.]",
+      "text_sha256": "4acdaff1f2334cebfa6ba6c5eaae62c560615dab9a22e2f51f154066e41c63d6",
+      "ledger_item_sha256": "6491ec3d8b0aa7d5db1d460f317c64ad02c7fc4bc12b8f153864a48f193081bc",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "The recovery reception condition on PDF288 and probable-death reception exception on PDF291 have different scopes. Both affliction qualifications and the continuing long/grievous illness are retained; the later exception’s reach is left open.",
+      "source_evidence": [
+        {
+          "pdf_page": 288,
+          "logical_printed_page": 254,
+          "visible_printed_label": "254",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf288.png",
+          "image_sha256": "97cd53a98ecf1e60ca4c4324fcc73e6fe581b69aa4abf89dbbcb3f1e0d95848e",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 291,
+          "logical_printed_page": 257,
+          "visible_printed_label": "257",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+          "image_sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "UNRESOLVED.json",
+          "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C24",
+      "verdict": "PASS",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "Lilly’s common-sign duration statement has an explicit **Pisces-on-the-sixth-cusp exception**. He says he has found that placement equivalent to a movable sign. The final words continue from PDF282 onto the first line of PDF283; that continuation is included in the record. This is Lilly’s generalized first-person experience claim, not a counted or independently checked series. [Printed248–249 / PDF282–283; R1429–R1430.]",
+      "text_sha256": "cfa13d341d49a390382d5bad6f6ab11f511e1c1bcc1d892e2c024de0375e2c40",
+      "ledger_item_sha256": "939f1781a6bb519a2d441cfd371dfe9c39dcfbdf6bb3c9abf966393a9812312b",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "The full Pisces exception crosses PDF282–283 and is included. Lilly’s I ever found is a general self-report with no counted outcome series in this source span.",
+      "source_evidence": [
+        {
+          "pdf_page": 282,
+          "logical_printed_page": 248,
+          "visible_printed_label": "248",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf282.png",
+          "image_sha256": "8882ffb79eb4356cb3d8e86c867092a50f5ca22b6760796b582e73869238bf74",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 283,
+          "logical_printed_page": 249,
+          "visible_printed_label": "249",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf283.png",
+          "image_sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "SECTION_COVERAGE.json",
+          "sha256": "5786ddb13b68e2a2ad5f53565342704a7c3d55eea5aab2faa236fcd4ef0a7938"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C25",
+      "verdict": "PASS",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "A recovery condition on printed255 assigns freedom from misfortune to **the ascendant’s ruler**: after the Moon applies to that ruler by trine or sextile, the text says “and he be cleer of all misfortune,” followed by an alternative absence-of-impediment clause especially concerning the eighth or sixth lord. Both the subject and the printed “or” matter. The freedom condition is not reassigned to the Moon. [PDF289; R1505; `evidence/pdf289-ascendant-lord-pronoun.png`.]",
+      "text_sha256": "f48db01e5bec1365753d8b4a861fe53af4e5853c58a7b119a02e49d9d25f7dad",
+      "ledger_item_sha256": "9fc9af91ccdee036e9ebd0fe0678e62ecd86e2fcb28ea25e1c1ff6db1c3d66af",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "On original PDF289, he follows Lord of the ascendant, while Moon is the applying body. The printed or between the freedom clauses remains in the record and report.",
+      "source_evidence": [
+        {
+          "pdf_page": 289,
+          "logical_printed_page": 255,
+          "visible_printed_label": "255",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf289.png",
+          "image_sha256": "af739545338eb4e1b0a42adbeffafea7ce30f4242bcdd4ea17c4fc348ff17169",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "evidence/pdf289-ascendant-lord-pronoun.png",
+          "sha256": "f3ef663592caa917244a7b1b140724ad1532e3a312892cef631326bb4e7dcd88"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C26",
+      "verdict": "PASS",
+      "section": "5. Conditions and exceptions change the source’s prognosis",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "Another passage, with the sixth ruler in the eighth and the eighth ruler in the sixth and a sextile or trine between them, says “you shall not doubt of the death of the Patient at that time,” then explains that Nature is not so overcome or weak that the sick cannot overcome the illness. The historical sense of “doubt” or a possible textual tension remains open. The extraction retains both the phrase and the survival-oriented explanation; it does not silently substitute “life,” “fear,” or “no death.” [Printed249 / PDF283; R1440; U-B01.]",
+      "text_sha256": "6b4a6fcbb2e4eabe951a4dd19af10f636aa3802a9a786ccfef00649f6dbd74ad",
+      "ledger_item_sha256": "8472b650095961d83692710abdb48469d3d01822b1b4552cf3b1a4bfa927d5b7",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "Original PDF283 contains both not doubt of the death and the survival-oriented Nature rationale. The report accurately retains the source tension without an undocumented emendation.",
+      "source_evidence": [
+        {
+          "pdf_page": 283,
+          "logical_printed_page": 249,
+          "visible_printed_label": "249",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf283.png",
+          "image_sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "UNRESOLVED.json",
+          "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C27",
+      "verdict": "PASS",
+      "section": "6. Printed words, handwriting and errata are separate witnesses",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The scan contains ink alterations as well as an authorial errata page. The packet keeps the visible original layer, the observed handwriting and the errata instruction distinct. A legible correction elsewhere in the book does not make an overwritten original phrase fully legible, and an unattributed handwritten alteration does not automatically become Lilly’s wording. [Original PDF288,290,291,888; source-layer fields in `RULES.json`; `TEXTUAL_CHECKS.json`.]",
+      "text_sha256": "6dd835512ba261135f89fc03dba9aa53989849a42616f1c2694d5de8efadc4b8",
+      "ledger_item_sha256": "7d89dbd1c24bfc6ce38b6d940ed3075f0e56530fdb410419e71a9e0e331bdb2a",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_witness_policy",
+      "reason": "Original PDF288,290,291 show altered ink layers, and PDF888 supplies printed errata. The records distinguish those layers and do not infer the writer of the handwritten changes.",
+      "source_evidence": [
+        {
+          "pdf_page": 288,
+          "logical_printed_page": 254,
+          "visible_printed_label": "254",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf288.png",
+          "image_sha256": "97cd53a98ecf1e60ca4c4324fcc73e6fe581b69aa4abf89dbbcb3f1e0d95848e",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 290,
+          "logical_printed_page": 256,
+          "visible_printed_label": "256",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf290.png",
+          "image_sha256": "91a7bd95c996e7a338a2a59373239e9af80ea74adadb48be7b62395c9cecb890",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 291,
+          "logical_printed_page": 257,
+          "visible_printed_label": "257",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+          "image_sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 888,
+          "image_path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf888-errata.png",
+          "image_sha256": "47154e5b5f778db5c252059c532a29134adf98f45ffcd113735187d602fc35b1",
+          "visually_inspected_in_initial_candidate_comparison": true,
+          "extent": "Full errata page, with targets limited to those recorded in this review.",
+          "render_origin": "Rendered directly from the exact original PDF; no OCR authority or other edition."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "TEXTUAL_CHECKS.json",
+          "sha256": "f7ac991be53bc5b30c308b07cbdbd5b476e7331d4c96e3f96b83095ac015e6d6"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C28",
+      "verdict": "PASS",
+      "section": "6. Printed words, handwriting and errata are separate witnesses",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "| Errata target | Instruction or reading | Treatment in this batch |\n|---|---|---|\n| Printed245, penultimate line | Read “scabbinesse” | The Cancer row on PDF279 already reads Scabbinesse; body and errata agree on that word |\n| Printed254, lines18–19 | Read “placed” | Retain the placement wording with the separate errata witness |\n| Printed256, line8 | Delete “all hopes of escape”; read “feare of danger” | Use the corrected reading in the reception-qualified little-hope clause; preserve the obscured original layer |\n| Printed257, line23 | Read “eight” | Preserve the corrected eighth-lord reading in the antiscion clause and the altered original layer |\n\nThe errata target for Scabbinesse names the penultimate line; the nearby marginal mark is not treated as a newly supplied line number. The agreement does not establish an otherwise unobserved earlier printing error. [Original PDF279,288,290,291,888; `TEXTUAL_CHECKS.json`; `evidence/pdf888-admitted-errata.png`.]",
+      "text_sha256": "a595e4faedbf1931395b2a315eb88004f74fc3c9e9143f7e42e6c86022d9a690",
+      "ledger_item_sha256": "90a1d4676189469d4942d8a02c1c11df78b044611d18813e59139c8c760db10a",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "All four errata rows were matched to original PDF888 and the relevant body passages. The locator for printed257 is line23. Scabbinesse agreement establishes no unobserved earlier printing state; the penultimate-line wording is preserved.",
+      "source_evidence": [
+        {
+          "pdf_page": 279,
+          "logical_printed_page": 245,
+          "visible_printed_label": "245",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf279.png",
+          "image_sha256": "020a7f9fcfe0a503279b901d3caa7a2490a86a1a577da412fbcc85222f14ff22",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 288,
+          "logical_printed_page": 254,
+          "visible_printed_label": "254",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf288.png",
+          "image_sha256": "97cd53a98ecf1e60ca4c4324fcc73e6fe581b69aa4abf89dbbcb3f1e0d95848e",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 290,
+          "logical_printed_page": 256,
+          "visible_printed_label": "256",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf290.png",
+          "image_sha256": "91a7bd95c996e7a338a2a59373239e9af80ea74adadb48be7b62395c9cecb890",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 291,
+          "logical_printed_page": 257,
+          "visible_printed_label": "257",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+          "image_sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 888,
+          "image_path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf888-errata.png",
+          "image_sha256": "47154e5b5f778db5c252059c532a29134adf98f45ffcd113735187d602fc35b1",
+          "visually_inspected_in_initial_candidate_comparison": true,
+          "extent": "Full errata page, with targets limited to those recorded in this review.",
+          "render_origin": "Rendered directly from the exact original PDF; no OCR authority or other edition."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "TEXTUAL_CHECKS.json",
+          "sha256": "f7ac991be53bc5b30c308b07cbdbd5b476e7331d4c96e3f96b83095ac015e6d6"
+        },
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "evidence/pdf888-admitted-errata.png",
+          "sha256": "d19279a2a4994f3f1929f0790752efd8b637dd03d5e530f0b2abb890e8e57754"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item.",
+      "table_header_checked": "| Errata target | Instruction or reading | Treatment in this batch |",
+      "table_rows": [
+        {
+          "row": 1,
+          "text": "| Printed245, penultimate line | Read “scabbinesse” | The Cancer row on PDF279 already reads Scabbinesse; body and errata agree on that word |",
+          "verdict": "PASS",
+          "reason": "PDF888 says p245 l penult. r scabbinesse; PDF279 body already has Scabbinesse."
+        },
+        {
+          "row": 2,
+          "text": "| Printed254, lines18–19 | Read “placed” | Retain the placement wording with the separate errata witness |",
+          "verdict": "PASS",
+          "reason": "PDF888 says p254 l18 &19 r placed; PDF288 altered placement layer remains distinct."
+        },
+        {
+          "row": 3,
+          "text": "| Printed256, line8 | Delete “all hopes of escape”; read “feare of danger” | Use the corrected reading in the reception-qualified little-hope clause; preserve the obscured original layer |",
+          "verdict": "PASS",
+          "reason": "PDF888 says p256 l8 dele all hopes of escape, r feare of danger; PDF290 altered original is not made wholly legible by inference."
+        },
+        {
+          "row": 4,
+          "text": "| Printed257, line23 | Read “eight” | Preserve the corrected eighth-lord reading in the antiscion clause and the altered original layer |",
+          "verdict": "PASS",
+          "reason": "PDF888 says p257 l23 r eight; PDF291 antiscion layer is separately retained."
+        }
+      ],
+      "surrounding_qualification_disposition": "PASS: complete paragraph/table unit includes all introduction, evidence and explanatory qualifications, not only the data rows."
+    },
+    {
+      "id": "C29",
+      "verdict": "PASS",
+      "section": "6. Printed words, handwriting and errata are separate witnesses",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "On PDF280 the visible printed page label is **244**, although its position in the sequence corresponds to **246**. Each affected record retains the visible label and the expected sequence separately. A citation to PDF280 therefore remains unambiguous without rewriting the scan’s pagination. [Original PDF280; `SOURCE_IMAGE_MANIFEST.json`; `evidence/pdf280-visible-page-label.png`; source locators in `RULES.json`.]",
+      "text_sha256": "594c244254bb035d80fe4c7247e43b1808490e3a74f727756b781f5bb389f1ad",
+      "ledger_item_sha256": "6c38cd43f96ed6b526e79acf5d7e05cc48684f8b1f281274eafe6fe1efcbad79",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "Original PDF280 visibly bears244 in the position corresponding to246. Every affected locator preserves both the expected sequence and actual visible label, verified mechanically across all records.",
+      "source_evidence": [
+        {
+          "pdf_page": 280,
+          "logical_printed_page": 246,
+          "visible_printed_label": "244",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf280.png",
+          "image_sha256": "f3e0dcd9f6296c0de2ceed57115744ad248375996e5dc3e0eeefc33c21971cb1",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "SOURCE_IMAGE_MANIFEST.json",
+          "sha256": "fa06af44a8b6766cf2c3af3f0c8c1e9562486cf417df6aa3ce31f8abc46fcc99"
+        },
+        {
+          "path": "evidence/pdf280-visible-page-label.png",
+          "sha256": "96286df0df39348dd5adfc57da219e15cffc5146108305b361543f88ddbc4358"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "INITIAL_INVENTORY_CONSISTENCY.json",
+          "sha256": "48a98e03c679d519b6c9f9bb45647463c857598df8f93e8d7fc2250693c9a13d"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C30",
+      "verdict": "PASS",
+      "section": "6. Printed words, handwriting and errata are separate witnesses",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "Near the end of the admitted span, the combustion passage names **Saturn or Mercury**. The Mercury glyph was checked in an enlarged original image and is not normalized to Mars. The passage also combines eighth-house placement, Leo or Libra, aspects and the Pleiades in a way whose complete AND/OR grouping is not resolved. Its words are retained as source prose, without declaring one executable configuration. [Printed258 / PDF292; R1548; U-B16; `evidence/pdf292-combustion-clause.png`.]",
+      "text_sha256": "6e5182aa87dca7dc06e486a7839c33c07468ea3821fbe0faf86a440edd8990e9",
+      "ledger_item_sha256": "0d41355d1d7733b9a9aabb9ac2d996c5d84dfe940699f6945370f1bd3dc9ac3e",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "The original and enlarged PDF292 views show Saturn or Mercury, with Mercury’s distinct glyph. The compound sign/house/aspect/Pleiades grouping is retained as unresolved rather than made executable.",
+      "source_evidence": [
+        {
+          "pdf_page": 292,
+          "logical_printed_page": 258,
+          "visible_printed_label": "258",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+          "image_sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "UNRESOLVED.json",
+          "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+        },
+        {
+          "path": "evidence/pdf292-combustion-clause.png",
+          "sha256": "cf64390d46509ac9f26df87d3c08b7fe277e2ca3ba5e9233c2b6c195cd270dd0"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C31",
+      "verdict": "PASS",
+      "section": "7. Historical star labels are not modern exact coordinates",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The admitted passages provide these historical labels:\n\n| Source name or preserved spelling | Sign | Source degree wording |\n|---|---|---|\n| Antares | Sagittarius | Fourth degree |\n| Lans/Lanx Australis | Scorpio | About the ninth |\n| Palilicium | Gemini | Four |\n| Caput Medusae | Taurus | Twenty |\n| Pleiades | Taurus | Twenty-four |\n\nThe first four are examples in the discussion of a malevolent planet or violent fixed star near the ascending degree. The Pleiades occur in the later combustion passage. The spelling uncertainty in Lans/Lanx Australis remains visible. [Printed257–258 / PDF291–292; R1538, R1548; `REFERENCE_TABLES.json`.]",
+      "text_sha256": "0c9bceb3da2203121e4f09fb916831705cfda3f04aac095bb4809fcf3d497fc4",
+      "ledger_item_sha256": "c64e8a92440ffacf82ee37a0843d97f27e5cdf0b6dbf165dfcea3f287332ede3",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "All five star-table rows match original PDF291–292: Antares4 Sagittarius, Lans/Lanx Australis about9 Scorpio, Palilicium4 Gemini, Caput Medusae20 Taurus, Pleiades24 Taurus. The first four examples and later Pleiades occurrence remain distinct.",
+      "source_evidence": [
+        {
+          "pdf_page": 291,
+          "logical_printed_page": 257,
+          "visible_printed_label": "257",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+          "image_sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 292,
+          "logical_printed_page": 258,
+          "visible_printed_label": "258",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+          "image_sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "REFERENCE_TABLES.json",
+          "sha256": "d3e2476aa8ce05ff8fcb2c1fd1642abc6fbd8fea0df4f561aff15c077d03212e"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item.",
+      "table_header_checked": "| Source name or preserved spelling | Sign | Source degree wording |",
+      "table_rows": [
+        {
+          "row": 1,
+          "text": "| Antares | Sagittarius | Fourth degree |",
+          "verdict": "PASS",
+          "reason": "Antares, Sagittarius, fourth degree: PDF291."
+        },
+        {
+          "row": 2,
+          "text": "| Lans/Lanx Australis | Scorpio | About the ninth |",
+          "verdict": "PASS",
+          "reason": "Lans/Lanx Australis, Scorpio, about ninth: PDF291; about and spelling uncertainty retained."
+        },
+        {
+          "row": 3,
+          "text": "| Palilicium | Gemini | Four |",
+          "verdict": "PASS",
+          "reason": "Palilicium, Gemini, four: PDF291."
+        },
+        {
+          "row": 4,
+          "text": "| Caput Medusae | Taurus | Twenty |",
+          "verdict": "PASS",
+          "reason": "Caput Medusae, Taurus, twenty: continuation onto PDF292."
+        },
+        {
+          "row": 5,
+          "text": "| Pleiades | Taurus | Twenty-four |",
+          "verdict": "PASS",
+          "reason": "Pleiades, Taurus,24: later PDF292 combustion passage."
+        }
+      ],
+      "surrounding_qualification_disposition": "PASS: complete paragraph/table unit includes all introduction, evidence and explanatory qualifications, not only the data rows."
+    },
+    {
+      "id": "C32",
+      "verdict": "PASS",
+      "section": "7. Historical star labels are not modern exact coordinates",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "These labels supply no minutes or seconds, no modern-epoch conversion and no numerical definition of “near.” The wording also does not establish a unique ordinal-to-continuous-degree convention. Those fields remain missing. The helper retrieves the printed label and its uncertainty; it does not turn it into a present-day star position or manufacture an orb. [R1538, R1548; U-B14; `REFERENCE_TABLES.json`, `lilly_sixth_opening_reference.py`.]",
+      "text_sha256": "4fd7b76f37d907d4570de849e2b81605b1447f0b079343be1e4b7c604ad244d2",
+      "ledger_item_sha256": "94e0c2a89eb1d7870242864c5022c28d78c54c8cf21fb6995fa1b2fb126e9226",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "The two original star passages do not supply the listed finer precision or unique continuous-degree interpretation. All five stored labels retain null precision/orb fields, and the helper retrieves rather than converts them.",
+      "source_evidence": [
+        {
+          "pdf_page": 291,
+          "logical_printed_page": 257,
+          "visible_printed_label": "257",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+          "image_sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 292,
+          "logical_printed_page": 258,
+          "visible_printed_label": "258",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+          "image_sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "UNRESOLVED.json",
+          "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+        },
+        {
+          "path": "REFERENCE_TABLES.json",
+          "sha256": "d3e2476aa8ce05ff8fcb2c1fd1642abc6fbd8fea0df4f561aff15c077d03212e"
+        },
+        {
+          "path": "lilly_sixth_opening_reference.py",
+          "sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C33",
+      "verdict": "PASS",
+      "section": "8. What the evidence supports and what remains open",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The block contains historical humoral, moral, sexual and supernatural attributions as well as planetary correspondences. Those statements remain attributed to the historical source. Reproducing them does not establish a modern diagnosis, a cause of illness, a treatment effect or a factual allegation about any person. General descriptions of medicines having worked and Lilly’s generalized claims of experience are not supplied as independently documented patient outcomes. [For examples, printed244–251 / PDF278–285; R1432–R1434, R1441 and surrounding records; `COUNTS.json`.]",
+      "text_sha256": "eac27423582c25459e997edfbb0eb701d6b0d1503dc392f19b392bebc4d4a3b7",
+      "ledger_item_sha256": "df0039349deb1b4fb571dd4599ab11f76fc3e2425f640bb5257c353ecdbe8566",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "historical_evidence_classification",
+      "reason": "The admitted images contain the stated historical humoral, moral, sexual, supernatural and treatment attributions. The report keeps their authorship and evidence class; no independent patient outcome is provided for the general claims or illustration.",
+      "source_evidence": [
+        {
+          "pdf_page": 278,
+          "logical_printed_page": 244,
+          "visible_printed_label": "244",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf278.png",
+          "image_sha256": "9cd1438e0920821ad76919a6acc9db682aeb6b23368324a00e76ddbf2118d490",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 279,
+          "logical_printed_page": 245,
+          "visible_printed_label": "245",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf279.png",
+          "image_sha256": "020a7f9fcfe0a503279b901d3caa7a2490a86a1a577da412fbcc85222f14ff22",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 280,
+          "logical_printed_page": 246,
+          "visible_printed_label": "244",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf280.png",
+          "image_sha256": "f3e0dcd9f6296c0de2ceed57115744ad248375996e5dc3e0eeefc33c21971cb1",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 281,
+          "logical_printed_page": 247,
+          "visible_printed_label": "247",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf281.png",
+          "image_sha256": "e0dc5d7282a42efb6fa7618722c6f76715fed10e71c01e9afad87c9b030e4a71",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 282,
+          "logical_printed_page": 248,
+          "visible_printed_label": "248",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf282.png",
+          "image_sha256": "8882ffb79eb4356cb3d8e86c867092a50f5ca22b6760796b582e73869238bf74",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 283,
+          "logical_printed_page": 249,
+          "visible_printed_label": "249",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf283.png",
+          "image_sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 284,
+          "logical_printed_page": 250,
+          "visible_printed_label": "250",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf284.png",
+          "image_sha256": "78a7d14efc1e25b3960ffda8ea527b47cdb1c909e53e12e91ca1906d3132c667",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 285,
+          "logical_printed_page": 251,
+          "visible_printed_label": "251",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf285.png",
+          "image_sha256": "632a364ce2f6cfc945db45848b8084c063cc86c4706da74970ee29b6fdebdaf2",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "COUNTS.json",
+          "sha256": "f78ccad142ef66ad6a639f381c551e1a630cb5499831b0ffabd4d1117e4e12c8"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C34",
+      "verdict": "PASS",
+      "section": "8. What the evidence supports and what remains open",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The arguments of death invoke natal positions, profection and the five hylegical places. A recovery testimony invokes a later crisis. The records preserve those dependencies, but the local paragraphs do not complete the later nativity or crisis methods. The next “DARIOT Abridged” material is still outside this batch. Those dependencies cannot be treated as implemented merely because their names have been extracted. [Printed255–258 / PDF289–292; `CROSS_SOURCE_COMPARISONS.json`, `UNRESOLVED.json`.]",
+      "text_sha256": "56106021b3007f19a408dc08595ae60e00ed15de299736fea8b5f40444a09a89",
+      "ledger_item_sha256": "bde22f08d5e2ec0c93062c8cd226ef36df8818d4456a6e81ed57c000ad55d377",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_and_analysis",
+      "reason": "Original PDF289–290 invokes natal placements, annual profection and five hylegical places; the recovery paragraph invokes a crisis. The local passages leave those full methods elsewhere, and the Dariot boundary is outside this batch.",
+      "source_evidence": [
+        {
+          "pdf_page": 289,
+          "logical_printed_page": 255,
+          "visible_printed_label": "255",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf289.png",
+          "image_sha256": "af739545338eb4e1b0a42adbeffafea7ce30f4242bcdd4ea17c4fc348ff17169",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 290,
+          "logical_printed_page": 256,
+          "visible_printed_label": "256",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf290.png",
+          "image_sha256": "91a7bd95c996e7a338a2a59373239e9af80ea74adadb48be7b62395c9cecb890",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 291,
+          "logical_printed_page": 257,
+          "visible_printed_label": "257",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+          "image_sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        },
+        {
+          "pdf_page": 292,
+          "logical_printed_page": 258,
+          "visible_printed_label": "258",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+          "image_sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "CROSS_SOURCE_COMPARISONS.json",
+          "sha256": "6fa585641119dead8e5ef541673f8a0a27dc14dad4a0a63d11390961e9c65bf7"
+        },
+        {
+          "path": "UNRESOLVED.json",
+          "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C35",
+      "verdict": "PASS",
+      "section": "8. What the evidence supports and what remains open",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The unresolved register now contains **37 typed entries**. **33** retain wording, grammar, terminology, implementation, attribution, precision or evidence limits; **4** are separately marked as resolved callbacks or errata readings. These are not 37 alleged errors in Lilly. The original-layer legibility question can remain open even when the errata supplies a usable corrected reading. Further qualifications also remain attached directly to individual records. [Evidence: `UNRESOLVED.json`, `RULES.json`.]",
+      "text_sha256": "e61fc9e920822409830bd9f426fe1024076118b486c312d73c1219f49bb75be1",
+      "ledger_item_sha256": "c23d6d5b4e62d08fcda50df7287d94e3685dde040817409943fac76c2ec7ef72",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "register_semantics",
+      "reason": "The register has37 entries, of which4 have source_resolved true and33 false. Its categories and inline record limits distinguish wording, implementation and evidence questions from source errors. Obscured original layers can remain uncertain despite usable errata.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "UNRESOLVED.json",
+          "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+        },
+        {
+          "path": "RULES.json",
+          "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+        },
+        {
+          "path": "COUNTS.json",
+          "sha256": "f78ccad142ef66ad6a639f381c551e1a630cb5499831b0ffabd4d1117e4e12c8"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "INITIAL_INVENTORY_CONSISTENCY.json",
+          "sha256": "48a98e03c679d519b6c9f9bb45647463c857598df8f93e8d7fc2250693c9a13d"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C36",
+      "verdict": "PASS",
+      "section": "8. What the evidence supports and what remains open",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The four resolved register entries concern the targeted printed119 table callback, agreement of the Cancer-row Scabbinesse with the errata, the declared mean-motion reference value, and the retained placement/antiscion errata layer. Resolution here is limited to that source question. It does not validate the associated disease or outcome claim. [U-A02, U-A18, U-B05 and U-B18 in `UNRESOLVED.json`; `RETAINED_SOURCE_EXCERPTS.json`, `TEXTUAL_CHECKS.json`.]",
+      "text_sha256": "836534d89e35885e2e53aa73257812480b2713977ef015df21e8741b0ff94f3f",
+      "ledger_item_sha256": "62676317ddd980bfb5236f5f39cf6879e9f1f86d07927eb7244c930637872ddb",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "resolved_source_scope",
+      "reason": "The four resolved IDs are exactly U-A02,U-A18,U-B05,U-B18. Direct original callbacks and errata support their limited resolutions, without validating the associated disease doctrine.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "UNRESOLVED.json",
+          "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+        },
+        {
+          "path": "RETAINED_SOURCE_EXCERPTS.json",
+          "sha256": "cd8ef885530cb5b5124341ff929712eee26d46b4cf514997ca89f2e5af1fb07e"
+        },
+        {
+          "path": "TEXTUAL_CHECKS.json",
+          "sha256": "f7ac991be53bc5b30c308b07cbdbd5b476e7331d4c96e3f96b83095ac015e6d6"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "INITIAL_INVENTORY_CONSISTENCY.json",
+          "sha256": "48a98e03c679d519b6c9f9bb45647463c857598df8f93e8d7fc2250693c9a13d"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C37",
+      "verdict": "PASS",
+      "section": "9. Verification and reproducibility",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The source file is the retained 1647 Wellcome scan, identified as **LILLY1647_WELLCOME_B30338724**: **894 PDF pages, 141,842,963 bytes**, SHA256 **2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b**. Its hash was recomputed this turn. The original PDF remains external to the records packet; locating crops, source identifiers, page anchors and image hashes are included. The catalogue locator is recorded in `SOURCES.md`. [Evidence: `READING_RECEIPT.json`, `SOURCE_IMAGE_MANIFEST.json`.]",
+      "text_sha256": "33508177a72674c87fe1d9d2984ab12830fb589b7aa516c8ae48a63ef052c7c6",
+      "ledger_item_sha256": "a47b8d10f695d4f1071c885ef1554bbbf46eea6ad46bd20764e54d73515570c7",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "source_identity",
+      "reason": "The supplied PDF’s hash and byte size were independently recomputed and page count confirmed in the source-first receipt. The current catalogue and online image locator identify Lilly1647,894 pages and b30338724. All selected crop and sixteen navigation-image hashes match. The earlier root recomputation event is evidenced by its supplied receipt, not independently witnessed execution history.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "READING_RECEIPT.json",
+          "sha256": "06758fb0c13369894078e1c074376dfaf68f64b9549b73091623a82f0c47d360"
+        },
+        {
+          "path": "SOURCE_IMAGE_MANIFEST.json",
+          "sha256": "fa06af44a8b6766cf2c3af3f0c8c1e9562486cf417df6aa3ce31f8abc46fcc99"
+        },
+        {
+          "path": "SOURCES.md",
+          "sha256": "ef8f529bf32c45d93301c0bfa28c4b029f555b66945f081b4961bc9305dba33b"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C38",
+      "verdict": "PASS",
+      "section": "9. Verification and reproducibility",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "Root inspected all sixteen admitted original page images and froze source notes before reading the candidate records or independent findings. The two source readers retained their own source notes and extraction artifacts. A separate evaluator also froze a full-span source-first reading before receiving the candidate report. That separation is within the same model family; no cross-family or external-expert validation is claimed. [Evidence: `ROOT_SOURCE_FIRST_FREEZE.json`, `READING_RECEIPT.json`, retained source-reader receipts and `independent_review/SOURCE_FIRST_RECEIPT.json`.]",
+      "text_sha256": "0b737284807e59dfc2268372bc88254a1299c42c162c2d6fbe308f7695a434fa",
+      "ledger_item_sha256": "17db1f70d8eaac4ccd5b43bd35feec727464c488cefcb1b328be34950c256f50",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "observed_review_provenance",
+      "reason": "The supplied root/reader freeze receipts and this evaluator’s own frozen source-first files support the stated phase ordering. This evaluator directly attests only its own source-first phase. The later accidental helper-summary exposure does not undo that prior freeze; it qualifies the current evaluation and is recorded in INITIAL_REVIEW_RECEIPT.json. No cross-family or expert claim is adopted.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "ROOT_SOURCE_FIRST_FREEZE.json",
+          "sha256": "21a0d144632e9b5d8efa65b16c42b63ccbaa767fb94cda82bc95b61f9a41e865"
+        },
+        {
+          "path": "READING_RECEIPT.json",
+          "sha256": "06758fb0c13369894078e1c074376dfaf68f64b9549b73091623a82f0c47d360"
+        },
+        {
+          "path": "independent_review/SOURCE_FIRST_RECEIPT.json",
+          "sha256": "39e00fab9323b5d2bac2ee9e316c464d61cbf3657c4699de064b753f98cdbfc3"
+        }
+      ],
+      "reviewer_evidence": [],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C39",
+      "verdict": "PASS",
+      "section": "9. Verification and reproducibility",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The reference implementation is intentionally limited to selecting source-time evidence, preserving three-valued prerequisites, comparing the two declared lunar thresholds, calculating remaining within-sign arc, and routing exact historical lookups. Full rule combination, astronomical reconstruction, clinical interpretation and calibrated prediction are outside it. A source anchor’s presence and record coverage can be checked mechanically; the correctness of the actual wording requires original-image comparison. [Evidence: `lilly_sixth_opening_reference.py`, `test_lilly_sixth_opening.py`, `READING_RECEIPT.json`.]",
+      "text_sha256": "4dab9f065b53db48dc8a247b7f5564df78e568cd8beafb2cebae4db407ee9603",
+      "ledger_item_sha256": "6d05de7b39b4f875e235ef38682dc45870ec70fe3970373bbfe4ee4943d71713",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "verification_limits",
+      "reason": "The fresh code audit confirms the listed bounded operations and lack of astronomical reconstruction, clinical interpretation or calibrated prediction. The report correctly distinguishes structural anchor/coverage checks from original-image semantic comparison.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "lilly_sixth_opening_reference.py",
+          "sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+        },
+        {
+          "path": "test_lilly_sixth_opening.py",
+          "sha256": "3d3186e86772b16903f914f168c38c58ca952578aa4458e388cad994115e64db"
+        },
+        {
+          "path": "READING_RECEIPT.json",
+          "sha256": "06758fb0c13369894078e1c074376dfaf68f64b9549b73091623a82f0c47d360"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C40",
+      "verdict": "PASS",
+      "section": "9. Verification and reproducibility",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "The actual final focused-suite execution ran **33 tests**, with **0 failures, 0 errors and 0 skips**. It covers eight time-selection tests, five lunar-motion tests, four prerequisite tests, five remaining-arc tests, five lookup tests and six record-integrity tests. The earlier 32-test run is retained as history, not added to the final total. A repeat execution, including one in an extracted archive, likewise reuses existing test identities. [Evidence: `TEST_B02k.txt`, `TEST_RUN_SUMMARY.json`, `test_lilly_sixth_opening.py`; historical execution in `helper_review/INITIAL_TEST_RUN_SUMMARY.json`.]",
+      "text_sha256": "27e7981f69098e5a4385873ec8796e9291084c06b09d8c6e13ed1a35b788178e",
+      "ledger_item_sha256": "b2223fac8f2b1e9ad4928e34428424b804a04d77692ac992d8bd7cc4fd86e755",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "actual_test_results",
+      "reason": "The AST, retained log, retained summary and fresh private discovery agree on33 distinct tests:8+5+4+5+5+6, all passing with0 failures/errors/skips. The earlier32 is an execution-history count; repeated execution contributes0 new identities.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "TEST_B02k.txt",
+          "sha256": "b49a4418e7ae67801d84f07abc014b586d4bfdc8176e83745f3457446ce91bc8"
+        },
+        {
+          "path": "TEST_RUN_SUMMARY.json",
+          "sha256": "b638dbba461196e863b4bd95cc2a9e05cd8bca899c7fc2501978c1db0d53d9f7"
+        },
+        {
+          "path": "test_lilly_sixth_opening.py",
+          "sha256": "3d3186e86772b16903f914f168c38c58ca952578aa4458e388cad994115e64db"
+        },
+        {
+          "path": "helper_review/INITIAL_TEST_RUN_SUMMARY.json",
+          "sha256": "ffade0afa97849207f0add83ac7823a953b96dae9886a458a8d8df27668f26ec"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item.",
+      "class_counts_checked": {
+        "TimeSelection": 8,
+        "LunarMotion": 5,
+        "SourcePredicateQualifications": 4,
+        "RemainingArc": 5,
+        "SourceLookups": 5,
+        "SourceRecordIntegrity": 6
+      }
+    },
+    {
+      "id": "C41",
+      "verdict": "PASS",
+      "section": "9. Verification and reproducibility",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "To reproduce the bounded suite after extracting the packet, run **`python run_verification.py`** from the folder containing this report, the helper and its JSON companions. Python’s standard library is sufficient for that test run. The execution writes its own log and summary. Historical source images require no test-time download, and the test suite does not require the full original PDF. Source-image rendering is a separate provenance operation. [Implementation: `run_verification.py`, `test_lilly_sixth_opening.py`, `lilly_sixth_opening_reference.py`.]",
+      "text_sha256": "6425e337dbe2b42f79962fe712489968f0657277fb1ba9216602005ce05603f7",
+      "ledger_item_sha256": "03d547c2cd3d5e05399f85a45161043a27247ed686940d4d7dd1fa45ac837b2f",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "reproduction_instruction",
+      "reason": "The fresh private reproduction successfully ran the packaged runner with only standard-library imports and packaged JSON dependencies. It generated separate logs/summary, required no original PDF and performed no test-time download.",
+      "source_evidence": [],
+      "evidence_files": [
+        {
+          "path": "run_verification.py",
+          "sha256": "0bded9bea1063348aa462d758da5a840cd294958e53e8109aacd70926afef4d3"
+        },
+        {
+          "path": "test_lilly_sixth_opening.py",
+          "sha256": "3d3186e86772b16903f914f168c38c58ca952578aa4458e388cad994115e64db"
+        },
+        {
+          "path": "lilly_sixth_opening_reference.py",
+          "sha256": "25777500a00551208e0fcae59a16af347d9cb513d1602b4f1299c959695244d5"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "codecheck/CODE_CHECK.md",
+          "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+        },
+        {
+          "path": "codecheck/CODE_CHECK.json",
+          "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    },
+    {
+      "id": "C42",
+      "verdict": "PASS",
+      "section": "Continuation",
+      "verification_unit": "Entire supplied paragraph/table plus qualifications; not a statistically independent claim.",
+      "text": "Resume on **PDF292 / printed258**, immediately below the completed “shew death” paragraph, with **“DARIOT Abridged.” Include its full italic introduction**, beginning “In regard I have ever affected Dariot his Method of judgment in sicknesses,” before continuing onto PDF293. The heading and introduction were inspected to establish the boundary but have not been extracted here. The cumulative Lilly inventory is now 1,549; the next new record number is R1550. Chapter XLIV and the wider multi-author, multipass audit remain open. [Evidence: `SECTION_COVERAGE.json`, `LILLY_SOURCE_EXTRACTION_INDEX_SNAPSHOT.json`, `CONTINUE_HANDOFF.md`.]",
+      "text_sha256": "9b85a37e331810f872f507451bacb60cf3ed70b4f7c1b1d04c4277988d4dfd90",
+      "ledger_item_sha256": "d9b7f281c00003e6dad12cec1884197e68678d38c41c83735579ff4b2182518e",
+      "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049",
+      "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "claim_type": "continuation_boundary",
+      "reason": "Original PDF292 shows the exact shew death stopping point followed by Dariot and its complete italic introduction. Those remain continuation material. The index and handoff agree on1549 cumulative Lilly records and nextR1550; XLIV and the wider audit stay open.",
+      "source_evidence": [
+        {
+          "pdf_page": 292,
+          "logical_printed_page": 258,
+          "visible_printed_label": "258",
+          "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+          "image_sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+          "visually_inspected_in_source_first_phase": true,
+          "visually_reopened_in_initial_candidate_comparison": true,
+          "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+        }
+      ],
+      "evidence_files": [
+        {
+          "path": "SECTION_COVERAGE.json",
+          "sha256": "5786ddb13b68e2a2ad5f53565342704a7c3d55eea5aab2faa236fcd4ef0a7938"
+        },
+        {
+          "path": "LILLY_SOURCE_EXTRACTION_INDEX_SNAPSHOT.json",
+          "sha256": "532d43eb1fdd2701f8ef8ef70b5de921a37c05195f9b4b81a4573e4613748570"
+        },
+        {
+          "path": "CONTINUE_HANDOFF.md",
+          "sha256": "b4bd997f330fe8536c2753fa8891a43cc4ab2861d4d1982d4feb07cd996e0fb5"
+        }
+      ],
+      "reviewer_evidence": [
+        {
+          "path": "INITIAL_INVENTORY_CONSISTENCY.json",
+          "sha256": "48a98e03c679d519b6c9f9bb45647463c857598df8f93e8d7fc2250693c9a13d"
+        }
+      ],
+      "required_change": null,
+      "whole_unit_including_qualifications_checked": true,
+      "carry_rule": "Only identical ledger item/text, actual evidence hashes and evaluation configuration; a changed paragraph or table is rechecked as the whole item."
+    }
+  ],
+  "whole_report_scan": {
+    "exact_item_occurrences": 1,
+    "overlaps": [],
+    "outside_blocks": [
+      {
+        "id": "H01",
+        "line": 1,
+        "text": "# Lilly’s sixth-house opening: sickness, duration, recovery and death testimonies",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C01",
+          "C19"
+        ]
+      },
+      {
+        "id": "H02",
+        "line": 3,
+        "text": "## Result and exact scope",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C01",
+          "C02",
+          "C03",
+          "C04"
+        ]
+      },
+      {
+        "id": "H03",
+        "line": 27,
+        "text": "## 1. The selected time is part of the method",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C05",
+          "C06",
+          "C07",
+          "C08"
+        ]
+      },
+      {
+        "id": "H04",
+        "line": 45,
+        "text": "## 2. The correspondence tables must retain their own meanings",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C09",
+          "C10",
+          "C11",
+          "C12"
+        ]
+      },
+      {
+        "id": "H05",
+        "line": 55,
+        "text": "## 3. Mean lunar motion and the retrograde analogy differ",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C13",
+          "C14",
+          "C15",
+          "C16"
+        ]
+      },
+      {
+        "id": "H06",
+        "line": 72,
+        "text": "## 4. Remaining arc does not by itself choose a duration",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C17",
+          "C18"
+        ]
+      },
+      {
+        "id": "H07",
+        "line": 78,
+        "text": "## 5. Conditions and exceptions change the source’s prognosis",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26"
+        ]
+      },
+      {
+        "id": "H08",
+        "line": 96,
+        "text": "## 6. Printed words, handwriting and errata are separate witnesses",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C27",
+          "C28",
+          "C29",
+          "C30"
+        ]
+      },
+      {
+        "id": "H09",
+        "line": 113,
+        "text": "## 7. Historical star labels are not modern exact coordinates",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C31",
+          "C32"
+        ]
+      },
+      {
+        "id": "H10",
+        "line": 129,
+        "text": "## 8. What the evidence supports and what remains open",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C33",
+          "C34",
+          "C35",
+          "C36"
+        ]
+      },
+      {
+        "id": "H11",
+        "line": 139,
+        "text": "## 9. Verification and reproducibility",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C37",
+          "C38",
+          "C39",
+          "C40",
+          "C41"
+        ]
+      },
+      {
+        "id": "H12",
+        "line": 151,
+        "text": "## Continuation",
+        "verdict": "PASS",
+        "disposition": "Heading restates or labels content already checked in ledger; no new unmatched factual proposition.",
+        "covered_by": [
+          "C42"
+        ]
+      }
+    ],
+    "new_unmatched_claims": [],
+    "mechanical_coverage_evidence_sha256": "276a1f35c864b073d6a05c3a0a3fecce448b9540834b9ca6a3b312cdb0e26755"
+  },
+  "material_verification_limits": [
+    "No clinical, causal, treatment, survival-probability or predictive validity was evaluated. Source preservation, hashes, tests and reviewer agreement supply none of those forms of validation.",
+    "No human specialist or different model family participated. Shared training and model blind spots remain.",
+    "The initial main context had the recorded post-freeze helper-summary exposure. Only the original source-first phase and fresh code-check context have their respective information-separation claims.",
+    "The original supplied copy was read; no full other-edition collation or original-language Ptolemy review was attempted.",
+    "The Ptolemy1066 and prior Lilly1357 counts were checked as retained-index arithmetic, not by reopening all retained source records.",
+    "Root/other-reader prior process statements are supported by supplied execution/freeze receipts; this evaluator did not directly observe their private reading acts or independently verify the reported publication commit through Git.",
+    "Packet reference flags and bounded helper behaviour do not establish that no wider runtime consumer exists. Global integration behaviour was outside the permitted review boundary.",
+    "The arithmetic receipt’s numerical contents were independently reproduced. Its named original build_analysis_evidence.py execution event was not independently replayed because that generator is outside the frozen candidate.",
+    "The strongest remaining source weakness is intended syntax/lexical sense in compact or apparently defective passages, especially R1440 andR1444. A preservation PASS does not settle those meanings."
+  ]
+}

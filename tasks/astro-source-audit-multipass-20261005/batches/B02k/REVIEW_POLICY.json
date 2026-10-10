@@ -1,0 +1,26 @@
+{
+  "batch": "B02k",
+  "source_reference_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "candidate_manifest": "REVIEW_CANDIDATE_MANIFEST.json",
+  "source_first_freeze": "independent_review/SOURCE_FIRST_RECEIPT.json",
+  "evaluator_configuration": "independent_review/EVALUATION_CONFIG.json",
+  "source_records_to_compare": 192,
+  "report_verification_items": 42,
+  "whole_report_missing_claim_scan": true,
+  "review_role": "Diagnostic source-and-claim comparison. Reviewer flags require primary-source adjudication; a verdict is not treated as truth by itself.",
+  "required_acceptance": "No known substantive source omission or unsupported delivered assertion; genuine ambiguity remains explicitly qualified. Structural tests do not certify wording.",
+  "budget": {
+    "initial_exhaustive_passes": 1,
+    "changed_item_cycles_max": 2,
+    "unchanged_passes": "Carry only with matching item bytes, material evidence dependencies and evaluator configuration.",
+    "stall": "No unbounded repetition. At stall preserve explicit unresolved limits or withhold the unsupported assertion and record the gap; do not claim complete coverage if a substantive source unit is missing."
+  },
+  "statistical_reviewer_false_failure_model": {
+    "estimated": false,
+    "reason": "No independently known-correct probabilistic pilot exists. This is a bounded, source-adjudicated research review, not an automated scaled zero-flag acceptance pipeline. No false-failure rate is asserted."
+  },
+  "authority_change": false,
+  "external_expert_or_cross_family_review": false,
+  "scope_note": "Exposure and additional helper-check scope are recorded in the evaluator actual receipts; do not imply complete candidate blinding.",
+  "recording_stage": "Restatement during initial review; governing scope, source freeze and one-plus-two review budget were already bound in ACTIVE_CONTRACT.json and the immutable candidate before launch."
+}

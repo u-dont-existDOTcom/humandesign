@@ -2,6 +2,10 @@
 
 Start with **AUDIT_REPORT.md** for the findings and **CONTINUE_HANDOFF.md** for the exact next passage. This is a historical source-record packet with bounded reference code. Chapter XLIV and the wider audit remain open.
 
+## Acceptance and review scope
+
+Read `ACCEPTANCE.md` with the report. The source-first reading was frozen before candidate exposure; the later main comparison had a disclosed incidental helper-summary exposure and is not fully blind. A fresh code context received none of that summary. All 192 source records and 42 report items passed; the full disclosure, diagnostic limits and original frozen results are included.
+
 ## Use the packet
 
 Extract the ZIP to a new folder. From the B02k folder, run:
@@ -26,7 +30,7 @@ The runner writes its actual result to `TEST_B02k.txt` and `TEST_RUN_SUMMARY.jso
 - `source_readers/`, `ROOT_SOURCE_FIRST_*`, `helper_review/`, `independent_review/` and any `verification_history/`:frozen source notes, original diagnoses, actual executions and changed-item checks, with their distinct scopes and exposure limits.
 - Publication, preservation, acceptance and delivery receipts record their own exact object or stage. A historical receipt does not silently certify a later version.
 
-Source-reader notes and historical probe scripts retain original execution paths as provenance. They are not the portable entrypoint. The only documented standalone test entrypoint is `run_verification.py`; its dependencies are included. Repository maintenance scripts (`build_source_data.py`, `build_report.py`, `verify_preservation.py`) assume the HumanDesign checkout and are not required for a packet test run.
+Source-reader notes and historical probe scripts retain original execution paths as provenance. They are not the portable entrypoint. The only documented standalone test entrypoint is `run_verification.py`; its dependencies are included. Repository maintenance scripts (`build_source_data.py`, `build_report.py`, `verify_preservation.py`) assume the HumanDesign checkout and are not required for a packet test run. `verify_acceptance_bindings.py` also requires the original source-image paths used during review; its retained result is in `ACCEPTANCE.json`.
 
 ## Archive verification
 

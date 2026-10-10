@@ -1,0 +1,29 @@
+{
+  "probe_groups": {
+    "time_state_matrix": 243,
+    "time_candidates": 27,
+    "conjunction_matrix": 81,
+    "benevolent_matrix": 81,
+    "saturn_matrix": 81,
+    "boolean_validation": 6,
+    "time_validation": 14,
+    "lunar_exact_arithmetic": 11,
+    "lunar_validation": 6,
+    "remaining_exact_arithmetic": 6,
+    "remaining_missing": 4,
+    "remaining_validation": 13,
+    "lookup_catalogues": 5,
+    "all_lookup_routing": 37,
+    "star_precision": 5,
+    "lookup_rejection": 6,
+    "lookup_detachment": 2,
+    "mechanical_record_structure": 4
+  },
+  "check_count": 632,
+  "failures": [],
+  "all_observed_checks_passed": true,
+  "candidate_unittest_identities_added": 0,
+  "historical_source_fidelity_assessed": false,
+  "clinical_or_predictive_validation": false,
+  "scope": "One finite descriptive API, exact arithmetic, routing and structural boundary pass on private copies; no repair loop."
+}

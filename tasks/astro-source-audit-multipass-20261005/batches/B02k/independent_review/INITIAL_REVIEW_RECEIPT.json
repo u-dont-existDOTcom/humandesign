@@ -1,0 +1,466 @@
+{
+  "schema": "b02k.initial_review_receipt.v1",
+  "phase": "INITIAL_DIAGNOSIS_FROZEN_BEFORE_PRODUCER_RECONCILIATION",
+  "parent_task": "Historical Lilly B02k opening sixth-house source audit",
+  "evaluator": "/root/sixth_independent",
+  "turn_initial_clock": "2026-10-10 16:26:43 UTC",
+  "freeze_time_basis": "Recorded turn sequence, not an additional mid-turn wall-clock read. Final message supplies the second clock reading.",
+  "source": {
+    "path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+    "sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "bytes": 141842963,
+    "pdf_pages": 894,
+    "hash_recomputed_during_this_initial_evaluation": true
+  },
+  "candidate": {
+    "path": "/workspace/scratch/43f75264c32e/review-candidate-b02k-01",
+    "manifest_sha256": "9cc2299b54c514c07c6e330471d791bb7597875c5730c4116e9e703fd51976c0",
+    "declared_file_count": 44,
+    "all44_hashes_verified_before_content_review": true,
+    "report_sha256": "b41de7cbf9b8b391a3a59d092e6effd4857520a8d6c04bf1acbcf0299466b049"
+  },
+  "frozen_source_first_artifacts": {
+    "SOURCE_FIRST_NOTES.md": "f6f111d4f5d80e60f0cd1059af2689e181c9d6e9bb3cfb016cd4a74ab09f27d2",
+    "SOURCE_FIRST_RECEIPT.json": "39e00fab9323b5d2bac2ee9e316c464d61cbf3657c4699de064b753f98cdbfc3",
+    "EVALUATION_CONFIG.json": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3"
+  },
+  "evaluation_config_sha256": "05235e6ec0140a4aba099ebcd779f198620a74aa3d28f31ed83a67cf51284fa3",
+  "governance": {
+    "live_root_repository": "u-dont-existDOTcom/universal-dev-architecture",
+    "live_root_ref": "main",
+    "live_root_git_blob": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "refetched_after_compaction": true,
+    "guidance_checkout_parent_declared_commit": "d6190a06fe16049d998b4a9c78977ceaecdef1b9"
+  },
+  "scope": {
+    "first_pdf_page": 277,
+    "last_pdf_page": 292,
+    "start": "Sixth-house heading, topic list, ChapterXLIV title/opening",
+    "end": "Paragraph ending shew death, immediately before DARIOT Abridged",
+    "excluded": "Dariot heading and full italic introduction; visible only for boundary/continuation"
+  },
+  "independence": {
+    "model_limit": "Same-model-family separate-context evaluation, not cross-family, external-expert or standards-compliant IV&V.",
+    "source_first_phase": {
+      "candidate_or_producer_rationale_seen_before_freeze": false,
+      "main_unique_pages": 16,
+      "supplemental_errata_pages": 1,
+      "larger_direct_original_rereads": 4,
+      "total_actual_image_inspections": 21,
+      "frozen_bytes_preserved": true,
+      "publication_checkpoint_reported_by_parent": "d53f351caf5e19f4c31c29ce615e3dcf994cc798"
+    },
+    "initial_candidate_phase": {
+      "prior_verdict_exposure_occurred": true,
+      "mechanism": "A collaboration.list_agents call intended to check a free delegation slot unexpectedly returned a completed producer helper-reconciliation summary.",
+      "timing": "After source-first freeze and candidate receipt, before initial diagnosis freeze.",
+      "exposed_domain": "Two earlier helper findings/repairs: aggregate within-sign coordinate boundary and the full decreasing-and-leaving exception input.",
+      "mitigation": "Exposure was immediately disclosed to parent. No producer rationale files, live canonical repository or other-worker files were opened. All source judgments stayed anchored to original images. A fresh-context helper reviewer received no exposed summary.",
+      "claim_limit": "The source-first phase remains source-only. This later main evaluation is not represented as fully blind; the exposure can affect the current context beyond its immediate topic and is not erased by subsequent agreement.",
+      "parent_direction": "Continue the same initial exhaustive source/report pass, preserve the source-first freeze, and disclose independence by domain and timing."
+    },
+    "fresh_code_check": {
+      "agent": "/root/sixth_independent/code_audit",
+      "fork_turns": "none",
+      "received_accidentally_exposed_summary": false,
+      "read_original_source_pages": false,
+      "scope": "Frozen helper, runner, tests, data and execution/arithmetic claims; no source-fidelity or clinical judgment.",
+      "frozen_outputs": {
+        "codecheck/CODE_CHECK.md": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49",
+        "codecheck/CODE_CHECK.json": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+      }
+    }
+  },
+  "source_inspection_in_this_initial_comparison": {
+    "main_unique_pages": 16,
+    "main_images_reopened": [
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292
+    ],
+    "same_work_callback_unique_pages": [
+      114,
+      153
+    ],
+    "original_errata_page_reopened": 888,
+    "full_source_page_images_visually_inspected": 19,
+    "candidate_locating_crops_visually_inspected": 12,
+    "total_full_or_crop_image_inspections_in_this_comparison": 31,
+    "images": [
+      {
+        "pdf_page": 114,
+        "image_path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf114-callback-original.png",
+        "image_sha256": "2be118599245609558d6d22cf607700bea3b5b5f52e3e76432e959341c8db140",
+        "visually_inspected_in_initial_candidate_comparison": true,
+        "extent": "Targeted same-work callback",
+        "render_origin": "Rendered directly from the exact original PDF; no OCR authority or other edition."
+      },
+      {
+        "pdf_page": 153,
+        "image_path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf153-callback-original.png",
+        "image_sha256": "cd9aba1794ea9dd4ed45779a1e5df712026f1e76edd6454df58b68ab72aa6b51",
+        "visually_inspected_in_initial_candidate_comparison": true,
+        "extent": "Targeted same-work callback",
+        "render_origin": "Rendered directly from the exact original PDF; no OCR authority or other edition."
+      },
+      {
+        "pdf_page": 277,
+        "logical_printed_page": 243,
+        "visible_printed_label": "243",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf277.png",
+        "image_sha256": "b5f924a334c628f3c7c4086a695125a33bcf5f16680fba46b4839121e2248355",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 278,
+        "logical_printed_page": 244,
+        "visible_printed_label": "244",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf278.png",
+        "image_sha256": "9cd1438e0920821ad76919a6acc9db682aeb6b23368324a00e76ddbf2118d490",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 279,
+        "logical_printed_page": 245,
+        "visible_printed_label": "245",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf279.png",
+        "image_sha256": "020a7f9fcfe0a503279b901d3caa7a2490a86a1a577da412fbcc85222f14ff22",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 280,
+        "logical_printed_page": 246,
+        "visible_printed_label": "244",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf280.png",
+        "image_sha256": "f3e0dcd9f6296c0de2ceed57115744ad248375996e5dc3e0eeefc33c21971cb1",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 281,
+        "logical_printed_page": 247,
+        "visible_printed_label": "247",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf281.png",
+        "image_sha256": "e0dc5d7282a42efb6fa7618722c6f76715fed10e71c01e9afad87c9b030e4a71",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 282,
+        "logical_printed_page": 248,
+        "visible_printed_label": "248",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf282.png",
+        "image_sha256": "8882ffb79eb4356cb3d8e86c867092a50f5ca22b6760796b582e73869238bf74",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 283,
+        "logical_printed_page": 249,
+        "visible_printed_label": "249",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf283.png",
+        "image_sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 284,
+        "logical_printed_page": 250,
+        "visible_printed_label": "250",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf284.png",
+        "image_sha256": "78a7d14efc1e25b3960ffda8ea527b47cdb1c909e53e12e91ca1906d3132c667",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 285,
+        "logical_printed_page": 251,
+        "visible_printed_label": "251",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf285.png",
+        "image_sha256": "632a364ce2f6cfc945db45848b8084c063cc86c4706da74970ee29b6fdebdaf2",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 286,
+        "logical_printed_page": 252,
+        "visible_printed_label": "252",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png",
+        "image_sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 287,
+        "logical_printed_page": 253,
+        "visible_printed_label": "253",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf287.png",
+        "image_sha256": "33eda9bd800f32ba1e1592a987d54356ebfe5cd5506a09d752193d9db27824be",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 288,
+        "logical_printed_page": 254,
+        "visible_printed_label": "254",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf288.png",
+        "image_sha256": "97cd53a98ecf1e60ca4c4324fcc73e6fe581b69aa4abf89dbbcb3f1e0d95848e",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 289,
+        "logical_printed_page": 255,
+        "visible_printed_label": "255",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf289.png",
+        "image_sha256": "af739545338eb4e1b0a42adbeffafea7ce30f4242bcdd4ea17c4fc348ff17169",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 290,
+        "logical_printed_page": 256,
+        "visible_printed_label": "256",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf290.png",
+        "image_sha256": "91a7bd95c996e7a338a2a59373239e9af80ea74adadb48be7b62395c9cecb890",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 291,
+        "logical_printed_page": 257,
+        "visible_printed_label": "257",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+        "image_sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 292,
+        "logical_printed_page": 258,
+        "visible_printed_label": "258",
+        "image_path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+        "image_sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+        "visually_inspected_in_source_first_phase": true,
+        "visually_reopened_in_initial_candidate_comparison": true,
+        "extent": "Full page; on PDF292 only the text through shew death is admitted. Dariot is boundary-only."
+      },
+      {
+        "pdf_page": 888,
+        "image_path": "/workspace/scratch/43f75264c32e/b02k-workers/independent/pdf888-errata.png",
+        "image_sha256": "47154e5b5f778db5c252059c532a29134adf98f45ffcd113735187d602fc35b1",
+        "visually_inspected_in_initial_candidate_comparison": true,
+        "extent": "Full errata page, with targets limited to those recorded in this review.",
+        "render_origin": "Rendered directly from the exact original PDF; no OCR authority or other edition."
+      }
+    ],
+    "crop_images": [
+      {
+        "path": "evidence/pdf277-opening.png",
+        "sha256": "e72f1e9b5bdda4569be47c0d26e399aea84b83b71ddfad749347f072e0c47a58",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf280-visible-page-label.png",
+        "sha256": "96286df0df39348dd5adfc57da219e15cffc5146108305b361543f88ddbc4358",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf284-permanence.png",
+        "sha256": "bd1355dc4c1c370e7904f8343b559e1bc804055b206c2f49d801c7003e1725b7",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf286-saturn-exception.png",
+        "sha256": "3477273040ca4c854329136540c167d5956c5bcec3b1eb1cf96507f6748f490c",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf289-ascendant-lord-pronoun.png",
+        "sha256": "f3ef663592caa917244a7b1b140724ad1532e3a312892cef631326bb4e7dcd88",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf292-continuation-boundary.png",
+        "sha256": "64a88b013f606224f58a202271e60f2acd64c563d81707b85cb5652a8377cdfc",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf114-moon-motion.png",
+        "sha256": "4baeb6e4fc4f47eb4ae10bfd49d72e7dbfc423379b327026c8c775f7bf2e96f7",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf153-retained-body-table.png",
+        "sha256": "8e1f62248e5a9057332e787ff69a59ffed949c9e892263de372048cf177f364b",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf292-combustion-clause.png",
+        "sha256": "cf64390d46509ac9f26df87d3c08b7fe277e2ca3ba5e9233c2b6c195cd270dd0",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf888-admitted-errata.png",
+        "sha256": "d19279a2a4994f3f1929f0790752efd8b637dd03d5e530f0b2abb890e8e57754",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf288-placement-layer.png",
+        "sha256": "53efd8b65f28e0a61d9dd3c7ff6b88fd1d10a6f9d939144050e061e7dee73a7d",
+        "visually_checked_against_original_context": true
+      },
+      {
+        "path": "evidence/pdf291-antiscion-layer.png",
+        "sha256": "d92524e74bcec8d4d1c3c544cf3e4a3abdf717616aa1b92cbabf44ecac141a47",
+        "visually_checked_against_original_context": true
+      }
+    ],
+    "ocr_used_as_authority": false,
+    "other_edition_used": false
+  },
+  "targeted_errata_check": {
+    "searched_original_pdf_page": 888,
+    "targeted_printed_pages": [
+      245,
+      254,
+      256,
+      257,
+      258
+    ],
+    "matched_entries": [
+      {
+        "page": 245,
+        "locator": "penult",
+        "reading": "scabbinesse"
+      },
+      {
+        "page": 254,
+        "locator": "18 and19",
+        "reading": "placed"
+      },
+      {
+        "page": 256,
+        "locator": "8",
+        "delete": "all hopes of escape",
+        "read": "feare of danger"
+      },
+      {
+        "page": 257,
+        "locator": "23",
+        "reading": "eight"
+      }
+    ],
+    "bounded_absence_result": "No page258 entry found on original PDF888; no whole-book or other-edition absence claim.",
+    "source_first_locator_refinement": {
+      "id": "SF-REF01",
+      "classification": "source-supported correction to evaluator’s own provisional source-first locator",
+      "affected_frozen_artifacts": [
+        "SOURCE_FIRST_NOTES.md",
+        "SOURCE_FIRST_RECEIPT.json"
+      ],
+      "original_frozen_locator": "printed257, line22, eight",
+      "corrected_locator": "printed257, line23, r eight",
+      "original_page": 888,
+      "body_target_pdf_page": 291,
+      "body_record_id": "LI.1647.II.XLIV.R1535",
+      "source_anchor": "p257 l23 r eight",
+      "source_evidence_sha256": "47154e5b5f778db5c252059c532a29134adf98f45ffcd113735187d602fc35b1",
+      "candidate_crop_sha256": "d19279a2a4994f3f1929f0790752efd8b637dd03d5e530f0b2abb890e8e57754",
+      "reason": "The earlier freeze expressly left this line-number locator unreconciled. The initial comparison reopened original PDF888 and the matched body passage; line23 is clearly legible. Candidate R1535, TX05, U-B18 and C28 already use23.",
+      "candidate_change_required": false,
+      "frozen_bytes_changed": false,
+      "required_treatment": "Retain the original frozen bytes and publish this dated-phase refinement separately; do not silently correct the source-first record."
+    }
+  },
+  "catalogue_check": {
+    "catalogue_url": "https://wellcomecollection.org/works/s7z7c46y",
+    "catalogue_tool_reference": "turn2view0",
+    "online_item_tool_reference": "turn3view0",
+    "image_locator_tool_reference": "turn4view0",
+    "image_locator_url": "https://iiif.wellcomecollection.org/image/b30338724_0001.jp2/full/640%2C/0/default.jpg",
+    "observed": "Official catalogue identifies WilliamLilly,1647; online item shows1/894 and image link contains b30338724.",
+    "limit": "Catalogue identity is not remote byte-identity verification; exact local PDF hash remains the byte authority."
+  },
+  "evaluation_counts": {
+    "canonical_records": 192,
+    "record_pass": 192,
+    "record_fail": 0,
+    "full_report_units": 42,
+    "claim_pass": 42,
+    "claim_fail": 0,
+    "explicit_report_table_data_rows": 27,
+    "editorial_sections": 11,
+    "register_entries": 37,
+    "unmatched_report_claims": 0
+  },
+  "tests": {
+    "distinct_candidate_unittest_identities": 33,
+    "fresh_private_run": {
+      "tests_run": 33,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    "supplemental_code_audit_assertions": 632,
+    "supplemental_assertions_add_candidate_unittest_identities": 0,
+    "independent_arithmetic_receipt_comparisons": 21,
+    "clinical_or_predictive_validation": false
+  },
+  "budget": {
+    "initial_evaluations_used": 1,
+    "changed_item_repair_cycles_used": 0,
+    "changed_item_repair_cycle_limit": 2,
+    "unchanged_pass_carry": "Exact item, source/evidence and config hashes only; no repeated unchanged-state review as a new success."
+  },
+  "writes": {
+    "private_directory_only": true,
+    "candidate_edits": false,
+    "source_first_edits": false,
+    "repository_edits": false,
+    "git_writes": false,
+    "owner_device_actions": false
+  },
+  "material_limits": [
+    "No clinical, causal, treatment, survival-probability or predictive validity was evaluated. Source preservation, hashes, tests and reviewer agreement supply none of those forms of validation.",
+    "No human specialist or different model family participated. Shared training and model blind spots remain.",
+    "The initial main context had the recorded post-freeze helper-summary exposure. Only the original source-first phase and fresh code-check context have their respective information-separation claims.",
+    "The original supplied copy was read; no full other-edition collation or original-language Ptolemy review was attempted.",
+    "The Ptolemy1066 and prior Lilly1357 counts were checked as retained-index arithmetic, not by reopening all retained source records.",
+    "Root/other-reader prior process statements are supported by supplied execution/freeze receipts; this evaluator did not directly observe their private reading acts or independently verify the reported publication commit through Git.",
+    "Packet reference flags and bounded helper behaviour do not establish that no wider runtime consumer exists. Global integration behaviour was outside the permitted review boundary.",
+    "The arithmetic receipt’s numerical contents were independently reproduced. Its named original build_analysis_evidence.py execution event was not independently replayed because that generator is outside the frozen candidate.",
+    "The strongest remaining source weakness is intended syntax/lexical sense in compact or apparently defective passages, especially R1440 andR1444. A preservation PASS does not settle those meanings."
+  ]
+}

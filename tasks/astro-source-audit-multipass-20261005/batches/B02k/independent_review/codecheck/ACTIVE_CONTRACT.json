@@ -1,0 +1,68 @@
+{
+  "task": "B02k frozen independent code/data/test audit",
+  "reviewer": "/root/sixth_independent/code_audit",
+  "bootstrap": "Connected GitHub current main root AGENTS fetched this turn; deeper guidance from parent-provided uda-b02k copies",
+  "status": "ACTIVE",
+  "contract": [
+    {
+      "source": "independent-evaluation-separation",
+      "required": "Review only named frozen artifacts and minimum code-contract report sections; withhold rationale, prior findings, helper_review, source_readers, other workers; freeze before reconciliation",
+      "failure": "Forbidden content consumed or candidate altered",
+      "enforcement": "semantic/read-boundary"
+    },
+    {
+      "source": "source-interpretation-provenance",
+      "required": "Anchor candidate claims to exact read file spans; do not infer historical fidelity, clinical efficacy, predictive validity, or source-page verification from code/test passes",
+      "failure": "A source claim lacks actually-read passage; pass overstated",
+      "enforcement": "semantic"
+    },
+    {
+      "source": "task-time-lesson-activation",
+      "required": "Verify manifest and every consumed candidate file hash; retain execution receipts, distinct test IDs and limits; inspect final outputs",
+      "failure": "Unbound inputs, repeated test count inflation, incomplete promised checks",
+      "enforcement": "mechanical and semantic"
+    },
+    {
+      "source": "parent bounded directive",
+      "required": "Write only under codecheck; execute only private copies; no Git or owner-device operation; one audit and no repair loop",
+      "failure": "Write outside scope or repair candidate",
+      "enforcement": "filesystem paths and action trace"
+    },
+    {
+      "source": "chat-output-budget and root final-output contract",
+      "required": "Return frozen reports as files, concise final with second UTC clock reading and elapsed time",
+      "failure": "Long inline report or missing timestamp",
+      "enforcement": "literal final inspection"
+    }
+  ],
+  "initial_clock": "2026-10-10 16:28:44 UTC",
+  "clock_note": "First clock acquired immediately after live bootstrap; no provider sent time was available.",
+  "stop_boundary": "Diagnostic-only bounded subtask. Deliver frozen findings to parent; parent owns source fidelity and reconciliation.",
+  "pre_delivery_gate": {
+    "independent_evaluation_separation": {
+      "verdict": "PASS",
+      "evidence": "Only named candidate files, selected report spans and machine-read test dependencies; no rationale or prior review contents consumed."
+    },
+    "source_interpretation_provenance": {
+      "verdict": "PASS",
+      "evidence": "Nine bounded claim checks in CODE_CHECK.json; exact code/test anchors reopened; primary_source_pages_read is empty and source/clinical/predictive judgments explicitly excluded."
+    },
+    "task_activation_and_input_identity": {
+      "verdict": "PASS",
+      "evidence": "Manifest digest and eleven exact candidate inputs verified before use and unchanged after execution; 33 distinct AST/log/discovery identities agree."
+    },
+    "mutation_and_test_scope": {
+      "verdict": "PASS",
+      "evidence": "All writes under codecheck. Candidate runner invoked only in private_run; no candidate, Git, owner-device or repair action."
+    },
+    "delivery": "Frozen CODE_CHECK.md and CODE_CHECK.json with supporting evidence and exact output hashes; final clock/output check due immediately before final message."
+  },
+  "stop_admission": {
+    "parent_outcome": "OPEN; parent owns full historical-source review and reconciliation",
+    "assigned_gap": "Independent code/data/test diagnosis of the frozen candidate",
+    "assigned_gap_status": "SATISFIED",
+    "next_actor": "Parent evaluator",
+    "next_action": "Consume the frozen CODE_CHECK artifacts alongside its separate source-first assessment",
+    "authority_boundary": "Explicit diagnostic-only task, no candidate edits, no Git, no owner-device action and no repair loop"
+  }
+}

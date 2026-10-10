@@ -1,0 +1,91 @@
+{
+  "status": "FROZEN_INITIAL_DIAGNOSIS",
+  "candidate_manifest_sha256": "9cc2299b54c514c07c6e330471d791bb7597875c5730c4116e9e703fd51976c0",
+  "primary_outputs": [
+    "CODE_CHECK.md",
+    "CODE_CHECK.json"
+  ],
+  "files": [
+    {
+      "path": "CODE_CHECK.md",
+      "bytes": 16955,
+      "sha256": "eb971df232feb6893adf08f5adc1fd6cb41faca2c4054880e465a4f2eea10c49"
+    },
+    {
+      "path": "CODE_CHECK.json",
+      "bytes": 34758,
+      "sha256": "c0317c78b7a3852409e73dded87f3b59b8df189e07818cd6b598fcb68b0212c4"
+    },
+    {
+      "path": "ACTIVE_CONTRACT.json",
+      "bytes": 3995,
+      "sha256": "522d77f51910ee9d820db7ba8ef554f557db0452a1cb112323426145439129c8"
+    },
+    {
+      "path": "BOOTSTRAP_ROOT.md",
+      "bytes": 13135,
+      "sha256": "14e330c08a063088349f00ebf33c7d8592637ef5be2193068fa88447a80f56d8"
+    },
+    {
+      "path": "BOOTSTRAP_CONFIG.json",
+      "bytes": 3690,
+      "sha256": "58d17a17f30b93f47d2a534e31e3313f92469894a7e8ed8fbb0020c57050c17d"
+    },
+    {
+      "path": "BOOTSTRAP_RECEIPT.json",
+      "bytes": 761,
+      "sha256": "f9461e2ba1e1c8c1d1bef59cca25f6656308b12b83704bc15958a96c15c0de30"
+    },
+    {
+      "path": "GUIDANCE_HASHES.json",
+      "bytes": 2037,
+      "sha256": "8ed44f809fcba6cee167d2d3c418c424cc343d980c8a3d01f8e55729c820340e"
+    },
+    {
+      "path": "INPUT_HASHES.json",
+      "bytes": 4707,
+      "sha256": "130abfcd6bf6b9f8e1f469d0798f47cdc12e5b4ffbe8354846e0faa72159ef4e"
+    },
+    {
+      "path": "REPRODUCTION.json",
+      "bytes": 12595,
+      "sha256": "5dd6e63900847bcc0666679478d46c45a4f1d8fff9484a43769905cfc2fe0125"
+    },
+    {
+      "path": "REPRODUCED_STDOUT.txt",
+      "bytes": 5212,
+      "sha256": "87b23d6079af93ae7811aeac02f242348eab7cae1e03ae163d5fc5c720c96069"
+    },
+    {
+      "path": "REPRODUCED_STDERR.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "bounded_probes.py",
+      "bytes": 8664,
+      "sha256": "f0bbb832441c5714fffa5df115700e88b1fb0a59866b32cb1874dbc1f3c69346"
+    },
+    {
+      "path": "BOUNDED_PROBES.json",
+      "bytes": 906,
+      "sha256": "e0f1b5b239bc6bd754814b4f8e6b123fef9de847455a354ef00a5b146fe8fd73"
+    },
+    {
+      "path": "ARITHMETIC_RECOMPUTATION.json",
+      "bytes": 3555,
+      "sha256": "b22a6d4749ad81c276a351c7053aaa145093ec631f8626bf950521972d9c07ab"
+    },
+    {
+      "path": "private_run/TEST_B02k.txt",
+      "bytes": 5212,
+      "sha256": "87b23d6079af93ae7811aeac02f242348eab7cae1e03ae163d5fc5c720c96069"
+    },
+    {
+      "path": "private_run/TEST_RUN_SUMMARY.json",
+      "bytes": 4407,
+      "sha256": "6950dda4145b3fca32d0b764d3a8fd69a542d66d0fa50e22a997152c748cf46f"
+    }
+  ],
+  "reconciliation_policy": "No edits to these frozen reports; any reconciliation is a separate artifact."
+}

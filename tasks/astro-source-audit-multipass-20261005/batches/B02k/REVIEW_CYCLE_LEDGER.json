@@ -1,0 +1,21 @@
+{
+  "batch": "B02k",
+  "cycles": [
+    {
+      "cycle": "INITIAL",
+      "source_records_pass": 192,
+      "report_items_pass": 42,
+      "required_changes": 0,
+      "candidate_changes_after_freeze": 0,
+      "diagnosis_manifest_sha256": "13cb1087ab6d3c6d7049383812eb578d2bce122dc0d94570f1dfbe8453359ee9",
+      "carried_passes": "All44 candidate inputs and all192 record /42 whole-item hashes plus material dependencies matched unchanged."
+    }
+  ],
+  "repair_cycles_used": 0,
+  "repair_cycles_limit": 2,
+  "stall": false,
+  "withheld_items": [],
+  "source_ambiguities": "Retained as qualified source content, not hidden omissions.",
+  "late_exposure_disclosure": "independent_review/INITIAL_REVIEW_RECEIPT.json#/independence",
+  "evaluator_refinement": "SF-REF01; frozen source-first files unchanged; candidate already used correct line23."
+}
