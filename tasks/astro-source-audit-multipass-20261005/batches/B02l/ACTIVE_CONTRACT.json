@@ -107,13 +107,13 @@
     "independent": "Fresh-context full source span, source-first freeze then frozen-candidate/claim check; no list_agents or producer summaries"
   },
   "test_lane": "Source-data and bounded reference arithmetic; no runtime/model edits. Run new focused suite once at source checkpoint and actual extracted-packet usability once. Reuse dependencies only if needed; no full application or predictive-evaluation claim.",
-  "phase": "SOURCE_ACCEPTED_PACKET_PUBLICATION_DELIVERY",
+  "phase": "OWNER_DELIVERED_RECEIPT_PUBLICATION",
   "stop_admission": {
     "parent_outcome": "OPEN",
     "pause_authority": "Existing PASS_PLAN.json pause_contract",
     "current_completion_requirement": "Complete the admitted Dariot/Lilly block, verify, publish and deliver the report/packet/handoff.",
     "finalization_admitted": false,
-    "next_action": "Complete admitted B02l work, then save the Hermes heading and full opening paragraph as the next unread unit."
+    "next_action": "Publish the actual delivery receipts, fetch the integrated checkpoint and complete its preservation comparison; then admit the existing saved-batch pause."
   },
   "owner_gap": "Remaining Lilly chapters and wider multi-author audit. This batch contributes source extraction and conditional-reference checks; parent stays open.",
   "parent_authority": {
@@ -135,5 +135,10 @@
   "cross_family_check": "NOT_TRIGGERED: primary-source fidelity and bounded arithmetic can be settled by original images and deterministic checks; fresh contexts are not cross-family review.",
   "source_checkpoint": "46d56f2fce7e577197473102a75a7390db37e6dc",
   "repair_round": 2,
-  "source_acceptance": "ACCEPTANCE.json"
+  "source_acceptance": "ACCEPTANCE.json",
+  "accepted_publication": "fe28256bdfe8467250664414450c823218a6cf9a",
+  "actual_delivery_receipts": [
+    "DELIVERY_RECEIPT.json",
+    "LOCAL_HANDOFF_RECEIPT.json"
+  ]
 }

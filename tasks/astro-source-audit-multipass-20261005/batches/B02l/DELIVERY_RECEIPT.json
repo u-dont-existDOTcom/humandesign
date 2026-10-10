@@ -1,0 +1,105 @@
+{
+  "batch": "B02l",
+  "source_commit": "fe28256bdfe8467250664414450c823218a6cf9a",
+  "process_exit_code": 0,
+  "evidence_origin": "Actual completed owner-device process output; JSON emitted after HTTP, content, installation and disk readback checks.",
+  "downloads_directory_basename": "Téléchargements",
+  "file_count": 3,
+  "files": [
+    {
+      "filename": "Astrology-Lilly-Dariot-Continue-20261010.md",
+      "bytes": 5435,
+      "sha256": "b35fa97255affc54cf4793f04cfaebc6f8d22cd6cdbcc190a2c7c81c773b09cd",
+      "git_blob_sha": "3d3639dda27419f35d434e82d6eac56b0aa42ab0",
+      "transport": "direct_http_file",
+      "http_status": 200,
+      "byte_count_verified": true,
+      "sha256_verified": true,
+      "git_blob_sha_verified": true,
+      "disk_bytes_equal_published": true,
+      "operation": "created"
+    },
+    {
+      "filename": "Astrology-Lilly-Dariot-Records-20261010.zip",
+      "bytes": 23599396,
+      "sha256": "0295906f11844c128f9ecf222d66c55f88a4c52f71b779c670566685c66320e8",
+      "transport": "reconstructed_archive",
+      "publication_parts": [
+        {
+          "filename": "Astrology-Lilly-Dariot-Records-20261010.zip.part01",
+          "repo_path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/deliverables/parts/Astrology-Lilly-Dariot-Records-20261010.zip.part01",
+          "bytes": 6000000,
+          "sha256": "beab7cd7a26740b8a6f8f18e559049c5aa512dea34a00c081931d08e5dc9acf9",
+          "git_blob_sha": "52135d757ba08c117e2e1189c93281ca9416d849",
+          "position": 1,
+          "transport": "direct_http_file",
+          "http_status": 200,
+          "byte_count_verified": true,
+          "sha256_verified": true,
+          "git_blob_sha_verified": true
+        },
+        {
+          "filename": "Astrology-Lilly-Dariot-Records-20261010.zip.part02",
+          "repo_path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/deliverables/parts/Astrology-Lilly-Dariot-Records-20261010.zip.part02",
+          "bytes": 6000000,
+          "sha256": "801e4e37ca0c5ab5517788ad343d94f9e3bf2056fdcdf49493e038594ef74f9c",
+          "git_blob_sha": "10c1eed30c73a33ab56bf8405dbd88d86405546e",
+          "position": 2,
+          "transport": "direct_http_file",
+          "http_status": 200,
+          "byte_count_verified": true,
+          "sha256_verified": true,
+          "git_blob_sha_verified": true
+        },
+        {
+          "filename": "Astrology-Lilly-Dariot-Records-20261010.zip.part03",
+          "repo_path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/deliverables/parts/Astrology-Lilly-Dariot-Records-20261010.zip.part03",
+          "bytes": 6000000,
+          "sha256": "53b8e3cd3ae4621e25b8d5f96fd3424fe060a8130f70c843e55959ce57cdbe38",
+          "git_blob_sha": "821647e3ad9ca80664427dae6892bc2f5d26f430",
+          "position": 3,
+          "transport": "direct_http_file",
+          "http_status": 200,
+          "byte_count_verified": true,
+          "sha256_verified": true,
+          "git_blob_sha_verified": true
+        },
+        {
+          "filename": "Astrology-Lilly-Dariot-Records-20261010.zip.part04",
+          "repo_path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/deliverables/parts/Astrology-Lilly-Dariot-Records-20261010.zip.part04",
+          "bytes": 5599396,
+          "sha256": "54de399fd4cdeb1b6cead629e0bed4704a7d38c3ee67c9d063b6de75d8bbf074",
+          "git_blob_sha": "0094190b80009fb025e06de7b4e13ae144312c89",
+          "position": 4,
+          "transport": "direct_http_file",
+          "http_status": 200,
+          "byte_count_verified": true,
+          "sha256_verified": true,
+          "git_blob_sha_verified": true
+        }
+      ],
+      "reconstruction_order": "publication_parts_list_order",
+      "content_derived_git_blob_sha": "aec9cb7c50a87eae94148b33220f15b2e36c0c93",
+      "complete_archive_is_single_published_git_blob": false,
+      "byte_count_verified": true,
+      "sha256_verified": true,
+      "content_derived_git_blob_sha_verified": true,
+      "disk_bytes_equal_verified_artifact": true,
+      "operation": "created"
+    },
+    {
+      "filename": "Astrology-Lilly-Dariot-Report-20261010.md",
+      "bytes": 28547,
+      "sha256": "23d04a8daacb455ecb4d1b3eacf38f6c1f02c0215b27d6ad3c69824040133e1d",
+      "git_blob_sha": "68f7ed64e3b03d36598c121c8142f95499557157",
+      "transport": "direct_http_file",
+      "http_status": 200,
+      "byte_count_verified": true,
+      "sha256_verified": true,
+      "git_blob_sha_verified": true,
+      "disk_bytes_equal_published": true,
+      "operation": "created"
+    }
+  ],
+  "all_delivered_and_verified": true
+}

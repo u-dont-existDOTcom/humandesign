@@ -1,0 +1,594 @@
+{
+  "batch": "B02l",
+  "commit": "fe28256bdfe8467250664414450c823218a6cf9a",
+  "parent": "46d56f2fce7e577197473102a75a7390db37e6dc",
+  "publication_route": "GitHub Git-data API; expected-SHA nonforce ref update",
+  "actual_fetched_commit_verified": true,
+  "exact_file_readback_count": 97,
+  "all_local_published_bytes_equal": true,
+  "files": [
+    {
+      "path": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02l.md",
+      "bytes": 2256,
+      "sha256": "a9c71e56d6e911090a07612d8c66572cc7105c3ab2bb1fb8f18a0210ad2534a1",
+      "git_blob_sha": "9db657969662127efa463a5b11e9d323f8d21a4b"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+      "bytes": 6278,
+      "sha256": "34d3de1e1451eda72cbeb3df60cddf4c273626c07658707dcd8c4a47a7ddce4b",
+      "git_blob_sha": "97dc5c456f285fce123adc378f0585235dddd793"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/.gitignore",
+      "bytes": 151,
+      "sha256": "ab1c84e7ef09dae90687f33b7ea8c5e754a0a614c14e49360c13f99aa8d049c6",
+      "git_blob_sha": "43990f5787cd031fdfd901e669a6f326fd9fc50b"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/ACCEPTANCE.json",
+      "bytes": 3864,
+      "sha256": "60cfd60efdd5d1d20f8c0acb7aa33e9f2be70390b1ab345541c1c1d2651c050a",
+      "git_blob_sha": "9ee69ba51b30ccc7fcb68ef3aaba8206c427ce4d"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/ACTIVE_CONTRACT.json",
+      "bytes": 9629,
+      "sha256": "2d5bb971fbeb2fa947d1058344acd5a471051d3b38a3e1522f5ed44762592b6e",
+      "git_blob_sha": "e844b8a1ebbe55bc800a42e218242f685b91ae42"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/ARCHIVE_CONTENT_MANIFEST.json",
+      "bytes": 25456,
+      "sha256": "69b6e1678458de3743e50131dbef579d2c9e7e30d6457dac2b8ec09c13f418bf",
+      "git_blob_sha": "624df3a5747de942202100754f1b05e32bf0199f"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/ARCHIVE_TRANSPORT.json",
+      "bytes": 2604,
+      "sha256": "1c60f1dfc7f29d20866d44d2c14ed8a40aa9c11fb14c7afdb2a9a9e01f1d5bd8",
+      "git_blob_sha": "6cad772f15892418a15eba4e67c00493f67a56a2"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/AUDIT_REPORT.md",
+      "bytes": 28547,
+      "sha256": "23d04a8daacb455ecb4d1b3eacf38f6c1f02c0215b27d6ad3c69824040133e1d",
+      "git_blob_sha": "68f7ed64e3b03d36598c121c8142f95499557157"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/CLAIM_LEDGER.json",
+      "bytes": 50952,
+      "sha256": "4d051d0216cd4c6291b3f186df63168151762753c7a781ab87ee37cad82b0fa8",
+      "git_blob_sha": "d671a3f75aa950b1dd320b5682fae995e70b825c"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/DELIVERABLES_MANIFEST.json",
+      "bytes": 2884,
+      "sha256": "dd61128759f78d570ab5a8da272a539c7fad9e90b3548847b9971a4524acc5e9",
+      "git_blob_sha": "59c9dd852c9228eac8fb8ac5158f7bf9b0ac4720"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/DELIVERY_PREPARATION_CHECK.json",
+      "bytes": 1381,
+      "sha256": "a26f820d64afdd782da4692b58a47d23205d4dcd7f58085f2a72527e528cb4b7",
+      "git_blob_sha": "763a74fe1eb538d0d61880c3269be58ee2a0cd71"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/INDEPENDENT_DIAGNOSIS_COPY_RECEIPT.json",
+      "bytes": 7768,
+      "sha256": "33b12e5ccccc0788e6ad21fa806854356f01a4318c1bf3674cdac869baa82d37",
+      "git_blob_sha": "a666e3ae0a1b32025bb3774817ea16d57fcbe3d1"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/LILLY_SOURCE_EXTRACTION_INDEX_SNAPSHOT.json",
+      "bytes": 6278,
+      "sha256": "34d3de1e1451eda72cbeb3df60cddf4c273626c07658707dcd8c4a47a7ddce4b",
+      "git_blob_sha": "97dc5c456f285fce123adc378f0585235dddd793"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/OWNER_OUTCOME_STATUS.json",
+      "bytes": 3328,
+      "sha256": "65d39fa808012e358feab4e6cb95f2e7b4a9bd0630bb38094bd8c091cb9b54b0",
+      "git_blob_sha": "31cc9ee5b211dbc988167b194683f90914e69ab0"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/PACKET_USABILITY.json",
+      "bytes": 10727,
+      "sha256": "4de0e25246df9984be19972fcea64a535056e683c9e17d324d750c2110e2fad8",
+      "git_blob_sha": "ba63fe312a2c0b644a5676c01f0cb720106ae464"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/PREPUBLICATION_PRESERVATION_CHECK.json",
+      "bytes": 8035,
+      "sha256": "6b96d7acebd3ecb3e85f8e25aee1be4fd678ff8c0982859388d7648546805c7d",
+      "git_blob_sha": "632212e4004e61d27d0fa71c56fe30e04c62ad28"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/REPAIR_ROUND01_CANDIDATE_FREEZE.json",
+      "bytes": 7733,
+      "sha256": "40cbce412a7c1c6266f5fc4e55fa5570fa37ca43631ebb393e9787b96b4237f8",
+      "git_blob_sha": "53e59b491548e8471fe63b669982e73a11761135"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/REPAIR_ROUND01_CHANGESET.json",
+      "bytes": 17529,
+      "sha256": "20e72017ecb517a443f52e2c4af848a90dce711d43c5c2086deaff63e962a955",
+      "git_blob_sha": "0cec0371b124c210bf8a68f75a525568249a6c1c"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/REPAIR_ROUND01_COPY_RECEIPT.json",
+      "bytes": 202,
+      "sha256": "112ded809ea6fc8c035a2bdfbe342c6c2b117db5574ef6b308b145b88546f8aa",
+      "git_blob_sha": "ea26699e94af70c131b5b312a513633d6008c88b"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/REPAIR_ROUND02_CANDIDATE_FREEZE.json",
+      "bytes": 8000,
+      "sha256": "73955bbb3cd06723d3553f119b61faef6c490547edd058638f369cb4e36a9183",
+      "git_blob_sha": "da49f7d70bfac7aa1ff0c7b200acb74b3e84921e"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/REPAIR_ROUND02_CHANGESET.json",
+      "bytes": 760,
+      "sha256": "d0e650012bf0927d1944168cd12eca117b41c696c6c63e8727141197728457bc",
+      "git_blob_sha": "19486eb187b4e1687ee82cf9ceb4db2ac7f8809a"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/REPAIR_ROUND02_COPY_RECEIPT.json",
+      "bytes": 190,
+      "sha256": "0eaea9bdc1055ecbd233fe8659ff76c1237aa811f6c22b4ff5d17920ff0296b3",
+      "git_blob_sha": "664b9e618b0c7a0ab6f40e489b920492e28279d9"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/REVIEW_CONFIGURATION.json",
+      "bytes": 3767,
+      "sha256": "8ef35c2ede9bdd0bfce72c33b9d12b2991c28baf955211851d2032f6cc6025dd",
+      "git_blob_sha": "78d373c3e268d6ef407197f209a5a6abf0d460fb"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/REVIEW_CYCLE_LEDGER.json",
+      "bytes": 4703,
+      "sha256": "6f60aaa685cd620ada3c78e84abe6944176939652b0d57d6dab75e0ae9a00ba1",
+      "git_blob_sha": "1bae15327c1bf49bf9c500af990678aaf6abe790"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/ROOT_RECONCILIATION.json",
+      "bytes": 4248,
+      "sha256": "3d96a1f2921413f20f42c442017a64a66b11915955aaa914b2437eb442de3290",
+      "git_blob_sha": "2484cc8d52191b11d6755adc0e6dcc14d9aefbaa"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/ROOT_SOURCE_CORRECTIONS.json",
+      "bytes": 2241,
+      "sha256": "00becb7fdafeb271bafd9d808fd891b94104fca61033bf8be0dd28ac261aa1d4",
+      "git_blob_sha": "426e1122dfabdb3d7d0a1fc681eaa535077b1f35"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/RULES.json",
+      "bytes": 601010,
+      "sha256": "7f95bfd2e73d8c3c6f5ababdd12ee6e04b45fae314b35323ae50f905899c966c",
+      "git_blob_sha": "800bb2c0d73e6dd3238c4fe49fe8c7ee4b61eb11"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/SOURCE_PUBLICATION_RECEIPT.json",
+      "bytes": 23339,
+      "sha256": "56c09ce1bfabaa87e664fb4064fb392679dfcad5d8d96391abab86da0982f2db",
+      "git_blob_sha": "29adc3c142ca2d2b233fc3a1ce616b5929130619"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/TEST_PACKET_USABILITY.txt",
+      "bytes": 2752,
+      "sha256": "8e03d6d577031b4b06b2dd444613025c729ad131cc7a51ef1aeaf527782f8636",
+      "git_blob_sha": "78e617d547f55114323e8fb60c0f2bab4091317c"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/TEST_RUN.log",
+      "bytes": 2595,
+      "sha256": "d82e08fdec253a9f48b5276b90163a170775be3f73072ca5a29f4fe97aa0d7c1",
+      "git_blob_sha": "03788a561517b90dde49941626df4231d6369606"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/TEST_RUN_SUMMARY.json",
+      "bytes": 2921,
+      "sha256": "22e4b1167e7dae1fbffa6806e22b256813bf8fa29d2d287a83cb21e5bbc5b606",
+      "git_blob_sha": "f73c39cf1af3b21826a843d416a1e95ff39e3fb7"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/WORKING_CHECKPOINT.md",
+      "bytes": 3427,
+      "sha256": "b6e55be61e880e5ce8c834430d3cc6c3f3d0ab201c66911a11a252fde2567f3d",
+      "git_blob_sha": "e6dc123468b4848683c1c803baa95573e0fe050c"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/WORK_HANDOFF.md",
+      "bytes": 2486,
+      "sha256": "d67e69488b3ab8f2893c7052cac628072c362efd3dacd81481ae0b077d078d1f",
+      "git_blob_sha": "efcd0f38d752d49d3b6c8e7e30f6bc4dc7aeedfe"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/WRITER_LEASE.json",
+      "bytes": 719,
+      "sha256": "3b88ce2feda50143388578bc6d0c7588bfa85483673ac2590467e84b3c06ee46",
+      "git_blob_sha": "183ed7aa102f6c7f479bbe93e5031ab17ce7d1f0"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/build_report.py",
+      "bytes": 30933,
+      "sha256": "48db30ea38116dcddc99670cb3913c6b167fb953795999fd1bdb21e9212efc2d",
+      "git_blob_sha": "751b0c90566c5eaca4d7d8b61ea2b50bc9ef9b2d"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/build_source_data.py",
+      "bytes": 16292,
+      "sha256": "76c027584f4495b92e08d88998c1f59236e2acfb8fa2f5df9793bb3c18832c87",
+      "git_blob_sha": "0e718f01831f7f87af11b1c2131a22f6ca6f123d"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/deliverables/Astrology-Lilly-Dariot-Continue-20261010.md",
+      "bytes": 5435,
+      "sha256": "b35fa97255affc54cf4793f04cfaebc6f8d22cd6cdbcc190a2c7c81c773b09cd",
+      "git_blob_sha": "3d3639dda27419f35d434e82d6eac56b0aa42ab0"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/deliverables/Astrology-Lilly-Dariot-Report-20261010.md",
+      "bytes": 28547,
+      "sha256": "23d04a8daacb455ecb4d1b3eacf38f6c1f02c0215b27d6ad3c69824040133e1d",
+      "git_blob_sha": "68f7ed64e3b03d36598c121c8142f95499557157"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/deliverables/parts/Astrology-Lilly-Dariot-Records-20261010.zip.part01",
+      "bytes": 6000000,
+      "sha256": "beab7cd7a26740b8a6f8f18e559049c5aa512dea34a00c081931d08e5dc9acf9",
+      "git_blob_sha": "52135d757ba08c117e2e1189c93281ca9416d849"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/deliverables/parts/Astrology-Lilly-Dariot-Records-20261010.zip.part02",
+      "bytes": 6000000,
+      "sha256": "801e4e37ca0c5ab5517788ad343d94f9e3bf2056fdcdf49493e038594ef74f9c",
+      "git_blob_sha": "10c1eed30c73a33ab56bf8405dbd88d86405546e"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/deliverables/parts/Astrology-Lilly-Dariot-Records-20261010.zip.part03",
+      "bytes": 6000000,
+      "sha256": "53b8e3cd3ae4621e25b8d5f96fd3424fe060a8130f70c843e55959ce57cdbe38",
+      "git_blob_sha": "821647e3ad9ca80664427dae6892bc2f5d26f430"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/deliverables/parts/Astrology-Lilly-Dariot-Records-20261010.zip.part04",
+      "bytes": 5599396,
+      "sha256": "54de399fd4cdeb1b6cead629e0bed4704a7d38c3ee67c9d063b6de75d8bbf074",
+      "git_blob_sha": "0094190b80009fb025e06de7b4e13ae144312c89"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/ALL_CLAIM_RESULTS.json",
+      "bytes": 119967,
+      "sha256": "217159cfd44b95e43fcdcc7200155d2ed73f4cdd43193e683f558eac301e8db0",
+      "git_blob_sha": "1a3b70dc00225a61f2b1514b25018ef70500c8c8"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/CANDIDATE_INTEGRITY_CHECK.json",
+      "bytes": 4915,
+      "sha256": "8ff2dc02936ff59310227493d057155058515656e50f82b18a91c791ea7c5b0b",
+      "git_blob_sha": "73b3f7e342bc726eece33d136f3692d219914cd2"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/CLAIM_TEXT_BINDING_CHECK.json",
+      "bytes": 11688,
+      "sha256": "a94b59d460dc52c34bf894737266c0cac063706ecf4217c591803c7a166a261d",
+      "git_blob_sha": "bd936e7f50f932c1b87743f6e28ec6b8cba8e4bb"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/DIAGNOSTIC_FINDINGS.json",
+      "bytes": 10821,
+      "sha256": "d2e7df671b54f91923d2a2c58c3b16a8d898bda9cb64db6bcb314ba8f395f7ee",
+      "git_blob_sha": "a915c9cae948e02e1809eabcddbca19f592cac26"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/EXPOSURE_AND_METHOD.json",
+      "bytes": 6991,
+      "sha256": "189e875b49fdd6ff0944e0a98567b94214cc64ed3c398373048c515f538247dc",
+      "git_blob_sha": "61cc7c61b819a72d0372f29f67d552cfdb3ee751"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/FIELD_CONSISTENCY_CHECK.json",
+      "bytes": 66,
+      "sha256": "23d94ff56810d6da660a24646b3b81c2cbc2cf09aa391018f08fa310520f5084",
+      "git_blob_sha": "b42a3a072c56421155220784a8d66e9636bf7fdd"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/HELPER_BEHAVIOR_CHECKS.json",
+      "bytes": 10277,
+      "sha256": "85b14d55ccdb31cb661ab27e7ca56a1e1681167d05eac2e0544b1dbd9ca1be3a",
+      "git_blob_sha": "d82bcad2e79d1338c10a576722afd8b9d9dbe923"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/INDEPENDENT_INVENTORY_CHECK.json",
+      "bytes": 3150,
+      "sha256": "3d518d90d26b86f99df67a70ba8db9ee8c3af32df442fbacd3a21c5cac5fefcb",
+      "git_blob_sha": "80df8a41400bbe0ba3a8dd46a2f6cf6cd772c1ae"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/INDEPENDENT_SOURCE_WINDOW_CHECK.json",
+      "bytes": 3253,
+      "sha256": "6d00011917b62b2482e7d0b9043225195c1567b87e267c49fd54aad4d94d15b7",
+      "git_blob_sha": "28c590f4cd15469e8b68d48ac0dfa67716dca215"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/INITIAL_DIAGNOSIS.md",
+      "bytes": 20049,
+      "sha256": "9f52c9fa32cb9a472d4533005f84977509b197d72684b6bc0e2de126d6343cc4",
+      "git_blob_sha": "7ffb1917831e19b55d62515db4a45f8ce092daad"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/INITIAL_DIAGNOSIS_FREEZE.json",
+      "bytes": 7150,
+      "sha256": "25bf2ad16a7a0038d58f6584346a253693b3af0bd666a06ba58a232b99dc734c",
+      "git_blob_sha": "ba72801ec1bd647c1f7c931c00bc1951232bd491"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/REPORT_RESIDUAL_SCAN.txt",
+      "bytes": 1230,
+      "sha256": "3b78dfcce820e2aac0b09f509808ae6eca1782f0f5e2c43a69213b9aee7e5654",
+      "git_blob_sha": "819c3539c918fae343083b7e6cb0079e8359892b"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/SOURCE_RECORD_COVERAGE.json",
+      "bytes": 282360,
+      "sha256": "e799c50d3df72af017e70abda32e21dde897f827b6bc3632d0fa939f4a69a013",
+      "git_blob_sha": "c07d3afff77244b8de213b630cddba05eef37cbc"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/build_initial_diagnosis.py",
+      "bytes": 73096,
+      "sha256": "43408906feafa6e8c6278bc993188f22c21cbc6b12968c791044911197021177",
+      "git_blob_sha": "2c5ed65c3257a4a5d2f59a302ce87b10240add7c"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_pdf294_principal_number.png",
+      "bytes": 318340,
+      "sha256": "2b28cfb0ad6c1844deefffc597c51e84f3260324fbe3fc6d364ed571a1923647",
+      "git_blob_sha": "6dd46e46a4b78b36fe056b887dbd525b0a82c9df"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_pdf295_usually_errata_body.png",
+      "bytes": 457679,
+      "sha256": "3c9bafb8384a1a47633e3dc69daf2b67398c0e79d787e3834e3790a2d4602d47",
+      "git_blob_sha": "e61067d99eb4758798b45d8f039e020788520e48"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_pdf295_vitious_reading.png",
+      "bytes": 893608,
+      "sha256": "e2d2a1179a288f228a91445d1a4216e0b09850a02468cfb7089244c7ba08c205",
+      "git_blob_sha": "795354076785dc7d0dae95751321b32266ac2aec"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_pdf295_youth_pronoun.png",
+      "bytes": 751123,
+      "sha256": "d8e39284db296e2b63ea7d228ef834d1931fc34ce3e38b9e665b6852d5819cac",
+      "git_blob_sha": "4429fad93797acd5fb997a2fd33301903325904e"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_pdf296_returning_errata_body.png",
+      "bytes": 1029381,
+      "sha256": "b36b191d069ca531f0ee916757867feab698245b27f586ca2a5e8cc03e86f76d",
+      "git_blob_sha": "b6eb2b9d93b1a1eaf7a0a870e6ff39f2542bf1c8"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_pdf296_returning_word.png",
+      "bytes": 46229,
+      "sha256": "356cc309ea52359b4b8c537abe17cb94aecdc62c66014227c956c7f7e2be23e0",
+      "git_blob_sha": "8466114821e4a8e876aa51ebc5c583c8f225de94"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_test_copy/INDEPENDENT_TEST_RUN.log",
+      "bytes": 2595,
+      "sha256": "da0308494c45af0e072e0fb47d35cc42daf36777a65d10740473846df9ead409",
+      "git_blob_sha": "bb3011f5c437f449bcbb67ff601b7228256bce09"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_test_copy/TEST_RUN_SUMMARY.json",
+      "bytes": 2921,
+      "sha256": "580c39182365507ac61029dec2bce33839a8cdd957b9fa415b23a72fa2f234d3",
+      "git_blob_sha": "12083efb12a69f3ebc175932e80de7fbb7eb7055"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_test_copy/lilly_dariot_reference.py",
+      "bytes": 4758,
+      "sha256": "20afef2dbfdd1b28abf348f7bcab23d6cbfe4d669aa0d045bc08af5fd2d32491",
+      "git_blob_sha": "57085fe1001da73c21e2473836a55f0beb067b42"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_test_copy/run_verification.py",
+      "bytes": 1428,
+      "sha256": "55ee64001807f60ff557148434013c5ace6878c8ba313f5d7f982b0566bd03da",
+      "git_blob_sha": "16e737141c50a20e5e72a824b7c479749af94ed5"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/initial_diagnosis/diagnostic_test_copy/test_lilly_dariot.py",
+      "bytes": 8042,
+      "sha256": "6af357dc897a32176fc6c10a7e95c360d0695e6170992ea617580b0a3d3f53b4",
+      "git_blob_sha": "0ec072d624a3a9b60a35a7231980299ba2a07007"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/CHANGED_ITEM_RESULTS.json",
+      "bytes": 29001,
+      "sha256": "50bc74cb0bcc9db3da58d07cbf888ac6cd1fe3263157140e9abe60d5ce709715",
+      "git_blob_sha": "6558c4d10dc8d8f0909a34d4c966c071926f0ca9"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/MECHANICAL_CARRY_FORWARD.json",
+      "bytes": 57381,
+      "sha256": "c8823eb527bf5e3c8f5b9eb4983a56bcef30d23694c764ffaa7866c639a7dec6",
+      "git_blob_sha": "cd78a558e6f191a4e41ff4f34e77e584231f2dfe"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/REPAIR_REPORT_RESIDUAL.txt",
+      "bytes": 1104,
+      "sha256": "75868bdde6ca9b8497530541f6b58d89f6ca00075c41a09997ca5c465db5f7fa",
+      "git_blob_sha": "455577ba78780ed1c6593786619c6c95c8a0c22f"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/REPAIR_ROUND01_FREEZE.json",
+      "bytes": 3921,
+      "sha256": "510c032cedc675b412e3be3a07a62129a1734ac72dbff1d478bcf93107147503",
+      "git_blob_sha": "026b0630af7510e57d0843fae8e9ba1bf5ae6575"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/REPAIR_ROUND01_RESULT.md",
+      "bytes": 7673,
+      "sha256": "37b09c47500cd40e243d27dd3c75a0352acc88e51f4801ca78b76a450cfc87be",
+      "git_blob_sha": "2361fda7af132166f9eef03510d0aed118e31b1d"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/check_repair_round01.py",
+      "bytes": 8205,
+      "sha256": "9c36dcdce86228d421c08005e1707716b4131ec76dcf429963748c367d95600c",
+      "git_blob_sha": "bf4934b0bfea9684563767374a7b05ae835a62b6"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/finalize_repair_round01.py",
+      "bytes": 19229,
+      "sha256": "1a080314204cecd5c40f284b0ebf8052834b78c2ebf55ba6cdc53a31bdcacbcc",
+      "git_blob_sha": "b41ea380a141f34a146fec384f14324a9b711e28"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/original_pdf283_earlier_sign_selector.png",
+      "bytes": 403865,
+      "sha256": "f51c9cbd2eb85eb39ada0c0d5c62b280549a2fa2810739614f7b043a7d0eb667",
+      "git_blob_sha": "4ab8eb41148095835630cd36dd287398d80be4f5"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/original_pdf293_no_sickness_and_cause.png",
+      "bytes": 1043020,
+      "sha256": "891edb06f5e6a6f0f7a5b5f0c43999d8649bb899124e177b99b09b36422a67fb",
+      "git_blob_sha": "b15280865002b0272236138be6d7b8a7118552b5"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/original_pdf294_plural_exclusions_pagebreak.png",
+      "bytes": 859378,
+      "sha256": "11d53a311b3eef6d42b62f7faa0c1fcf77f6842387cf6c24c05b06e0eec33842",
+      "git_blob_sha": "28f53b72630de02d78dc82a2900adfb7dbdde5dd"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/original_pdf300_eighth_house_sign.png",
+      "bytes": 197245,
+      "sha256": "75826c364b1a8ba210a7d49e75338365bc471bfbe784943418c08eca966ad553",
+      "git_blob_sha": "afb3965844ab89389271bdf5f09fe8a04dbb48f3"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round01/original_pdf301_later_disease_selector.png",
+      "bytes": 841665,
+      "sha256": "650d7137b0bfbe16258255e46b48404051caf7275a887eb5874ac65dbeb42b75",
+      "git_blob_sha": "96af1f3b705221e293ac60a8fe833815ac71ed64"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round02/ROUND02_FINAL_RESULT.json",
+      "bytes": 2611,
+      "sha256": "c696038be1f355b548120287d89f4cc20aebb3adaf2b2b57e119e6b17344de06",
+      "git_blob_sha": "2245513aef7aa12ed02e5b5314c5f403526cae97"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round02/ROUND02_FINAL_RESULT.md",
+      "bytes": 2871,
+      "sha256": "941ad47e11e957a19416fb38811cc32c971b63975870d0fb8fd373327eeb5bd1",
+      "git_blob_sha": "37dcb4aee41f6814a6e90b53ba21da30c0b77ace"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round02/ROUND02_FREEZE.json",
+      "bytes": 1819,
+      "sha256": "58a9cfe1db940f7de5b18f04c8a3b527e909b76a511dcff1ee40b125a7de7b52",
+      "git_blob_sha": "048747f4fee7147fe4e891297f9cb0ea56e1f4e6"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round02/ROUND02_REFERENCE_AND_CARRY_FORWARD.json",
+      "bytes": 37981,
+      "sha256": "62b5ee19b2b2b16b94eb545bcd9bbb9b8e78e0ba61922115e82b1fb944b7e42d",
+      "git_blob_sha": "98074835be2608ea59349aa644d1b587d3713ac9"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/independent_review/repair_round02/freeze_round02.py",
+      "bytes": 11943,
+      "sha256": "f349391bc0df3d5e0034e84fc328b40375101684261065a7dd27b10a7c23c8f5",
+      "git_blob_sha": "7c72764a279020073053b33197ec2734053ef8de"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/AUDIT_REPORT.md",
+      "bytes": 28336,
+      "sha256": "915e84a71a28d0d0e9a4932a2a9894b8958d727983b29480f1c52baebebd10e0",
+      "git_blob_sha": "b95de7bc515deedb45e9e42db939d638fc1e1cdd"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/CANDIDATE_FREEZE.json",
+      "bytes": 7307,
+      "sha256": "41a5d97ba5c0a560c16fedbcfd24d8bd09a185b116d5d884374881f5194cbf48",
+      "git_blob_sha": "2858df4dbcebf2eacc44f5552e6bb62b360004d8"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/CANDIDATE_MANIFEST.json",
+      "bytes": 7307,
+      "sha256": "41a5d97ba5c0a560c16fedbcfd24d8bd09a185b116d5d884374881f5194cbf48",
+      "git_blob_sha": "2858df4dbcebf2eacc44f5552e6bb62b360004d8"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/CLAIM_LEDGER.json",
+      "bytes": 50080,
+      "sha256": "b14823cad4822d2e06b1da0be69c2b90e8c52e1307c67d4773bda528bdfe69cd",
+      "git_blob_sha": "364f55b4d66ae6b28546c555bf5beec9ce545213"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/LILLY_SOURCE_EXTRACTION_INDEX_SNAPSHOT.json",
+      "bytes": 6278,
+      "sha256": "5f66abc1b6a9d65266022a2046fc562aa0138a6f1b134ef39229bdba6852f504",
+      "git_blob_sha": "44c48493471e16cc43aa33ff5056782ba3613bf9"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/ROOT_SOURCE_CORRECTIONS.json",
+      "bytes": 366,
+      "sha256": "32235cdb255fa76ec2c743e441432d067a48628ea9afc9c83c0b5313b2ba168d",
+      "git_blob_sha": "6c935928b76b91a8c3151722738fd46456a56f2a"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/RULES.json",
+      "bytes": 601003,
+      "sha256": "6002f91a2cd8378ba5b858169395b68f4c65594c2692d0fb6b1ce352d22ae02d",
+      "git_blob_sha": "442d10bdd27e983d1295d103c392345c53a10a80"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/TEST_RUN.log",
+      "bytes": 2595,
+      "sha256": "da0308494c45af0e072e0fb47d35cc42daf36777a65d10740473846df9ead409",
+      "git_blob_sha": "bb3011f5c437f449bcbb67ff601b7228256bce09"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/TEST_RUN_SUMMARY.json",
+      "bytes": 2921,
+      "sha256": "580c39182365507ac61029dec2bce33839a8cdd957b9fa415b23a72fa2f234d3",
+      "git_blob_sha": "12083efb12a69f3ebc175932e80de7fbb7eb7055"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/build_report.py",
+      "bytes": 30255,
+      "sha256": "055bb0c58319fc106da4fb843fae49762bba40734c9894143e6f996a2a5aeafc",
+      "git_blob_sha": "57d21288e3eed2272b1a89a7d9a0726430ceb5f3"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate01/build_source_data.py",
+      "bytes": 14763,
+      "sha256": "3345890905c8bcef57958df93ed9bad2a1ae835f1c6686fa5224daf4e1c0cf6c",
+      "git_blob_sha": "8d99275104b7e5f3aa83e21a037bc5a508dbc71d"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate02/CLAIM_LEDGER.json",
+      "bytes": 50918,
+      "sha256": "8a6d7c735bff832094e7c454dcb6e3e89a58dd95aa797e7096eb34c33d4c24a2",
+      "git_blob_sha": "f716c3f19203181fc08b9745e1d844b889b8b9a2"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02l/verification_history/candidate02/build_report.py",
+      "bytes": 30907,
+      "sha256": "1f7b34844fa6bec8226f62f6afe090608cd3ce2e54474731db902fdf94828a2d",
+      "git_blob_sha": "056e291d3587a171b8074cc303914eca7e040669"
+    }
+  ],
+  "limits": "Exact remote content identity; source and predictive judgments are separate."
+}

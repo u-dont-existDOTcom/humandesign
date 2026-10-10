@@ -30,14 +30,14 @@
     {
       "outcome": "Preserve earlier sources, states, personal inputs and models",
       "relation": "verifies",
-      "current_evidence": "1746 protected Git files and 11 prior index entries frozen and prepublication comparison passed",
-      "gap": "Final post-integration comparison pending"
+      "current_evidence": "PACKAGE_PRESERVATION_CHECK verifies 1746 protected Git files and all 11 prior Lilly index entries at the actual fetched accepted integration fe28256bdfe8467250664414450c823218a6cf9a.",
+      "gap": "Repeat the comparison at the delivery-receipt integration checkpoint."
     },
     {
       "outcome": "Durable publication, usable delivery and exact continuation",
       "relation": "directly_satisfies_batch_boundary",
-      "current_evidence": "Source checkpoint 46d56f2fce7e577197473102a75a7390db37e6dc published and all 80 files read back; owner delivery preflight complete",
-      "gap": "Publish accepted files, extract and verify archive, integrate and deliver exact bytes"
+      "current_evidence": "Accepted source/report/package published and integrated at fe28256bdfe8467250664414450c823218a6cf9a; all 97 updated files read back. Actual archive extraction verified 141 payload hashes and repeated the same 20 tests. Four fetched published parts reconstruct the unchanged tested ZIP. Actual owner process exited 0 after installing and reading back all three companions, the stable work note and its one index row.",
+      "gap": "Publish these actual delivery receipts and verify their integrated checkpoint."
     },
     {
       "outcome": "Remaining Lilly and multi-author corpus audit",
@@ -56,5 +56,6 @@
   "additional_mandatory_requirements": [],
   "assurance_lane": "source-research with bounded independent source/claim check and exact research-artifact publication; no application runtime changes",
   "proposed_terminal_state": "BATCH_COMPLETE_PARENT_OPEN only after existing authorized completed-batch pause boundary is evidenced",
-  "contract_comparison": "CONTRACT_VALID: current batch contributes to open source-audit parent and preserves unaddressed outcomes."
+  "contract_comparison": "CONTRACT_VALID: current batch contributes to open source-audit parent and preserves unaddressed outcomes.",
+  "actual_delivery_complete": true
 }
