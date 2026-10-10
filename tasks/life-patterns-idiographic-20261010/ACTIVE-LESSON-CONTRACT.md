@@ -1,0 +1,7 @@
+- Source-first: prior STATUS/OWNERSHIP mixing arises from a shared D19 historical facet; preserve historical truth, amend presentation by route. Regression verify no laptop in new STATUS narrow reading.
+- Free-text data are behavioral hypotheses, not confirmed uncommon or chart signals. No personal data in repo. Baseline and variation across people needed before uniqueness-to-birth difficulty inference.
+- Prompts scaffold recall without forced personality poles. Condition and `Other` free text prioritized; no mandatory 10–20 item count.
+- Current GPT and Railway remain pinned; drafts must not contaminate the already reviewed cohort or reveal chart targets.
+- A0: measure solitude enjoyment and active time-making separately from company invitation. Avoid inferring one from the other.
+- Existing evidence and its exact quotations unmodified; new question source contracts distinguish active, proposed, historical.
+- No unsafe appliance hacks as positive or cost-saving recommendations.
