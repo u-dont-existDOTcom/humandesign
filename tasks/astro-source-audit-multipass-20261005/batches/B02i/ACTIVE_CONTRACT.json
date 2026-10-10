@@ -1,0 +1,94 @@
+{
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch": "B02i",
+  "owner_request": "continue",
+  "turn_start": "2026-10-10T04:44:14+00:00",
+  "start_time_source": "User message submission time; final clock read reserved for immediately before final answer.",
+  "parent_status": "OPEN_MULTIPASS_AUTHORIZED",
+  "base": "0cc8c9b627d9135c56c3208dc3d155953a58b18e",
+  "integration_branch": "research/six-rule-life-timing-20261001",
+  "isolated_branch": "research/lilly-fourth-house-b02i-20261010",
+  "scope": "Complete fourth-house heading/preamble on PDF236 / printed202 through XXXII–XXXVIII, ending with the last paragraph above the divider on PDF256 / printed222. Stop before the fifth-house heading and XXXIX on that page; exact boundary visually verified.",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_bytes": 141842963,
+  "source_hash_recomputed_this_turn": true,
+  "activation": {
+    "status": "ACTIVE",
+    "route": "Current owner continuation; live default-branch UDA root and index plus canonical project root fetched and read this turn. B02h closeout/current index recovered and canonical ref verified.",
+    "uda_root_blob": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "uda_index_blob": "b83848f61516389cf997d142bdd411f1c52a5024",
+    "project_root_blob": "15efee1556a0a44ea2b6e4af0596a7e0cb8c24c3",
+    "graph_resolution": "task-time-lesson-activation, independent-evaluation-separation and worker-github-publication-and-recovery dependencies mechanically resolved; routing only, not application evidence."
+  },
+  "active_controls": [
+    {
+      "rule": "source-provenance",
+      "required": "Read all original pages in the admitted block, retain passage anchors, conditions, alternatives, scope and explicit author disagreement.",
+      "failure": "Omitted source unit, guessed glyph, unsupported paraphrase or collapsed alternatives.",
+      "repair": "Reopen original and repair all dependents or retain a named uncertainty.",
+      "due": "Extraction and report",
+      "enforcement": "Semantic source comparison and mechanical source coverage."
+    },
+    {
+      "rule": "genre-and-exposure",
+      "required": "Historical horary source audit only. Supplied memories contain personal histories; no blinded-person claim or participant-data read.",
+      "failure": "Personal fitting, practical high-stakes forecast or false independence claim.",
+      "repair": "Remove unsupported use and keep historical source meaning.",
+      "due": "All source interpretation",
+      "enforcement": "Semantic review and path allowlist."
+    },
+    {
+      "rule": "bounded-calculation",
+      "required": "Reuse retained geometry and implement only source-defined deterministic reference calculations. Keep unknown inputs and unspecified thresholds unresolved.",
+      "failure": "Invented precision, unsupported precedence or tests presented as predictive accuracy.",
+      "repair": "Restrict to justified inputs and retain gaps.",
+      "due": "Code and report",
+      "enforcement": "Focused meaningful tests and arithmetic checks."
+    },
+    {
+      "rule": "independent-diagnosis",
+      "required": "Fresh source-reader context freezes source notes before seeing candidate rationale; final checker receives report/claim ledger plus primary evidence, not repair history until first diagnosis freezes.",
+      "failure": "Producer review called independent or unverified report claims.",
+      "repair": "Perform bounded source check and reconcile actual findings.",
+      "due": "Extraction and pre-delivery",
+      "enforcement": "Frozen notes/diagnosis and disposition ledger."
+    },
+    {
+      "rule": "durable-publication-and-delivery",
+      "required": "Use isolated B02i branch and expected-SHA nonforce publication; verify exact remote content, package required companions, test actual archive and deliver report/ZIP/handoff to OS Downloads.",
+      "failure": "Local-only completion, stale branch, missing companion, or unverified owner copy.",
+      "repair": "Reconcile authorized transport and verify required destination bytes.",
+      "due": "Publication and owner delivery",
+      "enforcement": "Manifests and actual process/readback receipts."
+    },
+    {
+      "rule": "preservation-and-continuation",
+      "required": "Change only B02i, current Lilly index and new uniquely dated state. End only at completed source-sized batch and save exact first unfinished passage.",
+      "failure": "Prior source/model/freeze mutation, historical restricted replay, or unfinished admitted batch.",
+      "repair": "Restore protected bytes and complete admitted work.",
+      "due": "Every Git write and final admission",
+      "enforcement": "Git diff allowlist and final closeout."
+    }
+  ],
+  "allowed_repo_writes": [
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/",
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+    "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02i.md"
+  ],
+  "protected_paths": [
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "earlier batches and dated state files",
+    "participant inputs, fitted models and prediction freezes"
+  ],
+  "publication_route": "Connected GitHub Git-data API, exact full-tree parity, expected-SHA nonforce refs. Shell Git reads/fetch are working; no credentialless shell push retry.",
+  "phase": "SOURCE_RECONCILIATION_AND_BOUNDED_REFERENCE_IMPLEMENTATION",
+  "stop_admission": {
+    "parent_outcome": "OPEN",
+    "pause_authority": "Existing PASS_PLAN.json pause_contract permits completed source-sized batch boundaries.",
+    "current_completion_requirement": "Finish admitted source block, verify, publish and deliver usable report/packet/handoff.",
+    "finalization_admitted": false
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "schema": "b02i-source-reader-receipt-v1",
+  "reader": "/root/b02i_source_a",
+  "role": "source-production reader, not final empirical evaluator",
+  "state": "SOURCE_NOTES_FROZEN_BEFORE_CANDIDATE_DRAFT",
+  "scope": {
+    "pdf_pages": [
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245
+    ],
+    "printed_pages": [
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211
+    ],
+    "start": "Full fourth-house heading and preamble; XXXII",
+    "stop": "End of XXXIV at printed211, before XXXV"
+  },
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256_parent_recomputed": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "first_clock_read": "2026-10-10 04:48:05 UTC",
+  "notes_sha256": "a969e9e3f75124b0d869608c432a05db7b59fae4751bb46ee940815726edb979",
+  "candidate_rules_existed_at_freeze": false,
+  "method": "Full original PNGs displayed and read in five page pairs; OCR only supplementary",
+  "pages": [
+    {
+      "pdf_page": 236,
+      "printed_page": 202,
+      "image_path": "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-236.png",
+      "sha256": "236fb3f9f1672c8ce453f899a4b033072875a7bd6a9efe5e4018d55c84613f11",
+      "full_image_visually_read": true
+    },
+    {
+      "pdf_page": 237,
+      "printed_page": 203,
+      "image_path": "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-237.png",
+      "sha256": "b00661e1c4e6898984fd0467390b9b313fe9ba7cb43c8014115e0a775f5ffa10",
+      "full_image_visually_read": true
+    },
+    {
+      "pdf_page": 238,
+      "printed_page": 204,
+      "image_path": "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-238.png",
+      "sha256": "120fcb641ee27c8ec7d1f7184fa3adfaac60d6310db77373e207e4d69d4e843e",
+      "full_image_visually_read": true
+    },
+    {
+      "pdf_page": 239,
+      "printed_page": 205,
+      "image_path": "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-239.png",
+      "sha256": "7f1976c6e7331fccc1467c3f313ca342cc3999cfc3e74607ba03c3f39f694096",
+      "full_image_visually_read": true
+    },
+    {
+      "pdf_page": 240,
+      "printed_page": 206,
+      "image_path": "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-240.png",
+      "sha256": "c9535fcd5ef71eabb5361e63cf3be6def52d0cf1442036c21c783517f3e61937",
+      "full_image_visually_read": true
+    },
+    {
+      "pdf_page": 241,
+      "printed_page": 207,
+      "image_path": "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-241.png",
+      "sha256": "fa6485b5cd7ed48927517599c0ad25b26ea90fc3b918d295451c831ed68f21a4",
+      "full_image_visually_read": true
+    },
+    {
+      "pdf_page": 242,
+      "printed_page": 208,
+      "image_path": "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-242.png",
+      "sha256": "570d1394a4ee9aec6ad25dbf03c925bb78c8d077618fcc298195c1b672293481",
+      "full_image_visually_read": true
+    },
+    {
+      "pdf_page": 243,
+      "printed_page": 209,
+      "image_path": "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-243.png",
+      "sha256": "d2bf4c963ff923cf0d28c9e0f7ecd29b586323f20644d2d8a04014663dfc2c05",
+      "full_image_visually_read": true
+    },
+    {
+      "pdf_page": 244,
+      "printed_page": 210,
+      "image_path": "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-244.png",
+      "sha256": "08b7e71113ed18026fb6cd717677d1cce34dfa30a83f39d2abc8b5d0e8cbc51b",
+      "full_image_visually_read": true
+    },
+    {
+      "pdf_page": 245,
+      "printed_page": 211,
+      "image_path": "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-245.png",
+      "sha256": "af7eff824d809b4565bea0c361d2678c5a25fff6e728554a22c1b33ae611e99c",
+      "full_image_visually_read": true
+    }
+  ],
+  "withheld": [
+    "earlier candidates",
+    "producer rationale",
+    "biographies",
+    "personal catalog",
+    "other source readers findings",
+    "fitted models",
+    "prediction freezes"
+  ],
+  "exposure_correction": "Parent withdrew silver-bells mention as unverified recollection; no such case created; all assigned pages read and only unspecific glove/book experience found.",
+  "limitations": [
+    "No diagrams in assigned scope",
+    "Source-content fidelity only, no modern predictive validation",
+    "Ambiguous grammar preserved in notes and must remain unresolved in candidates"
+  ]
+}

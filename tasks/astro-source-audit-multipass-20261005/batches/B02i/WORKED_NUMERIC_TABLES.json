@@ -1,0 +1,1207 @@
+{
+  "schema_version": "b02i.local_original_chart_transcription.v1",
+  "producer": "/root/b02i_worked_charts",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "frozen_notes_sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+  "source_scope": "Chapter XXXVIII PDF253–256 ending at the top paragraph before the fifth-house divider.",
+  "actual_chart_count": 1,
+  "chart_id_policy": "CH01 denotes the sole actual chart: purchase figure on PDF253 / printed219.",
+  "charts": [
+    {
+      "chart_id": "CH01",
+      "title": "If I should purchase Master B. his houses.",
+      "pdf_page": 253,
+      "printed_page": 219,
+      "source_anchor": "A253-F",
+      "original_page_path": "/workspace/scratch/bd2460f96de0/b02i-worked-charts/original-p253.png",
+      "original_chart_crop_path": "/workspace/scratch/bd2460f96de0/b02i-worked-charts/original-p253-chart-5x.png",
+      "raw_sign_and_numeric_policy": "Cusp signs directly printed; body signs inferred only from physical chart location, enclosing printed cusp interval and body degree. No coordinate inferred or repaired from narrative or expected Fortune.",
+      "central_labels": [
+        {
+          "id": "central_date",
+          "raw": "31 Mar: 1634",
+          "label_type": "date",
+          "reading": {
+            "day": 31,
+            "month_name": "Mar",
+            "month_number": 3,
+            "year": 1634,
+            "calendar": null
+          },
+          "confidence": "high",
+          "notes": [
+            "Month-number normalization is a label expansion, not a calendar conversion."
+          ]
+        },
+        {
+          "id": "central_time",
+          "raw": "6 Hor: P M:",
+          "label_type": "time",
+          "reading": {
+            "hour": 6,
+            "minute": null,
+            "second": null,
+            "meridiem": "PM",
+            "timezone": null
+          },
+          "confidence": "high",
+          "notes": [
+            "No minute or second numeral is printed; not normalized to06:00 or18:00."
+          ]
+        },
+        {
+          "id": "central_day_lord",
+          "raw": "Dñs diei ☽",
+          "label_type": "day_lord_abbreviation",
+          "reading": {
+            "body": "Moon"
+          },
+          "confidence": "high_for_glyph_medium_for_abbreviation_typography",
+          "reading_alternatives": [
+            {
+              "raw": "D'ns diei ☽",
+              "status": "typographic_alternative",
+              "reason": "Contraction mark above abbreviation is not represented exactly by plain Unicode."
+            }
+          ]
+        },
+        {
+          "id": "central_hour_lord",
+          "raw": "Hor: astr ☉",
+          "label_type": "astrological_hour_abbreviation",
+          "reading": {
+            "body": "Sun"
+          },
+          "confidence": "high_for_glyph_medium_for_abbreviation_typography",
+          "reading_alternatives": [
+            {
+              "raw": "Hor: aſtr ☉",
+              "status": "long_s_typographic_variant",
+              "reason": "Long-s and final contracted letters normalized in reading."
+            }
+          ]
+        },
+        {
+          "id": "central_moon_path",
+          "raw": "☽ a ☌ ♂ ad □ ♄",
+          "label_type": "motion_or_aspect_annotation",
+          "reading": {
+            "from": {
+              "body": "Mars",
+              "aspect": "conjunction"
+            },
+            "to": {
+              "body": "Saturn",
+              "aspect": "square"
+            }
+          },
+          "confidence": "high",
+          "notes": [
+            "a/ad translated as from/to for annotation reading; no ephemeris calculation implied."
+          ]
+        }
+      ],
+      "omitted_labels": {
+        "latitude": {
+          "value": null,
+          "status": "not_printed_in_entire_inspected_figure"
+        },
+        "timezone": {
+          "value": null,
+          "status": "not_printed"
+        },
+        "time_minutes": {
+          "value": null,
+          "status": "not_printed"
+        }
+      },
+      "house_cusps": [
+        {
+          "entry_id": "CH01-H01",
+          "entry_type": "house_cusp",
+          "house": 1,
+          "body": null,
+          "coordinate": {
+            "sign": "Libra",
+            "sign_glyph": "♎",
+            "degree": 13,
+            "minute": 45
+          },
+          "raw_transcription": "♎ 13 : 45",
+          "source_location": "left centre, upper ascendant band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H02",
+          "entry_type": "house_cusp",
+          "house": 2,
+          "body": null,
+          "coordinate": {
+            "sign": "Scorpio",
+            "sign_glyph": "♏",
+            "degree": 6,
+            "minute": 26
+          },
+          "raw_transcription": "♏ . 6 : 26",
+          "source_location": "left centre, lower band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H03",
+          "entry_type": "house_cusp",
+          "house": 3,
+          "body": null,
+          "coordinate": {
+            "sign": "Sagittarius",
+            "sign_glyph": "♐",
+            "degree": 6,
+            "minute": 58
+          },
+          "raw_transcription": "♐ . 6 : 58",
+          "source_location": "bottom-left outer band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H04",
+          "entry_type": "house_cusp",
+          "house": 4,
+          "body": null,
+          "coordinate": {
+            "sign": "Capricorn",
+            "sign_glyph": "♑",
+            "degree": 18,
+            "minute": null
+          },
+          "raw_transcription": "♑ . 18",
+          "source_location": "bottom centre, left band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "omitted_in_source"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "not_applicable_omitted"
+          },
+          "reading_alternatives": [],
+          "notes": [
+            "No zero minute is supplied; numeric calculation using a complete cusp longitude must retain this omission."
+          ],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H05",
+          "entry_type": "house_cusp",
+          "house": 5,
+          "body": null,
+          "coordinate": {
+            "sign": "Aquarius",
+            "sign_glyph": "♒",
+            "degree": 25,
+            "minute": 36
+          },
+          "raw_transcription": "♒ 25 . 36",
+          "source_location": "bottom centre, right band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H06",
+          "entry_type": "house_cusp",
+          "house": 6,
+          "body": null,
+          "coordinate": {
+            "sign": "Pisces",
+            "sign_glyph": "♓",
+            "degree": 22,
+            "minute": 15
+          },
+          "raw_transcription": "♓ 22 : 15",
+          "source_location": "bottom-right outer band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H07",
+          "entry_type": "house_cusp",
+          "house": 7,
+          "body": null,
+          "coordinate": {
+            "sign": "Aries",
+            "sign_glyph": "♈",
+            "degree": 13,
+            "minute": 45
+          },
+          "raw_transcription": "♈ 13 : 45",
+          "source_location": "right centre, lower band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H08",
+          "entry_type": "house_cusp",
+          "house": 8,
+          "body": null,
+          "coordinate": {
+            "sign": "Taurus",
+            "sign_glyph": "♉",
+            "degree": 6,
+            "minute": 26
+          },
+          "raw_transcription": "♉ 6 . 26",
+          "source_location": "right centre, upper band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H09",
+          "entry_type": "house_cusp",
+          "house": 9,
+          "body": null,
+          "coordinate": {
+            "sign": "Gemini",
+            "sign_glyph": "♊",
+            "degree": 6,
+            "minute": 58
+          },
+          "raw_transcription": "♊ . 6 58 .",
+          "source_location": "top-right outer band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H10",
+          "entry_type": "house_cusp",
+          "house": 10,
+          "body": null,
+          "coordinate": {
+            "sign": "Cancer",
+            "sign_glyph": "♋",
+            "degree": 18,
+            "minute": null
+          },
+          "raw_transcription": "♋ 18 .",
+          "source_location": "top centre, right band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "omitted_in_source"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "not_applicable_omitted"
+          },
+          "reading_alternatives": [],
+          "notes": [
+            "No zero minute is supplied; numeric calculation using a complete cusp longitude must retain this omission."
+          ],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H11",
+          "entry_type": "house_cusp",
+          "house": 11,
+          "body": null,
+          "coordinate": {
+            "sign": "Leo",
+            "sign_glyph": "♌",
+            "degree": 25,
+            "minute": 36
+          },
+          "raw_transcription": "♌ 25 . 36",
+          "source_location": "top centre, left band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-H12",
+          "entry_type": "house_cusp",
+          "house": 12,
+          "body": null,
+          "coordinate": {
+            "sign": "Virgo",
+            "sign_glyph": "♍",
+            "degree": 22,
+            "minute": 15
+          },
+          "raw_transcription": "♍ 22 : 15",
+          "source_location": "top-left outer band",
+          "source_anchor": "A253-F",
+          "sign_basis": "printed_sign_in_cusp_band",
+          "sign_printed_adjacent": true,
+          "field_status": {
+            "sign": "visible",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "Not applicable to cusp."
+          },
+          "confidence": {
+            "sign": "high",
+            "degree": "high",
+            "minute": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        }
+      ],
+      "bodies_and_points": [
+        {
+          "entry_id": "CH01-Sun",
+          "entry_type": "planet",
+          "body": "Sun",
+          "body_glyph": "☉",
+          "coordinate": {
+            "sign": "Aries",
+            "sign_glyph": "♈",
+            "degree": 20,
+            "minute": 56
+          },
+          "raw_transcription": "☉ 20 . 56",
+          "diagram_house_sector": 7,
+          "house_sector_policy": "Physical triangle occupied in the square diagram. No interpretive cusp-anticipation rule has been applied.",
+          "source_anchor": "A253-F",
+          "source_crop": "chart-sun-venus.png",
+          "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+          "sign_printed_adjacent": false,
+          "field_status": {
+            "body_glyph": "visible",
+            "sign": "inferred_from_diagram_not_prose",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "No motion glyph printed; absence is not converted into a direct-motion assertion."
+          },
+          "confidence": {
+            "body": "high",
+            "sign": "high_as_diagram_inference",
+            "degree": "high",
+            "minute": "high",
+            "motion": "not_applicable_no_glyph"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-Moon",
+          "entry_type": "planet",
+          "body": "Moon",
+          "body_glyph": "☽",
+          "coordinate": {
+            "sign": "Virgo",
+            "sign_glyph": "♍",
+            "degree": 10,
+            "minute": 38
+          },
+          "raw_transcription": "☽ 10 38",
+          "diagram_house_sector": 11,
+          "house_sector_policy": "Physical triangle occupied in the square diagram. No interpretive cusp-anticipation rule has been applied.",
+          "source_anchor": "A253-F",
+          "source_crop": "chart-top-left.png",
+          "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+          "sign_printed_adjacent": false,
+          "field_status": {
+            "body_glyph": "visible",
+            "sign": "inferred_from_diagram_not_prose",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "No motion glyph printed; absence is not converted into a direct-motion assertion."
+          },
+          "confidence": {
+            "body": "high",
+            "sign": "high_as_diagram_inference",
+            "degree": "high",
+            "minute": "high",
+            "motion": "not_applicable_no_glyph"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-Mercury",
+          "entry_type": "planet",
+          "body": "Mercury",
+          "body_glyph": "☿",
+          "coordinate": {
+            "sign": "Taurus",
+            "sign_glyph": "♉",
+            "degree": 3,
+            "minute": 38
+          },
+          "raw_transcription": "☿ 3 . 38",
+          "diagram_house_sector": 7,
+          "house_sector_policy": "Physical triangle occupied in the square diagram. No interpretive cusp-anticipation rule has been applied.",
+          "source_anchor": "A253-F",
+          "source_crop": "chart-mercury.png",
+          "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+          "sign_printed_adjacent": false,
+          "field_status": {
+            "body_glyph": "visible",
+            "sign": "inferred_from_diagram_not_prose",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "No motion glyph printed; absence is not converted into a direct-motion assertion."
+          },
+          "confidence": {
+            "body": "high",
+            "sign": "high_as_diagram_inference",
+            "degree": "high",
+            "minute": "high",
+            "motion": "not_applicable_no_glyph"
+          },
+          "reading_alternatives": [],
+          "notes": [
+            "Physically drawn in the seventh-house sector immediately before Taurus6°26′ eighth cusp; see source prose occupancy wording separately."
+          ],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-Venus",
+          "entry_type": "planet",
+          "body": "Venus",
+          "body_glyph": "♀",
+          "coordinate": {
+            "sign": "Aries",
+            "sign_glyph": "♈",
+            "degree": 14,
+            "minute": 35
+          },
+          "raw_transcription": "♀ 14 35",
+          "diagram_house_sector": 7,
+          "house_sector_policy": "Physical triangle occupied in the square diagram. No interpretive cusp-anticipation rule has been applied.",
+          "source_anchor": "A253-F",
+          "source_crop": "chart-sun-venus.png",
+          "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+          "sign_printed_adjacent": false,
+          "field_status": {
+            "body_glyph": "visible",
+            "sign": "inferred_from_diagram_not_prose",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "No motion glyph printed; absence is not converted into a direct-motion assertion."
+          },
+          "confidence": {
+            "body": "high",
+            "sign": "high_as_diagram_inference",
+            "degree": "high",
+            "minute": "high",
+            "motion": "not_applicable_no_glyph"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-Mars",
+          "entry_type": "planet",
+          "body": "Mars",
+          "body_glyph": "♂",
+          "coordinate": {
+            "sign": "Virgo",
+            "sign_glyph": "♍",
+            "degree": 11,
+            "minute": 6
+          },
+          "raw_transcription": "♂ 11 6 [retrograde glyph]",
+          "diagram_house_sector": 11,
+          "house_sector_policy": "Physical triangle occupied in the square diagram. No interpretive cusp-anticipation rule has been applied.",
+          "source_anchor": "A253-F",
+          "source_crop": "chart-top-left.png",
+          "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+          "sign_printed_adjacent": false,
+          "field_status": {
+            "body_glyph": "visible",
+            "sign": "inferred_from_diagram_not_prose",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": "℞",
+            "interpretation": "retrograde",
+            "reason": "Explicit glyph in chart."
+          },
+          "confidence": {
+            "body": "high",
+            "sign": "high_as_diagram_inference",
+            "degree": "high",
+            "minute": "high",
+            "motion": "high"
+          },
+          "reading_alternatives": [
+            {
+              "field": "degree",
+              "reading": 21,
+              "status": "rejected_during_source_first_reading",
+              "reason": "Slanted small rendering could resemble21; 5x rotated original resolves11."
+            }
+          ],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-Jupiter",
+          "entry_type": "planet",
+          "body": "Jupiter",
+          "body_glyph": "♃",
+          "coordinate": {
+            "sign": "Gemini",
+            "sign_glyph": "♊",
+            "degree": 25,
+            "minute": 32
+          },
+          "raw_transcription": "♃ 25 32",
+          "diagram_house_sector": 9,
+          "house_sector_policy": "Physical triangle occupied in the square diagram. No interpretive cusp-anticipation rule has been applied.",
+          "source_anchor": "A253-F",
+          "source_crop": "chart-jupiter.png",
+          "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+          "sign_printed_adjacent": false,
+          "field_status": {
+            "body_glyph": "visible",
+            "sign": "inferred_from_diagram_not_prose",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "No motion glyph printed; absence is not converted into a direct-motion assertion."
+          },
+          "confidence": {
+            "body": "high",
+            "sign": "high_as_diagram_inference",
+            "degree": "high",
+            "minute": "high",
+            "motion": "not_applicable_no_glyph"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-Saturn",
+          "entry_type": "planet",
+          "body": "Saturn",
+          "body_glyph": "♄",
+          "coordinate": {
+            "sign": "Sagittarius",
+            "sign_glyph": "♐",
+            "degree": 21,
+            "minute": 25
+          },
+          "raw_transcription": "♄ 21 . 25 [retrograde glyph]",
+          "diagram_house_sector": 3,
+          "house_sector_policy": "Physical triangle occupied in the square diagram. No interpretive cusp-anticipation rule has been applied.",
+          "source_anchor": "A253-F",
+          "source_crop": "chart-saturn.png",
+          "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+          "sign_printed_adjacent": false,
+          "field_status": {
+            "body_glyph": "visible",
+            "sign": "inferred_from_diagram_not_prose",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": "℞",
+            "interpretation": "retrograde",
+            "reason": "Explicit glyph in chart."
+          },
+          "confidence": {
+            "body": "high",
+            "sign": "high_as_diagram_inference",
+            "degree": "high",
+            "minute": "high",
+            "motion": "high"
+          },
+          "reading_alternatives": [],
+          "notes": [],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-NorthNode",
+          "entry_type": "lunar_node",
+          "body": "NorthNode",
+          "body_glyph": "☊",
+          "coordinate": {
+            "sign": "Pisces",
+            "sign_glyph": "♓",
+            "degree": 27,
+            "minute": 48
+          },
+          "raw_transcription": "☊ 27 . 48",
+          "diagram_house_sector": 6,
+          "house_sector_policy": "Physical triangle occupied in the square diagram. No interpretive cusp-anticipation rule has been applied.",
+          "source_anchor": "A253-F",
+          "source_crop": "chart-fortune-node.png",
+          "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+          "sign_printed_adjacent": false,
+          "field_status": {
+            "body_glyph": "visible",
+            "sign": "inferred_from_diagram_not_prose",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "No motion glyph printed; absence is not converted into a direct-motion assertion."
+          },
+          "confidence": {
+            "body": "high",
+            "sign": "high_as_diagram_inference",
+            "degree": "high",
+            "minute": "high",
+            "motion": "not_applicable_no_glyph"
+          },
+          "reading_alternatives": [],
+          "notes": [
+            "Rotated original shows an inverted U-shaped node glyph with round tips; identified as ascending/north node."
+          ],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-SouthNode",
+          "entry_type": "lunar_node",
+          "body": "SouthNode",
+          "body_glyph": "☋",
+          "coordinate": {
+            "sign": "Virgo",
+            "sign_glyph": "♍",
+            "degree": 27,
+            "minute": 48
+          },
+          "raw_transcription": "☋ 27 . 48",
+          "diagram_house_sector": 12,
+          "house_sector_policy": "Physical triangle occupied in the square diagram. No interpretive cusp-anticipation rule has been applied.",
+          "source_anchor": "A253-F",
+          "source_crop": "chart-top-left.png",
+          "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+          "sign_printed_adjacent": false,
+          "field_status": {
+            "body_glyph": "visible",
+            "sign": "inferred_from_diagram_not_prose",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "No motion glyph printed; absence is not converted into a direct-motion assertion."
+          },
+          "confidence": {
+            "body": "high",
+            "sign": "high_as_diagram_inference",
+            "degree": "high",
+            "minute": "high",
+            "motion": "not_applicable_no_glyph"
+          },
+          "reading_alternatives": [],
+          "notes": [
+            "Rotated original shows a U-shaped node glyph with round tips; identified as descending/south node."
+          ],
+          "independently_calculated": false
+        },
+        {
+          "entry_id": "CH01-Fortune",
+          "entry_type": "lot",
+          "body": "Fortune",
+          "body_glyph": "⊗",
+          "coordinate": {
+            "sign": "Pisces",
+            "sign_glyph": "♓",
+            "degree": 12,
+            "minute": 27
+          },
+          "raw_transcription": "⊗ 12 . 27",
+          "diagram_house_sector": 5,
+          "house_sector_policy": "Physical triangle occupied in the square diagram. No interpretive cusp-anticipation rule has been applied.",
+          "source_anchor": "A253-F",
+          "source_crop": "chart-fortune-node.png",
+          "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+          "sign_printed_adjacent": false,
+          "field_status": {
+            "body_glyph": "visible",
+            "sign": "inferred_from_diagram_not_prose",
+            "degree": "visible",
+            "minute": "visible"
+          },
+          "motion": {
+            "raw_glyph": null,
+            "interpretation": null,
+            "reason": "No motion glyph printed; absence is not converted into a direct-motion assertion."
+          },
+          "confidence": {
+            "body": "high",
+            "sign": "high_as_diagram_inference",
+            "degree": "high",
+            "minute": "high",
+            "motion": "not_applicable_no_glyph"
+          },
+          "reading_alternatives": [],
+          "notes": [
+            "Printed glyph is a crossed circle with rays, distinct from the Sun's rayed face. Value12°27′ transcribed directly; no Fortune calculation used to repair it."
+          ],
+          "independently_calculated": false
+        }
+      ],
+      "entry_count": 22,
+      "uncertainties": [
+        {
+          "id": "N01",
+          "fields": [
+            "CH01-H04.minute",
+            "CH01-H10.minute"
+          ],
+          "status": "source_omission",
+          "value": null,
+          "alternatives": [],
+          "policy": "Do not fill00."
+        },
+        {
+          "id": "N02",
+          "fields": [
+            "central_day_lord.raw",
+            "central_hour_lord.raw"
+          ],
+          "status": "typographic_abbreviation_uncertainty",
+          "policy": "Body glyphs clear; retain raw reading and alternatives, no silent Latin expansion."
+        },
+        {
+          "id": "N03",
+          "fields": [
+            "CH01-Sun.coordinate.sign",
+            "CH01-Moon.coordinate.sign",
+            "CH01-Mercury.coordinate.sign",
+            "CH01-Venus.coordinate.sign",
+            "CH01-Mars.coordinate.sign",
+            "CH01-Jupiter.coordinate.sign",
+            "CH01-Saturn.coordinate.sign",
+            "CH01-NorthNode.coordinate.sign",
+            "CH01-SouthNode.coordinate.sign",
+            "CH01-Fortune.coordinate.sign"
+          ],
+          "status": "diagram_inference_not_adjacent_label",
+          "policy": "All signs are labeled as inferred from the drawn interval; not verbatim adjacent text."
+        }
+      ]
+    }
+  ],
+  "narrative_numeric_statements": [
+    {
+      "anchor": "A253-P",
+      "kind": "narration_year",
+      "raw": "at this present 1647.",
+      "value": 1647,
+      "independently_calculated": false
+    },
+    {
+      "anchor": "A253-P",
+      "kind": "offer_year",
+      "raw": "1634",
+      "value": 1634,
+      "independently_calculated": false
+    },
+    {
+      "anchor": "A253-P",
+      "kind": "known_notice_period",
+      "raw": "six moneths warning",
+      "value": 6,
+      "unit": "months",
+      "prior_case_information": true,
+      "independently_calculated": false
+    },
+    {
+      "anchor": "A254-05",
+      "kind": "asking_price",
+      "raw": "five hundred and thirty pounds",
+      "value": 530,
+      "unit": "pounds",
+      "independently_calculated": false
+    },
+    {
+      "anchor": "A255-02",
+      "kind": "narrated_delay",
+      "raw": "twelve dayes after",
+      "value": 12,
+      "unit": "days",
+      "antecedent": "Nearest antecedent Mars becoming direct; joint relation to Jupiter ingress retained as unresolved.",
+      "independently_calculated": false
+    },
+    {
+      "anchor": "A255-02",
+      "kind": "loan",
+      "raw": "500 l.",
+      "value": 500,
+      "unit": "pounds",
+      "independently_calculated": false
+    },
+    {
+      "anchor": "A255-04",
+      "kind": "bargain_date",
+      "raw": "die ♀ 25. Aprill following",
+      "day": 25,
+      "month": "April",
+      "year_inferred_from_case": 1634,
+      "weekday_glyph": "♀",
+      "independently_calculated": false
+    },
+    {
+      "anchor": "A255-04",
+      "kind": "payment_date",
+      "raw": "the seventeenth of May ♀ and ☽ in ☌",
+      "day": 17,
+      "month": "May",
+      "year_inferred_from_case": 1634,
+      "weekday": null,
+      "independently_calculated": false
+    },
+    {
+      "anchor": "A255-04",
+      "kind": "paid_amount",
+      "raw": "530 l.",
+      "value": 530,
+      "unit": "pounds",
+      "independently_calculated": false
+    },
+    {
+      "anchor": "A255-04",
+      "kind": "author_stated_angular_gap",
+      "raw": "six degrees",
+      "value": 6,
+      "unit": "degrees",
+      "qualifier": "Source statement; exact printed chart gives different fractional detail.",
+      "independently_calculated": false
+    },
+    {
+      "anchor": "A255-04",
+      "kind": "author_stated_elapsed_time",
+      "raw": "six weekes and some dayes",
+      "value": 6,
+      "unit": "weeks",
+      "additional_days": null,
+      "independently_calculated": false
+    },
+    {
+      "anchors": [
+        "A255-07",
+        "A256-01"
+      ],
+      "kind": "prior_happy_residence",
+      "raw": "full seven yeers",
+      "value": 7,
+      "unit": "years",
+      "independently_calculated": false
+    }
+  ],
+  "independent_calculations": [
+    {
+      "calculation_id": "CALC01",
+      "classification": "independent_arithmetic_after_source_notes_freeze",
+      "source_inputs": [
+        "CH01-Sun",
+        "CH01-Venus"
+      ],
+      "operation": "Absolute difference of longitudes within Aries using printed degrees and minutes.",
+      "formula_arcminutes": "(20*60+56) - (14*60+35)",
+      "result": {
+        "degree": 6,
+        "minute": 21,
+        "total_arcminutes": 381
+      },
+      "source_statement_separately": "A255-04 says Venus wanted six degrees of the Sun.",
+      "interpretation_limit": "The exact chart gap is6°21′. The source's six-degree phrase is retained; no universal degree-to-week rule is inferred."
+    },
+    {
+      "calculation_id": "CALC02",
+      "classification": "independent_arithmetic_after_source_notes_freeze",
+      "source_inputs": [
+        "CH01-Moon",
+        "CH01-Mars"
+      ],
+      "operation": "Absolute longitude difference within Virgo.",
+      "formula_arcminutes": "(11*60+6) - (10*60+38)",
+      "result": {
+        "degree": 0,
+        "minute": 28,
+        "total_arcminutes": 28
+      },
+      "source_statement_separately": "A253-F labels Moon from conjunction Mars to square Saturn.",
+      "interpretation_limit": "28′ is positional separation only. No speed, timing or translating-light precedence algorithm is supplied by this calculation."
+    },
+    {
+      "calculation_id": "CALC03",
+      "classification": "independent_arithmetic_after_source_notes_freeze",
+      "source_inputs": [
+        "CH01-Sun",
+        "CH01-Saturn"
+      ],
+      "operation": "Shortest unsigned circular angular separation; compare numerically with120°.",
+      "result": {
+        "degree": 119,
+        "minute": 31,
+        "total_arcminutes": 7171
+      },
+      "distance_from_exact_trine": {
+        "degree": 0,
+        "minute": 29,
+        "total_arcminutes": 29
+      },
+      "source_statement_separately": "A254-04 calls Sun in perfect trine with Saturn.",
+      "interpretation_limit": "Chart separation119°31′ is29′ from exactly120°. This calculation does not decide the author's meaning of perfect."
+    },
+    {
+      "calculation_id": "CALC04",
+      "classification": "independent_arithmetic_after_source_notes_freeze",
+      "source_inputs": [
+        "CH01-Mercury",
+        "CH01-H08"
+      ],
+      "operation": "Difference from Mercury3°38′Taurus to cusp8 at6°26′Taurus.",
+      "result": {
+        "degree": 2,
+        "minute": 48,
+        "total_arcminutes": 168
+      },
+      "source_statement_separately": "A254-02 says no other planet in seventh besides Venus and Sun; diagram physically places Mercury in that sector.",
+      "interpretation_limit": "Mercury is2°48′ before cusp8. An interpretive anticipation convention might matter, but none is invented from this span."
+    },
+    {
+      "calculation_id": "CALC05",
+      "classification": "independent_calendar_arithmetic_after_source_notes_freeze",
+      "source_inputs": [
+        "central_date",
+        "A255-04"
+      ],
+      "operation": "Elapsed date difference31March to17May within the same year and calendar, assuming no calendar cutover.",
+      "formula": "30 days in April +17 days in May =47 days after31March.",
+      "result": {
+        "days": 47,
+        "weeks": 6,
+        "remaining_days": 5
+      },
+      "source_statement_separately": "six weekes and some dayes",
+      "interpretation_limit": "No Gregorian/Julian astronomical alignment is tested; this is simple elapsed-date arithmetic within one unchanged calendar."
+    }
+  ],
+  "calculation_limits": [
+    "No chart coordinate was repaired using arithmetic.",
+    "No Fortune formula was evaluated.",
+    "No ephemeris or ingress/station/conjunction time was independently calculated.",
+    "Arithmetic is engineering/source comparison, not empirical predictive validation."
+  ]
+}

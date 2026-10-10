@@ -1,0 +1,42 @@
+{
+  "freeze_unchanged": true,
+  "json_parse": "pass",
+  "candidate_sequence": "C001\u2013C029",
+  "all_12_cusps_present": true,
+  "seven_planets_two_nodes_fortune_present": true,
+  "only_chart_id": "CH01",
+  "omitted_cusp_minutes_preserved": [
+    4,
+    10
+  ],
+  "motion_glyphs_only_where_printed": [
+    "Mars",
+    "Saturn"
+  ],
+  "source_count": "one actual chart",
+  "no_fortune_formula_evaluated": true,
+  "independent_calculations_after_freeze": 5,
+  "semantic_review_note": "Mechanical checks do not certify source interpretation; parent owns final review.",
+  "files": [
+    {
+      "filename": "SOURCE_FIRST_NOTES.md",
+      "bytes": 18291,
+      "sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e"
+    },
+    {
+      "filename": "SOURCE_FIRST_RECEIPT.json",
+      "bytes": 1565,
+      "sha256": "208387825f6dac49a4ddbf39136b2e84b2a208fb41d8e21a7606d8ca9e8132da"
+    },
+    {
+      "filename": "CANDIDATE_RULES.json",
+      "bytes": 54134,
+      "sha256": "8732fc31cf68322421241f5ad1d8058e75d2f6727db04708469779988df2689b"
+    },
+    {
+      "filename": "NUMERIC_TABLES.json",
+      "bytes": 40743,
+      "sha256": "aa0e7cf9fe4f3e6e88fcf6622f14c0e1fe675771728273ac859a047bb1238705"
+    }
+  ]
+}

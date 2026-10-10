@@ -1,0 +1,70 @@
+{
+  "schema": "b02i-source-a-drafting-receipt-v1",
+  "reader": "/root/b02i_source_a",
+  "source_notes_frozen_before_candidate_drafting": true,
+  "record_count": 57,
+  "checks": {
+    "sequential_unique_57_ids": true,
+    "assigned_page_coverage": true,
+    "printed_page_mapping": true,
+    "dependencies_resolve": true,
+    "frozen_notes_unchanged": true,
+    "reading_receipt_unchanged": true,
+    "no_present_person_application": true
+  },
+  "check_scope": "Structural integrity and source reading, not empirical/predictive validation or independent final review",
+  "source_visual_read": "All original PNGs PDF236–245 at original detail; PDF240 and PDF242 reopened during final draft check",
+  "post_freeze_exposure": [
+    {
+      "source": "Parent message",
+      "content": "Parent agreed PDF242 glyph is Part of Fortune",
+      "effect": "No change; source-first notes already had same reading"
+    },
+    {
+      "source": "Parent message after draft",
+      "content": "Parent reports reviewing all 57 candidates and keeping A019/A056 ambiguity",
+      "effect": "No source content change; finish receipts only"
+    }
+  ],
+  "writes_outside_assigned_reader_directory": false,
+  "git_mutations": false,
+  "publication": false,
+  "manifest": [
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-source-a/SOURCE_FIRST_NOTES.md",
+      "file": "SOURCE_FIRST_NOTES.md",
+      "bytes": 24182,
+      "sha256": "a969e9e3f75124b0d869608c432a05db7b59fae4751bb46ee940815726edb979"
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-source-a/READING_RECEIPT.json",
+      "file": "READING_RECEIPT.json",
+      "bytes": 4354,
+      "sha256": "26a50a6d6322c208a2616ba52f6281d5181c4376851e3a1ec4d4b6d73a296827"
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-source-a/CANDIDATE_RULES.json",
+      "file": "CANDIDATE_RULES.json",
+      "bytes": 112346,
+      "sha256": "132553a4e945b67fbdbf8a301009728a94905be25706a14fab1d478b14664f78"
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-source-a/COVERAGE_AND_ISSUES.json",
+      "file": "COVERAGE_AND_ISSUES.json",
+      "bytes": 11094,
+      "sha256": "689a10798902ee7b023b393c270f52c67ad25063cd8ad154b899efee9314eb77"
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-source-a/READER_HANDOFF.md",
+      "file": "READER_HANDOFF.md",
+      "bytes": 4707,
+      "sha256": "341c2e8c3df5149d81259d7db7f8a324b41aef99ac463d2533e42c5c97d652cd"
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-source-a/build_candidates.py",
+      "file": "build_candidates.py",
+      "bytes": 60613,
+      "sha256": "88b830ee83b2c98006073c77aae142732145d62f221272138d126ae7517143cc"
+    }
+  ]
+}

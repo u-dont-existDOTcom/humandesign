@@ -1,0 +1,3275 @@
+{
+  "schema": "b02i-source-candidate-rules-v1",
+  "reader": "/root/b02i_source_a",
+  "role": "source-production reader; final empirical/source claim checking remains separate",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_notes_sha256": "a969e9e3f75124b0d869608c432a05db7b59fae4751bb46ee940815726edb979",
+  "scope": {
+    "pdf_pages": [
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245
+    ],
+    "printed_pages": [
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211
+    ],
+    "stop_before": "XXXV on PDF246"
+  },
+  "anchor_policy": "Page plus paragraph/section locator; words in anchors normalize long-s and line breaks; planet/sign names expand visually read glyphs in paraphrase, not as purported verbatim glyph text.",
+  "boolean_policy": "all/any structure states explicit relations. Where grammar leaves attachment or enumeration unresolved, the uncertainty is retained and no executable single parse is claimed. Branch outputs remain alternatives where the source says or.",
+  "genre_policy": "Historical horary source audit only. Doctrinal assertions and hypothetical illustrations are not evidence of modern predictive accuracy. Generic experience claims are recorded as unresolved historical anecdotes without invented individual cases.",
+  "glossary": {
+    "Ascendant": "First house/cusp according to the local source statement",
+    "lord": "Source’s house/sign ruler relation",
+    "fortune/infortune": "Historical technical terms, not an independently implemented classifier",
+    "Part of Fortune": "Circled-cross glyph visually checked; no new calculation asserted"
+  },
+  "records": [
+    {
+      "local_id": "A001",
+      "pdf_pages": [
+        236
+      ],
+      "printed_pages": [
+        202
+      ],
+      "passage_anchor": "Fourth-house divider heading and full preamble, above XXXII",
+      "heading_context": "Of the fourth House, and the Judgment depending thereupon",
+      "source_paraphrase": "The fourth house covers parents, lands, tenements, hereditaments, cities, towns, villages, farms, manors, castles, treasure-trove, and things hidden in the ground.",
+      "antecedent": {
+        "all": [
+          "Classifying fourth-house questions"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Fourth-house topical scope",
+      "outputs": [
+        "Assign the complete named topic list to the fourth house"
+      ],
+      "modality": "Significator/topic assignment",
+      "time_horizon": "Not a time prediction",
+      "genre": "scope assignment",
+      "calculations": [],
+      "dependency_context_ids": [],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A002",
+      "pdf_pages": [
+        236
+      ],
+      "printed_pages": [
+        202
+      ],
+      "passage_anchor": "XXXII opening paragraph: Be carefull to take your Ascendant exactly",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "Take an exact Ascendant and first identify whose goods are missing; assign the relevant goods lord according to the owner.",
+      "antecedent": {
+        "all": [
+          "A thing is hidden, mislaid, missing, lost, or enquired after",
+          "Identify its owner and question context"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Source says to continue in order according to the party; it subsequently uses the words lord of the second.",
+        "No complete generalized house-turning formula is restated here."
+      ],
+      "target": "Owner-relative significator selection",
+      "outputs": [
+        "Take the Ascendant exactly",
+        "Use the owner-specific lord below"
+      ],
+      "modality": "Procedure and significator assignment",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "method instruction",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A001"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Querent owns goods",
+          "when": {
+            "all": [
+              "Goods belong to querent"
+            ]
+          },
+          "outputs": [
+            "Use lord of second"
+          ]
+        },
+        {
+          "label": "Sibling owns goods",
+          "when": {
+            "any": [
+              "Goods belong to brother",
+              "Goods belong to sister"
+            ]
+          },
+          "outputs": [
+            "Use lord of fourth"
+          ]
+        },
+        {
+          "label": "Father owns goods",
+          "when": {
+            "all": [
+              "Goods belong to father"
+            ]
+          },
+          "outputs": [
+            "Use lord of fifth"
+          ]
+        },
+        {
+          "label": "Mother owns goods",
+          "when": {
+            "all": [
+              "Goods belong to mother"
+            ]
+          },
+          "outputs": [
+            "Use lord of eleventh"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A003",
+      "pdf_pages": [
+        236,
+        237
+      ],
+      "printed_pages": [
+        202,
+        203
+      ],
+      "passage_anchor": "XXXII: If you find the Lord of the second in any Angle; through where either his Father or some ancient man lodged",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "Angular and associated placements of second lord locate missing goods inside the house and in role-specific rooms or areas.",
+      "antecedent": {
+        "all": [
+          "Missing-object question under A002; subsequent source expressly names second lord"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Locations separated by or remain alternatives.",
+        "Nature/quality of the place is further known by the signs occupied by significators."
+      ],
+      "target": "Location of missing object",
+      "outputs": [
+        "Apply each stated placement-to-location branch without choosing one of its alternative places as an observed fact"
+      ],
+      "modality": "May judge for angular/Ascendant branches; categorical source phrasing for other room branches",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A002"
+      ],
+      "unresolved_readings": [
+        "A-U10: his houses naturally refers to Ascendant lord; exact possessive wording is retained. No extra angular requirement has been imposed on the separately stated sign-location alternatives."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Angular",
+          "when": {
+            "all": [
+              "Second lord in any angle"
+            ]
+          },
+          "outputs": [
+            "Within the house of the questioner"
+          ]
+        },
+        {
+          "label": "Querent frequenting/storage area",
+          "when": {
+            "any": [
+              "Second lord in Ascendant",
+              "Second lord in the sign occupied by Ascendant lord",
+              "Second lord in one of his houses (source wording)"
+            ]
+          },
+          "outputs": [
+            "Part most frequented, inhabited, or used by the querent",
+            "Or where the querent stores commodities or favored possessions"
+          ]
+        },
+        {
+          "label": "Tenth, mechanic",
+          "when": {
+            "all": [
+              "Second lord in tenth",
+              "Querent is a mechanic"
+            ]
+          },
+          "outputs": [
+            "Shop"
+          ]
+        },
+        {
+          "label": "Tenth, gentleman",
+          "when": {
+            "all": [
+              "Second lord in tenth",
+              "Querent is a gentleman"
+            ]
+          },
+          "outputs": [
+            "Hall or dining room"
+          ]
+        },
+        {
+          "label": "Tenth, husbandman",
+          "when": {
+            "all": [
+              "Second lord in tenth",
+              "Querent is a husbandman"
+            ]
+          },
+          "outputs": [
+            "Ordinary common room or first room after entering"
+          ]
+        },
+        {
+          "label": "Seventh",
+          "when": {
+            "all": [
+              "Second lord in seventh"
+            ]
+          },
+          "outputs": [
+            "Area where wife or maidservants have most to do"
+          ]
+        },
+        {
+          "label": "Fourth",
+          "when": {
+            "all": [
+              "Second lord in fourth"
+            ]
+          },
+          "outputs": [
+            "Oldest household member lodging or formerly frequented place",
+            "Or middle of house",
+            "Or oldest part where father or an ancient man lodged"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A004",
+      "pdf_pages": [
+        237
+      ],
+      "printed_pages": [
+        203
+      ],
+      "passage_anchor": "XXXII: for if the Signe of the second be aiery",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "An airy second sign, or the indicated concurrence of significators and Part of Fortune sign, places the object high; the outdoors branch identifies raised ground or plants/trees.",
+      "antecedent": {
+        "all": [
+          "A002 context",
+          {
+            "any": [
+              "Second-house sign is airy",
+              {
+                "all": [
+                  "Greater number of significators concur in the airy quality",
+                  "Part of Fortune sign concurs"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Vertical/location quality of missing object",
+      "outputs": [
+        "Eaves, top, upper part of house/room, or high above ground"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [
+        {
+          "kind": "majority/concurrence instruction",
+          "status": "Qualitative source instruction; no numeric weighting or tie rule supplied"
+        }
+      ],
+      "dependency_context_ids": [
+        "A002",
+        "A003"
+      ],
+      "unresolved_readings": [
+        "A-U11: exact significator membership, concurrence aggregation, and tie handling are not fully specified here."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Already located outdoors",
+          "when": {
+            "any": [
+              "Hidden in field",
+              "Hidden in garden",
+              "Hidden in orchard"
+            ]
+          },
+          "outputs": [
+            "Higher than ordinary ground",
+            "Or highest hill/part of that ground",
+            "Or hanging on a plant stalk or tree"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A005",
+      "pdf_pages": [
+        237
+      ],
+      "printed_pages": [
+        203
+      ],
+      "passage_anchor": "XXXII: If the former Significators be strong, and in watry Signes",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "Strong former significators in watery signs give a buttery, dairy, wash house, or a place near water.",
+      "antecedent": {
+        "all": [
+          "Former significators are strong",
+          "Former significators are in watery signs"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Location quality of missing object",
+      "outputs": [
+        "Buttery, dairy, wash house, or near water"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A002",
+        "A004"
+      ],
+      "unresolved_readings": [
+        "A-U12: strong is not quantified in this passage."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A006",
+      "pdf_pages": [
+        237
+      ],
+      "printed_pages": [
+        203
+      ],
+      "passage_anchor": "XXXII: If in fiery Signes",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "Fiery signs place the item near a chimney, where iron is, or in/near the house walls.",
+      "antecedent": {
+        "all": [
+          "Relevant significators in fiery signs"
+        ]
+      },
+      "modifiers_exceptions": [
+        "This sentence does not separately repeat the preceding watery sentence’s strong condition."
+      ],
+      "target": "Location quality of missing object",
+      "outputs": [
+        "Near chimney",
+        "Or where iron is",
+        "Or in/near walls of the house"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A002",
+        "A004",
+        "A005"
+      ],
+      "unresolved_readings": [
+        "A-U12: whether strong carries through the elliptical fiery/earthy sentences is not resolved by an invented test."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A007",
+      "pdf_pages": [
+        237
+      ],
+      "printed_pages": [
+        203
+      ],
+      "passage_anchor": "XXXII: If in earthly Signes",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "Earthy signs place the item on earth/ground or under/near pavement or floor; when known to be mislaid outdoors, near an entry bridge or stile.",
+      "antecedent": {
+        "all": [
+          "Relevant significators in earthy signs"
+        ]
+      },
+      "modifiers_exceptions": [
+        "The outdoor antecedent is required for the bridge/stile branch."
+      ],
+      "target": "Location quality of missing object",
+      "outputs": [
+        "On ground/earth, or under/near pavement or floor"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A002",
+        "A004",
+        "A005"
+      ],
+      "unresolved_readings": [
+        "A-U12: strength is not repeated; inherited scope remains as in A006."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Outside",
+          "when": {
+            "all": [
+              "Item is found by the judgment to be mislaid outside the house in ground"
+            ]
+          },
+          "outputs": [
+            "Near bridge or stile where people enter that ground"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A008",
+      "pdf_pages": [
+        237
+      ],
+      "printed_pages": [
+        203
+      ],
+      "passage_anchor": "XXXII: If your Significator be going out of one Signe and entring another",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "A significator crossing between signs gives hidden/fallen/boundary locations between rooms, with height according to sign nature.",
+      "antecedent": {
+        "all": [
+          "Significator going out of one sign and entering another"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Boundary location of missing object",
+      "outputs": [
+        "Behind something",
+        "Or carelessly fallen between two rooms",
+        "Or near threshold or joining of rooms",
+        "Higher/lower according to sign nature"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A002",
+        "A004",
+        "A005",
+        "A006",
+        "A007"
+      ],
+      "unresolved_readings": [
+        "A-U13: no degree tolerance defines going out/entering, and no numeric vertical scale is supplied."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A009",
+      "pdf_pages": [
+        237
+      ],
+      "printed_pages": [
+        203
+      ],
+      "passage_anchor": "Marginal heading What part of the house or ground; The Ancients have delivered many rules",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "Lilly reports the Ancients’ directional method using planetary-hour lord’s house position, then qualifies its accuracy in A010.",
+      "antecedent": {
+        "all": [
+          "Finding which part of a house or ground contains the object",
+          "Using the reported ancient hour-lord method"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Explicitly subject to Lilly’s accuracy objection in A010.",
+        "Do not silently expand tenth or eleventh to a full quadrant."
+      ],
+      "target": "Direction within house/ground",
+      "outputs": [
+        "Use the following source table"
+      ],
+      "modality": "Reported doctrine attributed to the Ancients; may say",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "reported prior doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A002"
+      ],
+      "unresolved_readings": [
+        "A-U14: boundary inclusivity and uncovered positions are not specified."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Tenth or eleventh",
+          "when": {
+            "any": [
+              "Hour lord in tenth house",
+              "Hour lord in eleventh house"
+            ]
+          },
+          "outputs": [
+            "South part toward east"
+          ]
+        },
+        {
+          "label": "Fourth to Ascendant",
+          "when": {
+            "all": [
+              "Hour lord between fourth and Ascendant"
+            ]
+          },
+          "outputs": [
+            "Northeast"
+          ]
+        },
+        {
+          "label": "Fourth to seventh",
+          "when": {
+            "all": [
+              "Hour lord between fourth and seventh"
+            ]
+          },
+          "outputs": [
+            "Northwest"
+          ]
+        },
+        {
+          "label": "Tenth to seventh",
+          "when": {
+            "all": [
+              "Hour lord between tenth and seventh"
+            ]
+          },
+          "outputs": [
+            "Southwest"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A010",
+      "pdf_pages": [
+        237,
+        238
+      ],
+      "printed_pages": [
+        203,
+        204
+      ],
+      "passage_anchor": "This is and was the opinion of the former Astrologians; however, I have not found this judgment very exact",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "Lilly identifies A009 as earlier astrologers’ opinion, says he has not found it very exact, and introduces a supposedly more certain/exact method for house items missing or mislaid and not stolen.",
+      "antecedent": {
+        "all": [
+          "Assessing the hour-lord procedure in A009"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Authorial disagreement and method scope",
+      "outputs": [
+        "Preserve Lilly’s stated dissatisfaction with the preceding method",
+        "His alternative is introduced for a house object mislaid/missing and not stolen"
+      ],
+      "modality": "Authorial methodological judgment, not comparative empirical validation",
+      "time_horizon": "Retrospective method appraisal",
+      "genre": "methodological qualification",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A009"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A011",
+      "pdf_pages": [
+        238
+      ],
+      "printed_pages": [
+        204
+      ],
+      "passage_anchor": "First, I considered the Signe ascending; eight listed signs; according to the greater number of testimonies",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "Lilly’s alternative considers the signs in eight listed slots and uses the greater number of testimonies to choose east, west, north, or south.",
+      "antecedent": {
+        "all": [
+          "Object mislaid or missing in a house",
+          "Object not stolen"
+        ]
+      },
+      "modifiers_exceptions": [
+        "The following table separately names lost/mislaid things and fugitives; retain this scope extension in A012."
+      ],
+      "target": "Directional testimony procedure",
+      "outputs": [
+        "Consider eight slots in stated order",
+        "Use greater number of testimonies for the quarter"
+      ],
+      "modality": "Lilly’s proposed procedure",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "method instruction",
+      "calculations": [
+        {
+          "kind": "testimony count",
+          "inputs_in_source_order": [
+            "Ascendant sign",
+            "Ascendant lord sign",
+            "Fourth-house sign",
+            "Fourth lord sign",
+            "Moon sign",
+            "Second-house sign",
+            "Second lord sign",
+            "Part of Fortune sign"
+          ],
+          "source_operation": "Choose quarter east/west/north/south according to greater number of testimonies",
+          "dependency": "A012 direction labels",
+          "unspecified": [
+            "weights",
+            "tie outcome",
+            "deduplication when several slots share a planet/sign",
+            "aggregation of by-directions into a single refined bearing"
+          ],
+          "safe_reference_output": "Retain per-slot labels and raw quarter counts; unresolved ties/by-direction synthesis must remain unresolved rather than fabricated"
+        }
+      ],
+      "dependency_context_ids": [
+        "A010"
+      ],
+      "unresolved_readings": [
+        "A-U11: tally details not fully formalized by source."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A012",
+      "pdf_pages": [
+        238
+      ],
+      "printed_pages": [
+        204
+      ],
+      "passage_anchor": "Four-line zodiac-direction table beginning Aries East",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "For things lost, mislaid, or fugitives, the source supplies twelve sign-specific named directions.",
+      "antecedent": {
+        "any": [
+          "Thing lost",
+          "Thing mislaid",
+          "Fugitive"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Do not silently equate by-directions with modern numerical azimuths."
+      ],
+      "target": "Sign-to-direction mapping",
+      "outputs": [
+        "Use exact named directions in source table"
+      ],
+      "modality": "Asserted correspondence table",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "reference mapping",
+      "calculations": [
+        {
+          "kind": "lookup",
+          "mapping": {
+            "Aries": "East",
+            "Leo": "East and by North",
+            "Sagittarius": "East and by South",
+            "Libra": "West",
+            "Gemini": "West by South",
+            "Aquarius": "West by North",
+            "Cancer": "North",
+            "Scorpio": "North by East",
+            "Pisces": "North by West",
+            "Capricorn": "South",
+            "Taurus": "South by East",
+            "Virgo": "South by West"
+          },
+          "numeric_azimuths": null,
+          "status": "Glyphs visually read; source names bearings but assigns no degrees"
+        }
+      ],
+      "dependency_context_ids": [
+        "A011"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A013",
+      "pdf_pages": [
+        238
+      ],
+      "printed_pages": [
+        204
+      ],
+      "passage_anchor": "Having found the quarter of Heaven, the nature of the Signs",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "After choosing the quarter, element of sign refines the room location.",
+      "antecedent": {
+        "all": [
+          "Quarter found by preceding method"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Place within selected quarter",
+      "outputs": [
+        "Apply element-to-place mapping"
+      ],
+      "modality": "Authorial proposed refinement",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "reference mapping",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A011",
+        "A012"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Air",
+          "when": {
+            "all": [
+              "Relevant sign airy"
+            ]
+          },
+          "outputs": [
+            "Above ground"
+          ]
+        },
+        {
+          "label": "Fire",
+          "when": {
+            "all": [
+              "Relevant sign fiery"
+            ]
+          },
+          "outputs": [
+            "Near wall or partition"
+          ]
+        },
+        {
+          "label": "Earth",
+          "when": {
+            "all": [
+              "Relevant sign earthy"
+            ]
+          },
+          "outputs": [
+            "On floor"
+          ]
+        },
+        {
+          "label": "Water",
+          "when": {
+            "all": [
+              "Relevant sign watery"
+            ]
+          },
+          "outputs": [
+            "Near moist place in room"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A014",
+      "pdf_pages": [
+        238
+      ],
+      "printed_pages": [
+        204
+      ],
+      "passage_anchor": "A few experiments I know may better this Judgment; I have sometimes in merriment",
+      "heading_context": "Fourth-house block; XXXII: To find a thing hid or mislaid",
+      "source_paraphrase": "Lilly says a few experiments may improve the judgment and reports playful trials using a present figure to discover the house-part of a hidden glove, book, or other thing; he says the rule proved very true.",
+      "antecedent": {
+        "all": [
+          "Reporting Lilly’s unspecific past experience with A011–A013"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Do not invent a silver-bells case, chart, success count, or exact direction.",
+        "A few experiments may improve the judgment is a methodological allowance, not a supplied trial dataset."
+      ],
+      "target": "Reported historical experience",
+      "outputs": [
+        "Author claims location discoveries and that he found the rule very true",
+        "No individual trial is fully specified"
+      ],
+      "modality": "First-person retrospective self-report; not quantified validation",
+      "time_horizon": "Unspecified past occasions",
+      "genre": "aggregate anecdote",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A011",
+        "A012",
+        "A013"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "reported_historical_case",
+      "branches": [],
+      "present_person_application": false,
+      "case_separation": {
+        "case_resolution": "unspecific repeated anecdote, not individuated case",
+        "known_before_source_stated": [
+          "A present figure was set",
+          "A glove, book, or another thing was hidden in a house"
+        ],
+        "known_before_not_established": [
+          "What location information Lilly already possessed",
+          "Who hid it",
+          "Who else knew its location"
+        ],
+        "judgment_stated": "Discovery of what part of the house contained the hidden object",
+        "judgment_exact_value": null,
+        "reported_result": "He found the rule very true",
+        "not_reported": [
+          "Dates",
+          "Charts",
+          "Exact locations before and after",
+          "Trial count",
+          "Failures",
+          "Denominator",
+          "Independent witnesses",
+          "Prospective freeze"
+        ]
+      }
+    },
+    {
+      "local_id": "A015",
+      "pdf_pages": [
+        238,
+        239
+      ],
+      "printed_pages": [
+        204,
+        205
+      ],
+      "passage_anchor": "XXXIII heading and four Give/Let significator assignments",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.",
+      "source_paraphrase": "Purchase questions assign buyer, seller, property, and price to different houses/planets, including Moon separation and application.",
+      "antecedent": {
+        "all": [
+          "Buying or selling lands, houses, farms, or comparable property"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Do not substitute later lease assignments: that subsection assigns tenth to profit and fourth to ending."
+      ],
+      "target": "Purchase significators",
+      "outputs": [
+        "Buyer/querent: Ascendant, its lord, planet from which Moon separates",
+        "Seller: seventh, its lord, planet to which Moon applies",
+        "Property: fourth, planet therein, Moon, fourth lord",
+        "Price cheap/dear: tenth, occupant(s), tenth lord"
+      ],
+      "modality": "Significator assignment",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "scope assignment",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A001"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A016",
+      "pdf_pages": [
+        239
+      ],
+      "printed_pages": [
+        205
+      ],
+      "passage_anchor": "If agree; If you find the Lord of the Ascendant and Lord of the seventh in any amicable aspect",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.",
+      "source_paraphrase": "An amicable aspect between buyer and seller lords, with seller lord applying to buyer lord, indicates seller goodwill to transact.",
+      "antecedent": {
+        "all": [
+          "Ascendant lord and seventh lord in amicable aspect",
+          "Seventh lord applies to Ascendant lord"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Seller intention",
+      "outputs": [
+        "Seller has goodwill to sell and deal with buyer"
+      ],
+      "modality": "May judge",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A015"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A017",
+      "pdf_pages": [
+        239
+      ],
+      "printed_pages": [
+        205
+      ],
+      "passage_anchor": "and if the Significators be in any essentiall Dignities upon this their application or translation of light",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.",
+      "source_paraphrase": "Dignity at the significators’ application/translation, or application by conjunction, makes purchase agreement with little labor probable.",
+      "antecedent": {
+        "any": [
+          {
+            "all": [
+              "Relevant application or translation of light",
+              "Significators in essential dignities at it"
+            ]
+          },
+          "Their application is conjunction"
+        ]
+      },
+      "modifiers_exceptions": [
+        "This is a continuation of the buyer/seller-significator paragraph.",
+        "No ranking against other conflicting testimonies is supplied."
+      ],
+      "target": "Ease and completion of purchase agreement",
+      "outputs": [
+        "Probably agree and conclude purchase with little labor"
+      ],
+      "modality": "Probable",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A015",
+        "A016"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A018",
+      "pdf_pages": [
+        239
+      ],
+      "printed_pages": [
+        205
+      ],
+      "passage_anchor": "if the application or translation of light be by square or opposition",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.",
+      "source_paraphrase": "Application or translation by square/opposition eventually brings a bargain after much discussion, threatened breakdown, and time.",
+      "antecedent": {
+        "all": [
+          {
+            "any": [
+              "Application",
+              "Translation of light"
+            ]
+          },
+          {
+            "any": [
+              "By square",
+              "By opposition"
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Difficulty and timing of purchase agreement",
+      "outputs": [
+        "Parties bargain at last",
+        "Many words and probabilities of breaking off",
+        "Much time expended"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "At last, after much time; no numeric duration",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A015",
+        "A016",
+        "A017"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A019",
+      "pdf_pages": [
+        239
+      ],
+      "printed_pages": [
+        205
+      ],
+      "passage_anchor": "Consider also, if the Lord of the Ascendant or the Moon apply to the Lord of the fourth; through then shall the Party enquiring buy",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.",
+      "source_paraphrase": "The source gives purchase-acquisition testimonies by application between buyer/property significators, reception, and house occupation; the isolated Moon in its occupation clause is grammatically unresolved.",
+      "antecedent": {
+        "all": [
+          "Purchase acquisition question",
+          {
+            "any": [
+              "Ascendant lord applies to fourth lord",
+              "Moon applies to fourth lord",
+              "Fourth lord applies to Ascendant lord",
+              "Moon applies to Ascendant lord",
+              {
+                "all": [
+                  "Fourth lord applies to Ascendant lord",
+                  "Ascendant lord receives fourth lord in any dignity"
+                ]
+              },
+              "Ascendant lord in fourth",
+              "Fourth lord in Ascendant",
+              "Isolated Moon occupation phrase with house unresolved"
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Acquisition of property",
+      "outputs": [
+        "Querent buys the house or inheritance currently in question"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A015"
+      ],
+      "unresolved_readings": [
+        "A-U01: original clause reads: or if the Lord of the ascendant be in the fourth, or the Moon, or the Lord of the fourth in the ascendant. The isolated Moon’s house is not silently supplied.",
+        "A-U15: whether application-with-reception is an added requirement or overlapping alternative is textually compressed; listed source tests must not be turned into a fabricated precedence rule."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A020",
+      "pdf_pages": [
+        239
+      ],
+      "printed_pages": [
+        205
+      ],
+      "passage_anchor": "But if this dwelling in houses be not, yet if the Moon transferre",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.",
+      "source_paraphrase": "When the stated house occupations are absent, Moon transferring fourth lord’s light to Ascendant lord concludes the bargain through intermediaries.",
+      "antecedent": {
+        "all": [
+          "Occupation testimony referred to in A019 does not hold",
+          "Moon transfers virtue/light of fourth lord to Ascendant lord"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Absence of dwelling in houses is explicit; it is not absence of every preceding testimony."
+      ],
+      "target": "Means of purchase agreement",
+      "outputs": [
+        "Bargain concludes",
+        "Rather through messengers or brokers than personal negotiation of the principals"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A015",
+        "A019"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A021",
+      "pdf_pages": [
+        239
+      ],
+      "printed_pages": [
+        205
+      ],
+      "passage_anchor": "If there be no application or translation, or transferring the light",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.",
+      "source_paraphrase": "Without application, translation, or light transfer between planets, a bargain is unlikely.",
+      "antecedent": {
+        "all": [
+          "No relevant application",
+          "No relevant translation",
+          "No relevant transfer of planetary light"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Purchase agreement",
+      "outputs": [
+        "No concluded bargain likely"
+      ],
+      "modality": "Not likely",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A015",
+        "A019",
+        "A020"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A022",
+      "pdf_pages": [
+        239,
+        240
+      ],
+      "printed_pages": [
+        205,
+        206
+      ],
+      "passage_anchor": "Of the goodnesse or badnesse; two Infortunes, very potent, or peregrine; through continue long with your Posterity",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "The fourth’s adverse planets or adverse state of its lord indicate the purchased property will not long remain with descendants.",
+      "antecedent": {
+        "any": [
+          {
+            "all": [
+              "The two infortunes in fourth",
+              {
+                "any": [
+                  "Very potent",
+                  "Peregrine"
+                ]
+              }
+            ]
+          },
+          {
+            "any": [
+              "Fourth lord retrograde",
+              "Fourth lord unfortunate",
+              "Fourth lord in fall",
+              "Fourth lord in detriment"
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Retention by posterity",
+      "outputs": [
+        "Property will not continue long with purchaser’s posterity"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Not long with posterity; no numeric interval",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A015"
+      ],
+      "unresolved_readings": [
+        "A-U02: source’s very potent, or peregrine phrase retained; it does not specify how the condition distributes across the two infortunes."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A023",
+      "pdf_pages": [
+        240
+      ],
+      "printed_pages": [
+        206
+      ],
+      "passage_anchor": "But if either Jupiter Venus or North Node be in the fourth; owne house, viz. in the fourth",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "Jupiter, Venus, North Node, or fourth lord in fourth gives expected success, possible long retention by posterity, and an argument for financial increase.",
+      "antecedent": {
+        "any": [
+          "Jupiter in fourth",
+          "Venus in fourth",
+          "North Node in fourth",
+          "Fourth lord in fourth"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Source expressly glosses fourth lord’s own house as in the fourth; do not silently substitute zodiacal domicile."
+      ],
+      "target": "Purchase success, continuity, and gain",
+      "outputs": [
+        "Purchaser may expect good success",
+        "Property may remain long with posterity",
+        "Argument for increase of money through the bargain"
+      ],
+      "modality": "May expect / may continue / argument",
+      "time_horizon": "Current purchase and long future continuity, unquantified",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A015",
+        "A022"
+      ],
+      "unresolved_readings": [
+        "A-U03: preserve the source’s own-house gloss and do not infer a modern dignity test."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A024",
+      "pdf_pages": [
+        240
+      ],
+      "printed_pages": [
+        206
+      ],
+      "passage_anchor": "Quality of the ground; If it be arrable Land; four role assignments",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "For arable-land quality, the four angles represent occupiers, soil/buildings, herbage, and wood/plants.",
+      "antecedent": {
+        "all": [
+          "Arable land question",
+          "Its nature is sought"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Fourth’s house/building use applies when the question is about houses."
+      ],
+      "target": "Property-quality significators",
+      "outputs": [
+        "Ascendant: tenants, husbandmen, farmers occupying it",
+        "Fourth: soil condition, nature, form; or queried houses",
+        "Western angle/seventh: herbage quality and quantity",
+        "Midheaven: wood, trees, plants"
+      ],
+      "modality": "Significator assignment",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "scope assignment",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A015"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A025",
+      "pdf_pages": [
+        240
+      ],
+      "printed_pages": [
+        206
+      ],
+      "passage_anchor": "Tenants good or ill; If an Infortune possesse the Ascendant",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "Ascendant occupants describe tenants’ character and continuation; unfortunate-planet motion changes the attributed behavior.",
+      "antecedent": {
+        "all": [
+          "Tenant/occupier assessment under A024"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Reported character/behavior is source doctrine, not a statement about actual tenants.",
+        "Whether planet is called an infortune by nature or unfortunate by condition is not reduced to a new classifier here."
+      ],
+      "target": "Tenant qualities and behavior",
+      "outputs": [
+        "Apply the distinct fortune/infortune and direct/retrograde branches"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A024"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Infortune",
+          "when": {
+            "all": [
+              "Infortune in Ascendant"
+            ]
+          },
+          "outputs": [
+            "Ill/deceitful occupiers unwilling that land’s goodness be discovered"
+          ]
+        },
+        {
+          "label": "Fortune",
+          "when": {
+            "all": [
+              "Fortune in Ascendant"
+            ]
+          },
+          "outputs": [
+            "Honest occupiers who give and will give landlord contentment",
+            "Will love landlord and wish to keep their holdings and occupation"
+          ]
+        },
+        {
+          "label": "Unfortunate direct",
+          "when": {
+            "all": [
+              "Unfortunate planet in Ascendant",
+              "That planet direct"
+            ]
+          },
+          "outputs": [
+            "Tenants will purloin woods or wear out land’s virtue"
+          ]
+        },
+        {
+          "label": "Unfortunate retrograde",
+          "when": {
+            "all": [
+              "Unfortunate planet in Ascendant",
+              "That planet retrograde"
+            ]
+          },
+          "outputs": [
+            "Tenants put land back upon landlord, run away, or surrender leases"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A026",
+      "pdf_pages": [
+        240
+      ],
+      "printed_pages": [
+        206
+      ],
+      "passage_anchor": "Wood on the ground; If a fortunate Planet be in the Mid-heaven, and direct",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "When Midheaven has a planet, fortune/infortune and motion specify timber quantity/condition or proposed prior causes of depletion.",
+      "antecedent": {
+        "all": [
+          "Wood assessment under A024",
+          "A relevant planet occupies Midheaven"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Retrospective claims about sellers/country people are doctrinal attributions, not observed case facts."
+      ],
+      "target": "Wood and timber",
+      "outputs": [
+        "Apply the four branches"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Present stock/condition with retrospective proposed causes; no dates",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A024"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Fortune direct",
+          "when": {
+            "all": [
+              "Fortunate planet in Midheaven",
+              "Direct"
+            ]
+          },
+          "outputs": [
+            "Good timber, much of it"
+          ]
+        },
+        {
+          "label": "Fortune retrograde",
+          "when": {
+            "all": [
+              "Fortunate planet in Midheaven",
+              "Retrograde"
+            ]
+          },
+          "outputs": [
+            "Many trees but little timber",
+            "Trees lopped; or seller recently sold many/spoiled them; or trees much decayed"
+          ]
+        },
+        {
+          "label": "Infortune direct",
+          "when": {
+            "all": [
+              "Infortune in Midheaven",
+              "Direct"
+            ]
+          },
+          "outputs": [
+            "Few trees"
+          ]
+        },
+        {
+          "label": "Infortune retrograde",
+          "when": {
+            "all": [
+              "Infortune in Midheaven",
+              "Retrograde"
+            ]
+          },
+          "outputs": [
+            "Country people have stolen or greatly wasted the wood"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A027",
+      "pdf_pages": [
+        240,
+        241
+      ],
+      "printed_pages": [
+        206,
+        207
+      ],
+      "passage_anchor": "But if no Planet be in the Mid-heaven; through many Trunks and hollow Trees amongst them",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "With no Midheaven occupant, tenth lord’s aspect, dignity, orientation and motion provide fallback wood judgments.",
+      "antecedent": {
+        "all": [
+          "Wood assessment under A024",
+          "No planet in Midheaven"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Fallback wood quantity, age, and health",
+      "outputs": [
+        "Use tenth lord and preserve inherited conditions in branches"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Present condition; direct branch long continuance, unquantified",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A024",
+        "A026"
+      ],
+      "unresolved_readings": [
+        "A-U04: scope of condition aforesaid and then across the dignity/aspect/orientation clauses is compressed; the branch structure preserves context without claiming a unique executable parse."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Some wood",
+          "when": {
+            "all": [
+              "Tenth lord beholds Midheaven by good aspect",
+              "Tenth lord in any own dignity"
+            ]
+          },
+          "outputs": [
+            "Some wood on ground"
+          ]
+        },
+        {
+          "label": "No aspect",
+          "when": {
+            "all": [
+              "Tenth lord does not behold Midheaven"
+            ]
+          },
+          "outputs": [
+            "Little or no wood, or worthless wood"
+          ]
+        },
+        {
+          "label": "Oriental",
+          "when": {
+            "all": [
+              "Tenth lord oriental",
+              "Tenth lord beholds its own house"
+            ]
+          },
+          "outputs": [
+            "Young/small-growth wood or coppices"
+          ]
+        },
+        {
+          "label": "Occidental",
+          "when": {
+            "all": [
+              "Tenth lord occidental",
+              "In the condition aforesaid, including beholding its house"
+            ]
+          },
+          "outputs": [
+            "More-grown/ancient wood"
+          ]
+        },
+        {
+          "label": "Then direct",
+          "when": {
+            "all": [
+              "Tenth lord then direct",
+              "Preceding qualifying wood context"
+            ]
+          },
+          "outputs": [
+            "Trees sound and continuing sound a long time"
+          ]
+        },
+        {
+          "label": "Then retrograde",
+          "when": {
+            "all": [
+              "Tenth lord retrograde",
+              "Preceding qualifying wood context"
+            ]
+          },
+          "outputs": [
+            "Many trunks/hollow trees"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A028",
+      "pdf_pages": [
+        241
+      ],
+      "printed_pages": [
+        207
+      ],
+      "passage_anchor": "Having considered what precedes, consider the Angle of the West",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "Jupiter, Venus, or seventh lord in seventh indicates abundant seasonal herbage/crops; an infortune there gives contrary judgment.",
+      "antecedent": {
+        "all": [
+          "Herbage/smaller plants assessment under A024"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Herbage and seasonal yield",
+      "outputs": [
+        "Use favorable and contrary branches"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Seasonally required output, season unspecified",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A024"
+      ],
+      "unresolved_readings": [
+        "A-U06: no precedence supplied for an infortune that is also seventh lord, or coexisting favorable/adverse occupants."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Favorable",
+          "when": {
+            "any": [
+              "Jupiter in seventh",
+              "Venus in seventh",
+              "Seventh lord in seventh"
+            ]
+          },
+          "outputs": [
+            "Plentiful grass, corn, or the seasonally required produce"
+          ]
+        },
+        {
+          "label": "Adverse",
+          "when": {
+            "all": [
+              "Infortune in seventh"
+            ]
+          },
+          "outputs": [
+            "Contrary judgment on plenty/quality"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A029",
+      "pdf_pages": [
+        241
+      ],
+      "printed_pages": [
+        207
+      ],
+      "passage_anchor": "Quality of the ground; In consideration of the property of the earth",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "Fourth-cusp sign groups indicate terrain form and water.",
+      "antecedent": {
+        "all": [
+          "Assessing property of the ground",
+          "Use sign on fourth-house cusp"
+        ]
+      },
+      "modifiers_exceptions": [
+        "The fiery claim explicitly allows only a great part of the parcel to fit.",
+        "Affliction refinements follow; sign alone is not the whole land-quality method."
+      ],
+      "target": "Terrain and water",
+      "outputs": [
+        "Apply the exact three-sign groups"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A024"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Aries/Leo/Sagittarius",
+          "when": {
+            "any": [
+              "Aries fourth cusp",
+              "Leo fourth cusp",
+              "Sagittarius fourth cusp"
+            ]
+          },
+          "outputs": [
+            "Hilly, mountainous, dry, hard ground, or largely so"
+          ]
+        },
+        {
+          "label": "Taurus/Virgo/Capricorn",
+          "when": {
+            "any": [
+              "Taurus fourth cusp",
+              "Virgo fourth cusp",
+              "Capricorn fourth cusp"
+            ]
+          },
+          "outputs": [
+            "Level/open country, excellent pasture, grazing or tillage"
+          ]
+        },
+        {
+          "label": "Gemini/Libra/Aquarius",
+          "when": {
+            "any": [
+              "Gemini fourth cusp",
+              "Libra fourth cusp",
+              "Aquarius fourth cusp"
+            ]
+          },
+          "outputs": [
+            "Mixed hills/plains and mixed good/bad ground"
+          ]
+        },
+        {
+          "label": "Cancer/Scorpio/Pisces",
+          "when": {
+            "any": [
+              "Cancer fourth cusp",
+              "Scorpio fourth cusp",
+              "Pisces fourth cusp"
+            ]
+          },
+          "outputs": [
+            "River/rivulet or abundant water"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A030",
+      "pdf_pages": [
+        241
+      ],
+      "printed_pages": [
+        207
+      ],
+      "passage_anchor": "You must for the perfect knowledge of the quality and nature of the Soyle, observe this generall rule",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "An infortune in the fourth sign, retrograde or in fall/detriment, makes land strongly partake in that planet’s signified misfortune.",
+      "antecedent": {
+        "all": [
+          "Infortune in sign of fourth",
+          {
+            "any": [
+              "That planet retrograde",
+              "That planet in fall",
+              "That planet in detriment"
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [
+        "Do not drop adverse planetary state and retain only the fourth sign."
+      ],
+      "target": "Affliction modifying soil judgment",
+      "outputs": [
+        "Land strongly partakes in the planet’s signified infelicity"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A024",
+        "A029"
+      ],
+      "unresolved_readings": [
+        "A-U16: source punctuation is compressed; conditions are retained as written rather than replaced with an unqualified malefic-in-fourth rule."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A031",
+      "pdf_pages": [
+        241,
+        242
+      ],
+      "printed_pages": [
+        207,
+        208
+      ],
+      "passage_anchor": "as if Scorpio be the cusp of the fourth, and Saturn is placed therein; continuation overflowne with the River or Water",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "Hypothetically, Scorpio fourth cusp with afflicted/retrograde Saturn there signifies overly wet, boggy or unhealthy land and rushy grass; proximity to sea adds flood/bank concerns.",
+      "antecedent": {
+        "all": [
+          "Scorpio on fourth cusp",
+          "Saturn placed therein",
+          {
+            "any": [
+              "Saturn retrograde",
+              "Saturn afflicted by another misfortune"
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [
+        "This is an if-example, not an observed property case.",
+        "Near-sea condition is retained for its added concerns."
+      ],
+      "target": "Illustrated watery land defect",
+      "outputs": [
+        "Too much water, or boggy/unwholesome ground",
+        "Long rushy grass"
+      ],
+      "modality": "Hypothetical illustration; author says may confidently aver",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "hypothetical doctrinal illustration",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A029",
+        "A030"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "hypothetical",
+      "branches": [
+        {
+          "label": "Near sea",
+          "when": {
+            "all": [
+              "Same hypothetical astrological conditions",
+              "Land lies near sea"
+            ]
+          },
+          "outputs": [
+            "Fear sea incursion",
+            "Or decay in sea banks",
+            "Or liability to overflow by river/water"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A032",
+      "pdf_pages": [
+        242
+      ],
+      "printed_pages": [
+        208
+      ],
+      "passage_anchor": "if Saturn afflict a fiery Signe in the fourth",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "Saturn afflicting a fiery fourth sign describes barren, stony, mountainous land with water shortage and little grass, unprofitable without immense labor.",
+      "antecedent": {
+        "all": [
+          "Fiery sign in fourth",
+          "Saturn afflicts it"
+        ]
+      },
+      "modifiers_exceptions": [
+        "No specific parcel or historical outcome supplied.",
+        "Affliction is required; fiery sign alone is not the complete antecedent."
+      ],
+      "target": "Illustrated fiery land defect",
+      "outputs": [
+        "Barren, stony, hungry, mountainous land",
+        "No profit without immense labor",
+        "Lacks water and produces little grass"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "conditional doctrinal illustration",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A029",
+        "A030"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "hypothetical",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A033",
+      "pdf_pages": [
+        242
+      ],
+      "printed_pages": [
+        208
+      ],
+      "passage_anchor": "If Saturn afflict the Signe of Gemini, by his presence there, or any of the humane Signs",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "The Saturn/Gemini/Libra/Aquarius sentence links defective land to unthrifty past management, with a compressed distinction between presence and retrogradation.",
+      "antecedent": {
+        "all": [
+          "Relevant sign on fourth cusp",
+          {
+            "any": [
+              "Gemini",
+              "Libra",
+              "Aquarius"
+            ]
+          },
+          "Saturn afflicts the relevant sign under the source’s presence/retrogradation wording"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Illustrated land defect and attributed past management",
+      "outputs": [
+        "Defect in goodness of land",
+        "Former husbandmen managed it unthriftily"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "conditional doctrinal illustration",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A029",
+        "A030"
+      ],
+      "unresolved_readings": [
+        "A-U05: possible reading 1: Saturn presence afflicts Gemini, while retrogradation afflicts Libra/Aquarius; possible reading 2: retrogradation qualifies the whole humane-sign condition. Do not select one as an executable condition without resolving the text."
+      ],
+      "evidence_class": "hypothetical",
+      "branches": [],
+      "present_person_application": false,
+      "unresolved_antecedent_options": [
+        {
+          "all": [
+            "Sign on fourth cusp",
+            {
+              "any": [
+                {
+                  "all": [
+                    "Gemini",
+                    "Saturn present and afflicting"
+                  ]
+                },
+                {
+                  "all": [
+                    {
+                      "any": [
+                        "Libra",
+                        "Aquarius"
+                      ]
+                    },
+                    "Saturn retrograde and afflicting"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "all": [
+            "Sign on fourth cusp",
+            {
+              "any": [
+                "Gemini",
+                "Libra",
+                "Aquarius"
+              ]
+            },
+            "Saturn present/afflicting",
+            "Saturn retrograde"
+          ]
+        }
+      ],
+      "executable_as_written": false
+    },
+    {
+      "local_id": "A034",
+      "pdf_pages": [
+        242
+      ],
+      "printed_pages": [
+        208
+      ],
+      "passage_anchor": "if he be unfortunate in an earthly Signe, upon the Signe of the fourth",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered goodness/badness and quality-of-ground subsections",
+      "source_paraphrase": "Saturn unfortunate in an earthy fourth sign gives good but heavy-clay land poorly managed by current occupiers.",
+      "antecedent": {
+        "all": [
+          "Saturn (the preceding he) unfortunate",
+          "Saturn in an earthy sign at the fourth sign"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Preserve the favorable intrinsic land judgment alongside poor management.",
+        "Do not turn this into an observed accusation concerning current people."
+      ],
+      "target": "Intrinsic land quality versus present management",
+      "outputs": [
+        "Land good",
+        "Heavy clay ground",
+        "Occupiers under-till or mismanage it, do not understand soil",
+        "Occupiers described as idle, lazy, slothful, penurious, unwilling to spend"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "conditional doctrinal illustration",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A029",
+        "A030",
+        "A032",
+        "A033"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "hypothetical",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A035",
+      "pdf_pages": [
+        242
+      ],
+      "printed_pages": [
+        208
+      ],
+      "passage_anchor": "Cheap or dear; This is knowne by the Lord of the tenth",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; Cheap or dear",
+      "source_paraphrase": "Price is high if tenth lord is angular, direct, and strong in essential dignities; the source’s adverse-state enumeration gives price not rising high.",
+      "antecedent": {
+        "all": [
+          "Purchase-price question under A015"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Tenth signifies price here; the following lease subsection assigns it to profit."
+      ],
+      "target": "Cheap/dear price judgment",
+      "outputs": [
+        "Apply high-price conjunction of conditions; retain low-price list grouping uncertainty"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A015"
+      ],
+      "unresolved_readings": [
+        "A-U17: low-price list is comma-separated without explicit and/or; do not silently decide whether all or any state is sufficient.",
+        "A-U12: strength/slow thresholds and price amounts unspecified."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "High price",
+          "when": {
+            "all": [
+              "Tenth lord angular",
+              "Tenth lord direct",
+              "Tenth lord strong in essential dignities"
+            ]
+          },
+          "outputs": [
+            "High price; seller sells dear"
+          ]
+        },
+        {
+          "label": "Low-price enumeration",
+          "when": {
+            "all": [
+              "Tenth lord falls under source adverse-state enumeration"
+            ],
+            "enumeration": {
+              "members": [
+                "cadent",
+                "combust",
+                "retrograde",
+                "slow of motion",
+                "afflicted"
+              ],
+              "operator": "UNSPECIFIED_IN_SOURCE"
+            }
+          },
+          "outputs": [
+            "Price will not rise high"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A036",
+      "pdf_pages": [
+        242
+      ],
+      "printed_pages": [
+        208
+      ],
+      "passage_anchor": "If it be good to hire or take the Farme, House or Land desired; four Give/Let assignments",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered If it be good to hire or take the Farme, House or Land desired",
+      "source_paraphrase": "Lease/hire questions give Ascendant/lord to hirer, seventh/lord to lessor or seller, tenth/lord to prospective profit, and fourth/occupants to ending.",
+      "antecedent": {
+        "all": [
+          "Question whether good to hire/take a farm, house, or land"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Preserve change of tenth from purchase price to lease profit, and fourth from property to ending."
+      ],
+      "target": "Lease significators",
+      "outputs": [
+        "Ascendant and its lord: person who would hire/take property",
+        "Seventh and its lord: person letting or selling it",
+        "Tenth and its lord: profit that may arise",
+        "Fourth and its occupants: end of taking or not taking the property"
+      ],
+      "modality": "Significator assignment",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "scope assignment",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A001",
+        "A015"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A037",
+      "pdf_pages": [
+        242,
+        243
+      ],
+      "printed_pages": [
+        208,
+        209
+      ],
+      "passage_anchor": "If the Lord of the ascendant shall be in the ascendant or Sign ascending; through is well pleased therewith",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered If it be good to hire or take the Farme, House or Land desired",
+      "source_paraphrase": "Ascendant lord’s position/aspect, an Ascendant fortune regardless of essential dignity, or unimpeded Part of Fortune there indicate taking the property and favorable hopes/liking.",
+      "antecedent": {
+        "any": [
+          "Ascendant lord in Ascendant",
+          "Ascendant lord in rising sign",
+          {
+            "all": [
+              "Ascendant lord sextile or trine to rising sign, preferably rising degree",
+              "Within moiety of that lord’s own orb"
+            ]
+          },
+          "A fortune in Ascendant, whether essentially dignified or not",
+          {
+            "all": [
+              "Part of Fortune in Ascendant",
+              "Part of Fortune unimpeded"
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [
+        "Essential dignity expressly unnecessary for the fortunate-planet occupant alternative.",
+        "Not impedited belongs to Part of Fortune alternative.",
+        "Circled-cross glyph visually read as Part of Fortune, independently before root’s post-freeze corroboration."
+      ],
+      "target": "Hirer assent and expectations",
+      "outputs": [
+        "Farmer shall take house/land/farm",
+        "Full of hopes of doing good, a good bargain or much profit",
+        "Much liking and satisfaction with it"
+      ],
+      "modality": "Testimony of taking, hopes, and liking; do not relabel as observed realized profit",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [
+        {
+          "kind": "parameterized aspect tolerance",
+          "source_target": "Sign ascending, more properly exact degree ascending",
+          "aspect_alternatives": [
+            "sextile",
+            "trine"
+          ],
+          "source_tolerance": "Within the moiety of the significator’s own orb",
+          "formula": "tolerance magnitude = own_orb / 2; deviation must be within it, with equality convention unspecified",
+          "numeric_orb": null,
+          "status": "Source gives half-orb relation, not a numeric orb value; equality handling at the precise boundary is not expressly discussed"
+        }
+      ],
+      "dependency_context_ids": [
+        "A036"
+      ],
+      "unresolved_readings": [
+        "A-U18: hopes/profit grammar should not be strengthened into an independently verified financial result.",
+        "A-U19: source says within moiety; supplied formula is bounded arithmetic transcription and boundary inclusivity remains unspecified."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A038",
+      "pdf_pages": [
+        243
+      ],
+      "printed_pages": [
+        209
+      ],
+      "passage_anchor": "But if an Infortune be in the ascendant (it’s no matter which of them)",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered If it be good to hire or take the Farme, House or Land desired",
+      "source_paraphrase": "Either infortune in Ascendant gives regret if already taken, reluctance if not yet taken, or prompt onward transfer if taken.",
+      "antecedent": {
+        "all": [
+          "Either infortune in Ascendant"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Transaction stage is essential; do not merge the branches into a single unconditional event."
+      ],
+      "target": "Hirer attitude by transaction timing",
+      "outputs": [
+        "Use transaction-stage branches"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Already/now/not yet; promptly after taking, no numeric interval",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A036"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Already taken",
+          "when": {
+            "all": [
+              "Property taken before consultation"
+            ]
+          },
+          "outputs": [
+            "Regrets it now"
+          ]
+        },
+        {
+          "label": "Not yet taken",
+          "when": {
+            "all": [
+              "Property not already taken"
+            ]
+          },
+          "outputs": [
+            "No will to take it"
+          ]
+        },
+        {
+          "label": "If takes it",
+          "when": {
+            "all": [
+              "Hirer does take property"
+            ]
+          },
+          "outputs": [
+            "Presently passes it to someone else; cares nothing for bargain"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A039",
+      "pdf_pages": [
+        243
+      ],
+      "printed_pages": [
+        209
+      ],
+      "passage_anchor": "Having considered what belongs to the party intending to buy or take a Lease; If you find the Lord of the seventh",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered If it be good to hire or take the Farme, House or Land desired",
+      "source_paraphrase": "Seventh lord in seventh or benevolently aspecting its cusp, or a fortune there, means the lessor keeps the bargain while profiting.",
+      "antecedent": {
+        "any": [
+          "Seventh lord in seventh",
+          "Seventh lord gives benevolent aspect to seventh cusp",
+          "Fortunate planet in seventh"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Lessor performance and gain",
+      "outputs": [
+        "Lessor keeps word",
+        "Querent receives what was bargained for",
+        "Lessor profits"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A036"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A040",
+      "pdf_pages": [
+        243
+      ],
+      "printed_pages": [
+        209
+      ],
+      "passage_anchor": "If an Infortune be in the seventh, and not Lord of the seventh",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered If it be good to hire or take the Farme, House or Land desired",
+      "source_paraphrase": "An infortune occupying seventh while not its lord prompts care with covenants because landlord will be too hard and self-interested.",
+      "antecedent": {
+        "all": [
+          "Infortune in seventh",
+          "That infortune is not lord of seventh"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Explicit exclusion when the infortune is seventh lord must remain."
+      ],
+      "target": "Historical warning about lease terms/lessor conduct",
+      "outputs": [
+        "Source directs great care over covenants and conditions",
+        "Landlord too hard for querent, pursuing own ends"
+      ],
+      "modality": "Doctrinal warning; historical text, not current legal advice",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A036"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A041",
+      "pdf_pages": [
+        243
+      ],
+      "printed_pages": [
+        209
+      ],
+      "passage_anchor": "Consider the tenth house afterwards, and if a fortunate Planet be therein, or behold the tenth house",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered If it be good to hire or take the Farme, House or Land desired",
+      "source_paraphrase": "A fortune in or aspecting tenth brings the parties through obstacles to a letting.",
+      "antecedent": {
+        "any": [
+          "Fortunate planet in tenth",
+          "Fortunate planet beholds tenth house"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Aspect type is not restricted by this sentence; do not invent a sextile/trine-only requirement."
+      ],
+      "target": "Lease completion",
+      "outputs": [
+        "Parties proceed despite some obstacles",
+        "House, farm, or land let to querent"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A036"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A042",
+      "pdf_pages": [
+        243
+      ],
+      "printed_pages": [
+        209
+      ],
+      "passage_anchor": "But if you find an unfortunate Planet in the tenth; through they differ upon the repaires thereof",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered If it be good to hire or take the Farme, House or Land desired",
+      "source_paraphrase": "An unfortunate tenth occupant or its opposition/square to tenth prevents taking; probable points of disagreement vary by property type.",
+      "antecedent": {
+        "any": [
+          "Unfortunate planet in tenth",
+          {
+            "all": [
+              "Unfortunate planet beholds tenth",
+              {
+                "any": [
+                  "By opposition",
+                  "By square"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [
+        "Land explanations expressly probable.",
+        "Reasons are conditional doctrine, not historically observed dispute facts."
+      ],
+      "target": "Failure to hire and proposed reason",
+      "outputs": [
+        "No house/land taken"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A036"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Land",
+          "when": {
+            "all": [
+              "Land is the property proposed for letting"
+            ]
+          },
+          "outputs": [
+            "Probably differ over wood/timber or new construction on the ground"
+          ]
+        },
+        {
+          "label": "House",
+          "when": {
+            "all": [
+              "A house is the property"
+            ]
+          },
+          "outputs": [
+            "Differ about repairs"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A043",
+      "pdf_pages": [
+        243
+      ],
+      "printed_pages": [
+        209
+      ],
+      "passage_anchor": "As to the end of the businesse, see to the fourth house",
+      "heading_context": "XXXIII: Of Buying and Selling Lands, Houses, Farmes, &c.; unnumbered If it be good to hire or take the Farme, House or Land desired",
+      "source_paraphrase": "Fortune or fourth lord in fourth, or fourth lord’s sextile/trine to it, gives a mutually pleasing end; infortune there gives the contrary.",
+      "antecedent": {
+        "all": [
+          "Judging end of the lease business"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Final satisfaction",
+      "outputs": [
+        "Use favorable/adverse fourth-house branches"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Conclusion of matter, no numeric interval",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A036"
+      ],
+      "unresolved_readings": [
+        "A-U06: no priority given for fourth lord that is also infortune or mixed occupants."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Good end",
+          "when": {
+            "any": [
+              "Fortune in fourth",
+              "Fourth lord in fourth",
+              {
+                "all": [
+                  "Fourth lord beholds fourth",
+                  {
+                    "any": [
+                      "By sextile",
+                      "By trine"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "outputs": [
+            "Good end; both parties pleased"
+          ]
+        },
+        {
+          "label": "Bad end",
+          "when": {
+            "all": [
+              "Infortune in fourth"
+            ]
+          },
+          "outputs": [
+            "Demise/bargain pleases neither party"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A044",
+      "pdf_pages": [
+        244
+      ],
+      "printed_pages": [
+        210
+      ],
+      "passage_anchor": "XXXIV heading and opening assignments to Querent, Father, and personall Estate or Goods moveable",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "Assign querent, father, and father’s personal/movable estate distinctly.",
+      "antecedent": {
+        "all": [
+          "Question whether querent shall enjoy father’s estate"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Movable/personal estate is explicitly named; do not recast every statement as land inheritance."
+      ],
+      "target": "Paternal-estate significators",
+      "outputs": [
+        "Ascendant/lord: querent",
+        "Fourth/lord/occupant: father",
+        "Fifth/lord/occupant: father’s personal estate or movable goods"
+      ],
+      "modality": "Significator assignment",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "scope assignment",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A001"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A045",
+      "pdf_pages": [
+        244
+      ],
+      "printed_pages": [
+        210
+      ],
+      "passage_anchor": "if in this Question you find the Lord of the second and Lord of the fifth in reception",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "The source describes reception of second/fifth lords with fifth lord in second and second lord in fifth as giving a competent fortune from father.",
+      "antecedent": {
+        "all": [
+          "Second and fifth lords in reception as described by source",
+          "Fifth lord in second",
+          "Second lord in fifth"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Preserve explicitly stated house placements; do not substitute a generic zodiacal mutual-reception condition."
+      ],
+      "target": "Receipt from father’s estate",
+      "outputs": [
+        "Querent shall obtain a competent fortune from father’s estate"
+      ],
+      "modality": "Source says no doubt",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A044"
+      ],
+      "unresolved_readings": [
+        "A-U20: whether reception is defined here by house exchange or an additional dignity relation is not independently formalized in this scope."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A046",
+      "pdf_pages": [
+        244
+      ],
+      "printed_pages": [
+        210
+      ],
+      "passage_anchor": "but if it happen that the Lord of the fifth house be Retrograde, or in some bad aspect",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "Retrograde fifth lord or its bad aspect with a malevolent planet indicates that father wastes or otherwise disposes of some intended share.",
+      "antecedent": {
+        "any": [
+          "Fifth lord retrograde",
+          "Fifth lord in bad aspect with a malevolent planet"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Some part, not necessarily the entire estate.",
+        "This is an adverse modifying testimony and no precedence over other conditions is specified."
+      ],
+      "target": "Diminution of intended paternal provision",
+      "outputs": [
+        "Some estate intended for querent wasted or otherwise disposed of by father"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A044",
+        "A045"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A047",
+      "pdf_pages": [
+        244
+      ],
+      "printed_pages": [
+        210
+      ],
+      "passage_anchor": "and if you enquire wherefore; impeding planet by square/opposition or Sun by Combustion; sixth/seventh/twelfth rulership branches",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "To attribute who/what reduces provision, identify fifth lord’s impeding planet and its house rulership, preserving the source’s alternative persons.",
+      "antecedent": {
+        "all": [
+          "Question about cause or person behind diminished paternal provision",
+          {
+            "any": [
+              "Planet impedes fifth lord by square",
+              "Planet impedes fifth lord by opposition",
+              "Sun impedes fifth lord by combustion"
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [
+        "Do not select one person from the alternatives without additional source information.",
+        "Probable appears expressly in sixth-lord branch.",
+        "Retain historical source attribution; no present-person identification performed."
+      ],
+      "target": "Source attribution of an intervening person",
+      "outputs": [
+        "Look to house ruled by impeding planet"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A044",
+        "A046"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [
+        {
+          "label": "Sixth lord",
+          "when": {
+            "all": [
+              "Impeding planet rules sixth"
+            ]
+          },
+          "outputs": [
+            "Probably father’s brother/sister, tenant, or neighbor persuades him to reduce intended provision"
+          ]
+        },
+        {
+          "label": "Seventh lord",
+          "when": {
+            "all": [
+              "Impeding planet rules seventh"
+            ]
+          },
+          "outputs": [
+            "Woman/sweetheart, or someone with whom querent has been at variance, withdraws parental intention"
+          ]
+        },
+        {
+          "label": "Twelfth lord",
+          "when": {
+            "all": [
+              "Impeding planet rules twelfth"
+            ]
+          },
+          "outputs": [
+            "Parson or parish priest (source pejoratively calls him sneaking), or maternal kin"
+          ]
+        }
+      ],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A048",
+      "pdf_pages": [
+        244,
+        245
+      ],
+      "printed_pages": [
+        210,
+        211
+      ],
+      "passage_anchor": "now if upon the description of the Party, the Querent is well informed; through he may obtaine his desires",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "If querent identifies the described obstructing party and seeks favor/reduced malice, time reconciliation to an approaching favorable aspect and Moon transfer between that planet and Ascendant lord.",
+      "antecedent": {
+        "all": [
+          "Querent identifies the described party",
+          "Querent wishes to gain that party’s favor/goodwill and reduce malice",
+          {
+            "any": [
+              "Impeding planet and Ascendant lord approach sextile",
+              "Impeding planet and Ascendant lord approach trine",
+              "Impeding planet and Ascendant lord approach conjunction"
+            ]
+          },
+          "Ephemeris shows Moon separating from one and applying to the other on that day"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Identification and desire for reconciliation are explicit prerequisites.",
+        "Experience claim in the next sentence is separately recorded in A049."
+      ],
+      "target": "Historical timing advice for attempted reconciliation",
+      "outputs": [
+        "At or about that time attempt reconciliation",
+        "Querent may obtain desires"
+      ],
+      "modality": "Source says it is not to be doubted but he may; preserve may",
+      "time_horizon": "Day shown in ephemeris; attempt at/about that time, no numeric tolerance",
+      "genre": "horary doctrine",
+      "calculations": [
+        {
+          "kind": "event-order conditions",
+          "inputs": [
+            "Impeding planet",
+            "Ascendant lord",
+            "Moon",
+            "Ephemeris"
+          ],
+          "required_sequence": "Moon separates from either of first two and applies to the other, with their stated approach condition",
+          "aspect_alternatives": [
+            "sextile",
+            "trine",
+            "conjunction"
+          ],
+          "unknowns": [
+            "No chart/time supplied",
+            "No numeric about-time tolerance"
+          ]
+        }
+      ],
+      "dependency_context_ids": [
+        "A044",
+        "A047"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A049",
+      "pdf_pages": [
+        245
+      ],
+      "printed_pages": [
+        211
+      ],
+      "passage_anchor": "Opening continuation: as I have found many times by good experience",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "Lilly supports the preceding reconciliation advice with an unspecific claim of repeated good experience.",
+      "antecedent": {
+        "all": [
+          "Author’s retrospective support for A048"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Reported experience supporting timing advice",
+      "outputs": [
+        "Lilly claims finding the result many times by good experience"
+      ],
+      "modality": "Unspecific first-person experience claim",
+      "time_horizon": "Unspecified past occasions",
+      "genre": "aggregate anecdote",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A048"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "reported_historical_case",
+      "branches": [],
+      "present_person_application": false,
+      "case_separation": {
+        "case_resolution": "No individual case specified",
+        "known_before_source_stated": [],
+        "judgment_stated": "A048 supplies doctrine, not a pre-recorded individual prediction",
+        "reported_result": "Many times by good experience",
+        "not_reported": [
+          "Named parties",
+          "Charts",
+          "Dates",
+          "Independent outcome records",
+          "Count",
+          "Failures",
+          "Denominator",
+          "Before/after exposure history"
+        ]
+      }
+    },
+    {
+      "local_id": "A050",
+      "pdf_pages": [
+        245
+      ],
+      "printed_pages": [
+        211
+      ],
+      "passage_anchor": "If the Lord of the fift dispose of Part of Fortune, and be in the Ascendant or second",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "Fifth lord disposing Part of Fortune while in Ascendant or second gives the expected paternal benefit.",
+      "antecedent": {
+        "all": [
+          "Fifth lord disposes Part of Fortune",
+          {
+            "any": [
+              "Fifth lord in Ascendant",
+              "Fifth lord in second"
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [
+        "Dispose is retained as source technical relation; no dispositor algorithm is newly derived here."
+      ],
+      "target": "Expected benefit from father",
+      "outputs": [
+        "Querent obtains desires expected from father"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A044"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A051",
+      "pdf_pages": [
+        245
+      ],
+      "printed_pages": [
+        211
+      ],
+      "passage_anchor": "If Jupiter or Venus out of the fifth house cast their benevolent aspects",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "Jupiter or Venus in fifth giving a benevolent aspect to any planet in querent’s second indicates the same paternal benefit.",
+      "antecedent": {
+        "all": [
+          {
+            "any": [
+              "Jupiter",
+              "Venus"
+            ]
+          },
+          "That planet is in fifth",
+          "That planet casts benevolent aspect to any planet in querent’s second"
+        ]
+      },
+      "modifiers_exceptions": [
+        "The aspect target is any planet in second, not necessarily second lord."
+      ],
+      "target": "Expected benefit from father",
+      "outputs": [
+        "Same desired paternal benefit as A050"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A044",
+        "A050"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A052",
+      "pdf_pages": [
+        245
+      ],
+      "printed_pages": [
+        211
+      ],
+      "passage_anchor": "If the Moon separate from the Lord of the fifth, and either have presently after a sextile or trine",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "Moon separation from fifth lord followed presently by sextile/trine to second or Ascendant lord gives strong assured hopes of the requested paternal benefit.",
+      "antecedent": {
+        "all": [
+          "Moon separates from fifth lord",
+          "Presently afterwards Moon has the next stated aspect",
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "any": [
+                      "Sextile",
+                      "Trine"
+                    ]
+                  },
+                  "To second lord"
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "any": [
+                      "Sextile",
+                      "Trine"
+                    ]
+                  },
+                  "To Ascendant lord"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Hope of acquiring requested paternal benefit",
+      "outputs": [
+        "Strong and assured hopes of acquiring what was demanded of father"
+      ],
+      "modality": "Strong/assured hopes; not an observed realized outcome",
+      "time_horizon": "Presently after separation; no duration or allowable intervening-aspect rule stated",
+      "genre": "horary doctrine",
+      "calculations": [
+        {
+          "kind": "ordered aspect relation",
+          "source_order": [
+            "Moon separates fifth lord",
+            "Moon presently thereafter sextile/trine second lord or Ascendant lord"
+          ],
+          "status": "No chart supplied; no event computed"
+        }
+      ],
+      "dependency_context_ids": [
+        "A044"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A053",
+      "pdf_pages": [
+        245
+      ],
+      "printed_pages": [
+        211
+      ],
+      "passage_anchor": "If you find an Infortune in the fourth, not having Dignities there",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "Undignified infortune in fourth indicates father’s reluctance to part with money and advises waiting to press him until that planet leaves its sign.",
+      "antecedent": {
+        "all": [
+          "Infortune in fourth",
+          "Infortune lacks dignities there"
+        ]
+      },
+      "modifiers_exceptions": [
+        "If inability to wait holds, A054 supplies the expressly conditional alternative.",
+        "Not a present-person claim or current financial instruction."
+      ],
+      "target": "Father’s willingness and waiting advice",
+      "outputs": [
+        "Father has little inclination to part with money",
+        "Source says it is not good to press him much until planet transits out of sign"
+      ],
+      "modality": "May say plus historical advice",
+      "time_horizon": "Until infortune leaves sign",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A044"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A054",
+      "pdf_pages": [
+        245
+      ],
+      "printed_pages": [
+        211
+      ],
+      "passage_anchor": "but if you cannot stay so long, observe when that unfortunate Planet is Direct, swift in Motion, Orientall",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "For urgent present means when waiting for father is impractical, the source proposes approaching during a direct, swift, oriental phase with sextile/trine to Jupiter, Venus, or Ascendant lord.",
+      "antecedent": {
+        "all": [
+          "A053’s undignified-infortune-in-fourth context",
+          "Querent cannot wait for sign exit",
+          "Querent wants present means and cannot conveniently await father’s leisure",
+          "That unfortunate planet direct",
+          "That planet swift in motion",
+          "That planet oriental",
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "any": [
+                      "Sextile",
+                      "Trine"
+                    ]
+                  },
+                  "With Jupiter"
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "any": [
+                      "Sextile",
+                      "Trine"
+                    ]
+                  },
+                  "With Venus"
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "any": [
+                      "Sextile",
+                      "Trine"
+                    ]
+                  },
+                  "With Ascendant lord"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "modifiers_exceptions": [
+        "All motion/orientation conditions are conjunctive in source.",
+        "A055’s non-compulsion qualification is necessary context."
+      ],
+      "target": "Alternative timing for approach to father",
+      "outputs": [
+        "Then approach father on the business"
+      ],
+      "modality": "Conditional historical advice expressly limited by A055",
+      "time_horizon": "When the stated simultaneous conditions hold; no chart/date supplied",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A044",
+        "A053"
+      ],
+      "unresolved_readings": [
+        "A-U12: swift is not numerically defined here."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A055",
+      "pdf_pages": [
+        245
+      ],
+      "printed_pages": [
+        211
+      ],
+      "passage_anchor": "nor doe I write, that the observation of those times doe of themselves enforce the mind or will of the Father",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "Lilly denies that observing these times by itself forces father’s mind or will; his positive claim is that inclinations are more benevolent then.",
+      "antecedent": {
+        "all": [
+          "Interpreting timing advice for requesting present means in A054"
+        ]
+      },
+      "modifiers_exceptions": [
+        "Do not portray this as either a forced outcome or a denial of the source’s more limited inclination claim.",
+        "Direct reference is to this father-approach timing advice; no broader causal position is invented."
+      ],
+      "target": "Scope of timing claim",
+      "outputs": [
+        "Observation of times does not by itself enforce father’s mind/will",
+        "Source instead claims more benevolent inclinations at those times"
+      ],
+      "modality": "Explicit authorial limitation plus residual claim",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "doctrinal qualification",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A053",
+        "A054"
+      ],
+      "unresolved_readings": [],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A056",
+      "pdf_pages": [
+        245
+      ],
+      "printed_pages": [
+        211
+      ],
+      "passage_anchor": "If you find the Lord of the second and of the fifth, applying by Retrogradation to any good aspect",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "Second and fifth lords applying by retrogradation to a good aspect indicate sudden/unexpected paternal estate receipt.",
+      "antecedent": {
+        "all": [
+          "Second and fifth lords applying to a good aspect",
+          "Application occurs by retrogradation as stated"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Unexpected paternal estate benefit",
+      "outputs": [
+        "Querent receives some estate from father suddenly, before awareness or when least expected"
+      ],
+      "modality": "Source doctrinal assertion; not independently validated",
+      "time_horizon": "Suddenly/unexpectedly; no numeric duration",
+      "genre": "horary doctrine",
+      "calculations": [],
+      "dependency_context_ids": [
+        "A044"
+      ],
+      "unresolved_readings": [
+        "A-U07: source does not specify whether one or both lords must be retrograde, or which planet supplies the retrograde motion.",
+        "Good aspect not enumerated anew in this sentence."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false
+    },
+    {
+      "local_id": "A057",
+      "pdf_pages": [
+        245
+      ],
+      "printed_pages": [
+        211
+      ],
+      "passage_anchor": "now to know, whether the Father love the Querent better then any of his Brothers or Sisters; final paragraph to end of page",
+      "heading_context": "XXXIV: If the Querent shall enjoy the Estate of his Father",
+      "source_paraphrase": "Compare sibling significators and querent’s lord in relation to father’s lord. Nearer/better sibling contacts, or reception/translation absent for the querent, indicate affection toward another; nearest aspect and strongest reception identify the beloved party.",
+      "antecedent": {
+        "all": [
+          "Question compares father’s affection for querent versus siblings",
+          "Sibling significator is third lord or any third-house planet",
+          {
+            "any": [
+              "Sibling significator nearer to fourth lord than Ascendant lord is",
+              "Sibling significator in better aspect to fourth lord than Ascendant lord is",
+              "Reception between sibling significator and fourth lord",
+              "Translation of light connecting sibling significator and fourth lord"
+            ]
+          },
+          "Preserve source phrase and none betwixt Ascendant lord and fourth lord with its attachment unresolved"
+        ]
+      },
+      "modifiers_exceptions": [],
+      "target": "Comparative paternal preference and represented party",
+      "outputs": [
+        "Father’s affection judged greater toward another than querent",
+        "Planet nearest in aspect to fourth lord shows beloved person",
+        "Most powerful reception of significators also shows that person"
+      ],
+      "modality": "Source says may then be assured; conditional doctrinal comparison",
+      "time_horizon": "Question context; no numeric horizon supplied",
+      "genre": "horary doctrine",
+      "calculations": [
+        {
+          "kind": "qualitative comparative ranking",
+          "comparison_targets": [
+            "Sibling-significator relation to fourth lord",
+            "Ascendant-lord relation to fourth lord"
+          ],
+          "source_comparators": [
+            "nearer",
+            "better aspect",
+            "reception",
+            "translation",
+            "nearest in aspect",
+            "most powerful reception"
+          ],
+          "status": "No score, weights, thresholds, tie handling, or cross-metric precedence supplied"
+        }
+      ],
+      "dependency_context_ids": [
+        "A044"
+      ],
+      "unresolved_readings": [
+        "A-U08: and none betwixt Ascendant lord and fourth lord may qualify reception/translation branches or the full test; preserve source wording rather than silently choosing Boolean scope.",
+        "A-U09: nearer/better/most powerful are qualitative and cannot be turned into a new weighted score here."
+      ],
+      "evidence_class": "doctrine",
+      "branches": [],
+      "present_person_application": false,
+      "executable_as_written": false
+    }
+  ]
+}

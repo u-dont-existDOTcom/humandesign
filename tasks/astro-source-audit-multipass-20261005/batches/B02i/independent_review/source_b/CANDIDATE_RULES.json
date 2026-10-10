@@ -1,0 +1,4501 @@
+{
+  "schema": "lilly-source-candidates-b02i-span-b-v1",
+  "reader": "/root/b02i_source_b",
+  "status": "SOURCE_CANDIDATES_FOR_ROOT_INTEGRATION",
+  "source_first_freeze": {
+    "path": "SOURCE_FIRST_NOTES.md",
+    "sha256": "93dadb60d8acdae63ed259ce6bc43aee84e71f16e5944fa0f70ed108c54df373",
+    "before_candidate_drafting": true
+  },
+  "scope": {
+    "pdf_pages": [
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252
+    ],
+    "printed_pages": [
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218
+    ],
+    "chapters": [
+      "XXXV",
+      "XXXVI",
+      "XXXVII"
+    ],
+    "end": "End of XXXVII after Moon separation/application digging instruction; exclude XXXVIII"
+  },
+  "CALCULATION_LIMITS": {
+    "chart_calculated": false,
+    "source_settings_in_this_span": {
+      "house_system": "Not stated",
+      "zodiac": "Not stated",
+      "ephemeris": "Not stated",
+      "orb_policy": "Not stated",
+      "dignity_tables": "Not repeated",
+      "Fortune_formula": "Not stated",
+      "node_mode": "Not stated",
+      "reception_implementation": "Not formalized",
+      "translation_collation_implementation": "Not formalized",
+      "orientation_and_speed_thresholds": "Not stated",
+      "latitude_ascending_convention": "Not stated",
+      "angularity_tolerance": "Not stated",
+      "conflict_precedence": "Not stated"
+    },
+    "permitted_normalization": "Planet/aspect/sign names and source-listed categories; boolean alternatives only when clear; unresolved grouping explicitly retained",
+    "forbidden_inference": [
+      "Current-person predictions",
+      "Measured predictive accuracy",
+      "Invented deterministic thresholds",
+      "Invented hydro-engineering efficacy",
+      "Assayed metal identity",
+      "Numerical price/depth/duration from qualitative prose"
+    ]
+  },
+  "rules": [
+    {
+      "local_id": "B001",
+      "source_order": 1,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          246
+        ],
+        "printed_pages": [
+          212
+        ],
+        "chapter": "XXXV",
+        "section": "Opening stay/remove judgement",
+        "passage_anchor": "SEE to the Lords of the ascendant, the fourth house and seventh house",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-246.png"
+        ],
+        "source_first_note_items": [
+          1
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Lord 4 in house 7",
+          "Lord 4 a good planet",
+          {
+            "any": [
+              "Lords 1 and 7 good planets",
+              "Lords 1 and 7 strong in their part of heaven",
+              "Lords 1 and 7 strong in the whole figure"
+            ]
+          },
+          "They direct",
+          "They swift in motion",
+          "They in aspect with good planets"
+        ],
+        "unresolved_scope": "They may refer to lords 1/7 or all previously named lords; no per-planet mixed-strength expansion imposed"
+      },
+      "outputs": [
+        {
+          "target": "Remain in present place",
+          "value": "Good to abide still and not remove",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "Opening directs attention to lords 1, 4, 7. Keep full conjunction and alternatives."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "house lords",
+          "house placement",
+          "planet condition",
+          "directness",
+          "speed",
+          "aspect"
+        ],
+        "missing_precision": [
+          "Good/strong thresholds",
+          "Swift threshold",
+          "Aspect definition/orb"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Scope of plural they and good-versus-strong alternatives"
+      ]
+    },
+    {
+      "local_id": "B002",
+      "source_order": 2,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          246
+        ],
+        "printed_pages": [
+          212
+        ],
+        "chapter": "XXXV",
+        "section": "Opening stay/remove judgement",
+        "passage_anchor": "but if the Lord of the seventh be with a good Planet",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-246.png"
+        ],
+        "source_first_note_items": [
+          2
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Lord 7 with a good planet",
+          "Lord 4 with an evil planet"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Remaining in present place",
+          "value": "Not good to stay; staying brings much damage",
+          "modality": "Conditional adverse assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B001",
+          "relation": "Contrasting judgement; no precedence specified"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "planet association",
+          "house lords"
+        ],
+        "missing_precision": [
+          "Meaning and threshold of with"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B003",
+      "source_order": 3,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          246
+        ],
+        "printed_pages": [
+          212
+        ],
+        "chapter": "XXXV",
+        "section": "Lilly reported removal practice",
+        "passage_anchor": "That which I have observed in this manner of Judgment",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-246.png"
+        ],
+        "source_first_note_items": [
+          3
+        ]
+      },
+      "evidence": {
+        "kind": "generalized_retrospective_practice",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          {
+            "all": [
+              "Lord 1 lately separated from square or opposition of lord 6, 8 or 12",
+              "Moon concurs by separating from evil aspect of infortunes",
+              "Those infortunes are lords 7 or 4, etc.",
+              "Those infortunes are not friends or significators in person of querent"
+            ]
+          },
+          {
+            "all": [
+              "An infortune in ascendant",
+              {
+                "any": [
+                  "Peregrine",
+                  "Retrograde"
+                ]
+              }
+            ]
+          },
+          {
+            "all": [
+              "A planet in house 4",
+              {
+                "any": [
+                  "Peregrine",
+                  "Unfortunate"
+                ]
+              }
+            ]
+          },
+          {
+            "any": [
+              "Lord 2 weak",
+              "Lord 2 ill positioned"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Removal advice",
+          "value": "Lilly advised removing habitation and supplied a reason",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "First branch requires concurrent Moon testimony. Other branches are alternatives, not additional requirements. The source leaves etc. open rather than defining exhaustive houses."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "separating aspects",
+          "house lords",
+          "house placement",
+          "dignities",
+          "retrograde"
+        ],
+        "missing_precision": [
+          "Lately window",
+          "Bad-aspect set/orbs",
+          "Friend/significator criterion",
+          "Weighting of mixed arguments"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B004",
+      "source_order": 4,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          246
+        ],
+        "printed_pages": [
+          212
+        ],
+        "chapter": "XXXV",
+        "section": "Reasons given for removal",
+        "passage_anchor": "for if I found the Lord of the sixt house",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-246.png"
+        ],
+        "source_first_note_items": [
+          4
+        ]
+      },
+      "evidence": {
+        "kind": "generalized_retrospective_practice",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          "Lord 6 in ascendant",
+          "Lord 6 afflicts lord 1"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Health, servants and vocation",
+          "value": "Poor health/sickness, or troublesome servants through whom vocation does not thrive",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "Reasons Lilly says he judged, not independently confirmed outcomes."
+      ],
+      "related_rules": [
+        {
+          "id": "B003",
+          "relation": "Diagnostic rationale"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "house lords",
+          "affliction",
+          "house placement"
+        ],
+        "missing_precision": [
+          "Affliction threshold"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B005",
+      "source_order": 5,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          246
+        ],
+        "printed_pages": [
+          212
+        ],
+        "chapter": "XXXV",
+        "section": "Reasons given for removal",
+        "passage_anchor": "If the Lord of the twelfth afflicted",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-246.png"
+        ],
+        "source_first_note_items": [
+          5
+        ]
+      },
+      "evidence": {
+        "kind": "generalized_retrospective_practice",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          "Lord 12 afflicts lord 1",
+          "Lord 12 afflicts Moon"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Nearby social relations",
+          "value": "Backbiting, evil or slanderous neighbours, or nearby people scandalizing querent",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B003",
+          "relation": "Diagnostic rationale"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "house lords",
+          "affliction"
+        ],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B006",
+      "source_order": 6,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          246
+        ],
+        "printed_pages": [
+          212
+        ],
+        "chapter": "XXXV",
+        "section": "Reasons given for removal",
+        "passage_anchor": "if the Lord of the second was unfortunate",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-246.png"
+        ],
+        "source_first_note_items": [
+          6
+        ]
+      },
+      "evidence": {
+        "kind": "generalized_retrospective_practice",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          "Lord 2 unfortunate",
+          "Lord 2 square lord 1",
+          "Lord 2 opposite lord 1",
+          "Part of Fortune in house 12",
+          "Part of Fortune in house 8",
+          "Part of Fortune in house 6"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Estate and worldly condition",
+          "value": "Querent went backward in the world and estate was consumed",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B003",
+          "relation": "Diagnostic rationale"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "house lords",
+          "aspects",
+          "Part of Fortune",
+          "house placement"
+        ],
+        "missing_precision": [
+          "Part of Fortune calculation formula",
+          "Unfortunate threshold"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B007",
+      "source_order": 7,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          246,
+          247
+        ],
+        "printed_pages": [
+          212,
+          213
+        ],
+        "chapter": "XXXV",
+        "section": "Reasons given for removal",
+        "passage_anchor": "If his Significator ... afflicted by the Lord of the tenth",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-246.png",
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png"
+        ],
+        "source_first_note_items": [
+          7,
+          8
+        ]
+      },
+      "evidence": {
+        "kind": "generalized_retrospective_practice",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Lord 1 afflicted by lord 10"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Reputation and trade",
+          "value": "Reputation lost, trade decayed, or no trading",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B003",
+          "relation": "Diagnostic rationale"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "house lords",
+          "affliction"
+        ],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B008",
+      "source_order": 8,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          247
+        ],
+        "printed_pages": [
+          213
+        ],
+        "chapter": "XXXV",
+        "section": "Reasons given for removal and starred marginal alternative",
+        "passage_anchor": "if the Lord of the fourth was unfortunate, or the fourth house it selfe",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png"
+        ],
+        "source_first_note_items": [
+          9
+        ]
+      },
+      "evidence": {
+        "kind": "generalized_retrospective_practice",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          "Lord 4 unfortunate",
+          "House 4 itself unfortunate"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "House and trade conditions",
+          "value": "House unlucky and few former inhabitants thrived; or repairs weakened querent; or house stood inconveniently for trade",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "The inconvenient-position alternative is a starred marginal note. Do not omit it or recast every branch as supernatural."
+      ],
+      "related_rules": [
+        {
+          "id": "B003",
+          "relation": "Diagnostic rationale"
+        },
+        {
+          "id": "B012",
+          "relation": "Later explanatory belief; not empirical confirmation"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "lord 4",
+          "house 4 affliction"
+        ],
+        "missing_precision": [
+          "Unfortunate-house predicate"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B009",
+      "source_order": 9,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          247
+        ],
+        "printed_pages": [
+          213
+        ],
+        "chapter": "XXXV",
+        "section": "Reasons given for removal",
+        "passage_anchor": "If the Lord of the seventh afflicted the Lord of the ascendant or second",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png"
+        ],
+        "source_first_note_items": [
+          10
+        ]
+      },
+      "evidence": {
+        "kind": "generalized_retrospective_practice",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          "Lord 7 afflicts lord 1",
+          "Lord 7 afflicts lord 2"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Rival neighbours and trade",
+          "value": "Overthwart neighbours had the trade and were better furnished with commodities",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B003",
+          "relation": "Diagnostic rationale"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "house lords",
+          "affliction"
+        ],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B010",
+      "source_order": 10,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          247
+        ],
+        "printed_pages": [
+          213
+        ],
+        "chapter": "XXXV",
+        "section": "Direction to move for better trading",
+        "passage_anchor": "Now in giving direction which way to steer his course",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png"
+        ],
+        "source_first_note_items": [
+          11
+        ]
+      },
+      "evidence": {
+        "kind": "generalized_retrospective_practice",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "selection": {
+          "candidate": "Planet in figure",
+          "criteria": [
+            "Most fortunate",
+            "Strongest",
+            "Most friendly aspect to lord 1 OR lord 2"
+          ]
+        },
+        "direction_basis": "Quarter of heaven signified by SIGN occupied by selected planet"
+      },
+      "outputs": [
+        {
+          "target": "Direction of relocation",
+          "value": "Lilly advised removal toward that sign-indicated quarter",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "Do not replace sign direction by house direction. No tie-break or scoring function is supplied."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "planet strengths",
+          "aspects to lords 1 or 2",
+          "sign-direction correspondence"
+        ],
+        "missing_precision": [
+          "Direction table external to span",
+          "Strength aggregation",
+          "Aspect ranking",
+          "Tie-break"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B011",
+      "source_order": 11,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          247
+        ],
+        "printed_pages": [
+          213
+        ],
+        "chapter": "XXXV",
+        "section": "Retrospective comment on direction advice",
+        "passage_anchor": "I remember not, that any ever repented",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png"
+        ],
+        "source_first_note_items": [
+          11
+        ]
+      },
+      "evidence": {
+        "kind": "aggregate_testimonial_claim",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "context": "After describing sign-indicated relocation advice"
+      },
+      "outputs": [
+        {
+          "target": "Evidence classification",
+          "value": "Lilly recalls no regret and says many later returned thanks and rewards",
+          "modality": "Author retrospective memory report"
+        }
+      ],
+      "qualifications": [
+        "No case count, denominator, dates, charts, comparison group, prospective record or independent confirmation supplied in assigned span. Not evidence of measured prediction accuracy."
+      ],
+      "related_rules": [
+        {
+          "id": "B010",
+          "relation": "Attributed retrospective support only"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B012",
+      "source_order": 12,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          247
+        ],
+        "printed_pages": [
+          213
+        ],
+        "chapter": "XXXV",
+        "section": "Unlucky-house digression and margins",
+        "passage_anchor": "And whereas I mention these words ... perhaps the house was unlucky",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png"
+        ],
+        "source_first_note_items": [
+          12
+        ]
+      },
+      "evidence": {
+        "kind": "theological_speculative_explanation",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "belief_condition": "Execrable acts committed in a house",
+        "duration_until": {
+          "any": [
+            "Full expiation by a godly person",
+            "Time limited by angry angel expires"
+          ]
+        }
+      },
+      "outputs": [
+        {
+          "target": "Source author explanatory belief",
+          "value": "Lilly believes ministering angels curse such houses and extends the claim to families",
+          "modality": "Author professed opinion based on claimed experience"
+        }
+      ],
+      "qualifications": [
+        "Records the objection that divine blessing is alike in all places and an inanimate house cannot be unsuccessful/unfortunate. Lilly permits that opinion and maintains his own. Marginal gloss: Or unfortunate. Latin allusion to seals/laminae gives no operational remedy. No causal or empirical validation is inferred."
+      ],
+      "related_rules": [
+        {
+          "id": "B008",
+          "relation": "Qualifies author meaning of unlucky; not a chart rule"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [],
+        "missing_precision": [
+          "No horoscope or operational computation supplied"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B013",
+      "source_order": 13,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          247,
+          248
+        ],
+        "printed_pages": [
+          213,
+          214
+        ],
+        "chapter": "XXXV",
+        "section": "Doctrine attributed to some",
+        "passage_anchor": "But some for resolution of this Question, say",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png",
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+        ],
+        "source_first_note_items": [
+          13,
+          14
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Unnamed others, reported by Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "at_question_time": true,
+        "any": [
+          "Moon separates from Jupiter",
+          "Moon separates from Venus"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Stay/remove",
+          "value": "Stay",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "Lilly says to consider this with preceding judgement. Do not call it his unqualified replacement rule."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Moon separation",
+          "Jupiter",
+          "Venus"
+        ],
+        "missing_precision": [
+          "Separation aspect type/orb/window",
+          "Conflict precedence"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B014",
+      "source_order": 14,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          248
+        ],
+        "printed_pages": [
+          214
+        ],
+        "chapter": "XXXV",
+        "section": "Doctrine attributed to some",
+        "passage_anchor": "separate from an Infortune, remove",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+        ],
+        "source_first_note_items": [
+          14
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Unnamed others, reported by Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Moon separates from an infortune"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Stay/remove",
+          "value": "Remove",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B013",
+          "relation": "Alternative in same attributed sequence"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Moon separation",
+          "infortune identity"
+        ],
+        "missing_precision": [
+          "Separation aspect type/orb/window",
+          "Conflict precedence"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B015",
+      "source_order": 15,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          248
+        ],
+        "printed_pages": [
+          214
+        ],
+        "chapter": "XXXV",
+        "section": "Doctrine attributed to some",
+        "passage_anchor": "or a Fortune in the ascendant bids you stay; an Infortune remove",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+        ],
+        "source_first_note_items": [
+          14
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Unnamed others, reported by Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "branches": [
+          {
+            "if": "Fortune in ascendant",
+            "then": "Stay"
+          },
+          {
+            "if": "Infortune in ascendant",
+            "then": "Remove"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Stay/remove",
+          "value": "As given in separate fortune/infortune branches",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "No rule for both kinds present. Consider with preceding judgement."
+      ],
+      "related_rules": [
+        {
+          "id": "B013",
+          "relation": "Same attributed sequence"
+        },
+        {
+          "id": "B014",
+          "relation": "Same attributed sequence"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "planet category",
+          "ascendant placement"
+        ],
+        "missing_precision": [
+          "Angularity tolerance",
+          "Conflict precedence"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B016",
+      "source_order": 16,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          248
+        ],
+        "printed_pages": [
+          214
+        ],
+        "chapter": "XXXVI",
+        "section": "Waterwork judgement setup",
+        "passage_anchor": "principally consider the position and strength of Saturn and the Moon",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+        ],
+        "source_first_note_items": [
+          15
+        ]
+      },
+      "evidence": {
+        "kind": "generic_method_instruction",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "question": "Turning a river or bringing water into own ground/house by conduit/pipes"
+      },
+      "outputs": [
+        {
+          "target": "Inputs to judge",
+          "value": "Consider positions/strengths of Saturn and Moon and aspects of either/both with Jupiter or Venus",
+          "modality": "Method instruction"
+        }
+      ],
+      "qualifications": [
+        "The opening inspection is not an additional explicit Jupiter/Venus aspect requirement in the ensuing if-clause."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Saturn",
+          "Moon",
+          "Jupiter",
+          "Venus",
+          "positions",
+          "strengths",
+          "aspects"
+        ],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B017",
+      "source_order": 17,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          248
+        ],
+        "printed_pages": [
+          214
+        ],
+        "chapter": "XXXVI",
+        "section": "Basic favourable waterwork combination",
+        "passage_anchor": "for if you find Saturn Direct, swift in Motion, Orientall",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+        ],
+        "source_first_note_items": [
+          15
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Saturn direct",
+          "Saturn swift in motion",
+          "Saturn oriental",
+          {
+            "any": [
+              "Moon in house 3",
+              "Moon in house 11",
+              "Moon in house 5"
+            ]
+          },
+          "Without any good or evil aspect to Mars"
+        ],
+        "unresolved_scope": "Nearest grammatical subject of no-Mars-aspect is Moon; Saturn-and-Moon scope not conclusively excluded"
+      },
+      "outputs": [
+        {
+          "target": "Waterwork success",
+          "value": "Good conclusion, prosperity/credit to querent and easy performance",
+          "modality": "An argument for success"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Saturn directness/speed/orientality",
+          "Moon house",
+          "Mars aspects"
+        ],
+        "missing_precision": [
+          "Swift threshold",
+          "Oriental implementation",
+          "Aspect/orb policy"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Subject of no aspect to Mars"
+      ]
+    },
+    {
+      "local_id": "B018",
+      "source_order": 18,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          248
+        ],
+        "printed_pages": [
+          214
+        ],
+        "chapter": "XXXVI",
+        "section": "Reception strengthens basic water judgement",
+        "passage_anchor": "and this the rather, if the Moon apply to that Planet",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+        ],
+        "source_first_note_items": [
+          16
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Moon applies to ruler of sign she occupies",
+          "That ruler receives Moon in any of his dignities"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Strength of prior favourable water judgement",
+          "value": "Strengthens the favourable judgement",
+          "modality": "This the rather; supporting argument"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B017",
+          "relation": "Strengthens, not independent replacement"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "directional application Moon -> own sign lord",
+          "reception sign lord receives Moon"
+        ],
+        "missing_precision": [
+          "Dignity/reception conventions",
+          "Aspect and application thresholds"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B019",
+      "source_order": 19,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          248
+        ],
+        "printed_pages": [
+          214
+        ],
+        "chapter": "XXXVI",
+        "section": "Receiving fortune and lasting water",
+        "passage_anchor": "if that Planet who is receiver of the Moon be a Fortune",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+        ],
+        "source_first_note_items": [
+          17
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Planet receiving Moon is a fortune",
+          "Receiving planet ascending in his latitude",
+          "Receiving planet in fixed sign"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Water supply and duration",
+          "value": "Enough water, plentiful flow, and watercourse continues long",
+          "modality": "Querent need not fear insufficiency"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B018",
+          "relation": "Antecedent is same receiving planet"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "reception",
+          "planet category",
+          "latitude motion",
+          "sign modality"
+        ],
+        "missing_precision": [
+          "Definition of ascending in latitude",
+          "Quantity and duration"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Latitude convention not specified locally"
+      ]
+    },
+    {
+      "local_id": "B020",
+      "source_order": 20,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          248
+        ],
+        "printed_pages": [
+          214
+        ],
+        "chapter": "XXXVI",
+        "section": "Fortune in tenth and longevity",
+        "passage_anchor": "if there be in the tenth house either Jupiter or Venus",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+        ],
+        "source_first_note_items": [
+          18
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          "Jupiter in house 10",
+          "Venus in house 10"
+        ],
+        "emphasis": "Especially Jupiter"
+      },
+      "outputs": [
+        {
+          "target": "Waterwork longevity",
+          "value": "River, channel, conduit, pipe or waterwork remains many years",
+          "modality": "Source calls this a sure argument"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B022",
+          "relation": "Contrary tenth-house argument; no precedence supplied"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "house placement"
+        ],
+        "missing_precision": [
+          "Exact duration",
+          "Competing adverse-planet precedence"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B021",
+      "source_order": 21,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          248
+        ],
+        "printed_pages": [
+          214
+        ],
+        "chapter": "XXXVI",
+        "section": "Further Saturn/Moon sufficiency arguments",
+        "passage_anchor": "In further consideration of this judgment",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+        ],
+        "source_first_note_items": [
+          19
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "source_sequence": [
+          "Saturn in house 11 and very strong/potent",
+          "Moon sextile or trine Saturn",
+          "Moon dispositor in fixed or common sign",
+          "OR Moon herself in rain-producing Cancer, Leo, Aquarius, Pisces"
+        ],
+        "plausible_groupings": [
+          {
+            "all": [
+              "Saturn in 11 and strong",
+              "Moon sextile/trine Saturn",
+              {
+                "any": [
+                  "Moon dispositor fixed/common",
+                  "Moon in Cancer/Leo/Aquarius/Pisces"
+                ]
+              }
+            ]
+          },
+          {
+            "any": [
+              {
+                "all": [
+                  "Saturn in 11 and strong",
+                  "Moon sextile/trine Saturn",
+                  "Moon dispositor fixed/common"
+                ]
+              },
+              "Moon in Cancer/Leo/Aquarius/Pisces"
+            ]
+          }
+        ],
+        "canonical_boolean": "Unresolved; do not mechanically choose"
+      },
+      "outputs": [
+        {
+          "target": "Current and water quantity",
+          "value": "Good current and plentiful water",
+          "modality": "All these are arguments"
+        }
+      ],
+      "qualifications": [
+        "Original rain-sign list visually reads Cancer, Leo, Aquarius, Pisces. Do not replace Leo with Scorpio."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Saturn house/strength",
+          "Moon aspects",
+          "dispositor sign modality",
+          "Moon sign"
+        ],
+        "missing_precision": [
+          "Strength threshold",
+          "Boolean scope",
+          "Water quantity"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Disjunction reach in long sentence",
+        "How separate arguments combine"
+      ]
+    },
+    {
+      "local_id": "B022",
+      "source_order": 22,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          248,
+          249
+        ],
+        "printed_pages": [
+          214,
+          215
+        ],
+        "chapter": "XXXVI",
+        "section": "Unfortunate planet in tenth",
+        "passage_anchor": "but if you find an infortunate Planet in the tenth",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png",
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-249.png"
+        ],
+        "source_first_note_items": [
+          20,
+          21
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Unfortunate planet in house 10"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Waterwork defects",
+          "value": "Pipes probably break, banks or watercourse rupture, water does not run currently; plot ill laid; no success promised to undertakers",
+          "modality": "Probable defects; no success promised"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B020",
+          "relation": "Opposed tenth-house longevity indication; retained separately"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "house placement",
+          "unfortunate condition"
+        ],
+        "missing_precision": [
+          "Unfortunate threshold",
+          "Conflict precedence"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B023",
+      "source_order": 23,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          249
+        ],
+        "printed_pages": [
+          215
+        ],
+        "chapter": "XXXVII",
+        "section": "Treasure-question routing preamble",
+        "passage_anchor": "The resolution of this Question is various",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-249.png"
+        ],
+        "source_first_note_items": [
+          22
+        ]
+      },
+      "evidence": {
+        "kind": "generic_method_instruction",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "required_question_features": [
+          "Nature/quality of thing: money, plate, jewels, movable goods, long-hidden unknown treasure or minerals/mine",
+          "Whether querent hid it",
+          "Whose it was",
+          "Hider relation to querent",
+          "Whether asking generally without knowing when, where, whose or what"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Rule-family admission",
+          "value": "Resolution varies with proposal, object nature and prior knowledge",
+          "modality": "Method/prior-information requirement"
+        }
+      ],
+      "qualifications": [
+        "Keep prior-known object/ownership facts distinct from later chart-derived claims. No named historical enquiry is given."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "question metadata"
+        ],
+        "missing_precision": [
+          "No classifier beyond listed distinctions"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B024",
+      "source_order": 24,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          249
+        ],
+        "printed_pages": [
+          215
+        ],
+        "chapter": "XXXVII",
+        "section": "Own goods hidden and forgotten",
+        "passage_anchor": "If the Querent did hide his owne Plate, Money or Jewels",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-249.png"
+        ],
+        "source_first_note_items": [
+          23
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Querent hid own plate/money/jewels in own house or ground",
+          "Forgot where",
+          "Lord 2 angular",
+          "Lord 4 angular"
+        ],
+        "inspection": [
+          "Sign/lord of house 2; sign and quarter occupied by lord 2",
+          "Sign/lord of house 4 and indicated quarters"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Own hidden goods status",
+          "value": "Still in house/ground, not removed",
+          "modality": "Source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "ownership/prior concealment",
+          "house lords",
+          "angularity",
+          "sign quarters"
+        ],
+        "missing_precision": [
+          "Angularity tolerance",
+          "Sign-direction table"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B025",
+      "source_order": 25,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          249
+        ],
+        "printed_pages": [
+          215
+        ],
+        "chapter": "XXXVII",
+        "section": "Own hidden goods removed",
+        "passage_anchor": "but if these Planets be not in Angles",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-249.png"
+        ],
+        "source_first_note_items": [
+          23
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Own goods hidden and forgotten context",
+          "Lords 2 and 4 not angular",
+          {
+            "any": [
+              "Infortune without dignities in house 4",
+              "Infortune without dignities in house 7"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Own hidden goods status",
+          "value": "Some or all removed and made away",
+          "modality": "Source assertion with partial/total alternative"
+        }
+      ],
+      "qualifications": [
+        "No selector between partial and total removal."
+      ],
+      "related_rules": [
+        {
+          "id": "B024",
+          "relation": "Contrasting own-goods branch"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "angularity",
+          "planet category",
+          "dignities",
+          "house placement"
+        ],
+        "missing_precision": [
+          "Dignity conventions",
+          "Mixed angularity case",
+          "Partial/total criterion"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B026",
+      "source_order": 26,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          249
+        ],
+        "printed_pages": [
+          215
+        ],
+        "chapter": "XXXVII",
+        "section": "Own hidden goods location cross-reference",
+        "passage_anchor": "have recourse to the first Chapter of this house concerning things hid",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-249.png"
+        ],
+        "source_first_note_items": [
+          24
+        ]
+      },
+      "evidence": {
+        "kind": "cross_reference",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Own hidden goods context",
+          "Figure promises goods unremoved"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Location method",
+          "value": "Use first chapter of fourth-house block concerning things hidden",
+          "modality": "Explicit internal source cross-reference"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B024",
+          "relation": "Unremoved condition"
+        },
+        {
+          "external": "First chapter of this house concerning things hid",
+          "relation": "Root to resolve to admitted earlier source span; not opened by this reader"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "cross-reference only"
+        ],
+        "missing_precision": [
+          "Target mapping deliberately delegated to root"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B027",
+      "source_order": 27,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          249,
+          250
+        ],
+        "printed_pages": [
+          215,
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "General treasure presence",
+        "passage_anchor": "whether Jupiter or Venus or North Node be in the fourth house",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-249.png",
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          25,
+          26
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "General treasure inquiry without knowledge whose or what",
+          {
+            "any": [
+              "Jupiter in house 4",
+              "Venus in house 4",
+              "North Node in house 4"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure in suspected place",
+          "value": "Probability treasure is there",
+          "modality": "Probability"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "question metadata",
+          "planet/node placement"
+        ],
+        "missing_precision": [
+          "Node calculation mode"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B028",
+      "source_order": 28,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Strengthened general treasure presence",
+        "passage_anchor": "if they be there and in their owne houses",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          26
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Relevant presence significators in house 4",
+          "They in their own houses"
+        ],
+        "unresolved_scope": "Antecedent list includes Jupiter, Venus and North Node; own-house predicate for node not defined"
+      },
+      "outputs": [
+        {
+          "target": "Treasure/value in house or ground",
+          "value": "Source asserts treasure or something valuable without dispute",
+          "modality": "Source certainty assertion, not validated certainty"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B027",
+          "relation": "Strengthened presence clause"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "domicile dignity",
+          "house placement"
+        ],
+        "missing_precision": [
+          "Applicability of own-house predicate to North Node"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Plural their and node domicile ambiguity"
+      ]
+    },
+    {
+      "local_id": "B029",
+      "source_order": 29,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Dignified Saturn/Mars presence",
+        "passage_anchor": "either Saturn or Mars in any of their owne houses",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          27
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          {
+            "all": [
+              "Saturn in own domicile",
+              "Saturn direct",
+              "Saturn without impediment",
+              "Saturn in house 4"
+            ]
+          },
+          {
+            "all": [
+              "Mars in own domicile",
+              "Mars direct",
+              "Mars without impediment",
+              "Mars in house 4"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure presence",
+          "value": "Treasure there also",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B031",
+          "relation": "Author dignity reservation supports noncategorical malefic treatment"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "domicile dignity",
+          "directness",
+          "impediment",
+          "house placement"
+        ],
+        "missing_precision": [
+          "Impediment specification"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B030",
+      "source_order": 30,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Venus Taurus presence",
+        "passage_anchor": "if you find Venus in Taurus in the fourth",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          27
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Venus in Taurus",
+          "Venus in house 4",
+          "Venus not under misfortune"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure presence",
+          "value": "Probably treasure there",
+          "modality": "Probability"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Venus sign/house",
+          "misfortune condition"
+        ],
+        "missing_precision": [
+          "Misfortune threshold"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B031",
+      "source_order": 31,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Dignified significator reservation",
+        "passage_anchor": "there is no Planet unfortunate, when he is in his owne house",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          27
+        ]
+      },
+      "evidence": {
+        "kind": "qualification_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Planet is a significator",
+          {
+            "any": [
+              "Planet in own domicile",
+              "Planet essentially dignified"
+            ]
+          }
+        ],
+        "grammatical_note": "Final and a Significator most naturally qualifies dignity claim; exact grouping left visible"
+      },
+      "outputs": [
+        {
+          "target": "Fortune/infortune classification",
+          "value": "Do not call such a significator unfortunate solely from planet identity",
+          "modality": "Author general reservation"
+        }
+      ],
+      "qualifications": [
+        "Scope is source claim. No new essential-dignity table introduced."
+      ],
+      "related_rules": [
+        {
+          "id": "B029",
+          "relation": "Qualifies treatment of Saturn/Mars as infortunes"
+        },
+        {
+          "id": "B030",
+          "relation": "Follows the Venus example"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "significator role",
+          "essential dignity"
+        ],
+        "missing_precision": [
+          "Dignity categories and weights"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B032",
+      "source_order": 32,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Nature/quality significator selection",
+        "passage_anchor": "If you are ignorant of the nature and quality of the Treasure",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          28
+        ]
+      },
+      "evidence": {
+        "kind": "generic_method_instruction",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "question": "Unknown treasure nature/quality",
+        "branches": [
+          {
+            "if": "Treasure significator is lord 7",
+            "then": "Examine its nature and property"
+          },
+          {
+            "if": "Treasure significator is not lord 7",
+            "then": "Join lord 7 to it in judgement and mix their natures"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature and quality",
+          "value": "Choose single lord-7 nature or mixture as specified",
+          "modality": "Method instruction"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B033",
+          "relation": "Following fallback potentially limits or conflicts with mixture"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "treasure significator",
+          "lord 7",
+          "planet correspondence"
+        ],
+        "missing_precision": [
+          "Initial treasure-significator selection if multiple indications",
+          "Mixture weights"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B033",
+      "source_order": 33,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Following absolute lord-seven fallback",
+        "passage_anchor": "But if that Planet ... be not Lord of the 7th or have affinity with him",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          29
+        ]
+      },
+      "evidence": {
+        "kind": "generic_method_instruction",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "source_condition": "Treasure significator be not Lord of the 7th or have affinity with him",
+        "plausible_readings": [
+          "Neither lord 7 nor having affinity with lord 7",
+          "Literal negation applies only to not lord 7; positive affinity alternative"
+        ],
+        "canonical_boolean": "Unresolved; do not force a contradiction away"
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature/species significator",
+          "value": "Take lord 7 absolutely",
+          "modality": "Method instruction with unresolved grammatical boundary"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B032",
+          "relation": "Adjacent mixture instruction retained; no harmonization imposed"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "lord 7",
+          "treasure significator affinity"
+        ],
+        "missing_precision": [
+          "Affinity definition",
+          "Precedence against preceding mixture"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Scope of not and or have affinity",
+        "Fallback versus mixture precedence"
+      ]
+    },
+    {
+      "local_id": "B034",
+      "source_order": 34,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Sun material correspondence",
+        "passage_anchor": "who if he be the Sun, and he in his house or exaltation",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          30
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Lord 7 is Sun",
+          {
+            "any": [
+              "Sun in domicile",
+              "Sun exalted"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature",
+          "value": "Gold or precious stones/jewels of solar or near-solar colour",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B032",
+          "relation": "Quality-selection context"
+        },
+        {
+          "id": "B033",
+          "relation": "Quality-selection context"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "lord 7",
+          "Sun dignity"
+        ],
+        "missing_precision": [
+          "Colour/value quantification"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B035",
+      "source_order": 35,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Sun and mine quality",
+        "passage_anchor": "And if the Question were, Whether there were a good Mine yea or not?",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          30
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Good-mine question",
+          "Place considered"
+        ],
+        "inherited_context": "Preceding Sun as lord 7 in domicile/exaltation; not fully repeated"
+      },
+      "outputs": [
+        {
+          "target": "Mine quality",
+          "value": "Likely good mine",
+          "modality": "It is like there is"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "question type",
+          "place",
+          "Sun context"
+        ],
+        "missing_precision": [
+          "How place considered enters judgement",
+          "Inherited-condition precision"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Dignity antecedent not repeated in mine sentence"
+      ]
+    },
+    {
+      "local_id": "B036",
+      "source_order": 36,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Less dignified Sun",
+        "passage_anchor": "if the Sun be not so well dignified, and yet signifie the Treasure",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          30
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Sun still signifies treasure",
+          "Sun not so well dignified"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure quality",
+          "value": "Something very precious and near gold in goodness",
+          "modality": "Source graded-quality assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B034",
+          "relation": "Lower-dignity contrast"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Sun significator",
+          "relative dignity"
+        ],
+        "missing_precision": [
+          "Relative dignity threshold",
+          "Material and value mapping precision"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B037",
+      "source_order": 37,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Moon material correspondence",
+        "passage_anchor": "If the Moon be in her owne house or exaltation",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          31
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Moon is lady 7",
+          {
+            "any": [
+              "Moon in domicile",
+              "Moon exalted"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature",
+          "value": "Silver, plate, crystal, or jewels of lunar colour",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Moon dignity",
+          "lord 7"
+        ],
+        "missing_precision": [
+          "Colour specification"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B038",
+      "source_order": 38,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Dignified Mars material correspondence",
+        "passage_anchor": "If Mars be Lord of the seventh, and so dignified",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          32
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Mars lord 7",
+          "Mars so dignified, following domicile/exaltation context"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature",
+          "value": "May be brass or glass, curiosities or engines of iron",
+          "modality": "May be"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Mars dignity",
+          "lord 7"
+        ],
+        "missing_precision": [
+          "Exact inherited dignity condition"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B039",
+      "source_order": 39,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Weak Mars material correspondence",
+        "passage_anchor": "but if he be weak, perhaps you may find",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          32
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Mars as preceding lord-7 context",
+          "Mars weak"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature",
+          "value": "Perhaps old rusty iron, candlesticks, kettles",
+          "modality": "Perhaps"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B038",
+          "relation": "Weakness contrast"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Mars strength"
+        ],
+        "missing_precision": [
+          "Weakness threshold"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B040",
+      "source_order": 40,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250,
+          251
+        ],
+        "printed_pages": [
+          216,
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Iron-stone enquiry",
+        "passage_anchor": "If the Question were about Iron-stone",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png",
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          32,
+          33
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "question": "Iron-stone",
+        "context": "Mars material paragraph; strong/weak qualifier not repeated"
+      },
+      "outputs": [
+        {
+          "target": "Iron-stone quality",
+          "value": "Probably good iron-stone that makes good iron",
+          "modality": "Probable"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "question type",
+          "Mars context"
+        ],
+        "missing_precision": [
+          "Dignity antecedent reach",
+          "Assayed quality criterion"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Whether strong Mars prerequisite carries across weak-Mars sentence"
+      ]
+    },
+    {
+      "local_id": "B041",
+      "source_order": 41,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Fortified Saturn material correspondence",
+        "passage_anchor": "If Saturn be Lord of the seventh, and fortified as before specified",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          33
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Saturn lord 7",
+          "Saturn fortified as before specified"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature",
+          "value": "Valuable antiquities, ancient monuments of deceased people, urn(s), or things wrapped in old black cloth/wooden boxes",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Saturn dignity",
+          "lord 7"
+        ],
+        "missing_precision": [
+          "Inherited fortification standard"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B042",
+      "source_order": 42,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Saturn and coal/stone question",
+        "passage_anchor": "if the Question were concerning any Mine or quarrey of Stone",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          33
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "context": "Saturn lord 7 fortified as before specified",
+        "branches": [
+          {
+            "if": "Question concerns coal",
+            "then": "Very probably rich coal mine"
+          },
+          {
+            "if": "Question concerns stone",
+            "then": "Very probably good stone"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Mine/quarry quality",
+          "value": "Outcome matched to prior-known coal or stone question",
+          "modality": "Very probable"
+        }
+      ],
+      "qualifications": [
+        "Object category is supplied by the question, not inferred afresh from a hit."
+      ],
+      "related_rules": [
+        {
+          "id": "B041",
+          "relation": "Fortified Saturn context"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Saturn fortification",
+          "question metadata"
+        ],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B043",
+      "source_order": 43,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Weak Saturn mine expense",
+        "passage_anchor": "but if Saturn be weak, and ill dignified",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          33
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Saturn in preceding mine-significator context",
+          "Saturn weak",
+          "Saturn ill dignified"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Mine richness and expense",
+          "value": "Mine not rich and cannot be worked without much expense of treasure",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B042",
+          "relation": "Adverse contrast"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Saturn weakness/dignity"
+        ],
+        "missing_precision": [
+          "Cost/richness thresholds"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B044",
+      "source_order": 44,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Mine impediment from Saturn sign",
+        "passage_anchor": "whether it be full of water, or what may be the impediment",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          33
+        ]
+      },
+      "evidence": {
+        "kind": "generic_method_instruction",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "context": "Weak/ill-dignified Saturn mine problem"
+      },
+      "outputs": [
+        {
+          "target": "Nature of impediment",
+          "value": "Infer water or other impediment from Saturn sign, considering earlier chapter content",
+          "modality": "Method instruction"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B043",
+          "relation": "Explains obstructed/expensive working"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Saturn sign"
+        ],
+        "missing_precision": [
+          "Sign-to-impediment rules not repeated",
+          "Water-specific numerical prediction"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B045",
+      "source_order": 45,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Jupiter material correspondence",
+        "passage_anchor": "If Jupiter be Lord of the seventh and essentially fortified",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          34
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Jupiter lord 7",
+          "Jupiter essentially fortified"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature",
+          "value": "Silver, much very rich cloth, or tin",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Jupiter essential dignity",
+          "lord 7"
+        ],
+        "missing_precision": [
+          "Dignity threshold",
+          "Quantity"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B046",
+      "source_order": 46,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Venus material correspondence",
+        "passage_anchor": "If Venus be Lady of the seventh",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          34
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Venus lady 7"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature",
+          "value": "Curious household goods, costly jewels or fine linen hidden",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "No dignity prerequisite is explicitly restated in this Venus sentence."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Venus lady 7"
+        ],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B047",
+      "source_order": 47,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Mercury material correspondence",
+        "passage_anchor": "If Mercury be Significator",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          34
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Mercury significator"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature",
+          "value": "Pictures, medals, writings, books or pretty toys hidden or sought",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "Source says significator, without explicitly repeating lord 7 or a dignity prerequisite."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Mercury significator"
+        ],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B048",
+      "source_order": 48,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "If the Querent shall obtaine the Treasure hid",
+        "passage_anchor": "If the Planet who signifies the Treasure or thing hid, doth apply",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          35
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          "Treasure significator applies TO lord 1",
+          "Mutual reception between treasure significator and lord 1",
+          "Translation of light and nature between them",
+          "Collation of light and nature between them"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Acquisition",
+          "value": "Probably querent obtains sought thing",
+          "modality": "Probable"
+        }
+      ],
+      "qualifications": [
+        "Keep application direction. Original word is collation; a modern collection-of-light normalization would require explicit justification."
+      ],
+      "related_rules": [
+        {
+          "id": "B049",
+          "relation": "Hard-aspect qualification"
+        },
+        {
+          "id": "B050",
+          "relation": "Conjunction preference"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "directional application treasure -> lord 1",
+          "mutual reception",
+          "translation",
+          "collation"
+        ],
+        "missing_precision": [
+          "Aspect/orb/reception/light-transfer conventions"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B049",
+      "source_order": 49,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Hard aspect qualification",
+        "passage_anchor": "if the aspect be by square or opposition",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          36
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Prior acquisition aspect operates",
+          {
+            "any": [
+              "Square",
+              "Opposition"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Difficulty of acquisition",
+          "value": "Not without difficulty and much labour",
+          "modality": "Qualification of acquisition, not denial"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B048",
+          "relation": "Does not negate prior probable acquisition"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "aspect type"
+        ],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B050",
+      "source_order": 50,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Conjunction and strengthened acquisition",
+        "passage_anchor": "the conjunction of both Significators best of all performes the businesse",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          36
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "base": "Conjunction of treasure significator and lord 1",
+        "strengthened_if": {
+          "all": [
+            "Both in a fixed sign",
+            {
+              "any": [
+                "Both in querent house 2",
+                "Both in ascendant"
+              ]
+            }
+          ]
+        }
+      },
+      "outputs": [
+        {
+          "target": "Acquisition facility/assurance",
+          "value": "Conjunction best performs business; fixed-sign and favourable-house conjunction more assured",
+          "modality": "Relative preference and strengthened assurance"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B048",
+          "relation": "Preferred form of contact"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "conjunction",
+          "sign modality",
+          "house placement"
+        ],
+        "missing_precision": [
+          "Conjunction orb",
+          "Relative scoring"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B051",
+      "source_order": 51,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Luminary in ascendant",
+        "passage_anchor": "either of the Luminaries placed in the ascendant and not unfortunated",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          37
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          {
+            "all": [
+              "Sun in ascendant",
+              "Sun not unfortunated"
+            ]
+          },
+          {
+            "all": [
+              "Moon in ascendant",
+              "Moon not unfortunated"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Facility of treasure recovery",
+          "value": "Great facility in work",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "luminary house",
+          "unfortunate condition"
+        ],
+        "missing_precision": [
+          "Angularity tolerance",
+          "Misfortune threshold"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B052",
+      "source_order": 52,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Cadent luminaries with no ascendant testimony",
+        "passage_anchor": "if neither of them be in the ascendant, or behold it",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          37
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Neither luminary in ascendant",
+          "Neither luminary beholds ascendant",
+          "Both luminaries cadent"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Hope of recovery",
+          "value": "Little hope",
+          "modality": "Little hope, not absolute impossibility"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B051",
+          "relation": "Contrasting luminary state"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "luminary houses",
+          "aspects to ascendant",
+          "cadency"
+        ],
+        "missing_precision": [
+          "Beholding definition/orb",
+          "Combination with other positive testimony"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B053",
+      "source_order": 53,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Part of Fortune and disposer in ascendant",
+        "passage_anchor": "When Part of Fortune is in the ascendant, and also his Lord or Disposer",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          38
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Part of Fortune in ascendant",
+          "Part of Fortune lord/disposer in ascendant"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure acquisition",
+          "value": "Promises acquisition",
+          "modality": "Source promise"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Part of Fortune",
+          "disposer",
+          "ascendant placement"
+        ],
+        "missing_precision": [
+          "Fortune formula",
+          "Disposer rule",
+          "Placement tolerance"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B054",
+      "source_order": 54,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251,
+          252
+        ],
+        "printed_pages": [
+          217,
+          218
+        ],
+        "chapter": "XXXVII",
+        "section": "Adverse Fortune/luminary clause",
+        "passage_anchor": "but if the Lord of Part of Fortune be cadent, and both the Lights",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png",
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+        ],
+        "source_first_note_items": [
+          38,
+          39
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "source_sequence": [
+          "Lord of Part of Fortune cadent",
+          "and both the lights, especially Moon",
+          "and have no aspect to Part of Fortune"
+        ],
+        "plausible_readings": [
+          {
+            "all": [
+              "Fortune lord cadent",
+              "Both lights cadent by grammatical ellipsis",
+              "They have no aspect to Fortune"
+            ]
+          },
+          {
+            "all": [
+              "Fortune lord cadent",
+              "Both lights especially Moon have no aspect to Fortune"
+            ]
+          }
+        ],
+        "canonical_boolean": "Unresolved scope of elided cadency and subject of no aspect"
+      },
+      "outputs": [
+        {
+          "target": "Treasure acquisition",
+          "value": "No hope of obtaining",
+          "modality": "Author gives no hope"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B053",
+          "relation": "Adverse contrast"
+        },
+        {
+          "id": "B055",
+          "relation": "Following OR alternative"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Fortune lord",
+          "cadency",
+          "luminary aspects to Fortune"
+        ],
+        "missing_precision": [
+          "Cadency scope",
+          "Aspect/orb convention",
+          "Contrary-testimony precedence"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Does cadent also modify both lights?",
+        "Does no aspect include Fortune lord?"
+      ]
+    },
+    {
+      "local_id": "B055",
+      "source_order": 55,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          252
+        ],
+        "printed_pages": [
+          218
+        ],
+        "chapter": "XXXVII",
+        "section": "Adverse ascendant-lord alternative",
+        "passage_anchor": "or the Lord of the ascendant behold not the ascendant",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+        ],
+        "source_first_note_items": [
+          39
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Lord 1 does not behold ascendant"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure acquisition",
+          "value": "No hope of obtaining",
+          "modality": "Author gives no hope"
+        }
+      ],
+      "qualifications": [
+        "This is an OR alternative to preceding Fortune/luminaries clause, not an additional required conjunct."
+      ],
+      "related_rules": [
+        {
+          "id": "B054",
+          "relation": "Alternative sufficient adverse branch as printed"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "lord 1 aspect to ascendant"
+        ],
+        "missing_precision": [
+          "Beholding definition/orb",
+          "Contrary testimony precedence"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B056",
+      "source_order": 56,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          252
+        ],
+        "printed_pages": [
+          218
+        ],
+        "chapter": "XXXVII",
+        "section": "Alkindus general rule: presence",
+        "passage_anchor": "Alkindus giveth this generall rule",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+        ],
+        "source_first_note_items": [
+          40
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Alkindus, quoted/reported by Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "setup": [
+          "Erect figure aright",
+          "Consider several planetary aspects"
+        ],
+        "any": [
+          "Fortune in ascendant",
+          "Fortune in any angle"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure presence/unremoved status",
+          "value": "Treasure exists and hidden thing remains in ground",
+          "modality": "Attributed rule says to affirm"
+        }
+      ],
+      "qualifications": [
+        "No harmonized priority against preceding lord-4 and lord-7 rules supplied."
+      ],
+      "related_rules": [
+        {
+          "id": "B027",
+          "relation": "Distinct presence doctrine"
+        },
+        {
+          "id": "B024",
+          "relation": "Distinct unremoved-status doctrine"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "planet category",
+          "angularity",
+          "figure correctness"
+        ],
+        "missing_precision": [
+          "Chart settings",
+          "Angularity tolerance"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B057",
+      "source_order": 57,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          252
+        ],
+        "printed_pages": [
+          218
+        ],
+        "chapter": "XXXVII",
+        "section": "Alkindus treasure value",
+        "passage_anchor": "the quantity, price, esteem thereof, shall be according",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+        ],
+        "source_first_note_items": [
+          40
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Alkindus, reported by Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Fortune signifies treasure under attributed angular-fortune rule"
+        ],
+        "scaling": "Potency, virtue or debility of that fortune"
+      },
+      "outputs": [
+        {
+          "target": "Quantity, price and esteem",
+          "value": "Vary with fortune potency/virtue/debility",
+          "modality": "Qualitative attributed scaling"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B056",
+          "relation": "Dependent on identified fortune"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "signifying fortune strength"
+        ],
+        "missing_precision": [
+          "Units",
+          "Weights",
+          "Thresholds",
+          "Value/quantity formula"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B058",
+      "source_order": 58,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          252
+        ],
+        "printed_pages": [
+          218
+        ],
+        "chapter": "XXXVII",
+        "section": "Alkindus recovery of unremoved treasure",
+        "passage_anchor": "If you find the thing hid to be unremoved",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+        ],
+        "source_first_note_items": [
+          41
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Alkindus, reported by Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Thing judged unremoved",
+          "Good aspect",
+          "Reception"
+        ],
+        "actors": [
+          "Lord 1",
+          "Moon",
+          "Fortune that signified treasure"
+        ],
+        "source_relation": "Any good aspect betwixt them, and that Fortune ... viz. a good aspect and reception",
+        "canonical_wiring": "Unresolved which pairwise aspect/reception edges are mandatory"
+      },
+      "outputs": [
+        {
+          "target": "Treasure acquisition",
+          "value": "Querent shall have thing sought",
+          "modality": "Attributed conditional assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B056",
+          "relation": "Requires treasure unremoved and its fortune identified"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "lord 1",
+          "Moon",
+          "signifying fortune",
+          "good aspect",
+          "reception"
+        ],
+        "missing_precision": [
+          "Pairwise wiring",
+          "Reception direction",
+          "Aspect/orb/reception conventions"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "them-and-that-Fortune relation graph"
+      ]
+    },
+    {
+      "local_id": "B059",
+      "source_order": 59,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          252
+        ],
+        "printed_pages": [
+          218
+        ],
+        "chapter": "XXXVII",
+        "section": "Alkindus place by sign modality",
+        "passage_anchor": "He further saith, that fixed Signes shew the thing is hid in the Earth",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+        ],
+        "source_first_note_items": [
+          42
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Alkindus, reported by Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "branches": [
+          {
+            "if": "Fixed sign",
+            "then": "In earth"
+          },
+          {
+            "if": "Common sign",
+            "then": "In or near wall"
+          },
+          {
+            "if": "Movable sign",
+            "then": "On high or in house covering"
+          }
+        ],
+        "sign_subject": "Nearest context suggests treasure significator; not explicitly renamed in this sentence"
+      },
+      "outputs": [
+        {
+          "target": "Location category",
+          "value": "As modality branches specify",
+          "modality": "Attributed symbolic location mapping"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "sign modality"
+        ],
+        "missing_precision": [
+          "Which sign when multiple significators",
+          "Location precision"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Significator attachment implicit"
+      ]
+    },
+    {
+      "local_id": "B060",
+      "source_order": 60,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          252
+        ],
+        "printed_pages": [
+          218
+        ],
+        "chapter": "XXXVII",
+        "section": "Alkindus ordinal depth",
+        "passage_anchor": "whether it lye deep in the earth or not",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+        ],
+        "source_first_note_items": [
+          43
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Alkindus, reported by Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "subject": "Treasure significator degree within sign",
+        "branches": [
+          {
+            "if": "Newly entered sign",
+            "then": "Shallow, near upper earth"
+          },
+          {
+            "if": "Further through sign",
+            "then": "Deeper"
+          }
+        ],
+        "inspection": [
+          "Beginning",
+          "Middle",
+          "Near end"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Depth category",
+          "value": "Ordinal increase in depth with progress through sign",
+          "modality": "Attributed qualitative rule"
+        }
+      ],
+      "qualifications": [
+        "Do not convert degrees to feet/metres or impose decans/thirds."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "sign-relative longitude"
+        ],
+        "missing_precision": [
+          "Beginning/middle/end degree cutoffs",
+          "Depth units",
+          "Linear or nonlinear conversion",
+          "Maximum depth"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B061",
+      "source_order": 61,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          252
+        ],
+        "printed_pages": [
+          218
+        ],
+        "chapter": "XXXVII",
+        "section": "Digging condition: infortunes",
+        "passage_anchor": "when you would dig, let not the Infortunes be angular",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+        ],
+        "source_first_note_items": [
+          44
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Within Alkindus passage as reported by Lilly; final sentence not separately reattributed",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "action": "Choose/assess digging time",
+        "requirement": "Infortunes not angular"
+      },
+      "outputs": [
+        {
+          "target": "Digging setup",
+          "value": "Avoid angular infortunes",
+          "modality": "Action/election instruction"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "infortune identity",
+          "angularity"
+        ],
+        "missing_precision": [
+          "Angularity tolerance",
+          "Timing window"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B062",
+      "source_order": 62,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          252
+        ],
+        "printed_pages": [
+          218
+        ],
+        "chapter": "XXXVII",
+        "section": "Digging preferred applications and Moon chain",
+        "passage_anchor": "but if possible, the Significators applying by sextile or trine",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+        ],
+        "source_first_note_items": [
+          44
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Within Alkindus passage as reported by Lilly; final sentence not separately reattributed",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "if_possible": {
+          "any": [
+            {
+              "all": [
+                "Significators applying TO lord 2",
+                {
+                  "any": [
+                    "Sextile",
+                    "Trine"
+                  ]
+                }
+              ]
+            },
+            {
+              "sequence": [
+                "Moon separates FROM treasure significator",
+                "Moon applies TO lord 1"
+              ]
+            }
+          ]
+        }
+      },
+      "outputs": [
+        {
+          "target": "Digging setup",
+          "value": "Prefer specified applying configuration or ordered Moon transfer",
+          "modality": "If possible; preference, not absolute necessity"
+        }
+      ],
+      "qualifications": [
+        "End of assigned source and Chapter XXXVII. No Chapter XXXVIII content read."
+      ],
+      "related_rules": [
+        {
+          "id": "B061",
+          "relation": "Same digging instruction"
+        },
+        {
+          "id": "B048",
+          "relation": "Different application directions and action context; do not merge"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "directional applying aspects",
+          "Moon separation -> application chronology",
+          "lord 2",
+          "lord 1"
+        ],
+        "missing_precision": [
+          "Which plural significators",
+          "Aspect/orb/time conventions"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    }
+  ],
+  "candidate_count": 62,
+  "coverage_artifact": "SECTION_COVERAGE.json",
+  "issues_artifact": "ISSUES_LEDGER.json",
+  "historical_case_ledger": {
+    "named_dated_chart_cases": [],
+    "scope_limitation": "No dated named historical enquiry or chart in PDF246-252. Generalized retrospective practice and feedback appear in XXXV.",
+    "prior_known": "Treasure proposal/ownership/object conditions must be held as known inputs",
+    "judgement": "Conditional historical horary propositions in candidate rows",
+    "reported_confirmation": "Only Lilly aggregate retrospective memory of no regret and thanks/rewards in B011; not case-level confirmation"
+  }
+}

@@ -1,0 +1,1318 @@
+{
+  "schema_version": "b02i.local_source_candidate_rules.v1",
+  "producer": "/root/b02i_worked_charts",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "frozen_notes_sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+  "source_scope": {
+    "chapter": "XXXVIII",
+    "pdf_start": 253,
+    "printed_start": 219,
+    "pdf_end": 256,
+    "printed_end": 222,
+    "end_anchor": "or my Wife a Scriveners Widdow.",
+    "end_before": "horizontal divider and fifth-house heading"
+  },
+  "extraction_policy": "Source-ordered rule candidates plus non-rule context/outcome records preserve all admitted units. Interpretive candidates are not promoted runtime rules.",
+  "post_freeze_source_reopen": "Original page renders253–256 reopened immediately before candidate composition.",
+  "candidate_count": 29,
+  "candidates": [
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C001",
+      "source_order": 1,
+      "source_pages": [
+        {
+          "pdf": 253,
+          "printed": 219
+        }
+      ],
+      "source_anchors": [
+        "A253-H",
+        "A253-P"
+      ],
+      "record_type": "preamble_and_method_report",
+      "title": "Self-question, prior intention and known finance constraint",
+      "exact_anchor_excerpt": "being desirous, I say, to purchase the said houses, and fully resolved upon it",
+      "conditions": [
+        "Houses offered for purchase in 1634, including the house in which the author writes that he lives in 1647.",
+        "His own money required six months' notice to recall.",
+        "He was already desirous and fully resolved to purchase.",
+        "He took his own question when his mind was most perplexed and solicitous."
+      ],
+      "consequences": [
+        "Reported purpose: determine whether he would deal with the seller and obtain money in time to pay."
+      ],
+      "modifiers": [
+        "Question selection and prior intentions are disclosed inputs, not predictions."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "pre_question_intention",
+          "text": "Already fully resolved to purchase.",
+          "predicted": false
+        },
+        {
+          "type": "pre_question_known_constraint",
+          "text": "Own money unavailable without six months' notice.",
+          "predicted": false
+        }
+      ],
+      "unresolveds": [
+        "No independent contemporaneous freeze of his question or intention is provided in this passage."
+      ],
+      "hypothesis_or_report": "Reported conduct and case framing; no generalized timing-of-question rule asserted."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C002",
+      "source_order": 2,
+      "source_pages": [
+        {
+          "pdf": 253,
+          "printed": 219
+        }
+      ],
+      "source_anchors": [
+        "A253-F"
+      ],
+      "record_type": "figure_record",
+      "title": "Actual purchase figure and central annotations",
+      "exact_anchor_excerpt": "31 Mar: 1634",
+      "conditions": [
+        "Original figure is present on PDF253."
+      ],
+      "consequences": [
+        "Transcribe the one actual chart under CH01 in NUMERIC_TABLES.json."
+      ],
+      "modifiers": [
+        "Central time is 6 Hor: P M:; no time minutes, timezone or latitude label is printed."
+      ],
+      "reported_outcomes": [],
+      "unresolveds": [
+        "Dñs and astr abbreviation typography remains partly uncertain."
+      ],
+      "hypothesis_or_report": "Direct diagram evidence; numbers are source inputs, not interpreted outcomes."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C003",
+      "source_order": 3,
+      "source_pages": [
+        {
+          "pdf": 254,
+          "printed": 220
+        }
+      ],
+      "source_anchors": [
+        "A254-01"
+      ],
+      "record_type": "reported_omen",
+      "title": "Rising degree matches natal Jupiter",
+      "exact_anchor_excerpt": "the degree of the Signe is the same wherein ♃ was in my Radix",
+      "conditions": [
+        "Libra ascends.",
+        "The author says the rising degree is the same degree as Jupiter occupied in his radix."
+      ],
+      "consequences": [
+        "He regarded this as a good omen."
+      ],
+      "modifiers": [],
+      "reported_outcomes": [],
+      "unresolveds": [
+        "The radix and its Jupiter coordinate are not supplied in this bounded chapter, so the claimed equality cannot be independently checked here."
+      ],
+      "hypothesis_or_report": "Author's reported omen; no quantified benefit or general tolerance."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C004",
+      "source_order": 4,
+      "source_pages": [
+        {
+          "pdf": 254,
+          "printed": 220
+        }
+      ],
+      "source_anchors": [
+        "A254-02"
+      ],
+      "record_type": "significator_assignment",
+      "title": "Venus for self; Sun for seller through seventh placement",
+      "exact_anchor_excerpt": "the ☉ locally placed in the seventh is for the Seller",
+      "conditions": [
+        "Venus is assigned to the author.",
+        "Sun is locally placed in the seventh."
+      ],
+      "consequences": [
+        "Sun is assigned to the seller.",
+        "Sun receives Venus in his exaltation."
+      ],
+      "modifiers": [
+        "Later in the same paragraph the source calls Sun Lord of the seventh and also Lord of the eleventh; preserve the exact wording."
+      ],
+      "reported_outcomes": [],
+      "unresolveds": [
+        "The figure prints Aries on the seventh cusp; local assignment and later Lord-of-seventh wording are not silently harmonized."
+      ],
+      "hypothesis_or_report": "Case-specific mapping and source terminology.",
+      "source_tension": "The seventh-house local-placement assignment is explicit; a general rule substituting Sun for the cusp ruler is not separately formulated."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C005",
+      "source_order": 5,
+      "source_pages": [
+        {
+          "pdf": 254,
+          "printed": 220
+        }
+      ],
+      "source_anchors": [
+        "A254-02"
+      ],
+      "record_type": "reported_case_inference",
+      "title": "No other purchaser at the time of the question",
+      "exact_anchor_excerpt": "there was at present no other purchaser about it but my selfe",
+      "conditions": [
+        "Venus near seventh cusp.",
+        "Source states no other planet in the seventh except Sun, beside Venus."
+      ],
+      "consequences": [
+        "At present, no other purchaser but the author."
+      ],
+      "modifiers": [
+        "The later rival is expressly placed after commencement and before conclusion in the marginal note."
+      ],
+      "reported_outcomes": [],
+      "unresolveds": [
+        "Mercury is visibly drawn in the seventh sector at Taurus3°38′, before the Taurus6°26′ eighth cusp; retain the diagram/prose tension.",
+        "The initial absence of competitors is not independently verified by this reader."
+      ],
+      "hypothesis_or_report": "Source inference about present circumstances, distinguished from later competition."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C006",
+      "source_order": 6,
+      "source_pages": [
+        {
+          "pdf": 254,
+          "printed": 220
+        }
+      ],
+      "source_anchors": [
+        "A254-02"
+      ],
+      "record_type": "reported_case_rule_and_outcome",
+      "title": "Exalted angular seller significator and high demands",
+      "exact_anchor_excerpt": "the ☉ so exalted and angular prenoted the Seller to be high in his Demands",
+      "conditions": [
+        "Sun signifies seller.",
+        "Sun exalted and angular."
+      ],
+      "consequences": [
+        "Seller high in demands.",
+        "Seller not necessitated to sell."
+      ],
+      "modifiers": [],
+      "reported_outcomes": [
+        {
+          "type": "author_reported_confirmation",
+          "text": "and so he was",
+          "independent_episode": false
+        },
+        {
+          "type": "reported_negotiation_detail",
+          "text": "Later narrative says seller demanded £530 and did not abate a penny.",
+          "related_anchor": "A254-05",
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "No quantitative threshold for a high demand is given."
+      ],
+      "hypothesis_or_report": "Interpretive rule illustrated by the author's own report."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C007",
+      "source_order": 7,
+      "source_pages": [
+        {
+          "pdf": 254,
+          "printed": 220
+        }
+      ],
+      "source_anchors": [
+        "A254-02"
+      ],
+      "record_type": "reported_case_rule",
+      "title": "Reception near the western cusp supports proceeding despite debility",
+      "exact_anchor_excerpt": "notwithstanding ♀ her many Debilities",
+      "conditions": [
+        "Querent's Venus received by Sun.",
+        "Venus near western-angle/seventh cusp.",
+        "Sun also signifies the eleventh/author's hopes."
+      ],
+      "consequences": [
+        "Author will proceed further.",
+        "His hopes should not be frustrated."
+      ],
+      "modifiers": [
+        "Venus's many debilities are explicitly retained as a contrary condition, not erased by the favorable testimony."
+      ],
+      "reported_outcomes": [],
+      "unresolveds": [
+        "No numerical weighting or precedence between reception, angular proximity, hope rulership and debility is provided."
+      ],
+      "hypothesis_or_report": "Author's assurance about this intended transaction, not independently frozen forecast."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C008",
+      "source_order": 8,
+      "source_pages": [
+        {
+          "pdf": 254,
+          "printed": 220
+        }
+      ],
+      "source_anchors": [
+        "A254-03"
+      ],
+      "record_type": "reported_case_rule",
+      "title": "Applying Venus-Saturn trine without abscission or frustration",
+      "exact_anchor_excerpt": "had no abscission or frustration ere the perfect aspect",
+      "conditions": [
+        "Venus applies to trine Saturn.",
+        "Saturn rules fourth and the houses sought.",
+        "No abscission or frustration before perfection.",
+        "Saturn retrograde; source says both significators therefore strongly apply."
+      ],
+      "consequences": [
+        "Strong argument that he should buy the houses."
+      ],
+      "modifiers": [
+        "Absence of prevention before perfection is essential.",
+        "Retrogradation strengthens mutual application in this clause even though later also counted as a debility."
+      ],
+      "reported_outcomes": [],
+      "unresolveds": [
+        "No exact prevention algorithm, planetary speed table or future ephemeris is supplied in the chapter."
+      ],
+      "hypothesis_or_report": "Conditional source argument illustrated by this case."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C009",
+      "source_order": 9,
+      "source_pages": [
+        {
+          "pdf": 254,
+          "printed": 220
+        }
+      ],
+      "source_anchors": [
+        "A254-04"
+      ],
+      "record_type": "reported_case_rule",
+      "title": "Sun-Saturn trine with alternative Saturn roles",
+      "exact_anchor_excerpt": "now whether you consider him, as having Dignities in the ascendant, or as Lord of the fourth",
+      "conditions": [
+        "Sun is stated to be in perfect trine with Saturn.",
+        "Sun rules eleventh.",
+        "Saturn rules fourth.",
+        "Saturn also signifies querent by aspect to ascendant and exaltation there.",
+        "Sun and Saturn are said to apply to each other by trine."
+      ],
+      "consequences": [
+        "He should proceed further and eventually conclude the purchase."
+      ],
+      "modifiers": [
+        "Saturn-as-querent and Saturn-as-fourth-lord are explicit alternatives within the same testimony; do not count them as independent cases."
+      ],
+      "reported_outcomes": [],
+      "unresolveds": [
+        "The text calls the aspect perfect but gives no orb definition in this chapter.",
+        "Shared aspect and significator cannot be treated as independent corroboration merely because two roles are discussed."
+      ],
+      "hypothesis_or_report": "Case-specific favorable testimony with explicitly alternative roles."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C010",
+      "source_order": 10,
+      "source_pages": [
+        {
+          "pdf": 254,
+          "printed": 220
+        }
+      ],
+      "source_anchors": [
+        "A254-05"
+      ],
+      "record_type": "reported_case_rule",
+      "title": "Lunar translation through square and long-ascension signs",
+      "exact_anchor_excerpt": "though by a □ aspect (yet out of Signes of long ascensions)",
+      "conditions": [
+        "Moon translates influence of Mars to Saturn.",
+        "Mars has dignities in seventh.",
+        "Saturn has virtue in ascendant.",
+        "The translation involves a square.",
+        "Source qualifies the square as from signs of long ascensions."
+      ],
+      "consequences": [
+        "Facilitates the matter.",
+        "Supports proceeding and probability of contracting.",
+        "Proceeding is leisurely and slow because of square."
+      ],
+      "modifiers": [
+        "Favorable facilitation coexists with delay.",
+        "Do not generalize the long-ascension qualification into all squares."
+      ],
+      "reported_outcomes": [],
+      "unresolveds": [
+        "Exact sequencing and a permissible square threshold are not specified by this paragraph.",
+        "Central chart annotation reads Moon from conjunction Mars to square Saturn; source statement is retained separately from any arithmetic."
+      ],
+      "hypothesis_or_report": "Conditional interpretation, including both favorable and adverse consequences."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C011",
+      "source_order": 11,
+      "source_pages": [
+        {
+          "pdf": 254,
+          "printed": 220
+        }
+      ],
+      "source_anchors": [
+        "A254-05"
+      ],
+      "record_type": "reported_case_rule_and_outcome",
+      "title": "Affliction and unfortunate Venus linked to effort and fixed price",
+      "exact_anchor_excerpt": "the Seller not abating one penny of five hundred and thirty pounds",
+      "conditions": [
+        "Moon afflicted.",
+        "Venus unfortunate."
+      ],
+      "consequences": [
+        "Much work and many meetings about the purchase."
+      ],
+      "modifiers": [
+        "Seller's unchanging first demand of £530 accompanies the same negotiation narrative."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "reported_past_conduct",
+          "text": "Many meetings and much to do.",
+          "predicted": false,
+          "independent_episode": false
+        },
+        {
+          "type": "reported_price_history",
+          "text": "Seller did not lower his first demand of £530.",
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "Meetings were the author's actual conduct in a transaction he already intended; not independent validation of completion."
+      ],
+      "hypothesis_or_report": "Retrospective correspondence and actual negotiation history."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C012",
+      "source_order": 12,
+      "source_pages": [
+        {
+          "pdf": 254,
+          "printed": 220
+        },
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A254-06",
+        "A255-01"
+      ],
+      "record_type": "reported_case_rule_and_outcome",
+      "title": "Jovial rival and failure to secure the purchase",
+      "exact_anchor_excerpt": "As the ☉ is neer to a ⚹ aspect of ♃",
+      "conditions": [
+        "Sun near sextile Jupiter.",
+        "Jupiter cadent and in detriment.",
+        "Venus angular and aspecting Saturn, lord of the thing sought."
+      ],
+      "consequences": [
+        "A jovial man endeavors to obtain purchase.",
+        "Jupiter's condition contrasted with Venus-Saturn indicates he should not prevail."
+      ],
+      "modifiers": [
+        "Printed margin: This was after I begun, and before I concluded.",
+        "The later rival does not by itself contradict an assertion restricted to no rival at the original moment."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "reported_later_competition",
+          "text": "A jovial man tried to procure the purchase.",
+          "distinct_episode_within_same_case": true
+        },
+        {
+          "type": "reported_case_resolution",
+          "text": "The author later bargained and completed payment.",
+          "related_anchor": "A255-04",
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "No independent rival testimony or dated third-party transaction record is supplied."
+      ],
+      "hypothesis_or_report": "Author's retrospective episode and aspect explanation."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C013",
+      "source_order": 13,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-01"
+      ],
+      "record_type": "reported_case_rule_and_outcome",
+      "title": "Seller's daughter as fifth from seventh",
+      "exact_anchor_excerpt": "Lord of the eleventh, which is the fift from the seventh",
+      "conditions": [
+        "Sun rules radical eleventh.",
+        "Eleventh is fifth from seller's seventh."
+      ],
+      "consequences": [
+        "Seller's daughter a good friend to author in the business.",
+        "She prevents interlopers intervening despite fair offers."
+      ],
+      "modifiers": [
+        "Marginal note qualifies those offers as To hinder me."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "reported_assistance",
+          "text": "Seller's daughter acted to block competitors.",
+          "distinct_episode_within_same_case": true
+        }
+      ],
+      "unresolveds": [
+        "This is a reported causal contribution by an actor in the same purchase, not independent chart confirmation."
+      ],
+      "hypothesis_or_report": "Turned-house interpretation of reported assistance."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C014",
+      "source_order": 14,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-02"
+      ],
+      "record_type": "reported_case_rule_and_outcome",
+      "title": "Second-house Mars retrograde and no own funds",
+      "exact_anchor_excerpt": "argued I should get none of my owne Monies to supply my occasions; nor did I",
+      "conditions": [
+        "Mars rules author's second.",
+        "Mars retrograde."
+      ],
+      "consequences": [
+        "He should obtain none of his own money for the purchase."
+      ],
+      "modifiers": [
+        "Preamble already says those funds could not be recalled with less than six months' notice."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "reported_financing_constraint",
+          "text": "No own funds obtained.",
+          "known_before_question_in_substantial_part": true,
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "Known notice restriction must not become independent predictive success."
+      ],
+      "hypothesis_or_report": "Source hypothesis plus author-reported outcome, substantially exposed by prior case information."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C015",
+      "source_order": 15,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-02"
+      ],
+      "record_type": "reported_case_rule_and_outcome",
+      "title": "Jupiter conditions and Mars direct associated with a £500 loan",
+      "exact_anchor_excerpt": "when he entred ♋, and ♂ became direct",
+      "conditions": [
+        "Jupiter rules Fortune.",
+        "Jupiter sextile Sun.",
+        "No impediment to Jupiter except detriment.",
+        "Jupiter in platick sextile Venus, lady of ascendant.",
+        "Jupiter shortly entering exaltation/Cancer.",
+        "Mars to become direct."
+      ],
+      "consequences": [
+        "Author expected to procure money when Jupiter entered Cancer and Mars became direct."
+      ],
+      "modifiers": [
+        "The source says which he did twelve dayes after, at which time a friend lent £500.",
+        "Do not discard detriment; the text explicitly names it as the exception."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "reported_later_loan",
+          "text": "Friend lent £500 at the narrated time.",
+          "distinct_episode_within_same_case": true,
+          "independently_verified": false
+        }
+      ],
+      "unresolveds": [
+        "Nearest grammatical antecedent of which he did is Mars becoming direct; exact intended joint timing remains to be checked.",
+        "No ephemeris verification or independent lending record has been performed.",
+        "Platick sextile carries no numerical threshold in this chapter."
+      ],
+      "hypothesis_or_report": "Author-reported expectation, timing and subsequent funding episode; not a new independent case."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C016",
+      "source_order": 16,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-03"
+      ],
+      "record_type": "reported_property_interpretation",
+      "title": "Old but strong houses",
+      "exact_anchor_excerpt": "the Houses were really old, but strong and able to stand many yeers",
+      "conditions": [
+        "Capricorn fourth cusp.",
+        "Saturn fourth lord.",
+        "Saturn has no material debilities except retrogradation and cadency.",
+        "Saturn trine Sun."
+      ],
+      "consequences": [
+        "Houses old.",
+        "Houses strong and able to stand for many years."
+      ],
+      "modifiers": [
+        "Both named debilities are preserved.",
+        "Old age and structural durability are separate descriptions."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "reported_property_description",
+          "text": "Houses really old but strong.",
+          "predicted": false
+        },
+        {
+          "type": "future_durability_expectation",
+          "text": "Able to stand many years.",
+          "eventual_verification_in_span": false
+        }
+      ],
+      "unresolveds": [
+        "No independent structural assessment or later durability result is provided."
+      ],
+      "hypothesis_or_report": "Property description with a durability expectation."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C017",
+      "source_order": 17,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-04"
+      ],
+      "record_type": "reported_timing_correspondence",
+      "title": "Venus-Sun conjunction and bargain on 25 April",
+      "exact_anchor_excerpt": "When ♀ and ☉ came to ☌ in ♉, that day I bargained",
+      "conditions": [
+        "Venus and Sun came to conjunction in Taurus, according to narrative."
+      ],
+      "consequences": [
+        "The author bargained that day: die ♀ 25. Aprill following."
+      ],
+      "modifiers": [
+        "This is the bargain/agreement episode, distinct from later payment and sealing."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "reported_past_conduct",
+          "text": "Author made the bargain on stated 25 April.",
+          "distinct_episode_within_same_case": true,
+          "predicted_in_advance_in_span": false
+        }
+      ],
+      "unresolveds": [
+        "No claim that this exact date was forecast beforehand appears in this passage.",
+        "Calendar convention and astronomical conjunction not independently checked."
+      ],
+      "hypothesis_or_report": "Retrospective dated correspondence, not automatically an advance prediction."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C018",
+      "source_order": 18,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-04"
+      ],
+      "record_type": "reported_timing_correspondence",
+      "title": "Venus-Moon conjunction, payment and sealed conveyance on 17 May",
+      "exact_anchor_excerpt": "the seventeenth of May ♀ and ☽ in ☌",
+      "conditions": [
+        "Venus and Moon in conjunction on stated 17 May, according to source."
+      ],
+      "consequences": [
+        "Author paid £530.",
+        "His conveyance was sealed."
+      ],
+      "modifiers": [
+        "Payment and sealing occur in the same reported completion episode.",
+        "The Venus glyph after May belongs to the conjunction clause; do not treat it as an extra weekday assertion."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "reported_past_conduct",
+          "text": "£530 paid and conveyance sealed on 17 May.",
+          "distinct_episode_within_same_case": true,
+          "predicted_in_advance_in_span": false
+        }
+      ],
+      "unresolveds": [
+        "No independent payment or conveyance record inspected.",
+        "No exact-date advance forecast established in the admitted passage."
+      ],
+      "hypothesis_or_report": "Author-reported completion date and conjunction association."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C019",
+      "source_order": 19,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-04"
+      ],
+      "record_type": "reported_degree_time_correspondence",
+      "title": "Six degrees compared with six weeks and some days",
+      "exact_anchor_excerpt": "so was it six weekes and some dayes from the time of the Question",
+      "conditions": [
+        "Source states Venus wanted six degrees of Sun's body.",
+        "The source places final perfection six weeks and some days after question."
+      ],
+      "consequences": [
+        "Author presents a correspondence between the stated angular gap and elapsed time to completion."
+      ],
+      "modifiers": [
+        "Preserve some dayes.",
+        "Do not round the actual printed positions to force exactly six degrees.",
+        "Do not infer a universal one-degree-per-week conversion."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "retrospective_timing_comparison",
+          "text": "Six weeks and some days to completing what the figure promised.",
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "No explicit general choice-of-time-unit rule or treatment of fractional degrees is supplied."
+      ],
+      "hypothesis_or_report": "Single-case retrospective analogy; independently calculated separation is stored separately."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C020",
+      "source_order": 20,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-05"
+      ],
+      "record_type": "reported_bodily_correspondence",
+      "title": "Venus in Aries and mole on mid-cheek",
+      "exact_anchor_excerpt": "so have I a Mole on my cheeke about the middle of it",
+      "conditions": [
+        "Venus in Aries.",
+        "Aries represents face in the author's account."
+      ],
+      "consequences": [
+        "Mole about middle of cheek."
+      ],
+      "modifiers": [],
+      "reported_outcomes": [
+        {
+          "type": "retrospective_body_mark_report",
+          "text": "Mole on middle of cheek.",
+          "known_to_author_before_question_likely_but_not_dated": true,
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "No concealed body-mark record or independent examination."
+      ],
+      "hypothesis_or_report": "Retrospective bodily comparison."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C021",
+      "source_order": 21,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-05"
+      ],
+      "record_type": "reported_bodily_correspondence",
+      "title": "Libra rising and mole on reins of back",
+      "exact_anchor_excerpt": "and as ♎ ascends, I have one on the reines of my backe",
+      "conditions": [
+        "Libra ascends."
+      ],
+      "consequences": [
+        "Mole on reins of back."
+      ],
+      "modifiers": [],
+      "reported_outcomes": [
+        {
+          "type": "retrospective_body_mark_report",
+          "text": "Mole on reins of back.",
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "No precise location coordinate, timing or concealed prior record."
+      ],
+      "hypothesis_or_report": "Retrospective bodily comparison."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C022",
+      "source_order": 22,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-05"
+      ],
+      "record_type": "reported_bodily_correspondence",
+      "title": "Moon in Virgo afflicted by Mars and red mole below navel",
+      "exact_anchor_excerpt": "the ☽ in ♍ afflicted by ♂, I have a red Mole below my Navell",
+      "conditions": [
+        "Moon in Virgo.",
+        "Moon afflicted by Mars."
+      ],
+      "consequences": [
+        "Red mole below navel."
+      ],
+      "modifiers": [],
+      "reported_outcomes": [
+        {
+          "type": "retrospective_body_mark_report",
+          "text": "Red mole below navel.",
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "No exact affection threshold or independent medical/body examination supplied."
+      ],
+      "hypothesis_or_report": "Retrospective bodily comparison; not a medical rule."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C023",
+      "source_order": 23,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-05"
+      ],
+      "record_type": "reported_bodily_correspondence",
+      "title": "Sixth lord in masculine Gemini and right-hand mole",
+      "exact_anchor_excerpt": "♃ Lord of the sixt in ♊ a Masculine Signe",
+      "conditions": [
+        "Jupiter lord of sixth.",
+        "Jupiter in Gemini.",
+        "Gemini masculine."
+      ],
+      "consequences": [
+        "Mole near right hand, visible on outside."
+      ],
+      "modifiers": [],
+      "reported_outcomes": [
+        {
+          "type": "retrospective_body_mark_report",
+          "text": "Mole near right hand on outside.",
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "No concealed assessment or general laterality rule independently stated."
+      ],
+      "hypothesis_or_report": "Case correspondence retaining lord, sign and masculine qualifier."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C024",
+      "source_order": 24,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-05"
+      ],
+      "record_type": "reported_bodily_correspondence",
+      "title": "Pisces sixth sign and left-foot mole",
+      "exact_anchor_excerpt": "so have I on the left foot, as ♓ the Signe of the sixt doth represent",
+      "conditions": [
+        "Pisces sign of sixth."
+      ],
+      "consequences": [
+        "Mole on left foot."
+      ],
+      "modifiers": [],
+      "reported_outcomes": [
+        {
+          "type": "retrospective_body_mark_report",
+          "text": "Mole on left foot.",
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "Do not transfer the right-hand masculine-sign rationale to this different clause."
+      ],
+      "hypothesis_or_report": "Retrospective bodily comparison."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C025",
+      "source_order": 25,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-06"
+      ],
+      "record_type": "author_scope_qualification",
+      "title": "Author deliberately abbreviates discussion",
+      "exact_anchor_excerpt": "Many things might be considered herein, besides what is written",
+      "conditions": [
+        "Author fears book exceeding original intention."
+      ],
+      "consequences": [
+        "Leaves further considerations unwritten."
+      ],
+      "modifiers": [],
+      "reported_outcomes": [],
+      "unresolveds": [
+        "The chapter acknowledges selectivity but does not identify the omitted rules; do not invent them."
+      ],
+      "hypothesis_or_report": "Explicit author limitation; no prediction."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C026",
+      "source_order": 26,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-07"
+      ],
+      "record_type": "reported_result_and_future_expectation",
+      "title": "Hard bargain and lifetime lease expectation",
+      "exact_anchor_excerpt": "I had a hard bargaine",
+      "conditions": [
+        "Author considers figure as a whole.",
+        "Leases remain in being at narration."
+      ],
+      "consequences": [
+        "Reports a hard bargain.",
+        "Expects not to live to see many current leases expire."
+      ],
+      "modifiers": [
+        "Completed purchase does not imply favorable financial outcome.",
+        "The lifetime claim is forward-looking at narration; not reported as fulfilled in this span."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "retrospective_evaluation",
+          "text": "Hard bargain.",
+          "independent_episode": false
+        },
+        {
+          "type": "future_expectation",
+          "text": "Many leases will outlast his life.",
+          "eventual_verification_in_span": false
+        }
+      ],
+      "unresolveds": [
+        "No exact lease terms, expiry dates or posthumous outcome supplied."
+      ],
+      "hypothesis_or_report": "Mixed past evaluation and future expectation; keep them separate."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C027",
+      "source_order": 27,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        }
+      ],
+      "source_anchors": [
+        "A255-07"
+      ],
+      "record_type": "reported_adverse_case_rule",
+      "title": "Venus opposite her own house and financial injury",
+      "exact_anchor_excerpt": "so did I doe my selfe injury by the Bargaine, I meane in matter of Money",
+      "conditions": [
+        "Venus in Aries.",
+        "Aries described as opposite to Venus's own house."
+      ],
+      "consequences": [
+        "Author harmed himself financially through the bargain."
+      ],
+      "modifiers": [
+        "Harm expressly scoped to money.",
+        "This adverse result coexists with achieved purchase and later lack of regret."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "retrospective_self_evaluation",
+          "text": "Financial injury through the bargain.",
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "No monetary loss amount or comparative valuation stated."
+      ],
+      "hypothesis_or_report": "Retrospective negative result, not erased by favorable completion testimonies."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C028",
+      "source_order": 28,
+      "source_pages": [
+        {
+          "pdf": 255,
+          "printed": 221
+        },
+        {
+          "pdf": 256,
+          "printed": 222
+        }
+      ],
+      "source_anchors": [
+        "A255-07",
+        "A256-01"
+      ],
+      "record_type": "reported_motive_and_attitude",
+      "title": "House attachment explains tolerance of financial disadvantage",
+      "exact_anchor_excerpt": "made me neglect a small hinderance, nor now, I thanke God, doe I repent it",
+      "conditions": [
+        "He loved the house.",
+        "Had lived there happily with a good master for seven years.",
+        "Obtained his first wife there.",
+        "Reports material blessings there and continued blessing upon his labors."
+      ],
+      "consequences": [
+        "Neglected/tolerated a small financial hindrance.",
+        "At narration did not regret purchase."
+      ],
+      "modifiers": [
+        "Reported biographical motive supplies an ordinary causal explanation for accepting cost.",
+        "No regret is an attitude outcome, distinct from financial profit."
+      ],
+      "reported_outcomes": [
+        {
+          "type": "reported_prior_biography",
+          "text": "Seven happy years with master, first wife and material benefits connected to house.",
+          "predicted": false
+        },
+        {
+          "type": "reported_later_attitude",
+          "text": "No regret at narration.",
+          "predicted": false,
+          "independent_episode": false
+        }
+      ],
+      "unresolveds": [
+        "These autobiographical claims have not been independently checked."
+      ],
+      "hypothesis_or_report": "Actual motive and retrospective attitude; no astrological prediction offered."
+    },
+    {
+      "epistemic_status": "Historical author's case interpretation or report; candidate extraction only, not validated predictive rule.",
+      "applicability_scope": "Lilly's self-question about Master B.'s houses in Chapter XXXVIII; generalization beyond this reported case is not established.",
+      "case_id": "LILLY_PURCHASE_1634",
+      "independent_confirmation": false,
+      "information_dependency": "Same author, question, property transaction and retrospective narrative.",
+      "id": "C029",
+      "source_order": 29,
+      "source_pages": [
+        {
+          "pdf": 256,
+          "printed": 222
+        }
+      ],
+      "source_anchors": [
+        "A256-01"
+      ],
+      "record_type": "authorial_rebuttal",
+      "title": "Wharton occupation and family claims rejected",
+      "exact_anchor_excerpt": "nor was my Master a Taylor, or my Wife a Scriveners Widdow",
+      "conditions": [
+        "Wharton is said to affirm an occupational characterization."
+      ],
+      "consequences": [
+        "Author denies being a tailor, scrivener or any profession at all.",
+        "Denies master was a tailor.",
+        "Denies wife was a scrivener's widow."
+      ],
+      "modifiers": [
+        "Preserve this final chapter paragraph despite its non-rule genre.",
+        "Stop before fifth-house divider."
+      ],
+      "reported_outcomes": [],
+      "unresolveds": [
+        "Wharton's underlying text is outside this scope and not adjudicated."
+      ],
+      "hypothesis_or_report": "Author's biographical rebuttal, no rule or forecast."
+    }
+  ],
+  "evidence_dependence": {
+    "case_count": 1,
+    "shared_case": "LILLY_PURCHASE_1634",
+    "distinguishable_reported_episodes": [
+      "negotiations",
+      "rival appearance after beginning and before conclusion",
+      "seller's daughter's assistance",
+      "£500 loan",
+      "25 April bargain",
+      "17 May payment and sealed conveyance"
+    ],
+    "independent_cases": false,
+    "independent_external_confirmation": false,
+    "preexisting_information": [
+      "desire and firm intention to buy",
+      "six-month notice for own money",
+      "prior residence and attachment"
+    ],
+    "body_mark_evidence": "Retrospective author self-report, no concealed prior record in admitted span.",
+    "predictive_credit_limit": "Do not count enacted intention, known funding restriction, same-case episodes, bodily retrospection or the author's voluntary conduct as independent predictive validations."
+  },
+  "unresolveds": [
+    {
+      "id": "U01",
+      "anchor": "A254-02",
+      "text": "Sun local seventh assignment and later Lord-of-seventh terminology coexist with Aries seventh cusp."
+    },
+    {
+      "id": "U02",
+      "anchor": "A254-02",
+      "text": "Mercury drawn in seventh sector despite narrative no-other-planet statement."
+    },
+    {
+      "id": "U03",
+      "anchor": "A255-02",
+      "text": "Exact antecedent/joint timing of which he did twelve dayes after and ingress/direct conditions."
+    },
+    {
+      "id": "U04",
+      "anchor": "A253-F",
+      "text": "Fourth/tenth cusp minutes omitted; no latitude/timezone/time minutes. Central abbreviation typography uncertain."
+    },
+    {
+      "id": "U05",
+      "anchor": "A255-04",
+      "text": "Exact astronomical event dates and calendar not independently validated."
+    },
+    {
+      "id": "U06",
+      "anchor": "A255-07",
+      "text": "Lease-lifetime expectation not verified within admitted text."
+    }
+  ]
+}
