@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "method": "Fully-qualified unittest method identities parsed from original32 and initialfinal36 execution logs.",
+  "original32_sha256": "80b0deb98b0c218cd542438e9c284e75b3df9a1b0428b4bf61fdd68cbb4a2fcc",
+  "initial36_sha256": "6bea7b2885ec8c994546437e408d1b971c1aa2d5b033f72477857ab987d75a18",
+  "original_count": 32,
+  "larger_count": 36,
+  "subset": true,
+  "added": [
+    "test_lilly_fifth_house.SourceLedgerIntegrityTests.test_canonical_records_unique_contiguous_and_counted.test_canonical_records_unique_contiguous_and_counted",
+    "test_lilly_fifth_house.SourceLedgerIntegrityTests.test_coverage_and_boundary_do_not_claim_sixth_house_extraction.test_coverage_and_boundary_do_not_claim_sixth_house_extraction",
+    "test_lilly_fifth_house.SourceLedgerIntegrityTests.test_every_record_has_source_anchor_logic_and_reference_scope.test_every_record_has_source_anchor_logic_and_reference_scope",
+    "test_lilly_fifth_house.SourceLedgerIntegrityTests.test_issue_references_resolve_without_dropping_open_limits.test_issue_references_resolve_without_dropping_open_limits"
+  ],
+  "union_count": 36,
+  "independent_confirmation": "ReaderB independently verified these identities via exact-commit GitHub reads; the final independent reader repeated the comparison after initial diagnosis froze.",
+  "unchanged_test_bodies_claimed": false,
+  "tests_rerun_for_this_comparison": false
+}

@@ -1,0 +1,150 @@
+{
+  "purpose": "Exact four retained records used for targeted comparison; no rewriting or new retained-record credit.",
+  "original_images_reopened_this_turn": [
+    67,
+    123,
+    177,
+    178
+  ],
+  "records": [
+    {
+      "source_batch": "B02a",
+      "original_file_sha256": "98a4e8a583c6e4314c256354522ce659483b95388cc768fedc20512beaeb2ecb",
+      "record": {
+        "id": "LI.1647.I.04.R033",
+        "title": "Five-degree cusp virtue",
+        "kind": "conditional_rule",
+        "source_locator": {
+          "work_id": "CHRISTIAN_ASTROLOGY",
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "edition": "1647 English original, Wellcome b30338724",
+          "book": "I",
+          "chapter": 4,
+          "pdf_pages": [
+            67
+          ],
+          "printed_pages": [
+            33
+          ],
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+        },
+        "source_statement": "A planet within five degrees of a house cusp is assigned virtue to the house whose cusp is nearest, with a promise of further treatment.",
+        "statement_type": "paraphrase",
+        "prerequisites": "Retain its geometrical house and the relevant cusp separately.",
+        "qualifications_and_limits": "Exact five-degree equality, directional reach, overlaps, sign boundaries and later qualifications are not resolved by this one sentence.",
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "source_batch": "B02c",
+      "original_file_sha256": "c10c17da49f53e58022e17e3003474180ab4826d3285227edc05ea0dde038138",
+      "record": {
+        "id": "LI.1647.I.XVI.divisions.R265",
+        "title": "fruitful sign group",
+        "kind": "table_classification",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "I",
+          "section_key": "I.XVI.divisions",
+          "pdf_pages": [
+            123
+          ],
+          "printed_page_policy": "Use READING_RECEIPT page map; original labels are not uniformly PDF minus 34."
+        },
+        "statement_type": "transcribed_table_with_named_glyphs",
+        "source_statement": {
+          "key": "fruitful",
+          "signs": [
+            "Cancer",
+            "Scorpio",
+            "Pisces"
+          ],
+          "source_description": "prolific",
+          "pdf": 123
+        },
+        "prerequisites": [
+          "Apply only within the stated enquiry and source-selected significator context."
+        ],
+        "qualifications_and_limits": [
+          "Historical source claim, not established predictive, clinical or demographic evidence."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "source_batch": "B02c",
+      "original_file_sha256": "c10c17da49f53e58022e17e3003474180ab4826d3285227edc05ea0dde038138",
+      "record": {
+        "id": "LI.1647.I.XVI.divisions.R266",
+        "title": "barren sign group",
+        "kind": "table_classification",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "I",
+          "section_key": "I.XVI.divisions",
+          "pdf_pages": [
+            123
+          ],
+          "printed_page_policy": "Use READING_RECEIPT page map; original labels are not uniformly PDF minus 34."
+        },
+        "statement_type": "transcribed_table_with_named_glyphs",
+        "source_statement": {
+          "key": "barren",
+          "signs": [
+            "Gemini",
+            "Leo",
+            "Virgo"
+          ],
+          "source_description": "historical fertility category",
+          "pdf": 123
+        },
+        "prerequisites": [
+          "Apply only within the stated enquiry and source-selected significator context."
+        ],
+        "qualifications_and_limits": [
+          "Historical source claim, not established predictive, clinical or demographic evidence."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "source_batch": "B02e",
+      "original_file_sha256": "195eaca0ddbc5925e0f8b1318a5e50acb43be2d4579c1c11d58b98dba3ea1fce",
+      "record": {
+        "id": "LI.1647.II.XXIII.R625",
+        "title": "Fortune same formula by day and night",
+        "kind": "calculation_definition",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXIII",
+          "pdf_pages": [
+            177,
+            178
+          ],
+          "printed_page_positions": [
+            143,
+            144
+          ]
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": {
+          "procedure": "Subtract Sun sign/degree/minute from Moon, adding twelve signs if needed; add Ascendant and remove twelve signs if needed.",
+          "modern_exact_arithmetic_expression": "(Ascendant + Moon - Sun) modulo360 degrees"
+        },
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "Continuous cyclic notation is our implementation of the stated procedure. Day/night does not reverse this author-selected formula."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    }
+  ]
+}

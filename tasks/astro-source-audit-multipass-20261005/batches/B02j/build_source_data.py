@@ -1,5 +1,6 @@
 """Rebuild canonical B02j from frozen source-reader inputs and root transcription."""
 from collections import Counter
+from copy import deepcopy
 import hashlib
 import json
 from pathlib import Path
@@ -16,11 +17,21 @@ def read(path): return json.loads((HERE/path).read_text())
 def write(path,data): (HERE/path).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 
 
+corrections=read('CANONICAL_SOURCE_CORRECTIONS.json')['corrections']
+originals={}
 raw=[]
 for reader,file in [('A','source_readers/a/CANDIDATE_RULES.json'),('B','source_readers/b/CANDIDATE_RULES.json'),('root','ROOT_CANDIDATE_RULES.json')]:
     data=read(file)
     rows=data if isinstance(data,list) else data['records']
-    raw.extend((reader,row) for row in rows)
+    for original in rows:
+        row=deepcopy(original)
+        for correction in corrections:
+            if correction['local_id']==row['id'] and correction['apply_in_builder']:
+                originals[row['id']]=deepcopy(row)
+                for change in correction['changes']:
+                    assert row[change['field']]==change['old_value']
+                    row[change['field']]=deepcopy(change['new_value'])
+        raw.append((reader,row))
 ids={row['id']:f"LI.1647.II.{row['chapter']}.R{1157+i}" for i,(_,row) in enumerate(raw)}
 issues=[]
 for reader,file,key in [('A','source_readers/a/UNRESOLVED.json','issues'),('B','source_readers/b/UNRESOLVED.json','items'),('root','ROOT_UNRESOLVED.json','issues')]:
@@ -65,6 +76,9 @@ for reader,row in raw:
       'case_id':row.get('case_id'),
       'related_record_ids':[ids[x] for x in row.get('dependencies',[]) if x in ids],
     }
+    applied=[c['id'] for c in corrections if c['local_id']==row['id']]
+    if applied: new['source_correction_ids']=applied
+    if row['id'] in originals: new['source_reader_original_fields']=originals[row['id']]
     canon.append(new)
     for issue in issues:
         if issue['id'] in unresolved and new['id'] not in issue['record_ids']: issue['record_ids'].append(new['id'])

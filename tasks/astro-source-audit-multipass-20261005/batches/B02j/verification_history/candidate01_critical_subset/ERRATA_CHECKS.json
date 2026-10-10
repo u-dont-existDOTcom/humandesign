@@ -1,0 +1,75 @@
+{
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "same_witness_pdf_page": 888,
+  "scope": "Targeted original-edition errata check, not a new textual witness or full-book collation.",
+  "entries": [
+    {
+      "id": "AE001",
+      "target_printed_page": 224,
+      "target_pdf_page": 258,
+      "line": 10,
+      "reading": "consideration",
+      "status": "SOURCE_RESOLVED_LEXICAL_CORRECTION",
+      "effect": "Wording only; no timing operator, house or value changed.",
+      "evidence": "source_readers/a/AFTER_FREEZE_SOURCE_SUPPLEMENT.md"
+    },
+    {
+      "id": "BE001",
+      "errata_anchor": "p 209 l ult. r other",
+      "target_printed_page": 209,
+      "status": "outside_assigned_span",
+      "finding": "Reference is 209, not 229; no correction applied to printed229.",
+      "affected_rule_ids": []
+    },
+    {
+      "id": "BE002",
+      "errata_anchor": "p 233 l 17 r practice",
+      "target_printed_page": 233,
+      "target_pdf_page": 267,
+      "body_anchor": "I have in my pactice",
+      "status": "resolved_lexical_correction",
+      "finding": "pactice → practice; condition logic unchanged.",
+      "affected_rule_ids": [
+        "B044"
+      ]
+    },
+    {
+      "id": "BE003",
+      "errata_anchor": "l 19 r and if I",
+      "target_printed_page": 233,
+      "target_pdf_page": 267,
+      "body_anchor": "and If / I found the ascendant free",
+      "status": "unresolved_exact_edit",
+      "finding": "Phrase already spans lines19–20 apart from case; replacing line19 alone duplicates I. No semantic correction applied.",
+      "affected_rule_ids": [
+        "B044"
+      ]
+    },
+    {
+      "id": "BE004",
+      "errata_anchor": "p 234 l 6 r question",
+      "target_printed_page": 234,
+      "target_pdf_page": 268,
+      "body_anchor": "an Horary Question: The Question being then demanded",
+      "status": "resolved_lexical_locality",
+      "finding": "Heading-inclusive line6 locates the opening horary-Question sentence; no change to judgment predicates. Margin annotation is not treated as author text.",
+      "affected_rule_ids": [
+        "B049",
+        "B050"
+      ]
+    },
+    {
+      "id": "BE005",
+      "errata_anchor": "p 235 l 32 r house",
+      "target_printed_page": 235,
+      "target_pdf_page": 269,
+      "body_anchor": "Lord of the fift house",
+      "status": "unresolved_exact_edit",
+      "finding": "Final phrase is plausible target; exact line/word replacement not uniquely demonstrated, and image already reads house. No predicate changed.",
+      "affected_rule_ids": [
+        "B064"
+      ]
+    }
+  ],
+  "worked_pages_238_240_241_242": "No targeted entry identified in the inspected errata page; the hour-lord, cusp and solar mismatches remain unresolved."
+}

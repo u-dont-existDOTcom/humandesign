@@ -78,7 +78,7 @@ marks = [
     ("navel", "One mole close by the navel; the sentence does not explicitly assign a separate astrological cause to this first item."),
     ("right_ankle", "One on the right ankle, assigned to Aquarius on the sixth cusp."),
     ("right_knee_inner_thigh", "One toward the right knee on the inner side of the thigh, assigned to Saturn, lord of sixth, in Sagittarius."),
-    ("genital_region", "One in or near the genital member, assigned to Moon in Virgo."),
+    ("moon_virgo_member_unspecified", "One in or near the member signified by the Moon in Virgo; the anatomical member is not named in this sentence."),
     ("right_arm", "A scar or mole on the outside of the right arm, assigned to Mercury, Ascendant ruler, in Gemini."),
 ]
 for label, assertion in marks:
@@ -227,7 +227,7 @@ fig2 = {
 
 issues = [
     ("C01","evidence_limit",[272,273],"No lifetime endpoint for the negative case","Past nonconception and lifelong nonconception are the author's judgment; no independently verified history or lifetime follow-up is given in the admitted case."),
-    ("C02","evidence_limit",[273],"Symptoms and five marks belong to one retrospective case","The mole/scar confirmation and symptoms are narrated by Lilly, with no separate blinded elicitation or independent case denominator. They do not establish clinical validity."),
+    ("C02","evidence_limit",[273],"Symptoms and five marks belong to one retrospective case","The mole/scar confirmation and symptoms are narrated by Lilly, with no separate blinded elicitation or independent case denominator. They do not establish clinical validity. For C012, the sentence names only the member signified by Moon in Virgo; a specific anatomical identification is not supplied."),
     ("C03","implementation_limit",[274],"Natal override needs its own source-complete natal procedure","The precedence statement is explicit; this horary span does not supply a complete natal barrenness algorithm or the1635 querent's nativity."),
     ("C04","evidence_limit",[274],"First-question resemblance lacks counts","Usually/often is not accompanied by a denominator, comparison distribution or independently checkable series; the Gemini example is illustrative."),
     ("C05","source_conflict",[274,275],"Moon-versus-Jupiter hour ruler","The figure's day/hour brace shows Moon; the table counts Jupiter as hour ruler and separately its masculine sign. Retain both without choosing a repair. A coherent two-row hour-chain substitution is an analyst sensitivity calculation, not Lilly's alternative judgment."),

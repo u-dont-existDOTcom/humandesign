@@ -1,0 +1,158 @@
+{
+  "stage": "FINAL_LOCATIVE_REPAIR",
+  "changed_canonical_ids": [
+    "B039",
+    "C012"
+  ],
+  "all_other_199_canonical_records_equal_initial": true,
+  "numeric_cases_arithmetic_code_and_tests_unchanged": [
+    {
+      "path": "WORKED_NUMERIC_TABLES.json",
+      "sha256": "a1343b2dda05c11be12ece2937e6f6b45d392eed3f7a880d115f59d346647862"
+    },
+    {
+      "path": "HISTORICAL_CASES.json",
+      "sha256": "11ed3fc8afb2726092d42d74777f29bfa8624104e4940acab063e71a12a30ae8"
+    },
+    {
+      "path": "ARITHMETIC_CHECKS.json",
+      "sha256": "955002bf3b1930a2fe23dc8252023c91be51242e85fbb582ad767358d27d3a3c"
+    },
+    {
+      "path": "lilly_fifth_house_reference.py",
+      "sha256": "494a40cd0a5c01182200b66d126444f2ca0f0a1b3e2976d07e8539836b29ae15"
+    },
+    {
+      "path": "test_lilly_fifth_house.py",
+      "sha256": "9df22fc44bccbd519db20ea01389f19bb2edff791bb45f78573077ccc6466f3e"
+    }
+  ],
+  "current_rules_sha256": "26e06fc4c0021fdc160fbd4f7e315324a8717b9c33f1a57f595aba14fcb6853d",
+  "current_report_sha256": "1616b2b13916b69b57434909689ce3ad37a61f4db0b57f35ddd40695f00f16b1",
+  "tests": {
+    "batch": "B02j",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "-v",
+      "test_lilly_fifth_house"
+    ],
+    "actual_process_exit_code": 0,
+    "tests_run": 36,
+    "result": "PASS",
+    "tested_files": [
+      {
+        "file": "RULES.json",
+        "sha256": "26e06fc4c0021fdc160fbd4f7e315324a8717b9c33f1a57f595aba14fcb6853d"
+      },
+      {
+        "file": "UNRESOLVED.json",
+        "sha256": "26ab19b51592616ac2bfff7f17fe39a1e81301022baf9865f9f6f9755af38872"
+      },
+      {
+        "file": "SECTION_COVERAGE.json",
+        "sha256": "4486312b0dad526a4a89a564acc70ab74aae92402e041273605665c5f4993c73"
+      },
+      {
+        "file": "WORKED_NUMERIC_TABLES.json",
+        "sha256": "a1343b2dda05c11be12ece2937e6f6b45d392eed3f7a880d115f59d346647862"
+      },
+      {
+        "file": "HISTORICAL_CASES.json",
+        "sha256": "11ed3fc8afb2726092d42d74777f29bfa8624104e4940acab063e71a12a30ae8"
+      },
+      {
+        "file": "lilly_fifth_house_reference.py",
+        "sha256": "494a40cd0a5c01182200b66d126444f2ca0f0a1b3e2976d07e8539836b29ae15"
+      },
+      {
+        "file": "test_lilly_fifth_house.py",
+        "sha256": "9df22fc44bccbd519db20ea01389f19bb2edff791bb45f78573077ccc6466f3e"
+      }
+    ],
+    "scope": "Data integrity and bounded source arithmetic only. No app/runtime/ephemeris/clinical/predictive validation.",
+    "retained_test_count_claimed": 0,
+    "log": "TEST_B02j.txt",
+    "log_sha256": "f67296878384cc1949bd637c2b1f47bacf86fa70470ca7479ab61ed045945a47"
+  },
+  "final_C012": {
+    "id": "LI.1647.II.XLII.R1330",
+    "local_id": "C012",
+    "title": "Reported bodily mark: moon_virgo_member_unspecified",
+    "kind": "author_report",
+    "source_locator": {
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "section_key": "II.XLII",
+      "pdf_pages": [
+        273
+      ],
+      "printed_sequence_expected": [
+        239
+      ],
+      "visible_printed_labels": [
+        "239"
+      ],
+      "passage_anchor": "Shee affirmed, that the Moles of her Body did correspond",
+      "anchor_note": "normalized locating phrase, not a diplomatic quotation"
+    },
+    "genre": "historical_horary_source",
+    "statement_type": "editor_normalized_paraphrase",
+    "source_attribution": "Lilly",
+    "source_statement": "One in or near the member signified by the Moon in Virgo; the anatomical member is not named in this sentence.",
+    "prerequisites": [
+      {
+        "source_clauses": [],
+        "condition_logic": {
+          "all": []
+        },
+        "executable": false
+      }
+    ],
+    "qualifications_and_limits": [
+      "C02"
+    ],
+    "source_fields": {
+      "id": "C012",
+      "chapter": "XLII",
+      "section": "reported_marks",
+      "pdf_pages": [
+        273
+      ],
+      "printed_pages": [
+        239
+      ],
+      "title": "Reported bodily mark: moon_virgo_member_unspecified",
+      "anchor": "Shee affirmed, that the Moles of her Body did correspond",
+      "anchor_type": "normalized locating phrase, not a diplomatic quotation",
+      "kind": "author_report",
+      "conditions": [],
+      "condition_logic": {
+        "all": []
+      },
+      "assertion": "One in or near the member signified by the Moon in Virgo; the anatomical member is not named in this sentence.",
+      "exceptions": [],
+      "uncertainty": [
+        "C02"
+      ],
+      "scope": "historical horary source only",
+      "evidence_class": "retrospective_author_narrative",
+      "case_id": "LILLY_II_XLII_1635_CHILDREN",
+      "independent_evidence_unit": false,
+      "calculation": null
+    },
+    "source_reader": "root",
+    "unresolved_ids": [
+      "U-C02"
+    ],
+    "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+    "independent_evidence_unit": false,
+    "case_id": "LILLY_II_XLII_1635_CHILDREN",
+    "related_record_ids": [],
+    "source_correction_ids": [
+      "SC02"
+    ]
+  }
+}

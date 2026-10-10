@@ -9442,7 +9442,7 @@
         {
           "source_clauses": [
             "Infortunes replace Fortunes in the placements described above.",
-            "Conception has not been assured before the question."
+            "Conception has not independently been assured before the question."
           ],
           "condition_logic": "Adverse replacement pattern; absent the expressly separate prior-assurance condition, outcome is no sign of conception. This is not proof of a modern diagnosis.",
           "executable": false
@@ -9453,54 +9453,6 @@
         "UB019: as abovesaid does not delimit every earlier route precisely."
       ],
       "source_fields": {
-        "id": "B039",
-        "chapter": "XL",
-        "section": "Unnumbered Some say conception variants and malefic qualifications",
-        "pdf_pages": [
-          267
-        ],
-        "printed_pages": [
-          233
-        ],
-        "anchor": "it's no signe of Conception",
-        "kind": "author_report",
-        "conditions": [
-          "Infortunes replace Fortunes in the placements described above.",
-          "Conception has not been assured before the question."
-        ],
-        "condition_logic": "Adverse replacement pattern; absent the expressly separate prior-assurance condition, outcome is no sign of conception. This is not proof of a modern diagnosis.",
-        "assertion": "The sequence then supplies no sign of conception, subject to the separate already-assured-conception branch.",
-        "exceptions": [],
-        "uncertainty": [
-          "UB018: anonymous-report voice boundary is not explicit.",
-          "UB019: as abovesaid does not delimit every earlier route precisely."
-        ],
-        "scope": "historical horary source only",
-        "dependencies": [
-          "B035",
-          "B036",
-          "B037",
-          "B038"
-        ]
-      },
-      "source_reader": "B",
-      "unresolved_ids": [
-        "UB018",
-        "UB019"
-      ],
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
-      "independent_evidence_unit": false,
-      "case_id": null,
-      "related_record_ids": [
-        "LI.1647.II.XL.R1267",
-        "LI.1647.II.XL.R1268",
-        "LI.1647.II.XL.R1269",
-        "LI.1647.II.XL.R1270"
-      ],
-      "source_correction_ids": [
-        "SC01"
-      ],
-      "source_reader_original_fields": {
         "id": "B039",
         "chapter": "XL",
         "section": "Unnumbered Some say conception variants and malefic qualifications",
@@ -9530,7 +9482,21 @@
           "B037",
           "B038"
         ]
-      }
+      },
+      "source_reader": "B",
+      "unresolved_ids": [
+        "UB018",
+        "UB019"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "related_record_ids": [
+        "LI.1647.II.XL.R1267",
+        "LI.1647.II.XL.R1268",
+        "LI.1647.II.XL.R1269",
+        "LI.1647.II.XL.R1270"
+      ]
     },
     {
       "id": "LI.1647.II.XL.R1272",
@@ -13917,7 +13883,7 @@
     {
       "id": "LI.1647.II.XLII.R1330",
       "local_id": "C012",
-      "title": "Reported bodily mark: moon_virgo_member_unspecified",
+      "title": "Reported bodily mark: genital_region",
       "kind": "author_report",
       "source_locator": {
         "source_id": "LILLY1647_WELLCOME_B30338724",
@@ -13939,7 +13905,7 @@
       "genre": "historical_horary_source",
       "statement_type": "editor_normalized_paraphrase",
       "source_attribution": "Lilly",
-      "source_statement": "One in or near the member signified by the Moon in Virgo; the anatomical member is not named in this sentence.",
+      "source_statement": "One in or near the genital member, assigned to Moon in Virgo.",
       "prerequisites": [
         {
           "source_clauses": [],
@@ -13962,7 +13928,7 @@
         "printed_pages": [
           239
         ],
-        "title": "Reported bodily mark: moon_virgo_member_unspecified",
+        "title": "Reported bodily mark: genital_region",
         "anchor": "Shee affirmed, that the Moles of her Body did correspond",
         "anchor_type": "normalized locating phrase, not a diplomatic quotation",
         "kind": "author_report",
@@ -13970,7 +13936,7 @@
         "condition_logic": {
           "all": []
         },
-        "assertion": "One in or near the member signified by the Moon in Virgo; the anatomical member is not named in this sentence.",
+        "assertion": "One in or near the genital member, assigned to Moon in Virgo.",
         "exceptions": [],
         "uncertainty": [
           "C02"
@@ -13988,10 +13954,7 @@
       "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
       "independent_evidence_unit": false,
       "case_id": "LILLY_II_XLII_1635_CHILDREN",
-      "related_record_ids": [],
-      "source_correction_ids": [
-        "SC02"
-      ]
+      "related_record_ids": []
     },
     {
       "id": "LI.1647.II.XLII.R1331",

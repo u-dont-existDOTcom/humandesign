@@ -1,0 +1,149 @@
+{
+  "review_id": "B02j-independent-candidate01",
+  "freeze_kind": "independent_diagnosis_before_reconciliation",
+  "reviewer": "/root/fifth_independent",
+  "diagnostic_start_utc": "2026-10-10 12:20:04 UTC",
+  "source": {
+    "path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+    "sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "page_count": 894,
+    "bytes": 141842963,
+    "admitted_pdf_pages": [
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276
+    ],
+    "start_boundary": "PDF256 below divider at Of the fifth House, and its Questions",
+    "end_boundary": "end PDF276 before PDF277 sixth-house/XLIV introduction"
+  },
+  "source_first_freeze": {
+    "SOURCE_FIRST_NOTES.md": "68dacb1f4342ffcffbac1f2fa9fe50c1180d337113a373bb3dff4682d5b6b69a",
+    "SOURCE_FIRST_RECEIPT.json": "119a50307c41ce4aeba1037761912c97763c40e7bb8c2ea8bffd9359b2e3f262"
+  },
+  "candidate_directory": "/workspace/scratch/43f75264c32e/review-candidate-01/B02j",
+  "candidate_hashes": {
+    "CANDIDATE_MANIFEST.json": "231a5999daa39c7cc14253a3ed6f10b9a78dfe092678685f556443f57a0c32db",
+    "AUDIT_REPORT.md": "b1e87ac99340fb7f7de3740db3859a428e909a303567ac01dd93718c14a32d4b",
+    "CLAIM_LEDGER.json": "4547fa0327d55688e8cd7d8b564af444f9a597e19a879a4a9278ce1ad818147f",
+    "RULES.json": "a505ce3f94c3bba095ea1fdfc8ebd310860d63912a60de71d57a8a8e71e9c988",
+    "SECTION_COVERAGE.json": "4486312b0dad526a4a89a564acc70ab74aae92402e041273605665c5f4993c73",
+    "WORKED_NUMERIC_TABLES.json": "a1343b2dda05c11be12ece2937e6f6b45d392eed3f7a880d115f59d346647862",
+    "lilly_fifth_house_reference.py": "494a40cd0a5c01182200b66d126444f2ca0f0a1b3e2976d07e8539836b29ae15",
+    "test_lilly_fifth_house.py": "9df22fc44bccbd519db20ea01389f19bb2edff791bb45f78573077ccc6466f3e",
+    "TEST_RUN_SUMMARY.json": "a000b391fe67f1c1d1d4a5821f010a5f846cacca5051a27a16f4b676e5d8dd71",
+    "TEST_B02j.txt": "6bea7b2885ec8c994546437e408d1b971c1aa2d5b033f72477857ab987d75a18",
+    "READING_RECEIPT.json": "90eba971e785ee6cc13f5f964f44e2b3580742db8956fe763352f5a95a81c59c",
+    "ERRATA_CHECKS.json": "637df590e7ad05dffee30d07eac9f9a61e3dcb5d8805b14aaf1bf3e0265f465b",
+    "RETAINED_SOURCE_EXCERPTS.json": "bdd634b0fa2dac3aa38396e89e35f9ef2cdd738c4819f0a52d29a658dac0ab4d",
+    "COUNTS.json": "dbf7601315d5a9aef4d91583ccbc5d5abf17fc96d359c5d7ffe8122b82a810f9"
+  },
+  "diagnosis_artifacts": {
+    "DIAGNOSIS.md": {
+      "path": "/workspace/scratch/43f75264c32e/independent-review/DIAGNOSIS.md",
+      "sha256": "441e323308ee681a5649fdc90294e3cc388bfd7762c559e4da3cb059e0ddbb9c",
+      "bytes": 28019
+    },
+    "CLAIM_CHECK.json": {
+      "path": "/workspace/scratch/43f75264c32e/independent-review/CLAIM_CHECK.json",
+      "sha256": "043662b0cbaa3ec2a7fdb4f595bca40999adf2beb54ab825595c98fe72bb049b",
+      "bytes": 323036
+    },
+    "INDEPENDENT_TEST.txt": {
+      "path": "/workspace/scratch/43f75264c32e/independent-review/INDEPENDENT_TEST.txt",
+      "sha256": "5c51f3f95966001bd74435559c3a7fdb700acced1fd4a94d7806bae4d821b333",
+      "bytes": 5769
+    }
+  },
+  "image_read_disclosure": {
+    "source_first_all_admitted_original_page_images_read": true,
+    "source_first_additional_detail_pages": [
+      258,
+      272,
+      274,
+      276
+    ],
+    "diagnostic_confirmed_reinspections": [
+      "original high-resolution PDF274",
+      "PDF273 lower body-mark paragraph",
+      "PDF277 opening boundary"
+    ],
+    "diagnostic_context_truncated_image_emissions_not_claimed_as_certified_reads": [
+      67,
+      177,
+      178,
+      888
+    ],
+    "retained_transcriptions_for_these_cross_references_read": true,
+    "no_other_edition_or_external_browsing": true
+  },
+  "firewall": {
+    "source_first_notes_frozen_before_candidate_access": true,
+    "all94_candidate_claims_read": true,
+    "all201_canonical_rows_read": true,
+    "producer_rationale_read_before_freeze": false,
+    "previous_diagnoses_read_before_freeze": false,
+    "implementation_repair_history_read_before_freeze": false,
+    "producer_source_note_contents_read_before_freeze": false,
+    "same_model_fresh_context_only": true,
+    "cross_family_review": false,
+    "external_expert_review": false,
+    "empirical_validation": false,
+    "repo_changes": false,
+    "candidate_changes": false,
+    "publication_performed": false
+  },
+  "result_counts": {
+    "report_claim_units": 94,
+    "report_pass": 87,
+    "report_fail": 7,
+    "source_fidelity_failed_units": 2,
+    "missing_disclosure_failed_units": 5,
+    "additional_checks": 10,
+    "additional_pass": 8,
+    "additional_fail": 2,
+    "canonical_rows_read": 201,
+    "canonical_row_pass": 199,
+    "canonical_row_fail": 2,
+    "independent_tests_run": 36,
+    "independent_test_exit_code": 0
+  },
+  "test_result": {
+    "exit_code": 0,
+    "tests": 36,
+    "independent_log": "INDEPENDENT_TEST.txt",
+    "command": "python -m unittest -v test_lilly_fifth_house",
+    "bytecode_writing_disabled": true,
+    "same_unique_suite_not_new_tests": true
+  },
+  "limits": [
+    "Same-model fresh-context independence only; no different-family or external-expert review.",
+    "No empirical validation, independently collected outcomes, historical ephemeris rerun or personal prediction.",
+    "All original admitted page images PDF256–276 were read before candidate disclosure. Diagnostic reinspection was targeted.",
+    "PDF67,177,178,888 diagnostic image emissions were attempted but returned a context-truncated result; they are not claimed as certified diagnostic visual reads. Retained source transcriptions support the corresponding bounded comparisons.",
+    "Earlier retained Ptolemy records and producer/reconciliation chronology were withheld or absent; explicit evidence-gap failures are preserved.",
+    "No final delivery archive, publication, provider copy, permissions or owner usability run is certified here.",
+    "No omitted substantive source section was found; this is a bounded semantic audit, not a new diplomatic edition or exhaustive future proof of completeness."
+  ],
+  "tool_budget_note": "Diagnostic phase bounded to 20 substantive nested tool calls, including the final artifact freeze; source-first phase preceded this budget.",
+  "reconciliation_rule": "Keep later evidence, producer response, repairs and dispositions separate; do not overwrite this diagnostic freeze.",
+  "freeze_utc": "2026-10-10 12:31:32 UTC",
+  "elapsed_seconds": 688.957976
+}

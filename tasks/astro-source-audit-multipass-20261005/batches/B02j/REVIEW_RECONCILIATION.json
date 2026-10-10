@@ -1,0 +1,90 @@
+{
+  "status": "ACCEPTED_WITH_PRESERVED_LIMITS",
+  "initial_diagnosis": {
+    "claim_units": 94,
+    "pass": 87,
+    "fail": 7,
+    "source_fidelity_failures": 2,
+    "missing_evidence_failures": 5,
+    "canonical_rows_reviewed": 201,
+    "artifact": "independent_review/DIAGNOSIS.md",
+    "sha256": "441e323308ee681a5649fdc90294e3cc388bfd7762c559e4da3cb059e0ddbb9c"
+  },
+  "dispositions": [
+    {
+      "id": "CL007",
+      "verdict": "PASS",
+      "basis": "The retained Ptolemy index has 19 unique batch IDs. Its batch counts sum to 1066; its four book totals independently sum to 1066. Its 61 sections also agree with the book subtotals.",
+      "limit": "Index-count verification only; the nineteen underlying RULES arrays were not reread or recounted."
+    },
+    {
+      "id": "CL008",
+      "verdict": "PASS",
+      "basis": "The previously checked retained Lilly inventory of 1357 plus the now checked Ptolemy index count of 1066 equals 2423.",
+      "limit": "This is an inventory total, not independent predictions or a renewed semantic audit of retained batches."
+    },
+    {
+      "id": "CL015",
+      "verdict": "PASS",
+      "basis": "All 32 fully qualified test method names in IMPLEMENTATION_TEST_OUTPUT.txt occur in the final 36-method TEST_B02j.txt. The four additions are SourceLedgerIntegrityTests methods.",
+      "limit": "This establishes method-set inclusion. The earlier test-file SHA256 82203906a05b468884a5aba90805443ce832dc588efaaae8c4c0ad464022e31c differs from final 9df22fc44bccbd519db20ea01389f19bb2edff791bb45f78573077ccc6466f3e; regression subcases changed within existing methods. Unchanged test bodies are not established."
+    },
+    {
+      "id": "CL023",
+      "verdict": "PASS",
+      "basis": "B039 now says conception has not been assured before the question in both active prerequisite representations. The unmarked independently qualification has been removed. The original reader wording remains explicitly historical in source_reader_original_fields.",
+      "limit": "The original source's anonymous-voice and antecedent-scope uncertainties remain."
+    },
+    {
+      "id": "CL050",
+      "verdict": "PASS",
+      "basis": "The report now names an unnamed member associated with Moon in Virgo. Final C012 preserves one in or near that member and explicitly states that its anatomy is not named. The five reports remain dependent features of one retrospective encounter.",
+      "limit": "No specific anatomical identification or independent historical outcome verification is inferred."
+    },
+    {
+      "id": "CL089",
+      "verdict": "PASS",
+      "basis": "The three disclosed source-reader note files match their freeze-receipt SHA256 values. The receipts explicitly record source-first stages and candidate-access restrictions. This checker's own pre-candidate source reading was established in the initial frozen diagnosis.",
+      "limit": "Producer chronology is supported by staged receipts and self-reported ordering, not independent trusted timestamps. Hashes establish file identity; the shared publication commit alone cannot establish the earlier event order. This is a documentation-level reconciliation of the earlier missing-evidence failure."
+    },
+    {
+      "id": "CL090",
+      "verdict": "PASS",
+      "basis": "The disclosed implementation report, probe evidence and receipt preserve three findings: malformed dependency containers, inconsistent integer validation and calendar-scope overreach. Reconciliation records the matching bounded repairs, and the final test source contains the relevant regression subcases. The final locative receipt reports 36 tests and exit0 against rules hash26e06fc4c0021fdc160fbd4f7e315324a8717b9c33f1a57f595aba14fcb6853d.",
+      "limit": "No new local run was performed during this offline changed-items phase. The initial independent 36-test run remains separate from later producer runs; the latter are checked as retained receipts."
+    }
+  ],
+  "additional_repairs": [
+    {
+      "id": "ADD001",
+      "verdict": "PASS",
+      "history": "The v02 correction removed genital specificity but changed in or near to on. That narrower locative wording was flagged in this reconciliation. The final immutable row restores in or near in source_statement and source_fields.assertion; v02 remains preserved.",
+      "final_wording": "One in or near the member signified by the Moon in Virgo; the anatomical member is not named in this sentence."
+    },
+    {
+      "id": "ADD002",
+      "verdict": "PASS",
+      "history": "The active B039 prerequisite is corrected; the original independently wording is retained only in the labeled original-reader fields and correction history."
+    }
+  ],
+  "changed_items_check": {
+    "claims": 7,
+    "pass": 7,
+    "fail": 0,
+    "additional_checks": 2,
+    "artifact": "independent_review/CHANGED_ITEMS_CHECK.json",
+    "sha256": "75daa7cd21d31dc7e68c5dfe090b79f3d19a413b5b99b359cb1a55ecd2381b92"
+  },
+  "retained_87_original_pass_judgments": true,
+  "whole_new_independent_pass_claimed": false,
+  "report_sha256": "1616b2b13916b69b57434909689ce3ad37a61f4db0b57f35ddd40695f00f16b1",
+  "rules_sha256": "26e06fc4c0021fdc160fbd4f7e315324a8717b9c33f1a57f595aba14fcb6853d",
+  "bounds": {
+    "test_subset": "32 method names are included in the36-method suite; regression subcases changed inside existing methods, so unchanged test bodies are not claimed.",
+    "producer_chronology": "Three note files match staged freeze hashes and declared source-first ordering. Independent trusted timestamps were not supplied.",
+    "source_first_recovery": "Exact independent source-first note/receipt bytes remain unavailable; their recorded identities and exact original diagnostic receipt are retained.",
+    "same_model_review": true,
+    "predictive_accuracy_evaluated": false
+  },
+  "publication_and_archive_checks": "Separate release receipts; initial release-requirement PASS judgments do not substitute for actual publication, archive or delivery."
+}

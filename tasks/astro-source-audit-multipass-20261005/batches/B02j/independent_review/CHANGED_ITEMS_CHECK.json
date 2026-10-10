@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "stage": "CHANGED_ITEMS_AFTER_FROZEN_INITIAL_DIAGNOSIS",
+  "reviewer": "/root/fifth_independent",
+  "completed_utc": "2026-10-10 12:58:45 UTC",
+  "status": "PASS_WITH_DECLARED_EVIDENCE_LIMITS",
+  "initial_diagnosis_sha256": "441e323308ee681a5649fdc90294e3cc388bfd7762c559e4da3cb059e0ddbb9c",
+  "initial_claim_check_sha256": "043662b0cbaa3ec2a7fdb4f595bca40999adf2beb54ab825595c98fe72bb049b",
+  "initial_diagnostic_receipt_sha256": "3893bf6b680c48686df2aacafbbaf1ef8c452a40dead8adc0c4788805716318a",
+  "initial_diagnosis_overwritten": false,
+  "input_identity": {
+    "repository": "u-dont-existDOTcom/humandesign",
+    "original_evidence_commit": "85db91522e611c904f9b3b9275d75c3ddcd36e21",
+    "v02_blob_sha": "13080fa3a6ed7b59c5e044c90a6eb42c23eed915",
+    "v02_sha256": "60f37d7dea470790bf54b7f02ef0ecaeae4871437922bced986a5081f7c7484f",
+    "final_locative_blob_sha": "b9ff40abf308eabdef50603dc39c6f4aa9fdf7a6",
+    "final_locative_sha256": "fab76240d61411d27ceba1b43b928cbea775bf2b310afe6c4b79eb240e200b6f",
+    "current_report_sha256": "1616b2b13916b69b57434909689ce3ad37a61f4db0b57f35ddd40695f00f16b1",
+    "current_rules_sha256": "26e06fc4c0021fdc160fbd4f7e315324a8717b9c33f1a57f595aba14fcb6853d",
+    "binding_limit": "Both immutable input-blob SHA256 values were independently recomputed. Full current report/rules digests and equality of the other 199 rows are supplied by the retained changed-row/test receipts; those complete current files were not refetched."
+  },
+  "scope": {
+    "report_claims_checked": [
+      "CL007",
+      "CL008",
+      "CL015",
+      "CL023",
+      "CL050",
+      "CL089",
+      "CL090"
+    ],
+    "report_claims_pass": 7,
+    "report_claims_fail": 0,
+    "initial_additional_checks_revisited": [
+      "ADD001",
+      "ADD002"
+    ],
+    "additional_checks_pass": 2,
+    "additional_checks_fail": 0,
+    "other_87_claims": "Initial judgments carried forward; not a fresh full-report pass.",
+    "full_source_reread": false,
+    "new_suite_execution_by_this_checker": false,
+    "empirical_validation": false,
+    "cross_family_independence": false
+  },
+  "claims": [
+    {
+      "id": "CL007",
+      "verdict": "PASS",
+      "basis": "The retained Ptolemy index has 19 unique batch IDs. Its batch counts sum to 1066; its four book totals independently sum to 1066. Its 61 sections also agree with the book subtotals.",
+      "limit": "Index-count verification only; the nineteen underlying RULES arrays were not reread or recounted."
+    },
+    {
+      "id": "CL008",
+      "verdict": "PASS",
+      "basis": "The previously checked retained Lilly inventory of 1357 plus the now checked Ptolemy index count of 1066 equals 2423.",
+      "limit": "This is an inventory total, not independent predictions or a renewed semantic audit of retained batches."
+    },
+    {
+      "id": "CL015",
+      "verdict": "PASS",
+      "basis": "All 32 fully qualified test method names in IMPLEMENTATION_TEST_OUTPUT.txt occur in the final 36-method TEST_B02j.txt. The four additions are SourceLedgerIntegrityTests methods.",
+      "limit": "This establishes method-set inclusion. The earlier test-file SHA256 82203906a05b468884a5aba90805443ce832dc588efaaae8c4c0ad464022e31c differs from final 9df22fc44bccbd519db20ea01389f19bb2edff791bb45f78573077ccc6466f3e; regression subcases changed within existing methods. Unchanged test bodies are not established."
+    },
+    {
+      "id": "CL023",
+      "verdict": "PASS",
+      "basis": "B039 now says conception has not been assured before the question in both active prerequisite representations. The unmarked independently qualification has been removed. The original reader wording remains explicitly historical in source_reader_original_fields.",
+      "limit": "The original source's anonymous-voice and antecedent-scope uncertainties remain."
+    },
+    {
+      "id": "CL050",
+      "verdict": "PASS",
+      "basis": "The report now names an unnamed member associated with Moon in Virgo. Final C012 preserves one in or near that member and explicitly states that its anatomy is not named. The five reports remain dependent features of one retrospective encounter.",
+      "limit": "No specific anatomical identification or independent historical outcome verification is inferred."
+    },
+    {
+      "id": "CL089",
+      "verdict": "PASS",
+      "basis": "The three disclosed source-reader note files match their freeze-receipt SHA256 values. The receipts explicitly record source-first stages and candidate-access restrictions. This checker's own pre-candidate source reading was established in the initial frozen diagnosis.",
+      "limit": "Producer chronology is supported by staged receipts and self-reported ordering, not independent trusted timestamps. Hashes establish file identity; the shared publication commit alone cannot establish the earlier event order. This is a documentation-level reconciliation of the earlier missing-evidence failure."
+    },
+    {
+      "id": "CL090",
+      "verdict": "PASS",
+      "basis": "The disclosed implementation report, probe evidence and receipt preserve three findings: malformed dependency containers, inconsistent integer validation and calendar-scope overreach. Reconciliation records the matching bounded repairs, and the final test source contains the relevant regression subcases. The final locative receipt reports 36 tests and exit0 against rules hash26e06fc4c0021fdc160fbd4f7e315324a8717b9c33f1a57f595aba14fcb6853d.",
+      "limit": "No new local run was performed during this offline changed-items phase. The initial independent 36-test run remains separate from later producer runs; the latter are checked as retained receipts."
+    }
+  ],
+  "additional_checks": [
+    {
+      "id": "ADD001",
+      "verdict": "PASS",
+      "history": "The v02 correction removed genital specificity but changed in or near to on. That narrower locative wording was flagged in this reconciliation. The final immutable row restores in or near in source_statement and source_fields.assertion; v02 remains preserved.",
+      "final_wording": "One in or near the member signified by the Moon in Virgo; the anatomical member is not named in this sentence."
+    },
+    {
+      "id": "ADD002",
+      "verdict": "PASS",
+      "history": "The active B039 prerequisite is corrected; the original independently wording is retained only in the labeled original-reader fields and correction history."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/source_readers/a/SOURCE_FIRST_NOTES.md",
+      "git_blob_sha": "128282fb422ac7e016de8f373d1f575307806d28",
+      "sha256": "938cd5816d0c80f9e21edacdbcdf9d0484e4f6a890b038463ba3576fe2a1fa17"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/source_readers/a/SOURCE_FIRST_FREEZE.json",
+      "git_blob_sha": "5fed7aa53683039384695a03d29ef2491e8a2386",
+      "sha256": "85140edc8cf5e617ba9f7bb0864fd7d1ebd0528419d1dc5f160a77dd9db35338"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/source_readers/b/SOURCE_FIRST_NOTES.md",
+      "git_blob_sha": "a20cca03f4593f97dd46b70fbd22fe6a52d939f7",
+      "sha256": "aea8ca9f643b1a478333bd16d860bfde2b410bff460497090e0bbb175cb8d315"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/source_readers/b/SOURCE_FIRST_FREEZE.json",
+      "git_blob_sha": "b06417cb69cfdcf071b4741e86f874568d707035",
+      "sha256": "da3ecf51794d3a8ef7555c522cecffc4f94077ead77d0838a70737c17cf7c5e8"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/ROOT_SOURCE_FIRST_NOTES.md",
+      "git_blob_sha": "2605e4fb10ff136949e97bd23a13d55eb603eb1b",
+      "sha256": "46234093358b0ce0e5f92e105eb865fdb367a5f16e58b40179a9cabb24997aa3"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/ROOT_SOURCE_FIRST_FREEZE.json",
+      "git_blob_sha": "4f5c979a950559608fdfa8214abf871676504f8f",
+      "sha256": "1a6311f3687c3b698185bfb2206a24f9b5be8e074adcd028cffa69a0afadafee"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/implementation_review/IMPLEMENTATION_CHECK.md",
+      "git_blob_sha": "d15ee8547a5c8a997fc366451f599e6193c39384",
+      "sha256": "d3512e5ea4c78192b07e0ebf8d387a2a6695acd9c7a5c8f5069409bf3d002490"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/implementation_review/IMPLEMENTATION_CHECK_RECEIPT.json",
+      "git_blob_sha": "c6835eda672ea1081cbdace0fa12a8d07809c7bd",
+      "sha256": "1e6440274f65313ecb10cd1d402f6e9963f7122b185edade4d9e0a3865805110"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/implementation_review/IMPLEMENTATION_CHECK_EVIDENCE.json",
+      "git_blob_sha": "704b5c098cc8fd8fc02e0df1de348e9ba3fe2409",
+      "sha256": "1f4ae67fa4f06a4a13d252b8d7b8afd71863224886e4741ac02a6a50953bcb37"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/implementation_review/IMPLEMENTATION_TEST_OUTPUT.txt",
+      "git_blob_sha": "4d1f2be6847289cf67fd4d19da2e664e05539032",
+      "sha256": "80b0deb98b0c218cd542438e9c284e75b3df9a1b0428b4bf61fdd68cbb4a2fcc"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/IMPLEMENTATION_RECONCILIATION.json",
+      "git_blob_sha": "d8d70818346e61c2f6115473eee843727e3f2205",
+      "sha256": "46fca9ca0379370e5d3f6cf9b98388317676780244165e6be394f4af723c1eb1"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/TEST_B02j.txt",
+      "git_blob_sha": "7710267c80c012168efd36c666fe6f185bb125b0",
+      "sha256": "6bea7b2885ec8c994546437e408d1b971c1aa2d5b033f72477857ab987d75a18"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02j/test_lilly_fifth_house.py",
+      "git_blob_sha": "24e6306a6fd5957bcdce45e48fde87c0b825ce10",
+      "sha256": "9df22fc44bccbd519db20ea01389f19bb2edff791bb45f78573077ccc6466f3e"
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
+      "git_blob_sha": "7e38d013364b409d3f10b67c465511bb18b79495",
+      "sha256": "92deb60f6e6a7073f1a80491dac2364961a640fa1fb2eb6f3170c35286ab6474"
+    }
+  ],
+  "disclosure": {
+    "initial_firewall": "Producer notes, rationale and implementation history were first disclosed to this checker after the initial diagnosis froze.",
+    "current_independence": "This is a reconciliation using newly disclosed producer evidence, not a new independent source-first pass.",
+    "local_exec_retried": false,
+    "repository_or_device_mutations": false,
+    "other_editions_consulted": false,
+    "source_notes_review_scope": "Producer notes were retrieved and inspected for identity, source coverage and stage assertions; this was not a new whole-source collation.",
+    "remaining_weakness": "Producer chronology lacks independent trusted timestamps. Complete current-file identity/equality and later test executions are bound through supplied immutable receipts, not a new full-tree or suite rerun.",
+    "original_source_first_artifacts": "The independent SOURCE_FIRST_NOTES.md and SOURCE_FIRST_RECEIPT.json exact contents are unavailable from compacted context and absent from the published initial tree. Their original hashes are retained; no substitute notes or receipt were fabricated.",
+    "diagnostic_artifact_recovery": "Four exact-content generator fragments for the original DIAGNOSIS.md, CLAIM_CHECK.json and DIAGNOSTIC_RECEIPT.json were sent to root with required original-hash assertions. Recovery must be labeled exact only after those assertions pass."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "stage": "PRE_SOURCE_CORE_PUBLICATION",
+  "admission": "ADMITTED_TO_SOURCE_CORE_PUBLICATION_ONLY",
+  "active_contract_sha256": "ce07651251817042f54cf230869a81ce891dd8694c0206ade4859f1141714d61",
+  "source_fidelity": {
+    "status": "PASS",
+    "evidence": "201-row initial semantic check plus documented two-row repairs and final changed-items PASS; unchanged199 rows bound by REVIEW_FINAL_CHANGED_ROW.json."
+  },
+  "genre_and_exposure": {
+    "status": "PASS",
+    "evidence": "All canonical rows reference-only; no participant content opened or runtime/model changes."
+  },
+  "bounded_calculation": {
+    "status": "PASS",
+    "evidence": "36 actual final focused tests; numeric tables, case inventory, arithmetic and code/test files unchanged through source repairs."
+  },
+  "independent_diagnosis": {
+    "status": "PASS_WITH_DECLARED_LIMITS",
+    "evidence": "Exact frozen initial artifacts restored by original hashes; separate7-claim changed-items check; two raw source-first files unavailable and explicitly recorded."
+  },
+  "authorized_publication": {
+    "status": "PASS_FOR_PREPARATION",
+    "evidence": "Same authorized repository/branches; root sole writer; current local output allowlisted. Expected-SHA nonforce update and remote tree readback remain mandatory execution steps."
+  },
+  "preservation_and_continuation": {
+    "status": "PASS",
+    "evidence": "Protected object inventory and nine prior Lilly entries unchanged; next PDF277/printed243 retained; parent audit OPEN."
+  },
+  "rules_sha256": "26e06fc4c0021fdc160fbd4f7e315324a8717b9c33f1a57f595aba14fcb6853d",
+  "report_sha256": "1616b2b13916b69b57434909689ce3ad37a61f4db0b57f35ddd40695f00f16b1",
+  "deferred_release_obligations": [
+    "Publish/fetch/verify exact source-core tree",
+    "Bind clean input inventory before ZIP build",
+    "Actual extracted ZIP hashes and36-test run",
+    "Publish/fetch/verify distribution",
+    "Owner Downloads download and exact disk readback",
+    "Final delivery receipt publication"
+  ],
+  "finalization_admitted": false
+}

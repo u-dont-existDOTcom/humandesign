@@ -1,0 +1,155 @@
+{
+  "batch": "B02j",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "original_pdf_bytes": 141842963,
+  "original_pdf_pages": 894,
+  "hash_recomputed_this_turn_by_root_and_independent_reader": true,
+  "root_full_admitted_page_images_read": [
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276
+  ],
+  "number_of_distinct_admitted_pages": 21,
+  "boundary_only_page": {
+    "pdf": 277,
+    "printed": 243,
+    "extracted": false
+  },
+  "targeted_retained_source_comparison_images_read": [
+    67,
+    123,
+    177,
+    178
+  ],
+  "targeted_original_errata_page_read": 888,
+  "producer_source_reading": {
+    "A": {
+      "pages": [
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263
+      ],
+      "notes": "source_readers/a/SOURCE_FIRST_NOTES.md",
+      "sha256": "938cd5816d0c80f9e21edacdbcdf9d0484e4f6a890b038463ba3576fe2a1fa17"
+    },
+    "B": {
+      "pages": [
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272
+      ],
+      "notes": "source_readers/b/SOURCE_FIRST_NOTES.md",
+      "sha256": "aea8ca9f643b1a478333bd16d860bfde2b410bff460497090e0bbb175cb8d315"
+    },
+    "root": {
+      "worked_pages": [
+        272,
+        273,
+        274,
+        275,
+        276
+      ],
+      "notes": "ROOT_SOURCE_FIRST_NOTES.md",
+      "sha256": "46234093358b0ce0e5f92e105eb865fdb367a5f16e58b40179a9cabb24997aa3",
+      "later_full_span_review": true
+    }
+  },
+  "independent_reader": {
+    "fresh_context": true,
+    "source_pages": [
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276
+    ],
+    "notes_sha256": "68dacb1f4342ffcffbac1f2fa9fe50c1180d337113a373bb3dff4682d5b6b69a",
+    "source_before_candidates": true,
+    "independence_limit": "Same model, separate source-first context; no cross-family or external-expert claim."
+  },
+  "source_image_manifest": [
+    {
+      "path": "evidence/chart1-opposite-cusps.png",
+      "bytes": 389163,
+      "sha256": "3701b4ffed85ba3f3c237463f5b3cc167aa263d3a06435e2d6a90ee1c02ea9b9"
+    },
+    {
+      "path": "evidence/chart2-center.png",
+      "bytes": 251047,
+      "sha256": "c38069496607122f5634997b85a18d41315496180d5d1e0e775bdb9b8501dde7"
+    },
+    {
+      "path": "evidence/chart2-sun-level.png",
+      "bytes": 300954,
+      "sha256": "6f6b83074dcca95c43f5b0b1498fb1057555d849d437539da3763dd9e44986c7"
+    },
+    {
+      "path": "evidence/original-pdf272.png",
+      "bytes": 1187928,
+      "sha256": "0c2cdd8fb6daed7bbe6160b2ca085f0669e10eb2e26b2cb40c4cb90811d7bef5"
+    },
+    {
+      "path": "evidence/original-pdf274.png",
+      "bytes": 1128927,
+      "sha256": "45ba39a3cd85b7e1b7b881076bfbc65aaf16bb651c86f217fc90acb966a78c8d"
+    },
+    {
+      "path": "evidence/original-pdf275.png",
+      "bytes": 926944,
+      "sha256": "ca81c2f57449175a30e7b84f6daae82777278afbaefa141cd1e5e2df8556e2b8"
+    },
+    {
+      "path": "evidence/original-pdf276.png",
+      "bytes": 1029016,
+      "sha256": "b79f62c32ddf66f56a05d2c246c5e70c64bc3f7d837b63e116e488684b82a2e8"
+    }
+  ],
+  "evidence_limits": "Original-source inspection is not ephemeris verification, clinical validation or predictive accuracy. Inferred diagram signs remain labelled; no participant-data reads or model fits."
+}

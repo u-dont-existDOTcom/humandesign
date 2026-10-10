@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "batch": "B02j",
+  "initial_candidate_commit": "85db91522e611c904f9b3b9275d75c3ddcd36e21",
+  "initial_diagnostic_sha256": "441e323308ee681a5649fdc90294e3cc388bfd7762c559e4da3cb059e0ddbb9c",
+  "policy": "Preserve original source-reader files and frozen notes. Correct canonical paraphrases against the cited primary passage; original rows are retained in verification_history/INITIAL_CORRECTED_ROWS.json.",
+  "corrections": [
+    {
+      "id": "SC01",
+      "local_id": "B039",
+      "canonical_id": "LI.1647.II.XL.R1271",
+      "claim_id": "CL023",
+      "classification": "CONFIRMED_SOURCE_FIDELITY_DEFECT",
+      "source": {
+        "printed_page": 233,
+        "pdf_page": 267,
+        "scope": "Prior assurance of conception before the question; no independent-assurance qualification stated."
+      },
+      "apply_in_builder": true,
+      "changes": [
+        {
+          "field": "conditions",
+          "old_value": [
+            "Infortunes replace Fortunes in the placements described above.",
+            "Conception has not independently been assured before the question."
+          ],
+          "new_value": [
+            "Infortunes replace Fortunes in the placements described above.",
+            "Conception has not been assured before the question."
+          ]
+        }
+      ],
+      "preservation": "source_readers/b/CANDIDATE_RULES.json remains byte-identical to the original reader output; canonical source_fields are corrected and original source_reader_original_fields retained."
+    },
+    {
+      "id": "SC02",
+      "local_id": "C012",
+      "canonical_id": "LI.1647.II.XLII.R1330",
+      "claim_id": "CL050",
+      "classification": "CONFIRMED_SOURCE_FIDELITY_DEFECT",
+      "source": {
+        "printed_page": 239,
+        "pdf_page": 273,
+        "wording": "the member signified by the [Moon] in [Virgo]",
+        "transcription_note": "Planet and sign glyphs rendered by bracketed names; anatomical member unspecified in this sentence."
+      },
+      "apply_in_builder": false,
+      "old_interpretation": "genital member / genital region",
+      "correction": "One in or near the member signified by the Moon in Virgo; the anatomical member is not named in this sentence.",
+      "preservation": "Original root source-first notes are unchanged historical evidence. Initial canonical row and report are retained; generator, current row and report remove unsupported anatomical specificity.",
+      "changed_items_review": {
+        "v02_wording": "One on the member signified by the Moon in Virgo; the anatomical member is not named in this sentence.",
+        "finding": "The v02 replacement changed the source locative qualification to on.",
+        "v03_repair": "One in or near the member signified by the Moon in Virgo; the anatomical member is not named in this sentence.",
+        "history": "REVIEW_CANDIDATE_V2.json is preserved unchanged."
+      }
+    }
+  ]
+}

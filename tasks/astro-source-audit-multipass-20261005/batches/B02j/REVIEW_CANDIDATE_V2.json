@@ -1,0 +1,482 @@
+{
+  "schema_version": 1,
+  "stage": "CHANGED_ITEMS_AFTER_FROZEN_INITIAL_DIAGNOSIS",
+  "base_commit": "85db91522e611c904f9b3b9275d75c3ddcd36e21",
+  "initial_diagnosis_sha256": "441e323308ee681a5649fdc90294e3cc388bfd7762c559e4da3cb059e0ddbb9c",
+  "initial_candidate_manifest_sha256": "231a5999daa39c7cc14253a3ed6f10b9a78dfe092678685f556443f57a0c32db",
+  "current_report_sha256": "1616b2b13916b69b57434909689ce3ad37a61f4db0b57f35ddd40695f00f16b1",
+  "current_rules_sha256": "b33d4a57281a605887cff896531ac48fab844f51641b4976d00558ec40c8dede",
+  "current_claim_count": 94,
+  "changed_records": [
+    {
+      "id": "LI.1647.II.XL.R1271",
+      "local_id": "B039",
+      "title": "Unnumbered Some say conception variants and malefic qualifications — B039",
+      "kind": "author_report",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XL",
+        "pdf_pages": [
+          267
+        ],
+        "printed_sequence_expected": [
+          233
+        ],
+        "visible_printed_labels": [
+          "233"
+        ],
+        "passage_anchor": "it's no signe of Conception",
+        "anchor_note": "Short locating phrase checked against original image; long-s, glyph names and spacing normalized where stated in reader provenance; not a full diplomatic transcription."
+      },
+      "genre": "historical_horary_source",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly reporting Some say; endpoint of anonymous voice unresolved",
+      "source_statement": "The sequence then supplies no sign of conception, subject to the separate already-assured-conception branch.",
+      "prerequisites": [
+        {
+          "source_clauses": [
+            "Infortunes replace Fortunes in the placements described above.",
+            "Conception has not been assured before the question."
+          ],
+          "condition_logic": "Adverse replacement pattern; absent the expressly separate prior-assurance condition, outcome is no sign of conception. This is not proof of a modern diagnosis.",
+          "executable": false
+        }
+      ],
+      "qualifications_and_limits": [
+        "UB018: anonymous-report voice boundary is not explicit.",
+        "UB019: as abovesaid does not delimit every earlier route precisely."
+      ],
+      "source_fields": {
+        "id": "B039",
+        "chapter": "XL",
+        "section": "Unnumbered Some say conception variants and malefic qualifications",
+        "pdf_pages": [
+          267
+        ],
+        "printed_pages": [
+          233
+        ],
+        "anchor": "it's no signe of Conception",
+        "kind": "author_report",
+        "conditions": [
+          "Infortunes replace Fortunes in the placements described above.",
+          "Conception has not been assured before the question."
+        ],
+        "condition_logic": "Adverse replacement pattern; absent the expressly separate prior-assurance condition, outcome is no sign of conception. This is not proof of a modern diagnosis.",
+        "assertion": "The sequence then supplies no sign of conception, subject to the separate already-assured-conception branch.",
+        "exceptions": [],
+        "uncertainty": [
+          "UB018: anonymous-report voice boundary is not explicit.",
+          "UB019: as abovesaid does not delimit every earlier route precisely."
+        ],
+        "scope": "historical horary source only",
+        "dependencies": [
+          "B035",
+          "B036",
+          "B037",
+          "B038"
+        ]
+      },
+      "source_reader": "B",
+      "unresolved_ids": [
+        "UB018",
+        "UB019"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "related_record_ids": [
+        "LI.1647.II.XL.R1267",
+        "LI.1647.II.XL.R1268",
+        "LI.1647.II.XL.R1269",
+        "LI.1647.II.XL.R1270"
+      ],
+      "source_correction_ids": [
+        "SC01"
+      ],
+      "source_reader_original_fields": {
+        "id": "B039",
+        "chapter": "XL",
+        "section": "Unnumbered Some say conception variants and malefic qualifications",
+        "pdf_pages": [
+          267
+        ],
+        "printed_pages": [
+          233
+        ],
+        "anchor": "it's no signe of Conception",
+        "kind": "author_report",
+        "conditions": [
+          "Infortunes replace Fortunes in the placements described above.",
+          "Conception has not independently been assured before the question."
+        ],
+        "condition_logic": "Adverse replacement pattern; absent the expressly separate prior-assurance condition, outcome is no sign of conception. This is not proof of a modern diagnosis.",
+        "assertion": "The sequence then supplies no sign of conception, subject to the separate already-assured-conception branch.",
+        "exceptions": [],
+        "uncertainty": [
+          "UB018: anonymous-report voice boundary is not explicit.",
+          "UB019: as abovesaid does not delimit every earlier route precisely."
+        ],
+        "scope": "historical horary source only",
+        "dependencies": [
+          "B035",
+          "B036",
+          "B037",
+          "B038"
+        ]
+      }
+    },
+    {
+      "id": "LI.1647.II.XLII.R1330",
+      "local_id": "C012",
+      "title": "Reported bodily mark: moon_virgo_member_unspecified",
+      "kind": "author_report",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XLII",
+        "pdf_pages": [
+          273
+        ],
+        "printed_sequence_expected": [
+          239
+        ],
+        "visible_printed_labels": [
+          "239"
+        ],
+        "passage_anchor": "Shee affirmed, that the Moles of her Body did correspond",
+        "anchor_note": "normalized locating phrase, not a diplomatic quotation"
+      },
+      "genre": "historical_horary_source",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly",
+      "source_statement": "One on the member signified by the Moon in Virgo; the anatomical member is not named in this sentence.",
+      "prerequisites": [
+        {
+          "source_clauses": [],
+          "condition_logic": {
+            "all": []
+          },
+          "executable": false
+        }
+      ],
+      "qualifications_and_limits": [
+        "C02"
+      ],
+      "source_fields": {
+        "id": "C012",
+        "chapter": "XLII",
+        "section": "reported_marks",
+        "pdf_pages": [
+          273
+        ],
+        "printed_pages": [
+          239
+        ],
+        "title": "Reported bodily mark: moon_virgo_member_unspecified",
+        "anchor": "Shee affirmed, that the Moles of her Body did correspond",
+        "anchor_type": "normalized locating phrase, not a diplomatic quotation",
+        "kind": "author_report",
+        "conditions": [],
+        "condition_logic": {
+          "all": []
+        },
+        "assertion": "One on the member signified by the Moon in Virgo; the anatomical member is not named in this sentence.",
+        "exceptions": [],
+        "uncertainty": [
+          "C02"
+        ],
+        "scope": "historical horary source only",
+        "evidence_class": "retrospective_author_narrative",
+        "case_id": "LILLY_II_XLII_1635_CHILDREN",
+        "independent_evidence_unit": false,
+        "calculation": null
+      },
+      "source_reader": "root",
+      "unresolved_ids": [
+        "U-C02"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": "LILLY_II_XLII_1635_CHILDREN",
+      "related_record_ids": [],
+      "source_correction_ids": [
+        "SC02"
+      ]
+    }
+  ],
+  "target_claims": [
+    {
+      "id": "CL007",
+      "section": "Result and exact scope",
+      "claim_type": "table_figure_or_source_content",
+      "claim": "| Retained Ptolemy records | 1,066 |",
+      "table_header": "| Measure | Verified inventory |",
+      "anchor": "Surrounding report source citation and corresponding packet table/register",
+      "checked_by_producer": "Source/inventory readback; checker must verify row with surrounding source scope."
+    },
+    {
+      "id": "CL008",
+      "section": "Result and exact scope",
+      "claim_type": "table_figure_or_source_content",
+      "claim": "| Combined source records | 2,423 |",
+      "table_header": "| Measure | Verified inventory |",
+      "anchor": "Surrounding report source citation and corresponding packet table/register",
+      "checked_by_producer": "Source/inventory readback; checker must verify row with surrounding source scope."
+    },
+    {
+      "id": "CL015",
+      "section": "Result and exact scope",
+      "claim_type": "source_content_and_explicitly_labelled_inference",
+      "claim": "These are inventory counts, not counts of independent predictions. A limit-register entry can group related questions; further inline qualifications remain attached to individual records. The earlier 32-test implementation check is a subset of the final 36-test suite. Repeating the suite in the extracted delivery archive does not add new tests to the total. [Evidence: `COUNTS.json`, `UNRESOLVED.json`, `TEST_RUN_SUMMARY.json`, `IMPLEMENTATION_RECONCILIATION.json`; archive execution has its separate usability receipt.]",
+      "anchor": [
+        "[Evidence: `COUNTS.json`, `UNRESOLVED.json`, `TEST_RUN_SUMMARY.json`, `IMPLEMENTATION_RECONCILIATION.json`; archive execution has its separate usability receipt.]"
+      ],
+      "checked_by_producer": "Whole paragraph including qualifications. Any false subclaim fails this unit; checker may add omissions."
+    },
+    {
+      "id": "CL023",
+      "section": "1. The question and its known inputs govern the rule",
+      "claim_type": "source_content_and_explicitly_labelled_inference",
+      "claim": "Lilly also separates conception from what follows it. In several adverse branches, stronger testimony or prior assurance of conception changes the interpretation from absence of conception to danger of loss. The record therefore preserves both the astronomical condition and what was already believed or known when the question was asked. [XXXIX, printed226,228 / PDF260,262; XL, printed232–233 / PDF266–267; A039–A040, A069, B039–B042.]",
+      "anchor": [
+        "[XXXIX, printed226,228 / PDF260,262; XL, printed232–233 / PDF266–267; A039–A040, A069, B039–B042.]"
+      ],
+      "checked_by_producer": "Whole paragraph including qualifications. Any false subclaim fails this unit; checker may add omissions."
+    },
+    {
+      "id": "CL050",
+      "section": "4. The 1635 example gives a judgment without a lifetime endpoint",
+      "claim_type": "source_content_and_explicitly_labelled_inference",
+      "claim": "The account includes symptoms and **five bodily-mark reports**: near the navel, right ankle, near the right knee on the inner thigh, an unnamed member associated with the Moon in Virgo, and a scar or mole on the outside of the right arm. They are narrated as the querent’s confirmation within this one retrospective encounter. The first navel item is not given a separate explicit astrological cause in that sentence. These reports remain dependent observations within one case, not five additional prediction cases. [XLII, printed239 / PDF273, C008–C013.]",
+      "anchor": [
+        "[XLII, printed239 / PDF273, C008–C013.]"
+      ],
+      "checked_by_producer": "Whole paragraph including qualifications. Any false subclaim fails this unit; checker may add omissions."
+    },
+    {
+      "id": "CL089",
+      "section": "9. What the verification establishes",
+      "claim_type": "source_content_and_explicitly_labelled_inference",
+      "claim": "Every admitted original page image was read, with additional detail inspection for difficult chart entries and the targeted errata. Source-reader notes were frozen before their candidate rows were produced. The final diagnostic reader also read the complete admitted source block in a fresh context before receiving the frozen report and records. This is separation of model context and information state; it is not a claim of a different model family or an outside expert. The later diagnostic findings and their dispositions must remain separate artifacts. [Evidence: `READING_RECEIPT.json`, source-reader freezes, independent-review receipts.]",
+      "anchor": [
+        "[Evidence: `READING_RECEIPT.json`, source-reader freezes, independent-review receipts.]"
+      ],
+      "checked_by_producer": "Whole paragraph including qualifications. Any false subclaim fails this unit; checker may add omissions."
+    },
+    {
+      "id": "CL090",
+      "section": "9. What the verification establishes",
+      "claim_type": "source_content_and_explicitly_labelled_inference",
+      "claim": "The final source/reference suite contains 36 actual tests and passes with exit code 0. It checks ID continuity, source anchors and issue references, inventory, missing minutes, separate source witnesses, modular arithmetic, the local time models, dependency inputs, the conditional vote replay and the calendar restriction. The collaborative implementation review’s three reproduced interface problems are retained with the repairs. [Evidence: `TEST_B02j.txt`, `TEST_RUN_SUMMARY.json`, `implementation_review/`, `IMPLEMENTATION_RECONCILIATION.json`.]",
+      "anchor": [
+        "[Evidence: `TEST_B02j.txt`, `TEST_RUN_SUMMARY.json`, `implementation_review/`, `IMPLEMENTATION_RECONCILIATION.json`.]"
+      ],
+      "checked_by_producer": "Whole paragraph including qualifications. Any false subclaim fails this unit; checker may add omissions."
+    }
+  ],
+  "source_corrections": {
+    "schema_version": 1,
+    "batch": "B02j",
+    "initial_candidate_commit": "85db91522e611c904f9b3b9275d75c3ddcd36e21",
+    "initial_diagnostic_sha256": "441e323308ee681a5649fdc90294e3cc388bfd7762c559e4da3cb059e0ddbb9c",
+    "policy": "Preserve original source-reader files and frozen notes. Correct canonical paraphrases against the cited primary passage; original rows are retained in verification_history/INITIAL_CORRECTED_ROWS.json.",
+    "corrections": [
+      {
+        "id": "SC01",
+        "local_id": "B039",
+        "canonical_id": "LI.1647.II.XL.R1271",
+        "claim_id": "CL023",
+        "classification": "CONFIRMED_SOURCE_FIDELITY_DEFECT",
+        "source": {
+          "printed_page": 233,
+          "pdf_page": 267,
+          "scope": "Prior assurance of conception before the question; no independent-assurance qualification stated."
+        },
+        "apply_in_builder": true,
+        "changes": [
+          {
+            "field": "conditions",
+            "old_value": [
+              "Infortunes replace Fortunes in the placements described above.",
+              "Conception has not independently been assured before the question."
+            ],
+            "new_value": [
+              "Infortunes replace Fortunes in the placements described above.",
+              "Conception has not been assured before the question."
+            ]
+          }
+        ],
+        "preservation": "source_readers/b/CANDIDATE_RULES.json remains byte-identical to the original reader output; canonical source_fields are corrected and original source_reader_original_fields retained."
+      },
+      {
+        "id": "SC02",
+        "local_id": "C012",
+        "canonical_id": "LI.1647.II.XLII.R1330",
+        "claim_id": "CL050",
+        "classification": "CONFIRMED_SOURCE_FIDELITY_DEFECT",
+        "source": {
+          "printed_page": 239,
+          "pdf_page": 273,
+          "wording": "the member signified by the [Moon] in [Virgo]",
+          "transcription_note": "Planet and sign glyphs rendered by bracketed names; anatomical member unspecified in this sentence."
+        },
+        "apply_in_builder": false,
+        "old_interpretation": "genital member / genital region",
+        "correction": "One on the member signified by the Moon in Virgo; the anatomical member is not named in this sentence.",
+        "preservation": "Original root source-first notes are unchanged historical evidence. Initial canonical row and report are retained; generator, current row and report remove unsupported anatomical specificity."
+      }
+    ]
+  },
+  "new_count_evidence": {
+    "schema_version": 1,
+    "status": "PASS",
+    "purpose": "Independent index-count evidence for CL007 and CL008",
+    "repository": "u-dont-existDOTcom/humandesign",
+    "ref": "85db91522e611c904f9b3b9275d75c3ddcd36e21",
+    "path": "tasks/astro-source-audit-multipass-20261005/PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
+    "git_blob_sha": "7e38d013364b409d3f10b67c465511bb18b79495",
+    "source_records": 1066,
+    "source_batches_count": 19,
+    "batch_ids": [
+      "B01",
+      "B01b",
+      "B01c",
+      "B01d",
+      "B01e",
+      "B01f",
+      "B01g",
+      "B01h",
+      "B01i",
+      "B01j",
+      "B01k",
+      "B01l",
+      "B01m",
+      "B01n",
+      "B01o",
+      "B01p",
+      "B01q",
+      "B01r",
+      "B01s"
+    ],
+    "batch_record_counts": [
+      24,
+      32,
+      53,
+      27,
+      28,
+      29,
+      34,
+      45,
+      61,
+      74,
+      93,
+      71,
+      59,
+      78,
+      37,
+      91,
+      46,
+      100,
+      84
+    ],
+    "batch_records_sum": 1066,
+    "book_record_counts": {
+      "I": 109,
+      "II": 358,
+      "III": 224,
+      "IV": 375
+    },
+    "book_records_sum": 1066,
+    "sections": 61,
+    "book_sections_sum": 61,
+    "checks": {
+      "source_records_1066": true,
+      "source_batches_19": true,
+      "batch_ids_unique": true,
+      "batch_sum_equals_declared": true,
+      "book_sum_equals_declared": true,
+      "section_sum_equals_declared": true
+    },
+    "method": "GitHub fetch_file at exact published commit; independent JavaScript parsing and summation.",
+    "limits": [
+      "Underlying nineteen RULES.json arrays were not reread or recounted in this turn; this is an index count.",
+      "No semantic or predictive validation claim.",
+      "Local environment offline; receipt returned to root for saving."
+    ],
+    "repository_mutations_performed": false,
+    "participant_content_opened": false
+  },
+  "current_test_result": {
+    "batch": "B02j",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "-v",
+      "test_lilly_fifth_house"
+    ],
+    "actual_process_exit_code": 0,
+    "tests_run": 36,
+    "result": "PASS",
+    "tested_files": [
+      {
+        "file": "RULES.json",
+        "sha256": "b33d4a57281a605887cff896531ac48fab844f51641b4976d00558ec40c8dede"
+      },
+      {
+        "file": "UNRESOLVED.json",
+        "sha256": "26ab19b51592616ac2bfff7f17fe39a1e81301022baf9865f9f6f9755af38872"
+      },
+      {
+        "file": "SECTION_COVERAGE.json",
+        "sha256": "4486312b0dad526a4a89a564acc70ab74aae92402e041273605665c5f4993c73"
+      },
+      {
+        "file": "WORKED_NUMERIC_TABLES.json",
+        "sha256": "a1343b2dda05c11be12ece2937e6f6b45d392eed3f7a880d115f59d346647862"
+      },
+      {
+        "file": "HISTORICAL_CASES.json",
+        "sha256": "11ed3fc8afb2726092d42d74777f29bfa8624104e4940acab063e71a12a30ae8"
+      },
+      {
+        "file": "lilly_fifth_house_reference.py",
+        "sha256": "494a40cd0a5c01182200b66d126444f2ca0f0a1b3e2976d07e8539836b29ae15"
+      },
+      {
+        "file": "test_lilly_fifth_house.py",
+        "sha256": "9df22fc44bccbd519db20ea01389f19bb2edff791bb45f78573077ccc6466f3e"
+      }
+    ],
+    "scope": "Data integrity and bounded source arithmetic only. No app/runtime/ephemeris/clinical/predictive validation.",
+    "retained_test_count_claimed": 0,
+    "log": "TEST_B02j.txt",
+    "log_sha256": "5c51f3f95966001bd74435559c3a7fdb700acced1fd4a94d7806bae4d821b333"
+  },
+  "preservation": {
+    "initial_commit": "85db91522e611c904f9b3b9275d75c3ddcd36e21",
+    "unchanged_original_files": {
+      "ROOT_SOURCE_FIRST_NOTES.md": "46234093358b0ce0e5f92e105eb865fdb367a5f16e58b40179a9cabb24997aa3",
+      "source_readers/b/CANDIDATE_RULES.json": "5f04efb80b67f235fe3d3087c7b655030d4a5f3b939b968b37e988f31b0e0646"
+    },
+    "source_corrections": [
+      "SC01",
+      "SC02"
+    ],
+    "initial_report_and_rows_retained": "verification_history/",
+    "prior_index_entries_unchanged": true
+  },
+  "available_provenance_paths": [
+    "source_readers/a/AFTER_FREEZE_SOURCE_SUPPLEMENT.md",
+    "source_readers/a/SOURCE_FIRST_FREEZE.json",
+    "source_readers/a/SOURCE_FIRST_NOTES.md",
+    "source_readers/b/ERRATA_FREEZE.json",
+    "source_readers/b/ERRATA_SOURCE_FIRST_SUPPLEMENT.md",
+    "source_readers/b/SOURCE_FIRST_FREEZE.json",
+    "source_readers/b/SOURCE_FIRST_NOTES.md"
+  ]
+}
