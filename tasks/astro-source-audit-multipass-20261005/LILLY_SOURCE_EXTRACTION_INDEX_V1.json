@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIII_COMPLETE_XLIV_OPENING_READ_OTHER_SECTIONS_OPEN",
-  "records_count": 1549,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIII_COMPLETE_XLIV_THROUGH_DARIOT_READ_OTHER_SECTIONS_OPEN",
+  "records_count": 1650,
   "read_numbered_chapters": [
     1,
     2,
@@ -127,16 +127,23 @@
       "records_count": 192,
       "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4",
       "scope": "Sixth-house heading and XLIV opening, PDF277/printed243 through the paragraph ending shew death on PDF292/printed258, immediately before DARIOT Abridged. All intervening unnumbered material included; XLIV continues beyond this batch."
+    },
+    {
+      "id": "B02l",
+      "path": "batches/B02l/RULES.json",
+      "records_count": 101,
+      "sha256": "6002f91a2cd8378ba5b858169395b68f4c65594c2692d0fb6b1ce352d22ae02d",
+      "scope": "XLIV continuation: DARIOT Abridged heading and complete italic introduction on PDF292/printed258 through the full upper bridge ending Judgments of this House on PDF302/printed268; every intervening unnumbered section included. Stop above the divider before Hermes Trismegistus upon the first Decumbiture of the Sick. Chapter XLIV remains incomplete."
     }
   ],
   "next": {
-    "pdf_page": 292,
-    "printed_page": 258,
+    "pdf_page": 302,
+    "printed_page": 268,
     "chapter": "XLIV",
-    "heading": "DARIOT Abridged.",
+    "heading": "Hermes Trismegistus upon the first Decumbiture of the Sick.",
     "include_opening_paragraph": true,
-    "opening_anchor": "In regard I have ever affected Dariot his Method of judgment in sicknesses",
-    "position": "Below the completed paragraph ending shew death. Include heading and full italic introduction, then continue on PDF293.",
+    "opening_anchor": "The heavenly Rayes or Influences proceeding and emitted from the seven Planets",
+    "position": "Below the horizontal divider on PDF302. Include the heading and complete opening paragraph, then continue on PDF303. The entire preceding upper bridge is complete.",
     "extracted": false,
     "boundary_image_read": true
   },
@@ -145,14 +152,17 @@
   "empirical_validations": 0,
   "read_headed_units_count": 44,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02k.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02l.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [
     {
       "chapter": 44,
       "label": "XLIV",
-      "batch": "B02k",
-      "scope": "Sixth-house heading and XLIV opening, PDF277/printed243 through the paragraph ending shew death on PDF292/printed258, immediately before DARIOT Abridged. All intervening unnumbered material included; XLIV continues beyond this batch."
+      "batches": [
+        "B02k",
+        "B02l"
+      ],
+      "scope": "Sixth-house opening and continuation through Dariot/Lilly practical bridge; Hermes and following XLIV material remain open."
     }
   ]
 }

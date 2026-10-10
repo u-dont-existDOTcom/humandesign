@@ -1,0 +1,2192 @@
+[
+  {
+    "local_id": "A001",
+    "section": "DARIOT Abridged.",
+    "pdf_pages": [
+      292
+    ],
+    "printed_pages": [
+      258
+    ],
+    "source_anchor": "I have with some abbreviation annexed it",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The book's first-person editor says he has annexed an abbreviation of \"Dariot his Method\" under DARIOT Abridged; the speaker and the named source are distinct."
+    },
+    "kind": "dependency",
+    "proposition": "Lilly says he has long favoured Dariot's method of judgement in sicknesses and has appended it with abbreviation, in a substantially shorter way and method than previously published.",
+    "conditions": [
+      "Editorial introduction to DARIOT Abridged; not a patient enquiry."
+    ],
+    "outcomes": [
+      "Declared dependence on Dariot's method.",
+      "Declared abbreviation and editorial mediation by Lilly.",
+      "Claim of a shorter presentation than previously published."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The Dariot source/edition being abbreviated is not identified in this paragraph."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Preserve the full italic introduction in READING_NOTES.md. Do not label every subsequent first-person contribution as Dariot's own words.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": true,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A002",
+    "section": "If the Party be sicke of whom the Question is Demanded.",
+    "pdf_pages": [
+      293
+    ],
+    "printed_pages": [
+      259
+    ],
+    "source_anchor": "The Significator of the Querent in a Signe contrary to his owne nature",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "general_rule",
+    "proposition": "A querent's significator placed in a sign contrary to that planet's own nature is presented as a testimony that the party is sick.",
+    "conditions": [
+      "The enquiry is whether the party about whom the question is demanded is sick.",
+      "The Significator of the Querent is in a sign contrary to the significator's own nature."
+    ],
+    "outcomes": [
+      "The party is sick (source assertion)."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A003 is the accompanying example; A004 is the alternative clause in the same sentence.",
+      "The choice of the querent's significator and the definition of contrary nature require earlier astrological doctrine."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Do not substitute the disease significator for the source's Significator of the Querent; do not require the separate cadent-house alternative simultaneously.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A003",
+    "section": "If the Party be sicke of whom the Question is Demanded.",
+    "pdf_pages": [
+      293
+    ],
+    "printed_pages": [
+      259
+    ],
+    "source_anchor": "as ♂ being Lord of the ascendant, and naturally hot and dry",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "illustration",
+    "proposition": "Mars as lord of the ascendant, naturally hot and dry, in Cancer, described as cold and moist, illustrates the contrary-nature sickness testimony.",
+    "conditions": [
+      "Mars is Lord of the ascendant.",
+      "AND Mars is naturally hot AND dry, in the source's classification.",
+      "AND Mars is in Cancer, described as cold AND moist."
+    ],
+    "outcomes": [
+      "Illustrates the judgement \"he is sick\" in A002."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A002"
+    ],
+    "uncertainties": [],
+    "implementation_note": "This is a schematic example with no actual patient, date, chart, or observed outcome; retain the opposed qualities and the specific ruler role.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A004",
+    "section": "If the Party be sicke of whom the Question is Demanded.",
+    "pdf_pages": [
+      293
+    ],
+    "printed_pages": [
+      259
+    ],
+    "source_anchor": "or if the Lord of the ascendant be in a Cadent house, chiefly in the sixt",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "general_rule",
+    "proposition": "Alternatively, a lord of the ascendant in a cadent house, especially the sixth, signifies sickness.",
+    "conditions": [
+      "OR alternative to A002: the Lord of the ascendant is in a cadent house.",
+      "The sixth house is expressly emphasised by \"chiefly\"; it is not stated as the only cadent house."
+    ],
+    "outcomes": [
+      "The party is sick (source assertion)."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A002-A003 share this sentence; a definition of cadency is assumed."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Retain chiefly as an emphasis without inventing a weight; do not narrow the rule to the sixth alone.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A005",
+    "section": "If the Party be sicke of whom the Question is Demanded.",
+    "pdf_pages": [
+      293
+    ],
+    "printed_pages": [
+      259
+    ],
+    "source_anchor": "A diurnall Planet being Significator, and he under the earth",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "general_rule",
+    "proposition": "The source associates a diurnal significator under the earth and the following adverse conditions with the party being sick, but its mixture of commas and disjunctions leaves the precise combination rule unresolved.",
+    "conditions": [
+      "A diurnal planet is the Significator.",
+      "AND he is under the earth.",
+      "Further source sequence, with accumulation/alternative scope unresolved: ill affected; Combust; Retrograde; in his Fall OR Detriment; weak; OR in Termes of malevolents; OR with violent fixed Stars; OR besieged by the two Infortunes.",
+      "The conclusion is introduced as \"these things happening\"."
+    ],
+    "outcomes": [
+      "The party is sick."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "Terms, fall, detriment, combustion, violent fixed stars, and besiegement are not defined here."
+    ],
+    "uncertainties": [
+      "SA-I02: The text does not explicitly make every adverse item either necessary in combination or individually sufficient."
+    ],
+    "implementation_note": "Keep the full adverse-condition inventory; do not replace it with either an unqualified OR of independent rules or an unsupported all-of conjunction.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A006",
+    "section": "If the Party be sicke of whom the Question is Demanded.",
+    "pdf_pages": [
+      293
+    ],
+    "printed_pages": [
+      259
+    ],
+    "source_anchor": "must be understood of a nocturnall one (consideratis considerandis.)",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "dependency",
+    "proposition": "What has been said of a diurnal planet must also be understood of a nocturnal one with the relevant considerations taken into account.",
+    "conditions": [
+      "The nocturnal-planet case corresponding to A005.",
+      "The author explicitly qualifies the transfer with \"consideratis considerandis\"."
+    ],
+    "outcomes": [
+      "Qualified extension of the previous doctrine to nocturnal planets."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A005",
+      "The necessary nocturnal adjustments are assumed, not enumerated in this passage."
+    ],
+    "uncertainties": [
+      "SA-I02: No precise above/below-earth inversion or list of changed predicates is stated."
+    ],
+    "implementation_note": "Do not invent a mechanically exact nocturnal counterpart; retain the qualification as a dependency.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A007",
+    "section": "If the Party be sicke of whom the Question is Demanded.",
+    "pdf_pages": [
+      293
+    ],
+    "printed_pages": [
+      259
+    ],
+    "source_anchor": "When a Question was asked of me upon any Urine, or without it",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "Printed marginal attribution \"Lilly.\" identifies this passage at PDF293/printed259 or PDF294/printed260; its continuation is retained across the page break."
+    },
+    "kind": "author_experience",
+    "proposition": "Lilly describes his practice: when asked a question involving a urine specimen or without one, he erected a figure and used the following method to judge whether the querent was ill.",
+    "conditions": [
+      "A question was asked of Lilly upon any Urine OR without it.",
+      "He had erected his Figure before applying the method."
+    ],
+    "outcomes": [
+      "Stated purpose: know whether the Querent was ill OR not."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A008 supplies the method's condition chain and conclusions."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Broad first-person practice is evidence of an author's reported method, not an individuated enquiry or a set of verified medical cases.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": true,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A008",
+    "section": "If the Party be sicke of whom the Question is Demanded.",
+    "pdf_pages": [
+      293
+    ],
+    "printed_pages": [
+      259
+    ],
+    "source_anchor": "If the ascendant were not afflicted, or the Lord thereof out of his essentiall Dignities",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "Printed marginal attribution \"Lilly.\" identifies this passage at PDF293/printed259 or PDF294/printed260; its continuation is retained across the page break."
+    },
+    "kind": "method",
+    "proposition": "Lilly says that under the following condition chain he would tell the party they were not sick, or that no sickness would follow the question, and that their fear of sickness arose from a sudden bodily distemper that would presently be rectified. The opening negative scope is unresolved in the printed text.",
+    "conditions": [
+      "Printed opening: \"If the ascendant were not afflicted, or the Lord thereof out of his essentiall Dignities, or in any evill aspect of ♄ or ♂, or Lord of the sixt.\" The scope of NOT across the latter alternatives is unresolved.",
+      "OR no planet afflicted the sixth house by presence.",
+      "OR the Moon was NOT afflicted in the eighth OR twelfth.",
+      "OR Jupiter OR Venus OR the North Node was found in the ascendant.",
+      "OR the Sun was in the sixth.",
+      "OR the Moon AND Lord of the ascendant were in any good aspect (a relation between them is the natural reading).",
+      "OR Jupiter OR Venus cast a trine OR sextile to the cusp of the ascendant OR sixth house."
+    ],
+    "outcomes": [
+      "He would directly tell the party they were not sick, OR no sickness would succeed upon this Quere.",
+      "Their mistrust of sickness was grounded on a sudden distemper of the body.",
+      "That distemper would presently be rectified."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A007; this is an account of Lilly's own practice.",
+      "Interpretation of good aspect, affliction, dignities, and cusp aspect is assumed."
+    ],
+    "uncertainties": [
+      "SA-I01: Literal local negation permits the later adverse alternatives; an elliptical reading distributes the negation. The scan does not authorise silently adding NOT.",
+      "The phrase or Lord of the sixt may continue the aspect's object list, rather than state that the ascendant lord also rules the sixth; the exact printed chain is retained.",
+      "The source does not supply a threshold, conflict-resolution rule, or clinical follow-up."
+    ],
+    "implementation_note": "Keep this as one source-linked chain until negative scope is resolved. Preserve the distinction between not sick, no subsequent sickness, and an existing transient distemper. Do not count the promised rectification as an observed endpoint.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": true,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A009",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      293,
+      294
+    ],
+    "printed_pages": [
+      259,
+      260
+    ],
+    "source_anchor": "The inward cause and condition of the Disease we require from the ill disposition of the Significator",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "method",
+    "proposition": "The inward cause and condition of disease are to be sought from the significator's ill disposition in sign, house, and place of heaven, and from its good or ill configuration with malevolent planets.",
+    "conditions": [
+      "Determine the inward cause AND condition of the disease.",
+      "Inspect the Significator's disposition in Sign, House AND place of Heaven.",
+      "Inspect his good OR ill configuration with the malevolent planets."
+    ],
+    "outcomes": [
+      "Astrological grounds from which the inward cause and condition are to be derived."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A010 qualifies which planets may act malignantly in this context."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Retain good OR ill configuration as printed; do not silently narrow this to bad aspects alone.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A010",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      293,
+      294
+    ],
+    "printed_pages": [
+      259,
+      260
+    ],
+    "source_anchor": "any Planet may in this case be malignant",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "general_rule",
+    "proposition": "In this context any planet may be malignant when it rules the eighth, twelfth, or sixth house, with the list left open by etcetera.",
+    "conditions": [
+      "The inward-cause context of A009.",
+      "The planet is Lord of the eighth OR twelfth OR sixth, \"&c.\""
+    ],
+    "outcomes": [
+      "Any planet MAY in this case be malignant."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A009"
+    ],
+    "uncertainties": [],
+    "implementation_note": "Preserve may and in this case; this is not an unconditional reclassification of all planets. Do not invent the unspecified etcetera entries.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A011",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      294
+    ],
+    "printed_pages": [
+      260
+    ],
+    "source_anchor": "The outward cause is required from those Infortunes that doe afflict the Lord of the ascendant",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "method",
+    "proposition": "The outward cause is to be sought from the Infortunes afflicting the lord of the ascendant, or from the principal significator in the figure, or the Moon.",
+    "conditions": [
+      "Outward-cause enquiry.",
+      "Source choices as printed: Infortunes that afflict the Lord of the ascendant; OR the principal Significator in the Figure; OR the Moon."
+    ],
+    "outcomes": [
+      "Sources of judgement for an outward cause."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A012-A014 explain the subsequent strength, affliction and house-based method."
+    ],
+    "uncertainties": [
+      "The grammar explicitly repeats \"from\" before the principal Significator; it does not unambiguously say that all three are targets of the same afflicting Infortunes."
+    ],
+    "implementation_note": "Do not silently rewrite the sentence as malefics afflicting any one of three targets; retain its printed alternative sources.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A012",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      294
+    ],
+    "printed_pages": [
+      260
+    ],
+    "source_anchor": "sufficiently strong in essentiall Dignities, swift in motion, in a good house of Heaven",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "general_rule",
+    "proposition": "When the lord of the ascendant is sufficiently strong in essential dignities, swift in motion, and in a good house, the practitioner may judge the querent not naturally ill but accidentally and outwardly afflicted.",
+    "conditions": [
+      "The Lord of the ascendant is sufficiently strong in essential dignities.",
+      "AND swift in motion.",
+      "AND in a good house of Heaven."
+    ],
+    "outcomes": [
+      "The practitioner MAY judge that the Querent is not naturally ill.",
+      "The querent is accidentally AND outwardly afflicted."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A011 establishes the outward-cause context; A013 adds the explicit malefic-aspect conditions."
+    ],
+    "uncertainties": [
+      "Sufficient strength and good house are qualitative predicates without numeric thresholds here."
+    ],
+    "implementation_note": "Retain all three descriptive conditions and MAY judge; do not equate this historically asserted distinction with a modern medical category.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A013",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      294
+    ],
+    "printed_pages": [
+      260
+    ],
+    "source_anchor": "he is not well, yet not perfectly sick",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "general_rule",
+    "proposition": "Despite the lord of the ascendant's strength, Saturn or Mars making a square or opposition to him, while neither of those two rules the sixth or disposes the Moon, permits judgement of a preceding outward cause leaving the party unwell but not perfectly sick.",
+    "conditions": [
+      "The strength of the Lord of the ascendant from A012 is retained.",
+      "AND either Saturn OR Mars has a square OR opposition aspect to him.",
+      "AND neither of those two is Lord of the sixth.",
+      "AND neither is a dispositor of the Moon."
+    ],
+    "outcomes": [
+      "The practitioner MAY judge some outward cause has happened to the party.",
+      "The consequence is that he is not well, YET not perfectly sick."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A012",
+      "A014 supplies the next step for identifying that outward cause."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Preserve the conjunction of strength, the square/opposition alternative, and both exclusions; keep the prior cause separate from the current unwell state.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A014",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      294
+    ],
+    "printed_pages": [
+      260
+    ],
+    "source_anchor": "observe in what house that Planet is, or of what house he is Lord",
+    "attribution": {
+      "label": "Dariot",
+      "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
+    },
+    "kind": "method",
+    "proposition": "After the outward-affliction judgement, inspect the offending planet's occupied house or ruled house and derive an explanation from that house's significations.",
+    "conditions": [
+      "The foregoing outward-affliction context of A013.",
+      "Observe the house occupied by that planet OR the house of which it is Lord."
+    ],
+    "outcomes": [
+      "Seek satisfaction in the Art from judgements belonging to that house.",
+      "The text then turns to examples marked Lilly."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A013",
+      "House significations are presumed; A015-A020 exemplify houses two, five, and seven."
+    ],
+    "uncertainties": [],
+    "implementation_note": "The actor is the planet afflicting the lord of the ascendant. Do not replace it with the occupied house of the sick person's significator.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A015",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      294
+    ],
+    "printed_pages": [
+      260
+    ],
+    "source_anchor": "the Querent is in some want of money, (if the Significators apply,)",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "Printed marginal attribution \"Lilly.\" identifies this passage at PDF293/printed259 or PDF294/printed260; its continuation is retained across the page break."
+    },
+    "kind": "illustration",
+    "proposition": "In Lilly's example, casual affliction of the lord of the ascendant by Saturn or Mars, with the afflictor ruling the second and no inward cause of disease apparent, signifies a present want of money when the significators apply.",
+    "conditions": [
+      "Lord of the ascendant casually afflicted by Saturn OR Mars, \"&c.\".",
+      "AND either of them is Lord of the second house.",
+      "AND no inward cause of a disease appears.",
+      "AND the Significators apply."
+    ],
+    "outcomes": [
+      "The Querent is in some want of money."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A014 supplies the example's house-based outward-cause method.",
+      "A016 is the contrasted separating case."
+    ],
+    "uncertainties": [
+      "The exact applying pair/direction is not re-specified beyond \"the Significators\"."
+    ],
+    "implementation_note": "Keep the current money-want judgement tied to application, and retain the no-inward-cause prerequisite. This is a hypothetical illustration, not a documented loss.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A016",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      294
+    ],
+    "printed_pages": [
+      260
+    ],
+    "source_anchor": "or hath had lately damage, if the Significators are separated",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "Printed marginal attribution \"Lilly.\" identifies this passage at PDF293/printed259 or PDF294/printed260; its continuation is retained across the page break."
+    },
+    "kind": "illustration",
+    "proposition": "Under the same second-house affliction and absence of an apparent inward cause, separated significators indicate recent damage rather than the applying case's present want of money.",
+    "conditions": [
+      "The casual affliction, second-house rulership, AND no apparent inward disease cause from A015.",
+      "The Significators are separated (alternative to their applying)."
+    ],
+    "outcomes": [
+      "The querent hath had lately damage."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A015"
+    ],
+    "uncertainties": [],
+    "implementation_note": "Retain the recent-past chronology and the applying/separated distinction; no amount, date, or verified event is supplied.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A017",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      294
+    ],
+    "printed_pages": [
+      260
+    ],
+    "source_anchor": "Oppositions herein are worse then □ aspects or Conjunctions",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "Printed marginal attribution \"Lilly.\" identifies this passage at PDF293/printed259 or PDF294/printed260; its continuation is retained across the page break."
+    },
+    "kind": "method",
+    "proposition": "For the loss in the financial example, judge its greatness or smallness by the afflicting planet's strength and the aspect's quality; oppositions are worse here than squares or conjunctions.",
+    "conditions": [
+      "The loss/damage example of A015-A016.",
+      "Use the strength of the afflicting planet AND the quality of the aspect."
+    ],
+    "outcomes": [
+      "A relative judgement of the greatness OR smallness of his loss.",
+      "Oppositions are worse HEREIN than square aspects OR conjunctions."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A015-A016"
+    ],
+    "uncertainties": [],
+    "implementation_note": "Do not promote the relative opposition ranking beyond this context or invent numerical amounts/weights.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A018",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      294
+    ],
+    "printed_pages": [
+      260
+    ],
+    "source_anchor": "If it be the Lord of the fift, be the Planet good or ill",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "Printed marginal attribution \"Lilly.\" identifies this passage at PDF293/printed259 or PDF294/printed260; its continuation is retained across the page break."
+    },
+    "kind": "illustration",
+    "proposition": "When the fifth-house lord, whether a good or ill planet, afflicts or has an evil aspect to the ascendant lord, Lilly gives alternative outward explanations involving diet/surfeit, eligible games or sports losses, or a father not freely providing his pension, with an express youth/distemper parenthesis.",
+    "conditions": [
+      "In the outward-cause examples following A014.",
+      "The afflicting planet is Lord of the fifth, whether good OR ill.",
+      "AND it afflicts OR has an evil aspect to the Lord of the ascendant.",
+      "For the games/sports-loss alternative: IF the Querent is capable.",
+      "The parenthesis after the father/pension alternative reads: \"this is when young people demand a Question, or are distempered\"."
+    ],
+    "outcomes": [
+      "Either by evil Dyet, Surfet, \"&c.\".",
+      "OR by loss at Dice, Tables OR Sports, subject to the capable-querent qualifier.",
+      "OR the Father comes not off freely with his Pension, with the following youth/distemper qualifier retained."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A014 and the no-inward-cause/outward-affliction framework of the example sequence."
+    ],
+    "uncertainties": [
+      "SA-I08: The final parenthesis's exact scope over father/pension versus all fifth-house alternatives is not made explicit."
+    ],
+    "implementation_note": "Preserve the good-or-ill inclusion, affliction/aspect alternative, game-capability condition, and age/context qualifier. Do not turn these scenarios into observed enquiries.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A019",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      294
+    ],
+    "printed_pages": [
+      260
+    ],
+    "source_anchor": "if it be the Lord of the seventh that oppresses the Lord of the ascendant",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "Printed marginal attribution \"Lilly.\" identifies this passage at PDF293/printed259 or PDF294/printed260; its continuation is retained across the page break."
+    },
+    "kind": "illustration",
+    "proposition": "When the seventh-house lord oppresses the ascendant lord, the author gives recent difference with a wife (or, for a woman, her husband), lawsuit, wilful neighbour contention, or a partner as alternative outward causes of the evil indisposition.",
+    "conditions": [
+      "The outward-cause example context.",
+      "Lord of the seventh oppresses the Lord of the ascendant."
+    ],
+    "outcomes": [
+      "The party has had lately some difference with his Wife.",
+      "For a Woman, conversely, the difference is with her Husband.",
+      "OR some Law-suit.",
+      "OR wilful Neighbour-contention.",
+      "OR a Partner is the outward cause of the evil indisposition."
+    ],
+    "exceptions": [
+      "A020 supplies the express youth variant."
+    ],
+    "dependencies": [
+      "A014 and the outward-cause example sequence."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Preserve recent-past wording for the marital difference and the reciprocal husband/wife referents. Do not assert a partner's unstated conduct.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A020",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      294,
+      295
+    ],
+    "printed_pages": [
+      260,
+      261
+    ],
+    "source_anchor": "yet will no sicknesse follow it",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "Printed marginal attribution \"Lilly.\" identifies this passage at PDF293/printed259 or PDF294/printed260; its continuation is retained across the page break."
+    },
+    "kind": "illustration",
+    "proposition": "For youth under the same seventh-to-ascendant-lord configuration, Lilly attributes bodily ill affectedness to melancholy and discontent because a friend or desired person is unkind, while explicitly saying no sickness will follow.",
+    "conditions": [
+      "The party is in Youth.",
+      "AND the like configuration in A019 holds from the Lord of the seventh to the Lord of the ascendant in the Question."
+    ],
+    "outcomes": [
+      "It is alone melancholy.",
+      "His Friend, OR the Maid he affects, OR the man she longs after is unkind.",
+      "Discontent for that occasion is the outward cause of this ill affectedness in the Body.",
+      "YET no sickness will follow it."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A019",
+      "This paragraph continues across PDF294/printed260 to PDF295/printed261."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Retain both the gendered alternatives and the no-subsequent-sickness conclusion. Do not translate melancholy into a modern diagnosis or count the predicted absence as observed follow-up.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A021",
+    "section": "Cause of the Disease inward or outward.",
+    "pdf_pages": [
+      295
+    ],
+    "printed_pages": [
+      261
+    ],
+    "source_anchor": "This is the Method which I ever observed, which I freely communicate to the world",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "Printed marginal attribution \"Lilly.\" identifies this passage at PDF293/printed259 or PDF294/printed260; its continuation is retained across the page break."
+    },
+    "kind": "author_experience",
+    "proposition": "Lilly says this is the method he always observed, that he freely communicates it, and that, if well understood, it will give knowledge sufficient for this way of judgement.",
+    "conditions": [
+      "The foregoing method is the referent of \"This\".",
+      "Its promised sufficiency is conditioned on being well understood."
+    ],
+    "outcomes": [
+      "Claim of sustained personal use.",
+      "Declared public communication.",
+      "Conditional claim of sufficient knowledge for this way of judicature."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A007-A020, especially the immediately preceding outward-cause examples."
+    ],
+    "uncertainties": [],
+    "implementation_note": "This is a broad author-experience/sufficiency assertion, not evidence of a number of successfully resolved patient cases.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": true,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A022",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      295
+    ],
+    "printed_pages": [
+      261
+    ],
+    "source_anchor": "Although formerly I have briefly given directions herein",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The first-person editorial passage follows the explicitly marked Lilly material and says \"Although formerly I have briefly given directions herein\". This is an attribution from the continuing editorial voice, not a new marginal name."
+    },
+    "kind": "method",
+    "proposition": "The author says earlier directions were brief, now provides a fuller account, and asks the learner to contract the writing into a method suited to the learner's own preference and best use.",
+    "conditions": [
+      "Earlier directions are acknowledged.",
+      "The present subsection expands them.",
+      "The learner is asked to arrange/contract the writing into a personally usable method."
+    ],
+    "outcomes": [
+      "A more copious treatment.",
+      "Learner adaptation for his own advantage, in the author's phrasing."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "Earlier directions are referred to but not specifically located within this owned span."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Keep this editorial and pedagogical permission separate from an authorisation to invent new clinical meanings or discard source conditions.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A023",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      295
+    ],
+    "printed_pages": [
+      261
+    ],
+    "source_anchor": "When therefore you have erected your Figure, consider what Planet is significator of the Disease",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The first-person editorial passage follows the explicitly marked Lilly material and says \"Although formerly I have briefly given directions herein\". This is an attribution from the continuing editorial voice, not a new marginal name."
+    },
+    "kind": "method",
+    "proposition": "The procedure is to erect the figure and then consider which planet signifies the disease before using the planetary descriptions.",
+    "conditions": [
+      "A Figure has first been erected.",
+      "Then identify the planet that is significator of the Disease."
+    ],
+    "outcomes": [
+      "A selected disease significator provides the context for the following planetary descriptions."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The calculation and selection criteria are assumed, not fully specified here."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Carry the disease-significator role into subsequent descriptions as inherited context; a planet's mere position is not automatically a disease judgement.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A024",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      295
+    ],
+    "printed_pages": [
+      261
+    ],
+    "source_anchor": "he produceth continued and tedious Sicknesses, quarten Agues, Coughs, consumptions, &c.",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Saturn as disease significator is said to produce continued and tedious sicknesses, quarten agues, coughs, consumptions, and further unspecified conditions.",
+    "conditions": [
+      "Saturn is selected as significator of the Disease."
+    ],
+    "outcomes": [
+      "Continued AND tedious Sicknesses.",
+      "Quarten Agues.",
+      "Coughs.",
+      "Consumptions.",
+      "Additional unspecified entries denoted by &c."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A023"
+    ],
+    "uncertainties": [
+      "SA-I03: Exact allocation between Dariot and Lilly within the planetary sequence is uncertain."
+    ],
+    "implementation_note": "Keep historical labels; do not equate consumptions with one modern disease or present the list as simultaneous findings.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A025",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      295
+    ],
+    "printed_pages": [
+      261
+    ],
+    "source_anchor": "If he be in ♌ or in ♏ with ☋ or ☊, or Combust",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "The source gives a disjunctive Saturn configuration involving Leo, Scorpio with lunar nodes, combustion, or violent fixed stars and attributes pestilent and dangerous fevers to it; node attachment within the sign phrase is unresolved.",
+    "conditions": [
+      "Saturn remains the disease significator from A024.",
+      "Printed alternative sequence: in Leo OR in Scorpio with South Node OR North Node; OR Combust; OR Saturn with violent fixed Starres.",
+      "The wording does not conclusively settle whether the node qualifier applies to Scorpio alone or to both Leo and Scorpio."
+    ],
+    "outcomes": [
+      "He afflicts the sick party with pestilent AND dangerous Feavers."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A024",
+      "A026 preserves the subsequent suspicion-of-poison qualification."
+    ],
+    "uncertainties": [
+      "SA-I04: Node/sign modifier attachment is unresolved; glyphs visually read as South Node followed by North Node."
+    ],
+    "implementation_note": "Do not turn this into a single authoritative Boolean predicate until the sign/node attachment is resolved; retain every printed alternative.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A026",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      295
+    ],
+    "printed_pages": [
+      261
+    ],
+    "source_anchor": "it may be doubted (where suspition of Poyson is)",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Under the preceding Saturn configuration, and where suspicion of poison exists, the author says it may be suspected that an attempt was made to poison the sick person or that the sick person has taken a potion equivalent to poison.",
+    "conditions": [
+      "The Saturn configuration and severe-fever context of A025.",
+      "AND there is suspition of Poyson."
+    ],
+    "outcomes": [
+      "It MAY be doubted that the Sick has been endeavoured to be Poysoned.",
+      "OR has taken some potion equivalent to Poyson."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A025"
+    ],
+    "uncertainties": [],
+    "implementation_note": "Preserve the prior-suspicion gate and tentative may-be-doubted modality. Do not convert this into a confirmed poisoning or an unprompted diagnostic inference.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A027",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      295
+    ],
+    "printed_pages": [
+      261
+    ],
+    "source_anchor": "he usually signifies Hectick-Feavers",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Saturn in signs of the fiery triplicity usually signifies Hectick-Feavers.",
+    "conditions": [
+      "Saturn in the disease-significator context of A024.",
+      "AND in signs of the fiery triplicity, expressly exemplified/listed as Aries, Leo, Sagittarius."
+    ],
+    "outcomes": [
+      "USUALLY signifies Hectick-Feavers."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A023-A024"
+    ],
+    "uncertainties": [],
+    "implementation_note": "Retain usually; do not treat Hectick-Feavers as a modern diagnostic code or a certain outcome.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A028",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      295
+    ],
+    "printed_pages": [
+      261
+    ],
+    "source_anchor": "some cold and moyst cause or matter, or distemper",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "When Saturn is in Cancer, Scorpio, or Pisces, the source says the disease's cause and matter arise from some cold and moist cause, matter, or distemper.",
+    "conditions": [
+      "Saturn in the disease-significator context.",
+      "AND Saturn is in Cancer OR Scorpio OR Pisces."
+    ],
+    "outcomes": [
+      "The cause AND matter of the Disease grow from some cold AND moist cause OR matter OR distemper."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A024; A029 gives the next qualification and accompanying description."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Preserve the source's humoral terms and alternatives; do not infer present-day pathology from cold/moist.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A029",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      295
+    ],
+    "printed_pages": [
+      261
+    ],
+    "source_anchor": "and this more assuredly if ♀ or ☽, who are moyst Planets",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "The cold/moist Saturn judgement is more assured if Venus or the Moon shares disease signification with Saturn. The following description concerns grosser and vitious matter, long paroxysms and fluctuating disease, with near-overwhelming fear and extreme coldness; its exact reach over the broader water-sign case versus the strengthened case remains uncertain.",
+    "conditions": [
+      "The Cancer/Scorpio/Pisces Saturn context of A028.",
+      "Strengthening condition: Venus OR Moon, described as moist planets, has together with Saturn any signification in the Disease."
+    ],
+    "outcomes": [
+      "The preceding cold/moist judgement is MORE ASSUREDLY so.",
+      "The then-afflicting matter OR cause is more grosse AND vitious.",
+      "Long Paroxisms with ebbing AND flowing of the Disease.",
+      "The sick party is ALMOST overwhelmed with horror, dread AND fearful imaginations.",
+      "Extreme chilnesse AND coldnesse."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A028"
+    ],
+    "uncertainties": [
+      "SA-I05: The descriptive continuation may qualify the strengthened case or the water-sign case more broadly; preserve the paragraph link.",
+      "The scanned word reads vitious; do not silently replace it with viscous."
+    ],
+    "implementation_note": "Keep the explicit confidence increase, optional co-significator condition, duration/course descriptors, almost qualifier, and historical vocabulary.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A030",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      295
+    ],
+    "printed_pages": [
+      261
+    ],
+    "source_anchor": "When ♄ is in fixed Signes, as in ♉ ♌ ♒",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Saturn in fixed signs is said to afflict the patient with durable, long-continued agues and fevers, pectoral rottenness or dry coughs, joint gout, leprosy or general scabbiness across the body, and all manner of gouts.",
+    "conditions": [
+      "Saturn in the disease-significator context.",
+      "AND in fixed Signs; the source says \"as in\" Taurus, Leo, Aquarius."
+    ],
+    "outcomes": [
+      "Durable AND long-continued Agues AND Feavers.",
+      "Pectorall rottennesses OR dry coughs.",
+      "The joynt Gout.",
+      "Leprosie OR generall Scabbinesse all over the Body.",
+      "All manner of Gouts."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A024"
+    ],
+    "uncertainties": [
+      "SA-I06: Scorpio is not printed in this illustrative list although the rule names the class fixed Signs."
+    ],
+    "implementation_note": "Keep the source's class and its exact three named examples; do not silently insert a fourth glyph into the source list or narrow the general class to the examples.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A031",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "prenotes a generall Flux of humours all-over the Body",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Saturn in moveable signs signifies a general flux of humours throughout the body, principally Dropsie or Tympanicall humours.",
+    "conditions": [
+      "Saturn in the disease-significator context.",
+      "AND in moveable Signs, as Aries, Libra, Cancer, Capricorn in the source's order."
+    ],
+    "outcomes": [
+      "A generall Flux of humours all over the Body.",
+      "PRINCIPALLY the Dropsie OR Tympanicall humours."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A024; this continues Saturn's sequence from the preceding page."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Retain principally and the OR; do not substitute modern disease terminology or reorder the printed source list within exact transcription.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A032",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "Being in common Signes, the Disease proceeds not from the disaffection of one humour alone",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Saturn in common signs is said to indicate disease not proceeding from one humour's disaffection alone, with many changes, receding and reverting, yet continuing a long time.",
+    "conditions": [
+      "Saturn remains the subject.",
+      "AND is in common Signs."
+    ],
+    "outcomes": [
+      "The Disease does NOT proceed from the disaffection of one humour ALONE.",
+      "Many changings, receding AND reverting.",
+      "YET the Disease continues a long time."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A024, A031; the planet name is inherited from the paragraph."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Do not lose the negative-alone scope or the coexistence of fluctuations with long persistence. The source does not enumerate the common signs here.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A033",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "When he is author of the Sicknesse",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Jupiter as author of the sickness signifies ill affection of the liver and corruption of the blood, either by inflammation or by other causes whose nature agrees with the sign he occupies.",
+    "conditions": [
+      "Jupiter is author of the Sicknesse."
+    ],
+    "outcomes": [
+      "Ill affection of the Liver.",
+      "AND corruption of the blood, either by inflammation OR other causes of nature agreeable to the occupied sign."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A023; A034-A038 enumerate sign-dependent variants."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Preserve the disease-author role and sign dependence; do not treat this as a universal effect of Jupiter in a chart.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A034",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "as if in ♋, or in a moyst Sign the blood is waterish, or too thin",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "illustration",
+    "proposition": "In Jupiter's disease-author context, Cancer or a moist sign is the example for waterish or excessively thin blood.",
+    "conditions": [
+      "Jupiter is author of the Sicknesse (A033).",
+      "AND in Cancer OR in a moist Sign."
+    ],
+    "outcomes": [
+      "Blood is waterish OR too thin, &c."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A033"
+    ],
+    "uncertainties": [],
+    "implementation_note": "Do not reduce the source's Cancer-or-moist-sign wording to Cancer alone or invent a laboratory measure.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A035",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "its overheated by some extravagant excesse of heat or choller",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Jupiter in Aries, Leo, or Sagittarius, as disease author, signifies overheated blood through an extravagant excess of heat or choler.",
+    "conditions": [
+      "Jupiter is author of the Sicknesse.",
+      "AND in Aries OR Leo OR Sagittarius."
+    ],
+    "outcomes": [
+      "The blood is overheated by some extravagant excess of heat OR choller."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A033; A038 describes the related fire-sign fevers."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Retain the blood referent and the OR between heat/choler explanations; do not substitute a modern mechanism.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A036",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "the Blood over-flowes, theres too much, breathing of a Veine is necessary or Sweating",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Jupiter in Aquarius, Libra, or Gemini, as disease author, is said to indicate overflowing/excessive blood; the historical text then says breathing a vein or sweating is necessary.",
+    "conditions": [
+      "Jupiter is author of the Sicknesse.",
+      "AND in Aquarius OR Libra OR Gemini, in the source's order."
+    ],
+    "outcomes": [
+      "The Blood over-flows; there is too much.",
+      "The source prescribes \"breathing of a Veine\" OR Sweating as necessary."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A033"
+    ],
+    "uncertainties": [],
+    "implementation_note": "Capture the historical intervention claim as source content only. Do not implement it as current treatment advice, omit it as inconvenient, or count it as an intervention with observed results.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A037",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "the blood is infected with Melancholly, too grosse, and not fluent",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Jupiter in Taurus, Capricorn, or Virgo, as disease author, signifies blood infected with melancholy, too gross, and not fluent.",
+    "conditions": [
+      "Jupiter is author of the Sicknesse.",
+      "AND in Taurus OR Capricorn OR Virgo."
+    ],
+    "outcomes": [
+      "Blood infected with Melancholly.",
+      "Too grosse.",
+      "AND NOT fluent."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A033"
+    ],
+    "uncertainties": [],
+    "implementation_note": "Retain historical blood qualities and the negative fluency claim; do not convert melancholy into a modern mental-health diagnosis.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A038",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "yet without rottennesse or store of putrifaction",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Jupiter in fiery signs causes fevers proceeding from blood, yet without rottenness or a store of putrefaction.",
+    "conditions": [
+      "Jupiter in the disease-author context.",
+      "AND in fiery Signs."
+    ],
+    "outcomes": [
+      "Feavours proceeding from blood.",
+      "YET without rottennesse OR store of putrifaction."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A033, A035"
+    ],
+    "uncertainties": [],
+    "implementation_note": "Keep the restricted phrase store of putrifaction; do not strengthen it into absence of every degree of putrefaction.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A039",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "When ♂ is joyned with the ☉",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Mars joined with the Sun signifies a distempered fever produced by putrefaction of the blood.",
+    "conditions": [
+      "Disease-judgement context of A023.",
+      "Mars is joyned with the Sun."
+    ],
+    "outcomes": [
+      "Prenotes a distempered Feaver procreated by putrifaction of the blood."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A023"
+    ],
+    "uncertainties": [
+      "Joined is the printed relation; a precise allowable orb is not given."
+    ],
+    "implementation_note": "Do not substitute the distinct under-the-beams condition used later, and preserve the historically stated blood mechanism.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A040",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "If ♂ be significator of the Disease and in fiery Signes",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Mars as disease significator in fiery signs, afflicting the luminaries, ascendant, or its lord, produces hot burning fevers.",
+    "conditions": [
+      "Mars is significator of the Disease.",
+      "AND in fiery Signs.",
+      "AND afflicts the Luminaries OR the Ascendant OR the Lord of the Ascendant."
+    ],
+    "outcomes": [
+      "Hot burning Feavours."
+    ],
+    "exceptions": [
+      "A041 qualifies the mixture of melancholy when Saturn is involved."
+    ],
+    "dependencies": [
+      "A023; A041 continues the same sentence."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Preserve the required role, sign class, and alternative targets of affliction. Do not infer a specified aspect type absent from the clause.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A041",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "if Saturne be mixed in the Judgement",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "The Mars/fire/affliction fever judgement includes some mixture of melancholy if Saturn is mixed in the judgement, glossed as having any role in disease signification or Mars being in any of his dignities.",
+    "conditions": [
+      "The Mars, fiery-sign, and affliction conditions in A040.",
+      "AND Saturn is mixed in the Judgement.",
+      "The printed gloss is: Saturn has anything to do in the Signification of the Disease, OR Mars is in any of his dignities."
+    ],
+    "outcomes": [
+      "Some mixture of Melancholly."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A040"
+    ],
+    "uncertainties": [
+      "SA-I07: \"his\" most naturally refers to Saturn, but is not expanded in print; the semicolon before if also requires retaining the whole sentence rather than detaching melancholy as unconditional."
+    ],
+    "implementation_note": "Keep the Saturn qualifier attached to melancholy. If an executable mapping is attempted, resolve the dignity possessive explicitly rather than silently choosing an antecedent.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A042",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "the disease will not easily be discovered, it will come and goe",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Mars in common signs indicates a disease that will not easily be discovered, comes and goes, and has no certainty.",
+    "conditions": [
+      "Mars in the disease-judgement context.",
+      "AND in common Signs."
+    ],
+    "outcomes": [
+      "Disease will NOT easily be discovered.",
+      "It will come AND go.",
+      "It will be at no certainty."
+    ],
+    "exceptions": [
+      "A043-A044 distinguish outcomes at the time it appears to leave."
+    ],
+    "dependencies": [
+      "A023; the paragraph supplies the further timing qualifications in A043-A045."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Do not equate \"not easily discovered\" with no disease or convert unstable course into permanent recovery.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A043",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "if Saturne have any signification and be in aspect with good Planets",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "In the Mars/common-sign case, at the time the disease seems to leave, Saturn having signification and an aspect with good planets is said to mean the disease will quite go away.",
+    "conditions": [
+      "Mars/common-sign disease context of A042.",
+      "AND it is the time when the disease seems to leave.",
+      "AND Saturn has any signification.",
+      "AND Saturn is in aspect with good Planets."
+    ],
+    "outcomes": [
+      "The Disease will quite go away."
+    ],
+    "exceptions": [
+      "A044 is the contrasting Saturn-with-sixth/eighth-lord outcome at that time."
+    ],
+    "dependencies": [
+      "A042"
+    ],
+    "uncertainties": [],
+    "implementation_note": "The source says aspect with GOOD PLANETS, not a GOOD ASPECT. Preserve the time-specific apparent-departure condition and do not invent an aspect quality.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A044",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "but if then Saturne be with the Lord of the eight or sixt",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "In contrast, at that apparent-departure time in the Mars/common-sign case, Saturn being with the eighth- or sixth-house lord permits the sick person to expect death.",
+    "conditions": [
+      "Mars/common-sign disease context of A042.",
+      "AND the same time when it seems to leave (\"then\").",
+      "AND Saturn is with the Lord of the eighth OR sixth."
+    ],
+    "outcomes": [
+      "The Sick MAY expect death."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A042-A043 provide the temporal and contrastive context; the good-planet aspect of A043 is not repeated in this alternative."
+    ],
+    "uncertainties": [
+      "The relation \"with\" has no exact orb or other formal specification here."
+    ],
+    "implementation_note": "Preserve MAY expect and the then anchor. Do not report a documented death or add A043's good-planet aspect as a required condition of this alternative.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A045",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "returning when expectation is of amendment",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Usually, Mars in common signs signifies many acute infirmities returning when improvement is expected, with sudden motions and quicker critical days whose good or ill direction depends on the significator's nature.",
+    "conditions": [
+      "Mars in common Signs, within the disease judgement."
+    ],
+    "outcomes": [
+      "USUALLY the Patient is vexed with many infirmities, and they acute.",
+      "They return when expectation is of amendment.",
+      "Symptoms are sudden motions.",
+      "More quick AND speedy Criticall days, either to good OR ill according to the nature of the Significator."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A042; the nature of the Significator controls the direction of critical days."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Do not drop usually, the expected-improvement timing, or the good/ill dependency. No numbered critical-day schedule is supplied in this clause.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A046",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      296
+    ],
+    "printed_pages": [
+      262
+    ],
+    "source_anchor": "♂ under the beames of the ☉ in the sixt or in the twelfth, in fiery Signes",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Mars under the Sun's beams, in the sixth or twelfth house and in fiery signs, brings scorching, burning, inflaming fevers with excessive heat, as if boiling the blood.",
+    "conditions": [
+      "Mars under the beams of the Sun.",
+      "AND in the sixth OR twelfth.",
+      "AND in fiery Signs."
+    ],
+    "outcomes": [
+      "Scorching OR burning inflaming Feavours.",
+      "Fevers exceeding especially in heat.",
+      "As it were boiling the Blood."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A023 and the Mars disease context."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Do not collapse under-beams into combustion, omit the house/sign conditions, or treat \"as it were\" as a measured physiological process.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A047",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "♂ being the cause of a Feaver and in ♌",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Mars as cause of a fever in Leo signifies ebolition or boiling of humours and continual burning fevers, whose original cause is said to arise from the great veins near the heart.",
+    "conditions": [
+      "Mars is the cause of a Feaver.",
+      "AND Mars is in Leo."
+    ],
+    "outcomes": [
+      "Ebolition OR a boiling of the humours.",
+      "Continual burning Feavers.",
+      "Their original cause springs from the great Veines near the heart."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "Continuation of the Mars sequence from PDF296."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Retain the fever-cause role, continuity of fever, and exact anatomical claim as historical source content; no modern diagnosis is assigned.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A048",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "at first lying downe of the Sicke party",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "At the sick person's first lying down, a Sun conjunction, square, or opposition with Saturn, or placement in Saturn's antiscion, signifies that the disease then afflicting is merely melancholy.",
+    "conditions": [
+      "Time anchor: first lying down of the Sick party.",
+      "AND the Sun is in conjunction OR square OR opposition of Saturn; OR in Saturn's Antiscion."
+    ],
+    "outcomes": [
+      "The Disease THEN afflicting is meerly Melancholly."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The geometry of Saturn's antiscion and the first-lying-down chart are assumed."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Do not replace first lying down with time of enquiry or an arbitrary current chart. Retain merely and then, and preserve the antiscion alternative.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A049",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "if the ☉ be afflicted of or by ♂ with the aforesaid Aspects",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "The corresponding Sun affliction by Mars with the aforesaid aspects signifies disease from choler, in the same first-lying-down context.",
+    "conditions": [
+      "First-lying-down context inherited from A048.",
+      "AND the Sun is afflicted of OR by Mars with the aforesaid Aspects.",
+      "The antecedent explicitly lists conjunction, square, opposition; whether the separate antiscion alternative is also included by aforesaid Aspects is unresolved."
+    ],
+    "outcomes": [
+      "The Disease is from Choller."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A048 provides the temporal anchor and antecedent relations."
+    ],
+    "uncertainties": [
+      "SA-I09: The shorthand aforesaid Aspects may or may not extend to the separately phrased Saturn antiscion; no Mars antiscion is printed."
+    ],
+    "implementation_note": "Preserve the shorthand dependency; do not silently add a Mars-antiscion rule or discard the first-lying-down time anchor.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A050",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "♀ being Significatrix of the Disease",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Venus as significatrix of disease indicates intemperancy, excessive gluttony/surfeit, belly or privy-part disaffection, or some Womanish trick, with the source's vague and historical terminology retained.",
+    "conditions": [
+      "Venus is Significatrix of the Disease."
+    ],
+    "outcomes": [
+      "It proceeds of intemperancy.",
+      "The printed phrase is \"too much Gluttony of some Surfeit\"; the linkage is retained without silently correcting it.",
+      "Disaffection in the Belly OR in OR near the privy parts.",
+      "OR by some Womanish trick, &c."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A023"
+    ],
+    "uncertainties": [
+      "SA-I10: The print visually reads \"of some Surfeit\"; a modernised \"or\" would be an emendation.",
+      "Womanish trick is not explained here."
+    ],
+    "implementation_note": "Do not map the sexual/anatomical phrase to a named modern condition or reinterpret the gendered phrase as an established medical category.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A051",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "♀ in fiery Signes, shewes a Feaver but of one dayes continuance",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Venus in fiery signs, in the disease-significatrix context, signifies a fever lasting only one day.",
+    "conditions": [
+      "Venus is disease significatrix (A050).",
+      "AND in fiery Signs."
+    ],
+    "outcomes": [
+      "A Feaver BUT of one day's continuance."
+    ],
+    "exceptions": [
+      "A052 is the ensuing Mars co-signification variant."
+    ],
+    "dependencies": [
+      "A050"
+    ],
+    "uncertainties": [],
+    "implementation_note": "Retain the explicit one-day duration and source role; do not infer a clock start or measured patient endpoint.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A052",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "but if ♂ joyne in signification",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "In the preceding Venus/fire-sign description, if Mars joins in signification, the source instead notes rotten fevers arising from phlegm.",
+    "conditions": [
+      "Venus disease-significatrix AND fiery-sign context from A050-A051.",
+      "AND Mars joins in signification."
+    ],
+    "outcomes": [
+      "Rotten Feavers arising from Fleagme."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A051; the source connects the clause by but if."
+    ],
+    "uncertainties": [
+      "The duration of the Mars-qualified fevers is not restated; the text does not warrant automatically retaining or replacing one day with another duration."
+    ],
+    "implementation_note": "Joining in signification is not explicitly a physical conjunction. Preserve the fire-sign context and do not invent duration for the variant.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A053",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "When ☿ is unfortunate and is author of the Disease",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "Unfortunate Mercury as disease author signifies a disaffected brain and an unquiet fancy or mind, with frenzy, falling sickness, cough, Ptissick, or the like.",
+    "conditions": [
+      "Mercury is unfortunate.",
+      "AND Mercury is author of the Disease."
+    ],
+    "outcomes": [
+      "The sick party has his Brain disaffected.",
+      "Disturbed with an unquiet Fancy OR Mind.",
+      "With a Frenzie, Falling-sicknesse, Cough, Ptissick, OR the like."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A023; unfortunate is not quantitatively specified here."
+    ],
+    "uncertainties": [],
+    "implementation_note": "Preserve both unfortunate and disease-author conditions, along with the open list. Do not translate the historical conditions into modern neurological or respiratory diagnoses.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  },
+  {
+    "local_id": "A054",
+    "section": "Of the qualitie and nature of the Disease.",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "this is, when mistrust is of such like chances",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "The planetary sequence follows Lilly's first-person introduction to quality/nature and the last explicit marginal name is Lilly, but it remains within DARIOT Abridged and supplies no renewed marginal attribution. Likely Lilly's exposition of the abridged method; an exact division of borrowed and added clauses is not established by this scan alone."
+    },
+    "kind": "general_rule",
+    "proposition": "When the ninth-house lord is in the sixth, and there is mistrust of such occurrences, the source attributes the disease to poison, witchery, fascination, charm, or an occult cause.",
+    "conditions": [
+      "Lord of the ninth is in the sixth.",
+      "AND mistrust is of such like chances, as expressly qualified at the sentence's end."
+    ],
+    "outcomes": [
+      "Disease from some Poyson, Witchery; OR Fascination, Charme; OR by OR from some occult cause (printed list grouping retained)."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "This new When clause follows the Mercury sentence in the same paragraph, but does not explicitly repeat Mercury's misfortune or disease-authorship as prerequisites."
+    ],
+    "uncertainties": [],
+    "implementation_note": "The suspicion/mistrust qualifier is necessary source scope. Do not convert a conditional historical occult attribution into a confirmed cause or append the next right/left section.",
+    "case_evidence": {
+      "individuated_patient_enquiry_supplied": false,
+      "dated_or_reconstructible_chart_supplied": false,
+      "observed_patient_endpoint_supplied": false,
+      "broad_author_experience_claim": false,
+      "case_count_admissible_from_this_record": 0,
+      "scope": "Only the assigned source span, PDF292/printed258 heading through PDF297/printed263 before the right/left heading, has been assessed."
+    }
+  }
+]

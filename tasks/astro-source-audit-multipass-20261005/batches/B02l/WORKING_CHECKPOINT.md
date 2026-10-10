@@ -1,0 +1,5 @@
+# B02l working checkpoint
+
+Parent audit OPEN. Current owner continuation resumed from integration169288e7f3e633bd945573ba23f58a975a63f4dc. Root owns research/lilly-dariot-b02l-20261010 and alone may integrate. Exact source span: PDF292 Dariot introduction through PDF302 upper paragraph before Hermes. Original source hash verified; root full-span initial notes frozen; two separate source readers and fresh independent source-first evaluator active. No candidate result or test completion claimed yet.
+
+Next: collect each reader's frozen files, compile conditional records starting R1550, check original ambiguities, build bounded report/claim ledger, run focused verification, freeze candidate for independent review. Preserve all old batches and checkpoints. Publish and deliver report/ZIP/handoff plus update the work note in the owner's established handoff folder. Finish at the retained PASS_PLAN completed-batch boundary. Final answer under8000characters begins with final shell clock reading and exact elapsed from2026-10-10T19:24:34+00:00. No root mid-task clock readings.

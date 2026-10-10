@@ -1,0 +1,2769 @@
+{
+  "schema": "source-first-independent-map-v1",
+  "task_start_metadata_as_provided": "2026-10-10T19:24:34+00:00",
+  "time_policy": "No current-time reading or fabricated completion timestamp; provided task-start metadata retained as supplied.",
+  "reviewer_role": "Bounded independent source evaluator; same-family contextual separation, not cross-family/expert/IV&V independence.",
+  "exposure_state": "Frozen before receiving or inspecting the candidate, its claim ledger, producer helpers, reports, prior reviews, summaries, or rationales.",
+  "authority": "Root is sole canonical writer. This output is private source evidence and diagnostic preparation, not a canonical edit or assurance gate.",
+  "primary_source": {
+    "path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+    "role": "primary source PDF",
+    "sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "bytes": 141842963,
+    "page_count": 894,
+    "edition_as_task_identified": "Lilly 1647 Christian Astrology I–III"
+  },
+  "scope": {
+    "start": "PDF292 / printed258: DARIOT Abridged, including the COMPLETE italic introduction.",
+    "end": "PDF302 / printed268: FULL upper paragraph ending “Judgments of this House.”",
+    "intervening_unnumbered_text": "Included, notably natal/mundane cautions, lunar cautions, recovery timing and the complete Hermes transition.",
+    "exclude_before": "Preceding paragraph on PDF292 ending “shew death”; completed outside this batch according to task instruction.",
+    "exclude_after": "Divider and Hermes Trismegistus upon the first Decumbiture of the Sick heading and doctrinal text.",
+    "chapter_status": "Chapter XLIV remains incomplete after this local continuation."
+  },
+  "inspection_method": {
+    "fidelity_basis": "Direct visual inspection of original page images for every page in the requested span, plus enlarged PDF-rendered crops where syntax/glyphs mattered.",
+    "ocr_use": "Embedded PDF OCR used only to navigate to original Errata; never as source-fidelity authority.",
+    "main_page_images": [
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8",
+        "bytes": 1749974
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf293.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "c62bd487534de5d05044fe348e3f2d74780785a70aff0d2594ff8abc366b338b",
+        "bytes": 1671733
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf294.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "8e2c00d3ade933318ac810888f92c414c88be0f27c5210b06c889a7c5b384bee",
+        "bytes": 1918546
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf295.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "b51b331f62308f74a1896e341932c0d2e8a771c2b43b64dab3f90fe395d97e62",
+        "bytes": 1842512
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf296.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "f86b3f9a275659b36e00f5600ed5c0a06c330de3d3289bd6bcf76b097a6259d1",
+        "bytes": 1842795
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf297.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "180b21a87dfa80be6099cd0b6049745168cc3c0216cc824994896f0ae253caf6",
+        "bytes": 1724748
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf298.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "bd344f589289798baf8068a8fc8b029a156c183c2200c69ce44dd69e5086455e",
+        "bytes": 1953839
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf299.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "6fc3d58fe674699093325bb962613451aa6b4d5a4f5b519b1a0c90761c2149be",
+        "bytes": 1773188
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf300.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "8d218bb4dfc5cfa54be1804bb9d26f2076e00b44e7a1f5b796bdd8ab86bb2466",
+        "bytes": 1735577
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf301.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "5e6aedfb3d758c2aa8326b0d1626e33539508497aa86361154759c3a1d1fc760",
+        "bytes": 1699482
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/source-work/pdf302.png",
+        "role": "visually inspected main-span original page image",
+        "sha256": "135f60f9e8ee310a667d36fe1460521479e060bf7f2eb6536f82ba17402e03c9",
+        "bytes": 1717526
+      }
+    ],
+    "rendered_details": [
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf277_earlier_context.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "2df21d501f89d583824d17148f4716ba0898a98a905d7359054594a53532e263",
+        "bytes": 2349891
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf283_earlier_context.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "6384dc3a305f5fbdeac1b9c1e663faefc4690e55ca031eddc647e597d785fd12",
+        "bytes": 2307531
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf293_detail.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "450549186fb4961a71a3199ff4170f0b17f5ff2fbe89d97108af955647eecd08",
+        "bytes": 1128903
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf294_detail.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "073d2b5e4fca24c6458343e83732ca5785cdc9626bd21bd37aa351c08df8d80d",
+        "bytes": 1448648
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf295_detail.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "515beaae7b8ebd7769e7385fccd15e56af9c7b4b0255a3bcce6929297819cbd8",
+        "bytes": 954799
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf296_jupiter.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "6934d647d3e748a76bc734e4afc6def7802f00865a6f3b90ad90fa02c9a700db",
+        "bytes": 723815
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf296_mars.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "b57fdd414e5e11f9897618de9a3b99d16028a0fd5163f4ea2d8940f866f6f4aa",
+        "bytes": 1050041
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf297_location.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "8794e728c9254bc4f9f3560aa37ee81e747e42deb7d0f4e14069c11fbe176123",
+        "bytes": 1061535
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf298_mapping.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "b316efea96d43b1b30c4accade61a8d9adb387594f860f37d0b27fff6f85ff11",
+        "bytes": 1321351
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf298_saturn.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "32c4690e3836f18dae3e099eac0e6d0a2ba6af5c122ab8c7f49cb60df5b9dc11",
+        "bytes": 1198017
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf299_mind1.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "42cf54394379f67857a858f5d387c45b1532c91c7e8ebcd92ecbe84e64dd51de",
+        "bytes": 1046383
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf299_mind2.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "eb8c9807cf42105d97a3dac5daf2ab87d12aac27f5807254dfbe4ae8b3de110f",
+        "bytes": 1082466
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf300_moon.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "d898eb130e1927f1cc065bf5778f57b2b5818f29e7085b38130d121edfe839e4",
+        "bytes": 559934
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf301_timing.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "094cfe88be3ad5228624b4c3fe7183b2361799873700a55b6dba0594514452bc",
+        "bytes": 1544496
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf302_ending.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "d131d2855ba4ce04141fa6918010ca4e0d3247a50274e4cb46258db240cec2dc",
+        "bytes": 1386218
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf888_errata_original.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "2ee76560dce45a19e2314e68a1d0e65f0d632ee9ed9d991b5ef012815d9c8d19",
+        "bytes": 2344888
+      },
+      {
+        "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/pdf889_errata_original.png",
+        "role": "locally rendered original-source detail or errata image",
+        "sha256": "3f3285c5b553d6b0d38a92380914d45c978cfaa833725d0fc7722b62e113be67",
+        "bytes": 992303
+      }
+    ],
+    "extra_source_reading": "Original Errata PDF888 visually inspected; following PDF889 visually checked and blank. Earlier original timing context at PDF277 and PDF283 visually inspected and separately labeled. No prior audit batches or candidate material accessed.",
+    "external_sources": "None. No historical claim supplemented from modern secondary material."
+  },
+  "normalization_policy": {
+    "historical_frame": "All disease/planet assertions below are claims of the historical text, not modern medical advice or efficacy claims.",
+    "terminology": "Planet names and house numbers used for readability; source terms such as melancholy, humors, fever, spirit, animal faculties, and member are not converted into modern diagnoses.",
+    "glyphs": "Planet/aspect glyphs were read visually. Unexpected but legible sextile at PDF299 is retained. Both nodes at PDF295 are present; North Node at PDF293 is separate.",
+    "no_silent_completion": "No missing signs, aspect orbs, degree subdivisions, speed cutoffs, crisis intervals, time units, weighting schemes, or qualifiers are supplied.",
+    "ambiguity": "Raw point-of-use wording retained where punctuation, scope, referent, or polarity is unsettled; uncertainty is diagnostic rather than an invented correction."
+  },
+  "local_argument_architecture": [
+    {
+      "range": "SF-001",
+      "pages": "PDF292 / printed258",
+      "function": "Full editorial introduction: Lilly’s preference for and abbreviation of Dariot."
+    },
+    {
+      "range": "SF-002–008",
+      "pages": "PDF293 / printed259",
+      "function": "Determine sickness status: Dariot’s adverse configurations, then Lilly’s generalized practice and no-sickness chain."
+    },
+    {
+      "range": "SF-009–020",
+      "pages": "PDF293–295 / printed259–261",
+      "function": "Distinguish inward disease from outward accidental trouble; use house symbolism and application/separation to interpret money, pleasures/pension, disputes, and youthful discontent; Lilly closes with method testimony."
+    },
+    {
+      "range": "SF-021–047",
+      "pages": "PDF295–297 / printed261–263",
+      "function": "Expand disease quality: significator first, then Saturn/Jupiter/Mars/Sun/Venus/Mercury and contextual poison/occult rules with prior-suspicion qualifications."
+    },
+    {
+      "range": "SF-048–053",
+      "pages": "PDF297–298 / printed263–264",
+      "function": "Locate side, upper/front/back, and part of an anatomical member, using sixth lord and gender/sign/degree rules."
+    },
+    {
+      "range": "SF-054–071",
+      "pages": "PDF298–299 / printed264–265",
+      "function": "Distinguish body, mind, spirits, and both through places, dispositors, strengths, and planetary character. Preserve local tensions rather than imposing a unified corrected scheme."
+    },
+    {
+      "range": "SF-072–075",
+      "pages": "PDF299–300 / printed265–266",
+      "function": "Unnumbered additional cautions combining natal, mundane, illness/request charts, and Moon–Sun distance/direction/mitigation."
+    },
+    {
+      "range": "SF-076–082",
+      "pages": "PDF300–301 / printed266–267",
+      "function": "Crisis method: prioritized baseline hour, acute-only lunar distances, aspect-conditioned course and medicine effects, and Lilly’s recollections of distress/ease."
+    },
+    {
+      "range": "SF-083–090",
+      "pages": "PDF301–302 / printed267–268",
+      "function": "Recovery timing after recovery is already judged: degree/aspect/house/sign inputs; ordinary movable-days practice; discretion in common signs; ancestors’ alternative time units and house equivalences; lunar synthesis; dignity ingress and sixth-cusp example."
+    },
+    {
+      "range": "SF-091–092",
+      "pages": "PDF302 / printed268, entire upper paragraph tail",
+      "function": "Practical-figure promise and motive for translating/inserting the Hermes text; stop above divider."
+    }
+  ],
+  "source_units": [
+    {
+      "id": "SF-001",
+      "sequence": 1,
+      "point_of_use": {
+        "pdf_pages": [
+          292
+        ],
+        "printed_pages": [
+          258
+        ],
+        "section": "DARIOT Abridged: complete italic introduction",
+        "anchor_excerpt": "In regard I have ever affected Dariot his Method of judgment in sicknesses, I have with some abbreviation annexed it, in a farre more short way and method then heretofore published.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly says that he has long favored Dariot’s method of judging sickness and has annexed an abridged, shorter presentation of it.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The full italic introduction belongs to the span. “Some abbreviation” and the comparison with what was published before are authorial descriptions, not a claim that this is an unaltered translation or a complete reproduction of Dariot.",
+      "attribution": "Lilly, first person, introducing a work attributed to Dariot",
+      "evidence_character": "authorial attribution and editorial-method statement",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-002",
+      "sequence": 2,
+      "point_of_use": {
+        "pdf_pages": [
+          293
+        ],
+        "printed_pages": [
+          259
+        ],
+        "section": "If the Party be sicke of whom the Question is Demanded",
+        "anchor_excerpt": "If the Party be sicke of whom the Question is Demanded.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The first question is whether the person about whom the question is asked is sick.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "This heading establishes the question of sickness status; it is not yet a rule for a disease’s quality or duration.",
+      "attribution": "Heading preceding the marginal label Dariot",
+      "evidence_character": "argument architecture",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-003",
+      "sequence": 3,
+      "point_of_use": {
+        "pdf_pages": [
+          293
+        ],
+        "printed_pages": [
+          259
+        ],
+        "section": "Sickness status: Dariot",
+        "anchor_excerpt": "THE Significator of the Querent in a Signe contrary to his owne nature ... as [Mars] being Lord of the ascendant ... in [Cancer] ... or if the Lord of the ascendant be in a Cadent house, chiefly in the sixt, he is sick.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "A significator in a sign contrary to its own nature is a sickness indication. Mars, lord of the ascendant, naturally hot and dry, in cold and moist Cancer is the example. The alternative is the lord of the ascendant in a cadent house, especially the sixth.",
+      "antecedents_and_scope": "Querent’s significator in contrary-nature sign; OR ascendant lord cadent.",
+      "qualifications_polarity_modality_referents": "“Chiefly” gives special emphasis to the sixth; it does not restrict the cadent-house assertion to the sixth. Mars/Cancer is an illustrative configuration, not a patient case.",
+      "attribution": "Dariot, explicit marginal label",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-004",
+      "sequence": 4,
+      "point_of_use": {
+        "pdf_pages": [
+          293
+        ],
+        "printed_pages": [
+          259
+        ],
+        "section": "Sickness status: Dariot",
+        "anchor_excerpt": "A diurnall Planet being Significator, and he under the earth, ill affected, Combust, Retrograde; in his Fall or Detriment, weak, or in Terms of malevolents, or with violent fixed Stars, or besieged by the two Infortunes ... What was spoken of a diurnall Planet, must be understood of a nocturnall one (consideratis considerandis.)",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The text lists adverse states of a diurnal significator and says that, these happening, the party is sick. It extends what has been said to a nocturnal planet with the requisite matters considered.",
+      "antecedents_and_scope": "Diurnal significator; printed sequence: under earth, ill affected, combust, retrograde, fall/detriment, weak, malefics’ terms, violent fixed stars, or besieged by both infortunes.",
+      "qualifications_polarity_modality_referents": "The printed list mixes conjunction and disjunction and is not an explicit Boolean checklist. The nocturnal extension is qualified by “consideratis considerandis”; the page does not explicitly spell out a replacement above-earth condition or all adjustments.",
+      "attribution": "Dariot, continuing marginally attributed block",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U02"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-005",
+      "sequence": 5,
+      "point_of_use": {
+        "pdf_pages": [
+          293
+        ],
+        "printed_pages": [
+          259
+        ],
+        "section": "Sickness status: Lilly’s addition",
+        "anchor_excerpt": "When a Question was asked of me upon any Urine, or without it, having erected my Figure, I observed this method, to know whether the Querent was ill or no.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly introduces his own procedure for a question brought with urine or without it, after erecting a figure, to determine whether the querent was ill.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Urine is optional. This is a generalized practice statement; it identifies no individual consultation, date, or figure.",
+      "attribution": "Lilly, explicit marginal label",
+      "evidence_character": "general first-person experience statement",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-006",
+      "sequence": 6,
+      "point_of_use": {
+        "pdf_pages": [
+          293
+        ],
+        "printed_pages": [
+          259
+        ],
+        "section": "Sickness status: Lilly’s condition chain",
+        "anchor_excerpt": "If the ascendant were not afflicted, or the Lord thereof out of his essentiall Dignities, or in any evill aspect of [Saturn] or [Mars], or Lord of the sixt. Or if no Planet afflicted the sixt house by presence, or that the [Moon] were not afflicted in the eighth or twelfth",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "These are the printed opening conditions of Lilly’s no-sickness judgment. The first is explicitly an unafflicted ascendant; later branches explicitly mention no planet afflicting the sixth by presence and the Moon not afflicted in the eighth or twelfth.",
+      "antecedents_and_scope": "The entire printed negative chain must travel with the ensuing conclusion in SF-008. The ascendant-lord clauses read “out of” essential dignities and “in any evill aspect” without a separately printed “not.”",
+      "qualifications_polarity_modality_referents": "Do not silently add a negative, invert “out of,” or present the chain as an unambiguous formal rule. “Or” predominates; the page supplies no scoring or combination threshold.",
+      "attribution": "Lilly, continuing explicit marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U01"
+      ],
+      "callbacks_and_links": [
+        "SF-007",
+        "SF-008"
+      ]
+    },
+    {
+      "id": "SF-007",
+      "sequence": 7,
+      "point_of_use": {
+        "pdf_pages": [
+          293
+        ],
+        "printed_pages": [
+          259
+        ],
+        "section": "Sickness status: Lilly’s positive alternatives",
+        "anchor_excerpt": "or if I found [Jupiter] or [Venus] or [North Node] in the ascendant, or the [Sun] in the sixt, or the [Moon] and Lord of the ascendant in any good aspect, or [Jupiter] or [Venus] casting a [trine] or [sextile] to the cusp of the ascendant or sixt house",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Further alternatives in the no-sickness chain are Jupiter, Venus, or the North Node in the ascendant; the Sun in the sixth; Moon and ascendant lord in a good aspect; or Jupiter or Venus trine/sextile the ascendant or sixth cusp.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The Sun-in-sixth clause is favorable here. Keep the cusp targets, the North Node, and “any good aspect” distinct; do not replace this with a generic benefic-strength condition.",
+      "attribution": "Lilly, continuing explicit marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-006",
+        "SF-008"
+      ]
+    },
+    {
+      "id": "SF-008",
+      "sequence": 8,
+      "point_of_use": {
+        "pdf_pages": [
+          293
+        ],
+        "printed_pages": [
+          259
+        ],
+        "section": "Sickness status: Lilly’s conclusion",
+        "anchor_excerpt": "I would directly acquaint the party they were not sick, or that no sicknesse would succeed upon this Quere ... some sudden distemper of Body, which would presently be rectified.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly says he would tell the party either that they were not sick or that no sickness would follow this query, and that their suspicion arose from a sudden bodily distemper that would soon be rectified.",
+      "antecedents_and_scope": "Conclusion of SF-006 and SF-007, including their unresolved negative scope.",
+      "qualifications_polarity_modality_referents": "Retain both alternatives: present non-sickness and no ensuing sickness. “Sudden distemper” is not no bodily disturbance at all. “Presently” gives no numeric duration.",
+      "attribution": "Lilly, continuing explicit marginal attribution",
+      "evidence_character": "reported habitual judgment, not an independently documented outcome",
+      "unresolved_readings": [
+        "U01"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-009",
+      "sequence": 9,
+      "point_of_use": {
+        "pdf_pages": [
+          293,
+          294
+        ],
+        "printed_pages": [
+          259,
+          260
+        ],
+        "section": "Cause of the Disease inward or outward: inward",
+        "anchor_excerpt": "The inward cause and condition of the Disease we require from the ill disposition of the Significator, in Signe, House and place of Heaven, his good or ill configuration with the malevolent Planets",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The inward cause and condition are sought in the significator’s ill disposition by sign, house, and heavenly place, and in its good or ill configuration with malevolent planets.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Both “good or ill” configurations are explicitly named; this is a method of interpretation in the source, not a physiological explanation established by cases.",
+      "attribution": "Dariot, fresh explicit marginal label at printed259",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-010",
+      "sequence": 10,
+      "point_of_use": {
+        "pdf_pages": [
+          293,
+          294
+        ],
+        "printed_pages": [
+          259,
+          260
+        ],
+        "section": "Inward cause: functional malignancy",
+        "anchor_excerpt": "where generally observe, any Planet may in this case be malignant, if he be Lord of the eighth, twelfth or sixt, &c.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Any planet may be malignant in this context by being lord of the eighth, twelfth, or sixth, with an open “etc.”",
+      "antecedents_and_scope": "Functional house rulership in this disease judgment.",
+      "qualifications_polarity_modality_referents": "“May” is modal, and “any Planet” includes planets otherwise treated as benefic. The source does not close the set after the three named houses.",
+      "attribution": "Dariot, continuation across page break",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-011",
+      "sequence": 11,
+      "point_of_use": {
+        "pdf_pages": [
+          294
+        ],
+        "printed_pages": [
+          260
+        ],
+        "section": "Outward cause: sources of judgment",
+        "anchor_excerpt": "The outward cause is required from those Infortunes that doe afflict the Lord of the ascendant, or from the principall Significators in the Figure, or the [Moon]",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The outward cause is investigated through the infortunes afflicting the ascendant lord, with principal figure significators and the Moon also named in the printed sequence.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The syntax does not clearly distribute the verb “afflict” across every subsequent noun. Preserve the named objects rather than reducing the rule to one fixed planet.",
+      "attribution": "Dariot, continuing attributed explanation",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U03"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-012",
+      "sequence": 12,
+      "point_of_use": {
+        "pdf_pages": [
+          294
+        ],
+        "printed_pages": [
+          260
+        ],
+        "section": "Outward cause: strong ascendant lord",
+        "anchor_excerpt": "if you find the Lord of the ascendant sufficiently strong in essentiall Dignities, swift in motion, in a good house of Heaven, you may then judge the Querent is not naturally ill, but accidentally and outwardly afflicted",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "With the ascendant lord sufficiently strong in essential dignities, swift, and in a good house, the astrologer may judge accidental/outward affliction rather than natural illness.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Three qualities are named together. “Sufficiently,” “good house,” and “may” are not quantified. The source distinguishes kinds of affliction; it does not declare the person entirely unaffected.",
+      "attribution": "Dariot, continuing attributed explanation",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-013",
+      "sequence": 13,
+      "point_of_use": {
+        "pdf_pages": [
+          294
+        ],
+        "printed_pages": [
+          260
+        ],
+        "section": "Outward cause: malefic aspect with exclusions",
+        "anchor_excerpt": "notwithstanding the strength of the Lord of the ascendant ... either [Saturn] or [Mars] have some [square] or [opposition] aspect unto him, and neither of them be Lords of the sixt, or Dispositors of the [Moon] ... he is not well, yet not perfectly sick",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Despite the strong ascendant lord, a Saturn or Mars square/opposition can be interpreted as an outward event making the person unwell, though not fully sick, when neither malefic is sixth lord or Moon dispositor.",
+      "antecedents_and_scope": "Carry forward the ascendant-lord strength; Saturn or Mars square/opposition to that lord; exclusion of sixth lordship and Moon disposition for the named malefics.",
+      "qualifications_polarity_modality_referents": "Both exclusions matter. “May judge” remains permissive. “Not well, yet not perfectly sick” is the source’s intermediate status, not equivalent to either complete health or inevitable disease.",
+      "attribution": "Dariot, continuing attributed explanation",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-014",
+      "sequence": 14,
+      "point_of_use": {
+        "pdf_pages": [
+          294
+        ],
+        "printed_pages": [
+          260
+        ],
+        "section": "Outward cause: house interpretation",
+        "anchor_excerpt": "observe in what house that Planet is, or of what house he is Lord, and from the judgments belonging to that house, require satisfaction in Art; as for example",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Determine the outward circumstance by the afflicting planet’s occupied house or house lordship, using the judgments appropriate to that house.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The following money, pleasures, and relationship scenarios are examples of this house-based interpretation. They are not supplied as actual case records.",
+      "attribution": "Dariot explanation leading into Lilly examples",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-015",
+        "SF-017",
+        "SF-018"
+      ]
+    },
+    {
+      "id": "SF-015",
+      "sequence": 15,
+      "point_of_use": {
+        "pdf_pages": [
+          294
+        ],
+        "printed_pages": [
+          260
+        ],
+        "section": "Outward cause: second-house example",
+        "anchor_excerpt": "If you find the Lord of the ascendant casually afflicted by Saturne or Mars, &c. and either of them are Lords of the second house, and there appears no inward cause of a Disease ... want of money, (if the Significators apply,) or hath had lately damage, if the Significators are separated",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "When the ascendant lord is casually afflicted by Saturn or Mars (etc.), the afflictor rules the second, and no inward disease cause appears, application signifies a present want of money, whereas separation signifies recent damage/loss.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Retain the absence of an inward cause and the applying/separating distinction. No amount, date, or specific querent is provided.",
+      "attribution": "Lilly, fresh explicit marginal label",
+      "evidence_character": "constructed interpretive example",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-016",
+      "sequence": 16,
+      "point_of_use": {
+        "pdf_pages": [
+          294
+        ],
+        "printed_pages": [
+          260
+        ],
+        "section": "Outward cause: magnitude and aspect comparison",
+        "anchor_excerpt": "the greatnesse or smalnesse of his losse judge according to the strength of the Planet afflicting, and quality of the aspect; where note, Oppositions herein worse then [square] aspects or Conjunctions",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Judge loss magnitude by the afflicting planet’s strength and the aspect’s quality. In this context oppositions are worse than squares or conjunctions.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Herein” ties the comparison to this loss judgment. No numerical loss scale or universal ranking of all aspects is given.",
+      "attribution": "Lilly, continuing example",
+      "evidence_character": "interpretive method within example",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-015"
+      ]
+    },
+    {
+      "id": "SF-017",
+      "sequence": 17,
+      "point_of_use": {
+        "pdf_pages": [
+          294
+        ],
+        "printed_pages": [
+          260
+        ],
+        "section": "Outward cause: fifth-house example",
+        "anchor_excerpt": "If it be the Lord of the fift, be the Planet good or ill, that afflicts ... either by evill Dyet, Surfet, &c. or by losse at Dice, Tables or Sports (if the Querent be capable) or that the Father comes not off freely with his Pension; (this is when young people demand a Question, or are distempered)",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "A fifth lord, whether the planet is good or ill, afflicting or in an evil aspect to the ascendant lord can indicate bad diet/surfeit, losses at dice/tables/sports when the querent is capable of such, or a father’s failure to provide a pension freely. The latter part explicitly invokes young people asking or being distempered.",
+      "antecedents_and_scope": "Within the outward-cause example sequence, with fifth lord as afflictor/aspecting planet.",
+      "qualifications_polarity_modality_referents": "These are alternatives. Preserve “good or ill,” the capacity qualification for games, and the young-person qualification near the pension example; do not convert this into an unconditional disease diagnosis.",
+      "attribution": "Lilly, continuing example",
+      "evidence_character": "constructed interpretive example",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-018",
+      "sequence": 18,
+      "point_of_use": {
+        "pdf_pages": [
+          294,
+          295
+        ],
+        "printed_pages": [
+          260,
+          261
+        ],
+        "section": "Outward cause: seventh-house example",
+        "anchor_excerpt": "if it be the Lord of the seventh that oppresses the Lord of the ascendant ... some difference with his Wife (and so a Woman, on the contrary, with her Husband,) or some Law-suit, or wilfull Neighbour-contention, or Partner is the outward cause",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Seventh-lord oppression of the ascendant lord indicates recent conflict with a wife, conversely a woman’s husband, or a lawsuit, willful neighbor contention, or partner as outward cause of the indisposition.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Spousal genders are explicitly reversed for a woman querent. The other circumstances are alternative readings, not concurrent facts about an identified patient.",
+      "attribution": "Lilly, continuing example",
+      "evidence_character": "constructed interpretive example",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-019",
+      "sequence": 19,
+      "point_of_use": {
+        "pdf_pages": [
+          294,
+          295
+        ],
+        "printed_pages": [
+          260,
+          261
+        ],
+        "section": "Outward cause: youth and unkind affection",
+        "anchor_excerpt": "in Youth, if the like configuration be upon the Question from the Lord of the seventh to the Lord of the ascendant, it’s alone melancholy; his Friend, or the Maid he affects, or the man he longs after is unkind ... yet will no sicknesse follow it",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "In youth, the same seventh-to-first-lord configuration is read as melancholy due to an unkind friend, desired maid, or man longed after. Discontent is the outward cause of bodily ill-affection, yet no sickness will follow.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The youth context and explicit negative prognosis belong to the rule. Preserve the source’s several objects of affection without imposing a modern psychiatric category or gender assumption.",
+      "attribution": "Lilly, continuing example",
+      "evidence_character": "constructed interpretive example",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-020",
+      "sequence": 20,
+      "point_of_use": {
+        "pdf_pages": [
+          295
+        ],
+        "printed_pages": [
+          261
+        ],
+        "section": "Outward cause: Lilly’s closing claim",
+        "anchor_excerpt": "This is the Method which I ever observed, which I freely communicate to the world, and which, if well understood, will give knowledge sufficient to this way of judicature.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly calls this the method he always followed and presents it publicly as sufficient for this kind of judgment if well understood.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The sufficiency assertion is conditional on understanding. This is testimony and teaching, not a supplied count of successes.",
+      "attribution": "Lilly, first-person italic closing statement",
+      "evidence_character": "general experience and pedagogical claim",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-021",
+      "sequence": 21,
+      "point_of_use": {
+        "pdf_pages": [
+          295
+        ],
+        "printed_pages": [
+          261
+        ],
+        "section": "Of the qualitie and nature of the Disease: teaching setup",
+        "anchor_excerpt": "Although formerly I have briefly given directions herein, yet now I hold it fit to be more copious, and desire the Learner that he will contract what I write into such a Method as may best please his owne Phansie ... When therefore you have erected your Figure, consider what Planet is significator of the Disease",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly expands earlier brief directions, asks the learner to condense them into a personally useful method, and begins disease-quality judgment by identifying the disease significator in an erected figure.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The earlier directions are a backward callback, not reproduced evidence. The invitation to contract a method does not specify an additional algorithm.",
+      "attribution": "Lilly, explicit first person after new heading",
+      "evidence_character": "argument architecture and procedural direction",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "CB01"
+      ]
+    },
+    {
+      "id": "SF-022",
+      "sequence": 22,
+      "point_of_use": {
+        "pdf_pages": [
+          295
+        ],
+        "printed_pages": [
+          261
+        ],
+        "section": "Disease quality: Saturn general",
+        "anchor_excerpt": "if you doe finde [Saturn] to be significator, he produceth continued and tedious Sicknesse, quarten Agues, Coughs, consumptions, &c.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Saturn as disease significator is said to produce continued, tedious sickness, quartan agues, coughs, consumptions, and other unspecified conditions.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Retain Saturn’s role as disease significator and the open list. Historical condition names are not modern diagnoses.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-023",
+      "sequence": 23,
+      "point_of_use": {
+        "pdf_pages": [
+          295
+        ],
+        "printed_pages": [
+          261
+        ],
+        "section": "Disease quality: Saturn dangerous fevers and poison suspicion",
+        "anchor_excerpt": "If he be in [Leo] or in [Scorpio] with [South Node] or [North Node], or Combust, or if [Saturn] be with violent fixed Starres ... pestilent and dangerous Feavers ... it may be doubted (where suspition of Poyson is) ... endeavoured to be Poysoned, or hath taken some potions equivalent to Poyson.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The printed Saturn configuration sequence indicates pestilent and dangerous fevers. Where poison is already suspected, the text permits suspicion of attempted poisoning or a potion equivalent to poison.",
+      "antecedents_and_scope": "Saturn disease-significator context; exact sequence “in Leo or in Scorpio with [either node], or Combust, or ... with violent fixed Starres.”",
+      "qualifications_polarity_modality_referents": "The poison conclusion is “may be doubted” and explicitly restricted to an existing suspicion. It is not proof of poisoning. The scope of “with” the nodes should not be silently redistributed over Leo as well as Scorpio.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U04"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-024",
+      "sequence": 24,
+      "point_of_use": {
+        "pdf_pages": [
+          295
+        ],
+        "printed_pages": [
+          261
+        ],
+        "section": "Disease quality: Saturn fiery signs",
+        "anchor_excerpt": "When [Saturn] is in Signes of the fiery Triplicity, as [Aries Leo Sagittarius], he usually signifies Hectick Feavers",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Saturn in the fiery triplicity, expressly Aries, Leo, Sagittarius, usually signifies hectic fevers.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Usually” is also the original errata reading at PDF888, printed261 line23. This is not an exceptionless assertion.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "ERR01"
+      ]
+    },
+    {
+      "id": "SF-025",
+      "sequence": 25,
+      "point_of_use": {
+        "pdf_pages": [
+          295
+        ],
+        "printed_pages": [
+          261
+        ],
+        "section": "Disease quality: Saturn watery signs and moist co-significators",
+        "anchor_excerpt": "if he be in [Cancer Scorpio Pisces], the cause and matter of the Disease growes from some cold and moyst cause or matter, or distemper; and this more assuredly if [Venus] or [Moon], who are moyst Planets, have together with him any signification in the Disease",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Saturn in Cancer, Scorpio, or Pisces indicates a cold and moist cause, matter, or distemper. This is asserted more confidently if Venus or Moon also signifies the disease with Saturn.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“More assuredly” strengthens an interpretation rather than providing a probability. Venus or Moon must share signification; mere existence or aspect is not specified as sufficient.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-026",
+      "sequence": 26,
+      "point_of_use": {
+        "pdf_pages": [
+          295
+        ],
+        "printed_pages": [
+          261
+        ],
+        "section": "Disease quality: Saturn watery symptom sequence",
+        "anchor_excerpt": "the matter then afflicting or cause of the disease is more grosse and viscous with long Paroxismes, with ebbing and flowing of the Disease; the sicke party is almost overwhelmed with horror, dread, and fearfull imaginations, with extreame chilnesse and coldnesse.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The same watery/Saturn sequence describes gross, viscous matter, long paroxysms, ebbing and flowing illness, nearly overwhelming horror/dread/fearful imaginings, and extreme chill/cold.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Keep this symptom sequence attached to the preceding configuration. “Almost” qualifies overwhelmed; no duration is supplied for “long.”",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-025"
+      ]
+    },
+    {
+      "id": "SF-027",
+      "sequence": 27,
+      "point_of_use": {
+        "pdf_pages": [
+          295
+        ],
+        "printed_pages": [
+          261
+        ],
+        "section": "Disease quality: Saturn fixed signs",
+        "anchor_excerpt": "When [Saturn] is in fixed Signes, as in [Taurus Leo Aquarius] ... durable and long continued Agues and Feavers, pectorall rottennesse, or dry coughs, the joynt Gout, Leprosie, or generall Scabbinesse all over the Body, all manner of Gouts",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Saturn in fixed signs is assigned lasting agues/fevers, pectoral rottenness or dry coughs, joint gout, leprosy or generalized scabbiness, and all kinds of gout.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The printed examples name Taurus, Leo, Aquarius only. Do not silently insert Scorpio into the printed list, even though the class is “fixed Signes.” “Long” has no numerical threshold.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-028",
+      "sequence": 28,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Saturn movable signs",
+        "anchor_excerpt": "[Saturn] being in moveable Signes, as [Aries Libra Cancer Capricorn], prenotes a generall Flux of humours all-over the Body, principally the Dropsie or Tympanicall humours.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Saturn in movable signs, named Aries, Libra, Cancer, Capricorn, signifies a general flux of humors throughout the body, principally dropsy or tympanical humors.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Preserve “principally” and the source’s humoral vocabulary; do not substitute modern disease mechanisms.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-029",
+      "sequence": 29,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Saturn common signs",
+        "anchor_excerpt": "Being in common Signes, the Disease proceeds not from the disaffection of one humour alone, but hath many changings, receding and reverting, and yet the Disease continues a long time.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Saturn in common signs indicates more than one humor’s disorder, changes and recurrence, and a long-lasting disease.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Saturn remains the subject from the preceding sentence. No specific common signs, number of humors, or length are supplied here.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-030",
+      "sequence": 30,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Jupiter general",
+        "anchor_excerpt": "[Jupiter] When he is author of the Sicknesse, he demonstrates ill affection of the Liver, and a corruption of the blood either by inflammation, or other causes of nature agreeable to the Signe wherein he is posited",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Jupiter as author of sickness indicates liver affection and corrupted blood from inflammation or causes matching its sign.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The disease-significator role is required despite Jupiter’s usual benefic classification. “Other causes” remains open.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-031",
+      "sequence": 31,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Jupiter moist",
+        "anchor_excerpt": "as if in [Cancer], or in a moyst Sign the blood is waterish, or too thin, &c.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Jupiter in Cancer or a moist sign is associated with watery or excessively thin blood.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Cancer is an explicit example; the broader condition is any moist sign. Historical humoral assertion only.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-030"
+      ]
+    },
+    {
+      "id": "SF-032",
+      "sequence": 32,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Jupiter fire",
+        "anchor_excerpt": "if in [Aries Leo Sagittarius], its overheated by some extravagant excesse of heat or choller",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Jupiter in Aries, Leo, or Sagittarius indicates blood overheated by excessive heat or choler.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Its” refers to blood in the preceding clause.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-030"
+      ]
+    },
+    {
+      "id": "SF-033",
+      "sequence": 33,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Jupiter air and historical intervention claim",
+        "anchor_excerpt": "if in [Aquarius Libra Gemini] the Blood over-flowes, theres too much, breathing of a Veine is necessary or Sweating",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Jupiter in Aquarius, Libra, or Gemini is said to indicate excess/overflowing blood; the source calls opening a vein or sweating necessary.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "This records the historical intervention assertion, not a recommendation to undertake bloodletting or sweating. Do not omit the intervention claim from the source map or modernize it.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-030"
+      ]
+    },
+    {
+      "id": "SF-034",
+      "sequence": 34,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Jupiter earth",
+        "anchor_excerpt": "if in [Taurus Capricorn Virgo], the blood is infected with Melancholly, too grosse, and not fluent.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Jupiter in Taurus, Capricorn, or Virgo indicates blood affected by melancholy, too gross and not flowing.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Melancholly” belongs to the humoral account; it is not automatically a modern mood diagnosis.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-030"
+      ]
+    },
+    {
+      "id": "SF-035",
+      "sequence": 35,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Jupiter fiery fever qualification",
+        "anchor_excerpt": "[Jupiter] in fiery Signs he causes Feavours proceeding from blood, yet without rottennesse or store of putrifaction.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Jupiter in fiery signs is also said to cause blood-derived fevers without rottenness or much putrefaction.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The negative qualification separates this fever account from neighboring putrefaction accounts; retain “or store of” rather than saying no putrefaction of any degree.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-036",
+      "sequence": 36,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Mars with Sun",
+        "anchor_excerpt": "When [Mars] is joyned with the [Sun], it prenotes a distempered Feaver procreated, by putrifaction of the blood.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Mars joined with the Sun indicates a distempered fever generated by putrefaction of blood.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Joyned” is the source’s expression; no orb is specified.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-037",
+      "sequence": 37,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: fiery Mars and Saturn mixture",
+        "anchor_excerpt": "If [Mars] be significator of the Disease and in fiery Signes afflicting the Luminaries or the Ascendant or Lord of the Ascendant ... hot burning Feavours, some mixture of Melancholly; if Saturne be mixed in the Judgment ... or [Mars] in any of his dignities.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Mars as disease significator in fiery signs, afflicting the luminaries, ascendant, or its lord, produces hot burning fevers. A melancholy admixture is attached to Saturn sharing disease signification or Mars being in “his dignities.”",
+      "antecedents_and_scope": "Mars’s significator role, fiery sign, and specified afflicted targets are conjunctive context. Saturn’s part is an additional condition.",
+      "qualifications_polarity_modality_referents": "“His dignities” most naturally points to Saturn, but preserve the pronoun as source wording rather than erase the referential step. No degree or dignity threshold is given.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U05"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-038",
+      "sequence": 38,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Mars common signs, variable illness",
+        "anchor_excerpt": "When [Mars] is in common Signes, the disease will not easily be discovered, it will come and goe, and be at no certainty",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Mars in common signs indicates illness that is difficult to discover, comes and goes, and is uncertain.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "This does not alone determine permanent recovery or death; the next conditional branches address the seeming remission.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-039"
+      ]
+    },
+    {
+      "id": "SF-039",
+      "sequence": 39,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Mars common signs, Saturn branches at remission",
+        "anchor_excerpt": "yet at what time it seemes to leave, if Saturne have any signification and be in aspect with good Planets, the Disease will quite goe away, but if then Saturne be with the Lord of the eight or sixt, the Sicke may expect death",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "At a seeming remission of the common-sign Mars illness, Saturn sharing signification and being in aspect with good planets indicates the illness entirely leaving; Saturn then being with the eighth or sixth lord indicates that the sick may expect death.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The first branch says “in aspect with good Planets,” not explicitly “in a good aspect.” The second says “with,” not an explicit aspect glyph. Keep the time reference “then,” Saturn’s role, and “may expect” modality.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-038"
+      ]
+    },
+    {
+      "id": "SF-040",
+      "sequence": 40,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Mars common signs, ordinary course and crises",
+        "anchor_excerpt": "Usually when [Mars] is in common Signes the Patient is vexed with many infirmities and they acute, returning when expectation is of amendment; the symptomes hereof are sudden motions, and more quicke and speedy Criticall dayes, either to good or ill, according to the nature of the Significator",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Usually Mars in common signs gives multiple acute infirmities returning when improvement is expected, sudden changes, and quicker critical days toward good or ill according to the significator’s nature.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Usually,” “either to good or ill,” and the significator-dependence are indispensable. “Returning” is an explicit original errata reading, PDF888 p262 l33. No numerical speed is supplied.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "ERR02"
+      ]
+    },
+    {
+      "id": "SF-041",
+      "sequence": 41,
+      "point_of_use": {
+        "pdf_pages": [
+          296
+        ],
+        "printed_pages": [
+          262
+        ],
+        "section": "Disease quality: Mars under beams",
+        "anchor_excerpt": "[Mars] under the beames of the [Sun] in the sixt or in the twelfth, in fiery Signes, brings scorching or burning inflaming Feavours ... especially in heat, and as it were boyling the Blood.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Mars under the Sun’s beams, in the sixth or twelfth, and in fiery signs indicates intensely hot, scorching or inflaming fevers, likened to boiling blood.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Retain all positional conditions, the house alternative, and “as it were” as a simile; do not turn the simile into a measured temperature.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-042",
+      "sequence": 42,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Disease quality: Mars Leo",
+        "anchor_excerpt": "[Mars] being the cause of a Feaver and in [Leo], shewes ebolition or a boyling of the humours, continuall burning Feavers, whose originall cause springs from the great Veines neer the heart",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Mars as fever cause in Leo indicates ebullition/boiling humors and continuous burning fevers, said to originate in great veins near the heart.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Both fever-cause role and Leo are required. No observed anatomy or case is supplied.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-043",
+      "sequence": 43,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Disease quality: Sun afflicted at first lying down",
+        "anchor_excerpt": "When the [Sun] at first lying downe of the Sicke party, is in [conjunction square opposition] of [Saturn], or in Saturne his Antiscion ... meerly Melancholly; if the [Sun] be afflicted of or by [Mars] with the aforesaid Aspects, the Disease is from Choller",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "At the first lying down, Sun with Saturn by conjunction, square, opposition, or Saturn’s antiscion signifies disease that is merely melancholy. Sun afflicted by Mars with the aforesaid aspects signifies choler.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The time is the sick person’s first lying down. “Meerly” is stronger than a mixed cause. The Mars clause uses a backward aspect reference; do not silently settle whether that phrase includes the antiscion as well as the three named aspects.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U06"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-044",
+      "sequence": 44,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Disease quality: Venus general",
+        "anchor_excerpt": "[Venus] being Significatrix of the Disease, shewes it proceeds of intemperancy, too much Gluttony of some Surfait, disaffection in the Belly, or in or neer the privy parts, or by some Womanish trick, &c.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Venus as disease significatrix indicates intemperance, gluttony/surfeit, belly or genital-region disorder, or what the text calls a “Womanish trick,” with further causes left open.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Retain the historical language and alternatives. The text does not supply a modern sexually transmitted disease diagnosis.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-045",
+      "sequence": 45,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Disease quality: Venus fiery and Mars co-signification",
+        "anchor_excerpt": "[Venus] in fiery Signes, shewes a Feaver but of one dayes continuance, but if [Mars] joyne in signification, it notes rotten Feavers arising from Fleagme.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Venus in fiery signs indicates a fever lasting only one day; the following contrast says that if Mars joins in signification, rotten fevers arise from phlegm.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The one-day duration is explicit. Do not transfer that duration into the Mars branch. The text does not separately repeat the fiery-sign condition in the Mars branch.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U07"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-046",
+      "sequence": 46,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Disease quality: unfortunate Mercury",
+        "anchor_excerpt": "When [Mercury] is unfortunate and is author of the Disease, the sick party hath his Brain disaffected, is disturbed with an unquiet Fancy or Minde, with a Frenzie, Falling-sicknesse, Cough, Ptisick, or the like.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Mercury, both unfortunate and author of disease, indicates brain affection, unquiet fancy/mind, frenzy, falling sickness, cough, phthisic, or similar conditions.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Both antecedents matter. The list is alternative/open; no modern diagnosis or specific patient is supplied.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-047",
+      "sequence": 47,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Disease quality: ninth lord in sixth and prior suspicion",
+        "anchor_excerpt": "When the Lord of the ninth is in the sixt, the Disease is from some Poyson, Witchery, or Fascination, Charme, or by or from some occult cause; this is, when mistrust is of such like chances.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Ninth lord in the sixth is assigned poison, witchery, fascination, charm, or an occult cause, expressly when there is prior mistrust of such occurrences.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The final “this is” clause restricts the occult-cause rule. Record attribution to the historical source, not independent confirmation of a supernatural or toxic cause.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-048",
+      "sequence": 48,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Whether the Disease be in the right or left side or part of the Body of him that demands the Question or is Sick",
+        "anchor_excerpt": "Whether the Disease be in the right or left side or part of the Body of him that demands the Question or is Sick.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "A new section asks where the illness lies in the body, including side and part, for the questioner or sick person.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The heading is broader than laterality alone; the rules also discuss upper/front/back and subdivisions of a member.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "argument architecture",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-049",
+      "sequence": 49,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Bodily location: sixth lord above earth",
+        "anchor_excerpt": "the Lord of the sixt unfortunate or afflicted above the earth (that is in the 12,11,10,9,8,7. houses) the Disease is in the right side of the Body, and in the upper part thereof",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "An unfortunate or afflicted sixth lord above earth, explicitly houses 12 through 7, signifies disease on the right side and upper part of the body.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Keep the sixth-lord role and its unfortunate/afflicted status. Both right and upper are asserted; the house range is explicit.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-050",
+      "sequence": 50,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Bodily location: under-earth/diurnal and nocturnal wording",
+        "anchor_excerpt": "if the Lord of the sixt be under the earth, viz. in the 1,2,3,4,5,6. houses, or vitiated in a diurnall Signe, the Disease is in the superiour and fore-part of the body, as in the fore-head, stomacke, &c. if in a nocturnall Signe, the infirmity is in the back part of the Body.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The printed rule assigns the “superiour and fore-part” to sixth lord under earth (houses 1–6) OR vitiated in a diurnal sign, with forehead and stomach examples. A nocturnal sign indicates the back part.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Superiour” is visually clear and must not be silently changed to “inferiour.” No left-side conclusion is printed for the under-earth clause. Preserve the disjunction rather than combining under-earth and diurnal conditions.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U08"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-051",
+      "sequence": 51,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Bodily location: feminine configuration",
+        "anchor_excerpt": "If the Significator of the Disease be in a Feminine Signe, and in Aspect to a Feminine Planet in a Feminine Signe or House, the Disease is in the left side of the Body.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "A disease significator in a feminine sign, aspecting a feminine planet in a feminine sign or house, indicates the left side.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The two initial conditions are cumulative; the other planet’s sign/house is an alternative. No particular aspect quality is specified.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-052",
+      "sequence": 52,
+      "point_of_use": {
+        "pdf_pages": [
+          297
+        ],
+        "printed_pages": [
+          263
+        ],
+        "section": "Bodily location: Lilly’s masculine rule",
+        "anchor_excerpt": "I ever finde this generall rule to hold true, viz. if the Lord of the sixt be a Masculine Planet and above the earth, the right side of the Sicke is pained",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly says that he has always found a masculine sixth lord above earth to indicate pain on the right side.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "This sentence explicitly adds masculine nature and claims general experience; it does not offer a case count or measured accuracy.",
+      "attribution": "Lilly, explicit first-person observation",
+      "evidence_character": "general recollection claim",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-053",
+      "sequence": 53,
+      "point_of_use": {
+        "pdf_pages": [
+          297,
+          298
+        ],
+        "printed_pages": [
+          263,
+          264
+        ],
+        "section": "Bodily location: degrees within a member",
+        "anchor_excerpt": "if the Significator be in few degrees of the Signe, the upper part of that Member is pained or grieved; if ... in the middle of the Signe, the middle part of the Member is distressed, and so the lower part of the Member, when the significator possesseth the lower degrees of the Sign.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Few degrees signify the upper part of the relevant member; the middle of the sign signifies its middle part; the text’s “lower degrees” signify the member’s lower part.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The unit is a member, not automatically the entire body. The source supplies no numerical ranges for few/middle/lower and does not define “lower degrees” more precisely. Do not replace these with exact thirds.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U09"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-054",
+      "sequence": 54,
+      "point_of_use": {
+        "pdf_pages": [
+          298
+        ],
+        "printed_pages": [
+          264
+        ],
+        "section": "Whether the Disease be in the Body, Minde or both: primary correspondences",
+        "anchor_excerpt": "the Signe ascending the [Moon] and the Lord of the house wherein the [Sun] is, doe shew the Spirit of Man, and ... the Lord of the Ascendant, the Planet who is dispositor of the [Moon], doth denote both the externall and internall Members.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The opening correspondence names the ascending sign, Moon, and lord of the Sun’s house for the Spirit of Man; the ascendant lord and Moon dispositor denote external and internal members.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The printed coordination is awkward, including missing punctuation. Keep Sun separate from its house lord and the Moon separate from its dispositor. Later rules do not form a uniformly consistent simplification of this opening.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U10"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-055",
+      "sequence": 55,
+      "point_of_use": {
+        "pdf_pages": [
+          298
+        ],
+        "printed_pages": [
+          264
+        ],
+        "section": "Body/mind: all principal places afflicted",
+        "anchor_excerpt": "if the Ascendant [Sun] and [Moon] be all vitiated or afflicted, the Disease is then through the whole Body, or no place is free",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Affliction of all three—ascendant, Sun, Moon—indicates disease throughout the whole body, with no place free.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“All” and the universal bodily conclusion must be preserved. The listed object here is the Sun itself, unlike the Sun’s house lord in SF-054.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U10"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-056",
+      "sequence": 56,
+      "point_of_use": {
+        "pdf_pages": [
+          298
+        ],
+        "printed_pages": [
+          264
+        ],
+        "section": "Body/mind: afflicted dispositors and explanatory reason",
+        "anchor_excerpt": "if those Planets who dispose of the [Sun] and [Moon], or he that is Lord of the Ascendant, or two of them at least be afflicted, the Disease is in the Spirits together with some indisposition of Minde; the reason hereof is ... Lord of the Ascendant and Dispositor of the [Moon] ... Significators of the Animall faculties ... deprivation of Sence, Madnesse, Frenzie, Melancholly, &c.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The next rule concerns the Sun and Moon’s dispositors and ascendant lord, naming “two of them at least,” and places disease in the spirits with some mental indisposition. It explains this by calling the ascendant lord and Moon dispositor significators of animal faculties and their infirmities, with deprivation of sense, madness, frenzy, melancholy as examples.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The “or” chain and “two ... at least” should remain visible; do not turn a single named ruler into an unqualified sufficient condition. “Some indisposition” does not mean a wholly mental illness. This explanatory correspondence sits uneasily with SF-054.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U10",
+        "U11"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-057",
+      "sequence": 57,
+      "point_of_use": {
+        "pdf_pages": [
+          298
+        ],
+        "printed_pages": [
+          264
+        ],
+        "section": "Body/mind: ascendant, Moon, Sun house lord",
+        "anchor_excerpt": "If the Ascendant, the [Moon] and Lord of the House of the [Sun] are all or but two of them impedited, the infirmity rests in the Minde but not in the Body.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Impediment of all or even two of ascendant, Moon, and lord of the Sun’s house is said to give mental, not bodily, infirmity.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“All or but two” is an explicit threshold within this sentence. It is distinct from the Sun-itself, all-three rule in SF-055. Do not remove the negative bodily conclusion.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U10"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-058",
+      "sequence": 58,
+      "point_of_use": {
+        "pdf_pages": [
+          298
+        ],
+        "printed_pages": [
+          264
+        ],
+        "section": "Body/mind: places unfortunate and rulers free",
+        "anchor_excerpt": "If the Ascendant and the [Moon] be both unfortunate, and the Lord of the Ascendant and Dispositor of the [Moon] free, the indisposition is in the Minde and not in the Body.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Both ascendant and Moon unfortunate, with both ascendant lord and Moon dispositor free, indicate mental and not bodily indisposition.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The two positive afflictions and the two free rulers form a contrast that must be kept together. “Free” is not numerically defined.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-059",
+      "sequence": 59,
+      "point_of_use": {
+        "pdf_pages": [
+          298
+        ],
+        "printed_pages": [
+          264
+        ],
+        "section": "Body/mind: Saturn’s general character",
+        "anchor_excerpt": "This generall rule many Astrologians observe, viz. that [Saturn] naturally foreshewes or causeth Melancholly, all manner of distempers from Melancholly, and by consequence the disturbed Minde",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "A general rule attributed to many astrologers says Saturn naturally foretells or causes melancholy and all manner of distempers from it, with mental disturbance as a consequence.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Foreshewes or causeth” preserves the source’s predictive/causal alternative. “Many Astrologians” is an attribution, not a named evidence base.",
+      "attribution": "A general rule attributed by Lilly to many astrologians",
+      "evidence_character": "appeal to shared astrological practice",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-060",
+      "sequence": 60,
+      "point_of_use": {
+        "pdf_pages": [
+          298
+        ],
+        "printed_pages": [
+          264
+        ],
+        "section": "Body/mind: Saturn configurations",
+        "anchor_excerpt": "wheresoever you finde [Saturn] Lord of the Ascendant or of the Hour, or twelfth House, or sixt, or if the [Moon] separate from him, or if [Saturn] be in the sixt house, or in the Ascendant, or in [conjunction square opposition] of the Lord of the Ascendant ... some affliction of Minde, or ... vexatious care",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The text lists Saturn as lord of ascendant, hour, twelfth or sixth; Moon separating from Saturn; Saturn in sixth or ascendant; or Saturn conjunction/square/opposition to ascendant lord as indications of mental affliction or troubling care.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Retain each alternative, especially hour lordship, Moon separation, and the distinction between sixth lordship and sixth occupation. This is attached to the generalized Saturn account in SF-059.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-061",
+      "sequence": 61,
+      "point_of_use": {
+        "pdf_pages": [
+          298
+        ],
+        "printed_pages": [
+          264
+        ],
+        "section": "Body/mind: Jupiter contrast",
+        "anchor_excerpt": "now the contrary hereof [Jupiter] effects, for he never oppresseth the Minde but the Body.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Jupiter is said to have the contrary effect: never oppressing the mind, but the body.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Never” is the source’s absolute assertion, not an evaluator-endorsed fact. Do not soften or silently qualify it in a source reconstruction.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-062",
+      "sequence": 62,
+      "point_of_use": {
+        "pdf_pages": [
+          298,
+          299
+        ],
+        "printed_pages": [
+          264,
+          265
+        ],
+        "section": "Body/mind: solar affliction of rulers",
+        "anchor_excerpt": "if the Lord of the House of the [Moon] and of the Ascendant are unfortunate by the [Sun], or Combust, or under his beames, the infirmity is Bodily.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The lord of the Moon’s house and the ascendant lord being made unfortunate by the Sun, combust, or under its beams indicates bodily infirmity.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The named subjects are rulers, not the Moon and ascendant themselves. The source supplies neither a combustion orb nor a beams limit in this sentence.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-063",
+      "sequence": 63,
+      "point_of_use": {
+        "pdf_pages": [
+          299
+        ],
+        "printed_pages": [
+          265
+        ],
+        "section": "Body/mind: ruler of ascendant lord’s sign and Moon dispositor",
+        "anchor_excerpt": "If that Planet who rules the Signe wherein the Lord of the Ascendant is in, and he who is Dispositor of the Moone be infortunate in their fall, detriment or otherwayes very much afflicted, the Disease raignes more in the Minde then in the Body.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The ruler of the sign occupied by the ascendant lord, together with the Moon dispositor, unfortunate in fall/detriment or otherwise very afflicted, indicates more mental than bodily disease.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Do not substitute the ascendant lord itself for the ruler of its sign. “More ... than” allows a bodily component; it is not mind only. “Very much” remains unquantified.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U10"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-064",
+      "sequence": 64,
+      "point_of_use": {
+        "pdf_pages": [
+          299
+        ],
+        "printed_pages": [
+          265
+        ],
+        "section": "Body/mind: Mars and the twelfth, printed sextile",
+        "anchor_excerpt": "If a Planet in the Ascendant, or the Ascendant, or if the Lord of the House of the Moone be oppressed in the twelfth by a [sextile] [square] or [opposition] of [Mars], the Disease is both in Body and Minde.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The printed sequence involving a planet in the ascendant, the ascendant, or lord of the Moon’s house, oppression in the twelfth, and Mars sextile/square/opposition concludes disease in both body and mind.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The first printed aspect is a visually clear sextile/star glyph, not a conjunction glyph. The twelfth-house modifier’s attachment is syntactically difficult; do not silently make the ascendant occupy the twelfth or rewrite all subjects into a single location.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U12"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-065",
+      "sequence": 65,
+      "point_of_use": {
+        "pdf_pages": [
+          299
+        ],
+        "printed_pages": [
+          265
+        ],
+        "section": "Body/mind: malefic regards ascendant but not Moon",
+        "anchor_excerpt": "A Planet being by nature malevolent, beholding the Ascendant and not the Moone, and together with this, if the Lord of the Signe where the [Sun] is be afflicted, the party is grieved in Minde, but not sick in his Body.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "A naturally malevolent planet regarding the ascendant but not the Moon, together with affliction of the Sun’s sign lord, indicates mental grief without bodily sickness.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“And not the Moone” and “together with this” are essential restrictions. No particular malefic or aspect kind is supplied.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-066",
+      "sequence": 66,
+      "point_of_use": {
+        "pdf_pages": [
+          299
+        ],
+        "printed_pages": [
+          265
+        ],
+        "section": "Body/mind: relative affliction of degrees and rulers",
+        "anchor_excerpt": "if the degree ascending and degree of that Signe wherein the [Moon] is be more afflicted then the Lords of those Signes, the Disease ranges more in the Minde then Body, and so the contrary when the Lords are more afflicted then the parts of the Signes before mentioned.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Greater affliction of the ascending degree and Moon’s sign-degree than of their rulers indicates more mental than bodily disease; the contrary holds when the rulers are more afflicted.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "This is comparative, not exclusive. The inverse is explicitly asserted, but no weighting method or numeric affliction threshold is given.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-067",
+      "sequence": 67,
+      "point_of_use": {
+        "pdf_pages": [
+          299
+        ],
+        "printed_pages": [
+          265
+        ],
+        "section": "Body/mind: exaltation and debilitated Moon dispositor",
+        "anchor_excerpt": "If the Lord of the Ascendant and the [Sun] be in their exaltations, and the dispositor of the [Moon] in his detriment or fall, &c. the Disease raignes in the Body, not in the Minde.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Ascendant lord and Sun in their exaltations, with the Moon dispositor in detriment or fall (etc.), indicate bodily, not mental, disease.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Keep the Sun itself, two exalted subjects, and Moon dispositor distinct. The source’s conclusion should not be harmonized with other ruler-debilitation rules by inversion.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U10"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-068",
+      "sequence": 68,
+      "point_of_use": {
+        "pdf_pages": [
+          299
+        ],
+        "printed_pages": [
+          265
+        ],
+        "section": "Body/mind: tormented soul and malefic exclusion",
+        "anchor_excerpt": "When the Lords of the places of the [Moon] and of the [Sun] be in their detriments, fals, or Peregrine, Retrograde, Combust, and the degree ascending in [square] of the [Moon]; and free from the ill aspects of [Saturn] and [Mars], then is the Patient vexed with a tormented Soule.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The source combines debilitated Moon/Sun place lords, ascendant degree square Moon, and freedom from ill aspects of Saturn and Mars, and concludes a tormented soul.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Preserve the mixed list of detriment/fall/peregrine/retrograde/combust without requiring mutually impossible simultaneous states. The negative malefic-aspect clause is real; its grammatical subject is not fully explicit.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U13"
+      ],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-069",
+      "sequence": 69,
+      "point_of_use": {
+        "pdf_pages": [
+          299
+        ],
+        "printed_pages": [
+          265
+        ],
+        "section": "Body/mind: usual haughtiness rule",
+        "anchor_excerpt": "Usually when the [Sun], the Lord of the Ascendant, or houre, or of the twelfth house are significators of the party inquiring, these shew a Minde vexed with haughtinesse, vaine-glory, self-conceitednesse, Pride, &c.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Usually, the Sun or the specified lords of ascendant, hour, or twelfth as significators of the inquirer show haughtiness, vainglory, self-conceit, pride, and related mental disturbance.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Usually” qualifies the claim. This sentence does not explicitly add an affliction requirement. “Houre” is the printed word, not another house number.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-070",
+      "sequence": 70,
+      "point_of_use": {
+        "pdf_pages": [
+          299
+        ],
+        "printed_pages": [
+          265
+        ],
+        "section": "Body/mind: Venus",
+        "anchor_excerpt": "Venus argues luxury, a lascivious desire to Women, wherewith both Body and Minde are disturbed.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Venus is assigned luxury/lascivious desire toward women, disturbing both body and mind.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "No separate affliction condition is printed in this sentence. Preserve the historical assertion without promoting it to a modern behavioral diagnosis.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-071",
+      "sequence": 71,
+      "point_of_use": {
+        "pdf_pages": [
+          299
+        ],
+        "printed_pages": [
+          265
+        ],
+        "section": "Body/mind: Mercury and mistrust",
+        "anchor_excerpt": "[Mercury] shewes doating fancies, and fearfull imaginations, wheresoever you finde him a Significator and afflicted: as also, that he is stirred to mistrust upon vaine feares, his owne jealous fancies, or upon some flying reports.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Afflicted Mercury as significator indicates doting fancies and fearful imaginings; mistrust arises from vain fears, the person’s own jealous fancies, or circulating reports.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Both significator status and affliction are explicit. The later “he” concerns the affected person’s mistrust; no particular report or case is identified.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-072",
+      "sequence": 72,
+      "point_of_use": {
+        "pdf_pages": [
+          299,
+          300
+        ],
+        "printed_pages": [
+          265,
+          266
+        ],
+        "section": "Unnumbered natal/mundane cautions: birth positions and current events",
+        "anchor_excerpt": "Over and above the many Directions formerly prescribed ... the degrees wherein the Lord of the Ascendant, the [Sun] or [Moon] at time of the Birth (if you have the Patients Nativity) doe fall to be the degrees of a Signe wherein a present Eclipse is, at time of the sicknesse or neere it, or of some eminent great Conjunction; ... these are all unfortunate.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Beyond prior directions, compare birth positions of the ascendant lord, Sun, or Moon, if the patient’s nativity is available, with the sign/degrees of an eclipse at or near the sickness or an eminent great conjunction; the source calls these unfortunate.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The nativity is optional/conditional. “At ... or neere” supplies no time window. The degree/sign language does not supply a precise orb or unambiguous exact-degree versus whole-sign match rule.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [
+        "U14"
+      ],
+      "callbacks_and_links": [
+        "CB02"
+      ]
+    },
+    {
+      "id": "SF-073",
+      "sequence": 73,
+      "point_of_use": {
+        "pdf_pages": [
+          300
+        ],
+        "printed_pages": [
+          266
+        ],
+        "section": "Unnumbered natal/mundane cautions: dangerous signs in natal angles",
+        "anchor_excerpt": "The signe of the Eclips or of a great Conjunction threatning evill, or the Signe of the eighth House of the yeerly revolution of the World, falling in any of the Angles of the Nativity, especially in the ascendant, proves very dangerous.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "An eclipse sign, a great-conjunction sign threatening evil, or the eighth-house sign of the world’s yearly revolution in any natal angle is called very dangerous, especially in the ascendant.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Retain the yearly world revolution as a separate chart frame, the eighth-house sign, any natal angle, and the special ascendant emphasis. No actual eclipse, conjunction, year, or nativity is given.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-074",
+      "sequence": 74,
+      "point_of_use": {
+        "pdf_pages": [
+          300
+        ],
+        "printed_pages": [
+          266
+        ],
+        "section": "Unnumbered natal/mundane cautions: rising sign of natal infortune",
+        "anchor_excerpt": "When a Signe ascends upon the first falling sick, or demand of the Patient, wherein an Infortune was in the Nativity ... he shall have a hard fit of Sicknesse",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "If the sign ascending at first falling sick or at the patient’s demand contained a natal infortune, the sick person is said to suffer a hard bout of sickness.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Two event times are alternatives. The comparison is to the sign containing a natal infortune, not a present malefic in the ascendant. “Hard fit” is not explicitly a death conclusion.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-075",
+      "sequence": 75,
+      "point_of_use": {
+        "pdf_pages": [
+          300
+        ],
+        "printed_pages": [
+          266
+        ],
+        "section": "Unnumbered lunar caution: distance, direction, mitigation",
+        "anchor_excerpt": "The [conjunction] of the [Moon] with the [Sun] is a very ill signe, when there’s not above six degrees distance betwixt them, and the [Moon] not yet passed by the [Sun] ... not having been yet in [conjunction] with him: however ... in [conjunction] in [Aries] or [Leo], this misfortune is lessened; when the [Moon] is twelve degrees from the [Sun], she shewes little danger.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Moon approaching Sun within no more than six degrees is a very ill sign. Conjunction in Aries or Leo lessens the misfortune. At twelve degrees from Sun the Moon shows little danger.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The first condition includes both distance (not above six) and applying direction (not yet past conjunction). Aries/Leo mitigates rather than cancels. The twelve-degree clause supplies no directional requirement or general inequality; do not replace it with “at least twelve” or infer all intermediate distances.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-076",
+      "sequence": 76,
+      "point_of_use": {
+        "pdf_pages": [
+          300
+        ],
+        "printed_pages": [
+          266
+        ],
+        "section": "Of the Crysis, or dayes Criticall: introduction",
+        "anchor_excerpt": "Sundry Astrologians have handled this part of Medicinall Astrology so learnedly, that I shall onely referre them to their excellent Works, which are publikely to be had; onely thus much I have ever observed",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly acknowledges several unnamed astrologers’ published treatments and introduces only what he says he has observed concerning crisis.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "No works or authors are identified here. The acknowledgment does not supply case evidence or a reproduced full theory of crises.",
+      "attribution": "Lilly, explicit first person; unnamed prior astrologians acknowledged",
+      "evidence_character": "source-attribution and scope statement",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-077",
+      "sequence": 77,
+      "point_of_use": {
+        "pdf_pages": [
+          300
+        ],
+        "printed_pages": [
+          266
+        ],
+        "section": "Crisis: baseline time",
+        "anchor_excerpt": "to find the true Crysis, you must as neer as can be obtained, get the hour wherein the Patient first took his Bed; which if it cannot be had, then take the hour when first Judgment was required of the Physitian, and rectifie the Moon her motion to that very hour",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Use, as closely as obtainable, the hour the patient first took to bed; if unavailable, use the hour a physician’s judgment was first requested. Set/rectify the Moon’s motion to that hour.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The physician-request hour is an explicit fallback, not a competing preferred baseline. The text gives no tolerance, time-zone method, or numerical rectification procedure.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "CX01"
+      ]
+    },
+    {
+      "id": "SF-078",
+      "sequence": 78,
+      "point_of_use": {
+        "pdf_pages": [
+          300
+        ],
+        "printed_pages": [
+          266
+        ],
+        "section": "Crisis: acute disease and lunar intervals",
+        "anchor_excerpt": "if the Disease be not chronick, but acute, you shall find great alteration ... neer upon those times when the Moon comes to be distant from that her first place, 45. degrees; so also when she is 90. degrees from that place; and againe, when distant 135.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "For acute rather than chronic disease, major changes occur near the Moon’s displacement of 45, 90, and 135 degrees from its first position.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Keep acute/not chronic, approximate timing (“neer upon”), and the first-position reference. The local passage names only 45, 90, 135; it does not add 180 or translate these into fixed calendar days.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-079",
+      "sequence": 79,
+      "point_of_use": {
+        "pdf_pages": [
+          300,
+          301
+        ],
+        "printed_pages": [
+          266,
+          267
+        ],
+        "section": "Crisis: quality and medicine effect",
+        "anchor_excerpt": "for discovering whether the Crysis will be good or ill ... what Planet she is in aspect withall at those times ... good aspect ... benevolent Planet ... ease, and a better condition ... ill aspect of the Lord of the eighth or sixth ... worse, his paine encrease, and the Medicine doe little good.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Judge a crisis’s quality by the Moon’s aspect at those times. A good aspect to a benevolent planet promises ease and improvement; an ill aspect to eighth or sixth lord means worsening, increased pain, and little benefit from medicine.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Distinguish benevolent identity plus good aspect from a generic “good planet.” The bad branch names eighth/sixth lords; it does not explicitly predict death. Medicine effect is part of the historical claim.",
+      "attribution": "Lilly authorial exposition within the Dariot abridgment, without a fresh marginal attribution",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-078"
+      ]
+    },
+    {
+      "id": "SF-080",
+      "sequence": 80,
+      "point_of_use": {
+        "pdf_pages": [
+          301
+        ],
+        "printed_pages": [
+          267
+        ],
+        "section": "Crisis: Lilly’s recollection of adverse aspects",
+        "anchor_excerpt": "I usually observe, and I doe not remember that I have failed, viz. that as oft as the Moon came to [square conjunction opposition] of that Planet who did any wayes either afflict the ascendant, the Lord of the ascendant or the Moon, or ... the like aspect of the Lord of the sixt, or any Planet that was posited in the sixt ... Patient ... much distempered, the Disease high, and Medicines given about those times to work little or no good effect",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly recalls repeatedly observing severe illness and little or no medicine benefit when Moon squared, conjoined, or opposed a planet afflicting the ascendant, its lord, or Moon; the same aspects to sixth lord or any planet in the sixth receive the same judgment.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“I usually observe,” “I doe not remember ... failed,” “as oft,” and “I did ever observe” are testimonial wording, not a reported denominator or demonstrated 100% accuracy. Medicines are those given around those times, not every treatment at all times.",
+      "attribution": "Lilly, explicit personal recollection",
+      "evidence_character": "general observational testimonial; no cases or performance table",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-081",
+      "sequence": 81,
+      "point_of_use": {
+        "pdf_pages": [
+          301
+        ],
+        "printed_pages": [
+          267
+        ],
+        "section": "Crisis: comfort and interval of ease",
+        "anchor_excerpt": "when I observed the Moon to come to a [trine] or [sextile] of the Lord of the ascendant, or Lord of the eleventh, or Lord of the ninth or tenth, I use to pronounce to the Infirmed, comfort, and some relaxation or an intervall of ease",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Moon trine/sextile to first, eleventh, ninth, or tenth lord prompts Lilly to pronounce comfort, some relaxation, or an interval of ease.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Retain all four lords and the two aspects. “Some” and “interval” are narrower than complete recovery.",
+      "attribution": "Lilly, explicit personal practice",
+      "evidence_character": "reported habitual judgment",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-082",
+      "sequence": 82,
+      "point_of_use": {
+        "pdf_pages": [
+          301
+        ],
+        "printed_pages": [
+          267
+        ],
+        "section": "Crisis: ascendant lord and Sun",
+        "anchor_excerpt": "when the Lord of the ascendant came to any good aspect of the [Sun] (if he had not power or dominion in the disease, I found the Patient’s mind much enlightned.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "A good aspect from ascendant lord to Sun, provided Sun has no power/dominion in the disease, is associated in Lilly’s experience with the patient’s mind being much lightened.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The parenthetical exclusion matters; “he” most naturally refers to Sun. The outcome is mental relief, not stated full bodily recovery.",
+      "attribution": "Lilly, explicit personal finding",
+      "evidence_character": "general observational testimonial",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-083",
+      "sequence": 83,
+      "point_of_use": {
+        "pdf_pages": [
+          301
+        ],
+        "printed_pages": [
+          267
+        ],
+        "section": "How long ere the sick recover: premise and inputs",
+        "anchor_excerpt": "When I find, that by God’s blessing the sick party shall recover, and it be demanded, When or about what time is it like to be? I usually observe, who is the Lord of the ascendant, and which of the benevolent Planets he is in aspect with, and how many degrees there are distant betwixt them, in what house they both are in ... Angles, Succedant or Cadent ... Moveable, Fixed or Common ... discretion and quality of the Disease",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "When recovery has already been judged and its timing is asked, Lilly considers ascendant lord, the benevolent planet it aspects, their degree distance, both planets’ angular/succedent/cadent locations, sign modalities, and the disease’s quality, using discretion to choose a time measure.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "This section presupposes recovery under God’s blessing. Its timing inputs do not independently establish recovery. The source says both planets’ houses and signs, not only ascendant lord’s placement.",
+      "attribution": "Lilly, explicit personal timing practice",
+      "evidence_character": "procedural direction with generalized experience",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "CX02"
+      ]
+    },
+    {
+      "id": "SF-084",
+      "sequence": 84,
+      "point_of_use": {
+        "pdf_pages": [
+          301
+        ],
+        "printed_pages": [
+          267
+        ],
+        "section": "Recovery timing: ordinary movable days",
+        "anchor_excerpt": "yet ordinarily if the aspect be in moveable Signes, I judge, in so many dayes the party will amend, the more certainly, I determine, if the Significators be swift in motion, angular.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Ordinarily, with the aspect in movable signs, Lilly uses the degree number as days until improvement; he is more certain when the significators are swift and angular.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Ordinarily,” “will amend,” and comparative certainty must be retained. The source gives no motion cutoff or separate rule for one swift and one slow planet.",
+      "attribution": "Lilly, personal timing method",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-083"
+      ]
+    },
+    {
+      "id": "SF-085",
+      "sequence": 85,
+      "point_of_use": {
+        "pdf_pages": [
+          301
+        ],
+        "printed_pages": [
+          267
+        ],
+        "section": "Recovery timing: common signs and discretion",
+        "anchor_excerpt": "If the application be in common Signes, I neither judge moneths, weeks or dayes, but according as I can with discretion frame my judgment, having first observed the nature of the Disease, and possibility of determining in such or such a time",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "For application in common signs, Lilly declines a fixed months/weeks/days assignment and judges with discretion after considering disease nature and whether it could end in the proposed time.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Do not replace this with a mechanical “common = weeks” rule or with an assertion that common-sign timing is impossible. The following table is explicitly attributed to the ancients.",
+      "attribution": "Lilly, explicit qualification of his own method",
+      "evidence_character": "general historical rule",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "SF-086",
+        "SF-087"
+      ]
+    },
+    {
+      "id": "SF-086",
+      "sequence": 86,
+      "point_of_use": {
+        "pdf_pages": [
+          301
+        ],
+        "printed_pages": [
+          267
+        ],
+        "section": "Recovery timing: ancients’ sign correspondences",
+        "anchor_excerpt": "the Ancients did say: Moveable Signes shew Dayes. Common Signes, Weeks or Moneths. Fixed Signes, Moneths or Years.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "The ancients’ stated correspondences are movable signs—days; common signs—weeks or months; fixed signs—months or years.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The alternatives weeks/months and months/years are essential. These are reported inherited correspondences, juxtaposed with Lilly’s discretion, not a single mandatory fixed conversion.",
+      "attribution": "The Ancients, expressly introduced by Lilly",
+      "evidence_character": "inherited rule quotation",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-087",
+      "sequence": 87,
+      "point_of_use": {
+        "pdf_pages": [
+          301
+        ],
+        "printed_pages": [
+          267
+        ],
+        "section": "Recovery timing: ancients’ house equivalences",
+        "anchor_excerpt": "Angles are equivalent to moveable Signes. Succedant to common Signes. Cadent to fixed Signes.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Angles correspond to movable signs, succedent houses to common signs, and cadent houses to fixed signs in the same inherited timing scheme.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "No priority rule is supplied for conflicting house and sign correspondences, and no independent numerical unit is imposed beyond SF-086.",
+      "attribution": "The Ancients, continuing displayed scheme",
+      "evidence_character": "inherited rule quotation",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-088",
+      "sequence": 88,
+      "point_of_use": {
+        "pdf_pages": [
+          302
+        ],
+        "printed_pages": [
+          268
+        ],
+        "section": "Recovery timing: integrate Moon",
+        "anchor_excerpt": "Together with the principall Significators, consider the quick or slow motion of the [Moon], the Signe she is in, and its quality, mix all together, and your judgment will be more rationall",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Add Moon’s quick/slow motion, sign, and sign quality to the principal significators and combine these considerations for a more rational judgment.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "This opening belongs to the complete upper paragraph, not merely a heading before Hermes. No weighting formula or speed threshold is supplied.",
+      "attribution": "Lilly’s continuing recovery discussion",
+      "evidence_character": "synthesis instruction",
+      "unresolved_readings": [],
+      "callbacks_and_links": []
+    },
+    {
+      "id": "SF-089",
+      "sequence": 89,
+      "point_of_use": {
+        "pdf_pages": [
+          302
+        ],
+        "printed_pages": [
+          268
+        ],
+        "section": "Recovery timing: ascendant lord changes sign into dignity",
+        "anchor_excerpt": "I many times find, when the Lord of the ascendant moves out of the Signe he is in at the time of the Question, and hath essentiall Dignities in the Signe he is going into, the party recovers then, or sensibly feels an alteration for good in himselfe",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly says he often finds recovery or a perceptible beneficial change when the ascendant lord leaves its question-time sign for a sign in which it has essential dignities.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "Keep question-time sign, the destination dignity requirement, “many times,” and the alternative outcome of a beneficial change. Any sign ingress alone is not the claim.",
+      "attribution": "Lilly, explicit first-person experience",
+      "evidence_character": "general observational testimonial",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "CX02"
+      ]
+    },
+    {
+      "id": "SF-090",
+      "sequence": 90,
+      "point_of_use": {
+        "pdf_pages": [
+          302
+        ],
+        "printed_pages": [
+          268
+        ],
+        "section": "Recovery timing: late sixth cusp, common sign",
+        "anchor_excerpt": "if the later degrees of a Signe are on the cusp of the sixt, viz. if I find 28. degrees, and the Signe common, I say, the Disease will vary in lesse time then two weeks",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "With late degrees on the sixth cusp, illustrated by 28 degrees in a common sign, Lilly says the disease will vary in less than two weeks.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "The cusp is the sixth, not the ascendant or a planet’s position. The outcome is variation, not an explicit guarantee of cure. 28 is the stated illustration; do not create a universal late-degree cutoff or a days-per-degree conversion from it.",
+      "attribution": "Lilly, explicit illustrative judgment",
+      "evidence_character": "constructed numeric example, no dated case",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "CX02"
+      ]
+    },
+    {
+      "id": "SF-091",
+      "sequence": 91,
+      "point_of_use": {
+        "pdf_pages": [
+          302
+        ],
+        "printed_pages": [
+          268
+        ],
+        "section": "Complete upper paragraph: further practical figures promised",
+        "anchor_excerpt": "I might give infinite rules, but in the judgment of a Figure or two subsequent, I shall better be understood in the practicall part of it, and deliver the method I always observed",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly says a subsequent figure or two will explain the practical method he followed better than further rules.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "“Might give infinite rules” is rhetoric, not a count. The promised figures are outside this local span; they cannot be counted as charts or outcomes already presented here.",
+      "attribution": "Lilly, first-person prospective teaching statement",
+      "evidence_character": "forward callback",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "CB03"
+      ]
+    },
+    {
+      "id": "SF-092",
+      "sequence": 92,
+      "point_of_use": {
+        "pdf_pages": [
+          302
+        ],
+        "printed_pages": [
+          268
+        ],
+        "section": "Complete upper paragraph: Hermes transition and exact endpoint",
+        "anchor_excerpt": "because ... the Reader might have more variety of judgment: and because nothing in this life is more irksome then Sicknesse, or more delightfull then health, I have endeavoured to English the Iatromathematicks of Hermes, much esteemed in all Ages, and here to insert them, as being necessary to the Judgments of this House.",
+        "anchor_convention": "Visually read source excerpt; long s is represented as s. Planet and aspect names may replace glyphs inside square brackets. Ellipses mark omitted intervening words, not a continuous transcription."
+      },
+      "source_assertion": "Lilly explains that he has endeavored to translate and insert the Iatromathematicks attributed to Hermes for additional variety of judgment, motivated by sickness’s burden and health’s delight, and calls the work esteemed through the ages and necessary to this house’s judgments.",
+      "antecedents_and_scope": "",
+      "qualifications_polarity_modality_referents": "These are Lilly’s literary, evaluative, and attribution claims. The complete sentence ending “Judgments of this House” is included. Stop above the divider; the Hermes heading and its doctrinal text are excluded. This local completion does not complete Chapter XLIV.",
+      "attribution": "Lilly, first-person transition to a text attributed to Hermes",
+      "evidence_character": "translation/attribution claim and forward transition",
+      "unresolved_readings": [],
+      "callbacks_and_links": [
+        "CB04"
+      ]
+    }
+  ],
+  "original_errata_separate_from_main_span": [
+    {
+      "id": "ERR01",
+      "source_pdf_page": 888,
+      "source_label": "Errata",
+      "entry": "p 261 l 23 r usually",
+      "affected_unit": "SF-024",
+      "handling": "Original printed erratum, kept distinct from the main text; supports reading usually for the Saturn fiery-sign rule."
+    },
+    {
+      "id": "ERR02",
+      "source_pdf_page": 888,
+      "source_label": "Errata",
+      "entry": "p 262 l 33 r returning",
+      "affected_unit": "SF-040",
+      "handling": "Original printed erratum, kept distinct from main text; supports returning in the Mars common-sign recurrence statement."
+    }
+  ],
+  "earlier_source_context_separate_from_main_span": [
+    {
+      "id": "CX01",
+      "pdf_page": 277,
+      "printed_page": 243,
+      "role": "Earlier original Chapter XLIV timing context, outside this local batch",
+      "anchor": "That in the first place, we ought carefully to take the exact time of the parties first falling sick ... not that moment when first the Patient felt a smatch of it ... enforced to take his Bed, or to repose. Secondly ... Urine was first carried to somebody ... whether ... Physitian or not. Thirdly ... Physitian ... first speaking with, or accesse to the Patient, or when first the Urine was brought unto him ... place of the Moon exactly rectified to the very houre.",
+      "source_assertion": "This earlier page identifies Chapter XLIV as Judgment of Sickness by Astrology under the sixth house. Its preferred origin is the hour of illness severe enough to force bed or repose, as near as obtainable, rather than the first slight symptom. Fallbacks are first urine inquiry to anyone, then physician’s first speaking/access or urine receipt, with a figure and Moon position rectified to that hour.",
+      "relationship_to_main_span": "Relevant context for SF-077. The main-span crisis paragraph gives a shorter first-bed/first-physician-judgment sequence. Preserve the different wording and do not silently insert all earlier fallback steps into the later sentence.",
+      "not_imported": "Other bodily-location material beginning at the bottom of this page was not used to complete or correct the main-span rules."
+    },
+    {
+      "id": "CX02",
+      "pdf_page": 283,
+      "printed_page": 249,
+      "role": "Earlier original timing-of-alteration context, outside this local batch",
+      "anchor": "If an infortunate Planet be in the sixt, and is removing out of one Sign into another, the Disease will speedily alter ... see how many degrees the malevolent Planet wants ere he can get out of the Signe, and thereby judge so many Moneth, Weeks or Dayes according to the nature and quality of the Signe.",
+      "source_assertion": "An unfortunate planet in the sixth moving toward a new sign indicates speedy alteration of the disease. To judge when, count the planet’s degrees remaining in the sign and take that number of months, weeks, or days according to the sign’s nature and quality.",
+      "relationship_to_main_span": "Relevant prior example of degree-to-time judgment. Its subject is an unfortunate planet in the sixth approaching sign exit. SF-089 instead concerns ascendant lord entering dignity, and SF-090 concerns the sixth cusp at 28 degrees in a common sign. These should not be conflated. The earlier passage does not supply a fixed common-sign unit or a weighting procedure that resolves the later alternatives.",
+      "not_imported": "Other disease, death, and medicine rules visible on this earlier page are outside the local batch and are not counted in the main source-unit map or evidence inventory."
+    }
+  ],
+  "unresolved_readings": [
+    {
+      "id": "U01",
+      "units": [
+        "SF-006",
+        "SF-008"
+      ],
+      "issue": "Printed259 negative scope in the no-sickness antecedent",
+      "source_evidence": "PDF293 enlarged original crop clearly reads “If the ascendant were not afflicted, or the Lord thereof out of his essentiall Dignities, or in any evill aspect ...”. No repeated “not” is printed for the lord clauses.",
+      "retained_position": "Preserve the chain as printed and state the ambiguity. A repeated negative may be intended but is not silently supplied.",
+      "could_settle": "An authoritative correction for this exact line, an authorial manuscript, or a clearly identified textual witness; original PDF888 Errata lists no p259 correction."
+    },
+    {
+      "id": "U02",
+      "units": [
+        "SF-004"
+      ],
+      "issue": "Diurnal list conjunctions/disjunctions and qualified nocturnal analogy",
+      "source_evidence": "“and he under the earth ... or ... these things happening”; “consideratis considerandis.”",
+      "retained_position": "Do not assert a complete conjunctive checklist or a fully spelled-out nocturnal inversion.",
+      "could_settle": "Dariot’s corresponding original formulation or an explicit Lilly definition/callback that addresses this particular analogy; not consulted here."
+    },
+    {
+      "id": "U03",
+      "units": [
+        "SF-011"
+      ],
+      "issue": "Outward-cause verb scope",
+      "source_evidence": "“from those Infortunes that doe afflict the Lord of the ascendant, or from the principall Significators in the Figure, or the Moon.”",
+      "retained_position": "Keep all named judgment sources; do not silently make every subsequent object governed by afflict.",
+      "could_settle": "A source-author version with clearer syntax or pertinent authorial clarification."
+    },
+    {
+      "id": "U04",
+      "units": [
+        "SF-023"
+      ],
+      "issue": "Saturn Leo/Scorpio and the nodes: with-clause scope",
+      "source_evidence": "Original enlarged text: “in Leo or in Scorpio with [South Node] or [North Node], or Combust”. Both node glyphs are legible.",
+      "retained_position": "Preserve exact local sequence. Do not assume the node condition governs Leo and Scorpio equally or remove the separate combustion/fixed-star alternatives.",
+      "could_settle": "Corresponding Dariot passage or explicit authoritative correction; not resolved by local punctuation."
+    },
+    {
+      "id": "U05",
+      "units": [
+        "SF-037"
+      ],
+      "issue": "“his dignities” referent",
+      "source_evidence": "“if Saturne be mixed ... or Mars in any of his dignities.”",
+      "retained_position": "Saturn is the most natural referent; label that as a reading, not an independently supplied condition.",
+      "could_settle": "Corresponding source or authorial clarification."
+    },
+    {
+      "id": "U06",
+      "units": [
+        "SF-043"
+      ],
+      "issue": "Mars “aforesaid Aspects” callback scope",
+      "source_evidence": "Previous Saturn clause names conjunction, square, opposition, or Saturn’s antiscion; Mars uses “aforesaid Aspects.”",
+      "retained_position": "Carry back the reference without silently deciding whether antiscion is included.",
+      "could_settle": "Corresponding Dariot wording or a specific authorial explanation of the reference."
+    },
+    {
+      "id": "U07",
+      "units": [
+        "SF-045"
+      ],
+      "issue": "Whether fiery condition is inherited into Venus/Mars branch",
+      "source_evidence": "Venus in fiery signs gives one-day fever, “but if Mars joyne in signification” gives rotten fevers from phlegm.",
+      "retained_position": "Keep local sequence; do not transfer one-day duration or assert an unstated repeated fire condition.",
+      "could_settle": "Corresponding source or explicit authorial clarification."
+    },
+    {
+      "id": "U08",
+      "units": [
+        "SF-050"
+      ],
+      "issue": "Under-earth → superiour and fore-part",
+      "source_evidence": "PDF297 enlarged original clearly prints “superiour”; original PDF888 Errata has no p263 correction.",
+      "retained_position": "Literal text retained; no change to inferiour and no automatic under-earth → left inference.",
+      "could_settle": "An authoritative emendation or parallel primary witness for this exact rule. Ordinary symmetry alone does not settle it."
+    },
+    {
+      "id": "U09",
+      "units": [
+        "SF-053"
+      ],
+      "issue": "Few/middle/lower degrees and anatomical subdivisions",
+      "source_evidence": "No degree boundaries are printed; “lower degrees” follows few and middle.",
+      "retained_position": "No exact thirds, 0–10/10–20/20–30, or redefinition of lower is supplied.",
+      "could_settle": "An explicit authorial degree-part convention or directly pertinent earlier definition; not found or pursued in this stage."
+    },
+    {
+      "id": "U10",
+      "units": [
+        "SF-054",
+        "SF-055",
+        "SF-056",
+        "SF-057",
+        "SF-063",
+        "SF-067"
+      ],
+      "issue": "Body/mind correspondence tensions and punctuation",
+      "source_evidence": "The original pages use different combinations of places, lights, dispositors, and ascendant lord; some stated general correspondences do not align neatly with subsequent conclusions.",
+      "retained_position": "Map each rule independently with its exact subjects and mind/body polarity. Do not harmonize the system by exchanging Sun and Sun’s lord, place and dispositor, or mind and body.",
+      "could_settle": "A corrected primary text or tightly linked authorial clarification. PDF888 lists no p264 or p265 erratum."
+    },
+    {
+      "id": "U11",
+      "units": [
+        "SF-056"
+      ],
+      "issue": "“or two of them at least” after a three-ruler sequence",
+      "source_evidence": "Original says “those Planets who dispose of the Sun and Moon, or he that is Lord of the Ascendant, or two of them at least be afflicted”.",
+      "retained_position": "Retain the at-least-two phrase and the awkward or-chain; do not flatten into a one-factor sufficient condition.",
+      "could_settle": "Corresponding primary wording or authorial correction."
+    },
+    {
+      "id": "U12",
+      "units": [
+        "SF-064"
+      ],
+      "issue": "Mars sextile glyph and twelfth modifier attachment",
+      "source_evidence": "PDF299 original enlarged crop clearly shows sextile/star, square, opposition; the subject chain includes “a Planet in the Ascendant, or the Ascendant” before “oppressed in the twelfth”.",
+      "retained_position": "Sextile is a secure visual reading even if unexpected. Modifier scope remains unsettled. No silent substitution of conjunction or relocation of the ascendant.",
+      "could_settle": "An original erratum/authorial manuscript or corresponding Dariot passage. The current Errata supplies no p265 correction."
+    },
+    {
+      "id": "U13",
+      "units": [
+        "SF-068"
+      ],
+      "issue": "Subject of “free from” malefic ill aspects",
+      "source_evidence": "The semicolon follows ascendant degree square Moon, then “and free from the ill aspects of Saturn and Mars”.",
+      "retained_position": "Preserve the negative clause without selecting a unique subject beyond the printed sequence.",
+      "could_settle": "Parallel primary wording or authorial syntactic clarification."
+    },
+    {
+      "id": "U14",
+      "units": [
+        "SF-072"
+      ],
+      "issue": "Natal degree/sign match and near-event timing",
+      "source_evidence": "The text refers to natal degrees being “the degrees of a Signe wherein a present Eclipse is” at sickness or near it, or an eminent great conjunction.",
+      "retained_position": "No exact orb, whole-sign-only algorithm, or near-event time window inferred.",
+      "could_settle": "An explicit, directly applicable earlier direction or primary example; callback noted but not chased into prior audit material."
+    }
+  ],
+  "callbacks": [
+    {
+      "id": "CB01",
+      "from": [
+        "SF-021"
+      ],
+      "direction": "backward",
+      "wording": "Although formerly I have briefly given directions herein",
+      "handling": "Earlier disease-quality directions exist as an authorial callback; no prior audit batch was consulted and no content was imported."
+    },
+    {
+      "id": "CB02",
+      "from": [
+        "SF-072"
+      ],
+      "direction": "backward",
+      "wording": "Over and above the many Directions formerly prescribed",
+      "handling": "Broad prior-directions callback, not a precise page citation. No extra conditions or algorithms supplied from unseen material."
+    },
+    {
+      "id": "CB03",
+      "from": [
+        "SF-091"
+      ],
+      "direction": "forward",
+      "wording": "a Figure or two subsequent",
+      "handling": "Prospective practical charts; outside the audited local span and not counted as local evidence."
+    },
+    {
+      "id": "CB04",
+      "from": [
+        "SF-092"
+      ],
+      "direction": "forward",
+      "wording": "Iatromathematicks of Hermes ... here to insert them",
+      "handling": "Translation/attribution transition included; Hermes heading and doctrinal text below the divider excluded."
+    }
+  ],
+  "actual_evidence_inventory": {
+    "named_individual_patients": [],
+    "dated_consultations_or_decumbitures": [],
+    "displayed_horoscopes_or_chart_figures_in_main_span": [],
+    "measured_case_series_or_sample_sizes": [],
+    "tabulated_predictions_and_observed_outcomes": [],
+    "illustrative_configurations": [
+      {
+        "units": [
+          "SF-003"
+        ],
+        "description": "Mars as ascendant lord in Cancer, to illustrate contrary natural qualities."
+      },
+      {
+        "units": [
+          "SF-015",
+          "SF-016",
+          "SF-017",
+          "SF-018",
+          "SF-019"
+        ],
+        "description": "Constructed outward-cause interpretations for second/fifth/seventh-house lordship; application/separation and querent-context qualifications. No identifiable patient."
+      },
+      {
+        "units": [
+          "SF-090"
+        ],
+        "description": "28 degrees of a common sign at the sixth cusp and variation within less than two weeks. No date, chart, or recorded case outcome."
+      }
+    ],
+    "general_experience_claims": [
+      {
+        "units": [
+          "SF-005",
+          "SF-008"
+        ],
+        "wording_type": "Questions with urine or without it; erected figure; habitual no-sickness judgment."
+      },
+      {
+        "units": [
+          "SF-020"
+        ],
+        "wording_type": "Method which I ever observed, offered as sufficient if well understood."
+      },
+      {
+        "units": [
+          "SF-052"
+        ],
+        "wording_type": "I ever finde this generall rule to hold true for masculine sixth lord above earth/right-side pain."
+      },
+      {
+        "units": [
+          "SF-076",
+          "SF-077",
+          "SF-078"
+        ],
+        "wording_type": "Only this much I have ever observed before crisis procedure."
+      },
+      {
+        "units": [
+          "SF-080"
+        ],
+        "wording_type": "I usually observe; I do not remember failure; as oft; ever observed, for adverse lunar aspects, illness severity, and little/no medicine effect."
+      },
+      {
+        "units": [
+          "SF-081"
+        ],
+        "wording_type": "Observed lunar favorable aspects and habit of pronouncing comfort/interval of ease."
+      },
+      {
+        "units": [
+          "SF-082"
+        ],
+        "wording_type": "I found the patient’s mind much enlightened under qualified Sun aspect."
+      },
+      {
+        "units": [
+          "SF-083",
+          "SF-084",
+          "SF-085"
+        ],
+        "wording_type": "I usually observe timing inputs; ordinary days judgment and discretionary common-sign timing."
+      },
+      {
+        "units": [
+          "SF-089"
+        ],
+        "wording_type": "I many times find recovery or beneficial alteration on dignity ingress."
+      },
+      {
+        "units": [
+          "SF-091"
+        ],
+        "wording_type": "Method I always observed, promised to be shown by subsequent figures."
+      }
+    ],
+    "inherited_or_other_author_attribution": [
+      {
+        "units": [
+          "SF-001",
+          "SF-003",
+          "SF-004",
+          "SF-009",
+          "SF-010",
+          "SF-011",
+          "SF-012",
+          "SF-013",
+          "SF-014"
+        ],
+        "description": "Dariot named in introductory heading and marginal attribution; Lilly’s explicit marginal additions interrupt the attributed material."
+      },
+      {
+        "units": [
+          "SF-059"
+        ],
+        "description": "Many astrologians invoked for the general Saturn melancholy rule."
+      },
+      {
+        "units": [
+          "SF-076"
+        ],
+        "description": "Sundry astrologians’ publicly available works acknowledged without specific bibliographic identification."
+      },
+      {
+        "units": [
+          "SF-086",
+          "SF-087"
+        ],
+        "description": "The Ancients expressly credited for timing correspondences."
+      },
+      {
+        "units": [
+          "SF-092"
+        ],
+        "description": "Hermes named as attributed source of forthcoming Iatromathematicks, with esteem/necessity claims by Lilly."
+      }
+    ],
+    "asserted_endpoints_and_observation_limits": [
+      "Sick/not sick/no ensuing sickness and temporary bodily distemper; none attached to an identifiable consultation.",
+      "Outward trouble, humoral and named historical disease categories, bodily location, mental or bodily predominance, and both; rule conclusions rather than verified diagnoses.",
+      "Complete departure of illness or possible death in the Mars-common/Saturn branch; no outcome record or date.",
+      "Crisis worsening, increased pain, poor medicine effect, ease, and mental relief; generalized personal recollections without denominators or case detail.",
+      "Recovery/improvement timing, dignity-ingress recovery or beneficial change, and sixth-cusp variation under two weeks; no observed dated endpoint supplied.",
+      "The source’s no-recollected-failure language is not a measured accuracy result. The independent map makes no accuracy claim for the historical method or for an unaudited candidate."
+    ]
+  },
+  "no_accuracy_claim": "This is a source-first reconstruction and inspection record. It neither validates astrology/medicine nor scores candidate fidelity or historical predictive performance."
+}

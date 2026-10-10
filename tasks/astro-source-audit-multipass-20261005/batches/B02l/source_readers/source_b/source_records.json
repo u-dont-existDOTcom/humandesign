@@ -1,0 +1,1624 @@
+[
+  {
+    "local_id": "B001",
+    "section": "side_and_member",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "the right side of the Body, and in the upper part thereof",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "An unfortunate or afflicted sixth-house lord above the earth locates the disease on the right side and in the upper part of the body.",
+    "conditions": [
+      "(Lord of the sixth is unfortunate OR afflicted) AND that lord is above the earth.",
+      "Above the earth is expressly enumerated as houses 12, 11, 10, 9, 8, OR 7."
+    ],
+    "outcomes": [
+      "Right side of the body AND upper part of the body."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [],
+    "implementation_note": "Preserve both outcomes and the explicit house set. Do not add the masculine-planet requirement from B005 to this separately stated rule."
+  },
+  {
+    "local_id": "B002",
+    "section": "side_and_member",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "the superiour and fore-part of the body",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "The printed rule assigns the superior and front part of the body when the sixth-house lord is under the earth or vitiated in a diurnal sign.",
+    "conditions": [
+      "(Lord of the sixth is under the earth, expressly houses 1, 2, 3, 4, 5, OR 6) OR (that lord is vitiated in a diurnall Signe)."
+    ],
+    "outcomes": [
+      "The printed outcome is the superiour AND fore-part of the body.",
+      "Examples named are the fore-head and stomacke, followed by &c."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "The original visibly reads superiour despite the under-earth antecedent; an intended inferiour cannot be established from this witness.",
+      "Whether the previous clause's general affliction qualifier also carries into the under-earth branch is not expressly restated. The OR preceding vitiated in a diurnal sign must not silently become AND."
+    ],
+    "implementation_note": "Retain the apparent tension verbatim. No silent superior-to-inferior repair or generalized above/below lookup is justified."
+  },
+  {
+    "local_id": "B003",
+    "section": "side_and_member",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "if in a nocturnall Signe",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "The following nocturnal-sign clause locates the infirmity in the back part of the body.",
+    "conditions": [
+      "The relevant actor is in a nocturnall Signe; the preceding actor is the Lord of the sixth, supplied by grammatical continuation."
+    ],
+    "outcomes": [
+      "Back part of the body."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B002 supplies the preceding subject."
+    ],
+    "uncertainties": [
+      "The subject and any continuing under-earth or vitiation qualifier are elided. The text does not explicitly say that being under the earth is an additional necessary condition of the nocturnal branch."
+    ],
+    "implementation_note": "Keep the subject inference and scope uncertainty visible. Do not turn a nocturnal sign into a nocturnal planet or a night-time chart."
+  },
+  {
+    "local_id": "B004",
+    "section": "side_and_member",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "the Disease is in the left side of the Body",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "A jointly feminine configuration is assigned to the left side of the body.",
+    "conditions": [
+      "The Significator of the Disease is in a Feminine Signe AND is in aspect to a Feminine Planet.",
+      "That aspected feminine planet is in a Feminine Signe OR House."
+    ],
+    "outcomes": [
+      "Left side of the body."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "The source gives no aspect-quality restriction here.",
+      "The adjective feminine appears before Signe and may carry to House; the relevant classification of a feminine house is not supplied in this span."
+    ],
+    "implementation_note": "Preserve the two actors and all conjunctions: the significator's sign, the other planet's gender, and the other planet's sign/house are separate conditions."
+  },
+  {
+    "local_id": "B005",
+    "section": "side_and_member",
+    "pdf_pages": [
+      297
+    ],
+    "printed_pages": [
+      263
+    ],
+    "source_anchor": "I ever finde this generall rule to hold true",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The local sentence starts I ever finde this generall rule to hold true. The introductory context on PDF293/printed259 explicitly labels first-person editorial experience Lilly.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "author_experience",
+    "proposition": "The narrator claims repeated confirmation that a masculine sixth-house lord above the earth signifies pain on the sick person's right side.",
+    "conditions": [
+      "Lord of the sixth is a Masculine Planet AND is above the earth."
+    ],
+    "outcomes": [
+      "The right side of the Sicke is pained."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B001 enumerates above-earth houses in the same section."
+    ],
+    "uncertainties": [
+      "No case count, dates, figure, patient identity, or independently recorded outcome supports the repeated-confirmation claim in this span."
+    ],
+    "implementation_note": "Classify as a generic first-person experience claim. Keep it distinct from B001: this wording adds masculinity and does not expressly repeat unfortunate/afflicted."
+  },
+  {
+    "local_id": "B006",
+    "section": "side_and_member",
+    "pdf_pages": [
+      297,
+      298
+    ],
+    "printed_pages": [
+      263,
+      264
+    ],
+    "source_anchor": "the upper part of that Member is pained or grieved",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The cross-page degree passage is a grammatical continuation of I ever finde this generall rule to hold true on PDF297/printed263.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "author_experience",
+    "proposition": "The narrator maps a significator's position within a sign to upper, middle, and lower parts of the relevant member.",
+    "conditions": [
+      "Following B005, if the Significator is in few degrees of the Signe, use the upper-part branch.",
+      "OR if the Significator is in the middle of the Signe, use the middle-part branch.",
+      "OR when the significator possesseth the lower degrees of the Sign, use the lower-part branch."
+    ],
+    "outcomes": [
+      "Few degrees: upper part of that Member pained OR grieved.",
+      "Middle of sign: middle part of the Member distressed.",
+      "Lower degrees of sign: lower part of the Member."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The opening clause continues across PDF297/printed263 to PDF298/printed264.",
+      "B005 supplies the preceding Significator context.",
+      "A way to identify that Member is presupposed but no sign-to-member table is supplied in this owned span."
+    ],
+    "uncertainties": [
+      "Few, middle, and lower degrees are not assigned numerical intervals.",
+      "Lower degrees could denote a position lower on the written sign sequence rather than smaller degree numbers; the source does not resolve this.",
+      "The degree clauses are joined by and if to B005. Whether they require that rule's masculine/above-earth conditions throughout is not explicitly delimited."
+    ],
+    "implementation_note": "Do not manufacture decans, three equal ten-degree bins, an ordinal-zero convention, or a numeric meaning for lower. Preserve the member scope rather than silently making all outcomes regions of the whole body."
+  },
+  {
+    "local_id": "B007",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      298
+    ],
+    "printed_pages": [
+      264
+    ],
+    "source_anchor": "doe shew the Spirit of Man",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "dependency",
+    "proposition": "The section first identifies different significators for spirit, bodily members, and animal faculties.",
+    "conditions": [
+      "For the Spirit of Man, consider the Signe ascending, the Moon, AND the Lord of the house wherein the Sun is.",
+      "For external AND internal members, consider the Lord of the Ascendant and the Planet who is dispositor of the Moon, as the succeeding explanation names them together."
+    ],
+    "outcomes": [
+      "The ascending sign, Moon, and lord of the Sun's house signify the Spirit of Man.",
+      "The Ascendant lord and Moon's dispositor denote external AND internal members.",
+      "The later explanation calls the Ascendant lord AND Moon's dispositor proper significators of Animal faculties and infirmities in Man, naming deprivation of Sence, Madnesse, Frenzy, Melancholly, &c."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "The initial wording uses a comma between Lord of the Ascendant and the Planet who is dispositor of the Moon. The later AND supports two roles, but does not require two distinct physical planets.",
+      "House wherein the Sun is is not here defined as a particular mundane-house cusp rule; do not collapse it into an assumed modern house-ruler implementation.",
+      "The allocation of spirit versus members must be preserved even where later rules seem inconsistent with a simple partition."
+    ],
+    "implementation_note": "Use as a documentary dependency, retaining Ascendant/sign/degree, luminary, and dispositor as distinct roles. Historical faculties and moral/mental terms are not modern clinical categories."
+  },
+  {
+    "local_id": "B008",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      298
+    ],
+    "printed_pages": [
+      264
+    ],
+    "source_anchor": "the Disease is then through the whole Body",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "Affliction of the Ascendant, Sun, and Moon together is said to make the disease extend through the whole body.",
+    "conditions": [
+      "Ascendant AND Sun AND Moon are ALL vitiated OR afflicted."
+    ],
+    "outcomes": [
+      "Disease through the whole Body; equivalently the author says no place is free."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B007 is the stated introductory framework."
+    ],
+    "uncertainties": [
+      "The Sun itself appears here, whereas B010 uses the lord of the Sun's house. These must not be merged."
+    ],
+    "implementation_note": "Preserve the ALL requirement and the actual luminary. Do not turn this into a majority rule or mind-only result."
+  },
+  {
+    "local_id": "B009",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      298
+    ],
+    "printed_pages": [
+      264
+    ],
+    "source_anchor": "the Disease is in the Spirits together with some indisposition of Minde",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "An ambiguously quantified set of afflicted dispositor/lord roles is assigned to disease in the spirits together with some indisposition of mind.",
+    "conditions": [
+      "Printed alternatives: those Planets who dispose of the Sun AND Moon, OR he that is Lord of the Ascendant, OR two of them at least be afflicted."
+    ],
+    "outcomes": [
+      "Disease in the Spirits together with some indisposition of Minde."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B007 includes the stated explanation concerning animal faculties and infirmities."
+    ],
+    "uncertainties": [
+      "The repeated OR and the phrase two of them at least leave the minimum number of afflicted roles unclear. It may describe alternative actor groups or impose an at-least-two condition.",
+      "When one planet occupies multiple roles, the text does not say whether roles or distinct planets are counted."
+    ],
+    "implementation_note": "Retain the source alternatives as unresolved syntax; do not compile this into an unqualified one-of-three or two-of-three Boolean rule."
+  },
+  {
+    "local_id": "B010",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      298
+    ],
+    "printed_pages": [
+      264
+    ],
+    "source_anchor": "the infirmity rests in the Minde but not in the Body",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "Impediment of all or two of a particular three-role set is assigned to mind without bodily infirmity.",
+    "conditions": [
+      "Of Ascendant, Moon, AND Lord of the House of the Sun, ALL OR two of them are impedited."
+    ],
+    "outcomes": [
+      "Infirmity in the Minde, explicitly not in the Body."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B007 identifies the three roles."
+    ],
+    "uncertainties": [
+      "The source does not specify how coincident roles occupied by one body should be counted."
+    ],
+    "implementation_note": "Keep the Sun's house lord here and the Sun itself in B008 distinct. Preserve the explicit bodily exclusion."
+  },
+  {
+    "local_id": "B011",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      298
+    ],
+    "printed_pages": [
+      264
+    ],
+    "source_anchor": "the Lord of the Ascendant and Dispositor of the Moon free",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "Afflicted Ascendant and Moon with their two stated bodily-role rulers free are assigned to mind without bodily infirmity.",
+    "conditions": [
+      "Ascendant AND Moon are BOTH unfortunate.",
+      "AND Lord of the Ascendant AND Dispositor of the Moon are free."
+    ],
+    "outcomes": [
+      "Indisposition in the Minde AND not in the Body."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "Free is not operationally defined in this span; freedom from the relevant impediment/affliction is a contextual reading."
+    ],
+    "implementation_note": "Do not omit the two unimpeded-ruler conditions or reverse them. The source does not give a strength score or an orb for freedom."
+  },
+  {
+    "local_id": "B012",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      298
+    ],
+    "printed_pages": [
+      264
+    ],
+    "source_anchor": "This generall rule many Astrologians observe",
+    "attribution": {
+      "label": "other",
+      "evidence": "The local attribution is This generall rule many Astrologians observe, followed by the Saturn assertion.",
+      "certainty": "An unnamed plurality of astrologians, reported in Lilly's mixed source context."
+    },
+    "kind": "general_rule",
+    "proposition": "The narrator reports a general astrological claim that Saturn naturally foreshows or causes melancholy and its associated mental disturbance.",
+    "conditions": [
+      "The rule concerns Saturn's natural signification; no particular placement or aspect antecedent is supplied in this sentence."
+    ],
+    "outcomes": [
+      "Saturn naturally fore-shews OR causeth Melancholly.",
+      "All manner of distempers from Melancholly, and by consequence the disturbed Minde."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "The source uses the alternative fore-shews or causeth; it does not choose a purely indicative or a causal mechanism.",
+      "The many astrologians are unnamed and no works or observation counts are identified."
+    ],
+    "implementation_note": "Retain reported doctrine and its alternative modalities without medical validation or a causal inference."
+  },
+  {
+    "local_id": "B013",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      298
+    ],
+    "printed_pages": [
+      264
+    ],
+    "source_anchor": "the sick-party labours with some affliction of Minde",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "A long disjunction of Saturn configurations is assigned to affliction of mind or vexatious care.",
+    "conditions": [
+      "ANY of: Saturn is Lord of the Ascendant; OR Lord of the Hour; OR Lord of the twelfth House; OR Lord of the sixth.",
+      "OR the Moon separates from Saturn.",
+      "OR Saturn is in the sixth house; OR in the Ascendant.",
+      "OR Saturn is in conjunction, square, OR opposition to the Lord of the Ascendant."
+    ],
+    "outcomes": [
+      "The sick-party labours with some affliction of Minde, OR with some vexatious care whereby the mind is much troubled."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B012 is the immediately preceding stated rationale."
+    ],
+    "uncertainties": [
+      "No further unfortunate/afflicted condition is expressly attached to this complete disjunction.",
+      "The extent or timing of separating from Saturn is not specified."
+    ],
+    "implementation_note": "Preserve all eight role/location/relation branches and all three listed aspects. Do not require every branch together or make Saturn's sixth-house rulership identical to sixth-house placement."
+  },
+  {
+    "local_id": "B014",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      298
+    ],
+    "printed_pages": [
+      264
+    ],
+    "source_anchor": "for he never oppresseth the Minde but the Body",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "The following sentence contrasts Jupiter with Saturn and says Jupiter oppresses the body but never the mind.",
+    "conditions": [
+      "The clause names Jupiter as effecting the contrary; it supplies no new explicit placement, aspect, or rulership condition."
+    ],
+    "outcomes": [
+      "Jupiter never oppresseth the Minde, but the Body."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B013 is the immediately contrasted Saturn passage."
+    ],
+    "uncertainties": [
+      "The Jupiter glyph and never are visible in the enlarged original-image crop.",
+      "How much of Saturn's preceding list is intended to transfer under the contrary hereof is unstated."
+    ],
+    "implementation_note": "Retain Jupiter, never, and the body-only assertion. Do not silently replace Jupiter with Mars or transfer the entire Saturn antecedent list without a declared inference."
+  },
+  {
+    "local_id": "B015",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      298,
+      299
+    ],
+    "printed_pages": [
+      264,
+      265
+    ],
+    "source_anchor": "the infirmity is Bodily",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "Solar misfortune, combustion, or being under the Sun's beams of the Moon's house lord and Ascendant lord is assigned to bodily infirmity.",
+    "conditions": [
+      "The Lord of the House of the Moon AND the Lord of the Ascendant are unfortunate by the Sun, OR Combust, OR under his beams."
+    ],
+    "outcomes": [
+      "The infirmity is Bodily."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The if at the bottom of PDF298 continues at the top of PDF299."
+    ],
+    "uncertainties": [
+      "The plural compound subject does not specify whether different solar conditions may affect each lord or whether one condition must apply to both.",
+      "No combustion or under-beams degree thresholds are given in this passage."
+    ],
+    "implementation_note": "Preserve both actor roles and the three stated solar alternatives. Do not infer a Moon-Sun conjunction rule from this lord-based sentence."
+  },
+  {
+    "local_id": "B016",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      299
+    ],
+    "printed_pages": [
+      265
+    ],
+    "source_anchor": "the Disease raignes more in the Minde then in the Body",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "Misfortune of the dispositor of the Ascendant lord and the Moon's dispositor is assigned to greater mental than bodily disease.",
+    "conditions": [
+      "The Planet ruling the Signe wherein the Lord of the Ascendant is AND the Dispositor of the Moon are infortunate in their fall, detriment, OR otherwise very much afflicted."
+    ],
+    "outcomes": [
+      "Disease raignes MORE in the Minde THAN in the Body."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "Both named roles form the compound subject; the distribution of mixed fall/detriment/other-affliction conditions between them is unstated.",
+      "The first role is the Ascendant lord's dispositor, not simply the Ascendant lord."
+    ],
+    "implementation_note": "Preserve the second-order dispositor and comparative outcome; do not turn more into exclusively."
+  },
+  {
+    "local_id": "B017",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      299
+    ],
+    "printed_pages": [
+      265
+    ],
+    "source_anchor": "the Disease is both in Body and Minde",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "An ambiguously scoped twelfth-house oppression clause with Mars is assigned to both body and mind.",
+    "conditions": [
+      "Printed actor alternatives: a Planet in the Ascendant, OR the Ascendant, OR the Lord of the House of the Moone.",
+      "The shared text is be oppressed in the twelfth by a sextile, square, OR opposition of Mars."
+    ],
+    "outcomes": [
+      "Disease BOTH in Body AND Minde."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "The original aspect glyph after by a is the six-rayed sextile glyph, followed by square and opposition; an intended conjunction is not established.",
+      "The attachment of in the twelfth is unresolved. Applying it as a literal location condition to an Ascendant is problematic, and it may scope only the Moon-house-lord alternative or describe the oppressing position.",
+      "The first two alternatives lack their own repeated predicate."
+    ],
+    "implementation_note": "Retain the sextile and scope problem. Do not silently correct the glyph or force a single executable location/aspect interpretation."
+  },
+  {
+    "local_id": "B018",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      299
+    ],
+    "printed_pages": [
+      265
+    ],
+    "source_anchor": "the party is grieved in Minde, but not sick in his Body",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "A naturally malevolent planet aspecting the Ascendant but not the Moon, together with affliction of the Sun-sign lord, is assigned to mental grief without bodily sickness.",
+    "conditions": [
+      "A Planet is by nature malevolent AND beholds the Ascendant AND does NOT behold the Moon.",
+      "AND, together with this, the Lord of the Signe where the Sun is is afflicted."
+    ],
+    "outcomes": [
+      "The party is grieved in Minde, BUT not sick in his Body."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "Beholding is not restricted to a named aspect in this clause.",
+      "The source does not say that the malevolent planet must itself afflict the Sun-sign lord."
+    ],
+    "implementation_note": "Preserve the negative Moon condition and the independent additional lord-affliction condition; do not substitute the Sun itself for its sign lord."
+  },
+  {
+    "local_id": "B019",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      299
+    ],
+    "printed_pages": [
+      265
+    ],
+    "source_anchor": "and so the contrary when the Lords are more afflicted",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "The source compares affliction of two zodiacal degrees with affliction of their lords to distinguish predominant mental or bodily disease.",
+    "conditions": [
+      "CASE A: degree ascending AND degree of that Signe wherein the Moon is are MORE afflicted THAN the Lords of those Signes.",
+      "OR CASE B: those Lords are MORE afflicted THAN the previously mentioned parts of the Signes."
+    ],
+    "outcomes": [
+      "CASE A: disease ranges MORE in the Minde THAN Body.",
+      "CASE B: the contrary comparative predominance, bodily more than mental, is supplied by the text's contrary clause."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "The Moon-related degree is described as degree of that Signe wherein the Moon is, rather than by a fully specified mathematical coordinate.",
+      "The text gives no affliction scale, weighting, pairwise-versus-aggregate comparison rule, or tie rule."
+    ],
+    "implementation_note": "Store both directions of the comparison. A software score, treatment of ties, and reduction to exclusive mind/body labels would be additions."
+  },
+  {
+    "local_id": "B020",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      299
+    ],
+    "printed_pages": [
+      265
+    ],
+    "source_anchor": "the Disease raignes in the Body, not in the Minde",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "Exalted Ascendant lord and Sun together with a debilitated Moon dispositor are assigned to body without mind.",
+    "conditions": [
+      "Lord of the Ascendant AND the Sun are in their exaltations.",
+      "AND the dispositor of the Moon is in his detriment OR fall, &c."
+    ],
+    "outcomes": [
+      "Disease raignes in the Body, explicitly NOT in the Minde."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "The trailing &c. leaves an open-ended extension of the Moon-dispositor debility list; it is not enumerated.",
+      "The source names the Sun itself, not the lord of its sign."
+    ],
+    "implementation_note": "Do not resolve tensions with the earlier spirit/member framework by reversing this outcome or replacing a significator. Preserve the conjunction of exaltation and dispositor debility."
+  },
+  {
+    "local_id": "B021",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      299
+    ],
+    "printed_pages": [
+      265
+    ],
+    "source_anchor": "then is the Patient vexed with a tormented Soule",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "A compound condition involving the luminary-place lords, an Ascendant-Moon square, and freedom from Saturn/Mars ill aspects is assigned to a tormented soul.",
+    "conditions": [
+      "The Lords of the places of the Moon AND of the Sun are in their detriments, fals, OR Peregrine, Retrograde, Combust.",
+      "AND the degree ascending is in square of the Moon.",
+      "AND free from the ill aspects of Saturn AND Mars."
+    ],
+    "outcomes": [
+      "Patient vexed with a tormented Soule."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "The punctuation of detriments, fals, or Peregrine, Retrograde, Combust does not settle whether all last three states are jointly required or are additional alternatives.",
+      "The omitted subject of and free may be the ascending degree, the Moon, the preceding lords, or the configuration as a whole.",
+      "The Moon square is expressly retained alongside freedom from ill aspects of Saturn and Mars; this is not general freedom from every ill aspect."
+    ],
+    "implementation_note": "Preserve the three printed condition groups without imposing an unsupported OR/AND parse on the debility list or choosing the free subject silently."
+  },
+  {
+    "local_id": "B022",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      299
+    ],
+    "printed_pages": [
+      265
+    ],
+    "source_anchor": "a Minde vexed with haughtinesse, vaine-glory, selfe-conceitednesse",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "A usually-qualified significator clause associates the Sun and specified lord roles with pride-related mental distress.",
+    "conditions": [
+      "Printed syntax: Usually when the Sun, the Lord of the Ascendant, OR houre, OR of the twelfth house are significators of the party inquiring."
+    ],
+    "outcomes": [
+      "Usually a Minde vexed with haughtinesse, vaine-glory, selfe-conceitednesse, Pride, &c."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "The wording may list the Sun, Ascendant lord, hour lord, and twelfth-house lord, or may involve an appositional/rulership qualification of the Sun. The plural are and compressed lord titles do not fully resolve it.",
+      "No afflicted condition is expressly repeated here."
+    ],
+    "implementation_note": "Retain Usually and the raw role syntax. These historical character descriptions are documentary outputs, not a modern diagnosis or an inference about a real person."
+  },
+  {
+    "local_id": "B023",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      299
+    ],
+    "printed_pages": [
+      265
+    ],
+    "source_anchor": "Venus argues luxury, a lascivious desire to Women",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "The next sentence associates Venus with luxury and sexual desire said to disturb both body and mind.",
+    "conditions": [
+      "The sentence names Venus; no explicit aspect, house, dignity, or affliction antecedent is supplied locally."
+    ],
+    "outcomes": [
+      "Luxury and a lascivious desire to Women.",
+      "BOTH Body AND Minde are disturbed thereby."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "Venus being a significator is supplied only by surrounding context, not restated as an explicit predicate.",
+      "Luxury is preserved as an early-modern moral term rather than replaced with a modern diagnostic label."
+    ],
+    "implementation_note": "Do not manufacture a Venus-affliction condition from the next Mercury sentence. Preserve the historical target of desire without generalizing it to all patients."
+  },
+  {
+    "local_id": "B024",
+    "section": "body_mind_or_both",
+    "pdf_pages": [
+      299
+    ],
+    "printed_pages": [
+      265
+    ],
+    "source_anchor": "a Significator and afflicted",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "Mercury as an afflicted significator is associated with fancies, fears, and mistrust.",
+    "conditions": [
+      "Mercury is a Significator AND is afflicted."
+    ],
+    "outcomes": [
+      "Doating fancies AND fearfull imaginations.",
+      "The person is stirred to mistrust upon vaine fears, his owne jealous fancies, OR some flying reports."
+    ],
+    "exceptions": [],
+    "dependencies": [],
+    "uncertainties": [
+      "Him in the antecedent is Mercury; he in stirred to mistrust is read as the person represented, but the pronoun changes referent without an explicit noun."
+    ],
+    "implementation_note": "Keep the AND condition and alternative grounds of mistrust. Do not collapse the moral/psychological vocabulary into a clinical category."
+  },
+  {
+    "local_id": "B025",
+    "section": "nativity_eclipse_and_luminary_callbacks",
+    "pdf_pages": [
+      299,
+      300
+    ],
+    "printed_pages": [
+      265,
+      266
+    ],
+    "source_anchor": "if you have the Patients Nativity",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "dependency",
+    "proposition": "Beyond the preceding directions, the narrator tells the reader to compare birth positions with a present eclipse or eminent great conjunction near the sickness.",
+    "conditions": [
+      "IF the Patients Nativity is available, consider the degrees occupied at birth by the Lord of the Ascendant, the Sun, OR the Moon.",
+      "Ask whether those degrees fall to be the degrees of a Signe wherein a present Eclipse is at the time of the sickness OR neere it, OR of some eminent great Conjunction."
+    ],
+    "outcomes": [
+      "The narrator says these are all unfortunate."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The natal chart, if available; no instruction to invent or reconstruct it is given here.",
+      "An eclipse or eminent great conjunction and its sign/degree context near the sickness.",
+      "Many Directions formerly prescribed are explicitly supplementary context, not replaced by this callback."
+    ],
+    "uncertainties": [
+      "The syntax alternates degrees and the sign containing an eclipse/conjunction; it does not establish exact-degree identity, an orb, or merely whole-sign matching.",
+      "Neere it is unquantified and the reference may concern the timing of the eclipse rather than an angular distance.",
+      "The text's birth clause supplies the natal reading of the listed positions; it does not license substituting the question's Sun/Moon positions."
+    ],
+    "implementation_note": "Retain the optional-nativity dependency, the degree-versus-sign ambiguity, and the temporal nearness qualifier. Do not make a natal data absence into an adverse judgment."
+  },
+  {
+    "local_id": "B026",
+    "section": "nativity_eclipse_and_luminary_callbacks",
+    "pdf_pages": [
+      300
+    ],
+    "printed_pages": [
+      266
+    ],
+    "source_anchor": "falling in any of the Angles of the Nativity",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "An eclipse/conjunction sign or the eighth-house sign of the yearly world revolution at natal angles is called very dangerous, especially at the Ascendant.",
+    "conditions": [
+      "(The sign of the Eclipse OR of a great Conjunction threatning evill OR the Signe of the eighth House of the yeerly revolution of the World) falls in ANY of the Angles of the Nativity.",
+      "The Ascendant is expressly emphasized among those angles."
+    ],
+    "outcomes": [
+      "Proves very dangerous, especially in the Ascendant."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "Natal angles.",
+      "The yearly revolution of the World and its eighth-house sign, a separate mundane-reference frame.",
+      "The eclipse/conjunction context continued from B025."
+    ],
+    "uncertainties": [
+      "Threatning evill most immediately follows a great Conjunction; whether it also restricts the eclipse branch is not expressly settled.",
+      "The source specifies a sign falling in angles, without a numerical orb or rule for houses/angle containment.",
+      "The date and computation of the yearly revolution of the World are not defined here."
+    ],
+    "implementation_note": "Keep world-revolution, natal, and current illness/event frames distinct. Do not relabel the eighth-house reference as the natal or question eighth house."
+  },
+  {
+    "local_id": "B027",
+    "section": "nativity_eclipse_and_luminary_callbacks",
+    "pdf_pages": [
+      300
+    ],
+    "printed_pages": [
+      266
+    ],
+    "source_anchor": "a hard fit of Sicknesse",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "A sign rising at first sickness or at the patient's demand is adverse when that sign contained an infortune in the nativity.",
+    "conditions": [
+      "A Signe ascends upon the FIRST falling sick OR the demand of the Patient.",
+      "AND an Infortune was in that sign in the Nativity."
+    ],
+    "outcomes": [
+      "It most fearfully torments the sick party; the source explains that he shall have a hard fit of Sicknesse."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The relevant illness/demand Ascendant sign.",
+      "A natal infortune's sign."
+    ],
+    "uncertainties": [
+      "No choice or priority rule is supplied between first falling sick and the patient's demand if both times are available.",
+      "No degree match, conjunction, or present placement of the infortune is stipulated."
+    ],
+    "implementation_note": "This is a cross-chart sign callback. Do not convert it into a rule requiring a current malefic in the Ascendant or merge its time origins with the first-bed rule in B031."
+  },
+  {
+    "local_id": "B028",
+    "section": "nativity_eclipse_and_luminary_callbacks",
+    "pdf_pages": [
+      300
+    ],
+    "printed_pages": [
+      266
+    ],
+    "source_anchor": "when there's not above six degrees distance betwixt them",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "The source calls the Moon's close, not-yet-perfected conjunction with the Sun very ill, while reducing that misfortune in Aries or Leo.",
+    "conditions": [
+      "The Moon and Sun are described as in conjunction AND their distance is NOT ABOVE six degrees (distance <= 6 degrees).",
+      "AND the Moon has NOT yet passed by the Sun; the source explains this as not having been yet in conjunction with him."
+    ],
+    "outcomes": [
+      "A very ill signe."
+    ],
+    "exceptions": [
+      "However, when the Sun AND Moon are in conjunction in Aries OR Leo, this misfortune is lessened."
+    ],
+    "dependencies": [
+      "The Moon's relation to the Sun requires the pre-conjunction/application phase, not distance alone.",
+      "B029 supplies the following separate twelve-degree statement."
+    ],
+    "uncertainties": [
+      "The source uses conjunction both for the close approach and for the still-unreached exact meeting. Its statement must not be reduced to an exact-zero conjunction condition.",
+      "At exactly six degrees the not above wording includes the boundary, but the text gives no rule for intermediate distances beyond six and below twelve.",
+      "No magnitude is provided for lessened, and the sign exception does not say the danger is removed."
+    ],
+    "implementation_note": "A narrow reference helper may retain the inclusive six-degree comparison and phase flag. It must not generate a prognosis, a medical threshold, or an invented numeric danger score."
+  },
+  {
+    "local_id": "B029",
+    "section": "nativity_eclipse_and_luminary_callbacks",
+    "pdf_pages": [
+      300
+    ],
+    "printed_pages": [
+      266
+    ],
+    "source_anchor": "when the Moon is twelve degrees from the Sun",
+    "attribution": {
+      "label": "ambiguous",
+      "evidence": "This is an unlabeled rule within the material following Dariot Abridged (PDF292/printed258). PDF293/printed259 visibly distinguishes Dariot and Lilly passages in the margin. No local attribution label appears here, so neither unqualified Dariot authorship nor automatic Lilly authorship is established.",
+      "certainty": "Unresolved between the abridged source and Lilly's editorial contribution; the surviving witness is Lilly's book."
+    },
+    "kind": "general_rule",
+    "proposition": "The following sentence says the Moon at twelve degrees from the Sun shows little danger.",
+    "conditions": [
+      "The Moon is twelve degrees from the Sun."
+    ],
+    "outcomes": [
+      "She shewes little danger."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B028 is the preceding close-conjunction statement and Aries/Leo qualification."
+    ],
+    "uncertainties": [
+      "The source says twelve degrees, not at least twelve degrees.",
+      "No applying/separating direction is repeated in this sentence; contextual succession alone does not establish a universal separating-only rule.",
+      "Little danger is not no danger, certainty of recovery, or a claim about all other chart conditions."
+    ],
+    "implementation_note": "Record the exact stated distance and modest wording. Do not interpolate, turn it into >= 12, or apply it as a stand-alone modern health-risk threshold."
+  },
+  {
+    "local_id": "B030",
+    "section": "crisis_or_critical_days",
+    "pdf_pages": [
+      300
+    ],
+    "printed_pages": [
+      266
+    ],
+    "source_anchor": "Sundry Astrologians have handled this part of Medicinall Astrology",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The narrator says I shall onely referre them to their excellent Works and introduces onely thus much I have ever observed.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "dependency",
+    "proposition": "The narrator refers readers to unspecified published astrological works on crises before giving his own reported observations.",
+    "conditions": [
+      "For fuller handling of the Crisis or critical days, consult the excellent works of sundry Astrologians, said to be publicly available."
+    ],
+    "outcomes": [
+      "The narrator limits his treatment here to what he says he has ever observed."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The external works are unnamed in this passage."
+    ],
+    "uncertainties": [
+      "No author list, title, edition, page, or specific method is supplied for this referral."
+    ],
+    "implementation_note": "Treat as a bibliographic dependency claim, not evidence that the later procedure was independently validated."
+  },
+  {
+    "local_id": "B031",
+    "section": "crisis_or_critical_days",
+    "pdf_pages": [
+      300
+    ],
+    "printed_pages": [
+      266
+    ],
+    "source_anchor": "get the hour wherein the Patient first took his Bed",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The procedure directly follows onely thus much I have ever observed.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "method",
+    "proposition": "The authorial crisis method prioritizes the first-bed hour and supplies the first request for physician judgment as a fallback, then rectifies the Moon to that hour.",
+    "conditions": [
+      "To find the true Crysis, get AS NEAR AS CAN BE OBTAINED the hour wherein the Patient FIRST took his Bed.",
+      "ONLY IF that hour cannot be had, take the hour when FIRST Judgment was required of the Physitian.",
+      "Then rectifie the Moon her motion to THAT VERY hour."
+    ],
+    "outcomes": [
+      "A reference hour and Moon place for the following crisis observations."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B032 uses that her first place as the lunar reference.",
+      "An event date/time and lunar-position reference are presupposed; none is given for an actual patient here."
+    ],
+    "uncertainties": [
+      "Rectifie her motion is not accompanied by a computational procedure, time standard, interpolation method, or precision tolerance.",
+      "As near as can be obtained explicitly allows uncertainty in the source event time; it is not permission to invent an exact time."
+    ],
+    "implementation_note": "Keep the fallback hierarchy and distinguish first taking bed from first symptoms, demand, or the current query. An arithmetic/ephemeris helper can preserve a supplied time and its uncertainty without deciding the crisis outcome."
+  },
+  {
+    "local_id": "B032",
+    "section": "crisis_or_critical_days",
+    "pdf_pages": [
+      300
+    ],
+    "printed_pages": [
+      266
+    ],
+    "source_anchor": "if the Disease be not chronick, but acute",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The paragraph is introduced as what I have ever observed and then explicitly limits these angle observations to disease not chronick, but acute.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "general_rule",
+    "proposition": "For acute rather than chronic disease, the narrator expects major alteration near three lunar distances from the reference place.",
+    "conditions": [
+      "The Disease is NOT chronick BUT acute.",
+      "AND the Moon comes to be distant from her first place by 45 degrees, OR 90 degrees, OR 135 degrees."
+    ],
+    "outcomes": [
+      "Great alteration in the Disease AND party infirmed, NEER UPON those times."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B031 supplies the reference hour and lunar first place.",
+      "B033 and B034 qualify the expected alteration by the planet/aspect encountered at those times."
+    ],
+    "uncertainties": [
+      "Neer upon does not specify an exact-time event or a timing tolerance.",
+      "No 180-degree target, repetition over later lunar cycles, or rule for chronic disease is stated.",
+      "The phrase distant from her first place does not itself provide a complete ephemeris or choice between moving and fixed aspect endpoints."
+    ],
+    "implementation_note": "A narrow helper could list the three explicitly named angular targets relative to a supplied lunar place. Preserve acute-only scope; do not generalize to every 45-degree multiple or claim clinical predictive power."
+  },
+  {
+    "local_id": "B033",
+    "section": "crisis_or_critical_days",
+    "pdf_pages": [
+      300
+    ],
+    "printed_pages": [
+      266
+    ],
+    "source_anchor": "it doth promise ease, and a better condition in the Disease",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "This is part of the crisis paragraph introduced as what the author has ever observed.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "general_rule",
+    "proposition": "At the crisis times, a good lunar aspect to a benevolent planet is said to promise ease and a better disease condition.",
+    "conditions": [
+      "At those crisis times from B032, note WHAT PLANET the Moon is in aspect with, distinguishing a friendly Planet from an Infortune.",
+      "IF she is in a GOOD aspect at those times WITH a benevolent Planet."
+    ],
+    "outcomes": [
+      "Promises ease AND a better condition in the Disease."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B031-B032 provide the time base, acute-only frame, and lunar distances."
+    ],
+    "uncertainties": [
+      "No list of good aspects or benevolent planets is supplied in this particular sentence.",
+      "Promise is prognostic language and the source does not report a dated endpoint for this rule."
+    ],
+    "implementation_note": "Require both aspect quality and planet quality in any documentary representation; neither alone reproduces the antecedent."
+  },
+  {
+    "local_id": "B034",
+    "section": "crisis_or_critical_days",
+    "pdf_pages": [
+      300,
+      301
+    ],
+    "printed_pages": [
+      266,
+      267
+    ],
+    "source_anchor": "the Patient will be Worse, his paine encrease",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "This sentence is continuous with the crisis observations introduced in the first person on PDF300.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "general_rule",
+    "proposition": "At those crisis times, an ill lunar aspect to the eighth- or sixth-house lord is assigned to worsening, increased pain, and little benefit from medicine.",
+    "conditions": [
+      "At the same crisis times, the Moon meets with an ILL aspect of the Lord of the eighth OR of the sixth."
+    ],
+    "outcomes": [
+      "Patient will be Worse.",
+      "His paine encrease.",
+      "The Medicine doe little good."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B031-B032 supply the crisis frame.",
+      "The word encrease continues from PDF300/printed266 to PDF301/printed267, followed by the medicine clause."
+    ],
+    "uncertainties": [
+      "The lords' inherent benefic/malefic status is not stipulated here.",
+      "No dose, drug, treatment instruction, or measurable effect definition is supplied."
+    ],
+    "implementation_note": "Retain all three outcomes and the OR between eighth and sixth lord. This is a historical assertion about medicine, not a basis for taking or withholding treatment."
+  },
+  {
+    "local_id": "B035",
+    "section": "crisis_or_critical_days",
+    "pdf_pages": [
+      301
+    ],
+    "printed_pages": [
+      267
+    ],
+    "source_anchor": "I doe not remember that I have failed",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The local paragraph explicitly says I usually observe, I doe not remember that I have failed, and I did ever observe.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "author_experience",
+    "proposition": "The narrator reports an unquantified history of worse illness and little medicine benefit when the Moon met specified hard relations to afflicting or sixth-house planets.",
+    "conditions": [
+      "The Moon comes to square, conjunction, OR opposition of a planet that did in ANY WAY afflict the Ascendant, OR the Lord of the Ascendant, OR the Moon.",
+      "OR she comes to the LIKE aspect (square, conjunction, OR opposition) of the Lord of the sixth.",
+      "OR she comes to the like aspect of ANY planet that was posited in the sixth."
+    ],
+    "outcomes": [
+      "Patient much distempered AND Disease high.",
+      "Medicines given ABOUT THOSE TIMES work little OR no good effect.",
+      "The narrator says he usually observes this and does not remember failing."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The prior chart/reference in which the planet afflicted or was posited is presupposed; no actual figure is given here."
+    ],
+    "uncertainties": [
+      "A claimed absence of remembered failure supplies neither sample size nor an independently checkable success rate.",
+      "The acute qualification belongs expressly to B032; this subsequent first-person paragraph does not explicitly restate whether its whole practice claim is limited to acute diseases.",
+      "The text does not explicitly distinguish aspects to fixed original positions from aspects between currently moving bodies."
+    ],
+    "implementation_note": "Keep conjunction in the adverse list, the three alternative target classes, the about-those-times qualifier, and the distinction between an author's generic memory claim and an observed case series."
+  },
+  {
+    "local_id": "B036",
+    "section": "crisis_or_critical_days",
+    "pdf_pages": [
+      301
+    ],
+    "printed_pages": [
+      267
+    ],
+    "source_anchor": "I use to pronounce to the Infirmed, comfort",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The local sentence says when I observed ... I use to pronounce to the Infirmed.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "author_experience",
+    "proposition": "The narrator describes giving a prognosis of comfort or temporary ease at favorable lunar aspects to four house lords.",
+    "conditions": [
+      "The Moon comes to a trine OR sextile of the Lord of the Ascendant, OR Lord of the eleventh, OR Lord of the ninth, OR Lord of the tenth."
+    ],
+    "outcomes": [
+      "The narrator pronounces comfort AND some relaxation OR an intervall of ease to the Infirmed."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "This continues the first-person observation paragraph of B035."
+    ],
+    "uncertainties": [
+      "I use to pronounce describes what was told to the patient; it is not a separately documented recovery endpoint.",
+      "The scope of acute versus chronic disease and of fixed versus moving aspect endpoints is not explicitly restated."
+    ],
+    "implementation_note": "Keep all four lords and both aspects; distinguish temporary ease from full recovery and the prognostic act from verified outcome."
+  },
+  {
+    "local_id": "B037",
+    "section": "crisis_or_critical_days",
+    "pdf_pages": [
+      301
+    ],
+    "printed_pages": [
+      267
+    ],
+    "source_anchor": "I found the Patient's mind much enlightned",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The local clause explicitly says I found the Patient's mind much enlightned.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "author_experience",
+    "proposition": "The narrator reports mental relief when the Ascendant lord came to a good solar aspect, subject to a parenthetical absence of power in the disease.",
+    "conditions": [
+      "The Lord of the Ascendant comes to ANY GOOD aspect of the Sun.",
+      "AND the parenthetical actor has NEITHER power NOR dominion in the disease: NOT (power OR dominion). The nearest nominal referent of he is the Sun."
+    ],
+    "outcomes": [
+      "The Patient's mind much enlightned, as the narrator says he found."
+    ],
+    "exceptions": [
+      "Exclude the stated favorable inference when the parenthetical actor has power or dominion in the disease."
+    ],
+    "dependencies": [
+      "This continues B035-B036's first-person observations."
+    ],
+    "uncertainties": [
+      "The printed parenthesis opens at the Sun and is not visibly closed before I found; he most naturally refers to the Sun, but the Ascendant lord is another grammatical possibility.",
+      "Power or dominion in the disease and good aspect are not formally defined here."
+    ],
+    "implementation_note": "Retain the exclusion and pronoun ambiguity. The claimed outcome is mental relief, not an asserted cure of bodily disease."
+  },
+  {
+    "local_id": "B038",
+    "section": "recovery_timing",
+    "pdf_pages": [
+      301
+    ],
+    "printed_pages": [
+      267
+    ],
+    "source_anchor": "according to discretion and quality of the Disease",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The local passage repeatedly says I find, I usually observe, and I frame my measure of time.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "method",
+    "proposition": "Once recovery has already been judged and timing is asked, Lilly describes selecting a time measure from aspect distance, both bodies' houses and signs, and the disease's quality.",
+    "conditions": [
+      "FIRST the narrator finds that by God's blessing the sick party SHALL recover.",
+      "AND he is asked WHEN, OR ABOUT what time, this is likely to be.",
+      "Observe who is Lord of the Ascendant AND which benevolent Planet he is in aspect with AND how many degrees are distant betwixt them.",
+      "Observe the house of EACH body: Angles, Succedant, OR Cadent.",
+      "Observe their signs: Moveable, Fixed, OR Common.",
+      "Frame the measure of time according to discretion AND quality of the Disease."
+    ],
+    "outcomes": [
+      "A discretionary estimate of when, or about what time, the already-expected recovery may occur."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "A prior judgment of recovery is required; this paragraph does not itself supply the decision procedure establishing recovery.",
+      "House and sign classifications and a degree-distance measurement for both relevant bodies.",
+      "B039-B040 give Lilly's ensuing qualifications; B041-B042 report the Ancients; B043 continues the combination instruction."
+    ],
+    "uncertainties": [
+      "Degrees distant betwixt them may mean the distance needed to perfect the relevant aspect or another degree-distance measure; the passage does not expressly define the operation.",
+      "It does not supply an algorithm for mixed house/sign classes, priorities, rounding, or competing benevolent aspects.",
+      "The opening religious phrase is part of the narrator's qualification, not an independently verifiable condition."
+    ],
+    "implementation_note": "Do not make a favorable aspect alone prove recovery. A reference helper may display supplied distances and classifications, but source fidelity requires leaving the discretionary unit and interpretation unresolved."
+  },
+  {
+    "local_id": "B039",
+    "section": "recovery_timing",
+    "pdf_pages": [
+      301
+    ],
+    "printed_pages": [
+      267
+    ],
+    "source_anchor": "yet ordinarily if the aspect be in moveable Signes",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The local sentence says I judge and the more certainly, I determine, within the narrator's recovery method.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "general_rule",
+    "proposition": "Lilly ordinarily assigns the degree count to days for a movable-sign aspect, with greater certainty when the significators are swift and angular.",
+    "conditions": [
+      "Under B038's prior-recovery and timing-request conditions, the aspect is in moveable Signes.",
+      "For the stated increase in certainty, the Significators are SWIFT in motion AND ANGULAR."
+    ],
+    "outcomes": [
+      "ORDINARILY the party will AMEND in so many dayes, referring to the observed number of degrees.",
+      "The narrator determines this the MORE CERTAINLY with swift and angular significators."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B038 supplies the degree count, actors, and recovery prerequisite."
+    ],
+    "uncertainties": [
+      "The plural signs and significators do not specify a mixed-sign or mixed-speed combination rule.",
+      "Swift is not assigned a numerical threshold; angular is a class, not an orb here.",
+      "The rule says amend, not necessarily completely recover, and it preserves ordinarily."
+    ],
+    "implementation_note": "Retain the ordinary/day judgment and the extra AND conditions for greater certainty. Do not infer universal one-degree/one-day equivalence in every situation or a measured probability."
+  },
+  {
+    "local_id": "B040",
+    "section": "recovery_timing",
+    "pdf_pages": [
+      301
+    ],
+    "printed_pages": [
+      267
+    ],
+    "source_anchor": "I neither judge moneths, weeks or dayes",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The local sentence says I neither judge ... but according as I can with discretion frame my judgment.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "method",
+    "proposition": "For applications in common signs, Lilly declines an automatic choice of months, weeks, or days and instead uses the disease's nature and possible duration.",
+    "conditions": [
+      "The application is in common Signes.",
+      "FIRST observe the nature of the Disease AND the possibility of its determining in such OR such a time.",
+      "Then frame judgment with discretion."
+    ],
+    "outcomes": [
+      "No fixed unit of months, weeks, OR days is chosen solely from the common-sign class.",
+      "The narrator chooses the time judgment according to the stated contextual considerations."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B038 is the broader timing method.",
+      "B041 immediately reports an older weeks-or-months table without removing this discretionary qualification."
+    ],
+    "uncertainties": [
+      "I neither judge ... but according as I can with discretion means he withholds a mechanically assigned unit; it need not mean that all three units are forbidden after considering the case.",
+      "No decision tree or clinical-duration data is supplied to operationalize the discretion."
+    ],
+    "implementation_note": "Preserve this explicit qualification alongside the Ancients' table. Do not silently choose weeks for all common signs or assign months from a modern illness classification."
+  },
+  {
+    "local_id": "B041",
+    "section": "recovery_timing",
+    "pdf_pages": [
+      301
+    ],
+    "printed_pages": [
+      267
+    ],
+    "source_anchor": "Common Signes, Weeks or Moneths",
+    "attribution": {
+      "label": "other",
+      "evidence": "Immediately before the six-line timing list, PDF301/printed267 says the Ancients did say.",
+      "certainty": "Reported collective attribution to unnamed Ancients, mediated by Lilly; no specific earlier text is identified."
+    },
+    "kind": "general_rule",
+    "proposition": "The narrator reports the Ancients' sign-class timing associations, preserving alternative units.",
+    "conditions": [
+      "If the applicable sign class is Moveable, use the reported days association.",
+      "OR if Common, use the reported weeks OR months association.",
+      "OR if Fixed, use the reported months OR years association."
+    ],
+    "outcomes": [
+      "Moveable Signes: Dayes.",
+      "Common Signes: Weeks OR Moneths.",
+      "Fixed Signes: Moneths OR Yeers."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B038-B040 provide the surrounding discretion and disease-duration constraints; the table is a report of the Ancients rather than an unconditional replacement.",
+      "B042 supplies the following house-class equivalences."
+    ],
+    "uncertainties": [
+      "The source gives no selector for the two units offered for common or fixed signs.",
+      "No priority is assigned between sign and house indicators."
+    ],
+    "implementation_note": "Represent a one-to-one association only for movable/day and retain sets for common/fixed. Do not invent a universal conversion to a single unit."
+  },
+  {
+    "local_id": "B042",
+    "section": "recovery_timing",
+    "pdf_pages": [
+      301
+    ],
+    "printed_pages": [
+      267
+    ],
+    "source_anchor": "Angles are equivalent to moveable Signes",
+    "attribution": {
+      "label": "other",
+      "evidence": "Immediately before the six-line timing list, PDF301/printed267 says the Ancients did say.",
+      "certainty": "Reported collective attribution to unnamed Ancients, mediated by Lilly; no specific earlier text is identified."
+    },
+    "kind": "general_rule",
+    "proposition": "The reported ancient table relates angular, succedent, and cadent houses to the three sign classes.",
+    "conditions": [
+      "Angles correspond to moveable Signes.",
+      "Succedant corresponds to common Signes.",
+      "Cadent corresponds to fixed Signes."
+    ],
+    "outcomes": [
+      "Angles equivalent to moveable signs.",
+      "Succedent equivalent to common signs.",
+      "Cadent equivalent to fixed signs."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "B041 gives the time-unit associations to which these class equivalences refer.",
+      "B038 also asks for the actual signs and houses of both bodies."
+    ],
+    "uncertainties": [
+      "Equivalent does not state that the house class overrides an inconsistent actual sign class.",
+      "The table does not provide a mixed-condition combination or weighting rule."
+    ],
+    "implementation_note": "Preserve equivalence as a reference relation. Do not turn it into an override policy or erase the alternative time units in B041."
+  },
+  {
+    "local_id": "B043",
+    "section": "recovery_timing",
+    "pdf_pages": [
+      302
+    ],
+    "printed_pages": [
+      268
+    ],
+    "source_anchor": "mix all together, and your judgment will be more rationall",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The top paragraph continues the first-person recovery method and is immediately followed by I many times find.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "method",
+    "proposition": "The continuation instructs the reader to combine the Moon's speed, sign, and sign quality with the principal significators.",
+    "conditions": [
+      "TOGETHER WITH the principall Significators, consider the quick OR slow motion of the Moon.",
+      "AND consider the Signe the Moon is in AND its quality.",
+      "Mix ALL together in the judgment."
+    ],
+    "outcomes": [
+      "The narrator says the resulting judgment will be more rationall."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "This begins the continuation of recovery-timing material from PDF301/printed267.",
+      "B038-B042 contain the factors and reported tables to which this instruction is joined."
+    ],
+    "uncertainties": [
+      "Its quality most directly refers to the Moon's sign; the passage does not enumerate the qualities.",
+      "No weights, speed boundary, or conflict-resolution algorithm is supplied."
+    ],
+    "implementation_note": "A reference view may display all supplied factors together. It must not pretend the source specifies a scoring system."
+  },
+  {
+    "local_id": "B044",
+    "section": "recovery_timing",
+    "pdf_pages": [
+      302
+    ],
+    "printed_pages": [
+      268
+    ],
+    "source_anchor": "the party recovers then, or sensibly feels an alteration for good",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The local clause starts I many times find and reports what happens when the Ascendant lord changes sign.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "author_experience",
+    "proposition": "Lilly reports often finding recovery or perceptible improvement when the Ascendant lord leaves its question-time sign for a sign where it has essential dignities.",
+    "conditions": [
+      "The Lord of the Ascendant moves OUT OF the Signe occupied at the time of the QUESTION.",
+      "AND that lord has essentiall Dignities in the Signe he is going INTO."
+    ],
+    "outcomes": [
+      "At that transition the party recovers THEN, OR sensibly feels an alteration for good in himself."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The sign at question time and the next-entered sign.",
+      "A separate essential-dignity reference is presupposed."
+    ],
+    "uncertainties": [
+      "No particular essential dignity, required number of dignities, or orb around ingress is specified.",
+      "I many times find is an unquantified frequency claim without dated enquiries or an outcome log.",
+      "The text does not require that the outgoing sign be a detriment/fall sign."
+    ],
+    "implementation_note": "Preserve the question-time reference and the OR between complete recovery and perceptible improvement. An ingress/dignity reference helper is possible, but adding a universal recovery date is not warranted."
+  },
+  {
+    "local_id": "B045",
+    "section": "recovery_timing",
+    "pdf_pages": [
+      302
+    ],
+    "printed_pages": [
+      268
+    ],
+    "source_anchor": "the Disease will vary in lesse time then two weeks",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The local wording is if I find 28 degrees, and the Signe common, I say.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "illustration",
+    "proposition": "Lilly gives a conditional numerical example: a common sign with 28 degrees on the sixth-house cusp is said to produce a disease change in less than two weeks.",
+    "conditions": [
+      "General lead-in: the later degrees of a Signe are on the cusp of the sixth.",
+      "Specified example: IF I find 28 degrees on that cusp AND the Signe is common."
+    ],
+    "outcomes": [
+      "The narrator says the Disease will VARY in LESS THAN two weeks."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "This follows B044 and the recovery-timing method, but uses the sixth cusp rather than the Ascendant lord's ingress."
+    ],
+    "uncertainties": [
+      "The exact example is 28 degrees, not every degree >= 28 or every late degree.",
+      "Vary does not specify improvement, deterioration, complete recovery, or the duration of the changed state.",
+      "The time origin for the less-than-two-weeks statement is not explicitly restated; the surrounding timing/question context supplies a possible reading.",
+      "No named patient, event date, erected figure, or realized endpoint accompanies this numerical illustration."
+    ],
+    "implementation_note": "Classify as a hypothetical/conditional illustration, not a dated observation. Preserve the strict upper bound and common-sign AND cusp-degree conditions; do not replace vary with recover."
+  },
+  {
+    "local_id": "B046",
+    "section": "bridge_to_practical_figures_and_hermes",
+    "pdf_pages": [
+      302
+    ],
+    "printed_pages": [
+      268
+    ],
+    "source_anchor": "in the judgment of a Figure or two subsequent",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The local first-person bridge says I might give infinite rules, I shall better be understood, and the method I alwayes observed.",
+      "certainty": "Probable authorial first-person voice in Lilly's mixed abridgement; no independent Dariot witness has been collated."
+    },
+    "kind": "dependency",
+    "proposition": "Lilly says subsequent practical judgments of a figure or two will better communicate the method he claims always to have observed.",
+    "conditions": [
+      "He says he might give infinite rules, BUT expects better understanding in the judgment of a Figure OR two subsequent in the practicall part."
+    ],
+    "outcomes": [
+      "The later practical part is promised as a clearer exposition of the method I alwayes observed."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "One or two subsequent figures/judgments, not identified by date, page, or subject in this sentence."
+    ],
+    "uncertainties": [
+      "A Figure or two is an imprecise forward reference, not evidence that two actual charts occur within the owned span.",
+      "Alwayes observed is a claim about the narrator's method; it is not a documented success rate or independent validation."
+    ],
+    "implementation_note": "Keep the forward dependency open for another bounded read. Do not count the anticipated figures as extracted charts or completed case evidence."
+  },
+  {
+    "local_id": "B047",
+    "section": "bridge_to_practical_figures_and_hermes",
+    "pdf_pages": [
+      302
+    ],
+    "printed_pages": [
+      268
+    ],
+    "source_anchor": "as being necessary to the Judgments of this House",
+    "attribution": {
+      "label": "Lilly",
+      "evidence": "The editorial bridge explicitly says I have endeavoured to English and here to insert them, referring to the Iatromathematicks of Hermes.",
+      "certainty": "Explicit first-person editorial translation/insertion claim in Lilly's book; ancient attribution remains a reported claim."
+    },
+    "kind": "dependency",
+    "proposition": "Lilly explains why he has translated and inserted the Iatromathematicks attributed to Hermes: to give readers more variety of judgment, in view of sickness's burden and health's desirability.",
+    "conditions": [
+      "Because, together with what he writes, the Reader might have MORE VARIETY of judgment.",
+      "AND because he says nothing in this life is more irksome than Sicknesse OR more delightfull than health.",
+      "He has endeavoured to English the Iatromathematicks of Hermes and insert them here."
+    ],
+    "outcomes": [
+      "The author describes the Hermes work as much esteemed in all Ages.",
+      "He inserts the translated material as necessary to the Judgments of this House.",
+      "This explanatory paragraph ends at House above the horizontal divider."
+    ],
+    "exceptions": [],
+    "dependencies": [
+      "The separately headed Hermes Trismegistus upon the first Decumbiture of the Sick begins below the divider and is excluded from this source-reader span."
+    ],
+    "uncertainties": [
+      "The statement establishes Lilly's translation/insertion claim and his attribution to Hermes; it does not independently establish the ancient authorship or textual lineage of that work.",
+      "The initial I/J in the italicized title is treated as a transcriptional normalization; the source anchor avoids this glyph.",
+      "Much esteemed in all Ages is a rhetorical reception claim without a cited chain of witnesses in this paragraph."
+    ],
+    "implementation_note": "Preserve the whole upper bridge and its reasons. Do not assign the preceding side/mind/crisis/timing material to Hermes or extract the lower Hermes section as part of this handoff."
+  }
+]

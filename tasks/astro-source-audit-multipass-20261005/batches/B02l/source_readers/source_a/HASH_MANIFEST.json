@@ -1,0 +1,180 @@
+{
+  "schema_version": "source-reader-hash-manifest-v1",
+  "reader": "source_a",
+  "status": "INITIAL_FULL_SOURCE_OBSERVATIONS_FROZEN",
+  "freeze_order": "After original PDF renders/crops and complete owned-source read; before inspecting any other producer or candidate output.",
+  "other_producer_outputs_inspected": false,
+  "parent_audit_status": "OPEN",
+  "publication_owner": "root",
+  "task_start_metadata": {
+    "value": "2026-10-10T19:24:34+00:00",
+    "provenance": "Supplied by parent; not asserted as the actual observation-freeze or issuance time."
+  },
+  "source_pdf": {
+    "path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+    "sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "page_count": 894,
+    "verified": true
+  },
+  "owned_span": {
+    "start": "PDF292/printed258 DARIOT Abridged heading, inclusive",
+    "end": "PDF297/printed263 immediately before the right/left heading, exclusive"
+  },
+  "verification": {
+    "json_parse": "PASS",
+    "required_record_fields": "PASS",
+    "sequential_unique_local_ids": "PASS",
+    "all_record_ids_mapped": "PASS",
+    "record_count": 54,
+    "section_unit_count": 23,
+    "source_issue_count": 11,
+    "individuated_case_count": 0,
+    "original_pdf_pages_visually_inspected": [
+      292,
+      293,
+      294,
+      295,
+      296,
+      297
+    ],
+    "source_reading_is_independent_evaluation": false,
+    "no_git_mutations": true,
+    "created_files_confined_to_worker_directory": true
+  },
+  "hash_algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "READING_NOTES.md",
+      "sha256": "fb00453f6148782cb4dcacf0e07a7914dbdc0c6e382b8cb4b60401cd197a9d44",
+      "size_bytes": 10805,
+      "role": "deliverable"
+    },
+    {
+      "path": "SECTION_MAP.json",
+      "sha256": "e24433b24db995ce1afdedc8d527098f898e1fbd547a363839015b72cd8c8d82",
+      "size_bytes": 16162,
+      "role": "deliverable"
+    },
+    {
+      "path": "SOURCE_ISSUES.json",
+      "sha256": "53e86a9daee9991cdafd6b62b2754f8944a1bfb211272a7d8613e1324b3e39fa",
+      "size_bytes": 10927,
+      "role": "deliverable"
+    },
+    {
+      "path": "build_handoff.py",
+      "sha256": "7e053868f613fcc7e226e3f5cfb1deaaa68962809d0b4c1d6627f4d07f219386",
+      "size_bytes": 75081,
+      "role": "reproduction_helper"
+    },
+    {
+      "path": "renders/crop-292-intro.png",
+      "sha256": "79979f8fba23b836966009aa411af1d8f5d4148277387c949ea41885809507cb",
+      "size_bytes": 253248,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/crop-293-negative-scope.png",
+      "sha256": "309b38c36d11421baa6b92fba152ef8c88173dce02bd49ea6104350ac9d39511",
+      "size_bytes": 498361,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/crop-294-lilly-examples.png",
+      "sha256": "0673e961756fbe1710dd6194cb9b46e9add21b05a94db1eef867784dd19e049f",
+      "size_bytes": 962587,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/crop-294-outward.png",
+      "sha256": "311edd13a52c90579377e18904b7f5cdf3cc0793b87d9ab49624c2ab43014d7e",
+      "size_bytes": 619903,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/crop-295-continuation-editorial.png",
+      "sha256": "40534f0b3982f287f8814dfb2a7851b43161b772add5989c3ba5602e771b57d9",
+      "size_bytes": 627799,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/crop-295-saturn-glyphs.png",
+      "sha256": "b5c1fc469c157b931e152d65e927a11f9fb16e085e8b28b6a223e20e375a4cf3",
+      "size_bytes": 404952,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/crop-295-saturn-variants.png",
+      "sha256": "6d9edaa1e283608edb91e53109ce27b9ac1411230eb9e1109439f15d75cc330c",
+      "size_bytes": 715765,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/crop-296-jupiter.png",
+      "sha256": "43d78a7238f4553cc3fa5996cf4baa57d95d1f7473f7c23034840a0388dc2cc2",
+      "size_bytes": 331266,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/crop-296-mars.png",
+      "sha256": "46fd363676966f657cbe72cbbaf8346640b17ffc39609985f288dda0881cb8ad",
+      "size_bytes": 988910,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/crop-297-mercury-occult.png",
+      "sha256": "e2a3e349b0989116e44dd3c42fd85cb51b419b6aea95a86fb87e940a588be0ad",
+      "size_bytes": 275804,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/crop-297-top.png",
+      "sha256": "28bd507b91221fbfe34f68d79ec983d22ed4a023dc8a3094e1d7f88b6877aaa8",
+      "size_bytes": 605262,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/original-292.png",
+      "sha256": "dc26be0af7d2ae1d705eaaea2cc661149671888dfefc4779e6b4199e5f54582f",
+      "size_bytes": 2277982,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/original-293.png",
+      "sha256": "8c373acc53da359f760bd946cee35cbbdb83db638883cc18bb3d544a350d581d",
+      "size_bytes": 2137448,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/original-294.png",
+      "sha256": "bd0bb6fc0a9eaa07d0607fa9e1916d48eec756214020a91775a16ed6abe4f8b6",
+      "size_bytes": 2574431,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/original-295.png",
+      "sha256": "1563c90871ada3ac74035c398fe3f8a29535a0541d37fcb9004a30d63c3ff265",
+      "size_bytes": 2495913,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/original-296.png",
+      "sha256": "7fcdf89c766a5248fae6d3d0ed5446cbbccd16adec734b84efca1dcaa1974f7d",
+      "size_bytes": 2394365,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "renders/original-297.png",
+      "sha256": "1a7696c3ef88a0b77b7a0f5ab8b219e0baf679386eb2f4d28fb3320667feef3f",
+      "size_bytes": 2222239,
+      "role": "inspection_asset"
+    },
+    {
+      "path": "source_records.json",
+      "sha256": "96ced7d74ca21363071343f621d73fb8ccca5397546b6c4cc690293248c8fedf",
+      "size_bytes": 106192,
+      "role": "deliverable"
+    }
+  ],
+  "self_hash_note": "This manifest does not recursively hash itself. Its whole-file SHA-256 is reported separately to root."
+}

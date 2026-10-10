@@ -1,0 +1,213 @@
+{
+  "batch": "B02l",
+  "source_only": true,
+  "clinical_mapping": false,
+  "table_count": 8,
+  "items": [
+    {
+      "id": "crisis_origin",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1634"
+      ],
+      "pdf_pages": [
+        300
+      ],
+      "description": "Local critical-day time hierarchy; no new universal override of earlier illness-chart rules.",
+      "data": {
+        "preferred": "First hour of taking bed, as nearly as obtainable",
+        "fallback_condition": "That hour cannot be obtained",
+        "fallback": "First time the physician was asked to give judgment",
+        "moon": "Correct its motion to that hour",
+        "unknown_is_not_unavailable": "Conservative implementation distinction, not an additional quoted source category."
+      }
+    },
+    {
+      "id": "crisis_offsets",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1635",
+        "LI.1647.II.XLIV.R1636",
+        "LI.1647.II.XLIV.R1637"
+      ],
+      "pdf_pages": [
+        300,
+        301
+      ],
+      "description": "Three explicit acute-illness offsets; no chronic extension or calendar conversion.",
+      "data": {
+        "illness_scope": "acute, not chronic",
+        "offset_degrees": [
+          45,
+          90,
+          135
+        ],
+        "time_language": "near those times",
+        "tolerance": null,
+        "angular_origin": "Moon's corrected first place",
+        "better_condition": "Good aspect AND benevolent planet",
+        "worse_condition": "Ill aspect of sixth OR eighth lord",
+        "clinical_validation": false
+      }
+    },
+    {
+      "id": "ancient_sign_units",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1641",
+        "LI.1647.II.XLIV.R1642",
+        "LI.1647.II.XLIV.R1643",
+        "LI.1647.II.XLIV.R1644",
+        "LI.1647.II.XLIV.R1646"
+      ],
+      "pdf_pages": [
+        301,
+        302
+      ],
+      "description": "Ancients' options retained alongside Lilly's discretionary conditions.",
+      "data": {
+        "moveable": [
+          "days"
+        ],
+        "common": [
+          "weeks",
+          "months"
+        ],
+        "fixed": [
+          "months",
+          "years"
+        ],
+        "prior_recovery_judgment_required": true,
+        "unit_selection_algorithm": null,
+        "other_factors": [
+          "signs and houses of both bodies",
+          "disease quality and feasible duration",
+          "planetary speed",
+          "Moon's speed, sign and quality"
+        ],
+        "lilly_common_sign_qualification": "Do not judge months, weeks or days mechanically; consider nature and discretion."
+      }
+    },
+    {
+      "id": "house_correspondence",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1645"
+      ],
+      "pdf_pages": [
+        301
+      ],
+      "description": "Reference equivalences, not an override policy.",
+      "data": {
+        "angular": "moveable",
+        "succedent": "common",
+        "cadent": "fixed",
+        "conflict_resolution": null
+      }
+    },
+    {
+      "id": "solar_lunar_distances",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1631",
+        "LI.1647.II.XLIV.R1632"
+      ],
+      "pdf_pages": [
+        300
+      ],
+      "description": "Printed danger assertions preserved as historical content, without executable prognosis.",
+      "data": {
+        "close_case": {
+          "maximum_degrees_inclusive": 6,
+          "phase": "Moon has not yet passed the Sun and has not yet perfected the conjunction",
+          "Aries_or_Leo": "Mitigates but does not remove the stated ill omen"
+        },
+        "other_statement": {
+          "exact_degrees": 12,
+          "wording": "little danger",
+          "phase_restated": false
+        },
+        "six_to_twelve_interpolation": null,
+        "twelve_or_more_rule": false
+      }
+    },
+    {
+      "id": "sixth_cusp_illustration",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1648"
+      ],
+      "pdf_pages": [
+        302
+      ],
+      "description": "One conditional numerical illustration, without a dated enquiry or verified endpoint.",
+      "data": {
+        "cusp": 6,
+        "degree": 28,
+        "sign_class": "common",
+        "conditions_combined": "AND",
+        "duration_relation": "strictly less than",
+        "duration_weeks": 2,
+        "event_word": "vary",
+        "event_direction": null,
+        "exact_day": null,
+        "observed_case": false
+      }
+    },
+    {
+      "id": "local_role_groups",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1610",
+        "LI.1647.II.XLIV.R1611",
+        "LI.1647.II.XLIV.R1612",
+        "LI.1647.II.XLIV.R1613",
+        "LI.1647.II.XLIV.R1619",
+        "LI.1647.II.XLIV.R1622"
+      ],
+      "pdf_pages": [
+        298,
+        299
+      ],
+      "description": "Roles are local and must not be silently substituted or counted as independent bodies.",
+      "data": {
+        "introductory_spirit_roles": [
+          "ascending sign",
+          "Moon",
+          "lord of Sun's house"
+        ],
+        "introductory_member_roles": [
+          "lord of ascendant",
+          "Moon's dispositor"
+        ],
+        "B008_all_afflicted": [
+          "ascendant",
+          "Sun",
+          "Moon"
+        ],
+        "B010_all_or_two_impeded": [
+          "ascendant",
+          "Moon",
+          "lord of Sun's house"
+        ],
+        "B016_comparative_case": [
+          "dispositor of ascendant lord",
+          "Moon's dispositor"
+        ],
+        "house_meaning_and_duplicate_counting": "Explicit interpretation dependencies; no automatic vote score."
+      }
+    },
+    {
+      "id": "planet_vs_aspect_quality",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1592",
+        "LI.1647.II.XLIV.R1636",
+        "LI.1647.II.XLIV.R1620"
+      ],
+      "pdf_pages": [
+        296,
+        299,
+        300
+      ],
+      "description": "A good planet and a good aspect are different source predicates.",
+      "data": {
+        "A043": "Saturn has signification and is in aspect with good planets at apparent departure; the aspect is not separately called good.",
+        "B033": "At the stated crises both a good aspect and a benevolent planet are required.",
+        "B017": "The adverse Mars list literally includes sextile, square and opposition; location grammar remains unresolved."
+      }
+    }
+  ]
+}

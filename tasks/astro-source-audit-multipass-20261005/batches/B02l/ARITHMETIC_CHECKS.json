@@ -1,0 +1,64 @@
+{
+  "batch": "B02l",
+  "sample_type": "Synthetic arithmetic example, not Lilly's chart or a patient",
+  "source_offsets_record": "LI.1647.II.XLIV.R1635",
+  "initial_longitude": "350 degrees 15 minutes",
+  "initial_longitude_arcsec": 1260900,
+  "offset_degrees": [
+    45,
+    90,
+    135
+  ],
+  "method": "(initial integer arcseconds + offset integer arcseconds) modulo 1296000",
+  "expected_targets_arcsec": [
+    126900,
+    288900,
+    450900
+  ],
+  "actual_result": {
+    "status": "angular_targets_only",
+    "offsets_arcsec": [
+      162000,
+      324000,
+      486000
+    ],
+    "targets_arcsec": [
+      126900,
+      288900,
+      450900
+    ],
+    "dates": null,
+    "predictive_outcome": null
+  },
+  "display_targets": [
+    "35 degrees 15 minutes",
+    "80 degrees 15 minutes",
+    "125 degrees 15 minutes"
+  ],
+  "arithmetic_matches": true,
+  "ephemeris_used": false,
+  "calendar_dates": null,
+  "origin_sample": {
+    "status": "unresolved",
+    "origin": null,
+    "time": null,
+    "reason": "first_bed_hour_availability_unknown"
+  },
+  "unresolved_timing_sample": {
+    "sign_mode": "common",
+    "sign_options": [
+      "weeks",
+      "months"
+    ],
+    "house_class": "angular",
+    "house_corresponding_mode": "moveable",
+    "house_options": [
+      "days"
+    ],
+    "selected_unit": null,
+    "date": null,
+    "prior_recovery_judgment_required": true,
+    "synthesis": "discretion_and_illness_context_not_numerically_specified"
+  },
+  "predictive_accuracy_evaluated": false
+}

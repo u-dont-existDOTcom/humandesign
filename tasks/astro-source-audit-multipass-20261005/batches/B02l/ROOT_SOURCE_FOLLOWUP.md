@@ -1,0 +1,3 @@
+# Root source detail checks after initial freeze
+
+Original-PDF crop on PDF295 resolves the two symbols after Scorpio as South Node and North Node (both nodal symbols), not Mars. Preserve unresolved grouping of Leo/Scorpio/with/combustion alternatives rather than infer punctuation repair. PDF299 source clearly includes sextile, square and opposition of Mars; sextile is not silently changed to conjunction. Original errata PDF888 checked over printed258–268: p261 l23 usually and p262 l33 returning. Both respective body readings agree visually; errata does not authorize repairing other negative scopes in this span. These detail checks do not overwrite the original root notes.

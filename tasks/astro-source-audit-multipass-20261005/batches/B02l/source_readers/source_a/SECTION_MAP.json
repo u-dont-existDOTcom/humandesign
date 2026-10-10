@@ -1,0 +1,533 @@
+{
+  "schema_version": "source-reader-map-v1",
+  "reader": "source_a",
+  "source_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_pdf_pages": 894,
+  "owned_start": {
+    "pdf_page": 292,
+    "printed_page": 258,
+    "inclusive_anchor": "DARIOT Abridged."
+  },
+  "owned_end": {
+    "pdf_page": 297,
+    "printed_page": 263,
+    "inclusive_anchor": "this is, when mistrust is of such like chances.",
+    "exclusive_next_heading": "Whether the Disease be in the right or left side or part of the Body of him that demands the Question or is Sick."
+  },
+  "excluded_before": "The prior paragraph on PDF292/printed258 ending shew death belongs to the preceding batch.",
+  "excluded_after": "The right/left heading and all following text belong to reader B.",
+  "normalization": "Long s is rendered s; physical line-break hyphenation is joined; familiar astrological glyphs are represented by Unicode equivalents. Spelling and uncertain grammar are not silently emended.",
+  "units": [
+    {
+      "unit_id": "SA-U001",
+      "unit_type": "heading",
+      "section": "DARIOT Abridged.",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "start_anchor": "DARIOT Abridged.",
+      "end_anchor": "DARIOT Abridged.",
+      "record_ids": [
+        "A001"
+      ],
+      "coverage": "The new governing heading, after the excluded prior paragraph ending shew death.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U002",
+      "unit_type": "complete_italic_introduction",
+      "section": "DARIOT Abridged.",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "start_anchor": "In regard I have ever affected",
+      "end_anchor": "then heretofore published.",
+      "record_ids": [
+        "A001"
+      ],
+      "coverage": "Complete four-line italic introduction: affinity for Dariot's method, abbreviation, attachment, and shorter presentation than previously published.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U003",
+      "unit_type": "heading",
+      "section": "If the Party be sicke of whom the Question is Demanded.",
+      "pdf_pages": [
+        293
+      ],
+      "printed_pages": [
+        259
+      ],
+      "start_anchor": "If the Party be sicke",
+      "end_anchor": "Demanded.",
+      "record_ids": [
+        "A002",
+        "A003",
+        "A004",
+        "A005",
+        "A006",
+        "A007",
+        "A008"
+      ],
+      "coverage": "Question of whether the party about whom the enquiry is made is sick.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U004",
+      "unit_type": "paragraph",
+      "section": "If the Party be sicke of whom the Question is Demanded.",
+      "pdf_pages": [
+        293
+      ],
+      "printed_pages": [
+        259
+      ],
+      "start_anchor": "The Significator of the Querent",
+      "end_anchor": "he is sick.",
+      "record_ids": [
+        "A002",
+        "A003",
+        "A004"
+      ],
+      "coverage": "Dariot marginal attribution; contrary sign nature, Mars/Cancer example, alternative cadent lord of ascendant with sixth emphasised.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U005",
+      "unit_type": "paragraph",
+      "section": "If the Party be sicke of whom the Question is Demanded.",
+      "pdf_pages": [
+        293
+      ],
+      "printed_pages": [
+        259
+      ],
+      "start_anchor": "A diurnall Planet being Significator",
+      "end_anchor": "(consideratis considerandis.)",
+      "record_ids": [
+        "A005",
+        "A006"
+      ],
+      "coverage": "Full adverse diurnal-significator sequence and qualified nocturnal extension.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U006",
+      "unit_type": "paragraph",
+      "section": "If the Party be sicke of whom the Question is Demanded.",
+      "pdf_pages": [
+        293
+      ],
+      "printed_pages": [
+        259
+      ],
+      "start_anchor": "When a Question was asked of me",
+      "end_anchor": "whether the Querent was ill or no.",
+      "record_ids": [
+        "A007"
+      ],
+      "coverage": "Lilly marginal attribution; general urine/without-urine enquiry practice, chart first, purpose of method.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U007",
+      "unit_type": "paragraph_fragment_with_continuing_conclusion",
+      "section": "If the Party be sicke of whom the Question is Demanded.",
+      "pdf_pages": [
+        293
+      ],
+      "printed_pages": [
+        259
+      ],
+      "start_anchor": "If the ascendant were not afflicted",
+      "end_anchor": "Lord of the sixt.",
+      "record_ids": [
+        "A008"
+      ],
+      "coverage": "Complete opening negative-scope paragraph; conclusion supplied by next paragraph.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U008",
+      "unit_type": "paragraph",
+      "section": "If the Party be sicke of whom the Question is Demanded.",
+      "pdf_pages": [
+        293
+      ],
+      "printed_pages": [
+        259
+      ],
+      "start_anchor": "Or if no Planet afflicted the sixt house",
+      "end_anchor": "which would presently be rectified.",
+      "record_ids": [
+        "A008"
+      ],
+      "coverage": "All remaining OR branches and full no-sickness/transient-distemper conclusion.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U009",
+      "unit_type": "heading",
+      "section": "Cause of the Disease inward or outward.",
+      "pdf_pages": [
+        293
+      ],
+      "printed_pages": [
+        259
+      ],
+      "start_anchor": "Cause of the Disease inward or outward.",
+      "end_anchor": "Cause of the Disease inward or outward.",
+      "record_ids": [
+        "A009",
+        "A010",
+        "A011",
+        "A012",
+        "A013",
+        "A014",
+        "A015",
+        "A016",
+        "A017",
+        "A018",
+        "A019",
+        "A020",
+        "A021"
+      ],
+      "coverage": "New cause-method subsection.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U010",
+      "unit_type": "cross_page_paragraph",
+      "section": "Cause of the Disease inward or outward.",
+      "pdf_pages": [
+        293,
+        294
+      ],
+      "printed_pages": [
+        259,
+        260
+      ],
+      "start_anchor": "The inward cause and condition of the Disease",
+      "end_anchor": "sixt, &c.",
+      "record_ids": [
+        "A009",
+        "A010"
+      ],
+      "coverage": "Dariot marginal attribution; complete inward-cause method continuing at top of printed260 and any-planet malignant qualification.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U011",
+      "unit_type": "paragraph",
+      "section": "Cause of the Disease inward or outward.",
+      "pdf_pages": [
+        294
+      ],
+      "printed_pages": [
+        260
+      ],
+      "start_anchor": "The outward cause is required",
+      "end_anchor": "as for example:",
+      "record_ids": [
+        "A011",
+        "A012",
+        "A013",
+        "A014"
+      ],
+      "coverage": "Complete outward source-selection, ascendant-lord strength, affliction/exclusions, not-well-not-perfectly-sick result, and house inference method.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U012",
+      "unit_type": "cross_page_paragraph_including_italic_close",
+      "section": "Cause of the Disease inward or outward.",
+      "pdf_pages": [
+        294,
+        295
+      ],
+      "printed_pages": [
+        260,
+        261
+      ],
+      "start_anchor": "If you find the Lord of the ascendant casually afflicted",
+      "end_anchor": "sufficient to this way of judicature.",
+      "record_ids": [
+        "A015",
+        "A016",
+        "A017",
+        "A018",
+        "A019",
+        "A020",
+        "A021"
+      ],
+      "coverage": "Lilly marginal attribution: full second/fifth/seventh-house illustrations, application/separation, magnitude/aspect comparison, capability/youth/gender qualifiers, no-sickness conclusion and complete italic experience/sufficiency close.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U013",
+      "unit_type": "heading",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        295
+      ],
+      "printed_pages": [
+        261
+      ],
+      "start_anchor": "Of the qualitie and nature of the Disease.",
+      "end_anchor": "Of the qualitie and nature of the Disease.",
+      "record_ids": [
+        "A022",
+        "A023",
+        "A024",
+        "A025",
+        "A026",
+        "A027",
+        "A028",
+        "A029",
+        "A030",
+        "A031",
+        "A032",
+        "A033",
+        "A034",
+        "A035",
+        "A036",
+        "A037",
+        "A038",
+        "A039",
+        "A040",
+        "A041",
+        "A042",
+        "A043",
+        "A044",
+        "A045",
+        "A046",
+        "A047",
+        "A048",
+        "A049",
+        "A050",
+        "A051",
+        "A052",
+        "A053",
+        "A054"
+      ],
+      "coverage": "New subsection covering disease quality/nature; ends before right/left heading at printed263.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U014",
+      "unit_type": "paragraph",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        295
+      ],
+      "printed_pages": [
+        261
+      ],
+      "start_anchor": "Although formerly I have briefly given directions herein",
+      "end_anchor": "equivolent to Poyson.",
+      "record_ids": [
+        "A022",
+        "A023",
+        "A024",
+        "A025",
+        "A026"
+      ],
+      "coverage": "Editorial expansion/learner method, chart/disease-significator selection, Saturn general list, full severe-fever alternative sequence, qualified suspected-poison possibilities.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U015",
+      "unit_type": "paragraph",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        295
+      ],
+      "printed_pages": [
+        261
+      ],
+      "start_anchor": "When ♄ is in Signes of the fiery Triplicity",
+      "end_anchor": "with extreame chilnesse and coldnesse.",
+      "record_ids": [
+        "A027",
+        "A028",
+        "A029"
+      ],
+      "coverage": "Saturn fiery usual fevers, water-sign cause, moist-planet strengthening, grosser/vitious matter, paroxysms/course/fear/cold qualifiers.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U016",
+      "unit_type": "paragraph",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        295
+      ],
+      "printed_pages": [
+        261
+      ],
+      "start_anchor": "When ♄ is in fixed Signes",
+      "end_anchor": "all manner of Gouts.",
+      "record_ids": [
+        "A030"
+      ],
+      "coverage": "Fixed-sign class with exactly three named examples and complete disease list.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U017",
+      "unit_type": "paragraph",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        296
+      ],
+      "printed_pages": [
+        262
+      ],
+      "start_anchor": "♄ being in moveable Signes",
+      "end_anchor": "yet the Disease continues a long time.",
+      "record_ids": [
+        "A031",
+        "A032"
+      ],
+      "coverage": "Moveable-sign flux/dropsy/tympanical matter and common-sign non-single-humour fluctuating yet long-lasting disease.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U018",
+      "unit_type": "paragraph",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        296
+      ],
+      "printed_pages": [
+        262
+      ],
+      "start_anchor": "♃ When he is author of the Sicknesse",
+      "end_anchor": "without rottennesse or store of putrifaction.",
+      "record_ids": [
+        "A033",
+        "A034",
+        "A035",
+        "A036",
+        "A037",
+        "A038"
+      ],
+      "coverage": "Full Jupiter disease-author description and moist/fire/air/earth variants, vein/sweating source prescription, and explicit negative qualification on fire-sign fever.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U019",
+      "unit_type": "paragraph",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        296
+      ],
+      "printed_pages": [
+        262
+      ],
+      "start_anchor": "When ♂ is joyned with the ☉",
+      "end_anchor": "by putrifaction of the blood.",
+      "record_ids": [
+        "A039"
+      ],
+      "coverage": "Mars joined Sun and distempered fever.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U020",
+      "unit_type": "paragraph",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        296
+      ],
+      "printed_pages": [
+        262
+      ],
+      "start_anchor": "If ♂ be significator of the Disease",
+      "end_anchor": "or ♂ in any of his dignities.",
+      "record_ids": [
+        "A040",
+        "A041"
+      ],
+      "coverage": "Mars role/fire/affliction targets with Saturn-dependent melancholy mixture and dignity gloss.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U021",
+      "unit_type": "paragraph",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        296
+      ],
+      "printed_pages": [
+        262
+      ],
+      "start_anchor": "When ♂ is in common Signes",
+      "end_anchor": "as it were boyling the Blood.",
+      "record_ids": [
+        "A042",
+        "A043",
+        "A044",
+        "A045",
+        "A046"
+      ],
+      "coverage": "Entire common-sign paragraph: discovery/course, time when it seems to leave, contrasting Saturn conditions, usual acute recurrence, critical-day direction dependency, and under-beams sixth/twelfth fiery fever.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U022",
+      "unit_type": "paragraph",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        297
+      ],
+      "printed_pages": [
+        263
+      ],
+      "start_anchor": "♂ being the cause of a Feaver and in ♌",
+      "end_anchor": "rotten Feavers arising from Fleagme.",
+      "record_ids": [
+        "A047",
+        "A048",
+        "A049",
+        "A050",
+        "A051",
+        "A052"
+      ],
+      "coverage": "Complete Mars-in-Leo and great-veins origin, Sun first-lying-down Saturn/Mars alternatives, Venus cause list and fiery one-day/Mars-qualified variants.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    },
+    {
+      "unit_id": "SA-U023",
+      "unit_type": "paragraph",
+      "section": "Of the qualitie and nature of the Disease.",
+      "pdf_pages": [
+        297
+      ],
+      "printed_pages": [
+        263
+      ],
+      "start_anchor": "When ☿ is unfortunate",
+      "end_anchor": "when mistrust is of such like chances.",
+      "record_ids": [
+        "A053",
+        "A054"
+      ],
+      "coverage": "Mercury full conditions/outcome list; separate ninth-in-sixth occult-cause sentence including final mistrust qualification. Ends immediately before the right/left heading.",
+      "status": "VISUALLY_READ_FROM_ORIGINAL_PDF_RENDER"
+    }
+  ],
+  "coverage_check": {
+    "all_record_ids_mapped": true,
+    "unit_count": 23,
+    "record_count": 54,
+    "all_owned_paragraphs_and_headings_accounted_for": true,
+    "semantic_status": "SOURCE_READER_ASSERTION; not independent evaluation"
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "schema_version": "source-b-hash-manifest-1",
+  "reader_role": "source_reader_B",
+  "parent_audit_status": "OPEN",
+  "freeze_state": "FULL-SOURCE OBSERVATIONS FROZEN BEFORE OTHER PRODUCER OR CANDIDATE INSPECTION",
+  "no_other_producer_or_candidate_outputs_inspected": true,
+  "root_is_sole_repository_writer": true,
+  "local_handoff_is_not_remote_completion": true,
+  "freeze_time": "No current timestamp recorded; parent-supplied original task start is metadata only.",
+  "original_task_start_supplied_by_parent": "2026-10-10T19:24:34+00:00",
+  "owned_write_root": "/workspace/scratch/43f75264c32e/b02l-workers/source_b",
+  "source_pdf": {
+    "path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+    "bytes": 141842963,
+    "sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "pages": 894,
+    "verification": "SHA256 streamed from the original file by this reader; PDF page count and byte size independently read with pdfinfo.",
+    "pdf_pages_one_based": [
+      297,
+      298,
+      299,
+      300,
+      301,
+      302
+    ],
+    "printed_pages": [
+      263,
+      264,
+      265,
+      266,
+      267,
+      268
+    ]
+  },
+  "content_files": [
+    {
+      "filename": "source_records.json",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/source_records.json",
+      "bytes": 84419,
+      "sha256": "3bdc03d9d6b29a8d957f683823fabc669b48c9fedcf30d8d2c4af6de56c5ca11",
+      "role": "frozen_source_reader_content"
+    },
+    {
+      "filename": "READING_NOTES.md",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/READING_NOTES.md",
+      "bytes": 16734,
+      "sha256": "29735b198f36dc264e9fdee21dc8b64c2e5e27470e5e6b89e121153eb16520f9",
+      "role": "frozen_source_reader_content"
+    },
+    {
+      "filename": "SECTION_MAP.json",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/SECTION_MAP.json",
+      "bytes": 10529,
+      "sha256": "d40ecf82290f77c3cc96a3bce0e6ed224f3e3078e5ccb12d3d4eb7738992e695",
+      "role": "frozen_source_reader_content"
+    },
+    {
+      "filename": "SOURCE_ISSUES.json",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/SOURCE_ISSUES.json",
+      "bytes": 19346,
+      "sha256": "eac741c76da9bf5b1c919be8a7d344e12588bc14d5e18b4ea91ff09f60c98214",
+      "role": "frozen_source_reader_content"
+    }
+  ],
+  "original_owned_page_renders": [
+    {
+      "filename": "pdf297.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/source-work/pdf297.png",
+      "bytes": 1724748,
+      "sha256": "180b21a87dfa80be6099cd0b6049745168cc3c0216cc824994896f0ae253caf6",
+      "role": "original_owned_page_render_inspected",
+      "pixel_dimensions": [
+        1055,
+        1427
+      ],
+      "pdf_page": 297,
+      "printed_page": 263,
+      "visual_inspection": "Full page opened at original detail before drafting."
+    },
+    {
+      "filename": "pdf298.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/source-work/pdf298.png",
+      "bytes": 1953839,
+      "sha256": "bd344f589289798baf8068a8fc8b029a156c183c2200c69ce44dd69e5086455e",
+      "role": "original_owned_page_render_inspected",
+      "pixel_dimensions": [
+        1055,
+        1427
+      ],
+      "pdf_page": 298,
+      "printed_page": 264,
+      "visual_inspection": "Full page opened at original detail before drafting."
+    },
+    {
+      "filename": "pdf299.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/source-work/pdf299.png",
+      "bytes": 1773188,
+      "sha256": "6fc3d58fe674699093325bb962613451aa6b4d5a4f5b519b1a0c90761c2149be",
+      "role": "original_owned_page_render_inspected",
+      "pixel_dimensions": [
+        1055,
+        1427
+      ],
+      "pdf_page": 299,
+      "printed_page": 265,
+      "visual_inspection": "Full page opened at original detail before drafting."
+    },
+    {
+      "filename": "pdf300.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/source-work/pdf300.png",
+      "bytes": 1735577,
+      "sha256": "8d218bb4dfc5cfa54be1804bb9d26f2076e00b44e7a1f5b796bdd8ab86bb2466",
+      "role": "original_owned_page_render_inspected",
+      "pixel_dimensions": [
+        1055,
+        1427
+      ],
+      "pdf_page": 300,
+      "printed_page": 266,
+      "visual_inspection": "Full page opened at original detail before drafting."
+    },
+    {
+      "filename": "pdf301.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/source-work/pdf301.png",
+      "bytes": 1699482,
+      "sha256": "5e6aedfb3d758c2aa8326b0d1626e33539508497aa86361154759c3a1d1fc760",
+      "role": "original_owned_page_render_inspected",
+      "pixel_dimensions": [
+        1055,
+        1427
+      ],
+      "pdf_page": 301,
+      "printed_page": 267,
+      "visual_inspection": "Full page opened at original detail before drafting."
+    },
+    {
+      "filename": "pdf302.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/source-work/pdf302.png",
+      "bytes": 1717526,
+      "sha256": "135f60f9e8ee310a667d36fe1460521479e060bf7f2eb6536f82ba17402e03c9",
+      "role": "original_owned_page_render_inspected",
+      "pixel_dimensions": [
+        1055,
+        1427
+      ],
+      "pdf_page": 302,
+      "printed_page": 268,
+      "visual_inspection": "Full page opened at original detail before drafting."
+    }
+  ],
+  "supplementary_reading_aids": [
+    {
+      "filename": "297-side.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/crops/297-side.png",
+      "bytes": 1236515,
+      "sha256": "359ca0887987cb612a75bf4b790f90ae20e33dea82de8df36c82452b6e3da7a8",
+      "role": "enlarged_owned_source_crop",
+      "pixel_dimensions": [
+        1440,
+        1010
+      ],
+      "substantive_new_source": false
+    },
+    {
+      "filename": "298-mind-bottom.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/crops/298-mind-bottom.png",
+      "bytes": 1063633,
+      "sha256": "6ae2199746087fb6bd4e860939cd7bc51af2400e10a12faa9d816e194e7373e4",
+      "role": "enlarged_owned_source_crop",
+      "pixel_dimensions": [
+        1410,
+        810
+      ],
+      "substantive_new_source": false
+    },
+    {
+      "filename": "299-mind-middle.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/crops/299-mind-middle.png",
+      "bytes": 1665256,
+      "sha256": "2f78383a784a92e0467414f5fc5dad0e2052fe9df05c11c727b46ee9a8daa3c2",
+      "role": "enlarged_owned_source_crop",
+      "pixel_dimensions": [
+        1536,
+        1250
+      ],
+      "substantive_new_source": false
+    },
+    {
+      "filename": "300-natal-sun-moon.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/crops/300-natal-sun-moon.png",
+      "bytes": 616811,
+      "sha256": "26e5dea1f421fff5839f739baf8011a42c955d4e95ba1e8c839caa66a26cea39",
+      "role": "enlarged_owned_source_crop",
+      "pixel_dimensions": [
+        1374,
+        504
+      ],
+      "substantive_new_source": false
+    },
+    {
+      "filename": "301-crisis.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/crops/301-crisis.png",
+      "bytes": 1065568,
+      "sha256": "7c5fe346f248ce56b6168fce03357aa159c53bad3b8d51d998e4f5dc8552b46c",
+      "role": "enlarged_owned_source_crop",
+      "pixel_dimensions": [
+        1504,
+        828
+      ],
+      "substantive_new_source": false
+    },
+    {
+      "filename": "context-pdf292.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/crops/context-pdf292.png",
+      "bytes": 1922300,
+      "sha256": "4be21ab7b5b0bdcd1cc1e75286c354a4efe95dc1ededc3308a39bfa2f5b516bb",
+      "role": "context_only_original_render",
+      "pixel_dimensions": [
+        1569,
+        2123
+      ],
+      "substantive_new_source": false
+    },
+    {
+      "filename": "context-pdf293.png",
+      "absolute_path": "/workspace/scratch/43f75264c32e/b02l-workers/source_b/crops/context-pdf293.png",
+      "bytes": 1803475,
+      "sha256": "bd1de2cdbbef41c6d7a9cb7c85aaa592a73aa914f53a922f2be07ededb98e360",
+      "role": "context_only_original_render",
+      "pixel_dimensions": [
+        1569,
+        2123
+      ],
+      "substantive_new_source": false
+    }
+  ],
+  "manifest_self_hash_excluded": true,
+  "manifest_self_hash_note": "The SHA256 of this manifest is reported separately in the completion handoff to avoid recursive self-hashing.",
+  "counts": {
+    "source_records": 47,
+    "sections": 6,
+    "source_issues": 27,
+    "content_files_hashed": 4,
+    "owned_page_renders_hashed": 6,
+    "supplementary_images_hashed": 7,
+    "actual_dated_enquiries": 0,
+    "charts_present": 0,
+    "independent_endpoints": 0,
+    "conditional_numerical_illustrations": 1
+  },
+  "copy_protocol": "Root may copy the frozen content files and this manifest, verify every content_files SHA256 at the destination, and preserve this original reader snapshot. Subsequent integration/evaluation is separate from these frozen source observations."
+}

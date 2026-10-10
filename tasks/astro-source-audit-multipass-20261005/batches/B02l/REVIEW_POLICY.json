@@ -1,0 +1,14 @@
+{
+  "batch": "B02l",
+  "initial_exhaustive_review_rounds": 1,
+  "changed_item_rounds_max": 2,
+  "full_span_source_first_freeze_required": true,
+  "candidate_includes": "records, source pages and errata/callback witnesses, helper code/tests/results, report, full claim ledger, inventories",
+  "candidate_excludes": "producer reasoning notes and reconciliation, prior evaluator verdicts, root confidence, other worker status/results summaries",
+  "diagnoses_frozen_before_reconciliation": true,
+  "reviewer_is_diagnostic_not_automatic_acceptance": true,
+  "acceptance_floor": "No unreported omitted source unit or unsupported delivered claim; explicit source ambiguities may remain visible.",
+  "stalled_disposition": "Retain uncertainty/withhold unsupported assertion, never call an unexamined omitted unit complete.",
+  "review_identity_limit": "Fresh context of same model family; no claim of cross-family review, independent clinical cohort, expert adjudication or IV&V.",
+  "list_agents_forbidden_for_evaluator": true
+}

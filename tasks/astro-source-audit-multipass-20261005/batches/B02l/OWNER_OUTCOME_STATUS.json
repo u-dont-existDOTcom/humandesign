@@ -1,0 +1,57 @@
+{
+  "batch": "B02l",
+  "parent_status": "OPEN",
+  "owner_request": "continue",
+  "parent_authority_path": "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+  "parent_authority_sha256": "04f1d246bd3c96dd03009ea6cc669f736be0c746112ef1a789404b0cc1050653",
+  "derived_contribution": "Complete next admitted Lilly source span, with full conditions, independent diagnosis, reproducible bounded operations, publication and usable delivery.",
+  "required_outcomes": [
+    {
+      "outcome": "Read and extract finite admitted original source span",
+      "relation": "contributes",
+      "current_evidence": "Root source-first image reading frozen; two independent producer segments and source-only evaluator active",
+      "gap": "Compile and adjudicate all records"
+    },
+    {
+      "outcome": "Preserve modifiers, disagreement and evidence limits",
+      "relation": "contributes",
+      "current_evidence": "Root source-first notes and unresolved issue identification",
+      "gap": "Records/register/report finalization"
+    },
+    {
+      "outcome": "Verify calculations and source claims without claiming prediction validation",
+      "relation": "verifies",
+      "current_evidence": "Scoped arithmetic/helper tests authored; not yet run",
+      "gap": "Run focused suite and exhaustive frozen-candidate check"
+    },
+    {
+      "outcome": "Preserve earlier sources, states, personal inputs and models",
+      "relation": "verifies",
+      "current_evidence": "1746 protected Git files and11 retained Lilly entries frozen",
+      "gap": "Exact post-publication comparison"
+    },
+    {
+      "outcome": "Durable publication, usable delivery and exact continuation",
+      "relation": "directly_satisfies_batch_boundary",
+      "current_evidence": "Owned remote branch created; Downloads and local handoff-folder preflight completed",
+      "gap": "Publish accepted files, deliver exact bytes and save Hermes boundary"
+    },
+    {
+      "outcome": "Remaining Lilly and multi-author corpus audit",
+      "relation": "not_addressed_by_this_batch",
+      "parent_remains_open": true,
+      "gap": "All unread corpus sections retained in parent PASS_PLAN"
+    }
+  ],
+  "non_satisfying_proxies": [
+    "acquisition without reading",
+    "passing source/arithmetic tests as predictive accuracy",
+    "Lilly abridgment as independent original Dariot collation",
+    "author memory as counted independent patient cohort",
+    "batch completion as entire XLIV or whole audit completion"
+  ],
+  "additional_mandatory_requirements": [],
+  "assurance_lane": "source-research with bounded independent source/claim check and exact research-artifact publication; no application runtime changes",
+  "proposed_terminal_state": "BATCH_COMPLETE_PARENT_OPEN only after existing authorized completed-batch pause boundary is evidenced",
+  "contract_comparison": "CONTRACT_VALID: current batch contributes to open source-audit parent and preserves unaddressed outcomes."
+}

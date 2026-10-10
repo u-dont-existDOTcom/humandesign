@@ -1,0 +1,123 @@
+{
+  "artifact": "evidence/Lilly-Dariot-Original-Source-Window.pdf",
+  "bytes": 2204671,
+  "sha256": "08016683e3e35294625bef7b31330c0187e1b5ffc762e1b4d48ae2b91ea8a26b",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "page_count": 14,
+  "pages": [
+    {
+      "window_page": 1,
+      "original_pdf_page": 292,
+      "printed_page": 258,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "d78e1343e8d2ebeef3d6c894c7d4fd3adc5c55d211f1ed93ca83b3a40d74f603"
+    },
+    {
+      "window_page": 2,
+      "original_pdf_page": 293,
+      "printed_page": 259,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "57436c95114072c102dd7e6c14658f1a79b63f7d343ea208d93718ec87ecff07"
+    },
+    {
+      "window_page": 3,
+      "original_pdf_page": 294,
+      "printed_page": 260,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "41b7f9f65b94c319895c00b09f92cb2b704d541e6b3a70281dc0ef9ed866f661"
+    },
+    {
+      "window_page": 4,
+      "original_pdf_page": 295,
+      "printed_page": 261,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "8d94862efbf486e56ba7d36c44c800295b0a5428e3662c0ef49064df75d20b99"
+    },
+    {
+      "window_page": 5,
+      "original_pdf_page": 296,
+      "printed_page": 262,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "a5b4a84f58592970423a7ebf285eb27b4d2b2b4cf2b850904b8d4d23d8c2dc69"
+    },
+    {
+      "window_page": 6,
+      "original_pdf_page": 297,
+      "printed_page": 263,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "e0870efa4bb2f6258a65e13c860fb735489c1e866bf374b41ad7091a46455a68"
+    },
+    {
+      "window_page": 7,
+      "original_pdf_page": 298,
+      "printed_page": 264,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "cf2ccca7676ad3eff4c70d2846f7fd2af93fba2979c68fd74782476ef9706378"
+    },
+    {
+      "window_page": 8,
+      "original_pdf_page": 299,
+      "printed_page": 265,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "8071031a20145d4c68d569cad9fdb2db10ad9071c65ccef0f86b2810ec78cef9"
+    },
+    {
+      "window_page": 9,
+      "original_pdf_page": 300,
+      "printed_page": 266,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "1d0cf32b1d0b39581b06c527dca78eef785b613e819ff929249b8fb5f4b299e0"
+    },
+    {
+      "window_page": 10,
+      "original_pdf_page": 301,
+      "printed_page": 267,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "81d7e5d18f1aeb0c59478b83d9fab98f633a7da66cd5de00411afc2afc6cf5bb"
+    },
+    {
+      "window_page": 11,
+      "original_pdf_page": 302,
+      "printed_page": 268,
+      "role": "main_span_with_boundary_context",
+      "render_pixels_identical": true,
+      "pixel_sha256": "567a009b0f11f382309ecbfda845b25bf06d38c79e84ead936c3f8d7777493b1"
+    },
+    {
+      "window_page": 12,
+      "original_pdf_page": 888,
+      "printed_page": "ERRATA",
+      "role": "errata",
+      "render_pixels_identical": true,
+      "pixel_sha256": "cda07a2924d6d09bbe0bec32c2c559d5a92b2a1bf9f8ac49648ffac3333015f1"
+    },
+    {
+      "window_page": 13,
+      "original_pdf_page": 277,
+      "printed_page": 243,
+      "role": "retained_prior_batch_callback",
+      "render_pixels_identical": true,
+      "pixel_sha256": "0196bb9897a274a98f149226e076649fbf525daebf35fffed07b9d2f86596cc4"
+    },
+    {
+      "window_page": 14,
+      "original_pdf_page": 283,
+      "printed_page": 249,
+      "role": "retained_prior_batch_callback",
+      "render_pixels_identical": true,
+      "pixel_sha256": "f562154bb994a9c6ddf67ad61f87f90beff1bdbbffebd6362f188673551fd76e"
+    }
+  ],
+  "scope_note": "Main extraction includes only PDF292 Dariot intro through PDF302 upper paragraph before Hermes; preceding and following text are boundary context. Errata and prior-batch timing callbacks are separately labelled; no new source record credit for prior pages.",
+  "test_type": "exact raster comparison of copied original pages, separate from focused tests and not predictive validation"
+}

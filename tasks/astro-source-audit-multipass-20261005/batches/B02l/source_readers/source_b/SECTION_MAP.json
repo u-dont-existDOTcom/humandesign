@@ -1,0 +1,315 @@
+{
+  "schema_version": "source-b-reading-map-1",
+  "reader_role": "source_reader_B",
+  "independent_evaluator": false,
+  "parent_audit_status": "OPEN",
+  "original_task_start_supplied_by_parent": "2026-10-10T19:24:34+00:00",
+  "new_current_time_not_recorded": true,
+  "source_pdf": {
+    "path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+    "sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "page_count_verified": 894,
+    "bytes_verified": 141842963,
+    "pdf_pages_are_one_based": true,
+    "printed_page_offset_in_owned_span": -34
+  },
+  "owned_span": {
+    "start": {
+      "pdf_page": 297,
+      "printed_page": 263,
+      "anchor": "Whether the Disease be in the right or left side or part of the Body",
+      "position": "Heading below the quality/nature-of-disease paragraphs."
+    },
+    "end": {
+      "pdf_page": 302,
+      "printed_page": 268,
+      "anchor": "Judgments of this House",
+      "position": "End of full upper bridge paragraph, immediately above the horizontal divider."
+    },
+    "included_original_pdf_pages": [
+      297,
+      298,
+      299,
+      300,
+      301,
+      302
+    ],
+    "exclusion_below_end": "Hermes Trismegistus upon the first Decumbiture of the Sick, including every paragraph below that heading."
+  },
+  "context_only": [
+    {
+      "pdf_page": 292,
+      "printed_page": 258,
+      "purpose": "Visually inspect Dariot Abridged heading and Lilly's statement that he annexes an abbreviated version of Dariot's sickness method.",
+      "records_extracted": 0
+    },
+    {
+      "pdf_page": 293,
+      "printed_page": 259,
+      "purpose": "Visually inspect explicit marginal Dariot/Lilly/Dariot switches to establish that the surrounding material mixes source and editor.",
+      "records_extracted": 0
+    }
+  ],
+  "normalization_policy": "Source anchors normalize long s to s, typographical ligatures, line-wrap word breaks and ordinary spacing; astronomical glyphs may be represented by their conventional English names or Unicode glyphs. Archaic spelling and substantive wording are preserved. Catchwords are not counted twice. No argument, aspect, planet, comparison, number, unit, or apparent contradiction is silently corrected.",
+  "sections": [
+    {
+      "section": "side_and_member",
+      "heading": "Whether the Disease be in the right or left side or part of the Body of him that demands the Question or is Sick.",
+      "pdf_pages": [
+        297,
+        298
+      ],
+      "printed_pages": [
+        263,
+        264
+      ],
+      "start_anchor": "When you finde the Lord of the sixt unfortunate or afflicted",
+      "end_anchor": "when the significator possesseth the lower degrees of the Sign",
+      "local_ids": [
+        "B001",
+        "B002",
+        "B003",
+        "B004",
+        "B005",
+        "B006"
+      ],
+      "coverage": "All text from the heading on PDF297 through the four-line member-degree continuation at the top of PDF298. The earlier quality/nature paragraphs above the heading on PDF297 are excluded."
+    },
+    {
+      "section": "body_mind_or_both",
+      "heading": "Whether the Disease be in the Body, Minde or both.",
+      "pdf_pages": [
+        298,
+        299
+      ],
+      "printed_pages": [
+        264,
+        265
+      ],
+      "start_anchor": "You must understand in the first place",
+      "end_anchor": "or upon some flying reports",
+      "local_ids": [
+        "B007",
+        "B008",
+        "B009",
+        "B010",
+        "B011",
+        "B012",
+        "B013",
+        "B014",
+        "B015",
+        "B016",
+        "B017",
+        "B018",
+        "B019",
+        "B020",
+        "B021",
+        "B022",
+        "B023",
+        "B024"
+      ],
+      "coverage": "All preliminary significator assignments, explanatory rationale, body/mind rules, Saturn/Jupiter contrast, solar affliction, comparison rules, moral descriptions, and Mercury clause. The sentence beginning if at the bottom of PDF298 continues at the top of PDF299."
+    },
+    {
+      "section": "nativity_eclipse_and_luminary_callbacks",
+      "heading": null,
+      "pdf_pages": [
+        299,
+        300
+      ],
+      "printed_pages": [
+        265,
+        266
+      ],
+      "start_anchor": "Over and above the many Directions formerly prescribed",
+      "end_anchor": "she shewes little danger",
+      "local_ids": [
+        "B025",
+        "B026",
+        "B027",
+        "B028",
+        "B029"
+      ],
+      "coverage": "All unheaded continuation after the Mercury clause, including the optional nativity callback, eclipse/conjunction and yearly-world-revolution references, natal infortune rising sign, close applying Moon-Sun conjunction, Aries/Leo mitigation, and twelve-degree statement."
+    },
+    {
+      "section": "crisis_or_critical_days",
+      "heading": "Of the Crysis, or dayes Criticall.",
+      "pdf_pages": [
+        300,
+        301
+      ],
+      "printed_pages": [
+        266,
+        267
+      ],
+      "start_anchor": "Sundry Astrologians have handled this part of Medicinall Astrology",
+      "end_anchor": "I found the Patient's mind much enlightned",
+      "local_ids": [
+        "B030",
+        "B031",
+        "B032",
+        "B033",
+        "B034",
+        "B035",
+        "B036",
+        "B037"
+      ],
+      "coverage": "All literature referral, first-bed/fallback time selection, lunar rectification, acute-only angular alterations, favorable/adverse crisis aspects, continued pain/medicine outcome at the top of PDF301, and the subsequent first-person adverse/favorable/aspect-to-Sun observations."
+    },
+    {
+      "section": "recovery_timing",
+      "heading": "How long ere the sick recover. [marginal heading on PDF301]",
+      "pdf_pages": [
+        301,
+        302
+      ],
+      "printed_pages": [
+        267,
+        268
+      ],
+      "start_anchor": "When I find that by God's blessing the sick party shall recover",
+      "end_anchor": "the Disease will vary in lesse time then two weeks",
+      "local_ids": [
+        "B038",
+        "B039",
+        "B040",
+        "B041",
+        "B042",
+        "B043",
+        "B044",
+        "B045"
+      ],
+      "coverage": "All prior-recovery/timing prerequisites, aspect degrees and both bodies' houses/signs, discretion, ordinary movable/day qualification, common-sign nonautomatic unit choice, all six ancient timing/equivalence lines, Moon factors at top of PDF302, ingress/dignity experience claim, and the 28-degree common-sign sixth-cusp example."
+    },
+    {
+      "section": "bridge_to_practical_figures_and_hermes",
+      "heading": null,
+      "pdf_pages": [
+        302
+      ],
+      "printed_pages": [
+        268
+      ],
+      "start_anchor": "I might give infinite rules",
+      "end_anchor": "as being necessary to the Judgments of this House",
+      "local_ids": [
+        "B046",
+        "B047"
+      ],
+      "coverage": "All remaining upper-paragraph material on PDF302: promised later practical figures/method, variety of judgment, sickness/health rationale, translation and insertion of the Hermes Iatromathematicks, its claimed esteem, and necessity to this house. Stops after House and before the horizontal divider."
+    }
+  ],
+  "counts": {
+    "records": 47,
+    "sections": 6,
+    "kinds": {
+      "general_rule": 31,
+      "author_experience": 6,
+      "dependency": 5,
+      "method": 4,
+      "illustration": 1
+    },
+    "attribution_labels": {
+      "ambiguous": 26,
+      "Lilly": 18,
+      "other": 3
+    }
+  },
+  "coverage_checks": {
+    "all_ids_contiguous_B001_through_B047": true,
+    "every_record_assigned_to_exactly_one_section": true,
+    "every_substantive_owned_paragraph_and_six_line_timing_table_accounted_for": true,
+    "cross_page_sentence_continuations_preserved": true,
+    "full_PDF302_upper_bridge_included": true,
+    "no_Hermes_body_records_extracted": true,
+    "no_other_producer_or_candidate_outputs_inspected": true
+  },
+  "evidence_inventory": {
+    "actual_dated_enquiries": {
+      "count": 0,
+      "records": []
+    },
+    "charts_figures_present_in_owned_span": {
+      "count": 0,
+      "records": []
+    },
+    "independently_documented_endpoints": {
+      "count": 0,
+      "records": []
+    },
+    "conditional_numerical_illustrations": {
+      "count": 1,
+      "records": [
+        "B045"
+      ],
+      "description": "28-degree common-sign sixth-cusp example with less-than-two-weeks variation; no date, chart, named person, or outcome record."
+    },
+    "forward_references_to_practical_figures": {
+      "count": 1,
+      "records": [
+        "B046"
+      ],
+      "description": "A Figure or two subsequent is a referral, not an extracted figure or verified case."
+    },
+    "nonexclusive_generic_experience_or_practice_groups": [
+      {
+        "records": [
+          "B005",
+          "B006"
+        ],
+        "description": "I ever finde this generall rule to hold true, followed by the member-degree continuation."
+      },
+      {
+        "records": [
+          "B031",
+          "B032",
+          "B033",
+          "B034"
+        ],
+        "description": "Crisis method/rules introduced as I have ever observed; no observation log."
+      },
+      {
+        "records": [
+          "B035"
+        ],
+        "description": "I usually observe and do not remember failure; unquantified retrospective experience claim."
+      },
+      {
+        "records": [
+          "B036"
+        ],
+        "description": "I use to pronounce describes a prognostic communication, not an independently measured endpoint."
+      },
+      {
+        "records": [
+          "B037"
+        ],
+        "description": "I found the patient's mind enlightened; generic reported observation, no case details."
+      },
+      {
+        "records": [
+          "B038",
+          "B039",
+          "B040",
+          "B043"
+        ],
+        "description": "Usual timing judgment and discretionary method, not a dated patient enquiry."
+      },
+      {
+        "records": [
+          "B044"
+        ],
+        "description": "I many times find ingress-related recovery or improvement; no denominator or endpoint record."
+      },
+      {
+        "records": [
+          "B046"
+        ],
+        "description": "The method I alwayes observed in a forward-reference bridge, not a success-rate dataset."
+      }
+    ],
+    "medical_validation_inferred": false,
+    "overlap_note": "Generic practice groups are descriptive and nonexclusive; they must not be added as independent trials or compared as case counts."
+  }
+}

@@ -1,0 +1,357 @@
+{
+  "not_new_records": true,
+  "records": [
+    {
+      "id": "LI.1647.II.XLIV.R1359",
+      "local_id": "A002",
+      "title": "That in the first place",
+      "kind": "method",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XLIV.opening",
+        "pdf_pages": [
+          277
+        ],
+        "printed_sequence_expected": [
+          243
+        ],
+        "visible_printed_labels": [
+          "243"
+        ],
+        "passage_anchor": "That in the first place",
+        "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+      },
+      "genre": "historical_horary_source",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly",
+      "source_statement": "Lilly first requires the exact time of first falling sick, as nearly as the hour can be obtained: when the person first became so ill or extremely oppressed that bed or repose was compelled.",
+      "prerequisites": [
+        {
+          "source_clauses": [
+            "Seeking the first-choice inception time for this sickness judgment."
+          ],
+          "condition_logic": {
+            "status": "source_explicit_non_executable",
+            "expression": "Use the nearest obtainable hour of first enforced bed or repose because of illness.",
+            "executable": false
+          },
+          "executable": false
+        }
+      ],
+      "qualifications_and_limits": [
+        "He expressly excludes the first moment the patient merely felt a smatch of illness."
+      ],
+      "source_fields": {
+        "id": "A002",
+        "chapter": "XLIV",
+        "section": "timing_and_observation",
+        "pdf_pages": [
+          277
+        ],
+        "printed_pages": [
+          243
+        ],
+        "visible_printed_labels": {
+          "277": "243"
+        },
+        "anchor": "That in the first place; not that moment; enforced to take his Bed, or to repose",
+        "kind": "method",
+        "conditions": [
+          "Seeking the first-choice inception time for this sickness judgment."
+        ],
+        "condition_logic": {
+          "status": "source_explicit_non_executable",
+          "expression": "Use the nearest obtainable hour of first enforced bed or repose because of illness.",
+          "executable": false
+        },
+        "assertion": "Lilly first requires the exact time of first falling sick, as nearly as the hour can be obtained: when the person first became so ill or extremely oppressed that bed or repose was compelled.",
+        "exceptions": [
+          "He expressly excludes the first moment the patient merely felt a smatch of illness."
+        ],
+        "uncertainty": [],
+        "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+        "dependencies": [
+          "A001"
+        ]
+      },
+      "source_reader": "A",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "related_record_ids": [
+        "LI.1647.II.XLIV.R1358"
+      ],
+      "external_dependency_references": []
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1360",
+      "local_id": "A003",
+      "title": "Secondly, if that cannot be had",
+      "kind": "method",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XLIV.opening",
+        "pdf_pages": [
+          277
+        ],
+        "printed_sequence_expected": [
+          243
+        ],
+        "visible_printed_labels": [
+          "243"
+        ],
+        "passage_anchor": "Secondly, if that cannot be had",
+        "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+      },
+      "genre": "historical_horary_source",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly",
+      "source_statement": "Lilly next accepts the time when the sick person's urine was first carried to somebody to enquire about the disease; that somebody need not be a physician.",
+      "prerequisites": [
+        {
+          "source_clauses": [
+            "The first-choice time in A002 cannot be obtained."
+          ],
+          "condition_logic": {
+            "status": "source_explicit_non_executable",
+            "expression": "Fallback 2 applies only when fallback 1's preferred time is unavailable.",
+            "executable": false
+          },
+          "executable": false
+        }
+      ],
+      "qualifications_and_limits": [],
+      "source_fields": {
+        "id": "A003",
+        "chapter": "XLIV",
+        "section": "timing_and_observation",
+        "pdf_pages": [
+          277
+        ],
+        "printed_pages": [
+          243
+        ],
+        "visible_printed_labels": {
+          "277": "243"
+        },
+        "anchor": "Secondly, if that cannot be had; whether the party enquired of was Physitian or not",
+        "kind": "method",
+        "conditions": [
+          "The first-choice time in A002 cannot be obtained."
+        ],
+        "condition_logic": {
+          "status": "source_explicit_non_executable",
+          "expression": "Fallback 2 applies only when fallback 1's preferred time is unavailable.",
+          "executable": false
+        },
+        "assertion": "Lilly next accepts the time when the sick person's urine was first carried to somebody to enquire about the disease; that somebody need not be a physician.",
+        "exceptions": [],
+        "uncertainty": [],
+        "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+        "dependencies": [
+          "A002"
+        ]
+      },
+      "source_reader": "A",
+      "unresolved_ids": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "related_record_ids": [
+        "LI.1647.II.XLIV.R1359"
+      ],
+      "external_dependency_references": []
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1361",
+      "local_id": "A004",
+      "title": "Thirdly, if no such thing can be had",
+      "kind": "method",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XLIV.opening",
+        "pdf_pages": [
+          277
+        ],
+        "printed_sequence_expected": [
+          243
+        ],
+        "visible_printed_labels": [
+          "243"
+        ],
+        "passage_anchor": "Thirdly, if no such thing can be had",
+        "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+      },
+      "genre": "historical_horary_source",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly",
+      "source_statement": "Lilly's third fallback is the physician's own first speaking with or access to the patient, or the time the urine was first brought to that physician.",
+      "prerequisites": [
+        {
+          "source_clauses": [
+            "The prior timing evidence cannot be obtained."
+          ],
+          "condition_logic": {
+            "status": "source_explicit_non_executable",
+            "expression": "Take first physician speech with or access to the patient, or first urine delivery to that physician; no internal ranking among these alternatives is supplied.",
+            "executable": false
+          },
+          "executable": false
+        }
+      ],
+      "qualifications_and_limits": [
+        "U-A15"
+      ],
+      "source_fields": {
+        "id": "A004",
+        "chapter": "XLIV",
+        "section": "timing_and_observation",
+        "pdf_pages": [
+          277
+        ],
+        "printed_pages": [
+          243
+        ],
+        "visible_printed_labels": {
+          "277": "243"
+        },
+        "anchor": "Thirdly, if no such thing can be had; his owne first speaking with, or accesse to the Patient",
+        "kind": "method",
+        "conditions": [
+          "The prior timing evidence cannot be obtained."
+        ],
+        "condition_logic": {
+          "status": "source_explicit_non_executable",
+          "expression": "Take first physician speech with or access to the patient, or first urine delivery to that physician; no internal ranking among these alternatives is supplied.",
+          "executable": false
+        },
+        "assertion": "Lilly's third fallback is the physician's own first speaking with or access to the patient, or the time the urine was first brought to that physician.",
+        "exceptions": [],
+        "uncertainty": [
+          "U-A15"
+        ],
+        "scope": "Historical sickness horary/decumbiture source content in Lilly, Chapter XLIV; no medical advice, person-specific inference, or predictive validation.",
+        "dependencies": [
+          "A002",
+          "A003"
+        ]
+      },
+      "source_reader": "A",
+      "unresolved_ids": [
+        "U-A15"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "related_record_ids": [
+        "LI.1647.II.XLIV.R1359",
+        "LI.1647.II.XLIV.R1360"
+      ],
+      "external_dependency_references": []
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1438",
+      "local_id": "B008",
+      "title": "so many Moneth, Weeks or Dayes",
+      "kind": "timing_method",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XLIV.opening",
+        "pdf_pages": [
+          283
+        ],
+        "printed_sequence_expected": [
+          249
+        ],
+        "visible_printed_labels": [
+          "249"
+        ],
+        "passage_anchor": "so many Moneth, Weeks or Dayes",
+        "anchor_note": "Locating phrase with long-s, spacing, and planet/sign glyph names normalized; not a diplomatic transcription. Table row identity is retained in source_fields.lookup_key."
+      },
+      "genre": "historical_horary_source",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_attribution": "Lilly, Chapter XLIV",
+      "source_statement": "Lilly directs counting how many degrees the malevolent planet lacks before leaving the sign, then judging that many months, weeks, or days according to the sign’s nature and quality.",
+      "prerequisites": [
+        {
+          "source_clauses": [
+            "The preceding sixth-house unfortunate-planet sign-exit configuration applies.",
+            "The question asks when or how long before the disease alters."
+          ],
+          "condition_logic": {
+            "status": "preserved_source_prose",
+            "expression": "C1 AND C2",
+            "executable": false
+          },
+          "executable": false
+        }
+      ],
+      "qualifications_and_limits": [
+        "No determinate month/week/day selection rule is supplied in this passage.",
+        "No rounding or partial-degree rule is supplied."
+      ],
+      "source_fields": {
+        "id": "B008",
+        "chapter": "XLIV",
+        "section": "Signes of a long or short Sicknesse (continuation)",
+        "pdf_pages": [
+          283
+        ],
+        "printed_pages": [
+          249
+        ],
+        "visible_printed_labels": [
+          "249"
+        ],
+        "anchor": "so many Moneth, Weeks or Dayes",
+        "kind": "timing_method",
+        "conditions": [
+          "The preceding sixth-house unfortunate-planet sign-exit configuration applies.",
+          "The question asks when or how long before the disease alters."
+        ],
+        "condition_logic": {
+          "status": "preserved_source_prose",
+          "expression": "C1 AND C2",
+          "executable": false
+        },
+        "assertion": "Lilly directs counting how many degrees the malevolent planet lacks before leaving the sign, then judging that many months, weeks, or days according to the sign’s nature and quality.",
+        "exceptions": [],
+        "uncertainty": [
+          "No determinate month/week/day selection rule is supplied in this passage.",
+          "No rounding or partial-degree rule is supplied."
+        ],
+        "scope": "historical horary source only",
+        "dependencies": [
+          "B007"
+        ],
+        "attribution": "Lilly, Chapter XLIV"
+      },
+      "source_reader": "B",
+      "unresolved_ids": [
+        "U-B03"
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "related_record_ids": [
+        "LI.1647.II.XLIV.R1437"
+      ],
+      "external_dependency_references": []
+    }
+  ],
+  "original_pages_re_read_this_turn": [
+    277,
+    283
+  ],
+  "comparison_scope": "Local time-origin hierarchies and timing-unit discretion; no global rule override."
+}

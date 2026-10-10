@@ -1,0 +1,27 @@
+{
+  "schema": "source-first-freeze-v1",
+  "stage": "source-only reconstruction frozen before candidate exposure",
+  "task_start_metadata_as_provided": "2026-10-10T19:24:34+00:00",
+  "no_fabricated_completion_timestamp": true,
+  "source_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_pdf_pages": 894,
+  "scope": "PDF292/printed258 DARIOT Abridged plus complete italic introduction through complete PDF302/printed268 upper paragraph ending Judgments of this House; stop above divider; Chapter XLIV remains incomplete.",
+  "outputs": [
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/SOURCE_FIRST_NOTES.md",
+      "role": "frozen source-only output",
+      "sha256": "5371162fb0bb272b2563dc11f4ca8a833b0b002ed45608f332b4d9c62c8bfbd9",
+      "bytes": 96465
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/SOURCE_FIRST_MAP.json",
+      "role": "frozen source-only output",
+      "sha256": "ad776cf289b97ea3c7fa8fd1b8d2e8ad424ae86d94d3f71594c79aeae8ba1e00",
+      "bytes": 164424
+    }
+  ],
+  "candidate_exposure": "none",
+  "independence_limit": "same-family context independence, not cross-family/expert/IV&V",
+  "next_authorized_stage": "Await separately supplied frozen candidate and claim ledger, then one exhaustive diagnostic source/claim pass and no more than two changed-item repair passes.",
+  "no_accuracy_claim": true
+}

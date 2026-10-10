@@ -1,0 +1,90 @@
+{
+  "copied_semantic_files": 13,
+  "files": [
+    {
+      "worker": "source_a",
+      "destination": "source_readers/source_a/source_records.json",
+      "bytes": 106192,
+      "sha256": "96ced7d74ca21363071343f621d73fb8ccca5397546b6c4cc690293248c8fedf"
+    },
+    {
+      "worker": "source_a",
+      "destination": "source_readers/source_a/READING_NOTES.md",
+      "bytes": 10805,
+      "sha256": "fb00453f6148782cb4dcacf0e07a7914dbdc0c6e382b8cb4b60401cd197a9d44"
+    },
+    {
+      "worker": "source_a",
+      "destination": "source_readers/source_a/SECTION_MAP.json",
+      "bytes": 16162,
+      "sha256": "e24433b24db995ce1afdedc8d527098f898e1fbd547a363839015b72cd8c8d82"
+    },
+    {
+      "worker": "source_a",
+      "destination": "source_readers/source_a/SOURCE_ISSUES.json",
+      "bytes": 10927,
+      "sha256": "53e86a9daee9991cdafd6b62b2754f8944a1bfb211272a7d8613e1324b3e39fa"
+    },
+    {
+      "worker": "source_a",
+      "destination": "source_readers/source_a/HASH_MANIFEST.json",
+      "bytes": 6135,
+      "sha256": "aa1a058607db8c9af06a21f3c25011ac929b4a7d71d5e42b5244f28db3da5f12"
+    },
+    {
+      "worker": "source_b",
+      "destination": "source_readers/source_b/source_records.json",
+      "bytes": 84419,
+      "sha256": "3bdc03d9d6b29a8d957f683823fabc669b48c9fedcf30d8d2c4af6de56c5ca11"
+    },
+    {
+      "worker": "source_b",
+      "destination": "source_readers/source_b/READING_NOTES.md",
+      "bytes": 16734,
+      "sha256": "29735b198f36dc264e9fdee21dc8b64c2e5e27470e5e6b89e121153eb16520f9"
+    },
+    {
+      "worker": "source_b",
+      "destination": "source_readers/source_b/SECTION_MAP.json",
+      "bytes": 10529,
+      "sha256": "d40ecf82290f77c3cc96a3bce0e6ed224f3e3078e5ccb12d3d4eb7738992e695"
+    },
+    {
+      "worker": "source_b",
+      "destination": "source_readers/source_b/SOURCE_ISSUES.json",
+      "bytes": 19346,
+      "sha256": "eac741c76da9bf5b1c919be8a7d344e12588bc14d5e18b4ea91ff09f60c98214"
+    },
+    {
+      "worker": "source_b",
+      "destination": "source_readers/source_b/HASH_MANIFEST.json",
+      "bytes": 9059,
+      "sha256": "1c15d8f1c25cbf316a753f815b670cf24db48677a83fad351cf030db1b1fe077"
+    },
+    {
+      "worker": "independent",
+      "destination": "independent_review/source_first/SOURCE_FIRST_NOTES.md",
+      "bytes": 96465,
+      "sha256": "5371162fb0bb272b2563dc11f4ca8a833b0b002ed45608f332b4d9c62c8bfbd9"
+    },
+    {
+      "worker": "independent",
+      "destination": "independent_review/source_first/SOURCE_FIRST_MAP.json",
+      "bytes": 164424,
+      "sha256": "ad776cf289b97ea3c7fa8fd1b8d2e8ad424ae86d94d3f71594c79aeae8ba1e00"
+    },
+    {
+      "worker": "independent",
+      "destination": "independent_review/source_first/SOURCE_FIRST_FREEZE.json",
+      "bytes": 1437,
+      "sha256": "710faa2f1e25b7d0ea235cdf15273d7b76178e3c75e9061048ce7877fbe34c0d"
+    }
+  ],
+  "worker_manifest_all_entries_verified": {
+    "source_a": 22,
+    "source_b": 17
+  },
+  "selection": "Frozen semantic records/notes/maps/issues and manifests. Redundant private-worker render/crop files are inventoried in their original manifests but not duplicated; the full source window and selected root crops accompany this packet.",
+  "independent_notes_access": "Root copied exact bytes without reading the independent map/notes before candidate freeze.",
+  "verification_note": "Source A uses files/path/size_bytes; source B uses content_files, original_owned_page_renders and supplementary_reading_aids with absolute_path/bytes. Both schemas were explicitly traversed."
+}
