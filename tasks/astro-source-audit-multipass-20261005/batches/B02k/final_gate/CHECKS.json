@@ -1,0 +1,633 @@
+{
+  "checks": [
+    {
+      "schema_version": 1,
+      "phase": "retrieval",
+      "results": [
+        {
+          "rule_id": "uda.bootstrap.live-root",
+          "obligation_id": "live-root-refetch",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "Current-turn bootstrap fetched live UDA main before substantive research at d6190a06fe16049d998b4a9c78977ceaecdef1b9. UDA_STEERING_REFRESH.json records another live root and index retrieval after the owner continued; latest af8d29833f9e1e03156c0df5487160aa8316c896 has the identical root, index and selected controls.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.clock-cadence",
+          "obligation_id": "first-reading",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "ACTIVE_CONTRACT.json records the ongoing turn first-time basis as visible sent-time2026-10-10T15:42:35+00:00. Later owner continue metadata is steering, not a restart or a substitute hidden-provider timestamp.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.instruction-activation",
+          "obligation_id": "open-index-every-task",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "Current-turn LESSON-INDEX.md and applicable canonical patterns were read. On owner steering, live root/index were fetched; UDA_STEERING_REFRESH.json proves unchanged root/index/selected pattern blobs and no applicable new project suggestion.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.instruction-activation",
+          "obligation_id": "resolve-covered-dependencies",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The current UDA task-time script compiled the declared task envelope into UDA_COMPILED_CONTRACT.json: usable=true,32 selected rules and0 unresolved. Canonical prose was also read; source, whole-argument, independence, publication, output and assurance rules were applied in their actual artifacts.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        }
+      ],
+      "admission": "ADMITTED"
+    },
+    {
+      "schema_version": 1,
+      "phase": "reasoning",
+      "results": [
+        {
+          "rule_id": "uda.active-contract.boundary-binding",
+          "obligation_id": "bind-obligation-to-destination",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "ACTIVE_CONTRACT.json binds source interpretation, genre/exposure, bounded calculations, independent diagnosis, publication/delivery and preservation/continuation to root, source readers and evaluator, their artifacts, trigger, due phase, failure and repair. UDA_COMPILED_CONTRACT.json binds the37 semantic and2 mechanical obligations to destinations; this receipt system records application evidence rather than proving semantic judgments.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.continuation.open-outcome",
+          "obligation_id": "continue-open-authorized-work",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The next authorized frontier was actually read and extracted:192 records from the full XLIV opening block, with reference implementation, source/data receipts and isolated publication. Parent multi-author outcome remains OPEN and is not replaced by test success.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.followup.owner-goal-rebind",
+          "obligation_id": "rebind-followup-to-owner-outcome",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "ACTIVE_CONTRACT.json and OWNER_OUTCOME_STATUS.json preserve the original continued source-book research, parent OPEN status, remaining Lilly/multi-author gap and this source-block contribution. Delegation was to source reading, source/candidate checking, bounded helpers and exact publication, all within that gap.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.followup.owner-goal-rebind",
+          "obligation_id": "classify-added-requirement-necessity",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The existing source-audit authority requires faithful source extraction and usable delivery. Tests cover the added bounded helpers; original-image and independent claim checks are existing provenance controls. No new empirical benchmark, astronomical reconstruction, clinical validation, universal-policy rewrite or cross-family gate was imposed.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.followup-derivation",
+          "obligation_id": "rebind-before-author-launch-accept",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The parent audit remains OPEN, and each child is tied to a concrete source, implementation or delivery gap in ACTIVE_CONTRACT.json. REVIEW_POLICY.json restates the pre-existing bounded review and non-statistical source-adjudication role; no assistant-created stronger gate changes root authority.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        }
+      ],
+      "admission": "ADMITTED"
+    },
+    {
+      "schema_version": 1,
+      "phase": "pre-action",
+      "results": [
+        {
+          "rule_id": "uda.compaction.resume-reconciliation",
+          "obligation_id": "resume-reconciliation-at-boundary",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "Resumed from exact B02j dated checkpoint and base094fc89 rather than historical CURRENT; checked local working state and current Git refs. After compaction, checked the live files and running agent boundaries. An interrupted independent reader was resumed on the unchanged frozen candidate, completing the same initial pass.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.coordination",
+          "obligation_id": "choose-coordinated-route",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "One isolated HumanDesign branch and sole root writer; source readers and evaluator worked in private directories; independent source-first freeze preceded candidate access; separate code audit after disclosed exposure; Git writes serialized with expected SHA and force=false.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.followup-derivation",
+          "obligation_id": "revalidate-first-added-control",
+          "status": "NOT_APPLICABLE",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "No assistant-added control disabled a previously valid owner-aligned route. Shell Git credential failure was transport-specific and the already-authorized Git-data route was used. The later exposure was disclosed and checked within the existing independence requirement.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false,
+          "not_applicable_reason": "No assistant-added control disabled a previously valid owner-aligned route. Shell Git credential failure was transport-specific and the already-authorized Git-data route was used. The later exposure was disclosed and checked within the existing independence requirement."
+        },
+        {
+          "rule_id": "uda.kernel.followup-derivation",
+          "obligation_id": "actual-runnable-method",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The actual run used the exact source hash, admitted277–292 span and reference-only genre. Producer source notes were frozen before compilation; independent source notes before candidate access. Helpers operated on declared source predicates/exact values, with missing inputs retained and no person data or model fitting.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.operation-commitments",
+          "obligation_id": "keep-promised-operation-open",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "Original16-page source comparison,192 records, bounded helpers/arithmetic,42 full report checks, published Git readback,137 extracted payload hashes,33 extracted tests and all3 owner files have actual receipts. No promised operation was replaced by preparation alone.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.operational-references",
+          "obligation_id": "plain-language-first",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The literal final leads with the completed sixth-house source block, useful files and findings. Counts explain their evidence class. The short publication revision appears only as locating metadata at the end.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.outbound-links",
+          "obligation_id": "exact-current-destination",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "SOURCE_LINK_CHECK.json records exact current successful official Wellcome destination resolution before delivery. All3 absolute sandbox files were re-read against the published delivery manifest, and owner downloads returned HTTP200 and equal disk bytes. Historical frozen locator strings are preserved as provenance.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.owner-input-continuation",
+          "obligation_id": "resume-after-input",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The owner said continue while this batch was active. UDA_STEERING_REFRESH.json records the same scope, and execution continued into publication, verification and delivery preparation without acknowledgment-only stopping or routine permission questions.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.owner-interaction",
+          "obligation_id": "minimize-owner-choice",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "Root selected routine source boundaries under the existing batch pause contract, repaired source/helper defects, used available authorized publication and delivery routes, and did not ask the owner to choose implementation details or repeat permission.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.owner-interaction",
+          "obligation_id": "consolidate-confirmations",
+          "status": "NOT_APPLICABLE",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "No new owner decision, irreversible-scope change, recipient, spending boundary or required human confirmation arose. The current delivery and publication route stayed within prior authorization.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false,
+          "not_applicable_reason": "No new owner decision, irreversible-scope change, recipient, spending boundary or required human confirmation arose. The current delivery and publication route stayed within prior authorization."
+        },
+        {
+          "rule_id": "uda.kernel.target-recovery",
+          "obligation_id": "identity-and-topology-before-escalation",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "Authorized HumanDesign Git-data fallback succeeded after shell credential failure; exact branch/source identity verified. OS-resolved owner Téléchargements preflight succeeded without a new authority request. Only nonprivate destination metadata is persisted.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.review.acceptance-floors",
+          "obligation_id": "acceptance-floors-at-boundary",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "All192 original-source records,42 whole report units and27 table rows passed; zero unmatched report claims or required candidate changes. ACCEPTANCE.json retains source ambiguities and review exposure. The source-fidelity floor is met by bounded source adjudication, not by treating reviewer flags as truth.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.review.change-scope",
+          "obligation_id": "change-scope-at-boundary",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "All44 candidate files,192 entire record hashes,42 entire ledger-item hashes,19 source-image dependencies and configuration hashes matched unchanged at acceptance. Zero changed-item cycles were needed. Added publication/acceptance receipts do not mutate the reviewed source/report/code inputs.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.review.declared-authority",
+          "obligation_id": "declared-authority-at-boundary",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The owner/project source-fidelity and preservation/delivery gates remain intact. Review findings are diagnostic and adjudicated against the source. No gate was lowered to manufacture acceptance, no new reviewer/model superiority claim or cross-family validation is made.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.review.failure-repair",
+          "obligation_id": "failure-repair-at-boundary",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "Two earlier producer helper defects were repaired before candidate freeze with retained diagnoses and targeted reconciliation. Later incidental evaluator exposure was immediately disclosed; source-first files remain unchanged and a fresh code context received none of that summary. Acceptance and final prose do not claim the later main comparison was fully blind.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.review.false-failure",
+          "obligation_id": "false-failure-at-boundary",
+          "status": "NOT_APPLICABLE",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "This is a finite source-adjudicated audit, not a scaled automatic reviewer-flag acceptance pipeline. No known-correct probabilistic pilot exists and no false-failure rate or automatic zero-flag probability is asserted. Primary-image adjudication decides findings; reviewer flags alone do not accept or reject units. The explicit source-fidelity gate remains required.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false,
+          "not_applicable_reason": "This is a finite source-adjudicated audit, not a scaled automatic reviewer-flag acceptance pipeline. No known-correct probabilistic pilot exists and no false-failure rate or automatic zero-flag probability is asserted. Primary-image adjudication decides findings; reviewer flags alone do not accept or reject units. The explicit source-fidelity gate remains required."
+        },
+        {
+          "rule_id": "uda.review.repair-bound",
+          "obligation_id": "repair-bound-at-boundary",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "ACTIVE_CONTRACT.json, the source-first EVALUATION_CONFIG and frozen candidate fixed1 initial exhaustive pass plus at most2 changed-item repair cycles before candidate evaluation. The interrupted reader resumes the same initial pass; no extra pass or enlarged ceiling is admitted.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        }
+      ],
+      "admission": "ADMITTED"
+    },
+    {
+      "schema_version": 1,
+      "phase": "handoff",
+      "results": [
+        {
+          "rule_id": "uda.kernel.artifact-delivery",
+          "obligation_id": "usable-delivery-before-completion",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "PACKET_USABILITY.json records actual extraction, all137 payload hashes plus the separate manifest, and33 tests with no errors/failures. DELIVERY_RECEIPT.json records three exact-commit HTTP200 downloads, disk equality and actual exit0 in OS-resolved Téléchargements. Direct sandbox paths also match.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.output-budget",
+          "obligation_id": "file-for-long-reusable-output",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The complete3184-word report is a delivered file with the complete record/code/review packet and separate continuation handoff. The literal chat is below8000 characters and gives direct verified file links.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        }
+      ],
+      "admission": "ADMITTED"
+    },
+    {
+      "schema_version": 1,
+      "phase": "persistence",
+      "results": [
+        {
+          "rule_id": "uda.continuity.step-checkpoint",
+          "obligation_id": "save-completed-step",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "Source checkpoints, all frozen reader/reviewer files, acceptance, arithmetic, tests, actual archive and delivery receipts were published. Exact closeout revision c444d4596a59bc79dad59e93e72404524c6e8032 was fetched and matched; earlier checkpoints remain preserved.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.review.cycle-escalation",
+          "obligation_id": "cycle-escalation-at-boundary",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "REVIEW_CYCLE_LEDGER.json preserves one initial exhaustive evaluation, zero required candidate corrections, zero repair cycles, no stall and no withheld items. The full initial diagnosis and all item-level judgments are immutable and published.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.review.item-degradation",
+          "obligation_id": "item-degradation-at-boundary",
+          "status": "NOT_APPLICABLE",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "No repair exhaustion, stall, unsupported-item withholding or missing source unit occurred. Genuine source ambiguities remain explicitly qualified records, not hidden omission gaps.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false,
+          "not_applicable_reason": "No repair exhaustion, stall, unsupported-item withholding or missing source unit occurred. Genuine source ambiguities remain explicitly qualified records, not hidden omission gaps."
+        }
+      ],
+      "admission": "ADMITTED"
+    },
+    {
+      "schema_version": 1,
+      "phase": "publication",
+      "results": [],
+      "admission": "ADMITTED"
+    },
+    {
+      "schema_version": 1,
+      "phase": "final-delivery",
+      "results": [
+        {
+          "rule_id": "uda.compaction.completion-closeout",
+          "obligation_id": "completion-closeout-at-boundary",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "ACCEPTANCE.json, FINAL_PUBLICATION_RECEIPT.json, FINAL_INTEGRATION_READBACK.json, PACKET_USABILITY.json and DELIVERY_RECEIPT.json prove the completed admitted block. OWNER_OUTCOME_STATUS.json records ALLOW: SUBTASK_COMPLETE_PARENT_OPEN. The literal final retains XLIV and the wider audit as open.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.continuity.turn-end-handoff",
+          "obligation_id": "save-turn-end-handoff",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The unchanged CONTINUE_HANDOFF.md and new dated B02k state preserve PDF292/printed258, DARIOT heading plus full italic introduction, then PDF293 and next R1550. The handoff was published and downloaded with exact matching bytes. No background execution is claimed.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.final.timestamp",
+          "obligation_id": "final-first-line-timestamp",
+          "status": "PASS",
+          "evidence": "2026-10-10 17:09:34 Africa/Nouakchott (UTC+0)."
+        },
+        {
+          "rule_id": "uda.final.timestamp",
+          "obligation_id": "final-elapsed-time",
+          "status": "PASS",
+          "evidence": {
+            "clock_start": "2026-10-10T15:42:35+00:00",
+            "clock_end": "2026-10-10T17:09:34+00:00",
+            "reported_seconds": 5219,
+            "actual_seconds": 5219.0,
+            "first_line_matches_end": true
+          }
+        },
+        {
+          "rule_id": "uda.kernel.clock-cadence",
+          "obligation_id": "two-read-cadence",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "The visible original task start15:42:35UTC is retained across owner steering. No root mid-task clock read occurred. The final reading came from shell date -u immediately before this literal-output assembly. final_gate/CLOCK_RECEIPT.json records both bases and exact elapsed seconds.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.kernel.continuation",
+          "obligation_id": "execute-open-frontier",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "All admitted source, review, publication, archive and owner-delivery work is complete. Existing PASS_PLAN pause_contract SHA25604f1d246bd3c96dd03009ea6cc669f736be0c746112ef1a789404b0cc1050653 permits returning at a completed saved batch. The parent remains OPEN with the exact Dariot continuation; no assistant-created scope cancels it.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.owner-outcome.child-parent-closure",
+          "obligation_id": "child-parent-closure-at-boundary",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "OWNER_OUTCOME_STATUS.json and the literal final distinguish this completed source contribution from the OPEN multi-author parent and incomplete XLIV. The owner-authorized completed-batch pause is evidenced; no whole-book or predictive-completion claim is made.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        },
+        {
+          "rule_id": "uda.owner-outcome.terminal-evidence",
+          "obligation_id": "terminal-evidence-at-boundary",
+          "status": "PASS",
+          "binding_status": "RECEIPT_BINDING_VERIFIED",
+          "asserted_by": {
+            "id": "root",
+            "kind": "reasoning_assistant",
+            "relation": "SAME_AGENT"
+          },
+          "judgment_basis": "APPLICATION_EVIDENCE",
+          "evidence": "Fresh exact-candidate review bindings, fetched source/delivery revision c444d4596a59bc79dad59e93e72404524c6e8032,1586 protected Git objects, actual archive execution and exact owner disk bytes support batch completion only. The parent remains OPEN; proxy counts or reviewer agreement do not close it.",
+          "issued_at": "2026-10-10T17:09:34+00:00",
+          "judgment_proved": false
+        }
+      ],
+      "admission": "ADMITTED"
+    }
+  ],
+  "all_admitted": true,
+  "semantic_receipt_count": 37,
+  "mechanical_result_count": 2,
+  "limit": "The graph checks exact bindings and mechanical output predicates. Same-agent semantic judgments remain application evidence; judgment_proved is false."
+}
