@@ -1,0 +1,505 @@
+{
+  "schema_version": 1,
+  "scope": "historical horary source only",
+  "source_first_notes_sha256": "938cd5816d0c80f9e21edacdbcdf9d0484e4f6a890b038463ba3576fe2a1fa17",
+  "classification_note": "source_defined_content records what the original supplies; assistant_identified_gap records this reader’s implementation or interpretation gap, not an additional historical doctrine. Local gaps are bounded to the assigned span.",
+  "issue_count": 20,
+  "issues": [
+    {
+      "id": "U-A01",
+      "pdf_pages": [
+        256
+      ],
+      "printed_pages": [
+        222
+      ],
+      "anchor": "be of those we call Fruitfull",
+      "origin": "SOURCE_GRAMMAR_AMBIGUITY",
+      "source_defined_content": "The opening asks whether fifth/ascending sign is fruitful and then gives an aspect/free-recipient package.",
+      "assistant_identified_gap": "Whether fruitfulness is an indispensable conjunctive gate or contextual testimony for every later positive rule is not made explicit.",
+      "candidate_ids": [
+        "A001",
+        "A002"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A02",
+      "pdf_pages": [
+        257
+      ],
+      "printed_pages": [
+        223
+      ],
+      "anchor": "Lord of the fift Signe",
+      "origin": "ASSISTANT_IDENTIFIED_LOCAL_IMPLEMENTATION_GAP",
+      "source_defined_content": "The Moon separation planet rules the fifth sign from the sign occupied by the application planet, and the two planets aspect one another.",
+      "assistant_identified_gap": "The direction is explicit; exact inclusive counting convention and aspect implementation are not defined in this local span. This is not a claim that the whole book lacks definitions.",
+      "candidate_ids": [
+        "A006"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A03",
+      "pdf_pages": [
+        257
+      ],
+      "printed_pages": [
+        223
+      ],
+      "anchor": "and yet some say",
+      "origin": "SOURCE_VARIANT",
+      "source_defined_content": "Absence of aspect makes issue unlikely, yet some say an angular Moon-application planet can allow issue.",
+      "assistant_identified_gap": "Anonymous alternative authority and unresolved precedence must not become one falsely harmonized rule.",
+      "candidate_ids": [
+        "A007",
+        "A008"
+      ],
+      "status": "SOURCE_VARIANT_RETAINED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A04",
+      "pdf_pages": [
+        257
+      ],
+      "printed_pages": [
+        223
+      ],
+      "anchor": "with him",
+      "origin": "SOURCE_ANTECEDENT_AMBIGUITY",
+      "source_defined_content": "The conception list includes Moon with him after seventh lord in fifth.",
+      "assistant_identified_gap": "Nearest antecedent is seventh lord, but the exact target and the technical meaning of with are not silently resolved.",
+      "candidate_ids": [
+        "A009"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A05",
+      "pdf_pages": [
+        257,
+        258
+      ],
+      "printed_pages": [
+        223,
+        224
+      ],
+      "anchor": "if in the second house, the second yeere",
+      "origin": "ASSISTANT_IDENTIFIED_LOCAL_IMPLEMENTATION_GAP",
+      "source_defined_content": "The explicit mapping is 1→year1, 2→year2, 10→year3, 7→year4, 4→year5, subject to sign/motion changes and prior natural possibility.",
+      "assistant_identified_gap": "Unmapped houses, precise epoch and quantitative amounts of movable/double-bodied/fixed or swift/direct adjustment are not supplied here. The unusual second-house value is source-defined and verified, not itself an unresolved reading.",
+      "candidate_ids": [
+        "A015",
+        "A016",
+        "A017"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A06",
+      "pdf_pages": [
+        258
+      ],
+      "printed_pages": [
+        224
+      ],
+      "anchor": "and he be not Combust or Retrograde",
+      "origin": "SOURCE_ANTECEDENT_AMBIGUITY",
+      "source_defined_content": "The favorable package names Jupiter with the ascending triplicity lord, then he not combust or retrograde.",
+      "assistant_identified_gap": "The pronoun may attach to the triplicity lord alone or the combined package; do not silently impose one reading.",
+      "candidate_ids": [
+        "A018"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A07",
+      "pdf_pages": [
+        259
+      ],
+      "printed_pages": [
+        225
+      ],
+      "anchor": "the Lord of the house",
+      "origin": "SOURCE_REFERENT_AMBIGUITY",
+      "source_defined_content": "Angular lord of the house with reception by angle lord, or eleventh/fifth with like reception, is favorable.",
+      "assistant_identified_gap": "The identity of house lord and the exact dignity-direction relation of reception are not stated clearly enough to identify an executable planet selector.",
+      "candidate_ids": [
+        "A028"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A08",
+      "pdf_pages": [
+        259
+      ],
+      "printed_pages": [
+        225
+      ],
+      "anchor": "seldome conclude without two testimonies",
+      "origin": "ASSISTANT_IDENTIFIED_LOCAL_IMPLEMENTATION_GAP",
+      "source_defined_content": "The source says nearer fortune to ascendant means sooner children and seldom conclude without two testimonies.",
+      "assistant_identified_gap": "The distance metric/time scale and the definition of independent testimony, weighting and exceptions to seldom remain unspecified locally. These are separate unimplemented measurements, not a reason to discard the source qualifications.",
+      "candidate_ids": [
+        "A026",
+        "A030"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A09",
+      "pdf_pages": [
+        259,
+        260
+      ],
+      "printed_pages": [
+        225,
+        226
+      ],
+      "anchor": "both their lights",
+      "origin": "SOURCE_ROLE_GROUPING_AMBIGUITY",
+      "source_defined_content": "Ascendant lord, Moon and fifth lord are named before a collector of both lights, whose role is survival if there are children.",
+      "assistant_identified_gap": "Three named roles versus both lights leaves the exact pair or grouping ambiguous, especially if one planet fills more than one role. Do not turn conditional survival into unconditional conception.",
+      "candidate_ids": [
+        "A034",
+        "A035",
+        "A036"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A10",
+      "pdf_pages": [
+        259
+      ],
+      "printed_pages": [
+        225
+      ],
+      "anchor": "ill dignified, Combust, Retrograde",
+      "origin": "SOURCE_LIST_GROUPING_AMBIGUITY",
+      "source_defined_content": "The fifth-house infortune is described through a comma-separated adverse list ending etc.",
+      "assistant_identified_gap": "It is not established here whether each impairment independently suffices or the list describes a package, and etc. is not an exhaustive code-ready set.",
+      "candidate_ids": [
+        "A023"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A11",
+      "pdf_pages": [
+        261
+      ],
+      "printed_pages": [
+        227
+      ],
+      "anchor": "essentially Fortified, else not",
+      "origin": "SOURCE_ANTECEDENT_AND_SCOPE_AMBIGUITY",
+      "source_defined_content": "Jupiter’s positive placement clause has they being slow/retrograde after Saturn/Mars; the reception passage explicitly requires an essentially fortified angular receiver for Moon and says accidental dignity gives only hope.",
+      "assistant_identified_gap": "Keep they scope uncertain and the explicit essential/accidental distinction intact. Whether the essential requirement also extends to the preceding ascendant/fifth-lord reception sentence is not fully resolved.",
+      "candidate_ids": [
+        "A048",
+        "A049",
+        "A050",
+        "A051"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A12",
+      "pdf_pages": [
+        261,
+        262
+      ],
+      "printed_pages": [
+        227,
+        228
+      ],
+      "anchor": "Cadent from his owne House or exaltation",
+      "origin": "ASSISTANT_IDENTIFIED_LOCAL_IMPLEMENTATION_GAP",
+      "source_defined_content": "Mars in Aries/Taurus/Gemini illustrates angular/succeeding/cadent relative to its domicile independent of mundane house; every planet is angular in any own house.",
+      "assistant_identified_gap": "The passage does not enumerate a complete algorithm for multiple domiciles or cadency from exaltation. Preserve the explicit own-house angularity claim and the illustration without filling the missing choice rules.",
+      "candidate_ids": [
+        "A055",
+        "A056",
+        "A057",
+        "A073"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A13",
+      "pdf_pages": [
+        261,
+        262
+      ],
+      "printed_pages": [
+        227,
+        228
+      ],
+      "anchor": "These added to other testimonies",
+      "origin": "SOURCE_SCOPE_AND_ANTECEDENT_AMBIGUITY",
+      "source_defined_content": "A marginal asterisk makes a run supplementary; after the balanced Sagittarius/Pisces girl rule, Moon in fifth applying to Jupiter/Venus is said to argue the same.",
+      "assistant_identified_gap": "The asterisk’s exact endpoint and same’s outcome antecedent are not perfectly determined. Girl is the nearest reading, but do not recast it as either definite sex or definite conception without acknowledging the attachment.",
+      "candidate_ids": [
+        "A058",
+        "A059",
+        "A060",
+        "A061",
+        "A062",
+        "A063",
+        "A064",
+        "A065"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A14",
+      "pdf_pages": [
+        262
+      ],
+      "printed_pages": [
+        228
+      ],
+      "anchor": "judge by the major testimonies",
+      "origin": "SOURCE_LIST_AND_CLUSTER_AMBIGUITY",
+      "source_defined_content": "The unknown-to-woman subsection mixes role/body lists, fortunate status, negative impediment clusters, greater positive testimony, and a final major-testimony instruction.",
+      "assistant_identified_gap": "All/any grouping of the fortunate-fifth list, scope of they in the Venus/malefic clause, conjunctions among adverse clusters, and the connection of no aspect/translation to earlier alternatives are not explicit enough for automatic Boolean compilation.",
+      "candidate_ids": [
+        "A067",
+        "A069",
+        "A070",
+        "A071"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A15",
+      "pdf_pages": [
+        262
+      ],
+      "printed_pages": [
+        228
+      ],
+      "anchor": "degrees, or quarter",
+      "origin": "ASSISTANT_IDENTIFIED_LOCAL_IMPLEMENTATION_GAP_AND_SOURCE_MODIFIER_AMBIGUITY",
+      "source_defined_content": "The sex rule uses masculine sign, degrees or quarter; the survival rule names Saturn/Mars/south node then and Retrograde.",
+      "assistant_identified_gap": "Masculine degree/quarter definitions and mixed-testimony treatment are not provided in the span. The retrograde qualifier’s scope over a list containing a node must be retained rather than removed or exempted.",
+      "candidate_ids": [
+        "A072",
+        "A075"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A16",
+      "pdf_pages": [
+        263
+      ],
+      "printed_pages": [
+        229
+      ],
+      "anchor": "and a Fortune in it",
+      "origin": "SOURCE_RECIPE_GROUPING_AMBIGUITY",
+      "source_defined_content": "The twins recipe contains common ascendant, fortune placement, Sun and Moon in common signs, or common fifth sign with common-sign fifth lord.",
+      "assistant_identified_gap": "Punctuation and the repeated first-house option obscure conjunction/alternative boundaries within the first package. The Sun AND Moon clause and final fifth-sign AND fifth-lord clause are explicit.",
+      "candidate_ids": [
+        "A076"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A17",
+      "pdf_pages": [
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263
+      ],
+      "printed_pages": [
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229
+      ],
+      "anchor": "Accidentall or Essentiall misfortunes",
+      "origin": "ASSISTANT_IDENTIFIED_BOUNDED_CONTEXT_DEPENDENCY",
+      "source_defined_content": "The passage invokes fortune/infortune, good/evil houses, dignity, slow/swift, reception, angularity, aspects, translation, collection, common/fixed signs and strength.",
+      "assistant_identified_gap": "These technical definitions are not fully specified within the assigned range. Only locally explicit values were extracted; no assertion is made about absence in the full book, and no external definition is imported as source wording.",
+      "candidate_ids": [
+        "A001",
+        "A002",
+        "A003",
+        "A004",
+        "A005",
+        "A006",
+        "A007",
+        "A008",
+        "A009",
+        "A010",
+        "A011",
+        "A012",
+        "A013",
+        "A014",
+        "A015",
+        "A016",
+        "A017",
+        "A018",
+        "A019",
+        "A020",
+        "A021",
+        "A022",
+        "A023",
+        "A024",
+        "A025",
+        "A026",
+        "A027",
+        "A028",
+        "A029",
+        "A030",
+        "A031",
+        "A032",
+        "A033",
+        "A034",
+        "A035",
+        "A036",
+        "A037",
+        "A038",
+        "A039",
+        "A040",
+        "A041",
+        "A042",
+        "A043",
+        "A044",
+        "A045",
+        "A046",
+        "A047",
+        "A048",
+        "A049",
+        "A050",
+        "A051",
+        "A052",
+        "A053",
+        "A054",
+        "A055",
+        "A056",
+        "A057",
+        "A058",
+        "A059",
+        "A060",
+        "A061",
+        "A062",
+        "A063",
+        "A064",
+        "A065",
+        "A066",
+        "A067",
+        "A068",
+        "A069",
+        "A070",
+        "A071",
+        "A072",
+        "A073",
+        "A074",
+        "A075",
+        "A076"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A18",
+      "pdf_pages": [
+        258,
+        259,
+        261,
+        262
+      ],
+      "printed_pages": [
+        224,
+        225,
+        227,
+        228
+      ],
+      "anchor": "all or most of them unfortunate",
+      "origin": "ASSISTANT_IDENTIFIED_ROLE_BODY_COUNTING_GAP",
+      "source_defined_content": "The source names combinations of house/hour/triplicity roles, planets and comparative/all-or-most testimonies.",
+      "assistant_identified_gap": "One physical planet can occupy several named roles. The text does not state whether to count roles or independent bodies or how to weight duplicates; preserving multiple roles is not authorization for duplicated testimony scores.",
+      "candidate_ids": [
+        "A018",
+        "A030",
+        "A034",
+        "A047",
+        "A059",
+        "A067",
+        "A069",
+        "A071",
+        "A072",
+        "A074"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A19",
+      "pdf_pages": [
+        262
+      ],
+      "printed_pages": [
+        228
+      ],
+      "anchor": "& e contra",
+      "origin": "SOURCE_CONVERSE_UNDERSPECIFICATION",
+      "source_defined_content": "The fifth-lord survival proposition appends an explicit converse.",
+      "assistant_identified_gap": "The intended full logical complement of retrograde/combust/cadent conditions is not enumerated. Preserve the converse language without constructing a new assured-survival formula.",
+      "candidate_ids": [
+        "A073"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    },
+    {
+      "id": "U-A20",
+      "pdf_pages": [
+        261
+      ],
+      "printed_pages": [
+        227
+      ],
+      "anchor": "or having essentiall dignities in the fifth",
+      "origin": "SOURCE_MODIFIER_ATTACHMENT_AMBIGUITY",
+      "source_defined_content": "The Moon-light rule adds the essential-dignities-in-fifth clause after a planet in fifth house.",
+      "assistant_identified_gap": "The receiving planet is the nearest antecedent; an attachment to Moon remains grammatically possible. This later rereading clarification is documented without rewriting the frozen source-first notes.",
+      "candidate_ids": [
+        "A054"
+      ],
+      "status": "PRESERVED_UNRESOLVED",
+      "disposition": "Preserve source formulation and variants; do not compile or silently resolve this issue in a runtime model."
+    }
+  ]
+}

@@ -1,0 +1,2356 @@
+[
+  {
+    "id": "B001",
+    "chapter": "XL",
+    "section": "Whether a Woman be with Childe or not",
+    "pdf_pages": [
+      263,
+      264
+    ],
+    "printed_pages": [
+      229,
+      230
+    ],
+    "anchor": "the person of the Querent",
+    "kind": "method",
+    "conditions": [
+      "A woman asks whether she is with child."
+    ],
+    "condition_logic": "Question context is required; the assignments are distinct roles, not interchangeable planets.",
+    "assertion": "Assign lord1 and Moon to the woman asking; assign the fifth house and lord5 to conception, if any. The carryover calls lord5 the natural significator of children in this discussion.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B002",
+    "chapter": "XL",
+    "section": "Whether a Woman be with Childe or not",
+    "pdf_pages": [
+      263
+    ],
+    "printed_pages": [
+      229
+    ],
+    "anchor": "it argues the Woman is conceived",
+    "kind": "rule",
+    "conditions": [
+      "Lord1 is in the fifth OR lord5 is in the ascendant.",
+      "The relevant placement is free from all manner of impediments."
+    ],
+    "condition_logic": "((lord1 in fifth) OR (lord5 in ascendant)) AND freedom from impediments.",
+    "assertion": "Lilly treats the unimpeded reciprocal house placement as an argument that the woman has conceived.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B001"
+    ]
+  },
+  {
+    "id": "B003",
+    "chapter": "XL",
+    "section": "Whether a Woman be with Childe or not",
+    "pdf_pages": [
+      263
+    ],
+    "printed_pages": [
+      229
+    ],
+    "anchor": "the more certaine you may judge",
+    "kind": "rule",
+    "conditions": [
+      "Lord1's virtue or disposition is translated to a planet in an angle.",
+      "For increased certainty, the recipient is received by lord1 OR lord1 is received by the recipient."
+    ],
+    "condition_logic": "Base route: translation from lord1 to an angular planet. Strengthening route: base AND (recipient received by lord1 OR lord1 received by recipient).",
+    "assertion": "Translation to an angular planet is another conception testimony; reception in either stated direction strengthens the certainty of the judgment.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB001: punctuation and reception attachment are retained without requiring mutual reception."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B001"
+    ],
+    "branches": [
+      {
+        "when": "Translation to angular recipient",
+        "then": "Conception testimony."
+      },
+      {
+        "when": "The angular-translation route also has reception in either named direction",
+        "then": "Greater certainty, not a separately quantified probability."
+      }
+    ]
+  },
+  {
+    "id": "B004",
+    "chapter": "XL",
+    "section": "Whether a Woman be with Childe or not",
+    "pdf_pages": [
+      263
+    ],
+    "printed_pages": [
+      229
+    ],
+    "anchor": "it's more like to be a Sicknesse",
+    "kind": "rule",
+    "conditions": [
+      "The planet to which lord1 commits his disposition is cadent.",
+      "The woman supposes conception; if conception holds, the adverse-outcome branch applies."
+    ],
+    "condition_logic": "Cadent recipient is the base antecedent. Poor-end assertion is conditional on conception holding. The four-sign list is OR, as are the angular-malevolent and South Node emphases; their exact final attachment is not compiled.",
+    "assertion": "Lilly associates the cadent recipient with grief and supposed conception more likely being sickness; if conception does hold, he expects a poor end. He especially emphasizes Aries, Cancer, Libra or Capricorn rising, a malevolent planet in an angle, or the South Node in the following context.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB001: the attachment of the final South Node phrase is uncertain; separate fifth-house and ascendant outcomes follow in B005–B006."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B001"
+    ],
+    "branches": [
+      {
+        "when": "Cadent recipient and suspected conception",
+        "then": "Grief; sickness judged more likely than conception."
+      },
+      {
+        "when": "Cadent recipient but conception holds",
+        "then": "Poor expected end, with the printed adverse emphases retained."
+      }
+    ]
+  },
+  {
+    "id": "B005",
+    "chapter": "XL",
+    "section": "Whether a Woman be with Childe or not",
+    "pdf_pages": [
+      263
+    ],
+    "printed_pages": [
+      229
+    ],
+    "anchor": "shewes abortion",
+    "kind": "rule",
+    "conditions": [
+      "South Node is in the fifth house."
+    ],
+    "condition_logic": "Local South Node placement rule; retain the surrounding cadent-recipient context rather than silently declaring independent universal applicability.",
+    "assertion": "The local parenthesis says South Node in the fifth usually indicates abortion.",
+    "exceptions": [
+      "The source says usually, not invariably."
+    ],
+    "uncertainty": [
+      "UB001: its relation to the preceding cadent-recipient chain is not fully delimited."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B004"
+    ]
+  },
+  {
+    "id": "B006",
+    "chapter": "XL",
+    "section": "Whether a Woman be with Childe or not",
+    "pdf_pages": [
+      263
+    ],
+    "printed_pages": [
+      229
+    ],
+    "anchor": "extreame feare and mistrust of it",
+    "kind": "rule",
+    "conditions": [
+      "South Node is in the ascendant."
+    ],
+    "condition_logic": "Local South Node-in-ascendant route, distinguished from South Node-in-fifth.",
+    "assertion": "The distinct ascendant placement is said to show extreme fear and mistrust of abortion or the adverse pregnancy outcome under discussion.",
+    "exceptions": [
+      "The stated output is fear/mistrust, not another categorical abortion judgment."
+    ],
+    "uncertainty": [
+      "UB001: the pronoun it points back to the adverse-conception discussion without a further explicit definition."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B004"
+    ]
+  },
+  {
+    "id": "B007",
+    "chapter": "XL",
+    "section": "Whether a Woman be with Childe or not",
+    "pdf_pages": [
+      263
+    ],
+    "printed_pages": [
+      229
+    ],
+    "anchor": "the Woman safely delivered",
+    "kind": "rule",
+    "conditions": [
+      "The ponderous planet receiving lord1's disposition is in the second OR eleventh OR ninth house.",
+      "That recipient is not conjunct the Infortunes.",
+      "Moon is free from impediment."
+    ],
+    "condition_logic": "Ponderous recipient AND (house2 OR house11 OR house9) AND no conjunction with Infortunes AND Moon free. No other house is silently added.",
+    "assertion": "The author judges that conception comes to a good end and the woman is safely delivered.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B001"
+    ]
+  },
+  {
+    "id": "B008",
+    "chapter": "XL",
+    "section": "Whether a Woman be with Childe or not",
+    "pdf_pages": [
+      263,
+      264
+    ],
+    "printed_pages": [
+      229,
+      230
+    ],
+    "anchor": "free from misfortune",
+    "kind": "rule",
+    "conditions": [
+      "Lord5 is in the ascendant.",
+      "Lord5 is free from misfortune, with retrogradation, combustion, and being with South Node named locally."
+    ],
+    "condition_logic": "Lord5-in-ascendant placement is retained. The appended misfortune list is not flattened into a rule that absence of South Node alone suffices.",
+    "assertion": "The page carryover supplies lord5 in the ascendant, free of the named misfortunes, as another favorable completion/delivery route.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB002: the printed or not with South Node is awkward; it is not recoded as a free-standing sufficient condition unrelated to lord5 in the ascendant."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B001",
+      "B007"
+    ]
+  },
+  {
+    "id": "B009",
+    "chapter": "XL",
+    "section": "If a Woman doe Conceive with Childe of more then one?",
+    "pdf_pages": [
+      264
+    ],
+    "printed_pages": [
+      230
+    ],
+    "anchor": "it's probable she goeth with two children",
+    "kind": "rule",
+    "conditions": [
+      "First inspect whether Gemini OR Virgo OR Sagittarius OR Pisces rises.",
+      "Then inspect both Jupiter and Venus in the rising sign OR the fifth sign OR any of the twelve signs except Leo."
+    ],
+    "condition_logic": "UNRESOLVED source sequence: common-sign ascendant inspection THEN both-benefic inspection with three OR-linked location alternatives; do not replace it by a narrower executable formula.",
+    "assertion": "The printed sequence calls two children probable under these stated sign/planet conditions, including its unusually broad except-Leo alternative.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB003: the scope of the broad sign alternative and shared placement of Jupiter/Venus is not fully resolved.",
+      "UB006: no local priority over the singleton route is stated."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B010",
+    "chapter": "XL",
+    "section": "If a Woman doe Conceive with Childe of more then one?",
+    "pdf_pages": [
+      264
+    ],
+    "printed_pages": [
+      230
+    ],
+    "anchor": "it's possible she may have three",
+    "kind": "rule",
+    "conditions": [
+      "North Node is with Jupiter and Venus in the ascendant OR fifth house."
+    ],
+    "condition_logic": "North Node with Jupiter AND Venus, in (ascendant OR fifth); preceding multiple-conception context retained without forced inheritance of every clause.",
+    "assertion": "Within the multiple-conception discussion, this combination makes three children possible.",
+    "exceptions": [
+      "Possible, not certain or numerically calibrated."
+    ],
+    "uncertainty": [
+      "UB003: inheritance of all the preceding rising-sign conditions is not expressly restated."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B009"
+    ]
+  },
+  {
+    "id": "B011",
+    "chapter": "XL",
+    "section": "If a Woman doe Conceive with Childe of more then one?",
+    "pdf_pages": [
+      264
+    ],
+    "printed_pages": [
+      230
+    ],
+    "anchor": "it's also probable she may conceive",
+    "kind": "rule",
+    "conditions": [
+      "None of the previously named bodies are in ascendant or fifth.",
+      "The bodies called these Planets cast sextile OR trine to the ascending degree OR fifth cusp."
+    ],
+    "condition_logic": "Absence from both stated houses THEN (sextile OR trine) to (ascending degree OR fifth cusp); subject set remains unresolved.",
+    "assertion": "This alternative makes it probable that she may conceive, or is already with child, of more than one.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB004: these Planets follows Jupiter, Venus and North Node; exact membership is not forced."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B009",
+      "B010"
+    ]
+  },
+  {
+    "id": "B012",
+    "chapter": "XL",
+    "section": "If a Woman doe Conceive with Childe of more then one?",
+    "pdf_pages": [
+      264
+    ],
+    "printed_pages": [
+      230
+    ],
+    "anchor": "with child but with one",
+    "kind": "rule",
+    "conditions": [
+      "A fixed OR movable sign occupies ascendant OR fifth.",
+      "Sun and Moon are therein, further glossed as fixed/movable signs and fifth/first house."
+    ],
+    "condition_logic": "UNRESOLVED joint-location grammar; preserve (fixed OR movable), (ascendant OR fifth), and Sun AND Moon without selecting a single co-location interpretation.",
+    "assertion": "The author calls this a certain argument of one child.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB005: shared sign/house versus distributed membership of Sun and Moon is not explicit.",
+      "UB006: no local priority is stated if the multiple-child route also triggers."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B013",
+    "chapter": "XL",
+    "section": "If a Woman doe Conceive with Childe of more then one?",
+    "pdf_pages": [
+      264
+    ],
+    "printed_pages": [
+      230
+    ],
+    "anchor": "without knowledge had",
+    "kind": "method",
+    "conditions": [
+      "Before venturing a multiple-birth judgment."
+    ],
+    "condition_logic": "Required source cautions: thoughtful rule consideration AND family-background inquiry before judgment; no quantitative family-history model is supplied.",
+    "assertion": "Consider the rules carefully and obtain knowledge of whether it is natural or usual for some of the woman's family to bear more than one at a birth; the author expressly warns against rash judgment without this inquiry.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB006: the inquiry has no specified numerical weight or reconciliation rule."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B009",
+      "B010",
+      "B011",
+      "B012"
+    ]
+  },
+  {
+    "id": "B014",
+    "chapter": "XL",
+    "section": "If Male or Female; Masculine Planets",
+    "pdf_pages": [
+      264
+    ],
+    "printed_pages": [
+      230
+    ],
+    "anchor": "these Signes import a Male",
+    "kind": "method",
+    "conditions": [
+      "Inspect ascendant, its lord, fifth sign, and lord5."
+    ],
+    "condition_logic": "Inspection list followed by two source classifications; the four factors are not assigned an invented vote weight.",
+    "assertion": "The author treats Aries, Gemini, Leo, Libra, Sagittarius and Aquarius as male signs, and the other six as female, for the stated historical birth-sex judgment.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B015",
+    "chapter": "XL",
+    "section": "If Male or Female; Masculine Planets",
+    "pdf_pages": [
+      264
+    ],
+    "printed_pages": [
+      230
+    ],
+    "anchor": "then have recourse to the",
+    "kind": "rule",
+    "conditions": [
+      "Lord1 is in a masculine sign.",
+      "Lord5 is in a feminine sign.",
+      "Moon applies to a planet in a masculine sign, after her sign is inspected."
+    ],
+    "condition_logic": "lord1 masculine AND lord5 feminine THEN inspect Moon; if Moon applies to a planet in a masculine sign, add masculine testimony.",
+    "assertion": "In this particular conflict, Moon gives testimony to the masculine significator and the author judges a boy/man-child.",
+    "exceptions": [
+      "The reverse configuration and other ties are not resolved by this paragraph."
+    ],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B014"
+    ]
+  },
+  {
+    "id": "B016",
+    "chapter": "XL",
+    "section": "If Male or Female; Masculine Planets",
+    "pdf_pages": [
+      264
+    ],
+    "printed_pages": [
+      230
+    ],
+    "anchor": "Masculine Planets are ever",
+    "kind": "method",
+    "conditions": [],
+    "condition_logic": "Source classification table, not empirical sex/gender attribution.",
+    "assertion": "The local planet classes are Saturn, Jupiter, Mars and Sun masculine; Venus and Moon feminine. Mercury is handled by the following variable rules.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B017",
+    "chapter": "XL",
+    "section": "If Male or Female; Masculine Planets",
+    "pdf_pages": [
+      264,
+      265
+    ],
+    "printed_pages": [
+      230,
+      231
+    ],
+    "anchor": "so is he of either sex accordingly",
+    "kind": "rule",
+    "conditions": [
+      "Mercury is in aspect OR conjunction with a masculine or feminine planet."
+    ],
+    "condition_logic": "(Aspect OR conjunction) to an associate of a stated sex class; competing associates remain unresolved.",
+    "assertion": "Mercury takes the sex class of the associated planet in this rule.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB007: mixed-sex simultaneous associates and conflict with solar orientation have no stated precedence."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B016"
+    ]
+  },
+  {
+    "id": "B018",
+    "chapter": "XL",
+    "section": "If Male or Female; Masculine Planets",
+    "pdf_pages": [
+      265
+    ],
+    "printed_pages": [
+      231
+    ],
+    "anchor": "he is reputed Masculine",
+    "kind": "rule",
+    "conditions": [
+      "Mercury is oriental OR occidental of Sun."
+    ],
+    "condition_logic": "Two alternative branches, not simultaneous requirements.",
+    "assertion": "Mercury oriental of Sun is reputed masculine; occidental is feminine.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB007: precedence against Mercury's aspect/conjunction associations is not given."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B017"
+    ],
+    "branches": [
+      {
+        "when": "Mercury oriental of Sun",
+        "then": "Masculine."
+      },
+      {
+        "when": "Mercury occidental of Sun",
+        "then": "Feminine."
+      }
+    ]
+  },
+  {
+    "id": "B019",
+    "chapter": "XL",
+    "section": "How long the Woman hath been Conceived?",
+    "pdf_pages": [
+      265
+    ],
+    "printed_pages": [
+      231
+    ],
+    "anchor": "neerest from the separation of any Planet",
+    "kind": "method",
+    "conditions": [
+      "Consider Moon, lord5, and lord of the hour."
+    ],
+    "condition_logic": "Select one from {Moon, lord5, hour lord} by the source's nearest-separation criterion, THEN classify the separating aspect.",
+    "assertion": "Choose whichever is nearest from separation from any planet, and inspect the kind of aspect from which it separated.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB008: nearest is not locally defined as arc or elapsed time, and ties are not resolved."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B020",
+    "chapter": "XL",
+    "section": "How long the Woman hath been Conceived?",
+    "pdf_pages": [
+      265
+    ],
+    "printed_pages": [
+      231
+    ],
+    "anchor": "the fifth moneth of her Conception, or the third",
+    "kind": "rule",
+    "conditions": [
+      "A separating aspect has been selected by the preceding procedure."
+    ],
+    "condition_logic": "Mutually described aspect branches; preserve each expressly alternative month without silently choosing one.",
+    "assertion": "The local conception-month map is trine: fifth or third month; sextile: second or sixth; square: fourth; opposition: seven months; conjunction: one month.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB009: the trine and sextile alternative months are not disambiguated."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B019"
+    ],
+    "branches": [
+      {
+        "when": "Trine separation",
+        "then": "Fifth OR third month."
+      },
+      {
+        "when": "Sextile separation",
+        "then": "Second OR sixth month."
+      },
+      {
+        "when": "Square separation",
+        "then": "Fourth month."
+      },
+      {
+        "when": "Opposition separation",
+        "then": "Seven months conceived."
+      },
+      {
+        "when": "Conjunction separation",
+        "then": "One month conceived."
+      }
+    ]
+  },
+  {
+    "id": "B021",
+    "chapter": "XL",
+    "section": "Of the time when the Birth will be?",
+    "pdf_pages": [
+      265
+    ],
+    "printed_pages": [
+      231
+    ],
+    "anchor": "shall shew the hour of Birth",
+    "kind": "rule",
+    "conditions": [
+      "Observe when Mars and Sun are in conjunction with lord5, Moon, and lord of hour, or the more part of them."
+    ],
+    "condition_logic": "UNRESOLVED source conjunction/majority construction; no executable conjunction count is asserted.",
+    "assertion": "The source assigns the hour of birth to the time of the described conjunction pattern.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB010: Mars/Sun grouping, conjunction simultaneity and the set counted by more part are ambiguous."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B022",
+    "chapter": "XL",
+    "section": "Of the time when the Birth will be?",
+    "pdf_pages": [
+      265
+    ],
+    "printed_pages": [
+      231
+    ],
+    "anchor": "that Fortune which in the Question shall behold the Part of Children",
+    "kind": "method",
+    "conditions": [
+      "A Fortune in the question beholds the Part of Children."
+    ],
+    "condition_logic": "First select the Fortune beholding the Part in the question, THEN inspect its application to the Part's quarter.",
+    "assertion": "Use that Fortune as an aid, observing when it applies to the quarter of heaven where the Part of Children lies.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB011: the local text supplies no complete algorithm for applying to a quarter or its timing."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B028"
+    ]
+  },
+  {
+    "id": "B023",
+    "chapter": "XL",
+    "section": "Of the time when the Birth will be?",
+    "pdf_pages": [
+      265
+    ],
+    "printed_pages": [
+      231
+    ],
+    "anchor": "giving to every degree one day",
+    "kind": "method",
+    "conditions": [
+      "Direct the Part of Children by ascensions to the degree of the fifth house, Jupiter's degree, and Jupiter's aspects."
+    ],
+    "condition_logic": "Ascensional direction toward the named targets; one-day-per-degree scale. Jupiter-between is an emphasis, not a universal prerequisite. No arbitrary longitude-transit substitution or orb is admitted.",
+    "assertion": "The author locates delivery when the Part applies to those ascensional degrees and comes within their orbs, using one day per degree. He especially emphasizes Jupiter lying between the Part and the fifth house.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB011: ascensional implementation, path/orientation and orb size are not supplied in this paragraph."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B028"
+    ]
+  },
+  {
+    "id": "B024",
+    "chapter": "XL",
+    "section": "Of the time when the Birth will be?",
+    "pdf_pages": [
+      265
+    ],
+    "printed_pages": [
+      231
+    ],
+    "anchor": "Behold also the Disposition or application",
+    "kind": "method",
+    "conditions": [
+      "Inspect disposition OR application of the planet to which the Part of Children is directed.",
+      "Preserve the following phrase: before lord5 conjuncts lord1 in ascendant OR fifth."
+    ],
+    "condition_logic": "UNRESOLVED attachment of before; preserve lord5–lord1 conjunction and its (ascendant OR fifth) location without compiling a temporal predicate.",
+    "assertion": "The author associates birth with about the time indicated by this combined direction/conjunction passage.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB012: before may attach to the inspection, direction/application or event; no single ordering is silently selected."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B028"
+    ]
+  },
+  {
+    "id": "B025",
+    "chapter": "XL",
+    "section": "Of the time when the Birth will be?",
+    "pdf_pages": [
+      265,
+      266
+    ],
+    "printed_pages": [
+      231,
+      232
+    ],
+    "anchor": "when he removes out of one Signe into another",
+    "kind": "rule",
+    "conditions": [
+      "The significator of the question changes from one sign into another."
+    ],
+    "condition_logic": "Selected significator crosses a sign boundary; identity selection remains unresolved.",
+    "assertion": "That sign change is another likely time of birth.",
+    "exceptions": [
+      "The source says like to be, rather than giving a guaranteed exact event."
+    ],
+    "uncertainty": [
+      "UB013: the singular significator of the question is not uniquely selected in this local multi-significator section."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B026",
+    "chapter": "XL",
+    "section": "Of the time when the Birth will be?",
+    "pdf_pages": [
+      266
+    ],
+    "printed_pages": [
+      232
+    ],
+    "anchor": "give to every Signe one moneth",
+    "kind": "method",
+    "conditions": [
+      "Measure how far lord5 is removed from the fifth cusp."
+    ],
+    "condition_logic": "Distance measurement THEN one-month-per-sign conversion; no rounding convention is added.",
+    "assertion": "Count one month per sign of that distance and support the judgment with other testimonies.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB014: distance direction, partial-sign treatment and counting convention are not locally specified."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B027",
+    "chapter": "XL",
+    "section": "Of the time when the Birth will be?",
+    "pdf_pages": [
+      266
+    ],
+    "printed_pages": [
+      232
+    ],
+    "anchor": "judge according to the major part",
+    "kind": "qualification",
+    "conditions": [
+      "Several delivery significators or timing testimonies are under consideration."
+    ],
+    "condition_logic": "Source reconciliation instruction using majority AND nearness of concurrence, not an invented numeric scoring formula.",
+    "assertion": "Judge by the greater part of those significators that most nearly concur, using the other testimonies as aids.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB015: no vote weights, closeness threshold, or tie priority are supplied."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B021",
+      "B022",
+      "B023",
+      "B024",
+      "B025",
+      "B026"
+    ]
+  },
+  {
+    "id": "B028",
+    "chapter": "XL",
+    "section": "Of the time when the Birth will be?",
+    "pdf_pages": [
+      266
+    ],
+    "printed_pages": [
+      232
+    ],
+    "anchor": "The Part of Children is taken day and night",
+    "kind": "method",
+    "conditions": [
+      "The Part of Children is required."
+    ],
+    "condition_logic": "Ordered interval: origin Mars → target Jupiter; projection origin ascendant; same construction for day AND night.",
+    "assertion": "Take the interval from Mars to Jupiter and project it from the ascendant, both by day and by night; do not reverse origin and target between day and night.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB014: the local sentence relies on the book's underlying interval/projection conventions rather than redefining direction geometrically."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B029",
+    "chapter": "XL",
+    "section": "Whether the Birth shall be by day or by night?",
+    "pdf_pages": [
+      266
+    ],
+    "printed_pages": [
+      232
+    ],
+    "anchor": "if the major part of the Significators be in Diurnall Signes",
+    "kind": "rule",
+    "conditions": [
+      "Consider ascendant and its lord, Moon, planet in ascendant, lord5 and fifth sign."
+    ],
+    "condition_logic": "Compute the source's majority over its stated list; diurnal majority and the contrary are alternate outcomes.",
+    "assertion": "A majority of these significators in diurnal signs gives birth by day; the contrary gives birth by night.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB015: the counting of signs versus lords and absent/multiple ascendant occupants is not specified."
+    ],
+    "scope": "historical horary source only",
+    "branches": [
+      {
+        "when": "Majority in diurnal signs",
+        "then": "Birth by day."
+      },
+      {
+        "when": "The contrary",
+        "then": "Birth by night."
+      }
+    ]
+  },
+  {
+    "id": "B030",
+    "chapter": "XL",
+    "section": "Whether the Birth shall be by day or by night?",
+    "pdf_pages": [
+      266
+    ],
+    "printed_pages": [
+      232
+    ],
+    "anchor": "take him that is Essentially most strong",
+    "kind": "qualification",
+    "conditions": [
+      "The day/night significators disagree."
+    ],
+    "condition_logic": "Disagreement triggers selection by greatest essential strength; this is a source fallback, not an additive weight.",
+    "assertion": "Choose the essentially strongest significator and judge by it.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB015: essential-strength ties and ordering against the subsequent alternative projection are unresolved locally."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B029"
+    ]
+  },
+  {
+    "id": "B031",
+    "chapter": "XL",
+    "section": "Whether the Birth shall be by day or by night?",
+    "pdf_pages": [
+      266
+    ],
+    "printed_pages": [
+      232
+    ],
+    "anchor": "doe you project from the degree ascending",
+    "kind": "method",
+    "conditions": [
+      "A planet has been selected for the judgment.",
+      "Find its degree-distance from the fifth cusp."
+    ],
+    "condition_logic": "Selected-planet distance from fifth cusp → project from ascendant → inspect ending sign; introduced by or else, not an additional necessary condition.",
+    "assertion": "As an alternative, project that distance from the ascending degree. Ending in a diurnal sign gives daytime birth; the contrary gives night.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB014: distance/projection direction is not restated.",
+      "UB015: selection and strength ties remain unresolved."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B029",
+      "B030"
+    ],
+    "branches": [
+      {
+        "when": "Projected endpoint in diurnal sign",
+        "then": "Day birth."
+      },
+      {
+        "when": "Contrary endpoint",
+        "then": "Night birth."
+      }
+    ]
+  },
+  {
+    "id": "B032",
+    "chapter": "XL",
+    "section": "Whether the Birth shall be by day or by night?",
+    "pdf_pages": [
+      266
+    ],
+    "printed_pages": [
+      232
+    ],
+    "anchor": "if the major part hereof be in Masculine Signes",
+    "kind": "rule",
+    "conditions": [
+      "Consider lord5, Moon, lord of the hour, Part of Children, and its dispositor.",
+      "The greater part of these are in masculine signs."
+    ],
+    "condition_logic": "Majority masculine within the new five-item source list; do not silently import the earlier day/night list.",
+    "assertion": "The linked route gives a male child and birth by day.",
+    "exceptions": [
+      "This sentence does not explicitly give a female/night converse."
+    ],
+    "uncertainty": [
+      "UB015: vote weighting and counting of Part/dispositor are not defined."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B028"
+    ]
+  },
+  {
+    "id": "B033",
+    "chapter": "XL",
+    "section": "Whether the Birth shall be by day or by night?",
+    "pdf_pages": [
+      266
+    ],
+    "printed_pages": [
+      232
+    ],
+    "anchor": "if the testimonies be equall",
+    "kind": "rule",
+    "conditions": [
+      "The testimonies are equal in the immediately preceding discussion."
+    ],
+    "condition_logic": "Equality condition; the list to which equality is applied remains textually underdetermined.",
+    "assertion": "The source gives birth by twilight when the testimonies are equal.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB016: the scope of the equality clause may be the linked sex/day list or the wider day/night discussion; it is not forced."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B029",
+      "B032"
+    ]
+  },
+  {
+    "id": "B034",
+    "chapter": "XL",
+    "section": "Unnumbered Some say conception variants and malefic qualifications",
+    "pdf_pages": [
+      266
+    ],
+    "printed_pages": [
+      232
+    ],
+    "anchor": "Some say, if the Question be",
+    "kind": "author_report",
+    "conditions": [
+      "Inspect lord1, lord5, Moon's dispositor, and Moon.",
+      "Application among these; Moon in a common sign; ascendant a common sign; significators angular.",
+      "The alternative clause names a fortunate planet in ascendant OR second."
+    ],
+    "condition_logic": "UNRESOLVED source Boolean scope: application among the four bodies AND common Moon AND common ascendant AND angular significators, OR fortunate planet in (first OR second); do not decide silently whether the final OR replaces all or part of the preceding chain.",
+    "assertion": "The anonymous Some say passage calls the woman pregnant under its application/common-sign/angular route or its fortunate-planet clause, otherwise not.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB017: the scope of the fortunate-planet OR relative to the preceding conjunction of conditions is unresolved.",
+      "UB018: no named authority is supplied for Some say."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B035",
+    "chapter": "XL",
+    "section": "Unnumbered Some say conception variants and malefic qualifications",
+    "pdf_pages": [
+      266,
+      267
+    ],
+    "printed_pages": [
+      232,
+      233
+    ],
+    "anchor": "Or if by chance a Planet Direct",
+    "kind": "author_report",
+    "conditions": [
+      "A direct planet is conjunct Moon."
+    ],
+    "condition_logic": "Direct motion AND conjunction with Moon; introduced as an OR alternative to the preceding route.",
+    "assertion": "The continuation of the reported sequence says this also shows conception.",
+    "exceptions": [
+      "The following Infortune-substitution qualification is retained in B039–B042."
+    ],
+    "uncertainty": [
+      "UB018: the exact point at which Some say ceases to govern is not marked.",
+      "UB019: whether this direct-planet route falls under the subsequent Fortune/Infortune substitution is not explicit."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B034"
+    ]
+  },
+  {
+    "id": "B036",
+    "chapter": "XL",
+    "section": "Unnumbered Some say conception variants and malefic qualifications",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "is a strong argument of being with Child",
+    "kind": "author_report",
+    "conditions": [
+      "Jupiter OR Venus is in the fifth."
+    ],
+    "condition_logic": "(Jupiter in fifth) OR (Venus in fifth); this is one route among the paragraph's alternatives.",
+    "assertion": "The reported sequence treats either benefic in the fifth as a strong conception argument.",
+    "exceptions": [
+      "Retain the following Infortune replacement and prior-conception distinction."
+    ],
+    "uncertainty": [
+      "UB018: anonymous-report voice boundary is not explicit."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B034"
+    ]
+  },
+  {
+    "id": "B037",
+    "chapter": "XL",
+    "section": "Unnumbered Some say conception variants and malefic qualifications",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "is a strong argument of being with Child",
+    "kind": "author_report",
+    "conditions": [
+      "Moon is in the fifth.",
+      "Moon applies to Jupiter OR Venus."
+    ],
+    "condition_logic": "Moon in fifth AND (application to Jupiter OR application to Venus).",
+    "assertion": "Moon in the fifth applying to either benefic is another strong conception argument in this sequence.",
+    "exceptions": [
+      "Retain the following malefic qualification and assured-conception branch."
+    ],
+    "uncertainty": [
+      "UB018: anonymous-report voice boundary is not explicit."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B034"
+    ]
+  },
+  {
+    "id": "B038",
+    "chapter": "XL",
+    "section": "Unnumbered Some say conception variants and malefic qualifications",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "a Planet in Cazimi of the",
+    "kind": "author_report",
+    "conditions": [
+      "A planet is cazimi Sun.",
+      "That planet is a Fortune."
+    ],
+    "condition_logic": "Cazimi Sun AND Fortune; no local cazimi orb is invented.",
+    "assertion": "A Fortune cazimi Sun is another strong conception argument in the reported continuation.",
+    "exceptions": [
+      "Cazimi must not be replaced by combustion."
+    ],
+    "uncertainty": [
+      "UB018: anonymous-report voice boundary is not explicit.",
+      "UB019: exact reach of the subsequent Infortune substitution remains uncertain."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B034"
+    ]
+  },
+  {
+    "id": "B039",
+    "chapter": "XL",
+    "section": "Unnumbered Some say conception variants and malefic qualifications",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "it's no signe of Conception",
+    "kind": "author_report",
+    "conditions": [
+      "Infortunes replace Fortunes in the placements described above.",
+      "Conception has not independently been assured before the question."
+    ],
+    "condition_logic": "Adverse replacement pattern; absent the expressly separate prior-assurance condition, outcome is no sign of conception. This is not proof of a modern diagnosis.",
+    "assertion": "The sequence then supplies no sign of conception, subject to the separate already-assured-conception branch.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB018: anonymous-report voice boundary is not explicit.",
+      "UB019: as abovesaid does not delimit every earlier route precisely."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B035",
+      "B036",
+      "B037",
+      "B038"
+    ]
+  },
+  {
+    "id": "B040",
+    "chapter": "XL",
+    "section": "Unnumbered Some say conception variants and malefic qualifications",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "if there be assurance of Conception before the Question be asked",
+    "kind": "author_report",
+    "conditions": [
+      "Infortunes occupy the adverse replacement pattern.",
+      "Conception was assured before the question was asked."
+    ],
+    "condition_logic": "Adverse replacement pattern AND assurance of conception temporally BEFORE question → abortion branch; do not collapse with the no-conception branch.",
+    "assertion": "With that prior assurance, the same adverse testimony is presented as a strong proof of abortion instead of absence of conception.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB018: anonymous-report voice boundary is not explicit.",
+      "UB019: the replaced-configuration scope is not fully explicit."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B039"
+    ]
+  },
+  {
+    "id": "B041",
+    "chapter": "XL",
+    "section": "Unnumbered Some say conception variants and malefic qualifications",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "she will miscarry by a Flux of blood",
+    "kind": "author_report",
+    "conditions": [
+      "The miscarriage/abortion branch is under discussion.",
+      "Mars is the afflicting Infortune."
+    ],
+    "condition_logic": "Within the adverse already-conceived context, Mars-affliction branch only; historical medical claim, not clinical inference.",
+    "assertion": "The source attributes the miscarriage to a flux of blood when Mars afflicts.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB018: anonymous-report voice boundary is not explicit."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B040"
+    ]
+  },
+  {
+    "id": "B042",
+    "chapter": "XL",
+    "section": "Unnumbered Some say conception variants and malefic qualifications",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "by Sicknesse, Feare, Frights",
+    "kind": "author_report",
+    "conditions": [
+      "The miscarriage/abortion branch is under discussion.",
+      "Saturn afflicts."
+    ],
+    "condition_logic": "Within the adverse already-conceived context, Saturn-affliction branch; sickness/fear/frights OR excess wind-and-water are alternative stated causes, not conjunct requirements.",
+    "assertion": "The source attributes the outcome to sickness, fear, frights, or excess wind and water when Saturn afflicts.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB018: anonymous-report voice boundary is not explicit."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B040"
+    ]
+  },
+  {
+    "id": "B043",
+    "chapter": "XL",
+    "section": "Unnumbered mother-after-birth and infant-life paragraphs",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "according to the last application",
+    "kind": "method",
+    "conditions": [
+      "Asked about the mother's state after the birth."
+    ],
+    "condition_logic": "Select the FINAL application within the CURRENT sign, then interpret its target's nature AND place AND strength; do not use the next application automatically.",
+    "assertion": "Find Moon's last planetary application before leaving her current sign; judge the mother's post-birth state from the recipient planet's nature, position in heaven, and fortitude.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B044",
+    "chapter": "XL",
+    "section": "Unnumbered mother-after-birth and infant-life paragraphs",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "I never doubted the life of the Mother",
+    "kind": "author_report",
+    "conditions": [
+      "Pregnancy is evident.",
+      "One source route has ascendant free and lord1 neither separated from nor applying to a bad aspect of lord8 OR lord4.",
+      "The alternate route has Moon fortunately applying to a Fortune, Sun, OR a good aspect of an Infortune."
+    ],
+    "condition_logic": "Pregnancy evident is retained. Branch A: free ascendant AND no bad separating/applying contact of lord1 with (lord8 OR lord4). Branch B: favorable Moon application to (Fortune OR Sun OR good aspect of Infortune). Scope of free ascendant over branch B remains UNRESOLVED.",
+    "assertion": "Lilly reports that under these testimonies he did not doubt the mother's survival and does not remember having failed; it is an account of his practice, not independently verified performance.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB020: whether the ascendant-free condition also governs the lunar alternative is unclear.",
+      "UB031: same-witness erratum and if I has no uniquely demonstrated substantive edit; preserve body and erratum separately."
+    ],
+    "scope": "historical horary source only",
+    "branches": [
+      {
+        "when": "Pregnancy evident; ascendant free; lord1 clear of stated bad separating and applying aspects",
+        "then": "Reported confidence in maternal survival."
+      },
+      {
+        "when": "Pregnancy evident; favorable lunar application as stated",
+        "then": "Same reported confidence; inheritance of ascendant-free is unresolved."
+      }
+    ]
+  },
+  {
+    "id": "B045",
+    "chapter": "XL",
+    "section": "Unnumbered mother-after-birth and infant-life paragraphs",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "I usually judged the Infant would not live long after the Birth",
+    "kind": "author_report",
+    "conditions": [
+      "Lord5 is in the eighth.",
+      "Lord5 has no essential dignity in its sign.",
+      "Lord5 aspects lord8 OR lord4, with either a good OR ill aspect."
+    ],
+    "condition_logic": "Lord5 in eighth AND no essential dignity AND (aspect to lord8 OR lord4); aspect quality may be good OR ill. No false requirement for only a hard aspect is added.",
+    "assertion": "Lilly reports usually judging the infant would not live long after birth, and says he always found this prediction true; no independent verification or sample count is supplied.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B046",
+    "chapter": "XL",
+    "section": "Unnumbered mother-after-birth and infant-life paragraphs",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "seldome outlives the next full",
+    "kind": "author_report",
+    "conditions": [
+      "An infant is born at the very change of Moon."
+    ],
+    "condition_logic": "Birth at the very lunar change is the source condition; no enlarged new-Moon window is invented.",
+    "assertion": "The author claims such an infant very seldom avoids early death and seldom outlives the next full Moon.",
+    "exceptions": [
+      "Retain seldom; no universal certainty is asserted."
+    ],
+    "uncertainty": [
+      "UB021: very change has no numerical phase tolerance in this paragraph; this is an unevaluated historical claim."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B047",
+    "chapter": "XL",
+    "section": "Unnumbered mother-after-birth and infant-life paragraphs",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "it's very probable the Infant dyes upon the next new Moon",
+    "kind": "author_report",
+    "conditions": [
+      "An infant is born at the moment of full Moon."
+    ],
+    "condition_logic": "Birth at full-Moon moment → stated next-new-Moon outcome; keep distinct from new-to-full branch.",
+    "assertion": "The author calls death at the next new Moon very probable.",
+    "exceptions": [
+      "Very probable is the author's verbal confidence, not a calibrated probability or certainty."
+    ],
+    "uncertainty": [
+      "UB021: no numerical full-Moon tolerance or independent evidence is supplied."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B048",
+    "chapter": "XL",
+    "section": "Unnumbered mother-after-birth and infant-life paragraphs",
+    "pdf_pages": [
+      267
+    ],
+    "printed_pages": [
+      233
+    ],
+    "anchor": "neither doe I beleeve any life can be permanent",
+    "kind": "author_report",
+    "conditions": [
+      "Both luminaries at birth are afflicted, either of themselves OR by Infortunes."
+    ],
+    "condition_logic": "Both luminaries afflicted; stated alternative source of affliction is intrinsic OR Infortunes. This is the author's rationale/belief, not an independently established biological mechanism.",
+    "assertion": "As rationale for the preceding infant-life claims, Lilly says earthly light comes from Sun and Moon and expresses his belief that lasting life cannot persist when both are afflicted in the stated ways.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB021: intrinsic affliction is not operationally defined in this paragraph."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B046",
+      "B047"
+    ]
+  },
+  {
+    "id": "B049",
+    "chapter": "XL",
+    "section": "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers",
+    "pdf_pages": [
+      268
+    ],
+    "printed_pages": [
+      234
+    ],
+    "anchor": "This were better resolved from the Nativity",
+    "kind": "qualification",
+    "conditions": [
+      "Question concerns unity between parent and infant or an older child."
+    ],
+    "condition_logic": "Express source preference plus pragmatic reason for the local horary substitute; not a claim of validation.",
+    "assertion": "Lilly regards a nativity as the better basis, but offers horary because few in his setting can judge a nativity.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B050",
+    "chapter": "XL",
+    "section": "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers",
+    "pdf_pages": [
+      268
+    ],
+    "printed_pages": [
+      234
+    ],
+    "anchor": "there will be Love and Unity betwixt them",
+    "kind": "rule",
+    "conditions": [
+      "Inspect lord1, Moon and lord5.",
+      "Lord5 and lord1 have reception AND application.",
+      "The source locates this in tenth, eleventh, fifth, third, ninth, first OR second house."
+    ],
+    "condition_logic": "Reception AND application between lord5 and lord1; house list is OR. Exact attachment of house placement is unresolved, not arbitrary all-house occupancy.",
+    "assertion": "These testimonies signify love and unity between parent and child in the historical horary judgment.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB022: this in the listed houses does not specify an exact joint placement predicate for the two planets."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B049"
+    ]
+  },
+  {
+    "id": "B051",
+    "chapter": "XL",
+    "section": "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers",
+    "pdf_pages": [
+      268
+    ],
+    "printed_pages": [
+      234
+    ],
+    "anchor": "there will be Unity and Concord betwixt them",
+    "kind": "rule",
+    "conditions": [
+      "Jupiter OR Venus beholds the cusps of both houses, locally first and fifth."
+    ],
+    "condition_logic": "(Jupiter OR Venus) beholds BOTH relevant cusps; introduced as an alternative to the reception/application route.",
+    "assertion": "The alternative benefic-cusp testimony signifies unity and concord.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB022: no aspect kind is specified and distribution between one/both benefics is not expressly formalized."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B050"
+    ]
+  },
+  {
+    "id": "B052",
+    "chapter": "XL",
+    "section": "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers",
+    "pdf_pages": [
+      268
+    ],
+    "printed_pages": [
+      234
+    ],
+    "anchor": "any Planet who is posited in the house be Peregrine",
+    "kind": "author_report",
+    "conditions": [
+      "Lilly first inspects Saturn, Mars OR South Node in the fifth.",
+      "He then says if those two planets, or any planet posited in the house, be peregrine."
+    ],
+    "condition_logic": "UNRESOLVED source construction: initial (Saturn OR Mars OR South Node) in fifth, followed by peregrinity clause for those two planets OR any planet there. No simple fifth-house-malefic predicate is substituted.",
+    "assertion": "In this wording he reports judging the child/young man/maid untoward, averse and hard for parents to regulate, assigning the fault wholly to that child.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB023: peregrinity's scope over Saturn/Mars, other planets, and the preceding South Node mention must not be silently resolved."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B049"
+    ]
+  },
+  {
+    "id": "B053",
+    "chapter": "XL",
+    "section": "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers",
+    "pdf_pages": [
+      268
+    ],
+    "printed_pages": [
+      234
+    ],
+    "anchor": "the fault is their owne",
+    "kind": "author_report",
+    "conditions": [
+      "Saturn OR Mars OR South Node is in the ascendant."
+    ],
+    "condition_logic": "(Saturn in ascendant) OR (Mars in ascendant) OR (South Node in ascendant); fault attribution remains historical source rhetoric, not modern assessment.",
+    "assertion": "Lilly reports telling the inquiring parents that their own conduct explains the child's insufficient observance; the next sentences differentiate the indicated parental conduct.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B054",
+    "chapter": "XL",
+    "section": "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers",
+    "pdf_pages": [
+      268
+    ],
+    "printed_pages": [
+      234
+    ],
+    "anchor": "they are too much lordly over him or her",
+    "kind": "author_report",
+    "conditions": [
+      "Mars is in the ascendant in the parent/child question."
+    ],
+    "condition_logic": "Mars branch of the ascendant-parent attribution.",
+    "assertion": "Lilly attributes to the parent an excessively lordly, overawing approach that keeps the child or children in too much subjection.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B053"
+    ]
+  },
+  {
+    "id": "B055",
+    "chapter": "XL",
+    "section": "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers",
+    "pdf_pages": [
+      268
+    ],
+    "printed_pages": [
+      234
+    ],
+    "anchor": "too austere, dogged, and too much close fisted",
+    "kind": "author_report",
+    "conditions": [
+      "Saturn is the planet impeding in the ascendant-parent context."
+    ],
+    "condition_logic": "Saturn branch of the ascendant-parent attribution; listed conduct descriptions are claimed outputs, not extra astronomical conditions.",
+    "assertion": "Lilly calls the parent austere, dogged and close-fisted, demanding more service, duty, obedience or attendance than fitting Christian liberty, while giving the child no encouragement or countenance.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B053"
+    ]
+  },
+  {
+    "id": "B056",
+    "chapter": "XL",
+    "section": "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers",
+    "pdf_pages": [
+      268
+    ],
+    "printed_pages": [
+      234
+    ],
+    "anchor": "he is too too jealous, and too mistrustfull",
+    "kind": "author_report",
+    "conditions": [
+      "South Node is in the ascendant in the parent/child question."
+    ],
+    "condition_logic": "South Node branch of the ascendant-parent attribution.",
+    "assertion": "Lilly attributes jealousy and mistrust to the inquiring parent, including believing lies/calumnies about the children and being misled by vain reports.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B053"
+    ]
+  },
+  {
+    "id": "B057",
+    "chapter": "XL",
+    "section": "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers",
+    "pdf_pages": [
+      268,
+      269
+    ],
+    "printed_pages": [
+      234,
+      235
+    ],
+    "anchor": "thereby have reconciled the Father or Mother and their Child",
+    "kind": "author_report",
+    "conditions": [
+      "Considering the last part of this judgment."
+    ],
+    "condition_logic": "Claimed transfer of an unspecified last part plus autobiographical success report; not independent validation.",
+    "assertion": "Lilly proposes applying that last part to other questions and reports having used it many times to reconcile father or mother with their child.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB024: last part and any other Question are not bounded enough to license a universal executable counseling rule."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B052",
+      "B053",
+      "B054",
+      "B055",
+      "B056"
+    ]
+  },
+  {
+    "id": "B058",
+    "chapter": "XL",
+    "section": "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers",
+    "pdf_pages": [
+      269
+    ],
+    "printed_pages": [
+      235
+    ],
+    "anchor": "to deale fairly and really",
+    "kind": "method",
+    "conditions": [
+      "An astrologer makes the preceding fault/unity judgment."
+    ],
+    "condition_logic": "Ethical qualification applies regardless of whether the fault is assigned to parent or child; not a rule to favor the inquirer.",
+    "assertion": "The author expressly requests fair and truthful dealing, wherever the fault lies.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B052",
+      "B053",
+      "B057"
+    ]
+  },
+  {
+    "id": "B059",
+    "chapter": "XLI",
+    "section": "Of Embassadours or Messengers",
+    "pdf_pages": [
+      269
+    ],
+    "printed_pages": [
+      235
+    ],
+    "anchor": "Lord of the fift shall represent the person",
+    "kind": "method",
+    "conditions": [
+      "An embassy/ambassador question is asked."
+    ],
+    "condition_logic": "Local role assignment: lord5 ambassador; Moon additional significator.",
+    "assertion": "Assign lord5 to the ambassador, admitting Moon also to signification.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B060",
+    "chapter": "XLI",
+    "section": "Of Embassadours or Messengers",
+    "pdf_pages": [
+      269
+    ],
+    "printed_pages": [
+      235
+    ],
+    "anchor": "shall shew the cause of his Embassage",
+    "kind": "method",
+    "conditions": [
+      "Lord5 OR Moon applies to a planet."
+    ],
+    "condition_logic": "Inspect recipient of lord5 application OR recipient of Moon application; the source expressly permits judgment from BOTH recipients.",
+    "assertion": "The planet receiving either application shows the cause of the embassy; judgment may use both planets when lord5 and Moon apply to different recipients.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B059"
+    ]
+  },
+  {
+    "id": "B061",
+    "chapter": "XLI",
+    "section": "Of Embassadours or Messengers",
+    "pdf_pages": [
+      269
+    ],
+    "printed_pages": [
+      235
+    ],
+    "anchor": "upon a meer point of honour",
+    "kind": "rule",
+    "conditions": [
+      "Application is from a Fortune by square OR opposition OR conjunction.",
+      "There is reception between them OR collection OR translation of light by a planet.",
+      "The relevant planet is lord10 OR in the tenth."
+    ],
+    "condition_logic": "UNRESOLVED source predicate grouping; retain Fortune-origin application with (square OR opposition OR conjunction), reception OR collection OR translation, and (lord10 OR tenth-house) role without replacing hard aspects with easy ones.",
+    "assertion": "The embassy concerns the king on a point of honor, high/great business, or a very great and urgent occasion.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB025: relevant-planet pronouns and the reception/collection/translation attachment are not fully resolved."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B059",
+      "B060"
+    ]
+  },
+  {
+    "id": "B062",
+    "chapter": "XLI",
+    "section": "Of Embassadours or Messengers",
+    "pdf_pages": [
+      269
+    ],
+    "printed_pages": [
+      235
+    ],
+    "anchor": "he comes to renew the League of Friendship",
+    "kind": "rule",
+    "conditions": [
+      "The planet received OR collecting OR translating the virtue is lord11."
+    ],
+    "condition_logic": "A planet in one of the stated reception/collection/translation roles is lord11; wider antecedent inheritance remains unforced.",
+    "assertion": "The embassy is to renew the league of friendship between the two nations.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB025: inheritance of the preceding Fortune/aspect conditions is not restated."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B061"
+    ]
+  },
+  {
+    "id": "B063",
+    "chapter": "XLI",
+    "section": "Of Embassadours or Messengers",
+    "pdf_pages": [
+      269
+    ],
+    "printed_pages": [
+      235
+    ],
+    "anchor": "no solid peace may be expected",
+    "kind": "rule",
+    "conditions": [
+      "Lord5 is unfortunate in the seventh.",
+      "Lord1 and lord5 are square OR opposite.",
+      "Mars casts a malicious aspect to either OR both of them."
+    ],
+    "condition_logic": "Unfortunate lord5 in seventh AND (lord1 square OR opposite lord5) AND Mars maliciously aspects (lord1 OR lord5 OR both).",
+    "assertion": "Lilly sees no likelihood of unity or contentment: both parties may find trivial ways to discontent the other; no solid peace is expected from the treaty/embassy, and variance is probable.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B059"
+    ]
+  },
+  {
+    "id": "B064",
+    "chapter": "XLI",
+    "section": "Of Embassadours or Messengers",
+    "pdf_pages": [
+      269,
+      270
+    ],
+    "printed_pages": [
+      235,
+      236
+    ],
+    "anchor": "whether the Embassadour will deale fairly or prove false",
+    "kind": "method",
+    "conditions": [
+      "Question concerns ambassador fairness, falseness, or shuffling in undertakings."
+    ],
+    "condition_logic": "Inspection of condition AND relevant aspect(s) AND house, without an invented good/bad score or rule that one testimony always wins.",
+    "assertion": "Inspect lord5's good/ill condition, its aspect to ascendant, lord1 or lord11, and its house placement; the following concrete cases supply distinct conduct judgments.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB031: same-witness house erratum has unresolved exact line/word applicability; no predicate changed."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B059"
+    ]
+  },
+  {
+    "id": "B065",
+    "chapter": "XLI",
+    "section": "Of Embassadours or Messengers",
+    "pdf_pages": [
+      270
+    ],
+    "printed_pages": [
+      236
+    ],
+    "anchor": "an overweening conceit of his owne abilities",
+    "kind": "rule",
+    "conditions": [
+      "Lord5 is in the tenth.",
+      "Lord5 is essentially dignified there."
+    ],
+    "condition_logic": "Tenth-house lord5 AND essential dignity; both conditions are required for this specific source interpretation.",
+    "assertion": "The ambassador is described as overinsistent on his prince's honor and overconfident in his own abilities.",
+    "exceptions": [
+      "Essential dignity in this placement does not automatically imply a favorable conduct judgment."
+    ],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B064"
+    ]
+  },
+  {
+    "id": "B066",
+    "chapter": "XLI",
+    "section": "Of Embassadours or Messengers",
+    "pdf_pages": [
+      270
+    ],
+    "printed_pages": [
+      236
+    ],
+    "anchor": "hath not a Commission large enough",
+    "kind": "rule",
+    "conditions": [
+      "Mercury and lord5 are square OR opposite."
+    ],
+    "condition_logic": "Mercury square OR opposite lord5; outcomes are source alternatives, not all required to occur.",
+    "assertion": "The author gives alternatives: too narrow a commission, countermand or contradiction by a dispatch from the prince, a dishonest secretary, or a badly received message.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B064"
+    ],
+    "branches": [
+      {
+        "when": "Mercury hard aspect as stated",
+        "then": "Insufficient commission OR prince's countermand/contradiction OR secretary's dishonesty OR ill-received message."
+      }
+    ]
+  },
+  {
+    "id": "B067",
+    "chapter": "XLI",
+    "section": "Of Embassadours or Messengers",
+    "pdf_pages": [
+      270
+    ],
+    "printed_pages": [
+      236
+    ],
+    "anchor": "will performe his trust with much sincerity",
+    "kind": "rule",
+    "conditions": [
+      "The ambassador's significator has sextile OR trine to lord1 OR the lord of the sign to which the present kingdom is subject."
+    ],
+    "condition_logic": "(Sextile OR trine) to (lord1 OR kingdom-sign lord); essential dignity may be present OR absent.",
+    "assertion": "Generally the ambassador wishes the kingdom well and performs his trust sincerely, whether his significator is well dignified or not.",
+    "exceptions": [
+      "The source expressly removes good dignity as a prerequisite in this rule."
+    ],
+    "uncertainty": [
+      "UB026: the kingdom-to-sign assignment is an external source dependency not supplied here; no national-sign table is invented.",
+      "UB006: coexistence with specific contrary conduct/treaty routes has no local arbitration rule."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B059"
+    ]
+  },
+  {
+    "id": "B068",
+    "chapter": "XLI",
+    "section": "Of a Messenger sent [damaged lettering] upon any Errand for Money",
+    "pdf_pages": [
+      270
+    ],
+    "printed_pages": [
+      236
+    ],
+    "anchor": "the Messenger, and managing of the Businesse",
+    "kind": "method",
+    "conditions": [
+      "A messenger has been sent on an errand for money."
+    ],
+    "condition_logic": "Four distinct source roles; preserve Moon-as-message and lord5-as-messenger.",
+    "assertion": "Assign ascendant/lord1 to sender, seventh/lord7 to recipient, Moon to message, and lord5 to messenger and management of the business.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB027: heading lettering is damaged after sent fo; this does not obscure the paragraph's roles."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B069",
+    "chapter": "XLI",
+    "section": "Of a Messenger sent [damaged lettering] upon any Errand for Money",
+    "pdf_pages": [
+      270
+    ],
+    "printed_pages": [
+      236
+    ],
+    "anchor": "hath effected the thing he went about",
+    "kind": "rule",
+    "conditions": [
+      "Lord5 has separated from lord7.",
+      "Lord5 applies to lord1."
+    ],
+    "condition_logic": "Separation from lord7 precedes application to lord1; both sequential conditions apply.",
+    "assertion": "The messenger has accomplished the errand, left the recipient, and is returning home.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068"
+    ]
+  },
+  {
+    "id": "B070",
+    "chapter": "XLI",
+    "section": "Of a Messenger sent [damaged lettering] upon any Errand for Money",
+    "pdf_pages": [
+      270
+    ],
+    "printed_pages": [
+      236
+    ],
+    "anchor": "whether a Fortune or Infortune be Lord of that house",
+    "kind": "rule",
+    "conditions": [
+      "Lord5 has separated from lord2."
+    ],
+    "condition_logic": "Separation lord5 from lord2; lord2 may be Fortune OR Infortune. This qualification remains alongside the answer-quality rule.",
+    "assertion": "The messenger brings money, whether the ruler of the second is a Fortune or an Infortune.",
+    "exceptions": [
+      "An Infortune ruling the second does not negate the express brings-money output."
+    ],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068"
+    ]
+  },
+  {
+    "id": "B071",
+    "chapter": "XLI",
+    "section": "Of a Messenger sent [damaged lettering] upon any Errand for Money",
+    "pdf_pages": [
+      270
+    ],
+    "printed_pages": [
+      236
+    ],
+    "anchor": "the answer which the Messenger brings",
+    "kind": "method",
+    "conditions": [
+      "Identify the planet from which lord5 has separated."
+    ],
+    "condition_logic": "Find separation target → use planet nature AND its ruled-house nature; good-planet and Infortune outputs are alternative qualitative branches.",
+    "assertion": "Judge the answer by both that planet's nature and the nature of the house it rules. Separation from a good planet gives hope of a good answer; separation from an Infortune gives the contrary.",
+    "exceptions": [
+      "The source's second-house money rule is retained even when lord2 is an Infortune."
+    ],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068",
+      "B070"
+    ],
+    "branches": [
+      {
+        "when": "Separation from good planet",
+        "then": "Hope of good answer."
+      },
+      {
+        "when": "Separation from Infortune",
+        "then": "Contrary qualitative answer testimony; does not erase explicit second-house money exception."
+      }
+    ]
+  },
+  {
+    "id": "B072",
+    "chapter": "XLI",
+    "section": "Of a Messenger sent [damaged lettering] upon any Errand for Money",
+    "pdf_pages": [
+      270,
+      271
+    ],
+    "printed_pages": [
+      236,
+      237
+    ],
+    "anchor": "before he is separated from the Lord of the seventh",
+    "kind": "rule",
+    "conditions": [
+      "Messenger significator applies square OR conjunction to an Infortune.",
+      "That application is before separation from lord7."
+    ],
+    "condition_logic": "(Square OR conjunction to Infortune) temporally BEFORE separation from lord7 → recipient obstruction AND outbound hindrance; opposition is not substituted.",
+    "assertion": "The messenger met obstruction in the business from the recipient and hindrance on the outward journey before arrival.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068"
+    ]
+  },
+  {
+    "id": "B073",
+    "chapter": "XLI",
+    "section": "Of a Messenger sent [damaged lettering] upon any Errand for Money",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "will have delayes or misfortune in his returning home againe",
+    "kind": "rule",
+    "conditions": [
+      "The same application to an Infortune occurs after lord5 has separated from lord7."
+    ],
+    "condition_logic": "Inherited (square OR conjunction to Infortune) temporally AFTER separation from lord7 → return-journey branch.",
+    "assertion": "The messenger will have delays or misfortune on the return journey.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068",
+      "B072"
+    ]
+  },
+  {
+    "id": "B074",
+    "chapter": "XLI",
+    "section": "Of a Messenger sent [damaged lettering] upon any Errand for Money",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "he will hardly travell safe for Theeves",
+    "kind": "rule",
+    "conditions": [
+      "An Infortune is in the ninth."
+    ],
+    "condition_logic": "Infortune in ninth is a distinct travel-risk route; no unspecified time direction is added.",
+    "assertion": "Lilly says the messenger will hardly travel safely because of thieves.",
+    "exceptions": [
+      "Hardly safely is the source's phrasing; it is not a claim that an actual theft is certain."
+    ],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068"
+    ]
+  },
+  {
+    "id": "B075",
+    "chapter": "XLI",
+    "section": "Of a Messenger sent [damaged lettering] upon any Errand for Money",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "his going and returning will be safe",
+    "kind": "rule",
+    "conditions": [
+      "A Fortune is in the ninth."
+    ],
+    "condition_logic": "Fortune in ninth → safety for outward AND return travel; keep both stated stages.",
+    "assertion": "The author judges both outward and return journeys safe.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB006: no local rule settles simultaneous contrary ninth-house or journey testimonies."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068"
+    ]
+  },
+  {
+    "id": "B076",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "he then went safe to his journeys end",
+    "kind": "rule",
+    "conditions": [
+      "A foot-post, lackey or similar messenger is sent on an errand.",
+      "Lord1 OR Moon is in the seventh, OR one or both apply to lord7."
+    ],
+    "condition_logic": "Foot-post/lackey question AND ((lord1 in seventh OR Moon in seventh) OR (lord1 applies lord7 OR Moon applies lord7 OR both)).",
+    "assertion": "The author judges the messenger reached the journey's end safely, using lord1 and Moon in this local paragraph.",
+    "exceptions": [
+      "Do not silently replace lord1 with lord5 to conform to the preceding sender/messenger role assignment."
+    ],
+    "uncertainty": [
+      "UB028: the local lord1/Moon use is explicit but its relationship to the preceding lord5 scheme is not explained."
+    ],
+    "scope": "historical horary source only"
+  },
+  {
+    "id": "B077",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "what is his Vertue, what his Debility",
+    "kind": "method",
+    "conditions": [
+      "Making the messenger/journey judgment."
+    ],
+    "condition_logic": "Contextual assessment inputs are planet nature AND dignity/strength/debility AND significant-house placement; no universal fixed weight is supplied.",
+    "assertion": "Judge according to the nature and dignity of Fortune/Infortune, its strength and debility, and occupation of significant houses; Fortunes portend good and Infortunes the contrary in the described context.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B076"
+    ]
+  },
+  {
+    "id": "B078",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "well received and entertained",
+    "kind": "rule",
+    "conditions": [
+      "There is reception between lord5 and lord7.",
+      "An amicable aspect connects them."
+    ],
+    "condition_logic": "Reception AND amicable aspect; subsequent hard-aspect branch is a distinct qualification.",
+    "assertion": "The messenger was welcomed and entertained by the recipient.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068"
+    ]
+  },
+  {
+    "id": "B079",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "framed some excuse",
+    "kind": "rule",
+    "conditions": [
+      "Reception between lord5 and lord7 is retained from context.",
+      "Their application is by square OR opposition."
+    ],
+    "condition_logic": "Reception AND (square OR opposition application) → welcome BUT excuse/defence; do not retain amicable-aspect requirement simultaneously.",
+    "assertion": "Even under these hard aspects the messenger was well received, but the recipient made an excuse or presented a defence concerning the requested thing.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B078"
+    ]
+  },
+  {
+    "id": "B080",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "say, he commeth",
+    "kind": "rule",
+    "conditions": [
+      "Lord5 has receded from lord7 OR applies to the planet who is his dispositor."
+    ],
+    "condition_logic": "(Lord5 receded from lord7) OR (lord5 applying to his dispositor); these are alternatives, not an AND requirement.",
+    "assertion": "The source treats either route as showing the messenger coming back.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB029: his most naturally refers to lord5 but the pronoun is not expanded in the text; the exact application target is kept source-bound."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068"
+    ]
+  },
+  {
+    "id": "B081",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "give Days, Weeks or Moneths",
+    "kind": "method",
+    "conditions": [
+      "Return timing is sought.",
+      "Use the number of degrees of the relevant application."
+    ],
+    "condition_logic": "Application degrees → choose Days OR Weeks OR Months using journey AND sign nature; do not fabricate a fixed/common/movable unit mapping.",
+    "assertion": "Convert application degrees to days, weeks or months according to journey nature/length and whether signs are fixed, common or movable.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB030: no fixed sign-class-to-time-unit table or distance convention is given in this passage."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B080"
+    ]
+  },
+  {
+    "id": "B082",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "the Messenger will returne when he comes to be Direct",
+    "kind": "rule",
+    "conditions": [
+      "The messenger significator is retrograde."
+    ],
+    "condition_logic": "Retrograde condition → direct-station date OR degrees-remaining method; both source alternatives are preserved.",
+    "assertion": "The author gives return when the significator becomes direct, or timing according to the degrees still lacking before direct motion.",
+    "exceptions": [],
+    "uncertainty": [
+      "UB030: the alternative degrees-to-station conversion and its units are not specified locally."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B080",
+      "B081"
+    ],
+    "branches": [
+      {
+        "when": "Retrograde significator becomes direct",
+        "then": "Return time."
+      },
+      {
+        "when": "Use the alternative remaining-degrees formulation",
+        "then": "Time by degrees lacking before direct motion; conversion unresolved."
+      }
+    ]
+  },
+  {
+    "id": "B083",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      271
+    ],
+    "printed_pages": [
+      237
+    ],
+    "anchor": "that day, or neer it, the Messenger is heard of",
+    "kind": "author_report",
+    "conditions": [
+      "Lord5 comes to sextile OR trine of lord1."
+    ],
+    "condition_logic": "(Sextile OR trine lord5 to lord1) → reported news event on or near that day, not an exact-return guarantee.",
+    "assertion": "Lilly reports his usual observation that the messenger is heard of that day or near it.",
+    "exceptions": [
+      "News of the messenger is not automatically his physical return; retain or near it."
+    ],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068"
+    ]
+  },
+  {
+    "id": "B084",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      271,
+      272
+    ],
+    "printed_pages": [
+      237,
+      238
+    ],
+    "anchor": "the Querent shall have intelligence of his Messenger",
+    "kind": "rule",
+    "conditions": [
+      "Moon separates from lord5 to lord1."
+    ],
+    "condition_logic": "Ordered lunar relation: from lord5 TO lord1; do not reverse the source/target or collapse this to unsequenced aspects.",
+    "assertion": "The author gives this lunar sequence as another time at which the querent receives intelligence of the messenger.",
+    "exceptions": [
+      "The event is receiving intelligence, not necessarily the messenger's arrival."
+    ],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B068"
+    ]
+  },
+  {
+    "id": "B085",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      272
+    ],
+    "printed_pages": [
+      238
+    ],
+    "anchor": "shewes more certainly the day",
+    "kind": "qualification",
+    "conditions": [
+      "The relevant significator applies to a ponderous planet."
+    ],
+    "condition_logic": "Ponderous target is a certainty-strengthening qualification, not a replacement for every preceding timing route.",
+    "assertion": "Application to a ponderous planet makes the day indicated by the messenger timing more certain in the author's account.",
+    "exceptions": [
+      "More certain is comparative verbal confidence, not a measured accuracy improvement."
+    ],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B081",
+      "B083",
+      "B084"
+    ]
+  },
+  {
+    "id": "B086",
+    "chapter": "XLI",
+    "section": "Unnumbered Foot-Posts/Lackeys, reception, return, and news",
+    "pdf_pages": [
+      272
+    ],
+    "printed_pages": [
+      238
+    ],
+    "anchor": "the length or brevity of the Journey",
+    "kind": "method",
+    "conditions": [
+      "Interpreting the preceding messenger timing testimonies."
+    ],
+    "condition_logic": "Closing interpretive qualification retained from top PDF272 before the next chart; it supplies no extra fixed time formula.",
+    "assertion": "Use discretion informed by the length or brevity of the journey and the foregoing rules.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "B081",
+      "B082",
+      "B083",
+      "B084",
+      "B085"
+    ]
+  }
+]

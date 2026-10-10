@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "id": "T01",
+      "pdf_pages": [
+        258
+      ],
+      "subject": "Second house in time map",
+      "finding": "The original says second house→second year; the unusual map is preserved.",
+      "evidence": "source_readers/a/SECTION_COVERAGE.json"
+    },
+    {
+      "id": "T02",
+      "pdf_pages": [
+        263
+      ],
+      "subject": "Adverse sign list",
+      "finding": "Aries, Cancer, Libra, Capricorn are retained exactly as named by glyphs.",
+      "evidence": "source_readers/b/SOURCE_FIRST_NOTES.md"
+    },
+    {
+      "id": "T03",
+      "pdf_pages": [
+        265
+      ],
+      "subject": "Delivery conjunction planets",
+      "finding": "Mars and Sun, not a replacement pair, begin the conjunction prescription.",
+      "evidence": "source_readers/b/SOURCE_FIRST_NOTES.md"
+    },
+    {
+      "id": "T04",
+      "pdf_pages": [
+        266
+      ],
+      "subject": "Part of Children direction",
+      "finding": "Mars to Jupiter projected from ascendant, day and night.",
+      "evidence": "source_readers/b/SOURCE_FIRST_NOTES.md"
+    },
+    {
+      "id": "T05",
+      "pdf_pages": [
+        274,
+        275
+      ],
+      "subject": "Conflicting hour ruler",
+      "finding": "Figure labels day/hour with Moon; table names Jupiter as hour lord. No repair selected.",
+      "evidence": "evidence/chart2-center.png"
+    },
+    {
+      "id": "T06",
+      "pdf_pages": [
+        274,
+        276
+      ],
+      "subject": "Solar minutes",
+      "finding": "Levelled original figure detail reads27°52′; later prose says27°48′ Cancer in perfect square. Both remain.",
+      "evidence": "evidence/chart2-sun-level.png"
+    },
+    {
+      "id": "T07",
+      "pdf_pages": [
+        272
+      ],
+      "subject": "Opposite cusp minutes",
+      "finding": "Third19°20′ and ninth19°10′ are transcribed; no opposite-cusp repair.",
+      "evidence": "evidence/chart1-opposite-cusps.png"
+    },
+    {
+      "id": "T08",
+      "pdf_pages": [
+        274,
+        276
+      ],
+      "subject": "Missing versus supplied Mercury minutes",
+      "finding": "Figure11 with omitted minutes; later table11°00′. Separate witnesses retained.",
+      "evidence": "WORKED_NUMERIC_TABLES.json"
+    },
+    {
+      "id": "T09",
+      "pdf_pages": [
+        888
+      ],
+      "subject": "Erratum page target",
+      "finding": "The entry near this material is209, not229; it is outside the new span.",
+      "evidence": "source_readers/b/ERRATA_CHECK.json"
+    }
+  ],
+  "policy": "Resolved glyph readings do not resolve the cause of source conflicts. Reconstructed prose anchors are not represented as diplomatic quotations."
+}

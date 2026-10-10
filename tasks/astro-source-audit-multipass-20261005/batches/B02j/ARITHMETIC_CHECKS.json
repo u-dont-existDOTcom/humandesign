@@ -1,0 +1,82 @@
+{
+  "scope": "Static arithmetic, printed-table counting and explicitly labelled sensitivity; not ephemeris or predictive validation.",
+  "first_fortune": {
+    "result": {
+      "sign": "Sagittarius",
+      "degree": 3,
+      "minute": 8
+    },
+    "matches": true,
+    "conditional_on_declared_inferred_signs": true
+  },
+  "first_part_of_children": {
+    "result": {
+      "sign": "Libra",
+      "degree": 20,
+      "minute": 16
+    },
+    "matches": true,
+    "conditional_on_declared_inferred_signs": true
+  },
+  "second_fortune": {
+    "result": {
+      "sign": "Taurus",
+      "degree": 20,
+      "minute": 48
+    },
+    "matches": true,
+    "conditional_on_declared_chart_reading": true
+  },
+  "first_opposite_cusp_mismatch_minutes": 10,
+  "source_testimony_tally": {
+    "male": 8,
+    "female": 4
+  },
+  "repeated_body_dependencies": {
+    "Jupiter": [
+      "M6",
+      "M7"
+    ],
+    "Mercury": [
+      "F4",
+      "M1",
+      "M8"
+    ],
+    "Moon": [
+      "F3",
+      "M4"
+    ],
+    "Saturn": [
+      "M2",
+      "M3",
+      "M5"
+    ]
+  },
+  "coherent_hour_chain_sensitivity": {
+    "tally": {
+      "male": 6,
+      "female": 6
+    },
+    "interpretation": "Assume the figure Moon is intended as hour ruler; replace both the hour-body row and its dependent sign row. Analyst sensitivity only; the source does not give this tally.",
+    "source_repaired": false,
+    "changed_row_ids": [
+      "M6",
+      "M7"
+    ]
+  },
+  "moon_to_saturn_square_arc_minutes": 887,
+  "mercury_to_saturn_conjunction_arc_minutes": 817,
+  "difference_minutes": 70,
+  "moon_route_weeks": "887/60",
+  "mercury_route_weeks": "817/60",
+  "same_calendar_question_to_birth_days": 95,
+  "days_in_fourteen_weeks": 98,
+  "reported_delivery_days_before_fourteen_week_point": 3,
+  "question_sun_vs_reported_perfect_square_mismatch_minutes": 4,
+  "moon_forward_to_fifth_cusp_minutes": 251,
+  "saturn_forward_to_ninth_cusp_minutes": 43,
+  "omitted_mercury_minutes_remain_null_in_figure": true,
+  "explicit_later_mercury_table_minutes": 0,
+  "historical_ephemeris_computed": false,
+  "accuracy_evaluated": false
+}

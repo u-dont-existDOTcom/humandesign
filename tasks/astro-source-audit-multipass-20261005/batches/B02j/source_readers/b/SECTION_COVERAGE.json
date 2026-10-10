@@ -1,0 +1,549 @@
+{
+  "source": {
+    "title": "Christian Astrology",
+    "author": "William Lilly",
+    "edition": 1647,
+    "pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "pdf_pages_total": 894,
+    "source_identity_basis": "Root-supplied identity and local source_identity.json; reader did not rerun whole-PDF hash."
+  },
+  "assigned_boundary": {
+    "start": "PDF263/printed229 heading Other Judgements concerning Womens being with childe or not, then Chap.XL; preceding Twins paragraph excluded.",
+    "end": "Top PDF272/printed238 Chapter XLI carryover through journey-length discretion; stop before If the Querent should ever have Children? heading and chart.",
+    "complete_within_boundary": true,
+    "book_complete": false
+  },
+  "reading_receipt": {
+    "full_page_images_read": [
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272
+    ],
+    "initial_full_page_count": 10,
+    "additional_original_errata_page_read": 888,
+    "detail_images_read": [
+      "pdf270-heading-detail.png",
+      "pdf888-local-errata-detail.png",
+      "pdf267-errata-target-detail.png",
+      "pdf268-errata-target-detail.png",
+      "pdf269-errata-target-detail.png"
+    ],
+    "source_first_notes_sha256": "aea8ca9f643b1a478333bd16d860bfde2b410bff460497090e0bbb175cb8d315",
+    "source_first_freeze": "SOURCE_FIRST_FREEZE.json",
+    "errata_supplement_sha256": "b4868b1700c8687edb4dfbe2f2a4cc770ddfb1e5affd802f8abdda4d5f64ab56",
+    "errata_freeze": "ERRATA_FREEZE.json",
+    "new_ocr_performed": false,
+    "other_edition_consulted": false
+  },
+  "anchor_transcription_policy": "Short exact lexical anchors checked against page images; long s normalized to s, line-wrap hyphenation joined, and whitespace normalized. Astrological glyphs are read from images and named in assertions. Damaged heading is marked rather than reconstructed as an exact quotation.",
+  "candidate_summary": {
+    "count": 86,
+    "first_id": "B001",
+    "last_id": "B086",
+    "by_kind": {
+      "method": 21,
+      "rule": 40,
+      "qualification": 4,
+      "author_report": 21
+    },
+    "temporary_ids_only": true,
+    "all_rows_have_explicit_condition_logic": true,
+    "branches_used_for_alternative_outcomes": true
+  },
+  "sections": [
+    {
+      "section_id": "S01",
+      "chapter": "XL",
+      "pdf_pages": [
+        263,
+        264
+      ],
+      "printed_pages": [
+        229,
+        230
+      ],
+      "headings_and_unheaded_units": [
+        "Other Judgements concerning Womens being with childe or not.",
+        "Chap. XL.",
+        "Whether a Woman be with Childe or not."
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B001",
+        "B002",
+        "B003",
+        "B004",
+        "B005",
+        "B006",
+        "B007",
+        "B008"
+      ],
+      "candidate_count": 8,
+      "operational_coverage": [
+        "Woman-querent and conception roles",
+        "House-exchange route",
+        "Angular translation and either-direction reception",
+        "Cadent-recipient grief/sickness and conditional adverse end",
+        "Aries/Cancer/Libra/Capricorn; angular malevolents; South Node distinctions",
+        "Ponderous recipient in 2/11/9 with no malefic conjunction and Moon free",
+        "Lord5-ascendant favorable carryover"
+      ],
+      "unresolved_ids": [
+        "UB001",
+        "UB002"
+      ]
+    },
+    {
+      "section_id": "S02",
+      "chapter": "XL",
+      "pdf_pages": [
+        264
+      ],
+      "printed_pages": [
+        230
+      ],
+      "headings_and_unheaded_units": [
+        "If a Woman doe Conceive with Childe of more then one?"
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B009",
+        "B010",
+        "B011",
+        "B012",
+        "B013"
+      ],
+      "candidate_count": 5,
+      "operational_coverage": [
+        "Common rising signs",
+        "Both-benefic placements and except-Leo variant",
+        "North Node possible-three variant",
+        "No first/fifth occupancy, favorable cusp-aspect alternative",
+        "Fixed/movable Sun/Moon singleton rule",
+        "Careful judgment and family multiple-birth inquiry"
+      ],
+      "unresolved_ids": [
+        "UB003",
+        "UB004",
+        "UB005",
+        "UB006"
+      ]
+    },
+    {
+      "section_id": "S03",
+      "chapter": "XL",
+      "pdf_pages": [
+        264,
+        265
+      ],
+      "printed_pages": [
+        230,
+        231
+      ],
+      "headings_and_unheaded_units": [
+        "If Male or Female.",
+        "Masculine Planets. [marginal heading]"
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B014",
+        "B015",
+        "B016",
+        "B017",
+        "B018"
+      ],
+      "candidate_count": 5,
+      "operational_coverage": [
+        "Ascendant/fifth and rulers; six male and six female signs",
+        "Specific lord1-male/lord5-female conflict resolved by lunar application",
+        "Planet classes",
+        "Mercury aspect/conjunction association",
+        "Mercury solar orientation"
+      ],
+      "unresolved_ids": [
+        "UB007"
+      ]
+    },
+    {
+      "section_id": "S04",
+      "chapter": "XL",
+      "pdf_pages": [
+        265
+      ],
+      "printed_pages": [
+        231
+      ],
+      "headings_and_unheaded_units": [
+        "How long the Woman hath been Conceived?"
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B019",
+        "B020"
+      ],
+      "candidate_count": 2,
+      "operational_coverage": [
+        "Moon/lord5/hour-lord nearest-separation selection",
+        "Complete trine/sextile/square/opposition/conjunction month map with dual alternatives"
+      ],
+      "unresolved_ids": [
+        "UB008",
+        "UB009"
+      ]
+    },
+    {
+      "section_id": "S05",
+      "chapter": "XL",
+      "pdf_pages": [
+        265,
+        266
+      ],
+      "printed_pages": [
+        231,
+        232
+      ],
+      "headings_and_unheaded_units": [
+        "Of the time when the Birth will be?"
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B021",
+        "B022",
+        "B023",
+        "B024",
+        "B025",
+        "B026",
+        "B027",
+        "B028"
+      ],
+      "candidate_count": 8,
+      "operational_coverage": [
+        "Mars/Sun conjunction and greater-part ambiguity",
+        "Fortune applying to Part quarter",
+        "Ascensional direction to fifth/Jupiter/aspects and one day per degree",
+        "Planet directed to and before-conjunction phrase",
+        "Significator sign change",
+        "Lord5 cusp distance one month per sign",
+        "Majority of near-concurring testimonies",
+        "Part of Children Mars→Jupiter projected from ascendant by day and night"
+      ],
+      "unresolved_ids": [
+        "UB010",
+        "UB011",
+        "UB012",
+        "UB013",
+        "UB014",
+        "UB015"
+      ]
+    },
+    {
+      "section_id": "S06",
+      "chapter": "XL",
+      "pdf_pages": [
+        266
+      ],
+      "printed_pages": [
+        232
+      ],
+      "headings_and_unheaded_units": [
+        "Whether the Birth shall be by day or by night?"
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B029",
+        "B030",
+        "B031",
+        "B032",
+        "B033"
+      ],
+      "candidate_count": 5,
+      "operational_coverage": [
+        "Specified factor list and diurnal majority/night contrary",
+        "Essentially strongest on disagreement",
+        "Alternative projected degree-distance",
+        "New sex/day list including Part and dispositor",
+        "Equality/twilight clause"
+      ],
+      "unresolved_ids": [
+        "UB014",
+        "UB015",
+        "UB016"
+      ]
+    },
+    {
+      "section_id": "S07",
+      "chapter": "XL",
+      "pdf_pages": [
+        266,
+        267
+      ],
+      "printed_pages": [
+        232,
+        233
+      ],
+      "headings_and_unheaded_units": [
+        "[No new heading] Some say, if the Question be, Whether a Woman be with Childe or not"
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B034",
+        "B035",
+        "B036",
+        "B037",
+        "B038",
+        "B039",
+        "B040",
+        "B041",
+        "B042"
+      ],
+      "candidate_count": 9,
+      "operational_coverage": [
+        "Anonymous reported attribution",
+        "Application/common-sign/angular or fortunate-first/second construction",
+        "Direct planet conjunct Moon",
+        "Jupiter/Venus fifth",
+        "Moon fifth applying benefic",
+        "Fortune cazimi Sun",
+        "Infortune replacement: no sign of conception",
+        "Prior-assured-conception branch: abortion",
+        "Mars and Saturn distinct historical miscarriage causes"
+      ],
+      "unresolved_ids": [
+        "UB017",
+        "UB018",
+        "UB019"
+      ]
+    },
+    {
+      "section_id": "S08",
+      "chapter": "XL",
+      "pdf_pages": [
+        267
+      ],
+      "printed_pages": [
+        233
+      ],
+      "headings_and_unheaded_units": [
+        "[No new heading] Mother state after birth",
+        "[No new heading] Lilly's maternal-safety practice",
+        "[No new heading] Infant-life claims and luminary rationale"
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B043",
+        "B044",
+        "B045",
+        "B046",
+        "B047",
+        "B048"
+      ],
+      "candidate_count": 6,
+      "operational_coverage": [
+        "Moon final application before current-sign exit",
+        "Target nature/place/strength",
+        "Pregnancy-evident maternal safety alternatives and recollected success",
+        "Lord5 eighth undignified aspect good/ill to lord8/lord4 and reported success",
+        "Very-change and full-Moon mortality timings with modality",
+        "Author belief about both afflicted luminaries"
+      ],
+      "unresolved_ids": [
+        "UB020",
+        "UB021",
+        "UB031"
+      ]
+    },
+    {
+      "section_id": "S09",
+      "chapter": "XL",
+      "pdf_pages": [
+        268,
+        269
+      ],
+      "printed_pages": [
+        234,
+        235
+      ],
+      "headings_and_unheaded_units": [
+        "Whether Unity is like to be betwixt the Infant and the Parent, or betwixt the Parent and any of his Children of elder Yeers."
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B049",
+        "B050",
+        "B051",
+        "B052",
+        "B053",
+        "B054",
+        "B055",
+        "B056",
+        "B057",
+        "B058"
+      ],
+      "candidate_count": 10,
+      "operational_coverage": [
+        "Nativity preferred; reason for horary substitute",
+        "Reception/application in specified houses",
+        "Benefics beholding both cusps",
+        "Peregrinity/house5 child-at-fault syntax",
+        "Ascendant parental responsibility",
+        "Distinct Mars/Saturn/South Node conduct claims",
+        "Transfer and reconciliation report",
+        "Fair and truthful dealing regardless of assigned fault"
+      ],
+      "unresolved_ids": [
+        "UB022",
+        "UB023",
+        "UB024"
+      ]
+    },
+    {
+      "section_id": "S10",
+      "chapter": "XLI",
+      "pdf_pages": [
+        269,
+        270
+      ],
+      "printed_pages": [
+        235,
+        236
+      ],
+      "headings_and_unheaded_units": [
+        "Chap. XLI.",
+        "Of Embassadours or Messengers."
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B059",
+        "B060",
+        "B061",
+        "B062",
+        "B063",
+        "B064",
+        "B065",
+        "B066",
+        "B067"
+      ],
+      "candidate_count": 9,
+      "operational_coverage": [
+        "Lord5 ambassador and Moon",
+        "Cause from one or both application targets",
+        "Fortune square/opposition/conjunction with reception/collection/translation and tenth role",
+        "Eleventh-role friendship league",
+        "Unfortunate lord5 seventh, hard lord1 contact and Mars malice",
+        "Fairness method",
+        "Dignified lord5 tenth overconfidence",
+        "Mercury hard aspect and alternative commission failures",
+        "Sextile/trine to lord1 or kingdom-sign lord: sincerity even without dignity"
+      ],
+      "unresolved_ids": [
+        "UB006",
+        "UB025",
+        "UB026",
+        "UB031"
+      ]
+    },
+    {
+      "section_id": "S11",
+      "chapter": "XLI",
+      "pdf_pages": [
+        270,
+        271
+      ],
+      "printed_pages": [
+        236,
+        237
+      ],
+      "headings_and_unheaded_units": [
+        "Of a Messenger sent [damaged lettering] upon any Errand for Money."
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B068",
+        "B069",
+        "B070",
+        "B071",
+        "B072",
+        "B073",
+        "B074",
+        "B075"
+      ],
+      "candidate_count": 8,
+      "operational_coverage": [
+        "Sender/recipient/message/messenger roles",
+        "Separated lord7 then applying lord1: completed errand and return",
+        "Separated lord2 brings money even with Infortune lord2",
+        "Answer nature from ruled house and planet",
+        "Pre-separation obstruction and outward delay",
+        "Post-separation return delay",
+        "Ninth-house Infortune thieves and Fortune safety"
+      ],
+      "unresolved_ids": [
+        "UB006",
+        "UB027"
+      ]
+    },
+    {
+      "section_id": "S12",
+      "chapter": "XLI",
+      "pdf_pages": [
+        271,
+        272
+      ],
+      "printed_pages": [
+        237,
+        238
+      ],
+      "headings_and_unheaded_units": [
+        "[No new heading] Foot-Posts, Lackeys, &c.",
+        "[No new heading] reception, return, and news"
+      ],
+      "status": "visually_read_and_extracted_with_declared_uncertainties",
+      "candidate_ids": [
+        "B076",
+        "B077",
+        "B078",
+        "B079",
+        "B080",
+        "B081",
+        "B082",
+        "B083",
+        "B084",
+        "B085",
+        "B086"
+      ],
+      "candidate_count": 11,
+      "operational_coverage": [
+        "Lord1/Moon seventh or application to lord7: local safe-arrival route",
+        "Nature/dignity/strength/debility/significant-house instruction",
+        "Reception and amicable welcome",
+        "Reception with hard application: welcome plus excuse",
+        "Return: receded lord7 OR applying dispositor",
+        "Degrees to days/weeks/months by journey and sign nature",
+        "Retrograde: direct motion OR remaining-degrees timing",
+        "Lord5 sextile/trine lord1: news that day or near",
+        "Moon lord5→lord1 news, including top272 carryover",
+        "Ponderous target greater day certainty",
+        "Journey-length discretion and exact stop before chart"
+      ],
+      "unresolved_ids": [
+        "UB028",
+        "UB029",
+        "UB030"
+      ]
+    }
+  ],
+  "limits": [
+    "Historical horary source extraction only.",
+    "No personal-life application, medical/social diagnosis, or modern performance validation.",
+    "No canonical-ID integration, Git mutation, ephemeris execution, orb invention or runtime promotion.",
+    "Source ambiguities, missing local implementation conventions, and evidence gaps are typed separately.",
+    "Errata lexical repairs do not authorize altering ambiguous predicates."
+  ]
+}

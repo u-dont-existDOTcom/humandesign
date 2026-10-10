@@ -1,0 +1,2324 @@
+[
+  {
+    "id": "A001",
+    "chapter": "XXXIX",
+    "section": "If one shall have Children, yea or no?",
+    "pdf_pages": [
+      256
+    ],
+    "printed_pages": [
+      222
+    ],
+    "anchor": "long before marriage",
+    "kind": "method",
+    "conditions": [
+      "C1: A man or woman long before marriage, or an ancient bachelor or maid, asks whether ever to have a child or children."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1; inspect fruitfulness of fifth-house sign OR ascending sign.",
+      "executable": false
+    },
+    "assertion": "Consider whether the fifth-house sign or ascending sign is fruitful; the named fruitful signs are Cancer, Scorpio and Pisces. The question concerns having issue before death.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A01: The passage does not make fruitfulness an unambiguous indispensable gate for every following positive testimony."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A002",
+    "chapter": "XXXIX",
+    "section": "If one shall have Children, yea or no?",
+    "pdf_pages": [
+      256
+    ],
+    "printed_pages": [
+      222
+    ],
+    "anchor": "shall have Children or Issue ere they dye",
+    "kind": "rule",
+    "conditions": [
+      "C1: The A001 question context applies.",
+      "C2: Ascendant lord is in conjunction, sextile, trine or square with fifth lord.",
+      "C3: Moon is in conjunction, sextile, trine or square with fifth lord.",
+      "C4: The planet to which fifth lord applies, or with which it is in aspect, is free from combustion and other accidental or essential misfortunes."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_at_fruitfulness_gate",
+      "expression": "C1 AND (C2 OR C3) AND C4, subject to unresolved fruitfulness gate U-A01.",
+      "executable": false
+    },
+    "assertion": "Lilly gives this as an argument that the querent shall have children or issue before dying; ascendant lord may be in any sign.",
+    "exceptions": [
+      "Lilly explicitly observes that conjunction is not properly an aspect, while including it in this list."
+    ],
+    "uncertainty": [
+      "U-A01: Relationship of the preceding fruitful-sign inquiry to the operative aspect package is not made formally explicit."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A001"
+    ]
+  },
+  {
+    "id": "A003",
+    "chapter": "XXXIX",
+    "section": "If one shall have Children, yea or no?",
+    "pdf_pages": [
+      256
+    ],
+    "printed_pages": [
+      222
+    ],
+    "anchor": "a strong argument of having Issue or Children",
+    "kind": "rule",
+    "conditions": [
+      "C1: The A001 question context applies.",
+      "C2: Fifth lord is in ascendant.",
+      "C3: Moon is in fifth.",
+      "C4: Ascendant lord is in fifth."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND (C2 OR C3 OR C4).",
+      "executable": false
+    },
+    "assertion": "Any of these placements is called a strong argument of issue or children, in like manner to the preceding judgment.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A001"
+    ]
+  },
+  {
+    "id": "A004",
+    "chapter": "XXXIX",
+    "section": "If one shall have Children, yea or no?",
+    "pdf_pages": [
+      256,
+      257
+    ],
+    "printed_pages": [
+      222,
+      223
+    ],
+    "anchor": "but not so soone",
+    "kind": "rule",
+    "conditions": [
+      "C1: Neither ascendant lord nor Moon applies to fifth lord.",
+      "C2: There is rendering of virtue or light one to another.",
+      "C3: There is translation by or from the principal significators.",
+      "C4: There is collection by or from the principal significators."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND (C2 OR C3 OR C4).",
+      "executable": false
+    },
+    "assertion": "Issue may still be judged, but less soon than in the first manner of judgment.",
+    "exceptions": [],
+    "uncertainty": [
+      "No numerical delay or locally complete definitions of rendering, translation and collection are supplied."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A002"
+    ]
+  },
+  {
+    "id": "A005",
+    "chapter": "XXXIX",
+    "section": "If one shall have Children, yea or no?",
+    "pdf_pages": [
+      257
+    ],
+    "printed_pages": [
+      223
+    ],
+    "anchor": "it gives great hopes of issue",
+    "kind": "qualification",
+    "conditions": [
+      "C1: Consider the planet receiving the disposition of the significators after the earlier testimony.",
+      "C2: It is clear from retrogradation, combustion and cadency in house."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "The receiver being clear from those afflictions gives great hopes of issue.",
+    "exceptions": [],
+    "uncertainty": [
+      "A complete here-defined algorithm for choosing the receiver among possible planets is absent from this assigned span."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A002",
+      "A003",
+      "A004"
+    ]
+  },
+  {
+    "id": "A006",
+    "chapter": "XXXIX",
+    "section": "If one shall have Children, yea or no?",
+    "pdf_pages": [
+      257
+    ],
+    "printed_pages": [
+      223
+    ],
+    "anchor": "Lord of the fift Signe",
+    "kind": "rule",
+    "conditions": [
+      "C1: Identify the planet from which Moon separated and the planet to which Moon applies.",
+      "C2: The separation planet rules the fifth sign counted from the sign occupied by the application planet.",
+      "C3: Those two planets have an aspect to each other."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2 AND C3.",
+      "executable": false
+    },
+    "assertion": "This testifies that the party shall have children or a child.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A02: Preserve the direction of the fifth-sign relation; inclusive counting and exact aspect implementation are not locally specified."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A007",
+    "chapter": "XXXIX",
+    "section": "If one shall have Children, yea or no?",
+    "pdf_pages": [
+      257
+    ],
+    "printed_pages": [
+      223
+    ],
+    "anchor": "its not then likely he will have any",
+    "kind": "rule",
+    "conditions": [
+      "C1: The Moon separation/application planets in the preceding test do not aspect one another."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1.",
+      "executable": false
+    },
+    "assertion": "Lilly says that it is then unlikely the querent will have any children.",
+    "exceptions": [
+      "The immediately following anonymously attributed angular-application-planet alternative is retained separately as A008."
+    ],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A006",
+      "A008"
+    ]
+  },
+  {
+    "id": "A008",
+    "chapter": "XXXIX",
+    "section": "If one shall have Children, yea or no?",
+    "pdf_pages": [
+      257
+    ],
+    "printed_pages": [
+      223
+    ],
+    "anchor": "and yet some say",
+    "kind": "author_report",
+    "conditions": [
+      "C1: The above-named planets or significators are not in aspect.",
+      "C2: The planet to which Moon applies is in an angle."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "Some unnamed authorities are reported as allowing that the querent may have issue despite the absence of aspect.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A03: Anonymous variant; the text does not erase the preceding adverse rule or explain a universal precedence between them."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A006",
+      "A007"
+    ]
+  },
+  {
+    "id": "A009",
+    "chapter": "XXXIX",
+    "section": "If a Woman aske, whether she may conceive?",
+    "pdf_pages": [
+      257
+    ],
+    "printed_pages": [
+      223
+    ],
+    "anchor": "she may then conceive",
+    "kind": "rule",
+    "conditions": [
+      "C1: A married woman long without children asks if likely to conceive.",
+      "C2: Ascendant lord is in seventh.",
+      "C3: Fifth lord is in first.",
+      "C4: First lord is in fifth.",
+      "C5: Fifth lord is in seventh.",
+      "C6: Seventh lord is in fifth.",
+      "C7: Moon is with him.",
+      "C8: Good planets are in ascendant.",
+      "C9: Good planets are with fifth lord.",
+      "C10: Good planets are in any angle."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_alternatives_with_unresolved_antecedent",
+      "expression": "C1 AND any of C2–C10; C7 antecedent remains unresolved.",
+      "executable": false
+    },
+    "assertion": "The source lists these positive alternatives as permitting conception.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A04: The antecedent of with him is uncertain; the nearest is seventh lord, but this is not silently resolved.",
+      "With and good planets are source terms without a new local orb or exhaustive classification."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A010",
+    "chapter": "XXXIX",
+    "section": "If a Woman aske, whether she may conceive?",
+    "pdf_pages": [
+      257
+    ],
+    "printed_pages": [
+      223
+    ],
+    "anchor": "will hereafter conceive",
+    "kind": "rule",
+    "conditions": [
+      "C1: No positive testimony in the preceding list concurs.",
+      "C2: Barren signs and ill planets occupy the former places."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "The source judges that she is neither presently conceived nor will conceive hereafter.",
+    "exceptions": [],
+    "uncertainty": [
+      "The exact set and distribution meant by former places is not further formalized here."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A009"
+    ]
+  },
+  {
+    "id": "A011",
+    "chapter": "XXXIX",
+    "section": "If a Woman aske, whether she may conceive?",
+    "pdf_pages": [
+      257
+    ],
+    "printed_pages": [
+      223
+    ],
+    "anchor": "she may perhaps conceive",
+    "kind": "rule",
+    "conditions": [
+      "C1: Good and bad planets are mixed together in this conception inquiry."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1.",
+      "executable": false
+    },
+    "assertion": "She may perhaps conceive or have children, but the source says the children will not live.",
+    "exceptions": [],
+    "uncertainty": [
+      "The mixture predicate has no quantitative threshold in this passage; perhaps qualifies conception, not a numerical probability."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A012",
+    "chapter": "XXXIX",
+    "section": "If a Woman aske, whether she may conceive?",
+    "pdf_pages": [
+      257
+    ],
+    "printed_pages": [
+      223
+    ],
+    "anchor": "she may have children",
+    "kind": "rule",
+    "conditions": [
+      "C1: Cancer, Scorpio or Pisces is in ascendant or fifth in this inquiry."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "(Cancer OR Scorpio OR Pisces) in (ascendant OR fifth).",
+      "executable": false
+    },
+    "assertion": "The source permits that she may have children.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A013",
+    "chapter": "XXXIX",
+    "section": "If a Woman aske, whether she may conceive?",
+    "pdf_pages": [
+      257
+    ],
+    "printed_pages": [
+      223
+    ],
+    "anchor": "or hardly after will be with Child",
+    "kind": "rule",
+    "conditions": [
+      "C1: Leo or Virgo is in ascendant or fifth in this inquiry."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "(Leo OR Virgo) in (ascendant OR fifth).",
+      "executable": false
+    },
+    "assertion": "The source says she is not presently with child and will hardly be so afterwards.",
+    "exceptions": [],
+    "uncertainty": [
+      "Hardly is retained as a qualification; it is not rewritten as absolute permanent infertility."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A014",
+    "chapter": "XXXIX",
+    "section": "If a Woman aske, whether she may conceive?",
+    "pdf_pages": [
+      257
+    ],
+    "printed_pages": [
+      223
+    ],
+    "anchor": "see if their Nativity did not originally deny children",
+    "kind": "qualification",
+    "conditions": [
+      "C1: Women long without children propound this conception question."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1.",
+      "executable": false
+    },
+    "assertion": "Lilly instructs checking whether their nativity originally denied children.",
+    "exceptions": [],
+    "uncertainty": [
+      "This local instruction does not specify an unconditional natal veto, priority weights, or a natal-analysis procedure."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A015",
+    "chapter": "XXXIX",
+    "section": "At what time, or how long it may be ere she have a Childe?",
+    "pdf_pages": [
+      257,
+      258
+    ],
+    "printed_pages": [
+      223,
+      224
+    ],
+    "anchor": "if in the second house, the second yeere",
+    "kind": "method",
+    "conditions": [
+      "C1: According to natural causes she may have a child or children.",
+      "C2: The querent desires to know approximately when.",
+      "C3: Locate fifth lord by house."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2; use the source-explicit branches {house1:year1, house2:year2, house10:year3, house7:year4, house4:year5}.",
+      "executable": false
+    },
+    "assertion": "The printed recipe maps fifth lord in ascendant/first to first year, second house to second year, tenth to third year, seventh to fourth year, and fourth to fifth year.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05: The table is unusual but second house is image-verified and not emended. Other houses, exact epoch for the year count, and quantitative adjustments are not supplied here."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A016",
+    "chapter": "XXXIX",
+    "section": "At what time, or how long it may be ere she have a Childe?",
+    "pdf_pages": [
+      258
+    ],
+    "printed_pages": [
+      224
+    ],
+    "anchor": "fixed Signes prolong the matter",
+    "kind": "qualification",
+    "conditions": [
+      "C1: Apply the preceding time inquiry.",
+      "C2: The planet is swift in a movable sign.",
+      "C3: The sign is double-bodied.",
+      "C4: The sign is fixed."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1; branches C2→somewhat earlier, C3→not so soon, C4→prolonged.",
+      "executable": false
+    },
+    "assertion": "Swiftness in a movable sign somewhat hastens the time; a double-bodied sign does not manifest so soon; fixed signs prolong the matter.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A05: No numerical offsets, sign-class list, or conflict-resolution formula is provided in this local recipe."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A015"
+    ]
+  },
+  {
+    "id": "A017",
+    "chapter": "XXXIX",
+    "section": "At what time, or how long it may be ere she have a Childe?",
+    "pdf_pages": [
+      258
+    ],
+    "printed_pages": [
+      224
+    ],
+    "anchor": "if he be swift in motion and direct",
+    "kind": "qualification",
+    "conditions": [
+      "C1: A significator is swift in motion.",
+      "C2: It is direct."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2; sign-independent qualification.",
+      "executable": false
+    },
+    "assertion": "Whatever sign it occupies, the significator hastens performance and brings accomplishment sooner when both conditions hold.",
+    "exceptions": [],
+    "uncertainty": [
+      "No numerical motion threshold or amount of acceleration is locally specified."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A015",
+      "A016"
+    ]
+  },
+  {
+    "id": "A018",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      258
+    ],
+    "printed_pages": [
+      224
+    ],
+    "anchor": "is capable of getting them",
+    "kind": "rule",
+    "conditions": [
+      "C1: Fortunate planets behold ascendant.",
+      "C2: Ascendant lord is in ascendant, tenth, eleventh or fifth.",
+      "C3: Jupiter is well placed together with the lord of the ascending triplicity.",
+      "C4: He is not combust or retrograde."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_antecedent",
+      "expression": "C1 AND C2 AND C3 AND C4; antecedent of C4 unresolved.",
+      "executable": false
+    },
+    "assertion": "For a man the source permits children or capacity to get them; for a woman it permits conception and says she is not naturally barren.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A06: He most immediately follows triplicity lord, but whether it qualifies that lord alone or the combined Jupiter/triplicity package is not explicit.",
+      "U-A18: Jupiter and the triplicity lord are source roles that could resolve to one physical planet; this is not automatically two independent testimonies."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A019",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      258
+    ],
+    "printed_pages": [
+      224
+    ],
+    "anchor": "a Childe a long time after",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant lord is in fourth or seventh.",
+      "C2: Jupiter is in a good house."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "The source predicts a child a long time after the question.",
+    "exceptions": [],
+    "uncertainty": [
+      "Good house and long time are not quantified in this local rule."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A020",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      258
+    ],
+    "printed_pages": [
+      224
+    ],
+    "anchor": "few Children, and they sickly",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant is afflicted or infortunated by malevolent planets.",
+      "C2: Ascendant lord is in an evil place or house.",
+      "C3: Jupiter is cadent.",
+      "C4: Jupiter is in eighth.",
+      "C5: Jupiter is combust.",
+      "C6: Jupiter is not fully removed from sunbeams."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2 AND (C3 OR C4 OR C5 OR C6).",
+      "executable": false
+    },
+    "assertion": "The source judges few children, sickly, with hardly any living.",
+    "exceptions": [],
+    "uncertainty": [
+      "Hardly any is preserved; no numerical child count or survival rate is inferred."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A021",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      258
+    ],
+    "printed_pages": [
+      224
+    ],
+    "anchor": "no capacity to conceive",
+    "kind": "rule",
+    "conditions": [
+      "C1: Moon is unfortunate."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1; the asserted alternatives nonconception OR incapacity remain distinct.",
+      "executable": false
+    },
+    "assertion": "This is called a great sign of nonconception or absence of capacity to conceive.",
+    "exceptions": [],
+    "uncertainty": [
+      "Unfortunate is not exhaustively defined in this local sentence."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A022",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      258,
+      259
+    ],
+    "printed_pages": [
+      224,
+      225
+    ],
+    "anchor": "in a little compasse of time",
+    "kind": "rule",
+    "conditions": [
+      "C1: A fortunate planet is in fifth.",
+      "C2: A fortunate planet has a benign aspect to the fifth cusp."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 OR C2.",
+      "executable": false
+    },
+    "assertion": "This gives hopes and strong testimony of a child in a short span of time.",
+    "exceptions": [],
+    "uncertainty": [
+      "Benign aspect and short span are not numerically defined here."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A023",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "the Querent will have no Children",
+    "kind": "rule",
+    "conditions": [
+      "C1: An infortune is in fifth.",
+      "C2: It is described as ill dignified, combust, retrograde, slow in motion, etc."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_grouping",
+      "expression": "C1 with the source-listed impairment cluster C2; exact all/any and etc. expansion unresolved.",
+      "executable": false
+    },
+    "assertion": "Under this adverse description the source judges no children.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A10: The comma-separated impairments have no explicit complete Boolean grouping; etc. prevents treating this as an exhaustive local definition."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A024",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "he shall signifie Children",
+    "kind": "rule",
+    "conditions": [
+      "C1: The infortune in fifth is direct.",
+      "C2: It is swift.",
+      "C3: It is oriental.",
+      "C4: It is in any of its essential dignities."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2 AND C3 AND C4.",
+      "executable": false
+    },
+    "assertion": "Contrary to the debilitated-infortune condition, this state signifies children.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A023"
+    ]
+  },
+  {
+    "id": "A025",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "the more Children if",
+    "kind": "qualification",
+    "conditions": [
+      "C1: The preceding direct, swift, oriental, essentially dignified infortune condition holds.",
+      "C2: Jupiter, Venus or Sun sextiles or trines that infortune from good houses."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND ((Jupiter OR Venus OR Sun) in (sextile OR trine) to the infortune from good houses).",
+      "executable": false
+    },
+    "assertion": "The source signifies more children with this additional testimony.",
+    "exceptions": [],
+    "uncertainty": [
+      "No numerical increase or definition of good houses is given in this sentence."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A024"
+    ]
+  },
+  {
+    "id": "A026",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "the neerer a Fortune is to the Ascendant",
+    "kind": "qualification",
+    "conditions": [
+      "C1: Compare a fortune’s nearness to ascendant."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1; nearer→sooner, more remote→longer.",
+      "executable": false
+    },
+    "assertion": "The nearer it is, the sooner children may be expected; the more remote, the more time to allow.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A08: Neither distance metric nor a quantitative time scale is specified."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A027",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "Others observe this rule following",
+    "kind": "author_report",
+    "conditions": [
+      "C1: Jupiter is in ascendant or fifth.",
+      "C2: Jupiter is in a sign that is not barren."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "Others are reported as treating this as an argument that the querent may have a child.",
+    "exceptions": [],
+    "uncertainty": [
+      "Attribution is anonymous. Jupiter glyph verified against the same-page Jupiter reference in original 300-dpi evidence."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A028",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "much strength in the Lord of the house",
+    "kind": "rule",
+    "conditions": [
+      "C1: The lord of the house is angular with reception of the lord of that angle.",
+      "C2: The lord of the house is in eleventh or fifth with like reception."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_referent",
+      "expression": "C1 OR C2; house-lord referent and exact reception direction unresolved.",
+      "executable": false
+    },
+    "assertion": "The source calls these sure testimony of having children.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A07: The Lord of the house has an uncertain antecedent; do not silently assign ascendant lord, fifth lord or Jupiter’s dispositor.",
+      "Reception is not expressed as an explicit dignity-direction formula in this sentence."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A029",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "In all Questions concerning Children",
+    "kind": "qualification",
+    "conditions": [
+      "C1: Any question concerning children is being judged."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1.",
+      "executable": false
+    },
+    "assertion": "Be careful of the querent’s age and any natural or hereditary infirmity incident to the querent.",
+    "exceptions": [],
+    "uncertainty": [
+      "The text supplies no medical assessment method, adjustment amount or automatic veto; no practical medical inference is licensed."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A030",
+    "chapter": "XXXIX",
+    "section": "Whether the Querent shall have Children, be he Man or Woman that asketh?",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "seldome conclude without two testimonies",
+    "kind": "qualification",
+    "conditions": [
+      "C1: Any question concerning children is being judged."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1; qualified minimum-testimony advice, not an absolute never.",
+      "executable": false
+    },
+    "assertion": "Lilly says seldom to conclude without two testimonies.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A08: Independent testimony, role/body duplicate counting, weighting and exceptions to seldom are not locally defined."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A031",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "shall have Issue by the party inquired of",
+    "kind": "rule",
+    "conditions": [
+      "C1: A man asks about children by his wife or another named woman, or a woman asks about issue by a specified man.",
+      "C2: Ascendant lord is joined to fifth lord.",
+      "C3: Moon is joined to fifth lord."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND (C2 OR C3).",
+      "executable": false
+    },
+    "assertion": "After examining ascendant, its lord and Moon, either joining permits judgment of issue by that particular partner.",
+    "exceptions": [],
+    "uncertainty": [
+      "Joined is preserved without adding a new conjunction orb or automatically importing every other aspect."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A032",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "after some space of time",
+    "kind": "rule",
+    "conditions": [
+      "C1: The preceding joining testimony is absent.",
+      "C2: There is translation from fifth lord to ascendant lord."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "This is an argument of children with the specified partner after some time.",
+    "exceptions": [],
+    "uncertainty": [
+      "No numerical delay or complete translation algorithm is supplied in this passage."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A031"
+    ]
+  },
+  {
+    "id": "A033",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      259
+    ],
+    "printed_pages": [
+      225
+    ],
+    "anchor": "he or she may have children",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant lord is in fifth.",
+      "C2: Moon is in fifth.",
+      "C3: Fifth lord is in ascendant."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 OR C2 OR C3.",
+      "executable": false
+    },
+    "assertion": "In the named-partner inquiry these alternatives permit children.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A031"
+    ]
+  },
+  {
+    "id": "A034",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      259,
+      260
+    ],
+    "printed_pages": [
+      225,
+      226
+    ],
+    "anchor": "for he collecting both their lights",
+    "kind": "method",
+    "conditions": [
+      "C1: None of the preceding direct, translation or placement testimonies is present.",
+      "C2: Ascendant lord, Moon and fifth lord are joined to a planet more ponderous than themselves."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_role_grouping",
+      "expression": "C1 AND source-listed joining package C2; three-role list versus both-lights phrase remains unresolved.",
+      "executable": false
+    },
+    "assertion": "Consider that collector as receiver of their disposition to signify whether the child or children, if any, will live.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A09: Three significators are named, but the text says both their lights; selection of a pair is not silently inferred.",
+      "This is expressly a survival inquiry conditional on children existing, not itself an unconditional conception promise.",
+      "If one body holds multiple named roles, the source does not state how that changes collection or the light count."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A031",
+      "A032",
+      "A033"
+    ]
+  },
+  {
+    "id": "A035",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "the Children then shall live",
+    "kind": "rule",
+    "conditions": [
+      "C1: Children exist under the collector inquiry.",
+      "C2: The receiver/collector is not impeded."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "The source judges that the children will live.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A034"
+    ]
+  },
+  {
+    "id": "A036",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "neither will the Children live long",
+    "kind": "rule",
+    "conditions": [
+      "C1: Children exist under the collector inquiry.",
+      "C2: The collector is retrograde, combust, peregrine or otherwise unfortunate."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND (retrograde OR combust OR peregrine OR otherwise unfortunate).",
+      "executable": false
+    },
+    "assertion": "The source says the children will not live long and the parents will not take comfort from them.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A034"
+    ]
+  },
+  {
+    "id": "A037",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "perhaps upon the first congresse",
+    "kind": "rule",
+    "conditions": [
+      "C1: Jupiter, identified here as naturally signifying children, is in first, third, fifth, ninth or eleventh.",
+      "C2: Jupiter is free from all manner of misfortune."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "The source affirms shortly ensuing conception, perhaps at the first coition after asking or a little later, calling the matter as good as done.",
+    "exceptions": [],
+    "uncertainty": [
+      "Perhaps qualifies the first-coition timing; it is not converted into certainty or a probability."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A038",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "it hastens the time",
+    "kind": "rule",
+    "conditions": [
+      "C1: Venus is in fifth without impediment.",
+      "C2: Some other fortune is also there."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "The source says this hastens time to very sudden conception.",
+    "exceptions": [],
+    "uncertainty": [
+      "Other fortune is additional to Venus; no exact time interval is stated."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A039",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "either she is not conceived",
+    "kind": "rule",
+    "conditions": [
+      "C1: Jupiter is in the aforesaid first, third, fifth, ninth or eleventh places.",
+      "C2: Jupiter is impeded."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2; output branches no conception OR (if conception exists→no completion/abortion).",
+      "executable": false
+    },
+    "assertion": "The source gives alternatives: no current conception, or, if conceived, failure to come to completion and abortion.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A037"
+    ]
+  },
+  {
+    "id": "A040",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "unlesse a Fortune be in the fifth house",
+    "kind": "rule",
+    "conditions": [
+      "C1: Venus is unfortunate through Saturn or Mars, under sunbeams, or combust.",
+      "C2: A fortune is in fifth."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "If C1 AND NOT C2→not conceived; if C1 AND C2→present OR shortly future conception, with feared loss before birth.",
+      "executable": false
+    },
+    "assertion": "The source denies conception under C1 unless C2; with C2 it says she more assuredly is with child or will shortly be so, yet one may fear mischance before birth.",
+    "exceptions": [
+      "A fortune in fifth reverses the nonconception statement, but does not remove the expressed fear of loss."
+    ],
+    "uncertainty": [
+      "The loss is framed as something one may justly fear; the paraphrase does not convert it to an unconditional outcome."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A041",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "it seemes the Woman is not with childe",
+    "kind": "rule",
+    "conditions": [
+      "C1: Saturn, Mars or especially south node is in fifth.",
+      "C2: Saturn or Mars casts opposition to fifth."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 OR C2.",
+      "executable": false
+    },
+    "assertion": "The source says these conditions make it seem that the woman is not with child.",
+    "exceptions": [],
+    "uncertainty": [
+      "Especially gives south node emphasis without a numerical weight. It seems is retained."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A042",
+    "chapter": "XXXIX",
+    "section": "If a Man shall have Children by his Wife yea or not, or of any other Woman whom he nominates.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "seems to hinder conception",
+    "kind": "rule",
+    "conditions": [
+      "C1: Infortunes square the fifth house."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1.",
+      "executable": false
+    },
+    "assertion": "The source says this seems to hinder conception.",
+    "exceptions": [],
+    "uncertainty": [
+      "Hindering conception is not silently equated with proof of absent present pregnancy."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A043",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "according to the time of her demand",
+    "kind": "method",
+    "conditions": [
+      "C1: A woman suspects herself with child and asks for the truth."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1.",
+      "executable": false
+    },
+    "assertion": "Answer after considering a figure erected for the time of her demand, using the following rules.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A044",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "with any aspect or translation",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant lord beholds fifth lord by any aspect or translation.",
+      "C2: Moon beholds fifth lord by any aspect or translation."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 OR C2.",
+      "executable": false
+    },
+    "assertion": "Under the Shee is rubric, this is a positive present-pregnancy testimony.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A043"
+    ]
+  },
+  {
+    "id": "A045",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      260
+    ],
+    "printed_pages": [
+      226
+    ],
+    "anchor": "free from the malevolent aspect of the Infortunes",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant lord and Moon are in fifth.",
+      "C2: They are free from malevolent aspect of infortunes.",
+      "C3: They are direct."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2 AND C3.",
+      "executable": false
+    },
+    "assertion": "Under the Shee is rubric, this is a positive present-pregnancy testimony.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A043",
+      "A046",
+      "A047"
+    ]
+  },
+  {
+    "id": "A046",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      260,
+      261
+    ],
+    "printed_pages": [
+      226,
+      227
+    ],
+    "anchor": "the onely Unfortunate Planets",
+    "kind": "qualification",
+    "conditions": [
+      "C1: Identify affliction in the actual figure for this pregnancy inquiry."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1; expand possible affliction by chart role as specified in A047.",
+      "executable": false
+    },
+    "assertion": "Do not rely wholly on Saturn, Mars or south node as the only unfortunates; consider the actual position of heaven. The margin clarifies that Saturn and Mars are meant as planets, not the node.",
+    "exceptions": [],
+    "uncertainty": [
+      "This is a source terminology distinction; it does not reclassify the node as a planet."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A045",
+      "A047"
+    ]
+  },
+  {
+    "id": "A047",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "be he what Planet he will",
+    "kind": "qualification",
+    "conditions": [
+      "C1: A planet rules sixth, eighth or twelfth in the actual figure.",
+      "C2: It squares or opposes fifth lord, ascendant lord or Moon."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "(lord6 OR lord8 OR lord12) AND (square OR opposition) to (lord5 OR lord1 OR Moon).",
+      "executable": false
+    },
+    "assertion": "Treat such an evil aspect as an affliction whatever planet holds the malefic house-lord role.",
+    "exceptions": [],
+    "uncertainty": [
+      "A single physical planet may hold several house roles; this is a role-based affliction predicate, not a prescribed multiple-count score."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A046"
+    ]
+  },
+  {
+    "id": "A048",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "they being slow in motion or Retrograde",
+    "kind": "rule",
+    "conditions": [
+      "C1: Jupiter is generally in first, fifth, eleventh or seventh.",
+      "C2: It is not in aspect to Saturn or Mars, they being slow in motion or retrograde."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_antecedent",
+      "expression": "C1 AND C2 as worded; the they clause is preserved without a silently resolved antecedent.",
+      "executable": false
+    },
+    "assertion": "This is listed under positive present-pregnancy testimonies.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A11: They appears to refer to Saturn/Mars; the text is not converted into a Jupiter-motion requirement. Scope of the slow/retrograde restriction within the no-aspect clause remains explicit but uncompiled."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A043"
+    ]
+  },
+  {
+    "id": "A049",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "rendring up his vertue unto him",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant lord or fifth lord aspects a planet in an angle.",
+      "C2: There is reception.",
+      "C3: The significator renders its virtue to that planet."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2 AND C3.",
+      "executable": false
+    },
+    "assertion": "This is listed as positive present-pregnancy testimony.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A11: The following essential-fortification limit is explicit for Moon reception; whether it also grammatically extends to this immediately preceding lord-reception clause is not formally resolved."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A050",
+      "A051"
+    ]
+  },
+  {
+    "id": "A050",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "essentially Fortified, else not",
+    "kind": "rule",
+    "conditions": [
+      "C1: Moon is in reception with a planet in an angle.",
+      "C2: The angular planet is essentially fortified."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "The source admits this reception testimony with essential fortification and expressly says otherwise not.",
+    "exceptions": [
+      "Reception/angularity without the stated essential fortification does not provide this asserted assurance."
+    ],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A051"
+    ]
+  },
+  {
+    "id": "A051",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "giveth hopes, but not reall assurance",
+    "kind": "qualification",
+    "conditions": [
+      "C1: Only accidental dignity supplies fortification in this manner of judgment."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1.",
+      "executable": false
+    },
+    "assertion": "Accidental dignities give hope, not real assurance.",
+    "exceptions": [],
+    "uncertainty": [
+      "The local rule supplies an assurance distinction, not numeric confidence levels."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A049",
+      "A050"
+    ]
+  },
+  {
+    "id": "A052",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "with an amicable aspect",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant lord beholds ascendant by an amicable aspect from a good house.",
+      "C2: Moon is in seventh and beholds seventh lord in eleventh.",
+      "C3: Moon is in eleventh and beholds seventh lord in seventh."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 OR C2 OR C3.",
+      "executable": false
+    },
+    "assertion": "Each of these alternatives is listed as positive present-pregnancy testimony.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A053",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "received in either House, Triplicity or Exaltation",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant lord is received in house, triplicity or exaltation.",
+      "C2: Its receiver also has like dignity in house, triplicity, exaltation or term of the received ascendant lord."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2; within C1: house OR triplicity OR exaltation; within C2: house OR triplicity OR exaltation OR term.",
+      "executable": false
+    },
+    "assertion": "This reciprocal dignity package is listed as positive present-pregnancy testimony. The written lists differ: term appears in the receiver’s side only.",
+    "exceptions": [],
+    "uncertainty": [
+      "The extraction preserves the source’s wording of dignity of the received; no unstated face dignity or symmetric expansion of the two lists is added."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A054",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "rendring her light to a Planet",
+    "kind": "rule",
+    "conditions": [
+      "C1: Moon gives virtue or renders its light to a planet.",
+      "C2: That planet is in fifth.",
+      "C3: The source adds or having essential dignities in fifth; the nearest antecedent is the receiving planet, but Moon is a possible grammatical attachment."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_modifier_attachment",
+      "expression": "C1 AND (C2 OR C3) under the nearest-antecedent reading; C3 attachment remains unresolved.",
+      "executable": false
+    },
+    "assertion": "This is listed as positive present-pregnancy testimony.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A20: Having essential dignities in fifth most immediately modifies the receiving planet, but a possible attachment to Moon is not silently excluded. No physical occupation of fifth is added to the dignity alternative."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A055",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "he not Cadent from his owne House or exaltation",
+    "kind": "rule",
+    "conditions": [
+      "C1: Moon applies to ascendant lord or fifth lord.",
+      "C2: That lord is in first or tenth.",
+      "C3: That lord is not cadent from its own house or exaltation."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2 AND C3.",
+      "executable": false
+    },
+    "assertion": "This is listed as positive present-pregnancy testimony; the following source explanation distinguishes sign-relative cadency from mundane house position.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A12: The exact application of cadency from exaltation and choice among multiple domiciles is not fully specified by the accompanying Mars illustration."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A056",
+      "A057"
+    ]
+  },
+  {
+    "id": "A056",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is. / A Planet cadent from his owne house.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "ever a Planet is Angular in any of his owne Houses",
+    "kind": "method",
+    "conditions": [
+      "C1: Interpret angular, succeeding and cadent from a planet’s own house in the preceding rule."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1; domicile-relative status is a separate source-defined relation from mundane angularity.",
+      "executable": false
+    },
+    "assertion": "The source measures this status relative to the planet’s domicile sign rather than its mundane house placement; every planet is angular in any of its own houses. Mars’s following example demonstrates the distinction.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A12: The local illustration gives three sequential signs from one domicile; it does not provide a fully enumerated algorithm across all domiciles/exaltations."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A055",
+      "A057"
+    ]
+  },
+  {
+    "id": "A057",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is. / A Planet cadent from his owne house.",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "let him then be in any of the twelve Houses",
+    "kind": "illustration",
+    "conditions": [
+      "C1: Mars is in Aries, Taurus or Gemini."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "Branches: Mars/Aries→angular; Mars/Taurus→succeeding; Mars/Gemini→cadent.",
+      "executable": false
+    },
+    "assertion": "Mars in Aries is angular in this domicile-relative sense whatever its mundane house; in Taurus it is succeeding; in Gemini it is cadent from its own house. The source says to proceed similarly in the rest.",
+    "exceptions": [],
+    "uncertainty": [
+      "The complete sign-specific example was image-checked; the anchor preserves words rather than converting printed glyphs into a purported exact quotation."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A056"
+    ]
+  },
+  {
+    "id": "A058",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is. / Starred additions",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "These added to other testimonies",
+    "kind": "qualification",
+    "conditions": [
+      "C1: Use the starred run beginning with Moon’s dispositor and hour lord in angles."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1; supplementary testimony qualification.",
+      "executable": false
+    },
+    "assertion": "The margin directs adding these to other testimonies, preserving their corroborative role.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A13: The exact final scope of the asterisk is typographically uncertain; preserve its association with the run instead of promoting every item to a standalone decisive rule."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A059",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is. / Starred additions",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "Lord of the houre in Angles",
+    "kind": "rule",
+    "conditions": [
+      "C1: Moon’s dispositor is angular.",
+      "C2: Hour lord is angular."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "These are listed together as supplementary positive pregnancy testimony.",
+    "exceptions": [],
+    "uncertainty": [
+      "The two roles may be held by the same physical planet; the text does not supply duplicate-vote treatment."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A058"
+    ]
+  },
+  {
+    "id": "A060",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is. / Starred additions",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "she is newly conceived",
+    "kind": "rule",
+    "conditions": [
+      "C1: Mars is in the sign of seventh house.",
+      "C2: Mars is well fortified."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "The source indicates new conception, expressly subject to fortification.",
+    "exceptions": [],
+    "uncertainty": [
+      "In the sign of seventh house is not silently rewritten as an exact mundane-house placement rule."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A058"
+    ]
+  },
+  {
+    "id": "A061",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is. / Starred additions",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "the party is quicke, or her Infant moveth",
+    "kind": "rule",
+    "conditions": [
+      "C1: Saturn is in seventh."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1.",
+      "executable": false
+    },
+    "assertion": "The source describes the pregnancy as quick or the infant moving.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A058"
+    ]
+  },
+  {
+    "id": "A062",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is. / Starred additions",
+    "pdf_pages": [
+      261
+    ],
+    "printed_pages": [
+      227
+    ],
+    "anchor": "she is impregnated of a male childe",
+    "kind": "rule",
+    "conditions": [
+      "C1: Jupiter is in seventh."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1.",
+      "executable": false
+    },
+    "assertion": "The source signifies pregnancy with a male child.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A058"
+    ]
+  },
+  {
+    "id": "A063",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is. / Starred additions",
+    "pdf_pages": [
+      261,
+      262
+    ],
+    "printed_pages": [
+      227,
+      228
+    ],
+    "anchor": "all the rest of the Significators are equally",
+    "kind": "rule",
+    "conditions": [
+      "C1: Sagittarius or Pisces is in seventh.",
+      "C2: The remaining significators are equal and do not balance the judgment."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "The source allows judgment of a girl under this stated balance condition.",
+    "exceptions": [],
+    "uncertainty": [
+      "No weighting or tie algorithm is provided for equal and balance not. The unusual Sagittarius/Pisces pairing is preserved as printed."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A058"
+    ]
+  },
+  {
+    "id": "A064",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is. / Starred additions",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "argue the same",
+    "kind": "rule",
+    "conditions": [
+      "C1: Moon is in fifth.",
+      "C2: Moon applies to Jupiter or Venus."
+    ],
+    "condition_logic": {
+      "status": "source_explicit_conditions_unresolved_output",
+      "expression": "C1 AND C2; output antecedent unresolved.",
+      "executable": false
+    },
+    "assertion": "This is said to argue the same; the immediately preceding antecedent is a girl, but the larger paragraph concerns pregnancy. The intended outcome remains unresolved rather than converted to a definite sex or conception rule.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A13: The nearest grammatical reading is a girl, but argue the same is not an explicit restatement of the outcome; preserve the ambiguity."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A058",
+      "A063"
+    ]
+  },
+  {
+    "id": "A065",
+    "chapter": "XXXIX",
+    "section": "Whether she is with Childe or not. / Shee is.",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "You may ever predict true Conception",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant is fixed and a fortune is placed therein.",
+      "C2: Fifth lord is strong in ascendant or tenth."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "(fixed ascendant AND fortune therein) OR (strong fifth lord in (ascendant OR tenth)).",
+      "executable": false
+    },
+    "assertion": "The source permits prediction of true conception under either package.",
+    "exceptions": [],
+    "uncertainty": [
+      "Strong is not numerically defined in this local rule. U-A13: The preceding asterisk’s endpoint is uncertain; no independence or universal override is inferred."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A058"
+    ]
+  },
+  {
+    "id": "A066",
+    "chapter": "XXXIX",
+    "section": "If the Man aske unknowne to the Woman. / Shee is.",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "behold a Planet in an Angle with reception",
+    "kind": "rule",
+    "conditions": [
+      "C1: A man asks without the woman’s knowledge.",
+      "C2: Fifth lord beholds a planet in an angle with reception."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2.",
+      "executable": false
+    },
+    "assertion": "Under this distinct questioner context and the Shee is rubric, the source gives positive present-pregnancy testimony.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A067",
+    "chapter": "XXXIX",
+    "section": "If the Man aske unknowne to the Woman. / Shee is.",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "be in the fifth Fortunate",
+    "kind": "rule",
+    "conditions": [
+      "C1: A man asks without the woman’s knowledge.",
+      "C2: The source lists hour lord, fifth lord, Jupiter, Venus, Sun, Moon, Mercury or north node as in fifth fortunate."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_list_grouping",
+      "expression": "C1 with C2; terminal or suggests alternatives, but exact list grouping and scope of fortunate remain unresolved.",
+      "executable": false
+    },
+    "assertion": "The listed condition is presented as positive present-pregnancy testimony.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A14: Do not silently convert the comma list into an all-planets conjunction or a fully executable any-of predicate.",
+      "The list mixes house/hour roles with named bodies and a node; role coincidences do not automatically supply separate testimony votes."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A068",
+    "chapter": "XXXIX",
+    "section": "If the Man aske unknowne to the Woman. / Shee is.",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "Lord of the seventh in the fifth",
+    "kind": "rule",
+    "conditions": [
+      "C1: A man asks without the woman’s knowledge.",
+      "C2: Fifth lord is in seventh.",
+      "C3: Seventh lord is in fifth."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND (C2 OR C3).",
+      "executable": false
+    },
+    "assertion": "These are positive present-pregnancy alternatives in that questioner context.",
+    "exceptions": [],
+    "uncertainty": [],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A069",
+    "chapter": "XXXIX",
+    "section": "If the Man aske unknowne to the Woman. / She is not.",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "if other significators be more prevalent",
+    "kind": "rule",
+    "conditions": [
+      "C1: Jupiter or Venus is impeded.",
+      "C2: Venus is joined to Saturn or Mars, and they are combust, retrograde, slow, or in Leo, Virgo or Capricorn.",
+      "C3: Saturn or Mars is in fifth, in square or opposition to fifth lord.",
+      "C4: Other significators are more prevalent and testify conception."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_cluster",
+      "expression": "Clauses C1, C2, C3 form the source’s uncompiled adverse cluster; grouping between them is unresolved. If C4 supplies prevailing positive conception testimony, retain the source’s alternative outcome of abortion danger.",
+      "executable": false
+    },
+    "assertion": "The negative cluster denotes no conception, or danger of abortion when more prevalent other significators support conception.",
+    "exceptions": [
+      "More prevalent positive conception testimony changes the adverse outcome from no conception to danger of loss; it is not erased."
+    ],
+    "uncertainty": [
+      "U-A14: Commas and repeated if do not give a clean all/any rule across C1–C3.",
+      "U-A14: They in C2 may refer to Saturn/Mars or the joined planets; do not silently select a scope.",
+      "More prevalent is comparative but has no numerical weight or role/body deduplication rule."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A071"
+    ]
+  },
+  {
+    "id": "A070",
+    "chapter": "XXXIX",
+    "section": "If the Man aske unknowne to the Woman. / She is not.",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "no aspect or translation of light betwixt",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant lord is joined to a retrograde planet.",
+      "C2: Ascendant lord is joined to one in a cadent house.",
+      "C3: Ascendant lord is received by a retrograde or combust planet.",
+      "C4: No aspect or translation of light connects fifth lord and ascendant lord."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_cluster",
+      "expression": "C1 OR C2 OR C3 are explicit alternatives; the conjunction or alternative relation of C4 to that cluster is unresolved.",
+      "executable": false
+    },
+    "assertion": "This is another adverse testimony cluster under She is not, followed by the instruction to judge by the major testimonies.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A14: Absence of aspect/translation is not silently imposed as an AND on every preceding branch, nor treated as automatically overriding other testimony."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A071"
+    ]
+  },
+  {
+    "id": "A071",
+    "chapter": "XXXIX",
+    "section": "If the Man aske unknowne to the Woman. / She is not.",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "judge by the major testimonies",
+    "kind": "qualification",
+    "conditions": [
+      "C1: Judge the competing testimonies in the man-asking-without-woman’s-knowledge pregnancy inquiry."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1; source comparative-prevalence instruction without a supplied scoring formula.",
+      "executable": false
+    },
+    "assertion": "Use the major testimonies in judgment.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A18: The source does not prescribe a numerical majority rule, weights, independent-body counting, or how one body filling multiple significator roles is counted."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A066",
+      "A067",
+      "A068",
+      "A069",
+      "A070"
+    ]
+  },
+  {
+    "id": "A072",
+    "chapter": "XXXIX",
+    "section": "If the Man aske unknowne to the Woman. / Male or Female.",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "the contrary a Female",
+    "kind": "rule",
+    "conditions": [
+      "C1: Ascendant lord, fifth lord and hour lord are masculine.",
+      "C2: Moon is in a masculine sign, degrees or quarter."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 AND C2; within C2: masculine sign OR masculine degrees OR masculine quarter. Contrary branch retained without an invented mixed-case rule.",
+      "executable": false
+    },
+    "assertion": "The source indicates a male under this package and a female under the contrary.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A15: Masculine degrees and quarter are not defined in this assigned span; exact treatment of mixed masculine/feminine testimony is not given.",
+      "U-A18: The three lord roles may share one physical planet; no duplicate-body weighting is prescribed."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A073",
+    "chapter": "XXXIX",
+    "section": "If the Man aske unknowne to the Woman. / Whether it shall live?",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "is a presage of Death, & e contra",
+    "kind": "rule",
+    "conditions": [
+      "C1: Fifth lord is retrograde.",
+      "C2: Fifth lord is combust.",
+      "C3: Fifth lord is cadent from its house or exaltation."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "C1 OR C2 OR C3; source-stated converse retained without inventing a complete converse-survival test.",
+      "executable": false
+    },
+    "assertion": "The source calls these a presage of death and adds the converse, e contra.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A12: Cadency from house/exaltation depends on the sign-relative explanation, which is not a fully enumerated algorithm here.",
+      "U-A19: The exact logical complement meant by e contra is not fully specified."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": [
+      "A056",
+      "A057"
+    ]
+  },
+  {
+    "id": "A074",
+    "chapter": "XXXIX",
+    "section": "If the Man aske unknowne to the Woman. / Whether it shall live?",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "all or most of them unfortunate",
+    "kind": "rule",
+    "conditions": [
+      "C1: Among ascendant lord, hour lord and fifth lord, all or most are unfortunate."
+    ],
+    "condition_logic": {
+      "status": "source_explicit",
+      "expression": "All OR most of the three named significator roles unfortunate.",
+      "executable": false
+    },
+    "assertion": "The source treats this as an argument of death.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A18: The source specifies roles but does not explain whether repeated roles of one physical planet count separately. Do not convert to an independent-body tally or an extra multiple-role vote."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A075",
+    "chapter": "XXXIX",
+    "section": "If the Man aske unknowne to the Woman. / Whether it shall live?",
+    "pdf_pages": [
+      262
+    ],
+    "printed_pages": [
+      228
+    ],
+    "anchor": "in the first or fifth House, and Retrograde",
+    "kind": "rule",
+    "conditions": [
+      "C1: Saturn, Mars or south node is in first or fifth.",
+      "C2: And retrograde, as printed after the list."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_modifier_scope",
+      "expression": "(Saturn OR Mars OR south node) in (first OR fifth), AND printed retrograde qualifier; its scope over the node list is retained unresolved.",
+      "executable": false
+    },
+    "assertion": "The source says this denotes the same adverse survival outcome.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A15: The source includes a node before and Retrograde; do not delete the qualifier or invent an exemption on astronomical assumptions."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  },
+  {
+    "id": "A076",
+    "chapter": "XXXIX",
+    "section": "Where suspition is had of Twins / Twinnes.",
+    "pdf_pages": [
+      263
+    ],
+    "printed_pages": [
+      229
+    ],
+    "anchor": "Where suspition is had of Twins",
+    "kind": "rule",
+    "conditions": [
+      "C1: There is suspicion of twins and a question on that subject.",
+      "C2: Ascending sign is common.",
+      "C3: A fortune is in it, or fifth or first house.",
+      "C4: Sun and Luna are in common signs.",
+      "C5: Fifth sign is common and fifth lord is in a common sign."
+    ],
+    "condition_logic": {
+      "status": "source_ambiguous_first_package",
+      "expression": "C1 AND [source first package involving C2, C3, C4 OR C5]. Exact grouping within first package unresolved; C4 expressly requires Sun AND Moon and C5 expressly joins common fifth sign AND common fifth lord.",
+      "executable": false
+    },
+    "assertion": "The source permits judging twins from the first common-sign/fortune/luminary package or the alternative common fifth-sign and fifth-lord package.",
+    "exceptions": [],
+    "uncertainty": [
+      "U-A16: Punctuation and repeated first-house placement leave the first package’s conjunction/alternative boundaries uncertain; no executable Boolean normalization is imposed.",
+      "Common is a source term; no complete sign-class table is imported from memory."
+    ],
+    "scope": "historical horary source only",
+    "dependencies": []
+  }
+]

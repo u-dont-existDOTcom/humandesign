@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "scope": "Source extraction structure and declared coverage only; not runtime/model or historical-claim validation.",
+  "candidate_count": 76,
+  "section_count": 11,
+  "unresolved_count": 20,
+  "source_first_hash_unchanged": true,
+  "condition_logic_non_executable_all": true,
+  "errors": [],
+  "files": {
+    "SOURCE_FIRST_NOTES.md": "938cd5816d0c80f9e21edacdbcdf9d0484e4f6a890b038463ba3576fe2a1fa17",
+    "SOURCE_FIRST_FREEZE.json": "85140edc8cf5e617ba9f7bb0864fd7d1ebd0528419d1dc5f160a77dd9db35338",
+    "CANDIDATE_RULES.json": "24a9af139b7ec63d199684127ae4e314d6ff5029c49a77c22f0b3906e2b2796d",
+    "SECTION_COVERAGE.json": "8fd3e7066c4adb3d2fe0aed76ff827dd5592ef09b35183c30b5c1d28f3669f86",
+    "UNRESOLVED.json": "5b8c31693bbc2deec1e902d23788b1bba5eea375d5090e9b0a656c839d6b768c",
+    "AFTER_FREEZE_SOURCE_SUPPLEMENT.md": "d42b02756aecd5f0a9eba267e3efde1841555e68adebb3f13d3841571ae647f4"
+  },
+  "stop_admission": {
+    "reader_outcome": "SATISFIED",
+    "parent_outcome": "OPEN",
+    "parent_remaining_gap": "Root integrates and independently checks source-complete candidate rows into canonical B02j IDs and repository checkpoint.",
+    "next_action": "Parent review/integration of the preserved source-first notes, candidates, coverage and unresolved register.",
+    "responsible_actor": "/root",
+    "current_authority": "Reader A is expressly limited to scratch reader-a and source extraction; no git changes, runtime promotion or personal-life application.",
+    "action_performed": "Completed 76 source-bound records, 11-section coverage, 20 issues, original-edition erratum check and relevant structural verification.",
+    "handoff_boundary": "Parent explicitly requested final files/counts after completing its own admitted-span source reading. This is a worker handoff, not an owner wait or parent-task completion."
+  }
+}

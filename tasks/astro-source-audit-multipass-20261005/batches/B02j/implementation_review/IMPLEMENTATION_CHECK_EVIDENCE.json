@@ -1,0 +1,56 @@
+{
+  "tool_call_index": 2,
+  "tests_run": 32,
+  "failures": 0,
+  "errors": 0,
+  "success": true,
+  "selected_test_classes": [
+    "BoundedArithmeticTests",
+    "SourceModelBoundaryTests"
+  ],
+  "ledger_tests": "Not run; outside this bounded implementation check and integration may be pending.",
+  "computed_receipt_equals_saved": true,
+  "input_probes": [
+    {
+      "probe": "tally with malformed string dependencies",
+      "status": "returned",
+      "value": {
+        "male": 2,
+        "female": 0
+      }
+    },
+    {
+      "probe": "dependency grouping with malformed string dependencies",
+      "status": "returned",
+      "value": {}
+    },
+    {
+      "probe": "aspect side True accepted as numeric +1",
+      "status": "returned",
+      "value": 6000
+    },
+    {
+      "probe": "missing target coordinate fails closed",
+      "status": "raised",
+      "exception": "TypeError",
+      "message": "unsupported operand type(s) for +: 'NoneType' and 'int'"
+    },
+    {
+      "probe": "missing Mercury figure minute fails closed",
+      "status": "raised",
+      "exception": "SourceInputError",
+      "message": "minute must be an explicit integer"
+    },
+    {
+      "probe": "calendar helper on unspecified-calendar 1700 leap boundary",
+      "status": "returned",
+      "value": 1
+    }
+  ],
+  "reviewed_file_hashes": {
+    "lilly_fifth_house_reference.py": "3e3e2c6c8b5dd0f465352ac078b2f21c5a4a2894c67c601acf399462aa7a05d6",
+    "test_lilly_fifth_house.py": "82203906a05b468884a5aba90805443ce832dc588efaaae8c4c0ad464022e31c",
+    "WORKED_NUMERIC_TABLES.json": "a1343b2dda05c11be12ece2937e6f6b45d392eed3f7a880d115f59d346647862",
+    "ARITHMETIC_CHECKS.json": "955002bf3b1930a2fe23dc8252023c91be51242e85fbb582ad767358d27d3a3c"
+  }
+}

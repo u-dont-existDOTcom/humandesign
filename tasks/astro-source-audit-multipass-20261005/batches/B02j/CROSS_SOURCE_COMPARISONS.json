@@ -1,0 +1,54 @@
+{
+  "scope": "Targeted within-Lilly comparison with retained source records; Ptolemy registry retained, not reread or validated in this batch.",
+  "comparisons": [
+    {
+      "id": "X01",
+      "retained": [
+        "LI.1647.I.XVI.divisions.R265"
+      ],
+      "new": [
+        "LI.1647.II.XXXIX.R1157",
+        "LI.1647.II.XXXIX.R1168"
+      ],
+      "relation": "SAME_NAMED_CLASS",
+      "finding": "Cancer, Scorpio, Pisces match the earlier fruitful group. Preserve the new question-specific antecedents."
+    },
+    {
+      "id": "X02",
+      "retained": [
+        "LI.1647.I.XVI.divisions.R266"
+      ],
+      "new": [
+        "LI.1647.II.XXXIX.R1169",
+        "LI.1647.II.XLII.R1320"
+      ],
+      "relation": "CONTEXTUAL_SUBSET_AND_WORKED_LANGUAGE",
+      "finding": "Earlier barren class is Gemini, Leo, Virgo; one local recipe names only Leo/Virgo, while the worked narrative calls Sagittarius/Gemini rather barren. No global replacement or missing-sign insertion is made."
+    },
+    {
+      "id": "X03",
+      "retained": [
+        "LI.1647.II.XXIII.R625"
+      ],
+      "new": [
+        "LI.1647.II.XLII.R1319",
+        "LI.1647.II.XLIII.R1336",
+        "LI.1647.II.XL.R1260"
+      ],
+      "relation": "DISTINCT_PARTS_SHARED_PROJECTION_CONVENTION",
+      "finding": "Fortune uses Asc+Moon−Sun; Part of Children uses Asc+Jupiter−Mars with explicit same-day/night instruction. Static checks against both figures are conditional on declared sign readings."
+    },
+    {
+      "id": "X04",
+      "retained": [
+        "LI.1647.I.04.R033"
+      ],
+      "new": [
+        "LI.1647.II.XLIII.R1345",
+        "LI.1647.II.XLIII.R1346"
+      ],
+      "relation": "POSSIBLE_CUSP_VIRTUE_QUALIFICATION",
+      "finding": "Moon and Saturn are geometrically in sectors4/8 but4°11′/0°43′ before cusps5/9. Earlier five-degree cusp virtue may matter to the source masculine-house votes; it is not an explicitly stated resolution here."
+    }
+  ]
+}

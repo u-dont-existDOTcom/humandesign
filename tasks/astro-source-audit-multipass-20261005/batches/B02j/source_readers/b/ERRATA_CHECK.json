@@ -1,0 +1,86 @@
+{
+  "source_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "errata_pdf_page": 888,
+  "entries": [
+    {
+      "id": "BE001",
+      "errata_anchor": "p 209 l ult. r other",
+      "target_printed_page": 209,
+      "status": "outside_assigned_span",
+      "finding": "Reference is 209, not 229; no correction applied to printed229.",
+      "affected_rule_ids": []
+    },
+    {
+      "id": "BE002",
+      "errata_anchor": "p 233 l 17 r practice",
+      "target_printed_page": 233,
+      "target_pdf_page": 267,
+      "body_anchor": "I have in my pactice",
+      "status": "resolved_lexical_correction",
+      "finding": "pactice \u2192 practice; condition logic unchanged.",
+      "affected_rule_ids": [
+        "B044"
+      ]
+    },
+    {
+      "id": "BE003",
+      "errata_anchor": "l 19 r and if I",
+      "target_printed_page": 233,
+      "target_pdf_page": 267,
+      "body_anchor": "and If / I found the ascendant free",
+      "status": "unresolved_exact_edit",
+      "finding": "Phrase already spans lines19\u201320 apart from case; replacing line19 alone duplicates I. No semantic correction applied.",
+      "affected_rule_ids": [
+        "B044"
+      ]
+    },
+    {
+      "id": "BE004",
+      "errata_anchor": "p 234 l 6 r question",
+      "target_printed_page": 234,
+      "target_pdf_page": 268,
+      "body_anchor": "an Horary Question: The Question being then demanded",
+      "status": "resolved_lexical_locality",
+      "finding": "Heading-inclusive line6 locates the opening horary-Question sentence; no change to judgment predicates. Margin annotation is not treated as author text.",
+      "affected_rule_ids": [
+        "B049",
+        "B050"
+      ]
+    },
+    {
+      "id": "BE005",
+      "errata_anchor": "p 235 l 32 r house",
+      "target_printed_page": 235,
+      "target_pdf_page": 269,
+      "body_anchor": "Lord of the fift house",
+      "status": "unresolved_exact_edit",
+      "finding": "Final phrase is plausible target; exact line/word replacement not uniquely demonstrated, and image already reads house. No predicate changed.",
+      "affected_rule_ids": [
+        "B064"
+      ]
+    }
+  ],
+  "images_actually_read": [
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-errata-p888.png",
+      "sha256": "c37cfad197e62f767ad43b1a8269980bea29e011758deaf4a1237e613d764491"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/reader-b/pdf888-local-errata-detail.png",
+      "sha256": "fed9c93131df660d86df3ceecc35f61ff955c0a85a11b2609a226e492fc6b2ac"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/reader-b/pdf267-errata-target-detail.png",
+      "sha256": "89f88611594b3ea7865e18a6c3f155f9721c7445d89b9c9d057de719acba1f08"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/reader-b/pdf268-errata-target-detail.png",
+      "sha256": "9eb6fae2bfa1517f067c725dc49e13cd01ec7aeb1a10fbc1c7b5e9c9ee683aed"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/reader-b/pdf269-errata-target-detail.png",
+      "sha256": "9be8c467663950dca8f10e9601ec2c2fa9ccf94f9da575afe26dc78b8c89408b"
+    }
+  ],
+  "scope": "Targeted same-witness errata check, not a full-book errata collation."
+}

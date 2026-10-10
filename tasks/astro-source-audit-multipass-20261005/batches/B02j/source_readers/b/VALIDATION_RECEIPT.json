@@ -1,0 +1,31 @@
+{
+  "status": "structural_and_boundary_checks_passed",
+  "candidate_count": 86,
+  "section_count": 12,
+  "unresolved_count": 31,
+  "checks": [
+    "unique sequential temporary ids",
+    "section coverage covers each candidate exactly once",
+    "all source pages within admitted reader span and correct printed-page mapping",
+    "all issue and dependency references resolve",
+    "dependency graph acyclic",
+    "required historical-only scope on every row",
+    "explicit condition_logic on every row",
+    "initial source-first and errata-supplement hashes unchanged"
+  ],
+  "semantic_validation_limit": "Structural checks do not certify every source paraphrase; root independent source review remains integration responsibility.",
+  "source_read_method": "All assigned page images visually read before notes freeze; errata supplement separately frozen after targeted follow-up.",
+  "files": {
+    "SOURCE_FIRST_NOTES.md": "aea8ca9f643b1a478333bd16d860bfde2b410bff460497090e0bbb175cb8d315",
+    "SOURCE_FIRST_FREEZE.json": "da3ecf51794d3a8ef7555c522cecffc4f94077ead77d0838a70737c17cf7c5e8",
+    "ERRATA_SOURCE_FIRST_SUPPLEMENT.md": "b4868b1700c8687edb4dfbe2f2a4cc770ddfb1e5affd802f8abdda4d5f64ab56",
+    "ERRATA_FREEZE.json": "0f2c6a97f9528540ba1711b46df5d49dee8a5e67afb5659088d14bd3341c9ea3",
+    "ERRATA_CHECK.json": "8aa4225aed731dbd83b33bea8af743877bce4703dd2c0e4225b7ade155d11165",
+    "CANDIDATE_RULES.json": "5f04efb80b67f235fe3d3087c7b655030d4a5f3b939b968b37e988f31b0e0646",
+    "SECTION_COVERAGE.json": "2724c199268fb4ff8df251f5a2de61e1b5cfe688fbb922423652236aedc65216",
+    "UNRESOLVED.json": "040b1653b93a7ede1350274c7b2caca67429ddcf8db9e7d2d10ace4b2c7e5d4b"
+  },
+  "post_check_editorial_changes": [
+    "Strengthened singleton uncertainty anchor; normalized long-s spelling abovesaid. No predicates, IDs, or dependency relationships changed."
+  ]
+}

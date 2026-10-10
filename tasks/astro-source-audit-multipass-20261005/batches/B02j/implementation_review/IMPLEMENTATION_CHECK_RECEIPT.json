@@ -1,0 +1,67 @@
+{
+  "review_kind": "bounded_collaborative_implementation_check_not_independent_final_claim_audit",
+  "status": "current_fixture_arithmetic_and_checked_source_boundaries_pass_with_three_interface_findings",
+  "tests_run": 32,
+  "failures": 0,
+  "errors": 0,
+  "saved_arithmetic_receipt_reproduced": true,
+  "source_images_rechecked": [
+    {
+      "pdf_page": 265,
+      "printed_page": 231,
+      "path": "/workspace/scratch/43f75264c32e/source-pages/pdf265.png"
+    },
+    {
+      "pdf_page": 266,
+      "printed_page": 232,
+      "path": "/workspace/scratch/43f75264c32e/source-pages/pdf266.png"
+    },
+    {
+      "pdf_page": 276,
+      "printed_page": 242,
+      "path": "/workspace/scratch/43f75264c32e/source-pages/pdf276.png"
+    }
+  ],
+  "source_first_baseline_sha256": "aea8ca9f643b1a478333bd16d860bfde2b410bff460497090e0bbb175cb8d315",
+  "reviewed_snapshot_hashes": {
+    "lilly_fifth_house_reference.py": "3e3e2c6c8b5dd0f465352ac078b2f21c5a4a2894c67c601acf399462aa7a05d6",
+    "test_lilly_fifth_house.py": "82203906a05b468884a5aba90805443ce832dc588efaaae8c4c0ad464022e31c",
+    "WORKED_NUMERIC_TABLES.json": "a1343b2dda05c11be12ece2937e6f6b45d392eed3f7a880d115f59d346647862",
+    "ARITHMETIC_CHECKS.json": "955002bf3b1930a2fe23dc8252023c91be51242e85fbb582ad767358d27d3a3c"
+  },
+  "findings": [
+    {
+      "id": "IC01",
+      "type": "input_validation_gap",
+      "current_fixture_affected": false,
+      "finding": "String dependencies accepted by tally but silently lose repeated-body grouping.",
+      "status": "reported_to_root; root stated repair planned; not reverified by reader"
+    },
+    {
+      "id": "IC02",
+      "type": "input_validation_gap",
+      "current_fixture_affected": false,
+      "finding": "Boolean ray side accepted; missing target fails with raw TypeError before explicit integer validation.",
+      "status": "reported_to_root; not reverified by reader"
+    },
+    {
+      "id": "IC03",
+      "type": "calendar_scope_limit",
+      "current_fixture_affected": false,
+      "finding": "datetime.date applies Gregorian leap rules; same-year check alone is not calendar-neutral. The 1645 April\u2013July result95days is unaffected.",
+      "status": "reported_to_root; scope clarification or bounded guard suggested"
+    }
+  ],
+  "ledger_tests": "Not run, integration may be pending; no source-ledger failure inferred.",
+  "repository_edits": false,
+  "bytecode_writing_disabled_for_tests": true,
+  "general_engine_expansion": false,
+  "post_repair_test_run_performed": false,
+  "tool_calls_used_at_receipt": 7,
+  "tool_call_cap": 12,
+  "report_path": "/workspace/scratch/43f75264c32e/reader-b/IMPLEMENTATION_CHECK.md",
+  "report_sha256": "d3512e5ea4c78192b07e0ebf8d387a2a6695acd9c7a5c8f5069409bf3d002490",
+  "evidence_path": "/workspace/scratch/43f75264c32e/reader-b/IMPLEMENTATION_CHECK_EVIDENCE.json",
+  "evidence_sha256": "1f4ae67fa4f06a4a13d252b8d7b8afd71863224886e4741ac02a6a50953bcb37",
+  "raw_test_output_path": "/workspace/scratch/43f75264c32e/reader-b/IMPLEMENTATION_TEST_OUTPUT.txt"
+}
