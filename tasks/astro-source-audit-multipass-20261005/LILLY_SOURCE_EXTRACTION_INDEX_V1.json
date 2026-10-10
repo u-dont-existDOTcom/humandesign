@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XXVI_READ_OTHER_SECTIONS_OPEN",
-  "records_count": 774,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XXVIII_READ_OTHER_SECTIONS_OPEN",
+  "records_count": 896,
   "read_numbered_chapters": [
     1,
     2,
@@ -30,7 +30,9 @@
     23,
     24,
     25,
-    26
+    26,
+    27,
+    28
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -75,19 +77,27 @@
       "records_count": 107,
       "sha256": "c24615731bedb12b37745f7907f86a72f9c4092b1e619ed98767ccea68b91dd2",
       "scope": "BookII XXIV-XXVI, PDF181 through201 top; presence, marks, absent persons, mother/son case, ships and question receipt time; ends before XXVII."
+    },
+    {
+      "id": "B02g",
+      "path": "batches/B02g/RULES.json",
+      "records_count": 122,
+      "sha256": "93133a61c19b8488d50e5213bbac79d1fcf8a95e5ecaf07a0fa6ad3fee30bfcf",
+      "scope": "BookII XXVII–XXVIII complete second-house block, PDF201 heading through221 before third-house preamble; wealth, means, timing, continuation and hindrance insertion."
     }
   ],
   "next": {
-    "pdf_page": 201,
-    "printed_page": 167,
-    "heading": "BookII ChapXXVII Whether the Querent shall be Rich, or have a competent Fortune?",
-    "position": "after self-question paragraph; do not restart upper paragraph"
+    "pdf_page": 221,
+    "printed_page": 187,
+    "heading": "Of the third House, viz. Of Brethren, Sisters, Kindred, short Journeys.",
+    "position": "below horizontal rule: heading and full preamble; then XXIX at PDF222/printed188",
+    "boundary_previewed_but_not_extracted": true
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 27,
+  "read_headed_units_count": 29,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261009.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010.md",
   "body_table_or_medical_claims_validated": false
 }

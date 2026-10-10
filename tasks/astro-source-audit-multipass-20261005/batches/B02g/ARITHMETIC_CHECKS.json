@@ -1,0 +1,264 @@
+{
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "status": "STATIC_PRINTED_ARITHMETIC_ONLY",
+  "geometry_implementation": "retained B02f/lilly_presence_ship_reference.py unchanged",
+  "antiscia": [
+    {
+      "body": "Saturn",
+      "computed_antiscion": [
+        "Capricorn",
+        14,
+        41
+      ],
+      "computed_contra_antiscion": [
+        "Cancer",
+        14,
+        41
+      ],
+      "printed_antiscion_matches": true,
+      "printed_contra_antiscion_matches": true
+    },
+    {
+      "body": "Jupiter",
+      "computed_antiscion": [
+        "Gemini",
+        12,
+        29
+      ],
+      "computed_contra_antiscion": [
+        "Sagittarius",
+        12,
+        29
+      ],
+      "printed_antiscion_matches": true,
+      "printed_contra_antiscion_matches": true
+    },
+    {
+      "body": "Mars",
+      "computed_antiscion": [
+        "Pisces",
+        13,
+        48
+      ],
+      "computed_contra_antiscion": [
+        "Virgo",
+        13,
+        48
+      ],
+      "printed_antiscion_matches": true,
+      "printed_contra_antiscion_matches": true
+    },
+    {
+      "body": "Sun",
+      "computed_antiscion": [
+        "Taurus",
+        26,
+        50
+      ],
+      "computed_contra_antiscion": [
+        "Scorpio",
+        26,
+        50
+      ],
+      "printed_antiscion_matches": true,
+      "printed_contra_antiscion_matches": true
+    },
+    {
+      "body": "Venus",
+      "computed_antiscion": [
+        "Taurus",
+        4,
+        26
+      ],
+      "computed_contra_antiscion": [
+        "Scorpio",
+        4,
+        26
+      ],
+      "printed_antiscion_matches": true,
+      "printed_contra_antiscion_matches": true
+    },
+    {
+      "body": "Mercury",
+      "computed_antiscion": [
+        "Taurus",
+        12,
+        15
+      ],
+      "computed_contra_antiscion": [
+        "Scorpio",
+        12,
+        15
+      ],
+      "printed_antiscion_matches": true,
+      "printed_contra_antiscion_matches": true
+    },
+    {
+      "body": "Moon",
+      "computed_antiscion": [
+        "Taurus",
+        10,
+        53
+      ],
+      "computed_contra_antiscion": [
+        "Scorpio",
+        10,
+        53
+      ],
+      "printed_antiscion_matches": true,
+      "printed_contra_antiscion_matches": true
+    }
+  ],
+  "strengths": [
+    {
+      "body": "Saturn",
+      "computed_positive": 6,
+      "computed_negative": 14,
+      "computed_net": -8,
+      "printed_components_and_net_match": true
+    },
+    {
+      "body": "Jupiter",
+      "computed_positive": 20,
+      "computed_negative": 0,
+      "computed_net": 20,
+      "printed_components_and_net_match": true
+    },
+    {
+      "body": "Mars",
+      "computed_positive": 21,
+      "computed_negative": 12,
+      "computed_net": 9,
+      "printed_components_and_net_match": true
+    },
+    {
+      "body": "Sun",
+      "computed_positive": 10,
+      "computed_negative": 2,
+      "computed_net": 8,
+      "printed_components_and_net_match": true
+    },
+    {
+      "body": "Venus",
+      "computed_positive": 23,
+      "computed_negative": 5,
+      "computed_net": 18,
+      "printed_components_and_net_match": true
+    },
+    {
+      "body": "Mercury",
+      "computed_positive": 18,
+      "computed_negative": 5,
+      "computed_net": 13,
+      "printed_components_and_net_match": true
+    },
+    {
+      "body": "Moon",
+      "computed_positive": 12,
+      "computed_negative": 7,
+      "computed_net": 5,
+      "printed_components_and_net_match": true
+    }
+  ],
+  "fortune": {
+    "profile": "Lilly_XXIII_p143_144_same_by_day_and_night",
+    "computed": [
+      "Scorpio",
+      0,
+      10
+    ],
+    "printed_matches": true,
+    "computed_strength_net": -2,
+    "printed_strength_net": -2
+  },
+  "swift_count": {
+    "table_pages": [
+      212
+    ],
+    "swift_bodies": [
+      "Jupiter",
+      "Mars",
+      "Venus",
+      "Mercury"
+    ],
+    "slow_bodies": [
+      "Saturn",
+      "Sun",
+      "Moon"
+    ],
+    "computed_from_source_labels": 4,
+    "later_source_claim": 5,
+    "later_claim_page": 217,
+    "consistent": false
+  },
+  "distances_arcminutes": {
+    "Mars_to_Ascendant": 119,
+    "Moon_to_Venus": 387,
+    "Fortune_to_second_cusp": 385,
+    "Venus_to_eleventh_cusp": 61,
+    "Saturn_contra_antiscion_to_Jupiter": 170
+  },
+  "aspect_residuals_arcminutes": {
+    "Jupiter_square_Ascendant": 198,
+    "Jupiter_square_Mars": 79,
+    "Sun_square_Fortune": 180,
+    "Sun_square_second_cusp": 205,
+    "Moon_sextile_Mars": 175,
+    "Moon_conjunction_Mercury": 82
+  },
+  "exact_antiscion_hits_on_transcribed_points_or_cusps": [],
+  "mean_motion_comparisons": {
+    "Jupiter": {
+      "daily_arcseconds": 780,
+      "source_mean_arcseconds": 299,
+      "greater_than_mean": true
+    },
+    "Mars": {
+      "daily_arcseconds": 2100,
+      "source_mean_arcseconds": 1887,
+      "greater_than_mean": true
+    }
+  },
+  "source_timing_reconciliation": [
+    {
+      "input": "Mars_to_Ascendant",
+      "distance": "1 degree 59 minutes",
+      "source_duration": "two years or thereabouts",
+      "source_page": 217,
+      "assessment": "Source's approximately two degrees is consistent with the coordinates; year selection is a separate interpretive choice."
+    },
+    {
+      "input": "Moon_to_Venus",
+      "distance": "6 degrees 27 minutes",
+      "source_duration": "about 1640, six years after the question",
+      "source_pages": [
+        217,
+        218
+      ],
+      "assessment": "Exact printed distance reproduced; no exact 6.45-year civil date is claimed or generated."
+    }
+  ],
+  "source_cusp_assignment": {
+    "Fortune": {
+      "geometric_house_between_printed_cusps": 1,
+      "source_attributed_house": 2,
+      "gap_to_second_cusp_arcminutes": 385,
+      "greater_than_five_degrees": true,
+      "general_replacement_threshold": null
+    },
+    "Venus": {
+      "geometric_house_between_printed_cusps": 10,
+      "source_attributed_house": 11,
+      "gap_to_eleventh_cusp_arcminutes": 61
+    }
+  },
+  "fixed_star_limits": {
+    "Spica": "Source gives Libra 18 without minutes; no exact longitude inserted.",
+    "Regulus": "Source grants a six-degree proximity allowance; no exact local coordinate supplied."
+  },
+  "physical_contact_times_computed": false,
+  "historical_calendar_resolved": false,
+  "current_participant_inputs": false,
+  "predictive_validation": false
+}

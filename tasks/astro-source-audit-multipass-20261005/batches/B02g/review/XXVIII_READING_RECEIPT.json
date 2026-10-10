@@ -1,0 +1,125 @@
+{
+  "reader": "/root/lilly_wealth_example",
+  "source_path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+  "source_sha256_computed": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_sha256_matches_parent": true,
+  "source_page_count": 894,
+  "actually_viewed_whole_page_images": [
+    {
+      "pdf_page": 211,
+      "printed_folio_observed": "177",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p211.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 212,
+      "printed_folio_observed": "178",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p212.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 213,
+      "printed_folio_observed": "179",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p213.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 214,
+      "printed_folio_observed": "180",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p214.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 215,
+      "printed_folio_observed": "181",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p215.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 216,
+      "printed_folio_observed": "182",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p216.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 217,
+      "printed_folio_observed": "183",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p217.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 218,
+      "printed_folio_observed": "184",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p218.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 219,
+      "printed_folio_observed": "185",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p219.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 220,
+      "printed_folio_observed": "186",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p220.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 221,
+      "printed_folio_observed": "187",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p221.png",
+      "scale": 1.5
+    },
+    {
+      "pdf_page": 222,
+      "printed_folio_observed": "188",
+      "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p222.png",
+      "scale": 1.5
+    }
+  ],
+  "additional_viewed_whole_page_image": {
+    "pdf_page": 211,
+    "image": "/workspace/scratch/bd2460f96de0/wealth-example-review/p211-high.png",
+    "scale": 3
+  },
+  "render_method": "PyMuPDF fitz get_pixmap full page, no crop",
+  "text_read": "Existing p211.txt through p222.txt used alongside originals; no new OCR",
+  "boundary_only_page": 222,
+  "scope": "PDF211 pre-heading case context; XXVIII PDF212 to PDF221 above third-house rule",
+  "next_unread": "PDF221 third-house heading and preamble below horizontal rule; XXIX beginsPDF222",
+  "unresolved": [
+    "Compact chart-center aspect shorthand",
+    "PDF219 receives/neither-receiving wording",
+    "PDF219 omitted relation in intermediary chain",
+    "Explicit5-swift claim versus4-swift motion rows",
+    "General tolerance for cusp extension and near contra-antiscion",
+    "General degree-to-time scale and calendar convention"
+  ],
+  "checks_actually_run": [
+    "Local JSON parse",
+    "Unique54 candidate IDs",
+    "Reference-only and dependent-evidence flags present on every record",
+    "Source SHA256 recomputed and matched"
+  ],
+  "not_claimed": [
+    "Modern ephemeris parity",
+    "Predictive validation",
+    "Full-lifetime outcome confirmation",
+    "Third-house rule extraction",
+    "Repository mutation or publication"
+  ],
+  "artifact_sha256": {
+    "XXVIII_CANDIDATE_RULES.json": "1c80af7e1991892eaa545dda5b183bcdf767308a274a6cf11428504a71e6c633",
+    "XXVIII_NUMERIC_TABLES.json": "760bb02cfa29f1e8c75ef2c35b28debfc7f6c86a081cbe19d37a653473ca6a03",
+    "XXVIII_FINDINGS.md": "fe7a203b96306de6b01721ba945f161c6999c76301cf70390773d3074c198910"
+  },
+  "stop_admission": {
+    "parent_outcome": "OPEN; parent integrating the full second-house batch",
+    "assigned_source_scope": "COMPLETE",
+    "remaining_gap": "Parent reconciliation, canonical numbering, numeric reference checks, and authorized publication",
+    "next_action_actor": "/root",
+    "authority_boundary": "Parent specifically assigned source reading in scratch and prohibited this collaborator from editing or publishing the HumanDesign repository",
+    "action_performed": "Complete source packet and ready paths sent directly to parent; no owner input requested"
+  }
+}

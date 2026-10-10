@@ -1,0 +1,626 @@
+{
+  "schema_version": 1,
+  "evaluator": "/root/verify_b02g_delivery",
+  "authority": "DIAGNOSTIC_NOT_PUBLICATION_AUTHORITY",
+  "artifact": "REPORT.md",
+  "artifact_sha256": "41ef9b735fad9aa08decf1d703cdc6cb09fdbc957b660a0eb2f9404c034591fc",
+  "ledger_sha256": "1efe458416f63fcac94b918d4dad88477dbc80ed3847b8827c41b74319e082fb",
+  "first_findings_file": "FIRST_FINDINGS.md",
+  "first_findings_sha256": "1193dd5cae6d0c0a24266c5a90ee06a1824fddc0498dc671d782761de9785f6a",
+  "first_findings_frozen_before_separate_review_files": true,
+  "source_sha256_supplied_and_previously_checked": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "pdf_rehashed": false,
+  "tests_rerun": false,
+  "existing_text_pages_read": [
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222
+  ],
+  "whole_page_images_checked": [
+    201,
+    204,
+    205,
+    206,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222
+  ],
+  "image_count": 18,
+  "high_resolution_page": 211,
+  "text_only_pages": [
+    202,
+    203,
+    207,
+    208
+  ],
+  "report_scope": "Second-house XXVII-XXVIII, PDF201 heading through PDF221 above third-house rule; PDF222 boundary context only",
+  "independence_disclosure": "Fresh checker did not produce draft. Received source identity, governing contract, report and claim ledger. Current report/data themselves contain summaries of prior review; separate review files were withheld until first findings were frozen. No producer build-script rationale read. Same model family may share blind spots.",
+  "operational_provenance_limit": "Reading/session-history claims pass as accurate summaries of literal retained attestations, not fresh replays. Test counts derive from logs; environment versions are corroborated with current metadata.",
+  "scope_limits": [
+    "No fresh PDF hash or rendering",
+    "No original Ptolemy reread",
+    "No new OCR",
+    "No successful test reruns",
+    "No modern ephemeris or historical calendar check",
+    "No predictive validation or personal financial analysis",
+    "No remote publication/delivery verification",
+    "Large initial outputs required focused follow-up reads after truncation"
+  ],
+  "original_claim_summary": {
+    "PASS": 31,
+    "FAIL": 0
+  },
+  "missed_claim_summary": {
+    "PASS": 1,
+    "FAIL": 1
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Complete XXVII–XXVIII source span;122 new records,69 plus53;896 Lilly,1066 retained Ptolemy,1962 combined.",
+      "type": "figure",
+      "disposition": "PASS",
+      "reason": "Original headings at PDF201 and PDF221 establish the complete second-house boundary, with XXVIII beginning PDF212. RULES has 122 unique sequential IDs R775-R896, split 69 XXVII and 53 XXVIII. Lilly index totals 896 from prior 774; retained Ptolemy index totals 1066; sums 1840 before and 1962 after agree.",
+      "evidence": [
+        "RULES.json",
+        "SECTION_COVERAGE.json",
+        "INDEX_VERIFICATION.json"
+      ],
+      "source_pdf_pages": [
+        201,
+        221
+      ],
+      "limits": "The review checks finite section coverage and substantive records; preserved ambiguities mean this is not complete executable interpretation."
+    },
+    {
+      "id": "C02",
+      "claim": "One case,32 preserved open items,seven retained-source comparisons; introduction not counted twice.",
+      "type": "figure",
+      "disposition": "PASS",
+      "reason": "HISTORICAL_CASES contains one tradesman case; UNRESOLVED contains 32 issues; CROSS_SOURCE_COMPARISONS contains seven entries. XXVIII_EXTRACTED has 53 integrated records and expressly merges candidate C001 into R843. The post-freeze XXVIII reading receipt records 54 original candidates.",
+      "evidence": [
+        "HISTORICAL_CASES.json",
+        "UNRESOLVED.json",
+        "CROSS_SOURCE_COMPARISONS.json",
+        "XXVIII_EXTRACTED.json"
+      ],
+      "source_pdf_pages": [
+        211
+      ],
+      "limits": "The original reader supplied 54 candidates, but the integrated file intentionally contains 53; do not call its current length 54."
+    },
+    {
+      "id": "C03",
+      "claim": "Same894-page witness and SHA;21 relevant root images read; independent XXVII201–211 and XXVIII211–222; no new OCR.",
+      "type": "verification",
+      "disposition": "PASS",
+      "reason": "READING_RECEIPT names the exact 894-page witness and source digest and enumerates root pages 201-221. Post-freeze XXVII_SOURCE_NOTES enumerates 201-211; XXVIII_READING_RECEIPT enumerates 211-222, with 222 boundary-only, and both describe existing text plus original images without new OCR.",
+      "evidence": [
+        "READING_RECEIPT.json",
+        "review/XXVII_SOURCE_NOTES.md",
+        "review/XXVIII_READING_RECEIPT.json"
+      ],
+      "source_pdf_pages": [],
+      "limits": "PASS as an accurate summary of retained reading attestations and parent-supplied hash verification. I did not replay those historical tool sessions or rehash the PDF; my own actual image scope is separately disclosed."
+    },
+    {
+      "id": "C04",
+      "claim": "Three question frames and their ordinary-peer versus superior conditions; turned money houses.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF201 restricts the general question to no named expected source; PDF207-208 gives ordinary party 7 and money 8; PDF208-209 gives superior 10 and money 11 when querent is much inferior. QUERY_FRAMES and query_frame code preserve those explicit caller-chosen frames. Inclusive turned-house arithmetic gives 7+1=8 and 10+1=11.",
+      "evidence": [
+        "RULES.json:R775,R819-R832",
+        "QUERY_FRAMES.json"
+      ],
+      "source_pdf_pages": [
+        201,
+        207,
+        208,
+        209
+      ],
+      "limits": "Ordinary-party pages 207-208 were checked using retained text, not independently viewed images."
+    },
+    {
+      "id": "C05",
+      "claim": "Positive means gate, adverse obstruction gate,12 house channels and sign/occupation conditions.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF202 conditions the means enquiry on prior subsistence/riches; PDF206 says obstruction enquiry is needless after positive judgement. PDF203-206 covers all twelve channels. R792-R818 preserve actual helping/obstructing planet selection, sixth-house occupancy, Cancer/Pisces with lord there, and Taurus/Capricorn/Aries cattle separately from Virgo grain.",
+      "evidence": [
+        "RULES.json:R792-R818"
+      ],
+      "source_pdf_pages": [
+        202,
+        203,
+        204,
+        205,
+        206,
+        207
+      ],
+      "limits": "Scope of sixth/ninth qualifications across later alternatives is genuinely unresolved and remains U006/U007."
+    },
+    {
+      "id": "C06",
+      "claim": "Fortune/nodes do not emit rays; receiving aspects differs from geometric symmetry.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF201 explicitly denies rays from Fortune and both nodes; planetary aspects to these points are discussed in PDF201-202. R777/R789 and point_semantics preserve received versus emitted roles.",
+      "evidence": [
+        "RULES.json:R777,R789",
+        "APPLICABILITY_AND_RELATIONS.json"
+      ],
+      "source_pdf_pages": [
+        201,
+        202
+      ],
+      "limits": "Geometric symmetry versus interpretive direction is the report author's reasonable distinction, not a newly quoted Lilly theorem."
+    },
+    {
+      "id": "C07",
+      "claim": "Malefics can acquire through condition/office; benefics can obstruct; Mars retains labour/obstruction.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF206-207 allows malefic acquisition through essential dignity, benefic contacts or suitable houses and permits Jupiter/Venus to obstruct. PDF216-217 keeps Mars's offices and capacity to perform alongside labour, care and obstruction.",
+      "evidence": [
+        "RULES.json:R816,R817,R864-R874"
+      ],
+      "source_pdf_pages": [
+        206,
+        207,
+        216,
+        217
+      ],
+      "limits": "Historical conditional testimony only; no contemporary financial or moral inference admitted."
+    },
+    {
+      "id": "C08",
+      "claim": "Reception direction; ordinary hardly-ever/regrettable-labour branch differs from categorical superior denial.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF207 gives the malefic as receiver of L1/Moon and hardly-ever or regrettably laborious ordinary recovery without reception. PDF209 gives the superior-payment denial categorically and explicitly says the malefic receives the querent significators. R821/R830/R833 use the correct direction in current statements and titles.",
+      "evidence": [
+        "RULES.json:R821,R830-R833"
+      ],
+      "source_pdf_pages": [
+        207,
+        208,
+        209,
+        210
+      ],
+      "limits": "The less explicit PDF208 have-reception-of phrase remains U010; this does not negate the clear directions elsewhere."
+    },
+    {
+      "id": "C09",
+      "claim": "Full reception/obstruction table: condition, direction, applying aspect, renewed reception and collector receiving both.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF218-220 supplies condition, reception, application/separation, renewed reception in translation, and reception of both collected significators. The report table preserves these qualifications; APPLICABILITY_AND_RELATIONS links R878-R892 as the required context and names crucial exception dependencies.",
+      "evidence": [
+        "RULES.json:R878-R892",
+        "APPLICABILITY_AND_RELATIONS.json"
+      ],
+      "source_pdf_pages": [
+        218,
+        219,
+        220
+      ],
+      "limits": "The report's seven-row summary is selective; complete source context is retained in the linked records, not an executable exhaustive decision table."
+    },
+    {
+      "id": "C10",
+      "claim": "Abscission before harmful conjunction can remove harm and permit completion.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF219 explicitly places abscission before perfect conjunction with an evil planet and says it can take off the maleficence so the matter is accomplished. R884 and its context links retain that contact-dependent polarity.",
+      "evidence": [
+        "RULES.json:R884"
+      ],
+      "source_pdf_pages": [
+        219
+      ],
+      "limits": "The report correctly says can, and does not universalize every abscission as helpful."
+    },
+    {
+      "id": "C11",
+      "claim": "Receives/neither-receiving sentence and omitted intermediary relation unresolved.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "The PDF219 image contains both receives and neither receiving or received in the same sentence. The next sentence begins a relation to relevant significators without the expected joining completion. R882/R883 and U023/U024 retain the difficulties and identify editorial interpretations.",
+      "evidence": [
+        "RULES.json:R882,R883",
+        "UNRESOLVED.json:U023,U024"
+      ],
+      "source_pdf_pages": [
+        219
+      ],
+      "limits": "No emendation or unique runtime relation graph is certified."
+    },
+    {
+      "id": "C12",
+      "claim": "All seven antiscion plus seven contra entries reproduce; all seven strength totals and Fortune net reproduce.",
+      "type": "figure",
+      "disposition": "PASS",
+      "reason": "Printed chart values on PDF211 and the two-column PDF215 table agree with all seven antiscia and seven opposites: reflection is 180 degrees minus longitude modulo 360; contra is another 180 degrees. PDF212-214 component sums produce Saturn -8, Jupiter +20, Mars +9, Sun +8, Venus +18, Mercury +13, Moon +5; Fortune 3-5=-2. WORKED_NUMERIC_TABLES and ARITHMETIC_CHECKS agree.",
+      "evidence": [
+        "WORKED_NUMERIC_TABLES.json",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "source_pdf_pages": [
+        211,
+        212,
+        213,
+        214,
+        215
+      ],
+      "limits": "This is printed-input arithmetic checked against images, retained output and code; no test or ephemeris rerun occurred."
+    },
+    {
+      "id": "C13",
+      "claim": "Jupiter qualitative detriment lacks numeric debit; Fortune net weakness coexists with fixed-sign/Mars-term testimony.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF213 calls the platick Jupiter-Mars square some detriment while giving no numbered debit and saying no debilities. PDF214 gives Fortune net -2; PDF216 separately adds its fixed sign and Mars terms. R848/R854/R862 preserve both levels.",
+      "evidence": [
+        "RULES.json:R848,R854,R862"
+      ],
+      "source_pdf_pages": [
+        213,
+        214,
+        215,
+        216
+      ],
+      "limits": "No additive repair, invented debit or unified synthesis is supported."
+    },
+    {
+      "id": "C14",
+      "claim": "Four source-listed swift planets versus the later explicit five claim.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF212 names Jupiter, Mars, Venus and Mercury swift and Saturn, Sun and Moon slow. PDF217 explicitly says five swift planets. Numeric records retain four and later five, with consistent=false, and the test checks that discrepancy rather than erasing it.",
+      "evidence": [
+        "RULES.json:R845,R872",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "source_pdf_pages": [
+        212,
+        217
+      ],
+      "limits": "The source discrepancy does not validate either daily-motion list against a historical sky."
+    },
+    {
+      "id": "C15",
+      "claim": "Mars35m; Jupiter mean4m59s; lunar-transfer Mercury glyph; Fortune is fixed-sign/Mars-terms referent.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "Original PDF212 clearly prints Mars 35 minutes and Jupiter mean 4 minutes 59 seconds. PDF216 uses Mercury in the lunar transfer and Fortune in the fixed-sign/Mars-terms sentence; PDF217 repeats Mercury with Mars. Correct glyphs are retained.",
+      "evidence": [
+        "RULES.json:R845,R860,R862",
+        "WORKED_NUMERIC_TABLES.json"
+      ],
+      "source_pdf_pages": [
+        212,
+        216,
+        217
+      ],
+      "limits": "These checks correct the corrupt existing text layer; rates remain source statements."
+    },
+    {
+      "id": "C16",
+      "claim": "FortuneScorpio0:10 and cusp2Scorpio6:35 yield6:25; source assigns second beyond five degrees.",
+      "type": "figure",
+      "disposition": "PASS",
+      "reason": "PDF211 prints Fortune Scorpio 0:10 and cusp 2 Scorpio 6:35; subtraction is 6:25=385 arcminutes. PDF214 expressly admits second-house attribution despite exceeding five degrees and rejects first-house signification here.",
+      "evidence": [
+        "RULES.json:R844,R854",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "source_pdf_pages": [
+        211,
+        214
+      ],
+      "limits": "No universal extended cusp threshold follows."
+    },
+    {
+      "id": "C17",
+      "claim": "Current Fortune exception and retained Mars exclusion preclude an unqualified universal five-degree representation; no replacement cutoff.",
+      "type": "inference",
+      "disposition": "PASS",
+      "reason": "Retained B02f R714 expressly excludes its Mars from the third house beyond five degrees; current PDF214 expressly admits Fortune across a 6:25 gap. Together they refute representing every source attribution by one unqualified strict five-degree cutoff. The retained function is unchanged and no replacement cutoff is encoded.",
+      "evidence": [
+        "CROSS_SOURCE_COMPARISONS.json:C04",
+        "../B02f/RULES.json:R714"
+      ],
+      "source_pdf_pages": [
+        188,
+        214
+      ],
+      "limits": "This is a supported inference across retained examples, not a newly supplied universal Lilly rule. Original PDF188 was not reopened."
+    },
+    {
+      "id": "C18",
+      "claim": "Venus1:01 before eleventh cusp is treated as on that cusp; geometric and attributed houses separate.",
+      "type": "figure",
+      "disposition": "PASS",
+      "reason": "PDF211 gives Venus Leo25:34 and eleventh cusp Leo26:35, a 1:01 gap. PDF213 scores Venus in the eleventh; PDF218 explicitly places her on its cusp for friendship. Arithmetic data distinguish geometric tenth from attributed eleventh.",
+      "evidence": [
+        "RULES.json:R851,R876",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "source_pdf_pages": [
+        211,
+        213,
+        218
+      ],
+      "limits": "No new cusp algorithm or universal rounding convention is implied."
+    },
+    {
+      "id": "C19",
+      "claim": "All six local house-pair units, business-duration discretion and no automatic year selection.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF209-210 gives all six house-pair units exactly as printed in the report, then allows business-duration discretion and years replacing months without a numerical threshold. TIMING_REFERENCES and wealth_symbolic_interval retain the profile and return the named rational symbolic interval without selecting years.",
+      "evidence": [
+        "RULES.json:R833-R835",
+        "TIMING_REFERENCES.json",
+        "lilly_wealth_reference.py"
+      ],
+      "source_pdf_pages": [
+        209,
+        210
+      ],
+      "limits": "Fraction representation is a bounded arithmetic implementation; historical rounding/calendar conventions remain unspecified."
+    },
+    {
+      "id": "C20",
+      "claim": "Same sign at query time, ponderous/lighter distinction, following exceptions, sign joys and Lilly own reception observations.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF210 anchors same sign to the hour of the question, separates more ponderous from lighter Ascendant lord, supplies following angular/domicile exceptions, lists Aquarius/Saturn, Sagittarius/Jupiter, Scorpio/Mars, Libra/Venus and Virgo/Mercury, then gives Lilly's own single-exaltation and benefic-domicile-reception observations.",
+      "evidence": [
+        "RULES.json:R836-R841"
+      ],
+      "source_pdf_pages": [
+        210
+      ],
+      "limits": "Pronoun ownership and one/both angular scope remain unresolved, as the report admits."
+    },
+    {
+      "id": "C21",
+      "claim": "Mars–Asc1:59 and Moon–Venus6:27; about2years and about1640; not exact6.45-year civil date.",
+      "type": "figure",
+      "disposition": "PASS",
+      "reason": "Printed differences are Libra16:12 minus Libra14:13 =1:59 and Leo25:34 minus Leo19:07 =6:27. PDF217-218 says about two years and about1640, six years after the question; the code and output do not turn 6:27 into an exact civil event date.",
+      "evidence": [
+        "RULES.json:R873,R875-R877",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "source_pdf_pages": [
+        211,
+        217,
+        218
+      ],
+      "limits": "Neither distance alone selects years; exact modern dates and physical contact times are outside scope."
+    },
+    {
+      "id": "C22",
+      "claim": "Saturn contraCancer14:41 versus JupiterCancer17:31 gives2:50; exact antiscia versus near contra use.",
+      "type": "figure",
+      "disposition": "PASS",
+      "reason": "PDF215 gives Saturn contra Cancer14:41; PDF211 gives Jupiter Cancer17:31, hence 2:50. PDF220-221 says ordinary antiscia meet no exact material cusp/planet degree and then uses Saturn's near contra to Jupiter. R856/R894/R895 preserve exact versus near.",
+      "evidence": [
+        "RULES.json:R856,R894,R895",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "source_pdf_pages": [
+        215,
+        220,
+        221
+      ],
+      "limits": "No admissible near orb is supplied."
+    },
+    {
+      "id": "C23",
+      "claim": "Specific solar-friend caution does not retract all helpful-friend testimony; no caution outcome stated in scope.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF218 describes helping friends through Venus; PDF221 specifically cautions against solar men even if friendly because of the solar affliction. The bounded section 211-221 contains no outcome confirmation for those cautions. HISTORICAL_CASES retains them as judgement/caution only.",
+      "evidence": [
+        "RULES.json:R876,R895,R896"
+      ],
+      "source_pdf_pages": [
+        218,
+        221
+      ],
+      "limits": "The absence check covers this section, not the entire book or external historical records."
+    },
+    {
+      "id": "C24",
+      "claim": "Actual retrospective reports: competent estate to writing, wife money/land, good trade, portion around two years.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF211 supplies retrospective author experience; PDF216 says competent fortune with labour and care has occurred up to writing; PDF217 explicitly relays wife-derived money and land, good trading and a wife's portion at the approximate two-year time. Historical-case evidence types match those actual reports.",
+      "evidence": [
+        "HISTORICAL_CASES.json",
+        "RULES.json:R843,R863,R870,R873"
+      ],
+      "source_pdf_pages": [
+        211,
+        216,
+        217
+      ],
+      "limits": "No independently documented amount or exact event date is claimed."
+    },
+    {
+      "id": "C25",
+      "claim": "No separate dated confirmation of1640 cluster or full-life continuation; competence definition; unmarried counterfactual unverified.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "The complete worked-case text PDF211-221 provides no separately dated confirmation of the about1640 reputation/trade/friends cluster and no full-lifetime follow-up. PDF220 defines continuing riches as competence without want. PDF216's without-marriage comparison cannot be observed from the married outcome alone.",
+      "evidence": [
+        "HISTORICAL_CASES.json",
+        "RULES.json:R864,R875,R893"
+      ],
+      "source_pdf_pages": [
+        216,
+        217,
+        218,
+        219,
+        220,
+        221
+      ],
+      "limits": "Absence and counterfactual claims are bounded to the supplied section and logical evidence limits, not a claim about all possible external documentation."
+    },
+    {
+      "id": "C26",
+      "claim": "Chart-minute0/6 reader disagreement, calendar and shorthand unresolved; static calculations do not use chart time.",
+      "type": "verification",
+      "disposition": "PASS",
+      "reason": "WORKED_NUMERIC_TABLES retains 0/6 options and unresolved calendar/shorthand. Post-freeze XXVII notes and reconciliation explicitly give the 6-like reading and attributed 00 preference of other readers; current data preserves both. lilly_wealth_case_arithmetic reads only printed coordinates/tables, never chart time.",
+      "evidence": [
+        "WORKED_NUMERIC_TABLES.json",
+        "lilly_wealth_case_arithmetic.py",
+        "review/XXVII_RECONCILIATION.md"
+      ],
+      "source_pdf_pages": [
+        211
+      ],
+      "limits": "My own high-resolution PDF211 image check favours a 0-like form but does not erase the documented disagreement; no historical calendar conversion was attempted."
+    },
+    {
+      "id": "C27",
+      "claim": "Independent XXVII findings and source-level repairs, with frozen findings retained.",
+      "type": "verification",
+      "disposition": "PASS",
+      "reason": "Post-freeze archived XXVII findings list F01-F05, U01 and P01; reconciliation records resolved statements and three then-pending titles. Current R794/R796/R800/R818/R821/R830/R833/R836/R837/R843 reflect the reported repairs, including all three title alignments. Original findings remain present as separate retained files.",
+      "evidence": [
+        "review/XXVII_CANDIDATE_FINDINGS.md",
+        "review/XXVII_RECONCILIATION.md",
+        "RULES.json"
+      ],
+      "source_pdf_pages": [
+        203,
+        204,
+        207,
+        209,
+        210,
+        211
+      ],
+      "limits": "This verifies the current repair state against source and literal review records. Historical context separation/freezing is recorded provenance, not an independent reconstruction of every prior session or immutable external attestation."
+    },
+    {
+      "id": "C28",
+      "claim": "Retained Ptolemy formula algebra, Robbins authenticity doubt, and genre/transfer limits.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "Retained B01j R335 gives ASC+Moon-Sun for both sects; R336 preserves Robbins's authenticity concern; R337-R339 preserve natal topical and office conditions, including Saturn acquisition channels. Retained B02e R625 gives the same algebra without reversal. Current comparisons explicitly retain genre/transfer limits.",
+      "evidence": [
+        "CROSS_SOURCE_COMPARISONS.json:C03,C06",
+        "../B01j/RULES.json:R335-R339"
+      ],
+      "source_pdf_pages": [],
+      "limits": "No original Ptolemy pages or original-language collation were reread."
+    },
+    {
+      "id": "C29",
+      "claim": "Actual121 tests=28new+31B02f+30B02e+32methodology;35 subtests not added; Python3.12/pytest9.1.1.",
+      "type": "verification",
+      "disposition": "PASS",
+      "reason": "Four literal successful logs give 28 new,31 B02f,30 B02e and32 methodology tests:121 total. The 35 subtests are separately reported. Current python3 is3.12.14 and the exact named scratch PYTHONPATH contains pytest9.1.1 metadata, corroborating the reported environment.",
+      "evidence": [
+        "TEST_B02g.txt",
+        "TEST_retained_B02f.txt",
+        "TEST_retained_B02e.txt",
+        "TEST_retained_methodology.txt"
+      ],
+      "source_pdf_pages": [],
+      "limits": "PASS with version provenance limit: the abbreviated historical test logs themselves omit version headers; current environment metadata is corroboration, not a frozen reconstruction. Tests were not rerun."
+    },
+    {
+      "id": "C30",
+      "claim": "Checks are bounded; no new runtime model, personal fitting, old source data or freeze edits; no full application or predictive validity claim.",
+      "type": "verification",
+      "disposition": "PASS",
+      "reason": "Helpers perform selected-frame lookup, exact symbolic units and static printed arithmetic. All records are reference-only, horary and non-independent evidence. Git HEAD equals contract base; only tracked change is the Lilly extraction index, with new B02g/state files untracked. No prior batch, participant or prediction-freeze path appears changed. Test source confirms the stated bounded source/arithmetic checks.",
+      "evidence": [
+        "ACTIVE_CONTRACT.json",
+        "INDEX_VERIFICATION.json",
+        "lilly_wealth_reference.py",
+        "lilly_wealth_case_arithmetic.py",
+        "RULES.json"
+      ],
+      "source_pdf_pages": [],
+      "limits": "This checks local diff and admitted artifacts, not every possible external action; it certifies neither full application behavior nor predictive validity."
+    },
+    {
+      "id": "C31",
+      "claim": "Next extraction is third-house heading/preamble on221, thenXXIX222; boundary preview is not new-rule extraction.",
+      "type": "source_content",
+      "disposition": "PASS",
+      "reason": "PDF221 image shows the second-house caution ending above a horizontal rule, then third-house heading and full introductory paragraph; PDF222 begins XXIX. SECTION_COVERAGE and current index both point to the PDF221 preamble before XXIX. Current R775-R896 end with the second-house caution.",
+      "evidence": [
+        "SECTION_COVERAGE.json",
+        "READING_RECEIPT.json"
+      ],
+      "source_pdf_pages": [
+        221,
+        222
+      ],
+      "limits": "The following third-house pages were read for boundary context only in this check; no new third-house record was authored."
+    }
+  ],
+  "missed_claims": [
+    {
+      "id": "M01",
+      "type": "verification",
+      "claim": "Final publication and delivery are evidenced separately in the publication receipt and manifest.",
+      "location": "REPORT.md, section 9, final sentence of second paragraph",
+      "disposition": "FAIL",
+      "verification_status": "UNVERIFIED_AT_REVIEW_BOUNDARY",
+      "reason": "No B02g publication receipt or manifest was supplied in the inspected batch/inventory; HEAD remains the contract base and B02g is untracked. That does not prove remote publication absent, but the asserted evidence is unavailable to this review.",
+      "correction": "Before delivery either supply and verify completed publication/delivery receipt and manifest and anchor this sentence, or replace it with: Publication and delivery verification are pending; their receipt and manifest will be supplied separately. Add this claim to the ledger.",
+      "authority_note": "Diagnostic finding only; root controls publication and can resolve it through actual completed evidence."
+    },
+    {
+      "id": "M02",
+      "type": "figure",
+      "claim": "Eight evidence entries are eight targets or cautions within one case, not eight independent successes.",
+      "location": "REPORT.md, section 7, third paragraph",
+      "disposition": "PASS",
+      "reason": "HISTORICAL_CASES has exactly eight outcome_records under the single tradesman_1634 case. Four have reported results and four have null results; all are dependent entries for the same figure/person.",
+      "evidence": [
+        "HISTORICAL_CASES.json:cases.tradesman_1634.outcome_records"
+      ]
+    }
+  ]
+}

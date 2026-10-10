@@ -1,0 +1,111 @@
+{
+  "status": "REFERENCE_COMPARISONS_NOT_MODEL_MERGER",
+  "comparisons": [
+    {
+      "id": "B02g.C01",
+      "topic": "question_frame",
+      "current_records": [
+        "LI.1647.II.XXVII.R775",
+        "LI.1647.II.XXVII.R819",
+        "LI.1647.II.XXVII.R828"
+      ],
+      "retained_anchors": [
+        "B02f/QUERY_FRAMES.json"
+      ],
+      "finding": "The declared question and relationship select significators",
+      "limit": "Wealth frames use1/2,7/8 or10/11; the retained absent-person/presence distinctions provide another context-specific use. No universal other-person house is inferred.",
+      "retained_source_material_reread_as_new_book_pages": false
+    },
+    {
+      "id": "B02g.C02",
+      "topic": "timing_profiles",
+      "current_records": [
+        "LI.1647.II.XXVII.R834",
+        "LI.1647.II.XXVII.R835",
+        "LI.1647.II.XXVII.R842",
+        "LI.1647.II.XXVIII.R873",
+        "LI.1647.II.XXVIII.R875"
+      ],
+      "retained_anchors": [
+        "B02e/RULES.json:R575,R619,R620",
+        "B02f/RULES.json:R706"
+      ],
+      "finding": "Timing tables belong to particular questions and source routes",
+      "limit": "Current house-pair days/weeks/months is separate from retained sign-modality health/news scales and the worked years choice. No combined choose-the-best scale.",
+      "retained_source_material_reread_as_new_book_pages": false
+    },
+    {
+      "id": "B02g.C03",
+      "topic": "fortune_formula_and_genre",
+      "current_records": [
+        "LI.1647.II.XXVIII.R844"
+      ],
+      "retained_anchors": [
+        "B02e/RULES.json:Fortune section",
+        "B01j/RULES.json:PT.R64.IV.02.R335-R338"
+      ],
+      "finding": "Same algebra can appear in different interpretive genres",
+      "limit": "The retained Lilly and Ptolemy formulas agree on Ascendant+Moon−Sun without sect reversal; Robbins questions the authenticity of the Ptolemy formula clause, and that textual qualification remains. Shared algebra does not transfer horary wealth outcomes to the natal context. This comparison uses retained audited records, not a fresh full-source read.",
+      "retained_source_material_reread_as_new_book_pages": false
+    },
+    {
+      "id": "B02g.C04",
+      "topic": "cusp_assignment",
+      "current_records": [
+        "LI.1647.II.XXVIII.R854"
+      ],
+      "retained_anchors": [
+        "B02f/RULES.json:LI.1647.II.XXV.R714",
+        "B02f/lilly_presence_ship_reference.py:beyond_cusp_window"
+      ],
+      "finding": "Preserve case-specific house attribution against a universal cutoff",
+      "limit": "The retained negative example distinguishes a beyond-five-degree exclusion; current Fortune is expressly admitted despite6d25m. Do not rewrite either witness or promote one universal5d predicate.",
+      "retained_source_material_reread_as_new_book_pages": false
+    },
+    {
+      "id": "B02g.C05",
+      "topic": "long_ascension_square",
+      "current_records": [
+        "LI.1647.II.XXVIII.R859"
+      ],
+      "retained_anchors": [
+        "B02f/lilly_presence_ship_reference.py:square_equivalence_reference"
+      ],
+      "finding": "Interpretive square/trine comparison leaves longitude geometry unchanged",
+      "limit": "Both retained references describe a long-ascension valuation. The geometric aspect remains90degrees; no latitude limit, numerical conversion or replacement orb is supplied here.",
+      "retained_source_material_reread_as_new_book_pages": false
+    },
+    {
+      "id": "B02g.C06",
+      "topic": "natural_character_vs_office",
+      "current_records": [
+        "LI.1647.II.XXVII.R816",
+        "LI.1647.II.XXVII.R817",
+        "LI.1647.II.XXVIII.R874"
+      ],
+      "retained_anchors": [
+        "B01j/RULES.json:PT.R64.IV.02.R339"
+      ],
+      "finding": "Planetary office and context qualify a simple benefic/malefic label",
+      "limit": "Lilly expressly allows an Infortune to produce the matter through its office. Retained Ptolemy natal wealth channels include Saturn-related routes. This is a limited conceptual comparison, not a merged rule or identical mechanism.",
+      "retained_source_material_reread_as_new_book_pages": false
+    },
+    {
+      "id": "B02g.C07",
+      "topic": "case_and_endpoint_dependence",
+      "current_records": [
+        "LI.1647.II.XXVII.R843",
+        "LI.1647.II.XXVIII.R870",
+        "LI.1647.II.XXVIII.R873",
+        "LI.1647.II.XXVIII.R875",
+        "LI.1647.II.XXVIII.R893"
+      ],
+      "retained_anchors": [
+        "B02f/HISTORICAL_CASES.json"
+      ],
+      "finding": "One chart and its linked claims do not create multiple independent validations",
+      "limit": "Current four questions and eight evidence entries refer to one selected case. Prior hypothetical chart reuses likewise remain dependent; outcome precision must match the particular claim.",
+      "retained_source_material_reread_as_new_book_pages": false
+    }
+  ]
+}

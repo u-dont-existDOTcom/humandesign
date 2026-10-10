@@ -1,0 +1,1286 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Printed case figure",
+      "pages": [
+        211
+      ],
+      "anchor": "Full circular chart below four questions",
+      "statement": "The original chart supplies the case date, time, houses, planetary longitudes, Fortune, and nodal axis listed in worked_values.",
+      "requires": [],
+      "limits": [
+        "These are printed chart values, not a recalculated sky.",
+        "Day/hour glyph labels are legible; the compact last line is not promoted.",
+        "Ordinary geometrical house placement must remain separate from Lilly's cusp-attribution practice.",
+        "Chart-minute reading disagrees between readers (0 versus 6); not used for any sky, date or physical-contact calculation."
+      ],
+      "kind": "worked_example_inputs",
+      "candidate_origin": "LI.1647.II.XXVIII.C002",
+      "worked_values": {
+        "date_text": "16. Iuly 1634",
+        "time_text": "11 H [0 or 6 unresolved] A M",
+        "calendar_and_time_conversion": "UNRESOLVED; no modern UTC or calendar conversion attempted",
+        "day_lord_glyph": "Mercury",
+        "hour_lord_glyph": "Sun",
+        "additional_aspect_shorthand": "Not transcribed as a rule; several compact glyphs remain ambiguous.",
+        "houses": [
+          {
+            "house": 1,
+            "sign": "Libra",
+            "degree": 14,
+            "minute": 13
+          },
+          {
+            "house": 2,
+            "sign": "Scorpio",
+            "degree": 6,
+            "minute": 35
+          },
+          {
+            "house": 3,
+            "sign": "Sagittarius",
+            "degree": 7,
+            "minute": 12
+          },
+          {
+            "house": 4,
+            "sign": "Capricorn",
+            "degree": 19,
+            "minute": 0
+          },
+          {
+            "house": 5,
+            "sign": "Aquarius",
+            "degree": 26,
+            "minute": 35
+          },
+          {
+            "house": 6,
+            "sign": "Pisces",
+            "degree": 23,
+            "minute": 9
+          },
+          {
+            "house": 7,
+            "sign": "Aries",
+            "degree": 14,
+            "minute": 13
+          },
+          {
+            "house": 8,
+            "sign": "Taurus",
+            "degree": 6,
+            "minute": 35
+          },
+          {
+            "house": 9,
+            "sign": "Gemini",
+            "degree": 7,
+            "minute": 12
+          },
+          {
+            "house": 10,
+            "sign": "Cancer",
+            "degree": 19,
+            "minute": 0
+          },
+          {
+            "house": 11,
+            "sign": "Leo",
+            "degree": 26,
+            "minute": 35
+          },
+          {
+            "house": 12,
+            "sign": "Virgo",
+            "degree": 23,
+            "minute": 9
+          }
+        ],
+        "positions": [
+          {
+            "body": "Saturn",
+            "sign": "Sagittarius",
+            "degree": 15,
+            "minute": 19,
+            "retrograde": true
+          },
+          {
+            "body": "Jupiter",
+            "sign": "Cancer",
+            "degree": 17,
+            "minute": 31
+          },
+          {
+            "body": "Mars",
+            "sign": "Libra",
+            "degree": 16,
+            "minute": 12
+          },
+          {
+            "body": "Sun",
+            "sign": "Leo",
+            "degree": 3,
+            "minute": 10
+          },
+          {
+            "body": "Venus",
+            "sign": "Leo",
+            "degree": 25,
+            "minute": 34
+          },
+          {
+            "body": "Mercury",
+            "sign": "Leo",
+            "degree": 17,
+            "minute": 45
+          },
+          {
+            "body": "Moon",
+            "sign": "Leo",
+            "degree": 19,
+            "minute": 7
+          },
+          {
+            "body": "Fortune",
+            "sign": "Scorpio",
+            "degree": 0,
+            "minute": 10
+          },
+          {
+            "body": "North node",
+            "sign": "Virgo",
+            "degree": 22,
+            "minute": 12
+          },
+          {
+            "body": "South node",
+            "sign": "Pisces",
+            "degree": 22,
+            "minute": 12
+          }
+        ],
+        "time_minute_options": [
+          0,
+          6
+        ],
+        "preferred_reader_transcription": "11 H 0 A M",
+        "time_reading_status": "Root and XXVIII reader favor 0; separate XXVII checker finds glyph 6-like even in a higher-resolution view. Disagreement retained; no admitted numerical calculation uses the chart time."
+      }
+    },
+    {
+      "title": "Examine diurnal motion before the wealth judgment",
+      "pages": [
+        212
+      ],
+      "anchor": "First paragraph after chapter heading through seven motion entries",
+      "statement": "For greater exactness Lilly first examines the planets' diurnal motion and classifies their speed relative to mean motion; the seven entries are preserved in worked_values.",
+      "requires": [],
+      "limits": [
+        "No modern ephemeris comparison is claimed.",
+        "Jupiter mean is 4m59s in the image, not OCR4m57s.",
+        "PDF217 later says five planets swift, but this list names only four."
+      ],
+      "kind": "worked_example_method",
+      "candidate_origin": "LI.1647.II.XXVIII.C003",
+      "worked_values": [
+        {
+          "body": "Saturn",
+          "daily_motion": "0d02m",
+          "source_status": "slow"
+        },
+        {
+          "body": "Jupiter",
+          "daily_motion": "0d13m",
+          "source_mean": "0d04m59s",
+          "source_status": "swift",
+          "cross_reference_printed": 61
+        },
+        {
+          "body": "Mars",
+          "daily_motion": "0d35m",
+          "source_mean": "0d31m27s",
+          "source_status": "swift",
+          "cross_reference_printed": 65
+        },
+        {
+          "body": "Sun",
+          "daily_motion": "0d57m00s",
+          "source_status": "slow"
+        },
+        {
+          "body": "Venus",
+          "daily_motion": "1d13m",
+          "source_status": "very swift"
+        },
+        {
+          "body": "Mercury",
+          "daily_motion": "1d44m",
+          "source_status": "more swift"
+        },
+        {
+          "body": "Moon",
+          "daily_motion": "11d54m",
+          "source_status": "slow"
+        }
+      ]
+    },
+    {
+      "title": "Use both dignity tables in the demonstration",
+      "pages": [
+        212
+      ],
+      "anchor": "Paragraph beginning In the next place, before Saturn table",
+      "statement": "Lilly examines fortitudes and debilities with the essential-dignity table at printed104 and the other table at printed115, explicitly to teach use of both tables.",
+      "requires": [],
+      "limits": [],
+      "kind": "source_method",
+      "candidate_origin": "LI.1647.II.XXVIII.C004"
+    },
+    {
+      "title": "Saturn strength accounting",
+      "pages": [
+        212,
+        214
+      ],
+      "anchor": "Saturn table; net recapitulation at PDF214",
+      "statement": "Lilly's Saturn table gives 6 fortitudes and 14 debilities; the recapitulation gives net -8.",
+      "requires": [],
+      "limits": [
+        "The tally is the author's case calculation, not a generic goodness score.",
+        "He has no essential dignity at Sagittarius15d19m."
+      ],
+      "kind": "worked_example_calculation",
+      "candidate_origin": "LI.1647.II.XXVIII.C005",
+      "worked_values": {
+        "body": "Saturn",
+        "fortitudes": [
+          {
+            "condition": "third house",
+            "score": 1
+          },
+          {
+            "condition": "free from combustion",
+            "score": 5
+          }
+        ],
+        "debilities": [
+          {
+            "condition": "peregrine",
+            "score": 5
+          },
+          {
+            "condition": "retrograde",
+            "score": 5
+          },
+          {
+            "condition": "slow",
+            "score": 2
+          },
+          {
+            "condition": "occidental",
+            "score": 2
+          }
+        ],
+        "source_positive_total": 6,
+        "source_negative_total": 14,
+        "source_net": -8
+      }
+    },
+    {
+      "title": "Jupiter strength accounting",
+      "pages": [
+        213,
+        214
+      ],
+      "anchor": "Jupiter table; net recapitulation at PDF214",
+      "statement": "Lilly's Jupiter table gives 20 fortitudes and 0 debilities; the recapitulation gives net +20.",
+      "requires": [],
+      "limits": [
+        "The tally is the author's case calculation, not a generic goodness score.",
+        "The author nevertheless calls the platick square with Mars some detriment, without assigning it a numeric debit."
+      ],
+      "kind": "worked_example_calculation",
+      "candidate_origin": "LI.1647.II.XXVIII.C006",
+      "worked_values": {
+        "body": "Jupiter",
+        "fortitudes": [
+          {
+            "condition": "exaltation",
+            "score": 4
+          },
+          {
+            "condition": "tenth house",
+            "score": 5
+          },
+          {
+            "condition": "direct",
+            "score": 4
+          },
+          {
+            "condition": "swift",
+            "score": 2
+          },
+          {
+            "condition": "free from combustion",
+            "score": 5
+          }
+        ],
+        "debilities": [],
+        "source_positive_total": 20,
+        "source_negative_total": 0,
+        "source_net": 20
+      }
+    },
+    {
+      "title": "Mars strength accounting",
+      "pages": [
+        213,
+        214
+      ],
+      "anchor": "Mars table; net recapitulation at PDF214",
+      "statement": "Lilly's Mars table gives 21 fortitudes and 12 debilities; the recapitulation gives net +9.",
+      "requires": [],
+      "limits": [
+        "The tally is the author's case calculation, not a generic goodness score.",
+        "He has no essential dignity at this degree of Libra, yet a positive net accidental score. Spica is placed at Libra18 in PDF215."
+      ],
+      "kind": "worked_example_calculation",
+      "candidate_origin": "LI.1647.II.XXVIII.C007",
+      "worked_values": {
+        "body": "Mars",
+        "fortitudes": [
+          {
+            "condition": "Ascendant",
+            "score": 5
+          },
+          {
+            "condition": "direct",
+            "score": 4
+          },
+          {
+            "condition": "swift",
+            "score": 2
+          },
+          {
+            "condition": "free from combustion",
+            "score": 5
+          },
+          {
+            "condition": "conjunct Spica or within five degrees",
+            "score": 5
+          }
+        ],
+        "debilities": [
+          {
+            "condition": "detriment",
+            "score": 5
+          },
+          {
+            "condition": "peregrine",
+            "score": 5
+          },
+          {
+            "condition": "occidental of Sun",
+            "score": 2
+          }
+        ],
+        "source_positive_total": 21,
+        "source_negative_total": 12,
+        "source_net": 9
+      }
+    },
+    {
+      "title": "Sun strength accounting",
+      "pages": [
+        213,
+        214
+      ],
+      "anchor": "Sun table; net recapitulation at PDF214",
+      "statement": "Lilly's Sun table gives 10 fortitudes and 2 debilities; the recapitulation gives net +8.",
+      "requires": [],
+      "limits": [
+        "The tally is the author's case calculation, not a generic goodness score."
+      ],
+      "kind": "worked_example_calculation",
+      "candidate_origin": "LI.1647.II.XXVIII.C008",
+      "worked_values": {
+        "body": "Sun",
+        "fortitudes": [
+          {
+            "condition": "own domicile",
+            "score": 5
+          },
+          {
+            "condition": "Midheaven",
+            "score": 5
+          }
+        ],
+        "debilities": [
+          {
+            "condition": "slow",
+            "score": 2
+          }
+        ],
+        "source_positive_total": 10,
+        "source_negative_total": 2,
+        "source_net": 8
+      }
+    },
+    {
+      "title": "Venus strength accounting",
+      "pages": [
+        213,
+        214
+      ],
+      "anchor": "Venus table; net recapitulation at PDF214",
+      "statement": "Lilly's Venus table gives 23 fortitudes and 5 debilities; the recapitulation gives net +18.",
+      "requires": [],
+      "limits": [
+        "The tally is the author's case calculation, not a generic goodness score."
+      ],
+      "kind": "worked_example_calculation",
+      "candidate_origin": "LI.1647.II.XXVIII.C009",
+      "worked_values": {
+        "body": "Venus",
+        "fortitudes": [
+          {
+            "condition": "eleventh house",
+            "score": 4
+          },
+          {
+            "condition": "direct",
+            "score": 4
+          },
+          {
+            "condition": "swift",
+            "score": 2
+          },
+          {
+            "condition": "occidental of Sun",
+            "score": 2
+          },
+          {
+            "condition": "free from combustion",
+            "score": 5
+          },
+          {
+            "condition": "conjunct Regulus within six degrees",
+            "score": 6
+          }
+        ],
+        "debilities": [
+          {
+            "condition": "peregrine",
+            "score": 5
+          }
+        ],
+        "source_positive_total": 23,
+        "source_negative_total": 5,
+        "source_net": 18
+      }
+    },
+    {
+      "title": "Mercury strength accounting",
+      "pages": [
+        214
+      ],
+      "anchor": "Mercury table; net recapitulation at PDF214",
+      "statement": "Lilly's Mercury table gives 18 fortitudes and 5 debilities; the recapitulation gives net +13.",
+      "requires": [],
+      "limits": [
+        "The tally is the author's case calculation, not a generic goodness score."
+      ],
+      "kind": "worked_example_calculation",
+      "candidate_origin": "LI.1647.II.XXVIII.C010",
+      "worked_values": {
+        "body": "Mercury",
+        "fortitudes": [
+          {
+            "condition": "tenth house",
+            "score": 5
+          },
+          {
+            "condition": "direct",
+            "score": 4
+          },
+          {
+            "condition": "swift",
+            "score": 2
+          },
+          {
+            "condition": "occidental",
+            "score": 2
+          },
+          {
+            "condition": "free from combustion",
+            "score": 5
+          }
+        ],
+        "debilities": [
+          {
+            "condition": "peregrine",
+            "score": 5
+          }
+        ],
+        "source_positive_total": 18,
+        "source_negative_total": 5,
+        "source_net": 13
+      }
+    },
+    {
+      "title": "Moon strength accounting",
+      "pages": [
+        214
+      ],
+      "anchor": "Moon table; net recapitulation at PDF214",
+      "statement": "Lilly's Moon table gives 12 fortitudes and 7 debilities; the recapitulation gives net +5.",
+      "requires": [],
+      "limits": [
+        "The tally is the author's case calculation, not a generic goodness score."
+      ],
+      "kind": "worked_example_calculation",
+      "candidate_origin": "LI.1647.II.XXVIII.C011",
+      "worked_values": {
+        "body": "Moon",
+        "fortitudes": [
+          {
+            "condition": "tenth house",
+            "score": 5
+          },
+          {
+            "condition": "increasing in light",
+            "score": 2
+          },
+          {
+            "condition": "free from combustion",
+            "score": 5
+          }
+        ],
+        "debilities": [
+          {
+            "condition": "slow",
+            "score": 2
+          },
+          {
+            "condition": "peregrine",
+            "score": 5
+          }
+        ],
+        "source_positive_total": 12,
+        "source_negative_total": 7,
+        "source_net": 5
+      }
+    },
+    {
+      "title": "Fortune attributed to second house beyond five degrees",
+      "pages": [
+        214
+      ],
+      "anchor": "Paragraph beginning Fortune As you may observe pag145",
+      "statement": "Fortune in Scorpio is assigned five debilities; Lilly attributes it to the second house for three strengths and therefore net two debilities. Although it lies some minutes more than five degrees from the second cusp, he calls first-house signification absurd.",
+      "requires": [],
+      "limits": [
+        "This is an explicit case-specific extension beyond a strict five-degree boundary; do not silently implement five degrees as its exact cutoff.",
+        "Printed chart Fortune0d10m Scorpio and second cusp6d35m Scorpio differ by6d25m.",
+        "Later fixed-sign and Mars-term testimony does not erase this recorded net weakness."
+      ],
+      "kind": "worked_example_calculation",
+      "candidate_origin": "LI.1647.II.XXVIII.C012",
+      "worked_values": {
+        "fortune_sign_debility": 5,
+        "second_house_strength": 3,
+        "source_net": -2,
+        "chart_distance_to_second_cusp": "6d25m"
+      }
+    },
+    {
+      "title": "Subtract lesser total and retain the winning category",
+      "pages": [
+        215
+      ],
+      "anchor": "Opening paragraph before antiscion table",
+      "statement": "Compare each planet's fortitudes and debilities, subtract the lesser number from the greater, and judge using the remaining fortitudes or debilities.",
+      "requires": [],
+      "limits": [
+        "The passage does not specify a tied-score interpretation."
+      ],
+      "kind": "source_calculation_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C013"
+    },
+    {
+      "title": "Antiscia and contra-antiscia reference table",
+      "pages": [
+        215
+      ],
+      "anchor": "Two-column table between net-score instruction and first judgment",
+      "statement": "Lilly supplies the seven antiscia and their opposite contra-antiscia in worked_values.",
+      "requires": [],
+      "limits": [
+        "Transcribed from the image; calculation reproduction below is a separate arithmetic check.",
+        "Case application is qualified at PDF220–221."
+      ],
+      "kind": "worked_example_calculation",
+      "candidate_origin": "LI.1647.II.XXVIII.C014",
+      "worked_values": [
+        {
+          "body": "Saturn",
+          "degree": 14,
+          "minute": 41,
+          "antiscion_sign": "Capricorn",
+          "contra_antiscion_sign": "Cancer"
+        },
+        {
+          "body": "Jupiter",
+          "degree": 12,
+          "minute": 29,
+          "antiscion_sign": "Gemini",
+          "contra_antiscion_sign": "Sagittarius"
+        },
+        {
+          "body": "Mars",
+          "degree": 13,
+          "minute": 48,
+          "antiscion_sign": "Pisces",
+          "contra_antiscion_sign": "Virgo"
+        },
+        {
+          "body": "Sun",
+          "degree": 26,
+          "minute": 50,
+          "antiscion_sign": "Taurus",
+          "contra_antiscion_sign": "Scorpio"
+        },
+        {
+          "body": "Venus",
+          "degree": 4,
+          "minute": 26,
+          "antiscion_sign": "Taurus",
+          "contra_antiscion_sign": "Scorpio"
+        },
+        {
+          "body": "Mercury",
+          "degree": 12,
+          "minute": 15,
+          "antiscion_sign": "Taurus",
+          "contra_antiscion_sign": "Scorpio"
+        },
+        {
+          "body": "Moon",
+          "degree": 10,
+          "minute": 53,
+          "antiscion_sign": "Taurus",
+          "contra_antiscion_sign": "Scorpio"
+        }
+      ]
+    },
+    {
+      "title": "General capacity for subsistence from combined condition",
+      "pages": [
+        215
+      ],
+      "anchor": "First paragraph under If the Querent should be Rich or in a Capacity",
+      "statement": "Lilly combines a majority of planets, especially both fortunes, being swift and well housed, their not violently afflicting each other, Venus as Ascendant lady near Cor Leonis, the waxing Moon, and nearly culminating Jupiter to judge subsistence and good local standing according to the tradesman's calling.",
+      "requires": [],
+      "limits": [
+        "A combined case judgment; do not make each item an independent sufficient wealth rule.",
+        "The author's general nonviolent-affliction description coexists with his stated platick Jupiter–Mars square at PDF213."
+      ],
+      "kind": "worked_example_judgment",
+      "candidate_origin": "LI.1647.II.XXVIII.C015"
+    },
+    {
+      "title": "Second lord and Fortune dispositor prominent near Spica",
+      "pages": [
+        215
+      ],
+      "anchor": "Second paragraph of first judgment, before Jupiter sentence",
+      "statement": "For wealth Lilly considers Mars, lord of the second and dispositor of Fortune, in the eastern angle and near Spica, which he locates at18 Libra.",
+      "requires": [],
+      "limits": [
+        "This testimony belongs to the complete case synthesis."
+      ],
+      "kind": "worked_example_condition",
+      "candidate_origin": "LI.1647.II.XXVIII.C016"
+    },
+    {
+      "title": "Exalted angular Jupiter and long-ascension square",
+      "pages": [
+        215
+      ],
+      "anchor": "Sentence beginning Then I observed that Jupiter",
+      "statement": "Jupiter, a general wealth significator, is exalted and angular and casts a sinister square near the ascending degree; Lilly says a square in signs of long ascension is usually reputed a trine.",
+      "requires": [],
+      "limits": [
+        "The passage does not give a latitude range, numerical conversion, or replacement orb.",
+        "Preserve the square geometry separately from Lilly's source-symbolic valuation."
+      ],
+      "kind": "source_rule_in_worked_example",
+      "candidate_origin": "LI.1647.II.XXVIII.C017"
+    },
+    {
+      "title": "Ordered lunar transfer to querent significator",
+      "pages": [
+        215,
+        216
+      ],
+      "anchor": "Last line PDF215 through transferring thereby clause at top PDF216",
+      "statement": "The Moon newly separates from a sextile of Mars, second lord; next separates from conjunction of Mercury; then applies to conjunction of Venus, the querent significator, transferring Mercury's and Mars's virtues to Venus.",
+      "requires": [],
+      "limits": [
+        "The original glyph is Mercury in both places, not Jupiter.",
+        "Order and direction are essential."
+      ],
+      "kind": "worked_example_condition",
+      "candidate_origin": "LI.1647.II.XXVIII.C018"
+    },
+    {
+      "title": "Moon helped by strong solar dispositor",
+      "pages": [
+        216
+      ],
+      "anchor": "Top paragraph, the Moon is also disposed by the Sun",
+      "statement": "The Moon's dispositor is the strong Sun; since the Moon generally signifies in every question and is not unfortunate here, Lilly reads her as promising much good.",
+      "requires": [],
+      "limits": [
+        "Case qualification, not unconditional beneficence of the Moon."
+      ],
+      "kind": "worked_example_condition",
+      "candidate_origin": "LI.1647.II.XXVIII.C019"
+    },
+    {
+      "title": "Fixed Fortune in Mars terms",
+      "pages": [
+        216
+      ],
+      "anchor": "Lastly I considered that Fortune was in a fixed sign",
+      "statement": "Lilly adds Fortune's fixed sign and placement in Mars's terms to the favorable wealth testimonies.",
+      "requires": [],
+      "limits": [
+        "Fortune remains numerically weak by two testimonies in PDF214; these are separate considerations."
+      ],
+      "kind": "worked_example_condition",
+      "candidate_origin": "LI.1647.II.XXVIII.C020"
+    },
+    {
+      "title": "Competent estate with labor: author judgment and bounded report",
+      "pages": [
+        216
+      ],
+      "anchor": "From all which testimonies through so to the day hereof he hath",
+      "statement": "From the combined testimonies Lilly judges an estate and competent fortune, attained with labor and care because an Infortune signifies it; he then reports that this has occurred up to his time of writing.",
+      "requires": [],
+      "limits": [
+        "Retrospective author report without independent documentation.",
+        "No amount, full life follow-up, or timing-specific accuracy metric is supplied."
+      ],
+      "kind": "reported_case_judgment_and_confirmation",
+      "candidate_origin": "LI.1647.II.XXVIII.C021"
+    },
+    {
+      "title": "Marriage qualification to independent subsistence",
+      "pages": [
+        216
+      ],
+      "anchor": "But because Mars Lord of the seventh through without Marriage",
+      "statement": "Because Mars also rules the seventh, which Lilly associates with women and wives, and most materially signifies the wealth sought, he says he advised marriage and judged that the querent would subsist substantially less well without it.",
+      "requires": [],
+      "limits": [
+        "This is historical case advice, not present-day advice.",
+        "It qualifies rather than simply affirms wealth without marriage."
+      ],
+      "kind": "worked_example_judgment",
+      "candidate_origin": "LI.1647.II.XXVIII.C022"
+    },
+    {
+      "title": "Select wealth-promising planet for the means",
+      "pages": [
+        216
+      ],
+      "anchor": "Opening of By what means through no Planet in second",
+      "statement": "To identify the means consider the planet or planets promising wealth; in this empty-second-house case Mars as second lord and Fortune dispositor is primary.",
+      "requires": [],
+      "limits": [
+        "Fortune in the second is not described as a planet, so empty of planets is not a contradiction."
+      ],
+      "kind": "source_method_in_worked_example",
+      "candidate_origin": "LI.1647.II.XXVIII.C023"
+    },
+    {
+      "title": "Second lord in Ascendant: own industry",
+      "pages": [
+        216
+      ],
+      "anchor": "As he is Lord of the second and placed in the ascendant",
+      "statement": "The second lord in the Ascendant signifies an estate acquired by the querent's own industry.",
+      "requires": [
+        "Second lord acts as the wealth significator in this question."
+      ],
+      "limits": [],
+      "kind": "source_rule_in_worked_example",
+      "candidate_origin": "LI.1647.II.XXVIII.C024"
+    },
+    {
+      "title": "Thing significator in Ascendant: relative ease modified by malefic",
+      "pages": [
+        216
+      ],
+      "anchor": "And because the Significator of the thing demanded through at this time",
+      "statement": "The wealth significator in the Ascendant suggests acquisition or increase with less labor than expected; Mars being an Infortune diminishes this ease in the example.",
+      "requires": [],
+      "limits": [
+        "Relative ease and residual labor/care are compatible; do not turn this into effortless wealth."
+      ],
+      "kind": "source_rule_in_worked_example",
+      "candidate_origin": "LI.1647.II.XXVIII.C025"
+    },
+    {
+      "title": "Marriage wealth from seventh lord and turned second",
+      "pages": [
+        216
+      ],
+      "anchor": "And as Mars is Lord of the seventh through end of page",
+      "statement": "Lilly judges a wife bringing a good, fixed fortune beyond expectation from the seventh lord in the Ascendant near an eminent fixed star and well-fortified Venus as lady of the eighth, the wife's house of substance.",
+      "requires": [],
+      "limits": [
+        "The eighth is a turned second from the seventh.",
+        "The prediction combines these conditions; no calibrated amount is specified."
+      ],
+      "kind": "worked_example_judgment",
+      "candidate_origin": "LI.1647.II.XXVIII.C026"
+    },
+    {
+      "title": "Trade from tenth-lord translation",
+      "pages": [
+        217
+      ],
+      "anchor": "Opening continuation through competent Estate",
+      "statement": "The Moon as tenth-house lady signifies the trade, and her transfer of Mercury and Mars to the querent leads Lilly to predict a competent estate through diligence in his profession.",
+      "requires": [],
+      "limits": [
+        "Mercury glyph verified in original.",
+        "Historical advice recorded as source content only."
+      ],
+      "kind": "worked_example_judgment",
+      "candidate_origin": "LI.1647.II.XXVIII.C027"
+    },
+    {
+      "title": "Explicit informant report of wife wealth and trade",
+      "pages": [
+        217
+      ],
+      "anchor": "He hath as he informes me through Trading it hath been very good",
+      "statement": "Lilly reports the man told him he had a good fortune with his wife, both money and land, and says his trading had been very good.",
+      "requires": [],
+      "limits": [
+        "This is the man's report relayed by Lilly, not external confirmation.",
+        "The reported content does not independently establish every prediction in the chapter."
+      ],
+      "kind": "reported_case_confirmation",
+      "candidate_origin": "LI.1647.II.XXVIII.C028"
+    },
+    {
+      "title": "Jupiter tenth-house profession claim",
+      "pages": [
+        217
+      ],
+      "anchor": "For Jupiter in the tenth through gainfull Profession",
+      "statement": "Lilly calls Jupiter in the tenth a certain and infallible argument, according to natural causes, of plentiful trading or a gainful profession.",
+      "requires": [],
+      "limits": [
+        "The certainty language is Lilly's historical claim, not a validated guarantee."
+      ],
+      "kind": "author_general_claim",
+      "candidate_origin": "LI.1647.II.XXVIII.C029"
+    },
+    {
+      "title": "Speed and eastern placement favor short timing",
+      "pages": [
+        217
+      ],
+      "anchor": "First paragraph under The Time When",
+      "statement": "The significators in the Ascendant or oriental quarter and what Lilly calls five swift planets promise substance soon; swift Mars as second lord and Fortune lord adds the same testimony.",
+      "requires": [],
+      "limits": [
+        "The five count conflicts with the four swift entries at PDF212; preserve both.",
+        "No standalone conversion from quarter or speed to a specific duration is supplied."
+      ],
+      "kind": "worked_example_timing",
+      "candidate_origin": "LI.1647.II.XXVIII.C030"
+    },
+    {
+      "title": "Ascendant–Mars distance interpreted as years",
+      "pages": [
+        217
+      ],
+      "anchor": "The distance of the Ascendant from Mars through Portion with his Wife",
+      "statement": "The approximately two-degree Ascendant–Mars distance signifies about two years in this manner of judgment; Lilly says the man had a portion with his wife at that time.",
+      "requires": [],
+      "limits": [
+        "Printed longitudes yield1d59m, reasonably called about2d.",
+        "No exact event date or universal rule that all degrees equal years is supplied."
+      ],
+      "kind": "reported_case_timing",
+      "candidate_origin": "LI.1647.II.XXVIII.C031",
+      "worked_values": {
+        "ascendant": "Libra14d13m",
+        "Mars": "Libra16d12m",
+        "distance_computed": "1d59m",
+        "source_duration": "two years or thereabouts"
+      }
+    },
+    {
+      "title": "Peregrine significator can still perform its assigned office",
+      "pages": [
+        217
+      ],
+      "anchor": "Some may wonder why Mars being peregrine through social analogy",
+      "statement": "Lilly says peregrine Mars can show both performance and timing because he rules the second and seventh and promises the demanded matter, though some obstruction remains.",
+      "requires": [],
+      "limits": [
+        "Peregrinity is not erased; the rule preserves office plus impediment.",
+        "The social comparison is an analogy, not independent evidence."
+      ],
+      "kind": "source_qualification",
+      "candidate_origin": "LI.1647.II.XXVIII.C032"
+    },
+    {
+      "title": "Moon–Venus distance interpreted as later trade timing",
+      "pages": [
+        217,
+        218
+      ],
+      "anchor": "In the next place I observed through friends improving estate",
+      "statement": "Lilly finds6d27m to the Moon's conjunction with Venus; together with the earlier consideration he predicts perceptible improvement in about two years or sooner through wife or industry, and very great trading, reputation and helpful friends around1640, six years after the question.",
+      "requires": [],
+      "limits": [
+        "The source uses broad approximate windows, not a precisely converted6.45-year event date.",
+        "The text is a report of the judgment; no equally explicit separate confirmation of the1640 cluster is given in this scoped chapter."
+      ],
+      "kind": "worked_example_timing",
+      "candidate_origin": "LI.1647.II.XXVIII.C033",
+      "worked_values": {
+        "Moon": "Leo19d07m",
+        "Venus": "Leo25d34m",
+        "separation": "6d27m",
+        "source_year": "about1640",
+        "source_elapsed": "six years"
+      }
+    },
+    {
+      "title": "Application house modifies the means of increase",
+      "pages": [
+        218
+      ],
+      "anchor": "Reason why I judged augmentation through nature of house",
+      "statement": "Venus on the eleventh cusp gives friends as a means of increasing wealth; in judgments Lilly instructs consideration of the nature of the house where significators apply.",
+      "requires": [],
+      "limits": [
+        "The chart places Venus1d01m before the eleventh cusp, treated as on it by Lilly."
+      ],
+      "kind": "source_rule_in_worked_example",
+      "candidate_origin": "LI.1647.II.XXVIII.C034"
+    },
+    {
+      "title": "Mix reason with art in contingent timing",
+      "pages": [
+        218
+      ],
+      "anchor": "As also when you judge in this nature through Abs te and Scientia",
+      "statement": "For contingent things Lilly says to measure when events will happen according to reason, combining art and reason and not relying excessively on general rules of art.",
+      "requires": [],
+      "limits": [
+        "This is an explicit judgmental qualification; no algorithmic selection rule for months versus years is provided here."
+      ],
+      "kind": "source_method_qualification",
+      "candidate_origin": "LI.1647.II.XXVIII.C035"
+    },
+    {
+      "title": "Identify the hindering planet and its chain of connections",
+      "pages": [
+        218
+      ],
+      "anchor": "First two paragraphs under Of that Planet or Planets impediting",
+      "statement": "In every demand identify the planet preventing a conclusion, termed Strong, Hurtful, Destroyor or Abscissor; inspect the planet joined to the Ascendant lord, matter significator or Moon, how it is disposed, and to whom it in turn is joined.",
+      "requires": [],
+      "limits": [
+        "General horary insertion within the wealth chapter.",
+        "Joined is retained as the source's term; its every occurrence is not silently reduced to bodily conjunction."
+      ],
+      "kind": "source_method",
+      "candidate_origin": "LI.1647.II.XXVIII.C036"
+    },
+    {
+      "title": "Unreceived ill-disposed evil contact prevents the matter",
+      "pages": [
+        218
+      ],
+      "anchor": "For if the Lord of the Ascendant through destruction of thing quesited",
+      "statement": "If Ascendant lord, Moon or matter significator is joined to an evil and ill-disposed planet without reception, the matter is destroyed; Lilly also includes the route through a planet not itself ill-disposed but joined to an ill-disposed Infortune that does not receive it.",
+      "requires": [],
+      "limits": [
+        "Pronoun referents in the second route are retained as a relational reading, not an independently specified graph algorithm.",
+        "Reception exceptions later in the insertion must remain attached."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C037"
+    },
+    {
+      "title": "Ill disposition and preference for aspect to house itself",
+      "pages": [
+        218,
+        219
+      ],
+      "anchor": "We understand a Planet to be ill disposed through Planet impediting",
+      "statement": "Lilly lists peregrinity, retrogradation, combustion, and cadency from the Ascendant or matter house with failure to behold the house or at least its lord; for this purpose aspect to the house is better than aspect to its lord. Fall or detriment also qualify a destroyer or obstructor.",
+      "requires": [],
+      "limits": [
+        "The cadence/non-beholding syntax does not justify an invented numerical threshold.",
+        "The list is not converted into a single universal additive score."
+      ],
+      "kind": "source_definition",
+      "candidate_origin": "LI.1647.II.XXVIII.C038"
+    },
+    {
+      "title": "Unfortunate contact: reception versus no reception",
+      "pages": [
+        219
+      ],
+      "anchor": "Moreover if the Significator through probability of its performance",
+      "statement": "If a relevant significator, Moon, or planet joined to her is joined to an unfortunate retrograde, combust or cadent planet, reception signifies perfection with weariness and much solicitation; without reception nothing results despite prior probability.",
+      "requires": [],
+      "limits": [
+        "Subsequent square/opposition and condition qualifications on219–220 limit the general reception rescue."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C039"
+    },
+    {
+      "title": "Free receiver and easy perfection: unresolved syntax",
+      "pages": [
+        219
+      ],
+      "anchor": "Paragraph beginning If the Planet who receives the Lord of the Ascendant",
+      "statement": "Lilly says a planet receiving Ascendant lord, Moon, matter lord, or a receiver of any of them, if free from misfortunes, perfects easily; the same sentence adds neither receiving or received.",
+      "requires": [],
+      "limits": [
+        "The literal sentence appears internally inconsistent unless receives is used in different senses; do not silently repair it.",
+        "Runtime formalization of this sentence remains unresolved."
+      ],
+      "kind": "ambiguous_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C040"
+    },
+    {
+      "title": "Benefic intermediary does not erase afflicted malefic contact",
+      "pages": [
+        219
+      ],
+      "anchor": "Paragraph beginning If the Planet to whom the Lord of the Ascendant",
+      "statement": "A planet connected with a relevant significator, though free of Infortunes and joined to a benevolent planet, does not bring perfection if that benevolent planet aspects an impedited malevolent planet that does not receive the former planet.",
+      "requires": [],
+      "limits": [
+        "The printed sentence omits an expected relation after to whom; chain normalization is editorial and provisional.",
+        "Do not treat contact with any benefic as automatically sufficient."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C041"
+    },
+    {
+      "title": "Abscission before harmful conjunction can permit completion",
+      "pages": [
+        219
+      ],
+      "anchor": "Doe you still materially consider through matter prohibited",
+      "statement": "Check whether another planet cuts off significators' light and virtue before their perfect conjunction with an evil planet: such interruption can allow accomplishment by taking off the malefic's harm; absent that abscission the matter is prohibited.",
+      "requires": [],
+      "limits": [
+        "The target of the interruption is the harmful contact, so this is not a rule that every abscission helps.",
+        "Earlier Abscissor terminology describes a destroyer; contextual polarity must remain explicit."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C042"
+    },
+    {
+      "title": "Hard-aspect reception can fail with ill disposition",
+      "pages": [
+        219
+      ],
+      "anchor": "You must notwithstanding judge through the lesse when he that is received",
+      "statement": "Reception by square or opposition profits nothing when a planet is ill-disposed, and still less when the received planet is impedited.",
+      "requires": [],
+      "limits": [
+        "The exact identity of a Planet in the first clause is not fully explicit; the succeeding well-disposed-receiver exception must be retained."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C043"
+    },
+    {
+      "title": "Sextile or trine reception and well-disposed receiver exception",
+      "pages": [
+        219,
+        220
+      ],
+      "anchor": "But if reception be by sextile or trine through be the aspect square or opposition",
+      "statement": "Reception by sextile or trine gives confidence of accomplishment; if the receiving planet is well-disposed, reception by any aspect can perform the matter, including square or opposition.",
+      "requires": [],
+      "limits": [
+        "This qualifies the preceding rejection of ill-conditioned hard-aspect reception."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C044"
+    },
+    {
+      "title": "Applying soft aspect can perfect without reception",
+      "pages": [
+        220
+      ],
+      "anchor": "If the aspect be trine or sextile through not separated but applying",
+      "statement": "A trine or sextile performs the matter whether the significator is received or not, provided the aspect applies rather than separates.",
+      "requires": [],
+      "limits": [
+        "Read in the surrounding condition/impediment discussion; this sentence does not supply a blanket override for all intervening obstructions."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C045"
+    },
+    {
+      "title": "Unimpeded fortune contact",
+      "pages": [
+        220
+      ],
+      "anchor": "If the Significator be joyned with a Fortune not impedited",
+      "statement": "A significator joined to an unimpeded benefic planet perfects the matter.",
+      "requires": [],
+      "limits": [
+        "The source says a Fortune, meaning a benefic planet here; this is not the Part of Fortune."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C046"
+    },
+    {
+      "title": "Translation to impedited Infortune requires renewed reception",
+      "pages": [
+        220
+      ],
+      "anchor": "If any Planet translate through unless Infortune be again received",
+      "statement": "Translation between significators to an impedited Infortune destroys the matter unless that Infortune is in turn received.",
+      "requires": [],
+      "limits": [
+        "The receiving agent is not identified in this sentence; do not invent it.",
+        "Preserve both Infortune identity and impedited condition."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C047"
+    },
+    {
+      "title": "Afflicted collector must receive both significators",
+      "pages": [
+        220
+      ],
+      "anchor": "If the Significator of the Querent or the Moon through matter will not be performed",
+      "statement": "If a planet collecting the light of the querent's significator or Moon and the matter significator is an Infortune or unfortunate, it prevents accomplishment unless it receives both significators; receiving only one is insufficient.",
+      "requires": [],
+      "limits": [
+        "The source distinguishes being an Infortune from being unfortunate.",
+        "No collector-speed or dignity hierarchy is supplied in this paragraph."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C048"
+    },
+    {
+      "title": "Direction: querent goes toward desired thing",
+      "pages": [
+        220
+      ],
+      "anchor": "Consider likewise whether the Significator of the Querent through going to thing",
+      "statement": "Querent significator in the desired thing's house, or going to conjunction with its lord, signifies the querent going to the thing.",
+      "requires": [],
+      "limits": [
+        "Direction is not silently converted into certain successful acquisition.",
+        "The paragraph closes with a reservation concerning reception, Moon and other aspects; preserve it with the opposite-direction clause."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C049"
+    },
+    {
+      "title": "Direction: desired thing comes to querent",
+      "pages": [
+        220
+      ],
+      "anchor": "If the Significator of the thing demanded through proper being",
+      "statement": "Matter significator in the Ascendant, or hastening to conjunction with querent significator, signifies the thing coming to the querent, receptions notwithstanding, with the Moon and other aspects remaining in their proper being.",
+      "requires": [],
+      "limits": [
+        "Retain the closing reservation concerning Moon and other aspects.",
+        "This directional statement does not erase the insertion's hindrance rules."
+      ],
+      "kind": "conditional_source_rule",
+      "candidate_origin": "LI.1647.II.XXVIII.C050"
+    },
+    {
+      "title": "Persistence synthesis with limited meaning of rich",
+      "pages": [
+        220
+      ],
+      "anchor": "Entire paragraph under If the Querent should continue Rich",
+      "statement": "A fixed second cusp with Fortune in it, exalted angular Jupiter, and Venus as Mars's dispositor plus Moon in fixed Leo lead Lilly to judge a lasting plentiful estate; he explains this as continued competent fortune without poverty or want.",
+      "requires": [],
+      "limits": [
+        "The historical judgment does not establish lifelong observed persistence.",
+        "Rich is explicitly narrowed to continued competence, not limitless increase."
+      ],
+      "kind": "worked_example_judgment",
+      "candidate_origin": "LI.1647.II.XXVIII.C051"
+    },
+    {
+      "title": "Limited antiscia use: exactness and near contra-antiscion exception",
+      "pages": [
+        220,
+        221
+      ],
+      "anchor": "The Antiscions of the Planets through degree of Jupiter at next page top",
+      "statement": "Lilly says little can be made of antiscia here because none falls exactly on a material house cusp or exact planetary degree, but then considers Saturn's contra-antiscion near Jupiter.",
+      "requires": [],
+      "limits": [
+        "Do not impose exact equality on the contra-antiscion example: Saturn Cancer14d41m is2d50m from Jupiter Cancer17d31m.",
+        "No acceptable near tolerance is defined."
+      ],
+      "kind": "source_method_in_worked_example",
+      "candidate_origin": "LI.1647.II.XXVIII.C052"
+    },
+    {
+      "title": "Saturn contra-antiscion: kinship and servant cautions",
+      "pages": [
+        221
+      ],
+      "anchor": "From whence I judged no great unity through tincture of Saturn with Jupiter",
+      "statement": "Saturn physically in the third and its contra-antiscion disturbing Jupiter, the third lord, lead Lilly to judge poor unity with kin, brothers and sisters; he also reads harm from servants or blemishes in their behavior, despite Jupiter's exaltation.",
+      "requires": [],
+      "limits": [
+        "These are source judgments and cautions, not stated observed outcomes.",
+        "The sixth cusp Pisces supplies a possible shared Jupiter lordship in the chart, but this explanatory bridge is not explicitly stated in the prose.",
+        "Historical moralized character language is not a modern diagnosis."
+      ],
+      "kind": "worked_example_judgment",
+      "candidate_origin": "LI.1647.II.XXVIII.C053"
+    },
+    {
+      "title": "Sun affliction and caution about solar friends",
+      "pages": [
+        221
+      ],
+      "anchor": "Here are onely two things through see page71",
+      "statement": "Sun as eleventh lord squares Fortune sinister and also the second cusp; Lilly says he warned against commitments to or confidence in solar men even if friends. He tells the reader to describe the afflicting planet and refers to printed71 for solar men.",
+      "requires": [],
+      "limits": [
+        "A historical caution, not modern financial advice.",
+        "Preserve the friendship qualification; the earlier friend-help prediction is not retracted for every friend.",
+        "The paragraph says two things without an unambiguous numbered pair; do not invent two independently confirmed warnings."
+      ],
+      "kind": "worked_example_judgment",
+      "candidate_origin": "LI.1647.II.XXVIII.C054"
+    }
+  ],
+  "candidate_reconciliation": "C001 merged with existing XXVII R843 to avoid counting the same case introduction twice; C046 clarifies benefic planet; C049 carries the closing reservation. All worked values preserved."
+}

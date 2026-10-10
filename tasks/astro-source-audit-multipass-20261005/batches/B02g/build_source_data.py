@@ -82,12 +82,12 @@ rec("Second lord's placement: labour or unexpected acquisition", [202, 203], "if
     {"second_lord_in_second": "own labour and industry", "second_lord_in_first": "unexpected fortune or attainment without much labour"},
     requires=["Prior wealth/subsistence judgement."], kind="conditional_reference_table")
 rec("Trace the helping aspect before choosing a means", [203], "If that the Lord of the second or the Moon doe promise substance",
-    "When second lord or Moon promises substance through their mutual aspect, inspect its source house and the Moon's house lordship. If neither promises substance, inspect Fortune's house and its dispositor's house lordship.",
+    "When second lord or Moon promises substance through their mutual aspect, inspect the house from which the aspect comes or the house ruled by the Moon. If neither promises substance, inspect Fortune's house and its dispositor's house lordship.",
     limits=["These are conditional alternatives, not an instruction to collect every possible house narrative."], kind="source_selection_order")
 rec("Helpful first lord: own work", [203], "If the Planet assisting or promising encrease of Fortune be Lord of the Ascendant",
     "A helping Ascendant lord signifies the asker's diligence advancing the estate; for an ordinary artisan, labour, invention, care and pains-taking.", requires=["The planet actually assists or promises increase."])
 rec("Helpful second lord: existing capital and commerce", [203], "if the Adjuvant Planet be Lord of the second",
-    "A helping second lord signifies increasing and managing one's own stock, buying and selling things fitting the person's trade, the planet's nature and its sign.", requires=["The planet actually assists or promises increase."])
+    "A helping second lord signifies increasing and managing one's own stock; buying and selling things to which the person is naturally inclined, which arise in the course of life, or which suit the planet's nature, with its sign considered.", requires=["The planet actually assists or promises increase."])
 rec("Helpful third lord: kin, neighbours and journeys", [203], "If the Lord of the third fortunate the Lord of the second",
     "Third lord helping second lord, second cusp or Fortune indicates aid through an honest neighbour, kin, siblings if present, a journey, or removal toward the quarter from which the helpful aspect or conjunction comes.",
     limits=["Siblings are explicitly conditional on having them; the alternatives are not separate independent predictions."])
@@ -98,7 +98,7 @@ rec("Helpful fifth lord: social-role alternatives", [203, 204], "If the Lord of 
     {"gentleman": "play, cards, dice, sports or pastimes", "capable_courtier": "embassy or message", "ordinary_person": "victualling house, inn, tavern, bowling alley, doorkeeper or porter", "strong_fifth_lord_any_querent": "something from father's estate or making matches"},
     requires=["Fifth lord promises wealth."], limits=["Historical alternatives, not present recommendations or a replacement of the fourth-house inheritance association."], kind="conditional_reference_table")
 rec("Sixth and a human sign: service and labour", [204], "If the Lord of the sixth, or Significator, or assistant Planet be in the sixth",
-    "The sixth-related helping-planet clause adds a human sign on the sixth, indicating good servants and profit from their labour; for a king/prince it describes subjects' subsidies and loans.",
+    "The sixth lord, significator or helping planet being in the sixth, with a human sign on the sixth, indicates good servants and profit from their labour; for a king/prince the continuation describes subjects' subsidies and loans.",
     limits=["Grammar leaves the exact scope of the human-sign and occupancy qualifications across the following occupational examples unresolved."])
 rec("Sixth-house occupational alternatives", [204], "If a Nobleman or Gentleman enquire",
     {"nobleman_or_gentleman": "leases and discreet estate management by stewards or bailiffs", "farmer": "small cattle including sheep, goats, hogs and rabbits", "scholar": "physician's fees from sick people"},
@@ -151,7 +151,7 @@ rec("Benefics can obstruct acquisition", [207], "both Jupiter and Venus being af
     limits=["Role, condition and natural character remain separate; no universal positive Jupiter/Venus score."])
 rec("South node's house-specific impediment", [207], "in what House you find Cauda Draconis",
     "The south node is assigned detriment in the topics of its house: in second, estate consumption by folly/neglect; in third, difficulty through kin; analogize through other houses.",
-    limits=["Historical source symbolism, not a supported claim about present people. Later XXVIII addresses nullification of north-node testimony by Saturn nearby."])
+    limits=["Historical source symbolism, not a supported claim about present people."])
 rec("Ordinary recovery/borrowing/pledge frame", [207], "If the Querent shall obtaine the Substance which he demands",
     {"asker": ["Ascendant", "Ascendant lord", "Moon"], "asker_money": [2, "second lord"], "other_party": [7, "seventh lord"], "other_party_money": [8, "eighth lord"]},
     requires=["Recovery, borrowing or pledged goods from the particular other party; ordinary comparable parties, qualified onPDF208."],
@@ -159,7 +159,7 @@ rec("Ordinary recovery/borrowing/pledge frame", [207], "If the Querent shall obt
 rec("Ordinary recovery through eighth-house contact", [207], "See if the Lord of the Ascendant or the Moon be joyned",
     "Ascendant lord or Moon joining eighth lord, or joining/aspecting an eighth-house planet, may obtain desired money, loan or restored pledge when the planet is a fortune or the aspect fortunate; a fortunate eighth-house planet need not be received.",
     limits=["Keep the source's conjunction/aspect and reception alternatives; this is not a generic rule that any eighth-house contact succeeds."])
-rec("Ordinary recovery through received malefic", [207], "if an infortunate Planet be in the eighth, or Lord of the eighth",
+rec("Ordinary recovery through a malefic receiving the querent", [207], "if an infortunate Planet be in the eighth, or Lord of the eighth",
     "A malefic in or ruling eighth that receives Ascendant lord or Moon can give the desired recovery. Without reception the source predicts hardly ever obtaining it, or such labour that the requester regrets it.",
     limits=["Hardly ever / if ever is not rewritten as an absolute impossibility; reception direction is material."])
 rec("Eighth lord enters first/second with second-lord reception", [207, 208], "if the Lord of the eighth be in the first, or in the second",
@@ -187,7 +187,7 @@ rec("Superior payment frame", [208, 209], "If one shall acquire that Gain or Pro
 rec("Unimpeded eleventh-house benefic and payment", [209], "Lord of the Ascendant or the Moon joyned to the Lord of the eleventh",
     "Ascendant lord or Moon joining eleventh lord, or an eleventh-house planet that is a fortune unimpeded and not ill disposed, signifies obtaining salary, debt or wages owed by the great person.",
     limits=["Keep the original distinction between the lord clause and the qualified occupant clause; exact scope of the final qualification is a parsing uncertainty."])
-rec("Received malefic in superior-payment enquiry", [209], "Moon and Lord of the Ascendant be joyned to an unfortunate Planet",
+rec("Malefic receiving querent significators in superior-payment enquiry", [209], "Moon and Lord of the Ascendant be joyned to an unfortunate Planet",
     "Moon and Ascendant lord joining a malefic that receives them into its essential dignities signify payment after much solicitation, weary approaches, fear and distrust.",
     limits=["Joining, reception, and named querent significators are preserved. The difficult path is separate from whether payment occurs."])
 rec("Unreceived malefic in superior-payment enquiry", [209], "any Aspect be betwixt the Significators",
@@ -197,7 +197,7 @@ rec("Reception type must be identified", [209], "be very carefull to observe the
     "Observe true essential dignities and mutual receptions, including which dignity receives the other significator.",
     limits=["Reception is not a single undifferentiated boolean for every downstream rule."], kind="method_instruction")
 rec("Timing requires the actual effective significator", [209], "unto what Planet either the Lord of the Ascendant or Moon applyes",
-    "Choose the planet to which Ascendant lord or Moon applies or bodily joins and which signifies accomplishment; in a sextile/trine case, whether benefic or received or not, inspect the rays through perfection or the degrees lacking to exact aspect/conjunction at the question.",
+    "Choose the planet to which Ascendant lord or Moon applies or bodily joins and which signifies accomplishment; in a sextile/trine case, whether that planet is a benefic or not, and whether it receives the Ascendant lord or Moon or not, inspect the rays through perfection or the degrees lacking to exact aspect/conjunction at the question.",
     limits=["Time-to-contact astronomy and symbolic distance-to-time are distinct. Static distance does not compute a moving contact date."], kind="timing_prerequisite")
 HOUSE_PAIR_UNITS = {
     "cadent|cadent": "days", "succedent|succedent": "weeks", "angular|angular": "months",
@@ -211,11 +211,12 @@ rec("Timing units depend on plausible business duration", [209, 210], "the Astro
     "Consider whether the business can be completed in days, weeks or months. For a lengthy business, years may replace months, especially when Ascendant lord, Moon and other significators are angular.",
     limits=["No objective long-business threshold or automatic promotion rule is supplied. Do not choose a unit after seeing the outcome."], kind="timing_qualification")
 rec("Ancients' same-sign conjunction route: heavier querent lord", [210], "Some of the Ancients have said",
-    "Some ancients are reported to time accomplishment to exact degree-and-minute conjunction when the effective planet and Ascendant lord are in the same sign and Ascendant lord is the more ponderous planet, whether reception exists or not.",
+    "Some ancients are reported to time accomplishment to exact degree-and-minute conjunction when the effective planet and Ascendant lord are in the same sign at the hour of the question and Ascendant lord is the more ponderous planet, whether reception exists or not.",
     limits=["Attributed prior view, not silently Lilly's own universal rule; ponderous does not mean merely comparing current daily velocity."], kind="attributed_timing_method")
-rec("Ancients' lighter querent lord requires reception", [210], "if the Lord of the Ascendant be the more light Planet",
-    "When the lighter Ascendant lord hastens toward conjunction, accomplishment requires the effecting planet to receive it.",
-    limits=["This is a different branch from the ponderous-lord condition."], kind="attributed_timing_method")
+rec("Ancients' lighter querent lord: reception branch and exceptions", [210], "if the Lord of the Ascendant be the more light Planet",
+    "When the lighter Ascendant lord hastens toward conjunction, the effecting planet receiving it signifies accomplishment; the nonreception denial is subject to the following angular/domicile exceptions.",
+    requires=["The two planets were in the same sign at the question, under the preceding attributed ancient method."],
+    limits=["This is a different branch from the ponderous-lord condition. Read with LI.1647.II.XXVII.R838; the reception branch must not erase those exceptions."], kind="attributed_timing_method")
 rec("Conjunction-route exceptions when reception absent", [210], "unlesse the foresaid significators be in an Angle",
     "Without that reception, accomplishment is denied unless the significators are angular at conjunction, or in one of his own houses, especially the house called his joy.",
     limits=["Own houses refers to zodiacal domiciles in the following sign examples. The pronoun his and its scope over the two significators remain ambiguous."], kind="attributed_exception")
@@ -233,7 +234,7 @@ rec("Ascendant-cusp distance timing alternative", [210], "And for the time when,
     limits=["The text does not provide a complete fixed/common months/years lookup here; do not invent it or calculate a civil date."], kind="author_timing_method")
 rec("Tradesman's one chart and four linked questions", [211], "A Tradesman of this City in the yeer1634",
     ["whether rich or able to subsist without marriage", "by what means", "when", "whether wealth continues"],
-    limits=["One author-reported historical inquiry with four linked endpoints, not four independent validation cases. The diagram belongs to the following worked discussion."], kind="historical_case_introduction")
+    limits=["Lilly says he has seen experience of his judgment. This is one author-selected retrospective inquiry with four linked endpoints, not four independent validation cases. The diagram belongs to the following worked discussion."], kind="historical_case_introduction")
 
 
 def save(name, value):
@@ -246,11 +247,15 @@ def build():
         for row in json.loads(additions.read_text())["records"]:
             rec(row["title"], row["pages"], row["anchor"], row["statement"],
                 row.get("requires", []), row.get("limits", []), row.get("kind", "conditional_source_rule"), "XXVIII")
+            for field in ("worked_values", "candidate_origin"):
+                if field in row:
+                    RULES[-1][field] = row[field]
     save("RULES.json", {
         "schema_version": 1, "batch": "B02g", "source_id": SOURCE_ID,
         "source_sha256": SOURCE_SHA256, "records_count": len(RULES), "rules": RULES,
+        "first_record_number": 775, "last_record_number": 774 + len(RULES),
         "declared_source_scope": "Book II second-house block: XXVII heading PDF201 through XXVIII ending PDF221 before third-house preamble",
-        "scope_status": "XXVII_AND_XXVIII_EXTRACTED_REVIEW_REQUIRED" if additions.exists() else "XXVII_EXTRACTED_XXVIII_PENDING",
+        "scope_status": "XXVII_AND_XXVIII_EXTRACTED_WITH_PRESERVED_UNRESOLVED" if additions.exists() else "XXVII_EXTRACTED_XXVIII_PENDING",
         "statement_notice": "Normalized source claims; not validated financial predictions or practical advice.",
         "runtime_promotions": 0, "empirical_validations": 0
     })

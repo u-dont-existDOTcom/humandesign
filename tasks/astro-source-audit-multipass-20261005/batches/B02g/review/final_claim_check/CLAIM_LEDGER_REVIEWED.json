@@ -1,0 +1,458 @@
+{
+  "artifact": "REPORT.md",
+  "artifact_sha256": "41ef9b735fad9aa08decf1d703cdc6cb09fdbc957b660a0eb2f9404c034591fc",
+  "status": "PENDING_INDEPENDENT_CLAIM_CHECK",
+  "claims": [
+    {
+      "id": "C01",
+      "type": "figure",
+      "claim": "Complete XXVII–XXVIII source span;122 new records,69 plus53;896 Lilly,1066 retained Ptolemy,1962 combined.",
+      "source_pdf_pages": [
+        201,
+        221
+      ],
+      "anchors": [
+        "RULES.json",
+        "SECTION_COVERAGE.json",
+        "INDEX_VERIFICATION.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C02",
+      "type": "figure",
+      "claim": "One case,32 preserved open items,seven retained-source comparisons; introduction not counted twice.",
+      "source_pdf_pages": [
+        211
+      ],
+      "anchors": [
+        "HISTORICAL_CASES.json",
+        "UNRESOLVED.json",
+        "CROSS_SOURCE_COMPARISONS.json",
+        "XXVIII_EXTRACTED.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C03",
+      "type": "verification",
+      "claim": "Same894-page witness and SHA;21 relevant root images read; independent XXVII201–211 and XXVIII211–222; no new OCR.",
+      "source_pdf_pages": [],
+      "anchors": [
+        "READING_RECEIPT.json",
+        "review/XXVII_SOURCE_NOTES.md",
+        "review/XXVIII_READING_RECEIPT.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C04",
+      "type": "source_content",
+      "claim": "Three question frames and their ordinary-peer versus superior conditions; turned money houses.",
+      "source_pdf_pages": [
+        201,
+        207,
+        208,
+        209
+      ],
+      "anchors": [
+        "RULES.json:R775,R819-R832",
+        "QUERY_FRAMES.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C05",
+      "type": "source_content",
+      "claim": "Positive means gate, adverse obstruction gate,12 house channels and sign/occupation conditions.",
+      "source_pdf_pages": [
+        202,
+        203,
+        204,
+        205,
+        206,
+        207
+      ],
+      "anchors": [
+        "RULES.json:R792-R818"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C06",
+      "type": "source_content",
+      "claim": "Fortune/nodes do not emit rays; receiving aspects differs from geometric symmetry.",
+      "source_pdf_pages": [
+        201,
+        202
+      ],
+      "anchors": [
+        "RULES.json:R777,R789",
+        "APPLICABILITY_AND_RELATIONS.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C07",
+      "type": "source_content",
+      "claim": "Malefics can acquire through condition/office; benefics can obstruct; Mars retains labour/obstruction.",
+      "source_pdf_pages": [
+        206,
+        207,
+        216,
+        217
+      ],
+      "anchors": [
+        "RULES.json:R816,R817,R864-R874"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C08",
+      "type": "source_content",
+      "claim": "Reception direction; ordinary hardly-ever/regrettable-labour branch differs from categorical superior denial.",
+      "source_pdf_pages": [
+        207,
+        208,
+        209,
+        210
+      ],
+      "anchors": [
+        "RULES.json:R821,R830-R833"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C09",
+      "type": "source_content",
+      "claim": "Full reception/obstruction table: condition, direction, applying aspect, renewed reception and collector receiving both.",
+      "source_pdf_pages": [
+        218,
+        219,
+        220
+      ],
+      "anchors": [
+        "RULES.json:R878-R892",
+        "APPLICABILITY_AND_RELATIONS.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C10",
+      "type": "source_content",
+      "claim": "Abscission before harmful conjunction can remove harm and permit completion.",
+      "source_pdf_pages": [
+        219
+      ],
+      "anchors": [
+        "RULES.json:R884"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C11",
+      "type": "source_content",
+      "claim": "Receives/neither-receiving sentence and omitted intermediary relation unresolved.",
+      "source_pdf_pages": [
+        219
+      ],
+      "anchors": [
+        "RULES.json:R882,R883",
+        "UNRESOLVED.json:U023,U024"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C12",
+      "type": "figure",
+      "claim": "All seven antiscion plus seven contra entries reproduce; all seven strength totals and Fortune net reproduce.",
+      "source_pdf_pages": [
+        211,
+        212,
+        213,
+        214,
+        215
+      ],
+      "anchors": [
+        "WORKED_NUMERIC_TABLES.json",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C13",
+      "type": "source_content",
+      "claim": "Jupiter qualitative detriment lacks numeric debit; Fortune net weakness coexists with fixed-sign/Mars-term testimony.",
+      "source_pdf_pages": [
+        213,
+        214,
+        215,
+        216
+      ],
+      "anchors": [
+        "RULES.json:R848,R854,R862"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C14",
+      "type": "source_content",
+      "claim": "Four source-listed swift planets versus the later explicit five claim.",
+      "source_pdf_pages": [
+        212,
+        217
+      ],
+      "anchors": [
+        "RULES.json:R845,R872",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C15",
+      "type": "source_content",
+      "claim": "Mars35m; Jupiter mean4m59s; lunar-transfer Mercury glyph; Fortune is fixed-sign/Mars-terms referent.",
+      "source_pdf_pages": [
+        212,
+        216,
+        217
+      ],
+      "anchors": [
+        "RULES.json:R845,R860,R862",
+        "WORKED_NUMERIC_TABLES.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C16",
+      "type": "figure",
+      "claim": "FortuneScorpio0:10 and cusp2Scorpio6:35 yield6:25; source assigns second beyond five degrees.",
+      "source_pdf_pages": [
+        211,
+        214
+      ],
+      "anchors": [
+        "RULES.json:R844,R854",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C17",
+      "type": "inference",
+      "claim": "Current Fortune exception and retained Mars exclusion preclude an unqualified universal five-degree representation; no replacement cutoff.",
+      "source_pdf_pages": [
+        188,
+        214
+      ],
+      "anchors": [
+        "CROSS_SOURCE_COMPARISONS.json:C04",
+        "../B02f/RULES.json:R714"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C18",
+      "type": "figure",
+      "claim": "Venus1:01 before eleventh cusp is treated as on that cusp; geometric and attributed houses separate.",
+      "source_pdf_pages": [
+        211,
+        213,
+        218
+      ],
+      "anchors": [
+        "RULES.json:R851,R876",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C19",
+      "type": "source_content",
+      "claim": "All six local house-pair units, business-duration discretion and no automatic year selection.",
+      "source_pdf_pages": [
+        209,
+        210
+      ],
+      "anchors": [
+        "RULES.json:R833-R835",
+        "TIMING_REFERENCES.json",
+        "lilly_wealth_reference.py"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C20",
+      "type": "source_content",
+      "claim": "Same sign at query time, ponderous/lighter distinction, following exceptions, sign joys and Lilly own reception observations.",
+      "source_pdf_pages": [
+        210
+      ],
+      "anchors": [
+        "RULES.json:R836-R841"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C21",
+      "type": "figure",
+      "claim": "Mars–Asc1:59 and Moon–Venus6:27; about2years and about1640; not exact6.45-year civil date.",
+      "source_pdf_pages": [
+        211,
+        217,
+        218
+      ],
+      "anchors": [
+        "RULES.json:R873,R875-R877",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C22",
+      "type": "figure",
+      "claim": "Saturn contraCancer14:41 versus JupiterCancer17:31 gives2:50; exact antiscia versus near contra use.",
+      "source_pdf_pages": [
+        215,
+        220,
+        221
+      ],
+      "anchors": [
+        "RULES.json:R856,R894,R895",
+        "ARITHMETIC_CHECKS.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C23",
+      "type": "source_content",
+      "claim": "Specific solar-friend caution does not retract all helpful-friend testimony; no caution outcome stated in scope.",
+      "source_pdf_pages": [
+        218,
+        221
+      ],
+      "anchors": [
+        "RULES.json:R876,R895,R896"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C24",
+      "type": "source_content",
+      "claim": "Actual retrospective reports: competent estate to writing, wife money/land, good trade, portion around two years.",
+      "source_pdf_pages": [
+        211,
+        216,
+        217
+      ],
+      "anchors": [
+        "HISTORICAL_CASES.json",
+        "RULES.json:R843,R863,R870,R873"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C25",
+      "type": "source_content",
+      "claim": "No separate dated confirmation of1640 cluster or full-life continuation; competence definition; unmarried counterfactual unverified.",
+      "source_pdf_pages": [
+        216,
+        217,
+        218,
+        219,
+        220,
+        221
+      ],
+      "anchors": [
+        "HISTORICAL_CASES.json",
+        "RULES.json:R864,R875,R893"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C26",
+      "type": "verification",
+      "claim": "Chart-minute0/6 reader disagreement, calendar and shorthand unresolved; static calculations do not use chart time.",
+      "source_pdf_pages": [
+        211
+      ],
+      "anchors": [
+        "WORKED_NUMERIC_TABLES.json",
+        "lilly_wealth_case_arithmetic.py",
+        "review/XXVII_RECONCILIATION.md"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C27",
+      "type": "verification",
+      "claim": "Independent XXVII findings and source-level repairs, with frozen findings retained.",
+      "source_pdf_pages": [
+        203,
+        204,
+        207,
+        209,
+        210,
+        211
+      ],
+      "anchors": [
+        "review/XXVII_CANDIDATE_FINDINGS.md",
+        "review/XXVII_RECONCILIATION.md",
+        "RULES.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C28",
+      "type": "source_content",
+      "claim": "Retained Ptolemy formula algebra, Robbins authenticity doubt, and genre/transfer limits.",
+      "source_pdf_pages": [],
+      "anchors": [
+        "CROSS_SOURCE_COMPARISONS.json:C03,C06",
+        "../B01j/RULES.json:R335-R339"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C29",
+      "type": "verification",
+      "claim": "Actual121 tests=28new+31B02f+30B02e+32methodology;35 subtests not added; Python3.12/pytest9.1.1.",
+      "source_pdf_pages": [],
+      "anchors": [
+        "TEST_B02g.txt",
+        "TEST_retained_B02f.txt",
+        "TEST_retained_B02e.txt",
+        "TEST_retained_methodology.txt"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C30",
+      "type": "verification",
+      "claim": "Checks are bounded; no new runtime model, personal fitting, old source data or freeze edits; no full application or predictive validity claim.",
+      "source_pdf_pages": [],
+      "anchors": [
+        "ACTIVE_CONTRACT.json",
+        "INDEX_VERIFICATION.json",
+        "lilly_wealth_reference.py",
+        "lilly_wealth_case_arithmetic.py",
+        "RULES.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    },
+    {
+      "id": "C31",
+      "type": "source_content",
+      "claim": "Next extraction is third-house heading/preamble on221, thenXXIX222; boundary preview is not new-rule extraction.",
+      "source_pdf_pages": [
+        221,
+        222
+      ],
+      "anchors": [
+        "SECTION_COVERAGE.json",
+        "READING_RECEIPT.json"
+      ],
+      "producer_check": "Checked against cited source pages, retained records or actual tool outputs; external checker disposition pending."
+    }
+  ]
+}

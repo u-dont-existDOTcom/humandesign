@@ -1,24 +1,23 @@
-# Lilly second-house audit: active work
+# Lilly second-house audit: completed source checkpoint
 
-Parent source-complete multi-author audit remains OPEN. Owner continued the prior AstroResearch & Hale task and repeated continuation while requesting greater depth on10October2026. Active scope and protections are in ACTIVE_CONTRACT.json.
+This replaces the initial 69-record drafting checkpoint. The parent multi-author audit remains OPEN under its existing owner-authorized source-sized batch pause contract.
 
-The latest completed predecessor is B02f at3df3a7f6f16f9d90700edc7af79e14c76ceaecd9. Its774 Lilly records and1,066 Ptolemy records remain unchanged.
+## Completed and verified
 
-The original894-page Lilly witness was recovered on the authorized source filesystem. A separate local download from the previously catalogued Archive.org source also matches SHA2562cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Raw PDF, original-page renders and extracted raw text remain outside Git.
+B02g completes Book II XXVII–XXVIII: the XXVII heading after the self-question paragraph on PDF 201 through the last second-house paragraph on PDF 221, above the third-house divider. There are 122 new records, R775–R896: 69 from XXVII and 53 added from XXVIII after merging the duplicate case introduction. The inventory now contains 896 Lilly records and 1,066 retained Ptolemy records, 1,962 combined.
 
-## Work completed in this increment
+All 21 original page images in the extraction span were inspected alongside existing text. The numerical transcription, exact static calculations, context links, one selected historical case, 32 unresolved items and seven retained-source comparisons are saved. The actual focused run passed 121 tests: 28 new and 93 retained. The 35 reported subtests are not extra tests. No predictive validation or runtime promotion occurred.
 
-- Root read existing text and original whole-page images PDF201–211; ChapterXXVII starts after the already-completed self-question paragraph onPDF201.
--69 normalized XXVII records R775–R843 drafted. They have source-page and passage anchors, genre, prerequisites, limits and explicit nonpromotion status. Source-to-record review is pending.
-- A separate reader inspected original pages211–222 for XXVIII and its boundary. The second-house section ends onPDF221/printed187 after the pointer to page71. The next third-house heading AND its introductory paragraph occur onPDF221; XXIX begins onPDF222. Do not lose the unnumbered preamble.
-- A fresh source reviewer is checking the XXVII records. A bounded mechanical helper task covers only query-frame references and the local house-pair timing table.
+The final independent check passed all 31 original ledger claims and one additional count claim. Its missed operational evidence claim was narrowed to a transfer-evidence criterion; the targeted repair check passed. Final formatting was verified to change whitespace only. Frozen findings and reviewed report are retained under review/final_claim_check.
 
-## Known source cautions
+## Publication and delivery
 
-PDF204/205 show printed174/175, while PDF208/209 show170/171. Source prose continues in the correct reading order. Store the visible folio separately from its expected sequential position; do not infer the cause or reorder pages by the label.
+Source completion and successful tests do not establish publication or delivery. The separate PUBLICATION_RECEIPT.json and DELIVERY_RECEIPT.json establish the actual transfers when present. VERIFICATION.json records the corresponding current status. The new report, source/code packet and handoff must all be usable before return.
 
-Ordinary-counterparty money uses7/8; payment from a much superior person uses10/11. General wealth has no particular donor. Reception type and direction matter, natural benefic/malefic character is not a fixed financial sign, and multiple timing routes are distinct.
+The initial remote work checkpoint is 080e0149a522fd01c74d5cdefe7a673332d4ef81. It is not the completed batch. Canonical integration was based on 3df3a7f6f16f9d90700edc7af79e14c76ceaecd9; verify the receipts and actual refs for later completed revisions.
 
-## Exact next work
+## Exact next source to extract
 
-Finish the XXVIII normalized extraction; integrate only after source checks, retain an explicit ambiguity ledger, verify historical arithmetic, run focused tests, complete fresh claim review, and publish final batch with the updated Lilly index and new dated state. The legacy blocked payloads and all prior batches remain protected. A draft branch/checkpoint does not mean the batch or parent audit is complete.
+PDF 221 / printed 187: below the horizontal rule, the third-house heading AND its complete introductory paragraph; then Chapter XXIX on PDF 222 / printed 188. The boundary was previewed but not extracted. Do not repeat the completed wealth paragraph or skip the preamble.
+
+Preserve all earlier source batches, participant data, fitted models and prediction freezes. Do not replay historical restricted payloads or update the protected legacy current/pass files. The dated state and Lilly extraction index carry the new frontier. Raw PDF, full text and page images remain outside Git.

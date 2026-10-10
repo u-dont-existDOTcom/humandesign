@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "evaluator": "/root/verify_b02g_delivery",
+  "review_kind": "BOUNDED_TARGETED_RECONCILIATION",
+  "authority": "DIAGNOSTIC_NOT_PUBLICATION_AUTHORITY",
+  "old_report": {
+    "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02g/review/final_claim_check/REPORT_REVIEWED.md",
+    "sha256": "41ef9b735fad9aa08decf1d703cdc6cb09fdbc957b660a0eb2f9404c034591fc"
+  },
+  "new_report": {
+    "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02g/REPORT.md",
+    "sha256": "7eb372fffdc091662c644a236b8d2aea47e66e6ae5d7651ee5bf7c6adc598c7a"
+  },
+  "current_ledger": {
+    "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02g/CLAIM_LEDGER.json",
+    "sha256": "9340322e3513804c42ae030733768f9df80986afa076814b013304d20751f1ba",
+    "claim_count": 33,
+    "artifact_hash_matches_new_report": true
+  },
+  "prior_dispositions": {
+    "path": "/workspace/scratch/bd2460f96de0/b02g-final-review/CLAIM_DISPOSITIONS.json",
+    "sha256": "0f235b34b9bde81965bd9b81b4873880ce22adf09421141a83159c6f43f2c06b",
+    "original_31_passes_carried_forward": true,
+    "scope_and_provenance_limits_preserved": true
+  },
+  "change_verification": {
+    "human_inspected_unified_diff": true,
+    "exact_old_sentence": "Final publication and delivery are evidenced separately in the publication receipt and manifest.",
+    "exact_new_sentence": "Use the separate publication and delivery receipts and the manifest to establish those transfers; source extraction and test results alone do not establish publication or delivery.",
+    "old_sentence_occurrences": 1,
+    "new_sentence_occurrences": 1,
+    "all_other_changes_whitespace_only": true,
+    "normalized_nonpublication_text_equal": true,
+    "substantive_source_claims_changed": false,
+    "prior_31_ledger_fields_unchanged": [
+      "claim",
+      "type",
+      "source_pdf_pages",
+      "anchors"
+    ],
+    "missing_prior_claim_ids": []
+  },
+  "dispositions": [
+    {
+      "id": "M01",
+      "disposition": "RESOLVED",
+      "resolution": "The unsupported completed-publication evidence assertion is replaced by a criterion for establishing transfers. This no longer asserts successful publication or delivery.",
+      "resolution_type": "NARROWED_TO_EVIDENCE_CRITERION",
+      "actual_publication_verified": false,
+      "actual_delivery_verified": false
+    },
+    {
+      "id": "C32",
+      "disposition": "PASS",
+      "claim": "Publication and delivery require separate transfer receipts and manifest evidence; source extraction and tests alone do not establish those transfers.",
+      "reason": "The revised section9 instructs the reader to establish publication and delivery from separate receipts and the manifest, and expressly rejects extraction/test results as sufficient transfer evidence. This is an evidence criterion, consistent with the governing task, rather than a claim that receipts exist or transfers have completed.",
+      "anchor_status": "Named receipt/manifest paths are prospective evidence locations; their contents and any completed transfers remain outside this targeted check."
+    },
+    {
+      "id": "C33",
+      "disposition": "PASS",
+      "claim": "The eight evidence entries are dependent targets or cautions within one case, not eight independent successes.",
+      "reason": "The current report retains exactly the eight-dependent-entries statement already passed as M02 in the frozen prior review. C33 adds this previously omitted checked claim with its case-file anchor; no substantive statement or evidence reassessment is introduced.",
+      "basis": "CARRY_FORWARD_OF_FROZEN_M02_PASS"
+    }
+  ],
+  "overall_disposition": "PASS_TARGETED_REPORT_EDIT",
+  "remaining_work": "Actual publication and delivery remain pending their separate evidence; this report-edit pass does not establish either transfer. Root retains responsibility for completing and verifying them.",
+  "work_performed": [
+    "Compared exact old/new report hashes",
+    "Inspected full unified prose diff",
+    "Mechanically proved whitespace-only changes outside the one authorized sentence replacement",
+    "Compared all prior31 core claim fields",
+    "Checked added C32/C33 against revised wording and prior M02 disposition",
+    "Saved and parsed this reconciliation record"
+  ],
+  "not_performed": [
+    "No original source re-audit",
+    "No new OCR or image inspection",
+    "No PDF rehash",
+    "No test reruns",
+    "No remote verification",
+    "No repository edits"
+  ],
+  "first_findings_unchanged_sha256": "1193dd5cae6d0c0a24266c5a90ee06a1824fddc0498dc671d782761de9785f6a"
+}

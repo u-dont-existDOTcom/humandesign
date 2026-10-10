@@ -13,18 +13,97 @@
     "route": "Current owner instruction; live default-branch UDA AGENTS and LESSON-INDEX read in this turn; HumanDesign AGENTS, ARCHITECTURE, V2 protocol and B02f handoff reconciled against actual Git state.",
     "uda_root_blob": "c27948c88cf7553f95241cbae7edab27f87689d2",
     "uda_index_blob": "b83848f61516389cf997d142bdd411f1c52a5024",
-    "graph_resolution": "Mapped dependency closure resolved; source provenance, recovery and owner-delivery rules routed as legacy prose. Resolution is routing metadata, not application proof."
+    "graph_resolution": "Mapped dependency closure resolved; source provenance, recovery and owner-delivery rules routed as legacy prose. Resolution is routing metadata, not application proof.",
+    "post_compaction_reactivation": {
+      "root_refetched": true,
+      "index_refetched": true,
+      "same_root_and_index_blobs": true,
+      "relevant_current_guidance_reloaded": true,
+      "contract_status": "ACTIVE",
+      "note": "Live root and index re-fetched with unchanged blobs; current task activation, compaction, publication and owner delivery guidance reloaded. Prior completed work preserved."
+    }
   },
   "active_controls": [
-    {"rule":"source-provenance","trigger":"Historical source extraction","required":"Anchor every rule to pages and passage boundaries; distinguish paraphrase, source claim, hypothetical reuse, reported confirmation and our calculation; preserve contradictions and undefined thresholds.","failure":"Unsupported statement, dropped qualifier, fabricated precision or conflated target","repair":"Reopen the source; narrow or mark unresolved","enforcement":"semantic and data assertions"},
-    {"rule":"verified-reading","trigger":"Text layer contains corrupt astrological symbols","required":"Read original whole-page images alongside existing text; record actual inspected pages and boundaries; no new OCR required.","failure":"Claim image review from preparation alone or trust corrupt OCR glyph","repair":"Inspect the original image and record uncertainty","enforcement":"page receipt plus semantic review"},
-    {"rule":"genre-and-exposure","trigger":"Wealth rules in horary Book II","required":"Keep horary separate from natal predictions and contemporary financial guidance. No participant records or prior model/freeze edits. Prompt already contains biographical summaries, so make no blinding claim.","failure":"Runtime promotion, personal fitting, false unexposed claim","repair":"Remove inadmissible downstream claim and retain source-only record","enforcement":"diff allowlist and semantic review"},
-    {"rule":"bounded-calculation","trigger":"Source provides arithmetic or timing examples","required":"Implement only deterministic source-defined reference calculations; undefined synthesis, calendars or thresholds remain unresolved; run focused checks and describe their actual scope.","failure":"Tests presented as predictive validation or invented astronomical exactness","repair":"Restrict code/output to supported calculation; document unresolved dependency","enforcement":"tests and review"},
-    {"rule":"independent-claim-check","trigger":"Delivering source attributions and verification claims","required":"Fresh checker receives source, draft and claim ledger without producer rationale, then findings are reconciled against source.","failure":"Producer-only review called independent or unchecked key claim delivered","repair":"Run bounded fresh claim check and resolve actual findings","enforcement":"independent source review record"},
-    {"rule":"durable-delivery","trigger":"Repository research milestone","required":"Publish ordinary new batch files and updated Lilly index/current dated state to the authorized research branch; verify exact remote bytes and deliver usable report/packet/handoff. Never retry historical restricted payloads.","failure":"Local-only completion, stale next-page pointer, missing companion data, restricted replay","repair":"Use authorized equivalent publication transport; preserve restrictions and verify destination","enforcement":"hash manifest, GitHub readback and delivery receipt"}
+    {
+      "rule": "source-provenance",
+      "trigger": "Historical source extraction",
+      "required": "Anchor every rule to pages and passage boundaries; distinguish paraphrase, source claim, hypothetical reuse, reported confirmation and our calculation; preserve contradictions and undefined thresholds.",
+      "failure": "Unsupported statement, dropped qualifier, fabricated precision or conflated target",
+      "repair": "Reopen the source; narrow or mark unresolved",
+      "enforcement": "semantic and data assertions"
+    },
+    {
+      "rule": "verified-reading",
+      "trigger": "Text layer contains corrupt astrological symbols",
+      "required": "Read original whole-page images alongside existing text; record actual inspected pages and boundaries; no new OCR required.",
+      "failure": "Claim image review from preparation alone or trust corrupt OCR glyph",
+      "repair": "Inspect the original image and record uncertainty",
+      "enforcement": "page receipt plus semantic review"
+    },
+    {
+      "rule": "genre-and-exposure",
+      "trigger": "Wealth rules in horary Book II",
+      "required": "Keep horary separate from natal predictions and contemporary financial guidance. No participant records or prior model/freeze edits. Prompt already contains biographical summaries, so make no blinding claim.",
+      "failure": "Runtime promotion, personal fitting, false unexposed claim",
+      "repair": "Remove inadmissible downstream claim and retain source-only record",
+      "enforcement": "diff allowlist and semantic review"
+    },
+    {
+      "rule": "bounded-calculation",
+      "trigger": "Source provides arithmetic or timing examples",
+      "required": "Implement only deterministic source-defined reference calculations; undefined synthesis, calendars or thresholds remain unresolved; run focused checks and describe their actual scope.",
+      "failure": "Tests presented as predictive validation or invented astronomical exactness",
+      "repair": "Restrict code/output to supported calculation; document unresolved dependency",
+      "enforcement": "tests and review"
+    },
+    {
+      "rule": "independent-claim-check",
+      "trigger": "Delivering source attributions and verification claims",
+      "required": "Fresh checker receives source, draft and claim ledger without producer rationale, then findings are reconciled against source.",
+      "failure": "Producer-only review called independent or unchecked key claim delivered",
+      "repair": "Run bounded fresh claim check and resolve actual findings",
+      "enforcement": "independent source review record"
+    },
+    {
+      "rule": "durable-delivery",
+      "trigger": "Repository research milestone",
+      "required": "Publish ordinary new batch files and updated Lilly index/current dated state to the authorized research branch; verify exact remote bytes and deliver usable report/packet/handoff. Never retry historical restricted payloads.",
+      "failure": "Local-only completion, stale next-page pointer, missing companion data, restricted replay",
+      "repair": "Use authorized equivalent publication transport; preserve restrictions and verify destination",
+      "enforcement": "hash manifest, GitHub readback and delivery receipt"
+    }
   ],
-  "publication_preflight": {"shell_git":"Read works; dry-run push lacks shell credential","authorized_fallback":"Connected GitHub Git-data API/connector, same repository and task scope","raw_source_in_git":false},
-  "protected_paths": ["state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md","tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json","tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json","all prior source batches","all participant data and prediction freezes"],
-  "prepublication_admission": "PENDING_SOURCE_AND_REVIEW",
-  "resume": "Read and image-check XXVII from PDF201; establish and complete the second-house chapter boundaries before saving the new next-source action."
+  "publication_preflight": {
+    "shell_git": "Read works; dry-run push lacks shell credential",
+    "authorized_fallback": "Connected GitHub Git-data API/connector, same repository and task scope",
+    "raw_source_in_git": false
+  },
+  "protected_paths": [
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "all prior source batches",
+    "all participant data and prediction freezes"
+  ],
+  "prepublication_admission": "ADMITTED_SOURCE_AND_REPORT_CHECKS_PASSED",
+  "resume": "Finish publication and delivery of the complete second-house batch. Next source to extract is the third-house heading and preamble on PDF 221, then XXIX on PDF 222.",
+  "latest_owner_steering": {
+    "time": "2026-10-10T01:25:59+00:00",
+    "instruction": "Continue; owner requested deeper reasoning",
+    "task_scope_changed": false,
+    "live_uda_root_refetched": true,
+    "live_uda_index_refetched": true,
+    "source_or_predictive_authority_expanded": false
+  },
+  "record_scope_completed": "XXVII–XXVIII second-house block,122 records",
+  "stop_admission": {
+    "parent_outcome": "OPEN multi-author source audit",
+    "current_owner_gap": "Complete, verify, publish and deliver the saved next source-sized continuation.",
+    "current_batch": "Second-house XXVII–XXVIII source work, tests and report review complete; publication and delivery require their own receipts.",
+    "pause_authority": "Existing owner-authorized pause contract in task PASS_PLAN.json: At each completed pass/batch, save progress and stop at the declared boundary when returning; next continuation resumes exact first unfinished unit. INTAKE_AND_PASS_PLAN.md: passes2–4 proceed in source-sized batches, not one enormous all-books turn. Progress fields in legacy plan are stale; this pause authorization is retained.",
+    "next_safe_action_now": "Publish the verified source snapshot, package companions, and verify owner delivery.",
+    "future_source_action": "Third-house preamble onPDF221 followed byXXIX222.",
+    "finalization_admitted": false,
+    "finalization_admission_phase": "Source snapshot before transfers; CLOSEOUT.json records final admission after actual publication and delivery."
+  }
 }

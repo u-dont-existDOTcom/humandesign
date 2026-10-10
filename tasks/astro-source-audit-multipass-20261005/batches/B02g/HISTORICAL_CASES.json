@@ -1,0 +1,126 @@
+{
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "cases": {
+    "tradesman_1634": {
+      "identity": "Unnamed city tradesman in Lilly's selected retrospective example",
+      "source_pages": [
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221
+      ],
+      "figure_date_text": "16. Iuly 1634",
+      "chart_minute_reading": "0 versus 6 unresolved; not used",
+      "question_endpoints": [
+        "rich or subsist without marriage",
+        "means",
+        "when",
+        "continuation"
+      ],
+      "query_record": "LI.1647.II.XXVII.R843",
+      "chart_record": "LI.1647.II.XXVIII.R844",
+      "chart_inputs_file": "WORKED_NUMERIC_TABLES.json",
+      "static_arithmetic_file": "ARITHMETIC_CHECKS.json",
+      "marriage_qualification": "The author says the man would subsist less well without marriage; the reported married outcome does not validate the unmarried counterfactual.",
+      "outcome_records": [
+        {
+          "endpoint": "competent_estate",
+          "source_pages": [
+            216
+          ],
+          "source_judgement": "Estate and competent fortune with labour and care",
+          "reported_result": "Author says the querent has this up to the time of writing",
+          "evidence_type": "AUTHOR_REPORTED_UP_TO_WRITING",
+          "limit": "No amount or independently documented outcome; does not isolate wealth without marriage."
+        },
+        {
+          "endpoint": "wife_money_and_land",
+          "source_pages": [
+            216,
+            217
+          ],
+          "source_judgement": "Wife brings a good, fixed fortune beyond expectation",
+          "reported_result": "Man reports a good fortune with his wife, both money and land",
+          "evidence_type": "SUBJECT_REPORT_RELAYED_BY_AUTHOR",
+          "limit": "No independent valuation; not a separate case."
+        },
+        {
+          "endpoint": "successful_trade",
+          "source_pages": [
+            217
+          ],
+          "source_judgement": "Competent estate through diligence in his profession",
+          "reported_result": "Trading said to have been very good",
+          "evidence_type": "AUTHOR_REPORTED_GENERAL_OUTCOME",
+          "limit": "Broad trade report does not verify every date, mechanism or cause."
+        },
+        {
+          "endpoint": "wife_portion_about_two_years",
+          "source_pages": [
+            217
+          ],
+          "source_judgement": "About two years from roughly two degrees Ascendant–Mars",
+          "reported_result": "Author says he had a portion with his wife at that time",
+          "evidence_type": "AUTHOR_REPORTED_APPROXIMATE_TIMING",
+          "limit": "No exact event date, monetary amount, calendar conversion or original prediction freeze."
+        },
+        {
+          "endpoint": "about_1640_trade_reputation_friends",
+          "source_pages": [
+            217,
+            218
+          ],
+          "source_judgement": "Very great trade, excellent repute and helpful friends about 1640",
+          "reported_result": null,
+          "evidence_type": "JUDGEMENT_WITHOUT_SEPARATE_ENDPOINT_CONFIRMATION_IN_SCOPE",
+          "limit": "The general good-trade report does not independently verify this dated cluster."
+        },
+        {
+          "endpoint": "lasting_competence",
+          "source_pages": [
+            220
+          ],
+          "source_judgement": "Competent fortune continues without poverty or want",
+          "reported_result": null,
+          "evidence_type": "JUDGEMENT_WITHOUT_FULL_LIFETIME_OUTCOME",
+          "limit": "No full-life follow-up; rich does not mean constant increase or an unchanging asset balance."
+        },
+        {
+          "endpoint": "kin_and_servants",
+          "source_pages": [
+            221
+          ],
+          "source_judgement": "Poor unity with kin/siblings and trouble or behavioural blemishes in servants",
+          "reported_result": null,
+          "evidence_type": "SOURCE_JUDGEMENT_ONLY",
+          "limit": "Do not treat the author's moralized character language as verified personal facts."
+        },
+        {
+          "endpoint": "solar_friends",
+          "source_pages": [
+            221
+          ],
+          "source_judgement": "Caution about engagements with or confidence in solar men, even friends",
+          "reported_result": null,
+          "evidence_type": "SOURCE_CAUTION_ONLY",
+          "limit": "Neither an observed loss nor a retraction of all earlier helpful-friend testimony is reported."
+        }
+      ],
+      "selected_historical_case_count": 1,
+      "independent_validation_cases": 0,
+      "full_lifetime_observation": false,
+      "original_prediction_freeze_available": false,
+      "modern_participant_data_used": false,
+      "natal_transfer_admitted": false
+    }
+  },
+  "notice": "Multiple statements about one chart/person remain dependent. No predictive accuracy is computed."
+}
