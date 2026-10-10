@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "batch": "B02i",
+  "status": "SOURCE_REPORT_CLAIMS_RECONCILED_AND_VERIFIED",
+  "initial_candidate": {
+    "report_sha256": "9b1b6d5c3ed53aee4d584215b3443d356e8b65fdca8f06820a79605e36aaab44",
+    "ledger_sha256": "dc2dfc48e7723a1782e609d3a26bfe30a0242737a2a2bfb7b4e0ee2d5939f442",
+    "claims": 55
+  },
+  "final_candidate": {
+    "report_sha256": "863d14ba22da942f689d1e330e40997d1c7a2d7bcce4d437a4f9c1a6caa9ee27",
+    "ledger_sha256": "8290dd7a5f6bb17bd4414fceadf993a4ae8150af3a13df2f8af46a9291db036c",
+    "claims": 60
+  },
+  "independent_gate": {
+    "path": "independent_review/final_gate/",
+    "role": "Fresh-context claim check of artifact and primary evidence, not blind chart transcription or different-model-family review",
+    "first_diagnosis_counts": {
+      "pass": 50,
+      "fail": 1,
+      "unresolved_at_admitted_boundary": 4,
+      "additional_claims": 5
+    },
+    "first_diagnosis_sha256": "12a7bdd1a3c066d0bc364fa7f45ec298399fb87dec4ee925e46574e0d3e87afd",
+    "information_boundary": "No prior verdict files, raw source notes, producer reconciliation or sibling summaries read before freeze. Narrow process annotations embedded in permitted evidence were disclosed and not treated as source authority.",
+    "focused_addendum": {
+      "path": "independent_review/final_gate/ADDENDUM.json",
+      "sha256": "3f5f71e0a5798b0fd591bd4b0adcbe3ca8f6dfe411e372e597cd9718d1ab606e",
+      "focused_claims_pass": 12,
+      "carried_forward_pass": 48,
+      "final_claim_count": 60,
+      "remaining_source_report_blockers": 0
+    },
+    "subsequent_comparison_precision_check": {
+      "path": "independent_review/final_gate/COMPARISON_PRECISION_CHECK.json",
+      "sha256": "4d9e28382a3916fa96bd48fb0ca5fa03dc319c738c2be5c4b946c6e49539ddf2",
+      "current_comparisons_sha256": "fabfafe0a4652d0864f7f4290e4dd330382f39bdfcab94981096c3ff7392f8b6",
+      "scope": "One derived CMP06 sentence was clarified after the addendum companion-hash inventory. That earlier unchanged-companion assertion applies only at its recorded check; the later focused receipt addresses the changed comparison wording. Original frozen diagnoses and addenda are unchanged."
+    }
+  },
+  "additional_check": {
+    "path": "independent_review/qualified_final/",
+    "role": "Qualified source/claim verification after accidental status-summary exposure; not the independent final gate",
+    "source_first_notes_frozen_before_exposure": true,
+    "provisional_checker_readings": "Sun, Moon, Mars, Jupiter and Saturn preliminary glyph readings were corrected from enlarged originals; existing candidate coordinates were correct. Original frozen notes and contradictory interim record preserved with a separate correction addendum.",
+    "first_diagnosis_sha256": "0e2696c4731618aa1bf81290c4644bf886c8e0d2a4e3f09215bc9a3c71ffb558"
+  },
+  "dispositions": [
+    {
+      "finding": "Final F01; qualified F01",
+      "classification": "CONFIRMED_REPORT_INPUT_QUALIFICATION_DEFECT",
+      "action": "Qualified both report paragraphs and CL014: shared bodies are shown when body identifiers are supplied. Sign-only inputs do not make this helper infer identity.",
+      "code_change": false
+    },
+    {
+      "finding": "Final F02 / ADD001",
+      "classification": "CONFIRMED_QUOTATION_FIDELITY_DEFECT",
+      "action": "Removed the shortened continuous quotation and used an explicit mundane-fourth-house paraphrase; added CL056.",
+      "source_data_change": false
+    },
+    {
+      "finding": "Final A01; qualified F02",
+      "classification": "CONFIRMED_LEDGER_ANCHOR_GAPS",
+      "action": "Added PDF251/R1107 for coal to CL030 and PDF255 for daughter to CL036.",
+      "claim_content_changed": false
+    },
+    {
+      "finding": "Final L01 / CL006 CL052 CL054 CL055 ADD003 ADD004",
+      "classification": "EVIDENCE_BOUNDARY_QUALIFICATION",
+      "action": "Attributed earlier reading/freeze/reconciliation steps to receipts; bounded environment claim to saved log and inspected runner; bound preservation to the named Git base and complete diff allowlist; made transport a separate required gate rather than a source-report completion claim.",
+      "evidence": [
+        "PRESERVATION_CHECKS.json",
+        "READING_RECEIPT.json",
+        "reader receipts",
+        "TEST_retained_methodology.txt",
+        "run_verification.py",
+        "ACTIVE_CONTRACT.json"
+      ]
+    },
+    {
+      "finding": "Final ADD002 ADD005",
+      "classification": "SUPPORTED_CLAIMS_ADDED_TO_LEDGER",
+      "action": "Added the temporal-rival inference and exact final-check provenance as CL057 and CL060; transport and receipt-provenance claims are CL058/059."
+    },
+    {
+      "finding": "Producer final reference check of CMP06",
+      "classification": "DERIVED_TERMINOLOGY_PRECISION",
+      "action": "Replaced majority in the derived comparison array with greater number and explicitly withheld a strict more-than-half threshold or tie rule. Report and reference code already used the literal greater-number interpretation. Frozen initial snapshots retain their original bytes.",
+      "source_records_or_code_changed": false
+    }
+  ],
+  "producer_additional_glyph_check": {
+    "pdf_page": 253,
+    "exposure": "Root reopened Jupiter after the qualified checker had preliminarily suggested31 minutes. Root read32 from a rotated original crop. This is verification after exposure, not independent transcription. Both final source checks support32.",
+    "images": [
+      "b02i-chart-root-check.png",
+      "b02i-jupiter-root-check.png"
+    ],
+    "source_coordinates_changed": false
+  },
+  "unchanged_after_review": [
+    "all148 source records",
+    "all22 coordinate entries",
+    "all50 unresolved source limits and6 source-resolved readings",
+    "reference and arithmetic implementation",
+    "all111 focused-test logs"
+  ],
+  "validation_decision": "The final focused claim addendum and subsequent CMP06 precision check leave no source/report blocker. No source records, coordinates, implementation or saved focused-test logs changed. Actual archive extraction and standalone execution remain a required later usability gate.",
+  "source_issues_distinct_from_review_findings": true,
+  "later_stage": "Immutable source publication, distribution publication and owner delivery require the subsequent actual receipts; this review is not a transport receipt."
+}

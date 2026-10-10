@@ -1,0 +1,92 @@
+{
+  "scope": "Historical horary; no natal transfer or present-person use admitted by this batch.",
+  "reference_model": "Query type, ownership, actors, source predicates, outcome and timing remain separate.",
+  "relations": [
+    {
+      "from": [
+        "LI.1647.II.XXXII.R1010"
+      ],
+      "to": [
+        "LI.1647.II.XXXVII.R1089",
+        "LI.1647.II.XXXVII.R1090",
+        "LI.1647.II.XXXVII.R1091"
+      ],
+      "relation": "Owned hidden goods versus generic missing goods; XXXVII explicitly returns to XXXII for location after unremoved finding."
+    },
+    {
+      "from": [
+        "LI.1647.II.XXXIII.R1023",
+        "LI.1647.II.XXXIII.R1032",
+        "LI.1647.II.XXXIII.R1044"
+      ],
+      "relation": "Separate purchase, land-quality and rental frames; tenth is price/timber/profit respectively."
+    },
+    {
+      "from": [
+        "LI.1647.II.XXXII.R1017"
+      ],
+      "to": [
+        "LI.1647.II.XXXII.R1018",
+        "LI.1647.II.XXXII.R1019"
+      ],
+      "relation": "Attributed ancient method criticized, then alternative introduced; not equivalent votes."
+    },
+    {
+      "from": [
+        "LI.1647.II.XXXIV.R1061"
+      ],
+      "to": [
+        "LI.1647.II.XXXIV.R1062",
+        "LI.1647.II.XXXIV.R1063"
+      ],
+      "relation": "Wait for exit; urgent means exception; explicit limitation on coercing father will."
+    },
+    {
+      "from": [
+        "LI.1647.II.XXXVII.R1092",
+        "LI.1647.II.XXXVII.R1093",
+        "LI.1647.II.XXXVII.R1094",
+        "LI.1647.II.XXXVII.R1095"
+      ],
+      "to": [
+        "LI.1647.II.XXXVII.R1113",
+        "LI.1647.II.XXXVII.R1114",
+        "LI.1647.II.XXXVII.R1115"
+      ],
+      "relation": "Presence of treasure is distinct from acquisition and difficulty."
+    },
+    {
+      "from": [
+        "LI.1647.II.XXXVII.R1121",
+        "LI.1647.II.XXXVII.R1122",
+        "LI.1647.II.XXXVII.R1123",
+        "LI.1647.II.XXXVII.R1124",
+        "LI.1647.II.XXXVII.R1125",
+        "LI.1647.II.XXXVII.R1126",
+        "LI.1647.II.XXXVII.R1127"
+      ],
+      "relation": "Terminal block expressly attributed to Alkindus, not a separate modern source confirmation."
+    },
+    {
+      "from": [
+        "LI.1647.II.XXXVIII.R1144",
+        "LI.1647.II.XXXVIII.R1145"
+      ],
+      "to": [
+        "LI.1647.II.XXXVIII.R1153",
+        "LI.1647.II.XXXVIII.R1154",
+        "LI.1647.II.XXXVIII.R1155"
+      ],
+      "relation": "Bargain and completion differ from financial benefit and later satisfaction."
+    }
+  ],
+  "not_implemented": [
+    "A complete chart engine",
+    "Unstated orbs and strength thresholds",
+    "An interpretation of ambiguous Boolean scope",
+    "Global conflicting-testimony priorities",
+    "Precise bearing or physical digging depth",
+    "Ephemeris and civil-date conversion",
+    "Predictive outcome scoring"
+  ]
+}

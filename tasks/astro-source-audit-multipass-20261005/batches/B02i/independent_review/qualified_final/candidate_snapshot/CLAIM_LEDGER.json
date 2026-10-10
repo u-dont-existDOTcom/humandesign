@@ -1,0 +1,1052 @@
+{
+  "schema_version": 1,
+  "batch": "B02i",
+  "artifact": "AUDIT_REPORT.md",
+  "artifact_sha256": "9b1b6d5c3ed53aee4d584215b3443d356e8b65fdca8f06820a79605e36aaab44",
+  "status": "FROZEN_INITIAL_CLAIM_CANDIDATE_FOR_REVIEW",
+  "claims": [
+    {
+      "id": "CL001",
+      "claim": "B02i completes the fourth-house heading/preamble and XXXII–XXXVIII on PDF236–256 above the divider; the fifth-house heading and XXXIX below it are next.",
+      "type": "source_boundary",
+      "anchors": {
+        "files": [
+          "SECTION_COVERAGE.json",
+          "READING_RECEIPT.json"
+        ],
+        "pdf_pages": [
+          236,
+          256
+        ],
+        "record_ids": [
+          "LI.1647.II.FOURTH_HOUSE_PREAMBLE.R1009",
+          "LI.1647.II.XXXVIII.R1156"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL002",
+      "claim": "There are 148 new records R1009–R1156:119 general/method/illustrative and29 worked-narrative; cumulative Lilly1156 plus retained Ptolemy1066 equals2222.",
+      "type": "inventory",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "../..//LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+          "HISTORICAL_CASES.json"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL003",
+      "claim": "The issue ledger preserves50 unresolved limits and6 separately source-resolved readings; these are not50 demonstrated author errors.",
+      "type": "inventory",
+      "anchors": {
+        "files": [
+          "UNRESOLVED.json"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL004",
+      "claim": "There is one printed chart/one dated enquiry,22 transcribed coordinate entries,21 extraction-page images read and an additional PDF888 errata check.",
+      "type": "inventory",
+      "anchors": {
+        "files": [
+          "WORKED_NUMERIC_TABLES.json",
+          "HISTORICAL_CASES.json",
+          "READING_RECEIPT.json"
+        ],
+        "pdf_pages": [
+          253,
+          888
+        ],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL005",
+      "claim": "The retained original has894 pages; its full SHA256 was recomputed this turn and matched2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b.",
+      "type": "verification",
+      "anchors": {
+        "files": [
+          "READING_RECEIPT.json",
+          "ACTIVE_CONTRACT.json"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL006",
+      "claim": "Root read236–255 fully and256 fourth-house ending against original images, using existing text only as aid; no new OCR/source edit; three readers froze source-first notes before candidate production.",
+      "type": "verification",
+      "anchors": {
+        "files": [
+          "READING_RECEIPT.json",
+          "independent_review/"
+        ],
+        "pdf_pages": [
+          236,
+          256
+        ],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL007",
+      "claim": "Root received the chart reader coordinate summary before its chart reread; that reread is verification after exposure, not a second independent transcription.",
+      "type": "review_provenance",
+      "anchors": {
+        "files": [
+          "READING_RECEIPT.json"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL008",
+      "claim": "Inventory records may contain multiple branches or methods and are not148 independent predictions/cases.",
+      "type": "evidence_inference",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "HISTORICAL_CASES.json"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL009",
+      "claim": "Own goods useL2, sibling goodsL4, father goodsL5, mother goodsL11; later literalL2 wording does not restate a complete substitution algorithm.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json"
+        ],
+        "pdf_pages": [
+          236
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXII.R1010"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL010",
+      "claim": "Tenth-house object locations vary with occupation; elemental descriptions have conditions, including outside placement already indicated and strong former significators for the watery clause.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json"
+        ],
+        "pdf_pages": [
+          236,
+          237
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXII.R1011",
+          "LI.1647.II.XXXII.R1012",
+          "LI.1647.II.XXXII.R1013",
+          "LI.1647.II.XXXII.R1014",
+          "LI.1647.II.XXXII.R1015",
+          "LI.1647.II.XXXII.R1016"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL011",
+      "claim": "The earlier-astrologer hour-lord method startsH10/H11, leavesH12 unspecified, and Lilly criticizes its exactness.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "QUERY_REFERENCES.json"
+        ],
+        "pdf_pages": [
+          237
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXII.R1017",
+          "LI.1647.II.XXXII.R1018"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL012",
+      "claim": "The eight-slot method is introduced for mislaid things inside a house, not stolen:ASC,L1,H4,L4,Moon,H2,L2,Fortune; greater number picks quarter; ties and weights are not defined.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "QUERY_REFERENCES.json"
+        ],
+        "pdf_pages": [
+          237,
+          238
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXII.R1018",
+          "LI.1647.II.XXXII.R1019"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL013",
+      "claim": "The sign-direction table gives AriesE,LeoEbyN,SagittariusEbyS,LibraW,GeminiWbyS,AquariusWbyN,CancerN,ScorpioNbyE,PiscesNbyW,CapricornS,TaurusSbyE,VirgoSbyW; it also explicitly mentions fugitives.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "QUERY_REFERENCES.json"
+        ],
+        "pdf_pages": [
+          238
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXII.R1020"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL014",
+      "claim": "No exact azimuths or tie-break are supplied; reference tally exposes repeated planetary roles without treating slots as independent evidence.",
+      "type": "implementation_boundary",
+      "anchors": {
+        "files": [
+          "lilly_fourth_house_reference.py",
+          "test_lilly_fourth_house_reference.py",
+          "QUERY_REFERENCES.json"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL015",
+      "claim": "Glove/book experiments are an unspecified experience account lacking individual dates/charts, attempt denominator and failures.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "HISTORICAL_CASES.json"
+        ],
+        "pdf_pages": [
+          238
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXII.R1022"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL016",
+      "claim": "Purchase frame:H1buyer,H4property,H7seller,H10price; Moon separation/application planets additionally buyer/seller, Moon also property.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "QUERY_REFERENCES.json"
+        ],
+        "pdf_pages": [
+          238,
+          239
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXIII.R1023"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL017",
+      "claim": "Land quality frame:H1tenants/farmers,H4soil/land/buildings,H7herbage/plants/crops,H10timber. Rental:H1tenant,H4end,H7lessor,H10profit.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "QUERY_REFERENCES.json"
+        ],
+        "pdf_pages": [
+          240,
+          242
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXIII.R1032",
+          "LI.1647.II.XXXIII.R1044"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL018",
+      "claim": "Hard-aspect purchase application/translation may conclude with argument, breakdown threats and delay; Moon placement/reception alternatives remain textually compressed; broker path has vacancy and transfer prerequisites.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "UNRESOLVED.json"
+        ],
+        "pdf_pages": [
+          239,
+          240
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXIII.R1026",
+          "LI.1647.II.XXXIII.R1027",
+          "LI.1647.II.XXXIII.R1028",
+          "LI.1647.II.XXXIII.R1029"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL019",
+      "claim": "Timber usesL10 only ifH10empty; motion matters; own house viz fourth denotes mundaneH4; sea-bank concern adds proximity to sea.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json"
+        ],
+        "pdf_pages": [
+          240,
+          241,
+          242
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXIII.R1033",
+          "LI.1647.II.XXXIII.R1034",
+          "LI.1647.II.XXXIII.R1035",
+          "LI.1647.II.XXXIII.R1036",
+          "LI.1647.II.XXXIII.R1037",
+          "LI.1647.II.XXXIII.R1038",
+          "LI.1647.II.XXXIII.R1039",
+          "LI.1647.II.XXXIII.R1040",
+          "LI.1647.II.XXXIII.R1041",
+          "LI.1647.II.XXXIII.R1042"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL020",
+      "claim": "Rental favourableL1 aspect uses a moiety of its own orbs, preferably actualASCdegree; final favourableASCglyph is unimpededFortune, unlike northnode in earlier property list.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "TEXT_IMAGE_CHECKS.json"
+        ],
+        "pdf_pages": [
+          240,
+          242
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXIII.R1031",
+          "LI.1647.II.XXXIII.R1045"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL021",
+      "claim": "AdverseH7occupant clause excludesL7 itself; already-rented regret, not-yet-rented refusal and taking/passing-on differ.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json"
+        ],
+        "pdf_pages": [
+          242,
+          243
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXIII.R1046",
+          "LI.1647.II.XXXIII.R1047",
+          "LI.1647.II.XXXIII.R1048",
+          "LI.1647.II.XXXIII.R1049",
+          "LI.1647.II.XXXIII.R1050",
+          "LI.1647.II.XXXIII.R1051"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL022",
+      "claim": "Father isH4; his movable/personal estateH5; reception statement includes exchange of second/fifth-lord house placements.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json"
+        ],
+        "pdf_pages": [
+          244
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXIV.R1052",
+          "LI.1647.II.XXXIV.R1053"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL023",
+      "claim": "Wait for relevant planet to leave sign when father reluctant; urgent alternative requires direct/swift/oriental and specified contacts.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json"
+        ],
+        "pdf_pages": [
+          245
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXIV.R1061",
+          "LI.1647.II.XXXIV.R1062"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL024",
+      "claim": "Observing times does not itself enforce father will; Lilly instead claims more benevolent inclination.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json"
+        ],
+        "pdf_pages": [
+          245
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXIV.R1063"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL025",
+      "claim": "RetrogradeL5 may indicate intended provision wasted/assigned elsewhere; retrograde applicationL2/L5 may indicate sudden receipt, with actor grammar unresolved.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "UNRESOLVED.json"
+        ],
+        "pdf_pages": [
+          244,
+          245
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXIV.R1054",
+          "LI.1647.II.XXXIV.R1064"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL026",
+      "claim": "Relocation reasons differ by lord, including illness/servants, slander, finances, trade/reputation, house and rivals; marginal practical trade-location explanation remains.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json"
+        ],
+        "pdf_pages": [
+          246,
+          247
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXV.R1066",
+          "LI.1647.II.XXXV.R1067",
+          "LI.1647.II.XXXV.R1068",
+          "LI.1647.II.XXXV.R1069",
+          "LI.1647.II.XXXV.R1070",
+          "LI.1647.II.XXXV.R1071",
+          "LI.1647.II.XXXV.R1072",
+          "LI.1647.II.XXXV.R1073",
+          "LI.1647.II.XXXV.R1074",
+          "LI.1647.II.XXXV.R1075"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL027",
+      "claim": "No-regret/thanks/rewards memory is aggregate without sample or independent confirmations; angels/curses/expiation are historical theological explanation, not empirical evidence.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "HISTORICAL_CASES.json"
+        ],
+        "pdf_pages": [
+          247,
+          248
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXV.R1076",
+          "LI.1647.II.XXXV.R1077"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL028",
+      "claim": "Waterwork opening favourable conditions include Saturndirect/swift/oriental, specifiedMoonhouses and noMarsaspect; ascending in latitude has no locally specified numeric convention.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "UNRESOLVED.json"
+        ],
+        "pdf_pages": [
+          248,
+          249
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVI.R1081",
+          "LI.1647.II.XXXVI.R1082",
+          "LI.1647.II.XXXVI.R1083"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL029",
+      "claim": "Rain list is Cancer,Leo,Aquarius,Pisces; replacingLeo withScorpio would alter source. AdverseH10 waterworks sentence continues onto249 and concerns pipes/banks,flow and design.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "TEXT_IMAGE_CHECKS.json"
+        ],
+        "pdf_pages": [
+          248,
+          249
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVI.R1084",
+          "LI.1647.II.XXXVI.R1085",
+          "LI.1647.II.XXXVI.R1086",
+          "LI.1647.II.XXXVI.R1087"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL030",
+      "claim": "Treasure questions distinguish own hidden goods, owner/relation, unidentified treasure and specified mineral; coal specified in question cannot be treated as chart-discovered identity.",
+      "type": "source_content_and_inference",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "APPLICABILITY_AND_RELATIONS.json"
+        ],
+        "pdf_pages": [
+          249
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVII.R1088"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL031",
+      "claim": "Qualified Saturn/Mars may indicate treasure; full maxim says own-house/essentially-dignified significator is not unfortunate; nearby directness/impediment conditions and earlier qualifications remain.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "CROSS_SOURCE_COMPARISONS.json"
+        ],
+        "pdf_pages": [
+          249,
+          250
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVII.R1092",
+          "LI.1647.II.XXXVII.R1093",
+          "LI.1647.II.XXXVII.R1094",
+          "LI.1647.II.XXXVII.R1095",
+          "LI.1647.II.XXXVII.R1096"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL032",
+      "claim": "Treasurequality initially combines significator withL7when distinct, then offers absoluteL7alternative with ambiguous negation/affinity; both preserved.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "UNRESOLVED.json"
+        ],
+        "pdf_pages": [
+          250
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVII.R1097",
+          "LI.1647.II.XXXVII.R1098"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL033",
+      "claim": "Material lists distinguish dignified/weak cases; original weak-mining glyph isSaturn despite misleading text-layer rendering.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "TEXT_IMAGE_CHECKS.json"
+        ],
+        "pdf_pages": [
+          250,
+          251
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVII.R1099",
+          "LI.1647.II.XXXVII.R1100",
+          "LI.1647.II.XXXVII.R1101",
+          "LI.1647.II.XXXVII.R1102",
+          "LI.1647.II.XXXVII.R1103",
+          "LI.1647.II.XXXVII.R1104",
+          "LI.1647.II.XXXVII.R1105",
+          "LI.1647.II.XXXVII.R1106",
+          "LI.1647.II.XXXVII.R1107",
+          "LI.1647.II.XXXVII.R1108",
+          "LI.1647.II.XXXVII.R1109",
+          "LI.1647.II.XXXVII.R1110",
+          "LI.1647.II.XXXVII.R1111",
+          "LI.1647.II.XXXVII.R1112"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL034",
+      "claim": "Terminal treasure group is attributed toAlkindus and includes presence/acquisition/location/depth/diggingtime. Depth is ordinal sign progress with no physical units or equal-bin scale.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "QUERY_REFERENCES.json"
+        ],
+        "pdf_pages": [
+          251,
+          252
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVII.R1116",
+          "LI.1647.II.XXXVII.R1117",
+          "LI.1647.II.XXXVII.R1118",
+          "LI.1647.II.XXXVII.R1119",
+          "LI.1647.II.XXXVII.R1120",
+          "LI.1647.II.XXXVII.R1121",
+          "LI.1647.II.XXXVII.R1122",
+          "LI.1647.II.XXXVII.R1123",
+          "LI.1647.II.XXXVII.R1124",
+          "LI.1647.II.XXXVII.R1125",
+          "LI.1647.II.XXXVII.R1126",
+          "LI.1647.II.XXXVII.R1127"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL035",
+      "claim": "Single figure is31March1634,6HorPM; minutes/seconds/latitude/timezone unspecified; author says he lives in one house in1647 and already intended purchase/knew sixmonthnotice requirement.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "WORKED_NUMERIC_TABLES.json",
+          "HISTORICAL_CASES.json"
+        ],
+        "pdf_pages": [
+          253
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVIII.R1128",
+          "LI.1647.II.XXXVIII.R1129"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL036",
+      "claim": "Negotiation had many meetings and£530noabatement; rival and seller daughter are episodes in same enquiry; margin places rival after beginning/beforeconclusion.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "HISTORICAL_CASES.json"
+        ],
+        "pdf_pages": [
+          254
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVIII.R1138",
+          "LI.1647.II.XXXVIII.R1139",
+          "LI.1647.II.XXXVIII.R1140"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL037",
+      "claim": "Friend loan£500 twelve days after as narrated; Mars/Jupiter timing antecedent is qualified, not independently computed.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "UNRESOLVED.json"
+        ],
+        "pdf_pages": [
+          255
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVIII.R1142"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL038",
+      "claim": "Bargain25April linkedtoVenusSun;£530payment and sealedconveyance17May linkedtoVenusMoon; separate endpoints with no independent advance-date freeze in these pages.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "HISTORICAL_CASES.json"
+        ],
+        "pdf_pages": [
+          255
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVIII.R1144",
+          "LI.1647.II.XXXVIII.R1145"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL039",
+      "claim": "Financialinjury but no regret dueattachment/priorhistory are separate outcomes; five marks are selfreports in onecase; oldstronghouses and futurelease/lifetimeexpectations are not all confirmedfutureendpoints.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "HISTORICAL_CASES.json"
+        ],
+        "pdf_pages": [
+          255,
+          256
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVIII.R1147",
+          "LI.1647.II.XXXVIII.R1148",
+          "LI.1647.II.XXXVIII.R1149",
+          "LI.1647.II.XXXVIII.R1150",
+          "LI.1647.II.XXXVIII.R1151",
+          "LI.1647.II.XXXVIII.R1152",
+          "LI.1647.II.XXXVIII.R1153",
+          "LI.1647.II.XXXVIII.R1154",
+          "LI.1647.II.XXXVIII.R1155"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL040",
+      "claim": "Final Wharton employment/marital denials are polemicalautobiography; underlying dispute not adjudicated.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json"
+        ],
+        "pdf_pages": [
+          256
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVIII.R1156"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL041",
+      "claim": "Coordinate table has12cusps,7planets,2nodes,Fortune; body signs inferred from sectors/cuspintervals; Mars/SaturnexplicitRx; absentmarks not verifieddirect;H4/H10minutesnull.",
+      "type": "source_transcription",
+      "anchors": {
+        "files": [
+          "WORKED_NUMERIC_TABLES.json",
+          "ARITHMETIC_CHECKS.json"
+        ],
+        "pdf_pages": [
+          253
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVIII.R1129"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL042",
+      "claim": "Earlier selected Fortune formula usesASC+Moon−Sun bydayandnight; alternate nocturnal convention is distinct, not automaticrepair.",
+      "type": "retained_source_content",
+      "anchors": {
+        "files": [
+          "RETAINED_SOURCE_EXCERPTS.json",
+          "CROSS_SOURCE_COMPARISONS.json",
+          "ARITHMETIC_CHECKS.json"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL043",
+      "claim": "Libra13:45+Virgo10:38−Aries20:56 reduces toPisces3:27; printedFortunePisces12:27 differs9degrees/540minutes; inputsunchanged,causeunresolved.",
+      "type": "calculation",
+      "anchors": {
+        "files": [
+          "WORKED_NUMERIC_TABLES.json",
+          "ARITHMETIC_CHECKS.json",
+          "lilly_fourth_house_arithmetic.py"
+        ],
+        "pdf_pages": [
+          253
+        ],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL044",
+      "claim": "Targeted originalerrataPDF888 supplies no printed219Fortune correction.",
+      "type": "source_absence",
+      "anchors": {
+        "files": [
+          "TEXT_IMAGE_CHECKS.json",
+          "READING_RECEIPT.json"
+        ],
+        "pdf_pages": [
+          888
+        ],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL045",
+      "claim": "VenusSun separation6:21 versus sixdegreesprose; SunSaturn119:31 leaves29minutes fromtrine, with perfect/orb interpretationqualified; MoonMars28minutes.",
+      "type": "calculation",
+      "anchors": {
+        "files": [
+          "ARITHMETIC_CHECKS.json",
+          "WORKED_NUMERIC_TABLES.json"
+        ],
+        "pdf_pages": [
+          253,
+          254,
+          255
+        ],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL046",
+      "claim": "Mercury is2:48beforeH8 and withingeometricH7; Venus50minutesafterH7; fifthfrom7is11.",
+      "type": "calculation",
+      "anchors": {
+        "files": [
+          "ARITHMETIC_CHECKS.json",
+          "WORKED_NUMERIC_TABLES.json"
+        ],
+        "pdf_pages": [
+          253,
+          254
+        ],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL047",
+      "claim": "Sameyear/calendardeltas:March31→April25=25days;April25→May17=22days;total47days=6weeks5days; nohistoricalephemeriscalendarsynchronization claimed.",
+      "type": "calculation",
+      "anchors": {
+        "files": [
+          "ARITHMETIC_CHECKS.json",
+          "lilly_fourth_house_arithmetic.py"
+        ],
+        "pdf_pages": [
+          253,
+          255
+        ],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL048",
+      "claim": "Earlier5degreecuspvirtuerule offers plausibleH8interpretation ofMercury, but currentchapterdoesnotstateexplanation; notsettledauthorerror.",
+      "type": "qualified_inference",
+      "anchors": {
+        "files": [
+          "RETAINED_SOURCE_EXCERPTS.json",
+          "CROSS_SOURCE_COMPARISONS.json",
+          "ARITHMETIC_CHECKS.json"
+        ],
+        "pdf_pages": [
+          253,
+          254
+        ],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL049",
+      "claim": "Sun seller assignmentviaH7placement thenlord7wording coexists withAriesH7cusp; tensionpreservedwithoutchangingchart.",
+      "type": "source_content",
+      "anchors": {
+        "files": [
+          "RULES.json",
+          "WORKED_NUMERIC_TABLES.json",
+          "UNRESOLVED.json"
+        ],
+        "pdf_pages": [
+          253,
+          254
+        ],
+        "record_ids": [
+          "LI.1647.II.XXXVIII.R1131",
+          "LI.1647.II.XXXVIII.R1132"
+        ]
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL050",
+      "claim": "Newhelper implements onlyexplicitgoodsframes,propertycontexts,verbaldirections,8slottally/rainlist/ordinaldepth; arithmeticusesunchangedB02fgeometry and completeinputs.",
+      "type": "implementation",
+      "anchors": {
+        "files": [
+          "lilly_fourth_house_reference.py",
+          "lilly_fourth_house_arithmetic.py",
+          "IMPLEMENTATION_CHECK_RECEIPT.json"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL051",
+      "claim": "Actual distinct focused tests111=29new+24retainedB02h+31retainedB02f+27methodology; subtests/rerunsnotextra.",
+      "type": "verification",
+      "anchors": {
+        "files": [
+          "TEST_RUN_SUMMARY.json",
+          "TEST_B02i.txt",
+          "TEST_retained_B02h.txt",
+          "TEST_retained_B02f.txt",
+          "TEST_retained_methodology.txt"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL052",
+      "claim": "Methodology firstattempt lackedpytestondefaultpath; existingdependencydirectory resolved it; environmentattemptpreserved; nonewpackage ormodel fitted.",
+      "type": "verification",
+      "anchors": {
+        "files": [
+          "TEST_methodology_environment_attempt.txt",
+          "TEST_RUN_SUMMARY.json",
+          "run_verification.py"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL053",
+      "claim": "Tests cover source-data/codeboundaries, notpredictiveaccuracy, historicalephemerides,eventcorroboration orcompleteengine.",
+      "type": "verification_scope",
+      "anchors": {
+        "files": [
+          "test_lilly_fourth_house_reference.py",
+          "test_lilly_fourth_house_audit.py",
+          "test_lilly_fourth_house_arithmetic.py",
+          "TEST_RUN_SUMMARY.json"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL054",
+      "claim": "Twelve retainedLillycomparisons with29fullretainedrecords are included; not12independent-source confirmations; Ptolemy1066retainedwithoutnewreading.",
+      "type": "inventory_and_scope",
+      "anchors": {
+        "files": [
+          "CROSS_SOURCE_COMPARISONS.json",
+          "RETAINED_SOURCE_EXCERPTS.json"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    },
+    {
+      "id": "CL055",
+      "claim": "Earlierbatches,datedstates,personalinputs,models andpredictionfreezes arepreserved; remainingLilly/authors/formalization/predictiveevaluationremainopen.",
+      "type": "preservation",
+      "anchors": {
+        "files": [
+          "ACTIVE_CONTRACT.json",
+          "../../PASS_PLAN.json",
+          "Git diff against base0cc8c9b627d9135c56c3208dc3d155953a58b18e"
+        ],
+        "pdf_pages": [],
+        "record_ids": []
+      },
+      "producer_check": "Compared with the named source or actual artifact; final checker must make its own disposition."
+    }
+  ],
+  "claim_count": 55,
+  "checker_instruction": "Check each against literal artifact and anchored primary evidence; add claims missed. No producer rationale or prior verdict is supplied by this ledger. A claim is not established merely by its inclusion."
+}

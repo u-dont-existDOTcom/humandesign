@@ -84,11 +84,23 @@
     "participant inputs, fitted models and prediction freezes"
   ],
   "publication_route": "Connected GitHub Git-data API, exact full-tree parity, expected-SHA nonforce refs. Shell Git reads/fetch are working; no credentialless shell push retry.",
-  "phase": "SOURCE_RECONCILIATION_AND_BOUNDED_REFERENCE_IMPLEMENTATION",
+  "phase": "SOURCE_REVIEW_AND_FOCUSED_TESTS_COMPLETE_PUBLICATION_PENDING",
   "stop_admission": {
     "parent_outcome": "OPEN",
     "pause_authority": "Existing PASS_PLAN.json pause_contract permits completed source-sized batch boundaries.",
     "current_completion_requirement": "Finish admitted source block, verify, publish and deliver usable report/packet/handoff.",
     "finalization_admitted": false
+  },
+  "completed_source_stage": {
+    "source_records": 148,
+    "record_range": "R1009–R1156",
+    "source_unresolved": 50,
+    "source_resolved_readings": 6,
+    "distinct_focused_tests_passed": 111,
+    "new_tests": 29,
+    "retained_tests": 82,
+    "final_report_claims": 60,
+    "final_source_report_blockers": 0,
+    "review_receipt": "REVIEW_RECONCILIATION.json"
   }
 }

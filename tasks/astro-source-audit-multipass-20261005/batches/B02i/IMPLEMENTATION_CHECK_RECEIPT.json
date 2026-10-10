@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "role": "calculation_implementation_not_independent_evaluation",
+  "test_count": 12,
+  "check_groups": 9,
+  "static_longitudes_computed": 20,
+  "source_table_exact_copy_sha256": "aa0e7cf9fe4f3e6e88fcf6622f14c0e1fe675771728273ac859a047bb1238705",
+  "source_files_unchanged": true,
+  "retained_helper_copied_unchanged_for_layout_test": true,
+  "retained_helper_sha256": "d0172b7ed579bde0db063c315331ee54ee3fb878f98bbdfb0d1649b7af486664",
+  "integration_layout": "Code and table in sibling B02i; unchanged reference helper in sibling B02f. No repository files were written.",
+  "commands": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_lilly_fourth_house_arithmetic"
+      ],
+      "cwd": "/workspace/scratch/bd2460f96de0/b02i-arithmetic/_validation_layout/batches/B02i",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_bargain_and_payment_are_distinct_endpoints (test_lilly_fourth_house_arithmetic.ChronologicalEndpointTests.test_bargain_and_payment_are_distinct_endpoints) ... ok\ntest_changed_agreement_date_changes_only_its_two_intervals (test_lilly_fourth_house_arithmetic.ChronologicalEndpointTests.test_changed_agreement_date_changes_only_its_two_intervals) ... ok\ntest_impossible_date_and_reordered_endpoints_are_rejected (test_lilly_fourth_house_arithmetic.ChronologicalEndpointTests.test_impossible_date_and_reordered_endpoints_are_rejected) ... ok\ntest_half_open_sector_wraps_and_does_not_admit_the_next_cusp (test_lilly_fourth_house_arithmetic.CircularGeometryTests.test_half_open_sector_wraps_and_does_not_admit_the_next_cusp) ... ok\ntest_partial_chart_supports_only_the_specified_h7_geometry (test_lilly_fourth_house_arithmetic.CircularGeometryTests.test_partial_chart_supports_only_the_specified_h7_geometry) ... ok\ntest_wraparound_and_trine_use_the_short_circular_arc (test_lilly_fourth_house_arithmetic.CircularGeometryTests.test_wraparound_and_trine_use_the_short_circular_arc) ... ok\ntest_invalid_complete_coordinate_is_not_misclassified_as_omitted (test_lilly_fourth_house_arithmetic.SourceCoordinateTests.test_invalid_complete_coordinate_is_not_misclassified_as_omitted) ... ok\ntest_missing_minute_is_rejected_and_omitted_cusps_stay_unknown (test_lilly_fourth_house_arithmetic.SourceCoordinateTests.test_missing_minute_is_rejected_and_omitted_cusps_stay_unknown) ... ok\ntest_altered_printed_fortune_cannot_tune_the_computation (test_lilly_fourth_house_arithmetic.SourceVersusComputedTests.test_altered_printed_fortune_cannot_tune_the_computation) ... ok\ntest_fortune_discrepancy_does_not_replace_printed_value (test_lilly_fourth_house_arithmetic.SourceVersusComputedTests.test_fortune_discrepancy_does_not_replace_printed_value) ... ok\ntest_profile_is_required_and_an_alternative_is_not_silently_used (test_lilly_fourth_house_arithmetic.SourceVersusComputedTests.test_profile_is_required_and_an_alternative_is_not_silently_used) ... ok\ntest_static_results_do_not_rewrite_source_qualitative_claims (test_lilly_fourth_house_arithmetic.SourceVersusComputedTests.test_static_results_do_not_rewrite_source_qualitative_claims) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.005s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "lilly_fourth_house_arithmetic.py",
+        "--output",
+        "/workspace/scratch/bd2460f96de0/b02i-arithmetic/ARITHMETIC_CHECKS.json"
+      ],
+      "cwd": "/workspace/scratch/bd2460f96de0/b02i-arithmetic/_validation_layout/batches/B02i",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"STATIC_PRINTED_ARITHMETIC_ONLY\", \"chart_id\": \"CH01\", \"static_longitudes\": 20, \"check_groups\": 9, \"printed_Fortune_matches\": false}\n",
+      "stderr": ""
+    }
+  ],
+  "files": [
+    {
+      "name": "lilly_fourth_house_arithmetic.py",
+      "bytes": 15537,
+      "sha256": "2d4074d253ce98636daf3ff9e94018fd044e9dfc6af995254180a7cf44a6b8b3"
+    },
+    {
+      "name": "test_lilly_fourth_house_arithmetic.py",
+      "bytes": 8029,
+      "sha256": "efd1aa7b594ef35d935b5caa9550530d52062f801072e1b9345f5b2631b4de18"
+    },
+    {
+      "name": "WORKED_NUMERIC_TABLES.json",
+      "bytes": 40743,
+      "sha256": "aa0e7cf9fe4f3e6e88fcf6622f14c0e1fe675771728273ac859a047bb1238705"
+    },
+    {
+      "name": "ARITHMETIC_CHECKS.json",
+      "bytes": 16352,
+      "sha256": "59be16d9d17012ed912fb5bd713cf3e8b523b91b3a2c60e3552d1b77f868cf16"
+    }
+  ]
+}

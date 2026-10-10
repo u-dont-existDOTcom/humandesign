@@ -1,0 +1,69 @@
+{
+  "task": "B02i fresh final source/claim check",
+  "actor": "/root/b02i_final_claim_check",
+  "phase": "SOURCE_ONLY_BEFORE_REPORT",
+  "activation": "ACTIVE",
+  "trigger": "Root directive explicitly required live UDA and source-first independent claim checking.",
+  "uda_repository": "u-dont-existDOTcom/universal-dev-architecture",
+  "live_default_branch_fetch": true,
+  "wrong_repo_initial_fetch": "u-dont-existDOTcom/Universal-Development-Automation returned 404; corrected through read-only remote identification and root correction",
+  "root_blob": "c27948c88cf7553f95241cbae7edab27f87689d2",
+  "index_blob": "b83848f61516389cf997d142bdd411f1c52a5024",
+  "patterns": [
+    {
+      "name": "source-interpretation-provenance",
+      "blob": "bb58d19c1999afcfdb39a134f24402ed4784926a"
+    },
+    {
+      "name": "independent-evaluation-separation",
+      "blob": "1dea3db0cdf69d6b09945ed505ab7a852db9e3b8"
+    },
+    {
+      "name": "task-time-lesson-activation",
+      "blob": "b45dcddfe80aa56a56fbaf1e9e916941d52ae50f"
+    }
+  ],
+  "controls": [
+    {
+      "rule": "source-provenance",
+      "required": "Inspect original page images; retain conditions, alternatives, glyph uncertainty, exact scope and author disagreement.",
+      "failure": "Unsupported attribution or guessed glyph; source wording mixed with inference.",
+      "repair": "Reopen specific image and narrow or mark uncertainty.",
+      "enforcement": "semantic; per-source-page notes and exact hash"
+    },
+    {
+      "rule": "independent-evaluation-separation",
+      "required": "Freeze source-first notes before reading report/ledger; freeze diagnosis before rationale or repair history.",
+      "failure": "Source-first or diagnosis-first record follows disallowed exposure.",
+      "repair": "Disclose contamination and obtain fresh context if consequential.",
+      "enforcement": "read receipt and file hashes; diagnostic authority only"
+    },
+    {
+      "rule": "task-time-lesson-activation",
+      "required": "Apply these controls at source freeze, diagnosis freeze, and focused addendum.",
+      "failure": "Read-as-checked substituted for actual passage check.",
+      "repair": "Check candidate at point of use and bind evidence.",
+      "enforcement": "phase-specific admission receipt"
+    },
+    {
+      "rule": "source-only genre",
+      "required": "Historical horary source meaning only; no participant, personal-fit or empirical-accuracy claims.",
+      "failure": "Participant inputs accessed or historical doctrine called predictive evidence.",
+      "repair": "Remove unsupported claim and disclose boundaries.",
+      "enforcement": "path allowlist and semantic review"
+    }
+  ],
+  "allowed_write_root": "/workspace/scratch/bd2460f96de0/b02i-final-check",
+  "authoritative_controls_read": "humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02i/ACTIVE_CONTRACT.json",
+  "withheld": [
+    "AUDIT_REPORT.md before source freeze",
+    "CLAIM_LEDGER.json before source freeze",
+    "producer notes and reasoning",
+    "prior reader notes/verdicts",
+    "reconciliation",
+    "repair history",
+    "participant files",
+    "prior chats"
+  ],
+  "limitations": "Fresh same-model context, bounded independent diagnosis; not cross-family or empirical validation. Root owns owner clock and delivery."
+}

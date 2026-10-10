@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "suite": "B02i",
+      "distinct_tests": 29,
+      "exit_code": 0,
+      "log": "TEST_B02i.txt",
+      "sha256": "7b4bdbb1fc9029941a4de818902e6501df0d9957da80d96a3540db2931fccd39"
+    },
+    {
+      "suite": "retained_B02h",
+      "distinct_tests": 24,
+      "exit_code": 0,
+      "log": "TEST_retained_B02h.txt",
+      "sha256": "9a02c0e00ed37479705916fb64e70e29cae6f2a04c2e496b8211cb76bbb4e00b"
+    },
+    {
+      "suite": "retained_B02f",
+      "distinct_tests": 31,
+      "exit_code": 0,
+      "log": "TEST_retained_B02f.txt",
+      "sha256": "9213137b0488acdf6cb5e38a4c3e0e21ccf73cc7ff9623c195651b675c7d6d1a"
+    },
+    {
+      "suite": "retained_methodology",
+      "distinct_tests": 27,
+      "exit_code": 0,
+      "log": "TEST_retained_methodology.txt",
+      "sha256": "f940bc5c9816e9b273abcaef27b1eb46af1196c87072fbef97f89a7f819e20d3"
+    }
+  ],
+  "new_distinct_tests": 29,
+  "retained_distinct_tests": 82,
+  "total_distinct_tests": 111,
+  "subtests_or_reruns_counted_as_additional": false,
+  "scope": "Source/data integrity, deterministic context lookups and static arithmetic; no predictive validation.",
+  "methodology_scope_note": "Only general protocol and synthetic receipt suites run; participant catalog/index suites are not needed for this source batch."
+}

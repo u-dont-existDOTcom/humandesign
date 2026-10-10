@@ -1,0 +1,2556 @@
+{
+  "schema": "B02i-retained-source-excerpts-v1",
+  "role": "Implementation/comparison helper after source production acceptance; not independent evaluation",
+  "access_authority": "Root explicitly authorized narrow reads of relevant retained records in B02c/B02d/B02e/B02f/B02g/B02h for this follow-up",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "provenance_limit": "Retained records are earlier source-extraction artifacts. Copying them preserves those records, not independent re-verification of their original-page readings. No prior original pages were opened in this follow-up.",
+  "retained_input_files": [
+    {
+      "batch": "B02c",
+      "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02c/RULES.json",
+      "sha256": "c10c17da49f53e58022e17e3003474180ab4826d3285227edc05ea0dde038138",
+      "access": "Selected retained source records; prior original pages not reread"
+    },
+    {
+      "batch": "B02d",
+      "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02d/RULES.json",
+      "sha256": "70c309b3e342abad588fd1c21cf13b7e226d8d1892bd4095f39b28c00e06bb8f",
+      "access": "Selected retained source records; prior original pages not reread"
+    },
+    {
+      "batch": "B02e",
+      "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02e/RULES.json",
+      "sha256": "195eaca0ddbc5925e0f8b1318a5e50acb43be2d4579c1c11d58b98dba3ea1fce",
+      "access": "Selected retained source records; prior original pages not reread"
+    },
+    {
+      "batch": "B02f",
+      "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02f/RULES.json",
+      "sha256": "c24615731bedb12b37745f7907f86a72f9c4092b1e619ed98767ccea68b91dd2",
+      "access": "Selected retained source records; prior original pages not reread"
+    },
+    {
+      "batch": "B02g",
+      "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02g/RULES.json",
+      "sha256": "93133a61c19b8488d50e5213bbac79d1fcf8a95e5ecaf07a0fa6ad3fee30bfcf",
+      "access": "Selected retained source records; prior original pages not reread"
+    },
+    {
+      "batch": "B02h",
+      "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "access": "Selected retained source records; prior original pages not reread"
+    }
+  ],
+  "b02i_source_note_files": [
+    {
+      "reader_span": "A",
+      "path": "/workspace/scratch/bd2460f96de0/b02i-source-a/SOURCE_FIRST_NOTES.md",
+      "sha256": "a969e9e3f75124b0d869608c432a05db7b59fae4751bb46ee940815726edb979",
+      "access": "Retained source-first notes read in this follow-up; original-page reading remains attributed to its identified reader"
+    },
+    {
+      "reader_span": "B",
+      "path": "/workspace/scratch/bd2460f96de0/b02i-source-b/SOURCE_FIRST_NOTES.md",
+      "sha256": "93dadb60d8acdae63ed259ce6bc43aee84e71f16e5944fa0f70ed108c54df373",
+      "access": "Retained source-first notes read in this follow-up; original-page reading remains attributed to its identified reader"
+    },
+    {
+      "reader_span": "C",
+      "path": "/workspace/scratch/bd2460f96de0/b02i-worked-charts/SOURCE_FIRST_NOTES.md",
+      "sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+      "access": "Retained source-first notes read in this follow-up; original-page reading remains attributed to its identified reader"
+    }
+  ],
+  "retained_records_count": 29,
+  "retained_records": [
+    {
+      "retained_record_id": "LI.1647.I.XVI.divisions.R257",
+      "batch": "B02c",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02c/RULES.json",
+      "retained_file_sha256": "c10c17da49f53e58022e17e3003474180ab4826d3285227edc05ea0dde038138",
+      "json_pointer": "/records/26",
+      "full_record_canonical_json_sha256": "ccbab3d6af9c1b678e02840717f634104d827a94129112b6af2d2e4237375cf3",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.I.XVI.divisions.R257",
+        "title": "northern_declination sign group",
+        "kind": "table_classification",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "I",
+          "section_key": "I.XVI.divisions",
+          "pdf_pages": [
+            122
+          ],
+          "printed_page_policy": "Use READING_RECEIPT page map; original labels are not uniformly PDF minus 34."
+        },
+        "statement_type": "transcribed_table_with_named_glyphs",
+        "source_statement": {
+          "key": "northern_declination",
+          "signs": [
+            "Aries",
+            "Taurus",
+            "Gemini",
+            "Cancer",
+            "Leo",
+            "Virgo"
+          ],
+          "source_description": "Boreal/Septentrional: north of the equinoctial; not the directional triplicity field",
+          "pdf": 122
+        },
+        "prerequisites": [
+          "Apply only within the stated enquiry and source-selected significator context."
+        ],
+        "qualifications_and_limits": [
+          "Historical source claim, not established predictive, clinical or demographic evidence."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.I.XVI.divisions.R258",
+      "batch": "B02c",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02c/RULES.json",
+      "retained_file_sha256": "c10c17da49f53e58022e17e3003474180ab4826d3285227edc05ea0dde038138",
+      "json_pointer": "/records/27",
+      "full_record_canonical_json_sha256": "bb9d5d7de19060152f91c3f985bf30299508b90a76c8dfde1ce34f08c49fb581",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.I.XVI.divisions.R258",
+        "title": "southern_declination sign group",
+        "kind": "table_classification",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "I",
+          "section_key": "I.XVI.divisions",
+          "pdf_pages": [
+            122
+          ],
+          "printed_page_policy": "Use READING_RECEIPT page map; original labels are not uniformly PDF minus 34."
+        },
+        "statement_type": "transcribed_table_with_named_glyphs",
+        "source_statement": {
+          "key": "southern_declination",
+          "signs": [
+            "Libra",
+            "Scorpio",
+            "Sagittarius",
+            "Capricorn",
+            "Aquarius",
+            "Pisces"
+          ],
+          "source_description": "Austral/Meridional: south of the equinoctial; not the directional triplicity field",
+          "pdf": 122
+        },
+        "prerequisites": [
+          "Apply only within the stated enquiry and source-selected significator context."
+        ],
+        "qualifications_and_limits": [
+          "Historical source claim, not established predictive, clinical or demographic evidence."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.I.XVIII.R365",
+      "batch": "B02c",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02c/RULES.json",
+      "retained_file_sha256": "c10c17da49f53e58022e17e3003474180ab4826d3285227edc05ea0dde038138",
+      "json_pointer": "/records/134",
+      "full_record_canonical_json_sha256": "eb71fcd89da750502aeb1b61bac680c8ec6fbea23dbc748889d300173b5378c0",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.I.XVIII.R365",
+        "title": "Domicile quality has exceptions",
+        "kind": "conditional_source_rule",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "I",
+          "section_key": "I.XVIII",
+          "pdf_pages": [
+            135,
+            136
+          ],
+          "printed_page_policy": "Use READING_RECEIPT page map; original labels are not uniformly PDF minus 34."
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Domicile is assigned five dignities and likened to a person governing their own estate and fortunate circumstances, unless retrograde, combust or afflicted by a malevolent planet/aspect.",
+        "prerequisites": [
+          "Relevant planet/significator in own domicile."
+        ],
+        "qualifications_and_limits": [
+          "The dignity component and the qualified life-outcome analogy are separate."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.I.XVIII.R375",
+      "batch": "B02c",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02c/RULES.json",
+      "retained_file_sha256": "c10c17da49f53e58022e17e3003474180ab4826d3285227edc05ea0dde038138",
+      "json_pointer": "/records/144",
+      "full_record_canonical_json_sha256": "0cfb60642f4c8c274db8ef12d18d8f731ff7a293f2f1928eec3e8c31b8a77cbe",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.I.XVIII.R375",
+        "title": "Accidental strength is separate",
+        "kind": "source_definition",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "I",
+          "section_key": "I.XVIII",
+          "pdf_pages": [
+            137
+          ],
+          "printed_page_policy": "Use READING_RECEIPT page map; original labels are not uniformly PDF minus 34."
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Directness, swiftness, angularity, trine/sextile to Jupiter or Venus and conjunction with notable fixed stars are examples of accidental fortification.",
+        "prerequisites": [
+          "Apply only within the stated enquiry and source-selected significator context."
+        ],
+        "qualifications_and_limits": [
+          "This list is not a complete numerical accidental-strength engine."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.I.XIX.R405",
+      "batch": "B02d",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02d/RULES.json",
+      "retained_file_sha256": "70c309b3e342abad588fd1c21cf13b7e226d8d1892bd4095f39b28c00e06bb8f",
+      "json_pointer": "/records/13",
+      "full_record_canonical_json_sha256": "c05d418f323cf910a21671885bdcfc44ba739a8126f426b7833bef66e8e9b647",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.I.XIX.R405",
+        "title": "Application with both retrograde",
+        "kind": "conditional_source_rule",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "I",
+          "section_key": "I.XIX",
+          "pdf_pages": [
+            141
+          ],
+          "printed_pages": [
+            107
+          ]
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Mercury Aries 10 to Mars Aries 9, Mercury remaining retrograde through conjunction, is an ill application associated with sudden perfection OR breaking off according to their signification.",
+        "prerequisites": [
+          "Both retrograde and conjunction reached before Mercury turns direct."
+        ],
+        "qualifications_and_limits": [
+          "Do not turn ill application into an unconditional non-occurrence prediction."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.I.XXI.R557",
+      "batch": "B02d",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02d/RULES.json",
+      "retained_file_sha256": "70c309b3e342abad588fd1c21cf13b7e226d8d1892bd4095f39b28c00e06bb8f",
+      "json_pointer": "/records/165",
+      "full_record_canonical_json_sha256": "6ac353a64ce1ff2c112b7e98f1415360e012d48639db1729228ad4abee7c785e",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.I.XXI.R557",
+        "title": "Opposition perfection, occurrence versus benefit",
+        "kind": "conditional_source_rule",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "I",
+          "section_key": "I.XXI",
+          "pdf_pages": [
+            159
+          ],
+          "printed_pages": [
+            125
+          ]
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Sometimes perfected by opposition when there is mutual reception by domicile, friendly houses, and Moon separates from the quesited significator and presently applies to the Ascendant lord. Lilly rarely sees perfection this way without the querent better off had it not happened.",
+        "prerequisites": [
+          "Mutual reception by HOUSE, friendly houses, directed Moon transfer."
+        ],
+        "qualifications_and_limits": [
+          "Retain the tension with XIX's broad easy-reception assertion; no retrospective preferred rule."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.I.XXI.R565",
+      "batch": "B02d",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02d/RULES.json",
+      "retained_file_sha256": "70c309b3e342abad588fd1c21cf13b7e226d8d1892bd4095f39b28c00e06bb8f",
+      "json_pointer": "/records/173",
+      "full_record_canonical_json_sha256": "7f4068670291ce852ac416d8cf3411c78556218dd366740962f8893b763e519c",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.I.XXI.R565",
+        "title": "Seventh-house subject turned topics",
+        "kind": "worked_mapping",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "I",
+          "section_key": "I.XXI",
+          "pdf_pages": [
+            161
+          ],
+          "printed_pages": [
+            127
+          ]
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": {
+          "base_topics": [
+            "querent",
+            "estate",
+            "kindred",
+            "father",
+            "children",
+            "servant/sickness",
+            "wife",
+            "manner of death",
+            "religion/journeys",
+            "esteem/honour",
+            "friends",
+            "secret enemies"
+          ],
+          "partner_origin": 7,
+          "partner_topics": [
+            "person",
+            "estate",
+            "brethren/kindred",
+            "father",
+            "children/fertility",
+            "sickness/servants",
+            "sweetheart",
+            "death",
+            "journey",
+            "mother",
+            "friends",
+            "sorrow/care/private enemies"
+          ],
+          "partner_radical_houses": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "minister_or_wifes_brother_origin": 9,
+          "king_asked_about_origin": 10,
+          "asker_origin_regardless_rank": 1,
+          "natal_native_origin_regardless_rank": 1
+        },
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "Relative tenth is called mother in this example, whereas radical tenth above is esteem/honour. Do not assume all semantic labels rotate identically."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXII.R568",
+      "batch": "B02e",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02e/RULES.json",
+      "retained_file_sha256": "195eaca0ddbc5925e0f8b1318a5e50acb43be2d4579c1c11d58b98dba3ea1fce",
+      "json_pointer": "/records/0",
+      "full_record_canonical_json_sha256": "d331dd398b023f34dd1b28aec2668ea6037cc1c322d73c667cba98a074daa333",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXII.R568",
+        "title": "Unknown birth time motivates a question, not a repaired nativity",
+        "kind": "scope",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXII",
+          "pdf_pages": [
+            163
+          ],
+          "printed_page_positions": [
+            129
+          ]
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Lilly introduces questions about longevity, approaching illness and happiest life periods for people without a remembered or obtainable nativity.",
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "A horary question is not a natal chart with an estimated birth time. Historical use is not evidence of clinical accuracy."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXII.R597",
+      "batch": "B02e",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02e/RULES.json",
+      "retained_file_sha256": "195eaca0ddbc5925e0f8b1318a5e50acb43be2d4579c1c11d58b98dba3ea1fce",
+      "json_pointer": "/records/29",
+      "full_record_canonical_json_sha256": "563a8403ea8b484539038909139e79e7203e9aa041d7a05fc65fe77f9104e597",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXII.R597",
+        "title": "Health direction and wealth direction are different inquiries",
+        "kind": "methodology",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXII",
+          "pdf_pages": [
+            167
+          ],
+          "printed_page_positions": [
+            133
+          ]
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": {
+          "health": "Ascendant lord and Moon, their sign/quadrant, comparative strength and friendlier aspect to Ascendant degree.",
+          "estate": "Second lord, Fortune and its dispositor, or two of them, in their best-fortified quadrant."
+        },
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "Separate topical starting points; no modern treatment/travel/investment recommendation."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXVI.R774",
+      "batch": "B02f",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02f/RULES.json",
+      "retained_file_sha256": "c24615731bedb12b37745f7907f86a72f9c4092b1e619ed98767ccea68b91dd2",
+      "json_pointer": "/records/106",
+      "full_record_canonical_json_sha256": "6cc92e6a099cd7ce80b4e304544f4148ceb057ede681d63d83e51e708d221cd1",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXVI.R774",
+        "title": "Self-question: reported objection and author's alternative",
+        "kind": "source_disagreement",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXVI",
+          "pdf_pages": [
+            200,
+            201
+          ],
+          "printed_sequence": [
+            166,
+            167
+          ]
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Lilly reports Bonatus and others warning against judging one's own question; he conjectures concern about partiality. He permits a genuinely troubling self-question at its arising time if impartial, urging all favour to one's cause be laid aside.",
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "The reason attributed to Bonatus is Lilly's conjecture, not a checked quotation from Bonatus. Self-reported success is not blinded evidence."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXVII.R833",
+      "batch": "B02g",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02g/RULES.json",
+      "retained_file_sha256": "93133a61c19b8488d50e5213bbac79d1fcf8a95e5ecaf07a0fa6ad3fee30bfcf",
+      "json_pointer": "/rules/58",
+      "full_record_canonical_json_sha256": "ef6ac5da6084b573ec25a2ed38e5112199d6bc1023d848c72e2d637a8461e73f",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXVII.R833",
+        "title": "Timing requires the actual effective significator",
+        "kind": "timing_prerequisite",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXVII",
+          "pdf_pages": [
+            209
+          ],
+          "printed_sequence_expected": [
+            175
+          ],
+          "visible_printed_labels": [
+            "171"
+          ],
+          "passage_anchor": "unto what Planet either the Lord of the Ascendant or Moon applyes",
+          "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Choose the planet to which Ascendant lord or Moon applies or bodily joins and which signifies accomplishment; in a sextile/trine case, whether that planet is a benefic or not, and whether it receives the Ascendant lord or Moon or not, inspect the rays through perfection or the degrees lacking to exact aspect/conjunction at the question.",
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "Time-to-contact astronomy and symbolic distance-to-time are distinct. Static distance does not compute a moving contact date."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXVII.R834",
+      "batch": "B02g",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02g/RULES.json",
+      "retained_file_sha256": "93133a61c19b8488d50e5213bbac79d1fcf8a95e5ecaf07a0fa6ad3fee30bfcf",
+      "json_pointer": "/rules/59",
+      "full_record_canonical_json_sha256": "92d5f9cfc8b90c41e0d28d911d625b990656f6cdcb3ad4f54ce9c997f9faa5b1",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXVII.R834",
+        "title": "Second-house timing units by both houses",
+        "kind": "symbolic_unit_table",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXVII",
+          "pdf_pages": [
+            209,
+            210
+          ],
+          "printed_sequence_expected": [
+            175,
+            176
+          ],
+          "visible_printed_labels": [
+            "171",
+            "176"
+          ],
+          "passage_anchor": "so many dayes; if they be both in Cadent houses",
+          "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": {
+          "cadent|cadent": "days",
+          "succedent|succedent": "weeks",
+          "angular|angular": "months",
+          "angular|succedent": "months",
+          "cadent|succedent": "weeks",
+          "angular|cadent": "months"
+        },
+        "prerequisites": [
+          "Both selected significators and their houses known; degrees remaining to the relevant perfection."
+        ],
+        "qualifications_and_limits": [
+          "These local units are not the sign-modality news scale or a universal Lilly timing rule. Fractional unit/calendar conventions are not defined."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXVIII.R874",
+      "batch": "B02g",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02g/RULES.json",
+      "retained_file_sha256": "93133a61c19b8488d50e5213bbac79d1fcf8a95e5ecaf07a0fa6ad3fee30bfcf",
+      "json_pointer": "/rules/99",
+      "full_record_canonical_json_sha256": "10e26096a841d177ee033458c5f3b45ff587c1a9e0b60b5c858e547e629d05ab",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXVIII.R874",
+        "title": "Peregrine significator can still perform its assigned office",
+        "kind": "source_qualification",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXVIII",
+          "pdf_pages": [
+            217
+          ],
+          "printed_sequence_expected": [
+            183
+          ],
+          "visible_printed_labels": [
+            "183"
+          ],
+          "passage_anchor": "Some may wonder why Mars being peregrine through social analogy",
+          "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Lilly says peregrine Mars can show both performance and timing because he rules the second and seventh and promises the demanded matter, though some obstruction remains.",
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "Peregrinity is not erased; the rule preserves office plus impediment.",
+          "The social comparison is an analogy, not independent evidence."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false,
+        "candidate_origin": "LI.1647.II.XXVIII.C032"
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXVIII.R885",
+      "batch": "B02g",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02g/RULES.json",
+      "retained_file_sha256": "93133a61c19b8488d50e5213bbac79d1fcf8a95e5ecaf07a0fa6ad3fee30bfcf",
+      "json_pointer": "/rules/110",
+      "full_record_canonical_json_sha256": "33b00864109a902bbb5a8318de0367ad69223f782c7ea5a9c54896d1cd5da5b3",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXVIII.R885",
+        "title": "Hard-aspect reception can fail with ill disposition",
+        "kind": "conditional_source_rule",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXVIII",
+          "pdf_pages": [
+            219
+          ],
+          "printed_sequence_expected": [
+            185
+          ],
+          "visible_printed_labels": [
+            "185"
+          ],
+          "passage_anchor": "You must notwithstanding judge through the lesse when he that is received",
+          "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Reception by square or opposition profits nothing when a planet is ill-disposed, and still less when the received planet is impedited.",
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "The exact identity of a Planet in the first clause is not fully explicit; the succeeding well-disposed-receiver exception must be retained."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false,
+        "candidate_origin": "LI.1647.II.XXVIII.C043"
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXVIII.R886",
+      "batch": "B02g",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02g/RULES.json",
+      "retained_file_sha256": "93133a61c19b8488d50e5213bbac79d1fcf8a95e5ecaf07a0fa6ad3fee30bfcf",
+      "json_pointer": "/rules/111",
+      "full_record_canonical_json_sha256": "8aa267a5411048f2f70ed021016b1b9c1b2372198851404a1bc6959c393ef038",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXVIII.R886",
+        "title": "Sextile or trine reception and well-disposed receiver exception",
+        "kind": "conditional_source_rule",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXVIII",
+          "pdf_pages": [
+            219,
+            220
+          ],
+          "printed_sequence_expected": [
+            185,
+            186
+          ],
+          "visible_printed_labels": [
+            "185",
+            "186"
+          ],
+          "passage_anchor": "But if reception be by sextile or trine through be the aspect square or opposition",
+          "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Reception by sextile or trine gives confidence of accomplishment; if the receiving planet is well-disposed, reception by any aspect can perform the matter, including square or opposition.",
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "This qualifies the preceding rejection of ill-conditioned hard-aspect reception."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false,
+        "candidate_origin": "LI.1647.II.XXVIII.C044"
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXIX.R906",
+      "batch": "B02h",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "retained_file_sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "json_pointer": "/rules/9",
+      "full_record_canonical_json_sha256": "1a9ee4f4acde22925f3b525b2c688f9826729c89101a5fa4670a656010602fff",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXIX.R906",
+        "title": "Absent brother: house frame",
+        "kind": "query_frame",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXIX",
+          "pdf_pages": [
+            223
+          ],
+          "printed_sequence_expected": [
+            189
+          ],
+          "visible_printed_labels": [
+            "189"
+          ],
+          "passage_anchor": "Of a Brother that is absent",
+          "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_attribution": "Lilly",
+        "scope_group": "absent_relative",
+        "source_statement": {
+          "querent": [
+            "question Ascendant",
+            "its lord"
+          ],
+          "absent_brother_ascendant": 3,
+          "absent_brother_substance": 4,
+          "continuation": "proceed in order through the other houses"
+        },
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "The following house numbers are preserved as the source writes them. Read with the explicit original-figure sixth/eighth/twelfth qualification on PDF226 and the dual-eighth worked example on PDF231."
+        ],
+        "temporal_target": "Not specified locally",
+        "unresolved_ids": [
+          "B02h-U04"
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXIX.R937",
+      "batch": "B02h",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "retained_file_sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "json_pointer": "/rules/40",
+      "full_record_canonical_json_sha256": "0734648366979ca3adb437a7d3e2fcf0ee136755d3316eb782c09938798c2b13",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXIX.R937",
+        "title": "Original figure sixth, eighth and twelfth retained",
+        "kind": "reference_frame_qualification",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXIX",
+          "pdf_pages": [
+            226
+          ],
+          "printed_sequence_expected": [
+            192
+          ],
+          "visible_printed_labels": [
+            "192"
+          ],
+          "passage_anchor": "yet in every one quesited after, the sixt House of the figure",
+          "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_attribution": "Lilly",
+        "scope_group": "absent_relative",
+        "source_statement": "Although every house has its own sixth, eighth and twelfth, Lilly explicitly retains sixth of the figure for the absent person's infirmity, eighth for death and twelfth for imprisonment.",
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "This statement coexists with the turning instructions and the worked dual-eighth check on PDF231. It neither deletes derived houses nor supplies a universal numerical precedence rule."
+        ],
+        "temporal_target": "Not specified locally",
+        "unresolved_ids": [
+          "B02h-U04"
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXIX.R944",
+      "batch": "B02h",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "retained_file_sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "json_pointer": "/rules/47",
+      "full_record_canonical_json_sha256": "2dbd2ecc1d6c7696427b45987df5d47c043f74ad94dfd3edf2805001f5a7ad6f",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXIX.R944",
+        "title": "News question time depends on who asks",
+        "kind": "question_time_convention",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXIX",
+          "pdf_pages": [
+            227
+          ],
+          "printed_sequence_expected": [
+            193
+          ],
+          "visible_printed_labels": [
+            "193"
+          ],
+          "passage_anchor": "the houre when I first heard the newes",
+          "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_attribution": "Lilly",
+        "scope_group": "reports_lilly_wartime",
+        "source_statement": {
+          "self_heard_news": "moment of first hearing the news or rumour",
+          "another_person_proposes_question": "exact moment the question is proposed"
+        },
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "Historical procedural convention, not a modern message-delivery or automated-interview rule."
+        ],
+        "temporal_target": "Not specified locally",
+        "unresolved_ids": [],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXIX.R959",
+      "batch": "B02h",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "retained_file_sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "json_pointer": "/rules/62",
+      "full_record_canonical_json_sha256": "ac3a8057a8256323b390b7d83bb2b11f25c839b3ddb4b2eccffc39efe08ebc2d",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXIX.R959",
+        "title": "Sibling enquiry: natal preference and horary caveat",
+        "kind": "genre_and_evidence_qualification",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXIX",
+          "pdf_pages": [
+            229
+          ],
+          "printed_sequence_expected": [
+            195
+          ],
+          "visible_printed_labels": [
+            "195"
+          ],
+          "passage_anchor": "better resolved from the proper Nativity",
+          "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_attribution": "Lilly",
+        "scope_group": "siblings",
+        "source_statement": "Lilly prefers the querent's proper nativity for whether siblings exist, but supplies horary rules claimed true in his experience.",
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "A claimed observation, not independent validation or conversion of these local rules into a natal module."
+        ],
+        "temporal_target": "Not specified locally",
+        "unresolved_ids": [],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXIX.R971",
+      "batch": "B02h",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "retained_file_sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "json_pointer": "/rules/74",
+      "full_record_canonical_json_sha256": "dca37129bbe3c9f5269c52b52c7155b1285b4ae2df1293aec68a34df6f45a6c9",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXIX.R971",
+        "title": "Principal significator's directional sign",
+        "kind": "conditional_source_rule",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXIX",
+          "pdf_pages": [
+            230
+          ],
+          "printed_sequence_expected": [
+            196
+          ],
+          "visible_printed_labels": [
+            "196"
+          ],
+          "passage_anchor": "if the principall Significator be in a Northerne Signe",
+          "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_attribution": "Lilly",
+        "scope_group": "short_journey",
+        "source_statement": "Principal significator in a northern sign signifies intended travel north; analogize the other directions with their due limitations.",
+        "prerequisites": [
+          "Principal significator selected under preceding instruction."
+        ],
+        "qualifications_and_limits": [
+          "No new complete sign-compass or hemisphere rule. Ends above the PDF230 divider; the chart below belongs to XXX."
+        ],
+        "temporal_target": "Not specified locally",
+        "unresolved_ids": [
+          "B02h-U19"
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXX.R972",
+      "batch": "B02h",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "retained_file_sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "json_pointer": "/rules/75",
+      "full_record_canonical_json_sha256": "4f2d69d442a55b7142966412e0b59f65beb881c769165599f847166df1e57598",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXX.R972",
+        "title": "Absent brother: one historical figure and conditional questions",
+        "kind": "historical_case_context_and_questions",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXX",
+          "pdf_pages": [
+            230,
+            231
+          ],
+          "printed_sequence_expected": [
+            196,
+            197
+          ],
+          "visible_printed_labels": [
+            "196",
+            "197"
+          ],
+          "passage_anchor": "Where an absent Brother was?",
+          "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+          "specific_passages": [
+            {
+              "pdf_page": 230,
+              "literal_visible_folio": "196",
+              "passage_anchor": "Where an absent Brother was?",
+              "page_location": "Lower half, heading and circular chart"
+            },
+            {
+              "pdf_page": 231,
+              "literal_visible_folio": "197",
+              "passage_anchor": "In November 1645. a Citizen of London",
+              "page_location": "Top narrative and three numbered questions above Chap.XXX"
+            }
+          ]
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_attribution": "Lilly; historical example",
+        "scope_group": "worked_absent_brother",
+        "source_statement": "A London citizen had gone into the West of England and no news had been received for many weeks. His brother asked whether he was alive or dead; if dead, whether soldiers had killed him; if alive, when news would come and where he was; and when he would return home. The source connects the soldier question to the kingdom then being full of soldiery. The printed figure is dated Friday7 November1645, at hora meridiana.",
+        "prerequisites": [],
+        "source_alternatives": [
+          "Living versus dead is the first requested decision; being killed by soldiers is conditional on a judgment of death."
+        ],
+        "qualifications_and_limits": [
+          "No modern calendar or timezone convention is stated by the chart.",
+          "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+        ],
+        "temporal_target": "Not specified locally",
+        "unresolved_ids": [
+          "B02h-U24"
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false,
+        "candidate_origin": "B02h.examples.C001",
+        "case_id": "EX01",
+        "house_numbering_and_roles": [
+          {
+            "radical_house": 1,
+            "role": "Querent: the brother who asks; Saturn is lord of the ascending sign.",
+            "basis": "source_explicit"
+          },
+          {
+            "radical_house": 3,
+            "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+            "basis": "source_explicit",
+            "turned_house": {
+              "relative_to": "absent brother",
+              "number": 1
+            }
+          }
+        ],
+        "source_defined_calculations": [],
+        "numeric_table_references": [
+          "CH01.datetime"
+        ],
+        "evidence_status": "Historical narrative and requested outputs only; no death, killing, or illness is established by the questions.",
+        "dependency_rules": [],
+        "generality": "worked_example_only"
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXX.R978",
+      "batch": "B02h",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "retained_file_sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "json_pointer": "/rules/81",
+      "full_record_canonical_json_sha256": "15c0a42e027a2a89e977039ee7793d31abdcb8b9c3943b6fbf6c796da6f0d917",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXX.R978",
+        "title": "Mutual application includes retrograde Saturn",
+        "kind": "historical_timing_inference",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXX",
+          "pdf_pages": [
+            232
+          ],
+          "printed_sequence_expected": [
+            198
+          ],
+          "visible_printed_labels": [
+            "198"
+          ],
+          "passage_anchor": "doe apply to each other by a friendly",
+          "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+          "specific_passages": [
+            {
+              "pdf_page": 232,
+              "literal_visible_folio": "198",
+              "passage_anchor": "doe apply to each other by a friendly",
+              "page_location": "First paragraph"
+            },
+            {
+              "pdf_page": 232,
+              "literal_visible_folio": "198",
+              "passage_anchor": "though a ponderous Planet",
+              "page_location": "Same paragraph"
+            }
+          ]
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_attribution": "Lilly; historical example",
+        "scope_group": "worked_absent_brother",
+        "source_statement": "The friendly trine by mutual application of Venus and Saturn is a very good indication of sudden news. Saturn, although ponderous, is retrograde and at a higher degree of his sign than Venus, so his retrogradation brings him to meet her.",
+        "prerequisites": [
+          "Venus is third-house lady and the absent brother's significatrix.",
+          "Saturn is ascendant lord and the querent's significator.",
+          "Their signs and degrees give a friendly trine.",
+          "Saturn is retrograde and at more degrees of his sign than Venus."
+        ],
+        "source_alternatives": [],
+        "qualifications_and_limits": [
+          "The source explicitly includes the slower planet's retrogradation in the mutual application.",
+          "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+        ],
+        "temporal_target": "Not specified locally",
+        "unresolved_ids": [],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false,
+        "candidate_origin": "B02h.examples.C007",
+        "case_id": "EX01",
+        "house_numbering_and_roles": [
+          {
+            "radical_house": 1,
+            "role": "Querent: the brother who asks; Saturn is lord of the ascending sign.",
+            "basis": "source_explicit"
+          },
+          {
+            "radical_house": 3,
+            "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+            "basis": "source_explicit",
+            "turned_house": {
+              "relative_to": "absent brother",
+              "number": 1
+            }
+          }
+        ],
+        "source_defined_calculations": [
+          "AR03"
+        ],
+        "numeric_table_references": [
+          "CH01.planets.Saturn",
+          "CH01.planets.Venus"
+        ],
+        "evidence_status": "Source inference of very sudden news, not yet a reported occurrence.",
+        "dependency_rules": [
+          "LI.1647.II.XXX.R974"
+        ],
+        "generality": "worked_example_only"
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXX.R980",
+      "batch": "B02h",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "retained_file_sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "json_pointer": "/rules/83",
+      "full_record_canonical_json_sha256": "5f3f4adb7594facc0dc31eda2ebf4c25eb62c3855e80ac006d63a9384c273582",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXX.R980",
+        "title": "Same-day news forecast is qualified as probable",
+        "kind": "historical_forecast",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXX",
+          "pdf_pages": [
+            232
+          ],
+          "printed_sequence_expected": [
+            198
+          ],
+          "visible_printed_labels": [
+            "198"
+          ],
+          "passage_anchor": "it was probable he should heare of him that very day",
+          "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+          "specific_passages": [
+            {
+              "pdf_page": 232,
+              "literal_visible_folio": "198",
+              "passage_anchor": "it was probable he should heare of him that very day",
+              "page_location": "Later part of first paragraph"
+            }
+          ]
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_attribution": "Lilly; historical example",
+        "scope_group": "worked_absent_brother",
+        "source_statement": "Lilly tells the querent he will probably hear about his brother that day, expressly relying on the two parties' significators meeting in a friendly trine.",
+        "prerequisites": [
+          "The two principal significators meet in a friendly trine on the question day."
+        ],
+        "source_alternatives": [],
+        "qualifications_and_limits": [
+          "The source calls the result probable.",
+          "This sentence says the trine meeting is the only stated reason for this particular forecast.",
+          "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+        ],
+        "temporal_target": "Probably that same day",
+        "unresolved_ids": [],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false,
+        "candidate_origin": "B02h.examples.C009",
+        "case_id": "EX01",
+        "house_numbering_and_roles": [
+          {
+            "radical_house": 1,
+            "role": "Querent: the brother who asks; Saturn is lord of the ascending sign.",
+            "basis": "source_explicit"
+          },
+          {
+            "radical_house": 3,
+            "role": "Absent brother / quesited; Taurus on this cusp, Venus its lady.",
+            "basis": "source_explicit",
+            "turned_house": {
+              "relative_to": "absent brother",
+              "number": 1
+            }
+          }
+        ],
+        "source_defined_calculations": [
+          "TIME01"
+        ],
+        "numeric_table_references": [],
+        "evidence_status": "Same-day news forecast, later paired with C011; not an independent case.",
+        "dependency_rules": [
+          "LI.1647.II.XXX.R978",
+          "LI.1647.II.XXX.R979"
+        ],
+        "generality": "worked_example_only"
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXX.R982",
+      "batch": "B02h",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "retained_file_sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "json_pointer": "/rules/85",
+      "full_record_canonical_json_sha256": "b9aa5493e2bf88d2028116e1a74dc76aa9de3159adca00b028db9ba307b1b821",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXX.R982",
+        "title": "One reported carrier episode: time, life and health news",
+        "kind": "reported_endpoint_querent_testimony_relayed_by_author",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXX",
+          "pdf_pages": [
+            232
+          ],
+          "printed_sequence_expected": [
+            198
+          ],
+          "visible_printed_labels": [
+            "198"
+          ],
+          "passage_anchor": "He hath since confidently affirmed",
+          "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+          "specific_passages": [
+            {
+              "pdf_page": 232,
+              "literal_visible_folio": "198",
+              "passage_anchor": "He hath since confidently affirmed",
+              "page_location": "Italic sentence at end of news paragraph"
+            }
+          ]
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_attribution": "Lilly; historical example",
+        "scope_group": "worked_absent_brother",
+        "source_statement": "Lilly reports the querent's later confident affirmation that about four a carrier came casually to where he was and told him the brother was living and in health.",
+        "prerequisites": [],
+        "source_alternatives": [],
+        "qualifications_and_limits": [
+          "Arrival time, arrival of the carrier, and the news of health/life belong to one reported episode.",
+          "“About four” is approximate.",
+          "No independent documentary or medical confirmation is supplied here.",
+          "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+        ],
+        "temporal_target": "About four on the question day, source-reported",
+        "unresolved_ids": [],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false,
+        "candidate_origin": "B02h.examples.C011",
+        "case_id": "EX01",
+        "house_numbering_and_roles": [],
+        "source_defined_calculations": [],
+        "numeric_table_references": [
+          "EP01"
+        ],
+        "evidence_status": "Dependent reported news endpoint for this same question; the health/life statement is carrier information conveyed through the querent and Lilly.",
+        "dependency_rules": [
+          "LI.1647.II.XXX.R976",
+          "LI.1647.II.XXX.R980"
+        ],
+        "generality": "worked_example_only"
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXX.R986",
+      "batch": "B02h",
+      "retained_file": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "retained_file_sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "json_pointer": "/rules/89",
+      "full_record_canonical_json_sha256": "7fcbf32694589b14da74e667b6740eb7ee487e15eba3a213186821721fa3852e",
+      "copy_status": "Full JSON record copied without dropping or editing fields",
+      "record": {
+        "id": "LI.1647.II.XXX.R986",
+        "title": "One degree and a week: question-specific timing judgement",
+        "kind": "qualified_source_timing_conversion",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXX",
+          "pdf_pages": [
+            233
+          ],
+          "printed_sequence_expected": [
+            199
+          ],
+          "visible_printed_labels": [
+            "199"
+          ],
+          "passage_anchor": "wanted one degree of getting out",
+          "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+          "specific_passages": [
+            {
+              "pdf_page": 233,
+              "literal_visible_folio": "199",
+              "passage_anchor": "wanted one degree of getting out",
+              "page_location": "Opening paragraph"
+            },
+            {
+              "pdf_page": 233,
+              "literal_visible_folio": "199",
+              "passage_anchor": "one degree in that Signe",
+              "page_location": "Same paragraph"
+            }
+          ]
+        },
+        "genre": "horary",
+        "statement_type": "editor_normalized_paraphrase",
+        "source_attribution": "Lilly; historical example",
+        "scope_group": "worked_absent_brother",
+        "source_statement": "Lilly says Venus lacks one degree of leaving Sagittarius and predicts return in less than one week. Sagittarius is bicorporeal/common; one degree in that sign and in the nature of this question may denote a week.",
+        "prerequisites": [
+          "Venus is near the end of Sagittarius.",
+          "Sagittarius is bicorporeal/common.",
+          "The nature of this question supports the degree-to-week scale."
+        ],
+        "source_alternatives": [],
+        "qualifications_and_limits": [
+          "The wording is “might well denote,” not an invariant one-degree-equals-one-week law.",
+          "The forecast is less than a week.",
+          "The figure's28:53 yields1:07 to the boundary; retain that arithmetic separately from the source's qualitative “one degree.”",
+          "No exact-minute proportional timing or precise arrival date/time is given.",
+          "Historical worked judgement or source testimony only; not an independently verified outcome or an automatic universal rule."
+        ],
+        "temporal_target": "Less than one week forecast",
+        "unresolved_ids": [
+          "B02h-U26"
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false,
+        "candidate_origin": "B02h.examples.C015",
+        "case_id": "EX01",
+        "house_numbering_and_roles": [],
+        "source_defined_calculations": [
+          "TIME02",
+          "AR04"
+        ],
+        "numeric_table_references": [
+          "CH01.planets.Venus"
+        ],
+        "evidence_status": "Historical return forecast based on a qualified symbolic timing scale.",
+        "dependency_rules": [
+          "LI.1647.II.XXX.R985"
+        ],
+        "generality": "worked_example_only"
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.READER.R007",
+      "batch": "B02a",
+      "retained_file": "tasks/astro-source-audit-multipass-20261005/batches/B02a/RULES.json",
+      "retained_file_sha256": "98a4e8a583c6e4314c256354522ce659483b95388cc768fedc20512beaeb2ecb",
+      "json_pointer": "/records/6",
+      "copy_status": "EXACT_FULL_RETAINED_RECORD",
+      "record": {
+        "id": "LI.1647.READER.R007",
+        "title": "Correct the author-listed errata before use",
+        "kind": "method",
+        "source_locator": {
+          "work_id": "CHRISTIAN_ASTROLOGY",
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "edition": "1647 English original, Wellcome b30338724",
+          "book": "FRONT_MATTER",
+          "chapter": "READER",
+          "pdf_pages": [
+            26
+          ],
+          "printed_pages": [],
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+        },
+        "source_statement": "The reader is asked to correct the errata before entering the discourse.",
+        "statement_type": "paraphrase",
+        "prerequisites": "Within the specified source chapter and enquiry.",
+        "qualifications_and_limits": "The errata list is PDF888; maintain original and corrected readings separately and do not apply uncertain page/line targets by guess.",
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.I.04.R033",
+      "batch": "B02a",
+      "retained_file": "tasks/astro-source-audit-multipass-20261005/batches/B02a/RULES.json",
+      "retained_file_sha256": "98a4e8a583c6e4314c256354522ce659483b95388cc768fedc20512beaeb2ecb",
+      "json_pointer": "/records/32",
+      "copy_status": "EXACT_FULL_RETAINED_RECORD",
+      "record": {
+        "id": "LI.1647.I.04.R033",
+        "title": "Five-degree cusp virtue",
+        "kind": "conditional_rule",
+        "source_locator": {
+          "work_id": "CHRISTIAN_ASTROLOGY",
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "edition": "1647 English original, Wellcome b30338724",
+          "book": "I",
+          "chapter": 4,
+          "pdf_pages": [
+            67
+          ],
+          "printed_pages": [
+            33
+          ],
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+        },
+        "source_statement": "A planet within five degrees of a house cusp is assigned virtue to the house whose cusp is nearest, with a promise of further treatment.",
+        "statement_type": "paraphrase",
+        "prerequisites": "Retain its geometrical house and the relevant cusp separately.",
+        "qualifications_and_limits": "Exact five-degree equality, directional reach, overlaps, sign boundaries and later qualifications are not resolved by this one sentence.",
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXIII.R625",
+      "batch": "B02e",
+      "retained_file": "tasks/astro-source-audit-multipass-20261005/batches/B02e/RULES.json",
+      "retained_file_sha256": "195eaca0ddbc5925e0f8b1318a5e50acb43be2d4579c1c11d58b98dba3ea1fce",
+      "json_pointer": "/records/57",
+      "copy_status": "EXACT_FULL_RETAINED_RECORD",
+      "record": {
+        "id": "LI.1647.II.XXIII.R625",
+        "title": "Fortune same formula by day and night",
+        "kind": "calculation_definition",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXIII",
+          "pdf_pages": [
+            177,
+            178
+          ],
+          "printed_page_positions": [
+            143,
+            144
+          ]
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": {
+          "procedure": "Subtract Sun sign/degree/minute from Moon, adding twelve signs if needed; add Ascendant and remove twelve signs if needed.",
+          "modern_exact_arithmetic_expression": "(Ascendant + Moon - Sun) modulo360 degrees"
+        },
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "Continuous cyclic notation is our implementation of the stated procedure. Day/night does not reverse this author-selected formula."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    },
+    {
+      "retained_record_id": "LI.1647.II.XXIII.R631",
+      "batch": "B02e",
+      "retained_file": "tasks/astro-source-audit-multipass-20261005/batches/B02e/RULES.json",
+      "retained_file_sha256": "195eaca0ddbc5925e0f8b1318a5e50acb43be2d4579c1c11d58b98dba3ea1fce",
+      "json_pointer": "/records/63",
+      "copy_status": "EXACT_FULL_RETAINED_RECORD",
+      "record": {
+        "id": "LI.1647.II.XXIII.R631",
+        "title": "Alternate nocturnal practice reported but not selected",
+        "kind": "reported_alternative",
+        "source_locator": {
+          "source_id": "LILLY1647_WELLCOME_B30338724",
+          "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+          "book": "II",
+          "section_key": "II.XXIII",
+          "pdf_pages": [
+            178
+          ],
+          "printed_page_positions": [
+            144
+          ]
+        },
+        "statement_type": "editor_normalized_paraphrase",
+        "source_statement": "Some reverse Moon and Sun at night. Lilly repeats his same-day/night method, attributing it to Ptolemy and claiming agreement by all current practitioners.",
+        "prerequisites": [],
+        "qualifications_and_limits": [
+          "The selected method and the reported alternative are different. The source glyph in the reversal clause is obscured; its context identifies the intended reversal. Claimed practitioner unanimity is not independently verified."
+        ],
+        "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+        "independent_evidence_unit": false
+      }
+    }
+  ],
+  "b02i_B_candidate_source_file": {
+    "path": "/workspace/scratch/bd2460f96de0/b02i-source-b/CANDIDATE_RULES.json",
+    "sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58"
+  },
+  "b02i_B_local_records": [
+    {
+      "local_id": "B003",
+      "source_order": 3,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          246
+        ],
+        "printed_pages": [
+          212
+        ],
+        "chapter": "XXXV",
+        "section": "Lilly reported removal practice",
+        "passage_anchor": "That which I have observed in this manner of Judgment",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-246.png"
+        ],
+        "source_first_note_items": [
+          3
+        ]
+      },
+      "evidence": {
+        "kind": "generalized_retrospective_practice",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          {
+            "all": [
+              "Lord 1 lately separated from square or opposition of lord 6, 8 or 12",
+              "Moon concurs by separating from evil aspect of infortunes",
+              "Those infortunes are lords 7 or 4, etc.",
+              "Those infortunes are not friends or significators in person of querent"
+            ]
+          },
+          {
+            "all": [
+              "An infortune in ascendant",
+              {
+                "any": [
+                  "Peregrine",
+                  "Retrograde"
+                ]
+              }
+            ]
+          },
+          {
+            "all": [
+              "A planet in house 4",
+              {
+                "any": [
+                  "Peregrine",
+                  "Unfortunate"
+                ]
+              }
+            ]
+          },
+          {
+            "any": [
+              "Lord 2 weak",
+              "Lord 2 ill positioned"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Removal advice",
+          "value": "Lilly advised removing habitation and supplied a reason",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "First branch requires concurrent Moon testimony. Other branches are alternatives, not additional requirements. The source leaves etc. open rather than defining exhaustive houses."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "separating aspects",
+          "house lords",
+          "house placement",
+          "dignities",
+          "retrograde"
+        ],
+        "missing_precision": [
+          "Lately window",
+          "Bad-aspect set/orbs",
+          "Friend/significator criterion",
+          "Weighting of mixed arguments"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B010",
+      "source_order": 10,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          247
+        ],
+        "printed_pages": [
+          213
+        ],
+        "chapter": "XXXV",
+        "section": "Direction to move for better trading",
+        "passage_anchor": "Now in giving direction which way to steer his course",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png"
+        ],
+        "source_first_note_items": [
+          11
+        ]
+      },
+      "evidence": {
+        "kind": "generalized_retrospective_practice",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "selection": {
+          "candidate": "Planet in figure",
+          "criteria": [
+            "Most fortunate",
+            "Strongest",
+            "Most friendly aspect to lord 1 OR lord 2"
+          ]
+        },
+        "direction_basis": "Quarter of heaven signified by SIGN occupied by selected planet"
+      },
+      "outputs": [
+        {
+          "target": "Direction of relocation",
+          "value": "Lilly advised removal toward that sign-indicated quarter",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [
+        "Do not replace sign direction by house direction. No tie-break or scoring function is supplied."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "planet strengths",
+          "aspects to lords 1 or 2",
+          "sign-direction correspondence"
+        ],
+        "missing_precision": [
+          "Direction table external to span",
+          "Strength aggregation",
+          "Aspect ranking",
+          "Tie-break"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B011",
+      "source_order": 11,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          247
+        ],
+        "printed_pages": [
+          213
+        ],
+        "chapter": "XXXV",
+        "section": "Retrospective comment on direction advice",
+        "passage_anchor": "I remember not, that any ever repented",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png"
+        ],
+        "source_first_note_items": [
+          11
+        ]
+      },
+      "evidence": {
+        "kind": "aggregate_testimonial_claim",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "context": "After describing sign-indicated relocation advice"
+      },
+      "outputs": [
+        {
+          "target": "Evidence classification",
+          "value": "Lilly recalls no regret and says many later returned thanks and rewards",
+          "modality": "Author retrospective memory report"
+        }
+      ],
+      "qualifications": [
+        "No case count, denominator, dates, charts, comparison group, prospective record or independent confirmation supplied in assigned span. Not evidence of measured prediction accuracy."
+      ],
+      "related_rules": [
+        {
+          "id": "B010",
+          "relation": "Attributed retrospective support only"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B017",
+      "source_order": 17,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          248
+        ],
+        "printed_pages": [
+          214
+        ],
+        "chapter": "XXXVI",
+        "section": "Basic favourable waterwork combination",
+        "passage_anchor": "for if you find Saturn Direct, swift in Motion, Orientall",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+        ],
+        "source_first_note_items": [
+          15
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Saturn direct",
+          "Saturn swift in motion",
+          "Saturn oriental",
+          {
+            "any": [
+              "Moon in house 3",
+              "Moon in house 11",
+              "Moon in house 5"
+            ]
+          },
+          "Without any good or evil aspect to Mars"
+        ],
+        "unresolved_scope": "Nearest grammatical subject of no-Mars-aspect is Moon; Saturn-and-Moon scope not conclusively excluded"
+      },
+      "outputs": [
+        {
+          "target": "Waterwork success",
+          "value": "Good conclusion, prosperity/credit to querent and easy performance",
+          "modality": "An argument for success"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Saturn directness/speed/orientality",
+          "Moon house",
+          "Mars aspects"
+        ],
+        "missing_precision": [
+          "Swift threshold",
+          "Oriental implementation",
+          "Aspect/orb policy"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Subject of no aspect to Mars"
+      ]
+    },
+    {
+      "local_id": "B023",
+      "source_order": 23,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          249
+        ],
+        "printed_pages": [
+          215
+        ],
+        "chapter": "XXXVII",
+        "section": "Treasure-question routing preamble",
+        "passage_anchor": "The resolution of this Question is various",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-249.png"
+        ],
+        "source_first_note_items": [
+          22
+        ]
+      },
+      "evidence": {
+        "kind": "generic_method_instruction",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "required_question_features": [
+          "Nature/quality of thing: money, plate, jewels, movable goods, long-hidden unknown treasure or minerals/mine",
+          "Whether querent hid it",
+          "Whose it was",
+          "Hider relation to querent",
+          "Whether asking generally without knowing when, where, whose or what"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Rule-family admission",
+          "value": "Resolution varies with proposal, object nature and prior knowledge",
+          "modality": "Method/prior-information requirement"
+        }
+      ],
+      "qualifications": [
+        "Keep prior-known object/ownership facts distinct from later chart-derived claims. No named historical enquiry is given."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "question metadata"
+        ],
+        "missing_precision": [
+          "No classifier beyond listed distinctions"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B024",
+      "source_order": 24,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          249
+        ],
+        "printed_pages": [
+          215
+        ],
+        "chapter": "XXXVII",
+        "section": "Own goods hidden and forgotten",
+        "passage_anchor": "If the Querent did hide his owne Plate, Money or Jewels",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-249.png"
+        ],
+        "source_first_note_items": [
+          23
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [
+          "Question proposal/object/ownership/context as explicitly specified in condition_structure"
+        ],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Querent hid own plate/money/jewels in own house or ground",
+          "Forgot where",
+          "Lord 2 angular",
+          "Lord 4 angular"
+        ],
+        "inspection": [
+          "Sign/lord of house 2; sign and quarter occupied by lord 2",
+          "Sign/lord of house 4 and indicated quarters"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Own hidden goods status",
+          "value": "Still in house/ground, not removed",
+          "modality": "Source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "ownership/prior concealment",
+          "house lords",
+          "angularity",
+          "sign quarters"
+        ],
+        "missing_precision": [
+          "Angularity tolerance",
+          "Sign-direction table"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B029",
+      "source_order": 29,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Dignified Saturn/Mars presence",
+        "passage_anchor": "either Saturn or Mars in any of their owne houses",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          27
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          {
+            "all": [
+              "Saturn in own domicile",
+              "Saturn direct",
+              "Saturn without impediment",
+              "Saturn in house 4"
+            ]
+          },
+          {
+            "all": [
+              "Mars in own domicile",
+              "Mars direct",
+              "Mars without impediment",
+              "Mars in house 4"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure presence",
+          "value": "Treasure there also",
+          "modality": "source assertion"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B031",
+          "relation": "Author dignity reservation supports noncategorical malefic treatment"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "domicile dignity",
+          "directness",
+          "impediment",
+          "house placement"
+        ],
+        "missing_precision": [
+          "Impediment specification"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B030",
+      "source_order": 30,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Venus Taurus presence",
+        "passage_anchor": "if you find Venus in Taurus in the fourth",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          27
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Venus in Taurus",
+          "Venus in house 4",
+          "Venus not under misfortune"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure presence",
+          "value": "Probably treasure there",
+          "modality": "Probability"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "Venus sign/house",
+          "misfortune condition"
+        ],
+        "missing_precision": [
+          "Misfortune threshold"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B031",
+      "source_order": 31,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Dignified significator reservation",
+        "passage_anchor": "there is no Planet unfortunate, when he is in his owne house",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          27
+        ]
+      },
+      "evidence": {
+        "kind": "qualification_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Planet is a significator",
+          {
+            "any": [
+              "Planet in own domicile",
+              "Planet essentially dignified"
+            ]
+          }
+        ],
+        "grammatical_note": "Final and a Significator most naturally qualifies dignity claim; exact grouping left visible"
+      },
+      "outputs": [
+        {
+          "target": "Fortune/infortune classification",
+          "value": "Do not call such a significator unfortunate solely from planet identity",
+          "modality": "Author general reservation"
+        }
+      ],
+      "qualifications": [
+        "Scope is source claim. No new essential-dignity table introduced."
+      ],
+      "related_rules": [
+        {
+          "id": "B029",
+          "relation": "Qualifies treatment of Saturn/Mars as infortunes"
+        },
+        {
+          "id": "B030",
+          "relation": "Follows the Venus example"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "significator role",
+          "essential dignity"
+        ],
+        "missing_precision": [
+          "Dignity categories and weights"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B032",
+      "source_order": 32,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Nature/quality significator selection",
+        "passage_anchor": "If you are ignorant of the nature and quality of the Treasure",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          28
+        ]
+      },
+      "evidence": {
+        "kind": "generic_method_instruction",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "question": "Unknown treasure nature/quality",
+        "branches": [
+          {
+            "if": "Treasure significator is lord 7",
+            "then": "Examine its nature and property"
+          },
+          {
+            "if": "Treasure significator is not lord 7",
+            "then": "Join lord 7 to it in judgement and mix their natures"
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature and quality",
+          "value": "Choose single lord-7 nature or mixture as specified",
+          "modality": "Method instruction"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B033",
+          "relation": "Following fallback potentially limits or conflicts with mixture"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "treasure significator",
+          "lord 7",
+          "planet correspondence"
+        ],
+        "missing_precision": [
+          "Initial treasure-significator selection if multiple indications",
+          "Mixture weights"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B033",
+      "source_order": 33,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          250
+        ],
+        "printed_pages": [
+          216
+        ],
+        "chapter": "XXXVII",
+        "section": "Following absolute lord-seven fallback",
+        "passage_anchor": "But if that Planet ... be not Lord of the 7th or have affinity with him",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+        ],
+        "source_first_note_items": [
+          29
+        ]
+      },
+      "evidence": {
+        "kind": "generic_method_instruction",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "source_condition": "Treasure significator be not Lord of the 7th or have affinity with him",
+        "plausible_readings": [
+          "Neither lord 7 nor having affinity with lord 7",
+          "Literal negation applies only to not lord 7; positive affinity alternative"
+        ],
+        "canonical_boolean": "Unresolved; do not force a contradiction away"
+      },
+      "outputs": [
+        {
+          "target": "Treasure nature/species significator",
+          "value": "Take lord 7 absolutely",
+          "modality": "Method instruction with unresolved grammatical boundary"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B032",
+          "relation": "Adjacent mixture instruction retained; no harmonization imposed"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "lord 7",
+          "treasure significator affinity"
+        ],
+        "missing_precision": [
+          "Affinity definition",
+          "Precedence against preceding mixture"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": [
+        "Scope of not and or have affinity",
+        "Fallback versus mixture precedence"
+      ]
+    },
+    {
+      "local_id": "B048",
+      "source_order": 48,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "If the Querent shall obtaine the Treasure hid",
+        "passage_anchor": "If the Planet who signifies the Treasure or thing hid, doth apply",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          35
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "any": [
+          "Treasure significator applies TO lord 1",
+          "Mutual reception between treasure significator and lord 1",
+          "Translation of light and nature between them",
+          "Collation of light and nature between them"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Acquisition",
+          "value": "Probably querent obtains sought thing",
+          "modality": "Probable"
+        }
+      ],
+      "qualifications": [
+        "Keep application direction. Original word is collation; a modern collection-of-light normalization would require explicit justification."
+      ],
+      "related_rules": [
+        {
+          "id": "B049",
+          "relation": "Hard-aspect qualification"
+        },
+        {
+          "id": "B050",
+          "relation": "Conjunction preference"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "directional application treasure -> lord 1",
+          "mutual reception",
+          "translation",
+          "collation"
+        ],
+        "missing_precision": [
+          "Aspect/orb/reception/light-transfer conventions"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B049",
+      "source_order": 49,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          251
+        ],
+        "printed_pages": [
+          217
+        ],
+        "chapter": "XXXVII",
+        "section": "Hard aspect qualification",
+        "passage_anchor": "if the aspect be by square or opposition",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+        ],
+        "source_first_note_items": [
+          36
+        ]
+      },
+      "evidence": {
+        "kind": "generic_horary_doctrine",
+        "attribution": "Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "all": [
+          "Prior acquisition aspect operates",
+          {
+            "any": [
+              "Square",
+              "Opposition"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Difficulty of acquisition",
+          "value": "Not without difficulty and much labour",
+          "modality": "Qualification of acquisition, not denial"
+        }
+      ],
+      "qualifications": [],
+      "related_rules": [
+        {
+          "id": "B048",
+          "relation": "Does not negate prior probable acquisition"
+        }
+      ],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "aspect type"
+        ],
+        "missing_precision": [],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    },
+    {
+      "local_id": "B060",
+      "source_order": 60,
+      "source": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "pdf_pages": [
+          252
+        ],
+        "printed_pages": [
+          218
+        ],
+        "chapter": "XXXVII",
+        "section": "Alkindus ordinal depth",
+        "passage_anchor": "whether it lye deep in the earth or not",
+        "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+        "original_image_paths": [
+          "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+        ],
+        "source_first_note_items": [
+          43
+        ]
+      },
+      "evidence": {
+        "kind": "attributed_doctrine",
+        "attribution": "Alkindus, reported by Lilly",
+        "historical_case": false,
+        "dated_chart_supplied": false,
+        "prior_known_inputs": [],
+        "reported_case_confirmation": null,
+        "empirical_validation_status": "Not established by this source extraction"
+      },
+      "condition_structure": {
+        "subject": "Treasure significator degree within sign",
+        "branches": [
+          {
+            "if": "Newly entered sign",
+            "then": "Shallow, near upper earth"
+          },
+          {
+            "if": "Further through sign",
+            "then": "Deeper"
+          }
+        ],
+        "inspection": [
+          "Beginning",
+          "Middle",
+          "Near end"
+        ]
+      },
+      "outputs": [
+        {
+          "target": "Depth category",
+          "value": "Ordinal increase in depth with progress through sign",
+          "modality": "Attributed qualitative rule"
+        }
+      ],
+      "qualifications": [
+        "Do not convert degrees to feet/metres or impose decans/thirds."
+      ],
+      "related_rules": [],
+      "calculation": {
+        "chart_calculated": false,
+        "settings_ref": "CALCULATION_LIMITS",
+        "required_features": [
+          "sign-relative longitude"
+        ],
+        "missing_precision": [
+          "Beginning/middle/end degree cutoffs",
+          "Depth units",
+          "Linear or nonlinear conversion",
+          "Maximum depth"
+        ],
+        "operationalization_status": "Historical candidate only; no predictive application authorized"
+      },
+      "unresolved_readings": []
+    }
+  ],
+  "copy_verification": "Each full retained record structurally equals its source JSON object; canonical hashes included."
+}

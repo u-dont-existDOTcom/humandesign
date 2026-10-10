@@ -1,0 +1,274 @@
+{
+  "schema": "B02i_checker_evidence_review_receipt_v1",
+  "reviewer": "/root/b02i_final_claim_check",
+  "created_utc": "2026-10-10T05:24:34.983938+00:00",
+  "source_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_first_notes_sha256": "a50894396c2364929839d914401ca99972d8b199590dcd19e14be0ae26a0c6be",
+  "source_first_receipt_sha256": "d0ceed0546b8e0ba0d62e6c54da0145e9feba51d41fe1b3ab89fb253fee76f05",
+  "original_source_span": {
+    "whole_pages": [
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255
+    ],
+    "final_partial_page": 256,
+    "stop": "fourth-house final paragraph above divider"
+  },
+  "additional_direct_original_pages": [
+    67,
+    177,
+    178,
+    253,
+    888
+  ],
+  "candidate_files": [
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/ARITHMETIC_CHECKS.json",
+      "sha256": "59be16d9d17012ed912fb5bd713cf3e8b523b91b3a2c60e3552d1b77f868cf16",
+      "bytes": 16352
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/AUDIT_REPORT.md",
+      "sha256": "9b1b6d5c3ed53aee4d584215b3443d356e8b65fdca8f06820a79605e36aaab44",
+      "bytes": 21751
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/CLAIM_LEDGER.json",
+      "sha256": "dc2dfc48e7723a1782e609d3a26bfe30a0242737a2a2bfb7b4e0ee2d5939f442",
+      "bytes": 36026
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/CROSS_SOURCE_COMPARISONS.json",
+      "sha256": "a0d5a613d9c2f72f9b9831e67081cf095c9bd1660cfaa462ced2e98b048b534b",
+      "bytes": 74826
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/HISTORICAL_CASES.json",
+      "sha256": "fc4c695709197c6e57680472dfe3bb2e2d74c1dae97acfaf147bdc05affde18a",
+      "bytes": 7471
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+      "sha256": "922d920208b9360b91cc2c040342dc4b85380d18ea8f2840310ca78a18668ba4",
+      "bytes": 4332
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
+      "sha256": "92deb60f6e6a7073f1a80491dac2364961a640fa1fb2eb6f3170c35286ab6474",
+      "bytes": 9402
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/QUERY_REFERENCES.json",
+      "sha256": "2784c50c9da78e146e762e156010f8c9a8caae6a5c63257e5e745e3659c4bde7",
+      "bytes": 4143
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/READING_RECEIPT.json",
+      "sha256": "9eff67358c8ee5165bb5b3ff3382963b45991c472f432359711c4c9c873e1c4d",
+      "bytes": 5152
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/RETAINED_SOURCE_EXCERPTS.json",
+      "sha256": "f53ad5b8ddf953c0f4e820c77e064139952ef0c0c4bcb8720b236dbad412f488",
+      "bytes": 104276
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/RULES.json",
+      "sha256": "1980d58b0b650abfa1f6e78fcc0e9d4b8cba968dc6377c171fccebbc60c812d8",
+      "bytes": 655327
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/SECTION_COVERAGE.json",
+      "sha256": "bc56d29c85fc9e588c5452c328f11465c555d347dd0bae65560ce4b2e3d05a5d",
+      "bytes": 14439
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/TEST_B02i.txt",
+      "sha256": "7b4bdbb1fc9029941a4de818902e6501df0d9957da80d96a3540db2931fccd39",
+      "bytes": 5509
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/TEST_RUN_SUMMARY.json",
+      "sha256": "bdf44512f0cdda94c8438a663fb0b2b5039a4eea854b226bff560cd17aa80e69",
+      "bytes": 1322
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/TEST_methodology_environment_attempt.txt",
+      "sha256": "95a794a21867b6031bfa33bf67935ea7672af47968f74165f3036eb497118199",
+      "bytes": 248
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/TEST_retained_B02f.txt",
+      "sha256": "9213137b0488acdf6cb5e38a4c3e0e21ccf73cc7ff9623c195651b675c7d6d1a",
+      "bytes": 4448
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/TEST_retained_B02h.txt",
+      "sha256": "9a02c0e00ed37479705916fb64e70e29cae6f2a04c2e496b8211cb76bbb4e00b",
+      "bytes": 4268
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/TEST_retained_methodology.txt",
+      "sha256": "f940bc5c9816e9b273abcaef27b1eb46af1196c87072fbef97f89a7f819e20d3",
+      "bytes": 312
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/TEXT_IMAGE_CHECKS.json",
+      "sha256": "4a01b240d2eea2e68a61c928137027b4e765fef69142116fe5b68f857cba3737",
+      "bytes": 1795
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/UNRESOLVED.json",
+      "sha256": "746817464082e05525c351638e37095d0b8d32b6a902c34086c6b740abbb37ef",
+      "bytes": 38107
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/WORKED_NUMERIC_TABLES.json",
+      "sha256": "aa0e7cf9fe4f3e6e88fcf6622f14c0e1fe675771728273ac859a047bb1238705",
+      "bytes": 40743
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/lilly_fourth_house_arithmetic.py",
+      "sha256": "2d4074d253ce98636daf3ff9e94018fd044e9dfc6af995254180a7cf44a6b8b3",
+      "bytes": 15537
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/lilly_fourth_house_reference.py",
+      "sha256": "0bd2865b13749e4597e446152738823cd443749a7ead4420f66749b16230327f",
+      "bytes": 7089
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/run_verification.py",
+      "sha256": "9311b4f4139fd1bef7e0c3fc641f48ea1b371f86b96c1a8c6a3649ab44547e61",
+      "bytes": 3306
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/test_lilly_fourth_house_arithmetic.py",
+      "sha256": "efd1aa7b594ef35d935b5caa9550530d52062f801072e1b9345f5b2631b4de18",
+      "bytes": 8029
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/test_lilly_fourth_house_audit.py",
+      "sha256": "83b5a995be27d8f9ecad3356db584b7db279d214cdc8644cb67f82f99b04a5fe",
+      "bytes": 5116
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/candidate_snapshot/test_lilly_fourth_house_reference.py",
+      "sha256": "dd116f1060951445ece7a8e25a5e426d14bb7ab5c0d012e7c7aed7decd61eba5",
+      "bytes": 4375
+    }
+  ],
+  "post_freeze_source_artifacts": [
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/CHECKER_ARITHMETIC.json",
+      "sha256": "b194ec0715eedcdaf849fa0b7d55b5cbea40a534c1aa9bf199fa237e24394a9d",
+      "bytes": 1534
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/INFORMATION_BOUNDARY_UPDATE.md",
+      "sha256": "aea167a31d6c15d3a102738e078c8e94dfbbd43c6c4932ceb79c6f480c4426f9",
+      "bytes": 2413
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/POST_FREEZE_SOURCE_READS.md",
+      "sha256": "17118ce3057834a823824ad1b8f0d753260ad54b9127560826f605e430b87338",
+      "bytes": 3899
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/PRESERVATION_METADATA_CHECK.json",
+      "sha256": "4819df94a48f87c16db6e9e0ab4df626cfe438c76fbebf61625067e3b4446f12",
+      "bytes": 6377
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p177-source.png",
+      "sha256": "2c8409f68ea641795e647d28e172737af50a54d09fa60f44b902e6358e9f5c4d",
+      "bytes": 1746129
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p178-source.png",
+      "sha256": "18789094fdcace2de48138e856358c4058e2afe4a8fe990e5fd52d3aa9468f9d",
+      "bytes": 1951018
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p253-chart-source-crop.png",
+      "sha256": "6cdbd8fd12be231cb9064a358e1df637cfc4454821cbb6b68bc992f0bc2f38ca",
+      "bytes": 633270
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p253-jupiter-rotated-reading-aid.png",
+      "sha256": "720871ed80f6074788ad24b0a3b2d3bf1813ff8084ea788c82cc0665984ef55a",
+      "bytes": 406583
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p253-jupiter-source-crop.png",
+      "sha256": "eeb03432297e33bd4af7b91db480ed6ef209987322d3f647cf9d2bc8f500fd59",
+      "bytes": 160299
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p253-moon-mars-rotated-reading-aid.png",
+      "sha256": "267c1589cd572d17b13cb1963f5330b33f50ab0adccf698e255e168a5fc6fd17",
+      "bytes": 508097
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p253-moon-mars-source-crop.png",
+      "sha256": "7568d7eb79cd025b6d33121b59bf8a8591add009c09c77dc668b83099ca5c53c",
+      "bytes": 223455
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p253-saturn-rotated-reading-aid.png",
+      "sha256": "51312a6c65900c8054155fb6af0361c17dbd7197a4223a89a73a44132afe37b8",
+      "bytes": 406694
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p253-saturn-source-crop.png",
+      "sha256": "bceea35082312ee1dec51cb5b97738eea306760591d2e2777151426adbe9bdf9",
+      "bytes": 167076
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p253-sun-venus-rotated-reading-aid.png",
+      "sha256": "aa530bd2db2b62b0420bb107876a554e6e7d6f027b55caa23d2c2b6b6da38838",
+      "bytes": 451546
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p253-sun-venus-source-crop.png",
+      "sha256": "49a5439e70fc6e69190f98ec8554a240d2028c9e0cf65e8a607413c3d0b1b748",
+      "bytes": 220416
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p67-source.png",
+      "sha256": "dcd89b8e9a14b639a1daeda45a56559208cb32b0c15d67a78d49f7b3b8435fbd",
+      "bytes": 1587404
+    },
+    {
+      "path": "/workspace/scratch/bd2460f96de0/b02i-final-check/p888-source.png",
+      "sha256": "1cecf7707581592d00f589509c0e91854710dc9045a93f180b4751ed8012f287",
+      "bytes": 1759520
+    }
+  ],
+  "limits": [
+    "Source-first notes were frozen before report/candidate exposure. After freeze, collaboration.list_agents unexpectedly returned completed workers' final summaries, exposing counts, source issues, arithmetic and test results. This was disclosed promptly. Parent reassigned this work to qualified source/claim checking and assigned a separate fresh context to the blind final gate.",
+    "No producer reconciliation, underlying other-reader notes/verdicts, repair history, prior chats or participant records were semantically opened. Permitted candidate data and comparison artifacts contain provenance references and quoted/normalized source evidence; these were evaluated as targets, not adopted as verdict authority.",
+    "A commentary immediately before file freeze disclosed the two minor precision findings and suggested qualifications. No producer response, repair instructions or rationale was received before freezing these files. Therefore the strict no-repair-discussion-before-freeze sequence was not fully met; this output must not be presented as the untouched blind final gate.",
+    "Same-model source checking is not cross-family checking or empirical evidence. The historical source does not independently verify its narrated events.",
+    "Process chronology/no-new-OCR and no-new-package statements are supported within receipts/logs and observable worktree scope, not independently witnessed cognitive/environment history.",
+    "No whole111-test rerun was performed by this checker. The actual retained logs were inspected and their hashes/counts verified; independent static arithmetic was recomputed separately.",
+    "The diagnosis evaluates the exact initial frozen report/ledger hashes, not future revisions. Other permitted evidence is frozen in candidate_snapshot; later worktree changes do not silently replace it."
+  ]
+}

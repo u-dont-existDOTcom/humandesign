@@ -1,0 +1,49 @@
+{
+  "schema": "b02i.comparison-precision-check.v1",
+  "stage": "NARROW_POST_ADDENDUM_PRECISION_CHECK",
+  "target": {
+    "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02i/CROSS_SOURCE_COMPARISONS.json",
+    "comparison_id": "B02i-CMP06",
+    "json_pointer": "/comparisons/5/conditions_that_must_survive/1",
+    "old_sha256": "a0d5a613d9c2f72f9b9831e67081cf095c9bd1660cfaa462ced2e98b048b534b",
+    "old_hash_basis": "Frozen first-diagnosis receipt; ADDENDUM_CHECKS recorded equality to that version at its earlier check.",
+    "current_sha256": "fabfafe0a4652d0864f7f4290e4dd330382f39bdfcab94981096c3ff7392f8b6",
+    "current_sentence": "PDF238 uses the greater number of testimonies across its eight specified sign slots; a strict more-than-half threshold and tie resolution are not specified."
+  },
+  "producer_reported_change": "Replaced the majority-across-eight terminology with greater-number wording and explicit absence of a strict more-than-half threshold or tie rule. The producer reports a sentence-only edit.",
+  "scope": "Inspect the current CMP06 sentence and its local comparison context against this evaluator’s already-completed original PDF238 reading and previously checked candidate tally behavior. Confirm current file identity, stable report/ledger hashes and unchanged frozen review files. No full-file old/new semantic diff or other comparison claim review was performed.",
+  "result": "PASS",
+  "reason": "The source uses the greater number of testimonies across eight specified slots. The already-read local passage supplies neither a strict more-than-half requirement nor a tie-resolution rule; the previously checked tally likewise preserves an undefined tie. The revised sentence is more precise than majority, which could imply a strict threshold. It introduces no unsupported numerical rule.",
+  "source_basis": {
+    "original_pdf_page": 238,
+    "printed_page": 204,
+    "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "prior_frozen_claims": [
+      "CL012",
+      "CL014"
+    ],
+    "new_original_page_read": false
+  },
+  "temporal_qualification": "The CROSS_SOURCE_COMPARISONS.json unchanged=true entry in ADDENDUM_CHECKS.json, and the addendum’s statement that all 25 companion files were unchanged, describe the earlier check against old hash a0d5a613d9c2f72f9b9831e67081cf095c9bd1660cfaa462ced2e98b048b534b. They do not describe the comparison file after this separately recorded producer precision edit. The earlier files remain frozen and are not retroactively rewritten.",
+  "report_and_ledger_hashes": {
+    "AUDIT_REPORT.md": "863d14ba22da942f689d1e330e40997d1c7a2d7bcce4d437a4f9c1a6caa9ee27",
+    "CLAIM_LEDGER.json": "8290dd7a5f6bb17bd4414fceadf993a4ae8150af3a13df2f8af46a9291db036c"
+  },
+  "frozen_files_hashes_verified_unchanged": {
+    "DIAGNOSIS_FIRST.md": "135eb79e2961a71abb3e412ee140298b2b552329e7ab9bb606eba4fa745f05af",
+    "DIAGNOSIS_FIRST.json": "12a7bdd1a3c066d0bc364fa7f45ec298399fb87dec4ee925e46574e0d3e87afd",
+    "FREEZE_RECEIPT.json": "b32b0e53e964b288078ac8dbbe2ee0bb0545bad57a53fa1ecbb55520b200e5c9",
+    "ADDENDUM.md": "e652e42c8340f177cf1d858f5da317c00a12ed8ae8de57d08f5d7d3612da210e",
+    "ADDENDUM.json": "3f5f71e0a5798b0fd591bd4b0adcbe3ca8f6dfe411e372e597cd9718d1ab606e",
+    "ADDENDUM_CHECKS.json": "074ea54ee6507512a455e567b271b712ab3440de29fb993a9d75f9b3a81cbf4f"
+  },
+  "gate_effect": "No other gate verdict is reopened. This bounded wording check identifies no new source/report blocker. Publication, archive and owner-copy gates remain as stated in the prior addendum.",
+  "budget": {
+    "source_page_rereads": 0,
+    "test_suite_runs": 0,
+    "clock_reads": 0,
+    "history_reviews": 0,
+    "production_file_edits": 0,
+    "frozen_review_file_edits": 0
+  }
+}

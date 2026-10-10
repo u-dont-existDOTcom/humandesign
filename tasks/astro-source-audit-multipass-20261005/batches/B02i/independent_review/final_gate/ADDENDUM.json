@@ -1,0 +1,154 @@
+{
+  "schema": "b02i.final-independent-claim-addendum.v1",
+  "stage": "ONE_FOCUSED_POST_FREEZE_ADDENDUM",
+  "targets": {
+    "AUDIT_REPORT.md": {
+      "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02i/AUDIT_REPORT.md",
+      "sha256": "863d14ba22da942f689d1e330e40997d1c7a2d7bcce4d437a4f9c1a6caa9ee27"
+    },
+    "CLAIM_LEDGER.json": {
+      "path": "/workspace/scratch/bd2460f96de0/humandesign/tasks/astro-source-audit-multipass-20261005/batches/B02i/CLAIM_LEDGER.json",
+      "sha256": "8290dd7a5f6bb17bd4414fceadf993a4ae8150af3a13df2f8af46a9291db036c"
+    }
+  },
+  "initial_diagnosis_preserved": {
+    "DIAGNOSIS_FIRST.md": "135eb79e2961a71abb3e412ee140298b2b552329e7ab9bb606eba4fa745f05af",
+    "DIAGNOSIS_FIRST.json": "12a7bdd1a3c066d0bc364fa7f45ec298399fb87dec4ee925e46574e0d3e87afd",
+    "FREEZE_RECEIPT.json": "b32b0e53e964b288078ac8dbbe2ee0bb0545bad57a53fa1ecbb55520b200e5c9"
+  },
+  "outcome": {
+    "source_or_report_blocker_remaining": false,
+    "finding": "The identified wording and anchor defects are repaired. The process and preservation claims now match their stated evidential basis. No remaining source/report blocker is identified for these exact hashes.",
+    "ledger_claim_count": 60,
+    "focused_claims_checked": 12,
+    "focused_dispositions": {
+      "PASS": 12,
+      "FAIL": 0,
+      "UNRESOLVED": 0
+    },
+    "unchanged_claim_dispositions_carried_forward": 48,
+    "scope_note": "Passing a faithfully limited claim does not resolve its underlying historical or textual uncertainties. This is a source/report diagnostic conclusion, not publication, delivery, merge or whole-project acceptance."
+  },
+  "claims": [
+    {
+      "id": "CL006",
+      "claim": "READING_RECEIPT and reader freeze receipts document the earlier image-reading scope, existing-text/no-new-OCR route and source-note-before-candidate sequence. These are recorded process provenance; current source and image identities are checked separately.",
+      "status": "PASS",
+      "reason": "PASS as attributed process provenance. The named reading and three reader-freeze receipts state the reading scope, supplementary-text route and notes-before-candidates sequence. The revised claim distinguishes those declarations from separately verified current identities; it no longer asks receipts to prove an independently reconstructed access history."
+    },
+    {
+      "id": "CL014",
+      "claim": "No exact azimuths or tie-break are supplied. The reference tally exposes repeated planetary roles when body identifiers are supplied; it does not infer those identities from sign-only inputs. Slots are not treated as independent evidence.",
+      "status": "PASS",
+      "reason": "PASS. Both report passages and the ledger now require body identifiers for repeated-body visibility and expressly distinguish sign-only input. This matches the unchanged implementation and the frozen bounded reproduction; F01 is repaired."
+    },
+    {
+      "id": "CL030",
+      "claim": "Treasure questions distinguish own hidden goods, owner/relation, unidentified treasure and specified mineral; coal specified in question cannot be treated as chart-discovered identity.",
+      "status": "PASS",
+      "reason": "PASS. The unchanged coal inference now has PDF251 and R1107 in its ledger anchors. A01 is repaired for this claim."
+    },
+    {
+      "id": "CL036",
+      "claim": "Negotiation had many meetings and£530noabatement; rival and seller daughter are episodes in same enquiry; margin places rival after beginning/beforeconclusion.",
+      "status": "PASS",
+      "reason": "PASS. PDF255 is now present for the seller-daughter episode. A01 is repaired for this claim."
+    },
+    {
+      "id": "CL052",
+      "claim": "The saved environment attempt reports pytest missing from the default path. The successful log and runner use the named dependency directory through PYTHONPATH. The inspected runner contains no installation or model-fitting operation.",
+      "status": "PASS",
+      "reason": "PASS. The claim is limited to the saved environment log, successful PYTHONPATH route and absence of install/model-fitting operations in the inspected runner. Those files are unchanged from the first check. Whole-turn installation history is no longer asserted."
+    },
+    {
+      "id": "CL054",
+      "claim": "The batch has twelve retained Lilly comparisons and29 full retained-record copies, not twelve independent-source confirmations. The Ptolemy index reports1066 retained records. The documented reading scope is Lilly; repository preservation is checked against the prior published base.",
+      "status": "PASS",
+      "reason": "PASS. The twelve comparisons, 29 retained copies and Ptolemy count remain supported. Reading scope is now explicitly documentary, and repository preservation is tied to the named comparison; a universal no-access claim is not asserted."
+    },
+    {
+      "id": "CL055",
+      "claim": "The Git comparison against prior published B02h base0cc8c9b627d9135c56c3208dc3d155953a58b18e confines repository changes to B02i, the Lilly index and the new dated state. Earlier source/model/freeze files are preserved within that comparison. The remaining source, formalization and predictive-evaluation work stays open.",
+      "status": "PASS",
+      "reason": "PASS within the named repository comparison. The fresh path inventory has no change outside the allowlist; all eight prior Lilly batch-index entries remain equal, and all five targeted protected hashes match. This does not extend to external or ignored files, earlier transient states, cognitive activity, or later publication."
+    },
+    {
+      "id": "CL056",
+      "claim": "The property-success passage explicitly identifies the fourth mundane house; the report now presents this as a paraphrase, not a shortened direct quotation.",
+      "status": "PASS",
+      "reason": "PASS; maps ADD001. The report now paraphrases the explicitly identified fourth mundane house without the shortened quotation. The original semantic finding remains unchanged; F02 is repaired."
+    },
+    {
+      "id": "CL057",
+      "claim": "The later rival does not itself contradict the statement of no other purchaser at the original moment, because the margin places the rival after beginning and before conclusion.",
+      "status": "PASS",
+      "reason": "PASS; maps ADD002. The previously supported temporal inference is now in the ledger with the original-question and later-rival anchors. It does not prove independently that no earlier rival existed."
+    },
+    {
+      "id": "CL058",
+      "claim": "The active contract requires separate completion gates and receipts for publication and owner delivery. This source report does not assert completed transport.",
+      "status": "PASS",
+      "reason": "PASS; maps ADD003. ACTIVE_CONTRACT requires publication and owner-delivery gates with actual readback receipts. The revised claim describes that requirement and does not assert transport completion. Those later gates remain outside this addendum."
+    },
+    {
+      "id": "CL059",
+      "claim": "Source-first sequence and producer reconciliation are attributed to the reader and producer receipts; original frozen notes and raw candidates are retained in the batch, with actual byte-preservation tests in the saved log.",
+      "status": "PASS",
+      "reason": "PASS as attributed process provenance; maps ADD004. Reader and producer receipts document their sequence and reconciliation. The three note files and three raw candidate files exist; the unchanged saved test log and inspected tests support recorded byte-preservation checks. Raw contents were not opened, and access chronology was not independently reconstructed."
+    },
+    {
+      "id": "CL060",
+      "claim": "A separate fresh-context final checker assessed the exact initial report and55-claim ledger. Its frozen diagnosis discloses embedded process metadata and is separate from the additional qualified source check. Neither is claimed as a blind second chart transcription.",
+      "status": "PASS",
+      "reason": "PASS; maps ADD005. My frozen diagnosis and receipt verify the exact initial 55-claim check and disclosed exposure. The revised report and reconciliation distinguish it from the additional qualified check and disclaim blind second chart transcription. This addendum does not independently reconstruct the other checker’s complete history."
+    }
+  ],
+  "resolved_findings": [
+    "F01 optional body-identifier qualification",
+    "F02 quotation fidelity",
+    "A01 two missing ledger anchors",
+    "L01 evidential overreach resolved through explicit attribution or bounded comparison, not through universal history proof"
+  ],
+  "retained_boundaries": [
+    "The 50 preserved source/implementation/evidence limits remain; the cause of the Fortune discrepancy remains unresolved.",
+    "Earlier source records remain retained transcriptions; no earlier original pages were reopened.",
+    "Receipt chronology remains recorded provenance rather than independent access-history proof.",
+    "The preservation comparison is the current tracked repository and nonignored untracked inventory against the named base; no external-file, ignored-file, transient-history or participant-content investigation was performed.",
+    "No historical ephemeris, independent event corroboration or predictive accuracy was established.",
+    "Actual remote publication, archive execution and final owner-copy delivery remain separate later gates for the producer."
+  ],
+  "evidence_summary": {
+    "base_commit": "0cc8c9b627d9135c56c3208dc3d155953a58b18e",
+    "tracked_changed_paths": 33,
+    "nonignored_untracked_paths": 74,
+    "outside_allowlist": [],
+    "prior_batch_index_entries_equal": 8,
+    "protected_spot_hashes_verified": 5,
+    "unchanged_initial_evidence_files": 25,
+    "source_records_coordinates_helpers_and_saved_logs_unchanged": true,
+    "all_60_claim_file_anchors_exist": true,
+    "mechanical_receipt": "ADDENDUM_CHECKS.json",
+    "mechanical_receipt_sha256": "074ea54ee6507512a455e567b271b712ab3440de29fb993a9d75f9b3a81cbf4f"
+  },
+  "post_freeze_information_exposure": "After the initial diagnosis froze, I read the explicitly authorized reader receipts, PRODUCER_RECONCILIATION.json and REVIEW_RECONCILIATION.json. The latter includes summaries of the additional qualified checker. They were not consumed before the first diagnosis and were not used to replace its source findings. Raw notes/candidates were checked for existence only; no participant/model/freeze contents or broad Git history were opened.",
+  "budget": {
+    "new_source_page_reads": 0,
+    "new_test_suite_runs": 0,
+    "new_clock_reads": 0,
+    "broad_history_reviews": 0,
+    "git_path_mutations": 0,
+    "publication_actions": 0
+  },
+  "evidence_hashes": {
+    "AUDIT_REPORT.md": "863d14ba22da942f689d1e330e40997d1c7a2d7bcce4d437a4f9c1a6caa9ee27",
+    "CLAIM_LEDGER.json": "8290dd7a5f6bb17bd4414fceadf993a4ae8150af3a13df2f8af46a9291db036c",
+    "PRESERVATION_CHECKS.json": "4ae52de59a5acb74ad225c104535c863b4865e866937fa39bda21efe08f863bf",
+    "REVIEW_RECONCILIATION.json": "6919cdb75551d570f1f86703b95d48f2d3ce45104d35d4ece41b8670152746f4",
+    "PRODUCER_RECONCILIATION.json": "44a8a9cc4196f3346e08173ba53b7e2290a1209d38a8ab05568f0dc2dd391084",
+    "ACTIVE_CONTRACT.json": "4e02ff43a010b07eaa9944d2c5f1f2f107eea34091410765d1234dff560a9f6c",
+    "independent_review/source_a/READING_RECEIPT.json": "26a50a6d6322c208a2616ba52f6281d5181c4376851e3a1ec4d4b6d73a296827",
+    "independent_review/source_a/DRAFTING_RECEIPT.json": "a1560ea335dc1882ccd9ae255af7d1405ca5aaccadc61a080672813f41b5ce38",
+    "independent_review/source_b/SOURCE_FIRST_FREEZE.json": "fe94f3c3821a874ea7fa90ab9ea9bcfe77fef4db424cf6b5c2833db5838efd59",
+    "independent_review/worked_chart/SOURCE_FIRST_RECEIPT.json": "208387825f6dac49a4ddbf39136b2e84b2a208fb41d8e21a7606d8ca9e8132da"
+  }
+}

@@ -1,0 +1,546 @@
+{
+  "status": "STATIC_PRINTED_ARITHMETIC_ONLY",
+  "role": "calculation_implementation_helper_not_independent_evaluator",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_table_filename": "WORKED_NUMERIC_TABLES.json",
+  "source_table_sha256": "aa0e7cf9fe4f3e6e88fcf6622f14c0e1fe675771728273ac859a047bb1238705",
+  "source_notes_sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+  "retained_helper": "../B02f/lilly_presence_ship_reference.py",
+  "retained_helper_sha256": "d0172b7ed579bde0db063c315331ee54ee3fb878f98bbdfb0d1649b7af486664",
+  "chart_id": "CH01",
+  "source_positions": {
+    "H01": {
+      "entry_id": "CH01-H01",
+      "printed_coordinate": {
+        "sign": "Libra",
+        "sign_glyph": "♎",
+        "degree": 13,
+        "minute": 45
+      },
+      "raw_transcription": "♎ 13 : 45",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": 11625,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "H02": {
+      "entry_id": "CH01-H02",
+      "printed_coordinate": {
+        "sign": "Scorpio",
+        "sign_glyph": "♏",
+        "degree": 6,
+        "minute": 26
+      },
+      "raw_transcription": "♏ . 6 : 26",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": 12986,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "H03": {
+      "entry_id": "CH01-H03",
+      "printed_coordinate": {
+        "sign": "Sagittarius",
+        "sign_glyph": "♐",
+        "degree": 6,
+        "minute": 58
+      },
+      "raw_transcription": "♐ . 6 : 58",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": 14818,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "H04": {
+      "entry_id": "CH01-H04",
+      "printed_coordinate": {
+        "sign": "Capricorn",
+        "sign_glyph": "♑",
+        "degree": 18,
+        "minute": null
+      },
+      "raw_transcription": "♑ . 18",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": null,
+      "status": "WITHHELD_INCOMPLETE_SOURCE_COORDINATE",
+      "missing_fields": [
+        "minute"
+      ]
+    },
+    "H05": {
+      "entry_id": "CH01-H05",
+      "printed_coordinate": {
+        "sign": "Aquarius",
+        "sign_glyph": "♒",
+        "degree": 25,
+        "minute": 36
+      },
+      "raw_transcription": "♒ 25 . 36",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": 19536,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "H06": {
+      "entry_id": "CH01-H06",
+      "printed_coordinate": {
+        "sign": "Pisces",
+        "sign_glyph": "♓",
+        "degree": 22,
+        "minute": 15
+      },
+      "raw_transcription": "♓ 22 : 15",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": 21135,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "H07": {
+      "entry_id": "CH01-H07",
+      "printed_coordinate": {
+        "sign": "Aries",
+        "sign_glyph": "♈",
+        "degree": 13,
+        "minute": 45
+      },
+      "raw_transcription": "♈ 13 : 45",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": 825,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "H08": {
+      "entry_id": "CH01-H08",
+      "printed_coordinate": {
+        "sign": "Taurus",
+        "sign_glyph": "♉",
+        "degree": 6,
+        "minute": 26
+      },
+      "raw_transcription": "♉ 6 . 26",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": 2186,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "H09": {
+      "entry_id": "CH01-H09",
+      "printed_coordinate": {
+        "sign": "Gemini",
+        "sign_glyph": "♊",
+        "degree": 6,
+        "minute": 58
+      },
+      "raw_transcription": "♊ . 6 58 .",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": 4018,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "H10": {
+      "entry_id": "CH01-H10",
+      "printed_coordinate": {
+        "sign": "Cancer",
+        "sign_glyph": "♋",
+        "degree": 18,
+        "minute": null
+      },
+      "raw_transcription": "♋ 18 .",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": null,
+      "status": "WITHHELD_INCOMPLETE_SOURCE_COORDINATE",
+      "missing_fields": [
+        "minute"
+      ]
+    },
+    "H11": {
+      "entry_id": "CH01-H11",
+      "printed_coordinate": {
+        "sign": "Leo",
+        "sign_glyph": "♌",
+        "degree": 25,
+        "minute": 36
+      },
+      "raw_transcription": "♌ 25 . 36",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": 8736,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "H12": {
+      "entry_id": "CH01-H12",
+      "printed_coordinate": {
+        "sign": "Virgo",
+        "sign_glyph": "♍",
+        "degree": 22,
+        "minute": 15
+      },
+      "raw_transcription": "♍ 22 : 15",
+      "sign_basis": "printed_sign_in_cusp_band",
+      "longitude_arcminutes": 10335,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "Sun": {
+      "entry_id": "CH01-Sun",
+      "printed_coordinate": {
+        "sign": "Aries",
+        "sign_glyph": "♈",
+        "degree": 20,
+        "minute": 56
+      },
+      "raw_transcription": "☉ 20 . 56",
+      "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+      "longitude_arcminutes": 1256,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "Moon": {
+      "entry_id": "CH01-Moon",
+      "printed_coordinate": {
+        "sign": "Virgo",
+        "sign_glyph": "♍",
+        "degree": 10,
+        "minute": 38
+      },
+      "raw_transcription": "☽ 10 38",
+      "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+      "longitude_arcminutes": 9638,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "Mercury": {
+      "entry_id": "CH01-Mercury",
+      "printed_coordinate": {
+        "sign": "Taurus",
+        "sign_glyph": "♉",
+        "degree": 3,
+        "minute": 38
+      },
+      "raw_transcription": "☿ 3 . 38",
+      "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+      "longitude_arcminutes": 2018,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "Venus": {
+      "entry_id": "CH01-Venus",
+      "printed_coordinate": {
+        "sign": "Aries",
+        "sign_glyph": "♈",
+        "degree": 14,
+        "minute": 35
+      },
+      "raw_transcription": "♀ 14 35",
+      "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+      "longitude_arcminutes": 875,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "Mars": {
+      "entry_id": "CH01-Mars",
+      "printed_coordinate": {
+        "sign": "Virgo",
+        "sign_glyph": "♍",
+        "degree": 11,
+        "minute": 6
+      },
+      "raw_transcription": "♂ 11 6 [retrograde glyph]",
+      "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+      "longitude_arcminutes": 9666,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "Jupiter": {
+      "entry_id": "CH01-Jupiter",
+      "printed_coordinate": {
+        "sign": "Gemini",
+        "sign_glyph": "♊",
+        "degree": 25,
+        "minute": 32
+      },
+      "raw_transcription": "♃ 25 32",
+      "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+      "longitude_arcminutes": 5132,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "Saturn": {
+      "entry_id": "CH01-Saturn",
+      "printed_coordinate": {
+        "sign": "Sagittarius",
+        "sign_glyph": "♐",
+        "degree": 21,
+        "minute": 25
+      },
+      "raw_transcription": "♄ 21 . 25 [retrograde glyph]",
+      "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+      "longitude_arcminutes": 15685,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "NorthNode": {
+      "entry_id": "CH01-NorthNode",
+      "printed_coordinate": {
+        "sign": "Pisces",
+        "sign_glyph": "♓",
+        "degree": 27,
+        "minute": 48
+      },
+      "raw_transcription": "☊ 27 . 48",
+      "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+      "longitude_arcminutes": 21468,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "SouthNode": {
+      "entry_id": "CH01-SouthNode",
+      "printed_coordinate": {
+        "sign": "Virgo",
+        "sign_glyph": "♍",
+        "degree": 27,
+        "minute": 48
+      },
+      "raw_transcription": "☋ 27 . 48",
+      "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+      "longitude_arcminutes": 10668,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    },
+    "Fortune": {
+      "entry_id": "CH01-Fortune",
+      "printed_coordinate": {
+        "sign": "Pisces",
+        "sign_glyph": "♓",
+        "degree": 12,
+        "minute": 27
+      },
+      "raw_transcription": "⊗ 12 . 27",
+      "sign_basis": "inferred_from_physical_diagram_sector_and_enclosing_printed_cusp_interval",
+      "longitude_arcminutes": 20547,
+      "status": "EXACT_STATIC_LONGITUDE",
+      "missing_fields": []
+    }
+  },
+  "skipped_incomplete_exact_positions": [
+    "H04",
+    "H10"
+  ],
+  "static_longitudes_computed": 20,
+  "check_group_count": 9,
+  "checks": {
+    "Fortune": {
+      "profile": "Lilly_XXIII_p143_144_same_by_day_and_night",
+      "profile_source": "Retained Lilly XXIII printed143-144; not restated in XXXVIII",
+      "same_formula_by_day_and_night": true,
+      "formula": "(Ascendant + Moon - Sun) modulo21600 arcminutes",
+      "printed": {
+        "coordinate": {
+          "sign": "Pisces",
+          "degree": 12,
+          "minute": 27
+        },
+        "longitude_arcminutes": 20547
+      },
+      "computed": {
+        "coordinate": {
+          "sign": "Pisces",
+          "degree": 3,
+          "minute": 27
+        },
+        "longitude_arcminutes": 20007
+      },
+      "printed_matches_computed": false,
+      "shortest_discrepancy": {
+        "arcminutes": 540,
+        "degrees": 9,
+        "minutes": 0
+      },
+      "forward_computed_to_printed": {
+        "arcminutes": 540,
+        "degrees": 9,
+        "minutes": 0
+      },
+      "printed_coordinate_replaced": false,
+      "cause_of_discrepancy_inferred": false,
+      "printed_source_entry": "CH01-Fortune",
+      "printed_source_anchor": "A253-F"
+    },
+    "Sun_Venus_gap": {
+      "shortest_separation": {
+        "arcminutes": 381,
+        "degrees": 6,
+        "minutes": 21
+      },
+      "forward_Venus_to_Sun": {
+        "arcminutes": 381,
+        "degrees": 6,
+        "minutes": 21
+      },
+      "source_stated_gap": {
+        "anchor": "A255-04",
+        "kind": "author_stated_angular_gap",
+        "raw": "six degrees",
+        "value": 6,
+        "unit": "degrees",
+        "qualifier": "Source statement; exact printed chart gives different fractional detail.",
+        "independently_calculated": false
+      },
+      "source_rounded_statement_replaced": false,
+      "universal_degree_to_week_rule_inferred": false
+    },
+    "Sun_Saturn_trine": {
+      "shortest_separation": {
+        "arcminutes": 7171,
+        "degrees": 119,
+        "minutes": 31
+      },
+      "residual_from_120_degrees": {
+        "arcminutes": 29,
+        "degrees": 0,
+        "minutes": 29
+      },
+      "source_wording": "the Sun was in perfect trine with Saturn",
+      "source_anchor": "A254-04",
+      "meaning_of_perfect_resolved": false
+    },
+    "Moon_Mars_gap": {
+      "shortest_separation": {
+        "arcminutes": 28,
+        "degrees": 0,
+        "minutes": 28
+      },
+      "forward_Moon_to_Mars": {
+        "arcminutes": 28,
+        "degrees": 0,
+        "minutes": 28
+      },
+      "translation_or_contact_timing_computed": false
+    },
+    "Mercury_to_H08": {
+      "forward_distance": {
+        "arcminutes": 168,
+        "degrees": 2,
+        "minutes": 48
+      },
+      "shortest_distance": {
+        "arcminutes": 168,
+        "degrees": 2,
+        "minutes": 48
+      },
+      "cusp_influence_threshold_applied": null
+    },
+    "Mercury_geometric_H07": {
+      "membership": true,
+      "start_cusp": "H07",
+      "end_cusp": "H08",
+      "start_inclusive": true,
+      "end_exclusive": true,
+      "start_longitude_arcminutes": 825,
+      "end_longitude_arcminutes": 2186,
+      "position_longitude_arcminutes": 2018,
+      "scope": "Only the forward half-open arc bounded by the two complete printed H7/H8 cusps",
+      "full_twelve_house_classification_computed": false,
+      "source_drawn_sector": 7,
+      "source_occupancy_wording_reconciled": false,
+      "interpretive_cusp_influence_applied": false
+    },
+    "Venus_H07_gap": {
+      "forward_cusp_to_Venus": {
+        "arcminutes": 50,
+        "degrees": 0,
+        "minutes": 50
+      },
+      "shortest_distance": {
+        "arcminutes": 50,
+        "degrees": 0,
+        "minutes": 50
+      },
+      "numeric_direction": "Venus is after H7 in forward zodiac order",
+      "qualitative_nearness_threshold_inferred": null
+    },
+    "fifth_from_seventh": {
+      "origin_house": 7,
+      "relative_house": 5,
+      "radical_house": 11,
+      "convention": "inclusive house count: origin is relative first",
+      "source_anchor": "A255-01"
+    },
+    "reported_calendar_intervals": {
+      "reported_events": {
+        "question": {
+          "year": 1634,
+          "month": 3,
+          "day": 31,
+          "source_anchor": "A253-F",
+          "raw": "31 Mar: 1634",
+          "year_basis": "printed_in_chart"
+        },
+        "bargain": {
+          "year": 1634,
+          "month": 4,
+          "day": 25,
+          "source_anchor": "A255-04",
+          "raw": "die ♀ 25. Aprill following",
+          "year_basis": "inferred_from_same_narrated_case"
+        },
+        "payment_and_sealing": {
+          "year": 1634,
+          "month": 5,
+          "day": 17,
+          "source_anchor": "A255-04",
+          "raw": "the seventeenth of May ♀ and ☽ in ☌",
+          "year_basis": "inferred_from_same_narrated_case"
+        }
+      },
+      "intervals": {
+        "question_to_bargain": {
+          "start_event": "question",
+          "end_event": "bargain",
+          "days": 25,
+          "weeks": 3,
+          "remaining_days": 4
+        },
+        "bargain_to_payment_and_sealing": {
+          "start_event": "bargain",
+          "end_event": "payment_and_sealing",
+          "days": 22,
+          "weeks": 3,
+          "remaining_days": 1
+        },
+        "question_to_payment_and_sealing": {
+          "start_event": "question",
+          "end_event": "payment_and_sealing",
+          "days": 47,
+          "weeks": 6,
+          "remaining_days": 5
+        }
+      },
+      "assumption": "One unchanged calendar and year; March31 days, April30 days, May31 days",
+      "calendar_system_selected": null,
+      "time_of_day_used": false,
+      "weekday_or_astronomical_contact_checked": false,
+      "completion_endpoint": "payment_and_sealing",
+      "source_elapsed_phrase": {
+        "anchor": "A255-04",
+        "kind": "author_stated_elapsed_time",
+        "raw": "six weekes and some dayes",
+        "value": 6,
+        "unit": "weeks",
+        "additional_days": null,
+        "independently_calculated": false
+      },
+      "reported_date_associations_verified": false
+    }
+  },
+  "ephemeris_computed": false,
+  "physical_contact_times_computed": false,
+  "station_or_ingress_dates_computed": false,
+  "modern_calendar_resolved": false,
+  "global_orb_classification_computed": false,
+  "historical_events_independently_verified": false,
+  "predictive_accuracy_tested": false,
+  "source_predictions_replaced_by_arithmetic": false,
+  "source_coordinates_modified": false
+}

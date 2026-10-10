@@ -1,0 +1,498 @@
+{
+  "tracked_diff_command": [
+    "git",
+    "diff",
+    "--name-only",
+    "0cc8c9b627d9135c56c3208dc3d155953a58b18e"
+  ],
+  "untracked_command": [
+    "git",
+    "ls-files",
+    "--others",
+    "--exclude-standard"
+  ],
+  "base_commit": "0cc8c9b627d9135c56c3208dc3d155953a58b18e",
+  "tracked_paths": [
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/ACTIVE_CONTRACT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/PRODUCER_RECONCILIATION.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/QUERY_REFERENCES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/READING_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/RECORD_ID_MAP.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/ROOT_SOURCE_CHECKS.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/RULES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/SECTION_COVERAGE.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/UNRESOLVED.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/WORKED_NUMERIC_TABLES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/WORKING_CHECKPOINT.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/build_source_data.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_a/CANDIDATE_RULES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_a/COVERAGE_AND_ISSUES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_a/DRAFTING_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_a/FINAL_MANIFEST.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_a/READER_HANDOFF.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_a/READING_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_a/SOURCE_FIRST_NOTES.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_b/CANDIDATE_RULES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_b/DELIVERY_MANIFEST.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_b/ISSUES_LEDGER.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_b/SECTION_COVERAGE.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_b/SOURCE_COMPARISON_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_b/SOURCE_FIRST_FREEZE.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/source_b/SOURCE_FIRST_NOTES.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/worked_chart/CANDIDATE_RULES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/worked_chart/LOCAL_CHECK_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/worked_chart/NUMERIC_TABLES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/worked_chart/SOURCE_FIRST_NOTES.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/worked_chart/SOURCE_FIRST_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/lilly_fourth_house_reference.py"
+  ],
+  "untracked_paths": [
+    "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02i.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/APPLICABILITY_AND_RELATIONS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/ARITHMETIC_CHECKS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/AUDIT_REPORT.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/CLAIM_LEDGER.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/CROSS_SOURCE_COMPARISONS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/DRAFT_PUBLICATION_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/HISTORICAL_CASES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/IMPLEMENTATION_CHECK_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/PACKAGER_IMPLEMENTATION_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/PRESERVATION_CHECKS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/README.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/RETAINED_SOURCE_EXCERPTS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/REVIEW_RECONCILIATION.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/TEST_B02i.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/TEST_RUN_SUMMARY.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/TEST_methodology_environment_attempt.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/TEST_retained_B02f.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/TEST_retained_B02h.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/TEST_retained_methodology.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/TEXT_IMAGE_CHECKS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/build_batch_evidence.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/build_delivery_packet.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/final_gate/DIAGNOSIS_FIRST.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/final_gate/DIAGNOSIS_FIRST.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/final_gate/FREEZE_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/final_gate/MECHANICAL_EVIDENCE.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/final_gate/crops/jupiter.png",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/final_gate/crops/north_node_and_fortune.png",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/final_gate/crops/south_node.png",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/ACTIVATION.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/CANDIDATE_SNAPSHOT_MANIFEST.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/CHECKER_ARITHMETIC.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/DIAGNOSIS_FIRST.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/DIAGNOSIS_FIRST.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/DIAGNOSIS_FIRST_FREEZE.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/EVIDENCE_REVIEW_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/INFORMATION_BOUNDARY_UPDATE.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/POST_FREEZE_SOURCE_READS.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/PRESERVATION_METADATA_CHECK.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/SOURCE_FIRST_NOTES.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/SOURCE_FIRST_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/ARITHMETIC_CHECKS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/AUDIT_REPORT.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/CLAIM_LEDGER.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/CROSS_SOURCE_COMPARISONS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/HISTORICAL_CASES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/QUERY_REFERENCES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/READING_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/RETAINED_SOURCE_EXCERPTS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/RULES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/SECTION_COVERAGE.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/TEST_B02i.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/TEST_RUN_SUMMARY.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/TEST_methodology_environment_attempt.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/TEST_retained_B02f.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/TEST_retained_B02h.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/TEST_retained_methodology.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/TEXT_IMAGE_CHECKS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/UNRESOLVED.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/WORKED_NUMERIC_TABLES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/lilly_fourth_house_arithmetic.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/lilly_fourth_house_reference.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/run_verification.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/test_lilly_fourth_house_arithmetic.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/test_lilly_fourth_house_audit.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/independent_review/qualified_final/candidate_snapshot/test_lilly_fourth_house_reference.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/lilly_fourth_house_arithmetic.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/run_verification.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/test_lilly_fourth_house_arithmetic.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/test_lilly_fourth_house_audit.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/test_lilly_fourth_house_reference.py"
+  ],
+  "allowlist": [
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+    "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02i.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02i/"
+  ],
+  "outside_allowlist": [],
+  "changed_original_claim_ids": [
+    "CL006",
+    "CL014",
+    "CL052",
+    "CL054",
+    "CL055"
+  ],
+  "claim_count": 60,
+  "added_ids": [
+    "CL056",
+    "CL057",
+    "CL058",
+    "CL059",
+    "CL060"
+  ],
+  "anchor_existence": {
+    "CL001": {
+      "SECTION_COVERAGE.json": true,
+      "READING_RECEIPT.json": true
+    },
+    "CL002": {
+      "RULES.json": true,
+      "../..//LILLY_SOURCE_EXTRACTION_INDEX_V1.json": true,
+      "HISTORICAL_CASES.json": true
+    },
+    "CL003": {
+      "UNRESOLVED.json": true
+    },
+    "CL004": {
+      "WORKED_NUMERIC_TABLES.json": true,
+      "HISTORICAL_CASES.json": true,
+      "READING_RECEIPT.json": true
+    },
+    "CL005": {
+      "READING_RECEIPT.json": true,
+      "ACTIVE_CONTRACT.json": true
+    },
+    "CL006": {
+      "READING_RECEIPT.json": true,
+      "independent_review/source_a/READING_RECEIPT.json": true,
+      "independent_review/source_a/DRAFTING_RECEIPT.json": true,
+      "independent_review/source_b/SOURCE_FIRST_FREEZE.json": true,
+      "independent_review/worked_chart/SOURCE_FIRST_RECEIPT.json": true,
+      "PRODUCER_RECONCILIATION.json": true
+    },
+    "CL007": {
+      "READING_RECEIPT.json": true
+    },
+    "CL008": {
+      "RULES.json": true,
+      "HISTORICAL_CASES.json": true
+    },
+    "CL009": {
+      "RULES.json": true
+    },
+    "CL010": {
+      "RULES.json": true
+    },
+    "CL011": {
+      "RULES.json": true,
+      "QUERY_REFERENCES.json": true
+    },
+    "CL012": {
+      "RULES.json": true,
+      "QUERY_REFERENCES.json": true
+    },
+    "CL013": {
+      "RULES.json": true,
+      "QUERY_REFERENCES.json": true
+    },
+    "CL014": {
+      "lilly_fourth_house_reference.py": true,
+      "test_lilly_fourth_house_reference.py": true,
+      "QUERY_REFERENCES.json": true
+    },
+    "CL015": {
+      "RULES.json": true,
+      "HISTORICAL_CASES.json": true
+    },
+    "CL016": {
+      "RULES.json": true,
+      "QUERY_REFERENCES.json": true
+    },
+    "CL017": {
+      "RULES.json": true,
+      "QUERY_REFERENCES.json": true
+    },
+    "CL018": {
+      "RULES.json": true,
+      "UNRESOLVED.json": true
+    },
+    "CL019": {
+      "RULES.json": true
+    },
+    "CL020": {
+      "RULES.json": true,
+      "TEXT_IMAGE_CHECKS.json": true
+    },
+    "CL021": {
+      "RULES.json": true
+    },
+    "CL022": {
+      "RULES.json": true
+    },
+    "CL023": {
+      "RULES.json": true
+    },
+    "CL024": {
+      "RULES.json": true
+    },
+    "CL025": {
+      "RULES.json": true,
+      "UNRESOLVED.json": true
+    },
+    "CL026": {
+      "RULES.json": true
+    },
+    "CL027": {
+      "RULES.json": true,
+      "HISTORICAL_CASES.json": true
+    },
+    "CL028": {
+      "RULES.json": true,
+      "UNRESOLVED.json": true
+    },
+    "CL029": {
+      "RULES.json": true,
+      "TEXT_IMAGE_CHECKS.json": true
+    },
+    "CL030": {
+      "RULES.json": true,
+      "APPLICABILITY_AND_RELATIONS.json": true
+    },
+    "CL031": {
+      "RULES.json": true,
+      "CROSS_SOURCE_COMPARISONS.json": true
+    },
+    "CL032": {
+      "RULES.json": true,
+      "UNRESOLVED.json": true
+    },
+    "CL033": {
+      "RULES.json": true,
+      "TEXT_IMAGE_CHECKS.json": true
+    },
+    "CL034": {
+      "RULES.json": true,
+      "QUERY_REFERENCES.json": true
+    },
+    "CL035": {
+      "RULES.json": true,
+      "WORKED_NUMERIC_TABLES.json": true,
+      "HISTORICAL_CASES.json": true
+    },
+    "CL036": {
+      "RULES.json": true,
+      "HISTORICAL_CASES.json": true
+    },
+    "CL037": {
+      "RULES.json": true,
+      "UNRESOLVED.json": true
+    },
+    "CL038": {
+      "RULES.json": true,
+      "HISTORICAL_CASES.json": true
+    },
+    "CL039": {
+      "RULES.json": true,
+      "HISTORICAL_CASES.json": true
+    },
+    "CL040": {
+      "RULES.json": true
+    },
+    "CL041": {
+      "WORKED_NUMERIC_TABLES.json": true,
+      "ARITHMETIC_CHECKS.json": true
+    },
+    "CL042": {
+      "RETAINED_SOURCE_EXCERPTS.json": true,
+      "CROSS_SOURCE_COMPARISONS.json": true,
+      "ARITHMETIC_CHECKS.json": true
+    },
+    "CL043": {
+      "WORKED_NUMERIC_TABLES.json": true,
+      "ARITHMETIC_CHECKS.json": true,
+      "lilly_fourth_house_arithmetic.py": true
+    },
+    "CL044": {
+      "TEXT_IMAGE_CHECKS.json": true,
+      "READING_RECEIPT.json": true
+    },
+    "CL045": {
+      "ARITHMETIC_CHECKS.json": true,
+      "WORKED_NUMERIC_TABLES.json": true
+    },
+    "CL046": {
+      "ARITHMETIC_CHECKS.json": true,
+      "WORKED_NUMERIC_TABLES.json": true
+    },
+    "CL047": {
+      "ARITHMETIC_CHECKS.json": true,
+      "lilly_fourth_house_arithmetic.py": true
+    },
+    "CL048": {
+      "RETAINED_SOURCE_EXCERPTS.json": true,
+      "CROSS_SOURCE_COMPARISONS.json": true,
+      "ARITHMETIC_CHECKS.json": true
+    },
+    "CL049": {
+      "RULES.json": true,
+      "WORKED_NUMERIC_TABLES.json": true,
+      "UNRESOLVED.json": true
+    },
+    "CL050": {
+      "lilly_fourth_house_reference.py": true,
+      "lilly_fourth_house_arithmetic.py": true,
+      "IMPLEMENTATION_CHECK_RECEIPT.json": true
+    },
+    "CL051": {
+      "TEST_RUN_SUMMARY.json": true,
+      "TEST_B02i.txt": true,
+      "TEST_retained_B02h.txt": true,
+      "TEST_retained_B02f.txt": true,
+      "TEST_retained_methodology.txt": true
+    },
+    "CL052": {
+      "TEST_methodology_environment_attempt.txt": true,
+      "TEST_RUN_SUMMARY.json": true,
+      "run_verification.py": true
+    },
+    "CL053": {
+      "test_lilly_fourth_house_reference.py": true,
+      "test_lilly_fourth_house_audit.py": true,
+      "test_lilly_fourth_house_arithmetic.py": true,
+      "TEST_RUN_SUMMARY.json": true
+    },
+    "CL054": {
+      "CROSS_SOURCE_COMPARISONS.json": true,
+      "RETAINED_SOURCE_EXCERPTS.json": true,
+      "PRESERVATION_CHECKS.json": true
+    },
+    "CL055": {
+      "PRESERVATION_CHECKS.json": true,
+      "ACTIVE_CONTRACT.json": true,
+      "../../PASS_PLAN.json": true
+    },
+    "CL056": {
+      "RULES.json": true
+    },
+    "CL057": {
+      "RULES.json": true,
+      "HISTORICAL_CASES.json": true
+    },
+    "CL058": {
+      "ACTIVE_CONTRACT.json": true
+    },
+    "CL059": {
+      "READING_RECEIPT.json": true,
+      "PRODUCER_RECONCILIATION.json": true,
+      "independent_review/": true,
+      "test_lilly_fourth_house_audit.py": true,
+      "TEST_B02i.txt": true
+    },
+    "CL060": {
+      "independent_review/final_gate/DIAGNOSIS_FIRST.json": true,
+      "independent_review/final_gate/FREEZE_RECEIPT.json": true,
+      "independent_review/qualified_final/DIAGNOSIS_FIRST.json": true
+    }
+  },
+  "index_checks": {
+    "prior_batch_count": 8,
+    "current_batch_count": 9,
+    "prior_batch_entries_equal": true,
+    "prior_chapter_entries_equal": true,
+    "prior_record_count": 1008,
+    "current_record_count": 1156,
+    "delta": 148,
+    "changed_index_fields": [
+      "status",
+      "records_count",
+      "read_numbered_chapters",
+      "batches",
+      "next",
+      "read_headed_units_count",
+      "current_state"
+    ]
+  },
+  "protected_hash_checks": {
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md": {
+      "sha256": "54daf018e282aa5a5fd76274477dc0d953356f6cb30d15f3dd585991299fd4c4",
+      "matches_preservation_receipt": true,
+      "absent_from_tracked_diff": true
+    },
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json": {
+      "sha256": "777bee1754a244c525e79641d0e500d9d71514e7899121756a1dc9a5fd8238df",
+      "matches_preservation_receipt": true,
+      "absent_from_tracked_diff": true
+    },
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json": {
+      "sha256": "04f1d246bd3c96dd03009ea6cc669f736be0c746112ef1a789404b0cc1050653",
+      "matches_preservation_receipt": true,
+      "absent_from_tracked_diff": true
+    },
+    "tasks/astro-source-audit-multipass-20261005/PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json": {
+      "sha256": "92deb60f6e6a7073f1a80491dac2364961a640fa1fb2eb6f3170c35286ab6474",
+      "matches_preservation_receipt": true,
+      "absent_from_tracked_diff": true
+    },
+    "tasks/astro-source-audit-multipass-20261005/batches/B02f/lilly_presence_ship_reference.py": {
+      "sha256": "d0172b7ed579bde0db063c315331ee54ee3fb878f98bbdfb0d1649b7af486664",
+      "matches_preservation_receipt": true,
+      "absent_from_tracked_diff": true
+    }
+  },
+  "raw_notes_and_candidates_exist_without_content_read": {
+    "source_a/SOURCE_FIRST_NOTES.md": true,
+    "source_a/CANDIDATE_RULES.json": true,
+    "source_b/SOURCE_FIRST_NOTES.md": true,
+    "source_b/CANDIDATE_RULES.json": true,
+    "worked_chart/SOURCE_FIRST_NOTES.md": true,
+    "worked_chart/CANDIDATE_RULES.json": true
+  },
+  "unchanged_initial_evidence_hashes": {
+    "RULES.json": true,
+    "UNRESOLVED.json": true,
+    "WORKED_NUMERIC_TABLES.json": true,
+    "ARITHMETIC_CHECKS.json": true,
+    "READING_RECEIPT.json": true,
+    "TEXT_IMAGE_CHECKS.json": true,
+    "SECTION_COVERAGE.json": true,
+    "HISTORICAL_CASES.json": true,
+    "QUERY_REFERENCES.json": true,
+    "APPLICABILITY_AND_RELATIONS.json": true,
+    "CROSS_SOURCE_COMPARISONS.json": true,
+    "RETAINED_SOURCE_EXCERPTS.json": true,
+    "TEST_RUN_SUMMARY.json": true,
+    "TEST_B02i.txt": true,
+    "TEST_retained_B02h.txt": true,
+    "TEST_retained_B02f.txt": true,
+    "TEST_retained_methodology.txt": true,
+    "TEST_methodology_environment_attempt.txt": true,
+    "lilly_fourth_house_reference.py": true,
+    "lilly_fourth_house_arithmetic.py": true,
+    "test_lilly_fourth_house_reference.py": true,
+    "test_lilly_fourth_house_arithmetic.py": true,
+    "test_lilly_fourth_house_audit.py": true,
+    "run_verification.py": true,
+    "DRAFT_PUBLICATION_RECEIPT.json": true
+  },
+  "initial_diagnosis_hashes_verified": {
+    "DIAGNOSIS_FIRST.md": true,
+    "DIAGNOSIS_FIRST.json": true
+  },
+  "initial_freeze_receipt_hash_verified": true,
+  "post_freeze_evidence_hashes": {
+    "AUDIT_REPORT.md": "863d14ba22da942f689d1e330e40997d1c7a2d7bcce4d437a4f9c1a6caa9ee27",
+    "CLAIM_LEDGER.json": "8290dd7a5f6bb17bd4414fceadf993a4ae8150af3a13df2f8af46a9291db036c",
+    "PRESERVATION_CHECKS.json": "4ae52de59a5acb74ad225c104535c863b4865e866937fa39bda21efe08f863bf",
+    "REVIEW_RECONCILIATION.json": "6919cdb75551d570f1f86703b95d48f2d3ce45104d35d4ece41b8670152746f4",
+    "PRODUCER_RECONCILIATION.json": "44a8a9cc4196f3346e08173ba53b7e2290a1209d38a8ab05568f0dc2dd391084",
+    "ACTIVE_CONTRACT.json": "4e02ff43a010b07eaa9944d2c5f1f2f107eea34091410765d1234dff560a9f6c",
+    "independent_review/source_a/READING_RECEIPT.json": "26a50a6d6322c208a2616ba52f6281d5181c4376851e3a1ec4d4b6d73a296827",
+    "independent_review/source_a/DRAFTING_RECEIPT.json": "a1560ea335dc1882ccd9ae255af7d1405ca5aaccadc61a080672813f41b5ce38",
+    "independent_review/source_b/SOURCE_FIRST_FREEZE.json": "fe94f3c3821a874ea7fa90ab9ea9bcfe77fef4db424cf6b5c2833db5838efd59",
+    "independent_review/worked_chart/SOURCE_FIRST_RECEIPT.json": "208387825f6dac49a4ddbf39136b2e84b2a208fb41d8e21a7606d8ca9e8132da"
+  }
+}

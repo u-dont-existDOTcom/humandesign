@@ -1,0 +1,1622 @@
+{
+  "schema": "B02i-context-sensitive-comparisons-v1",
+  "task": "astro-source-audit-multipass-20261005",
+  "batch": "B02i",
+  "role": "Implementation/comparison helper, not independent evaluation",
+  "source_layer_statement": "Comparisons across sections of the same historical author/text, using retained records and current source-first notes. They are not independent-source corroboration or empirical validation.",
+  "live_governance": {
+    "root_blob": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "index_blob": "b83848f61516389cf997d142bdd411f1c52a5024",
+    "source_provenance_pattern_applied": true,
+    "independence_claim": "None; role transition explicit"
+  },
+  "comparison_count": 12,
+  "comparisons": [
+    {
+      "comparison_id": "B02i-CMP01",
+      "topic": "House roles depend on the owner, object and exact question",
+      "relation": "refinement",
+      "comparison_kind": "Context-sensitive comparison across retained sections of Lilly; not independent-source corroboration",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.I.XXI.R565",
+          "batch": "B02d",
+          "excerpt_pointer": "/retained_records/6/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "I",
+            "section_key": "I.XXI",
+            "pdf_pages": [
+              161
+            ],
+            "printed_pages": [
+              127
+            ]
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXIX.R906",
+          "batch": "B02h",
+          "excerpt_pointer": "/retained_records/15/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXIX",
+            "pdf_pages": [
+              223
+            ],
+            "printed_sequence_expected": [
+              189
+            ],
+            "visible_printed_labels": [
+              "189"
+            ],
+            "passage_anchor": "Of a Brother that is absent",
+            "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXIX.R937",
+          "batch": "B02h",
+          "excerpt_pointer": "/retained_records/16/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXIX",
+            "pdf_pages": [
+              226
+            ],
+            "printed_sequence_expected": [
+              192
+            ],
+            "visible_printed_labels": [
+              "192"
+            ],
+            "passage_anchor": "yet in every one quesited after, the sixt House of the figure",
+            "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+          }
+        }
+      ],
+      "b02i_evidence": [
+        {
+          "local_id": "B024",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              249
+            ],
+            "printed_pages": [
+              215
+            ],
+            "chapter": "XXXVII",
+            "section": "Own goods hidden and forgotten",
+            "passage_anchor": "If the Querent did hide his owne Plate, Money or Jewels",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-249.png"
+            ],
+            "source_first_note_items": [
+              23
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1089"
+        },
+        {
+          "local_id": "B032",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              250
+            ],
+            "printed_pages": [
+              216
+            ],
+            "chapter": "XXXVII",
+            "section": "Nature/quality significator selection",
+            "passage_anchor": "If you are ignorant of the nature and quality of the Treasure",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+            ],
+            "source_first_note_items": [
+              28
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1097"
+        },
+        {
+          "local_id": "B033",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              250
+            ],
+            "printed_pages": [
+              216
+            ],
+            "chapter": "XXXVII",
+            "section": "Following absolute lord-seven fallback",
+            "passage_anchor": "But if that Planet ... be not Lord of the 7th or have affinity with him",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+            ],
+            "source_first_note_items": [
+              29
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1098"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "A",
+          "note_file": "independent_review/source_a/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "a969e9e3f75124b0d869608c432a05db7b59fae4751bb46ee940815726edb979",
+          "pdf_pages": [
+            236,
+            238,
+            239,
+            242,
+            244
+          ],
+          "printed_pages": [
+            202,
+            204,
+            205,
+            208,
+            210
+          ],
+          "note_heading_or_anchor": "XXXII ownership; XXXIII purchase and lease; XXXIV father estate",
+          "content_locator": "Fourth as sibling goods/land/father; seventh as seller/lessor; tenth as purchase price versus lease profit"
+        }
+      ],
+      "comparison_statement": "The fourth-house block changes roles with the query: lord 4 can govern a sibling's goods, the land to buy, or the father; in a purchase the seventh represents the seller, while the treasure-quality passage gives lord 7 a material/species role. This refines the earlier turned-house mappings rather than replacing them with a permanent one-house/one-topic dictionary.",
+      "conditions_that_must_survive": [
+        "In XXXII, the relevant goods owner determines the lord used; the querent's own goods begin at lord 2.",
+        "Purchase: fourth is holding, tenth is price; lease: tenth is profit and fourth is end.",
+        "Earlier absent-brother frame makes third his first and fourth his substance, but expressly retains original-figure sixth/eighth/twelfth for specified harms."
+      ],
+      "limits": [
+        "R565 itself warns that semantic labels do not all rotate identically.",
+        "R937 coexists with derived houses; it supplies no global precedence algorithm.",
+        "Treasure significator versus lord-7 mixture/fallback remains unresolved in B032/B033; comparison does not settle it."
+      ],
+      "implementation_or_evaluation_implication": {
+        "type": "Representation recommendation, not new source doctrine",
+        "statement": "Carry question type, entity/ownership role, radical house and any derived origin separately; preserve source-specific role assignments."
+      },
+      "empirical_status": "Textual comparison only; neither agreement nor a retained historical example establishes predictive performance"
+    },
+    {
+      "comparison_id": "B02i-CMP02",
+      "topic": "Hard aspects and reception do not yield one universal success rule",
+      "relation": "tension",
+      "comparison_kind": "Context-sensitive comparison across retained sections of Lilly; not independent-source corroboration",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.I.XXI.R557",
+          "batch": "B02d",
+          "excerpt_pointer": "/retained_records/5/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "I",
+            "section_key": "I.XXI",
+            "pdf_pages": [
+              159
+            ],
+            "printed_pages": [
+              125
+            ]
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXVIII.R885",
+          "batch": "B02g",
+          "excerpt_pointer": "/retained_records/13/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXVIII",
+            "pdf_pages": [
+              219
+            ],
+            "printed_sequence_expected": [
+              185
+            ],
+            "visible_printed_labels": [
+              "185"
+            ],
+            "passage_anchor": "You must notwithstanding judge through the lesse when he that is received",
+            "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXVIII.R886",
+          "batch": "B02g",
+          "excerpt_pointer": "/retained_records/14/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXVIII",
+            "pdf_pages": [
+              219,
+              220
+            ],
+            "printed_sequence_expected": [
+              185,
+              186
+            ],
+            "visible_printed_labels": [
+              "185",
+              "186"
+            ],
+            "passage_anchor": "But if reception be by sextile or trine through be the aspect square or opposition",
+            "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+          }
+        }
+      ],
+      "b02i_evidence": [
+        {
+          "local_id": "B048",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              251
+            ],
+            "printed_pages": [
+              217
+            ],
+            "chapter": "XXXVII",
+            "section": "If the Querent shall obtaine the Treasure hid",
+            "passage_anchor": "If the Planet who signifies the Treasure or thing hid, doth apply",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+            ],
+            "source_first_note_items": [
+              35
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1113"
+        },
+        {
+          "local_id": "B049",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              251
+            ],
+            "printed_pages": [
+              217
+            ],
+            "chapter": "XXXVII",
+            "section": "Hard aspect qualification",
+            "passage_anchor": "if the aspect be by square or opposition",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+            ],
+            "source_first_note_items": [
+              36
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1114"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "A",
+          "note_file": "independent_review/source_a/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "a969e9e3f75124b0d869608c432a05db7b59fae4751bb46ee940815726edb979",
+          "pdf_pages": [
+            239
+          ],
+          "printed_pages": [
+            205
+          ],
+          "note_heading_or_anchor": "XXXIII purchase agreement and acquisition",
+          "content_locator": "Square/opposition can finish a bargain after words, near breakdown and delay"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "C",
+          "note_file": "independent_review/worked_chart/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+          "pdf_pages": [
+            254
+          ],
+          "printed_pages": [
+            220
+          ],
+          "note_heading_or_anchor": "A254-05",
+          "content_locator": "Moon translation by square facilitates contracting but with leisure/slowly and many meetings"
+        }
+      ],
+      "comparison_statement": "The local treasure and purchase passages permit acquisition or a concluded bargain despite square/opposition, with difficulty or delay. Earlier general perfection doctrine adds conditions to opposition and warns about poor benefit; the wealth chapter says hard-aspect reception can fail with ill disposition but allows a well-disposed receiver to perform through any aspect. These statements retain a real conditional tension rather than collapsing into reception always repairs a hard aspect.",
+      "conditions_that_must_survive": [
+        "B048 distinguishes application, mutual reception, translation and collation as alternatives.",
+        "B049 changes difficulty, not the stated acquisition outcome.",
+        "R557 includes domicile mutual reception, friendly houses and directed Moon transfer.",
+        "R885/R886 require attention to which planet receives and whether receiver/received planet is impedited or well disposed."
+      ],
+      "limits": [
+        "The relative authority of chapter-specific and general passages is not formally ranked by these records.",
+        "R885 leaves the first ill-disposed planet's identity partly unclear; retain R886 with it.",
+        "The worked purchase square is one narrated case, not an independent empirical exception rate."
+      ],
+      "implementation_or_evaluation_implication": {
+        "type": "Implementation limit",
+        "statement": "Keep aspect type, reception direction/type, impediment and target outcome as separate predicates; do not choose a global override from retrospective convenience."
+      },
+      "empirical_status": "Textual comparison only; neither agreement nor a retained historical example establishes predictive performance"
+    },
+    {
+      "comparison_id": "B02i-CMP03",
+      "topic": "Essential dignity, accidental condition and assigned office remain distinct",
+      "relation": "tension",
+      "comparison_kind": "Context-sensitive comparison across retained sections of Lilly; not independent-source corroboration",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.I.XVIII.R365",
+          "batch": "B02c",
+          "excerpt_pointer": "/retained_records/2/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "I",
+            "section_key": "I.XVIII",
+            "pdf_pages": [
+              135,
+              136
+            ],
+            "printed_page_policy": "Use READING_RECEIPT page map; original labels are not uniformly PDF minus 34."
+          }
+        },
+        {
+          "record_id": "LI.1647.I.XVIII.R375",
+          "batch": "B02c",
+          "excerpt_pointer": "/retained_records/3/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "I",
+            "section_key": "I.XVIII",
+            "pdf_pages": [
+              137
+            ],
+            "printed_page_policy": "Use READING_RECEIPT page map; original labels are not uniformly PDF minus 34."
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXVIII.R874",
+          "batch": "B02g",
+          "excerpt_pointer": "/retained_records/12/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXVIII",
+            "pdf_pages": [
+              217
+            ],
+            "printed_sequence_expected": [
+              183
+            ],
+            "visible_printed_labels": [
+              "183"
+            ],
+            "passage_anchor": "Some may wonder why Mars being peregrine through social analogy",
+            "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+          }
+        }
+      ],
+      "b02i_evidence": [
+        {
+          "local_id": "B003",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              246
+            ],
+            "printed_pages": [
+              212
+            ],
+            "chapter": "XXXV",
+            "section": "Lilly reported removal practice",
+            "passage_anchor": "That which I have observed in this manner of Judgment",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-246.png"
+            ],
+            "source_first_note_items": [
+              3
+            ]
+          },
+          "record_id": "LI.1647.II.XXXV.R1068"
+        },
+        {
+          "local_id": "B029",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              250
+            ],
+            "printed_pages": [
+              216
+            ],
+            "chapter": "XXXVII",
+            "section": "Dignified Saturn/Mars presence",
+            "passage_anchor": "either Saturn or Mars in any of their owne houses",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+            ],
+            "source_first_note_items": [
+              27
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1094"
+        },
+        {
+          "local_id": "B030",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              250
+            ],
+            "printed_pages": [
+              216
+            ],
+            "chapter": "XXXVII",
+            "section": "Venus Taurus presence",
+            "passage_anchor": "if you find Venus in Taurus in the fourth",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+            ],
+            "source_first_note_items": [
+              27
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1095"
+        },
+        {
+          "local_id": "B031",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              250
+            ],
+            "printed_pages": [
+              216
+            ],
+            "chapter": "XXXVII",
+            "section": "Dignified significator reservation",
+            "passage_anchor": "there is no Planet unfortunate, when he is in his owne house",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-250.png"
+            ],
+            "source_first_note_items": [
+              27
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1096"
+        }
+      ],
+      "comparison_statement": "The treasure chapter says a dignified significator is not unfortunate and explicitly permits qualified Saturn/Mars treasure indicators. The earlier dignity record still allows retrogradation, combustion or malevolent affliction to qualify domicile's favorable analogy; accidental fortification is a separate category. The retained wealth example also allows peregrine Mars to perform its assigned office while obstruction remains. The later wording therefore cannot safely be widened to dignity erases all debility, or debility prevents every outcome.",
+      "conditions_that_must_survive": [
+        "B029 requires domicile, directness, no impediment and house 4 for Saturn/Mars.",
+        "B030 separately requires Venus in Taurus and house 4 without misfortune.",
+        "B031 includes the planet's significator role, not merely natural identity.",
+        "R874 retains both office and impediment instead of canceling peregrinity."
+      ],
+      "limits": [
+        "B031's final conjunction/scope is retained as a reading qualification.",
+        "R365's life-outcome analogy and numerical dignity component are distinct.",
+        "No complete score or priority between essential and accidental factors follows from this comparison."
+      ],
+      "implementation_or_evaluation_implication": {
+        "type": "Implementation limit",
+        "statement": "Represent dignity, accidental affliction, natural planet category and assigned office independently; retain the context-specific conclusion and exceptions."
+      },
+      "empirical_status": "Textual comparison only; neither agreement nor a retained historical example establishes predictive performance"
+    },
+    {
+      "comparison_id": "B02i-CMP04",
+      "topic": "Retrogradation can impede, alter manner or contribute to application",
+      "relation": "refinement",
+      "comparison_kind": "Context-sensitive comparison across retained sections of Lilly; not independent-source corroboration",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.I.XIX.R405",
+          "batch": "B02d",
+          "excerpt_pointer": "/retained_records/4/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "I",
+            "section_key": "I.XIX",
+            "pdf_pages": [
+              141
+            ],
+            "printed_pages": [
+              107
+            ]
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXX.R978",
+          "batch": "B02h",
+          "excerpt_pointer": "/retained_records/21/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXX",
+            "pdf_pages": [
+              232
+            ],
+            "printed_sequence_expected": [
+              198
+            ],
+            "visible_printed_labels": [
+              "198"
+            ],
+            "passage_anchor": "doe apply to each other by a friendly",
+            "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+            "specific_passages": [
+              {
+                "pdf_page": 232,
+                "literal_visible_folio": "198",
+                "passage_anchor": "doe apply to each other by a friendly",
+                "page_location": "First paragraph"
+              },
+              {
+                "pdf_page": 232,
+                "literal_visible_folio": "198",
+                "passage_anchor": "though a ponderous Planet",
+                "page_location": "Same paragraph"
+              }
+            ]
+          }
+        }
+      ],
+      "b02i_evidence": [
+        {
+          "local_id": "B003",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              246
+            ],
+            "printed_pages": [
+              212
+            ],
+            "chapter": "XXXV",
+            "section": "Lilly reported removal practice",
+            "passage_anchor": "That which I have observed in this manner of Judgment",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-246.png"
+            ],
+            "source_first_note_items": [
+              3
+            ]
+          },
+          "record_id": "LI.1647.II.XXXV.R1068"
+        },
+        {
+          "local_id": "B017",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              248
+            ],
+            "printed_pages": [
+              214
+            ],
+            "chapter": "XXXVI",
+            "section": "Basic favourable waterwork combination",
+            "passage_anchor": "for if you find Saturn Direct, swift in Motion, Orientall",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-248.png"
+            ],
+            "source_first_note_items": [
+              15
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVI.R1082"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "A",
+          "note_file": "independent_review/source_a/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "a969e9e3f75124b0d869608c432a05db7b59fae4751bb46ee940815726edb979",
+          "pdf_pages": [
+            240,
+            245
+          ],
+          "printed_pages": [
+            206,
+            211
+          ],
+          "note_heading_or_anchor": "Tenants/timber; paternal-estate alternatives",
+          "content_locator": "Retrogradation changes tenants/timber outputs, but applying by retrogradation to a good aspect can signify sudden estate receipt"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "C",
+          "note_file": "independent_review/worked_chart/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+          "pdf_pages": [
+            254,
+            255
+          ],
+          "printed_pages": [
+            220,
+            221
+          ],
+          "note_heading_or_anchor": "A254-03; A255-02; A255-03",
+          "content_locator": "Retrograde Saturn contributes to mutual trine; retrograde Mars means own money inaccessible; old houses remain strong despite Saturn retrogradation/cadency"
+        }
+      ],
+      "comparison_statement": "Retrogradation has role-specific consequences. It appears among removal/condition concerns and directness is required in the basic waterwork combination, yet the paternal-estate passage permits sudden receipt through application by retrogradation. In the purchase example Saturn's retrogradation contributes to an applying trine, as in the earlier absent-brother example, while Mars's retrogradation is tied to inaccessible money. The general both-retrograde application record itself allows sudden perfection or breaking off according to signification.",
+      "conditions_that_must_survive": [
+        "R405 requires both planets retrograde and conjunction reached before Mercury turns direct.",
+        "R978 is a particular Venus-Saturn trine with Saturn retrograde at the greater sign degree.",
+        "PDF245 does not state which or both lords are retrograde; do not borrow R405's both-retrograde requirement.",
+        "PDF255 financial obstruction refers specifically to Mars as lord 2 and money already known inaccessible."
+      ],
+      "limits": [
+        "These are different actor, aspect and question combinations, not direct logical contradictions.",
+        "No universal retrograde penalty or bonus is justified.",
+        "Mutual application geometry is distinct from the symbolic claim about its eventual result."
+      ],
+      "implementation_or_evaluation_implication": {
+        "type": "Implementation limit",
+        "statement": "Compute declared motion/contact geometry separately from the question-specific symbolic interpretation; do not use retrograde as a blanket veto."
+      },
+      "empirical_status": "Textual comparison only; neither agreement nor a retained historical example establishes predictive performance"
+    },
+    {
+      "comparison_id": "B02i-CMP05",
+      "topic": "Self-question time is contextual and impartiality remains an unresolved evidential issue",
+      "relation": "refinement",
+      "comparison_kind": "Context-sensitive comparison across retained sections of Lilly; not independent-source corroboration",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.II.XXVI.R774",
+          "batch": "B02f",
+          "excerpt_pointer": "/retained_records/9/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXVI",
+            "pdf_pages": [
+              200,
+              201
+            ],
+            "printed_sequence": [
+              166,
+              167
+            ]
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXIX.R944",
+          "batch": "B02h",
+          "excerpt_pointer": "/retained_records/17/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXIX",
+            "pdf_pages": [
+              227
+            ],
+            "printed_sequence_expected": [
+              193
+            ],
+            "visible_printed_labels": [
+              "193"
+            ],
+            "passage_anchor": "the houre when I first heard the newes",
+            "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+          }
+        }
+      ],
+      "b02i_evidence": [
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "C",
+          "note_file": "independent_review/worked_chart/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+          "pdf_pages": [
+            253
+          ],
+          "printed_pages": [
+            219
+          ],
+          "note_heading_or_anchor": "A253-P",
+          "content_locator": "Author already fully resolved to buy, chooses his own question when most perplexed and solicitous"
+        }
+      ],
+      "comparison_statement": "The purchase self-question lies within Lilly's earlier permission to consider a genuinely troubling personal question, but its chosen moment of greatest perplexity is not automatically identical to the earlier arising-time formulation. The news rule separately uses first hearing for a self-heard report and exact proposal when another asks. These are contextual historical time conventions, not one interchangeable timestamp rule.",
+      "conditions_that_must_survive": [
+        "R774 preserves Bonatus/others' objection and identifies partiality as Lilly's conjecture about its reason.",
+        "The earlier permission requires impartiality and setting favor to one's cause aside.",
+        "The purchase narrative discloses pre-existing determination to purchase and known inability to call in money for six months.",
+        "The news convention turns on who asks and the nature of the report."
+      ],
+      "limits": [
+        "A statement that the author was fully resolved does not establish that he was incapable of impartial judgement; neither does the narrative verify impartiality.",
+        "Do not silently equate arising, first hearing, formal proposal and peak anxiety.",
+        "The comparison does not authorize present-person questions or choose a modern timestamp convention."
+      ],
+      "implementation_or_evaluation_implication": {
+        "type": "Prospective evaluation boundary, not current audit gate",
+        "statement": "A later test would need to predeclare its question-time convention and record prior intention/information before outcomes; these historical accounts do not provide that prospective control."
+      },
+      "empirical_status": "Textual comparison only; neither agreement nor a retained historical example establishes predictive performance"
+    },
+    {
+      "comparison_id": "B02i-CMP06",
+      "topic": "Sign directions differ from north/south declination classification",
+      "relation": "refinement",
+      "comparison_kind": "Context-sensitive comparison across retained sections of Lilly; not independent-source corroboration",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.I.XVI.divisions.R257",
+          "batch": "B02c",
+          "excerpt_pointer": "/retained_records/0/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "I",
+            "section_key": "I.XVI.divisions",
+            "pdf_pages": [
+              122
+            ],
+            "printed_page_policy": "Use READING_RECEIPT page map; original labels are not uniformly PDF minus 34."
+          }
+        },
+        {
+          "record_id": "LI.1647.I.XVI.divisions.R258",
+          "batch": "B02c",
+          "excerpt_pointer": "/retained_records/1/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "I",
+            "section_key": "I.XVI.divisions",
+            "pdf_pages": [
+              122
+            ],
+            "printed_page_policy": "Use READING_RECEIPT page map; original labels are not uniformly PDF minus 34."
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXII.R597",
+          "batch": "B02e",
+          "excerpt_pointer": "/retained_records/8/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXII",
+            "pdf_pages": [
+              167
+            ],
+            "printed_page_positions": [
+              133
+            ]
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXIX.R971",
+          "batch": "B02h",
+          "excerpt_pointer": "/retained_records/19/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXIX",
+            "pdf_pages": [
+              230
+            ],
+            "printed_sequence_expected": [
+              196
+            ],
+            "visible_printed_labels": [
+              "196"
+            ],
+            "passage_anchor": "if the principall Significator be in a Northerne Signe",
+            "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+          }
+        }
+      ],
+      "b02i_evidence": [
+        {
+          "local_id": "B010",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              247
+            ],
+            "printed_pages": [
+              213
+            ],
+            "chapter": "XXXV",
+            "section": "Direction to move for better trading",
+            "passage_anchor": "Now in giving direction which way to steer his course",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png"
+            ],
+            "source_first_note_items": [
+              11
+            ]
+          },
+          "record_id": "LI.1647.II.XXXV.R1075"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "A",
+          "note_file": "independent_review/source_a/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "a969e9e3f75124b0d869608c432a05db7b59fae4751bb46ee940815726edb979",
+          "pdf_pages": [
+            238
+          ],
+          "printed_pages": [
+            204
+          ],
+          "note_heading_or_anchor": "XXXII alternative direction method and twelve-sign table",
+          "content_locator": "Eight sign testimonies; Aries east, Cancer north, Libra west, Capricorn south with named by-directions"
+        }
+      ],
+      "comparison_statement": "B02i's sign-indicated compass quarters and relocation direction belong to directional sign correspondences. Earlier north/south declination records divide signs by position relative to the equinoctial; they are not the directional field. For example, Aries is in the retained northern-declination group while the hidden-item direction table calls Aries east. Earlier direction records also select different principal significators for health, wealth or short journeys.",
+      "conditions_that_must_survive": [
+        "B010 selects the most fortunate/strongest planet with friendliest contact to lord 1 or lord 2, then takes its SIGN's direction.",
+        "PDF238 uses the greater number of testimonies across its eight specified sign slots; a strict more-than-half threshold and tie resolution are not specified.",
+        "R597 uses separate health and estate starting points.",
+        "R971 presupposes selection of the principal short-journey significator and due limitations."
+      ],
+      "limits": [
+        "Named by-directions have no numerical azimuth supplied here.",
+        "Do not equate northern sign in a direction context with every sign of northern declination.",
+        "No missing weights, ties or selector precedence are filled from a different query's method."
+      ],
+      "implementation_or_evaluation_implication": {
+        "type": "Representation recommendation",
+        "statement": "Maintain separate sign-compass, declination-class and house-quadrant fields plus the question-specific significator selector."
+      },
+      "empirical_status": "Textual comparison only; neither agreement nor a retained historical example establishes predictive performance"
+    },
+    {
+      "comparison_id": "B02i-CMP07",
+      "topic": "Depth and timing are different quantities with local scales",
+      "relation": "refinement",
+      "comparison_kind": "Context-sensitive comparison across retained sections of Lilly; not independent-source corroboration",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.II.XXVII.R833",
+          "batch": "B02g",
+          "excerpt_pointer": "/retained_records/10/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXVII",
+            "pdf_pages": [
+              209
+            ],
+            "printed_sequence_expected": [
+              175
+            ],
+            "visible_printed_labels": [
+              "171"
+            ],
+            "passage_anchor": "unto what Planet either the Lord of the Ascendant or Moon applyes",
+            "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXVII.R834",
+          "batch": "B02g",
+          "excerpt_pointer": "/retained_records/11/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXVII",
+            "pdf_pages": [
+              209,
+              210
+            ],
+            "printed_sequence_expected": [
+              175,
+              176
+            ],
+            "visible_printed_labels": [
+              "171",
+              "176"
+            ],
+            "passage_anchor": "so many dayes; if they be both in Cadent houses",
+            "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXX.R986",
+          "batch": "B02h",
+          "excerpt_pointer": "/retained_records/24/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXX",
+            "pdf_pages": [
+              233
+            ],
+            "printed_sequence_expected": [
+              199
+            ],
+            "visible_printed_labels": [
+              "199"
+            ],
+            "passage_anchor": "wanted one degree of getting out",
+            "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+            "specific_passages": [
+              {
+                "pdf_page": 233,
+                "literal_visible_folio": "199",
+                "passage_anchor": "wanted one degree of getting out",
+                "page_location": "Opening paragraph"
+              },
+              {
+                "pdf_page": 233,
+                "literal_visible_folio": "199",
+                "passage_anchor": "one degree in that Signe",
+                "page_location": "Same paragraph"
+              }
+            ]
+          }
+        }
+      ],
+      "b02i_evidence": [
+        {
+          "local_id": "B060",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              252
+            ],
+            "printed_pages": [
+              218
+            ],
+            "chapter": "XXXVII",
+            "section": "Alkindus ordinal depth",
+            "passage_anchor": "whether it lye deep in the earth or not",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-252.png"
+            ],
+            "source_first_note_items": [
+              43
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1125"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "C",
+          "note_file": "independent_review/worked_chart/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+          "pdf_pages": [
+            255
+          ],
+          "printed_pages": [
+            221
+          ],
+          "note_heading_or_anchor": "A255-04",
+          "content_locator": "Narrated six degrees parallel six weeks and some days; dated bargain/conveyance clauses remain separate"
+        }
+      ],
+      "comparison_statement": "Treasure depth in B060 is ordinal: newly entered sign is shallow and farther progress means deeper. That cannot inherit a timing unit from another chapter. Even the retained timing records distinguish degrees to a selected effective contact, a second-house house-pair unit table, and the absent-brother example's qualified degree-to-week interpretation. The purchase case's rounded degree/week comparison is another source-specific narration.",
+      "conditions_that_must_survive": [
+        "R833 selects the planet that actually signifies accomplishment; it distinguishes moving contact time from static angular distance.",
+        "R834 requires both selected significators and their house classes.",
+        "R986 says one degree in that sign and the nature of that question might denote a week; less than a week is the forecast.",
+        "B060 supplies no length units, degree bins, maximum depth or linear conversion."
+      ],
+      "limits": [
+        "These are different target quantities and local scales within horary; the records do not merge depth and time.",
+        "No degrees-to-feet/metres conversion, universal degree-to-week rule or precise calendar date follows.",
+        "Root's arithmetic checks of the printed purchase figure remain separate; this helper performed none."
+      ],
+      "implementation_or_evaluation_implication": {
+        "type": "Implementation limit",
+        "statement": "Type depth, symbolic duration, angular gap and astronomical contact date separately, and retain each rule's local units and uncertainty."
+      },
+      "empirical_status": "Textual comparison only; neither agreement nor a retained historical example establishes predictive performance"
+    },
+    {
+      "comparison_id": "B02i-CMP08",
+      "topic": "Historical context, forecast and reported episode are separate evidence layers",
+      "relation": "agreement",
+      "comparison_kind": "Context-sensitive comparison across retained sections of Lilly; not independent-source corroboration",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.II.XXX.R972",
+          "batch": "B02h",
+          "excerpt_pointer": "/retained_records/20/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXX",
+            "pdf_pages": [
+              230,
+              231
+            ],
+            "printed_sequence_expected": [
+              196,
+              197
+            ],
+            "visible_printed_labels": [
+              "196",
+              "197"
+            ],
+            "passage_anchor": "Where an absent Brother was?",
+            "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+            "specific_passages": [
+              {
+                "pdf_page": 230,
+                "literal_visible_folio": "196",
+                "passage_anchor": "Where an absent Brother was?",
+                "page_location": "Lower half, heading and circular chart"
+              },
+              {
+                "pdf_page": 231,
+                "literal_visible_folio": "197",
+                "passage_anchor": "In November 1645. a Citizen of London",
+                "page_location": "Top narrative and three numbered questions above Chap.XXX"
+              }
+            ]
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXX.R980",
+          "batch": "B02h",
+          "excerpt_pointer": "/retained_records/22/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXX",
+            "pdf_pages": [
+              232
+            ],
+            "printed_sequence_expected": [
+              198
+            ],
+            "visible_printed_labels": [
+              "198"
+            ],
+            "passage_anchor": "it was probable he should heare of him that very day",
+            "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+            "specific_passages": [
+              {
+                "pdf_page": 232,
+                "literal_visible_folio": "198",
+                "passage_anchor": "it was probable he should heare of him that very day",
+                "page_location": "Later part of first paragraph"
+              }
+            ]
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXX.R982",
+          "batch": "B02h",
+          "excerpt_pointer": "/retained_records/23/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXX",
+            "pdf_pages": [
+              232
+            ],
+            "printed_sequence_expected": [
+              198
+            ],
+            "visible_printed_labels": [
+              "198"
+            ],
+            "passage_anchor": "He hath since confidently affirmed",
+            "anchor_note": "Locating incipit/topic; normalized glyph names and spelling, not a diplomatic quotation.",
+            "specific_passages": [
+              {
+                "pdf_page": 232,
+                "literal_visible_folio": "198",
+                "passage_anchor": "He hath since confidently affirmed",
+                "page_location": "Italic sentence at end of news paragraph"
+              }
+            ]
+          }
+        }
+      ],
+      "b02i_evidence": [
+        {
+          "local_id": "B011",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              247
+            ],
+            "printed_pages": [
+              213
+            ],
+            "chapter": "XXXV",
+            "section": "Retrospective comment on direction advice",
+            "passage_anchor": "I remember not, that any ever repented",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-247.png"
+            ],
+            "source_first_note_items": [
+              11
+            ]
+          },
+          "record_id": "LI.1647.II.XXXV.R1076"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "A",
+          "note_file": "independent_review/source_a/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "a969e9e3f75124b0d869608c432a05db7b59fae4751bb46ee940815726edb979",
+          "pdf_pages": [
+            238
+          ],
+          "printed_pages": [
+            204
+          ],
+          "note_heading_or_anchor": "Glove/book hidden-item experience paragraph",
+          "content_locator": "Undated aggregate first-person experience claim"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "C",
+          "note_file": "independent_review/worked_chart/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+          "pdf_pages": [
+            253,
+            254,
+            255,
+            256
+          ],
+          "printed_pages": [
+            219,
+            220,
+            221,
+            222
+          ],
+          "note_heading_or_anchor": "A253-P; A254-06 margin; A255-02/04/05/07; A256-01",
+          "content_locator": "Prior intent and unavailable money; narrated rival, loan, bargain/payment, body comparisons and retrospective evaluation"
+        }
+      ],
+      "comparison_statement": "The retained absent-brother records separate question context, probable same-day news forecast and one later reported carrier episode. B02i similarly requires separation of prior-known intention and inaccessible money from purchase judgements and narrated later transactions. Lilly's aggregate relocation thanks and hidden-object experiences are a different evidence form from a specified charted case; multiple episodes or bodily comparisons within the purchase account are not independent cases.",
+      "conditions_that_must_survive": [
+        "R972's questions do not establish death, killing or illness.",
+        "R980 preserves probable modality for same-day news.",
+        "R982 groups carrier arrival, approximate time and conveyed life/health news as one dependent report.",
+        "Purchase competitor margin places rivalry after beginning and before conclusion; it is not necessarily part of original-question context."
+      ],
+      "limits": [
+        "Earlier originals were not reread; these comparisons use full retained records and B02i source-first notes.",
+        "Neither set supplies independent documentation of the narrated outcomes in the cited retained evidence.",
+        "Lack of prospective controls here is an evidence limitation, not a claim that historical events did not occur."
+      ],
+      "implementation_or_evaluation_implication": {
+        "type": "Criteria for any later prospective evaluation; not a new current completion requirement",
+        "statement": "Freeze known inputs, exact question/time, conditional outputs, target definitions and outcome windows before observation; record misses as well as hits, dependent event units and independent outcome provenance."
+      },
+      "empirical_status": "Textual comparison only; neither agreement nor a retained historical example establishes predictive performance"
+    },
+    {
+      "comparison_id": "B02i-CMP09",
+      "topic": "Acquisition is distinct from financial benefit and from lack of regret",
+      "relation": "agreement",
+      "comparison_kind": "Context-sensitive comparison across retained sections of Lilly; not independent-source corroboration",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.I.XXI.R557",
+          "batch": "B02d",
+          "excerpt_pointer": "/retained_records/5/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "I",
+            "section_key": "I.XXI",
+            "pdf_pages": [
+              159
+            ],
+            "printed_pages": [
+              125
+            ]
+          }
+        }
+      ],
+      "b02i_evidence": [
+        {
+          "local_id": "B048",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              251
+            ],
+            "printed_pages": [
+              217
+            ],
+            "chapter": "XXXVII",
+            "section": "If the Querent shall obtaine the Treasure hid",
+            "passage_anchor": "If the Planet who signifies the Treasure or thing hid, doth apply",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+            ],
+            "source_first_note_items": [
+              35
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1113"
+        },
+        {
+          "local_id": "B049",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              251
+            ],
+            "printed_pages": [
+              217
+            ],
+            "chapter": "XXXVII",
+            "section": "Hard aspect qualification",
+            "passage_anchor": "if the aspect be by square or opposition",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-251.png"
+            ],
+            "source_first_note_items": [
+              36
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1114"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "C",
+          "note_file": "independent_review/worked_chart/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+          "pdf_pages": [
+            255,
+            256
+          ],
+          "printed_pages": [
+            221,
+            222
+          ],
+          "note_heading_or_anchor": "A255-04; A255-07; A256-01",
+          "content_locator": "Purchase/payment completed; hard bargain and injury in money; biographical reasons and no regret"
+        }
+      ],
+      "comparison_statement": "Earlier opposition-perfection doctrine explicitly separates an event occurring from the querent being better off. The purchase example illustrates the same distinction at the level of narrated outcomes: Lilly bought and paid for the houses, described the bargain as financially injurious, and nevertheless reported no regret because of his attachment and history there. Treasure acquisition probability and hard-aspect labor in B048/B049 likewise do not assert a profitable acquisition.",
+      "conditions_that_must_survive": [
+        "R557 is an opposition route with its own reception/house/Moon conditions.",
+        "The purchase case is not relabelled as an opposition example merely to match R557.",
+        "B048 targets obtaining the sought thing; B049 targets labor/difficulty.",
+        "Financial evaluation and later emotional satisfaction are separate statements."
+      ],
+      "limits": [
+        "The comparison is about outcome separation, not a proof that R557 caused or predicted this purchase.",
+        "Do not count no regret as financial profitability or completed transaction as overall welfare.",
+        "The future lease-expiry expectation remains unverified in the admitted source notes."
+      ],
+      "implementation_or_evaluation_implication": {
+        "type": "Representation recommendation",
+        "statement": "Use separate outcome fields for occurrence, acquisition cost/benefit, effort/delay and satisfaction; do not collapse them into one success bit."
+      },
+      "empirical_status": "Textual comparison only; neither agreement nor a retained historical example establishes predictive performance"
+    },
+    {
+      "comparison_id": "B02i-CMP10",
+      "topic": "Horary methods and a natal reference do not create a natal prediction module",
+      "relation": "genre boundary",
+      "comparison_kind": "Context-sensitive comparison across retained sections of Lilly; not independent-source corroboration",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.II.XXII.R568",
+          "batch": "B02e",
+          "excerpt_pointer": "/retained_records/7/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXII",
+            "pdf_pages": [
+              163
+            ],
+            "printed_page_positions": [
+              129
+            ]
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXIX.R959",
+          "batch": "B02h",
+          "excerpt_pointer": "/retained_records/18/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXIX",
+            "pdf_pages": [
+              229
+            ],
+            "printed_sequence_expected": [
+              195
+            ],
+            "visible_printed_labels": [
+              "195"
+            ],
+            "passage_anchor": "better resolved from the proper Nativity",
+            "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+          }
+        }
+      ],
+      "b02i_evidence": [
+        {
+          "local_id": "B023",
+          "candidate_file": "independent_review/source_b/CANDIDATE_RULES.json",
+          "candidate_file_sha256": "73627848c54a65da08fd596bbdf44915efc08326d048d502eefcd64c57f85c58",
+          "source": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "pdf_pages": [
+              249
+            ],
+            "printed_pages": [
+              215
+            ],
+            "chapter": "XXXVII",
+            "section": "Treasure-question routing preamble",
+            "passage_anchor": "The resolution of this Question is various",
+            "anchor_type": "Locating transcription; long-s expanded and glyphs named, not a diplomatic quotation",
+            "original_image_paths": [
+              "/workspace/scratch/bd2460f96de0/b02i-source-pages/p-249.png"
+            ],
+            "source_first_note_items": [
+              22
+            ]
+          },
+          "record_id": "LI.1647.II.XXXVII.R1088"
+        },
+        {
+          "source_layer": "Retained B02i source-first notes; not an original reread by comparison helper",
+          "span": "C",
+          "note_file": "independent_review/worked_chart/SOURCE_FIRST_NOTES.md",
+          "note_sha256": "d718c9195068047fb7dd12e78d321e9a2049fa3273a96f1a8eb21d1dea93ed1e",
+          "pdf_pages": [
+            253,
+            254
+          ],
+          "printed_pages": [
+            219,
+            220
+          ],
+          "note_heading_or_anchor": "A253-P; A254-01",
+          "content_locator": "Question chart of a planned purchase; ascending degree compared with natal Jupiter as a good omen"
+        }
+      ],
+      "comparison_statement": "The earlier first-question scope uses horary questions when a nativity is unavailable; it does not repair a birth chart. The sibling record expressly distinguishes preference for a proper nativity from the separately offered horary rules. B02i's question-dependent treasure routing and the purchase chart remain horary even though Lilly mentions a natal-Jupiter degree as a good omen in the purchase narrative.",
+      "conditions_that_must_survive": [
+        "Question type, ownership and prior knowledge govern B023 routing.",
+        "The purchase chart is dated to the self-question, not the author's birth.",
+        "A natal cross-reference in A254-01 is a reported supporting omen, not a supplied natal dataset or full natal technique."
+      ],
+      "limits": [
+        "No Ptolemy records were needed or opened: the retained Lilly records explicitly establish the relevant genre distinction.",
+        "General planetary vocabulary can recur across genres without transferring local conditions or predictive claims.",
+        "No present-person natal interpretation, birth-time estimate or empirical natal validation is produced."
+      ],
+      "implementation_or_evaluation_implication": {
+        "type": "Admission boundary",
+        "statement": "Retain genre and chart-event identity at rule and case level; require an explicit source basis before transferring a horary rule into natal work."
+      },
+      "empirical_status": "Textual comparison only; neither agreement nor a retained historical example establishes predictive performance"
+    },
+    {
+      "comparison_id": "B02i-CMP11",
+      "topic": "Geometric house versus near-cusp virtue",
+      "relation": "qualified_source_comparison",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.I.04.R033",
+          "batch": "B02a",
+          "excerpt_pointer": "/retained_records/26/record",
+          "source_locator": {
+            "work_id": "CHRISTIAN_ASTROLOGY",
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "edition": "1647 English original, Wellcome b30338724",
+            "book": "I",
+            "chapter": 4,
+            "pdf_pages": [
+              67
+            ],
+            "printed_pages": [
+              33
+            ],
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+          }
+        }
+      ],
+      "b02i_record_ids": [
+        "LI.1647.II.XXXVIII.R1132"
+      ],
+      "comparison_statement": "Mercury lies2°48′ before H8 in geometric H7. The earlier five-degree virtue convention makes an eighth-house interpretation plausible. The later prose does not explicitly explain its Mercury omission, so the reading remains qualified rather than a demonstrated chart error.",
+      "limits": [
+        "Earlier records used as retained evidence; only errata888 freshly reread outside the admitted span.",
+        "No source coordinate repaired, no definitive printer-error attribution, no empirical validation."
+      ]
+    },
+    {
+      "comparison_id": "B02i-CMP12",
+      "topic": "Printed Fortune versus the earlier selected formula",
+      "relation": "qualified_source_comparison",
+      "earlier_records": [
+        {
+          "record_id": "LI.1647.READER.R007",
+          "batch": "B02a",
+          "excerpt_pointer": "/retained_records/25/record",
+          "source_locator": {
+            "work_id": "CHRISTIAN_ASTROLOGY",
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "edition": "1647 English original, Wellcome b30338724",
+            "book": "FRONT_MATTER",
+            "chapter": "READER",
+            "pdf_pages": [
+              26
+            ],
+            "printed_pages": [],
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXIII.R625",
+          "batch": "B02e",
+          "excerpt_pointer": "/retained_records/27/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXIII",
+            "pdf_pages": [
+              177,
+              178
+            ],
+            "printed_page_positions": [
+              143,
+              144
+            ]
+          }
+        },
+        {
+          "record_id": "LI.1647.II.XXIII.R631",
+          "batch": "B02e",
+          "excerpt_pointer": "/retained_records/28/record",
+          "source_locator": {
+            "source_id": "LILLY1647_WELLCOME_B30338724",
+            "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+            "book": "II",
+            "section_key": "II.XXIII",
+            "pdf_pages": [
+              178
+            ],
+            "printed_page_positions": [
+              144
+            ]
+          }
+        }
+      ],
+      "b02i_record_ids": [
+        "LI.1647.II.XXXVIII.R1129",
+        "LI.1647.II.XXXVIII.R1142"
+      ],
+      "comparison_statement": "The earlier selected same-day/night formula gives Pisces3°27′ from the printed purchase inputs, versus Pisces12°27′ printed. The alternate nocturnal formula is not silently substituted. A targeted root read of original errata PDF888 found no printed219 correction; its printed209 last-line other entry does not change the rental paragraph meaning already retained.",
+      "limits": [
+        "Earlier records used as retained evidence; only errata888 freshly reread outside the admitted span.",
+        "No source coordinate repaired, no definitive printer-error attribution, no empirical validation."
+      ]
+    }
+  ],
+  "retained_excerpts_file": "RETAINED_SOURCE_EXCERPTS.json",
+  "retained_excerpt_count": 29,
+  "ptolemy_used": false,
+  "scope_limits": [
+    "No participant records, personal catalog, prediction freezes, fitted models or earlier producer repair history read",
+    "No prior original-page reread claimed",
+    "No existing frozen/output files modified",
+    "No Git mutation or publication",
+    "No test or calculation presented as predictive evidence",
+    "Root retains source admission and integration authority"
+  ],
+  "verification": {
+    "all_comparison_ids_unique": true,
+    "all_retained_references_resolve": true,
+    "all_retained_records_copied_in_full": true,
+    "all_copied_records_used": true,
+    "all_existing_B_deliverable_hashes_preserved": true
+  },
+  "execution_deviation": {
+    "detail": "The new build script was briefly staged at /workspace/scratch/bd2460f96de0/b02i-comparisons-build.py before being moved to the assigned b02i-comparisons directory.",
+    "effect": "No pre-existing file was changed at that temporary path; the temporary path no longer exists. All persistent follow-up files are in the assigned directory.",
+    "status": "Recorded, temporary out-of-directory staging removed."
+  },
+  "root_normalization": "Local candidate and note links mapped to included files; source statements are unchanged."
+}
