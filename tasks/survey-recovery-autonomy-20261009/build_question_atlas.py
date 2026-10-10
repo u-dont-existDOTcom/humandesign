@@ -23,14 +23,27 @@ for typ, routes in [('current_tf1_v1',V1['questions']),('historical_v7',BANK['qu
     for q in routes:
         source = q.get('source_route_id') or q['id']
         facets = by_route.get(source, [])
+        # Shared historical D19 is not automatically a STATUS interpretation.
+        if source == 'STATUS' and typ != 'historical_v7':
+            facets = [f for f in facets if f['facet_id'] != 'D19.status_ownership']
         old = legacy.get(source,{})
         active = typ=='current_tf1_v1'
         status = 'CURRENT TF1 V1' if active else ('DEVELOPMENT ONLY: NOT LIVE' if typ=='proposed_tf1_v2' else ('RETIRED FROM NEW QUESTIONS' if q['id'] in V1['retired_from_new_elicitation'] else 'HISTORICAL / POSSIBLE PROBE'))
+        if typ == 'proposed_tf1_v2' and q['question'] == next(
+            item['question'] for item in V1['questions'] if item['id'] == q['id']
+        ):
+            status = 'V2 CATALOG COPY: TEXT SAME AS CURRENT V1 (NOT A NEW QUESTION)'
         rows.append({
             'id':q['id'],'version':typ,'status':status,'question':q['question'],
             'example_if_needed':q.get('example_if_needed'),
             'purpose':PURPOSE.get(q['id']) or PURPOSE.get(source) or '',
             'source_route_id':source,'family':q.get('family',''),
+            'source_scope_note': (
+                'Recognition in itself is separate from motivations for owning a laptop; historical D19 combined evidence from two distinct questions. Do not infer ownership from this answer.'
+                if source == 'STATUS' else
+                'Owning a laptop for non-access reasons is separate from enjoying others’ admiration.'
+                if source == 'OWNERSHIP' else ''
+            ),
             'planning_targets':q.get('planning_targets') or [],
             'interpretation_limit':q.get('interpretation_limit',''),
             'admission':q.get('admission',''),
@@ -51,7 +64,7 @@ entries=[]
 for r in rows:
     supported=''.join('<div class="facet"><b>'+esc(f['facet_id'])+'</b><p>Example answer: '+esc(f['fictional_answer'])+'</p><p>Allowed narrow observation: '+esc(f['narrow_supported_reading'])+'</p><p><b>Not justified:</b> '+esc(f['unsupported_extension'])+'</p></div>' for f in r['frozen_v7_facet_examples'])
     link_note='<p class="note">Those facets describe the historical v7 route. The TF1 response is not automatically interchangeable with old facets or valid for natal scoring; each inference must be independently supported.</p>' if r['version']!='historical_v7' else ''
-    entries.append(f'''<article class="entry" data-version="{r['version']}" data-text="{esc(' '.join([r['id'],r['question'],r['purpose'],r['family']]))}"><h3>{esc(r['id'])} <span class="tag">{esc(r['status'])}</span></h3><p class="question">{esc(r['question'])}</p><p><b>What this distinguishes:</b> {esc(r['purpose'] or r['family'])}</p><details><summary>Examples, limits and evidence interpretation</summary><p><b>Optional example:</b> {esc(r['example_if_needed'])}</p><p><b>Admitted inference limit:</b> {esc(r['interpretation_limit'])}</p><p><b>When it is worth asking:</b> {esc(r['admission'])}</p><p><b>Context conditions:</b> {esc(r['context_requirement'])}</p>{link_note}{supported or '<p>No explicit v7 facet example for this route. Do not invent trait scoring.</p>'}</details></article>''')
+    entries.append(f'''<article class="entry" data-version="{r['version']}" data-text="{esc(' '.join([r['id'],r['question'],r['purpose'],r['family']]))}"><h3>{esc(r['id'])} <span class="tag">{esc(r['status'])}</span></h3><p class="question">{esc(r['question'])}</p><p><b>What this distinguishes:</b> {esc(r['purpose'] or r['family'])}</p><p class="note">{esc(r['source_scope_note'])}</p><details><summary>Examples, limits and evidence interpretation</summary><p><b>Optional example:</b> {esc(r['example_if_needed'])}</p><p><b>Admitted inference limit:</b> {esc(r['interpretation_limit'])}</p><p><b>When it is worth asking:</b> {esc(r['admission'])}</p><p><b>Context conditions:</b> {esc(r['context_requirement'])}</p>{link_note}{supported or '<p>No explicit v7 facet example for this route. Do not invent trait scoring.</p>'}</details></article>''')
 script='''<script>const filter=document.getElementById('filter'),which=document.getElementById('which'),els=[...document.querySelectorAll('.entry')],number=document.getElementById('count');function update(){const q=filter.value.toLowerCase().trim(),v=which.value;let n=0;for(const item of els){const show=(!v||item.dataset.version===v)&&(!q||item.dataset.text.toLowerCase().includes(q));item.hidden=!show;if(show)n++;}number.textContent=n+' questions shown';}filter.addEventListener('input',update);which.addEventListener('change',update);update();</script>'''
 html_doc='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Life Patterns — Questions & interpretation atlas</title><style>body{font-family:system-ui,-apple-system,sans-serif;max-width:980px;margin:0 auto;padding:25px 20px;line-height:1.48;background:#f7f8fa;color:#24262a}header{border-bottom:2px solid #d3d9e0;padding-bottom:18px}h1{font-size:1.65rem}h3{font-size:1.12rem;margin:0}input,select{padding:9px;font:inherit;border:1px solid #a5adba;border-radius:7px;max-width:100%}.tools{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}.entry{background:white;border:1px solid #dde1e5;border-radius:9px;padding:17px;margin:12px 0;box-shadow:0 1px 2px #ddd}.entry[hidden]{display:none}.question{font-size:1.07rem}.tag{color:#596779;font-size:.76rem;margin-left:6px;letter-spacing:.02em}.facet{border-left:3px solid #aab6c5;padding:4px 14px;margin:13px 0;background:#f6f8fb}details summary{cursor:pointer;font-weight:600;color:#23486c}.note{font-size:.9rem;color:#654623}.meta{color:#596373}#count{font-size:.92rem}</style></head><body><header><h1>Life Patterns: every question and what answers can support</h1><p>All 79 historical v7 questions, the 25 current tendency-first v1 questions and 25 separately proposed v2 versions. Includes the 73 original evidence-guide facets, sample answers, narrow admissible interpretations and prohibited overextensions.</p><p class="meta"><b>Scientific boundary:</b> This is a transparent coding/elicitation reference, not an answer key or proof that the questions identify birth time. New TF1 answers are not automatically scored as historical v7 evidence. Proposed v2 wordings are not live. A short or ordinary answer may legitimately support no trait inference.</p></header><div class="tools"><input id="filter" aria-label="Filter questions" placeholder="Search question, route, purpose…" size="36"><select id="which"><option value="">All versions</option><option value="current_tf1_v1">Current v1 (25)</option><option value="historical_v7">Historical v7 (79)</option><option value="proposed_tf1_v2">Proposed v2 (25, not live)</option></select><span id="count"></span></div>'''+''.join(entries)+script+'</body></html>'
 (TASK/'question-atlas.html').write_text(html_doc,encoding='utf-8')

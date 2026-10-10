@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "task_id": "life-patterns-idiographic-20261010",
+  "status": "development_only_not_live_not_validated",
+  "question_count": 25,
+  "unique_inventory_max_suggested": 20,
+  "unique_inventory_initial_count": 3,
+  "source_v7_unchanged": true,
+  "source_v1_unchanged": true,
+  "source_v2_unchanged": true,
+  "original_responses_unchanged": true,
+  "production_gpt_unchanged": true,
+  "railway_unchanged": true,
+  "v3_main_question_wording_changes_vs_v2": [
+    "TF1-A0"
+  ],
+  "v3_all_questions_show_examples_by_default": true,
+  "other_free_text_skip_unsure_unforced": true,
+  "historical_status_ownership_facet_preserved": true,
+  "current_and_proposed_status_historical_laptop_inheritance_removed": true,
+  "uniqueness_count_is_not_birth_time_predicter": true,
+  "codebook_and_chart_scoring_not_activated": true,
+  "owner_local_delivery": "Life-Patterns-Idiographic-Pilot-2026-10-10",
+  "owner_guide_link_installed": true,
+  "affected_focused_tests": "6 passed",
+  "browser_interaction_test": "passed with 25 routes, mobile layout, no network, add-item and recognition checks",
+  "artifacts": {
+    "DESIGN_AND_VALIDATION.md": "2d0b23a8d2802a7a0c297ba756cae865a6b9d54cbebc09afd8bf4035813027cc",
+    "tendency-first-v3-scaffold-development.json": "5a5473011a73d58bc1c463b2bea5521991256d67e07e4ffbd22ec553b2012c2b",
+    "unusual-behavior-inventory-v0.json": "117b1583a4a2669e6b78b35e8a7e17aa7ffa8fa36c8b4a9a2d517a3bb2313e49",
+    "scoped_recognition_ownership_and_solitude-v0.json": "39301dc61783de3f8644deee8b6f6581a317910a8102bccb1a1a98a4a55b5903",
+    "LIFE_PATTERNS_V3_OFFLINE_PILOT.html": "54e4a5a2cdcbb1568db01ad5f58257830c4e2ca8d2a3fc9b7b45aef786dade83"
+  },
+  "full_repository_tests": {
+    "passed": 1033,
+    "skipped": 6,
+    "failed": 0
+  },
+  "scoped_ruff": "PASS"
+}

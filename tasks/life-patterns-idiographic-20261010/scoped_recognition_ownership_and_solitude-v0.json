@@ -1,0 +1,52 @@
+{
+  "schema": "life-patterns-development-facet-scope-correction-v0",
+  "status": "DRAFT_NOT_A_HISTORICAL_FACET_REWRITE_OR_LIVE_SCORING",
+  "frozen_source": {
+    "path": "tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json",
+    "sha256": "f87916dfdf6c6616e7787057b870fbda60858a42747763bb9a044d225cd4729c",
+    "historical_facet_id": "D19.status_ownership",
+    "historical_question_routes": [
+      "STATUS",
+      "OWNERSHIP"
+    ],
+    "historical_joint_interpretation_preserved": true
+  },
+  "issue": "Historical D19 spans two distinct questions. A shared combined evidence-guide example was displayed under the modern recognition route even though its laptop ownership scenario was never part of that question.",
+  "separate_prospective_dimensions": [
+    {
+      "facet_id": "D19_V3_intrinsic_recognition_value",
+      "route_ids": [
+        "TF1-STATUS"
+      ],
+      "observable": "How rewarding genuine recognition is in itself, conditional on the relationship or contribution recognized, without practical payoff.",
+      "possible_evidence": "A self-reported difference between admiration from close people and admiration from strangers, after practical benefits are explicitly excluded.",
+      "must_not_infer": [
+        "desire to own or control a laptop",
+        "motives for holding resources",
+        "being invited to a role on the basis of recognized ability",
+        "ambition, narcissism, insecurity, prestige seeking or diagnosis"
+      ],
+      "scoring": "not_active"
+    },
+    {
+      "facet_id": "D19_V3_laptop_ownership_motives",
+      "route_ids": [
+        "OWNERSHIP"
+      ],
+      "observable": "Motivation to own a regularly available equivalent tool when access, privacy, cost and software restrictions have been controlled.",
+      "possible_evidence": "Reported desire for permanence, exclusive agency or control independent of practical access, while preserving the individual's explanation.",
+      "must_not_infer": [
+        "intrinsic satisfaction from recognition or praise",
+        "general materialism or status striving",
+        "the tool or household arrangement is objectively optimal"
+      ],
+      "scoring": "not_active_retired_legacy_route"
+    }
+  ],
+  "prospective_A0_observation_split": [
+    "subjective enjoyment of alone time",
+    "whether alone time is proactively arranged",
+    "whether invitations are accepted or declined when enjoying solitude"
+  ],
+  "source_preservation": "The historical D19 entry and all participant answers remain unchanged; only modern display and versioned research item definitions change."
+}

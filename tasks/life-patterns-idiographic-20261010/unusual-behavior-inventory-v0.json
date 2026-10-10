@@ -1,0 +1,57 @@
+{
+  "schema": "life-patterns-idiographic-inventory-protocol-v0",
+  "status": "VOLUNTARY_DEV_ONLY_NOT_LIVE_NOT_SCORED",
+  "module_id": "UNUSUAL-BEHAVIORS-V0",
+  "intended_use": "Elicit concrete participant-specific behaviors not anticipated by the closed questionnaire; measure added information content and response process, not natal uniqueness a priori.",
+  "opening_prompt": "What are some specific things you do, like, notice, or handle differently from many people around you? Small everyday habits count. They need not be positive or impressive; if none come to mind, that's fine. Start with one to three, and we can continue if you want.",
+  "target_list_size_if_willing": "up to 10–20 total; not a required quota",
+  "initial_batch_size": 3,
+  "optional_continuation": "Would you like to add more? We can work toward 10–20 if you have them, or stop whenever you prefer.",
+  "can_record_zero": true,
+  "example_categories_if_stuck": [
+    "A small household or daily routine you do differently",
+    "A decision rule or shortcut you use repeatedly",
+    "A way you learn, fix, organize or adapt something",
+    "A preference or reaction that differs within your peer group",
+    "A social habit that surprises people who know you"
+  ],
+  "example_safety": "Do not prompt unsafe techniques or celebrate disregarding safety instructions. If a person describes a risky behavior, preserve it as source while avoiding operational encouragement.",
+  "follow_up_per_item_only_if_informative": [
+    "What exactly do you do, and how often in ordinary circumstances?",
+    "Who are you comparing yourself with, and why do you think this differs?",
+    "How long have you done it, and what circumstances make you do it or not do it?",
+    "What do you get out of doing it that way, if anything?",
+    "Can you recall a time you chose the usual approach instead?"
+  ],
+  "followup_limit": "At most one or two high-information clarifications per item, not all five every time.",
+  "participant_control": [
+    "Other free text",
+    "Can't think of one now",
+    "That's all for now",
+    "Prefer to skip"
+  ],
+  "data_schema_per_item": {
+    "verbatim_description": "string_required_if_item_submitted",
+    "context_and_frequency": "string_or_unknown",
+    "comparison_group": "string_or_unknown",
+    "self_assessed_rarity": "common|somewhat_unusual|very_unusual|unknown",
+    "reason_for_choice": "string_or_unknown",
+    "conditions_and_counterexamples": "string_or_unknown",
+    "spontaneously_recalled": "boolean",
+    "prompted_category_used": "boolean",
+    "neutral_behavioral_candidate_tags": "list_of_hypotheses_not_confirmed_traits",
+    "objective_prevalence_verified": "false_by_default",
+    "chart_prediction_admitted": "false_by_default"
+  },
+  "no_trait_from_count": "Number of volunteered items measures recall and response process as much as unusual behavior; zero/short lists do not imply an ordinary chart or hard-to-find DOB.",
+  "coding_rule": "Distinguish concrete action, motivation, opportunity, costs and constraints. Do not infer creative/nonconformist/rational traits from one example; test competing explanations and counterexamples, with source quotes.",
+  "birth_predictiveness_hypothesis": "Candidate only: independently measure within-cohort behavioral distinctiveness; test whether it incrementally predicts true-chart identification rank beyond existing respondent covariates and baseline survey. Never equate behavioral rarity with chart rarity by assumption.",
+  "evaluation_design": {
+    "design": "Prospective randomized open-only vs optional category-scaffold versions on new, untouched participants; measure recall count, specificity and perceived helpfulness; keep all answers unscored for birth matching until independent preregistered coding and mapping.",
+    "later_blind_chart_test": "Same participants and candidate universe compared with standard questions alone, uniqueness inventory alone, and combined source; include a matched chart-permutation null and a simple non-chart personal-detail baseline.",
+    "count_not_scoring": true,
+    "birth_data_hidden_from_interviewer": true,
+    "no_person_known_to_designer_as_validation": true,
+    "no_unproven_birth_difficulty_inference": true
+  }
+}

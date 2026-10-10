@@ -1,0 +1,14 @@
+# Life Patterns owner feedback — delivered development design
+
+The owner's proposal has been translated into a source-preserving, **not-live** experimental design. This is not a validated new questionnaire or evidence of birth-time prediction.
+
+- Voluntary self-generated behavior inventory: start with 1–3, invite continuation toward 10–20 only if desired; concrete behaviors, frequency, context, comparison group, motivation and counterexamples; zero or no recall explicitly valid. No claimed relation between list length and birth-date identification. Further research must measure prevalence and hold out independent people.
+- Question-answer scaffolds: each of the 25 prospective v3 questions has 4 short diverse example response paths by default, multiple selection allowed, Other/free text and not-sure/skip always allowed. Voice can use 2–3 short examples; no forced choices, no hard trait labels, no automatic chart scoring.
+- A0: development primary now directly asks about enjoyment of solitude; conditional follow-ups distinguish proactively making alone time and joining company on invitation. No equivalence to the original friend-company vignette is assumed.
+- STATUS: retained historical v7 D19.status_ownership **unchanged** in its frozen source, but corrected current/proposed TF1-STATUS atlas entries to stop inheriting the joint laptop/ownership scenario. Separate prospective interpretation records for recognition versus ownership exist, neither scored.
+- The prior proposed v2 A0 was actually **unchanged from v1**; the atlas now labels that explicitly rather than calling a catalog copy a new question.
+- Offline interactive pilot and complete written protocol delivered to the owner's OS Downloads under `Life-Patterns-Idiographic-Pilot-2026-10-10/`, reachable from the existing `Life-Patterns-Researcher-Guide.html`. The generated original question atlas was updated with source-scoped STATUS/OWNERSHIP notes and preserved as an earlier local backup for reversibility.
+
+The isolated Chrome/Puppeteer smoke test succeeded: all 25 question choices rendered; the A0 direct wording and recognition-only options showed; an invented neutral test behavior could be added; mobile viewport had no horizontal overflow, no script errors or external requests. Static JS syntax and focused tests passed. The separate initial headless Brave invocation timed out; that is not marked a pass and was superseded by the controlled Puppeteer run.
+
+Next research step: new participant cognitive interviews comparing open-only versus example-assisted formats, and an incremental source-information evaluation on untouched people. Only after source-first behavioral coding and chart predicates are separately frozen should this module enter any natal match benchmark. The existing production GPT and current review are not changed.
