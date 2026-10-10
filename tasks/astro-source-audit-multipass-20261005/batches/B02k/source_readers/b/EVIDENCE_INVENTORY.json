@@ -1,0 +1,4269 @@
+{
+  "schema": "b02k.returning_source_reader_evidence_inventory.v1",
+  "role": "RETURNING_SOURCE_READER_B_INVENTORY",
+  "independent_evaluation": false,
+  "task_date_utc": "2026-10-10",
+  "task_first_clock_utc": "2026-10-10T16:17:25Z",
+  "source": {
+    "path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+    "sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "scope": "Historical horary source only; the opening XLIV block ends immediately before DARIOT Abridged on PDF292.",
+    "reader_b_start": "PDF283 immediately after the A-owned Pisces carryover, at If the Moon apply by ill aspect",
+    "reader_b_end": "PDF292 end of the complete paragraph ending shew death",
+    "whole_chapter_claim": false
+  },
+  "method": {
+    "original_source_reading": "Reader B's original full-image reading and frozen notes precede candidate creation. This return checks the compiled records against those artifacts and revisits original images at the requested star, errata, correction, and same-work callback points.",
+    "ocr_role": "Navigation only; source readings come from images of the same SHA256-verified PDF.",
+    "paragraph_check_limit": "The 34 paragraph-region entries from the original reading are all present in the integration. No skipped mapped paragraph was found. This returning-source-reader inventory is not the independent full-scope evaluation and does not turn a mechanical count into proof of historical validity.",
+    "allowed_mutations": "New inventory files and their private generation aid only. No canonical repository or raw reader artifact changed."
+  },
+  "canonical_inputs": [
+    {
+      "name": "COUNTS.json",
+      "path": "/workspace/scratch/43f75264c32e/humandesign-b02k/tasks/astro-source-audit-multipass-20261005/batches/B02k/COUNTS.json",
+      "sha256": "f78ccad142ef66ad6a639f381c551e1a630cb5499831b0ffabd4d1117e4e12c8"
+    },
+    {
+      "name": "RULES.json",
+      "path": "/workspace/scratch/43f75264c32e/humandesign-b02k/tasks/astro-source-audit-multipass-20261005/batches/B02k/RULES.json",
+      "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4"
+    },
+    {
+      "name": "SECTION_COVERAGE.json",
+      "path": "/workspace/scratch/43f75264c32e/humandesign-b02k/tasks/astro-source-audit-multipass-20261005/batches/B02k/SECTION_COVERAGE.json",
+      "sha256": "5786ddb13b68e2a2ad5f53565342704a7c3d55eea5aab2faa236fcd4ef0a7938"
+    },
+    {
+      "name": "UNRESOLVED.json",
+      "path": "/workspace/scratch/43f75264c32e/humandesign-b02k/tasks/astro-source-audit-multipass-20261005/batches/B02k/UNRESOLVED.json",
+      "sha256": "02830c0b9ee504ef0efb60e5318c2d3c5db4494e6255d156093bfd0d52c6508a"
+    },
+    {
+      "name": "REFERENCE_TABLES.json",
+      "path": "/workspace/scratch/43f75264c32e/humandesign-b02k/tasks/astro-source-audit-multipass-20261005/batches/B02k/REFERENCE_TABLES.json",
+      "sha256": "d3e2476aa8ce05ff8fcb2c1fd1642abc6fbd8fea0df4f561aff15c077d03212e"
+    },
+    {
+      "name": "RETAINED_SOURCE_EXCERPTS.json",
+      "path": "/workspace/scratch/43f75264c32e/humandesign-b02k/tasks/astro-source-audit-multipass-20261005/batches/B02k/RETAINED_SOURCE_EXCERPTS.json",
+      "sha256": "cd8ef885530cb5b5124341ff929712eee26d46b4cf514997ca89f2e5af1fb07e",
+      "role": "additional callback provenance read"
+    }
+  ],
+  "private_input_snapshot": {
+    "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/inventory-inputs.json",
+    "sha256": "625bd21b67ae8e9cd03babb9a2cdc6fe3810d70061839b597729eee931958447"
+  },
+  "frozen_raw_artifacts": [
+    {
+      "name": "SOURCE_FIRST_NOTES.md",
+      "sha256": "d69efe9e1e3a69590b9e6cc54a209d7a26db38d511e58e8b367dd6c30263d018",
+      "unchanged": true
+    },
+    {
+      "name": "SOURCE_FIRST_FREEZE.json",
+      "sha256": "978bbe0f2fde8384072fe5f0edb8f7bae1b90e106ad711dd211b09f7df0d6916",
+      "unchanged": true
+    },
+    {
+      "name": "CANDIDATE_RULES.json",
+      "sha256": "1e7aeb6e83f300393f85dccdbe4f3712168dd83f857ddc60f3d74208f7c121b1",
+      "unchanged": true
+    },
+    {
+      "name": "SECTION_COVERAGE.json",
+      "sha256": "84bbe87c0c045a4bc6a9455560980b501565035330c3f7f75f86ccd516965946",
+      "unchanged": true
+    },
+    {
+      "name": "UNRESOLVED.json",
+      "sha256": "02998e1bc0dd2bf35b28869d6fb3018c94a328e29232a131b3bd17f13e9a78c3",
+      "unchanged": true
+    },
+    {
+      "name": "SOURCE_POST_FREEZE_SUPPLEMENT.md",
+      "sha256": "4f099ba081471ca8ce92bf19c370f00bc258a6b46a471c0890e59a7de5d1ec41",
+      "unchanged": true
+    },
+    {
+      "name": "ARTIFACT_MANIFEST.json",
+      "sha256": "02fffc8e71beac872268b3fcebdd2f11bdbc9b208e14f5d59424f01400cbe614",
+      "unchanged": true
+    }
+  ],
+  "inspected_source_images": [
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf282.png",
+      "sha256": "8882ffb79eb4356cb3d8e86c867092a50f5ca22b6760796b582e73869238bf74"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf283.png",
+      "sha256": "9d34d290617052368a738f71c388f5f8a5c9544e0aadfac42b69d3748b75fd46"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf284.png",
+      "sha256": "78a7d14efc1e25b3960ffda8ea527b47cdb1c909e53e12e91ca1906d3132c667"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf285.png",
+      "sha256": "632a364ce2f6cfc945db45848b8084c063cc86c4706da74970ee29b6fdebdaf2"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf286.png",
+      "sha256": "00c21d6f5ac982f6bb791756ccf0013423616dde08c9c21735b26aa83153f9d5"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf287.png",
+      "sha256": "33eda9bd800f32ba1e1592a987d54356ebfe5cd5506a09d752193d9db27824be"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf288.png",
+      "sha256": "97cd53a98ecf1e60ca4c4324fcc73e6fe581b69aa4abf89dbbcb3f1e0d95848e"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf289.png",
+      "sha256": "af739545338eb4e1b0a42adbeffafea7ce30f4242bcdd4ea17c4fc348ff17169"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf290.png",
+      "sha256": "91a7bd95c996e7a338a2a59373239e9af80ea74adadb48be7b62395c9cecb890"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf291.png",
+      "sha256": "e48c3ba8f3e2f7b93fa9689d081dbf069b65adc52c9c71de8421667f7d240336"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf292.png",
+      "sha256": "d51a5232431a3e94db9e640186d52b54a0cf2ae2646c3a1642f68732a3af71e8"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf114.png",
+      "sha256": "73a3ca62a7ff61ebd9867192cd57c45db91a5ace086419c62151196050239c8a"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf153.png",
+      "sha256": "9412834d8f15cee057297e2b9bbd43bd1874e1e9e4ca26d738bd8869471064e5"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf278.png",
+      "sha256": "9cd1438e0920821ad76919a6acc9db682aeb6b23368324a00e76ddbf2118d490"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/source-work/pdf279.png",
+      "sha256": "020a7f9fcfe0a503279b901d3caa7a2490a86a1a577da412fbcc85222f14ff22"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/errata-888.png",
+      "sha256": "8f6ddc47517842340331e06a906acf5772b0bfb40f528b5921a8fe9d6d65ddc0"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/errata-admitted-lines.png",
+      "sha256": "d19279a2a4994f3f1929f0790752efd8b637dd03d5e530f0b2abb890e8e57754"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/p254-placement-crop.png",
+      "sha256": "53efd8b65f28e0a61d9dd3c7ff6b88fd1d10a6f9d939144050e061e7dee73a7d"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/p257-antiscion-crop.png",
+      "sha256": "d92524e74bcec8d4d1c3c544cf3e4a3abdf717616aa1b92cbabf44ecac141a47"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/verification-290.png",
+      "sha256": "3b15692edb30bdcf5e67f8deb60cf366a87e1827cbf46a61e59468e8c58dcc20"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/verification-291.png",
+      "sha256": "fe73a1f1ccff2ed5624b45f0b493c413f124c490b7719c24fbc4c4fb1074354d"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02k-workers/source-b/verification-292.png",
+      "sha256": "dc26be0af7d2ae1d705eaaea2cc661149671888dfefc4779e6b4199e5f54582f"
+    }
+  ],
+  "canonical_count_snapshot": {
+    "batch": "B02k",
+    "new_source_records": 192,
+    "first_record_number": 1358,
+    "last_record_number": 1549,
+    "previous_lilly_records": 1357,
+    "cumulative_lilly_records": 1549,
+    "retained_ptolemy_records": 1066,
+    "combined_lilly_ptolemy_records": 2615,
+    "general_methodological_illustrative_records": 192,
+    "worked_narrative_records": 0,
+    "dated_enquiries": 0,
+    "worked_horoscope_figures": 0,
+    "independently_verified_clinical_outcomes": 0,
+    "source_record_independence_not_claimed": true,
+    "coverage_units": 11,
+    "admitted_pdf_pages": 16,
+    "catalogue_rows": 31,
+    "typed_register_entries": 37,
+    "retained_limits_and_anomalies": 33,
+    "source_resolved_register_entries": 4,
+    "kind_counts": {
+      "source_context": 2,
+      "method": 6,
+      "rule": 24,
+      "illustration": 1,
+      "certainty_qualification": 1,
+      "table_assignment": 37,
+      "rule_exception": 1,
+      "author_report_exception": 1,
+      "progression": 3,
+      "historical_attribution": 5,
+      "change": 1,
+      "timing_method": 1,
+      "progression_or_death": 1,
+      "source_tension": 1,
+      "historical_treatment_attribution": 1,
+      "danger": 8,
+      "qualification": 1,
+      "duration": 16,
+      "death_testimony": 22,
+      "disease_quality": 2,
+      "recovery": 20,
+      "adverse_outcome": 2,
+      "recovery_difficulty": 2,
+      "recovery_then_relapse": 1,
+      "present_safety": 1,
+      "severity": 5,
+      "recovery_after_duration": 2,
+      "safety": 4,
+      "death_possibility": 2,
+      "corroboration": 1,
+      "incipient_sickness": 1,
+      "judgment_method": 2,
+      "general_qualification": 2,
+      "relative_severity": 3,
+      "source_list": 1,
+      "death_threat": 1,
+      "death_danger": 1,
+      "attributed_variant": 1,
+      "death_probability": 1,
+      "low_recovery_hope": 1,
+      "death_or_duration": 1,
+      "death_or_severity": 1,
+      "staged_progression": 1
+    },
+    "retained_callback_records_not_added_to_count": 4,
+    "whole_XLIV_complete": false,
+    "runtime_promotions": 0,
+    "predictive_accuracy_evaluated": false
+  },
+  "mapping_verification": {
+    "reader_b_raw_records": 119,
+    "reader_b_canonical_records": 119,
+    "missing_candidate_ids": [],
+    "extra_candidate_ids": [],
+    "duplicate_local_ids": [],
+    "duplicate_canonical_ids": [],
+    "mapping_formula_verified_against_every_record": "Bnnn maps to LI.1647.II.XLIV.R(1430 + nnn)",
+    "mapped_paragraph_regions": 34,
+    "unmapped_paragraph_regions": [],
+    "source_pages": [
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292
+    ],
+    "raw_fields_identical_records": 117,
+    "documented_root_corrected_records": 2,
+    "undocumented_raw_to_canonical_field_changes": [],
+    "source_statements_prerequisites_and_page_locators_consistent": true,
+    "all_reader_b_condition_logic_executable": false,
+    "all_reader_b_runtime_reference_only": true,
+    "all_reader_b_independent_evidence_unit": false,
+    "section_counts": [
+      {
+        "section_id": "S09",
+        "count": 57
+      },
+      {
+        "section_id": "S10",
+        "count": 23
+      },
+      {
+        "section_id": "S11",
+        "count": 39
+      }
+    ],
+    "a_owned_cross_page_sentence": "A073/R1430 owns the complete common-sign/Pisces sentence from PDF282 through the opening of PDF283. It is context only for B.",
+    "last_included_records": [
+      "B117",
+      "B118",
+      "B119"
+    ],
+    "next_heading": "DARIOT Abridged.",
+    "dariot_extracted": false
+  },
+  "record_map": [
+    {
+      "candidate_id": "B001",
+      "record_id": "LI.1647.II.XLIV.R1431",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "the Disease encreases",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB01"
+      ]
+    },
+    {
+      "candidate_id": "B002",
+      "record_id": "LI.1647.II.XLIV.R1432",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "the sick may thank himselfe",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB01"
+      ]
+    },
+    {
+      "candidate_id": "B003",
+      "record_id": "LI.1647.II.XLIV.R1433",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "he hath got a clap",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB01"
+      ]
+    },
+    {
+      "candidate_id": "B004",
+      "record_id": "LI.1647.II.XLIV.R1434",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "if a woman ask",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB01"
+      ]
+    },
+    {
+      "candidate_id": "B005",
+      "record_id": "LI.1647.II.XLIV.R1435",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "is not yet at his height",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB02"
+      ]
+    },
+    {
+      "candidate_id": "B006",
+      "record_id": "LI.1647.II.XLIV.R1436",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "great presumption",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB02"
+      ]
+    },
+    {
+      "candidate_id": "B007",
+      "record_id": "LI.1647.II.XLIV.R1437",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "the Disease will speedily alter",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB02"
+      ]
+    },
+    {
+      "candidate_id": "B008",
+      "record_id": "LI.1647.II.XLIV.R1438",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "so many Moneth, Weeks or Dayes",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB02"
+      ]
+    },
+    {
+      "candidate_id": "B009",
+      "record_id": "LI.1647.II.XLIV.R1439",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "from better to worse",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB02"
+      ]
+    },
+    {
+      "candidate_id": "B010",
+      "record_id": "LI.1647.II.XLIV.R1440",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "Nature is not yet so overcome",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB02"
+      ]
+    },
+    {
+      "candidate_id": "B011",
+      "record_id": "LI.1647.II.XLIV.R1441",
+      "pdf_pages": [
+        283
+      ],
+      "printed_pages": [
+        249
+      ],
+      "anchor": "the sick felt great comfort",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB02"
+      ]
+    },
+    {
+      "candidate_id": "B012",
+      "record_id": "LI.1647.II.XLIV.R1442",
+      "pdf_pages": [
+        283,
+        284
+      ],
+      "printed_pages": [
+        249,
+        250
+      ],
+      "anchor": "great danger in the Sicknesse",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB02",
+        "PB03"
+      ]
+    },
+    {
+      "candidate_id": "B013",
+      "record_id": "LI.1647.II.XLIV.R1443",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "he hurts little",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB03"
+      ]
+    },
+    {
+      "candidate_id": "B014",
+      "record_id": "LI.1647.II.XLIV.R1444",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "will be permanent",
+      "canonical_section": "S09",
+      "raw_fields_equal": false,
+      "documented_root_correction": true,
+      "mapped_paragraph_regions": [
+        "PB03"
+      ]
+    },
+    {
+      "candidate_id": "B015",
+      "record_id": "LI.1647.II.XLIV.R1445",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "by an evill Spirit",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04"
+      ]
+    },
+    {
+      "candidate_id": "B016",
+      "record_id": "LI.1647.II.XLIV.R1446",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "hath been of long continuance",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04"
+      ]
+    },
+    {
+      "candidate_id": "B017",
+      "record_id": "LI.1647.II.XLIV.R1447",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "will then depart this Life",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04"
+      ]
+    },
+    {
+      "candidate_id": "B018",
+      "record_id": "LI.1647.II.XLIV.R1448",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "the Disease is uncurable",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04"
+      ]
+    },
+    {
+      "candidate_id": "B019",
+      "record_id": "LI.1647.II.XLIV.R1449",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "the paine doth slacken",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04"
+      ]
+    },
+    {
+      "candidate_id": "B020",
+      "record_id": "LI.1647.II.XLIV.R1450",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "neither very grievous",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04"
+      ]
+    },
+    {
+      "candidate_id": "B021",
+      "record_id": "LI.1647.II.XLIV.R1451",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "good end of the Disease",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04"
+      ]
+    },
+    {
+      "candidate_id": "B022",
+      "record_id": "LI.1647.II.XLIV.R1452",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "evill the contrary",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04"
+      ]
+    },
+    {
+      "candidate_id": "B023",
+      "record_id": "LI.1647.II.XLIV.R1453",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "usually a malignant Planet",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04"
+      ]
+    },
+    {
+      "candidate_id": "B024",
+      "record_id": "LI.1647.II.XLIV.R1454",
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "anchor": "not easily curable",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04"
+      ]
+    },
+    {
+      "candidate_id": "B025",
+      "record_id": "LI.1647.II.XLIV.R1455",
+      "pdf_pages": [
+        284,
+        285
+      ],
+      "printed_pages": [
+        250,
+        251
+      ],
+      "anchor": "a faire signification of health",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB04",
+        "PB05"
+      ]
+    },
+    {
+      "candidate_id": "B026",
+      "record_id": "LI.1647.II.XLIV.R1456",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "but recovery",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB05"
+      ]
+    },
+    {
+      "candidate_id": "B027",
+      "record_id": "LI.1647.II.XLIV.R1457",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "great difficulty",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB05"
+      ]
+    },
+    {
+      "candidate_id": "B028",
+      "record_id": "LI.1647.II.XLIV.R1458",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "possible he may be cured",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB05"
+      ]
+    },
+    {
+      "candidate_id": "B029",
+      "record_id": "LI.1647.II.XLIV.R1459",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "danger in the Disease threatened",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB05"
+      ]
+    },
+    {
+      "candidate_id": "B030",
+      "record_id": "LI.1647.II.XLIV.R1460",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "will be long sick",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB05"
+      ]
+    },
+    {
+      "candidate_id": "B031",
+      "record_id": "LI.1647.II.XLIV.R1461",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "in no danger at this time",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB06"
+      ]
+    },
+    {
+      "candidate_id": "B032",
+      "record_id": "LI.1647.II.XLIV.R1462",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "the Disease will quickly determine",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB06"
+      ]
+    },
+    {
+      "candidate_id": "B033",
+      "record_id": "LI.1647.II.XLIV.R1463",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "able to overcome the malignity",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB06"
+      ]
+    },
+    {
+      "candidate_id": "B034",
+      "record_id": "LI.1647.II.XLIV.R1464",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "a strong fit of sicknesse",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB06"
+      ]
+    },
+    {
+      "candidate_id": "B035",
+      "record_id": "LI.1647.II.XLIV.R1465",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "a great space of time",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB06"
+      ]
+    },
+    {
+      "candidate_id": "B036",
+      "record_id": "LI.1647.II.XLIV.R1466",
+      "pdf_pages": [
+        285
+      ],
+      "printed_pages": [
+        251
+      ],
+      "anchor": "it retards the cure",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB06"
+      ]
+    },
+    {
+      "candidate_id": "B037",
+      "record_id": "LI.1647.II.XLIV.R1467",
+      "pdf_pages": [
+        285,
+        286
+      ],
+      "printed_pages": [
+        251,
+        252
+      ],
+      "anchor": "lesse then her meane motion",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB06",
+        "PB07"
+      ]
+    },
+    {
+      "candidate_id": "B038",
+      "record_id": "LI.1647.II.XLIV.R1468",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "effected in a little time",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB07"
+      ]
+    },
+    {
+      "candidate_id": "B039",
+      "record_id": "LI.1647.II.XLIV.R1469",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "very mortall and dangerous",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB07"
+      ]
+    },
+    {
+      "candidate_id": "B040",
+      "record_id": "LI.1647.II.XLIV.R1470",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "expect a short sicknesse",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB07"
+      ]
+    },
+    {
+      "candidate_id": "B041",
+      "record_id": "LI.1647.II.XLIV.R1471",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "look for the contrary",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB07"
+      ]
+    },
+    {
+      "candidate_id": "B042",
+      "record_id": "LI.1647.II.XLIV.R1472",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "cause of his owne infirmnesse",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB08"
+      ]
+    },
+    {
+      "candidate_id": "B043",
+      "record_id": "LI.1647.II.XLIV.R1473",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "a terrible sicknesse",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB08"
+      ]
+    },
+    {
+      "candidate_id": "B044",
+      "record_id": "LI.1647.II.XLIV.R1474",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "beyond all expectation",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB08"
+      ]
+    },
+    {
+      "candidate_id": "B045",
+      "record_id": "LI.1647.II.XLIV.R1475",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "no great danger",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB08"
+      ]
+    },
+    {
+      "candidate_id": "B046",
+      "record_id": "LI.1647.II.XLIV.R1476",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "you may doubt, and not unjustly",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB09"
+      ]
+    },
+    {
+      "candidate_id": "B047",
+      "record_id": "LI.1647.II.XLIV.R1477",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "will be very certaine",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB09"
+      ]
+    },
+    {
+      "candidate_id": "B048",
+      "record_id": "LI.1647.II.XLIV.R1478",
+      "pdf_pages": [
+        286
+      ],
+      "printed_pages": [
+        252
+      ],
+      "anchor": "the sick will recover",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB09"
+      ]
+    },
+    {
+      "candidate_id": "B049",
+      "record_id": "LI.1647.II.XLIV.R1479",
+      "pdf_pages": [
+        286,
+        287
+      ],
+      "printed_pages": [
+        252,
+        253
+      ],
+      "anchor": "grievous and mortall",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB09",
+        "PB10"
+      ]
+    },
+    {
+      "candidate_id": "B050",
+      "record_id": "LI.1647.II.XLIV.R1480",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "the sick shall recover",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB10"
+      ]
+    },
+    {
+      "candidate_id": "B051",
+      "record_id": "LI.1647.II.XLIV.R1481",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "usually no danger",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB10"
+      ]
+    },
+    {
+      "candidate_id": "B052",
+      "record_id": "LI.1647.II.XLIV.R1482",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "an ill Omen",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB10"
+      ]
+    },
+    {
+      "candidate_id": "B053",
+      "record_id": "LI.1647.II.XLIV.R1483",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "a sign of ill",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB11"
+      ]
+    },
+    {
+      "candidate_id": "B054",
+      "record_id": "LI.1647.II.XLIV.R1484",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "expect a long fit of sicknesse",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB11"
+      ]
+    },
+    {
+      "candidate_id": "B055",
+      "record_id": "LI.1647.II.XLIV.R1485",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "quick dispatch",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB11"
+      ]
+    },
+    {
+      "candidate_id": "B056",
+      "record_id": "LI.1647.II.XLIV.R1486",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "somewhat long in curing",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB11"
+      ]
+    },
+    {
+      "candidate_id": "B057",
+      "record_id": "LI.1647.II.XLIV.R1487",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "great suspition",
+      "canonical_section": "S09",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB11"
+      ]
+    },
+    {
+      "candidate_id": "B058",
+      "record_id": "LI.1647.II.XLIV.R1488",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "carefully have recourse",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB12"
+      ]
+    },
+    {
+      "candidate_id": "B059",
+      "record_id": "LI.1647.II.XLIV.R1489",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "restored to former health",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB12"
+      ]
+    },
+    {
+      "candidate_id": "B060",
+      "record_id": "LI.1647.II.XLIV.R1490",
+      "pdf_pages": [
+        287
+      ],
+      "printed_pages": [
+        253
+      ],
+      "anchor": "it proceeding from Cold",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB12"
+      ]
+    },
+    {
+      "candidate_id": "B061",
+      "record_id": "LI.1647.II.XLIV.R1491",
+      "pdf_pages": [
+        287,
+        288
+      ],
+      "printed_pages": [
+        253,
+        254
+      ],
+      "anchor": "more of Heat then Cold",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB12",
+        "PB13"
+      ]
+    },
+    {
+      "candidate_id": "B062",
+      "record_id": "LI.1647.II.XLIV.R1492",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "yet you must ever understand",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB13"
+      ]
+    },
+    {
+      "candidate_id": "B063",
+      "record_id": "LI.1647.II.XLIV.R1493",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "not so much to be feared",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB13"
+      ]
+    },
+    {
+      "candidate_id": "B064",
+      "record_id": "LI.1647.II.XLIV.R1494",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "a strong sicknesse at hand",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB13"
+      ]
+    },
+    {
+      "candidate_id": "B065",
+      "record_id": "LI.1647.II.XLIV.R1495",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "doe lesse mischiefe",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB13"
+      ]
+    },
+    {
+      "candidate_id": "B066",
+      "record_id": "LI.1647.II.XLIV.R1496",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "more hurt in her encrease",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB13"
+      ]
+    },
+    {
+      "candidate_id": "B067",
+      "record_id": "LI.1647.II.XLIV.R1497",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "after desperation",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB14"
+      ]
+    },
+    {
+      "candidate_id": "B068",
+      "record_id": "LI.1647.II.XLIV.R1498",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "perfectly recover",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB14"
+      ]
+    },
+    {
+      "candidate_id": "B069",
+      "record_id": "LI.1647.II.XLIV.R1499",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "it prenotes sanity",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB14"
+      ]
+    },
+    {
+      "candidate_id": "B070",
+      "record_id": "LI.1647.II.XLIV.R1500",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "first assailed the sicke person",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB14"
+      ]
+    },
+    {
+      "candidate_id": "B071",
+      "record_id": "LI.1647.II.XLIV.R1501",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "nothing is a more sure argument",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB14"
+      ]
+    },
+    {
+      "candidate_id": "B072",
+      "record_id": "LI.1647.II.XLIV.R1502",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "she signifies health and life",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB14"
+      ]
+    },
+    {
+      "candidate_id": "B073",
+      "record_id": "LI.1647.II.XLIV.R1503",
+      "pdf_pages": [
+        288
+      ],
+      "printed_pages": [
+        254
+      ],
+      "anchor": "a good argument of recovery",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB15"
+      ]
+    },
+    {
+      "candidate_id": "B074",
+      "record_id": "LI.1647.II.XLIV.R1504",
+      "pdf_pages": [
+        288,
+        289
+      ],
+      "printed_pages": [
+        254,
+        255
+      ],
+      "anchor": "the strength of his influence",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB15",
+        "PB16"
+      ]
+    },
+    {
+      "candidate_id": "B075",
+      "record_id": "LI.1647.II.XLIV.R1505",
+      "pdf_pages": [
+        289
+      ],
+      "printed_pages": [
+        255
+      ],
+      "anchor": "health and life are promised",
+      "canonical_section": "S10",
+      "raw_fields_equal": false,
+      "documented_root_correction": true,
+      "mapped_paragraph_regions": [
+        "PB16"
+      ]
+    },
+    {
+      "candidate_id": "B076",
+      "record_id": "LI.1647.II.XLIV.R1506",
+      "pdf_pages": [
+        289
+      ],
+      "printed_pages": [
+        255
+      ],
+      "anchor": "safety is also to be expected",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB16"
+      ]
+    },
+    {
+      "candidate_id": "B077",
+      "record_id": "LI.1647.II.XLIV.R1507",
+      "pdf_pages": [
+        289
+      ],
+      "printed_pages": [
+        255
+      ],
+      "anchor": "it doth argue life",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB16"
+      ]
+    },
+    {
+      "candidate_id": "B078",
+      "record_id": "LI.1647.II.XLIV.R1508",
+      "pdf_pages": [
+        289
+      ],
+      "printed_pages": [
+        255
+      ],
+      "anchor": "a perfect Crisis",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB17"
+      ]
+    },
+    {
+      "candidate_id": "B079",
+      "record_id": "LI.1647.II.XLIV.R1509",
+      "pdf_pages": [
+        289
+      ],
+      "printed_pages": [
+        255
+      ],
+      "anchor": "no feare or suspition",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB17"
+      ]
+    },
+    {
+      "candidate_id": "B080",
+      "record_id": "LI.1647.II.XLIV.R1510",
+      "pdf_pages": [
+        289
+      ],
+      "printed_pages": [
+        255
+      ],
+      "anchor": "assured hopes of life",
+      "canonical_section": "S10",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB17"
+      ]
+    },
+    {
+      "candidate_id": "B081",
+      "record_id": "LI.1647.II.XLIV.R1511",
+      "pdf_pages": [
+        289
+      ],
+      "printed_pages": [
+        255
+      ],
+      "anchor": "you may feare death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB18"
+      ]
+    },
+    {
+      "candidate_id": "B082",
+      "record_id": "LI.1647.II.XLIV.R1512",
+      "pdf_pages": [
+        289
+      ],
+      "printed_pages": [
+        255
+      ],
+      "anchor": "adverse in a Nativity",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB18"
+      ]
+    },
+    {
+      "candidate_id": "B083",
+      "record_id": "LI.1647.II.XLIV.R1513",
+      "pdf_pages": [
+        289,
+        290
+      ],
+      "printed_pages": [
+        255,
+        256
+      ],
+      "anchor": "by a divine miracle as it were",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB19",
+        "PB20"
+      ]
+    },
+    {
+      "candidate_id": "B084",
+      "record_id": "LI.1647.II.XLIV.R1514",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "infinitely oppressed",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB21"
+      ]
+    },
+    {
+      "candidate_id": "B085",
+      "record_id": "LI.1647.II.XLIV.R1515",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "undoubtedly declare death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB22"
+      ]
+    },
+    {
+      "candidate_id": "B086",
+      "record_id": "LI.1647.II.XLIV.R1516",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "threatens death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB23"
+      ]
+    },
+    {
+      "candidate_id": "B087",
+      "record_id": "LI.1647.II.XLIV.R1517",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "is alwayes mortall",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB24"
+      ]
+    },
+    {
+      "candidate_id": "B088",
+      "record_id": "LI.1647.II.XLIV.R1518",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "is alwayes dangerous",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB25"
+      ]
+    },
+    {
+      "candidate_id": "B089",
+      "record_id": "LI.1647.II.XLIV.R1519",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "the Moone being any manner",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB25"
+      ]
+    },
+    {
+      "candidate_id": "B090",
+      "record_id": "LI.1647.II.XLIV.R1520",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "brings usually death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB26"
+      ]
+    },
+    {
+      "candidate_id": "B091",
+      "record_id": "LI.1647.II.XLIV.R1521",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "being both afflicted",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB26"
+      ]
+    },
+    {
+      "candidate_id": "B092",
+      "record_id": "LI.1647.II.XLIV.R1522",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "It also proves fatall",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB26"
+      ]
+    },
+    {
+      "candidate_id": "B093",
+      "record_id": "LI.1647.II.XLIV.R1523",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "being Subterranean",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB26"
+      ]
+    },
+    {
+      "candidate_id": "B094",
+      "record_id": "LI.1647.II.XLIV.R1524",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "argue death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB26"
+      ]
+    },
+    {
+      "candidate_id": "B095",
+      "record_id": "LI.1647.II.XLIV.R1525",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "it seldome succeeds well",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB26"
+      ]
+    },
+    {
+      "candidate_id": "B096",
+      "record_id": "LI.1647.II.XLIV.R1526",
+      "pdf_pages": [
+        290
+      ],
+      "printed_pages": [
+        256
+      ],
+      "anchor": "Luminary of the time",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB27"
+      ]
+    },
+    {
+      "candidate_id": "B097",
+      "record_id": "LI.1647.II.XLIV.R1527",
+      "pdf_pages": [
+        290,
+        291
+      ],
+      "printed_pages": [
+        256,
+        257
+      ],
+      "anchor": "great peril of death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB27",
+        "PB28"
+      ]
+    },
+    {
+      "candidate_id": "B098",
+      "record_id": "LI.1647.II.XLIV.R1528",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "anchor": "a powerfull argument",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB28"
+      ]
+    },
+    {
+      "candidate_id": "B099",
+      "record_id": "LI.1647.II.XLIV.R1529",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "anchor": "prenote death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB29"
+      ]
+    },
+    {
+      "candidate_id": "B100",
+      "record_id": "LI.1647.II.XLIV.R1530",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "anchor": "in the tenth house",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB30"
+      ]
+    },
+    {
+      "candidate_id": "B101",
+      "record_id": "LI.1647.II.XLIV.R1531",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "anchor": "Lord of the houre",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB31"
+      ]
+    },
+    {
+      "candidate_id": "B102",
+      "record_id": "LI.1647.II.XLIV.R1532",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "anchor": "it shewes death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB31"
+      ]
+    },
+    {
+      "candidate_id": "B103",
+      "record_id": "LI.1647.II.XLIV.R1533",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "anchor": "and more certaine",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB31"
+      ]
+    },
+    {
+      "candidate_id": "B104",
+      "record_id": "LI.1647.II.XLIV.R1534",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "anchor": "some say",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB31"
+      ]
+    },
+    {
+      "candidate_id": "B105",
+      "record_id": "LI.1647.II.XLIV.R1535",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "anchor": "probable the sick will dye",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB32"
+      ]
+    },
+    {
+      "candidate_id": "B106",
+      "record_id": "LI.1647.II.XLIV.R1536",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "anchor": "one argument",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB32"
+      ]
+    },
+    {
+      "candidate_id": "B107",
+      "record_id": "LI.1647.II.XLIV.R1537",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "anchor": "these are testimonies of death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB32"
+      ]
+    },
+    {
+      "candidate_id": "B108",
+      "record_id": "LI.1647.II.XLIV.R1538",
+      "pdf_pages": [
+        291,
+        292
+      ],
+      "printed_pages": [
+        257,
+        258
+      ],
+      "anchor": "a violent fixed Starre",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB32",
+        "PB33"
+      ]
+    },
+    {
+      "candidate_id": "B109",
+      "record_id": "LI.1647.II.XLIV.R1539",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "little hopes of recovery",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB33"
+      ]
+    },
+    {
+      "candidate_id": "B110",
+      "record_id": "LI.1647.II.XLIV.R1540",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "a tedious long sicknesse",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB33"
+      ]
+    },
+    {
+      "candidate_id": "B111",
+      "record_id": "LI.1647.II.XLIV.R1541",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "under the earth",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB33"
+      ]
+    },
+    {
+      "candidate_id": "B112",
+      "record_id": "LI.1647.II.XLIV.R1542",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "an extraordinary long sicknesse",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB33"
+      ]
+    },
+    {
+      "candidate_id": "B113",
+      "record_id": "LI.1647.II.XLIV.R1543",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "not easily curable",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB33"
+      ]
+    },
+    {
+      "candidate_id": "B114",
+      "record_id": "LI.1647.II.XLIV.R1544",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "are arguments of death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB33"
+      ]
+    },
+    {
+      "candidate_id": "B115",
+      "record_id": "LI.1647.II.XLIV.R1545",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "ill Omens of health",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB33"
+      ]
+    },
+    {
+      "candidate_id": "B116",
+      "record_id": "LI.1647.II.XLIV.R1546",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "departing from Combustion",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB33"
+      ]
+    },
+    {
+      "candidate_id": "B117",
+      "record_id": "LI.1647.II.XLIV.R1547",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "shew great danger",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB34"
+      ]
+    },
+    {
+      "candidate_id": "B118",
+      "record_id": "LI.1647.II.XLIV.R1548",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "the Pleiades in 24",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB34"
+      ]
+    },
+    {
+      "candidate_id": "B119",
+      "record_id": "LI.1647.II.XLIV.R1549",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "anchor": "shew death",
+      "canonical_section": "S11",
+      "raw_fields_equal": true,
+      "documented_root_correction": false,
+      "mapped_paragraph_regions": [
+        "PB34"
+      ]
+    }
+  ],
+  "paragraph_region_map": [
+    {
+      "inventory_region_id": "PB01",
+      "pdf_page": 283,
+      "visible_printed_label": "249",
+      "region": "Opening continuation after A-owned Pisces sentence",
+      "start_locator": "If the Moon apply by ill aspect",
+      "end_locator": "if a woman ask",
+      "candidate_ids": [
+        "B001",
+        "B002",
+        "B003",
+        "B004"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1431",
+        "LI.1647.II.XLIV.R1432",
+        "LI.1647.II.XLIV.R1433",
+        "LI.1647.II.XLIV.R1434"
+      ]
+    },
+    {
+      "inventory_region_id": "PB02",
+      "pdf_page": 283,
+      "visible_printed_label": "249",
+      "region": "Remaining body paragraph",
+      "start_locator": "If the Lord of the sixt apply",
+      "end_locator": "threatens great",
+      "candidate_ids": [
+        "B005",
+        "B006",
+        "B007",
+        "B008",
+        "B009",
+        "B010",
+        "B011",
+        "B012"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1435",
+        "LI.1647.II.XLIV.R1436",
+        "LI.1647.II.XLIV.R1437",
+        "LI.1647.II.XLIV.R1438",
+        "LI.1647.II.XLIV.R1439",
+        "LI.1647.II.XLIV.R1440",
+        "LI.1647.II.XLIV.R1441",
+        "LI.1647.II.XLIV.R1442"
+      ]
+    },
+    {
+      "inventory_region_id": "PB03",
+      "pdf_page": 284,
+      "visible_printed_label": "250",
+      "region": "Top carryover and fortified/benevolent qualifiers",
+      "start_locator": "danger in the Sicknesse",
+      "end_locator": "will be permanent",
+      "candidate_ids": [
+        "B012",
+        "B013",
+        "B014"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1442",
+        "LI.1647.II.XLIV.R1443",
+        "LI.1647.II.XLIV.R1444"
+      ]
+    },
+    {
+      "inventory_region_id": "PB04",
+      "pdf_page": 284,
+      "visible_printed_label": "250",
+      "region": "Long body paragraph to recovery carryover",
+      "start_locator": "Many times it happens",
+      "end_locator": "Lord of the twelfth",
+      "candidate_ids": [
+        "B015",
+        "B016",
+        "B017",
+        "B018",
+        "B019",
+        "B020",
+        "B021",
+        "B022",
+        "B023",
+        "B024",
+        "B025"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1445",
+        "LI.1647.II.XLIV.R1446",
+        "LI.1647.II.XLIV.R1447",
+        "LI.1647.II.XLIV.R1448",
+        "LI.1647.II.XLIV.R1449",
+        "LI.1647.II.XLIV.R1450",
+        "LI.1647.II.XLIV.R1451",
+        "LI.1647.II.XLIV.R1452",
+        "LI.1647.II.XLIV.R1453",
+        "LI.1647.II.XLIV.R1454",
+        "LI.1647.II.XLIV.R1455"
+      ]
+    },
+    {
+      "inventory_region_id": "PB05",
+      "pdf_page": 285,
+      "visible_printed_label": "251",
+      "region": "Top carryover and first paragraph",
+      "start_locator": "sixt or eighth",
+      "end_locator": "otherwise qualified",
+      "candidate_ids": [
+        "B025",
+        "B026",
+        "B027",
+        "B028",
+        "B029",
+        "B030"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1455",
+        "LI.1647.II.XLIV.R1456",
+        "LI.1647.II.XLIV.R1457",
+        "LI.1647.II.XLIV.R1458",
+        "LI.1647.II.XLIV.R1459",
+        "LI.1647.II.XLIV.R1460"
+      ]
+    },
+    {
+      "inventory_region_id": "PB06",
+      "pdf_page": 285,
+      "visible_printed_label": "251",
+      "region": "Angular/motion/affliction paragraph",
+      "start_locator": "The Lord of the ascendant in an Angle",
+      "end_locator": "so doth also the Moon",
+      "candidate_ids": [
+        "B031",
+        "B032",
+        "B033",
+        "B034",
+        "B035",
+        "B036",
+        "B037"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1461",
+        "LI.1647.II.XLIV.R1462",
+        "LI.1647.II.XLIV.R1463",
+        "LI.1647.II.XLIV.R1464",
+        "LI.1647.II.XLIV.R1465",
+        "LI.1647.II.XLIV.R1466",
+        "LI.1647.II.XLIV.R1467"
+      ]
+    },
+    {
+      "inventory_region_id": "PB07",
+      "pdf_page": 286,
+      "visible_printed_label": "252",
+      "region": "Moon carryover paragraph",
+      "start_locator": "when she is slow in motion",
+      "end_locator": "look for the contrary",
+      "candidate_ids": [
+        "B037",
+        "B038",
+        "B039",
+        "B040",
+        "B041"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1467",
+        "LI.1647.II.XLIV.R1468",
+        "LI.1647.II.XLIV.R1469",
+        "LI.1647.II.XLIV.R1470",
+        "LI.1647.II.XLIV.R1471"
+      ]
+    },
+    {
+      "inventory_region_id": "PB08",
+      "pdf_page": 286,
+      "visible_printed_label": "252",
+      "region": "Scorpio/luminaries/Mars paragraph",
+      "start_locator": "When you find Scorpio ascending",
+      "end_locator": "no great danger",
+      "candidate_ids": [
+        "B042",
+        "B043",
+        "B044",
+        "B045"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1472",
+        "LI.1647.II.XLIV.R1473",
+        "LI.1647.II.XLIV.R1474",
+        "LI.1647.II.XLIV.R1475"
+      ]
+    },
+    {
+      "inventory_region_id": "PB09",
+      "pdf_page": 286,
+      "visible_printed_label": "252",
+      "region": "Sixth lord and Moon adverse paragraph",
+      "start_locator": "If the Lord of the sixt be Combust",
+      "end_locator": "at the same",
+      "candidate_ids": [
+        "B046",
+        "B047",
+        "B048",
+        "B049"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1476",
+        "LI.1647.II.XLIV.R1477",
+        "LI.1647.II.XLIV.R1478",
+        "LI.1647.II.XLIV.R1479"
+      ]
+    },
+    {
+      "inventory_region_id": "PB10",
+      "pdf_page": 287,
+      "visible_printed_label": "253",
+      "region": "Top continuation and usually/no-danger alternatives",
+      "start_locator": "same time",
+      "end_locator": "the infirmity is placed",
+      "candidate_ids": [
+        "B049",
+        "B050",
+        "B051",
+        "B052"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1479",
+        "LI.1647.II.XLIV.R1480",
+        "LI.1647.II.XLIV.R1481",
+        "LI.1647.II.XLIV.R1482"
+      ]
+    },
+    {
+      "inventory_region_id": "PB11",
+      "pdf_page": 287,
+      "visible_printed_label": "253",
+      "region": "First lying down/Moon signs/translation",
+      "start_locator": "At the time of ones first lying down",
+      "end_locator": "signifying the infirmity",
+      "candidate_ids": [
+        "B053",
+        "B054",
+        "B055",
+        "B056",
+        "B057"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1483",
+        "LI.1647.II.XLIV.R1484",
+        "LI.1647.II.XLIV.R1485",
+        "LI.1647.II.XLIV.R1486",
+        "LI.1647.II.XLIV.R1487"
+      ]
+    },
+    {
+      "inventory_region_id": "PB12",
+      "pdf_page": 287,
+      "visible_printed_label": "253",
+      "region": "Survival heading and opening paragraph",
+      "start_locator": "When it is demanded seriously",
+      "end_locator": "recovered",
+      "candidate_ids": [
+        "B058",
+        "B059",
+        "B060",
+        "B061"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1488",
+        "LI.1647.II.XLIV.R1489",
+        "LI.1647.II.XLIV.R1490",
+        "LI.1647.II.XLIV.R1491"
+      ]
+    },
+    {
+      "inventory_region_id": "PB13",
+      "pdf_page": 288,
+      "visible_printed_label": "254",
+      "region": "Top survival continuation and Mars comparison",
+      "start_locator": "yet you must ever understand",
+      "end_locator": "Occidentall",
+      "candidate_ids": [
+        "B061",
+        "B062",
+        "B063",
+        "B064",
+        "B065",
+        "B066"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1491",
+        "LI.1647.II.XLIV.R1492",
+        "LI.1647.II.XLIV.R1493",
+        "LI.1647.II.XLIV.R1494",
+        "LI.1647.II.XLIV.R1495",
+        "LI.1647.II.XLIV.R1496"
+      ]
+    },
+    {
+      "inventory_region_id": "PB14",
+      "pdf_page": 288,
+      "visible_printed_label": "254",
+      "region": "Reception and benefic place paragraph",
+      "start_locator": "When you find there is any reception",
+      "end_locator": "health and life",
+      "candidate_ids": [
+        "B067",
+        "B068",
+        "B069",
+        "B070",
+        "B071",
+        "B072"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1497",
+        "LI.1647.II.XLIV.R1498",
+        "LI.1647.II.XLIV.R1499",
+        "LI.1647.II.XLIV.R1500",
+        "LI.1647.II.XLIV.R1501",
+        "LI.1647.II.XLIV.R1502"
+      ]
+    },
+    {
+      "inventory_region_id": "PB15",
+      "pdf_page": 288,
+      "visible_printed_label": "254",
+      "region": "Moon/Jupiter and fall maxim carryover",
+      "start_locator": "a good argument of recovery",
+      "end_locator": "able",
+      "candidate_ids": [
+        "B073",
+        "B074"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1503",
+        "LI.1647.II.XLIV.R1504"
+      ]
+    },
+    {
+      "inventory_region_id": "PB16",
+      "pdf_page": 289,
+      "visible_printed_label": "255",
+      "region": "Fall maxim carryover and Moon configurations",
+      "start_locator": "able therein to expresse",
+      "end_locator": "it doth argue life",
+      "candidate_ids": [
+        "B074",
+        "B075",
+        "B076",
+        "B077"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1504",
+        "LI.1647.II.XLIV.R1505",
+        "LI.1647.II.XLIV.R1506",
+        "LI.1647.II.XLIV.R1507"
+      ]
+    },
+    {
+      "inventory_region_id": "PB17",
+      "pdf_page": 289,
+      "visible_printed_label": "255",
+      "region": "Void of course/crisis/onset/relative potency",
+      "start_locator": "When at the first falling sick",
+      "end_locator": "confide of his escape",
+      "candidate_ids": [
+        "B078",
+        "B079",
+        "B080"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1508",
+        "LI.1647.II.XLIV.R1509",
+        "LI.1647.II.XLIV.R1510"
+      ]
+    },
+    {
+      "inventory_region_id": "PB18",
+      "pdf_page": 289,
+      "visible_printed_label": "255",
+      "region": "Arguments of Death heading and natal/profection paragraph",
+      "start_locator": "When the ascendant at time of first falling sick",
+      "end_locator": "and twelfth",
+      "candidate_ids": [
+        "B081",
+        "B082"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1511",
+        "LI.1647.II.XLIV.R1512"
+      ]
+    },
+    {
+      "inventory_region_id": "PB19",
+      "pdf_page": 289,
+      "visible_printed_label": "255",
+      "region": "Five hylegical places paragraph",
+      "start_locator": "When the five Hylegicall places",
+      "end_locator": "interject their",
+      "candidate_ids": [
+        "B083"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1513"
+      ]
+    },
+    {
+      "inventory_region_id": "PB20",
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Hylegical exception carryover",
+      "start_locator": "their comfortable aspects",
+      "end_locator": "the party sick may escape",
+      "candidate_ids": [
+        "B083"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1513"
+      ]
+    },
+    {
+      "inventory_region_id": "PB21",
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Planetary hour sentence",
+      "start_locator": "He will be infinitely oppressed",
+      "end_locator": "a cold one",
+      "candidate_ids": [
+        "B084"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1514"
+      ]
+    },
+    {
+      "inventory_region_id": "PB22",
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Combust lords and reception/fortunate Moon",
+      "start_locator": "The Lord of the ascendant and of the Figure Combust",
+      "end_locator": "a little hopes remaines",
+      "candidate_ids": [
+        "B085"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1515"
+      ]
+    },
+    {
+      "inventory_region_id": "PB23",
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Conjunction eighth lord",
+      "start_locator": "The Lord of the ascendant and the Moon",
+      "end_locator": "threatens death",
+      "candidate_ids": [
+        "B086"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1516"
+      ]
+    },
+    {
+      "inventory_region_id": "PB24",
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Angular eighth lord",
+      "start_locator": "The Lord of the eighth in an Angle",
+      "end_locator": "Infortune",
+      "candidate_ids": [
+        "B087"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1517"
+      ]
+    },
+    {
+      "inventory_region_id": "PB25",
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Applications to eighth",
+      "start_locator": "The application of the Moon",
+      "end_locator": "denotes death",
+      "candidate_ids": [
+        "B088",
+        "B089"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1518",
+        "LI.1647.II.XLIV.R1519"
+      ]
+    },
+    {
+      "inventory_region_id": "PB26",
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Transfer, placements, conjunctions",
+      "start_locator": "The Moon transferring",
+      "end_locator": "sick person then",
+      "candidate_ids": [
+        "B090",
+        "B091",
+        "B092",
+        "B093",
+        "B094",
+        "B095"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1520",
+        "LI.1647.II.XLIV.R1521",
+        "LI.1647.II.XLIV.R1522",
+        "LI.1647.II.XLIV.R1523",
+        "LI.1647.II.XLIV.R1524",
+        "LI.1647.II.XLIV.R1525"
+      ]
+    },
+    {
+      "inventory_region_id": "PB27",
+      "pdf_page": 290,
+      "visible_printed_label": "256",
+      "region": "Luminary of time and peril carryover",
+      "start_locator": "Have speciall consideration",
+      "end_locator": "usually",
+      "candidate_ids": [
+        "B096",
+        "B097"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1526",
+        "LI.1647.II.XLIV.R1527"
+      ]
+    },
+    {
+      "inventory_region_id": "PB28",
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "region": "Peril attribution carryover and first question",
+      "start_locator": "usually by reason",
+      "end_locator": "Combust in the ascendant",
+      "candidate_ids": [
+        "B097",
+        "B098"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1527",
+        "LI.1647.II.XLIV.R1528"
+      ]
+    },
+    {
+      "inventory_region_id": "PB29",
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "region": "Unfortunate lords",
+      "start_locator": "The Lord of the ascendant and of the eighth unfortunate",
+      "end_locator": "prenote death",
+      "candidate_ids": [
+        "B099"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1529"
+      ]
+    },
+    {
+      "inventory_region_id": "PB30",
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "region": "Eighth lord tenth",
+      "start_locator": "The Lord of the eighth in the tenth house",
+      "end_locator": "argue death",
+      "candidate_ids": [
+        "B100"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1530"
+      ]
+    },
+    {
+      "inventory_region_id": "PB31",
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "region": "Hour lord/retrograde/cadents/some say",
+      "start_locator": "A Planet very strong",
+      "end_locator": "Jupiter Direct",
+      "candidate_ids": [
+        "B101",
+        "B102",
+        "B103",
+        "B104"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1531",
+        "LI.1647.II.XLIV.R1532",
+        "LI.1647.II.XLIV.R1533",
+        "LI.1647.II.XLIV.R1534"
+      ]
+    },
+    {
+      "inventory_region_id": "PB32",
+      "pdf_page": 291,
+      "visible_printed_label": "257",
+      "region": "Aspect/reception/Moon/placement/star sequence",
+      "start_locator": "When the Lord of the Ascendant",
+      "end_locator": "Caput Medusae",
+      "candidate_ids": [
+        "B105",
+        "B106",
+        "B107",
+        "B108"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1535",
+        "LI.1647.II.XLIV.R1536",
+        "LI.1647.II.XLIV.R1537",
+        "LI.1647.II.XLIV.R1538"
+      ]
+    },
+    {
+      "inventory_region_id": "PB33",
+      "pdf_page": 292,
+      "visible_printed_label": "258",
+      "region": "Star carryover to staged Moon rule",
+      "start_locator": "in twenty Taurus",
+      "end_locator": "otherwise he or she will escape",
+      "candidate_ids": [
+        "B108",
+        "B109",
+        "B110",
+        "B111",
+        "B112",
+        "B113",
+        "B114",
+        "B115",
+        "B116"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1538",
+        "LI.1647.II.XLIV.R1539",
+        "LI.1647.II.XLIV.R1540",
+        "LI.1647.II.XLIV.R1541",
+        "LI.1647.II.XLIV.R1542",
+        "LI.1647.II.XLIV.R1543",
+        "LI.1647.II.XLIV.R1544",
+        "LI.1647.II.XLIV.R1545",
+        "LI.1647.II.XLIV.R1546"
+      ]
+    },
+    {
+      "inventory_region_id": "PB34",
+      "pdf_page": 292,
+      "visible_printed_label": "258",
+      "region": "Final complete included paragraph",
+      "start_locator": "Any malevolent in the sixt",
+      "end_locator": "shew death",
+      "candidate_ids": [
+        "B117",
+        "B118",
+        "B119"
+      ],
+      "canonical_record_ids": [
+        "LI.1647.II.XLIV.R1547",
+        "LI.1647.II.XLIV.R1548",
+        "LI.1647.II.XLIV.R1549"
+      ]
+    }
+  ],
+  "documented_corrections_already_in_canonical": [
+    {
+      "candidate_id": "B014",
+      "record_id": "LI.1647.II.XLIV.R1444",
+      "changes": [
+        {
+          "field": "assertion",
+          "raw_candidate_value": "Lilly says one may safely judge that the disease is not, or will not be, permanent.",
+          "canonical_value": "With the stated benevolent-planet prerequisites, Lilly prints that one may safely judge 'the Disease is not, or will be permanent'. The wording is retained without inserting a second not."
+        },
+        {
+          "field": "uncertainty",
+          "raw_candidate_value": [
+            "The source does not define an interval for permanent here."
+          ],
+          "canonical_value": [
+            "The source does not define an interval for permanent here.",
+            "U-ROOT01: Whether the earlier not has shared scope over will be permanent, or a word is absent, is not resolved here. No second not is inserted into the source wording."
+          ]
+        }
+      ],
+      "status": "ALREADY_CORRECTED_BY_ROOT_RAW_ARTIFACT_PRESERVED",
+      "explanation": "Raw reader paraphrase inserted a second not. Root restored the literal source phrase and added U-ROOT01, without deciding shared negative scope or a missing word.",
+      "source_locator": {
+        "pdf_page": 284,
+        "printed_page": 250,
+        "anchor": "the Disease is not, or will be permanent"
+      },
+      "unresolved_ids": [
+        "U-ROOT01"
+      ]
+    },
+    {
+      "candidate_id": "B075",
+      "record_id": "LI.1647.II.XLIV.R1505",
+      "changes": [
+        {
+          "field": "condition_logic",
+          "raw_candidate_value": {
+            "status": "unresolved_source_grouping",
+            "expression": "C1 AND (clear of all misfortune OR not impeded especially by L8/L6), preserving printed OR.",
+            "executable": false
+          },
+          "canonical_value": {
+            "status": "unresolved_source_grouping",
+            "expression": "Moon applies to L1 by trine/sextile AND (L1 clear of all misfortune OR L1 not impeded especially by L8/L6), preserving printed OR.",
+            "executable": false
+          }
+        },
+        {
+          "field": "conditions",
+          "raw_candidate_value": [
+            "Moon applies to ascendant lord by trine OR sextile.",
+            "She is clear of all misfortune, OR not impeded especially by eighth OR sixth lord."
+          ],
+          "canonical_value": [
+            "Moon applies to ascendant lord by trine OR sextile.",
+            "The ascendant lord is clear of all misfortune, OR not impeded especially by eighth OR sixth lord."
+          ]
+        }
+      ],
+      "status": "ALREADY_CORRECTED_BY_ROOT_RAW_ARTIFACT_PRESERVED",
+      "explanation": "Raw reader conditions assigned the freedom-from-misfortune clause to the Moon. Root correctly binds the pronoun to the ascendant lord while preserving the printed OR. This inventory does not rewrite the record or its correction trail.",
+      "source_locator": {
+        "pdf_page": 289,
+        "printed_page": 255,
+        "anchor": "health and life are promised"
+      },
+      "unresolved_ids": []
+    }
+  ],
+  "fixed_star_labels_count": 5,
+  "fixed_star_testimony_records_count": 2,
+  "fixed_star_contexts": [
+    {
+      "candidate_id": "B108",
+      "record_id": "LI.1647.II.XLIV.R1538",
+      "pdf_pages": [
+        291,
+        292
+      ],
+      "printed_pages": [
+        257,
+        258
+      ],
+      "conditions": [
+        "A malevolent planet is near the ascending degree, OR a violent fixed star is there.",
+        "The source’s examples are Antares in the fourth degree of Sagittarius, Lans/Lanx Australis about the ninth of Scorpio, Palilicium in four Gemini, and Caput Medusae in twenty Taurus."
+      ],
+      "condition_logic": {
+        "status": "unresolved_source_grouping",
+        "expression": "Malevolent near ascending degree OR violent fixed star there; historical example list is descriptive, not an AND condition.",
+        "executable": false
+      },
+      "assertion": "These prenote death.",
+      "exceptions": [],
+      "uncertainty": [
+        "Near is not given an orb.",
+        "The name printed as Lans/Lanx Australis is not silently corrected; identity spelling remains a paleographic uncertainty.",
+        "The stated degrees are historical source coordinates, not present-day positions.",
+        "The star list supplies examples rather than an additional requirement that every star be present."
+      ],
+      "register_ids": [
+        "U-B06",
+        "U-B14"
+      ],
+      "source_defined_content": "A malevolent Planet neer to the degree ascending, or a violent fixed Starre, viz.; the four named examples follow and end these prenote death.",
+      "inventory_qualification": "The first four stars are examples within this testimony; they are not four independent evidential units or four conditions required simultaneously. The star branch inherits the rising-degree context elliptically, not through an added numeric orb.",
+      "executable": false
+    },
+    {
+      "candidate_id": "B118",
+      "record_id": "LI.1647.II.XLIV.R1548",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "conditions": [
+        "The source sequence begins Moon’s combustion in eighth house, and in Leo, or in Libra.",
+        "It continues square OR opposition to Saturn OR Mercury, OR conjunction with Pleiades in 24 Taurus OR other violent fixed stars."
+      ],
+      "condition_logic": {
+        "status": "unresolved_source_grouping",
+        "expression": "Preserve sequence without executable resolution: combustion of Moon in eighth AND in Leo OR Libra, square/opposition Saturn OR Mercury, OR conjunction Pleiades at 24 Taurus OR other violent stars.",
+        "executable": false
+      },
+      "assertion": "The source calls the sequence an argument of death.",
+      "exceptions": [],
+      "uncertainty": [
+        "A strict conjunction of all clauses would conflict with the listed alternative sign positions; exact AND/OR grouping remains unresolved.",
+        "Mercury’s printed glyph is visually verified and is not replaced by Mars.",
+        "The Pleiades coordinate is the historical source value, not a current coordinate."
+      ],
+      "register_ids": [
+        "U-B16"
+      ],
+      "source_defined_content": "The source sequence gives Moon combustion in the eighth, and in Leo, or Libra; square or opposition to Saturn or Mercury; or conjunction with Pleiades in 24 Taurus or other violent fixed stars; argues death.",
+      "inventory_qualification": "Pleiades belongs to this separate compound Moon testimony. Mercury is a visually verified glyph, not an unresolved Mars alternative. This sequence does not license a single all-AND or a chosen branch algorithm.",
+      "executable": false
+    }
+  ],
+  "fixed_stars": [
+    {
+      "label": "Antares",
+      "record_id": "LI.1647.II.XLIV.R1538",
+      "sign": "Sagittarius",
+      "source_degree_number": 4,
+      "source_degree_label_normalized": "in the fourth Sagittarius",
+      "minutes": null,
+      "seconds": null,
+      "modern_epoch_longitude": null,
+      "ordinal_to_continuous_degree_convention": null,
+      "nearness_threshold": null,
+      "precision_note": "A historical degree label, not a modern exact coordinate; about remains in the Australis label.",
+      "candidate_id": "B108",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "label_uncertainty": null,
+      "source_coordinate_qualification": "Historical sign/degree label only. The source does not supply minutes, seconds, a present-day epoch conversion, an ordinal-to-continuous-degree convention, or a conjunction/nearness threshold here.",
+      "context_record_id": "LI.1647.II.XLIV.R1538"
+    },
+    {
+      "label": "Lans/Lanx Australis",
+      "record_id": "LI.1647.II.XLIV.R1538",
+      "sign": "Scorpio",
+      "source_degree_number": 9,
+      "source_degree_label_normalized": "about the ninth of Scorpio",
+      "minutes": null,
+      "seconds": null,
+      "modern_epoch_longitude": null,
+      "ordinal_to_continuous_degree_convention": null,
+      "nearness_threshold": null,
+      "precision_note": "A historical degree label, not a modern exact coordinate; about remains in the Australis label.",
+      "candidate_id": "B108",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "label_uncertainty": "Visible name is retained as Lans/Lanx Australis; exact spelling is unresolved.",
+      "source_coordinate_qualification": "Historical sign/degree label only. The source does not supply minutes, seconds, a present-day epoch conversion, an ordinal-to-continuous-degree convention, or a conjunction/nearness threshold here.",
+      "context_record_id": "LI.1647.II.XLIV.R1538"
+    },
+    {
+      "label": "Palilicium",
+      "record_id": "LI.1647.II.XLIV.R1538",
+      "sign": "Gemini",
+      "source_degree_number": 4,
+      "source_degree_label_normalized": "in four Gemini",
+      "minutes": null,
+      "seconds": null,
+      "modern_epoch_longitude": null,
+      "ordinal_to_continuous_degree_convention": null,
+      "nearness_threshold": null,
+      "precision_note": "A historical degree label, not a modern exact coordinate; about remains in the Australis label.",
+      "candidate_id": "B108",
+      "pdf_pages": [
+        291
+      ],
+      "printed_pages": [
+        257
+      ],
+      "label_uncertainty": null,
+      "source_coordinate_qualification": "Historical sign/degree label only. The source does not supply minutes, seconds, a present-day epoch conversion, an ordinal-to-continuous-degree convention, or a conjunction/nearness threshold here.",
+      "context_record_id": "LI.1647.II.XLIV.R1538"
+    },
+    {
+      "label": "Caput Medusae",
+      "record_id": "LI.1647.II.XLIV.R1538",
+      "sign": "Taurus",
+      "source_degree_number": 20,
+      "source_degree_label_normalized": "in twenty Taurus",
+      "minutes": null,
+      "seconds": null,
+      "modern_epoch_longitude": null,
+      "ordinal_to_continuous_degree_convention": null,
+      "nearness_threshold": null,
+      "precision_note": "A historical degree label, not a modern exact coordinate; about remains in the Australis label.",
+      "candidate_id": "B108",
+      "pdf_pages": [
+        291,
+        292
+      ],
+      "printed_pages": [
+        257,
+        258
+      ],
+      "label_uncertainty": null,
+      "source_coordinate_qualification": "Historical sign/degree label only. The source does not supply minutes, seconds, a present-day epoch conversion, an ordinal-to-continuous-degree convention, or a conjunction/nearness threshold here.",
+      "context_record_id": "LI.1647.II.XLIV.R1538"
+    },
+    {
+      "label": "Pleiades",
+      "record_id": "LI.1647.II.XLIV.R1548",
+      "sign": "Taurus",
+      "source_degree_number": 24,
+      "source_degree_label_normalized": "in 24 Taurus",
+      "minutes": null,
+      "seconds": null,
+      "modern_epoch_longitude": null,
+      "ordinal_to_continuous_degree_convention": null,
+      "nearness_threshold": null,
+      "precision_note": "A historical degree label, not a modern exact coordinate; about remains in the Australis label.",
+      "candidate_id": "B118",
+      "pdf_pages": [
+        292
+      ],
+      "printed_pages": [
+        258
+      ],
+      "label_uncertainty": null,
+      "source_coordinate_qualification": "Historical sign/degree label only. The source does not supply minutes, seconds, a present-day epoch conversion, an ordinal-to-continuous-degree convention, or a conjunction/nearness threshold here.",
+      "context_record_id": "LI.1647.II.XLIV.R1548"
+    }
+  ],
+  "locally_applicable_pdf888_errata": [
+    {
+      "inventory_id": "ER01",
+      "target_pdf_page": 279,
+      "target_printed_page": 245,
+      "target_line": "penultimate body-text line",
+      "candidate_ids": [
+        "A030"
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1387"
+      ],
+      "original_print_layer": {
+        "direct_reading": "Scabbinesse",
+        "location": "Cancer row, first word on penultimate body-text line"
+      },
+      "annotation_layer": {
+        "relevant_authorial_hand_established": false,
+        "role": "No annotation is needed as the authority for this lexical comparison."
+      },
+      "source_errata_layer": {
+        "pdf_page": 888,
+        "instruction": "p 245 l penult. r scabbinesse"
+      },
+      "corrected_reading_layer": {
+        "reading": "scabbinesse",
+        "status": "BODY_AND_ERRATA_LEXICALLY_AGREE_CASE_NORMALIZED",
+        "substantive_change_required": false
+      },
+      "uncertainty": [
+        "No earlier wrong word, correction event, or printing-state history is inferred from two agreeing witnesses."
+      ],
+      "canonical_register_ids": [
+        "U-A18"
+      ]
+    },
+    {
+      "inventory_id": "ER02",
+      "target_pdf_page": 288,
+      "target_printed_page": 254,
+      "target_line": "18–19",
+      "candidate_ids": [
+        "B069"
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1499"
+      ],
+      "original_print_layer": {
+        "observation": "The word is broken after pla- at the end of printed line 18; the start of line 19 appears ted with an overmark at its first character."
+      },
+      "annotation_layer": {
+        "observation": "An overmark at the broken word is visible; its hand/authority is not identified.",
+        "relevant_authorial_hand_established": false
+      },
+      "source_errata_layer": {
+        "pdf_page": 888,
+        "visible_label": "ERRATA",
+        "target": "p 254 l 18 & 19",
+        "instruction": "r placed"
+      },
+      "corrected_reading_layer": {
+        "reading": "placed; positional condition is retained. The correction is explicitly sourced to the errata.",
+        "authority": "Published ERRATA in the same source PDF, not the unidentified annotation hand."
+      },
+      "conditions_preserved": [
+        "Ascendant lord is a benevolent planet.",
+        "He is in first, tenth, eleventh, fifth, OR third house.",
+        "He is not endangered by square OR opposition of malevolents."
+      ],
+      "exceptions_preserved": [],
+      "uncertainty": [],
+      "canonical_register_ids": [
+        "U-B18"
+      ]
+    },
+    {
+      "inventory_id": "ER03",
+      "target_pdf_page": 290,
+      "target_printed_page": 256,
+      "target_line": "8",
+      "candidate_ids": [
+        "B085"
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1515"
+      ],
+      "original_print_layer": {
+        "observation": "The phrase following after is crossed/overwritten and not wholly readable by this reader. The errata identifies the deleted phrase as all hopes of escape."
+      },
+      "annotation_layer": {
+        "observation": "Striking/overwriting occurs over the phrase; a margin annotation appears to contain ear of danger. It is not attributed to Lilly or treated as the correction authority.",
+        "relevant_authorial_hand_established": false
+      },
+      "source_errata_layer": {
+        "pdf_page": 888,
+        "visible_label": "ERRATA",
+        "target": "p 256 l 8",
+        "instruction": "dele all hopes of escape, r. feare of danger"
+      },
+      "corrected_reading_layer": {
+        "reading": "With the stated reception and fortunate Moon, after feare of danger a little hopes remaines. This is the corrected reading, not a claim that the overwritten original line was fully legible.",
+        "authority": "Published ERRATA in the same source PDF, not the unidentified annotation hand."
+      },
+      "conditions_preserved": [
+        "The ascendant lord and lord of the figure are combust."
+      ],
+      "exceptions_preserved": [
+        "Unless there is some reception between Sun and them. With that reception and a fortunate Moon, after fear of danger a little hope remains, following the source’s own erratum (PDF888: read feare of danger)."
+      ],
+      "uncertainty": [
+        "Handwriting/strike-through obscures the original phrase. PDF888 identifies the deleted print as all hopes of escape and directs feare of danger; corrected and original layers are recorded separately.",
+        "Lord of the Figure is not identified by a selection algorithm in this passage.",
+        "Margin handwriting is not promoted to authorial printed text."
+      ],
+      "canonical_register_ids": [
+        "U-B13"
+      ]
+    },
+    {
+      "inventory_id": "ER04",
+      "target_pdf_page": 291,
+      "target_printed_page": 257,
+      "target_line": "23",
+      "candidate_ids": [
+        "B105"
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1535"
+      ],
+      "original_print_layer": {
+        "observation": "The Antiscion phrase visibly concerns the Lord of the eight followed by an overmarked terminal character."
+      },
+      "annotation_layer": {
+        "observation": "An overmark on the terminal character is visible and not assigned authorial authority.",
+        "relevant_authorial_hand_established": false
+      },
+      "source_errata_layer": {
+        "pdf_page": 888,
+        "visible_label": "ERRATA",
+        "target": "p 257 l 23",
+        "instruction": "r eight"
+      },
+      "corrected_reading_layer": {
+        "reading": "The eighth lord; source errata is preserved as a separate spelling/reading correction.",
+        "authority": "Published ERRATA in the same source PDF, not the unidentified annotation hand."
+      },
+      "conditions_preserved": [
+        "Ascendant lord is conjunct eighth lord, OR square/conjunct a planet in eighth, OR in eighth lord’s antiscion.",
+        "The benevolent sextile OR trine of Jupiter is absent.",
+        "Moon is in any way afflicted at the same time."
+      ],
+      "exceptions_preserved": [
+        "If ascendant lord is in reception with the planet in eighth, escape from death is possible; however, a very long and grievous disease cannot be avoided."
+      ],
+      "uncertainty": [
+        "Reception exception refers to a planet in eighth; its scope over every earlier alternative is not fully restated.",
+        "Source probability is qualitative, not a numerical estimate."
+      ],
+      "canonical_register_ids": [
+        "U-B18"
+      ]
+    }
+  ],
+  "locally_applicable_errata_count": 4,
+  "printed_250_errata_check": {
+    "candidate_id": "B014",
+    "record_id": "LI.1647.II.XLIV.R1444",
+    "target_pdf_page": 284,
+    "target_printed_page": 250,
+    "source_phrase_directly_read": "the Disease is not, or will be permanent",
+    "source_errata_page_inspected": 888,
+    "entry_found": false,
+    "observed_bracketing_entries": [
+      "p 245 l penult. r scabbinesse",
+      "p 254 l 18 & 19 r placed"
+    ],
+    "bounded_negative_finding": "No entry targeting printed page 250 was observed on the inspected full ERRATA page PDF888. This is not a claim about every edition, every other witness, or an uninspected errata source.",
+    "consequence": "There is no PDF888 authority to insert a second not. Canonical R1444 preserves the literal phrase and U-ROOT01 preserves its unresolved negative scope."
+  },
+  "callback_page_errata_scope_note": {
+    "pdf_errata_page": 888,
+    "callback_target_pdf_page": 153,
+    "callback_target_printed_page": 119,
+    "observed_entry_scope": "The p119 errata entry concerns Sun/Cancer and Mars/Cancer. It does not target the Saturn/Cancer cell retained for this opening-block callback.",
+    "active_cell": "Saturn|Cancer",
+    "active_cell_change_required": false,
+    "handling": "Adjacent cells are outside the active retained lookup and are not reconstructed here. The p119 entry is not counted among the four errata targeting admitted printed pages 243–258."
+  },
+  "cross_source_and_same_work_references": [
+    {
+      "inventory_id": "XR01",
+      "reference_type": "explicit_same_work_page_reference",
+      "source_reference": "Table beforegoing page 119",
+      "origin_pdf_pages": [
+        278
+      ],
+      "origin_printed_pages": [
+        244
+      ],
+      "affected_candidate_ids": [
+        "A007",
+        "A008"
+      ],
+      "affected_record_ids": [
+        "LI.1647.II.XLIV.R1364",
+        "LI.1647.II.XLIV.R1365"
+      ],
+      "destination": {
+        "pdf_page": 153,
+        "printed_page": 119,
+        "retained_record_ids": [
+          "LI.1647.I.XIX.R523"
+        ],
+        "verified_cell": "Saturn|Cancer"
+      },
+      "source_defined_content": "The explicit page reference and subsequent Cancer/Saturn illustration are in the opening block. The original target table Saturn/Cancer cell reads Reines (normalized Reins), Belly, Secrets.",
+      "verified_result": {
+        "record_id": "LI.1647.I.XIX.R523",
+        "source_items": [
+          "Reins",
+          "Belly",
+          "Secrets"
+        ],
+        "source_pdf_page": 153,
+        "printed_page": 119,
+        "new_record": false,
+        "provenance": "Retained source row, original image re-read; case and long-s normalized."
+      },
+      "assistant_identified_gap": "No other table cell is needed for the retained active callback; obscured adjacent cells are not silently completed.",
+      "status": "TARGETED_CALLBACK_ORIGINAL_IMAGE_VERIFIED",
+      "new_record": false,
+      "independent_corroboration": false,
+      "canonical_register_ids": [
+        "U-A02"
+      ]
+    },
+    {
+      "inventory_id": "XR02",
+      "reference_type": "implicit_definition_dependency_resolved_by_same_work_callback",
+      "source_reference": "lesse then her meane motion",
+      "origin_pdf_pages": [
+        285,
+        286
+      ],
+      "origin_printed_pages": [
+        251,
+        252
+      ],
+      "affected_candidate_ids": [
+        "B037"
+      ],
+      "affected_record_ids": [
+        "LI.1647.II.XLIV.R1467"
+      ],
+      "destination": {
+        "pdf_page": 114,
+        "printed_page": 80,
+        "retained_record_ids": [
+          "LI.1647.I.14.R192",
+          "LI.1647.I.14.R195",
+          "LI.1647.I.14.R221"
+        ]
+      },
+      "source_defined_content": "The local rule defines Moon slowness over twenty-four hours relative to mean motion, without a numeral. The callback states mean motion of 13 degrees 10 minutes 36 seconds and separately compares motion LESS than 13 degrees 10 minutes in 24 hours to a retrograde planet. It explicitly says the Moon is always direct.",
+      "distinct_reference_values": {
+        "mean_motion_over_24_hours": {
+          "degrees": 13,
+          "arcminutes": 10,
+          "arcseconds": 36
+        },
+        "slow_moon_retrograde_analogy": {
+          "comparison": "LESS_THAN",
+          "degrees": 13,
+          "arcminutes": 10,
+          "arcseconds": 0,
+          "period_hours": 24,
+          "literal_retrograde": false
+        }
+      },
+      "assistant_identified_gap": "These two source statements have distinct uses. The analogy threshold is not substituted for the stated mean, and neither is presented as modern astronomical or clinical validation.",
+      "status": "TARGETED_CALLBACK_ORIGINAL_IMAGE_VERIFIED",
+      "new_record": false,
+      "independent_corroboration": false,
+      "canonical_register_ids": [
+        "U-B05"
+      ]
+    },
+    {
+      "inventory_id": "XR03",
+      "reference_type": "explicit_named_same_work_treatise_reference",
+      "source_reference": "my Treatise of Nativities",
+      "origin_pdf_pages": [
+        289
+      ],
+      "origin_printed_pages": [
+        255
+      ],
+      "affected_candidate_ids": [
+        "B081"
+      ],
+      "affected_record_ids": [
+        "LI.1647.II.XLIV.R1511"
+      ],
+      "source_defined_content": "The onset ascendant matching the seventh house at birth licenses may feare death, with an exception when that year's profection is the same sign. The text points to the Treatise of Nativities for what profection is.",
+      "assistant_identified_gap": "No exact destination page or profection-selection algorithm is established in this bounded inventory. The exception is retained; a named reference is not independent confirmation.",
+      "status": "REFERENCE_PRESERVED_DESTINATION_DEFINITION_NOT_EXPANDED",
+      "new_record": false,
+      "independent_corroboration": false,
+      "canonical_register_ids": [
+        "U-B07"
+      ]
+    },
+    {
+      "inventory_id": "XR04",
+      "reference_type": "anonymous_attribution_and_internal_variant",
+      "source_reference": "some say",
+      "origin_pdf_pages": [
+        291
+      ],
+      "origin_printed_pages": [
+        257
+      ],
+      "affected_candidate_ids": [
+        "B104",
+        "B073"
+      ],
+      "affected_record_ids": [
+        "LI.1647.II.XLIV.R1534",
+        "LI.1647.II.XLIV.R1503"
+      ],
+      "source_defined_content": "Some say Moon conjunct Saturn OR Jupiter brings little good and no escape unless Saturn is retrograde AND Jupiter direct. The earlier Moon/Jupiter conjunction testimony at PDF288 is favorable.",
+      "assistant_identified_gap": "The speakers are unnamed and no precedence rule reconciles these source statements. Preserve the attributed variant with its source connectives.",
+      "status": "ANONYMOUS_ATTRIBUTION_AND_VARIANT_RETAINED",
+      "new_record": false,
+      "independent_corroboration": false,
+      "canonical_register_ids": [
+        "U-B10"
+      ]
+    }
+  ],
+  "technical_definition_dependencies": [
+    {
+      "candidate_id": "B018",
+      "record_id": "LI.1647.II.XLIV.R1448",
+      "term": "Azimene degrees",
+      "pdf_pages": [
+        284
+      ],
+      "source_defined_content": "This technical term is explicitly invoked in the admitted passage.",
+      "assistant_identified_gap": "The local passage supplies no complete definition or degree selection.",
+      "canonical_register_ids": [
+        "U-B07"
+      ],
+      "whole_book_absence_claim": false,
+      "expanded_into_dariot": false
+    },
+    {
+      "candidate_id": "B031",
+      "record_id": "LI.1647.II.XLIV.R1461",
+      "term": "benevolent house of heaven",
+      "pdf_pages": [
+        285
+      ],
+      "source_defined_content": "This technical term is explicitly invoked in the admitted passage.",
+      "assistant_identified_gap": "The locally used favorable-house category lacks a complete selection definition here.",
+      "canonical_register_ids": [
+        "U-B07"
+      ],
+      "whole_book_absence_claim": false,
+      "expanded_into_dariot": false
+    },
+    {
+      "candidate_id": "B057",
+      "record_id": "LI.1647.II.XLIV.R1487",
+      "term": "translation of light",
+      "pdf_pages": [
+        287
+      ],
+      "source_defined_content": "This technical term is explicitly invoked in the admitted passage.",
+      "assistant_identified_gap": "The local translation from the Moon's unfortunate dispositor does not fully identify its agent or a complete procedure.",
+      "canonical_register_ids": [
+        "U-B07"
+      ],
+      "whole_book_absence_claim": false,
+      "expanded_into_dariot": false
+    },
+    {
+      "candidate_id": "B078",
+      "record_id": "LI.1647.II.XLIV.R1508",
+      "term": "next crisis and perfect crisis degree",
+      "pdf_pages": [
+        289
+      ],
+      "source_defined_content": "This technical term is explicitly invoked in the admitted passage.",
+      "assistant_identified_gap": "The next crisis and the exact degree required for the favorable aspect are not defined in this local paragraph.",
+      "canonical_register_ids": [
+        "U-B07"
+      ],
+      "whole_book_absence_claim": false,
+      "expanded_into_dariot": false
+    },
+    {
+      "candidate_id": "B081",
+      "record_id": "LI.1647.II.XLIV.R1511",
+      "term": "profection",
+      "pdf_pages": [
+        289
+      ],
+      "source_defined_content": "This technical term is explicitly invoked in the admitted passage.",
+      "assistant_identified_gap": "A named Treatise of Nativities reference is present; its full definition is not imported.",
+      "canonical_register_ids": [
+        "U-B07"
+      ],
+      "whole_book_absence_claim": false,
+      "expanded_into_dariot": false
+    },
+    {
+      "candidate_id": "B083",
+      "record_id": "LI.1647.II.XLIV.R1513",
+      "term": "five hylegical places and oppression",
+      "pdf_pages": [
+        289,
+        290
+      ],
+      "source_defined_content": "This technical term is explicitly invoked in the admitted passage.",
+      "assistant_identified_gap": "The five natal places, their selection, and the full oppression test are not defined in this local passage; the reception/Fortunes exception remains qualified.",
+      "canonical_register_ids": [
+        "U-B07"
+      ],
+      "whole_book_absence_claim": false,
+      "expanded_into_dariot": false
+    },
+    {
+      "candidate_id": "B085",
+      "record_id": "LI.1647.II.XLIV.R1515",
+      "term": "lord of the figure",
+      "pdf_pages": [
+        290
+      ],
+      "source_defined_content": "This technical term is explicitly invoked in the admitted passage.",
+      "assistant_identified_gap": "A complete procedure selecting this lord is not stated in the local paragraph.",
+      "canonical_register_ids": [
+        "U-B07"
+      ],
+      "whole_book_absence_claim": false,
+      "expanded_into_dariot": false
+    }
+  ],
+  "retained_callback_record_ids": [
+    "LI.1647.I.14.R192",
+    "LI.1647.I.14.R195",
+    "LI.1647.I.14.R221",
+    "LI.1647.I.XIX.R523"
+  ],
+  "retained_callback_new_record_count": 0,
+  "remaining_source_limits_relevant_to_b": [
+    {
+      "id": "U-B01",
+      "type": "lexical_or_source_tension",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The sixth/eighth exchange with sextile/trine says not doubt of the death, then explains Nature is not overcome and the sick shall overcome it.",
+      "assistant_identified_gap": "The historical sense of doubt or textual inconsistency is not settled by this reading.",
+      "affected_candidate_ids": [
+        "B010"
+      ],
+      "pdf_pages": [
+        283
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1440"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B02",
+      "type": "conditional_scope",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The Venus/Scorpio clause and female-question branch follow the Moon-sixth/ill-Venus condition; the source uses etc.",
+      "assistant_identified_gap": "Which earlier conditions persist into each branch, and what etc. expands, remain unresolved.",
+      "affected_candidate_ids": [
+        "B003",
+        "B004"
+      ],
+      "pdf_pages": [
+        283
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1433",
+        "LI.1647.II.XLIV.R1434"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B03",
+      "type": "timing_unit_selection",
+      "origin": "source_defined_content",
+      "status": "open",
+      "source_defined_content": "The source maps remaining sign-exit degrees to as many months, weeks, or days according to sign nature and quality.",
+      "assistant_identified_gap": "This passage does not choose a determinate unit or rounding rule. This is an absence only within this passage, not a whole-book absence claim.",
+      "affected_candidate_ids": [
+        "B008"
+      ],
+      "pdf_pages": [
+        283
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1438"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B04",
+      "type": "compound_condition_grouping",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "Several long sentences combine commas, and, or, and shifting pronouns.",
+      "assistant_identified_gap": "Exact grouping of the listed factors is not consistently determined by the punctuation.",
+      "affected_candidate_ids": [
+        "B009",
+        "B017",
+        "B018",
+        "B025",
+        "B028",
+        "B038",
+        "B092",
+        "B105",
+        "B106",
+        "B107",
+        "B110",
+        "B112",
+        "B119"
+      ],
+      "pdf_pages": [
+        283,
+        284,
+        285,
+        286,
+        290,
+        291,
+        292
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1439",
+        "LI.1647.II.XLIV.R1447",
+        "LI.1647.II.XLIV.R1448",
+        "LI.1647.II.XLIV.R1455",
+        "LI.1647.II.XLIV.R1458",
+        "LI.1647.II.XLIV.R1468",
+        "LI.1647.II.XLIV.R1522",
+        "LI.1647.II.XLIV.R1535",
+        "LI.1647.II.XLIV.R1536",
+        "LI.1647.II.XLIV.R1537",
+        "LI.1647.II.XLIV.R1540",
+        "LI.1647.II.XLIV.R1542",
+        "LI.1647.II.XLIV.R1549"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B05",
+      "type": "motion_reference_value",
+      "origin": "assistant_identified_gap",
+      "status": "RESOLVED_REFERENCE_VALUE",
+      "source_defined_content": "Moon’s slowness is defined relative to mean motion over twenty-four hours.",
+      "assistant_identified_gap": "No numerical mean motion is stated in this passage; do not import a threshold.",
+      "affected_candidate_ids": [
+        "B037"
+      ],
+      "pdf_pages": [
+        285,
+        286
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1467"
+      ],
+      "reader_status": "open",
+      "resolution": "Root re-read original PDF114/printed80: the stated mean is13d10m36s per24h. The separate analogy threshold is13d10m. The reference helper explicitly declares this same-work callback; source wording remains unchanged.",
+      "source_resolved": true
+    },
+    {
+      "id": "U-B06",
+      "type": "qualitative_strength_and_distance",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The source uses powerfully, strong, weaker, more strongly dignified, more potent, near, or rays.",
+      "assistant_identified_gap": "No numeric scoring, comparative cutoff, or orb for these words is supplied at these points. Any operational specification would be an additional dependency.",
+      "affected_candidate_ids": [
+        "B013",
+        "B014",
+        "B034",
+        "B044",
+        "B059",
+        "B071",
+        "B076",
+        "B080",
+        "B101",
+        "B108",
+        "B114",
+        "B115"
+      ],
+      "pdf_pages": [
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        291,
+        292
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1443",
+        "LI.1647.II.XLIV.R1444",
+        "LI.1647.II.XLIV.R1464",
+        "LI.1647.II.XLIV.R1474",
+        "LI.1647.II.XLIV.R1489",
+        "LI.1647.II.XLIV.R1501",
+        "LI.1647.II.XLIV.R1506",
+        "LI.1647.II.XLIV.R1510",
+        "LI.1647.II.XLIV.R1531",
+        "LI.1647.II.XLIV.R1538",
+        "LI.1647.II.XLIV.R1544",
+        "LI.1647.II.XLIV.R1545"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B07",
+      "type": "technical_definition_dependency",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The source invokes Azimene degrees, benevolent house of heaven, translation of light, crisis, profection, five hylegical places, and lord of the figure.",
+      "assistant_identified_gap": "These specific passages do not supply a complete definition/selection algorithm. No absence claim about the entire book is made.",
+      "affected_candidate_ids": [
+        "B018",
+        "B031",
+        "B057",
+        "B078",
+        "B081",
+        "B083",
+        "B085"
+      ],
+      "pdf_pages": [
+        284,
+        285,
+        287,
+        289,
+        290
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1448",
+        "LI.1647.II.XLIV.R1461",
+        "LI.1647.II.XLIV.R1487",
+        "LI.1647.II.XLIV.R1508",
+        "LI.1647.II.XLIV.R1511",
+        "LI.1647.II.XLIV.R1513",
+        "LI.1647.II.XLIV.R1515"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B08",
+      "type": "grammatical_referent",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "Retrograde immediately follows a benevolent planet in a Moon-or-ascendant-lord aspect sentence.",
+      "assistant_identified_gap": "The nearest reading is the benevolent planet, but attachment is not fixed as executable interpretation.",
+      "affected_candidate_ids": [
+        "B048"
+      ],
+      "pdf_pages": [
+        286
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1478"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B09",
+      "type": "variant_preservation",
+      "origin": "source_defined_content",
+      "status": "open",
+      "source_defined_content": "One conditional occidental-Saturn disease rule gives recovery; the next clause nevertheless calls occidental Saturn unlucky.",
+      "assistant_identified_gap": "No explicit precedence rule combines these different-scope statements.",
+      "affected_candidate_ids": [
+        "B061",
+        "B062"
+      ],
+      "pdf_pages": [
+        287,
+        288
+      ],
+      "disposition": "Retain both conditional recovery and general qualification; do not manufacture contradiction or override.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1491",
+        "LI.1647.II.XLIV.R1492"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B10",
+      "type": "attributed_variant",
+      "origin": "source_defined_content",
+      "status": "open",
+      "source_defined_content": "Moon conjunct Jupiter is elsewhere a good recovery argument; some say Moon conjunct Saturn or Jupiter gives no escape unless Saturn retrograde and Jupiter direct.",
+      "assistant_identified_gap": "The anonymous attribution and interaction of the printed or with the two-planet exception are not resolved.",
+      "affected_candidate_ids": [
+        "B073",
+        "B104"
+      ],
+      "pdf_pages": [
+        288,
+        291
+      ],
+      "disposition": "Retain the attributed variant and independent Jupiter-recovery rule, with no invented precedence.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1503",
+        "LI.1647.II.XLIV.R1534"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B11",
+      "type": "contextual_scope",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "Moon doing more hurt in increase appears in a Moon/Mars comparison, while the succedent Moon safety condition explicitly requires increasing light/motion.",
+      "assistant_identified_gap": "The comparison must not be widened into an unrestricted adverse rule for every increasing Moon.",
+      "affected_candidate_ids": [
+        "B066",
+        "B076"
+      ],
+      "pdf_pages": [
+        288,
+        289
+      ],
+      "disposition": "Preserve local context and both source conditions; neither is silently an unconditional override.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1496",
+        "LI.1647.II.XLIV.R1506"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B12",
+      "type": "hylegical_exception_grouping",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The source says unless reception intervenes between Infortunes, and Fortunes interject comfortable aspects, then escape may occur as by a divine miracle.",
+      "assistant_identified_gap": "Exact AND/OR scope of the exception is not settled for formal application.",
+      "affected_candidate_ids": [
+        "B083"
+      ],
+      "pdf_pages": [
+        289,
+        290
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1513"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B13",
+      "type": "obscured_original_with_source_erratum",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "PDF290 contains crossed/overwritten print. PDF888 identifies all hopes of escape for deletion and gives feare of danger.",
+      "assistant_identified_gap": "The original obscured phrase is not completely directly legible; the handwriting’s author and authority are unknown.",
+      "affected_candidate_ids": [
+        "B085"
+      ],
+      "pdf_pages": [
+        290
+      ],
+      "disposition": "Use the source-authored erratum for the corrected reading while retaining original/handwriting/errata separately. The corrected reading is settled; original-layer paleography remains open.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1515"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B14",
+      "type": "fixed_star_paleography_and_epoch",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The star list gives Antares, Lans/Lanx Australis, Palilicium, Caput Medusae, and historical degree/sign values.",
+      "assistant_identified_gap": "The Lans/Lanx spelling and the exact proximity threshold remain open; no current epoch coordinates are inferred.",
+      "affected_candidate_ids": [
+        "B108"
+      ],
+      "pdf_pages": [
+        291,
+        292
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1538"
+      ],
+      "reader_status": "open",
+      "additional_limit": "Source degree labels do not supply minutes, seconds, modern-epoch coordinates or a uniquely specified ordinal-to-continuous-degree conversion.",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B15",
+      "type": "listed_or_combined_testimonies",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "Saturn opposite eighth lord is followed by Moon fourth with Mars, or Moon ascendant near rising degree.",
+      "assistant_identified_gap": "It is unresolved whether these are separate testimonies or one combined configuration with alternatives.",
+      "affected_candidate_ids": [
+        "B114"
+      ],
+      "pdf_pages": [
+        292
+      ],
+      "disposition": "Retain source wording/alternatives; no executable interpretation admitted.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1544"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B16",
+      "type": "alternative_sign_and_aspect_grouping",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The final combustion rule lists eighth house, Leo or Libra, square/opposition Saturn or Mercury, and Pleiades at 24 Taurus or other violent stars.",
+      "assistant_identified_gap": "The exact grouping cannot be forced into one all-conjunctive condition because the sign positions may be alternative branches.",
+      "affected_candidate_ids": [
+        "B118"
+      ],
+      "pdf_pages": [
+        292
+      ],
+      "disposition": "Preserve all listed clauses with unresolved grouping and executable=false. Mercury is visually verified, not an unresolved Mars alternative.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1548"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B17",
+      "type": "historical_evidence_class",
+      "origin": "assistant_identified_gap",
+      "status": "open",
+      "source_defined_content": "The source makes moral, sexual, supernatural, and treatment-effect attributions.",
+      "assistant_identified_gap": "These general historical assertions are not independently verified clinical examples; the extraction cannot supply modern diagnostic or individual-person claims.",
+      "affected_candidate_ids": [
+        "B002",
+        "B003",
+        "B004",
+        "B011",
+        "B013",
+        "B015",
+        "B042",
+        "B097"
+      ],
+      "pdf_pages": [
+        283,
+        284,
+        286,
+        290,
+        291
+      ],
+      "disposition": "Keep historical attribution, exact scope, and no executable/clinical inference. This is an evidence-class boundary, not a proposed correction of source content.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1432",
+        "LI.1647.II.XLIV.R1433",
+        "LI.1647.II.XLIV.R1434",
+        "LI.1647.II.XLIV.R1441",
+        "LI.1647.II.XLIV.R1443",
+        "LI.1647.II.XLIV.R1445",
+        "LI.1647.II.XLIV.R1472",
+        "LI.1647.II.XLIV.R1527"
+      ],
+      "reader_status": "open",
+      "source_resolved": false
+    },
+    {
+      "id": "U-B18",
+      "type": "source_errata_layer",
+      "origin": "source_defined_content",
+      "status": "resolved_with_separate_layers",
+      "source_defined_content": "PDF888 directs p254 lines18–19 read placed and p257 line23 read eight.",
+      "assistant_identified_gap": "Overmarked or faulty original characters should not be silently conflated with their source-authored correction.",
+      "affected_candidate_ids": [
+        "B069",
+        "B105"
+      ],
+      "pdf_pages": [
+        288,
+        291
+      ],
+      "disposition": "Correction admitted with explicit original/handwriting/errata layers; no unresolved substantive effect on the respective placement/eighth-lord conditions.",
+      "source_reader": "B",
+      "record_ids": [
+        "LI.1647.II.XLIV.R1499",
+        "LI.1647.II.XLIV.R1535"
+      ],
+      "reader_status": "resolved_with_separate_layers",
+      "source_resolved": true
+    },
+    {
+      "id": "U-ROOT01",
+      "type": "source_negative_scope",
+      "source_reader": "ROOT",
+      "status": "RETAINED_WITHOUT_EMENDATION",
+      "source_resolved": false,
+      "reader_status": "IDENTIFIED_DURING_ROOT_IMAGE_CHECK",
+      "candidate_ids": [
+        "B014"
+      ],
+      "record_ids": [
+        "LI.1647.II.XLIV.R1444"
+      ],
+      "pdf_pages": [
+        284
+      ],
+      "printed_pages": [
+        250
+      ],
+      "issue": "The source prints the Disease is not, or will be permanent. The earlier negative may have shared scope or the text may lack a word; neither interpretation is established in this batch.",
+      "handling": "Preserve the phrase and its prerequisites. Do not insert a second not or turn the outcome into an executable duration predicate.",
+      "source_anchor": "the Disease is not, or will be permanent"
+    }
+  ],
+  "actual_defects_found_in_current_canonical_snapshot": [],
+  "defect_assessment": "No additional actual integration or evidence-inventory defect was found in this bounded returning review. The two identified raw paraphrase defects are already corrected in canonical records and remain visible in raw artifacts and the correction inventory. Source ambiguities and unresolved definitions remain typed limits, not silently repaired defects.",
+  "evidence_class": {
+    "new_source_records_in_opening_block": 192,
+    "worked_narrative_records": 0,
+    "dated_enquiries": 0,
+    "independently_verified_clinical_outcomes": 0,
+    "predictive_accuracy_evaluated": false,
+    "independent_evaluation": false,
+    "runtime_promotions": 0
+  }
+}
