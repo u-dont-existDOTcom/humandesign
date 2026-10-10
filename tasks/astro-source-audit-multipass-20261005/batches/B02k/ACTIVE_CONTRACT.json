@@ -1,0 +1,136 @@
+{
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch": "B02k",
+  "owner_request": "Continue the astrology book research; current owner message: ..continue",
+  "turn_start": "2026-10-10T15:42:35+00:00",
+  "parent_status": "OPEN_MULTIPASS_AUTHORIZED",
+  "base": "094fc89cc12fcef43c655b9d87524c0641ee0802",
+  "integration_branch": "research/six-rule-life-timing-20261001",
+  "isolated_branch": "research/lilly-sixth-house-b02k-20261010",
+  "exclusive_writer": "root",
+  "scope": "Sixth-house heading and XLIV opening on PDF277/printed243 through the paragraph ending shew death on PDF292/printed258, immediately before DARIOT Abridged. All intervening unnumbered sections. Chapter XLIV remains incomplete.",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_bytes": 141842963,
+  "source_pages": 894,
+  "source_hash_recomputed_this_turn": true,
+  "activation": {
+    "status": "ACTIVE",
+    "uda_ref": "d6190a06fe16049d998b4a9c78977ceaecdef1b9",
+    "route": "Current-turn live default root and lesson index read; project root, historical CURRENT and exact B02j dated checkpoint read; applicable prose controls read. Local current UDA checkout used for source-bound graph compilation.",
+    "post_compaction_refresh": "Current-turn root and operative controls reloaded from verified UDA checkout; no change in scope or authority."
+  },
+  "active_controls": [
+    {
+      "rule": "source-provenance-and-whole-argument",
+      "required": "Inspect all admitted original page images; retain every numbered/unnumbered section, conditions, exceptions, source attribution, local contradictions and uncertainty; anchor source statements at point of use.",
+      "failure": "Omitted source unit, guessed glyph or overstrong paraphrase.",
+      "repair": "Reopen source and repair affected dependents, or preserve explicit uncertainty.",
+      "due": "extraction/report",
+      "enforcement": "semantic source comparison plus mechanical coverage",
+      "trigger": "Current historical source-audit continuation",
+      "actor": "root with separately assigned source readers/evaluator",
+      "destination": "B02k source records, reference code, report and delivery packet"
+    },
+    {
+      "rule": "genre-and-exposure",
+      "required": "Historical horary source audit only. User memories are exposed, so no blind-person claim; no participant-data reads, personal fitting or medical/fertility forecasts.",
+      "failure": "Historical doctrine or example presented as validated personal prediction.",
+      "repair": "Restore historical genre and evidence scope.",
+      "due": "all interpretation",
+      "enforcement": "semantic review and file allowlist",
+      "trigger": "Current historical source-audit continuation",
+      "actor": "root with separately assigned source readers/evaluator",
+      "destination": "B02k source records, reference code, report and delivery packet"
+    },
+    {
+      "rule": "bounded-calculation",
+      "required": "Use printed inputs and explicit source models only. Keep missing minutes, calendar/time basis, unspecified thresholds, vote dependence and event outcomes distinct.",
+      "failure": "Invented precision, retrospective case treated as independent validation, or tests represented as accuracy.",
+      "repair": "Limit computation to justified inputs and label unresolved model/evidence boundaries.",
+      "due": "reference code/report",
+      "enforcement": "meaningful focused tests and arithmetic checks",
+      "trigger": "Current historical source-audit continuation",
+      "actor": "root with separately assigned source readers/evaluator",
+      "destination": "B02k source records, reference code, report and delivery packet"
+    },
+    {
+      "rule": "independent-diagnosis",
+      "required": "Independent reader freezes source-only notes before candidate access; final source/claim check sees sources, frozen artifact and ledger without producer rationale until diagnosis freezes.",
+      "failure": "Producer self-check called independent or unsupported report claim delivered.",
+      "repair": "Reconcile diagnostic findings against primary evidence and check changed claims.",
+      "due": "pre-delivery",
+      "enforcement": "source-first and diagnosis receipts; same-model context independence disclosed",
+      "trigger": "Current historical source-audit continuation",
+      "actor": "root with separately assigned source readers/evaluator",
+      "destination": "B02k source records, reference code, report and delivery packet"
+    },
+    {
+      "rule": "publication-and-delivery",
+      "required": "Root alone writes isolated repository branch and integrates using expected-SHA nonforce refs. Verify remote bytes, package usable companions and test extracted archive; use available authorized owner delivery route.",
+      "failure": "Local-only completion, wrong destination bytes or missing companion.",
+      "repair": "Use verified authorized transport and exact readback; attach files if local owner filesystem is unavailable.",
+      "due": "publication/delivery",
+      "enforcement": "manifests, repository comparison and actual process receipts",
+      "trigger": "Current historical source-audit continuation",
+      "actor": "root with separately assigned source readers/evaluator",
+      "destination": "B02k source records, reference code, report and delivery packet"
+    },
+    {
+      "rule": "preservation-and-continuation",
+      "required": "Modify only B02k, cumulative Lilly index and new dated B02k checkpoint; preserve every earlier batch/state, historical CURRENT/PASS_PLAN, personal inputs, models and prediction freezes. Complete admitted source block before owner-authorized batch pause.",
+      "failure": "Protected bytes changed or unfinished admitted block hidden by completion label.",
+      "repair": "Restore protected files, finish open admitted work and retain exact next passage.",
+      "due": "each repository write/final",
+      "enforcement": "Git diff allowlist and final closeout",
+      "trigger": "Current historical source-audit continuation",
+      "actor": "root with separately assigned source readers/evaluator",
+      "destination": "B02k source records, reference code, report and delivery packet"
+    }
+  ],
+  "allowed_repo_writes": [
+    "tasks/astro-source-audit-multipass-20261005/batches/B02k/",
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+    "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02k.md"
+  ],
+  "protected_paths": [
+    "earlier batches and dated states",
+    "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+    "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+    "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "participant inputs, fitted models and prediction freezes"
+  ],
+  "publication_route": "Root-only GitHub Git-data API. Shell dry-run failed for missing username; connected branch creation succeeded at exact base. Expected-SHA nonforce publication; source records copied from separate worker directories by root.",
+  "delegation": {
+    "A": "Original PDF277–282",
+    "B": "Original PDF283 through292 before DARIOT Abridged;282 context",
+    "root": "Full-span source verification, compilation, bounded helpers, integration",
+    "independent": "Fresh-context original277–292 beforeDariot, source-first freeze, later exhaustive candidate/claim check"
+  },
+  "test_lane": "Source-data and bounded reference arithmetic; no runtime/model edits. Run new focused suite once at source checkpoint and actual extracted-packet usability once. Reuse dependencies only if needed; no full application or predictive-evaluation claim.",
+  "phase": "SOURCE_READING_IN_PROGRESS",
+  "stop_admission": {
+    "parent_outcome": "OPEN",
+    "pause_authority": "Existing owner-authorized PASS_PLAN.json pause_contract",
+    "current_completion_requirement": "Complete admitted XLIV opening block; verify, publish and deliver report/packet/handoff.",
+    "finalization_admitted": false,
+    "next_action": "Read and extract every admitted source unit."
+  },
+  "owner_gap": "Remaining Lilly chapters and wider multi-author audit. This batch contributes source extraction and conditional-reference checks; parent stays open.",
+  "parent_authority": {
+    "path": "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "sha256": "04f1d246bd3c96dd03009ea6cc669f736be0c746112ef1a789404b0cc1050653",
+    "contribution": "decompose and continue source-book audit",
+    "authority_amended": false
+  },
+  "review_budget": {
+    "initial_exhaustive_claim_check": 1,
+    "changed_item_repair_cycles_max": 2,
+    "stalled_remaining_items": "retain explicit limitation or withhold assertion; unchanged source coverage must not be claimed complete if substantive missing units remain",
+    "diagnostic_only_reviewer_not_truth_oracle": true
+  },
+  "suggested_fix_lane": {
+    "current_item": "2026-09-30-interviewer-accuracy-checks.md",
+    "disposition": "Already listed in project ledger; current but unrelated interviewer work. No new item or project-ledger edit required."
+  }
+}

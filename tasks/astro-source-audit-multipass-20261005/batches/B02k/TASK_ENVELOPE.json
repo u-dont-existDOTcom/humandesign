@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-source-audit-multipass-20261005:B02k",
+  "bootstrap": {
+    "state": "LOADED",
+    "source": "u-dont-existDOTcom/universal-dev-architecture main AGENTS.md",
+    "current_turn_live_fetch": true,
+    "revision": "d6190a06fe16049d998b4a9c78977ceaecdef1b9"
+  },
+  "facts": {
+    "role": {
+      "state": "KNOWN",
+      "value": "universal_internal"
+    },
+    "actor": {
+      "state": "KNOWN",
+      "value": "chat"
+    },
+    "governance_required": {
+      "state": "KNOWN",
+      "value": true
+    },
+    "owner_requires_live_root": {
+      "state": "KNOWN",
+      "value": true
+    },
+    "explicit_boundary_binding_requested": {
+      "state": "KNOWN",
+      "value": true
+    },
+    "owner_correction_present": {
+      "state": "KNOWN",
+      "value": false
+    },
+    "action_classes": {
+      "state": "KNOWN",
+      "value": [
+        "followup_task_authoring",
+        "review_round",
+        "resume_reconciliation",
+        "task_completion"
+      ]
+    },
+    "owner_outcome_status": {
+      "state": "KNOWN",
+      "value": "OPEN"
+    },
+    "task_mode": {
+      "state": "KNOWN",
+      "value": "SOURCE_RESEARCH_CONTINUATION"
+    },
+    "request_kind": {
+      "state": "KNOWN",
+      "value": "source_research"
+    },
+    "continuity_required": {
+      "state": "KNOWN",
+      "value": true
+    },
+    "usage_warning_visible": {
+      "state": "KNOWN",
+      "value": false
+    }
+  },
+  "authority": {
+    "path": "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+    "sha256": "04f1d246bd3c96dd03009ea6cc669f736be0c746112ef1a789404b0cc1050653",
+    "contribution": "decompose and continue source-book audit",
+    "authority_amended": false
+  },
+  "batch_scope": "Sixth-house heading and XLIV opening on PDF277/printed243 through the paragraph ending shew death on PDF292/printed258, immediately before DARIOT Abridged. All intervening unnumbered sections. Chapter XLIV remains incomplete."
+}
