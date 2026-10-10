@@ -1,0 +1,2267 @@
+{
+  "schema_version": 1,
+  "batch": "B02g",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "records_count": 69,
+  "rules": [
+    {
+      "id": "LI.1647.II.XXVII.R775",
+      "title": "General wealth question: scope and querent",
+      "kind": "query_frame",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          201
+        ],
+        "printed_sequence_expected": [
+          167
+        ],
+        "visible_printed_labels": [
+          "167"
+        ],
+        "passage_anchor": "Whoever interrogates; if the Question be in generall termes",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ascendant, its lord and Moon signify the asker regardless of rank. The opening method concerns whether the asker will ever be rich, without reference to a particular person from whom a fortune is expected.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "A horary question, not a natal wealth rule or a claim about an actual person's finances."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R776",
+      "title": "Wealth significators and their configurations",
+      "kind": "reference_inputs",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          201
+        ],
+        "printed_sequence_expected": [
+          167
+        ],
+        "visible_printed_labels": [
+          "167"
+        ],
+        "passage_anchor": "Consider the Signe ascending on the Cusp of the second House",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        "second-cusp sign",
+        "second lord",
+        "second-house occupants",
+        "planets aspecting second lord or cusp",
+        "Fortune's sign and house",
+        "planetary aspects received by Fortune"
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Inventory is not a numerical weighting or precedence algorithm."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R777",
+      "title": "Fortune and the nodes do not emit rays",
+      "kind": "definition",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          201
+        ],
+        "printed_sequence_expected": [
+          167
+        ],
+        "visible_printed_labels": [
+          "167"
+        ],
+        "passage_anchor": "for Fortune it selfe emitteth no rayes",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Fortune itself casts no aspect to a planet; neither do the north and south nodes.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Receiving a planetary aspect is distinct from emitting one. Do not symmetrize these semantic roles merely because longitude geometry is symmetric."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R778",
+      "title": "All planets angular: general wealth testimony",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          201
+        ],
+        "printed_sequence_expected": [
+          167
+        ],
+        "visible_printed_labels": [
+          "167"
+        ],
+        "passage_anchor": "if you find the Planets all angular",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "All planets angular are one good sign of substance.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The author calls the opening rules general. This is one testimony, not an unconditional calibrated verdict."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R779",
+      "title": "Succedent direct swift planets",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          201
+        ],
+        "printed_sequence_expected": [
+          167
+        ],
+        "visible_printed_labels": [
+          "167"
+        ],
+        "passage_anchor": "if they be in succedant houses, direct and swift",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Planets in succedent houses, direct and swift, are a favourable general testimony.",
+      "prerequisites": [],
+      "qualifications_and_limits": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R780",
+      "title": "Good houses and moderate essential dignity",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          201,
+          202
+        ],
+        "printed_sequence_expected": [
+          167,
+          168
+        ],
+        "visible_printed_labels": [
+          "167",
+          "168"
+        ],
+        "passage_anchor": "If the Planets be in good houses",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Planets in good houses, direct and moderately essentially dignified, give hope of an estate.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No local exhaustive definition of good houses or numerical minimum for moderate dignity."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R781",
+      "title": "Union of querent and wealth significators",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "If the Lord of the Ascendant, or the Moon, and Lord of the second",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The opening favourable alternatives include bodily joining of the Ascendant lord or Moon with the second lord.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The printed coordination is not a formal Boolean expression. Preserve uncertainty over its exact grouping; do not require or exclude a three-body conjunction silently."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R782",
+      "title": "Friendly aspect to the second lord",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "or if they, viz. Lord of the Ascendant and Moon",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Friendly aspect from the Ascendant lord and Moon to the second lord is another favourable alternative.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The source names both in this clause; do not silently replace and by or. Friendly is not given a new orb here."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R783",
+      "title": "Jupiter or Venus contacting Fortune",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "or if Jupiter and Venus cast their trine or sextile",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Jupiter and Venus casting trine or sextile to Fortune, or being conjunct it, supply favourable testimony.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The enumerative wording does not settle whether both benefics must act in every application."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R784",
+      "title": "Wealth lord in the first",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "or if the Lord of the second be in the Ascendant",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The second lord in the Ascendant is a favourable wealth testimony.",
+      "prerequisites": [],
+      "qualifications_and_limits": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R785",
+      "title": "Querent significator in the second",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "or the Moon, or Lord of the Ascendant in the second",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Moon or Ascendant lord in the second is favourable wealth testimony.",
+      "prerequisites": [],
+      "qualifications_and_limits": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R786",
+      "title": "Translation from wealth lord to querent lord",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "if any Planet transfer the light and vertue",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A planet translating the second lord's light and virtue to the Ascendant lord supplies favourable wealth testimony.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Direction is retained. The local clause does not restate every prior translation prerequisite."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R787",
+      "title": "Benefic rays to Ascendant cusp or Fortune",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "benevolent Planets cast their sextile or trine",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Benevolent planets casting sextile or trine to the Ascendant cusp or Fortune are favourable.",
+      "prerequisites": [],
+      "qualifications_and_limits": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R788",
+      "title": "Jupiter-Venus nature fixed stars",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "any fixed Starre of the nature of Jupiter and Venus",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A fixed star of Jupiter/Venus nature ascending with the second cusp, or Fortune conjunct or near such a star, is favourable.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No list of stars or numerical near/rising threshold is supplied locally."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R789",
+      "title": "Second-house natural benefics and north node",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "Jupiter who is naturall significator of substance",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Jupiter, naturally signifying substance, Venus, naturally a fortune, or the north node in the second is favourable when no infortune aspects them.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The no-infortune qualification belongs to the clause; node is not misread as a planet."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R790",
+      "title": "Direct swift motion defined against mean",
+      "kind": "definition_and_testimony",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "their daily motion be more then what is assigned",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "All planets direct and swift are favourable; swift means daily motion greater than the assigned mean motion.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Strictly greater, not greater-or-equal. Printed references are pages57,61,65,69,72,76,80. Retain source means instead of silently using a modern ephemeris average."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R791",
+      "title": "Judgement magnitude and social capacity",
+      "kind": "synthesis_qualification",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "competently rich or have a sufficient fortune to subsist on",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The favourable testimonies indicate competent wealth or sufficient subsistence, with greater or lesser estate according to the major relevant testimonies and the capacity/condition of the person asking.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No fixed currency threshold, probability, uniform definition of rich, or numerical majority/weighting formula is supplied."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R792",
+      "title": "Means-of-wealth enquiry is conditional",
+      "kind": "applicability_gate",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202
+        ],
+        "printed_sequence_expected": [
+          168
+        ],
+        "visible_printed_labels": [
+          "168"
+        ],
+        "passage_anchor": "When you have sufficiently examined your Figure",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Only after judging that subsistence or riches are promised does the discussion ask how, by whom and by what means they are obtained.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "A listed house association is not itself proof that wealth is promised."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R793",
+      "title": "Second lord's placement: labour or unexpected acquisition",
+      "kind": "conditional_reference_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          202,
+          203
+        ],
+        "printed_sequence_expected": [
+          168,
+          169
+        ],
+        "visible_printed_labels": [
+          "168",
+          "169"
+        ],
+        "passage_anchor": "if the Lord of the second house be in the second",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "second_lord_in_second": "own labour and industry",
+        "second_lord_in_first": "unexpected fortune or attainment without much labour"
+      },
+      "prerequisites": [
+        "Prior wealth/subsistence judgement."
+      ],
+      "qualifications_and_limits": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R794",
+      "title": "Trace the helping aspect before choosing a means",
+      "kind": "source_selection_order",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          203
+        ],
+        "printed_sequence_expected": [
+          169
+        ],
+        "visible_printed_labels": [
+          "169"
+        ],
+        "passage_anchor": "If that the Lord of the second or the Moon doe promise substance",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "When second lord or Moon promises substance through their mutual aspect, inspect its source house and the Moon's house lordship. If neither promises substance, inspect Fortune's house and its dispositor's house lordship.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "These are conditional alternatives, not an instruction to collect every possible house narrative."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R795",
+      "title": "Helpful first lord: own work",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          203
+        ],
+        "printed_sequence_expected": [
+          169
+        ],
+        "visible_printed_labels": [
+          "169"
+        ],
+        "passage_anchor": "If the Planet assisting or promising encrease of Fortune be Lord of the Ascendant",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A helping Ascendant lord signifies the asker's diligence advancing the estate; for an ordinary artisan, labour, invention, care and pains-taking.",
+      "prerequisites": [
+        "The planet actually assists or promises increase."
+      ],
+      "qualifications_and_limits": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R796",
+      "title": "Helpful second lord: existing capital and commerce",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          203
+        ],
+        "printed_sequence_expected": [
+          169
+        ],
+        "visible_printed_labels": [
+          "169"
+        ],
+        "passage_anchor": "if the Adjuvant Planet be Lord of the second",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A helping second lord signifies increasing and managing one's own stock, buying and selling things fitting the person's trade, the planet's nature and its sign.",
+      "prerequisites": [
+        "The planet actually assists or promises increase."
+      ],
+      "qualifications_and_limits": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R797",
+      "title": "Helpful third lord: kin, neighbours and journeys",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          203
+        ],
+        "printed_sequence_expected": [
+          169
+        ],
+        "visible_printed_labels": [
+          "169"
+        ],
+        "passage_anchor": "If the Lord of the third fortunate the Lord of the second",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Third lord helping second lord, second cusp or Fortune indicates aid through an honest neighbour, kin, siblings if present, a journey, or removal toward the quarter from which the helpful aspect or conjunction comes.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Siblings are explicitly conditional on having them; the alternatives are not separate independent predictions."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R798",
+      "title": "Helpful fourth-house connection",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          203
+        ],
+        "printed_sequence_expected": [
+          169
+        ],
+        "visible_printed_labels": [
+          "169"
+        ],
+        "passage_anchor": "If the fortunate Planet or Significator be Lord of the fourth",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A fortunate significator ruling or occupying the fourth indicates aid from a living father, grandfather or other older person; farms, land, buildings, inherited stock, or money lent by kin.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Living father is an explicit condition; occupation and lordship are alternative predicates."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R799",
+      "title": "Helpful fifth lord: social-role alternatives",
+      "kind": "conditional_reference_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          203,
+          204
+        ],
+        "printed_sequence_expected": [
+          169,
+          170
+        ],
+        "visible_printed_labels": [
+          "169",
+          "174"
+        ],
+        "passage_anchor": "If the Lord of the fifth doe promise Wealth",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "gentleman": "play, cards, dice, sports or pastimes",
+        "capable_courtier": "embassy or message",
+        "ordinary_person": "victualling house, inn, tavern, bowling alley, doorkeeper or porter",
+        "strong_fifth_lord_any_querent": "something from father's estate or making matches"
+      },
+      "prerequisites": [
+        "Fifth lord promises wealth."
+      ],
+      "qualifications_and_limits": [
+        "Historical alternatives, not present recommendations or a replacement of the fourth-house inheritance association."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R800",
+      "title": "Sixth and a human sign: service and labour",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          204
+        ],
+        "printed_sequence_expected": [
+          170
+        ],
+        "visible_printed_labels": [
+          "174"
+        ],
+        "passage_anchor": "If the Lord of the sixth, or Significator, or assistant Planet be in the sixth",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The sixth-related helping-planet clause adds a human sign on the sixth, indicating good servants and profit from their labour; for a king/prince it describes subjects' subsidies and loans.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Grammar leaves the exact scope of the human-sign and occupancy qualifications across the following occupational examples unresolved."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R801",
+      "title": "Sixth-house occupational alternatives",
+      "kind": "conditional_reference_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          204
+        ],
+        "printed_sequence_expected": [
+          170
+        ],
+        "visible_printed_labels": [
+          "174"
+        ],
+        "passage_anchor": "If a Nobleman or Gentleman enquire",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "nobleman_or_gentleman": "leases and discreet estate management by stewards or bailiffs",
+        "farmer": "small cattle including sheep, goats, hogs and rabbits",
+        "scholar": "physician's fees from sick people"
+      },
+      "prerequisites": [
+        "Continues the preceding sixth-house source branch."
+      ],
+      "qualifications_and_limits": [
+        "Historical occupational symbolism; no medical-care or career recommendation is admitted."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R802",
+      "title": "Helpful seventh lord: partner, disputes and commerce",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          204
+        ],
+        "printed_sequence_expected": [
+          170
+        ],
+        "visible_printed_labels": [
+          "174"
+        ],
+        "passage_anchor": "If the Lord of the seventh house fortunate the Lord of the second",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Seventh lord helping second lord, cusp, Fortune or second-house occupant points to a rich/good wife or a helpful woman; for a gentleman, war, legal recovery or bargains; for a merchant, ordinary trade acquaintances.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Preserve role-conditioned alternatives; marriage is one possible channel, not an obligatory means for every case."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R803",
+      "title": "Helpful eighth lord: inheritance, portion, unexpected residence",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          204
+        ],
+        "printed_sequence_expected": [
+          170
+        ],
+        "visible_printed_labels": [
+          "174"
+        ],
+        "passage_anchor": "If the Lord of the eighth be that Planet who fortunates",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A helping eighth lord points to a bequest, an unexpected increase in a wife's portion, or voluntary residence in an unplanned country where substance increases.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not turn the source association into a forecast of someone's death."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R804",
+      "title": "Helpful ninth lord: sea and personal intermediaries",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          204,
+          205
+        ],
+        "printed_sequence_expected": [
+          170,
+          171
+        ],
+        "visible_printed_labels": [
+          "174",
+          "175"
+        ],
+        "passage_anchor": "If the Lord of the ninth give vertue or fortunate",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ninth lord helping Fortune, second lord or cusp may signify a sea voyage when Cancer or Pisces is on the ninth cusp and its lord is there; other named channels are the wife's brothers/allies, a neighbour near her former home, or a religious person helping the vocation.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Original sign glyphs are Cancer and Pisces. Scope of the aquatic condition over the later personal alternatives is not formally specified."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R805",
+      "title": "Earthy ninth sign and its lord therein",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          205
+        ],
+        "printed_sequence_expected": [
+          171
+        ],
+        "visible_printed_labels": [
+          "175"
+        ],
+        "passage_anchor": "If an Earthly Signe be on the cusp of the ninth",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "An earthy ninth-cusp sign with its lord there points to moving toward the sign/quarter and trading the destination's native commodities.",
+      "prerequisites": [
+        "Continues the wealth-promising ninth-house branch."
+      ],
+      "qualifications_and_limits": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R806",
+      "title": "Tenth-house wealth predicates",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          205
+        ],
+        "printed_sequence_expected": [
+          171
+        ],
+        "visible_printed_labels": [
+          "175"
+        ],
+        "passage_anchor": "If the Lord of the second be fortunate in the tenth house",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Second lord fortunate in tenth, reception between tenth and second lords, or tenth lord's benevolent configuration to second lord/cusp/occupant/Fortune signifies gain through service or employment by a superior.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Reception, occupation and aspect are alternative source predicates; no automatic employer-wealth frame is inferred from this general means-of-gain paragraph."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R807",
+      "title": "Tenth-house capacity qualifications",
+      "kind": "synthesis_qualification",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          205
+        ],
+        "printed_sequence_expected": [
+          171
+        ],
+        "visible_printed_labels": [
+          "175"
+        ],
+        "passage_anchor": "if one inquires that is young and of small fortune",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A young person of small means is assigned a mechanical trade fitting tenth sign and lord, if capable and fit; an educated person seeking advancement is assigned an office or public employment.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The capacity and preference inputs are explicit; this is historical source content, not career advice."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R808",
+      "title": "Helpful eleventh lord: recommendation and unexpected opportunity",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          205
+        ],
+        "printed_sequence_expected": [
+          171
+        ],
+        "visible_printed_labels": [
+          "175"
+        ],
+        "passage_anchor": "If the Lord of the eleventh be that benevolent Planet",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A benevolent eleventh lord acting as the helping significator points to a friend's recommendation, merchant/courtier or servant of a great person, and unexpected advantageous employment or fortune.",
+      "prerequisites": [],
+      "qualifications_and_limits": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R809",
+      "title": "Helpful planet in the twelfth: sign-conditioned channels",
+      "kind": "conditional_reference_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          205,
+          206
+        ],
+        "printed_sequence_expected": [
+          171,
+          172
+        ],
+        "visible_printed_labels": [
+          "175",
+          "172"
+        ],
+        "passage_anchor": "If the Fortunate Planet who casts his Aspect as aforesaid be in the twelfth",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "twelfth_occupation": "great cattle or horse races",
+        "human_sign": "imprisonment or imprisoned people",
+        "Taurus_Capricorn_Aries": "cattle",
+        "Virgo": "corn/grain"
+      },
+      "prerequisites": [
+        "The planet is actually fortunate/helping as previously described."
+      ],
+      "qualifications_and_limits": [
+        "The author adds that judgement must be mixed with reason. Virgo's grain clause must not be merged into the three cattle signs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R810",
+      "title": "Author's strongest lasting-wealth configuration",
+      "kind": "source_priority_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          206
+        ],
+        "printed_sequence_expected": [
+          172
+        ],
+        "visible_printed_labels": [
+          "172"
+        ],
+        "passage_anchor": "The most assured testimony in Astrology, and upon a Question onely propounded",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lilly calls first lord, second lord and Jupiter together in second, first, tenth, seventh, fourth or eleventh the strongest testimony that a querent will be rich and remain so. If not conjunct, he gives application by sextile/trine with mutual reception; square/opposition with reception may still produce an estate through labour and intervening difficulty, with abundance rather than want.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Author's assurance claim, not measured accuracy. The three-body aspect/reception topology and whether the listed houses constrain all alternatives are not formalized locally."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R811",
+      "title": "Obstruction analysis follows an adverse wealth judgement",
+      "kind": "applicability_gate",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          206
+        ],
+        "printed_sequence_expected": [
+          172
+        ],
+        "visible_printed_labels": [
+          "172"
+        ],
+        "passage_anchor": "When in any Question you find your Figure signifies the querent shall come to an estate",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The following obstruction analysis is unnecessary when wealth is already judged; it applies when no great fortune is shown and the asker wants the reason or impediment.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not combine opposite applicability branches into simultaneous supportive explanations."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R812",
+      "title": "Find the main obstructing planet",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          206
+        ],
+        "printed_sequence_expected": [
+          172
+        ],
+        "visible_printed_labels": [
+          "172"
+        ],
+        "passage_anchor": "carefully observe the Planet obstructing",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Inspect the planet most afflicting second lord, Fortune, second cusp, Moon, or Fortune's lord/dispositor.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No complete severity metric or tie-breaker for most afflicting."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R813",
+      "title": "Obstructing first lord",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          206
+        ],
+        "printed_sequence_expected": [
+          172
+        ],
+        "visible_printed_labels": [
+          "172"
+        ],
+        "passage_anchor": "if the Lord of the first be that Planet",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "If the first lord is the obstructing planet, Lilly assigns the cause to the querent.",
+      "prerequisites": [
+        "Adverse wealth judgement and that planet is the actual obstructer."
+      ],
+      "qualifications_and_limits": [
+        "Historical attribution, not evidence of blame or psychological fact."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R814",
+      "title": "Obstructing second lord",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          206
+        ],
+        "printed_sequence_expected": [
+          172
+        ],
+        "visible_printed_labels": [
+          "172"
+        ],
+        "passage_anchor": "if the Lord of the second doe with square or opposition behold",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Second lord square/opposite Fortune or the second cusp indicates lack of money or stock to establish employment.",
+      "prerequisites": [
+        "Obstruction branch is applicable."
+      ],
+      "qualifications_and_limits": [],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R815",
+      "title": "Obstructing third lord and continuation through houses",
+      "kind": "reference_examples_and_extension_instruction",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          206
+        ],
+        "printed_sequence_expected": [
+          172
+        ],
+        "visible_printed_labels": [
+          "172"
+        ],
+        "passage_anchor": "if Lord of the third, his own Kindred will doe nothing for him",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Third-lord obstruction is assigned to unhelpful/burdensome kin or neighbours taking trade or under-selling; the author instructs analogous interpretation through all twelve houses.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Only the first three causes are exemplified here. Do not invent nine additional verbatim source rows."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R816",
+      "title": "Malefics can help acquisition",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          206,
+          207
+        ],
+        "printed_sequence_expected": [
+          172,
+          173
+        ],
+        "visible_printed_labels": [
+          "172",
+          "173"
+        ],
+        "passage_anchor": "if the Lord of the second house, or Dispositor of Fortune be Infortunes",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Malefic second lord or Fortune dispositor may signify acquisition when essentially dignified, aspecting good planets, or occupying benevolent houses.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Natural malefic identity alone does not determine the financial testimony."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R817",
+      "title": "Benefics can obstruct acquisition",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          207
+        ],
+        "printed_sequence_expected": [
+          173
+        ],
+        "visible_printed_labels": [
+          "173"
+        ],
+        "passage_anchor": "both Jupiter and Venus being afflicted or impedited",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Jupiter and Venus may obstruct when afflicted, impeded or assigned as the obstructing significators.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Role, condition and natural character remain separate; no universal positive Jupiter/Venus score."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R818",
+      "title": "South node's house-specific impediment",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          207
+        ],
+        "printed_sequence_expected": [
+          173
+        ],
+        "visible_printed_labels": [
+          "173"
+        ],
+        "passage_anchor": "in what House you find Cauda Draconis",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The south node is assigned detriment in the topics of its house: in second, estate consumption by folly/neglect; in third, difficulty through kin; analogize through other houses.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical source symbolism, not a supported claim about present people. Later XXVIII addresses nullification of north-node testimony by Saturn nearby."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R819",
+      "title": "Ordinary recovery/borrowing/pledge frame",
+      "kind": "query_frame",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          207
+        ],
+        "printed_sequence_expected": [
+          173
+        ],
+        "visible_printed_labels": [
+          "173"
+        ],
+        "passage_anchor": "If the Querent shall obtaine the Substance which he demands",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "asker": [
+          "Ascendant",
+          "Ascendant lord",
+          "Moon"
+        ],
+        "asker_money": [
+          2,
+          "second lord"
+        ],
+        "other_party": [
+          7,
+          "seventh lord"
+        ],
+        "other_party_money": [
+          8,
+          "eighth lord"
+        ]
+      },
+      "prerequisites": [
+        "Recovery, borrowing or pledged goods from the particular other party; ordinary comparable parties, qualified onPDF208."
+      ],
+      "qualifications_and_limits": [
+        "The eighth is the second counted inclusively from seventh. Powerful superior uses another frame."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R820",
+      "title": "Ordinary recovery through eighth-house contact",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          207
+        ],
+        "printed_sequence_expected": [
+          173
+        ],
+        "visible_printed_labels": [
+          "173"
+        ],
+        "passage_anchor": "See if the Lord of the Ascendant or the Moon be joyned",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ascendant lord or Moon joining eighth lord, or joining/aspecting an eighth-house planet, may obtain desired money, loan or restored pledge when the planet is a fortune or the aspect fortunate; a fortunate eighth-house planet need not be received.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Keep the source's conjunction/aspect and reception alternatives; this is not a generic rule that any eighth-house contact succeeds."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R821",
+      "title": "Ordinary recovery through received malefic",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          207
+        ],
+        "printed_sequence_expected": [
+          173
+        ],
+        "visible_printed_labels": [
+          "173"
+        ],
+        "passage_anchor": "if an infortunate Planet be in the eighth, or Lord of the eighth",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "A malefic in or ruling eighth that receives Ascendant lord or Moon can give the desired recovery. Without reception the source predicts hardly ever obtaining it, or such labour that the requester regrets it.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Hardly ever / if ever is not rewritten as an absolute impossibility; reception direction is material."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R822",
+      "title": "Eighth lord enters first/second with second-lord reception",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          207,
+          208
+        ],
+        "printed_sequence_expected": [
+          173,
+          174
+        ],
+        "visible_printed_labels": [
+          "173",
+          "170"
+        ],
+        "passage_anchor": "if the Lord of the eighth be in the first, or in the second",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Eighth lord in first or second, received by second lord, makes accomplishment probable.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Source says probable; no numerical probability and no reception reversal."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R823",
+      "title": "Other-party lords in first/second without reception",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          208
+        ],
+        "printed_sequence_expected": [
+          174
+        ],
+        "visible_printed_labels": [
+          "170"
+        ],
+        "passage_anchor": "if the Lord of the seventh, or of the eighth be in the first or second",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Seventh or eighth lord in first or second with no reception involving first lord, second lord or Moon indicates denial or further prejudice.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The phrase have reception of does not unambiguously formalize reception direction; retain rather than silently substitute a direction."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R824",
+      "title": "Joining a benefic dignified in Ascendant signs",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          208
+        ],
+        "printed_sequence_expected": [
+          174
+        ],
+        "visible_printed_labels": [
+          "170"
+        ],
+        "passage_anchor": "If the Lord of the Ascendant and the Moon be joyned to a Fortune",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ascendant lord and Moon joining a fortune with dignity in the rising sign or a sign intercepted in the Ascendant effects the matter.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Source names both in this clause; intercepted sign is retained."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R825",
+      "title": "Joining an Ascendant-dignified malefic with reception",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          208
+        ],
+        "printed_sequence_expected": [
+          174
+        ],
+        "visible_printed_labels": [
+          "170"
+        ],
+        "passage_anchor": "if any of them be joyned to an Infortune",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Either querent significator joining a malefic with Ascendant dignity succeeds if that malefic receives Ascendant lord or Moon.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Reception and dignity are two requirements, not one favourable keyword."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R826",
+      "title": "Well-placed fortune in tenth or eleventh",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          208
+        ],
+        "printed_sequence_expected": [
+          174
+        ],
+        "visible_printed_labels": [
+          "170"
+        ],
+        "passage_anchor": "Lord of the Ascendant or the Moon be joyned to a fortunate Planet",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ascendant lord or Moon joining a fortunate planet well placed in tenth or eleventh effects the matter even without reception.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This does not erase reception requirements of the separate malefic branches."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R827",
+      "title": "Ordinary-party rule excludes powerful debtors",
+      "kind": "scope_exception",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          208
+        ],
+        "printed_sequence_expected": [
+          174
+        ],
+        "visible_printed_labels": [
+          "170"
+        ],
+        "passage_anchor": "The Judgments of this Chapter shall then have place",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "The immediately preceding recovery rules concern ordinary comparable parties such as citizen with citizen or tradesman with tradesman. Lilly exempts kings, princes and nobles who pay slowly and are little constrained by law.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Historical scope statement; no new modern social-rank classifier or categorical legal claim is inferred."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R828",
+      "title": "Superior payment frame",
+      "kind": "query_frame",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          208,
+          209
+        ],
+        "printed_sequence_expected": [
+          174,
+          175
+        ],
+        "visible_printed_labels": [
+          "170",
+          "171"
+        ],
+        "passage_anchor": "If one shall acquire that Gain or Profit, Wages or Stipend",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "asker": [
+          "Ascendant",
+          "Ascendant lord",
+          "Moon"
+        ],
+        "asker_money": [
+          2,
+          "second lord"
+        ],
+        "superior": [
+          10,
+          "tenth lord"
+        ],
+        "superior_money": [
+          11,
+          "eleventh lord"
+        ]
+      },
+      "prerequisites": [
+        "The asker is much inferior to the person from whom payment/accomplishment is expected."
+      ],
+      "qualifications_and_limits": [
+        "The eleventh is the second counted inclusively from tenth. The rule applies to the declared relationship, not any preferred result."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R829",
+      "title": "Unimpeded eleventh-house benefic and payment",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          209
+        ],
+        "printed_sequence_expected": [
+          175
+        ],
+        "visible_printed_labels": [
+          "171"
+        ],
+        "passage_anchor": "Lord of the Ascendant or the Moon joyned to the Lord of the eleventh",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Ascendant lord or Moon joining eleventh lord, or an eleventh-house planet that is a fortune unimpeded and not ill disposed, signifies obtaining salary, debt or wages owed by the great person.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Keep the original distinction between the lord clause and the qualified occupant clause; exact scope of the final qualification is a parsing uncertainty."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R830",
+      "title": "Received malefic in superior-payment enquiry",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          209
+        ],
+        "printed_sequence_expected": [
+          175
+        ],
+        "visible_printed_labels": [
+          "171"
+        ],
+        "passage_anchor": "Moon and Lord of the Ascendant be joyned to an unfortunate Planet",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Moon and Ascendant lord joining a malefic that receives them into its essential dignities signify payment after much solicitation, weary approaches, fear and distrust.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Joining, reception, and named querent significators are preserved. The difficult path is separate from whether payment occurs."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R831",
+      "title": "Unreceived malefic in superior-payment enquiry",
+      "kind": "conditional_source_rule",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          209
+        ],
+        "printed_sequence_expected": [
+          175
+        ],
+        "visible_printed_labels": [
+          "171"
+        ],
+        "passage_anchor": "any Aspect be betwixt the Significators",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "An aspect between significators where one is a malefic and reception absent signifies not obtaining the desire.",
+      "prerequisites": [
+        "This is the superior-payment frame."
+      ],
+      "qualifications_and_limits": [
+        "Unlike the ordinary recovery clause, this passage is categorical. Do not flatten the two into one outcome rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R832",
+      "title": "Reception type must be identified",
+      "kind": "method_instruction",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          209
+        ],
+        "printed_sequence_expected": [
+          175
+        ],
+        "visible_printed_labels": [
+          "171"
+        ],
+        "passage_anchor": "be very carefull to observe the Planets true essentiall dignities",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Observe true essential dignities and mutual receptions, including which dignity receives the other significator.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Reception is not a single undifferentiated boolean for every downstream rule."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R833",
+      "title": "Timing requires the actual effective significator",
+      "kind": "timing_prerequisite",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          209
+        ],
+        "printed_sequence_expected": [
+          175
+        ],
+        "visible_printed_labels": [
+          "171"
+        ],
+        "passage_anchor": "unto what Planet either the Lord of the Ascendant or Moon applyes",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Choose the planet to which Ascendant lord or Moon applies or bodily joins and which signifies accomplishment; in a sextile/trine case, whether benefic or received or not, inspect the rays through perfection or the degrees lacking to exact aspect/conjunction at the question.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Time-to-contact astronomy and symbolic distance-to-time are distinct. Static distance does not compute a moving contact date."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R834",
+      "title": "Second-house timing units by both houses",
+      "kind": "symbolic_unit_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          209,
+          210
+        ],
+        "printed_sequence_expected": [
+          175,
+          176
+        ],
+        "visible_printed_labels": [
+          "171",
+          "176"
+        ],
+        "passage_anchor": "so many dayes; if they be both in Cadent houses",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "cadent|cadent": "days",
+        "succedent|succedent": "weeks",
+        "angular|angular": "months",
+        "angular|succedent": "months",
+        "cadent|succedent": "weeks",
+        "angular|cadent": "months"
+      },
+      "prerequisites": [
+        "Both selected significators and their houses known; degrees remaining to the relevant perfection."
+      ],
+      "qualifications_and_limits": [
+        "These local units are not the sign-modality news scale or a universal Lilly timing rule. Fractional unit/calendar conventions are not defined."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R835",
+      "title": "Timing units depend on plausible business duration",
+      "kind": "timing_qualification",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          209,
+          210
+        ],
+        "printed_sequence_expected": [
+          175,
+          176
+        ],
+        "visible_printed_labels": [
+          "171",
+          "176"
+        ],
+        "passage_anchor": "the Astrologer must use discretion",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Consider whether the business can be completed in days, weeks or months. For a lengthy business, years may replace months, especially when Ascendant lord, Moon and other significators are angular.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "No objective long-business threshold or automatic promotion rule is supplied. Do not choose a unit after seeing the outcome."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R836",
+      "title": "Ancients' same-sign conjunction route: heavier querent lord",
+      "kind": "attributed_timing_method",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          210
+        ],
+        "printed_sequence_expected": [
+          176
+        ],
+        "visible_printed_labels": [
+          "176"
+        ],
+        "passage_anchor": "Some of the Ancients have said",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Some ancients are reported to time accomplishment to exact degree-and-minute conjunction when the effective planet and Ascendant lord are in the same sign and Ascendant lord is the more ponderous planet, whether reception exists or not.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Attributed prior view, not silently Lilly's own universal rule; ponderous does not mean merely comparing current daily velocity."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R837",
+      "title": "Ancients' lighter querent lord requires reception",
+      "kind": "attributed_timing_method",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          210
+        ],
+        "printed_sequence_expected": [
+          176
+        ],
+        "visible_printed_labels": [
+          "176"
+        ],
+        "passage_anchor": "if the Lord of the Ascendant be the more light Planet",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "When the lighter Ascendant lord hastens toward conjunction, accomplishment requires the effecting planet to receive it.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "This is a different branch from the ponderous-lord condition."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R838",
+      "title": "Conjunction-route exceptions when reception absent",
+      "kind": "attributed_exception",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          210
+        ],
+        "printed_sequence_expected": [
+          176
+        ],
+        "visible_printed_labels": [
+          "176"
+        ],
+        "passage_anchor": "unlesse the foresaid significators be in an Angle",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Without that reception, accomplishment is denied unless the significators are angular at conjunction, or in one of his own houses, especially the house called his joy.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Own houses refers to zodiacal domiciles in the following sign examples. The pronoun his and its scope over the two significators remain ambiguous."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R839",
+      "title": "Joy means specified zodiac signs here",
+      "kind": "source_reference_table",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          210
+        ],
+        "printed_sequence_expected": [
+          176
+        ],
+        "visible_printed_labels": [
+          "176"
+        ],
+        "passage_anchor": "Aquarius is the joy of Saturn",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": {
+        "Saturn": "Aquarius",
+        "Jupiter": "Sagittarius",
+        "Mars": "Scorpio",
+        "Venus": "Libra",
+        "Mercury": "Virgo"
+      },
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not substitute the separate mundane-house planetary-joy scheme. Sun/Moon rows are not supplied in this local list."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R840",
+      "title": "Single exaltation reception alone insufficient in author's observation",
+      "kind": "author_experience_claim",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          210
+        ],
+        "printed_sequence_expected": [
+          176
+        ],
+        "visible_printed_labels": [
+          "176"
+        ],
+        "passage_anchor": "What I have observed; single reception by exaltation",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Lilly reports single reception by exaltation without other testimonies does not profit.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Do not change single reception into mutual exaltation reception, or generalize absence of other testimony away."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R841",
+      "title": "Domicile reception and benefic significators",
+      "kind": "author_experience_claim",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          210
+        ],
+        "printed_sequence_expected": [
+          176
+        ],
+        "visible_printed_labels": [
+          "176"
+        ],
+        "passage_anchor": "reception by essentiall dignities of House",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "Domicile reception when benevolent planets are significators usually shows perfection, even by square/opposition and beyond expectation; sextile/trine is treated more confidently.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "Usually remains qualified; no numerical likelihood, universal aspect reversal, or dismissal of benefic condition."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R842",
+      "title": "Ascendant-cusp distance timing alternative",
+      "kind": "author_timing_method",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          210
+        ],
+        "printed_sequence_expected": [
+          176
+        ],
+        "visible_printed_labels": [
+          "176"
+        ],
+        "passage_anchor": "And for the time when, I observe",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": "If a fortune, Moon or lord of the thing sought occupies the Ascendant with essential dignity there, degrees from cusp to body denote time: days with a movable sign and a business capable of days, otherwise months or years according to sign and business.",
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "The text does not provide a complete fixed/common months/years lookup here; do not invent it or calculate a civil date."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    },
+    {
+      "id": "LI.1647.II.XXVII.R843",
+      "title": "Tradesman's one chart and four linked questions",
+      "kind": "historical_case_introduction",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "section_key": "II.XXVII",
+        "pdf_pages": [
+          211
+        ],
+        "printed_sequence_expected": [
+          177
+        ],
+        "visible_printed_labels": [
+          "177"
+        ],
+        "passage_anchor": "A Tradesman of this City in the yeer1634",
+        "anchor_note": "Locating incipit/topic; long-s, spacing and glyph names normalized. Not a diplomatic quotation."
+      },
+      "genre": "horary",
+      "statement_type": "editor_normalized_paraphrase",
+      "source_statement": [
+        "whether rich or able to subsist without marriage",
+        "by what means",
+        "when",
+        "whether wealth continues"
+      ],
+      "prerequisites": [],
+      "qualifications_and_limits": [
+        "One author-reported historical inquiry with four linked endpoints, not four independent validation cases. The diagram belongs to the following worked discussion."
+      ],
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false
+    }
+  ],
+  "declared_source_scope": "Book II second-house block: XXVII heading PDF201 through XXVIII ending PDF221 before third-house preamble",
+  "scope_status": "XXVII_EXTRACTED_XXVIII_PENDING",
+  "statement_notice": "Normalized source claims; not validated financial predictions or practical advice.",
+  "runtime_promotions": 0,
+  "empirical_validations": 0
+}

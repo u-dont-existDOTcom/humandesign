@@ -1,0 +1,30 @@
+{
+  "task_id": "astro-source-audit-multipass-20261005",
+  "batch": "B02g",
+  "owner_request": "continue from AstroResearch & Hale chat; continue the saved source audit",
+  "parent_status": "OPEN_MULTIPASS_AUTHORIZED",
+  "base": "3df3a7f6f16f9d90700edc7af79e14c76ceaecd9",
+  "integration_branch": "research/six-rule-life-timing-20261001",
+  "isolated_branch": "research/lilly-wealth-b02g-20261010",
+  "scope": "Continue unread Lilly Book II from XXVII at PDF201 after the self-question paragraph. Establish the complete second-house section boundary from the original headings; extract rules, conditions, qualifications, examples and calculation limits in a source-sized batch.",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "activation": {
+    "status": "ACTIVE",
+    "route": "Current owner instruction; live default-branch UDA AGENTS and LESSON-INDEX read in this turn; HumanDesign AGENTS, ARCHITECTURE, V2 protocol and B02f handoff reconciled against actual Git state.",
+    "uda_root_blob": "c27948c88cf7553f95241cbae7edab27f87689d2",
+    "uda_index_blob": "b83848f61516389cf997d142bdd411f1c52a5024",
+    "graph_resolution": "Mapped dependency closure resolved; source provenance, recovery and owner-delivery rules routed as legacy prose. Resolution is routing metadata, not application proof."
+  },
+  "active_controls": [
+    {"rule":"source-provenance","trigger":"Historical source extraction","required":"Anchor every rule to pages and passage boundaries; distinguish paraphrase, source claim, hypothetical reuse, reported confirmation and our calculation; preserve contradictions and undefined thresholds.","failure":"Unsupported statement, dropped qualifier, fabricated precision or conflated target","repair":"Reopen the source; narrow or mark unresolved","enforcement":"semantic and data assertions"},
+    {"rule":"verified-reading","trigger":"Text layer contains corrupt astrological symbols","required":"Read original whole-page images alongside existing text; record actual inspected pages and boundaries; no new OCR required.","failure":"Claim image review from preparation alone or trust corrupt OCR glyph","repair":"Inspect the original image and record uncertainty","enforcement":"page receipt plus semantic review"},
+    {"rule":"genre-and-exposure","trigger":"Wealth rules in horary Book II","required":"Keep horary separate from natal predictions and contemporary financial guidance. No participant records or prior model/freeze edits. Prompt already contains biographical summaries, so make no blinding claim.","failure":"Runtime promotion, personal fitting, false unexposed claim","repair":"Remove inadmissible downstream claim and retain source-only record","enforcement":"diff allowlist and semantic review"},
+    {"rule":"bounded-calculation","trigger":"Source provides arithmetic or timing examples","required":"Implement only deterministic source-defined reference calculations; undefined synthesis, calendars or thresholds remain unresolved; run focused checks and describe their actual scope.","failure":"Tests presented as predictive validation or invented astronomical exactness","repair":"Restrict code/output to supported calculation; document unresolved dependency","enforcement":"tests and review"},
+    {"rule":"independent-claim-check","trigger":"Delivering source attributions and verification claims","required":"Fresh checker receives source, draft and claim ledger without producer rationale, then findings are reconciled against source.","failure":"Producer-only review called independent or unchecked key claim delivered","repair":"Run bounded fresh claim check and resolve actual findings","enforcement":"independent source review record"},
+    {"rule":"durable-delivery","trigger":"Repository research milestone","required":"Publish ordinary new batch files and updated Lilly index/current dated state to the authorized research branch; verify exact remote bytes and deliver usable report/packet/handoff. Never retry historical restricted payloads.","failure":"Local-only completion, stale next-page pointer, missing companion data, restricted replay","repair":"Use authorized equivalent publication transport; preserve restrictions and verify destination","enforcement":"hash manifest, GitHub readback and delivery receipt"}
+  ],
+  "publication_preflight": {"shell_git":"Read works; dry-run push lacks shell credential","authorized_fallback":"Connected GitHub Git-data API/connector, same repository and task scope","raw_source_in_git":false},
+  "protected_paths": ["state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md","tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json","tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json","all prior source batches","all participant data and prediction freezes"],
+  "prepublication_admission": "PENDING_SOURCE_AND_REVIEW",
+  "resume": "Read and image-check XXVII from PDF201; establish and complete the second-house chapter boundaries before saving the new next-source action."
+}

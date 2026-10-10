@@ -1,0 +1,34 @@
+{
+  "general_wealth": {
+    "querent_house": 1,
+    "querent_money_house": 2,
+    "counterparty_house": null,
+    "counterparty_money_house": null,
+    "pages": [
+      201
+    ]
+  },
+  "ordinary_specific_counterparty": {
+    "querent_house": 1,
+    "querent_money_house": 2,
+    "counterparty_house": 7,
+    "counterparty_money_house": 8,
+    "pages": [
+      207,
+      208
+    ],
+    "precondition": "comparable ordinary parties"
+  },
+  "powerful_superior_payment": {
+    "querent_house": 1,
+    "querent_money_house": 2,
+    "counterparty_house": 10,
+    "counterparty_money_house": 11,
+    "pages": [
+      208,
+      209
+    ],
+    "precondition": "querent much inferior to payment source"
+  },
+  "note": "Choose the relationship before evaluating chart evidence; these are three separate source questions."
+}
