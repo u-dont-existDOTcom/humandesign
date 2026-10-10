@@ -3,7 +3,7 @@
   "parent_status": "OPEN",
   "parent_remaining_gap": "Remaining Lilly material and the wider multi-author, multipass source audit",
   "source_contribution": "Complete XLIV opening block before DARIOT Abridged, PDF277 through292",
-  "batch_status": "SOURCE_REPORT_ACCEPTED_DELIVERY_PENDING",
+  "batch_status": "COMPLETE_PUBLISHED_AND_DELIVERED",
   "pause_authority": "Existing PASS_PLAN.json pause_contract: at each completed pass/batch save progress and stop at the declared boundary when returning",
   "authority_sha256": "04f1d246bd3c96dd03009ea6cc669f736be0c746112ef1a789404b0cc1050653",
   "acceptance_requires": [
@@ -13,10 +13,18 @@
     "actual archive extraction and focused-suite execution",
     "usable direct owner delivery"
   ],
-  "current_acceptance": "SOURCE_AND_REPORT_PASS; FINAL_DELIVERY_PENDING",
-  "terminal_semantics": "On verified delivery: ALLOW: SUBTASK_COMPLETE_PARENT_OPEN; parent root outcome is not closed",
+  "current_acceptance": "PASS: source/report, exact remote bytes, protected prior state, actual extracted archive tests and three owner files",
+  "terminal_semantics": "ALLOW: SUBTASK_COMPLETE_PARENT_OPEN",
   "next_source_action": "PDF292/printed258: DARIOT Abridged heading and full italic introduction, then PDF293; next record R1550",
   "account_bound_scheduled_items_to_recreate": [],
   "owner_private_supervisor_state_created": false,
-  "background_execution_after_return_claimed": false
+  "background_execution_after_return_claimed": false,
+  "evidence": [
+    "ACCEPTANCE.json",
+    "PACKAGE_PUBLICATION_RECEIPT.json",
+    "PACKAGE_PRESERVATION_CHECK.json",
+    "PACKET_USABILITY.json",
+    "DELIVERY_RECEIPT.json",
+    "INTEGRATION_RECEIPT.json"
+  ]
 }
