@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "batch": "B02h",
+  "status": "PUBLISHED_SOURCE_CORE_VERIFIED",
+  "repository": "u-dont-existDOTcom/humandesign",
+  "remote_source_commit": "954b036eb935c3f24c83bd044679b2a0324ee22d",
+  "local_source_commit": "86282c12720370e87fe6e7763e888ef8d43f70cb",
+  "remote_parent": "c2fa7e0cfdf1a8761269b73e74c7ad39dac6169a",
+  "canonical_previous": "1dca5c960e3b49b4a2c6a8f708e8d31c38b9e622",
+  "full_tree_sha": "f9d127672b83ab89ee57eaf83173544ba8418801",
+  "local_api_and_fetched_full_tree_equal": true,
+  "source_manifest_sha256": "64a2a627ed492ca0dae82bf0acf2005fe3f23db2b617abcc8434f377d91b967b",
+  "branch_updates": [
+    {
+      "branch": "research/lilly-third-house-b02h-20261010",
+      "expected_previous": "c2fa7e0cfdf1a8761269b73e74c7ad39dac6169a",
+      "force": false,
+      "success": true
+    },
+    {
+      "branch": "research/six-rule-life-timing-20261001",
+      "expected_previous": "1dca5c960e3b49b4a2c6a8f708e8d31c38b9e622",
+      "force": false,
+      "success": true
+    }
+  ],
+  "live_ls_remote_both_match_source_commit": true,
+  "exact_remote_content_readback": [
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02h/MANIFEST.json",
+      "git_blob_sha": "ed4881ddef547fdd6a95acd0f6c479f62140395d",
+      "exact_content_match": true
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02h/AUDIT_REPORT.md",
+      "git_blob_sha": "be768c0ef2f32a353b33a128c18e98c9d810b8e5",
+      "exact_content_match": true
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+      "git_blob_sha": "c224de5b7014b3646783863471fe5ab3038a5993",
+      "exact_content_match": true
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02h/CLAIM_LEDGER.json",
+      "git_blob_sha": "d76c1ae30fb397af7b81d2c02695d51aa4c8d8ad",
+      "exact_content_match": true
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+      "git_blob_sha": "6b3b77d760c1ca706eb2fc5a5fdfdef4ced1ac97",
+      "exact_content_match": true
+    },
+    {
+      "path": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02h.md",
+      "git_blob_sha": "ee03a3bcc02d770a3dfb8c121ded58d571c0da21",
+      "exact_content_match": true
+    }
+  ],
+  "publication_delta_paths": [
+    "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02h.md",
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/ACTIVE_CONTRACT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/APPLICABILITY_AND_RELATIONS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/ARITHMETIC_CHECKS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/AUDIT_REPORT.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/CLAIM_LEDGER.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/CROSS_SOURCE_COMPARISONS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/DRAFT_PUBLICATION_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/EXAMPLE_RULES_RECONCILED.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/HISTORICAL_CASES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/MANIFEST.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/QUERY_REFERENCES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/READING_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/README.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/RETAINED_SOURCE_EXCERPTS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/REVIEW_RECONCILIATION.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/RULES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/SECTION_COVERAGE.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/TEST_B02h.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/TEST_RUN_SUMMARY.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/TEST_retained_B02f.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/TEST_retained_B02g.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/TEST_retained_methodology.txt",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/UNRESOLVED.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/WORKED_NUMERIC_TABLES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/WORKING_CHECKPOINT.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/build_batch_evidence.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/build_delivery_packet.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/build_source_data.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/examples/CANDIDATE_RULES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/examples/NUMERIC_TABLES.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/examples/READING_RECEIPT.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/examples/SOURCE_FIRST_NOTES.freeze.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/examples/SOURCE_FIRST_NOTES.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/final/ADDENDUM.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/final/ADDENDUM.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/final/DIAGNOSIS_FIRST.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/final/DIAGNOSIS_FIRST.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/general/CORRECTION_CHECK.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/general/DIAGNOSIS.json",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/independent_review/general/DIAGNOSIS.md",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/integrate_examples.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/lilly_third_house_arithmetic.py",
+    "tasks/astro-source-audit-multipass-20261005/batches/B02h/test_lilly_third_house_audit.py"
+  ],
+  "scope_check": {
+    "changed_paths_since_B02g": 51,
+    "protected_or_prior_paths_changed": 0,
+    "allowlist": "B02h directory, current Lilly index, new uniquely dated B02h state only."
+  },
+  "assurance": "Verified source/data and focused tests only; no empirical predictive validation.",
+  "self_exclusion": "This receipt is produced after the immutable source core and is not included in its own source manifest.",
+  "next_stage": "Build and test final packet; publish artifacts; verify owner Downloads copies."
+}

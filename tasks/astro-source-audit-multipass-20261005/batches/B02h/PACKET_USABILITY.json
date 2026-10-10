@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "source_commit": "954b036eb935c3f24c83bd044679b2a0324ee22d",
+  "archive": "Astrology-Lilly-Relatives-Reports-Records-20261010.zip",
+  "archive_bytes": 238779,
+  "archive_sha256": "faa252e0e4cec78e35ff521637db7f5a0245877d8da4ae9fefdeb1ec814d3b06",
+  "fresh_extraction": true,
+  "integrity_command": "python3 verify_packet.py",
+  "integrity_exit_code": 0,
+  "integrity_result": {
+    "status": "PASS",
+    "verified_files": 57
+  },
+  "standalone_command": "python3 -B -m unittest discover -s B02h -p test_*.py -v",
+  "standalone_exit_code": 0,
+  "standalone_tests_passed": 24,
+  "test_log": "TEST_PACKET_USABILITY.txt",
+  "test_log_sha256": "4d3d34a89f7b81daa589d0e3540e55f0bab24b272928f8a9d2727f0e730a15f4",
+  "required_unchanged_companion": "B02f/lilly_presence_ship_reference.py",
+  "companion_sha256": "d0172b7ed579bde0db063c315331ee54ee3fb878f98bbdfb0d1649b7af486664",
+  "report_matches_source_core": true,
+  "scope_limit": "Repeated 24-test usability run is not added to the 115 distinct focused tests. Final archive contains this batch and its declared companions, not the whole prior corpus or source PDF."
+}
