@@ -4,7 +4,7 @@ Writer: ChatGPT, current astrology research session. An account identifier is no
 
 ## Current work
 
-The current completed source contribution is Lilly Book II, Chapter XLIV's Dariot/Lilly continuation: original PDF292/printed258 at DARIOT Abridged through the full upper bridge on PDF302/printed268. It adds101 records, R1550–R1650. Lilly now has1,650 retained records; with1,066 retained Ptolemy records, the combined inventory is2,716.
+The current completed source contribution is Lilly Book II, Chapter XLIV's Dariot/Lilly continuation: original PDF292/printed258 at DARIOT Abridged through the full upper bridge on PDF302/printed268. It adds 101 records, R1550–R1650. Lilly now has 1,650 retained records; with 1,066 retained Ptolemy records, the combined inventory is 2,716.
 
 The source chapter and wider multi-author audit remain open. Source-data tests and bounded angular calculations do not establish predictive accuracy. No clinical or personal forecast is being produced.
 

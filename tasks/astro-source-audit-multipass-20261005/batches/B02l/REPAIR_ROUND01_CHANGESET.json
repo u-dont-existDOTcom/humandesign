@@ -1,0 +1,385 @@
+{
+  "batch": "B02l",
+  "round": 1,
+  "original_candidate": "B02l-01",
+  "candidate": "B02l-02",
+  "source_finding_targets": [
+    {
+      "finding_id": "IF-01",
+      "target": "R1560/A011",
+      "pages": [
+        294
+      ],
+      "source_anchor": "or from the principall Significators in the Figure",
+      "action": "Restore plural in canonical proposition, conditions and uncertainty; derived duplicate fields rebuilt. Repeated-from grammatical uncertainty retained; no all-of-group or vote rule added."
+    },
+    {
+      "finding_id": "IF-02",
+      "target": "C10",
+      "pages": [
+        294
+      ],
+      "source_anchor": "and neither of them be Lords of the sixt, or Dispositors of the Moon",
+      "action": "Apply both role exclusions to both Saturn and Mars. R1562 unchanged."
+    },
+    {
+      "finding_id": "IF-03",
+      "target": "C35",
+      "pages": [
+        283,
+        301
+      ],
+      "source_anchor": "according to the nature and quality of the Signe",
+      "action": "Separate the earlier sign-quality selector from later disease-quality/discretion. Retained R1438 unchanged."
+    },
+    {
+      "finding_id": "IF-04",
+      "target": "C09",
+      "pages": [
+        293,
+        294
+      ],
+      "source_anchor": "any Planet may in / this case be malignant, if he be Lord of the eighth, twelfth or sixt",
+      "action": "Add continuation PDF294/printed260 to point-of-use citation and ledger. Meaning and R1559 unchanged."
+    },
+    {
+      "finding_id": "IF-05",
+      "target": "C24",
+      "pages": [
+        300
+      ],
+      "source_anchor": "the Signe of the eighth House of the yearly revolution of the World",
+      "action": "Restore sign-of-house relationship, without claiming the old text explicitly named Scorpio. R1629 unchanged."
+    },
+    {
+      "finding_id": "IF-06",
+      "target": "C08",
+      "pages": [
+        293
+      ],
+      "source_anchor": "they were not sick, or that no sicknesse would succeed upon this Quere, but that their mistrust",
+      "action": "Connect transient distemper to explanation of suspicion accompanying alternative no-present/no-ensuing sickness judgments. R1557 and opening-negative uncertainty unchanged."
+    },
+    {
+      "finding_id": "MC-01",
+      "target": "C42",
+      "pages": [
+        292,
+        302
+      ],
+      "source_anchor": "DARIOT Abridged / upper bridge before Hermes",
+      "action": "Append metadata item binding existing title/byline, keeping C01-C41 stable."
+    }
+  ],
+  "record_ids_changed": [
+    "LI.1647.II.XLIV.R1560"
+  ],
+  "unchanged_records": 100,
+  "claim_ids_changed": [
+    "C08",
+    "C09",
+    "C10",
+    "C24",
+    "C35"
+  ],
+  "claim_ids_added": [
+    "C42"
+  ],
+  "unchanged_claim_ids": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29",
+    "C30",
+    "C31",
+    "C32",
+    "C33",
+    "C34",
+    "C36",
+    "C37",
+    "C38",
+    "C39",
+    "C40",
+    "C41"
+  ],
+  "report_units_final": 42,
+  "semantic_changes": [
+    {
+      "id": "C08",
+      "before": {
+        "id": "C08",
+        "section": "2. Sickness and outward causes retain their prerequisites",
+        "text": "Lilly then describes his own practice when a question was brought with or without urine. His no-sickness chain begins with an ascendant that is **not** afflicted, followed by adverse lord conditions introduced with “or.” Later alternatives include favourable or unafflicted configurations. The printed syntax leaves the reach of the negative unsettled. The extraction retains the entire chain and its distinct conclusions—no sickness, no following sickness, or a present distemper soon rectified—without adding an unprinted second negative or choosing one executable polarity.\n\n[Original PDF293/printed259, PDF294/printed260; R1556, R1557; `RULES.json`, `UNRESOLVED.json`, `TEXTUAL_CHECKS.json`.]",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1556",
+          "LI.1647.II.XLIV.R1557"
+        ],
+        "original_pdf_pages": [
+          293,
+          294
+        ],
+        "evidence_files": [
+          "RULES.json",
+          "UNRESOLVED.json",
+          "TEXTUAL_CHECKS.json"
+        ],
+        "claim_type": "source_and_analysis",
+        "text_sha256": "d74cf81fc969bb4829c51e505587d5190624bbc727c393e7ced82bd645df8f00"
+      },
+      "after": {
+        "id": "C08",
+        "section": "2. Sickness and outward causes retain their prerequisites",
+        "text": "Lilly then describes his own practice when a question was brought with or without urine. His no-sickness chain begins with an ascendant that is **not** afflicted, followed by adverse lord conditions introduced with “or.” Later alternatives include favourable or unafflicted configurations. The printed syntax leaves the reach of the negative unsettled. The extraction retains the entire chain: alternative judgments of no present or ensuing sickness are accompanied by the explanation that suspicion arose from a sudden bodily distemper soon rectified. It adds no unprinted second negative and chooses no executable polarity.\n\n[Original PDF293/printed259, PDF294/printed260; R1556, R1557; `RULES.json`, `UNRESOLVED.json`, `TEXTUAL_CHECKS.json`.]",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1556",
+          "LI.1647.II.XLIV.R1557"
+        ],
+        "original_pdf_pages": [
+          293,
+          294
+        ],
+        "evidence_files": [
+          "RULES.json",
+          "UNRESOLVED.json",
+          "TEXTUAL_CHECKS.json"
+        ],
+        "claim_type": "source_and_analysis",
+        "text_sha256": "55622fcdf2b514168a92b0e0b9d29d14d61d17c4a5935ba976ebe1842857f674"
+      }
+    },
+    {
+      "id": "C09",
+      "before": {
+        "id": "C09",
+        "section": "2. Sickness and outward causes retain their prerequisites",
+        "text": "The inward-cause discussion uses the significator's disposition, sign, house and **good or ill** configuration with malevolent planets. It adds that any planet **may** act malignantly here through such roles as lord of the sixth, eighth or twelfth. This is a context-sensitive role statement. Neither a permanently favourable classification for Jupiter or Venus nor an assumption that only bad aspects matter reproduces all of this wording.\n\n[Original PDF293/printed259; R1558, R1559; `RULES.json`.]",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1558",
+          "LI.1647.II.XLIV.R1559"
+        ],
+        "original_pdf_pages": [
+          293
+        ],
+        "evidence_files": [
+          "RULES.json"
+        ],
+        "claim_type": "source_and_analysis",
+        "text_sha256": "1897b67c3eb87ce9eae8774186f77c97a9d518d0e6ce7c754b35868abfdb106c"
+      },
+      "after": {
+        "id": "C09",
+        "section": "2. Sickness and outward causes retain their prerequisites",
+        "text": "The inward-cause discussion uses the significator's disposition, sign, house and **good or ill** configuration with malevolent planets. It adds that any planet **may** act malignantly here through such roles as lord of the sixth, eighth or twelfth. This is a context-sensitive role statement. Neither a permanently favourable classification for Jupiter or Venus nor an assumption that only bad aspects matter reproduces all of this wording.\n\n[Original PDF293/printed259, PDF294/printed260; R1558, R1559; `RULES.json`.]",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1558",
+          "LI.1647.II.XLIV.R1559"
+        ],
+        "original_pdf_pages": [
+          293,
+          294
+        ],
+        "evidence_files": [
+          "RULES.json"
+        ],
+        "claim_type": "source_and_analysis",
+        "text_sha256": "5c335f12d12979633e5db51823f39e5723675f8980d24ceb18cc825094ae91b1"
+      }
+    },
+    {
+      "id": "C10",
+      "before": {
+        "id": "C10",
+        "section": "2. Sickness and outward causes retain their prerequisites",
+        "text": "In the outward-cause example, the ascendant lord is strong in essential dignity, swift and in a good house. The subsequent square or opposition of Saturn or Mars retains two exclusions: the afflicting planet is neither the sixth lord nor the Moon's dispositor. Lilly distinguishes being unwell from being perfectly sick, then directs attention to the afflictor's occupied or ruled house. The second-house example additionally requires no inward cause: application concerns current money want, whereas separation concerns a recent loss. The larger harm assigned to opposition belongs to this local example and is not a universal aspect weight.\n\n[Original PDF293/printed259, PDF294/printed260; R1560, R1561, R1562, R1563, R1564, R1565, R1566; `RULES.json`.]",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1560",
+          "LI.1647.II.XLIV.R1561",
+          "LI.1647.II.XLIV.R1562",
+          "LI.1647.II.XLIV.R1563",
+          "LI.1647.II.XLIV.R1564",
+          "LI.1647.II.XLIV.R1565",
+          "LI.1647.II.XLIV.R1566"
+        ],
+        "original_pdf_pages": [
+          293,
+          294
+        ],
+        "evidence_files": [
+          "RULES.json"
+        ],
+        "claim_type": "source_and_analysis",
+        "text_sha256": "7b1f3a739b7176ac15b72a776d30eddd97ea4010dfc86b58775267e4f76951f1"
+      },
+      "after": {
+        "id": "C10",
+        "section": "2. Sickness and outward causes retain their prerequisites",
+        "text": "In the outward-cause example, the ascendant lord is strong in essential dignity, swift and in a good house. The subsequent square or opposition of Saturn or Mars retains exclusions applying to both planets: **neither Saturn nor Mars is the sixth lord or the Moon's dispositor**. Lilly distinguishes being unwell from being perfectly sick, then directs attention to the afflictor's occupied or ruled house. The second-house example additionally requires no inward cause: application concerns current money want, whereas separation concerns a recent loss. The larger harm assigned to opposition belongs to this local example and is not a universal aspect weight.\n\n[Original PDF293/printed259, PDF294/printed260; R1560, R1561, R1562, R1563, R1564, R1565, R1566; `RULES.json`.]",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1560",
+          "LI.1647.II.XLIV.R1561",
+          "LI.1647.II.XLIV.R1562",
+          "LI.1647.II.XLIV.R1563",
+          "LI.1647.II.XLIV.R1564",
+          "LI.1647.II.XLIV.R1565",
+          "LI.1647.II.XLIV.R1566"
+        ],
+        "original_pdf_pages": [
+          293,
+          294
+        ],
+        "evidence_files": [
+          "RULES.json"
+        ],
+        "claim_type": "source_and_analysis",
+        "text_sha256": "231a89474d109702ef855ad6da4ca13699d4d42a3618d863d809ab76c9246ca5"
+      }
+    },
+    {
+      "id": "C24",
+      "before": {
+        "id": "C24",
+        "section": "5. Natal, mundane and lunar references remain distinct",
+        "text": "The natal callback begins **if the nativity can be procured**. It considers natal degrees and eclipses or great conjunctions near the sickness, without fixing the degree-versus-sign match or numerical nearness threshold. The following danger statement also mentions the eighth sign of the **yearly revolution of the World** falling on natal angles, particularly the ascendant. That reference frame must not be relabelled as the natal or horary eighth house. A separate sign callback allows first sickness **or** the patient's demand, without stating the later critical-day hierarchy in that sentence.\n\n[Original PDF299/printed265, PDF300/printed266; R1628, R1629, R1630; `RULES.json`.]",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1628",
+          "LI.1647.II.XLIV.R1629",
+          "LI.1647.II.XLIV.R1630"
+        ],
+        "original_pdf_pages": [
+          299,
+          300
+        ],
+        "evidence_files": [
+          "RULES.json"
+        ],
+        "claim_type": "source_and_analysis",
+        "text_sha256": "1a7f1bfd18273b679185764cb452d6de01933ff3adde1e856ba4f5cf487ab06b"
+      },
+      "after": {
+        "id": "C24",
+        "section": "5. Natal, mundane and lunar references remain distinct",
+        "text": "The natal callback begins **if the nativity can be procured**. It considers natal degrees and eclipses or great conjunctions near the sickness, without fixing the degree-versus-sign match or numerical nearness threshold. The following danger statement also mentions the sign of the eighth house of the **yearly revolution of the World** falling on natal angles, particularly the ascendant. That reference frame must not be relabelled as the natal or horary eighth house. A separate sign callback allows first sickness **or** the patient's demand, without stating the later critical-day hierarchy in that sentence.\n\n[Original PDF299/printed265, PDF300/printed266; R1628, R1629, R1630; `RULES.json`.]",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1628",
+          "LI.1647.II.XLIV.R1629",
+          "LI.1647.II.XLIV.R1630"
+        ],
+        "original_pdf_pages": [
+          299,
+          300
+        ],
+        "evidence_files": [
+          "RULES.json"
+        ],
+        "claim_type": "source_and_analysis",
+        "text_sha256": "de357eb7190b58d6e51193b256347f9217c5961615246477ec43e8f3db92b31b"
+      }
+    },
+    {
+      "id": "C35",
+      "before": {
+        "id": "C35",
+        "section": "7. Recovery timing retains discretion and alternative outcomes",
+        "text": "The earlier timing passage on printed249 also left a choice among months, weeks and days to the disease's nature. That retained callback and the new recovery discussion support keeping the selection context explicit. They do not establish a new combined numerical algorithm. The final promise to give a figure or two refers forward; no such figures occur inside this admitted continuation, so the promise adds neither two charts nor two completed cases to the present inventory.\n\n[Original PDF283/printed249, PDF301/printed267, PDF302/printed268; R1641, R1643, R1646, R1649; `RULES.json`, `RETAINED_SOURCE_EXCERPTS.json`, `COUNTS.json`.]",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1641",
+          "LI.1647.II.XLIV.R1643",
+          "LI.1647.II.XLIV.R1646",
+          "LI.1647.II.XLIV.R1649"
+        ],
+        "original_pdf_pages": [
+          283,
+          301,
+          302
+        ],
+        "evidence_files": [
+          "RULES.json",
+          "RETAINED_SOURCE_EXCERPTS.json",
+          "COUNTS.json"
+        ],
+        "claim_type": "source_and_analysis",
+        "text_sha256": "1cbe1d3f55f74793cc5bc3a2346ba07c06a0f179c1d21831a63ee8290794d873"
+      },
+      "after": {
+        "id": "C35",
+        "section": "7. Recovery timing retains discretion and alternative outcomes",
+        "text": "The earlier timing passage on printed249 selects among months, weeks and days according to **the sign's nature and quality**. The new recovery discussion on printed267 separately considers **the disease's quality or nature and the practitioner's discretion**. These distinct selectors support keeping the selection context explicit; they do not establish a new combined numerical algorithm. The final promise to give a figure or two refers forward; no such figures occur inside this admitted continuation, so the promise adds neither two charts nor two completed cases to the present inventory.\n\n[Original PDF283/printed249, PDF301/printed267, PDF302/printed268; R1641, R1643, R1646, R1649; `RULES.json`, `RETAINED_SOURCE_EXCERPTS.json`, `COUNTS.json`.]",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1641",
+          "LI.1647.II.XLIV.R1643",
+          "LI.1647.II.XLIV.R1646",
+          "LI.1647.II.XLIV.R1649"
+        ],
+        "original_pdf_pages": [
+          283,
+          301,
+          302
+        ],
+        "evidence_files": [
+          "RULES.json",
+          "RETAINED_SOURCE_EXCERPTS.json",
+          "COUNTS.json"
+        ],
+        "claim_type": "source_and_analysis",
+        "text_sha256": "ad4987e142de74147ae00f26bf25b351a672bacb1005d8bee8f7aa30f381e331"
+      }
+    },
+    {
+      "id": "C42",
+      "before": null,
+      "after": {
+        "id": "C42",
+        "section": "Document metadata",
+        "text": "# Lilly: Dariot abridgement, illness interpretation and timing\n\nBook II, Chapter XLIV continuation — source audit B02l, 10 October 2026.",
+        "record_ids": [
+          "LI.1647.II.XLIV.R1550",
+          "LI.1647.II.XLIV.R1650"
+        ],
+        "original_pdf_pages": [
+          292,
+          302
+        ],
+        "evidence_files": [
+          "SECTION_COVERAGE.json",
+          "TASK_ENVELOPE.json"
+        ],
+        "claim_type": "document_metadata",
+        "text_sha256": "f1754a56b04d9b7b12a9e47fff41a98e6a22ac05b811ac77b86cb0b90ade0194"
+      }
+    }
+  ],
+  "mechanical_dependency_changes": [
+    "LILLY_SOURCE_EXTRACTION_INDEX_SNAPSHOT.json: current B02l RULES hash",
+    "TEST_RUN_SUMMARY.json: actual same 20 tests bound to repaired RULES/index",
+    "TEST_RUN.log: actual rerun duration"
+  ],
+  "unchanged_code": [
+    "lilly_dariot_reference.py",
+    "test_lilly_dariot.py",
+    "run_verification.py"
+  ],
+  "distinct_canonical_tests": 20,
+  "rerun_added_distinct_tests": 0,
+  "review_scope": "Changed record and five changed existing report units plus metadata item; verify carried-forward file and semantic identities. Do not reopen unchanged source units or add a full review round."
+}

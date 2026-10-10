@@ -1,0 +1,56 @@
+{
+  "stage": "second and final changed-item repair round",
+  "candidate_manifest": {
+    "path": "CANDIDATE_MANIFEST.json",
+    "bytes": 8000,
+    "sha256": "73955bbb3cd06723d3553f119b61faef6c490547edd058638f369cb4e36a9183"
+  },
+  "previous_freezes": [
+    {
+      "path": "INITIAL_DIAGNOSIS_FREEZE.json",
+      "bytes": 7150,
+      "sha256": "25bf2ad16a7a0038d58f6584346a253693b3af0bd666a06ba58a232b99dc734c"
+    },
+    {
+      "path": "REPAIR_ROUND01_FREEZE.json",
+      "bytes": 3921,
+      "sha256": "510c032cedc675b412e3be3a07a62129a1734ac72dbff1d478bcf93107147503"
+    }
+  ],
+  "files": [
+    {
+      "path": "ROUND02_FINAL_RESULT.md",
+      "bytes": 2871,
+      "sha256": "941ad47e11e957a19416fb38811cc32c971b63975870d0fb8fd373327eeb5bd1"
+    },
+    {
+      "path": "ROUND02_FINAL_RESULT.json",
+      "bytes": 2611,
+      "sha256": "c696038be1f355b548120287d89f4cc20aebb3adaf2b2b57e119e6b17344de06"
+    },
+    {
+      "path": "ROUND02_REFERENCE_AND_CARRY_FORWARD.json",
+      "bytes": 37981,
+      "sha256": "62b5ee19b2b2b16b94eb545bcd9bbb9b8e78e0ba61922115e82b1fb944b7e42d"
+    },
+    {
+      "path": "freeze_round02.py",
+      "bytes": 11943,
+      "sha256": "f349391bc0df3d5e0034e84fc328b40375101684261065a7dd27b10a7c23c8f5"
+    }
+  ],
+  "result": "RR1-01 resolved; no remaining required correction within agreed scope; recommend acceptance subject to root final adjudication.",
+  "final_counts": {
+    "source_units": 92,
+    "records": 101,
+    "ledger_units": 42,
+    "table_rows": 25,
+    "canonical_distinct_tests": 20,
+    "new_tests": 0
+  },
+  "no_source_semantics_reopened": true,
+  "no_test_suite_rerun": true,
+  "semantic_result_sent_before_this_freeze": false,
+  "time_policy": "No completion timestamp asserted; no current-clock read.",
+  "policy": "Second and final repair round; no new gate."
+}

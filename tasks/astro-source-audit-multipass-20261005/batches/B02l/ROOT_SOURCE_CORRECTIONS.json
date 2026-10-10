@@ -1,5 +1,33 @@
 {
-  "canonical_record_amendments": [],
+  "canonical_record_amendments": [
+    {
+      "finding_id": "IF-01",
+      "record_id": "LI.1647.II.XLIV.R1560",
+      "local_id": "A011",
+      "original_pdf_page": 294,
+      "printed_page": 260,
+      "source_anchor": "or from the principall Significators in the Figure",
+      "reason": "The printed source names plural Significators. Restore grammatical number in the canonical fields and their duplicates; the repeated-from ambiguity remains unresolved. No all-of-group or voting rule is inferred.",
+      "changes": [
+        {
+          "source_field": "proposition",
+          "before": "The outward cause is to be sought from the Infortunes afflicting the lord of the ascendant, or from the principal significator in the figure, or the Moon.",
+          "after": "The outward cause is to be sought from the Infortunes afflicting the lord of the ascendant, or from the principal significators in the figure, or the Moon."
+        },
+        {
+          "source_field": "conditions[1]",
+          "before": "Source choices as printed: Infortunes that afflict the Lord of the ascendant; OR the principal Significator in the Figure; OR the Moon.",
+          "after": "Source choices as printed: Infortunes that afflict the Lord of the ascendant; OR the principal Significators in the Figure; OR the Moon."
+        },
+        {
+          "source_field": "uncertainties[0]",
+          "before": "The grammar explicitly repeats \"from\" before the principal Significator; it does not unambiguously say that all three are targets of the same afflicting Infortunes.",
+          "after": "The grammar explicitly repeats \"from\" before the principal Significators; it does not unambiguously say that all three are targets of the same afflicting Infortunes."
+        }
+      ],
+      "frozen_reader_file_modified": false
+    }
+  ],
   "frozen_reader_files_unchanged": true,
-  "note": "All producer source clauses were retained. Source-detail resolutions are tracked in UNRESOLVED and TEXTUAL_CHECKS. A reader's informal chat summary called the A043 actor Jupiter; its frozen record and the source correctly say Saturn. That chat typo is not canonical data."
+  "note": "The listed source-adjudicated amendment changes only the canonical copy; all frozen producer files remain unchanged. Other source-detail resolutions are tracked in UNRESOLVED and TEXTUAL_CHECKS. A reader's informal chat summary called the A043 actor Jupiter; its frozen record and the source correctly say Saturn. That chat typo is not canonical data."
 }

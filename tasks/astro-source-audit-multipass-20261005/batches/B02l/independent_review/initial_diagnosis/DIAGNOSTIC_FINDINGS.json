@@ -1,0 +1,234 @@
+{
+  "candidate_manifest_sha256": "41a5d97ba5c0a560c16fedbcfd24d8bd09a185b116d5d884374881f5194cbf48",
+  "findings": [
+    {
+      "id": "IF-01",
+      "classification": "source_record_grammatical_number_mismatch",
+      "importance": "substantive source fidelity repair",
+      "candidate_locations": [
+        "RULES.json: R1560/A011 title, source_statement, prerequisites[0].source_clauses[1], qualifications_and_limits[0], and duplicated source_fields proposition/conditions/uncertainties"
+      ],
+      "source_units": [
+        "SF-011"
+      ],
+      "report_claims": [],
+      "pdf_pages": [
+        294
+      ],
+      "printed_pages": [
+        260
+      ],
+      "source_anchor": "or from the principall Significators in the Figure",
+      "candidate_reading": "principal significator / principal Significator (singular)",
+      "diagnosis": "The original visibly prints Significators, plural. The candidate narrows that named source group to a singular significator. The repeated from and its grammatical ambiguity are otherwise retained.",
+      "repair": "Restore plural significators in every affected canonical field and its duplicate, while preserving the existing uncertainty about how the alternatives attach. The plural does not establish a new all-of-group or vote-count rule.",
+      "evidence_files": [
+        "diagnostic_pdf294_principal_number.png"
+      ],
+      "certainty": "The printed plural s is directly legible in an enlarged original-PDF crop."
+    },
+    {
+      "id": "IF-02",
+      "classification": "report_quantifier_and_exclusion_drift",
+      "importance": "substantive source meaning repair",
+      "candidate_locations": [
+        "AUDIT_REPORT.md: outward-cause paragraph",
+        "CLAIM_LEDGER.json: C10 text and regenerated hash"
+      ],
+      "source_units": [
+        "SF-013"
+      ],
+      "report_claims": [
+        "C10"
+      ],
+      "pdf_pages": [
+        294
+      ],
+      "printed_pages": [
+        260
+      ],
+      "source_anchor": "either Saturn or Mars ... and neither of them be Lords of the sixt, or Dispositors of the Moon",
+      "candidate_reading": "the afflicting planet is neither the sixth lord nor the Moon's dispositor",
+      "diagnosis": "The report restricts the exclusions to the actual afflictor. The source says neither of the two planets. A case where Mars afflicts but Saturn rules the sixth would pass the report paraphrase while failing the printed exclusions. R1562 correctly preserves neither of those two, so this is report/ledger drift.",
+      "repair": "Say that neither Saturn nor Mars is lord of the sixth or dispositor of the Moon. Retain the strength and square/opposition conditions and the unwell/yet-not-perfectly-sick distinction. R1562 does not need alteration.",
+      "evidence_files": [
+        "/workspace/scratch/43f75264c32e/source-work/pdf294.png"
+      ],
+      "certainty": "Explicit neither of them after the Saturn/Mars pair."
+    },
+    {
+      "id": "IF-03",
+      "classification": "report_callback_referent_error",
+      "importance": "substantive source meaning repair",
+      "candidate_locations": [
+        "AUDIT_REPORT.md: earlier timing callback paragraph",
+        "CLAIM_LEDGER.json: C35 text and regenerated hash"
+      ],
+      "source_units": [
+        "CX02 (earlier original source context)"
+      ],
+      "report_claims": [
+        "C35"
+      ],
+      "pdf_pages": [
+        283,
+        301
+      ],
+      "printed_pages": [
+        249,
+        267
+      ],
+      "source_anchor": "according to the nature and quality of the Signe",
+      "candidate_reading": "The earlier timing passage on printed249 ... left a choice among months, weeks and days to the disease's nature.",
+      "diagnosis": "Printed249 attaches the selector to the sign, not the disease. The later printed267 discussion does use disease quality/nature and discretion. The report conflates these distinct selectors. The retained R1438 excerpt is already correct.",
+      "repair": "Describe the earlier callback as referring to the sign's nature and quality; distinguish the later disease-quality/discretion qualifications. Preserve the conclusion that these passages do not supply a new combined numerical algorithm.",
+      "evidence_files": [
+        "pdf283_earlier_context.png",
+        "/workspace/scratch/43f75264c32e/source-work/pdf301.png"
+      ],
+      "certainty": "The earlier original clause explicitly names the Signe."
+    },
+    {
+      "id": "IF-04",
+      "classification": "point_of_use_source_locator_incomplete",
+      "importance": "citation repair",
+      "candidate_locations": [
+        "AUDIT_REPORT.md: inward-cause paragraph source citation",
+        "CLAIM_LEDGER.json: C09 original_pdf_pages and bound text as needed"
+      ],
+      "source_units": [
+        "SF-009",
+        "SF-010"
+      ],
+      "report_claims": [
+        "C09"
+      ],
+      "pdf_pages": [
+        293,
+        294
+      ],
+      "printed_pages": [
+        259,
+        260
+      ],
+      "source_anchor": "any Planet may in [page break] this case be malignant, if he be Lord of the eighth, twelfth or sixt",
+      "candidate_reading": "C09 cites only Original PDF293/printed259.",
+      "diagnosis": "The semantic statement is supported, but the sixth/eighth/twelfth lordship list is on PDF294/printed260 after the page break. R1559 correctly locates the two-page span.",
+      "repair": "Add PDF294/printed260 to the report citation and ledger page list.",
+      "evidence_files": [
+        "/workspace/scratch/43f75264c32e/source-work/pdf293.png",
+        "/workspace/scratch/43f75264c32e/source-work/pdf294.png"
+      ],
+      "certainty": "Visible physical page break."
+    },
+    {
+      "id": "IF-05",
+      "classification": "report_reference_frame_precision",
+      "importance": "wording precision repair",
+      "candidate_locations": [
+        "AUDIT_REPORT.md: natal/mundane callback paragraph",
+        "CLAIM_LEDGER.json: C24 text and regenerated hash"
+      ],
+      "source_units": [
+        "SF-073"
+      ],
+      "report_claims": [
+        "C24"
+      ],
+      "pdf_pages": [
+        300
+      ],
+      "printed_pages": [
+        266
+      ],
+      "source_anchor": "the Signe of the eighth House of the yearly revolution of the World",
+      "candidate_reading": "the eighth sign of the yearly revolution of the World",
+      "diagnosis": "The report drops House from the source relationship. In context it likely intends the right frame, and R1629 is correct, but eighth sign is less precise and can be mistaken for an ordinal zodiac sign. This review does not claim the report explicitly says Scorpio.",
+      "repair": "Use the sign of the eighth house of the yearly revolution of the World.",
+      "evidence_files": [
+        "/workspace/scratch/43f75264c32e/source-work/pdf300.png"
+      ],
+      "certainty": "Explicit eighth House in the source; the risk lies in the report abbreviation."
+    },
+    {
+      "id": "IF-06",
+      "classification": "report_consequence_connector_precision",
+      "importance": "wording precision repair",
+      "candidate_locations": [
+        "AUDIT_REPORT.md: no-sickness chain paragraph",
+        "CLAIM_LEDGER.json: C08 text and regenerated hash"
+      ],
+      "source_units": [
+        "SF-006",
+        "SF-007",
+        "SF-008"
+      ],
+      "report_claims": [
+        "C08"
+      ],
+      "pdf_pages": [
+        293
+      ],
+      "printed_pages": [
+        259
+      ],
+      "source_anchor": "they were not sick, or that no sicknesse would succeed upon this Quere, but that their mistrust ... was grounded upon some sudden distemper of Body",
+      "candidate_reading": "distinct conclusions—no sickness, no following sickness, or a present distemper soon rectified",
+      "diagnosis": "The final or makes the explanatory transient-distemper clause look like a third alternative. The source gives alternative no-sickness judgments followed by an explanation of the suspicion. R1557 preserves that connection correctly.",
+      "repair": "Describe the alternative judgments of no present or ensuing sickness together with the explanation that suspicion arose from a sudden bodily distemper soon rectified. Keep the opening negative-scope uncertainty.",
+      "evidence_files": [
+        "/workspace/scratch/43f75264c32e/source-work/pdf293.png"
+      ],
+      "certainty": "The conjunction is visible; this is a report relationship/precision correction, not a claim that an extra patient outcome has been fabricated."
+    }
+  ],
+  "self_corrections": [
+    {
+      "id": "SC-01",
+      "source_unit": "SF-026",
+      "frozen_reading": "viscous",
+      "source_adjudicated_reading": "vitious",
+      "candidate_locations": [
+        "R1578",
+        "C14"
+      ],
+      "disposition": "The candidate is correct. The frozen source-first anchor and assertion misread the word. Preserve the freeze unchanged and use vitious in this diagnosis.",
+      "evidence_file": "diagnostic_pdf295_vitious_reading.png",
+      "pdf": 295,
+      "printed": 261
+    },
+    {
+      "id": "SC-02",
+      "source_unit": "SF-019",
+      "frozen_reading": "the man he longs after",
+      "source_adjudicated_reading": "the man she longs after",
+      "candidate_locations": [
+        "R1569"
+      ],
+      "disposition": "The candidate is correct. The error is in the source-first anchor; the source-first paraphrase was mostly neutral. Preserve the freeze unchanged and use the printed she.",
+      "evidence_file": "diagnostic_pdf295_youth_pronoun.png",
+      "pdf": 295,
+      "printed": 261
+    }
+  ],
+  "interpretive_differences": [
+    {
+      "id": "IC-01",
+      "source_units": [
+        "SF-045"
+      ],
+      "candidate_records": [
+        "R1600",
+        "R1601"
+      ],
+      "issue": "Fire-sign context in the Venus/Mars continuation",
+      "source_anchor": "Venus in fiery Signes ... but if Mars joyne in signification",
+      "assessment": "The candidate explicitly identifies the fiery condition as inherited from the preceding description, a plausible connected reading. The source-first map left its inheritance unresolved because the condition is not repeated. I do not treat the candidate as having silently invented a condition, but neither does the source explicitly repeat it.",
+      "retained_uncertainty": "Whether the fiery condition is intended to govern the Mars branch. No one-day duration is transferred; no physical conjunction is asserted.",
+      "could_settle": "A corresponding directly inspected authorial source or explicit textual clarification. This is not an additional acceptance gate.",
+      "optional_precision": "The qualification could state that the fire-sign context is inherited rather than separately repeated.",
+      "definite_candidate_defect": false
+    }
+  ],
+  "clinical_accuracy_claim": false
+}

@@ -1,0 +1,37 @@
+{
+  "stage": "second and final changed-item repair round",
+  "target": "RR1-01 only",
+  "candidate_manifest": {
+    "path": "CANDIDATE_MANIFEST.json",
+    "bytes": 8000,
+    "sha256": "73955bbb3cd06723d3553f119b61faef6c490547edd058638f369cb4e36a9183"
+  },
+  "disposition": "RR1-01 RESOLVED",
+  "basis": "TASK_ENVELOPE.json and BOOTSTRAP_RECEIPT.json are present and included in the47-file manifest. C42 cites both plus the already available SECTION_COVERAGE.json. The task_id identifies B02l; bootstrap task_start 2026-10-10T19:24:34+00:00 supplies the unchanged10 October2026 byline date.",
+  "acceptance_recommendation": "Recommend accepting the repaired candidate within the agreed source/claim diagnostic scope, carrying forward the initial and round-one evidence and limitations. No remaining required correction was identified in that scope. Root retains final adjudication.",
+  "final_coverage": {
+    "source_first_units": 92,
+    "canonical_records": 101,
+    "report_ledger_units": 42,
+    "table_data_rows": 25,
+    "initial_source_corrections_IF01_through_IF06": "Resolved in round1; unchanged in round2.",
+    "MC01_metadata_text_binding": "Resolved in round1; unchanged in round2.",
+    "RR1_01_metadata_evidence_reference": "Resolved in round2.",
+    "remaining_required_corrections": 0,
+    "canonical_distinct_tests": 20,
+    "new_test_identities_in_repairs": 0,
+    "test_suite_reruns_in_this_round": 0
+  },
+  "preserved_limits": [
+    "SC-01 and SC-02 remain disclosed reviewer source-first corrections; corresponding candidate readings remain correct.",
+    "IC-01 remains a nonunique contextual interpretation, not a newly resolved source issue.",
+    "Original source-first freeze, initial diagnosis and round-one freeze remain unchanged.",
+    "Same-family contextual diagnostic review; no cross-family, expert, clinical, IV&V or empirical accuracy claim."
+  ],
+  "method": "Read task_id and task_start metadata fields only; unrelated bootstrap claims were not evaluated. Verified all manifest hashes and mechanical identity of carried-forward records, texts, code, tested data and receipts. No source-semantic reread or suite rerun.",
+  "time_policy": "Date derived from the stored task_start metadata, not a current-clock read. No completion time fabricated.",
+  "authority": "Root retains final acceptance. This was the second and last changed-item round under the original policy; no new gate is proposed.",
+  "write_scope": "/workspace/scratch/43f75264c32e/b02l-workers/independent/repair_round02",
+  "candidate_mutations": false,
+  "semantic_result_released_before_freeze": false
+}

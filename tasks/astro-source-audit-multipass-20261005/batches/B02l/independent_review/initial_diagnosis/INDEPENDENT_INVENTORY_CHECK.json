@@ -1,0 +1,111 @@
+{
+  "record_count": 101,
+  "record_first": "LI.1647.II.XLIV.R1550",
+  "record_last": "LI.1647.II.XLIV.R1650",
+  "kinds": {
+    "dependency": 7,
+    "general_rule": 67,
+    "illustration": 8,
+    "author_experience": 8,
+    "method": 11
+  },
+  "source_reader_counts": {
+    "A": 54,
+    "B": 47
+  },
+  "previous_lilly_index_count": 1549,
+  "new_lilly_index_count": 1650,
+  "delta_matches": true,
+  "retained_prior_batches_identical": true,
+  "ptolemy_snapshot_source_records": 1066,
+  "ptolemy_receipt_count": 1066,
+  "ptolemy_snapshot_sha_match": true,
+  "combined_from_indexes": 2716,
+  "typed_issues": 42,
+  "issue_status_counts": {
+    "LIMIT_RETAINED": 36,
+    "SOURCE_READING_RESOLVED": 6
+  },
+  "resolved_ids": [
+    "SA-I06",
+    "B-SI-10",
+    "ROOT-SR01",
+    "ROOT-SR02",
+    "ROOT-SR03",
+    "ROOT-SR04"
+  ],
+  "section_count": 9,
+  "main_pdf_page_count": 11,
+  "selected_png_crop_count": 11,
+  "source_window_page_count": 14,
+  "actual_suite_summary": {
+    "tests_run": 20,
+    "distinct_test_count": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true,
+    "predictive_validation": false
+  },
+  "independent_repeat_summary": {
+    "tests_run": 20,
+    "distinct_test_count": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true,
+    "predictive_validation": false
+  },
+  "repeat_same_test_ids": true,
+  "repeat_new_distinct_tests": 0,
+  "candidate_tested_file_hash_matches": [
+    {
+      "path": "lilly_dariot_reference.py",
+      "actual_sha256": "20afef2dbfdd1b28abf348f7bcab23d6cbfe4d669aa0d045bc08af5fd2d32491",
+      "matches": true
+    },
+    {
+      "path": "test_lilly_dariot.py",
+      "actual_sha256": "6af357dc897a32176fc6c10a7e95c360d0695e6170992ea617580b0a3d3f53b4",
+      "matches": true
+    },
+    {
+      "path": "RULES.json",
+      "actual_sha256": "6002f91a2cd8378ba5b858169395b68f4c65594c2692d0fb6b1ce352d22ae02d",
+      "matches": true
+    },
+    {
+      "path": "SECTION_COVERAGE.json",
+      "actual_sha256": "be795a6b5333920fc972b4888cc743a60996e20ee728b80a4fb467091dfd4c1f",
+      "matches": true
+    },
+    {
+      "path": "UNRESOLVED.json",
+      "actual_sha256": "5305d5e4b997bf059ebe9de6275d1aec8d31ec14f05695efde8a0abd4893c69c",
+      "matches": true
+    },
+    {
+      "path": "REFERENCE_TABLES.json",
+      "actual_sha256": "ea3808699e5c88c0ad8aeb83e0a0b3b80ad72e01ddf8d0e6707f9d166c8748ab",
+      "matches": true
+    },
+    {
+      "path": "LILLY_SOURCE_EXTRACTION_INDEX_SNAPSHOT.json",
+      "actual_sha256": "5f66abc1b6a9d65266022a2046fc562aa0138a6f1b134ef39229bdba6852f504",
+      "matches": true
+    },
+    {
+      "path": "RETAINED_LILLY_INDEX_BEFORE.json",
+      "actual_sha256": "532d43eb1fdd2701f8ef8ef70b5de921a37c05195f9b4b81a4573e4613748570",
+      "matches": true
+    }
+  ],
+  "interpretation": "The retained Ptolemy count is verified against the supplied numeric index and hash, not by a new Ptolemy source audit.",
+  "source_index_next_selected_fields": {
+    "pdf_page": 302,
+    "printed_page": 268,
+    "chapter": "XLIV",
+    "heading": "Hermes Trismegistus upon the first Decumbiture of the Sick.",
+    "extracted": false
+  }
+}

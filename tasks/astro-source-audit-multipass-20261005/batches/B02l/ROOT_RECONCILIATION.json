@@ -1,0 +1,127 @@
+{
+  "batch": "B02l",
+  "stage": "SOURCE_ADJUDICATED_AND_REPAIRS_ACCEPTED",
+  "initial_diagnosis_freeze_sha256": "25bf2ad16a7a0038d58f6584346a253693b3af0bd666a06ba58a232b99dc734c",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "root_direct_source_reinspection": [
+    293,
+    294,
+    283,
+    300
+  ],
+  "full_span_previously_read": [
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302
+  ],
+  "repairs": [
+    {
+      "finding_id": "IF-01",
+      "target": "R1560/A011",
+      "pages": [
+        294
+      ],
+      "source_anchor": "or from the principall Significators in the Figure",
+      "action": "Restore plural in canonical proposition, conditions and uncertainty; derived duplicate fields rebuilt. Repeated-from grammatical uncertainty retained; no all-of-group or vote rule added."
+    },
+    {
+      "finding_id": "IF-02",
+      "target": "C10",
+      "pages": [
+        294
+      ],
+      "source_anchor": "and neither of them be Lords of the sixt, or Dispositors of the Moon",
+      "action": "Apply both role exclusions to both Saturn and Mars. R1562 unchanged."
+    },
+    {
+      "finding_id": "IF-03",
+      "target": "C35",
+      "pages": [
+        283,
+        301
+      ],
+      "source_anchor": "according to the nature and quality of the Signe",
+      "action": "Separate the earlier sign-quality selector from later disease-quality/discretion. Retained R1438 unchanged."
+    },
+    {
+      "finding_id": "IF-04",
+      "target": "C09",
+      "pages": [
+        293,
+        294
+      ],
+      "source_anchor": "any Planet may in / this case be malignant, if he be Lord of the eighth, twelfth or sixt",
+      "action": "Add continuation PDF294/printed260 to point-of-use citation and ledger. Meaning and R1559 unchanged."
+    },
+    {
+      "finding_id": "IF-05",
+      "target": "C24",
+      "pages": [
+        300
+      ],
+      "source_anchor": "the Signe of the eighth House of the yearly revolution of the World",
+      "action": "Restore sign-of-house relationship, without claiming the old text explicitly named Scorpio. R1629 unchanged."
+    },
+    {
+      "finding_id": "IF-06",
+      "target": "C08",
+      "pages": [
+        293
+      ],
+      "source_anchor": "they were not sick, or that no sicknesse would succeed upon this Quere, but that their mistrust",
+      "action": "Connect transient distemper to explanation of suspicion accompanying alternative no-present/no-ensuing sickness judgments. R1557 and opening-negative uncertainty unchanged."
+    },
+    {
+      "finding_id": "MC-01",
+      "target": "C42",
+      "pages": [
+        292,
+        302
+      ],
+      "source_anchor": "DARIOT Abridged / upper bridge before Hermes",
+      "action": "Append metadata item binding existing title/byline, keeping C01-C41 stable."
+    }
+  ],
+  "reviewer_source_first_corrections": [
+    {
+      "id": "SC-01",
+      "source_unit": "SF-026",
+      "wrong": "viscous",
+      "correct": "vitious",
+      "root_viewed_original_crop": true,
+      "candidate_unchanged": true
+    },
+    {
+      "id": "SC-02",
+      "source_unit": "SF-019",
+      "wrong": "the man he longs after",
+      "correct": "the man she longs after",
+      "root_viewed_original_crop": true,
+      "candidate_unchanged": true
+    }
+  ],
+  "interpretive_difference": {
+    "id": "IC-01",
+    "records": [
+      "R1600",
+      "R1601"
+    ],
+    "disposition": "Retain explicitly inherited fiery-sign context as plausible nonunique reading. No one-day duration transfer or physical conjunction. Uncertainty does not require an extra research gate."
+  },
+  "root_acceptance_authority": "Reviewer is diagnostic; flags accepted only after original-source adjudication. Final batch acceptance awaits changed-item check.",
+  "diagnoses_and_frozen_reader_files_unchanged": true,
+  "metadata_reference_followup": {
+    "finding": "RR1-01",
+    "disposition": "Existing canonical TASK_ENVELOPE and BOOTSTRAP_RECEIPT included in final review candidate; C42 references all three available metadata/source files. Report prose and all record/helper/test contents unchanged.",
+    "all_25_report_evidence_paths_bound": true
+  },
+  "remaining_required_corrections": []
+}

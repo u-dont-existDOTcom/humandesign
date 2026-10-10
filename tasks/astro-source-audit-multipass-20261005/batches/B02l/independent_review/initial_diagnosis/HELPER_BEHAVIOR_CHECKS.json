@@ -1,0 +1,399 @@
+{
+  "scope": "One initial diagnostic pass; static inspection plus focused independent manual executions of the copied helper. Not an additional canonical test suite.",
+  "source_anchors": [
+    {
+      "pdf": 300,
+      "printed": 266,
+      "anchor": "if it cannot be had ... then take the hour when first Judgment was required of the Physitian"
+    },
+    {
+      "pdf": 300,
+      "printed": 266,
+      "anchor": "not chronick, but acute ... 45 ... 90 ... 135"
+    },
+    {
+      "pdf": 301,
+      "printed": 267,
+      "anchor": "Moveable Signes ... Common Signes ... Fixed Signes; Angles ... Succedant ... Cadent"
+    }
+  ],
+  "helper_sha256": "20afef2dbfdd1b28abf348f7bcab23d6cbfe4d669aa0d045bc08af5fd2d32491",
+  "copied_helper_hash_matches": true,
+  "manual_probe_count": 15,
+  "manual_probes": [
+    {
+      "operation": "crisis_geometry",
+      "input": [
+        1260900,
+        "acute",
+        "selected"
+      ],
+      "expected_targets_arcsec": [
+        126900,
+        288900,
+        450900
+      ],
+      "actual": {
+        "status": "angular_targets_only",
+        "offsets_arcsec": [
+          162000,
+          324000,
+          486000
+        ],
+        "targets_arcsec": [
+          126900,
+          288900,
+          450900
+        ],
+        "dates": null,
+        "predictive_outcome": null
+      },
+      "matches": true
+    },
+    {
+      "operation": "crisis_geometry",
+      "input": [
+        0,
+        "acute",
+        "selected"
+      ],
+      "expected_targets_arcsec": [
+        162000,
+        324000,
+        486000
+      ],
+      "actual": {
+        "status": "angular_targets_only",
+        "offsets_arcsec": [
+          162000,
+          324000,
+          486000
+        ],
+        "targets_arcsec": [
+          162000,
+          324000,
+          486000
+        ],
+        "dates": null,
+        "predictive_outcome": null
+      },
+      "matches": true
+    },
+    {
+      "operation": "crisis_geometry",
+      "input": [
+        1295999,
+        "acute",
+        "selected"
+      ],
+      "expected_targets_arcsec": [
+        161999,
+        323999,
+        485999
+      ],
+      "actual": {
+        "status": "angular_targets_only",
+        "offsets_arcsec": [
+          162000,
+          324000,
+          486000
+        ],
+        "targets_arcsec": [
+          161999,
+          323999,
+          485999
+        ],
+        "dates": null,
+        "predictive_outcome": null
+      },
+      "matches": true
+    },
+    {
+      "operation": "crisis_geometry",
+      "input": [
+        null,
+        "acute",
+        "selected"
+      ],
+      "expected_status": "unresolved",
+      "actual": {
+        "status": "unresolved",
+        "targets_arcsec": [],
+        "reason": "course_origin_or_corrected_longitude_missing",
+        "dates": null
+      },
+      "matches": true
+    },
+    {
+      "operation": "crisis_geometry",
+      "input": [
+        0,
+        "acute",
+        "unresolved"
+      ],
+      "expected_status": "unresolved",
+      "actual": {
+        "status": "unresolved",
+        "targets_arcsec": [],
+        "reason": "course_origin_or_corrected_longitude_missing",
+        "dates": null
+      },
+      "matches": true
+    },
+    {
+      "operation": "crisis_geometry",
+      "input": [
+        0,
+        "unknown",
+        "selected"
+      ],
+      "expected_status": "unresolved",
+      "actual": {
+        "status": "unresolved",
+        "targets_arcsec": [],
+        "reason": "course_origin_or_corrected_longitude_missing",
+        "dates": null
+      },
+      "matches": true
+    },
+    {
+      "operation": "crisis_geometry",
+      "input": [
+        0,
+        "chronic",
+        "selected"
+      ],
+      "expected_status": "not_applicable",
+      "actual": {
+        "status": "not_applicable",
+        "targets_arcsec": [],
+        "reason": "this_crisis_passage_excludes_chronic_illness",
+        "dates": null
+      },
+      "matches": true
+    },
+    {
+      "operation": "select_crisis_origin",
+      "input": [
+        "known",
+        "  exact supplied label  ",
+        "known",
+        "later label"
+      ],
+      "expected": [
+        "selected",
+        "first_bed_hour",
+        "  exact supplied label  "
+      ],
+      "actual": {
+        "status": "selected",
+        "origin": "first_bed_hour",
+        "time": "  exact supplied label  "
+      },
+      "matches": true
+    },
+    {
+      "operation": "select_crisis_origin",
+      "input": [
+        "unavailable",
+        null,
+        "known",
+        "request"
+      ],
+      "expected": [
+        "selected",
+        "first_physician_judgment_request",
+        "request"
+      ],
+      "actual": {
+        "status": "selected",
+        "origin": "first_physician_judgment_request",
+        "time": "request"
+      },
+      "matches": true
+    },
+    {
+      "operation": "select_crisis_origin",
+      "input": [
+        "unknown",
+        null,
+        "known",
+        "request"
+      ],
+      "expected": [
+        "unresolved",
+        null,
+        null
+      ],
+      "actual": {
+        "status": "unresolved",
+        "origin": null,
+        "time": null,
+        "reason": "first_bed_hour_availability_unknown"
+      },
+      "matches": true
+    },
+    {
+      "operation": "timing_options",
+      "input": [
+        "moveable",
+        "angular"
+      ],
+      "expected_sign_options": [
+        "days"
+      ],
+      "expected_house_options": [
+        "days"
+      ],
+      "actual": {
+        "sign_mode": "moveable",
+        "sign_options": [
+          "days"
+        ],
+        "house_class": "angular",
+        "house_corresponding_mode": "moveable",
+        "house_options": [
+          "days"
+        ],
+        "selected_unit": null,
+        "date": null,
+        "prior_recovery_judgment_required": true,
+        "synthesis": "discretion_and_illness_context_not_numerically_specified"
+      },
+      "matches": true
+    },
+    {
+      "operation": "timing_options",
+      "input": [
+        "common",
+        "angular"
+      ],
+      "expected_sign_options": [
+        "weeks",
+        "months"
+      ],
+      "expected_house_options": [
+        "days"
+      ],
+      "actual": {
+        "sign_mode": "common",
+        "sign_options": [
+          "weeks",
+          "months"
+        ],
+        "house_class": "angular",
+        "house_corresponding_mode": "moveable",
+        "house_options": [
+          "days"
+        ],
+        "selected_unit": null,
+        "date": null,
+        "prior_recovery_judgment_required": true,
+        "synthesis": "discretion_and_illness_context_not_numerically_specified"
+      },
+      "matches": true
+    },
+    {
+      "operation": "timing_options",
+      "input": [
+        "fixed",
+        "succedent"
+      ],
+      "expected_sign_options": [
+        "months",
+        "years"
+      ],
+      "expected_house_options": [
+        "weeks",
+        "months"
+      ],
+      "actual": {
+        "sign_mode": "fixed",
+        "sign_options": [
+          "months",
+          "years"
+        ],
+        "house_class": "succedent",
+        "house_corresponding_mode": "common",
+        "house_options": [
+          "weeks",
+          "months"
+        ],
+        "selected_unit": null,
+        "date": null,
+        "prior_recovery_judgment_required": true,
+        "synthesis": "discretion_and_illness_context_not_numerically_specified"
+      },
+      "matches": true
+    },
+    {
+      "operation": "timing_options",
+      "input": [
+        "unknown",
+        "cadent"
+      ],
+      "expected_sign_options": null,
+      "expected_house_options": [
+        "months",
+        "years"
+      ],
+      "actual": {
+        "sign_mode": "unknown",
+        "sign_options": null,
+        "house_class": "cadent",
+        "house_corresponding_mode": "fixed",
+        "house_options": [
+          "months",
+          "years"
+        ],
+        "selected_unit": null,
+        "date": null,
+        "prior_recovery_judgment_required": true,
+        "synthesis": "discretion_and_illness_context_not_numerically_specified"
+      },
+      "matches": true
+    },
+    {
+      "operation": "timing_options",
+      "input": [
+        "common",
+        "unknown"
+      ],
+      "expected_sign_options": [
+        "weeks",
+        "months"
+      ],
+      "expected_house_options": null,
+      "actual": {
+        "sign_mode": "common",
+        "sign_options": [
+          "weeks",
+          "months"
+        ],
+        "house_class": "unknown",
+        "house_corresponding_mode": null,
+        "house_options": null,
+        "selected_unit": null,
+        "date": null,
+        "prior_recovery_judgment_required": true,
+        "synthesis": "discretion_and_illness_context_not_numerically_specified"
+      },
+      "matches": true
+    }
+  ],
+  "all_manual_probes_match": true,
+  "canonical_suite_distinct_tests": 20,
+  "independent_same_suite_repeat_new_distinct_tests": 0,
+  "manual_probes_added_to_reported_canonical_test_count": 0,
+  "static_behavior_findings": [
+    "Three positive lunar offsets only: 45, 90, 135 degrees modulo 360 in integer arcseconds; no 180-degree point or later series.",
+    "Zero longitude is valid; None is unresolved. Invalid bool, float, negative and full-circle input handling is covered by the copied suite and confirmed in source code.",
+    "Chronic course gives not_applicable; unknown course/origin or missing longitude gives unresolved; no calendar date or outcome is calculated.",
+    "The caller supplies the already corrected longitude and a selected-origin status. The helper does not verify an ephemeris, chart construction or actual occurrence of a patient event.",
+    "Bed-hour priority and physician-request fallback match the local paragraph. The unknown/unavailable distinction is an explicitly disclosed conservative implementation convention.",
+    "Time labels are passed through unchanged. Sign and house options remain separate; no automatic unit choice, duration or date is produced.",
+    "The helper does not implement the six/twelve-degree danger language, disease catalogue, mind/body rules, clinical diagnosis, prognosis or treatment."
+  ],
+  "defects_found": [],
+  "evidence_limit": "Passing these checks establishes the inspected program behavior and arithmetic; it does not establish historical method accuracy or clinical efficacy."
+}

@@ -1,0 +1,101 @@
+{
+  "stage": "changed-item repair round1",
+  "candidate_manifest": {
+    "path": "CANDIDATE_MANIFEST.json",
+    "bytes": 7733,
+    "sha256": "40cbce412a7c1c6266f5fc4e55fa5570fa37ca43631ebb393e9787b96b4237f8"
+  },
+  "initial_diagnosis_freeze": {
+    "path": "INITIAL_DIAGNOSIS_FREEZE.json",
+    "bytes": 7150,
+    "sha256": "25bf2ad16a7a0038d58f6584346a253693b3af0bd666a06ba58a232b99dc734c"
+  },
+  "files": [
+    {
+      "path": "REPAIR_ROUND01_RESULT.md",
+      "bytes": 7673,
+      "sha256": "37b09c47500cd40e243d27dd3c75a0352acc88e51f4801ca78b76a450cfc87be"
+    },
+    {
+      "path": "CHANGED_ITEM_RESULTS.json",
+      "bytes": 29001,
+      "sha256": "50bc74cb0bcc9db3da58d07cbf888ac6cd1fe3263157140e9abe60d5ce709715"
+    },
+    {
+      "path": "MECHANICAL_CARRY_FORWARD.json",
+      "bytes": 57381,
+      "sha256": "c8823eb527bf5e3c8f5b9eb4983a56bcef30d23694c764ffaa7866c639a7dec6"
+    },
+    {
+      "path": "REPAIR_REPORT_RESIDUAL.txt",
+      "bytes": 1104,
+      "sha256": "75868bdde6ca9b8497530541f6b58d89f6ca00075c41a09997ca5c465db5f7fa"
+    },
+    {
+      "path": "check_repair_round01.py",
+      "bytes": 8205,
+      "sha256": "9c36dcdce86228d421c08005e1707716b4131ec76dcf429963748c367d95600c"
+    },
+    {
+      "path": "finalize_repair_round01.py",
+      "bytes": 19229,
+      "sha256": "1a080314204cecd5c40f284b0ebf8052834b78c2ebf55ba6cdc53a31bdcacbcc"
+    },
+    {
+      "path": "original_pdf293_no_sickness_and_cause.png",
+      "bytes": 1043020,
+      "sha256": "891edb06f5e6a6f0f7a5b5f0c43999d8649bb899124e177b99b09b36422a67fb"
+    },
+    {
+      "path": "original_pdf294_plural_exclusions_pagebreak.png",
+      "bytes": 859378,
+      "sha256": "11d53a311b3eef6d42b62f7faa0c1fcf77f6842387cf6c24c05b06e0eec33842"
+    },
+    {
+      "path": "original_pdf283_earlier_sign_selector.png",
+      "bytes": 403865,
+      "sha256": "f51c9cbd2eb85eb39ada0c0d5c62b280549a2fa2810739614f7b043a7d0eb667"
+    },
+    {
+      "path": "original_pdf300_eighth_house_sign.png",
+      "bytes": 197245,
+      "sha256": "75826c364b1a8ba210a7d49e75338365bc471bfbe784943418c08eca966ad553"
+    },
+    {
+      "path": "original_pdf301_later_disease_selector.png",
+      "bytes": 841665,
+      "sha256": "650d7137b0bfbe16258255e46b48404051caf7275a887eb5874ac65dbeb42b75"
+    }
+  ],
+  "coverage": {
+    "source_first_units_retained": 92,
+    "final_canonical_records": 101,
+    "unchanged_record_objects_carried_forward": 100,
+    "changed_record_rechecked": 1,
+    "changed_record_id": "LI.1647.II.XLIV.R1560",
+    "initial_ledger_units": 41,
+    "unchanged_ledger_objects_carried_forward": 36,
+    "changed_existing_ledger_units_rechecked": 5,
+    "new_metadata_ledger_units_checked": 1,
+    "final_ledger_units": 42,
+    "all_final42_texts_uniquely_bound_and_hash_verified": true,
+    "initial25_table_data_rows_unchanged_and_carried_forward": 25,
+    "report_outside_five_changed_units_identical": true,
+    "canonical_distinct_tests": 20,
+    "new_test_identities_in_repair_round": 0,
+    "independent_test_rerun_this_round": false,
+    "initial_source_window_pixel_checks_carried_forward": 14,
+    "source_window_file_hash_unchanged": true,
+    "remaining_source_meaning_corrections": 0,
+    "remaining_metadata_reference_corrections": 1,
+    "assurance_note": "Counts measure review inventory and carry-forward identity, not independent predictions or an accuracy percentage."
+  },
+  "acceptance_recommendation": "IF-01 through IF-06 resolved; MC-01 title/byline binding repaired; one C42 evidence-reference packaging correction RR1-01 remains. Root retains final adjudication.",
+  "remaining_corrections": [
+    "RR1-01"
+  ],
+  "source_first_and_initial_diagnosis_unchanged": true,
+  "semantic_findings_sent_before_this_freeze": false,
+  "time_policy": "No completion timestamp claimed; no mid-task clock read.",
+  "review_policy": "First of at most two changed-item repair checks; no new exhaustive pass or added gates."
+}

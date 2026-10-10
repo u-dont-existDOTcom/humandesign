@@ -1162,7 +1162,7 @@
     {
       "id": "LI.1647.II.XLIV.R1560",
       "local_id": "A011",
-      "title": "The outward cause is to be sought from the Infortunes afflicting the lord of the ascendant, or from the principal significator in the figure, or the Moon.",
+      "title": "The outward cause is to be sought from the Infortunes afflicting the lord of the ascendant, or from the principal significators in the figure, or the Moon.",
       "kind": "method",
       "source_locator": {
         "source_id": "LILLY1647_WELLCOME_B30338724",
@@ -1188,12 +1188,12 @@
         "label": "Dariot",
         "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
       },
-      "source_statement": "The outward cause is to be sought from the Infortunes afflicting the lord of the ascendant, or from the principal significator in the figure, or the Moon.",
+      "source_statement": "The outward cause is to be sought from the Infortunes afflicting the lord of the ascendant, or from the principal significators in the figure, or the Moon.",
       "prerequisites": [
         {
           "source_clauses": [
             "Outward-cause enquiry.",
-            "Source choices as printed: Infortunes that afflict the Lord of the ascendant; OR the principal Significator in the Figure; OR the Moon."
+            "Source choices as printed: Infortunes that afflict the Lord of the ascendant; OR the principal Significators in the Figure; OR the Moon."
           ],
           "executable": false,
           "logic_policy": "Retain explicit AND/OR/negative/modal wording and source dependencies; unresolved syntax is not compiled to a single Boolean predicate."
@@ -1204,7 +1204,7 @@
       ],
       "exceptions_and_modifiers": [],
       "qualifications_and_limits": [
-        "The grammar explicitly repeats \"from\" before the principal Significator; it does not unambiguously say that all three are targets of the same afflicting Infortunes."
+        "The grammar explicitly repeats \"from\" before the principal Significators; it does not unambiguously say that all three are targets of the same afflicting Infortunes."
       ],
       "conventions": {
         "calendar_time_basis": "No dated figure in this span; no calendar convention inferred.",
@@ -1231,10 +1231,10 @@
           "evidence": "Printed marginal attribution \"Dariot.\" begins this block at PDF293/printed259; the attribution is to Dariot as abridged/presented by Lilly, not an independently inspected Dariot edition."
         },
         "kind": "method",
-        "proposition": "The outward cause is to be sought from the Infortunes afflicting the lord of the ascendant, or from the principal significator in the figure, or the Moon.",
+        "proposition": "The outward cause is to be sought from the Infortunes afflicting the lord of the ascendant, or from the principal significators in the figure, or the Moon.",
         "conditions": [
           "Outward-cause enquiry.",
-          "Source choices as printed: Infortunes that afflict the Lord of the ascendant; OR the principal Significator in the Figure; OR the Moon."
+          "Source choices as printed: Infortunes that afflict the Lord of the ascendant; OR the principal Significators in the Figure; OR the Moon."
         ],
         "outcomes": [
           "Sources of judgement for an outward cause."
@@ -1244,7 +1244,7 @@
           "A012-A014 explain the subsequent strength, affliction and house-based method."
         ],
         "uncertainties": [
-          "The grammar explicitly repeats \"from\" before the principal Significator; it does not unambiguously say that all three are targets of the same afflicting Infortunes."
+          "The grammar explicitly repeats \"from\" before the principal Significators; it does not unambiguously say that all three are targets of the same afflicting Infortunes."
         ],
         "implementation_note": "Do not silently rewrite the sentence as malefics afflicting any one of three targets; retain its printed alternative sources.",
         "case_evidence": {

@@ -1,12 +1,12 @@
 # Astrology source audit — Dariot/Lilly continuation
 
-Current source contribution: **B02l**, 101 records R1550–R1650. Lilly cumulative1,650; retained Ptolemy1,066; combined2,716.
+Current source contribution: **B02l**, 101 records R1550–R1650. Lilly cumulative 1,650; retained Ptolemy 1,066; combined 2,716.
 
 Source span: original PDF292/printed258 at **DARIOT Abridged.**, including the complete italic introduction, through the complete upper bridge on PDF302/printed268 ending **as being necessary to the Judgments of this House**. All intervening unnumbered sections are included. **Chapter XLIV remains incomplete.**
 
-Next: **PDF302 / printed268 below the horizontal divider**, **Hermes Trismegistus upon the first Decumbiture of the Sick.**, including the complete opening beginning **The heavenly Rayes or Influences proceeding and emitted from the seven Planets**, then PDF303. Next recordR1651.
+Next: **PDF302 / printed268 below the horizontal divider**, **Hermes Trismegistus upon the first Decumbiture of the Sick.**, including the complete opening beginning **The heavenly Rayes or Influences proceeding and emitted from the seven Planets**, then PDF303. Next record R1651.
 
-Current assembly state: source inventory and20-test focused suite complete; frozen candidate undergoing source/claim diagnosis. Publication, exact readback, extracted-archive usability and owner delivery remain required before batch closeout. The final acceptance and delivery receipts must establish those operations.
+Current assembly state: source and report accepted after the frozen exhaustive diagnosis and two bounded repair checks. All six source/report findings and the metadata binding/reference items are resolved. The same 20 distinct focused tests passed; 42 report units and 101 records are verified with explicit source limits. Actual archive extraction, final publication/integration and owner delivery remain pending; their separate receipts establish completion.
 
 Integration branch: `research/six-rule-life-timing-20261001`; owned branch: `research/lilly-dariot-b02l-20261010`. Prior integration baseline: `169288e7f3e633bd945573ba23f58a975a63f4dc`.
 

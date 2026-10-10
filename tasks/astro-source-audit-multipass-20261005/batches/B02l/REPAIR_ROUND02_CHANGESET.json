@@ -1,0 +1,18 @@
+{
+  "finding_id": "RR1-01",
+  "root_adjudication": "Actual TASK_ENVELOPE exists in canonical batch but was missing from review-only candidate02. Include it; also cite and include existing BOOTSTRAP_RECEIPT with explicit task_start for byline date.",
+  "round": 2,
+  "ledger_change": "C42.evidence_files only",
+  "candidate_added_files": [
+    "TASK_ENVELOPE.json",
+    "BOOTSTRAP_RECEIPT.json"
+  ],
+  "report_bytes_unchanged": true,
+  "all_101_records_unchanged": true,
+  "all_42_claim_texts_unchanged": true,
+  "helper_and_tested_code_data_unchanged": true,
+  "additional_suite_execution_needed": false,
+  "distinct_tests": 20,
+  "remaining_round_budget": 0,
+  "candidate_manifest_sha256": "73955bbb3cd06723d3553f119b61faef6c490547edd058638f369cb4e36a9183"
+}

@@ -86,9 +86,29 @@ def compile_data():
         for local in issue["local_ids"]:
             issue_links[local].append(issue["id"])
     rules = []
+    amendments = []
     for label, source in raw:
         row = copy.deepcopy(source)
         local = row["local_id"]
+        if local == "A011":
+            # IF-01: original PDF294/printed260 visibly prints the plural.
+            # Amend the canonical copy; preserve the frozen producer file.
+            changes = []
+            for field, index in (("proposition", None), ("conditions", 1), ("uncertainties", 0)):
+                before_text = row[field] if index is None else row[field][index]
+                after_text, n = re.subn(r"principal ([Ss])ignificator\b", r"principal \1ignificators", before_text)
+                assert n == 1
+                if index is None:
+                    row[field] = after_text
+                else:
+                    row[field][index] = after_text
+                changes.append({"source_field": field if index is None else f"{field}[{index}]",
+                                "before": before_text, "after": after_text})
+            amendments.append({"finding_id": "IF-01", "record_id": mapping[local], "local_id": local,
+                "original_pdf_page": 294, "printed_page": 260,
+                "source_anchor": "or from the principall Significators in the Figure",
+                "reason": "The printed source names plural Significators. Restore grammatical number in the canonical fields and their duplicates; the repeated-from ambiguity remains unresolved. No all-of-group or voting rule is inferred.",
+                "changes": changes, "frozen_reader_file_modified": False})
         dependencies = referenced_locals(row["dependencies"], mapping)
         rules.append({
             "id": mapping[local], "local_id": local, "title": row["proposition"], "kind": row["kind"],
@@ -116,8 +136,8 @@ def compile_data():
             "external_dependency_references": [t for t in row["dependencies"] if not re.fullmatch(r"[AB]\d{3}", t)],
         })
     write("RECORD_ID_MAP.json", mapping)
-    write("ROOT_SOURCE_CORRECTIONS.json", {"canonical_record_amendments": [], "frozen_reader_files_unchanged": True,
-        "note": "All producer source clauses were retained. Source-detail resolutions are tracked in UNRESOLVED and TEXTUAL_CHECKS. A reader's informal chat summary called the A043 actor Jupiter; its frozen record and the source correctly say Saturn. That chat typo is not canonical data."})
+    write("ROOT_SOURCE_CORRECTIONS.json", {"canonical_record_amendments": amendments, "frozen_reader_files_unchanged": True,
+        "note": "The listed source-adjudicated amendment changes only the canonical copy; all frozen producer files remain unchanged. Other source-detail resolutions are tracked in UNRESOLVED and TEXTUAL_CHECKS. A reader's informal chat summary called the A043 actor Jupiter; its frozen record and the source correctly say Saturn. That chat typo is not canonical data."})
     write("RULES.json", {"schema_version": 1, "batch": "B02l", "source_id": SOURCE_ID,
         "source_sha256": SOURCE_SHA, "status": "SOURCE_ONLY_NOT_RUNTIME_OR_VALIDATION", "scope": SCOPE,
         "records_count": len(rules), "general_records_count": len(rules), "worked_example_records_count": 0,

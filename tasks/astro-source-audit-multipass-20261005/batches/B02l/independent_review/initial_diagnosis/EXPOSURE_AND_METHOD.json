@@ -1,0 +1,110 @@
+{
+  "role": "Bounded, same-family contextual independent source/claim diagnostic evaluator; root is sole canonical writer.",
+  "stage": "Initial exhaustive diagnostic pass, completed before findings are released to root.",
+  "candidate_directory": "/workspace/scratch/43f75264c32e/review-candidate-b02l-01",
+  "candidate_manifest": {
+    "path": "/workspace/scratch/43f75264c32e/review-candidate-b02l-01/CANDIDATE_MANIFEST.json",
+    "bytes": 7307,
+    "sha256": "41a5d97ba5c0a560c16fedbcfd24d8bd09a185b116d5d884374881f5194cbf48"
+  },
+  "primary_source": {
+    "path": "/workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf",
+    "sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "pages": 894
+  },
+  "source_first_outputs_before_candidate_exposure": [
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/SOURCE_FIRST_NOTES.md",
+      "bytes": 96465,
+      "sha256": "5371162fb0bb272b2563dc11f4ca8a833b0b002ed45608f332b4d9c62c8bfbd9"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/SOURCE_FIRST_MAP.json",
+      "bytes": 164424,
+      "sha256": "ad776cf289b97ea3c7fa8fd1b8d2e8ad424ae86d94d3f71594c79aeae8ba1e00"
+    },
+    {
+      "path": "/workspace/scratch/43f75264c32e/b02l-workers/independent/SOURCE_FIRST_FREEZE.json",
+      "bytes": 1437,
+      "sha256": "710faa2f1e25b7d0ea235cdf15273d7b76178e3c75e9061048ce7877fbe34c0d"
+    }
+  ],
+  "exposure_sequence": [
+    "Original full-page images for PDF292-302 were inspected before candidate exposure; direct original PDF crops were used for difficult text/glyphs.",
+    "Original errataPDF888 and earlier callbacksPDF277/283 were inspected separately in the source-first stage. PDF889 was checked as blank adjacent errata context.",
+    "SOURCE_FIRST_NOTES.md and SOURCE_FIRST_MAP.json were frozen and their exact hashes sent to root before the candidate path was authorized.",
+    "Only after that freeze, the authorized candidate records/report/ledger/helper/tests/supporting data and images were inspected.",
+    "The full initial diagnosis and all-claim/source-coverage outputs are frozen before any semantic findings are communicated to root."
+  ],
+  "candidate_material_reviewed": [
+    "All101 RULES records including source_fields duplicates, conditions, consequents, exception/qualification, dependency, attribution and implementation fields.",
+    "Every41 CLAIM_LEDGER item and the complete AUDIT_REPORT separately; all25 table data rows; remaining unbound metadata/headings after masking.",
+    "Canonical UNRESOLVED issue register and REFERENCE_TABLES; retained timing excerpts compared to original source.",
+    "Bounded helper, test file, run_verification runner, original test receipt and log; copied files executed only in private directory.",
+    "Numeric/count/coverage/image manifests and selected fields of retained/current Lilly and retained Ptolemy indexes.",
+    "Candidate original-source window, independently compared pixel-for-pixel to all14 corresponding original pages. Eleven selected candidate crops inspected visually in three contact sheets against the original-page content."
+  ],
+  "embedded_producer_text_exposure": "After the source-first freeze, canonical records/source_fields and the canonical UNRESOLVED register were read as candidate assertions. They include producer-authored descriptions and embedded issue observations. They were not treated as independent source evidence.",
+  "not_consulted": [
+    "Separate root or producer narrative notes, rationales, reconciliation/confidence summaries or earlier audit narratives.",
+    "Other workers communications, summaries or agent inventory.",
+    "An original Dariot edition or an all-edition collation.",
+    "External clinical outcomes, clinical literature, or runtime/deployment systems."
+  ],
+  "verification_performed": {
+    "candidate_manifest_files_verified": 43,
+    "original_window_pages_pixel_compared": 14,
+    "candidate_crops_visually_inspected": 11,
+    "source_first_units_mapped": 92,
+    "canonical_records_compared": 101,
+    "ledger_units_compared": 41,
+    "table_data_rows_compared": 25,
+    "subclaim_components": 212,
+    "private_copied_canonical_suite_passed": 20,
+    "canonical_suite_repeat_new_distinct_tests": 0,
+    "additional_focused_manual_helper_probes": 15,
+    "manual_probes_added_to_canonical_test_count": 0
+  },
+  "observability_limits": [
+    "A hash proves the bound file identity, not that another person actually read a page at a claimed earlier time.",
+    "The evaluator directly knows its own separation sequence; root/producer reading chronology is treated as a process claim, not independently observed.",
+    "Reference-only statuses and helper code are visible; no independent observation of external deployment, publishing, preservation or owner delivery is asserted.",
+    "Ptolemy1066 is a retained numeric-index count with matching snapshot hash, not a fresh Ptolemy source-fidelity evaluation.",
+    "No promise of perfect historical interpretation, cross-family independence, expert adjudication, IV&V, predictive accuracy or treatment efficacy."
+  ],
+  "self_corrections": [
+    {
+      "id": "SC-01",
+      "source_unit": "SF-026",
+      "frozen_reading": "viscous",
+      "source_adjudicated_reading": "vitious",
+      "candidate_locations": [
+        "R1578",
+        "C14"
+      ],
+      "disposition": "The candidate is correct. The frozen source-first anchor and assertion misread the word. Preserve the freeze unchanged and use vitious in this diagnosis.",
+      "evidence_file": "diagnostic_pdf295_vitious_reading.png",
+      "pdf": 295,
+      "printed": 261
+    },
+    {
+      "id": "SC-02",
+      "source_unit": "SF-019",
+      "frozen_reading": "the man he longs after",
+      "source_adjudicated_reading": "the man she longs after",
+      "candidate_locations": [
+        "R1569"
+      ],
+      "disposition": "The candidate is correct. The error is in the source-first anchor; the source-first paraphrase was mostly neutral. Preserve the freeze unchanged and use the printed she.",
+      "evidence_file": "diagnostic_pdf295_youth_pronoun.png",
+      "pdf": 295,
+      "printed": 261
+    }
+  ],
+  "interpretive_difference_policy": "Source-first notes are fallible. The original witness is the arbiter; clear reading corrections are disclosed without altering the prior freeze. Plausible but nonunique contextual readings are distinguished from definite candidate errors.",
+  "write_scope": "/workspace/scratch/43f75264c32e/b02l-workers/independent",
+  "canonical_mutation": false,
+  "semantic_findings_sent_before_freeze": false,
+  "continuation_policy": "After this initial diagnosis, at most two changed-item repair checks if root requests them. No extra assurance or research gates are imposed.",
+  "time_policy": "No mid-task clock reads or fabricated completion time. The date in the report byline was assessed against the provided task-start metadata."
+}

@@ -1,0 +1,65 @@
+{
+  "tests_run": 20,
+  "discovered_test_ids": [
+    "test_lilly_dariot.GeometryTests.test_arcsecond_precision_at_last_longitude",
+    "test_lilly_dariot.GeometryTests.test_chronic_course_is_outside_this_rule",
+    "test_lilly_dariot.GeometryTests.test_invalid_longitude_or_state_is_rejected",
+    "test_lilly_dariot.GeometryTests.test_missing_longitude_is_not_zero",
+    "test_lilly_dariot.GeometryTests.test_targets_cross_zodiac_origin",
+    "test_lilly_dariot.GeometryTests.test_targets_without_wrap",
+    "test_lilly_dariot.GeometryTests.test_unknown_course_does_not_inherit_acute",
+    "test_lilly_dariot.GeometryTests.test_unknown_origin_does_not_emit_targets",
+    "test_lilly_dariot.OriginTests.test_bed_time_precedes_available_physician_time",
+    "test_lilly_dariot.OriginTests.test_inconsistent_time_evidence_is_rejected",
+    "test_lilly_dariot.OriginTests.test_unavailable_and_unknown_fallback_remain_distinct",
+    "test_lilly_dariot.OriginTests.test_unavailable_bed_allows_physician_request",
+    "test_lilly_dariot.OriginTests.test_unknown_bed_does_not_authorize_fallback",
+    "test_lilly_dariot.SourceDataTests.test_full_declared_span_and_section_links",
+    "test_lilly_dariot.SourceDataTests.test_issue_and_reference_link_integrity",
+    "test_lilly_dariot.SourceDataTests.test_record_continuity_and_source_fields",
+    "test_lilly_dariot.SourceDataTests.test_retained_index_and_unfinished_boundary",
+    "test_lilly_dariot.TimingTests.test_conflicting_dimensions_do_not_select_a_unit",
+    "test_lilly_dariot.TimingTests.test_unknown_dimension_stays_missing",
+    "test_lilly_dariot.TimingTests.test_unrecognized_categories_are_not_imputed"
+  ],
+  "distinct_test_count": 20,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "successful": true,
+  "test_files": [
+    {
+      "path": "lilly_dariot_reference.py",
+      "sha256": "20afef2dbfdd1b28abf348f7bcab23d6cbfe4d669aa0d045bc08af5fd2d32491"
+    },
+    {
+      "path": "test_lilly_dariot.py",
+      "sha256": "6af357dc897a32176fc6c10a7e95c360d0695e6170992ea617580b0a3d3f53b4"
+    },
+    {
+      "path": "RULES.json",
+      "sha256": "6002f91a2cd8378ba5b858169395b68f4c65594c2692d0fb6b1ce352d22ae02d"
+    },
+    {
+      "path": "SECTION_COVERAGE.json",
+      "sha256": "be795a6b5333920fc972b4888cc743a60996e20ee728b80a4fb467091dfd4c1f"
+    },
+    {
+      "path": "UNRESOLVED.json",
+      "sha256": "5305d5e4b997bf059ebe9de6275d1aec8d31ec14f05695efde8a0abd4893c69c"
+    },
+    {
+      "path": "REFERENCE_TABLES.json",
+      "sha256": "ea3808699e5c88c0ad8aeb83e0a0b3b80ad72e01ddf8d0e6707f9d166c8748ab"
+    },
+    {
+      "path": "LILLY_SOURCE_EXTRACTION_INDEX_SNAPSHOT.json",
+      "sha256": "5f66abc1b6a9d65266022a2046fc562aa0138a6f1b134ef39229bdba6852f504"
+    },
+    {
+      "path": "RETAINED_LILLY_INDEX_BEFORE.json",
+      "sha256": "532d43eb1fdd2701f8ef8ef70b5de921a37c05195f9b4b81a4573e4613748570"
+    }
+  ],
+  "predictive_validation": false
+}

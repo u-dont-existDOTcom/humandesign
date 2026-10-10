@@ -1,0 +1,46 @@
+{
+  "batch": "B02l",
+  "reviewer_task": "dariot_independent",
+  "context_created_fresh": true,
+  "history_fork": "none",
+  "model_override_requested": false,
+  "model_relationship": "Inherited same model family; separate context",
+  "model_revision": null,
+  "sampling_settings": null,
+  "unexposed_configuration_limit": "Exact provider model revision and sampling parameters are not exposed. No mechanical proof of hidden provider configuration is claimed. Repairs, if any, retain this same reviewer context and visible policy.",
+  "candidate_manifest_sha256": "41a5d97ba5c0a560c16fedbcfd24d8bd09a185b116d5d884374881f5194cbf48",
+  "review_policy_sha256": "2b5095745ff856c97c61b0333a101cdf28475b35b7d37d7ddcb85ea86cdf4600",
+  "diagnostic_prompt": "Your source-first stage is frozen. Begin the separate exhaustive diagnostic stage now. Frozen read-only candidate: /workspace/scratch/43f75264c32e/review-candidate-b02l-01. CANDIDATE_MANIFEST.json SHA256 41a5d97ba5c0a560c16fedbcfd24d8bd09a185b116d5d884374881f5194cbf48. It contains 101 canonical records, all source pages plus errata/callbacks, bounded helper/tests and actual test receipt, AUDIT_REPORT.md and the complete 41-item CLAIM_LEDGER.json. Compare every source unit against the records, every report-ledger unit including all table rows/qualifiers, and independently scan the entire report for missed factual claims. Check bounded helper behavior and arithmetic/source boundaries within this same diagnostic pass; copied tests may be run in your private directory but do not mutate the frozen candidate. The full original PDF path remains /workspace/scratch/bd2460f96de0/Lilly-1647-Christian-Astrology-I-III.pdf. Do not read root/producer narrative notes, reconciliation, confidence or other status summaries; do not call list_agents. Write only in your private independent directory. Freeze the complete initial diagnosis and all-claim results before root receives it, with file hashes and honest exposure/method notes. Do not send partial semantic findings before the freeze. One exhaustive pass, then at most two changed-item repairs if justified. This is source/claim diagnostic review, not clinical, cross-family or expert validation. Return exact artifacts and substantive findings after freeze.",
+  "diagnostic_prompt_sha256": "15555ec26a88050378c0ec8a339f8a09374b67a2434fffdcdb20f288608a1a65",
+  "source_first_freeze_sha256": "710faa2f1e25b7d0ea235cdf15273d7b76178e3c75e9061048ce7877fbe34c0d",
+  "independent_source_authority_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "producer_rationale_excluded_before_diagnosis": true,
+  "candidate_complete_record_fields_included": true,
+  "evaluator_list_agents_prohibited": true,
+  "repair_round01": {
+    "same_reviewer_context": true,
+    "policy_unchanged": true,
+    "candidate_manifest_sha256": "40cbce412a7c1c6266f5fc4e55fa5570fa37ca43631ebb393e9787b96b4237f8",
+    "changed_record_ids": [
+      "R1560"
+    ],
+    "changed_report_ids": [
+      "C08",
+      "C09",
+      "C10",
+      "C24",
+      "C35"
+    ],
+    "new_metadata_id": "C42",
+    "request_scope": "Check changed items against the original source and frozen diagnosis. Mechanically bind 100 unchanged records, 36 unchanged report units and unchanged helper/test identities for carry-forward. No new full review or additional acceptance gate.",
+    "max_remaining_changed_item_rounds_after_this": 1
+  },
+  "repair_round02": {
+    "same_reviewer_context": true,
+    "policy_unchanged": true,
+    "candidate_manifest_sha256": "73955bbb3cd06723d3553f119b61faef6c490547edd058638f369cb4e36a9183",
+    "scope": "RR1-01 metadata-reference availability and resulting file bindings only",
+    "source_semantics_reopened": false,
+    "test_suite_rerun": false
+  }
+}

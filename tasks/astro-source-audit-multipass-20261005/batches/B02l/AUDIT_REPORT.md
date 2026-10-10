@@ -61,15 +61,15 @@ The first sickness rules distinguish the **querent's significator** from a disea
 
 [Original PDF293/printed259; R1551, R1552, R1553, R1554, R1555; `RULES.json`.]
 
-Lilly then describes his own practice when a question was brought with or without urine. His no-sickness chain begins with an ascendant that is **not** afflicted, followed by adverse lord conditions introduced with “or.” Later alternatives include favourable or unafflicted configurations. The printed syntax leaves the reach of the negative unsettled. The extraction retains the entire chain and its distinct conclusions—no sickness, no following sickness, or a present distemper soon rectified—without adding an unprinted second negative or choosing one executable polarity.
+Lilly then describes his own practice when a question was brought with or without urine. His no-sickness chain begins with an ascendant that is **not** afflicted, followed by adverse lord conditions introduced with “or.” Later alternatives include favourable or unafflicted configurations. The printed syntax leaves the reach of the negative unsettled. The extraction retains the entire chain: alternative judgments of no present or ensuing sickness are accompanied by the explanation that suspicion arose from a sudden bodily distemper soon rectified. It adds no unprinted second negative and chooses no executable polarity.
 
 [Original PDF293/printed259, PDF294/printed260; R1556, R1557; `RULES.json`, `UNRESOLVED.json`, `TEXTUAL_CHECKS.json`.]
 
 The inward-cause discussion uses the significator's disposition, sign, house and **good or ill** configuration with malevolent planets. It adds that any planet **may** act malignantly here through such roles as lord of the sixth, eighth or twelfth. This is a context-sensitive role statement. Neither a permanently favourable classification for Jupiter or Venus nor an assumption that only bad aspects matter reproduces all of this wording.
 
-[Original PDF293/printed259; R1558, R1559; `RULES.json`.]
+[Original PDF293/printed259, PDF294/printed260; R1558, R1559; `RULES.json`.]
 
-In the outward-cause example, the ascendant lord is strong in essential dignity, swift and in a good house. The subsequent square or opposition of Saturn or Mars retains two exclusions: the afflicting planet is neither the sixth lord nor the Moon's dispositor. Lilly distinguishes being unwell from being perfectly sick, then directs attention to the afflictor's occupied or ruled house. The second-house example additionally requires no inward cause: application concerns current money want, whereas separation concerns a recent loss. The larger harm assigned to opposition belongs to this local example and is not a universal aspect weight.
+In the outward-cause example, the ascendant lord is strong in essential dignity, swift and in a good house. The subsequent square or opposition of Saturn or Mars retains exclusions applying to both planets: **neither Saturn nor Mars is the sixth lord or the Moon's dispositor**. Lilly distinguishes being unwell from being perfectly sick, then directs attention to the afflictor's occupied or ruled house. The second-house example additionally requires no inward cause: application concerns current money want, whereas separation concerns a recent loss. The larger harm assigned to opposition belongs to this local example and is not a universal aspect weight.
 
 [Original PDF293/printed259, PDF294/printed260; R1560, R1561, R1562, R1563, R1564, R1565, R1566; `RULES.json`.]
 
@@ -131,7 +131,7 @@ The remaining mind/body clauses preserve their own combinations rather than harm
 
 ## 5. Natal, mundane and lunar references remain distinct
 
-The natal callback begins **if the nativity can be procured**. It considers natal degrees and eclipses or great conjunctions near the sickness, without fixing the degree-versus-sign match or numerical nearness threshold. The following danger statement also mentions the eighth sign of the **yearly revolution of the World** falling on natal angles, particularly the ascendant. That reference frame must not be relabelled as the natal or horary eighth house. A separate sign callback allows first sickness **or** the patient's demand, without stating the later critical-day hierarchy in that sentence.
+The natal callback begins **if the nativity can be procured**. It considers natal degrees and eclipses or great conjunctions near the sickness, without fixing the degree-versus-sign match or numerical nearness threshold. The following danger statement also mentions the sign of the eighth house of the **yearly revolution of the World** falling on natal angles, particularly the ascendant. That reference frame must not be relabelled as the natal or horary eighth house. A separate sign callback allows first sickness **or** the patient's demand, without stating the later critical-day hierarchy in that sentence.
 
 [Original PDF299/printed265, PDF300/printed266; R1628, R1629, R1630; `RULES.json`.]
 
@@ -193,7 +193,7 @@ A later ingress rule says the ascendant lord leaving the sign occupied at questi
 
 [Original PDF302/printed268; R1647, R1648; `RULES.json`, `REFERENCE_TABLES.json`, `UNRESOLVED.json`.]
 
-The earlier timing passage on printed249 also left a choice among months, weeks and days to the disease's nature. That retained callback and the new recovery discussion support keeping the selection context explicit. They do not establish a new combined numerical algorithm. The final promise to give a figure or two refers forward; no such figures occur inside this admitted continuation, so the promise adds neither two charts nor two completed cases to the present inventory.
+The earlier timing passage on printed249 selects among months, weeks and days according to **the sign's nature and quality**. The new recovery discussion on printed267 separately considers **the disease's quality or nature and the practitioner's discretion**. These distinct selectors support keeping the selection context explicit; they do not establish a new combined numerical algorithm. The final promise to give a figure or two refers forward; no such figures occur inside this admitted continuation, so the promise adds neither two charts nor two completed cases to the present inventory.
 
 [Original PDF283/printed249, PDF301/printed267, PDF302/printed268; R1641, R1643, R1646, R1649; `RULES.json`, `RETAINED_SOURCE_EXCERPTS.json`, `COUNTS.json`.]
 

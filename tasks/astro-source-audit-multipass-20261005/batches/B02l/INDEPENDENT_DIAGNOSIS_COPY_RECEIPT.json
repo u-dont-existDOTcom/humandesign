@@ -1,0 +1,219 @@
+{
+  "source_freeze_sha256": "25bf2ad16a7a0038d58f6584346a253693b3af0bd666a06ba58a232b99dc734c",
+  "diagnostic_files_verified": 30,
+  "diagnostic_files_copied": 24,
+  "freeze_also_copied": true,
+  "files": [
+    {
+      "path": "INITIAL_DIAGNOSIS.md",
+      "bytes": 20049,
+      "sha256": "9f52c9fa32cb9a472d4533005f84977509b197d72684b6bc0e2de126d6343cc4",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "DIAGNOSTIC_FINDINGS.json",
+      "bytes": 10821,
+      "sha256": "d2e7df671b54f91923d2a2c58c3b16a8d898bda9cb64db6bcb314ba8f395f7ee",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "SOURCE_RECORD_COVERAGE.json",
+      "bytes": 282360,
+      "sha256": "e799c50d3df72af017e70abda32e21dde897f827b6bc3632d0fa939f4a69a013",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "ALL_CLAIM_RESULTS.json",
+      "bytes": 119967,
+      "sha256": "217159cfd44b95e43fcdcc7200155d2ed73f4cdd43193e683f558eac301e8db0",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "EXPOSURE_AND_METHOD.json",
+      "bytes": 6991,
+      "sha256": "189e875b49fdd6ff0944e0a98567b94214cc64ed3c398373048c515f538247dc",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "CANDIDATE_INTEGRITY_CHECK.json",
+      "bytes": 4915,
+      "sha256": "8ff2dc02936ff59310227493d057155058515656e50f82b18a91c791ea7c5b0b",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "CLAIM_TEXT_BINDING_CHECK.json",
+      "bytes": 11688,
+      "sha256": "a94b59d460dc52c34bf894737266c0cac063706ecf4217c591803c7a166a261d",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "FIELD_CONSISTENCY_CHECK.json",
+      "bytes": 66,
+      "sha256": "23d94ff56810d6da660a24646b3b81c2cbc2cf09aa391018f08fa310520f5084",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "INDEPENDENT_SOURCE_WINDOW_CHECK.json",
+      "bytes": 3253,
+      "sha256": "6d00011917b62b2482e7d0b9043225195c1567b87e267c49fd54aad4d94d15b7",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "INDEPENDENT_INVENTORY_CHECK.json",
+      "bytes": 3150,
+      "sha256": "3d518d90d26b86f99df67a70ba8db9ee8c3af32df442fbacd3a21c5cac5fefcb",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "HELPER_BEHAVIOR_CHECKS.json",
+      "bytes": 10277,
+      "sha256": "85b14d55ccdb31cb661ab27e7ca56a1e1681167d05eac2e0544b1dbd9ca1be3a",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "REPORT_RESIDUAL_SCAN.txt",
+      "bytes": 1230,
+      "sha256": "3b78dfcce820e2aac0b09f509808ae6eca1782f0f5e2c43a69213b9aee7e5654",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "build_initial_diagnosis.py",
+      "bytes": 73096,
+      "sha256": "43408906feafa6e8c6278bc993188f22c21cbc6b12968c791044911197021177",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_test_copy/INDEPENDENT_TEST_RUN.log",
+      "bytes": 2595,
+      "sha256": "da0308494c45af0e072e0fb47d35cc42daf36777a65d10740473846df9ead409",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_test_copy/TEST_RUN_SUMMARY.json",
+      "bytes": 2921,
+      "sha256": "580c39182365507ac61029dec2bce33839a8cdd957b9fa415b23a72fa2f234d3",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_test_copy/lilly_dariot_reference.py",
+      "bytes": 4758,
+      "sha256": "20afef2dbfdd1b28abf348f7bcab23d6cbfe4d669aa0d045bc08af5fd2d32491",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_test_copy/test_lilly_dariot.py",
+      "bytes": 8042,
+      "sha256": "6af357dc897a32176fc6c10a7e95c360d0695e6170992ea617580b0a3d3f53b4",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_test_copy/run_verification.py",
+      "bytes": 1428,
+      "sha256": "55ee64001807f60ff557148434013c5ace6878c8ba313f5d7f982b0566bd03da",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_pdf294_principal_number.png",
+      "bytes": 318340,
+      "sha256": "2b28cfb0ad6c1844deefffc597c51e84f3260324fbe3fc6d364ed571a1923647",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_pdf295_vitious_reading.png",
+      "bytes": 893608,
+      "sha256": "e2d2a1179a288f228a91445d1a4216e0b09850a02468cfb7089244c7ba08c205",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_pdf295_youth_pronoun.png",
+      "bytes": 751123,
+      "sha256": "d8e39284db296e2b63ea7d228ef834d1931fc34ce3e38b9e665b6852d5819cac",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_pdf295_usually_errata_body.png",
+      "bytes": 457679,
+      "sha256": "3c9bafb8384a1a47633e3dc69daf2b67398c0e79d787e3834e3790a2d4602d47",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_pdf296_returning_errata_body.png",
+      "bytes": 1029381,
+      "sha256": "b36b191d069ca531f0ee916757867feab698245b27f586ca2a5e8cc03e86f76d",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_pdf296_returning_word.png",
+      "bytes": 46229,
+      "sha256": "356cc309ea52359b4b8c537abe17cb94aecdc62c66014227c956c7f7e2be23e0",
+      "source_bytes_verified": true,
+      "copied_to_packet": true
+    },
+    {
+      "path": "diagnostic_candidate_crops_contact_1.png",
+      "bytes": 1439546,
+      "sha256": "333b363eaae3e179136cdf1a061d0cb7beac4c0bad7f85188cdae31fc0a967e9",
+      "source_bytes_verified": true,
+      "copied_to_packet": false
+    },
+    {
+      "path": "diagnostic_candidate_crops_contact_2.png",
+      "bytes": 1963514,
+      "sha256": "aa36880b8349a847b2ab7f640249f1232b174574261b25248f33013b95d0d853",
+      "source_bytes_verified": true,
+      "copied_to_packet": false
+    },
+    {
+      "path": "diagnostic_candidate_crops_contact_3.png",
+      "bytes": 1572181,
+      "sha256": "166f6e4b4b31bc5e812a93ad630a1c854041fa027a408f14efbc224185de2979",
+      "source_bytes_verified": true,
+      "copied_to_packet": false
+    },
+    {
+      "path": "pdf283_earlier_context.png",
+      "bytes": 2307531,
+      "sha256": "6384dc3a305f5fbdeac1b9c1e663faefc4690e55ca031eddc647e597d785fd12",
+      "source_bytes_verified": true,
+      "copied_to_packet": false
+    },
+    {
+      "path": "pdf277_earlier_context.png",
+      "bytes": 2349891,
+      "sha256": "2df21d501f89d583824d17148f4716ba0898a98a905d7359054594a53532e263",
+      "source_bytes_verified": true,
+      "copied_to_packet": false
+    },
+    {
+      "path": "pdf888_errata_original.png",
+      "bytes": 2344888,
+      "sha256": "2ee76560dce45a19e2314e68a1d0e65f0d632ee9ed9d991b5ef012815d9c8d19",
+      "source_bytes_verified": true,
+      "copied_to_packet": false
+    }
+  ],
+  "omission_policy": "Six redundant contact sheets or full-page PNG renders are not bundled. Their hashes are preserved here; all six correction crops and all substantive diagnosis, source coverage, claim results, code/probe/test evidence are bundled unchanged. The original source-window PDF contains the full callback and errata pages. This is not a claim that all 30 diagnostic files are bundled."
+}

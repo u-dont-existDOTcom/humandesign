@@ -1,0 +1,74 @@
+{
+  "batch": "B02l",
+  "stage": "SOURCE_AND_REPORT_ACCEPTED; PUBLICATION_AND_DELIVERY_PENDING",
+  "accepted": true,
+  "decision": "PASS_WITH_EXPLICIT_LIMITS",
+  "candidate": "B02l-03",
+  "candidate_manifest_sha256": "73955bbb3cd06723d3553f119b61faef6c490547edd058638f369cb4e36a9183",
+  "candidate_files_verified": 47,
+  "source_first_units_checked": 92,
+  "source_records_checked": 101,
+  "report_units_checked": 42,
+  "report_table_rows_checked": 25,
+  "initial_report_components_checked": 212,
+  "initial_whole_report_missed_claim_scan": true,
+  "all_final_report_texts_uniquely_bound": true,
+  "all_report_evidence_files_available_and_manifest_bound": 25,
+  "unreported_omitted_admitted_source_units": 0,
+  "remaining_required_corrections": [],
+  "rules_sha256": "7f95bfd2e73d8c3c6f5ababdd12ee6e04b45fae314b35323ae50f905899c966c",
+  "report_sha256": "23d04a8daacb455ecb4d1b3eacf38f6c1f02c0215b27d6ad3c69824040133e1d",
+  "claim_ledger_sha256": "4d051d0216cd4c6291b3f186df63168151762753c7a781ab87ee37cad82b0fa8",
+  "helper_sha256": "20afef2dbfdd1b28abf348f7bcab23d6cbfe4d669aa0d045bc08af5fd2d32491",
+  "test_count": 20,
+  "test_summary_sha256": "22e4b1167e7dae1fbffa6806e22b256813bf8fa29d2d287a83cb21e5bbc5b606",
+  "review_cycles": {
+    "initial_exhaustive_passes": 1,
+    "changed_item_rounds_used": 2,
+    "changed_item_rounds_limit": 2,
+    "round1_scope": "R1560 and five changed report units; new C42 metadata binding. All six initial source/report findings resolved.",
+    "round2_scope": "C42 evidence-file availability only; existing envelope and stored task-start receipt now included."
+  },
+  "initial_findings_resolved": [
+    "IF-01",
+    "IF-02",
+    "IF-03",
+    "IF-04",
+    "IF-05",
+    "IF-06",
+    "MC-01"
+  ],
+  "later_reference_finding_resolved": [
+    "RR1-01"
+  ],
+  "evaluator_self_corrections_preserved": [
+    "SC-01: vitious, not viscous",
+    "SC-02: she longs after, not he"
+  ],
+  "nonunique_interpretation_preserved": "IC-01: fiery-sign context inherited into Venus/Mars continuation; no universal quantifier, transferred one-day duration, or physical conjunction inferred.",
+  "root_adjudication": "Root read the full original span before compilation, inspected the complete frozen diagnosis, directly rechecked the original affected pages/crops, applied bounded source-supported amendments, and verified final repaired bindings. Diagnostic agreement alone is not the source of truth.",
+  "frozen_reader_and_prior_review_files_unchanged": true,
+  "review_gate_failure_observed": false,
+  "independence": {
+    "source_first_fresh_context": true,
+    "same_model_family": true,
+    "model_revision_and_sampling_unexposed": true,
+    "producer_narratives_excluded_before_initial_diagnosis": true,
+    "root_or_other_reader_internal_reading_chronology_not_independently_proved": true,
+    "cross_family_expert_clinical_or_ivv_claim": false
+  },
+  "review_limits": [
+    "Historical source interpretation and bounded helper behavior only; no predictive or clinical validity evaluated.",
+    "Original Lilly English presentation, not an independent original Dariot edition or all-edition collation.",
+    "Retained Ptolemy total checked as numeric index continuity, not a new Ptolemy source audit.",
+    "36 source/implementation/evidence limits remain explicit; six source-resolved entries settle only their specific readings.",
+    "Helper/test repetition adds no distinct test identities; source-data integrity is not predictive accuracy."
+  ],
+  "source_window_comparisons_carried_forward": 14,
+  "canonical_distinct_tests": 20,
+  "manual_diagnostic_probes_not_added_to_test_count": 15,
+  "parent_status": "OPEN",
+  "whole_XLIV_complete": false,
+  "clinical_or_predictive_validation": false,
+  "publication_archive_delivery_evidence": "Pending separate actual receipts; this acceptance alone does not establish those operations."
+}

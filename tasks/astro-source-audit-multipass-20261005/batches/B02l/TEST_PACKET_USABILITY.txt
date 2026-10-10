@@ -1,0 +1,29 @@
+=== Extracted archive hash verification ===
+No separate checker file; the builder verified every extracted payload hash.
+
+=== Extracted standalone suite ===
+test_arcsecond_precision_at_last_longitude (test_lilly_dariot.GeometryTests.test_arcsecond_precision_at_last_longitude) ... ok
+test_chronic_course_is_outside_this_rule (test_lilly_dariot.GeometryTests.test_chronic_course_is_outside_this_rule) ... ok
+test_invalid_longitude_or_state_is_rejected (test_lilly_dariot.GeometryTests.test_invalid_longitude_or_state_is_rejected) ... ok
+test_missing_longitude_is_not_zero (test_lilly_dariot.GeometryTests.test_missing_longitude_is_not_zero) ... ok
+test_targets_cross_zodiac_origin (test_lilly_dariot.GeometryTests.test_targets_cross_zodiac_origin) ... ok
+test_targets_without_wrap (test_lilly_dariot.GeometryTests.test_targets_without_wrap) ... ok
+test_unknown_course_does_not_inherit_acute (test_lilly_dariot.GeometryTests.test_unknown_course_does_not_inherit_acute) ... ok
+test_unknown_origin_does_not_emit_targets (test_lilly_dariot.GeometryTests.test_unknown_origin_does_not_emit_targets) ... ok
+test_bed_time_precedes_available_physician_time (test_lilly_dariot.OriginTests.test_bed_time_precedes_available_physician_time) ... ok
+test_inconsistent_time_evidence_is_rejected (test_lilly_dariot.OriginTests.test_inconsistent_time_evidence_is_rejected) ... ok
+test_unavailable_and_unknown_fallback_remain_distinct (test_lilly_dariot.OriginTests.test_unavailable_and_unknown_fallback_remain_distinct) ... ok
+test_unavailable_bed_allows_physician_request (test_lilly_dariot.OriginTests.test_unavailable_bed_allows_physician_request) ... ok
+test_unknown_bed_does_not_authorize_fallback (test_lilly_dariot.OriginTests.test_unknown_bed_does_not_authorize_fallback) ... ok
+test_full_declared_span_and_section_links (test_lilly_dariot.SourceDataTests.test_full_declared_span_and_section_links) ... ok
+test_issue_and_reference_link_integrity (test_lilly_dariot.SourceDataTests.test_issue_and_reference_link_integrity) ... ok
+test_record_continuity_and_source_fields (test_lilly_dariot.SourceDataTests.test_record_continuity_and_source_fields) ... ok
+test_retained_index_and_unfinished_boundary (test_lilly_dariot.SourceDataTests.test_retained_index_and_unfinished_boundary) ... ok
+test_conflicting_dimensions_do_not_select_a_unit (test_lilly_dariot.TimingTests.test_conflicting_dimensions_do_not_select_a_unit) ... ok
+test_unknown_dimension_stays_missing (test_lilly_dariot.TimingTests.test_unknown_dimension_stays_missing) ... ok
+test_unrecognized_categories_are_not_imputed (test_lilly_dariot.TimingTests.test_unrecognized_categories_are_not_imputed) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.008s
+
+OK

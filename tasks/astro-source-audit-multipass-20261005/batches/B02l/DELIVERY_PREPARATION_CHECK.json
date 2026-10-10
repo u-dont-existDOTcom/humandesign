@@ -1,0 +1,50 @@
+{
+  "fixture_only": true,
+  "actual_remote_calls": 0,
+  "actual_delivery_performed": false,
+  "original_preparer_sha256": "b851a42fd41d51753375dd8ea08cdcd9a8fe9277dfabfa90a0212e7de06efa40",
+  "original_preparer_unchanged": true,
+  "generated_source_compiles": true,
+  "git_blob_delimiter_is_one_nul_byte": true,
+  "lf_crlf_escape_values_correct": true,
+  "human_whitespace_design_regex_correct": true,
+  "fixture_results": [
+    {
+      "case": "lf",
+      "insertion_preserves_prior_bytes": true,
+      "repeat_is_idempotent": true
+    },
+    {
+      "case": "crlf",
+      "insertion_preserves_prior_bytes": true,
+      "repeat_is_idempotent": true
+    },
+    {
+      "case": "no_final_newline",
+      "insertion_preserves_prior_bytes": true,
+      "repeat_is_idempotent": true
+    },
+    {
+      "case": "suffix_preservation",
+      "insertion_preserves_prior_bytes": true
+    },
+    {
+      "case": "nonidentical_download",
+      "nonidentical_file_preserved": true,
+      "index_unchanged": true,
+      "completed_receipt_emitted": false
+    },
+    {
+      "case": "nonidentical_handoff",
+      "nonidentical_file_preserved": true,
+      "index_unchanged": true,
+      "completed_receipt_emitted": false
+    },
+    {
+      "case": "conflicting_work_row",
+      "existing_index_preserved": true,
+      "completed_receipt_emitted": false
+    }
+  ],
+  "actual_issues_found": []
+}

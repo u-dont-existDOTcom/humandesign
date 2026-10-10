@@ -1,0 +1,132 @@
+{
+  "batch": "B02l",
+  "initial_exhaustive_rounds_completed": 1,
+  "initial_source_units_checked": 92,
+  "initial_records_checked": 101,
+  "initial_report_units_checked": 41,
+  "initial_component_checks": 212,
+  "initial_table_rows_checked": 25,
+  "initial_whole_report_missed_claim_scan": true,
+  "initial_required_corrections": [
+    {
+      "finding_id": "IF-01",
+      "target": "R1560/A011",
+      "pages": [
+        294
+      ],
+      "source_anchor": "or from the principall Significators in the Figure",
+      "action": "Restore plural in canonical proposition, conditions and uncertainty; derived duplicate fields rebuilt. Repeated-from grammatical uncertainty retained; no all-of-group or vote rule added."
+    },
+    {
+      "finding_id": "IF-02",
+      "target": "C10",
+      "pages": [
+        294
+      ],
+      "source_anchor": "and neither of them be Lords of the sixt, or Dispositors of the Moon",
+      "action": "Apply both role exclusions to both Saturn and Mars. R1562 unchanged."
+    },
+    {
+      "finding_id": "IF-03",
+      "target": "C35",
+      "pages": [
+        283,
+        301
+      ],
+      "source_anchor": "according to the nature and quality of the Signe",
+      "action": "Separate the earlier sign-quality selector from later disease-quality/discretion. Retained R1438 unchanged."
+    },
+    {
+      "finding_id": "IF-04",
+      "target": "C09",
+      "pages": [
+        293,
+        294
+      ],
+      "source_anchor": "any Planet may in / this case be malignant, if he be Lord of the eighth, twelfth or sixt",
+      "action": "Add continuation PDF294/printed260 to point-of-use citation and ledger. Meaning and R1559 unchanged."
+    },
+    {
+      "finding_id": "IF-05",
+      "target": "C24",
+      "pages": [
+        300
+      ],
+      "source_anchor": "the Signe of the eighth House of the yearly revolution of the World",
+      "action": "Restore sign-of-house relationship, without claiming the old text explicitly named Scorpio. R1629 unchanged."
+    },
+    {
+      "finding_id": "IF-06",
+      "target": "C08",
+      "pages": [
+        293
+      ],
+      "source_anchor": "they were not sick, or that no sicknesse would succeed upon this Quere, but that their mistrust",
+      "action": "Connect transient distemper to explanation of suspicion accompanying alternative no-present/no-ensuing sickness judgments. R1557 and opening-negative uncertainty unchanged."
+    },
+    {
+      "finding_id": "MC-01",
+      "target": "C42",
+      "pages": [
+        292,
+        302
+      ],
+      "source_anchor": "DARIOT Abridged / upper bridge before Hermes",
+      "action": "Append metadata item binding existing title/byline, keeping C01-C41 stable."
+    }
+  ],
+  "changed_item_rounds_started": 2,
+  "changed_item_rounds_completed": 2,
+  "changed_item_rounds_max": 2,
+  "stage": "SOURCE_AND_REPORT_ACCEPTED",
+  "method": "Same-family fresh-context source-first diagnosis, followed by root adjudication and bounded changed-item recheck.",
+  "initial_diagnosis_preserved": true,
+  "original_candidate_preserved_in": "verification_history/candidate01",
+  "evaluator_self_corrections_retained": [
+    "SC-01",
+    "SC-02"
+  ],
+  "nonunique_interpretation_retained": [
+    "IC-01"
+  ],
+  "canonical_suite_identities": 20,
+  "suite_repeats_add_distinct_tests": 0,
+  "round01_outcome": {
+    "six_source_report_corrections_resolved": true,
+    "metadata_text_binding_resolved": true,
+    "remaining": [
+      "RR1-01"
+    ]
+  },
+  "round02_repair": {
+    "finding_id": "RR1-01",
+    "root_adjudication": "Actual TASK_ENVELOPE exists in canonical batch but was missing from review-only candidate02. Include it; also cite and include existing BOOTSTRAP_RECEIPT with explicit task_start for byline date.",
+    "round": 2,
+    "ledger_change": "C42.evidence_files only",
+    "candidate_added_files": [
+      "TASK_ENVELOPE.json",
+      "BOOTSTRAP_RECEIPT.json"
+    ],
+    "report_bytes_unchanged": true,
+    "all_101_records_unchanged": true,
+    "all_42_claim_texts_unchanged": true,
+    "helper_and_tested_code_data_unchanged": true,
+    "additional_suite_execution_needed": false,
+    "distinct_tests": 20,
+    "remaining_round_budget": 0,
+    "candidate_manifest_sha256": "73955bbb3cd06723d3553f119b61faef6c490547edd058638f369cb4e36a9183"
+  },
+  "remaining_required_corrections": [],
+  "final_report_units": 42,
+  "final_source_records": 101,
+  "final_source_units": 92,
+  "final_table_rows": 25,
+  "root_acceptance_file": "ACCEPTANCE.json",
+  "source_repair_count": 1,
+  "report_repair_count": 5,
+  "metadata_binding_and_reference_repairs": [
+    "MC-01",
+    "RR1-01"
+  ],
+  "round02_freeze_sha256": "58a9cfe1db940f7de5b18f04c8a3b527e909b76a511dcff1ee40b125a7de7b52"
+}
