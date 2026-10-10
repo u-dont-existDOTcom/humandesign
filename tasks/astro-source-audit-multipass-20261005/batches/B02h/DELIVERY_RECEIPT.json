@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch": "B02h",
+  "status": "DELIVERED_AND_VERIFIED",
+  "distribution_commit": "f85355cd0a3d49c02a1b96db9276115546787e97",
+  "destination_resolved_by": "xdg-user-dir DOWNLOAD",
+  "files": [
+    {
+      "filename": "Astrology-Lilly-Relatives-Reports-20261010.md",
+      "bytes": 17852,
+      "sha256": "41f54c3158a15542334a55252279e6df10a0259be9903058e0861f9f1822d3f4",
+      "http_status": 200,
+      "action": "CREATED_EXCLUSIVELY_FROM_PUBLISHED_COMMIT",
+      "owner_destination": "OS-designated Downloads",
+      "final_disk_readback_verified": true
+    },
+    {
+      "filename": "Astrology-Lilly-Relatives-Reports-Records-20261010.zip",
+      "bytes": 238779,
+      "sha256": "faa252e0e4cec78e35ff521637db7f5a0245877d8da4ae9fefdeb1ec814d3b06",
+      "http_status": 200,
+      "action": "CREATED_EXCLUSIVELY_FROM_PUBLISHED_COMMIT",
+      "owner_destination": "OS-designated Downloads",
+      "final_disk_readback_verified": true
+    },
+    {
+      "filename": "Astrology-Lilly-Handoff-B02h-20261010.md",
+      "bytes": 4136,
+      "sha256": "02fa70940b339d87a0396cef1e907e2b75ee45bb842c944cff726949b7c256a0",
+      "http_status": 200,
+      "action": "CREATED_EXCLUSIVELY_FROM_PUBLISHED_COMMIT",
+      "owner_destination": "OS-designated Downloads",
+      "final_disk_readback_verified": true
+    }
+  ],
+  "existing_different_files_overwritten": false,
+  "transport": "Connected owner computer process; HTTPS GET from exact published distribution commit, exclusive creation and final disk byte/hash readback.",
+  "process_completed": true,
+  "process_exit_code": 0,
+  "privacy": "Private device identifier and home-directory path omitted from repository receipt.",
+  "source_core_commit": "954b036eb935c3f24c83bd044679b2a0324ee22d",
+  "packet_usability": "PACKET_USABILITY.json",
+  "source_data_validation": "TEST_RUN_SUMMARY.json"
+}

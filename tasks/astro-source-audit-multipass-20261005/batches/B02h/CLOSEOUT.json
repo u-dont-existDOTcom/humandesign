@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "batch": "B02h",
+  "status": "COMPLETE_SOURCE_REVIEW_TESTS_PUBLICATION_AND_OWNER_DELIVERY",
+  "source_core_commit": "954b036eb935c3f24c83bd044679b2a0324ee22d",
+  "distribution_commit": "f85355cd0a3d49c02a1b96db9276115546787e97",
+  "source_manifest": "MANIFEST.json",
+  "source_publication": "SOURCE_PUBLICATION_RECEIPT.json",
+  "distribution_publication": "DISTRIBUTION_RECEIPT.json",
+  "owner_delivery": "DELIVERY_RECEIPT.json",
+  "packet_usability": "PACKET_USABILITY.json",
+  "review": "REVIEW_RECONCILIATION.json",
+  "source_records": {
+    "new": 112,
+    "general": 75,
+    "examples": 37,
+    "first": "R897",
+    "last": "R1008",
+    "lilly_cumulative": 1008,
+    "ptolemy_retained": 1066,
+    "combined": 2074
+  },
+  "tests": {
+    "distinct_focused": 115,
+    "new": 24,
+    "retained": 91,
+    "archive_usability_repeat": 24,
+    "repeat_counted_as_new": false
+  },
+  "source_span": {
+    "start": "Third-house heading and full preamble below divider on PDF221 / printed187",
+    "end": "End PDF235 / printed201",
+    "numbered_chapters": [
+      "XXIX",
+      "XXX",
+      "XXXI"
+    ],
+    "extraction_pages_read": 15,
+    "boundary_page_read_not_extracted": 236
+  },
+  "remaining_source_issues": 29,
+  "stop_admission": {
+    "parent_outcome": "OPEN source-complete multi-author audit",
+    "remaining_parent_gap": "Remaining Lilly source units and other-author passes, reconciliation, implementation and later predictive evaluation.",
+    "current_batch_requirement": "Read and extract the whole third-house block, verify and publish its source records, then deliver usable report/packet/handoff.",
+    "current_batch_satisfied": true,
+    "pause_authority": "Existing PASS_PLAN.json pause_contract permits completed source-sized batch boundaries; INTAKE_AND_PASS_PLAN.md specifies source-sized batches.",
+    "next_action": "Read PDF236 / printed202 fourth-house heading and entire preamble, then XXXII To find a thing hid or mislaid on that same page.",
+    "responsible_actor": "Continuing authorized source-audit worker",
+    "next_action_authorized": true,
+    "next_action_executable_when_continuation_resumes": true,
+    "justified_stopping_boundary": "Owner-authorized completed source-sized batch, with exact first unfinished passage saved and artifacts delivered.",
+    "finalization_admitted": true,
+    "background_execution_claimed": false
+  },
+  "preservation": {
+    "prior_batches_and_dated_checkpoints_changed": false,
+    "protected_current_payloads_replayed": false,
+    "participant_inputs_or_fitted_models_or_prediction_freezes_changed": false,
+    "runtime_promoted": false,
+    "empirical_predictive_accuracy_established": false
+  },
+  "stage_precedence": "ACTIVE_CONTRACT and WORKING_CHECKPOINT inside the immutable source core record an earlier stage. This closeout records the later verified completion without changing that source snapshot.",
+  "final_receipt_publication": "This closeout and the two final transport receipts are published together in a subsequent commit; that commit cannot recursively name itself."
+}
