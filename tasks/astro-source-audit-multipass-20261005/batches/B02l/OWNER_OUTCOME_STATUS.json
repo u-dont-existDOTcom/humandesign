@@ -30,14 +30,16 @@
     {
       "outcome": "Preserve earlier sources, states, personal inputs and models",
       "relation": "verifies",
-      "current_evidence": "PACKAGE_PRESERVATION_CHECK verifies 1746 protected Git files and all 11 prior Lilly index entries at the actual fetched accepted integration fe28256bdfe8467250664414450c823218a6cf9a.",
-      "gap": "Repeat the comparison at the delivery-receipt integration checkpoint."
+      "current_evidence": "FINAL_PRESERVATION_CHECK verifies 1746 protected Git files and all 11 prior Lilly index entries at the actual fetched source-and-delivery integration b9a6ad7e7fe6f7be9b1fb8fa032ebab824de9480; no protected mismatches or outside-allowlist changes.",
+      "gap": "",
+      "status": "SATISFIED_FOR_ADMITTED_BATCH"
     },
     {
       "outcome": "Durable publication, usable delivery and exact continuation",
       "relation": "directly_satisfies_batch_boundary",
-      "current_evidence": "Accepted source/report/package published and integrated at fe28256bdfe8467250664414450c823218a6cf9a; all 97 updated files read back. Actual archive extraction verified 141 payload hashes and repeated the same 20 tests. Four fetched published parts reconstruct the unchanged tested ZIP. Actual owner process exited 0 after installing and reading back all three companions, the stable work note and its one index row.",
-      "gap": "Publish these actual delivery receipts and verify their integrated checkpoint."
+      "current_evidence": "Accepted source/report/package integrated at fe28256bdfe8467250664414450c823218a6cf9a with 97 exact files read back; actual delivery receipts integrated at b9a6ad7e7fe6f7be9b1fb8fa032ebab824de9480 with another 19 exact files read back. Actual archive extraction verified 141 payload hashes and repeated the same 20 tests. Four verified published parts reconstruct the unchanged ZIP. The actual owner process exited 0 after installing and reading back all three companions, the stable work note and exactly one index row, preserving prior index bytes.",
+      "gap": "",
+      "status": "SATISFIED_FOR_ADMITTED_BATCH"
     },
     {
       "outcome": "Remaining Lilly and multi-author corpus audit",
@@ -55,7 +57,9 @@
   ],
   "additional_mandatory_requirements": [],
   "assurance_lane": "source-research with bounded independent source/claim check and exact research-artifact publication; no application runtime changes",
-  "proposed_terminal_state": "BATCH_COMPLETE_PARENT_OPEN only after existing authorized completed-batch pause boundary is evidenced",
+  "proposed_terminal_state": "BATCH_COMPLETE_PARENT_OPEN admitted by the retained PASS_PLAN completed saved-batch pause authority; all admitted batch outcomes evidenced.",
   "contract_comparison": "CONTRACT_VALID: current batch contributes to open source-audit parent and preserves unaddressed outcomes.",
-  "actual_delivery_complete": true
+  "actual_delivery_complete": true,
+  "terminal_state": "BATCH_COMPLETE_PARENT_OPEN",
+  "source_and_delivery_checkpoint": "b9a6ad7e7fe6f7be9b1fb8fa032ebab824de9480"
 }

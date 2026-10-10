@@ -107,13 +107,25 @@
     "independent": "Fresh-context full source span, source-first freeze then frozen-candidate/claim check; no list_agents or producer summaries"
   },
   "test_lane": "Source-data and bounded reference arithmetic; no runtime/model edits. Run new focused suite once at source checkpoint and actual extracted-packet usability once. Reuse dependencies only if needed; no full application or predictive-evaluation claim.",
-  "phase": "OWNER_DELIVERED_RECEIPT_PUBLICATION",
+  "phase": "BATCH_COMPLETE_PARENT_OPEN",
   "stop_admission": {
     "parent_outcome": "OPEN",
     "pause_authority": "Existing PASS_PLAN.json pause_contract",
     "current_completion_requirement": "Complete the admitted Dariot/Lilly block, verify, publish and deliver the report/packet/handoff.",
-    "finalization_admitted": false,
-    "next_action": "Publish the actual delivery receipts, fetch the integrated checkpoint and complete its preservation comparison; then admit the existing saved-batch pause."
+    "finalization_admitted": true,
+    "next_action": "At the next continuation resume PDF302 / printed268 below the divider at Hermes, including its complete opening paragraph; next record R1651. The literal final response and bound output receipts are included with this completed checkpoint.",
+    "admitted_boundary": "Existing PASS_PLAN completed saved batch; complete admitted Dariot/Lilly span, accepted source/report, tested packet, exact published and owner-delivered bytes. Parent and Chapter XLIV remain OPEN.",
+    "completion_evidence": [
+      "ACCEPTANCE.json",
+      "PACKET_USABILITY.json",
+      "PACKAGE_PUBLICATION_RECEIPT.json",
+      "ARCHIVE_PUBLICATION_READBACK.json",
+      "DELIVERY_RECEIPT.json",
+      "LOCAL_HANDOFF_RECEIPT.json",
+      "DELIVERY_PUBLICATION_RECEIPT.json",
+      "FINAL_INTEGRATION_READBACK.json",
+      "FINAL_PRESERVATION_CHECK.json"
+    ]
   },
   "owner_gap": "Remaining Lilly chapters and wider multi-author audit. This batch contributes source extraction and conditional-reference checks; parent stays open.",
   "parent_authority": {
@@ -140,5 +152,6 @@
   "actual_delivery_receipts": [
     "DELIVERY_RECEIPT.json",
     "LOCAL_HANDOFF_RECEIPT.json"
-  ]
+  ],
+  "source_and_delivery_checkpoint": "b9a6ad7e7fe6f7be9b1fb8fa032ebab824de9480"
 }

@@ -1,0 +1,634 @@
+{
+  "schema_version": 1,
+  "receipts": [
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.bootstrap.live-root",
+      "obligation_id": "live-root-refetch",
+      "phase": "retrieval",
+      "destination": "current reasoning/execution turn",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "BOOTSTRAP_RECEIPT.json records the actual current-turn live default UDA root and index retrieval before substantive work. UDA af8d29833f9e1e03156c0df5487160aa8316c896 was compared with the local checkout; task-relevant root/index/pattern bytes were unchanged. Project authority and the actual B02k continuation were recovered.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.clock-cadence",
+      "obligation_id": "first-reading",
+      "phase": "retrieval",
+      "destination": "current reasoning/execution turn",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The visible message sent time2026-10-10T19:24:34+00:00 was used as the first time basis. No hidden-provider or prior-turn timestamp is substituted.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.instruction-activation",
+      "obligation_id": "open-index-every-task",
+      "phase": "retrieval",
+      "destination": "current reasoning/execution turn",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "Current live LESSON-INDEX was fetched and routed applicable source/provenance, whole-argument, independent-diagnosis, preservation, continuation, delivery and cross-account continuity patterns; LESSON_DISPOSITION records source hashes and enforcement evidence.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.instruction-activation",
+      "obligation_id": "resolve-covered-dependencies",
+      "phase": "retrieval",
+      "destination": "current reasoning/execution turn",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The task-time graph compiler selected32 rules with39 obligations; current canonical prose remained authoritative and unmapped relevant cross-account continuity was applied directly. The compiled contract records the exact selected dependency closure and task-envelope binding.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.active-contract.boundary-binding",
+      "obligation_id": "bind-obligation-to-destination",
+      "phase": "reasoning",
+      "destination": "active-lesson-contract",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "ACTIVE_CONTRACT.json and UDA_COMPILED_CONTRACT.json bind the source task, actor, phase, destination, required behavior, repair and evidence. Canonical prose was read. The graph checks binding, not semantic truth.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.continuation.open-outcome",
+      "obligation_id": "continue-open-authorized-work",
+      "phase": "reasoning",
+      "destination": "current task frontier",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The authorized source continuation was executed through extraction, source/claim diagnosis, focused verification, actual archive extraction, publication, exact readback and owner delivery. The original PASS_PLAN permits a completed saved batch pause while the parent stays OPEN.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.followup.owner-goal-rebind",
+      "obligation_id": "rebind-followup-to-owner-outcome",
+      "phase": "reasoning",
+      "destination": "follow-up task definition",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "OWNER_OUTCOME_STATUS.json classifies the parent OPEN and binds B02l to the remaining Lilly source audit. Reader, source-first evaluator and delivery-preparation tasks each directly contribute to that admitted batch, without replacing the source-complete corpus goal.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.followup.owner-goal-rebind",
+      "obligation_id": "classify-added-requirement-necessity",
+      "phase": "reasoning",
+      "destination": "follow-up acceptance criteria",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "No new mandatory requirement was added. The existing full-source, preservation, bounded diagnostic and delivery controls were applied; the small delivery-code fixture diagnosis was optional preparation, not a new blocking acceptance threshold.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.followup-derivation",
+      "obligation_id": "rebind-before-author-launch-accept",
+      "phase": "reasoning",
+      "destination": "current task decision",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The followups were scoped to the OPEN owner source-audit outcome, source fidelity, bounded reference behavior and usable delivery. Parent gaps and no-additional-mandatory-requirements disposition are preserved in OWNER_OUTCOME_STATUS and active contract.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.compaction.resume-reconciliation",
+      "obligation_id": "resume-reconciliation-at-boundary",
+      "phase": "pre-action",
+      "destination": "verified-resume-state",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "After compaction root reloaded operative UDA and current batch controls, inspected the actual repository and frozen artifacts, retained completed reading and tests, and continued the saved B02l frontier without redoing B02k.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.coordination",
+      "obligation_id": "choose-coordinated-route",
+      "phase": "pre-action",
+      "destination": "authorized execution boundary",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "An isolated owned branch and root-only canonical writer were used. Two private source segments and a fresh-context source-first evaluator were separated; publication ref mutations were serialized with expected-SHA nonforce leases. Equivalent established API and authorized device routes were selected without routine owner confirmation.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.followup-derivation",
+      "obligation_id": "revalidate-first-added-control",
+      "phase": "pre-action",
+      "destination": "authorized execution boundary",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "NOT_APPLICABLE",
+      "evidence": "No newly added mandatory control blocked or degraded an established owner-aligned path. The optional delivery fixture check did not become a prerequisite or substitute goal.",
+      "not_applicable_reason": "No newly added mandatory control blocked or degraded an established owner-aligned path. The optional delivery fixture check did not become a prerequisite or substitute goal.",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.followup-derivation",
+      "obligation_id": "actual-runnable-method",
+      "phase": "pre-action",
+      "destination": "authorized execution boundary",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "NOT_APPLICABLE",
+      "evidence": "No experimental participant, training, prediction or evaluation configuration was launched. The active operation is a finite source inventory and deterministic reference check; its exact source and scope are separately bound.",
+      "not_applicable_reason": "No experimental participant, training, prediction or evaluation configuration was launched. The active operation is a finite source inventory and deterministic reference check; its exact source and scope are separately bound.",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.operation-commitments",
+      "obligation_id": "keep-promised-operation-open",
+      "phase": "pre-action",
+      "destination": "operation-commitment-ledger",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "Original main-span and supplementary images,101 records, the report, all ledger units,20 focused tests, actual extracted payload and repeated suite, exact Git publication, three Downloads companions and stable local handoff all have actual evidence. Preparation or review assignment alone was not accepted as completion.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.operational-references",
+      "obligation_id": "plain-language-first",
+      "phase": "pre-action",
+      "destination": "owner-visible-message",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The literal final leads with the completed Dariot/Lilly source span, usable files and substantive findings. Source-record and publication identifiers are secondary locating metadata, with count semantics and evidence limits stated.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.outbound-links",
+      "obligation_id": "exact-current-destination",
+      "phase": "pre-action",
+      "destination": "owner-visible-message",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "All surfaced artifact paths were opened and byte-checked against DELIVERABLES_MANIFEST. Direct Markdown/handoff downloads and each of the four ZIP parts used exact-commit URLs returning HTTP200, with matching SHA256 and actual Git blob identity. The concatenated ZIP matched the original accepted whole-file hash and owner disk bytes; no single complete-ZIP remote Git blob is claimed. No unverified external web link is surfaced in the literal final.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.owner-input-continuation",
+      "obligation_id": "resume-after-input",
+      "phase": "pre-action",
+      "destination": "authorized execution boundary",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The owner asked to continue. Work resumed from the exact live B02k boundary and persisted through the authorized admitted B02l batch; no acknowledgment-only stop or repeated routine permission question occurred.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.owner-interaction",
+      "obligation_id": "minimize-owner-choice",
+      "phase": "pre-action",
+      "destination": "authorized execution boundary",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "Routine scope, isolated writing, source compilation, diagnosis reconciliation, bounded checks, Git transport and owner delivery were resolved using existing authority. No unnecessary execution-mode or repeat-permission choice was sent to the owner.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.owner-interaction",
+      "obligation_id": "consolidate-confirmations",
+      "phase": "pre-action",
+      "destination": "owner-visible-message",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "NOT_APPLICABLE",
+      "evidence": "No new owner confirmation or human-only permission action was required. Prior authority covered the same source, repository and owner delivery destinations; no failed route consumed that authority.",
+      "not_applicable_reason": "No new owner confirmation or human-only permission action was required. Prior authority covered the same source, repository and owner delivery destinations; no failed route consumed that authority.",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.target-recovery",
+      "obligation_id": "identity-and-topology-before-escalation",
+      "phase": "pre-action",
+      "destination": "owner-visible-message",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "NOT_APPLICABLE",
+      "evidence": "No target inaccessibility escalation or owner request to identify/reconnect a machine was made. The existing authorized device route and semantic Downloads/handoff destinations were successfully preflighted and used.",
+      "not_applicable_reason": "No target inaccessibility escalation or owner request to identify/reconnect a machine was made. The existing authorized device route and semantic Downloads/handoff destinations were successfully preflighted and used.",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.review.acceptance-floors",
+      "obligation_id": "acceptance-floors-at-boundary",
+      "phase": "pre-action",
+      "destination": "review-acceptance-decision",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The predeclared floor is no unreported omitted admitted source unit or unsupported delivered claim, with genuine textual limits explicit. Frozen original-source diagnosis and complete report/missed-claim scan were source-adjudicated. ACCEPTANCE and REVIEW_CYCLE_LEDGER retain item findings and corrections; reviewer agreement alone is not treated as truth.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.review.change-scope",
+      "obligation_id": "change-scope-at-boundary",
+      "phase": "pre-action",
+      "destination": "review-request",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "Candidate manifest, complete record/report-item hashes, original witness hashes and visible evaluator configuration were bound before diagnosis. Changed and dependency-affected items, if any, are listed with their disposition and scoped followup; unchanged passing items were carried only under those recorded bindings. Hidden provider model/sampling fields are not exposed and are not claimed mechanically proven.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.review.declared-authority",
+      "obligation_id": "declared-authority-at-boundary",
+      "phase": "pre-action",
+      "destination": "review-gate-authority",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "REVIEW_POLICY and the retained audit authority were not weakened. Review is diagnostic, source-adjudicated and bounded. No source omission is accepted merely because a reviewer agreed; no new predictive or comparative-model gate was added.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.review.failure-repair",
+      "obligation_id": "failure-repair-at-boundary",
+      "phase": "pre-action",
+      "destination": "repaired-review-gate",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "NOT_APPLICABLE",
+      "evidence": "No failure of the review gate requiring repair occurred. Source/content diagnoses, if any, were handled within the already-declared bounded process; that does not establish a failed gate.",
+      "not_applicable_reason": "No failure of the review gate requiring repair occurred. Source/content diagnoses, if any, were handled within the already-declared bounded process; that does not establish a failed gate.",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.review.false-failure",
+      "obligation_id": "false-failure-at-boundary",
+      "phase": "pre-action",
+      "destination": "review-scale-gate-design",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "NOT_APPLICABLE",
+      "evidence": "No automated classifier acceptance rate, mass noisy-reviewer statistical gate or claimed pilot false-positive estimate was designed. One exhaustive diagnostic reading was reconciled against the primary source under a fixed small repair budget; reviewer flags were not automatic truth or completion criteria.",
+      "not_applicable_reason": "No automated classifier acceptance rate, mass noisy-reviewer statistical gate or claimed pilot false-positive estimate was designed. One exhaustive diagnostic reading was reconciled against the primary source under a fixed small repair budget; reviewer flags were not automatic truth or completion criteria.",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.review.repair-bound",
+      "obligation_id": "repair-bound-at-boundary",
+      "phase": "pre-action",
+      "destination": "review-repair-plan",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The one-exhaustive/two-changed-item ceiling and stalled-item disposition were fixed in ACTIVE_CONTRACT and REVIEW_POLICY before candidate evaluation. Actual cycles remain within that bound; exhaustion is not invoked as proof of correctness.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.artifact-delivery",
+      "obligation_id": "usable-delivery-before-completion",
+      "phase": "handoff",
+      "destination": "owner-required artifact and companion materials",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The archive was actually extracted: all141 payload hashes and the separate manifest matched, and the same20-test suite passed. The two Markdown companions were fetched directly and the unchanged ZIP was reconstructed from four verified exact-commit Git parts; all three final files were installed in OS-resolved Téléchargements and read back; the local stable work note/index were also verified. Direct artifact links were checked against the published manifest.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.output-budget",
+      "obligation_id": "file-for-long-reusable-output",
+      "phase": "handoff",
+      "destination": "recipient-file-and-chat-summary",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The complete report and records/code/source/review material are delivered as files with a continuation companion; final chat is below8000characters and links all three actual artifacts.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.continuity.step-checkpoint",
+      "obligation_id": "save-completed-step",
+      "phase": "persistence",
+      "destination": "durable-task-checkpoint",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The source checkpoint46d56f2fce7e577197473102a75a7390db37e6dc was pushed and all80 files read back while diagnosis proceeded. Subsequent accepted source, report, review and delivery receipts were published. The current checkpoint records done, limits, branch, remaining work and exact Hermes resumption.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.review.cycle-escalation",
+      "obligation_id": "cycle-escalation-at-boundary",
+      "phase": "persistence",
+      "destination": "review-cycle-ledger",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "REVIEW_CYCLE_LEDGER preserves the actual initial diagnosis, item counts and IDs, any changed-item cycles and final dispositions. The ceiling was one exhaustive round and at most two changed-item repair rounds. No unbounded review loop or proxy accuracy claim was used.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.review.item-degradation",
+      "obligation_id": "item-degradation-at-boundary",
+      "phase": "persistence",
+      "destination": "review-accepted-output",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "NOT_APPLICABLE",
+      "evidence": "No review-budget exhaustion, stalled unresolved correction or withheld source item remains. Source ambiguities are qualified accepted documentary content, not hidden omitted units. ACCEPTANCE records zero remaining required corrections.",
+      "not_applicable_reason": "No review-budget exhaustion, stalled unresolved correction or withheld source item remains. Source ambiguities are qualified accepted documentary content, not hidden omitted units. ACCEPTANCE records zero remaining required corrections.",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.compaction.completion-closeout",
+      "obligation_id": "completion-closeout-at-boundary",
+      "phase": "final-delivery",
+      "destination": "durable-task-checkpoint",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "ACCEPTANCE.json, publication/integration readbacks, PACKET_USABILITY.json, DELIVERY_RECEIPT.json and LOCAL_HANDOFF_RECEIPT.json establish the completed admitted source batch. OWNER_OUTCOME_STATUS retains the source-complete parent and XLIV as OPEN. Lesson disposition is task-scoped, with no universal promotion claimed.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.continuity.turn-end-handoff",
+      "obligation_id": "save-turn-end-handoff",
+      "phase": "final-delivery",
+      "destination": "durable-task-checkpoint",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "CONTINUE_HANDOFF.md, the new dated B02l state and WORK_HANDOFF.md preserve original PDF302/printed268 at the Hermes heading, full opening, then PDF303 and R1651. Exact Git copy preceded local note delivery and one index row. No private supervisor state, account-bound scheduled check-in or background continuation was created; none needs recreation.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.clock-cadence",
+      "obligation_id": "two-read-cadence",
+      "phase": "final-delivery",
+      "destination": "owner-visible-final",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The visible start is retained across compaction; no root mid-task clock read occurred. The second reading was shell date -u immediately before this literal final-output assembly. CLOCK_RECEIPT records both supplied values and their exact difference.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.kernel.continuation",
+      "obligation_id": "execute-open-frontier",
+      "phase": "final-delivery",
+      "destination": "owner-visible-final",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "All admitted executable batch work is complete. Retained PASS_PLAN pause_contract SHA25604f1d246bd3c96dd03009ea6cc669f736be0c746112ef1a789404b0cc1050653 explicitly permits a completed saved batch boundary; the exact Hermes frontier and OPEN parent remain visible. No self-authored scope closes the source-complete audit.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.owner-outcome.child-parent-closure",
+      "obligation_id": "child-parent-closure-at-boundary",
+      "phase": "final-delivery",
+      "destination": "owner-visible-final",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "The literal final and dated state report completion only of B02l. XLIV, remaining Lilly and wider multi-author audit remain OPEN, with the owner-authorized completed-batch pause and exact next unit retained.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    },
+    {
+      "contract_sha256": "363bd22b910bcc04f9efb989dd99febde82bb4812c7cdc2c9a46f8b1a0c683a0",
+      "rule_id": "uda.owner-outcome.terminal-evidence",
+      "obligation_id": "terminal-evidence-at-boundary",
+      "phase": "final-delivery",
+      "destination": "owner-visible-final",
+      "payload_sha256": "0bd2e8eaa8370b90ea0c2fd6fed1138934336f3c0d7742267192c911579248fb",
+      "verdict": "PASS",
+      "evidence": "Fresh exact-candidate acceptance, source and report records, source/delivery checkpointb9a6ad7e7fe6f7be9b1fb8fa032ebab824de9480,1746 protected Git objects,11 unchanged prior index entries, actual archive execution and owner disk readback establish this batch boundary. No root outcome satisfaction, clinical validation or whole-book completion is claimed.",
+      "not_applicable_reason": "",
+      "actor": {
+        "id": "root",
+        "kind": "reasoning_assistant",
+        "relation": "SAME_AGENT"
+      },
+      "issued_at": "2026-10-10T21:26:12+00:00"
+    }
+  ]
+}

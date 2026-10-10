@@ -16,7 +16,7 @@ The unchanged tested ZIP was published as four ordered parts because one complet
 
 The actual owner-device process exited 0. It installed the Report, Records ZIP and Continue companions into OS-resolved **Téléchargements**, checking exact-commit HTTP responses, hashes and actual disk bytes. It also installed the stable `astrology-book-research.md` work note and added one matching index row, preserving all prior index bytes. `DELIVERY_RECEIPT.json` and `LOCAL_HANDOFF_RECEIPT.json` retain the actual result without private machine identifiers or home paths. The tool receipts were checked against the local published manifest and WORK_HANDOFF.md. Source/report/helper/test and the three delivered companions remain unchanged.
 
-Current remaining action: publish the actual delivery and final checkpoint receipts, fetch the integrated revision and compare the protected baseline. No owner delivery or research process remains running; no background continuation is promised.
+Actual delivery receipts are published and integrated at `b9a6ad7e7fe6f7be9b1fb8fa032ebab824de9480`. All 19 new or updated receipt/checkpoint files were fetched and compared with exact local bytes. The final integrated comparison again preserved 1,746 protected Git files and all 11 prior Lilly index entries, with no outside-allowlist change. This admitted batch is complete under the retained saved-batch pause authority. The literal final response and its bound output receipts are included with this completed checkpoint. No owner delivery or research process remains running; no background continuation is promised.
 
 ## Exact next source
 
