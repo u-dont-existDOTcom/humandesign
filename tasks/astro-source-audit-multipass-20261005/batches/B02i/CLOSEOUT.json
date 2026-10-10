@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "batch": "B02i",
+  "status": "COMPLETE_SOURCE_REVIEW_TESTS_PUBLICATION_AND_OWNER_DELIVERY",
+  "source_core_commit": "73bc36b2cf7553cb769f5d30489d19f8a5893c18",
+  "distribution_commit": "62af5428842e750caf737eb6a0acd8725fdab112",
+  "source_manifest": "MANIFEST.json",
+  "source_publication": "SOURCE_PUBLICATION_RECEIPT.json",
+  "distribution_publication": "DISTRIBUTION_RECEIPT.json",
+  "owner_delivery": "DELIVERY_RECEIPT.json",
+  "packet_usability": "PACKET_USABILITY.json",
+  "review": "REVIEW_RECONCILIATION.json",
+  "source_records": {
+    "new": 148,
+    "general_method_illustrative": 119,
+    "worked_narrative": 29,
+    "first": "R1009",
+    "last": "R1156",
+    "lilly_cumulative": 1156,
+    "ptolemy_retained": 1066,
+    "combined": 2222,
+    "actual_charts": 1,
+    "dated_enquiries": 1,
+    "coordinate_entries": 22
+  },
+  "tests": {
+    "distinct_focused": 111,
+    "new": 29,
+    "retained": 82,
+    "archive_usability_repeat": 29,
+    "repeat_counted_as_new": false,
+    "packet_content_hashes_verified": 118,
+    "actual_archive_members": 119
+  },
+  "source_span": {
+    "start": "Fourth-house heading and entire preamble on PDF236 / printed202",
+    "end": "Final XXXVIII paragraph above the horizontal divider on PDF256 / printed222",
+    "numbered_chapters": [
+      "XXXII",
+      "XXXIII",
+      "XXXIV",
+      "XXXV",
+      "XXXVI",
+      "XXXVII",
+      "XXXVIII"
+    ],
+    "extraction_page_images_checked": 21,
+    "full_pages_read": "PDF236–255",
+    "final_page_admitted_read": "PDF256 final fourth-house paragraph above the divider; lower material inspected only as continuation boundary",
+    "additional_targeted_original_page": "PDF888 errata"
+  },
+  "source_limits": {
+    "unresolved": 50,
+    "source_resolved_readings": 6,
+    "review_issues_distinct_from_source_limits": true
+  },
+  "review_outcome": {
+    "final_report_claims": 60,
+    "focused_addendum_pass": 12,
+    "carried_forward_pass": 48,
+    "later_comparison_precision_check": "PASS",
+    "remaining_source_report_blockers": 0,
+    "first_diagnoses_and_addenda_preserved": true,
+    "qualified_additional_review_not_counted_as_blind_independent_gate": true
+  },
+  "artifact_hashes": [
+    {
+      "filename": "Astrology-Lilly-Property-Treasure-20261010.md",
+      "bytes": 22532,
+      "sha256": "863d14ba22da942f689d1e330e40997d1c7a2d7bcce4d437a4f9c1a6caa9ee27",
+      "http_status": 200,
+      "action": "CREATED_EXCLUSIVELY_FROM_PUBLISHED_COMMIT",
+      "owner_destination": "OS-designated Downloads",
+      "final_disk_readback_verified": true
+    },
+    {
+      "filename": "Astrology-Lilly-Property-Treasure-Records-20261010.zip",
+      "bytes": 1550276,
+      "sha256": "23cc7a7880fffdd1a257ccd1eb75242cdea726090e73283a1359417372dec062",
+      "http_status": 200,
+      "action": "CREATED_EXCLUSIVELY_FROM_PUBLISHED_COMMIT",
+      "owner_destination": "OS-designated Downloads",
+      "final_disk_readback_verified": true
+    },
+    {
+      "filename": "Astrology-Lilly-Handoff-B02i-20261010.md",
+      "bytes": 6795,
+      "sha256": "04d7f9060941ce4ab41188edaf6e07c2de90e47303aa5de405ab118691246182",
+      "http_status": 200,
+      "action": "CREATED_EXCLUSIVELY_FROM_PUBLISHED_COMMIT",
+      "owner_destination": "OS-designated Downloads",
+      "final_disk_readback_verified": true
+    }
+  ],
+  "stop_admission": {
+    "parent_outcome": "OPEN source-complete multi-author audit",
+    "remaining_parent_gap": "Remaining Lilly source units and other-author passes, reconciliation, implementation and later predictive evaluation.",
+    "current_batch_requirement": "Read and extract the complete fourth-house block; verify and publish its records, report and bounded calculations; deliver the usable report, records packet and handoff.",
+    "current_batch_satisfied": true,
+    "pause_authority": "Existing PASS_PLAN.json pause_contract permits completed source-sized batch boundaries; INTAKE_AND_PASS_PLAN.md specifies source-sized batches.",
+    "next_action": "Read PDF256 / printed222 below the divider, starting with Of the fifth House, and its Questions.; include Chapter XXXIX If one shall have Children, yea or no? and its opening question-context paragraph.",
+    "responsible_actor": "Continuing authorized source-audit worker",
+    "next_action_authorized": true,
+    "next_action_executable_when_continuation_resumes": true,
+    "justified_stopping_boundary": "Completed source-sized batch with exact first unfinished passage saved and artifacts delivered.",
+    "finalization_admitted": true,
+    "background_execution_claimed": false
+  },
+  "preservation": {
+    "named_git_comparison_base": "0cc8c9b627d9135c56c3208dc3d155953a58b18e",
+    "prior_lilly_batch_index_entries_equal": 8,
+    "targeted_protected_hashes": [
+      {
+        "path": "state/ASTROLOGY_SOURCE_AUDIT_CURRENT.md",
+        "sha256": "54daf018e282aa5a5fd76274477dc0d953356f6cb30d15f3dd585991299fd4c4",
+        "matches_named_base": true
+      },
+      {
+        "path": "tasks/astro-source-audit-multipass-20261005/CURRENT_PASS.json",
+        "sha256": "777bee1754a244c525e79641d0e500d9d71514e7899121756a1dc9a5fd8238df",
+        "matches_named_base": true
+      },
+      {
+        "path": "tasks/astro-source-audit-multipass-20261005/PASS_PLAN.json",
+        "sha256": "04f1d246bd3c96dd03009ea6cc669f736be0c746112ef1a789404b0cc1050653",
+        "matches_named_base": true
+      },
+      {
+        "path": "tasks/astro-source-audit-multipass-20261005/PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
+        "sha256": "92deb60f6e6a7073f1a80491dac2364961a640fa1fb2eb6f3170c35286ab6474",
+        "matches_named_base": true
+      },
+      {
+        "path": "tasks/astro-source-audit-multipass-20261005/batches/B02f/lilly_presence_ship_reference.py",
+        "sha256": "d0172b7ed579bde0db063c315331ee54ee3fb878f98bbdfb0d1649b7af486664",
+        "matches_named_base": true
+      }
+    ],
+    "scope": "Named repository comparison and nonignored path inventory; no assertion about external or ignored files or earlier transient states.",
+    "prior_batches_and_dated_checkpoints_changed": false,
+    "participant_inputs_or_fitted_models_or_prediction_freezes_changed_within_comparison": false,
+    "runtime_promoted": false,
+    "empirical_predictive_accuracy_established": false,
+    "changed_and_nonignored_untracked_paths_from_base_at_closeout": 122,
+    "paths_outside_allowlist": []
+  },
+  "receipt_hashes": {
+    "MANIFEST.json": "6c1c3c905f205e0c13f3fb561abb8995c3cb8a531e6677029c0d3554bd90bbb0",
+    "SOURCE_PUBLICATION_RECEIPT.json": "ce1f9988e9ea06132887f034237c9630583e29cc1524c5b356af9834fe286877",
+    "DISTRIBUTION_RECEIPT.json": "3dc60558c1e1d4828423953a356fb6c2389efc0eeae04111cdeea4a76245417e",
+    "DELIVERY_RECEIPT.json": "3333ce6af1f5ddae268559079191a0a196cd05c23aed2421f82e941ee7e1cee9",
+    "PACKET_USABILITY.json": "9376199b38dc7b050f3b59aa0e24c6bfea4a9926477135f522b0d26d27990c54",
+    "REVIEW_RECONCILIATION.json": "e62c49b954bfecf570ceee3106b8e26dc3c1beaa57dc44bd4efa7892bd358d4b"
+  },
+  "stage_precedence": "ACTIVE_CONTRACT and WORKING_CHECKPOINT within the immutable source core, and the built-packet manifests, record their earlier stages. This closeout and the later transport receipts record verified completion without changing those frozen snapshots.",
+  "final_receipt_publication": "This closeout and the two final transport receipts are published together in a subsequent commit; that commit cannot recursively name itself."
+}

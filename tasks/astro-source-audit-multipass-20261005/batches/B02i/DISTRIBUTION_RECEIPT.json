@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "batch": "B02i",
+  "status": "PUBLISHED_DISTRIBUTION_VERIFIED",
+  "source_core_commit": "73bc36b2cf7553cb769f5d30489d19f8a5893c18",
+  "remote_distribution_commit": "62af5428842e750caf737eb6a0acd8725fdab112",
+  "local_distribution_commit": "2cdd8d4b9ad9acae21508a50e302c9fd579f681e",
+  "full_tree_sha": "542b819d2aaf87764a32136facea73d238b65786",
+  "exact_remote_text_readback": [
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02i/DELIVERABLES_MANIFEST.json",
+      "git_blob_sha": "ab47109941e935d3021ccc9c6ee2c1888337b790",
+      "exact_content_match": true
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02i/PACKET_USABILITY.json",
+      "git_blob_sha": "31b562637f1c17779473f090dcedd7ae1ab4edc3",
+      "exact_content_match": true
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02i/SOURCE_PUBLICATION_RECEIPT.json",
+      "git_blob_sha": "5428ce7a5bda426f7044cff842566c287d10a039",
+      "exact_content_match": true
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02i/TEST_PACKET_USABILITY.txt",
+      "git_blob_sha": "240202b230066a87c27b77e680f343405ac767ef",
+      "exact_content_match": true
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02i/deliverables/Astrology-Lilly-Handoff-B02i-20261010.md",
+      "git_blob_sha": "fce3751f01c17a398710f29741dd29d0b321ccb6",
+      "exact_content_match": true
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B02i/deliverables/Astrology-Lilly-Property-Treasure-20261010.md",
+      "git_blob_sha": "499ec710f4f99de81011c8fdf5b36c757aca7109",
+      "exact_content_match": true
+    }
+  ],
+  "zip_git_blob_sha": "5076617deadc32b38f22fccfda7c61599a26126e",
+  "live_ls_remote_both_match_distribution_commit": true,
+  "local_api_and_fetched_full_tree_equal": true,
+  "branch_updates": [
+    {
+      "branch": "research/lilly-fourth-house-b02i-20261010",
+      "expected_previous": "73bc36b2cf7553cb769f5d30489d19f8a5893c18",
+      "success": true,
+      "force": false
+    },
+    {
+      "branch": "research/six-rule-life-timing-20261001",
+      "expected_previous": "73bc36b2cf7553cb769f5d30489d19f8a5893c18",
+      "success": true,
+      "force": false
+    }
+  ],
+  "all_three_artifact_bytes_and_sha256_rechecked_from_fetched_commit": true,
+  "source_core_files_changed_by_distribution": false,
+  "artifacts": [
+    {
+      "filename": "Astrology-Lilly-Property-Treasure-20261010.md",
+      "path": "deliverables/Astrology-Lilly-Property-Treasure-20261010.md",
+      "bytes": 22532,
+      "sha256": "863d14ba22da942f689d1e330e40997d1c7a2d7bcce4d437a4f9c1a6caa9ee27"
+    },
+    {
+      "filename": "Astrology-Lilly-Property-Treasure-Records-20261010.zip",
+      "path": "deliverables/Astrology-Lilly-Property-Treasure-Records-20261010.zip",
+      "bytes": 1550276,
+      "sha256": "23cc7a7880fffdd1a257ccd1eb75242cdea726090e73283a1359417372dec062"
+    },
+    {
+      "filename": "Astrology-Lilly-Handoff-B02i-20261010.md",
+      "path": "deliverables/Astrology-Lilly-Handoff-B02i-20261010.md",
+      "bytes": 6795,
+      "sha256": "04d7f9060941ce4ab41188edaf6e07c2de90e47303aa5de405ab118691246182"
+    }
+  ],
+  "packet_verification": "Fresh extraction verified all 118 packet-content hashes and all 119 archive members; 29 standalone tests passed. Repeat does not increase 111 distinct focused tests.",
+  "subsequent_owner_receipt": "DELIVERY_RECEIPT.json",
+  "self_exclusion": "Publication and transport receipts are later than the immutable source core and archive."
+}

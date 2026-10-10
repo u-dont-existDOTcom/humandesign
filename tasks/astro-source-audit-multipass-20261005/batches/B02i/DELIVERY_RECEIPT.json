@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch": "B02i",
+  "status": "DELIVERED_AND_VERIFIED",
+  "distribution_commit": "62af5428842e750caf737eb6a0acd8725fdab112",
+  "destination_resolved_by": "xdg-user-dir DOWNLOAD",
+  "files": [
+    {
+      "filename": "Astrology-Lilly-Property-Treasure-20261010.md",
+      "bytes": 22532,
+      "sha256": "863d14ba22da942f689d1e330e40997d1c7a2d7bcce4d437a4f9c1a6caa9ee27",
+      "http_status": 200,
+      "action": "CREATED_EXCLUSIVELY_FROM_PUBLISHED_COMMIT",
+      "owner_destination": "OS-designated Downloads",
+      "final_disk_readback_verified": true
+    },
+    {
+      "filename": "Astrology-Lilly-Property-Treasure-Records-20261010.zip",
+      "bytes": 1550276,
+      "sha256": "23cc7a7880fffdd1a257ccd1eb75242cdea726090e73283a1359417372dec062",
+      "http_status": 200,
+      "action": "CREATED_EXCLUSIVELY_FROM_PUBLISHED_COMMIT",
+      "owner_destination": "OS-designated Downloads",
+      "final_disk_readback_verified": true
+    },
+    {
+      "filename": "Astrology-Lilly-Handoff-B02i-20261010.md",
+      "bytes": 6795,
+      "sha256": "04d7f9060941ce4ab41188edaf6e07c2de90e47303aa5de405ab118691246182",
+      "http_status": 200,
+      "action": "CREATED_EXCLUSIVELY_FROM_PUBLISHED_COMMIT",
+      "owner_destination": "OS-designated Downloads",
+      "final_disk_readback_verified": true
+    }
+  ],
+  "existing_different_files_overwritten": false,
+  "transport": "Connected owner computer process; HTTPS GET from exact published distribution commit, exclusive creation and final disk byte/hash readback.",
+  "privacy": "Private device identifier and home-directory path omitted from repository receipt.",
+  "process_completed": true,
+  "process_exit_code": 0,
+  "source_core_commit": "73bc36b2cf7553cb769f5d30489d19f8a5893c18",
+  "packet_usability": "PACKET_USABILITY.json",
+  "source_data_validation": "TEST_RUN_SUMMARY.json"
+}
