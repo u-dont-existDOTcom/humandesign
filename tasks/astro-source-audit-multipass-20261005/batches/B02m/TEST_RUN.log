@@ -8,6 +8,14 @@ test_saturn_gemini_extra_conditions (test_lilly_hermes.Catalogues.test_saturn_ge
 test_sensory_correspondence (test_lilly_hermes.Catalogues.test_sensory_correspondence) ... ok
 test_sign_links_are_disjoint (test_lilly_hermes.Catalogues.test_sign_links_are_disjoint) ... ok
 test_unresolved_ambiguous_authorship (test_lilly_hermes.Catalogues.test_unresolved_ambiguous_authorship) ... ok
+test_distinct_mars_scorpio_question_conditions (test_lilly_hermes.IndependentReviewRegressions.test_distinct_mars_scorpio_question_conditions) ... ok
+test_early_remedy_has_no_later_cooling_interpolation (test_lilly_hermes.IndependentReviewRegressions.test_early_remedy_has_no_later_cooling_interpolation) ... ok
+test_explicit_gaps_and_no_dariot_misattribution (test_lilly_hermes.IndependentReviewRegressions.test_explicit_gaps_and_no_dariot_misattribution) ... ok
+test_not_calefactive_original_negative_remains_unresolved (test_lilly_hermes.IndependentReviewRegressions.test_not_calefactive_original_negative_remains_unresolved) ... ok
+test_page_locators_and_exact_cooling_lexemes (test_lilly_hermes.IndependentReviewRegressions.test_page_locators_and_exact_cooling_lexemes) ... ok
+test_physician_question_not_unnecessarily_first (test_lilly_hermes.IndependentReviewRegressions.test_physician_question_not_unnecessarily_first) ... ok
+test_repaired_exact_negative_and_local_words (test_lilly_hermes.IndependentReviewRegressions.test_repaired_exact_negative_and_local_words) ... ok
+test_two_step_medicines_and_planets_not_collapsed (test_lilly_hermes.IndependentReviewRegressions.test_two_step_medicines_and_planets_not_collapsed) ... ok
 test_count_bookkeeping (test_lilly_hermes.RecordIntegrity.test_count_bookkeeping) ... ok
 test_coverage_no_unmapped_records (test_lilly_hermes.RecordIntegrity.test_coverage_no_unmapped_records) ... ok
 test_each_page_render_digest (test_lilly_hermes.RecordIntegrity.test_each_page_render_digest) ... ok
@@ -28,6 +36,6 @@ test_speed_states_are_not_silently_equated (test_lilly_hermes.RecoveryRegression
 test_timing_quantifiers_remain_distinct (test_lilly_hermes.RecoveryRegressions.test_timing_quantifiers_remain_distinct) ... ok
 
 ----------------------------------------------------------------------
-Ran 28 tests in 0.741s
+Ran 36 tests in 0.043s
 
 OK

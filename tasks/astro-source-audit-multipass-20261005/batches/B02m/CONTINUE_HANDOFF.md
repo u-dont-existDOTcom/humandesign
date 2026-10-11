@@ -26,6 +26,6 @@ Keep decreasing motion distinct from slow motion, the post-Saturn-opposition rem
 
 ## Verification and delivery
 
-Run **python3 run_verification.py** from an extracted B02m folder. The documented suite has28 distinct tests; repeated executions do not increase that number. Hash verification should precede execution because the runner refreshes its own logs. Independent source/claim findings and reconciliation are separate from software integrity and from publication/delivery. Consult their actual receipts; no source or code test establishes predictive validity.
+Run **python3 run_verification.py** from an extracted B02m folder. The documented suite has36 distinct tests; repeated executions do not increase that number. Hash verification should precede execution because the runner refreshes its own logs. Independent source/claim findings and reconciliation are separate from software integrity and from publication/delivery. Consult their actual receipts; no source or code test establishes predictive validity.
 
 Preserve all earlier batches and checkpoints, original PASS_PLAN, participant inputs, fitted models and prediction freezes. Only the current batch, its new dated checkpoint and the cumulative source index belong to this contribution. No unattended continuation after the final response is claimed.

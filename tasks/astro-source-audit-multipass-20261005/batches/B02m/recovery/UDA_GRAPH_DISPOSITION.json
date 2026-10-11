@@ -1,0 +1,10 @@
+{
+  "mode": "legacy active prose contract retained",
+  "graph_status": "PARTIAL_CHECKOUT_VALIDATOR_MISSING_CANONICAL_PATHS",
+  "observed": "The canonical resolver requires unrelated catalogue paths to exist before resolving selected seeds; this deliberately partial guidance checkout does not contain them.",
+  "authority": "rule-graph-activation-and-dependency-resolution.md explicitly retains valid legacy coverage when the graph-derived path fails.",
+  "mechanical_graph_application_claimed": false,
+  "controlling_contract": "RECOVERY_CONTRACT_20261011.md",
+  "effect_on_source_review_or_publication": "None; source fidelity, independent diagnosis, exact bytes, preservation and delivery obligations remain required.",
+  "new_acceptance_gate_invented": false
+}

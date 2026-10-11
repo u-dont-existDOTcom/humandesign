@@ -12,6 +12,14 @@
     "test_lilly_hermes.Catalogues.test_sensory_correspondence",
     "test_lilly_hermes.Catalogues.test_sign_links_are_disjoint",
     "test_lilly_hermes.Catalogues.test_unresolved_ambiguous_authorship",
+    "test_lilly_hermes.IndependentReviewRegressions.test_distinct_mars_scorpio_question_conditions",
+    "test_lilly_hermes.IndependentReviewRegressions.test_early_remedy_has_no_later_cooling_interpolation",
+    "test_lilly_hermes.IndependentReviewRegressions.test_explicit_gaps_and_no_dariot_misattribution",
+    "test_lilly_hermes.IndependentReviewRegressions.test_not_calefactive_original_negative_remains_unresolved",
+    "test_lilly_hermes.IndependentReviewRegressions.test_page_locators_and_exact_cooling_lexemes",
+    "test_lilly_hermes.IndependentReviewRegressions.test_physician_question_not_unnecessarily_first",
+    "test_lilly_hermes.IndependentReviewRegressions.test_repaired_exact_negative_and_local_words",
+    "test_lilly_hermes.IndependentReviewRegressions.test_two_step_medicines_and_planets_not_collapsed",
     "test_lilly_hermes.RecordIntegrity.test_count_bookkeeping",
     "test_lilly_hermes.RecordIntegrity.test_coverage_no_unmapped_records",
     "test_lilly_hermes.RecordIntegrity.test_each_page_render_digest",
@@ -31,21 +39,21 @@
     "test_lilly_hermes.RecoveryRegressions.test_speed_states_are_not_silently_equated",
     "test_lilly_hermes.RecoveryRegressions.test_timing_quantifiers_remain_distinct"
   ],
-  "distinct_test_count": 28,
-  "tests_run": 28,
+  "distinct_test_count": 36,
+  "tests_run": 36,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
   "successful": true,
-  "log_sha256": "923816d9598bdefa30bbac75f752a50c042c7367bf6a2842c42fcaef93d2eb22",
+  "log_sha256": "cf4e3ed4ad155aa6f7d4ae49c1891f07e8de7c9c7d189e287321a2f8c3d90e6d",
   "source_hashes": {
-    "RULES.json": "4c2aa43cc603c13f49dd75abf6d7869d8bf538e0cf5be633d0dc4660a91c7f76",
+    "RULES.json": "615fe234504f5e92e9b3b389b03d0742f320a56c037e8318058c837fe1379bba",
     "COUNTS.json": "73fd192aac301ea1b6fc9eb9813481f789bbb2284a95740f99ef6406bb368535",
     "REFERENCE_TABLES.json": "1e9cf45d3c6396d45006767e2c474620ff89f75d956abf94baf7a32113511273",
-    "MATERIA_MEDICA_TABLES.json": "3564a769b58737160d64b6325e62d67167340acf23d062da10c3c34cc48d6e6f",
+    "MATERIA_MEDICA_TABLES.json": "3192fff30e4266d86b3004a760c1d6076240765f4587b3254ae76ee246565700",
     "SECTION_COVERAGE.json": "eddc63c8fff44a12f82366ea1146bc95b91c373964228a3c3463b525323f1521",
     "SOURCE_IMAGE_MANIFEST.json": "ec7e3b2083a7087acdc074d2466854dab3a6acf26b4026e909f69c1db89dd829",
-    "UNRESOLVED.json": "5e5252aec3340bfd4fe985c0ab5a891f95a22e22ce67b8b9d8cf8169b2fb7372"
+    "UNRESOLVED.json": "a4b5775a8d14dc1643c305259cbcdb4ed274cb79d1028ab5d4c529499ae4fd8d"
   },
   "scope": "Source data and portable hash integrity only; no source semantic certification, medical efficacy or predictive evaluation."
 }

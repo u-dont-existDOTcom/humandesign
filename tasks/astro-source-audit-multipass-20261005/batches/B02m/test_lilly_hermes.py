@@ -107,4 +107,44 @@ class RecoveryRegressions(unittest.TestCase):
         self.assertTrue(all(x['source_details'] and x['original_draft_record_sha256'] for x in rules))
         self.assertEqual([x['printed_page'] for x in load('TEXTUAL_CHECKS.json')['matched_entries']],[272,274,277])
 
+
+class IndependentReviewRegressions(unittest.TestCase):
+    def r(self,n):
+        return next(x for x in rules if x['id'].endswith('R'+str(n)))
+    def test_not_calefactive_original_negative_remains_unresolved(self):
+        a=self.r(1672)
+        self.assertIn('not calefactive',a['source_quote_exact']['text'])
+        self.assertIn('not calefactive',a['source_statement'])
+        self.assertIn('not calefactive',' '.join(a['source_details']))
+        self.assertTrue(any(x['id']=='U22' for x in load('UNRESOLVED.json')['limits']))
+    def test_two_step_medicines_and_planets_not_collapsed(self):
+        a=self.r(1656)
+        self.assertIn('first directs applying convenient medicines',a['source_statement'])
+        self.assertIn('resisted by other planets',a['source_statement'])
+    def test_repaired_exact_negative_and_local_words(self):
+        self.assertIn('no retention of Urine',self.r(1684)['source_statement'])
+        self.assertIn('stuffing', ' '.join(self.r(1677)['source_details']))
+        self.assertIn('intended (intensified)', ' '.join(self.r(1686)['source_details']))
+        self.assertIn('choleric obstructions', ' '.join(self.r(1690)['source_details']))
+    def test_early_remedy_has_no_later_cooling_interpolation(self):
+        self.assertNotIn('cooling',self.r(1671)['source_statement'])
+        self.assertIn('cooling',self.r(1675)['source_statement'])
+    def test_physician_question_not_unnecessarily_first(self):
+        self.assertIn('required to give judgment',self.r(1663)['source_statement'])
+        self.assertNotIn('first asked',self.r(1663)['source_statement'])
+        self.assertIn('precisely',' '.join(self.r(1663)['prerequisites']))
+    def test_distinct_mars_scorpio_question_conditions(self):
+        d=' '.join(self.r(1697)['source_details'])
+        for value in ('MODEST','MAN','WIFE','in Contrario'):self.assertIn(value,d)
+        self.assertIn('QUERENT',' '.join(self.r(1697)['prerequisites']))
+    def test_page_locators_and_exact_cooling_lexemes(self):
+        for n,expected in [(1665,[304]),(1667,[304]),(1672,[306])]:
+            self.assertEqual(self.r(n)['source_locator']['pdf_pages'],expected)
+        j=load('MATERIA_MEDICA_TABLES.json')['cooling']['columns']
+        self.assertIn('Pomegranet',j[1]);self.assertIn('Bull-rushes',j[2])
+    def test_explicit_gaps_and_no_dariot_misattribution(self):
+        self.assertNotIn('Dariot/Hermes',' '.join(self.r(1701)['exceptions_and_modifiers']))
+        self.assertEqual(load('UNRESOLVED.json')['retained_count'],24)
+        self.assertIn('not calefactive',load_text('AUDIT_REPORT.md'))
+
 if __name__=='__main__':unittest.main()

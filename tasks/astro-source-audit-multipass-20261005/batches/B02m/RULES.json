@@ -1,6 +1,6 @@
 {
   "batch": "B02m",
-  "status": "RECOVERY_CANDIDATE_SOURCE_CHECKED_BY_CONTROLLING_READER; INDEPENDENT_REVIEW_PENDING",
+  "status": "INDEPENDENT_REVIEW_RECONCILED; ACCEPTANCE_PENDING",
   "records_count": 52,
   "rules": [
     {
@@ -297,7 +297,7 @@
       },
       "historical_genre": "medicine_and_horary",
       "source_attribution": "Hermes-headed material in Lilly 1647; authorial interpolations uncollated",
-      "source_statement": "Within the historical humoral framework, curative medicines are described as contrary in nature to the planet alleged to afflict a body part.",
+      "source_statement": "For defects within compass of cure, the printed source first directs applying convenient medicines, then says the diseases attributed to an afflicting planet should be resisted by other planets of contrary nature and power.",
       "prerequisites": [
         "A curable defect within the source's framework."
       ],
@@ -316,7 +316,7 @@
         "count_as_prediction": false
       },
       "source_details": [
-        "For defects within the compass of cure, the author advocates convenient medicines and resistance to an afflicting planet by planets of contrary nature and power. The curability restriction is part of the source."
+        "The source makes two related but grammatically separate recommendations: apply convenient medicines to defects within the compass of cure; resist diseases proceeding from the influence of the planets by other planets contrary in nature and power to the afflicting planet. It does not literally describe the medicines themselves as planets."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -635,7 +635,7 @@
       },
       "source_details": [
         "For a sick or lame person the source requests a figure for the hour of first falling sick or lying down, with the planets, their dispositions and mutual relations considered.",
-        "It also asserts that no worldly affair is firm without these influences and no physician, however learned, can cure without a benevolent stellar configuration: absent it the patient perishes, or through kind influences recovers. This necessity claim is doctrinal rhetoric, not an empirical result."
+        "The text asserts that without the congress and influence of the stars nothing in human and worldly affairs is either infirm OR sound, and no patient can possibly be cured by a physician however learned without a benevolent stellar configuration; without it the patient perishes, or with favourable influence recovers. These assertions are doctrinal, not clinical results."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -669,12 +669,13 @@
       },
       "historical_genre": "medicine_and_horary",
       "source_attribution": "Hermes-headed material in Lilly 1647; authorial interpolations uncollated",
-      "source_statement": "When the certain illness-onset hour cannot be obtained, use the time the physician is first asked for judgment, attending to the Moon's prior and subsequent aspects.",
+      "source_statement": "When the certain illness-onset hour cannot be obtained, use the time at which the physician is required to give judgment, attending to the Moon's prior and subsequent aspects.",
       "prerequisites": [
-        "Onset time unavailable, not merely inconvenient."
+        "Exact first illness-onset time cannot exquisitely or precisely be known; a mere inconvenient onset time does not license substitution."
       ],
       "exceptions_and_modifiers": [
-        "Not the identical time hierarchy of all prior sixth-house passages; this is local."
+        "Not the identical time hierarchy of all prior sixth-house passages; this is local.",
+        "The source says 'when judgment is required of the Physitian', not necessarily when first asked."
       ],
       "sign": null,
       "planetary_afflictor": null,
@@ -758,23 +759,19 @@
         "chapter": "XLIV",
         "section": "Hermes Trismegistus upon the first Decumbiture of the Sick",
         "pdf_pages": [
-          304,
-          305
+          304
         ],
         "printed_pages": [
-          270,
-          271
+          270
         ],
         "passage_anchor": "swift in motion, and encreasing in light",
         "authority": "Original page images, not OCR",
         "anchor_type": "locating_phrase_with_expanded_glyphs_or_normalized_spelling_not_necessarily_verbatim",
         "printed_sequence_expected": [
-          270,
-          271
+          270
         ],
         "visible_printed_labels": [
-          "270",
-          "271"
+          "270"
         ]
       },
       "historical_genre": "medicine_and_horary",
@@ -871,23 +868,19 @@
         "chapter": "XLIV",
         "section": "Hermes Trismegistus upon the first Decumbiture of the Sick",
         "pdf_pages": [
-          304,
-          305
+          304
         ],
         "printed_pages": [
-          270,
-          271
+          270
         ],
         "passage_anchor": "but if conjoyned, or in good aspect",
         "authority": "Original page images, not OCR",
         "anchor_type": "locating_phrase_with_expanded_glyphs_or_normalized_spelling_not_necessarily_verbatim",
         "printed_sequence_expected": [
-          270,
-          271
+          270
         ],
         "visible_printed_labels": [
-          "270",
-          "271"
+          "270"
         ]
       },
       "historical_genre": "medicine_and_horary",
@@ -1077,7 +1070,7 @@
         "count_as_prediction": false
       },
       "source_details": [
-        "At first lying down under malignant Saturn OR Mercury, the source describes heaviness, drowsiness, unwilling movement of diseased members, stupor or numbness with excessive cold, and unnatural defluxions. Illness steals on gradually and the person is not easily awakened even when urged.",
+        "At first lying down under malignant Saturn OR Mercury, the source says they are commonly heavy and describes heaviness, drowsiness, unwilling movement of diseased members, stupor or numbness with excessive cold, or molested with unnatural defluxions. Illness steals on gradually and the person is not easily awakened even when urged.",
         "Further descriptions: silence in speech, fearfulness, desire for hot plasters or fomentations, preference for darkness, constant sighing, gently drawing or sucking in breath, short wind, a swift and painful pulse, comfort from warmth, feeble pulses, and a cold/dry bodily exterior. Both pulse descriptions are retained without reconciliation.",
         "The proposed remedies are naturally hot, mollifying and constringing. They are documented as historical claims only."
       ],
@@ -1117,7 +1110,7 @@
       },
       "historical_genre": "medicine_and_horary",
       "source_attribution": "Hermes-headed material in Lilly 1647; authorial interpolations uncollated",
-      "source_statement": "Sun or Mars configurations are linked to feverish, agitated, heated symptoms; the historical proposed responses include bloodletting, purging or cooling.",
+      "source_statement": "Sun or Mars configurations are linked to feverish, agitated, heated symptoms; the historical proposed responses include bloodletting or purging.",
       "prerequisites": [
         "Unfavourable Sun or Mars configurations at first lying down."
       ],
@@ -1155,33 +1148,30 @@
         "chapter": "XLIV",
         "section": "Hermes Trismegistus upon the first Decumbiture of the Sick",
         "pdf_pages": [
-          306,
-          307
+          306
         ],
         "printed_pages": [
-          272,
-          273
+          272
         ],
         "passage_anchor": "What Medicines are agreeable to the nature of Mars",
         "authority": "Original page images, not OCR",
         "anchor_type": "locating_phrase_with_expanded_glyphs_or_normalized_spelling_not_necessarily_verbatim",
         "printed_sequence_expected": [
-          272,
-          273
+          272
         ],
         "visible_printed_labels": [
-          "272",
-          "273"
+          "272"
         ]
       },
       "historical_genre": "medicine_and_horary",
       "source_attribution": "Hermes-headed material in Lilly 1647; authorial interpolations uncollated",
-      "source_statement": "The text contrasts heating/softening substances with cooling, binding or repressing ones, and relates their purported opposition to planetary causes.",
+      "source_statement": "The printed PDF306 describes what medicine classes are agreeable to Mars versus Saturn; the Mars-to-Saturn sentence literally contains 'not calefactive' and remains semantically ambiguous. The following line assigns Saturn refrigerating/cooling, astringent/binding and repercussive medicines, said contrary to Mars; subsequent paragraphs assign organs and fever classes to planetary influences.",
       "prerequisites": [
         "Historical humoral attribution."
       ],
       "exceptions_and_modifiers": [
-        "Potential internal inconsistency around attribution of organ diseases to Sun/Mars versus Saturn/Mercury must not be silently corrected."
+        "Potential internal inconsistency around attribution of organ diseases to Sun/Mars versus Saturn/Mercury must not be silently corrected.",
+        "PDF306 prints 'not calefactive' in the first polarity statement. Do not silently emend to 'hot' or infer an executable polarity; ambiguous intended meaning remains unresolved."
       ],
       "sign": null,
       "planetary_afflictor": null,
@@ -1195,13 +1185,18 @@
         "count_as_prediction": false
       },
       "source_details": [
-        "Mars-compatible medicines are described as calefactive, emollient/mollifying and dissolving obstructions, repugnant to Saturn; Saturn-compatible substances as refrigerating/cooling, astringent/binding and repercussing, contrary to Mars.",
+        "The original PDF306 visibly prints that medicines agreeable to Mars are repugnant to Saturn 'as not calefactive, emollient, or mollifying and dissolving obstructions'. Retain 'not' literally; its position is hard to reconcile with the immediately adjacent assignment of heating medicines to Mars, and the intended parsing or printing error remains UNRESOLVED.",
         "Infirmities, passions and trembling of the heart, those from the mouth of the stomach, and pains of arteries, veins and joints are attributed to evil Mars and Sun influence.",
         "Continued fevers, phrensies, exulceration and inflammation of lungs/lights are then attributed to Saturn and Mercury, with refrigerating medicines called most proper. This explicit target-and-remedy statement differs from the heating/softening recommendation for Saturn/Mercury origins on PDF307 (R1675). Preserve the local tension; do not silently swap planets or a remedy polarity."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
-      "original_draft_record_sha256": "88bcf2a14ae2e72e2ee07f2ff079fd3321ee498047d303f1632bdd09e3dd2200"
+      "original_draft_record_sha256": "88bcf2a14ae2e72e2ee07f2ff079fd3321ee498047d303f1632bdd09e3dd2200",
+      "source_quote_exact": {
+        "text": "as not calefactive, emollient, or mollifying and dissolving obstructions",
+        "pdf_page": 306,
+        "purpose": "Negative faithfully observed in enlarged original; printed syntax semantically ambiguous"
+      }
     },
     {
       "id": "LI.1647.II.XLIV.R1673",
@@ -1478,8 +1473,8 @@
         "count_as_prediction": false
       },
       "source_details": [
-        "Inherited Saturn-catalogue conditions plus Moon in Aries. Symptoms: headache or head heaviness; rheum in nostrils; singing ears; snuffing in the head; weary/dull eyes; rheum and corrupt humours descending into throat and windpipe; weak, inordinate pulses; drowsy mind; stomach loathing; intemperate/unseasonable sweats; heat within and cold without; worse by night than day.",
-        "If the Moon receives no favourable aspect of a good planet, the source asserts death, God sending no extraordinary remedy. Both lack of assistance and the extraordinary-remedy clause remain explicit.",
+        "Inherited Saturn-catalogue conditions plus Moon in Aries. Symptoms: headache or head heaviness; rheum in nostrils; singing ears; stuffing in the head; weary/dull eyes; rheum and corrupt humours descending into throat and windpipe; weak, inordinate pulses; drowsy mind; stomach loathing; intemperate/unseasonable sweats; heat within and cold without; worse by night than day.",
+        "If the Moon receives no favourable aspect of a good planet, the source asserts death without doubt, God sending no extraordinary remedy. Both lack of assistance and the extraordinary-remedy clause remain explicit.",
         "Loosening the belly is described as relieving the grief, while letting blood is called ill in this row. These local historical prescriptions are not clinical instructions."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
@@ -1596,7 +1591,7 @@
       },
       "source_details": [
         "Inherited Saturn-catalogue conditions plus Moon in Gemini. Alleged causes: mental weariness and overburden from many affairs, travel, excessive bodily exercise. Small-fever fear and pain dispersed through the body, especially arteries/joints.",
-        "A first-person passage reports afflicted vitals, tendency to consumption, rare/little pulse, frequent sweat, spleen symptoms, and worse illness at night.",
+        "The first-person passage says 'I ever find' the vitals much afflicted, tendency to consumption, rare/little pulse, frequent sweat, spleen symptoms, and worse illness at night.",
         "If Mars TOGETHER WITH Saturn afflicts the Moon at the same time, most authors are reported to hold that the sick will not live above ten days, UNLESS a favourable Jupiter OR Venus aspect intervenes; then after a long time the sick MAY recover. This is attributed testimony, not a counted patient series."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
@@ -1657,7 +1652,7 @@
         "count_as_prediction": false
       },
       "source_details": [
-        "Inherited Saturn-catalogue conditions plus Moon in Cancer. Breast affected by tough melancholy matter or slimy thick phlegm; coughs, abundant spittle/moisture, catarrhs, hoarseness, rheum descending into breast, narrow obstructed pipes, small fevers, fear of quotidian but usually a long quartan ague; belly ache or infirmity in reins/secrets.",
+        "Inherited Saturn-catalogue conditions plus Moon in Cancer. Breast affected by tough melancholy matter or slimy thick phlegm; coughs, abundant spittle/moisture, catarrhs, hoarseness, rheum descending into breast, narrow obstructed pipes, many times, small fevers, fear of quotidian but usually a long quartan ague; belly ache or infirmity in reins/secrets.",
         "If the Moon is decreasing and near Saturn body, the sickness continues a great space of time. In a further clause, if together with lunar affliction the ascendant lord is impeded by the eighth lord, there are small hopes of recovery. The proximity-duration and additional ruler-impediment clauses are distinct; do not turn small hopes into certain death."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
@@ -1757,7 +1752,8 @@
       ],
       "exceptions_and_modifiers": [
         "First-person experiences are anecdotal and unquantified.",
-        "No independent case count or follow-up."
+        "No independent case count or follow-up.",
+        "The original Virgo phrase 'things which mollifie heat and dissolve' might read as three verbs (mollify, heat, dissolve) or mollify [temper] heat; document both, do not normalize its therapy polarity."
       ],
       "sign": "Virgo",
       "planetary_afflictor": "Saturn",
@@ -1772,7 +1768,7 @@
       },
       "source_details": [
         "Inherited Saturn-catalogue conditions plus Moon in Virgo. Crudities/ill digestion in stomach, viscous phlegm obstructing bowels/intrails, shooting/pricking under ribs and inordinate fevers.",
-        "First-person additions: wind-colic, extreme melancholy, gout or aches in thighs/feet. Mollifying, heating and dissolving things are called proper. The author seldom finds such illness anything but long, giving earthy Virgo and slow Saturn as rationale; not a measured duration or independent causal demonstration."
+        "First-person additions: wind-colic and many-times recurrent suffering, extreme melancholy, gout or aches in thighs/feet. Mollifying, heating and dissolving things are called proper. The author seldom finds such illness anything but long, giving earthy Virgo and slow Saturn as rationale; not a measured duration or independent causal demonstration."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -1890,8 +1886,8 @@
         "count_as_prediction": false
       },
       "source_details": [
-        "Inherited Saturn-catalogue conditions plus Moon in Scorpio. Anal ulcer, haemorrhoids/piles, exulceration, bubo or a blotch in private members are described.",
-        "The first-person enquiry passage explicitly reads no retention of Urine; also bladder stone, swelling dropsical humour around knees/legs, sometimes flux; for a man gonorrhea, for a woman abundant menstrual discharge. No retention must not be normalized to retention. Modern diagnosis or urinary subtype is not inferred."
+        "Inherited Saturn-catalogue conditions plus Moon in Scorpio. Anal ulcer, haemorrhoids/piles, exulceration, bubo or a botch in private members are described.",
+        "The first-person enquiry passage explicitly reads no retention of Urine; also bladder stone, swelling dropsical humour around knees/legs, sometimes flux (the source's 'sometimes'), with 'usually' elsewhere in the same row; for a man gonorrhea, for a woman too much abundance of menstrual discharge. No retention must not be normalized to retention. Modern diagnosis or urinary subtype is not inferred."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -1953,7 +1949,7 @@
       },
       "source_details": [
         "Inherited Saturn-catalogue conditions plus Moon in Sagittarius. Thin/sharp defluxions, arteries/joints pain, fear of fever, extremes of heat/cold and often double fever access. Gently mitigating heat and moistening is the local historical prescription.",
-        "First-person conjunction with Saturn: infected choleric/melancholy blood, sometimes excessive pains-taking or violent exercise followed by cold. Opposition to Saturn: for the most part gout or tumour/swelling in hands, thighs or feet.",
+        "First-person conjunction with Saturn: infected choleric/melancholy blood, many times excessive pains-taking or violent exercise followed by cold. Opposition to Saturn: for the most part gout or tumour/swelling in hands, thighs or feet.",
         "Mars ALSO casting an ill aspect to the Moon, as well as Saturn, at first falling sick is required for the subsequent violent burning-fever assertion."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
@@ -2014,8 +2010,8 @@
         "count_as_prediction": false
       },
       "source_details": [
-        "Inherited Saturn-catalogue conditions plus Moon in Capricorn. Cold/melancholy, thin subtle distillations, heaviness of breast/stomach, difficult breathing, dry cough, oppressed lungs, inward fever, more pain at night. Moderate heating/moistening is the source remedy.",
-        "The first-person continuation across PDF310–311 adds headache, pain in the LEFT ear, or rumbling/noise in the head."
+        "Inherited Saturn-catalogue conditions plus Moon in Capricorn. Cold/melancholy, thin subtle distillations, heaviness of breast/stomach, difficult breathing, dry cough, oppressed lungs, intended (intensified) fevers, more pain at night. Moderate heating/moistening is the source remedy.",
+        "The first-person continuation across PDF310–311 adds that the sick is still complaining of headache, pain in the LEFT ear, or rumbling/noise in the head."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -2049,7 +2045,7 @@
       },
       "historical_genre": "medicine_and_horary",
       "source_attribution": "printed Hermes section in Lilly; first-person interpolations not independently assigned to ancient author",
-      "source_statement": "Aquarius is associated with labor, sleep deprivation and changing illness. Recoverability is said to improve if the Moon passes opposition to its original longitude and benefic planets cast good aspects.",
+      "source_statement": "Aquarius is associated with labor, sleep deprivation and changing illness. The sick is said to be recoverable if the Moon passes opposition to its original longitude and benefic planets cast good aspects.",
       "prerequisites": [
         "Moon in Aquarius",
         "Moon decreasing in light and motion (catalogue introduction)",
@@ -2245,7 +2241,7 @@
       "source_details": [
         "Moon in Aries afflicted by Mars conjunction, square OR opposition at first illness. Membranes/pellices of brain affected, continued fever, unrest, hot thirsty mouth, extreme thirst, dry tongue, hot/inflamed liver, breast heat, high/sublated irregular pulse; phrensy or deprivation of senses may be feared. Bloodletting and cooling/nourishing are described as helpful.",
         "If NEXT after separation from Mars evil beams/aspect, the Moon also applies to Saturn conjunction OR opposition while DECREASING in light and SLOW in motion, there are small hopes of life and religious preparation is urged. This is not any Saturn contact or an unconditional death result.",
-        "First-person addition: usually near madness, or extreme belly/small-gut pain from colic obstruction."
+        "First-person addition: usually near madness, or extreme belly/small-gut pain from choleric obstructions."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -2356,8 +2352,8 @@
         "count_as_prediction": false
       },
       "source_details": [
-        "Moon in Gemini afflicted by Mars at taking bed, with marginal conjunction/square/opposition. Usually violent dangerous fever, obstructions, high/inordinate pulse, overly hot/rank blood and body near corruption; blood emission is advocated historically.",
-        "First-person additions: pain throughout body with no settled location, extremely windy/corrupt/hot blood, lameness or grief in arms/joints, stone or heat in reins, and sometimes spitting blood. Exhaustion is not independently asserted in this row."
+        "Moon in Gemini afflicted by Mars at taking bed, with marginal conjunction/square/opposition. Usually violent dangerous fever, obstructions, high/inordinate pulse, overly hot/rank blood and body near corruption; the author says 'a necessity there is of emission of blood' historically.",
+        "First-person additions: pain throughout body with no settled location, extremely windy/corrupted blood, lameness or grief in arms/joints, stone or heat in reins, and sometimes spitting blood. Exhaustion is not independently asserted in this row."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -2395,7 +2391,7 @@
       },
       "historical_genre": "medicine_and_horary",
       "source_attribution": "printed Hermes section in Lilly, with first-person observational additions of uncertain author",
-      "source_statement": "Cancer is associated with excess phlegm, stomach upset, vomiting/diarrhoea or cough, in a first-person account ascribed to surfeit.",
+      "source_statement": "Cancer is associated with excess phlegm, stomach upset, vomiting/looseness or cough, in a first-person account ascribed to surfeit.",
       "prerequisites": [
         "Moon in Cancer",
         "Moon afflicted by Mars conjunction, square or opposition at first illness onset (the printed catalogue formulation)."
@@ -2474,7 +2470,7 @@
       "source_details": [
         "Moon in Leo afflicted by Mars: excessive blood/strong fevers, very weak pulses, raving/raging fits, disturbed brain, poor appetite, heaviness/drowsiness, heart disorders and consumption danger.",
         "The source says USUALLY death ABOUT THE NINTH DAY AFTER FIRST FALLING SICK, IF OTHER HEAVENLY CONFIGURATIONS ACCORD. Usual, approximate, time origin and corroboration restriction are retained.",
-        "First-person additions: overheated blood, near raging madness, excessive choler, over-dried body, possible pleurisy, faintness/swooning or much-afflicted heart. The author particularly fears Moon-Mars CONJUNCTION OR OPPOSITION in this sign more than elsewhere; this comparison must not be generalized to every aspect."
+        "First-person additions: overheated blood, near raging madness, excessive choler, over-dried body, probability of pleurisy, faintness/swooning or much-afflicted heart. The author particularly fears Moon-Mars CONJUNCTION OR OPPOSITION in this sign more than elsewhere; this comparison must not be generalized to every aspect."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -2529,7 +2525,7 @@
         "count_as_prediction": false
       },
       "source_details": [
-        "Moon in Virgo afflicted by Mars: belly alteration/flux or miseriacks, small fevers, choler/melancholy, remiss pulse, ventricle eversion and food loathing. Death WITHIN THIRTY DAYS is asserted IF FORTUNES DO NOT ASSIST.",
+        "Usually, Moon in Virgo afflicted by Mars: belly alteration/flux or miseriacks, small fevers, choler/melancholy, remiss pulse, ventricle eversion and food loathing. Death WITHIN THIRTY DAYS is asserted IF FORTUNES DO NOT ASSIST.",
         "First-person additions: wind-colic, often weak legs or near ankles; the writer says never finding an illness easily removable under this onset configuration. This does not establish a quantified slow recovery or certain eventual recovery."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
@@ -2590,7 +2586,7 @@
       },
       "source_details": [
         "Moon in Libra afflicted by Mars: plenitude of blood, intense fevers, high pulse, sleeplessness/no natural rest and whole-body inflammation.",
-        "First-person additions: overheated blood and disordered diet/surfeit, often stone/gravel or great kidney heat. The PDF314 continuation calls clysters and gentle cooling best, notes widespread very violent burning fevers, and calls bloodletting good. These remain historical descriptions."
+        "First-person additions: overheated blood and disordered diet/surfeit, often stone/gravel or great kidney heat. The PDF314 continuation calls clysters and gentle cooling best, notes many times a disease all over the body, with very violent burning fevers, and calls bloodletting good. These remain historical descriptions."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -2627,7 +2623,8 @@
       "source_statement": "Scorpio is associated with genital/anal disease and a highly speculative claim about sexually transmitted affliction or marital wrongdoing.",
       "prerequisites": [
         "Moon in Scorpio",
-        "Moon afflicted by Mars conjunction, square or opposition at first illness onset (the printed catalogue formulation)."
+        "Moon afflicted by Mars conjunction, square or opposition at first illness onset (the printed catalogue formulation).",
+        "The source also discusses a QUERENT propounding a question, including distinct modifiers for a modest querent, a man asking, and the converse."
       ],
       "exceptions_and_modifiers": [
         "Unsupported moral inference or spouse culpability must not be promoted into a factual psychological or clinical claim.",
@@ -2646,8 +2643,8 @@
       },
       "source_details": [
         "Moon in Scorpio afflicted by Mars: neither better nor worse, but grievous private-part infirmity; usually ulceration, small or French pox, measles if children, haemorrhoids/piles.",
-        "First-person passage adds head snuffling, grievous colds/rheums, scabs and skin eruptions. It infers French pox/gonorrhea/burning from looking wanton, then insinuates foul play or spouse fault when a modest person asks. These appearance/morality/culpability inferences are historical allegations, never evidence about an actual person.",
-        "The row calls the condition corrupt blood, recommends heating/comfort, and calls it usually scandalous. Its local heating prescription must not be replaced by the broad Mars-cooling recommendation."
+        "First-person Scorpio passage adds head snuffling, grievous colds/rheums, scabs and skin eruptions. It makes unsupported appearance-based diagnoses of French pox, gonorrhoea or a burning after saying 'if the party looke like a wanton'. In a separate question context, if a MODEST party enquires the author suspects foul play; if a MAN propounds the question he insinuates the WIFE may be at fault; 'in Contrario' allows the converse case. These are misogynistic/sexualized source accusations, never evidence about any actual person.",
+        "The row calls the condition corrupt blood, calls heating/comfort now necessary, and calls it usually scandalous. Its local heating prescription must not be replaced by the broad Mars-cooling recommendation."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -2704,7 +2701,7 @@
       "source_details": [
         "Moon in Sagittarius afflicted by Mars: desperate illness attributed to surfeit/gluttony/repletion, high fevers, choleric passions, flux/laske and few/faint or slow/weak pulses.",
         "If the sick escapes the SEVENTH DAY, or more properly the day when the Moon comes to a TRUE SQUARE OF HER FIRST-LYING-DOWN PLACE, there are hopes of recovery. Seven days and the geometrical event are not automatically identical, nor is either a guaranteed cure.",
-        "First-person additions: overheated blood after excessive exercise, extreme burning, sometimes pestilent fever with bloodletting twice/thrice, hand/foot gout, itch/eruptions, sore throat or sharp rheum offending eyes."
+        "First-person additions: daily found overheated blood after excessive exercise, extreme burning, sometimes pestilent fever with bloodletting twice/thrice, hand/foot gout, itch/eruptions, sore throat or sharp rheum offending eyes."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
@@ -2798,7 +2795,7 @@
       },
       "historical_genre": "medicine_and_horary",
       "source_attribution": "printed Hermes section in Lilly, with first-person observational additions of uncertain author",
-      "source_statement": "Aquarius is associated with violent symptoms in a context requiring a slow waning Moon and Mars affliction; a separate intervention by a benefic at first square or opposition to the initial Moon is said to bring relief after twenty days.",
+      "source_statement": "Aquarius is associated with violent sharp affections or vehement passions as alleged causes, in a context requiring a slow waning Moon and Mars affliction; a separate good-aspect intervention by any favourable planet at first square or opposition to the initial Moon is said to bring relief after twenty days.",
       "prerequisites": [
         "Moon in Aquarius",
         "Moon afflicted by Mars conjunction, square or opposition at first illness onset (the printed catalogue formulation).",
@@ -2870,7 +2867,7 @@
       "exceptions_and_modifiers": [
         "Waxing/fast condition belongs to this Pisces rule, unlike Aquarius's waning/slow condition.",
         "The subject of one adjacent first-person clause has compact pronouns; unresolved local scope should remain.",
-        "Dariot/Hermes material ends before the horizontal divider on PDF316."
+        "Hermes-headed material ends before the horizontal divider on PDF316."
       ],
       "sign": "Pisces",
       "planetary_afflictor": "Mars",
@@ -2885,7 +2882,7 @@
       },
       "source_details": [
         "Moon in Pisces afflicted by Mars, INCREASING in light AND SWIFT in motion: full gross humours, excessive eating/swilling/drinking as alleged origin, worse disease at night, phrensy/delirium, sharp burning fever, vehement thirst and desire for wine.",
-        "First-person continuation PDF315–316: violent looseness, belly pain or extraordinary rotten cough, continual rheum from head into throat with near suffocation, swollen belly and dropsy danger. The two-page continuation is one row; not another case."
+        "Usually, with the sick OR enquiring person, the first-person continuation PDF315–316: violent looseness, belly pain or extraordinary rotten cough, continual rheum from head into throat with near suffocation, swollen belly and dropsy danger. The two-page continuation is one row; not another case."
       ],
       "source_statement_type": "normalized_paraphrase_not_diplomatic_transcription",
       "source_details_scope": "All descriptions and prescriptions are historical source assertions, not endorsed medical facts or patient instructions.",
