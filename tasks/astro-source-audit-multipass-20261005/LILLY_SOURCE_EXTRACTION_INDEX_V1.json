@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIII_COMPLETE_XLIV_THROUGH_HERMES_READ_OTHER_SECTIONS_OPEN",
-  "records_count": 1702,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIV_COMPLETE_LATER_LILLY_OPEN",
+  "records_count": 1745,
   "read_numbered_chapters": [
     1,
     2,
@@ -47,7 +47,8 @@
     40,
     41,
     42,
-    43
+    43,
+    44
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -141,16 +142,23 @@
       "records_count": 52,
       "sha256": "bc23641ea3ecdc9ac8b14186e586aa051073c57c1c8627271d65852da48c0365",
       "scope": "XLIV Hermes heading and full opening below PDF302/printed268 divider through Pisces continuation above PDF316/printed282 divider; both historical medicine lists and all Saturn/Mars twelve-sign rows. Next Aphorisms not extracted; XLIV remains incomplete."
+    },
+    {
+      "id": "B02n",
+      "path": "batches/B02n/RULES.json",
+      "records_count": 43,
+      "sha256": "ff5696312331cfa174b5a53c143eafcd8437047215e5f9a2575c3d680df0c185",
+      "scope": "All 43 physician aphorisms from original PDF316 lower/printed282 through PDF320 upper/printed286; XLIV complete at next boundary."
     }
   ],
   "next": {
-    "pdf_page": 316,
-    "printed_page": 282,
-    "chapter": "XLIV",
-    "heading": "Astrologicall Aphorismes beneficiall for Physicians",
+    "pdf_page": 320,
+    "printed_page": 286,
+    "chapter": "XLV",
+    "heading": "A sick Doctor, what was his Disease? If curable?",
     "include_opening_paragraph": true,
-    "opening_anchor": "In Questions concerning sick People, give the ascendant and his Lord",
-    "position": "Below the horizontal divider; include heading and complete first aphorism, then continue numbered sequence onto PDF317. The upper Pisces continuation is complete.",
+    "opening_anchor": "The Signe ascending in this Question is Scorpio",
+    "position": "Below divider following aphorism43; complete dated source case.",
     "extracted": false,
     "boundary_image_read": true
   },
@@ -159,18 +167,7 @@
   "empirical_validations": 0,
   "read_headed_units_count": 44,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261011_B02m.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261011_B02n.md",
   "body_table_or_medical_claims_validated": false,
-  "partial_numbered_chapters": [
-    {
-      "chapter": 44,
-      "label": "XLIV",
-      "batches": [
-        "B02k",
-        "B02l",
-        "B02m"
-      ],
-      "scope": "Sixth-house opening, Dariot continuation and Hermes-headed material complete through upper PDF316; Aphorisms and subsequent XLIV material remain open."
-    }
-  ]
+  "partial_numbered_chapters": []
 }

@@ -1,0 +1,3176 @@
+{
+  "batch": "B02n",
+  "records_count": 43,
+  "first_id": 1703,
+  "last_id": 1745,
+  "status": "AFTER_OPUS_RECONCILIATION_CANDIDATE; INDEPENDENT_CHANGED_ITEM_CHECK_PENDING",
+  "rules": [
+    {
+      "id": "LI.1647.II.XLIV.R1703",
+      "batch": "B02n",
+      "source_aphorism_number": 1,
+      "kind": "historical_method",
+      "dependency_family": "roles",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          316
+        ],
+        "printed_page_sequence": [
+          282
+        ],
+        "passage_anchor": "IN Questions concerning sick People",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "In questions about sick persons, use the ascendant, its ruler, and the ruler of the figure as significators for the sick person.",
+      "prerequisites": [
+        "Horary question concerning a sick person."
+      ],
+      "exceptions_and_modifiers": [
+        "These are roles in a historical horary method, not three independent observations.",
+        "The source does not define the ruler of the figure as automatically identical to the ascendant ruler."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "7c0c10a910b23a8efc81a74da33f617e38cfb2047cbab02afb5dd3144fe5836f",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "These are roles in a historical horary method, not three independent observations.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "The source does not define the ruler of the figure as automatically identical to the ascendant ruler.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1704",
+      "batch": "B02n",
+      "source_aphorism_number": 2,
+      "kind": "historical_method",
+      "dependency_family": "roles",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          316
+        ],
+        "printed_page_sequence": [
+          282
+        ],
+        "passage_anchor": "From the Signe of the sixt",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "From the sixth-house sign, its ruler, planets occupying that house, the place of heaven and sign of the Moon, require the disease OR the part affected in relation to the ascendant. The print names the components without giving a calibrated diagnosis.",
+      "prerequisites": [
+        "Illness or affected body part is asked about.",
+        "Sixth sign, ruler, occupants, and lunar place are inspected together."
+      ],
+      "exceptions_and_modifiers": [
+        "Do not reduce the multiple specified inputs to the sixth cusp alone.",
+        "An illness/body-part mapping here is premodern doctrine, not a medical diagnosis."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "f2a8b04425c8762bf7ba86fbed72be8b483e85e503a2809f63454f22795ba8d1",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Do not reduce the multiple specified inputs to the sixth cusp alone.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "An illness/body-part mapping here is premodern doctrine, not a medical diagnosis.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1705",
+      "batch": "B02n",
+      "source_aphorism_number": 3,
+      "kind": "historical_method",
+      "dependency_family": "roles",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          316
+        ],
+        "printed_page_sequence": [
+          282
+        ],
+        "passage_anchor": "The seventh house represents the Physician",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "The seventh house represents the physician and the tenth his medicine. If the seventh lord is unfortunate, the physician shall not cure. For the tenth house or its ruler the printed phrase 'his Physick is improper' does not repeat an explicit affliction verb; the adverse qualifier must not be silently supplied as an exact quote.",
+      "prerequisites": [
+        "Medical horary figure.",
+        "Assess separately the seventh-ruler state and tenth-house/tenth-ruler state."
+      ],
+      "exceptions_and_modifiers": [
+        "Provider, medicine and patient significators are distinct.",
+        "Failure and treatment appropriateness are claims of the historical text, not evidence."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "18358c451794f2198e54880ac1bdb3daa65f5a0aa3d6ade5415f310a09fcef32",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Provider, medicine and patient significators are distinct.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Failure and treatment appropriateness are claims of the historical text, not evidence.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1706",
+      "batch": "B02n",
+      "source_aphorism_number": 4,
+      "kind": "historical_method",
+      "dependency_family": "roles",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          316
+        ],
+        "printed_page_sequence": [
+          282
+        ],
+        "passage_anchor": "The fourth house signifies the end of the sicknesse",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "The fourth house signifies whether sickness will end quickly or endure long; fixed signs prolong, common signs vary disease, and moveable signs 'shew an end one way or other quickly'. It does not say movable signs merely 'change' the disease.",
+      "prerequisites": [
+        "Judge end or duration of sickness."
+      ],
+      "exceptions_and_modifiers": [
+        "The source says the movable ending may occur one way or another, not invariably recovery.",
+        "Do not convert sign classes to exact calendar duration.",
+        "Aphorism30 independently says moveable signs vary illness while aphorism4 gives moveable signs a quick ending and common signs variation; source-level tension retained."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "9888f18bd13c3d58c9b90c1dcea3225dac17d22251e04f3d7f5520f106ef0d7b",
+      "source_witness_fragments": [
+        {
+          "text": "moveable ones shew an end one way or other quickly",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "The source says the movable ending may occur one way or another, not invariably recovery.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Do not convert sign classes to exact calendar duration.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Aphorism30 independently says moveable signs vary illness while aphorism4 gives moveable signs a quick ending and common signs variation; source-level tension retained.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1707",
+      "batch": "B02n",
+      "source_aphorism_number": 5,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "initial_visit_hours",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          316
+        ],
+        "printed_page_sequence": [
+          282
+        ],
+        "passage_anchor": "That Physician who first visits",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "If the physician FIRST visits in Saturn's hour, 'his Patient shall either be long sick, or long in curing, and suffers much torment in his cure'; the patient is the most natural continuing subject, though the later pronoun is not fully settled. The patient is said not to be cured until almost both physician and patient despair.",
+      "prerequisites": [
+        "Planetary hour at FIRST physician visit is Saturn's."
+      ],
+      "exceptions_and_modifiers": [
+        "The text offers long illness OR long cure, not both necessarily.",
+        "No verified physician-patient outcomes or causal evidence.",
+        "Patient is the clear subject of long sick or long curing; the subsequent suffers torment pronoun may continue patient or shift to physician and is kept unresolved."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "6995e611a2a175f247b843e758049631a3ed61c79186f0d5e365a7e8f2b9a678",
+      "source_witness_fragments": [
+        {
+          "text": "his Patient shall either be long sick, or long in curing",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "The text offers long illness OR long cure, not both necessarily.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "No verified physician-patient outcomes or causal evidence.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Patient is the clear subject of long sick or long curing; the subsequent suffers torment pronoun may continue patient or shift to physician and is kept unresolved.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1708",
+      "batch": "B02n",
+      "source_aphorism_number": 6,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "initial_visit_hours",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          316
+        ],
+        "printed_page_sequence": [
+          282
+        ],
+        "passage_anchor": "He that first enters upon a cure",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "A physician FIRST entering upon a cure in the hour of Mars 'shall find' his patient disaffected and partly disdain or reject the medicines; the physician's pains are ill rewarded AND his person slighted. The print does not directly say that Mars causes that conduct or the patient directly pays/rejects the practitioner.",
+      "prerequisites": [
+        "Planetary hour when physician FIRST begins cure is Mars's."
+      ],
+      "exceptions_and_modifiers": [
+        "Source prints first enters upon a cure, whereas nearby aphorisms use first visits; these different phrases are retained without deriving a new observed event.",
+        "Print uses partly disdain OR reject, then physician pains ill rewarded AND person slighted; patient-specific motivation/payer not established."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "9b0ede0f8f69e44a2d9905f36cd90f5c183c1c114f69dca5cde0065276ff0881",
+      "source_witness_fragments": [
+        {
+          "text": "his pains ill rewarded, and his person slighted",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Source prints first enters upon a cure, whereas nearby aphorisms use first visits; these different phrases are retained without deriving a new observed event.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Print uses partly disdain OR reject, then physician pains ill rewarded AND person slighted; patient-specific motivation/payer not established.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1709",
+      "batch": "B02n",
+      "source_aphorism_number": 7,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "initial_visit_hours",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          316
+        ],
+        "printed_page_sequence": [
+          282
+        ],
+        "passage_anchor": "He that first visits his Patient",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "The physician first visiting in Jupiter OR Venus hour 'shall have' good words of the sick, be well esteemed and paid for his pains; if the cure fails he shall nevertheless suffer no prejudice in estimation. Reputation and money are not cure efficacy.",
+      "prerequisites": [
+        "Planetary hour at FIRST physician visit is Jupiter's OR Venus's."
+      ],
+      "exceptions_and_modifiers": [
+        "The final author gloss limits no prejudice specifically to reputation or estimation, not efficacy.",
+        "Reputation/payment are not evidence of cure."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "7247d03ba1fd7f3c43b0276944cb087ce352408f64439d72c8dbaa6f1b61a359",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "The final author gloss limits no prejudice specifically to reputation or estimation, not efficacy.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Reputation/payment are not evidence of cure.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1710",
+      "batch": "B02n",
+      "source_aphorism_number": 8,
+      "kind": "historical_method",
+      "dependency_family": "roles",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          316
+        ],
+        "printed_page_sequence": [
+          282
+        ],
+        "passage_anchor": "When a Urine is brought",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "When urine is brought, the ascendant represents the sick party whether the querent came with consent or not. The printed rationale says 'for the Urine was sometimes of the essence of the sick', with 'sometimes' retaining possible formerly-versus-occasionally senses.",
+      "prerequisites": [
+        "A urine specimen has been brought to the physician."
+      ],
+      "exceptions_and_modifiers": [
+        "No medical diagnostic validity of urine-as-essence is established.",
+        "This is the local exception to questioner-signification, not permission to ignore consent in real care.",
+        "Sometimes of the essence may mean formerly in period English or occasionally; neither sense is imposed without further collation."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "dc6550b7c243110e4ca4f6f76b003be84aac2b84ee624dc61e4b8ee523ce21d7",
+      "source_witness_fragments": [
+        {
+          "text": "the Urine was sometimes of the essence of the sick",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "No medical diagnostic validity of urine-as-essence is established.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "This is the local exception to questioner-signification, not permission to ignore consent in real care.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Sometimes of the essence may mean formerly in period English or occasionally; neither sense is imposed without further collation.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1711",
+      "batch": "B02n",
+      "source_aphorism_number": 9,
+      "kind": "historical_method",
+      "dependency_family": "roles",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          316,
+          317
+        ],
+        "printed_page_sequence": [
+          282,
+          283
+        ],
+        "passage_anchor": "If no Urine or consent of the sick party",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "If no urine OR consent of the sick party comes to the physician, the ascendant represents the querent; locate the sick person and the disease by relation to the questioner. For a master asking about his servant, sixth signifies the servant and sixth from sixth (the eleventh) the sickness; source closes '& sic in aliis, where no consent is'. This may overlap #8 when urine arrives without consent.",
+      "prerequisites": [
+        "The original prints no urine OR consent, a grammatically ambiguous combination; preserve the 'or' rather than silently requiring both absent.",
+        "The questioner is distinct from the patient."
+      ],
+      "exceptions_and_modifiers": [
+        "Keep derived sixth-from-sixth = eleventh and relation-specific house assignment.",
+        "This item begins on PDF316 and continues on PDF317.",
+        "Do not treat historical lack-of-consent procedure as an acceptable modern medical practice.",
+        "The final printed where no consent is supports a consent-only alternative; urine-present/no-consent situation is also claimed by aphorism8 and remains a genuine source overlap."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "7ccd9cddf9fffe17f9cccb8877ca8e778479a8b1fe5986cc56f041c73b8db15a",
+      "source_witness_fragments": [
+        {
+          "text": "If no Urine or consent of the sick party",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        },
+        {
+          "text": "where no consent is",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Keep derived sixth-from-sixth = eleventh and relation-specific house assignment.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "This item begins on PDF316 and continues on PDF317.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Do not treat historical lack-of-consent procedure as an acceptable modern medical practice.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "The final printed where no consent is supports a consent-only alternative; urine-present/no-consent situation is also claimed by aphorism8 and remains a genuine source overlap.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1712",
+      "batch": "B02n",
+      "source_aphorism_number": 10,
+      "kind": "historical_method",
+      "dependency_family": "roles",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          317
+        ],
+        "printed_page_sequence": [
+          283
+        ],
+        "passage_anchor": "But in every Disease have care",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "BUT in every disease take care of the place of the Moon, 'for she is a generall Significatrix in all things'. The printed transition follows the querent/urine exceptions of #8–9.",
+      "prerequisites": [
+        "Any illness question."
+      ],
+      "exceptions_and_modifiers": [
+        "General significance does not replace the local conditions and house significators.",
+        "Aphorism not an independent empirical outcome."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "7a1ba59302a5bbf45794f47ae1619061da3dc45d3104281b6640c305addcff54",
+      "source_witness_fragments": [
+        {
+          "text": "a generall Significatrix in all things",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "General significance does not replace the local conditions and house significators.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Aphorism not an independent empirical outcome.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1713",
+      "batch": "B02n",
+      "source_aphorism_number": 11,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          317
+        ],
+        "printed_page_sequence": [
+          283
+        ],
+        "passage_anchor": "The sick party is in great danger of death",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "The source says great danger of death when BOTH Sun and Moon are below the Earth at the time of questioning OR first invasion of sickness.",
+      "prerequisites": [
+        "At either original question time OR first illness onset, as specified in source.",
+        "Both Sun AND Moon under Earth for this separate aphorism."
+      ],
+      "exceptions_and_modifiers": [
+        "This is a dangerous prognostic claim in a historical source, not a reliable clinical assessment.",
+        "No substitute of one subterranean luminary for both."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "316a0fbdc45e7f2d68aaa62766fa3fde445fc4d2394ed9a6ce8c4001c32afd4e",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "This is a dangerous prognostic claim in a historical source, not a reliable clinical assessment.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "No substitute of one subterranean luminary for both.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1714",
+      "batch": "B02n",
+      "source_aphorism_number": 12,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          317
+        ],
+        "printed_page_sequence": [
+          283
+        ],
+        "passage_anchor": "As no light is in this World",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "At first lying down there is said to be 'no safety, or hopes of recovery' when 'they' (the Sun OR Moon, or both lights, depending on the grammatical antecedent) are obscured or subterranean. If either is then afflicted the text adds a stronger argument of death. It does not print the word 'both'.",
+      "prerequisites": [
+        "At first decumbiture.",
+        "Lights described as THEY being obscured or subterranean; both versus either light remains grammatically unresolved.",
+        "If either light then afflicted, intensification of alleged mortal danger is separately asserted."
+      ],
+      "exceptions_and_modifiers": [
+        "Distinguish base condition from subsequent aggravating condition.",
+        "Overlaps item11 and must not count as a statistically independent vote.",
+        "Original uses the plural they after Sun OR Moon, and not the explicit word both; two readings are retained."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "9869e94f4239bd46821f6ed985874e0385c0c8b3fd22bf9dad8897c6bcce51a2",
+      "source_witness_fragments": [
+        {
+          "text": "when they are obscured or subterranean",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Distinguish base condition from subsequent aggravating condition.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Overlaps item11 and must not count as a statistically independent vote.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Original uses the plural they after Sun OR Moon, and not the explicit word both; two readings are retained.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1715",
+      "batch": "B02n",
+      "source_aphorism_number": 13,
+      "kind": "historical_method",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          317
+        ],
+        "printed_page_sequence": [
+          283
+        ],
+        "passage_anchor": "The square or Opposition of the Fortunes",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "The square or opposition of the fortunate planets 'destroyeth not'; in parallel, a benevolent aspect of an infortune does not profit UNLESS it is with reception. Both halves are stated categorically in the print, not merely 'not necessarily'.",
+      "prerequisites": [
+        "Square/opposition of one or more fortunes OR a favourable aspect from an infortune.",
+        "Reception is specified to permit a malefic's favourable aspect to benefit."
+      ],
+      "exceptions_and_modifiers": [
+        "The two negative propositions are parallel source statements: benefic square/opposition destroys not; malefic favourable aspect profits not without reception.",
+        "The reception condition attaches to the malefic aspect; no numerical prognosis or statistical independence established."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "0d2775b69682649c18ae030f80eebb241950decf869d53dc8f5262c5f81fdec0",
+      "source_witness_fragments": [
+        {
+          "text": "as it destroyeth not, so neither doth",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "The two negative propositions are parallel source statements: benefic square/opposition destroys not; malefic favourable aspect profits not without reception.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "The reception condition attaches to the malefic aspect; no numerical prognosis or statistical independence established.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1716",
+      "batch": "B02n",
+      "source_aphorism_number": 14,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          317
+        ],
+        "printed_page_sequence": [
+          283
+        ],
+        "passage_anchor": "If the Sun and Moon, or Lord of the Figure",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "The source says 'without doubt' the sick party will recover if the Sun and Moon OR figure ruler OR ascendant ruler are free of affliction and no affinity with the eighth ruler; 'if two of these Significators be so affected' it will go well, otherwise he dies. The antecedent and exact count/otherwise scope are not resolved.",
+      "prerequisites": [
+        "Consider Sun, Moon, lord of figure, lord of ascendant.",
+        "Favourable condition combines no affliction AND no affinity with eighth ruler."
+      ],
+      "exceptions_and_modifiers": [
+        "Original 'or' between significators and 'two of these Significators be so affected' have scope ambiguity; preserve instead of imposing a precise count rule.",
+        "The otherwise-death claim is source rhetoric, not calibrated or clinical."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "3f11c3622ee47a8b18d5dc7162bf32fecf9190d846079275f4c5b818f2db6703",
+      "source_witness_fragments": [
+        {
+          "text": "if two of these Significators be so affected",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Original 'or' between significators and 'two of these Significators be so affected' have scope ambiguity; preserve instead of imposing a precise count rule.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "The otherwise-death claim is source rhetoric, not calibrated or clinical.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1717",
+      "batch": "B02n",
+      "source_aphorism_number": 15,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          317
+        ],
+        "printed_page_sequence": [
+          283
+        ],
+        "passage_anchor": "in his Fall",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "A fallen, unfortunate or combust ascendant ruler, or the figure ruler in the condition described, yields the printed ambiguous warning that it is 'doubtfull' the person 'will dye' of the infirmity.",
+      "prerequisites": [
+        "Ascendant ruler in its fall, unfortunate, OR combust; alternatively examine the figure ruler as printed."
+      ],
+      "exceptions_and_modifiers": [
+        "Preserve 'doubtfull' rather than turning the statement into a certain death prognosis.",
+        "Pronoun/syntactic scope for figure ruler remains uncertain.",
+        "Period sense of doubtfull may be feared or uncertain; without further witness neither is forced."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "0ddb04bbce6eb2991b99cb6b3d1a707e756a092e8810092b8617230df7000859",
+      "source_witness_fragments": [
+        {
+          "text": "it's doubtfull the sick party will dye",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Preserve 'doubtfull' rather than turning the statement into a certain death prognosis.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Pronoun/syntactic scope for figure ruler remains uncertain.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Period sense of doubtfull may be feared or uncertain; without further witness neither is forced.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1718",
+      "batch": "B02n",
+      "source_aphorism_number": 16,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          317
+        ],
+        "printed_page_sequence": [
+          283
+        ],
+        "passage_anchor": "When the Significator of the sick is feeble",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "When the sick-person significator is feeble AND the eighth lord is strong and afflicts it, 'it's much feared' the sick person will die of that illness, the source giving weakness of nature and prevalence of disease as its explanation.",
+      "prerequisites": [
+        "Sick-person significator weak.",
+        "Eighth-house ruler strong AND afflicting that significator."
+      ],
+      "exceptions_and_modifiers": [
+        "Author adds a nature-weak/disease-prevalent rationale, not a separately measured mechanism.",
+        "Risk asserted, not certain death."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "2cc23540fcdd5afe2b0312e6500f94a7692696b4f11aa9e05a4b1a94ee9490cd",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Author adds a nature-weak/disease-prevalent rationale, not a separately measured mechanism.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Risk asserted, not certain death.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1719",
+      "batch": "B02n",
+      "source_aphorism_number": 17,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          317
+        ],
+        "printed_page_sequence": [
+          283
+        ],
+        "passage_anchor": "If the Lord of the ascendant be placed in the eighth",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "If the ascendant ruler lies in the eighth and is received by its ruler in an essential dignity, the sick person is said to recover beyond expectation, even without reciprocal reception.",
+      "prerequisites": [
+        "Ascendant ruler in eighth.",
+        "Eighth ruler receives ascendant ruler by some essential dignity."
+      ],
+      "exceptions_and_modifiers": [
+        "Source explicitly allows the ascendant ruler not to receive the eighth ruler back.",
+        "Reception is not synonymous with conjunction or mere co-presence."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "bbdb0db15af4e6f6b29bc0837d9b008c20c00b7678fec59ed7bbb67794365873",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Source explicitly allows the ascendant ruler not to receive the eighth ruler back.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Reception is not synonymous with conjunction or mere co-presence.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1720",
+      "batch": "B02n",
+      "source_aphorism_number": 18,
+      "kind": "historical_method",
+      "dependency_family": "roles",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          317
+        ],
+        "printed_page_sequence": [
+          283
+        ],
+        "passage_anchor": "The Physician may justly feare his Patient",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "The physician 'may justly feare his Patient' when BOTH ascendant ruler and Moon apply by ill aspect to a planet under Earth; the contrary is expected when they apply to a planet above Earth. The printed above-Earth list is 'the twelfth, eleventh, ninth, eighth seventh houses' (no printed conjunction between eighth and seventh), 'the rest under'.",
+      "prerequisites": [
+        "Ascendant ruler AND Moon applying by ill aspect.",
+        "Their target planet below vs above Earth determines source contrast."
+      ],
+      "exceptions_and_modifiers": [
+        "Printed above-Earth house list: twelfth, eleventh, ninth, eighth seventh. The tenth is not listed.",
+        "The text calls the remaining houses under Earth, a source-specific claim; no missing house is invented.",
+        "Historical medical judgment only, not advice to patients."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "f9b534d12a71d0a0fc99610306ff4d328b0c66389e01467163980694159d5ea8",
+      "source_witness_fragments": [
+        {
+          "text": "The Physitian may justly feare his Patient",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Printed above-Earth house list: twelfth, eleventh, ninth, eighth seventh. The tenth is not listed.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "The text calls the remaining houses under Earth, a source-specific claim; no missing house is invented.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Historical medical judgment only, not advice to patients.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1721",
+      "batch": "B02n",
+      "source_aphorism_number": 19,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          317
+        ],
+        "printed_page_sequence": [
+          283
+        ],
+        "passage_anchor": "The Lord of the eighth being on the cusp",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "An eighth-house ruler on the cusp of the tenth combined with an ascendant ruler below Earth leads to the literal source warning 'great fear of recovery'.",
+      "prerequisites": [
+        "Eighth-house ruler at tenth cusp.",
+        "Ascendant ruler below Earth."
+      ],
+      "exceptions_and_modifiers": [
+        "The printed polarity 'fear of recovery' appears odd relative to neighbours; retain exactly, do not silently change to fear of death or no recovery.",
+        "Requires source comparison before executable Boolean interpretation."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "06e85af6d0be7924edff70e3eeab401198a5fefd7eeb0b79c35699762fa2d29b",
+      "source_witness_fragments": [
+        {
+          "text": "there's great fear of recovery",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "The printed polarity 'fear of recovery' appears odd relative to neighbours; retain exactly, do not silently change to fear of death or no recovery.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Requires source comparison before executable Boolean interpretation.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1722",
+      "batch": "B02n",
+      "source_aphorism_number": 20,
+      "kind": "historical_method",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318
+        ],
+        "printed_page_sequence": [
+          284
+        ],
+        "passage_anchor": "If the Moone be swift in course",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "If the Moon is swift in course AND increasing in light and by sextile OR trine applies to the lord of the ascendant, 'though under the earth', it hastens cure; reception makes it easier, and 'the cure must needs be sooner' if the application be above Earth. The antecedent of 'under the earth' is ambiguous between the ascendant lord and Moon/application.",
+      "prerequisites": [
+        "Moon swift in course AND increasing in light.",
+        "Moon applying by sextile OR trine to lord of ascendant.",
+        "The referent of the phrase though under the earth is ambiguous: ascendant ruler versus Moon/application.",
+        "Reception when present eases cure; application above Earth separately makes it must needs be sooner."
+      ],
+      "exceptions_and_modifiers": [
+        "The location and pronoun under Earth are NOT a licensed singular target test.",
+        "Keep the mandatory-sounding must needs phrase as source rhetoric; no numerical day conversion or clinical outcome."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "a4b89a9119e547e71982ec58e6c4e55351b21f72fa771dc194938e0d26e00d1b",
+      "source_witness_fragments": [
+        {
+          "text": "though under the earth",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        },
+        {
+          "text": "the cure must needs be sooner",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "The location and pronoun under Earth are NOT a licensed singular target test.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Keep the mandatory-sounding must needs phrase as source rhetoric; no numerical day conversion or clinical outcome.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1723",
+      "batch": "B02n",
+      "source_aphorism_number": 21,
+      "kind": "historical_method",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318
+        ],
+        "printed_page_sequence": [
+          284
+        ],
+        "passage_anchor": "If the Lord of the ascendant be in the sixt",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Ascendant lord in sixth OR sixth ruler in ascendant protracts the disease and shows 'much affliction therein'; the square or opposition of sixth lord to ascendant lord 'so also' makes these adverse claims. The source does not specify death.",
+      "prerequisites": [
+        "Ascendant ruler in sixth OR sixth ruler in ascendant; alternatively square/opposition of sixth ruler to ascendant ruler."
+      ],
+      "exceptions_and_modifiers": [
+        "Multiple alternative triggers rather than a conjunction of all.",
+        "Does not by itself assert death."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "c14274d320a1af8e3decb003b425c9aec87d5a1019a8f2b450f9f86e68a9cd7c",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Multiple alternative triggers rather than a conjunction of all.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Does not by itself assert death.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1724",
+      "batch": "B02n",
+      "source_aphorism_number": 22,
+      "kind": "historical_method",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318
+        ],
+        "printed_page_sequence": [
+          284
+        ],
+        "passage_anchor": "If the two benevolent Planets",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Judge hopefully when Jupiter and Venus are the most powerful planets in the figure, and contrariwise when the malefics are the strongest.",
+      "prerequisites": [
+        "Compare the strengths of benefics versus infortunes in the figure."
+      ],
+      "exceptions_and_modifiers": [
+        "Comparative condition, not merely presence of either class.",
+        "No numerical weights or calibrated outcome probabilities supplied."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "d4324fa945a23a9d552f73490b3f381175f127941d2e80083728317242ee0e64",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Comparative condition, not merely presence of either class.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "No numerical weights or calibrated outcome probabilities supplied.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1725",
+      "batch": "B02n",
+      "source_aphorism_number": 23,
+      "kind": "historical_method",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318
+        ],
+        "printed_page_sequence": [
+          284
+        ],
+        "passage_anchor": "The application of the Lord of the fourth",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Application of the fourth-house ruler to conjunction of the eighth lord is stated to prolong sickness 'and also signifieth Death, if the Lord of the fourth be an Infortune; of a benevolent expect the contrary.' The 'if' may qualify only death or both prolongation and death; the printed erratum at p284/14 reads 'if' and its exact body target remains qualified.",
+      "prerequisites": [
+        "Fourth ruler applying to CONJUNCTION of eighth ruler.",
+        "Fortune/infortune nature of fourth ruler distinguishes fatal versus contrary claim."
+      ],
+      "exceptions_and_modifiers": [
+        "It is textually unresolved whether if the fourth ruler be an Infortune qualifies only the death clause or also prolongation. A benevolent fourth lord expects the contrary.",
+        "The original errata page284 line14 gives read if with uncertain exact target; source witness retained separately.",
+        "No orb, rate, duration or clinical event is supplied."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "36aa7990ba4e635ff018aaa9ff1a345af10f58707c72ce019236c3dcef5ce4d4",
+      "source_witness_fragments": [
+        {
+          "text": "prolongs the Infirmity, and also signifieth Death",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "errata_witness": [
+        {
+          "printed_page": 284,
+          "line": "14",
+          "instruction": "r if",
+          "status": "PRINTED_IF; EXACT_TARGET_NOT_CERTAIN"
+        }
+      ],
+      "qualifier_layers": [
+        {
+          "text": "It is textually unresolved whether if the fourth ruler be an Infortune qualifies only the death clause or also prolongation. A benevolent fourth lord expects the contrary.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "The original errata page284 line14 gives read if with uncertain exact target; source witness retained separately.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "No orb, rate, duration or clinical event is supplied.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1726",
+      "batch": "B02n",
+      "source_aphorism_number": 24,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318
+        ],
+        "printed_page_sequence": [
+          284
+        ],
+        "passage_anchor": "A Retrograde Planet Significator of the Disease",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Retrograde disease significator is associated with continuing illness, bodily consumption, worsening again and relapse.",
+      "prerequisites": [
+        "The disease significator (not any arbitrary planet) is retrograde."
+      ],
+      "exceptions_and_modifiers": [
+        "No degree of retrogradation or time threshold given.",
+        "The attributed symptoms are historical doctrine, not diagnosis."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "3390a869b4dd99362d53b254812b4e0b748452ca6611ffcb6038fe933344b08b",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "No degree of retrogradation or time threshold given.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "The attributed symptoms are historical doctrine, not diagnosis.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1727",
+      "batch": "B02n",
+      "source_aphorism_number": 25,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318
+        ],
+        "printed_page_sequence": [
+          284
+        ],
+        "passage_anchor": "The Significator being stationary",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "A stationary significator is linked to urge to vomit and variable illness, while combustion by the Sun is added for a mostly-fatal prognosis.",
+      "prerequisites": [
+        "Significator stationary.",
+        "Combustion by Sun is an extra condition for the stated mostly-fatal prognosis."
+      ],
+      "exceptions_and_modifiers": [
+        "Source explains station as time to work harm because not moving; historical rationale not astronomy-to-medical validation.",
+        "Distinguish varied disease from death."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "2f5cd5794d57a9a17c70398187664ed5e421ecf9d16434d40410677eee6ace75",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Source explains station as time to work harm because not moving; historical rationale not astronomy-to-medical validation.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Distinguish varied disease from death.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1728",
+      "batch": "B02n",
+      "source_aphorism_number": 26,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318
+        ],
+        "printed_page_sequence": [
+          284
+        ],
+        "passage_anchor": "A Significator in his Fall or Detriment",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "A significator in its fall OR detriment 'shewes ill and much danger, and argues much distrust and fear' in the sick person. These claims about feelings are historical and not independent observations.",
+      "prerequisites": [
+        "Relevant significator in its astrological fall OR detriment."
+      ],
+      "exceptions_and_modifiers": [
+        "The source claim contains ill and much danger AND much distrust and fear; not a contemporary psychological observation.",
+        "No identified or independently confirmed illness case."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "ff91050a43d06cf4d2b6410eafaafc08abb802e4f4b04cfa91a0f7a14ea1fe0f",
+      "source_witness_fragments": [
+        {
+          "text": "shewes ill and much danger",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "The source claim contains ill and much danger AND much distrust and fear; not a contemporary psychological observation.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "No identified or independently confirmed illness case.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1729",
+      "batch": "B02n",
+      "source_aphorism_number": 27,
+      "kind": "historical_method",
+      "dependency_family": "body_spirits",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318
+        ],
+        "printed_page_sequence": [
+          284
+        ],
+        "passage_anchor": "The ascendant and the Moone being afflicted",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Afflicted ascendant and Moon with the lord of one and dispositor of the other not likewise afflicted are said to show disease of the body rather than spirits.",
+      "prerequisites": [
+        "Ascendant AND Moon afflicted.",
+        "Lord of one and dispositor of other not likewise afflicted."
+      ],
+      "exceptions_and_modifiers": [
+        "Keep the original asymmetry and pronoun referents unformalized; the text does not identify a single preferred mapping of the two rulers.",
+        "Body/spirits distinction is historical medical psychology, not modern differential diagnosis."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "0b87085b4c24a805d31b6dde62c7a459fe4d2f2fd3951c7af6f400cd0a5a6372",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Keep the original asymmetry and pronoun referents unformalized; the text does not identify a single preferred mapping of the two rulers.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Body/spirits distinction is historical medical psychology, not modern differential diagnosis.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1730",
+      "batch": "B02n",
+      "source_aphorism_number": 28,
+      "kind": "historical_method",
+      "dependency_family": "body_spirits",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318
+        ],
+        "printed_page_sequence": [
+          284
+        ],
+        "passage_anchor": "But the ascendant and Moone free from misfortune",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Unafflicted ascendant and Moon with unfortunate rulers are said to place illness in spirits rather than body; if both are afflicted, both body and mind are tormented; a malefic aspect to ascendant but not Moon indicates 'Animals' rather than body, with a converse.",
+      "prerequisites": [
+        "Variant A: ascendant AND Moon free from misfortune, their lords unfortunate.",
+        "Variant B: both afflicted.",
+        "Variant C: malefic planet regards ascendant but not Moon; contrary case reserved."
+      ],
+      "exceptions_and_modifiers": [
+        "Do not merge the three alternative configurations.",
+        "Keep the printed Animals/spirits terminology; no psychiatric diagnosis or modern anatomical replacement.",
+        "The scope of 'their Lords' and 'both' is not fully resolved."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "2312d340a44e051eb899923fe5b1864d0ac498a7cbcfacbdf2f5a4bb85cdb681",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Do not merge the three alternative configurations.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Keep the printed Animals/spirits terminology; no psychiatric diagnosis or modern anatomical replacement.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "The scope of 'their Lords' and 'both' is not fully resolved.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1731",
+      "batch": "B02n",
+      "source_aphorism_number": 29,
+      "kind": "historical_method",
+      "dependency_family": "roles",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318
+        ],
+        "printed_page_sequence": [
+          284
+        ],
+        "passage_anchor": "The Lord of the sixt in the ascendant",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Sixth-house ruler in ascendant, ninth, eleventh or tenth allegedly makes illness manifest; in seventh, fourth, twelfth or eighth it is occult AND not known.",
+      "prerequisites": [
+        "Place ruler of sixth in one of the named house sets."
+      ],
+      "exceptions_and_modifiers": [
+        "Exact enumerated houses matter; do not replace with only angular/succedent groups.",
+        "Unlisted house positions have no explicit classification in this sentence."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "3938aeac7d0ce2e9938bde4dc272411ed81662ec356708dd3614d6d3dfc6db7c",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Exact enumerated houses matter; do not replace with only angular/succedent groups.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Unlisted house positions have no explicit classification in this sentence.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1732",
+      "batch": "B02n",
+      "source_aphorism_number": 30,
+      "kind": "historical_method",
+      "dependency_family": "sign_motion_disease",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          318,
+          319
+        ],
+        "printed_page_sequence": [
+          284,
+          285
+        ],
+        "passage_anchor": "Moveable Signes easily cause the Disease to vary",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Moveable signs 'easily cause the Disease to vary'; fixed signs make it long and permanent and 'not without much difficulty removeable'; common signs show recidivation or 'now here, now there', or the sick party 'much better at one time then at another'. This differs from aphorism4's moveable ending and common varying rule, a source-level tension.",
+      "prerequisites": [
+        "Sign quality assessed for course of disease."
+      ],
+      "exceptions_and_modifiers": [
+        "The clause begins at PDF318 and continues on PDF319.",
+        "Related to but not independent of fourth-house sign-quality claim #4.",
+        "No calibrated chronicity estimate.",
+        "Aphorism4 moves the variation predicate to common signs and assigns moveable signs an ending. Both source descriptions remain; neither is silently harmonised.",
+        "Original errata page284 line37 instructs deletion of a semicolon in this continuing sentence; precise mark is not certain."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "04c1e611b8d5d2490afc281effd678bba46ecc16a525878b5ce30e54cdc29ef4",
+      "source_witness_fragments": [
+        {
+          "text": "Moveable Signes easily cause the Disease to vary",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "errata_witness": [
+        {
+          "printed_page": 284,
+          "line": "37",
+          "instruction": "dele semi-colon",
+          "status": "PRINTED_DELETE_SEMICOLON; TARGET_PLAUSIBLE"
+        }
+      ],
+      "qualifier_layers": [
+        {
+          "text": "The clause begins at PDF318 and continues on PDF319.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Related to but not independent of fourth-house sign-quality claim #4.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "No calibrated chronicity estimate.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Aphorism4 moves the variation predicate to common signs and assigns moveable signs an ending. Both source descriptions remain; neither is silently harmonised.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Original errata page284 line37 instructs deletion of a semicolon in this continuing sentence; precise mark is not certain.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1733",
+      "batch": "B02n",
+      "source_aphorism_number": 31,
+      "kind": "historical_method",
+      "dependency_family": "roles",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "In the beginning of Diseases",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "At the beginning of diseases, 'ever feare the ill positure and affliction of the Moon'; mix HER signification with the well or ill being of the ascendant lord, and so judge good or ill attending the sick.",
+      "prerequisites": [
+        "Illness beginning.",
+        "Moon and ascendant ruler both assessed."
+      ],
+      "exceptions_and_modifiers": [
+        "This is a combination procedure, not an independently successful clinical predictor.",
+        "Original errata page285 line4 instructs her and the body pertains to the Moon; do not change subject."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "2f2287b27b365d706d69a331b8001905597e9895170d22dc53dc76e4dc173358",
+      "source_witness_fragments": [
+        {
+          "text": "ever feare the ill positure and affliction",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "errata_witness": [
+        {
+          "printed_page": 285,
+          "line": "4",
+          "instruction": "r her",
+          "status": "PRINTED_HER; TARGET_PARTLY_OBSCURED"
+        }
+      ],
+      "qualifier_layers": [
+        {
+          "text": "This is a combination procedure, not an independently successful clinical predictor.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Original errata page285 line4 instructs her and the body pertains to the Moon; do not change subject.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1734",
+      "batch": "B02n",
+      "source_aphorism_number": 32,
+      "kind": "historical_method",
+      "dependency_family": "natal_overlay",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "If the Nativity of the sick may be obtained",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "If the nativity can be obtained, and the Moon at initial decumbiture OR question lies where a natal infortune was OR in its square or opposition, the cure is said to 'goe on the more hardly, and be more difficult to overcome'. Both clauses are present, not a numerical slowness estimate.",
+      "prerequisites": [
+        "An actual natal chart is obtainable.",
+        "Current lunar place overlays natal infortune's original position or named hard aspect.",
+        "Time of illness onset OR question as specified."
+      ],
+      "exceptions_and_modifiers": [
+        "Do not synthesize the natal chart from unverified personal data.",
+        "Requires cross-chart comparison; no default exact orb."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "a498c297577943b24d474626a7db641bc5182bccbc44be5f5f604465fbbefae5",
+      "source_witness_fragments": [
+        {
+          "text": "the cure will goe on the more hardly",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Do not synthesize the natal chart from unverified personal data.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Requires cross-chart comparison; no default exact orb.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1735",
+      "batch": "B02n",
+      "source_aphorism_number": 33,
+      "kind": "historical_method",
+      "dependency_family": "natal_overlay",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "If in the beginning of a sicknesse",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "If the Moon at the beginning of a sickness is in the sixth, fourth, seventh, eighth or twelfth of the NATIVITY, and at both the natal and sickness times an Infortune is 'therein' [original erratum p285 l11 corrects body 'there'], the text manifests death UNLESS a Fortune at one of those times casts its benevolent beams 'thither' (to that place). The printed 'therein' scope is place-bound and not a licence to use an infortune anywhere.",
+      "prerequisites": [
+        "Moon at first sickness in a named natal house: sixth, fourth, seventh, eighth OR twelfth.",
+        "The errata-corrected ORIGINAL requires an Infortune THEREIN in that place AT BOTH natal and sickness times, not just any infortune in the chart.",
+        "No fortunate planet rays cast THITHER at either time for the source adverse clause."
+      ],
+      "exceptions_and_modifiers": [
+        "Original body prints there; source erratum p285 line11 corrects to therein; the corrected locality is materially restrictive.",
+        "A Fortune at either time casting benevolent beams THITHER is an explicit exception to the prognosis.",
+        "Exact place/reference remains source-qualified, not an independently verified personal case."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "28aa97cd2e483a162d21b852c09cab0b035ca27d95000a630c40276c09b0fde9",
+      "source_witness_fragments": [
+        {
+          "text": "both times there happens to be an Infortune",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        },
+        {
+          "text": "cast thither his benevolent Beames",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "errata_witness": [
+        {
+          "printed_page": 285,
+          "line": "11",
+          "instruction": "r therein",
+          "status": "CONFIRMED_SCOPE_CORRECTION_THERE_TO_THEREIN; ORIGINAL_BODY_PRESERVED"
+        }
+      ],
+      "witness_variants": {
+        "1647_body": "and both times there happens to be an Infortune",
+        "1647_printed_errata": "p 285 l 11 r therein",
+        "errata_corrected_reading": "and both times therein happens to be an Infortune",
+        "trigger_impact": "Infortune restricted to the mentioned place at natal and sickness times; benefic rays cast thither"
+      },
+      "qualifier_layers": [
+        {
+          "text": "Original body prints there; source erratum p285 line11 corrects to therein; the corrected locality is materially restrictive.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "A Fortune at either time casting benevolent beams THITHER is an explicit exception to the prognosis.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Exact place/reference remains source-qualified, not an independently verified personal case.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1736",
+      "batch": "B02n",
+      "source_aphorism_number": 34,
+      "kind": "historical_method",
+      "dependency_family": "natal_overlay",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "When the ascendant of the sicknesse is opposite",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "When the illness ascendant is 'opposite' the natal ascendant AND 'is either the fourth, sixth, eighth, twelfth or seventh', the Revolution ascendant being 'not the same', the source predicts hardly any recovery. Literal 180-degree opposition is geometrically natal seventh only, conflicting with the longer house list; both original clauses are retained without silently changing AND to OR.",
+      "prerequisites": [
+        "Onset ascendant opposite natal ascendant.",
+        "Onset ascendant corresponds to fourth, sixth, eighth, twelfth OR seventh in stated comparison.",
+        "Ascendant of Revolution not same, as printed."
+      ],
+      "exceptions_and_modifiers": [
+        "Source involves natal, illness and Revolution frames and leaves the identity of 'same' elliptical.",
+        "Do not compute or substitute annual solar return from this sentence alone.",
+        "Strong prognosis is unverified historical assertion.",
+        "An exact opposition to natal ascendant geometrically yields natal seventh, not simultaneously fourth/sixth/eighth/twelfth; printed conjunctive and remains internally unresolved."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "390e0305e3d4e557b58f6837b8b24cfed64d5ff22e2668ccdab400b716ed1c6b",
+      "source_witness_fragments": [
+        {
+          "text": "opposite to that of the Nativity",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Source involves natal, illness and Revolution frames and leaves the identity of 'same' elliptical.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Do not compute or substitute annual solar return from this sentence alone.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Strong prognosis is unverified historical assertion.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "An exact opposition to natal ascendant geometrically yields natal seventh, not simultaneously fourth/sixth/eighth/twelfth; printed conjunctive and remains internally unresolved.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1737",
+      "batch": "B02n",
+      "source_aphorism_number": 35,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "When the Lord of the second doth infortunate",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Second-house ruler afflicting the ascendant ruler is said to make cure expensive; if the sick person dies, large expenditures are described as ineffective.",
+      "prerequisites": [
+        "Second ruler afflicts ascendant ruler.",
+        "If death actually occurs, cost-wasted assertion is an additional branch."
+      ],
+      "exceptions_and_modifiers": [
+        "Cost and death are separate outcome dimensions.",
+        "No price or quantified treatment cost."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "bebc1a663af7c8be27a2c747949f4effeecee4d9b9c07c56782dd99b3c5276e2",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Cost and death are separate outcome dimensions.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "No price or quantified treatment cost.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1738",
+      "batch": "B02n",
+      "source_aphorism_number": 36,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "The Sun in the ascendant brings usually health",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Sun in ascendant is said usually to bring health immediately; Sun in sixth produces an immediate change; eighth ruler combust is associated with recovery rather than death 'at that time'.",
+      "prerequisites": [
+        "Three alternative conditions: Sun in ascendant, Sun in sixth, OR eighth ruler combust."
+      ],
+      "exceptions_and_modifiers": [
+        "Usually in the source expresses frequency rather than a timing interval; at that time limits the separate eighth-lord combustion claim.",
+        "Change in sixth is not itself a proven cure."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "ae3eab85691dd515a1c40e5f3f30620b78c16e5eac2554adab8e66548a9ffabe",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Usually in the source expresses frequency rather than a timing interval; at that time limits the separate eighth-lord combustion claim.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Change in sixth is not itself a proven cure.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1739",
+      "batch": "B02n",
+      "source_aphorism_number": 37,
+      "kind": "historical_method",
+      "dependency_family": "solar_metaphor",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "The Sun is the candle or light of Heaven",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "The Sun is named the 'candle or light of Heaven' and the spirit said to clarify/beautify signs where it is, destroying nature's enemies. This is an aphorism numbered separately, not explicitly worded as a causal explanation of #36.",
+      "prerequisites": [
+        "Author's general rationale following a Sun-based prognosis."
+      ],
+      "exceptions_and_modifiers": [
+        "Aphorism37 is a separately numbered source assertion, not explicitly introduced as the logical proof of 36.",
+        "Poetic natural philosophy is not empirical illness evidence."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "398d589cce0f700c44c2203bd61d3c79d64d2cb5e3a3b74d3c932554fce6f8ba",
+      "source_witness_fragments": [
+        {
+          "text": "the candle or light of Heaven",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Aphorism37 is a separately numbered source assertion, not explicitly introduced as the logical proof of 36.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Poetic natural philosophy is not empirical illness evidence.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1740",
+      "batch": "B02n",
+      "source_aphorism_number": 38,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "Fear not the death of thy Patient",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "A favourable Jupiter aspect to Sun is said to remove fear of death even though the ascendant ruler applies to the eighth ruler.",
+      "prerequisites": [
+        "Jupiter in a good aspect to Sun.",
+        "Ascendant ruler applying to eighth ruler is an overridden adverse testimony."
+      ],
+      "exceptions_and_modifiers": [
+        "Benefic override appears explicitly; no unspecified Sun/Jupiter dignities or orbs.",
+        "Source certainty is unvalidated."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "9cef815547ed9a97aece8c28a699eb28802e196ac57987d475912b293d89b594",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Benefic override appears explicitly; no unspecified Sun/Jupiter dignities or orbs.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Source certainty is unvalidated.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1741",
+      "batch": "B02n",
+      "source_aphorism_number": 39,
+      "kind": "historical_method",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "When a sicknesse takes one first",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "If the Moon is separating from Sun's combustion as sickness first strikes, the illness is said to grow until Moon opposes Sun.",
+      "prerequisites": [
+        "At FIRST sickness onset, Moon separating from combustion.",
+        "Monitor until Moon's opposition to Sun."
+      ],
+      "exceptions_and_modifiers": [
+        "Do not replace the aspect event with an assumed fixed number of days.",
+        "Disease-increase assertion, not confirmed outcome."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "699befcb67f267d4ef275b9b470ca2616395d916f77a17bff35663abdee220d0",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Do not replace the aspect event with an assumed fixed number of days.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Disease-increase assertion, not confirmed outcome.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1742",
+      "batch": "B02n",
+      "source_aphorism_number": 40,
+      "kind": "historical_prognosis_or_claim",
+      "dependency_family": "health_prognosis",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "The Lord of the ascendant being unfortunate in the eighth",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "The unfortunate ascendant ruler in the eighth is followed by the allegation the patient 'will much encrease the Disease and retard the cure by his ill government and carelesnesse'. This is a source attribution of blame, not evidence that the patient behaved carelessly.",
+      "prerequisites": [
+        "Ascendant ruler unfortunate IN the eighth."
+      ],
+      "exceptions_and_modifiers": [
+        "The implied patient-blame or motive is not evidence of actual behaviour.",
+        "Distinguish the source claim from medically supported causal responsibility."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "646c4b3483b356d0e9ababe611077a4445d29200b577634c78a4832263b966f4",
+      "source_witness_fragments": [
+        {
+          "text": "his ill government and carelesnesse",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "The implied patient-blame or motive is not evidence of actual behaviour.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Distinguish the source claim from medically supported causal responsibility.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1743",
+      "batch": "B02n",
+      "source_aphorism_number": 41,
+      "kind": "historical_method",
+      "dependency_family": "sign_motion_disease",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319
+        ],
+        "printed_page_sequence": [
+          285
+        ],
+        "passage_anchor": "Occidentall",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "An occidental significator of the sick denotes chronic disease, oriental new sickness; consider separation of the Moon and as she separates or applies the disease decreases or increases, '&c.' as printed. These are uncalibrated historical assertions.",
+      "prerequisites": [
+        "Assess orientation of the actual sick-person significator.",
+        "Consider lunar separation and application."
+      ],
+      "exceptions_and_modifiers": [
+        "Not all occidental charts are clinically chronic; source gives no precision/caseload.",
+        "Do not conflate oriental/orientated status with other uses of angular speed.",
+        "The closing and so forth keeps the source example open; do not add a precise rate from it."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "0aa39ef692d9784912644809907ef62fe7f3a8c6fc6647da6c734faf8025c233",
+      "source_witness_fragments": [
+        {
+          "text": "Occidentall, denotes chronick Diseases",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Not all occidental charts are clinically chronic; source gives no precision/caseload.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Do not conflate oriental/orientated status with other uses of angular speed.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "The closing and so forth keeps the source example open; do not add a precise rate from it.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1744",
+      "batch": "B02n",
+      "source_aphorism_number": 42,
+      "kind": "historical_method",
+      "dependency_family": "sign_motion_disease",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          319,
+          320
+        ],
+        "printed_page_sequence": [
+          285,
+          286
+        ],
+        "passage_anchor": "If Saturn be author of the Disease",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "Saturn as author of the illness is assigned cold; Mars or Sun assign heat and dryness; analogous planetary nature is invoked for the remaining planets.",
+      "prerequisites": [
+        "Source first assigns an authoring planet of illness; interpret its attributed nature."
+      ],
+      "exceptions_and_modifiers": [
+        "Printed aphorism spans PDF319–320.",
+        "No exhaustive correspondences for all remaining planets are supplied here.",
+        "Historical humoral attribution, not medical mechanism."
+      ],
+      "original_source_wording_uncertain": false,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "830ee01011dea3c6c10b27955da9e6089b2848e5ab808d9a5d9fbb8939243267",
+      "source_witness_fragments": [],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "Printed aphorism spans PDF319–320.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "No exhaustive correspondences for all remaining planets are supplied here.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Historical humoral attribution, not medical mechanism.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    },
+    {
+      "id": "LI.1647.II.XLIV.R1745",
+      "batch": "B02n",
+      "source_aphorism_number": 43,
+      "kind": "historical_method",
+      "dependency_family": "sign_motion_disease",
+      "source_locator": {
+        "source_id": "LILLY1647_WELLCOME_B30338724",
+        "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+        "book": "II",
+        "chapter": "XLIV",
+        "section": "Astrologicall Aphorismes beneficiall for Physicians",
+        "pdf_pages": [
+          320
+        ],
+        "printed_page_sequence": [
+          286
+        ],
+        "passage_anchor": "The Moone is more afflicted of Mars",
+        "anchor_type": "normalized locating phrase, not declared diplomatic quotation",
+        "page_image_authority": "original 1647 page render"
+      },
+      "source_statement": "The Moon increased in light is said to be more afflicted by Mars, and in her wane more oppressed by Saturn. 'Beware in the beginning of a sicknesse' when the Moon is thus unfortunate. Mars does more mischief in masculine signs, Oriental and above Earth; whether those are jointly necessary or individually aggravating is unresolved. The source asks for the contrary judgment of Saturn without spelling out all logical negations.",
+      "prerequisites": [
+        "At beginning of a sickness, Moon unfortunate in indicated waxing versus waning phase.",
+        "Mars in masculine sign, oriental and above Earth are printed as a list; jointly necessary versus separate aggravating factors remains uncertain."
+      ],
+      "exceptions_and_modifiers": [
+        "The Saturn converse is not a fully enumerated complementary Boolean rule in the source.",
+        "Avoid conflating waxing with speed or motion.",
+        "This is the last physician aphorism before Chapter XLV, which has a separate dated worked chart.",
+        "The printed beware clause at sickness onset is required; do not turn the sign/orientation/hemisphere list into an unqualified universal conjunction."
+      ],
+      "original_source_wording_uncertain": true,
+      "source_attribution": "William Lilly Christian Astrology (1647), printed chapter XLIV numbered physician aphorism; independent antecedent source not collated",
+      "source_genre": "historical horary/medical astrology; unvalidated",
+      "source_interpretation_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_evidence_unit": false,
+      "case_id": null,
+      "case_evidence": {
+        "dated_enquiry": false,
+        "worked_chart": false,
+        "verified_outcome": false,
+        "count_as_prediction": false
+      },
+      "clinical_or_predictive_validity": false,
+      "original_draft_sha256": "5ae63807721c4d0f2d5306c414db49b9edd1cdc947be767101494c9907d0fc0f",
+      "source_witness_fragments": [
+        {
+          "text": "beware in the beginning of a sicknesse",
+          "authority": "original 1647 page image; long-s and typographic glyphs normalized where necessary; verify before direct quoting"
+        }
+      ],
+      "qualifier_field_policy": "exceptions_and_modifiers contains source-specific clauses AND editorial/evidence cautions; these are distinguished below, not all treated as printed conditions.",
+      "evidence_assurance": {
+        "medical_efficacy": false,
+        "independently_verified_patient_case": false,
+        "empirical_prediction_validation": false,
+        "runtime_model_promoted": false
+      },
+      "qualifier_layers": [
+        {
+          "text": "The Saturn converse is not a fully enumerated complementary Boolean rule in the source.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "Avoid conflating waxing with speed or motion.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "This is the last physician aphorism before Chapter XLV, which has a separate dated worked chart.",
+          "layer": "SOURCE_CONTEXT_OR_INTERPRETIVE_NOTE",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        },
+        {
+          "text": "The printed beware clause at sickness onset is required; do not turn the sign/orientation/hemisphere list into an unqualified universal conjunction.",
+          "layer": "EDITORIAL_EVIDENCE_LIMIT",
+          "note": "Check source image for operative grammar; audit commentary must not become a prediction clause."
+        }
+      ],
+      "source_attribution_scope": "Book II/XLIV assignment inherited from adjoining chapter context; not itself restated on the five admitted aphorism leaves."
+    }
+  ],
+  "source_curation": "Source first original 1647 page images, one numbered aphorism per record, independent diagnosis followed by source-bound repairs; no medical or predictive validation."
+}

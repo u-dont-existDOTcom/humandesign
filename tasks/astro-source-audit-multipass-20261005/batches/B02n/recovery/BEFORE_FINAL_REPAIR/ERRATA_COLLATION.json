@@ -1,0 +1,47 @@
+{
+  "source": "Original William Lilly 1647 volume errata page, original PDF888, image evidence/errata-888.png and targeted crop",
+  "target_batch": "B02n physician aphorisms printed282-286",
+  "entries": [
+    {
+      "printed_page": 284,
+      "printed_line": "14",
+      "instruction": "r if",
+      "status": "PRINTED_IF; EXACT_TARGET_NOT_CERTAIN",
+      "possible_aphorism_region": "middle of original PDF318",
+      "aphorism": 23,
+      "applied_to_normalized_record": false
+    },
+    {
+      "printed_page": 284,
+      "printed_line": "37",
+      "instruction": "dele semi-colon",
+      "status": "PRINTED_DELETE_SEMICOLON; TARGET_PLAUSIBLE",
+      "possible_aphorism_region": "lower original PDF318",
+      "aphorism": 30,
+      "applied_to_normalized_record": false
+    },
+    {
+      "printed_page": 285,
+      "printed_line": "4",
+      "instruction": "r her",
+      "status": "PRINTED_HER; TARGET_PARTLY_OBSCURED",
+      "possible_aphorism_region": "upper original PDF319, near aphorism31",
+      "aphorism": 31,
+      "applied_to_normalized_record": false
+    },
+    {
+      "printed_page": 285,
+      "printed_line": "11",
+      "instruction": "r therein",
+      "status": "CONFIRMED_SCOPE_CORRECTION_THERE_TO_THEREIN; ORIGINAL_BODY_PRESERVED",
+      "possible_aphorism_region": "upper original PDF319, near natal overlay aphorism33",
+      "aphorism": 33,
+      "applied_to_normalized_record": true,
+      "body_reading": "there",
+      "errata_corrected_reading": "therein"
+    }
+  ],
+  "method": "Original errata source page visually inspected; raw correction tokens preserved; line counting / precise replacement site remains uncertain. Never silently treat errata as applied to candidate record.",
+  "clinical_or_predictive_validity": false,
+  "does_not_claim_no_other_errata_elsewhere": true
+}

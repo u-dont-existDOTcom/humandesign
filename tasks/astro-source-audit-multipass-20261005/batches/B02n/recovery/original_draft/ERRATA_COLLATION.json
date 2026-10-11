@@ -1,0 +1,37 @@
+{
+  "source": "Original William Lilly 1647 volume errata page, original PDF888, image evidence/errata-888.png and targeted crop",
+  "target_batch": "B02n physician aphorisms printed282-286",
+  "entries": [
+    {
+      "printed_page": 284,
+      "printed_line": "14",
+      "instruction": "r if",
+      "status": "ERRATA_PRINTED; BODY_ALIGNMENT_NOT_YET_CONFIRMED",
+      "possible_aphorism_region": "middle of original PDF318"
+    },
+    {
+      "printed_page": 284,
+      "printed_line": "37",
+      "instruction": "dele semi-colon",
+      "status": "ERRATA_PRINTED; BODY_ALIGNMENT_NOT_YET_CONFIRMED",
+      "possible_aphorism_region": "lower original PDF318"
+    },
+    {
+      "printed_page": 285,
+      "printed_line": "4",
+      "instruction": "r her",
+      "status": "ERRATA_PRINTED; BODY_ALIGNMENT_NOT_YET_CONFIRMED",
+      "possible_aphorism_region": "upper original PDF319, near aphorism31"
+    },
+    {
+      "printed_page": 285,
+      "printed_line": "11",
+      "instruction": "r therein",
+      "status": "ERRATA_PRINTED; BODY_ALIGNMENT_NOT_YET_CONFIRMED",
+      "possible_aphorism_region": "upper original PDF319, near natal overlay aphorism33"
+    }
+  ],
+  "method": "Original errata source page visually inspected; raw correction tokens preserved; line counting / precise replacement site remains uncertain. Never silently treat errata as applied to candidate record.",
+  "clinical_or_predictive_validity": false,
+  "does_not_claim_no_other_errata_elsewhere": true
+}

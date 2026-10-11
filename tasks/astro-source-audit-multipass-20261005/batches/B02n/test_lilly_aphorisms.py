@@ -62,12 +62,12 @@ class ConditionalGuards(unittest.TestCase):
   self.assertIn('FIRST begins cure',text(6))
   self.assertIn('FIRST physician visit',text(7))
  def test_urine_consent_alternatives_retained(self):
-  self.assertIn('regardless',text(8))
+  self.assertIn('whether the querent came with consent or not',text(8))
   self.assertIn('OR consent',text(9))
   self.assertIn('eleventh',text(9))
  def test_both_luminaries_condition(self):
   self.assertIn('BOTH',text(11))
-  self.assertIn('Both lights',text(12))
+  self.assertIn('both versus either',text(12).lower())
  def test_malefic_reception_exception(self):
   self.assertIn('reception',text(13).lower())
  def test_two_significators_uncertain(self):
@@ -77,7 +77,7 @@ class ConditionalGuards(unittest.TestCase):
  def test_eighth_reception_not_necessarily_mutual(self):
   self.assertIn('without reciprocal reception',text(17))
  def test_aphorism18_unprinted_tenth_not_completed(self):
-  self.assertIn('tenth is not explicitly',text(18))
+  self.assertIn('The tenth is not listed',text(18))
  def test_aphorism19_odd_negative_literal_retained(self):
   self.assertIn('great fear of recovery',text(19))
   self.assertNotIn('fear of death',by(19)['source_statement'])
@@ -99,7 +99,7 @@ class ConditionalGuards(unittest.TestCase):
  def test_natal_overlay_explicit(self):
   for n in [32,33,34]:
    self.assertTrue('natal' in text(n).lower() or 'nativity' in text(n).lower())
-  self.assertIn('benefic',text(33).lower())
+  self.assertIn('therein',text(33).lower());self.assertIn('thither',text(33).lower())
   self.assertIn('Revolution',text(34))
  def test_illness_money_is_separate_endpoint(self):
   self.assertIn('expensive',text(35))
@@ -115,6 +115,10 @@ class ConditionalGuards(unittest.TestCase):
  def test_18_retained_uncertainties(self):
   self.assertEqual(U['retained_count'],len(U['limits']))
   self.assertGreaterEqual(len(U['limits']),18)
+ def test_four_original_errata_are_bounded(self):
+  e=read('ERRATA_COLLATION.json')['entries']
+  self.assertEqual([(x['printed_page'],x['printed_line']) for x in e],[(284,'14'),(284,'37'),(285,'4'),(285,'11')])
+  self.assertTrue(all(x['status'] and x['aphorism'] in (23,30,31,33) for x in e))
  def test_report_source_only(self):
   report=(P/'AUDIT_REPORT.md').read_text()
   self.assertIn('predictive',report.lower())

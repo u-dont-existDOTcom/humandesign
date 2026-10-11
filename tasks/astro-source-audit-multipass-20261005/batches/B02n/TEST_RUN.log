@@ -1,3 +1,15 @@
+test_ambiguous_luminaries_at_12_not_false_both (test_b02n_independent_repairs.OpusReviewRegression.test_ambiguous_luminaries_at_12_not_false_both) ... ok
+test_aphorism13_printed_parallel_negative (test_b02n_independent_repairs.OpusReviewRegression.test_aphorism13_printed_parallel_negative) ... ok
+test_aphorism18_physician_modal_and_exact_house_list (test_b02n_independent_repairs.OpusReviewRegression.test_aphorism18_physician_modal_and_exact_house_list) ... ok
+test_aphorism20_and23_ambiguities_remain (test_b02n_independent_repairs.OpusReviewRegression.test_aphorism20_and23_ambiguities_remain) ... ok
+test_aphorism33_material_erratum_local_trigger (test_b02n_independent_repairs.OpusReviewRegression.test_aphorism33_material_erratum_local_trigger) ... ok
+test_aphorism43_illness_onset_and_mars_modifiers (test_b02n_independent_repairs.OpusReviewRegression.test_aphorism43_illness_onset_and_mars_modifiers) ... ok
+test_aphorism4_30_fixed_source_disagreement (test_b02n_independent_repairs.OpusReviewRegression.test_aphorism4_30_fixed_source_disagreement) ... ok
+test_evidence_layers_never_promote_as_applied_rules (test_b02n_independent_repairs.OpusReviewRegression.test_evidence_layers_never_promote_as_applied_rules) ... ok
+test_four_errata_citations_have_appropriate_status (test_b02n_independent_repairs.OpusReviewRegression.test_four_errata_citations_have_appropriate_status) ... ok
+test_index_and_record_uncertainty_agree (test_b02n_independent_repairs.OpusReviewRegression.test_index_and_record_uncertainty_agree) ... ok
+test_physician_saturn_hour_patient_is_subject (test_b02n_independent_repairs.OpusReviewRegression.test_physician_saturn_hour_patient_is_subject) ... ok
+test_urine_with_and_without_consent_overlap_not_erased (test_b02n_independent_repairs.OpusReviewRegression.test_urine_with_and_without_consent_overlap_not_erased) ... ok
 test_18_retained_uncertainties (test_lilly_aphorisms.ConditionalGuards.test_18_retained_uncertainties) ... ok
 test_aphorism15_doubt_not_certainty (test_lilly_aphorisms.ConditionalGuards.test_aphorism15_doubt_not_certainty) ... ok
 test_aphorism18_unprinted_tenth_not_completed (test_lilly_aphorisms.ConditionalGuards.test_aphorism18_unprinted_tenth_not_completed) ... ok
@@ -8,6 +20,7 @@ test_aphorism25_station_and_combustion_separate (test_lilly_aphorisms.Conditiona
 test_body_spirits_animals_not_diagnosis (test_lilly_aphorisms.ConditionalGuards.test_body_spirits_animals_not_diagnosis) ... ok
 test_both_luminaries_condition (test_lilly_aphorisms.ConditionalGuards.test_both_luminaries_condition) ... ok
 test_eighth_reception_not_necessarily_mutual (test_lilly_aphorisms.ConditionalGuards.test_eighth_reception_not_necessarily_mutual) ... ok
+test_four_original_errata_are_bounded (test_lilly_aphorisms.ConditionalGuards.test_four_original_errata_are_bounded) ... ok
 test_hour_of_first_visit_vs_beginning_cure (test_lilly_aphorisms.ConditionalGuards.test_hour_of_first_visit_vs_beginning_cure) ... ok
 test_house_lists_exact (test_lilly_aphorisms.ConditionalGuards.test_house_lists_exact) ... ok
 test_illness_money_is_separate_endpoint (test_lilly_aphorisms.ConditionalGuards.test_illness_money_is_separate_endpoint) ... ok
@@ -38,6 +51,6 @@ test_source_page_coverage (test_lilly_aphorisms.RecordIntegrity.test_source_page
 test_unique_consecutive_ids (test_lilly_aphorisms.RecordIntegrity.test_unique_consecutive_ids) ... ok
 
 ----------------------------------------------------------------------
-Ran 38 tests in 0.012s
+Ran 51 tests in 0.011s
 
 OK

@@ -1,0 +1,30 @@
+{
+  "disposition": "ACCEPTABLE_HISTORICAL_SOURCE_EXTRACTION_WITH_RETAINED_UNCERTAINTIES",
+  "reviewer": "Claude Opus 5.5 max, separate read-only neutral workspace via owner subscription",
+  "initial_verdict": "FINDS_ERROR, 6 source errors +5 ambiguous readings +14 omission records",
+  "changed_item_verdict": "FINDS_ERROR (original six materially fixed; four residual scope/report issues and small wording issues)",
+  "scope": "Original 1647 scanned PDF316–320 and original errata PDF888; initial all43, changed-pass all flagged43 record fields and report",
+  "independent_model_checked_all_43": true,
+  "material_review_findings_resolved_or_explicitly_retained": true,
+  "final_repair_controller": "GPT-6 source-bound local textual adjudication, not a third independent model review",
+  "final_recorded_repairs": [
+    "#9/U26 overlap now conditional on alternate grammar",
+    "37 no longer inferred dependent sun prerequisite",
+    "30 contradictory only on movable signs and specific house context",
+    "43 sickness-onset modifier applies only to beware warning",
+    "3 missing predicate explicitly identified as inference",
+    "33 erratum therein and beam locality preserved",
+    "Report C08/C09/C10/citations corrected",
+    "Original errata and body witnesses separate",
+    "Heuristic qualifier semantic labels dropped rather than falsely asserted"
+  ],
+  "retained_uncertainties": 26,
+  "reviewer_files": [
+    "independent_review/OPUS_INITIAL_DIAGNOSIS.md",
+    "independent_review/OPUS_CHANGED_ITEM_DIAGNOSIS.md"
+  ],
+  "final_report_sha256": "a7de8c012f1341111fbe5cc56ffe9d364e45c2df4ba62f7c66c6a3c118ed13af",
+  "final_rules_sha256": "ff5696312331cfa174b5a53c143eafcd8437047215e5f9a2575c3d680df0c185",
+  "no_final_model_readback_after_last_edits": true,
+  "source_status": "source-documentary fidelity accepted with explicit uncertainty; not ancient attribution, medical efficacy, or predictive validation"
+}

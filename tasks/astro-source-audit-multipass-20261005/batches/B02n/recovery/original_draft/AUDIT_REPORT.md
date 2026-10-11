@@ -1,0 +1,53 @@
+# Lilly Book II, Chapter XLIV: 43 physician aphorisms
+
+11 October 2026 · Source-bound historical research · B02n
+
+## Boundary and contribution
+
+William Lilly's *Christian Astrology* (1647), the original Wellcome scan, contains a separate heading **“Astrologicall Aphorismes beneficiall for Physicians”** below the divider on original PDF316 / printed282. The numbered sequence ends at aphorism 43 on original PDF320 / printed286, **above** another divider. The following **Chapter XLV**, with a dated doctor horoscope, is outside this section. The full admitted text spans five source pages; aphorisms 9, 30 and 42 cross page turns. [PDF316–320; SECTION_COVERAGE.json]
+
+The proposed batch maps **43 numbered aphorisms to 43 documentary records, R1703–R1745**, and indexes every source number once. It would bring the previously accepted Lilly inventory of 1,702 to **1,745** and the combined Lilly plus retained Ptolemy inventory to **2,811** when published and accepted. These are **source-text units**, not independent observations, people, predictions or patient outcomes. There are zero actual dated patient charts within the admitted aphorisms, although a worked chart begins immediately after them in XLV. [COUNTS.json; RULES.json; APHORISM_INDEX.json; PDF320]
+
+## Source-defined procedures
+
+**1. Significators and roles are context-dependent.** The first four aphorisms distinguish the ascendant, its lord and the figure lord from the sixth-house sign, ruler and occupants, the Moon's sign, seventh-house physician, tenth-house medicine, and fourth-house illness ending. Neither seventh- nor tenth-house affliction is automatically a claim about the patient. The fourth-house fixed/common/movable distinction is about proposed duration or variability, not simply recovery versus death. [PDF316; aphorisms1–4, R1703–R1706]
+
+**2. The opening physician-hour predictions address different alleged endpoints.** Saturn's hour concerns duration and despair, Mars's hour predicts hostility toward the physician, and Jupiter/Venus hours concern esteem and payment even if the physician fails to cure. The source distinguishes **first visit** from **first entering upon a cure**. These are historical claims about professional interaction, not known outcomes. [PDF316; aphorisms5–7, R1707–R1709]
+
+**3. Consent and derived-house calculation are not a single universal rule.** Aphorism 8 makes the patient's urine specimen a condition for treating the ascendant as the sick person's significator, regardless of the questioner's consent. Aphorism 9, which crosses PDF316–317, changes the ascendant to the querent when it states absence of urine **or** consent; an example uses the sixth for a servant and the *sixth from the sixth* (the eleventh) for that person's illness. The exact conjunction/disjunction of missing urine and consent is not fully resolved by modern grammar. Nothing in this passage supplies modern ethical authority for diagnosis or treatment without consent. [PDF316–317; aphorisms8–9, R1710–R1711; U02,U15]
+
+**4. Lunar conditions are not interchangeable.** Aphorisms 10–13 concern the Moon as general significator, both lights below Earth, the lights obscured, affliction as a further danger, and the asymmetry between adverse aspects of benefics and favourable aspects of malefics **with or without reception**. Aphorism 20 additionally requires a Moon both swift and waxing, applying sextile or trine to the ascendant lord, with reception and above-earth location modifying the asserted timing. Treating each clause as a separate favourable vote would double-count dependencies. [PDF317–318; aphorisms10–13,20; R1712–R1715,R1722]
+
+## Conditional prognosis and unresolved printed polarity
+
+Aphorisms 14–19 combine freedom from affliction, eighth-house relations, planetary weakness and reception with much stronger claims of recovery or death. The print contains real interpretation hazards, retained rather than silently resolved:
+
+- **#14:** The referent of “two of these Significators be so affected” is unclear alongside the earlier favourable conditions and source's “otherwise he dyes.” Do not generate a new certain two-planet threshold.
+- **#15:** The original “it's doubtfull the sick party will dye” is not rewritten as certain death; ruler-alternative scope is uncertain.
+- **#17:** Reception by the eighth-house lord is expressly allowed without reciprocal reception.
+- **#18:** The enumeration of houses *above Earth* includes twelfth, eleventh, ninth, eighth, seventh but not the tenth; the worker must not insert an unprinted item into the list.
+- **#19:** The original visibly reads **“there's great fear of recovery”**, counterintuitive in context. It is preserved as source wording, not repaired to “great fear of death,” and no determinate medical interpretation is licensed.
+
+[PDF317; aphorisms14–19, R1716–R1721; U03–U06]
+
+Later conditions likewise must remain local: fourth-house ruler **applying to conjunction** of eighth lord (#23), disease significator *retrograde* (#24) versus *stationary* and separately *combust* (#25), and falling/detriment (#26). Neither a generic afflicted-planet flag nor retrograde alone is sufficient to reproduce all of these doctrines. [PDF318; aphorisms21–26, R1723–R1728]
+
+## Other noninterchangeable families
+
+Aphorisms 27–28 distinguish source-described disease in **body**, **spirits** and **animals**, with different patterns of ascendant, Moon, their rulers and a malefic's aspect. These early-modern categories are not modern psychiatric diagnoses. Aphorism 29 gives explicit *manifest* and *occult* house sets; it does not categorize unlisted houses. Aphorism 30, continued onto PDF319, revisits movable/fixed/common signs and specifies several different ways a complaint may vary or recur. [PDF318–319; aphorisms27–30, R1729–R1732; U07–U09]
+
+**Cross-chart natal comparisons in aphorisms 32–34 are not available from a question chart alone.** The printed source asks that the patient's nativity be obtained, then compares illness Moon or illness ascendant to natal infortunes, natal houses and an ambiguous “Revolution” ascendant. In #33 the claimed adverse conclusion has an explicit benefic exception. No natal inputs, exact orbs, true date conversions or validated epidemiology are supplied in this batch; these maxims cannot be applied to people without a separately specified chart and frozen methodology. [PDF319; aphorisms32–34, R1734–R1736; U10–U11]
+
+The later entries distinguish treatment costs (#35), solar placements and combustion (#36), poetic rationale (#37), a Jupiter-Sun recovery exception (#38), illness growth until lunar opposition to Sun (#39), the author's unverified attribution of delayed recovery to patient carelessness (#40), orientation and lunar separations (#41), planetary humoral origins (#42), and waxing/waning Moon with **specific** Mars versus Saturn modifiers (#43). A categorical claim should be preserved *as a historical source claim*, not used for medical treatment, relationship characterization or clinical risk. [PDF319–320; aphorisms35–43, R1737–R1745; U12,U16,U17]
+
+## Original errata and provenance
+
+The volume's original errata page (original PDF888) includes **four printed corrections within this section: page 284 line 14, read “if”; page 284 line 37, delete a semicolon; page 285 line 4, read “her”; page 285 line 11, read “therein.”** The printed correction tokens have been recorded separately, but the exact body-word target and the line-counting convention have **not** yet been proved for all four. In particular, “therein” may affect the natal/source comparison in aphorism 33. None of these entries licenses silently replacing the original body image or inventing a resolved interpretation. [PDF888, PDF318–319; ERRATA_COLLATION.json; U18]
+
+The source is the retained 894-page, 141,842,963-byte original scan identified by SHA-256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. The included five PNGs are locating images from that scan, and the record text is a **normalized paraphrase** rather than a diplomatic transcription. Historical sources may have strong death predictions, moral insinuations, physiological beliefs or treatment suggestions; this audit neither endorses them nor provides evidence they work. [SOURCE_IDENTITY.json; SOURCES.md]
+
+## Verification scope and next passage
+
+The source-only packet is intended for structural, traceability and selected conditional-regression tests against the **accepted archive's actual bytes**. A passing test does not establish ancient attribution, astrological predictive power, clinical effectiveness, or the truth of an author-reported endpoint. Independent semantic review findings and any actual test/publication receipts are recorded separately; do not infer completion from this report. [TEST_RUN_SUMMARY.json and independent_review/ when available]
+
+After the **43rd aphorism**, the next research passage is **Chapter XLV**, beginning on **original PDF320, printed286 below the divider**, headed “A sick Doctor, what was his Disease? If curable?” The worked horoscope appears on that first leaf; later narration reports a death on 14 August after a dated May 1645 question. That is an **author-reported dated case**, not automatically an independently verified outcome. The wider Lilly book audit and the multipass astrology source project remain OPEN. [PDF320–322; CONTINUE_HANDOFF.md when delivered]
