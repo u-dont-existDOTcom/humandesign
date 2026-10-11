@@ -1,0 +1,13 @@
+# Physician aphorisms — source-draft checkpoint
+
+This is **an unaccepted working batch**, not an accepted source audit, predictive validation, or clinical result. Owner parent remains OPEN. Current published Lilly source inventory = 1,702; B02n proposes 43 records R1703–R1745 for 1,745 if accepted, plus retained Ptolemy 1,066 = 2,811 combined if accepted.
+
+Canonical original is the 1647 Wellcome b30338724 PDF; 894 pages, 141,842,963 bytes, SHA256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Five admitted pages PDF316–320 are retained as PNG rasters and were source-read; all five raster bytes match their manifest hashes. Inclusion is below the Hermes divider on PDF316/printed282 to above Chapter XLV divider on PDF320/printed286. 43 numbered aphorisms complete, three cross-page entries 9,30,42. No dated patient examples within the aphorisms, but a doctor case begins immediately following; do not pull it into this unit.
+
+The 43-record RULES.json and separate APHORISM_INDEX and UNRESOLVED draft have 18 explicit source and inference limits. TEST_RUN_SUMMARY.json shows 38 portable focused software integrity/selected-conditional checks passing with zero failures; their success is not a source-semantic or empirical validity gate. Claimed 'great fear of recovery' in aphorism19 is preserved. Printed original errata PDF888 contains four matching page284/285 entries, in ERRATA_COLLATION.json, not silently applied to the original body page.
+
+Independent read-only Claude Opus 5.5 max source/record check was launched from isolated review-neutral on the owner computer, with status in opus-review.pid, opus-review.stdout.jsonl, opus-review.exit. Do not repeat or kill the same process without checking its actual state. Pending reviewer diagnosis must be reconciled against source, followed by any focused regression test repair and actual extracted packet verification, accepted REPORT and receipt, Git integration and owner Downloads delivery.
+
+The isolated working branch is research/lilly-physician-aphorisms-b02n-20261011, based on the preceding confirmed B02m integration. Git batch directory tasks/astro-source-audit-multipass-20261005/batches/B02n/. Do not modify protected old PASS_PLAN, CURRENT, earlier batches, private participant inputs, fitted models or prediction freezes.
+
+Next after acceptance: Chapter XLV starts in original PDF320 below the divider, worked sick doctor chart dated 24 May 1645 at approximately 6:15 p.m., next record R1746 subject to authoritative index. The source claims death on 14 August following, not independently established. Parent multipass and subsequent Lilly sources remain open.
