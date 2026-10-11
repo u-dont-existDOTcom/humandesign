@@ -1,0 +1,790 @@
+{
+  "version": "mundane-outer-vs-saturn-transfer-v1",
+  "freeze": "reference/research/MUNDANE_OUTER_VS_SATURN_FOLLOWUP_FREEZE_20261011.md",
+  "status": "UNSUPPORTED",
+  "interpretation": "POST_DISCOVERY_DEVELOPMENT; not an independent blind/prospective test",
+  "orb_degrees": 3,
+  "ephemeris_source": "pinned original annual daily MOSEPH",
+  "outcome_period": "1950-2024",
+  "unit": "15 fixed 5-year blocks",
+  "source_manifest": {
+    "powell_thyne_20260829.csv": {
+      "sha256": "1e8f933b22f4b9a77d0ba5eb59bf0d8158adcaab27746adcf345195be87a9012",
+      "source_url": "https://jonathanmpowell.com/wp-content/uploads/2026/08/pt_20260829.csv",
+      "bytes": 20089
+    },
+    "ucdp_intrastate_conflict_onset_251.csv": {
+      "sha256": "a5a64b749693c85fd3b50a1311608a44c0846d528352baeb3767f25e50d52fe1",
+      "source_url": "https://ucdp.uu.se/downloads/onset/ucdp-intrastate-conflict-onset-251.csv",
+      "bytes": 522945
+    }
+  },
+  "earlier_astronomy_csv_sha256": "69e4f69f8fdbb5f5bcf71e2d57c910d0525e39d5e1ae658ee79a5db2c513f9ea",
+  "earlier_ert_csv_sha256": "87a72f100ba0a15c8cde5e7a831b43f825c81356648a94378d51caefcb5420e7",
+  "earlier_cow_csv_sha256": "e8aae1bed09e96be575b7223d60cca66bf4a912d59aefcab0f3dda7162c8b460",
+  "outcome_audit": {
+    "coups": {
+      "rows_total": 497,
+      "out_of_scope": 4,
+      "events_in_scope": 493,
+      "successful_in_scope": 246
+    },
+    "ucdp": {
+      "rows_total": 12606,
+      "out_of_scope": 333,
+      "inactive_rows": 11774,
+      "onsets_in_scope": 499,
+      "onset_field": "onset1",
+      "uniqueness": "country code + conflict_ids + year"
+    }
+  },
+  "seed": 20261012,
+  "permutations": 20000,
+  "bonferroni_alpha_each": 0.025,
+  "primary": {
+    "coup_attempts": {
+      "outer_minus_saturn": {
+        "predictor": "outer_minus_saturn",
+        "outcome": "coup_attempts",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": 0.05175358270674067,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ],
+        "permutation_seed": 20261012,
+        "permutation_count": 20000,
+        "permutation_ge_observed": 8704,
+        "one_sided_permutation_p": 0.4352282385880706,
+        "rotated_shift_diagnostic": {
+          "nonzero_rotations": 14,
+          "rotations_at_least_observed": 7,
+          "unshifted_rank_among_all": 8,
+          "fraction_all_at_least_observed": 0.5333333333333333
+        },
+        "top_quartile_descriptive": {
+          "n_high": 4,
+          "high_mean_or_rate": 39.0,
+          "remaining_mean_or_rate": 30.636363636363637,
+          "ratio_high_to_rest": 1.2729970326409494,
+          "high_periods": [
+            "1955-1959",
+            "1965-1969",
+            "1990-1994",
+            "2010-2014"
+          ]
+        }
+      },
+      "outer_hard": {
+        "predictor": "outer_hard",
+        "outcome": "coup_attempts",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": 0.017906407170306955,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "saturn_hard": {
+        "predictor": "saturn_hard",
+        "outcome": "coup_attempts",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": -0.1264397232212939,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "hard_pair_days": {
+        "predictor": "hard_pair_days",
+        "outcome": "coup_attempts",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": -0.023425546273836535,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "concurrent_hard": {
+        "predictor": "concurrent_hard",
+        "outcome": "coup_attempts",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": -0.00673129322861915,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "soft_pair_days": {
+        "predictor": "soft_pair_days",
+        "outcome": "coup_attempts",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": -0.21998163495483428,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "leave_one_25y_era_out": {
+        "1950": 0.040073706424617384,
+        "1975": 0.06368511718888852,
+        "2000": 0.05674284223172903
+      }
+    },
+    "ucdp_intrastate_onsets": {
+      "outer_minus_saturn": {
+        "predictor": "outer_minus_saturn",
+        "outcome": "ucdp_intrastate_onsets",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": 0.6028251171953719,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ],
+        "permutation_seed": 20261012,
+        "permutation_count": 20000,
+        "permutation_ge_observed": 1041,
+        "one_sided_permutation_p": 0.05209739513024349,
+        "rotated_shift_diagnostic": {
+          "nonzero_rotations": 14,
+          "rotations_at_least_observed": 0,
+          "unshifted_rank_among_all": 1,
+          "fraction_all_at_least_observed": 0.06666666666666667
+        },
+        "top_quartile_descriptive": {
+          "n_high": 4,
+          "high_mean_or_rate": 37.25,
+          "remaining_mean_or_rate": 31.818181818181817,
+          "ratio_high_to_rest": 1.1707142857142858,
+          "high_periods": [
+            "1955-1959",
+            "1965-1969",
+            "1990-1994",
+            "2010-2014"
+          ]
+        }
+      },
+      "outer_hard": {
+        "predictor": "outer_hard",
+        "outcome": "ucdp_intrastate_onsets",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": 0.540705237381559,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "saturn_hard": {
+        "predictor": "saturn_hard",
+        "outcome": "ucdp_intrastate_onsets",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": -0.43616120401334385,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "hard_pair_days": {
+        "predictor": "hard_pair_days",
+        "outcome": "ucdp_intrastate_onsets",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": 0.415508775237401,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "concurrent_hard": {
+        "predictor": "concurrent_hard",
+        "outcome": "ucdp_intrastate_onsets",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": 0.5814583345659712,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "soft_pair_days": {
+        "predictor": "soft_pair_days",
+        "outcome": "ucdp_intrastate_onsets",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": -0.41629150568641954,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "leave_one_25y_era_out": {
+        "1950": 0.6797236535801887,
+        "1975": 0.09537656205581792,
+        "2000": 0.7971640885418453
+      }
+    }
+  },
+  "requirements": {
+    "coup_attempts": {
+      "passes_bonferroni": false,
+      "components_reproduce_split": true,
+      "all_era_omissions_positive": true
+    },
+    "ucdp_intrastate_onsets": {
+      "passes_bonferroni": false,
+      "components_reproduce_split": true,
+      "all_era_omissions_positive": true
+    }
+  },
+  "chronological_splits": {
+    "coup_attempts": {
+      "1950-1984": {
+        "n_blocks": 7,
+        "detrended_r": 0.10253007992882845
+      },
+      "1985-2024": {
+        "n_blocks": 8,
+        "detrended_r": 0.2563532542703422
+      }
+    },
+    "ucdp_intrastate_onsets": {
+      "1950-1984": {
+        "n_blocks": 7,
+        "detrended_r": -0.15028579855425467
+      },
+      "1985-2024": {
+        "n_blocks": 8,
+        "detrended_r": 0.6618966479943785
+      }
+    }
+  },
+  "secondary_and_discovery": {
+    "coup_successes": {
+      "outer_minus_saturn": {
+        "predictor": "outer_minus_saturn",
+        "outcome": "coup_successes",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": -0.17148585982354164,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ],
+        "permutation_seed": 20261012,
+        "permutation_count": 20000,
+        "permutation_ge_observed": 14045,
+        "one_sided_permutation_p": 0.7022648867556622,
+        "rotated_shift_diagnostic": {
+          "nonzero_rotations": 14,
+          "rotations_at_least_observed": 12,
+          "unshifted_rank_among_all": 13,
+          "fraction_all_at_least_observed": 0.8666666666666667
+        },
+        "top_quartile_descriptive": {
+          "n_high": 4,
+          "high_mean_or_rate": 18.0,
+          "remaining_mean_or_rate": 15.818181818181818,
+          "ratio_high_to_rest": 1.1379310344827587,
+          "high_periods": [
+            "1955-1959",
+            "1965-1969",
+            "1990-1994",
+            "2010-2014"
+          ]
+        }
+      },
+      "outer_hard": {
+        "predictor": "outer_hard",
+        "outcome": "coup_successes",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": -0.17021041721414354,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "saturn_hard": {
+        "predictor": "saturn_hard",
+        "outcome": "coup_successes",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": 0.07290236210503874,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "hard_pair_days": {
+        "predictor": "hard_pair_days",
+        "outcome": "coup_successes",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": -0.15218156256360288,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "concurrent_hard": {
+        "predictor": "concurrent_hard",
+        "outcome": "coup_successes",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": -0.16249231642561004,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "soft_pair_days": {
+        "predictor": "soft_pair_days",
+        "outcome": "coup_successes",
+        "n_5yr_bins": 15,
+        "observed_detrended_pearson_r": 0.06813205539097493,
+        "all_years": "1950-2024",
+        "eras": [
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "leave_one_25y_era_out": {
+        "1950": -0.29975498152905455,
+        "1975": 0.041834402868520006,
+        "2000": -0.21926040635806043
+      }
+    },
+    "ert_original_discovery": {
+      "outer_minus_saturn": {
+        "predictor": "outer_minus_saturn",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 25,
+        "observed_detrended_pearson_r": 0.44207244245684785,
+        "all_years": "1900-2024",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ],
+        "permutation_seed": 20261012,
+        "permutation_count": 20000,
+        "permutation_ge_observed": 2278,
+        "one_sided_permutation_p": 0.11394430278486076,
+        "rotated_shift_diagnostic": {
+          "nonzero_rotations": 24,
+          "rotations_at_least_observed": 0,
+          "unshifted_rank_among_all": 1,
+          "fraction_all_at_least_observed": 0.04
+        },
+        "top_quartile_descriptive": {
+          "n_high": 7,
+          "high_mean_or_rate": 4.330900243309002,
+          "remaining_mean_or_rate": 3.603523445146365,
+          "ratio_high_to_rest": 1.2018515514703674,
+          "high_periods": [
+            "1900-1904",
+            "1905-1909",
+            "1930-1934",
+            "1955-1959",
+            "1965-1969",
+            "1990-1994",
+            "2010-2014"
+          ]
+        }
+      },
+      "outer_hard": {
+        "predictor": "outer_hard",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 25,
+        "observed_detrended_pearson_r": 0.33132389747469576,
+        "all_years": "1900-2024",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "saturn_hard": {
+        "predictor": "saturn_hard",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 25,
+        "observed_detrended_pearson_r": -0.38499330772840745,
+        "all_years": "1900-2024",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "hard_pair_days": {
+        "predictor": "hard_pair_days",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 25,
+        "observed_detrended_pearson_r": 0.1900273143928318,
+        "all_years": "1900-2024",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "concurrent_hard": {
+        "predictor": "concurrent_hard",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 25,
+        "observed_detrended_pearson_r": 0.3196452276806457,
+        "all_years": "1900-2024",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "soft_pair_days": {
+        "predictor": "soft_pair_days",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 25,
+        "observed_detrended_pearson_r": -0.2396540674011719,
+        "all_years": "1900-2024",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "leave_one_25y_era_out": {
+        "1900": 0.564829570288014,
+        "1925": 0.5089871723004948,
+        "1950": 0.4965043269541696,
+        "1975": -0.045029254613322744,
+        "2000": 0.4812367787721307
+      }
+    },
+    "war_1820_2004": {
+      "outer_minus_saturn": {
+        "predictor": "outer_minus_saturn",
+        "outcome": "war_starts",
+        "n_5yr_bins": 37,
+        "observed_detrended_pearson_r": 0.05055752932752958,
+        "all_years": "1820-2004",
+        "eras": [
+          1820,
+          1845,
+          1870,
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ],
+        "permutation_seed": 20261012,
+        "permutation_count": 20000,
+        "permutation_ge_observed": 6852,
+        "one_sided_permutation_p": 0.3426328683565822,
+        "rotated_shift_diagnostic": {
+          "nonzero_rotations": 36,
+          "rotations_at_least_observed": 14,
+          "unshifted_rank_among_all": 15,
+          "fraction_all_at_least_observed": 0.40540540540540543
+        },
+        "top_quartile_descriptive": {
+          "n_high": 10,
+          "high_mean_or_rate": 2.9,
+          "remaining_mean_or_rate": 2.4444444444444446,
+          "ratio_high_to_rest": 1.1863636363636363,
+          "high_periods": [
+            "1820-1824",
+            "1865-1869",
+            "1875-1879",
+            "1890-1894",
+            "1900-1904",
+            "1905-1909",
+            "1930-1934",
+            "1955-1959",
+            "1965-1969",
+            "1990-1994"
+          ]
+        }
+      },
+      "outer_hard": {
+        "predictor": "outer_hard",
+        "outcome": "war_starts",
+        "n_5yr_bins": 37,
+        "observed_detrended_pearson_r": 0.026295347897025683,
+        "all_years": "1820-2004",
+        "eras": [
+          1820,
+          1845,
+          1870,
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ]
+      },
+      "saturn_hard": {
+        "predictor": "saturn_hard",
+        "outcome": "war_starts",
+        "n_5yr_bins": 37,
+        "observed_detrended_pearson_r": -0.08639721895079258,
+        "all_years": "1820-2004",
+        "eras": [
+          1820,
+          1845,
+          1870,
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ]
+      },
+      "hard_pair_days": {
+        "predictor": "hard_pair_days",
+        "outcome": "war_starts",
+        "n_5yr_bins": 37,
+        "observed_detrended_pearson_r": -0.0021514997644781248,
+        "all_years": "1820-2004",
+        "eras": [
+          1820,
+          1845,
+          1870,
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ]
+      },
+      "concurrent_hard": {
+        "predictor": "concurrent_hard",
+        "outcome": "war_starts",
+        "n_5yr_bins": 37,
+        "observed_detrended_pearson_r": 0.07280943209098113,
+        "all_years": "1820-2004",
+        "eras": [
+          1820,
+          1845,
+          1870,
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ]
+      },
+      "soft_pair_days": {
+        "predictor": "soft_pair_days",
+        "outcome": "war_starts",
+        "n_5yr_bins": 37,
+        "observed_detrended_pearson_r": -0.0023541869794813795,
+        "all_years": "1820-2004",
+        "eras": [
+          1820,
+          1845,
+          1870,
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ]
+      },
+      "leave_one_25y_era_out": {
+        "1820": 0.0015161029918787055,
+        "1845": 0.12637170871901063,
+        "1870": 0.07712221170545226,
+        "1895": 0.055790550280980934,
+        "1920": 0.0609629866872734,
+        "1945": -0.03415977453790186,
+        "1970": 0.055543849853242434,
+        "1995": 0.053266209674424574
+      }
+    },
+    "war_1950_2004": {
+      "outer_minus_saturn": {
+        "predictor": "outer_minus_saturn",
+        "outcome": "war_starts",
+        "n_5yr_bins": 11,
+        "observed_detrended_pearson_r": 0.28300438309823484,
+        "all_years": "1950-2004",
+        "eras": [
+          1945,
+          1970,
+          1995
+        ],
+        "permutation_seed": 20261012,
+        "permutation_count": 20000,
+        "permutation_ge_observed": 3468,
+        "one_sided_permutation_p": 0.1734413279336033,
+        "rotated_shift_diagnostic": {
+          "nonzero_rotations": 10,
+          "rotations_at_least_observed": 1,
+          "unshifted_rank_among_all": 2,
+          "fraction_all_at_least_observed": 0.18181818181818182
+        },
+        "top_quartile_descriptive": {
+          "n_high": 3,
+          "high_mean_or_rate": 4.333333333333333,
+          "remaining_mean_or_rate": 2.875,
+          "ratio_high_to_rest": 1.507246376811594,
+          "high_periods": [
+            "1955-1959",
+            "1965-1969",
+            "1990-1994"
+          ]
+        }
+      },
+      "outer_hard": {
+        "predictor": "outer_hard",
+        "outcome": "war_starts",
+        "n_5yr_bins": 11,
+        "observed_detrended_pearson_r": 0.24387119331202511,
+        "all_years": "1950-2004",
+        "eras": [
+          1945,
+          1970,
+          1995
+        ]
+      },
+      "saturn_hard": {
+        "predictor": "saturn_hard",
+        "outcome": "war_starts",
+        "n_5yr_bins": 11,
+        "observed_detrended_pearson_r": -0.21908590175433462,
+        "all_years": "1950-2004",
+        "eras": [
+          1945,
+          1970,
+          1995
+        ]
+      },
+      "hard_pair_days": {
+        "predictor": "hard_pair_days",
+        "outcome": "war_starts",
+        "n_5yr_bins": 11,
+        "observed_detrended_pearson_r": 0.164225788935364,
+        "all_years": "1950-2004",
+        "eras": [
+          1945,
+          1970,
+          1995
+        ]
+      },
+      "concurrent_hard": {
+        "predictor": "concurrent_hard",
+        "outcome": "war_starts",
+        "n_5yr_bins": 11,
+        "observed_detrended_pearson_r": 0.34939394616964176,
+        "all_years": "1950-2004",
+        "eras": [
+          1945,
+          1970,
+          1995
+        ]
+      },
+      "soft_pair_days": {
+        "predictor": "soft_pair_days",
+        "outcome": "war_starts",
+        "n_5yr_bins": 11,
+        "observed_detrended_pearson_r": 0.573966591590097,
+        "all_years": "1950-2004",
+        "eras": [
+          1945,
+          1970,
+          1995
+        ]
+      },
+      "leave_one_25y_era_out": {
+        "1945": -0.0014841295269798513,
+        "1970": 0.8818251014316095,
+        "1995": 0.30507515345432007
+      }
+    },
+    "ert_excluding_1990_1994": {
+      "predictor": "outer_minus_saturn",
+      "outcome": "rate_per_100_eligible",
+      "n_5yr_bins": 24,
+      "observed_detrended_pearson_r": -0.05816604360643081,
+      "all_years": "1900-2024",
+      "eras": [
+        1900,
+        1925,
+        1950,
+        1975,
+        2000
+      ],
+      "permutation_seed": 20261012,
+      "permutation_count": 20000,
+      "permutation_ge_observed": 11684,
+      "one_sided_permutation_p": 0.584220788960552,
+      "rotated_shift_diagnostic": {
+        "nonzero_rotations": 23,
+        "rotations_at_least_observed": 14,
+        "unshifted_rank_among_all": 15,
+        "fraction_all_at_least_observed": 0.625
+      },
+      "top_quartile_descriptive": {
+        "n_high": 6,
+        "high_mean_or_rate": 3.2878239063806074,
+        "remaining_mean_or_rate": 3.603523445146365,
+        "ratio_high_to_rest": 0.9123914292299172,
+        "high_periods": [
+          "1900-1904",
+          "1905-1909",
+          "1930-1934",
+          "1955-1959",
+          "1965-1969",
+          "2010-2014"
+        ]
+      }
+    }
+  },
+  "not_independent_evidence": [
+    "Any ERT result: index directions selected from ERT",
+    "UCDP intrastate onsets and coup attempts share some episodes",
+    "new outcomes transfer endpoints, not person/era-blind validation",
+    "20k era permutations ignore some serial dependence; shifted rotations are diagnostic",
+    "the 2061/2079 unusual alignments have few repeated historical analogues"
+  ]
+}
