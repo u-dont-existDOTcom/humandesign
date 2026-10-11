@@ -1,0 +1,400 @@
+{
+  "status": "historical-development-not-blind",
+  "freeze_file": "reference/research/MUNDANE_HISTORICAL_EVENT_BACKTEST_FREEZE_20261011.md",
+  "source_hashes": {
+    "ERT_v16_OWID.csv": {
+      "sha256": "b577f348db501c4c1f6b77c5588db507f33866af039901cab067659eaab60274",
+      "bytes": 404508,
+      "url": "https://ourworldindata.org/grapher/political-regime-ert-within-regimes.csv?v=1&csvType=full&useColumnShortNames=false"
+    },
+    "Inter-StateWarData_v4.0.csv": {
+      "sha256": "2535e30b145141c331a07d12d91e498ad8bdd3db32ba8d3bd88c4fda54817731",
+      "bytes": 31698,
+      "url": "https://correlatesofwar.org/wp-content/uploads/Inter-StateWarData_v4.0.csv"
+    }
+  },
+  "swisseph_version": "2.10.03",
+  "ephemeris_requested": "FLG_MOSEPH",
+  "orbs_deg": 3.0,
+  "years": {
+    "ert": "1901-2024",
+    "cow": "1820-2004",
+    "future": "2036-2085"
+  },
+  "ert": {
+    "unique_country_years": 19128,
+    "countries": 175,
+    "invalid_skipped": 0
+  },
+  "cow": {
+    "unique_wars_all_years": 95,
+    "war_starts_in_scope": 95,
+    "column": "WarNum+min(StartYear1)"
+  },
+  "primary_results": {
+    "ert_onset": {
+      "predictor": "hard_pair_days",
+      "outcome": "rate_per_100_eligible",
+      "n_5yr_bins": 25,
+      "observed_detrended_pearson_r": 0.1900273143928318,
+      "all_years": "1900-2024",
+      "eras": [
+        1900,
+        1925,
+        1950,
+        1975,
+        2000
+      ],
+      "permutation_seed": 20261011,
+      "permutation_count": 20000,
+      "permutation_ge_observed": 4288,
+      "one_sided_permutation_p": 0.2144392780360982,
+      "rotated_shift_diagnostic": {
+        "nonzero_rotations": 24,
+        "rotations_at_least_observed": 4,
+        "unshifted_rank_among_all": 5,
+        "fraction_all_at_least_observed": 0.2
+      },
+      "top_quartile_descriptive": {
+        "n_high": 7,
+        "high_mean_or_rate": 3.8414782397276928,
+        "remaining_mean_or_rate": 3.78248487006052,
+        "ratio_high_to_rest": 1.0155964588607143,
+        "high_periods": [
+          "1900-1904",
+          "1905-1909",
+          "1930-1934",
+          "1950-1954",
+          "1965-1969",
+          "1990-1994",
+          "2010-2014"
+        ]
+      }
+    },
+    "cow_interstate_war": {
+      "predictor": "hard_pair_days",
+      "outcome": "war_starts",
+      "n_5yr_bins": 37,
+      "observed_detrended_pearson_r": -0.0021514997644781248,
+      "all_years": "1820-2004",
+      "eras": [
+        1820,
+        1845,
+        1870,
+        1895,
+        1920,
+        1945,
+        1970,
+        1995
+      ],
+      "permutation_seed": 20261011,
+      "permutation_count": 20000,
+      "permutation_ge_observed": 9825,
+      "one_sided_permutation_p": 0.4912754362281886,
+      "rotated_shift_diagnostic": {
+        "nonzero_rotations": 36,
+        "rotations_at_least_observed": 17,
+        "unshifted_rank_among_all": 18,
+        "fraction_all_at_least_observed": 0.4864864864864865
+      },
+      "top_quartile_descriptive": {
+        "n_high": 10,
+        "high_mean_or_rate": 2.5,
+        "remaining_mean_or_rate": 2.5925925925925926,
+        "ratio_high_to_rest": 0.9642857142857143,
+        "high_periods": [
+          "1820-1824",
+          "1850-1854",
+          "1870-1874",
+          "1875-1879",
+          "1890-1894",
+          "1905-1909",
+          "1930-1934",
+          "1950-1954",
+          "1965-1969",
+          "1990-1994"
+        ]
+      }
+    }
+  },
+  "significance_policy": {
+    "two_co_primary_p_threshold_each": 0.025,
+    "permutation_count": 20000,
+    "seed": 20261011
+  },
+  "exploratory_results": {
+    "saturn_hard": {
+      "ert": {
+        "predictor": "saturn_hard",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 25,
+        "observed_detrended_pearson_r": -0.38499330772840745,
+        "all_years": "1900-2024",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "war": {
+        "predictor": "saturn_hard",
+        "outcome": "war_starts",
+        "n_5yr_bins": 37,
+        "observed_detrended_pearson_r": -0.08639721895079258,
+        "all_years": "1820-2004",
+        "eras": [
+          1820,
+          1845,
+          1870,
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ]
+      }
+    },
+    "outer_hard": {
+      "ert": {
+        "predictor": "outer_hard",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 25,
+        "observed_detrended_pearson_r": 0.33132389747469576,
+        "all_years": "1900-2024",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "war": {
+        "predictor": "outer_hard",
+        "outcome": "war_starts",
+        "n_5yr_bins": 37,
+        "observed_detrended_pearson_r": 0.026295347897025683,
+        "all_years": "1820-2004",
+        "eras": [
+          1820,
+          1845,
+          1870,
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ]
+      }
+    },
+    "concurrent_hard": {
+      "ert": {
+        "predictor": "concurrent_hard",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 25,
+        "observed_detrended_pearson_r": 0.3196452276806457,
+        "all_years": "1900-2024",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "war": {
+        "predictor": "concurrent_hard",
+        "outcome": "war_starts",
+        "n_5yr_bins": 37,
+        "observed_detrended_pearson_r": 0.07280943209098113,
+        "all_years": "1820-2004",
+        "eras": [
+          1820,
+          1845,
+          1870,
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ]
+      }
+    },
+    "soft_pair_days": {
+      "ert": {
+        "predictor": "soft_pair_days",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 25,
+        "observed_detrended_pearson_r": -0.2396540674011719,
+        "all_years": "1900-2024",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "war": {
+        "predictor": "soft_pair_days",
+        "outcome": "war_starts",
+        "n_5yr_bins": 37,
+        "observed_detrended_pearson_r": -0.0023541869794813795,
+        "all_years": "1820-2004",
+        "eras": [
+          1820,
+          1845,
+          1870,
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ]
+      }
+    },
+    "common_years": {
+      "ert": {
+        "predictor": "hard_pair_days",
+        "outcome": "rate_per_100_eligible",
+        "n_5yr_bins": 21,
+        "observed_detrended_pearson_r": 0.18621201303179832,
+        "all_years": "1900-2004",
+        "eras": [
+          1900,
+          1925,
+          1950,
+          1975,
+          2000
+        ]
+      },
+      "war": {
+        "predictor": "hard_pair_days",
+        "outcome": "war_starts",
+        "n_5yr_bins": 21,
+        "observed_detrended_pearson_r": 0.08123426615219202,
+        "all_years": "1900-2004",
+        "eras": [
+          1895,
+          1920,
+          1945,
+          1970,
+          1995
+        ]
+      }
+    }
+  },
+  "future": [
+    {
+      "start_year": 2036,
+      "end_year": 2040,
+      "period": "2036-2040",
+      "hard_pair_days": 0.3097974822112753,
+      "saturn_hard": 0.039956212370005476,
+      "outer_hard": 0.2698412698412698,
+      "concurrent_hard": 0.0,
+      "soft_pair_days": 0.2928297755883963
+    },
+    {
+      "start_year": 2041,
+      "end_year": 2045,
+      "period": "2041-2045",
+      "hard_pair_days": 0.7190580503833516,
+      "saturn_hard": 0.4375684556407448,
+      "outer_hard": 0.28148959474260676,
+      "concurrent_hard": 0.04874041621029573,
+      "soft_pair_days": 0.11774370208105148
+    },
+    {
+      "start_year": 2046,
+      "end_year": 2050,
+      "period": "2046-2050",
+      "hard_pair_days": 0.2968236582694414,
+      "saturn_hard": 0.0,
+      "outer_hard": 0.2968236582694414,
+      "concurrent_hard": 0.0,
+      "soft_pair_days": 0.44468784227820374
+    },
+    {
+      "start_year": 2051,
+      "end_year": 2055,
+      "period": "2051-2055",
+      "hard_pair_days": 0.2858707557502738,
+      "saturn_hard": 0.2858707557502738,
+      "outer_hard": 0.0,
+      "concurrent_hard": 0.0,
+      "soft_pair_days": 0.5449069003285871
+    },
+    {
+      "start_year": 2056,
+      "end_year": 2060,
+      "period": "2056-2060",
+      "hard_pair_days": 0.2988505747126437,
+      "saturn_hard": 0.1143951833607006,
+      "outer_hard": 0.18445539135194308,
+      "concurrent_hard": 0.0,
+      "soft_pair_days": 0.13081554460864805
+    },
+    {
+      "start_year": 2061,
+      "end_year": 2065,
+      "period": "2061-2065",
+      "hard_pair_days": 0.8499452354874042,
+      "saturn_hard": 0.11281489594742607,
+      "outer_hard": 0.7371303395399781,
+      "concurrent_hard": 0.04381161007667032,
+      "soft_pair_days": 0.5575027382256298
+    },
+    {
+      "start_year": 2066,
+      "end_year": 2070,
+      "period": "2066-2070",
+      "hard_pair_days": 0.5421686746987951,
+      "saturn_hard": 0.32858707557502737,
+      "outer_hard": 0.21358159912376778,
+      "concurrent_hard": 0.033406352683461114,
+      "soft_pair_days": 0.21467688937568455
+    },
+    {
+      "start_year": 2071,
+      "end_year": 2075,
+      "period": "2071-2075",
+      "hard_pair_days": 0.38116100766703176,
+      "saturn_hard": 0.0,
+      "outer_hard": 0.38116100766703176,
+      "concurrent_hard": 0.0,
+      "soft_pair_days": 0.36418400876232204
+    },
+    {
+      "start_year": 2076,
+      "end_year": 2080,
+      "period": "2076-2080",
+      "hard_pair_days": 0.7914614121510674,
+      "saturn_hard": 0.3853311439518336,
+      "outer_hard": 0.4061302681992337,
+      "concurrent_hard": 0.1921182266009852,
+      "soft_pair_days": 0.11001642036124797
+    },
+    {
+      "start_year": 2081,
+      "end_year": 2085,
+      "period": "2081-2085",
+      "hard_pair_days": 0.23548740416210295,
+      "saturn_hard": 0.0,
+      "outer_hard": 0.23548740416210295,
+      "concurrent_hard": 0.0,
+      "soft_pair_days": 0.5295728368017525
+    }
+  ],
+  "caveats": [
+    "historical development; analysts know notable events",
+    "outcomes proxy only political transitions and interstate war outbreaks",
+    "V-Dem outcomes begin 1900 and wars end 2007",
+    "Moshier mode not SWIEPH production",
+    "25-year era demeaning and permutations do not eliminate residual secular changes or serial dependence",
+    "outer-planet rare contacts lack repeated historical test opportunities",
+    "null does not refute all astrology; positive does not validate humanity forecast"
+  ]
+}
