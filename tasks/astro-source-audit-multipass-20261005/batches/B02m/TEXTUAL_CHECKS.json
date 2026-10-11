@@ -1,0 +1,51 @@
+{
+  "basis": "targeted visual read of original PDF888 plus body pages; exact historical witnesses, not semantic repair by doctrine",
+  "matched_entries": [
+    {
+      "printed_page": 272,
+      "line": "26",
+      "reading": "Blackberry",
+      "target_pdf": 306,
+      "target": "cooling catalogue",
+      "treatment": "table spelling repaired; annotation attribution unknown"
+    },
+    {
+      "printed_page": 274,
+      "line": "5",
+      "reading": "Praecordiacks",
+      "target_pdf": 308,
+      "target": "Taurus/Saturn",
+      "treatment": "source term retained in detailed record"
+    },
+    {
+      "printed_page": 277,
+      "line": "7",
+      "delete": "your",
+      "read": "the",
+      "target_pdf": 311,
+      "target": "Aquarius/Saturn fortunes clause",
+      "treatment": "adopt errata-supported the fortunes, preserve original-volume correction as a witness"
+    }
+  ],
+  "bounded_search": "Only original errata PDF888 searched for entries in printed268–282; three matching entries found. No whole-corpus absence claim.",
+  "other_checks": [
+    {
+      "pdf": 310,
+      "reading": "no retention of Urine",
+      "record": "R1684",
+      "draft_error": "no omitted; polarity reversed",
+      "treatment": "restored no, intended modern meaning unresolved"
+    },
+    {
+      "pdf": 312,
+      "expected_sequence": 278,
+      "visible_label": "appears279"
+    },
+    {
+      "pdf": 313,
+      "expected_sequence": 279,
+      "visible_label": "partial/damaged, appears29"
+    }
+  ],
+  "modern_herb_identities_established": false
+}

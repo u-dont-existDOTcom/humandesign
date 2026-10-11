@@ -1,0 +1,43 @@
+{
+  "batch": "B02m",
+  "command": "python run_verification.py",
+  "discovered_test_ids": [
+    "test_lilly_hermes.Catalogues.test_both_have_full_sign_keys",
+    "test_lilly_hermes.Catalogues.test_historical_materia_includes_toxic_warning",
+    "test_lilly_hermes.Catalogues.test_historical_materia_two_multi_column_lists",
+    "test_lilly_hermes.Catalogues.test_mars_aquarius_lunar_motion_and_time_limit",
+    "test_lilly_hermes.Catalogues.test_mars_pisces_waxing_contrasts_aquarius",
+    "test_lilly_hermes.Catalogues.test_mars_virgo_prognosis_exception",
+    "test_lilly_hermes.Catalogues.test_saturn_gemini_extra_conditions",
+    "test_lilly_hermes.Catalogues.test_sensory_correspondence",
+    "test_lilly_hermes.Catalogues.test_sign_links_are_disjoint",
+    "test_lilly_hermes.Catalogues.test_unresolved_ambiguous_authorship",
+    "test_lilly_hermes.RecordIntegrity.test_count_bookkeeping",
+    "test_lilly_hermes.RecordIntegrity.test_coverage_no_unmapped_records",
+    "test_lilly_hermes.RecordIntegrity.test_each_page_render_digest",
+    "test_lilly_hermes.RecordIntegrity.test_every_record_has_source_locator",
+    "test_lilly_hermes.RecordIntegrity.test_exact_boundaries",
+    "test_lilly_hermes.RecordIntegrity.test_exact_unique_ids",
+    "test_lilly_hermes.RecordIntegrity.test_no_case_or_verified_endpoint",
+    "test_lilly_hermes.RecordIntegrity.test_page_continuity",
+    "test_lilly_hermes.RecordIntegrity.test_source_hash_equals_replayed_manifest",
+    "test_lilly_hermes.RecordIntegrity.test_source_presentation_not_runtime"
+  ],
+  "distinct_test_count": 20,
+  "tests_run": 20,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "successful": true,
+  "log_sha256": "d53e61c55b2bb264ecd2dec582190ec99d771b83bf19afb70e641718c245e4f7",
+  "source_hashes": {
+    "RULES.json": "809eb0cb05dd0d6f9812a11f095079b57c910bfade16ef5b588bd3b793f9d7d9",
+    "COUNTS.json": "73fd192aac301ea1b6fc9eb9813481f789bbb2284a95740f99ef6406bb368535",
+    "REFERENCE_TABLES.json": "ad6c27196f3d93f09bf749ccfe163c4f4c7861eafd815bff1f95ef553a507d1f",
+    "MATERIA_MEDICA_TABLES.json": "8e9216cf8b41b7ae5b972e3a1dbf23b5e0dfec7e30c0b78da9b006ee041ecab8",
+    "SECTION_COVERAGE.json": "a0b790b876ec70f8240adab0a2dd5cd2dad32f3e5ab7544a29162fc82efa8e73",
+    "SOURCE_IMAGE_MANIFEST.json": "44aff8b09404ab9ff1f7a34967ef4b475e3cd4ed43a1b0114ad3a1c8ad3e23d2",
+    "UNRESOLVED.json": "99e20fbcd5b4ca28249661d432e1edbbff87954ec585194fb64f791511132636"
+  },
+  "scope": "Source data and portable hash integrity only; no source semantic certification, medical efficacy or predictive evaluation."
+}

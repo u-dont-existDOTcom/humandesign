@@ -1,0 +1,3 @@
+# Hermes recovery checkpoint
+
+Source expansion and correction prepared:52 records R1651–R1702;28 focused tests passed; all15 source PNGs pixel-match fresh canonical-PDF renders. A fresh read-only Claude Opus5.5 max source/claim review is running on frozen RECOVERY-02 inputs. No independent acceptance, final publication or owner delivery is claimed at this checkpoint. The cumulative Lilly index remains at1650 until review reconciliation. Next: recover review result, reconcile against source, build and test actual packet, integrate only allowed paths, deliver and save exact Aphorisms continuation. ChapterXLIV and parent remain open.

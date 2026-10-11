@@ -1,0 +1,2 @@
+# Primary witness
+William Lilly, Christian Astrology (1647), Wellcome scan b30338724, 894 pages; SHA256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Original page images PDF302–316 directly read; opening below first divider, ending above last divider. Included page renders are locating evidence; actual full-volume PDF remains external. There is no independent Hermes original-language collation, historical case validation or modern medical validation.
