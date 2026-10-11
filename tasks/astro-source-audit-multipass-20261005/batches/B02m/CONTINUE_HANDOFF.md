@@ -4,7 +4,7 @@
 
 Open the canonical original at **PDF316 / printed282, below the horizontal divider**. Begin **Astrologicall Aphorismes beneficiall for Physicians**, including the entire first aphorism beginning **In Questions concerning sick People, give the ascendant and his Lord**, then continue the numbered sequence onto PDF317. The preceding upper paragraph, ending in danger of dropsy, belongs to the completed Hermes/Pisces passage.
 
-Next documentary record: **R1703**, subject to checking the live cumulative index before allocating IDs. Chapter XLIV and the wider multi-author, multipass audit remain **OPEN**. Source extraction does not authorize a personal prediction, medical recommendation or runtime-model promotion.
+Next documentary record: **R1703**, subject to checking the live cumulative index before allocating IDs. Follow-up source navigation visually inspected original PDF316–322: **43 numbered physician aphorisms** run from PDF316 below the divider through PDF320 / printed286 above the next divider, with cross-page continuations at items 9, 30 and 42. The next heading, **CHAP. XLV — A sick Doctor, what was his Disease? If curable?**, begins below the PDF320 divider with a worked chart dated **24 May 1645, approximately 6:15 p.m.** and a claimed death on **14 August following** on PDF322. These observations are navigation-only, **not yet extracted or independently checked records or verified patient outcomes**. Chapter XLIV and the wider multi-author, multipass audit remain **OPEN**. Source extraction does not authorize a personal prediction, medical recommendation or runtime-model promotion.
 
 ## Current contribution and authoritative recovery
 

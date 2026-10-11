@@ -1,0 +1,24 @@
+{
+  "reviewer": "Claude Opus 5.5 max via existing owner subscription",
+  "first_diagnosis": "independent_review/OPUS_INITIAL_DIAGNOSIS.md",
+  "changed_item_readback": "independent_review/OPUS_CHANGED_ITEM_READBACK.md",
+  "changed_item_verdict": "FINDS_ERROR: eight original minor defects fixed, negative preserved, nine residual diagnostics D1\u2013D9",
+  "adjudicator": "GPT-6 source-bound correction",
+  "last_repaired_record_ids": [
+    1663,
+    1672,
+    1680,
+    1682,
+    1684,
+    1694,
+    1695,
+    1696,
+    1697,
+    1698
+  ],
+  "last_repair_disposition": "D1\u2013D9 wording, conditional frequencies and source citations corrected against quoted original; no additional model review claimed for last trivial repairs",
+  "source_uncertainties_remain": 24,
+  "all52_seen_by_initial_reviewer": true,
+  "reviewer_not_used_as_publication_authority": true,
+  "clinical_or_predictive_validation": false
+}

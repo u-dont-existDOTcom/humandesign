@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIII_COMPLETE_XLIV_THROUGH_DARIOT_READ_OTHER_SECTIONS_OPEN",
-  "records_count": 1650,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIII_COMPLETE_XLIV_THROUGH_HERMES_READ_OTHER_SECTIONS_OPEN",
+  "records_count": 1702,
   "read_numbered_chapters": [
     1,
     2,
@@ -134,16 +134,23 @@
       "records_count": 101,
       "sha256": "7f95bfd2e73d8c3c6f5ababdd12ee6e04b45fae314b35323ae50f905899c966c",
       "scope": "XLIV continuation: DARIOT Abridged heading and complete italic introduction on PDF292/printed258 through the full upper bridge ending Judgments of this House on PDF302/printed268; every intervening unnumbered section included. Stop above the divider before Hermes Trismegistus upon the first Decumbiture of the Sick. Chapter XLIV remains incomplete."
+    },
+    {
+      "id": "B02m",
+      "path": "batches/B02m/RULES.json",
+      "records_count": 52,
+      "sha256": "bc23641ea3ecdc9ac8b14186e586aa051073c57c1c8627271d65852da48c0365",
+      "scope": "XLIV Hermes heading and full opening below PDF302/printed268 divider through Pisces continuation above PDF316/printed282 divider; both historical medicine lists and all Saturn/Mars twelve-sign rows. Next Aphorisms not extracted; XLIV remains incomplete."
     }
   ],
   "next": {
-    "pdf_page": 302,
-    "printed_page": 268,
+    "pdf_page": 316,
+    "printed_page": 282,
     "chapter": "XLIV",
-    "heading": "Hermes Trismegistus upon the first Decumbiture of the Sick.",
+    "heading": "Astrologicall Aphorismes beneficiall for Physicians",
     "include_opening_paragraph": true,
-    "opening_anchor": "The heavenly Rayes or Influences proceeding and emitted from the seven Planets",
-    "position": "Below the horizontal divider on PDF302. Include the heading and complete opening paragraph, then continue on PDF303. The entire preceding upper bridge is complete.",
+    "opening_anchor": "In Questions concerning sick People, give the ascendant and his Lord",
+    "position": "Below the horizontal divider; include heading and complete first aphorism, then continue numbered sequence onto PDF317. The upper Pisces continuation is complete.",
     "extracted": false,
     "boundary_image_read": true
   },
@@ -152,7 +159,7 @@
   "empirical_validations": 0,
   "read_headed_units_count": 44,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261010_B02l.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261011_B02m.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [
     {
@@ -160,9 +167,10 @@
       "label": "XLIV",
       "batches": [
         "B02k",
-        "B02l"
+        "B02l",
+        "B02m"
       ],
-      "scope": "Sixth-house opening and continuation through Dariot/Lilly practical bridge; Hermes and following XLIV material remain open."
+      "scope": "Sixth-house opening, Dariot continuation and Hermes-headed material complete through upper PDF316; Aphorisms and subsequent XLIV material remain open."
     }
   ]
 }

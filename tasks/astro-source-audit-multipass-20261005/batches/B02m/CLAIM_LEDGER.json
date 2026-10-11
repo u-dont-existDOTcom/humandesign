@@ -1,6 +1,6 @@
 {
-  "report_sha256": "6b8fe796a9c8e38e1a2d09b910691ad46b3f33f553f7783568229322e6091484",
-  "scope": "final report blocks after independent review corrections",
+  "report_sha256": "eaa66adadb5d9c90cb26c3528b53d4a186e8c0cdde65f77c6a38176f5ec7f29a",
+  "scope": "final complete report text",
   "items": [
     {
       "id": "C01",
@@ -139,8 +139,8 @@
     },
     {
       "id": "C28",
-      "text": "The recovery suite contains **36 distinct tests: 20 retained, eight earlier source-recovery regressions, and eight independent-review regressions**. The current suite passes with zero failures or errors, subject to the final extraction run. The checks cover record and catalogue structure, source-image hashes, correction retention, section assignment, and selected conditions. They do not certify historical meaning, treatment efficacy or predictive performance. An extracted-archive rerun repeats these identities and adds zero distinct tests. [test_lilly_hermes.py; TEST_RUN_SUMMARY.json; actual archive execution is recorded separately in PACKET_USABILITY.json.]",
-      "text_sha256": "2f4f3288e62f9ae2e8518c9a2c2d9518da028799a0f6ff62ea83802b284df0f6"
+      "text": "The recovery suite contains **36 distinct tests: 20 retained, eight earlier source-recovery regressions, and eight independent-review regressions**. After the final source-wording repairs, all 36 tests must be executed again and the actual extracted ZIP tested; only the resulting receipts can establish the final software-test status. The checks cover record and catalogue structure, source-image hashes, correction retention, section assignment, and selected conditions. They do not certify historical meaning, treatment efficacy or predictive performance. An extracted-archive rerun repeats these identities and adds zero distinct tests. [test_lilly_hermes.py; TEST_RUN_SUMMARY.json; actual archive execution is recorded separately in PACKET_USABILITY.json.]",
+      "text_sha256": "41ef89bac90551979ad7817cad0098e752a121fc9874b96d770737c1e7254944"
     },
     {
       "id": "C29",

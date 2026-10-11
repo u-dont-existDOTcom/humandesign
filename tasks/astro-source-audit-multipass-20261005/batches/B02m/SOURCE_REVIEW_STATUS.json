@@ -1,8 +1,8 @@
 {
   "batch": "B02m",
-  "stage": "CONTROLLING_SOURCE_REVIEW_COMPLETE; INDEPENDENT_REVIEW_PENDING",
-  "original_draft_preserved": true,
-  "source_pages_read": [
+  "source_kind": "historical documentary extraction",
+  "review_scope": "52 records, 15 original source pages, full final report",
+  "source_pages_visually_read": [
     302,
     303,
     304,
@@ -19,8 +19,20 @@
     315,
     316
   ],
-  "fresh_original_renders_pixel_matched": 15,
-  "tests_run": 28,
+  "canonical_source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "all_original_pngs_replayed_and_pixel_matched": true,
+  "initial_opus_reviewer": "Claude Opus 5.5 max, fresh read-only context",
+  "initial_reviewer_result": "FINDS_ERROR eight minor, trivial; missing-source negative identified",
+  "changed_item_opus_reviewer": "Claude Opus 5.5 max, fresh read-only changed-file context",
+  "changed_reviewer_result": "All eight minor and not-calefactive resolved; remaining D1–D9 reported, then source-corrected by controlling GPT-6 reader without a third model verdict",
+  "corrections_record": "independent_review/FINAL_RECONCILIATION.json",
+  "original_source_wording_ambiguous": "not calefactive; U22 retained",
+  "initial_source_semantic_check_independent": true,
+  "additional_source_semantic_review_after_final_local_fixes": false,
+  "ancient_Hermes_original_language_collation": false,
+  "patient_outcomes_observed": 0,
   "clinical_or_predictive_validation": false,
-  "actual_independent_check": "not yet completed; see later receipt"
+  "runtime_promotion": false,
+  "distinct_structural_tests_passed": 36,
+  "actual_extracted_archive_pending": true
 }

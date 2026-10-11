@@ -1,0 +1,9 @@
+{
+  "kind": "literal_negative_regression",
+  "test": "test_lilly_hermes.IndependentReviewRegressions.test_not_calefactive_original_negative_remains_unresolved",
+  "control_exit": 0,
+  "mutant": "replace not calefactive in R1672 source_quote_exact.text with calefactive in temporary copy",
+  "mutant_test_status": "REJECTED",
+  "scope": "single selected negative-literal assertion; does not prove source fidelity or medicine semantics",
+  "original_source_changed": false
+}
