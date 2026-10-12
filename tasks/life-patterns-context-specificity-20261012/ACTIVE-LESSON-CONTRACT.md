@@ -1,0 +1,7 @@
+- Current V3 pilot and known birth data have already influenced hypothesis selection. All changes are DEVELOPMENT, never independent validation.
+- No checkbox-count inference as four separate traits; conditional/no-default and negative/unknown preserved.
+- Keep questionnaire chart-blind and condition prompts neutral. No private birth/person data or substance-history snippets in public repo.
+- Keep survey participant free-text exact through import and export; preserve existing V3 JSON compatibility and freedom to skip.
+- Historic source claims are conceptual, not medical or scientific proof; intoxication exploration is not addiction.
+- Install independently selectable experiment HTML, not silent rewrite of existing offline V3 file or live Railway.
+- Real browser import/switch/export and no-network tested before marking useful.
