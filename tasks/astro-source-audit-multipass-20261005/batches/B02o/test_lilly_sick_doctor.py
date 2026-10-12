@@ -78,7 +78,7 @@ class SourceConditionGuards(unittest.TestCase):
   self.assertFalse(K['diagram_full_degree_transcription_complete'])
   self.assertFalse(P['chart_reproduction_from_modern_ephemeris'])
  def test_scropio_and_chele(self):
-  self.assertIn('scorpio',body(1748));self.assertIn('chele',body(1748))
+  self.assertIn('scorpio',body(1748));self.assertIn('chelæ',body(1748))
  def test_saturn_fall_in_sixth(self):
   self.assertIn('saturn',body(1749));self.assertIn('sixth',body(1749));self.assertIn('fall',body(1749))
  def test_body_reference_head_breast_heart(self):
@@ -102,6 +102,6 @@ class SourceConditionGuards(unittest.TestCase):
   self.assertIn('antiscion',body(1768))
  def test_report_marks_unverified_medical_and_prediction(self):
   text=(B/'AUDIT_REPORT.md').read_text().lower()
-  self.assertIn('not an independently verified series',text)
+  self.assertIn('no independently authenticated patient record',text)
   self.assertIn('source-only',text)
 if __name__=='__main__':unittest.main()

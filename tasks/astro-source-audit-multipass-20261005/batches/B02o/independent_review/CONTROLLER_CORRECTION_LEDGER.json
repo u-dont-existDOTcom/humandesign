@@ -1,0 +1,69 @@
+{
+  "reviewer_model": "Claude Opus 5.5 max",
+  "review_file": "independent_review/OPUS_INITIAL_DIAGNOSIS.md",
+  "initial_verdict": "10 PASS / 13 NEEDS_CORRECTION / 1 UNRESOLVED",
+  "source_pages_controller_read": [
+    320,
+    321,
+    322,
+    323
+  ],
+  "source_pages_initial_reviewer_read": [
+    320,
+    321,
+    322
+  ],
+  "changed_record_ids": [
+    1746,
+    1747,
+    1748,
+    1749,
+    1750,
+    1751,
+    1752,
+    1753,
+    1754,
+    1755,
+    1756,
+    1757,
+    1758,
+    1759,
+    1760,
+    1761,
+    1762,
+    1763,
+    1764,
+    1765,
+    1766,
+    1767,
+    1768,
+    1769
+  ],
+  "initial_error_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "crosscutting_ids": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7"
+  ],
+  "scope": "Historical 1647 documentary fidelity only",
+  "clinical_or_predictive_validation": false,
+  "independent_followup_status": "PENDING"
+}

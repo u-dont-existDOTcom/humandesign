@@ -1,0 +1,904 @@
+{
+  "batch": "B02o",
+  "source_scope": "complete Chapter XLV worked doctor case, original PDF320 lower-PDF322 upper",
+  "records_count": 24,
+  "first_id": 1746,
+  "last_id": 1769,
+  "status": "PROVISIONAL_SOURCE_CANDIDATE_REVIEW_PENDING",
+  "rules": [
+    {
+      "id": "LI.1647.II.XLV.R1746",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          320
+        ],
+        "printed_page_sequence": [
+          286
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "heading_and_dated_chart"
+      },
+      "kind": "heading_and_dated_chart",
+      "source_statement": "Chapter XLV asks the disease and curability of one sick doctor. Chart reads 1645, Jupiter weekday glyph ♃, eighth day of May, 6:15 P.M. and hor: astr:; the glyph ♃ is not numeral 24.",
+      "preconditions": [
+        "Admit heading and chart only below the divider on original PDF320; read the original caption in Julian English Old Style, consistent with Thursday."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Time convention and location not stated sufficiently for UTC conversion; retrospective patient story not independent verification."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1747",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          320
+        ],
+        "printed_page_sequence": [
+          286
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "chart_aspect_inscription"
+      },
+      "kind": "chart_aspect_inscription",
+      "source_statement": "Chart center depicts Venus and Moon with an aspect string involving triangle, Mercury, square Sun and sextile Saturn, represented with early-modern astrological glyphs.",
+      "preconditions": [
+        "One diagram for one case; image rather than the normalized paraphrase is authoritative."
+      ],
+      "exceptions_and_evidence_limits": [
+        "The full set of sign, house, glyph and aspect values is not independently calculated; do not invent a complete ephemeris table."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1748",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          320,
+          321
+        ],
+        "printed_page_sequence": [
+          286,
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "ascendant_and_fixed_stars"
+      },
+      "kind": "ascendant_and_fixed_stars",
+      "source_statement": "Scorpio is ascending and the Chele notable fixed stars are said to lie near the ascendant; the author says the ascendant is not afflicted by an evil planet's position or corporeal presence.",
+      "preconditions": [
+        "Chart under Chapter XLV; reading of the ascendant and near stars precedes turning to the sixth house."
+      ],
+      "exceptions_and_evidence_limits": [
+        "No modern fixed-star identification or independent health meaning established."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1749",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "sixth_house_saturn"
+      },
+      "kind": "sixth_house_saturn",
+      "source_statement": "The author therefore investigates the sixth and finds Saturn in its fall, saying Saturn's presence afflicts that illness house.",
+      "preconditions": [
+        "Apply only after the source's ascendant appraisal; six-house and actual planetary position both specified."
+      ],
+      "exceptions_and_evidence_limits": [
+        "This is a historical astrological cause assertion, not a medically demonstrated mechanism."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1750",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "aries_head_reference"
+      },
+      "kind": "aries_head_reference",
+      "source_statement": "The source assigns Aries to the head and points the reader to printed page245.",
+      "preconditions": [
+        "Book-internal body-sign correspondence applied to this case."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Source reference page245 is a back-reference; not reread or independently confirmed in this case batch."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1751",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "saturn_aries_breast"
+      },
+      "kind": "saturn_aries_breast",
+      "source_statement": "Saturn in Aries is said to signify the breast, with a back-reference to printed page113.",
+      "preconditions": [
+        "Requires the conjunction of Saturn and Aries, not either alone."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Do not replace source's breast assignment with another classical schema."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1752",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "mars_lord_asc_leo_heart"
+      },
+      "kind": "mars_lord_asc_leo_heart",
+      "source_statement": "Mars as lord of the Scorpio ascendant, located in Leo, is said to signify the heart.",
+      "preconditions": [
+        "Mars must be ruler of ascendant and in Leo in the source's current chart context."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Do not conflate current Mars position with its preceding location at an earlier aspect."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1753",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "mars_recent_dexter_square"
+      },
+      "kind": "mars_recent_dexter_square",
+      "source_statement": "Mars is described as recently separated from a dexter square of Saturn. The author says both were cardinal at the square and Mars was in Cancer at that time, representing breast and stomach.",
+      "preconditions": [
+        "The in-Cancer assertion refers to time of prior square, not necessarily current chart placement."
+      ],
+      "exceptions_and_evidence_limits": [
+        "No exact square date, orb or longitude arithmetic reproduced; source method only."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1754",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "body_parts_and_obstruction_inference"
+      },
+      "kind": "body_parts_and_obstruction_inference",
+      "source_statement": "The author concludes that head, breast, heart and stomach are grieved, and assigns a melancholic obstruction in breast or stomach as the cause of the man's disease and misery.",
+      "preconditions": [
+        "Depends on sixth/Saturn, Aries, Mars/Leo and earlier square-Cancer testimonies."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Inference is the author's claim; no independent clinical diagnosis or patient test."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1755",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "saturn_main_disease_author"
+      },
+      "kind": "saturn_main_disease_author",
+      "source_statement": "Saturn is called the principal significator of infirmity, in its own terms, with Moon in Saturn's house applying to Saturn.",
+      "preconditions": [
+        "Keep terms, house and application distinct rather than a generic Saturn affliction."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Planetary domicile/terms calculated by any later implementation are not validated against the printed diagram here."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1756",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "melancholy_dry_disease_claim"
+      },
+      "kind": "melancholy_dry_disease_claim",
+      "source_statement": "Saturn-Moon terms/application are said to denote melancholy and dry diseases which might abide in head and breast; the text points to an earlier Saturn disease list.",
+      "preconditions": [
+        "Requires the preceding specific source correspondences; historical humoral categorization."
+      ],
+      "exceptions_and_evidence_limits": [
+        "No medicine identity, dosage, diagnosis or quantified probability supplied."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1757",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "mars_moon_sun_secondary_cause"
+      },
+      "kind": "mars_moon_sun_secondary_cause",
+      "source_statement": "Mars is said to be in Saturn's terms; Moon outside his terms applies to square of Sun, and Sun in Mars's terms; choler is consequently identified as a SECONDARY cause.",
+      "preconditions": [
+        "Preserve each relationship and the source's secondary rather than principal attribution."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Some pronouns/terms require original glyph and whole-passage review before any executable rule."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1758",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "author_speaking_to_doctor"
+      },
+      "kind": "author_speaking_to_doctor",
+      "source_statement": "The narrator says he later came to speak with the sick doctor, then relates the person's symptoms.",
+      "preconditions": [
+        "First-person author-report, no recorded independent observer or blind response freeze."
+      ],
+      "exceptions_and_evidence_limits": [
+        "The time of first symptom disclosure relative to chart construction is not established."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1759",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "reported_head_sleep_chest_symptoms"
+      },
+      "kind": "reported_head_sleep_chest_symptoms",
+      "source_statement": "The doctor was said to have severe head pain and rumbling, silence and melancholy, little sleep, dry cough, marked weakness and pain in the breast and at the heart.",
+      "preconditions": [
+        "Same single patient described in the same encounter; do not count each symptom as a separate outcome."
+      ],
+      "exceptions_and_evidence_limits": [
+        "No contemporaneous chart-independent medical record or clinical verification."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1760",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321
+        ],
+        "printed_page_sequence": [
+          287
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "complexion_jaundice_inference"
+      },
+      "kind": "complexion_jaundice_inference",
+      "source_statement": "The author reports complexion between black and yellow and an alleged inclination to jaundice.",
+      "preconditions": [
+        "Appearance-based historical inference from the same doctor's case."
+      ],
+      "exceptions_and_evidence_limits": [
+        "This is not verified laboratory evidence or a modern diagnosis."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1761",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          321,
+          322
+        ],
+        "printed_page_sequence": [
+          287,
+          288
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "consumption_weariness"
+      },
+      "kind": "consumption_weariness",
+      "source_statement": "Across the page turn the author adds lingering consumption and severe tiredness throughout body and joints, invoking Moon in an airy sign.",
+      "preconditions": [
+        "Continuation of the same doctor and symptom paragraph, not another patient."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Consumption has historical meanings; do not assume modern TB or claim independent tests."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1762",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          322
+        ],
+        "printed_page_sequence": [
+          288
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "secrets_bladder_sign_claim"
+      },
+      "kind": "secrets_bladder_sign_claim",
+      "source_statement": "The source associates Scorpio rising with the secrets and stone in the bladder and another Moon placement with diseases of those parts.",
+      "preconditions": [
+        "Conditioned on particular sign positions as source states, not a universal medical law."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Moon-sign glyph and bodily correspondence require image-level checking; no modern diagnosis."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1763",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          322
+        ],
+        "printed_page_sequence": [
+          288
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "urine_red_gravel_report"
+      },
+      "kind": "urine_red_gravel_report",
+      "source_statement": "The patient is said to have difficulty passing urine, to void red gravels and to suffer considerable pain in those regions.",
+      "preconditions": [
+        "Additional reported symptoms in the same historical case."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Unverified report; do not diagnose kidney stones with certainty or imply today's safe interventions."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1764",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          322
+        ],
+        "printed_page_sequence": [
+          288
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "author_physic_advice"
+      },
+      "kind": "author_physic_advice",
+      "source_statement": "Lilly admits little judgement in physic and advises the doctor to prescribe for himself remedies described as gently hot, moist and cordial, aiming to prolong life for a time.",
+      "preconditions": [
+        "Historical suggestion directed to one doctor, not an efficacious treatment trial."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Retain as documentary evidence ONLY, not modern medical or dosing advice."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1765",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          322
+        ],
+        "printed_page_sequence": [
+          288
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "moon_fourth_saturn_death_testimony"
+      },
+      "kind": "moon_fourth_saturn_death_testimony",
+      "source_statement": "Moon in fourth in sextile with Saturn is said to argue sickness until death; the author then states the man died on the fourteenth of August following.",
+      "preconditions": [
+        "The cited configuration and reported death must be kept distinct from the earlier chart-input time; one asserted outcome only."
+      ],
+      "exceptions_and_evidence_limits": [
+        "The outcome is author-reported after the fact; no timestamped blind prediction or independent verification."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1766",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          322
+        ],
+        "printed_page_sequence": [
+          288
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "saturn_and_fixed_angles_duration"
+      },
+      "kind": "saturn_and_fixed_angles_duration",
+      "source_statement": "In the long-versus-short subsection, Saturn is assigned disease authorship and slow ponderous nature; fixed angles are invoked for an illness of some permanence or continuance.",
+      "preconditions": [
+        "Prognostic claim within the same worked case, not a separate illness series."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Not a calibrated duration equation; no confirmed forecast before outcome."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1767",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          322
+        ],
+        "printed_page_sequence": [
+          288
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "fixed_luminaries_mars_duration"
+      },
+      "kind": "fixed_luminaries_mars_duration",
+      "source_statement": "The author adds Sun and Moon in fixed signs and in square, out of angles and both in terms of an infortune; Mars lord of ascendant in a fixed sign; these are called signs of disease longevity.",
+      "preconditions": [
+        "Keep fixed-sign, square, angular status and terms as separate testimonies; later testing must not double-count correlated factors."
+      ],
+      "exceptions_and_evidence_limits": [
+        "No exact timing interval, use of Julian calendar, or full chart calculation in the prose."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1768",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          322
+        ],
+        "printed_page_sequence": [
+          288
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "mars_antiscion_near_sun"
+      },
+      "kind": "mars_antiscion_near_sun",
+      "source_statement": "The antiscion of Mars is said to fall near the Sun and thereby afflict the luminary of the time.",
+      "preconditions": [
+        "Antiscion claim is an added source geometry with no numerical orb or explicit degrees in prose."
+      ],
+      "exceptions_and_evidence_limits": [
+        "No source-complete antiscion engine or independent ephemeris parity established."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    },
+    {
+      "id": "LI.1647.II.XLV.R1769",
+      "batch": "B02o",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_edition": "1647 original Wellcome, historical witness",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLV",
+      "source_section": "A sick Doctor, what was his Disease? If curable?",
+      "source_locator": {
+        "pdf_pages": [
+          322,
+          323
+        ],
+        "printed_page_sequence": [
+          288,
+          289
+        ],
+        "admitted_range": "original PDF320 BELOW chapter divider to PDF322 ABOVE next divider; PDF323 is boundary sighting only",
+        "subject_anchor": "chapter_boundary_and_case_identity"
+      },
+      "kind": "chapter_boundary_and_case_identity",
+      "source_statement": "The doctor narrative and long/short judgment end above the divider on original PDF322. The next page PDF323 starts Chapter XLVI with another dated horoscope.",
+      "preconditions": [
+        "One original doctor case has one chart and one author-reported death, despite multiple source records."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Editorial boundary only; next Chapter XLVI not admitted as a second worked case in this packet."
+      ],
+      "case_id": "LILLY1645_SICK_DOCTOR_01",
+      "case_independence_group": "one reported doctor, one chart, one outcome",
+      "source_claim_evidence_class": "AUTHOR_REPORTED_HISTORICAL_CASE_WITH_CHART",
+      "source_statement_class": "NORMALIZED_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
+      "independent_patient_outcome_verified": false,
+      "clinical_efficacy_verified": false,
+      "blinded_prospective_prediction": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_ruleset_implementation_ready": false
+    }
+  ]
+}

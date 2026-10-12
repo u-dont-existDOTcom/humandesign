@@ -31,8 +31,28 @@ test_one_person_and_one_chart (test_lilly_sick_doctor.Structure.test_one_person_
 test_png_bytes_verified (test_lilly_sick_doctor.Structure.test_png_bytes_verified) ... ok
 test_section_index_matches_records (test_lilly_sick_doctor.Structure.test_section_index_matches_records) ... ok
 test_source_counts (test_lilly_sick_doctor.Structure.test_source_counts) ... ok
+test_aquarius_moon_literal (test_opus_b02o_reconciled.SourceFidelityRegressions.test_aquarius_moon_literal) ... ok
+test_chart_center_includes_latin_connectives (test_opus_b02o_reconciled.SourceFidelityRegressions.test_chart_center_includes_latin_connectives) ... ok
+test_claims_have_separate_per_record_classes (test_opus_b02o_reconciled.SourceFidelityRegressions.test_claims_have_separate_per_record_classes) ... ok
+test_doctor_encounter_not_false_temporal_order (test_opus_b02o_reconciled.SourceFidelityRegressions.test_doctor_encounter_not_false_temporal_order) ... ok
+test_duration_interpretation_after_reported_death (test_opus_b02o_reconciled.SourceFidelityRegressions.test_duration_interpretation_after_reported_death) ... ok
+test_italic_author_report_not_independent (test_opus_b02o_reconciled.SourceFidelityRegressions.test_italic_author_report_not_independent) ... ok
+test_jaundice_is_hedged_not_diagnosed (test_opus_b02o_reconciled.SourceFidelityRegressions.test_jaundice_is_hedged_not_diagnosed) ... ok
+test_julian_explicitly_inferred_not_printed (test_opus_b02o_reconciled.SourceFidelityRegressions.test_julian_explicitly_inferred_not_printed) ... ok
+test_longitude_of_disease_not_person_lifespan (test_opus_b02o_reconciled.SourceFidelityRegressions.test_longitude_of_disease_not_person_lifespan) ... ok
+test_melancholy_term_vs_lunar_house_and_physician_deferral (test_opus_b02o_reconciled.SourceFidelityRegressions.test_melancholy_term_vs_lunar_house_and_physician_deferral) ... ok
+test_moon_out_of_terms_not_forced_negative (test_opus_b02o_reconciled.SourceFidelityRegressions.test_moon_out_of_terms_not_forced_negative) ... ok
+test_next_chapter_boundary_controller_only (test_opus_b02o_reconciled.SourceFidelityRegressions.test_next_chapter_boundary_controller_only) ... ok
+test_one_historical_case_cannot_multiply_with_records (test_opus_b02o_reconciled.SourceFidelityRegressions.test_one_historical_case_cannot_multiply_with_records) ... ok
+test_partial_chart_glyphs_retained_with_uncertainty (test_opus_b02o_reconciled.SourceFidelityRegressions.test_partial_chart_glyphs_retained_with_uncertainty) ... ok
+test_patient_complaint_vs_author_observations (test_opus_b02o_reconciled.SourceFidelityRegressions.test_patient_complaint_vs_author_observations) ... ok
+test_planet_in_sign_not_conjunction (test_opus_b02o_reconciled.SourceFidelityRegressions.test_planet_in_sign_not_conjunction) ... ok
+test_saturn_duration_separate_from_fixed_angles (test_opus_b02o_reconciled.SourceFidelityRegressions.test_saturn_duration_separate_from_fixed_angles) ... ok
+test_sixth_house_source_backreference (test_opus_b02o_reconciled.SourceFidelityRegressions.test_sixth_house_source_backreference) ... ok
+test_stars_original_ligature_and_double_evil (test_opus_b02o_reconciled.SourceFidelityRegressions.test_stars_original_ligature_and_double_evil) ... ok
+test_weekday_not_day_twentyfour (test_opus_b02o_reconciled.SourceFidelityRegressions.test_weekday_not_day_twentyfour) ... ok
 
 ----------------------------------------------------------------------
-Ran 33 tests in 0.007s
+Ran 53 tests in 0.008s
 
 OK

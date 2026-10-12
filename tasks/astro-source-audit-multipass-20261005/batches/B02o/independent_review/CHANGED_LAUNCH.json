@@ -1,0 +1,28 @@
+{
+  "provider": "owner existing subscription",
+  "model": "Claude Opus 5.5",
+  "effort": "max",
+  "read_only": true,
+  "files": 21,
+  "command": [
+    "claude",
+    "-p",
+    "--safe-mode",
+    "--restricted",
+    "--tools",
+    "Read",
+    "--allowedTools",
+    "Read",
+    "--permission-mode",
+    "dontAsk",
+    "--strict-mcp-config",
+    "--no-session-persistence",
+    "--model",
+    "opus",
+    "--effort",
+    "max",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ]
+}
