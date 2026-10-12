@@ -1,0 +1,8 @@
+- Preserve source: uploaded original answer text and exported item details stay byte-identical absent intentional edit. Report only what exact answers support and call competing interpretations hypotheses.
+- Functional closure: an Edit button alone is insufficient if existing exported data cannot be reopened. Import → edit → export preserving 25 answers is the acceptance path.
+- Privacy: examples in tests must be synthetic. Uploaded psychedelic/meditation/personal relationship responses and URLs never leave private user context or enter Git/logs.
+- No accidental deletion: Cancel Edit, import replacement confirmation, confirm destructive Clear/Reset, retain order and unknown record fields.
+- Input safety: read local JSON as text, validate schema and structure, use textContent for untrusted labels. No fetch, XHR, online upload, localStorage or network.
+- Development integrity: v1/v2/v3 question bank and production files unchanged. Public learning includes only aggregate selected-count histogram and anonymous route IDs.
+- Human significance: 13 all-four responses may indicate conditionality and poor forced-answer alternatives; not evidence of having four opposite stable traits. Unique examples are self-reported and not verified population rarity.
+- Design OS: show accessible and obvious Edit / Save / Cancel, no surprise mode changes, errors announced in a readable status message, preserve mobile layout.

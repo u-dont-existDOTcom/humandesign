@@ -66,3 +66,11 @@ The original A0 question must not be treated as automatically equivalent to a di
 - Haynes et al. (idiographic assessment conceptual/psychometric foundations) <https://pubmed.ncbi.nlm.nih.gov/19217703/>.
 
 These sources support considering individually tailored behavioral elicitation and checking question comprehensibility. None establishes a causal or predictive relationship between behavioral distinctiveness and birth data.
+
+## October 12 local-edit/reimport usability update
+
+The offline experiment now supports **Edit** next to every previously entered unusual behavior. Selecting Edit loads the behavior, frequency/context, comparison group and motivation back into their fields. **Save changes** updates the item in place; **Cancel editing** discards only the unfinished change. Removing an item and clearing/resetting the list ask for confirmation.
+
+The previous version kept answers only in the currently open tab. To reopen your existing export, select **Choose your previous Life Patterns JSON file** at the top and import `my-life-patterns-v3-local-pilot.json`. The control validates all 25 question selections and unusual behaviors, restores them locally, and warns before replacing unsaved in-tab responses. An all-four-choice selection displays an optional prompt to explain when each response applies rather than forcing one choice. No data is uploaded or saved automatically: select **Export my temporary responses as JSON** after edits to preserve a new copy. The older local HTML is saved as a one-time backup when a revised copy is installed.
+
+This is an **interface-only fix**, not a new psychometric mapping or activation of V3 on Railway. Private participant interpretations are delivered separately to the owner's OS Downloads and are not committed to the repository.
