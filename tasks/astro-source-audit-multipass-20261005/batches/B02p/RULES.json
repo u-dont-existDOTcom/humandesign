@@ -1,0 +1,888 @@
+{
+  "batch": "B02p",
+  "status": "CURATED_SOURCE_CANDIDATE_REVIEW_PENDING",
+  "record_count": 24,
+  "first_record": 1770,
+  "last_record": 1793,
+  "case_count": 1,
+  "scope": "Original PDF323 top CHAP XLVI to PDF324 upper final paragraph; CHAP XLVII below divider excluded",
+  "rules": [
+    {
+      "id": "LI.1647.II.XLVI.R1770",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          323
+        ],
+        "printed_page": 289,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-323.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "heading",
+      "source_statement": "The original printed heading CHAP. XLVI asks whether the sick would live or die and what his disease was.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Below the top heading on original PDF323, printed289."
+      ],
+      "exceptions_and_evidence_limits": [
+        "This is one distinct historical question; the previous doctor case in XLV is separate.",
+        "The heading is not a patient observation or a calibrated rule."
+      ],
+      "claim_class": "SOURCE_STRUCTURE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1771",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          323
+        ],
+        "printed_page": 289,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-323.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "dated_chart",
+      "source_statement": "The horoscope centre reads 'Die Mercurij / 16 Julij 1645 / 7:22 A.M. / hor: ♄' in its printed archaic forms. Die Mercurij identifies Wednesday, while ♄ represents a separate planetary hour.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Single chart associated with this XLVI enquiry.",
+        "Interpreting 16 July 1645 as English Julian/Old Style is contextual, not a printed Julian label."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Julian 16 July 1645 corresponds to Gregorian 26 July 1645, both Wednesday.",
+        "No printed place, modern time zone, UT offset or natal DOB.",
+        "Hour of Saturn is not equivalent to 7:22 A.M. civil time."
+      ],
+      "claim_class": "SOURCE_CHART_LABEL",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1772",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          323
+        ],
+        "printed_page": 289,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-323.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "diagram",
+      "source_statement": "The original chart wheel contains sign and planet glyphs, degrees, a central date and hour; only visually secure captions and positions are normalized, not a full independent astrological ephemeris.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Original chart PDF323 printed289 accompanies the present enquiry."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Degree/glyph ambiguities remain in CHART_INSCRIPTION.json.",
+        "A printed diagram is not proof that any historical positions match modern astronomical computation."
+      ],
+      "claim_class": "SOURCE_CHART",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1773",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          323
+        ],
+        "printed_page": 289,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-323.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "ascendant_mars",
+      "source_statement": "The source says Virgo rising was most afflicted by the corporeal presence of Mars, described as partly lord of the eighth house.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Virgo is the ascendant of the current printed figure.",
+        "Mars is present by body, not merely by aspect.",
+        "Mars is described as partly eighth-house lord."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Astrological affliction is authorial, not a measured clinical symptom.",
+        "This house-rulership description must not be strengthened into unconditional ruler of the whole eighth."
+      ],
+      "claim_class": "AUTHOR_ASTROLOGICAL_INFERENCE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1774",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          323
+        ],
+        "printed_page": 289,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-323.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "disease_location_method",
+      "source_statement": "From the afflicted ascendant, Mars and the eighth-house link, the writer says the disease, cause and afflicted member must be required from that house and sign.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Uses the preceding source-defined ascendant/Mars/eighth configuration."
+      ],
+      "exceptions_and_evidence_limits": [
+        "This is a conditional 1647 horary inference, not a diagnosis or independently observed illness.",
+        "No modern body-map transfer without separate validated procedure."
+      ],
+      "claim_class": "AUTHOR_METHOD",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1775",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          323
+        ],
+        "printed_page": 289,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-323.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "sixth_sign",
+      "source_statement": "The sixth-house sign Aquarius is called fixed and afflicted by an additional printed glyph that has not been identified confidently from this witness.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "The sixth house in the source figure is assigned to Aquarius."
+      ],
+      "exceptions_and_evidence_limits": [
+        "The afflicting glyph is retained as UNRESOLVED, not automatically a lunar node, Venus or Mars.",
+        "No assumption that sixth-house affliction duplicates the Mars-at-ascendant condition."
+      ],
+      "claim_class": "AUTHOR_ASTROLOGICAL_INFERENCE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1776",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          323
+        ],
+        "printed_page": 289,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-323.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "saturn_sixth",
+      "source_statement": "Saturn as sixth-house ruler is placed in Taurus, a fixed, earthy, melancholic sign said to share Virgo rising's nature and triplicity.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Saturn rules the sixth according to the source.",
+        "Saturn is in Taurus."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Earthy/melancholy/triplicity are source taxonomies, not physical causes.",
+        "Fixed sign is an additional symbolic indicator, not a new case."
+      ],
+      "claim_class": "AUTHOR_ASTROLOGICAL_INFERENCE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1777",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          323
+        ],
+        "printed_page": 289,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-323.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "moon_mars",
+      "source_statement": "The Moon, called a general significatrix in diseases, is said to be afflicted by proximity to Mars and placed in the ascendant, characterized as earthy and melancholic.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Moon near Mars, as stated by Lilly.",
+        "Moon position in source ascendant context."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Proximity does not by itself prove an exact conjunction or independently reproduce a chart.",
+        "The sentence continues across the PDF323–324 page turn."
+      ],
+      "claim_class": "AUTHOR_ASTROLOGICAL_INFERENCE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1778",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "humoral_diagnosis",
+      "source_statement": "The author interprets the combined configuration as spleen trouble, wind-colic and melancholic obstructions in the bowels or smaller intestines.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Depends jointly on the source's ascendant, sixth, Saturn and lunar/Mars indicators."
+      ],
+      "exceptions_and_evidence_limits": [
+        "This is the author's diagnosis/inference, not a verified patient's clinical diagnosis.",
+        "The listed body troubles refer to one patient only."
+      ],
+      "claim_class": "AUTHOR_MEDICAL_INFERENCE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1779",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "fever_pulse",
+      "source_statement": "The same source inference mentions small fevers and a remiss pulse.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Continues the preceding multi-indicator humoral argument."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Neither pulse nor fever is independently documented in a clinical examination.",
+        "No quantitative temperature, pulse count or sample size is supplied."
+      ],
+      "claim_class": "AUTHOR_MEDICAL_INFERENCE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1780",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "head_sleep",
+      "source_statement": "The writer links Virgo ascending and Moon/Mars in the ascendant with head distempers and sleeping unquietly.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Uses the same ascendant sign and two luminaries/planetary presence as the preceding clauses."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Old body-region and sleep associations are unvalidated historical doctrine.",
+        "No independent symptom attribution to a separately interviewed patient is established."
+      ],
+      "claim_class": "AUTHOR_MEDICAL_INFERENCE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1781",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "all_true",
+      "source_statement": "Following the inferred ailments, the printed text adds '[All which was true.]', an explicit retrospective assertion by the author.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Applies to the immediately preceding cluster of inferred symptoms."
+      ],
+      "exceptions_and_evidence_limits": [
+        "This is reported author confirmation, not a second observer, a clinical chart, a blinded outcome or a prospective prediction freeze.",
+        "Do not transform one such sentence into multiple independently verified hits."
+      ],
+      "claim_class": "AUTHOR_REPORTED_RETROSPECTIVE_CONFIRMATION",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1782",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "religious_advice",
+      "source_statement": "The writer says he persuaded the patient to make peace with God and settle his house in order.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Source describes a particular encounter or authorial advice, not an abstract rule for every patient."
+      ],
+      "exceptions_and_evidence_limits": [
+        "This historical advice is not contemporary medical, religious or legal guidance.",
+        "No patient identity, consent record or independent record of conversation is supplied."
+      ],
+      "claim_class": "AUTHOR_REPORTED_COUNSEL",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1783",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "ten_twelve_days",
+      "source_statement": "The author says he did not perceive 'by naturall causes' that the patient could live above ten or twelve days.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Bounded to this single case and the depicted question context."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Ten OR twelve days is the source expression, not a probability distribution.",
+        "It appears earlier in the printed narration than the stated death, but the publication is retrospective, without a preserved contemporaneous forecast or independent testimony."
+      ],
+      "claim_class": "AUTHOR_REPORTED_PROGNOSIS",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1784",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "reason_one",
+      "source_statement": "First reason: the Sun, temporal light at the time of the question, is in perfect square to Saturn, ruler of the sixth, in fixed signs. A parenthetical Latin phrase is printed and is not assumed to be a separately validated factor.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Sun square Saturn, fixed-sign configuration, and Saturn's role as sixth lord."
+      ],
+      "exceptions_and_evidence_limits": [
+        "The printed aspect's perfection is claimed by the author; no independent ephemeris/orb check has been run.",
+        "Parenthetical Latin wording is preserved in the source image; translation/grammar remain qualified."
+      ],
+      "claim_class": "AUTHOR_PREDICTION_RATIONALE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1785",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "reason_two",
+      "source_statement": "Second reason: ascendant is said to be extremely afflicted by the bodily presence of Mars, called naturally ill and accidentally almost lord of the whole eighth house.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Mars bodily present in ascendant; accidental eight-house significance is source-qualified as 'almost'."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Do not replace 'almost' with a categorical all-house ruler or count as a second patient.",
+        "This repeats earlier ascendant/Mars testimony, not an independent measurement."
+      ],
+      "claim_class": "AUTHOR_PREDICTION_RATIONALE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1786",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "reason_three",
+      "source_statement": "Third reason: the Moon is near 'Cauda Leonis' and afflicted by the cross influence of Mars in the house that signifies life, named the ascendant.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Moon near the printed named point Cauda Leonis.",
+        "Mars afflicted in the ascendant according to source description."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Cauda Leonis is retained literally; identifying a dragon-tail node or exact star position is beyond this witness.",
+        "No modern physiological or timing consequence follows untested."
+      ],
+      "claim_class": "AUTHOR_PREDICTION_RATIONALE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1787",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "reason_four",
+      "source_statement": "Fourth reason: Moon separated from a sextile of Mercury, lord of ascendant, in signs of long ascensions, where Lilly calls the geometry 'more properly a square aspect'; he says it transferred Mercury's virtue to Jupiter, lord of eighth.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Source separation from Mercury's sextile with long-ascension aspect conversion.",
+        "Reported translation/transfer to Jupiter as eighth-house lord."
+      ],
+      "exceptions_and_evidence_limits": [
+        "The author's 'more properly' qualifier must remain; do not force both aspects to be an ordinary geometric sextile and square simultaneously.",
+        "A formal conversion law or independent ephemeris is not supplied here."
+      ],
+      "claim_class": "AUTHOR_PREDICTION_RATIONALE",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1788",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "reported_death",
+      "source_statement": "The source reports 'The sick dyed the 28th of July following', referring to the patient of this one horoscope.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Source dates the question 16 Julij 1645.",
+        "Reported July 28 is a case narrative endpoint, not independently authenticated."
+      ],
+      "exceptions_and_evidence_limits": [
+        "No death certificate, identity linkage, contemporaneous chart notes or prospective proof.",
+        "This is a 1647 publication narrating events from 1645; reported success is selection-exposed and retrospectively authored."
+      ],
+      "claim_class": "AUTHOR_REPORTED_OUTCOME",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1789",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "date_difference",
+      "source_statement": "Comparing printed July 16 and July 28 dates yields a twelve-calendar-day gap, matching the upper end of the author's earlier 'ten or twelve days' statement within his own historical account.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Both dates treated within the same contextual Julian month/year.",
+        "Simple subtraction of calendar dates, not ephemeris reconstruction."
+      ],
+      "exceptions_and_evidence_limits": [
+        "This calculation verifies arithmetic of the narrative only, not whether the patient existed, died then or was independently foretold.",
+        "The source's ten-or-twelve-day phrase is not an exact preregistered death date."
+      ],
+      "claim_class": "EDITORIAL_ARITHMETIC_CHECK",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1790",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "post_mercury",
+      "source_statement": "After reporting death, Lilly states Mercury came to the Sun's query degree and there to a square with Saturn lord of sixth, on the day preceding.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "After-outcome explanatory position in the printed paragraph.",
+        "Mercury, natal/request Sun degree, Saturn sixth-house role as author described."
+      ],
+      "exceptions_and_evidence_limits": [
+        "This is a retrospective planetary account, not part of the preceding initial prognostic reasons.",
+        "No actual historical ephemeris parity or orb reported from the paragraph alone."
+      ],
+      "claim_class": "AUTHOR_REPORTED_POST_OUTCOME_TIMING",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1791",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "post_moon_sun",
+      "source_statement": "The same retrospective explanation says the Moon came to an opposition of the Sun.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Attached to the described death date/preceding transit narrative."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Do not turn the aspect into a new independent tested forecast.",
+        "Source gives no modern time-zone conversion.",
+        "The printed Moon-Sun opposition follows the author-reported death statement, so this is a retrospective explanation, not an initial prospective forecast."
+      ],
+      "claim_class": "AUTHOR_REPORTED_POST_OUTCOME_TIMING",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1792",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "post_cusps",
+      "source_statement": "The source continues with the Moon passing the original question's first-house cusp degree, stated as 14 of Virgo, and the Sun at the cusp of the twelfth.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Source relates subsequent celestial motion to the question figure."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Degrees/signs are documentary printed assertions and need separate chart-engine verification.",
+        "The printed connection occurs AFTER the reported outcome, so it cannot independently validate the earlier forecast."
+      ],
+      "claim_class": "AUTHOR_REPORTED_POST_OUTCOME_TIMING",
+      "case_id": "LILLY1647_BOOKII_XLVI_SICK_PERSON_1645_07_16",
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "id": "LI.1647.II.XLVI.R1793",
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "book": "II",
+      "chapter": "XLVI",
+      "batch": "B02p",
+      "source_locator": {
+        "pdf_pages": [
+          324
+        ],
+        "printed_page": 290,
+        "section": "Whether the Sick would live or dye, and what his Disease was?",
+        "source_original": "William Lilly, Christian Astrology 1647, Wellcome b30338724",
+        "page_image": "evidence/pdf-324.png",
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "boundary",
+      "source_statement": "The XLVI historical enquiry ends above a horizontal divider on PDF324/printed290. Below the divider begins CHAP. XLVII, 'Of the Crisis in Diseases', which is not admitted into this case batch.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION",
+      "preconditions": [
+        "Exact boundary at PDF324 after reported outcome paragraphs."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Next chapter's critical-day doctrine and succeeding pages are not counted as part of this one case.",
+        "The following source material remains open and its records are not assigned here."
+      ],
+      "claim_class": "SOURCE_STRUCTURE",
+      "case_id": null,
+      "case_evidence_countable": false,
+      "chart_countable": false,
+      "independently_verified_patient_outcome": false,
+      "blinded_prospective_prediction": false,
+      "clinical_efficacy_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    }
+  ],
+  "no_prediction_promotion": true
+}
