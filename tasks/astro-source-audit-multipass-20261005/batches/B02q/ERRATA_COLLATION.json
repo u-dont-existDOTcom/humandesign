@@ -1,0 +1,24 @@
+{
+  "volume_errata_pdf_page": 888,
+  "status": "PRINTED_ERRATA_ADMITTED_BODY_LINE_ALIGNMENT_NOT_PROVEN",
+  "entries": [
+    {
+      "target_printed_page": 291,
+      "target_pdf_page": 325,
+      "printed_errata_text": "p 291 l 7 r do",
+      "read_token": "do",
+      "body_target_line_matched": false,
+      "consequence": "No silent source text edit; original witness remains unchanged; verify print line counting before assigning correction."
+    },
+    {
+      "target_printed_page": 295,
+      "target_pdf_page": 329,
+      "printed_errata_text": "p 295 l 34 r atram",
+      "read_token": "atram",
+      "body_target_line_matched": false,
+      "consequence": "Preserve token atram and author's Earth/black-melancholy context; original morphology/target line remain copy-qualified."
+    }
+  ],
+  "other_errata_in_printed_290_to_296": "No other entry identified in the full original errata list; this is a same-volume selective list, not a guarantee against mistakes.",
+  "source_body_not_overwritten": true
+}

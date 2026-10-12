@@ -1,0 +1,83 @@
+{
+  "batch": "B02q",
+  "source_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_pdf_bytes": 141842963,
+  "renderer": "pdftoppm -f PAGE -l PAGE -scale-to-y 1800 -png; same graphics parameters for isolated fresh pass",
+  "pages_replayed": 8,
+  "all_replayed_images_rgb_pixel_identical": true,
+  "page_results": [
+    {
+      "page": 324,
+      "rgb_pixels_identical": true,
+      "pixels": [
+        1569,
+        1800
+      ],
+      "evidence_sha256": "a4b93f6c3e433719d991d91c6718777f5902e536e2facd6e322418bcee6bd06f"
+    },
+    {
+      "page": 325,
+      "rgb_pixels_identical": true,
+      "pixels": [
+        1569,
+        1800
+      ],
+      "evidence_sha256": "373f407c833ab12341bea6f5af9fd9514c858472e46d31b09121cf7375c5efe8"
+    },
+    {
+      "page": 326,
+      "rgb_pixels_identical": true,
+      "pixels": [
+        1569,
+        1800
+      ],
+      "evidence_sha256": "8a421a64dd0ffdbbd2c4f2168dd2984e0f7c964428e15d48bf7da4a5ea18fa5c"
+    },
+    {
+      "page": 327,
+      "rgb_pixels_identical": true,
+      "pixels": [
+        1569,
+        1800
+      ],
+      "evidence_sha256": "5394034ce16870ff61b6e2a54d74e4d341b6c89559ae60748d29ab65e4c5fb28"
+    },
+    {
+      "page": 328,
+      "rgb_pixels_identical": true,
+      "pixels": [
+        1569,
+        1800
+      ],
+      "evidence_sha256": "c82172512a8a5664717957d28b4e4543b752d5378d2a74936924f6d3aa7aac70"
+    },
+    {
+      "page": 329,
+      "rgb_pixels_identical": true,
+      "pixels": [
+        1569,
+        1800
+      ],
+      "evidence_sha256": "9f077515aaaaf662445a063ed80813213838d2ce8fe1a248f934acb514e59489"
+    },
+    {
+      "page": 330,
+      "rgb_pixels_identical": true,
+      "pixels": [
+        1569,
+        1800
+      ],
+      "evidence_sha256": "75199d785b45af0203638163477ae24b5fd28291aa8062d32fe4b67dafbdc174"
+    },
+    {
+      "page": 888,
+      "rgb_pixels_identical": true,
+      "pixels": [
+        1569,
+        1800
+      ],
+      "evidence_sha256": "9f247303050dbde293ced45609e499f917af34945a7f4fad0b3d13edcf0c7728"
+    }
+  ],
+  "scope": "This authenticates the locally included PNGs as fresh renderings of the same original PDF; source interpretation and clinical validity are separately evaluated."
+}

@@ -1,0 +1,16 @@
+# Fresh independent source-fidelity review — Lilly Chapter XLVII, B02q
+
+You are a **read-only** source reviewer receiving original visual evidence and a candidate extraction. This is your **first source review** of this candidate. Do not consult a prior diagnosis, previous authoring report, or other model analysis. Do not edit files.
+
+**Primary evidence:** image files `source_images/pdf-324.png` through `source_images/pdf-330.png` (complete William Lilly 1647 Chapter XLVII boundary) and `source_images/errata-888.png` (original same-volume errata); the 894-page PDF from which they were rendered was SHA256 verified as `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. Treat images as authoritative. **Secondary candidates:** `RULES.json` (58 proposed records), `TABLE_GEOMETRY.json` (explicit editorial mathematical grid, not an original transcription), `ERRATA_COLLATION.json` and `UNRESOLVED.json`.
+
+**Task:**
+1. Read the original seven images from top/bottom, observing true chapter start below PDF324 divider and end above PDF330 divider. Reconstruct an independent chapter outline (narrative paragraphs, table, lists, signs and conditions) *before* comparing record summaries. Images are the evidence; do not infer typography from text alone.
+2. Examine all 58 numbered candidate units R1794–R1851 for missing source content, inaccurate source wording, invented conditions, lost exceptions, wrong pronouns/planet glyphs/zodiac signs, unqualified temporal anchors or conversion errors. Check particularly the alternate onset/urine/doctor-visit hierarchy; Galen/Hippocrates/Avicenna attributions; `15°42′ Virgo -> rounded 16° Virgo`, `8°30′ Libra`, `1° Scorpio`, `23°30′ Scorpio`, `16° Sagittarius`, chart's supposed July 1645 illness-onset status, and 7/14/21 day argument.
+3. Review PDF328 table visually: verify if 30x16 and geometry 22°30′ per column accurately reflect printed headings/rows and author example; separate all 480 generated mathematical cells from **actual diplomatically transcribed** cells. Flag any visible printer exceptions or wrong sample values that matter. Do not pretend a formula proves 480 printed tokens.
+4. Examine PDF329 grouped symbols/brace for the four sign-temperament groups, three purging/aspect correspondences, six planetary faculties, and four elemental humours, as well as PDF330 boundary. Distinguish 17th-century medical theory from clinical evidence.
+5. Examine PDF888 original errata references to printed291 line7 and printed295 line34; distinguish a verified correction token from an unproven body target. Do not silently emend original witness.
+6. Report all high-confidence material errors with an ID (F1...), severity (HIGH/MEDIUM/LOW), exact **source PDF page and visibly supported wording or glyph**, affected record ID/file, and narrow correction. Return uncertainties without inventing fixes. Flag missing sections even when absent in the candidate.
+7. Finish with **FINDS_ERROR**, **NO_MATERIAL_ERRORS_FOUND**, or **REVIEW_INCOMPLETE**, scope of original images inspected, number of records inspected, and evidentiary limitations. Do not assess empirical/clinical validity as passed because these are source texts.
+
+No external outcome records, model development, publication, Git mutation, credentials, or human data are part of this review.

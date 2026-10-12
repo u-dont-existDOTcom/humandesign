@@ -1,0 +1,82 @@
+{
+  "batch": "B02q",
+  "source_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_pdf_pages": 7,
+  "included_original_errata_page": 888,
+  "renders_are_secondary_visualizations_of_exact_hash_verified_original": true,
+  "raster_pixel_replay_required_before_acceptance": true,
+  "included": [
+    {
+      "path": "evidence/pdf-324.png",
+      "pdf_page": 324,
+      "printed_page": 290,
+      "bytes": 1718237,
+      "sha256": "a4b93f6c3e433719d991d91c6718777f5902e536e2facd6e322418bcee6bd06f",
+      "render": "pdftoppm -f PAGE -l PAGE -scale-to-y 1800 -png, from exact source PDF SHA256",
+      "primary_visual_witness": true
+    },
+    {
+      "path": "evidence/pdf-325.png",
+      "pdf_page": 325,
+      "printed_page": 291,
+      "bytes": 2092669,
+      "sha256": "373f407c833ab12341bea6f5af9fd9514c858472e46d31b09121cf7375c5efe8",
+      "render": "pdftoppm -f PAGE -l PAGE -scale-to-y 1800 -png, from exact source PDF SHA256",
+      "primary_visual_witness": true
+    },
+    {
+      "path": "evidence/pdf-326.png",
+      "pdf_page": 326,
+      "printed_page": 292,
+      "bytes": 2178239,
+      "sha256": "8a421a64dd0ffdbbd2c4f2168dd2984e0f7c964428e15d48bf7da4a5ea18fa5c",
+      "render": "pdftoppm -f PAGE -l PAGE -scale-to-y 1800 -png, from exact source PDF SHA256",
+      "primary_visual_witness": true
+    },
+    {
+      "path": "evidence/pdf-327.png",
+      "pdf_page": 327,
+      "printed_page": 293,
+      "bytes": 1668154,
+      "sha256": "5394034ce16870ff61b6e2a54d74e4d341b6c89559ae60748d29ab65e4c5fb28",
+      "render": "pdftoppm -f PAGE -l PAGE -scale-to-y 1800 -png, from exact source PDF SHA256",
+      "primary_visual_witness": true
+    },
+    {
+      "path": "evidence/pdf-328.png",
+      "pdf_page": 328,
+      "printed_page": 294,
+      "bytes": 1923119,
+      "sha256": "c82172512a8a5664717957d28b4e4543b752d5378d2a74936924f6d3aa7aac70",
+      "render": "pdftoppm -f PAGE -l PAGE -scale-to-y 1800 -png, from exact source PDF SHA256",
+      "primary_visual_witness": true
+    },
+    {
+      "path": "evidence/pdf-329.png",
+      "pdf_page": 329,
+      "printed_page": 295,
+      "bytes": 1646970,
+      "sha256": "9f077515aaaaf662445a063ed80813213838d2ce8fe1a248f934acb514e59489",
+      "render": "pdftoppm -f PAGE -l PAGE -scale-to-y 1800 -png, from exact source PDF SHA256",
+      "primary_visual_witness": true
+    },
+    {
+      "path": "evidence/pdf-330.png",
+      "pdf_page": 330,
+      "printed_page": 296,
+      "bytes": 1872554,
+      "sha256": "75199d785b45af0203638163477ae24b5fd28291aa8062d32fe4b67dafbdc174",
+      "render": "pdftoppm -f PAGE -l PAGE -scale-to-y 1800 -png, from exact source PDF SHA256",
+      "primary_visual_witness": true
+    },
+    {
+      "path": "evidence/errata-888.png",
+      "pdf_page": 888,
+      "printed_page": null,
+      "bytes": 1807084,
+      "sha256": "9f247303050dbde293ced45609e499f917af34945a7f4fad0b3d13edcf0c7728",
+      "render": "pdftoppm -f PAGE -l PAGE -scale-to-y 1800 -png, from exact source PDF SHA256",
+      "primary_visual_witness": true
+    }
+  ]
+}
