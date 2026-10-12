@@ -66,7 +66,7 @@ class SourceConditionGuards(unittest.TestCase):
   self.assertEqual(K['source_day_of_month'],8)
   self.assertIn('not numeral 24',body(1746))
  def test_date_calendar_context(self):
-  self.assertEqual(P['julian_question_date'],'1645-05-08')
+  self.assertEqual(P['inferred_julian_question_date'],'1645-05-08')
   self.assertEqual(K['proleptic_gregorian_equivalent'],'1645-05-18')
  def test_wrong_prior_date_is_superseded(self):
   self.assertIn('24 May',K['earlier_erroneous_transcription'])

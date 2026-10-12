@@ -24,5 +24,29 @@
       "sha256": "b1bb1f89069103f2f8ce9bb8d5c0b427f3739a991b2f04e43748d0e338ffb3c1"
     }
   ],
-  "source_pdf_external_to_repo": true
+  "source_pdf_external_to_repo": true,
+  "supplemental_original_page_and_chart_images": [
+    {
+      "source_pdf_page": 323,
+      "filename": "evidence/boundary-pdf323.jpg",
+      "bytes": 231667,
+      "sha256": "c0dd93137cf414ed8e1465fd128ea5400d4ab31239425b0852714ded0195b45f",
+      "scope": "boundary or enlarged chart evidence; not part of 3 admitted-page PNG count"
+    },
+    {
+      "source_pdf_page": 320,
+      "filename": "evidence/case_xlv_date_caption_verified.jpg",
+      "bytes": 60310,
+      "sha256": "253a96d206406383414b195b8b7df0daf63e1e7d788fddde2ff9b6228ed37498",
+      "scope": "boundary or enlarged chart evidence; not part of 3 admitted-page PNG count"
+    },
+    {
+      "source_pdf_page": 320,
+      "filename": "evidence/case_xlv_full_chart_detail.png",
+      "bytes": 1469659,
+      "sha256": "7f86a1d019b6c04e722b22e9275bed3ad283b5ce3350672b49ce3806156ca4d5",
+      "scope": "boundary or enlarged chart evidence; not part of 3 admitted-page PNG count"
+    }
+  ],
+  "independent_source_reader_boundary": "Both Opus read-only reviews verified PDF320–322; both could not resolve the PDF323 locator; source controller read PDF323 directly and included original image with digest."
 }

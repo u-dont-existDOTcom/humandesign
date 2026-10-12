@@ -1,81 +1,106 @@
 {
-  "report_sha256": "87df024f5c8b35e047b97460f3a29eb637cab15cf12f4c49ba4aeba40af01762",
-  "status": "DRAFT_AWAITING_INDEPENDENT_REVIEW",
+  "report_sha256": "e5f9f614d1492912957c7017a4559b896d452963f406b02426664341292ff1b7",
+  "scope": "exact post-second-review paragraphs; one claim grouping per paragraph",
   "items": [
     {
       "id": "C01",
       "text": "# Lilly 1647 Chapter XLV — one sick-doctor worked horoscope",
-      "sha256": "adaad0d5afc2af2420adb80df851b186448e538df6f14fcf9a1d0aceac137dfa"
+      "text_sha256": "adaad0d5afc2af2420adb80df851b186448e538df6f14fcf9a1d0aceac137dfa"
     },
     {
       "id": "C02",
-      "text": "Source-only audit; 11 October 2026.",
-      "sha256": "ac38e9be23cf83635c63e9b48d9d828ecee9796a0f4ba1ebd9f5da8e45fa82f0"
+      "text": "Historical source-only audit, 11 October 2026. **These old medical and astrological claims are not clinically or predictively validated.**",
+      "text_sha256": "48762cf29aff6cee4c231154a74497b1590d18b25351475a3b5fd3aecfeda4d9"
     },
     {
       "id": "C03",
-      "text": "## Source boundary and arithmetic",
-      "sha256": "444e5eeeb538b9ec1289ad47598fa9cbb6d290face70d82d5554a7ff0a0e92f8"
+      "text": "## Boundary, date and one-case count",
+      "text_sha256": "c74167e5f7d2c1c5495366041b978b28ae1a10b9bc67acd5a2b3d33e842a27c9"
     },
     {
       "id": "C04",
-      "text": "Original Wellcome 1647 PDF320 / printed286 **below the divider** begins Chapter XLV, *A sick Doctor, what was his Disease? If curable?*. Its complete worked case continues through PDF321 to the upper portion of PDF322 / printed288, ending **above** the divider. PDF323 / printed289 opens Chapter XLVI with another horoscope. B02o contains **24 proposed documentary records, R1746–R1769**, assigned to **one** historical doctor, **one** horoscope and **one** author-reported outcome. If accepted, Lilly rises from 1,745 to **1,769** and Lilly plus retained Ptolemy from 2,811 to **2,835**. These are documentary units, not independent patients or predictions. [RULES.json; SECTION_COVERAGE.json; COUNTS.json]",
-      "sha256": "6021566843408da510cbf9f52a146cff6941b571f8bb659bce2084088a023960"
+      "text": "The original Wellcome 1647 source starts **CHAP. XLV, A sick Doctor, what was his Disease? If curable?** on PDF320 / printed286 **below the divider**. The chapter continues through PDF321 and ends **above the divider** on PDF322 / printed288; PDF323 / printed289 opens another medical case, Chapter XLVI. The 24 proposed documentary records, R1746–R1769, describe **one sick doctor, one dated chart and one author-reported death**. If accepted, Lilly would increase from 1,745 to 1,769 source units and the combined retained Lilly + Ptolemy inventory to 2,835. These numbers are not independent patients or prediction outcomes. [PDF320–323; COUNTS.json; CASE_EVIDENCE.json]",
+      "text_sha256": "6ca89418bc77b173806f01378ed2359dad257f157e912dff832702c7a1b2b1e8"
     },
     {
       "id": "C05",
-      "text": "## A consequential source-date correction",
-      "sha256": "ef9be4625c564feff0832627aad6357e96b6367d1906b0897d726f4176591779"
+      "text": "The chart prints **1645, ♃ 8°. Maij, 6: 15′. P·M., hor: aſtr:**. The symbol ♃ is **Jupiter’s weekday sign** (Thursday), not the numeral 24. **Thursday 8 May 1645 Julian**, corresponding to **18 May Gregorian**, is a contextual reading corroborated by weekday; **Julian is not explicitly printed**. The time has no independently established modern time zone. An earlier B02n continuation note incorrectly stated 24 May; it is superseded without modifying that already accepted aphorism archive. [PDF320; CHART_INSCRIPTION.json; CHAPTER_XLV_DATE_CORRECTION.md]",
+      "text_sha256": "d06953c5aeed5852490f8ee977a59be693ea8191f93e958d0dcad5f90f5ecaf3"
     },
     {
       "id": "C06",
-      "text": "The chart center actually prints **1645, ♃ 8°. Maij, 6:15 P.M., hor: astr:**. The sign ♃ is **Jupiter’s weekday glyph (Thursday)**, not the number **24**. The original chart is captioned **Thursday 8 May 1645 Julian**, equivalent to **18 May 1645 Gregorian**, also Thursday. An earlier B02n handoff erroneously said May24. That mistake is explicitly superseded in CHAPTER_XLV_DATE_CORRECTION.md while the accepted B02n archive is kept immutable. The printed time has no sufficiently established modern timezone or absolute UT conversion; the hor: astr: notation remains unresolved. [PDF320; CHART_INSCRIPTION.json; U02–U04,U20]",
-      "sha256": "467e28e68ef8421a8b3923ae7355eeafe993247206134fc827bcfb6704dafee4"
+      "text": "The source chart is retained in an original-page image and enlarged crop. Its central aspect inscription appears as **♀ ☽ a △ ☿ / ad □ ☉ / et ✶ ♄**. The attachment of ♀ and grammatical role of a/ad/et are unresolved. Clear partial labels include Scorpio11 opposite Taurus11, Libra21°36 opposite Aries21°36, and Saturn28°32 in the Aries-side sector. Not all rotated glyphs or degrees were transcribed or checked against a modern ephemeris or period house implementation; selecting placements after seeing the reported outcome would be invalid. [PDF320; CHART_GLYPH_OBSERVATIONS.json; CHART_INSCRIPTION.json; U04,U20,U21,U27]",
+      "text_sha256": "027cdc90448fd9dd62b0abafbae601d7ba71bdc06c63c0ae8473b6eeb7fe5db8"
     },
     {
       "id": "C07",
-      "text": "## What the author deduced from the chart",
-      "sha256": "324db58b878cb43300a07593eefd5dc32aa486ed7c7551f527fed18dd0433d01"
+      "text": "## Afflicted body parts — Lilly’s inference",
+      "text_sha256": "5f6adf2df88990f61538817880a51a4d1f2ee6f5c5b637b1a84ea5d397cc5215"
     },
     {
       "id": "C08",
-      "text": "**Affected parts.** Lilly gives Scorpio as the ascendant, nearby Chele fixed stars, and no evil planet afflicting the ascendant by its corporeal presence. He therefore examines the sixth, where Saturn is in its fall. Aries signifies the head; Saturn in Aries is assigned the breast; and Mars as Scorpio's ruler in Leo the heart. He says Mars had **recently separated from a dexter square of Saturn and was in Cancer at the time of that square**, which he connects to breast and stomach. Cancer at the earlier aspect is a different time from Mars's present Leo placement, so treating the two signs as contradictory chart data would be an error. The author infers affliction of head, breast, heart and stomach and a melancholic obstruction in breast or stomach. [PDF320–321; R1748–R1754; U05–U09]",
-      "sha256": "bde7d3b5353958507c80b16d819542e37fac5c43a19dae1946e45a09e09f837e"
+      "text": "Under **What part of the Body was afflicted**, Lilly gives Scorpio rising and the italic fixed stars **Chelæ** near the ascendant, but says it is not afflicted by an evil planet’s **evil position or presence**. He turns to the sixth, where Saturn in its fall is said to afflict the illness house. He says the afflicted member is sought from that sixth house and cites printed **page244**. Additional associations: **Aries=head** (page245), **Saturn in Aries=breast** (page113), and **Mars, Scorpio’s ruler, in Leo=heart**. Saturn **in** Aries is a sign placement, not a planetary conjunction. Unauthenticated handwritten annotations beside the printed page113 reference do not correct it. [PDF320–321; R1748–R1752; U05,U06,U09,U25]",
+      "text_sha256": "0c30d7e6c5e5786b3a3fe08c3d12f68343f07df83a62653b49b843491e044413"
     },
     {
       "id": "C09",
-      "text": "**Causes.** Saturn, said to be in its own terms, with the Moon in its house applying to Saturn, is the principal source of melancholy and dry disease. Mars lord ascendant in Saturn's terms, the Moon outside his terms applying square to Sun, and Sun in Mars's terms are instead made to indicate **choler as a secondary cause**. The printed internal page113/244/245 backward references are retained; this isolated section is not an independent re-audit of those earlier catalogues. [PDF321; R1755–R1757]",
-      "sha256": "e2a4ffd4b8812969752ca8eca7b100ea915431540281ead0fb5738ac6744972f"
+      "text": "Mars is then described as recently separated from a **dexter square of Saturn**, with Mars **in Cancer at the time of that earlier square**. The source also gives Mars **in Leo in the chart being judged**. The two signs refer to different moments and must not be conflated. From these factors Lilly infers trouble in head, breast, heart and stomach, and melancholic obstruction in breast or stomach. These are source-internal hypotheses, not independently established medical diagnoses. [PDF321; R1753–R1754; U07]",
+      "text_sha256": "5f12d0c065921bbf7e5a956bb28ebbc6534e25ddb4c3f850984712562687ce8e"
     },
     {
       "id": "C10",
-      "text": "**Symptoms.** Lilly says that when he came to speak to the doctor he found reports of headache and rumbling, little sleep, silence/melancholy, dry cough, pain and weakness in the chest/heart, a black-yellow complexion, wasting and weariness throughout the joints. The continuation reports difficulty urinating, red gravel and pain, with sign/secret/bladder analogies. These are **one person's symptoms** as recounted by one author, not an independently verified series. Chart construction and disclosure times are not frozen against this encounter; archaic terms do not establish modern diagnoses. [PDF321–322; R1758–R1763; CASE_EVIDENCE.json; U10–U12,U15]",
-      "sha256": "eca2190d26f1f7298ee535bc4b1062bf5373e493b9e395d806fd734887228de6"
+      "text": "## Claimed causes, reported symptoms and inferred diagnoses",
+      "text_sha256": "aaff3fa2fa2b717fa6f9a85af00957a2aeb268b0627300d8ff531902850972bf"
     },
     {
       "id": "C11",
-      "text": "**Remedy and outcome.** Lilly says he knew little physic but recommended the doctor prescribe himself historical gently hot, moist and cordial remedies. He invokes the Moon in the fourth sextile Saturn to argue sickness until death, then says the doctor **died on 14 August following**. The reported death and suggested medication are source documentation, **not** independent clinical outcome confirmation, safe treatment advice, or proof of a prospectively frozen prediction. [PDF322; R1764–R1765; U13–U14,U17,U19]",
-      "sha256": "d4881e7a5b2f73a4ce306addadba00b50c82b350bc3a75db8c0fd45b62b92c55"
+      "text": "Under **From what Cause the Sicknesse was**, Lilly calls Saturn the **principal significator**, in Saturn’s own Terms, with the Moon in Saturn’s house applying to it. He assigns melancholy and dry illness **occasioned by melancholic distempers**, possibly in head and breast. He cites **page244** and quotes physicians as knowing **“how to make a right mixture”** and **“what Diseases man may be subject unto in those parts”**. The kind of mixture (medicinal compounding versus a mixture of significations) is not settled by this sentence. That deferral and its source context matter; it is not a contemporary treatment recommendation. [PDF321; R1755–R1756; U08,U09,U14]",
+      "text_sha256": "4bb1086f1fcfef8619d9b7bd062b26923e93c3a5993bfba6e234d928720bb5bf"
     },
     {
       "id": "C12",
-      "text": "## Duration argument and evidentiary limitations",
-      "sha256": "5468fa76e40d3b3c181cf73f65de0756342de8c8d43df5fd219d1b67680f9882"
+      "text": "Mars the ascendant ruler is also placed in Saturn’s Terms. Lilly next writes of the Moon **“out of his Termes”** applying to a square of Sun, which he puts in Mars’s Terms, and identifies **choler as a secondary cause**. The early-English **out of** may mean outside or from, and **his** is not definitively anchored to Saturn or Mars within the line; an executable negative lunar dignity rule cannot be justified by choosing one interpretation. [PDF321; R1757; U22]",
+      "text_sha256": "bc64e5c149f71a9951a3d72e4cc7f29a11425cbbd1d8937be09b72aa7f9eb489"
     },
     {
       "id": "C13",
-      "text": "For a prolonged illness, the passage invokes Saturn's slow nature, fixed chart angles, both luminaries in fixed signs and square, their terms and angular position, Mars lord of ascendant in a fixed sign and the antiscion of Mars near Sun. These are connected astrological interpretations of **one chart**, not additive independent empirical observations. No complete chart degree reproduction, precise orb, ephemeris parity, defensible disease diagnosis, negative-case controls, or transfer prediction is demonstrated. [PDF322; R1766–R1768; U04,U08,U16]",
-      "sha256": "2310c1dee1147c13801b2f650b521c215a7142a9ace9587b8122738ea859d6b4"
+      "text": "Lilly transitions **“and indeed when I came to speak with him”**, without establishing whether the horoscope was judged before that meeting. The author describes head pain/rumbling, being very silent, **dull** and melancholic, little sleep and dry cough. Only the weakness and pain in the breast and heart are expressly attributed in this paragraph to the doctor’s **complaint**. His complexion was described as between black and yellow, **“as if there was inclination to the Jaundies”**, a hedged inference, not a verified medical diagnosis. He further describes **lingring Consumption**, great weariness throughout the body and in every joint, difficulty urinating, red gravel and regional pain. Scorpio rising and the Moon **in Aquarius** are used for the historical source’s secrets/bladder associations; the airy-sign explanation of bodily weariness is an additional source inference, not a separate observed case. These are all claims concerning one patient. [PDF321–322; R1758–R1763; CASE_EVIDENCE.json; U10–U12,U15]",
+      "text_sha256": "0bc8b987a6289b44d1923518a7ef0a7a596f1477833196e5b93290ddb27db773"
     },
     {
       "id": "C14",
-      "text": "Original page images govern glyphs. The original Wellcome PDF has 894 pages, 141,842,963 bytes, SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. The case's original-English text is primary here; modernized RULES statements are conditional paraphrases, not a new medical model. Independent source review, verification, publication and owner-file delivery must be established by **separate actual receipts**, not inferred from this report. [SOURCE_IDENTITY.json; SOURCE_FIRST_NOTES.md; UNRESOLVED.json]",
-      "sha256": "fdd262ca4c5c9cb1e561bd45b5f32365358e377ae52788b97cdfea0e71fba8cb"
+      "text": "## Medicine suggestion, retrospective outcome and illness duration",
+      "text_sha256": "3eb3b081aac35335d9b289e21b87162c2125297486c01551aaf0745b476ecc3a"
     },
     {
       "id": "C15",
-      "text": "**Continuation:** The next numbered chapter is **XLVI**, at original PDF323 / printed289 with a distinct July1645 horoscope. Following accepted R1769, the next documentary record would be R1770. The larger Lilly and multi-author source audit stays **OPEN**.\n",
-      "sha256": "a29bdda66a63ccaaf2f2117ed49a02498a62b723229f6e4836cbfd5f959aa0e0"
+      "text": "Lilly says he knew little physic and advised the doctor to prescribe himself remedies called gently **hot, moist and cordial**, attempting to prolong life for a while. The next phrase gives the Moon in fourth in sextile with Saturn as an argument for sickness until death; then, **in italics**, Lilly says **“He dyed the fourteenth of August following.”** R1765 preserves an **author’s inference** and a separate **author-reported outcome**, linked to the preceding medical suggestion. There is no independently authenticated patient record or documented prediction freeze before the outcome. These suggested remedies are **not current patient-care advice**. [PDF322; R1764–R1765; CASE_EVIDENCE.json; U13–U14]",
+      "text_sha256": "7917276f576feb9536c7b8c0865db0b21111a8da17c96b02b90bb3e560cb7187"
+    },
+    {
+      "id": "C16",
+      "text": "A decisive chronology: the heading **Whether the Disease would be long or short?** and Lilly’s following duration analysis are **printed after his report of death**. He first invokes Saturn as the author of the illness, whose slow character indicates **“permanent, or of some continuance”** (page248). The source does not resolve whether this separate Saturn sentence falls within the later **all these** phrase. **Besides**, all angles are said to be fixed. He adds both luminaries in fixed signs, in square, **“out of Angles”** (a phrase of unsettled meaning), in an infortune’s Terms, and Mars as ascendant lord in a fixed sign. **“All these portended the longitude of the Disease”** means the source’s duration rationale, not the patient’s longevity and not multiple statistically independent observations. The antiscion of Mars near Sun appears **after** the preceding **all these** duration statement as an added affliction to the luminary. The phrase **all these** demonstrably includes the immediately preceding fixed-angle/luminary/Mars claims, while its inclusion of Saturn’s earlier statement remains unresolved. Because this discussion appears after the death statement, it does not establish prospective predictive accuracy. [PDF322; R1766–R1768; U16,U19,U23,U24]",
+      "text_sha256": "d34add75ee2b219e36d39f6201486eb76f59769bf6a50ebcecab3721d37ffb1c"
+    },
+    {
+      "id": "C17",
+      "text": "## Preservation, uncertainties and continuation",
+      "text_sha256": "d9b591d24b3d85bfc13a3f42256dc395f421674e71c79f1ea0a22fdcdd3ca477"
+    },
+    {
+      "id": "C18",
+      "text": "The original source is William Lilly’s 1647 Wellcome scan, 894 PDF pages, 141,842,963 bytes, SHA256 **2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b**. Three primary admitted-page PNGs and a separate following-boundary image preserve its wording and diagrams. The initial and changed-item independent readers both checked the full admitted XLV original pages PDF320–322 but could not locate the next-page PDF323 boundary image by file name. The controlling source reader checked PDF323 directly from the original; a boundary JPG now has its path and digest in SOURCE_IMAGE_MANIFEST.json. This does NOT claim independent reader verification of PDF323. No false claim of independent reviewer coverage of PDF323 is made. The author’s old-body correspondences, marginal handwriting, chart positions, aspect grammar, disease names, clock convention and death outcome retain explicit uncertainties. [SOURCE_IDENTITY.json; SOURCE_IMAGE_MANIFEST.json; UNRESOLVED.json; independent_review/]",
+      "text_sha256": "10e4f8b99107f4d65880a837510645b225cae617ddf3ad661378b71eac056b30"
+    },
+    {
+      "id": "C19",
+      "text": "Source intake, passing software-integrity checks, historical author-reported symptoms and charts are **not** proof of clinical efficacy, chart ephemeris parity, accurate medical diagnosis or forward-blind astrology prediction. Independent review, tests, extracted ZIP verification, publication and owner delivery each have distinct final receipts and must not be inferred from this draft. [TEST_RUN_SUMMARY.json and acceptance/receipt files when present]",
+      "text_sha256": "f19833e568d355b402d65eba09c4c08fc8aef114525eb6e85c522bbbc92d0dbe"
+    },
+    {
+      "id": "C20",
+      "text": "**Next:** Chapter **XLVI** opens on original PDF323 / printed289, with a different July1645 sick person and horoscope, continuing through upper PDF324; Chapter XLVII on disease crises begins below the divider there. If record R1769 is accepted, the next prospective source record would be **R1770**. The wider Lilly and multi-author research project remains **OPEN**. [PDF323–324; NEXT_CHAPTER_SOURCE_NAVIGATION.md]\n",
+      "text_sha256": "1ca927b1f8713ba7ceb9555e0761cc9674a36780ba566aa46aa97a711b3e43bd"
     }
   ]
 }

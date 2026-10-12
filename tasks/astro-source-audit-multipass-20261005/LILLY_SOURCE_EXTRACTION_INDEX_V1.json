@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIV_COMPLETE_LATER_LILLY_OPEN",
-  "records_count": 1745,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLV_SOURCE_READ_LATER_LILLY_OPEN",
+  "records_count": 1769,
   "read_numbered_chapters": [
     1,
     2,
@@ -48,7 +48,8 @@
     41,
     42,
     43,
-    44
+    44,
+    45
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -149,16 +150,23 @@
       "records_count": 43,
       "sha256": "ff5696312331cfa174b5a53c143eafcd8437047215e5f9a2575c3d680df0c185",
       "scope": "All 43 physician aphorisms from original PDF316 lower/printed282 through PDF320 upper/printed286; XLIV complete at next boundary."
+    },
+    {
+      "id": "B02o",
+      "path": "batches/B02o/RULES.json",
+      "records_count": 24,
+      "sha256": "8ba8afcead398093618812cec78c9096189c0dc30d306765b7184a9fc5b2ddfd",
+      "scope": "Lilly II.XLV one sick-doctor worked horoscope from original PDF320/printed286 below divider through PDF322/printed288 above divider. Printed Jupiter weekday 8 May 1645 Julian, not May24; one author-reported case, zero verified outcomes."
     }
   ],
   "next": {
-    "pdf_page": 320,
-    "printed_page": 286,
-    "chapter": "XLV",
-    "heading": "A sick Doctor, what was his Disease? If curable?",
+    "pdf_page": 323,
+    "printed_page": 289,
+    "chapter": "XLVI",
+    "heading": "Whether the Sick would live or dye, and what his Disease was?",
     "include_opening_paragraph": true,
-    "opening_anchor": "The Signe ascending in this Question is Scorpio",
-    "position": "Below divider following aphorism43; complete dated source case.",
+    "opening_anchor": "The Signe ascending, viz. Virgo, is in the Figure most afflicted",
+    "position": "At original PDF323 top, include dated chart, complete method and source-claimed outcome; independent validation not established.",
     "extracted": false,
     "boundary_image_read": true
   },
@@ -167,7 +175,7 @@
   "empirical_validations": 0,
   "read_headed_units_count": 44,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261011_B02n.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261011_B02o.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": []
 }

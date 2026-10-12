@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "target": "CHART_INSCRIPTION.json",
+      "mutant_field": "source_day_of_month",
+      "control_passed": true,
+      "mutant_rejected": true,
+      "test": "test_lilly_sick_doctor.SourceConditionGuards.test_correct_jupiter_day_glyph"
+    },
+    {
+      "target": "CASE_EVIDENCE.json",
+      "mutant_field": "outcome_independently_verified",
+      "control_passed": true,
+      "mutant_rejected": true,
+      "test": "test_lilly_sick_doctor.Structure.test_no_independent_patient_outcomes"
+    }
+  ],
+  "limits": "Only these exact mutant assertions; not a source semantic or clinical validation"
+}

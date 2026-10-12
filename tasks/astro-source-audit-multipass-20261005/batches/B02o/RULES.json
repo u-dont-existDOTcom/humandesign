@@ -4,7 +4,7 @@
   "records_count": 24,
   "first_id": 1746,
   "last_id": 1769,
-  "status": "RECONCILED_AFTER_INDEPENDENT_SOURCE_DIAGNOSIS; FINAL_REVIEW_OR_ADJUDICATION_PENDING",
+  "status": "AFTER_TWO_READ_ONLY_OPUS_PASSES_FINAL_SOURCE_ADJUDICATION; TEST_AND_PUBLISH_PENDING",
   "rules": [
     {
       "id": "LI.1647.II.XLV.R1746",
@@ -156,7 +156,7 @@
       "kind": "sixth_house_saturn",
       "source_statement": "Lilly therefore turns to the sixth house, finding Saturn there in its Fall and calling that illness house afflicted. From the sixth house, he says, he must require the part or member of the body afflicted or most grieved, pointing to printed page 244.",
       "preconditions": [
-        "Apply only after the source's ascendant appraisal; six-house and actual planetary position both specified."
+        "Apply only after the source's ascendant appraisal; sixth-house and actual planetary position both specified."
       ],
       "exceptions_and_evidence_limits": [
         "This is a historical astrological cause assertion, not a medically demonstrated mechanism."
@@ -449,13 +449,14 @@
         "subject_anchor": "melancholy_dry_disease_claim"
       },
       "kind": "melancholy_dry_disease_claim",
-      "source_statement": "Saturn in its own Terms, with the Moon in Saturn's house applying to Saturn, is said to 'prenote Melancholly' and dry diseases occasioned by melancholy distempers potentially abiding in head and breast. The author cites printed page244 for Saturn infirmities and explicitly defers medicine preparation and the likely ailments in those parts to physicians: 'how to make a right mixture, your Physicians best know'.",
+      "source_statement": "Saturn in its own Terms, with the Moon in Saturn's house applying to Saturn, is said to 'prenote Melancholly' and dry diseases occasioned by melancholy distempers potentially abiding in head and breast. The author cites printed page244 for Saturn infirmities and writes that 'how to make a right mixture, your Physicians best know, and what Diseases man may be subject unto in those parts'. The meaning of mixture (a compounded remedy versus a mixture of significations) is not settled by this sentence.",
       "preconditions": [
         "Requires the preceding specific source correspondences; historical humoral categorization."
       ],
       "exceptions_and_evidence_limits": [
         "No medicine identity, dosage, diagnosis or quantified probability supplied.",
-        "The original page244 reference and explicit deference to physicians concern historical doctrine, not effective or safe medicine."
+        "The original page244 reference and explicit deference to physicians concern historical doctrine, not effective or safe medicine.",
+        "The source deferral does not identify a preparation and cannot be converted to medical instructions or to a likelihood claim."
       ],
       "case_id": "LILLY1645_SICK_DOCTOR_01",
       "case_independence_group": "one reported doctor, one chart, one outcome",
@@ -471,10 +472,11 @@
       "source_statement_qualifiers_provenance": "Read the source_statement (normalized paraphrase) together with preconditions (historical chart applicability) and exceptions_and_evidence_limits (mixed source qualifiers and reviewer cautions), which are not all executable predicates.",
       "original_draft_sha256": "cf4325868bafcfe0057127b23b87a4c2e1127b86a6261e031736dfaaad88b55d",
       "patient_or_independent_predictive_units": 0,
-      "source_witness_fragments": [
+      "source_witness_normalized_fragments": [
         "in his owne Termes, and the Moon in his house applying unto him",
         "how to make a right mixture, your Physicians best know"
-      ]
+      ],
+      "fragment_provenance_warning": "Normalized localization paraphrases, not verified exact diplomatic transcriptions."
     },
     {
       "id": "LI.1647.II.XLV.R1757",
@@ -518,10 +520,11 @@
       "source_statement_qualifiers_provenance": "Read the source_statement (normalized paraphrase) together with preconditions (historical chart applicability) and exceptions_and_evidence_limits (mixed source qualifiers and reviewer cautions), which are not all executable predicates.",
       "original_draft_sha256": "5799e70859a3689f5a7c68a9005524fb1accc615c103e5dca22c6198d8d23b1f",
       "patient_or_independent_predictive_units": 0,
-      "source_witness_fragments": [
+      "source_witness_normalized_fragments": [
         "the Moon out of his Termes",
         "he in Mars his Termes"
-      ]
+      ],
+      "fragment_provenance_warning": "Normalized localization paraphrases, not verified exact diplomatic transcriptions."
     },
     {
       "id": "LI.1647.II.XLV.R1758",
@@ -619,10 +622,11 @@
       "source_statement_qualifiers_provenance": "Read the source_statement (normalized paraphrase) together with preconditions (historical chart applicability) and exceptions_and_evidence_limits (mixed source qualifiers and reviewer cautions), which are not all executable predicates.",
       "original_draft_sha256": "8781ca5947d4c14fd2b4e53ce6594bb7a1b79376dc195e3ab0cd56d95483dfe8",
       "patient_or_independent_predictive_units": 0,
-      "source_witness_fragments": [
+      "source_witness_normalized_fragments": [
         "very silent, dull and melancholy",
         "complained of great weaknesse and paine in his Brest, and at the Heart"
-      ]
+      ],
+      "fragment_provenance_warning": "Normalized localization paraphrases, not verified exact diplomatic transcriptions."
     },
     {
       "id": "LI.1647.II.XLV.R1760",
@@ -716,6 +720,12 @@
           "class": "AUTHOR_STATED_CONDITION",
           "text": "Lingring Consumption and great weariness all over and in every joint.",
           "medical_diagnosis_verified": false
+        },
+        {
+          "class": "AUTHOR_ASTROLOGICAL_INFERENCE",
+          "text": "For the Moon is in an airy sign: source-given explanation for general weariness and joint illness.",
+          "original_pdf": 322,
+          "empirical_validity": false
         }
       ],
       "claim_class": "AUTHOR_STATED_CONDITION",
@@ -749,7 +759,7 @@
         "Scorpio rising AND Moon in Aquarius are source literal placements; their anatomical associations are historical source claims."
       ],
       "exceptions_and_evidence_limits": [
-        "Moon-sign glyph and bodily correspondence require image-level checking; no modern diagnosis."
+        "Moon Aquarius (♒) glyph is legible on original PDF322; the body correspondence remains an unvalidated author claim, not modern diagnosis."
       ],
       "case_id": "LILLY1645_SICK_DOCTOR_01",
       "case_independence_group": "one reported doctor, one chart, one outcome",
@@ -765,9 +775,10 @@
       "source_statement_qualifiers_provenance": "Read the source_statement (normalized paraphrase) together with preconditions (historical chart applicability) and exceptions_and_evidence_limits (mixed source qualifiers and reviewer cautions), which are not all executable predicates.",
       "original_draft_sha256": "085b5164857b98fb407be95b4f0a2c36f27175561963311e2afb1b8ef1bc9357",
       "patient_or_independent_predictive_units": 0,
-      "source_witness_fragments": [
+      "source_witness_normalized_fragments": [
         "the Moon in Aquarius signifie the Secrets and Diseases therein, &c."
-      ]
+      ],
+      "fragment_provenance_warning": "Normalized localization paraphrases, not verified exact diplomatic transcriptions."
     },
     {
       "id": "LI.1647.II.XLV.R1763",
@@ -873,7 +884,7 @@
         "subject_anchor": "moon_fourth_saturn_death_testimony"
       },
       "kind": "moon_fourth_saturn_death_testimony",
-      "source_statement": "Lilly reasons that the Moon in the fourth, in sextile with Saturn, argued sickness until death, qualifying his preceding hope to prolong life only 'for a while'; immediately afterward, in italic, he writes 'He dyed the fourteenth of August following.' These are separate authorial ASTROLOGICAL INFERENCE and RETROSPECTIVE REPORTED OUTCOME claims, not an independently checked or prospectively frozen result.",
+      "source_statement": "Lilly reasons that the Moon in the fourth, in sextile with Saturn, argued sickness until death, qualifying his preceding therapeutic purpose of prolonging life only 'for a while'; immediately afterward, in italic, he writes 'He dyed the fourteenth of August following.' These are separate authorial ASTROLOGICAL INFERENCE and RETROSPECTIVE REPORTED OUTCOME claims, not an independently checked or prospectively frozen result.",
       "preconditions": [
         "The cited configuration and reported death must be kept distinct from the earlier chart-input time; one asserted outcome only."
       ],
@@ -913,10 +924,11 @@
       "source_statement_qualifiers_provenance": "Read the source_statement (normalized paraphrase) together with preconditions (historical chart applicability) and exceptions_and_evidence_limits (mixed source qualifiers and reviewer cautions), which are not all executable predicates.",
       "original_draft_sha256": "06a402500fb1564e6be5747d24d74e9f24153e3c8880f43d656e95cd2f42a2f0",
       "patient_or_independent_predictive_units": 0,
-      "source_witness_fragments": [
+      "source_witness_normalized_fragments": [
         "Moon in the fourth in sextile with Saturn argued sicknesse until death",
         "He dyed the fourteenth of August following"
-      ]
+      ],
+      "fragment_provenance_warning": "Normalized localization paraphrases, not verified exact diplomatic transcriptions."
     },
     {
       "id": "LI.1647.II.XLV.R1766",
@@ -962,10 +974,11 @@
       "original_draft_sha256": "6dda9bfe09bf3f0d7e4d6617128a315505ef880623cddc6a11be2352e1addb2e",
       "patient_or_independent_predictive_units": 0,
       "not_prospective_order_note": "The author’s duration interpretation appears in the printed book after the statement of patient death on PDF322; outcome-blind prediction not demonstrated.",
-      "source_witness_fragments": [
+      "source_witness_normalized_fragments": [
         "as page 248. for he is a ponderous, slow Planet",
         "besides, the Angles of the Figure are all fixed"
-      ]
+      ],
+      "fragment_provenance_warning": "Normalized localization paraphrases, not verified exact diplomatic transcriptions."
     },
     {
       "id": "LI.1647.II.XLV.R1767",
@@ -987,13 +1000,13 @@
         "subject_anchor": "fixed_luminaries_mars_duration"
       },
       "kind": "fixed_luminaries_mars_duration",
-      "source_statement": "The writer adds Moon and Sun both in fixed signs and in square, 'out of Angles', both in the Terms of an infortune, and Mars lord of the ascendant fixed in a fixed sign. 'All these' INCLUDING Saturn's slow nature and the fixed angles are said to 'portend the longitude of the Disease', meaning illness DURATION rather than the patient's longevity. The intended sense of 'out of Angles' (not angular versus from angles) remains unsettled, especially beside Moon in the fourth.",
+      "source_statement": "The writer adds Moon and Sun both in fixed signs and in square, 'out of Angles', both in the Terms of an infortune, and Mars lord of the ascendant fixed in a fixed sign. 'All these' certainly includes fixed angles, luminaries and Mars in the immediately preceding 'besides' clauses; whether it also covers Saturn's earlier slow-planet testimony remains unresolved. They are said to 'portend the longitude of the Disease', meaning illness DURATION rather than the patient's longevity. The intended sense of 'out of Angles' (not angular versus from angles) remains unsettled, especially beside Moon in the fourth.",
       "preconditions": [
         "Moon and Sun in fixed signs, printed square relation, printed words “out of Angles” WITHOUT a resolved not-angular meaning, in terms of an infortune, Mars lord ascendant in a fixed sign."
       ],
       "exceptions_and_evidence_limits": [
         "No exact timing interval, use of Julian calendar, or full chart calculation in the prose.",
-        "“All these” refers jointly to the preceding Saturn and fixed-angle claims (R1766), not separately independent probabilities.",
+        "“All these” refers at least to the fixed-angle evidence of R1766 and luminary/Mars clauses of R1767; whether Saturn’s earlier testimony is included remains source-ambiguous, and none are independently calibrated probabilities.",
         "“Out of Angles” remains a literal unresolved period phrase, not a geometrically validated placement.",
         "Duration explanation printed below Lilly’s retrospective death report; no prospective prediction established."
       ],
@@ -1012,10 +1025,11 @@
       "original_draft_sha256": "791e13e1fdba2acb4e19c073ec5ea182eeb73caeb4b0838b1887e788daaa728c",
       "patient_or_independent_predictive_units": 0,
       "not_prospective_order_note": "The author’s duration interpretation appears in the printed book after the statement of patient death on PDF322; outcome-blind prediction not demonstrated.",
-      "source_witness_fragments": [
+      "source_witness_normalized_fragments": [
         "in square, out of Angles",
         "all these portended the longitude of the Disease"
-      ]
+      ],
+      "fragment_provenance_warning": "Normalized localization paraphrases, not verified exact diplomatic transcriptions."
     },
     {
       "id": "LI.1647.II.XLV.R1768",
@@ -1042,7 +1056,8 @@
         "Antiscion claim is an added source geometry with no numerical orb or explicit degrees in prose."
       ],
       "exceptions_and_evidence_limits": [
-        "No source-complete antiscion engine or independent ephemeris parity established."
+        "No source-complete antiscion engine or independent ephemeris parity established.",
+        "Mars antiscion near Sun is discussed after the “all these” illness-duration summary, so is not an explicit constituent of that preceding summary."
       ],
       "case_id": "LILLY1645_SICK_DOCTOR_01",
       "case_independence_group": "one reported doctor, one chart, one outcome",
@@ -1082,7 +1097,7 @@
         "subject_anchor": "chapter_boundary_and_case_identity"
       },
       "kind": "chapter_boundary_and_case_identity",
-      "source_statement": "The single sick-doctor chart, reported symptoms, 14 August death testimony and long/short argument end above the divider on PDF322. A controller-verified original PDF323/printed289 shows the next heading 'CHAP. XLVI. Whether the Sick would live or dye, and what his Disease was?' and a SEPARATE July1645 chart. The initial independent reviewer saw PDF322's divider but did not successfully open the PDF323 boundary image, which is not claimed as independently reviewed.",
+      "source_statement": "The single sick-doctor chart, reported symptoms, 14 August author-reported death and long/short argument end above the divider on PDF322. A controller-verified original PDF323/printed289 shows the next heading 'CHAP. XLVI. Whether the Sick would live or dye, and what his Disease was?' and a SEPARATE July1645 chart. The initial independent reviewer saw PDF322's divider but did not successfully open the PDF323 boundary image, which is not claimed as independently reviewed.",
       "preconditions": [
         "One original doctor case has one chart and one author-reported death, despite multiple source records."
       ],
