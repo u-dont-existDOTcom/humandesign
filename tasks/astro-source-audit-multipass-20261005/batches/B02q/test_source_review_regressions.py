@@ -21,7 +21,7 @@ class SourceReview(unittest.TestCase):
 
     def test_avicenna_is_not_galen(self):
         self.assertIn("est velox motus morbi", R[1807]["source_statement"])
-        self.assertIn("not ascribe", str(R[1807]["exceptions_and_evidence_limits"]))
+        self.assertIn("not ascribe", str(R[1807]["preconditions"]))
 
     def test_table_exception_accounting(self):
         self.assertEqual(P["different_printed_positions"], 64)
