@@ -1,0 +1,88 @@
+{
+  "batch": "B02q",
+  "source_image": "evidence/pdf-328.png",
+  "source_printed_page": 294,
+  "model_type": "editorial 30x16 idealized 22.5-degree grid",
+  "editorial_model_is_diplomatic_transcription": false,
+  "source_readback": "Independent first-pass image review, not certified exhaustive 480-cell transcription",
+  "systematic_apparent_plus_one_degree": {
+    "row_range_1based": [
+      16,
+      30
+    ],
+    "columns_1based": [
+      3,
+      7,
+      11,
+      15
+    ],
+    "total_cells": 60,
+    "printed_first": "1°30′ new sign",
+    "computed_first": "0°30′ new sign",
+    "printed_last": "15°30′ new sign",
+    "computed_last": "14°30′ new sign",
+    "cause": "unresolved: ordinal degree convention or printing/calculation error"
+  },
+  "other_printed_anomalies": [
+    {
+      "row": 6,
+      "col": 10,
+      "print": "38",
+      "model": "Libra 28°"
+    },
+    {
+      "row": 11,
+      "col": 5,
+      "print": "10 33",
+      "model": "Cancer 10°30′"
+    },
+    {
+      "row": 13,
+      "col": 3,
+      "print": "27 28",
+      "model": "Taurus 27°30′"
+    },
+    {
+      "row": 15,
+      "col": 13,
+      "print": "14 15",
+      "model": "Capricorn 14°30′"
+    }
+  ],
+  "different_printed_positions": 64,
+  "hard_to_read_positions": [
+    [
+      7,
+      1
+    ],
+    [
+      2,
+      12
+    ],
+    [
+      28,
+      6
+    ],
+    [
+      29,
+      2
+    ],
+    [
+      29,
+      6
+    ],
+    [
+      30,
+      2
+    ],
+    [
+      30,
+      14
+    ]
+  ],
+  "candidate_sample_cells_checked": 9,
+  "candidate_sample_cells_in_discrepant_positions": 0,
+  "original_author_input_rule": "Moon 15°42′ Virgo rounded upward to 16° Virgo and entered in EIGHTH printed column; not nearest printed cell across columns",
+  "care_claim": "This is historical astronomy/medical doctrine only, not evidence of predictive or clinical accuracy.",
+  "correction_status": "Source-exception register; no full 480-cell corrected diplomatic transcription"
+}
