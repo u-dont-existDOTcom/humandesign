@@ -1,0 +1,33 @@
+{
+  "model_requested": "Claude Opus 5.5",
+  "effort": "max",
+  "authenticated_route": "existing owner subscription",
+  "read_only": true,
+  "review_files": 15,
+  "source_pages": [
+    320,
+    321,
+    322
+  ],
+  "launch": [
+    "claude",
+    "-p",
+    "--safe-mode",
+    "--restricted",
+    "--tools",
+    "Read",
+    "--allowedTools",
+    "Read",
+    "--permission-mode",
+    "dontAsk",
+    "--strict-mcp-config",
+    "--no-session-persistence",
+    "--model",
+    "opus",
+    "--effort",
+    "max",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ]
+}
