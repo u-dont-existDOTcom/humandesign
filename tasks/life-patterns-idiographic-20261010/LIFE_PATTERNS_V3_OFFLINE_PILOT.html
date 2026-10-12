@@ -126,9 +126,11 @@ function remember(){
  const id=el('route').value;
  if(!id)return;
  const previous=state.answers[id]||{};
+ const chosen=[...document.querySelectorAll('#options input:checked')].map(x=>x.value);
+ if(chosen.length===4 && (previous.selected||[]).length!==4)el('context-probe').open=true;
  state.answers[id]={
   ...previous,
-  selected:[...document.querySelectorAll('#options input:checked')].map(x=>x.value),
+  selected:chosen,
   other:el('other').value,
   unsure:el('unsure').checked,
   skip:el('skip').checked,
