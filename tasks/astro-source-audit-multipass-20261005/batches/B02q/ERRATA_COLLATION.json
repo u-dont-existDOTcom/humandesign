@@ -1,6 +1,6 @@
 {
   "volume_errata_pdf_page": 888,
-  "status": "PRINTED_ERRATA_ADMITTED_BODY_LINE_ALIGNMENT_NOT_PROVEN",
+  "status": "SAME_VOLUME_ERRATA_P295_TARGET_LINE_FOUND_P291_TARGET_UNRESOLVED",
   "entries": [
     {
       "target_printed_page": 291,
@@ -15,8 +15,9 @@
       "target_pdf_page": 329,
       "printed_errata_text": "p 295 l 34 r atram",
       "read_token": "atram",
-      "body_target_line_matched": false,
-      "consequence": "Preserve token atram and author's Earth/black-melancholy context; original morphology/target line remain copy-qualified."
+      "body_target_line_matched": true,
+      "consequence": "Target line established; original source body left unchanged; erratum token and source copy are independent evidence.",
+      "body_target_locating_note": "Original printed page295 line34, below running head, is the Earth/black melancholy line containing a damaged Latin adjective; the same-volume erratum directs 'atram'. Exact corrupted body letters remain uncertain."
     }
   ],
   "other_errata_in_printed_290_to_296": "No other entry identified in the full original errata list; this is a same-volume selective list, not a guarantee against mistakes.",
