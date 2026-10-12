@@ -33,6 +33,14 @@ pre{overflow:auto;font:12px/1.4 ui-monospace,monospace;background:#f3f5f7;border
 <fieldset><legend>For example, one or more of these might apply:</legend><div id="options"></div></fieldset>
 <label for="other">Other / explain it in your own words (equally valid)</label><textarea id="other" placeholder="What you actually tend to do, with conditions or exceptions..." rows="3"></textarea>
 <div class="row"><label class="example"><input type="checkbox" id="unsure">I don't know or can't recall</label><label class="example"><input type="checkbox" id="skip">Prefer to skip</label></div>
+<details id="context-probe"><summary>Explore the conditions (optional, especially when several answers apply)</summary>
+<p id="context-probe-prompt" class="small"></p>
+<label for="context-rule">When do different options apply? What determines the choice? (optional)</label>
+<textarea id="context-rule" rows="3" placeholder="Describe the circumstances or decision rule, or say there is no stable default."></textarea>
+<label for="recent-case">One recent real example or counterexample (optional)</label>
+<textarea id="recent-case" rows="3" placeholder="What happened, what did you do first, and how was it different another time?"></textarea>
+<label class="example"><input type="checkbox" id="no-stable-default">I don't have one usual response across situations</label>
+</details>
 <details id="followups"><summary>Potential clarification only if an important distinction was not already answered</summary><div id="followup-items"></div></details>
 <p class="small" id="selected-summary" aria-live="polite"></p>
 </section>
@@ -59,6 +67,7 @@ const state={answers:{},unique:[]};
 let editingIndex=null;
 const inventoryFields=['behavior','context','comparison','reason'];
 const storedSchema='local_life_patterns_v3_pilot_unsubmitted';
+const contextualProbes={"TF1-G01":"Think of the most recent unfamiliar task that mattered to you. What did you do first, and what made that step preferable to the other available methods?","TF1-G02":"Think of the last time you explained something difficult. Which step did you try first, what did you know about the listener, and how did they respond?","TF1-D0":"Recall a skill you were already competent at. When did you repeat details for enjoyment versus to achieve a necessary result?","TF1-G04":"For the latest task that went wrong, what specific evidence guided the first troubleshooting method? When would you use a different one?","TF1-G15":"Compare two recent worthwhile work sessions of different duration or effort. How did your energy respond, and what changed?","TF1-G16":"Recall a recent task where your interest faded. Which reason actually kept you going, if any? What would have made you stop?","TF1-G18":"After recent time with people you enjoy, when did you want more company and when did you want to be alone? What changed?","TF1-G23":"Recall an actual unfamiliar group task. What did you first notice, and what happened next? Can you remember a different kind of group?","TF1-M05":"Recall a recent uncertain or potentially unsafe situation. What was the first observable cue, and did your assessment change after more evidence?","TF1-B0":"Recall a recent interaction with someone upset. What happened to your mood during the interaction and after separating? What was your role?","TF1-G20":"Think of a real discretionary resource decision you made rather than a hypothetical windfall. Which goal took priority and what did you sacrifice?","TF1-M01":"Compare times when the objective deadline was similar but other people's pressure differed. How, if at all, did your pace change?","TF1-M03":"Think of one important feasible promise and one minor favor. How did your follow-through differ when enthusiasm changed?","TF1-STATUS":"Recall recognition you appreciated and recognition you didn't. What specifically made it meaningful or not, aside from practical benefits?","TF1-G17":"Recall noticing a harmless versus consequential factual error. Did you feel like correcting it, and what actually determined whether you spoke up?","TF1-ROUTINE-CHANGE":"Recall one domain where you chose novelty and another where you kept a routine despite an attractive alternative. What conditions mattered?"};
 function emptyEditor(){
  inventoryFields.forEach(id=>el(id).value='');
  editingIndex=null;
@@ -89,7 +98,11 @@ function parseExistingExport(input){
  for(const [route,answer] of Object.entries(sourceAnswers)){
   const q=known.get(route);
   if(!q)throw new Error(`Unknown question ${route}; no answers were replaced.`);
-  if(!answer || typeof answer!=='object' || Array.isArray(answer) || !Array.isArray(answer.selected) ||
+  if(!answer || typeof answer!=='object' || Array.isArray(answer) ||
+     (answer.context_rule!=null && typeof answer.context_rule!=='string') ||
+     (answer.recent_case!=null && typeof answer.recent_case!=='string') ||
+     (answer.no_stable_default!=null && typeof answer.no_stable_default!=='boolean') ||
+     !Array.isArray(answer.selected) ||
      !answer.selected.every(v=>typeof v==='string' && q.example_answer_paths.includes(v)) ||
      (answer.other!=null && typeof answer.other!=='string') ||
      (answer.unsure!=null && typeof answer.unsure!=='boolean') ||
@@ -112,11 +125,16 @@ function parseExistingExport(input){
 function remember(){
  const id=el('route').value;
  if(!id)return;
+ const previous=state.answers[id]||{};
  state.answers[id]={
+  ...previous,
   selected:[...document.querySelectorAll('#options input:checked')].map(x=>x.value),
   other:el('other').value,
   unsure:el('unsure').checked,
-  skip:el('skip').checked
+  skip:el('skip').checked,
+  context_rule:el('context-rule').value,
+  recent_case:el('recent-case').value,
+  no_stable_default:el('no-stable-default').checked
  };
  explainExampleCoverage();
 }
@@ -124,7 +142,7 @@ function explainExampleCoverage(){
  const route=d.questions.find(q=>q.id===el('route').value);
  const checked=document.querySelectorAll('#options input:checked').length;
  el('selected-summary').textContent=route && checked===route.example_answer_paths.length
-  ?'All four examples selected. They may all fit under different conditions; if useful, describe those conditions in Other. You do not have to choose a winner.'
+  ?'All four examples selected. They may fit under different conditions, so the optional conditions section is especially relevant. A single typical response is not required.'
   :'Examples help recall. They are not independent evidence or fixed personality traits. Free text and conditions are welcome.';
 }
 function showQuestion(){
@@ -132,6 +150,11 @@ function showQuestion(){
  el('question-text').textContent=q.question;
  el('options').replaceChildren();
  const prior=state.answers[id]||{selected:[],other:'',unsure:false,skip:false};
+ el('context-probe-prompt').textContent=contextualProbes[id] || 'Recall a real situation: which option did you use first, what circumstances mattered, and what happened on another occasion?';
+ el('context-rule').value=prior.context_rule||'';
+ el('recent-case').value=prior.recent_case||'';
+ el('no-stable-default').checked=prior.no_stable_default===true;
+ el('context-probe').open=prior.selected?.length===4;
  q.example_answer_paths.forEach((text,i)=>{
   const label=document.createElement('label');label.className='example';
   const box=document.createElement('input');box.type='checkbox';box.value=text;
@@ -177,7 +200,7 @@ function renderList(){
 }
 d.questions.forEach(q=>{const opt=document.createElement('option');opt.value=q.id;opt.textContent=q.id+' · '+q.family;el('route').append(opt);});
 el('route').addEventListener('change',showQuestion);
-['other','unsure','skip'].forEach(id=>el(id).addEventListener('input',()=>{
+['other','unsure','skip','context-rule','recent-case','no-stable-default'].forEach(id=>el(id).addEventListener('input',()=>{
  if(id==='unsure'&&el('unsure').checked)el('skip').checked=false;
  if(id==='skip'&&el('skip').checked)el('unsure').checked=false;
  remember();
