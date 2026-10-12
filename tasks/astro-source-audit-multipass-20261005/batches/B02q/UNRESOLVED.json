@@ -1,5 +1,5 @@
 {
-  "retained_count": 31,
+  "retained_count": 32,
   "limits": [
     {
       "id": "U01",
@@ -18,7 +18,7 @@
     },
     {
       "id": "U04",
-      "description": "Hippocrates acute-disease/poisonous-disease exception is source-mediated and not independently checked.",
+      "description": "The exception in printed291 belongs to unnamed objectors, not to Hippocrates. The ancient citation remains uncollated.",
       "status": "RETAINED"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "id": "U07",
-      "description": "Original volume p295 l34 'r atram' erratum is legible; body-word alignment remains unproved.",
+      "description": "Printed295 erratum atram is linked to the relevant body line; damaged original lettering is unresolved.",
       "status": "RETAINED"
     },
     {
@@ -63,12 +63,12 @@
     },
     {
       "id": "U13",
-      "description": "The table's all-cell 30x16 geometry model is editorial; image preserved, 480 cells not individually diplomatically transcribed.",
+      "description": "Printed294 table has 64 apparent non-formula numerical readings documented separately in TABLE_PRINT_EXCEPTIONS.json; the model is not a diplomatic transcription.",
       "status": "RETAINED"
     },
     {
       "id": "U14",
-      "description": "The source may contain printer mistakes or numerals/ambiguous zodiac glyphs outside the selected table cell readbacks.",
+      "description": "Printed systematic 60-cell one-degree offset, four isolated non-formula entries, and seven hard-to-read positions require separate source treatment.",
       "status": "RETAINED"
     },
     {
@@ -108,7 +108,7 @@
     },
     {
       "id": "U22",
-      "description": "First, sixth, seventh, eighth chart house crossings require another chart/house-system specification absent from table.",
+      "description": "The cited house-cusp crossings are sixth, seventh, eighth only, not the first.",
       "status": "RETAINED"
     },
     {
@@ -118,7 +118,7 @@
     },
     {
       "id": "U24",
-      "description": "The printer's word 'atr(a/u)m' in body and same-volume erratum 'atram' are kept as separate witnesses.",
+      "description": "Erratum p295 atram matches its original body line but does not authorize a silent body rewrite.",
       "status": "RETAINED"
     },
     {
@@ -154,6 +154,11 @@
     {
       "id": "U31",
       "description": "The earlier question-wheel Moon-like glyph/degree might indicate 15°43′ while Chapter XLVII prose reads 15°42′ Virgo; source pairing and exact minute are not proven. The rounded 16° input is invariant to this one-minute distinction.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U32",
+      "description": "The Mars/Sun glyph pair in the historical sign table lacks an explicit either/both operator.",
       "status": "RETAINED"
     }
   ]
