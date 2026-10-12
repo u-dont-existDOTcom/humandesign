@@ -1,0 +1,96 @@
+{
+  "batch": "B02p",
+  "scope": "Source-fidelity and explanatory-text review for one retrospective Lilly 1645 case; not scientific/clinical validation",
+  "original_source": [
+    "evidence/pdf-323.png",
+    "evidence/pdf-324.png"
+  ],
+  "initial_reviewer": "Claude Opus 5.5 max fresh read-only first pass; source inversion found; prior diagnosis file retained",
+  "changed_item_reviewer": "Claude Opus 5.5 max changed-item readback; primed with previous findings, not blind independent new first pass",
+  "changed_item_review_report": "../SECOND_REVIEW_OPEN_FINDINGS_20261012.md",
+  "independent_final_third_pass": false,
+  "second_review_findings_reconciled": [
+    {
+      "issue": "F1",
+      "original": "After-death Moon cusp inversion",
+      "disposition": "REPAIRED",
+      "proof": "R1792; original PDF324 sixth-house Aquarius"
+    },
+    {
+      "issue": "S01",
+      "original": "14 Aquarius called ordinal",
+      "disposition": "REPAIRED_QUALIFIED",
+      "proof": "CHART_INSCRIPTION; U18,U32"
+    },
+    {
+      "issue": "S02",
+      "original": "U31 Sun/Saturn vs Mercury/Saturn",
+      "disposition": "REPAIRED",
+      "proof": "U31,R1790"
+    },
+    {
+      "issue": "S03",
+      "original": "Previous XLV dates mis-cited to July page",
+      "disposition": "REPAIRED",
+      "proof": "AUDIT_REPORT C08 cites prior B02o"
+    },
+    {
+      "issue": "S04",
+      "original": "Reason scope condensed",
+      "disposition": "REPAIRED",
+      "proof": "R1784–1787; AUDIT_REPORT"
+    },
+    {
+      "issue": "S05",
+      "original": "Saturn hour glyph copy uncertainty",
+      "disposition": "QUALIFIED",
+      "proof": "R1771; CHART_INSCRIPTION; U39"
+    },
+    {
+      "issue": "S06",
+      "original": "Weak July28 print not propagated",
+      "disposition": "REPAIRED_QUALIFIED",
+      "proof": "R1788–1789; CASE_EVIDENCE; REPORT"
+    },
+    {
+      "issue": "S07",
+      "original": "That day lunar referent ambiguous",
+      "disposition": "RETAINED_AMBIGUOUS",
+      "proof": "R1791–1792; U37"
+    },
+    {
+      "issue": "S08",
+      "original": "Planet signs inferred from partial wheel",
+      "disposition": "REPAIRED_PROVISIONAL",
+      "proof": "R1772; CHART_INSCRIPTION provisional glyph table; U40"
+    },
+    {
+      "issue": "S09",
+      "original": "Original dyed silently modernized",
+      "disposition": "REPAIRED",
+      "proof": "CASE_EVIDENCE source/normalized separate"
+    },
+    {
+      "issue": "S10",
+      "original": "Proleptic Gregorian key/scope conflict",
+      "disposition": "REPAIRED",
+      "proof": "CHART_INSCRIPTION computed convention vs source"
+    },
+    {
+      "issue": "S11",
+      "original": "Multi-page source locators and editorial record distinction",
+      "disposition": "REPAIRED",
+      "proof": "R1777,R1789,R1793"
+    },
+    {
+      "issue": "S12",
+      "original": "Print spelling/lexical, subject and qualifiers",
+      "disposition": "REPAIRED_OR_RETAINED",
+      "proof": "REPORT; R1770-1793; U21,U38"
+    }
+  ],
+  "independent_outcome_validation": false,
+  "historical_cases": 1,
+  "original_historical_forecasts_verified_before_outcome": 0,
+  "resolution": "All named second-review discrepancies repaired, expressly qualified or retained ambiguous. The second reviewer did not perform third post-repair readback. Deterministic final regressions and direct controller page-image reading required before documentary acceptance."
+}

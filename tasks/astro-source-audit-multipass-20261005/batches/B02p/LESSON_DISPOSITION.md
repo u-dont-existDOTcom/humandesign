@@ -1,0 +1,3 @@
+# B02p source-fidelity lesson closeout
+
+Source image and original spelling outrank interpreted paraphrase. Historical Moon SIXTH-house Aquarius corrected from first-house Virgo and frozen in tests. Later source review caught ambiguous pronouns, exact clock/day wording, unsupported planet signs and mercury/Saturn direction; all named items repaired or retained uncertain with regressions. Changed-item review was primed and no third independent readback was run. One printed historical case supplies no independent predictive or clinical result. Project source-fidelity guidance already covers these lessons; no universal promotion requested.

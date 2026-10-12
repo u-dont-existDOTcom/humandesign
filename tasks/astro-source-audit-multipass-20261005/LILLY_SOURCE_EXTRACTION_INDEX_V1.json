@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLV_SOURCE_READ_LATER_LILLY_OPEN",
-  "records_count": 1769,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLVI_SOURCE_READ_LATER_LILLY_OPEN",
+  "records_count": 1793,
   "read_numbered_chapters": [
     1,
     2,
@@ -49,7 +49,8 @@
     42,
     43,
     44,
-    45
+    45,
+    46
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -157,25 +158,32 @@
       "records_count": 24,
       "sha256": "8ba8afcead398093618812cec78c9096189c0dc30d306765b7184a9fc5b2ddfd",
       "scope": "Lilly II.XLV one sick-doctor worked horoscope from original PDF320/printed286 below divider through PDF322/printed288 above divider. Printed Jupiter weekday 8 May 1645 Julian, not May24; one author-reported case, zero verified outcomes."
+    },
+    {
+      "id": "B02p",
+      "path": "batches/B02p/RULES.json",
+      "records_count": 24,
+      "sha256": "f7e019ff7746eb1792c66267a15e78efe55415ea3c786d0fe7e5d7e6bfb94e1d",
+      "scope": "Book II XLVI July1645 illness judgement original PDF323/printed289 through PDF324/printed290 ABOVE divider; one horoscope, 24 documentary units, one author-reported death, zero verified outcomes."
     }
   ],
   "next": {
-    "pdf_page": 323,
-    "printed_page": 289,
-    "chapter": "XLVI",
-    "heading": "Whether the Sick would live or dye, and what his Disease was?",
+    "pdf_page": 324,
+    "printed_page": 290,
+    "chapter": "XLVII",
+    "heading": "Of the CRYSIS in Diseases",
     "include_opening_paragraph": true,
-    "opening_anchor": "The Signe ascending, viz. Virgo, is in the Figure most afflicted",
-    "position": "At original PDF323 top, include dated chart, complete method and source-claimed outcome; independent validation not established.",
+    "opening_anchor": "CRYSIS is no other thing then a duell or contention betwixt nature and the infirmity",
+    "position": "Below divider on PDF324, continue onto PDF325 without omitting page-crossing text.",
     "extracted": false,
     "boundary_image_read": true
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 44,
+  "read_headed_units_count": 45,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261011_B02o.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261012_B02p.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": []
 }

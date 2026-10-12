@@ -1,0 +1,7 @@
+# Current astrology source audit — B02p (2026-10-12)
+
+Accepted as historical documentary source intake only: Lilly Book II Chapter XLVI, original PDF323/printed289 through PDF324/printed290 above the XLVII divider; 24 source units R1770–R1793. Lilly 1,793, retained Ptolemy 1,066, combined 2,859. One printed horoscope, one author-reported sick person's death; zero independently authenticated patient outcomes or pre-frozen predictions.
+
+Corrected SIXTH-house Aquarius vs mistaken first-house Virgo; preserved copy-specific Saturn planetary hour, Mercury→Saturn retrospective square, ambiguous Moon 'that day', weak printed July28 date, and editorial 12-day subtraction. 60 distinct structural/source regression tests passed. The second independent changed-item review was primed, and there was no third independent final readback. 40 unresolved source/reconstruction/empirical limitations retained. Original 1647 source PDF SHA256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. This neither endorses medical doctrines nor promotes an astrology engine or constitutes validation.
+
+NEXT: Chapter XLVII, Of the CRYSIS in Diseases, below divider on original PDF324/printed290 and through PDF325 onward. Next R1794 only after exact cumulative index readback. Multi-author parent work OPEN. For publication and owner Downloads read B02p/ACCEPTANCE.json, PUBLICATION_RECEIPT.json and DELIVERY_RECEIPT.json separately. Historic source batches, PASS_PLAN/CURRENT, participant data, fitted models and prediction freezes unchanged.

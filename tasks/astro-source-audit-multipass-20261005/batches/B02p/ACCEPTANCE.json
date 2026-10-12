@@ -1,0 +1,40 @@
+{
+  "batch": "B02p",
+  "accepted": true,
+  "kind": "historical source text/documentary intake only; no clinical or prediction validation",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "original_pdf_pages": [
+    323,
+    324
+  ],
+  "printed_pages": [
+    289,
+    290
+  ],
+  "rules_sha256": "f7e019ff7746eb1792c66267a15e78efe55415ea3c786d0fe7e5d7e6bfb94e1d",
+  "report_sha256": "f66389e04409a564e6a765bb226d9bfb3ec7c296865a19282c5fef42842aaeeb",
+  "test_summary_sha256": "c3bc2b86fe760c8af4c1f7e8bd21b4cb97c8c371f633374d05f277cd31895305",
+  "claim_ledger_sha256": "9d1654487c1dacf686d7e3924bfc7d50269ea56cc229a718d8e5fdeb3ce87a30",
+  "index_after_sha256": "f15897237a3f4a250416cd1a3c5e99046a22d11237a355cc9224322633c4f834",
+  "records": 24,
+  "first_record": "R1770",
+  "last_record": "R1793",
+  "lilly_before": 1769,
+  "lilly_after_if_integrated": 1793,
+  "ptolemy_retained": 1066,
+  "combined_if_integrated": 2859,
+  "source_patients": 1,
+  "source_charts": 1,
+  "independently_verified_outcomes": 0,
+  "clinical_or_predictive_validation": false,
+  "runtime_promotion": false,
+  "distinct_tests": 60,
+  "retained_issues": 40,
+  "initial_independent_review": "independent_review/OPUS_INITIAL_DIAGNOSIS.md",
+  "changed_review_diagnosis": "SECOND_REVIEW_OPEN_FINDINGS_20261012.md",
+  "finding_reconciliation": "independent_review/FINAL_RECONCILIATION.json",
+  "third_independent_model_readback_after_final_repair": false,
+  "next_chapter": "XLVII",
+  "next_pdf_page": 324,
+  "next_id": "R1794"
+}

@@ -60,7 +60,7 @@ class SourceConditions(unittest.TestCase):
  def test_julian_is_inferred(self):
   self.assertTrue(CHART['julian_not_explicit_in_print'])
   self.assertEqual(CHART['inferred_english_julian_date'],'1645-07-16')
-  self.assertEqual(CHART['inferred_proleptic_gregorian_equivalent'],'1645-07-26')
+  self.assertEqual(CHART['computed_extended_gregorian_equivalent'],'1645-07-26')
   self.assertEqual(date(1645,7,26).strftime('%A'),'Wednesday')
  def test_planetary_hour_not_clock_or_timezone(self):
   self.assertEqual(CHART['source_planetary_hour_glyph'],'♄')

@@ -4,7 +4,7 @@
   "original_charts_in_passage": 1,
   "question_reported_date_text": "16 Julij 1645",
   "predicted_survival_text": "I did not perceive by naturall causes that he could live above ten or twelve dayes",
-  "source_reported_death_text": "died the 28th of July following",
+  "source_reported_death_text": "The sick dyed the 28th of July following",
   "reported_death_inferred_julian_date": "1645-07-28",
   "calendar_date_difference_days": 12,
   "comparison_kind": "ARITHMETIC_INTERNAL_TO_AUTHOR_REPORTED_RETROSPECTIVE_NARRATIVE",
@@ -29,5 +29,9 @@
   ],
   "narrative_order_not_time_of_writing": "Four reasons precede the outcome sentence ON THE PRINTED PAGE; 1647 publication remains retrospective",
   "date_subtraction_start_assumption": "Query July16 assumed for arithmetic; author does not explicitly date when he gave ten-or-twelve-day advice",
-  "counting_convention": "Exclusive subtraction 12; inclusive date count13"
+  "counting_convention": "Exclusive subtraction 12; inclusive date count13",
+  "normalized_death_word": "died",
+  "normalization_note": "Printed 'dyed' is normalized to 'died' only in modern summaries; verbatim source retained above.",
+  "source_death_date_legibility": "The leading numeral in printed '28th' is weak/imperfect; 28 July is a medium-high but source-qualified reading with no independently authenticated patient death record.",
+  "reported_death_inferred_julian_date_qualification": "1645-07-28 is inferred from the qualified text '28th of July following' and contextual Julian framing; not verified outcome evidence."
 }
