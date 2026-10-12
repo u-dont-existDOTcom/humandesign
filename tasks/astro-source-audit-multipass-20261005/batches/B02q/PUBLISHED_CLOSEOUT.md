@@ -1,0 +1,11 @@
+# B02q verified publication and delivery closeout
+
+William Lilly, *Christian Astrology* (1647), Book II chapter XLVII (*Of the CRYSIS in Diseases*), original PDF324 lower through PDF330 upper, was admitted **as historical source documentation only**. B02q contributes 58 records R1794–R1851; the accepted cumulative index is **1,851 Lilly** plus **1,066 retained Ptolemy** = **2,917**. No clinical or predictive validity, patient outcomes or algorithm promotion is established.
+
+An independent original-image reader initially found one high-, four medium- and eight low-severity issues. The corrected extraction distinguishes Hippocrates from unnamed objectors and records **64 departures** of the original critical-days table from its separate 480-cell mathematical reconstruction, without replacing the source numerals. Both original-volume errata entries and the surviving uncertainty have been retained. The source reviewer was not asked for a third post-correction model verdict.
+
+Final B02q source suite: **47/47 distinct focused tests passed**. The source ZIP had **47 payload files**, all hashes checked; the ZIP was actually extracted and the same 47 tests passed again. Original 1647 894-page scan SHA256: `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. Accepted content was non-force published to the canonical research branch and source research branch at `6313b6f9ad4e6ba7a00f587cc2ac0ec6e6ac918e`, with remote index/acceptance readback. The complete ZIP, report and continuation handoff were copied to the OS-designated Downloads folder and their SHA256 hashes verified. The local filesystem path is intentionally not recorded in public receipts.
+
+The immutable ZIP contains the **pre-publication** working checkpoint. The later `PUBLICATION_RECEIPT.json`, `DELIVERY_RECEIPT.json` and this closeout supersede its publication/delivery status without changing the frozen ZIP's bytes. The full multi-author research goal remains **OPEN**.
+
+**Next:** Chapter XLVIII, *If a Servant shall get free from his Master?*, beginning **original PDF330 / printed296 below the divider**, with prospective R1852 after checking the exact current index. Preserve historical servitude claims as source testimony rather than modern social or legal endorsement.
