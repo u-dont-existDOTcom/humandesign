@@ -1,7 +1,7 @@
 {
   "batch": "B02q",
-  "distinct_test_count": 42,
-  "tests_run": 42,
+  "distinct_test_count": 47,
+  "tests_run": 47,
   "discovered_test_ids": [
     "test_lilly_crysis.ConditionalSourceReading.test_7_14_21_not_exact_dates",
     "test_lilly_crysis.ConditionalSourceReading.test_anchor_radix_not_natal_chart",
@@ -44,26 +44,32 @@
     "test_lilly_crysis.PacketIntegrity.test_pdf_full_source_sha",
     "test_lilly_crysis.PacketIntegrity.test_previous_accepted_index_unchanged",
     "test_lilly_crysis.PacketIntegrity.test_source_images_exact_hash",
-    "test_lilly_crysis.PacketIntegrity.test_unresolved_count_matches"
+    "test_lilly_crysis.PacketIntegrity.test_unresolved_count_matches",
+    "test_source_review_regressions.SourceReview.test_avicenna_is_not_galen",
+    "test_source_review_regressions.SourceReview.test_historical_ambiguities",
+    "test_source_review_regressions.SourceReview.test_report_exact_claim_ledger",
+    "test_source_review_regressions.SourceReview.test_table_exception_accounting",
+    "test_source_review_regressions.SourceReview.test_unnamed_objection"
   ],
   "failures": 0,
   "errors": 0,
   "skipped": 0,
   "successful": true,
-  "log_sha256": "91c23c29901fd36b39b6ede185ecf8f8043becb2ea3c3f7d1d6d297c31160e0b",
+  "log_sha256": "2e29af66ecdaf658351aae187874ca4ad7c6720e2efb462571aeaf8a996da33d",
   "source_file_sha256": {
-    "RULES.json": "c8c13035baaaf693cc64ec336bb027fc295b8c8803ddd374e1c63a68216af69a",
+    "RULES.json": "2daf390b61ffee81b71f954f73400becec139f543697b2d77ebb126b3eda3e3d",
     "COUNTS.json": "2e24f214f0b2d10e87e7ddf8cbec31bc8570900af997818b19667670f2204db7",
     "SECTION_COVERAGE.json": "5cce5bb10bd7d88b4542fafa40c448d3dec565c920bf05003138c04e84509675",
     "SOURCE_IDENTITY.json": "12e23a2a01bebfec2d4761b7b3ea5320f461fb90810ca943392057acbea62a8f",
     "SOURCE_IMAGE_MANIFEST.json": "647326e486ac7692dead0066f5ba3113c383bfa91719e6e0b69a2b65542e61b9",
-    "TABLE_GEOMETRY.json": "6a9c0e1d0344827782920d388a7cadd230bd279d112e4b0afd168411090f12ba",
-    "ERRATA_COLLATION.json": "9842cef714902c5ae3eaef7ee3ed0702c3fc356a98565b1f35aae5a0769bb226",
-    "UNRESOLVED.json": "fc021df851488f6215bd26d10bed60c0d054d8f7e49725fc1c29d601db170de8",
-    "AUDIT_REPORT.md": "c1fe00800e88fc3ab3b75b68084b4b75ea096e9b1852b023ec9228461dc4b21b",
-    "CLAIM_LEDGER.json": "0186b6e3820b2567361c985eca5468d2e81e0dfed27616347cd3421c05fb1080",
+    "TABLE_GEOMETRY.json": "9fc441ee39697ad11a79a3f9f68970e4888d8994864b3842c943f901a5b49a4d",
+    "ERRATA_COLLATION.json": "9930e8e5481f5e285ab4bf6792fa74fcbdf56af009731bfc9ee2f0d3fc6ed5db",
+    "UNRESOLVED.json": "e7cbe6b7e287e19e7e83acbd42940b86b637480e51a50be5109677aa464ae9c8",
+    "AUDIT_REPORT.md": "bce7856e60004e98f3312081f0ae0877a6fd45df39104f8d2337700409fe2aae",
+    "CLAIM_LEDGER.json": "26943cc90e85f59b0507b26564ef42321a8b81d792c39849cb0c830978b7c962",
     "SOURCE_FIRST_NOTES.md": "5859dea60174bb93cab22f2fe232039d99c70de958f28cd01963738c5dfa43f0",
-    "test_lilly_crysis.py": "f0adb709e036a29213dbd3830cf5b160584319ae94c978825100bf27ccef162f"
+    "test_lilly_crysis.py": "7eec1c12b495adeb4192ad7e095cbf0c52e48ad458db0bbae9379061a0d94272",
+    "test_source_review_regressions.py": "bcf0bdd24aa698c7c4ec904c23011fe8d9cf02d87d68137e9a203ebeadde015e"
   },
   "scope": "Documentary structural/selected source-semantic regressions only; no astrology, clinical or medical predictive validity."
 }

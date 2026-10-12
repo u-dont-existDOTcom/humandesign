@@ -40,8 +40,13 @@ test_pdf_full_source_sha (test_lilly_crysis.PacketIntegrity.test_pdf_full_source
 test_previous_accepted_index_unchanged (test_lilly_crysis.PacketIntegrity.test_previous_accepted_index_unchanged) ... ok
 test_source_images_exact_hash (test_lilly_crysis.PacketIntegrity.test_source_images_exact_hash) ... ok
 test_unresolved_count_matches (test_lilly_crysis.PacketIntegrity.test_unresolved_count_matches) ... ok
+test_avicenna_is_not_galen (test_source_review_regressions.SourceReview.test_avicenna_is_not_galen) ... ok
+test_historical_ambiguities (test_source_review_regressions.SourceReview.test_historical_ambiguities) ... ok
+test_report_exact_claim_ledger (test_source_review_regressions.SourceReview.test_report_exact_claim_ledger) ... ok
+test_table_exception_accounting (test_source_review_regressions.SourceReview.test_table_exception_accounting) ... ok
+test_unnamed_objection (test_source_review_regressions.SourceReview.test_unnamed_objection) ... ok
 
 ----------------------------------------------------------------------
-Ran 42 tests in 0.016s
+Ran 47 tests in 0.016s
 
 OK

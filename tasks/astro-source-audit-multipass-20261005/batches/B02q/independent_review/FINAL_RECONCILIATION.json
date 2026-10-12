@@ -1,0 +1,100 @@
+{
+  "batch": "B02q",
+  "first_pass_model": "Claude Opus, fresh independent source-image review",
+  "original_report": "independent_review/OPUS_INITIAL_DIAGNOSIS.md",
+  "original_report_sha256": "d68a0518b4e64369b865379e3c82689981063cbc7734dc4b79ee037c7a4a9512",
+  "source_images_read": true,
+  "source_rules_read": 58,
+  "source_full_original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_image_count": 8,
+  "initial_verdict": "FINDS_ERROR",
+  "initial_high": 1,
+  "initial_medium": 4,
+  "initial_low": 8,
+  "final_disposition": "SOURCE_FIDELITY_CORRECTIONS_RECONCILED",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "disposition": "Corrected unnamed objector vs Hippocrates attribution and restored pestilential exception, 'many times', majority premise and recovery restriction",
+      "evidence": "RULES R1806; UNRESOLVED U04; AUDIT_REPORT"
+    },
+    {
+      "id": "F2",
+      "severity": "MEDIUM",
+      "disposition": "Attributed Latin velox motus morbi definition to Avicenna without attributing its full phrasing to Galen",
+      "evidence": "RULES R1807"
+    },
+    {
+      "id": "F3",
+      "severity": "MEDIUM",
+      "disposition": "Separated idealized 480-cell longitude model from 64 non-formula original printed entries, 7 unreadable entries and the specified eighth-column example",
+      "evidence": "TABLE_GEOMETRY; TABLE_PRINT_EXCEPTIONS; RULES R1826; UNRESOLVED U13-U14; AUDIT_REPORT"
+    },
+    {
+      "id": "F4",
+      "severity": "MEDIUM",
+      "disposition": "Restored critical/decretory/chrysmal 'all one'; more/less modifies disease affliction",
+      "evidence": "RULES R1798; AUDIT_REPORT"
+    },
+    {
+      "id": "F5",
+      "severity": "MEDIUM",
+      "disposition": "Preserved inferior-cause rival as a view held by unnamed people and attributed rejection to 'many learned'",
+      "evidence": "RULES R1808-R1810; AUDIT_REPORT"
+    },
+    {
+      "id": "F6",
+      "severity": "LOW",
+      "disposition": "Restored Hippocratic acute/swift crisis-change sense rather than illness subtype",
+      "evidence": "RULES R1805"
+    },
+    {
+      "id": "F7",
+      "severity": "LOW",
+      "disposition": "Removed unsupported approximately from printed 15°42′ Virgo",
+      "evidence": "RULES R1816"
+    },
+    {
+      "id": "F8",
+      "severity": "LOW",
+      "disposition": "Restored original 'later Figure' and hypothetical Julian date framing",
+      "evidence": "RULES R1815"
+    },
+    {
+      "id": "F9",
+      "severity": "LOW",
+      "disposition": "Restored hedged 'some remisnesse', 'as it were', 'very probable', 'at present', 'formerly men', Saturn coldness",
+      "evidence": "RULES R1818-R1819,R1827-R1831,R1839"
+    },
+    {
+      "id": "F10",
+      "severity": "LOW",
+      "disposition": "Removed unsupported first-house crossing; retained sixth/seventh/eighth only",
+      "evidence": "UNRESOLVED U22"
+    },
+    {
+      "id": "F11",
+      "severity": "LOW",
+      "disposition": "Linked original p295 line34 atram erratum to body line, without emending unreadable letters; p291 line7 remains unresolved",
+      "evidence": "ERRATA_COLLATION; UNRESOLVED U07,U24"
+    },
+    {
+      "id": "F12",
+      "severity": "LOW",
+      "disposition": "Restored source opening contention, doctors' indicative/quartile scope and reference to Lilly's Introduction",
+      "evidence": "RULES R1795,R1817,R1821,R1831; AUDIT_REPORT"
+    },
+    {
+      "id": "F13",
+      "severity": "LOW",
+      "disposition": "Reviewer staged images as source_images/ whereas canonical repo stores evidence/; rejected as staging-path false positive after checking actual source packet. Corrected typo in table status.",
+      "evidence": "SOURCE_IMAGE_MANIFEST; TABLE_GEOMETRY"
+    }
+  ],
+  "independent_changed_item_second_model_review": false,
+  "post_correction_check": "Controller source-image adjudication, 47 deterministic tests plus separate printed anomaly and errata registers; no second independent model evaluation",
+  "independently_authenticated_patient_outcomes": 0,
+  "clinical_or_predictive_validity": false,
+  "remaining_source_uncertainty_count": 32
+}
