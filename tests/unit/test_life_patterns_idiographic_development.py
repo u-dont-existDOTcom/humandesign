@@ -121,6 +121,13 @@ def test_offline_pilot_has_25_choice_routes_no_remote_transmission_and_valid_js(
     assert "No data are transmitted" in page or "does not upload" in page
     assert "fetch(" not in page and "XMLHttpRequest" not in page
     assert "URL.createObjectURL" in page
+    assert 'id="import-file"' in page
+    assert 'id="cancel-edit"' in page
+    assert "Save changes" in page and "Cancel editing" in page
+    assert "parseExistingExport" in page
+    assert "function startEditing" in page
+    assert "All four examples selected" in page
+    assert "Re-import" not in page or "Import" in page
     assert "TF1-STATUS" in page and "TF1-A0" in page
     scripts = re.findall(r"<script(?: [^>]*)?>(.*?)</script>", page, flags=re.S)
     assert len(scripts) == 2
@@ -137,6 +144,12 @@ def test_delivery_is_reversible_and_idempotent(tmp_path):
     assert spec is not None and spec.loader is not None
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
+    # A user already has private local responses in an earlier generated pilot;
+    # the new generator must not erase that prototype without a backup.
+    prototype_dir = tmp_path / "Life-Patterns-Idiographic-Pilot-2026-10-10"
+    prototype_dir.mkdir()
+    previous_pilot = prototype_dir / "LIFE_PATTERNS_V3_OFFLINE_PILOT.html"
+    previous_pilot.write_text("previous prototype with local editing unavailable")
     guide = tmp_path / "Life-Patterns-Researcher-Guide.html"
     guide.write_text("<html><body><p>Existing guide content</p></body></html>")
     atlas = tmp_path / "existing-atlas.html"
@@ -148,6 +161,8 @@ def test_delivery_is_reversible_and_idempotent(tmp_path):
     assert first["current_atlas_updated"] is True
     assert second["current_atlas_updated"] is False
     assert first["question_pilot_hashes_match"] is True
+    assert (prototype_dir / "LIFE_PATTERNS_V3_OFFLINE_PILOT-before-edit-2026-10-12.html").read_text() == "previous prototype with local editing unavailable"
+    assert previous_pilot.read_text() == (TASK / "LIFE_PATTERNS_V3_OFFLINE_PILOT.html").read_text()
     assert first["atlas_hash_matches"] is True
     assert "Existing guide content" in guide.read_text()
     assert guide.read_text().count("LIFE_PATTERNS_V3_OFFLINE_PILOT.html") == 1

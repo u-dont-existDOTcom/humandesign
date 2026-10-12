@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "task_id": "life-patterns-v3-edit-import-20261012",
+  "status": "EDIT_IMPORT_INSTALLED_LOCALLY_NOT_LIVE_ON_RAILWAY",
+  "original_owner_export_modified": false,
+  "privacy": "Actual private 25-answer source and unique narratives not committed to Git; only aggregated counts and generic code/tests.",
+  "pilot_question_count": 25,
+  "source_response_selected_count_histogram": {
+    "one": 5,
+    "two": 4,
+    "three": 3,
+    "all_four": 13
+  },
+  "source_response_free_text_count": 8,
+  "source_response_unique_items_count": 3,
+  "sample_size_participants": 1,
+  "development_only_no_birth_scoring": true,
+  "private_owner_report": "~/T\u00e9l\u00e9chargements/Life-Patterns-V3-Private-Response-Analysis-2026-10-12.md",
+  "private_owner_report_mode": "0600",
+  "local_owner_pilot": "~/T\u00e9l\u00e9chargements/Life-Patterns-Idiographic-Pilot-2026-10-10/LIFE_PATTERNS_V3_OFFLINE_PILOT.html",
+  "old_pilot_html_backup_exists": true,
+  "owner_guide_link_unchanged": true,
+  "synthetic_browser_regression": "PASS: 25 answers, 3 unique items, edit/cancel/save/remove, reimport, malformed reject, export, no external request, responsive",
+  "private_real_file_roundtrip": "PASS: same 25 question answers and 3 unique items unchanged; synthetic test path unicode workaround limited to CDP upload harness, not user file chooser.",
+  "post_install_synthetic_browser_regression": "PASS",
+  "focused_test_count": 6,
+  "full_repository_tests": {
+    "passed": 1033,
+    "skipped": 6,
+    "failed": 0
+  },
+  "new_user_data_uploaded_to_railway": false,
+  "server_changed": false,
+  "active_v1_question_bank_changed": false,
+  "new_scoring_claim": false,
+  "artifact_sha256": {
+    "offline_pilot_html": "9308a61eeab52b5b4714ea5e8509e806edaacbc8313357f9f9dc7406ad0a2fa2",
+    "generator": "d2ade307fba5a2ede0707f4a2e6ef692f19562fdac14b39928d910a57efcc116",
+    "quality_lesson": "723ec8c1c464e56f98c9ed7a16d782cc73e58b5ed8e23383c88a28365797afae"
+  }
+}

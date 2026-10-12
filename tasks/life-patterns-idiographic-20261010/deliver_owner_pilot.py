@@ -39,7 +39,17 @@ def deliver(base: Path, *, existing_atlas_path: Path | None = None) -> dict:
         "scoped_recognition_ownership_and_solitude-v0.json",
     ]
     for name in names:
-        shutil.copy2(HERE / name, folder / name)
+        destination = folder / name
+        source = HERE / name
+        if (
+            name == "LIFE_PATTERNS_V3_OFFLINE_PILOT.html"
+            and destination.exists()
+            and digest(destination) != digest(source)
+        ):
+            backup = folder / "LIFE_PATTERNS_V3_OFFLINE_PILOT-before-edit-2026-10-12.html"
+            if not backup.exists():
+                shutil.copy2(destination, backup)
+        shutil.copy2(source, destination)
     guide = base / "Life-Patterns-Researcher-Guide.html"
     link = "Life-Patterns-Idiographic-Pilot-2026-10-10/LIFE_PATTERNS_V3_OFFLINE_PILOT.html"
     card = (
