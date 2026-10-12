@@ -4,12 +4,12 @@
   "printed_caption": [
     "Die Mercurij",
     "16 Julij 1645",
-    "7:22 A.M.",
+    "7:22 AM:",
     "hor: ♄"
   ],
   "source_weekday_as_printed": "Die Mercurij",
   "source_question_date_text": "16 Julij 1645",
-  "source_clock_time": "7:22 A.M.",
+  "source_clock_time": "7:22 AM:",
   "source_planetary_hour_glyph": "♄",
   "inferred_english_julian_date": "1645-07-16",
   "inferred_proleptic_gregorian_equivalent": "1645-07-26",
@@ -19,5 +19,74 @@
   "timezone_unknown": true,
   "chart_all_glyphs_identified": false,
   "date_inference_basis": "English 1645 old-style calendar and printed weekday; not a source-explicit calendar word",
-  "independent_ephemeris_parity": false
+  "independent_ephemeris_parity": false,
+  "calendar_note": "Julian16 July1645 translates to Gregorian26 July1645 in this historical English context, not a source-explicit calendar label; proleptic label avoided.",
+  "wheel_labels_provisional": [
+    {
+      "sector": "first cusp",
+      "printed": "6 39",
+      "confidence": "LOW sign glyph unclear"
+    },
+    {
+      "sector": "second cusp",
+      "printed": "♍ 27.37",
+      "confidence": "MEDIUM"
+    },
+    {
+      "sector": "third cusp",
+      "printed": "♎ 22",
+      "confidence": "MEDIUM"
+    },
+    {
+      "sector": "fourth cusp",
+      "printed": "♏ 29 0",
+      "confidence": "MEDIUM"
+    },
+    {
+      "sector": "fifth cusp",
+      "printed": "♑ 11 18",
+      "confidence": "MEDIUM"
+    },
+    {
+      "sector": "sixth cusp",
+      "printed": "♒ 13 32",
+      "confidence": "MEDIUM; source text later says 14 Aquarius ordinal degree"
+    },
+    {
+      "sector": "seventh cusp",
+      "printed": "♓ 6 39",
+      "confidence": "MEDIUM"
+    },
+    {
+      "sector": "eighth cusp",
+      "printed": "♓ 27 37",
+      "confidence": "MEDIUM"
+    },
+    {
+      "sector": "ninth cusp",
+      "printed": "♈ 22",
+      "confidence": "MEDIUM"
+    },
+    {
+      "sector": "tenth cusp",
+      "printed": "♉ 29 0",
+      "confidence": "MEDIUM"
+    },
+    {
+      "sector": "eleventh cusp",
+      "printed": "11 18",
+      "confidence": "LOW sign glyph unclear"
+    },
+    {
+      "sector": "twelfth cusp",
+      "printed": "13 / 18 32",
+      "confidence": "LOW pairing unclear"
+    }
+  ],
+  "additional_wheel_glyph_uncertainties": [
+    "Mercury/Venus-type figures in eleventh sector not securely paired to degrees",
+    "Moon-type glyph near Mars in first sector",
+    "Sixth-sector Dragon-tail glyph orientation unclear",
+    "Ascendant cusp numerals and sign do not yield independently verified positions"
+  ]
 }

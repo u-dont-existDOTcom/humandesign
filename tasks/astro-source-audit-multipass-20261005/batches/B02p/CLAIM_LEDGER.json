@@ -1,5 +1,5 @@
 {
-  "report_sha256": "74e4c49db39cd0cb0d70ad14a9ef174b43ae61829ed133bf0b1b8f054dee3cd1",
+  "report_sha256": "b01f4a44e8937d23b5a3b823c887fa7652b31dc4780653cce13467e26f97ba5f",
   "units": [
     {
       "id": "C01",
@@ -23,8 +23,8 @@
     },
     {
       "id": "C05",
-      "text": "This candidate has **24 reference-only documentary records R1770–R1793**, including chart labeling, distinct portions of Lilly's explanation, the reported prognosis, outcome, retrospective transits, and an editorial boundary record. If source-review accepted and integrated, the 1,769 previously retained Lilly records would become **1,793**, and with 1,066 retained Ptolemy records the combined inventory would be **2,859**. These are textual rule/inference units, not empirical astrology successes. [RULES.json; COUNTS.json; retained cumulative index]",
-      "sha256": "299bc25318b297673b7605dd6d39913e5bb098045f2a2e199b77234b90c4cac7"
+      "text": "This candidate has **24 reference-only documentary records R1770–R1793**, including chart labeling, parts of Lilly's explanation, prognosis, reported outcome, retrospective transits, ONE editorial derived-arithmetic record (R1789), and ONE editorial boundary record (R1793). If source-review accepted and integrated, the 1,769 previously retained Lilly records would become **1,793**, and with 1,066 retained Ptolemy records the combined inventory would be **2,859**. These are textual rule/inference units, not empirical astrology successes. [RULES.json; COUNTS.json; retained cumulative index]",
+      "sha256": "f8943a5a1b79e5de60cfd25bb4066f0ee8b18483cc9720fbcd34bf10de47070b"
     },
     {
       "id": "C06",
@@ -33,13 +33,13 @@
     },
     {
       "id": "C07",
-      "text": "The centre reads **Die Mercurij, 16 Julij 1645, 7:22 A.M., hor: ♄**, identifying a *Wednesday* query date and a **separate** Saturn planetary-hour designation. A contextual reading in English 1645 is **16 July Julian** (equivalent to Gregorian 26 July, also a Wednesday), but the image does not explicitly label the calendar, location or time zone. The original wheel is not an independently verified ephemeris, and several degree or glyph readings remain unresolved. The lunar and planetary placements must not be transformed into modern timing rules without a separate source-qualified calculation. [PDF323; CHART_INSCRIPTION.json; U02–U05]",
-      "sha256": "f7650b9501127eb81fe383ddb3ff11c323e5ac2d71ad16f51e9b851fc0f495c2"
+      "text": "The centre reads **Die Mercurij, 16 Julij 1645, 7:22 AM:, hor: ♄**, identifying a *Wednesday* query date and a **separate** Saturn planetary-hour designation. A contextual reading in English 1645 is **16 July Julian** (equivalent to Gregorian 26 July, also a Wednesday), but the image does not explicitly label the calendar, location or time zone. The original wheel is not an independently verified ephemeris. Provisional cusp labels and uncertain planet glyphs are logged separately in CHART_INSCRIPTION.json. The lunar and planetary placements must not be transformed into modern timing rules without a separate source-qualified calculation. [PDF323; CHART_INSCRIPTION.json; U02–U05]",
+      "sha256": "006d4dba7c7503847287a5c75e265970aa1ee515b9f62d8d45ff80704316fbf7"
     },
     {
       "id": "C08",
-      "text": "This is a **different patient and chart** from Chapter XLV's May 8 historical sick-doctor enquiry. Chapter XLV's previously mistaken May 24 caption has already been explicitly corrected in its accepted packet; the present July 16 chart does not supersede or explain that first case. [PDF323; prior B02o source record; U21]",
-      "sha256": "61653b1fccd5b6886d0e73005b0f17d7579c25b92584f10c8210513026a8d2e0"
+      "text": "This is a **different dated enquiry and chart** from the printed May 8 Chapter XLV sick-doctor case. There is no source proof that the two passages concern different patients. Chapter XLV's previously mistaken May 24 caption has already been explicitly corrected in its accepted packet; the present July 16 chart does not supersede or explain that first case. [PDF323; prior B02o source record; U21]",
+      "sha256": "d434adb28b581cb80cf0fbf08f7d70b2f2bec64e2e814a58dc22e26fbbc54bb9"
     },
     {
       "id": "C09",
@@ -48,13 +48,13 @@
     },
     {
       "id": "C10",
-      "text": "At the outset, **Virgo rising** is described as especially afflicted by the **bodily presence of Mars**, which the author also partly associates with the eighth-house rulership. For disease location and causes he considers the sixth-house **Aquarius**, the sixth ruler **Saturn in Taurus** (described as fixed, earthy, melancholic and of Virgo's triplicity), and the **Moon near Mars in the ascendant**. An additional sign/glyph said to affect the sixth-house Aquarius is not securely read and is deliberately not normalized. [PDF323 continuing on PDF324; R1773–R1777; U05–U06,U10]",
-      "sha256": "61fd8b44173c47216199f5285cf0b269d7bf36941224fca99f91c0a443e942ed"
+      "text": "At the outset, **Virgo rising** is described as especially afflicted by the **bodily presence of Mars**, which the author also partly associates with the eighth-house rulership. For disease location and causes he considers the sixth-house **Aquarius**, the sixth ruler **Saturn in Taurus** (described as fixed, earthy, melancholic and of Virgo's triplicity), and the **Moon near Mars in the ascendant**. The additional glyph afflicting Aquarius is legible as a Dragon-tail form **☋**, with exact ☋/☊ orientation retained as a copy-specific uncertainty. [PDF323 continuing on PDF324; R1773–R1777; U05–U06,U10]",
+      "sha256": "fa672ae70e7862f170ec5bceb7947e791166748a38da382759c05724772e7621"
     },
     {
       "id": "C11",
-      "text": "From these testimonies the author infers spleen problems, wind-colic, melancholy bowel obstructions, small fevers, a slow/remiss pulse, head disturbance and restless sleep. The next bracketed claim, **“All which was true”**, is **Lilly's own retrospective corroboration**. This is not an independently documented examination, another patient, or an objective confirmation of the historical horoscope's accuracy. Modern diagnoses are outside the source-audit contract. [PDF324/printed290; R1778–R1781; U12–U13]",
-      "sha256": "88b164bdb2c9500152a99a7003d8fe4631416d1083749c4612d96028ca696f4b"
+      "text": "From these testimonies the author infers spleen problems, wind-colic, melancholy bowel obstructions, small fevers, a 'remisse Pulse', head disturbance and restless sleep, with an open '&c.' in the original. The next bracketed claim, **“All which was true”**, is **Lilly's own retrospective corroboration**. This is not an independently documented examination, another patient, or an objective confirmation of the historical horoscope's accuracy. Modern diagnoses are outside the source-audit contract. [PDF324/printed290; R1778–R1781; U12–U13]",
+      "sha256": "cd9cc2f641072a0a2dcbbeffb9ffff75e3dd647bc3ec9de43c3df5b54159dda3"
     },
     {
       "id": "C12",
@@ -68,8 +68,8 @@
     },
     {
       "id": "C14",
-      "text": "The text then reports that the patient **died on 28 July following**. July 28 minus July 16 is **12 calendar days**, the upper end of Lilly's earlier interval. This is a real arithmetic correspondence *within the printed account*. Crucially, both the prediction and the outcome appear in a book printed in 1647 describing events in 1645. No independent death record, pre-outcome manuscript, timestamped prediction freeze or denominator of missed cases has been established. It therefore cannot be counted as a validated prospective 12-day forecast. [PDF323–324; R1783,R1788–R1789; CASE_EVIDENCE.json; U14–U16]",
-      "sha256": "a04b679d0bff698858b9f6341f861a9eed5c10a7e70cfc158eca4552c8ef1436"
+      "text": "The text then reports that the patient **died on 28 July following**. July 28 minus July 16 is **12 days by exclusive subtraction**, which matches the upper number only if the earlier warning was timed from the question date; the text does not supply that start moment. This is a real arithmetic correspondence *within the printed account*. Crucially, both the prediction and the outcome appear in a book printed in 1647 describing events in 1645. No independent death record, pre-outcome manuscript, timestamped prediction freeze or denominator of missed cases has been established. It therefore cannot be counted as a validated prospective forecast of exactly 12 days. [PDF323–324; R1783,R1788–R1789; CASE_EVIDENCE.json; U14–U16]",
+      "sha256": "50b09e14ed4f519819d366e30c2bad637a58362be2936076bdf4c8639a798d9b"
     },
     {
       "id": "C15",
@@ -83,23 +83,54 @@
     },
     {
       "id": "C17",
-      "text": "The original source is the 894-page Wellcome 1647 scan of *Christian Astrology* (SHA-256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`). This contribution preserves two source images and the original volume's errata page as a separate witness. Original printed claims are distinct from the normalized source-record paraphrases, contemporary calculations, and editorial cautions. The original errata page was inspected for corrections affecting printed289–290; no additional correction is silently assumed. [SOURCE_IDENTITY.json; SOURCE_IMAGE_MANIFEST.json; SOURCE_FIRST_NOTES.md; UNRESOLVED.json]",
-      "sha256": "0b222e516da3a920f152af3597eeca7ae2e99eb52768289cecbe1b90ff9135f0"
+      "text": "The original source is the 894-page Wellcome 1647 scan of *Christian Astrology* (SHA-256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`). This contribution preserves two source images and the original volume's own printed errata page as a same-volume correction register. Original printed claims are distinct from the normalized source-record paraphrases, contemporary calculations, and editorial cautions. The original errata page was inspected for corrections affecting printed289–290; no entry for printed page289 or290 appears in that selective errata list; absence is not proof of faultless wording. [SOURCE_IDENTITY.json; SOURCE_IMAGE_MANIFEST.json; SOURCE_FIRST_NOTES.md; UNRESOLVED.json]",
+      "sha256": "18ab388f45a04ef7b607fba237705bcbe2b037d945f9a101f14574c20d509a09"
     },
     {
       "id": "C18",
-      "text": "The unresolved ledger retains **24 explicit issues**: glyph identity, calendar and clock frame, early-modern body/planetary meanings, translation-of-light and aspect conventions, the identity of **Cauda Leonis**, author-reported outcome credibility and the absence of independent predictive or medical tests. All proposed rules remain **REFERENCE_ONLY_NOT_PROMOTED**. These source claims are not medical advice or a deployed birth/life-timing model. [UNRESOLVED.json; RULES.json]",
-      "sha256": "40d6f4627b6d0c24bd90627f587c818fdcc68c5042aee31c233cd32d7ead7040"
+      "text": "The unresolved ledger retains **36 explicit issues**: glyph identity, calendar and clock frame, early-modern body/planetary meanings, translation-of-light and aspect conventions, the identity of **Cauda Leonis**, author-reported outcome credibility and the absence of independent predictive or medical tests. All proposed rules remain **REFERENCE_ONLY_NOT_PROMOTED**. These source claims are not medical advice or a deployed birth/life-timing model. [UNRESOLVED.json; RULES.json]",
+      "sha256": "f5d8add5ce49058a4bfe21ca5e75219298eb8b2fc7b8f1934154bdbd90e7ebcc"
     },
     {
       "id": "C19",
+      "text": "\n## Independent 1647 source-reader corrections",
+      "sha256": "fa4c721a003b80e781f65d82d02c29e8f49bf42d6c0f6d31a8cfdbe8e896a5bb"
+    },
+    {
+      "id": "C20",
+      "text": "The independent reader examined **both admitted Chapter XLVI original pages**, not five pages. It read both body pages, the original chart wheel and the same-volume errata. The strongest fault in the first draft was the after-death lunar cusp statement. The original PDF324/printed290 says the Moon transited the degree of the **sixth house, viz. 14 of Aquarius**, not a first-house Virgo cusp. The revised R1792 keeps the body reading, with the wheel's approximately **13°32′ Aquarius** label separately preserved; an ordinal fourteenth degree is possible, not proven. The Sun-twelfth-cusp continuation stays an elliptical retrospective clause. [PDF323–324; R1792; CHART_INSCRIPTION.json; U18,U32]",
+      "sha256": "2b2ce6f2acd5fc2c8824540908919a673de1b36cf10b7f64963ecec9577a49c5"
+    },
+    {
+      "id": "C21",
+      "text": "The source page describes the sixth-house Aquarius as afflicted by a node-like **☋** (exact orientation still source-qualified), and separately names the Moon near **Cauda Leonis**. These are not silently equated. The Moon is described as afflicted **by Mars**, not the reverse; a printed adverse influence does not by itself prove an additional square. [PDF323–324; R1775,R1786; U05,U07,U28]",
+      "sha256": "af725fc72add877710df914fd787f5409ace6f62a6c21c8d340da1212c812d57"
+    },
+    {
+      "id": "C22",
+      "text": "The wheel has provisional house-cusp labels and unresolved Venus/Mercury glyph assignments. Original print spells the clock **7:22 AM:**, not a modernized exact quotation “7:22 A.M.”. The chart's original date is given as Wednesday 16 July 1645; the Julian inference is grounded in its historical English weekday but no printed UTC offset, location or external ephemeris is established. [PDF323; CHART_INSCRIPTION.json]",
+      "sha256": "501e0c63c4b621db58515b02b82d93a218820ed39f362a652b6fde590cb637e2"
+    },
+    {
+      "id": "C23",
+      "text": "The Latin vital-principle phrase and **both bodies in fixed signs** in the first prognostic reason have been restored. The fourth reason prints lunar transfer of **“his vertue”**; its referent is most plausibly Mercury but not explicitly resolved. The source says its significators promised no less than death, but supplies no computation for the **ten or twelve days**. Subsequent claimed transits occur in the narrative only **after** the death report. [PDF324; R1784,R1787,R1789–R1792; CASE_EVIDENCE.json; UNRESOLVED.json]",
+      "sha256": "c4415c21bb9ed0ae588031e823c42a041ce3c8090ee065a0e0a267301a804f78"
+    },
+    {
+      "id": "C24",
+      "text": "An original heading within the first page reads **“Judgment of the Figure aforesaid.”** The original's handwritten 6th House margin note and ruled annotations are not established as authorial. No horoscope, diagnosis, outcome or calendar result in this chapter has been cross-validated against a real patient's records; the text supplies one retrospective author narrative only. [PDF323–324; SECTION_COVERAGE.json; CASE_EVIDENCE.json]",
+      "sha256": "f9a358b08796e00bb50e7d7b340c2ed4732ffad15b92c4bad39a694dccf433af"
+    },
+    {
+      "id": "C25",
       "text": "## Exact next boundary",
       "sha256": "9d1b2e8f4eab1b539d970e05b2dab09dde6b62472e597aed7d104fbf92aa7722"
     },
     {
-      "id": "C20",
+      "id": "C26",
       "text": "After the death and retrospective transit paragraph on PDF324 / printed290, a horizontal divider introduces **Chapter XLVII — Of the Crisis in Diseases**. The new chapter starts **below** that divider and continues onto PDF325 onward. It is not included in this one-case packet. The parent Lilly and multi-author source study remains **OPEN**. The next record after an accepted R1793 would be **R1794**, subject to checking the live cumulative index before assigning it. [PDF324–325; SECTION_COVERAGE.json; CONTINUE_HANDOFF.md]\n",
       "sha256": "fa5a6ce3094c5457f82c61ab594535aaeed7068b73d87ff93dbc8f2d380afcff"
     }
-  ]
+  ],
+  "scope": "Post-initial-diagnosis corrected source audit"
 }

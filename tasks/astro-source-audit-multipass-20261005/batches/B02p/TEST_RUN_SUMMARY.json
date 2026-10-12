@@ -1,7 +1,7 @@
 {
   "batch": "B02p",
-  "distinct_test_count": 35,
-  "tests_run": 35,
+  "distinct_test_count": 47,
+  "tests_run": 47,
   "discovered_test_ids": [
     "test_lilly_xlvi.Integrity.test_all_24_are_not_independent_patients",
     "test_lilly_xlvi.Integrity.test_case_identity",
@@ -37,24 +37,37 @@
     "test_lilly_xlvi.SourceConditions.test_rare_source_terms_preserved",
     "test_lilly_xlvi.SourceConditions.test_saturn_taurus_fixed",
     "test_lilly_xlvi.SourceConditions.test_sextile_square_qualification",
-    "test_lilly_xlvi.SourceConditions.test_virgo_mars_eighth"
+    "test_lilly_xlvi.SourceConditions.test_virgo_mars_eighth",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_chart_center_distinct_from_planetary_hour",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_editorial_arithmetic_not_historical_rule",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_four_reasons_only_one_outcome",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_moon_not_mars_is_afflicted",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_no_synthetic_full_ephemeris",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_one_case_one_chart_one_author_report",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_possible_inclusive_date_count_retained",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_question_sun_not_birth_natal",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_report_after_outcome_class_not_predicted",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_sixth_house_aquarius_14_not_first_virgo",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_source_glyph_qualifier_and_cauda_separate",
+    "test_xlvi_independent_corrections.SourceReviewCorrections.test_source_latins_recover_and_glyph_qualification"
   ],
   "failures": 0,
   "errors": 0,
   "skipped": 0,
   "successful": true,
-  "log_sha256": "a8a02b127dff2ab87f72f2f85b0a5aa430d0b8f00b40c353a6a29397c58b600d",
+  "log_sha256": "8690d8476d8592575429e590335c7c83a7abdf1de2d4945c52e366bf8ed6880f",
   "source_file_sha256": {
-    "RULES.json": "ebed26b29451b0176e496953756b8a6cb5c55200da7f84a691a53e70089b21c4",
+    "RULES.json": "1e4a6201988d4ca2b65a6d47d1dad3b8f06c559d3e436ecc512ec8db6896eb1c",
     "COUNTS.json": "94e50dc2b5f9cf79144959dcc8bca07286b448a94cfc605c48eca8eb495befa3",
-    "CASE_EVIDENCE.json": "f595bfb9d40dc22a9399edaf819a1a0cb8d90e24a1e956d8d0f0b542851c7316",
-    "CHART_INSCRIPTION.json": "05b869a1aed40278fc8c2bb4f5c352b9432a644cbaf8b00d5d96c427ef0ab9df",
+    "CASE_EVIDENCE.json": "6c4d1ff742d1af1e3033a36befff723860853baabf5407156825519f0bf0ec46",
+    "CHART_INSCRIPTION.json": "90c3617dbf51bed2a774c76d69fb99cf1f636464ef7fadcf70681bd5258d52c1",
     "SOURCE_IDENTITY.json": "d71dbbfbe78dca8596824ea03e8a6bae1b825702b21000aa877070d321442b7c",
     "SOURCE_IMAGE_MANIFEST.json": "76215534a2f114c4424d431709c12a041932dd1482793761b2d96705e96f6fbe",
-    "SECTION_COVERAGE.json": "20798ded84620871e17e4092c866227cb8ff6999a0f2b14537d2383cd1a8860f",
-    "UNRESOLVED.json": "fb2089e01b06051552a8431136cc993df60c978d82ba066112c17993d4e1173c",
-    "AUDIT_REPORT.md": "74e4c49db39cd0cb0d70ad14a9ef174b43ae61829ed133bf0b1b8f054dee3cd1",
-    "test_lilly_xlvi.py": "1dda868427a28a9cfcb5a459cb8f3a39a0fab1796e8f819a9051b72d3e86ddd7"
+    "SECTION_COVERAGE.json": "59bff8021057c6c08e323dbab03c569059aa5351152a61663215644f19cd5554",
+    "UNRESOLVED.json": "edbd485328a79c5592d646f96d663d496ca3c61fb946d01def7866366e1f5759",
+    "AUDIT_REPORT.md": "83fa6d0636a96aab21d4f05819bcfa61256e540b9f4ae4ccd722aff78e16acca",
+    "test_lilly_xlvi.py": "4c3c68261a85ab8ade8b021b3a8603f3d640861f857a23e244fc3c1d985573d8",
+    "test_xlvi_independent_corrections.py": "07a4213ff061b692104f1524bb4430a8fd69858ae9932e9f93632ec2551067bc"
   },
   "scope": "Structural and source-condition regression only, not astrology/medicine predictive validation."
 }

@@ -34,7 +34,7 @@ class Integrity(unittest.TestCase):
   self.assertTrue(all(q['runtime_status']=='REFERENCE_ONLY_NOT_PROMOTED' and not q['clinical_efficacy_verified'] for q in R))
   self.assertTrue(all(not q['independently_verified_patient_outcome'] and not q['blinded_prospective_prediction'] for q in R))
  def test_readings_not_called_diplomatic_quotations(self):
-  self.assertTrue(all(q['source_statement_type']=='NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION' for q in R))
+  self.assertEqual(sum(q['source_statement_type']=='EDITORIAL_DERIVED_ARITHMETIC' for q in R),1);self.assertTrue(all(q['source_statement_type'] in ('EDITORIAL_DERIVED_ARITHMETIC','NORMALIZED_PARAPHRASE_NOT_A_DIPLOMATIC_TRANSCRIPTION') for q in R))
  def test_provenance_localized(self):
   self.assertTrue(all(q['source_sha256']==S['source_full_pdf_sha256'] and q['chapter']=='XLVI' for q in R))
  def test_source_qualifiers_present(self):
@@ -56,7 +56,7 @@ class SourceConditions(unittest.TestCase):
  def test_chart_inscription_date(self):
   self.assertEqual(CHART['source_weekday_as_printed'],'Die Mercurij')
   self.assertEqual(CHART['source_question_date_text'],'16 Julij 1645')
-  self.assertEqual(CHART['source_clock_time'],'7:22 A.M.')
+  self.assertEqual(CHART['source_clock_time'],'7:22 AM:')
  def test_julian_is_inferred(self):
   self.assertTrue(CHART['julian_not_explicit_in_print'])
   self.assertEqual(CHART['inferred_english_julian_date'],'1645-07-16')
@@ -74,13 +74,13 @@ class SourceConditions(unittest.TestCase):
  def test_aquarius_sixth_uncertain_glyph(self):
   s=t(1775).lower()
   self.assertIn('aquarius',s)
-  self.assertIn('unresolved',s)
+  self.assertIn('☋',s);self.assertIn('orientation',s)
  def test_saturn_taurus_fixed(self):
   s=t(1776).lower()
   for x in ('saturn','taurus','fixed','earthy'):self.assertIn(x,s)
  def test_moon_near_mars_not_forced_conjunction(self):
   self.assertIn('proximity',t(1777))
-  self.assertIn('not by itself prove an exact conjunction',t(1777))
+  self.assertIn('not a verified conjunction',t(1777))
  def test_body_symptoms_not_verified(self):
   for n in (1778,1779,1780):
    self.assertEqual(rec(n)['claim_class'],'AUTHOR_MEDICAL_INFERENCE')
@@ -94,7 +94,7 @@ class SourceConditions(unittest.TestCase):
   self.assertEqual([rec(n)['source_record_kind'] for n in range(1784,1788)],['reason_one','reason_two','reason_three','reason_four'])
  def test_cauda_leonis_not_dragon_tail(self):
   self.assertIn('Cauda Leonis',t(1786))
-  self.assertIn('dragon-tail node',t(1786))
+  self.assertIn('node glyph',t(1786))
  def test_sextile_square_qualification(self):
   self.assertIn('more properly a square',t(1787))
   self.assertIn('Mercury',t(1787))
@@ -105,7 +105,7 @@ class SourceConditions(unittest.TestCase):
  def test_12_days_internal_not_independent(self):
   self.assertEqual((date(1645,7,28)-date(1645,7,16)).days,12)
   self.assertEqual(CASE['calendar_date_difference_days'],12)
-  self.assertIn('not whether the patient',t(1789))
+  self.assertIn('No contemporaneous prediction freeze',t(1789))
  def test_after_outcome_transits_separate(self):
   for n in (1790,1791,1792):
    self.assertEqual(rec(n)['claim_class'],'AUTHOR_REPORTED_POST_OUTCOME_TIMING')
@@ -116,6 +116,6 @@ class SourceConditions(unittest.TestCase):
  def test_parent_no_medical_advice(self):
   self.assertIn('not medical advice',(B/'AUDIT_REPORT.md').read_text().lower())
  def test_rare_source_terms_preserved(self):
-  self.assertIn('long ascensions',t(1787))
+  self.assertIn('long-ascension',t(1787))
   self.assertIn('Cauda Leonis',t(1786))
 if __name__=='__main__':unittest.main()
