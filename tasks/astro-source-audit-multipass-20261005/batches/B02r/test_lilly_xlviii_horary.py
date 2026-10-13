@@ -109,7 +109,7 @@ class ChapterXLVIII(unittest.TestCase):
         self.assertIn("absent",txt(1858))
     def test_query_specificity(self):
         self.assertIn("determinate",txt(1860))
-        self.assertIn("current master",txt(1860))
+        self.assertIn("current particular master",txt(1860))
     def test_cadent_and_third_ninth(self):
         self.assertIn("cadent",txt(1861))
         for x in ("third","ninth"):self.assertIn(x,txt(1863))
@@ -135,20 +135,20 @@ class NumberedSourceAphorisms(unittest.TestCase):pass
 # One distinct regression for EACH numbered record and its required conditional text.
 anchors={
  1:("nature","triplicity"),2:("early","late"),3:("tenth","saturn","mars"),4:("trivial","question"),
- 5:("moon","virtue"),6:("saturn","mars","reception"),7:("jupiter","venus","dignity"),8:("fortunes","infortunes"),
+ 5:("moon","virtue"),6:("saturn","mars","moon","reception"),7:("jupiter","venus","dignity"),8:("fortunes","infortunes"),
  9:("void","cancer","taurus","sagittarius","pisces"),10:("separates","already"),11:("application","present"),
  12:("moon","fall"),13:("retrograde","first station"),14:("evil","good","solicitation"),
- 15:("slow","delay"),16:("infortunes","aspects","fortunes"),17:("cadent","reception"),
- 18:("reception","infortune"),19:("peregrine","essential"),20:("saturn","mars","triplicity","angles"),
- 21:("fortune","dignity"),22:("weak","defer"),23:("combust","opposing"),24:("joined","infortunes"),
- 25:("ascendant lord","cadent"),26:("twelve degrees","sixteen arcminutes","cazimi"),
+ 15:("slow","delay"),16:("infortunes","not any aspect","fortunes"),17:("cadent","reception"),
+ 18:("reception","infortune"),19:("peregrine","essential"),20:("saturn","mars","triplicity","angles","or"),
+ 21:("fortune","dignity"),22:("weak","defer"),23:("combust","opposition"),24:("joined","infortunes"),
+ 25:("ascendant lord","cadent"),26:("twelve degrees","sixteen minutes","cazimi"),
  27:("saturn","jupiter","mars","venus","mercury","reverse"),28:("fixed","common","movable"),
- 29:("head","tail","dragon"),30:("eclipse","ascendant"),31:("impeded","waning"),
+ 29:("head","tail","dragon"),30:("eclipse","ascendant"),31:("impeded","war"),
  32:("opposite","mercury","sagittarius","pisces"),33:("obstructing","house"),
  34:("angle","succedent","cadent"),35:("moon","sun","combustion"),
- 36:("infortune","peregrine","retrograde"),37:("conjunct","nature"),
+ 36:("infortune","both","peregrine","retrograde"),37:("conjunct","nature"),
  38:("frustration","prohibition","before"),39:("fortune","house"),
- 40:("seventh","birth"),41:("eighth","woman","debt"),42:("jupiter","venus","third","fourth","fifth"),
+ 40:("seventh","birth","unfortunate"),41:("eighth","woman","debt"),42:("jupiter","venus","third","fourth","fifth"),
  43:("tail","scandal","house")
 }
 assert len(anchors)==43

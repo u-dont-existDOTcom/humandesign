@@ -1,0 +1,7 @@
+# Continue after B02r — Lilly next Chapter XLIX
+
+Check whether B02r source verification, independent review, ACCEPTANCE.json, PACKET_USABILITY.json, PUBLICATION_RECEIPT.json and DELIVERY_RECEIPT.json have actually succeeded; do not infer acceptance from this draft handoff.
+
+If accepted, Lilly cumulative index would end at R1920 (1,920 units) plus 1,066 retained Ptolemy = 2,986. Next provisional R1921, ONLY after checking the live canonical index. Read *CHAP. XLIX — Of Marriage*, original PDF336/printed302 **BELOW the horizontal divider**, continuing PDF337 and beyond. The heading and first marriage paragraph were excluded from the XLVIII/seventh-house aphorism extraction. Before extracting, inspect all original source and errata pages and find the precise next chapter boundary; do not omit intervening unnumbered subsections.
+
+B02r source: original 1647 Wellcome b30338724, 894 pages, SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. It contains 19 XLVIII units, 6 seventh-house bridging/headed units, 43 numbered **general horary** aphorisms and one XLIX boundary; distinct from B02n's physician 43. Preserve all previous accepted IDs, long-running PASS_PLAN/CURRENT, participants, chart models and frozen forecasts. Historical marriage, servitude and gender conventions are not current safety/legal advice or verified predictions. Multi-author research parent OPEN.

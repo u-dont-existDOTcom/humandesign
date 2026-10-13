@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLVII_SOURCE_READ_LATER_LILLY_OPEN",
-  "records_count": 1851,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLVIII_AND_SEVENTH_GENERAL_HORARY_APHORISMS_SOURCE_READ",
+  "records_count": 1920,
   "read_numbered_chapters": [
     1,
     2,
@@ -51,7 +51,8 @@
     44,
     45,
     46,
-    47
+    47,
+    48
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -173,25 +174,32 @@
       "records_count": 58,
       "sha256": "2daf390b61ffee81b71f954f73400becec139f543697b2d77ebb126b3eda3e3d",
       "scope": "Lilly BookII.XLVII crisis and critical-day source doctrine. Original PDF324/printed290 below divider through PDF330/printed296 above divider; one original 30x16 table and editorial geometry, zero new verified patient outcomes."
+    },
+    {
+      "id": "B02r",
+      "path": "batches/B02r/RULES.json",
+      "records_count": 69,
+      "sha256": "5e083c88ff574f5829278ad82d736d73fc27ae9ccde754e52e7f7627501619cb",
+      "scope": "Lilly Book II XLVIII + seventh-house bridge + all 43 general horary aphorisms, original PDF330/printed296 below divider through PDF336/printed302 above XLIX divider, 69 source units, zero verified cases."
     }
   ],
   "next": {
-    "pdf_page": 330,
-    "printed_page": 296,
-    "chapter": "XLVIII",
-    "heading": "If a Servant shall get free from his Master?",
+    "pdf_page": 336,
+    "printed_page": 302,
+    "chapter": "XLIX",
+    "heading": "Of Marriage",
     "include_opening_paragraph": true,
-    "opening_anchor": "The first house, the Lord thereof, and the Moon, shall signifie the Servant",
-    "position": "Original PDF330 below divider after Master Booker sentence; continue after page turn.",
+    "opening_anchor": "If a Question be asked of Marriage, behold the ascendant and the Lord thereof, and the Moon",
+    "position": "Original PDF336 below divider; continue on PDF337 and beyond; exclude already extracted aphorism43",
     "extracted": false,
     "boundary_image_read": true
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 46,
+  "read_headed_units_count": 49,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261012_B02q.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261012_B02r.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": []
 }

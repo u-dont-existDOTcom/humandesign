@@ -1,0 +1,87 @@
+{
+  "batch": "B02r",
+  "verdict": "SOURCE_FIDELITY_RECONCILED",
+  "initial_evaluator_kind": "FRESH_INDEPENDENT_SOURCE_IMAGE_REVIEW",
+  "initial_report": "OPUS_INITIAL_DIAGNOSIS.md",
+  "initial_report_sha256": "76e1516b5ed919abde128f341f6286d13a5be56dc5a2c499c1f920278641bce0",
+  "original_source_images_checked": 9,
+  "records_checked": 69,
+  "general_numbered_aphorisms_checked": 43,
+  "all_material_findings_reconciled": true,
+  "post_repair_independent_third_review": false,
+  "reviewer_information_limitation": "Reviewer saw some section/identity navigation data before opening original images, then images before the draft rules.",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "status": "CORRECTED",
+      "scope": "Aphorism31 R1907: going to WARRE, not waning Moon"
+    },
+    {
+      "id": "F2",
+      "severity": "HIGH",
+      "status": "CORRECTED",
+      "scope": "Aphorism6 R1882: reception specifically Moon with Saturn/Mars"
+    },
+    {
+      "id": "F3",
+      "severity": "HIGH",
+      "status": "CORRECTED",
+      "scope": "Aphorism40 R1916: unfortunate planet by condition, not necessarily natural malefic"
+    },
+    {
+      "id": "F4",
+      "severity": "MEDIUM",
+      "status": "QUALIFIED_OPEN",
+      "scope": "Aphorism20 catchword or versus body and Angles; no silent settlement"
+    },
+    {
+      "id": "F5",
+      "severity": "MEDIUM",
+      "status": "QUALIFIED_OPEN",
+      "scope": "R1862 printed angular or potentially conflicts with direct-angular denial R1865"
+    },
+    {
+      "id": "F6",
+      "severity": "LOW",
+      "status": "CORRECTED_SOURCE_LITERAL",
+      "scope": "Aphorism16 literal cast NOT any aspect retained; elliptical ending not repaired"
+    },
+    {
+      "id": "F7",
+      "severity": "LOW",
+      "status": "CORRECTED",
+      "scope": "Both determinate-question examples share same printed scope"
+    },
+    {
+      "id": "F8",
+      "severity": "LOW",
+      "status": "QUALIFIED_OPEN",
+      "scope": "Entering combustion may not inherit angular prerequisite"
+    },
+    {
+      "id": "F9",
+      "severity": "LOW",
+      "status": "CORRECTED",
+      "scope": "Both infortune and significator statuses checked in aphorism36"
+    },
+    {
+      "id": "F10",
+      "severity": "LOW",
+      "status": "CORRECTED",
+      "scope": "Modal and copy-specific hedges returned to source records"
+    },
+    {
+      "id": "F11",
+      "severity": "LOW",
+      "status": "CORRECTED_OR_STAGING_FALSE_POSITIVE",
+      "scope": "Source page record ranges rebuilt from records; evidence/ paths exist in repository; staging folder uses source_images/"
+    }
+  ],
+  "remaining_source_uncertainties": 39,
+  "post_repair_regressions": 86,
+  "source_fidelity_scope_only": true,
+  "independent_predictive_validation": false,
+  "medical_or_legal_validation": false,
+  "canonical_integration_not_implied": true
+}

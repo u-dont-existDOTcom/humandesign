@@ -1,0 +1,7 @@
+# Astrology source audit — Lilly B02r accepted documentary material
+
+Original 1647 Lilly, Chapter XLVIII, 7th-house introduction and all 43 **general horary** aphorisms accepted as historical *reference-only* material, NOT clinically or predictively validated. Original pages PDF330/printed296 **below** the XLVIII divider through PDF336/printed302 **above** the XLIX divider. 69 source units R1852–R1920. Lilly **1,920**, retained Ptolemy **1,066**, combined **2,986**. The general 43 here are separate from earlier 43 physician aphorisms.
+
+Full original scan SHA256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Nine page/errata images pixel-replayed, independent image-first source review completed and reconciled, with final verified 86 distinct documentary tests. 39 unresolved source limitations explicitly retained. No patient charts, independent clinical/relationship outcomes, frozen forecasts, empirically confirmed predictions or runtime engine promotions. Current participant work and earlier accepted source packets remain untouched.
+
+Next reading is Chapter XLIX, **Of Marriage**, original PDF336/printed302 **below** divider, then PDF337 onward. Next reference **R1921** after checking live cumulative index. Multi-author historical-source audit OPEN. Archive usability, GitHub publication and Downloads delivery are independent downstream receipts; read B02r/PACKET_USABILITY.json, B02r/PUBLICATION_RECEIPT.json and B02r/DELIVERY_RECEIPT.json before claiming delivery.
