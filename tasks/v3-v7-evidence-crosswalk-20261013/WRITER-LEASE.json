@@ -1,9 +1,11 @@
 {
   "schema_version": 1,
   "task_id": "v3-v7-evidence-crosswalk-20261013",
-  "status": "implementation_complete_pending_merge",
-  "exclusive_writer": true,
+  "status": "completed",
+  "exclusive_writer": false,
   "owned_branch": "research/life-patterns-v3-v7-source-crosswalk-20261013",
   "integration_branch": "chat/hybrid-voice-cost-optimization-20260928",
-  "completion_note": "Private side-by-side comparison generated, installed and source checked. Public de-identified route summary and 6-review-facet alignment prepared. No live GPT/score changed."
+  "completion_note": "Private side-by-side comparison generated, installed and source checked. Public de-identified route summary and 6-review-facet alignment prepared. No live GPT/score changed.",
+  "integration_merge_sha": "c2a09fa34c44a40fdb753aefa4b0a3998c6a7766",
+  "completion": "24/25 route mappings and 6-reviewed-facet scope audit delivered as private source-anchored owner report; anonymized method report merged. No GPT or birth scorer changed."
 }
