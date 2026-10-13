@@ -1,0 +1,242 @@
+{
+  "batch": "B02u",
+  "review_kind": "FIVE_FRESH_SOURCE_IMAGE_FIRST_INPUT_READER_EVALUATIONS",
+  "final_disposition": "DOCUMENTARY_SOURCE_FIDELITY_CONTROLLER_RECONCILED_WITH_RETAINED_AMBIGUITIES",
+  "primary_source_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "original_body_pdf_pages": [
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381
+  ],
+  "original_errata_pdf_page": 888,
+  "five_original_image_review_windows": [
+    {
+      "window": "A1",
+      "reported_model": "gpt-6.1-sol via Codex CLI (filenames OPUS inherited historical convention)",
+      "review_file": "independent_review/OPUS_A1_INITIAL.json",
+      "sha256": "707f9a2d54938fc269e353c394dadbc2e051b3c73b8863ecc89470e866c51b7a",
+      "initial_verdict": "FINDS_ERROR",
+      "original_reading_coverage": [
+        364,
+        365,
+        366
+      ],
+      "candidate_units_checked": 36,
+      "findings_count": 8,
+      "missing_units_not_necessarily_all_indexed": 4,
+      "source_ambiguities": 7
+    },
+    {
+      "window": "A2",
+      "reported_model": "gpt-6.1-sol via Codex CLI (filenames OPUS inherited historical convention)",
+      "review_file": "independent_review/OPUS_A2_INITIAL.json",
+      "sha256": "4b770d681279ab3d153f98f6219d51554ffc062d963a69d516115bc7cd438e2f",
+      "initial_verdict": "FINDS_ERROR",
+      "original_reading_coverage": [
+        366,
+        367,
+        368,
+        369
+      ],
+      "candidate_units_checked": 71,
+      "findings_count": 6,
+      "missing_units_not_necessarily_all_indexed": 5,
+      "source_ambiguities": 11
+    },
+    {
+      "window": "B",
+      "reported_model": "gpt-6.1-sol via Codex CLI (filenames OPUS inherited historical convention)",
+      "review_file": "independent_review/OPUS_B_INITIAL.json",
+      "sha256": "6baa71ed1927f5ae37314013d0684a9038963f655bae429a6aab15f623e88030",
+      "initial_verdict": "FINDS_ERROR",
+      "original_reading_coverage": [
+        369,
+        370,
+        371,
+        372,
+        373
+      ],
+      "candidate_units_checked": 88,
+      "findings_count": 3,
+      "missing_units_not_necessarily_all_indexed": 1,
+      "source_ambiguities": 11
+    },
+    {
+      "window": "C",
+      "reported_model": "gpt-6.1-sol via Codex CLI (filenames OPUS inherited historical convention)",
+      "review_file": "independent_review/OPUS_C_INITIAL.json",
+      "sha256": "90cf82c61a6e478555581518a4740c8769a513021e3a83f4d928195f1837d911",
+      "initial_verdict": "FINDS_ERROR",
+      "original_reading_coverage": [
+        373,
+        374,
+        375,
+        376,
+        377
+      ],
+      "candidate_units_checked": 74,
+      "findings_count": 2,
+      "missing_units_not_necessarily_all_indexed": 1,
+      "source_ambiguities": 11
+    },
+    {
+      "window": "D",
+      "reported_model": "gpt-6.1-sol via Codex CLI (filenames OPUS inherited historical convention)",
+      "review_file": "independent_review/OPUS_D_INITIAL.json",
+      "sha256": "e7664833baaad3120af5b1e20fdb90fbefb94471d3160864e60f8092f568d49a",
+      "initial_verdict": "FINDS_ERROR",
+      "original_reading_coverage": [
+        377,
+        378,
+        379,
+        380,
+        381
+      ],
+      "candidate_units_checked": 65,
+      "findings_count": 4,
+      "missing_units_not_necessarily_all_indexed": 14,
+      "source_ambiguities": 14
+    }
+  ],
+  "number_of_independent_review_windows": 5,
+  "all_five_initial_evaluators_found_issues": true,
+  "source_evaluator_inputs_earlier_candidate_drafts": true,
+  "initial_source_model_drafts_independently_evaluated": true,
+  "controller_source_correspondence_repaired": true,
+  "post_final_controller_change_new_blind_model_review": false,
+  "originally_applicable_ancient_author_texts_independently_collated": false,
+  "corrected_source_units_count": 267,
+  "newly_separated_source_statement_R2572": true,
+  "maintain_physical_source_order": "SOURCE_ORDER.json",
+  "semantic_overlap_audited": "READER_OVERLAP_AUDIT.json + OVERLAP_ADJUDICATION.json + SPLIT_A_OVERLAP_AUDIT.json",
+  "material_corrections": [
+    {
+      "pdf_page": 365,
+      "record_numbers": [
+        2319,
+        2572
+      ],
+      "problem": "Hour lord equals seventh lord gives radicality; seventh lord in ascendant is a separate suspicion-restricted claim; previously collapsed."
+    },
+    {
+      "pdf_page": 365,
+      "record_numbers": [
+        2322,
+        2327
+      ],
+      "problem": "'consentanious' is not 'conscientious'; hope of discovering goods is not guaranteed recovery."
+    },
+    {
+      "pdf_page": 366,
+      "record_numbers": [
+        2338
+      ],
+      "problem": "Original aspect to SECOND HOUSE remains disputed between reader A1 opposition and A2 conjunction; unresolved, not an operative rule."
+    },
+    {
+      "pdf_page": 366,
+      "record_numbers": [
+        2339
+      ],
+      "problem": "Sun as second lord in TENTH with seventh lord, not third; no invented sextile."
+    },
+    {
+      "pdf_page": 367,
+      "record_numbers": [
+        2343,
+        2345,
+        2347
+      ],
+      "problem": "Venus sign TENTH, Moon OPPOSITION rather than conjunction; 'scant be had again' opposite prior 'soon' reading."
+    },
+    {
+      "pdf_page": 369,
+      "record_numbers": [
+        2392,
+        2393
+      ],
+      "problem": "Future-theft Moon virtue includes fifth house, and negative aspect grammatical subject is unresolved."
+    },
+    {
+      "pdf_page": 373,
+      "record_numbers": [],
+      "problem": "Six separate original zodiac-sign classification rows restored from independent overlapping source reader."
+    },
+    {
+      "pdf_page": 374,
+      "record_numbers": [
+        2475
+      ],
+      "problem": "Name-syllable rule's second planet Venus, not unidentified glyph."
+    },
+    {
+      "pdf_page": 376,
+      "record_numbers": [
+        2499
+      ],
+      "problem": "Conjunction not sextile in a return rule; retrograde plural subject ambiguous."
+    },
+    {
+      "pdf_page": 377,
+      "record_numbers": [
+        2511
+      ],
+      "problem": "'Within power of loser or someone of his house' plus optional financial recovery, not mere household membership."
+    },
+    {
+      "pdf_page": 378,
+      "record_numbers": [
+        2523
+      ],
+      "problem": "Neighbor option and 'by such a one OR his means' restored."
+    },
+    {
+      "pdf_page": 380,
+      "record_numbers": [
+        2551,
+        2552
+      ],
+      "problem": "Sometimes-qualified printed marginal willing return distinct from thief-home-before-querent body."
+    },
+    {
+      "pdf_page": 381,
+      "record_numbers": [],
+      "problem": "House/door subsections identified by D outside B02u's exact heading stop; all retained as required next phase, not erased."
+    }
+  ],
+  "source_witness_disagreements": [
+    {
+      "pdf_page": 366,
+      "record_number": 2338,
+      "status": "UNRESOLVED_OPPOSITION_VS_CONJUNCTION_ASPECT_GLYPH_SECOND_HOUSE"
+    },
+    {
+      "printed_page_locator": "3?7",
+      "status": "ERRATA_REFERENCE_UNDETERMINED_307_OR_337"
+    }
+  ],
+  "source_image_pixel_replay": "SOURCE_REPLAY_RECEIPT.json",
+  "source_records_not_human_cases": true,
+  "clinically_or_criminally_validated": false,
+  "empirical_prediction_verified": false,
+  "produced_live_operational_rules": false,
+  "full_lilly_chapter_L_completed": false,
+  "original_uncertainties_retained": 119,
+  "focused_source_checks_before_this_ledger": 314,
+  "acceptance_meaning": "A source-only reference corpus with provenance and explicit disputed readings. It does not attest every table cell has been separately diplomatic-transcribed or every historical condition is objectively correct."
+}

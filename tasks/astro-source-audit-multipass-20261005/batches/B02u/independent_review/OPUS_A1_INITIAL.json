@@ -1,0 +1,154 @@
+{
+  "window": "A1",
+  "role": "FRESH_INDEPENDENT_IMAGE_FIRST_REVIEW",
+  "pages_read": [364, 365, 366],
+  "errata_read": true,
+  "candidate_units_checked": 36,
+  "verdict": "FINDS_ERROR",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "pdf_page": 365,
+      "candidate_ids": ["A1014"],
+      "source_short_quote": "Lord of the houre",
+      "defect": "Both the original anchor and normalized condition substitute the lord of the fourth for the lord of the hour.",
+      "narrow_correction": "Read the lord of the hour being also lord of the seventh as the condition for the indication being more radical.",
+      "confidence": "high"
+    },
+    {
+      "id": "F2",
+      "severity": "HIGH",
+      "pdf_page": 365,
+      "candidate_ids": ["A1014", "A1015"],
+      "source_short_quote": "then it is more radicall",
+      "defect": "A1014 combines two clauses separated by a semicolon, making an identity between house lords an additional prerequisite for the subsequent querent-as-thief statement. A1015 consequently inherits an unnecessarily restricted preceding configuration.",
+      "narrow_correction": "Separate the clauses: hour lord also seventh lord makes the indication more radical; seventh lord in the ascendant supplies the subsequent identification, restricted by just suspicion concerning the querent's fidelity or greatest cause of suspicion above others. Do not require the hour-lord identity for that second clause. Retain complexion and condition according to the seventh lord and its sign.",
+      "confidence": "high"
+    },
+    {
+      "id": "F3",
+      "severity": "MEDIUM",
+      "pdf_page": 365,
+      "candidate_ids": ["A1017"],
+      "source_short_quote": "and consenta-",
+      "defect": "The marginal word continued on the next line is 'consentanious', not 'conscientious'. The candidate changes agreement with reason into a moral or diligence-related characterization.",
+      "narrow_correction": "Describe the author's preference for the seventh lord as more rational and consonant with reason.",
+      "confidence": "high"
+    },
+    {
+      "id": "F4",
+      "severity": "MEDIUM",
+      "pdf_page": 365,
+      "candidate_ids": ["A1022"],
+      "source_short_quote": "or it gives hopes of disco-",
+      "defect": "The candidate substitutes hope of recovery for the printed hope of discovery. Discovery of the lost thing does not necessarily entail its recovery.",
+      "narrow_correction": "Preserve the alternatives: the thief shall be taken soon afterward, OR there are hopes of discovery of the thing lost. Retain the three alternative triggers: the ascendant lord draws toward the seventh lord, draws toward the hour lord, OR occupies the seventh.",
+      "confidence": "high"
+    },
+    {
+      "id": "F5",
+      "severity": "HIGH",
+      "pdf_page": 366,
+      "candidate_ids": ["A1033"],
+      "source_short_quote": "in ☍ to the second house",
+      "defect": "The printed opposition glyph is read as conjunction in the normalized statement, prerequisites, exception note, and corresponding unresolved-source entry.",
+      "narrow_correction": "Replace conjunction with opposition to the second house. Preserve the Moon ruling the ascendant and occupying the fourth, the second lord's seventh-house OR eighth-sign placement, and sextile OR trine to the Moon. Keep the grammatical attachment of the final clauses unresolved rather than inventing a planetary target.",
+      "confidence": "high"
+    },
+    {
+      "id": "F6",
+      "severity": "HIGH",
+      "pdf_page": 366,
+      "candidate_ids": ["A1034"],
+      "source_short_quote": "in the tenth with",
+      "defect": "The candidate invents a sextile between the Sun and seventh lord and omits the printed tenth-house placement.",
+      "narrow_correction": "Read the Sun, as lord of the second, 'in the tenth with the Lord of the seventh house'. Retain the Moon ruling and occupying the ascendant, 'not farre remote', AND the seventh lord oppressing the Moon by square. Do not supply a Sun-seventh-lord sextile.",
+      "confidence": "high"
+    },
+    {
+      "id": "F7",
+      "severity": "MEDIUM",
+      "pdf_page": 888,
+      "candidate_ids": ["A1005"],
+      "source_short_quote": "r or",
+      "defect": "The candidate reads the printed-page-330, line-6 correction as 'of' and associates it with the theft paragraph's 'Signifier of the'. The erratum reads 'or'; the indicated line belongs to the preceding material above the authorized theft start. The same misreading appears in the candidate's unresolved-source record and stop-boundary account.",
+      "narrow_correction": "Record the erratum as printed p330, line 6, read 'or', and keep it outside the assessed theft passage. Do not apply it to the tenth-house assignment.",
+      "confidence": "high"
+    },
+    {
+      "id": "F8",
+      "severity": "LOW",
+      "pdf_page": 366,
+      "candidate_ids": ["A1035"],
+      "source_short_quote": "if the ☽ be in the third",
+      "defect": "The original anchor substitutes the word 'Moon' for the lunar glyph. The candidate discloses this expansion, but the anchor does not preserve the requested exact glyph.",
+      "narrow_correction": "Use the lunar glyph in the original anchor; retain 'Moon' in the normalized statement.",
+      "confidence": "high"
+    }
+  ],
+  "missing_units": [
+    {
+      "pdf_page": 365,
+      "source_short_quote": "all manner of Questions.",
+      "normalized_statement": "The upper-right margin contains a later handwritten note consisting of a large 7, a small superscript-like mark, and 'House'. The candidate's general dismissal of handwritten numbering does not catalogue this specific annotation.",
+      "necessary_prerequisites": "Record as handwriting distinct from print. Do not infer its date, author, exact ordinal expansion, or authority over the printed rules."
+    },
+    {
+      "pdf_page": 365,
+      "source_short_quote": "Of the SIGNIFICATOR of the Thiefe.",
+      "normalized_statement": "A later handwritten numeral 1 stands beside this heading.",
+      "necessary_prerequisites": "Descriptive annotation only; not printed numbering or an additional source rule."
+    },
+    {
+      "pdf_page": 365,
+      "source_short_quote": "The SIGNIFICATOR of the thing stolen.",
+      "normalized_statement": "A later handwritten numeral 2 stands beside this heading.",
+      "necessary_prerequisites": "Descriptive annotation only; not printed numbering or an additional source rule."
+    },
+    {
+      "pdf_page": 365,
+      "source_short_quote": "Of THEFTS.",
+      "normalized_statement": "A later handwritten numeral 3 stands beside this heading.",
+      "necessary_prerequisites": "Descriptive annotation only; not printed numbering or an additional source rule."
+    }
+  ],
+  "uncertainties": [
+    {
+      "pdf_page": 365,
+      "issue": "The fourth-sign assignment reads 'where the thing is, that is, or was taken away'. Its awkward wording should remain visible; A1005's definite 'from which' is an interpretation rather than an unambiguous original phrase.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 366,
+      "issue": "The opening 'his Lord' continues PDF365's 'the querent, and'. Preserve that antecedent context and the uncertainty about the precise subject of 'signifieth the place'; do not introduce an antecedent absent from the preceding page.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 366,
+      "issue": "The general recovery paragraph lists the Sun, Moon, ascendant lord, second lord, and lord of the Moon's house, their applications, and mutual aspects. Its punctuation does not unambiguously assign a separate aspect target to every listed item.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 366,
+      "issue": "In the jest rule, opposition is legible, but the grammatical attachment of the opposition and sextile-or-trine clauses remains awkward. Preserve the stated house target without replacing it with an unstated planet.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 366,
+      "issue": "'Not farre remote' supplies neither a numerical distance nor an explicit reference point.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 888,
+      "issue": "The page locator in the entry immediately before p312, directing a line-28 correction involving Sun and Mars, is damaged. Do not assert its page number as definite. The clear p335 final-line correction 'Planet' and p336 line-4 and line-9 corrections 'vertue' concern pages outside A1 and must not be applied to printed pages 330–332.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 365,
+      "issue": "The handwriting establishes neither annotator identity nor date. The small mark associated with the upper-margin 7 should not receive a definite ordinal expansion.",
+      "preserve_unresolved": true
+    }
+  ],
+  "complete_page_coverage": "Read the original images in order: PDF364/printed330, PDF365/printed331, PDF366/printed332, then the full errata-888 image, before opening CANDIDATE.json. Reconstructed headings and clauses independently first; checked all 36 candidate units. Assessed PDF364 only below 'Of a Thief and Theft', including the Haly paragraph and King catchword; excluded the preceding fugitive, Distance, and woman-fleeing material from findings. Read all of PDF365, including its opening continuation, three subsection headings, every body clause, printed marginal qualifications, handwriting, signature, and his catchword. Read all of PDF366, including the antecedent-dependent opening, marginal endorsement, assignments, recovery-method paragraph, every conditional configuration, final recovery exception, and If catchword. No additional omitted substantive printed clause was found within these assessed sections beyond the defects catalogued above; the specific handwritten annotations require the missing records listed. Read the entire errata image and kept out-of-window corrections separate. PDF367–370 were not supplied or adjudicated; no claim is made to have read PDF369 continuations, and no PDF370 material was imported."
+}

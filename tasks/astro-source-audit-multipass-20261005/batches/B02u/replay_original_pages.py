@@ -3,7 +3,7 @@ import os,json,hashlib,subprocess,tempfile
 from pathlib import Path
 from PIL import Image,ImageChops
 B=Path(__file__).resolve().parent
-ORIGINAL=Path(os.environ.get("LILLY1647_PDF", "/mnt/hdd/home/joel/ai-research-source-cache/lilly-1647-b30338724-original.pdf"))
+ORIGINAL=Path(os.environ.get("LILLY1647_PDF", "lilly-1647-b30338724-original.pdf"))
 SHA="2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b"
 assert ORIGINAL.is_file() and ORIGINAL.stat().st_size==141842963
 assert hashlib.sha256(ORIGINAL.read_bytes()).hexdigest()==SHA

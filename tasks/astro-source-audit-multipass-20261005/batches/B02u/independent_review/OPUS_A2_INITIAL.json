@@ -1,0 +1,160 @@
+{
+  "window": "A2",
+  "role": "FRESH_INDEPENDENT_IMAGE_FIRST_REVIEW",
+  "pages_read": [366, 367, 368, 369],
+  "errata_read": true,
+  "candidate_units_checked": 71,
+  "verdict": "FINDS_ERROR",
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "HIGH",
+      "pdf_page": 366,
+      "candidate_ids": ["A2010"],
+      "source_short_quote": "Lord of the second in the tenth with",
+      "defect": "The candidate places the Sun, lord of the second, in the third. The original reads tenth.",
+      "narrow_correction": "Replace third with tenth in both the normalized statement and preconditions. Preserve the accompanying lord of the seventh and its square to the Moon.",
+      "confidence": "high"
+    },
+    {
+      "id": "F2",
+      "severity": "HIGH",
+      "pdf_page": 367,
+      "candidate_ids": ["A2014"],
+      "source_short_quote": "in the Signe of the tenth",
+      "defect": "The candidate places Venus in the sign of the seventh. The original places her in the tenth, in the sign of the tenth.",
+      "narrow_correction": "Retain Venus as Lady of the second, in the tenth, and replace sign of the seventh with sign of the tenth.",
+      "confidence": "high"
+    },
+    {
+      "id": "F3",
+      "severity": "HIGH",
+      "pdf_page": 367,
+      "candidate_ids": ["A2014"],
+      "source_short_quote": "☍",
+      "defect": "The Moon's aspect to the lord of the seventh is opposition, not conjunction.",
+      "narrow_correction": "Replace conjunction with opposition in the statement and preconditions. Preserve the Capricorn, fifth-house, and hour-rulership conditions.",
+      "confidence": "high"
+    },
+    {
+      "id": "F4",
+      "severity": "HIGH",
+      "pdf_page": 367,
+      "candidate_ids": ["A2016"],
+      "source_short_quote": "in the fourth, in ☍",
+      "defect": "The candidate changes the Moon's opposition to the lord of the seventh into conjunction.",
+      "narrow_correction": "Require Moon, Lady of the hour, in the fourth and opposite the lord of the seventh. Retain lord of the second in the twelfth and sextile the lord of the seventh.",
+      "confidence": "high"
+    },
+    {
+      "id": "F5",
+      "severity": "HIGH",
+      "pdf_page": 367,
+      "candidate_ids": ["A2018"],
+      "source_short_quote": "but will scant be had again",
+      "defect": "The candidate's anchor substitutes soone for scant, and its normalization promises soon recovery. This reverses the original qualification.",
+      "narrow_correction": "Restore the anchor and state that the goods were stolen in jest but will scarcely be recovered. Preserve lord of the second last separating from the lord of the Moon's house.",
+      "confidence": "high"
+    },
+    {
+      "id": "F6",
+      "severity": "MEDIUM",
+      "pdf_page": 369,
+      "candidate_ids": ["A2068", "A2071"],
+      "source_short_quote": "If a Planet doe separate himselfe",
+      "defect": "The candidate records generic handwriting but omits the specific apparent handwritten a above the affected letter in Planet and the insertion caret beneath it. Its anchor consequently does not distinguish the marked word from an unaltered printed reading.",
+      "narrow_correction": "Record the letter insertion and caret separately from print and from the errata instruction to read Planet. Preserve uncertainty about the underlying overwritten letter and the annotator's relationship to the errata.",
+      "confidence": "high"
+    }
+  ],
+  "missing_units": [
+    {
+      "pdf_page": 367,
+      "source_short_quote": "all manner of Questions:",
+      "normalized_statement": "The upper-right margin contains a handwritten 7th House annotation, distinct from the printed running title and page number.",
+      "necessary_prerequisites": "Record as manuscript marginalia, not as Lilly's printed heading or an operative condition."
+    },
+    {
+      "pdf_page": 367,
+      "source_short_quote": "Kk 3",
+      "normalized_statement": "The footer includes the printed signature Kk 3, separately from the catchword aforesaid,.",
+      "necessary_prerequisites": "Bibliographic layout metadata only."
+    },
+    {
+      "pdf_page": 368,
+      "source_short_quote": "Whether it be stolen or no.",
+      "normalized_statement": "Handwritten numerical references appear above this heading, apparently 5, 6, 7, 8, 30, 31. A separate mark beside the heading appears to be 4.",
+      "necessary_prerequisites": "Preserve uncertain digits as uncertain; distinguish all manuscript marks from the printed section heading."
+    },
+    {
+      "pdf_page": 369,
+      "source_short_quote": "That the Goods are stolen.",
+      "normalized_statement": "The page has a handwritten 7th House annotation at upper right and handwritten section numbers 5, 6, 7, and 8 beside the four successive printed headings.",
+      "necessary_prerequisites": "Associate 5 with That the Goods are stolen.; 6 with Not stolen.; 7 with It will be (or is intended to be stolen.); and 8 with It is Lost or Stolen. These numbers are manuscript additions."
+    },
+    {
+      "pdf_page": 888,
+      "source_short_quote": "p 336 l 4 r vertue, l 9 r vertue",
+      "normalized_statement": "The errata also directs vertue at printed page 336, line 4, and again at line 9. These adjacent corrections are omitted from the candidate's errata inventory.",
+      "necessary_prerequisites": "Record as out-of-window errata context. Printed page 336 is not among the supplied body images; do not reconstruct its sentences or import PDF370 material."
+    }
+  ],
+  "uncertainties": [
+    {
+      "pdf_page": 366,
+      "issue": "The opening his Lord continues PDF365. Its antecedent cannot be established from the supplied images and must remain unsupplied.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 366,
+      "issue": "The recovery paragraph's punctuation does not securely delimit every aspect pairing. Preserve the full named list and mutual applications without inventing pairings.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 366,
+      "issue": "The jest configuration prints conjunction to the second house. Do not silently replace that target with the second-house lord.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 367,
+      "issue": "The opening reads If ☽ be the seventh, without a clearly printed in. Distinguish the literal wording from an inferred seventh-house reading.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 368,
+      "issue": "The scope of or the lord of the seventh in the third remains ambiguous within the preceding compound travelling-loss configuration.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 368,
+      "issue": "The theft-significator sentence supplies square/opposition for the ascendant lord and conjunction/square/opposition for the Moon, then lists further targets without repeating aspect glyphs. Carry-over to those targets is not explicit.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 368,
+      "issue": "The handwritten numerical sequence's first digit and the separate apparent 4 are less secure than the remaining visible numerals.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 369,
+      "issue": "The Not stolen paragraph has the awkward double negative neither ... separate not. The candidate's no-separation interpretation is plausible but should remain distinguished from the diplomatic wording.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 369,
+      "issue": "The unfinished bottom clause appears to end house or; of remains a possible letterform reading. The catchword is the. Neither the completed target nor the conclusion is available.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 369,
+      "issue": "The handwritten a and caret visibly affect Planet, but the underlying letter and whether the annotation implements the printed errata cannot be certified. Do not infer a replacement of lord.",
+      "preserve_unresolved": true
+    },
+    {
+      "pdf_page": 888,
+      "issue": "The later entry ending l 13 dele give has a damaged page locator. Do not assert a definite page number or apply that deletion to any A2 clause.",
+      "preserve_unresolved": true
+    }
+  ],
+  "complete_page_coverage": "Read PDF366–369, printed332–335, in order, including all visible body text, running titles, printed marginal endorsement, manuscript marginalia, footer signature, section divisions, and catchwords. Reconstructed the headings and clauses before opening CANDIDATE.json, then checked A2001–A2071 individually. PDF366 coverage includes its opening continuation, significator assignments, recovery paragraph, loss/theft/jest configurations, and recovery exception. PDF367 includes every continuation rule and the conditional carried into PDF368. PDF368 includes that completed conditional, both application directions and their different intention statements, the travelling-loss configuration, and the complete Whether it be stolen or no section with its loss exceptions. PDF369 includes all four named sections through the unfinished final clause and catchword the. Read the entire errata-888.png before the candidate, including the printed335/336 corrections and the damaged-locator deletion entry. PDF364–365 were not supplied or read; no preceding fugitive material or antecedents were reconstructed. No PDF370 continuation was imported. Overlap or duplication of PDF366 readings was not treated as a fidelity error. This is a historical textual review, with no inference about any actual person's criminal identity or custody."
+}

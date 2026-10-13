@@ -1,15 +1,15 @@
 {
   "batch": "B02u",
   "scope": "Chapter L original PDF364 below thief heading through PDF381 before house-of-thief heading",
-  "status": "SOURCE_REPAIRED_B_C_D_A_WINDOWS_PENDING",
+  "status": "ORIGINAL_SOURCE_CORRECTED_A1_A2_BCD_PENDING_FINAL_SOURCE_ADMISSION",
   "original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "unit_count": 266,
+  "unit_count": 267,
   "provisional_first_record": "R2306",
-  "provisional_last_record": "R2571",
+  "provisional_last_record": "R2572",
   "canonical_accepted_lilly_still": 2305,
-  "conditional_cumulative_lilly_if_accepted": 2571,
+  "conditional_cumulative_lilly_if_accepted": 2572,
   "retained_ptolemy": 1066,
-  "conditional_combined_if_accepted": 3637,
+  "conditional_combined_if_accepted": 3638,
   "window_provenance": {
     "A": {
       "window": "A",
@@ -206,13 +206,13 @@
       "section_heading": "Of a Thief and Theft.",
       "source_kind": "source_conditional",
       "source_anchor": "the tenth house is the Signifier of the",
-      "source_statement": "The tenth house signifies the king. The sentence continues across the page boundary: the sign of the fourth signifies the place where the thing is, or from which it was taken away.",
+      "source_statement": "The tenth house signifies the king in Haly's example. The fourth sign refers to 'where the thing is, that is, or was taken away', preserving the original awkward alternative; no certainty that it denotes only the place from which it was taken.",
       "preconditions": [
-        "The theft method attributed to Haly."
+        "Within Haly's source-mediated thief/lost-goods role descriptions."
       ],
       "exceptions_and_uncertainty": [
-        "The original errata leaf has an entry for printed page 330, line 6, directing the reading 'of'; the visible body text already reads 'of the' here.",
-        "The bottom catchword 'King,' repeats the opening word on printed page 331."
+        "The source does not grammatically reduce 'where it is, that is, or was taken' to one precise place; no empirical location inference.",
+        "The printed p330 line6 'read or' erratum belongs to PRECEDING B02t material above the theft heading, not to this clause."
       ],
       "source_reader_confidence": "high",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
@@ -222,7 +222,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -494,15 +495,13 @@
       ],
       "section_heading": "Of the SIGNIFICATOR of the Thiefe.",
       "source_kind": "source_conditional",
-      "source_anchor": "the Lord of the fourth be Lord of the seventh",
-      "source_statement": "If the lord of the fourth is also lord of the seventh and is in the ascendant, the author calls the indication more radical and identifies the querent as the thief. He restricts this rule to cases in which suspicion concerns the querent's fidelity or the querent is most suspected.",
+      "source_anchor": "if the Lord of the hour be Lord of the seventh",
+      "source_statement": "When the LORD OF THE HOUR is ALSO THE LORD OF THE SEVENTH, Lilly calls the thief-significator selection 'more radical'.",
       "preconditions": [
-        "The lord of the fourth is also lord of the seventh.",
-        "That lord is in the ascendant.",
-        "Suspicion concerns the querent's fidelity, or the querent is the most suspected person."
+        "Lord of the planetary hour and lord of seventh are the SAME PLANET."
       ],
       "exceptions_and_uncertainty": [
-        "This records a historical astrological accusation rule, not evidence of an actual theft."
+        "This radicality statement is separate from the following seventh-lord-in-ascendant claim; not a verified theft indicator."
       ],
       "source_reader_confidence": "high",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
@@ -512,7 +511,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -530,12 +530,13 @@
       "section_heading": "Of the SIGNIFICATOR of the Thiefe.",
       "source_kind": "source_conditional",
       "source_anchor": "whose complexion and condition is ac-",
-      "source_statement": "The complexion and condition of the person described in the preceding rule are assigned according to the planet ruling the seventh and its sign.",
+      "source_statement": "Lilly assigns alleged thief's complexion and condition from the SEVENTH LORD AND ITS SIGN, in the context of the preceding seventh-lord-in-ascendant suspicion example.",
       "preconditions": [
-        "The preceding restricted identification of the querent as thief."
+        "Seventh lord is the source's thief significator; human descriptions are conditional on house/sign and prior possible accusation."
       ],
       "exceptions_and_uncertainty": [
-        "No specific complexion or condition is supplied on these pages."
+        "Do not inherit the separate hour-lord-identity radicality condition as a mandatory prerequisite.",
+        "No actual complexion, character or offender is established."
       ],
       "source_reader_confidence": "high",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
@@ -545,7 +546,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -594,12 +596,12 @@
       "section_heading": "Of the SIGNIFICATOR of the Thiefe.",
       "source_kind": "source_exception",
       "source_anchor": "I rather and more assured- ly prefer the",
-      "source_statement": "A marginal authorial preference favors the lord of the seventh as a more rational and conscientious significator, qualifying the alternative selection methods in the body text.",
+      "source_statement": "The printed marginal comment says Lilly prefers the seventh lord as the more rational and 'consentanious' (consonant/agreement with reason) significator.",
       "preconditions": [
-        "Choosing the thief's significator."
+        "Source author's methodological preference among alternative possible thief significators."
       ],
       "exceptions_and_uncertainty": [
-        "The anchor preserves the visible division of 'assuredly'."
+        "The historical word is 'consentanious', NOT 'conscientious'; do not ascribe a moral-diligence trait to the planet."
       ],
       "source_reader_confidence": "high",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
@@ -609,7 +611,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -755,12 +758,12 @@
       "section_heading": "The SIGNIFICATOR of the thing stolen.",
       "source_kind": "source_conditional",
       "source_anchor": "the Lord of the ascendant draw towards the Lord",
-      "source_statement": "If the lord of the ascendant draws toward the lord of the seventh or lord of the hour, or is in the seventh, the author judges that the thief will be taken soon afterward or that recovery of the lost thing is hoped for.",
+      "source_statement": "When first lord draws toward seventh lord, draws toward hour lord, OR occupies seventh, the author says the thief may be taken soon afterward OR there is hope of DISCOVERY OF THE THING LOST.",
       "preconditions": [
-        "The lord of the ascendant draws toward the lord of the seventh, draws toward the lord of the hour, or occupies the seventh."
+        "Each directed application or first-lord seventh-house placement is a separate alternative."
       ],
       "exceptions_and_uncertainty": [
-        "The source offers capture or hope of recovery as alternatives, not guaranteed recovery."
+        "Discovery is not equivalent to recovery/return of goods, and the source claims no independently observed thief."
       ],
       "source_reader_confidence": "high",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
@@ -770,7 +773,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -844,23 +848,26 @@
       "window_local_id": "A025",
       "preliminary_key": "A.A025",
       "pdf_pages": [
+        365,
         366
       ],
       "printed_pages": [
+        331,
         332
       ],
       "source_images": [
+        "evidence/pdf-365.png",
         "evidence/pdf-366.png"
       ],
       "section_heading": "Unheaded continuation",
       "source_kind": "source_conditional",
       "source_anchor": "his Lord for him that hath lost the Goods",
-      "source_statement": "The opening continuation assigns 'his Lord' to the person who has lost the goods and to the place from which the goods were taken. The antecedent of 'his' lies before this window.",
+      "source_statement": "Continuation of printed p331–332: the ASCENDANT represents QUERENT, and 'his Lord' stands for the one WHO LOST THE GOODS and for the place from whence goods were taken.",
       "preconditions": [
-        "Continuation of a significator assignment begun on the preceding page."
+        "The antecedent of 'his Lord' is on PDF365 after 'the querent, and'."
       ],
       "exceptions_and_uncertainty": [
-        "The preceding words are unavailable in this window; the antecedent must not be supplied from memory."
+        "This joins the original physical page turn instead of inventing an unattached new subject. Some printed syntax remains elliptical."
       ],
       "source_reader_confidence": "medium",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
@@ -870,7 +877,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -1116,15 +1124,14 @@
       "section_heading": "Unheaded continuation",
       "source_kind": "source_conditional",
       "source_anchor": "the thing is not stolen, but taken away in jest",
-      "source_statement": "If the Moon rules the ascendant and is in the fourth, while the lord of the second is in the seventh or in the sign of the eighth house, in conjunction to the second house and sextile or trine to the Moon, the thing was taken away in jest.",
+      "source_statement": "With MOON ruling ASCENDANT in FOURTH, second lord in SEVENTH or in SIGN OF EIGHTH, the author says an aspect to the SECOND HOUSE which one reader decodes as OPPOSITION (another source reader: CONJUNCTION), plus sextile/trine to MOON, indicates a thing taken away in jest, not outright stolen.",
       "preconditions": [
-        "Moon is Lady of the ascendant and in the fourth.",
-        "Lord of the second is in the seventh or in the sign of the eighth house.",
-        "The printed text also requires conjunction 'to the second house'.",
-        "Sextile or trine to the Moon."
+        "Moon rules ascendant and is in fourth; the second lord occupies seventh or sign of eighth.",
+        "Printed aspect glyph to the SECOND HOUSE is physically disputed between independent readers (A1 ☍ opposition; A2 ☌ conjunction); sextile/trine to Moon is separate."
       ],
       "exceptions_and_uncertainty": [
-        "The unusual expression 'in conjunction to the second house' is retained without silently substituting another target."
+        "Do not replace SECOND HOUSE with second-house lord or other planet. The aspect-glyph reading is explicitly UNRESOLVED rather than force-corrected.",
+        "Author describes a historical hypothetical, not observed person or act."
       ],
       "source_reader_confidence": "medium",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
@@ -1134,7 +1141,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -1152,14 +1160,14 @@
       "section_heading": "Unheaded continuation",
       "source_kind": "source_conditional",
       "source_anchor": "then is the Goods stolen and taken away",
-      "source_statement": "If the Moon rules the ascendant and is in the ascendant, not far remote, and the Sun rules the second and is in the third with the lord of the seventh, while the lord of the seventh oppresses the Moon by square, the goods are stolen and taken away.",
+      "source_statement": "If Moon rules ascendant AND is IN ASCENDANT, 'not farre remote', Sun as second lord IN THE TENTH WITH SEVENTH LORD, and seventh lord SQUARES Moon, author says the goods were stolen.",
       "preconditions": [
-        "Moon is Lady of the ascendant and in the ascendant, 'not farre remote'.",
-        "Sun is lord of the second and in the third with the lord of the seventh.",
-        "Lord of the seventh oppresses the Moon with a square."
+        "Moon is first lord and in first, near unspecified reference point.",
+        "SUN lord of second IN TENTH with seventh lord (NOT third and no invented sextile).",
+        "Seventh lord squares Moon."
       ],
       "exceptions_and_uncertainty": [
-        "The reference point of 'not farre remote' is not further explained."
+        "Original phrase 'not farre remote' has no metric; report as unverified claimed theft."
       ],
       "source_reader_confidence": "high",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
@@ -1169,7 +1177,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -1291,14 +1300,15 @@
       "section_heading": "Unheaded continuation",
       "source_kind": "source_conditional",
       "source_anchor": "then hath the party lost the Goods as he went",
-      "source_statement": "If the Moon is in the fifth in Capricorn and rules the hour, Venus rules the second and is in the tenth in the sign of the seventh, and the Moon is in conjunction with the lord of the seventh, the party lost the goods while travelling or left them in a place they visited.",
+      "source_statement": "With MOON in fifth and Capricorn ruling hour, VENUS as second lord IN THE TENTH IN SIGN OF TENTH, and Moon in OPPOSITION to seventh lord, Lilly says goods were lost while travelling or left in a visited place.",
       "preconditions": [
-        "Moon in the fifth and in Capricorn.",
-        "Moon is Lady of the hour.",
-        "Venus is Lady of the second, in the tenth, in the sign of the seventh.",
-        "Moon in conjunction with the lord of the seventh."
+        "Moon in fifth, Capricorn and lady of hour.",
+        "Venus rules second, placed in tenth AND tenth sign.",
+        "Moon OPPOSITE seventh lord, not conjunction."
       ],
-      "exceptions_and_uncertainty": [],
+      "exceptions_and_uncertainty": [
+        "No real trip or place is verified."
+      ],
       "source_reader_confidence": "high",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
       "raw_source_reader_draft": "SOURCE_READER_A.json",
@@ -1307,7 +1317,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -1359,14 +1370,14 @@
       "section_heading": "Unheaded continuation",
       "source_kind": "source_conditional",
       "source_anchor": "then hath somebody taken the things away in jest",
-      "source_statement": "If the Moon rules the hour, is in the fourth, and is conjunct the lord of the seventh, while the lord of the second is in the twelfth and sextile the lord of the seventh, somebody took the things in jest.",
+      "source_statement": "If MOON as hour ruler IN FOURTH is in OPPOSITION to seventh lord, and second lord IN TWELFTH SEXTILES seventh lord, author claims goods taken in jest.",
       "preconditions": [
-        "Moon is Lady of the hour and in the fourth.",
-        "Moon conjunct the lord of the seventh.",
-        "Lord of the second in the twelfth.",
-        "Lord of the second sextile the lord of the seventh."
+        "Moon rules the hour and is in fourth; Moon opposes lord of seventh.",
+        "Second lord occupies twelfth and sextiles seventh lord."
       ],
-      "exceptions_and_uncertainty": [],
+      "exceptions_and_uncertainty": [
+        "Two different directed relationships, not a lunar conjunction; historical source conjecture only."
+      ],
       "source_reader_confidence": "high",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
       "raw_source_reader_draft": "SOURCE_READER_A.json",
@@ -1375,7 +1386,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -1427,11 +1439,13 @@
       "section_heading": "Unheaded continuation",
       "source_kind": "source_conditional",
       "source_anchor": "but will soone be had again",
-      "source_statement": "If the lord of the second last separated from the lord of the Moon's house, the goods were stolen in jest and will soon be recovered.",
+      "source_statement": "If second lord last separated from lord of Moon's house, the author says goods were stolen in jest BUT WILL SCANT BE HAD AGAIN (scarcely recovered), not quickly returned.",
       "preconditions": [
-        "Lord of the second last separated from the lord of the house occupied by the Moon."
+        "Second lord has last separated from Moon's domicile ruler."
       ],
-      "exceptions_and_uncertainty": [],
+      "exceptions_and_uncertainty": [
+        "Source's 'scant' is the opposite of 'soon'; do not invert the expected result."
+      ],
       "source_reader_confidence": "high",
       "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
       "raw_source_reader_draft": "SOURCE_READER_A.json",
@@ -1440,7 +1454,8 @@
       "source_status": "SOURCE_DRAFT_PENDING_SEPARATE_PAGE_REVIEW",
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
-      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "FRESH_IMAGE_FIRST_A1_A2_SOURCE_RECONCILIATION"
     },
     {
       "window": "A",
@@ -8970,6 +8985,43 @@
       "original_human_cases_verified": 0,
       "source_claim_not_predictive_validation": true,
       "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED"
+    },
+    {
+      "window": "A",
+      "window_local_id": "A014_SPLIT_SEVENTH_ASC",
+      "preliminary_key": "A.A014.SPLIT",
+      "pdf_pages": [
+        365
+      ],
+      "printed_pages": [
+        331
+      ],
+      "source_images": [
+        "evidence/pdf-365.png"
+      ],
+      "section_heading": "Of the SIGNIFICATOR of the Thiefe.",
+      "source_kind": "source_conditional",
+      "source_anchor": "but if the Lord of the seventh be in the ascendant",
+      "source_statement": "Separately from the hour/seventh lord radicality rule, the source says seventh LORD IN ASCENDANT MAY denote querent as alleged thief ONLY when question concerns querent's FIDELITY or the querent is chiefly suspected.",
+      "preconditions": [
+        "Seventh-house lord actually occupies ascendant.",
+        "Inquiry is specifically about fidelity or the querent is greatest suspected person; no universal accusation."
+      ],
+      "exceptions_and_uncertainty": [
+        "Requires original suspicion restriction; does NOT require hour-lord identity with seventh lord.",
+        "An early-modern symbolic accusation without any real criminal evidence."
+      ],
+      "source_reader_confidence": "high",
+      "source_pdf_full_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "raw_source_reader_draft": "SOURCE_READER_A.json",
+      "record_number": 2572,
+      "id": "LI.1647.II.L.B02u.R2572",
+      "source_status": "AUTHORIAL_SOURCE_WITNESS_NOT_VALIDATED",
+      "original_human_cases_verified": 0,
+      "source_claim_not_predictive_validation": true,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "independent_source_repair": "A1_SOURCE_SEMICOLON_SPLIT",
+      "source_order_after": 2319
     }
   ],
   "source_review_history": {
@@ -8977,9 +9029,27 @@
     "C": "Fresh image-first independent source review, initial verdict FINDS_ERROR.",
     "D": "Fresh image-first independent source review, initial verdict FINDS_ERROR.",
     "later_final_blind_review_of_these_corrections": false,
-    "scope_note": "Window D's full-page reader request extended beyond this PHASE'S previously frozen heading-boundary scope at PDF381."
+    "scope_note": "Window D's full-page reader request extended beyond this PHASE'S previously frozen heading-boundary scope at PDF381.",
+    "A1": {
+      "review_sha256": "707f9a2d54938fc269e353c394dadbc2e051b3c73b8863ecc89470e866c51b7a",
+      "findings": 8,
+      "missing_metadata": 4,
+      "source_uncertainties": 7,
+      "all_pages_in_window_read": true,
+      "independent_first_pass": true
+    },
+    "A2": {
+      "review_sha256": "4b770d681279ab3d153f98f6219d51554ffc062d963a69d516115bc7cd438e2f",
+      "findings": 6,
+      "missing_metadata": 5,
+      "source_uncertainties": 11,
+      "all_pages_in_window_read": true,
+      "independent_first_pass": true
+    }
   },
   "source_fidelity_review_completed_windows": [
+    "A1",
+    "A2",
     "B",
     "C",
     "D"

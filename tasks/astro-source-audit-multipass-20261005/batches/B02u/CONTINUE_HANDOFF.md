@@ -1,0 +1,13 @@
+# Continue Lilly Chapter L after B02u source phase 2
+
+Before resuming, verify B02u acceptance, PACKET_USABILITY.json, PUBLICATION_RECEIPT.json, DELIVERY_RECEIPT.json and the live canonical HumanDesign research index. A local accepted source packet is NOT proof the ZIP was published or delivered.
+
+**Expected documentary baseline, ONLY if fully published:** 2,572 Lilly source records R1–R2572, plus 1,066 retained Ptolemy = 3,638 combined. Exactly 267 B02u source units R2306–R2572 came from original PDF364/printed330 BELOW *Of a Thief and Theft* through original PDF381/printed347 **BEFORE** the separate *Of the house of the Thiefe, and the mark thereof* heading. B02t's earlier fugitive rules on PDF364 ABOVE this heading were not counted twice.
+
+**Next paragraph/section starts original PDF381 on the SAME PAGE, at 'Of the house of the Thiefe, and the mark thereof'**, followed by *Of the Door of the house*. Original PDF381 has source descriptions from the thief-significator sign/part of heaven, house-direction cardinal and intercardinal divisions, Sun as the house significator and Moon as the door significator. The printed door paragraph runs to the catchword 'is' at the foot of PDF381 and must be completed from original PDF382. Do not omit these material headings because a prior reader had a before-heading stop.
+
+**Whole Chapter L continues through original PDF400/printed366 ABOVE** the divider introducing Chapter LI *Of Battell, Warre, or other Contentions*. The next stage must inspect all original PDF381–400 image pages and the volume's errata888, preserve page turns and unnumbered headings, source tables and paragraphs. Follow the original section-level boundaries, not unvalidated OCR. Next provisional source reference **R2573**, only after verifying the live index.
+
+B02u raw evidence: exact verified original 1647 Wellcome b30338724 (894 pages), SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. 20 original contextual/source/errata images; five original-image first-pass source reviews; 119 retained source uncertainties; the original p332 aspect glyph dispute **opposition versus conjunction remains unresolved**. Printed color/name tables are source witnesses, not diplomatically transcribed and independently validated mapping tables.
+
+**Do not infer actual criminal conduct, identify persons or treat historical astrological claims as evidence.** No source extraction may change participant/forward-blind predictions, empirical outcomes, or the live model without a separate development and independent test procedure. Parent multipass, multiauthor historical-source audit remains OPEN.

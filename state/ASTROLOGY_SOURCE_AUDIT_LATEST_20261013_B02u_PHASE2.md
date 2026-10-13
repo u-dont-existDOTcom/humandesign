@@ -1,0 +1,7 @@
+# Astrology source audit — Lilly B02u Chapter L Phase 2 locally accepted, parent OPEN
+
+Original William Lilly 1647, Chapter L second source section, PDF364 printed330 BELOW *Of a Thief and Theft* through PDF381 printed347 BEFORE *Of the house of the Thiefe*. Historical **documentary** source-only intake 267 units R2306–R2572. Cumulative **2,572 Lilly**, **1,066 retained Ptolemy**, **3,638 combined** after verified publication. Full chapter L still OPEN through PDF400 above Chapter LI; Chapter50 not marked complete.
+
+20 original page images independently pixel-replayed from exact 1647 scan SHA256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Five original-image reader windows returned source corrections; final controller corrections documented with one unresolved important glyph disagreement, 119 retained source uncertainties. 314 source-only tests passed. No current person, crime, forecast, clinical outcome or model improvement proven; human and forward-blind data untouched.
+
+Next phase starts original PDF381 at *Of the house of the Thiefe* heading, then *Of the Door of the house* continuing original PDF382. Next provisional source ID R2573. The 1647 printed name/color tables remain SOURCE IMAGE witnesses, not checked individual machine name-to-planet mapping. ZIP extracted replay, Git publication and owner Downloads are separate downstream gates; read B02u/PACKET_USABILITY.json, PUBLICATION_RECEIPT.json, DELIVERY_RECEIPT.json before claiming them.

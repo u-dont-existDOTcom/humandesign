@@ -1,0 +1,178 @@
+{
+  "batch": "B02u",
+  "report_sha256": "801b7a353120cfa0162ed219b529dfe571d68cf0fad16ac6acb68da87fbe9757",
+  "units": [
+    {
+      "id": "C01",
+      "text": "# Lilly, *Christian Astrology* (1647) — Chapter L, second source phase: Thief and Goods",
+      "sha256": "c2c92e21656acdf6044eaaaeba60f0e0d229f8dd181500a70e892a88e6988ce7"
+    },
+    {
+      "id": "C02",
+      "text": "B02u — original-source documentary research, **pending final source-fidelity review and publication**",
+      "sha256": "4e310c3371750974aac66a649123a3f0a7b560f2cf0c07718c9e301d305749e1"
+    },
+    {
+      "id": "C03",
+      "text": "## Exact original source and phase boundaries",
+      "sha256": "5983dc72fd0465c27ed6c908a5f281a7949e5a9249d5b237fa96226f791f1569"
+    },
+    {
+      "id": "C04",
+      "text": "The primary witness is the original 1647 William Lilly *Christian Astrology* edition, Wellcome b30338724, 894-PDF-page archive SHA-256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. Each original page image in this packet has a SHA-256 manifest and was freshly pixel-replayed against the exact source PDF, including original errata PDF888 and the Chapter LI divider on PDF400. The original raster, **not** derived OCR or a later author's description, controls words and planetary glyphs.",
+      "sha256": "1637227103b0797eca098e410b52b1f700d6bac87ac0268a312eee092c5e6ac4"
+    },
+    {
+      "id": "C05",
+      "text": "**This phase begins on PDF364/printed330 BELOW** *Of a Thief and Theft*. The earlier paragraph *Of a Woman flying from her Husband*, on the same physical page but **above** that heading, was accepted in B02t and is not recounted. Phase content runs through PDF381/printed347, ending **before** the next separate original heading *Of the house of the Thiefe, and the mark thereof*. That heading and its following house/door rules remain in the next phase; the same PDF381 is intentionally an overlapping physical witness rather than a second source case. Chapter L as a whole remains incomplete until PDF400 ABOVE the divider introducing Chapter LI. [Original page images PDF364–381, 400; SOURCE_IDENTITY.json; SECTION_COVERAGE.json; NEXT_PHASE_PDF381_BOUNDARY_EXCEPTION.json]",
+      "sha256": "27b7b17745b63c649c4feebd2abbd2ad1ada7f0d715ef79e3b10bfef80c974e4"
+    },
+    {
+      "id": "C06",
+      "text": "The source-reference draft presently contains **267 editorial documentary units R2306–R2572** from eighteen original content pages, distinct from accepted 2,305 Lilly records and 1,066 retained Ptolemy records. **If** accepted and indexed unchanged, the Lilly documentary inventory would be **2,572**, combined **3,638**. These are neither 266 test cases, 266 human observations nor evidence that astrology identifies thieves. No real theft is established, no suspect is identified and no natal/model weights, blinded tests or participant answers are altered. [COUNTS.json; RULES.json]",
+      "sha256": "a16cdd64b5b3875fbfa7190d81406dafee4ac63b03faa8def1eb23964d2c9ec5"
+    },
+    {
+      "id": "C07",
+      "text": "## First distinctions: querent, goods, and alleged thief (printed330–334)",
+      "sha256": "dca5355d23dc889b56f63b9b5d6ca0dcb0ed45dc3bd70b31754b71e3f18bdfc4"
+    },
+    {
+      "id": "C08",
+      "text": "Lilly begins this theft section with early-modern definitions and mediated authority, including his report of **Haly**. He differentiates the querent/loser (first house and ascendant lord), the supposedly stolen thing (second house/lord and Moon in particular contexts), and the alleged thief (seventh house/lord; sometimes a **peregrine planet angular** or the **hour lord** under a stated precedence). That is a hierarchy of symbolic roles, **not** license to substitute arbitrary planets or identify a person as a thief. The source distinguishes whether a thing went missing accidentally, was taken in jest, has actually been stolen, or is merely suspected to be. In some cases planetary contact suggests recovery even without certainty about theft. [Original PDF364–368; source units R2306–R2377]",
+      "sha256": "3476017ae1aaf60413cee457b76621196a83fe665bb5e11f458e64c072df162b"
+    },
+    {
+      "id": "C09",
+      "text": "This material is unusually conditional. A planet must actually occupy the relevant house or be the designated significator; an **application** cannot silently become separation, and a **conjunction** cannot silently become a sextile or trine. The source mixes reception, transfer of virtue, squares/oppositions, Moon-house lords and the luminaries. A disposition about stolen goods is not an independently observed act or a general definition of criminal conduct.",
+      "sha256": "29b3891a28fd2d512ffef4d7fa88d5723365f69d6c8219d4a0af256c34bff482"
+    },
+    {
+      "id": "C10",
+      "text": "## Distinct theft, non-theft and future-theft cases (printed334–336)",
+      "sha256": "92bea9fd0da151d801c661e63ef441cc69aaf51999f8f990084d1ce057cc54f8"
+    },
+    {
+      "id": "C11",
+      "text": "Printed334 opens *Whether it be stolen or no?*, which is followed by separate headings *That the Goods are stolen*, *Not stolen*, *It will be (or is intended to be stolen)* and *It is Lost or Stolen* on printed335. The rules can conflict or refer to different times. For example, a **peregrine** significator and certain transfers of planetary virtue are used as supposed theft evidence, while other contacts are interpreted as mere loss or negligence. The author gives **future or intended theft** its own conditional heading, not a recorded completed crime. [Original PDF368–370; R2358–R2405]",
+      "sha256": "bb3ed66e89f32be3b24c78831908df0fc8c85968e8f235fda9062ff0d681f745"
+    },
+    {
+      "id": "C12",
+      "text": "A fresh image-first reviewer found an easily missed destination: Moon as seventh-house ruler giving virtue to a planet in the **second, eleventh OR FIFTH**; the next printed negative aspect to house cusps has uncertain attachment to those alternatives. Another source clause has a planet in seventh transmitting virtue to a second/eleventh planet and an ambiguous additional **no-sextile/no-trine** condition; its grammatical subject is not clearly stated. The revised source records preserve both issues rather than creating a self-aspect. [PDF369; R2392–R2393; independent_review/OPUS_B_INITIAL.json]",
+      "sha256": "01c36a98f5a9b7a0d68a8475aa12c0e9340a0b736938b8e7fb88d104d83d71bb"
+    },
+    {
+      "id": "C13",
+      "text": "## Alleged age, gender, number of people and human description (printed336–339)",
+      "sha256": "1cc8a33d386bd2e01ac353cfecf51d91b86ac8985fe45e24d6bcdc80be1922b7"
+    },
+    {
+      "id": "C14",
+      "text": "Lilly's unnumbered headings cover *Of the age of the Thief*, a second *The age of the Thiefe*, *Whether the Thiefe be a Man or Woman*, and *If one Thiefe or more*. They combine planetary class, oriental/occidental placement, Moon growing or diminishing in light, degree and house, fixed/movable/common signs, and gendered/significator distinctions. The text is early-modern profiling **without empirical evidence**; it cannot support any claim about a real person's age, gender, guilt or identity. [PDF370–373; R2406–R2463]",
+      "sha256": "9557b91a8a33310ba50a66c66b5fa3382db2015bb1148627a0d5fbb820acea79"
+    },
+    {
+      "id": "C15",
+      "text": "The printed p339 six classifications—signs alleged to have many children, few children, diverse forms, barren signs, direct ascensions and oblique ascensions—were initially compressed into one source summary. Six separate original-source classifications were subsequently restored from the overlapping B reader, while the raw C source draft and discarded overlap remain preserved for audit. The chapter includes at least one apparent tension: a fixed-sign/direct-ascension condition points to **one** thief, while another apparently immovable-sign condition points to **more than one**. The source's printed claims are kept distinct rather than silently repaired to agree. [PDF373; OVERLAP_ADJUDICATION.json; READER_OVERLAP_AUDIT.json]",
+      "sha256": "37bb8e425031d137e1dd4452109eb4301cab1889d651ed70e634018b0948b3f5"
+    },
+    {
+      "id": "C16",
+      "text": "## Clothes, colors, names and printed numerical/planet tables (printed339–342)",
+      "sha256": "1b603e89c5e17180471e182b1858affa79612c2737247d3e128c93b6ec578b44"
+    },
+    {
+      "id": "C17",
+      "text": "The author proposes judgments of a supposed person's **clothing color** from planets, planetary mixtures, signs, degrees and house. He also reproduces named-author color attributions and a historical name-to-planet table, divided into **men's and women's names**. The original PDF374–375 table images are retained as controlling evidence. The present normalized headings and table-level source units **do not constitute a checked diplomatic transcription of every table cell**, including blank companion columns, repeated planet combinations and glyphs; a formula cannot create verified name mappings. No claim is made that names, clothes or genders actually correlate with these placements. [PDF373–375; TABLE_WITNESS_REGISTER.json]",
+      "sha256": "53c0d82296d6c997d961794e5759219022cdd277a8967daad483b7c99808387a"
+    },
+    {
+      "id": "C18",
+      "text": "Another image-first reviewer corrected the apparent second planet in a rule relating long names (Richard or William): the printed pair is **Saturn or Venus**, although the Venus glyph is slightly degraded. This is retained as a qualified source reading. [PDF374; R2475; independent_review/OPUS_C_INITIAL.json]",
+      "sha256": "0333e10c1069c3edc200a6cfa843f980662adebed8c071b43c5a9ec3341ed1e5"
+    },
+    {
+      "id": "C19",
+      "text": "## Familiarity, household roles and seventh-lord house categories (printed342–344)",
+      "sha256": "d5be2957d0668cfd128dd856c58cf4ba5aca38b7ca11d8c06ed353f2654b4884"
+    },
+    {
+      "id": "C20",
+      "text": "The headings *Whether the Thief be of the house or not*, *A Stranger or Familiar*, *Another*, and *Rules by the Lord of the seventh house* shift from theft indications to conjectures about whether the imagined culprit is an acquaintance or stranger. Printed343–344 supplies house-by-house categories keyed to **seventh lord in ascendant/fourth, second, third, fourth, fifth, sixth, seventh, eighth and onward**. An overlapping reader duplicated several clauses on PDF377; each is counted only once from its own printed passage. The printed caution **“This must be warily understood”** is kept attached to the potentially accusatory seventh-house example. [PDF376–378; R2487–R2526; OVERLAP_REVIEW_PENDING.md]",
+      "sha256": "3bba321840c534f15798bbfebdaf4ddf6023a8ce456fae5b6df1c5d8b187f3c8"
+    },
+    {
+      "id": "C21",
+      "text": "Two reviewer corrections preserve unusual source nuance: the second-house paragraph speaks of being **within the power of the loser or of someone of his house**, and says recovery **may be obtained by money**; this is not simply household membership. The eleventh-house paragraph allows a **neighbor** as a possible separate category and says recovery occurs **by such a person OR his means**, without proving that any neighbor, servant or relative committed theft. [PDF377–378; R2511,R2523; independent_review/OPUS_D_INITIAL.json]",
+      "sha256": "6fe78530e1ae4fb2b49060baab2b282236532833dd8b62dab17371e685d1c16a"
+    },
+    {
+      "id": "C22",
+      "text": "## Town, distance, location and direction (printed344–347)",
+      "sha256": "2edfac71e2f3a6187257f0bbe81df8ec705c6cdd4e53b201d7ad90e42f6244ee"
+    },
+    {
+      "id": "C23",
+      "text": "Further original headings ask whether the person is still **in town**, how far owner and alleged thief are apart, *Where the Thief is*, *Another*, and *Toward what part / Which way the Thief is gone*. The source advances more than one distance scheme: some rules rely on significator house and motion, while others count degrees and assign differing units based on fixed/common/movable signs. Separate statements compare angular positions, strength, applying configurations and apparently conflicting directions. These are **early-modern conjectural location methods**, not accurate maps or travel-time predictions. [PDF378–381; R2526–R2571]",
+      "sha256": "74bee8807011e43f2253afa8b393b806ac6b9e9e19fcd7f2a1a2d758ca1a2b4c"
+    },
+    {
+      "id": "C24",
+      "text": "On printed342, the author uses **Moon in the ninth, in conjunction, square or opposition** to Saturn or Mars as a supposed return-of-the-thief condition; the first glyph had initially been transcribed as a **sextile**, materially changing the source. The independent source review corrected it to **conjunction** while retaining a further ambiguous retrograde condition. The figure is a historical condition and is not evidence about an actual fugitive or stolen object. [PDF376; R2499; independent_review/OPUS_C_INITIAL.json]",
+      "sha256": "ea643ed2510e142177f5e6e661fa8803d65d934910bd2ddaa1ef644dba30dab2"
+    },
+    {
+      "id": "C25",
+      "text": "The body and marginalia on printed346 also require separation: **seventh lord in ascendant** is said to indicate the thief returning home before the querent, followed by the author's *probatum est* claim. The printed margin separately says it **sometimes** indicates willingness to bring the goods home. The latter word *sometimes* cannot automatically be made an unconditional qualifier of the body. No independently confirmed instance is supplied. [PDF380; R2551–R2552; independent_review/OPUS_D_INITIAL.json]",
+      "sha256": "09b0856dc09876bd18eefb60948a89d33f09bd4c6a7dd9e2fd6557d6591c8d68"
+    },
+    {
+      "id": "C26",
+      "text": "## First source-window readbacks: corrected source directions and open glyph (printed331–335)",
+      "sha256": "67ddbf61526bd61407066492920241d0690c9cbad6e0b392d6d7dbd5f5f2d21c"
+    },
+    {
+      "id": "C27",
+      "text": "The opening theft passage was independently re-read from original images in two separate smaller windows. Both first-pass reviews returned **FINDS_ERROR** and found several material changes of meaning. The printed p331 rule naming **LORD OF THE HOUR as ALSO LORD OF SEVENTH** only increases the supposed radicality of judgment; a **separate** later source claim says seventh lord in ascendant may point to querent only under a specific question of fidelity or when querent is the chief object of suspicion. The original source's subsequent complexion/sign rule does **not** require the hour/seventh identity. These are now separate R2319 and R2572 in \\`SOURCE_ORDER.json\\`, not one merged implied crime. A printed marginal word is **'consentanious'** (consonant with reason), not 'conscientious'; another sentence promises hope of **discovery** of goods, not actual guaranteed **recovery**. [PDF365; R2319,R2572,R2320,R2322,R2327; independent_review/OPUS_A1_INITIAL.json]",
+      "sha256": "787f5ce9e3b9f1f845c5d9f7aa91d081d8ab24d61a3ebef699c6b7e5c25a6095"
+    },
+    {
+      "id": "C28",
+      "text": "Multiple p332–333 worked conditional examples were repaired: the Sun as lord of second is in **TENTH**, not third, and no unprinted Sun/seventh sextile is added. In another example, Venus is in tenth **in sign of tenth**, while Moon **opposes** the seventh lord; a separate 'taken in jest' example also has Moon **opposing** seventh lord, not conjoining it. Another outcome says stolen-in-jest property will **'scant be had again'** (hard to recover), the opposite of a previous 'soon recovered' paraphrase. [PDF366–367; R2339,R2343,R2345,R2347; independent_review/OPUS_A1_INITIAL.json; OPUS_A2_INITIAL.json]",
+      "sha256": "2c855e18276477274cd10ef22d2c21d2774fd758fe3bbdd04e00137cc81a9538"
+    },
+    {
+      "id": "C29",
+      "text": "**Important unresolved original glyph:** A1 and A2 read the unusual aspect glyph in the p332 'taken away in jest' clause differently (**opposition vs conjunction** to the second HOUSE). The repaired R2338 preserves BOTH competing original-image readings as uncertainty, rather than making the attractive interpretation an executable rule. The destination is the printed **second HOUSE**, not an inferred second-house lord. More generally, source modalities 'in jest', 'scarcely recovered', 'possibly discovered', 'actually stolen' and 'suspected' are distinct authorial assertions, none empirically authenticated. [PDF366; R2338; A1_A2_RECONCILIATION.json]",
+      "sha256": "381c501b8c8d02bf2517ba4d9ffb5c38683a0c933bef90ecc3500c1a51b5f387"
+    },
+    {
+      "id": "C30",
+      "text": "Later source copies bear **handwritten** margin numbers 1–3, 5–8, possibly others, a large 7th-house annotation, the printed signature **Kk 3**, and a small letter/caret beside the printed last-line **Planet** on p335. These are catalogued as manuscript/bibliographic witnesses, **not additional numbered Lilly rules**; the owner of the annotations and their relation to the same-volume errata are unknown. [PDF365–369; ORIGINAL_MARGINALIA_REGISTER.json]",
+      "sha256": "1c692637c7d5e1442f529d465a5cba4aacc8a882995e6e390fd40e8a3155cd31"
+    },
+    {
+      "id": "C31",
+      "text": "## Same-volume errata, evidentiary qualifications and final boundary",
+      "sha256": "cd77085b06e5d0653594c7c00aa15fe17225ee21bddbada8422fc30ddf1ed1b2"
+    },
+    {
+      "id": "C32",
+      "text": "The original volume's errata leaf (PDF888) includes explicit instructions for printed **p335 last line “Planet”** and **p336 lines4 and9 “vertue”**. An additional locator preceding *“for ☉ and ♂”* is faint and may read **p307 or p337**, so it is not assigned to the printed337 age/gender discussion without better evidence. The printed p330 *“read or”* belongs to the **already accepted earlier B02t fugitive section**, not an additional B02u source-unit. Original page bodies, errata, and later handwritten marginal marks are preserved as distinct witnesses. [ERRATA_COLLATION.json; SOURCE_READER_ERRATA.json]",
+      "sha256": "f9c0605b6969496c5e633afe673b317527d9aec197bd807e0ff74ccfb10442a3"
+    },
+    {
+      "id": "C33",
+      "text": "The source-image readers were independent of producer reasoning; the initial B, C and D results each returned material corrections. Both split A1/A2 first-pass source reviews have been received and corrected; their page332 aspect-glyph disagreement remains open and no final blind rereview of the corrected reference packet has occurred. The extracted units and their dependents will be retested only after those corrections. All source-reader uncertainties and both confirmed and disputed interpretations remain explicitly indexed in UNRESOLVED.json. **Neither the reviewers nor regression tests assess whether the 1647 method works in the world.**",
+      "sha256": "0f1a51f7ef13f5404bf147de921bbaf532e953d08acc2f6e73e2975b471be261"
+    },
+    {
+      "id": "C34",
+      "text": "**Next physical source boundary** is original PDF381/printed347 at *Of the house of the Thiefe, and the mark thereof*, followed by *Of the Door of the house* and their PDF382 continuation. Chapter L itself ends only **above** original PDF400/printed366, followed below by Chapter LI. Those future passages are already identified as an open obligation, not silently treated as read or accepted. [NEXT_PHASE_PDF381_BOUNDARY_EXCEPTION.json]\n",
+      "sha256": "f548c93574cf5c2f93f5f6bf01b3275154fb35281b1d0d5730c0700f1ea50af8"
+    }
+  ],
+  "unit_count": 34,
+  "source_evidence_only": "William Lilly original 1647 print images, no real criminal or predictive validation"
+}
