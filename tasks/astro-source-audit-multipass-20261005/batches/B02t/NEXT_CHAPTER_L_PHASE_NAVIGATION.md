@@ -1,0 +1,18 @@
+# Chapter L unextracted remainder — original-page navigation only
+
+**Status:** NOT SOURCE-EXTRACTED, NOT ACCEPTED. Parent historical source study OPEN. First phase stops on original PDF364/printed330 at the distinct heading **Of a Thief and Theft**; all body text BELOW this heading belongs to next phase, not the previously extracted woman/fugitive section.
+
+The remaining source reaches original **PDF400/printed366 ABOVE** divider for Chapter LI. Preliminary *ALTO navigation* found headings on these original pages, but **ALTO is not authoritative for lettering, aspects, body boundaries or omissions**. Inspect each original page image before assigning records.
+
+- **PDF364/printed330 below heading:** *Of a Thief and Theft*. Opening assigns ascendant/its lord to questioner, second house/lord to thing lost, seventh to thief (subject to other peregrine significator), tenth to king/authority. This opening was visually checked in the original PDF364 image; DO NOT count as B02t phase1.
+- **PDF365–370 / printed331–336:** named significator of thief, of stolen thing, how goods were taken, theft-versus-stray rival conditions, capture/recovery, birth time/planetary aspects. At PDF370/printed336 a new **Of the age of the Thief** heading appears. More ancient/source-specific gender or custody attributions, not a validated legal inference.
+- **PDF371–374 / printed337–340:** claimed age, sex, number of thieves, clothing, then **To know the Names by the Lord of the seventh**. The source’s name table spans PDF374–376; original PDF375/printed341 was visually examined. It is a source table, NOT a sample of real identified criminals or demonstrated identities.
+- **PDF376–378 / printed342–344:** *Whether the Thief be of the house or not*, *A Stranger or Familiar*, *Rules by the Lord of the seventh house* with house-by-house social roles. Original PDF376–377 images were directly read during navigation. Must preserve historical allegations as author testimony, not diagnosis or accusation.
+- **PDF379–~392 / printed345–358 (candidate cut):** *Whether the Thief be in Town or no*, *Where the Thief is*, alleged house location, distance, goods custody, *Place where the Goods stolen are*, *Where the Goods are*. PDF392/printed358 introduces **Of the discovery of the thief, and recovery of the goods**, a likely next natural subphase boundary.
+- **PDF392–400 / printed358–366:** discovery and possible restoration, suspicion, kinship, thief direction. PDF398/printed364 opens *Whither is the thief gone, or Fugitive*. Chapter L ends **PDF400 above** Chapter LI divider.
+
+Proposed economical next segmentation, all provisional until source-image confirmation: **Phase2:** PDF364 below thief heading through PDF378 upper, stop before PDF379 next heading; **Phase3:** PDF379 through PDF392 immediately before discovery heading; **Phase4:** PDF392 discovery heading to PDF400 ABOVE LI divider. Physical boundary pages are repeated as context but source clauses/IDs must never be double counted. If original images show changed headings or page-crossing clauses, adjust these segments rather than treating this ALTO sketch as authority.
+
+All original figures, sample names, historical descriptions of servants or suspected thieves, gender, social status and physical traits are unauthenticated claims in this original 1647 document. They are neither modern police recommendations nor independent predictions and must remain out of the human natal scoring/case validation tracks.
+
+Next source ID after phase1 is calculated from the **live accepted** Lilly index, NOT assumed to be R2300 until phase1 review, publication and delivery actually succeed. Full-original PDF SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`.
