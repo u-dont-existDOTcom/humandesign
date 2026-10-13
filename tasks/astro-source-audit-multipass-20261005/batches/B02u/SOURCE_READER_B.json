@@ -1,0 +1,1158 @@
+{
+  "timestamp": "2026-10-13 21:59:16 UTC",
+  "window": "B",
+  "original_pdf_pages_read": [369, 370, 371, 372, 373],
+  "original_errata_images_read": ["errata-888.png"],
+  "main_source_page_count": 5,
+  "additional_errata_page_count": 1,
+  "total_source_images_read": 6,
+  "first_main_source_heading_inspected": "That the Goods are stolen.",
+  "last_main_source_heading_inspected": "Of the Cloathes of the Thiefe.",
+  "errata_heading_inspected": "ERRATA.",
+  "status": "DRAFT_SOURCE_ONLY",
+  "documentary_scope": "All statements below report Lilly's historical claims or claims he attributes to earlier writers. They are not findings about actual theft, people, age, gender, bodily characteristics or recovery. Unicode astrology symbols represent the identifiable printed glyphs; they do not reproduce their typeface. Giving vertue, being with, aspecting, applying and separating retain their distinct source relations.",
+  "complete_page_outline": [
+    {
+      "pdf_page": 369,
+      "printed_page": 335,
+      "running_heading": "all manner of Questions.",
+      "headings": [
+        "That the Goods are stolen.",
+        "Not stolen.",
+        "It will be (or is intended to be stolen.)",
+        "It is Lost or Stolen"
+      ],
+      "page_end_catchword": "the",
+      "continuation_from_previous": false,
+      "continuation_to_next": "The sentence beginning beneath It is Lost or Stolen continues onto PDF370.",
+      "margin_and_nonbody_observations": "Handwritten subsection numbers and an upper-right house annotation are present. They are distinguished from the printed rules. No additional printed subsection heading was found in the left margin."
+    },
+    {
+      "pdf_page": 370,
+      "printed_page": 336,
+      "running_heading": "The Resolution of",
+      "headings": ["Of the age of the Thief."],
+      "page_end_catchword": "If",
+      "continuation_from_previous": true,
+      "continuation_to_next": "The age discussion continues on PDF371, whose opening begins If.",
+      "margin_and_nonbody_observations": "Handwritten numbering and a numerical annotation accompany the age heading. The broad left margin contains no additional printed rule heading."
+    },
+    {
+      "pdf_page": 371,
+      "printed_page": 337,
+      "running_heading": "all manner of Questions.",
+      "headings": ["The age of the Thiefe."],
+      "inherited_section_heading": "Of the age of the Thief.",
+      "page_end_catchword": "yeers,",
+      "continuation_from_previous": true,
+      "continuation_to_next": "The final rule about young years continues onto PDF372.",
+      "printed_signature": "V v",
+      "margin_and_nonbody_observations": "Handwritten house, subsection-number and right-margin annotations are present. They are not treated as printed source rules."
+    },
+    {
+      "pdf_page": 372,
+      "printed_page": 338,
+      "running_heading": "The Resolution of",
+      "headings": ["Whether the Thiefe be a Man or Woman."],
+      "inherited_section_heading": "The age of the Thiefe.",
+      "page_end_catchword": "[♀ ☿ ☽]",
+      "continuation_from_previous": true,
+      "continuation_to_next": "The gender discussion continues at the top of PDF373, beginning with the three planetary glyphs anticipated at the foot of this page.",
+      "margin_and_nonbody_observations": "A handwritten numerical annotation follows the gender heading. The left margin contains no additional printed rule heading."
+    },
+    {
+      "pdf_page": 373,
+      "printed_page": 339,
+      "running_heading": "all manner of Questions.",
+      "headings": [
+        "If one Thiefe or more.",
+        "Of the Cloathes of the Thiefe."
+      ],
+      "inherited_section_heading": "Whether the Thiefe be a Man or Woman.",
+      "page_end_catchword": "colours",
+      "continuation_from_previous": true,
+      "continuation_to_next": "The clothing instruction ends in the body with judge the; colours is the catchword for its continuation outside this window.",
+      "printed_signature": "V v 2",
+      "margin_and_nonbody_observations": "Handwritten house and subsection-number annotations are present. No additional printed rule heading was found in the left margin."
+    },
+    {
+      "pdf_page": 888,
+      "printed_page": null,
+      "headings": ["ERRATA."],
+      "page_end_catchword": null,
+      "continuation_from_previous": false,
+      "inspection_scope": "The entire supplied errata image was inspected. Corrections addressing printed pages 335–337 are extracted below; corrections to other pages are outside this window."
+    }
+  ],
+  "units": [
+    {
+      "local_id": "B001",
+      "pdf_pages": [369],
+      "section_heading": "That the Goods are stolen.",
+      "kind": "heading",
+      "short_original_anchor": "That the Goods are stolen.",
+      "normalized_historical_statement": "Printed page 335 opens a subsection asserting indicators that goods are stolen.",
+      "preconditions": [],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B002",
+      "pdf_pages": [369],
+      "section_heading": "That the Goods are stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "If any Planet be in the ascendant peregrine",
+      "normalized_historical_statement": "Lilly treats any peregrine planet in the Ascendant as an indication that the goods are stolen.",
+      "preconditions": ["Any planet is in the Ascendant.", "That planet is peregrine."],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B003",
+      "pdf_pages": [369],
+      "section_heading": "That the Goods are stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "the peregrine Planet give vertue to the",
+      "normalized_historical_statement": "Lilly also indicates stolen goods when the peregrine planet gives virtue to the Moon, or the Moon gives virtue to that planet.",
+      "preconditions": ["A peregrine planet gives virtue to ☽, or ☽ gives virtue to it."],
+      "exceptions_and_uncertainty": ["No particular aspect, house or application/separation direction is specified in this alternative."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B004",
+      "pdf_pages": [369],
+      "section_heading": "That the Goods are stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "the Lord of ascendant peregrine",
+      "normalized_historical_statement": "Lilly treats a peregrine lord of the Ascendant as another indication that the goods are stolen.",
+      "preconditions": ["The lord of the Ascendant is peregrine."],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B005",
+      "pdf_pages": [369],
+      "section_heading": "That the Goods are stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "if he have no dignities where he is",
+      "normalized_historical_statement": "If the source's thief significator is peregrine, the goods are said to be stolen. Lilly explains peregrinity here as having no dignities at the planet's position.",
+      "preconditions": ["The thief significator has no dignities where it is."],
+      "exceptions_and_uncertainty": ["The printed subject is Thiefe; its planetary referent is retained rather than interpreted as evidence about a person."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B006",
+      "pdf_pages": [369],
+      "section_heading": "That the Goods are stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "if the Significator be with the Lord of the ascendant",
+      "normalized_historical_statement": "Lilly indicates stolen goods if the significator is with the lord of the Ascendant, or in square or opposition to that lord.",
+      "preconditions": ["The significator is with the Ascendant's lord, or is in □ or ☍ to it."],
+      "exceptions_and_uncertainty": ["The source says with rather than printing a conjunction glyph in this clause.", "Application or separation is not specified."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B007",
+      "pdf_pages": [369],
+      "section_heading": "That the Goods are stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "If any Planet doe separate from the Lord of the house",
+      "normalized_historical_statement": "Lilly indicates stolen goods if any planet separates from the lord of the house of the Moon.",
+      "preconditions": ["Any planet separates from the lord of the house occupied by ☽."],
+      "exceptions_and_uncertainty": ["The particular separating aspect is not stated."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B008",
+      "pdf_pages": [369],
+      "section_heading": "That the Goods are stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "if any Planet have respect to the Lord of the",
+      "normalized_historical_statement": "Lilly indicates stolen goods if any planet has conjunction, square or opposition to the lord of the Moon's term.",
+      "preconditions": ["Any planet has respect to the lord of the term occupied by ☽.", "The printed relations are ☌, □ or ☍."],
+      "exceptions_and_uncertainty": ["No application or separation is specified."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B009",
+      "pdf_pages": [369],
+      "section_heading": "That the Goods are stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "be separate from the Lord of the house of Substance",
+      "normalized_historical_statement": "If any planet is separated from the lord of the house of Substance, Lilly says the goods are taken away.",
+      "preconditions": ["Any planet is separated from the lord of the house of Substance."],
+      "exceptions_and_uncertainty": ["The source's result is taken away; this is not silently replaced by a stronger theft conclusion.", "No separating aspect is specified."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B010",
+      "pdf_pages": [369],
+      "section_heading": "That the Goods are stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "if the Thiefe have respect unto the Lord of the house",
+      "normalized_historical_statement": "If the thief significator has conjunction, square or opposition to the lord of the Moon's house, Lilly says the goods are taken away.",
+      "preconditions": ["The thief significator has ☌, □ or ☍ to the lord of the house occupied by ☽."],
+      "exceptions_and_uncertainty": ["Application or separation is not specified.", "The result remains taken away."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B011",
+      "pdf_pages": [369],
+      "section_heading": "Not stolen.",
+      "kind": "heading",
+      "short_original_anchor": "If neither the Lord of the house",
+      "normalized_historical_statement": "A distinct printed subsection, Not stolen., introduces contrary indications.",
+      "preconditions": [],
+      "exceptions_and_uncertainty": ["The exact heading contains only two words; the anchor is taken from its opening rule."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B012",
+      "pdf_pages": [369],
+      "section_heading": "Not stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "separate not themselves from one another",
+      "normalized_historical_statement": "Under the printed nonseparation condition involving the lord of the Moon's house, the lord of the second, their relation to one another and other planets' separation from them, Lilly says the sought thing is in its own place.",
+      "preconditions": [
+        "The source names the lord of the house of ☽ and the lord of the second.",
+        "It states separate not themselves from one another, or any other Planet from them."
+      ],
+      "exceptions_and_uncertainty": ["The opening neither and subsequent not make the grammar awkward. The apparent nonseparation polarity is retained without silently rewriting its logical structure."],
+      "confidence": "medium"
+    },
+    {
+      "local_id": "B013",
+      "pdf_pages": [369],
+      "section_heading": "Not stolen.",
+      "kind": "source_conditional",
+      "short_original_anchor": "not stole, but missing, or else negligently throwne aside",
+      "normalized_historical_statement": "If the Moon gives virtue to Saturn or Mars, to any planet in cadent houses, or to the lord of the eighth, Lilly says the thing is not stolen but missing or negligently thrown aside.",
+      "preconditions": ["☽ gives virtue to ♄ or ♂, or to any planet in a cadent house, or to the lord of the eighth."],
+      "exceptions_and_uncertainty": ["No particular aspect is specified.", "A later rule on printed page 336 gives a competing stolen/taken-away result for overlapping virtue-giving conditions."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B014",
+      "pdf_pages": [369],
+      "section_heading": "It will be (or is intended to be stolen.)",
+      "kind": "heading",
+      "short_original_anchor": "It will be (or is intended to be stolen.)",
+      "normalized_historical_statement": "The next subsection distinguishes future or intended theft.",
+      "preconditions": [],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B015",
+      "pdf_pages": [369],
+      "section_heading": "It will be (or is intended to be stolen.)",
+      "kind": "source_conditional",
+      "short_original_anchor": "If the Moon be lady of the seventh",
+      "normalized_historical_statement": "Lilly gives a future-theft indication when the Moon is lady of the seventh and gives virtue to a planet in the second or eleventh. The following alternative contains an unclear word and a condition that the Moon herself has neither sextile nor trine to the houses' cusps.",
+      "preconditions": [
+        "☽ is lady of the seventh and gives her virtue to a planet in the second or eleventh.",
+        "A following or-branch states having her selfe neither ✶ nor △ to the cusps of the houses."
+      ],
+      "exceptions_and_uncertainty": ["The word between or and having her selfe is not securely read.", "The scope of the no-sextile/no-trine condition relative to the preceding branch is uncertain; it is not silently imposed on every alternative."],
+      "confidence": "medium"
+    },
+    {
+      "local_id": "B016",
+      "pdf_pages": [369],
+      "section_heading": "It will be (or is intended to be stolen.)",
+      "kind": "source_conditional",
+      "short_original_anchor": "if any Planet in the seventh give vertue",
+      "normalized_historical_statement": "Lilly indicates future theft when a planet in the seventh gives virtue to a planet in the second or eleventh, and has no sextile or trine to the planet in the seventh.",
+      "preconditions": [
+        "A planet in the seventh gives virtue to a planet in the second or eleventh.",
+        "The printed clause adds have no ✶ or △ to the Planet in the seventh."
+      ],
+      "exceptions_and_uncertainty": ["The subject of have no and the reference back to the planet in the seventh are grammatically unclear. The relation is preserved without supplying a missing subject."],
+      "confidence": "medium"
+    },
+    {
+      "local_id": "B017",
+      "pdf_pages": [369],
+      "section_heading": "It will be (or is intended to be stolen.)",
+      "kind": "source_conditional",
+      "short_original_anchor": "if the lord of the tenth be in",
+      "normalized_historical_statement": "Lilly says the goods will be stolen if the lord of the tenth is in conjunction, square or opposition with the thief significator.",
+      "preconditions": ["The lord of the tenth is in ☌, □ or ☍ with the thief significator."],
+      "exceptions_and_uncertainty": ["Application or separation is not specified."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B018",
+      "pdf_pages": [369],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "heading",
+      "short_original_anchor": "It is Lost or Stolen",
+      "normalized_historical_statement": "A new subsection begins near the foot of printed page 335 and continues onto page 336.",
+      "preconditions": [],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B019",
+      "pdf_pages": [369, 370],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "source_conditional",
+      "short_original_anchor": "doe separate himself from the Lord of the house",
+      "normalized_historical_statement": "Lilly says the thing is taken away with hands and stolen if a planet separates from the lord of the Moon's house or from the lord of the second.",
+      "preconditions": ["A planet separates from the lord of the house occupied by ☽, or from the lord of the second."],
+      "exceptions_and_uncertainty": ["The sentence crosses PDF369–370.", "The errata directs that Planet be read in the last body line of printed page 335.", "No separating aspect is specified."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B020",
+      "pdf_pages": [370],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "source_conditional",
+      "short_original_anchor": "be Lady of the seventh, and give vertue",
+      "normalized_historical_statement": "Lilly indicates stolen goods when the Moon is lady of the seventh and gives virtue to the lord of the Ascendant.",
+      "preconditions": ["☽ is lady of the seventh.", "☽ gives virtue to the lord of the Ascendant."],
+      "exceptions_and_uncertainty": ["No aspect or application/separation is specified."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B021",
+      "pdf_pages": [370],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "source_conditional",
+      "short_original_anchor": "Lord of the ascendant give",
+      "normalized_historical_statement": "Lilly gives the reverse virtue-giving indication: the lord of the Ascendant gives virtue to the Moon in the seventh, and the goods are said to be stolen.",
+      "preconditions": ["The lord of the Ascendant gives virtue to ☽.", "☽ is in the seventh."],
+      "exceptions_and_uncertainty": ["This condition is Moon in the seventh, rather than explicitly Moon ruling the seventh.", "The errata corrects vertue at printed page 336, line 4."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B022",
+      "pdf_pages": [370],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "source_conditional",
+      "short_original_anchor": "If any Planet in the ascendant give vertue",
+      "normalized_historical_statement": "Lilly indicates stolen goods if any planet in the Ascendant gives virtue to the signifier of the thief.",
+      "preconditions": ["A planet is in the Ascendant.", "It gives virtue to the thief significator."],
+      "exceptions_and_uncertainty": ["No particular aspect or application/separation is specified."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B023",
+      "pdf_pages": [370],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "source_conditional",
+      "short_original_anchor": "the Thief gives so much of the Goods",
+      "normalized_historical_statement": "If the thief significator gives virtue to the lord of the Ascendant, Lilly says the goods are stolen but the thief gives some goods back to the owner, proportionate to the virtue or light given to that lord.",
+      "preconditions": ["The thief significator gives virtue to the lord of the Ascendant."],
+      "exceptions_and_uncertainty": ["The return is qualified by according to the vertue or light.", "The errata corrects vertue at printed page 336, line 9.", "This is an authorial prediction, not evidence of actual restitution."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B024",
+      "pdf_pages": [370],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "source_conditional",
+      "short_original_anchor": "it is stolen, and the Thief shall escape",
+      "normalized_historical_statement": "If any planet in the Ascendant is peregrine, Lilly says the goods are stolen and predicts that the thief will escape.",
+      "preconditions": ["Any planet in the Ascendant is peregrine."],
+      "exceptions_and_uncertainty": ["The escape claim is an additional historical prediction beyond the similar page 335 theft indication."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B025",
+      "pdf_pages": [370],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "source_conditional",
+      "short_original_anchor": "If the peregrine planet give vertue to the Moon",
+      "normalized_historical_statement": "Lilly associates stolen goods with a peregrine planet giving virtue to the Moon, or the Moon to it, and a following condition that the thief significator aspects the Moon by conjunction, square or opposition, or aspects the lord of the Moon's term.",
+      "preconditions": [
+        "A peregrine planet gives virtue to ☽, or ☽ gives virtue to that planet.",
+        "The following if-clause names the thief significator aspecting ☽ by ☌, □ or ☍, or aspecting the lord of ☽'s term."
+      ],
+      "exceptions_and_uncertainty": ["The punctuation does not securely establish whether the second if-clause is an additional requirement or a parallel alternative.", "The aspect to the term lord is not separately specified.", "No application/separation is stated."],
+      "confidence": "medium"
+    },
+    {
+      "local_id": "B026",
+      "pdf_pages": [370],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "source_conditional",
+      "short_original_anchor": "but in fixed Signes, taken away",
+      "normalized_historical_statement": "Lilly says the things are stolen when the Moon gives virtue to Saturn or Mars, to a planet in a cadent house, or to the lord of the eighth, with the printed movable-sign qualification; in fixed signs the result is taken away.",
+      "preconditions": [
+        "☽ gives virtue to ♄ or ♂, or to any planet in a cadent house, or to the lord of the eighth.",
+        "The final alternative adds and he in a movable Signe.",
+        "Fixed signs receive the contrasting result taken away."
+      ],
+      "exceptions_and_uncertainty": ["The antecedent of he and the reach of the movable-sign qualification are not completely explicit.", "Printed page 335 calls overlapping virtue-giving conditions not stolen but missing or thrown aside. Both results are retained."],
+      "confidence": "medium"
+    },
+    {
+      "local_id": "B027",
+      "pdf_pages": [370],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "source_conditional",
+      "short_original_anchor": "If the Lord of the house of the Moon separate",
+      "normalized_historical_statement": "Lilly indicates stolen goods if the lord of the Moon's house separates from any planet, or the lord of the second separates from any planet.",
+      "preconditions": ["The lord of ☽'s house separates from any planet, or the lord of the second does so."],
+      "exceptions_and_uncertainty": ["The separating subject here is the house lord, unlike the planet separating from a lord in B007 and B019.", "No separating aspect is specified."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B028",
+      "pdf_pages": [370],
+      "section_heading": "It is Lost or Stolen",
+      "kind": "source_conditional",
+      "short_original_anchor": "gone away by it selfe, and not stolen",
+      "normalized_historical_statement": "If the lord of the Moon's house or of the second is in its own house and has virtue of Saturn or Mars, Lilly says the thing has gone away by itself and is not stolen.",
+      "preconditions": ["The lord of ☽'s house or of the second is in its own house.", "That lord has virtue of ♄ or ♂."],
+      "exceptions_and_uncertainty": ["The source says have vertue of; it does not explicitly state an applying aspect."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B029",
+      "pdf_pages": [370],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "heading",
+      "short_original_anchor": "Of the age of the Thief.",
+      "normalized_historical_statement": "A printed subsection introduces conjectures about the thief's age.",
+      "preconditions": [],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B030",
+      "pdf_pages": [370],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "in the midst of his Orientality, then of middle age",
+      "normalized_historical_statement": "Lilly attributes to Haly an age method using the thief-signifying planet: Oriental signifies young; the middle of its Orientality signifies middle age; the end of its Orientality signifies old.",
+      "preconditions": ["The planet is the significator of the thief.", "Its Oriental condition and position within Orientality are considered."],
+      "exceptions_and_uncertainty": ["The text gives no numerical ages or precise Oriental-phase boundaries here."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B031",
+      "pdf_pages": [370],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "To judge by the distance of the Planets",
+      "normalized_historical_statement": "Lilly directs that age be judged from planets' distance from the Sun, which makes them Oriental or Occidental, following Haly and other writers.",
+      "preconditions": ["Consider the distance of the relevant planets from ☉.", "Use their Oriental or Occidental condition."],
+      "exceptions_and_uncertainty": ["No separate Occidental age mapping is supplied in this paragraph."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B032",
+      "pdf_pages": [370],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "frame the age according to an exact mixture",
+      "normalized_historical_statement": "Lilly says sign degrees improve the preceding method: an Oriental planet in few degrees denotes youth or a younger age, while more degrees denotes more age; the indications should be mixed.",
+      "preconditions": ["Consider the sign degrees occupied by the significator together with the preceding solar-distance method.", "For the explicitly Oriental planet, distinguish few from more degrees."],
+      "exceptions_and_uncertainty": ["Few and more are not numerically defined.", "The result is to be formed from a mixture rather than a single condition alone."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B033",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "then behold the distance of them",
+      "normalized_historical_statement": "For Saturn, Jupiter or Mars as significators, Lilly gives a solar-aspect age sequence: conjunction with the Sun to square signifies 18 years, with nearer the Sun meaning younger; square to opposition signifies 36; opposition to the next square signifies 45; that last square to conjunction signifies 72, continuing to life's end.",
+      "preconditions": [
+        "♄, ♃ or ♂ is a significator.",
+        "Measure its distance from ☉ through the printed sequence ☌ → □ → ☍ → next □ → ☌."
+      ],
+      "exceptions_and_uncertainty": ["The four different numerical stages are preserved as printed, without interpolation or correction."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B034",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "Guido Bonatus saith, the",
+      "normalized_historical_statement": "Lilly attributes to Guido Bonatus the claim that the Sun as significator between the Ascendant and Midheaven or tenth house signifies youth, with age increasing until it reaches the angle of the earth.",
+      "preconditions": ["☉ is significator.", "Its position is considered between the Ascendant and Midheaven, then onward to the angle of the earth."],
+      "exceptions_and_uncertainty": ["The source explicitly equates Midheaven and tenth house.", "This method is retained separately from the later Sun-quadrant age classification."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B035",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "the age is taken by their distance or elongation",
+      "normalized_historical_statement": "For Venus or Mercury as significator, Lilly's continuing account uses solar elongation: direct conjunction with the Sun to halfway toward conjunction in retrogradation signifies about 18, nearer the Sun being younger; halfway to that retrograde conjunction signifies 36 or near it, nearer conjunction being older; retrograde conjunction to halfway toward conjunction in direction signifies 45; that halfway point to conjunction in direction signifies 72, continuing to life's end.",
+      "preconditions": [
+        "♀ or ☿ is significator.",
+        "Use distance or elongation from ☉.",
+        "Retain the printed distinctions between direct conjunction, conjunction in retrogradation and conjunction in direction."
+      ],
+      "exceptions_and_uncertainty": ["About 18 and 36 or neer that age are explicit approximations.", "The wording is preserved without substituting a modern orbital explanation."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B036",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "if the",
+      "normalized_historical_statement": "If the Moon is signifier, Lilly directs that it be judged by the preceding Saturn, Jupiter and Mars method.",
+      "preconditions": ["☽ is signifier.", "Use the method previously stated for ♄, ♃ and ♂."],
+      "exceptions_and_uncertainty": ["The numerical stages are supplied by the explicit backward reference, not by an independently stated lunar sequence here.", "The short anchor avoids an uncertain exact typographic transcription of the glyph-containing clause."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B037",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "The same Guido saith",
+      "normalized_historical_statement": "Lilly attributes to the same Guido a Venus indication of a young thief, a woman or a maid.",
+      "preconditions": ["♀ is the planet used in this significatory age account."],
+      "exceptions_and_uncertainty": ["Young, woman and maid are retained as the author's grouped conjectures, not demographic identification."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B038",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "of lesse age then",
+      "normalized_historical_statement": "In the same attributed account, Mercury signifies less age than Venus.",
+      "preconditions": ["☿ is the planet used in this account.", "Its indicated age is compared with ♀."],
+      "exceptions_and_uncertainty": ["No numerical age is given.", "The glyph-containing anchor is abbreviated rather than expanded with invented words."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B039",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "full age, or in prime of his youth",
+      "normalized_historical_statement": "In the same attributed account, Mars signifies full age or the prime of youth.",
+      "preconditions": ["♂ is the planet used in this account."],
+      "exceptions_and_uncertainty": ["The two descriptions are alternatives; no numerical age is supplied."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B040",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "more of yeers then",
+      "normalized_historical_statement": "In the same attributed account, Jupiter signifies more years than Mars.",
+      "preconditions": ["♃ is the planet used in this account.", "Its indicated age is compared with ♂."],
+      "exceptions_and_uncertainty": ["No numerical age is supplied.", "The anchor is shortened around the printed planetary glyphs."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B041",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "old age or decrepit, or well in yeers",
+      "normalized_historical_statement": "In the same attributed account, Saturn signifies old age, decrepitude or being well advanced in years.",
+      "preconditions": ["♄ is the planet used in this account."],
+      "exceptions_and_uncertainty": ["These are the source's historical age descriptions, not a clinical assessment."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B042",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "as before is said",
+      "normalized_historical_statement": "The same account refers the Sun's signification back to what was stated before.",
+      "preconditions": ["☉ is considered in the same planetary age account."],
+      "exceptions_and_uncertainty": ["The backward reference does not restate the full solar method.", "The anchor is shorter than five words because the relevant printed phrase is short."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B043",
+      "pdf_pages": [371],
+      "section_heading": "Of the age of the Thief.",
+      "kind": "source_conditional",
+      "short_original_anchor": "in the beginning of the Moneth to the first quarter",
+      "normalized_historical_statement": "In the printed text, the Moon as significatrix from the month's beginning to first quarter signifies youth; near full Moon it signifies middle age or a perfect man; at the month's end it signifies an aged thief or greater years.",
+      "preconditions": ["☽ is significatrix in the uncorrected printed passage.", "Distinguish beginning to first quarter, near full ☽, and end of the month."],
+      "exceptions_and_uncertainty": ["The errata's printed-page-337 line-28 instruction concerning ☉ and ♂ has an uncertain target in this area; this unit preserves the visible body text pending reconciliation.", "Perfect man is retained as historical wording."],
+      "confidence": "medium"
+    },
+    {
+      "local_id": "B044",
+      "pdf_pages": [371],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "heading",
+      "short_original_anchor": "The age of the Thiefe.",
+      "normalized_historical_statement": "A second, separately printed age heading introduces further methods.",
+      "preconditions": [],
+      "exceptions_and_uncertainty": ["This heading is not collapsed into Of the age of the Thief."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B045",
+      "pdf_pages": [371],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "he is young; if decrease he is old",
+      "normalized_historical_statement": "Lilly says an increasing Moon signifies a young thief, while a decreasing Moon signifies an old thief.",
+      "preconditions": ["☽ increases, or alternatively decreases."],
+      "exceptions_and_uncertainty": ["The clause does not separately define increase, though the later page explicitly discusses increase in light."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B046",
+      "pdf_pages": [371],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "or aspected by him, or in the last degrees",
+      "normalized_historical_statement": "Lilly indicates old age if the significator is in Saturn's house, is aspected by Saturn, or is in the last degrees of a sign. Saturn itself signifies the same age result.",
+      "preconditions": ["The significator is in the house of ♄, or is aspected by ♄, or occupies the last degrees of a sign.", "A separate short clause gives ♄ the same old-age signification."],
+      "exceptions_and_uncertainty": ["No particular Saturn aspect or application/separation is specified.", "Last degrees is not numerically defined."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B047",
+      "pdf_pages": [371, 372],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "from the Ascendant unto the tenth, signifie young",
+      "normalized_historical_statement": "Lilly says Mars, Sun, Venus and Mercury from the Ascendant to the tenth signify young years, especially when they are in the beginning of signs.",
+      "preconditions": ["♂, ☉, ♀ or ☿ is between the Ascendant and tenth.", "Being in the beginning of signs especially supports the young-years indication."],
+      "exceptions_and_uncertainty": ["The sentence visibly continues from PDF371 onto PDF372.", "No numerical beginning-of-sign threshold is supplied."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B048",
+      "pdf_pages": [372],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "from the tenth to the seventh, middle yeers",
+      "normalized_historical_statement": "The continuing planetary quadrant rule assigns middle years from the tenth to the seventh.",
+      "preconditions": ["The preceding group ♂, ☉, ♀ and ☿ is considered from the tenth to the seventh."],
+      "exceptions_and_uncertainty": ["The planetary subject is inherited from the preceding sentence.", "No numerical age range is supplied."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B049",
+      "pdf_pages": [372],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "if the significator be a superior Planet and direct",
+      "normalized_historical_statement": "If the significator is a superior planet and direct, Lilly assigns good years; if retrograde, elder or very old. He says to judge inferior planets similarly, adding that their retrogradation or joining retrograde planets augments age.",
+      "preconditions": [
+        "A superior-planet significator is direct or retrograde.",
+        "The text extends the judgment to inferior planets.",
+        "For inferior planets, retrogradation or being joined to retrograde planets augments age."
+      ],
+      "exceptions_and_uncertainty": ["Good yeers is retained without imposing a precise modern age category.", "The aspect implied by joyned is not separately named."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B050",
+      "pdf_pages": [372],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "thus if you mingle your signification, you may the better judge",
+      "normalized_historical_statement": "Lilly recommends mixing the age significations to improve the judgment.",
+      "preconditions": ["Combine the age indications rather than treating the preceding conditions as a single exclusive test."],
+      "exceptions_and_uncertainty": ["The source supplies no weighting procedure."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B051",
+      "pdf_pages": [372],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "between the Meridian and Occident",
+      "normalized_historical_statement": "Lilly gives a distinct Sun-quadrant sequence: Ascendant to Midheaven argues a child; Meridian to Occident a young man; Occident to the Septentrional angle a grown man; Septentrional to Oriental a very old man.",
+      "preconditions": ["Consider ☉ in each of the four named angular intervals."],
+      "exceptions_and_uncertainty": ["This is preserved separately from Guido Bonatus's earlier solar-age account.", "The source's man and child descriptions are conjectural categories, not identification."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B052",
+      "pdf_pages": [372],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "Lord of the ascendant in the East quarter",
+      "normalized_historical_statement": "Lilly assigns a young man when the lord of the Ascendant is in the East quarter, or the Moon is in the Ascendant.",
+      "preconditions": ["The lord of the Ascendant is in the East quarter, or ☽ is in the Ascendant."],
+      "exceptions_and_uncertainty": ["The alternatives are retained separately from the Sun-quadrant classification."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B053",
+      "pdf_pages": [372],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "a Childe or a young Man",
+      "normalized_historical_statement": "Lilly says Mercury always signifies a child or young man, especially when in the Ascendant and Oriental.",
+      "preconditions": ["☿ is considered.", "Being in the Ascendant and Oriental is an explicit especially qualifier."],
+      "exceptions_and_uncertainty": ["Always is the author's asserted scope; the especially condition is not rewritten as an absolute prerequisite."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B054",
+      "pdf_pages": [372],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "signifieth young Men; or if the signifier",
+      "normalized_historical_statement": "Lilly makes the broad claim that any planet except Saturn signifies young men.",
+      "preconditions": ["Any planet other than ♄ is considered in this age discussion."],
+      "exceptions_and_uncertainty": ["No additional house or Oriental condition is explicitly repeated in this clause.", "The broad claim is retained alongside the source's more qualified and opposing age methods."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B055",
+      "pdf_pages": [372],
+      "section_heading": "The age of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "a Childe, or a young Man, or Woman",
+      "normalized_historical_statement": "Lilly gives further child-or-young-person indications: the signifier joined to Venus; the Moon increasing in light; a position in the first ten degrees or middle of the sign; or the significator in the beginning of the Oriental quarter.",
+      "preconditions": [
+        "The signifier is joined to ♀.",
+        "The list includes ☽ increasing in light.",
+        "It includes being in the first ten degrees or middle of the sign.",
+        "It includes the significator in the beginning of the Oriental quarter."
+      ],
+      "exceptions_and_uncertainty": ["The punctuation leaves the conjunction between the Venus and increasing-Moon clauses uncertain.", "The subject of the first-ten-degrees-or-middle clause is not securely explicit.", "The result includes child, young man or woman, followed by &c.; it is not narrowed to one demographic category."],
+      "confidence": "medium"
+    },
+    {
+      "local_id": "B056",
+      "pdf_pages": [372],
+      "section_heading": "Whether the Thiefe be a Man or Woman.",
+      "kind": "heading",
+      "short_original_anchor": "Whether the Thiefe be a Man or Woman.",
+      "normalized_historical_statement": "A distinct printed subsection introduces historical conjectures about whether the thief is a man or woman.",
+      "preconditions": [],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B057",
+      "pdf_pages": [372],
+      "section_heading": "Whether the Thiefe be a Man or Woman.",
+      "kind": "source_conditional",
+      "short_original_anchor": "if both be Masculine, the Thiefe is Masculine",
+      "normalized_historical_statement": "Lilly says the thief is masculine if both the ascending sign and lord of the hour are masculine.",
+      "preconditions": ["The ascending sign is masculine.", "The lord of the hour is masculine."],
+      "exceptions_and_uncertainty": ["These are the author's astrological classifications, not verified gender."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B058",
+      "pdf_pages": [372],
+      "section_heading": "Whether the Thiefe be a Man or Woman.",
+      "kind": "source_conditional",
+      "short_original_anchor": "if the Lord of the houre and Ascendant be both Feminine",
+      "normalized_historical_statement": "Lilly says the thief is feminine if the lord of the hour and Ascendant are both feminine.",
+      "preconditions": ["The lord of the hour and Ascendant are both feminine."],
+      "exceptions_and_uncertainty": ["Ascendant follows the preceding reference to the ascending sign; no Ascendant-lord substitution is made here."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B059",
+      "pdf_pages": [372],
+      "section_heading": "Whether the Thiefe be a Man or Woman.",
+      "kind": "source_conditional",
+      "short_original_anchor": "there were two Theeves, both a Man and a Woman",
+      "normalized_historical_statement": "If the ascending sign is masculine and the lord of the hour feminine, Lilly calls the indication both masculine and feminine, explaining it as two thieves, a man and woman.",
+      "preconditions": ["The ascending sign is masculine.", "The lord of the hour is feminine."],
+      "exceptions_and_uncertainty": ["The reverse mismatch is not explicitly stated in this particular clause.", "The two-person result is a source conjecture."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B060",
+      "pdf_pages": [372],
+      "section_heading": "Whether the Thiefe be a Man or Woman.",
+      "kind": "source_conditional",
+      "short_original_anchor": "signifieth a Man kinde, & e contra",
+      "normalized_historical_statement": "Lilly says a masculine significator together with the Moon in a masculine sign signifies mankind, and adds the converse.",
+      "preconditions": ["The significator is masculine.", "☽ is in a masculine sign.", "The source explicitly adds & e contra."],
+      "exceptions_and_uncertainty": ["The converse is stated elliptically rather than spelled out; it is not expanded into additional mixed combinations."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B061",
+      "pdf_pages": [372],
+      "section_heading": "Whether the Thiefe be a Man or Woman.",
+      "kind": "source_conditional",
+      "short_original_anchor": "be both in the Ascendant in Masculine Signes",
+      "normalized_historical_statement": "If the lord of the Ascendant and lord of the hour are both in the Ascendant in masculine signs, Lilly says a man; in feminine signs, a woman.",
+      "preconditions": ["Both named lords are in the Ascendant.", "Compare masculine with feminine signs."],
+      "exceptions_and_uncertainty": ["The feminine-sign branch is elliptical and shares the preceding placement context."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B062",
+      "pdf_pages": [372],
+      "section_heading": "Whether the Thiefe be a Man or Woman.",
+      "kind": "source_conditional",
+      "short_original_anchor": "both a Man and a Woman had a hand in the Theft",
+      "normalized_historical_statement": "If the lord of the Ascendant and lord of the hour occupy different sign genders, one masculine and the other feminine, Lilly conjectures that both a man and woman participated.",
+      "preconditions": ["One of the two named lords is in a masculine sign.", "The other is in a feminine sign."],
+      "exceptions_and_uncertainty": ["This uses the two lords' sign positions, unlike B059's ascending-sign/hour-lord classification."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B063",
+      "pdf_pages": [372],
+      "section_heading": "Whether the Thiefe be a Man or Woman.",
+      "kind": "source_conditional",
+      "short_original_anchor": "The Angles of the Figure Masculine",
+      "normalized_historical_statement": "Lilly assigns a man when the figure's angles are masculine and a woman when they are feminine.",
+      "preconditions": ["The angles of the figure are classified masculine or feminine."],
+      "exceptions_and_uncertainty": ["No instruction is supplied here for mixed angular classifications."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B064",
+      "pdf_pages": [372],
+      "section_heading": "Whether the Thiefe be a Man or Woman.",
+      "kind": "source_conditional",
+      "short_original_anchor": "notes impediment in hearing, principally in the left eare",
+      "normalized_historical_statement": "Lilly conjectures an impediment in hearing, principally the left ear, when Venus as significatrix aspects Mars by square.",
+      "preconditions": ["♀ is significatrix.", "♀ aspects ♂ with □."],
+      "exceptions_and_uncertainty": ["No application/separation is specified.", "This is a historical bodily conjecture and cannot establish a person's hearing condition."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B065",
+      "pdf_pages": [373],
+      "section_heading": "Whether the Thiefe be a Man or Woman.",
+      "kind": "source_conditional",
+      "short_original_anchor": "respecting the Signe and quarter wherein they be",
+      "normalized_historical_statement": "The continuing subsection says Venus, Mercury and Moon denote women, while Saturn, Jupiter, Mars and Sun denote men, with regard to the sign and quarter they occupy.",
+      "preconditions": ["The printed groups are ♀ ☿ ☽ and ♄ ♃ ♂ ☉.", "Consider the sign and quarter occupied."],
+      "exceptions_and_uncertainty": ["The sign-and-quarter qualification is retained.", "The bracketed glyphs at PDF372's foot anticipate this paragraph; the rule's body is on PDF373."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B066",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "heading",
+      "short_original_anchor": "If one Thiefe or more.",
+      "normalized_historical_statement": "A printed subsection introduces methods for conjecturing one thief or several.",
+      "preconditions": [],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B067",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "it signifies to be one and no more",
+      "normalized_historical_statement": "Lilly indicates one thief only when the thief signifier is in a fixed sign of direct ascensions, or a sign of few children, or of few shapes and likeness.",
+      "preconditions": [
+        "The thief signifier occupies a fixed sign and one of direct ascensions.",
+        "Alternatively, it occupies a sign of few children.",
+        "Alternatively, it occupies a sign of few shapes and likeness."
+      ],
+      "exceptions_and_uncertainty": ["The printed and joining fixed sign with direct ascensions is retained.", "A later immovable-sign rule gives a competing multiple-thief result."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B068",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "a common or bycorporeall Signe",
+      "normalized_historical_statement": "A sign of two bodies, described as common or bycorporeal, signifies more than one thief; Lilly says this is more likely if many peregrine planets occupy that sign.",
+      "preconditions": ["The thief signifier's sign is of two bodies, common or bycorporeal.", "Many peregrine planets in the sign make the multiple-thief indication more likely."],
+      "exceptions_and_uncertainty": ["The strengthening phrase more likely is preserved.", "No numerical threshold for many is supplied."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B069",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "in the Angles, it signifies more then one",
+      "normalized_historical_statement": "Lilly indicates more than one thief when the Sun and Moon behold one another by square in the angles.",
+      "preconditions": ["☉ and ☽ behold one another by □.", "The relation is in the angles."],
+      "exceptions_and_uncertainty": ["No application/separation is stated."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B070",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "Signes that signifie many Children are",
+      "normalized_historical_statement": "For the subsection's classificatory rules, Lilly lists Cancer, Scorpio and Pisces as signs signifying many children.",
+      "preconditions": ["The printed list is ♋, ♏ and ♓."],
+      "exceptions_and_uncertainty": ["This is a source classification used in the number-of-thieves discussion, not a fertility finding."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B071",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "few Children are",
+      "normalized_historical_statement": "Lilly lists Aries, Taurus, Libra, Sagittarius, Capricorn and Aquarius as signs of few children.",
+      "preconditions": ["The printed list is ♈, ♉, ♎, ♐, ♑ and ♒."],
+      "exceptions_and_uncertainty": ["The anchor is short because the remainder of the clause consists of glyphs.", "No unprinted signs are added."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B072",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "Divers shapes or formes",
+      "normalized_historical_statement": "Lilly lists Gemini, Cancer, Sagittarius and Aquarius under diverse shapes or forms.",
+      "preconditions": ["The printed list is ♊, ♋, ♐ and ♒."],
+      "exceptions_and_uncertainty": ["The source does not separately enumerate the complementary few-shapes class.", "The anchor is short because the list is printed as glyphs."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B073",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "barren Signes are",
+      "normalized_historical_statement": "Lilly lists Gemini, Leo and Virgo as barren signs.",
+      "preconditions": ["The printed list is ♊, ♌ and ♍."],
+      "exceptions_and_uncertainty": ["This is the historical source's classification, not a claim about an actual person's fertility.", "The anchor is short because the list is glyph-based."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B074",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "Signes of direct Ascensions",
+      "normalized_historical_statement": "Lilly lists Cancer, Leo, Virgo, Libra, Scorpio and Sagittarius as signs of direct ascensions.",
+      "preconditions": ["The printed list is ♋, ♌, ♍, ♎, ♏ and ♐."],
+      "exceptions_and_uncertainty": ["The anchor is short because the remainder is a glyph list."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B075",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "Signes of oblique Ascensions are",
+      "normalized_historical_statement": "Lilly lists Capricorn, Aquarius, Pisces, Aries, Taurus and Gemini as signs of oblique ascensions.",
+      "preconditions": ["The printed list is ♑, ♒, ♓, ♈, ♉ and ♊."],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B076",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "be in the Angle of the Earth, in a common Sign",
+      "normalized_historical_statement": "If the Moon in the house of the question is in the angle of the earth in a common sign, Lilly indicates more than one thief. If it is in any other angle in a fixed sign, he indicates only one.",
+      "preconditions": [
+        "Multiple branch: ☽ in the house of the question is in the angle of the earth and a common sign.",
+        "Single branch: ☽ is in any of the other angles and a fixed sign."
+      ],
+      "exceptions_and_uncertainty": ["Both angular placement and sign condition are retained in each opposing branch."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B077",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "Looke how many Planets are with the Thieves significator",
+      "normalized_historical_statement": "Lilly says the number of planets with the thief's significator gives the number of thieves.",
+      "preconditions": ["Count how many planets are with the thief significator."],
+      "exceptions_and_uncertainty": ["With is not silently converted to a particular aspect or orb.", "The source does not explicitly say whether to include the significator itself in the count."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B078",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "in a common Signe more then one",
+      "normalized_historical_statement": "Lilly separately indicates more than one thief when the Moon is in a common sign.",
+      "preconditions": ["☽ is in a common sign."],
+      "exceptions_and_uncertainty": ["This short rule states no angular prerequisite, unlike B076."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B079",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "that person is the principall actor",
+      "normalized_historical_statement": "With the lord of the Ascendant in a male sign and lord of the hour in a female sign, Lilly repeats the man-and-woman conjecture and says the person represented by the one to whom the Moon agrees, explicitly the one to whom she applies, is the principal actor.",
+      "preconditions": [
+        "The lord of the Ascendant is in a male sign.",
+        "The lord of the hour is in a female sign.",
+        "Determine to which of these ☽ applies."
+      ],
+      "exceptions_and_uncertainty": ["Application is explicit here, unlike the preceding virtue-giving clauses.", "No aspect or orb is specified.", "The principal-actor statement remains the author's conjecture."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B080",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "the Angles moveable especially the first and seventh",
+      "normalized_historical_statement": "Lilly indicates more than one thief when the angles are movable, especially the first and seventh, or when the significator is in Cancer, Scorpio or Pisces.",
+      "preconditions": ["The angles are movable, especially the first and seventh; or the significator is in ♋, ♏ or ♓."],
+      "exceptions_and_uncertainty": ["The especially qualifier and alternative sign condition are both retained.", "No aspects are specified."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B081",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "if it be immovable, or a double bodied Sign",
+      "normalized_historical_statement": "Lilly says there is more than one thief if the sign occupied by the thief's significator is immovable or double-bodied.",
+      "preconditions": ["The thief significator's sign is immovable or double-bodied."],
+      "exceptions_and_uncertainty": ["Immovable is retained as printed.", "Its multiple-thief polarity competes with the earlier one-thief indications involving fixed signs. It is not silently changed to movable."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B082",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "Both the Luminaries beholding one another from Angles",
+      "normalized_historical_statement": "Lilly indicates more than one thief when both luminaries behold one another from angles.",
+      "preconditions": ["☉ and ☽ behold one another.", "They do so from angles."],
+      "exceptions_and_uncertainty": ["No particular aspect is specified in this later statement; the earlier square is not imported into it."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B083",
+      "pdf_pages": [373],
+      "section_heading": "If one Thiefe or more.",
+      "kind": "source_conditional",
+      "short_original_anchor": "doth demonstrate there were more Thieves then one",
+      "normalized_historical_statement": "Lilly says the Moon in the Ascendant, with the Ascendant a double-bodied sign, indicates more than one thief.",
+      "preconditions": ["☽ is in the Ascendant.", "The Ascendant is a double-bodied sign."],
+      "exceptions_and_uncertainty": ["The demonstrative wording is the author's assertion, not an evidentiary conclusion about an actual event."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B084",
+      "pdf_pages": [373],
+      "section_heading": "Of the Cloathes of the Thiefe.",
+      "kind": "heading",
+      "short_original_anchor": "Of the Cloathes of the Thiefe.",
+      "normalized_historical_statement": "The final inspected subsection introduces conjectures about the thief's clothing.",
+      "preconditions": [],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B085",
+      "pdf_pages": [373],
+      "section_heading": "Of the Cloathes of the Thiefe.",
+      "kind": "source_conditional",
+      "short_original_anchor": "You must know the colour of the Cloathing by the Planets",
+      "normalized_historical_statement": "Lilly instructs that clothing colour be judged from the planets, signs, degrees and house occupied by the significator, mixing these indications together.",
+      "preconditions": ["Consider planets, signs, degrees and the house in which the significator is.", "Mix one indication with another before judging."],
+      "exceptions_and_uncertainty": ["The body text ends with accordingly judge the; colours is the page-end catchword.", "No particular clothing colours or subsequent instructions are supplied within this window.", "The continuation outside PDF373 has not been reconstructed."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B086",
+      "pdf_pages": [888],
+      "section_heading": "ERRATA.",
+      "kind": "source_quotation",
+      "short_original_anchor": "p 335 l ult. r Planet",
+      "normalized_historical_statement": "The errata directs Planet at the last body line of printed page 335, affecting the sentence beginning under It is Lost or Stolen and continuing onto page 336.",
+      "preconditions": ["Apply to printed page 335, last line."],
+      "exceptions_and_uncertainty": ["This corrects a word, not the separation direction or the sentence's stolen result.", "The catchword the is distinct from the corrected body-line noun."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B087",
+      "pdf_pages": [888],
+      "section_heading": "ERRATA.",
+      "kind": "source_quotation",
+      "short_original_anchor": "p 336 l 4 r vertue, l 9 r vertue",
+      "normalized_historical_statement": "The errata directs vertue at printed page 336, lines 4 and 9. These affect the Ascendant lord's giving virtue to the Moon and the proportional-return passage's reference to virtue or light.",
+      "preconditions": ["Apply to printed page 336, lines 4 and 9."],
+      "exceptions_and_uncertainty": ["The two corrections restore wording without changing the distinct giving directions or the proportional-return qualification."],
+      "confidence": "high"
+    },
+    {
+      "local_id": "B088",
+      "pdf_pages": [888],
+      "section_heading": "ERRATA.",
+      "kind": "source_quotation",
+      "short_original_anchor": "p 337 l 28 r for",
+      "normalized_historical_statement": "The errata supplies an instruction for printed page 337, line 28, reading for followed by Sun and Mars glyphs. Its precise replacement target in the supplied page is not securely reconciled.",
+      "preconditions": ["The errata locator is printed page 337, line 28.", "The legible correction includes for ☉ and ♂."],
+      "exceptions_and_uncertainty": ["The anchor stops before the glyphs rather than claiming a facsimile transcription.", "The correction is recorded but not used to overwrite the nearby printed lunar age sequence or another guessed target."],
+      "confidence": "medium"
+    }
+  ],
+  "unresolved_glyphs_or_source_conflicts": [
+    {
+      "page": 335,
+      "issue": "Under Not stolen., the opening neither combined with separate not creates an awkward negative construction involving the Moon-house lord, second-house lord and other planets.",
+      "importance": "The polarity and scope of the nonseparation condition must not be converted into a cleaner but unsupported logical rule."
+    },
+    {
+      "page": 335,
+      "issue": "Under It will be (or is intended to be stolen.), the word after or and before having her selfe is not securely legible.",
+      "importance": "It may qualify an alternative lunar condition; no missing condition has been supplied from memory."
+    },
+    {
+      "page": 335,
+      "issue": "The clause have no sextile or trine to the Planet in the seventh has an unclear grammatical subject.",
+      "importance": "Assigning the negative aspect condition to a specific planet without qualification could reverse or alter the rule."
+    },
+    {
+      "page": 336,
+      "issue": "The peregrine-planet/Moon virtue clause is followed by another if-clause involving the thief's aspects; punctuation does not securely resolve conjunction versus separate alternatives.",
+      "importance": "Both conditions are preserved without inventing a definitive Boolean relation."
+    },
+    {
+      "page": 336,
+      "issue": "The Moon's giving virtue to Saturn, Mars, cadent planets or the eighth lord receives an overlapping negative-theft result on page 335 and a stolen/taken-away result here.",
+      "importance": "These are competing printed methods, not a single harmonized criterion."
+    },
+    {
+      "page": 336,
+      "issue": "In and he in a movable Signe, the antecedent of he and the reach of the movable-sign qualifier are not fully explicit.",
+      "importance": "The qualifier must not automatically be attached to every planet or every preceding alternative."
+    },
+    {
+      "page": 337,
+      "issue": "The errata instruction p337 l28 r for ☉ and ♂ is legible in substance, but its precise target in the body text is uncertain.",
+      "importance": "The nearby printed Moon-phase age rule remains provisional rather than being silently rewritten."
+    },
+    {
+      "page": 338,
+      "issue": "The young-person list involving joining Venus, the Moon increasing in light, first ten degrees or middle of a sign, and the Oriental quarter has uncertain grammatical grouping.",
+      "importance": "The list is preserved without inventing conjunctions, subjects or a numerical age."
+    },
+    {
+      "page": 339,
+      "issue": "The later immovable-or-double-bodied-sign rule indicates multiple thieves, while earlier fixed-sign conditions can indicate one.",
+      "importance": "The printed word immovable and the opposing result are retained; no conjectural emendation to movable is made."
+    },
+    {
+      "page": 338,
+      "issue": "The bracketed planetary glyphs at the page foot are treated as a continuation cue anticipating the opening of page 339.",
+      "importance": "They are not an extra independent rule or an omitted section heading."
+    },
+    {
+      "page": 339,
+      "issue": "The clothing-colour sentence continues outside the supplied main-page window.",
+      "importance": "No colours or missing continuation have been inferred from later pages, modern sources or memory."
+    }
+  ],
+  "stop_boundary_observed": "Read exactly five main source pages, original PDF369–373, printed pages 335–339, in sequence, plus the supplied errata image: six source images total. First main subsection inspected: That the Goods are stolen. Last main subsection inspected: Of the Cloathes of the Thiefe. Stopped at the end of PDF373 after the visible clothing instruction and its catchword colours. PDF364 and PDF381 are not in this window, so their conditional heading boundaries were not encountered. No claim is made to have completed the later remainder through PDF400."
+}
