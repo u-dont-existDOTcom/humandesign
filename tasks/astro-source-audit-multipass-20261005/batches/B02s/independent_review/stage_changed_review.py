@@ -6,7 +6,7 @@ provided only after original-image reinspection and corrected rules.
 from pathlib import Path
 import json,shutil,hashlib
 B=Path(__file__).resolve().parents[1]
-OUT=Path("/mnt/hdd/home/joel/ai-source-review")
+OUT=Path(__import__("os").environ.get("LILLY_REVIEW_STAGING_DIR", str(Path.home()/"ai-source-review")))
 R=json.loads((B/"RULES.json").read_text())
 assert R["record_count"]>=200
 for label,lo,hi in (("A",336,345),("B",344,353)):

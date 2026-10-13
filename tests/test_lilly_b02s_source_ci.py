@@ -1,0 +1,22 @@
+"""Replay Lilly XLIX source-only verification as part of normal repository tests."""
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+B = Path(__file__).resolve().parents[1] / "tasks/astro-source-audit-multipass-20261005/batches/B02s"
+
+
+def test_lilly_marriage_primary_source_verification():
+    result = subprocess.run(
+        [sys.executable, str(B / "run_verification.py")],
+        cwd=B,
+        capture_output=True,
+        text=True,
+        timeout=120,
+        check=False,
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
+    r = json.loads((B / "TEST_RUN_SUMMARY.json").read_text())
+    assert r["successful"] and r["distinct_test_count"] >= 260
+    assert r["failures"] == r["errors"] == 0

@@ -1,3 +1,7 @@
-# B02s Original Lilly 1647 Marriage Chapter
+# B02s — William Lilly 1647, Chapter XLIX: Marriage
 
-This source-only documentary packet spans original PDF336–353, printed302–319, of Chapter XLIX and the next Chapter L boundary. It includes 18 original pages, the same-volume errata page, 187 initially proposed reference units, an unresolved-issues register, three authoring report segments and a source-bound completeness map. No outcome validation is implied. Review original images before trusting paraphrases; reviewer reconciliation and acceptance receipts are separate artifacts.
+Historical **source-documentation only**, not observed couple outcome or predictive/clinical evidence. Original PDF336/printed302 BELOW divider through PDF353/printed319 ABOVE Chapter L divider, plus source-volume errata PDF888. Full 894-page original source SHA256: `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`.
+
+The source-only review candidate currently has **217 units** (R1921–R2137): 187 initially drafted units corrected after two independent source-image-first reviewer windows and 30 formerly omitted source clauses. The historic original draft, independent raw findings, applied repair files, source-reading-order manifest, original images, errata and tests are preserved. **Do not call this batch accepted, published or delivered until exact acceptance, publication and Downloads receipts exist.**
+
+Read `RULES.json` by `RULES_SOURCE_ORDER.json`, source original page images, `AUDIT_REPORT.md`, `ERRATA_COLLATION.json`, `UNRESOLVED.json`, `CORRECTION_PROVENANCE.json`, raw independent reviews and test output. ID numerical order intentionally preserves original reviewer locators; newly found clauses receive later IDs, but reading-order manifest restores source order. The original PDF, not the preliminary ALTO/OCR, governs source wording.

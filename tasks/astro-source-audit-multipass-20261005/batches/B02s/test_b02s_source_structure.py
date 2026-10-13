@@ -71,8 +71,8 @@ class OriginalSourceStructure(unittest.TestCase):
   self.assertTrue(E["original_body_unchanged"])
  def test_34_plus_30_retained_limits(self):
   self.assertEqual(U["retained_count"],len(U["limits"]))
-  self.assertEqual(U["retained_count"],64)
-  self.assertEqual(len({v["id"] for v in U["limits"]}),64)
+  self.assertEqual(U["retained_count"],68)
+  self.assertEqual(len({v["id"] for v in U["limits"]}),68)
  def test_each_page_covered(self):
   S=rd("SECTION_COVERAGE.json")
   self.assertEqual([x["pdf_page"] for x in S["pages"]],list(range(336,354)))

@@ -1,9 +1,9 @@
 {
   "batch": "B02s",
-  "status": "SOURCE_REVIEW_CORRECTED_PENDING_CHANGED_ITEM_READBACK",
-  "record_count": 216,
+  "status": "CORRECTED_SOURCE_ONLY_PENDING_FINAL_ACCEPTANCE",
+  "record_count": 217,
   "first_record": "R1921",
-  "last_record": "R2136",
+  "last_record": "R2137",
   "rules": [
     {
       "id": "LI.1647.II.XLIX.R1921",
@@ -337,7 +337,7 @@
         ],
         "source_statement_is_verbatim": false
       },
-      "source_record_kind": "alkindus_sextile_trine",
+      "source_record_kind": "alkindus_favourable_contact",
       "source_statement": "Under Lilly's Alkindus attribution, ascendant lord applying to seventh lord is an argument marriage is performed; the printed margin adds the converse seventh-to-first application.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
@@ -374,10 +374,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "alkindus_moon_venus",
-      "source_statement": "Moon applying to Venus, with Venus strong and increasing in motion and in her own dignity, and the Moon likewise in dignity, is one Alkindus-attributed sign of completion.",
+      "source_statement": "Moon applying to Venus, Venus strong, increasing in motion and in her own dignity, and the MOON likewise strong, increasing in motion and dignified, are attributed to Alkindus as completion conditions.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Venus is described as strong and increasing in motion and dignified, and Moon likewise dignified; Moon applies to Venus."
+        "Do not restrict 'and the Moon likewise' to dignity alone; full scope is retained as source reading."
       ],
       "exceptions_and_evidence_limits": [
         "Do not shift Venus' motion condition exclusively onto the Moon."
@@ -587,7 +587,7 @@
         ],
         "source_statement_is_verbatim": false
       },
-      "source_record_kind": "quesited_willing",
+      "source_record_kind": "alkindus_partner_consent",
       "source_statement": "In the section on marriage taking effect, seventh lord placed in first or applying to first lord is printed as the sought party consenting UNWILLINGLY, despite a neighbouring paragraph suggesting goodwill.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
@@ -868,10 +868,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "mutual_house_placement",
-      "source_statement": "First lord placed in seventh or seventh lord placed in first is one proposed marriage-completion route.",
+      "source_statement": "The first lord OR the MOON in seventh, or the seventh lord in first, provides a claimed route for marriage completion.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Use the exact conditions embedded in the source statement, without adding modern assumptions."
+        "Keep the bare Moon-in-seventh branch; no extra condition silently added."
       ],
       "exceptions_and_evidence_limits": [
         "Source compares these positions as alternatives."
@@ -1113,10 +1113,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "seventh_own_no_mind",
-      "source_statement": "Seventh lord in seventh, especially its own domicile, describes the desired partner as free from love, little minded to marry, and with the woman's or man's marriage portion known.",
+      "source_statement": "The seventh lord IN THE SEVENTH, ESPECIALLY in his own house, suggests little intention to marry and a source claim concerning the marriage portion.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Lord of seventh in seventh or own domicile as printed."
+        "Location in seventh essential, own domicile intensifies; not an OR alternative."
       ],
       "exceptions_and_evidence_limits": [
         "Both source ideas, freedom from love and portion known, are authorial guesses not actual wishes or finances."
@@ -2472,10 +2472,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "person_description_moon_venus",
-      "source_statement": "Moon with Venus is used to claim sought partner has agreeable traits.",
+      "source_statement": "For a MAN asking about a woman, Lilly directs reading the planet the MOON is with; if Venus, he says she is fair, slender and pleasant; other planets correspond to other qualities.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Use the exact conditions embedded in the source statement, without adding modern assumptions."
+        "The general rule is the Moon's joined planet, Venus only one example."
       ],
       "exceptions_and_evidence_limits": [
         "Gender-stereotyped character allegation."
@@ -2506,10 +2506,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "person_description_mars_jupiter",
-      "source_statement": "For the woman, Lilly judges by the planet the SUN beholds: SUN in trine/sextile of SATURN implies wise and painstaking/diligent; SUN aspecting JUPITER implies honest. A different earlier Moon–Venus clause concerns the man.",
+      "source_statement": "For a man's question Lilly describes the woman by the planet the MOON is with (Venus: fair, slender and pleasant); for a woman's question, the MAN is described by the planet the SUN beholds (Saturn: wise, painfull (painstaking, diligent); Jupiter: honest).",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Question concerns characterization of the woman and the Sun's trine/sextile to Saturn OR Sun aspect to Jupiter, separately."
+        "Identify who is asking: Moon-related planet for describing woman when man asks, Sun-related planet for describing man when woman asks."
       ],
       "exceptions_and_evidence_limits": [
         "Earlier draft wrongly put Moon with Mars and misinterpreted 'painfull' as causing pain rather than industrious/diligent."
@@ -3031,10 +3031,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "agreement_dominance_strength",
-      "source_statement": "When NEITHER first nor seventh lord is angular, Lilly judges which spouse is more weighty/strong and would be master or strive for mastery; afflicted Sun is worst for man, afflicted Venus worst for woman, afflicted Moon bad for both.",
+      "source_statement": "Where seventh lord is more weighty AND angular, Lilly says the woman will be master or STRIVE for it. Where NEITHER principal lord is angular, he instead judges which is weightier for the mastery fallback. Separate Sun/Venus/Moon afflictions qualify each.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "No angular placement of either principal lord for fallback comparison; planetary affliction clauses are sex-specific."
+        "The seventh-lord angular clause has 'or strive for it'; the neither-angular fallback says the stronger will be master."
       ],
       "exceptions_and_evidence_limits": [
         "Source uses 'or strive for it' and 'impedited' distinctions, not guaranteed dominance."
@@ -3104,10 +3104,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "disagreement_first_house_malefic",
-      "source_statement": "Original print across PDF343–344 includes first and seventh lords in square/opposition or an impeded Moon's lord beholding ascendant; Mars or a retrograde/combust planet in ascendant implies quarrels due to QUERENT; similar affliction to seventh lord attributed to desired party.",
+      "source_statement": "Original printed clause crossing p309–310: first and seventh lords in square/opposition, or Saturn, Mars or retrograde/combust planet in ascendant, are given as reasons for contention attributed to the querent.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Read earlier house-lord hard aspects and parallel first/seventh afflictions; source continues across page break."
+        "Include Saturn (♄), Mars (♂), retrograde or combust in ascendant, with correct source page join."
       ],
       "exceptions_and_evidence_limits": [
         "No real person's moral responsibility is established from this 1647 system."
@@ -3140,13 +3140,13 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "disagreement_moon_fall",
-      "source_statement": "For a question asked by a MAN, Saturn, Mars or SOUTH NODE ☋ in ascendant supplies an additional historical argument of contention attributed to the querent or woman, following the Moon affliction clause.",
+      "source_statement": "If the Moon is in her fall, or at square or opposition with Saturn, Mars or a retrograde planet, AND then beholds the ascendant, Lilly attributes brawling to the woman.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "The specific ascendant placement and male-querent condition are source-essential."
+        "MOON fall OR named bad aspect, plus Moon beholding ascendant in the original text."
       ],
       "exceptions_and_evidence_limits": [
-        "Earlier draft omitted this explicit Saturn/Mars/☋ placement; do not apply as universal."
+        "Distinct from adjacent Saturn/Mars/Dragon Tail in ascendant and the unclear idem referent; this is a historical allegation, not verified conduct."
       ],
       "draft_part": "PART_C1A_344.json",
       "case_evidence_countable": false,
@@ -3456,13 +3456,13 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "disagreement_moon_cadent",
-      "source_statement": "An afflicted Moon, eighth/twelfth placement, or void of course is said to bring troubles, grief or sickness; if related afflicted planets are angular Lilly describes a PROBABILITY of separation OR long disagreements.",
+      "source_statement": "Moon aspecting Saturn or Mars is said to produce trouble; if the relevant planets are in angles, Lilly speaks of a PROBABILITY of separation or long disagreements. Separate eighth/twelfth or void-of-course passages also qualify.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Match each affliction and house case to its own branch rather than pooling simultaneous conditions."
+        "Moon specifically aspects Saturn or Mars; 'in angles' attachment is textually ambiguous."
       ],
       "exceptions_and_evidence_limits": [
-        "The author says probability, not certain separation; the alternative prolonged conflict remains explicit."
+        "Do not convert source probability into certainty or assume which planet the angular clause modifies."
       ],
       "draft_part": "PART_C1B_344.json",
       "case_evidence_countable": false,
@@ -3534,13 +3534,13 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "break_off_receiver_malefic",
-      "source_statement": "Although at present a marriage may appear VERY FEASIBLE, a heavily afflicted planet receiving the significators' light (square/opposition with ill planet, cadent etc.) is offered as cause of its later break-off.",
+      "source_statement": "A HEAVY or ponderous planet receiving the significators' light, if hindered by square or opposition from an ill planet OR cadent, is said to break an otherwise feasible intended marriage.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Initially feasible match, relevant light-receiver with specified adverse aspect or place."
+        "The receiver must be a heavy planet, and then suffer one of the stated impediments."
       ],
       "exceptions_and_evidence_limits": [
-        "Do not omit the initial feasibility contrast; source is author conjecture."
+        "'Heavy' does not mean merely heavily afflicted, and no unspecified 'etc.' completes a missing condition."
       ],
       "draft_part": "PART_C2A_344_345.json",
       "case_evidence_countable": false,
@@ -3777,7 +3777,7 @@
         ],
         "source_statement_is_verbatim": false
       },
-      "source_record_kind": "arabic_virgo_condition",
+      "source_record_kind": "arabic_capricorn_condition",
       "source_statement": "The printed Arabic aphorism concerns Moon in the first TWELVE DEGREES OF CAPRICORN for one espoused to a wife: it says he will lose her before marriage, or die within six months, or live in discord with her.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
@@ -4168,10 +4168,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "lunar_aspect_claim",
-      "source_statement": "In the earlier 'Maid or Chaste' section, MOVABLE signifiers aspected by infortunes are associated by Lilly with desire yet restraint: he explicitly says she refrains herself and casts off suitors. Separately a Moon/Sun relation with Mars is cited as another old character allegation.",
+      "source_statement": "If Moon and Sun behold themselves AND Mars, Lilly makes an adverse assertion about virginity.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "First lord/Venus/Moon as source-named, sign modality and infortunes' aspects; keep the contrary restraint branch."
+        "Keep the three-body requirement; historic allegation unverified."
       ],
       "exceptions_and_evidence_limits": [
         "The restraint statement is an important alternative to allegations; these are untested social stereotypes, not sexual history facts."
@@ -4240,10 +4240,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "alternate_assessment_heading",
-      "source_statement": "Under the 'Whether a Damosell be a Maid' passage, fixed versus movable/common ascendant and Moon sign configurations lead only to 'a doubt of Legerdemain'; the source additionally mentions SCORPIO ascending as an allegation she is or wishes to be overly familiar.",
+      "source_statement": "Under 'Whether a Damosell be a Maid', first lord/Moon FIXED and well disposed is said by Lilly to signify she is a virgin; movable/common or evil planets in FIXED signs beholding them give other allegations or, in the relevant adverse branch, 'a doubt of Legerdemain'.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "First lord, Moon and specific sign modality or Scorpio rising, each as its own branch."
+        "Retain positive fixed/well-disposed and adverse evil-planet alternatives rather than applying 'only doubt' to every case."
       ],
       "exceptions_and_evidence_limits": [
         "'A doubt' is an epistemic hedge, not a finding of any real conduct."
@@ -4346,10 +4346,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "historical_adverse_signs",
-      "source_statement": "Lilly claims first lord, Moon or Venus in fixed signs with fortunes give one favourable view, but then mentions MOON BEHOLDING MARS without qualifying 'adverse'; another branch where SUN and MOON are in NO ASPECT, nor Mars with them, describes suspicion but says NOT YET COME TO THE ACT.",
+      "source_statement": "The original says Sun OR Moon beholding Mars under named configurations prompts a moral allegation.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Check fixed/fortunate combinations separately from simple Moon-to-Mars regard and no Sun–Moon–Mars aspect case."
+        "Both solar and lunar alternatives essential."
       ],
       "exceptions_and_evidence_limits": [
         "The printed negative 'not yet come to the act' limits the allegation; the margin adds Moon opposing Mars in specified sign pairs. Do not convert suspicion to fact."
@@ -4450,13 +4450,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "fixed_vs_movable_contrast",
-      "source_statement": "In the following printed passage, if ascendant and Moon are both ANGULAR or in FIXED signs, Lilly says the woman is truthful and reports about her are FALSE; if first lord and Moon are fixed but the angles movable, she was tempted BUT GAVE NO CREDIT OR ADMITTANCE.",
+      "source_statement": "Lilly says 'the Maid is a Virgin, and they lye of her' in the relevant sign configuration.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Keep fixed/angular placements and alternative movable-angles branch, not a generic allegation."
+        "This expressly alleges the accusers are lying; not that every person is truthful."
       ],
       "exceptions_and_evidence_limits": [
-        "Source expressly denies the rumours and denies that she accepted temptation. This contradicts a broad misconduct reading."
+        "Source expressly denies the rumours and denies that she accepted temptation. This contradicts a broad misconduct reading.",
+        "The charge against her is specifically FALSE according to the printed lye-of-her statement, not a positive misconduct allegation. Another original branch explicitly says she gave no credit to the tempter."
       ],
       "draft_part": "PART_C4B_347.json",
       "case_evidence_countable": false,
@@ -5049,13 +5050,13 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "mars_contact_impediment",
-      "source_statement": "When MARS IS WITH THE SOUTH NODE ☋ and seventh lord joined as described earlier, Lilly says this DIMINISHES the alleged malice and that the woman has been hard pressed and persuaded, rather than willingly guilty.",
+      "source_statement": "When Mars is with Dragon's Tail, and seventh lord is joined in the previously described manner, Lilly says it diminishes the asserted malice; although the woman may love a martial man, YET HE CANNOT BRING HER UNDER HIS YOAK, though she has been hard pressed and persuaded.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Mars with ☋ AND seventh lord joined in the earlier specified manner."
+        "Mars with south node plus earlier seventh lord conjunction."
       ],
       "exceptions_and_evidence_limits": [
-        "The printed p315 erratum corrects 'seventh'; this is not Mars/Node reception and the person is not proven to have consented."
+        "Do not invent an act or blame the woman; source explicitly denies the man's subjugation."
       ],
       "draft_part": "PART_D2A_349.json",
       "case_evidence_countable": false,
@@ -5085,10 +5086,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "one_degree_house_proximity",
-      "source_statement": "If MARS with the seventh lord OR Moon is in ONE SIGN in the named source configuration, including South Node variant and one-degree distance, Lilly supposes a sweetheart in contract not far from the woman's house.",
+      "source_statement": "Mars and seventh-house ruler/Moon in same sign and within one degree are interpreted as a man INSIDE the house, a familiar of the questioner or of her husband.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Specific Mars/seventh/Moon one-sign contact and, for close proximity inference, within one degree."
+        "The exact one-degree closeness is a separate branch."
       ],
       "exceptions_and_evidence_limits": [
         "The source does NOT require angular house placement; physical nearness and purported contract are unverified."
@@ -5121,10 +5122,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "separation_from_mars",
-      "source_statement": "Separation from Mars is used as a sign a previous attachment might have ceased.",
+      "source_statement": "Seventh lord or Moon separated from Mars may signify an attachment predating the woman's acquaintance with her husband, now ended or forgotten.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Use the exact conditions embedded in the source statement, without adding modern assumptions."
+        "Explicit BEFORE she knew her husband temporal qualification."
       ],
       "exceptions_and_evidence_limits": [
         "Keep past and present distinct."
@@ -5154,11 +5155,11 @@
         ],
         "source_statement_is_verbatim": false
       },
-      "source_record_kind": "jupiter_saturn_social_class",
-      "source_statement": "Lilly gives separate examples for MARS with seventh lord or Moon in Aries/Scorpio indicating earlier desire now diminished; and Moon LADY OF SEVENTH conjoined with MARS or JUPITER (one glyph uncertain) representing an allegedly higher-status man/bishop. Mutual reception indicates attachment still present but lacking opportunity.",
+      "source_record_kind": "mars_as_seventh_lord_social_class",
+      "source_statement": "If MARS IS THE SEVENTH LORD, or Moon is lady of seventh, in Aries or Scorpio, the text gives a claimed past affection that may now have diminished; separate passages associate lunar planetary combinations and reception with other claims.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Identify which of the Moon-as-seventh-lady Mars/Jupiter conjunction, earlier Aries/Scorpio condition, or MUTUAL RECEPTION branch applies."
+        "Mars is the seventh ruler, not merely with the seventh ruler."
       ],
       "exceptions_and_evidence_limits": [
         "The planet in the second joining is copy-uncertain; no Saturn is named in this original PDF349 passage, contrary to the first draft."
@@ -5298,10 +5299,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "sun_great_person_reception",
-      "source_statement": "Seventh lord joined to SUN signifies, by the quality of the DEMANDANT, previous attachment to a prominent person; WITH RECEPTION the person had or may have relations if desired, WITHOUT RECEPTION the person has forsaken her.",
+      "source_statement": "The planetary arrangement is said to signify that she loveth at present.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Reception present versus absent between SUN and seventh ruler gives different source outcomes; questioner's quality affects social attribution."
+        "The present-tense claim must be kept distinct from past attachment."
       ],
       "exceptions_and_evidence_limits": [
         "The source's personal-relationship allegations have no independent verification."
@@ -5440,10 +5441,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "seventh_lord_voc_no_contact",
-      "source_statement": "In the separate 'Hath she a Lover' subsection, the seventh lord void of course indicates no admirer under the stated context, with other node/source aspects handled distinctly.",
+      "source_statement": "Seventh lord void of course, OR with Dragon's Head (source 'or with ☊, idem'), is given as a sign the woman has no other lover in the historical scheme.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Apply the separate unnumbered heading's seventh-lord and lunar signifiers; no assumption that every seventh lord VOC entails real-world absence."
+        "The source includes both void course and Head node same-conclusion clauses."
       ],
       "exceptions_and_evidence_limits": [
         "This record belongs after the new 'Hath she a Lover' heading, not to the previous 'sweetheart besides himself' paragraph."
@@ -6491,10 +6492,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "venus_westward_regret",
-      "source_statement": "Venus occidental, retrograde and hastening to combustion is read as a woman regretting separation and wishing to return.",
+      "source_statement": "In the named Venus configuration Lilly says 'of her owne accord the woman will returne'.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Use the exact conditions embedded in the source statement, without adding modern assumptions."
+        "Source uses an asserted voluntary return, not merely a wish."
       ],
       "exceptions_and_evidence_limits": [
         "Compound timing and motion conditions."
@@ -6983,13 +6984,13 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "attempted_no_admittance",
-      "source_statement": "The source allows that someone may have been approached but declined and remained honourable, with common signs treated as less important in that branch.",
+      "source_statement": "When angles are fixed signs but first lord or Moon is in movable/common signs, Lilly says the woman 'hath been attempted, and is still tempted' but nevertheless may remain honest.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Use all source-named planet, house, aspect and role conditions."
+        "Require BOTH fixed angles and first-lord/Moon movable or common."
       ],
       "exceptions_and_evidence_limits": [
-        "Being approached is explicitly distinct from accepting an advance."
+        "Do not replace source's 'still tempted' with declined."
       ],
       "case_evidence_countable": false,
       "independently_verified_outcome": false,
@@ -7018,13 +7019,13 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "two_nodes_temporal_contrast",
-      "source_statement": "The text distinguishes Dragon's Head's earlier alleged error from a Dragon's Tail conditional about continued suspicion, with Mars reducing the asserted weight of blame.",
+      "source_statement": "The source distinguishes: if the woman be with Dragon's HEAD, she hath been formerly DELUDED (deceived); with Dragon's TAIL she 'hath formerly offended, and is still guilty, nor will she amend hereafter'; likewise Mars in place of the Tail is claimed to signify this, though with LESS malice.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Use all source-named planet, house, aspect and role conditions."
+        "Distinguish HEAD deception, TAIL ongoing accusation, and MARS replacing Tail rather than softening Tail itself."
       ],
       "exceptions_and_evidence_limits": [
-        "Past and present, Head and Tail, and countervailing factors must remain distinct."
+        "Conflicting moral accusations are historical source claims; no factual verification or endorsement."
       ],
       "case_evidence_countable": false,
       "independently_verified_outcome": false,
@@ -7088,10 +7089,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "forced_not_voluntary_exception",
-      "source_statement": "A first-house ruler combust in a movable sign is used in one source branch to discuss an encounter arising through force and lack of consent rather than voluntary action.",
+      "source_statement": "Printed source gives 'made a harlot by violence, OR she was unwillingly drawn' in a relevant condition.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Use all source-named planet, house, aspect and role conditions."
+        "Preserve both printed alternatives with OR and the nonconsent distinction."
       ],
       "exceptions_and_evidence_limits": [
         "Lilly's historical premise cannot be used to infer consent, culpability, or actual intimate conduct."
@@ -7228,10 +7229,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "past_love_aries_scorpio",
-      "source_statement": "The source separately considers Mars and seventh lord or Moon in Aries/Scorpio as implying earlier affection now diminished.",
+      "source_statement": "Where MARS IS LORD OF THE SEVENTH, or the Moon is lady of the seventh, in Aries or Scorpio, author makes a past-love claim under additional reception and aspect circumstances.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Use all source-named planet, house, aspect and role conditions."
+        "Do not convert 'Mars Lord of seventh' into Mars with seventh lord."
       ],
       "exceptions_and_evidence_limits": [
         "Distinguishes former from current speculation."
@@ -7578,10 +7579,10 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "seventh_occupant_lover_rule",
-      "source_statement": "A planet in seventh which is NOT its lord represents a possible acquaintance of its source-described complexion; if NONE in seventh Lilly says none; when a woman asks about man, use the related eleventh-house question.",
+      "source_statement": "Any planet IN the seventh except its lord is treated as alleged acquaintance; the next instruction says the matter may have relation to the ELEVENTH HOUSE.",
       "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
-        "Use all source-named planet, house, aspect and role conditions."
+        "Do not convert 'relation to eleventh house' into a new 'eleventh-house question' or assume solely woman asks."
       ],
       "exceptions_and_evidence_limits": [
         "The source explicitly requires excluding seventh-house lord and offers an absence branch; no affair is verified."
@@ -7592,9 +7593,46 @@
       "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
       "source_review_inserted": true,
       "source_order_after_draft": 2077
+    },
+    {
+      "id": "LI.1647.II.XLIX.R2137",
+      "record_number": 2137,
+      "batch": "B02s",
+      "chapter": "XLIX",
+      "book": "II",
+      "source_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "source_locator": {
+        "pdf_pages": [
+          352
+        ],
+        "printed_pages": [
+          318
+        ],
+        "page_images": [
+          "evidence/pdf-352.png"
+        ],
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "mistress_sweetheart_scope_parallel",
+      "source_statement": "In the estranged-partner inquiry, Lilly expressly states that the same question also concerns doubts about a mistress or sweetheart, not solely a married wife or husband.",
+      "source_statement_type": "NORMALIZED_PARAPHRASE_NOT_VERBATIM",
+      "preconditions": [
+        "This extends the immediately preceding inquiry about an absent or estranged partner; preserve its seventh-house signification and original question context."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Scope extension is historical authorial text, not a second actual couple or outcome.",
+        "No assumption that reconciliation is safe, desired or consensual."
+      ],
+      "draft_part": "PART_E2B_352.json",
+      "case_evidence_countable": false,
+      "independently_verified_outcome": false,
+      "prospective_frozen_forecast": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_review_inserted": true,
+      "source_order_after_draft": 2095
     }
   ],
   "initial_draft_record_count": 187,
-  "added_missed_original_units": 29,
+  "added_missed_original_units": 30,
   "source_reading_order_manifest": "RULES_SOURCE_ORDER.json"
 }

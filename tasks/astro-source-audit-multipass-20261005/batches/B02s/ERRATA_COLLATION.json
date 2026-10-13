@@ -10,7 +10,7 @@
       "erratum": "dele [conjunction glyph]",
       "original_reading": "Conjunction, square, opposition in marriage-hard-aspect list",
       "corrected_reading": "Square or opposition, not conjunction",
-      "body_match": "MATCHED by sole conjunction symbol in that source clause; counted body text line possibly one different",
+      "body_match": "Original p305 conjunction glyph found in the clause; modern body count is line23 while source erratum says22. Erratum says delete conjunction; preserve both source witnesses.",
       "used_in": [
         "R1961"
       ],
@@ -23,7 +23,7 @@
       "erratum": "read undertaken",
       "original_reading": "Source text/copy word in journey branch",
       "corrected_reading": "undertaken",
-      "body_match": "REQUIRES EXACT BODY LINE RECHECK; no silent emendation",
+      "body_match": "Original p306 body appears already to read undertaken; do not invent an earlier different word for the erratum.",
       "used_in": [
         "R1971"
       ],
@@ -36,7 +36,7 @@
       "erratum": "read for [Sun glyph] and [Mars glyph]",
       "original_reading": "Hand mark/overprint appears near plurality-of-husbands rule",
       "corrected_reading": "for Sun and Mars, subject to copy legibility",
-      "body_match": "ORIGINAL GLYPH UNCERTAIN; original-volume erratum directs reading and marginal handwritten mark is secondary",
+      "body_match": "p307 source glyph partly obscured and handwritten correction later; erratum instructs reading for Sun and Mars.",
       "used_in": [
         "R1986"
       ],
@@ -49,7 +49,7 @@
       "erratum": "read it is no good",
       "original_reading": "it is not to trust alwayes to this judgment",
       "corrected_reading": "it is no good to trust alwayes to this judgment",
-      "body_match": "MATCHED against source moral-character confidence caveat",
+      "body_match": "p312 source clause includes not to trust; erratum says read it is no good, but precise body replacement span is not proven.",
       "used_in": [
         "R2040"
       ],
@@ -62,7 +62,7 @@
       "erratum": "read [Dragon's Tail / South Node glyph]",
       "original_reading": "blotted original seventh-lord/Mars/node clause",
       "corrected_reading": "South Node glyph in conditional clause",
-      "body_match": "MATCHED with blotted body glyph; handwritten marginal correction not presumed 1647 authorial",
+      "body_match": "p315 Dragon Tail mark blotted; later handwriting separate; rely on explicit erratum.",
       "used_in": [
         "R2062"
       ],
@@ -75,7 +75,7 @@
       "erratum": "read seventh",
       "original_reading": "abbreviated or malformed seventh in source print",
       "corrected_reading": "seventh",
-      "body_match": "MATCHED source seventh-lord clause; original page number appears misprinted 215",
+      "body_match": "p315 seventh printed in abbreviation and body location substantially matches; no body page rewrite.",
       "used_in": [
         "R2064"
       ],
@@ -84,5 +84,6 @@
   ],
   "count": 6,
   "original_body_unchanged": true,
-  "line_number_ambiguity": "Errata printer's line number may differ from modern image line count; direct target wording is stronger than arithmetic line alignment."
+  "line_number_ambiguity": "Errata printer's line number may differ from modern image line count; direct target wording is stronger than arithmetic line alignment.",
+  "source_reconciliation": "Source original body separate from same-volume printed errata and later handwritten marginalia."
 }

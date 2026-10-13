@@ -1,0 +1,88 @@
+{
+  "batch": "B02s",
+  "original_errata_image": "evidence/errata-888.png",
+  "source_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "entries": [
+    {
+      "printed_page": 305,
+      "pdf_page": 339,
+      "line": 22,
+      "erratum": "dele [conjunction glyph]",
+      "original_reading": "Conjunction, square, opposition in marriage-hard-aspect list",
+      "corrected_reading": "Square or opposition, not conjunction",
+      "body_match": "MATCHED by sole conjunction symbol in that source clause; counted body text line possibly one different",
+      "used_in": [
+        "R1961"
+      ],
+      "source_image": "evidence/pdf-339.png"
+    },
+    {
+      "printed_page": 306,
+      "pdf_page": 340,
+      "line": 26,
+      "erratum": "read undertaken",
+      "original_reading": "Source text/copy word in journey branch",
+      "corrected_reading": "undertaken",
+      "body_match": "REQUIRES EXACT BODY LINE RECHECK; no silent emendation",
+      "used_in": [
+        "R1971"
+      ],
+      "source_image": "evidence/pdf-340.png"
+    },
+    {
+      "printed_page": 307,
+      "pdf_page": 341,
+      "line": 28,
+      "erratum": "read for [Sun glyph] and [Mars glyph]",
+      "original_reading": "Hand mark/overprint appears near plurality-of-husbands rule",
+      "corrected_reading": "for Sun and Mars, subject to copy legibility",
+      "body_match": "ORIGINAL GLYPH UNCERTAIN; original-volume erratum directs reading and marginal handwritten mark is secondary",
+      "used_in": [
+        "R1986"
+      ],
+      "source_image": "evidence/pdf-341.png"
+    },
+    {
+      "printed_page": 312,
+      "pdf_page": 346,
+      "line": 17,
+      "erratum": "read it is no good",
+      "original_reading": "it is not to trust alwayes to this judgment",
+      "corrected_reading": "it is no good to trust alwayes to this judgment",
+      "body_match": "MATCHED against source moral-character confidence caveat",
+      "used_in": [
+        "R2040"
+      ],
+      "source_image": "evidence/pdf-346.png"
+    },
+    {
+      "printed_page": 315,
+      "pdf_page": 349,
+      "line": 7,
+      "erratum": "read [Dragon's Tail / South Node glyph]",
+      "original_reading": "blotted original seventh-lord/Mars/node clause",
+      "corrected_reading": "South Node glyph in conditional clause",
+      "body_match": "MATCHED with blotted body glyph; handwritten marginal correction not presumed 1647 authorial",
+      "used_in": [
+        "R2062"
+      ],
+      "source_image": "evidence/pdf-349.png"
+    },
+    {
+      "printed_page": 315,
+      "pdf_page": 349,
+      "line": 10,
+      "erratum": "read seventh",
+      "original_reading": "abbreviated or malformed seventh in source print",
+      "corrected_reading": "seventh",
+      "body_match": "MATCHED source seventh-lord clause; original page number appears misprinted 215",
+      "used_in": [
+        "R2064"
+      ],
+      "source_image": "evidence/pdf-349.png"
+    }
+  ],
+  "count": 6,
+  "original_body_unchanged": true,
+  "line_number_ambiguity": "Errata printer's line number may differ from modern image line count; direct target wording is stronger than arithmetic line alignment."
+}

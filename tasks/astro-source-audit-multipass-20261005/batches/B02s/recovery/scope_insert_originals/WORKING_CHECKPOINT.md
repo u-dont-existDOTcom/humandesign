@@ -1,0 +1,9 @@
+# B02s corrected documentary candidate — review gates OPEN
+
+Parent owner outcome: **OPEN** multi-author original-text astrology audit. Canonical accepted baseline: Lilly 1,920, Ptolemy 1,066, combined 2,986, last accepted R1920/B02r. Original Lilly 1647 PDF336 lower through PDF353 upper images + errata888 verified; PDF SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. Pixel replay **19/19** source images exact.
+
+Initial B02s draft 187 historical source units; fresh independent review A (PDF336–345) 38 issues, B (PDF344–353) 53 issues. Repairs now cover **82 distinct initial records** and **29 missing original clauses**, resulting in **216 proposed source-only units R1921–R2136**. Source reading sequence stored separately; 64 explicit uncertainty/limitation records retained, and the local source-specific **260/260 checks passed** after reconciliation. No new verified couple/person or clinical/empirical prediction.
+
+**Current blocker:** Two changed-item source reviews in `<OWNER_REVIEW_STAGING_DIR>/b02s-changed-[a,b]-20261013` were launched. Do not duplicate a running model call; look for `review.exit` and `review.stdout`, classify and repair any material source error. On completion, create `independent_review/FINAL_RECONCILIATION.json` with exact statuses and reviewer output hashes. Only then refresh claim ledger, tests and acceptance script. Do not advance canonical index while reviews unresolved.
+
+Next permitted actions after review: package immutable ZIP, exact CRC/hash/extraction/test replay, nonforce fast-forward source and canonical branch after live-head ancestry check, owner Downloads actual SHA256 delivery, remote readback and separate receipts. The prepared scripts are `finalize_source_acceptance.py`, `package_b02s.py`, `verify_and_deliver.py`. The next book section would be Chapter L, original PDF353 BELOW divider, proposed R2137 if this batch is accepted. Parent multi-author source audit OPEN.

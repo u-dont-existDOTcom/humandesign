@@ -3,7 +3,7 @@ from pathlib import Path
 import json,shutil,hashlib
 B=Path(__file__).resolve().parents[1]
 D=json.loads((B/"RULES.json").read_text())
-OUT=Path("/mnt/hdd/home/joel/ai-source-review")
+OUT=Path(__import__("os").environ.get("LILLY_REVIEW_STAGING_DIR", str(Path.home()/"ai-source-review")))
 for label,lo,hi in [("A",336,345),("B",344,353)]:
  stage=OUT/f"b02s-original-first-{label.lower()}-20261013"
  assert not stage.exists(),str(stage)

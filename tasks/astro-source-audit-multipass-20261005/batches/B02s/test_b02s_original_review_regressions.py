@@ -104,9 +104,9 @@ class SourceGroupAndTrace(unittest.TestCase):
  def test_distinct_love_direction_contradictions_retained(self):
   self.assertIn("loving",txt(1950))
   self.assertIn("against the ancients",txt(2083))
- def test_29_added_recovered_source_clauses(self):
-  self.assertEqual(d["added_missed_original_units"],29)
-  self.assertEqual(d["record_count"],216)
+ def test_30_added_recovered_source_clauses(self):
+  self.assertEqual(d["added_missed_original_units"],30)
+  self.assertEqual(d["record_count"],217)
  def test_intervening_headings_separate(self):
   for k in ("strife_or_good_heading","postmarital_agreement_heading","lover_separate_heading","manner_person_heading","honest_to_husband_heading"):
    self.assertIn(k,K)

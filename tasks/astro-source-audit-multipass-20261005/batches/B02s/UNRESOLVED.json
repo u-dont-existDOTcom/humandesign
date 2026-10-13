@@ -1,6 +1,6 @@
 {
   "batch": "B02s",
-  "retained_count": 64,
+  "retained_count": 68,
   "status": "CORRECTED_SOURCE_REVIEW_UNCERTAINTIES_RETAINED",
   "limits": [
     {
@@ -321,6 +321,26 @@
     {
       "id": "U64",
       "description": "Historical marriage/gender, death, paternity and intimate-history claims have no independently authenticated outcome records.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U65",
+      "description": "Printed p318 explicitly extends the estranged-partner question to mistress or sweetheart; it is now R2137 but not an independent person or verified result.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U66",
+      "description": "Two informed changed-item reviewer passes after two partial-window fresh image reviews caught material errors; the controller's final repairs were not given a third fresh blind evaluation.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U67",
+      "description": "p305 erratum deleting a conjunction has a body match one line different by one count; p306 already seems to print undertaken; p307 handwriting cannot independently prove the original printed form.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U68",
+      "description": "p312 read-it-is-no-good erratum's exact replacement span is uncertain; p315 south-node body mark is blotted and later marginal handwriting is not original print.",
       "status": "RETAINED"
     }
   ]

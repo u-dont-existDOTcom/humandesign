@@ -1,7 +1,7 @@
 {
   "batch": "B02s",
-  "report_sha256": "6238cd160e583824b1956b4e029013b589727cae73e3251a929d4fc7bfd5e765",
-  "unit_count": 29,
+  "report_sha256": "1a4781d5eb71fa206fb7e8778dcc8bbb61d9c724f440c0f7b8fbf42562ae1654",
+  "unit_count": 33,
   "units": [
     {
       "id": "C01",
@@ -125,26 +125,46 @@
     },
     {
       "id": "C25",
-      "text": "This corrected candidate contains **216 source-only units**, R1921–R2136: 187 original draft IDs retained for audit traceability, **82 distinct original records repaired**, and **29 separately indexed clauses/sections recovered**. Because recovered clauses were assigned later IDs, RULES_SOURCE_ORDER.json establishes actual source reading sequence. These numbers are **documentary units**, not historical couples, observed successes or predictive confidence. Some source contradictions remain unresolved: the wording about assent on pp303–304 and Lilly's later reversal of who loves more on printed305 versus317 are both preserved, not harmonized. The historical partner-role, power, paternity and personal-conduct assumptions are not endorsed. Changed-item source review remains a separate final acceptance boundary.",
-      "sha256": "95ad7ff75b2f731e3e14ace05e0b393f07d2ea94c251b16d71dcfff7fbb10f37"
+      "text": "This corrected candidate contains **217 source-only units**, R1921–R2137: 187 original draft IDs retained for audit traceability, **82 distinct original records repaired**, and **30 separately indexed clauses/sections recovered**, including the additional printed p318 mistress-or-sweetheart scope. Because recovered clauses were assigned later IDs, RULES_SOURCE_ORDER.json establishes actual source reading sequence. These numbers are **documentary units**, not historical couples, observed successes or predictive confidence. Some source contradictions remain unresolved: the wording about assent on pp303–304 and Lilly's later reversal of who loves more on printed305 versus317 are both preserved, not harmonized. The historical partner-role, power, paternity and personal-conduct assumptions are not endorsed. Two informed changed-item source reviews returned errors that have now received further source-specific repairs; final documentary acceptance still requires exact tests and source-provenance receipts.",
+      "sha256": "a47200cd543013e77b5218ee570d50f6e0d59ac24094a2f9cdd2934626ad449e"
     },
     {
       "id": "C26",
+      "text": "## Informed changed-item reviews and subsequent corrections",
+      "sha256": "3d8733fc8e1a341f35be34f33121b94ef6ac37118af2603e41269dd830aa2d24"
+    },
+    {
+      "id": "C27",
+      "text": "The two informed source-window reviews examined changes to the original 187-unit draft and additional recovered clauses, rather than constituting fresh blind replications. Their interim verdict was **REPAIR_REQUIRED**. On p310 the first revision had inadvertently deleted a Moon-in-fall / square-or-opposition-with-Saturn-Mars-or-retrograde clause qualified by the Moon beholding the ascendant; it is restored. The man-versus-woman signification on p308 has been repaired, including **Moon with Venus** as only one example for a male querent and **Sun beholding Saturn/Jupiter** when judging the man. The source's p310 **heavy planet** means a ponderous receiver of light, not merely any afflicted receiver. [PDF342,344; R1991,R1992,R2010,R2021; original independent changed-item reviews]",
+      "sha256": "5f8e508fdb53beb8e5eab2ebc8f526d2b359d76b260b37f34d43fae52d3046a5"
+    },
+    {
+      "id": "C28",
+      "text": "In the text's more sensitive p313–315 allegations, the correction retains an unambiguously **nonconsensual** source alternative, specifies when someone was **deceived** rather than blaming her, and restores the passage saying the hypothetical other man **could not bring her under his yoke**. A further p313 case expressly says a woman **gave no credit** to a tempting advance and that a circulated allegation was **false**. Mars appearing **as lord of the seventh** differs from Mars merely joining the seventh lord. We retain the author's source claims without endorsing them or inferring any actual conduct or relationship. [PDF347–349; R2047,R2064,R2067,R2119,R2120,R2122,R2126]",
+      "sha256": "9e277884e31b507e5c61232efebf1728877cfe450591bae74663942f9f30d197"
+    },
+    {
+      "id": "C29",
+      "text": "The source prints on p318 that the separated-partner question may also concern a **mistress or sweetheart**, now separately indexed as R2137 with its source-reading order after the heading R2095. **Neither changed-item reviewer was a blind third review of the final corrected packet.** The original reviewer outputs and each informed readback are separately preserved, and uncertain original glyphs and typographic errata remain stated as limitations; textual acceptance is not predictive validation.",
+      "sha256": "5062f08e740bb3ffbc6a9cc0ba60acfa62c9aac8a87481b650a73d9c115f3d2f"
+    },
+    {
+      "id": "C30",
       "text": "## Same-volume errata and admitted limitations",
       "sha256": "1d8b672914f509139b9ccdb5ed8c03b0cc68d26d947306d5b2845dad234a1fb3"
     },
     {
-      "id": "C27",
+      "id": "C31",
       "text": "The original errata leaf (PDF888) contains entries apparently addressing **printed pages305,306,307,312 and315** within Chapter XLIX. They have been collated as six specific directions: **p305 delete conjunction**, p306 read *undertaken*, p307 read *for Sun and Mars* (copy-glyph uncertainty retained), **p312 read 'it is no good'**, **p315 read South Node** (body glyph blotted), and **p315 read 'seventh'**. Several body-line identifications are qualified; none authorizes altering original image bytes. The original body witnesses and errata instructions are preserved **separately**; none is silently rewritten. The printed text also contains later handwritten marginalia, including near the marriage chapter opening, whose authorship is not established by the 1647 print. [ERRATA_COLLATION.json; PDF888]",
       "sha256": "5605622f1e1b4a3772652e9902da2d8701632646fb810423b727c022b96efeca"
     },
     {
-      "id": "C28",
+      "id": "C32",
       "text": "All source items are **normalized editorial paraphrases** separated by unique ID and original page locator, not verbatim diplomatic reproductions. An unverified model can label multiple apparently plausible conclusions from a single chart; those are **not independent successful predictions**. There are no new observed charts, authenticated marriage outcomes, clinical trials, prospective predictions or calibration data in this batch. The greater multi-author astrology study remains open, and no historical source statement here is promoted as a medical, relationship-safety or empirical forecasting rule.",
       "sha256": "da43dc5e1f8bea948e29c82625440503bdc5d0243cf0eaabc93642d0d4177264"
     },
     {
-      "id": "C29",
+      "id": "C33",
       "text": "**Next exact boundary:** Chapter L, *Of Servants fled, Beasts strayed, and things lost*, starts original **PDF353/printed319 BELOW the horizontal divider**, requiring its own source-complete intake after B02s is accepted. The next document ID is provisional until the cumulative index is checked again.\n",
       "sha256": "ce01ba31796c18f85d4d7a5d74fceb2751c01e9950daea76f1880b54892d7977"
     }

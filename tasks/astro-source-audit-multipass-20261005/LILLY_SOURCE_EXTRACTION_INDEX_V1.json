@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLVIII_AND_SEVENTH_GENERAL_HORARY_APHORISMS_SOURCE_READ",
-  "records_count": 1920,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIX_MARRIAGE_SOURCE_DOCUMENTED_LATER_LILLY_OPEN",
+  "records_count": 2137,
   "read_numbered_chapters": [
     1,
     2,
@@ -52,7 +52,8 @@
     45,
     46,
     47,
-    48
+    48,
+    49
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -181,25 +182,31 @@
       "records_count": 69,
       "sha256": "5e083c88ff574f5829278ad82d736d73fc27ae9ccde754e52e7f7627501619cb",
       "scope": "Lilly Book II XLVIII + seventh-house bridge + all 43 general horary aphorisms, original PDF330/printed296 below divider through PDF336/printed302 above XLIX divider, 69 source units, zero verified cases."
+    },
+    {
+      "id": "B02s",
+      "path": "batches/B02s/RULES.json",
+      "records_count": 217,
+      "sha256": "ede89b2cb2514449427564b8b06459558f3134f2f2828178e9e6f814aee6e2e9",
+      "scope": "Lilly 1647 XLIX Of Marriage original PDF336 lower/printed302 through PDF353 upper/printed319; 187 reviewed draft source units plus recovered original clauses, zero externally verified outcomes."
     }
   ],
   "next": {
-    "pdf_page": 336,
-    "printed_page": 302,
-    "chapter": "XLIX",
-    "heading": "Of Marriage",
+    "pdf_page": 353,
+    "printed_page": 319,
+    "chapter": "L",
+    "heading": "Of Servants fled, Beasts strayed, and things lost",
     "include_opening_paragraph": true,
-    "opening_anchor": "If a Question be asked of Marriage, behold the ascendant and the Lord thereof, and the Moon",
-    "position": "Original PDF336 below divider; continue on PDF337 and beyond; exclude already extracted aphorism43",
     "extracted": false,
-    "boundary_image_read": true
+    "boundary_image_read": true,
+    "position": "Original PDF353 BELOW the horizontal divider through PDF354 onward; exclude XLIX above divider."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 49,
+  "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261012_B02r.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261013_B02s.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": []
 }
