@@ -42,13 +42,18 @@
       "original_source_visual": "l 9 r vertue"
     },
     {
-      "printed_page": 337,
+      "printed_page": null,
       "line": "28",
       "read": "for ☉ and ♂",
       "original_source_visual": "p 337 l 28 r for ☉ and ♂",
-      "body_context": "printed337 original PDF371; exact replacement and nearby glyph sequence need body read",
+      "body_context": "Printed page locator not reliably read, perhaps 307 outside this chapter; do not ascribe to lunar age body p337.",
       "body_target_matched": false,
-      "admission": "DRAFT_COLLATION_PENDING"
+      "admission": "UNCERTAIN_PAGINATION_NO_ASSIGNMENT_TO_B02u_SOURCE_BODY",
+      "printed_page_locator_original": "p 3?7 (middle digit damaged)",
+      "possible_printed_page_readings": [
+        307,
+        337
+      ]
     }
   ],
   "same_volume_original_print_only": true,
@@ -58,5 +63,6 @@
   "corrected_against_exact_original_1647_errata_raster": true,
   "original_visual_is_not_alternate_edition": true,
   "number_of_entries_in_this_phase_not_already_B02t": 4,
-  "p330_instruction_belongs_to_prior_accepted_batch": true
+  "p330_instruction_belongs_to_prior_accepted_batch": true,
+  "reconciliation_note": "Independent source review B reads faint p3?7, not proved p337. No silent source body emendation."
 }

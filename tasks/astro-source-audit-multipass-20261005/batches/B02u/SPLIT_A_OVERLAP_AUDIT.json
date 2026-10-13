@@ -1,0 +1,280 @@
+{
+  "raw_source_files": [
+    {
+      "split_window": "A1",
+      "file": "SOURCE_READER_A1.json",
+      "sha256": "e2fee7a643d9a61745d32abefb727d8684b978ae05c9becffbd56912a7114fa8",
+      "units": 36
+    },
+    {
+      "split_window": "A2",
+      "file": "SOURCE_READER_A2.json",
+      "sha256": "00ebbf28cc02d2f95ad03467c0dc293b0ecbd763da420127addee4461a657855",
+      "units": 71
+    }
+  ],
+  "excluded_overlap_units": [
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1025",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_conditional",
+      "short_original_anchor": "and signifieth the place from whence the Goods was taken",
+      "normalized_historical_statement": "The opening continuation also assigns the place from which the goods were taken to the preceding first-house/first-lord description.",
+      "preconditions": [
+        "The first-house and first-lord assignment continued from printed page 331."
+      ],
+      "exceptions_and_uncertainty": [
+        "The grammar leaves the precise antecedent of 'signifieth' between the first house and its lord implicit."
+      ],
+      "confidence": "medium"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1026",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_conditional",
+      "short_original_anchor": "the seventh house and his Lord, and the peregrine Planet",
+      "normalized_historical_statement": "The seventh house and its lord, the peregrine planet in an angle, and the lord of the hour signify the thief or person who took the goods away.",
+      "preconditions": [
+        "A theft or lost-goods question."
+      ],
+      "exceptions_and_uncertainty": [
+        "This passage lists the candidates together without an explicit selection order."
+      ],
+      "confidence": "high"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1027",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_quotation",
+      "short_original_anchor": "This is a ve- ry good judg- ment, and",
+      "normalized_historical_statement": "The marginal note beside the opening assignments calls this a very good judgment that may well be trusted.",
+      "preconditions": [
+        "The adjoining opening judgment under 'Of THEFTS.'"
+      ],
+      "exceptions_and_uncertainty": [
+        "The anchor preserves printed word divisions; this is the author's historical endorsement."
+      ],
+      "confidence": "high"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1028",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_conditional",
+      "short_original_anchor": "The second house and the Lord of the second house",
+      "normalized_historical_statement": "The second house, its lord and the Moon signify goods or a thing lost, stolen or missing.",
+      "preconditions": [
+        "A theft or lost-goods question."
+      ],
+      "exceptions_and_uncertainty": [],
+      "confidence": "high"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1029",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_conditional",
+      "short_original_anchor": "the fourth house and his Lord shall signifie the place",
+      "normalized_historical_statement": "The fourth house and its lord signify where the thing has been laid, put, done or conveyed, and where it is at that instant.",
+      "preconditions": [
+        "A theft or lost-goods question."
+      ],
+      "exceptions_and_uncertainty": [
+        "The body visibly includes the word 'done' in this sequence."
+      ],
+      "confidence": "high"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1030",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_conditional",
+      "short_original_anchor": "shall tell and shew whether the Goods shall be found",
+      "normalized_historical_statement": "Whether the goods will be found or recovered is to be judged from the aspects of the Sun and Moon, of the ascendant lord, of the second-house lord, and of the lord of the Moon's house toward the ascendant lord, together with their applications and aspects to one another.",
+      "preconditions": [
+        "Examining the listed planets and house lords, their applications and mutual aspects."
+      ],
+      "exceptions_and_uncertainty": [
+        "The printed punctuation does not separately specify a target for every item in the list."
+      ],
+      "confidence": "high"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1031",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_conditional",
+      "short_original_anchor": "If the lord of the second and the",
+      "normalized_historical_statement": "If the second-house lord and Moon are in the seventh in the sign of the seventh, and the seventh-house lord beholds them both by trine or sextile, the goods are judged taken away by somebody rather than simply lost. The rule still applies when the aspect is far from exact, described as many degrees distant.",
+      "preconditions": [
+        "The second-house lord and Moon occupy the seventh in its sign.",
+        "The seventh-house lord aspects both by trine or sextile."
+      ],
+      "exceptions_and_uncertainty": [
+        "The author expressly allows a distant aspect."
+      ],
+      "confidence": "high"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1032",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_conditional",
+      "short_original_anchor": "then hath the party lost the thing or Goods",
+      "normalized_historical_statement": "If the Moon rules the second, is in the house of the lord of the hour, and goes to conjunction with the lord of the seventh, the person is judged to have left the thing somewhere and forgotten it: the goods are carelessly mislaid.",
+      "preconditions": [
+        "The Moon is lady of the second.",
+        "The Moon occupies the house of the lord of the hour.",
+        "The Moon is going to conjunction with the seventh-house lord."
+      ],
+      "exceptions_and_uncertainty": [
+        "The source explicitly describes the thing as neither lost nor stolen, but carelessly mislaid."
+      ],
+      "confidence": "high"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1033",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_conditional",
+      "short_original_anchor": "the thing is not stolen, but taken away in jest",
+      "normalized_historical_statement": "If the Moon rules the ascendant and occupies the fourth, while the second-house lord is in the seventh or the sign of the eighth house, with the printed conjunction relation 'to the second house' and a sextile or trine to the Moon, the thing is judged taken away in jest.",
+      "preconditions": [
+        "The Moon is lady of the ascendant.",
+        "The Moon occupies the fourth.",
+        "The second-house lord is in the seventh or in the sign of the eighth house.",
+        "The text specifies conjunction 'to the second house'.",
+        "The text specifies sextile or trine to the Moon."
+      ],
+      "exceptions_and_uncertainty": [
+        "The conjunction 'to the second house' is unusual but is preserved without substituting an unstated planet.",
+        "The grammatical attachment of the last two aspect clauses is not entirely explicit."
+      ],
+      "confidence": "medium"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1034",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_conditional",
+      "short_original_anchor": "then is the Goods stolen and taken away",
+      "normalized_historical_statement": "If the Moon rules the ascendant and is in the ascendant, not far removed, and the Sun as lord of the second is in sextile with the lord of the seventh, while the seventh-house lord oppresses the Moon by square, the goods are judged stolen and taken away.",
+      "preconditions": [
+        "The Moon is lady of the ascendant.",
+        "The Moon is in the ascendant and 'not farre remote'.",
+        "The Sun is lord of the second.",
+        "The Sun is in sextile with the seventh-house lord.",
+        "The seventh-house lord squares the Moon."
+      ],
+      "exceptions_and_uncertainty": [
+        "The source does not specify the reference point or numerical distance for 'not farre remote'."
+      ],
+      "confidence": "high"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1035",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_conditional",
+      "short_original_anchor": "if the Moon be in the third",
+      "normalized_historical_statement": "If the Moon is in the third and oppressed by the seventh-house lord's square, and the second-house lord is also lord of the ascendant and occupies the seventh in the sign of the seventh, the thing is judged stolen.",
+      "preconditions": [
+        "The Moon occupies the third.",
+        "The seventh-house lord squares and oppresses the Moon.",
+        "The second-house lord also rules the ascendant.",
+        "That shared lord occupies the seventh in its sign."
+      ],
+      "exceptions_and_uncertainty": [
+        "The anchor renders the clearly visible lunar glyph as 'Moon'; the surrounding original words are consecutive."
+      ],
+      "confidence": "high"
+    },
+    {
+      "reason": "SPLIT_OVERLAP_PAGE366_OWNED_BY_A2",
+      "local_id": "A1036",
+      "pdf_pages": [
+        366
+      ],
+      "section_heading": "Of THEFTS.",
+      "kind": "source_exception",
+      "short_original_anchor": "but first it was taken in jest",
+      "normalized_historical_statement": "For the preceding third-house-Moon configuration, the author adds that the thing was first taken in jest and will be difficult to recover, except when the Sun and Moon behold the ascendant.",
+      "preconditions": [
+        "The full configuration in A1035."
+      ],
+      "exceptions_and_uncertainty": [
+        "The Sun and Moon beholding the ascendant are the explicit exception to difficulty recovering the thing."
+      ],
+      "confidence": "high"
+    },
+    {
+      "reason": "PRINTED_ERRATA_NOT_BODY_NOT_INDEXED",
+      "local_id": "A2069",
+      "pdf_pages": [],
+      "section_heading": "Errata leaf: introductory address",
+      "kind": "source_quotation",
+      "short_original_anchor": "If you meet with any materiall faults, wonder not at them",
+      "normalized_historical_statement": "The errata preface attributes material faults to the rarity of printing this kind of material locally and the printers' unfamiliarity with the learning. It says faults are presumed few, presents the most observable literal faults, and asks the reader to correct them, thereby potentially proving a good artist.",
+      "preconditions": [
+        "A reader encounters material or literal printing faults."
+      ],
+      "exceptions_and_uncertainty": [
+        "The filename identifies the supplied errata image as errata-888.png; no PDF page number is independently established from the leaf itself."
+      ],
+      "confidence": "high"
+    },
+    {
+      "reason": "PRINTED_ERRATA_NOT_BODY_NOT_INDEXED",
+      "local_id": "A2070",
+      "pdf_pages": [],
+      "section_heading": "ERRATA.",
+      "kind": "heading",
+      "short_original_anchor": "ERRATA. Page 31. line 20. read",
+      "normalized_historical_statement": "The original errata leaf contains a named list of corrections located by printed page and line.",
+      "preconditions": [],
+      "exceptions_and_uncertainty": [
+        "The anchor includes the beginning of the correction list."
+      ],
+      "confidence": "high"
+    }
+  ],
+  "excluded_are_NOT_deleted_from_original_source_files": true,
+  "source_ownership": "A1 owns starts pages364-365; A2 owns starts366-369",
+  "needs_independent_fidelity_review": true
+}

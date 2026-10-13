@@ -1,0 +1,109 @@
+{
+  "window": "B",
+  "review_type": "FRESH_IMAGE_FIRST_INDEPENDENT_SOURCE_FIDELITY",
+  "original_pages_read": [369, 370, 371, 372, 373],
+  "errata_image_read": true,
+  "candidate_units_checked": 88,
+  "all_claims_checked": true,
+  "status": "FINDS_ERROR",
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "HIGH",
+      "pdf_page": 369,
+      "printed_page": 335,
+      "candidate_local_ids": ["B015"],
+      "original_short_anchor": "or in the eleventh or fift",
+      "defect": "The candidate treats the word following the eleventh-house alternative as unreadable and omits the fifth-house destination. The print reads 'fift'. This also makes its description of a following separate or-branch misleading: 'or fift' continues the destination-house list.",
+      "narrow_source_correction": "Include a planet in the fifth alongside the second and eleventh as the destination of the seventh-ruling Moon's virtue. Preserve the following 'having her selfe neither' sextile/trine-to-cusps qualification, while leaving its precise reach across the alternatives open.",
+      "confidence": "high"
+    },
+    {
+      "id": "F02",
+      "severity": "MEDIUM",
+      "pdf_page": 888,
+      "printed_page": null,
+      "candidate_local_ids": ["B043", "B088"],
+      "original_short_anchor": "l 28 r for ☉ and ♂",
+      "defect": "B088 asserts that the faint errata locator is page 337, and B043 consequently attaches uncertainty from that entry to the lunar age passage. The middle numeral is damaged and appears more consistent with 0, giving a possible page-307 locator. The supplied image does not securely establish 337 or a correction to the lunar age passage.",
+      "narrow_source_correction": "Record the damaged locator as p3?7, with 307 as a possible reading, rather than asserting 337. Remove the specific association with B043 unless the locator and replacement target can be established. Keep the securely legible page-335 and page-336 errata separate.",
+      "confidence": "medium"
+    },
+    {
+      "id": "F03",
+      "severity": "MEDIUM",
+      "pdf_page": 369,
+      "printed_page": 335,
+      "candidate_local_ids": ["B016"],
+      "original_short_anchor": "and have no ✶ or △ to the Planet in the seventh",
+      "defect": "The normalized statement assigns the absence of sextile/trine to the seventh-house virtue-giving planet itself. That creates a relation back to the same seventh-house planet. Although the uncertainty field acknowledges the missing subject, the main statement still supplies an actor the print does not securely identify.",
+      "narrow_source_correction": "State that a seventh-house planet gives virtue to a second- or eleventh-house planet, followed by a no-sextile/no-trine condition to the seventh-house planet whose grammatical subject remains unresolved. Do not encode the condition as a definite self-relation or silently assign it to the recipient.",
+      "confidence": "high"
+    }
+  ],
+  "missing_source_units": [
+    {
+      "pdf_page": 369,
+      "original_short_anchor": "or in the eleventh or fift",
+      "normalized_source_assertion": "The future/intended-theft rule includes the Moon, as lady of the seventh, giving virtue to a planet in the fifth, alongside the second- and eleventh-house destinations. The following absence of sextile or trine to house cusps must remain attached to the passage with its grammatical scope unresolved."
+    }
+  ],
+  "source_ambiguities": [
+    {
+      "pdf_page": 369,
+      "description": "In 'the peregrine Planet give vertue', the definite article can refer back to the preceding peregrine planet in the Ascendant. The candidate's assertion that no house is specified should not settle whether that earlier placement remains inherited.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 369,
+      "description": "The 'Not stolen' construction combines 'neither', 'or', and 'separate not', involving the Moon-house lord, second-house lord, and other planets separating from them. Preserve the printed negative construction without imposing a definitive Boolean expansion.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 369,
+      "description": "The future-theft passage clearly includes 'or fift', but the reach of 'having her selfe neither' sextile nor trine to house cusps across its destination alternatives remains uncertain.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 369,
+      "description": "The subject of 'and have no' sextile or trine to the seventh-house planet is not securely supplied. Preserve the donor, recipient, and negative-aspect relation without assigning the missing subject.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 369,
+      "description": "The final body line visibly contains 'Planet' and ends with 'house or'; the next page begins 'of the ☽'. The same-volume errata separately directs 'Planet' at page 335's last line. Its exact replacement target is not demonstrated by that instruction alone, and handwritten marks cannot establish an authorial correction.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 370,
+      "description": "The peregrine-planet/Moon virtue exchange is followed by an additional 'if' involving the thief's conjunction, square, or opposition to the Moon, or aspect to the Moon's term lord. The punctuation does not securely determine whether these are cumulative requirements or parallel conditions.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 370,
+      "description": "Page 335 assigns missing/not-stolen outcomes to lunar virtue given to Saturn, Mars, cadent planets, or the eighth lord; page 336 assigns overlapping stolen/taken-away outcomes. Both printed rules must remain, including page 336's movable/fixed distinction.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 370,
+      "description": "In 'and he in a movable Signe', the antecedent of 'he' and the reach of the movable-sign qualification over the preceding alternatives are uncertain.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 372,
+      "description": "The young-person list includes joining Venus, the Moon increasing in light, the first ten degrees or middle of a sign, and the beginning of the Oriental quarter. Its punctuation leaves some subjects and conjunctions unresolved; these conditions must not be turned into a fully specified logical formula.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 373,
+      "description": "The later 'immovable, or a double bodied Sign' rule gives more than one thief, while earlier fixed-sign conditions give one. Retain the conflicting print rather than emending immovable to movable.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 888,
+      "description": "The locator preceding 'l 28 r for ☉ and ♂' has a faint middle digit. A reading of 307 is plausible; 337 is not securely established. No correction to the supplied page-337 lunar age passage follows from this uncertain locator.",
+      "must_remain_open": true
+    }
+  ],
+  "source_completeness": "Fully read the original body images PDF369–373, printed pages 335–339, in order before opening CANDIDATE.json; also read the entire supplied original errata image. Checked all 88 candidate units, headings, planetary and aspect glyphs, sign classifications, actor directions, age sequences, qualifications, and continuations. The missing-source list contains the fifth-house alternative; no additional wholly omitted substantive body rule was identified. No appearance/name table occurs in these supplied pages. The page-335 lost/stolen sentence continues into page 336; the page-337 age rule continues into page 338; the page-338 planetary gender discussion continues into page 339. The clothing section begins on page 339 but continues beyond this window after the catchword 'colours'; its later rules were not reconstructed. Handwritten annotations were distinguished from printed text and were not attributed to Lilly. This review concerns documentary fidelity only and establishes no criminal, demographic, or clinical facts about actual persons."
+}

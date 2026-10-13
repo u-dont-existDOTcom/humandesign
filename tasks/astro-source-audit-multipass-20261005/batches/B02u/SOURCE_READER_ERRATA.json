@@ -1,0 +1,114 @@
+{
+  "separate_from_body": true,
+  "units": [
+    {
+      "window": "B",
+      "draft_unit": {
+        "local_id": "B086",
+        "pdf_pages": [
+          888
+        ],
+        "section_heading": "ERRATA.",
+        "kind": "source_quotation",
+        "short_original_anchor": "p 335 l ult. r Planet",
+        "normalized_historical_statement": "The errata directs Planet at the last body line of printed page 335, affecting the sentence beginning under It is Lost or Stolen and continuing onto page 336.",
+        "preconditions": [
+          "Apply to printed page 335, last line."
+        ],
+        "exceptions_and_uncertainty": [
+          "This corrects a word, not the separation direction or the sentence's stolen result.",
+          "The catchword the is distinct from the corrected body-line noun."
+        ],
+        "confidence": "high"
+      },
+      "source_type": "PRINTED_ERRATA_SEPARATE_FROM_CHAPTER_BODY"
+    },
+    {
+      "window": "B",
+      "draft_unit": {
+        "local_id": "B087",
+        "pdf_pages": [
+          888
+        ],
+        "section_heading": "ERRATA.",
+        "kind": "source_quotation",
+        "short_original_anchor": "p 336 l 4 r vertue, l 9 r vertue",
+        "normalized_historical_statement": "The errata directs vertue at printed page 336, lines 4 and 9. These affect the Ascendant lord's giving virtue to the Moon and the proportional-return passage's reference to virtue or light.",
+        "preconditions": [
+          "Apply to printed page 336, lines 4 and 9."
+        ],
+        "exceptions_and_uncertainty": [
+          "The two corrections restore wording without changing the distinct giving directions or the proportional-return qualification."
+        ],
+        "confidence": "high"
+      },
+      "source_type": "PRINTED_ERRATA_SEPARATE_FROM_CHAPTER_BODY"
+    },
+    {
+      "window": "B",
+      "draft_unit": {
+        "local_id": "B088",
+        "pdf_pages": [
+          888
+        ],
+        "section_heading": "ERRATA.",
+        "kind": "source_quotation",
+        "short_original_anchor": "p 337 l 28 r for",
+        "normalized_historical_statement": "The errata supplies an instruction for printed page 337, line 28, reading for followed by Sun and Mars glyphs. Its precise replacement target in the supplied page is not securely reconciled.",
+        "preconditions": [
+          "The errata locator is printed page 337, line 28.",
+          "The legible correction includes for ☉ and ♂."
+        ],
+        "exceptions_and_uncertainty": [
+          "The anchor stops before the glyphs rather than claiming a facsimile transcription.",
+          "The correction is recorded but not used to overwrite the nearby printed lunar age sequence or another guessed target."
+        ],
+        "confidence": "medium"
+      },
+      "source_type": "PRINTED_ERRATA_SEPARATE_FROM_CHAPTER_BODY"
+    },
+    {
+      "window": "C",
+      "draft_unit": {
+        "local_id": "C073",
+        "pdf_pages": [
+          888
+        ],
+        "printed_pages": [],
+        "section_heading": "ERRATA.",
+        "kind": "heading",
+        "short_original_anchor": "ERRATA.",
+        "normalized_historical_statement": "Supplementary printed heading introducing the original correction list.",
+        "preconditions": [],
+        "exceptions_and_uncertainty": [
+          "The errata image has no visible printed page number."
+        ],
+        "confidence": "high"
+      },
+      "source_type": "PRINTED_ERRATA_SEPARATE_FROM_CHAPTER_BODY"
+    },
+    {
+      "window": "C",
+      "draft_unit": {
+        "local_id": "C074",
+        "pdf_pages": [
+          888
+        ],
+        "printed_pages": [],
+        "section_heading": "[Unheaded preface above ERRATA.]",
+        "kind": "source_quotation",
+        "short_original_anchor": "the Printers are unacquainted with this kind of learning",
+        "normalized_historical_statement": "The introductory note asks readers not to wonder at material faults, explaining that such things are seldom printed locally and printers are unfamiliar with this learning. The author supposes there may be some faults but very few, says the most observable literal faults are listed, and asks readers to correct them.",
+        "preconditions": [
+          "Reader encounters material or literal printing faults."
+        ],
+        "exceptions_and_uncertainty": [
+          "The author says I suppose and does not claim that every fault is listed.",
+          "Inspection of the complete correction list found no entry for printed p339–343; no correction has been imported from another page."
+        ],
+        "confidence": "high"
+      },
+      "source_type": "PRINTED_ERRATA_SEPARATE_FROM_CHAPTER_BODY"
+    }
+  ]
+}

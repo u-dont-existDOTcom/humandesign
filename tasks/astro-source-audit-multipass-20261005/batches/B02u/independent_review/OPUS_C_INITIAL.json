@@ -1,0 +1,98 @@
+{
+  "window": "C",
+  "review_type": "FRESH_IMAGE_FIRST_INDEPENDENT_SOURCE_FIDELITY",
+  "original_pages_read": [373, 374, 375, 376, 377],
+  "errata_image_read": true,
+  "candidate_units_checked": 74,
+  "all_claims_checked": true,
+  "status": "FINDS_ERROR",
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "HIGH",
+      "pdf_page": 376,
+      "printed_page": 342,
+      "candidate_local_ids": ["C053"],
+      "original_short_anchor": "☽ in the ninth in ☌ □ or ☍",
+      "defect": "The candidate misidentifies the first aspect glyph as sextile. The original shows a circle with an ascending stroke: conjunction. This changes a condition of the historical return-of-the-thief rule.",
+      "narrow_source_correction": "Replace sextile/⚹ with conjunction/☌ in the normalized statement and preconditions. Retain ninth-house placement, square or opposition, the alternatives ♄ or ♂, and the additional 'without fail if they be Retrograde' qualification. Do not add application or separation.",
+      "confidence": "high"
+    },
+    {
+      "id": "F02",
+      "severity": "MEDIUM",
+      "pdf_page": 374,
+      "printed_page": 340,
+      "candidate_local_ids": ["C029"],
+      "original_short_anchor": "♄ or ♀ Significator",
+      "defect": "The candidate leaves the second planetary alternative unidentified. Enlarged inspection supports Venus: the glyph has a rounded, partly open head and a lower cross.",
+      "narrow_source_correction": "Identify the second alternative as ♀, with a legibility qualification if desired: ♄ or ♀ as significator gives a name of more syllables, exemplified by Richard or William. Update the corresponding unresolved-glyph entry.",
+      "confidence": "medium"
+    }
+  ],
+  "missing_source_units": [
+    {
+      "pdf_page": 374,
+      "original_short_anchor": "♄ or ♀ Significator",
+      "normalized_source_assertion": "Venus is the second printed significator alternative in the more-syllables naming rule. The candidate preserves the rule but omits this planetary identification."
+    }
+  ],
+  "source_ambiguities": [
+    {
+      "pdf_page": 373,
+      "description": "The earlier fixed-sign-and-direct-ascensions rule gives one thief, whereas the later immoveable-sign rule gives more than one. Preserve both printed assertions; the supplied errata contains no correction for printed p339.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 373,
+      "description": "The compressed coordination of fixed sign, direct ascensions, few children, and few shapes must retain its printed AND/OR structure. The later mutual-luminary rule does not repeat the square explicitly required by the earlier rule.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 375,
+      "description": "The name tables repeat planetary combinations for different names and contain blank joined-planet cells. Preserve every row, its principal significator, its companion glyphs, and its blanks; do not create unique mappings or expand blanks into conditions.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 376,
+      "description": "The friendly-aspect clause ends with 'idem' immediately after the overthwart-neighbour result. That immediate antecedent supports the candidate's reading, but the compressed referral should remain visible rather than becoming an independently explicit result.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 376,
+      "description": "The opening sentence under 'A Stranger or Familiar' compresses the coordination of luminaries beholding the ascendant, the ascendant's lord in the first, and joining the seventh's lord. Retain the source wording alongside the candidate's contextual parsing.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 376,
+      "description": "The triplicity and terms clauses omit a repeated subject. Continuing the luminary subject is contextual. The return rule's plural 'they' does not expressly identify which planets must be retrograde.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 377,
+      "description": "The second-house paragraph shifts through 'it' between the alleged person and the lost thing. The attachment of the power-of-the-loser and recovery-by-money clauses should remain qualified rather than silently generalized.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 377,
+      "description": "The fourth-house occupational alternative visibly ends 'Labou-' before the next line begins 'of the Land'. Preserve the incomplete printing rather than supplying an unseen suffix.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 377,
+      "description": "The fifth-house masculine-sign parenthesis follows the cousin/nephew alternative; its full grammatical scope is uncertain.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 377,
+      "description": "The seventh-house paragraph gives wife/lady and other alternatives, then a feminine-sign enemy assertion. Retain both and the printed marginal caution 'This must be warily understood.'",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 377,
+      "description": "The eighth-house assertion begins with a stranger but ends 'yet seem-' with catchword 'eth'. Its substantive qualification continues outside the supplied window.",
+      "must_remain_open": true
+    }
+  ],
+  "source_completeness": "Fully read the original images PDF373–377, printed339–343, in page order, including opening and closing fragments, running and subsection headings, printed margins, all clothing-colour entries, all 21 men's and 17 women's name-table rows and glyph cells, signatures, and catchwords. Reconstructed the source before opening CANDIDATE.json, then checked C001–C074, including their anchors, statements, preconditions, and qualifications. Apart from the findings above, no additional omitted body heading, separately meaningful rule, table entry, actor change, qualifier, or exception was found. PDF373 opens with a continuation from outside the window; clothing spans373–374 and the naming example spans375–376. PDF377 ends during the eighth-house rule; no subsequent completion was inferred. Original errata888 was read separately: it contains references to printed335–337 but none to339–343, so those corrections do not amend this window. Handwritten annotations were distinguished from print and were not attributed to Lilly. Physical overlap was reviewed as source content without grading ledger counts. No files were edited, and no claims about actual persons or astrology's validity were made."
+}

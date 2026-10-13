@@ -1,0 +1,200 @@
+{
+  "window": "D",
+  "review_type": "FRESH_IMAGE_FIRST_INDEPENDENT_SOURCE_FIDELITY",
+  "original_pages_read": [377, 378, 379, 380, 381],
+  "errata_image_read": true,
+  "candidate_units_checked": 65,
+  "all_claims_checked": true,
+  "status": "FINDS_ERROR",
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "HIGH",
+      "pdf_page": 381,
+      "printed_page": 347,
+      "candidate_local_ids": [],
+      "original_short_anchor": "Of the house of the Thiefe, and the mark thereof.",
+      "defect": "The candidate imposes an extraction boundary before this heading, excluding two printed headings and all subsequent body content on the requested page. Its complete_page_outline likewise omits these headings. The owner's scope includes the source content of the entire physical page.",
+      "narrow_source_correction": "Include both remaining headings and every visible assertion beneath them, as enumerated in missing_source_units. Record the unfinished door paragraph without supplying its continuation from an unrequested page.",
+      "confidence": "high"
+    },
+    {
+      "id": "F02",
+      "severity": "MEDIUM",
+      "pdf_page": 377,
+      "printed_page": 343,
+      "candidate_local_ids": ["D005"],
+      "original_short_anchor": "within the power of the Loser, or some of his house",
+      "defect": "The candidate substitutes 'or among those of his house' for the source's alternative concerning power. This converts a control or custody relationship into household membership and loses the possibility of being within the power of someone of the loser's house.",
+      "narrow_source_correction": "Retain 'within the power of the loser, or some of his house', with the natural elliptical reading 'within the power of the loser or of someone of his house'. Keep the uncertainty over whether the unstated subject is the person or the thing; retain possible recovery by money.",
+      "confidence": "high"
+    },
+    {
+      "id": "F03",
+      "severity": "MEDIUM",
+      "pdf_page": 378,
+      "printed_page": 344,
+      "candidate_local_ids": ["D017"],
+      "original_short_anchor": "of the Church, or Neighbour, or servant",
+      "defect": "The candidate exclusively makes the neighbour an owner of the household previously mentioned. The print also permits 'Neighbour' as a separate alternative; that grammatical scope is not acknowledged. The concluding 'by such a one or his meanes' is also reduced to the person's means alone.",
+      "narrow_source_correction": "Preserve the printed neighbour alternative and leave open whether it stands independently or shares the preceding household construction. Retain recovery 'by such a one OR his means' rather than replacing both alternatives with means alone.",
+      "confidence": "medium"
+    },
+    {
+      "id": "F04",
+      "severity": "LOW",
+      "pdf_page": 380,
+      "printed_page": 346,
+      "candidate_local_ids": ["D045", "D046"],
+      "original_short_anchor": "It sometimes holds true",
+      "defect": "D045 definitively treats the marginal 'sometimes' as qualifying the body prediction of arrival home before the querent. The marginal text itself proceeds to a distinct assertion that the thief brings the goods home willingly. Its extension to the body prediction is not explicit.",
+      "narrow_source_correction": "Keep the body's arrival prediction and 'probatum est' distinct from the marginal sometimes-qualified willing-return assertion. If a broader marginal qualification is proposed, mark its scope uncertain.",
+      "confidence": "medium"
+    }
+  ],
+  "missing_source_units": [
+    {
+      "pdf_page": 377,
+      "original_short_anchor": "within the power of the Loser, or some of his house",
+      "normalized_source_assertion": "In the seventh-lord-in-the-second paragraph, the subject is within the power of the loser or, elliptically, someone of his house. Household membership does not replace this alternative; the subject's identity remains grammatically uncertain."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "Of the house of the Thiefe, and the mark thereof.",
+      "normalized_source_assertion": "Printed heading introducing the house containing the lost thing and its identifying mark."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "behold the Signe the Significator of the Thief is in",
+      "normalized_source_assertion": "To judge the quality of the house containing the lost thing, its sign or token, and the thing's location, inspect the thief's significator's sign AND its part of heaven, and assign the thing to that part of town."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "if it be in the ascendant",
+      "normalized_source_assertion": "In this location rule, placement in the ascendant indicates the point of the east."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "in the seventh, just in the west",
+      "normalized_source_assertion": "Placement in the seventh indicates just in the west."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "in the fourth, just in the north",
+      "normalized_source_assertion": "Placement in the fourth indicates just in the north."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "in the tenth, it is south",
+      "normalized_source_assertion": "Placement in the tenth indicates south."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "if it be between these angles",
+      "normalized_source_assertion": "For placement between the angles, judge the corresponding intermediate direction; the printed examples are south-west OR north-west."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "to be the house the Thief is in",
+      "normalized_source_assertion": "Assign the place of the printed Sun glyph to the house the supposed thief is in."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "to be the door of the house",
+      "normalized_source_assertion": "Assign the place of the printed Moon glyph to the door of the house. This changes the significator from the Sun used for the house."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "be in an Orientall Signe",
+      "normalized_source_assertion": "If the Sun is in an oriental sign, the house is eastward from the master OR from the person who lost the goods."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "The Door of the house.",
+      "normalized_source_assertion": "Printed heading introducing a separate rule for locating the door within the house."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "whether in the angles, succedants or cadents",
+      "normalized_source_assertion": "To judge which part of the house contains the door, inspect the Moon's place and whether it is angular, succedent OR cadent."
+    },
+    {
+      "pdf_page": 381,
+      "original_short_anchor": "judge as it is said in the parts of the house",
+      "normalized_source_assertion": "Apply the referenced judgment concerning parts of the house. The visible sentence ends 'the which part' and has the catchword 'is'; its completion lies beyond this window and must not be invented."
+    }
+  ],
+  "source_ambiguities": [
+    {
+      "pdf_page": 377,
+      "description": "The ascendant-OR-fourth rule and the subsequent specific fourth-house alternatives both appear in print. Neither replaces the other.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 377,
+      "description": "The second-house paragraph moves from personal alternatives to being within someone's power and recovery by money without explicitly restating the subject or object. Preserve that uncertainty while retaining the power relationship.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 377,
+      "description": "The fourth-house paragraph visibly ends a line with 'Labou-' and the following line begins 'of the Land'. The missing word completion is not securely supplied by this image.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 377,
+      "description": "The fifth-house masculine-sign parenthesis follows the son-or-daughter-of-cousin-or-nephew alternatives. Its grammatical reach is not explicitly settled.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 377,
+      "description": "The seventh-house feminine-sign condition follows the market buyer-or-seller alternative and precedes the enemy assertion. Preserve its position and the printed warning 'This must be warily understood'; do not relocate the condition to harmonize the paragraph.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 378,
+      "description": "The eleventh-house paragraph leaves the scope of 'or Neighbour' open and uses the awkward construction 'of the Houshold of the Querent his Mother'. Preserve the wording rather than asserting additional relationships.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 379,
+      "description": "The thief-significator distance scale names the ascendant lord in the fixed branch but the ascendant in the common and movable branches. Its movable branch counts terrestrial houses. The separate ascending-sign scale instead assigns half a mile per house when movable. Retain both scales and their differing endpoints and units.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 379,
+      "description": "The margin prints 'These judgments best agree from the Country'. Retain the unusual preposition without silently converting it into a precise geographical restriction.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 380,
+      "description": "The earlier general angular-placement rule says the thief remains in town, whereas this page distinguishes strong-angular remaining from weak-angular departure and separately gives the square-to-ascendant-lord rule. No precedence or reconciliation is printed.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 380,
+      "description": "In the sixth-lord paragraph, the word before 'any of their Lords' resembles 'will' or 'with'. Preserve the uncertain connective; do not invent an aspect, reception, conjunction or application condition.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 380,
+      "description": "The margin explicitly associates 'sometimes' with the willing return of goods. Whether it additionally qualifies the adjacent arrival-before-the-querent prediction is uncertain.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 381,
+      "description": "The direction methods attributed to others remain separate from the author's preference for the stronger of the significator and Moon. The pronoun in 'to whom he doth apply, or render his power' is not fully resolved, and rendering power is not defined here.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 381,
+      "description": "The Taurus glyph is followed by 'in the South against the east', then 'and so of the rest'. Preserve this wording and do not supply a precise bearing or an absent twelve-sign table.",
+      "must_remain_open": true
+    },
+    {
+      "pdf_page": 381,
+      "description": "The house-location paragraph first uses the thief's significator, then explicitly assigns the Sun to the house and Moon to its door. These distinct actors must remain distinct; their rules are not unified by the source.",
+      "must_remain_open": true
+    }
+  ],
+  "source_completeness": "Fully read the original images PDF377–381, printed pp343–347, in page order, including body text, printed marginal notes, every subsection heading, running heads, glyphs and catchwords; then read the original errata image before opening CANDIDATE.json. Checked every field of D001–D065 against the images. No additional omissions were identified beyond those listed. No appearance/name table or explicit reception rule appears on these five body pages. The eighth-house paragraph crosses PDF377–378, the town-departure paragraph crosses PDF378–379, and the degree-distance paragraph crosses PDF379–380; their visible continuations were included. PDF381 contains both omitted house/mark and door sections; the door paragraph continues beyond the supplied window. Same-volume printed errata includes p335, last line, 'Planets', and p336, lines 4 and 9, 'vertue'; no entry for p337 or pp343–347 was identified. These errata are distinct from body print and do not amend this window. Handwritten numbers and notes were not treated as Lilly's printed assertions. Physical overlap was reviewed for source content without judging ledger counts. The source's personal and criminal allegations supply no evidence about actual persons, and no modern criminal or clinical conclusions are drawn. No files were edited."
+}
