@@ -1,0 +1,54 @@
+{
+  "schema": "life-patterns-independent-review-to-guided-v3-construct-crosswalk-v1",
+  "status": "DEVELOPMENT_SOURCE_ALIGNMENT_ONLY_NOT_VALIDATED_RETEST",
+  "review_source": "existing ready independently admitted six-item behavior-only review (private evidence values not included)",
+  "same_person_old_new_dependency": true,
+  "claim_scope": "Shared route labels do not establish answer equivalence or independent natal information",
+  "items": [
+    {
+      "old_facet_ids": ["D05.preferred_use"],
+      "v3_route_ids": ["TF1-G05"],
+      "alignment": "different_target",
+      "reason": "Historical finding concerns how strongly someone chooses to persuade under urgent circumstances. V3 question targets outcomes of attempts, not preferred use or ethical threshold."
+    },
+    {
+      "old_facet_ids": ["D10.stable_direction", "D10.external_adaptation"],
+      "v3_route_ids": ["TF1-G10"],
+      "alignment": "partial_related",
+      "reason": "Both concern adapting to external/group requirements, but the historical finding includes a retained boundary around the individual's availability, whereas V3 choices are broader."
+    },
+    {
+      "old_facet_ids": ["D22.repetition_value"],
+      "v3_route_ids": ["TF1-D0"],
+      "alignment": "partial_related",
+      "reason": "The historical case involved an instrumental reason for repeated pronunciation practice. V3 examples add enjoyment, fatigue and domain context that cannot be collapsed into a single identical motive."
+    },
+    {
+      "old_facet_ids": ["D20.continuity", "D20.phases"],
+      "v3_route_ids": ["TF1-G18"],
+      "alignment": "different_target",
+      "reason": "The reviewed finding concerns changing social preferences across life phases; the V3 question concerns desire for company or solitude following recent interactions."
+    },
+    {
+      "old_facet_ids": ["D16.challenge_threshold", "D16.context_cost"],
+      "v3_route_ids": ["TF1-G17"],
+      "alignment": "partial_related",
+      "reason": "Old evidence differentiates consequential versus harmless errors; V3's single chosen example emphasizes expected social reception, which is another condition rather than proof of a changed correction threshold."
+    },
+    {
+      "old_facet_ids": ["D19.status_ownership"],
+      "v3_route_ids": ["TF1-STATUS"],
+      "alignment": "partial_related",
+      "excluded_old_route": "OWNERSHIP",
+      "reason": "The historical joint facet combined intrinsic recognition and access-equivalent laptop ownership. Only the recognition portion relates to modern V3 STATUS; laptop ownership must be evaluated separately."
+    }
+  ],
+  "summary": {
+    "historical_admitted_items": 6,
+    "partial_related": 4,
+    "different_target": 2,
+    "exact_behavioral_retests": 0,
+    "independent_birth_prediction_replications": 0
+  },
+  "interpretive_limit": "Review admission establishes source fidelity, not proof of Human Design, astrology or birth-time predictive validity."
+}

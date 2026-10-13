@@ -1,0 +1,7 @@
+- Freeze exact source: do not edit or overwrite participant answers and comparison historical original. Exact quotes only in private local report; Git contains neutral code and aggregate route IDs only.
+- Repeated V7 and V3 answers by SAME person are correlated. A changed response can reflect wording, context, recognition, prompt priming or real change, not necessarily trait contradiction. No independent birth validation claim.
+- One question may map to several historical routes, or to none. Pre-map route from neutral bank before reading content, then classify semantic concordance, ambiguous, conflicted, new detail, or unsupported scope separately.
+- Explicitly mark no result when no meaningful contrast or when all four examples could be used in different circumstances. No cherry-picked astrology or HD link.
+- Diff new source against old sources at the question/answer and quote level, preserve unknown/missing and conditional nature. Anything selected from examples is a self-report candidate, not observed capacity.
+- Avoid leaking exact spiritual/psychoactive details, relationships, DOB or contact details to public repository, Git, tests or PR. Private owner report may contain the owner's own records.
+- Access to the existing private GPT editor is a real owner-only boundary. A beta trial should not mutate frozen live review or silently switch all participants to a development item bank.

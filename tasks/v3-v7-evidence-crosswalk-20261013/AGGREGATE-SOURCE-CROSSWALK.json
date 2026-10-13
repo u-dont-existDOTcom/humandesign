@@ -1,0 +1,187 @@
+{
+  "schema": "life-patterns-v3-v7-crosswalk-aggregate-v1",
+  "participant_count": 1,
+  "status": "DEVELOPMENT_ONLY_NOT_INDEPENDENT_TEST_NOT_BIRTH_VALIDATION",
+  "old_79_count": 79,
+  "frozen_84_count": 84,
+  "old_questions_exactly_retained_in_frozen_84": 78,
+  "historical_84_new_exact_pairs_vs_79": 6,
+  "v3_question_count": 25,
+  "direct_old_route_mappings": 24,
+  "without_direct_old_route": [
+    "TF1-PREFER-EXCHANGE"
+  ],
+  "v3_option_count_distribution": {
+    "1": 5,
+    "2": 4,
+    "3": 3,
+    "4": 13
+  },
+  "v3_with_free_text": 8,
+  "v3_with_saved_context_rule": 0,
+  "v3_with_saved_recent_case": 0,
+  "v3_with_unsure_or_skip": 0,
+  "v3_unique_behavior_count": 3,
+  "scope_category_counts": {
+    "adds_condition_or_domain": 10,
+    "compatible_narrow": 6,
+    "non_discriminating_choices": 6,
+    "scope_or_wording_tension": 2,
+    "novel_unmatched": 1
+  },
+  "route_evidence_category": {
+    "TF1-A0": {
+      "source_route": "A0",
+      "category": "adds_condition_or_domain",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-G19": {
+      "source_route": "G19",
+      "category": "compatible_narrow",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-F0": {
+      "source_route": "F0",
+      "category": "compatible_narrow",
+      "historical_source_count": 3,
+      "no_single_pole_inference": true
+    },
+    "TF1-G05": {
+      "source_route": "G05",
+      "category": "compatible_narrow",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-M11": {
+      "source_route": "M11",
+      "category": "adds_condition_or_domain",
+      "historical_source_count": 2,
+      "no_single_pole_inference": true
+    },
+    "TF1-G06": {
+      "source_route": "G06",
+      "category": "compatible_narrow",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-G01": {
+      "source_route": "G01",
+      "category": "non_discriminating_choices",
+      "historical_source_count": 2,
+      "no_single_pole_inference": true
+    },
+    "TF1-G02": {
+      "source_route": "G02",
+      "category": "non_discriminating_choices",
+      "historical_source_count": 2,
+      "no_single_pole_inference": true
+    },
+    "TF1-D0": {
+      "source_route": "D0",
+      "category": "adds_condition_or_domain",
+      "historical_source_count": 2,
+      "no_single_pole_inference": true
+    },
+    "TF1-G10": {
+      "source_route": "G10",
+      "category": "compatible_narrow",
+      "historical_source_count": 2,
+      "no_single_pole_inference": true
+    },
+    "TF1-M03": {
+      "source_route": "M03",
+      "category": "scope_or_wording_tension",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-B0": {
+      "source_route": "B0",
+      "category": "adds_condition_or_domain",
+      "historical_source_count": 2,
+      "no_single_pole_inference": true
+    },
+    "TF1-G15": {
+      "source_route": "G15",
+      "category": "adds_condition_or_domain",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-G16": {
+      "source_route": "G16",
+      "category": "non_discriminating_choices",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-G18": {
+      "source_route": "G18",
+      "category": "adds_condition_or_domain",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-G17": {
+      "source_route": "G17",
+      "category": "adds_condition_or_domain",
+      "historical_source_count": 2,
+      "no_single_pole_inference": true
+    },
+    "TF1-STATUS": {
+      "source_route": "STATUS",
+      "category": "adds_condition_or_domain",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-ROUTINE-CHANGE": {
+      "source_route": "ROUTINE-CHANGE",
+      "category": "adds_condition_or_domain",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-G23": {
+      "source_route": "G23",
+      "category": "non_discriminating_choices",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-G04": {
+      "source_route": "G04",
+      "category": "adds_condition_or_domain",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-G22": {
+      "source_route": "G22",
+      "category": "compatible_narrow",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-M05": {
+      "source_route": "M05",
+      "category": "non_discriminating_choices",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-G20": {
+      "source_route": "G20",
+      "category": "non_discriminating_choices",
+      "historical_source_count": 2,
+      "no_single_pole_inference": true
+    },
+    "TF1-M01": {
+      "source_route": "M01",
+      "category": "scope_or_wording_tension",
+      "historical_source_count": 1,
+      "no_single_pole_inference": true
+    },
+    "TF1-PREFER-EXCHANGE": {
+      "source_route": "PREFER-EXCHANGE",
+      "category": "novel_unmatched",
+      "historical_source_count": 0,
+      "no_single_pole_inference": true
+    }
+  },
+  "deidentified_only": true,
+  "record_type": "question_route_conceptual_crosswalk_not_trait_scoring",
+  "old_new_same_person_not_independent": true
+}
