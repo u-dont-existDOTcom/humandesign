@@ -19,6 +19,7 @@ files=[
  "UNRESOLVED.json","AUDIT_REPORT.md","CLAIM_LEDGER.json",
  "SOURCE_FIRST_NOTES.md","RETAINED_LILLY_INDEX_BEFORE.json"
 ]+sorted(x.name for x in B.glob("test_*.py"))
+if (B/"RULES.json").is_file():files.append("RULES.json")
 summ={"batch":"B02t","phase":"1","successful":res.wasSuccessful(),"tests_run":res.testsRun,
       "distinct_test_count":len(names),"test_ids":names,"failures":len(res.failures),
       "errors":len(res.errors),"skipped":len(res.skipped),

@@ -12,9 +12,9 @@ def text(n):return " ".join([BY[n]["source_statement"]]+BY[n]["preconditions"]+B
 def sha(x):return hashlib.sha256(x).hexdigest()
 class Identity(unittest.TestCase):
  def test_exact_number_and_ids(self):
-  self.assertEqual(len(R),129)
-  self.assertEqual([x["record_number"] for x in R],list(range(2138,2267)))
-  self.assertEqual(D["record_count"],129)
+  self.assertEqual(len(R),162)
+  self.assertEqual([x["record_number"] for x in R],list(range(2138,2300)))
+  self.assertEqual(D["record_count"],162)
  def test_parent_index_unchanged(self):
   self.assertEqual(PRE["records_count"],2137)
   self.assertEqual(PRE["batches"][-1]["id"],"B02s")
@@ -22,7 +22,7 @@ class Identity(unittest.TestCase):
   self.assertEqual(sum(x["records_count"] for x in PRE["batches"]),2137)
  def test_counts(self):
   self.assertEqual((CNT["lilly_before"],CNT["draft_source_units"],CNT["candidate_lilly_after"],
-                    CNT["ptolemy_retained"],CNT["candidate_combined_after"]),(2137,129,2266,1066,3332))
+                    CNT["ptolemy_retained"],CNT["candidate_combined_after"]),(2137,162,2299,1066,3365))
   self.assertFalse(CNT["all_chapter_l_complete"])
  def test_full_volume_sha(self):
   self.assertEqual(S["original_pdf_sha256"],"2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b")
@@ -69,8 +69,8 @@ class Identity(unittest.TestCase):
   self.assertEqual(len(set(r["source_record_kind"] for r in R)),len(R))
  def test_errata_exact_pages_and_no_body_overwrite(self):
   self.assertEqual(E["count"],2)
-  self.assertEqual([(x["printed_page"],x["replacement"]) for x in E["entries"]],[(324,"the"),(330,"for")])
-  self.assertTrue(all(not x["body_target_proved"] for x in E["entries"]))
+  self.assertEqual([(x["printed_page"],x["replacement"]) for x in E["entries"]],[(324,"the"),(330,"or")])
+  self.assertEqual([x["body_target_proved"] for x in E["entries"]],[False,True])
   self.assertTrue(E["source_body_unmodified"])
  def test_original_errata_not_treated_as_book_source_body(self):
   self.assertTrue((B/"evidence/errata-888.png").is_file())
@@ -92,7 +92,7 @@ class Identity(unittest.TestCase):
  def test_independent_source_reviews_are_separately_gated(self):
   self.assertTrue((B/"independent_review/INPUT_A.json").is_file())
   self.assertTrue((B/"independent_review/INPUT_B.json").is_file())
-  self.assertEqual(D["status"],"SOURCE_PARAPHRASE_DRAFT_INDEPENDENT_REVIEW_NOT_STARTED" if not (B/"independent_review/FINAL_RECONCILIATION.json").exists() else D["status"])
+  self.assertIn("REVIEW",D["status"])
 class SourceReadings(unittest.TestCase):
  def test_moon_general_lost_object(self):self.assertIn("moon",text(2139))
  def test_last_separation_not_application_for_cause(self):
@@ -110,7 +110,7 @@ class SourceReadings(unittest.TestCase):
    self.assertIn(w,text(2177))
  def test_lost_beast_not_inanimate_interchangeable(self):
   self.assertIn("beast",text(2157))
-  self.assertIn("inanimate objects",text(2197))
+  self.assertIn("inanimate/dead things",text(2197))
  def test_animal_sizes(self):
   self.assertIn("sixth",text(2188));self.assertIn("twelfth",text(2188))
  def test_pound_means_custody(self):
@@ -145,7 +145,7 @@ class SourceReadings(unittest.TestCase):
  def test_hard_aspect_requires_no_reception(self):
   self.assertIn("without reception",text(2264))
 class PerRecordSourceSupport(unittest.TestCase):pass
-for num in range(2138,2267):
+for num in range(2138,2300):
  def f(self,num=num):
   r=BY[num]
   self.assertEqual(r["record_number"],num)

@@ -1,7 +1,7 @@
 {
   "batch": "B02t",
   "phase": "1",
-  "retained_count": 30,
+  "retained_count": 50,
   "issues": [
     {
       "id": "U01",
@@ -152,6 +152,110 @@
       "id": "U30",
       "description": "Cumulative numbers 2137+129 are candidate only until review, verification, exact-head nonforce publication and owner delivery receipts.",
       "status": "RETAINED"
+    },
+    {
+      "id": "U31",
+      "description": "The 8th house FROM THE MOON for beast death (p322) must not be substituted with radical 8th, which is only later fallback. Source repeats eighth-house variants differently on p324.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U32",
+      "description": "The original 'moon house lord' vs 'moon' location/significator subjects have several unclear antecedents; do not impose a single generic lost-goods indicator.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U33",
+      "description": "The p323/p324 Capricorn glyph differs: LAST FACE Capricorn versus LAST MOIETY Capricorn, both retained separately without repair.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U34",
+      "description": "Original p322 stolen-beast and general 'Whether thing missing be stolne' headings are distinct from PDF364 later 'Of a Thief and Theft'; phase1 does not admit post-heading thief mechanics.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U35",
+      "description": "Cattle-restored source p325 lists second, FIFTH or eleventh, not sixth; printed 'they' subject may refer to fortunes or animals, exact grammar ambiguous.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U36",
+      "description": "Sixth lord watery + angular, succedent and cadent location clauses differ; only cadent branch uses wet meadows/watering-place details.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U37",
+      "description": "Original printed p328-329 Moon first-lord->seventh predicts news, seventh->first predicts regret/entreaty; no inversion permitted.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U38",
+      "description": "Original p330 1647 erratum says read 'OR', changing explanatory vs alternative news/return logic; body glyph blotted and original remains unchanged.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U39",
+      "description": "Original p327 animal custody Saturn in four houses (including eighth) may conflict with ascendant lord in eighth probable animal death; separate premises and planets, no outcome verified.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U40",
+      "description": "An historical HUNDRED is a district or locality, not a fixed modern distance; historical houses/furlongs not converted to miles.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U41",
+      "description": "The first reviewer could read the sign glyphs ♎, ♒, ♈, ♑, ♊, ♍, ♐, ♓ in the high-resolution copy; later glyph identification not guessed elsewhere.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U42",
+      "description": "Some printed margin labels restrict parts of p320 to strayed CATTLE and p324 parts to immovable goods versus strayed beasts; scope switching remains source-specific.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U43",
+      "description": "The broad compound original source accounts include editor-created summaries and atomic sub-rules; overlapping source records are not independent factual observations or prediction successes.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U44",
+      "description": "B reviewer found additional original headings missing; section records are editorial metadata, not distinct experimental evidence.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U45",
+      "description": "Original p328 Sun is querent secondary significator while Moon is fugitive NATURAL signifier in following subsection, not another querent.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U46",
+      "description": "The 1647 'pound' is cattle enclosure and the owner may be forced to pay a custodian; these descriptions do not establish criminal guilt, person safety, animal health or lawful custody.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U47",
+      "description": "The source's favourable restitution rule distinguishes a finder WOULD FAIN restore, actual WILL restore, and Moon in first RESTORED WITH TROUBLE; clauses not merged.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U48",
+      "description": "Review A & B were image-first isolated evaluations but their subwindows overlap at PDF359; overlapping page reviewed twice does not increase original primary source count.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U49",
+      "description": "Source reviewer A staged original images under source_images/, while canonical Git keeps evidence/ paths; stage-path absence is not a repository defect.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U50",
+      "description": "The author invokes judicial-astrology directions for missing humans and alleged thieves without verified social or geographic outcomes; do not promote as modern law-enforcement advice.",
+      "status": "RETAINED"
     }
-  ]
+  ],
+  "review_initial_outcomes": {
+    "A": "FINDS_ERROR, 7 major, 15 moderate",
+    "B": "FINDS_ERROR, 9 high, 18 medium"
+  }
 }

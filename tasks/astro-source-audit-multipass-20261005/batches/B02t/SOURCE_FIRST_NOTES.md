@@ -11,3 +11,10 @@ Opening Moon/house and lunar ruler recovery; how lost by ascendant-lord last sep
 Original-volume errata PDF888 has selective entries printed p324 line10 `read the`, p330 line6 `read for`. Exact body line targets unknown: retain original images unchanged and keep correction orders separately. Other glyphs and marginal handwriting not authorially authenticated.
 
 Ambiguous ancient vocabulary (pound = animal pen, not money or weight); authors’ conjectures not modern evidence concerning theft, criminal guilt, animal health, captivity, safety or factual motive. The complete Chapter L contains later sections beyond phase1, so DO NOT advance `read_numbered_chapters` to 50 until final phase accepted. Independent Opus reviewers A/B were staged without producer notes and each reads original image first. Wait for actual review files, reconcile material findings, then run tests, archive and stage-specific publication.
+
+## 2026-10-13 first independent original-image reviews, source repair
+
+- Fresh original-image window A reviewed PDF353–359 and 70 draft records, 7 major and 15 moderate material findings; window B reviewed PDF359–364 and 71 records, 9 high and 18 medium findings. The original initial outputs are retained and hash-checked.
+- Restored the Moon-derived eighth from the Moon, radical eighth fallback, p325 second/FIFTH/eleventh recovery, p330 'OR' erratum, opposite news/regret lunar directions, and all B-reported additional headings/conditional units.
+- The next physical PDF364 contains some phase1 body then the separate thief-and-theft heading opening phase2; do not count a source paragraph in both phases.
+- Phase1 after repairs holds 162 reference-only normalized source units; all Chapter L beyond the p330 thief divider remains untouched and OPEN.
