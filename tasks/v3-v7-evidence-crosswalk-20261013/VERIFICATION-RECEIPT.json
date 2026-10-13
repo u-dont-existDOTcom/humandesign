@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "task_id": "v3-v7-evidence-crosswalk-20261013",
+  "outcome": "private_per-question_source_comparison_delivered_research_decision",
+  "same_person_development_not_out_of_sample": true,
+  "direct_old_route_mappings": 24,
+  "current_question_count": 25,
+  "historical_frozen_pair_overlap": 78,
+  "historical_frozen_question_count": 84,
+  "scope_classes": {
+    "adds_condition_or_domain": 10,
+    "compatible_narrow": 6,
+    "non_discriminating_choices": 6,
+    "scope_or_wording_tension": 2,
+    "novel_unmatched": 1
+  },
+  "review_facets": {
+    "historical_admitted_items": 6,
+    "partial_related": 4,
+    "different_target": 2,
+    "exact_behavioral_retests": 0,
+    "independent_birth_prediction_replications": 0
+  },
+  "v3_all_four_count": 13,
+  "v3_additional_free_text_count": 8,
+  "local_private_report_installed": true,
+  "owner_guide_link_verified": true,
+  "local_private_mode": "0600",
+  "private_folder_mode": "0700",
+  "private_owner_answers_in_public_git": false,
+  "live_gpt_changed": false,
+  "live_railway_changed": false,
+  "experimental_v3_source_changed": false,
+  "exact_natal_score_recomputed": false,
+  "beta_gpt_automatic_install": false,
+  "recommended_next_step": "frozen opt-in questionnaire cognitive pilot with new respondents before default GPT update; separate chart baseline later",
+  "source_aggregate_sha256": "9c64113af985671c249b52daaa2923af8e6bf816601da1e919355b25ab391852",
+  "review_alignment_sha256": "6a8fffab2b849d576242469ef58cbbd029fa3d56bf2ef3d82076a52eb9f770bf",
+  "tests": {
+    "focused_passed": 5,
+    "repository_passed": 1041,
+    "unrelated_astronomy_skipped": 6
+  }
+}
