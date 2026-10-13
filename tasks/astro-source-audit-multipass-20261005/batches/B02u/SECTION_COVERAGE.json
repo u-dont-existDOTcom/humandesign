@@ -1,0 +1,33 @@
+{
+  "batch": "B02u",
+  "status": "STAGED_SOURCE_IMAGES_NOT_DOCUMENTARY_ACCEPTED",
+  "start_pdf": 364,
+  "stop_pdf": 381,
+  "start_boundary": "Printed p330 Of a Thief and Theft heading, below B02t accepted fugitive/woman rules",
+  "stop_boundary": "Printed p347 below Which way the Thief is gone, before Of the house of the Thiefe",
+  "next": "PDF381 Of the house of the Thiefe; include the physically overlapping image in next phase but not duplicate earlier lines",
+  "windows": {
+    "A": [
+      364,
+      369
+    ],
+    "B": [
+      369,
+      373
+    ],
+    "C": [
+      373,
+      377
+    ],
+    "D": [
+      377,
+      381
+    ]
+  },
+  "window_duplicate_page_policy": "Original PDF369,373,377 included twice for page joins; deduplicate by printed clause anchor, NOT blindly by page identity",
+  "whole_chapter_L_complete": false,
+  "first_accepted_record_if_review_passes": "R2306",
+  "images_count": 20,
+  "source_units_accepted": 0,
+  "one_hundred_percent_original_text_completion": false
+}
