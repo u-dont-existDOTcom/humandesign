@@ -11,7 +11,7 @@ manifest=json.loads((B/"DELIVERABLES_MANIFEST.json").read_text())
 accept=json.loads((B/"ACCEPTANCE.json").read_text())
 packet=json.loads((B/"PACKET_USABILITY.json").read_text())
 assert accept["accepted"] and packet["actual_extraction"]
-assert accept["clinical_or_predictive_validation"] is False
+assert accept["criminal_or_medical_validity"] is False and accept["prospective_frozen_predictions"] == 0
 dir_text=subprocess.check_output(["xdg-user-dir","DOWNLOAD"],text=True).strip()
 DEST=Path(dir_text)
 assert DEST.is_dir() and DEST.is_absolute(), "OS Downloads directory inaccessible"
