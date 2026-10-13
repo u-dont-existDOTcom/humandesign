@@ -18,3 +18,7 @@ Ambiguous ancient vocabulary (pound = animal pen, not money or weight); authorsâ
 - Restored the Moon-derived eighth from the Moon, radical eighth fallback, p325 second/FIFTH/eleventh recovery, p330 'OR' erratum, opposite news/regret lunar directions, and all B-reported additional headings/conditional units.
 - The next physical PDF364 contains some phase1 body then the separate thief-and-theft heading opening phase2; do not count a source paragraph in both phases.
 - Phase1 after repairs holds 162 reference-only normalized source units; all Chapter L beyond the p330 thief divider remains untouched and OPEN.
+
+## Post-correction fresh source readers
+
+Reader A/B were frozen new-context source-image-first reviews; both found further errors in the 162-record candidate. Controller repairs include Moon-derived eighth, lunar news direction, heavy pound/custody source conditions, printed p330 'read or', and six recovered source clauses. The corrected source inventory is 168 records, with 56 retained limitations. No third final blind rereview; no empirical validation.

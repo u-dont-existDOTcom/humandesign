@@ -11,7 +11,7 @@ def t(n):return " ".join([R[n]["source_statement"]]+R[n]["preconditions"]+R[n]["
 A=rd("SOURCE_ORDER.json")["ids"]
 class ReaderFindings(unittest.TestCase):
  def test_full_first_phase_draft_never_counts_as_lilly_full_chapter(self):
-  self.assertEqual(len(R),162)
+  self.assertEqual(len(R),168)
   self.assertFalse(D["all_chapter_L_complete"])
   self.assertTrue(all(not x["case_evidence_countable"] for x in R.values()))
  def test_from_moon_eighth_vs_radical_eighth(self):
@@ -57,11 +57,11 @@ class ReaderFindings(unittest.TestCase):
   self.assertIn("last moiety",t(2192))
  def test_8th_animal_cross_page_complete(self):
   s=t(2183)
-  for k in ("moon or","moon","eighth from the moon","radical eighth"):self.assertIn(k,s)
+  for k in ("moon or","moon","eighth house from moon","radical eighth"):self.assertIn(k,s)
   self.assertIn("die shortly",s)
  def test_stolen_source_has_two_sections_and_negative_case(self):
   self.assertIn("not stolen",t(2272))
-  self.assertIn("loss",t(2169))
+  self.assertIn("losing",t(2169))
   self.assertIn("thief",t(2166))
   self.assertTrue(all("stol" in t(n) for n in (2158,2272)))
  def test_moon_application_to_house_cusp_not_second_lord(self):
@@ -74,7 +74,7 @@ class ReaderFindings(unittest.TestCase):
  def test_saturn_long_in_pound_and_mars_aspect_to_moon(self):
   self.assertIn("saturn",t(2226))
   self.assertIn("moon in twelfth",t(2226))
-  self.assertIn("mars aspects saturn",t(2227))
+  self.assertIn("mars aspecting saturn",t(2227))
   for k in ("first","fourth","eighth","twelfth"):self.assertIn(k,t(2287))
  def test_sixth_ruler_soft_hard_alternate_lunar_targets(self):
   self.assertIn("moon",t(2289))
@@ -108,10 +108,10 @@ class ReaderFindings(unittest.TestCase):
   self.assertIn("moon",t(2236))
   self.assertIn("fugitive",t(2236))
  def test_news_vs_remorse_moon_directions(self):
-  self.assertIn("separating from ascendant lord",t(2248))
-  self.assertIn("seventh",t(2248))
-  self.assertIn("separating from seventh lord",t(2239))
-  self.assertIn("entreat",t(2239))
+  self.assertIn("separating from first lord",t(2301))
+  self.assertIn("seventh",t(2301))
+  self.assertIn("separating from seventh lord",t(2248))
+  self.assertIn("entreat",t(2248))
  def test_cross_page_infortune_not_fortune(self):
   self.assertEqual(R[2251]["source_locator"]["pdf_pages"],[363,364])
   self.assertIn("beholding an infortune",t(2251))
@@ -121,9 +121,9 @@ class ReaderFindings(unittest.TestCase):
   self.assertIn("distance",t(2253))
   e=rd("ERRATA_COLLATION.json")
   self.assertEqual((e["entries"][1]["printed_page"],e["entries"][1]["replacement"]),(330,"or"))
-  self.assertIn("read 'or'",t(2253))
+  self.assertIn("erratum",t(2253))
  def test_capture_good_search_vs_detained_not_imprisoned(self):
-  for x in ("upon good search","both","detained but not imprisoned"):self.assertIn(x,t(2242))
+  for x in ("good search","both","detained but not imprisoned"):self.assertIn(x,t(2242))
  def test_fugitive_good_moon_and_infortune_not_capture(self):
   self.assertIn("applying",t(2236))
   self.assertIn("return",t(2237))
@@ -135,13 +135,13 @@ class ReaderFindings(unittest.TestCase):
   for n in (2279,2280,2281,2282,2283,2284,2285,2295,2296,2297,2298,2299):
    self.assertIn("heading",t(n))
  def test_12_original_pages_source_order_unique(self):
-  self.assertEqual(len(A),len(set(A)),162)
+  self.assertEqual(len(A),len(set(A)),168)
   self.assertEqual(set(A),set(R))
   self.assertLess(A.index(2260),A.index(2266))
   self.assertLess(A.index(2162),A.index(2161))
  def test_unresolved_original_source_claims_not_validated(self):
   U=rd("UNRESOLVED.json")
-  self.assertEqual(U["retained_count"],50)
+  self.assertEqual(U["retained_count"],56)
   self.assertFalse(rd("COUNTS.json")["all_chapter_l_complete"])
  def test_original_reviews_frozen_and_distinct(self):
   for name,expected in (

@@ -1,0 +1,563 @@
+{
+  "batch": "B02t",
+  "phase": "1",
+  "initial_image_first_reviews": 2,
+  "original_pdf_page_windows": {
+    "A": [
+      353,
+      359
+    ],
+    "B": [
+      359,
+      364
+    ]
+  },
+  "source_original_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "reviewer_A_sha256": "e30df2b3ce3e6f1b2088919fbb04cce899f392f532fae14944f43e44d719a6fc",
+  "reviewer_B_sha256": "20de3a61ac25b299d7de909710c05b10201884497e54e260c5b80487635fa455",
+  "original_findings_count": 49,
+  "findings": [
+    {
+      "source_issue": "A.F01",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MAJOR",
+      "affected_record_ids": [
+        "R2205"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F02",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MAJOR",
+      "affected_record_ids": [
+        "R2163",
+        "R2164",
+        "R2165"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F03",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MAJOR",
+      "affected_record_ids": [
+        "R2183"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F04",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MAJOR",
+      "affected_record_ids": [
+        "R2161",
+        "R2162"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F05",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MAJOR",
+      "affected_record_ids": [
+        "R2174",
+        "R2175"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F06",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MAJOR",
+      "affected_record_ids": [
+        "R2143",
+        "R2268",
+        "R2269",
+        "R2270"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F07",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MAJOR",
+      "affected_record_ids": [
+        "R2145",
+        "R2267"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F08",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2146"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F09",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2272"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F10",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2172"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F11",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2200"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F12",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2202"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F13",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2151",
+        "R2152",
+        "R2153",
+        "R2154"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F14",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2186",
+        "R2197",
+        "R2207"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F15",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2179"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F16",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2192"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F17",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2193",
+        "R2194",
+        "R2195"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F18",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2169"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F19",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2167",
+        "R2168",
+        "R2273"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F20",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2141"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F21",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2204"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "A.F22",
+      "review_reference": "OPUS_A_INITIAL.md",
+      "severity_in_original_review": "MODERATE",
+      "affected_record_ids": [
+        "R2271",
+        "R2274",
+        "R2275",
+        "R2276",
+        "R2277",
+        "R2278",
+        "R2279",
+        "R2280",
+        "R2281",
+        "R2282",
+        "R2283",
+        "R2284",
+        "R2285"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F01",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "HIGH",
+      "affected_record_ids": [
+        "R2205"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F02",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "HIGH",
+      "affected_record_ids": [
+        "R2233",
+        "R2236"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F03",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "HIGH",
+      "affected_record_ids": [
+        "R2239",
+        "R2248"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F04",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "HIGH",
+      "affected_record_ids": [
+        "R2251"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F05",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "HIGH",
+      "affected_record_ids": [
+        "R2253"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F06",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "HIGH",
+      "affected_record_ids": [
+        "R2227"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F07",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "HIGH",
+      "affected_record_ids": [
+        "R2226"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F08",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "HIGH",
+      "affected_record_ids": [
+        "R2225",
+        "R2288"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F09",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "HIGH",
+      "affected_record_ids": [
+        "R2287"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F10",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2200"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F11",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2202"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F12",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2212",
+        "R2213",
+        "R2214"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F13",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2286"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F14",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2218",
+        "R2291"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F15",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2219",
+        "R2292",
+        "R2293",
+        "R2294"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F16",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2217"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F17",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2216"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F18",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2232",
+        "R2289",
+        "R2290"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F19",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2230",
+        "R2231"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F20",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2197"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F21",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2250"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F22",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2207",
+        "R2229"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F23",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2236",
+        "R2237"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F24",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2233",
+        "R2234",
+        "R2252",
+        "R2254",
+        "R2255",
+        "R2258",
+        "R2259"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F25",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2253"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F26",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2242"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    },
+    {
+      "source_issue": "B.F27",
+      "review_reference": "OPUS_B_INITIAL.md",
+      "severity_in_original_review": "MEDIUM",
+      "affected_record_ids": [
+        "R2204"
+      ],
+      "controller_disposition": "SOURCE_CORRECTED_OR_EXPLICITLY_QUALIFIED",
+      "independent_final_post_correction_validation_not_implied": true
+    }
+  ],
+  "disposition_scope": "Controller repairs source paragraphs and preserves unresolved meanings; reviewers' original diagnoses remain immutable.",
+  "separately_staged_clean_post_correction_readbacks": 2,
+  "no_human_or_animal_prediction_validated": true
+}

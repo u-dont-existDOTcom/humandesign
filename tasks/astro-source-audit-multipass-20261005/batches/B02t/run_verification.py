@@ -21,7 +21,7 @@ files=[
 ]+sorted(x.name for x in B.glob("test_*.py"))
 if (B/"RULES.json").is_file():files.append("RULES.json")
 summ={"batch":"B02t","phase":"1","successful":res.wasSuccessful(),"tests_run":res.testsRun,
-      "distinct_test_count":len(names),"test_ids":names,"failures":len(res.failures),
+      "distinct_test_count":len(names),"test_ids":names,"discovered_test_ids":names,"failures":len(res.failures),
       "errors":len(res.errors),"skipped":len(res.skipped),
       "test_log_sha256":hashlib.sha256(log.encode()).hexdigest(),
       "source_file_sha256":{x:hashlib.sha256((B/x).read_bytes()).hexdigest() for x in files},

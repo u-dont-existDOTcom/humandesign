@@ -1,12 +1,12 @@
 {
   "batch": "B02t",
   "phase": "1",
-  "status": "REVIEW_A_AND_B_REPAIRED_SOURCE_DRAFT_NOT_ACCEPTED",
+  "status": "CORRECTED_PENDING_SOURCE_ACCEPTANCE",
   "source_start": "PDF353 printed319 BELOW opening divider",
   "source_end": "PDF364 printed330 BEFORE 'Of a Thief and Theft' heading",
-  "record_count": 162,
+  "record_count": 168,
   "provisional_start": "R2138",
-  "provisional_end": "R2299",
+  "provisional_end": "R2305",
   "new_confirmed_cases": 0,
   "source_only": true,
   "all_chapter_L_complete": false,
@@ -77,7 +77,8 @@
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Preserve three alternative named application targets and original house relation."
+        "Preserve three alternative named application targets and original house relation.",
+        "Original p320 printed margin 'This principally concerns Cattle strayed' restricts some adjoining applications; do not universalize to every inanimate missing object."
       ],
       "source_draft_part": "PART1_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -182,13 +183,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_separation_6_8_12_substance",
-      "source_statement": "The Moon's house lord separated from rulers of 6th, 8th or 12th and applies to second-house cusp predicts recovery, regardless of applying aspect.",
+      "source_statement": "Moon-house lord separated from twelfth/eighth/sixth lord and applying to the DEGREE OF SECOND HOUSE, whatever the aspect, gives HOPE to find the thing again.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Both prior separation and new application required, distinct temporal stages."
+        "Both prior separation and new application required, distinct temporal stages.",
+        "This is hope, not assured recovery."
       ],
       "source_draft_part": "PART1_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -330,13 +332,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_ascendant_quarter_near",
-      "source_statement": "If Moon and ascendant lord occupy the same quarter and have not more than ONE SIGN between them, the missing thing is said to be IN THE HOUSE of the person who lost it.",
+      "source_statement": "If Moon and ascendant lord occupy the SAME quarter, and have not more than ONE SIGN between them, Lilly places the missing thing in the loser's house OR ABOUT IT.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Preserve one whole Sign as original distance unit, not a generic one-to-30-degree computation; source says the loser's house, not vague proximity."
+        "Preserve one whole Sign as original distance unit, not a generic one-to-30-degree computation; source says the loser's house, not vague proximity.",
+        "One whole sign is original separation scale, not a degree-only measurement."
       ],
       "source_draft_part": "PART1_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -367,13 +370,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_ascendant_30_70_town",
-      "source_statement": "Moon and ascendant ruler in one quarter with thirty-to-seventy degree separation is said to locate an object within owner's town.",
+      "source_statement": "If Moon and first-house lord are separated MORE THAN 30 and LESS THAN 70 DEGREES, Lilly says the thing is in the owner's TOWN.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Thresholds original text; this differs from later moon-aspect distance rule."
+        "Thresholds original text; this differs from later moon-aspect distance rule.",
+        "The same-quarter premise is not expressly repeated for this sentence; treat its inheritance as unresolved."
       ],
       "source_draft_part": "PART1_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -515,13 +519,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "jupiter_official_business",
-      "source_statement": "First-house lord separating from JUPITER, OR being in Jupiter's house, is associated with business, justice, governance, a fast/abstinency or caring for important affairs when the property was lost.",
+      "source_statement": "Ascendant lord separating from JUPITER or in Jupiter's house is assigned to FASTING/ABSTINENCY, care in household government, ordering laws or some TRUST placed in a person who then carried the thing away or mislaid it.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "These are source's hypothetical circumstances and alternatives, not verified reasons or real officials. Original printed marginal critique about Friarly astrology/Abbey/Nunnery is separate testimony."
+        "These are source's hypothetical circumstances and alternatives, not verified reasons or real officials. Original printed marginal critique about Friarly astrology/Abbey/Nunnery is separate testimony.",
+        "The printed Abbey/Nunnery marginal comment is authorial/contextual testimony, not verified venue."
       ],
       "source_draft_part": "PART1_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -589,13 +594,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "sun_hunt_authority",
-      "source_statement": "The ascendant lord separating from SUN, OR situated in the house of Sun, is associated by Lilly with a king/great person, hunt, pastime or authority as possible original circumstances of the loss.",
+      "source_statement": "Ascendant lord separating from SUN or in Sun's house is attributed to a king, hunting, recreation, master of the family OR a gentleman.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "The required prior separating planet or first lord in Sun's house is explicit; these are unconfirmed alternatives, not reliable causes."
+        "The required prior separating planet or first lord in Sun's house is explicit; these are unconfirmed alternatives, not reliable causes.",
+        "Keep master of family and gentleman separately; not just public authority."
       ],
       "source_draft_part": "PART1_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -663,13 +669,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "mercury_messenger",
-      "source_statement": "Separating from Mercury is associated with writing, delivering or dictating letters, or sending a message.",
+      "source_statement": "The LORD OF THE ASCENDANT separating from MERCURY is attributed to writing, sending or dictating letters, or GOING ON A MESSAGE.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Keep Mercury source attribution independent of Moon/lostness."
+        "Keep Mercury source attribution independent of Moon/lostness.",
+        "No Mercury-house alternative is printed; preserve that asymmetry."
       ],
       "source_draft_part": "PART1_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -737,13 +744,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "beast_missing_distinction",
-      "source_statement": "For a lost living BEAST instead of things not having life, Lilly introduces separate questions whether it fled voluntarily, was driven/taken, survives or died, and if dead the supposed cause.",
+      "source_statement": "If a missing BEAST is queried rather than a thing without life, Lilly says the place/state significations are AS those for lifeless things, PLUS inquiry whether the animal fled on its own, another drove it away, whether it lives, and, if dead, the cause.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "This is a source scope change from inanimate goods to beasts; no observed death or cause established."
+        "This is a source scope change from inanimate goods to beasts; no observed death or cause established.",
+        "Not instead of inert-goods scheme; animal adds questions and remains a separate evidence class."
       ],
       "source_draft_part": "PART1_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -848,13 +856,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "another_planet_separates",
-      "source_statement": "If another planet separates from the lord of Moon's house, the beast is said to be taken or driven away.",
+      "source_statement": "Only when Moon's house lord has NOT separated from another planet, but ANOTHER planet separates from it, Lilly says someone TOOK the beast and fled away.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Reverse direction, not identical to self-flight."
+        "Reverse direction, not identical to self-flight.",
+        "Do not substitute later 'driven away' wording for this passage or omit the first nonseparation."
       ],
       "source_draft_part": "PART1_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -885,13 +894,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "neither_separating_present",
-      "source_statement": "Only AFTER checking both the Moon's house lord AND the second-house lord for the specified separating relation, if neither shows separation, Lilly says the beast still remains where it was.",
+      "source_statement": "After neither the Moon-house lord nor second-house lord demonstrates the stated separation, Lilly judges the beast STILL IN ITS PLACE OR NEAR IT and says it has NOT fled.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "R2162 is the second-lord fallback; no-separation conclusion requires failure of BOTH comparisons, not Moon-house lord alone."
+        "R2162 is the second-lord fallback; no-separation conclusion requires failure of BOTH comparisons, not Moon-house lord alone.",
+        "Both ruler checks must precede this conclusion."
       ],
       "source_draft_part": "PART1_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -1033,13 +1043,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "no_eighth_aspect_fallback",
-      "source_statement": "When Moon and her house lord do not make the preceding contacts with the eighth FROM Moon, Lilly instructs a LAST resort using the LORD OF THE RADICAL EIGHTH HOUSE.",
+      "source_statement": "If neither Moon nor her lord applies to the stated eighth-from-Moon targets, the source says take signification from THE LORD OF THE EIGHTH HOUSE after same manner.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "A genuine different fallback significator; do not replace both prior Moon-derived eighth lords with radical eighth."
+        "A genuine different fallback significator; do not replace both prior Moon-derived eighth lords with radical eighth.",
+        "Whether this final eighth-house lord is radical or again counted from Moon is UNSPECIFIED in this printed sentence; do not assert radical."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -1144,13 +1155,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "stolen_moon_aspects",
-      "source_statement": "The source lists Moon and lords of her house, term and second, and the Part-of-Fortune-like body, in possible contacts WITH THE ALLEGED THIEF SIGNIFICATOR; it does not say Moon directly aspects every listed lord.",
+      "source_statement": "Moon by CONJUNCTION ☌, SQUARE □ or OPPOSITION ☍ to the presumed thief signifier, OR the lord of Moon's house/term, the second lord, PART OF FORTUNE ⊗ OR ITS LORD are listed as further parties in the alleged thief-contact conditions.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Printed grammar is elliptical; preserve the list as candidates in the alleged thief-contact test and retain ambiguity rather than inventing extra Moon aspects."
+        "Printed grammar is elliptical; preserve the list as candidates in the alleged thief-contact test and retain ambiguity rather than inventing extra Moon aspects.",
+        "Elliptical original coordination; do not fabricate individual Moon aspects to every listed lord or omit glyphs and Part-of-Fortune lord."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -1181,13 +1193,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "nonstolen_negative_cases",
-      "source_statement": "Absence of theft contacts suggests no theft, EXCEPT that an INFORTUNE IN ASCENDANT OR SECOND, or the Moon-house/term lord, Part of Fortune OR ITS OWN LORD unfortunate, are explicitly said to signify LOSS/LOSING.",
+      "source_statement": "If the source's named thief-contact constellations are absent Lilly says IT IS NOT STOLEN, EXCEPT an infortune in ascendant or second, or unhappy Moon-house/term ruler, Part of Fortune OR ITS LORD, ASCENDANT LORD OR SECOND LORD; these instead SIGNIFY LOSING.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Author's negative conclusion has exceptions and can still mean LOSING (not independently proven theft); preserve Part-of-Fortune lord."
+        "Author's negative conclusion has exceptions and can still mean LOSING (not independently proven theft); preserve Part-of-Fortune lord.",
+        "Extent of the exception and whether term means the term or its lord are unresolved; it is not real exonerating proof."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -1329,13 +1342,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "unfortunate_moon_dispositor_keeper",
-      "source_statement": "If the Moon is afflicted by rulers of sixth/eighth/twelfth, particularly when an infortune beholds her under the named configuration, Lilly suspects goods retained by a harmful person.",
+      "source_statement": "When Moon is INJURED by lord of sixth/eighth/twelfth, Lilly alleges an ill holder unwilling to yield the lost goods, CHIEFLY if the INFORTUNE regards ASCENDANT OR ASCENDANT LORD.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "The especially-if infortune aspect qualifies intensity; allegations of dishonesty have no real evidentiary basis."
+        "The especially-if infortune aspect qualifies intensity; allegations of dishonesty have no real evidentiary basis.",
+        "The extra infortune's object is first house/its lord, NOT Moon; historical accusation uncorroborated."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -1588,13 +1602,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_fire_new_ground",
-      "source_statement": "Moon in a fiery sign is read as near fire. In a separate clause, Moon or Moon-house ruler in MOVABLE sign signifies new-PEOPLED place, new houses, hills or LEVEL/NEWLY BROKEN-UP ground.",
+      "source_statement": "Moon in Aries ♈, Leo ♌ or Sagittarius ♐ is interpreted as PLACE OF FIRE; Moon OR HER DISPOSITOR in MOVABLE signs means a place NEWLY BROKEN UP.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Do not reduce 'broken up/newly peopled' to a validated geographical fact."
+        "Do not reduce 'broken up/newly peopled' to a validated geographical fact.",
+        "Limit to PDF357 text; new-peopled/new-built/hills are a later PDF358 clause recorded under R2194."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -1625,13 +1640,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_angular_degree_near",
-      "source_statement": "Within the relevant quarter, Moon/ascendant-lord separation under the source's degree threshold is taken to indicate THE MISSING THING near its owner, with greater separation implying farther.",
+      "source_statement": "Moon WITHIN THIRTY DEGREES of ASCENDANT LORD means missing thing WITH THE LOSER OR NEAR HIM; more than THIRTY DEGREES is FAR OFF.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Source wording refers to the lost thing, not necessarily a living beast. Competing quarter schemes remain unverified."
+        "Source wording refers to the lost thing, not necessarily a living beast. Competing quarter schemes remain unverified.",
+        "No quadrant prerequisite printed here; printed marginal scope is Strayed; both branches are untested claims."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -1699,13 +1715,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_dispositor_eighth",
-      "source_statement": "For a missing LIVING beast, the MOON OR HER DOMICILE LORD applying to the radical eighth lord OR TO THE EIGHTH FROM THE MOON is claimed to signify it is dead OR WILL DIE SHORTLY.",
+      "source_statement": "MOON OR HER DISPOSITOR applying to LORD OF EIGHTH, OR TO EIGHTH HOUSE FROM MOON, is called DEAD OR WILL DIE SHORTLY in the printed missing-thing source context.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Four printed candidate contact routes must not be compressed into one. This is not an inanimate object's 'death' or modern animal prognosis."
+        "Four printed candidate contact routes must not be compressed into one. This is not an inanimate object's 'death' or modern animal prognosis.",
+        "Do not infer radical eighth, add a living-beast restriction not printed in this line, or call it merely near death."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -1921,13 +1938,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "lord_sixth_12th_pound",
-      "source_statement": "Sixth lord in sixth/twelfth suggests animals in a pound, enclosure or official custody.",
+      "source_statement": "LORD OF SIXTH in SIXTH OR TWELFTH is alleged to mean beasts are IN A POUND.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Do not equate every sixth ruler in its domicile with captured animals outside this context."
+        "Do not equate every sixth ruler in its domicile with captured animals outside this context.",
+        "Do not replace pound with administrative 'official custody' here; separate justice/officer clause appears later."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -2069,13 +2087,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_fiery_earth_air",
-      "source_statement": "Fiery Moon sign suggests former/current fire; airy signs many windows, garrets or open places; earthly signs mud/clay or earthen walls, separately labelled 'This concerns Goods immovable' in printed marginal text.",
+      "source_statement": "The printed 'Behold the Signe where the Moon is' paragraph, marginally 'This concerns GOODS IMMOVABLE', gives fiery signs places with current/former fire and airy signs windows, garrets/open places; a STAR on the later EARTHLY-sign Moon clause refers to 'This hath relation to BEASTS STRAYED'.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "A star-marked sentence following concerns beasts strayed, not all immutable goods. Elemental symbolism is not observed navigation."
+        "A star-marked sentence following concerns beasts strayed, not all immutable goods. Elemental symbolism is not observed navigation.",
+        "Scope margin for goods immovable applies to heading/early paragraph; source star relates beast context to earthy clause; star's further reach uncertain."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -2106,13 +2125,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_mutable_building",
-      "source_statement": "Moon OR lord of her own domicile in MOVABLE signs indicates new people, recently built houses, hills or newly broken-up LEVEL ground; the printed star note says the linked part has relation to BEASTS STRAYED.",
+      "source_statement": "MOON OR MOON'S HOUSE LORD in a MOVABLE sign indicates NEW PEOPLED or NEW BUILT place, HILLS, OR in some places LEVEL GROUNDS.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Do not omit source margin switch from immovable goods to beasts; no identified real site."
+        "Do not omit source margin switch from immovable goods to beasts; no identified real site.",
+        "Do not add newly broken-up from preceding printed page; exact star-mark scope remains unresolved."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -2143,13 +2163,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_fixed_plains",
-      "source_statement": "Moon in FIXED sign is interpreted as plain country/champion; Moon in COMMON sign as place of much water, according to whether the thing lost was movable or live.",
+      "source_statement": "Moon in FIXED sign is placed in PLAIN/CHAMPION COUNTRY; in COMMON sign in a place of MUCH WATER, ACCORDING TO NATURE OF PLACE WHERE THING WAS LOST OR MISSING.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Printed marginal context concerns beasts strayed for part of the passage; the earlier source also uses fixed signs to mean low hiding places, a retained disagreement."
+        "Printed marginal context concerns beasts strayed for part of the passage; the earlier source also uses fixed signs to mean low hiding places, a retained disagreement.",
+        "Earlier fixed-sign low/hiding classification follows on PDF359, not precedes this passage."
       ],
       "source_draft_part": "PART2_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -2328,13 +2349,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "beasts_malefic_sixth_lord",
-      "source_statement": "SIXTH LORD UNFORTUNATE by SATURN or MARS predicts beasts lost, driven away OR STOLEN, CHIEFLY IF the sixth lord is CADENT.",
+      "source_statement": "SIXTH LORD unfortunate by SATURN or MARS indicates missing beasts, CHIEFLY IF CADENT; alternatively the source says cattle DRIVEN AWAY OR STOLEN.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Cadency intensifies but isn't a required prerequisite."
+        "Cadency intensifies but isn't a required prerequisite.",
+        "Cadency strengthens, not universally required. Alternative attachment of chiefly uncertain."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -2402,13 +2424,15 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "beast_death_eighth",
-      "source_statement": "Moon applying to LORD OF EIGHTH OR THE EIGHTH HOUSE, OR Moon-house lord applying to eighth, signifies death; beast's significator IN EIGHTH and SQUARE TO AN INFORTUNE IN FOURTH is another alleged mortality claim.",
+      "source_statement": "MOON applying to EIGHTH LORD OR EIGHTH HOUSE, or lunar-house lord applying to eighth, is alleged beast death; alternative BEAST SIGNIFICATOR IN EIGHTH AND SQUARE TO AN INFORTUNE IN FOURTH.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Preserve eighth-house direct application, fourth-house malefic location, and unusual geometry."
+        "Preserve eighth-house direct application, fourth-house malefic location, and unusual geometry.",
+        "Printed 'and/or' coordination and an IMPLIED death conclusion are uncertain; do not normalize silently.",
+        "Source implies some outcomes without repeating them; four-house infortune prerequisite must remain."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -2482,7 +2506,8 @@
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Either lord in either printed house, source hedge preserved."
+        "Either lord in either printed house, source hedge preserved.",
+        "Printed here says 'kept close', not specifically a formal 'pound' as extra assertion."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -2772,13 +2797,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "beasts_stolen_or_strayed_heading",
-      "source_statement": "Heading 'BEASTS STOLEN OR STRAYED' introduces a comparison of the type of GOODS, FIXED versus MOVABLE, alongside Moon-house/second-lord separation.",
+      "source_statement": "Heading 'BEASTS STOLEN OR STRAYED' compares FIXED GOODS (stolen) with MOVABLE GOODS (departed themselves), using separation by MOON'S HOUSE LORD OR SECOND LORD.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "It is the GOODS that are fixed/movable, not a zodiac-sign modality alone."
+        "It is the GOODS that are fixed/movable, not a zodiac-sign modality alone.",
+        "Fixed or movable here qualifies the goods, not the zodiac signs."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -2920,13 +2946,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "fiery_sixth_east",
-      "source_statement": "SIXTH LORD in FIERY sign suggests EAST, woods or burnt brush; BUT when ANGULAR the direction is replaced by CLOSES, POUND or UNDER LOCK.",
+      "source_statement": "SIXTH LORD in FIERY SIGN is read as EAST woods/burnt brush, BUT IF ANGULAR it gives CLOSES, POUND OR LOCK instead.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "The original 'BUT' makes the angular branch an alternative rather than simple additive detail."
+        "The original 'BUT' makes the angular branch an alternative rather than simple additive detail.",
+        "The 'but' yields a different outcome rather than additive simultaneous locations."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -2957,13 +2984,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "earthly_sixth_south",
-      "source_statement": "SIXTH LORD in EARTHY sign suggests DRY SOUTHERN land; if ANGULAR, in CLOSE/POUND with MUD WALL; if SUCCEDENT, ABOUT CLOSES ON RIGHT HAND OF QUERENT.",
+      "source_statement": "SIXTH LORD in EARTHY SIGN suggests SOUTH dry land; ANGULAR suggests pound/closes with mud wall; SUCCEDENT suggests enclosed fields on RIGHT HAND OF QUERENT.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "CLOSES means enclosures/fields, not 'closer'; no additional cadent clause supplied."
+        "CLOSES means enclosures/fields, not 'closer'; no additional cadent clause supplied.",
+        "Closes are enclosed fields, not a closer position."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -2997,13 +3025,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "airy_sixth_west",
-      "source_statement": "For SIXTH LORD in AIRY signs: generally PLAIN GROUND; ANGULAR means POUND/HOUSE WESTWARD; SUCCEDENT means RIGHT HAND WESTWARD; CADENT means LEFT, GOING AWAY-WARD, straying FURTHER FROM RIGHT OWNER.",
+      "source_statement": "SIXTH LORD in AIRY SIGN: PLAIN GROUND; ANGULAR means housed or pounded WEST; SUCCEDENT RIGHT WEST; CADENT LEFT AND GOING AWAY, STRAYING farther from rightful owner.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Cadent clause continues PDF360–361 and has no general WEST assignment."
+        "Cadent clause continues PDF360–361 and has no general WEST assignment.",
+        "West is not explicitly attached to the cadent alternative."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3034,13 +3063,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "watery_sixth_north",
-      "source_statement": "For SIXTH LORD in WATERY sign: NORTH low ground; ANGULAR means CLOSE GROUND NORTH; SUCCEDENT means RIGHT HAND NORTH; CADENT means COMMON ON LEFT by WATER/MEADOWS/CATTLE WATERING.",
+      "source_statement": "SIXTH LORD in WATERY SIGN points NORTH low ground; ANGULAR enclosed north, SUCCEDENT right north, CADENT on LEFT in COMMON near WATER/MEADOW or watering of cattle.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "The watering/meadows detail belongs particularly to the CADENT option, not every watery sign."
+        "The watering/meadows detail belongs particularly to the CADENT option, not every watery sign.",
+        "Water/meadow is cadent-specific."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3256,13 +3286,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "cattle_to_pound_heading",
-      "source_statement": "MOON IN TWELFTH suggests pound 'what signification soever'; an UNFORTUNATE MOON supplies another pound claim; TWELFTH LORD AND PRINCIPAL SIGNIFICATOR UNFORTUNATE suggests hidden/private custody.",
+      "source_statement": "CATTLE TO POUND: MOON IN TWELFTH signifies pound 'WHAT SIGNIFICATION SOEVER'; MOON UNFORTUNATE, or TWELFTH LORD AND PRINCIPAL SIGNIFICATOR unfortunate, likewise signifies pound or private close custody.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Three different source readings; no invented 'Moon afflicted by twelfth lord'. Scope of 'what signification soever' uncertain."
+        "Three different source readings; no invented 'Moon afflicted by twelfth lord'. Scope of 'what signification soever' uncertain.",
+        "Printed scope of 'what signification soever' remains ambiguous."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3293,13 +3324,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "saturn_pound_long",
-      "source_statement": "SATURN IN TWELFTH or FIRST when querent hears of cattle, OR MOON IN TWELFTH, ANY OF THEM UNFORTUNATE, predicts long impoundment.",
+      "source_statement": "SATURN in TWELFTH or in FIRST when querent comes to know, OR MOON IN TWELFTH, ANY OF THEM UNFORTUNATE, signifies LONG IN POUND.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "The qualifier 'any of them unfortunate' is essential for this branch; another Saturn four-house clause is separate."
+        "The qualifier 'any of them unfortunate' is essential for this branch; another Saturn four-house clause is separate.",
+        "Do not drop Moon or the 'unfortunate' qualification."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3330,13 +3362,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "pound_malefic_starvation",
-      "source_statement": "MARS ASPECTS SATURN OR the MOON IN TWELFTH by CONJUNCTION, SQUARE OR OPPOSITION: beasts supposedly killed in pound, die there or nearly starve.",
+      "source_statement": "MARS ASPECTING SATURN OR MOON IN TWELFTH by CONJUNCTION, SQUARE OR OPPOSITION is alleged to mean beasts killed, dying or near starvation IN POUND.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Mars must be the aspecting planet; no unrelated Moon–Saturn-only contact is offered."
+        "Mars must be the aspecting planet; no unrelated Moon–Saturn-only contact is offered.",
+        "Mars is the aspecting planet; not an independent Moon–Saturn branch."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3441,13 +3474,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "stay_asc_twelfth",
-      "source_statement": "ASCENDANT LORD in TWELFTH means cattle remain SICK AND ILL in the POUND EVEN IF otherwise good.",
+      "source_statement": "ASCENDANT LORD in TWELFTH: though good, beasts remain SICK AND ILL IN POUND.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Different from eighth-house probable death or retrograde stronger death readings."
+        "Different from eighth-house probable death or retrograde stronger death readings.",
+        "Do not convert to mere stay without illness."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3478,13 +3512,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "death_asc_eighth_retrograde",
-      "source_statement": "ASCENDANT LORD in EIGHTH makes it PROBABLE cattle die in pound; a PRINCIPAL SIGNIFICATOR RETROGRADE is another branch saying they DIE IN POUND.",
+      "source_statement": "ASCENDANT LORD IN EIGHTH: 'PROBABLE' beasts DIE in pound; principal SIGNIFICATOR RETROGRADE: source instead says they DIE.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Preserve the uncertainty qualifier for eighth placement and separately stated retrograde branch."
+        "Preserve the uncertainty qualifier for eighth placement and separately stated retrograde branch.",
+        "Different modalities and significators, not proof of death."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3552,13 +3587,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "fugitive_capture_heading",
-      "source_statement": "In 'Whether the Fugitive shall be taken', the QUERENT is signified by the ASCENDANT, its LORD and SUN; the FUGITIVE OR THING ASKED FOR by SEVENTH HOUSE and its LORD.",
+      "source_statement": "Under 'WHETHER THE FUGITIVE SHALL BE TAKEN', the FIRST HOUSE, FIRST LORD AND SUN signify QUERENT; SEVENTH AND ITS LORD signify FUGITIVE OR THING ASKED FOR.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Moon is the FUGITIVE's natural significatrix under a separate later heading; not in original querent list."
+        "Moon is the FUGITIVE's natural significatrix under a separate later heading; not in original querent list.",
+        "Moon is separately called fugitive's natural significatrix; not additional querent body."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3589,13 +3625,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "asc_seventh_good_aspect_recover",
-      "source_statement": "ASCENDANT LORD applying by CONJUNCTION/SEXTILE/TRINE to SEVENTH LORD or occupying SEVENTH is said to recover the THING LOST OR FUGITIVE.",
+      "source_statement": "FIRST LORD applying to SEVENTH LORD by CONJUNCTION, SEXTILE OR TRINE, OR first lord in seventh, signifies recovery of THINGS LOST OR FUGITIVE.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Different categories, one historical rule."
+        "Different categories, one historical rule.",
+        "Both missing goods and fugitive are explicitly covered."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3666,13 +3703,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "fugitive_moon_natural",
-      "source_statement": "Moon is the fugitive's NATURAL SIGNIFICATRIX; MOON IN ASCENDANT, OR MOON APPLYING to ASCENDANT LORD with GOOD aspect, is used to claim the person returns or is hindered until return.",
+      "source_statement": "MOON NATURAL SIGNIFICATRIX OF FUGITIVE: Moon IN ASCENDANT or APPLYING to ASCENDANT LORD by GOOD ASPECT supports recovered/returning, in conjunction with the next source clause.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "The aspect is applying; shared outcome also covers R2237."
+        "The aspect is applying; shared outcome also covers R2237.",
+        "Moon application direction and shared outcome retained."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3706,13 +3744,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "fugitive_seventh_infortune_capture",
-      "source_statement": "SEVENTH LORD OR MOON SEPARATING from FORTUNES and then immediately CONJOINING INFORTUNES also predicts fugitive RETURN/RECOVERY or SO HINDERED that return follows.",
+      "source_statement": "SEVENTH LORD OR MOON separating from FORTUNES and IMMEDIATELY JOINING INFORTUNES is the third clause in source's RETURN/RECOVERY series.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "This is a third source condition with shared outcome, not automatically CAPTURE."
+        "This is a third source condition with shared outcome, not automatically CAPTURE.",
+        "Do not reassign this to separate capture without support."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3891,13 +3930,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "fugitive_infortune_angular_taken",
-      "source_statement": "SEVENTH LORD joined to INFORTUNE in ANGLE predicts taken UPON GOOD SEARCH; if BOTH are NOT in an ANGLE, source says DETAINED BUT NOT IMPRISONED.",
+      "source_statement": "SEVENTH LORD JOINED TO INFORTUNE IN ANGLE: ON GOOD SEARCH fugitive TAKEN; IF BOTH NOT ANGULAR: DETAINED BUT NOT IMPRISONED.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Keep 'upon good search' and both-not-angle condition, not invented arrest in all positions."
+        "Keep 'upon good search' and both-not-angle condition, not invented arrest in all positions.",
+        "Two alternatives, with explicit search and imprisonment qualifications."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -3928,13 +3968,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "captor_demands_money",
-      "source_statement": "ASCENDANT LORD beholding INFORTUNE affecting fugitive indicates someone who OWES THE FUGITIVE MONEY OR DEMANDS MONEY for release.",
+      "source_statement": "FIRST LORD beholding infortune afflicting fugitive signifies DETAINED BY SOMEONE OWED MONEY OR SOMEONE DEMANDING MONEY BEFORE RELEASE.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Owed money and extorted money are different hypotheses; no factual allegation established."
+        "Owed money and extorted money are different hypotheses; no factual allegation established.",
+        "Two different financial alternatives."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -4113,13 +4154,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_first_to_seventh_news",
-      "source_statement": "MOON SEPARATING FROM ASCENDANT LORD and IMMEDIATELY JOINING SEVENTH LORD or SEVENTH HOUSE is said to produce NEWS of the fugitive.",
+      "source_statement": "MOON separating from SEVENTH LORD and JOINING ASCENDANT OR FIRST LORD signals REPENTANCE AND SOMEONE SENT TO ENTREAT RETURN.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "This first-to-seventh moon motion means NEWS, not the inverse seventh-to-first remorse/entreaty in R2239."
+        "This first-to-seventh moon motion means NEWS, not the inverse seventh-to-first remorse/entreaty in R2239.",
+        "Opposite Moon separation from FIRST to SEVENTH is news, not this rule."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -4187,13 +4229,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_to_infortune_hardship",
-      "source_statement": "Moon JOINED TO INFORTUNES SATURN, MARS OR DRAGON TAIL, OR A RETROGRADE PLANET suggests fugitive eventually comes again AFTER MISERY.",
+      "source_statement": "MOON JOINED to SATURN, MARS or DRAGON TAIL, OR to RETROGRADE PLANET, is alleged return after MISERY.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Dragon Tail printed explicit, 'joined to' not a made-up NEXT application."
+        "Dragon Tail printed explicit, 'joined to' not a made-up NEXT application.",
+        "Original lists Dragon Tail expressly."
       ],
       "source_draft_part": "PART3_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -4227,13 +4270,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "fugitive_money_before_release",
-      "source_statement": "SEVENTH LORD BEHOLDING AN INFORTUNE FROM THE SEVENTH is said to indicate fugitive found with someone TO WHOM MONEY MUST BE GIVEN before release.",
+      "source_statement": "SEVENTH LORD BEHOLDING AN INFORTUNE FROM SEVENTH signifies fugitive held by someone WHO DEMANDS MONEY BEFORE RELEASE.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "Original 'In-fortune' crosses physical PDF363–364. Not a FORTUNE beneficial aspect or proof of detention."
+        "Original 'In-fortune' crosses physical PDF363–364. Not a FORTUNE beneficial aspect or proof of detention.",
+        "The word In-fortune spans PDF363–364; not benevolent Fortune."
       ],
       "source_draft_part": "PART4_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -4264,13 +4308,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_separated_benefics_return",
-      "source_statement": "MOON SEPARATING FROM JUPITER OR VENUS predicts quick return of a FUGITIVE OR a THING LOST suddenly FOUND.",
+      "source_statement": "MOON SEPARATING FROM JUPITER OR VENUS is said to give QUICK FUGITIVE RETURN OR SUDDEN FINDING OF A LOST THING.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "These are alternative subject matter, not separate successful cases."
+        "These are alternative subject matter, not separate successful cases.",
+        "Both people and goods scope."
       ],
       "source_draft_part": "PART4_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -4301,14 +4346,15 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "fugitive_good_aspect_3_days",
-      "source_statement": "MOON ASPECTING HER OWN HOUSE by SEXTILE OR TRINE allegedly brings fugitive RETURN in THREE DAYS; the alternate three-day NEWS clause is qualified by distance NOT TOO GREAT.",
+      "source_statement": "MOON ASPECTING HER OWN HOUSE by SEXTILE OR TRINE allegedly yields return in THREE DAYS OR NEWS within THREE DAYS, IF DISTANCE NOT TOO GREAT.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
         "Moon's OWN HOUSE, not automatically its lord. Original printed p330 l6 '[f]or' is subject to same-volume erratum 'read OR'.",
-        "Original volume erratum PDF888 printed p330 line6 says READ 'OR' (body is blotted 'for/or'); it changes NEWS versus explanatory relation and is held separately."
+        "Original volume erratum PDF888 printed p330 line6 says READ 'OR' (body is blotted 'for/or'); it changes NEWS versus explanatory relation and is held separately.",
+        "Original erratum p330 l6 says read OR, not for; lunar house not house ruler."
       ],
       "source_draft_part": "PART4_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -4339,13 +4385,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "fugitive_distance_heading",
-      "source_statement": "The 'DISTANCE' subsection gives degrees between SEVENTH LORD and HOUR LORD as supposed miles for FUGITIVE OR THING LOST.",
+      "source_statement": "Under DISTANCE, separation of SEVENTH LORD and HOUR LORD by DEGREE gives hypothetical MILES to FUGITIVE OR LOST THING.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Source condition is explicit only insofar as in source_statement; verify historical glyphs and conjunction logic against original image."
       ],
       "exceptions_and_evidence_limits": [
-        "This is the inferior first method compared with R2255."
+        "This is the inferior first method compared with R2255.",
+        "Alternative lunar distance calculation is preferred by author."
       ],
       "source_draft_part": "PART4_SOURCE_DRAFT.json",
       "case_evidence_countable": false,
@@ -4865,7 +4912,8 @@
         "Those immediately preceding configurations fail or reverse."
       ],
       "exceptions_and_evidence_limits": [
-        "Negative branch is not automatic proof someone stole property."
+        "Negative branch is not automatic proof someone stole property.",
+        "Duplicate explanatory echo of the 'judge the contrary' clause R2143 across several preceding constellations; preserve source sentence only once at final integration."
       ],
       "source_draft_part": "INDEPENDENT_A_MISSING_SOURCE_UNIT",
       "case_evidence_countable": false,
@@ -4904,7 +4952,8 @@
         "Moon is positively configured to one or both Fortunes."
       ],
       "exceptions_and_evidence_limits": [
-        "Desire to restore is distinguished from actual action; no verified owner."
+        "Desire to restore is distinguished from actual action; no verified owner.",
+        "Source explicitly calls the holder a 'trusty body, which keepeth the same' and 'would faine restore' rather than guaranteed actual return."
       ],
       "source_draft_part": "INDEPENDENT_A_MISSING_SOURCE_UNIT",
       "case_evidence_countable": false,
@@ -4937,13 +4986,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "fortune_asc_will_restore",
-      "source_statement": "If THAT Fortune applies to the ascendant, Lilly says a faithful person WILL RESTORE the missing thing.",
+      "source_statement": "If the same FORTUNE APPLY TO ASCENDANT OR BEHOLD IT, OR THE MOON BEHOLD ASCENDANT, Lilly says a FAITHFUL person WILL RESTORE the property.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "A Fortune aspecting Moon must apply further to ascendant as prescribed."
       ],
       "exceptions_and_evidence_limits": [
-        "Source-based claimed completion is not empirically verified."
+        "Source-based claimed completion is not empirically verified.",
+        "Three printed alternatives, distinct from merely wanting to return property; old author claim."
       ],
       "source_draft_part": "INDEPENDENT_A_MISSING_SOURCE_UNIT",
       "case_evidence_countable": false,
@@ -4976,13 +5026,14 @@
         "source_statement_is_verbatim": false
       },
       "source_record_kind": "moon_asc_east",
-      "source_statement": "Moon in ASCENDANT under the p320 missing-goods place heading indicates location to the EAST of the owner.",
+      "source_statement": "Moon IN ASCENDANT indicates EAST under the original lost-goods place heading.",
       "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
       "preconditions": [
         "Moon physically in first house; compare distinct Moon house-quarter rules."
       ],
       "exceptions_and_evidence_limits": [
-        "Do not apply universally to a different animal/fugitive question."
+        "Do not apply universally to a different animal/fugitive question.",
+        "The print says 'in the east &c.', not relative-to-owner in this sentence."
       ],
       "source_draft_part": "INDEPENDENT_A_MISSING_SOURCE_UNIT",
       "case_evidence_countable": false,
@@ -5141,7 +5192,8 @@
         "Those listed Moon application/house conjunction conditions absent."
       ],
       "exceptions_and_evidence_limits": [
-        "Source's no-recovery branch cannot be silently dropped, nor turned into certain impossibility."
+        "Source's no-recovery branch cannot be silently dropped, nor turned into certain impossibility.",
+        "Return rule includes Moon applying to its own DISPOSITOR. Do not add unstated 'relevant degrees' targets."
       ],
       "source_draft_part": "INDEPENDENT_A_MISSING_SOURCE_UNIT",
       "case_evidence_countable": false,
@@ -5297,7 +5349,8 @@
         "Structural printed section boundary, before the following rules."
       ],
       "exceptions_and_evidence_limits": [
-        "No independent animal, theft or lost-goods observation."
+        "No independent animal, theft or lost-goods observation.",
+        "Printed 'The place where the thing is that is lost' concerns location AT TIME OF THE QUESTION."
       ],
       "source_draft_part": "INDEPENDENT_A_MISSING_SOURCE_UNIT",
       "case_evidence_countable": false,
@@ -6093,6 +6146,246 @@
       "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
       "source_review_inserted": true,
       "source_order_after": 2242
+    },
+    {
+      "id": "LI.1647.II.L.PHASE1.R2300",
+      "record_number": 2300,
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "batch": "B02t",
+      "book": "II",
+      "chapter": "L",
+      "phase": "1_OF_MULTIPHASE",
+      "source_locator": {
+        "pdf_pages": [
+          361,
+          362
+        ],
+        "printed_pages": [
+          327,
+          328
+        ],
+        "page_images": [
+          "evidence/pdf-361.png",
+          "evidence/pdf-362.png"
+        ],
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "saturn_four_places_long_pound",
+      "source_statement": "When sheep were stolen, SATURN in ASCENDANT, FOURTH, EIGHTH or TWELFTH is said to mean LONG IN POUND, with no separate Saturn-unfortunate premise.",
+      "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
+      "preconditions": [
+        "Preserve printed house, planet, aspect and role conditions."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Historical unvalidated source assertion only; not an observed person, animal or retrieval."
+      ],
+      "source_draft_part": "FRESH_WINDOW_B_MISSING_SOURCE",
+      "case_evidence_countable": false,
+      "independently_authenticated_outcome": false,
+      "prospective_blind_prediction": false,
+      "clinical_or_criminal_inference_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_order_after": 2227,
+      "source_review_inserted": true
+    },
+    {
+      "id": "LI.1647.II.L.PHASE1.R2301",
+      "record_number": 2301,
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "batch": "B02t",
+      "book": "II",
+      "chapter": "L",
+      "phase": "1_OF_MULTIPHASE",
+      "source_locator": {
+        "pdf_pages": [
+          363
+        ],
+        "printed_pages": [
+          329
+        ],
+        "page_images": [
+          "evidence/pdf-363.png"
+        ],
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "news_moon_first_to_seventh",
+      "source_statement": "MOON separating from FIRST LORD then joined immediately to SEVENTH LORD or SEVENTH HOUSE is said to bring NEWS of the fugitive.",
+      "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
+      "preconditions": [
+        "Preserve printed house, planet, aspect and role conditions."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Historical unvalidated source assertion only; not an observed person, animal or retrieval."
+      ],
+      "source_draft_part": "FRESH_WINDOW_B_MISSING_SOURCE",
+      "case_evidence_countable": false,
+      "independently_authenticated_outcome": false,
+      "prospective_blind_prediction": false,
+      "clinical_or_criminal_inference_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_order_after": 2248,
+      "source_review_inserted": true
+    },
+    {
+      "id": "LI.1647.II.L.PHASE1.R2302",
+      "record_number": 2302,
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "batch": "B02t",
+      "book": "II",
+      "chapter": "L",
+      "phase": "1_OF_MULTIPHASE",
+      "source_locator": {
+        "pdf_pages": [
+          360
+        ],
+        "printed_pages": [
+          326
+        ],
+        "page_images": [
+          "evidence/pdf-360.png"
+        ],
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "distance_same_quadrant_town_hundred",
+      "source_statement": "SIGNIFICATOR OF THING LOST, or MOON, in SAME QUADRANT means same TOWN OR HUNDRED as querent, a separate location rule.",
+      "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
+      "preconditions": [
+        "Preserve printed house, planet, aspect and role conditions."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Historical unvalidated source assertion only; not an observed person, animal or retrieval."
+      ],
+      "source_draft_part": "FRESH_WINDOW_B_MISSING_SOURCE",
+      "case_evidence_countable": false,
+      "independently_authenticated_outcome": false,
+      "prospective_blind_prediction": false,
+      "clinical_or_criminal_inference_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_order_after": 2211,
+      "source_review_inserted": true
+    },
+    {
+      "id": "LI.1647.II.L.PHASE1.R2303",
+      "record_number": 2303,
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "batch": "B02t",
+      "book": "II",
+      "chapter": "L",
+      "phase": "1_OF_MULTIPHASE",
+      "source_locator": {
+        "pdf_pages": [
+          360,
+          361
+        ],
+        "printed_pages": [
+          326,
+          327
+        ],
+        "page_images": [
+          "evidence/pdf-360.png",
+          "evidence/pdf-361.png"
+        ],
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "airy_cadent_left_departure",
+      "source_statement": "AIRY-sign SIXTH LORD CADENT means cattle on LEFT, GOING AWAY and STRAYING FURTHER from right owner, not necessarily west.",
+      "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
+      "preconditions": [
+        "Preserve printed house, planet, aspect and role conditions."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Historical unvalidated source assertion only; not an observed person, animal or retrieval."
+      ],
+      "source_draft_part": "FRESH_WINDOW_B_MISSING_SOURCE",
+      "case_evidence_countable": false,
+      "independently_authenticated_outcome": false,
+      "prospective_blind_prediction": false,
+      "clinical_or_criminal_inference_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_order_after": 2218,
+      "source_review_inserted": true
+    },
+    {
+      "id": "LI.1647.II.L.PHASE1.R2304",
+      "record_number": 2304,
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "batch": "B02t",
+      "book": "II",
+      "chapter": "L",
+      "phase": "1_OF_MULTIPHASE",
+      "source_locator": {
+        "pdf_pages": [
+          362
+        ],
+        "printed_pages": [
+          328
+        ],
+        "page_images": [
+          "evidence/pdf-362.png"
+        ],
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "sixth_to_moon_good_bad",
+      "source_statement": "SIXTH LORD beholding MOON or its DISPOSITOR by SEXTILE/TRINE signifies animals had again; by SQUARE/OPPOSITION stopped in VILLAGE OR TOWN.",
+      "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
+      "preconditions": [
+        "Preserve printed house, planet, aspect and role conditions."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Historical unvalidated source assertion only; not an observed person, animal or retrieval."
+      ],
+      "source_draft_part": "FRESH_WINDOW_B_MISSING_SOURCE",
+      "case_evidence_countable": false,
+      "independently_authenticated_outcome": false,
+      "prospective_blind_prediction": false,
+      "clinical_or_criminal_inference_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_order_after": 2232,
+      "source_review_inserted": true
+    },
+    {
+      "id": "LI.1647.II.L.PHASE1.R2305",
+      "record_number": 2305,
+      "source_id": "LILLY1647_WELLCOME_B30338724",
+      "source_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "batch": "B02t",
+      "book": "II",
+      "chapter": "L",
+      "phase": "1_OF_MULTIPHASE",
+      "source_locator": {
+        "pdf_pages": [
+          361
+        ],
+        "printed_pages": [
+          327
+        ],
+        "page_images": [
+          "evidence/pdf-361.png"
+        ],
+        "source_statement_is_verbatim": false
+      },
+      "source_record_kind": "unfortunate_twelve_lord_in_pound",
+      "source_statement": "MOON unfortunate OR TWELFTH LORD and PRINCIPAL SIGNIFICATOR unfortunate signify cattle TO POUND or kept obscurely in close place.",
+      "source_statement_type": "SOURCE_IMAGE_DERIVED_PARAPHRASE_NOT_VERBATIM",
+      "preconditions": [
+        "Preserve printed house, planet, aspect and role conditions."
+      ],
+      "exceptions_and_evidence_limits": [
+        "Historical unvalidated source assertion only; not an observed person, animal or retrieval."
+      ],
+      "source_draft_part": "FRESH_WINDOW_B_MISSING_SOURCE",
+      "case_evidence_countable": false,
+      "independently_authenticated_outcome": false,
+      "prospective_blind_prediction": false,
+      "clinical_or_criminal_inference_verified": false,
+      "runtime_status": "REFERENCE_ONLY_NOT_PROMOTED",
+      "source_order_after": 2225,
+      "source_review_inserted": true
     }
   ],
   "original_pre_review_draft_count": 129,

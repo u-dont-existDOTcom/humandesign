@@ -12,9 +12,9 @@ def text(n):return " ".join([BY[n]["source_statement"]]+BY[n]["preconditions"]+B
 def sha(x):return hashlib.sha256(x).hexdigest()
 class Identity(unittest.TestCase):
  def test_exact_number_and_ids(self):
-  self.assertEqual(len(R),162)
-  self.assertEqual([x["record_number"] for x in R],list(range(2138,2300)))
-  self.assertEqual(D["record_count"],162)
+  self.assertEqual(len(R),168)
+  self.assertEqual([x["record_number"] for x in R],list(range(2138,2306)))
+  self.assertEqual(D["record_count"],168)
  def test_parent_index_unchanged(self):
   self.assertEqual(PRE["records_count"],2137)
   self.assertEqual(PRE["batches"][-1]["id"],"B02s")
@@ -22,7 +22,7 @@ class Identity(unittest.TestCase):
   self.assertEqual(sum(x["records_count"] for x in PRE["batches"]),2137)
  def test_counts(self):
   self.assertEqual((CNT["lilly_before"],CNT["draft_source_units"],CNT["candidate_lilly_after"],
-                    CNT["ptolemy_retained"],CNT["candidate_combined_after"]),(2137,162,2299,1066,3365))
+                    CNT["ptolemy_retained"],CNT["candidate_combined_after"]),(2137,168,2305,1066,3371))
   self.assertFalse(CNT["all_chapter_l_complete"])
  def test_full_volume_sha(self):
   self.assertEqual(S["original_pdf_sha256"],"2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b")
@@ -92,7 +92,7 @@ class Identity(unittest.TestCase):
  def test_independent_source_reviews_are_separately_gated(self):
   self.assertTrue((B/"independent_review/INPUT_A.json").is_file())
   self.assertTrue((B/"independent_review/INPUT_B.json").is_file())
-  self.assertIn("REVIEW",D["status"])
+  self.assertIn("PENDING",D["status"])
 class SourceReadings(unittest.TestCase):
  def test_moon_general_lost_object(self):self.assertIn("moon",text(2139))
  def test_last_separation_not_application_for_cause(self):
@@ -145,7 +145,7 @@ class SourceReadings(unittest.TestCase):
  def test_hard_aspect_requires_no_reception(self):
   self.assertIn("without reception",text(2264))
 class PerRecordSourceSupport(unittest.TestCase):pass
-for num in range(2138,2300):
+for num in range(2138,2306):
  def f(self,num=num):
   r=BY[num]
   self.assertEqual(r["record_number"],num)

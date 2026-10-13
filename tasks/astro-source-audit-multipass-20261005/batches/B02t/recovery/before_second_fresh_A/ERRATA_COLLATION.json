@@ -1,0 +1,34 @@
+{
+  "original_volume_errata_pdf_page": 888,
+  "scope": "Printed pages319–330 / original PDF353–364, extracted from same-volume selective errata only",
+  "entries": [
+    {
+      "printed_page": 324,
+      "pdf_page": 358,
+      "printed_line_as_listed": 10,
+      "original_erratum": "p 324 l 10 r the",
+      "replacement": "the",
+      "body_target_proved": false,
+      "source_witness": "evidence/errata-888.png",
+      "note": "Original p324 line10 'read the' is present on printed same-volume errata; exact body replacement token remains unresolved; no silent emendation."
+    },
+    {
+      "printed_page": 330,
+      "pdf_page": 364,
+      "printed_line_as_listed": 6,
+      "original_erratum": "p 330 l 6 r or",
+      "replacement": "or",
+      "body_target_proved": true,
+      "source_witness": "evidence/errata-888.png",
+      "note": "Original page has the fugitive-distance discussion; actual line target not identified, so retain erratum separately.",
+      "body_target_line": "PDF364/printed330: 'three dayes; [f]or according to probability' at line 6 as counted by original errata",
+      "body_word_ambiguity": "Printed first letter blotted, 'for' is plausible; correction to 'or' unequivocal in original same-volume errata. Do not overwrite original print.",
+      "consequence": "With 'or', three-day NEWS is an alternative to return, under source distance qualifier rather than merely an explanation."
+    }
+  ],
+  "count": 2,
+  "other_entries_for_printed_319_to_330_identified": 0,
+  "list_absence_limitation": "Printed volume gives a selective errata list, not proof of perfect text",
+  "source_body_unmodified": true,
+  "reviewer_original_source_status": "A/B independent windows source fidelity diagnostic; authorial source image unchanged; errata original p330 'or' not 'for'"
+}

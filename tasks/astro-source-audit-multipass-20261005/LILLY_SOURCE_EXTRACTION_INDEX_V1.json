@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIX_MARRIAGE_SOURCE_DOCUMENTED_LATER_LILLY_OPEN",
-  "records_count": 2137,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIX_PLUS_L_PHASE1_SOURCE_READ_L_REMAINDER_OPEN",
+  "records_count": 2305,
   "read_numbered_chapters": [
     1,
     2,
@@ -189,24 +189,31 @@
       "records_count": 217,
       "sha256": "ede89b2cb2514449427564b8b06459558f3134f2f2828178e9e6f814aee6e2e9",
       "scope": "Lilly 1647 XLIX Of Marriage original PDF336 lower/printed302 through PDF353 upper/printed319; 187 reviewed draft source units plus recovered original clauses, zero externally verified outcomes."
+    },
+    {
+      "id": "B02t",
+      "path": "batches/B02t/RULES.json",
+      "records_count": 168,
+      "sha256": "9d55b77fcb549f57effdae3f7c832c736bc9de9bf5af2a36b2a0a284ebd98419",
+      "scope": "Lilly Chapter L first phase only: original PDF353 below XLIX divider to PDF364 above 'Of a Thief and Theft'; remains chapter L incomplete. No cases validated."
     }
   ],
   "next": {
-    "pdf_page": 353,
-    "printed_page": 319,
+    "pdf_page": 364,
+    "printed_page": 330,
     "chapter": "L",
-    "heading": "Of Servants fled, Beasts strayed, and things lost",
+    "heading": "Of a Thief and Theft (continuation of Chapter L)",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF353 BELOW the horizontal divider through PDF354 onward; exclude XLIX above divider."
+    "position": "Original PDF364 BELOW Of a Thief and Theft heading; do not recount first-phase Of a Woman flying from her Husband; complete Chapter L to PDF400 above LI."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261013_B02s.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261013_B02t_PHASE1.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": []
 }
