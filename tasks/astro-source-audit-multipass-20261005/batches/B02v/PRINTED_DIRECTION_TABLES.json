@@ -1,0 +1,187 @@
+{
+  "batch": "B02v",
+  "status": "EDITORIAL_IMAGE_READBACK_SOURCE_TABLES_NOT_FULL_DIPLOMATIC_VALIDATION",
+  "full_original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "original_table_witnesses": [
+    {
+      "section": "Whither is the Thief gone, or Fugitive?",
+      "source_pdf_page": 398,
+      "printed_page": 364,
+      "source_image": "evidence/pdf-398.png",
+      "type": "house_based_direction_table",
+      "rows": [
+        {
+          "house": "I",
+          "direction": "East"
+        },
+        {
+          "house": "II",
+          "direction": "Northeast by East"
+        },
+        {
+          "house": "III",
+          "direction": "North Northeast"
+        },
+        {
+          "house": "IV",
+          "direction": "North"
+        },
+        {
+          "house": "V",
+          "direction": "Northwest by North"
+        },
+        {
+          "house": "VI",
+          "direction": "West Northwest"
+        },
+        {
+          "house": "VII",
+          "direction": "West"
+        },
+        {
+          "house": "VIII",
+          "direction": "Southwest by South"
+        },
+        {
+          "house": "IX",
+          "direction": "South Southwest"
+        },
+        {
+          "house": "X",
+          "direction": "South"
+        },
+        {
+          "house": "XI",
+          "direction": "Southeast by South"
+        },
+        {
+          "house": "XII",
+          "direction": "East Southeast"
+        }
+      ],
+      "editor_note": "Read directly from p364 original images, spellings normalized. Original author calls Ascendant East and notes the table's more exact direction by houses."
+    },
+    {
+      "section": "The Signes, first table",
+      "source_pdf_page": 399,
+      "printed_page": 365,
+      "source_image": "evidence/pdf-399.png",
+      "type": "zodiac_sign_direction_table_primary",
+      "rows": [
+        {
+          "sign": "Aries",
+          "direction": "East"
+        },
+        {
+          "sign": "Taurus",
+          "direction": "South and by East"
+        },
+        {
+          "sign": "Gemini",
+          "direction": "West and by South"
+        },
+        {
+          "sign": "Cancer",
+          "direction": "full North"
+        },
+        {
+          "sign": "Leo",
+          "direction": "East and by North"
+        },
+        {
+          "sign": "Virgo",
+          "direction": "South and by West"
+        },
+        {
+          "sign": "Libra",
+          "direction": "full West"
+        },
+        {
+          "sign": "Scorpio",
+          "direction": "North and by East"
+        },
+        {
+          "sign": "Sagittarius",
+          "direction": "East and by South"
+        },
+        {
+          "sign": "Capricorn",
+          "direction": "full South"
+        },
+        {
+          "sign": "Aquarius",
+          "direction": "West and by North"
+        },
+        {
+          "sign": "Pisces",
+          "direction": "North and by West"
+        }
+      ],
+      "editor_note": "First printed zodiac direction table on original PDF399/printed365, twelve signs."
+    },
+    {
+      "section": "The Signes, alternate glyph table",
+      "source_pdf_page": 399,
+      "printed_page": 365,
+      "source_image": "evidence/pdf-399.png",
+      "type": "zodiac_sign_direction_table_alternate",
+      "rows": [
+        {
+          "sign": "Aries",
+          "direction": "East"
+        },
+        {
+          "sign": "Leo",
+          "direction": "Northeast by East"
+        },
+        {
+          "sign": "Sagittarius",
+          "direction": "East Southeast"
+        },
+        {
+          "sign": "Libra",
+          "direction": "West"
+        },
+        {
+          "sign": "Gemini",
+          "direction": "Southwest by West"
+        },
+        {
+          "sign": "Aquarius",
+          "direction": "West Northwest"
+        },
+        {
+          "sign": "Cancer",
+          "direction": "North"
+        },
+        {
+          "sign": "Scorpio",
+          "direction": "North Northeast"
+        },
+        {
+          "sign": "Pisces",
+          "direction": "Northwest by North"
+        },
+        {
+          "sign": "Capricorn",
+          "direction": "South"
+        },
+        {
+          "sign": "Taurus",
+          "direction": "Southeast by South"
+        },
+        {
+          "sign": "Virgo",
+          "direction": "South Southeast"
+        }
+      ],
+      "editor_note": "Second printed parallel table using glyphs; semantic signs read from original source image. Does not match primary direction labels exactly; source marginalia says small differences breed no error and to use what each finds most true."
+    }
+  ],
+  "data_limits": [
+    "These are source-table transcription aids, not standalone observed map results or modern compass-bearing instructions.",
+    "The two zodiac tables differ; do not force equality or select a retrospectively favourable direction.",
+    "Original margin is retained separately from body; printed names/glyphs may be ambiguous at narrow scan resolution.",
+    "The household and sign-direction systems are not asserted by the source to be independent successful test cases."
+  ]
+}

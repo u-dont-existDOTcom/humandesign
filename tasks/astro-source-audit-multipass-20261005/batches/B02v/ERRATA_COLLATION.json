@@ -1,0 +1,49 @@
+{
+  "batch": "B02v",
+  "status": "ORIGINAL_VOLUME_ERRATA_READING_PENDING_BODY_LINE_COLLATION",
+  "original_errata_pdf_page": 888,
+  "source_image": "evidence/errata-888.png",
+  "original_copy": "William Lilly Christian Astrology (1647), Wellcome b30338724",
+  "printed_pages_checked_range": [
+    347,
+    366
+  ],
+  "corresponding_original_pdf_pages": [
+    381,
+    400
+  ],
+  "candidate_in_scope": [
+    {
+      "printed_page": 360,
+      "original_pdf_page": 394,
+      "listed_print_line": 4,
+      "initial_navigation_read": "p 360 l 4 r [planetary glyph] and [possibly another glyph]",
+      "read_word_or_glyph_verified": false,
+      "body_line_located": true,
+      "original_body_image": "evidence/pdf-394.png",
+      "action": "Body line now visually located; exact substitution after the printed errata 'p 360 l 4 r' remains ambiguous, and no glyph has been emended.",
+      "body_passage_anchor": "PDF394/printed360, 'Most Planets in cadents, he shall be knowne' followed by Sun/aspect glyphs, under 'Whether the Thief shall be knowne or not'."
+    }
+  ],
+  "other_provider_alto_errata_entries_after_this_range": [
+    {
+      "printed_page": 385,
+      "original_pdf_page": 419,
+      "interpretation": "OUTSIDE B02v"
+    },
+    {
+      "printed_page": 392,
+      "original_pdf_page": 426,
+      "interpretation": "OUTSIDE B02v"
+    },
+    {
+      "printed_page": 397,
+      "original_pdf_page": 431,
+      "interpretation": "OUTSIDE B02v"
+    }
+  ],
+  "evidence_boundary": "The cited original errata uses PRINTED book pages, not zero-based PDF pages.",
+  "optical_navigation_not_diplomatic_witness": true,
+  "original_body_images_preserved": true,
+  "legacy_findings_do_not_automatically_prove_source_meaning": true
+}
