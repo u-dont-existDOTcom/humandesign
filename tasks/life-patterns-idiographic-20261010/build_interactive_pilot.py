@@ -41,6 +41,28 @@ pre{overflow:auto;font:12px/1.4 ui-monospace,monospace;background:#f3f5f7;border
 <input id="import-file" type="file" accept=".json,application/json">
 <p id="import-feedback" class="small" role="status" aria-live="polite">No imported file yet. You can also start a new response below.</p>
 </section>
+<section id="guided-section" aria-labelledby="guided-title" hidden>
+<h2 id="guided-title" tabindex="-1">Eight context follow-ups</h2>
+<p>We already have your answers. Answer one clarification at a time, or skip. Nothing is submitted automatically.</p>
+<progress id="guided-progress" max="8" value="0"></progress>
+<p id="guided-overview" role="status" aria-live="polite"></p>
+<div id="guided-active">
+<h3 id="guided-count"></h3><p id="guided-question"></p><p id="guided-prompt"></p>
+<details><summary>See your earlier answer</summary><div id="guided-prior"></div></details>
+<label for="guided-rule">What determines which response you choose? (optional)</label>
+<textarea id="guided-rule" rows="3" placeholder="Describe the conditions, if any."></textarea>
+<label for="guided-example">One recent real example or counterexample (optional)</label>
+<textarea id="guided-example" rows="3" placeholder="What happened? What did you do first?"></textarea>
+<label class="example"><input type="checkbox" id="guided-no-default">No stable default across situations</label>
+<p id="guided-status" role="status" aria-live="polite"></p>
+<div class="row"><button type="button" id="guided-previous">Previous</button><button type="button" id="guided-skip">Skip for now</button><button type="button" id="guided-next">Save &amp; next</button></div>
+</div>
+<div id="guided-complete" hidden><h3>Context check complete</h3>
+<p id="guided-complete-summary"></p>
+<p><strong>To keep your answers, export the updated JSON below.</strong> The browser does not save them automatically.</p>
+<div class="row"><button type="button" id="guided-download">Export updated JSON</button><button type="button" id="guided-review">Review all eight</button></div>
+</div>
+</section>
 <section aria-labelledby="section-questions"><h2 id="section-questions">Question examples (25 proposed variants)</h2>
 <label for="route">Choose a question</label><select id="route"></select>
 <p id="question-text"></p>
@@ -118,6 +140,7 @@ function parseExistingExport(input){
      (answer.context_rule!=null && typeof answer.context_rule!=='string') ||
      (answer.recent_case!=null && typeof answer.recent_case!=='string') ||
      (answer.no_stable_default!=null && typeof answer.no_stable_default!=='boolean') ||
+     (answer.context_skipped!=null && typeof answer.context_skipped!=='boolean') ||
      !Array.isArray(answer.selected) ||
      !answer.selected.every(v=>typeof v==='string' && q.example_answer_paths.includes(v)) ||
      (answer.other!=null && typeof answer.other!=='string') ||
@@ -138,6 +161,135 @@ function parseExistingExport(input){
  });
  return {answers,unique};
 }
+// Research-only guided review of the eight route-level weaknesses from the
+// frozen V3-versus-historical audit. Never derive a chart prediction here.
+const guidedRoutes=['TF1-G01','TF1-G02','TF1-G16','TF1-G23','TF1-M05','TF1-G20','TF1-M01','TF1-M03'];
+let guidedIndex=-1;
+let guidedReviewAll=false;
+function guidedAddressed(answer){
+ return Boolean(answer && (
+   (typeof answer.context_rule==='string' && answer.context_rule.trim()) ||
+   (typeof answer.recent_case==='string' && answer.recent_case.trim()) ||
+   answer.no_stable_default===true || answer.context_skipped===true
+ ));
+}
+function guidedStatistics(){
+ const completed=guidedRoutes.filter(id=>guidedAddressed(state.answers[id])).length;
+ const skipped=guidedRoutes.filter(id=>state.answers[id]?.context_skipped===true).length;
+ el('guided-progress').value=completed;
+ el('guided-overview').textContent=completed+' of 8 follow-ups addressed'+(skipped?' ('+skipped+' skipped)':'')+'.';
+ return completed;
+}
+function guidedNextOutstanding(from){
+ for(let delta=1;delta<=guidedRoutes.length;delta++){
+  const idx=(from+delta)%guidedRoutes.length;
+  if(!guidedAddressed(state.answers[guidedRoutes[idx]]))return idx;
+ }
+ return -1;
+}
+function guidedRenderPrior(answer){
+ const target=el('guided-prior');
+ target.replaceChildren();
+ const items=(answer?.selected||[]);
+ const list=document.createElement('ul');
+ for(const choice of items){
+  const li=document.createElement('li');li.textContent=choice;list.append(li);
+ }
+ if(items.length)target.append(list);
+ if(answer?.other){
+  const p=document.createElement('p');
+  p.textContent='You also said: '+answer.other;
+  target.append(p);
+ }
+ if(!items.length&&!answer?.other){
+  const p=document.createElement('p');p.textContent='No earlier answer recorded for this route.';target.append(p);
+ }
+}
+function guidedShow(){
+ const section=el('guided-section');
+ section.hidden=false;
+ const count=guidedStatistics();
+ const active=el('guided-active'),complete=el('guided-complete');
+ if(guidedIndex<0){
+  active.hidden=true;complete.hidden=false;
+  el('guided-complete-summary').textContent='All eight prompts have been reviewed: '+count+' addressed. Skipped items can be revisited with Review all eight.';
+  return;
+ }
+ active.hidden=false;complete.hidden=true;
+ const id=guidedRoutes[guidedIndex],q=d.questions.find(v=>v.id===id);
+ const a=state.answers[id]||{};
+ el('guided-count').textContent='Follow-up '+(guidedIndex+1)+' of 8 · '+id;
+ el('guided-question').textContent=q.question;
+ el('guided-prompt').textContent=contextualProbes[id]||'Describe a recent choice and what determined your response.';
+ guidedRenderPrior(a);
+ el('guided-rule').value=a.context_rule||'';
+ el('guided-example').value=a.recent_case||'';
+ el('guided-no-default').checked=a.no_stable_default===true;
+ el('guided-previous').disabled=guidedIndex===0;
+ el('guided-status').textContent=a.context_skipped?'Previously skipped. You can answer now or skip again.':
+  'Only the missing context is being requested. Your earlier answer will not be replaced.';
+}
+function guidedSaveDraft(){
+ if(guidedIndex<0)return;
+ const id=guidedRoutes[guidedIndex];
+ const a=state.answers[id]||{};
+ const changed=el('guided-rule').value!==String(a.context_rule||'')||
+   el('guided-example').value!==String(a.recent_case||'')||
+   el('guided-no-default').checked!==(a.no_stable_default===true);
+ state.answers[id]={
+  ...a,
+  context_rule:el('guided-rule').value,
+  recent_case:el('guided-example').value,
+  no_stable_default:el('guided-no-default').checked,
+  context_skipped:changed?false:a.context_skipped===true,
+ };
+ guidedStatistics();
+}
+function guidedBegin({focus=true}={}){
+ guidedReviewAll=false;
+ guidedIndex=guidedNextOutstanding(-1);
+ guidedShow();
+ if(focus){
+  el('guided-section').scrollIntoView({block:'start'});
+  el('guided-title').focus({preventScroll:true});
+ }
+}
+function guidedAdvance(){
+ guidedIndex=guidedReviewAll?(guidedIndex<guidedRoutes.length-1?guidedIndex+1:-1):
+   guidedNextOutstanding(guidedIndex);
+ guidedShow();
+ if(guidedIndex>=0)el('guided-rule').focus();
+}
+el('guided-rule').addEventListener('input',guidedSaveDraft);
+el('guided-example').addEventListener('input',guidedSaveDraft);
+el('guided-no-default').addEventListener('change',guidedSaveDraft);
+el('guided-next').onclick=()=>{
+ if(guidedIndex<0)return;
+ guidedSaveDraft();
+ const id=guidedRoutes[guidedIndex];
+ if(!guidedAddressed(state.answers[id])){
+  el('guided-status').textContent='Write an example or condition, select No stable default, or choose Skip for now.';
+  el('guided-rule').focus();return;
+ }
+ guidedAdvance();
+};
+el('guided-skip').onclick=()=>{
+ if(guidedIndex<0)return;
+ guidedSaveDraft();
+ state.answers[guidedRoutes[guidedIndex]].context_skipped=true;
+ guidedAdvance();
+};
+el('guided-previous').onclick=()=>{
+ if(guidedIndex<=0)return;
+ guidedSaveDraft();
+ guidedIndex--;
+ guidedShow();
+ el('guided-rule').focus();
+};
+el('guided-download').onclick=()=>el('export').click();
+el('guided-review').onclick=()=>{
+ guidedReviewAll=true;guidedIndex=0;guidedShow();el('guided-rule').focus();
+};
 function remember(){
  const id=el('route').value;
  if(!id)return;
@@ -266,12 +418,23 @@ el('import-file').addEventListener('change',async event=>{
   }
   state.answers=parsed.answers;state.unique=parsed.unique;
   emptyEditor();showQuestion();renderList();
+  guidedBegin();
   el('import-feedback').textContent=`Restored ${Object.keys(state.answers).length} question answers and ${state.unique.length} unusual behaviors from ${file.name}. Edit, then export JSON to keep changes.`;
   el('inventory-feedback').textContent='Imported details can now be edited, removed, or supplemented.';
  }catch(error){el('import-feedback').textContent='Import failed: '+error.message;}
  finally{event.target.value='';}
 });
 showQuestion();renderList();
+if(d.prefilled_export){
+ try{
+  const restored=parseExistingExport(d.prefilled_export);
+  state.answers=restored.answers;state.unique=restored.unique;
+  showQuestion();renderList();guidedBegin();
+  el('import-feedback').textContent='Your saved pilot answers were loaded privately. Continue with the first outstanding follow-up.';
+ }catch(error){
+  el('import-feedback').textContent='The private prefill could not be loaded: '+error.message;
+ }
+}
 </script></body></html>"""
 
 (HERE / "LIFE_PATTERNS_V3_OFFLINE_PILOT.html").write_text(
