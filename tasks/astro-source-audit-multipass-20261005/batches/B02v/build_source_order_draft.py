@@ -33,6 +33,7 @@ for k,(index,first) in enumerate(headings):
       "start_record":first["record_number"],
       "end_record":group[-1]["record_number"],
       "heading_record_kind":first["source_record_kind"],
+      "marker_type":("PROSE_LIST_LEAD_IN" if first["record_number"]==2913 else "PRINTED_SECTION_HEADING_CANDIDATE"),
       "heading_paraphrase":first["source_statement"],
       "source_pdf_pages":sorted({p for x in group for p in x["source_locator"]["pdf_pages"]}),
       "editorial_record_count":len(group),
@@ -56,7 +57,9 @@ for p in range(381,401):
       "cross_page_records":[x["record_number"] for x in records if p in x["source_locator"]["pdf_pages"] and len(x["source_locator"]["pdf_pages"])>1],
     })
 assert all(p["starting_on_this_page"] for p in pages)
-cross=[{"record":x["record_number"],"pdf_pages":x["source_locator"]["pdf_pages"]} for x in records if len(x["source_locator"]["pdf_pages"])>1]
+cross=[{"record":x["record_number"],"pdf_pages":x["source_locator"]["pdf_pages"],"page_role":("LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF" if x["record_number"] in (2579,2597,2633) else "CONTEXT_CROSS_REFERENCE_FOR_SAME_DISTANCE_METHOD")} for x in records if len(x["source_locator"]["pdf_pages"])>1]
+assert len(cross)==5
+assert [x["record"] for x in cross if x["page_role"].startswith("LITERAL")]==[2579,2597,2633]
 result={
  "batch":"B02v",
  "status":"PROVISIONAL_PRODUCER_SOURCE_ORDER_INDEX_NOT_FULL_IMAGE_SEMANTIC_CERTIFICATION",
@@ -68,7 +71,9 @@ result={
  "numbered_chapter_L_completed_and_accepted":False,
  "previous_accepted_lilly":2572,
  "source_page_count":len(pages),
- "printed_heading_inventory_count":len(sections),
+ "editorial_section_marker_count":len(sections),
+ "printed_heading_candidates":sum(s["marker_type"]=="PRINTED_SECTION_HEADING_CANDIDATE" for s in sections),
+ "prose_list_lead_in_count":sum(s["marker_type"]=="PROSE_LIST_LEAD_IN" for s in sections),
  "printed_tables":3,
  "printed_table_rows":36,
  "review_not_completed":"Source-image first pass exists for some spans; this automated order index does not validate every sentence or solve glyph ambiguities.",
