@@ -2,7 +2,7 @@
   "batch": "B02v",
   "phase": "FINAL_SEGMENT_OF_CHAPTER_L",
   "status": "RETAINED_SOURCE_UNCERTAINTIES_ON_UNACCEPTED_CANDIDATE",
-  "retained_count": 50,
+  "retained_count": 51,
   "issues": [
     {
       "id": "U01",
@@ -253,6 +253,11 @@
       "id": "U50",
       "description": "Original PDF399/printed365 capture paragraph was replaced in the producer extraction by conditions belonging to PDF400/printed366, duplicating next-page content and missing its distinct Moon L7→L1 application, Sun/Moon Lord7 conjunction, combustion, and angular clauses. Six relevant draft source kinds/statements corrected from original p365 image, including R2940–R2945; unqualified p365-vs-p366 'repetition' is not established.",
       "status": "SOURCE_IMAGE_CORRECTION_RETAINED"
+    },
+    {
+      "id": "U51",
+      "status": "SOURCE_IMAGE_CORRECTION_RETAINED",
+      "description": "Original PDF388/printed354 says 'as a Furnace or Querne' under Moon in tenth; earlier R2699 producer paraphrase substituted 'oven'. Corrected to quern/grain mill, with before-edit bytes frozen."
     }
   ],
   "no_clinical_criminal_or_predictive_evidence": true
