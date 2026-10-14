@@ -2,7 +2,7 @@
   "batch": "B02v",
   "phase": "FINAL_SEGMENT_OF_CHAPTER_L",
   "status": "RETAINED_SOURCE_UNCERTAINTIES_ON_UNACCEPTED_CANDIDATE",
-  "retained_count": 46,
+  "retained_count": 50,
   "issues": [
     {
       "id": "U01",
@@ -176,7 +176,7 @@
     },
     {
       "id": "U35",
-      "description": "p366 capture lists repeat p365 conditions; repeated source text is not counted as independently observed success. Documentary units can separately represent literal repetition if marked.",
+      "description": "Original p365 and p366 both offer capture lists but with materially distinct conditions. Producer p365 accidentally reused p366 Moon/aspect conditions; corrected p365 to its own printed clauses. Repeat counts must be limited to genuine literal duplicates after source review.",
       "status": "RETAINED"
     },
     {
@@ -233,6 +233,26 @@
       "id": "U46",
       "description": "PDF394/printed360 says ascendant lord in second, 'sixt' (sixth), or seventh, not FIRST; earlier R2832 producer paraphrase corrected and original source preserved. This is historical text, not an offender inference.",
       "status": "RETAINED"
+    },
+    {
+      "id": "U47",
+      "description": "Original PDF392/printed358 says first lord applies to 'the second' OR second lord to 'the Ascendant'. Producer assumed these were aspects between first and second house lords; replaced with literal source-object wording and retained cusp-versus-lord ambiguity.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U48",
+      "description": "Original PDF395/printed361 first-offence rule prints Part of Fortune ⊗, not generic 'a Fortune'. Corrected R2848 source identity with original source bytes preserved. No empirical validation.",
+      "status": "REVIEWED_SOURCE_CORRECTION"
+    },
+    {
+      "id": "U49",
+      "description": "PDF396/printed362 prints 'consider most of these wayes, and pitch upon the greatest number' in age methods. Producer interpreted greatest amount of agreeing testimony, not explicitly in source. Corrected R2873 to source-literal reading; whether numerically greatest estimate or consensus intended remains uncertain.",
+      "status": "RETAINED"
+    },
+    {
+      "id": "U50",
+      "description": "Original PDF399/printed365 capture paragraph was replaced in the producer extraction by conditions belonging to PDF400/printed366, duplicating next-page content and missing its distinct Moon L7→L1 application, Sun/Moon Lord7 conjunction, combustion, and angular clauses. Six relevant draft source kinds/statements corrected from original p365 image, including R2940–R2945; unqualified p365-vs-p366 'repetition' is not established.",
+      "status": "SOURCE_IMAGE_CORRECTION_RETAINED"
     }
   ],
   "no_clinical_criminal_or_predictive_evidence": true

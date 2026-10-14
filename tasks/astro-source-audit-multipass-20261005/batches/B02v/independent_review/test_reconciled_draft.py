@@ -53,6 +53,11 @@ class ReviewCoherence(unittest.TestCase):
         self.assertIn("conjunction, square or opposition",P[2819]["source_statement"])
         self.assertEqual(P[2832]["source_record_kind"],"owner_self_second_sixth_seventh")
         self.assertIn("second, sixth or seventh",P[2832]["source_statement"])
+    def test_page392_literal_object_preserved(self):
+        self.assertEqual(P[2785]["source_record_kind"],"first_lord_to_second_second_lord_to_asc_textual")
+        self.assertIn("'the second'",P[2785]["source_statement"])
+        self.assertIn("'the Ascendant'",P[2785]["source_statement"])
+        self.assertNotIn("First lord applying to second lord",P[2785]["source_statement"])
     def test_backups_are_original_unedited_bytes(self):
         expected={
           "recovery/producer_p381_384_before_20261014_sun_review.json":"0157b9b0c1855f49cf24f462b9aac1f9e613548bb41211911e3911df350dfd5a",
