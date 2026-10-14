@@ -2,7 +2,7 @@
   "batch": "B02v",
   "phase": "FINAL_SEGMENT_OF_CHAPTER_L",
   "status": "RETAINED_SOURCE_UNCERTAINTIES_ON_UNACCEPTED_CANDIDATE",
-  "retained_count": 54,
+  "retained_count": 55,
   "issues": [
     {
       "id": "U01",
@@ -273,6 +273,11 @@
       "id": "U54",
       "status": "SOURCE_IMAGE_CORRECTION_RETAINED",
       "description": "PDF386/printed352 and PDF387/printed353 worked lost-object report is explicitly attributed to HALY, with LEO ascending and VENUS in ascendant. P385C041/P385C042 (provisional R2674–R2675) previously misattributed to Lilly and read Leo as Libra; corrected both editorial records and froze prior producer bytes. No independent case authentication."
+    },
+    {
+      "id": "U55",
+      "status": "SOURCE_IMAGE_CORRECTION_RETAINED",
+      "description": "Original Lilly PDF400/printed366 last capture rule immediately above Chapter LI says Moon in eighth in OPPOSITION ☍ to Mars in second, NOT conjunction. Corrected R2973 / P398C072; removed spurious geometry-inconsistency gloss, froze original source bytes."
     }
   ],
   "no_clinical_criminal_or_predictive_evidence": true
