@@ -1,0 +1,92 @@
+{
+  "batch": "B02v",
+  "status": "SUCCESS_SOURCE_DOCUMENTARY_ONLY_NOT_EMPIRICAL",
+  "successful": true,
+  "suite_results": [
+    {
+      "suite": "test_source_integrity_v18.py",
+      "exit_code": 0,
+      "tests_run": 61,
+      "tail": [
+        "",
+        ".............................................................",
+        "----------------------------------------------------------------------",
+        "Ran 61 tests in 0.081s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "suite": "test_reverse_20p_u75.py",
+      "exit_code": 0,
+      "tests_run": 6,
+      "tail": [
+        "",
+        "......",
+        "----------------------------------------------------------------------",
+        "Ran 6 tests in 0.030s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "suite": "test_b02v_staging.py",
+      "exit_code": 0,
+      "tests_run": 18,
+      "tail": [
+        "",
+        "..................",
+        "----------------------------------------------------------------------",
+        "Ran 18 tests in 0.029s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "suite": "independent_review/test_reconciled_draft.py",
+      "exit_code": 0,
+      "tests_run": 12,
+      "tail": [
+        "",
+        "............",
+        "----------------------------------------------------------------------",
+        "Ran 12 tests in 0.028s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "suite": "test_documentary_admission_u75.py",
+      "exit_code": 0,
+      "tests_run": 12,
+      "tail": [
+        "",
+        "............",
+        "----------------------------------------------------------------------",
+        "Ran 12 tests in 0.033s",
+        "",
+        "OK"
+      ]
+    }
+  ],
+  "distinct_test_count": 109,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "source_file_sha256": {
+    "RULES.json": "00e5e05c31a3f782983e7425cd4e4ab5ff2b9e7e9a2f8d9c7a55a03ffda2d409",
+    "UNRESOLVED.json": "04aa2d8e9efcdcd51dd6f186ea68f248bb3c1d86c1ad79ee7158e52b65ab51c0",
+    "SOURCE_ORDER.json": "4ce6f8d530ec46c05514b7eb29d575a1b5cc81f36f61990daf7ad1bfe5f8693c",
+    "CLAIM_LEDGER.json": "0fef2d9e4e10649627b265a2c075060ec694186674de0de3899245cd02c6544b",
+    "AUDIT_REPORT.md": "82715fad6d755d6ea46b6b58321d15bee3db5ba49cd04620451abe25d21d02b6",
+    "RULES_DRAFT.json": "99505eee4d9ef871803132302b1242e05890332ae108c99b06c26695b09ab1f9",
+    "UNRESOLVED_DRAFT.json": "459d8245606f4cf7b13c0ff16c23fd37504f6d02d4b250fe3d3aea76cbdb06cd",
+    "SOURCE_IMAGE_MANIFEST.json": "def1ae80939cf339c8d3aa877ea2084370efa8fef8c53bcb3bb6ac5f1d549617",
+    "independent_review/FINITE_HIGH_RISK_SOURCE_PASS_U75_20261015.json": "eabf51688e8e5971dd1bd2adf84c2bad158b39f62c95c9362b7327834c9a45e2",
+    "independent_review/REVERSE_SOURCE_COVERAGE_20P_U75_20261015.json": "c7c038ca3503cca11610708b03c79e43bd910d6daeba5b1827ed9fb8ac7f0ded"
+  },
+  "accepted_locally_as_historical_documentary_only": true,
+  "canonical_publication_pending": true,
+  "verified_astrology_predictions": 0,
+  "verified_criminal_identifications": 0
+}

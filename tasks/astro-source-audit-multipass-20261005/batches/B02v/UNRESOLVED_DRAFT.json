@@ -2,7 +2,7 @@
   "batch": "B02v",
   "phase": "FINAL_SEGMENT_OF_CHAPTER_L",
   "status": "RETAINED_SOURCE_UNCERTAINTIES_ON_UNACCEPTED_CANDIDATE",
-  "retained_count": 74,
+  "retained_count": 75,
   "issues": [
     {
       "id": "U01",
@@ -373,6 +373,11 @@
       "id": "U74",
       "status": "SOURCE_CROSS_PAGE_AND_OPTIONAL_QUALIFIER_CORRECTED",
       "description": "Printed p358/359 second-lord-in-exaltation clause starts PDF392 and completes 'great hope of recovery' PDF393. R2793 now cites both; R2794 separately records the printed 'especially if other testimony', NOT requiring that testimony as an AND prerequisite or counting independent outcome."
+    },
+    {
+      "id": "U75",
+      "status": "SOURCE_OMITTED_ALTERNATIVE_REPAIRED",
+      "description": "Original PDF391/printed357 R2769 explicitly offers Moon-domicile lord applying to Moon as an alternative recovery-time testimony, in addition to Part-of-Fortune glyph with lord1/Moon mutual application. Earlier paraphrase omitted this clause and reduced timing to mere recovery hope. Restored alternative and kept referent grammar uncertain."
     }
   ],
   "no_clinical_criminal_or_predictive_evidence": true
