@@ -41,3 +41,9 @@ The exact source, provisional coded profile, source hash, frozen panel pre-score
 - Frozen V1.5 rule and model hash checks, source hash verification, primary/secondary panel ranking and a generic replay of the primary panel.
 - Focused original V3/V3.3 unit tests, deterministic HTML generation, two browser tests including a one-sentence response, lossless re-import and malicious-option rejection, private completed-source replay, no network/page errors.
 - No respondent free text, names or personal source payload committed.
+
+## Later structural-null audit (2026-10-15; supersedes the evidential interpretation of rank 1)
+
+The prior statement that the fixed six-rule owner target scored 5 and ranked first against 999/9,999 decoys remains a **correct arithmetic result**, but it was **not new evidence that the revised questionnaire recovered the DOB**. The fitted target's chart has all six astronomical predicates present, and the researcher-provisional sign vector had only positive or zero contributions. Rank-best=1 was therefore mathematically **guaranteed against any decoy panel**, irrespective of answer-specific discrimination.
+
+A complete 3,125-profile enumeration and unchanged 9,999-decoy replay in `tasks/astrohd-v15-structural-null-20261015/` further found 956 scorable profiles whose rank-best was structurally guaranteed and 81 profiles with explicit contradictions that still ranked first in the finite sample. The previous no-tie result does not establish unique recovery across the century. This is an **evidential correction**, not a change to the frozen six-rule astronomical model or the respondent's historical answers. The first meaningful predictive test must use independent consenting participants whose charts were not used to select those rules.
