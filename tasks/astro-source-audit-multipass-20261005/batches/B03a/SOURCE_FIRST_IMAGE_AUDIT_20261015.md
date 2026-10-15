@@ -1,0 +1,13 @@
+# Lilly LV partnership — source-first original visual review, not acceptance
+
+**2026-10-15 Africa/Dakar UTC+0.** The root multi-author source study remains OPEN. This is source-only provisional work, separate from real predictions or claims about any actual partner.
+
+From original 1647 Wellcome b30338724, Book II Chapter **LV Of Partnership** begins **below** original PDF411/printed377 divider, continues through original PDF412/printed378, and **ends above** PDF413/printed379 divider before Chapter LVI on sieges. A cropped derivative of original PDF412 visibly shows the circled-cross glyph in the last partnership paragraph. Image SHA256 and printed locators in `SOURCE_WINDOW_MANIFEST.json`. Full original PDF hash from retained accepted source: `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. Original full-PDF pixel equality to derived copies is not claimed.
+
+**32 provisional editorial source units** (LV-C001 to LV-C032) cover all chapter headings, source role assignments, descriptive seventh-cusp significator selection, Moon additional role, future partnership reputation and fourth-house end-state instructions, distinct sign/reception condition branches, full multi-branch lunar applications, reputation and financial directions, four distinct positive-ending alternatives and the final monetary loss qualification. **17 image-first source spans** map to all 32 source units, with cross-page claims spanning PDF411→412 and PDF412→413, and one final navigation-only Chapter LVI heading. Exact mapping: `ORIGINAL_TO_DRAFT_SOURCE_COVERAGE.json`.
+
+**16 unresolved source limitations** remain. In particular: the author adjusts partner significators to match physical descriptions (strong potential retrospective flexibility); an abbreviated converse is not formalized into an inverse algorithm; the Moon's applying planet has an unspecified quality in one statement; money-loss predictions are historical allegations; and a visually apparent circled-cross/Part-of-Fortune-like glyph is not silently promoted to a fully certified symbol.
+
+**Admission barrier:** Chapter LIII is being worked in a separate active worktree and is not yet in the canonical accepted source index. Chapter LIV is separately prepared provisionally as B02z in this same branch but not globally accepted. Do not assign any R numbers or update canonical until predecessors are accepted and the image/source fidelity audit is replayed on the frozen exact versions.
+
+No new empirical observations, independent tested chart predictions, confirmed disputes, clinical/criminal data, live scores or runtime promotions. There is no complete independent word-for-word second transcription.
