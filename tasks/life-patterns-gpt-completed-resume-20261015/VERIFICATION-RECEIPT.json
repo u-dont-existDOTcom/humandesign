@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "task": "life-patterns-gpt-completed-resume-20261015",
+  "date": "2026-10-15",
+  "owner_outcome": "Update the existing Life Patterns Interview Custom GPT so previously completed edited interviews resume with review-only material clarifications, not full re-interview",
+  "parent_status": "OPEN_GPT_EDITOR_UPDATE_NOT_YET_CONFIRMED",
+  "research_source": {
+    "type": "previously completed lightly edited DOCX questionnaire",
+    "qa_pairs": 96,
+    "numbering_contiguous": true,
+    "empty_answers": 0,
+    "edits_not_original_chat": true,
+    "private_json_persisted_outside_git": true,
+    "consent": "UNKNOWN_FROM_DOCUMENT_MUST_NOT_INFER",
+    "original_interviewer_blinding": "UNKNOWN_FROM_DOCUMENT"
+  },
+  "artifact": {
+    "cumulative_release": "reference/custom_gpt/releases/Life-Patterns-GPT-completed-interview-update-2026-10-15.zip",
+    "strict_instructions_chars": 7941,
+    "knowledge_files": 8,
+    "knowledge_addition": "COMPLETED-INTERVIEW-CONTINUATION-v1.md",
+    "action_version": "1.6.0",
+    "kept_prior_oct09_action_bytes": true,
+    "kept_oct09_updated_knowledge_bytes": true,
+    "private_participant_answers_in_git_or_zip": false,
+    "credentials_in_git_or_zip": false,
+    "generated_zip_reproducible": true,
+    "local_downloads_copy_verified": true,
+    "local_extracted_files_readback_verified": true
+  },
+  "runtime_readonly": {
+    "backend_health": "ok",
+    "gpt_submission_enabled": true,
+    "gpt_review_queue_enabled": true,
+    "fast_review_enabled": true,
+    "review_worker_configured": true,
+    "public_participant_survey_enabled": false,
+    "external_provider_configured": false,
+    "latest_openapi_version": "1.6.0",
+    "successful_real_participant_review_attempted": false
+  },
+  "tests": {
+    "focused_source_and_packet_tests_passed": 9,
+    "full_repo_tests_passed": 1091,
+    "full_repo_tests_skipped": 3,
+    "skips": "Unrelated chart ephemeris smoke files",
+    "scoped_ruff_passed": true
+  },
+  "user_action_boundary": {
+    "existing_gpt_editor_update_required": true,
+    "editor_update_performed": false,
+    "update_in_place_only": true,
+    "preserve_existing_bearer_action": true,
+    "participant_attachment_in_own_saved_conversation_required_if_old_chat_not_used": true,
+    "participant_research_consent_required_if_unproven": true,
+    "repeat_prior_questionnaire": false,
+    "reviewer_clarifications_may_be_zero": true,
+    "development_case_chart_previously_known_to_researcher": true,
+    "prohibition_on_reclassifying_case_as_untouched_validation": true
+  }
+}
