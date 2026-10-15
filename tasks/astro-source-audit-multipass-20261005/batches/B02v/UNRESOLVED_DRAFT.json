@@ -2,7 +2,7 @@
   "batch": "B02v",
   "phase": "FINAL_SEGMENT_OF_CHAPTER_L",
   "status": "RETAINED_SOURCE_UNCERTAINTIES_ON_UNACCEPTED_CANDIDATE",
-  "retained_count": 60,
+  "retained_count": 65,
   "issues": [
     {
       "id": "U01",
@@ -303,6 +303,31 @@
       "id": "U60",
       "status": "SOURCE_BOOLEAN_OPERATOR_CORRECTION_RETAINED",
       "description": "Original PDF396/printed362 small stature: significator high occidentality OR one of Cancer/Scorpio/Pisces. Earlier R2876 erroneously made both conditions conjunctive. Corrected disjunction."
+    },
+    {
+      "id": "U61",
+      "status": "SOURCE_IMAGE_CONSEQUENT_AND_ANTECEDENT_CORRECTED",
+      "description": "Printed p360 R2828: compare lord1 and Moon, stronger receiving virtue from evil planet(s) by separation gives authorial conditional accusation; further second-lord qualification. Earlier draft omitted explicit antecedent and alleged consequent. No real accusation supported."
+    },
+    {
+      "id": "U62",
+      "status": "SOURCE_SEMANTIC_AMBIGUITY_RETAINED",
+      "description": "Printed p360 R2829 says 'truth is said of him' after first lord angular applying/separating cadent planet. Earlier draft reinterpreted as person telling truth; now preserved literal expression and unresolved referent."
+    },
+    {
+      "id": "U63",
+      "status": "SOURCE_CROSS_REFERENCE_AMBIGUITY_RETAINED",
+      "description": "Printed p360 R2830 says Moon joined to angular planet, especially tenth, 'signifies the same' as R2829. Previous draft asserted truthfulness, now preserves ambiguous cross-reference."
+    },
+    {
+      "id": "U64",
+      "status": "SOURCE_BOOLEAN_THRESHOLD_CORRECTION_RETAINED",
+      "description": "Original p361 R2855 'Many Thieves, if peregrine Planets be in angles.' Producer had required multiple peregrine planets; number of peregrine planets not explicitly stated, only the supposed multiplicity of thieves. Removed unjustified cardinality threshold."
+    },
+    {
+      "id": "U65",
+      "status": "SOURCE_PRECONDITION_AND_ELLIPSIS_CORRECTION_RETAINED",
+      "description": "Original PDF400/printed366 escape-by-friends/strangers clauses inherit seventh-lord ASPECT to Jupiter/Venus from preceding sentence. Earlier R2948–R2949 reduced this to planet in eleventh/third with no aspect. R2949's elliptical 'if in third' subject remains explicitly uncertain."
     }
   ],
   "no_clinical_criminal_or_predictive_evidence": true
