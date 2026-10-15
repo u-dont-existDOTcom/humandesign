@@ -1,0 +1,81 @@
+{
+  "schema": "life-patterns-contextual-cognitive-candidates-v3.2",
+  "status": "DEVELOPMENT_ONLY_NOT_LIVE_NOT_SCORED",
+  "source_instrument": "tendency-first-v3-scaffold-development-20261010",
+  "source_feedback": "one developer participant completed the eight prompted contextual clarifications; no independent cohort",
+  "scope": "Neutral cognitive pilot proposals, not chart traits or validated questionnaire replacement",
+  "blinding": "Neither the prompt nor answer options may display astrology/HD chart features, predicted behaviors, birth information or individual traits.",
+  "items": [
+    {
+      "id": "TF1-G01",
+      "action": "pilot_real_sequence",
+      "old_question": "When information is messy or conflicting, what is your usual first move?",
+      "candidate_question": "Recall a recent unfamiliar problem when you could ask someone, research it yourself, or try a test. What did you actually do first, why, and what would have changed that order?",
+      "what_to_compare": "First action in comparable available-resource contexts; distinguish source checking from later testing",
+      "abstain_if": "No concrete example, no comparable alternatives, or only a generic reasonable list"
+    },
+    {
+      "id": "TF1-G02",
+      "action": "rewrite_or_context_only",
+      "old_question": "When explaining something you understand, how do you usually decide what to include for the listener?",
+      "candidate_question": "Think of a real explanation that required a decision about how much detail to give. What did you say first, how did the listener respond, and what made you continue, simplify, or stop?",
+      "what_to_compare": "Observable explanation choice and the feedback that led to a change, rather than socially desirable listener sensitivity",
+      "abstain_if": "No actual audience decision or only expected norms"
+    },
+    {
+      "id": "TF1-G16",
+      "action": "pilot_motive_tradeoff",
+      "old_question": "What usually makes sustained effort feel worth continuing for you?",
+      "candidate_question": "Recall a task you continued despite slow progress, or a promise you kept despite fading interest. What actually kept you going, what did it cost, and when would you stop? If neither happened, say so.",
+      "what_to_compare": "Intrinsic curiosity versus reliance/obligation with real costs and stopping criteria",
+      "abstain_if": "Only endorses generic motives; task constraints unknown"
+    },
+    {
+      "id": "TF1-G23",
+      "action": "replace_first_notice_with_action",
+      "old_question": "In a group where nobody has assigned you a role, what do you usually find yourself noticing first?",
+      "candidate_question": "Recall a recent group task. What specific issue or opportunity did you notice, if anything? What did you actually do next, and how did the others respond?",
+      "what_to_compare": "Observation followed by self-initiated action; no universal first-notice category presumed",
+      "abstain_if": "No group example, no action, or one episode treated as a lifetime habit"
+    },
+    {
+      "id": "TF1-M05",
+      "action": "suspend_scoring_pending_evidence",
+      "old_question": "When you get a sense that something is off, what do you usually notice that gives you that impression?",
+      "candidate_question": "If you recall a real uncertain situation in which you initially lacked evidence, what happened first: a specific cue, a nonverbal feeling, or something else? What later information confirmed or changed your view? If no such event comes to mind, skip.",
+      "what_to_compare": "Temporal ordering of independently remembered cues rather than overlapping definitions of unease and uncertainty",
+      "abstain_if": "Only generic claims about all reasoning or no reliable retrospective timing"
+    },
+    {
+      "id": "TF1-G20",
+      "action": "pilot_observed_opportunity_cost",
+      "old_question": "What do you usually want extra money or resources to make possible in your life?",
+      "candidate_question": "Think of a real time you had enough resources for one worthwhile option but not all of them. What did you choose, what did you postpone, and why? If that hasn't happened, say so.",
+      "what_to_compare": "Actual constrained priority, including opportunity cost, versus hypothetically valuing every worthwhile purpose",
+      "abstain_if": "No constrained choice or no foregone alternative"
+    },
+    {
+      "id": "TF1-M01",
+      "action": "pilot_matched_urgency",
+      "old_question": "How do other people’s urgency or pressure usually affect you when the actual deadline has not changed?",
+      "candidate_question": "Recall a recent request to hurry when the actual deadline did not change. What did you do, and how did the reason for the request, cost of hurrying, or relationship matter? If you recall another request that went differently, compare them.",
+      "what_to_compare": "Response under comparable deadlines as credibility, costs and relationships change",
+      "abstain_if": "Hypothetical only, changed real deadline, or no actual response described"
+    },
+    {
+      "id": "TF1-M03",
+      "action": "suspend_scoring_pending_evidence",
+      "old_question": "When a small voluntary commitment becomes less appealing, what normally determines whether you complete it, renegotiate, or drop it?",
+      "candidate_question": "If you remember a commitment you could still fulfill but that became unexpectedly costly, what did you choose and what real alternatives did you have? If this hasn't happened, skip.",
+      "what_to_compare": "An actual costly but still feasible tradeoff instead of universally expected rules about feasibility and priorities",
+      "abstain_if": "Only general normative reasoning or duties changed so the original choice was not feasible"
+    }
+  ],
+  "global_rules": [
+    "Candidates have no admitted chart mapping, trait polarity or numeric weights.",
+    "Ask at most one useful clarification when an actual source distinction remains missing; otherwise admit unknown or stop.",
+    "A respondent saying a question seems obvious is item-quality feedback, never a respondent trait.",
+    "Do not mix new V3.2 pilot records with frozen prior V3 or V7 cohorts without a versioned source mapping.",
+    "Only new people who have not shaped these questions can supply independent cognitive-pilot evidence."
+  ]
+}
