@@ -2,7 +2,7 @@
   "batch": "B02v",
   "phase": "FINAL_SEGMENT_OF_CHAPTER_L",
   "status": "RETAINED_SOURCE_UNCERTAINTIES_ON_UNACCEPTED_CANDIDATE",
-  "retained_count": 55,
+  "retained_count": 58,
   "issues": [
     {
       "id": "U01",
@@ -278,6 +278,21 @@
       "id": "U55",
       "status": "SOURCE_IMAGE_CORRECTION_RETAINED",
       "description": "Original Lilly PDF400/printed366 last capture rule immediately above Chapter LI says Moon in eighth in OPPOSITION ☍ to Mars in second, NOT conjunction. Corrected R2973 / P398C072; removed spurious geometry-inconsistency gloss, froze original source bytes."
+    },
+    {
+      "id": "U56",
+      "status": "SOURCE_IMAGE_CORRECTION_RETAINED",
+      "description": "PDF391/357 R2762 originally says bodily application yields recovery itself, with subsequent retrograde/direct timing. Producer recorded only timing; both meanings restored."
+    },
+    {
+      "id": "U57",
+      "status": "SOURCE_IMAGE_CORRECTION_RETAINED",
+      "description": "PDF397/363 R2895 says 'the Significators' in plural crossing zodiac sign, not a singular thief significator; threshold remains unstated."
+    },
+    {
+      "id": "U58",
+      "status": "SOURCE_GRAMMATICAL_AMBIGUITY_RETAINED",
+      "description": "PDF397/363 R2901 'and behold the ascendant' has no certain actor; previous producer assigned cadent planet alone, now source ambiguity explicit."
     }
   ],
   "no_clinical_criminal_or_predictive_evidence": true
