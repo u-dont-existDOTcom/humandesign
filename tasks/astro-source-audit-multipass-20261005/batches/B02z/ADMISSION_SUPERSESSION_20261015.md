@@ -1,0 +1,9 @@
+# Chapter LIV — provisional record supersession and acceptance
+
+The historical, original B02z provisional source files were authored when Lilly Chapter LIII had not yet been accepted; their `PREDECESSOR_HELD...` and 3,071 baseline status describes that **prior snapshot**, not the current canonical state. These files are preserved rather than overwritten, along with their provisional owner-archive receipt.
+
+The separate canonical integration witness now verifies Chapter LIII accepted and published in branch `research/lilly-hunting-lawsuit-b02y-working-20261015`, with 3,147 Lilly source units and the next marker Chapter LIV, PDF410/printed376 below the divider. The complete Chapter LIV original image audit and provisional source content have been reviewed; the original PDF410 and PDF411 page bytes and source map are frozen. Retain all 14 unresolved source limits and the 16 original-to-source passage groups, as well as the printed node glyph and the explicit void-of-course, Sun conjunction and Moon aspect exclusions.
+
+**New documentary source layer**: 24 source-ordered accepted historical units R3148–R3171, of which one is a Chapter LV navigation-only marker. The actual prior provisional source annotations retain their own original identity and remain the migration input; the new `RULES.json`, `ACCEPTANCE.json`, `SOURCE_ORDER.json`, `UNRESOLVED.json` and `ORIGINAL_TO_RECORD_SOURCE_FIRST_REVERSE_MAP.json` are separate derivative records. No chart, predictive engine or model weights were changed.
+
+Canonical acceptance makes 3,171 Lilly + 1,066 retained Ptolemy = 4,237 historical documentary source units after publication. No validated astrological predictions, financial-trading outcomes or personal honesty inferences. Chapter LV Partnership follows from PDF411 below the divider.
