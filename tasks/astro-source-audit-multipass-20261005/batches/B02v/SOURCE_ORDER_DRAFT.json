@@ -17,10 +17,10 @@
   "printed_table_rows": 36,
   "review_not_completed": "Source-image first pass exists for some spans; this automated order index does not validate every sentence or solve glyph ambiguities.",
   "upstream_sha256": {
-    "RULES_DRAFT.json": "e3f667af3031f60957d4a8c3dd5882f41e345ee14713e85b362a6697154ecb56",
+    "RULES_DRAFT.json": "5f00394346620e456fe8bd37409b240e5b6734c4b869019771b33c7f37614e6f",
     "SOURCE_IMAGE_MANIFEST.json": "def1ae80939cf339c8d3aa877ea2084370efa8fef8c53bcb3bb6ac5f1d549617",
     "PRINTED_DIRECTION_TABLES.json": "fe1f02125330fd741f290fe2805a922f35a13a133e1151759c6a302035a65cae",
-    "UNRESOLVED_DRAFT.json": "0c76ee9f20acccbb14f160bc7ee5d567d1beb086f63909f4e82be393c35eb2b3"
+    "UNRESOLVED_DRAFT.json": "4199209a969da6e5266e6b5beb8b99121b738e0f9c705ccd65f8686cea646b03"
   },
   "sections": [
     {
@@ -1098,7 +1098,9 @@
         2700,
         2708
       ],
-      "cross_page_records": []
+      "cross_page_records": [
+        2714
+      ]
     },
     {
       "original_pdf_page": 389,
@@ -1106,6 +1108,7 @@
       "original_image": "evidence/pdf-389.png",
       "sha256": "0b6cf35514b3c427e8a562b1578be78f6d80188b9d208bb456e059cb81a42a51",
       "all_records_referencing_page": [
+        2714,
         2715,
         2716,
         2717,
@@ -1160,6 +1163,7 @@
         2729
       ],
       "cross_page_records": [
+        2714,
         2737
       ]
     },
@@ -1852,6 +1856,14 @@
       "pdf_pages": [
         384,
         385
+      ],
+      "page_role": "LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF"
+    },
+    {
+      "record": 2714,
+      "pdf_pages": [
+        388,
+        389
       ],
       "page_role": "LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF"
     },

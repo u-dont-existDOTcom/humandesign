@@ -2,7 +2,7 @@
   "batch": "B02v",
   "phase": "FINAL_SEGMENT_OF_CHAPTER_L",
   "status": "RETAINED_SOURCE_UNCERTAINTIES_ON_UNACCEPTED_CANDIDATE",
-  "retained_count": 68,
+  "retained_count": 70,
   "issues": [
     {
       "id": "U01",
@@ -343,6 +343,16 @@
       "id": "U68",
       "status": "SOURCE_PRINTED_SEQUENCE_CORRECTION_RETAINED",
       "description": "Original PDF400/p366 prints Moon separating from conjunction of Saturn then applying square Mercury BEFORE 'Lord of seventh in first'. Previous provisional R2971/72 were reversed. Corrected slot order: R2971 lunar application, R2972 seventh lord in first. Independence/conjunction of the two printed lines is unresolved; original producer bytes frozen."
+    },
+    {
+      "id": "U69",
+      "status": "SOURCE_CROSS_PAGE_LOCATOR_CORRECTED",
+      "description": "Original PDF388/printed354 Moon-as-second-lord goods classification ends 'Poultry in the Coun-' and PDF389/printed355 begins 'try of all sorts'. R2714 previously located only to PDF388; corrected to [388,389], one source clause, not two."
+    },
+    {
+      "id": "U70",
+      "status": "SOURCE_MARGINAL_PRECONDITION_CORRECTION",
+      "description": "Original PDF386/printed352 elemental compass-direction sentence has marginal instruction 'This is, when Goods are certainly known to be out of the House.' Earlier R2670 omitted this gating premise. Added the outside-house qualification only to elemental-direction rule, not unrelated adjacent interior-room conditions."
     }
   ],
   "no_clinical_criminal_or_predictive_evidence": true

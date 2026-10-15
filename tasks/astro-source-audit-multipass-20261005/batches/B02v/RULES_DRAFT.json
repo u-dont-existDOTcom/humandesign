@@ -3955,14 +3955,16 @@
         "source_statement_is_verbatim": false,
         "original_image_is_authoritative": true
       },
-      "source_record_kind": "goods_elements_cardinal_points",
-      "source_statement": "For lost goods Lilly classifies the sign as fire/east, earth/south, air/west or water/north.",
+      "source_record_kind": "goods_outside_house_element_cardinal_points",
+      "source_statement": "Only where the goods are already certainly known to be OUTSIDE the house (original marginal qualification), Lilly's selected sign yields historical directional associations: fiery/east, earthy/south, airy/west or watery/north.",
       "source_statement_type": "EDITORIAL_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
       "preconditions": [
-        "Relevant fourth-house or goods sign selected."
+        "Goods certainly known to be outside the house, per the printed margin aligned with this elemental-direction paragraph.",
+        "Relevant goods/fourth-house sign has been selected; source directs fire→east, earth→south, air→west, water→north."
       ],
       "exceptions_and_evidence_limits": [
-        "Historical directional symbolism, not a geolocated result."
+        "The printed marginal restriction attaches to this elemental compass-direction clause; avoid imposing it on all neighboring interior-room rules.",
+        "Historical sign-direction system is neither verified property geolocation nor a method to investigate people."
       ],
       "draft_origin_file": "PRODUCER_SOURCE_DRAFT_P385_387.json",
       "draft_origin_index": 36,
@@ -5704,13 +5706,16 @@
       "source_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
       "source_locator": {
         "pdf_pages": [
-          388
+          388,
+          389
         ],
         "printed_pages": [
-          354
+          354,
+          355
         ],
         "page_images": [
-          "evidence/pdf-388.png"
+          "evidence/pdf-388.png",
+          "evidence/pdf-389.png"
         ],
         "source_statement_is_verbatim": false,
         "original_image_is_authoritative": true
@@ -5719,10 +5724,10 @@
       "source_statement": "With Moon as second lord the source suggests beasts: horses, mules, cows or poultry, especially in the country.",
       "source_statement_type": "EDITORIAL_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
       "preconditions": [
-        "Moon second-house lord; country/urban qualification from printed margin."
+        "Moon rules second; printed country versus town qualification applies to this item. Sentence 'Poultry in the Coun-' on PDF388 continues 'try of all sorts' at PDF389 top."
       ],
       "exceptions_and_evidence_limits": [
-        "Do not infer animal health or actual theft of livestock."
+        "One printed item across two leaves, not two separate source records. This is a historical goods-category attribution, not verified missing property."
       ],
       "draft_origin_file": "PRODUCER_SOURCE_DRAFT_P388_390.json",
       "draft_origin_index": 20,

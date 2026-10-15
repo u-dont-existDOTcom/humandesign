@@ -57,9 +57,9 @@ for p in range(381,401):
       "cross_page_records":[x["record_number"] for x in records if p in x["source_locator"]["pdf_pages"] and len(x["source_locator"]["pdf_pages"])>1],
     })
 assert all(p["starting_on_this_page"] for p in pages)
-cross=[{"record":x["record_number"],"pdf_pages":x["source_locator"]["pdf_pages"],"page_role":("LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF" if x["record_number"] in (2579,2597,2633,2737) else "CONTEXT_CROSS_REFERENCE_FOR_SAME_DISTANCE_METHOD")} for x in records if len(x["source_locator"]["pdf_pages"])>1]
-assert len(cross)==6
-assert [x["record"] for x in cross if x["page_role"].startswith("LITERAL")]==[2579,2597,2633,2737]
+cross=[{"record":x["record_number"],"pdf_pages":x["source_locator"]["pdf_pages"],"page_role":("LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF" if x["record_number"] in (2579,2597,2633,2714,2737) else "CONTEXT_CROSS_REFERENCE_FOR_SAME_DISTANCE_METHOD")} for x in records if len(x["source_locator"]["pdf_pages"])>1]
+assert len(cross)==7
+assert [x["record"] for x in cross if x["page_role"].startswith("LITERAL")]==[2579,2597,2633,2714,2737]
 result={
  "batch":"B02v",
  "status":"PROVISIONAL_PRODUCER_SOURCE_ORDER_INDEX_NOT_FULL_IMAGE_SEMANTIC_CERTIFICATION",
