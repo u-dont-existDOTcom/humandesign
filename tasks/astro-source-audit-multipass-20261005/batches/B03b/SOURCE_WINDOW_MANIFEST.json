@@ -1,0 +1,37 @@
+{
+  "batch": "B03b",
+  "status": "PROVISIONAL_SOURCE_FIRST",
+  "complete_original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_original_pdf_pages": [
+    413,
+    414
+  ],
+  "source_printed_pages": [
+    379,
+    380
+  ],
+  "first_position": "PDF413 below Chapter LV divider",
+  "end_position": "PDF414 above Chapter LVII divider",
+  "images": [
+    {
+      "original_pdf_page": 413,
+      "printed_page": 379,
+      "path": "evidence/pdf_1647-413.jpg",
+      "bytes": 426736,
+      "sha256": "38081be6a4fbe4fb1fd4370cd646ab38acd4f3164e16098cc2ca7352e239b1bd",
+      "witness": "Wellcome 1647 IIIF scan original b30338724"
+    },
+    {
+      "original_pdf_page": 414,
+      "printed_page": 380,
+      "path": "evidence/pdf_1647-414.jpg",
+      "bytes": 651631,
+      "sha256": "6fedff493e51f931d07c71d0ab25efc4463c5e5a33acf844e07a8d1a7bd3532c",
+      "witness": "Wellcome 1647 IIIF scan original b30338724"
+    }
+  ],
+  "full_original_pdf_repacked": false,
+  "independent_diplomatic_second_reader": false,
+  "prior_accepted_lilly": 3203,
+  "next_chapter": "LVII"
+}
