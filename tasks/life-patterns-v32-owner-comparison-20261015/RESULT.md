@@ -28,7 +28,7 @@ The eight amended V3.2 question wordings are **not yet independently administere
 ### Birth-date question — historical comparison versus a new test
 
 - **New V3.2 birth-date rerank:** **NOT RUN / NOT TESTABLE**, because there is no predeclared admitted bridge from these eight new questions to chart predicates. Inventing scores or choosing favorable interpretation from the known owner DOB would be circular.
-- **Previously frozen V4.3 crosswalk diagnostic**, from the independent prior repo artifact: recorded exact birth-time moment fell into interval rank **#1,562**, while highest-scoring interval covered **2013-01-28/29**. That prior search was on an older translation and is **not a result of V3.2**.
+- **Accepted V1.4d fitted astronomical reference:** 52,596,001-minute century scan; recorded 10:25 UTC moment is **jointly #1** with eight neighboring minute instants, and January 29, 1985 is the only maximum-scoring calendar date. The older V4.3/NetInformation #1,562 diagnostic was discarded as the owner-facing comparison benchmark. Neither result is independent survey-to-DOB validation.
 - The separately frozen six-rule V1.4 selected model was fitted to the known birth, and its rare six-positive case is not evidence of generalizable date identification.
 - Consequently no new claim of natal recoverability or independent validation is made.
 
@@ -56,3 +56,8 @@ The private comparison generator requires two prior owner exports and their prev
 ## Next scientific gate
 
 A new versioned chart-predicate mapping, neutral behavioral coder, decoy universe and frozen model are required before a new DOB identification test. Test new participants whose chart data remain concealed during question design, and treat this one-person material as development only. The prior zero-scored state must not be silently presented as improvement.
+
+
+## Reference correction — 2026-10-15
+
+The prior V4.3 NetInformation #1,562 description in this historical note is **not the accepted comparator**. Owner-corrected reference: fitted six-rule AstroHD V1.4d's 52,596,001-minute century scan. On its one-minute grid, all nine maximum-scoring minutes occur on January 29, 1985 (10:18–10:26 UTC), including the recorded time (joint #1). The V1.5 five-domain behavioral bridge exists separately; determining typical meaningful role-entry sequence from actual episodes is the remaining measurement gap. Read the correction as superseding—not deleting—the obsolete benchmark text above. No new participant DOB recovery is claimed.
