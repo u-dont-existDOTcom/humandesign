@@ -1,0 +1,91 @@
+{
+  "status": "LOCAL_APPLIED_REMOTE_RECOVERY_DELTA_NOT_CANONICAL",
+  "date": "2026-10-14",
+  "batch": "B02v",
+  "accepted_records_changed": 0,
+  "expected_old_uncertainty_count": 55,
+  "expected_new_uncertainty_count": 58,
+  "expected_provisional_count": 402,
+  "expected_local_before_sha256": {
+    "PRODUCER_SOURCE_DRAFT_P391_392.json": "bfde726a22a1519eeab743168252bd8ba905d63cf0fc95812ddbea992935e5b8",
+    "PRODUCER_SOURCE_DRAFT_P396_397.json": "4d6c0c0fdf6e305a79532914741cb3a359f7e2d8023fa8a1e43f92acd0a35a28"
+  },
+  "records": [
+    {
+      "record_number": 2762,
+      "producer": "PRODUCER_SOURCE_DRAFT_P391_392.json",
+      "local_id": "P391C011",
+      "pdf_page": 391,
+      "printed_page": 357,
+      "old_kind": "applying_body_to_recovery_planet",
+      "new_kind": "bodily_application_recovery_with_timing",
+      "source_statement": "If the Moon or ascendant lord bodily applies to the planet denoting recovery, Lilly claims the stolen item will THEN be recovered; separate retrograde/direct application qualifiers address how soon.",
+      "preconditions": [
+        "One of Moon or first-house lord applies bodily to the identified recovery planet, original printed p357."
+      ],
+      "exceptions_and_uncertainty": [
+        "The printed consequent explicitly predicts return, not timing alone; the retrograde/direct alternatives remain separate next records. No observed recovery is established."
+      ],
+      "original_anchor": "the thing stole shall then be recovered"
+    },
+    {
+      "record_number": 2895,
+      "producer": "PRODUCER_SOURCE_DRAFT_P396_397.json",
+      "local_id": "P396C038",
+      "pdf_page": 397,
+      "printed_page": 363,
+      "old_kind": "knave_leaves_sign_lodging",
+      "new_kind": "knave_significators_plural_change_sign",
+      "source_statement": "Under 'Where the Knave is', the author uses plural 'the Significators' passing from one zodiac sign into another as one alternative assertion of changing lodgings; which/how many must cross is unspecified.",
+      "preconditions": [
+        "Printed PDF397/363: 'if the Significators be going out of one Signe into another' (plural)."
+      ],
+      "exceptions_and_uncertainty": [
+        "Do not force a singular thief significator or assert ALL/ANY quantification absent from the sentence."
+      ],
+      "original_anchor": "if the Significators be going out of one Signe into another"
+    },
+    {
+      "record_number": 2901,
+      "producer": "PRODUCER_SOURCE_DRAFT_P396_397.json",
+      "local_id": "P396C044",
+      "pdf_page": 397,
+      "printed_page": 363,
+      "old_kind": "remains_first_cadent_aspect_asc",
+      "new_kind": "remains_first_cadent_behold_asc_actor_unspecified",
+      "source_statement": "Under 'He remaines', the ascendant lord is joined to a planet in a cadent house; the original additionally says 'and behold the ascendant', without unambiguously identifying which planetary subject beholds it.",
+      "preconditions": [
+        "First-house lord joined to a planet in a cadent house; a beholding of the ascendant is also mentioned."
+      ],
+      "exceptions_and_uncertainty": [
+        "The aspect actor cannot be assigned uniquely to the cadent planet or first lord from the printed grammar. Consequent comes from the section heading, not an explicit following sentence."
+      ],
+      "original_anchor": "and behold the ascendant"
+    }
+  ],
+  "issue_ledger_additions": [
+    {
+      "id": "U56",
+      "status": "SOURCE_IMAGE_CORRECTION_RETAINED",
+      "description": "PDF391/357 R2762 originally says bodily application yields recovery itself, with subsequent retrograde/direct timing. Producer recorded only timing; both meanings restored."
+    },
+    {
+      "id": "U57",
+      "status": "SOURCE_IMAGE_CORRECTION_RETAINED",
+      "description": "PDF397/363 R2895 says 'the Significators' in plural crossing zodiac sign, not a singular thief significator; threshold remains unstated."
+    },
+    {
+      "id": "U58",
+      "status": "SOURCE_GRAMMATICAL_AMBIGUITY_RETAINED",
+      "description": "PDF397/363 R2901 'and behold the ascendant' has no certain actor; previous producer assigned cadent planet alone, now source ambiguity explicit."
+    }
+  ],
+  "source_witnesses": [
+    "evidence/pdf-391.png",
+    "evidence/pdf-397.png"
+  ],
+  "transform_provenance": "Exact values from locally executed 2026-10-14 source-repair script; local corrections and tests executed before remote endpoint stopped responding. This JSON is a recovery specification, not proof of GitHub update to source components.",
+  "reapply_rule": "Before any application, verify source component SHA256 and original image witness. Do not reapply if local producer already has the new_kind; reconcile GitHub recovery note non-destructively.",
+  "new_archive_verification": "NOT_DONE",
+  "new_canonical_acceptance": false
+}
