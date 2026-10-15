@@ -1,0 +1,41 @@
+{
+  "batch": "B02v",
+  "kind": "HISTORICAL_SOURCE_ONLY_CANONICAL_PUBLICATION_RECEIPT",
+  "status": "CANONICAL_SOURCE_PUBLICATION_SUCCEEDED_REMOTE_READBACK_VERIFIED",
+  "owner_goal_status": "PARENT_MULTIAUTHOR_ASTROLOGY_SOURCE_STUDY_OPEN",
+  "subtask": "BOOK_II_CHAPTER_L_DOCUMENTARY_ACCEPTED",
+  "nonforce_atomic_push": true,
+  "accepted_source_commit_sha": "d775691a5d1a731df74ee59b02ff6a16cd8dac41",
+  "source_branch": "research/lilly-thief-house-recovery-b02v-20261014",
+  "canonical_branch": "research/six-rule-life-timing-20261001",
+  "source_and_canonical_pushed_same_commit": true,
+  "original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "accepted_records_before": 2572,
+  "new_documentary_records": 402,
+  "accepted_lilly_after": 2974,
+  "ptolemy_retained": 1066,
+  "combined_historical_documentary_records": 4040,
+  "canonical_index": {
+    "path": "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json",
+    "verified_git_blob_sha1": "c4fc7bb6b9fde73feae8bf25d77d412eaf8cd573",
+    "next_chapter": "LI",
+    "next_source_original_pdf_page": 400,
+    "next_boundary": "BELOW Chapter L divider"
+  },
+  "accepted_rules": {
+    "path": "tasks/astro-source-audit-multipass-20261005/batches/B02v/RULES.json",
+    "verified_git_blob_sha1": "9fc7c5f677a7fd59529edeb43f82ead6810fa2b4",
+    "source_sha256": "00e5e05c31a3f782983e7425cd4e4ab5ff2b9e7e9a2f8d9c7a55a03ffda2d409"
+  },
+  "source_archive_original_sha256": "c0834a95b3d14eabcd8f8c67721f1c321bc80f61ae760188b2c4f585d1a577ec",
+  "original_archive_extracted_source_only_tests_passed": 109,
+  "index_integration_focused_checks_passed": 6,
+  "retained_source_issues": 75,
+  "printed_p360_line4_erratum_unresolved": true,
+  "full_independent_diplomatic_transcription_claimed": false,
+  "predictive_validations_added": 0,
+  "runtime_promotions": 0,
+  "authenticated_crime_cases": 0,
+  "frozen_prior_acceptance_status": "ACCEPTANCE.json records local admission before publication and is intentionally not retroactively rewritten. This receipt provides postpublication status.",
+  "check_method": "Actual Git atomic push returned success for both refs, then authenticated GitHub fetch_file read back both branches' identical index blob and canonical RULES, ACCEPTANCE and state blobs."
+}
