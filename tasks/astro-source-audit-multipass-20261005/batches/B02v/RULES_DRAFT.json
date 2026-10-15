@@ -6555,14 +6555,16 @@
         "source_statement_is_verbatim": false,
         "original_image_is_authoritative": true
       },
-      "source_record_kind": "sun_and_moon_application_with_waning",
-      "source_statement": "Source adds a more complicated branch involving Sun applying to its own lord and the Moon diminished in light, with the Moon's term lord and relevant house lords also applying.",
+      "source_record_kind": "sun_house_ruler_application_bidirectional_textual_ambiguity",
+      "source_statement": "The original recovery passage first states Sun applying to the lord of its house, with Moon diminished in light; its following 'I meane' clarification instead describes the specified house/term lords applying TO the Sun. Taken together, Lilly says these testimonies indicate the lost goods will be found. Preserve both printed application directions and the apparent inconsistency rather than converting either into one executable rule.",
       "source_statement_type": "EDITORIAL_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
       "preconditions": [
-        "The source's explicit diminished-Moon qualifier and signifier names need preserving."
+        "Initial wording: Sun applies to lord of its house AND Moon is diminished in light.",
+        "Following 'I meane' states lord of 'his House', Moon-term ruler and Sun-house ruler apply TO Sun; pronoun and conjunction/alternative grouping are not unequivocal."
       ],
       "exceptions_and_evidence_limits": [
-        "Syntax is nested and source image may support more than one clause attachment; keep uncertain instead of broadening."
+        "Original PDF389/printed355 seems to reverse the directed aspect in its clarification. No edition/erratum-authorized repair has established which direction is intended.",
+        "The original grouping among Moon's decreasing light, house rulers, term ruler and their applications is nested and ambiguous. Historical recovery claim, no independently witnessed property return."
       ],
       "draft_origin_file": "PRODUCER_SOURCE_DRAFT_P388_390.json",
       "draft_origin_index": 41,
@@ -6624,25 +6626,28 @@
       "source_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
       "source_locator": {
         "pdf_pages": [
+          389,
           390
         ],
         "printed_pages": [
+          355,
           356
         ],
         "page_images": [
+          "evidence/pdf-389.png",
           "evidence/pdf-390.png"
         ],
         "source_statement_is_verbatim": false,
         "original_image_is_authoritative": true
       },
       "source_record_kind": "recover_first_to_lord_of_lost",
-      "source_statement": "Continuation says if the Moon's term/house ruler or second-house ruler applies to ascendant lord, the thing lost shall be recovered.",
+      "source_statement": "Original printed p355 begins a conditional application of the Moon's term ruler OR Moon's house ruler OR second-house ruler, completed on p356 by 'unto the Lord of the Ascendant'; Lilly then claims the stolen thing shall be recovered.",
       "source_statement_type": "EDITORIAL_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
       "preconditions": [
-        "One of the designated lost-thing significators applies to first lord."
+        "One of Moon's term ruler, Moon's domicile ruler, OR second-house ruler applies to ascendant lord; single sentence crosses original PDF389→390 (printed355→356)."
       ],
       "exceptions_and_evidence_limits": [
-        "This finishes sentence from p389; do not attribute it to all planets."
+        "Do not read a whole additional recovery rule on either leaf; both are one source conditional. Historical predictive claim only, with no observed recovered property."
       ],
       "draft_origin_file": "PRODUCER_SOURCE_DRAFT_P388_390.json",
       "draft_origin_index": 43,
@@ -15998,14 +16003,14 @@
         "source_statement_is_verbatim": false,
         "original_image_is_authoritative": true
       },
-      "source_record_kind": "other_capture_seventh_first",
-      "source_statement": "Seventh lord in first is included as an extra capture condition.",
+      "source_record_kind": "other_capture_moon_squares_from_saturn_to_mercury",
+      "source_statement": "Original p366 first lists the Moon separating from conjunction with Saturn and applying by square to Mercury; this appears BEFORE the seventh-lord-in-first phrase in the printed capture list.",
       "source_statement_type": "EDITORIAL_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
       "preconditions": [
-        "Thief's significator in first."
+        "Moon separates from Saturn conjunction and applies to Mercury square, original PDF400/printed366."
       ],
       "exceptions_and_evidence_limits": [
-        "A source repetition from p399."
+        "The following 'Lord of seventh in first' is on the next printed line; punctuation does not settle whether it is an independent alternative or a further conjunct. Do not silently demand both."
       ],
       "draft_origin_file": "PRODUCER_SOURCE_DRAFT_P398_400.json",
       "draft_origin_index": 69,
@@ -16038,14 +16043,14 @@
         "source_statement_is_verbatim": false,
         "original_image_is_authoritative": true
       },
-      "source_record_kind": "other_capture_moon_squares_from_saturn_to_mercury",
-      "source_statement": "Moon separating from Saturn conjunction and applying to Mercury square is one of the printed combinations.",
+      "source_record_kind": "other_capture_seventh_first",
+      "source_statement": "After the lunar Saturn-to-Mercury condition, Lilly prints 'Lord of the seventh in the first' as a further alleged capture testimony; its conjunction/alternation with the previous line remains textually unresolved.",
       "source_statement_type": "EDITORIAL_PARAPHRASE_NOT_DIPLOMATIC_TRANSCRIPTION",
       "preconditions": [
-        "Directed lunar separation/application."
+        "Seventh-house lord situated in the ascendant/first house; sentence appears AFTER the lunar Saturn-to-Mercury clause in original PDF400."
       ],
       "exceptions_and_evidence_limits": [
-        "Adjacent first-house ruler/seventh-house ruler placement may also be required."
+        "Source is an unnumbered sequence; punctuation does not prove this condition must be conjoined with the preceding lunar aspect. No actual capture or guilt is established."
       ],
       "draft_origin_file": "PRODUCER_SOURCE_DRAFT_P398_400.json",
       "draft_origin_index": 70,

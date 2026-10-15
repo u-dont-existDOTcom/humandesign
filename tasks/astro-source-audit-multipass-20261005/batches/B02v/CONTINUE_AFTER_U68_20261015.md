@@ -1,0 +1,17 @@
+# Lilly Book II Chapter L — U68 continuation (2026-10-15 UTC+0)
+
+**Status: OPEN, unaccepted source-text work.** Canonical Lilly remains 2,572 accepted documentary units (through R2572), with 1,066 retained Ptolemy. B02v has 402 provisional records R2573–R2974, 68 retained source issues and no new accepted records. Original source is William Lilly, *Christian Astrology* (1647), Wellcome b30338724, PDF SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. The exact window is original PDF381 below the thief-house heading through PDF400 above the Chapter LI divider.
+
+## New original-source corrections
+
+- **U66, R2735, printed355/PDF389:** Original text gives Sun applying to its ruler, then its `I meane` clarification gives the lord/term rulers applying *to Sun*, before explicitly asserting recovery. Preserve BOTH directions; do not manufacture a single consistent algorithm. Pre-edit source backup SHA256 `fce4b68c4397e1e27b8c9ca6278a65143a56bb17bc15e95388865253bad3f04d`.
+- **U67, R2737, PDF389→390:** One printed clause physically spans both pages. Corrected locator from PDF390 alone to [389,390], without adding a record. Pre-edit component SHA256 `8a7662cc709c540ec61008ba23c92c01c5f81cdac9adb2a5af9fe381c483d439`. Source-order ledger now has six dual-page locators, four physical continuations and two contextual references.
+- **U68, R2971/R2972, printed366/PDF400:** Original Moon–Saturn–Mercury clause is printed *before* seventh-lord-in-first; previously the provisional slots were reversed. Corrected mapping: R2971 is the lunar aspect, R2972 is seventh lord in first. Keep their possible conjunction/alternation unresolved. Pre-edit component SHA256 `65da647d9e23ae4524c71071cdb12df56569fa2b0ab5a462fe7c5ccb5d641b19`.
+
+All pre-edit JSON files and guarded corrections are under `recovery/` and `independent_review/`. Current source-only tests: V14 46/46, staging 18/18, reconciliation 12/12, **76/76 passed locally**.
+
+## Reverse source→record work
+
+The originals PDF389, PDF390 and PDF400 have **73 mapped source-phrase anchors pointing to 66 distinct provisional IDs**, in `independent_review/REVERSE_SOURCE_TO_RECORD_P389_20261015.json`, `REVERSE_SOURCE_TO_RECORD_P390_20261015.json`, and `REVERSE_SOURCE_TO_RECORD_P400_20261015.json`. See `independent_review/REVERSE_AUDIT_P355_P356_P366_U68_20261015.md` for evidence and limits. The previous broader bounded record→image coverage is still 402/402, but that does **not** establish exhaustive independent clause completeness. Same-volume printed p360/l4 erratum remains unresolved.
+
+The separate **UNACCEPTED** v8 ZIP was built successfully with 191 file payloads including 21 original PNGs, 61,139,559 bytes; archive and owner Downloads SHA256 both `48029fdabed0ea586f5da7054fb7f3781b63e981be33811290b7e3521f368b05`. ZIP CRC, every manifest SHA256, actual extraction and all **76/76** current source-only tests on extracted bytes passed. Exact machine receipt: `independent_review/PROVISIONAL_SOURCE_PACKET_RECEIPT_v8_20261015.json`. File: `/mnt/hdd/home/joel/Téléchargements/Astrology-Lilly-B02v-Provisional-Source-Packet-v8-20261015.zip`. Next: nonforce commit/push corrected provisional source and receipt without adding large ZIP to GitHub; verify remote. Then continue the remaining original→record audit before deciding whether Chapter L qualifies for documentary acceptance. Do not advance canonical Lilly from R2572 or start Chapter LI below PDF400 divider yet; no empirical astrology-validation or real-person inference follows.

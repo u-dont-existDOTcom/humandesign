@@ -2,7 +2,7 @@
   "batch": "B02v",
   "phase": "FINAL_SEGMENT_OF_CHAPTER_L",
   "status": "RETAINED_SOURCE_UNCERTAINTIES_ON_UNACCEPTED_CANDIDATE",
-  "retained_count": 65,
+  "retained_count": 68,
   "issues": [
     {
       "id": "U01",
@@ -328,6 +328,21 @@
       "id": "U65",
       "status": "SOURCE_PRECONDITION_AND_ELLIPSIS_CORRECTION_RETAINED",
       "description": "Original PDF400/printed366 escape-by-friends/strangers clauses inherit seventh-lord ASPECT to Jupiter/Venus from preceding sentence. Earlier R2948–R2949 reduced this to planet in eleventh/third with no aspect. R2949's elliptical 'if in third' subject remains explicitly uncertain."
+    },
+    {
+      "id": "U66",
+      "status": "SOURCE_TEXT_APPLICATION_DIRECTION_CONTRADICTION_RETAINED",
+      "description": "Original PDF389/printed355 Sun-recovery clause first says Sun applies to own house-lord, then its 'I meane' clarification says house/term lords apply TO Sun. Earlier R2735 retained only first direction and indefinite 'also applying'. Both directions preserved; exact rule and nested Moon diminished qualifier unresolved."
+    },
+    {
+      "id": "U67",
+      "status": "SOURCE_CROSS_PAGE_LOCATOR_CORRECTED",
+      "description": "R2737/P388C044 sentence begins original PDF389/printed355 and ends PDF390/printed356; prior source locator [390] omitted first half. Corrected to [389,390], preserving single-rule identity, literal alternative applicants and recovery consequent."
+    },
+    {
+      "id": "U68",
+      "status": "SOURCE_PRINTED_SEQUENCE_CORRECTION_RETAINED",
+      "description": "Original PDF400/p366 prints Moon separating from conjunction of Saturn then applying square Mercury BEFORE 'Lord of seventh in first'. Previous provisional R2971/72 were reversed. Corrected slot order: R2971 lunar application, R2972 seventh lord in first. Independence/conjunction of the two printed lines is unresolved; original producer bytes frozen."
     }
   ],
   "no_clinical_criminal_or_predictive_evidence": true
