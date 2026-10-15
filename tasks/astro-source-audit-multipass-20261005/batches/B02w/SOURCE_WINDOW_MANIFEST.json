@@ -1,0 +1,59 @@
+{
+  "batch": "B02w",
+  "status": "PROVISIONAL_CHAPTER_LI_SOURCE_WINDOW_BOUNDARY_VERIFIED",
+  "original_source": "William Lilly, Christian Astrology (1647), original Wellcome b30338724",
+  "original_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "original_source_baseline": 2974,
+  "opening": {
+    "pdf_page": 400,
+    "printed_page": 366,
+    "position": "BELOW printed horizontal divider after Chapter L final capture clause"
+  },
+  "closing": {
+    "last_chapter_LI_pdf_page": 402,
+    "last_chapter_LI_printed_page": 368,
+    "next_heading_pdf_page": 403,
+    "next_heading_printed_page": 369,
+    "next_heading": "CHAP. LII. Who shall doe best in a suit of Law."
+  },
+  "includes_any_chapter_L_above_divider": false,
+  "includes_any_chapter_LII_body": false,
+  "source_images": [
+    {
+      "original_pdf_page": 400,
+      "printed_page": 366,
+      "path": "evidence/pdf-400.png",
+      "bytes": 1789253,
+      "sha256": "c48dcf91952b83d9dfdc230fcc8205500993841cd6a461cdba17fb6a0ae11eab",
+      "role": "CHAPTER_LI_START_BELOW_CHAPTER_L_DIVIDER",
+      "identical_to_accepted_B02v_pdf400": true
+    },
+    {
+      "original_pdf_page": 401,
+      "printed_page": 367,
+      "path": "evidence/pdf-401.png",
+      "bytes": 1839679,
+      "sha256": "e944b6aae22bfc776a3ff0d025ce25465ada1a10cdf3c781858f9d74fe930443",
+      "role": "CHAPTER_LI_BODY"
+    },
+    {
+      "original_pdf_page": 402,
+      "printed_page": 368,
+      "path": "evidence/pdf-402.png",
+      "bytes": 1816109,
+      "sha256": "c4f2620259672519323f09533c25d9471c2afaf1033a700e0ceac1c0e78b6e3c",
+      "role": "CHAPTER_LI_BODY"
+    },
+    {
+      "original_pdf_page": 403,
+      "printed_page": 369,
+      "path": "evidence/pdf-403.png",
+      "bytes": 1787619,
+      "sha256": "c780700ad69b38bf8484b6ce6370ccaa4c444dabdb5e28b0de6e729a31c583f2",
+      "role": "CHAPTER_LII_HEADING_BOUNDARY_ONLY"
+    }
+  ],
+  "image_count": 4,
+  "source_image_originals_preserved": true,
+  "independently_reproduced_full_text_transcription": false
+}

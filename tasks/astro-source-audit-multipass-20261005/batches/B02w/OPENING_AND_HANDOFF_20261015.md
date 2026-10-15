@@ -1,4 +1,6 @@
 # B02w: Lilly Book II Chapter LI — opening and continuation handoff
+
+**LATEST 2026-10-15 SOURCE-FIRST CHAPTER LI CHECKPOINT:** Read `HANDOFF_CHAPTER_LI_SOURCE_FIRST_20261015.md` and `LI_SOURCE_FIRST_INVENTORY_NOTES_20261015.md` before using the historical opening notes below. The physical Chapter LI endpoint is now verified at the bottom of PDF402/printed368; Chapter LII starts at the top of PDF403/printed369. A self-contained 42-unit source-first PROVISIONAL inventory (R2975–R3016, including one LII boundary-only unit), 11 uncertainties, four hashed source-page witnesses, and 16/16 passed staging checks are saved. The UNACCEPTED 9.0 MB archive and handoff were delivered byte-identically to the owner's Downloads directory. No new LI record is accepted; prior canonical Lilly remains R2974/2,974, Ptolemy retained 1,066. The original-source completeness review of the drafted clauses is the next substantive step, not another original PDF download.
 **2026-10-15, Africa/Dakar (UTC+0). Status: OPENING SOURCE READ ONLY; zero new accepted LI records.**
 
 ## Canonical predecessor
