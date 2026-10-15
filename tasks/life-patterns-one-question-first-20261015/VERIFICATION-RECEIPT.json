@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "task_id": "life-patterns-one-question-first-20261015",
+  "owner_outcome": "Process the completed V3.3 export and remove unnecessary repeated respondent burden.",
+  "source_status": "ORIGINAL_PRIVATE_SOURCE_MATCHED_EXACTLY_ON_OWNER_DEVICE",
+  "private_source_text_in_git": false,
+  "original_v3_answer_count": 25,
+  "guided_context_count": 8,
+  "unique_behavior_count": 3,
+  "new_v32_answers_count": 0,
+  "role_episode_count": 3,
+  "participant_overall_pattern": "context_dependent",
+  "reviewed_role_polarity": "mixed_zero_v15_contribution",
+  "imputed_new_participant_answers": 0,
+  "questionnaire": {
+    "schema": "local_life_patterns_v3_3_pilot_unsubmitted",
+    "default": "one_short_free_text_field",
+    "supplementary_details": "optional_collapsed",
+    "allows_no_role": true,
+    "previous_answers_preserved": true,
+    "previous_three_role_episodes_preserved": true,
+    "old_schemas_importable": true,
+    "existing_owner_auto_reasked": false,
+    "show_previous_questions_toggle": true,
+    "source_coding_in_browser": false,
+    "network_requests": 0
+  },
+  "fixed_model_development": {
+    "model": "AstroHD V1.5 bridge over six frozen V1.4d astronomical clauses",
+    "selected_rules_target_aware": true,
+    "profile_judgment": "RESEARCHER_PROVISIONAL_NOT_PARTICIPANT_CONFIRMED",
+    "six_clause_signs": [
+      1,
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "primary": {
+      "decoys": 999,
+      "checked_instant_rank_best": 1,
+      "checked_instant_rank_worst": 1,
+      "other_ties": 0
+    },
+    "secondary": {
+      "decoys": 9999,
+      "checked_instant_rank_best": 1,
+      "checked_instant_rank_worst": 1,
+      "other_ties": 0
+    },
+    "development_not_independent": true,
+    "full_century_uniqueness_not_tested_for_five_sign_bridge": true,
+    "privately_persisted_pre_score_freezes": true
+  },
+  "verification": {
+    "reproducible_html": true,
+    "focused_python_passed": 11,
+    "full_pytest_passed": 1057,
+    "full_pytest_skipped": 6,
+    "skipped_reason": "production Swiss files not linked into worktree; separate explicit file-backed development panel succeeded",
+    "browser_one_sentence": true,
+    "browser_detailed_reimport": true,
+    "browser_private_existing_user_replay": true,
+    "client_side_errors": 0,
+    "external_requests": 0,
+    "ruff_passed": true
+  },
+  "live_gpt_changed": false,
+  "railway_changed": false,
+  "no_more_owner_questions_required": true
+}

@@ -59,6 +59,15 @@ async function exportJson(page){
   assert((await page.$eval('#role-prior',e=>e.textContent)).includes('Synthetic original response TF1-G06'));
   assert((await page.$eval('#guided-overview',e=>e.textContent)).startsWith('8 of 8'));
   assert.equal(await page.$eval('#role-pattern',e=>e.value),'');
+  // Simple answer is sufficient with all supplementary detail collapsed.
+  assert.equal(await page.$eval('#role-details',e=>e.open),false);
+  assert.equal(await page.$eval('body',e=>e.classList.contains('role-focus')),true);
+  await page.type('#role-short','I sometimes offer help and sometimes do not; it depends.');
+  const short=await exportJson(page);
+  assert(short.role_entry_review.summary.includes('sometimes offer help'));
+  assert.equal(short.role_entry_review.episodes.filter(e=>e.origin||e.example).length,0);
+  assert.deepEqual(short.answers,prior.answers);
+  await page.click('#role-details > summary');
   await page.type('#role-case-0','I volunteered to handle the supplies.');
   await page.select('#role-origin-0','self_initiated');
   await page.type('#role-case-1','A colleague asked me to coordinate a meeting.');
@@ -75,11 +84,14 @@ async function exportJson(page){
   assert.equal(saved.role_entry_review.episodes[1].origin,'invited_unprompted');
   assert.equal(saved.role_entry_review.episodes[2].origin,'offer_only');
   assert.equal(saved.role_entry_review.pattern,'context_dependent');
+  assert(saved.role_entry_review.summary.includes('depends.'));
   await page.close();
 
   const restored=await newPage(browser,errors,network);
   await importJson(restored,exportFile);
   assert.equal(await restored.$eval('#role-pattern',e=>e.value),'context_dependent');
+  assert.equal(await restored.$eval('#role-details',e=>e.open),false);
+  assert((await restored.$eval('#role-short',e=>e.value)).includes('sometimes offer'));
   assert((await restored.$eval('#role-case-1',e=>e.value)).includes('colleague'));
   assert.equal(await restored.$eval('#count',e=>e.textContent),'3 of 20');
   assert.equal(await restored.$eval('#v32-route',e=>e.options.length),8);

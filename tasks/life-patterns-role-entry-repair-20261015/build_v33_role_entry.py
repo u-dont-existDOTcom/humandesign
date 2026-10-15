@@ -19,21 +19,29 @@ OUTPUT = HERE / "LIFE_PATTERNS_V33_ROLE_ENTRY_OFFLINE_PILOT.html"
 
 SECTION = """
 <section id="role-entry-section" aria-labelledby="role-title">
-<h2 id="role-title" tabindex="-1">One unanswered distinction: how you actually take on group roles</h2>
-<p>The previous questions distinguished offering help from accepting an invitation. Neither establishes which normally leads you into a responsibility-bearing role. <strong>No birth-chart answers appear here.</strong></p>
-<p id="role-definition" class="notice"></p>
+<h2 id="role-title" tabindex="-1">One short question about helping or taking responsibility</h2>
+<p class="small">Your earlier answers are already saved. One or two sentences is enough. No examples are required.</p>
 <p id="role-prompt"></p>
-<details id="role-earlier"><summary>See your earlier relevant V3 answers (not new evidence)</summary><div id="role-prior"></div></details>
+<label for="role-short">Your answer (or simply say "it depends")</label>
+<textarea id="role-short" rows="2" placeholder="It depends on the situation..."></textarea>
+<div class="row">
+<label class="example"><input type="checkbox" id="role-no-event"> I cannot think of a relevant situation</label>
+<label class="example"><input type="checkbox" id="role-skip"> Prefer to skip</label>
+</div>
+<details id="role-details">
+<summary>Add detail or review existing examples (optional)</summary>
+<p id="role-definition" class="small"></p>
+<details id="role-earlier"><summary>Prior related V3 answers</summary><div id="role-prior"></div></details>
 <div id="role-episodes"></div>
 <label for="role-pattern" id="role-overall-label"></label><select id="role-pattern"></select>
-<label for="role-conditions">Relevant conditions and counterexamples (optional)</label>
-<textarea id="role-conditions" rows="3" placeholder="When would your choice be different, and why?"></textarea>
-<div class="row"><label class="example"><input type="checkbox" id="role-no-event"> No comparable real example comes to mind</label>
-<label class="example"><input type="checkbox" id="role-skip"> Prefer to skip this question</label></div>
+<label for="role-conditions">Conditions and exceptions (optional)</label>
+<textarea id="role-conditions" rows="3"></textarea>
+</details>
 <p id="role-status" class="small" role="status" aria-live="polite"></p>
-<div class="row"><button type="button" id="role-export">Export all answers with this clarification</button>
-<button type="button" id="role-clear">Clear only this clarification</button></div>
-<p class="small">This is an optional new question, not an instruction to endorse either pattern. Mixed, unknown, or no real examples are valid responses. Previous answers remain unchanged. The response is not automatically scored.</p>
+<div class="row"><button type="button" id="role-export">Export answers</button>
+<button type="button" id="role-clear">Clear only this answer</button>
+<button type="button" id="role-show-existing">Show previous questions</button></div>
+<p class="small">No astrological inference is made here. It is valid not to have a typical response.</p>
 </section>
 """
 
@@ -44,12 +52,12 @@ const roleProtocol=d.role_probe;
 const roleOrigins=roleProtocol.allowed_origins,rolePatterns=roleProtocol.pattern_choices;
 const roleKeys=['role-origin-1','role-origin-2','role-origin-3'];
 function roleHasData(r){
- return Boolean(r && (r.skip || r.no_event || r.pattern || (r.conditions||'').trim() ||
+ return Boolean(r && (r.skip || r.no_event || (r.summary||'').trim() || r.pattern || (r.conditions||'').trim() ||
    r.episodes.some(e=>e.origin || (e.example||'').trim())));
 }
 function roleEmpty(){
  return {episodes:Array.from({length:3},()=>({origin:'',example:''})),
-   pattern:'',conditions:'',skip:false,no_event:false};
+   summary:'',pattern:'',conditions:'',skip:false,no_event:false};
 }
 const rolePrior=el('role-prior');
 const roleCases=el('role-episodes');
@@ -85,6 +93,7 @@ function roleRead(){
   episodes:Array.from({length:3},(_,i)=>({
    origin:el('role-origin-'+i).value,example:el('role-case-'+i).value
   })),
+  summary:el('role-short').value,
   pattern:rolePatternEl.value,
   conditions:el('role-conditions').value,
   skip:el('role-skip').checked,
@@ -103,6 +112,7 @@ function roleRemember(){
 }
 function roleShow(){
  const val=state.roleEntry || roleEmpty();
+ el('role-short').value=val.summary||'';
  for(let i=0;i<3;i++){
   el('role-origin-'+i).value=val.episodes[i].origin;
   el('role-case-'+i).value=val.episodes[i].example;
@@ -124,9 +134,10 @@ function roleShow(){
  }
  el('role-earlier').hidden=!rolePrior.childNodes.length;
  el('role-status').textContent=roleHasData(state.roleEntry)
-  ?'Previously saved clarification restored. Edit if needed and export again.'
-  :'No new role-entry response yet. Existing answers are already retained; answer only if you can distinguish actual role entries.';
+  ?'Your earlier answer is already saved; no further examples or explanation are needed.'
+  :'One or two sentences is enough; a context-dependent answer is complete.';
 }
+el('role-short').addEventListener('input',roleRemember);
 rolePatternEl.addEventListener('change',roleRemember);
 el('role-conditions').addEventListener('input',roleRemember);
 el('role-no-event').addEventListener('change',()=>{
@@ -146,14 +157,14 @@ el('role-skip').addEventListener('change',()=>{
  if(el('role-skip').checked){
   const before=roleRead();
   const hasDetail=before.episodes.some(x=>x.origin||x.example.trim())||
-    before.pattern||before.conditions.trim();
+    before.summary.trim()||before.pattern||before.conditions.trim();
   if(hasDetail && !window.confirm('Skip this question and discard its unsaved draft response?')){
    el('role-skip').checked=false;
    return;
   }
   el('role-no-event').checked=false;
   for(let i=0;i<3;i++){el('role-origin-'+i).value='';el('role-case-'+i).value='';}
-  rolePatternEl.value='';el('role-conditions').value='';
+  rolePatternEl.value='';el('role-conditions').value='';el('role-short').value='';
  }
  roleRemember();
 });
@@ -162,6 +173,15 @@ el('role-clear').onclick=()=>{
  state.roleEntry=null;roleShow();
 };
 el('role-export').onclick=()=>el('export').click();
+function roleFocus(){
+ document.body.classList.add('role-focus');
+ el('role-show-existing').textContent='Show previous questions';
+}
+el('role-show-existing').onclick=()=>{
+ const hidden=document.body.classList.toggle('role-focus');
+ el('role-show-existing').textContent=hidden?'Show previous questions':'Hide previous questions';
+};
+
 roleShow();
 """
 
@@ -229,6 +249,7 @@ def build() -> bytes:
   if(typeof roleRecord!=='object'||Array.isArray(roleRecord)||
      !Array.isArray(roleRecord.episodes)||roleRecord.episodes.length!==3||
      typeof roleRecord.pattern!=='string'||!(['',...patterns].includes(roleRecord.pattern))||
+     (roleRecord.summary!=null && typeof roleRecord.summary!=='string')||
      typeof roleRecord.conditions!=='string'||typeof roleRecord.skip!=='boolean'||
      typeof roleRecord.no_event!=='boolean')throw new Error('Invalid role-entry response.');
   for(const ep of roleRecord.episodes){
@@ -237,6 +258,7 @@ def build() -> bytes:
      throw new Error('Invalid role-entry occasion.');
   }
   roleEntry={
+   summary:roleRecord.summary||'',
    episodes:roleRecord.episodes.map(ep=>({origin:ep.origin,example:ep.example})),
    pattern:roleRecord.pattern,conditions:roleRecord.conditions,
    skip:roleRecord.skip,no_event:roleRecord.no_event
@@ -267,12 +289,17 @@ def build() -> bytes:
     s = once(
         s,
         "state.answers=parsed.answers;state.unique=parsed.unique;state.v32=parsed.v32;v32Show();",
-        "state.answers=parsed.answers;state.unique=parsed.unique;state.v32=parsed.v32;state.roleEntry=parsed.roleEntry;v32Show();roleShow();",
+        "state.answers=parsed.answers;state.unique=parsed.unique;state.v32=parsed.v32;state.roleEntry=parsed.roleEntry;v32Show();roleShow();roleFocus();",
     )
     s = once(
         s,
         "state.answers=restored.answers;state.unique=restored.unique;state.v32=restored.v32;v32Show();",
-        "state.answers=restored.answers;state.unique=restored.unique;state.v32=restored.v32;state.roleEntry=restored.roleEntry;v32Show();roleShow();",
+        "state.answers=restored.answers;state.unique=restored.unique;state.v32=restored.v32;state.roleEntry=restored.roleEntry;v32Show();roleShow();roleFocus();",
+    )
+    s = once(
+        s,
+        "</style></head>",
+        "body.role-focus main > section:not(#role-entry-section){display:none!important}</style></head>",
     )
     s = once(s, "if(d.prefilled_export){", SCRIPT + "if(d.prefilled_export){")
     # Prefilled respondent is automatically led to the missing distinction,

@@ -16,7 +16,9 @@ const source=process.argv[2];if(!source||!fs.existsSync(source))throw Error('Mis
   assert.equal(await page.$eval('#guided-overview',e=>e.textContent),'8 of 8 follow-ups addressed.');
   assert.equal(await page.$eval('#role-pattern',e=>e.value),'');
   assert(await page.$eval('#role-prior',e=>e.textContent.length)>60);
-  assert(await page.$eval('#role-status',e=>e.textContent.includes('No new role-entry response yet')));
+  assert(await page.$eval('#role-status',e=>e.textContent.includes('One or two sentences is enough')));
+  assert.equal(await page.$eval('#role-details',e=>e.open),false);
+  assert.equal(await page.$eval('body',e=>e.classList.contains('role-focus')),true);
   assert.equal(await page.evaluate(()=>document.activeElement?.id),'role-title');
   assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
   console.log('PASS: real private file; 25 prior answers, 8 guided details, 3 behaviors, 8 V3.2 prompts, no invented role choice, automatically shown missing role item, no remote calls/errors; file 0600');
