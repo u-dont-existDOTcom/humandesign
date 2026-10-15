@@ -1,3 +1,9 @@
+# Latest original astrology source audit — Chapter LXI
+
+Current (2026-10-15): Lilly Book II Chapter LXI, a worked fugitive-servant case, accepted as 35 historical documentary units. Lilly 3,484 + retained Ptolemy 1,066 = 4,550 combined after authenticated publication. Next: Chapter LXII missing dog on original PDF426/printed392 BELOW divider. Independent predictive validations added: zero; runtime promotions: zero. Source, ZIP and acceptance checkpoint: state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03g_CHAPTER_LXI_COMPLETE.md and B03g source receipts.
+
+---
+
 # Current astrology original-source audit — most recent historical study checkpoint
 
 CURRENT (2026-10-15): Lilly Book II Chapter LX worked marriage horary document study accepted on source research branch, 3,449 Lilly + 1,066 Ptolemy = 4,515 historical annotations after authenticated publication. Next LXI, original PDF424 printed390 BELOW divider; independent empirical astrological predictions validated: zero, runtime promotions: zero. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03f_CHAPTER_LX_COMPLETE.md and B03f source/canonical publication receipts.

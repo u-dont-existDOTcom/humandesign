@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LX_DOCUMENTARY_SOURCE_ONLY_NEXT_LXI_OPEN",
-  "records_count": 3449,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXI_DOCUMENTARY_SOURCE_ONLY_NEXT_LXII_OPEN",
+  "records_count": 3484,
   "read_numbered_chapters": [
     1,
     2,
@@ -64,7 +64,8 @@
     57,
     58,
     59,
-    60
+    60,
+    61
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -291,24 +292,31 @@
       "records_count": 31,
       "sha256": "7049ba16acbee14e00bf560288508647e8b3312df5a95e1685215692d102561a",
       "scope": "Original 1647 Chapter LX marriage horoscope dated 11 June 1646 at 10:38 AM, original PDF423-424 above LXI divider; 30 original case/diagram/documentary source units and one LXI navigation-only heading; 13 source passage groups and 13 retained ambiguities. Reported marriage is author-internal, not empirically validated."
+    },
+    {
+      "id": "B03g",
+      "path": "batches/B03g/RULES.json",
+      "records_count": 35,
+      "sha256": "d88e0f75c0ceba570108b6831f427e30551a36fdf6960747cd5fa7b3779efa4c",
+      "scope": "Lilly 1647 Book II Chapter LXI original fugitive-servant worked case PDF424 after LX divider to PDF426 before LXII divider. 34 source notes plus LXII navigation marker, 15 image passages, 16 unresolved issues; reported Friday return and conditional Kingston claim are not independently verified."
     }
   ],
   "next": {
-    "pdf_page": 424,
-    "printed_page": 390,
-    "chapter": "LXI",
-    "heading": "A Fugitive Servant, which way gone, when returne?",
+    "pdf_page": 426,
+    "printed_page": 392,
+    "chapter": "LXII",
+    "heading": "A Dogge missing, where?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF424 BELOW divider following Chapter LX marriage report; new servant-fled square horoscope and judgment are exclusively LXI."
+    "position": "Original PDF426 BELOW divider after LXI servant account; separate dog figure and its interpretation extend to PDF428 ABOVE LXIII divider."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03f_CHAPTER_LX_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03g_CHAPTER_LXI_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -322,5 +330,6 @@
   "chapter_LVII_source_acceptance_note": "74 source-only 1647 historical annotations, including next chapter navigation; four scan pages, 26 one-to-many reverse original-source passage maps, 19 retained text and interpretation limits. Includes unnumbered if-the-armies-shall-fight subsection. Source review not full blinded independent diplomatic transcription. 17 extracted tests passed, no known independent real cases, blind predictions or runtime promotions.",
   "chapter_LVIII_source_acceptance_note": "38 historical source annotations including a LIX navigation marker; 18 reverse original-image passages, 14 retained concerns. 15 source tests replayed from a CRC-and-hash-verified archive. No independent complete blind diplomatic transcription, real-world detection of enemies, empirical predictions or model runtime changes.",
   "chapter_LIX_source_acceptance_note": "58 original-image historical documentary annotations incl LX header, 25 original passages, 18 uncertainty issues. Original 16 June 1646 square chart preserved with unresolved time and symbols, reported outcome not independently authenticated or blinding-frozen, social intermediary advice directly affected case. ZIP extraction replay 13 source tests, zero empirical or runtime promotion.",
-  "chapter_LX_source_acceptance_note": "31 historical-source editorial units including one LXI boundary, 13 original-image reverse passages and 13 retained unresolved chart/grammar/reception issues. Original 11 June 1646 chart and its author-reported marriage success are documentary, not independently authenticated, prospectively frozen, or counted as astrology predictive validation."
+  "chapter_LX_source_acceptance_note": "31 historical-source editorial units including one LXI boundary, 13 original-image reverse passages and 13 retained unresolved chart/grammar/reception issues. Original 11 June 1646 chart and its author-reported marriage success are documentary, not independently authenticated, prospectively frozen, or counted as astrology predictive validation.",
+  "chapter_LXI_source_acceptance_note": "35 historical source annotations including one LXII heading; 15 mapped original passages and 16 preserved uncertainties. Source-internal Friday return and conditional Kingston claim not independently documented; question date and one/two-day forecast timing unscored."
 }
