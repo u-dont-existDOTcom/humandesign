@@ -1,0 +1,71 @@
+{
+  "schema": "life-patterns-role-entry-neutral-cognitive-pilot-v1",
+  "status": "DEVELOPMENT_ONLY_NOT_SCORED",
+  "source_gap": "Existing source establishes voluntary offers of help and conditional acceptance of requested coordination, but not typical entry sequence into meaningful chosen group roles.",
+  "prompt": "Recall up to three recent occasions when you actually accepted responsibility for a meaningful role in a group or project, where you had a genuine choice. How did each role begin? Who first suggested that YOU should take it, and what did you actually do? If you cannot recall three, describe fewer or choose 'Cannot recall'.",
+  "role_definition": "Taking a role means actually becoming responsible for something, not merely offering help, being praised, or answering an invitation politely.",
+  "allowed_origins": [
+    {
+      "id": "self_initiated",
+      "label": "I proposed, volunteered for, or began taking the role before anyone asked."
+    },
+    {
+      "id": "invited_unprompted",
+      "label": "Another person specifically asked, invited, or appointed me before I proposed it."
+    },
+    {
+      "id": "assigned_duty",
+      "label": "It followed an existing obligation, rotation, job assignment or practical necessity."
+    },
+    {
+      "id": "joint_unclear",
+      "label": "We decided jointly; no clear first mover."
+    },
+    {
+      "id": "offer_only",
+      "label": "I offered help but did not actually take responsibility for a role."
+    },
+    {
+      "id": "different",
+      "label": "Something different happened; explain it."
+    },
+    {
+      "id": "cannot_recall",
+      "label": "Cannot recall the sequence."
+    }
+  ],
+  "overall_question": "Thinking across comparable situations (not just these examples), what tends to happen more often when you take on a meaningful role?",
+  "pattern_choices": [
+    {
+      "id": "usually_self",
+      "label": "I more often take the initiative, without waiting to be asked."
+    },
+    {
+      "id": "usually_invited",
+      "label": "I more often take roles after someone independently asks or invites me."
+    },
+    {
+      "id": "usually_assigned",
+      "label": "Most roles arise from obligations, assignment or necessity."
+    },
+    {
+      "id": "context_dependent",
+      "label": "Different contexts lead to different patterns; no single route dominates."
+    },
+    {
+      "id": "uncertain",
+      "label": "I cannot tell from my experience."
+    },
+    {
+      "id": "different",
+      "label": "Another pattern — explain in the conditions field."
+    }
+  ],
+  "neutral_followup": "What makes the difference (group, competence, prior commitment, power, urgency or something else)? Do you usually wait to be asked when you could volunteer? If there's an exception or counterexample, include it.",
+  "skip_allowed": true,
+  "no_event_allowed": true,
+  "participant_scope": "No natal features, astrology terms, intended scoring direction or respondent birth information appears in the questionnaire.",
+  "coding_rule": "Never infer invited-entry from mere willingness to accept a request, or initiated-entry from offering help without responsibility. Do not infer long-term propensity from a single scenario, isolated event or prompted label. Preserve mixed, other, insufficient and context-dependent as non-scoring unless genuinely resolved.",
+  "followup_policy": "Only request actual missing role-entry sequence; never repeat adequate answers. No more than three available examples; allow zero. Personal confirmation precedes any scored interpretation.",
+  "codebook_boundary": "Development measurement only. The separate frozen V1.5 recognition_entry semantics are not modified or automatically populated. Do not treat this as a new independent validation of the known developer birth."
+}
