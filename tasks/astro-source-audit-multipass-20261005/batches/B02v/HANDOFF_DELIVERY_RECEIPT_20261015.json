@@ -1,0 +1,39 @@
+{
+  "batch": "B02v",
+  "date": "2026-10-15",
+  "status": "SOURCE_STUDY_OPEN_USER_REQUESTED_HANDOFF_DELIVERED",
+  "source_research_branch": "research/lilly-thief-house-recovery-b02v-20261014",
+  "accepted_lilly_before": 2572,
+  "accepted_ptolemy": 1066,
+  "new_documentary_records_accepted": 0,
+  "proposed_lilly_records": 402,
+  "uncertainty_entries": 74,
+  "source_image_pages_reviewed": 20,
+  "reverse_normalized_anchors": 419,
+  "reverse_unique_candidate_ids_mapped": 402,
+  "independent_diplomatic_completeness": false,
+  "delivered_local_os_downloads": [
+    {
+      "name": "Astrology-Lilly-B02v-Handoff-20261015.md",
+      "bytes": 9990,
+      "sha256": "eee09cfb820f7981446de12332c03f8cfb1425fe20e50b67139a8486ae77d2cc",
+      "source_file": "HANDOFF_LILLY_B02v_AFTER_20P_REVERSE_20261015.md"
+    },
+    {
+      "name": "Astrology-Lilly-B02v-Source-Readiness-20261015.md",
+      "bytes": 6047,
+      "sha256": "ba91ac5ba5fe12c468745cfc806920cfcb15b956a3e26011aa872310f6bcd5c0",
+      "source_file": "SOURCE_ACCEPTANCE_READINESS_U74_20261015.md"
+    }
+  ],
+  "latest_existing_source_packet": {
+    "name": "Astrology-Lilly-B02v-Provisional-Source-Packet-v10-20261015.zip",
+    "bytes": 61266923,
+    "sha256": "575da4d2c58db3f3f8f83c517ab649d4c50320887769137a121e0c1d4e626ef9",
+    "crc_hashed_extracted_test_pass_count": 88
+  },
+  "new_repo_hand_off_is_document_only": true,
+  "all_download_sha256_matched_source_sha256": true,
+  "parent_source_research_goal": "OPEN",
+  "next": "Read handoff; finite source-first missing-clause check, then decide documentary-only admission. No automatic source or empirical promotion."
+}
