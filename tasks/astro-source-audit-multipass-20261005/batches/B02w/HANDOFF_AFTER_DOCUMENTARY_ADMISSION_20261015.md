@@ -1,0 +1,13 @@
+# Astro source audit continuation — Lilly Chapter LI completed at documentary source level
+
+**2026-10-15 Africa/Dakar (UTC+0). Chapter LI documentary source locally ACCEPTED. Canonical publication must be verified from the later `PUBLICATION_RECEIPT.json`, not inferred from this file. Parent astrology study OPEN.**
+
+Original William Lilly *Christian Astrology* (1647), Wellcome b30338724; full original PDF SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. Chapter LI begins original PDF400/printed366 **below** Chapter L divider, covers PDF401/printed367 and PDF402/printed368, ends before Chapter LII on original PDF403/printed369.
+
+New Chapter LI source-only records R2975–R3016 (42, of which **41** are LI source annotations and **one** is the Chapter LII navigation boundary). Retains **11** source-interpretation limitations. New image-first reverse map has **35** source spans mapped to all 42 editorial records; **22** focused source tests passed locally. The six converse-type units are five original literal `& e contra` abbreviations and one later `the contrary noteth the contrary` clause. A previous handoff incorrectly called these six literal `e contra` uses; that has been corrected. No independent complete word-for-word transcription is claimed.
+
+**If canonical publication readback succeeds**, the Lilly historical documentary count becomes **3,016** (up from accepted 2,974), plus retained Ptolemy **1,066** = **4,082** documentary source units. These are **not** 4,082 successful empirical chart predictions. No chart, personal forecast, real-world case, medical/legal safety estimate, or runtime model has been updated.
+
+Exact documentary source, edited anchors, reverse map and retained uncertainties are `RULES.json`, `ORIGINAL_TO_RECORD_COVERAGE_V1.json`, `UNRESOLVED.json`, `INDEPENDENT_IMAGE_FIRST_REVIEW_20261015.md`; previous producer snapshot preserved in `recovery/BEFORE_SECOND_PASS_20261015/`. Source images `evidence/pdf-400.png`–`pdf-403.png` have exact manifest SHA256s. `SOURCE_FIRST_CLAUSES_DRAFT.json` and `RULES_DRAFT.json` remain provisional historical inputs, not accepted source objects.
+
+**Next safe action after canonical acceptance:** Start Chapter LII at original PDF403/printed369 *Who shall doe best in a suit of Law*, then cover all its intervening unnumbered headings and clauses in original order until the next physical chapter divider. Reuse existing original evidence and IIIF images when verified; no source re-download. Continue the larger Lilly/Ptolemy/Valens/Phaladipika original-source study with documentary and empirical evidence separate. No owner decision outstanding.

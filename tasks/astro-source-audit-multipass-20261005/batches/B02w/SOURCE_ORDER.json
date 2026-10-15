@@ -1,0 +1,129 @@
+{
+  "batch": "B02w",
+  "status": "HISTORICAL_DOCUMENTARY_SOURCE_ORDER_LOCALLY_ACCEPTED",
+  "record_count": 42,
+  "ranges": {
+    "first": 2975,
+    "last": 3016
+  },
+  "original_printed_range": [
+    366,
+    368
+  ],
+  "source_pages_including_boundary": [
+    400,
+    401,
+    402,
+    403
+  ],
+  "pdf400_part_boundary_only_below_chapter_L_divider": true,
+  "pdf403_only_next_chapter_heading": true,
+  "cross_page_record_ids": [
+    2978,
+    2999
+  ],
+  "cross_page_records": [
+    {
+      "record_number": 2978,
+      "pdf_pages": [
+        400,
+        401
+      ]
+    },
+    {
+      "record_number": 2999,
+      "pdf_pages": [
+        401,
+        402
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "pdf_page": 400,
+      "printed_page": 366,
+      "source_image_sha256": "c48dcf91952b83d9dfdc230fcc8205500993841cd6a461cdba17fb6a0ae11eab",
+      "record_ids": [
+        2975,
+        2976,
+        2977,
+        2978
+      ],
+      "role": "CHAPTER_LI_START_BELOW_CHAPTER_L_DIVIDER"
+    },
+    {
+      "pdf_page": 401,
+      "printed_page": 367,
+      "source_image_sha256": "e944b6aae22bfc776a3ff0d025ce25465ada1a10cdf3c781858f9d74fe930443",
+      "record_ids": [
+        2978,
+        2979,
+        2980,
+        2981,
+        2982,
+        2983,
+        2984,
+        2985,
+        2986,
+        2987,
+        2988,
+        2989,
+        2990,
+        2991,
+        2992,
+        2993,
+        2994,
+        2995,
+        2996,
+        2997,
+        2998,
+        2999
+      ],
+      "role": "CHAPTER_LI_BODY"
+    },
+    {
+      "pdf_page": 402,
+      "printed_page": 368,
+      "source_image_sha256": "c4f2620259672519323f09533c25d9471c2afaf1033a700e0ceac1c0e78b6e3c",
+      "record_ids": [
+        2999,
+        3000,
+        3001,
+        3002,
+        3003,
+        3004,
+        3005,
+        3006,
+        3007,
+        3008,
+        3009,
+        3010,
+        3011,
+        3012,
+        3013,
+        3014,
+        3015
+      ],
+      "role": "CHAPTER_LI_BODY"
+    },
+    {
+      "pdf_page": 403,
+      "printed_page": 369,
+      "source_image_sha256": "c780700ad69b38bf8484b6ce6370ccaa4c444dabdb5e28b0de6e729a31c583f2",
+      "record_ids": [
+        3016
+      ],
+      "role": "CHAPTER_LII_HEADING_BOUNDARY_ONLY"
+    }
+  ],
+  "upstream_sha256": {
+    "SOURCE_FIRST_CLAUSES_DRAFT.json": "d7aa1d827d03ebfcab959782be095573239e0a16ae8dea762a9d7bf8b3f97aca",
+    "SOURCE_WINDOW_MANIFEST.json": "49278c076f8d17e2d01851da8c6b54fd8b7354d42816bbe3d5c9bca28d5cf747",
+    "RULES_DRAFT.json": "9f28de24a13dc4618153d300026328120641a5dd5b207ce212f57d03c7b52ea2"
+  },
+  "independent_full_fidelity_review": false,
+  "documentary_accepted_locally": true,
+  "original_to_record_map": "ORIGINAL_TO_RECORD_COVERAGE_V1.json",
+  "reverse_source_spans": 35,
+  "original_image_first_second_turn_coverage_review_complete": true
+}

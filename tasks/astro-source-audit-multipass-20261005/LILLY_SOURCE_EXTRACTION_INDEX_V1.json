@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_L_DOCUMENTARY_SOURCE_ONLY_NEXT_LI_OPEN",
-  "records_count": 2974,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LI_DOCUMENTARY_SOURCE_ONLY_NEXT_LII_OPEN",
+  "records_count": 3016,
   "read_numbered_chapters": [
     1,
     2,
@@ -54,7 +54,8 @@
     47,
     48,
     49,
-    50
+    50,
+    51
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -211,26 +212,34 @@
       "records_count": 402,
       "sha256": "00e5e05c31a3f782983e7425cd4e4ab5ff2b9e7e9a2f8d9c7a55a03ffda2d409",
       "scope": "Book II Chapter L final thief-house and theft sections; original PDF381 below thief-house heading through PDF400 above Chapter LI divider, 402 historical documentary source units, 75 retained textual issues, zero verified criminal or predictive cases."
+    },
+    {
+      "id": "B02w",
+      "path": "batches/B02w/RULES.json",
+      "records_count": 42,
+      "sha256": "08e6a5a1660d5f5a807f4df3eca8e9e5220d2cd57f5f1be947a076b233afc5fe",
+      "scope": "Book II Chapter LI Battle/Warre/Contentions: original PDF400 below divider through PDF402 bottom; 41 original Chapter LI editorial source annotations and one next-chapter boundary; 35 visual reverse source spans, 11 retained limits; historical text ONLY."
     }
   ],
   "next": {
-    "pdf_page": 400,
-    "printed_page": 366,
-    "chapter": "LI",
-    "heading": "Of Battell, Warre, or other Contentions",
+    "pdf_page": 403,
+    "printed_page": 369,
+    "chapter": "LII",
+    "heading": "Who shall doe best in a suit of Law.",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF400 BELOW horizontal divider after Chapter L last capture clause; begin heading and first paragraph of Chapter LI without overlap."
+    "position": "First chapter heading near top of original PDF403/printed369. Begin LII body directly below; do not import into Chapter LI."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B02v_CHAPTER_L_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B02w_CHAPTER_LI_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
-  "chapter_L_source_acceptance_note": "Documentary source intake only; 75 issue entries include repaired misreadings and still unresolved grammar/glyphs. Source-to-record map and bounded image audit are not independent word-for-word certification. No empirical validation, clinical use or real-person inference."
+  "chapter_L_source_acceptance_note": "Documentary source intake only; 75 issue entries include repaired misreadings and still unresolved grammar/glyphs. Source-to-record map and bounded image audit are not independent word-for-word certification. No empirical validation, clinical use or real-person inference.",
+  "chapter_LI_source_acceptance_note": "42 historical editorial source units (one LII boundary), manual reverse original-image-first 35 passages, 22 extracted-archive source-only tests, 11 retained uncertainties including 5 literal e-contra and 1 differently phrased contrary; no diplomatic source certification, no empirical or runtime validation."
 }

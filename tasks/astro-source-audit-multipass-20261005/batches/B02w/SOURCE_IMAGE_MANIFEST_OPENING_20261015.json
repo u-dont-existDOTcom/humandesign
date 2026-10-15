@@ -1,0 +1,39 @@
+{
+  "batch": "B02w",
+  "source": "William Lilly Christian Astrology 1647 original b30338724",
+  "original_pdf_size": 141842963,
+  "original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "render_command": "pdftoppm -f 401 -l 404 -scale-to-y 1700 -png exact-original-PDF evidence/pdf",
+  "original_images": [
+    {
+      "original_pdf_page": 401,
+      "printed_page": 367,
+      "path": "evidence/pdf-401.png",
+      "sha256": "e944b6aae22bfc776a3ff0d025ce25465ada1a10cdf3c781858f9d74fe930443",
+      "bytes": 1839679
+    },
+    {
+      "original_pdf_page": 402,
+      "printed_page": 368,
+      "path": "evidence/pdf-402.png",
+      "sha256": "c4f2620259672519323f09533c25d9471c2afaf1033a700e0ceac1c0e78b6e3c",
+      "bytes": 1816109
+    },
+    {
+      "original_pdf_page": 403,
+      "printed_page": 369,
+      "path": "evidence/pdf-403.png",
+      "sha256": "c780700ad69b38bf8484b6ce6370ccaa4c444dabdb5e28b0de6e729a31c583f2",
+      "bytes": 1787619
+    },
+    {
+      "original_pdf_page": 404,
+      "printed_page": 370,
+      "path": "evidence/pdf-404.png",
+      "sha256": "a068c81dab05b88fefd2cc988c023801900cc832150ab162a138c6c6d2bb06d3",
+      "bytes": 1752386
+    }
+  ],
+  "opening_page_400_reuses_accepted_B02v_original_image": true,
+  "source_records_accepted": 0
+}
