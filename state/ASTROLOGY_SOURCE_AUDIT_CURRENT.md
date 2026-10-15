@@ -1,3 +1,9 @@
+# Current astrology source audit — latest historical corpus checkpoint
+
+CURRENT (2026-10-15): Lilly Book II Chapter LIII documentary source admission (B02y), 3,147 Lilly + 1,066 Ptolemy = 4,213 historical units after authenticated publication. Next Chapter LIV begins PDF410/printed376 BELOW divider. No empirical prediction verification or runtime promotion; overall research OPEN. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B02y_CHAPTER_LIII_COMPLETE.md, B02y acceptance/receipt, and canonical index.
+
+---
+
 # Current astrology source audit — authoritative latest chapter checkpoint
 
 **CURRENT (2026-10-15):** Original Lilly **Chapter LII historical documentary intake** complete (B02x), **3,071 Lilly + 1,066 Ptolemy = 4,137** historical documentary units. Next **Chapter LIII Of Hunting** original PDF405/printed371 BELOW divider. No empirical validations or runtime model changes; parent multi-author source study OPEN. See `state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B02x_CHAPTER_LII_COMPLETE.md` and the canonical index. Earlier state is retained below as recovery history.
