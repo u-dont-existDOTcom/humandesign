@@ -2,7 +2,7 @@
   "batch": "B02v",
   "phase": "FINAL_SEGMENT_OF_CHAPTER_L",
   "status": "RETAINED_SOURCE_UNCERTAINTIES_ON_UNACCEPTED_CANDIDATE",
-  "retained_count": 58,
+  "retained_count": 60,
   "issues": [
     {
       "id": "U01",
@@ -293,6 +293,16 @@
       "id": "U58",
       "status": "SOURCE_GRAMMATICAL_AMBIGUITY_RETAINED",
       "description": "PDF397/363 R2901 'and behold the ascendant' has no certain actor; previous producer assigned cadent planet alone, now source ambiguity explicit."
+    },
+    {
+      "id": "U59",
+      "status": "SOURCE_IMAGE_CORRECTION_RETAINED",
+      "description": "Original PDF396/printed362 age alternatives: use age of Moon-applying planet OR thief significator. Earlier R2871 omitted the second alternative. Restored without treating it as an observed age."
+    },
+    {
+      "id": "U60",
+      "status": "SOURCE_BOOLEAN_OPERATOR_CORRECTION_RETAINED",
+      "description": "Original PDF396/printed362 small stature: significator high occidentality OR one of Cancer/Scorpio/Pisces. Earlier R2876 erroneously made both conditions conjunctive. Corrected disjunction."
     }
   ],
   "no_clinical_criminal_or_predictive_evidence": true
