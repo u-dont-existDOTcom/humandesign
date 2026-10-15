@@ -1,3 +1,9 @@
+# Astrology source audit — latest original historical text checkpoint
+
+CURRENT 2026-10-15: Lilly Book II *Fish Stolen*, originally PRINTED Chapter LIV but logically LXIV, admitted as original-source documentary research. After authenticated publication: 3,630 Lilly + 1,066 retained Ptolemy = 4,696 source annotations. Following Chapter LXV battle figure begins original PDF433/printed399 below the Fish Stolen divider. Zero empirically validated predictions and zero runtime rule changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03j_FISH_STOLEN_COMPLETE.md and B03j source/release/publication evidence.
+
+---
+
 # Current historical astrology source checkpoint — Lilly Chapter LXIII
 
 Current 2026-10-15: Original Lilly Chapter LXIII Of Theft source accepted, 3,571 Lilly + retained Ptolemy 1,066 = 4,637 original documentary records after authenticated publication. Next distinct case is Fish Stolen at original PDF431/printed397, printed literal CHAP LIV though sequentially Chapter LXIV. Preserve misnumbering and distinguish from earlier LIV Buying/Selling. Historical author money-recovery case is NOT independent predictive validation; empirical count zero, runtime promotion zero. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03i_CHAPTER_LXIII_COMPLETE.md and B03i publication receipt.
