@@ -1,0 +1,13 @@
+# Lilly Book II Chapter LX: source-first visual review
+
+Primary witness: William Lilly, Christian Astrology, 1647, Wellcome b30338724, original full-source PDF SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. The original image scans are authoritative.
+
+Boundary: chapter LX begins at original PDF423 / printed 389, immediately following the entirely separate LIX case. The original horoscope is dated **11 June 1646 at 10:38 AM** (as printed); LIX uses **16 June 1646**. The printed judgment begins below the diagram on PDF423 and crosses into PDF424 / printed 390. Chapter LX ends above the page 390 horizontal divider; Chapter LXI, about a fugitive servant, begins below, with a different horoscope.
+
+Source-first reverse map: 13 sequential contiguous passage groups map to 31 editorial source annotations, including one LXI heading-only navigation unit and three annotations crossing PDF423–424. Exact original image hashes are frozen in the manifest. The record-first reverse pass maps every unit back to exactly one original passage group. This is a source-ordered editorial extraction, not a complete independent diplomatic transcription or an alternative reconstructed birth chart.
+
+The original source contains a narrative of a woman's question, physical descriptions of two people, Jupiter/terms and appearance speculation, Mercury as the querent's significator retrograde and under the Sun's beams, Jupiter as the man’s significator, semisextile of the parties, Moon separating from Jupiter by square and carrying light toward Mercury by trine, and an author-reported intervention and marriage. The source reports a favorable outcome retrospectively; no identity, independent testimony, external marriage record, birth records, calendar conversion, frozen advance forecast or untreated comparison case has been established.
+
+Critical retained uncertainties: old chart glyphs and planetary dignity claims are not independently ephemeris-reproduced; the chart has no location/timezone given in the consulted pages; a pronoun in the Moon/Jupiter/Saturn hair interpretation is ambiguous; the printed distinction between semisextile and sextile remains explicit; reception and applying/separating polarities are not flattened; the appearance and infidelity claims are unverified; the author's own reported outcome does not validate prediction accuracy.
+
+No changes to astrology runtime model, personal horoscope ranking, or empirical validation tally. The accepted prior Lilly count is 3,418 and retained Ptolemy count is 1,066; the new documentary record numbers must be added contiguously only after source acceptance.
