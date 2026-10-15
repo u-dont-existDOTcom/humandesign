@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LIV_DOCUMENTARY_SOURCE_ONLY_NEXT_LV_OPEN",
-  "records_count": 3171,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LV_DOCUMENTARY_SOURCE_ONLY_NEXT_LVI_OPEN",
+  "records_count": 3203,
   "read_numbered_chapters": [
     1,
     2,
@@ -58,7 +58,8 @@
     51,
     52,
     53,
-    54
+    54,
+    55
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -243,24 +244,31 @@
       "records_count": 24,
       "sha256": "050a703bcd6acc3d442409bd4fcc2e06fc390166e2a58e8d32ee4648d81d0d25",
       "scope": "Book II Chapter LIV Buying and Selling Commodities, original PDF410 below prior divider through PDF411 above LV divider; 23 LIV historical source units and one next-chapter navigation marker; 16 source spans, 14 source limits, no empirical validations."
+    },
+    {
+      "id": "B03a",
+      "path": "batches/B03a/RULES.json",
+      "records_count": 32,
+      "sha256": "ac83ccf3e8176b93627b7a8f09cbefc72995aecdb7086b4e575ed920bb7ad24d",
+      "scope": "Book II Chapter LV Partnership: original PDF411 below LIV divider to PDF413 above LVI divider; 31 original LV source assertions and one next-chapter navigation marker; 17 source spans, 16 retained limits; historical text only."
     }
   ],
   "next": {
-    "pdf_page": 411,
-    "printed_page": 377,
-    "chapter": "LV",
-    "heading": "Of Partnership.",
+    "pdf_page": 413,
+    "printed_page": 379,
+    "chapter": "LVI",
+    "heading": "Whether a City, Towne or Castle, besieged, or to be besieged, shall be taken or not.",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF411 BELOW horizontal divider after last Chapter LIV sale/repurchase clause; continue through subsequent pages to next numbered chapter."
+    "position": "Original PDF413 BELOW divider after final LV partnership condition; siege opening continues through original source pages."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B02z_CHAPTER_LIV_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03a_CHAPTER_LV_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -268,5 +276,6 @@
   "chapter_LI_source_acceptance_note": "42 historical editorial source units (one LII boundary), manual reverse original-image-first 35 passages, 22 extracted-archive source-only tests, 11 retained uncertainties including 5 literal e-contra and 1 differently phrased contrary; no diplomatic source certification, no empirical or runtime validation.",
   "chapter_LII_source_acceptance_note": "55 documentary units incl next chapter boundary, 42 source-first reverse original-image spans, 13 retained textual uncertainties, three untranslated abbreviated e-contra, zero blind outcome confirmations or runtime validation. The image reviewer was not a blind independent diplomatic transcription.",
   "chapter_LIII_source_acceptance_note": "76 historical editorial documentary units (75 LIII and one LIV heading marker), six original-page scans, 27 visually reviewed original source spans, 16 retained interpretive limits. Did not conduct independent blind diplomatic second transcription. No real litigant or hunting outcome, astrology prediction, or runtime model validation.",
-  "chapter_LIV_source_acceptance_note": "24 original documentary annotations including LV boundary; 16 reverse source image spans and 14 retained unresolved readings. Provisional source packet preserved with former predecessor-held snapshot. 19 source tests replayed in extracted source archive, not empirical predictions."
+  "chapter_LIV_source_acceptance_note": "24 original documentary annotations including LV boundary; 16 reverse source image spans and 14 retained unresolved readings. Provisional source packet preserved with former predecessor-held snapshot. 19 source tests replayed in extracted source archive, not empirical predictions.",
+  "chapter_LV_source_acceptance_note": "32 historical source units including LVI navigation marker, 17 source passages, 16 original text limits; original three-page scan hashes and original provisional ZIP manifest preserved. No independently blinded full diplomatic transcription, predictive accuracy evidence or model changes."
 }

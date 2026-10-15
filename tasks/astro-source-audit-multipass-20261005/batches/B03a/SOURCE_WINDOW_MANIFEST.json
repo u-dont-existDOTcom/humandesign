@@ -1,0 +1,49 @@
+{
+  "batch": "B03a",
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "complete_original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "status": "UNACCEPTED_SOURCE_FIRST_PREDECESSORS_LIII_AND_LIV_PENDING",
+  "chapter": "LV",
+  "last_accepted_lilly_at_source_snapshot": 3071,
+  "prerequisites_before_global_numbering": [
+    "LIII acceptance",
+    "LIV acceptance and frozen R range"
+  ],
+  "physical_start": {
+    "pdf_page": 411,
+    "printed_page": 377,
+    "position": "BELOW Chapter LIV divider"
+  },
+  "physical_end": {
+    "pdf_page": 413,
+    "printed_page": 379,
+    "position": "ABOVE Chapter LVI divider"
+  },
+  "original_images_cached_no_download": true,
+  "original_images": [
+    {
+      "original_pdf_page": 411,
+      "printed_page": 377,
+      "relative_path": "evidence/pdf_1647-411.jpg",
+      "bytes": 405857,
+      "sha256": "a51696a148fab473ac290a7956be8e3942b017be801e416974ee524034249076"
+    },
+    {
+      "original_pdf_page": 412,
+      "printed_page": 378,
+      "relative_path": "evidence/pdf_1647-412.jpg",
+      "bytes": 449871,
+      "sha256": "7cdaeaa2149b22abfc6e1fcf32708814a9c2c8269390834cf9166ac31df5f6a3"
+    },
+    {
+      "original_pdf_page": 413,
+      "printed_page": 379,
+      "relative_path": "evidence/pdf_1647-413.jpg",
+      "bytes": 426736,
+      "sha256": "38081be6a4fbe4fb1fd4370cd646ab38acd4f3164e16098cc2ca7352e239b1bd"
+    }
+  ],
+  "original_image_pixels_parity_to_full_pdf_not_claimed": true,
+  "full_independent_diplomatic_transcription_claimed": false,
+  "empirical_cases": 0
+}
