@@ -2,8 +2,8 @@
   "schema": "life-patterns-role-entry-neutral-cognitive-pilot-v1",
   "status": "DEVELOPMENT_ONLY_NOT_SCORED",
   "source_gap": "Existing source establishes voluntary offers of help and conditional acceptance of requested coordination, but not typical entry sequence into meaningful chosen group roles.",
-  "prompt": "Recall up to three recent occasions when you actually accepted responsibility for a meaningful role in a group or project, where you had a genuine choice. How did each role begin? Who first suggested that YOU should take it, and what did you actually do? If you cannot recall three, describe fewer or choose 'Cannot recall'.",
-  "role_definition": "Taking a role means actually becoming responsible for something, not merely offering help, being praised, or answering an invitation politely.",
+  "prompt": "When you have an opportunity to help someone or take responsibility, what do you usually do? If you become responsible, does it tend to start with your offer, another person's request, something developing naturally, or does it depend? You might not take a role at all.",
+  "role_definition": "Offering help, accepting a request, having something assigned, and gradually becoming involved are different experiences. Not participating is also an answer.",
   "allowed_origins": [
     {
       "id": "self_initiated",
@@ -34,7 +34,7 @@
       "label": "Cannot recall the sequence."
     }
   ],
-  "overall_question": "Thinking across comparable situations (not just these examples), what tends to happen more often when you take on a meaningful role?",
+  "overall_question": "If you can identify a recurring pattern from actual situations, which is closest?",
   "pattern_choices": [
     {
       "id": "usually_self",
@@ -61,11 +61,12 @@
       "label": "Another pattern — explain in the conditions field."
     }
   ],
-  "neutral_followup": "What makes the difference (group, competence, prior commitment, power, urgency or something else)? Do you usually wait to be asked when you could volunteer? If there's an exception or counterexample, include it.",
+  "neutral_followup": "Only if helpful: briefly describe one real situation or exception. No quota or required examples.",
   "skip_allowed": true,
   "no_event_allowed": true,
   "participant_scope": "No natal features, astrology terms, intended scoring direction or respondent birth information appears in the questionnaire.",
   "coding_rule": "Never infer invited-entry from mere willingness to accept a request, or initiated-entry from offering help without responsibility. Do not infer long-term propensity from a single scenario, isolated event or prompted label. Preserve mixed, other, insufficient and context-dependent as non-scoring unless genuinely resolved.",
-  "followup_policy": "Only request actual missing role-entry sequence; never repeat adequate answers. No more than three available examples; allow zero. Personal confirmation precedes any scored interpretation.",
-  "codebook_boundary": "Development measurement only. The separate frozen V1.5 recognition_entry semantics are not modified or automatically populated. Do not treat this as a new independent validation of the known developer birth."
+  "followup_policy": "Default is one short free-text response; do not request examples or a stable pattern after an adequate conditional answer. Optional detail remains available, up to three examples only if participant chooses to add them. Preserve previous V3.3 examples on import.",
+  "codebook_boundary": "Development measurement only. The separate frozen V1.5 recognition_entry semantics are not modified or automatically populated. Do not treat this as a new independent validation of the known developer birth.",
+  "version_note": "v1.1 UX repair; same stable V3.3 export schema with optional summary string"
 }

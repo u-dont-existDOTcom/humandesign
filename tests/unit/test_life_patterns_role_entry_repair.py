@@ -44,8 +44,8 @@ class RoleEntryRepairTests(unittest.TestCase):
         self.assertTrue(all(q.get("automatic_chart_scoring") is False for q in d["questions"]))
 
     def test_role_entry_not_equal_acceptance_or_offer(self):
-        self.assertIn("not merely offering help", self.protocol["role_definition"])
-        self.assertIn("actual", self.protocol["prompt"])
+        self.assertIn("Offering help", self.protocol["role_definition"])
+        self.assertIn("If you become responsible", self.protocol["prompt"])
         self.assertIn(
             "normally", self.protocol["source_gap"].lower()
         ) if "normally" in self.protocol["source_gap"].lower() else self.assertIn(
@@ -76,6 +76,10 @@ class RoleEntryRepairTests(unittest.TestCase):
         self.assertIn("v3_2_answers:state.v32", s)
         self.assertIn("roleHasData(state.roleEntry)", s)
         self.assertIn("state.roleEntry=parsed.roleEntry", s)
+        self.assertIn("role-short", s)
+        self.assertIn("role-details", s)
+        self.assertIn("roleRecord.summary", s)
+        self.assertIn("roleFocus()", s)
 
     def test_corrected_reference_scoped(self):
         receipt = json.loads((PRIOR / "AGGREGATE_SOURCE_RESULT.json").read_text())
