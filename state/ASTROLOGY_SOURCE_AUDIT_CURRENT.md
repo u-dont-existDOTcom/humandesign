@@ -1,3 +1,9 @@
+# Current astrology source audit — Chapter LXII original documentary checkpoint
+
+CURRENT 2026-10-15: Lilly Chapter LXII (missing dog) original documentary source intake accepted, cumulative 3,527 Lilly + 1,066 Ptolemy = 4,593 source records after authenticated research-branch publication. Next Chapter LXIII Theft starts PDF428/printed394 BELOW divider. No empirical prediction confirmations, no model/runtime promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03h_CHAPTER_LXII_COMPLETE.md and B03h source, acceptance and publication receipts.
+
+---
+
 # Latest original astrology source audit — Chapter LXI
 
 Current (2026-10-15): Lilly Book II Chapter LXI, a worked fugitive-servant case, accepted as 35 historical documentary units. Lilly 3,484 + retained Ptolemy 1,066 = 4,550 combined after authenticated publication. Next: Chapter LXII missing dog on original PDF426/printed392 BELOW divider. Independent predictive validations added: zero; runtime promotions: zero. Source, ZIP and acceptance checkpoint: state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03g_CHAPTER_LXI_COMPLETE.md and B03g source receipts.

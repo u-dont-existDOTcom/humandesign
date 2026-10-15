@@ -1,0 +1,13 @@
+# Lilly 1647 Chapter LXII — original-image-first audit
+
+Source witness: Wellcome original 1647 Christian Astrology b30338724, full-PDF SHA-256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. Every page used is SHA-256 frozen in `SOURCE_WINDOW_MANIFEST.json`. Original images, not later summaries or transcription, govern symbols.
+
+**Physical boundary:** Chapter LXII *A Dogge missing, where?* begins **below** Chapter LXI divider on PDF426/printed392 and continues through all PDF427/printed393. Its conclusion and unnumbered general observations run **above** the Chapter LXIII divider on PDF428/printed394. Chapter LXIII *Of Theft* starts below the divider and is excluded except for its navigation-only heading.
+
+**Image to documentary map:** 14 original contiguous paragraph/figure groups map to 43 source editorial clauses, with original PDF page(s), short descriptive anchors and explicit conditions. The original chart is dated **29 August 1646, 4:5 PM** as printed. The author selects a missing dog as example of a small beast; six-house ruler Mercury is used, with Gemini/Libra/Virgo and several heaven-quadrant directional testimonies. He reports a westward Long-acre or upper-Drury-Lane prediction, an indoor/private or upper-room speculation, and return of either the dog or news on or near the following Monday. A claimed acquaintance found the dog in Long-acre, chained beneath a table, and returned it around 10 AM Monday. No independent finder, owner, chart timing or event records were verified.
+
+**Mixed or unknown results are explicitly retained:** The reported found-in-Long-acre geography and approximately Monday timing agree narratively, but are author-reported without a frozen dated forecast. The location *beneath a table* does **not** establish the forecast that the dog was in an *upper room*. The private/concealed element is distinct from the floor/elevation element. The dog-or-news alternative is weaker than a unique forecast of the actual dog being found. Lilly's claim of credit for the case is the author's own evaluation.
+
+The concluding unnumbered paragraph gives general fugitive-direction and stronger-of-two (Moon vs significator) rules with subjective resemblance and cusp-aspect conditions. These remain historical text claims, not operationally validated algorithms. The nearby Chapter LXIII theft rules are not imported.
+
+**Research assurance:** No complete independent diplomatic transcription, modern chart parity, blind prediction freeze, independent human/animal case validation or model promotion. Original source ambiguities and uncertainties retained in `UNRESOLVED_SOURCE_LIMITS.json`. Prior canonical source baseline: 3,484 Lilly + 1,066 Ptolemy.
