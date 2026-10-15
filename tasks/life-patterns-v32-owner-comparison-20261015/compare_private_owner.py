@@ -23,7 +23,7 @@ REVISION = (
 BANK = ROOT / "tasks/life-patterns-idiographic-20261010/tendency-first-v3-scaffold-development.json"
 FROZEN_RESULT = (
     ROOT
-    / "tasks/scenario-owner-recovery-calibration-20260923/V43-SURVEY-CROSSWALK-RESULT-20260923.md"
+    / "tasks/scenario-owner-recovery-calibration-20260923/ASTROHD-V14-EXACT-CENTURY-RECEIPT-20260925.md"
 )
 ROUTES = ["TF1-G01", "TF1-G02", "TF1-G16", "TF1-G23", "TF1-M05", "TF1-G20", "TF1-M01", "TF1-M03"]
 SCHEMA = "local_life_patterns_v3_pilot_unsubmitted"
@@ -87,9 +87,9 @@ def summarize(
         revision["status"] == "DEVELOPMENT_ONLY_NOT_LIVE_NOT_SCORED",
         "Candidate unexpectedly activated",
     )
-    assert "ranked **#1562**" in baseline, "Prior frozen V4.3 rank not confirmed"
-    assert "The exact recorded moment" in baseline, "Prior frozen recorded instant not confirmed"
-    assert "2013-01-28/29" in baseline, "Prior top interval not confirmed"
+    assert "Exactly nine instants reach it" in baseline, "Accepted V1.4d maxima not confirmed"
+    assert "recorded 10:25 is jointly first" in baseline, "Accepted V1.4d instant not confirmed"
+    assert "January 29, 1985 is the sole maximum-scoring date" in baseline, "Accepted V1.4d date not confirmed"
 
     prior_rows = {r["question_id"]: r for r in cross["rows"]}
     require(
@@ -155,8 +155,10 @@ def summarize(
         "v32_newly_admitted_chart_features": 0,
         "existing_chart_scorer_modified": False,
         "new_birth_date_search_executed": False,
-        "prior_frozen_v43_exact_recorded_interval_rank": 1562,
-        "prior_frozen_v43_top_interval": "2013-01-28/29",
+        "accepted_reference_model": "astrohd-v14-v1.4d",
+        "accepted_reference_recorded_instant_joint_first": True,
+        "accepted_reference_tied_minute_count": 9,
+        "accepted_reference_unique_maximum_date": "1985-01-29",
         "birth_date_found_by_new_v32_answers": "NOT_TESTABLE_NO_ADMITTED_BRIDGE",
         "owner_private_text_in_repo": False,
         "source_reuse_warning": "79/84-turn records overlap; guided responses are same-person development, not independent observations.",
@@ -173,7 +175,7 @@ def html_report(receipt: dict, rows: list) -> str:
         "<title>Private Life Patterns V3.2 comparison</title><style>body{font:16px/1.55 system-ui,sans-serif;max-width:950px;margin:auto;padding:1rem 1rem 4rem;color:#213043}h1{font-size:1.75rem}details{padding:.8rem;border:1px solid #ccd7e3;border-radius:8px;margin:1rem 0}summary{font-weight:700;cursor:pointer}blockquote{padding:.3rem .9rem;border-left:3px solid #9bb}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6f8;border-radius:6px;padding:.7rem}small{color:#56606f}table{border-collapse:collapse}th,td{border:1px solid #cbd3de;padding:.5rem}th{text-align:left}</style><main>",
         "<h1>Private V3.2 vs V3 vs earlier interview</h1>",
         "<p><strong>Development, N=1:</strong> same person, no independent birth-chart inference. Your preexisting V3 choices and three unusual behaviors were preserved exactly. Earlier 79-turn and 84-turn versions largely repeat the same material. The new eight guided context answers increase descriptive specificity, not necessarily between-person discrimination.</p>",
-        "<p><strong>Birth-date test:</strong> zero new V3.2 questions have an admitted chart mapping or weight. A new V3.2 date ranking would be arbitrary, so none was performed. The earlier <em>frozen V4.3 survey translation</em> placed the exact recorded birth-time interval at <strong>#1,562</strong>; the strongest interval was January 28–29, 2013. This is a historical result, not a fresh ranking or an improved model.</p>",
+        "<p><strong>Accepted birth-date reference:</strong> AstroHD V1.4d, six equal-vote clauses, 52,596,001 minute-grid candidates: January 29, 1985 is the only maximum-scoring calendar day. Nine nearby minutes (10:18–10:26 UTC) tie for first, including the recorded 10:25 UTC. This six-rule signature was fitted to the known owner case; it is not independent DOB recovery. The older V4.3/NetInformation comparison is a different, discarded diagnostic and must not replace this benchmark. No new V3.2 reranking was performed. The existing V1.5 five-domain behavioral bridge and its unconfirmed role-entry interpretation remain separate.</p>",
         "<h2>Measured source continuity</h2><table><tr><th>Item</th><th>Count / state</th></tr>",
     ]
     for label, key in [
@@ -263,7 +265,7 @@ def markdown_report(receipt: dict, rows: list) -> str:
         "",
         "## Birth-date result",
         "",
-        "**No new V3.2 DOB inference was possible.** All eight new prompts have zero chart-admitted mappings, and no score updates were run. The previously frozen V4.3 survey crosswalk ranked the actual recorded instant's stable interval **#1,562**, not first; the top interval was January 28–29, 2013. This is a prior result, not a new test.",
+        "**Accepted reference:** AstroHD V1.4d's fixed six-rule century scan found the recorded 10:25 UTC instant **joint #1** among nine maximum-scoring minutes, all on January 29, 1985, within a 52,596,001-minute grid. It was fitted using the known development case and is not independent recovery. The older V4.3/NetInformation #1,562 diagnostic is **discarded as the comparison benchmark**, not retconned as the latest result. None of the eight new V3.2 prompts added a scored mapping or new rank. The existing V1.5 bridge can score confirmed five-domain responses, but the usual role-entry interpretation remains unresolved.",
         "",
         "## Eight revised question crosswalks",
         "",
