@@ -1,0 +1,84 @@
+{
+  "all_profile_enumeration": {
+    "distinct_reachable_clause_vectors": 162,
+    "forced_first_fraction_of_all_profiles": 0.30592,
+    "forced_first_fraction_of_scorable_profiles": 0.34130667618707605,
+    "includes_contradictory_clause": 1845,
+    "nonnegative_including_unscorable": 1280,
+    "not_guaranteed_first": 1845,
+    "profile_domain_count": 5,
+    "profile_state_count_per_domain": 5,
+    "scorable_forced_first": 956,
+    "total_profiles": 3125,
+    "uniform_profile_enumeration_not_a_human_population": true,
+    "unscorable_zero_evidence": 324
+  },
+  "bridge_changed": false,
+  "century_tie_bounds_for_five_positive_one_abstention": {
+    "comparison_decoys": 9999,
+    "five_active_clause_winner_count_lower_bound": 9,
+    "five_active_clause_winner_count_upper_bound": 624,
+    "maximum_other_tied_minutes": 623,
+    "minimum_other_tied_minutes": 8,
+    "probability_no_ties_if_uniform_sample_lower_bound": 0.8882960630251989,
+    "probability_no_ties_if_uniform_sample_upper_bound": 0.998480135367564,
+    "proof_boundary": "Verified original fast-pruning bins; not a new five-rule century scan",
+    "source_scan_complete": true,
+    "source_verified_six_clause_maxima": 9,
+    "source_verified_total_minute_grid": 52596001
+  },
+  "classification": "EXACT_COMBINATORIAL_DEVELOPMENT_AUDIT_NOT_HUMAN_VALIDATION",
+  "controls": {
+    "all_positive": {
+      "best_rank_in_64_mask_space": 1,
+      "guaranteed_first": true,
+      "scorable": true,
+      "target_score": 6
+    },
+    "all_unknown": {
+      "best_rank_in_64_mask_space": 1,
+      "guaranteed_first": false,
+      "scorable": false,
+      "target_score": 0
+    },
+    "explicit_contradiction": {
+      "best_rank_in_64_mask_space": 3,
+      "guaranteed_first": false,
+      "scorable": true,
+      "target_score": 3
+    }
+  },
+  "distinct_supported_domains_in_provisional_profile": 3,
+  "model_changed": false,
+  "model_hash_matches_frozen_century": true,
+  "model_version": "1.4d",
+  "no_personal_data_in_artifact": true,
+  "prospective_boundary": "Human reverse matching requires a person whose birth chart did not select these six rules; retain declared decoy universe, true-rank and ties and compare against independent unconditioned profiles before claiming prediction.",
+  "provisional_profile_participant_confirmed": false,
+  "provisional_signs": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    1
+  ],
+  "schema": "astrohd-v15-structural-null-v1",
+  "target_feature_mask": "full_six_bit_signature",
+  "target_signature_statistics": {
+    "abstained_clauses": 1,
+    "guaranteed_joint_first_with_any_candidate_panel": true,
+    "maximum_score_any_six_bit_mask": 5,
+    "negative_clauses": 0,
+    "positive_clauses": 5,
+    "scoreable": true,
+    "target_best_rank_in_complete_mask_space": 1,
+    "target_score": 5,
+    "target_ties_in_complete_mask_space": 2,
+    "winning_six_bit_masks": [
+      47,
+      63
+    ]
+  },
+  "zero_extra_astro_scans": true
+}
