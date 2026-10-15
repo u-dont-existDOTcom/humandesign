@@ -1,0 +1,13 @@
+# Lilly Chapter LXIII Theft — original documentary-source acceptance
+
+2026-10-15 Africa/Dakar UTC+0. Source: William Lilly, *Christian Astrology* (1647), Wellcome original b30338724, complete original PDF SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`.
+
+Original Chapter LXIII *Of Theft* begins **below** the divider on PDF428/printed394, continues PDF429/printed395 and PDF430/printed396, and ends before the next separate worked fish case at PDF431/printed397. The next heading visibly and literally reads **CHAP. LIV. Fish Stolen**, an original printed numbering irregularity (logical sequence **LXIV**, not the already accepted earlier Chapter LIV about buying and selling). Both literal and sequential identities are preserved; this is not a correction of the source.
+
+The chapter contains attributed rules of Master Allen of Oxford and Lilly's contrasting preference for angular peregrine significators, seventh house conditions and exceptions. An unnumbered worked stolen-money case includes a circular horoscope dated **24 May 1647**. Lilly rejects Mars and Saturn as alleged thief significators due to their dignities, instead selecting peregrine Mercury and making conjectures about sex, young age, appearance, neighborhood, and money recovery within four days. He then reports a recovery within three days. **The case is only author reported.** No independent thief identification, witness, lost-money receipt, original advance prediction freeze, or blinded comparison is verified. Period physical and character accusations remain historical statements and must never establish criminal guilt.
+
+**Documentary source intake:** Batch B03i, 44 editorial source annotations **R3528–R3571**, including 43 LXIII text/case assertions and one next fish-case navigation marker, visually reverse mapped to 15 original passages with 16 unresolved source limitations. Original scans and manifest SHA256 checked. Independent complete diplomatic second transcription and astronomical calculation parity are NOT claimed.
+
+**After authenticated publication:** 3,571 Lilly + retained Ptolemy 1,066 = **4,637 original historical documentary units**; zero independent astrological prediction validations or runtime model promotions. A source-only accepted ZIP is in the owner's designated Downloads as `Astrology-Lilly-Chapter-LXIII-Documentary-20261015.zip`; ZIP CRC, member SHA256, actual extraction and 19 source tests replay verified.
+
+**NEXT:** next sequential Book II chapter **LXIV** is printed **“CHAP. LIV. Fish Stolen”** on original PDF431/printed397. Include its separate original 10 February 1638 worked chart and story only in a distinct subsequent source batch, and retain the original chapter misprint. Research overall remains OPEN.

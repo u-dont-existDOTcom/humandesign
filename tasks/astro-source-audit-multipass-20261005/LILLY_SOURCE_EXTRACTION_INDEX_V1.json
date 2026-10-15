@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXII_DOCUMENTARY_SOURCE_ONLY_NEXT_LXIII_OPEN",
-  "records_count": 3527,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXIII_DOCUMENTARY_SOURCE_ONLY_NEXT_LXIV_LOGICAL_PRINTED_LIV_OPEN",
+  "records_count": 3571,
   "read_numbered_chapters": [
     1,
     2,
@@ -66,7 +66,8 @@
     59,
     60,
     61,
-    62
+    62,
+    63
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -307,24 +308,32 @@
       "records_count": 43,
       "sha256": "d1beaaea7324392cf0f84a28056bb508ecd14c242588c4e2384a4c3f09d64a87",
       "scope": "Lilly original 1647 Chapter LXII missing dog worked case, PDF426 below LXI divider to PDF428 above LXIII divider; 42 LXII source annotations plus next heading, 14 mapped spans, 17 unresolved issues; dog recovery claimed by same author, upper-room forecast not established."
+    },
+    {
+      "id": "B03i",
+      "path": "batches/B03i/RULES.json",
+      "records_count": 44,
+      "sha256": "d51fb01cfd4f2f5c1d21c5718ff6e55c4a237697193421496cba489743b46235",
+      "scope": "Original Lilly 1647 Book II Chapter LXIII Of Theft, PDF428 below divider through PDF430 bottom; 43 historical theft/doctrine/money-case source notes and one next fish-case heading. PDF431 next prints CHAP LIV, logical sequential LXIV, misprint retained; 15 original-image passages, 16 limits. Money recovered within three days author reported, no independent case validation."
     }
   ],
   "next": {
-    "pdf_page": 428,
-    "printed_page": 394,
-    "chapter": "LXIII",
-    "heading": "Of Theft.",
+    "pdf_page": 431,
+    "printed_page": 397,
+    "chapter": "LXIV",
+    "printed_chapter_numeral": "LIV",
+    "heading": "Fish Stolen.",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF428 below horizontal divider; all post-divider theft text excluded from LXII."
+    "position": "Original PDF431 printed397 top new distinct Fish Stolen worked example. Printed CHAP LIV is a numbering anomaly after Chapter LXIII; logical next LXIV, not earlier buying/selling LIV."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03h_CHAPTER_LXII_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03i_CHAPTER_LXIII_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -340,5 +349,6 @@
   "chapter_LIX_source_acceptance_note": "58 original-image historical documentary annotations incl LX header, 25 original passages, 18 uncertainty issues. Original 16 June 1646 square chart preserved with unresolved time and symbols, reported outcome not independently authenticated or blinding-frozen, social intermediary advice directly affected case. ZIP extraction replay 13 source tests, zero empirical or runtime promotion.",
   "chapter_LX_source_acceptance_note": "31 historical-source editorial units including one LXI boundary, 13 original-image reverse passages and 13 retained unresolved chart/grammar/reception issues. Original 11 June 1646 chart and its author-reported marriage success are documentary, not independently authenticated, prospectively frozen, or counted as astrology predictive validation.",
   "chapter_LXI_source_acceptance_note": "35 historical source annotations including one LXII heading; 15 mapped original passages and 16 preserved uncertainties. Source-internal Friday return and conditional Kingston claim not independently documented; question date and one/two-day forecast timing unscored.",
-  "chapter_LXII_source_acceptance_note": "43 historical documentary units including LXIII navigation, 14 source passages, 17 source issues. Author-reported Monday dog recovery and Long-acre finding are not independent validation; floor/upper-room prediction unresolved. Unnumbered fugitive maxims preserved before LXIII divider."
+  "chapter_LXII_source_acceptance_note": "43 historical documentary units including LXIII navigation, 14 source passages, 17 source issues. Author-reported Monday dog recovery and Long-acre finding are not independent validation; floor/upper-room prediction unresolved. Unnumbered fugitive maxims preserved before LXIII divider.",
+  "chapter_LXIII_source_acceptance_note": "44 historical editorial units including next fish-case navigation marker, 15 reverse original-image source passages, 16 limits. Master Allen and Lilly differing thief signification methods preserved; 24 May 1647 stolen-money case author reports return within 3 days, no independent evidence. Printed next Chap LIV is a misnumbering; preserve original and chronological LXIV separately."
 }
