@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "task_id": "life-patterns-v32-owner-comparison-20261015",
+  "status": "LOCAL_DELIVERED_DEVELOPMENT_ONLY",
+  "baseline_branch": "research/life-patterns-guided-eight-assessment-20261015",
+  "new_branch": "research/life-patterns-v32-comparison-20261015",
+  "source_integrity": {
+    "original_25_answers_preserved": true,
+    "original_3_unique_behaviors_preserved": true,
+    "eight_guided_routes_complete": 8,
+    "context_rules": 6,
+    "recent_cases": 4,
+    "historical_route_links": 24
+  },
+  "instrument": {
+    "original_v3_bank_modified": false,
+    "legacy_25_editable": true,
+    "revised_8_separately_versioned": true,
+    "core_candidates": 6,
+    "optional_scoring_suspended": 2,
+    "unadministered_v32_answers": 8,
+    "live_gpt_modified": false,
+    "railway_modified": false
+  },
+  "birth_date_audit": {
+    "v32_chart_predicates_admitted": 0,
+    "reranking_executed": false,
+    "status": "NOT_TESTABLE_WITHOUT_PREDECLARED_CHART_BRIDGE",
+    "historical_frozen_v43_recorded_interval_rank": 1562,
+    "prior_frozen_top_interval": "2013-01-28/29",
+    "development_same_person_not_independent": true
+  },
+  "private_delivery": {
+    "owner_downloads": true,
+    "prefilled_questionnaire": true,
+    "private_crosswalk_html_json_md": true,
+    "mode": "0600",
+    "researcher_guide_launcher_updated": true,
+    "remote_public_birth_data": false,
+    "private_respondent_answers_in_git": false
+  },
+  "tests": {
+    "synthetic_browser": "PASS",
+    "private_prefill_browser": "PASS",
+    "browser_network_requests": 0,
+    "browser_script_errors": 0,
+    "generated_html_reproducibility": "PASS",
+    "focused_python": {
+      "passed": 15
+    },
+    "unit_python": {
+      "passed": 977,
+      "skipped": 6
+    },
+    "repo_python": {
+      "passed": 1051,
+      "skipped": 6
+    },
+    "authored_python_lint": "PASS"
+  },
+  "limitations": [
+    "Production Swiss files are not installed; 6 astronomy tests skipped.",
+    "No score-admitted V3.2 question-to-chart model; no new natal rank claim.",
+    "Same-person original and revised evidence cannot be treated as untouched independent validation."
+  ]
+}
