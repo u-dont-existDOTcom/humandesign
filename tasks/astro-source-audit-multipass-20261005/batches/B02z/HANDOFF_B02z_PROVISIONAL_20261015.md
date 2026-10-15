@@ -1,0 +1,11 @@
+# Astro study continuation — Chapter LIV source-first, pending Chapter LIII
+
+**2026-10-15, Africa/Dakar UTC+0 — PARENT CORPUS OPEN; B02z provisional.** Do not count B02z as accepted or place it into the canonical Lilly index while Chapter LIII remains unpublished.
+
+A separate authorized worker is studying Chapter LIII in the B02y worktree. To avoid shared-state conflicts, this branch prepared only William Lilly Book II **Chapter LIV**, *Of Buying and Selling Commodities*, from original **PDF410/printed376 below divider through PDF411/printed377 above divider**. Source images from the already-staged 1647 witness are copied and SHA256-frozen in this batch, not re-downloaded. Original full 1647 PDF identity from earlier accepted Wellcome b30338724: SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`.
+
+Source-first draft: **24 provisional editorial units** (`LIV-C001` to `LIV-C024`), including source chapter heading, a final Chapter LV heading-only boundary, and two page-crossing clauses. Reverse image-first coverage: **16 spans to 24 records**. **14 retained source limits**. One printed `& e contra` is intentionally not expanded into an algorithm. Several author statements allege that buying/selling actors are deceptive: these are 1647 textual claims, **not** measured honesty or person-level evidence. No modern purchase/real-estate advice is derived.
+
+Required next action: Verify **canonical** LIII acceptance and new record-count/index identity, then read the original PDF410–411 images from top to bottom against the source-first draft and reverse map; preserve any before-edit producer bytes and unresolved readings. Only then assign contiguous new global IDs, do the complete documentary source admission checks, extract/test release archive, commit non-force to authorized source and canonical research refs, and verify remote readback. Next Chapter LV begins PDF411 **below** the horizontal divider.
+
+**Current accepted baseline at snapshot:** 3,071 Lilly + 1,066 Ptolemy = **4,137 documentary units**. B02z has zero accepted units, zero empirical prediction evidence and zero runtime promotions. Source images and exact hash/byte manifest accompany the ZIP; no full 141MB PDF is repacked. This handoff is recoverable without chat memory.
