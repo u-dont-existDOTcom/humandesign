@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_XLIX_PLUS_L_PHASE1_AND_THIEF_PHASE2_DOCUMENTED_L_REMAINDER_OPEN",
-  "records_count": 2572,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_L_DOCUMENTARY_SOURCE_ONLY_NEXT_LI_OPEN",
+  "records_count": 2974,
   "read_numbered_chapters": [
     1,
     2,
@@ -53,7 +53,8 @@
     46,
     47,
     48,
-    49
+    49,
+    50
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -203,24 +204,33 @@
       "records_count": 267,
       "sha256": "652de262ab98d7d4d58e4b36ed46f6d6475dabfd4c52ab319379aca5731207b2",
       "scope": "Lilly Book II Chapter L SECOND phase, original PDF364 BELOW Of a Thief and Theft to PDF381 BEFORE Of the house of the Thiefe, 267 historical source units, 0 cases validated. Chapter L still incomplete."
+    },
+    {
+      "id": "B02v",
+      "path": "batches/B02v/RULES.json",
+      "records_count": 402,
+      "sha256": "00e5e05c31a3f782983e7425cd4e4ab5ff2b9e7e9a2f8d9c7a55a03ffda2d409",
+      "scope": "Book II Chapter L final thief-house and theft sections; original PDF381 below thief-house heading through PDF400 above Chapter LI divider, 402 historical documentary source units, 75 retained textual issues, zero verified criminal or predictive cases."
     }
   ],
   "next": {
-    "pdf_page": 381,
-    "printed_page": 347,
-    "chapter": "L",
-    "heading": "Of the house of the Thiefe, and the mark thereof",
+    "pdf_page": 400,
+    "printed_page": 366,
+    "chapter": "LI",
+    "heading": "Of Battell, Warre, or other Contentions",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF381 below Of the house of the Thiefe heading; PDF381 before heading already in B02u. Continue including Of the Door of the house and original PDF382 through PDF400 ABOVE Chapter LI; avoid overlap."
+    "position": "Original PDF400 BELOW horizontal divider after Chapter L last capture clause; begin heading and first paragraph of Chapter LI without overlap."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261013_B02u_PHASE2.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B02v_CHAPTER_L_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
-  "partial_numbered_chapters": []
+  "partial_numbered_chapters": [],
+  "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
+  "chapter_L_source_acceptance_note": "Documentary source intake only; 75 issue entries include repaired misreadings and still unresolved grammar/glyphs. Source-to-record map and bounded image audit are not independent word-for-word certification. No empirical validation, clinical use or real-person inference."
 }

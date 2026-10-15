@@ -1,3 +1,9 @@
+# Current astrology source audit — see latest authoritative chapter checkpoint
+
+**CURRENT (2026-10-15):** Lilly Chapter L historical documentary source intake is locally accepted as B02v with 402 additional source units (R2573–R2974), 75 retained source issues; **2,974 Lilly + 1,066 retained Ptolemy = 4,040 total historical source units**. The owner’s multi-author study remains OPEN. Next: Chapter LI original PDF400/printed366 BELOW divider. Read `state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B02v_CHAPTER_L_COMPLETE.md` and `tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json`. No empirical validation, criminal inference or runtime model promotion. Detailed material below this header describes the HISTORICAL B02a stage and is not current.
+
+---
+
 # Current astrology source audit
 
 **Parent OPEN. Ptolemy complete English extraction retained:61/61 sections,1066 records. Lilly B02a now read/extracted:BookI chaptersI-VII, printed25-56/PDF59-90,91 new records.** No personal forecast, fitted-candidate change or runtime promotion.
