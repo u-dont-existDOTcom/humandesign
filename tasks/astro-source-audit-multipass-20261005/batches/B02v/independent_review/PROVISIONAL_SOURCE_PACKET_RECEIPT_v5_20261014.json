@@ -1,0 +1,47 @@
+{
+  "archive_status": "UNACCEPTED_B02v_ORIGINAL_SOURCE_RESEARCH_ONLY",
+  "source_count": 136,
+  "source_png_count": 21,
+  "archive_size_bytes": 54200613,
+  "archive_sha256": "6cce1d49516fa6f78b38de9c1ab0e91d31b10f1aa5cf96bafb81433c04e14c55",
+  "owner_download_path": "/mnt/hdd/home/joel/T\u00e9l\u00e9chargements/Astrology-Lilly-B02v-Provisional-Source-Packet-v5-20261014.zip",
+  "owner_download_sha256": "6cce1d49516fa6f78b38de9c1ab0e91d31b10f1aa5cf96bafb81433c04e14c55",
+  "archive_crc_pass": true,
+  "all_archived_files_sha256_pass": true,
+  "actual_extraction_pass": true,
+  "actual_extracted_tests": {
+    "test_b02v_staging.py": {
+      "exit_code": 0,
+      "last_lines": [
+        "..................",
+        "----------------------------------------------------------------------",
+        "Ran 18 tests in 0.028s",
+        "",
+        "OK"
+      ]
+    },
+    "test_source_integrity_v8.py": {
+      "exit_code": 0,
+      "last_lines": [
+        ".........................",
+        "----------------------------------------------------------------------",
+        "Ran 25 tests in 0.031s",
+        "",
+        "OK"
+      ]
+    },
+    "independent_review/test_reconciled_draft.py": {
+      "exit_code": 0,
+      "last_lines": [
+        "............",
+        "----------------------------------------------------------------------",
+        "Ran 12 tests in 0.027s",
+        "",
+        "OK"
+      ]
+    }
+  },
+  "full_independent_semantic_review": false,
+  "source_accepted": false,
+  "canonical_index_advanced": false
+}
