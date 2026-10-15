@@ -17,10 +17,10 @@
   "printed_table_rows": 36,
   "review_not_completed": "Source-image first pass exists for some spans; this automated order index does not validate every sentence or solve glyph ambiguities.",
   "upstream_sha256": {
-    "RULES_DRAFT.json": "5f00394346620e456fe8bd37409b240e5b6734c4b869019771b33c7f37614e6f",
+    "RULES_DRAFT.json": "21b16db9f0900097d6bfd44793da3a607655c079c16ee19304d3767e9973484d",
     "SOURCE_IMAGE_MANIFEST.json": "def1ae80939cf339c8d3aa877ea2084370efa8fef8c53bcb3bb6ac5f1d549617",
     "PRINTED_DIRECTION_TABLES.json": "fe1f02125330fd741f290fe2805a922f35a13a133e1151759c6a302035a65cae",
-    "UNRESOLVED_DRAFT.json": "4199209a969da6e5266e6b5beb8b99121b738e0f9c705ccd65f8686cea646b03"
+    "UNRESOLVED_DRAFT.json": "bee0ee8281325180dbabbf1e5ff5bd0d289dc901e877d9440bf1b40272508527"
   },
   "sections": [
     {
@@ -934,7 +934,8 @@
       "cross_page_records": [
         2631,
         2632,
-        2633
+        2633,
+        2655
       ]
     },
     {
@@ -943,6 +944,7 @@
       "original_image": "evidence/pdf-386.png",
       "sha256": "29520a33312fd4876f92f00dcb7bca5b045e7d848981d6e8346c5ea3db081527",
       "all_records_referencing_page": [
+        2655,
         2656,
         2657,
         2658,
@@ -988,7 +990,10 @@
         2657,
         2663
       ],
-      "cross_page_records": []
+      "cross_page_records": [
+        2655,
+        2674
+      ]
     },
     {
       "original_pdf_page": 387,
@@ -996,6 +1001,7 @@
       "original_image": "evidence/pdf-387.png",
       "sha256": "8246d2482d740ae5862f000118608a9a33f7ad8c5380754d66df63bd9c1396d6",
       "all_records_referencing_page": [
+        2674,
         2675,
         2676,
         2677,
@@ -1041,7 +1047,9 @@
         2676,
         2685
       ],
-      "cross_page_records": []
+      "cross_page_records": [
+        2674
+      ]
     },
     {
       "original_pdf_page": 388,
@@ -1261,7 +1269,9 @@
         2770
       ],
       "headings": [],
-      "cross_page_records": []
+      "cross_page_records": [
+        2770
+      ]
     },
     {
       "original_pdf_page": 392,
@@ -1269,6 +1279,7 @@
       "original_image": "evidence/pdf-392.png",
       "sha256": "a908139d82b36d67d6c020ce2dc129e6521bcfa48afc2c85565830b71690e97b",
       "all_records_referencing_page": [
+        2770,
         2771,
         2772,
         2773,
@@ -1321,7 +1332,10 @@
       "headings": [
         2781
       ],
-      "cross_page_records": []
+      "cross_page_records": [
+        2770,
+        2793
+      ]
     },
     {
       "original_pdf_page": 393,
@@ -1329,6 +1343,7 @@
       "original_image": "evidence/pdf-393.png",
       "sha256": "a4571e1b1906cda22de808194985bd7458b17844479b66eaa230baf1687ac453",
       "all_records_referencing_page": [
+        2793,
         2794,
         2795,
         2796,
@@ -1380,7 +1395,9 @@
         2795,
         2807
       ],
-      "cross_page_records": []
+      "cross_page_records": [
+        2793
+      ]
     },
     {
       "original_pdf_page": 394,
@@ -1860,6 +1877,22 @@
       "page_role": "LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF"
     },
     {
+      "record": 2655,
+      "pdf_pages": [
+        385,
+        386
+      ],
+      "page_role": "LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF"
+    },
+    {
+      "record": 2674,
+      "pdf_pages": [
+        386,
+        387
+      ],
+      "page_role": "LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF"
+    },
+    {
       "record": 2714,
       "pdf_pages": [
         388,
@@ -1872,6 +1905,22 @@
       "pdf_pages": [
         389,
         390
+      ],
+      "page_role": "LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF"
+    },
+    {
+      "record": 2770,
+      "pdf_pages": [
+        391,
+        392
+      ],
+      "page_role": "LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF"
+    },
+    {
+      "record": 2793,
+      "pdf_pages": [
+        392,
+        393
       ],
       "page_role": "LITERAL_PRINTED_CLAUSE_CONTINUES_OVER_LEAF"
     }

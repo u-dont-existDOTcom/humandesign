@@ -2,7 +2,7 @@
   "batch": "B02v",
   "phase": "FINAL_SEGMENT_OF_CHAPTER_L",
   "status": "RETAINED_SOURCE_UNCERTAINTIES_ON_UNACCEPTED_CANDIDATE",
-  "retained_count": 70,
+  "retained_count": 74,
   "issues": [
     {
       "id": "U01",
@@ -353,6 +353,26 @@
       "id": "U70",
       "status": "SOURCE_MARGINAL_PRECONDITION_CORRECTION",
       "description": "Original PDF386/printed352 elemental compass-direction sentence has marginal instruction 'This is, when Goods are certainly known to be out of the House.' Earlier R2670 omitted this gating premise. Added the outside-house qualification only to elemental-direction rule, not unrelated adjacent interior-room conditions."
+    },
+    {
+      "id": "U71",
+      "status": "SOURCE_CROSS_PAGE_LOCATOR_CORRECTED",
+      "description": "Original 1647 printed p351 Scorpio filthy-water clause ends 'cast' and continues at p352 'cast out filthy Water, as a Gutter'. R2655 previously cited PDF385 alone; corrected to [385,386]."
+    },
+    {
+      "id": "U72",
+      "status": "SOURCE_CROSS_PAGE_LOCATOR_CORRECTED",
+      "description": "Haly's Leo-ascending sentence starts original PDF386/printed352 and completes 'ing and Venus therein' on PDF387/printed353. R2674 cites the continuation but formerly listed PDF386 only; corrected [386,387], without claiming an authenticated outcome."
+    },
+    {
+      "id": "U73",
+      "status": "SOURCE_CROSS_PAGE_LOCATOR_CORRECTED",
+      "description": "Printed p357/358 source sentence for R2770 ends with 'all these' on PDF391 and 'signify recovery' on PDF392; corrected source locator [391,392], one source outcome."
+    },
+    {
+      "id": "U74",
+      "status": "SOURCE_CROSS_PAGE_AND_OPTIONAL_QUALIFIER_CORRECTED",
+      "description": "Printed p358/359 second-lord-in-exaltation clause starts PDF392 and completes 'great hope of recovery' PDF393. R2793 now cites both; R2794 separately records the printed 'especially if other testimony', NOT requiring that testimony as an AND prerequisite or counting independent outcome."
     }
   ],
   "no_clinical_criminal_or_predictive_evidence": true
