@@ -1,3 +1,9 @@
+# Original Lilly source research — Chapter LXXXIII restoration
+
+Current 2026-10-16: LXXXIII original historical source locally admitted, subject to authenticated research-branch publication. Lilly 4,875 + Ptolemy 1,066 = 5,941 documentary annotations after remote proof. Next LXXXIV profession aptitude begins original PDF484 below divider. New independent empirical validations zero; runtime promotions zero. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04c_CHAPTER_LXXXIII_COMPLETE.md.
+
+---
+
 # Original Lilly source research — Chapter LXXXII
 
 CURRENT 2026-10-16: Original Chapter LXXXII historical office/preferment source locally admitted and queued for remote research publication: Lilly **4,829** + retained Ptolemy **1,066** = **5,895** documentary records once remote readback passes. Next LXXXIII starts original PDF482. Office acquisition, loss, transfer and retention are distinct branches; no verified predictive successes or runtime promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04b_CHAPTER_LXXXII_COMPLETE.md.

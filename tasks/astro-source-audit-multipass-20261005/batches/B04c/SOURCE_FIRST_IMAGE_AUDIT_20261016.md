@@ -1,0 +1,11 @@
+# Original Lilly Chapter LXXXIII — restoration source-image audit
+
+Original witness: *Christian Astrology* first edition (1647), Wellcome b30338724, full PDF SHA-256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Direct original scan pages PDF482/printed448, PDF483/printed449, PDF484/printed450, all separately frozen by SHA256 and byte length.
+
+Original LXXXIII begins **below the line** separating prior chapter LXXXII on PDF482. Its introduction continues over the PDF482–483 seam. PDF483 contains most rules, and PDF484 ends with the adverse angular conjunction no-return branch. A new horizontal divider introduces Chapter LXXXIV about suitable profession, trade and magistery on PDF484; that material is excluded except navigation.
+
+In the context of English civil disturbances, Lilly discusses the possibility of a displaced monarch or officeholder recovering a former kingdom, post or honors. He gives first lord to the applicant and tenth to position. Favorable testimony includes direct joining, the heavier receiving planet regarding tenth, alternative Moon conjunction to a planet in first/tenth, a favorable aspect by the tenth lord, and another reception-based route. Cardinal Moon signs imply earlier return without a precise period. A peregrine receiver under earth provides an exception and absent reception can reverse the judgment.
+
+Crucially the outcome **changes by zodiac sign**: eight printed signs under a benefic Moon conjunction suggest return to the old position, while Gemini, Virgo, Sagittarius and Pisces suggest gaining sovereignty or an office **in another place/country** rather than returning. Another Moon/ninth-house passage is ambiguous in glyphs and requires diplomatic caution. The chapter ends with a distinct no-return judgment involving the tenth lord and Moon angularly hindered by corporal malefic contacts.
+
+This is a historical source comparison only, not a contemporaneous dated forecast for a named individual. It contains no independent verified kingdom restoration, office reinstatement, alternative sovereignty, or nonreturn observation. Source anchors are snippets, not a full diplomatic transcription or independently recalculated chart. 46 source annotations, 8 passage groups and 17 explicit limitations. Zero new empirical validations or runtime promotions.
