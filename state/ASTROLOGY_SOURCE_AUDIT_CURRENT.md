@@ -1,3 +1,9 @@
+# Current original astrology source research — Chapter LXVIII
+
+CURRENT 2026-10-16: Lilly Chapter LXVIII original wife-portion/dowry source accepted. After authenticated research publication: 3,976 Lilly + 1,066 retained Ptolemy = 5,042 original historical documentary units. Next Chapter LXIX fear/danger begins original PDF448/printed414. No independent predictive case validations, no runtime model changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03n_CHAPTER_LXVIII_COMPLETE.md and B03n acceptance/publication receipts.
+
+---
+
 # Current astrology historical source study — Lilly Chapter LXVII complete
 
 CURRENT 2026-10-16: Original Lilly Chapter LXVII (absent status, return, lifespan, spouse and manner-of-death historical source statements) accepted for DOCUMENTARY research. After authenticated research publication, accepted Lilly 3,932 plus retained Ptolemy 1,066 = 4,998 historical source annotations. Original PDF438–446; next chapter LXVIII wife portion begins PDF446 below divider. No independent empirical prediction success and zero runtime scoring changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03m_CHAPTER_LXVII_COMPLETE.md and B03m acceptance, archive and publication receipts.
