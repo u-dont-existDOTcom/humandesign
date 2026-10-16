@@ -1,3 +1,9 @@
+# Original Lilly source research — Chapter LXXXV Prince Rupert
+
+CURRENT 2026-10-16: locally accepted 72 original-source-only records. Upon authenticated remote publication Lilly **5,026** + Ptolemy **1,066** = **6,092** historical annotations; next Chapter LXXXVI starts original PDF489/printed455. Prince Rupert personal safety vs war glory vs Essex victory vs custody are separate endpoints; historical author's admitted partial custody error retained. Independent prediction validations and runtime promotions remain zero. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04e_CHAPTER_LXXXV_COMPLETE.md.
+
+---
+
 # Original Lilly source study — Chapter LXXXIV vocational rules
 
 CURRENT 2026-10-16: locally accepted LXXXIV 79 documentary records. Upon authenticated research-branch publication, cumulative Lilly 4,954 + Ptolemy 1,066 = 6,020 historical original source units. Original Mars+Venus vocational significators visually confirmed on PDF484. No independent career validation; zero runtime model changes. Next LXXXV Prince Rupert/Essex begins PDF486. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04d_CHAPTER_LXXXIV_COMPLETE.md.

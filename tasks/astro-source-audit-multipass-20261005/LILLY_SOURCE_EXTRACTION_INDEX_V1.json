@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXXIV_HISTORICAL_SOURCE_ONLY_NEXT_LXXXV_OPEN",
-  "records_count": 4954,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXXV_HISTORICAL_SOURCE_ONLY_NEXT_LXXXVI_OPEN",
+  "records_count": 5026,
   "read_numbered_chapters": [
     1,
     2,
@@ -88,7 +88,8 @@
     81,
     82,
     83,
-    84
+    84,
+    85
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -483,25 +484,32 @@
       "records_count": 79,
       "sha256": "455fa58aa8b35ea5d78eb5020ffaaff0883c4c1c758fc1b456c7a7412b9d66cc",
       "scope": "Original Lilly (1647) Book II LXXXIV profession, magistery and trade horary source. Original PDF484-485 printed450-451, following LXXXV figure navigation on PDF486. 77 historical substantive sign-to-vocation annotations plus two navigation, 15 original source groups, 24 interpretive limits. Mars and Venus vocational significator glyphs visually verified, no independent human vocational prediction."
+    },
+    {
+      "id": "B04e",
+      "path": "batches/B04e/RULES.json",
+      "records_count": 72,
+      "sha256": "f2106c9c918c25b3c969d15d418fdbb4bc5557fb51f692cfa40d6873b6fb2d22",
+      "scope": "Original William Lilly first-edition (1647) Chapter LXXXV Prince Rupert vs Earl of Essex and later fate, original PDF486–488 / printed452–454. 70 substantive source annotations and 2 following LXXXVI navigation, 11 primary-image passages, 25 source uncertainties. Includes prior Edgehill event (not forecast), later 1646 Oxford Rupert fate and Lilly's explicit partial error, 0 empirical prediction validations."
     }
   ],
   "next": {
-    "pdf_page": 486,
-    "printed_page": 452,
-    "chapter": "LXXXV",
-    "printed_chapter_numeral": "LXXXV",
-    "heading": "If Prince Rupert should get honour by our Warres, or worst the Earle of Essex?",
+    "pdf_page": 489,
+    "printed_page": 455,
+    "chapter": "LXXXVI",
+    "printed_chapter_numeral": "LXXXVI",
+    "heading": "If his Majesty should procure Forces out of Ireland; and if the Queen should advance with her Army",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF486/printed452 new polygonal horary 28 November 1642 9:23 AM; distinct Prince Rupert/Essex historical wartime case."
+    "position": "Original PDF489/printed455 separate Irish forces/Queen Northern army questions; distinct square horary figure after Prince Rupert case closed on PDF488."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04d_CHAPTER_LXXXIV_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04e_CHAPTER_LXXXV_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -539,5 +547,6 @@
   "chapter_LXXXI_source_acceptance_note": "57 original source annotations R4632-R4688, 54 alchemy worked-question content and 3 next-section navigation; eleven image passage groups and twenty interpretive limits. Lilly believes in Stone but warns this querent to stop and makes separate consumption claim; none independently authenticated or medically validated.",
   "chapter_LXXXII_source_acceptance_note": "141 original documentary records R4689–R4829 (139 substantive office/tenure clauses, two LXXXIII navigation). Separate office attainment from retention, transfer, removal and reinstatement; 21 source passages and 26 limitations; no independent verified outcome, no runtime change.",
   "chapter_LXXXIII_source_acceptance_note": "46 historical records R4830-R4875; 44 restoration/alternative-land/negative clauses and two LXXXIV navigation markers; 8 passages, 17 unresolved limits, zero independent authenticated restorations.",
-  "chapter_LXXXIV_source_acceptance_note": "79 historical source annotations R4876-R4954, 77 LXXXIV sign-based vocation claims and two LXXXV navigation markers; 15 original passages and 24 uncertainty statements. Query-time figure replaces unknown birth time; Mars and Venus transcribed; no independently verified career outcome."
+  "chapter_LXXXIV_source_acceptance_note": "79 historical source annotations R4876-R4954, 77 LXXXIV sign-based vocation claims and two LXXXV navigation markers; 15 original passages and 24 uncertainty statements. Query-time figure replaces unknown birth time; Mars and Venus transcribed; no independently verified career outcome.",
+  "chapter_LXXXV_source_acceptance_note": "72 original source annotations R4955-R5026: 70 Rupert/Essex/honor/fate source claims plus two navigation; 11 original passage groups and 25 limitations; includes author's Edgehill retrospective and admitted partial failure on Rupert custody in 1646; zero independently validated forecasts."
 }
