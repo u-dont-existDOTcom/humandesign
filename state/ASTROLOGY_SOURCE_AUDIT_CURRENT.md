@@ -1,3 +1,9 @@
+# Original Lilly research current — Chapter LXXXVI
+
+CURRENT 2026-10-16: Original Chapter LXXXVI historical King/Irish reinforcements/Queen source accepted locally, pending remote authenticated research publication. On publication, Lilly **5,080** + retained Ptolemy **1,066** = **6,146 historical source annotations**. Next LXXXVII opens PDF490 below divider. No explicit absolute LXXXVI figure date; the reported July 1643 reunion is author-retrospective and destruction forecast differs from only partial losses. No empirical predictive validation or runtime rule change. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04f_CHAPTER_LXXXVI_COMPLETE.md.
+
+---
+
 # Original Lilly source research — Chapter LXXXV Prince Rupert
 
 CURRENT 2026-10-16: locally accepted 72 original-source-only records. Upon authenticated remote publication Lilly **5,026** + Ptolemy **1,066** = **6,092** historical annotations; next Chapter LXXXVI starts original PDF489/printed455. Prince Rupert personal safety vs war glory vs Essex victory vs custody are separate endpoints; historical author's admitted partial custody error retained. Independent prediction validations and runtime promotions remain zero. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04e_CHAPTER_LXXXV_COMPLETE.md.

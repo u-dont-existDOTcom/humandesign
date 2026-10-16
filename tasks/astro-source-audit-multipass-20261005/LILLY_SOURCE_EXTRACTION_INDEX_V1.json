@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXXV_HISTORICAL_SOURCE_ONLY_NEXT_LXXXVI_OPEN",
-  "records_count": 5026,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXXVI_HISTORICAL_SOURCE_ONLY_NEXT_LXXXVII_OPEN",
+  "records_count": 5080,
   "read_numbered_chapters": [
     1,
     2,
@@ -89,7 +89,8 @@
     82,
     83,
     84,
-    85
+    85,
+    86
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -491,25 +492,32 @@
       "records_count": 72,
       "sha256": "f2106c9c918c25b3c969d15d418fdbb4bc5557fb51f692cfa40d6873b6fb2d22",
       "scope": "Original William Lilly first-edition (1647) Chapter LXXXV Prince Rupert vs Earl of Essex and later fate, original PDF486–488 / printed452–454. 70 substantive source annotations and 2 following LXXXVI navigation, 11 primary-image passages, 25 source uncertainties. Includes prior Edgehill event (not forecast), later 1646 Oxford Rupert fate and Lilly's explicit partial error, 0 empirical prediction validations."
+    },
+    {
+      "id": "B04f",
+      "path": "batches/B04f/RULES.json",
+      "records_count": 54,
+      "sha256": "42069ab80e3490645cffc385a62e726d902a8a1c43381d9294b78d2c521b59ae",
+      "scope": "Original Lilly 1647 Book II LXXXVI separate King/Irish forces and Queen northern army case, original PDF489–490 printed455–456, 52 substantive historical clauses and two LXXXVII navigation markers, ten source passages, twenty-four caveats. Source figure's absolute date unresolved; source retrospectively reports 14 July 1643 reunion and limited Queen army losses versus more categorical destruction forecast. No independently validated prediction."
     }
   ],
   "next": {
-    "pdf_page": 489,
-    "printed_page": 455,
-    "chapter": "LXXXVI",
-    "printed_chapter_numeral": "LXXXVI",
-    "heading": "If his Majesty should procure Forces out of Ireland; and if the Queen should advance with her Army",
+    "pdf_page": 490,
+    "printed_page": 456,
+    "chapter": "LXXXVII",
+    "printed_chapter_numeral": "LXXXVII",
+    "heading": "If attaine the Preferment desired?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF489/printed455 separate Irish forces/Queen Northern army questions; distinct square horary figure after Prince Rupert case closed on PDF488."
+    "position": "Original PDF490/printed456 below LXXXVI closing and divider; next gentleman asks within 4–5 minutes of prior question. No new printed figure at this divider."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04e_CHAPTER_LXXXV_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04f_CHAPTER_LXXXVI_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -548,5 +556,6 @@
   "chapter_LXXXII_source_acceptance_note": "141 original documentary records R4689–R4829 (139 substantive office/tenure clauses, two LXXXIII navigation). Separate office attainment from retention, transfer, removal and reinstatement; 21 source passages and 26 limitations; no independent verified outcome, no runtime change.",
   "chapter_LXXXIII_source_acceptance_note": "46 historical records R4830-R4875; 44 restoration/alternative-land/negative clauses and two LXXXIV navigation markers; 8 passages, 17 unresolved limits, zero independent authenticated restorations.",
   "chapter_LXXXIV_source_acceptance_note": "79 historical source annotations R4876-R4954, 77 LXXXIV sign-based vocation claims and two LXXXV navigation markers; 15 original passages and 24 uncertainty statements. Query-time figure replaces unknown birth time; Mars and Venus transcribed; no independently verified career outcome.",
-  "chapter_LXXXV_source_acceptance_note": "72 original source annotations R4955-R5026: 70 Rupert/Essex/honor/fate source claims plus two navigation; 11 original passage groups and 25 limitations; includes author's Edgehill retrospective and admitted partial failure on Rupert custody in 1646; zero independently validated forecasts."
+  "chapter_LXXXV_source_acceptance_note": "72 original source annotations R4955-R5026: 70 Rupert/Essex/honor/fate source claims plus two navigation; 11 original passage groups and 25 limitations; includes author's Edgehill retrospective and admitted partial failure on Rupert custody in 1646; zero independently validated forecasts.",
+  "chapter_LXXXVI_source_acceptance_note": "54 historical records R5027–R5080, 52 substantive and two LXXXVII navigation; 10 source passage groups and 24 open limits. Distinguish Irish aid, temporary utility, Queen march, reunion date, losses; absolute horary figure date unresolved, full destruction not found in author's reported outcome."
 }
