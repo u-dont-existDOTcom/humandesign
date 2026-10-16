@@ -1,0 +1,13 @@
+# First-edition source review — Chapter LXXIX *If he should obtaine the Parsonage desired*
+
+Authoritative witness: William Lilly, *Christian Astrology* (1647 first edition), Wellcome b30338724, full original PDF SHA-256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Original JPEGs PDF471/printed437, PDF472/printed438 and PDF473/printed439 are recorded separately with bytes and SHA256 in SOURCE_WINDOW_MANIFEST.json.
+
+**Exact source boundaries:** Original LXXIX begins halfway down PDF471, after the preceding LXXVIII dream conclusion and a long separating rule. Its circular horoscope prints 6 August 1644, **8:24 PM**. The judgment starts below the figure on PDF471, continues to PDF472 and ends before the separate chapter LXXX heading at the **top of PDF473**. LXXX bears a different chart: 11 March with the year printed as **1646 over 7**, at **4:45 PM**. This dual-year notation must not be silently simplified to a single Gregorian calendar date. The LXXX content is navigation only.
+
+**Separate premises and causal hypotheses:** On PDF471 Lilly names the applicant, Saturn in the ascendant, Mars first ruler, Moon, and Jupiter ninth ruler for the parsonage. On PDF472 he enumerates six reasons against obtaining it: (1) missing Jupiter/Mars joining and missing Moon-to-Jupiter aspect; (2) Mars or Moon not in ninth; (3) no transfer/collection of Jupiter's light to Mars; (4) absent Jupiter/Mars reception; (5) impeded Saturn in ascendant; and (6) Moon separating from Mars and applying by opposition to Mercury ruling third, triggering a fear of neighbors' adverse messages. A separate Venus-in-seventh branch predicts possible women's interference.
+
+**What he claims happened:** Lilly says he advised abandoning the application. The parson continued and believed it assured, but allegedly a disparaging letter about a woman destroyed his hopes. These are solely the author's uncorroborated statements, not independently dated/preserved advice, letter, parsonage registers or an authenticated decline.
+
+**Ex post suspect speculation:** Lilly writes that neither the querent nor he established the identity of the obstructing neighbor. He then hypothesizes a cattle farmer or miller northeast about fifteen furlongs and other character traits. This must NEVER be counted as a successful identification. It is explicitly conditional/post-case interpretation.
+
+**Acceptance scope:** 41 original-source historical annotations, 39 LXXIX substantive and two next-chapter navigation, seven original span groups, one physical page seam (471–472), 17 source limits retained. No documented, prospectively frozen, independently assessed successful prediction and no runtime promotion.

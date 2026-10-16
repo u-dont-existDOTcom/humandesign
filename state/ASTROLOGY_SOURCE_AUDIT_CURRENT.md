@@ -1,3 +1,9 @@
+# Original historical Lilly research — Chapter LXXIX
+
+CURRENT 2026-10-16: Chapter LXXIX original parsonage denial case documentary accepted; upon authenticated branch publication **4,549 Lilly + 1,066 retained Ptolemy = 5,615 historical source records**. Next LXXX opens PDF473/printed439. Author-only account of a damaging letter; identity of informer unverified; no empirical validation or runtime promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03y_CHAPTER_LXXIX_COMPLETE.md.
+
+---
+
 # Original Lilly research current — Chapter LXXVIII
 
 CURRENT 2026-10-16: LXXVIII terrible dreams case documentary source locally admitted and queued for authenticated research-branch publication, cumulative Lilly 4,508 and retained Ptolemy 1,066 = 5,574 historical records after remote confirmation. Next chapter LXXIX begins original PDF471/printed437 below the divider. The author alone claims the separated personal-safety and financial-loss forecast proved true; independent predictive validations remain zero; no runtime promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03x_CHAPTER_LXXVIII_COMPLETE.md.
