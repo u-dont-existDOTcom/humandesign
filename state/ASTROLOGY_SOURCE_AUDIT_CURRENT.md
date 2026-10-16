@@ -1,3 +1,9 @@
+# Current astrology original-source research through Chapter LXXI
+
+CURRENT 2026-10-16: Lilly LXXI source-only historical documentary case, 4,093 Lilly + 1,066 Ptolemy = 5,159 after publication. Next LXXII original PDF453. First rumor false; news in May, actual return only July. No independent validations. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03q_CHAPTER_LXXI_COMPLETE.md.
+
+---
+
 # Current original astrology source research
 
 Current 2026-10-16: Chapter LXX admitted as historical source only. Lilly 4,052 plus Ptolemy 1,066 after research publication. Next LXXI PDF451. No empirical prediction or runtime promotion.

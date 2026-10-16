@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXX_DOCUMENTARY_SOURCE_ONLY_NEXT_LXXI_OPEN",
-  "records_count": 4052,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXI_DOCUMENTARY_SOURCE_ONLY_NEXT_LXXII_OPEN",
+  "records_count": 4093,
   "read_numbered_chapters": [
     1,
     2,
@@ -74,7 +74,8 @@
     67,
     68,
     69,
-    70
+    70,
+    71
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -371,24 +372,31 @@
       "records_count": 45,
       "sha256": "82f72c1a7d2ae5e32f95c1828bad56d8d08dd605f7865551613888ee0a2950e3",
       "scope": "Original 1647 Lilly Book II Chapter LXX, separate 6 Feb 1644 9:10 PM spouse death-order case; original PDF449-450 plus next LXXI heading PDF451. 44 historical case source assertions and one next navigation, 14 source passages, 18 uncertainties. Author reports grave pre-existing illness and a later 8 Oct outcome after a forecast late Sep/early Oct of death OR grave danger; no independent case validation."
+    },
+    {
+      "id": "B03q",
+      "path": "batches/B03q/RULES.json",
+      "records_count": 41,
+      "sha256": "3f7b9d767176f9bf1e26fed980792b87b94312369f696b59585e0ce5f40d6026",
+      "scope": "Lilly original 1647 LXXI wife enquires about husband at sea, 15 April 1645 1:10 PM square figure, original PDF451-452 with LXXII heading PDF453. 40 historical clauses plus one navigation, 10 visual source passages and 18 limits; early false rumor in 2-3 days, later news in second week May rather than exactly May 5, physical return only July, retrospective Barnstable location. No independently verified predictions."
     }
   ],
   "next": {
-    "pdf_page": 451,
-    "printed_page": 417,
-    "chapter": "LXXI",
-    "heading": "A Woman of her Husband at Sea, if alive, where, when return?",
+    "pdf_page": 453,
+    "printed_page": 419,
+    "chapter": "LXXII",
+    "heading": "What manner of Death Canterbury should dye?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "New Chapter LXXI begins original PDF451/printed417 with distinct square figure dated 15 April 1645."
+    "position": "Original PDF453 begins separate chapter on Archbishop of Canterbury, own circular horoscope dated 3 December 1644."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03p_CHAPTER_LXX_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03q_CHAPTER_LXXI_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -412,5 +420,6 @@
   "chapter_LXVII_source_acceptance_note": "186 original-source documentary annotations R3747–R3932, including 184 Chapter LXVII source claims and two LXVIII next-heading navigation markers. Thirty-eight original passage groups map to all annotations, with eight consecutive two-page seams and 31 retained uncertainties. No independently observed missing-person returns, deaths, spouse ordering or clinical causes; flexible death/return-time units and derived-house/reception exceptions are historical text, not validated predictive rules.",
   "chapter_LXVIII_source_acceptance_note": "44 historical documentary units (43 wealth clauses, one LXIX heading); 11 original-page spans, 15 uncertainties. Eighth vs second house, good versus delayed payment, square/opposition and reception conditions retained; original warns rules not universal. Zero verified property or fraud outcomes.",
   "chapter_LXIX_source_acceptance_note": "31 historical source units R3977-R4007; generic source doctrine only, no dated figure, 12 reverse original-image passages and 14 uncertainties. Different conditions for unwarranted fear versus harm, benefics, infortunes, rumors and Moon-Sun disclosure; zero verified person outcomes.",
-  "chapter_LXX_source_acceptance_note": "45 original historical documentary records R4008-R4052, 14 visual passage groups, 18 textual limits. Original 6 Feb 1644 case, severe illness known, missing natal data and source-reported 8 Oct later outcome. Forecast was late September/beginning October death OR great danger, not an exact preannounced 8 Oct death. Zero independent prediction validations."
+  "chapter_LXX_source_acceptance_note": "45 original historical documentary records R4008-R4052, 14 visual passage groups, 18 textual limits. Original 6 Feb 1644 case, severe illness known, missing natal data and source-reported 8 Oct later outcome. Forecast was late September/beginning October death OR great danger, not an exact preannounced 8 Oct death. Zero independent prediction validations.",
+  "chapter_LXXI_source_acceptance_note": "41 original source annotations R4053-R4093, 10 original passage groups and 18 limits. The early report of husband in town was false; later reliable news in May and actual return in July are distinct. Later claimed Barnstable location not independently verified; zero empirical successes."
 }
