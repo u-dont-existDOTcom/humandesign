@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXXIII_HISTORICAL_ONLY_NEXT_LXXXIV_OPEN",
-  "records_count": 4875,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXXIV_HISTORICAL_SOURCE_ONLY_NEXT_LXXXV_OPEN",
+  "records_count": 4954,
   "read_numbered_chapters": [
     1,
     2,
@@ -87,7 +87,8 @@
     80,
     81,
     82,
-    83
+    83,
+    84
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -475,25 +476,32 @@
       "records_count": 46,
       "sha256": "47e77244a0a12388fadc8356a9f6d2cf8343772b8127882609d407c6226566df",
       "scope": "First-edition William Lilly Book II LXXXIII restoration to former office/kingdom, original PDF482-484. 44 historical clauses and two separate following-chapter navigation units, eight passages and 17 unresolved conditions, with restoration elsewhere distinct from return, zero independent empirical outcomes."
+    },
+    {
+      "id": "B04d",
+      "path": "batches/B04d/RULES.json",
+      "records_count": 79,
+      "sha256": "455fa58aa8b35ea5d78eb5020ffaaff0883c4c1c758fc1b456c7a7412b9d66cc",
+      "scope": "Original Lilly (1647) Book II LXXXIV profession, magistery and trade horary source. Original PDF484-485 printed450-451, following LXXXV figure navigation on PDF486. 77 historical substantive sign-to-vocation annotations plus two navigation, 15 original source groups, 24 interpretive limits. Mars and Venus vocational significator glyphs visually verified, no independent human vocational prediction."
     }
   ],
   "next": {
-    "pdf_page": 484,
-    "printed_page": 450,
-    "chapter": "LXXXIV",
-    "printed_chapter_numeral": "LXXXIV",
-    "heading": "Of the Profession, Magistery or Trade any one is capable of",
+    "pdf_page": 486,
+    "printed_page": 452,
+    "chapter": "LXXXV",
+    "printed_chapter_numeral": "LXXXV",
+    "heading": "If Prince Rupert should get honour by our Warres, or worst the Earle of Essex?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF484/printed450 BELOW separate LXXXIII horizontal divider, begins profession guidance."
+    "position": "Original PDF486/printed452 new polygonal horary 28 November 1642 9:23 AM; distinct Prince Rupert/Essex historical wartime case."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04c_CHAPTER_LXXXIII_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04d_CHAPTER_LXXXIV_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -530,5 +538,6 @@
   "chapter_LXXX_source_acceptance_note": "82 historical annotations R4550-R4631, 80 LXXX source clauses plus two navigation markers, 13 original page groups and 24 limits. Lilly's 11 March 1646/7 three-year forecast qualified by statu quo reforms and multiple alternatives; no independently verified English institutional prediction.",
   "chapter_LXXXI_source_acceptance_note": "57 original source annotations R4632-R4688, 54 alchemy worked-question content and 3 next-section navigation; eleven image passage groups and twenty interpretive limits. Lilly believes in Stone but warns this querent to stop and makes separate consumption claim; none independently authenticated or medically validated.",
   "chapter_LXXXII_source_acceptance_note": "141 original documentary records R4689–R4829 (139 substantive office/tenure clauses, two LXXXIII navigation). Separate office attainment from retention, transfer, removal and reinstatement; 21 source passages and 26 limitations; no independent verified outcome, no runtime change.",
-  "chapter_LXXXIII_source_acceptance_note": "46 historical records R4830-R4875; 44 restoration/alternative-land/negative clauses and two LXXXIV navigation markers; 8 passages, 17 unresolved limits, zero independent authenticated restorations."
+  "chapter_LXXXIII_source_acceptance_note": "46 historical records R4830-R4875; 44 restoration/alternative-land/negative clauses and two LXXXIV navigation markers; 8 passages, 17 unresolved limits, zero independent authenticated restorations.",
+  "chapter_LXXXIV_source_acceptance_note": "79 historical source annotations R4876-R4954, 77 LXXXIV sign-based vocation claims and two LXXXV navigation markers; 15 original passages and 24 uncertainty statements. Query-time figure replaces unknown birth time; Mars and Venus transcribed; no independently verified career outcome."
 }

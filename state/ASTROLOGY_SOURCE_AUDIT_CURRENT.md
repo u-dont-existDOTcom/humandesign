@@ -1,3 +1,9 @@
+# Original Lilly source study — Chapter LXXXIV vocational rules
+
+CURRENT 2026-10-16: locally accepted LXXXIV 79 documentary records. Upon authenticated research-branch publication, cumulative Lilly 4,954 + Ptolemy 1,066 = 6,020 historical original source units. Original Mars+Venus vocational significators visually confirmed on PDF484. No independent career validation; zero runtime model changes. Next LXXXV Prince Rupert/Essex begins PDF486. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04d_CHAPTER_LXXXIV_COMPLETE.md.
+
+---
+
 # Original Lilly source research — Chapter LXXXIII restoration
 
 Current 2026-10-16: LXXXIII original historical source locally admitted, subject to authenticated research-branch publication. Lilly 4,875 + Ptolemy 1,066 = 5,941 documentary annotations after remote proof. Next LXXXIV profession aptitude begins original PDF484 below divider. New independent empirical validations zero; runtime promotions zero. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04c_CHAPTER_LXXXIII_COMPLETE.md.

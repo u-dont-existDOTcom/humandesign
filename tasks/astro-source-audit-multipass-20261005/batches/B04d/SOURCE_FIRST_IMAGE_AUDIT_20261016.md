@@ -1,0 +1,13 @@
+# William Lilly (1647) Chapter LXXXIV — original vocational source audit
+
+Primary witness: *Christian Astrology*, 1647 first edition, Wellcome b30338724, full original PDF SHA-256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Read original PDF484/printed450 and PDF485/printed451 as the complete Chapter LXXXIV. Separate Chapter LXXXV with dated Prince Rupert / Earl of Essex chart opens PDF486/printed452. Original images and their individual SHA-256s are frozen in SOURCE_WINDOW_MANIFEST.json.
+
+Opening premise: parents may lack the precise recorded natal time for a child. Rather than fabricate that birth time, Lilly prescribes casting a figure at the question time, considering ascendant/first ruler, tenth ruler and the most powerful of the special planetary trade significators. He starts with an Aries case incorporating planets in the four angles, fiery sign qualities, livestock/vehicle/metal craft, and dignified status as separate branches. An additional visual zoological taxonomy names five quadrupedal signs, three human signs (with an exception for Gemini/fowl), and three water signs, with angular and absence-of-planet qualifications.
+
+The next printed page supplies sign-specific catalogues for Taurus, Gemini, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius and Pisces. These encompass agricultural, livestock, clerical, mathematical, educational, mercantile, medical, religious, artisanal, maritime and entertainment roles. Aquarius includes a *water-sign planetary aspect* prerequisite for some sailing outcomes. Several trades appear under multiple signs, destroying any simplistic unique mapping. Cancer is referenced in the cross-sign water grouping but no separate detailed Cancer paragraph is added by the editor.
+
+The author also expresses period gender/class hierarchy, and derogatory judgments about children, especially under Pisces. These are historical claims, not empirical evidence about real human intelligence, worth, competence or professional suitability. Neither a named child, actual later career, controlled comparison nor prospectively frozen prediction is provided.
+
+**Documentary-only mapping:** 79 annotations, 15 original passage groups, 77 substantive LXXXIV records and two following-chapter navigation markers, 24 explicit retained uncertainties. No full independent diplomatic transcription or ephemeris/chart parity claimed. No independent vocational success or runtime astrology model change established.
+
+**Glyph fidelity:** Enlarged original PDF484 visually confirms the two vocational-significator glyphs as Mars (♂) and Venus (♀), not Mercury. The zoom is a review aid, while the authoritative original is the hashed PDF484 page.
