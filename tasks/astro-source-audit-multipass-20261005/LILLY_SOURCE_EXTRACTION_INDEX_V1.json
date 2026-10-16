@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXVI_DOCUMENTARY_SOURCE_ONLY_NEXT_LXVII_OPEN",
-  "records_count": 3746,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXVII_DOCUMENTARY_SOURCE_ONLY_NEXT_LXVIII_OPEN",
+  "records_count": 3932,
   "read_numbered_chapters": [
     1,
     2,
@@ -70,7 +70,8 @@
     63,
     64,
     65,
-    66
+    66,
+    67
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -339,25 +340,32 @@
       "records_count": 76,
       "sha256": "c93c7f0ffb09ea332f9b5fa11d50e56dcddaf44282d5833044b681c7b4d58c45",
       "scope": "Original Lilly 1647 Chapter LXVI Essex-Reading siege with unnumbered hypothetical lawsuit. Original PDF435 through top of PDF438 above eighth-house divider; 74 LXVI source units and two next-section navigation units; 19 original-to-record spans, 23 original uncertainty limits. Horoscope 17 April 1643 6:50 PM, surrender sentence literally prints 27 April 1644 whereas independent history is 27 April 1643, author admits three-day missed capture deadline; negotiations around forecast date separately preserved. Not empirical validation."
+    },
+    {
+      "id": "B03m",
+      "path": "batches/B03m/RULES.json",
+      "records_count": 186,
+      "sha256": "ac61ef69e7fb3d0357576afde979058cc902895306a90ff02f3d09ac2871eb57",
+      "scope": "Original William Lilly Christian Astrology 1647 Book II Chapter LXVII (If absent party be alive or dead?) plus six unnumbered subsections about return/news, timing, querent lifespan, spouse death order and supposed manner of death. Body original PDF438 below eighth-house preface through PDF446 above LXVIII divider. 184 historical chapter source assertions and two LXVIII navigation headings, 38 visual source spans and 31 retained textual limits; no independent human/clinical predictions validated."
     }
   ],
   "next": {
-    "pdf_page": 438,
-    "printed_page": 404,
-    "chapter": "LXVII",
-    "printed_chapter_numeral": "LXVII",
-    "heading": "If the absent party be alive or dead?",
+    "pdf_page": 446,
+    "printed_page": 412,
+    "chapter": "LXVIII",
+    "printed_chapter_numeral": "LXVIII",
+    "heading": "Whether the Portion of the Wife will be great, or easily obtained; or whether is the Woman enquired after rich or not?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "On original PDF438/printed404 after ornamental divider and eighth-house preface Of Death, Dowry, Substance of the Wife. LXVI's hypothetical lawsuit ends ABOVE the divider. LXVII begins a new original eighth-house subject; retain prefatory section heading separately."
+    "position": "Original PDF446/printed412 BELOW horizontal divider following final LXVII manner-of-death paragraph; separate wife-portion wealth chapter starts there and continues on subsequent original pages."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03l_CHAPTER_LXVI_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03m_CHAPTER_LXVII_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -377,5 +385,6 @@
   "chapter_LXIII_source_acceptance_note": "44 historical editorial units including next fish-case navigation marker, 15 reverse original-image source passages, 16 limits. Master Allen and Lilly differing thief signification methods preserved; 24 May 1647 stolen-money case author reports return within 3 days, no independent evidence. Printed next Chap LIV is a misnumbering; preserve original and chronological LXIV separately.",
   "chapter_LXIV_source_acceptance_note": "Source printed CHAP LIV Fish Stolen after LXIII; logically LXIV, distinct from earlier Book II LIV buying/selling. 59 historical source units including one LXV heading, 18 source-image passages, 20 source limitations. Author reported partial fish recovery, remainder relinquished; negative discovery-without-recovery rule retained. No independent case authentication or runtime algorithm promotion.",
   "chapter_LXV_source_acceptance_note": "40 historical editorial source units (39 LXV and one LXVI heading), 10 visual-source passages and 18 limitations. Enlarged original reads 29 Mar 1644, 10:12 AM, not May. Author-predicted 11–12 hour favorable news is not verified because letter arrival clock is unreported. Outcome letter and prisoner counts are source-internal, with explicit incomplete victory qualification.",
-  "chapter_LXVI_source_acceptance_note": "76 documentary annotations including two LXVII/eighth-house navigational markers, 19 original visual passages, 23 retained uncertainties. Original chart 17 Apr 1643; original surrender sentence literally 27 Apr 1644, external 1643; author says final surrender three days after predicted deadline, negotiations began near prediction date. Counterfactual lawsuit is same Chapter LXVI, not an observed lawsuit. Zero blind independent prediction validations or model changes."
+  "chapter_LXVI_source_acceptance_note": "76 documentary annotations including two LXVII/eighth-house navigational markers, 19 original visual passages, 23 retained uncertainties. Original chart 17 Apr 1643; original surrender sentence literally 27 Apr 1644, external 1643; author says final surrender three days after predicted deadline, negotiations began near prediction date. Counterfactual lawsuit is same Chapter LXVI, not an observed lawsuit. Zero blind independent prediction validations or model changes.",
+  "chapter_LXVII_source_acceptance_note": "186 original-source documentary annotations R3747–R3932, including 184 Chapter LXVII source claims and two LXVIII next-heading navigation markers. Thirty-eight original passage groups map to all annotations, with eight consecutive two-page seams and 31 retained uncertainties. No independently observed missing-person returns, deaths, spouse ordering or clinical causes; flexible death/return-time units and derived-house/reception exceptions are historical text, not validated predictive rules."
 }

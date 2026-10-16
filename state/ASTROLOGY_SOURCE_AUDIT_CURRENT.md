@@ -1,3 +1,9 @@
+# Current astrology historical source study — Lilly Chapter LXVII complete
+
+CURRENT 2026-10-16: Original Lilly Chapter LXVII (absent status, return, lifespan, spouse and manner-of-death historical source statements) accepted for DOCUMENTARY research. After authenticated research publication, accepted Lilly 3,932 plus retained Ptolemy 1,066 = 4,998 historical source annotations. Original PDF438–446; next chapter LXVIII wife portion begins PDF446 below divider. No independent empirical prediction success and zero runtime scoring changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03m_CHAPTER_LXVII_COMPLETE.md and B03m acceptance, archive and publication receipts.
+
+---
+
 # Current astrology original-source study — Chapter LXVI Reading siege
 
 CURRENT 2026-10-16: Lilly Book II Chapter LXVI (Reading siege plus hypothetical lawsuit) historically source-admitted. After authenticated research publication Lilly 3,746 plus Ptolemy 1,066 = 4,812 documentary records. Chart 17 April 1643; printed surrender 27 April 1644 vs independent 1643, with final surrender three days after author's predicted deadline. No independently verified predictive accuracy; runtime promotion zero. Next Chapter LXVII begins original PDF438/printed404 below eighth-house divider. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03l_CHAPTER_LXVI_COMPLETE.md and B03l acceptance, release, publication receipts. Overall research OPEN.
