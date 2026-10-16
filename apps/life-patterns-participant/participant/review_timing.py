@@ -26,9 +26,15 @@ ESTIMATE_BASIS = {
     "initial_triage": "limited pilot; two 81-turn first-batch runs around 112-114 seconds",
     "gap_admission": "limited pilot stage timings; broad planning range, not a deadline",
     "question_render": "limited pilot wording-stage timings; retries can take longer",
-    "reconciliation": "provisional; informed by legacy follow-up timings, not calibrated batch timings",
-    "omission_audit": "provisional; informed by a prior omission-audit run, not a calibrated distribution",
-    "final_synthesis": "provisional; informed by legacy full-review timings, not a measured synthesis-only range",
+    "reconciliation": (
+        "provisional; informed by legacy follow-up timings, not calibrated batch timings"
+    ),
+    "omission_audit": (
+        "provisional; informed by a prior omission-audit run, not a calibrated distribution"
+    ),
+    "final_synthesis": (
+        "provisional; informed by legacy full-review timings, not a measured synthesis-only range"
+    ),
     "final_admission": "provisional; informed by earlier independent-review timings",
     "legacy_review": "limited pilot; prior complete-review observation around eight minutes",
     "legacy_followup": "limited pilot; earlier follow-up observations around one to two minutes",
@@ -75,6 +81,66 @@ def action_forecast(status: str) -> dict:
     }
 
 
+def clarification_progress(payload: dict) -> dict:
+    """Read-only, source-bound progress; current batch is NOT the complete interview.
+
+    Future reviewer-admitted questions cannot be counted in advance. Never infer
+    lifetime total or completion from a single-question batch or a skipped answer.
+    """
+    status = str(payload["status"])
+    history = payload.get("clarification_history") or []
+    pending = payload.get("pending_clarifications") or []
+    if status == "clarification_needed" and not pending and payload.get("pending_clarification"):
+        pending = [payload["pending_clarification"]]
+    total = len(pending) if status == "clarification_needed" else 0
+    ready = status == "ready"
+    if ready:
+        stage = "independent_review_complete"
+        message = (
+            "Independent evidence review is complete. No more reviewer questions are "
+            "pending; participant confirmation, three secondary questions, and "
+            "final encrypted storage are separate steps."
+        )
+    elif status == "clarification_needed":
+        stage = "reviewer_clarification"
+        message = (
+            f"{total} question{'s' if total != 1 else ''} in the current batch only. "
+            "This does NOT mean that many remain in the entire interview. "
+            "Another independent review may admit further questions, or may "
+            "advance to the final evidence review. The overall count is unknown."
+        )
+    elif status in {"queued", "processing"}:
+        stage = "independent_review_running"
+        message = (
+            "The independent reviewer is processing the saved source. The next "
+            "outcome may be another useful clarification, full evidence synthesis, "
+            "or a ready review; total further questions cannot yet be predicted."
+        )
+    elif status in {"paused", "stopped", "withdrawn"}:
+        stage = "not_progressing"
+        message = "The review is not progressing; previous batches do not establish completion."
+    else:
+        stage = "review_blocked"
+        message = "Review is blocked or incomplete. A batch count is not a completion estimate."
+    return {
+        "stage": stage,
+        "clarifications_answered_or_skipped_total": len(history),
+        "current_batch_question_count": total,
+        "current_batch_only": True,
+        "overall_clarifications_remaining": 0 if ready else None,
+        "overall_remaining_known": ready,
+        "full_evidence_review_ready": ready,
+        "remaining_after_ready": []
+        if not ready
+        else [
+            "participant_review_and_confirmation",
+            "CF003_three_secondary_questions",
+            "encrypted_final_submission",
+        ],
+        "participant_message": message,
+    }
+
+
 def review_guidance(payload: dict, *, now: float | None = None) -> dict:
     now = time.time() if now is None else now
     status = payload["status"]
@@ -104,7 +170,8 @@ def review_guidance(payload: dict, *, now: float | None = None) -> dict:
         recommended = check if not queue_delayed else 300
         note = (
             "Your source is saved, but the reviewer has not started this stage. "
-            "Queue time is not predictable; the pilot reviewer needs the researcher's computer online. "
+            "Queue time is not predictable; the pilot reviewer needs the "
+            "researcher's computer online. "
             "Check again in about 5 minutes. Do not resubmit your record."
             if queue_delayed
             else "Your source is saved and queued. The estimate starts when the reviewer begins, "
@@ -134,16 +201,22 @@ def review_guidance(payload: dict, *, now: float | None = None) -> dict:
             )
     elif status == "clarification_needed":
         note = (
-            "Your clarification questions are ready. Answer them one at a time; "
-            "there is no review wait between independent questions in this batch. "
-            "After your answers are submitted, reconciliation and the full evidence review may follow."
+            "Your current clarification batch is ready. Its question count is "
+            "only for THIS BATCH, not the whole remaining interview. More "
+            "questions may be admitted after the next review, or it may advance "
+            "to final evidence synthesis. Overall remaining count is unknown. "
+            "There is no service wait between questions already in this batch."
         )
     elif status == "ready":
-        note = "The full evidence review is ready for your confirmation. No further server wait is needed now."
+        note = (
+            "The full evidence review is ready for your confirmation. "
+            "No further server wait is needed now."
+        )
     elif status in {"error", "resource_limited"}:
         note = (
             "The review is blocked, not still processing. Your source remains saved. "
-            "Waiting alone will not fix this; use the same review's retry after the issue is resolved."
+            "Waiting alone will not fix this; use the same review's retry "
+            "after the issue is resolved."
         )
     elif status == "paused":
         note = "The review is paused. Processing will resume only when you ask to resume it."
@@ -166,6 +239,7 @@ def review_guidance(payload: dict, *, now: float | None = None) -> dict:
         "recommended_check_after_seconds": recommended,
         "wait_guidance": note,
         "action_forecast": action_forecast(status),
+        "clarification_progress": clarification_progress(payload),
     }
 
 

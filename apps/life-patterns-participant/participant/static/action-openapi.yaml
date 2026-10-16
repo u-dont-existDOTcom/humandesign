@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Life Patterns Independent Review Pilot",
-    "version": "1.6.0",
-    "description": "Asynchronous independent review and exact-source submission for the development pilot."
+    "version": "1.6.1",
+    "description": "Asynchronous independent review and exact-source submission. Clarification batch counts are not overall interview remaining counts."
   },
   "servers": [
     {
@@ -844,6 +844,60 @@
               "phase",
               "known_service_calls_before_next_stable_result",
               "permission_cards_may_appear",
+              "participant_message"
+            ]
+          },
+          "clarification_progress": {
+            "type": "object",
+            "description": "Authoritative stage and answered-count bookkeeping. A current batch of one is NOT the last question in the interview; the number of future reviewer-admitted questions is unknown until status ready.",
+            "additionalProperties": false,
+            "properties": {
+              "stage": {
+                "type": "string"
+              },
+              "clarifications_answered_or_skipped_total": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "current_batch_question_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "current_batch_only": {
+                "type": "boolean"
+              },
+              "overall_clarifications_remaining": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "overall_remaining_known": {
+                "type": "boolean"
+              },
+              "full_evidence_review_ready": {
+                "type": "boolean"
+              },
+              "remaining_after_ready": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "participant_message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "stage",
+              "clarifications_answered_or_skipped_total",
+              "current_batch_question_count",
+              "current_batch_only",
+              "overall_clarifications_remaining",
+              "overall_remaining_known",
+              "full_evidence_review_ready",
+              "remaining_after_ready",
               "participant_message"
             ]
           }
