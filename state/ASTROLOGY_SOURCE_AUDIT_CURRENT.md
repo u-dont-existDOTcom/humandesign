@@ -1,3 +1,9 @@
+# Original Lilly source research — Chapter LXXXII
+
+CURRENT 2026-10-16: Original Chapter LXXXII historical office/preferment source locally admitted and queued for remote research publication: Lilly **4,829** + retained Ptolemy **1,066** = **5,895** documentary records once remote readback passes. Next LXXXIII starts original PDF482. Office acquisition, loss, transfer and retention are distinct branches; no verified predictive successes or runtime promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04b_CHAPTER_LXXXII_COMPLETE.md.
+
+---
+
 # Original historical Lilly research — Chapter LXXXI
 
 CURRENT 2026-10-16: historical original Chapter LXXXI Philosopher's Stone source accepted; after authenticated publication Lilly **4,688** + Ptolemy **1,066** = **5,754** source annotations. Next Chapter LXXXII Government, Office and Preferment begins original PDF478 below the Tenth House divider. Authorial belief in Stone and alleged consumption are **unverified historical claims**; zero new empirical predictions or runtime changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04a_CHAPTER_LXXXI_COMPLETE.md.
