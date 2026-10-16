@@ -1,3 +1,9 @@
+# Current original astrology source research
+
+Current 2026-10-16: Chapter LXX admitted as historical source only. Lilly 4,052 plus Ptolemy 1,066 after research publication. Next LXXI PDF451. No empirical prediction or runtime promotion.
+
+---
+
 # Lilly original historical source research — LXIX
 
 CURRENT 2026-10-16: Chapter LXIX source intake accepted. After research-branch publication Lilly 4,007 + Ptolemy 1,066 = 5,073 documentary units. Next LXX original PDF449. No predictive validation or runtime promotion. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03o_CHAPTER_LXIX_COMPLETE.md.
