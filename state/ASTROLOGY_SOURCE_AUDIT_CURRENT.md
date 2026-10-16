@@ -1,3 +1,9 @@
+# Current astrology original-source study — Chapter LXVI Reading siege
+
+CURRENT 2026-10-16: Lilly Book II Chapter LXVI (Reading siege plus hypothetical lawsuit) historically source-admitted. After authenticated research publication Lilly 3,746 plus Ptolemy 1,066 = 4,812 documentary records. Chart 17 April 1643; printed surrender 27 April 1644 vs independent 1643, with final surrender three days after author's predicted deadline. No independently verified predictive accuracy; runtime promotion zero. Next Chapter LXVII begins original PDF438/printed404 below eighth-house divider. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03l_CHAPTER_LXVI_COMPLETE.md and B03l acceptance, release, publication receipts. Overall research OPEN.
+
+---
+
 # Original source audit current — Chapter LXV
 
 Lilly Chapter LXV historical source accepted: 3,670 Lilly plus 1,066 Ptolemy, combined 4,736 after publication. Next Chapter LXVI begins original PDF435/printed401. No independently validated forecast; research continues.
