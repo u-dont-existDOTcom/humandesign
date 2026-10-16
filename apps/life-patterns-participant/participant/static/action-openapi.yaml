@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Life Patterns Independent Review Pilot",
-    "version": "1.6.1",
-    "description": "Asynchronous independent review and exact-source submission. Clarification batch counts are not overall interview remaining counts."
+    "version": "1.7.0",
+    "description": "Independent review, encrypted final submission and a participant-approved single-use finishing link, available only when review is ready."
   },
   "servers": [
     {
@@ -307,6 +307,52 @@
             }
           }
         ]
+      }
+    },
+    "/api/gpt/reviews/{review_id}/finish-link": {
+      "post": {
+        "operationId": "issueLifePatternsFinishLink",
+        "summary": "Create a one-time private Railway finishing link for a ready review",
+        "description": "Only after status ready and participant opts for Railway finish. Say: Please click Allow on this tool call to continue. Keep the one-time link private; use only this saved review_id. Railway collects confirmation, the three CF003 answers and encrypted submission. This call does not submit anything.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "review_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^R-[a-f0-9]{32}$"
+            },
+            "description": "Opaque current review ID already saved in this conversation."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "One-time link generated; not submitted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FinishLink"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "GPT Action credential not accepted."
+          },
+          "409": {
+            "description": "Review not yet ready or already submitted."
+          },
+          "503": {
+            "description": "Private HTTPS finishing origin unavailable."
+          }
+        },
+        "x-openai-isConsequential": true
       }
     }
   },
@@ -1046,6 +1092,37 @@
           "batch_id",
           "operation_id",
           "answers"
+        ]
+      },
+      "FinishLink": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "schema": {
+            "type": "string"
+          },
+          "finish_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "A single-use secret browser link valid briefly; share only with the participant in their current private conversation."
+          },
+          "expires_in_seconds": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "ready_review_required": {
+            "type": "boolean"
+          },
+          "participant_action": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema",
+          "finish_url",
+          "expires_in_seconds",
+          "ready_review_required",
+          "participant_action"
         ]
       }
     }

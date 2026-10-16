@@ -34,7 +34,7 @@
     },
     {
       "path": "reference/custom_gpt/ACTION-HANDOFF-GUIDE-v1.md",
-      "sha256": "3f2b79df4e535e24ba40987567171b72e9f11168d1f45ac4f44736583c8bcb7f"
+      "sha256": "27d0a1f4119e51b676bb5c8a2a8c8f8969d7e68528882b71b3dacc0b655245c6"
     },
     {
       "path": "reference/custom_gpt/TENDENCY-FIRST-GUIDE-v1.json",
@@ -63,7 +63,7 @@
   },
   "action_schema": {
     "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
-    "sha256": "8a52350042d56c69bfb607b07fa7dc4938959aceb2f1591e78c014691d8fa994",
+    "sha256": "c73748284535e10436e94f1c8d7dc5a564181e8e189b26294eb66a4594f3d649",
     "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
     "authentication": "api_key_bearer",
     "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",
@@ -89,5 +89,11 @@
     "additive_action_version": "1.6.1",
     "meaning": "review batch size is not remaining interview size",
     "current_gpt_bundle": "reference/custom_gpt/releases/Life-Patterns-GPT-honest-review-progress-2026-10-16.zip"
+  },
+  "ready_only_railway_finishing_20261016": {
+    "status": "implemented_source_needs_live_deployment_verification",
+    "action_version": "1.7.0",
+    "action_name": "issueLifePatternsFinishLink",
+    "current_bundle": "reference/custom_gpt/releases/Life-Patterns-GPT-Railway-Finish-2026-10-16.zip"
   }
 }

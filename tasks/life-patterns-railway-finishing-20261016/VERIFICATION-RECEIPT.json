@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "task_id": "life-patterns-railway-finishing-20261016",
+  "date": "2026-10-16",
+  "owner_goal": "Finish an already saved Life Patterns GPT review through a secure browser page on existing Railway without a new interview.",
+  "implementation": "BUILT_TESTED_NOT_YET_LIVE",
+  "existing_credential_exposed": false,
+  "source_personal_data_in_git": false,
+  "review_gate": "only_when_independent_review_ready",
+  "link": {
+    "lifetime_minutes": 20,
+    "single_use": true,
+    "opaque_fragment": true,
+    "review_id_or_bearer_in_url": false
+  },
+  "browser": {
+    "session_hours": 2,
+    "http_only": true,
+    "same_site": "Strict",
+    "secure_cookie": true,
+    "csrf": true,
+    "origin_check": true,
+    "dom_text_only": true,
+    "csp": true
+  },
+  "storage": {
+    "existing_sqlite_volume": true,
+    "same_transactional_submission": true,
+    "original_edited_turns_preserved": true,
+    "answered_and_skipped_clarifications_preserved": true,
+    "primary_only_before_secondary": true,
+    "three_cf003_fixed_questions": true,
+    "encrypted_receipt": true,
+    "no_duplicate": true
+  },
+  "original_gpt": {
+    "cumulative_knowledge_files": 8,
+    "instructions_strict_characters": 7949,
+    "schema_version": "1.7.0",
+    "previous_six_ops_unchanged": true,
+    "private_gpt_editor_updated": false
+  },
+  "tests": {
+    "root_passed": 1092,
+    "root_skipped": 3,
+    "participant_app_passed": 244,
+    "focused_finish_passed": 11,
+    "puppeteer_synthetic_browser": "PASS_MOBILE_DESKTOP_NO_EXTERNAL_REQUESTS",
+    "docker_build": "PASS",
+    "docker_source_module_copy": "PASS",
+    "ruff": "PASS",
+    "historical_gpt_bundle": "PASS",
+    "new_gpt_bundle": "PASS"
+  },
+  "railway": {
+    "target_service": "life-patterns-participant",
+    "service_staged_changes": 0,
+    "other_project_staged_changes": 4,
+    "live_deployed": false,
+    "post_deploy_review_verified": false
+  },
+  "owner_delivery": {
+    "zip_in_downloads": true,
+    "full_existing_gpt_files_in_downloads": true,
+    "bytes_verified": true
+  },
+  "pending": [
+    "commit_and_publish_verified_source",
+    "deploy_only_target_railway_service",
+    "verify_live_ready_review_finish_flag_and_schema",
+    "owner_update_existing_custom_gpt_editor",
+    "participant_can_test_on_ready_review"
+  ],
+  "unrelated_stage_patch_preserved": true
+}

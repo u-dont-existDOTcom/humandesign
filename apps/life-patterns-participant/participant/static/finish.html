@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Complete your Life Patterns review</title>
+<link rel="stylesheet" href="/assets/finish.css">
+<script src="/assets/finish.js" defer></script>
+</head>
+<body>
+<main class="shell">
+<header>
+  <p class="eyebrow">Life Patterns · Private research review</p>
+  <h1>Finish your interview</h1>
+  <p class="lead">Your original answers are preserved. This page is only for final review, three short follow-ups, and secure submission.</p>
+</header>
+<ol class="steps" aria-label="Finishing steps">
+  <li id="step-review" aria-current="step">1. Review</li>
+  <li id="step-questions">2. Final questions</li>
+  <li id="step-done">3. Stored</li>
+</ol>
+<div id="alert" role="alert" aria-live="assertive" hidden></div>
+<p id="loading" class="loading" role="status">Opening your private finishing session…</p>
+<section id="review-panel" hidden aria-labelledby="review-heading">
+  <p class="phase">Step 1 of 3</p>
+  <h2 id="review-heading">Check your independent review</h2>
+  <p id="review-context" class="subtle"></p>
+  <div id="review-items"></div>
+  <div class="caution">
+    <strong>Something inaccurate?</strong>
+    <p>Do not confirm it. Return to your original saved Life Patterns GPT chat, give the correction, and let the same study review the revised source. Your earlier answers remain saved.</p>
+  </div>
+  <label class="checkline">
+    <input id="confirm-review" type="checkbox">
+    <span>I have read this independent review. It accurately reflects what I reported, including the conditions and uncertainties, and I agree to finalize this version.</span>
+  </label>
+  <button id="next-button" type="button" disabled>Continue to three final questions</button>
+</section>
+<section id="questions-panel" hidden aria-labelledby="questions-heading">
+  <p class="phase">Step 2 of 3</p>
+  <h2 id="questions-heading">Three final questions</h2>
+  <p>These are separate from the reviewed interview. They do not change or reopen your original answers. Write in your own words, or say that you are unsure.</p>
+  <form id="finish-form">
+    <div id="cf003-items"></div>
+    <fieldset>
+      <legend>Research context (not scored as personality answers)</legend>
+      <label>Did you know your rising sign before this interview?
+        <select name="rising_sign_previously_known" required></select>
+      </label>
+      <label>Had you received a natal-chart reading before this interview?
+        <select name="previous_natal_chart_reading" required></select>
+      </label>
+      <label>Was birth/chart information visible during this interview?
+        <select name="target_information_exposure" required></select>
+      </label>
+    </fieldset>
+    <label class="checkline">
+      <input type="checkbox" id="final-consent" required>
+      <span>I want to submit my confirmed original record and these three final answers to the study's encrypted storage.</span>
+    </label>
+    <div class="actions">
+      <button type="button" id="back-button" class="secondary">Back to review</button>
+      <button type="submit" id="submit-button">Submit and finish</button>
+    </div>
+  </form>
+</section>
+<section id="done-panel" hidden aria-labelledby="done-heading">
+  <p class="phase">Step 3 of 3</p>
+  <h2 id="done-heading">Your review was stored</h2>
+  <p>The independent review and your final answers were saved to encrypted study storage.</p>
+  <p id="receipt-text" class="receipt"></p>
+  <p>You do not need to repeat your original interview.</p>
+</section>
+<footer>Experimental research, not a diagnosis. You can close this tab before submitting without finalizing anything. Do not enter birth dates, times or places in the three answers.</footer>
+</main>
+</body>
+</html>

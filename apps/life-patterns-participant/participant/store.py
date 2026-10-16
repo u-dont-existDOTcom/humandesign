@@ -203,11 +203,36 @@ class Store:
         return self.decode(row[0])
 
     def create_gpt_submission(
-        self, payload: dict, content_sha256: str | None = None
+        self, payload: dict, content_sha256: str | None = None,
+        *, finish_session_hash: str | None = None,
+        finish_input_hash: str | None = None,
     ) -> tuple[str, dict, bool]:
         content_sha256 = content_sha256 or digest(canonical(payload))
         with self.connection() as db:
             db.execute("BEGIN IMMEDIATE")
+            if finish_session_hash is not None:
+                if not finish_input_hash:
+                    raise Conflict("Finish submission requires bound participant answers.")
+                session = db.execute(
+                    "SELECT review_id,expires_at,summary_shown,submission_id,final_input_hash "
+                    "FROM gpt_finish_sessions WHERE session_hash=?",
+                    (finish_session_hash,),
+                ).fetchone()
+                if not session or session[1] <= time.time() or not session[2]:
+                    raise Conflict("A valid reviewed and confirmed finish session is required.")
+                if session[0] != payload.get("review_id"):
+                    raise Conflict("The finish session belongs to a different review.")
+                if session[3]:
+                    if session[4] != finish_input_hash:
+                        raise Conflict("This review was already submitted with different answers.")
+                    existing = db.execute(
+                        "SELECT payload FROM gpt_submissions WHERE id=?", (session[3],)
+                    ).fetchone()
+                    if not existing:
+                        raise Conflict("The saved finish submission could not be recovered.")
+                    stored = self.decode(existing[0])
+                    db.commit()
+                    return session[3], stored, True
             row = db.execute(
                 "SELECT id,payload FROM gpt_submissions WHERE content_sha256=?",
                 (content_sha256,),
@@ -239,6 +264,12 @@ class Store:
             if review_id:
                 db.execute(
                     "INSERT INTO gpt_review_finalizations VALUES (?,?)", (review_id, submission_id)
+                )
+            if finish_session_hash is not None:
+                db.execute(
+                    "UPDATE gpt_finish_sessions SET submission_id=?,final_input_hash=? "
+                    "WHERE session_hash=?",
+                    (submission_id, finish_input_hash, finish_session_hash),
                 )
             db.commit()
         return submission_id, payload, False
