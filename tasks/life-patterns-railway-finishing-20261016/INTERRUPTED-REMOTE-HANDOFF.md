@@ -29,3 +29,14 @@
 7. The user applies final private GPT editor update to existing GPT (same saved review/action Bearer); Hâle may test only after her live review returns `ready`, with one approved `issueLifePatternsFinishLink` Action. No owner-source review data is transmitted in an unapproved new channel.
 
 **Security + outcome:** No raw review ID or shared Action bearer in URL. Expiring single-use fragment, secure session, review-ready gate, source-preserving primary and CF003 linked hash, exact idempotent encrypted submission. Current status is **LOCALLY WORKING / NOT YET DEPLOYED / NOT READY FOR HÂLE**. Do not replace this outcome with another methods essay or an unfinished design proposal.
+
+
+---
+
+## RESOLVED — 2026-10-16 live follow-up (supersedes old status above)
+
+The worktree was recovered and all four versioned compatibility failures fixed. Source was merged into the canonical research branch in PR #114 (source commit db2fc38888c299364edffec04ce760f4b053a74f). Root tests: 1,092 passed, three skipped; whole participant service: 244 passed; 11 secure finishing tests, Docker build and real synthetic mobile/desktop browser PASS. Original private participant data unaccessed.
+
+Railway live deployment succeeded using an **isolated commit-pinned deployment branch** `deploy/life-patterns-participant-ready-finish-20261016` at commit `a7bccccac5549ff634f60a697fe05bf8f581dac5`, which overrides the repository-root relationship-app `railway.json` **only on that deployment branch** and selects the participant Dockerfile. A first misconfigured attempt selected the root relationship Dockerfile, failed to start, and was subsequently removed, with the correct participant service successful. Production health reports `ready_review_finish_enabled=true`, Action v1.7.0 seven operations, and unauthorized finish link/invalid cookie/origin requests return 401/403. The original encrypted `/data` volume, GPT queue, and four unrelated staged project changes remain intact. Complete durable live receipt in canonical `tasks/life-patterns-railway-finishing-20261016/LIVE-DEPLOYMENT-RECEIPT-20261016.json` (PR #115).
+
+**Remaining user-only gate:** Apply existing private GPT editor update from `~/Téléchargements/Life-Patterns-Railway-Finish-2026-10-16/START-HERE-LIVE.md`. Use the same GPT, preserve Action Bearer credentials and old answers. A real participant can receive a private finishing link only once their own independently saved review is `ready`. Do not repeat completed engineering or redeploy the service to address this editor step.
