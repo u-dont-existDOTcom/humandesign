@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXI_DOCUMENTARY_SOURCE_ONLY_NEXT_LXXII_OPEN",
-  "records_count": 4093,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXII_HISTORICAL_DOCUMENTARY_ONLY_NEXT_LXXIII_OPEN",
+  "records_count": 4136,
   "read_numbered_chapters": [
     1,
     2,
@@ -75,7 +75,8 @@
     68,
     69,
     70,
-    71
+    71,
+    72
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -379,24 +380,32 @@
       "records_count": 41,
       "sha256": "3f7b9d767176f9bf1e26fed980792b87b94312369f696b59585e0ce5f40d6026",
       "scope": "Lilly original 1647 LXXI wife enquires about husband at sea, 15 April 1645 1:10 PM square figure, original PDF451-452 with LXXII heading PDF453. 40 historical clauses plus one navigation, 10 visual source passages and 18 limits; early false rumor in 2-3 days, later news in second week May rather than exactly May 5, physical return only July, retrospective Barnstable location. No independently verified predictions."
+    },
+    {
+      "id": "B03r",
+      "path": "batches/B03r/RULES.json",
+      "records_count": 43,
+      "sha256": "87a16958194e84fed08afa01b3ec981c8ac9ebe119e5ac9d0951fa800f49b3f3",
+      "scope": "Original 1647 Lilly Book II LXXII Archbishop of Canterbury chart printed 3 Dec 1644 2:24 PM; 42 chapter source annotations plus one next LXXIII heading, original PDF453-454 and boundary PDF455, 11 original passage groups, 18 limits. Independent Bodleian confirms execution 10 Jan 1645, but no independent forecast manuscript; source claims not hanging, other noble mode, 6-7 weeks or thereabouts, actual interval 38 days."
     }
   ],
   "next": {
-    "pdf_page": 453,
-    "printed_page": 419,
-    "chapter": "LXXII",
-    "heading": "What manner of Death Canterbury should dye?",
+    "pdf_page": 455,
+    "printed_page": 421,
+    "chapter": "LXXIII",
+    "printed_chapter_numeral": "LXXIII",
+    "heading": "If have the Portion promised?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF453 begins separate chapter on Archbishop of Canterbury, own circular horoscope dated 3 December 1644."
+    "position": "Original PDF455/printed421 next distinct numbered source on wife portion with a separate 13 July 1634 6:15 PM horoscope, continuing onto PDF456."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03q_CHAPTER_LXXI_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03r_CHAPTER_LXXII_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -421,5 +430,6 @@
   "chapter_LXVIII_source_acceptance_note": "44 historical documentary units (43 wealth clauses, one LXIX heading); 11 original-page spans, 15 uncertainties. Eighth vs second house, good versus delayed payment, square/opposition and reception conditions retained; original warns rules not universal. Zero verified property or fraud outcomes.",
   "chapter_LXIX_source_acceptance_note": "31 historical source units R3977-R4007; generic source doctrine only, no dated figure, 12 reverse original-image passages and 14 uncertainties. Different conditions for unwarranted fear versus harm, benefics, infortunes, rumors and Moon-Sun disclosure; zero verified person outcomes.",
   "chapter_LXX_source_acceptance_note": "45 original historical documentary records R4008-R4052, 14 visual passage groups, 18 textual limits. Original 6 Feb 1644 case, severe illness known, missing natal data and source-reported 8 Oct later outcome. Forecast was late September/beginning October death OR great danger, not an exact preannounced 8 Oct death. Zero independent prediction validations.",
-  "chapter_LXXI_source_acceptance_note": "41 original source annotations R4053-R4093, 10 original passage groups and 18 limits. The early report of husband in town was false; later reliable news in May and actual return in July are distinct. Later claimed Barnstable location not independently verified; zero empirical successes."
+  "chapter_LXXI_source_acceptance_note": "41 original source annotations R4053-R4093, 10 original passage groups and 18 limits. The early report of husband in town was false; later reliable news in May and actual return in July are distinct. Later claimed Barnstable location not independently verified; zero empirical successes.",
+  "chapter_LXXII_source_acceptance_note": "43 source documentary annotations R4094-R4136 (42 substantive plus next heading), 11 original page passages, 18 limits. Bodleian corroborates beheading 10 Jan 1645, but a prospective December 1644 astrology forecast is NOT independently authenticated; source gives approximate six/seven weeks or thereabouts while event is 38 elapsed days. No verified predictions or runtime promotions."
 }
