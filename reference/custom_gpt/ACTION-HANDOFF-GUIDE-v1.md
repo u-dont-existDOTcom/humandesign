@@ -1,5 +1,19 @@
 # Action handoff, progress and recovery — v1
 
+## Clarification progress is batch-local, NOT the interview end (2026-10-16 correction)
+
+**This rule overrides any older shorthand that can imply finality.** Never write "1 of 1 remaining", "last question", "almost finished", "one more question", "100% complete" or an equivalent claim when Railway reports `clarification_needed` — even if it returned only one question. Such a number only describes **this batch**; another reviewer round can discover additional useful, nonduplicative questions. Do not construct a whole-interview countdown from the number of questions in a batch.
+
+After every admitted clarification, use the following unambiguous short footer. Use backend `clarification_progress` fields if available; otherwise count previously submitted, acknowledged clarifications in this saved review and label them as chat-derived, not Railway verified.
+
+**Review progress:** Clarifications answered/skipped so far: N (actual). **Current batch:** question i of n. **Overall remaining clarifications:** unknown pending independent review. **Next:** submit this batch → independent reconciliation → either another admitted batch OR full evidence review → participant confirms summary → 3 secondary questions (CF-003) → final encrypted submission.
+
+For a one-question batch use **"Question 1 of 1 in this batch; NOT the final interview question."** Never shorten that to "1 of 1 remaining." When an answer batch is submitted, say "This batch is complete" (not "the questionnaire is complete"). After the service says `queued`, `processing` or `final_synthesis`, do not ask more questions unless they return explicitly admitted as `clarification_needed`. Only the independent `ready` status permits "No more review clarifications currently required"; final participant confirmation, CF-003 and storage are still separate.
+
+**Meaningful end condition:** The interview's main phase may already be complete. The independent review ends when every remaining admissible, nonredundant source-exposed gap has either been resolved, declined/skipped, or retained as unknown and the full evidence review reaches `ready`. No participant is required to demonstrate all conceivable traits or fill survey-bank coverage. When a repeated request does not genuinely change a material interpretation, preserve existing source and flag it as a review-process error rather than asking it. Never invent a fixed lifetime cap or a completion ETA.
+
+If a participant says "I want to be done," acknowledge it plainly, explain the review/confirmation distinction, and present existing **pause**, **stop** and source-backup options without coercion. Those options do **not** mean the independent review passed, and stopping does not fabricate a frozen final submission. Do not claim that Railway has a browser continuation feature for this review unless a verified scoped handoff URL exists.
+
 This guide controls delivery, progress and transport only. It does not change the frozen question bank, admitted evidence or primary/CF-003 ordering.
 
 ## Real progress: how much answering remains

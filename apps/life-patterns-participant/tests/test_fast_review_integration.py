@@ -191,10 +191,18 @@ def test_fast_http_worker_batch_final_review_and_submission(tmp_path, monkeypatc
     rid = started["review_id"]
     assert started["recommended_check_after_seconds"] == 180
     assert started["final_review_completed"] is False
+    assert started["clarification_progress"]["overall_clarifications_remaining"] is None
+    assert not started["clarification_progress"]["overall_remaining_known"]
     assert worker.process_one("https://testserver", s.review_worker_token, outbox=box)
     questions = view(c, s, rid)
     assert questions["status"] == "clarification_needed"
     assert len(questions["clarifications"]) == 2
+    progress = questions["clarification_progress"]
+    assert progress["current_batch_question_count"] == 2
+    assert progress["current_batch_only"] and not progress["overall_remaining_known"]
+    assert progress["overall_clarifications_remaining"] is None
+    assert "current batch only" in progress["participant_message"]
+    assert "THIS BATCH" in questions["wait_guidance"]
     assert "gap_admission" in stages
     assert "source_revision" not in questions
     r, body = answer_batch(c, s, questions)
@@ -207,6 +215,8 @@ def test_fast_http_worker_batch_final_review_and_submission(tmp_path, monkeypatc
     assert worker.process_one("https://testserver", s.review_worker_token, outbox=box)
     intermediate = view(c, s, rid)
     assert intermediate["status"] == "queued"
+    assert intermediate["clarification_progress"]["clarifications_answered_or_skipped_total"] == 2
+    assert intermediate["clarification_progress"]["overall_clarifications_remaining"] is None
     assert intermediate["review_stage"] == "final_synthesis"
     assert intermediate["review_summary"] is None
     assert not intermediate["final_review_completed"]
@@ -219,6 +229,13 @@ def test_fast_http_worker_batch_final_review_and_submission(tmp_path, monkeypatc
     ready = view(c, s, rid)
     assert ready["status"] == "ready", ready
     assert ready["final_review_completed"]
+    assert ready["clarification_progress"]["overall_remaining_known"]
+    assert ready["clarification_progress"]["overall_clarifications_remaining"] == 0
+    assert ready["clarification_progress"]["remaining_after_ready"] == [
+        "participant_review_and_confirmation",
+        "CF003_three_secondary_questions",
+        "encrypted_final_submission",
+    ]
     assert "final_synthesis" in stages and "final_admission" in stages
     primary, secondary = records()
     for q, a in zip(questions["clarifications"], body["answers"], strict=True):
