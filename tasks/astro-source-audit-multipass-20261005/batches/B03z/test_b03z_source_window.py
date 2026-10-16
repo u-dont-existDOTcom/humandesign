@@ -10,10 +10,20 @@ class Window(unittest.TestCase):
    p=B/it['path'];self.assertEqual(p.stat().st_size,it['bytes'])
    self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),it['sha256'])
  def test_current_authenticated_chapter_and_next(self):
-  self.assertEqual(I['records_count'],4549)
-  self.assertEqual(I['batches'][-1]['id'],'B03y')
-  self.assertEqual(I['next']['chapter'],'LXXX')
-  self.assertEqual(I['next']['pdf_page'],473)
+  before=B/'recovery/LILLY_SOURCE_EXTRACTION_INDEX_BEFORE_B03z_CANONICAL.json'
+  if before.exists():
+   old=json.loads(before.read_text())
+   self.assertEqual(old['records_count'],4549)
+   self.assertEqual(old['batches'][-1]['id'],'B03y')
+   self.assertEqual(I['records_count'],4631)
+   self.assertEqual(I['batches'][-1]['id'],'B03z')
+   self.assertEqual(I['next']['chapter'],'LXXXI')
+   self.assertEqual(I['next']['pdf_page'],476)
+  else:
+   self.assertEqual(I['records_count'],4549)
+   self.assertEqual(I['batches'][-1]['id'],'B03y')
+   self.assertEqual(I['next']['chapter'],'LXXX')
+   self.assertEqual(I['next']['pdf_page'],473)
  def test_original_eyes_on_boundary(self):
   self.assertEqual(M['source_body_pdf_pages'],[473,474,475,476])
   self.assertEqual(M['following_chapter'],'LXXXI')

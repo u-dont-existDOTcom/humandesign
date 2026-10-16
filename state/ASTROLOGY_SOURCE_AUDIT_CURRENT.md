@@ -1,3 +1,9 @@
+# Original Lilly research current — Chapter LXXX Presbytery
+
+2026-10-16: Original Lilly LXXX source accepted locally. Following authenticated branch publication: Lilly **4,631**, Ptolemy **1,066**, combined **5,697 historical annotations**. Next LXXXI Philosopher's Stone original PDF476 below divider. Three-year institutional predictions must preserve explicit reform/status-quo scope and conjectural hedge; zero independently validated predictions and zero runtime model changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03z_CHAPTER_LXXX_COMPLETE.md.
+
+---
+
 # Original historical Lilly research — Chapter LXXIX
 
 CURRENT 2026-10-16: Chapter LXXIX original parsonage denial case documentary accepted; upon authenticated branch publication **4,549 Lilly + 1,066 retained Ptolemy = 5,615 historical source records**. Next LXXX opens PDF473/printed439. Author-only account of a damaging letter; identity of informer unverified; no empirical validation or runtime promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03y_CHAPTER_LXXIX_COMPLETE.md.
