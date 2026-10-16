@@ -1,3 +1,9 @@
+# Current original astrology source-study checkpoint: Chapter LXXIV
+
+CURRENT 2026-10-16: Lilly Chapter LXXIV full ninth-house/voyage source accepted as 153 historical documentary records, after authenticated publication Lilly 4,323 + Ptolemy 1,066 = 5,389. Next LXXV starts original PDF463 after divider. No independently verified voyage predictions and zero runtime model promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03t_CHAPTER_LXXIV_COMPLETE.md.
+
+---
+
 # Current original astrology source study — Lilly Chapter LXXIII
 
 CURRENT 2026-10-16: Chapter LXXIII documentary source accepted; after authenticated publication 4,170 Lilly and 1,066 retained Ptolemy = 5,236 historical records. Original pages PDF455–456, next LXXIV starts PDF456 beneath ninth-house preface. No independently verified payment outcome, empirical astrology validation or runtime model promotion. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03s_CHAPTER_LXXIII_COMPLETE.md and B03s acceptance, release and publication receipts.
