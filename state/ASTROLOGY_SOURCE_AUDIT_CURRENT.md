@@ -1,3 +1,9 @@
+# Original source audit current — Chapter LXV
+
+Lilly Chapter LXV historical source accepted: 3,670 Lilly plus 1,066 Ptolemy, combined 4,736 after publication. Next Chapter LXVI begins original PDF435/printed401. No independently validated forecast; research continues.
+
+---
+
 # Astrology source audit — latest original historical text checkpoint
 
 CURRENT 2026-10-15: Lilly Book II *Fish Stolen*, originally PRINTED Chapter LIV but logically LXIV, admitted as original-source documentary research. After authenticated publication: 3,630 Lilly + 1,066 retained Ptolemy = 4,696 source annotations. Following Chapter LXV battle figure begins original PDF433/printed399 below the Fish Stolen divider. Zero empirically validated predictions and zero runtime rule changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261015_B03j_FISH_STOLEN_COMPLETE.md and B03j source/release/publication evidence.
