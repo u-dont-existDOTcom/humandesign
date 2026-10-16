@@ -7,5 +7,6 @@ COPY tasks/scenario-survey-v7-redesign-20260922/INTERVIEW-PROTOCOL-v6.md /app/au
 COPY tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json /app/authority/
 COPY tasks/scenario-survey-v7-redesign-20260922/EVIDENCE-GUIDE-v7.json /app/authority/
 COPY tasks/full-survey-participant-v2-20260927/INTERVIEW-CONTROLLER-v2.md /app/authority/
+COPY reference/empirical_astrology/cf003_secondary_question_module_v0.json /app/authority/
 ENV PYTHONUNBUFFERED=1
 CMD ["sh", "-c", "exec uvicorn participant.app:factory --factory --host 0.0.0.0 --port ${PORT:-8000} --workers 1 --no-access-log"]

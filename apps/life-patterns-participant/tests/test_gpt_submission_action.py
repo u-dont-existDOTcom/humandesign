@@ -584,6 +584,7 @@ def test_action_schema_privacy_and_description_limits(tmp_path):
         "submitLifePatternsClarificationBatch",
         "controlLifePatternsReview",
         "submitLifePatternsRecords",
+        "issueLifePatternsFinishLink",
     }
     assert "/api/gpt/reviewed-submissions" in schema["paths"]
     status_get = schema["paths"]["/api/gpt/reviews/{review_id}"]["get"]

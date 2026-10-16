@@ -845,6 +845,11 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "provider_configured": provider.configured,
             "participant_enabled": settings.live_enabled,
             "gpt_submission_enabled": bool(settings.submission_token),
+            "ready_review_finish_enabled": bool(
+                settings.submission_token
+                and settings.public_origin.startswith("https://")
+                and (settings.authority / "cf003_secondary_question_module_v0.json").is_file()
+            ),
             "gpt_review_queue_enabled": bool(
                 settings.submission_token and settings.review_worker_token
             ),
@@ -873,7 +878,7 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
     @app.get("/assets/{name}")
     def assets(name: str):
-        if name not in {"app.js", "style.css", "admin.js"}:
+        if name not in {"app.js", "style.css", "admin.js", "finish.js", "finish.css"}:
             raise HTTPException(404)
         return FileResponse(STATIC / name)
 
@@ -1299,6 +1304,12 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         admin(request)
         return download_response(store.admin_read(session_id))
 
+    from .finish_routes import mount_finish_routes
+
+    mount_finish_routes(
+        app, store, settings,
+        gpt_submitter, review_public, validate_gpt_submission, GptSubmission,
+    )
     return app
 
 

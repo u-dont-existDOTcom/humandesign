@@ -17,8 +17,8 @@ OUT = REF / "releases/Life-Patterns-GPT-honest-review-progress-2026-10-16.zip"
 ACTION = "ACTION-life-patterns-submission-openapi.yaml"
 INSTR = "INSTRUCTIONS-life-patterns-voice-interviewer-v2.md"
 GUIDE = "knowledge/ACTION-HANDOFF-GUIDE-v1.md"
-ACTION_SOURCE = ROOT / "apps/life-patterns-participant/participant/static/action-openapi.yaml"
-GUIDE_SOURCE = REF / "ACTION-HANDOFF-GUIDE-v1.md"
+ACTION_SOURCE = TASK / "frozen_source/action-openapi-v1.6.1.json"
+GUIDE_SOURCE = TASK / "frozen_source/ACTION-HANDOFF-v1.6.1.md"
 
 
 def sha(value: bytes) -> str:
