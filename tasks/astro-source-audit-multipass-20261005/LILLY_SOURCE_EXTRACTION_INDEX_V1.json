@@ -505,12 +505,13 @@
     "pdf_page": 490,
     "printed_page": 456,
     "chapter": "LXXXVII",
-    "printed_chapter_numeral": "LXXXVII",
+    "printed_chapter_numeral": "LXXXVI",
     "heading": "If attaine the Preferment desired?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF490/printed456 below LXXXVI closing and divider; next gentleman asks within 4–5 minutes of prior question. No new printed figure at this divider."
+    "position": "Original PDF490/printed456 below LXXXVI closing and divider; next gentleman asks within 4–5 minutes of prior question. No new printed figure at this divider.",
+    "numbering_note": "Editorial sequential LXXXVII but the original first-edition page says CHAP. LXXXVI after its repeated CHAP. LXXXV."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
@@ -557,5 +558,15 @@
   "chapter_LXXXIII_source_acceptance_note": "46 historical records R4830-R4875; 44 restoration/alternative-land/negative clauses and two LXXXIV navigation markers; 8 passages, 17 unresolved limits, zero independent authenticated restorations.",
   "chapter_LXXXIV_source_acceptance_note": "79 historical source annotations R4876-R4954, 77 LXXXIV sign-based vocation claims and two LXXXV navigation markers; 15 original passages and 24 uncertainty statements. Query-time figure replaces unknown birth time; Mars and Venus transcribed; no independently verified career outcome.",
   "chapter_LXXXV_source_acceptance_note": "72 original source annotations R4955-R5026: 70 Rupert/Essex/honor/fate source claims plus two navigation; 11 original passage groups and 25 limitations; includes author's Edgehill retrospective and admitted partial failure on Rupert custody in 1646; zero independently validated forecasts.",
-  "chapter_LXXXVI_source_acceptance_note": "54 historical records R5027–R5080, 52 substantive and two LXXXVII navigation; 10 source passage groups and 24 open limits. Distinguish Irish aid, temporary utility, Queen march, reunion date, losses; absolute horary figure date unresolved, full destruction not found in author's reported outcome."
+  "chapter_LXXXVI_source_acceptance_note": "54 historical records R5027–R5080, 52 substantive and two LXXXVII navigation; 10 source passage groups and 24 open limits. Distinguish Irish aid, temporary utility, Queen march, reunion date, losses; absolute horary figure date unresolved, full destruction not found in author's reported outcome. CORRECTION: this is a stable editorial SEQUENTIAL alias; original first edition printed CHAP. LXXXV again on PDF489/printed455. See original_printed_chapter_heading_crosswalk; source records and archive unchanged.",
+  "read_numbered_chapters_basis": "editorial_source_sequence_ordinals_not_literal_1647_headings",
+  "original_printed_chapter_heading_crosswalk": {
+    "path": "batches/B04g/ORIGINAL_1647_PRINTED_NUMBERING_CROSSWALK_20261016.json",
+    "sha256": "eea5c6b6e21a0f1eca4faf8744477e12f71a9be10d8d4f5ade3e4a14ae210bef",
+    "duplicate_printed_numeral": "LXXXV",
+    "first_affected_editorial_sequence_id": "LXXXVI",
+    "accepted_record_mapping": "R5027-R5080 retained as editorial LXXXVI despite original printed heading LXXXV",
+    "next_editorial_alias": "LXXXVII",
+    "next_original_printed_numeral": "LXXXVI"
+  }
 }
