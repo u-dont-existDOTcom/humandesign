@@ -1,3 +1,9 @@
+# Original Lilly source study — printed LXXXVII / editorial LXXXVIII Eleventh House
+
+2026-10-16: original first-edition Eleventh House source locally admitted, 48 historical documentary R5114–R5161. After authenticated publication total **5,161 Lilly + 1,066 Ptolemy = 6,227**. Original printed chapter **LXXXVII**, stable editorial sequence **LXXXVIII**, established duplicated LXXXV original crosswalk unchanged. Next printed LXXXVIII / editorial LXXXIX *Of agreeing of Friends* starts original PDF493. No verified predictions or model promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04h_CHAPTER_LXXXVIII_COMPLETE.md.
+
+---
+
 # Original Lilly research current — Printed LXXXVI / editorial LXXXVII
 
 2026-10-16: Printed original LXXXVI preferment source locally accepted as stable sequential LXXXVII, 33 records R5081–R5113. After authenticated publication: **5,113 Lilly + 1,066 Ptolemy = 6,179** historical records. An original-edition double-printed CHAP. LXXXV is frozen in a source/image crosswalk rather than hidden by renumbering. Next original printed LXXXVII (editorial LXXXVIII) Eleventh House starts PDF491. Zero new empirical predictions or runtime promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04g_CHAPTER_LXXXVII_COMPLETE.md.
