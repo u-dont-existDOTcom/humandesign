@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXVIII_DOCUMENTARY_SOURCE_ONLY_NEXT_LXIX_OPEN",
-  "records_count": 3976,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXIX_DOCUMENTARY_SOURCE_ONLY_NEXT_LXX_OPEN",
+  "records_count": 4007,
   "read_numbered_chapters": [
     1,
     2,
@@ -72,7 +72,8 @@
     65,
     66,
     67,
-    68
+    68,
+    69
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -355,24 +356,31 @@
       "records_count": 44,
       "sha256": "da73ebef4c5aa7c55d99a34104a1257a646506342557f1318e85e81d008b35c5",
       "scope": "Original 1647 Book II Chapter LXVIII wife's portion/dowry wealth: original PDF446 below LXVII divider through PDF447, next LXIX heading PDF448. 43 historical wealth/dowry source clauses plus one next-chapter heading, eleven reverse image source groups, fifteen retained uncertainty/negative clauses; no independent transactions or wealth predictions validated."
+    },
+    {
+      "id": "B03o",
+      "path": "batches/B03o/RULES.json",
+      "records_count": 31,
+      "sha256": "3c1a3610b1707b7377565b648097b3008de81a01ca7ae0b9dfd7b411269b4311",
+      "scope": "Lilly original 1647 Book II LXIX fear/danger on PDF448 printed414, generic one-page conditions and attributed cadent-rumor theory; 30 historical clauses + one LXX navigation heading PDF449, 12 source passages, 14 uncertainty limits. No source worked chart and zero independently verified risk outcomes."
     }
   ],
   "next": {
-    "pdf_page": 448,
-    "printed_page": 414,
-    "chapter": "LXIX",
-    "heading": "If one be afraid of a thing, Whether he shall be in danger of the same or not.",
+    "pdf_page": 449,
+    "printed_page": 415,
+    "chapter": "LXX",
+    "heading": "Whether Man or Wife shall dye first?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF448/printed414 top, distinct CHAP LXIX after complete LXVIII on PDF447. The next numbered LXIX concerns anticipated fear, not dowry."
+    "position": "Original PDF449/printed415 at top: separate worked 6 February 1644 9:10 PM spouse mortality figure, distinct from generic one-page LXIX."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03n_CHAPTER_LXVIII_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03o_CHAPTER_LXIX_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -394,5 +402,6 @@
   "chapter_LXV_source_acceptance_note": "40 historical editorial source units (39 LXV and one LXVI heading), 10 visual-source passages and 18 limitations. Enlarged original reads 29 Mar 1644, 10:12 AM, not May. Author-predicted 11–12 hour favorable news is not verified because letter arrival clock is unreported. Outcome letter and prisoner counts are source-internal, with explicit incomplete victory qualification.",
   "chapter_LXVI_source_acceptance_note": "76 documentary annotations including two LXVII/eighth-house navigational markers, 19 original visual passages, 23 retained uncertainties. Original chart 17 Apr 1643; original surrender sentence literally 27 Apr 1644, external 1643; author says final surrender three days after predicted deadline, negotiations began near prediction date. Counterfactual lawsuit is same Chapter LXVI, not an observed lawsuit. Zero blind independent prediction validations or model changes.",
   "chapter_LXVII_source_acceptance_note": "186 original-source documentary annotations R3747–R3932, including 184 Chapter LXVII source claims and two LXVIII next-heading navigation markers. Thirty-eight original passage groups map to all annotations, with eight consecutive two-page seams and 31 retained uncertainties. No independently observed missing-person returns, deaths, spouse ordering or clinical causes; flexible death/return-time units and derived-house/reception exceptions are historical text, not validated predictive rules.",
-  "chapter_LXVIII_source_acceptance_note": "44 historical documentary units (43 wealth clauses, one LXIX heading); 11 original-page spans, 15 uncertainties. Eighth vs second house, good versus delayed payment, square/opposition and reception conditions retained; original warns rules not universal. Zero verified property or fraud outcomes."
+  "chapter_LXVIII_source_acceptance_note": "44 historical documentary units (43 wealth clauses, one LXIX heading); 11 original-page spans, 15 uncertainties. Eighth vs second house, good versus delayed payment, square/opposition and reception conditions retained; original warns rules not universal. Zero verified property or fraud outcomes.",
+  "chapter_LXIX_source_acceptance_note": "31 historical source units R3977-R4007; generic source doctrine only, no dated figure, 12 reverse original-image passages and 14 uncertainties. Different conditions for unwarranted fear versus harm, benefics, infortunes, rumors and Moon-Sun disclosure; zero verified person outcomes."
 }
