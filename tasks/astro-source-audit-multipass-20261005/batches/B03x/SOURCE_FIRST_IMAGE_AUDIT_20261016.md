@@ -1,0 +1,11 @@
+# Original 1647 Chapter LXXVIII — *Terrible Dreames* source-image audit
+
+Witness: William Lilly, *Christian Astrology*, Wellcome b30338724. Full PDF SHA-256: 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Visual inspection was of original PDF pages 470 (printed 436) and 471 (printed 437), 1600-pixel original scan derivatives whose hashes are in SOURCE_WINDOW_MANIFEST.json. The section starts with its own square horoscope on PDF470 and **ends at the line immediately above the Chapter LXXIX divider near the top of PDF471**.
+
+The case figure prints **26 Ianu. 1648 / 9:27 AM**. Do not silently change this to 1647 merely to reconcile it to the edition's title year: original calendar interpretation, date authenticity and any modern ephemeris reconstruction remain unresolved. This case is not the following Chapter LXXIX figure (6 August 1644, 8:24 PM).
+
+**Interpreted conditional sequence**: Lilly begins with Jupiter and Saturn described as ninth lords, twelfth-house positions and square testimony to the ninth cusp. He says earlier authors might infer a vain dream associated with worldly concerns and a troubled imagination. He then favors angular Mars, as ascendant ruler and Fortune dispositor, to suggest (a) preoccupation with entrusted estate in danger and (b) loss of a beneficial office or public standing from Saturn's adverse testimony toward Jupiter. These are two source-side explanations, not two independently documented patient outcomes.
+
+**The outcome split** occurs across the 470→471 physical page seam. Lilly invokes a positive Jupiter/Mars star (sextile) and reports forecasting that the querent would escape bodily peril **but** suffer estate damage. He closes by asserting the prediction proved true. The text provides neither an independently attributable case identity nor separate dated evidence that the dream report, office claim or financial loss occurred, and no prospective prediction registration. The authorial confirmation is therefore a distinct *source assertion*, not empirical validation.
+
+The source-first edition assigns 24 local annotations to six passage groups; 22 substantive annotations belong to LXXVIII and two are following-chapter navigation on the same PDF471. Fourteen limitations remain explicit. No predictive model/runtime/scoring weight is changed.

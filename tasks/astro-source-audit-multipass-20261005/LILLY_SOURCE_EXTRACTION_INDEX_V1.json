@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXVII_HISTORICAL_SOURCE_ONLY_NEXT_LXXVIII_OPEN",
-  "records_count": 4484,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXVIII_HISTORICAL_SOURCE_ONLY_NEXT_LXXIX_OPEN",
+  "records_count": 4508,
   "read_numbered_chapters": [
     1,
     2,
@@ -81,7 +81,8 @@
     74,
     75,
     76,
-    77
+    77,
+    78
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -427,25 +428,32 @@
       "records_count": 38,
       "sha256": "7a37187489159b2d36adf2ed8012ed9c512cb159a064427e800bc29b51d37b3d",
       "scope": "Original William Lilly 1647 Book II LXXVII generic dream interpretation on original PDF468 lower part through PDF469; next LXXVIII dated worked dream starts PDF470. 36 substantive historical dream clauses plus two following-chapter navigation markers, eight original source passages, fifteen unresolved source limits. No independently authenticated dream/harm/psychological prediction."
+    },
+    {
+      "id": "B03x",
+      "path": "batches/B03x/RULES.json",
+      "records_count": 24,
+      "sha256": "47de293703d7dc051d2746949398690200dace83754551ee3acc4dee001c0054",
+      "scope": "Original William Lilly 1647 Book II Chapter LXXVIII terrible dreams dated example on original PDF470 and PDF471 above LXXIX divider. 22 dream-case documentary clauses plus two following-chapter navigation markers, six source passage groups, 14 unresolved limits, one author-asserted unverified retrospective success, zero independent prediction validations."
     }
   ],
   "next": {
-    "pdf_page": 470,
-    "printed_page": 436,
-    "chapter": "LXXVIII",
-    "printed_chapter_numeral": "LXXVIII",
-    "heading": "Terrible Dreams",
+    "pdf_page": 471,
+    "printed_page": 437,
+    "chapter": "LXXIX",
+    "printed_chapter_numeral": "LXXIX",
+    "heading": "If he should obtaine the Parsonage desired",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF470/printed436 new square horoscope dated 26 January 1648 at 9:27 AM. LXXVII closes end of original PDF469/printed435."
+    "position": "Original PDF471/printed437 below dream example ending; separate circular parsonage horoscope dated 6 August 1644 at 8:24 PM."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03w_CHAPTER_LXXVII_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03x_CHAPTER_LXXVIII_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -476,5 +484,6 @@
   "chapter_LXXIV_source_acceptance_note": "153 source documentary records R4171-R4323 (151 substantive + 2 LXXV navigation), 28 original image passages, 32 unresolved source limitations and six physical page seams, original PDF456-463. No independently checked voyage, weather, news or safe return cases; zero empirical predictive validations or runtime promotions.",
   "chapter_LXXV_source_acceptance_note": "61 historical editorial source annotations R4324-R4384 including two next-chapter navigation markers, 16 original-image source passages and 20 textual issues. ORIGINAL IMPRENTED FOLIOS 429,431,430,432 follow physically sequential scans 463,464,465,466. Do not reorder scans numerically by printed folio. No independent skilled-person/traveler observations and no empirical forecast or runtime promotion.",
   "chapter_LXXVI_source_acceptance_note": "62 historical documentary records R4385-R4446 (60 substantive plus two LXXVII navigation), 16 visual image passages, two physical cross-page seams and 20 source uncertainties; no independently documented job appointment or financial impropriety, no predictive validation and zero runtime changes.",
-  "chapter_LXXVII_source_acceptance_note": "38 original source annotations R4447-R4484 (36 LXXVII substantive plus two LXXVIII next-heading navigation), eight original source passages with one page seam and 15 textual uncertainties. Generic dreams source only; no independently verified dream event or validated prediction."
+  "chapter_LXXVII_source_acceptance_note": "38 original source annotations R4447-R4484 (36 LXXVII substantive plus two LXXVIII next-heading navigation), eight original source passages with one page seam and 15 textual uncertainties. Generic dreams source only; no independently verified dream event or validated prediction.",
+  "chapter_LXXVIII_source_acceptance_note": "24 documentary annotations R4485-R4508, 22 worked dream-case clauses and two following-chapter navigation markers. Author reports bodily safety with financial loss and says the judgment proved true; no independent outcome corroboration, blind prospective prediction or chart recasting. 6 source passages, 14 retained limits."
 }
