@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXXVI_HISTORICAL_SOURCE_ONLY_NEXT_LXXXVII_OPEN",
-  "records_count": 5080,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_EDITORIAL_LXXXVII_PRINTED_LXXXVI_HISTORICAL_SOURCE_ONLY_NEXT_EDITORIAL_LXXXVIII_OPEN",
+  "records_count": 5113,
   "read_numbered_chapters": [
     1,
     2,
@@ -90,7 +90,8 @@
     83,
     84,
     85,
-    86
+    86,
+    87
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -499,26 +500,32 @@
       "records_count": 54,
       "sha256": "42069ab80e3490645cffc385a62e726d902a8a1c43381d9294b78d2c521b59ae",
       "scope": "Original Lilly 1647 Book II LXXXVI separate King/Irish forces and Queen northern army case, original PDF489–490 printed455–456, 52 substantive historical clauses and two LXXXVII navigation markers, ten source passages, twenty-four caveats. Source figure's absolute date unresolved; source retrospectively reports 14 July 1643 reunion and limited Queen army losses versus more categorical destruction forecast. No independently validated prediction."
+    },
+    {
+      "id": "B04g",
+      "path": "batches/B04g/RULES.json",
+      "records_count": 33,
+      "sha256": "1347695b2ccc6b249eb010f4410294ee05ca60077f252f00f513f42849d66623",
+      "scope": "First-edition Lilly 1647 desired preferment question printed CHAP LXXXVI (stable editorial sequence LXXXVII) original PDF490-491/printed456-457, 31 substantive clauses including favorable Moon/Saturn testimony, false friend and author-retrospective claimed office within less than three weeks; two next-chapter navigation, 6 passages and 18 unresolved limits, no independently authenticated office outcome."
     }
   ],
   "next": {
-    "pdf_page": 490,
-    "printed_page": 456,
-    "chapter": "LXXXVII",
-    "printed_chapter_numeral": "LXXXVI",
-    "heading": "If attaine the Preferment desired?",
+    "pdf_page": 491,
+    "printed_page": 457,
+    "chapter": "LXXXVIII",
+    "printed_chapter_numeral": "LXXXVII",
+    "heading": "Of good or ill in questions concerning the Eleventh House",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF490/printed456 below LXXXVI closing and divider; next gentleman asks within 4–5 minutes of prior question. No new printed figure at this divider.",
-    "numbering_note": "Editorial sequential LXXXVII but the original first-edition page says CHAP. LXXXVI after its repeated CHAP. LXXXV."
+    "position": "Original PDF491/printed457 below florid Eleventh House divider. Original CHAP. LXXXVII, stable editorial sequential LXXXVIII following duplicated printed LXXXV."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04f_CHAPTER_LXXXVI_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04g_CHAPTER_LXXXVII_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -568,5 +575,6 @@
     "accepted_record_mapping": "R5027-R5080 retained as editorial LXXXVI despite original printed heading LXXXV",
     "next_editorial_alias": "LXXXVII",
     "next_original_printed_numeral": "LXXXVI"
-  }
+  },
+  "chapter_LXXXVII_source_acceptance_note": "33 historical annotations R5081–R5113 from first-edition printed CHAP. LXXXVI, stable editorial LXXXVII. Anonymous querent said to obtain office within three weeks, unverified false friend and earlier petitions. Crosswalk preserves original duplicate LXXXV. Zero independent empirical predictive validations."
 }

@@ -1,3 +1,9 @@
+# Original Lilly research current — Printed LXXXVI / editorial LXXXVII
+
+2026-10-16: Printed original LXXXVI preferment source locally accepted as stable sequential LXXXVII, 33 records R5081–R5113. After authenticated publication: **5,113 Lilly + 1,066 Ptolemy = 6,179** historical records. An original-edition double-printed CHAP. LXXXV is frozen in a source/image crosswalk rather than hidden by renumbering. Next original printed LXXXVII (editorial LXXXVIII) Eleventh House starts PDF491. Zero new empirical predictions or runtime promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04g_CHAPTER_LXXXVII_COMPLETE.md.
+
+---
+
 # Original Lilly research current — Chapter LXXXVI
 
 CURRENT 2026-10-16: Original Chapter LXXXVI historical King/Irish reinforcements/Queen source accepted locally, pending remote authenticated research publication. On publication, Lilly **5,080** + retained Ptolemy **1,066** = **6,146 historical source annotations**. Next LXXXVII opens PDF490 below divider. No explicit absolute LXXXVI figure date; the reported July 1643 reunion is author-retrospective and destruction forecast differs from only partial losses. No empirical predictive validation or runtime rule change. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04f_CHAPTER_LXXXVI_COMPLETE.md.
