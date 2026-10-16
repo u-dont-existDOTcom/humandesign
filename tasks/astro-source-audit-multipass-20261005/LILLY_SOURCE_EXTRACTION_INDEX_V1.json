@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXIV_HISTORICAL_DOCUMENTARY_ONLY_NEXT_LXXV_OPEN",
-  "records_count": 4323,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXV_HISTORICAL_DOCUMENTARY_ONLY_NEXT_LXXVI_OPEN",
+  "records_count": 4384,
   "read_numbered_chapters": [
     1,
     2,
@@ -78,7 +78,8 @@
     71,
     72,
     73,
-    74
+    74,
+    75
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -403,25 +404,32 @@
       "records_count": 153,
       "sha256": "dd214724f4f80685a44ad042f503376f50f8f9efb5d9a75fcb5d84a909983dba",
       "scope": "Lilly original 1647 Book II LXXIV complete ninth-house general doctrine and voyage subsections, original PDF456-463 above LXXV divider. 151 original source clauses + 2 LXXV navigation labels, 28 primary visual passages with six two-page seams, 32 retained uncertainties. Storm/wind, voyage, return, correspondence truth, purposes, duration are source doctrines with no independently verified human cases."
+    },
+    {
+      "id": "B03u",
+      "path": "batches/B03u/RULES.json",
+      "records_count": 61,
+      "sha256": "4d7c706bdd468a931ae113860a74ac38296fb7db75ea87bb626f05cd9c8561aa",
+      "scope": "Original Lilly 1647 Book II Chapter LXXV knowledge/skill, actual wisdom, multiple absent people, and journey directions/wealth. Physical PDF463-466 text order, but ORIGINAL PRINTED NUMERALS 429,431,430,432 transposed at middle. 59 LXXV source clauses plus two LXXVI heading markers; 16 source passages and 20 retained interpretive limits. No independent person, competence, or travel case outcome."
     }
   ],
   "next": {
-    "pdf_page": 463,
-    "printed_page": 429,
-    "chapter": "LXXV",
-    "printed_chapter_numeral": "LXXV",
-    "heading": "If one shall profit by his Knowledge, be it in what kind it will; Chymistry, Chyrurgery, etc. or if he be perfect",
+    "pdf_page": 466,
+    "printed_page": 432,
+    "chapter": "LXXVI",
+    "printed_chapter_numeral": "LXXVI",
+    "heading": "If an idle covetous Priest upon his Question propounded shall Obtain a good Parsonage, yea or no?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF463 printed429 BELOW chapter LXXIV journey-length section and horizontal divider; LXXV knowledge/profession chapter begins here."
+    "position": "Original PDF466/printed432 below divider after knowledge/traveler chapter LXXV. Scan order 463,464,465,466 is authoritative despite earlier reversal of imprinted folios 430 and 431."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03t_CHAPTER_LXXIV_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03u_CHAPTER_LXXV_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -449,5 +457,6 @@
   "chapter_LXXI_source_acceptance_note": "41 original source annotations R4053-R4093, 10 original passage groups and 18 limits. The early report of husband in town was false; later reliable news in May and actual return in July are distinct. Later claimed Barnstable location not independently verified; zero empirical successes.",
   "chapter_LXXII_source_acceptance_note": "43 source documentary annotations R4094-R4136 (42 substantive plus next heading), 11 original page passages, 18 limits. Bodleian corroborates beheading 10 Jan 1645, but a prospective December 1644 astrology forecast is NOT independently authenticated; source gives approximate six/seven weeks or thereabouts while event is 38 elapsed days. No verified predictions or runtime promotions.",
   "chapter_LXXIII_source_acceptance_note": "34 original-source historical records R4137-R4170, 32 substantive and two following-section navigation, 10 image passages and 17 source limits. The 1634 outcome reported in a 1647 narrative is an unitemized querent self-report; no independent payment outcome or empirical prediction is validated.",
-  "chapter_LXXIV_source_acceptance_note": "153 source documentary records R4171-R4323 (151 substantive + 2 LXXV navigation), 28 original image passages, 32 unresolved source limitations and six physical page seams, original PDF456-463. No independently checked voyage, weather, news or safe return cases; zero empirical predictive validations or runtime promotions."
+  "chapter_LXXIV_source_acceptance_note": "153 source documentary records R4171-R4323 (151 substantive + 2 LXXV navigation), 28 original image passages, 32 unresolved source limitations and six physical page seams, original PDF456-463. No independently checked voyage, weather, news or safe return cases; zero empirical predictive validations or runtime promotions.",
+  "chapter_LXXV_source_acceptance_note": "61 historical editorial source annotations R4324-R4384 including two next-chapter navigation markers, 16 original-image source passages and 20 textual issues. ORIGINAL IMPRENTED FOLIOS 429,431,430,432 follow physically sequential scans 463,464,465,466. Do not reorder scans numerically by printed folio. No independent skilled-person/traveler observations and no empirical forecast or runtime promotion."
 }

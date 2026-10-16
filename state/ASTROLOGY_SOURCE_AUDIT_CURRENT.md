@@ -1,3 +1,9 @@
+# Current original astrology source study: Chapter LXXV
+
+CURRENT 2026-10-16: William Lilly original 1647 Chapter LXXV historical text accepted on isolated research branch. After authenticated publication Lilly **4,384** + retained Ptolemy **1,066** = **5,450** historical documentary annotations. Printed 430 and 431 are transposed between physically sequential PDF464 and PDF465: preserve original scan order. Next Chapter LXXVI starts on original PDF466 printed432. No empirical predictive validations and zero runtime changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03u_CHAPTER_LXXV_COMPLETE.md and B03u source-admission receipts.
+
+---
+
 # Current original astrology source-study checkpoint: Chapter LXXIV
 
 CURRENT 2026-10-16: Lilly Chapter LXXIV full ninth-house/voyage source accepted as 153 historical documentary records, after authenticated publication Lilly 4,323 + Ptolemy 1,066 = 5,389. Next LXXV starts original PDF463 after divider. No independently verified voyage predictions and zero runtime model promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03t_CHAPTER_LXXIV_COMPLETE.md.

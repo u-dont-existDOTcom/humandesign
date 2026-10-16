@@ -1,0 +1,54 @@
+{
+  "batch": "B03u",
+  "status": "PRIMARY_1647_SCANS_ORDER_FROZEN",
+  "original_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "original_scan_order": [
+    463,
+    464,
+    465,
+    466
+  ],
+  "original_imprinted_page_numerals": [
+    429,
+    431,
+    430,
+    432
+  ],
+  "imprinted_folio_transposition": "Scans PDF464 and PDF465 preserve TEXT order, but imprinted numerals 431 and 430 appear reversed. Do not reorder scans.",
+  "boundary_start": "Original PDF463/printed429 after LXXIV divider",
+  "boundary_end": "Original PDF466/printed432 above LXXVI divider",
+  "next_chapter": "LXXVI",
+  "next_chapter_pdf": 466,
+  "original_images": [
+    {
+      "original_pdf_scan_id": 463,
+      "printed_folio_as_scanned": 429,
+      "path": "evidence/pdf_1647-463.jpg",
+      "bytes": 654112,
+      "sha256": "8f8e1d56674b2ca0b96a2c6d6b4325d523971612506124fd1eab4801b059aa47"
+    },
+    {
+      "original_pdf_scan_id": 464,
+      "printed_folio_as_scanned": 431,
+      "path": "evidence/pdf_1647-464.jpg",
+      "bytes": 655650,
+      "sha256": "1672c04a144b5cecd9cf6816466b5cb4968cafaa10f824ad4c4483a5a923e7d8"
+    },
+    {
+      "original_pdf_scan_id": 465,
+      "printed_folio_as_scanned": 430,
+      "path": "evidence/pdf_1647-465.jpg",
+      "bytes": 676312,
+      "sha256": "b26a7da10f3d5f2d9e6c6e11c7ec6f66329b46a0c0e10b428d7c4a922f5c864e"
+    },
+    {
+      "original_pdf_scan_id": 466,
+      "printed_folio_as_scanned": 432,
+      "path": "evidence/pdf_1647-466.jpg",
+      "bytes": 651094,
+      "sha256": "ad3104ad1511d1a228201b35951d8c8aa0b9a56e5fc44834ae58595963b3600b"
+    }
+  ],
+  "previous_lilly_accepted": 4323,
+  "full_second_independent_diplomatic_transcription": false
+}
