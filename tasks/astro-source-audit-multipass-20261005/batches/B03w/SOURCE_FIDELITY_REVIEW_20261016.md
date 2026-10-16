@@ -1,0 +1,3 @@
+# Chapter LXXVII original-page fidelity correction
+
+Read first-edition original PDF468, printed page 434, where Lilly says Bonatus exceeds **Haly** on this particular dream question, while being less judicious in many others. Preliminary R4448 incorrectly expanded the comparator to Al-Kindi. R4448 in source-first and accepted records now identifies Haly explicitly and retains the qualification. Counts, page boundaries and predictive-evidence labels do not change. Original PDF469 confirms the ninth-house fallback order and the distinct first/second-house harm predictions. Original PDF470 verifies the next chapter divider and the separately dated horoscope. The ZIP and index hashes were recomputed after correction.

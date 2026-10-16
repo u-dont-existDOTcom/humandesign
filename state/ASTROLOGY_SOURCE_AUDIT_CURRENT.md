@@ -1,3 +1,9 @@
+# Current original Lilly source study — Chapter LXXVII
+
+CURRENT 2026-10-16: Chapter LXXVII generic dreams source accepted. After authenticated publication Lilly 4,484 + retained Ptolemy 1,066 = 5,550 historical documentary source units. Next LXXVIII worked dream case begins original PDF470/printed436. No independently verified dream case or empirical prediction; zero runtime rule promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03w_CHAPTER_LXXVII_COMPLETE.md.
+
+---
+
 # Current original Lilly astrology historical source study — Chapter LXXVI
 
 CURRENT 2026-10-16: LXXVI ecclesiastical appointment source accepted; after authenticated publication Lilly 4,446 + Ptolemy 1,066 = 5,512 historical documentary annotations. LXXVI runs PDF466–468 above the dreams divider. Next LXXVII begins PDF468/printed434. Zero independent empirical predictions or runtime model promotion. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03v_CHAPTER_LXXVI_COMPLETE.md and batch B03v proof.
