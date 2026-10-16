@@ -1,3 +1,9 @@
+# Original historical Lilly research — Chapter LXXXI
+
+CURRENT 2026-10-16: historical original Chapter LXXXI Philosopher's Stone source accepted; after authenticated publication Lilly **4,688** + Ptolemy **1,066** = **5,754** source annotations. Next Chapter LXXXII Government, Office and Preferment begins original PDF478 below the Tenth House divider. Authorial belief in Stone and alleged consumption are **unverified historical claims**; zero new empirical predictions or runtime changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04a_CHAPTER_LXXXI_COMPLETE.md.
+
+---
+
 # Original Lilly research current — Chapter LXXX Presbytery
 
 2026-10-16: Original Lilly LXXX source accepted locally. Following authenticated branch publication: Lilly **4,631**, Ptolemy **1,066**, combined **5,697 historical annotations**. Next LXXXI Philosopher's Stone original PDF476 below divider. Three-year institutional predictions must preserve explicit reform/status-quo scope and conjectural hedge; zero independently validated predictions and zero runtime model changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03z_CHAPTER_LXXX_COMPLETE.md.

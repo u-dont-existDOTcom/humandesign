@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXX_HISTORICAL_SOURCE_ONLY_NEXT_LXXXI_OPEN",
-  "records_count": 4631,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_LXXXI_HISTORICAL_SOURCE_ONLY_NEXT_LXXXII_OPEN",
+  "records_count": 4688,
   "read_numbered_chapters": [
     1,
     2,
@@ -84,7 +84,8 @@
     77,
     78,
     79,
-    80
+    80,
+    81
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -451,25 +452,32 @@
       "records_count": 82,
       "sha256": "c40a5fa96cb5055cd84fac3a6f95ba3dd36fdbff9cda2b8295a3a23c1c0064f3",
       "scope": "Original William Lilly (1647) Book II LXXX Presbytery horary public-institution forecast on original PDF473-476, printed439-442, 80 substantive claims plus two LXXXI navigation markers, 13 source passages, 24 unresolved limits, one original 11 March 1646/7 chart, separate three-year alternatives and explicit statu quo/reform qualifier, zero independently authenticated political predictions."
+    },
+    {
+      "id": "B04a",
+      "path": "batches/B04a/RULES.json",
+      "records_count": 57,
+      "sha256": "0bf938b8c323e8ca0bec0da499b21c8b6fee0adf57473aabed40633b540fc56e",
+      "scope": "Original 1647 William Lilly Book II LXXXI Philosopher's Stone worked horary, original PDF476-478/printed442-444. 54 substantive authorial belief, source aspects, failure explanations and historical consumption warning plus three next Tenth House/LXXXII navigation markers; eleven original passages, twenty source uncertainties, no independently authenticated elixir, clinical diagnosis or predictive validation."
     }
   ],
   "next": {
-    "pdf_page": 476,
-    "printed_page": 442,
-    "chapter": "LXXXI",
-    "printed_chapter_numeral": "LXXXI",
-    "heading": "If attaine the Philosopher's Stone?",
+    "pdf_page": 478,
+    "printed_page": 444,
+    "chapter": "LXXXII",
+    "printed_chapter_numeral": "LXXXII",
+    "heading": "Of Government, Office, Dignity, Preferment, or any place of Command or Trust",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF476/printed442 below Presbytery conclusion and horizontal divider, separate square horary diagram 27 May 1647 at 10:45 AM."
+    "position": "Original PDF478/printed444 below decorative Tenth House divider, after LXXXI final health paragraph. No new figure at LXXXII heading."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B03z_CHAPTER_LXXX_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04a_CHAPTER_LXXXI_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -503,5 +511,6 @@
   "chapter_LXXVII_source_acceptance_note": "38 original source annotations R4447-R4484 (36 LXXVII substantive plus two LXXVIII next-heading navigation), eight original source passages with one page seam and 15 textual uncertainties. Generic dreams source only; no independently verified dream event or validated prediction.",
   "chapter_LXXVIII_source_acceptance_note": "24 documentary annotations R4485-R4508, 22 worked dream-case clauses and two following-chapter navigation markers. Author reports bodily safety with financial loss and says the judgment proved true; no independent outcome corroboration, blind prospective prediction or chart recasting. 6 source passages, 14 retained limits.",
   "chapter_LXXIX_source_acceptance_note": "41 source-only historical records R4509-R4549 including 39 parsonage appointment case clauses and two LXXX boundary annotations, seven original passage groups, 17 uncertainty items. Author reports letter obstructed his covetous applicant despite advice, with unspecified neighbor and speculative descriptions. Zero independently verified forecast outcome.",
-  "chapter_LXXX_source_acceptance_note": "82 historical annotations R4550-R4631, 80 LXXX source clauses plus two navigation markers, 13 original page groups and 24 limits. Lilly's 11 March 1646/7 three-year forecast qualified by statu quo reforms and multiple alternatives; no independently verified English institutional prediction."
+  "chapter_LXXX_source_acceptance_note": "82 historical annotations R4550-R4631, 80 LXXX source clauses plus two navigation markers, 13 original page groups and 24 limits. Lilly's 11 March 1646/7 three-year forecast qualified by statu quo reforms and multiple alternatives; no independently verified English institutional prediction.",
+  "chapter_LXXXI_source_acceptance_note": "57 original source annotations R4632-R4688, 54 alchemy worked-question content and 3 next-section navigation; eleven image passage groups and twenty interpretive limits. Lilly believes in Stone but warns this querent to stop and makes separate consumption claim; none independently authenticated or medically validated."
 }
