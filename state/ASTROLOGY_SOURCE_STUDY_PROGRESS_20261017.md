@@ -1,3 +1,9 @@
+# Lilly first edition through historical childbirth chapter — 2026-10-17
+
+After verified remote publication **8,506 documentary historical annotations** (7,440 Lilly + 1,066 Ptolemy). Original source frontier PDF606/894 (**~67.8% page-position proxy only**, not program validation). Printed CHAP CXXIII childbirth source records 30 historic clauses/navigation; no independent human pregnancy outcomes, no runtime rules. Following printed CXXIIII parental patrimony begins lower PDF606; source numeric tables and blind human validation remain open.
+
+---
+
 # First-edition Lilly historical source study through mother, 2026-10-17
 
 After authenticated publication **8,476 historical notes** (7,410 Lilly + 1,066 Ptolemy); original first-edition body frontier PDF605 of 894 (**67.7% scanned page position proxy only**). 53 notes preserve printed CHAP CXXII mother significators, sect, favorable and conflicting health/estate conditions and archaic disease claims. Zero independently validated person-level predictions and zero promoted scoring rules. Printed CHAP CXXIII childbirth difficulty is next at PDF606, followed by CXXIIII paternal inheritance later that page. Historical numeric tables and human blind-study lanes remain open.

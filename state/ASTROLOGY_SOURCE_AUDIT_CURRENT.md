@@ -1,3 +1,9 @@
+# Lilly childbirth first-edition source historically documented
+
+2026-10-17 Africa/Dakar UTC+0. Source-only B05y R7411–R7440 accepted locally; 7,440 Lilly and 1,066 Ptolemy = 8,506 after GitHub readback. All medical/labor/mortality claims are historical unvalidated text, zero clinical evidence or model rules. NEXT printed CHAP CXXIIII father inheritance PDF606.
+
+---
+
 # Original Lilly mother source historically accepted; childbirth next
 
 2026-10-17 Africa/Dakar UTC+0. B05x mother R7358-R7410 source-only accepted; after GitHub readback 7,410 Lilly + 1,066 Ptolemy = 8,476 historical annotations. No actual mother disease/mortality predictions validated, no runtime source rules. Next printed CXXIII first edition PDF606.
