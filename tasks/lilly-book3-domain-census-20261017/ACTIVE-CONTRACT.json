@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "task_id": "lilly-book3-domain-census-20261017",
+  "status": "SOURCE_SLICE_VERIFIED_OWNER_DELIVERED",
+  "exclusive_within_task": true,
+  "required_branch": "research/lilly-book3-natal-domain-census-20261017",
+  "authoritative_parent_goal": "Source-first subject inventory across traditional natal chart texts, avoiding overlooked experiences and events in a neutral survey.",
+  "prior_accepted_sources": [
+    "Ptolemy III.13",
+    "Ptolemy IV.2–IV.10",
+    "Lilly III CXLII/CXLIII"
+  ],
+  "original_source": {
+    "url": "https://archive.org/download/b30338724/b30338724_djvu.txt",
+    "sha256": "7c08b55359c41049c5d43901b8da869a326f8eb852e4a30603a4b698533626aa",
+    "bytes": 2005702,
+    "kind": "public domain 1647 OCR; glyphs unresolved"
+  },
+  "current_work": "Census of every prominent subject family in printed 1647 Book III contents, reconcile against 79-question V7 bank.",
+  "not_authorized": [
+    "Change live GPT",
+    "Ask existing participants new questions",
+    "Use any participant natal data to tune mappings",
+    "Claim traditional astrology empirically predicts observations"
+  ],
+  "acceptance": [
+    "Verified original OCR source and anchors",
+    "Machine-readable census and plain-language interpretation",
+    "Unit and root tests pass",
+    "Published in humandesign canonical research branch",
+    "Local owner artifacts exact readback"
+  ],
+  "parent_astrology_text_study_status": "OPEN",
+  "remaining_work": "Original printed chapter-body glyph/rule adjudication and other natal rulebooks; do not treat contents headings as numeric natal predictions."
+}
