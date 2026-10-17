@@ -1,3 +1,9 @@
+# First-edition Lilly historical study through Stature, 2026-10-17
+
+After authenticated publication **7,737** source annotations (6,671 Lilly + 1,066 Ptolemy). First-edition source frontier PDF581/894 (~65.0% by scan position; NOT numerical transcription or completed evidence). Stature and body-form chapter preserved with 27 historical-only annotations. PDF581 includes the start of next original printed CHAP CXI on sign, facial colour and hair; must retain period caveats and never presume predictive validity or ethnic classification. All independent validation and model runtime promotion in this source lane remain at zero.
+
+---
+
 # First-edition Lilly source study through intellect, 2026-10-17
 
 **7,710 historical source annotations after authenticated publication** (6,644 Lilly + 1,066 Ptolemy), first-edition frontier PDF580 of 894 scans (**64.9% positional**). Printed CHAP CIX on Wit/Understanding source-first preserved, 53 new documentary units; none independently predictive. Page folios 538 and 539 after printed545 are apparent 1647 pagination misprints, not missing/reordered pages. Next printed CHAP CX stature starts original PDF580. Outstanding dense numeric table transcription, rule implementation, frozen human control tests, and validation unaffected.

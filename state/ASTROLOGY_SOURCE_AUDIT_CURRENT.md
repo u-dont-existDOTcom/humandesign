@@ -1,3 +1,9 @@
+# First-edition Lilly Stature original historical source accepted
+
+2026-10-17 Africa/Dakar UTC+0: records R6645–R6671 incorporated in historical-only source index, 6,671 Lilly + 1,066 retained Ptolemy = 7,737 after verified remote publication. Source frontier PDF581/894 scan position; no real-person height or health validation, no clinical/biometric assumptions, no runtime promotions. Following CHAP CXI nature of signs, face and hair starts mid original PDF581 (misprinted folio 539).
+
+---
+
 # Lilly first-edition Wit/Understanding historical source complete; Stature next
 
 2026-10-17 Africa/Dakar UTC+0. R6592–R6644 historical-only accepted; 6,644 Lilly + 1,066 Ptolemy = 7,710 annotations after verified publication. Intelligence/study and harmful disability/moral labels remain 1647 stereotypes, no independent validation. 18 local and portable acceptance tests passed. Next printed CHAP CX begins original PDF580; original folio visually 538 after 545. No clinical/cognitive/racial/moral classification promoted into runtime.

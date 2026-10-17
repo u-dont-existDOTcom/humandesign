@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_WIT_UNDERSTANDING_HISTORICAL_DOCUMENTARY_NEXT_STATURE",
-  "records_count": 6644,
+  "status": "BOOK_III_STATURE_HISTORICAL_SOURCE_COMPLETE_NEXT_FACE_HAIR_SIGN",
+  "records_count": 6671,
   "read_numbered_chapters": [
     1,
     2,
@@ -114,7 +114,8 @@
     107,
     108,
     109,
-    110
+    110,
+    111
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -712,28 +713,34 @@
       "records_count": 53,
       "sha256": "b5d8dc556a6152c6e1254434c9f819ba4ab26a56db1a1987dabd94ff0f0d3cdf",
       "scope": "Original 1647 first-edition printed CHAP CIX/editorial CX Wit or Understanding: PDF577-580 body, PDF581 next heading context; 12 original groups, 50 substantive historical clauses and 3 following-navigation items. Mercury-Moon relative strength/aspect hierarchies, Mercury motion/position/reception, planetary mixtures and humoral study-attributions, multiple contradictory conditional inferences. Original PDF580 folio misprinted 538 after 545; PDF581 folio 539, but source/text uninterrupted. Unvalidated intelligence, disability and moral/personality historical stereotypes must never be treated as human prediction proof."
+    },
+    {
+      "id": "B05i",
+      "path": "batches/B05i/RULES.json",
+      "records_count": 27,
+      "sha256": "195b56e137f2b9f3b88c961f39c7180be2e1a78b1e250471dddcc5bc26cd691b",
+      "scope": "Original printed CHAP CX/editorial CXI: stature and form of body, PDF580-581, next heading PDF581 and following witness PDF582. 24 historical observations and 3 navigation records: partile Ascendant-ruler aspects with strongest-planet tie-breaker, 5 planets x oriental/occidental table, Mercury dispositor and sign overrides, luminary analogy, 5 proportion sources. Original folios appear as 538/539 despite continuous pages; PDF582 shows 548. All alleged stature relationships are historical, not validated actual height predictions."
     }
   ],
   "next": {
-    "pdf_page": 580,
-    "printed_page": 538,
-    "sequential_printed_page_expected": 546,
-    "source_printed_pagination_anomaly": true,
-    "chapter": "CXI",
-    "printed_chapter_numeral": "CX",
-    "heading": "Of the Stature, Forme, or shape of the Body",
+    "pdf_page": 581,
+    "printed_page_as_seen": 539,
+    "sequential_printed_page_expected": 547,
+    "chapter": "CXII",
+    "printed_chapter_numeral": "CXI",
+    "heading": "Nature of the Signes; Colour of the Face and Haire",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Following original CHAP CX starts below divider PDF580, page folio visibly 538 (expected sequential 546) after printed545. Page PDF581 visibly 539, with next CHAP CXI heading. Preserve actual scan order; do not relabel original image folios.",
-    "research_scope": "Historical stature, bodily form and appearance rules; preserve all conditions and do not treat them as medical, racial, intelligence or forensic evidence."
+    "position": "Printed CHAP CXI starts PDF581 below source divider; original folio appears 539 after PDF580 folio538, although these follow printed545 in uninterrupted text. PDF582 folio548 resumes expected physical order.",
+    "research_scope": "Historical sign/face/hair claims and country/climate caveats; strictly no modern race/ethnicity/health or biometric inference based on these stereotypes."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05h_WIT.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05i_STATURE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -811,5 +818,6 @@
   "chapter_CVII_source_acceptance_note": "59 source-only annotations R6416-R6474. Humoral quality testimony list, lunar phases, Sun seasons, zodiac triplicities, malefic overlay, equal opposing cancellation, 3x lord geniture plus Asc ruler and 2x Moon in first; all historical beliefs with zero independent biomedical or personality validation.",
   "chapter_CVIII_source_acceptance_note": "86 historical source records R6475-R6560 (83 manners/fixed-star/sign/humour clauses, 3 next navigation), 14 original page groups, 30 cautionary notes. No independent actual person character/violent act/outcome validated; multiple source fallbacks, lunar direction change and conflicting trait descriptions preserved.",
   "chapter_CIX_source_acceptance_note": "31 historical records R6561-R6591; 29 planetary manners claims and 2 next chapter navigation. Physical source PDF573-578, 8 groups. Descriptions of moral conduct/traits remain unsupported by independent human testing. Zero empirical validations and zero runtime promotions.",
-  "chapter_CX_source_acceptance_note": "53 historical source annotations R6592-R6644, 50 substantive CIX clauses and 3 next-header/opening navigation records, PDF577-581 witnesses, 18 replayed artifact checks, 12 source groups. No validated actual human intelligence/disability/moral predictions or runtime promotions."
+  "chapter_CX_source_acceptance_note": "53 historical source annotations R6592-R6644, 50 substantive CIX clauses and 3 next-header/opening navigation records, PDF577-581 witnesses, 18 replayed artifact checks, 12 source groups. No validated actual human intelligence/disability/moral predictions or runtime promotions.",
+  "chapter_CXI_source_acceptance_note": "R6645-R6671: 27 source records, 24 chapter claims and 3 following-chapter navigation. Source frames 580-582 hash-authenticated, archive replay 12 tests, zero independent height/physical outcome confirmations and no runtime promotion."
 }
