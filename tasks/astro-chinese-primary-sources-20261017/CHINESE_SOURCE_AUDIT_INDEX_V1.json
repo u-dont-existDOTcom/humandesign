@@ -1,0 +1,41 @@
+{
+  "schema": "ASTROLOGY_CHINESE_SOURCE_EXTRACTION_INDEX_V1",
+  "status": "CHINESE_INITIAL_SOURCE_ANNOTATIONS_DOCUMENTARY_ONLY",
+  "as_of_utc": "2026-10-17T21:54:00Z",
+  "systems": [
+    {
+      "id": "bazi",
+      "native": "八字 / 四柱",
+      "accepted_source_annotations": 46,
+      "current_ids": "BZI-R0001–BZI-R0046",
+      "next_id": "BZI-R0047",
+      "current_batch": "ChineseAstro-01",
+      "source_file": "bazi/BAZI_SOURCE_FIRST_RULES_V1.json",
+      "chapter_coverage": "Selected source-first claims across Joey Yap 2005 Book1 and 2006/2018 Book2; NOT full page-by-page audit",
+      "complete_birth_chart_engine": false,
+      "human_predictive_validations": 0
+    },
+    {
+      "id": "ziwei_doushu",
+      "native": "紫微斗數",
+      "accepted_source_annotations": 26,
+      "current_ids": "ZWD-R0001–ZWD-R0026",
+      "next_id": "ZWD-R0027",
+      "current_batch": "ChineseAstro-01",
+      "source_file": "ziwei/ZIWEI_SOURCE_FIRST_RULES_V1.json",
+      "chapter_coverage": "Selected mechanisms and interpretive caveats across the three-volume transmitted Chinese original; NOT full line-by-line collation",
+      "complete_birth_chart_engine": false,
+      "human_predictive_validations": 0
+    }
+  ],
+  "sum_source_annotations": 72,
+  "source_manifest": "SOURCE_MANIFEST_V1.json",
+  "study_review": "SOURCE_REVIEW_20261017.md",
+  "study_plan": "RESEARCH_PLAN_20261017.md",
+  "fixed_source_note_rules": "Every future update append-only IDs per system; corrections via supersession records; absolute source anchors + qualifier + original school; preserve unverified claims and actual misses",
+  "partial_mechanics_source_parity_tests_passed": 36,
+  "overall_astrology_source_records_separate": "Lilly 8,141 and Ptolemy 1,066 remain in separate ASTROLOGY_SOURCE_AUDIT_CURRENT.md, not included in this index",
+  "independently_validated_real_human_claims": 0,
+  "runtime_promotions": 0,
+  "next": "Complete original BaZi published book source audit and Zi Wei classical line-level chart placement; independent calendar engines and chart parity before any blind human predictions"
+}

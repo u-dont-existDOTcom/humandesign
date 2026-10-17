@@ -1,0 +1,194 @@
+{
+  "schema": "ASTRO_CHINESE_SOURCE_MANIFEST_V1",
+  "created_utc": "2026-10-17T21:42:00Z",
+  "research_program": "humandesign astrology empirical study",
+  "source_policy": "Owner-provided copyrighted works are read but not republished in repository; commit only brief identifiers, hash, original pagination and reproducible paraphrased research notes. No ebook bytes.",
+  "sources": [
+    {
+      "id": "BZI-S01",
+      "system": "bazi",
+      "class": "modern-English-technical-primary-for-modern-Joey-Yap-approach",
+      "title": "BaZi - The Destiny Code (Book 1): Your Guide to the Four Pillars of Destiny",
+      "author": "Joey Yap",
+      "first_edition_printed": "2005-02",
+      "observed_pdf_pages": 316,
+      "source_format": "PDF with parsed text and page illustrations",
+      "local_ingest": "conversation_upload",
+      "sha256": "8b40261a8fb4eeacadb19381c91e91208aa3a9de66685407868b2691afb1a6a2",
+      "edition_note": "First published 2005; PDF creation metadata 2009; later reprint in file. Source ISBN in user filename not independent validation.",
+      "use": "Four Pillars construction, calendar, decade luck timing, season/day-master heuristics, five factors, wealth and relationships",
+      "limits": [
+        "Modern authored instructional source, not an original classical BaZi edition",
+        "Introductory shortcuts explicitly subject to later exceptions",
+        "Some example text displays conflicting romanization/characters and arithmetic that must be recorded, not silently corrected",
+        "Descriptive source claims are not independent natal prediction validation"
+      ]
+    },
+    {
+      "id": "BZI-S02",
+      "system": "bazi",
+      "class": "modern-English-author-advanced-instructional",
+      "title": "BaZi - The Destiny Code Revealed (Book 2): A Deeper Journey into the Four Pillars of Destiny",
+      "author": "Joey Yap",
+      "first_edition_printed": "2006",
+      "epub_metadata_date": "2018-07-24",
+      "observed_epub_html_sections": 331,
+      "source_format": "EPUB 3? packaged XHTML/HTML and images",
+      "local_ingest": "conversation_upload",
+      "sha256": "9d29d83c94b67b1c887d6a2935ee8361e821bb6216487f9fe86b444a48489e81",
+      "use": "Hidden stems; common reading errors; seasonal subtleties; combination, clash, punishment, harm, destruction, integrated retrospective cases",
+      "chapter_map": [
+        [
+          "1",
+          "A BaZi Moment",
+          1
+        ],
+        [
+          "2",
+          "Composing the Code",
+          19
+        ],
+        [
+          "3",
+          "Common BaZi Mistakes",
+          49
+        ],
+        [
+          "4",
+          "Combination Codes",
+          79
+        ],
+        [
+          "5",
+          "Clash Codes",
+          111
+        ],
+        [
+          "6",
+          "Punishment Codes",
+          141
+        ],
+        [
+          "7",
+          "Harm Codes",
+          175
+        ],
+        [
+          "8",
+          "Destruction Codes",
+          201
+        ],
+        [
+          "9",
+          "Earthly Branch Relationships in Action",
+          225
+        ],
+        [
+          "10",
+          "Practical BaZi Analysis",
+          271
+        ]
+      ],
+      "limits": [
+        "Reflowable EPUB: cite printed page headings when present, preserve HTML part anchor for audit",
+        "Later substantive approaches can qualify or overturn Book 1 simplified rules",
+        "Illustrations of natal charts may require separate visual verification",
+        "Numerous client case studies are retrospective, do not validate blind performance"
+      ]
+    },
+    {
+      "id": "BZI-CLASSIC-01",
+      "system": "bazi",
+      "class": "classical-source-candidate-unverified",
+      "title": "Di Tian Sui (滴天髓)",
+      "mentioned_in_book1": true,
+      "access_status": "IDENTIFIED_NOT_COLLATION_COMPLETE",
+      "use": "historical older source rule comparison"
+    },
+    {
+      "id": "BZI-CLASSIC-02",
+      "system": "bazi",
+      "class": "classical-source-candidate-unverified",
+      "title": "Zi Ping Zhen Quan (子平真詮)",
+      "mentioned_in_book1": true,
+      "access_status": "IDENTIFIED_NOT_COLLATION_COMPLETE",
+      "use": "chart patterns/structures classical attribution"
+    },
+    {
+      "id": "BZI-CLASSIC-03",
+      "system": "bazi",
+      "class": "classical-source-candidate-unverified",
+      "title": "Yuan Hai Zi Ping (淵海子平)",
+      "mentioned_in_book1": true,
+      "access_status": "IDENTIFIED_NOT_COLLATION_COMPLETE",
+      "use": "classical computational and interpretive comparison"
+    },
+    {
+      "id": "ZWDS-CLASSIC-01",
+      "system": "ziwei_doushu",
+      "class": "transmitted-early-Chinese-original-text",
+      "title": "Zi Wei Dou Shu Quan Shu (紫微斗數全書)",
+      "traditional_attribution": "Chen Tuan (attribution only, not contemporaneous manuscript provenance)",
+      "extent": "transmitted 3-volume Chinese text",
+      "original_chinese_url": "https://zh.wikisource.org/zh-hant/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8",
+      "bilingual_annotated_url": "https://xingge.tw/en/quanshu",
+      "alternate_translation": "https://libokang.com/en/classics/ziwei/the-complete-book-of-purple-star-astrology/",
+      "use": "Original Chinese chart setup, palace placement, star attributes, patterns and time cycles; translated interpretations checked against Chinese",
+      "access_status": "PUBLIC_TEXT_INDEX_AND_STRUCTURE_VERIFIED; NO_COMPLETE_LINE_BY_LINE_COLLATION_YET",
+      "limits": [
+        "Attribution, surviving edition and date not conclusively authenticated; Wikisource library entry describes Qing while secondary material mentions Ming compilation",
+        "Annotation site's chart calculation explicitly differs from classical book on selected late Zi, luck and life-stage conventions",
+        "Modern bilingual translation is secondary interpretive work; original line takes precedence",
+        "School variants must not be silently merged"
+      ]
+    },
+    {
+      "id": "ZWDS-TECH-02",
+      "system": "ziwei_doushu",
+      "class": "English-secondary-book-candidate",
+      "title": "The Empyrean Matrix: A Guide to Purple Star Astrology",
+      "author": "Y. M. Lim",
+      "year_candidate": 2013,
+      "source_available_in_session": false,
+      "access_status": "REFERENCE_ONLY_NOT_STUDIED",
+      "limits": [
+        "No claim of source verification, full-text access, or bibliographic accuracy from user's pasted summary alone"
+      ]
+    }
+  ],
+  "boundary_rules": {
+    "bazi_calendar": "solar terms for year and month, sexagesimal solar day and double-hour, explicit Zi cutoff rule",
+    "ziwei_calendar": "lunar month/day and birth-hour; stem transformation and leap-month/late-Zi convention version",
+    "separate_school_conventions": [
+      "ziwei San He",
+      "ziwei Flying Star / Si Hua",
+      "ziwei Zhongzhou",
+      "bazi Joey Yap introductory",
+      "bazi later Joey Yap methodology",
+      "classical BaZi separately"
+    ],
+    "shared_input_only": "birth timestamp, birthplace/timezone and source quality; normalized internal calendar outputs remain separate"
+  },
+  "authoring_contract": {
+    "status_enums": [
+      "SOURCE_ONLY_DOCUMENTED",
+      "MECHANIC_SPEC_NON_EXECUTABLE",
+      "COMPUTATION_VERIFIED",
+      "DEVELOPMENT_ONLY",
+      "BLINDED_VALIDATED"
+    ],
+    "require_for_each_rule": [
+      "stable id",
+      "source id",
+      "page/section anchor",
+      "preconditions",
+      "outcome",
+      "exception/alternative",
+      "scope and school",
+      "independent verification status"
+    ],
+    "actual_predictions_verified": 0,
+    "runtime_promotions": 0
+  },
+  "copyright_policy": "Source-identifying bibliographic metadata and short original anchors only; do not publish EPUB/PDF or reproduce entire text."
+}
