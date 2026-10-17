@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_EDITORIAL_XCII_SOURCE_ONLY_NEXT_XCIII_OPEN",
-  "records_count": 5338,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_EDITORIAL_XCIII_SOURCE_ONLY_NEXT_XCIV_OPEN",
+  "records_count": 5413,
   "read_numbered_chapters": [
     1,
     2,
@@ -96,7 +96,8 @@
     89,
     90,
     91,
-    92
+    92,
+    93
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -547,25 +548,32 @@
       "records_count": 31,
       "sha256": "4096af7c155f54082637d870dd84e246cc2ad583b8a543944a8449b2b1974ca9",
       "scope": "William Lilly first edition 1647 printed Chapter XCI / editorial XCII, captive or enslaved person and planetary hour of capture, original PDF497–498 printed463–464. 29 historic source clauses and two following witchcraft chapter navigation markers, five original passage groups, nineteen limitations; zero independently authenticated release/outcomes."
+    },
+    {
+      "id": "B04m",
+      "path": "batches/B04m/RULES.json",
+      "records_count": 75,
+      "sha256": "3929da93d11e182d38207393533513fb7fd6098b274be36496659baed61bf190",
+      "scope": "Original first-edition Lilly printed XCII/editorial XCIII claims about supernatural witchcraft, 1647 PDF498-500, with an unnumbered domestic-ritual subsection, and distinct following horse case on PDF501; 72 substantive historical claims, three navigation markers, 11 source spans, 28 explicit limitations, zero independently authenticated outcomes."
     }
   ],
   "next": {
-    "pdf_page": 498,
-    "printed_page": 464,
-    "chapter": "XCIII",
-    "printed_chapter_numeral": "XCII",
-    "heading": "If one be Bewitched or not",
+    "pdf_page": 501,
+    "printed_page": 467,
+    "chapter": "XCIV",
+    "printed_chapter_numeral": "XCIII",
+    "heading": "A Horse lost or stolen neer Henley, if recoverable or not?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF498/printed464 below the Captive or Slave concluding paragraph and horizontal rule; witchcraft attribution and later remedies begin a different numbered chapter."
+    "position": "Original PDF501/printed467 begins distinct square horoscope 11 January 1646, 2:59 PM. Lilly later asserts return after three days, compared to forecast within one or two; distinct from witchcraft."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04l_CHAPTER_XCII_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04m_CHAPTER_XCIII_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -621,5 +629,6 @@
   "chapter_LXXXIX_source_acceptance_note": "Printed LXXXVIII friendship, secrecy of wishes and mutual love; 32 documentary records R5162-R5193, four source passages, no empirical validation.",
   "chapter_XC_source_acceptance_note": "29 historical clauses R5194–R5222 about anonymous enemy vs named enemy, and unverified health/hostility hypotheses; following imprisonment separate.",
   "chapter_XCI_source_acceptance_note": "85 historical text-only annotations R5223–R5307, 83 imprisonment and harm-related source clauses plus 2 next-chapter navigation; no independent prisoner outcome evidence.",
-  "chapter_XCII_source_acceptance_note": "31 historical annotations R5308–R5338, 29 captive/planetary-hour clauses + 2 next-chapter navigation; original PDF497-498, five reverse source spans, 19 limitations. Moon timing conditional; Sun one month and Venus forty days author-attributed, no independently verified detainee, captivity event, actual release or harm."
+  "chapter_XCII_source_acceptance_note": "31 historical annotations R5308–R5338, 29 captive/planetary-hour clauses + 2 next-chapter navigation; original PDF497-498, five reverse source spans, 19 limitations. Moon timing conditional; Sun one month and Venus forty days author-attributed, no independently verified detainee, captivity event, actual release or harm.",
+  "chapter_XCIII_source_acceptance_note": "75 documentary source units R5339-R5413: 72 historic witchcraft/remedy claims and three following horse-case navigation markers, 11 primary-source passage groups, 28 unresolved limitations; source does not verify supernatural causes, health conditions or treatments."
 }

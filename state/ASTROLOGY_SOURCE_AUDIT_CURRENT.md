@@ -1,3 +1,9 @@
+# Original Lilly first-edition source research — alleged Witchcraft and remedies
+
+2026-10-17: printed XCII / editorial XCIII historical text locally accepted, R5339–R5413 (75 new); after verified branch publication Lilly 5,413 + Ptolemy 1,066 = **6,479 historical source units**. The unnumbered remedies subsection is included, but does NOT support occult medical causation or safe effective treatments. Next editorial XCIV / printed XCIII horse case original PDF501. No independent predictive validations or runtime changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04m_CHAPTER_XCIII_COMPLETE.md.
+
+---
+
 # Original Lilly research — captive or enslaved person (printed XCI / editorial XCII)
 
 CURRENT 2026-10-17: 31 source-only historical annotations R5308–R5338 locally admitted; after verified research-branch publication cumulative Lilly 5,338 + Ptolemy 1,066 = **6,404**. Next editorial XCIII printed XCII, *If one be Bewitched or not* on original PDF498 after divider. All captivity and harm claims are historical only. No empirical predictive validations or runtime model changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04l_CHAPTER_XCII_COMPLETE.md.
