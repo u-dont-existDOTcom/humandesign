@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Complete your Life Patterns review</title>
+<title>Continue your Life Patterns review</title>
 <link rel="stylesheet" href="/assets/finish.css">
 <script src="/assets/finish.js" defer></script>
 </head>
@@ -12,18 +12,43 @@
 <main class="shell">
 <header>
   <p class="eyebrow">Life Patterns · Private research review</p>
-  <h1>Finish your interview</h1>
-  <p class="lead">Your original answers are preserved. This page is only for final review, three short follow-ups, and secure submission.</p>
+  <h1>Your Life Patterns review</h1>
+  <p class="lead">Your answers are already saved. Railway handles the independent review, its clarification questions, and final submission here. You do not need repeated GPT check-ins.</p>
 </header>
 <ol class="steps" aria-label="Finishing steps">
-  <li id="step-review" aria-current="step">1. Review</li>
-  <li id="step-questions">2. Final questions</li>
-  <li id="step-done">3. Stored</li>
+  <li id="step-progress" aria-current="step">1. Progress</li>
+  <li id="step-review">2. Confirm findings</li>
+  <li id="step-questions">3. Final questions</li>
+  <li id="step-done">4. Stored</li>
 </ol>
 <div id="alert" role="alert" aria-live="assertive" hidden></div>
 <p id="loading" class="loading" role="status">Opening your private finishing session…</p>
+<section id="progress-panel" hidden aria-labelledby="progress-heading">
+  <p class="phase">Step 1 of 4</p>
+  <h2 id="progress-heading">Your independent review</h2>
+  <p id="review-stage-message" role="status"></p>
+  <p id="review-count" class="subtle"></p>
+  <p id="review-wait" class="subtle"></p>
+  <div id="clarification-panel" hidden>
+    <h3>Current reviewer questions</h3>
+    <p>These are questions in this batch only. You may answer or skip each one; no particular answer is expected.</p>
+    <form id="clarification-form">
+      <div id="clarification-items"></div>
+      <button id="save-clarifications" type="submit">Save this batch</button>
+    </form>
+  </div>
+  <div class="caution">
+    <strong>Want to stop answering questions?</strong>
+    <p>You may request a final independent review using the answers already supplied. Unanswered distinctions remain unknown. The review still needs processing, but no new questions will be asked.</p>
+    <label class="checkline">
+      <input id="close-ack" type="checkbox">
+      <span>I want no further clarification questions. Preserve my earlier answers and proceed with review.</span>
+    </label>
+    <button id="close-questions" type="button" class="secondary" disabled>Stop further questions</button>
+  </div>
+</section>
 <section id="review-panel" hidden aria-labelledby="review-heading">
-  <p class="phase">Step 1 of 3</p>
+  <p class="phase">Step 2 of 4</p>
   <h2 id="review-heading">Check your independent review</h2>
   <p id="review-context" class="subtle"></p>
   <div id="review-items"></div>
@@ -38,7 +63,7 @@
   <button id="next-button" type="button" disabled>Continue to three final questions</button>
 </section>
 <section id="questions-panel" hidden aria-labelledby="questions-heading">
-  <p class="phase">Step 2 of 3</p>
+  <p class="phase">Step 3 of 4</p>
   <h2 id="questions-heading">Three final questions</h2>
   <p>These are separate from the reviewed interview. They do not change or reopen your original answers. Write in your own words, or say that you are unsure.</p>
   <form id="finish-form">
@@ -66,7 +91,7 @@
   </form>
 </section>
 <section id="done-panel" hidden aria-labelledby="done-heading">
-  <p class="phase">Step 3 of 3</p>
+  <p class="phase">Step 4 of 4</p>
   <h2 id="done-heading">Your review was stored</h2>
   <p>The independent review and your final answers were saved to encrypted study storage.</p>
   <p id="receipt-text" class="receipt"></p>

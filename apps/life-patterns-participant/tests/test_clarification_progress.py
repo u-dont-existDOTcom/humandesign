@@ -80,7 +80,7 @@ def test_legacy_single_question_shape_is_handled_without_fictitious_total():
 
 def test_current_action_schema_declares_readonly_progress():
     contract = json.loads(ACTION.read_text())
-    assert contract["info"]["version"] == "1.7.0"
+    assert contract["info"]["version"] == "1.8.0"
     status = contract["components"]["schemas"]["ReviewStatus"]
     entry = status["properties"]["clarification_progress"]
     assert "clarification_progress" not in status["required"]

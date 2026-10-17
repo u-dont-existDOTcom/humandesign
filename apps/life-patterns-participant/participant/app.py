@@ -1072,6 +1072,8 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         ):
             raise HTTPException(409, "The worker result refers to a stale source revision.")
         if body.status == "clarification_needed":
+            if queued.get("clarification_intake_closed"):
+                raise HTTPException(409, "The participant declined further clarifications.")
             if not clarification:
                 raise ValueError("Clarification-needed results require one question.")
             questions = clarifications or [clarification]

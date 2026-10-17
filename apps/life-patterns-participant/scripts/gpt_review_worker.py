@@ -475,6 +475,14 @@ def run_legacy_review(
                 pending_answer or "",
             )
 
+        if job.get("clarification_intake_closed"):
+            # The person opted out of additional questioning. Preserve already
+            # processed source and independent evidence, but forbid new asking.
+            def review_only(state):
+                state["review_only"] = True
+                state["phase"] = "ready"
+                state["pending_question"] = None
+            current = store.change(token, review_only)
 
         before_calls = len(current.get("calls", []))
         for _ in range(2):

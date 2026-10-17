@@ -759,6 +759,70 @@ class Store:
             db.commit()
         return payload
 
+    def close_gpt_review_clarification_intake(self, review_id: str) -> dict:
+        """Participant declines NEW questions, retaining exact old answers and skips.
+
+        This is not a complete review: independent final evidence synthesis still
+        must reach ready. Any existing reviewer lease is invalidated.
+        """
+        now = time.time()
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            row = db.execute(
+                "SELECT payload FROM gpt_review_jobs WHERE id=?", (review_id,)
+            ).fetchone()
+            if not row:
+                raise Missing("Unknown GPT review.")
+            payload = self.decode(row[0])
+            if payload.get("clarification_intake_closed"):
+                db.commit()
+                return payload
+            # Works for legacy reviews too; their independent worker also
+            # receives an explicit review-only continuation after closure.
+            if payload["status"] not in {
+                "queued", "processing", "clarification_needed",
+                "paused", "error", "resource_limited",
+            }:
+                raise Conflict("Clarification intake cannot be closed in this review state.")
+            if db.execute(
+                "SELECT 1 FROM gpt_review_finalizations WHERE review_id=?", (review_id,)
+            ).fetchone():
+                raise Conflict("This review has already been submitted.")
+            pending = payload.get("pending_clarifications") or []
+            if payload["status"] == "clarification_needed" and not pending:
+                pending = [payload["pending_clarification"]] if payload.get(
+                    "pending_clarification"
+                ) else []
+            # Source-preserving: each already admitted but unanswered question
+            # becomes an explicit participant-declined skip, never a trait.
+            for question in pending:
+                payload.setdefault("clarification_history", []).append(
+                    dict(question) | {
+                        "answer_text": None,
+                        "answer_status": "skipped",
+                        "skip_reason": "participant_declined_further_clarifications",
+                        "answered_at_unix": now,
+                    }
+                )
+            payload.update(
+                clarification_intake_closed=True,
+                clarification_intake_closed_at_unix=now,
+                status="queued",
+                error=None,
+                claim_id=None,
+                lease_until=None,
+                updated_at_unix=now,
+                cycle_queued_at_unix=now,
+                review_stage="final_synthesis",
+                pending_clarification=None,
+                pending_clarifications=[],
+                pending_batch_id=None,
+                round=len(payload.get("clarification_history") or []),
+            )
+            self._save_review(db, payload)
+            db.commit()
+        return payload
+
     def control_gpt_review(self, review_id: str, action: str, operation_id: str) -> dict:
         now = time.time()
         signature = digest("control:" + action)

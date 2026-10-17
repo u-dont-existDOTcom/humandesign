@@ -1,0 +1,163 @@
+{
+  "schema": "life-patterns-experience-meaning-pilot-v0",
+  "status": "EXPLORATORY_NOT_LIVE_NOT_ASTROLOGY_SCORED",
+  "created_on": "2026-10-17",
+  "source": "Owner's October 17 ideation; construct separations developed as new neutral items.",
+  "scope": "Eight optional experience domains; not a new compulsory repeat battery for any completed interview.",
+  "anchoring": {
+    "recall_window": "Past 12 months for events where practical; current for subjective meaning; lifetime differences separately labelled retrospective.",
+    "frequency_options": [
+      "never",
+      "once or twice in last year",
+      "every few months",
+      "monthly",
+      "weekly",
+      "most days",
+      "not sure/prefer not to say"
+    ],
+    "intensity_options": [
+      "none",
+      "faint",
+      "noticeable",
+      "strong",
+      "overwhelming",
+      "not sure/prefer not to say"
+    ],
+    "answer_policy": "A free-text answer can supersede forced options; do not infer missing intensity as zero; no real-life example compulsory."
+  },
+  "items": [
+    {
+      "id": "EM01",
+      "name": "surprise_self",
+      "prompt": "Thinking about the past twelve months, how often did something about your own thoughts or actions genuinely surprise you? If none, say none. What was one instance, if you remember one?",
+      "targets": [
+        "frequency",
+        "felt_intensity",
+        "valence",
+        "source_event"
+      ],
+      "notes": "Distinguish behavioral novelty from surprise feeling; not a test of introversion or spirituality."
+    },
+    {
+      "id": "EM02",
+      "name": "surprise_people_world",
+      "prompt": "Over the past twelve months, how often have other people or events in the world surprised or shocked you? Were these surprises mostly welcome, upsetting, neutral, or mixed?",
+      "targets": [
+        "frequency",
+        "felt_intensity",
+        "valence",
+        "domain"
+      ],
+      "notes": "Separates people/world from surprising self; no presupposition that shock is good."
+    },
+    {
+      "id": "EM03",
+      "name": "awe_wonder",
+      "prompt": "How often, if at all, have you felt awe or wonder in the past year—whether about nature, ideas, art, people, ordinary life, or something else? How strong did it get?",
+      "targets": [
+        "frequency",
+        "peak_intensity",
+        "source_context"
+      ],
+      "notes": "Awe is not the same as surprise or positive mood."
+    },
+    {
+      "id": "EM04",
+      "name": "insight_revision",
+      "prompt": "How often do you suddenly understand something in a new way that changes how you see yourself, another person, or your situation? When that happens, how often does it actually change something you do?",
+      "targets": [
+        "frequency",
+        "insight_to_action",
+        "impact"
+      ],
+      "notes": "Separates sudden realization from mere thought; both no insight and insight without change valid."
+    },
+    {
+      "id": "EM05",
+      "name": "predictability",
+      "prompt": "How predictable or stable does your everyday life seem to you? Are major changes in perspective rare or frequent, or does it vary by period? You can distinguish external events from changes in your interpretation.",
+      "targets": [
+        "ordinary_predictability",
+        "perspective_shift_frequency",
+        "time_variation"
+      ],
+      "notes": "Avoid collapsing an orderly life with lack of inner revelation."
+    },
+    {
+      "id": "EM06",
+      "name": "perceived_guidance",
+      "prompt": "Do you ever have a direct feeling that events in your life are being guided by something beyond your own deliberate plans? If so, how often and how strong is that feeling? What meaning, if any, do you give it?",
+      "targets": [
+        "direct_experience_frequency",
+        "felt_intensity",
+        "interpretation",
+        "uncertainty"
+      ],
+      "notes": "Do not equate subjective guidance with verified supernatural causation; none/uncertain acceptable."
+    },
+    {
+      "id": "EM07",
+      "name": "meaningful_coincidences",
+      "prompt": "How often do you notice coincidences that feel unusually meaningful? When you later think about them, do they usually still seem special, or more like chance events, or does it vary?",
+      "targets": [
+        "noticed_frequency",
+        "felt_intensity",
+        "later_appraisal",
+        "interpretation"
+      ],
+      "notes": "Separates noticing coincidences from meaning assigned and later checking."
+    },
+    {
+      "id": "EM08",
+      "name": "personal_social_meaning",
+      "prompt": "How meaningful does your life feel to you personally right now? Separately, how much do you feel your life makes a difference to other people or the world? Is either answer something you feel settled about, or are you still exploring it?",
+      "targets": [
+        "personal_presence",
+        "perceived_social_impact",
+        "search_for_meaning",
+        "change_over_time"
+      ],
+      "notes": "Personal meaning is distinct from objective world impact or grand importance."
+    }
+  ],
+  "protocol": {
+    "participant_consent": "Opt-in and separate from current accepted survey.",
+    "source_nonredundancy": "Review already supplied source, skip any question substantially answered elsewhere.",
+    "scoring": "No astro/HD rules, chart matching, personality diagnosis, mystical-causation claims, or survey version replacement. Record separate descriptive answers and unknowns.",
+    "validation": "Pilot for clarity, response variability, independent test-retest, and discriminant comparisons against established scales, then freeze before prospective chart predictions.",
+    "construct_references": [
+      {
+        "doi": "10.1080/17439760.2018.1484940",
+        "construct": "awe experiences",
+        "caveat": "AWE-S is a multifactorial episode measure; this new wording is not the validated AWE-S."
+      },
+      {
+        "doi": "10.1207/S15324796ABM2401_04",
+        "construct": "daily spiritual experiences",
+        "caveat": "DSES has its own permission/registration; new optional wording is not the DSES."
+      },
+      {
+        "doi": "10.1037/0022-0167.53.1.80",
+        "construct": "meaning presence and search",
+        "caveat": "MLQ is a separate validated 10-item questionnaire."
+      }
+    ]
+  },
+  "minimal_pilot_path": {
+    "default_optional_prompt_ids": [
+      "EM01",
+      "EM03",
+      "EM04",
+      "EM08"
+    ],
+    "other_prompts_offered_conditionally": [
+      "EM02",
+      "EM05",
+      "EM06",
+      "EM07"
+    ],
+    "skip_if_existing_source_answers_equivalent": true,
+    "time_budget": "Participant-paced; no fixed required count or compulsory examples.",
+    "scope": "Development/pilot only, never append to existing submitted questionnaire."
+  }
+}

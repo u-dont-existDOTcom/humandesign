@@ -1,0 +1,9 @@
+# Early Railway review and experience/meaning module — 2026-10-17
+
+Owner goal A: No endless GPT check-ins. After an independent review is queued, issue the same scoped Railway browser capability immediately. Railway should automatically show review progress and next admitted batches, accept exact responses/skips, and handle the existing final encrypted submission. Participant can stop further question intake and still request independent evidence synthesis of current answers; unknowns remain unknown. Never invent a completion ETA.
+
+Owner goal B: New optional versioned survey research lane for surprise, awe, revelation, predictability, spiritual guidance, synchronicity and meaning. Do not modify existing survey, historical answers or astrology scoring. Work from neutral psychological item construction and empirical scales, separately testing reliability/discrimination first.
+
+Baseline: Canonical research branch 38a0cb9d, production railway v1.7.0 ready-only finish link. Same encrypted /data volume and review worker; no new database. Working branch fix/life-patterns-review-portal-early-20261017 in isolated worktree. Keep pending unrelated Railway staged changes untouched.
+
+Acceptance: Early link allowed only for active saved review; private one-time token/exchange; browser follow-up batches and source-bound status; auto-check when open; no deceptive global question count; no further questions after explicit stop-intake; existing independent reviewer completes evidence-only or reports blocked; final ready still required before confirmation and CF003/storage; exact participant answers preserved. Add tests for ongoing and legacy review, absent consent, bad token, CSRF/origin, forged batch, skips, full source. Merge/deploy only after tests; preserve private GPT editor boundary. New survey module exploratory only.

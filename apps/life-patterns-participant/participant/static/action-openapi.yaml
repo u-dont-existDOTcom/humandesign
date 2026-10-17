@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Life Patterns Independent Review Pilot",
-    "version": "1.7.0",
-    "description": "Independent review, encrypted final submission and a participant-approved single-use finishing link, available only when review is ready."
+    "version": "1.8.0",
+    "description": "Saved reviews may continue on Railway before final independent readiness."
   },
   "servers": [
     {
@@ -312,8 +312,8 @@
     "/api/gpt/reviews/{review_id}/finish-link": {
       "post": {
         "operationId": "issueLifePatternsFinishLink",
-        "summary": "Create a one-time private Railway finishing link for a ready review",
-        "description": "Only after status ready and participant opts for Railway finish. Say: Please click Allow on this tool call to continue. Keep the one-time link private; use only this saved review_id. Railway collects confirmation, the three CF003 answers and encrypted submission. This call does not submit anything.",
+        "summary": "Continue an already saved review privately on Railway",
+        "description": "For a saved consented review, offer a Railway link now. Issue it only with participant approval. Railway handles admitted questions, live review status, optional end of question intake with unknowns preserved, and ready-only final confirmation and storage. Do not continue that review in GPT.",
         "security": [
           {
             "bearerAuth": []
@@ -333,7 +333,7 @@
         ],
         "responses": {
           "200": {
-            "description": "One-time link generated; not submitted.",
+            "description": "One-time review link; not final storage.",
             "content": {
               "application/json": {
                 "schema": {
@@ -346,7 +346,7 @@
             "description": "GPT Action credential not accepted."
           },
           "409": {
-            "description": "Review not yet ready or already submitted."
+            "description": "Review ended, withdrawn, or already submitted."
           },
           "503": {
             "description": "Private HTTPS finishing origin unavailable."
@@ -1111,7 +1111,8 @@
             "minimum": 1
           },
           "ready_review_required": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "False; independent ready is still required for final submission."
           },
           "participant_action": {
             "type": "string"

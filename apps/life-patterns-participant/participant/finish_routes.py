@@ -57,6 +57,29 @@ class FinishSubmit(SourceBody):
     metadata: FinishMetadata
 
 
+class PortalBatchAnswer(SourceBody):
+    clarification_id: str = Field(pattern=r"^Q-[a-f0-9]{32}$")
+    answer_text: str = Field(default="", max_length=20000)
+    skipped: bool = False
+
+
+class PortalBatchSubmission(SourceBody):
+    batch_id: str = Field(pattern=r"^B-[a-f0-9]{32}$")
+    operation_id: str = Field(min_length=16, max_length=80, pattern=r"^[A-Za-z0-9_-]+$")
+    answers: list[PortalBatchAnswer] = Field(min_length=1, max_length=3)
+
+
+class PortalSingleAnswer(SourceBody):
+    clarification_id: str = Field(pattern=r"^Q-[a-f0-9]{32}$")
+    operation_id: str = Field(min_length=16, max_length=80)
+    answer_text: str = Field(default="", max_length=20000)
+    skipped: bool = False
+
+
+class CloseClarifications(SourceBody):
+    confirm_no_more_questions: Literal[True]
+
+
 def mount_finish_routes(
     app,
     store: Store,
@@ -66,7 +89,7 @@ def mount_finish_routes(
     validate_submission,
     gpt_submission_type,
 ) -> None:
-    """Attach a disabled-by-default-until-ready browser finish to existing service."""
+    """Attach one private browser review journey to the existing service."""
     router = APIRouter()
     capabilities = FinishSessions(store)
     origin = settings.public_origin.rstrip("/")
@@ -149,8 +172,8 @@ def mount_finish_routes(
                 "schema": "life-patterns-finish-link-v1",
                 "finish_url": origin + "/finish#token=" + token,
                 "expires_in_seconds": seconds,
-                "ready_review_required": True,
-                "participant_action": "Open this link privately to confirm review and finish.",
+                "ready_review_required": False,
+                "participant_action": "Continue this saved review on Railway.",
             }
         )
 
@@ -162,7 +185,7 @@ def mount_finish_routes(
             {
                 "status": "session_open",
                 "session_expires_in_seconds": SESSION_TTL_SECONDS,
-                "next": "Read your independent review and confirm or return for correction.",
+                "next": "Follow this saved review in Railway until independent evidence is ready.",
             }
         )
         response.set_cookie(
@@ -189,9 +212,39 @@ def mount_finish_routes(
                 }
             )
         review = store.gpt_review_read(session.review_id)
-        if review.get("status") != "ready":
-            raise Conflict("Review is no longer ready; continue in the original conversation.")
         summary = public_review(review)
+        if review.get("status") != "ready":
+            status = review["status"]
+            if status in {"withdrawn", "stopped"}:
+                raise Conflict("This review has ended. Return to the original conversation.")
+            public = summary.get("clarification_progress") or {}
+            clarifications = summary.get("clarifications") or (
+                [summary["clarification"]] if summary.get("clarification") else []
+            )
+            # No new question may be presented after the participant opts out.
+            if review.get("clarification_intake_closed"):
+                clarifications = []
+            return safe_json(
+                {
+                    "status": status,
+                    "review_protocol": review.get("review_protocol", "legacy-v1"),
+                    "review_stage_label": summary.get("review_stage_label"),
+                    "wait_guidance": summary.get("wait_guidance"),
+                    "recommended_check_after_seconds": summary.get(
+                        "recommended_check_after_seconds", 60
+                    ),
+                    "clarification_progress": public,
+                    "clarification_intake_closed": bool(review.get("clarification_intake_closed")),
+                    "clarifications": clarifications,
+                    "batch_id": summary.get("batch_id"),
+                    "original_turn_count": len(
+                        (review.get("candidate_record") or {}).get("turns") or []
+                    ),
+                    "clarification_count": len(review.get("clarification_history") or []),
+                    "csrf_token": capabilities.rotate_csrf(session),
+                    "submission": None,
+                }
+            )
         if not summary.get("final_review_completed"):
             raise Conflict("Independent evidence synthesis is not finalized.")
         questions = cf003_questions()
@@ -207,6 +260,77 @@ def mount_finish_routes(
                 "cf003_questions": questions,
                 "csrf_token": token,
                 "submission": None,
+            }
+        )
+
+    @router.post("/api/finish/clarifications")
+    def answer_single_clarification(request: Request, body: PortalSingleAnswer):
+        require_origin(request)
+        session = finish_session(request)
+        capabilities.require_csrf(session, request.headers.get("x-finish-csrf", ""))
+        current = store.gpt_review_read(session.review_id)
+        if current.get("clarification_intake_closed"):
+            raise Conflict("Further clarifications were declined for this review.")
+        if current.get("review_protocol") == "fast-batch-v1":
+            raise Conflict("Fast review uses exact admitted question batches.")
+        if target_exposure(body.answer_text):
+            raise ValueError("Do not include birth/chart information in answers.")
+        if not body.skipped and not body.answer_text.strip():
+            raise ValueError("Provide an answer or explicitly skip this question.")
+        updated = store.add_gpt_review_answer(
+            session.review_id,
+            body.answer_text,
+            clarification_id=body.clarification_id,
+            operation_id=body.operation_id,
+            skipped=body.skipped,
+        )
+        return safe_json(
+            {
+                "status": updated["status"],
+                "answered_or_skipped_total": len(updated.get("clarification_history") or []),
+                "message": "Your answer was saved to this independent review.",
+            }
+        )
+
+    @router.post("/api/finish/clarification-batches")
+    def answer_clarifications(request: Request, body: PortalBatchSubmission):
+        require_origin(request)
+        session = finish_session(request)
+        capabilities.require_csrf(session, request.headers.get("x-finish-csrf", ""))
+        current = store.gpt_review_read(session.review_id)
+        if current.get("clarification_intake_closed"):
+            raise Conflict("Further clarifications were declined for this review.")
+        values = [item.model_dump() for item in body.answers]
+        for answer in values:
+            if target_exposure(answer["answer_text"]):
+                raise ValueError("Do not enter birth/chart details in behavioral answers.")
+        updated = store.add_gpt_review_batch_answers(
+            session.review_id, body.batch_id, values, body.operation_id
+        )
+        return safe_json(
+            {
+                "status": updated["status"],
+                "clarification_intake_closed": False,
+                "answered_or_skipped_total": len(updated.get("clarification_history") or []),
+                "message": "This batch was saved. Railway is reviewing the updated source.",
+            }
+        )
+
+    @router.post("/api/finish/close-clarifications")
+    def close_clarifications(request: Request, body: CloseClarifications):
+        require_origin(request)
+        session = finish_session(request)
+        capabilities.require_csrf(session, request.headers.get("x-finish-csrf", ""))
+        updated = store.close_gpt_review_clarification_intake(session.review_id)
+        return safe_json(
+            {
+                "status": updated["status"],
+                "clarification_intake_closed": True,
+                "message": (
+                    "No further interview questions will be admitted. "
+                    "The independent reviewer will synthesize available source, "
+                    "keeping unanswered distinctions unknown; it is not yet ready."
+                ),
             }
         )
 
