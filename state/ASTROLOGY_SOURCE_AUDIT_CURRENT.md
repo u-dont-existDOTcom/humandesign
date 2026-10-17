@@ -1,3 +1,9 @@
+# Original Lilly child-count historical chapter documented; ninth-house intro next
+
+2026-10-17 Africa/Dakar UTC+0. Source B06q R8603–R8680 accepted locally; after verified GitHub remote readback 8,680 Lilly + 1,066 Ptolemy = 9,746 historical documentary notes. Original PDF640 of 894 scanned frames (71.6% physical position only). All 25 photo/source/archive replay checks pass. No verified offspring count, sex, health, mortality or parent-child relationship outcomes. Zero executable runtime model promotions. NEXT UNNUMBERED ninth-house journeys/religion introduction starts mid PDF640, next separately printed CXXXIX also PDF640. Chinese 72 source notes preserved in a separate index.
+
+---
+
 # Original Lilly unnumbered fifth-house/children source accepted; child count next
 
 2026-10-17 Africa/Dakar UTC+0. B06p source R8497–R8602 accepted locally. After verified GitHub readback 8,602 Lilly + 1,066 Ptolemy = 9,668 historic source notes. 31 original-photo/replayed archive integrity tests pass; no independent real fertility/child health accuracy, zero runtime scoring promotions. The UNNUMBERED section did not change numbered chapter count. NEXT original printed CXXXVIII child count on PDF638. Chinese source BaZi 46 / Zi Wei 26 notes separately indexed.

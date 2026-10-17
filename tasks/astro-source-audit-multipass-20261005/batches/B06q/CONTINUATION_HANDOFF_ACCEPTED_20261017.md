@@ -1,0 +1,36 @@
+# HumanDesign original 1647 Lilly source — printed CXXXVIII children count accepted; ninth-house introduction next
+
+[2026-10-17 23:21 UTC] Africa/Dakar. Historical primary-source study only; no personal medical, reproductive or child death predictions.
+
+## Canonical checkpoint after GitHub verified remote
+
+Repository `u-dont-existDOTcom/humandesign`, source branch `research/astro-b06q-children-count-original-20261017` based on published B06p unnumbered fifth-house original commit `2225536d9149b63ea1d8a568b5a77f3bba611f76`. After B06q remote SHA verification, source index `tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json` includes **8,680 Lilly + 1,066 retained Ptolemy = 9,746 historical source annotations**, latest **R8680**, NEXT **R8681**. Current original first-edition source frontier PDF640/894 (**71.6% physical scanned-page position only**). Neither count nor page fraction measures astrological human accuracy or finished technical rulebook.
+
+## Accepted B06q first-edition source
+
+Lilly's original first-edition *Christian Astrology* 1647 (Wellcome b30338724) **printed CHAP CXXXVIII/editorial CXXXIX** *How many Children the Native may have* opens beneath a divider lower original **PDF638/printed604**, runs through **PDF639/printed605**, ends top **PDF640/printed606**. A DOUBLE divider then introduces an entirely separate **UNNUMBERED ninth-house introductory discussion** titled `Judgments upon the ninth House. Of Journeys and Religions` in the middle of PDF640. After that brief ninth-house introduction, separately numbered printed **CHAP CXXXIX — Whether the Native shall travell or not** begins beneath another divider low on the SAME PDF640. The next source study must not inadvertently absorb that ninth-house introduction into the child-count source.
+
+**78 historical annotations R8603–R8680** (76 substantive +2 following navigation), 6 reversible image-anchored original source passage groups, original photographs **PDF638–643 SHA256/bytes**, original source review, uncertainty ledger, guarded canonical index/rollback snapshots and source status reports. **25 focused first-edition structural tests** passed; full standalone ZIP extraction, CRC, per-member SHA and **25 independent tests replay** passed. Owner archive `~/Téléchargements/Astrology-Lilly-Chapter-CXXXIX-How-Many-Children-1647-20261017.zip`, exact SHA256 **d66c52336e65b8b698848e5975803fef0c8918d4dbea535fb4b230d0106f3277**, receipt `SOURCE_RELEASE_RECEIPT_20261017.json` in B06q task directory.
+
+### Important source findings, NOT validated predictions
+
+- Lilly counts so-called fruitful planets in fifth or eleventh in allegedly fertile signs for higher child counts; fewer planets or barren signs imply fewer. **Planets in bicorporeal signs supposedly double count; in fruitful signs triple count.** Categories overlap and no deterministic precedence is specified: unresolved ambiguity, never pick matching outcome after seeing children count.
+- Historical sex-of-children claim requires masculinity/femininity of planet *and* house, sign and degree, with Moon/Venus occidental for female; no biological validity.
+- Distinct other outcomes include how long children live, fame/happiness, obedience, whether financially helpful, and alleged parent-child affection from first/fifth lord aspects. No outcome can be treated as interchangeable to salvage a failed exact-number prediction.
+- `Aphorismes of ALBUBATER concerning Children` alleging child mortality/ill deaths, some with hard planetary aspects and uncertain Taurus/MC glyphs, is original Lilly attribution only. Albubater original was not independently collated, no real mortality cases used.
+- **Source-level methodological dispute:** Lilly states later interpreters abandoned **Ptolemy's** method and attributes to him using **10th, 11th, 4th and 5th** house cusps, signs and occupants to judge children, in contrast to preceding fifth-house priority. This is NOT inter-author independent validation. Exact Ptolemy original passage remains open for future cross-source collation.
+- Zero actual independent human child-count, birth-sex, survival/lifespan or parental relationship predictive success, zero clinical recommendations, zero runtime source rule promotions.
+
+## NEXT B06r: independent unnumbered ninth-house introduction, then printed CXXXIX
+
+Begin **R8681**, from the middle of original **PDF640/printed606**, `Judgments upon the ninth House. Of Journeys and Religions`. Its original short source prose lists 9th house and Lord, occupants, Moon/Mercury with a Ptolemy-added source extra planet glyph needing visual verification. The author distinguishes whether one travels far, once/repeatedly, country/direction, motivations, material success and danger to life. It ends before a horizontal divider that introduces **printed CHAP CXXXIX** `Whether the Native shall travell or not`, also low PDF640. The next source is UNNUMBERED; do **NOT** increment printed numbered-chapter count. The subsequent CXXXIX chapter source text runs through original PDF641 and later and will be separately accepted.
+
+Create **B06r** new isolated task branch/worktree from the *actual verified published B06q SHA*. Original PDF640 photograph is already in B06q/evidence (PDF641–643 context also). Add source-first history notes and reversible original page group mapping, original photo SHA/bytes and ambiguous operator/glyph quarantines, 10+ deterministic source-integrity tests, standalone ZIP full-extraction/CRC/SHA/test replay, append-only canonical registry without numbered chapter increment, source review, GitHub remote SHA readback, owner ZIP and handoff. No owner step needed. Keep high-stakes travel danger and religious convictions labels historical-only and unvalidated.
+
+## Separate Chinese astrology still parallel and not additive
+
+Chinese studies in `tasks/astro-chinese-primary-sources-20261017/` have **46 BaZi +26 Zi Wei Dou Shu =72 separate source-only annotations**, full separate `CHINESE_SOURCE_AUDIT_INDEX_V1.json`, modern Joey Yap source books hashed and never republished, original three-volume Zi Wei historical study via Chinese Wikisource, 38 focused and extracted-replay limited mechanical tests. Full BaZi true astronomical solar terms/day-year calendar and complete Zi Wei Life/Body/14 stars/Four Transformations across school conventions NOT implemented. No real human predictive successes and no runtime rules promoted. Never add the Chinese 72 to Lilly/Ptolemy 9,746.
+
+## Wider science and standing repository gates
+
+Original source historical annotation counts, source-image positions, and tests are **documentary** integrity only. Original numerical Lilly astronomy/directions, Regiomontanus house geometry, finished ruleset, actual forward-blind survey answers (including user-added awe/wonder/synchronicity), full controlled prospective testing, matched calendar/demographic/decoy baselines all OPEN. Existing broader unittest and UDA governance baseline failures documented Chinese `REPOSITORY_VERIFICATION_20261017.json` and earlier B05p; this source-only batch did not change production scoring logic. Follow universal-dev-architecture and Humandesign AGENTS, preserve source provenance and all source negatives, avoid repeating verified work. Save every batch in humandesign repo and owner Téléchargements.

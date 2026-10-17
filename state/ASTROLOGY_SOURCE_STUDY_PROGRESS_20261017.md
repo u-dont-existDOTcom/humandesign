@@ -1,3 +1,9 @@
+# Lilly original first edition through historic child count — 2026-10-17
+
+After remote verified publication **9,746 original historical source notes** (8,680 Lilly + 1,066 Ptolemy), first-edition physical scan frontier PDF640/894 (**71.6% by scanned-page position ONLY, not project or scientific completion**). Printed CXXXVIII adds 78 historic assertions, including unresolved twofold versus threefold child-count multipliers, gender-coded and high-stakes offspring longevity predictions, and Lilly's explicit disagreement with purported Ptolemy 10/11/4/5-house method. No human predictive validation or runtime scoring promotion. NEXT original UNNUMBERED ninth house travel/religion introduction on PDF640, then printed CXXXIX travel also PDF640. Parallel Chinese BaZi 46 and Zi Wei 26 source-only notes independently indexed; full chart engines, blind tests, comparative baselines remain OPEN.
+
+---
+
 # Lilly historical source through unnumbered fifth-house children — 2026-10-17
 
 After authenticated remote publication **9,668 historical notes** (8,602 Lilly + 1,066 Ptolemy); original first-edition source frontier PDF638/894 (**71.4% scanned physical page position ONLY, not entire science completion**). UNNUMBERED fifth-house introduction has 106 source notes and explicitly fifth over eleventh conflicting-testimony precedence, Mercury-dependent fertility category and old unsupported child morbidity, mortality, miscarriage and parent-life claims. All genuine clinical/personal predictions 0, runtime rules 0. Numbered chapter counter UNCHANGED. NEXT printed CHAP CXXXVIII child counts from lower PDF638. Chinese BaZi 46 and Zi Wei 26 historical source annotations remain independent with 38 scoped mechanics tests; neither historical tradition's human prediction accuracy independently validated.
