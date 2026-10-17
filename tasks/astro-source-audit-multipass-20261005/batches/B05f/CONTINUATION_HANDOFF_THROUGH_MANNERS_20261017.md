@@ -1,0 +1,9 @@
+# First-edition Lilly manners research continuation
+
+Authenticated research branch research/astro-b05f-manners-source-20261017, source commit 938597a3a6a30372a9201a323a62d6dfb3b7a52a. Accepted historical corpus **6,560 Lilly +1,066 Ptolemy = 7,626 annotations**, last Lilly R6560, next Lilly R6561. B05f added 86 source annotations, 83 substantive claims and 3 following chapter navigation, 14 first-edition page groups, 30 cautions. All primary source JPEGs original PDF568–575 preserved with SHA256 and bytes. Local integrated 25 tests and 20 tests replayed from ZIP passed.
+
+Scope includes Ascendant/Mercury/Moon manners significator and fallback alternatives, strong/weak good/evil interpretations, lunar-directed personality shifts, multiple epoch-dependent fixed star claims with unverified stigmatizing allegations, 12 zodiacal sign stereotypes and four humoral manners. Original author says fine Johannes Angelus degree-based typology is too rigid. The source gives no independent human personality accuracy or evidence supporting criminal dangerousness labels, no runtime promotions.
+
+Owner archive /mnt/hdd/home/joel/Téléchargements/Astrology-Lilly-Chapter-CVIII-Manners-Original-20261017.zip SHA256 8cd31ddb05859d7af048c4194d1b2fd1094430c22b93bd63a459938d6f350317.
+
+NEXT printed CHAP CVIII/editorial CIX *The quality of Manners, which may in kind be discerned from every Planet*, begins original PDF573/printed539 after separate divider and continues PDF574–575 and beyond (discover true next divider). Treat well/poorly dignified planet trait tables as distinct next source; preserve every opposing trait and all qualifications, without applying labels to actual people. Original full Lilly PDF SHA256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Next R6561; parent research OPEN.
