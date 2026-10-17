@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_REGIOMONTANUS_CALCULATION_SOURCE_ADMITTED_NEXT_NATAL_JUDGMENT_CII",
-  "records_count": 6215,
+  "status": "BOOK_III_NATAL_PREJUDGMENT_CONDITIONS_SOURCE_ACCEPTED_NEXT_PRINTED_CIII_LIFESPAN_OPEN",
+  "records_count": 6244,
   "read_numbered_chapters": [
     1,
     2,
@@ -106,7 +106,8 @@
     99,
     100,
     101,
-    102
+    102,
+    103
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -648,35 +649,34 @@
       "records_count": 70,
       "sha256": "e98d7beb2c7274b3a0175707233d9eafc56d92cded04ff0c5f93426adeb2f894",
       "scope": "First-edition original Lilly printed CHAP CI/editorial CII Regiomontanus natal house erection, original PDF553-557, following printed CII heading PDF558. 67 original worked source annotations and 3 following navigation, 6 source groups, 24 uncertainties. Merchant Sep19 1616 2:24:25PM at latitude53; original source MC RA222deg10 from rounded solar RA/time and six house cusps, exact intermediates give222deg10min10sec. Original Capricorn Asc6deg37 vs printed OA interpolation near6deg40 discrepancy and 25s versus30s time conversion. No independent natal accuracy or fully verified table data."
+    },
+    {
+      "id": "B05a",
+      "path": "batches/B05a/RULES.json",
+      "records_count": 29,
+      "sha256": "c7ae634d44b4d06362ad2ab4197b6332e323f3eb19a06502c1f8eb7aa7abb96e",
+      "scope": "William Lilly (1647) first edition printed CHAP CII/editorial CIII, single-page natal prejudgment conditions original PDF558/printed524, 26 substantive source clauses and 3 following mortality/lifespan navigation from PDF559. Four source passage groups, 17 qualifications. Accidents birth-time rectification author favored; planetary strengths/Part of Fortune, aspects, antiscia and contra-antiscia, unquantified closeness to houses/planets, first/second magnitude fixed stars with unquantified small ecliptic latitude. No independent medical, natal or empirical outcome."
     }
   ],
   "next": {
-    "pdf_page": 558,
-    "printed_page": 524,
-    "chapter": "CIII",
-    "printed_chapter_numeral": "CII",
-    "heading": "Of things considerable before judgement be given upon a Nativity",
+    "pdf_page": 559,
+    "printed_page": 525,
+    "chapter": "CIV",
+    "printed_chapter_numeral": "CIII",
+    "heading": "Of the space of Life, or whether the Native is like to live long, or not",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "New printed CHAP CII starts original PDF558/printed524 following completed CHAP CI on PDF557; preliminary natal condition and significator judgments.",
-    "outstanding_numeric_parity": [
+    "position": "Original PDF559/printed525 begins the next printed and medically sensitive longevity/lifespan chapter. Extract its source boundaries and retain historical-only status; do not turn statements into health advice.",
+    "prior_unresolved_reference_data": [
       {
-        "kind": "BOOK_II_PLANETARY_HOUR_TABLE",
-        "original_pages": [
-          508,
-          509,
-          510,
-          511,
-          512,
-          513,
-          514,
-          515
-        ]
+        "kind": "BOOK_II_PLANETARY_HOUR_NUMERIC_TABLE",
+        "pdf_first": 508,
+        "pdf_last": 515
       },
       {
         "kind": "BOOK_III_RIGHT_OBLIQUE_ASCENSION_TABLES",
-        "original_pages": [
+        "pdf_pages": [
           523,
           526,
           527,
@@ -689,16 +689,12 @@
         ]
       },
       {
-        "kind": "BOOK_III_GESTATION_MONTH_TABLES",
-        "original_pages": [
-          536
-        ]
+        "kind": "BOOK_III_GESTATION_MONTH_TABLE",
+        "pdf_page": 536
       },
       {
-        "kind": "BOOK_III_SOURCE_SPECULUM",
-        "original_pages": [
-          543
-        ]
+        "kind": "BOOK_III_ASTROLOGICAL_SPECULUM_CELL_TRANSCRIPTION",
+        "pdf_page": 543
       }
     ]
   },
@@ -707,7 +703,7 @@
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04z_REGIOMONTANUS_METHOD.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05a_NATAL_CONDITIONS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -777,5 +773,6 @@
   "book_iii_trutine_source_note": "99 historic source annotations R5825-R5923. Sign-level use sometimes, degree within 1–3° often fails, 13° Moon/conception acceptance band and 1616/1615 calendar example, life-accident rectification preferred, exact conception-hour alternative explicitly not credited; none independently human-validated.",
   "book_iii_Animodar_acceptance_note": "34 source-only records R5924–R5957 (31 Animodar clauses, 3 next Accidents chapter navigation), 5 spans, 22 limits. Historical practitioner compares against already accident-corrected natal figure, gives competing Venus possible dignity, and explicitly judges Animodar and Trutine less sure than accident rectification; no independent birth time verified.",
   "chapter_CI_source_acceptance_note": "188 original source annotations R5958-R6145, 13 passage groups, 25 limits. Historical retrospective fit to four known merchant events; fever 20y10m reported initially vs 19y10m10d selected direction remains mismatched; original 105deg44 biquintile print versus 205deg44 correction source. Multiple free candidate aspects and directions, accepts year-only event ages and birth-time adjustment backward/forward. No out-of-sample success.",
-  "chapter_CII_source_acceptance_note": "70 first-edition historical source records R6146-R6215. Merchant source chart MC222deg10 RA, six printed Regiomontanus house cusps, 34/49 degree approximated intermediate house pole values from latitude53 and natal ephemeris London correction. Original intermediate 30 seconds vs stated25, Asc Capricorn6deg37 versus table interpolation about6deg40. No independent natal time validation."
+  "chapter_CII_source_acceptance_note": "70 first-edition historical source records R6146-R6215. Merchant source chart MC222deg10 RA, six printed Regiomontanus house cusps, 34/49 degree approximated intermediate house pole values from latitude53 and natal ephemeris London correction. Original intermediate 30 seconds vs stated25, Asc Capricorn6deg37 versus table interpolation about6deg40. No independent natal time validation.",
+  "chapter_CIII_source_acceptance_note": "29 historical first-edition annotations R6216-R6244: prerequisite planetary/Part of Fortune placement, strength, aspects, antiscia/contra-antiscia and fixed-star proximity before natal judgments; does not supply numeric thresholds for proximity to planets/cusps or 'small' fixed-star latitude. Separate longevity printed CIII PDF559 only navigation."
 }

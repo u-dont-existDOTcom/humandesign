@@ -1,3 +1,9 @@
+# Lilly original-source frontier — 2026-10-17 natal prerequisites
+
+Historical source records after authenticated admission **6,244 Lilly + 1,066 Ptolemy = 7,310**. Original first-edition study source frontier through PDF558/894 (~62.4% scan-position only); not a percentage of completed numeric tables or empirical astrology validity. Printed CHAP CII source has 29 accepted documentation clauses, unquantified antiscia/fixed-star proximity thresholds retained. Next printed CHAP CIII on historical infant/lifespan judgments; isolate clinical claims and avoid treating as medical predictions. No new human outcome or runtime promotion; numeric table and blind empirical lanes remain OPEN.
+
+---
+
 # Historical astrology original-source progress — latest accepted Regiomontanus chapter
 
 2026-10-17: original Lilly documentary frontier through PDF557 of 894 scans, approximately 62.3% by physical scan position; this is NOT total scientific project progress or numeric table-cell completion. Cumulative **6,215 Lilly + 1,066 Ptolemy = 7,281** source records, consisting of historic instructions, examples, caveats and image-documentary units, not independently successful predictions. Last admission reconstructed period 1647 Regiomontanus source with precise time and ascension arithmetic, retains Asc interpolation ≈3 arcminutes discrepancy. Unverified merchant birth clock and longitudes, all dense source tables digitization still OPEN. Independent astro-validity tests and runtime promotions new in source lane zero. NEXT printed CII natal judgment original PDF558.

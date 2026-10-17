@@ -1,3 +1,9 @@
+# First-edition Lilly natal pre-judgment conditions source complete, lifespan chapter next
+
+2026-10-17: first-edition PDF558 printed CII/editorial CIII, 29 historical source-only R6216-R6244 locally accepted, proposed cumulative **6,244 Lilly + 1,066 Ptolemy = 7,310**. Full source image/record archive tests passed, but antiscia/fixed star candidate-orb thresholds unspecified, no empirical predictive outcomes. Next printed CIII/editorial CIV longevity beginning PDF559. Remaining numerical table digitization and blind outcome validation OPEN.
+
+---
+
 # First edition Regiomontanus house construction documented; natal judgment next
 
 2026-10-17: 70 historical source annotations R6146-R6215 accepted locally, total after verified branch publication **6,215 Lilly + 1,066 Ptolemy = 7,281**. Source arithmetic near MC222deg10, six house cusps, and source year/time rounding preserved; Asc printed Capricorn6deg37 versus direct source OA 39/59 interpolation near6deg40 unresolved. Frontiers next original PDF558 printed CHAP CII natal considerations. No empirical human birth-time outcomes, predictive validations or runtime promotions.
