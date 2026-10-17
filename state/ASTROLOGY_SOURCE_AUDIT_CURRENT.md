@@ -1,3 +1,9 @@
+# Original Lilly manners chapter now historical-source complete, separate planetary manners next
+
+2026-10-17: Lilly source records R6475–R6560 accepted locally (86 new); after verified research publication **6,560 Lilly + 1,066 retained Ptolemy = 7,626** historical source annotations. All source-specific personality claims, severe fixed-star moral/criminal stereotypes and 12 zodiac descriptions are historical only and unvalidated. Next printed CHAP CVIII/editorial CIX begins original PDF573. Source frontier ~64.1% of 894 scanned pages by position only, not full model completion. No new empirical validations or runtime changes.
+
+---
+
 # Lilly temperament first-edition historic source accepted, Manners next
 
 2026-10-17: B05e 59 historic source annotations R6416-R6474 locally admitted, after authenticated publication **6,474 Lilly + 1,066 Ptolemy = 7,540**. Four-humour hot/cold/moist/dry historical testimony tally, conditional 3x lord-geniture/Asc ruler and 2x Moon-in-Asc, equal adverse cancellation, Saturn/Mars overlay, no validated modern psychometric diagnosis. Next source original printed CVII editorial CVIII Manners PDF568 onward. PDF-position ~63.5% of first-edition scan, not predictive science completion. All historical numerical table tasks and empirical validation remain open.

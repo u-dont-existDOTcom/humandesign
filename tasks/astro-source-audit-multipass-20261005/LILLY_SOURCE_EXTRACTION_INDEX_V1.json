@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_FOUR_HUMOURS_HISTORICAL_SOURCE_ADMITTED_NEXT_MANNERS_OF_NATIVE",
-  "records_count": 6474,
+  "status": "BOOK_III_MANNERS_OF_NATIVE_COMPLETE_HISTORICAL_DOCUMENTARY_NEXT_PLANET_SPECIFIC_MANNERS",
+  "records_count": 6560,
   "read_numbered_chapters": [
     1,
     2,
@@ -111,7 +111,8 @@
     104,
     105,
     106,
-    107
+    107,
+    108
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -688,26 +689,33 @@
       "records_count": 59,
       "sha256": "5d6bfa52dd5bd35c17308c9d0e3481a5d0ba665cd31934826b02962fe89c26b7",
       "scope": "Original first-edition William Lilly printed CHAP CVI/editorial CVII humoral complexion/temperament historical rules, PDF566-568; following CVII Manners navigation PDF568-569. 56 substantive historical annotations, three next navigation, nine source passages, 23 limits. Five natal significator categories; oriental/occidental planets, Moon quarters, seasonal Sun and sign triplicities; explicit Saturn/Mars adverse overlay, opposing equal quality cancellation, conditional triple count for lord-geniture plus Ascendant ruler and double Moon-in-Ascendant count. No biological/personality validation or runtime promotion."
+    },
+    {
+      "id": "B05f",
+      "path": "batches/B05f/RULES.json",
+      "records_count": 86,
+      "sha256": "9e0cbdce9a3659d0f41b2a595682db7e8edd5cf583027b424b0e694d7b25d327",
+      "scope": "Original first edition William Lilly printed CHAP CVII/editorial CVIII Manners of Native/Child, original PDF568-573 body, following CVIII PDF573-575 navigation. 83 substantive historical source annotations and 3 separate next chapter navigation, 14 original passage groups, 30 cautions. Historical significator selection with Asc/Mercury/Moon/dispositor fallbacks and lunar-direction change, broad 12 sign and four-humour manner stereotypes, epoch-dependent fixed stars and severe historically unsupported moral/criminal accusations, rejection of Johannes Angelus degree-by-degree inflexibility. All human personality accuracy, actual violence predictions and runtime promotions zero."
     }
   ],
   "next": {
-    "pdf_page": 568,
-    "printed_page": 534,
-    "chapter": "CVIII",
-    "printed_chapter_numeral": "CVII",
-    "heading": "Of the Manners of the Native or Child",
+    "pdf_page": 573,
+    "printed_page": 539,
+    "chapter": "CIX",
+    "printed_chapter_numeral": "CVIII",
+    "heading": "The quality of Manners, which may in kind be discerned from every Planet",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF568 lower part after complexion divider, original PDF569 and following pages. Locate next original printed heading before source extraction.",
-    "research_relevance": "Historical human personality claims only. Compare to blinded questionnaire targets only after complete rule and score freeze, not retrospective profiling."
+    "position": "Separate chapter begins below original horizontal divider in lower PDF573/printed539; continues PDF574-575 and needs actual following chapter boundary verified.",
+    "research_scope": "Preserve positive/negative traits and exact planetary placement conditions, but do not use source stereotypes as established human behavior or forensic predictions."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05e_TEMPERAMENT.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05f_MANNERS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -782,5 +790,6 @@
   "chapter_CIV_source_acceptance_note": "65 first-edition historical annotations R6245-R6309: 62 lifespan/infancy beliefs and 3 separate Hyleg navigation. Three original page scans PDF559-561, six source passage groups, 25 limits, old-humoral full/new moon claims and contrary beneficial exception, parental charts, multiple benefic/malefic conditions, author explicitly warns against rash death judgment. Zero independent infant survival outcomes or clinical validity.",
   "chapter_CV_source_acceptance_note": "74 original source R6310-R6383 annotations, seven mapped passage groups, 30 source limits. Historical potentially lethal directions are unvalidated; source branches include multiple candidate Hylegs/Anaretas/Alcochodons, including explicit degrees and fallback preferences. Lilly says not satisfied how to identify these or their claimed year values; no independent survival outcome.",
   "lord_geniture_source_acceptance_note": "32 source-only annotations R6384-R6415, three separately coded competing selection methods and rejected Firmicus sign successor; near equal planet blending without fixed weights. No independent human personality matches or runtime rules.",
-  "chapter_CVII_source_acceptance_note": "59 source-only annotations R6416-R6474. Humoral quality testimony list, lunar phases, Sun seasons, zodiac triplicities, malefic overlay, equal opposing cancellation, 3x lord geniture plus Asc ruler and 2x Moon in first; all historical beliefs with zero independent biomedical or personality validation."
+  "chapter_CVII_source_acceptance_note": "59 source-only annotations R6416-R6474. Humoral quality testimony list, lunar phases, Sun seasons, zodiac triplicities, malefic overlay, equal opposing cancellation, 3x lord geniture plus Asc ruler and 2x Moon in first; all historical beliefs with zero independent biomedical or personality validation.",
+  "chapter_CVIII_source_acceptance_note": "86 historical source records R6475-R6560 (83 manners/fixed-star/sign/humour clauses, 3 next navigation), 14 original page groups, 30 cautionary notes. No independent actual person character/violent act/outcome validated; multiple source fallbacks, lunar direction change and conflicting trait descriptions preserved."
 }

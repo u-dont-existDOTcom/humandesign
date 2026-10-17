@@ -1,3 +1,9 @@
+# First-edition Lilly source progress after manners, 2026-10-17
+
+**7,626 historical documentary annotations** accepted after authenticated publication (6,560 Lilly + 1,066 retained Ptolemy). Lilly original scan frontier PDF573 of 894 scanned pages, **64.1% by page-position proxy only**. This is NOT percentage of numerically transcribed table cells, verified predictive human traits or the project's overall goal. Printed CHAP CVII manners historical source has 86 new annotations, no validated human personality, mental health, criminal dangerousness or predictive findings. Next original printed CHAP CVIII, quality of manners from planets PDF573 onwards. Numerical tables, hidden-label human trials and actual prospective controls remain unfinished.
+
+---
+
 # Astrology original-source progress — 2026-10-17 through temperament
 
 **7,540 historical source annotations accepted** (6,474 Lilly + 1,066 retained Ptolemy). First-edition Lilly scan source frontier through original PDF568 of 894 pages, approximately 63.5% of scan position only, not proportion of machine-readable rule completion or empirical model science. Four-humour testimony weights are now historical-source preserved but not human validated. Last newly accepted source printed CVI, next is printed CVII *Manners of the Native*. Prior open dense numeric table reconstructions, independent birth-time / questionnaire validation and prospective outcome testing remain open. Empirical validations and promoted executable rules attributable to historical source batches zero.
