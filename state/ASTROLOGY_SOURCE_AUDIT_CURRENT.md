@@ -1,3 +1,9 @@
+# Original Lilly ninth-house travel introduction documented; CXXXIX next
+
+2026-10-17 Africa/Dakar UTC+0. B06r unnumbered original ninth-house source R8681–R8705 accepted locally. After remote readback 8,705 Lilly +1,066 Ptolemy = 9,771 historical source annotations. 15 source and independent ZIP replay tests pass; no travel/faith/life-safety real-world prediction validated, no runtime model promotions. Printed numbered chapter total unchanged. Next printed CXXXIX on travel from PDF640 lower. Chinese BaZi 46 and Zi Wei 26 historical source records independently indexed.
+
+---
+
 # Original Lilly child-count historical chapter documented; ninth-house intro next
 
 2026-10-17 Africa/Dakar UTC+0. Source B06q R8603–R8680 accepted locally; after verified GitHub remote readback 8,680 Lilly + 1,066 Ptolemy = 9,746 historical documentary notes. Original PDF640 of 894 scanned frames (71.6% physical position only). All 25 photo/source/archive replay checks pass. No verified offspring count, sex, health, mortality or parent-child relationship outcomes. Zero executable runtime model promotions. NEXT UNNUMBERED ninth-house journeys/religion introduction starts mid PDF640, next separately printed CXXXIX also PDF640. Chinese 72 source notes preserved in a separate index.

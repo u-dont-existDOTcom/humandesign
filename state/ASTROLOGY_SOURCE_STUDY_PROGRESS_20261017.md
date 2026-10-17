@@ -1,3 +1,9 @@
+# Lilly first edition through unnumbered ninth-house intro — 2026-10-17
+
+After authenticated publication **9,771 historical source records** (8,705 Lilly + 1,066 Ptolemy). Physical book frontier PDF640/894 (**71.6% scanned page position ONLY, not whole scientific project**). 25 original source annotations include 9th house travel indicators and four separate question groups, no religion classification in the source body, and purported Mars-attribution to Ptolemy unverified. Numbered chapter counter unchanged because this section has no original printed chapter numeral. Next separately printed CHAP CXXXIX travel begins lower on SAME PDF640. No predictive human success or runtime rules. Independent Chinese BaZi 46 and Zi Wei 26 source-only records remain separate and full chart engines/blinded studies OPEN.
+
+---
+
 # Lilly original first edition through historic child count — 2026-10-17
 
 After remote verified publication **9,746 original historical source notes** (8,680 Lilly + 1,066 Ptolemy), first-edition physical scan frontier PDF640/894 (**71.6% by scanned-page position ONLY, not project or scientific completion**). Printed CXXXVIII adds 78 historic assertions, including unresolved twofold versus threefold child-count multipliers, gender-coded and high-stakes offspring longevity predictions, and Lilly's explicit disagreement with purported Ptolemy 10/11/4/5-house method. No human predictive validation or runtime scoring promotion. NEXT original UNNUMBERED ninth house travel/religion introduction on PDF640, then printed CXXXIX travel also PDF640. Parallel Chinese BaZi 46 and Zi Wei 26 source-only notes independently indexed; full chart engines, blind tests, comparative baselines remain OPEN.
