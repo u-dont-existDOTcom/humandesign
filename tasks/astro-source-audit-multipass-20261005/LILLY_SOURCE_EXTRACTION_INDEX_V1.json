@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_WIFE_APPEARANCE_CHARACTER_WEALTH_NEXT_MARITAL_CONCORD",
-  "records_count": 8272,
+  "status": "BOOK_III_MARITAL_CONCORD_HISTORICAL_NEXT_SPOUSE_DEATH_ORDER",
+  "records_count": 8343,
   "read_numbered_chapters": [
     1,
     2,
@@ -139,7 +139,8 @@
     132,
     133,
     134,
-    135
+    135,
+    136
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -947,26 +948,35 @@
       "records_count": 131,
       "sha256": "9facdfacadde7852fae260f6d6e173f3e833dbf5f1735124fd2e96138c76b27d",
       "scope": "William Lilly original first-edition printed CHAP CXXXIIII/editorial CXXXV, appearance, Conditions of Wife, Aphorismes of Venus position, Riches attending Wife, Signs of good Wife and ill fortune by a Wife: original PDF627 lower through PDF631 upper/printed593-597. 14 source-photo passage groups including 129 substantive historical claims/conditionals and two next numbered chapter navigation, R8142-R8272. Zodiac aesthetic fair/medium/deformed classes including unresolved signs and part glyphs; Saturn/Venus age widow and benefic counterexamples; Saturn Jupiter Mars Venus Mercury supposed personality dependent on dignity; Venus position aphorisms concerning spouse finance, sexual behavior, childlessness, rank/old age and unsupported allegations of poisoning/magic; historic alleged spouse riches/house changes and author's critical class-relative beggar/tradesman counterexample, strong seventh malefics may still denote rich spouse with trouble; severe Saturn/Mars marriage grief/death hypotheses with benefic qualifier. All are seventeenth-century stereotypes not tested personal facts. Ptolemy attribution not collated; no human marriage/wealth/body/medical accuracy and no runtime source scoring promotion."
+    },
+    {
+      "id": "B06m",
+      "path": "batches/B06m/RULES.json",
+      "records_count": 71,
+      "sha256": "b1801df1d5ec57058a571d295c1f7af0cbf50b98981ab7e406651493950f777e",
+      "scope": "William Lilly original printed CHAP CXXXV/editorial CXXXVI On mutual love and concord of Man and Wife, original PDF631 lower to PDF633 upper, before separately printed CHAP CXXXVI whether spouse dies first. Seven reversible photograph passage groups with 69 substantive historical clauses and two following heading navigation R8273-R8343. Fortune/malefic planet and friendly/hard aspect Moon contrast with intermediate mixed-nature outcomes; original aspect scope restricted to Moon and Lord Seventh. Stronger mode compares two independently acquired Genitures, wife's Sun same zodiac sign AND exact degree as man's Moon or wife's Moon at man's Sun, not simply same-sign astrology. Sextile/trine versus square/opposition; period unsupported jealousy, infidelity, sexual and class stereotypes from Venus/Saturn/Mars, Venus twelfth, mutable/common signs, Moon-Mars with waning and source-defined signs; qualified conjunction of Moon Sun humane signs with benefic aspects across page seam, and seventh-ruled waning Moon in eighth. No actual relationship, private fidelity or pairwise natal predictions verified; zero runtime promotions."
     }
   ],
   "next": {
-    "pdf_page": 631,
-    "printed_page": 597,
-    "chapter": "CXXXVI",
-    "printed_chapter_numeral": "CXXXV",
-    "heading": "Of the mutuall Love and Concord betwixt Man and Wife",
+    "pdf_page": 633,
+    "printed_page": 599,
+    "chapter": "CXXXVII",
+    "printed_chapter_numeral": "CXXXVI",
+    "heading": "Whether the Native or his Wife shall dye first",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "The next separately printed CHAP CXXXV begins below a horizontal divider on original PDF631/printed597, after source CXXXIIII's extensive marriage fortunes. It continues original PDF632/printed598 and later pages; inspect original pages and following printed seam before claiming any chapter's end.",
-    "research_scope": "Marriage love and discord allegedly from spouse-signifier planets' aspects to Moon, benefic/malefic vs friendly/hostile conditions and comparing two independently calculated nativities, including Sun/Moon same-degree contact, sexual jealousy and instability stereotypes, supporting house/sign/period conditions. Source content not verified on real human partnerships; must not infer infidelity, danger, addiction or moral traits."
+    "position": "Original printed CHAP CXXXVI on marital death-order begins after divider middle original PDF633/printed599. Its text continues into upper PDF634/printed600; next distinct printed CHAP CXXXVII on women's marriages starts below divider middle PDF634. Do not double-count mortality material as CXXXV source and do not issue real person death predictions.",
+    "following_printed_chapter_numeral": "CXXXVII",
+    "following_original_pdf_page": 634,
+    "research_scope": "High-stakes unsupported first-marital-death source from Lord Seventh, affliction, stronger Moon versus one conjunction, lunar fourth and eighth, Venus/Saturn and duration; explicitly do not infer any individual's lifespan, death, relationship danger or need for treatment."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B06l_WIFE_APPEARANCE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B06m_MARITAL_CONCORD.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1074,5 +1084,6 @@
   "chapter_CXXXII_source_acceptance_note": "B06i R7944–R8026: 83 historical source notes, 14-step source mathematical-direction template frozen NONEXECUTABLE. Original frames PDF623-627 SHA checks and 25 archived/extracted documentary tests pass, no calendar or prospective marriage predictions or runtime promotions.",
   "chapter_CXXXIII_source_acceptance_note": "B06j R8027–R8106, 80 source-only historical records, ten contradictory wife-count methods, explicit nonmarital-partner outcome switching, Ptolemy uncorroborated attribution and author never-failed anecdote unverified. Original PDF624–627 SHA witnesses, 25 independent extracted ZIP tests, zero human marriage, survival, legal registration or runtime predictive validity.",
   "chapter_CXXXIV_source_acceptance_note": "B06k R8107–R8141, 35 historical source-only annotations with explicit COUNTY-not-COUNTRY limitation contrasted with separate another-Country rule; unknown solar companion glyph quarantined. Original PDF626–627 witnesses and 15 archive-replayed tests, zero real spouse-origin validation or runtime rules.",
-  "chapter_CXXXV_source_acceptance_note": "B06l original historical R8142-R8272, 131 notes, 14 groups, eight original PDF627–634 photographic SHA/bytes and 28 archive-extracted independent documentary checks. Wife status forecast must be relative to native class per Lilly's own beggar counterexample; moral, bodily, medical, death and magic accusations remain unsupported original text. Zero human predictive validity and runtime promotions. Chinese BaZi/ZWDS source lane 72 notes separate."
+  "chapter_CXXXV_source_acceptance_note": "B06l original historical R8142-R8272, 131 notes, 14 groups, eight original PDF627–634 photographic SHA/bytes and 28 archive-extracted independent documentary checks. Wife status forecast must be relative to native class per Lilly's own beggar counterexample; moral, bodily, medical, death and magic accusations remain unsupported original text. Zero human predictive validity and runtime promotions. Chinese BaZi/ZWDS source lane 72 notes separate.",
+  "chapter_CXXXVI_source_acceptance_note": "B06m R8273-R8343: 71 historical source notes, seven groups, original PDF631-634 photographic SHA and 22 independent archive-extracted documentary tests; exact two-Geniture Sun/Moon sign+degree contact preserved apart from vague single-natal marital stereotypes; no real couples verified and no runtime rules promoted. Chinese 72 notes separate."
 }

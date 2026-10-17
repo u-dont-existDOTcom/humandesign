@@ -1,3 +1,9 @@
+# Original Lilly mutual marriage concord documented; death-order next
+
+2026-10-17 Africa/Dakar UTC+0. After remote publication B06m source R8273-R8343 makes 8,343 Lilly and 1,066 Ptolemy = 9,409 historical documents, with zero independent couple predictions and zero runtime scoring promotions. Next printed CHAP CXXXVI from original PDF633. Chinese BaZi 46, Zi Wei 26 source notes remain independently indexed under the same HumanDesign branch.
+
+---
+
 # Original Lilly spouse appearance, character and wealth source accepted; marital concord next
 
 2026-10-17 Africa/Dakar UTC+0. B06l historical source R8142-R8272 accepted locally; after GitHub remote verification 8,272 Lilly + 1,066 Ptolemy = 9,338 documentary historical notes. No verified human appearance, spouse character, wealth or health/mortality forecast and no promoted runtime source rule. Separate BaZi (46) and Zi Wei Dou Shu (26) historical notes integrated into this research branch but kept in distinct source index. NEXT printed CXXXV marital mutual love and concord original PDF631 onward.

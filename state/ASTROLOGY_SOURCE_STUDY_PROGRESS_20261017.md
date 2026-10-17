@@ -1,3 +1,9 @@
+# Lilly 1647 original through marriage concord — 2026-10-17
+
+After verified publication **9,409 historical source records** (8,343 Lilly + 1,066 Ptolemy), physical source frontier PDF633/894 (**70.8% first-edition page-position only**, not progress of numeric astronomy or predictive science). Source batch B06m adds 71 historical notes on marital love, mixed benign/hostile aspect rules, two independently obtained Genitures and precise wife-Sun versus husband-Moon same-degree contact, with extensive period claims about sexuality, fidelity and satisfaction UNVALIDATED. No runtime scorer changes. Next printed CXXXVI on marital death-order from PDF633, high-stakes source-only, later printed CXXXVII women's marriage from PDF634. Chinese BaZi 46 and Zi Wei 26 source-only records separately indexed and awaiting complete chart engines.
+
+---
+
 # Lilly 1647 original study through spouse appearance, social status and fortunes — 2026-10-17
 
 After authenticated publication **9,338 original historical source annotations** (8,272 Lilly + 1,066 Ptolemy), source photo position original PDF631/894 (**70.6% first-edition scanned page position only**). B06l adds 131 period source annotations spanning appearance, supposed temperament, spouse wealth and subjective marital outcomes, including independent qualifiers, class-relative wealth and stigmatizing source moral, medical or mortality labels all explicitly NONVALIDATED. No source rules into runtime. NEXT printed CHAP CXXXV mutual love/concord from PDF631. Chinese original parallel lanes BaZi 46 and Zi Wei 26 source-only notes with 38 source mechanical tests separately published and carried into this branch; these are not added to Lilly totals. Exact historical astronomy and blind human forecasting remain independent OPEN lanes.
