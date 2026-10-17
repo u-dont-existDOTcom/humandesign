@@ -1,3 +1,9 @@
+# Lilly 1647 original study through spouse appearance, social status and fortunes — 2026-10-17
+
+After authenticated publication **9,338 original historical source annotations** (8,272 Lilly + 1,066 Ptolemy), source photo position original PDF631/894 (**70.6% first-edition scanned page position only**). B06l adds 131 period source annotations spanning appearance, supposed temperament, spouse wealth and subjective marital outcomes, including independent qualifiers, class-relative wealth and stigmatizing source moral, medical or mortality labels all explicitly NONVALIDATED. No source rules into runtime. NEXT printed CHAP CXXXV mutual love/concord from PDF631. Chinese original parallel lanes BaZi 46 and Zi Wei 26 source-only notes with 38 source mechanical tests separately published and carried into this branch; these are not added to Lilly totals. Exact historical astronomy and blind human forecasting remain independent OPEN lanes.
+
+---
+
 # Lilly 1647 original source through spouse birthplace/origin — 2026-10-17
 
 After verified publication **9,207 historical documentary annotations** (8,141 Lilly + 1,066 Ptolemy), physical first-edition frontier PDF627/894 (**70.1% scanned-page position only, not empirical/computational completion**). CXXXIII adds 35 historical spouse-origin annotations, preserving an explicit COUNTY not COUNTRY restriction versus another rule alleging foreign COUNTRY and an unresolved original glyph, plus zodiac/quarter testimony without geographical metric. No real human predictions validated and zero promoted scoring rules. Next printed CXXXIIII spouse appearance begins middle PDF627. Numerical astrology and untouched human blind tests remain OPEN.
