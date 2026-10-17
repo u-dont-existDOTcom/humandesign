@@ -1,3 +1,9 @@
+# Original Lilly through printed XCVI, postchapter material OPEN
+
+2026-10-17: 34 historical source annotations R5553–R5586 accepted locally, Lilly **5,586** + Ptolemy **1,066** = **6,652** upon verified publication. Original chapter says husband either already released or will be within three days, then reports prior-day release and capture of garrison; no independent prospective validation. Next PDF507 unnumbered Earl of Essex figure; original PDF508 onward tables need source coverage.
+
+---
+
 # Original Lilly research — Escaped prisoner and recapture (printed XCV/editorial XCVI)
 
 2026-10-17: 42 source-only records R5511–R5552 locally admitted. Upon verified publication, cumulative **5,552 Lilly + 1,066 Ptolemy = 6,618 historical source annotations**. Lilly's Eastward escape, short hiding and re-arrest are author-reported, not independently documented or scientifically validated. Next editorial XCVII printed XCVI lady asks about imprisoned husband, original PDF505/printed471. No runtime model changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04p_CHAPTER_XCVI_COMPLETE.md.
