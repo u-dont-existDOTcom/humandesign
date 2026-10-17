@@ -1,0 +1,19 @@
+# Lilly original 1647 planetary-hours table: full source images, incomplete numeric data
+
+# First-edition Lilly planetary-hour numerical table — source window and schema
+
+Original first edition, William Lilly *Christian Astrology* (1647), Wellcome b30338724; whole original PDF SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`.
+
+The complete **eight-page table** titled *A Table whereby to find the Planetary hour* occupies original PDF508–515, printed internal table leaves **1–8**. Original full-page 1600px JPEGs and exact per-file byte lengths/SHA256 hashes are frozen in SOURCE_WINDOW_MANIFEST.json. Next, original PDF516 begins **CHAP. XCVII. To find out what Planet ruleth every hour of the Day or Night by the preceding Table**, with a distinct prose method. Do not confuse this table with the unnumbered Essex event immediately before it.
+
+**Printed structure.** Each table leaf is laid out as six H.M hour-boundary columns, left printed 'Place of the Sun' sign/degrees, right complementary 'Place of the Sun' sign/degrees, and on the 1st/3rd/5th/7th leaves a sunrise/sunset base. The first four leaves are daylight: PDF508 hours before noon (1–6), PDF509 after noon (7–12), PDF510 before noon for the other solar-sign half, PDF511 after noon. The remaining four are the night: PDF512 before midnight (1–6), PDF513 after midnight (7–12), PDF514 before midnight for the other solar-sign half, PDF515 after midnight. Left margin samples span Aries0 through Gemini30 or Libra0 through Sagittarius30 by three-degree steps; right margin provides complementary sun signs. Each is visually about 31 printed numeric rows.
+
+The equinox-like first row, separately spot-inspected on all eight table leaves, shows sunrise or sunset 6:00 and successive boundaries 7–12 in before-noon/before-midnight tables, or 1–6 in after-noon/after-midnight tables. No other numerical row is asserted to have been fully rekeyed in this pass.
+
+**Scope:** This batch admits SOURCE-IMAGE PAGE WITNESSES and exact overall TABLE LAYOUT but **NOT a verified machine-readable transcription of the approximately 1,488 printed hour-boundary cells**, much less a site-specific solar-time algorithm. The original values are preserved without information loss in the page scans, and a future numeric transcription/protocol parity pass is explicitly OPEN. Nothing here validates astrology predictions or changes the runtime.
+
+**Documentary acceptance:** ten source records R5630–R5639 for eight original table leaves and two following chapter navigation markers, nine mapped primary image groups. All eight original scans plus next Chapter XCVII PDF516 SHA-frozen. There are approximately **1,488 numeric hour-boundary cells not all digitized**, so this is not a verified machine-readable table and cannot be promoted into the astrology runtime. Eighteen historical source/data limitations retained. Archive CRC, full extraction, member SHA-256s and fifteen tests replayed.
+
+After verified publication: **5,639 Lilly + 1,066 Ptolemy = 6,705 historical documentary annotations**; zero independent predictive validations and runtime promotions.
+
+NEXT printed Chapter XCVII/editorial XCVIII original PDF516–520 plus conclusion; further separate numeric table cell transcription remains OPEN. Book III starts PDF521.

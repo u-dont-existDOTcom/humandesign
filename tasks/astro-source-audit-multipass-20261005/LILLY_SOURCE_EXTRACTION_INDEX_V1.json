@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_II_UNNUMBERED_ESSEX_ADMITTED_TABLE_508_515_AND_PRINTED_XCVII_516_520_OPEN",
-  "records_count": 5629,
+  "status": "BOOK_II_TABLE_IMAGE_WITNESSES_ADMITTED_NUMERIC_CELL_DIGITIZATION_OPEN_PRINTED_XCVII_NEXT",
+  "records_count": 5639,
   "read_numbered_chapters": [
     1,
     2,
@@ -594,27 +594,36 @@
       "records_count": 43,
       "sha256": "ae10f713ea41c070c7990eccdac8a21327591bc705a36246bc40bf18bcf84ad4",
       "scope": "Original Lilly first-edition unnumbered Robert Earl of Essex western march May13 1644 12:29PM on PDF507, 41 substantive historical annotations and two next table navigation; source-based forecasts and self-reported September defeat, independently corroborated army ammunition surrender Sep2, Essex himself escaped by sea Sep1; NOT independent verification of prior astrology forecast."
+    },
+    {
+      "id": "B04t",
+      "path": "batches/B04t/RULES.json",
+      "records_count": 10,
+      "sha256": "dbb184cd7b4e04e9a48089801bcf132347c0af67d5d476391408df2bf7b271c1",
+      "scope": "First-edition original Lilly printed planetary-hour table leaves 1-8 (original PDF508–515), preserved by eight exact original page-image hashes, 8 page-witness annotations and 2 following chapter navigation records; printed numeric cells NOT fully machine-transcribed/independently validated. Next printed XCVII PDF516."
     }
   ],
   "next": {
-    "pdf_page": 508,
-    "printed_page": null,
-    "chapter": "PLANETARY_HOUR_TABLE",
-    "printed_chapter_numeral": null,
-    "heading": "A Table whereby to find the Planetary hour",
+    "pdf_page": 516,
+    "printed_page": 482,
+    "chapter": "XCVIII",
+    "printed_chapter_numeral": "XCVII",
+    "heading": "To find out what Planet ruleth every hour of the Day or Night, by the preceding Table",
+    "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original 8 page numeric table PDF508-515 between unnumbered Essex PDF507 and printed Chapter XCVII PDF516. Need exact table schema/numeric fidelity before completion.",
-    "remaining_original_source_order": [
+    "position": "Original PDF516–520 explanatory final printed numbered chapter and Lilly's signed conclusion June 11, 1647; next book title PDF521.",
+    "remaining_source_tasks": [
       {
-        "type": "PLANETARY_HOUR_TABLE",
-        "first_pdf": 508,
-        "last_pdf": 515
+        "type": "PRINTED_XCVII_METHOD_AND_CONCLUSION",
+        "start_pdf": 516,
+        "end_pdf": 520
       },
       {
-        "type": "PRINTED_CHAPTER_XCVII",
-        "first_pdf": 516,
-        "last_pdf": 520
+        "type": "ORIGINAL_TABLE_ALL_NUMERIC_CELLS_VERIFICATION",
+        "start_pdf": 508,
+        "end_pdf": 515,
+        "status": "OPEN"
       },
       {
         "type": "NEXT_BOOK_TITLE",
@@ -627,7 +636,7 @@
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04s_ESSEX_ACCEPTED.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04t_PLANETARY_TABLE_IMAGES.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -690,5 +699,6 @@
   "chapter_XCVI_source_acceptance_note": "42 source-only historical records R5511-R5552; 39 escaped prisoner substantive claims and three subsequent chapter navigation markers. Author forecast East, near-town one-night concealment, letter/messenger by day six or seven, recapture by authority and retrospective Friday letter/Sunday arrest. No independently authenticated prisoner, letter or actual capture; seven source passages and 20 limits.",
   "chapter_XCVII_source_acceptance_note": "34 original documentary annotations R5553-R5586, 30 numbered case clauses and 4 unnumbered Essex/table navigation markers, 7 image spans, 19 uncertainties. Past-or-future release disjunction and self-reported prior-day garrison capture prevent clean prospective result.",
   "postchapter_20261017_original_source_correction": "Original scan PDF516 explicitly prints CHAP. XCVII on planetary hours after an eight-page table PDF508–515; prior assertion that XCVI was final numbered Book II chapter is superseded. No source annotations added.",
-  "essex_unumbered_1644_historical_acceptance_note": "43 source-only annotations R5587–R5629, 7 original passage groups, 20 caveats. Historic England verifies parliamentary arms surrender Sep2 1644 but Essex himself departed by sea Sep1. Not a contemporaneously authenticated astrology prediction."
+  "essex_unumbered_1644_historical_acceptance_note": "43 source-only annotations R5587–R5629, 7 original passage groups, 20 caveats. Historic England verifies parliamentary arms surrender Sep2 1644 but Essex himself departed by sea Sep1. Not a contemporaneously authenticated astrology prediction.",
+  "planetary_hour_table_source_acceptance_note": "10 historical documentary annotations R5630–R5639: eight original table-page image witnesses + two next-chapter navigation markers; eight table pages PDF508–515 preserved by exact hashes; ~1,488 numeric hour boundaries NOT transcribed or independently checked. No empirical prediction or runtime promotion."
 }
