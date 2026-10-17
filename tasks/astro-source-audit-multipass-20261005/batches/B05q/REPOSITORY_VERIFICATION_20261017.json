@@ -1,0 +1,20 @@
+{
+  "batch": "B05q",
+  "source_review": {
+    "original_images_verified": true,
+    "sha256_verified": true,
+    "focused_tests_passed": 26,
+    "extracted_zip_replay_passed": 26,
+    "python_lint": "PASS"
+  },
+  "project_wide_gates": {
+    "baseline_from": "B05p just-completed published research branch",
+    "python3_unittest": "91 cases, 3 import errors due system python3 missing swisseph",
+    "venv_pytest": "397 passed, 4 skipped, 1 previously failing unrelated relationship assertion",
+    "uda_compliance": "90 pre-existing errors and 73 warnings in global repository workflow/state; no modifications in source lane",
+    "repeat_run": "Not rerun as B05q changed only archival files"
+  },
+  "empirical_validation_successes": 0,
+  "runtime_promotions": 0,
+  "next_source": "Original PDF598 unnumbered third-house kinred intro, followed by printed CXVIII"
+}

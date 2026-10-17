@@ -1,3 +1,9 @@
+# Lilly original first edition through wealth durability — 2026-10-17
+
+After verified remote publication **8,192 historical source annotations** (7,126 Lilly + 1,066 Ptolemy). Physical first-edition frontier PDF598 of 894 (**66.9% positional**, not predictive-science progress). Original printed CHAP CXVII durability has 75 historical clauses/navigation, with alternative life-period timing, family wealth, conflicting economic fortunes and uncalibrated directions. Next UNNUMBERED third-house sibling intro starts mid frame598 before printed CXVIII. No verified real-person financial predictions, table-digitization completion, or new runtime rules.
+
+---
+
 # Lilly source through historical means of gaining wealth — 2026-10-17
 
 After authenticated publication **8,117 historical source annotations** (7,051 Lilly + 1,066 Ptolemy), first-edition frontier PDF596/894 (**~66.7% scan-position proxy**, not the percentage of predictive science complete). Printed CHAP CXVI lawful/indirect estate acquisition preserved in 57 source notes, with mixed/conflicting planetary testimony and timing exceptions; no real-world legal, ethical or financial classifications validated and no runtime promotions. Following printed CXVII wealth durability begins lower PDF596. Numerical and blinded test lanes open.

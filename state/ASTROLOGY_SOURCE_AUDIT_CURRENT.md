@@ -1,3 +1,9 @@
+# First-edition Lilly wealth durability historical study accepted
+
+2026-10-17 Africa/Dakar UTC+0. R7052–R7126 added as original historical annotations, 7,126 Lilly + 1,066 retained Ptolemy = 8,192 after remote verification. All 26 source integrity/coverage tests passed, no financial success evidence, no model promotion. NEXT original PDF598 unnumbered third-house kinship introduction before numbered CXVIII.
+
+---
+
 # Lilly first-edition historical acquisition-conduct study accepted, durability next
 
 2026-10-17 Africa/Dakar UTC+0. R6995–R7051 source-first admitted locally; after GitHub verification 7,051 Lilly + 1,066 Ptolemy = 8,117 historical annotations. Qualifiers on lawful vs indirect acquisition are unsupported historical judgments and never evidence about anyone's conduct. 21 archive-replayed documentary tests, no independent human forecasts, no runtime source rules promoted. NEXT original printed CXVII wealth durability on PDF596.
