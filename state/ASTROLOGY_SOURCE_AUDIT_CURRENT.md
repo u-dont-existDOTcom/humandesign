@@ -1,3 +1,9 @@
+# Lilly original kinship intro historical source accepted, sibling chapter next
+
+2026-10-17 Africa/Dakar UTC+0. B05r R7127–R7138 accepted as original historic source: 7,138 Lilly plus 1,066 Ptolemy = 8,204 notes after GitHub readback. Unnumbered intro does not increment printed-chapter count; no predictive validation. Next printed CXVIII begins original PDF598.
+
+---
+
 # First-edition Lilly wealth durability historical study accepted
 
 2026-10-17 Africa/Dakar UTC+0. R7052–R7126 added as original historical annotations, 7,126 Lilly + 1,066 retained Ptolemy = 8,192 after remote verification. All 26 source integrity/coverage tests passed, no financial success evidence, no model promotion. NEXT original PDF598 unnumbered third-house kinship introduction before numbered CXVIII.

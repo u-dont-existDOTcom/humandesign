@@ -1,3 +1,9 @@
+# Lilly 1647 study through kinship introduction — 2026-10-17
+
+8,204 historical source notes after verified remote acceptance (7,138 Lilly + 1,066 Ptolemy); source-body position PDF598/894 **~66.9% scanned-page proxy only**. Unnumbered third-house firstborn chart prerequisite, fallback and three sibling questions preserved with 12 historical annotations, 10 source tests. Next printed CHAP CXVIII begins lower on PDF598. No human family-size validation, ephemeris table completion or model promotion.
+
+---
+
 # Lilly original first edition through wealth durability — 2026-10-17
 
 After verified remote publication **8,192 historical source annotations** (7,126 Lilly + 1,066 Ptolemy). Physical first-edition frontier PDF598 of 894 (**66.9% positional**, not predictive-science progress). Original printed CHAP CXVII durability has 75 historical clauses/navigation, with alternative life-period timing, family wealth, conflicting economic fortunes and uncalibrated directions. Next UNNUMBERED third-house sibling intro starts mid frame598 before printed CXVIII. No verified real-person financial predictions, table-digitization completion, or new runtime rules.
