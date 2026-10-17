@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_EDITORIAL_LXXXVIII_PRINTED_LXXXVII_NEXT_EDITORIAL_LXXXIX",
-  "records_count": 5161,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_EDITORIAL_LXXXIX_HISTORICAL_SOURCE_ONLY_NEXT_XC_OPEN",
+  "records_count": 5193,
   "read_numbered_chapters": [
     1,
     2,
@@ -92,7 +92,8 @@
     85,
     86,
     87,
-    88
+    88,
+    89
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -515,25 +516,32 @@
       "records_count": 48,
       "sha256": "bf7949628abfc991a4625994739193f4ad77200f7b89e275d57d125c7a0b52e0",
       "scope": "Original Lilly first edition printed LXXXVII, stable editorial LXXXVIII, Eleventh House hope/friendship and completeness rules on original PDF491-492 with LXXXVIII following heading PDF493. Forty-six chapter clauses and two next-heading markers, seven page spans, 21 retained limitations; common/movable/fixed and good-hopes versus partial/probability/harm outcomes distinct; no independent validations."
+    },
+    {
+      "id": "B04i",
+      "path": "batches/B04i/RULES.json",
+      "records_count": 32,
+      "sha256": "e1e8b03bcaac8da7db627da50d6fe6a074243199cfa9f39c447c01e347751050",
+      "scope": "Lilly first edition original printed LXXXVIII, stable editorial LXXXIX, friendship, secret wishes and mutual love on PDF493/printed459; 30 clauses, 2 next-chapter navigation records, 4 source spans, 14 limitations; no independent relationship outcomes."
     }
   ],
   "next": {
-    "pdf_page": 493,
-    "printed_page": 459,
-    "chapter": "LXXXIX",
-    "printed_chapter_numeral": "LXXXVIII",
-    "heading": "Of the agreeing of Friends",
+    "pdf_page": 494,
+    "printed_page": 460,
+    "chapter": "XC",
+    "printed_chapter_numeral": "LXXXIX",
+    "heading": "Of secret Enemies, not named",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF493/printed459 starts distinct printed LXXXVIII / stable editorial LXXXIX friends agreement case; prior printed LXXXVII ends PDF492."
+    "position": "Original PDF494/printed460 after Twelfth House divider; printed LXXXIX editorial XC."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04h_CHAPTER_LXXXVIII_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04i_CHAPTER_LXXXIX_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -585,5 +593,6 @@
     "next_original_printed_numeral": "LXXXVI"
   },
   "chapter_LXXXVII_source_acceptance_note": "33 historical annotations R5081–R5113 from first-edition printed CHAP. LXXXVI, stable editorial LXXXVII. Anonymous querent said to obtain office within three weeks, unverified false friend and earlier petitions. Crosswalk preserves original duplicate LXXXV. Zero independent empirical predictive validations.",
-  "chapter_LXXXVIII_source_acceptance_note": "48 historical source clauses R5114–R5161, 46 original Eleventh House hopes and 2 next-heading. Original printed LXXXVII (editorial sequence LXXXVIII) preserves duplicated LXXXV numbering crosswalk. Outcome classes partial/probability/whole/harm after possessing remain separate, with feasibility caveat. No empirical validations."
+  "chapter_LXXXVIII_source_acceptance_note": "48 historical source clauses R5114–R5161, 46 original Eleventh House hopes and 2 next-heading. Original printed LXXXVII (editorial sequence LXXXVIII) preserves duplicated LXXXV numbering crosswalk. Outcome classes partial/probability/whole/harm after possessing remain separate, with feasibility caveat. No empirical validations.",
+  "chapter_LXXXIX_source_acceptance_note": "Printed LXXXVIII friendship, secrecy of wishes and mutual love; 32 documentary records R5162-R5193, four source passages, no empirical validation."
 }

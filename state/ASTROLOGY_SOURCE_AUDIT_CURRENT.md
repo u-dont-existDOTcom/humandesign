@@ -1,3 +1,9 @@
+# Original Lilly source research — friendship
+
+2026-10-16: LXXXIX editorial (printed LXXXVIII), 32 historical records locally accepted. Once published 5,193 Lilly + 1,066 Ptolemy = 6,259 historical records; next editorial XC printed LXXXIX original PDF494. No empirical forecast validation. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04i_CHAPTER_LXXXIX_COMPLETE.md.
+
+---
+
 # Original Lilly source study — printed LXXXVII / editorial LXXXVIII Eleventh House
 
 2026-10-16: original first-edition Eleventh House source locally admitted, 48 historical documentary R5114–R5161. After authenticated publication total **5,161 Lilly + 1,066 Ptolemy = 6,227**. Original printed chapter **LXXXVII**, stable editorial sequence **LXXXVIII**, established duplicated LXXXV original crosswalk unchanged. Next printed LXXXVIII / editorial LXXXIX *Of agreeing of Friends* starts original PDF493. No verified predictions or model promotions. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04h_CHAPTER_LXXXVIII_COMPLETE.md.
