@@ -1,0 +1,27 @@
+# Original William Lilly 1647 astrology — spouse origin source accepted; spouse appearance next
+
+2026-10-17 21:11 Africa/Dakar UTC+0.
+
+## Accepted source checkpoint after GitHub verification
+
+HumanDesign repository `u-dont-existDOTcom/humandesign`, branch `research/astro-b06k-wife-origin-20261017` is based on verified B06j original printed wife-count study commit `7d3134cc7fdabde08ef99b59a1ee04a0671d51a5`. Once B06k remote GitHub SHA readback succeeds, canonical original-source index `tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json` records **8,141 Lilly + 1,066 retained Ptolemy = 9,207 historical documentary source annotations**, last Lilly **R8141**, **NEXT R8142**. Physical first-edition source frontier **PDF627/894 = approximately 70.1% scanned page position**, not scientific validation, full machine-executable rulebook or numeric table completeness. No independently verified person-level predictions from source-only lane; zero runtime source promotions.
+
+## Accepted original printed CXXXIII
+
+Printed original **CHAP CXXXIII/editorial CXXXIV** *From whence, or from what Quarter the Native shall have his Wife* begins after divider mid/lower **PDF626/printed592** and ends upper **PDF627/printed593**. After divider on PDF627, a separate printed **CHAP CXXXIIII**, *What manner of Wife or Wives the Native shall have, if Faire or Deformed*, begins. Exact first-edition JPEG images PDF626–627 SHA256/bytes saved in B06k/evidence.
+
+**35 historical documentary source records R8107–R8141**, 33 substantive and 2 next chapter navigation, 6 reversible original source groups, 15 focused structural original-source tests and 15 independent ZIP extracted CRC/SHA/source replay tests PASS. Owner ZIP `~/Téléchargements/Astrology-Lilly-Chapter-CXXXIV-Spouse-Origin-1647-20261017.zip` SHA `8ef0b25096cc608657cb9294f07865506eac292a3f1b58aa12e80fb8bec65203` recorded in B06k/SOURCE_RELEASE_RECEIPT_20261017.json.
+
+**Source source-specific textual distinction:** first rule explicitly says a spouse born outside the same **COUNTY (I say not COUNTRY)**, not necessarily outside nation. A later rule uses **Country** when ninth-ruler Venus occupies first or tenth, and seventh/ninth house-ruler exchange vaguely indicates an origin not near the native's birth country/place. These are different outcomes and imply no single calibrated distance. Additional Sun plus another **unresolved glyph** contacting seventh and Sun-third claims are preserved with that glyph unresolved, not guessed. Final general instruction to count seventh sign, seventh-ruler's sign, Venus/Moon signs and celestial quadrants supplies no geographic bearings, distance metric or exact priority. Author claims wealthy, religious, virtuous foreign-origin spouse from qualified benefic/dignified significators, which are seventeenth-century stereotypes, NOT facts about actual people.
+
+No independent real-person spouse birthplace, citizenship, physical location, religion, wealth, moral qualities or prediction success. No scoring/model promotion. This is a source-first archive, not full glyph-by-glyph transcription.
+
+## NEXT original printed CXXXIIII / editorial CXXXV
+
+**Begin R8142** from original first edition printed **CHAP CXXXIIII**, *What manner of Wife or Wives the Native shall have, if Faire or Deformed*, beginning mid **PDF627/printed593** after a divider. It continues to original PDF628 and beyond; obtain next physical pages PDF628–632 and determine exact *next printed heading* before claiming completeness. Original PDF627 source in B06k/evidence. This chapter classifies physical facial/body appearance using seventh house sign and principal significator of wife, Moon-applying planets, sign categories 'pulchritude', 'mediocrity', 'deformity', Saturn debility/combustion, spouse age/older widow stereotypes, Jupiter/Venus/Moon benefic aspects and claimed author physical-attractiveness anecdotes. Extract as historical first-edition text only: **no diagnosis, actual partner disability, body/face, sex life, marital age or personal aesthetics prediction**. Note source zodiac sign names and category lists, retain original glyph ambiguities rather than manufacture one-to-one labels, use an explicit table of each sign category and exception if applicable.
+
+Create isolated **B06l** worktree from published B06k verified SHA, freeze source-first records, original photo hashes, reversible source-to-claim mapping, social/medical and appearance nonpromotion flags, deterministic source tests, ZIP full CRC/SHA/extracted replay, guarded canonical append-only one numbered chapter, GitHub push/remote SHA readback and full durable handoff. Save all in HumanDesign repo and owner Téléchargements; no owner decision needed.
+
+## Wider science
+
+Historical source count has no relation to independent empirical predictive success. Prior scientific lanes to complete: numerical historic ephemerides and directions, Regiomontanus geometry, source-to-deterministic runtime modeling, independently blinded relationship/person data and nonastrological baselines. 70.1% denotes original book scanned location, not project-wide completion. Prior unrelated broad tests and UDA audits failed at known baseline (B05p), source-only batch changed no model scoring. Follow universal-dev-architecture AGENTS and HumanDesign AGENTS; preserve complete success/miss distinction and do not repeat completed source work.

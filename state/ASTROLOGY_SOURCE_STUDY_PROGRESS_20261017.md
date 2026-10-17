@@ -1,3 +1,9 @@
+# Lilly 1647 original source through spouse birthplace/origin — 2026-10-17
+
+After verified publication **9,207 historical documentary annotations** (8,141 Lilly + 1,066 Ptolemy), physical first-edition frontier PDF627/894 (**70.1% scanned-page position only, not empirical/computational completion**). CXXXIII adds 35 historical spouse-origin annotations, preserving an explicit COUNTY not COUNTRY restriction versus another rule alleging foreign COUNTRY and an unresolved original glyph, plus zodiac/quarter testimony without geographical metric. No real human predictions validated and zero promoted scoring rules. Next printed CXXXIIII spouse appearance begins middle PDF627. Numerical astrology and untouched human blind tests remain OPEN.
+
+---
+
 # Lilly first edition source through historical spouse count — 2026-10-17
 
 After remote verified publication **9,172 historical source annotations** (8,106 Lilly + 1,066 Ptolemy), physical first-edition scan frontier PDF626/894 (**70.0% physical page-position only, NOT completion of source algorithm digitization or empirical research**). Printed CXXXII wife number source adds 80 documentary clauses and ten incompatible alternative rules; legal wives and nonmarital female acquaintances cannot be conflated. Ptolemy source attribution and author private anecdote not independently verified; zero empirical human marriage/longevity result and zero runtime promotions. Next printed CXXXIII on spouse origin/quarter from PDF626 through upper PDF627. Numeric astronomy and untouched human matching/decoys remain separate OPEN lanes.
