@@ -37,7 +37,7 @@ const puppeteer = require(process.env.PUPPETEER_MODULE || "puppeteer");
       await page.click("#close-ack");
       await page.click("#close-questions");
       await page.waitForFunction(() =>
-        document.getElementById("review-stage-message").textContent.includes("No more questions"));
+        document.getElementById("review-stage-message").textContent.includes("No further clarification questions"));
     }
     // No GPT message or manual refresh: the browser checks Railway itself.
     await page.waitForFunction(
