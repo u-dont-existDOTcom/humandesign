@@ -82,6 +82,57 @@ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || "playwright");
     if (process.env.PILOT_BROWSER_SCREENSHOT) {
       await next.screenshot({path:process.env.PILOT_BROWSER_SCREENSHOT});
     }
+    if (process.env.PILOT_OWNER_PACKET_PATH) {
+      const packet=JSON.parse(fs.readFileSync(process.env.PILOT_OWNER_PACKET_PATH,"utf8"));
+      assert.equal(packet.schema,"life-patterns-owner-source-packet-v1");
+      const ownerPage=await context.newPage();
+      ownerPage.on("request", x=>{if(!x.url().startsWith("file:"))requests.push(x.url());});
+      ownerPage.on("pageerror", x=>errors.push(x.message));
+      await ownerPage.goto(pathToFileURL(path.join(root,"EXPERIENCE-MEANING-PILOT-v1.html")).href);
+      await ownerPage.locator("#import").setInputFiles(process.env.PILOT_OWNER_PACKET_PATH);
+      assert.match(await ownerPage.locator("#import-message").innerText(),/3 previous survey files/);
+      assert.equal(await ownerPage.locator("#question-panel").isHidden(),true,"Import must not bypass opt-in.");
+      await ownerPage.locator("#begin").click();
+      assert.match(await ownerPage.locator("#prior-count").textContent(),/116/);
+      await ownerPage.locator("#prior-context summary").click();
+      await ownerPage.locator("#prior-search").fill("TF1-A0");
+      assert.ok(await ownerPage.locator(".prior-match").count()>=1);
+      await ownerPage.locator(".prior-match button").first().click();
+      assert.equal(await ownerPage.locator("#earlier-source").inputValue(),"latest_v33:TF1-A0");
+      assert.match(await ownerPage.locator("#progress").innerText(),/1 of 4/i,
+        "Inserting a reference must not auto-mark a new experience answer as covered.");
+      await ownerPage.locator("#primary-answer").selectOption("never");
+      await ownerPage.locator("#save").click();
+      await ownerPage.locator("#skip").click();
+      await ownerPage.locator("#unknown").click();
+      await ownerPage.locator("#personal_meaning").selectOption("strong");
+      await ownerPage.locator("#perceived_contribution").selectOption("not_answered");
+      await ownerPage.locator("#save").click();
+      await ownerPage.locator("#topics-done").click();
+      const ownerDownloadEvent=ownerPage.waitForEvent("download");
+      await ownerPage.locator("#export").click();
+      const ownerDownload=await ownerDownloadEvent;
+      const ownerData=JSON.parse(fs.readFileSync(await ownerDownload.path(),"utf8"));
+      assert.equal(ownerData.prior_sources.length,3);
+      for(let i=0;i<3;i++) assert.equal(ownerData.prior_sources[i].text,packet.sources[i].text,
+        "Round trip must preserve every complete original source text.");
+      assert.equal(ownerData.responses.find(x=>x.question_id==="EM01").state,"NEVER");
+      assert.equal(ownerData.responses.find(x=>x.question_id==="EM02").state,"NOT_ASKED");
+      assert.equal(ownerData.responses.find(x=>x.question_id==="EM04").state,"UNKNOWN");
+      assert.equal(ownerData.responses.find(x=>x.question_id==="EM08").values.perceived_contribution,
+        "not_answered");
+      const ownerResumed=await context.newPage();
+      await ownerResumed.goto(pathToFileURL(path.join(root,"EXPERIENCE-MEANING-PILOT-v1.html")).href);
+      await ownerResumed.locator("#import").setInputFiles({name:"owner-reimport.json",mimeType:"application/json",
+        buffer:Buffer.from(JSON.stringify(ownerData))});
+      assert.match(await ownerResumed.locator("#import-message").innerText(),/Imported successfully/);
+      assert.equal(await ownerResumed.locator("#complete").isVisible(),true);
+      await ownerResumed.locator("#review-select").selectOption("EM01");
+      await ownerResumed.locator("#edit").click();
+      assert.match(await ownerResumed.locator("#prior-count").textContent(),/116/);
+      await ownerPage.close();
+      await ownerResumed.close();
+    }
     assert.deepEqual(requests,[],"Offline page attempted external requests");
     assert.deepEqual(errors,[],"Browser reported script error");
     console.log("BROWSER_SMOKE_PASS",JSON.stringify({core:4,selected_optional:2,verified_states:8,export:true,edit:true,import:true,mobile_width:viewport.width,mobile_content:viewport.content_width,network_requests:requests.length,script_errors:errors.length}));

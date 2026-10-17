@@ -2,7 +2,7 @@
 
 **Status:** A standalone, optional research pilot. Nothing here is part of the live GPT or Railway participant survey, and none of these questions affects a chart score.
 
-**Open `EXPERIENCE-MEANING-PILOT-v1.html` in a browser.** You do not need to run a server, install anything, or sign in. Accept the separate opt-in if you want to try it. You will see four brief questions: surprise about yourself, awe, sudden realization, and two separate ratings of life meaning and perceived contribution.
+**Open `EXPERIENCE-MEANING-PILOT-v1.html` in a browser.** You do not need to run a server, install anything, or sign in. You may first import a previously completed Life Patterns survey—either a direct V3.3, primary interview or secondary follow-up JSON, or a combined `life-patterns-owner-source-packet-v1` file. The page keeps those earlier records intact as searchable reference material. It never converts them into new experience answers or silently marks a question answered. Press the separate opt-in button to begin. The four starting questions concern self-surprise, awe, sudden realization, and two separate ratings of life meaning and perceived contribution.
 
 After those, optionally choose any of four topics: surprise about people/world, life predictability, sensed guidance, and meaningful coincidences. These topics are not required. Every card allows an explicit skip or uncertainty, and you may describe the circumstances in your own words if useful.
 
