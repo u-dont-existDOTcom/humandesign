@@ -1,3 +1,9 @@
+# Lilly first-edition historical acquisition-conduct study accepted, durability next
+
+2026-10-17 Africa/Dakar UTC+0. R6995–R7051 source-first admitted locally; after GitHub verification 7,051 Lilly + 1,066 Ptolemy = 8,117 historical annotations. Qualifiers on lawful vs indirect acquisition are unsupported historical judgments and never evidence about anyone's conduct. 21 archive-replayed documentary tests, no independent human forecasts, no runtime source rules promoted. NEXT original printed CXVII wealth durability on PDF596.
+
+---
+
 # Original Lilly wealth-origin historical source admitted; lawful acquisition next
 
 2026-10-17 Africa/Dakar UTC+0. B05o records R6911–R6994 prepared for source-only acceptance. After authenticated GitHub readback the historical corpus totals 6,994 Lilly + 1,066 retained Ptolemy = 8,060. 36 structured planet/sign/house cells and 316 normalized source-list items from original printed CHAP CXV preserved, including a period folio numbering anomaly. No independent human economic success and no runtime rule. Following printed CHAP CXVI, whether wealth was acquired by lawful or indirect dealing, begins original PDF594.

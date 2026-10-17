@@ -1,0 +1,46 @@
+{
+  "batch": "B05p",
+  "timestamp_utc": "2026-10-17 16:25 UTC",
+  "documentary_validation": {
+    "focused_and_affected": {
+      "passed": 21,
+      "failed": 0,
+      "scope": "original 1647 source-image hashes, source-to-record coverage, conditions and uncertainty handling"
+    },
+    "portable_archive_replayed": {
+      "passed": 21,
+      "failed": 0,
+      "crc_passed": true,
+      "per_member_sha256_passed": true
+    },
+    "source_python_lint": "ruff check B05p: PASS",
+    "scientific_predictive_outcome_validations": 0,
+    "runtime_rule_promotions": 0
+  },
+  "broader_repository_gates": {
+    "python3 -m unittest discover -s tests -v": {
+      "status": "FAIL_PREEXISTING_ENVIRONMENT_MISSING_DEPENDENCIES",
+      "result": "91 tests, 3 import errors; system python3 lacks swisseph; no source-chapter test failures identified",
+      "exit_code": 1
+    },
+    "python3 scripts/audit_codex_github.py --root . --fail-on error": {
+      "status": "UNAVAILABLE_IN_THIS_PROJECT_CHECKOUT",
+      "issue": "Project scripts directory lacks audit_codex_github.py; instead checked standalone universal architecture checker."
+    },
+    "UDA standalone audit": {
+      "command": "python3 /home/joel/universal-dev-architecture/scripts/audit_codex_github.py --root . --fail-on error",
+      "status": "GLOBAL_REPO_PREEXISTING_COMPLIANCE_FAILURES",
+      "result": "90 errors, 73 warnings, including unpinned GitHub workflow actions and incomplete global state/CURRENT-STATE sections. No changes to these areas."
+    },
+    "project venv pytest -q": {
+      "status": "ONE_PREEXISTING_UNRELATED_FAILURE",
+      "result": "397 passed, 4 skipped, 1 failed",
+      "failed_case": "tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines",
+      "expected": "INSUFFICIENT_BIRTH_DATA",
+      "observed": "UNAVAILABLE",
+      "reference": "Same assertion previously reproduced on unmodified pre-B05p worktree; not caused by source study."
+    }
+  },
+  "authorization_boundary": "Original source historical documentation only; not a lawful/unlawful classification of any person.",
+  "remediation": "Preserve failure records and avoid altering unrelated model, relationship-study tests, CI files or global architecture in archival source-only branch."
+}

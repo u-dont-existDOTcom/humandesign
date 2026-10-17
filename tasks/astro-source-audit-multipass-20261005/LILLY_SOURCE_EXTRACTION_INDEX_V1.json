@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_WEALTH_ORIGIN_HISTORICAL_SOURCE_COMPLETE_NEXT_LAWFUL_GAIN",
-  "records_count": 6994,
+  "status": "BOOK_III_ESTATES_CONDUCT_HISTORICAL_ONLY_NEXT_DURABILITY",
+  "records_count": 7051,
   "read_numbered_chapters": [
     1,
     2,
@@ -120,7 +120,8 @@
     113,
     114,
     115,
-    116
+    116,
+    117
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -767,30 +768,33 @@
       "records_count": 84,
       "sha256": "5f41779cc46f822105098628504875ede05fcf2d2b617c2db40d92c3d4144d61",
       "scope": "Original 1647 William Lilly printed CHAP CXV/editorial CXVI From whence or by what means Estate/Poverty, source body PDF588-594 with printed CXVI opening PDF594 and context PDF595-596. 84 historical documentary records R6911-R6994: 46 prose claims, 36 structured classification cells, 2 following chapter navigation. Exactly 316 normalized original-source category items: seven planets x matters and persons, four elemental sign classifications, six planetary sign nature categories, twelve house correspondence cells; full source-to-record reverse mapping. Rules select planetary nature, sign, house, partile aspect, and count strong vs weak testimony; all-strong rare, majority-strong allows episodes of loss, majority-weak permits temporary gains, equal-strength produces variation relative to ancestor baseline. Original PDF594 and PDF595 both show printed folio561, with physical scan/text continuous. Period social/moral/vocational stereotypes are history only. No human financial results verified or scoring runtime promotion."
+    },
+    {
+      "id": "B05p",
+      "path": "batches/B05p/RULES.json",
+      "records_count": 57,
+      "sha256": "b59cb0ae98984b15f9afedd1fcb2c4588e82c4e28ff28ab166a0af50eb7832c3",
+      "scope": "Original 1647 Lilly printed CHAP CXVI/editorial CXVII 'If the Native shall attain his Estate by just means, or indirect dealing'. Body original PDF594–596, next printed CXVII heading lower PDF596. Ten original source groups, 55 conditional historical claims and 2 following-chapter navigation records. Intrinsic benefic or malefic nature, dignity of sign, combustion, retrogradation, aspects and plurality of evidence, mutually opposed/mixed cases, hypothetical Jupiter/Saturn sixth-house example, and multiple direction/revolution timing candidates. PDF594 and PDF595 both print folio561; scan order continuous. Historical ethical and financial stereotypes only, never real person legality allegations, no independently validated outcome, no runtime model promotion."
     }
   ],
   "next": {
-    "pdf_page": 594,
-    "printed_page_as_seen": 561,
-    "source_folio_duplicate": true,
-    "chapter": "CXVII",
-    "printed_chapter_numeral": "CXVI",
-    "heading": "If the Native shall attaine his Estate by just meanes, or indirect dealing",
+    "pdf_page": 596,
+    "printed_page_as_seen": 562,
+    "chapter": "CXVIII",
+    "printed_chapter_numeral": "CXVII",
+    "heading": "If the Estate of the Native shall continue, or be Durable",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Separate printed CHAP CXVI begins below original divider in lower PDF594/printed561, continues PDF595 also printed561, and ends before CHAP CXVII heading in PDF596/printed562. Original PDF594 and 595 share a 561 folio misprint; source image order and body paragraphs are continuous.",
-    "following_printed_chapter": "CXVII",
-    "following_editorial_chapter": "CXVIII",
-    "following_original_pdf_frame": 596,
-    "research_scope": "Historical lawful/unlawful wealth acquisition qualifiers, mutual aspects, benefic/malefic state, combustion/retrograde and directional timing; all are unvalidated and must not be used for allegations about a living person's ethics."
+    "position": "Printed CHAP CXVII begins lower first-edition PDF596/folio562 after a divider, continues into further original PDF pages that require new boundary review. The earlier printed folio561 is duplicated on original PDF594 and PDF595.",
+    "research_scope": "Historical natal wealth durability/persistence, planet occupying second house and essential dignity, qualified malefic alternatives and directional change; source documentary only with no actual financial forecasts."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05o_WEALTH_SOURCES.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05p_ACQUISITION_METHOD.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -875,5 +879,6 @@
   "chapter_CXIV_source_acceptance_note": "R6765–R6808 historical-only, 41 source clauses and 3 next-section navigation, 10 first-edition source groups, 4 original frames and ZIP 18 replayed source tests. No independent life-event prediction or human outcome validation.",
   "unnumbered_second_house_source_acceptance_note": "45 historical records R6809-R6853, 43 source claims and 2 next numbered chapter navigation. Six source groups, 3 physical original images, Ptolemy-as-Lilly-attribution not verified against Ptolemy. No independent wealth prediction success and no promoted runtime rule.",
   "chapter_CXV_source_acceptance_note": "R6854-R6910: 57 historical source records (55 body claims, 2 next-heading navigation), 12 page-anchored groups and 5 original scanned witness frames; 24 portable tests. No successful economic forecast, financial evidence or new model promotion. Following printed CXV's matter/person and sign/house source tables remain open.",
-  "chapter_CXVI_source_acceptance_note": "B05o records R6911–R6994, 84 historical annotations, 316 normalized source-list items in 36 planet, element, planetary-nature and house classification cells plus 48 prose/navigation records. Original witness frames588-596 SHA256-checked, 28 portable tests replayed; no actual financial/career/cause-of-estate success or runtime promotion."
+  "chapter_CXVI_source_acceptance_note": "B05o records R6911–R6994, 84 historical annotations, 316 normalized source-list items in 36 planet, element, planetary-nature and house classification cells plus 48 prose/navigation records. Original witness frames588-596 SHA256-checked, 28 portable tests replayed; no actual financial/career/cause-of-estate success or runtime promotion.",
+  "chapter_CXVII_source_acceptance_note": "B05p records R6995–R7051: 55 historical clause annotations plus 2 next-chapter navigation; 10 original source groups, SHA witnesses and 21 source-replay tests. No real-person legality, criminality, wealth prediction validity or new runtime scoring rules."
 }
