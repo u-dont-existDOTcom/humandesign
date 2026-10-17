@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "task": "astrology-phenomenology-source-anchors-20261017",
+  "status": "NARROW_PRIMARY_TEXT_SOURCE_AUDIT_COMPLETE_FULL_CLASSICAL_CORPUS_OPEN",
+  "date": "2026-10-17",
+  "input_surfaces": [
+    "Ptolemy Tetrabiblos III.13 (Loeb edition, HTML)",
+    "Lilly Christian Astrology house introduction p.55 (1659 HTML transcription)",
+    "Existing Life Patterns V7 question bank",
+    "Experimental unscored experience/meaning pilot"
+  ],
+  "historical_claim_anchors": 17,
+  "modern_specific_measurement_gaps": 6,
+  "historical_sources_checked": 2,
+  "source_verification": [
+    "Ptolemy source HTML SHA256 and short location phrases",
+    "Lilly source HTML SHA256 and short location phrases with unproofread warning"
+  ],
+  "limitations": [
+    "A full 1647 Lilly Book III natal pass is not done here",
+    "Dariot, Hellenistic, Jyotish and Ptolemy Book IV not fully audited",
+    "The two passages do not provide exact frequency/intensity predictions for awe, surprise, sudden self-revelation, perceived guidance, noticing coincidences or meaning",
+    "No new natal chart model/score is proposed or empirically validated",
+    "No historical interpretation establishes a mental health or medical prediction"
+  ],
+  "owner_output": "~/Téléchargements/Life-Patterns-Astrology-Source-Audit-2026-10-17/",
+  "files_delivered": 7,
+  "git_continuity": "humandesign canonical research branch via isolated worktree and reviewed merge",
+  "research_scope_boundary": "No existing participant was re-interviewed, no frozen mapping or live questionnaire modified",
+  "tests": {
+    "focused_new": 3,
+    "root_passed": 1092,
+    "root_skipped": 6,
+    "ruff": "PASS",
+    "download_files_exact_readback": true,
+    "source_pages_readback": true
+  },
+  "next_research_trigger": "Continue source-first rule-level extraction with complete Lilly Book III natal and original text sets, then predeclare independent measurement-to-chart predictions and psychological controls before collecting untouched participants."
+}

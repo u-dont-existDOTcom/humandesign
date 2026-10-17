@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "verified_date": "2026-10-17",
+  "verification_kind": "Remote HTTPS readback of two public historical-text HTML pages; offline snippet consistency checks; NOT peer review of astrological predictions.",
+  "source_checks": [
+    {
+      "id": "PTOLEMY-TETRABIBLOS-III13",
+      "url": "https://penelope.uchicago.edu/thayer/e/roman/texts/ptolemy/tetrabiblos/3d%2A.html",
+      "downloaded_html_bytes": 58086,
+      "sha256_html": "f6fa90beb6b592078ba8ffa2c89131ddc329e028fdaf1a56630e4b21e46763ab",
+      "checks_passed": [
+        "Of the Quality of the Soul",
+        "readers of omens",
+        "interpreters of dreams",
+        "mysteries and initiations",
+        "dreamers of pleasant dreams"
+      ],
+      "caveat": "The uninterrupted phrase 'inquirers into nature' did not match normalized stripped HTML because an embedded printed-page label splits the phrase; Ptolemy text independently shows the words across the page break. This is NOT evidence of absence."
+    },
+    {
+      "id": "LILLY-INTRO-HOUSES-1659-P55",
+      "url": "https://en.wikisource.org/wiki/Page:Christian_Astrology_(Lilly,_1659).djvu/80",
+      "downloaded_html_bytes": 51250,
+      "sha256_html": "e3b543ff95ed271e12e1008b9eed8e4e5915749ee6c13726f4f3862deba18710",
+      "checks_passed": [
+        "The Ninth House",
+        "Dreams, Visions",
+        "devout man in his Religion",
+        "The Tenth House"
+      ],
+      "caveat": "This is a Wikisource transcription explicitly marked not proofread; use as a locator for the reproduced original, not a resolved critical edition."
+    }
+  ],
+  "claims_count": 17,
+  "explicit_modern_phenomenology_gaps": 6,
+  "original_v7_question_text_unchanged": true,
+  "neither_source_demonstrates_astrological_predictive_validity": true,
+  "owner_or_participant_answers_used": false
+}

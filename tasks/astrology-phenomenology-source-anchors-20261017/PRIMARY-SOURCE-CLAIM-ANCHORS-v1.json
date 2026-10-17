@@ -1,0 +1,360 @@
+{
+  "schema": "life-patterns-astrological-primary-source-to-observation-v1",
+  "status": "SOURCE_VERIFIED_IN_SCOPE_NO_PREDICTIVE_VALIDATION",
+  "version_date": "2026-10-17",
+  "sources": [
+    {
+      "id": "PTOLEMY-TETRABIBLOS-III13",
+      "author": "Claudius Ptolemy",
+      "title": "Tetrabiblos III.13 — Of the Quality of the Soul",
+      "url": "https://penelope.uchicago.edu/thayer/e/roman/texts/ptolemy/tetrabiblos/3d%2A.html",
+      "source_kind": "natal_character_method",
+      "edition_note": "Loeb English translation reproduced by LacusCurtius; page labels approximately 333–363",
+      "verified_source_scope": "natal moral/intellectual dispositions, interests, and conduct in chapter 13",
+      "not_a_validation_study": true
+    },
+    {
+      "id": "LILLY-INTRO-HOUSES-1659-P55",
+      "author": "William Lilly",
+      "title": "Christian Astrology, ninth and tenth house significations, printed p.55 (1659 edition)",
+      "url": "https://en.wikisource.org/wiki/Page:Christian_Astrology_(Lilly,_1659).djvu/80",
+      "source_kind": "general_house_significations_with_horary_use",
+      "edition_note": "Wikisource transcription marked not proofread; not the dedicated Book III natal house doctrine",
+      "verified_source_scope": "topics assigned to the ninth and tenth houses, plus one Jupiter-in-ninth observation",
+      "not_a_validation_study": true
+    }
+  ],
+  "claim_anchors": [
+    {
+      "id": "PT-MIND-REASON",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 opening; printed pp.333–335",
+      "traditional_chart_condition_or_topic": "Mercury and Moon placement/aspects analyzed in combination",
+      "source_claim_paraphrase": "Mercury is used for intellectual/rational qualities; the Moon for sensory/emotional qualities.",
+      "measurement_domain": "reason_and_emotion",
+      "existing_v7_coverage": "partial",
+      "existing_v7_families": [
+        "understanding",
+        "emotion"
+      ],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-MYSTERY-INTEREST",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 orientation/stations; printed pp.335–337",
+      "traditional_chart_condition_or_topic": "Specified planetary station/orientation involving Mercury or Venus",
+      "source_claim_paraphrase": "Interest in hidden matters, the unknown, mysteries, and philosophical or occult activities is discussed as a soul quality.",
+      "measurement_domain": "interest_in_hidden_things",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-OMENS",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 orientation/stations; printed p.337",
+      "traditional_chart_condition_or_topic": "Specific configurations of planets in evening or beneath-horizon stations",
+      "source_claim_paraphrase": "Reading omens is among the occupations/interests ascribed to certain configurations.",
+      "measurement_domain": "divination_omen_interpretation",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-DREAM-INTERPRET",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 orientation/stations; printed p.337",
+      "traditional_chart_condition_or_topic": "Planetary stations affecting disposition",
+      "source_claim_paraphrase": "Interpreting dreams appears among interest/occupation examples.",
+      "measurement_domain": "dream_interpretation_interest",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-RELIGIOUS-OBSERVANCE",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 Saturn with Venus; printed p.345",
+      "traditional_chart_condition_or_topic": "Saturn combined with Venus in the relevant position",
+      "source_claim_paraphrase": "Dispositions toward religious ceremonies, secret rites, initiations and mystical practices are ascribed.",
+      "measurement_domain": "religious_ritual_experience",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-JUPITER-DEVOTION",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 Jupiter alone; printed pp.347–349",
+      "traditional_chart_condition_or_topic": "Jupiter governing the soul in a favorable or unfavorable condition",
+      "source_claim_paraphrase": "Piety and reverence are part of the described character, contrasted with superstition.",
+      "measurement_domain": "religious_devotion_and_belief",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-JUPITER-MERCURY-PHILOSOPHY",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 Jupiter with Mercury; printed pp.351–353",
+      "traditional_chart_condition_or_topic": "Jupiter and Mercury governing soul, with dignity/conditions",
+      "source_claim_paraphrase": "Philosophical, religious, intellectual, teaching and rhetorical interests are listed.",
+      "measurement_domain": "worldview_philosophy",
+      "existing_v7_coverage": "proxy_only",
+      "existing_v7_families": [
+        "understanding",
+        "practice_focus"
+      ],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-VENUS-DREAM-TONE",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 Venus alone; printed p.357",
+      "traditional_chart_condition_or_topic": "Venus as ruler of soul in favorable conditions",
+      "source_claim_paraphrase": "Favorable Venus description includes pleasant dreaming, art and enjoyment.",
+      "measurement_domain": "dream_phenomenology",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-VENUS-ART",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 Venus with Mercury; printed p.359",
+      "traditional_chart_condition_or_topic": "Venus with Mercury in honorable conditions",
+      "source_claim_paraphrase": "Interest in art, beauty, poetry and learned pursuits is described.",
+      "measurement_domain": "artistic_aesthetic_orientation",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-MUSIC",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 zodiac sign classes; printed p.335",
+      "traditional_chart_condition_or_topic": "Signs classified as bicorporeal influencing the relevant soul rulers",
+      "source_claim_paraphrase": "Musical tastes and versatility/changeability are mentioned.",
+      "measurement_domain": "musical_interest",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-REVISION-VERSATILITY",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 zodiac signs and Moon; printed pp.335,361–363",
+      "traditional_chart_condition_or_topic": "Bicorporeal sign class or lunar orbital phase/position",
+      "source_claim_paraphrase": "Change of mind and versatility are attributed to certain zodiacal/lunar conditions.",
+      "measurement_domain": "habitual_opinion_revision",
+      "existing_v7_coverage": "proxy_only",
+      "existing_v7_families": [
+        "development",
+        "rhythm_change"
+      ],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-NATURE-INQUIRY",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 Mercury alone; printed pp.361–363",
+      "traditional_chart_condition_or_topic": "Mercury in honorable condition governing soul",
+      "source_claim_paraphrase": "Intellectual inquiry into nature, invention, calculation and pursuit of mysteries are described.",
+      "measurement_domain": "epistemic_curiosity",
+      "existing_v7_coverage": "partial",
+      "existing_v7_families": [
+        "understanding",
+        "method"
+      ],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "PT-RELIGIOUS-SIGNS",
+      "source_id": "PTOLEMY-TETRABIBLOS-III13",
+      "section_locator": "§13 zodiacal sign classes; printed p.335",
+      "traditional_chart_condition_or_topic": "Solstitial sign class affecting soul rulers",
+      "source_claim_paraphrase": "Attention to gods and divinatory interests are included in sign-based character claims.",
+      "measurement_domain": "religious_attention_divination",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "LILLY-NINTH-RELIGION",
+      "source_id": "LILLY-INTRO-HOUSES-1659-P55",
+      "section_locator": "p.55 Ninth House paragraph",
+      "traditional_chart_condition_or_topic": "Ninth house as a general topic; not an individual natal rule by itself",
+      "source_claim_paraphrase": "Religious people, clergy, books, learning and foreign journeys are assigned to the ninth house.",
+      "measurement_domain": "religion_learning_travel_topics",
+      "existing_v7_coverage": "proxy_only",
+      "existing_v7_families": [
+        "understanding"
+      ],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "LILLY-NINTH-DREAMS",
+      "source_id": "LILLY-INTRO-HOUSES-1659-P55",
+      "section_locator": "p.55 Ninth House paragraph",
+      "traditional_chart_condition_or_topic": "Ninth house general signification",
+      "source_claim_paraphrase": "Dreams and visions are named among ninth-house matters.",
+      "measurement_domain": "dreams_visions_topics",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "LILLY-JUPITER-NINTH",
+      "source_id": "LILLY-INTRO-HOUSES-1659-P55",
+      "section_locator": "p.55 Ninth House paragraph, second section",
+      "traditional_chart_condition_or_topic": "Jupiter placed in the ninth house",
+      "source_claim_paraphrase": "Lilly describes Jupiter in the ninth as associated with a devout religious disposition.",
+      "measurement_domain": "religious_devotion_and_belief",
+      "existing_v7_coverage": "absent",
+      "existing_v7_families": [],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    },
+    {
+      "id": "LILLY-TENTH-WORK",
+      "source_id": "LILLY-INTRO-HOUSES-1659-P55",
+      "section_locator": "p.55 Tenth House paragraph",
+      "traditional_chart_condition_or_topic": "Tenth house general topic, not an individualized event prediction",
+      "source_claim_paraphrase": "Trade, profession, authority and public office are designated tenth-house topics.",
+      "measurement_domain": "actual_vocation_and_public_role",
+      "existing_v7_coverage": "proxy_only",
+      "existing_v7_families": [
+        "work_energy",
+        "purpose"
+      ],
+      "source_relation": "explicit_text_about_traditional_topic_not_validated_empirical_prediction",
+      "frequency_or_intensity_rule_explicit": false
+    }
+  ],
+  "proposed_modern_phenomenology": [
+    {
+      "construct": "frequency_of_awe_and_wonder",
+      "relevance": "An optional new phenomenology construct; aesthetics and piety are only adjacent traditional claims.",
+      "direct_explicit_rule_in_these_sources": false,
+      "related_claim_ids": [
+        "PT-VENUS-ART",
+        "PT-JUPITER-DEVOTION"
+      ],
+      "pilot_ids": [
+        "EM03"
+      ],
+      "source_relation": "modern_extrapolation"
+    },
+    {
+      "construct": "frequency_of_being_shocked_by_self_or_world",
+      "relevance": "Surprise reactions are not the same as intellectual curiosity or dispositional changeability.",
+      "direct_explicit_rule_in_these_sources": false,
+      "related_claim_ids": [
+        "PT-REVISION-VERSATILITY",
+        "PT-NATURE-INQUIRY"
+      ],
+      "pilot_ids": [
+        "EM01",
+        "EM02"
+      ],
+      "source_relation": "modern_extrapolation"
+    },
+    {
+      "construct": "sudden_self_revelation_and_behavioral_revision",
+      "relevance": "Traditional versatility/change-of-mind language does not specify a Eureka moment or a life revision.",
+      "direct_explicit_rule_in_these_sources": false,
+      "related_claim_ids": [
+        "PT-REVISION-VERSATILITY"
+      ],
+      "pilot_ids": [
+        "EM04"
+      ],
+      "source_relation": "indirect_topic_bridge_only"
+    },
+    {
+      "construct": "felt_guidance_by_higher_power",
+      "relevance": "Devotion/ritual disposition is separate from experiencing external guidance.",
+      "direct_explicit_rule_in_these_sources": false,
+      "related_claim_ids": [
+        "PT-JUPITER-DEVOTION",
+        "LILLY-JUPITER-NINTH"
+      ],
+      "pilot_ids": [
+        "EM06"
+      ],
+      "source_relation": "indirect_topic_bridge_only"
+    },
+    {
+      "construct": "noticing_meaningful_coincidences_synchronicities",
+      "relevance": "Interpreting omens does not provide a measurable rate of noticing meaningful coincidences or an inference of supernatural causation.",
+      "direct_explicit_rule_in_these_sources": false,
+      "related_claim_ids": [
+        "PT-OMENS"
+      ],
+      "pilot_ids": [
+        "EM07"
+      ],
+      "source_relation": "indirect_topic_bridge_only"
+    },
+    {
+      "construct": "felt_personal_meaning_and_contribution",
+      "relevance": "Traditional role, religion and vocation labels do not measure personal sense of meaning or social impact.",
+      "direct_explicit_rule_in_these_sources": false,
+      "related_claim_ids": [
+        "LILLY-TENTH-WORK",
+        "PT-JUPITER-MERCURY-PHILOSOPHY"
+      ],
+      "pilot_ids": [
+        "EM08"
+      ],
+      "source_relation": "modern_extrapolation"
+    }
+  ],
+  "scope_limits": {
+    "covered": "Ptolemy Tetrabiblos III.13 and Lilly Christian Astrology house introduction printed page 55.",
+    "not_covered": "All of Lilly Book III natal judgements, full Hellenistic and Jyotish corpora, full Dariot rules, horary/natal rule interactions, predictive validity or frequencies calibrated against populations.",
+    "chart_directness": "Distinguish a topic merely assigned to a house, a conditional character claim, and a modern subjective item. No full natal chart or probability calculation is provided.",
+    "astrology_status": "Claims are historical conventions, not evidence that planetary positions accurately predict traits.",
+    "measurement_status": "Optional phenomenology items are unvalidated development questions and cannot be assigned chart-supporting polarity from these sources.",
+    "existing_survey_version": "scenario-bank-v7.0-20260922; no participant data or questionnaire implementation modified"
+  },
+  "migration_plan": {
+    "do_not_recode_current_interviews": true,
+    "short_exploratory_pilot": [
+      "EM01",
+      "EM03",
+      "EM04",
+      "EM08"
+    ],
+    "remaining_optional": [
+      "EM02",
+      "EM05",
+      "EM06",
+      "EM07"
+    ],
+    "future_sources": [
+      "Lilly Book III natal rules",
+      "Ptolemy Book IV natal event topics",
+      "Dariot",
+      "Hellenistic native texts",
+      "Jyotish / BPHS with edition authentication"
+    ],
+    "prospective_validation_gate": "Freeze each actual chart predicate, source rule, candidate instrument and independent null controls before accessing untouched person's answers. Compare to conventional psychological baselines."
+  }
+}
