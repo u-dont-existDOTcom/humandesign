@@ -1,3 +1,9 @@
+# Original Lilly servants/cattle history accepted, seventh house intro next
+
+2026-10-17 Africa/Dakar UTC+0. B06g source R7836–R7877 prepared; after GitHub SHA readback 7,877 Lilly + 1,066 Ptolemy = 8,943 original historical annotations. No human criminality, worker loyalty or animal-profit predictive validity, no promoted scoring rules. Next unnumbered seventh-house marriage source PDF621–623.
+
+---
+
 # Original Lilly CXXIX curability historical chapter accepted, servants next
 
 2026-10-17 Africa/Dakar UTC+0. B06f R7809–R7835 historically prepared. After GitHub SHA confirmation 7,835 Lilly plus 1,066 Ptolemy = 8,901 historic documentary annotations. No medical diagnosis/curability prediction verified and zero model promotions. NEXT original printed CHAP CXXX on servants and small cattle from PDF620/printed586.

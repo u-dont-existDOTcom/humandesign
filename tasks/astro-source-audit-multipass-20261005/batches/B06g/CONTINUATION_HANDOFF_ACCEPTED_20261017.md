@@ -1,0 +1,29 @@
+# HumanDesign Lilly original 1647 study — servants and small cattle accepted; seventh-house marriage next
+
+2026-10-17 20:37 Africa/Dakar (UTC+0).
+
+## Canonical checkpoint after verified GitHub publication
+
+Repository `u-dont-existDOTcom/humandesign`. Isolated source branch `research/astro-b06g-servants-cattle-source-20261017` inherited published B06f historical disease-curability checkpoint `0f21dea6c72e8707524f8c215407969342f7974c`. After B06g remote commit and SHA readback the historical source index `tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json` records **7,877 Lilly + 1,066 retained Ptolemy = 8,943 historical documentary annotations**; last Lilly **R7877**, **NEXT R7878**. Original printed edition body frontier PDF620/894, **~69.4% physical scanned-page position**, not scientific validation/completion.
+
+## Completed original source B06g
+
+Original printed **CHAP CXXX/editorial CXXXI**, *Of Servants or small Cattle*, starts lower PDF620/printed586 after distinct preceding medical curability chapter and ends at that page bottom. A trailing 'The' across page turn belongs to distinct **unnumbered seventh-house introduction** with visible heading *The seventh House, and the Judgments appertaining unto it — Of Marriage: and first of Mens Marriages* from **PDF621/printed587**. The unnumbered marriage source continues through original PDF622/printed588 and upper PDF623/printed589 before separately numbered printed **CHAP CXXXI** begins middle PDF623/printed589.
+
+B06g records **42 source-only historical annotations R7836–R7877** (40 substantive + 2 next-section navigation), eight page-anchored and reversible source groups, original 1647 image source PDF620–627 SHA256+bytes witnessed, complete original source/limitations/recovery packet, **15 focused source tests and 15 replayed extracted-ZIP integrity tests passed**. Owner archive `~/Téléchargements/Astrology-Lilly-Chapter-CXXXI-Servants-Cattle-1647-20261017.zip` SHA `9f1538ddc50eb69ddd88060ec1fe62a9ada53dddac28ef8b2c0e6e2b61ac9d53` saved in B06g/SOURCE_RELEASE_RECEIPT_20261017.json.
+
+Source claims servants and cattle prosperity from sixth house/ruler, Mercury, occupants, positive and contrary benefic/malefic testimony; *essentially dignified malignant planet in good aspect with Ascendant lord* may still denote helpful servant; sixth ruler in tenth suggests worker advancement. Mercury retrograde/combust, malefic/fixed sign conditions or Saturn peregrine/South Node/Mars in sixth with airy/fire sign are asserted to indicate theft and dishonesty. The favorable Mercury applying-to planet glyph is unresolved and quarantined. **These are period stereotypes, NOT observations of human theft, trustworthiness or actual herd returns**. No moral, criminal, employment or livestock predictive success, no rule runtime promotion.
+
+Canonical append-only archival script `prepare_canonical_b06g.py` guards prior Git blob, exact historical count, numbered chapter increment and zero validation/promotions. After publication, continuation must use the actual published B06g SHA. No need to repeat B06g archival work.
+
+## NEXT: unnumbered seventh house — marriage source
+
+**Start R7878** with the **unnumbered substantive seventh-house introduction** from original **PDF621/printed587**, through PDF622/588 and upper PDF623/589; this is NOT printed CXXXI, so do NOT increment numbered chapter counter. Heading *Of Marriage: and first of Mens Marriages* and subsequent smaller headings *Whether the Native shall marry a Wife yea or no* and *Signes of Marriage*. Opening categories include Venus and Moon for men's marriage, seventh house and lord, occupants in seventh, signs of sterility/fecundity and cadent houses, Saturn power as adverse qualifying counterbranch, Mercury/Venus/Moon configurations, receptions, explicit contradictory and sexual/gendered period stereotypes, and author's own anecdotal confidence. End at the divider before separately numbered **CHAP CXXXI**, *Whether the Native shall obtaine his Wife with ease, or much difficulty*, lower/middle original PDF623.
+
+Photographic original source witnesses PDF621–627 are in B06g/evidence. Review original PDF621, 622, 623 (especially physical start/end), extract every intervening *unnumbered* marriage subheading/paragraph, preconditions and contrary conditions. Preserve historical source case claims and signs lists without inventing operator/glyphs, and discriminate *ever marry*, *desire*, *ease obtaining*, and *timing* as different outcomes. The source's sexist/moral/sexual claims are NOT validated human psychology, real marriage or personal predictions. 2026 user has already emphasized survey/astrology study needs genuine differentiation but these human outcomes have not been independently verified.
+
+Build B06h isolated worktree from exact B06g GitHub commit; use source-first JSON, reversible page/group mapping, 1647 image SHA/bytes, uncertainty register, focused provenance checks, ZIP full CRC+SHA/extraction/test replay, guarded canonical append-only no numbered chapter increment, published GitHub branch verified SHA, owner archive in Téléchargements and next handoff. Then handle the separate printed CXXXI section on PDF623.
+
+## Program scientific status
+
+Historical/source document counts do NOT represent independent predictive validation. No successes from this original-book-only lane. Numeric astronomy/Regiomontanus complete algorithm, formal rule scoring, independent prospective/blinded human tests, survey-rules association and physical page reading remain distinct OPEN lanes. Pre-existing unrelated broader regression issues documented in B05p/REPOSITORY_VERIFICATION_20261017.json; no runtime model files changed in B06g. UDA repo guidance and project AGENTS.md must be reloaded on continuation. All work belongs in humandesign repo and owner's Téléchargements.

@@ -1,3 +1,9 @@
+# Lilly 1647 original source through servants and small cattle — 2026-10-17
+
+After authenticated GitHub publication **8,943 historical source annotations** (7,877 Lilly + 1,066 Ptolemy), original source page position PDF620/894 (**69.4% physical scan proxy only**). Printed CHAP CXXX servants/cattle source adds 42 historical notes including essential dignity exception to malefic worker and unsupported worker theft stereotypes. Next UNNUMBERED seventh-house marriage intro starts across PDF620–621 and substantive text continues until first numbered CXXXI from PDF623. Actual human relationship/labor validations zero, no scoring runtime rules; numeric astronomy and blind-testing lanes open.
+
+---
+
 # Lilly 1647 study through historic disease-curability claims — 2026-10-17
 
 After authenticated publication **8,901 historical source annotations** (7,835 Lilly + 1,066 Ptolemy), original scanned position PDF620/894 (**69.4% page-position only, NOT program completion**). Printed CHAP CXXIX curability has 27 historical claims and navigation; no real clinical validation, no runtime promotions. Following CHAP CXXX servants/small cattle starts original PDF620 and should be studied next. Source numeric reference and blind human studies remain OPEN.
