@@ -1,3 +1,9 @@
+# Original Lilly CXXIX curability historical chapter accepted, servants next
+
+2026-10-17 Africa/Dakar UTC+0. B06f R7809–R7835 historically prepared. After GitHub SHA confirmation 7,835 Lilly plus 1,066 Ptolemy = 8,901 historic documentary annotations. No medical diagnosis/curability prediction verified and zero model promotions. NEXT original printed CHAP CXXX on servants and small cattle from PDF620/printed586.
+
+---
+
 # Original 1647 printed CXXVIII historical medical source accepted
 
 2026-10-17 Africa/Dakar UTC+0. B06e source R7696–R7808 accepted locally, after remote SHA readback 7,808 Lilly + 1,066 Ptolemy = 8,874 original documentary annotations. Eight history-only medical topic groups preserved; no clinical accuracy or scoring promotions. NEXT original printed CXXIX curability on PDF619–620, followed by printed CXXX servants PDF620.

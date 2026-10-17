@@ -1,3 +1,9 @@
+# Lilly 1647 study through historic disease-curability claims — 2026-10-17
+
+After authenticated publication **8,901 historical source annotations** (7,835 Lilly + 1,066 Ptolemy), original scanned position PDF620/894 (**69.4% page-position only, NOT program completion**). Printed CHAP CXXIX curability has 27 historical claims and navigation; no real clinical validation, no runtime promotions. Following CHAP CXXX servants/small cattle starts original PDF620 and should be studied next. Source numeric reference and blind human studies remain OPEN.
+
+---
+
 # Original Lilly source through printed medical chapter CXXVIII — 2026-10-17
 
 After verified publication **8,874 historical source annotations** (7,808 Lilly + 1,066 Ptolemy). First-edition physical source frontier PDF619/894 (**69.2% scanned page position only**). Printed CXXVIII adds 113 historic subchapter annotations on sight, hearing, speech, teeth, neurological stigma, urinary stone, gout and falls. Next printed CXXIX on historical disease curability begins lower PDF619 and ends upper PDF620. No human clinical or astrological predictions independently validated and no runtime rules promoted. Numerical tables and untouched blind tests remain open.

@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_MEDICAL_CHAP_CXXVIII_DOCUMENTARY_NEXT_CURABILITY_CXXIX",
-  "records_count": 7808,
+  "status": "BOOK_III_HISTORICAL_CURABILITY_SOURCE_COMPLETE_NEXT_SERVANTS",
+  "records_count": 7835,
   "read_numbered_chapters": [
     1,
     2,
@@ -133,7 +133,8 @@
     126,
     127,
     128,
-    129
+    129,
+    130
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -892,28 +893,33 @@
       "records_count": 113,
       "sha256": "7ebb5d42f4dcf25920b2542d6562f72f0607279577653a60c41e210f9dea0053",
       "scope": "Original Lilly 1647 printed CHAP CXXVIII/editorial CXXIX, On weaknesse in Sight or casualties portended to Eyes, with unnumbered ear, speech, dental, falling-sickness/madness, stone/strangury, gout and violent fall subsections throughout original PDF615–619 upper. Separate printed CXXIX on curability begins lower PDF619 and printed CXXX servants begins PDF620. Eleven source groups, 111 substantive historic claims and 2 following numbered chapter navigation, 113 total R7696–R7808. Historic luminary-malefic aspects, cloudy fixed stars/Milky Way degrees, auditory Mercury/Saturn and benefic exceptions, tongue and dental sign sources, 4 alleged epilepsy causes and archaic mental illness stereotype conditions, urinary stone, gout and bodily falls with source actor anecdotes. All original 1647 medical and psychological assertions are historical only, with zero actual patient validity or promoted scoring rules."
+    },
+    {
+      "id": "B06f",
+      "path": "batches/B06f/RULES.json",
+      "records_count": 27,
+      "sha256": "4c86a0724e7cc798a23e2c2dbdfbae3057d47826ff50028f3d3fe2de56d8c615",
+      "scope": "Lilly original first edition 1647 printed CHAP CXXIX/editorial CXXX, Whether Disease the Native is subject unto be curable or not, source lower original PDF619/printed585 through upper PDF620/printed586, before printed CHAP CXXX on servants and small cattle also PDF620. Six passage groups, 25 substantive historical curability clauses and 2 next-numbered chapter navigation. Favorable sextile/trine to disease signifiers in moveable signs versus fixed and no benefic aspect, exact partile versus remote alleged time to recovery, Jupiter money/counsel, Mercury medicine, Venus magic/divine/chance, contrary own house/exaltation poor-remedy claim. Original medical statements only; zero clinical predictions and runtime promotions."
     }
   ],
   "next": {
-    "pdf_page": 619,
-    "printed_page": 585,
-    "chapter": "CXXX",
-    "printed_chapter_numeral": "CXXIX",
-    "heading": "Whether the Disease the Native is subject unto be curable or not",
+    "pdf_page": 620,
+    "printed_page": 586,
+    "chapter": "CXXXI",
+    "printed_chapter_numeral": "CXXX",
+    "heading": "Of Servants or small Cattle",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Printed CHAP CXXIX begins below divider in lower original PDF619/printed585 and continues into upper PDF620/printed586. It ends immediately before separate printed CHAP CXXX 'Of Servants or small Cattle', which starts at a new heading on PDF620. Original PDF620–627 retained as following context.",
-    "following_printed_chapter_numeral": "CXXX",
-    "following_original_pdf_page": 620,
-    "research_scope": "Historical cure/non-cure from benefic sextile/trine to sickness significators in moveable/fixed signs, planetary dignity and alternative claimed money/medicine/magic recovery paths. These are not clinical curability predictions or advice."
+    "position": "Printed CHAP CXXX on servants/small cattle begins after new heading in original PDF620/printed586 below curability chapter. Continues PDF621+; the next numbered heading must be located before a complete source batch is accepted.",
+    "research_scope": "Historical servant/cattle livelihood and alleged trustworthiness rules: sixth house and lord, Mercury, occupants, malefics benefic aspect, combustion/retrograde, profit/thieving stereotypes. Never infer actual persons' criminality."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B06e_MEDICAL_CHAP_CXXVIII.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B06f_CURABILITY.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1014,5 +1020,6 @@
   "chapter_CXXVII_source_acceptance_note": "B06b R7503-R7548 historical source-only records (44 substantive, 2 next chapter navigation), Regiomontanus 12-step incomplete non-executable geometry, 18 standalone source tests and original 608-611 SHA images. Zero father chart birth-time recoveries and runtime promotions.",
   "chapter_CXXVIII_source_acceptance_note": "B06c R7549–R7583, 35 original mining-source annotations, 33 substantive and 2 following-sixth navigation, PDF609–612 source SHA and 15 archive tests, zero mining return predictions or runtime rules.",
   "unnumbered_sixth_house_source_acceptance_note": "B06d R7584–R7695 original 1647, 112 historic annotations including 14 planetary and 12 zodiac source cells with 150 normalized historic list items; all seven original planetary and twelve sign rows mapped and 29 archive-replayed SHA integrity tests passed. No real clinical accuracy or scoring.",
-  "chapter_CXXIX_source_acceptance_note": "B06e R7696–R7808, 113 historical notes across eight medical subtopics and two following heading navigation. Original photos PDF615–627 SHA/bytes, 24 original-source archive replay tests. No real patient, seizure, vision, psychiatric, injury or disease outcomes validated, no runtime rule promotion."
+  "chapter_CXXIX_source_acceptance_note": "B06e R7696–R7808, 113 historical notes across eight medical subtopics and two following heading navigation. Original photos PDF615–627 SHA/bytes, 24 original-source archive replay tests. No real patient, seizure, vision, psychiatric, injury or disease outcomes validated, no runtime rule promotion.",
+  "chapter_CXXX_source_acceptance_note": "B06f R7809–R7835, 27 historical documentary notes and separate CXXX navigation, original PDF619–621 SHA images, 14 archive-replayed source checks. No real patient recovery or runtime rules validated."
 }
