@@ -1,3 +1,9 @@
+# Lilly original 1647 through spouse survival order — 2026-10-17
+
+After verified source publication **9,463 historical documentary notes** (8,397 Lilly + 1,066 Ptolemy), first-edition source frontier PDF634/894 (**70.9% physical scanned-position only**). Source batch B06n adds 54 period assertions including a second-house cadent contradiction and high-stakes death/illness, marriage count and conduct alternatives. No real human death, medical, or couple-safety predictive accuracy demonstrated or model promoted. NEXT printed CXXXVII on women's marriage PDF634 onward. Parallel independent Chinese source lanes BaZi 46 + Zi Wei 26 annotations and partial mechanics remain open; do not add them to Western counts.
+
+---
+
 # Lilly 1647 original through marriage concord — 2026-10-17
 
 After verified publication **9,409 historical source records** (8,343 Lilly + 1,066 Ptolemy), physical source frontier PDF633/894 (**70.8% first-edition page-position only**, not progress of numeric astronomy or predictive science). Source batch B06m adds 71 historical notes on marital love, mixed benign/hostile aspect rules, two independently obtained Genitures and precise wife-Sun versus husband-Moon same-degree contact, with extensive period claims about sexuality, fidelity and satisfaction UNVALIDATED. No runtime scorer changes. Next printed CXXXVI on marital death-order from PDF633, high-stakes source-only, later printed CXXXVII women's marriage from PDF634. Chinese BaZi 46 and Zi Wei 26 source-only records separately indexed and awaiting complete chart engines.
