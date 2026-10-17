@@ -1,0 +1,225 @@
+{
+  "schema": "life-patterns-coverage-ledger-v1",
+  "status": "SURVEY_DESIGN_DIAGNOSTIC_NOT_CHART_RULES",
+  "built_from": [
+    "scenario-bank-v7.0-20260922 (79 scene/route questions)",
+    "tendency-first-v1-20261006 (25 direct tendency questions)",
+    "tendency-first-v3-scaffold-development-20261010 (25 unactivated candidates)",
+    "chart-domain-v7-reconciliation-v0 (26 tentative historical topics)"
+  ],
+  "measurement_rule": "Directly sampled lived frequency or quality is not inferred from an adjacent behavioral hypothetical; tentative survey-status classifications only.",
+  "domains": [
+    {
+      "id": "surprise_self",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": "EM01",
+      "next": "this_pilot"
+    },
+    {
+      "id": "surprise_others_world",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": "EM02",
+      "next": "this_pilot"
+    },
+    {
+      "id": "awe_wonder",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": "EM03",
+      "next": "this_pilot"
+    },
+    {
+      "id": "abrupt_insight",
+      "v7_status": "proxy_only",
+      "tf1_status": "proxy_only",
+      "pilot_item": "EM04",
+      "next": "this_pilot"
+    },
+    {
+      "id": "felt_life_predictability",
+      "v7_status": "proxy_only",
+      "tf1_status": "partial",
+      "pilot_item": "EM05",
+      "next": "this_pilot"
+    },
+    {
+      "id": "felt_guidance",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": "EM06",
+      "next": "this_pilot"
+    },
+    {
+      "id": "meaningful_coincidence",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": "EM07",
+      "next": "this_pilot"
+    },
+    {
+      "id": "personal_meaning",
+      "v7_status": "proxy_only",
+      "tf1_status": "proxy_only",
+      "pilot_item": "EM08",
+      "next": "this_pilot"
+    },
+    {
+      "id": "perceived_contribution",
+      "v7_status": "proxy_only",
+      "tf1_status": "proxy_only",
+      "pilot_item": "EM08",
+      "next": "this_pilot"
+    },
+    {
+      "id": "dream_recall_and_visions",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": null,
+      "next": "next_noncompulsory_inventory"
+    },
+    {
+      "id": "aesthetic_sensitivity_creative_expression",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": null,
+      "next": "next_noncompulsory_inventory"
+    },
+    {
+      "id": "play_humor_spontaneity",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": null,
+      "next": "next_noncompulsory_inventory"
+    },
+    {
+      "id": "family_home_roots_belonging",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": null,
+      "next": "next_noncompulsory_inventory"
+    },
+    {
+      "id": "caregiving_parenting_values",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": null,
+      "next": "optional_life_context_only"
+    },
+    {
+      "id": "spiritual_worldview_practices",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "pilot_item": null,
+      "next": "optional_worldview_inventory"
+    },
+    {
+      "id": "identity_continuity_self_change",
+      "v7_status": "proxy_only",
+      "tf1_status": "partial",
+      "pilot_item": null,
+      "next": "next_noncompulsory_inventory"
+    },
+    {
+      "id": "life_turning_points_external_events",
+      "v7_status": "proxy_only",
+      "tf1_status": "partial",
+      "pilot_item": null,
+      "next": "optional_separate_timeline"
+    },
+    {
+      "id": "cross_cultural_exploration",
+      "v7_status": "proxy_only",
+      "tf1_status": "absent",
+      "pilot_item": null,
+      "next": "next_noncompulsory_inventory"
+    },
+    {
+      "id": "agency_and_control_experience",
+      "v7_status": "partial",
+      "tf1_status": "partial",
+      "pilot_item": null,
+      "next": "future_candidate"
+    },
+    {
+      "id": "ordinary_sensory_sensitivity",
+      "v7_status": "partial",
+      "tf1_status": "absent",
+      "pilot_item": null,
+      "next": "future_candidate"
+    },
+    {
+      "id": "sense_of_belonging_community",
+      "v7_status": "partial",
+      "tf1_status": "partial",
+      "pilot_item": null,
+      "next": "future_candidate"
+    },
+    {
+      "id": "moral_values_lived",
+      "v7_status": "partial",
+      "tf1_status": "partial",
+      "pilot_item": null,
+      "next": "future_candidate"
+    },
+    {
+      "id": "attachment_romantic_relations",
+      "v7_status": "direct",
+      "tf1_status": "partial",
+      "pilot_item": null,
+      "next": "already_addressed_do_not_duplicate"
+    },
+    {
+      "id": "friendship_group_behavior",
+      "v7_status": "direct",
+      "tf1_status": "direct",
+      "pilot_item": null,
+      "next": "already_addressed_do_not_duplicate"
+    },
+    {
+      "id": "work_energy_and_motivation",
+      "v7_status": "partial",
+      "tf1_status": "direct",
+      "pilot_item": null,
+      "next": "already_addressed_do_not_duplicate"
+    },
+    {
+      "id": "problem_solving_explanation_style",
+      "v7_status": "direct",
+      "tf1_status": "direct",
+      "pilot_item": null,
+      "next": "already_addressed_do_not_duplicate"
+    },
+    {
+      "id": "social_recognition",
+      "v7_status": "partial",
+      "tf1_status": "direct",
+      "pilot_item": null,
+      "next": "already_addressed_do_not_duplicate"
+    },
+    {
+      "id": "resource_priorities",
+      "v7_status": "partial",
+      "tf1_status": "direct",
+      "pilot_item": null,
+      "next": "already_addressed_do_not_duplicate"
+    },
+    {
+      "id": "psychological_illness_trauma_or_mortality",
+      "v7_status": "not_routine",
+      "tf1_status": "not_routine",
+      "pilot_item": null,
+      "next": "never_compulsory_or_chart_diagnosis"
+    }
+  ],
+  "priority_rule": "Pilot only the first nine first-person gaps now. The next survey revision should consider dream experiences, creativity/aesthetics, family/home identity and play/humor before enlarging compulsory intake; do not equate chart-topic coverage with survey necessity.",
+  "non_forced_categories": [
+    "health",
+    "trauma",
+    "parenthood",
+    "religion",
+    "intimate life"
+  ],
+  "interpretation": "These are human-experience omissions, not evidence of astrological specificity or a 29-domain exhaustive census."
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "life-patterns-experience-pilot-v1-verification-receipt",
+  "recorded_date": "2026-10-17",
+  "task": "Survey-first optional experience pilot",
+  "baseline_branch": "research/life-patterns-guided-eight-assessment-20261015",
+  "baseline_commit": "544365acc5126a32f9ffe329bbeb89f07f58d13d",
+  "scope": "Only new unscored offline experimental instrument, source coverage ledger, reproducible builder/router, and tests.",
+  "status": "CANDIDATE_VERIFIED_NOT_PRODUCTION",
+  "gates": {
+    "focused_tests": {
+      "result": "PASS",
+      "passed": 10,
+      "command": "python -m pytest tests/unit/test_life_patterns_experience_pilot_v1.py apps/life-patterns-participant/tests/test_experience_meaning_pilot.py -q"
+    },
+    "full_related_tests": {
+      "result": "PASS",
+      "passed": 1289,
+      "skipped": 6,
+      "command": "PYTHONPATH=\"$PWD/src:$PWD/apps/life-patterns-participant\" python -m pytest tests/unit apps/life-patterns-participant/tests -q",
+      "skip_reason": "Swiss Ephemeris fixture files unavailable for six unrelated astronomy tests",
+      "test_environment_correction": "The shared virtual environment's editable hdmatch import initially resolved to a different worktree, producing 106 test-collection import errors; running with the candidate's explicit source PYTHONPATH resolved this. These errors were not attributed to the candidate code."
+    },
+    "ruff": {
+      "result": "PASS",
+      "command": "ruff check tasks/life-patterns-experience-pilot-20261017/ tests/unit/test_life_patterns_experience_pilot_v1.py"
+    },
+    "static_html_js": {
+      "result": "PASS",
+      "node_parse": true,
+      "no_network_literals": true,
+      "reproducible_generation": true
+    },
+    "interactive_browser": {
+      "result": "PASS",
+      "core_questions": 4,
+      "optional_topics_tested": 2,
+      "tests": [
+        "consent initially required",
+        "never and unknown distinct",
+        "optional intensity",
+        "dual axes for meaning",
+        "optional topic selection",
+        "answer editing",
+        "explicit JSON export and import",
+        "375-pixel mobile no horizontal overflow"
+      ],
+      "mobile_content_width_px": 375,
+      "mobile_viewport_px": 375,
+      "external_requests": 0,
+      "javascript_errors": 0,
+      "browser_test": "tasks/life-patterns-experience-pilot-20261017/verify_offline_browser.cjs"
+    }
+  },
+  "not_done": [
+    "No human validation of reliability, item discrimination or meaning",
+    "No automatic chart mapping, rule prediction or scorer promotion",
+    "No production Railway/GPT/participant data touched"
+  ],
+  "next_qualification": "Use pilot on separately consenting test respondents; blinded comparisons before any prospective chart hypothesis."
+}
