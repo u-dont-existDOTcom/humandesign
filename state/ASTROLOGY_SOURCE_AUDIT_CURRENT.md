@@ -1,3 +1,9 @@
+# Original Lilly source study — dated case rejecting bewitchment
+
+2026-10-17: Printed XCIV / editorial XCV first-edition case locally accepted, R5458–R5510 (53 source units). Upon authenticated research publication cumulative Lilly **5,510** + retained Ptolemy **1,066** = **6,576 historical annotations**. The author refuses a witchcraft diagnosis; his conjectured venereal cause and ~three-week recovery remain unverified historical claims with no independent clinical efficacy. Next printed XCV/editorial XCVI prison escape begins original PDF504. No new empirical forecasts validated; runtime unchanged. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04o_CHAPTER_XCV_COMPLETE.md.
+
+---
+
 # Original Lilly source research — printed XCIII / editorial XCIV horse case
 
 2026-10-17: 44 historical documentary records R5414-R5457 accepted locally, cumulative Lilly 5,457 + Ptolemy 1,066 = **6,523** after verified publication. Crucial negative: prediction within a day or two versus Lilly's reported return three days later, with 13th/14th January alternative actual dates. No independent horse outcome or empirical astrology validation. Next editorial XCV printed XCIV *If Bewitched* begins original PDF502/printed468. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04n_CHAPTER_XCIV_COMPLETE.md.
