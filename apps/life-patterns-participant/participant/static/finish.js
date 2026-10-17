@@ -158,13 +158,15 @@
     const closed = Boolean(data.clarification_intake_closed);
     find("review-stage-message").textContent = closed ?
       (["error", "resource_limited", "paused"].includes(data.status) ?
-        "No more questions will be asked. Independent review is blocked or paused." :
-        "No more questions will be asked. Railway is processing final evidence.") :
+        "No further clarification questions. Independent review is blocked or paused." :
+        "No further clarification questions. Railway is processing final evidence.") :
       "Current stage: " + stage;
     find("review-count").textContent =
       (data.original_turn_count || 0) + " earlier responses preserved. " +
       (data.clarification_count || 0) + " reviewer clarifications answered or skipped. " +
-      "Overall questions that might be needed are unknown.";
+      (closed
+        ? "Zero more clarification questions. Three separate final research questions remain after review."
+        : "Future clarification question count is unknown; you may decline them.");
     find("review-wait").textContent = ["error", "resource_limited", "paused"].includes(data.status) ?
       "Review is paused or blocked, not silently progressing. You can return to the original GPT to resolve it." :
       "This page automatically checks the saved review while open. You can leave and return in this browser; no repeated GPT status messages are necessary. Processing time is not guaranteed.";
