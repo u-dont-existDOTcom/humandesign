@@ -1,3 +1,9 @@
+# First-edition sibling fortune historical-source study accepted
+
+2026-10-17 Africa/Dakar UTC+0. Source-only records R7187–R7208 historically admitted, after verified GitHub publication 7,208 Lilly + 1,066 retained Ptolemy = 8,274. Printed CHAP CXIX sibling conditions, strong/weak, mixed and gender-coded comparisons retained without human evidence or model promotion. NEXT original printed CXX on sibling harmony PDF601.
+
+---
+
 # Source study: Lilly numbered siblings historical annotations accepted
 
 2026-10-17 Africa/Dakar UTC+0. B05s R7139-R7186 source documentation accepted; after GitHub readback 7,186 Lilly + 1,066 Ptolemy = 8,252 original source annotations. 12 sign classifications, planet/sign mixtures and partile priority preserved. Human birth-count validation zero, no runtime rules. NEXT original printed CXIX sibling condition on PDF600.

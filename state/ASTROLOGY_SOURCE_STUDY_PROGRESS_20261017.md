@@ -1,3 +1,9 @@
+# Original Lilly historical study through sibling fortunes — 2026-10-17
+
+After verified publication the archive contains 8,274 historical notes (7,208 Lilly + 1,066 Ptolemy). Physical first-edition source-body frontier PDF600/894 (67.1% of scanned page position, not full predictive-research completion). Printed CHAP CXIX sibling fortune/condition recorded with 22 annotations, source pass/fail and mixed outcome cases and two contrary gender-attributed comparisons. No actual sibling wealth, longevity or welfare evidence verified, no new runtime rules. Next printed CHAP CXX sibling concord starts PDF601.
+
+---
+
 # Lilly source through numbered sibling-count chapter — 2026-10-17
 
 8,252 historical source units after remote publication (7,186 Lilly + 1,066 Ptolemy), original 1647 source frontier PDF600 of 894 (**~67.1% scanned position only, not completion of astrology validation**). Printed CHAP CXVIII sibling presence/number recorded as 48 historically asserted source notes including 12 zodiac categories and numerous contrary/optional conditions. Next printed CHAP CXIX sibling fortune begins on same PDF600. No real birth/fertility prediction validation or new runtime rules.
