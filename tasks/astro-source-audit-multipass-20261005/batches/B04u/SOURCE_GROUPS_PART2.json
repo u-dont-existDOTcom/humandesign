@@ -1,0 +1,347 @@
+[
+  {
+    "pages": [
+      517
+    ],
+    "label": "Worked source example sunrise lookup and Sun zodiac degrees",
+    "claims": [
+      [
+        "subheading",
+        "An Example",
+        "The chapter moves to a numerical demonstration of selecting solar rising times.",
+        "Illustration, not observed human prediction."
+      ],
+      [
+        "method",
+        "if Sun third fourth fifth of Aries first Column",
+        "He instructs locating the Sun's zodiac sign and approximate degree using the first margin.",
+        "Printed row spacing is three degrees."
+      ],
+      [
+        "source_example",
+        "Aries third degree riseth 5 54",
+        "He gives about 5:54 AM as a sunrise lookup near 3° Aries.",
+        "Actual numerical entry is table-bound and has not had full independent parity verification."
+      ],
+      [
+        "method",
+        "Place of Sun Signes Degrees H M",
+        "Sun's sign and degree are aligned with the table's printed Hours and Minutes.",
+        "Do not treat zodiacal degrees as Gregorian day-of-month."
+      ],
+      [
+        "source_example",
+        "Monday 15 March 1646 7",
+        "The example is a Monday on 15 March 1646/7 (dual-year notation).",
+        "Old Style calendar numbering requires separate historical time normalization."
+      ],
+      [
+        "source_example",
+        "halfe hour after nine in the morning",
+        "He asks which planet rules at 9:30 AM on the example Monday.",
+        "Worked example query, not an actual observed event."
+      ],
+      [
+        "source_example",
+        "Sun at noone 4 degrees 47 minutes Aries",
+        "He gives the Sun's noon zodiac longitude as approximately 4°47 Aries.",
+        "Historical ephemeris datum; no modern independent recast."
+      ],
+      [
+        "method",
+        "use five whole degrees under Aries",
+        "He rounds/chooses a neighboring three-degree table row using the Sun's fractional position.",
+        "He notes 3 or 6 degrees would have made little difference."
+      ],
+      [
+        "source_qualification",
+        "table Signes continual addition of three",
+        "He reminds the reader that entries advance by three zodiacal degrees.",
+        "Discrete lookup and minor interpolation choices, not continuous date."
+      ],
+      [
+        "source_example",
+        "I finde 6 ... 5 47 sunrise",
+        "He chooses the 6° Aries lookup row and reads sunrise at approximately 5:47 AM.",
+        "This is a printed illustrative lookup, not independent astronomical parity."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      517,
+      518
+    ],
+    "label": "Monday 9:30 AM example crossing page boundary and complete day-hour sequence",
+    "claims": [
+      [
+        "source_continuation",
+        "it had bred little difference",
+        "The statement that using a neighboring 3° or 6° Aries row would change little carries into original PDF518.",
+        "One continuous example, not duplicate calculations.",
+        [
+          517,
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "Sun rising 5 47",
+        "The Monday example uses 5:47 AM as the start of the first planetary hour.",
+        "The start is derived from the selected table row.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "then 6 47",
+        "The first daylight planetary hour ends at 6:47 AM.",
+        "The interval 5:47-6:47 is sixty minutes for this rounding.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "then 7 51",
+        "The second daylight planetary hour ends at 7:51 AM.",
+        "Difference from 6:47 is 64 minutes.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "then 8 54",
+        "The third daylight planetary hour ends at 8:54 AM.",
+        "A rounded table boundary, not a fixed-hour schedule.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "then 9 56",
+        "The fourth daylight planetary hour ends at 9:56 AM.",
+        "9:30 AM falls between 8:54 and 9:56.",
+        [
+          518
+        ]
+      ],
+      [
+        "figure_assignment",
+        "Moon planet of Monday begins at 5 47",
+        "Monday's first planetary hour is assigned to the Moon, from 5:47 to 6:47 AM.",
+        "Demonstrates weekday-to-hour mapping.",
+        [
+          518
+        ]
+      ],
+      [
+        "figure_assignment",
+        "Saturn second till 7 51",
+        "Saturn rules the second planetary hour until 7:51 AM.",
+        "Follows the Chaldean cyclic order.",
+        [
+          518
+        ]
+      ],
+      [
+        "figure_assignment",
+        "Jupiter third till 8 54",
+        "Jupiter rules the third hour until 8:54 AM.",
+        "Follows Saturn in the specified hourly order.",
+        [
+          518
+        ]
+      ],
+      [
+        "figure_assignment",
+        "Mars fourth till 9 56",
+        "Mars rules the fourth hour, from 8:54 to 9:56 AM.",
+        "Follows Jupiter in the cyclic ordering.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "hour sought 9 30 Mars",
+        "He concludes the example 9:30 AM belongs to Mars's planetary hour.",
+        "The printed result can be tested by deterministic boundary arithmetic.",
+        [
+          518
+        ]
+      ]
+    ]
+  },
+  {
+    "pages": [
+      518
+    ],
+    "label": "Two-sided solar-sign table lookup and length of unequal hours",
+    "claims": [
+      [
+        "method",
+        "opposite column Virgo Leo Cancer",
+        "When the Sun lies in a sign not displayed in the first table margin, Lilly reads the complementary right-hand sign column.",
+        "Do not drop mirrored source sign pairing."
+      ],
+      [
+        "source_example",
+        "Sun fifteen Taurus same as fifteen Leo",
+        "The author treats 15° Taurus sunrise as equivalent to sunrise at 15° Leo in the printed table.",
+        "Source lookup symmetry, not an independent astronomical check."
+      ],
+      [
+        "source_example",
+        "Sun fifteen Virgo same as fifteen Aries",
+        "He similarly compares 15° Virgo and 15° Aries as yielding the same rising time.",
+        "Another example of using the mirrored margin."
+      ],
+      [
+        "method",
+        "length Planetary hour subtract consecutive table boundaries",
+        "He calculates a planetary hour's length by subtracting successive clock boundaries.",
+        "Simple arithmetic independent of astrology's claimed effects."
+      ],
+      [
+        "source_example",
+        "next 7 51 minus 6 47 equals 1 04",
+        "The example interval from 6:47 AM to 7:51 AM yields a 64-minute planetary hour.",
+        "One-hour-four-minute example to test table integrity."
+      ],
+      [
+        "condition",
+        "day hour more sixty night wants of sixty",
+        "He says longer-than-60-minute daylight planetary hours correspond to shorter-than-60-minute night hours, and conversely.",
+        "Ideal complementary day/night relation, latitude/rounding context not determined."
+      ],
+      [
+        "method",
+        "general rule from unequal day/night hours",
+        "Lilly presents the day-versus-night complement as a general lookup principle.",
+        "Not a predictor of human health or events."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      518,
+      519
+    ],
+    "label": "Monday 5:20 PM table demonstration and solar planetary hour",
+    "claims": [
+      [
+        "source_example",
+        "same 15 March afternoon 5 20",
+        "The second worked question asks the planetary ruler at 5:20 PM on the same example Monday.",
+        "Distinct calculation at a later clock time on same day.",
+        [
+          518
+        ]
+      ],
+      [
+        "method",
+        "first Column second Page",
+        "He switches to the second internal table leaf for daylight afternoon hours.",
+        "Corresponds to original PDF509.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "Sun 4 47 Aries nearer 6",
+        "He again selects the approximate 6° Aries row for a Sun at 4°47 Aries.",
+        "Shares the first example's lookup source.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "first afternoon hour 1 02",
+        "On the selected row he reads the first post-noon boundary as 1:02 PM.",
+        "Boundary of daylight planetary hour seven.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "then 2 04",
+        "The next post-noon boundary is 2:04 PM.",
+        "Corresponds to daytime planetary hour eight.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "then 3 06",
+        "The subsequent boundary is 3:06 PM.",
+        "Corresponds to daytime planetary hour nine.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "then 4 09",
+        "The next boundary is 4:09 PM.",
+        "Corresponds to daytime planetary hour ten.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "then 5 11",
+        "The next boundary is 5:11 PM.",
+        "Marks start of the twelfth daylight planetary hour.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_example",
+        "then 6 13",
+        "The final daylight boundary is 6:13 PM, the example sunset.",
+        "The source's printed rounded time, not location-confirmed civil sunset.",
+        [
+          518
+        ]
+      ],
+      [
+        "source_continuation",
+        "hour enquired 20 minutes past",
+        "The comparison of 5:20 PM against this last interval continues into PDF519.",
+        "Physical original page seam, no separate second example.",
+        [
+          518,
+          519
+        ]
+      ],
+      [
+        "method",
+        "12th hour of day",
+        "He concludes 5:20 PM lies in the twelfth daylight planetary hour.",
+        "From 5:11 PM to 6:13 PM.",
+        [
+          519
+        ]
+      ],
+      [
+        "source_example",
+        "Sun rules twelve Monday",
+        "Counting Monday's planetary-hour sequence puts Sun as ruler of the twelfth hour.",
+        "This result follows the seven-planet cycle.",
+        [
+          519
+        ]
+      ]
+    ]
+  }
+]

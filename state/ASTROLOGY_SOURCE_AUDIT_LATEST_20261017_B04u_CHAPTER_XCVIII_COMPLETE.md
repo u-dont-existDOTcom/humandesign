@@ -1,0 +1,25 @@
+# First-edition Lilly Book II printed Chapter XCVII and signed conclusion — source accepted
+
+# Lilly printed Chapter XCVII (editorial XCVIII) — planetary hour mechanics and Book II signed conclusion
+
+Primary witness: William Lilly, *Christian Astrology*, first edition 1647, Wellcome b30338724, whole original PDF SHA-256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. This last numbered Book II chapter begins original PDF516/printed482 and runs through original PDF519/printed485; its unnumbered signed conclusion continues PDF520/printed486. A different **Book III title page** begins original PDF521. Six original JPEG witnesses preserved with per-page SHA and bytes.
+
+**Rule mechanics:** Lilly names Sun/Moon/Mars/Mercury/Jupiter/Venus/Saturn as Sunday-to-Saturday rulers, and an hourly Chaldean sequence Sun → Venus → Mercury → Moon → Saturn → Jupiter → Mars that repeats from sunrise to the next sunrise. He rejects constant sixty-minute hours except at the idealized Aries/Libra ingress and divides the daylight interval (sunrise to sunset) and ensuing night (sunset to next sunrise) separately into twelve equal fractions. Thus planetary hours are seasonally variable and day/night fractions need not have the same minute duration.
+
+**Table routing:** For Sun in Aries–Virgo, daytime internal printed pages one/two, nighttime five/six; for Sun in Libra–Pisces, daytime three/four and nighttime seven/eight. The left and complementary right Sun-sign columns are essential. These refer to original numerical table PDF508–515, for which complete machine transcription and numeric parity remain **OPEN**, even though original first-edition page images are accepted in previous B04t.
+
+**Three worked examples, source arithmetic only:** The author's Monday **15 March 1646/7**, Sun at **Aries 4°47′** uses the nearby 6° row, printed sunrise 5:47 AM and sunset 6:13 PM. At 9:30 AM the interval 8:54–9:56 is fourth planetary hour ruled by Mars. At 5:20 PM the interval 5:11–6:13 is twelfth planetary hour ruled by Sun. At 11:10 PM, after table leaf five, interval 11:02–midnight is sixth nighttime/eighteenth-from-sunrise planetary hour ruled by Mars. The weekday/planet/clock calculations have their own replayable vectors and tests, without independently recalculating the date's historical Sun position, actual sunrise/sunset or local time.
+
+**Historical medical/talismanic claims:** Lilly says choosing exact planetary hours matters for medicine, herbs, sigils, images and lamens. These are 1647 practitioner beliefs and do **not** establish clinical effectiveness, herbal potency or occult effects.
+
+**Book II ending:** Lilly declares the second part completed and introduces his planned nativity treatise, asks divine assistance, addresses critics and signs **William Lilly, June 11, 1647**. Original PDF521 title begins the new nativity book and announces birth-time rectification, directions, profections and other natal methods; its five navigational records remain separate from the concluded chapter.
+
+**Source-first scope:** 114 historic documentary source units in 13 original source passage groups (109 substantive historic planetary-hour method/conclusion, 5 next-book navigation), 30 explicit interpretation/evidence limits. No independent complete diplomatic transcription, modern astronomical parity, direct observational outcomes, medical treatment recommendations, human predictive validation or runtime promotion is claimed. Book II numeric cell transcription remains outstanding.
+
+**Documentary records:** R5640–R5753, 114 historical annotations (109 method and author conclusion; five separate next-book title navigation), 13 first-edition source groups, 30 retained limitations. Six original page image hashes for PDF516–521 with unnumbered Book III title page. Printed date **June 11, 1647** in the conclusion.
+
+**Mechanical checks:** The three example planetary-hour intervals are arithmetically internally consistent, not independently proven astrological influences. Source month/year dual notation, actual historical sunrise/sunset and natal calculation are unverified. ZIP CRC, full extraction, per-member SHA-256 and 20 replayed tests pass.
+
+**After authenticated publication:** **5,753 Lilly + 1,066 retained Ptolemy = 6,819 historical documentary records**. Printed prose through the final numbered Book II chapter is represented, but numeric-cell transcription for the previous 8-page table remains **OPEN**, so full computational source parity is not claimed. No human empirical forecast validations and no runtime astrology model updates.
+
+Next: original PDF521 separate Book III title; PDF522 onward requires primary-source natal rule extraction and source-window finding.

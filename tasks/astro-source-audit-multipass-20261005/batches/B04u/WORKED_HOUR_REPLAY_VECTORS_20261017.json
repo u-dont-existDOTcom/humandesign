@@ -1,0 +1,101 @@
+{
+  "batch": "B04u",
+  "kind": "FIRST_EDITION_LILLY_INTERNAL_CLOCK_ARITHMETIC_NOT_EMPIRICAL",
+  "historic_day": "Monday 15 March 1646/7 (as printed dual-year)",
+  "printed_sun_longitude": "Aries 4°47′",
+  "chosen_lookup_row": "Aries 6°",
+  "weekday_planet": "Moon",
+  "hourly_planet_cycle": [
+    "Sun",
+    "Venus",
+    "Mercury",
+    "Moon",
+    "Saturn",
+    "Jupiter",
+    "Mars"
+  ],
+  "original_book_pdf_pages": [
+    517,
+    518,
+    519
+  ],
+  "examples": [
+    {
+      "id": "LILLY-B04u-EX-MORNING",
+      "target_local_hhmm": "09:30",
+      "starting_solar_boundary": "05:47",
+      "column_end_hhmm": [
+        "06:47",
+        "07:51",
+        "08:54",
+        "09:56"
+      ],
+      "hour_ordinals": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "expected_planetary_hour_ordinal": 4,
+      "expected_ruler": "Mars",
+      "source_pages": [
+        517,
+        518
+      ]
+    },
+    {
+      "id": "LILLY-B04u-EX-AFTERNOON",
+      "target_local_hhmm": "17:20",
+      "starting_solar_boundary": "12:00",
+      "column_end_hhmm": [
+        "13:02",
+        "14:04",
+        "15:06",
+        "16:09",
+        "17:11",
+        "18:13"
+      ],
+      "hour_ordinals": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "expected_planetary_hour_ordinal": 12,
+      "expected_ruler": "Sun",
+      "source_pages": [
+        518,
+        519
+      ]
+    },
+    {
+      "id": "LILLY-B04u-EX-NIGHT",
+      "target_local_hhmm": "23:10",
+      "starting_solar_boundary": "18:13",
+      "column_end_hhmm": [
+        "19:11",
+        "20:09",
+        "21:07",
+        "22:04",
+        "23:02",
+        "24:00"
+      ],
+      "hour_ordinals": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "expected_planetary_hour_ordinal": 18,
+      "expected_ruler": "Mars",
+      "source_pages": [
+        519
+      ]
+    }
+  ],
+  "validation_scope": "Checks which interval and seven-planet succession would apply IF the printed source lookup clock boundaries are accepted; does not verify historical sunrise, ephemeris, geography or any clinical outcome."
+}

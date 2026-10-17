@@ -1,3 +1,9 @@
+# Lilly Book II method and conclusion accepted, numeric table parity open; Book III begins
+
+2026-10-17: 114 first-edition historical source records R5640–R5753 locally admitted (printed XCVII/editorial XCVIII, method PDF516–519, author signed 11 June 1647 PDF520, Book III title navigation PDF521). Once published: **5,753 Lilly + 1,066 Ptolemy = 6,819** historical records. Three printed planetary-hour examples arithmetically pass; no human validations. Prior planetary-hour table PDF508–515 images preserved, ~1,488 numeric cells not fully transcribed. Next original Book III starts PDF521; source research OPEN.
+
+---
+
 # Lilly Book II planetary-hour original scans preserved, numeric cells open
 
 2026-10-17: original table PDF508–515, 8 original leaves, 10 image/documentary records R5630-R5639 accepted locally (not numeric transcription); following printed Chapter XCVII begins PDF516, ends PDF520, Book III starts PDF521. After branch publication Lilly **5,639** + Ptolemy **1,066** = **6,705** historical records. Numeric table cells undigitized/unverified; no runtime or empirical results.
