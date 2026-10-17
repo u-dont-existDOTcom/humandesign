@@ -1,0 +1,89 @@
+{
+  "batch": "B05j",
+  "status": "PRIMARY_SOURCE_WINDOW_VERIFIED_PENDING_ANNOTATION_EXTRACTION",
+  "baseline_git_commit": "f1cbdfb4acb798cd040093f565f22e908e67110f",
+  "baseline_accepted_lilly": 6671,
+  "baseline_retained_ptolemy": 1066,
+  "baseline_historical_total": 7737,
+  "next_record_id": "R6672",
+  "primary_source": "William Lilly Christian Astrology first edition 1647, Wellcome b30338724",
+  "full_original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "next_chapter": {
+    "printed_numeral": "CXI",
+    "editorial_numeral": "CXII",
+    "heading": "Nature of the Signes; Colour of the Face and Haire",
+    "original_pdf_start": 581,
+    "original_pdf_end": 583,
+    "original_printed_page_start_as_seen": "539",
+    "following_printed_chapter": "CXII",
+    "following_heading": "Of the grossenesse or leannesse of Bodies",
+    "following_heading_pdf_page": 583,
+    "following_heading_position": "Below horizontal divider near foot of original PDF583",
+    "following_following_heading": "CHAP CXIII. Of the generall Fortune or Misery of the Native",
+    "following_following_heading_pdf_page": 585
+  },
+  "printed_folios_original_scans": {
+    "581": "539",
+    "582": "548",
+    "583": "549",
+    "584": "542",
+    "585": "543",
+    "586": "552"
+  },
+  "source_pagination_note": "Printed folio 539 PDF581 follows 538 PDF580 after printed545, PDF582-583 show 548/549, PDF584-585 show 542/543 after 549, PDF586 shows 552. Source text/chapters continue in image order. Never reorder by inconsistent original folios.",
+  "body_source_topics": [
+    "Cross-reference to Book I first edition pp.93-99 for sign qualities.",
+    "Five categorical groups assigning stature to zodiac signs, not measured height.",
+    "Six or more distinct purported indicators for complexion/face/hair involving signs, planetary conditions, fixed stars and humours.",
+    "Seasonal descriptions of bodily form, hair, eye shape and temperament.",
+    "Explicit historical climate/country proviso: author says a Spaniard/Dane illustration can contradict isolated chart-based colouring.",
+    "Conditional stature fallbacks when no planet partile-aspects Lord Ascendant, and when Lord is retrograde or in fall.",
+    "Historically disparaging 'deformity', appearance and colour judgments are author claims, not human biometric, ancestry, health or racial evidence."
+  ],
+  "admission": {
+    "historical_records_added": 0,
+    "empirical_human_stature_validations": 0,
+    "empirical_hair_or_face_validations": 0,
+    "race_or_ancestry_predictions_authorized": false,
+    "clinical_disability_predictions_authorized": false,
+    "runtime_promotions": 0
+  },
+  "original_scans": {
+    "581": {
+      "file": "evidence/pdf_1647-581.jpg",
+      "sha256": "b57cb401efc58226031ad89c988f53ac52fe9bed06459b999c17f6771d3e0dec",
+      "bytes": 592993,
+      "folio_as_seen": "539"
+    },
+    "582": {
+      "file": "evidence/pdf_1647-582.jpg",
+      "sha256": "e9a80d0b46b42a250c06b428d7ba303794388feee7b44631a725a9d0e635873f",
+      "bytes": 633637,
+      "folio_as_seen": "548"
+    },
+    "583": {
+      "file": "evidence/pdf_1647-583.jpg",
+      "sha256": "4f38b7d59d4ae8338429e3bcb68dbec77edb08e122f4b17b554cea36b72497e9",
+      "bytes": 616421,
+      "folio_as_seen": "549"
+    },
+    "584": {
+      "file": "evidence/pdf_1647-584.jpg",
+      "sha256": "09d51818f47a35cd805ec798d15f7fa8abff31e7af35ce667b26ed78b715bb9f",
+      "bytes": 610828,
+      "folio_as_seen": "542"
+    },
+    "585": {
+      "file": "evidence/pdf_1647-585.jpg",
+      "sha256": "c482d5325843ed7541bd30c4a1eb9416a79d70135a8035d8939a221e2d0d49cc",
+      "bytes": 661973,
+      "folio_as_seen": "543"
+    },
+    "586": {
+      "file": "evidence/pdf_1647-586.jpg",
+      "sha256": "962767e6eb73a1a1bc846d7f58d22286190907e1db51712663e15fe81df263f2",
+      "bytes": 629041,
+      "folio_as_seen": "552"
+    }
+  }
+}
