@@ -1,0 +1,61 @@
+{
+  "task": "life-patterns-early-review-and-experience-20261017",
+  "result": "LIVE_EARLY_REVIEW_PORTAL_PRIVATE_GPT_EDITOR_UPDATE_PENDING",
+  "merged_source_commits": [
+    "50a3e2dda6404c62f0e00df02cfa31d29490e288",
+    "5ee960589363f98e80ca6e0f487c7712fba7a1cd"
+  ],
+  "railway": {
+    "service": "life-patterns-participant",
+    "deployment": "9ded2df4-311f-48e9-8ab5-c72db85ecd38",
+    "status": "SUCCESS",
+    "exact_source_commit": "5433b924fa3750e67637b0c3165da39a80bf6fed",
+    "dockerfile": "apps/life-patterns-participant/Dockerfile",
+    "original_volume": "928957b0-0128-4900-86f2-205d3b7f69d7",
+    "mount": "/data",
+    "unrelated_pending_changes": 4,
+    "unrelated_changes_applied": false
+  },
+  "live_probes": {
+    "health": 200,
+    "action_version": "1.8.0",
+    "operations": 7,
+    "finish_http": 200,
+    "csp": true,
+    "review_queue": true,
+    "encrypted_submission": true,
+    "public_survey": false,
+    "private_session_required": true,
+    "anonymous_link_issuance": 401,
+    "anonymous_batch": 401,
+    "anonymous_single": 401,
+    "anonymous_close": 401,
+    "closed_question_count": 0,
+    "secondary_questions_remaining_after_ready": 3
+  },
+  "tests": {
+    "participant_passed": 256,
+    "root_passed": 1089,
+    "root_ephemeris_skipped": 6,
+    "synthetic_browser_modes": [
+      "batch",
+      "close",
+      "legacy"
+    ],
+    "docker_build": "PASS",
+    "ruff": "PASS"
+  },
+  "research": {
+    "candidate_chart_domains": 26,
+    "absent": 9,
+    "proxy": 7,
+    "partial": 7,
+    "direct": 2,
+    "unsuitable": 1,
+    "optional_pilot_questions": 8,
+    "initial_optional": 4,
+    "new_astrology_scoring": false
+  },
+  "owner_action": "Update the existing Custom GPT's Instructions, Knowledge handoff guide and Action schema 1.8.0; retain the existing secret credential and saved review; see Downloads/Life-Patterns-Early-Railway-Review-2026-10-17/START-HERE-LIVE.md.",
+  "third_party_source_read": false
+}
