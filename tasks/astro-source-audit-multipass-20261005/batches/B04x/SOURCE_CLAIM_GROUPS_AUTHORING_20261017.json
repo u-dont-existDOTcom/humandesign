@@ -1,0 +1,253 @@
+{
+  "batch": "B04x",
+  "printed_chapter": "XCIX",
+  "editorial_chapter": "C",
+  "source_spans": 5,
+  "source_units": 34,
+  "source_groups": [
+    {
+      "pages": [
+        539
+      ],
+      "label": "Animodar chapter begins below distinct divider; choose preceding syzygy",
+      "claims": [
+        [
+          "heading",
+          "CHAP. XCIX. Of the Rectification of a Nativity by Animodar",
+          "New numbered natal chapter teaches Animodar birth-time rectification.",
+          "Printed XCIX corresponds to sequential/editorial C; it is not part of prior Trutine chapter."
+        ],
+        [
+          "context",
+          "Many and those very learned ... use",
+          "Lilly says numerous learned astrologers use Animodar to amend estimated natal time.",
+          "Practitioner prevalence claimed historically; no quantified sample or accuracy."
+        ],
+        [
+          "prerequisite",
+          "erected your Scheame ... estimative time",
+          "The student begins with a natal chart erected for the estimated birth time.",
+          "Uncorrected chart is the input; do not assume its clock or houses are accurate."
+        ],
+        [
+          "historical_attribution",
+          "Ptolomey directs",
+          "Lilly attributes the following syzygy selection procedure to Ptolemy.",
+          "Original Ptolemaic source parity is not independently authenticated by this batch."
+        ],
+        [
+          "condition",
+          "last new Moone ... before the Birth",
+          "If the preceding syzygy was a new Moon, examine its zodiacal sign and degree.",
+          "New-Moon path distinct from full-Moon path."
+        ],
+        [
+          "condition",
+          "if it was a full Moon",
+          "If the preceding syzygy was a full Moon, select the relevant luminary's zodiacal sign and degree.",
+          "Full Moon is an opposition; planet selection additionally depends on which light was above the horizon."
+        ],
+        [
+          "condition",
+          "either of the lights ... above the earth",
+          "For a preceding full Moon, examine the Sun or Moon that was above the earth at the opposition.",
+          "Horizon-based conditional criterion; no actual ephemeris calculated here."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        540
+      ],
+      "label": "Choose essential-dignity winner and place Ascendant or Midheaven by proximity",
+      "claims": [
+        [
+          "condition",
+          "Planet ... most dignities ... essential in that degree",
+          "Determine which natal planet possesses the most essential dignities at the chosen syzygy degree.",
+          "Rule depends on domicile/exaltation/triplicity/terms and a historical dignity table; score system not reproduced fully."
+        ],
+        [
+          "comparison",
+          "degrees he is in ... nearer ... cusp ascendant ... Mid-heaven",
+          "Compare the candidate planet's natal longitude with the degrees at the Ascendant and Midheaven cusps.",
+          "Must compare zodiacal circular angular distances, not the sheer raw numbers without wrap handling."
+        ],
+        [
+          "method",
+          "nearer ... cusp ascendant ... place so many degrees ascending",
+          "If the planet lies closer to the Ascendant, set the proposed ascending zodiacal degree equal to that planet's position.",
+          "Birth time must then be adjusted to reconstruct the stated Ascendant; not independently proven."
+        ],
+        [
+          "method",
+          "if ... nearer ... Mid-heaven then ... make degrees of Mid-heaven",
+          "If closer to the Midheaven, use the planet's natal zodiacal position as the corrected Midheaven.",
+          "Distinct output and house angle from the Ascendant branch."
+        ],
+        [
+          "method",
+          "vary your former figure according to either of those Angles",
+          "Recompute the estimated horoscope to satisfy the selected corrected cusp.",
+          "A deterministic reconstruction requirement once original ephemeris/method pinned."
+        ],
+        [
+          "condition",
+          "two Planets have equall dignities",
+          "If two planets tie in essential dignity at the degree, Lilly supplies a further criterion.",
+          "Tie resolution rather than independent confirmation."
+        ],
+        [
+          "condition",
+          "accept ... who is neerest in degrees to the Ascendant",
+          "Break an essential-dignity tie in favor of the planet nearer the Ascendant.",
+          "Source tie rule favors Ascendant; it does not prescribe an empirical statistical tie-break."
+        ],
+        [
+          "qualification",
+          "previously estimated and corrected chart may differ",
+          "This can change the estimated time or angle if the planet's natal placement differs from the initial cusp.",
+          "Direction and magnitude of actual clock shift remain dependent on chart reconstruction."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        540
+      ],
+      "label": "Merchant merchant sample full Moon Sept 15 1616, daylight solar position and Saturn",
+      "claims": [
+        [
+          "context",
+          "our Nativity was rectified by accidents",
+          "Lilly explicitly says this merchant's natal figure was already rectified from significant life events.",
+          "Animodar is being compared retrospectively against an accident-adjusted chart, not an independent truth."
+        ],
+        [
+          "authorial_outcome_claim",
+          "estimative time ... did not differ ... above one degree",
+          "He says the initially estimated time differed from his accident-rectified figure by no more than about one rising degree.",
+          "This is a claimed agreement between his own procedures, not actual independently recorded birth-time error."
+        ],
+        [
+          "example",
+          "15 September 1616 being Sunday",
+          "He dates the relevant preceding syzygy to Sunday 15 September 1616.",
+          "Source date; Julian-day and ephemeris parity not independently computed."
+        ],
+        [
+          "example",
+          "opposition Moon or full Moon foure dayes before birth",
+          "He specifies an opposition/full Moon four days before the merchant's September 19 birth.",
+          "The chosen full Moon is a retrospective lookup."
+        ],
+        [
+          "example",
+          "about eleven of clock day time",
+          "The example gives the preceding opposition's time at roughly 11 o'clock in daytime.",
+          "Historical clock/location ambiguity."
+        ],
+        [
+          "condition",
+          "Sun ... 2 degrees 32 minutes Libra ... above earth",
+          "At the full Moon, the Sun at about Libra 2°32′ was the luminary above the horizon, so Lilly selects that degree.",
+          "Source-specified luminary selection, not independently calculated syzygy data."
+        ],
+        [
+          "method",
+          "Table of Essential dignities page 104",
+          "He directs checking his dignity table at Libra 2°32′.",
+          "Points back to Book I source; table must be available to reproduce the dignity score."
+        ],
+        [
+          "condition",
+          "Saturn ... exaltation and triplicity ... terme",
+          "He claims Saturn is the principal dignity-holder there through exaltation, triplicity and term.",
+          "Specific traditional dignity predicates requiring source and chart-parity verification."
+        ],
+        [
+          "source_internal_judgement",
+          "Saturn ... principall ruler of that full Moon",
+          "Lilly selects Saturn as the Animodar planet for this syzygy.",
+          "Historical rule application, not observed correction outcome."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        540
+      ],
+      "label": "Example corrected cusp, competing Venus and strong adverse assessment of precision",
+      "claims": [
+        [
+          "example",
+          "we shall find him in 9 ...",
+          "Lilly describes Saturn's natal position as near nine degrees of a zodiacal sign in the merchant's source figure.",
+          "Original sign glyph needs deliberate standalone diplomatic confirmation; do not guess its label in this data row."
+        ],
+        [
+          "condition",
+          "neerer degree ascending then ... Mid-heaven",
+          "For Saturn, the comparison favors the estimated Ascendant rather than the Midheaven.",
+          "Original circular distances and timestamps have not been independently recomputed."
+        ],
+        [
+          "source_internal_result",
+          "Ascendant ... ninth of Capricorn and 2 min",
+          "He infers a corrected Ascendant near Capricorn 9°02′ from Saturn's position.",
+          "Source-asserted result, not a validated birth time."
+        ],
+        [
+          "authorial_qualification",
+          "had we accepted of Venus to have most dignities",
+          "He notes some astrologers could instead award Venus the most essential dignities.",
+          "Source explicitly acknowledges competing dignity attribution."
+        ],
+        [
+          "authorial_qualification",
+          "a strange concurrence",
+          "He suggests Venus would produce an intriguing agreement.",
+          "No specified independently authenticated truth criterion or supporting record."
+        ],
+        [
+          "authorial_assessment",
+          "neither Trutine of Hermes or this ... so sure foundation ... Accidents",
+          "He rates neither Animodar nor Trutine as well-founded as accident-based rectification.",
+          "Explicit negative comparative confidence, despite preceding worked illustration."
+        ],
+        [
+          "authorial_recommendation",
+          "Children ... before any accidents happen ... use this way and the other",
+          "When rectifying a child's chart before notable life events exist, he says the two preliminary syzygy/Trutine methods may still be used.",
+          "Pragmatic fallback, not an endorsement of proven future predictive validity."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        541
+      ],
+      "label": "Separate Chapter C on accidents and astrological speculum, navigation only",
+      "claims": [
+        [
+          "next_navigation",
+          "CHAP. C The Rectification ... by Accidents ... Astrologicall Speculum",
+          "A new numbered chapter begins at original PDF541/printed507 on correcting a natal figure using significant life events.",
+          "Next printed C/editorial CI; do not merge its tests and source statements into the Animodar batch."
+        ],
+        [
+          "next_navigation",
+          "transits and profections ... could never find verity",
+          "The next chapter opens with Lilly questioning techniques based on transits and profections due to lack of practical success.",
+          "A negative claim belonging to the next chapter; audit all qualifying conditions there."
+        ],
+        [
+          "next_navigation",
+          "collect eminent accidents certain time year month day",
+          "The next method prioritizes collecting dated major life events, preferably with exact dates.",
+          "Navigation only; future source batch must distinguish fitting known events from predicting unseen events."
+        ]
+      ]
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+# Lilly source frontier — Animodar documented; accidents next
+
+2026-10-17: 34 historical source annotations R5924–R5957 locally admitted. After verified publication **5,957 Lilly + 1,066 retained Ptolemy = 7,023** historic source records. Animodar select new/full-Moon degree and essential-dignity winner, then closest Asc/MC. Lilly expressly rates Animodar and Trutine below life-accident rectification; his worked merchant example compared with previously accident-adjusted chart and does not prove actual birth time. Next CHAP C/editorial CI begins original PDF541, accident-based natal correction. Lilly book physical source frontier **~60%** of 894-page scan, but numeric table transcription and independent human validation remain OPEN. Full progress details: state/ASTROLOGY_SOURCE_STUDY_PROGRESS_20261017.md.
+
+---
+
 # Lilly Book III Trutine rectification sources: sign not precise degree
 
 2026-10-17: 99 historical source records R5825–R5923 accepted locally; after publication **5,923 Lilly + 1,066 Ptolemy = 6,989** annotations. Lilly says Hermes Trutine seldom finds exact degree (sometimes rising sign), favors accident-based rectification but does not independently validate it; rejects a separate conception-hour method. 1616 merchant putative conception date 10 Dec 1615 arithmetically derives from source 285-day assumption. Next original printed XCIX/editorial C Animodar on PDF539. All original dense numerical table transcription and empirical time verification OPEN.
