@@ -34,6 +34,11 @@ INTRO = (
     "The primary source anchors distinguish the subjects traditional astrology\n"
     "actually discusses from modern awe, synchronicity, revelation and meaning\n"
     "measurements not explicitly predicted by the checked passages.\n\n"
+    "Then read PTOLEMY-BOOK-IV-COVERAGE-ADDENDUM-v1.md for nine\n"
+    "additional traditional natal LIFE-OUTCOME topics, from occupation\n"
+    "and marriage to travel and timing. These are NOT personality scores.\n"
+    "The associated verified original-page matrix is\n"
+    "PTOLEMY-BOOK-IV-LIFE-DOMAINS-v1.json.\n\n"
     "The eight-question experimental pilot is optional, unscored, and not\n"
     "installed into any existing person's GPT interview or chart scorer.\n"
 )
