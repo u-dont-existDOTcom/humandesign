@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_PLANETARY_MANNERS_HISTORIC_SOURCE_COMPLETE_NEXT_WIT_UNDERSTANDING",
-  "records_count": 6591,
+  "status": "BOOK_III_WIT_UNDERSTANDING_HISTORICAL_DOCUMENTARY_NEXT_STATURE",
+  "records_count": 6644,
   "read_numbered_chapters": [
     1,
     2,
@@ -113,7 +113,8 @@
     106,
     107,
     108,
-    109
+    109,
+    110
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -704,26 +705,35 @@
       "records_count": 31,
       "sha256": "9f8daf09214b5c48f2e91910cf901f050ee939827483fa82c2dfd716174336da",
       "scope": "First edition printed CHAP CVIII/editorial CIX: planetary character/manners descriptions, original PDF573-577 with original PDF578 following-chapter witness. 29 substantive historical source annotations (seven planets' favorable/unfavorable manner claims; planet mixtures and conditionality) and 2 following-chapter navigation records; 8 source-passage groups. Neither planetary character, moral worth nor dangerousness validated with independent humans."
+    },
+    {
+      "id": "B05h",
+      "path": "batches/B05h/RULES.json",
+      "records_count": 53,
+      "sha256": "b5d8dc556a6152c6e1254434c9f819ba4ab26a56db1a1987dabd94ff0f0d3cdf",
+      "scope": "Original 1647 first-edition printed CHAP CIX/editorial CX Wit or Understanding: PDF577-580 body, PDF581 next heading context; 12 original groups, 50 substantive historical clauses and 3 following-navigation items. Mercury-Moon relative strength/aspect hierarchies, Mercury motion/position/reception, planetary mixtures and humoral study-attributions, multiple contradictory conditional inferences. Original PDF580 folio misprinted 538 after 545; PDF581 folio 539, but source/text uninterrupted. Unvalidated intelligence, disability and moral/personality historical stereotypes must never be treated as human prediction proof."
     }
   ],
   "next": {
-    "pdf_page": 577,
-    "printed_page": 543,
-    "chapter": "CX",
-    "printed_chapter_numeral": "CIX",
-    "heading": "Of the Wit or Understanding of the Native",
+    "pdf_page": 580,
+    "printed_page": 538,
+    "sequential_printed_page_expected": 546,
+    "source_printed_pagination_anomaly": true,
+    "chapter": "CXI",
+    "printed_chapter_numeral": "CX",
+    "heading": "Of the Stature, Forme, or shape of the Body",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Printed CHAP CIX starts original first edition PDF577/printed543 and proceeds through PDF578-580. PDF580 is misprinted page 538 after printed545 but scan/text order is continuous.",
-    "research_scope": "Keep every astrological aptitude/learning/intellect condition and rival implication intact, without treating intelligence, cognitive disability or mental health labels as validated."
+    "position": "Following original CHAP CX starts below divider PDF580, page folio visibly 538 (expected sequential 546) after printed545. Page PDF581 visibly 539, with next CHAP CXI heading. Preserve actual scan order; do not relabel original image folios.",
+    "research_scope": "Historical stature, bodily form and appearance rules; preserve all conditions and do not treat them as medical, racial, intelligence or forensic evidence."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05g_PLANETARY_MANNERS.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05h_WIT.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -800,5 +810,6 @@
   "lord_geniture_source_acceptance_note": "32 source-only annotations R6384-R6415, three separately coded competing selection methods and rejected Firmicus sign successor; near equal planet blending without fixed weights. No independent human personality matches or runtime rules.",
   "chapter_CVII_source_acceptance_note": "59 source-only annotations R6416-R6474. Humoral quality testimony list, lunar phases, Sun seasons, zodiac triplicities, malefic overlay, equal opposing cancellation, 3x lord geniture plus Asc ruler and 2x Moon in first; all historical beliefs with zero independent biomedical or personality validation.",
   "chapter_CVIII_source_acceptance_note": "86 historical source records R6475-R6560 (83 manners/fixed-star/sign/humour clauses, 3 next navigation), 14 original page groups, 30 cautionary notes. No independent actual person character/violent act/outcome validated; multiple source fallbacks, lunar direction change and conflicting trait descriptions preserved.",
-  "chapter_CIX_source_acceptance_note": "31 historical records R6561-R6591; 29 planetary manners claims and 2 next chapter navigation. Physical source PDF573-578, 8 groups. Descriptions of moral conduct/traits remain unsupported by independent human testing. Zero empirical validations and zero runtime promotions."
+  "chapter_CIX_source_acceptance_note": "31 historical records R6561-R6591; 29 planetary manners claims and 2 next chapter navigation. Physical source PDF573-578, 8 groups. Descriptions of moral conduct/traits remain unsupported by independent human testing. Zero empirical validations and zero runtime promotions.",
+  "chapter_CX_source_acceptance_note": "53 historical source annotations R6592-R6644, 50 substantive CIX clauses and 3 next-header/opening navigation records, PDF577-581 witnesses, 18 replayed artifact checks, 12 source groups. No validated actual human intelligence/disability/moral predictions or runtime promotions."
 }

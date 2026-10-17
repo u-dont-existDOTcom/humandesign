@@ -1,3 +1,9 @@
+# Lilly first-edition Wit/Understanding historical source complete; Stature next
+
+2026-10-17 Africa/Dakar UTC+0. R6592–R6644 historical-only accepted; 6,644 Lilly + 1,066 Ptolemy = 7,710 annotations after verified publication. Intelligence/study and harmful disability/moral labels remain 1647 stereotypes, no independent validation. 18 local and portable acceptance tests passed. Next printed CHAP CX begins original PDF580; original folio visually 538 after 545. No clinical/cognitive/racial/moral classification promoted into runtime.
+
+---
+
 # Planetary manners documentary source accepted; original intellect chapter next
 
 2026-10-17: historical annotation records R6561-R6591 prepared with guarded append-only index: 6,591 Lilly + 1,066 retained Ptolemy = 7,657 after remote publication. These are not personality validation successes. No runtime promotions. Next printed CHAP CIX/editorial CX begins original PDF577. Numerical and predictive test lanes unresolved.

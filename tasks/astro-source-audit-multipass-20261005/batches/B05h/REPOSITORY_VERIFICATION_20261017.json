@@ -1,0 +1,25 @@
+{
+  "date_utc": "2026-10-17",
+  "task": "Source-documentary accession of printed CHAP CIX, intellect, William Lilly 1647",
+  "source_specific_tests": {
+    "status": "PASS",
+    "cases": 18,
+    "scope": "exact historical first edition sources, mapping, boundaries, safety dispositions",
+    "hermetic_zip_replay_passed": true
+  },
+  "repo_regression": {
+    "command": "/home/joel/humandesign/.venv/bin/python -m pytest -q",
+    "status": "PRE_EXISTING_UNRELATED_FAILURE",
+    "passed": 397,
+    "failed": 1,
+    "skipped": 4,
+    "failed_test": "tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines",
+    "observed": "Status astro_rrf_directional_v0_4 UNAVAILABLE, test asserts INSUFFICIENT_BIRTH_DATA",
+    "baseline_branch": "research/astro-b05g-planet-manners-20261017",
+    "baseline_commit": "9b3bfb8c5b10d62fef81e1ff25cc9f57ed87bbe8",
+    "baseline_test_rerun": "same failure on unchanged parent commit in different worktree"
+  },
+  "no_new_predictive_assertions": true,
+  "remediation_scope": "Leave unrelated relationship-runtime failing assertion untouched in historical book source lane. Record failure for responsible harness owners. Source-batch portable checks pass.",
+  "publication_status": "PENDING_PUSH"
+}

@@ -1,3 +1,9 @@
+# First-edition Lilly source study through intellect, 2026-10-17
+
+**7,710 historical source annotations after authenticated publication** (6,644 Lilly + 1,066 Ptolemy), first-edition frontier PDF580 of 894 scans (**64.9% positional**). Printed CHAP CIX on Wit/Understanding source-first preserved, 53 new documentary units; none independently predictive. Page folios 538 and 539 after printed545 are apparent 1647 pagination misprints, not missing/reordered pages. Next printed CHAP CX stature starts original PDF580. Outstanding dense numeric table transcription, rule implementation, frozen human control tests, and validation unaffected.
+
+---
+
 # Original Lilly historical source progress after planetary manners, 2026-10-17
 
 7,657 source annotations after authenticated publication (6,591 Lilly and 1,066 Ptolemy). Source frontier PDF577/894 (~64.5%, page-position only). Original printed CHAP CVIII planet-specific manners historically documented, no independent personality evidence, no new source rule in runtime. Next printed CHAP CIX, intellect, PDF577-580. Dense numerical table reconstruction and independent forward/blind testing still open.
