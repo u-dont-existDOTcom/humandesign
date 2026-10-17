@@ -1,3 +1,9 @@
+# Lilly original first edition through sibling-number Ptolemy contrast — 2026-10-17
+
+After remote publication **8,361 historical documentary records** (7,295 Lilly + 1,066 Ptolemy), source body frontier original PDF602/894 (**67.3% scanned page position only, not research validation completion**). Printed CHAP CXXI repeated sibling-number technique adds 43 historical source annotations and an explicit Lilly-attributed Ptolemy dispute, including mother/sect and eleventh-house factors. Neither compared to Ptolemy's text independently nor validated on human birth records. Next UNNUMBERED fourth-house parent/patrimony introduction original PDF603, before printed CXXII. Numeric and blind human prediction lanes remain open.
+
+---
+
 # Lilly original first-edition source through sibling concord — 2026-10-17
 
 After verified publication: **8,318 historical source annotations** (7,252 Lilly + 1,066 Ptolemy), first-edition frontier original PDF601/894 (**67.2% of physical scan position only, not overall science completion**). Printed CHAP CXX sibling-harmony historical study adds 44 source notes with contradictory favorable/negative/no aspect categories, reception exceptions, and unverified author anecdote. No independent social validity. Next printed CHAP CXXI original PDF602 sibling-count method and Ptolemy disagreement; empirical validation and numeric astronomy lanes remain open.

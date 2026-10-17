@@ -1,3 +1,9 @@
+# Original sibling-number Ptolemy comparison accepted; fourth-house parents next
+
+2026-10-17 Africa/Dakar UTC+0. B05v R7253–R7295 locally source-accepted; after verified GitHub push 7,295 Lilly + 1,066 Ptolemy = 8,361 historic records. 43 clause-level annotations, authorial contrast of sibling methods not independent replication. No human birth/death validations and no runtime source rules. Next unnumbered fourth-house father and estate introduction PDF603.
+
+---
+
 # Original 1647 Lilly sibling-concord historical chapter accepted
 
 2026-10-17 Africa/Dakar UTC+0. B05u source R7209–R7252 accepted pending GitHub readback: 7,252 Lilly + 1,066 Ptolemy = 8,318 historical source notes. Sibling harmony/conflict are unverified period characterizations with no person-level applicability. Original PDF601, following printed CXXI begins PDF602. No empirical results or runtime promotions.
