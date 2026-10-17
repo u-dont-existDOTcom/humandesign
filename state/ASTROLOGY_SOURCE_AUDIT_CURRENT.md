@@ -1,3 +1,9 @@
+# Source study: Lilly numbered siblings historical annotations accepted
+
+2026-10-17 Africa/Dakar UTC+0. B05s R7139-R7186 source documentation accepted; after GitHub readback 7,186 Lilly + 1,066 Ptolemy = 8,252 original source annotations. 12 sign classifications, planet/sign mixtures and partile priority preserved. Human birth-count validation zero, no runtime rules. NEXT original printed CXIX sibling condition on PDF600.
+
+---
+
 # Lilly original kinship intro historical source accepted, sibling chapter next
 
 2026-10-17 Africa/Dakar UTC+0. B05r R7127–R7138 accepted as original historic source: 7,138 Lilly plus 1,066 Ptolemy = 8,204 notes after GitHub readback. Unnumbered intro does not increment printed-chapter count; no predictive validation. Next printed CXVIII begins original PDF598.

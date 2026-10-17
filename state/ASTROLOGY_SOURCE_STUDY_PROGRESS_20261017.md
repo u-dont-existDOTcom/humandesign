@@ -1,3 +1,9 @@
+# Lilly source through numbered sibling-count chapter — 2026-10-17
+
+8,252 historical source units after remote publication (7,186 Lilly + 1,066 Ptolemy), original 1647 source frontier PDF600 of 894 (**~67.1% scanned position only, not completion of astrology validation**). Printed CHAP CXVIII sibling presence/number recorded as 48 historically asserted source notes including 12 zodiac categories and numerous contrary/optional conditions. Next printed CHAP CXIX sibling fortune begins on same PDF600. No real birth/fertility prediction validation or new runtime rules.
+
+---
+
 # Lilly 1647 study through kinship introduction — 2026-10-17
 
 8,204 historical source notes after verified remote acceptance (7,138 Lilly + 1,066 Ptolemy); source-body position PDF598/894 **~66.9% scanned-page proxy only**. Unnumbered third-house firstborn chart prerequisite, fallback and three sibling questions preserved with 12 historical annotations, 10 source tests. Next printed CHAP CXVIII begins lower on PDF598. No human family-size validation, ephemeris table completion or model promotion.
