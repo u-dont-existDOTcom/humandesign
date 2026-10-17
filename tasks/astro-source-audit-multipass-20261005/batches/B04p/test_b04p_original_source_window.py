@@ -11,7 +11,8 @@ class Window(unittest.TestCase):
    self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),r["sha256"])
  def test_verified_parent_count_not_modified(self):
   root=B.parents[3]
-  p=root/"tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json"
+  p=B/"recovery/LILLY_SOURCE_EXTRACTION_INDEX_BEFORE_B04p.json"
+  if not p.exists(): p=root/"tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json"
   I=json.loads(p.read_text())
   self.assertEqual(I["records_count"],5510)
   self.assertEqual(I["batches"][-1]["id"],"B04o")

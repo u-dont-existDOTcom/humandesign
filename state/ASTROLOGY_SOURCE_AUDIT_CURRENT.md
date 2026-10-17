@@ -1,3 +1,9 @@
+# Original Lilly research — Escaped prisoner and recapture (printed XCV/editorial XCVI)
+
+2026-10-17: 42 source-only records R5511–R5552 locally admitted. Upon verified publication, cumulative **5,552 Lilly + 1,066 Ptolemy = 6,618 historical source annotations**. Lilly's Eastward escape, short hiding and re-arrest are author-reported, not independently documented or scientifically validated. Next editorial XCVII printed XCVI lady asks about imprisoned husband, original PDF505/printed471. No runtime model changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04p_CHAPTER_XCVI_COMPLETE.md.
+
+---
+
 # Original Lilly source study — dated case rejecting bewitchment
 
 2026-10-17: Printed XCIV / editorial XCV first-edition case locally accepted, R5458–R5510 (53 source units). Upon authenticated research publication cumulative Lilly **5,510** + retained Ptolemy **1,066** = **6,576 historical annotations**. The author refuses a witchcraft diagnosis; his conjectured venereal cause and ~three-week recovery remain unverified historical claims with no independent clinical efficacy. Next printed XCV/editorial XCVI prison escape begins original PDF504. No new empirical forecasts validated; runtime unchanged. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04o_CHAPTER_XCV_COMPLETE.md.

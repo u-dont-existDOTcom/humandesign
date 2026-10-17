@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_EDITORIAL_XCV_HISTORICAL_SOURCE_ONLY_NEXT_XCVI_OPEN",
-  "records_count": 5510,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_EDITORIAL_XCVI_HISTORICAL_SOURCE_ONLY_NEXT_XCVII_OPEN",
+  "records_count": 5552,
   "read_numbered_chapters": [
     1,
     2,
@@ -99,7 +99,8 @@
     92,
     93,
     94,
-    95
+    95,
+    96
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -571,25 +572,32 @@
       "records_count": 53,
       "sha256": "c61c567c27cb4b6503ee3509260ab29ddd0ab7051f0e1fab2359b1252156de1d",
       "scope": "First-edition William Lilly (1647) printed XCIV/editorial XCV separate dated If Bewitched illness/medical worked case original PDF502-503, navigation-only separate prisoner escape case on PDF504. Fifty historical source assertions, three navigation, ten source spans, twenty-two limits; initially suspected bewitchment then negative author judgment, speculative venereal etiology explicitly not confirmed as syphilis, claimed three-week recovery without independent patient records."
+    },
+    {
+      "id": "B04p",
+      "path": "batches/B04p/RULES.json",
+      "records_count": 42,
+      "sha256": "e4ccc9a2aa4b997ddc67dda918a2efa223e3e0b78fbbee24418a26c79b829553",
+      "scope": "Original William Lilly 1647 printed XCV/editorial XCVI escaped-prisoner direction and recapture worked horary dated June 6 1647 8PM, original PDF504-505 printed470-471. Thirty-nine substantive historical source annotations and three following-chapter navigation markers, seven page passage groups, 20 uncertainties. Author reports eastern route, one-night concealment, Friday letter and Sunday recapture without independent evidence."
     }
   ],
   "next": {
-    "pdf_page": 504,
-    "printed_page": 470,
-    "chapter": "XCVI",
-    "printed_chapter_numeral": "XCV",
-    "heading": "A Prisoner escaped out of Prison, which way he went, If Recoverable?",
+    "pdf_page": 505,
+    "printed_page": 471,
+    "chapter": "XCVII",
+    "printed_chapter_numeral": "XCVI",
+    "heading": "A Lady of her Husband imprisoned, when he should be delivered?",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF504/printed470 following the close of dated March 1646 illness case, with its own square figure dated 6 June 1647, 8 PM. Distinct prison escape/recapture question."
+    "position": "Original PDF505/printed471 below separate divider, with its own new square horoscope printed October 19, 1645, 7:20 PM; verify original year glyph and boundary before extraction."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04o_CHAPTER_XCV_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04p_CHAPTER_XCVI_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -648,5 +656,6 @@
   "chapter_XCII_source_acceptance_note": "31 historical annotations R5308–R5338, 29 captive/planetary-hour clauses + 2 next-chapter navigation; original PDF497-498, five reverse source spans, 19 limitations. Moon timing conditional; Sun one month and Venus forty days author-attributed, no independently verified detainee, captivity event, actual release or harm.",
   "chapter_XCIII_source_acceptance_note": "75 documentary source units R5339-R5413: 72 historic witchcraft/remedy claims and three following horse-case navigation markers, 11 primary-source passage groups, 28 unresolved limitations; source does not verify supernatural causes, health conditions or treatments.",
   "chapter_XCIV_source_acceptance_note": "44 historical source annotations R5414-R5457 (42 horse horary and two following separate witchcraft case navigation); predicted return within 1-2 days, self-reported actual three days and date Jan13/14 ambiguity; self-reported westward direction and rider interpretation lack independent corroboration. Seven source passages, 20 unresolved limits, no empirical prediction credit.",
-  "chapter_XCV_source_acceptance_note": "53 historical source annotations R5458–R5510, 50 dated illness/negative witchcraft narrative clauses and three prisoner-next-navigation; 10 source spans and 22 limits. Author reports negative witchcraft verdict, speculative renal/private parts illness without confirmed syphilis, and approximately three-week recovery after an unspecified regimen change, none independently authenticated."
+  "chapter_XCV_source_acceptance_note": "53 historical source annotations R5458–R5510, 50 dated illness/negative witchcraft narrative clauses and three prisoner-next-navigation; 10 source spans and 22 limits. Author reports negative witchcraft verdict, speculative renal/private parts illness without confirmed syphilis, and approximately three-week recovery after an unspecified regimen change, none independently authenticated.",
+  "chapter_XCVI_source_acceptance_note": "42 source-only historical records R5511-R5552; 39 escaped prisoner substantive claims and three subsequent chapter navigation markers. Author forecast East, near-town one-night concealment, letter/messenger by day six or seven, recapture by authority and retrospective Friday letter/Sunday arrest. No independently authenticated prisoner, letter or actual capture; seven source passages and 20 limits."
 }
