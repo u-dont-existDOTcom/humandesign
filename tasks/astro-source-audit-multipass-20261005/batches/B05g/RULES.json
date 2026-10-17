@@ -1,0 +1,568 @@
+{
+  "batch": "B05g",
+  "status": "HISTORICAL_DOCUMENTARY_LOCALLY_ADMITTED",
+  "record_count": 31,
+  "first_record": 6561,
+  "last_record": 6591,
+  "original_printed_chapter": "CVIII",
+  "editorial_chapter": "CIX",
+  "source_passage_groups": 8,
+  "substantive_historical_annotations": 29,
+  "next_chapter_navigation": 2,
+  "original_pdf_pages": [
+    573,
+    574,
+    575,
+    576,
+    577,
+    578
+  ],
+  "original_source_paraphrase_qualification": "Second full diplomatic transcription and trait-cell completeness not claimed",
+  "original_trait_tables_not_empirically_validated": true,
+  "independent_human_personality_validation": 0,
+  "empirical_validations": 0,
+  "runtime_promotions": 0,
+  "rules": [
+    {
+      "id": "R6561",
+      "source_span": "B05g-S001",
+      "pdf_pages": [
+        573
+      ],
+      "role": "heading",
+      "anchor_not_diplomatic": "Chap CVIII The quality of Manners",
+      "meaning_historical_only": "Lilly begins a distinct chapter assigning purported personality qualities to each planet.",
+      "source_limit": "Historical personality stereotypes, not independently validated predictions.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6561,
+      "source_local_id": "B05g-C001",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6562",
+      "source_span": "B05g-S001",
+      "pdf_pages": [
+        573
+      ],
+      "role": "method",
+      "anchor_not_diplomatic": "Strong and well-dignified Planets",
+      "meaning_historical_only": "The author contrasts favorable traits under strong dignity with negative traits under weakness.",
+      "source_limit": "Dignity assignment depends on separate historic chart rules.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6562,
+      "source_local_id": "B05g-C002",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6563",
+      "source_span": "B05g-S001",
+      "pdf_pages": [
+        573
+      ],
+      "role": "planet_positive",
+      "anchor_not_diplomatic": "Saturn strong",
+      "meaning_historical_only": "He attributes seriousness, patience, discretion, constancy, caution and thoughtfulness to strong Saturn.",
+      "source_limit": "Source-side character typology only.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6563,
+      "source_local_id": "B05g-C003",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6564",
+      "source_span": "B05g-S001",
+      "pdf_pages": [
+        573
+      ],
+      "role": "planet_negative",
+      "anchor_not_diplomatic": "Saturn weak",
+      "meaning_historical_only": "He associates afflicted Saturn with suspicion, malice, envy, discontent, secrecy, hypocrisy or stubbornness.",
+      "source_limit": "Stigmatizing assertions must not be applied to real individuals without evidence.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6564,
+      "source_local_id": "B05g-C004",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6565",
+      "source_span": "B05g-S001",
+      "pdf_pages": [
+        573
+      ],
+      "role": "source_qualification",
+      "anchor_not_diplomatic": "Saturn positive and negative columns",
+      "meaning_historical_only": "The visual page uses an explicit two-sided table under Saturn.",
+      "source_limit": "Preserve both branches rather than selecting a flattering outcome.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6565,
+      "source_local_id": "B05g-C005",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6566",
+      "source_span": "B05g-S002",
+      "pdf_pages": [
+        573,
+        574
+      ],
+      "role": "planet_positive",
+      "anchor_not_diplomatic": "Jupiter fortunate strong",
+      "meaning_historical_only": "He associates strong Jupiter with justice, honesty, generosity, charity, moderation, kindliness and religious or civic propriety.",
+      "source_limit": "Traditional positive moral stereotypes.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6566,
+      "source_local_id": "B05g-C006",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6567",
+      "source_span": "B05g-S002",
+      "pdf_pages": [
+        573,
+        574
+      ],
+      "role": "planet_negative",
+      "anchor_not_diplomatic": "Jupiter weak or afflicted",
+      "meaning_historical_only": "He describes undesirable traits such as self-indulgence, conceit, wastefulness, inconsistency and poor discretion.",
+      "source_limit": "Traditional negative moral stereotypes, no independent behavioral tests.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6567,
+      "source_local_id": "B05g-C007",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6568",
+      "source_span": "B05g-S002",
+      "pdf_pages": [
+        573,
+        574
+      ],
+      "role": "source_qualification",
+      "anchor_not_diplomatic": "Jupiter table physical seam",
+      "meaning_historical_only": "Jupiter's negative-trait discussion continues on PDF574.",
+      "source_limit": "One planet grouping across page boundary, not separate people.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6568,
+      "source_local_id": "B05g-C008",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6569",
+      "source_span": "B05g-S003",
+      "pdf_pages": [
+        574
+      ],
+      "role": "planet_positive",
+      "anchor_not_diplomatic": "Mars well disposed",
+      "meaning_historical_only": "The author associates strong Mars with courage, vigor, resolution, enterprise, activity and willingness to face dangers.",
+      "source_limit": "Historically masculine-coded characteristics, untested.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6569,
+      "source_local_id": "B05g-C009",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6570",
+      "source_span": "B05g-S003",
+      "pdf_pages": [
+        574
+      ],
+      "role": "planet_negative",
+      "anchor_not_diplomatic": "Mars ill disposed",
+      "meaning_historical_only": "He lists anger, violence, quarrelsomeness, revenge, impatience or rash action under afflicted Mars.",
+      "source_limit": "Source claims about dangerousness cannot establish real violent behavior.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6570,
+      "source_local_id": "B05g-C010",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6571",
+      "source_span": "B05g-S003",
+      "pdf_pages": [
+        574
+      ],
+      "role": "source_qualification",
+      "anchor_not_diplomatic": "Mars opposite dignity states",
+      "meaning_historical_only": "Mars' favorable and negative descriptions depend on dignity and other chart conditions.",
+      "source_limit": "Conditional dual interpretation makes arbitrary one-sided matching invalid.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6571,
+      "source_local_id": "B05g-C011",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6572",
+      "source_span": "B05g-S004",
+      "pdf_pages": [
+        575
+      ],
+      "role": "planet_positive",
+      "anchor_not_diplomatic": "Sun well disposed",
+      "meaning_historical_only": "Lilly connects strong Sun with authority, generosity, honorable behavior, confidence, leadership and magnanimity.",
+      "source_limit": "Source stereotypes, not observed outcomes.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6572,
+      "source_local_id": "B05g-C012",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6573",
+      "source_span": "B05g-S004",
+      "pdf_pages": [
+        575
+      ],
+      "role": "planet_negative",
+      "anchor_not_diplomatic": "Sun ill disposed",
+      "meaning_historical_only": "He links weak Sun with boastfulness, arrogance, vanity, oppressive authority or excessive pride.",
+      "source_limit": "No independent morality validation.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6573,
+      "source_local_id": "B05g-C013",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6574",
+      "source_span": "B05g-S004",
+      "pdf_pages": [
+        575
+      ],
+      "role": "source_qualification",
+      "anchor_not_diplomatic": "Sun source two-sided table",
+      "meaning_historical_only": "Favorable and unfavorable Sun descriptions appear as opposing printed paragraphs.",
+      "source_limit": "Preserve negative and positive alternatives.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6574,
+      "source_local_id": "B05g-C014",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6575",
+      "source_span": "B05g-S005",
+      "pdf_pages": [
+        575
+      ],
+      "role": "planet_positive",
+      "anchor_not_diplomatic": "Venus strong",
+      "meaning_historical_only": "He associates dignified Venus with affection, friendship, sociability, music, courtesy, cleanliness and gentleness.",
+      "source_limit": "Traditional personality inference only.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6575,
+      "source_local_id": "B05g-C015",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6576",
+      "source_span": "B05g-S005",
+      "pdf_pages": [
+        575
+      ],
+      "role": "planet_negative",
+      "anchor_not_diplomatic": "Venus weak",
+      "meaning_historical_only": "The source includes sexuality-linked moralized criticisms, indulgence, idleness, vanity or inconstancy.",
+      "source_limit": "Historically stigmatizing moral and sexual stereotypes, not evidence about real people.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6576,
+      "source_local_id": "B05g-C016",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6577",
+      "source_span": "B05g-S005",
+      "pdf_pages": [
+        575
+      ],
+      "role": "source_qualification",
+      "anchor_not_diplomatic": "Venus opposed conditions",
+      "meaning_historical_only": "Interpretation changes based on benefic or afflicted planetary status.",
+      "source_limit": "No fixed independent assessment instrument.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6577,
+      "source_local_id": "B05g-C017",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6578",
+      "source_span": "B05g-S006",
+      "pdf_pages": [
+        575
+      ],
+      "role": "planet_positive",
+      "anchor_not_diplomatic": "Mercury well disposed",
+      "meaning_historical_only": "He connects strong Mercury with eloquence, intelligence, study, mathematics, writing, ingenuity and adaptability.",
+      "source_limit": "The scholarly abilities are asserted rather than independently tested.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6578,
+      "source_local_id": "B05g-C018",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6579",
+      "source_span": "B05g-S006",
+      "pdf_pages": [
+        575
+      ],
+      "role": "planet_negative",
+      "anchor_not_diplomatic": "Mercury ill disposed",
+      "meaning_historical_only": "He associates afflicted Mercury with dishonesty, manipulation, restless talk, gossip and fickleness.",
+      "source_limit": "Do not treat natal Mercury as proof of deception.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6579,
+      "source_local_id": "B05g-C019",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6580",
+      "source_span": "B05g-S006",
+      "pdf_pages": [
+        575
+      ],
+      "role": "source_qualification",
+      "anchor_not_diplomatic": "Mercury dual character categories",
+      "meaning_historical_only": "The source links the same planet to markedly different traits depending on disposition.",
+      "source_limit": "Potentially unfalsifiable flexibility requires explicit coding.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6580,
+      "source_local_id": "B05g-C020",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6581",
+      "source_span": "B05g-S007",
+      "pdf_pages": [
+        575,
+        576
+      ],
+      "role": "planet_positive",
+      "anchor_not_diplomatic": "Moon fortunate",
+      "meaning_historical_only": "Lilly associates well-dignified Moon with calmness, social adaptability, concern for domestic duties and acceptance of change.",
+      "source_limit": "Historical character typology.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6581,
+      "source_local_id": "B05g-C021",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6582",
+      "source_span": "B05g-S007",
+      "pdf_pages": [
+        575,
+        576
+      ],
+      "role": "planet_negative",
+      "anchor_not_diplomatic": "Moon ill disposed",
+      "meaning_historical_only": "He associates afflicted Moon with indecision, fickleness, laziness, anxiety or inconsistency.",
+      "source_limit": "Not validated by clinical or psychometric evidence.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6582,
+      "source_local_id": "B05g-C022",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6583",
+      "source_span": "B05g-S007",
+      "pdf_pages": [
+        575,
+        576
+      ],
+      "role": "method",
+      "anchor_not_diplomatic": "from these Planets mixture one with another",
+      "meaning_historical_only": "He states that combining planetary significators changes the resulting manners.",
+      "source_limit": "Interactions multiply possible candidate interpretations.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6583,
+      "source_local_id": "B05g-C023",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6584",
+      "source_span": "B05g-S007",
+      "pdf_pages": [
+        575,
+        576
+      ],
+      "role": "source_qualification",
+      "anchor_not_diplomatic": "several planets have separate strong/weak qualifications",
+      "meaning_historical_only": "The source's two-way tables and mixing rules should be preserved without choosing only matching claims.",
+      "source_limit": "Original-source completeness versus flexible in-sample personality fit.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6584,
+      "source_local_id": "B05g-C024",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6585",
+      "source_span": "B05g-S008",
+      "pdf_pages": [
+        576,
+        577
+      ],
+      "role": "method",
+      "anchor_not_diplomatic": "principal Significator of manners",
+      "meaning_historical_only": "He assigns particular weight to the principal significator of manners.",
+      "source_limit": "Selection depends on earlier separate manners chapter.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6585,
+      "source_local_id": "B05g-C025",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6586",
+      "source_span": "B05g-S008",
+      "pdf_pages": [
+        576,
+        577
+      ],
+      "role": "method",
+      "anchor_not_diplomatic": "when two Significators of manners involved",
+      "meaning_historical_only": "When two planets influence manners, he combines or compares their character lists.",
+      "source_limit": "Additional freedom of interpretation.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6586,
+      "source_local_id": "B05g-C026",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6587",
+      "source_span": "B05g-S008",
+      "pdf_pages": [
+        576,
+        577
+      ],
+      "role": "condition",
+      "anchor_not_diplomatic": "good and ill aspect changes relative importance",
+      "meaning_historical_only": "He treats aspects and dignities as altering the balance between favorable and unfavorable traits.",
+      "source_limit": "Conditional source rule, not established causation.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6587,
+      "source_local_id": "B05g-C027",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6588",
+      "source_span": "B05g-S008",
+      "pdf_pages": [
+        576,
+        577
+      ],
+      "role": "condition",
+      "anchor_not_diplomatic": "where Moon joins principal significator",
+      "meaning_historical_only": "Moon configurations are said to modify nature and temperament.",
+      "source_limit": "Source interpretive mechanism.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6588,
+      "source_local_id": "B05g-C028",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6589",
+      "source_span": "B05g-S008",
+      "pdf_pages": [
+        576,
+        577
+      ],
+      "role": "authorial_qualification",
+      "anchor_not_diplomatic": "modifications according to whole figure",
+      "meaning_historical_only": "The chapter stresses judging combined source testimonies rather than treating a single planet as definitive.",
+      "source_limit": "No quantitative weights or fixed psychometric scoring provided.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6589,
+      "source_local_id": "B05g-C029",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6590",
+      "source_span": "B05g-S008",
+      "pdf_pages": [
+        576,
+        577
+      ],
+      "role": "next_navigation",
+      "anchor_not_diplomatic": "CHAP CIX Of the Wit Understanding of a Native",
+      "meaning_historical_only": "A separate chapter on intellectual ability starts later on PDF577.",
+      "source_limit": "Do not import into planetary manners tables.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6590,
+      "source_local_id": "B05g-C030",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R6591",
+      "source_span": "B05g-S008",
+      "pdf_pages": [
+        576,
+        577
+      ],
+      "role": "next_navigation",
+      "anchor_not_diplomatic": "Significators of Wit and intellect",
+      "meaning_historical_only": "The next chapter discusses Mercury, Moon and intelligence.",
+      "source_limit": "A new source unit, not a validated IQ prediction.",
+      "accepted": true,
+      "validated_personality_prediction": false,
+      "record_number": 6591,
+      "source_local_id": "B05g-C031",
+      "historical_documentary_accepted": true,
+      "runtime_model_promoted": false
+    }
+  ]
+}

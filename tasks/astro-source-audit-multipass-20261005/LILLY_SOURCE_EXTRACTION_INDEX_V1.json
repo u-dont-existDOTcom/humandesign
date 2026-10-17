@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_MANNERS_OF_NATIVE_COMPLETE_HISTORICAL_DOCUMENTARY_NEXT_PLANET_SPECIFIC_MANNERS",
-  "records_count": 6560,
+  "status": "BOOK_III_PLANETARY_MANNERS_HISTORIC_SOURCE_COMPLETE_NEXT_WIT_UNDERSTANDING",
+  "records_count": 6591,
   "read_numbered_chapters": [
     1,
     2,
@@ -112,7 +112,8 @@
     105,
     106,
     107,
-    108
+    108,
+    109
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -696,26 +697,33 @@
       "records_count": 86,
       "sha256": "9e0cbdce9a3659d0f41b2a595682db7e8edd5cf583027b424b0e694d7b25d327",
       "scope": "Original first edition William Lilly printed CHAP CVII/editorial CVIII Manners of Native/Child, original PDF568-573 body, following CVIII PDF573-575 navigation. 83 substantive historical source annotations and 3 separate next chapter navigation, 14 original passage groups, 30 cautions. Historical significator selection with Asc/Mercury/Moon/dispositor fallbacks and lunar-direction change, broad 12 sign and four-humour manner stereotypes, epoch-dependent fixed stars and severe historically unsupported moral/criminal accusations, rejection of Johannes Angelus degree-by-degree inflexibility. All human personality accuracy, actual violence predictions and runtime promotions zero."
+    },
+    {
+      "id": "B05g",
+      "path": "batches/B05g/RULES.json",
+      "records_count": 31,
+      "sha256": "9f8daf09214b5c48f2e91910cf901f050ee939827483fa82c2dfd716174336da",
+      "scope": "First edition printed CHAP CVIII/editorial CIX: planetary character/manners descriptions, original PDF573-577 with original PDF578 following-chapter witness. 29 substantive historical source annotations (seven planets' favorable/unfavorable manner claims; planet mixtures and conditionality) and 2 following-chapter navigation records; 8 source-passage groups. Neither planetary character, moral worth nor dangerousness validated with independent humans."
     }
   ],
   "next": {
-    "pdf_page": 573,
-    "printed_page": 539,
-    "chapter": "CIX",
-    "printed_chapter_numeral": "CVIII",
-    "heading": "The quality of Manners, which may in kind be discerned from every Planet",
+    "pdf_page": 577,
+    "printed_page": 543,
+    "chapter": "CX",
+    "printed_chapter_numeral": "CIX",
+    "heading": "Of the Wit or Understanding of the Native",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Separate chapter begins below original horizontal divider in lower PDF573/printed539; continues PDF574-575 and needs actual following chapter boundary verified.",
-    "research_scope": "Preserve positive/negative traits and exact planetary placement conditions, but do not use source stereotypes as established human behavior or forensic predictions."
+    "position": "Printed CHAP CIX starts original first edition PDF577/printed543 and proceeds through PDF578-580. PDF580 is misprinted page 538 after printed545 but scan/text order is continuous.",
+    "research_scope": "Keep every astrological aptitude/learning/intellect condition and rival implication intact, without treating intelligence, cognitive disability or mental health labels as validated."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05f_MANNERS.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05g_PLANETARY_MANNERS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -791,5 +799,6 @@
   "chapter_CV_source_acceptance_note": "74 original source R6310-R6383 annotations, seven mapped passage groups, 30 source limits. Historical potentially lethal directions are unvalidated; source branches include multiple candidate Hylegs/Anaretas/Alcochodons, including explicit degrees and fallback preferences. Lilly says not satisfied how to identify these or their claimed year values; no independent survival outcome.",
   "lord_geniture_source_acceptance_note": "32 source-only annotations R6384-R6415, three separately coded competing selection methods and rejected Firmicus sign successor; near equal planet blending without fixed weights. No independent human personality matches or runtime rules.",
   "chapter_CVII_source_acceptance_note": "59 source-only annotations R6416-R6474. Humoral quality testimony list, lunar phases, Sun seasons, zodiac triplicities, malefic overlay, equal opposing cancellation, 3x lord geniture plus Asc ruler and 2x Moon in first; all historical beliefs with zero independent biomedical or personality validation.",
-  "chapter_CVIII_source_acceptance_note": "86 historical source records R6475-R6560 (83 manners/fixed-star/sign/humour clauses, 3 next navigation), 14 original page groups, 30 cautionary notes. No independent actual person character/violent act/outcome validated; multiple source fallbacks, lunar direction change and conflicting trait descriptions preserved."
+  "chapter_CVIII_source_acceptance_note": "86 historical source records R6475-R6560 (83 manners/fixed-star/sign/humour clauses, 3 next navigation), 14 original page groups, 30 cautionary notes. No independent actual person character/violent act/outcome validated; multiple source fallbacks, lunar direction change and conflicting trait descriptions preserved.",
+  "chapter_CIX_source_acceptance_note": "31 historical records R6561-R6591; 29 planetary manners claims and 2 next chapter navigation. Physical source PDF573-578, 8 groups. Descriptions of moral conduct/traits remain unsupported by independent human testing. Zero empirical validations and zero runtime promotions."
 }

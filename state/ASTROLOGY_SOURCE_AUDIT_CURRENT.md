@@ -1,3 +1,9 @@
+# Planetary manners documentary source accepted; original intellect chapter next
+
+2026-10-17: historical annotation records R6561-R6591 prepared with guarded append-only index: 6,591 Lilly + 1,066 retained Ptolemy = 7,657 after remote publication. These are not personality validation successes. No runtime promotions. Next printed CHAP CIX/editorial CX begins original PDF577. Numerical and predictive test lanes unresolved.
+
+---
+
 # Original Lilly manners chapter now historical-source complete, separate planetary manners next
 
 2026-10-17: Lilly source records R6475–R6560 accepted locally (86 new); after verified research publication **6,560 Lilly + 1,066 retained Ptolemy = 7,626** historical source annotations. All source-specific personality claims, severe fixed-star moral/criminal stereotypes and 12 zodiac descriptions are historical only and unvalidated. Next printed CHAP CVIII/editorial CIX begins original PDF573. Source frontier ~64.1% of 894 scanned pages by position only, not full model completion. No new empirical validations or runtime changes.

@@ -1,3 +1,9 @@
+# Original Lilly historical source progress after planetary manners, 2026-10-17
+
+7,657 source annotations after authenticated publication (6,591 Lilly and 1,066 Ptolemy). Source frontier PDF577/894 (~64.5%, page-position only). Original printed CHAP CVIII planet-specific manners historically documented, no independent personality evidence, no new source rule in runtime. Next printed CHAP CIX, intellect, PDF577-580. Dense numerical table reconstruction and independent forward/blind testing still open.
+
+---
+
 # First-edition Lilly source progress after manners, 2026-10-17
 
 **7,626 historical documentary annotations** accepted after authenticated publication (6,560 Lilly + 1,066 retained Ptolemy). Lilly original scan frontier PDF573 of 894 scanned pages, **64.1% by page-position proxy only**. This is NOT percentage of numerically transcribed table cells, verified predictive human traits or the project's overall goal. Printed CHAP CVII manners historical source has 86 new annotations, no validated human personality, mental health, criminal dangerousness or predictive findings. Next original printed CHAP CVIII, quality of manners from planets PDF573 onwards. Numerical tables, hidden-label human trials and actual prospective controls remain unfinished.
