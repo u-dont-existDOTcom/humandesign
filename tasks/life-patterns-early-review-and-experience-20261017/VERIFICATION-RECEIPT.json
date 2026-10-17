@@ -6,7 +6,7 @@
     "participant_review": "Provide secure Railway question answering and status immediately after first saved independent review, not only after ready. Participant may close further question intake, with unknowns explicitly preserved; independent final review remains mandatory.",
     "scientific_coverage": "Document missing source-defined chart topics compared with existing neutral survey; add optional separately versioned first-person experience module, with no new chart scoring."
   },
-  "current_status": "SOURCE_READY_TESTED_PENDING_MERGE_AND_DEPLOY",
+  "current_status": "LIVE_EARLY_RAILWAY_REVIEW_VERIFIED_GPT_EDITOR_UPDATE_PENDING",
   "implementation": {
     "existing_gpt_review_id_retained": true,
     "early_link_statuses": [
@@ -73,9 +73,22 @@
     "exact_copy_verified": true
   },
   "remaining_actions": [
-    "source_commit_merge",
-    "isolated_railway_deploy",
-    "live_checks",
-    "owner_private_existing_gpt_editor_update"
-  ]
+    "owner_private_existing_gpt_editor_update",
+    "participant_optional_early_browser_review_once_saved_review_exists",
+    "future_complete_classical_chart-domain_audit_and_untouched_prediction_tests_separate"
+  ],
+  "live_deployment_receipt": "tasks/life-patterns-early-review-and-experience-20261017/LIVE-DEPLOYMENT-RECEIPT-20261017.json",
+  "live_verification": {
+    "deployment_id": "9ded2df4-311f-48e9-8ab5-c72db85ecd38",
+    "pinned_source_commit": "5433b924fa3750e67637b0c3165da39a80bf6fed",
+    "backend_healthy": true,
+    "api_version": "1.8.0",
+    "seven_actions": true,
+    "early_browser_page": true,
+    "question_stop_wording_verified": true,
+    "unauthorized_issuance_and_close_rejected": true,
+    "original_encrypted_data_volume_intact": true,
+    "unrelated_staged_railway_changes_preserved": true,
+    "actual_participant_ends_review_tested": false
+  }
 }
