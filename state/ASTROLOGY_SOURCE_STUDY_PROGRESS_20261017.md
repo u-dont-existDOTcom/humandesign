@@ -1,3 +1,9 @@
+# Lilly original source through unnumbered seventh-house marriage — 2026-10-17
+
+After authenticated publication **9,009 historical source annotations** (7,943 Lilly + 1,066 Ptolemy), original first-edition source frontier PDF623/894 (**69.7% scanned page position only**, not program completion). The unnumbered seventh-house male marriage introduction adds 66 historic annotated assertions including opposing Saturn and Venus/Moon configurations, explicit insufficiency of lone Moon-Saturn adverse contact, fecundity/reception and historical moral stereotypes. Next separately printed CXXXI on ease of obtaining wife starts middle PDF623. No independent marriage predictions and no promoted source rules. Numeric data and blind human tests remain OPEN.
+
+---
+
 # Lilly 1647 original source through servants and small cattle — 2026-10-17
 
 After authenticated GitHub publication **8,943 historical source annotations** (7,877 Lilly + 1,066 Ptolemy), original source page position PDF620/894 (**69.4% physical scan proxy only**). Printed CHAP CXXX servants/cattle source adds 42 historical notes including essential dignity exception to malefic worker and unsupported worker theft stereotypes. Next UNNUMBERED seventh-house marriage intro starts across PDF620–621 and substantive text continues until first numbered CXXXI from PDF623. Actual human relationship/labor validations zero, no scoring runtime rules; numeric astronomy and blind-testing lanes open.

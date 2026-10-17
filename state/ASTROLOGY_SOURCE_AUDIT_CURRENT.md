@@ -1,3 +1,9 @@
+# Lilly unnumbered seventh-house marriage study accepted, CXXXI next
+
+2026-10-17 Africa/Dakar UTC+0. B06h R7878–R7943, 66 historic source notes prepared. After verified GitHub readback 7,943 Lilly plus 1,066 Ptolemy = 9,009 original documentary records. Unnumbered section did not increment numbered-chapter count. No verified relationship or private sexual-life forecasts, no runtime source promotions. NEXT printed CXXXI original PDF623.
+
+---
+
 # Original Lilly servants/cattle history accepted, seventh house intro next
 
 2026-10-17 Africa/Dakar UTC+0. B06g source R7836–R7877 prepared; after GitHub SHA readback 7,877 Lilly + 1,066 Ptolemy = 8,943 original historical annotations. No human criminality, worker loyalty or animal-profit predictive validity, no promoted scoring rules. Next unnumbered seventh-house marriage source PDF621–623.
