@@ -1,0 +1,43 @@
+{
+  "batch": "ChineseAstro-01",
+  "as_of_utc": "2026-10-17T21:55:00Z",
+  "system": "HumanDesign independent Chinese source study",
+  "scope": "72 source-only records and two limited partial chart mechanics modules",
+  "source_evidence": {
+    "owner_book1_sha256": "8b40261a8fb4eeacadb19381c91e91208aa3a9de66685407868b2691afb1a6a2",
+    "owner_book2_sha256": "9d29d83c94b67b1c887d6a2935ee8361e821bb6216487f9fe86b444a48489e81",
+    "original_ziwei": "Chinese Wikisource three volumes",
+    "copyrighted_books_in_git": false
+  },
+  "local_checks": {
+    "source_mechanics_tests": 38,
+    "passed": 38,
+    "ruff": "PASS",
+    "source_and_chart_files": "research-task only, no production modules",
+    "archive_extract_replay_tests": 38,
+    "zip_crc_pass": true,
+    "zip_all_member_sha256": true,
+    "source_index_total": 72,
+    "lilly_source_index_untouched": true
+  },
+  "broader_repo_gates": {
+    "unittest_exact_command": "python3 -m unittest discover -s tests -v",
+    "unittest_result": "FAIL: 91 tests discovered, 3 import errors due to missing system Python pytest and swisseph; no observed failures in new Chinese source tests",
+    "unittest_exit_code": 1,
+    "universal_exact_audit_command": "python3 scripts/audit_codex_github.py --root . --fail-on error",
+    "universal_exact_audit_result": "UNAVAILABLE: repository does not contain that script",
+    "universal_exact_audit_exit_code": 2,
+    "external_shared_audit_command": "python3 /home/joel/universal-dev-architecture/scripts/audit_codex_github.py --root <worktree> --fail-on error",
+    "external_audit_result": "FAIL: 90 repository-wide error findings and 73 warnings primarily in preexisting workflow and architecture surfaces; no new Chinese task files singled out in the sampled tail",
+    "external_audit_exit_code": 1,
+    "interpretation": "Global gates not green; cannot claim integrated/merged release. Isolated verified branch source publication only."
+  },
+  "scientific_claims": {
+    "complete_bazi_calendar_engine": false,
+    "complete_ziwei_star_engine": false,
+    "person_level_human_predictions_validated": 0,
+    "runtime_promotions": 0
+  },
+  "archive_sha256": "21c94ac3c3418bd3f9f2336d4b40b3b0cf28f43b5e39109bf9efb4a0440eba65",
+  "next": "Complete Chinese historical textual collation/engines and Western B06l source separately; do not co-mingle historical note counts"
+}
