@@ -1,3 +1,9 @@
+# Original Lilly source research — printed XCIII / editorial XCIV horse case
+
+2026-10-17: 44 historical documentary records R5414-R5457 accepted locally, cumulative Lilly 5,457 + Ptolemy 1,066 = **6,523** after verified publication. Crucial negative: prediction within a day or two versus Lilly's reported return three days later, with 13th/14th January alternative actual dates. No independent horse outcome or empirical astrology validation. Next editorial XCV printed XCIV *If Bewitched* begins original PDF502/printed468. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04n_CHAPTER_XCIV_COMPLETE.md.
+
+---
+
 # Original Lilly first-edition source research — alleged Witchcraft and remedies
 
 2026-10-17: printed XCII / editorial XCIII historical text locally accepted, R5339–R5413 (75 new); after verified branch publication Lilly 5,413 + Ptolemy 1,066 = **6,479 historical source units**. The unnumbered remedies subsection is included, but does NOT support occult medical causation or safe effective treatments. Next editorial XCIV / printed XCIII horse case original PDF501. No independent predictive validations or runtime changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04m_CHAPTER_XCIII_COMPLETE.md.
