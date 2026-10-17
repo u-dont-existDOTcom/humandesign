@@ -1,3 +1,9 @@
+# Lilly original source study through mining fortunes — 2026-10-17
+
+After verified GitHub publication **8,649 historical source annotations** (7,583 Lilly + 1,066 Ptolemy). Original first-edition source-body frontier PDF609 of 894 (**68.1% physical page position only**). Printed CHAP CXXVII mineral fortunes recorded as 35 historical conditions and following-source navigation. No real mine discovery/investment outcome evidence, no scoring source promotions. Next unnumbered sixth-house intro and medical aphorisms starts original PDF610. Historic numerical pole tables and independent human testing remain OPEN.
+
+---
+
 # Lilly 1647 historical study through Regiomontanus father figure — 2026-10-17
 
 After authenticated publication the archive contains **8,614 historical source annotations** (7,548 Lilly + 1,066 Ptolemy); original first-edition source frontier PDF609 of 894 (**68.1% by physical page only**, NOT program/empirical completion). Printed CHAP CXXVI parent-native affection plus Regiomontanus attributed father chart construction: 46 source annotations and a separate frozen, structurally tested, incomplete 12-step mathematical-source template. Original Problem 24 and house-pole tables remain unverified; no actual father birth-time recoveries, natal relationship predictions or promoted models. Next printed CXXVII mines on PDF609, unnumbered sixth-house medical source begins PDF610. Numerical references and blind human research separate/open.

@@ -1,3 +1,9 @@
+# Original Lilly mine wealth historical chapter accepted; sixth-house medical section next
+
+2026-10-17 Africa/Dakar UTC+0. Source-only B06c R7549–R7583 prepared, total 7,583 Lilly plus 1,066 Ptolemy = 8,649 archival notes after remote verification. No mined minerals or financial return predictions validated and no runtime rules. NEXT original PDF610 unnumbered sixth-house infirmities and aphorisms.
+
+---
+
 # Original Lilly parent-native/Regiomontanus historical source accepted
 
 2026-10-17 Africa/Dakar UTC+0. B06b source R7503–R7548 guarded index prepared; after remote verification 7,548 Lilly + 1,066 Ptolemy = 8,614 historical documentary notes. The historical 90-/30-degree Regiomontanus procedure is preserved but non-executable until missing pole/table and mathematical parity checked. No actual father birth-time recovery. NEXT printed CXXVII mineral/coal mines first-edition PDF609.
