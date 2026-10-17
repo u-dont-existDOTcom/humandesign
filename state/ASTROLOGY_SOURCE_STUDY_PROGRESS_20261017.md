@@ -1,3 +1,9 @@
+# Original Lilly source progress after infancy/lifespan historical chapter — 2026-10-17
+
+Accepted source through original PDF561 of 894-page volume, approximately **62.8% by scan position**, not rule-table digitization or empirically validated astrological performance. **6,309 Lilly + 1,066 Ptolemy = 7,375** historical annotation records, not distinct human prediction successes. Last chapter covers only first-edition unverified infant-survival/longevity astrology claims and retains contrary lunar-phase branches and a caution against rash death pronouncements. Dense reference-table numeric cell digitization and blinded real-person validation remain OPEN. Next printed Hyleg/Apheta historical life-significator procedure begins PDF561.
+
+---
+
 # Lilly original-source frontier — 2026-10-17 natal prerequisites
 
 Historical source records after authenticated admission **6,244 Lilly + 1,066 Ptolemy = 7,310**. Original first-edition study source frontier through PDF558/894 (~62.4% scan-position only); not a percentage of completed numeric tables or empirical astrology validity. Printed CHAP CII source has 29 accepted documentation clauses, unquantified antiscia/fixed-star proximity thresholds retained. Next printed CHAP CIII on historical infant/lifespan judgments; isolate clinical claims and avoid treating as medical predictions. No new human outcome or runtime promotion; numeric table and blind empirical lanes remain OPEN.

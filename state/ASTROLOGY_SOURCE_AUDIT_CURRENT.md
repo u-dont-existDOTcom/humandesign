@@ -1,3 +1,9 @@
+# First-edition infant lifespan historical chapter documented; Hyleg method next
+
+2026-10-17: 65 first-edition source-only historical annotations R6245–R6309 added locally, cumulative after publication **6,309 Lilly + 1,066 Ptolemy = 7,375**. Original PDF559–561 printed CIII/editorial CIV. Claims about infant survival, new/full Moon, obstetrical complications and parental charts remain historical/unvalidated; author explicitly warns against rash death judgment. Next printed CHAP CIV/editorial CV Hyleg starts original PDF561 bottom. No clinical predictive claims or runtime promotions. Original numeric parity and full blind empirical study OPEN.
+
+---
+
 # First-edition Lilly natal pre-judgment conditions source complete, lifespan chapter next
 
 2026-10-17: first-edition PDF558 printed CII/editorial CIII, 29 historical source-only R6216-R6244 locally accepted, proposed cumulative **6,244 Lilly + 1,066 Ptolemy = 7,310**. Full source image/record archive tests passed, but antiscia/fixed star candidate-orb thresholds unspecified, no empirical predictive outcomes. Next printed CIII/editorial CIV longevity beginning PDF559. Remaining numerical table digitization and blind outcome validation OPEN.
