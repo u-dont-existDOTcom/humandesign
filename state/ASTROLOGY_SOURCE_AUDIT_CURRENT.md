@@ -1,3 +1,9 @@
+# Source-first Lilly original mature-body-build historic chapter complete
+
+2026-10-17 Africa/Dakar UTC+0. Local R6734–R6764 historical source acceptance: 6,764 Lilly + 1,066 Ptolemy = 7,830 after remote readback. 29 substantive clauses, 2 following chapter navigation; no independent person height/weight, clinical or predictive validity and no runtime promotions. First-edition PDF584 completes printed CHAP CXII. Next printed CXIII General Fortune begins PDF585, no actual source annotations admitted for it.
+
+---
+
 # Lilly first-edition Face/Hair source documented; mature body composition next
 
 2026-10-17 Africa/Dakar UTC+0: accepted locally R6672–R6733, 60 historical source annotations plus 2 next-chapter navigation. After verified publication: 6,733 Lilly + 1,066 Ptolemy = 7,799. Explicit climate and country exception, discretionary testimony mixing, unverified sign glyphs and period stereotypes remain qualified. Zero independently validated human outcomes and zero runtime promotions. Next printed CXII starts original PDF583, body bulk/leanness at full age.

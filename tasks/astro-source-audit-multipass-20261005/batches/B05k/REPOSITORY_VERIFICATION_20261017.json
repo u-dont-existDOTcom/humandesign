@@ -1,0 +1,31 @@
+{
+  "batch": "B05k",
+  "date": "2026-10-17",
+  "documentary_source_tests": {
+    "status": "PASS",
+    "cases": 17,
+    "source_images_sha256": true,
+    "zip_full_extract_replay": true
+  },
+  "archival_python_lint": {
+    "status": "PASS",
+    "command": "ruff check B05k/*.py"
+  },
+  "unchanged_project_suite_baseline": {
+    "status": "ONE_PREEXISTING_RELATIONSHIP_ENGINE_FAILURE",
+    "verified_on_parent": "B05j source branch",
+    "pass": 397,
+    "skip": 4,
+    "fail": 1,
+    "failing_case": "tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines",
+    "observed_status": "UNAVAILABLE",
+    "asserted_status": "INSUFFICIENT_BIRTH_DATA",
+    "note": "No changes to src/tests of relationship engine. Avoid redundant unchanged full rerun; see B05j/REPOSITORY_VERIFICATION_20261017.json"
+  },
+  "scientific_result": {
+    "human_weight_validations": 0,
+    "new_predictive_successes": 0,
+    "runtime_promotions": 0
+  },
+  "status": "DOCUMENTARY_BATCH_READY_FOR_CANONICAL_REMOTE_PUBLICATION"
+}

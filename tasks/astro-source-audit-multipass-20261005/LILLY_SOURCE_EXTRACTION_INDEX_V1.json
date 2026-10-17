@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_FACE_HAIR_HISTORIC_DOCUMENTARY_NEXT_BODY_BULK_LEANNESS",
-  "records_count": 6733,
+  "status": "BOOK_III_MATURE_BODY_SIZE_HISTORICAL_DOCUMENTARY_NEXT_GENERAL_FORTUNE",
+  "records_count": 6764,
   "read_numbered_chapters": [
     1,
     2,
@@ -116,7 +116,8 @@
     109,
     110,
     111,
-    112
+    112,
+    113
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -728,26 +729,33 @@
       "records_count": 62,
       "sha256": "e0c657fe6fd384221077d9306a705cca57cb3c814dfc95119aca0b01cafba532",
       "scope": "William Lilly original first-edition printed CHAP CXI/editorial CXII Nature of Signs, Colour of Face and Hair. Source PDF581-583 body, PDF583 next printed CHAP CXII start, later context PDF584-586. 60 selective source-faithful historical clauses and two next chapter navigation records; 11 source groups. Five zodiac stature categories, six complexion source classes, four humours, seasonal complexion and hair, planets, fixed stars and sign/Ascendant ruler fallback. Explicit climate/country exception given by the author, majority/mixing discretion, earlier-Book-I cross-refs and stigmatizing historic disability/appearance characterizations preserved without human verification. Ambiguous glyphs held unresolved; not promoted to any biometric, medical or ancestry model."
+    },
+    {
+      "id": "B05k",
+      "path": "batches/B05k/RULES.json",
+      "records_count": 31,
+      "sha256": "2c090d0237aa9531743f6b18fd7e82241888484d41da0299e1a896d3b2b65a88",
+      "scope": "William Lilly original 1647 printed CHAP CXII/editorial CXIII Of the grossenesse or leannesse of Bodies, PDF583-584 body and PDF585 next printed heading. Mature-age (~30+) frame; five zodiacal sign groups with early/latter part reversals and late Aquarius exception; Ascendant-sign/planet-dignity selection, partile aspects, Almuten unoccupied half-sign fallback, Sun conjunction within orb moiety and absent Mars, explicit agreement and domicile-over-exaltation tiebreakers. Historic atypical-body judgment explicitly declined by author. 29 documentary claims + 2 following navigation, no independently validated human weight/body mass/outcome predictions, no runtime promotion."
     }
   ],
   "next": {
-    "pdf_page": 583,
-    "printed_page_as_seen": 549,
-    "chapter": "CXIII",
-    "printed_chapter_numeral": "CXII",
-    "heading": "Of the grossenesse or leannesse of Bodies",
+    "pdf_page": 585,
+    "printed_page_as_seen": 543,
+    "chapter": "CXIV",
+    "printed_chapter_numeral": "CXIII",
+    "heading": "Of the generall Fortune or Misery of the Native",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "First-edition printed CHAP CXII starts beneath horizontal divider on original PDF frame583, printed folio549. Continues frame584 with printed folio542 (typographical page-number regression). Next printed CHAP CXIII begins PDF585, printed folio543, despite continuous scan/text order.",
-    "research_scope": "Age-specific historical corpulence/leanness rules, first-edition conditions, qualifications and methods. Distinguish source annotations from validated weight or medical predictions."
+    "position": "Separate printed CHAP CXIII starts at the top of first-edition original frame585, folio printed 543 after prior frame584 printed 542; original frame586 has printed552. The end of the general fortune chapter and the unnumbered following second-house riches section require independent boundary review.",
+    "research_scope": "Historical whole-chart fortune/misfortune testimonies, strength/debility qualifications, timing by directions, conditional counterexamples. Do not treat biography fitted after reading a chart as independently valid prediction."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05j_FACE_HAIR.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05k_BODY_BUILD.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -827,5 +835,6 @@
   "chapter_CIX_source_acceptance_note": "31 historical records R6561-R6591; 29 planetary manners claims and 2 next chapter navigation. Physical source PDF573-578, 8 groups. Descriptions of moral conduct/traits remain unsupported by independent human testing. Zero empirical validations and zero runtime promotions.",
   "chapter_CX_source_acceptance_note": "53 historical source annotations R6592-R6644, 50 substantive CIX clauses and 3 next-header/opening navigation records, PDF577-581 witnesses, 18 replayed artifact checks, 12 source groups. No validated actual human intelligence/disability/moral predictions or runtime promotions.",
   "chapter_CXI_source_acceptance_note": "R6645-R6671: 27 source records, 24 chapter claims and 3 following-chapter navigation. Source frames 580-582 hash-authenticated, archive replay 12 tests, zero independent height/physical outcome confirmations and no runtime promotion.",
-  "chapter_CXII_source_acceptance_note": "R6672-R6733, 62 historical documentary annotations: 60 source clauses, 2 next-heading navigation; 11 original-source groups, 6 witness images. No independently measured facial, hair, complexion, stature, ancestry, medical or human biometric predictions validated, no runtime promotions."
+  "chapter_CXII_source_acceptance_note": "R6672-R6733, 62 historical documentary annotations: 60 source clauses, 2 next-heading navigation; 11 original-source groups, 6 witness images. No independently measured facial, hair, complexion, stature, ancestry, medical or human biometric predictions validated, no runtime promotions.",
+  "chapter_CXIII_source_acceptance_note": "R6734-R6764, 31 historical source clauses: 29 body-size and conditional qualifications, 2 next chapter navigation. 13 original source image groups, original frames583-586 SHA-locked. No independently measured weight, anatomy, health or ancestry predictions; no runnable runtime scoring promotion."
 }

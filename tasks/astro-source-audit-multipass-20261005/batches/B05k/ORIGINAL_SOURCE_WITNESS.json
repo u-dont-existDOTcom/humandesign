@@ -1,0 +1,41 @@
+{
+  "batch": "B05k",
+  "source": "William Lilly 1647 original first edition, Wellcome b30338724",
+  "complete_volume_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "body_pdf_frames": [
+    583,
+    584
+  ],
+  "following_chapter_pdf_frame": 585,
+  "folio_note": "Source PDF583 folio549, PDF584 folio542, PDF585 folio543, PDF586 folio552: printed numerals regress but physical chapter content continues; do not rearrange by printed folio.",
+  "images": {
+    "583": {
+      "path": "evidence/pdf_1647-583.jpg",
+      "bytes": 616421,
+      "sha256": "4f38b7d59d4ae8338429e3bcb68dbec77edb08e122f4b17b554cea36b72497e9",
+      "original_printed_folio": "549",
+      "role": "chapter_body"
+    },
+    "584": {
+      "path": "evidence/pdf_1647-584.jpg",
+      "bytes": 610828,
+      "sha256": "09d51818f47a35cd805ec798d15f7fa8abff31e7af35ce667b26ed78b715bb9f",
+      "original_printed_folio": "542",
+      "role": "chapter_body"
+    },
+    "585": {
+      "path": "evidence/pdf_1647-585.jpg",
+      "bytes": 661973,
+      "sha256": "c482d5325843ed7541bd30c4a1eb9416a79d70135a8035d8939a221e2d0d49cc",
+      "original_printed_folio": "543",
+      "role": "following_chapter_context"
+    },
+    "586": {
+      "path": "evidence/pdf_1647-586.jpg",
+      "bytes": 629041,
+      "sha256": "962767e6eb73a1a1bc846d7f58d22286190907e1db51712663e15fe81df263f2",
+      "original_printed_folio": "552",
+      "role": "following_chapter_context"
+    }
+  }
+}

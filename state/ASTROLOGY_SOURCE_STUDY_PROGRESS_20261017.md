@@ -1,3 +1,9 @@
+# Lilly source study after mature body-build, 2026-10-17
+
+7,830 historical/documentary source units after publication (6,764 Lilly + 1,066 Ptolemy), through first-edition frame584 of 894 scans, **65.3% scanned-position proxy only**. 31 source annotations from printed CHAP CXII, two next-heading witnesses, explicit age-after-thirty and mutually qualified planetary conditions retained. No actual human body mass, medical or prospective results validated. Next printed CHAP CXIII General Fortune/Misery begins original PDF585. Numeric tables, historical astrology coding and blind empirical tests remain open.
+
+---
+
 # First-edition Lilly historic source frontier through Face/Hair — 2026-10-17
 
 **7,799 historical source annotations** after verified publication (6,733 Lilly + 1,066 Ptolemy). Original 1647 volume source frontier PDF583/894 (~65.2% of physical scan position only). Printed CHAP CXI Face/Hair/Sign dispositions preserved with 62 historical annotations, including explicit country/climate override and uncertain glyphs. Next printed CHAP CXII begins mid-PDF583, mature-age bulk/leanness. Original folio misprints do not represent missing pages. No independent height, complexion, hair or disability predictions were validated. Numerical tables, runtime rules, strong non-astrological controls and prospective human tests remain open.
