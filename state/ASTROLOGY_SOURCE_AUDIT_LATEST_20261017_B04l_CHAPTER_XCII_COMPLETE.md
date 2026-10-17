@@ -1,0 +1,15 @@
+# William Lilly (1647) original printed Chapter XCI — Captive or Slave (editorial XCII)
+
+2026-10-17 — Africa/Dakar UTC+0. Primary source: Lilly, Christian Astrology, first edition 1647, Wellcome b30338724, complete original PDF SHA-256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b.
+
+**Original source window:** Chapter printed XCI starts near the bottom of original PDF497/printed463 **below the previous imprisonment divider**. It continues to the top of original PDF498/printed464 and ends before the horizontal rule opening printed Chapter XCII, *If one be Bewitched or not*. The actual first-edition original page JPEGs 497 and 498 are individually frozen by bytes and SHA-256. The sentence about a person taken at a particular planetary hour crosses PDF497–498; no scan reordering or duplicate passage invented.
+
+**Authorial claims, with conditional structure:** Lilly treats sixth- or twelfth-house planet presence as an indicator of a captive and, when empty, turns to a planet under the Sun's beams. He judges the hour of capture, claiming adverse planetary rulers imply long detention and favorable rulers short. Explicitly attributing rules to ancient authorities, he states an alleged escape **within one month** for the Sun hour and **in forty days** for Venus; a Mercury hour implies long confinement. The Moon hour depends on its applying contacts and cannot be scored as a single unconditional timing claim. The physical page seam resumes with the Saturn-hour long confinement, Jupiter-hour prompt exit and Mars-hour risk of fetters, beatings or trouble. This section contains stigmatizing period labels for several classes of prisoners; those are not validated present-day classifications.
+
+**Admitted documentary inventory:** 31 original-source annotations **R5308–R5338**, 29 captive/slavery chapter clauses and two separate subsequent-chapter navigation markers; five source passages including the original physical page seam; nineteen unresolved interpretive/evidentiary limits. Source-first and admission tests plus independent ZIP extraction verify exact provenance, not prediction effectiveness. No complete second diplomatic transcription or independent astro-chart calculation.
+
+**After verified research publication:** Lilly **5,338** + Ptolemy **1,066** = **6,404 historical documentary annotations**. Independently confirmed captive/prison release, harm or death events **zero**; new empirical astrological predictive validations **zero**; runtime scoring/model promotions **zero**.
+
+Owner archive saved directly to the Linux Downloads directory as Astrology-Lilly-Chapter-XCII-Captive-Original-20261017.zip. ZIP CRC, individual member SHA-256, full independent extraction and seventeen test replays verified.
+
+**NEXT:** Original printed Chapter XCII / editorial XCIII *If one be Bewitched or not*, beginning original PDF498 after the divider. Its original witchcraft and health claims are not independently established; keep entirely separate from factual medical diagnoses. Research OPEN.

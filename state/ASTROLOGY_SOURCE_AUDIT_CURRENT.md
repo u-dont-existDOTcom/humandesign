@@ -1,3 +1,9 @@
+# Original Lilly research — captive or enslaved person (printed XCI / editorial XCII)
+
+CURRENT 2026-10-17: 31 source-only historical annotations R5308–R5338 locally admitted; after verified research-branch publication cumulative Lilly 5,338 + Ptolemy 1,066 = **6,404**. Next editorial XCIII printed XCII, *If one be Bewitched or not* on original PDF498 after divider. All captivity and harm claims are historical only. No empirical predictive validations or runtime model changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04l_CHAPTER_XCII_COMPLETE.md.
+
+---
+
 # Original Lilly research — editorial Chapter XCI
 
 Locally accepted prison/release historical source R5223-R5307; after remote publication 5,307 Lilly + 1,066 Ptolemy = 6,373 historical annotations. Next editorial XCII printed XCI original PDF497. Empirical predictive validations zero.
