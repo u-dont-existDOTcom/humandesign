@@ -1,3 +1,9 @@
+# Original Lilly mother source historically accepted; childbirth next
+
+2026-10-17 Africa/Dakar UTC+0. B05x mother R7358-R7410 source-only accepted; after GitHub readback 7,410 Lilly + 1,066 Ptolemy = 8,476 historical annotations. No actual mother disease/mortality predictions validated, no runtime source rules. Next printed CXXIII first edition PDF606.
+
+---
+
 # Original 1647 father/patrimony source accepted historically, mother next
 
 2026-10-17 Africa/Dakar UTC+0. B05w first-edition R7296–R7357 locally prepared; after GitHub verification 7,357 Lilly + 1,066 Ptolemy = 8,423 historical records. Unnumbered fourth house did not increment chapter count. No genuine human mortality/paternity/ancestry prediction success or runtime rule promotion. NEXT printed CXXII Of the Mother on PDF604.

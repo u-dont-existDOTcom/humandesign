@@ -1,3 +1,9 @@
+# First-edition Lilly historical source study through mother, 2026-10-17
+
+After authenticated publication **8,476 historical notes** (7,410 Lilly + 1,066 Ptolemy); original first-edition body frontier PDF605 of 894 (**67.7% scanned page position proxy only**). 53 notes preserve printed CHAP CXXII mother significators, sect, favorable and conflicting health/estate conditions and archaic disease claims. Zero independently validated person-level predictions and zero promoted scoring rules. Printed CHAP CXXIII childbirth difficulty is next at PDF606, followed by CXXIIII paternal inheritance later that page. Historical numeric tables and human blind-study lanes remain open.
+
+---
+
 # Lilly source through unnumbered fourth-house father/patrimony — 2026-10-17
 
 Once remotely accepted **8,423 historical documentary annotations** (7,357 Lilly + 1,066 Ptolemy), original first-edition source PDF604/894 (**67.6% scanned position only**). Historical father fourth-house source 62 annotations, sect-specific Sun/Saturn, own father chart preference, conflicting welfare and uncertain glyphs. No real parent socioeconomic, medical or mortality forecasts have been independently verified; no runtime promotions. Next printed CHAP CXXII mother PDF604–605. Numeric tables and blind independent research remain open.
