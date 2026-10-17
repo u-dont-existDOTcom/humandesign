@@ -1,3 +1,9 @@
+# Original Lilly study through mutual parental agreement — 2026-10-17
+
+After authenticated publication **8,568 historical source annotations** (7,502 Lilly + 1,066 Ptolemy). Physical original source-body frontier PDF607 of 894 (**67.9% page position, not empirical program progress**). Printed CHAP CXXV parent-to-parent agreement adds 29 source-only records with daytime Sun/Venus, night Saturn/Moon and contradictory ethical stereotypes. Next CHAP CXXVI parent-to-native love and Regiomontanus father chart reconstruction starts PDF608. No independent outcomes or runtime promotions. Historical astronomical reference numerics and untouched human tests remain unfinished.
+
+---
+
 # First-edition Lilly source through father's inherited estate — 2026-10-17
 
 After authenticated publication **8,539 historical source annotations** (7,473 Lilly + 1,066 Ptolemy), original frontier PDF607 of 894 (**~67.9% scanned page position only**). 33 new original father-inheritance source clauses/navigation, conditional day/night and opposite losses. No real estate outcome validation or scoring rules promoted. Next printed CXXV parental agreement at PDF607. Numerical tables, runtime implementation and blind human research remain separate/open.

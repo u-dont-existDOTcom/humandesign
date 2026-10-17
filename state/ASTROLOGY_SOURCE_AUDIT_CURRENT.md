@@ -1,3 +1,9 @@
+# First-edition parental-agreement source complete; Regiomontanus method next
+
+2026-10-17 Africa/Dakar UTC+0. B06a R7474–R7502 first-edition source-only locally prepared, after verified remote publication 7,502 Lilly + 1,066 Ptolemy = 8,568 historical notes. No real family concord predictions or runtime rule promotions. NEXT printed CXXVI original PDF608 containing parent-native affection and Regiomontanus astronomical geometry.
+
+---
+
 # Lilly paternal-inheritance documentary source complete, parent agreement next
 
 2026-10-17 Africa/Dakar UTC+0. Source-only B05z R7441–R7473 prepared: after verified GitHub push 7,473 Lilly + 1,066 Ptolemy = 8,539 historical annotations. No actual human inheritance predictions validated, no scoring rules. Next printed CHAP CXXV parents' agreement lower PDF607.
