@@ -1,0 +1,33 @@
+{
+  "batch": "B05j",
+  "checked_utc": "2026-10-17",
+  "source_specific_tests": {
+    "status": "PASS",
+    "local_cases": 23,
+    "archive_replayed_cases": 23,
+    "crc_pass": true,
+    "per_member_sha256_pass": true
+  },
+  "source_python_lint": {
+    "status": "PASS",
+    "tool": "ruff check for B05j archival authoring and test scripts"
+  },
+  "repository_suite": {
+    "status": "ONE_PREEXISTING_UNRELATED_FAILURE",
+    "command": "/home/joel/humandesign/.venv/bin/python -m pytest -q",
+    "passed": 397,
+    "skipped": 4,
+    "failed": 1,
+    "failed_case": "tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines",
+    "asserted": "astro_rrf_directional_v0_4 status INSUFFICIENT_BIRTH_DATA",
+    "observed": "astro_rrf_directional_v0_4 status UNAVAILABLE",
+    "independent_preexisting_baseline": "same test and assertion reproduced on prior B05g historical-source commit 9b3bfb8c, documented in B05h/REPOSITORY_VERIFICATION_20261017.json",
+    "attribution": "not a failure in the Lilly first-edition image source annotations"
+  },
+  "scientific_scope": {
+    "validated_human_predictions": 0,
+    "medical_ancestry_validations": 0,
+    "runtime_promotions": 0
+  },
+  "disposition": "Leave unrelated relationship-engine assertion unfixed in source-documentary lane; retain exact known failing test and comprehensive results."
+}

@@ -1,3 +1,5 @@
+**SUPERSEDED FOR ACTIVE CONTINUATION:** See `CONTINUATION_HANDOFF_ACCEPTED_20261017.md` for the verified later canonical frontier and next-work instructions. This document describes the earlier R6671 source-window-only checkpoint.
+
 # HumanDesign astrology research continuation — first-edition sign/face/hair source boundary
 
 2026-10-17 — Africa/Dakar (UTC+0).

@@ -1,0 +1,68 @@
+{
+  "batch": "B05j",
+  "original_1647_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "image_order_rule": "Use original PDF frame order, never the inconsistent printed folio numbers",
+  "source_body_original_pdf_frames": [
+    581,
+    582,
+    583
+  ],
+  "first_next_chapter_heading_pdf_frame": 583,
+  "later_context_only": [
+    584,
+    585,
+    586
+  ],
+  "printed_folio_sequence": [
+    "539",
+    "548",
+    "549",
+    "542",
+    "543",
+    "552"
+  ],
+  "images": {
+    "581": {
+      "pdf_frame": 581,
+      "image_sha256": "b57cb401efc58226031ad89c988f53ac52fe9bed06459b999c17f6771d3e0dec",
+      "bytes": 592993,
+      "printed_folio": "539",
+      "role": "body"
+    },
+    "582": {
+      "pdf_frame": 582,
+      "image_sha256": "e9a80d0b46b42a250c06b428d7ba303794388feee7b44631a725a9d0e635873f",
+      "bytes": 633637,
+      "printed_folio": "548",
+      "role": "body"
+    },
+    "583": {
+      "pdf_frame": 583,
+      "image_sha256": "4f38b7d59d4ae8338429e3bcb68dbec77edb08e122f4b17b554cea36b72497e9",
+      "bytes": 616421,
+      "printed_folio": "549",
+      "role": "body"
+    },
+    "584": {
+      "pdf_frame": 584,
+      "image_sha256": "09d51818f47a35cd805ec798d15f7fa8abff31e7af35ce667b26ed78b715bb9f",
+      "bytes": 610828,
+      "printed_folio": "542",
+      "role": "later_chapter_context"
+    },
+    "585": {
+      "pdf_frame": 585,
+      "image_sha256": "c482d5325843ed7541bd30c4a1eb9416a79d70135a8035d8939a221e2d0d49cc",
+      "bytes": 661973,
+      "printed_folio": "543",
+      "role": "later_chapter_context"
+    },
+    "586": {
+      "pdf_frame": 586,
+      "image_sha256": "962767e6eb73a1a1bc846d7f58d22286190907e1db51712663e15fe81df263f2",
+      "bytes": 629041,
+      "printed_folio": "552",
+      "role": "later_chapter_context"
+    }
+  }
+}

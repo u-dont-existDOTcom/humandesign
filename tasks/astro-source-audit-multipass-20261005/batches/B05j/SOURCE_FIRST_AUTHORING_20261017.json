@@ -1,0 +1,670 @@
+{
+  "batch": "B05j",
+  "status": "SOURCE_FIRST_AUTHORING_NOT_YET_ADMITTED",
+  "description": "Lilly Christian Astrology original first edition 1647 printed CHAP CXI (editorial CXII), signs/face/hair/colour",
+  "original_primary_source": "Wellcome Collection b30338724 original PDF frames 581–583, following context up to 586, physical sequence authoritative",
+  "authoring_scope": "Original image grounded brief anchors/paraphrases, not a full diplomatic transcription. Highly qualified and potentially stigmatizing historic claims.",
+  "independent_validations": 0,
+  "runtime_promotions": 0,
+  "source_groups": [
+    {
+      "source_span": "B05j-S001",
+      "original_pdf_frames": [
+        581
+      ],
+      "scope": "Printed chapter CXI start and Book I cross-reference",
+      "claims": [
+        {
+          "id": "R6672",
+          "role": "heading",
+          "anchor_not_diplomatic": "CHAP CXI / Nature of the Signes; Colour of the Face and Haire",
+          "meaning_historical_only": "The next standalone chapter begins below a divider on original frame 581; its subject combines sign-based body form with purported hair and facial colouring.",
+          "confidence_class": "navigation",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6673",
+          "role": "cross_reference",
+          "anchor_not_diplomatic": "This is sufficiently handled in our Introduction",
+          "meaning_historical_only": "Lilly explicitly refers readers to Book I, printed pages 93–99, instead of claiming these descriptions are independent new source findings.",
+          "confidence_class": "cross-reference",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    },
+    {
+      "source_span": "B05j-S002",
+      "original_pdf_frames": [
+        581
+      ],
+      "scope": "Five grouped zodiacal stature judgments",
+      "claims": [
+        {
+          "id": "R6674",
+          "role": "zodiac_stature",
+          "anchor_not_diplomatic": "Aries Taurus Libra Scorpio / moderate Stature",
+          "meaning_historical_only": "Aries, Taurus, Libra and Scorpio are grouped as moderate but somewhat taller stature; source categories are not measured heights.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6675",
+          "role": "zodiac_stature",
+          "anchor_not_diplomatic": "Leo Virgo Sagittarius / Body more tall",
+          "meaning_historical_only": "Leo, Virgo and Sagittarius are grouped together as allegedly taller stature.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6676",
+          "role": "zodiac_stature",
+          "anchor_not_diplomatic": "Cancer Capricorn Pisces / A Short",
+          "meaning_historical_only": "Cancer, Capricorn and Pisces are grouped together as allegedly shorter stature.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6677",
+          "role": "zodiac_stature",
+          "anchor_not_diplomatic": "Gemini / Indifferent",
+          "meaning_historical_only": "Gemini is assigned an indeterminate/intermediate stature category, not a precise height interval.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6678",
+          "role": "zodiac_stature",
+          "anchor_not_diplomatic": "Aquarius / A moderate proportion",
+          "meaning_historical_only": "Aquarius is associated with moderate body proportion rather than a numeric height; distinguish proportions from the other stature bins.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    },
+    {
+      "source_span": "B05j-S003",
+      "original_pdf_frames": [
+        581
+      ],
+      "scope": "Six separate sources for alleged colouring",
+      "claims": [
+        {
+          "id": "R6679",
+          "role": "source_selection",
+          "anchor_not_diplomatic": "First ... Planets in the ascendant",
+          "meaning_historical_only": "The author's first testimony for colours is planets in the Ascendant, explicitly referring readers to his Book I pages 57–83 for planetary colour attributions.",
+          "confidence_class": "cross-reference",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6680",
+          "role": "source_selection",
+          "anchor_not_diplomatic": "Secondly ... Signe ascending and intercepted",
+          "meaning_historical_only": "The rising sign and an intercepted sign, where present, are separately named as colour testimonies.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6681",
+          "role": "source_selection",
+          "anchor_not_diplomatic": "Thirdly, from the Lords thereof",
+          "meaning_historical_only": "Rulers of the rising/intercepted signs are additional testimonies; they are not interchangeable with planets physically in the first house.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6682",
+          "role": "source_selection",
+          "anchor_not_diplomatic": "Fourthly ... partilly beholding the degree ascending",
+          "meaning_historical_only": "Planets in partile aspect to the Ascendant degree or its ruler supply another condition; 'partile' is not an unconstrained aspect.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6683",
+          "role": "source_selection",
+          "anchor_not_diplomatic": "Fifthly ... fixed Starres arising",
+          "meaning_historical_only": "Fixed stars rising with the Ascendant are alleged to share colour indications attributed to planets of analogous nature.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6684",
+          "role": "source_selection",
+          "anchor_not_diplomatic": "Sixthly, from the temperament",
+          "meaning_historical_only": "The four traditional humours are used as another purported appearance source; this historical physiology is not a modern measurement.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    },
+    {
+      "source_span": "B05j-S004",
+      "original_pdf_frames": [
+        581
+      ],
+      "scope": "Humour-based facial complexion claims and planetary conditions",
+      "claims": [
+        {
+          "id": "R6685",
+          "role": "humour",
+          "anchor_not_diplomatic": "Sanguine complexions ... faire or cleer",
+          "meaning_historical_only": "The sanguine temperament receives a light/clear complexion stereotype in Lilly's historical classification.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6686",
+          "role": "humour",
+          "anchor_not_diplomatic": "Phlegmatick are pale",
+          "meaning_historical_only": "Lilly assigns pallor to a phlegmatic temperament under the historical four-humour scheme; this is not modern physiology.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6687",
+          "role": "humour",
+          "anchor_not_diplomatic": "Cholerick are yellow or red",
+          "meaning_historical_only": "The choleric temperament is assigned yellow/red complexion, contrasting with other humours.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6688",
+          "role": "humour",
+          "anchor_not_diplomatic": "Melanchollick are black",
+          "meaning_historical_only": "The melancholic temperament is assigned dark complexion within 17th-century humoral terminology; not a factual classification of people.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6689",
+          "role": "positive_modifier",
+          "anchor_not_diplomatic": "one or both the Fortunes in the ascendant",
+          "meaning_historical_only": "Presence of one or both benefic planets at the Ascendant is described as improving appearance/colour judgments.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6690",
+          "role": "negative_modifier",
+          "anchor_not_diplomatic": "the Infortunes both ... uncomely",
+          "meaning_historical_only": "Lilly attributes unattractive appearance to both malefics at the Ascendant; this is an unverified, potentially stigmatizing stereotype.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    },
+    {
+      "source_span": "B05j-S005",
+      "original_pdf_frames": [
+        581,
+        582
+      ],
+      "scope": "Season, mixing, testimony tally and climate/country exception",
+      "claims": [
+        {
+          "id": "R6691",
+          "role": "season_modifier",
+          "anchor_not_diplomatic": "Septentrionall Signes ... cheerfull colour",
+          "meaning_historical_only": "The northern signs and additional named signs are connected to cheerful colouring; the complete glyph list needs further paleographic confirmation before formal sign-code transcription.",
+          "confidence_class": "source-qualified",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6692",
+          "role": "season_modifier",
+          "anchor_not_diplomatic": "Winter Signes ... Countenance more sad",
+          "meaning_historical_only": "Winter signs and domiciles of the malefics are said to suggest a sadder appearance; do not convert expression into a psychological state prediction.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6693",
+          "role": "colour_palette",
+          "anchor_not_diplomatic": "onely White, Black, Yellow, Red",
+          "meaning_historical_only": "The printed text uses a four-colour base palette for the historical mixing procedure.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6694",
+          "role": "colour_mixture",
+          "anchor_not_diplomatic": "all the rest come by mixture",
+          "meaning_historical_only": "Intermediate colours are described as mixtures of the four bases rather than new primitive categories.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6695",
+          "role": "scoring_procedure",
+          "anchor_not_diplomatic": "Assigne to every Significator his severall colour",
+          "meaning_historical_only": "Lilly says to assign colours to each qualifying significator before combining judgments, rather than selecting a single symbol post hoc.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6696",
+          "role": "scoring_procedure",
+          "anchor_not_diplomatic": "according to the greater number so judge",
+          "meaning_historical_only": "A majority-of-testimonies instruction is given, but no calibrated measurement or conflict threshold is supplied.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6697",
+          "role": "scoring_procedure",
+          "anchor_not_diplomatic": "having judiciously framed a right mixture",
+          "meaning_historical_only": "The author allows a discretionary overall blending after the tally, creating considerable flexibility that future test design must freeze.",
+          "confidence_class": "limitation",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6698",
+          "role": "geographic_override",
+          "anchor_not_diplomatic": "consideration ... Climate or Country",
+          "meaning_historical_only": "Lilly explicitly instructs accounting for local climate/country in any appearance judgment, contradicting a simple universal chart-only colouring rule.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6699",
+          "role": "geographic_example",
+          "anchor_not_diplomatic": "if he be a Spaniard your judgment will faile",
+          "meaning_historical_only": "A Spain-based example admits that a purported fair-colour chart judgment may fail owing to place; the example reflects historical cultural stereotypes.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6700",
+          "role": "geographic_example",
+          "anchor_not_diplomatic": "the Danes are faire or red-haired",
+          "meaning_historical_only": "Denmark-based stereotyped colouring is offered as a contrary geographic example; it provides neither validated ancestry inference nor independent predictive evidence.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    },
+    {
+      "source_span": "B05j-S006",
+      "original_pdf_frames": [
+        582
+      ],
+      "scope": "Five factors of facial proportion and members",
+      "claims": [
+        {
+          "id": "R6701",
+          "role": "facial_proportions",
+          "anchor_not_diplomatic": "Signe ascending and his Lord",
+          "meaning_historical_only": "Both rising sign and Ascendant ruler are named as sources for facial and bodily proportions.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6702",
+          "role": "facial_proportions",
+          "anchor_not_diplomatic": "the Planets ... configurations ... ascendant",
+          "meaning_historical_only": "Planets and their configurations in relation to the Ascendant are separately mentioned.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6703",
+          "role": "facial_proportions",
+          "anchor_not_diplomatic": "the Sun and Moon",
+          "meaning_historical_only": "Both luminaries constitute another source of face/member proportion testimonies.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6704",
+          "role": "facial_proportions",
+          "anchor_not_diplomatic": "the quarter of the yeer",
+          "meaning_historical_only": "Birth season is expressly counted as another variable; do not confuse it with weather affecting measured skin tone.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6705",
+          "role": "facial_proportions",
+          "anchor_not_diplomatic": "fixed Starres in the ascendant",
+          "meaning_historical_only": "Stars rising with the Ascendant are cited as a fifth appearance factor, with no specified orb in this passage.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    },
+    {
+      "source_span": "B05j-S007",
+      "original_pdf_frames": [
+        582
+      ],
+      "scope": "Humane signs and sign-group facial assessments",
+      "claims": [
+        {
+          "id": "R6706",
+          "role": "facial_sign_group",
+          "anchor_not_diplomatic": "Humane Signes ascending ... Gemini Virgo",
+          "meaning_historical_only": "Human-form zodiac signs are linked to favorable/clear complexions; text includes the first part of Sagittarius and Aquarius, requiring position-specific interpretation.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6707",
+          "role": "facial_sign_group",
+          "anchor_not_diplomatic": "Taurus Scorpio Capricorn Pisces ... deformity",
+          "meaning_historical_only": "Other named signs plus latter portions of Aries and Leo are linked to derogatory form stereotypes; the exact glyph sequence is visually delicate and should not be encoded as an unreviewed deterministic sign list.",
+          "confidence_class": "source-qualified",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    },
+    {
+      "source_span": "B05j-S008",
+      "original_pdf_frames": [
+        582
+      ],
+      "scope": "Planetary testimony, afflicted states, and appearance/harm claims",
+      "claims": [
+        {
+          "id": "R6708",
+          "role": "planetary_favour",
+          "anchor_not_diplomatic": "Jupiter and Venus ... best Complexions",
+          "meaning_historical_only": "Jupiter and Venus are favored in the source's subjective appearance judgments, not verified attractiveness predictors.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6709",
+          "role": "planetary_favour",
+          "anchor_not_diplomatic": "Mercury and Moon the next",
+          "meaning_historical_only": "Mercury and Moon are secondary favorable appearance testimonies relative to Jupiter and Venus.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6710",
+          "role": "planetary_exception",
+          "anchor_not_diplomatic": "yet if they be evill Planets ... ill Faces",
+          "meaning_historical_only": "The same planetary testimonies may be reversed according to unfavorable conditions; no unconditional benefic-only reading is justified.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6711",
+          "role": "planetary_exception",
+          "anchor_not_diplomatic": "when no way afflicted ... handsome Face",
+          "meaning_historical_only": "Absence of affliction is an explicit favorable qualifier, separate from mere planetary name.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6712",
+          "role": "negative_configuration",
+          "anchor_not_diplomatic": "Saturn Mars ... unlucky configuration",
+          "meaning_historical_only": "Saturn, Mars and their adverse configurations to the Ascendant are blamed for unflattering appearance; a historically stigmatizing and unverified claim.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6713",
+          "role": "negative_configuration",
+          "anchor_not_diplomatic": "an Infortune in the ascendant ... a Scarre",
+          "meaning_historical_only": "Saturn, Mars or the south lunar node at the Ascendant are alleged to mark facial scarring; not clinical or forensic evidence.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6714",
+          "role": "luminary_dignity",
+          "anchor_not_diplomatic": "Sun and Moon well dignified shew fairenesse",
+          "meaning_historical_only": "Well-dignified Sun/Moon are said to imply fairness, not a validated skin tone prediction.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6715",
+          "role": "sun_exception",
+          "anchor_not_diplomatic": "yet Sun gives proportion not pulchritude",
+          "meaning_historical_only": "The Sun is qualified as a form/proportion testimony rather than necessarily a beauty testimony.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6716",
+          "role": "alleged_health",
+          "anchor_not_diplomatic": "Where the Lights are both impedited ... Eyes",
+          "meaning_historical_only": "Lilly associates impaired luminaries with eye harm, an unverified medical assertion.",
+          "confidence_class": "medical-historical-only",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6717",
+          "role": "alleged_disability",
+          "anchor_not_diplomatic": "Infortunes are joyned together ... deforme the Body",
+          "meaning_historical_only": "A complex, partly glyph-ambiguous malefic/light/latitude clause alleges bodily impairment and disease; preserve as authored history and do not promote to disability diagnosis.",
+          "confidence_class": "medical-historical-only",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    },
+    {
+      "source_span": "B05j-S009",
+      "original_pdf_frames": [
+        582,
+        583
+      ],
+      "scope": "Four seasonal body-and-hair stereotypes",
+      "claims": [
+        {
+          "id": "R6718",
+          "role": "seasonal_form",
+          "anchor_not_diplomatic": "Vernall Signes ... faire forme",
+          "meaning_historical_only": "Spring signs are alleged to produce attractive form, abundant/lovely hair and sanguine complexion.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6719",
+          "role": "seasonal_form",
+          "anchor_not_diplomatic": "AEstivall Signes ... members more grosse",
+          "meaning_historical_only": "Summer signs are described as bulkier, with medium height, abundant hair, large eyes and choleric complexion.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6720",
+          "role": "seasonal_form",
+          "anchor_not_diplomatic": "Autumnall Signes ... leane bodies",
+          "meaning_historical_only": "Autumn signs are said to indicate a lean body, spreading hair, fair eyes, moderate height and melancholic complexion.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6721",
+          "role": "seasonal_form",
+          "anchor_not_diplomatic": "Hybernall Signes ... Haire ... but thin",
+          "meaning_historical_only": "Winter signs are linked to moderate bodily form, dark complexion, spread-but-thin hair and phlegmatic temperament.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    },
+    {
+      "source_span": "B05j-S010",
+      "original_pdf_frames": [
+        583
+      ],
+      "scope": "Fixed stars, Mercury/Venus and the remaining stature qualification rules",
+      "claims": [
+        {
+          "id": "R6722",
+          "role": "fixed_star",
+          "anchor_not_diplomatic": "fixed Starres assist in pulchritude or deformity",
+          "meaning_historical_only": "The nature of a fixed star's associated planet is said to modify favorable/negative appearance; this introduces another non-quantified testimony.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6723",
+          "role": "planet_stature",
+          "anchor_not_diplomatic": "Mercury or Venus ... Houses or Exaltations",
+          "meaning_historical_only": "Mercury or Venus in domicile/exaltation and aspecting the Ascendant is said to imply tall stature.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6724",
+          "role": "planet_stature",
+          "anchor_not_diplomatic": "contrary ... Falls or Detriment",
+          "meaning_historical_only": "Their fall/detriment is treated as the contrary case, requiring separate dignity-state consideration.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6725",
+          "role": "planet_stature",
+          "anchor_not_diplomatic": "Saturn Jupiter Mars ... Retrograde",
+          "meaning_historical_only": "Saturn, Jupiter and Mars in fall, detriment or retrograde are associated with medium-to-short height; this is an uncalibrated relative predicate.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6726",
+          "role": "planet_stature_exception",
+          "anchor_not_diplomatic": "not Retrograde ... vary not the stature",
+          "meaning_historical_only": "An additional nonretrograde qualification restricts prior stature variation under fall/detriment, a conditional complication that should not be discarded.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6727",
+          "role": "selection_fallback",
+          "anchor_not_diplomatic": "If no Planet doe partilly behold the Lord",
+          "meaning_historical_only": "When no planet forms a partile aspect to the Ascendant ruler, its own state becomes the fallback for stature judgment.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6728",
+          "role": "selection_fallback",
+          "anchor_not_diplomatic": "Signe he is in not considered, if he be direct",
+          "meaning_historical_only": "A direct Ascendant ruler is treated differently from its sign-based retrograde/fall fallback; the exact grammatical scope should remain unresolved before executable coding.",
+          "confidence_class": "source-qualified",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6729",
+          "role": "selection_fallback",
+          "anchor_not_diplomatic": "If he be Retrograde and in his Fall",
+          "meaning_historical_only": "For a retrograde Ascendant ruler in fall, Lilly says to infer stature from the sign rather than the planet's own nature.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6730",
+          "role": "luminary_fallback",
+          "anchor_not_diplomatic": "Luminaries having power and dignity in the Horoscope",
+          "meaning_historical_only": "When luminaries dominate the horoscope, stature is said to follow their zodiac sign.",
+          "confidence_class": "historical",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6731",
+          "role": "mercury_override",
+          "anchor_not_diplomatic": "Mercury having dominion ... Dispositor",
+          "meaning_historical_only": "If Mercury dominates the Ascendant, Lilly directs stature judgment through Mercury's dispositor, echoing the prior chapter and needing dependency deduplication.",
+          "confidence_class": "cross-reference",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    },
+    {
+      "source_span": "B05j-S011",
+      "original_pdf_frames": [
+        583
+      ],
+      "scope": "Following printed chapter only",
+      "claims": [
+        {
+          "id": "R6732",
+          "role": "next_chapter_navigation",
+          "anchor_not_diplomatic": "CHAP CXII Of the grossenesse or leannesse of Bodies",
+          "meaning_historical_only": "A separate numbered chapter begins below the divider on original frame 583; this heading is navigation, not an admitted sign/colour rule.",
+          "confidence_class": "navigation",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        },
+        {
+          "id": "R6733",
+          "role": "next_chapter_navigation",
+          "anchor_not_diplomatic": "after a full age, or about thirty yeers",
+          "meaning_historical_only": "The next chapter's opening restricts what it calls bulk or leanness to a mature-age condition; its complete method is left for the next batch.",
+          "confidence_class": "navigation",
+          "accepted_as_human_prediction": false,
+          "source_original_not_redistributed_as_legal_or_medical_finding": true
+        }
+      ]
+    }
+  ]
+}

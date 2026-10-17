@@ -1,3 +1,9 @@
+# First-edition Lilly historic source frontier through Face/Hair — 2026-10-17
+
+**7,799 historical source annotations** after verified publication (6,733 Lilly + 1,066 Ptolemy). Original 1647 volume source frontier PDF583/894 (~65.2% of physical scan position only). Printed CHAP CXI Face/Hair/Sign dispositions preserved with 62 historical annotations, including explicit country/climate override and uncertain glyphs. Next printed CHAP CXII begins mid-PDF583, mature-age bulk/leanness. Original folio misprints do not represent missing pages. No independent height, complexion, hair or disability predictions were validated. Numerical tables, runtime rules, strong non-astrological controls and prospective human tests remain open.
+
+---
+
 # First-edition Lilly historical study through Stature, 2026-10-17
 
 After authenticated publication **7,737** source annotations (6,671 Lilly + 1,066 Ptolemy). First-edition source frontier PDF581/894 (~65.0% by scan position; NOT numerical transcription or completed evidence). Stature and body-form chapter preserved with 27 historical-only annotations. PDF581 includes the start of next original printed CHAP CXI on sign, facial colour and hair; must retain period caveats and never presume predictive validity or ethnic classification. All independent validation and model runtime promotion in this source lane remain at zero.

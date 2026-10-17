@@ -1,3 +1,9 @@
+# Lilly first-edition Face/Hair source documented; mature body composition next
+
+2026-10-17 Africa/Dakar UTC+0: accepted locally R6672–R6733, 60 historical source annotations plus 2 next-chapter navigation. After verified publication: 6,733 Lilly + 1,066 Ptolemy = 7,799. Explicit climate and country exception, discretionary testimony mixing, unverified sign glyphs and period stereotypes remain qualified. Zero independently validated human outcomes and zero runtime promotions. Next printed CXII starts original PDF583, body bulk/leanness at full age.
+
+---
+
 # First-edition Lilly Stature original historical source accepted
 
 2026-10-17 Africa/Dakar UTC+0: records R6645–R6671 incorporated in historical-only source index, 6,671 Lilly + 1,066 retained Ptolemy = 7,737 after verified remote publication. Source frontier PDF581/894 scan position; no real-person height or health validation, no clinical/biometric assumptions, no runtime promotions. Following CHAP CXI nature of signs, face and hair starts mid original PDF581 (misprinted folio 539).

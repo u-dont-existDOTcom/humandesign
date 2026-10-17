@@ -44,9 +44,19 @@ class FrozenSourceWindow(unittest.TestCase):
         index_path = B.parents[1] / "LILLY_SOURCE_EXTRACTION_INDEX_V1.json"
         if index_path.is_file():
             index = json.loads(index_path.read_text())
-            self.assertEqual(index["records_count"], 6671)
-            self.assertEqual(index["next"]["pdf_page"], 581)
-            self.assertEqual(index["batches"][-1]["id"], "B05i")
+            # This witness records the original R6671 *source-window* baseline.
+            # Later successful append-only source admission legitimately advances
+            # the canonical index; it must not rewrite this frozen witness.
+            self.assertIn(index["records_count"], (6671, 6733))
+            if index["records_count"] == 6671:
+                self.assertEqual(index["next"]["pdf_page"], 581)
+                self.assertEqual(index["batches"][-1]["id"], "B05i")
+            else:
+                self.assertEqual(index["next"]["pdf_page"], 583)
+                self.assertEqual(index["batches"][-1]["id"], "B05j")
+                self.assertEqual(index["batches"][-1]["records_count"], 62)
+            self.assertEqual(index["empirical_validations"], 0)
+            self.assertEqual(index["runtime_promotions"], 0)
 
     def test_not_biometric_or_clinical_evidence(self):
         a = self.w["admission"]
