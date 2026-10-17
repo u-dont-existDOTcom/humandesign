@@ -1,0 +1,28 @@
+{
+  "batch": "B05n",
+  "source_review": {
+    "original_images_sha256_pass": true,
+    "source_to_record_mapping": true,
+    "source_tests_passed": 24,
+    "archive_replay_passed": 24,
+    "ruff_source_scripts": "PASS"
+  },
+  "known_project_wide_status": {
+    "status": "PREEXISTING_UNRELATED_RELATIONSHIP_ENGINE_ASSERTION_FAILURE",
+    "existing_baseline": "B05j and B05h archived evidence",
+    "prior_full_test_summary": {
+      "passed": 397,
+      "skipped": 4,
+      "failed": 1
+    },
+    "failing_test": "tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines",
+    "scope": "source-only records and state files; no relationship engine code changed"
+  },
+  "scientific_status": {
+    "human_wealth_validations": 0,
+    "inheritance_forecast_successes": 0,
+    "runtime_promotions": 0
+  },
+  "next": "Printed CXV causes-of-estate original PDF588 onward, retain all planetary and zodiac/house attribution table cells",
+  "status": "DOCUMENTARY_PASS_PENDING_GITHUB_PUBLICATION"
+}

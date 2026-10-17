@@ -1,3 +1,9 @@
+# Lilly 1647 historical source through numbered Whether Rich — 2026-10-17
+
+**7,976 historical annotations** after authenticated publication (6,910 Lilly + 1,066 Ptolemy). Original first edition source-body frontier PDF588 of 894 (~65.8% scanned-position proxy, NOT science completion). Printed CHAP CXIIII Whether Rich: 57 documentary records with explicit testimony strength tiers, qualified wealth and poverty branches, uncertain fixed-star/operator and glyph conditions, separate causes of inheritance. Following printed CHAP CXV begins PDF588 and has extensive planet-person-matter, zodiac-sign and house correspondence tables to preserve. No new independent human economic outcomes, source-lane runtime promotion or new rule validity. Numeric astronomy and blind comparisons remain OPEN.
+
+---
+
 # Lilly original 1647 historical study through unnumbered second house — 2026-10-17
 
 After publication **7,919 source annotations** (6,853 Lilly + 1,066 Ptolemy), original first-edition PDF587/894 (**65.7% scanned-page position proxy**), not empirical research progress or rule-table completeness. Unnumbered second house of riches extracted with 45 historical notes. Original printed CHAP CXIIII begins lower PDF587; no independent actual-person wealth prediction has been tested, no source-lane runtime promotions. Outstanding dense numerical tables, rule coding and blinded tests.

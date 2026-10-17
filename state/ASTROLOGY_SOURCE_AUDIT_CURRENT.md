@@ -1,3 +1,9 @@
+# Original Lilly 1647 Whether Rich historic source admitted; source-of-estate next
+
+2026-10-17 Africa/Dakar UTC+0. R6854–R6910 source-first accepted locally with 55 historic claims and 2 following navigation. After verified publication 6,910 Lilly + 1,066 Ptolemy = 7,976 documentary records. Regulus/Spica, glyph and contrary-outcome ambiguity retained. No independent financial/inheritance success and no scoring runtime promotions. NEXT printed CHAP CXV From whence estate or poverty, lower original PDF588.
+
+---
+
 # Lilly unnumbered natal second-house riches historical documentation accepted
 
 2026-10-17 Africa/Dakar UTC+0. R6809-R6853 accepted as 43 historical source clauses and 2 following-chapter navigation. Archive after remote verification: 6,853 Lilly + 1,066 Ptolemy = 7,919. Ptolemy source attribution preserved as unverified, no financial/outcome blind predictive success or runtime promotion. Next original printed CXIIII Whether Rich begins PDF587.
