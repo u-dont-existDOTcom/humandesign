@@ -1,3 +1,9 @@
+# Lilly original Lord-of-Geniture alternatives documented; temperament next
+
+2026-10-17: B05d historic source annotations R6384–R6415 locally accepted, to reach **6,415 Lilly +1,066 Ptolemy = 7,481** after remote publication. Source offers rejected next-sign approach, alternative aggregate dignity, preferred combined essential+accidental strength and near-equal blend, and Greek Moon/Mercury basis. None has independent behavioral validation or executable-scoring promotion. Next original printed CVI / editorial CVII temperament PDF566–568. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05d_LORD_GENITURE.md.
+
+---
+
 # Lilly Hyleg historical source documented with explicit author doubt; Lord of Geniture next
 
 2026-10-17: 74 historical first edition annotations R6310-R6383 locally admitted, after authenticated remote publication total **6,383 Lilly + 1,066 Ptolemy = 7,449**. Original PDF561-565 printed CIV/editorial CV, next printed CHAP CV starts PDF565 lower. Distinct Hyleg, Anareta and Alcochodon alternative selection branches and original explicit negative assessment are recorded. No individual clinical/natal predictive validation or runtime promotion. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05c_HYLEG_SOURCE.md.
