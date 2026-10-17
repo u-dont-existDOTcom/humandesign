@@ -1,3 +1,9 @@
+# Original Lilly source research — editorial XC
+
+Historical original source accepted locally: Lilly 5,222 + retained Ptolemy 1,066 = 6,288 once remote verified. Next XCI original printed XC PDF495. No new empirical validations.
+
+---
+
 # Original Lilly source research — friendship
 
 2026-10-16: LXXXIX editorial (printed LXXXVIII), 32 historical records locally accepted. Once published 5,193 Lilly + 1,066 Ptolemy = 6,259 historical records; next editorial XC printed LXXXIX original PDF494. No empirical forecast validation. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04i_CHAPTER_LXXXIX_COMPLETE.md.
