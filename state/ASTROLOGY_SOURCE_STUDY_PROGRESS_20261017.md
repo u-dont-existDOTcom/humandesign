@@ -1,3 +1,9 @@
+# Lilly historical source through marriage time directions — 2026-10-17
+
+After authenticated publication **9,092 historical annotations** (8,026 Lilly + 1,066 Ptolemy); physical source frontier PDF624/894 (**69.8% by original scanned position, not entire science completion**). Printed CXXXI ease and time of marriage adds 83 source annotations and non-executable 14-step primary-directions specification. No exact historic direction/arc-to-calendar calculation implemented; no independent marriage date prediction validated. Next printed CXXXII number of wives lower PDF624 through upper PDF626. Numeric astronomy/Regiomontanus and blind participant studies remain OPEN.
+
+---
+
 # Lilly original source through unnumbered seventh-house marriage — 2026-10-17
 
 After authenticated publication **9,009 historical source annotations** (7,943 Lilly + 1,066 Ptolemy), original first-edition source frontier PDF623/894 (**69.7% scanned page position only**, not program completion). The unnumbered seventh-house male marriage introduction adds 66 historic annotated assertions including opposing Saturn and Venus/Moon configurations, explicit insufficiency of lone Moon-Saturn adverse contact, fecundity/reception and historical moral stereotypes. Next separately printed CXXXI on ease of obtaining wife starts middle PDF623. No independent marriage predictions and no promoted source rules. Numeric data and blind human tests remain OPEN.

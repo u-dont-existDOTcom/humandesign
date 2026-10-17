@@ -1,0 +1,139 @@
+{
+  "schema": "LILLY_CXXXI_MARRIAGE_DIRECTIONS_HISTORICAL_SOURCE_V1",
+  "source": "William Lilly Christian Astrology 1647 original first edition Wellcome b30338724 PDF623-624",
+  "printed_chapter": "CXXXI",
+  "source_heading": "The time of Marriage",
+  "source_body_original_pdf": 624,
+  "procedure_status": "HISTORICAL_SOURCE_STRUCTURED_NOT_EXECUTABLE_OR_VALIDATED",
+  "source_kinds": [
+    "qualitative age/spouse-age contrast",
+    "primary directions to chart points/aspects",
+    "source strength and mitigations"
+  ],
+  "input_categories": [
+    "natal birth instant/site and reliable time",
+    "Moon orientation relative to Sun",
+    "Marriage significator house placements and motion",
+    "Seventh cusp degree and ruler",
+    "Ascendant cusp degree and lord",
+    "Midheaven and Sun/Moon positions",
+    "Venus radix dignity and sign/house",
+    "Mars and other malefic positions",
+    "Benefic planet(s) occupying seventh",
+    "Planetary aspects, historical Terms of a Fortune",
+    "Historically correct primary direction framework and arc-to-age key"
+  ],
+  "steps": [
+    {
+      "order": 1,
+      "source_anchor": "all Significators of Marriage or greater part",
+      "condition": "source favors majority concordance, not one isolated planet",
+      "result": "condition-specific qualitative marriage timing only"
+    },
+    {
+      "order": 2,
+      "source_anchor": "Moon Orientall of Sun and in Orientall quarters",
+      "condition": "Moon oriental with 10th,11th,12th,4th,5th,6th placement",
+      "result": "marry in youth OR after maturer years marry younger woman"
+    },
+    {
+      "order": 3,
+      "source_anchor": "Significators Occidentall of Sun in Occidentall quarters",
+      "condition": "9th,8th,7th,1st,2nd,3rd places",
+      "result": "marry late OR in youth marry widow/aged woman; separate marriage age from spouse age"
+    },
+    {
+      "order": 4,
+      "source_anchor": "direct and swift motion ... declare Marriage in youth",
+      "condition": "direction and swiftness assessed for relevant signifiers",
+      "result": "qualitative earlier period, unspecified age cutoff"
+    },
+    {
+      "order": 5,
+      "source_anchor": "Retrograde slow in motion or stationary prolong time",
+      "condition": "any of three adverse motion modes",
+      "result": "qualitative delay without numeric conversion"
+    },
+    {
+      "order": 6,
+      "source_anchor": "discrepancy ... Significators nearest agree with Moon or Venus especially Moon",
+      "condition": "conflicting testimony across signifiers",
+      "result": "rank testimony by proximity to Moon priority, undefined numeric weights"
+    },
+    {
+      "order": 7,
+      "source_anchor": "directions degree seventh or Lord thereof or Moon or Venus to degree or Lord ascendant",
+      "condition": "direction of eligible subject to ascendant degree or lord",
+      "result": "alleged more specific timing; arc method not supplied"
+    },
+    {
+      "order": 8,
+      "source_anchor": "directions Midheaven to Conjunction Sextile Square Trine of Venus",
+      "condition": "Venus potent in Radix",
+      "result": "historical author's preferred direction route"
+    },
+    {
+      "order": 9,
+      "source_anchor": "to same aspects with Moon",
+      "condition": "MC directed to eligible Moon aspects",
+      "result": "alternative primary direction source"
+    },
+    {
+      "order": 10,
+      "source_anchor": "directions Sun direct and converse to body Sextile Square Trine of Moon or Venus",
+      "condition": "both direct and converse solar directions",
+      "result": "alternative alleged marital event contacts"
+    },
+    {
+      "order": 11,
+      "source_anchor": "direction Moon to aforementioned aspects Sun or Mars",
+      "condition": "Moon directed to Sun/Mars; square/opposition trigger additional condition",
+      "result": "candidate contacts, not calendar dates"
+    },
+    {
+      "order": 12,
+      "source_anchor": "Square or Opposition Sun or Mars ... terms of a Fortune",
+      "condition": "check whether malefic hard-directed aspect falls in terms of a Fortune",
+      "result": "qualifier/mitigation; sign and bounds tables not transcribed"
+    },
+    {
+      "order": 13,
+      "source_anchor": "Midheaven or Sun or Moon directed Sextile or Trine Lord seventh",
+      "condition": "positive direction to seventh lord",
+      "result": "alternative alleged marital event timing"
+    },
+    {
+      "order": 14,
+      "source_anchor": "or fortunate Planet in seventh",
+      "condition": "positive direction to strong favorable seventh-house planet",
+      "result": "alternate trigger only"
+    }
+  ],
+  "missing_for_executable_rule": [
+    "Which primary direction method (Ptolemaic, Regiomontanus, converse/direct implementation)",
+    "Exact historical ecliptic-to-equator geometries including oblique ascension and semi-arcs",
+    "Zodiac Terms of Fortune table, bound system and source epoch",
+    "Direction arc-to-years calibration",
+    "What qualifies marriage event (legal ceremony, desire, beginning of partnership)",
+    "Degree/orb tolerances, plurality of directions, negatives and multiple events",
+    "What constitutes youth, aged spouse and mature years",
+    "Handling contradiction between age-only and spouse-age cases",
+    "Valid natal times independent of marriage record and held-out event",
+    "Calendar dating of natal epoch, time zone, calendar reforms and event-day conversion after converting direction arcs to years",
+    "Priority/conflict resolution and defined tie-breaking among multiple dated directional triggers"
+  ],
+  "empirical_status": {
+    "independent_blind_marriage_date_predictions": 0,
+    "retrospective_fit_not_validation": true,
+    "age_years_computed": false,
+    "dates_predicted": false,
+    "runtime_promotions": 0
+  },
+  "scientific_staging_requirements": [
+    "Acquire fully verified original 1647 direction numerical tables and base astronomy",
+    "Develop a deterministic exact program without reading any evaluated human marriage chronology",
+    "Freeze prospective event definitions, eligible age windows, all triggers, priority and no-match rules",
+    "Run on independent held-out birth/marriage documentation against non-astrological baselines"
+  ],
+  "medical_or_intimate_person_predictions_authorized": false
+}
