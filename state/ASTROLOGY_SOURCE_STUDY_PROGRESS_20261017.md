@@ -1,3 +1,9 @@
+# Lilly original 1647 historical study through unnumbered second house — 2026-10-17
+
+After publication **7,919 source annotations** (6,853 Lilly + 1,066 Ptolemy), original first-edition PDF587/894 (**65.7% scanned-page position proxy**), not empirical research progress or rule-table completeness. Unnumbered second house of riches extracted with 45 historical notes. Original printed CHAP CXIIII begins lower PDF587; no independent actual-person wealth prediction has been tested, no source-lane runtime promotions. Outstanding dense numerical tables, rule coding and blinded tests.
+
+---
+
 # Original-source Lilly 1647 General Fortune complete — 2026-10-17
 
 After publication **7,874 documentary annotations** (6,808 Lilly + 1,066 retained Ptolemy), source-body frontier PDF586/894 (~65.5% physical page position only). Printed CHAP CXIII general fortune covered with 44 source-only clauses and explicit delayed-positive-natal condition. Next unnumbered second-house wealth section begins mid-original PDF586, prior to printed CHAP CXIIII on PDF587; no unnumbered material has been silently skipped. Actual event-timing predictive accuracy, numerical tables, human controls and runtime rules remain incomplete/untested.

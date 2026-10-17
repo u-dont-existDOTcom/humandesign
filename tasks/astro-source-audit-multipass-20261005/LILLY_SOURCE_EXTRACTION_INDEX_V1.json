@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_GENERAL_FORTUNE_HISTORICAL_COMPLETE_NEXT_UNNUMBERED_SECOND_HOUSE",
-  "records_count": 6808,
+  "status": "BOOK_III_UNNUMBERED_SECOND_HOUSE_SOURCE_COMPLETE_NEXT_NUMBERED_RICH",
+  "records_count": 6853,
   "read_numbered_chapters": [
     1,
     2,
@@ -744,29 +744,35 @@
       "records_count": 44,
       "sha256": "8fde443784bcaa76bd8f9607544afa90e327dc4b4ecb4561eeea9ca5cde97e1b",
       "scope": "Original William Lilly Christian Astrology 1647 printed CHAP CXIII/editorial CXIV General Fortune or Misery of the Native. PDF585-586 original text with following unnumbered second-house wealth section mid-PDF586 and next printed CHAP CXIIII on PDF587. 41 substantive historical source clauses and 3 navigation items in 10 source groups: 3-4 dignified planets or mutual reception for favorable general fortune; planetary debilities for claimed misfortune; luminary corroboration, variable life states, explicit promising-chart-but-delayed-outcomes exception, directions of five Hylegical places and promittors for timing, adverse lights/benefic/malefic configurations and house-cause labels. Historic period source only; no independently verified life-event dates, predictive success or scoring promotion."
+    },
+    {
+      "id": "B05m",
+      "path": "batches/B05m/RULES.json",
+      "records_count": 45,
+      "sha256": "625edb21bd94333249f2a699231616a6d4bdd4e4d5862611d9e551462a251cd0",
+      "scope": "William Lilly 1647 first-edition UNNUMBERED second-house Riches or Goods of Fortune, original PDF586-587 body; PDF587 lower begins next numbered CXIIII Whether Rich. Six image-anchored source passage groups, 43 substantive source annotations and 2 chapter navigation units. Second house cusp five-degree interval, ruler/interceptions, Part of Fortune and dispositor, Jupiter, occupying planets and degree-to-cusp qualifications. Ptolemy attribution preserved as attributed, not independently text-verified; planetary acquisition routes, qualified inheritances, conditional wealth survival/loss, timing by angles, Leovitius and Origanus contributions distinguished. Zero human financial predictive successes, no runtime rules."
     }
   ],
   "next": {
-    "pdf_page": 586,
-    "printed_page_as_seen": 552,
-    "chapter": "UNNUMBERED_SECOND_HOUSE_RICHES",
-    "printed_chapter_numeral": null,
-    "heading": "The second House of RICHES, or the Goods of FORTUNE",
+    "pdf_page": 587,
+    "printed_page": 553,
+    "chapter": "CXV",
+    "printed_chapter_numeral": "CXIIII",
+    "heading": "Whether the Native shall be Rich",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Source starts below decorated separator in middle of original PDF586/folio552; runs into PDF587/folio553. Subsequent printed CHAP CXIIII 'Whether the Native shall be Rich' begins lower PDF587. Do not skip this unnumbered substantive source unit.",
-    "following_printed_chapter_numeral": "CXIIII",
-    "following_editorial_chapter": "CXV",
-    "following_printed_chapter_pdf_page": 587,
-    "research_scope": "Unnumbered second-house estate and wealth significators, source references to Ptolemy and Leovitius/Origanus, inheritance vs earning channels, and historical timing; no proven financial predictions or runtime promotion."
+    "position": "Original 1647 PDF587 below divider starts printed CHAP CXIIII. Its first group of wealth- and poverty-significator outcome statements continues through PDF588, where next CHAP CXV opens below divider. Do not duplicate unnumbered second-house introduction already admitted as B05m.",
+    "following_printed_chapter_numeral": "CXV",
+    "following_original_pdf_page": 588,
+    "research_scope": "First-edition specific wealth/poverty conditions, necessary significators, essential strength, strength of angles and fixed stars; preserve contrary branches and avoid unvalidated financial predictions."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05l_GENERAL_FORTUNE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05m_SECOND_HOUSE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -848,5 +854,6 @@
   "chapter_CXI_source_acceptance_note": "R6645-R6671: 27 source records, 24 chapter claims and 3 following-chapter navigation. Source frames 580-582 hash-authenticated, archive replay 12 tests, zero independent height/physical outcome confirmations and no runtime promotion.",
   "chapter_CXII_source_acceptance_note": "R6672-R6733, 62 historical documentary annotations: 60 source clauses, 2 next-heading navigation; 11 original-source groups, 6 witness images. No independently measured facial, hair, complexion, stature, ancestry, medical or human biometric predictions validated, no runtime promotions.",
   "chapter_CXIII_source_acceptance_note": "R6734-R6764, 31 historical source clauses: 29 body-size and conditional qualifications, 2 next chapter navigation. 13 original source image groups, original frames583-586 SHA-locked. No independently measured weight, anatomy, health or ancestry predictions; no runnable runtime scoring promotion.",
-  "chapter_CXIV_source_acceptance_note": "R6765–R6808 historical-only, 41 source clauses and 3 next-section navigation, 10 first-edition source groups, 4 original frames and ZIP 18 replayed source tests. No independent life-event prediction or human outcome validation."
+  "chapter_CXIV_source_acceptance_note": "R6765–R6808 historical-only, 41 source clauses and 3 next-section navigation, 10 first-edition source groups, 4 original frames and ZIP 18 replayed source tests. No independent life-event prediction or human outcome validation.",
+  "unnumbered_second_house_source_acceptance_note": "45 historical records R6809-R6853, 43 source claims and 2 next numbered chapter navigation. Six source groups, 3 physical original images, Ptolemy-as-Lilly-attribution not verified against Ptolemy. No independent wealth prediction success and no promoted runtime rule."
 }

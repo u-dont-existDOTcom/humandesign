@@ -1,0 +1,62 @@
+{
+  "batch": "B05m",
+  "status": "VERIFIED_PRIMARY_SOURCE_WINDOW_PENDING_CLAIM_EXTRACTION",
+  "parent_published_commit": "da1e261aaf896552f87eb3dc936e984da6adae7b",
+  "primary_source": "Original William Lilly Christian Astrology 1647, Wellcome b30338724",
+  "original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "accepted_lilly_before_extraction": 6808,
+  "ptolemy_retained": 1066,
+  "accepted_combined_before_extraction": 7874,
+  "next_new_source_id": "R6809",
+  "chapters": {
+    "unnumbered_riches": {
+      "title": "The second House of RICHES, or the Goods of FORTUNE",
+      "original_pdf_start": 586,
+      "original_pdf_end": 587,
+      "heading_position": "Below ornamental divider around middle PDF586",
+      "end_position": "Above divider introducing printed CHAP CXIIII lower PDF587"
+    },
+    "following_printed_numbered": {
+      "printed_numeral": "CXIIII",
+      "editorial_numeral": "CXV",
+      "title": "Whether the Native shall be Rich",
+      "original_pdf_start": 587,
+      "continues_pdf": 588
+    },
+    "following_following_printed": {
+      "printed_numeral": "CXV",
+      "title": "From whence, or by what meanes the Native shall come to an Estate or to Poverty",
+      "original_pdf_start": 588
+    }
+  },
+  "original_source_plan": [
+    "Record second-house cusp interval from original wording without inventing a numerical upper-bound interpretation.",
+    "Preserve second-house ruler, intercepted sign/ruler, Part of Fortune/ruler, Jupiter, occupying planets and distance from cusp as separate significators.",
+    "Separate Ptolemy attributed wealth-cause passages from Lilly's source narration and Leovitius/Origanus additions.",
+    "Preserve inheritance, work, social, religion, navigation and trade mechanisms without assuming human economic predictive validity.",
+    "Do not mistake the unnumbered introductory wealth section for printed CHAP CXIIII; full CXIIII and CXV deserve their own studies."
+  ],
+  "images": {
+    "586": {
+      "file": "evidence/pdf_1647-586.jpg",
+      "size": 629041,
+      "sha256": "962767e6eb73a1a1bc846d7f58d22286190907e1db51712663e15fe81df263f2",
+      "printed_folio_original": "552"
+    },
+    "587": {
+      "file": "evidence/pdf_1647-587.jpg",
+      "size": 664160,
+      "sha256": "088dcc506cc15f59e59a5571656e79b7cfe89430f1b8bbcfb2d0703145124bec",
+      "printed_folio_original": "553"
+    },
+    "588": {
+      "file": "evidence/pdf_1647-588.jpg",
+      "size": 628619,
+      "sha256": "afb4a2fb8f26a17cdff0eb59e60d57a7c4f2740c89a50cea1bbef5deee61bf85",
+      "printed_folio_original": "554"
+    }
+  },
+  "new_documentary_records": 0,
+  "empirical_validations": 0,
+  "runtime_promotions": 0
+}

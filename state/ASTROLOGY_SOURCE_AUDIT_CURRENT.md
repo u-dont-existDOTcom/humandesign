@@ -1,3 +1,9 @@
+# Lilly unnumbered natal second-house riches historical documentation accepted
+
+2026-10-17 Africa/Dakar UTC+0. R6809-R6853 accepted as 43 historical source clauses and 2 following-chapter navigation. Archive after remote verification: 6,853 Lilly + 1,066 Ptolemy = 7,919. Ptolemy source attribution preserved as unverified, no financial/outcome blind predictive success or runtime promotion. Next original printed CXIIII Whether Rich begins PDF587.
+
+---
+
 # Original Lilly General Fortune historical source accepted; wealth next
 
 2026-10-17 Africa/Dakar UTC+0. Local acceptance R6765–R6808: 41 first-edition historical clauses plus 3 following-section navigation. Authenticated publication target: 6,808 Lilly + 1,066 Ptolemy = 7,874 historic annotations. Broad claimed positive/negative natal life categories, delayed outcomes and directions of 5 Hylegical places preserved as hypotheses, not tested forecasts. No empirical validations/runtime promotions. NEXT PDF586 unnumbered second House of Riches.
