@@ -1,3 +1,9 @@
+# Original Lilly General Fortune historical source accepted; wealth next
+
+2026-10-17 Africa/Dakar UTC+0. Local acceptance R6765–R6808: 41 first-edition historical clauses plus 3 following-section navigation. Authenticated publication target: 6,808 Lilly + 1,066 Ptolemy = 7,874 historic annotations. Broad claimed positive/negative natal life categories, delayed outcomes and directions of 5 Hylegical places preserved as hypotheses, not tested forecasts. No empirical validations/runtime promotions. NEXT PDF586 unnumbered second House of Riches.
+
+---
+
 # Source-first Lilly original mature-body-build historic chapter complete
 
 2026-10-17 Africa/Dakar UTC+0. Local R6734–R6764 historical source acceptance: 6,764 Lilly + 1,066 Ptolemy = 7,830 after remote readback. 29 substantive clauses, 2 following chapter navigation; no independent person height/weight, clinical or predictive validity and no runtime promotions. First-edition PDF584 completes printed CHAP CXII. Next printed CXIII General Fortune begins PDF585, no actual source annotations admitted for it.

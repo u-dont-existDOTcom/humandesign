@@ -1,3 +1,9 @@
+# Original-source Lilly 1647 General Fortune complete — 2026-10-17
+
+After publication **7,874 documentary annotations** (6,808 Lilly + 1,066 retained Ptolemy), source-body frontier PDF586/894 (~65.5% physical page position only). Printed CHAP CXIII general fortune covered with 44 source-only clauses and explicit delayed-positive-natal condition. Next unnumbered second-house wealth section begins mid-original PDF586, prior to printed CHAP CXIIII on PDF587; no unnumbered material has been silently skipped. Actual event-timing predictive accuracy, numerical tables, human controls and runtime rules remain incomplete/untested.
+
+---
+
 # Lilly source study after mature body-build, 2026-10-17
 
 7,830 historical/documentary source units after publication (6,764 Lilly + 1,066 Ptolemy), through first-edition frame584 of 894 scans, **65.3% scanned-position proxy only**. 31 source annotations from printed CHAP CXII, two next-heading witnesses, explicit age-after-thirty and mutually qualified planetary conditions retained. No actual human body mass, medical or prospective results validated. Next printed CHAP CXIII General Fortune/Misery begins original PDF585. Numeric tables, historical astrology coding and blind empirical tests remain open.

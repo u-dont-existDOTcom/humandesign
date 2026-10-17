@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_MATURE_BODY_SIZE_HISTORICAL_DOCUMENTARY_NEXT_GENERAL_FORTUNE",
-  "records_count": 6764,
+  "status": "BOOK_III_GENERAL_FORTUNE_HISTORICAL_COMPLETE_NEXT_UNNUMBERED_SECOND_HOUSE",
+  "records_count": 6808,
   "read_numbered_chapters": [
     1,
     2,
@@ -117,7 +117,8 @@
     110,
     111,
     112,
-    113
+    113,
+    114
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -736,26 +737,36 @@
       "records_count": 31,
       "sha256": "2c090d0237aa9531743f6b18fd7e82241888484d41da0299e1a896d3b2b65a88",
       "scope": "William Lilly original 1647 printed CHAP CXII/editorial CXIII Of the grossenesse or leannesse of Bodies, PDF583-584 body and PDF585 next printed heading. Mature-age (~30+) frame; five zodiacal sign groups with early/latter part reversals and late Aquarius exception; Ascendant-sign/planet-dignity selection, partile aspects, Almuten unoccupied half-sign fallback, Sun conjunction within orb moiety and absent Mars, explicit agreement and domicile-over-exaltation tiebreakers. Historic atypical-body judgment explicitly declined by author. 29 documentary claims + 2 following navigation, no independently validated human weight/body mass/outcome predictions, no runtime promotion."
+    },
+    {
+      "id": "B05l",
+      "path": "batches/B05l/RULES.json",
+      "records_count": 44,
+      "sha256": "8fde443784bcaa76bd8f9607544afa90e327dc4b4ecb4561eeea9ca5cde97e1b",
+      "scope": "Original William Lilly Christian Astrology 1647 printed CHAP CXIII/editorial CXIV General Fortune or Misery of the Native. PDF585-586 original text with following unnumbered second-house wealth section mid-PDF586 and next printed CHAP CXIIII on PDF587. 41 substantive historical source clauses and 3 navigation items in 10 source groups: 3-4 dignified planets or mutual reception for favorable general fortune; planetary debilities for claimed misfortune; luminary corroboration, variable life states, explicit promising-chart-but-delayed-outcomes exception, directions of five Hylegical places and promittors for timing, adverse lights/benefic/malefic configurations and house-cause labels. Historic period source only; no independently verified life-event dates, predictive success or scoring promotion."
     }
   ],
   "next": {
-    "pdf_page": 585,
-    "printed_page_as_seen": 543,
-    "chapter": "CXIV",
-    "printed_chapter_numeral": "CXIII",
-    "heading": "Of the generall Fortune or Misery of the Native",
+    "pdf_page": 586,
+    "printed_page_as_seen": 552,
+    "chapter": "UNNUMBERED_SECOND_HOUSE_RICHES",
+    "printed_chapter_numeral": null,
+    "heading": "The second House of RICHES, or the Goods of FORTUNE",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Separate printed CHAP CXIII starts at the top of first-edition original frame585, folio printed 543 after prior frame584 printed 542; original frame586 has printed552. The end of the general fortune chapter and the unnumbered following second-house riches section require independent boundary review.",
-    "research_scope": "Historical whole-chart fortune/misfortune testimonies, strength/debility qualifications, timing by directions, conditional counterexamples. Do not treat biography fitted after reading a chart as independently valid prediction."
+    "position": "Source starts below decorated separator in middle of original PDF586/folio552; runs into PDF587/folio553. Subsequent printed CHAP CXIIII 'Whether the Native shall be Rich' begins lower PDF587. Do not skip this unnumbered substantive source unit.",
+    "following_printed_chapter_numeral": "CXIIII",
+    "following_editorial_chapter": "CXV",
+    "following_printed_chapter_pdf_page": 587,
+    "research_scope": "Unnumbered second-house estate and wealth significators, source references to Ptolemy and Leovitius/Origanus, inheritance vs earning channels, and historical timing; no proven financial predictions or runtime promotion."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05k_BODY_BUILD.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05l_GENERAL_FORTUNE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -836,5 +847,6 @@
   "chapter_CX_source_acceptance_note": "53 historical source annotations R6592-R6644, 50 substantive CIX clauses and 3 next-header/opening navigation records, PDF577-581 witnesses, 18 replayed artifact checks, 12 source groups. No validated actual human intelligence/disability/moral predictions or runtime promotions.",
   "chapter_CXI_source_acceptance_note": "R6645-R6671: 27 source records, 24 chapter claims and 3 following-chapter navigation. Source frames 580-582 hash-authenticated, archive replay 12 tests, zero independent height/physical outcome confirmations and no runtime promotion.",
   "chapter_CXII_source_acceptance_note": "R6672-R6733, 62 historical documentary annotations: 60 source clauses, 2 next-heading navigation; 11 original-source groups, 6 witness images. No independently measured facial, hair, complexion, stature, ancestry, medical or human biometric predictions validated, no runtime promotions.",
-  "chapter_CXIII_source_acceptance_note": "R6734-R6764, 31 historical source clauses: 29 body-size and conditional qualifications, 2 next chapter navigation. 13 original source image groups, original frames583-586 SHA-locked. No independently measured weight, anatomy, health or ancestry predictions; no runnable runtime scoring promotion."
+  "chapter_CXIII_source_acceptance_note": "R6734-R6764, 31 historical source clauses: 29 body-size and conditional qualifications, 2 next chapter navigation. 13 original source image groups, original frames583-586 SHA-locked. No independently measured weight, anatomy, health or ancestry predictions; no runnable runtime scoring promotion.",
+  "chapter_CXIV_source_acceptance_note": "R6765–R6808 historical-only, 41 source clauses and 3 next-section navigation, 10 first-edition source groups, 4 original frames and ZIP 18 replayed source tests. No independent life-event prediction or human outcome validation."
 }

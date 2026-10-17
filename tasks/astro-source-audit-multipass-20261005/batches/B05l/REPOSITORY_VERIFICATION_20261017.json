@@ -1,0 +1,28 @@
+{
+  "batch": "B05l",
+  "documentary_tests": {
+    "status": "PASSED",
+    "count": 18,
+    "portable_zip_extract_replayed": true,
+    "original_image_sha256": true
+  },
+  "source_python_lint": {
+    "status": "PASSED",
+    "tool": "ruff check *.py B05l source batch"
+  },
+  "repo_full_suite_baseline": {
+    "status": "PREEXISTING_UNRELATED_FAILURE",
+    "from": "B05j parent history",
+    "passed": 397,
+    "skipped": 4,
+    "failed": 1,
+    "failure": "tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines",
+    "note": "Archive-source-only changes do not touch relationship code; do not redo unchanged failing suite unnecessarily"
+  },
+  "predictive_status": {
+    "independent_human_validations": 0,
+    "verified_life_event_hits": 0,
+    "runtime_promotions": 0
+  },
+  "status": "DOCUMENTARY_ACCEPTANCE_READY_FOR_REMOTE"
+}
