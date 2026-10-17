@@ -1,3 +1,9 @@
+# Lilly first edition original source study through wealth origins — 2026-10-17
+
+8,060 historical annotations after authenticated publication (6,994 Lilly, 1,066 Ptolemy); first-edition source frontier PDF594 of 894 scans (**~66.4% physical page position only**). Printed CHAP CXV wealth-origins study preserves seven planet matters/persons matrices, four elements, six planetary-nature categories, twelve houses, 316 normalized source terms plus 48 prose/navigation records, totaling 84 annotations. The original printed folio 561 is duplicated on PDF594/595. Next printed CHAP CXVI begins PDF594 and ends before CXVII on PDF596. Numeric tables elsewhere and prospective blind evaluation remain OPEN; no new validated economic successes, model promotions or individual forecasts.
+
+---
+
 # Lilly 1647 historical source through numbered Whether Rich — 2026-10-17
 
 **7,976 historical annotations** after authenticated publication (6,910 Lilly + 1,066 Ptolemy). Original first edition source-body frontier PDF588 of 894 (~65.8% scanned-position proxy, NOT science completion). Printed CHAP CXIIII Whether Rich: 57 documentary records with explicit testimony strength tiers, qualified wealth and poverty branches, uncertain fixed-star/operator and glyph conditions, separate causes of inheritance. Following printed CHAP CXV begins PDF588 and has extensive planet-person-matter, zodiac-sign and house correspondence tables to preserve. No new independent human economic outcomes, source-lane runtime promotion or new rule validity. Numeric astronomy and blind comparisons remain OPEN.

@@ -1,0 +1,35 @@
+{
+  "batch": "B05o",
+  "date": "2026-10-17",
+  "source_specific": {
+    "tests_passed": 28,
+    "tests_failed": 0,
+    "original_image_sha256_passed": true,
+    "full_zip_extraction_replay_passed": true,
+    "normalized_source_items": 316,
+    "planet_matters_and_persons_cells": 14,
+    "house_cells": 12
+  },
+  "python_lint": {
+    "status": "PASSED",
+    "command": "ruff check B05o/*.py"
+  },
+  "project_wide": {
+    "status": "KNOWN_UNRELATED_BASELINE_FAILURE_NOT_RERUN",
+    "prior_reproduced_in": "B05j preceding branches",
+    "prior_total": {
+      "passed": 397,
+      "skipped": 4,
+      "failed": 1
+    },
+    "unrelated_failing_test": "tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines",
+    "impact": "No changes to relationship runtime or tests"
+  },
+  "scientific": {
+    "independent_wealth_validations": 0,
+    "new_empirical_successes": 0,
+    "clinical_or_financial_rules_promoted": 0
+  },
+  "next": "Printed CHAP CXVI original PDF594–596, just/lawful vs indirect means",
+  "status": "DOCUMENTARY_RELEASE_PASS_CANONICAL_INDEX_PREPARED"
+}

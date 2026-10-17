@@ -1,3 +1,9 @@
+# Original Lilly wealth-origin historical source admitted; lawful acquisition next
+
+2026-10-17 Africa/Dakar UTC+0. B05o records R6911–R6994 prepared for source-only acceptance. After authenticated GitHub readback the historical corpus totals 6,994 Lilly + 1,066 retained Ptolemy = 8,060. 36 structured planet/sign/house cells and 316 normalized source-list items from original printed CHAP CXV preserved, including a period folio numbering anomaly. No independent human economic success and no runtime rule. Following printed CHAP CXVI, whether wealth was acquired by lawful or indirect dealing, begins original PDF594.
+
+---
+
 # Original Lilly 1647 Whether Rich historic source admitted; source-of-estate next
 
 2026-10-17 Africa/Dakar UTC+0. R6854–R6910 source-first accepted locally with 55 historic claims and 2 following navigation. After verified publication 6,910 Lilly + 1,066 Ptolemy = 7,976 documentary records. Regulus/Spica, glyph and contrary-outcome ambiguity retained. No independent financial/inheritance success and no scoring runtime promotions. NEXT printed CHAP CXV From whence estate or poverty, lower original PDF588.
