@@ -34,11 +34,13 @@ button,input,select,textarea{font:inherit}button{border:1px solid #74889a;backgr
 button.primary{background:#204e70;color:white;border-color:#204e70}
 button:disabled{opacity:.45;cursor:not-allowed}button:hover:not(:disabled){filter:brightness(.96)}
 label{display:block;font-weight:650;margin:1rem 0 .3rem}
-select,textarea,input[type=text],input[type=file]{display:block;width:100%;max-width:100%;padding:.65rem;border:1px solid #8b9baa;border-radius:7px;background:#fff;color:inherit}
+select,textarea,input[type=text],input[type=search],input[type=file]{display:block;width:100%;max-width:100%;padding:.65rem;border:1px solid #8b9baa;border-radius:7px;background:#fff;color:inherit}
 textarea{min-height:90px;resize:vertical}
 button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid #246da4;outline-offset:2px}
 .choice{display:flex;align-items:flex-start;gap:.65rem;font-weight:400;padding:.35rem 0}.choice input{margin-top:.35rem}
 #notice{min-height:1.6rem;color:#903d22;font-weight:600}
+.prior-match{border-top:1px solid #dbe2e7;padding:.7rem 0;overflow-wrap:anywhere}
+.prior-match p{white-space:pre-wrap;overflow-wrap:anywhere;max-height:14rem;overflow:auto}
 #progress{font-size:.88rem;color:#526474;font-variant-numeric:tabular-nums}
 #prompt{font-size:1.12rem;font-weight:650;line-height:1.5}
 details{border-top:1px solid #e1e8ec;margin:1rem 0;padding:.8rem 0}
@@ -58,8 +60,9 @@ ul{padding-left:1.4rem}li{margin:.4rem 0} .subtle{color:#5d6d7a;font-size:.9rem}
 <p class="note">This file runs entirely on your device. Nothing is uploaded or automatically saved. Export your answers if you want to keep them. Closing the page without exporting loses unsaved changes.</p>
 <p>You may choose “never,” “not sure,” or skip. Real-life examples are optional. The survey does not assume anything supernatural caused your experiences.</p>
 <div class="row"><button id="begin" type="button" class="primary">I choose to try the optional pilot</button></div>
-<label for="import">Or import an earlier export from this pilot</label><input id="import" type="file" accept=".json,application/json">
+<label for="import">Import your existing Life Patterns survey or an earlier export from this pilot</label><input id="import" type="file" accept=".json,application/json">
 <p class="small" id="import-message" role="status" aria-live="polite"></p>
+<p class="small">Your old survey stays separate: importing it never answers the new experience questions automatically.</p>
 </section>
 <section class="panel" id="question-panel" hidden>
 <p class="eyebrow" id="progress"></p>
@@ -68,6 +71,12 @@ ul{padding-left:1.4rem}li{margin:.4rem 0} .subtle{color:#5d6d7a;font-size:.9rem}
 <details id="context-panel"><summary>Optional context — only if useful</summary><p id="context-prompt"></p>
 <label for="extra">Anything about the circumstances, earlier life or exceptions? (optional)</label>
 <textarea id="extra" placeholder="An example is never required."></textarea></details>
+<details id="prior-context" hidden><summary>Review my imported earlier survey answers (optional)</summary>
+<p class="small" id="prior-count"></p>
+<label for="prior-search">Search question or answer text</label>
+<input id="prior-search" type="search" autocomplete="off" placeholder="Search previous answers, e.g. surprise or purpose">
+<p class="small">Results only show possible references, not proven equivalent answers. Read the source before marking a question already covered.</p>
+<div id="prior-results" aria-live="polite"></div></details>
 <details><summary>Already answered this in an earlier interview?</summary>
 <p class="small">Only mark this covered if you know the earlier answer directly addressed this exact experience. A nearby hypothetical does not count. In a live interview the reviewer should check automatically.</p>
 <label for="earlier-source">Source or question reference</label><input type="text" id="earlier-source" placeholder="For example: interview Q42, exact relevant passage">
@@ -103,8 +112,93 @@ const itemById = Object.fromEntries(BANK.items.map(function(item){return [item.i
 const byId = function(id){return document.getElementById(id);};
 const records = {};
 let phase = "start", cursor = 0, requested = [], editMode = false;
+let priorSources = [], priorEntries = [];
 const startOrder = BANK.prompt_order.slice();
 
+// Import only already-known, separate Life Patterns source schemas. Do not score or infer.
+const sourceSchemas = {
+  "latest_v33":"local_life_patterns_v3_3_pilot_unsubmitted",
+  "primary_84":"life-patterns-full-survey-participant-export-v2",
+  "secondary_cf003":"life-patterns-cf003-secondary-v0"
+};
+function prepareSources(sources) {
+  if (!Array.isArray(sources) || sources.length > 3) throw Error("Invalid source archive.");
+  const keys = new Set(), entries = [];
+  sources.forEach(function(s) {
+    if(!s || typeof s !== "object" || !(s.source_id in sourceSchemas) || keys.has(s.source_id))
+      throw Error("Unknown or duplicate survey source.");
+    if(typeof s.text !== "string" || s.text.length > 2000000)
+      throw Error("Missing or overlarge source text.");
+    if(typeof s.filename !== "string" || s.filename.length > 180)
+      throw Error("Invalid source filename.");
+    if(s.original_schema !== sourceSchemas[s.source_id]) throw Error("Source schema mismatch.");
+    const doc=JSON.parse(s.text);
+    if(!doc || doc.schema !== s.original_schema) throw Error("Source content schema mismatch.");
+    keys.add(s.source_id);
+    if(s.source_id === "latest_v33") {
+      if(!doc.answers || typeof doc.answers !== "object" || Array.isArray(doc.answers)
+          || !Array.isArray(doc.unique_behaviors)) throw Error("Invalid V3.3 answers.");
+      Object.entries(doc.answers).forEach(function([id,answer]){
+        entries.push({reference:s.source_id+":"+id,heading:"V3.3 "+id,text:JSON.stringify(answer)});
+      });
+      doc.unique_behaviors.forEach(function(answer,i){
+        entries.push({reference:s.source_id+":unique_behavior:"+String(i+1),
+          heading:"V3.3 unusual behavior "+String(i+1),text:JSON.stringify(answer)});
+      });
+      if(doc.role_entry_review) entries.push({reference:s.source_id+":role_entry_review",
+        heading:"V3.3 role entry review",text:JSON.stringify(doc.role_entry_review)});
+    } else {
+      if(!Array.isArray(doc.turns)) throw Error("Missing historical source turns.");
+      doc.turns.forEach(function(turn,i){
+        const originalId=String(turn.turn_id || turn.question_id || i+1);
+        entries.push({reference:s.source_id+":"+originalId,
+          heading:String(turn.question_text || originalId),
+          text:String(turn.answer_text || "")});
+      });
+    }
+  });
+  return entries;
+}
+function setPriorSources(sources) {
+  const entries=prepareSources(sources);
+  priorSources=sources;
+  priorEntries=entries;
+  byId("prior-context").hidden=entries.length===0;
+  byId("prior-count").textContent="Available earlier source records: "+entries.length+
+    " from "+sources.length+" separately preserved files.";
+  byId("prior-search").value="";
+  byId("prior-results").replaceChildren();
+}
+function showPriorMatches() {
+  byId("prior-context").hidden=priorEntries.length===0;
+  if(!priorEntries.length) return;
+  const query=byId("prior-search").value.trim().toLocaleLowerCase();
+  const panel=byId("prior-results");panel.replaceChildren();
+  if(!query) {
+    const prompt=document.createElement("p");prompt.className="small";
+    prompt.textContent="Enter a word or phrase to search the existing answers.";
+    panel.appendChild(prompt);return;
+  }
+  const matches=priorEntries.filter(function(row){
+    return (row.heading+" "+row.text).toLocaleLowerCase().includes(query);
+  });
+  matches.slice(0,20).forEach(function(row){
+    const article=document.createElement("article");article.className="prior-match";
+    const h=document.createElement("p");h.className="small";h.textContent=row.reference+" — "+row.heading;
+    const p=document.createElement("p");p.textContent=row.text;
+    const button=document.createElement("button");button.type="button";
+    button.textContent="Use this reference (after checking equivalence)";
+    button.addEventListener("click",function(){
+      byId("earlier-source").value=row.reference;
+      flash("Reference inserted. Mark covered only if that answer addresses this exact experience.");
+    });
+    article.append(h,p,button);panel.appendChild(article);
+  });
+  const count=document.createElement("p");count.className="small";
+  count.textContent="Showing "+Math.min(20,matches.length)+" of "+matches.length+" matches.";
+  panel.prepend(count);
+}
+byId("prior-search").addEventListener("input",showPriorMatches);
 byId("introduction").textContent = BANK.participant_header;
 function visible(id) {
   ["start","question-panel","topics","complete"].forEach(function(key){
@@ -145,6 +239,8 @@ function showQuestion() {
   byId("purpose").textContent = item.purpose;
   byId("prompt").textContent = item.question;
   byId("context-prompt").textContent = item.optional_followup;
+  byId("prior-search").value="";
+  showPriorMatches();
   byId("earlier-source").value = r.source_ref || "";
   byId("extra").value = r.note || "";
   const fields = byId("response-fields");
@@ -263,7 +359,7 @@ byId("topics-done").addEventListener("click",function(){
   if(requested.length){phase="optional";cursor=0;showQuestion();}else{showComplete();}
 });
 function exportData() {
-  return {schema:"life-patterns-experience-pilot-answers-v1",instrument:BANK.version,recorded_at:new Date().toISOString(),no_birth_or_chart_data:true,no_scoring:true,topics_selected:requested.slice(),responses:BANK.items.map(function(x){
+  return {schema:"life-patterns-experience-pilot-answers-v1",instrument:BANK.version,recorded_at:new Date().toISOString(),no_birth_or_chart_data:priorSources.length ? null : true,no_scoring:true,topics_selected:requested.slice(),prior_sources:priorSources, responses:BANK.items.map(function(x){
     return records[x.id] || {question_id:x.id,state:"NOT_ASKED"};
   })};
 }
@@ -285,8 +381,23 @@ byId("import").addEventListener("change",async function(){
   const file=byId("import").files && byId("import").files[0];
   if(!file)return;
   try {
-    const data=JSON.parse(await file.text());
-    if(data.schema!=="life-patterns-experience-pilot-answers-v1"||data.instrument!==BANK.version||!Array.isArray(data.responses))throw Error("Not an export of this pilot version.");
+    const sourceText=await file.text();
+    const data=JSON.parse(sourceText);
+    if(data.schema==="life-patterns-owner-source-packet-v1"
+       || Object.values(sourceSchemas).includes(data.schema)) {
+      const sources = data.schema==="life-patterns-owner-source-packet-v1"
+        ? data.sources : [{
+            source_id:Object.keys(sourceSchemas).find(id=>sourceSchemas[id]===data.schema),
+            original_schema:data.schema,filename:file.name,text:sourceText
+          }];
+      setPriorSources(sources);
+      byId("import-message").textContent="Imported "+priorSources.length+
+        " previous survey files ("+priorEntries.length+
+        " source records). Choose the opt-in button above to answer the new topics.";
+      visible("start");
+      return;
+    }
+    if(data.schema!=="life-patterns-experience-pilot-answers-v1"||data.instrument!==BANK.version||!Array.isArray(data.responses))throw Error("Unrecognized survey or pilot export.");
     const allowed=["ANSWERED","NEVER","SKIPPED","UNKNOWN","ALREADY_COVERED","NOT_ASKED"];
     const next={};
     data.responses.forEach(function(r){
@@ -299,6 +410,7 @@ byId("import").addEventListener("change",async function(){
     Object.keys(records).forEach(function(id){delete records[id];});
     Object.assign(records,next);
     requested=Array.from(new Set(data.topics_selected));
+    setPriorSources(data.prior_sources || []);
     byId("import-message").textContent="Imported successfully. You can review and edit.";
     showComplete();
   } catch(e) {byId("import-message").textContent="Import failed: "+e.message;}

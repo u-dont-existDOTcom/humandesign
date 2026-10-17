@@ -20,15 +20,21 @@
 
 ## Risk and status
 
-This is a single opt-in development candidate; there are no human psychometric results. The wording must be assessed for clarity, repeatability and distinctness before scoring any astrological prediction. Existing interviews and Railway production remain unchanged. No participant-specific private record is read for this change.
+This is a single opt-in development candidate; there are no human psychometric results. The wording must be assessed for clarity, repeatability and distinctness before scoring any astrological prediction. Existing interviews and Railway production remain unchanged. The original pilot did not read personal records; the later owner-authorized import extension reads local private exports to construct a separate local packet, never commits their contents, and does not change the original responses.
 
 ## Verification
 
-- New and existing pilot structure tests: 10 passed.
+- New owner-source-import and existing pilot structure tests: 13 passed.
 - Playwright browser automation against local HTML: PASS, including explicit consent gate, four default questions, two selected optional topics, never/unknown states, two meaning fields, answer editing, file export and re-import, and an external-request error gate (zero network requests and zero JavaScript errors).
 - 375 px mobile viewport: PASS (375 px document width, no horizontal overflow).
 - Ruff for changed code: PASS.
 - Full unit and participant-service suites: **1,289 passed, six unrelated astronomy fixture skips**, with the candidate source PYTHONPATH explicitly selected. The first broad attempt used the shared environment's editable install pointing at another worktree and failed collection; correcting that environment resolved the errors without changing source.
+
+## Existing full-survey import (2026-10-17)
+
+The pilot now accepts previous Life Patterns V3.3, full-participant or secondary-follow-up JSON directly, as well as a **single separate owner-source packet** containing all three original sources without editing or deduplication. Imported answers remain reference material only; they never automatically satisfy new experience questions or affect chart scoring. While answering, respondents can search earlier source text and insert an exact reference after checking it. The pilot retains separate opt-in, locally edited new answers, and explicit JSON export/re-import with the complete prior source archive.
+
+The generic packer hashes and retains each original UTF-8 source verbatim and refuses to overwrite an existing packet. **Private survey responses and source paths remain exclusively in owner-local Downloads and are not published in this repository.** The browser was tested against the actual privately delivered packet and upgraded offline HTML with zero network requests or script errors. Generic and existing pilot tests: 13 passed. Full unit and participant-service suites: 1,292 passed, six unrelated Swiss fixture skips. See `VERIFICATION-OWNER-SOURCE-IMPORT-v1.json`.
 
 ## Remaining owner-only actions
 

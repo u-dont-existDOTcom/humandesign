@@ -1,0 +1,60 @@
+{
+  "schema": "life-patterns-owner-source-import-v1-verification",
+  "date": "2026-10-17",
+  "parent_outcome": "Provide the owner's latest full prior survey in a format the existing optional offline pilot can import.",
+  "status": "PRIVATE_LOCAL_DELIVERY_VERIFIED_GENERIC_REPO_CODE_TESTED",
+  "privacy": "Private survey records are NOT included in this git branch, generated HTML, tests, or public receipts. Only a generic packet builder and importer are checked in.",
+  "prior_source_contract": {
+    "source_count": 3,
+    "source_schemas": [
+      "local_life_patterns_v3_3_pilot_unsubmitted",
+      "life-patterns-full-survey-participant-export-v2",
+      "life-patterns-cf003-secondary-v0"
+    ],
+    "source_roles": [
+      "latest V3.3 answers and role-entry review",
+      "full historical primary interview",
+      "independent secondary responses"
+    ],
+    "source_content_handling": "Original UTF-8 text preserved byte-for-byte, hashed in private packet, never scored, and carried through pilot JSON export unchanged.",
+    "source_mapping": "Prior answer references searchable but never automatically used to fill, skip or predict an EM question."
+  },
+  "changed_behavior": [
+    "Direct import of the three known source schemas or a combined lossless packet.",
+    "Explicit opt-in retained after prior-survey import.",
+    "Prior responses searchable in the questionnaire, with source reference insertion only and no automatic equivalence judgment.",
+    "New pilot exports retain original source text and separate new experience responses.",
+    "Legacy pilot export import, edits, local-only operation, and unknown/never/skip semantics preserved."
+  ],
+  "verification": {
+    "focused_tests": {
+      "passed": 13
+    },
+    "full_suites": {
+      "passed": 1292,
+      "skipped": 6,
+      "skip_reason": "Uninstalled Swiss Ephemeris fixtures unrelated to this change"
+    },
+    "browser": {
+      "result": "PASS",
+      "real_local_source_packet": true,
+      "original_source_files": 3,
+      "prior_source_rows": 116,
+      "core_prompts_untouched": true,
+      "new_questions_unanswered_after_import": true,
+      "source_text_round_trip": "exact equality",
+      "external_requests": 0,
+      "javascript_errors": 0
+    },
+    "delivered_file_readback": {
+      "result": "PASS",
+      "generated_html_byte_equal_to_installed_html": true,
+      "source_packet_sha256_verified_at_creation": true,
+      "delivered_html_with_source_packet_live_open_test": "PASS"
+    },
+    "ruff": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "scope_boundary": "Not a live Railway, GPT Action, participant storage or scoring change.",
+  "future_validation": "Separately consenting usability participants required before a live survey or any chart-based hypothesis."
+}
