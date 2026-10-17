@@ -1,3 +1,9 @@
+# Lilly temperament first-edition historic source accepted, Manners next
+
+2026-10-17: B05e 59 historic source annotations R6416-R6474 locally admitted, after authenticated publication **6,474 Lilly + 1,066 Ptolemy = 7,540**. Four-humour hot/cold/moist/dry historical testimony tally, conditional 3x lord-geniture/Asc ruler and 2x Moon-in-Asc, equal adverse cancellation, Saturn/Mars overlay, no validated modern psychometric diagnosis. Next source original printed CVII editorial CVIII Manners PDF568 onward. PDF-position ~63.5% of first-edition scan, not predictive science completion. All historical numerical table tasks and empirical validation remain open.
+
+---
+
 # Lilly original Lord-of-Geniture alternatives documented; temperament next
 
 2026-10-17: B05d historic source annotations R6384–R6415 locally accepted, to reach **6,415 Lilly +1,066 Ptolemy = 7,481** after remote publication. Source offers rejected next-sign approach, alternative aggregate dignity, preferred combined essential+accidental strength and near-equal blend, and Greek Moon/Mercury basis. None has independent behavioral validation or executable-scoring promotion. Next original printed CVI / editorial CVII temperament PDF566–568. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05d_LORD_GENITURE.md.

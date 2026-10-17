@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_LORD_GENITURE_SOURCE_ACCEPTED_NEXT_COMPLEXION_TEMPERAMENT",
-  "records_count": 6415,
+  "status": "BOOK_III_FOUR_HUMOURS_HISTORICAL_SOURCE_ADMITTED_NEXT_MANNERS_OF_NATIVE",
+  "records_count": 6474,
   "read_numbered_chapters": [
     1,
     2,
@@ -110,7 +110,8 @@
     103,
     104,
     105,
-    106
+    106,
+    107
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -680,26 +681,33 @@
       "records_count": 32,
       "sha256": "51eb036121b60cd7b7d57c22b7564e82da74823a5ca026654620cd98755f0f5d",
       "scope": "First-edition William Lilly printed CHAP CV/editorial CVI Lord of Geniture original PDF565-566, with following complexion CHAP CVI navigation PDF566-567. 29 historical source details +3 following navigation, 6 source spans, 19 limitations. Rejected Firmicus next-Moon-sign scheme, competing all-point essential dignity aggregate and Greek Moon/Mercury dignity approach, Lilly preferred combined essential/accidental strength, elevation, nearequal runnerup mixture and aspects. No numeric weights fixed, no empirical personality evidence."
+    },
+    {
+      "id": "B05e",
+      "path": "batches/B05e/RULES.json",
+      "records_count": 59,
+      "sha256": "5d6bfa52dd5bd35c17308c9d0e3481a5d0ba665cd31934826b02962fe89c26b7",
+      "scope": "Original first-edition William Lilly printed CHAP CVI/editorial CVII humoral complexion/temperament historical rules, PDF566-568; following CVII Manners navigation PDF568-569. 56 substantive historical annotations, three next navigation, nine source passages, 23 limits. Five natal significator categories; oriental/occidental planets, Moon quarters, seasonal Sun and sign triplicities; explicit Saturn/Mars adverse overlay, opposing equal quality cancellation, conditional triple count for lord-geniture plus Ascendant ruler and double Moon-in-Ascendant count. No biological/personality validation or runtime promotion."
     }
   ],
   "next": {
-    "pdf_page": 566,
-    "printed_page": 532,
-    "chapter": "CVII",
-    "printed_chapter_numeral": "CVI",
-    "heading": "Of the Complexion or Temperament of the Body; quality of the Planets and Signes",
+    "pdf_page": 568,
+    "printed_page": 534,
+    "chapter": "CVIII",
+    "printed_chapter_numeral": "CVII",
+    "heading": "Of the Manners of the Native or Child",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF566 lower portion below separate CHAP CVI divider, continues PDF567 and the top of PDF568; next printed CHAP CVII begins below a divider on PDF568.",
-    "source_safety": "Original medical/humoral terminology is historical only, no clinical diagnosis or validated personality scoring."
+    "position": "Original PDF568 lower part after complexion divider, original PDF569 and following pages. Locate next original printed heading before source extraction.",
+    "research_relevance": "Historical human personality claims only. Compare to blinded questionnaire targets only after complete rule and score freeze, not retrospective profiling."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05d_LORD_GENITURE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05e_TEMPERAMENT.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -773,5 +781,6 @@
   "chapter_CIII_source_acceptance_note": "29 historical first-edition annotations R6216-R6244: prerequisite planetary/Part of Fortune placement, strength, aspects, antiscia/contra-antiscia and fixed-star proximity before natal judgments; does not supply numeric thresholds for proximity to planets/cusps or 'small' fixed-star latitude. Separate longevity printed CIII PDF559 only navigation.",
   "chapter_CIV_source_acceptance_note": "65 first-edition historical annotations R6245-R6309: 62 lifespan/infancy beliefs and 3 separate Hyleg navigation. Three original page scans PDF559-561, six source passage groups, 25 limits, old-humoral full/new moon claims and contrary beneficial exception, parental charts, multiple benefic/malefic conditions, author explicitly warns against rash death judgment. Zero independent infant survival outcomes or clinical validity.",
   "chapter_CV_source_acceptance_note": "74 original source R6310-R6383 annotations, seven mapped passage groups, 30 source limits. Historical potentially lethal directions are unvalidated; source branches include multiple candidate Hylegs/Anaretas/Alcochodons, including explicit degrees and fallback preferences. Lilly says not satisfied how to identify these or their claimed year values; no independent survival outcome.",
-  "lord_geniture_source_acceptance_note": "32 source-only annotations R6384-R6415, three separately coded competing selection methods and rejected Firmicus sign successor; near equal planet blending without fixed weights. No independent human personality matches or runtime rules."
+  "lord_geniture_source_acceptance_note": "32 source-only annotations R6384-R6415, three separately coded competing selection methods and rejected Firmicus sign successor; near equal planet blending without fixed weights. No independent human personality matches or runtime rules.",
+  "chapter_CVII_source_acceptance_note": "59 source-only annotations R6416-R6474. Humoral quality testimony list, lunar phases, Sun seasons, zodiac triplicities, malefic overlay, equal opposing cancellation, 3x lord geniture plus Asc ruler and 2x Moon in first; all historical beliefs with zero independent biomedical or personality validation."
 }

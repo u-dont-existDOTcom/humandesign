@@ -1,0 +1,777 @@
+{
+  "schema_version": 1,
+  "source_id": "LILLY1647_WELLCOME_B30338724",
+  "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "status": "BOOK_III_LORD_GENITURE_SOURCE_ACCEPTED_NEXT_COMPLEXION_TEMPERAMENT",
+  "records_count": 6415,
+  "read_numbered_chapters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106
+  ],
+  "chapter_count_complete_book_not_established": false,
+  "batches": [
+    {
+      "id": "B02a",
+      "path": "batches/B02a/RULES.json",
+      "records_count": 91,
+      "sha256": "98a4e8a583c6e4314c256354522ce659483b95388cc768fedc20512beaeb2ecb",
+      "scope": "BookI.I-VII and preface method"
+    },
+    {
+      "id": "B02b",
+      "path": "batches/B02b/RULES.json",
+      "records_count": 139,
+      "sha256": "6310881c1163fca8ed98316948546f3f74816c1cd31e389b53b94145e742f93b",
+      "scope": "BookI.VIII-XIV including nodes; targeted later table/errata comparisons separately marked"
+    },
+    {
+      "id": "B02c",
+      "path": "batches/B02c/RULES.json",
+      "records_count": 161,
+      "sha256": "c10c17da49f53e58022e17e3003474180ab4826d3285227edc05ea0dde038138",
+      "scope": "XV; first XVI divisions; second XVI sign profiles; XVII; XVIII including table explanation, ending before XIX onPDF139."
+    },
+    {
+      "id": "B02d",
+      "path": "batches/B02d/RULES.json",
+      "records_count": 176,
+      "sha256": "70c309b3e342abad588fd1c21cf13b7e226d8d1892bd4095f39b28c00e06bb8f",
+      "scope": "Book I XIX-XXI, PDF139-162 / printed105-128; definitions, tables, horary perfection; ends before Book II XXII"
+    },
+    {
+      "id": "B02e",
+      "path": "batches/B02e/RULES.json",
+      "records_count": 100,
+      "sha256": "195eaca0ddbc5925e0f8b1318a5e50acb43be2d4579c1c11d58b98dba3ea1fce",
+      "scope": "BookII.XXII-XXIII PDF163-180; first question, timing scales, Fortune, short recap; no new personal outcome analysis."
+    },
+    {
+      "id": "B02f",
+      "path": "batches/B02f/RULES.json",
+      "records_count": 107,
+      "sha256": "c24615731bedb12b37745f7907f86a72f9c4092b1e619ed98767ccea68b91dd2",
+      "scope": "BookII XXIV-XXVI, PDF181 through201 top; presence, marks, absent persons, mother/son case, ships and question receipt time; ends before XXVII."
+    },
+    {
+      "id": "B02g",
+      "path": "batches/B02g/RULES.json",
+      "records_count": 122,
+      "sha256": "93133a61c19b8488d50e5213bbac79d1fcf8a95e5ecaf07a0fa6ad3fee30bfcf",
+      "scope": "BookII XXVII–XXVIII complete second-house block, PDF201 heading through221 before third-house preamble; wealth, means, timing, continuation and hindrance insertion."
+    },
+    {
+      "id": "B02h",
+      "path": "batches/B02h/RULES.json",
+      "records_count": 112,
+      "sha256": "f9318a18a4dc4d7d1cfd59eadd5db697f35e77772efaecef22bf075b5ed4d2bc",
+      "scope": "BookII third-house heading/preamble below PDF221 divider through235, XXIX–XXXI including unnumbered sections, two historical figures and one hypothetical sibling reuse."
+    },
+    {
+      "id": "B02i",
+      "path": "batches/B02i/RULES.json",
+      "records_count": 148,
+      "sha256": "1980d58b0b650abfa1f6e78fcc0e9d4b8cba968dc6377c171fccebbc60c812d8",
+      "scope": "Complete fourth-house heading/preamble and XXXII–XXXVIII, PDF236 through256 top before fifth-house divider; one retrospective purchase figure."
+    },
+    {
+      "id": "B02j",
+      "path": "batches/B02j/RULES.json",
+      "records_count": 201,
+      "sha256": "26e06fc4c0021fdc160fbd4f7e315324a8717b9c33f1a57f595aba14fcb6853d",
+      "scope": "Complete fifth-house heading and XXXIX–XLIII with every intervening unnumbered section, PDF256 below divider through276; before sixth-house heading/XLIV on PDF277."
+    },
+    {
+      "id": "B02k",
+      "path": "batches/B02k/RULES.json",
+      "records_count": 192,
+      "sha256": "60ab17ba2ebc6fd0c23e3d698eb276834af82655da430c2d7ce6b12cf516e6a4",
+      "scope": "Sixth-house heading and XLIV opening, PDF277/printed243 through the paragraph ending shew death on PDF292/printed258, immediately before DARIOT Abridged. All intervening unnumbered material included; XLIV continues beyond this batch."
+    },
+    {
+      "id": "B02l",
+      "path": "batches/B02l/RULES.json",
+      "records_count": 101,
+      "sha256": "7f95bfd2e73d8c3c6f5ababdd12ee6e04b45fae314b35323ae50f905899c966c",
+      "scope": "XLIV continuation: DARIOT Abridged heading and complete italic introduction on PDF292/printed258 through the full upper bridge ending Judgments of this House on PDF302/printed268; every intervening unnumbered section included. Stop above the divider before Hermes Trismegistus upon the first Decumbiture of the Sick. Chapter XLIV remains incomplete."
+    },
+    {
+      "id": "B02m",
+      "path": "batches/B02m/RULES.json",
+      "records_count": 52,
+      "sha256": "bc23641ea3ecdc9ac8b14186e586aa051073c57c1c8627271d65852da48c0365",
+      "scope": "XLIV Hermes heading and full opening below PDF302/printed268 divider through Pisces continuation above PDF316/printed282 divider; both historical medicine lists and all Saturn/Mars twelve-sign rows. Next Aphorisms not extracted; XLIV remains incomplete."
+    },
+    {
+      "id": "B02n",
+      "path": "batches/B02n/RULES.json",
+      "records_count": 43,
+      "sha256": "ff5696312331cfa174b5a53c143eafcd8437047215e5f9a2575c3d680df0c185",
+      "scope": "All 43 physician aphorisms from original PDF316 lower/printed282 through PDF320 upper/printed286; XLIV complete at next boundary."
+    },
+    {
+      "id": "B02o",
+      "path": "batches/B02o/RULES.json",
+      "records_count": 24,
+      "sha256": "8ba8afcead398093618812cec78c9096189c0dc30d306765b7184a9fc5b2ddfd",
+      "scope": "Lilly II.XLV one sick-doctor worked horoscope from original PDF320/printed286 below divider through PDF322/printed288 above divider. Printed Jupiter weekday 8 May 1645 Julian, not May24; one author-reported case, zero verified outcomes."
+    },
+    {
+      "id": "B02p",
+      "path": "batches/B02p/RULES.json",
+      "records_count": 24,
+      "sha256": "f7e019ff7746eb1792c66267a15e78efe55415ea3c786d0fe7e5d7e6bfb94e1d",
+      "scope": "Book II XLVI July1645 illness judgement original PDF323/printed289 through PDF324/printed290 ABOVE divider; one horoscope, 24 documentary units, one author-reported death, zero verified outcomes."
+    },
+    {
+      "id": "B02q",
+      "path": "batches/B02q/RULES.json",
+      "records_count": 58,
+      "sha256": "2daf390b61ffee81b71f954f73400becec139f543697b2d77ebb126b3eda3e3d",
+      "scope": "Lilly BookII.XLVII crisis and critical-day source doctrine. Original PDF324/printed290 below divider through PDF330/printed296 above divider; one original 30x16 table and editorial geometry, zero new verified patient outcomes."
+    },
+    {
+      "id": "B02r",
+      "path": "batches/B02r/RULES.json",
+      "records_count": 69,
+      "sha256": "5e083c88ff574f5829278ad82d736d73fc27ae9ccde754e52e7f7627501619cb",
+      "scope": "Lilly Book II XLVIII + seventh-house bridge + all 43 general horary aphorisms, original PDF330/printed296 below divider through PDF336/printed302 above XLIX divider, 69 source units, zero verified cases."
+    },
+    {
+      "id": "B02s",
+      "path": "batches/B02s/RULES.json",
+      "records_count": 217,
+      "sha256": "ede89b2cb2514449427564b8b06459558f3134f2f2828178e9e6f814aee6e2e9",
+      "scope": "Lilly 1647 XLIX Of Marriage original PDF336 lower/printed302 through PDF353 upper/printed319; 187 reviewed draft source units plus recovered original clauses, zero externally verified outcomes."
+    },
+    {
+      "id": "B02t",
+      "path": "batches/B02t/RULES.json",
+      "records_count": 168,
+      "sha256": "9d55b77fcb549f57effdae3f7c832c736bc9de9bf5af2a36b2a0a284ebd98419",
+      "scope": "Lilly Chapter L first phase only: original PDF353 below XLIX divider to PDF364 above 'Of a Thief and Theft'; remains chapter L incomplete. No cases validated."
+    },
+    {
+      "id": "B02u",
+      "path": "batches/B02u/RULES.json",
+      "records_count": 267,
+      "sha256": "652de262ab98d7d4d58e4b36ed46f6d6475dabfd4c52ab319379aca5731207b2",
+      "scope": "Lilly Book II Chapter L SECOND phase, original PDF364 BELOW Of a Thief and Theft to PDF381 BEFORE Of the house of the Thiefe, 267 historical source units, 0 cases validated. Chapter L still incomplete."
+    },
+    {
+      "id": "B02v",
+      "path": "batches/B02v/RULES.json",
+      "records_count": 402,
+      "sha256": "00e5e05c31a3f782983e7425cd4e4ab5ff2b9e7e9a2f8d9c7a55a03ffda2d409",
+      "scope": "Book II Chapter L final thief-house and theft sections; original PDF381 below thief-house heading through PDF400 above Chapter LI divider, 402 historical documentary source units, 75 retained textual issues, zero verified criminal or predictive cases."
+    },
+    {
+      "id": "B02w",
+      "path": "batches/B02w/RULES.json",
+      "records_count": 42,
+      "sha256": "08e6a5a1660d5f5a807f4df3eca8e9e5220d2cd57f5f1be947a076b233afc5fe",
+      "scope": "Book II Chapter LI Battle/Warre/Contentions: original PDF400 below divider through PDF402 bottom; 41 original Chapter LI editorial source annotations and one next-chapter boundary; 35 visual reverse source spans, 11 retained limits; historical text ONLY."
+    },
+    {
+      "id": "B02x",
+      "path": "batches/B02x/RULES.json",
+      "records_count": 55,
+      "sha256": "0a761d858baca81edf43c7181bd46204dd29c457cde5aa3ae7cbeae2defac00c",
+      "scope": "Book II Chapter LII litigation, partnership, neighbors, relocation and business choices, original PDF403-405 above LIII divider; 54 chapter source units and one next-chapter navigation marker; 42 visually reviewed source spans, 13 textual issues; zero validated cases."
+    },
+    {
+      "id": "B02y",
+      "path": "batches/B02y/RULES.json",
+      "records_count": 76,
+      "sha256": "b920c3524d4a0494c85015b76b4d2bd2fc22905c215fadf6a3ce93553f2cea15",
+      "scope": "Book II Chapter LIII hunting then unnumbered lawsuit/judge/mediation section; original PDF405 below LII divider through PDF410 above LIV divider; 75 LIII source annotations and one LIV navigation marker, 27 reverse source passages, 16 limits; historical text only."
+    },
+    {
+      "id": "B02z",
+      "path": "batches/B02z/RULES.json",
+      "records_count": 24,
+      "sha256": "050a703bcd6acc3d442409bd4fcc2e06fc390166e2a58e8d32ee4648d81d0d25",
+      "scope": "Book II Chapter LIV Buying and Selling Commodities, original PDF410 below prior divider through PDF411 above LV divider; 23 LIV historical source units and one next-chapter navigation marker; 16 source spans, 14 source limits, no empirical validations."
+    },
+    {
+      "id": "B03a",
+      "path": "batches/B03a/RULES.json",
+      "records_count": 32,
+      "sha256": "ac83ccf3e8176b93627b7a8f09cbefc72995aecdb7086b4e575ed920bb7ad24d",
+      "scope": "Book II Chapter LV Partnership: original PDF411 below LIV divider to PDF413 above LVI divider; 31 original LV source assertions and one next-chapter navigation marker; 17 source spans, 16 retained limits; historical text only."
+    },
+    {
+      "id": "B03b",
+      "path": "batches/B03b/RULES.json",
+      "records_count": 45,
+      "sha256": "73f2c49c8e238057edac86856c7245f1d1720c510850146e1c8209a1ef0907c1",
+      "scope": "Original 1647 Book II Chapter LVI city/town/castle siege: PDF413 below LV divider through PDF414 above LVII divider; 44 LVI historical source units plus next-chapter navigation marker; 19 reverse source passages, 17 preserved text limits. No observed efficacy or model promotion."
+    },
+    {
+      "id": "B03c",
+      "path": "batches/B03c/RULES.json",
+      "records_count": 74,
+      "sha256": "e54b5201b96d51e21788c1a41b58ce2563ddc3c40ee712ba98437c3540b454b2",
+      "scope": "Original William Lilly 1647 Book II Chapter LVII commanders/army roles and unnumbered whether-armies-fight section, PDF414 below LVI divider through PDF417 above LVIII divider; 73 chapter documentary annotations + one LVIII navigation marker, 26 reverse source spans and 19 textual limits; zero verified cases or runtime rules."
+    },
+    {
+      "id": "B03d",
+      "path": "batches/B03d/RULES.json",
+      "records_count": 38,
+      "sha256": "d5e181661014cbd72eb2bfdf4442577e799c1f4d69d14cfa9aba3f94fab7becb",
+      "scope": "Book II Chapter LVIII on general versus specific suspected enemies, original PDF417 below LVII divider through PDF419 above LIX divider; 37 LVIII documentary units and LIX heading-only marker; 18 original-image reverse source passages, 14 preserved uncertainties; no real person or empirical validation."
+    },
+    {
+      "id": "B03e",
+      "path": "batches/B03e/RULES.json",
+      "records_count": 58,
+      "sha256": "bd7c543b5bc9353daee075f3c6a616528b57fa9b207bda4390e6ae5a9486bf97",
+      "scope": "Original 1647 Book II Chapter LIX reported marriage horoscope, original PDF419 lower–PDF422 and next chapter LX heading PDF423: 57 historical case/diagram/editorial annotations and one LX boundary, 25 original-image reverse source passages, 18 unresolved chart/case issues. Claimed marriage outcome source-internal and partly affected by explicit advice, not independent empirical prediction."
+    },
+    {
+      "id": "B03f",
+      "path": "batches/B03f/RULES.json",
+      "records_count": 31,
+      "sha256": "7049ba16acbee14e00bf560288508647e8b3312df5a95e1685215692d102561a",
+      "scope": "Original 1647 Chapter LX marriage horoscope dated 11 June 1646 at 10:38 AM, original PDF423-424 above LXI divider; 30 original case/diagram/documentary source units and one LXI navigation-only heading; 13 source passage groups and 13 retained ambiguities. Reported marriage is author-internal, not empirically validated."
+    },
+    {
+      "id": "B03g",
+      "path": "batches/B03g/RULES.json",
+      "records_count": 35,
+      "sha256": "d88e0f75c0ceba570108b6831f427e30551a36fdf6960747cd5fa7b3779efa4c",
+      "scope": "Lilly 1647 Book II Chapter LXI original fugitive-servant worked case PDF424 after LX divider to PDF426 before LXII divider. 34 source notes plus LXII navigation marker, 15 image passages, 16 unresolved issues; reported Friday return and conditional Kingston claim are not independently verified."
+    },
+    {
+      "id": "B03h",
+      "path": "batches/B03h/RULES.json",
+      "records_count": 43,
+      "sha256": "d1beaaea7324392cf0f84a28056bb508ecd14c242588c4e2384a4c3f09d64a87",
+      "scope": "Lilly original 1647 Chapter LXII missing dog worked case, PDF426 below LXI divider to PDF428 above LXIII divider; 42 LXII source annotations plus next heading, 14 mapped spans, 17 unresolved issues; dog recovery claimed by same author, upper-room forecast not established."
+    },
+    {
+      "id": "B03i",
+      "path": "batches/B03i/RULES.json",
+      "records_count": 44,
+      "sha256": "d51fb01cfd4f2f5c1d21c5718ff6e55c4a237697193421496cba489743b46235",
+      "scope": "Original Lilly 1647 Book II Chapter LXIII Of Theft, PDF428 below divider through PDF430 bottom; 43 historical theft/doctrine/money-case source notes and one next fish-case heading. PDF431 next prints CHAP LIV, logical sequential LXIV, misprint retained; 15 original-image passages, 16 limits. Money recovered within three days author reported, no independent case validation."
+    },
+    {
+      "id": "B03j",
+      "path": "batches/B03j/RULES.json",
+      "records_count": 59,
+      "sha256": "1184d5a80d72c9b8584c3aa6efdf0072d235849c3ebe173694603074bd4f1c79",
+      "scope": "Lilly 1647 Book II Fish Stolen printed CHAP LIV but sequential LXIV. Original PDF431-433 above LXV divider, own dated 10 February 1638 square chart; 58 Fish Stolen original editorial source units plus one LXV heading, 18 reverse-image source passages, 20 source uncertainties. Original author reports partial fish recovery, remainder relinquished; no independently verified predictive case."
+    },
+    {
+      "id": "B03k",
+      "path": "batches/B03k/RULES.json",
+      "records_count": 40,
+      "sha256": "2feb057dafe19d9960bef8e6304978237942265a76722a5af22c8010aa6d19f9",
+      "scope": "Original Lilly 1647 Book II Chapter LXV Waller/Hopton case, PDF433 below Fish Stolen divider to PDF434 bottom, next Chapter LXVI heading PDF435. Square horoscope heading and figure both 29 March 1644, 10:12 AM. 39 source clauses plus one next heading, ten original-image passage groups, eighteen uncertainties. Author claims favorable news within 11–12h and a Friday letter; arrival time unverified, victory qualified incomplete."
+    },
+    {
+      "id": "B03l",
+      "path": "batches/B03l/RULES.json",
+      "records_count": 76,
+      "sha256": "c93c7f0ffb09ea332f9b5fa11d50e56dcddaf44282d5833044b681c7b4d58c45",
+      "scope": "Original Lilly 1647 Chapter LXVI Essex-Reading siege with unnumbered hypothetical lawsuit. Original PDF435 through top of PDF438 above eighth-house divider; 74 LXVI source units and two next-section navigation units; 19 original-to-record spans, 23 original uncertainty limits. Horoscope 17 April 1643 6:50 PM, surrender sentence literally prints 27 April 1644 whereas independent history is 27 April 1643, author admits three-day missed capture deadline; negotiations around forecast date separately preserved. Not empirical validation."
+    },
+    {
+      "id": "B03m",
+      "path": "batches/B03m/RULES.json",
+      "records_count": 186,
+      "sha256": "ac61ef69e7fb3d0357576afde979058cc902895306a90ff02f3d09ac2871eb57",
+      "scope": "Original William Lilly Christian Astrology 1647 Book II Chapter LXVII (If absent party be alive or dead?) plus six unnumbered subsections about return/news, timing, querent lifespan, spouse death order and supposed manner of death. Body original PDF438 below eighth-house preface through PDF446 above LXVIII divider. 184 historical chapter source assertions and two LXVIII navigation headings, 38 visual source spans and 31 retained textual limits; no independent human/clinical predictions validated."
+    },
+    {
+      "id": "B03n",
+      "path": "batches/B03n/RULES.json",
+      "records_count": 44,
+      "sha256": "da73ebef4c5aa7c55d99a34104a1257a646506342557f1318e85e81d008b35c5",
+      "scope": "Original 1647 Book II Chapter LXVIII wife's portion/dowry wealth: original PDF446 below LXVII divider through PDF447, next LXIX heading PDF448. 43 historical wealth/dowry source clauses plus one next-chapter heading, eleven reverse image source groups, fifteen retained uncertainty/negative clauses; no independent transactions or wealth predictions validated."
+    },
+    {
+      "id": "B03o",
+      "path": "batches/B03o/RULES.json",
+      "records_count": 31,
+      "sha256": "3c1a3610b1707b7377565b648097b3008de81a01ca7ae0b9dfd7b411269b4311",
+      "scope": "Lilly original 1647 Book II LXIX fear/danger on PDF448 printed414, generic one-page conditions and attributed cadent-rumor theory; 30 historical clauses + one LXX navigation heading PDF449, 12 source passages, 14 uncertainty limits. No source worked chart and zero independently verified risk outcomes."
+    },
+    {
+      "id": "B03p",
+      "path": "batches/B03p/RULES.json",
+      "records_count": 45,
+      "sha256": "82f72c1a7d2ae5e32f95c1828bad56d8d08dd605f7865551613888ee0a2950e3",
+      "scope": "Original 1647 Lilly Book II Chapter LXX, separate 6 Feb 1644 9:10 PM spouse death-order case; original PDF449-450 plus next LXXI heading PDF451. 44 historical case source assertions and one next navigation, 14 source passages, 18 uncertainties. Author reports grave pre-existing illness and a later 8 Oct outcome after a forecast late Sep/early Oct of death OR grave danger; no independent case validation."
+    },
+    {
+      "id": "B03q",
+      "path": "batches/B03q/RULES.json",
+      "records_count": 41,
+      "sha256": "3f7b9d767176f9bf1e26fed980792b87b94312369f696b59585e0ce5f40d6026",
+      "scope": "Lilly original 1647 LXXI wife enquires about husband at sea, 15 April 1645 1:10 PM square figure, original PDF451-452 with LXXII heading PDF453. 40 historical clauses plus one navigation, 10 visual source passages and 18 limits; early false rumor in 2-3 days, later news in second week May rather than exactly May 5, physical return only July, retrospective Barnstable location. No independently verified predictions."
+    },
+    {
+      "id": "B03r",
+      "path": "batches/B03r/RULES.json",
+      "records_count": 43,
+      "sha256": "87a16958194e84fed08afa01b3ec981c8ac9ebe119e5ac9d0951fa800f49b3f3",
+      "scope": "Original 1647 Lilly Book II LXXII Archbishop of Canterbury chart printed 3 Dec 1644 2:24 PM; 42 chapter source annotations plus one next LXXIII heading, original PDF453-454 and boundary PDF455, 11 original passage groups, 18 limits. Independent Bodleian confirms execution 10 Jan 1645, but no independent forecast manuscript; source claims not hanging, other noble mode, 6-7 weeks or thereabouts, actual interval 38 days."
+    },
+    {
+      "id": "B03s",
+      "path": "batches/B03s/RULES.json",
+      "records_count": 34,
+      "sha256": "ac6ab4b766f3cb24f79d2e4d7af76346ed55cc7250b17de94a9401a122248288",
+      "scope": "Lilly original 1647 Book II LXXIII If have the Portion promised? 13 July 1634 6:15 PM, PDF455 and early PDF456 before ninth-house section. 32 chapter source units plus 2 LXXIV navigation labels, 10 reverse primary source passages, 17 explicit limitations. Author says payment would be performed and questioner reported all true, but no independently verified payment proof or prospective forecast."
+    },
+    {
+      "id": "B03t",
+      "path": "batches/B03t/RULES.json",
+      "records_count": 153,
+      "sha256": "dd214724f4f80685a44ad042f503376f50f8f9efb5d9a75fcb5d84a909983dba",
+      "scope": "Lilly original 1647 Book II LXXIV complete ninth-house general doctrine and voyage subsections, original PDF456-463 above LXXV divider. 151 original source clauses + 2 LXXV navigation labels, 28 primary visual passages with six two-page seams, 32 retained uncertainties. Storm/wind, voyage, return, correspondence truth, purposes, duration are source doctrines with no independently verified human cases."
+    },
+    {
+      "id": "B03u",
+      "path": "batches/B03u/RULES.json",
+      "records_count": 61,
+      "sha256": "4d7c706bdd468a931ae113860a74ac38296fb7db75ea87bb626f05cd9c8561aa",
+      "scope": "Original Lilly 1647 Book II Chapter LXXV knowledge/skill, actual wisdom, multiple absent people, and journey directions/wealth. Physical PDF463-466 text order, but ORIGINAL PRINTED NUMERALS 429,431,430,432 transposed at middle. 59 LXXV source clauses plus two LXXVI heading markers; 16 source passages and 20 retained interpretive limits. No independent person, competence, or travel case outcome."
+    },
+    {
+      "id": "B03v",
+      "path": "batches/B03v/RULES.json",
+      "records_count": 62,
+      "sha256": "d583d1e87f1e124ee54553a1d2522a7aad6b86b062c8a1908057e8ffa302e396",
+      "scope": "Original Lilly 1647 Book II LXXVI ecclesiastical appointment, PDF466-468 before LXXVII dream divider. 60 substantive historical clauses plus two LXXVII next navigation; 16 visual source passages, two physical page seams and 20 uncertainties. Outcome branches include admission, delay, loss, alleged payment, competition, and benefice value; no verified appointment or misconduct case."
+    },
+    {
+      "id": "B03w",
+      "path": "batches/B03w/RULES.json",
+      "records_count": 38,
+      "sha256": "7a37187489159b2d36adf2ed8012ed9c512cb159a064427e800bc29b51d37b3d",
+      "scope": "Original William Lilly 1647 Book II LXXVII generic dream interpretation on original PDF468 lower part through PDF469; next LXXVIII dated worked dream starts PDF470. 36 substantive historical dream clauses plus two following-chapter navigation markers, eight original source passages, fifteen unresolved source limits. No independently authenticated dream/harm/psychological prediction."
+    },
+    {
+      "id": "B03x",
+      "path": "batches/B03x/RULES.json",
+      "records_count": 24,
+      "sha256": "47de293703d7dc051d2746949398690200dace83754551ee3acc4dee001c0054",
+      "scope": "Original William Lilly 1647 Book II Chapter LXXVIII terrible dreams dated example on original PDF470 and PDF471 above LXXIX divider. 22 dream-case documentary clauses plus two following-chapter navigation markers, six source passage groups, 14 unresolved limits, one author-asserted unverified retrospective success, zero independent prediction validations."
+    },
+    {
+      "id": "B03y",
+      "path": "batches/B03y/RULES.json",
+      "records_count": 41,
+      "sha256": "9db9bef66ee0c9a5e9b13550470d477bc6ddbf1230ac620a6408dfb6772f32ea",
+      "scope": "Original William Lilly 1647 Book II LXXIX parsonage refusal example on original PDF471 below LXXVIII and PDF472 to end; following LXXX opening on PDF473. 39 substantive historically source-only observations plus two navigation markers, seven original passage groups and 17 unresolved limits, six author negative factors, anecdotal letter with unverified failure and hypothetical unknown informer. No independently validated prediction."
+    },
+    {
+      "id": "B03z",
+      "path": "batches/B03z/RULES.json",
+      "records_count": 82,
+      "sha256": "c40a5fa96cb5055cd84fac3a6f95ba3dd36fdbff9cda2b8295a3a23c1c0064f3",
+      "scope": "Original William Lilly (1647) Book II LXXX Presbytery horary public-institution forecast on original PDF473-476, printed439-442, 80 substantive claims plus two LXXXI navigation markers, 13 source passages, 24 unresolved limits, one original 11 March 1646/7 chart, separate three-year alternatives and explicit statu quo/reform qualifier, zero independently authenticated political predictions."
+    },
+    {
+      "id": "B04a",
+      "path": "batches/B04a/RULES.json",
+      "records_count": 57,
+      "sha256": "0bf938b8c323e8ca0bec0da499b21c8b6fee0adf57473aabed40633b540fc56e",
+      "scope": "Original 1647 William Lilly Book II LXXXI Philosopher's Stone worked horary, original PDF476-478/printed442-444. 54 substantive authorial belief, source aspects, failure explanations and historical consumption warning plus three next Tenth House/LXXXII navigation markers; eleven original passages, twenty source uncertainties, no independently authenticated elixir, clinical diagnosis or predictive validation."
+    },
+    {
+      "id": "B04b",
+      "path": "batches/B04b/RULES.json",
+      "records_count": 141,
+      "sha256": "63c2e7ef3d9e6b3659260d176c7a0c4f73731f727ca5c84c81aafd69af4088fd",
+      "scope": "Original William Lilly (1647) Book II LXXXII Government Office Dignity Preferment source-only rules, original PDF478–482 (printed444–448). 139 substantive clauses for obtaining, holding, transferring or losing an office plus two following LXXXIII navigation markers; 21 passage groups, 26 source limitations; no independent appointment or prediction evidence."
+    },
+    {
+      "id": "B04c",
+      "path": "batches/B04c/RULES.json",
+      "records_count": 46,
+      "sha256": "47e77244a0a12388fadc8356a9f6d2cf8343772b8127882609d407c6226566df",
+      "scope": "First-edition William Lilly Book II LXXXIII restoration to former office/kingdom, original PDF482-484. 44 historical clauses and two separate following-chapter navigation units, eight passages and 17 unresolved conditions, with restoration elsewhere distinct from return, zero independent empirical outcomes."
+    },
+    {
+      "id": "B04d",
+      "path": "batches/B04d/RULES.json",
+      "records_count": 79,
+      "sha256": "455fa58aa8b35ea5d78eb5020ffaaff0883c4c1c758fc1b456c7a7412b9d66cc",
+      "scope": "Original Lilly (1647) Book II LXXXIV profession, magistery and trade horary source. Original PDF484-485 printed450-451, following LXXXV figure navigation on PDF486. 77 historical substantive sign-to-vocation annotations plus two navigation, 15 original source groups, 24 interpretive limits. Mars and Venus vocational significator glyphs visually verified, no independent human vocational prediction."
+    },
+    {
+      "id": "B04e",
+      "path": "batches/B04e/RULES.json",
+      "records_count": 72,
+      "sha256": "f2106c9c918c25b3c969d15d418fdbb4bc5557fb51f692cfa40d6873b6fb2d22",
+      "scope": "Original William Lilly first-edition (1647) Chapter LXXXV Prince Rupert vs Earl of Essex and later fate, original PDF486–488 / printed452–454. 70 substantive source annotations and 2 following LXXXVI navigation, 11 primary-image passages, 25 source uncertainties. Includes prior Edgehill event (not forecast), later 1646 Oxford Rupert fate and Lilly's explicit partial error, 0 empirical prediction validations."
+    },
+    {
+      "id": "B04f",
+      "path": "batches/B04f/RULES.json",
+      "records_count": 54,
+      "sha256": "42069ab80e3490645cffc385a62e726d902a8a1c43381d9294b78d2c521b59ae",
+      "scope": "Original Lilly 1647 Book II LXXXVI separate King/Irish forces and Queen northern army case, original PDF489–490 printed455–456, 52 substantive historical clauses and two LXXXVII navigation markers, ten source passages, twenty-four caveats. Source figure's absolute date unresolved; source retrospectively reports 14 July 1643 reunion and limited Queen army losses versus more categorical destruction forecast. No independently validated prediction."
+    },
+    {
+      "id": "B04g",
+      "path": "batches/B04g/RULES.json",
+      "records_count": 33,
+      "sha256": "1347695b2ccc6b249eb010f4410294ee05ca60077f252f00f513f42849d66623",
+      "scope": "First-edition Lilly 1647 desired preferment question printed CHAP LXXXVI (stable editorial sequence LXXXVII) original PDF490-491/printed456-457, 31 substantive clauses including favorable Moon/Saturn testimony, false friend and author-retrospective claimed office within less than three weeks; two next-chapter navigation, 6 passages and 18 unresolved limits, no independently authenticated office outcome."
+    },
+    {
+      "id": "B04h",
+      "path": "batches/B04h/RULES.json",
+      "records_count": 48,
+      "sha256": "bf7949628abfc991a4625994739193f4ad77200f7b89e275d57d125c7a0b52e0",
+      "scope": "Original Lilly first edition printed LXXXVII, stable editorial LXXXVIII, Eleventh House hope/friendship and completeness rules on original PDF491-492 with LXXXVIII following heading PDF493. Forty-six chapter clauses and two next-heading markers, seven page spans, 21 retained limitations; common/movable/fixed and good-hopes versus partial/probability/harm outcomes distinct; no independent validations."
+    },
+    {
+      "id": "B04i",
+      "path": "batches/B04i/RULES.json",
+      "records_count": 32,
+      "sha256": "e1e8b03bcaac8da7db627da50d6fe6a074243199cfa9f39c447c01e347751050",
+      "scope": "Lilly first edition original printed LXXXVIII, stable editorial LXXXIX, friendship, secret wishes and mutual love on PDF493/printed459; 30 clauses, 2 next-chapter navigation records, 4 source spans, 14 limitations; no independent relationship outcomes."
+    },
+    {
+      "id": "B04j",
+      "path": "batches/B04j/RULES.json",
+      "records_count": 29,
+      "sha256": "f201d963151bc083da0940fa5717be688b61d750905177a2493b83ef0e46e4b8",
+      "scope": "Original Lilly first edition printed LXXXIX editorial XC Twelfth House unnamed secret enemies and alleged illness on PDF494–495, 27 substantive source clauses, 2 navigation, four passages; no independent enemy or medical verification."
+    },
+    {
+      "id": "B04k",
+      "path": "batches/B04k/RULES.json",
+      "records_count": 85,
+      "sha256": "5417aba33b30d94a3ba87bbbc729504075f8d3f6f75a342467b79154585442be",
+      "scope": "Lilly first edition printed XC/editorial XCI imprisonment and release, PDF495-497, 83 historical conditional source claims, two next-chapter markers; lunar speed, freedom, recapture, peril and prison break unverified."
+    },
+    {
+      "id": "B04l",
+      "path": "batches/B04l/RULES.json",
+      "records_count": 31,
+      "sha256": "4096af7c155f54082637d870dd84e246cc2ad583b8a543944a8449b2b1974ca9",
+      "scope": "William Lilly first edition 1647 printed Chapter XCI / editorial XCII, captive or enslaved person and planetary hour of capture, original PDF497–498 printed463–464. 29 historic source clauses and two following witchcraft chapter navigation markers, five original passage groups, nineteen limitations; zero independently authenticated release/outcomes."
+    },
+    {
+      "id": "B04m",
+      "path": "batches/B04m/RULES.json",
+      "records_count": 75,
+      "sha256": "3929da93d11e182d38207393533513fb7fd6098b274be36496659baed61bf190",
+      "scope": "Original first-edition Lilly printed XCII/editorial XCIII claims about supernatural witchcraft, 1647 PDF498-500, with an unnumbered domestic-ritual subsection, and distinct following horse case on PDF501; 72 substantive historical claims, three navigation markers, 11 source spans, 28 explicit limitations, zero independently authenticated outcomes."
+    },
+    {
+      "id": "B04n",
+      "path": "batches/B04n/RULES.json",
+      "records_count": 44,
+      "sha256": "ffe7d139f9aac9c16cd23d6a9181b23d13a71cb4cd1bc61b635896e2482f6313",
+      "scope": "Original Lilly first-edition printed XCIII/editorial XCIV lost or stolen horse near Henley dated horary 11 Jan 1646 at 2:59 PM on original PDF501–502/printed467–468; 42 substantive source annotations and two next-chapter navigation markers, seven original passage groups, 20 limitations. Lilly predicts within one-to-two days, says horse returned after three, alternatively dates Jan13 or Jan14; timing discrepancy and independent-outcome absence preserved."
+    },
+    {
+      "id": "B04o",
+      "path": "batches/B04o/RULES.json",
+      "records_count": 53,
+      "sha256": "c61c567c27cb4b6503ee3509260ab29ddd0ab7051f0e1fab2359b1252156de1d",
+      "scope": "First-edition William Lilly (1647) printed XCIV/editorial XCV separate dated If Bewitched illness/medical worked case original PDF502-503, navigation-only separate prisoner escape case on PDF504. Fifty historical source assertions, three navigation, ten source spans, twenty-two limits; initially suspected bewitchment then negative author judgment, speculative venereal etiology explicitly not confirmed as syphilis, claimed three-week recovery without independent patient records."
+    },
+    {
+      "id": "B04p",
+      "path": "batches/B04p/RULES.json",
+      "records_count": 42,
+      "sha256": "e4ccc9a2aa4b997ddc67dda918a2efa223e3e0b78fbbee24418a26c79b829553",
+      "scope": "Original William Lilly 1647 printed XCV/editorial XCVI escaped-prisoner direction and recapture worked horary dated June 6 1647 8PM, original PDF504-505 printed470-471. Thirty-nine substantive historical source annotations and three following-chapter navigation markers, seven page passage groups, 20 uncertainties. Author reports eastern route, one-night concealment, Friday letter and Sunday recapture without independent evidence."
+    },
+    {
+      "id": "B04q",
+      "path": "batches/B04q/RULES.json",
+      "records_count": 34,
+      "sha256": "09975e3799af62e5cf16cbf3da2e30551d9dbfc83e39b4828d69ff719ce7e04d",
+      "scope": "First edition William Lilly printed XCVI/editorial XCVII wife asks if husband released, original PDF505-506. 30 source clauses and 4 postchapter navigation markers, 7 passage groups and 19 limitations. Lilly hedges already released OR within 3 days, then asserts release and garrison capture on day before question. No independent record or prospective success. Next unnumbered Essex chart and tables not completed."
+    },
+    {
+      "id": "B04s",
+      "path": "batches/B04s/RULES.json",
+      "records_count": 43,
+      "sha256": "ae10f713ea41c070c7990eccdac8a21327591bc705a36246bc40bf18bcf84ad4",
+      "scope": "Original Lilly first-edition unnumbered Robert Earl of Essex western march May13 1644 12:29PM on PDF507, 41 substantive historical annotations and two next table navigation; source-based forecasts and self-reported September defeat, independently corroborated army ammunition surrender Sep2, Essex himself escaped by sea Sep1; NOT independent verification of prior astrology forecast."
+    },
+    {
+      "id": "B04t",
+      "path": "batches/B04t/RULES.json",
+      "records_count": 10,
+      "sha256": "dbb184cd7b4e04e9a48089801bcf132347c0af67d5d476391408df2bf7b271c1",
+      "scope": "First-edition original Lilly printed planetary-hour table leaves 1-8 (original PDF508–515), preserved by eight exact original page-image hashes, 8 page-witness annotations and 2 following chapter navigation records; printed numeric cells NOT fully machine-transcribed/independently validated. Next printed XCVII PDF516."
+    },
+    {
+      "id": "B04u",
+      "path": "batches/B04u/RULES.json",
+      "records_count": 114,
+      "sha256": "d8c0bc63e03e7e0c85443463345c1486ca767e464d251e64dd08247b3ae48d6c",
+      "scope": "William Lilly (1647) original printed Book II CHAP XCVII/editorial XCVIII method for variable planetary hours and examples, original PDF516-519, signed conclusion 11 June 1647 PDF520, separate Book III title PDF521; 109 historical method and conclusion annotations plus five next-book navigation, 13 source passage groups, 30 caveats, 3 internal clock calculations passing tests. Previous planetary-hour table numeric cells still incompletely digitized; no empirical claims or runtime change."
+    },
+    {
+      "id": "B04v",
+      "path": "batches/B04v/RULES.json",
+      "records_count": 71,
+      "sha256": "0535d315f091f9661e0e8db31d842cbee3286d6a12b52232c2bcca153309026e",
+      "scope": "Original William Lilly (1647) Book III nativity title/unprinted verso, time-to-equatorial-degree table PDF523, Regiomontanus use & worked 12 June 1647 house cusp example PDF524-525, right ascensions PDF526-527, oblique ascensions for latitudes 34,49,53 PDF528-533, navigation to first printed rectification CHAP XCVIII PDF534. 68 substantive introductory/table-image annotations + 3 navigation, 14 source spans and 24 limits. Printed 142d20m +90d ->230d20m inconsistent mathematically (232d20m). Numeric tables not fully digitized."
+    },
+    {
+      "id": "B04w",
+      "path": "batches/B04w/RULES.json",
+      "records_count": 99,
+      "sha256": "952f214f76fc6f64c56c742e57f7a3b53cae950c68b34f9eda257c1607cb15ed",
+      "scope": "Lilly original printed Book III CHAP XCVIII / editorial XCIX birth-time rectification and Hermes Trutine, original PDF534–539 printed500–505, unidentified merchant 19 Sep 1616, historic pregnancy duration/moon-angle and calendar tables. 96 substantive claims and 3 following Animodar navigation records; 13 original source groups, 27 caveats. Lilly admits exact-degree Trutine imprecision, finds sign sometimes, claims accident/directions-based precision without independent verification, explicitly discredits different conception-hour formula. 1616 leap/conception 10Dec1615 calendar arithmetic checked, actual conception unverified."
+    },
+    {
+      "id": "B04x",
+      "path": "batches/B04x/RULES.json",
+      "records_count": 34,
+      "sha256": "e4b6f0398a087351e290154436079549d20eb3c9bd2a75606d5ae63d4c555a54",
+      "scope": "Original Lilly 1647 printed CHAP XCIX/editorial C Animodar rectification; PDF539–540/printed505–506, following accidents CHAP C PDF541 navigation only. 31 source clauses plus three next-navigation, 5 passage spans and 22 limits. Ptolemaic preceding syzygy Sun/Moon above horizon, dignity winner/tie and Asc/MC proximity rules; example merchant 15 Sept 1616 full Moon, Sun 2d32 Libra, Saturn choice, estimated 9d02 Capricorn ascendant. Previously accident-adjusted chart cannot independently verify birth time. Lilly explicitly says Animodar and Trutine less sure than accidents."
+    },
+    {
+      "id": "B04y",
+      "path": "batches/B04y/RULES.json",
+      "records_count": 188,
+      "sha256": "2f3cdfdc63f21fe8f751e2114ccf523dc23dd64789fc11dba0376bc78bb02e0d",
+      "scope": "Original 1647 Lilly printed CHAP C/editorial CI accident-based rectification and graphical speculum, PDF541-553; 185 substantive historical source clauses and 3 following Regiomontanus navigation markers, 13 original page spans and 25 outstanding limits. Prior merchant known accidents and alternative promissors, original biquintile 105/205 discrepancy, term off-by-one warning, 16y7m in-sample career fit, 20y10m fever target versus fitted 19y10m10d. No independent true birth time or unseen event verified."
+    },
+    {
+      "id": "B04z",
+      "path": "batches/B04z/RULES.json",
+      "records_count": 70,
+      "sha256": "e98d7beb2c7274b3a0175707233d9eafc56d92cded04ff0c5f93426adeb2f894",
+      "scope": "First-edition original Lilly printed CHAP CI/editorial CII Regiomontanus natal house erection, original PDF553-557, following printed CII heading PDF558. 67 original worked source annotations and 3 following navigation, 6 source groups, 24 uncertainties. Merchant Sep19 1616 2:24:25PM at latitude53; original source MC RA222deg10 from rounded solar RA/time and six house cusps, exact intermediates give222deg10min10sec. Original Capricorn Asc6deg37 vs printed OA interpolation near6deg40 discrepancy and 25s versus30s time conversion. No independent natal accuracy or fully verified table data."
+    },
+    {
+      "id": "B05a",
+      "path": "batches/B05a/RULES.json",
+      "records_count": 29,
+      "sha256": "c7ae634d44b4d06362ad2ab4197b6332e323f3eb19a06502c1f8eb7aa7abb96e",
+      "scope": "William Lilly (1647) first edition printed CHAP CII/editorial CIII, single-page natal prejudgment conditions original PDF558/printed524, 26 substantive source clauses and 3 following mortality/lifespan navigation from PDF559. Four source passage groups, 17 qualifications. Accidents birth-time rectification author favored; planetary strengths/Part of Fortune, aspects, antiscia and contra-antiscia, unquantified closeness to houses/planets, first/second magnitude fixed stars with unquantified small ecliptic latitude. No independent medical, natal or empirical outcome."
+    },
+    {
+      "id": "B05b",
+      "path": "batches/B05b/RULES.json",
+      "records_count": 65,
+      "sha256": "12221d5ffd512ac7e4096777ba75cdec4e91304387346acf9773e75a32c8d597",
+      "scope": "Original William Lilly 1647 printed CHAP CIII/editorial CIV historical infant longevity claims first-edition original PDF559-561/printed525-527. 62 substantive source conditions and 3 following Hyleg chapter navigation, six mapped passage groups, 25 limitations; infant survival and childbirth claims are historical, unverified and not medical prognosis. Favorable vs unfavorable lunar-phase/benefic exception preserved alongside warning not to pronounce death rashly. Next printed CHAP CIV begins below divider on original PDF561."
+    },
+    {
+      "id": "B05c",
+      "path": "batches/B05c/RULES.json",
+      "records_count": 74,
+      "sha256": "dc843605bbbeaa044834a3cc52c7f3bf42504fce1478b02366fabbc95f6551fe",
+      "scope": "Original first edition Lilly 1647 printed CHAP CIV/editorial CV Hyleg Hylech Apheta Anareta Alcochodon historic lifespan source, PDF561–565 (following Chapter CV starts below divider on PDF565; PDF566 navigation context). 71 substantive original-source clauses plus 3 following Lord of Geniture navigation, 7 first-edition passage groups, 30 limits. Conditional sect, house eligibility 1/10/11/7/9, 25 degree Ascendant exception, multiple syzygy/dignity and Anareta contenders, 5 degrees before/25 after eighth cusp, competing Arabic and earlier sources, Alcochodon alleged planetary years. Lilly explicitly says he is unsatisfied selecting Hyleg, Anareta, Alcochodon, and has no independent human mortality validation."
+    },
+    {
+      "id": "B05d",
+      "path": "batches/B05d/RULES.json",
+      "records_count": 32,
+      "sha256": "51eb036121b60cd7b7d57c22b7564e82da74823a5ca026654620cd98755f0f5d",
+      "scope": "First-edition William Lilly printed CHAP CV/editorial CVI Lord of Geniture original PDF565-566, with following complexion CHAP CVI navigation PDF566-567. 29 historical source details +3 following navigation, 6 source spans, 19 limitations. Rejected Firmicus next-Moon-sign scheme, competing all-point essential dignity aggregate and Greek Moon/Mercury dignity approach, Lilly preferred combined essential/accidental strength, elevation, nearequal runnerup mixture and aspects. No numeric weights fixed, no empirical personality evidence."
+    }
+  ],
+  "next": {
+    "pdf_page": 566,
+    "printed_page": 532,
+    "chapter": "CVII",
+    "printed_chapter_numeral": "CVI",
+    "heading": "Of the Complexion or Temperament of the Body; quality of the Planets and Signes",
+    "include_opening_paragraph": true,
+    "extracted": false,
+    "boundary_image_read": true,
+    "position": "Original PDF566 lower portion below separate CHAP CVI divider, continues PDF567 and the top of PDF568; next printed CHAP CVII begins below a divider on PDF568.",
+    "source_safety": "Original medical/humoral terminology is historical only, no clinical diagnosis or validated personality scoring."
+  },
+  "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
+  "runtime_promotions": 0,
+  "empirical_validations": 0,
+  "read_headed_units_count": 80,
+  "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05d_LORD_GENITURE.md",
+  "body_table_or_medical_claims_validated": false,
+  "partial_numbered_chapters": [],
+  "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
+  "chapter_L_source_acceptance_note": "Documentary source intake only; 75 issue entries include repaired misreadings and still unresolved grammar/glyphs. Source-to-record map and bounded image audit are not independent word-for-word certification. No empirical validation, clinical use or real-person inference.",
+  "chapter_LI_source_acceptance_note": "42 historical editorial source units (one LII boundary), manual reverse original-image-first 35 passages, 22 extracted-archive source-only tests, 11 retained uncertainties including 5 literal e-contra and 1 differently phrased contrary; no diplomatic source certification, no empirical or runtime validation.",
+  "chapter_LII_source_acceptance_note": "55 documentary units incl next chapter boundary, 42 source-first reverse original-image spans, 13 retained textual uncertainties, three untranslated abbreviated e-contra, zero blind outcome confirmations or runtime validation. The image reviewer was not a blind independent diplomatic transcription.",
+  "chapter_LIII_source_acceptance_note": "76 historical editorial documentary units (75 LIII and one LIV heading marker), six original-page scans, 27 visually reviewed original source spans, 16 retained interpretive limits. Did not conduct independent blind diplomatic second transcription. No real litigant or hunting outcome, astrology prediction, or runtime model validation.",
+  "chapter_LIV_source_acceptance_note": "24 original documentary annotations including LV boundary; 16 reverse source image spans and 14 retained unresolved readings. Provisional source packet preserved with former predecessor-held snapshot. 19 source tests replayed in extracted source archive, not empirical predictions.",
+  "chapter_LV_source_acceptance_note": "32 historical source units including LVI navigation marker, 17 source passages, 16 original text limits; original three-page scan hashes and original provisional ZIP manifest preserved. No independently blinded full diplomatic transcription, predictive accuracy evidence or model changes.",
+  "chapter_LVI_source_acceptance_note": "45 source-only historical annotations R3204–R3248, incl one LVII navigation marker; 19 manually visually mapped original passage groups, 17 limits, 2 original scan hashes. Reproducible extracted archive passed 17 focused source tests. No full blind second diplomatic transcription; no validated historical siege outcome, military claim, astrology predictions or runtime promotion.",
+  "chapter_LVII_source_acceptance_note": "74 source-only 1647 historical annotations, including next chapter navigation; four scan pages, 26 one-to-many reverse original-source passage maps, 19 retained text and interpretation limits. Includes unnumbered if-the-armies-shall-fight subsection. Source review not full blinded independent diplomatic transcription. 17 extracted tests passed, no known independent real cases, blind predictions or runtime promotions.",
+  "chapter_LVIII_source_acceptance_note": "38 historical source annotations including a LIX navigation marker; 18 reverse original-image passages, 14 retained concerns. 15 source tests replayed from a CRC-and-hash-verified archive. No independent complete blind diplomatic transcription, real-world detection of enemies, empirical predictions or model runtime changes.",
+  "chapter_LIX_source_acceptance_note": "58 original-image historical documentary annotations incl LX header, 25 original passages, 18 uncertainty issues. Original 16 June 1646 square chart preserved with unresolved time and symbols, reported outcome not independently authenticated or blinding-frozen, social intermediary advice directly affected case. ZIP extraction replay 13 source tests, zero empirical or runtime promotion.",
+  "chapter_LX_source_acceptance_note": "31 historical-source editorial units including one LXI boundary, 13 original-image reverse passages and 13 retained unresolved chart/grammar/reception issues. Original 11 June 1646 chart and its author-reported marriage success are documentary, not independently authenticated, prospectively frozen, or counted as astrology predictive validation.",
+  "chapter_LXI_source_acceptance_note": "35 historical source annotations including one LXII heading; 15 mapped original passages and 16 preserved uncertainties. Source-internal Friday return and conditional Kingston claim not independently documented; question date and one/two-day forecast timing unscored.",
+  "chapter_LXII_source_acceptance_note": "43 historical documentary units including LXIII navigation, 14 source passages, 17 source issues. Author-reported Monday dog recovery and Long-acre finding are not independent validation; floor/upper-room prediction unresolved. Unnumbered fugitive maxims preserved before LXIII divider.",
+  "chapter_LXIII_source_acceptance_note": "44 historical editorial units including next fish-case navigation marker, 15 reverse original-image source passages, 16 limits. Master Allen and Lilly differing thief signification methods preserved; 24 May 1647 stolen-money case author reports return within 3 days, no independent evidence. Printed next Chap LIV is a misnumbering; preserve original and chronological LXIV separately.",
+  "chapter_LXIV_source_acceptance_note": "Source printed CHAP LIV Fish Stolen after LXIII; logically LXIV, distinct from earlier Book II LIV buying/selling. 59 historical source units including one LXV heading, 18 source-image passages, 20 source limitations. Author reported partial fish recovery, remainder relinquished; negative discovery-without-recovery rule retained. No independent case authentication or runtime algorithm promotion.",
+  "chapter_LXV_source_acceptance_note": "40 historical editorial source units (39 LXV and one LXVI heading), 10 visual-source passages and 18 limitations. Enlarged original reads 29 Mar 1644, 10:12 AM, not May. Author-predicted 11–12 hour favorable news is not verified because letter arrival clock is unreported. Outcome letter and prisoner counts are source-internal, with explicit incomplete victory qualification.",
+  "chapter_LXVI_source_acceptance_note": "76 documentary annotations including two LXVII/eighth-house navigational markers, 19 original visual passages, 23 retained uncertainties. Original chart 17 Apr 1643; original surrender sentence literally 27 Apr 1644, external 1643; author says final surrender three days after predicted deadline, negotiations began near prediction date. Counterfactual lawsuit is same Chapter LXVI, not an observed lawsuit. Zero blind independent prediction validations or model changes.",
+  "chapter_LXVII_source_acceptance_note": "186 original-source documentary annotations R3747–R3932, including 184 Chapter LXVII source claims and two LXVIII next-heading navigation markers. Thirty-eight original passage groups map to all annotations, with eight consecutive two-page seams and 31 retained uncertainties. No independently observed missing-person returns, deaths, spouse ordering or clinical causes; flexible death/return-time units and derived-house/reception exceptions are historical text, not validated predictive rules.",
+  "chapter_LXVIII_source_acceptance_note": "44 historical documentary units (43 wealth clauses, one LXIX heading); 11 original-page spans, 15 uncertainties. Eighth vs second house, good versus delayed payment, square/opposition and reception conditions retained; original warns rules not universal. Zero verified property or fraud outcomes.",
+  "chapter_LXIX_source_acceptance_note": "31 historical source units R3977-R4007; generic source doctrine only, no dated figure, 12 reverse original-image passages and 14 uncertainties. Different conditions for unwarranted fear versus harm, benefics, infortunes, rumors and Moon-Sun disclosure; zero verified person outcomes.",
+  "chapter_LXX_source_acceptance_note": "45 original historical documentary records R4008-R4052, 14 visual passage groups, 18 textual limits. Original 6 Feb 1644 case, severe illness known, missing natal data and source-reported 8 Oct later outcome. Forecast was late September/beginning October death OR great danger, not an exact preannounced 8 Oct death. Zero independent prediction validations.",
+  "chapter_LXXI_source_acceptance_note": "41 original source annotations R4053-R4093, 10 original passage groups and 18 limits. The early report of husband in town was false; later reliable news in May and actual return in July are distinct. Later claimed Barnstable location not independently verified; zero empirical successes.",
+  "chapter_LXXII_source_acceptance_note": "43 source documentary annotations R4094-R4136 (42 substantive plus next heading), 11 original page passages, 18 limits. Bodleian corroborates beheading 10 Jan 1645, but a prospective December 1644 astrology forecast is NOT independently authenticated; source gives approximate six/seven weeks or thereabouts while event is 38 elapsed days. No verified predictions or runtime promotions.",
+  "chapter_LXXIII_source_acceptance_note": "34 original-source historical records R4137-R4170, 32 substantive and two following-section navigation, 10 image passages and 17 source limits. The 1634 outcome reported in a 1647 narrative is an unitemized querent self-report; no independent payment outcome or empirical prediction is validated.",
+  "chapter_LXXIV_source_acceptance_note": "153 source documentary records R4171-R4323 (151 substantive + 2 LXXV navigation), 28 original image passages, 32 unresolved source limitations and six physical page seams, original PDF456-463. No independently checked voyage, weather, news or safe return cases; zero empirical predictive validations or runtime promotions.",
+  "chapter_LXXV_source_acceptance_note": "61 historical editorial source annotations R4324-R4384 including two next-chapter navigation markers, 16 original-image source passages and 20 textual issues. ORIGINAL IMPRENTED FOLIOS 429,431,430,432 follow physically sequential scans 463,464,465,466. Do not reorder scans numerically by printed folio. No independent skilled-person/traveler observations and no empirical forecast or runtime promotion.",
+  "chapter_LXXVI_source_acceptance_note": "62 historical documentary records R4385-R4446 (60 substantive plus two LXXVII navigation), 16 visual image passages, two physical cross-page seams and 20 source uncertainties; no independently documented job appointment or financial impropriety, no predictive validation and zero runtime changes.",
+  "chapter_LXXVII_source_acceptance_note": "38 original source annotations R4447-R4484 (36 LXXVII substantive plus two LXXVIII next-heading navigation), eight original source passages with one page seam and 15 textual uncertainties. Generic dreams source only; no independently verified dream event or validated prediction.",
+  "chapter_LXXVIII_source_acceptance_note": "24 documentary annotations R4485-R4508, 22 worked dream-case clauses and two following-chapter navigation markers. Author reports bodily safety with financial loss and says the judgment proved true; no independent outcome corroboration, blind prospective prediction or chart recasting. 6 source passages, 14 retained limits.",
+  "chapter_LXXIX_source_acceptance_note": "41 source-only historical records R4509-R4549 including 39 parsonage appointment case clauses and two LXXX boundary annotations, seven original passage groups, 17 uncertainty items. Author reports letter obstructed his covetous applicant despite advice, with unspecified neighbor and speculative descriptions. Zero independently verified forecast outcome.",
+  "chapter_LXXX_source_acceptance_note": "82 historical annotations R4550-R4631, 80 LXXX source clauses plus two navigation markers, 13 original page groups and 24 limits. Lilly's 11 March 1646/7 three-year forecast qualified by statu quo reforms and multiple alternatives; no independently verified English institutional prediction.",
+  "chapter_LXXXI_source_acceptance_note": "57 original source annotations R4632-R4688, 54 alchemy worked-question content and 3 next-section navigation; eleven image passage groups and twenty interpretive limits. Lilly believes in Stone but warns this querent to stop and makes separate consumption claim; none independently authenticated or medically validated.",
+  "chapter_LXXXII_source_acceptance_note": "141 original documentary records R4689–R4829 (139 substantive office/tenure clauses, two LXXXIII navigation). Separate office attainment from retention, transfer, removal and reinstatement; 21 source passages and 26 limitations; no independent verified outcome, no runtime change.",
+  "chapter_LXXXIII_source_acceptance_note": "46 historical records R4830-R4875; 44 restoration/alternative-land/negative clauses and two LXXXIV navigation markers; 8 passages, 17 unresolved limits, zero independent authenticated restorations.",
+  "chapter_LXXXIV_source_acceptance_note": "79 historical source annotations R4876-R4954, 77 LXXXIV sign-based vocation claims and two LXXXV navigation markers; 15 original passages and 24 uncertainty statements. Query-time figure replaces unknown birth time; Mars and Venus transcribed; no independently verified career outcome.",
+  "chapter_LXXXV_source_acceptance_note": "72 original source annotations R4955-R5026: 70 Rupert/Essex/honor/fate source claims plus two navigation; 11 original passage groups and 25 limitations; includes author's Edgehill retrospective and admitted partial failure on Rupert custody in 1646; zero independently validated forecasts.",
+  "chapter_LXXXVI_source_acceptance_note": "54 historical records R5027–R5080, 52 substantive and two LXXXVII navigation; 10 source passage groups and 24 open limits. Distinguish Irish aid, temporary utility, Queen march, reunion date, losses; absolute horary figure date unresolved, full destruction not found in author's reported outcome. CORRECTION: this is a stable editorial SEQUENTIAL alias; original first edition printed CHAP. LXXXV again on PDF489/printed455. See original_printed_chapter_heading_crosswalk; source records and archive unchanged.",
+  "read_numbered_chapters_basis": "editorial_source_sequence_ordinals_not_literal_1647_headings",
+  "original_printed_chapter_heading_crosswalk": {
+    "path": "batches/B04g/ORIGINAL_1647_PRINTED_NUMBERING_CROSSWALK_20261016.json",
+    "sha256": "eea5c6b6e21a0f1eca4faf8744477e12f71a9be10d8d4f5ade3e4a14ae210bef",
+    "duplicate_printed_numeral": "LXXXV",
+    "first_affected_editorial_sequence_id": "LXXXVI",
+    "accepted_record_mapping": "R5027-R5080 retained as editorial LXXXVI despite original printed heading LXXXV",
+    "next_editorial_alias": "LXXXVII",
+    "next_original_printed_numeral": "LXXXVI"
+  },
+  "chapter_LXXXVII_source_acceptance_note": "33 historical annotations R5081–R5113 from first-edition printed CHAP. LXXXVI, stable editorial LXXXVII. Anonymous querent said to obtain office within three weeks, unverified false friend and earlier petitions. Crosswalk preserves original duplicate LXXXV. Zero independent empirical predictive validations.",
+  "chapter_LXXXVIII_source_acceptance_note": "48 historical source clauses R5114–R5161, 46 original Eleventh House hopes and 2 next-heading. Original printed LXXXVII (editorial sequence LXXXVIII) preserves duplicated LXXXV numbering crosswalk. Outcome classes partial/probability/whole/harm after possessing remain separate, with feasibility caveat. No empirical validations.",
+  "chapter_LXXXIX_source_acceptance_note": "Printed LXXXVIII friendship, secrecy of wishes and mutual love; 32 documentary records R5162-R5193, four source passages, no empirical validation.",
+  "chapter_XC_source_acceptance_note": "29 historical clauses R5194–R5222 about anonymous enemy vs named enemy, and unverified health/hostility hypotheses; following imprisonment separate.",
+  "chapter_XCI_source_acceptance_note": "85 historical text-only annotations R5223–R5307, 83 imprisonment and harm-related source clauses plus 2 next-chapter navigation; no independent prisoner outcome evidence.",
+  "chapter_XCII_source_acceptance_note": "31 historical annotations R5308–R5338, 29 captive/planetary-hour clauses + 2 next-chapter navigation; original PDF497-498, five reverse source spans, 19 limitations. Moon timing conditional; Sun one month and Venus forty days author-attributed, no independently verified detainee, captivity event, actual release or harm.",
+  "chapter_XCIII_source_acceptance_note": "75 documentary source units R5339-R5413: 72 historic witchcraft/remedy claims and three following horse-case navigation markers, 11 primary-source passage groups, 28 unresolved limitations; source does not verify supernatural causes, health conditions or treatments.",
+  "chapter_XCIV_source_acceptance_note": "44 historical source annotations R5414-R5457 (42 horse horary and two following separate witchcraft case navigation); predicted return within 1-2 days, self-reported actual three days and date Jan13/14 ambiguity; self-reported westward direction and rider interpretation lack independent corroboration. Seven source passages, 20 unresolved limits, no empirical prediction credit.",
+  "chapter_XCV_source_acceptance_note": "53 historical source annotations R5458–R5510, 50 dated illness/negative witchcraft narrative clauses and three prisoner-next-navigation; 10 source spans and 22 limits. Author reports negative witchcraft verdict, speculative renal/private parts illness without confirmed syphilis, and approximately three-week recovery after an unspecified regimen change, none independently authenticated.",
+  "chapter_XCVI_source_acceptance_note": "42 source-only historical records R5511-R5552; 39 escaped prisoner substantive claims and three subsequent chapter navigation markers. Author forecast East, near-town one-night concealment, letter/messenger by day six or seven, recapture by authority and retrospective Friday letter/Sunday arrest. No independently authenticated prisoner, letter or actual capture; seven source passages and 20 limits.",
+  "chapter_XCVII_source_acceptance_note": "34 original documentary annotations R5553-R5586, 30 numbered case clauses and 4 unnumbered Essex/table navigation markers, 7 image spans, 19 uncertainties. Past-or-future release disjunction and self-reported prior-day garrison capture prevent clean prospective result.",
+  "postchapter_20261017_original_source_correction": "Original scan PDF516 explicitly prints CHAP. XCVII on planetary hours after an eight-page table PDF508–515; prior assertion that XCVI was final numbered Book II chapter is superseded. No source annotations added.",
+  "essex_unumbered_1644_historical_acceptance_note": "43 source-only annotations R5587–R5629, 7 original passage groups, 20 caveats. Historic England verifies parliamentary arms surrender Sep2 1644 but Essex himself departed by sea Sep1. Not a contemporaneously authenticated astrology prediction.",
+  "planetary_hour_table_source_acceptance_note": "10 historical documentary annotations R5630–R5639: eight original table-page image witnesses + two next-chapter navigation markers; eight table pages PDF508–515 preserved by exact hashes; ~1,488 numeric hour boundaries NOT transcribed or independently checked. No empirical prediction or runtime promotion.",
+  "chapter_XCVIII_source_acceptance_note": "114 original historical annotations R5640–R5753: 109 printed method and signed conclusion clauses plus 5 Book III title navigation. Three printed examples arithmetic verified for Monday at 9:30 AM Mars, 5:20 PM Sun, 11:10 PM Mars; no independent human outcome or ephemeris. Table 508–515 cell digitization remains open.",
+  "book_iii_intro_source_note": "71 original-source annotations R5754-R5824 across PDF521-534, 14 source passage groups, 24 limits; printed arithmetic contradiction 142d20m+90d as 230d20m instead of 232d20m and resulting ascendant source discrepancy preserved; all numeric grids not fully machine-transcribed. No empirically validated natal rectification.",
+  "book_iii_trutine_source_note": "99 historic source annotations R5825-R5923. Sign-level use sometimes, degree within 1–3° often fails, 13° Moon/conception acceptance band and 1616/1615 calendar example, life-accident rectification preferred, exact conception-hour alternative explicitly not credited; none independently human-validated.",
+  "book_iii_Animodar_acceptance_note": "34 source-only records R5924–R5957 (31 Animodar clauses, 3 next Accidents chapter navigation), 5 spans, 22 limits. Historical practitioner compares against already accident-corrected natal figure, gives competing Venus possible dignity, and explicitly judges Animodar and Trutine less sure than accident rectification; no independent birth time verified.",
+  "chapter_CI_source_acceptance_note": "188 original source annotations R5958-R6145, 13 passage groups, 25 limits. Historical retrospective fit to four known merchant events; fever 20y10m reported initially vs 19y10m10d selected direction remains mismatched; original 105deg44 biquintile print versus 205deg44 correction source. Multiple free candidate aspects and directions, accepts year-only event ages and birth-time adjustment backward/forward. No out-of-sample success.",
+  "chapter_CII_source_acceptance_note": "70 first-edition historical source records R6146-R6215. Merchant source chart MC222deg10 RA, six printed Regiomontanus house cusps, 34/49 degree approximated intermediate house pole values from latitude53 and natal ephemeris London correction. Original intermediate 30 seconds vs stated25, Asc Capricorn6deg37 versus table interpolation about6deg40. No independent natal time validation.",
+  "chapter_CIII_source_acceptance_note": "29 historical first-edition annotations R6216-R6244: prerequisite planetary/Part of Fortune placement, strength, aspects, antiscia/contra-antiscia and fixed-star proximity before natal judgments; does not supply numeric thresholds for proximity to planets/cusps or 'small' fixed-star latitude. Separate longevity printed CIII PDF559 only navigation.",
+  "chapter_CIV_source_acceptance_note": "65 first-edition historical annotations R6245-R6309: 62 lifespan/infancy beliefs and 3 separate Hyleg navigation. Three original page scans PDF559-561, six source passage groups, 25 limits, old-humoral full/new moon claims and contrary beneficial exception, parental charts, multiple benefic/malefic conditions, author explicitly warns against rash death judgment. Zero independent infant survival outcomes or clinical validity.",
+  "chapter_CV_source_acceptance_note": "74 original source R6310-R6383 annotations, seven mapped passage groups, 30 source limits. Historical potentially lethal directions are unvalidated; source branches include multiple candidate Hylegs/Anaretas/Alcochodons, including explicit degrees and fallback preferences. Lilly says not satisfied how to identify these or their claimed year values; no independent survival outcome.",
+  "lord_geniture_source_acceptance_note": "32 source-only annotations R6384-R6415, three separately coded competing selection methods and rejected Firmicus sign successor; near equal planet blending without fixed weights. No independent human personality matches or runtime rules."
+}

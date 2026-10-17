@@ -1,3 +1,9 @@
+# Astrology original-source progress — 2026-10-17 through temperament
+
+**7,540 historical source annotations accepted** (6,474 Lilly + 1,066 retained Ptolemy). First-edition Lilly scan source frontier through original PDF568 of 894 pages, approximately 63.5% of scan position only, not proportion of machine-readable rule completion or empirical model science. Four-humour testimony weights are now historical-source preserved but not human validated. Last newly accepted source printed CVI, next is printed CVII *Manners of the Native*. Prior open dense numeric table reconstructions, independent birth-time / questionnaire validation and prospective outcome testing remain open. Empirical validations and promoted executable rules attributable to historical source batches zero.
+
+---
+
 # Lilly first edition source progress — Hyleg historic uncertainty documented
 
 2026-10-17: historical original source frontier through PDF565 of 894 scanned pages, approximately **63.2% by physical scan position**. Accepted documentary annotations after verified publication: **6,383 Lilly + 1,066 Ptolemy = 7,449**. Not empirical successful predictions. Printed CHAP CIV's Hyleg, Anareta and Alcochodon selection methods retained with author Lilly's two explicit statements of being not satisfied he can identify them properly. Historic infant/death claims remain medically unsupported, no independent mortality or birth-time outcomes, no runtime promotion. Multiple original numeric tables and blind human model validation still OPEN. Next printed CHAP CV Lord of Geniture original PDF565.
