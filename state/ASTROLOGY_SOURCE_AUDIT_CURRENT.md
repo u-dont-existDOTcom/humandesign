@@ -1,3 +1,9 @@
+# Corrected Lilly source frontier (2026-10-17)
+
+Printed Chapter XCVI was **not** last numbered chapter. Source PDF507 has unnumbered Essex figure; PDF508-515 planetary-hour table; **printed Chapter XCVII PDF516-520**; Book III starts PDF521. Accepted source count remains Lilly **5,586** + Ptolemy **1,066** = **6,652**, next R5587. Continue separate source extraction and include all postchapter units. See state/ASTROLOGY_SOURCE_AUDIT_POST_XCVI_BOUNDARY_CORRECTION_20261017.md.
+
+---
+
 # Original Lilly through printed XCVI, postchapter material OPEN
 
 2026-10-17: 34 historical source annotations R5553–R5586 accepted locally, Lilly **5,586** + Ptolemy **1,066** = **6,652** upon verified publication. Original chapter says husband either already released or will be within three days, then reports prior-day release and capture of garrison; no independent prospective validation. Next PDF507 unnumbered Earl of Essex figure; original PDF508 onward tables need source coverage.
