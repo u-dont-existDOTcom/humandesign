@@ -1,0 +1,120 @@
+{
+  "schema": "ORIGINAL_LILLY_REGIOMONTANUS_FATHER_FIGURE_SOURCE_V1",
+  "batch": "B06b",
+  "original_printed_chapter": "CXXVI",
+  "original_pdf_frames": [
+    608,
+    609
+  ],
+  "original_author": "William Lilly, Christian Astrology original 1647 first edition",
+  "attributed_method": "Regiomontanus Problem 24",
+  "attributions_verified_against_original_regiomontanus": false,
+  "original_house_poles_table_identified": false,
+  "procedure_status": "SOURCE_RECONSTRUCTION_ONLY_NON_EXECUTABLE",
+  "source_preconditions": {
+    "day_geniture_required": true,
+    "sun_not_on_tenth_or_fourth_cusp": true,
+    "nighttime_alternative_in_this_passage": "NOT_SPECIFIED",
+    "solar_positional_circle_and_pole_required": true,
+    "natal_original_birth_chart_quality": "UNKNOWN"
+  },
+  "source_input_types": [
+    "Sun ecliptic zodiac degree in child's chart",
+    "Sun positional circle/pole within child's chart",
+    "Sun oblique ascension under said pole",
+    "Regiomontanus house poles for other houses",
+    "Inverse oblique ascension tables or validated numerical computation"
+  ],
+  "source_steps": [
+    {
+      "order": 1,
+      "source_anchor": "If Geniture be by day",
+      "operation": "check diurnal sect; no procedure supplied here for nocturnal cases"
+    },
+    {
+      "order": 2,
+      "source_anchor": "Sun not upon cusp tenth or fourth",
+      "operation": "exclude the stated Sun-on-angle cusp cases"
+    },
+    {
+      "order": 3,
+      "source_anchor": "take his Circle of position",
+      "operation": "obtain positional circle of Sun from supplied natal celestial geometry"
+    },
+    {
+      "order": 4,
+      "source_anchor": "under that Pole",
+      "operation": "use Sun's positional pole to evaluate its oblique ascension, not assumed ordinary geographic latitude"
+    },
+    {
+      "order": 5,
+      "source_anchor": "degree of Sun be your ascendant",
+      "operation": "assign Sun's ecliptic degree to proposed father's figure Ascendant"
+    },
+    {
+      "order": 6,
+      "source_anchor": "substract 90 degrees from oblique ascention of Sun",
+      "operation": "arithmetic: proposed_Midheaven_RA = Sun_oblique_ascension_under_pole - 90 degrees; normalizing modulo 360 is engineering inference"
+    },
+    {
+      "order": 7,
+      "source_anchor": "see what Poles of other houses are",
+      "operation": "retrieve house-specific poles via separately verified Regiomontanus tables"
+    },
+    {
+      "order": 8,
+      "source_anchor": "by Regiomontanus pag 175",
+      "operation": "historical page reference needs independent bibliographic resolution; not assumed to be printed page175 of Lilly"
+    },
+    {
+      "order": 9,
+      "source_anchor": "continual addition of 30 degrees to right ascention",
+      "operation": "successive 30-degree increments in right ascension; exact house-to-increment mapping requires further mathematical review"
+    },
+    {
+      "order": 10,
+      "source_anchor": "what degree of Ecliptick answers to oblique ascention",
+      "operation": "invert celestial oblique ascension using the respective house pole to obtain ecliptic longitude; lookup/calc not yet transcribed"
+    },
+    {
+      "order": 11,
+      "source_anchor": "cusps of eleventh twelfth second third houses",
+      "operation": "produce four intermediate house-cusp ecliptic longitudes in the original named sequence"
+    },
+    {
+      "order": 12,
+      "source_anchor": "Figure is as easily erected ... place all Planets",
+      "operation": "erect proposed father chart and place planets, but no actual date, clock time or independently verified father chart follows"
+    }
+  ],
+  "arithmetic_template": {
+    "displayed_expression": "RA_MC = OA_Sun_under_positional_pole - 90°",
+    "angle_unit": "degrees",
+    "modular_normalization_mod_360": "IMPLIED_ENGINEERING_CONVENTION_NOT_EXPLICITLY_SPELLED_IN_1647",
+    "house_increment_deg": 30,
+    "intermediate_houses_named": [
+      "11",
+      "12",
+      "2",
+      "3"
+    ],
+    "complete_house_pole_inverse_ascension_algorithm": "MISSING",
+    "predicts_real_father_datetime": false
+  },
+  "tests_and_limits": {
+    "source_math_replay_possible_without_ephemeris": "ONLY_90_DEG_SUBTRACTION_AND_30_DEG_INCREMENT",
+    "independent_father_birth_time_predictions_validated": 0,
+    "actual_father_birth_dates_collected": 0,
+    "retrospective_chart_fitting_permitted": false,
+    "promote_to_runtime": false,
+    "known_unknowns": [
+      "Exact Regiomontanus pole definition and table provenance",
+      "Precise house-cusp RA increments/offset mapping",
+      "Full inverse oblique ascension procedure",
+      "The restriction when Sun is on tenth/fourth cusp",
+      "Any nocturnal analogue",
+      "Whether this reconstructs a chart for a known father date versus a proposed symbolic chart",
+      "Original Regiomontanus Problem 24 full language"
+    ]
+  }
+}

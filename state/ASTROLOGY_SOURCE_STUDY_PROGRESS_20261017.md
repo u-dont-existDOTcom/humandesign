@@ -1,3 +1,9 @@
+# Lilly 1647 historical study through Regiomontanus father figure — 2026-10-17
+
+After authenticated publication the archive contains **8,614 historical source annotations** (7,548 Lilly + 1,066 Ptolemy); original first-edition source frontier PDF609 of 894 (**68.1% by physical page only**, NOT program/empirical completion). Printed CHAP CXXVI parent-native affection plus Regiomontanus attributed father chart construction: 46 source annotations and a separate frozen, structurally tested, incomplete 12-step mathematical-source template. Original Problem 24 and house-pole tables remain unverified; no actual father birth-time recoveries, natal relationship predictions or promoted models. Next printed CXXVII mines on PDF609, unnumbered sixth-house medical source begins PDF610. Numerical references and blind human research separate/open.
+
+---
+
 # Original Lilly study through mutual parental agreement — 2026-10-17
 
 After authenticated publication **8,568 historical source annotations** (7,502 Lilly + 1,066 Ptolemy). Physical original source-body frontier PDF607 of 894 (**67.9% page position, not empirical program progress**). Printed CHAP CXXV parent-to-parent agreement adds 29 source-only records with daytime Sun/Venus, night Saturn/Moon and contradictory ethical stereotypes. Next CHAP CXXVI parent-to-native love and Regiomontanus father chart reconstruction starts PDF608. No independent outcomes or runtime promotions. Historical astronomical reference numerics and untouched human tests remain unfinished.

@@ -1,3 +1,9 @@
+# Original Lilly parent-native/Regiomontanus historical source accepted
+
+2026-10-17 Africa/Dakar UTC+0. B06b source R7503–R7548 guarded index prepared; after remote verification 7,548 Lilly + 1,066 Ptolemy = 8,614 historical documentary notes. The historical 90-/30-degree Regiomontanus procedure is preserved but non-executable until missing pole/table and mathematical parity checked. No actual father birth-time recovery. NEXT printed CXXVII mineral/coal mines first-edition PDF609.
+
+---
+
 # First-edition parental-agreement source complete; Regiomontanus method next
 
 2026-10-17 Africa/Dakar UTC+0. B06a R7474–R7502 first-edition source-only locally prepared, after verified remote publication 7,502 Lilly + 1,066 Ptolemy = 8,568 historical notes. No real family concord predictions or runtime rule promotions. NEXT printed CXXVI original PDF608 containing parent-native affection and Regiomontanus astronomical geometry.

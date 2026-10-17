@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_PARENTAL_CONCORD_HISTORICAL_NEXT_NATIVE_PARENT_RELATION_RECTIFICATION",
-  "records_count": 7502,
+  "status": "BOOK_III_PARENT_CHILD_REGIOMONTANUS_DOCUMENTARY_NEXT_MINES",
+  "records_count": 7548,
   "read_numbered_chapters": [
     1,
     2,
@@ -130,7 +130,8 @@
     123,
     124,
     125,
-    126
+    126,
+    127
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -861,26 +862,35 @@
       "records_count": 29,
       "sha256": "a15c96fb00db9d677baa3d4f4388cdf2e76932b512b63b2f9558dc856cee4529",
       "scope": "Original Lilly first-edition printed CHAP CXXV/editorial CXXVI 'Of the mutuall agreement of Parents', body lower original PDF607/printed573; following printed CXXVI at PDF608/printed574. Nine original source groups, 27 substantive historical condition clauses and 2 following navigation. Sun/Venus aspect or mutual reception by day, positive Venus applying combustion versus negative retrograde/peregrine/separating from Sun, Saturn/Moon friendly aspects versus square/opposition by night, tenth/fourth-ruler opposition, tenth/fourth malefic alleged maternal/paternal blame. These are unvalidated seventeenth-century gender stereotypes and natal methods with no demonstrated relationship validity or promoted executable runtime rule."
+    },
+    {
+      "id": "B06b",
+      "path": "batches/B06b/RULES.json",
+      "records_count": 46,
+      "sha256": "2307632ae33f427f36151c4761657f11ddb3b8d10431ceda2950a98e97f8a281",
+      "scope": "Original Lilly 1647 printed CHAP CXXVI/editorial CXXVII Of the Parents mutual love to Native and which parent shall best love him, original PDF608-609, next separate mines CHAP CXXVII later PDF609 and unnumbered Sixth House PDF610. Ten original page source groups, 44 substantive annotations and 2 following navigation. Parent-child friendly versus hostile first lord/ascendant aspects, Moon/Venus asymmetric favor vs Sun/Saturn and reception, then Regiomontanus Problem 24 historical father-nativity extraction: day nativity, Sun not on MC/IC, Sun positional circle/pole, proposed father Ascendant at Sun longitude, MC RA = Sun pole OA -90 degrees, Regiomontanus house poles, 30-degree RA increment and inverse oblique ascent to ecliptic cusps 11/12/2/3. Structured incomplete historical procedure in batches/B06b/REGIOMONTANUS_HISTORICAL_PROCEDURE_V1.json. No independently reconstructed actual father birth, no validated family affection or promoted runtime rules."
     }
   ],
   "next": {
-    "pdf_page": 608,
-    "printed_page": 574,
-    "chapter": "CXXVII",
-    "printed_chapter_numeral": "CXXVI",
-    "heading": "Of the Parents mutuall love to the Native, and which of his Parents shall best love him",
+    "pdf_page": 609,
+    "printed_page": 575,
+    "chapter": "CXXVIII",
+    "printed_chapter_numeral": "CXXVII",
+    "heading": "Of the significations in a Nativity, of great Fortune to be obtained out of Mines",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Printed CHAP CXXVI begins at top original PDF608/printed574. After parent-child harmony criteria, the same chapter introduces Regiomontanus Problem 24 reconstruction of a father's nativity from a son's via solar RA, poles and house cusp arithmetic. Original pages PDF608 onward require complete boundary and numerical review before admission; do not split unnumbered continuation unseen.",
-    "research_scope": "Original historic parental affection as separate personal relationship claims and Regiomontanus astrological father-birth-time reconstruction. Separate nonvalidated human prediction claims from reproducible numerical historical source arithmetic and original reference tables."
+    "position": "Printed CHAP CXXVII on mines begins after divider upper/middle original PDF609/printed575 and concludes before decorated unnumbered Sixth House heading at PDF610/printed576. Source window must verify precise seam and all mining-material alternatives.",
+    "following_unnumbered_section": "THE_SIXT_HOUSE_INFIRMITIES",
+    "following_section_pdf_page": 610,
+    "research_scope": "Historical mineral/coal/lead/silver/gold mining economic fortune configurations through Saturn/Jupiter, fourth lord and luminous reception, essential dignities, planet speed/directness, no actual mining/property predictive data."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B06a_PARENTS_AGREEMENT.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B06b_PARENT_NATIVE_REGIOMONTANUS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -977,5 +987,6 @@
   "chapter_CXXIII_source_acceptance_note": "B05x R7358-R7410, 53 historical source annotations, 51 substantive and two next-heading. Original frame604-606 SHA source, 17 portable tests; no clinical prediction validity, no runtime scoring promotion.",
   "chapter_CXXIV_source_acceptance_note": "B05y R7411–R7440, 30 historic records, 28 substantive childbirth/labor mortality clauses, 2 following patrimony navigation; source PDF606-608 SHA and 13 archive-replayed source integrity tests, zero independent clinical validations or runtime rules.",
   "chapter_CXXV_source_acceptance_note": "B05z R7441–R7473, 33 historical source clauses and navigation, original PDF606–609 SHA, 14 standalone source tests; no independent actual financial outcomes, human conduct classifications or runtime source promotion.",
-  "chapter_CXXVI_source_acceptance_note": "B06a R7474–R7502: 29 first-edition documentary clauses, 27 historical sources and 2 navigation; PDF607–609 original images hashes and 13 portable integrity tests. No actual relationship judgments validated or runtime promotions."
+  "chapter_CXXVI_source_acceptance_note": "B06a R7474–R7502: 29 first-edition documentary clauses, 27 historical sources and 2 navigation; PDF607–609 original images hashes and 13 portable integrity tests. No actual relationship judgments validated or runtime promotions.",
+  "chapter_CXXVII_source_acceptance_note": "B06b R7503-R7548 historical source-only records (44 substantive, 2 next chapter navigation), Regiomontanus 12-step incomplete non-executable geometry, 18 standalone source tests and original 608-611 SHA images. Zero father chart birth-time recoveries and runtime promotions."
 }
