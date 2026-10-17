@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CHILDBIRTH_HISTORICAL_ONLY_NEXT_PATERNAL_INHERITANCE",
-  "records_count": 7440,
+  "status": "BOOK_III_PATERNAL_INHERITANCE_SOURCE_COMPLETE_NEXT_PARENT_AGREEMENT",
+  "records_count": 7473,
   "read_numbered_chapters": [
     1,
     2,
@@ -128,7 +128,8 @@
     121,
     122,
     123,
-    124
+    124,
+    125
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -845,26 +846,33 @@
       "records_count": 30,
       "sha256": "acc8650af3b80e440589d81c06b10f4a9146d430ee38fa9b0881534781262f1c",
       "scope": "Lilly original first edition printed CHAP CXXIII/editorial CXXIV on maternal childbirth difficulty/survival, original PDF606 upper section. Seven source groups, 28 original historical claims plus 2 navigation to separate printed CHAP CXXIIII on father's inherited estate on same PDF606. Oblique versus long ascendant signs, malefic square/opposition/node, benefic Moon aspects, sign groups sex-based, 12th malefics, slow Moon/retrograde/stationary alternatives, tenth ruler eighth and qualified maternal death conjecture. These are premodern unsupported historical medical claims, not actual maternal or neonatal predictive accuracy or clinical guidance, no runtime source promotion."
+    },
+    {
+      "id": "B05z",
+      "path": "batches/B05z/RULES.json",
+      "records_count": 33,
+      "sha256": "619187651edb49e70ed1b5cf13f89c120600094401a0ce85a9382f79a62d57b5",
+      "scope": "Original 1647 Lilly printed CHAP CXXIIII/editorial CXXV, whether native inherits, improves or consumes father's estate, first-edition PDF606 lower to PDF607 upper. Eight original source groups, 31 substantive natal clauses and two following printed CXXV parents' agreement navigation. Conjunction/aspects Sun/benefics by day, Saturn/Moon by night, placement/rulership in second/fourth; Mars sect-based affliction without beneficial relief; nocturnal weak Moon plus second/fourth conditions, Saturn peregrine twelfth plus fourth lord, unfortunate fourth/first lord, Sun-Mars peregrine and second harm. No real inheritance success, financial/character validity or promoted runtime rules."
     }
   ],
   "next": {
-    "pdf_page": 606,
-    "printed_page": 572,
-    "chapter": "CXXV",
-    "printed_chapter_numeral": "CXXIIII",
-    "heading": "Whether the Native will enjoy the Estate of his Father, and whether he shall waste or consume it",
+    "pdf_page": 607,
+    "printed_page": 573,
+    "chapter": "CXXVI",
+    "printed_chapter_numeral": "CXXV",
+    "heading": "Of the mutuall agreement of Parents",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Printed CHAP CXXIIII begins lower original PDF606/folio572 below divider, continues upper original PDF607/folio573 before separate printed CHAP CXXV Of the mutuall agreement of Parents starts mid PDF607.",
-    "research_scope": "Historical paternal inheritance transfer/growth versus estate destruction, Sun or Saturn according to sect, fortunes vs malefic affliction, fourth/second lords and retrogradation/combustion/mixed testimonies, historical only."
+    "position": "Printed CHAP CXXV on parent-to-parent agreement begins below divider mid original PDF607/folio573, finishes before separate printed CHAP CXXVI at top original PDF608/folio574. Preserve the chapter seam.",
+    "research_scope": "Historical day Sun/Venus and night Saturn/Moon parental aspects, reception, disagreement, alternative gendered character stereotypes; no validation as actual relationships or moral diagnoses."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05y_CHILDBIRTH.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05z_FATHER_ESTATE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -959,5 +967,6 @@
   "chapter_CXXII_source_acceptance_note": "B05v R7253–R7295, 43 historic source annotations, 41 substantive and 2 unnumbered-next navigation, original PDF602–605 witnesses, 16 standalone tests. Ptolemy contrast is Lilly's attribution only; no real sibling/fertility/death predictions validated.",
   "unnumbered_fourth_house_acceptance_note": "B05w R7296–R7357, 62 source-only annotations with 60 father/parent clauses and 2 mother-chapter navigation. 12 original groups, original frames603–605 sha, 17 archived tests. No independent actual parent survival or socioeconomic prediction validation, no runtime promotions.",
   "chapter_CXXIII_source_acceptance_note": "B05x R7358-R7410, 53 historical source annotations, 51 substantive and two next-heading. Original frame604-606 SHA source, 17 portable tests; no clinical prediction validity, no runtime scoring promotion.",
-  "chapter_CXXIV_source_acceptance_note": "B05y R7411–R7440, 30 historic records, 28 substantive childbirth/labor mortality clauses, 2 following patrimony navigation; source PDF606-608 SHA and 13 archive-replayed source integrity tests, zero independent clinical validations or runtime rules."
+  "chapter_CXXIV_source_acceptance_note": "B05y R7411–R7440, 30 historic records, 28 substantive childbirth/labor mortality clauses, 2 following patrimony navigation; source PDF606-608 SHA and 13 archive-replayed source integrity tests, zero independent clinical validations or runtime rules.",
+  "chapter_CXXV_source_acceptance_note": "B05z R7441–R7473, 33 historical source clauses and navigation, original PDF606–609 SHA, 14 standalone source tests; no independent actual financial outcomes, human conduct classifications or runtime source promotion."
 }

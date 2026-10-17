@@ -1,3 +1,9 @@
+# Lilly paternal-inheritance documentary source complete, parent agreement next
+
+2026-10-17 Africa/Dakar UTC+0. Source-only B05z R7441–R7473 prepared: after verified GitHub push 7,473 Lilly + 1,066 Ptolemy = 8,539 historical annotations. No actual human inheritance predictions validated, no scoring rules. Next printed CHAP CXXV parents' agreement lower PDF607.
+
+---
+
 # Lilly childbirth first-edition source historically documented
 
 2026-10-17 Africa/Dakar UTC+0. Source-only B05y R7411–R7440 accepted locally; 7,440 Lilly and 1,066 Ptolemy = 8,506 after GitHub readback. All medical/labor/mortality claims are historical unvalidated text, zero clinical evidence or model rules. NEXT printed CHAP CXXIIII father inheritance PDF606.

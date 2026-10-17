@@ -1,3 +1,9 @@
+# First-edition Lilly source through father's inherited estate — 2026-10-17
+
+After authenticated publication **8,539 historical source annotations** (7,473 Lilly + 1,066 Ptolemy), original frontier PDF607 of 894 (**~67.9% scanned page position only**). 33 new original father-inheritance source clauses/navigation, conditional day/night and opposite losses. No real estate outcome validation or scoring rules promoted. Next printed CXXV parental agreement at PDF607. Numerical tables, runtime implementation and blind human research remain separate/open.
+
+---
+
 # Lilly first edition through historical childbirth chapter — 2026-10-17
 
 After verified remote publication **8,506 documentary historical annotations** (7,440 Lilly + 1,066 Ptolemy). Original source frontier PDF606/894 (**~67.8% page-position proxy only**, not program validation). Printed CHAP CXXIII childbirth source records 30 historic clauses/navigation; no independent human pregnancy outcomes, no runtime rules. Following printed CXXIIII parental patrimony begins lower PDF606; source numeric tables and blind human validation remain open.
