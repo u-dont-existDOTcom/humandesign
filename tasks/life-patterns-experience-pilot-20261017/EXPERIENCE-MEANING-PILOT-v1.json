@@ -1,0 +1,352 @@
+{
+  "schema": "life-patterns-experience-pilot-v1",
+  "version": "experience-meaning-v1-20261017",
+  "status": "DEVELOPMENT_OPTIONAL_NOT_LIVE_NOT_SCORED",
+  "parent": "tasks/life-patterns-early-review-and-experience-20261017/EXPERIENCE-MEANING-PILOT-v0.json",
+  "legacy_sources": [
+    "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
+    "apps/life-patterns-participant/participant/static/tendency-first-v1.json",
+    "tasks/life-patterns-idiographic-20261010/tendency-first-v3-scaffold-development.json"
+  ],
+  "goal": "First-person lived experience, not presumed choices or horoscope claims",
+  "participant_header": "Optional Life Patterns research pilot. Not the live survey; no chart predictions or clinical assessment. You may decline any question or stop. Answers stay in this browser tab until you export a file; nothing is uploaded or automatically stored.",
+  "scope": "Independent opt-in pilot only. Do not append to historical or existing active interviews or alter frozen model predictions.",
+  "prompt_order": [
+    "EM01",
+    "EM03",
+    "EM04",
+    "EM08"
+  ],
+  "other_prompt_order": [
+    "EM02",
+    "EM05",
+    "EM06",
+    "EM07"
+  ],
+  "max_starting_questions": 4,
+  "max_additional_topics": 4,
+  "response_rules": [
+    "Every dimension starts NOT_ASKED; an unselected topic is never coded as absent or zero.",
+    "NEVER, UNKNOWN, SKIPPED, ANSWERED, ALREADY_COVERED and NOT_ASKED are distinct states.",
+    "Answering a broad adjacent domain is not equivalent evidence; require a supported prior-source phrase covering the actual measured experience and recall window.",
+    "If a question is already adequately answered, mark ALREADY_COVERED with a source reference instead of restating it.",
+    "Ask one short question at a time; any follow-up is optional and must resolve a specific unanswered distinction, not finish a quota.",
+    "Participant can report context variation or different earlier-life periods. Never force a typical answer or numeric precision.",
+    "Interpretations of higher guidance/coincidence remain subjective reports, not proof of external cause.",
+    "Keep personal meaning separate from perceived social impact; sudden insight separate from action; surprise separate from awe.",
+    "Do not derive a trait score, diagnosis or natal prediction from this module."
+  ],
+  "frequency_options": [
+    [
+      "never",
+      "Never"
+    ],
+    [
+      "once_twice",
+      "Once or twice"
+    ],
+    [
+      "few_months",
+      "Every few months"
+    ],
+    [
+      "monthly",
+      "Roughly monthly"
+    ],
+    [
+      "weekly",
+      "Roughly weekly"
+    ],
+    [
+      "most_days",
+      "Most days"
+    ],
+    [
+      "varies",
+      "Depends greatly on the period"
+    ],
+    [
+      "unknown",
+      "I cannot estimate"
+    ],
+    [
+      "skip",
+      "Prefer not to answer"
+    ]
+  ],
+  "intensity_options": [
+    [
+      "faint",
+      "Faint"
+    ],
+    [
+      "noticeable",
+      "Noticeable"
+    ],
+    [
+      "strong",
+      "Strong"
+    ],
+    [
+      "overwhelming",
+      "Overwhelming"
+    ],
+    [
+      "varies",
+      "Varies"
+    ],
+    [
+      "unknown",
+      "Not sure"
+    ]
+  ],
+  "meaning_options": [
+    [
+      "none",
+      "Not meaningful right now"
+    ],
+    [
+      "slight",
+      "A little"
+    ],
+    [
+      "moderate",
+      "Moderately"
+    ],
+    [
+      "strong",
+      "Very meaningful"
+    ],
+    [
+      "very_strong",
+      "Extremely meaningful"
+    ],
+    [
+      "varies",
+      "Varies by period or context"
+    ],
+    [
+      "unknown",
+      "Not sure"
+    ],
+    [
+      "skip",
+      "Prefer not to answer"
+    ],
+    [
+      "not_answered",
+      "No answer to this part"
+    ]
+  ],
+  "predictability_options": [
+    [
+      "very_low",
+      "Usually very unpredictable"
+    ],
+    [
+      "low",
+      "More unpredictable than predictable"
+    ],
+    [
+      "mixed",
+      "Mixed"
+    ],
+    [
+      "high",
+      "More predictable than unpredictable"
+    ],
+    [
+      "very_high",
+      "Usually highly predictable"
+    ],
+    [
+      "varies",
+      "Changes greatly by period or area"
+    ],
+    [
+      "unknown",
+      "Not sure"
+    ],
+    [
+      "skip",
+      "Prefer not to answer"
+    ]
+  ],
+  "items": [
+    {
+      "id": "EM01",
+      "construct": "surprise_self",
+      "mode": "frequency",
+      "default": true,
+      "window": "past_12_months",
+      "purpose": "How unexpected your own reactions feel, separately from what other people do.",
+      "question": "Over the past year, how often have your own thoughts, feelings, or actions genuinely surprised you?",
+      "optional_followup": "Was anything particularly surprising about how you reacted, or do different parts of life differ?",
+      "optional_intensity": "If this has happened, how strongly did you feel surprised at its peak?",
+      "dimensions": [
+        "event_frequency",
+        "surprise_intensity",
+        "self_domain"
+      ],
+      "never_full_answer": true
+    },
+    {
+      "id": "EM02",
+      "construct": "surprise_others_world",
+      "mode": "frequency",
+      "default": false,
+      "window": "past_12_months",
+      "purpose": "Surprise about people and the world, which need not match surprise about yourself.",
+      "question": "Over the past year, how often have other people or things happening in the world genuinely surprised or shocked you?",
+      "optional_followup": "If they differ, which happens more: surprises about other people, or about the wider world? Were the surprises mostly pleasant, upsetting or mixed?",
+      "optional_intensity": "If this has happened, how strongly did you feel surprised at its peak?",
+      "dimensions": [
+        "event_frequency",
+        "surprise_intensity",
+        "source_people_vs_world",
+        "valence"
+      ],
+      "never_full_answer": true
+    },
+    {
+      "id": "EM03",
+      "construct": "awe_wonder",
+      "mode": "frequency",
+      "default": true,
+      "window": "past_12_months",
+      "purpose": "How often and intensely you feel awe or wonder; this is different from novelty or positive mood.",
+      "question": "In the past year, how often, if at all, have you felt awe or wonder?",
+      "optional_followup": "What tends to evoke it for you, if anything—perhaps people, nature, art, ideas, everyday life, or something else?",
+      "optional_intensity": "If this has happened, how powerful did the feeling get?",
+      "dimensions": [
+        "event_frequency",
+        "awe_intensity",
+        "evoking_context"
+      ],
+      "never_full_answer": true
+    },
+    {
+      "id": "EM04",
+      "construct": "sudden_realization",
+      "mode": "frequency",
+      "default": true,
+      "window": "past_12_months",
+      "purpose": "Sudden changes in understanding, without assuming they led to changed behavior.",
+      "question": "Over the past year, how often have you suddenly realized something important about yourself, another person, or life that you did not see before?",
+      "optional_followup": "Did any such realization change what you did, or did it mainly change how you saw things? Gradual changes count separately.",
+      "optional_intensity": "If this has happened, how important did the largest realization feel?",
+      "dimensions": [
+        "sudden_insight_frequency",
+        "significance",
+        "insight_to_action",
+        "gradual_vs_abrupt"
+      ],
+      "never_full_answer": true
+    },
+    {
+      "id": "EM05",
+      "construct": "felt_predictability",
+      "mode": "predictability",
+      "default": false,
+      "window": "past_12_months",
+      "purpose": "Everyday stability or disruption, separate from sudden changes in perspective.",
+      "question": "Over the past year, how predictable or unpredictable has your day-to-day life felt?",
+      "optional_followup": "If they differ, was that because of external events, changes in how you understood things, or both? Has this changed during different parts of your life?",
+      "dimensions": [
+        "felt_day_to_day_predictability",
+        "external_vs_internal",
+        "time_variability"
+      ],
+      "never_full_answer": false
+    },
+    {
+      "id": "EM06",
+      "construct": "perceived_guidance",
+      "mode": "frequency",
+      "default": false,
+      "window": "past_12_months",
+      "sensitive_optional": true,
+      "purpose": "The felt sense of being guided, without assuming a religious belief or supernatural cause.",
+      "question": "In the past year, how often, if ever, has it felt as though something beyond your deliberate plans was guiding events in your life?",
+      "optional_followup": "What interpretation, if any, do you give that feeling? 'I don't believe that happens' is a complete answer.",
+      "optional_intensity": "If this has happened, how strong was the feeling at its peak?",
+      "dimensions": [
+        "subjective_guidance_frequency",
+        "felt_strength",
+        "interpretation",
+        "uncertainty"
+      ],
+      "never_full_answer": true
+    },
+    {
+      "id": "EM07",
+      "construct": "meaningful_coincidence",
+      "mode": "frequency",
+      "default": false,
+      "window": "past_12_months",
+      "sensitive_optional": true,
+      "purpose": "Noticing meaningful coincidences, separately from what you believe caused them.",
+      "question": "Over the past year, how often, if ever, have coincidences struck you as unusually meaningful?",
+      "optional_followup": "When you reconsider them later, do they still seem meaningful, seem like chance, or does it vary?",
+      "optional_intensity": "If this has happened, how powerful was the feeling of significance?",
+      "dimensions": [
+        "noticed_frequency",
+        "felt_significance",
+        "later_appraisal",
+        "causal_interpretation"
+      ],
+      "never_full_answer": true
+    },
+    {
+      "id": "EM08",
+      "construct": "life_meaning_and_contribution",
+      "mode": "dual_meaning",
+      "default": true,
+      "window": "current",
+      "purpose": "How meaningful life feels to you and separately how much difference you feel you make to others.",
+      "question": "Right now, how meaningful does your life feel to you personally? Separately, how much difference do you feel you make to other people or the world?",
+      "prompt_fields": [
+        {
+          "key": "personal_meaning",
+          "label": "Life feels meaningful to me personally"
+        },
+        {
+          "key": "perceived_contribution",
+          "label": "I feel I make a difference to others or the world"
+        }
+      ],
+      "optional_followup": "Is that a settled feeling, something you are still looking for, or something that changes over time?",
+      "dimensions": [
+        "personal_meaning",
+        "perceived_contribution",
+        "meaning_search",
+        "time_variability"
+      ],
+      "never_full_answer": false
+    }
+  ],
+  "topic_selection": {
+    "description": "After core questions, offer all four other topics by neutral names. Selection reflects interest, never the measured frequency; do not infer absent experience for unselected topics.",
+    "labels": {
+      "EM02": "Surprises about people and the world",
+      "EM05": "How predictable life feels",
+      "EM06": "A sense of guidance beyond your plans",
+      "EM07": "Meaningful coincidences"
+    },
+    "allow_all": true,
+    "allow_none": true
+  },
+  "scoring": {
+    "allowed": false,
+    "model_fitting": false,
+    "compare_to_chart": false,
+    "existing_answers_rewritten": false
+  },
+  "source_refinement_note": "New neutral measurement phrasing informed by the owner's experience categories, not mapped by assumption to classical astrological chart rules.",
+  "validation_plan": [
+    "Check whether respondents can answer without leading assumptions or examples.",
+    "Check whether people distinguish self surprise, awe, abrupt insight, and life meaning.",
+    "Check item nonredundancy against prior interview source in blinded review.",
+    "Run repeat-response reliability/discriminant pilot before any prospectively frozen chart study."
+  ]
+}

@@ -1,0 +1,90 @@
+"use strict";
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const {pathToFileURL} = require("node:url");
+const {chromium} = require(process.env.PLAYWRIGHT_MODULE || "playwright");
+(async () => {
+  const root = __dirname;
+  const launch = {headless:true,args:["--no-sandbox"]};
+  if (process.env.PLAYWRIGHT_EXECUTABLE) launch.executablePath = process.env.PLAYWRIGHT_EXECUTABLE;
+  const browser = await chromium.launch(launch);
+  try {
+    const context = await browser.newContext({acceptDownloads:true});
+    const page = await context.newPage();
+    const requests = [], errors=[];
+    page.on("request", x => {if(!x.url().startsWith("file:")) requests.push(x.url());});
+    page.on("pageerror", error=>errors.push(error.message));
+    await page.goto(pathToFileURL(path.join(root,"EXPERIENCE-MEANING-PILOT-v1.html")).href);
+    assert.equal(await page.locator("#question-panel").isHidden(),true);
+    await page.locator("#begin").click();
+    assert.match(await page.locator("#progress").innerText(), /1 of 4/i);
+    await page.locator("#primary-answer").selectOption("never");
+    await page.locator("#save").click();
+    assert.match(await page.locator("#progress").innerText(), /2 of 4/i);
+    await page.locator("#primary-answer").selectOption("weekly");
+    await page.locator("#intensity").selectOption("strong");
+    await page.locator("#save").click();
+    await page.locator("#unknown").click();
+    await page.locator("#personal_meaning").selectOption("strong");
+    await page.locator("#perceived_contribution").selectOption("none");
+    await page.locator("#save").click();
+    assert.equal(await page.locator("#topics").isVisible(),true);
+    await page.locator('#topic-options input[value="EM06"]').check();
+    await page.locator('#topic-options input[value="EM07"]').check();
+    await page.locator("#topics-done").click();
+    assert.match(await page.locator("#progress").innerText(), /1 of 2/i);
+    await page.locator("#primary-answer").selectOption("never");
+    await page.locator("#save").click();
+    await page.locator("#primary-answer").selectOption("once_twice");
+    await page.locator("#intensity").selectOption("noticeable");
+    await page.locator("#save").click();
+    assert.equal(await page.locator("#complete").isVisible(),true);
+    let downloadEvent=page.waitForEvent("download");
+    await page.locator("#export").click();
+    let download=await downloadEvent;
+    let data=JSON.parse(fs.readFileSync(await download.path(),"utf8"));
+    const get=id=>data.responses.find(x=>x.question_id===id);
+    assert.equal(get("EM01").state,"NEVER");
+    assert.deepEqual([get("EM03").value,get("EM03").intensity],["weekly","strong"]);
+    assert.equal(get("EM04").state,"UNKNOWN");
+    assert.deepEqual(get("EM08").values,{personal_meaning:"strong",perceived_contribution:"none"});
+    assert.equal(get("EM06").state,"NEVER");
+    assert.equal(get("EM07").intensity,"noticeable");
+    assert.equal(get("EM02").state,"NOT_ASKED");
+    assert.equal(get("EM05").state,"NOT_ASKED");
+    await page.locator("#review-select").selectOption("EM04");
+    await page.locator("#edit").click();
+    await page.locator("#primary-answer").selectOption("once_twice");
+    await page.locator("#save").click();
+    downloadEvent=page.waitForEvent("download");
+    await page.locator("#export").click();
+    download=await downloadEvent;
+    data=JSON.parse(fs.readFileSync(await download.path(),"utf8"));
+    assert.equal(data.responses.find(x=>x.question_id==="EM04").value,"once_twice");
+    const next=await context.newPage();
+    next.on("request", x=>{if(!x.url().startsWith("file:"))requests.push(x.url());});
+    next.on("pageerror",x=>errors.push(x.message));
+    await next.goto(pathToFileURL(path.join(root,"EXPERIENCE-MEANING-PILOT-v1.html")).href);
+    await next.locator("#import").setInputFiles({name:"export.json",mimeType:"application/json",buffer:Buffer.from(JSON.stringify(data))});
+    assert.equal(await next.locator("#complete").isVisible(),true);
+    assert.match(await next.locator("#import-message").innerText(), /Imported successfully/);
+    await next.locator("#review-select").selectOption("EM03");
+    await next.locator("#edit").click();
+    assert.equal(await next.locator("#primary-answer").inputValue(),"weekly");
+    assert.equal(await next.locator("#intensity").inputValue(),"strong");
+    await next.setViewportSize({width:375,height:812});
+    const viewport = await next.evaluate(() => ({
+      width:document.documentElement.clientWidth,
+      content_width:document.documentElement.scrollWidth
+    }));
+    assert.ok(viewport.content_width <= viewport.width + 1, "Mobile page has horizontal overflow");
+    if (process.env.PILOT_BROWSER_SCREENSHOT) {
+      await next.screenshot({path:process.env.PILOT_BROWSER_SCREENSHOT});
+    }
+    assert.deepEqual(requests,[],"Offline page attempted external requests");
+    assert.deepEqual(errors,[],"Browser reported script error");
+    console.log("BROWSER_SMOKE_PASS",JSON.stringify({core:4,selected_optional:2,verified_states:8,export:true,edit:true,import:true,mobile_width:viewport.width,mobile_content:viewport.content_width,network_requests:requests.length,script_errors:errors.length}));
+    await context.close();
+  } finally {await browser.close();}
+})().catch(e => { console.error(e.stack||e); process.exitCode=1; });
