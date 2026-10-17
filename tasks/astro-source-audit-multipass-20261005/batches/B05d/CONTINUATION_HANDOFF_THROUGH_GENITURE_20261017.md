@@ -1,0 +1,9 @@
+# Lilly original first-edition through Lord of the Geniture
+
+Authenticated source publication on research/astro-b05d-lord-geniture-20261017, accepted source commit f40f083bbc4d797043d927907a05d953fcef7324. Accepted **6,415 Lilly + 1,066 retained Ptolemy = 7,481** historical source annotations; last R6415, next unused R6416. B05d R6384–R6415 has 32 source units, 29 substantive and three next chapter navigation, six original image passage groups, 19 limitations, 22 integrated tests and 17 extracted archive tests. Complete first edition original PDF SHA256 2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b. Source original PDF565–567 images preserved.
+
+Lilly explicitly rejects a Firmicus next-sign method, calls an all-point essential-dignity ranking rational, but himself prefers combined essential and accidental strength, position and elevation; near-equal second planet and other aspects may mix. Greeks used Moon/Mercury dignity. No frozen numeric weights, no clinically verified temperament classification, no independent human birth-time/personality prediction. No runtime changes.
+
+Owner original-source ZIP in Linux Downloads: Astrology-Lilly-Chapter-CVI-Lord-Geniture-Original-20261017.zip SHA256 7aa2a5ef3c0a5fd5a7f939344b7eb9b17b8ec4581a820d19547033369cf4e683.
+
+NEXT: printed CHAP CVI / editorial CVII, *Of the Complexion or Temperament of the Body; quality of the Planets and Signes*, begins after a distinct divider on original PDF566/printed532, continues all PDF567/printed533 and top PDF568/printed534. Printed CHAP CVII *Of the Manners of the Native or Child* starts after another divider on PDF568. Extract complete original hot/cold/moist/dry testimonies, weighting, tie resolution, sect/motion/phase rule, illustrations, and serious limits. Do not treat pre-modern four humours as actual medical outcomes. Source first mapping and tests; owner archive, guarded index, Github readback; next R6416. Parent study OPEN.
