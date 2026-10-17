@@ -1,0 +1,146 @@
+{
+  "schema": "LILLY_CXXXII_COMPETING_WIFE_COUNT_METHODS_HISTORICAL_V1",
+  "source": "William Lilly Christian Astrology original 1647 first edition Wellcome b30338724 PDF624-626",
+  "printed_chapter": "CXXXII",
+  "source_status": "HISTORIC_AUTHORIAL_METHODS_NOT_COMPUTED_OR_HUMAN_VALIDATED",
+  "outcome_fields_to_separate": [
+    "legal_marriage_count",
+    "sequential_spouse_count",
+    "simultaneous_wife_count",
+    "romantic_partners_or_sweethearts",
+    "concubines_and_nonmarital_relations",
+    "relative_spousal_longevity"
+  ],
+  "methods": [
+    {
+      "id": "M1",
+      "source": "water signs and barren contrast",
+      "conditions": [
+        "Most/all marriage significators watery and fruitful",
+        "Opposite Virgo/Leo/Gemini barren group"
+      ],
+      "nominal_outcome": ">1 wives vs fewer",
+      "branch_quantified": false,
+      "source_independent_replication": false
+    },
+    {
+      "id": "M2",
+      "source": "Moon in seventh and exceptions",
+      "conditions": [
+        "Moon in seventh",
+        "Exception when extremely afflicted by Saturn or Sun",
+        "Source claims Moon potent strengthens legal wife count"
+      ],
+      "nominal_outcome": ">1 wives, or multiple non-marital sweethearts depending on interpretation",
+      "branch_quantified": true,
+      "source_independent_replication": false
+    },
+    {
+      "id": "M3",
+      "source": "Moon conjoined one and comparative strength",
+      "conditions": [
+        "Moon joined bodily to only one planet by partile or platick",
+        "Compare Moon strength with that planet"
+      ],
+      "nominal_outcome": "one wife and alleged relative lifespan of spouses",
+      "branch_quantified": true,
+      "source_independent_replication": false
+    },
+    {
+      "id": "M4",
+      "source": "Moon applying partile to multiple planets",
+      "conditions": [
+        "Moon no bodily conjunction",
+        "Count planets that are direct, not combust, not fallen or in detriment",
+        "Moon must apply partile to planets, not inverse application",
+        "Exclude Sun",
+        "Fruitful signs allegedly double inferred number"
+      ],
+      "nominal_outcome": "count or doubled count",
+      "branch_quantified": true,
+      "source_independent_replication": false
+    },
+    {
+      "id": "M5",
+      "source": "Ptolemy method as attributed by Lilly (not checked against Ptolemy original)",
+      "conditions": [
+        "Moon in sign of one form applying to one planet",
+        "Alternative Moon bicorporeal sign applying many planets"
+      ],
+      "nominal_outcome": "one wife versus many wives or more than one marriage",
+      "branch_quantified": true,
+      "original_ptolemy_independently_collated": false,
+      "source_independent_replication": false
+    },
+    {
+      "id": "M6",
+      "source": "qualifying planets between Midheaven and Venus",
+      "conditions": [
+        "Only if prior methods give no applicable witness",
+        "Planets direct and free of combustion/Sun beams between MC and Venus, counted progressing from MC toward Ascendant",
+        "Retrograde or combust candidates may nevertheless count when dignified by domicile, exaltation or mutual reception"
+      ],
+      "nominal_outcome": "one wife per eligible planet",
+      "branch_quantified": true,
+      "source_independent_replication": false
+    },
+    {
+      "id": "M7",
+      "source": "partile aspect to seventh ruler fallback",
+      "conditions": [
+        "Only if preceding methods hold not",
+        "Count planets aspecting Lord Seventh with a partile contact",
+        "Planet retrograde or combust allowed in original description"
+      ],
+      "nominal_outcome": "number of wives by eligible aspects",
+      "branch_quantified": true,
+      "source_independent_replication": false
+    },
+    {
+      "id": "M8",
+      "source": "Lilly's preferred personal-experience Moon-sign method",
+      "conditions": [
+        "Planets in Moon's same sign, Moon applying and not separated",
+        "When none bodily present, planets with dignity in Moon's sign aspecting her partile"
+      ],
+      "nominal_outcome": "one wife per such planet",
+      "branch_quantified": true,
+      "author_anecdote_unverified": true,
+      "source_independent_replication": false
+    },
+    {
+      "id": "M9",
+      "source": "weak significator marriage-count rescue",
+      "conditions": [
+        "Marriage significators weak"
+      ],
+      "nominal_outcome": "Non-marital sweethearts or women wooed instead of legal wives",
+      "branch_quantified": false,
+      "source_independent_replication": false
+    },
+    {
+      "id": "M10",
+      "source": "Moon's common sign or fruitful/bicorporeal combos",
+      "conditions": [
+        "Moon applying a planet in a common sign indicates two",
+        "Moon fruitful sign applying planet in fruitful/bicorporeal sign indicates three",
+        "Prolific seventh sign and lord in common/fruitful strengthens three claim"
+      ],
+      "nominal_outcome": "two or three wives, overlapping with M1–M8",
+      "branch_quantified": true,
+      "source_independent_replication": false
+    }
+  ],
+  "incompatibility_warning": "Different methods can output conflicting numeric counts, multiply by fertile sign, or reclassify failed legal-marriage forecasts as concubines. No prospective deterministic priority, exception ordering, definition of spouse, number-of-planet eligibility or decoy baseline is specified. Cannot select retrospectively.",
+  "validation_preconditions": [
+    "Independently acquire true spouses' registered marriage chronology and exact nativity time",
+    "Define whether marriages legally registered, unions, or non-marital partners before predictions",
+    "Freeze exactly one deterministic priority tree (including fallback cases and tie/no-score) before any person's outcomes are revealed",
+    "Check attributed Ptolemy passage independently before claims of inter-author support",
+    "Use independent blinded persons with matched marriage-number and non-astrology baselines",
+    "Preserve explicit predictions of one, two, three or more, and record full confusion matrix and misses"
+  ],
+  "empirical_validations": 0,
+  "runtime_promotions": 0,
+  "actual_person_partner_claims_authorized": false
+}

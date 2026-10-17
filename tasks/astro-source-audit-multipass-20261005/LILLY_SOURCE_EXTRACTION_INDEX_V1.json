@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_HISTORIC_MARRIAGE_EASE_AND_DIRECTIONS_NEXT_NUMBER_OF_WIVES",
-  "records_count": 8026,
+  "status": "BOOK_III_HISTORIC_COMPETING_WIFE_COUNTS_NEXT_SPOUSE_ORIGIN",
+  "records_count": 8106,
   "read_numbered_chapters": [
     1,
     2,
@@ -136,7 +136,8 @@
     129,
     130,
     131,
-    132
+    132,
+    133
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -923,26 +924,35 @@
       "records_count": 83,
       "sha256": "523e5fa4dfac4041754995351609db2244c05dcd08a207d9d5adf9384b201afc",
       "scope": "Original Lilly 1647 printed CHAP CXXXI/editorial CXXXII on how easily native obtains a wife, and internal The time of Marriage subsection, original PDF623 mid to PDF624 mid/upper. Next separately printed CXXXII number of wives starts lower PDF624. 11 original source passage groups, 81 substantive historic clauses and two next heading navigation R7944–R8026. Fortunate/weak-majority marriage difficulty, Venus-Mars missing aspect, four alternative retrospective author anecdotes, sudden wedding vs moral claims; Moon oriental of Sun and house east/west sector age or spouse-age alternatives, direct/swift vs retrograde/slow/stationary delay, discrepancies weighted to Moon, and primary directions of seventh degree/ruler Moon/Venus/MC/Sun to natal and benefic aspects with historical terms caveat. Separate 14-step non-executable direction specification preserved in batches/B06i/MARRIAGE_PRIMARY_DIRECTIONS_HISTORICAL_METHOD_V1.json. No verified marriage age/event forecasts or promoted source algorithm."
+    },
+    {
+      "id": "B06j",
+      "path": "batches/B06j/RULES.json",
+      "records_count": 80,
+      "sha256": "a68dbb7f7572f582334cd9ecd780043c9a89e96b8fc3e66c69dcd94cb44390b7",
+      "scope": "William Lilly first-edition printed CHAP CXXXII/editorial CXXXIII On number of Wives original PDF624 lower through PDF626 upper, before printed CHAP CXXXIII on wife's origin/quarter. Eleven image-anchored source groups with 78 substantive historical claims and two chapter navigation, R8027–R8106. Ten historically competing counting methods: watery/fecund vs barren signs, Moon seventh and severe Saturn/Sun exceptions; one-planet Moon conjunction, spouse death-order strength allegations, direction-specific applying partile counts excluding Sun with fruitfulness multiplier, author-attributed Ptolemy one-form vs bicorporeal signs, Midheaven-Venus arc eligible-planet count including retro/combust dignity/reception exceptions; fallback partile aspects to seventh ruler; Lilly's preferred Moon-sign applying planet count and fallback; two/three wife combinations with fertile seventh. Original author explicitly switches from legal wife count to concubines/sweethearts or wooing and admits no guaranteed two legal wives; anecdotal never-failed assertion lacks cases. These are source-only gender/social stereotypes and historic method descriptions, not independently validated spouse or mortality forecasts and no promoted runtime rules."
     }
   ],
   "next": {
-    "pdf_page": 624,
-    "printed_page": 590,
-    "chapter": "CXXXIII",
-    "printed_chapter_numeral": "CXXXII",
-    "heading": "Of the number of Wives",
+    "pdf_page": 626,
+    "printed_page": 592,
+    "chapter": "CXXXIV",
+    "printed_chapter_numeral": "CXXXIII",
+    "heading": "From whence, or from what Quarter the Native shall have his Wife",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Printed CHAP CXXXII starts below a divider in lower original PDF624/printed590, continues PDF625/printed591 through upper original PDF626/printed592. Next printed CHAP CXXXIII, on where or from which quarter Wife comes, begins under separate divider PDF626.",
-    "research_scope": "Historical number of marriages/wives from watery fruitful and barren signs, Moon seventh house, planets applying partile to Moon, planet-strength relative lifespan hypotheses, Ptolemy attribution, Sun beams and alternative Midheaven to Venus methods. Distinguish partners, legally married spouses and extramarital affairs; author anecdotes not validation."
+    "position": "Original printed CHAP CXXXIII begins beneath a divider mid original PDF626/printed592 after CXXXII wife counts, continues upper original PDF627/printed593 until separate printed CHAP CXXXIIII on what manner of Wife fair or deformed starts later PDF627. Verify source image seam before extraction.",
+    "following_printed_chapter_numeral": "CXXXIIII",
+    "following_original_pdf_page": 627,
+    "research_scope": "Historical alleged birthplace/direction/location of spouse, ninth/third house signifiers, seventh/ninth ruler exchange, Venus Moon and house quadrant classification, qualifying dignities, majority testimony. No real spouse identity, ethnicity, faith, geographic location or marital prediction validated."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B06i_MARRIAGE_TIME.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B06j_NUMBER_OF_WIVES.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1047,5 +1057,6 @@
   "chapter_CXXX_source_acceptance_note": "B06f R7809–R7835, 27 historical documentary notes and separate CXXX navigation, original PDF619–621 SHA images, 14 archive-replayed source checks. No real patient recovery or runtime rules validated.",
   "chapter_CXXXI_source_acceptance_note": "B06g R7836–R7877, 42 original historical annotation records, 40 substantive and 2 unnumbered seventh-house navigation, source PDF620–627 SHA/bytes and 15 hermetic replay documentary tests, human theft and labor outcomes validated 0, scoring rules promoted 0.",
   "unnumbered_seventh_house_acceptance_note": "B06h original 1647 source R7878-R7943, 66 source clauses including two explicit Saturn versus Venus/Moon exceptions and a no-sufficient-evidence Moon/Saturn case. Original PDF621–625 SHA and 21 standalone archive-replayed integrity tests; zero marriage/sexual human predictions and no runtime scoring rules.",
-  "chapter_CXXXII_source_acceptance_note": "B06i R7944–R8026: 83 historical source notes, 14-step source mathematical-direction template frozen NONEXECUTABLE. Original frames PDF623-627 SHA checks and 25 archived/extracted documentary tests pass, no calendar or prospective marriage predictions or runtime promotions."
+  "chapter_CXXXII_source_acceptance_note": "B06i R7944–R8026: 83 historical source notes, 14-step source mathematical-direction template frozen NONEXECUTABLE. Original frames PDF623-627 SHA checks and 25 archived/extracted documentary tests pass, no calendar or prospective marriage predictions or runtime promotions.",
+  "chapter_CXXXIII_source_acceptance_note": "B06j R8027–R8106, 80 source-only historical records, ten contradictory wife-count methods, explicit nonmarital-partner outcome switching, Ptolemy uncorroborated attribution and author never-failed anecdote unverified. Original PDF624–627 SHA witnesses, 25 independent extracted ZIP tests, zero human marriage, survival, legal registration or runtime predictive validity."
 }

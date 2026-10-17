@@ -1,3 +1,9 @@
+# Lilly first edition source through historical spouse count — 2026-10-17
+
+After remote verified publication **9,172 historical source annotations** (8,106 Lilly + 1,066 Ptolemy), physical first-edition scan frontier PDF626/894 (**70.0% physical page-position only, NOT completion of source algorithm digitization or empirical research**). Printed CXXXII wife number source adds 80 documentary clauses and ten incompatible alternative rules; legal wives and nonmarital female acquaintances cannot be conflated. Ptolemy source attribution and author private anecdote not independently verified; zero empirical human marriage/longevity result and zero runtime promotions. Next printed CXXXIII on spouse origin/quarter from PDF626 through upper PDF627. Numeric astronomy and untouched human matching/decoys remain separate OPEN lanes.
+
+---
+
 # Lilly historical source through marriage time directions — 2026-10-17
 
 After authenticated publication **9,092 historical annotations** (8,026 Lilly + 1,066 Ptolemy); physical source frontier PDF624/894 (**69.8% by original scanned position, not entire science completion**). Printed CXXXI ease and time of marriage adds 83 source annotations and non-executable 14-step primary-directions specification. No exact historic direction/arc-to-calendar calculation implemented; no independent marriage date prediction validated. Next printed CXXXII number of wives lower PDF624 through upper PDF626. Numeric astronomy/Regiomontanus and blind participant studies remain OPEN.
