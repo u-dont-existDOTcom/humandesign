@@ -1,0 +1,706 @@
+{
+  "schema": "life-patterns-lilly-book3-religion-dreams-v1",
+  "status": "SOURCE_TWIN_WITNESS_TEXT_AUDIT_FACSIMILE_SYMBOLS_NOT_YET_ADJUDICATED",
+  "analysis_date": "2026-10-17",
+  "source": {
+    "author": "William Lilly",
+    "title": "Christian Astrology, original 1647, Book III",
+    "chapters": [
+      "CXLII Of the Religion of the Native",
+      "CXLIII Of Dreames"
+    ],
+    "printed_pages": "611–614",
+    "original_primary_archive": "https://archive.org/details/b30338724",
+    "archived_original_OCR_url": "https://archive.org/download/b30338724/b30338724_djvu.txt",
+    "original_OCR_bytes": 2005702,
+    "original_OCR_sha256": "7c08b55359c41049c5d43901b8da869a326f8eb852e4a30603a4b698533626aa",
+    "retyped_witness_url": "https://pdfcoffee.com/william-lilly-christian-astrology-volume-3-pdf-free.html",
+    "retyped_source_line_boundaries": {
+      "religion": "CXLII, pp.611–613",
+      "dreams": "CXLIII, pp.613–614"
+    },
+    "witness_reconciliation": "Independent 1647 OCR confirms relevant passages and theological non-compulsion, but OCR corrupts old glyphs and planet symbols; retyped witness used for planet-names. Source-specific ambiguities remain unresolved pending manual image verification.",
+    "primary_page_image_comparison_completed": false
+  },
+  "survey_evaluation": {
+    "bank": "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
+    "version": "scenario-bank-v7.0-20260922",
+    "status": "All 79 numbered question texts must be searched before absence conclusion.",
+    "declared_coverage": "Direct question targeting religiosity/change/divination and phenomenology/dream content appears missing, despite indirect choice/meaning questions.",
+    "experiment": "No new charts, scoring or participant data used."
+  },
+  "count": 31,
+  "sections": {
+    "religion": 20,
+    "dreams": 11
+  },
+  "fields_claimed_by_original": [
+    "religious_orientation_and_practice",
+    "religious_affiliation_change",
+    "interest_in_divination",
+    "perceived_oracular_speech",
+    "dream_content_and_valence",
+    "historical_claim_about_dreams_predictive_quality"
+  ],
+  "unsupported_by_checked_rules": [
+    "how_often_awe_felt",
+    "how_often_synchronicities_noticed",
+    "frequency_of_shocking_new_realizations",
+    "quantified_subjective_life_meaning",
+    "factual_validation_of_prophetic_dreams"
+  ],
+  "accepted_scoring_rule_changes": 0,
+  "records": [
+    {
+      "id": "LILLY3-R01",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "611",
+      "chart_condition": "Saturn, Mars or South Node in ninth; Saturn/Mars in opposing third; movable sign; Jupiter weakened and afflicted",
+      "traditional_assertion": "Weak religious attachment, religious deviation or sectarianism as judged by Lilly",
+      "measurement_domain": "religious_attachment_or_change",
+      "claim_class": "stigmatizing_historical_claim",
+      "astrological_condition_class": "conditional_chain",
+      "source_caveat": "requires original glyph check",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R02",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "611",
+      "chart_condition": "Jupiter, Venus or North Node in ninth or third",
+      "traditional_assertion": "Favorable inclination to the religion of one's upbringing",
+      "measurement_domain": "religious_attachment_or_practice",
+      "claim_class": "religious_disposition",
+      "astrological_condition_class": "multiple_alternative_placements",
+      "source_caveat": "religion-specific historical language; not neutral psychology",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R03",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "611",
+      "chart_condition": "Sun, Moon, Mercury or Part of Fortune in ninth/third; modified by aspect to benefics or malefics",
+      "traditional_assertion": "Moderate religious disposition, increased/decreased by listed aspects",
+      "measurement_domain": "religious_orientation_strength",
+      "claim_class": "religious_disposition",
+      "astrological_condition_class": "benefic_malefic_aspect_modifier",
+      "source_caveat": "'goodness' is a traditional norm, not objective evaluation",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R04",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "611",
+      "chart_condition": "No planets third/ninth; Jupiter in own house/exaltation, angular or reception with designated planets",
+      "traditional_assertion": "Religious or good-minded inclination",
+      "measurement_domain": "religious_disposition",
+      "claim_class": "religious_disposition",
+      "astrological_condition_class": "empty_houses_and_strong_jupiter_fallback",
+      "source_caveat": "Venus/Sun/Moon/Mercury reception alternatives; exact conditional alternatives require scan",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R05",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "611",
+      "chart_condition": "Jupiter peregrine/fallen/detrimental, cadent and afflicted by malefics",
+      "traditional_assertion": "Contrary religious disposition to above",
+      "measurement_domain": "religious_disposition",
+      "claim_class": "stigmatizing_historical_claim",
+      "astrological_condition_class": "weakened_jupiter_fallback",
+      "source_caveat": "Do not turn absence of belief into a scored negative",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R06",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "612",
+      "chart_condition": "Jupiter, Venus or North Node in ninth/third or with Spica Virgo",
+      "traditional_assertion": "Pious or religious party",
+      "measurement_domain": "piety",
+      "claim_class": "religious_disposition",
+      "astrological_condition_class": "alternative_placement_plus_star",
+      "source_caveat": "'Spice Virgo' transcription appears to mean Spica, unresolved until printed image",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R07",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "612",
+      "chart_condition": "Jupiter and Venus in/near cazimi with Sun (wording uncertain)",
+      "traditional_assertion": "An aptitude for prophecy and divination",
+      "measurement_domain": "divination_orientation",
+      "claim_class": "divination_interest",
+      "astrological_condition_class": "unresolved_cazimi_phrase",
+      "source_caveat": "Primary OCR obliterates planet symbols; do not convert to computational predicate",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R08",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "612",
+      "chart_condition": "Sun in ninth",
+      "traditional_assertion": "Strong piety, religious preferment and preaching",
+      "measurement_domain": "religious_practice_and_role",
+      "claim_class": "religious_role",
+      "astrological_condition_class": "simple_planet_house",
+      "source_caveat": "Predicts religious role and preference, not felt awe frequency",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R09",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "612",
+      "chart_condition": "Saturn in ninth in one of its essential dignities",
+      "traditional_assertion": "Religion, chastity and faith",
+      "measurement_domain": "religious_commitment",
+      "claim_class": "religious_disposition",
+      "astrological_condition_class": "essential_dignity",
+      "source_caveat": "Chastity is separate intimate-life behavior; no compulsory measurement",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R10",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "612",
+      "chart_condition": "Lord of ninth is a fortune but ill disposed",
+      "traditional_assertion": "Right judgement, little social credibility",
+      "measurement_domain": "perceived_moral_judgement_and_social_acceptance",
+      "claim_class": "self_social_moral_judgement",
+      "astrological_condition_class": "lordship_condition",
+      "source_caveat": "Moral rightness cannot be externally inferred from self-report",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R11",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "612",
+      "chart_condition": "Saturn or Mars third/ninth, direct in fixed sign, positively aspected by fortunes",
+      "traditional_assertion": "Piety, qualified as less sincere/firm than direct benefic placement",
+      "measurement_domain": "piety_and_religious_stability",
+      "claim_class": "religious_disposition",
+      "astrological_condition_class": "direction_sign_aspect_chain",
+      "source_caveat": "Traditional value wording, not a measured subjective state",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R12",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "612",
+      "chart_condition": "Sun and Jupiter govern ninth, dignity in Mercury/Moon/ascendant places plus aspects",
+      "traditional_assertion": "Speech described as oracular",
+      "measurement_domain": "speech_perceived_as_oracular",
+      "claim_class": "reputation_or_rhetoric",
+      "astrological_condition_class": "compound_rulership_aspect",
+      "source_caveat": "Not proof of prophetic speech or supernatural origin",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R13",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "612",
+      "chart_condition": "Several planets in ninth",
+      "traditional_assertion": "Mixed religious goodness",
+      "measurement_domain": "mixed_religious_character",
+      "claim_class": "religious_disposition",
+      "astrological_condition_class": "multiple_planets_house",
+      "source_caveat": "Not a unidimensional personality polarity",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R14",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "613",
+      "chart_condition": "Saturn/Mars/South Node in ninth/third mutable signs, Jupiter weak/cadent/afflicted",
+      "traditional_assertion": "Instability of religion, heresy, blasphemy or atheism in Lilly's normative vocabulary",
+      "measurement_domain": "religious_change_or_heterodoxy",
+      "claim_class": "stigmatizing_historical_claim",
+      "astrological_condition_class": "compound_historical_value_judgement",
+      "source_caveat": "Often repeats R01; not independent corroboration",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R15",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "613",
+      "chart_condition": "Lord of ninth unfortunate in angles; retrograde strengthens alleged effect",
+      "traditional_assertion": "Contempt for godliness (historical value judgment)",
+      "measurement_domain": "religious_allegiance",
+      "claim_class": "stigmatizing_historical_claim",
+      "astrological_condition_class": "lord_ninth_condition",
+      "source_caveat": "Not an acceptable contemporary trait diagnosis",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R16",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "613",
+      "chart_condition": "Moon, Mercury and ascendant lord in bicorporeal signs",
+      "traditional_assertion": "Religious heterodoxy or changing original religion",
+      "measurement_domain": "religious_change_over_time",
+      "claim_class": "religious_change",
+      "astrological_condition_class": "three_sign_classes",
+      "source_caveat": "Not sudden revelation; only alleged change of religious affiliation",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R17",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "613",
+      "chart_condition": "Venus or Moon in ninth in movable/bicorporeal sign",
+      "traditional_assertion": "Variable religious opinions and interest in divination",
+      "measurement_domain": "religious_opinion_fluctuation_divination",
+      "claim_class": "opinion_and_divination",
+      "astrological_condition_class": "sign_class_and_house",
+      "source_caveat": "Two separable outcomes from the same asserted placement",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R18",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "613",
+      "chart_condition": "Mercury in ninth",
+      "traditional_assertion": "Conversion from one religion to another",
+      "measurement_domain": "actual_religious_conversion",
+      "claim_class": "religious_change",
+      "astrological_condition_class": "simple_planet_house",
+      "source_caveat": "Life event and timing, not just self-described spirituality frequency",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R19",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "613",
+      "chart_condition": "Moon conjunct South Node in ninth",
+      "traditional_assertion": "Little interest in religion",
+      "measurement_domain": "religious_nonparticipation",
+      "claim_class": "religious_disposition",
+      "astrological_condition_class": "conjunction_and_house",
+      "source_caveat": "Nonreligious disposition is not a moral failure",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-R20",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLII — Of the Religion of the Native",
+      "original_printed_page": "611",
+      "chart_condition": "Lilly's own explicit interpretive restriction; not a planetary rule",
+      "traditional_assertion": "Stars do not force or cause religion; they are said to describe natural inclination",
+      "measurement_domain": "causal_interpretation_limit",
+      "claim_class": "author_caveat",
+      "astrological_condition_class": "not_chart_predicate",
+      "source_caveat": "Preserve direct historical limit against deterministic religious judgment",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "not_questionnaire_evidence",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D01",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "613",
+      "chart_condition": "Jupiter or Venus in ninth, potent and unafflicted",
+      "traditional_assertion": "Dreams said to have corresponding effects",
+      "measurement_domain": "dreams_assigned_prophetic_quality",
+      "claim_class": "dream_credibility_claim",
+      "astrological_condition_class": "dignified_benefic_house",
+      "source_caveat": "Claim of predictive correspondence is unverified",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D02",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "613",
+      "chart_condition": "Malefics located in ninth",
+      "traditional_assertion": "Dreams described as deceptive or unfavorable",
+      "measurement_domain": "dreams_assigned_deceptiveness",
+      "claim_class": "dream_credibility_claim",
+      "astrological_condition_class": "malefic_house",
+      "source_caveat": "Do not treat dream truthfulness as objectively known",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D03",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "613",
+      "chart_condition": "Benefics in ninth weakened or afflicted",
+      "traditional_assertion": "Dreams judged ambiguous, sometimes true and sometimes false",
+      "measurement_domain": "dreams_assigned_uncertainty",
+      "claim_class": "dream_credibility_claim",
+      "astrological_condition_class": "dignified_or_afflicted_benefic",
+      "source_caveat": "Not participant's subjective degree of uncertainty",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D04",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "613",
+      "chart_condition": "No planets in ninth; inspect sign at cusp and its ruler",
+      "traditional_assertion": "Dream judgement falls back to ninth-house ruler",
+      "measurement_domain": "dream_rule_fallback",
+      "claim_class": "method_only",
+      "astrological_condition_class": "empty_house_sign_lord_fallback",
+      "source_caveat": "No direct qualitative answer predicated by this alone",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D05",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "614",
+      "chart_condition": "Saturn is chosen dream significator",
+      "traditional_assertion": "Dreams of darkness, digging, graves, subterranean objects, frightening spirits",
+      "measurement_domain": "dream_content_fear_darkness",
+      "claim_class": "dream_content_category",
+      "astrological_condition_class": "planet_significator",
+      "source_caveat": "Cultural historical content; no dream frequency predicted",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D06",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "614",
+      "chart_condition": "Jupiter is chosen dream significator",
+      "traditional_assertion": "Pleasant dreams involving clergy, rulers, preferment or nobility",
+      "measurement_domain": "dream_content_religion_esteem",
+      "claim_class": "dream_content_category",
+      "astrological_condition_class": "planet_significator",
+      "source_caveat": "Content and emotional valence, not duration/frequency",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D07",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "614",
+      "chart_condition": "Mars is chosen dream significator",
+      "traditional_assertion": "Dreams of conflict, fights, enemies, war and hunting",
+      "measurement_domain": "dream_content_conflict",
+      "claim_class": "dream_content_category",
+      "astrological_condition_class": "planet_significator",
+      "source_caveat": "Content category, not clinical nightmare inference",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D08",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "614",
+      "chart_condition": "Sun is chosen dream significator",
+      "traditional_assertion": "Dreams of gold, money, power, rank or high-status people",
+      "measurement_domain": "dream_content_status_resources",
+      "claim_class": "dream_content_category",
+      "astrological_condition_class": "planet_significator",
+      "source_caveat": "Content category, not objective success prediction",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D09",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "614",
+      "chart_condition": "Venus is chosen dream significator",
+      "traditional_assertion": "Pleasant dreams of pleasures, feasts, attractiveness, fine clothing or pictures",
+      "measurement_domain": "dream_content_pleasure_beauty",
+      "claim_class": "dream_content_category",
+      "astrological_condition_class": "planet_significator",
+      "source_caveat": "Aesthetic dream imagery distinct from waking awe",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D10",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "614",
+      "chart_condition": "Mercury is chosen dream significator",
+      "traditional_assertion": "Dreams of travel, learning, books, accounting and children",
+      "measurement_domain": "dream_content_learning_travel",
+      "claim_class": "dream_content_category",
+      "astrological_condition_class": "planet_significator",
+      "source_caveat": "Content category, not actual learning outcomes",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    },
+    {
+      "id": "LILLY3-D11",
+      "original_edition": 1647,
+      "book": "III nativities",
+      "chapter": "CXLIII — Of Dreames",
+      "original_printed_page": "614",
+      "chart_condition": "Moon chosen dream significator, Saturn conjunction modifies",
+      "traditional_assertion": "Dreams of water/navigation/work/flying; with Saturn dark or fearful",
+      "measurement_domain": "dream_content_water_flight",
+      "claim_class": "dream_content_category",
+      "astrological_condition_class": "planet_and_aspect_modifier",
+      "source_caveat": "Conditional modifier and cultural content; not dream frequency",
+      "source_witnesses": [
+        "original_1647_print_scan_OCR_with_omission_risk",
+        "independent_1647_retyped_transcription"
+      ],
+      "stage": "SOURCE_TOPIC_NOT_A_VERIFIED_CHART_PREDICTION",
+      "survey_v7": "absent_direct_experiential_measurement",
+      "mapping_to_existing_astrohd": "unmapped",
+      "policy": "Not live-scored, not a participant trait finding"
+    }
+  ]
+}

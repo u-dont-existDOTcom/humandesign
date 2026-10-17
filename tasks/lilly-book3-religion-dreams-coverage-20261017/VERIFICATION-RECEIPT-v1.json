@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "task": "lilly-book3-religion-dreams-coverage-20261017",
+  "result": "RELIGION_DREAM_SOURCE_COVERAGE_VERIFIED_TEXTUAL_LEVEL_NOT_ASTRO_PREDICTIVE_VALIDATION",
+  "date": "2026-10-17",
+  "original_work": "William Lilly Christian Astrology 1647 Book III CXLII-CXLIII printed pp.611-614",
+  "source_review": {
+    "original_archive_ocr": "https://archive.org/download/b30338724/b30338724_djvu.txt",
+    "original_ocr_sha256": "7c08b55359c41049c5d43901b8da869a326f8eb852e4a30603a4b698533626aa",
+    "ocr_phrase_checks": "12/12",
+    "retyped_witness": "https://pdfcoffee.com/william-lilly-christian-astrology-volume-3-pdf-free.html",
+    "planet_glyphs_checked_against_original_page_images": false,
+    "unresolved_source_wording": [
+      "cazimi aphorism syntax",
+      "Spica Virgo spelling and conditions"
+    ],
+    "interpretive_limit": "Original author explicitly says stars do not compel religious allegiance"
+  },
+  "source_units": {
+    "religion_including_one_caveat": 20,
+    "dreams": 11,
+    "total": 31
+  },
+  "v7_question_bank": {
+    "total_questions": 79,
+    "direct_keyword_hits_for_faith_dreams_divination_awe_wonder_synchrony_revelation_spirituality": 0,
+    "lexical_absence_is_not_semantic_absence": true
+  },
+  "new_scored_or_live_items": 0,
+  "optional_unscored_draft_questions": 5,
+  "privacy": {
+    "participant_records_read": false,
+    "owner_birth_data_read": false,
+    "real_review_id_transmitted": false
+  },
+  "verification": {
+    "focused_unit_tests_passed": 4,
+    "root_test_passed": 1097,
+    "root_tests_skipped_missing_swiss_fixtures": 6,
+    "ruff": "PASS",
+    "witness_receipt_reproducible": true
+  },
+  "delivery": {
+    "folder": "~/Téléchargements/Life-Patterns-Astrology-Source-Audit-2026-10-17/Lilly-Book-III/",
+    "files_expected": 6
+  },
+  "pending_source_fidelity": "Compare celestial glyphs and ambiguous aphorisms against the 1647 original page facsimile before mathematical source-rule encoding",
+  "broader_goal": "Continue full traditional natal-source inventory and untouched prospective validation; this partial source audit does not complete all traditions."
+}

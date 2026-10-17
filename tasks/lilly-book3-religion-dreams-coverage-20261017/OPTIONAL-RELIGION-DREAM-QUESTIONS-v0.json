@@ -1,0 +1,83 @@
+{
+  "schema": "life-patterns-optional-religion-dream-phenomenology-pilot-v0",
+  "status": "RESEARCH_DRAFT_UNSCORED_NOT_INSTALLED",
+  "date": "2026-10-17",
+  "related_source_sections": [
+    "William Lilly Christian Astrology (1647) Book III CXLII printed pp.611–613",
+    "William Lilly Christian Astrology (1647) Book III CXLIII printed pp.613–614"
+  ],
+  "instrument_position": "Optional independent research after main V7 interview; not part of required CF003 and not part of historical already completed interviews.",
+  "completion": "All questions skippable, free text permitted, no compulsory personal belief disclosure, no forced example quota.",
+  "items": [
+    {
+      "id": "L3-EXP-01",
+      "domain": "spiritual_and_religious_orientation",
+      "question": "What place, if any, do spiritual or religious beliefs and practices have in your life these days? Is this something you experience strongly, lightly, or not at all?",
+      "measure": [
+        "current_place",
+        "felt_intensity",
+        "practice_or_belief_separation"
+      ],
+      "none_allowed": true,
+      "notes": "Do not equate spirituality with one religion, institutional practice, or moral worth."
+    },
+    {
+      "id": "L3-EXP-02",
+      "domain": "religious_or_worldview_change",
+      "question": "Have your religious, spiritual, or philosophical views changed substantially during your life, or stayed mostly similar? If they changed, did the shift happen suddenly, gradually, or both?",
+      "measure": [
+        "presence_of_change",
+        "time_course",
+        "persistence"
+      ],
+      "none_allowed": true,
+      "notes": "Religious conversion and sudden insight are distinct; don't assume either happened."
+    },
+    {
+      "id": "L3-EXP-03",
+      "domain": "divination_omen_and_dream_interpretation",
+      "question": "Have you ever been interested in interpreting dreams, omens, or other experiences as meaningful signs? If so, how often do you consider them, and what meaning, if any, do you give them?",
+      "measure": [
+        "interest",
+        "frequency_of_interpretation",
+        "conviction_separate_from_interest"
+      ],
+      "none_allowed": true,
+      "notes": "Interest in an idea is not belief in a literal supernatural mechanism."
+    },
+    {
+      "id": "L3-EXP-04",
+      "domain": "dream_recall_content_and_emotion",
+      "question": "When you remember your dreams, what themes or feelings, if any, recur? About how often do you remember dreams? It is fine if you hardly ever remember them.",
+      "measure": [
+        "recall_frequency",
+        "emotional_valence",
+        "recurrent_content"
+      ],
+      "none_allowed": true,
+      "notes": "Dream categories in old texts should not dictate prompted content or be coded as diagnoses."
+    },
+    {
+      "id": "L3-EXP-05",
+      "domain": "dreams_later_interpreted_as_predictions",
+      "question": "Have you ever felt that a dream anticipated something that happened later? If so, how convincing did that seem at the time, and did your interpretation change afterward?",
+      "measure": [
+        "perceived_frequency",
+        "confidence",
+        "reappraisal",
+        "possible_falsifying_experiences"
+      ],
+      "none_allowed": true,
+      "notes": "This measures felt experience and later appraisal, not verified prophetic accuracy."
+    }
+  ],
+  "methodological_guards": {
+    "do_not_ask_current_completed_participants": true,
+    "no_model_prediction_mapping_authorized": true,
+    "unknown_and_none_distinct": true,
+    "no_causal_supernatural_assertion": true,
+    "avoid_sensitive_belief_coercion": true,
+    "source_directionality_requires_original_folio_check": true,
+    "future_study": "Test comprehension and response variation on independent consenting respondents before chart-feature mapping or prediction testing."
+  }
+}
