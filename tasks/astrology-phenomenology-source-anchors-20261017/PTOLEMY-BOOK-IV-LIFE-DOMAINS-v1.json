@@ -1,0 +1,185 @@
+{
+  "schema": "life-patterns-ptolemy-book-four-source-topic-audit-v1",
+  "status": "HISTORICAL_CHART_TOPIC_COVERAGE_NO_MODERN_PREDICTION_VALIDATION",
+  "source_edition": "Ptolemy Tetrabiblos Book IV, Loeb English public-domain reproduction, three LacusCurtius HTML segments",
+  "verified_on": "2026-10-17",
+  "source_pages": [
+    {
+      "id": "PT-IV-1-4",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/4A%2A.html",
+      "locators": [
+        "IV.2 Of Material Fortune",
+        "IV.3 Of the Fortune of Dignity",
+        "IV.4 Of the Quality of Action"
+      ],
+      "scope": "natal judgements on wealth/status/vocation and occupational dispositions",
+      "sha256_html": "a9599c9b446619ed7e7fd39a3a3fc6dec2d2deb6cc1216a16a5c3a121cec52f0",
+      "verified_html_bytes": 40942,
+      "section_locator_checks_passed": 3
+    },
+    {
+      "id": "PT-IV-5-7",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/4B%2A.html",
+      "locators": [
+        "IV.5 Of Marriage",
+        "IV.6 Of Children",
+        "IV.7 Of Friends and Enemies"
+      ],
+      "scope": "natal family/relationship and synastry-related outcomes",
+      "sha256_html": "11c9febef7e834ddd3c39c5c497d41cdd95876ff8c0f9e9fc0d03d4d3e17f599",
+      "verified_html_bytes": 50884,
+      "section_locator_checks_passed": 3
+    },
+    {
+      "id": "PT-IV-8-10",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/4C%2A.html",
+      "locators": [
+        "IV.8 Of Foreign Travel",
+        "IV.9 Of the Quality of Death",
+        "IV.10 Of the Division of Times"
+      ],
+      "scope": "natal travel/mortality/timing method; mortality is not ordinary personality measurement",
+      "sha256_html": "e7b0d4ca9a780179711ef936f6ce2bd86ab100ac0499dfa482d09eb56476a705",
+      "verified_html_bytes": 62603,
+      "section_locator_checks_passed": 3
+    }
+  ],
+  "domains": [
+    {
+      "chapter": "IV.2",
+      "source_page_id": "PT-IV-1-4",
+      "domain": "actual_financial_fortune",
+      "claim_summary": "Ptolemy assigns calculation of material acquisitions, wealth and losses to the Lot of Fortune and related planetary relations.",
+      "scenario_v7_coverage": "proxy_only",
+      "v7_families": [
+        "resources"
+      ],
+      "measurement_category": "historical_life_events_or_roles_not_phenomenology",
+      "sensitivity": "financial_privacy_optional",
+      "do_not_add_as_compulsory_question": true,
+      "measurement_note": "V7 G20 hypothetical spending preferences are not an individual's actual long-term financial history."
+    },
+    {
+      "chapter": "IV.3",
+      "source_page_id": "PT-IV-1-4",
+      "domain": "actual_status_esteem_public_rank",
+      "claim_summary": "Ptolemy uses luminaries, attendant planets and angles for predictions of honor, rank and public dignity.",
+      "scenario_v7_coverage": "proxy_only",
+      "v7_families": [
+        "resources",
+        "external_role"
+      ],
+      "measurement_category": "historical_life_events_or_roles_not_phenomenology",
+      "sensitivity": "ordinary_optional_self_report",
+      "do_not_add_as_compulsory_question": true,
+      "measurement_note": "V7 STATUS asks how praise feels, not one's actual status over time."
+    },
+    {
+      "chapter": "IV.4",
+      "source_page_id": "PT-IV-1-4",
+      "domain": "real_occupation_vocation_mystery_professions",
+      "claim_summary": "Ptolemy describes occupations/quality of action, including teaching, commerce, medicine, skilled trades, interpreting dreams, ritual occupations and arts.",
+      "scenario_v7_coverage": "proxy_only",
+      "v7_families": [
+        "purpose",
+        "work_energy",
+        "practice_focus"
+      ],
+      "measurement_category": "historical_life_events_or_roles_not_phenomenology",
+      "sensitivity": "ordinary_optional_self_report",
+      "do_not_add_as_compulsory_question": true,
+      "measurement_note": "This is occupational history/identity. Explicitly includes divination as occupation, but not measurable awe frequency."
+    },
+    {
+      "chapter": "IV.5",
+      "source_page_id": "PT-IV-5-7",
+      "domain": "marriage_history_and_pair_outcomes",
+      "claim_summary": "Ptolemy discusses marital timing, number of unions and attributed spouse qualities.",
+      "scenario_v7_coverage": "proxy_only",
+      "v7_families": [
+        "romance"
+      ],
+      "measurement_category": "historical_life_events_or_roles_not_phenomenology",
+      "sensitivity": "sensitive_optional",
+      "do_not_add_as_compulsory_question": true,
+      "measurement_note": "V7 romantic attraction and closeness scenarios cannot establish actual marital timelines; respect partner privacy."
+    },
+    {
+      "chapter": "IV.6",
+      "source_page_id": "PT-IV-5-7",
+      "domain": "children_parenthood_and_family",
+      "claim_summary": "Ptolemy treats children and offspring outcomes as a distinct natal topic.",
+      "scenario_v7_coverage": "absent",
+      "v7_families": [],
+      "measurement_category": "historical_life_events_or_roles_not_phenomenology",
+      "sensitivity": "sensitive_optional",
+      "do_not_add_as_compulsory_question": true,
+      "measurement_note": "Do not presume parenthood, fertility or preferences; do not infer health or give reproductive advice."
+    },
+    {
+      "chapter": "IV.7",
+      "source_page_id": "PT-IV-5-7",
+      "domain": "lasting_friendship_conflict_life_history",
+      "claim_summary": "Ptolemy distinguishes durable mutual affinity and hostility from occasional acquaintance or quarrels.",
+      "scenario_v7_coverage": "partial",
+      "v7_families": [
+        "connections",
+        "trust",
+        "friend_company"
+      ],
+      "measurement_category": "historical_life_events_or_roles_not_phenomenology",
+      "sensitivity": "ordinary_optional_self_report",
+      "do_not_add_as_compulsory_question": true,
+      "measurement_note": "V7 asks anticipated friendship conduct; real time-linked relationship outcomes and shared charts are not measured."
+    },
+    {
+      "chapter": "IV.8",
+      "source_page_id": "PT-IV-8-10",
+      "domain": "real_foreign_travel_and_relations_abroad",
+      "claim_summary": "Ptolemy gives a natal interpretation of journeys and foreign travel with related circumstances.",
+      "scenario_v7_coverage": "proxy_only",
+      "v7_families": [
+        "understanding"
+      ],
+      "measurement_category": "historical_life_events_or_roles_not_phenomenology",
+      "sensitivity": "ordinary_optional_self_report",
+      "do_not_add_as_compulsory_question": true,
+      "measurement_note": "The V7 weekend-trip coordination scene is not travel history."
+    },
+    {
+      "chapter": "IV.9",
+      "source_page_id": "PT-IV-8-10",
+      "domain": "mortality_cause_and_medical_risk",
+      "claim_summary": "Ptolemy discusses character of death as a natal life-event claim.",
+      "scenario_v7_coverage": "not_suitable_for_routine_personality_survey",
+      "v7_families": [],
+      "measurement_category": "historical_life_events_or_roles_not_phenomenology",
+      "sensitivity": "exclude_high_stakes",
+      "do_not_add_as_compulsory_question": true,
+      "measurement_note": "Historical interpretation only; do not insert mortality predictions into psychological survey or clinical advice."
+    },
+    {
+      "chapter": "IV.10",
+      "source_page_id": "PT-IV-8-10",
+      "domain": "event_timing_and_life_phases",
+      "claim_summary": "Ptolemy assigns temporal periods and directions to different life-domain events.",
+      "scenario_v7_coverage": "proxy_only",
+      "v7_families": [
+        "development",
+        "rhythm_change"
+      ],
+      "measurement_category": "historical_life_events_or_roles_not_phenomenology",
+      "sensitivity": "ordinary_optional_self_report",
+      "do_not_add_as_compulsory_question": true,
+      "measurement_note": "Changes in hypothetical choice over life stages are not time-stamped real-world events."
+    }
+  ],
+  "scope_control": {
+    "what_is_directly_attested": "Sections IV.2–IV.10 explicitly treat external natal life domains; some specify conditional planet/angle/lot methods.",
+    "what_is_not_supported": "The mere existence of a traditional life domain does not demonstrate accurate natal prediction or a respondent's actual future events.",
+    "survey_boundary": "All current V7 scenarios and participant answers remain untouched. A voluntary factual-life-history research module would be distinct from the psychological questionnaire.",
+    "reduced_astrohd_boundary": "No Lilly/AstroHD reduced model rule is added or retrofitted from the owner's answers.",
+    "noncompulsory": "Do not force marriage, parenthood, health, death or other sensitive histories; retain absence/unknown without negative scoring.",
+    "next_source_audit": "Continue original natal rule-level extraction in Lilly Book III and independent Hellenistic/Jyotish sources; separate source-domain catalogue from prospective scoring and historical source-error checks."
+  }
+}

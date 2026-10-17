@@ -73,3 +73,16 @@ def test_readback_receipt_fences_scope_and_transcription_uncertainty():
         assert check["caveat"]
     lilly = next(x for x in receipt["source_checks"] if x["id"].startswith("LILLY"))
     assert "not proofread" in lilly["caveat"]
+
+
+def test_ptolemy_book_four_expands_the_audit_without_modifying_live_questionnaire():
+    new = json.loads((AUDIT / "PTOLEMY-BOOK-IV-LIFE-DOMAINS-v1.json").read_text())
+    survey = json.loads(SURVEY.read_text())
+    assert len(new["source_pages"]) == 3
+    assert len(new["domains"]) == 9
+    assert all(row["do_not_add_as_compulsory_question"] for row in new["domains"])
+    assert all(set(row["v7_families"]) <= set(survey["families"]) for row in new["domains"])
+    assert all(
+        row["source_page_id"] in {s["id"] for s in new["source_pages"]} for row in new["domains"]
+    )
+    assert new["scope_control"]["survey_boundary"].startswith("All current V7")
