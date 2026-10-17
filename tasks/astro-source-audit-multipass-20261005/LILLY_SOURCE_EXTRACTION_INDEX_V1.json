@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_INFANT_LIFESPAN_HISTORICAL_SOURCE_ADMITTED_NEXT_HYLEG_PROCEDURE_OPEN",
-  "records_count": 6309,
+  "status": "BOOK_III_HYLEG_ANARETA_ALCOCHODON_HISTORICAL_SOURCE_ADMITTED_AUTHOR_UNCERTAINTY_RETAINED",
+  "records_count": 6383,
   "read_numbered_chapters": [
     1,
     2,
@@ -108,7 +108,8 @@
     101,
     102,
     103,
-    104
+    104,
+    105
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -664,22 +665,29 @@
       "records_count": 65,
       "sha256": "12221d5ffd512ac7e4096777ba75cdec4e91304387346acf9773e75a32c8d597",
       "scope": "Original William Lilly 1647 printed CHAP CIII/editorial CIV historical infant longevity claims first-edition original PDF559-561/printed525-527. 62 substantive source conditions and 3 following Hyleg chapter navigation, six mapped passage groups, 25 limitations; infant survival and childbirth claims are historical, unverified and not medical prognosis. Favorable vs unfavorable lunar-phase/benefic exception preserved alongside warning not to pronounce death rashly. Next printed CHAP CIV begins below divider on original PDF561."
+    },
+    {
+      "id": "B05c",
+      "path": "batches/B05c/RULES.json",
+      "records_count": 74,
+      "sha256": "dc843605bbbeaa044834a3cc52c7f3bf42504fce1478b02366fabbc95f6551fe",
+      "scope": "Original first edition Lilly 1647 printed CHAP CIV/editorial CV Hyleg Hylech Apheta Anareta Alcochodon historic lifespan source, PDF561–565 (following Chapter CV starts below divider on PDF565; PDF566 navigation context). 71 substantive original-source clauses plus 3 following Lord of Geniture navigation, 7 first-edition passage groups, 30 limits. Conditional sect, house eligibility 1/10/11/7/9, 25 degree Ascendant exception, multiple syzygy/dignity and Anareta contenders, 5 degrees before/25 after eighth cusp, competing Arabic and earlier sources, Alcochodon alleged planetary years. Lilly explicitly says he is unsatisfied selecting Hyleg, Anareta, Alcochodon, and has no independent human mortality validation."
     }
   ],
   "next": {
-    "pdf_page": 561,
-    "printed_page": 527,
-    "chapter": "CV",
-    "printed_chapter_numeral": "CIV",
-    "heading": "Of the Prorogator of Life, called Hylech, or Hyleg, or Apheta: and of the killing or interficient Planet",
+    "pdf_page": 565,
+    "printed_page": 531,
+    "chapter": "CVI",
+    "printed_chapter_numeral": "CV",
+    "heading": "Of the Lord of the Geniture",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF561 after horizontal divider, historical life-significator/killing-planet procedure continues PDF562 onward; do not treat as medical assessment.",
-    "historical_numeric_parity_still_open": [
+    "position": "Original PDF565/printed531 below divider contains distinct CHAP CV on Lord of Geniture; PDF566 continues. Historical retrospective source study only.",
+    "outstanding_numeric_parity": [
       {
         "kind": "BOOK_II_PLANETARY_HOURS",
-        "original_pdf_pages": [
+        "source_original_pages": [
           508,
           509,
           510,
@@ -691,8 +699,8 @@
         ]
       },
       {
-        "kind": "BOOK_III_RIGHT_AND_OBLIQUE_ASCENSIONS",
-        "original_pdf_pages": [
+        "kind": "BOOK_III_RIGHT_OBLIQUE_ASCENSIONS",
+        "source_original_pages": [
           523,
           526,
           527,
@@ -705,16 +713,20 @@
         ]
       },
       {
-        "kind": "BOOK_III_GESTATION_AND_CALENDAR_TABLE",
-        "original_pdf_pages": [
+        "kind": "BOOK_III_GESTATION_MONTH_NUMERIC",
+        "source_original_pages": [
           536
         ]
       },
       {
-        "kind": "BOOK_III_SPECULUM_GRID",
-        "original_pdf_pages": [
+        "kind": "BOOK_III_ASTROLOGICAL_SPECULUM",
+        "source_original_pages": [
           543
         ]
+      },
+      {
+        "kind": "BOOK_III_PLANETARY_YEARS_REFERENCED_BY_ALCOCHODON",
+        "printed_source_pages": "57-83"
       }
     ]
   },
@@ -723,7 +735,7 @@
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05b_LIFESPAN_SOURCE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05c_HYLEG_SOURCE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -795,5 +807,6 @@
   "chapter_CI_source_acceptance_note": "188 original source annotations R5958-R6145, 13 passage groups, 25 limits. Historical retrospective fit to four known merchant events; fever 20y10m reported initially vs 19y10m10d selected direction remains mismatched; original 105deg44 biquintile print versus 205deg44 correction source. Multiple free candidate aspects and directions, accepts year-only event ages and birth-time adjustment backward/forward. No out-of-sample success.",
   "chapter_CII_source_acceptance_note": "70 first-edition historical source records R6146-R6215. Merchant source chart MC222deg10 RA, six printed Regiomontanus house cusps, 34/49 degree approximated intermediate house pole values from latitude53 and natal ephemeris London correction. Original intermediate 30 seconds vs stated25, Asc Capricorn6deg37 versus table interpolation about6deg40. No independent natal time validation.",
   "chapter_CIII_source_acceptance_note": "29 historical first-edition annotations R6216-R6244: prerequisite planetary/Part of Fortune placement, strength, aspects, antiscia/contra-antiscia and fixed-star proximity before natal judgments; does not supply numeric thresholds for proximity to planets/cusps or 'small' fixed-star latitude. Separate longevity printed CIII PDF559 only navigation.",
-  "chapter_CIV_source_acceptance_note": "65 first-edition historical annotations R6245-R6309: 62 lifespan/infancy beliefs and 3 separate Hyleg navigation. Three original page scans PDF559-561, six source passage groups, 25 limits, old-humoral full/new moon claims and contrary beneficial exception, parental charts, multiple benefic/malefic conditions, author explicitly warns against rash death judgment. Zero independent infant survival outcomes or clinical validity."
+  "chapter_CIV_source_acceptance_note": "65 first-edition historical annotations R6245-R6309: 62 lifespan/infancy beliefs and 3 separate Hyleg navigation. Three original page scans PDF559-561, six source passage groups, 25 limits, old-humoral full/new moon claims and contrary beneficial exception, parental charts, multiple benefic/malefic conditions, author explicitly warns against rash death judgment. Zero independent infant survival outcomes or clinical validity.",
+  "chapter_CV_source_acceptance_note": "74 original source R6310-R6383 annotations, seven mapped passage groups, 30 source limits. Historical potentially lethal directions are unvalidated; source branches include multiple candidate Hylegs/Anaretas/Alcochodons, including explicit degrees and fallback preferences. Lilly says not satisfied how to identify these or their claimed year values; no independent survival outcome."
 }

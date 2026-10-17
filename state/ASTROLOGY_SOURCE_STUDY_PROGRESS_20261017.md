@@ -1,3 +1,9 @@
+# Lilly first edition source progress — Hyleg historic uncertainty documented
+
+2026-10-17: historical original source frontier through PDF565 of 894 scanned pages, approximately **63.2% by physical scan position**. Accepted documentary annotations after verified publication: **6,383 Lilly + 1,066 Ptolemy = 7,449**. Not empirical successful predictions. Printed CHAP CIV's Hyleg, Anareta and Alcochodon selection methods retained with author Lilly's two explicit statements of being not satisfied he can identify them properly. Historic infant/death claims remain medically unsupported, no independent mortality or birth-time outcomes, no runtime promotion. Multiple original numeric tables and blind human model validation still OPEN. Next printed CHAP CV Lord of Geniture original PDF565.
+
+---
+
 # Original Lilly source progress after infancy/lifespan historical chapter — 2026-10-17
 
 Accepted source through original PDF561 of 894-page volume, approximately **62.8% by scan position**, not rule-table digitization or empirically validated astrological performance. **6,309 Lilly + 1,066 Ptolemy = 7,375** historical annotation records, not distinct human prediction successes. Last chapter covers only first-edition unverified infant-survival/longevity astrology claims and retains contrary lunar-phase branches and a caution against rash death pronouncements. Dense reference-table numeric cell digitization and blinded real-person validation remain OPEN. Next printed Hyleg/Apheta historical life-significator procedure begins PDF561.

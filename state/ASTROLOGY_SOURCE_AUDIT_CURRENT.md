@@ -1,3 +1,9 @@
+# Lilly Hyleg historical source documented with explicit author doubt; Lord of Geniture next
+
+2026-10-17: 74 historical first edition annotations R6310-R6383 locally admitted, after authenticated remote publication total **6,383 Lilly + 1,066 Ptolemy = 7,449**. Original PDF561-565 printed CIV/editorial CV, next printed CHAP CV starts PDF565 lower. Distinct Hyleg, Anareta and Alcochodon alternative selection branches and original explicit negative assessment are recorded. No individual clinical/natal predictive validation or runtime promotion. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05c_HYLEG_SOURCE.md.
+
+---
+
 # First-edition infant lifespan historical chapter documented; Hyleg method next
 
 2026-10-17: 65 first-edition source-only historical annotations R6245–R6309 added locally, cumulative after publication **6,309 Lilly + 1,066 Ptolemy = 7,375**. Original PDF559–561 printed CIII/editorial CIV. Claims about infant survival, new/full Moon, obstetrical complications and parental charts remain historical/unvalidated; author explicitly warns against rash death judgment. Next printed CHAP CIV/editorial CV Hyleg starts original PDF561 bottom. No clinical predictive claims or runtime promotions. Original numeric parity and full blind empirical study OPEN.
