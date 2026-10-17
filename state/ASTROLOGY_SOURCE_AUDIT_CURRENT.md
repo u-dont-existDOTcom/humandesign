@@ -1,3 +1,9 @@
+# Original Lilly research — editorial Chapter XCI
+
+Locally accepted prison/release historical source R5223-R5307; after remote publication 5,307 Lilly + 1,066 Ptolemy = 6,373 historical annotations. Next editorial XCII printed XCI original PDF497. Empirical predictive validations zero.
+
+---
+
 # Original Lilly source research — editorial XC
 
 Historical original source accepted locally: Lilly 5,222 + retained Ptolemy 1,066 = 6,288 once remote verified. Next XCI original printed XC PDF495. No new empirical validations.

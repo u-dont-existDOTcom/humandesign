@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_EDITORIAL_XC_SOURCE_ONLY_NEXT_XCI_OPEN",
-  "records_count": 5222,
+  "status": "BOOK_I_COMPLETE_BOOK_II_THROUGH_EDITORIAL_XCI_DOCUMENTARY_NEXT_XCII_OPEN",
+  "records_count": 5307,
   "read_numbered_chapters": [
     1,
     2,
@@ -94,7 +94,8 @@
     87,
     88,
     89,
-    90
+    90,
+    91
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -531,25 +532,32 @@
       "records_count": 29,
       "sha256": "f201d963151bc083da0940fa5717be688b61d750905177a2493b83ef0e46e4b8",
       "scope": "Original Lilly first edition printed LXXXIX editorial XC Twelfth House unnamed secret enemies and alleged illness on PDF494–495, 27 substantive source clauses, 2 navigation, four passages; no independent enemy or medical verification."
+    },
+    {
+      "id": "B04k",
+      "path": "batches/B04k/RULES.json",
+      "records_count": 85,
+      "sha256": "5417aba33b30d94a3ba87bbbc729504075f8d3f6f75a342467b79154585442be",
+      "scope": "Lilly first edition printed XC/editorial XCI imprisonment and release, PDF495-497, 83 historical conditional source claims, two next-chapter markers; lunar speed, freedom, recapture, peril and prison break unverified."
     }
   ],
   "next": {
-    "pdf_page": 495,
-    "printed_page": 461,
-    "chapter": "XCI",
-    "printed_chapter_numeral": "XC",
-    "heading": "Any man committed to Prison, whether he shall be soone Delivered?",
+    "pdf_page": 497,
+    "printed_page": 463,
+    "chapter": "XCII",
+    "printed_chapter_numeral": "XCI",
+    "heading": "Of a Captive or Slave",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF495/printed461 BELOW secret enemy chapter divider."
+    "position": "Original PDF497/printed463 below printed Chapter XC imprisonment conclusion and horizontal divider."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04j_CHAPTER_XC_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261016_B04k_CHAPTER_XCI_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -603,5 +611,6 @@
   "chapter_LXXXVII_source_acceptance_note": "33 historical annotations R5081–R5113 from first-edition printed CHAP. LXXXVI, stable editorial LXXXVII. Anonymous querent said to obtain office within three weeks, unverified false friend and earlier petitions. Crosswalk preserves original duplicate LXXXV. Zero independent empirical predictive validations.",
   "chapter_LXXXVIII_source_acceptance_note": "48 historical source clauses R5114–R5161, 46 original Eleventh House hopes and 2 next-heading. Original printed LXXXVII (editorial sequence LXXXVIII) preserves duplicated LXXXV numbering crosswalk. Outcome classes partial/probability/whole/harm after possessing remain separate, with feasibility caveat. No empirical validations.",
   "chapter_LXXXIX_source_acceptance_note": "Printed LXXXVIII friendship, secrecy of wishes and mutual love; 32 documentary records R5162-R5193, four source passages, no empirical validation.",
-  "chapter_XC_source_acceptance_note": "29 historical clauses R5194–R5222 about anonymous enemy vs named enemy, and unverified health/hostility hypotheses; following imprisonment separate."
+  "chapter_XC_source_acceptance_note": "29 historical clauses R5194–R5222 about anonymous enemy vs named enemy, and unverified health/hostility hypotheses; following imprisonment separate.",
+  "chapter_XCI_source_acceptance_note": "85 historical text-only annotations R5223–R5307, 83 imprisonment and harm-related source clauses plus 2 next-chapter navigation; no independent prisoner outcome evidence."
 }
