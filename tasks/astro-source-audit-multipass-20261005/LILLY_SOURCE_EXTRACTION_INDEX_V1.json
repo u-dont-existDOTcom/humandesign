@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_INTRO_TIME_AND_ASCENSION_TABLE_IMAGE_WITNESSES_ADMITTED_NEXT_PRINTED_XCVIII_RECTIFICATION_OPEN",
-  "records_count": 5824,
+  "status": "BOOK_III_TRUTINE_HERMES_AND_ACCIDENT_RECTIFICATION_SOURCE_ADMITTED_NEXT_ANIMODAR",
+  "records_count": 5923,
   "read_numbered_chapters": [
     1,
     2,
@@ -102,7 +102,8 @@
     95,
     96,
     97,
-    98
+    98,
+    99
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -616,21 +617,29 @@
       "records_count": 71,
       "sha256": "0535d315f091f9661e0e8db31d842cbee3286d6a12b52232c2bcca153309026e",
       "scope": "Original William Lilly (1647) Book III nativity title/unprinted verso, time-to-equatorial-degree table PDF523, Regiomontanus use & worked 12 June 1647 house cusp example PDF524-525, right ascensions PDF526-527, oblique ascensions for latitudes 34,49,53 PDF528-533, navigation to first printed rectification CHAP XCVIII PDF534. 68 substantive introductory/table-image annotations + 3 navigation, 14 source spans and 24 limits. Printed 142d20m +90d ->230d20m inconsistent mathematically (232d20m). Numeric tables not fully digitized."
+    },
+    {
+      "id": "B04w",
+      "path": "batches/B04w/RULES.json",
+      "records_count": 99,
+      "sha256": "952f214f76fc6f64c56c742e57f7a3b53cae950c68b34f9eda257c1607cb15ed",
+      "scope": "Lilly original printed Book III CHAP XCVIII / editorial XCIX birth-time rectification and Hermes Trutine, original PDF534–539 printed500–505, unidentified merchant 19 Sep 1616, historic pregnancy duration/moon-angle and calendar tables. 96 substantive claims and 3 following Animodar navigation records; 13 original source groups, 27 caveats. Lilly admits exact-degree Trutine imprecision, finds sign sometimes, claims accident/directions-based precision without independent verification, explicitly discredits different conception-hour formula. 1616 leap/conception 10Dec1615 calendar arithmetic checked, actual conception unverified."
     }
   ],
   "next": {
-    "pdf_page": 534,
-    "printed_page": 500,
-    "chapter": "XCIX",
-    "printed_chapter_numeral": "XCVIII",
-    "heading": "Divers wayes of rectifying Nativities",
+    "pdf_page": 539,
+    "printed_page": 505,
+    "chapter": "C",
+    "printed_chapter_numeral": "XCIX",
+    "heading": "Of the Rectification of a Nativity by Animodar",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF534/printed500, first numbered Book III chapter includes a merchant nativity chart. Need full historical next-chapter boundary and rectification procedure extraction.",
-    "outstanding_prior_numeric_reference_tables": [
+    "position": "Original PDF539/printed505 following preceding Trutine chapter divider, continues PDF540 and must be bounded at following CHAP C original PDF541.",
+    "unfinished_numeric_reference_tables": [
       {
-        "source_pdf_pages": [
+        "kind": "BOOK_II_PLANETARY_HOUR_TABLE_FULL_DIGITIZATION",
+        "original_pdf_pages": [
           508,
           509,
           510,
@@ -639,12 +648,11 @@
           513,
           514,
           515
-        ],
-        "table": "BOOK_II_PLANETARY_HOUR_NUMERIC_CELLS",
-        "status": "NOT_FULLY_DIGITIZED"
+        ]
       },
       {
-        "source_pdf_pages": [
+        "kind": "BOOK_III_TIME_AND_ASCENSION_TABLE_FULL_DIGITIZATION",
+        "original_pdf_pages": [
           523,
           526,
           527,
@@ -654,9 +662,13 @@
           531,
           532,
           533
-        ],
-        "table": "BOOK_III_TIME_RA_OBLIQUE_ASCENSION_NUMERIC_CELLS",
-        "status": "NOT_FULLY_DIGITIZED"
+        ]
+      },
+      {
+        "kind": "BOOK_III_GESTATION_AND_CALENDAR_TABLE_FULL_DIGITIZATION",
+        "original_pdf_pages": [
+          536
+        ]
       }
     ]
   },
@@ -665,7 +677,7 @@
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04v_BOOK_III_INTRO_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04w_TRUTINE_RECTIFICATION.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -731,5 +743,6 @@
   "essex_unumbered_1644_historical_acceptance_note": "43 source-only annotations R5587–R5629, 7 original passage groups, 20 caveats. Historic England verifies parliamentary arms surrender Sep2 1644 but Essex himself departed by sea Sep1. Not a contemporaneously authenticated astrology prediction.",
   "planetary_hour_table_source_acceptance_note": "10 historical documentary annotations R5630–R5639: eight original table-page image witnesses + two next-chapter navigation markers; eight table pages PDF508–515 preserved by exact hashes; ~1,488 numeric hour boundaries NOT transcribed or independently checked. No empirical prediction or runtime promotion.",
   "chapter_XCVIII_source_acceptance_note": "114 original historical annotations R5640–R5753: 109 printed method and signed conclusion clauses plus 5 Book III title navigation. Three printed examples arithmetic verified for Monday at 9:30 AM Mars, 5:20 PM Sun, 11:10 PM Mars; no independent human outcome or ephemeris. Table 508–515 cell digitization remains open.",
-  "book_iii_intro_source_note": "71 original-source annotations R5754-R5824 across PDF521-534, 14 source passage groups, 24 limits; printed arithmetic contradiction 142d20m+90d as 230d20m instead of 232d20m and resulting ascendant source discrepancy preserved; all numeric grids not fully machine-transcribed. No empirically validated natal rectification."
+  "book_iii_intro_source_note": "71 original-source annotations R5754-R5824 across PDF521-534, 14 source passage groups, 24 limits; printed arithmetic contradiction 142d20m+90d as 230d20m instead of 232d20m and resulting ascendant source discrepancy preserved; all numeric grids not fully machine-transcribed. No empirically validated natal rectification.",
+  "book_iii_trutine_source_note": "99 historic source annotations R5825-R5923. Sign-level use sometimes, degree within 1–3° often fails, 13° Moon/conception acceptance band and 1616/1615 calendar example, life-accident rectification preferred, exact conception-hour alternative explicitly not credited; none independently human-validated."
 }

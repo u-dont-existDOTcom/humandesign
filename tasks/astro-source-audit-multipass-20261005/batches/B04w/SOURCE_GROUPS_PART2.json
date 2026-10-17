@@ -1,0 +1,250 @@
+[
+  {
+    "pages": [
+      536
+    ],
+    "label": "Formal Trutine of Hermes correction from Moon relative to east/west horizon",
+    "claims": [
+      [
+        "subheading",
+        "The Correction of an estimate Scheame by Trutine of Hermes",
+        "Lilly opens a separately named instruction subsection on correcting an estimated natal chart.",
+        "Still within printed Chapter XCVIII."
+      ],
+      [
+        "prerequisite",
+        "year day and hour birth brought unto you",
+        "The method starts with reported birth year, day and hour.",
+        "Initial birth time is only an estimate."
+      ],
+      [
+        "method",
+        "erect your Figure rectify Sun",
+        "He directs erecting the natal figure and checking the Sun's position for that time.",
+        "Requires a historical ephemeris and local clock."
+      ],
+      [
+        "condition",
+        "Moon under earth houses 1 2 3 4 5 6",
+        "A Moon below the horizon is classified by natal houses one through six.",
+        "This determines which gestation-duration table column to use."
+      ],
+      [
+        "method",
+        "take distance Moon from Angle of East",
+        "For Moon below the earth, measure zodiacal distance from the Ascendant/eastern angle.",
+        "Signed direction of distance must be preserved."
+      ],
+      [
+        "condition",
+        "Moon above earth houses 12 11 10 9 8 7",
+        "For Moon above horizon, Lilly lists houses twelve through seven.",
+        "Opposite position from the below-earth branch."
+      ],
+      [
+        "method",
+        "Moon distance from cusp seventh West",
+        "For Moon above horizon, use its distance from the western angle/cusp seventh.",
+        "Second distinct angular reference."
+      ],
+      [
+        "method",
+        "subtract Signe and degree of Angle from Moon",
+        "He instructs subtracting angle sign/degree from Moon's sign/degree.",
+        "An angular subtraction, not a measured gestation date."
+      ],
+      [
+        "source_qualification",
+        "add twelve whole Signs if subtraction cannot be made",
+        "He allows adding 12 signs to the Moon's position before subtraction to handle wraparound.",
+        "Full 360-degree modular adjustment."
+      ],
+      [
+        "method",
+        "enter subsequent Table Mansion of child",
+        "Use the computed angular distance to consult a table of months/days of an infant in utero.",
+        "Historical claimed gestation model, not current obstetric evidence."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      536
+    ],
+    "label": "Prenatal gestation table and 365/366-day month schedule, source numeric images",
+    "claims": [
+      [
+        "table_heading",
+        "A Table of the mansion of the Child in its mothers Wombe",
+        "The printed numeric table maps lunar distance to supposed gestation length.",
+        "Assumes a relation between chart geometry and pregnancy duration, not demonstrated."
+      ],
+      [
+        "table_column",
+        "Moon under earth from ascendant",
+        "One gestation-day column is for the natal Moon under the earth.",
+        "Different from the Moon-above-earth column."
+      ],
+      [
+        "table_column",
+        "Moon above earth from seventh house",
+        "The second column provides a different day count for the same angular distance.",
+        "Location relative to horizon changes proposed duration."
+      ],
+      [
+        "table_example",
+        "0 degree under earth 273 days",
+        "The first row shows 273 days for Moon below the earth at zero distance.",
+        "Illustrative historical numeric row, not medically supported gestation norm."
+      ],
+      [
+        "table_example",
+        "0 degree above earth 258 days",
+        "The first row above-earth column gives 258 days.",
+        "Different from below-earth branch."
+      ],
+      [
+        "table_heading",
+        "A Table of the moneths",
+        "A second printed table gives cumulative day counts by month.",
+        "Requires common versus leap-year distinction."
+      ],
+      [
+        "table_column",
+        "In a Common yeer",
+        "One column accumulates calendar days in a common year.",
+        "Historical civil calendar handling must be checked."
+      ],
+      [
+        "table_column",
+        "Bissextill yeer",
+        "A second column gives day counts for a leap year.",
+        "Gregorian/Julian calendars and 1616 leap status need independent reconciliation."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      537
+    ],
+    "label": "Five-step determination of conception date and source tolerance",
+    "claims": [
+      [
+        "subheading",
+        "use of these Tables and the practicall part",
+        "Lilly outlines how the gestation and month tables are applied.",
+        "This is an algorithm, not an externally observed conception date."
+      ],
+      [
+        "method",
+        "consider birth yeer Common or Bissextill",
+        "Check whether the year of birth is common or leap.",
+        "Step one, calendar dependent."
+      ],
+      [
+        "method",
+        "observe day of the yeer birth",
+        "Compute the ordinal day of the year using cumulative months and birth day.",
+        "Step two; separate month-day mapping."
+      ],
+      [
+        "method",
+        "Mansion of Child subtracted from day of Birth",
+        "Subtract the table's gestation duration from birth year-day.",
+        "Step three, derives presumed conception day count."
+      ],
+      [
+        "source_qualification",
+        "if subtraction cannot ... add whole yeer 365 or 366",
+        "If the subtraction would be negative, add 365/366 before subtracting.",
+        "Cross-year modular treatment."
+      ],
+      [
+        "method",
+        "remaining enter Table of Moneths",
+        "Use the result to find the corresponding month and calendar day.",
+        "Step four, constructs conjectural conception date."
+      ],
+      [
+        "method",
+        "consider Moon day of Conception at noone",
+        "Examine the Moon's zodiacal position at noon on the inferred conception day.",
+        "Step five, ephemeris dependence."
+      ],
+      [
+        "condition",
+        "not distant Ascendant above 13 degrees",
+        "Lilly gives a 13° tolerance between calculated conception Moon and estimated natal ascendant.",
+        "A broad acceptance band, not exact degree matching."
+      ],
+      [
+        "source_internal_judgement",
+        "if not distant ... day found out is conception",
+        "If within 13°, he accepts the proposed conception day.",
+        "Source judgment, no independent conception certificate."
+      ],
+      [
+        "source_qualification",
+        "good aspects fortunes birth forward",
+        "If farther apart, he allows good planetary aspects to advance birth timing.",
+        "Post hoc latitude in adjustment."
+      ],
+      [
+        "source_qualification",
+        "untoward aspects infortunes birth retarded",
+        "Alternatively adverse aspects may delay birth.",
+        "Widening interpretation without calibrated offset."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      537
+    ],
+    "label": "Worked merchant natal figure lunar angular separation",
+    "claims": [
+      [
+        "source_example",
+        "in our Nativity Moon 1 44 Gemini under earth",
+        "The worked merchant chart puts the Moon at approximately 1°44 Gemini beneath the horizon.",
+        "Original geometry not independently recalculated."
+      ],
+      [
+        "method",
+        "therefore Ascendant from her",
+        "Because the Moon is below the horizon, Lilly measures from the Ascendant.",
+        "Chooses corresponding gestation column."
+      ],
+      [
+        "source_example",
+        "Place Moon is 2 Sign 1 degree 44",
+        "He represents the Moon's longitude as two whole zodiac signs plus 1°44′.",
+        "An original sexagesimal sign count rather than 2° of zodiac longitude."
+      ],
+      [
+        "source_example",
+        "add twelve whole Signes",
+        "He adds a full zodiac turn when the required subtraction would otherwise be negative.",
+        "Wrap-around rule applied in practice."
+      ],
+      [
+        "source_example",
+        "Ascendant after 9 Sign 6 degree 37",
+        "The original figure supplies an estimated Ascendant near sign 9, degree 6°37′.",
+        "Historical assumed birth time rather than an externally confirmed fact."
+      ],
+      [
+        "source_example",
+        "distance Moon and Ascendant 4 Sign 25 degree 7",
+        "The derived angular difference is four whole signs plus approximately 25°07′.",
+        "Exact source subtraction details need independent ephemeris and sign-order check."
+      ],
+      [
+        "source_example",
+        "table nearest 4 24 under earth gives 285 days",
+        "He finds about 285 days in the Moon-below-earth gestation table.",
+        "Historical gestation approximation; not a verified clinical pregnancy term."
+      ]
+    ]
+  }
+]

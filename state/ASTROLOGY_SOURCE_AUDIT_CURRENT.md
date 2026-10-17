@@ -1,3 +1,9 @@
+# Lilly Book III Trutine rectification sources: sign not precise degree
+
+2026-10-17: 99 historical source records R5825–R5923 accepted locally; after publication **5,923 Lilly + 1,066 Ptolemy = 6,989** annotations. Lilly says Hermes Trutine seldom finds exact degree (sometimes rising sign), favors accident-based rectification but does not independently validate it; rejects a separate conception-hour method. 1616 merchant putative conception date 10 Dec 1615 arithmetically derives from source 285-day assumption. Next original printed XCIX/editorial C Animodar on PDF539. All original dense numerical table transcription and empirical time verification OPEN.
+
+---
+
 # Original Lilly Book III introduction and numeric table witnesses
 
 2026-10-17: 71 new source records R5754–R5824 locally accepted. After verified publication Lilly **5,824** + Ptolemy **1,066** = **6,890** historical annotations. Original PDF521-534 title, time conversion and RA/oblique tables; large grids not fully digitized. Confirmed source arithmetic discrepancy: author prints **142°20′ + 90° = 230°20′** whereas correct result is **232°20′**. Next printed CHAP XCVIII (editorial XCIX) rectification PDF534. Book II numeric tables remain open; zero empirical forecasts or runtime changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04v_BOOK_III_INTRO_COMPLETE.md.
