@@ -1,3 +1,9 @@
+# Original Lilly women marriage source documented; unnumbered children next
+
+2026-10-17 Africa/Dakar UTC+0. Source batch B06o R8398–R8496 prepared. After verified GitHub remote 8,496 Lilly + 1,066 Ptolemy = 9,562 historical source notes. Twenty-six original source tests and portable ZIP replay pass. No actual person marriage predictions and zero production scoring promotions. Next UNNUMBERED fifth-house children section starts original PDF636, numbered CXXXVIII only at PDF638. Chinese BaZi 46 and Zi Wei 26 source-only notes retained separately.
+
+---
+
 # Original Lilly spouse death-order source documented; women's marriage next
 
 2026-10-17 Africa/Dakar UTC+0. B06n accepted original period-source R8344–R8397. After remote verification Lilly 8,397 + Ptolemy 1,066 = 9,463 historic notes. No verified human mortality, partner abuse or health forecasts and no source runtime promotions. Chinese source-only 46 BaZi + 26 Zi Wei remain independent. NEXT printed CXXXVII women's marriage, original PDF634 onward.

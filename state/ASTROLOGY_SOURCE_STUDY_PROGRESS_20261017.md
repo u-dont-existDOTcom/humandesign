@@ -1,3 +1,9 @@
+# Lilly original women marriage through printed CXXXVII — 2026-10-17
+
+After verified remote publication **9,562 historical records** (8,496 Lilly + 1,066 Ptolemy); original book PDF636/894 (**71.1% physical scanned-page position only, not scientific completion**). B06o adds 99 historical source claims including qualified sex-coded marriage Sun/Mars rules, preserved Venus/Moon exceptions, age-of-spouse versus wedding-time alternate predictions, several incompatible spouse-count methods, author eighth-house husband wealth contrary to earlier writers, and claimed concord. No real couple predictions validated; no scorer/runtime rules promoted. NEXT unnumbered fifth-house children introduction PDF636-638, then printed CXXXVIII on number of children begins late PDF638. Parallel Chinese BaZi 46 and Zi Wei 26 historical source notes remain independent and still need full chart engines/untouched human tests.
+
+---
+
 # Lilly original 1647 through spouse survival order — 2026-10-17
 
 After verified source publication **9,463 historical documentary notes** (8,397 Lilly + 1,066 Ptolemy), first-edition source frontier PDF634/894 (**70.9% physical scanned-position only**). Source batch B06n adds 54 period assertions including a second-house cadent contradiction and high-stakes death/illness, marriage count and conduct alternatives. No real human death, medical, or couple-safety predictive accuracy demonstrated or model promoted. NEXT printed CXXXVII on women's marriage PDF634 onward. Parallel independent Chinese source lanes BaZi 46 + Zi Wei 26 annotations and partial mechanics remain open; do not add them to Western counts.
