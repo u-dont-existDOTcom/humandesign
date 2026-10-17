@@ -1,3 +1,9 @@
+# Lilly original first-edition source through sibling concord — 2026-10-17
+
+After verified publication: **8,318 historical source annotations** (7,252 Lilly + 1,066 Ptolemy), first-edition frontier original PDF601/894 (**67.2% of physical scan position only, not overall science completion**). Printed CHAP CXX sibling-harmony historical study adds 44 source notes with contradictory favorable/negative/no aspect categories, reception exceptions, and unverified author anecdote. No independent social validity. Next printed CHAP CXXI original PDF602 sibling-count method and Ptolemy disagreement; empirical validation and numeric astronomy lanes remain open.
+
+---
+
 # Original Lilly historical study through sibling fortunes — 2026-10-17
 
 After verified publication the archive contains 8,274 historical notes (7,208 Lilly + 1,066 Ptolemy). Physical first-edition source-body frontier PDF600/894 (67.1% of scanned page position, not full predictive-research completion). Printed CHAP CXIX sibling fortune/condition recorded with 22 annotations, source pass/fail and mixed outcome cases and two contrary gender-attributed comparisons. No actual sibling wealth, longevity or welfare evidence verified, no new runtime rules. Next printed CHAP CXX sibling concord starts PDF601.

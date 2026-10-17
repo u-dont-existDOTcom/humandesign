@@ -1,3 +1,9 @@
+# Original 1647 Lilly sibling-concord historical chapter accepted
+
+2026-10-17 Africa/Dakar UTC+0. B05u source R7209–R7252 accepted pending GitHub readback: 7,252 Lilly + 1,066 Ptolemy = 8,318 historical source notes. Sibling harmony/conflict are unverified period characterizations with no person-level applicability. Original PDF601, following printed CXXI begins PDF602. No empirical results or runtime promotions.
+
+---
+
 # First-edition sibling fortune historical-source study accepted
 
 2026-10-17 Africa/Dakar UTC+0. Source-only records R7187–R7208 historically admitted, after verified GitHub publication 7,208 Lilly + 1,066 retained Ptolemy = 8,274. Printed CHAP CXIX sibling conditions, strong/weak, mixed and gender-coded comparisons retained without human evidence or model promotion. NEXT original printed CXX on sibling harmony PDF601.

@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_SIBLING_FORTUNES_DOCUMENTARY_NEXT_SIBLING_HARMONY",
-  "records_count": 7208,
+  "status": "BOOK_III_SIBLING_HARMONY_HISTORICAL_NEXT_SIBLING_NUMBER_METHOD",
+  "records_count": 7252,
   "read_numbered_chapters": [
     1,
     2,
@@ -124,7 +124,8 @@
     117,
     118,
     119,
-    120
+    120,
+    121
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -806,28 +807,33 @@
       "records_count": 22,
       "sha256": "dd73bfa8a19bf6203e5e011a2e1d4ccb0dd6804a6c8247a3e7420222cfb16206",
       "scope": "William Lilly 1647 first edition original printed CHAP CXIX/editorial CXX 'Of the Fortune and condition of Brethren' begins lower original PDF600/printed566; next separate printed CHAP CXX opens top PDF601/printed567. Six page-anchored passage groups, 20 substantive historical conditional claims and 2 next-chapter navigation entries. All/majority strong predicts favorable siblings, weak contrary, mixed permits different fortunes, conditional Moon-strong/Mars-weak sister comparison, reversed Mars-strong/Moon-weak brother comparison. These are historical sibling, class, longevity and gender stereotypes only, no real-person predictive validations or runtime promotions."
+    },
+    {
+      "id": "B05u",
+      "path": "batches/B05u/RULES.json",
+      "records_count": 44,
+      "sha256": "9d4fa1e9880f4f72f2dfa47e4d47de56a985e997d403dc5d366d11cd303ef478",
+      "scope": "William Lilly first edition printed CHAP CXX/editorial CXXI Of the unity or concord of the Native with his Brethren and Sisters, original PDF601/printed567. Source PDF602 following independent printed CXXI. Eight source-first passage groups, 42 historical source claims and 2 next chapter navigation. First/third house lord benevolent aspects versus square/opposition/no aspect, reception and trine/Mars exceptions, Saturn/Mars/South Node anecdote without verifiable cases, favorable/hostile sibling dyads, alleged kin wealth impacts, ascending sign groups and Mercury/Mars opposition, explicit extension to kin and neighbors. No real human family relationship predictions validated, no criminal/medical/financial inference permitted, zero new runtime source rules."
     }
   ],
   "next": {
-    "pdf_page": 601,
-    "printed_page": 567,
-    "chapter": "CXXI",
-    "printed_chapter_numeral": "CXX",
-    "heading": "Of the unity or concord of the Native with his Brethren and Sisters",
+    "pdf_page": 602,
+    "printed_page": 568,
+    "chapter": "CXXII",
+    "printed_chapter_numeral": "CXXI",
+    "heading": "Number of Brethren",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Printed CHAP CXX on sibling unity/concord starts at top original PDF601/printed567, continues most of that page. Next printed CHAP CXXI 'Number of Brethren' starts on original PDF602/printed568. A stronger primary-source check of the end seam is required before accepting printed CXX's source clauses.",
-    "following_printed_chapter_numeral": "CXXI",
-    "following_original_pdf_page": 602,
-    "research_scope": "Original 1647 conditional sibling concord and conflict, third and first lords, beneficial versus hard aspects, reception, and disputed planetary stereotypes. Historical only: no real family relationship forecast or clinical claim."
+    "position": "Printed CHAP CXXI begins at the top original PDF602 printed568. Its full sibling-count method and comparison/criticism of Ptolemy run through PDF602; following independent source boundary must be verified before archival acceptance.",
+    "research_scope": "Historical sign/third-ruler, masculine/feminine aspect counting, sibling survival/firstborn conditions; contrasting Ptolemy's Midheaven maternal reference with Lilly's third house. Do not count earlier sibling-number chapter as independent experiments."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05t_SIBLING_CONDITION.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B05u_SIBLING_CONCORD.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -917,5 +923,6 @@
   "chapter_CXVIII_source_acceptance_note": "B05q R7052–R7126, 75 historical documentary units: 72 substantive clauses and 3 next-section navigation. Original source PDF596–600 SHA256-verified; 26 archive-replayed source tests. Age/timing flexibility and non-predictive status preserved; no runtime rules.",
   "unnumbered_third_house_source_acceptance_note": "R7127–R7138: 12 historic documentary annotations, 10 substantive introduction clauses and 2 next-heading navigation. Original PDF598–600 JPEG witnesses, 10 archive-replayed tests and no validated family outcome.",
   "chapter_CXIX_source_acceptance_note": "B05s R7139-R7186: 48 historical source units, 12 zodiac sign source claims, 46 substantive + two next-chapter navigation; original 1647 PDF598-602 SHA and 20 archive-replayed source tests. Zero human demographic validations and zero runtime promotions.",
-  "chapter_CXX_source_acceptance_note": "B05t historical R7187–R7208, 20 conditional source statements plus 2 next-chapter navigation. Original scanned PDF600–602 SHA256 and 13 hermetic-replay documentary tests. Zero validated actual sibling fortunes or runtime promotions."
+  "chapter_CXX_source_acceptance_note": "B05t historical R7187–R7208, 20 conditional source statements plus 2 next-chapter navigation. Original scanned PDF600–602 SHA256 and 13 hermetic-replay documentary tests. Zero validated actual sibling fortunes or runtime promotions.",
+  "chapter_CXXI_source_acceptance_note": "B05u R7209–R7252 original documentary source claims: 42 substantive historical attributions and 2 next-chapter navigation, 8 source groups, first-edition PDF601/602 images and 15 archive-replayed verification tests. No validated family conflicts or runtime rules."
 }
