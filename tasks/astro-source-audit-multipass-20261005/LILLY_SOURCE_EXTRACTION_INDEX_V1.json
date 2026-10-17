@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_II_THROUGH_PRINTED_XCVI_ACCEPTED_ESSEX_TABLES_PRINTED_XCVII_STILL_OPEN",
-  "records_count": 5586,
+  "status": "BOOK_II_UNNUMBERED_ESSEX_ADMITTED_TABLE_508_515_AND_PRINTED_XCVII_516_520_OPEN",
+  "records_count": 5629,
   "read_numbered_chapters": [
     1,
     2,
@@ -587,23 +587,25 @@
       "records_count": 34,
       "sha256": "09975e3799af62e5cf16cbf3da2e30551d9dbfc83e39b4828d69ff719ce7e04d",
       "scope": "First edition William Lilly printed XCVI/editorial XCVII wife asks if husband released, original PDF505-506. 30 source clauses and 4 postchapter navigation markers, 7 passage groups and 19 limitations. Lilly hedges already released OR within 3 days, then asserts release and garrison capture on day before question. No independent record or prospective success. Next unnumbered Essex chart and tables not completed."
+    },
+    {
+      "id": "B04s",
+      "path": "batches/B04s/RULES.json",
+      "records_count": 43,
+      "sha256": "ae10f713ea41c070c7990eccdac8a21327591bc705a36246bc40bf18bcf84ad4",
+      "scope": "Original Lilly first-edition unnumbered Robert Earl of Essex western march May13 1644 12:29PM on PDF507, 41 substantive historical annotations and two next table navigation; source-based forecasts and self-reported September defeat, independently corroborated army ammunition surrender Sep2, Essex himself escaped by sea Sep1; NOT independent verification of prior astrology forecast."
     }
   ],
   "next": {
-    "pdf_page": 507,
-    "printed_page": 473,
-    "chapter": "POST_XCVI_UNNUMBERED_ESSEX_AND_TABLES",
+    "pdf_page": 508,
+    "printed_page": null,
+    "chapter": "PLANETARY_HOUR_TABLE",
     "printed_chapter_numeral": null,
-    "heading": "The time of his Excellencies Robert Earle of Essex last setting forth into the west",
-    "include_opening_paragraph": true,
+    "heading": "A Table whereby to find the Planetary hour",
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF507 has independent unnumbered 13 May 1644 chart. Original PDF508-510 are table pages; audit full remainder before treating Book II as complete.",
-    "postchapter_source_order": [
-      {
-        "type": "UNNUMBERED_ESSEX",
-        "pdf_page": 507
-      },
+    "position": "Original 8 page numeric table PDF508-515 between unnumbered Essex PDF507 and printed Chapter XCVII PDF516. Need exact table schema/numeric fidelity before completion.",
+    "remaining_original_source_order": [
       {
         "type": "PLANETARY_HOUR_TABLE",
         "first_pdf": 508,
@@ -625,7 +627,7 @@
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_POST_XCVI_BOUNDARY_CORRECTION_20261017.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04s_ESSEX_ACCEPTED.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -687,5 +689,6 @@
   "chapter_XCV_source_acceptance_note": "53 historical source annotations R5458–R5510, 50 dated illness/negative witchcraft narrative clauses and three prisoner-next-navigation; 10 source spans and 22 limits. Author reports negative witchcraft verdict, speculative renal/private parts illness without confirmed syphilis, and approximately three-week recovery after an unspecified regimen change, none independently authenticated.",
   "chapter_XCVI_source_acceptance_note": "42 source-only historical records R5511-R5552; 39 escaped prisoner substantive claims and three subsequent chapter navigation markers. Author forecast East, near-town one-night concealment, letter/messenger by day six or seven, recapture by authority and retrospective Friday letter/Sunday arrest. No independently authenticated prisoner, letter or actual capture; seven source passages and 20 limits.",
   "chapter_XCVII_source_acceptance_note": "34 original documentary annotations R5553-R5586, 30 numbered case clauses and 4 unnumbered Essex/table navigation markers, 7 image spans, 19 uncertainties. Past-or-future release disjunction and self-reported prior-day garrison capture prevent clean prospective result.",
-  "postchapter_20261017_original_source_correction": "Original scan PDF516 explicitly prints CHAP. XCVII on planetary hours after an eight-page table PDF508–515; prior assertion that XCVI was final numbered Book II chapter is superseded. No source annotations added."
+  "postchapter_20261017_original_source_correction": "Original scan PDF516 explicitly prints CHAP. XCVII on planetary hours after an eight-page table PDF508–515; prior assertion that XCVI was final numbered Book II chapter is superseded. No source annotations added.",
+  "essex_unumbered_1644_historical_acceptance_note": "43 source-only annotations R5587–R5629, 7 original passage groups, 20 caveats. Historic England verifies parliamentary arms surrender Sep2 1644 but Essex himself departed by sea Sep1. Not a contemporaneously authenticated astrology prediction."
 }

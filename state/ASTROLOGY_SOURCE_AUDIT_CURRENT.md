@@ -1,3 +1,9 @@
+# Original Lilly Essex unnumbered chart admitted, numeric tables OPEN
+
+2026-10-17: 43 source annotations R5587–R5629 locally accepted; after publication **5,629 Lilly + 1,066 Ptolemy = 6,695**. Historic England confirms military arms surrender Sep2 1644 but Essex escaped by sea Sep1; prior chart prediction not independently authenticated. **NEXT** eight-page numerical planetary hour table original PDF508–515, then printed XCVII PDF516–520; Book III title PDF521. Retain source-only status, no model changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04s_ESSEX_ACCEPTED.md.
+
+---
+
 # Corrected Lilly source frontier (2026-10-17)
 
 Printed Chapter XCVI was **not** last numbered chapter. Source PDF507 has unnumbered Essex figure; PDF508-515 planetary-hour table; **printed Chapter XCVII PDF516-520**; Book III starts PDF521. Accepted source count remains Lilly **5,586** + Ptolemy **1,066** = **6,652**, next R5587. Continue separate source extraction and include all postchapter units. See state/ASTROLOGY_SOURCE_AUDIT_POST_XCVI_BOUNDARY_CORRECTION_20261017.md.
