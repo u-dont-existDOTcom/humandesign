@@ -1,3 +1,9 @@
+# Original Lilly unnumbered fifth-house/children source accepted; child count next
+
+2026-10-17 Africa/Dakar UTC+0. B06p source R8497–R8602 accepted locally. After verified GitHub readback 8,602 Lilly + 1,066 Ptolemy = 9,668 historic source notes. 31 original-photo/replayed archive integrity tests pass; no independent real fertility/child health accuracy, zero runtime scoring promotions. The UNNUMBERED section did not change numbered chapter count. NEXT original printed CXXXVIII child count on PDF638. Chinese source BaZi 46 / Zi Wei 26 notes separately indexed.
+
+---
+
 # Original Lilly women marriage source documented; unnumbered children next
 
 2026-10-17 Africa/Dakar UTC+0. Source batch B06o R8398–R8496 prepared. After verified GitHub remote 8,496 Lilly + 1,066 Ptolemy = 9,562 historical source notes. Twenty-six original source tests and portable ZIP replay pass. No actual person marriage predictions and zero production scoring promotions. Next UNNUMBERED fifth-house children section starts original PDF636, numbered CXXXVIII only at PDF638. Chinese BaZi 46 and Zi Wei 26 source-only notes retained separately.

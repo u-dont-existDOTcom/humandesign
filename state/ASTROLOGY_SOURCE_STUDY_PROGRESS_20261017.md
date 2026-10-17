@@ -1,3 +1,9 @@
+# Lilly historical source through unnumbered fifth-house children — 2026-10-17
+
+After authenticated remote publication **9,668 historical notes** (8,602 Lilly + 1,066 Ptolemy); original first-edition source frontier PDF638/894 (**71.4% scanned physical page position ONLY, not entire science completion**). UNNUMBERED fifth-house introduction has 106 source notes and explicitly fifth over eleventh conflicting-testimony precedence, Mercury-dependent fertility category and old unsupported child morbidity, mortality, miscarriage and parent-life claims. All genuine clinical/personal predictions 0, runtime rules 0. Numbered chapter counter UNCHANGED. NEXT printed CHAP CXXXVIII child counts from lower PDF638. Chinese BaZi 46 and Zi Wei 26 historical source annotations remain independent with 38 scoped mechanics tests; neither historical tradition's human prediction accuracy independently validated.
+
+---
+
 # Lilly original women marriage through printed CXXXVII — 2026-10-17
 
 After verified remote publication **9,562 historical records** (8,496 Lilly + 1,066 Ptolemy); original book PDF636/894 (**71.1% physical scanned-page position only, not scientific completion**). B06o adds 99 historical source claims including qualified sex-coded marriage Sun/Mars rules, preserved Venus/Moon exceptions, age-of-spouse versus wedding-time alternate predictions, several incompatible spouse-count methods, author eighth-house husband wealth contrary to earlier writers, and claimed concord. No real couple predictions validated; no scorer/runtime rules promoted. NEXT unnumbered fifth-house children introduction PDF636-638, then printed CXXXVIII on number of children begins late PDF638. Parallel Chinese BaZi 46 and Zi Wei 26 historical source notes remain independent and still need full chart engines/untouched human tests.
