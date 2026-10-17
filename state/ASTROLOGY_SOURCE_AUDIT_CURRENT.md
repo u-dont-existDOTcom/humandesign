@@ -1,3 +1,9 @@
+# Original Lilly sixth-house historical taxonomy accepted; eyesight next
+
+2026-10-17 Africa/Dakar UTC+0. First-edition B06d R7584–R7695 (112 historic records, 150 semantic source-list items) source-only accepted locally. After verified remote readback 7,695 Lilly plus 1,066 Ptolemy = 8,761 historical annotations. No genuine clinical diagnoses or life-event forecasts validated; zero scoring promotions. NEXT original printed CXXVIII on eye infirmities starts PDF615/printed581.
+
+---
+
 # Original Lilly mine wealth historical chapter accepted; sixth-house medical section next
 
 2026-10-17 Africa/Dakar UTC+0. Source-only B06c R7549–R7583 prepared, total 7,583 Lilly plus 1,066 Ptolemy = 8,649 archival notes after remote verification. No mined minerals or financial return predictions validated and no runtime rules. NEXT original PDF610 unnumbered sixth-house infirmities and aphorisms.

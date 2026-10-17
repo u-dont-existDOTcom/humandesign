@@ -1,3 +1,9 @@
+# Lilly original medical source through unnumbered sixth house — 2026-10-17
+
+After verified remote publication **8,761 historical annotations** (7,695 Lilly + 1,066 Ptolemy), first-edition scan position PDF615/894 (**68.8% physical page-position proxy only**, not predictive program completion). The unnumbered sixth-house source adds 112 documentary notes including 26 planetary/zodiac table cells with 150 historically named terms. No clinical validation and zero runtime source rules. The next printed CHAP CXXVIII on eyesight begins on PDF615 after the sixth-house source; hearing, speech and teeth questions follow later. Historic numeric tables, exact rule implementation and independent blinded human tests remain open.
+
+---
+
 # Lilly original source study through mining fortunes — 2026-10-17
 
 After verified GitHub publication **8,649 historical source annotations** (7,583 Lilly + 1,066 Ptolemy). Original first-edition source-body frontier PDF609 of 894 (**68.1% physical page position only**). Printed CHAP CXXVII mineral fortunes recorded as 35 historical conditions and following-source navigation. No real mine discovery/investment outcome evidence, no scoring source promotions. Next unnumbered sixth-house intro and medical aphorisms starts original PDF610. Historic numerical pole tables and independent human testing remain OPEN.
