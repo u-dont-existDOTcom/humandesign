@@ -1,0 +1,550 @@
+{
+  "batch": "B04v",
+  "source_groups": [
+    {
+      "pages": [
+        521
+      ],
+      "label": "Separate first-edition Book III nativity title and methods announced",
+      "claims": [
+        [
+          "book_title",
+          "An Easie and plaine Method Teaching How to judge upon NATIVITIES",
+          "A separate natal-astrology treatise begins, distinct from the completed Book II horary questions.",
+          "Original PDF521 is a title page with no printed Arabic page number."
+        ],
+        [
+          "book_promise",
+          "The rectification of a NATIVITIE",
+          "The title announces a procedure for rectifying a natal birth time.",
+          "Not itself a supplied executable birth-time correction rule."
+        ],
+        [
+          "book_promise",
+          "Trutine of Hermes Animodar or by Accidents",
+          "The title lists Trutine of Hermes, Animodar and significant life accidents as alternative rectification approaches.",
+          "Different methods with potentially different inputs and assumptions."
+        ],
+        [
+          "book_promise",
+          "twelve Houses of Heaven",
+          "The treatise promises judgments using the twelve astrological houses.",
+          "House meanings are historical beliefs not human behavioral validity."
+        ],
+        [
+          "book_promise",
+          "Directions Revolutions Profections Transits",
+          "Lilly announces directions, revolutions, profections and transits.",
+          "Separate timing mechanisms not actually described on the title page."
+        ],
+        [
+          "book_promise",
+          "exact Measure of Time in Directions",
+          "He also advertises methods for computing the timing of directions.",
+          "A book promise, not verified predictive performance."
+        ],
+        [
+          "bibliography",
+          "London printed by Tho Brudenell for Partridge and Blunden 1647",
+          "The book includes its 1647 London printers and publishers.",
+          "Bibliographic first-edition witness; next natal pages must be interpreted under this provenance."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        522
+      ],
+      "label": "Book III title verso source-order control",
+      "claims": [
+        [
+          "source_navigation",
+          "verso of Book III title page",
+          "The reverse side of the nativity title is essentially blank apart from print-through.",
+          "Source-order metadata only; no astrological calculation or prediction extracted."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        523
+      ],
+      "label": "Time-to-equatorial-degree table, exact 15-degree-per-hour linear relation",
+      "claims": [
+        [
+          "table_heading",
+          "Table converting Hours and Minutes of time into Degrees and Minutes of the Aequator",
+          "The new natality introduction begins with a tabular conversion of clock time into equatorial angular displacement.",
+          "Numerical/astronomical conversion, not event prediction."
+        ],
+        [
+          "table_rule",
+          "one Hour fifteen degrees",
+          "One hour of time corresponds to fifteen degrees of the equator.",
+          "360 degrees divided by 24 hours."
+        ],
+        [
+          "table_rule",
+          "24 Hours 360 degrees",
+          "The twenty-four-hour row corresponds to a complete 360-degree rotation.",
+          "Full-turn modulo 360 applies in subsequent computation."
+        ],
+        [
+          "table_rule",
+          "one minute time fifteen minutes equator",
+          "One minute of clock time corresponds to fifteen arcminutes of equatorial angle.",
+          "0.25 angular degrees per minute of time."
+        ],
+        [
+          "table_rule",
+          "four minutes time one degree",
+          "Four minutes of civil time correspond to one angular degree.",
+          "Reciprocal form used later as minutes divided by four."
+        ],
+        [
+          "table_image_preservation",
+          "columns hour degree minute time minute angle",
+          "The printed reference has separate hour-to-degree and minute-to-degree columns with row values.",
+          "Complete table numerals require independent transcription; only structure and load-bearing examples checked."
+        ],
+        [
+          "table_example",
+          "60 minutes time fifteen degrees",
+          "Sixty time minutes correspond to fifteen degrees.",
+          "Source last minute row is visibly printed as sixty to fifteen degrees."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        524
+      ],
+      "label": "Use of table, solar right ascension and house cusp mechanism",
+      "claims": [
+        [
+          "subheading",
+          "Use of the Table",
+          "The source begins an instruction subsection on converting time into equatorial right ascension.",
+          "Book III introduction, not yet the numbered rectification chapter."
+        ],
+        [
+          "method",
+          "erecting a Figure by Tables Regiomontanus",
+          "Lilly says the conversion is used when erecting a chart by the tables of Regiomontanus.",
+          "Historical house-construction algorithm."
+        ],
+        [
+          "method",
+          "one hour makes fifteen degrees in Aequator",
+          "He reiterates 15 angular degrees for one hour of time.",
+          "Numerical rule repeated from printed table."
+        ],
+        [
+          "method",
+          "one minute hour makes fifteen minutes of Aequator",
+          "He states fifteen arcminutes per minute of clock time.",
+          "Scale factor, not new independent observation."
+        ],
+        [
+          "method",
+          "convert hours before and after noon",
+          "Hours around noon are converted to angular degrees/minutes before chart construction.",
+          "Original time convention requires calendar/local hour input."
+        ],
+        [
+          "method",
+          "Right ascension of time",
+          "He calls the resulting angular measure the right ascension of time.",
+          "Distinguish RA of elapsed time from right ascension of the Sun."
+        ],
+        [
+          "method",
+          "add RA of Sun",
+          "He adds right ascension of time to the Sun's right ascension.",
+          "Requires original solar ecliptic longitude and a right ascension table."
+        ],
+        [
+          "method",
+          "cusp of tenth house",
+          "He maps resulting equatorial angular amount via right ascensions to an ecliptic degree for the tenth-house cusp.",
+          "Ascendant still needs a separate oblique ascension step."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        524
+      ],
+      "label": "Worked 12 June 1647 3:25 PM Sun Cancer house-ten computation",
+      "claims": [
+        [
+          "source_example",
+          "Saturday 12 June 1647 3 25 PM",
+          "The worked chart time is printed Saturday 12 June 1647 at 3:25 PM.",
+          "Historical local civil time and Old Style date not independently resolved."
+        ],
+        [
+          "source_example",
+          "Sun 0 51 Cancer",
+          "Lilly gives the Sun at 0°51 of Cancer.",
+          "Sun longitude is source-provided, not independently recomputed."
+        ],
+        [
+          "source_approximation",
+          "take one whole degree Cancer",
+          "He rounds the Sun's Cancer longitude to one whole degree.",
+          "Introduces a source-authorized approximation before table lookup."
+        ],
+        [
+          "source_example",
+          "RA Sun 91 degrees 5 minutes",
+          "At 1° Cancer the printed right-ascensions table yields 91°05′ for the Sun.",
+          "This numerical value is original example context and needs direct independent table validation."
+        ],
+        [
+          "source_example",
+          "3 hours give 45 degrees",
+          "Three elapsed hours convert to 45 angular degrees.",
+          "Exact multiplication by 15."
+        ],
+        [
+          "source_example",
+          "25 minutes give 6 degrees 15 minutes",
+          "Twenty-five time minutes convert to 6°15′.",
+          "25 × 15 arcminutes = 375′ = 6°15′."
+        ],
+        [
+          "source_example",
+          "91 05 plus 45 plus 6 15 equals 142 20",
+          "Right ascension Sun 91°05′ plus time conversion 51°15′ yields 142°20′.",
+          "Arithmetic independently checkable, but input solar longitude is historical."
+        ],
+        [
+          "source_example",
+          "20 of Leo cusp of tenth",
+          "Lilly reads the corresponding ecliptic position as approximately 20° Leo for the tenth-house cusp.",
+          "Historical table lookup, chart system and rounding parity open."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        524,
+        525
+      ],
+      "label": "MC to ascendant +90° printed discrepancy crossing source pages",
+      "claims": [
+        [
+          "method",
+          "add ninety degrees to Mid-heaven RA",
+          "Lilly instructs adding 90° to right ascension of the tenth-house cusp before Ascendant lookup.",
+          "This is the formal step of his Regiomontanus house-construction procedure."
+        ],
+        [
+          "original_numeric_claim",
+          "142.20 plus 90 printed 230.20",
+          "The first-edition print appears to claim adding 90° to 142°20′ produces 230°20′.",
+          "Numerically false: 142°20′ + 90° = 232°20′, a two-degree discrepancy. Do not silently repair either printed value."
+        ],
+        [
+          "mathematical_check",
+          "142.20 and ninety degrees",
+          "Independent integer-arcminute arithmetic gives 232°20′.",
+          "Contradicts the printed 230°20′, retained as explicit historical numerical error."
+        ],
+        [
+          "method",
+          "Table of Oblique ascensions belonging to 53 latitude",
+          "He routes the result into the oblique-ascension table corresponding to geographic latitude 53°.",
+          "Latitude-specific data rather than universal sign mapping."
+        ],
+        [
+          "source_continuation",
+          "degree of the ascendant for that Elevation",
+          "The description of using the 53° oblique table to find the Ascendant continues onto PDF525.",
+          "One continuous calculation, not separate horoscopes."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        525
+      ],
+      "label": "Printed Scorpio ascendant lookup and interpolation caveats",
+      "claims": [
+        [
+          "original_numeric_claim",
+          "cannot find 230.20 precise",
+          "Lilly says 230°20′ is not listed exactly in the oblique-ascension table.",
+          "He follows the printed 230°20′ rather than mathematically implied 232°20′."
+        ],
+        [
+          "source_example",
+          "five Scorpio 230.52",
+          "He says 5° Scorpio corresponds to oblique ascension 230°52′ at 53° latitude.",
+          "Look-up of a specific printed source-table cell; machine-independent parity incomplete."
+        ],
+        [
+          "method",
+          "take a proportional part",
+          "He says to interpolate a proportional fraction to obtain a less than five-degree position.",
+          "Interpolation interval and rounding should be verified before encoding a fully reliable calculator."
+        ],
+        [
+          "source_internal_result",
+          "Ascendant four degrees and more not fully five",
+          "He concludes the Ascendant is about four degrees of Scorpio, not fully five.",
+          "Numerical result depends on the internally inconsistent 230°20′ premise."
+        ],
+        [
+          "authorial_scope",
+          "more exact nativity than ordinary questions",
+          "He distinguishes precise nativity figure computation from less meticulous ordinary horary questions.",
+          "A method preference, not empirical evidence natal charts are accurate."
+        ],
+        [
+          "method",
+          "inserted four Tables",
+          "Lilly indicates the following four tabular groupings support erecting a figure.",
+          "Count refers to groups/types, whereas the full physical source runs over many page faces."
+        ],
+        [
+          "authorial_scope",
+          "teach Tyroes",
+          "The examples are pedagogical approximations for beginning students.",
+          "An introduction rather than a fully worked independent rectification outcome."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        525
+      ],
+      "label": "Alternative time conversion without tables and MC modular arithmetic",
+      "claims": [
+        [
+          "method",
+          "multiply hours by fifteen",
+          "Lilly offers direct arithmetic conversion of clock hours into equatorial degrees without consulting the first table.",
+          "Equivalent to the linear 15° per time hour relation."
+        ],
+        [
+          "method",
+          "divide minutes by four",
+          "He instructs dividing minutes of time by four to obtain degrees of equatorial arc.",
+          "25 minutes / 4 = 6.25°, i.e., 6°15′."
+        ],
+        [
+          "method",
+          "time RA plus Sun RA",
+          "He reiterates adding the time angle to the Sun's right ascension for the midheaven.",
+          "Depends on chosen reference time and precise Sun RA."
+        ],
+        [
+          "method",
+          "if more than three hundred sixty cast away 360",
+          "He reduces angular totals over 360° by subtracting a full turn.",
+          "Modular arithmetic for zodiacal/RA angles."
+        ],
+        [
+          "method",
+          "lookup answering degree of Ecliptick",
+          "He maps the resulting right ascension to the corresponding ecliptic position using the right-ascensions table.",
+          "Data-dependent conversion, not pure linear arithmetic."
+        ],
+        [
+          "historical_qualification",
+          "punctually upon a Nativitie",
+          "Lilly recommends punctual chart erection for nativities.",
+          "This is original pedagogical precision advice, not observed predictive improvement."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        526
+      ],
+      "label": "Right ascensions table first six zodiac signs",
+      "claims": [
+        [
+          "table_heading",
+          "A Table of Right Ascensions",
+          "The book supplies a numeric table mapping zodiac sign/degree to right ascension degrees/minutes.",
+          "Physical page PDF526; original table cells preserved in image, not independently fully re-keyed."
+        ],
+        [
+          "table_structure",
+          "Aries Taurus Gemini Cancer Leo Virgo",
+          "The first leaf contains six columns for the first six signs.",
+          "Per-sign degree rows 0–30 with Gr. M. columns."
+        ],
+        [
+          "table_example",
+          "Aries zero RA zero",
+          "At 0° Aries the table starts at 0° right ascension.",
+          "This is a load-bearing verifiable equinoctial anchor, not proof all cells verified."
+        ],
+        [
+          "table_example",
+          "Cancer first degree 91 degrees five minutes",
+          "The 1° Cancer row gives right ascension about 91°05′, matching the prose example on PDF524.",
+          "Direct source table reference with minute precision, no independent contemporary ephemeris parity."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        527
+      ],
+      "label": "Right ascensions table remaining six zodiac signs",
+      "claims": [
+        [
+          "table_heading",
+          "residue of Table of Right Ascensions",
+          "The second leaf continues the right-ascension lookup.",
+          "PDF527 follows PDF526 with no gap."
+        ],
+        [
+          "table_structure",
+          "Libra Scorpio Sagittarius Capricorn Aquarius Pisces",
+          "The remaining six sign columns fill the 180–360° equatorial sequence.",
+          "Original 0–30 sign degree rows, Gr. M. values retained as source-image data."
+        ],
+        [
+          "table_example",
+          "Libra zero RA 180",
+          "The first degree row for Libra begins at 180° right ascension.",
+          "Equinoctial check only, not an exhaustive transcription."
+        ],
+        [
+          "table_example",
+          "Pisces thirty RA 360",
+          "The final Pisces sign boundary wraps to 360°/0°.",
+          "Source full-turn invariant."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        528,
+        529
+      ],
+      "label": "Oblique ascensions for latitude 34 degrees two printed leaves",
+      "claims": [
+        [
+          "table_heading",
+          "A Table of Oblique Ascensions",
+          "A six-sign-per-leaf oblique ascension lookup begins.",
+          "Different from right ascension, and dependent on geographic latitude."
+        ],
+        [
+          "table_parameter",
+          "Latitude of 34 degrees",
+          "Original PDF529 explicitly labels this pair as for latitude 34°.",
+          "PDF528 left and PDF529 right halves treated as one geographic table."
+        ],
+        [
+          "table_structure",
+          "sign degrees right/left first and last six",
+          "The pair enumerates 0–30 degree rows and six zodiac columns per leaf.",
+          "Rows are not independently all keyed; original source preserves every cell."
+        ],
+        [
+          "table_role",
+          "latitude-specific ascendant lookup",
+          "Lilly uses oblique ascension, rather than generic right ascension, to determine local ascendant.",
+          "Historical Regiomontanus algorithm, not a self-standing rectification rule."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        530,
+        531
+      ],
+      "label": "Oblique ascensions for latitude 49 degrees",
+      "claims": [
+        [
+          "table_heading",
+          "A Table of Oblique Ascensions",
+          "Another six-sign-per-leaf table supplies oblique ascension.",
+          "Two original pages PDF530–531."
+        ],
+        [
+          "table_parameter",
+          "Latitude of 49 degrees",
+          "Original PDF531 gives the latitude as 49°.",
+          "This is separate from latitude 34° and 53°."
+        ],
+        [
+          "table_structure",
+          "two halves of twelve zodiac signs",
+          "The pair covers all twelve signs by degree with Gr. M. columns.",
+          "Substantial numeric body retained as hashed images but not all digitized."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        532,
+        533
+      ],
+      "label": "Oblique ascensions for latitude 53 degrees used in worked example",
+      "claims": [
+        [
+          "table_heading",
+          "A Table of Oblique Ascensions",
+          "The last visible latitude-specific pair supplies a third oblique ascension grid.",
+          "Original PDF532–533."
+        ],
+        [
+          "table_parameter",
+          "Latitude of 53 degrees",
+          "Original PDF533 explicitly labels this as the 53° latitude table.",
+          "This is the numeric grid Lilly actually calls on in the worked example."
+        ],
+        [
+          "table_structure",
+          "six and six signs, degrees 0 to 30",
+          "The pair presents oblique-ascension degrees/minutes for the twelve zodiac signs.",
+          "All row values are image-preserved, NOT fully machine-transcribed."
+        ],
+        [
+          "table_example",
+          "Scorpio fifth 230 degrees fifty two minutes",
+          "Lilly's worked lookup says 5° Scorpio corresponds to about 230°52′ in this latitude grid.",
+          "Used with his source 230°20′, which differs two degrees from the correct 142°20′ + 90° arithmetic."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        534
+      ],
+      "label": "Following printed Chapter XCVIII on birth-time rectification and merchant chart",
+      "claims": [
+        [
+          "next_navigation",
+          "CHAP. XCVIII Divers ways of rectifying Nativities",
+          "The following numbered chapter introduces several birth-time rectification methods.",
+          "This is a separate next unit; printed XCVIII and research ordinal XCIX."
+        ],
+        [
+          "next_navigation",
+          "A Merchants borne ...",
+          "A worked merchant natal chart appears beneath this new chapter heading.",
+          "Preserve full original figure separately; exact natal clock/date must be read from the chart before extracting."
+        ],
+        [
+          "next_navigation",
+          "planet motions exactly calculated rectified",
+          "The next chapter opens by insisting that planetary motions and estimated natal time be adjusted accurately.",
+          "Beginning of rectification chapter; navigation only in B04v."
+        ]
+      ]
+    }
+  ],
+  "source_units": 71,
+  "source_spans": 14,
+  "section": "BOOK_III_INTRO_TITLE_TIME_CONVERSION_ASCENSIONS"
+}

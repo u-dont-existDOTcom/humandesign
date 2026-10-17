@@ -1,0 +1,193 @@
+{
+  "batch": "B04v",
+  "original_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "original_images": [
+    {
+      "original_pdf_page": 521,
+      "printed_page": null,
+      "path": "evidence/pdf_1647-521.jpg",
+      "bytes": 566220,
+      "sha256": "ace314d80394c1ab22b58e4525d24cf82aacbfd1b8909bdeff48afd267be1d17"
+    },
+    {
+      "original_pdf_page": 522,
+      "printed_page": null,
+      "path": "evidence/pdf_1647-522.jpg",
+      "bytes": 483685,
+      "sha256": "241b4ecea29b55db0fe95207191951cad4dd29dc31bc02da1510d22be2bdfa01"
+    },
+    {
+      "original_pdf_page": 523,
+      "printed_page": 489,
+      "path": "evidence/pdf_1647-523.jpg",
+      "bytes": 597703,
+      "sha256": "8dd5deaa6880562aa58c0ca014804ab72df414a2dae023e233ad593fbc7a640a"
+    },
+    {
+      "original_pdf_page": 524,
+      "printed_page": 490,
+      "path": "evidence/pdf_1647-524.jpg",
+      "bytes": 668794,
+      "sha256": "d574b92c13d605d62302e63feb092714869543389bc74b257820ade5a8b11854"
+    },
+    {
+      "original_pdf_page": 525,
+      "printed_page": 491,
+      "path": "evidence/pdf_1647-525.jpg",
+      "bytes": 628077,
+      "sha256": "b21c45029b481c8caf38cd8bdd7cd869172e5e567ae27265c733b0f48cc86aa1"
+    },
+    {
+      "original_pdf_page": 526,
+      "printed_page": 492,
+      "path": "evidence/pdf_1647-526.jpg",
+      "bytes": 648940,
+      "sha256": "5b933c01846cc2c4f49db26a42f3a113328c3f7251ce3c918a00fac6ed19dc00"
+    },
+    {
+      "original_pdf_page": 527,
+      "printed_page": 493,
+      "path": "evidence/pdf_1647-527.jpg",
+      "bytes": 672064,
+      "sha256": "8a1618771f1019f759c42fe2a877431a040c48b52263184aa7b45923f8615db8"
+    },
+    {
+      "original_pdf_page": 528,
+      "printed_page": 494,
+      "path": "evidence/pdf_1647-528.jpg",
+      "bytes": 635392,
+      "sha256": "81e4253e9ecdcac5df7773a551c621421c610e163f3048d37b46aa4d15bb502f"
+    },
+    {
+      "original_pdf_page": 529,
+      "printed_page": 495,
+      "path": "evidence/pdf_1647-529.jpg",
+      "bytes": 648627,
+      "sha256": "75a9616467fb6d4109a5350fbc9bd1457139762a325a1b5adc2072c2645799d1"
+    },
+    {
+      "original_pdf_page": 530,
+      "printed_page": 496,
+      "path": "evidence/pdf_1647-530.jpg",
+      "bytes": 644385,
+      "sha256": "c4b3689d19a5634e3cee7fe6858bf9aa87b832d1e083ccf9ed1c505d84c8a8ee"
+    },
+    {
+      "original_pdf_page": 531,
+      "printed_page": 497,
+      "path": "evidence/pdf_1647-531.jpg",
+      "bytes": 654001,
+      "sha256": "b65d474b02791539eac58dc755fc571070efc37ed5517025eb405009bdec9e97"
+    },
+    {
+      "original_pdf_page": 532,
+      "printed_page": 498,
+      "path": "evidence/pdf_1647-532.jpg",
+      "bytes": 648250,
+      "sha256": "fb99e700e38829fdd691985d4abd2579695c14fd5a019ba6efe5f957aa856428"
+    },
+    {
+      "original_pdf_page": 533,
+      "printed_page": 499,
+      "path": "evidence/pdf_1647-533.jpg",
+      "bytes": 667191,
+      "sha256": "5b2d92ccabca07250e89931b9641ba7cfff1abf7ffcac1e5873d0308c70ec35a"
+    },
+    {
+      "original_pdf_page": 534,
+      "printed_page": 500,
+      "path": "evidence/pdf_1647-534.jpg",
+      "bytes": 631578,
+      "sha256": "a08044de064e653f3c24b4320ac183a4b93ad238b5c5cad62e668248ca8a689a"
+    }
+  ],
+  "original_body_pdf_pages": [
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533
+  ],
+  "next_numbered_chapter_pdf_page": 534,
+  "next_printed_chapter": "XCVIII",
+  "source_numeric_tables": [
+    {
+      "type": "TIME_TO_EQUATOR_DEGREES",
+      "source_pages": [
+        523
+      ],
+      "numeric_complete": false,
+      "validated_key_invariants": [
+        "1h=15 degrees",
+        "1 time minute=15 arcminutes",
+        "24h=360 degrees"
+      ]
+    },
+    {
+      "type": "RIGHT_ASCENSION_12_ZODIAC_SIGNS",
+      "source_pages": [
+        526,
+        527
+      ],
+      "numeric_complete": false,
+      "spot_checks": [
+        "Aries 0 = RA 0",
+        "Cancer 1 = RA 91 degrees 5 minutes",
+        "Libra 0 = RA 180",
+        "Pisces 30 = RA 360"
+      ]
+    },
+    {
+      "type": "OBLIQUE_ASCENSION_LATITUDE_34",
+      "source_pages": [
+        528,
+        529
+      ],
+      "latitude_degrees": 34,
+      "numeric_complete": false
+    },
+    {
+      "type": "OBLIQUE_ASCENSION_LATITUDE_49",
+      "source_pages": [
+        530,
+        531
+      ],
+      "latitude_degrees": 49,
+      "numeric_complete": false
+    },
+    {
+      "type": "OBLIQUE_ASCENSION_LATITUDE_53",
+      "source_pages": [
+        532,
+        533
+      ],
+      "latitude_degrees": 53,
+      "numeric_complete": false,
+      "source_example_5_scorpio_approximate_OA": "230 degrees 52 minutes"
+    }
+  ],
+  "all_numeric_cells_verified": false,
+  "prior_accepted_lilly": 5753,
+  "next_global_record": 5754,
+  "source_printed_numeric_discrepancy": {
+    "base_ra": "142 degrees 20 minutes",
+    "printed_operation": "add 90 degrees",
+    "printed_result": "230 degrees 20 minutes",
+    "computed_correct_result": "232 degrees 20 minutes",
+    "difference_arcminutes": 120,
+    "followup_page_525_uses_printed_value": true
+  },
+  "next_book_title_pdf": 521,
+  "original_source_page_span": [
+    521,
+    534
+  ]
+}

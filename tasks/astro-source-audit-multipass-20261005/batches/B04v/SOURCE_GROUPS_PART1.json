@@ -1,0 +1,228 @@
+[
+  {
+    "pages": [
+      521
+    ],
+    "label": "Separate first-edition Book III nativity title and methods announced",
+    "claims": [
+      [
+        "book_title",
+        "An Easie and plaine Method Teaching How to judge upon NATIVITIES",
+        "A separate natal-astrology treatise begins, distinct from the completed Book II horary questions.",
+        "Original PDF521 is a title page with no printed Arabic page number."
+      ],
+      [
+        "book_promise",
+        "The rectification of a NATIVITIE",
+        "The title announces a procedure for rectifying a natal birth time.",
+        "Not itself a supplied executable birth-time correction rule."
+      ],
+      [
+        "book_promise",
+        "Trutine of Hermes Animodar or by Accidents",
+        "The title lists Trutine of Hermes, Animodar and significant life accidents as alternative rectification approaches.",
+        "Different methods with potentially different inputs and assumptions."
+      ],
+      [
+        "book_promise",
+        "twelve Houses of Heaven",
+        "The treatise promises judgments using the twelve astrological houses.",
+        "House meanings are historical beliefs not human behavioral validity."
+      ],
+      [
+        "book_promise",
+        "Directions Revolutions Profections Transits",
+        "Lilly announces directions, revolutions, profections and transits.",
+        "Separate timing mechanisms not actually described on the title page."
+      ],
+      [
+        "book_promise",
+        "exact Measure of Time in Directions",
+        "He also advertises methods for computing the timing of directions.",
+        "A book promise, not verified predictive performance."
+      ],
+      [
+        "bibliography",
+        "London printed by Tho Brudenell for Partridge and Blunden 1647",
+        "The book includes its 1647 London printers and publishers.",
+        "Bibliographic first-edition witness; next natal pages must be interpreted under this provenance."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      522
+    ],
+    "label": "Book III title verso source-order control",
+    "claims": [
+      [
+        "source_navigation",
+        "verso of Book III title page",
+        "The reverse side of the nativity title is essentially blank apart from print-through.",
+        "Source-order metadata only; no astrological calculation or prediction extracted."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      523
+    ],
+    "label": "Time-to-equatorial-degree table, exact 15-degree-per-hour linear relation",
+    "claims": [
+      [
+        "table_heading",
+        "Table converting Hours and Minutes of time into Degrees and Minutes of the Aequator",
+        "The new natality introduction begins with a tabular conversion of clock time into equatorial angular displacement.",
+        "Numerical/astronomical conversion, not event prediction."
+      ],
+      [
+        "table_rule",
+        "one Hour fifteen degrees",
+        "One hour of time corresponds to fifteen degrees of the equator.",
+        "360 degrees divided by 24 hours."
+      ],
+      [
+        "table_rule",
+        "24 Hours 360 degrees",
+        "The twenty-four-hour row corresponds to a complete 360-degree rotation.",
+        "Full-turn modulo 360 applies in subsequent computation."
+      ],
+      [
+        "table_rule",
+        "one minute time fifteen minutes equator",
+        "One minute of clock time corresponds to fifteen arcminutes of equatorial angle.",
+        "0.25 angular degrees per minute of time."
+      ],
+      [
+        "table_rule",
+        "four minutes time one degree",
+        "Four minutes of civil time correspond to one angular degree.",
+        "Reciprocal form used later as minutes divided by four."
+      ],
+      [
+        "table_image_preservation",
+        "columns hour degree minute time minute angle",
+        "The printed reference has separate hour-to-degree and minute-to-degree columns with row values.",
+        "Complete table numerals require independent transcription; only structure and load-bearing examples checked."
+      ],
+      [
+        "table_example",
+        "60 minutes time fifteen degrees",
+        "Sixty time minutes correspond to fifteen degrees.",
+        "Source last minute row is visibly printed as sixty to fifteen degrees."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      524
+    ],
+    "label": "Use of table, solar right ascension and house cusp mechanism",
+    "claims": [
+      [
+        "subheading",
+        "Use of the Table",
+        "The source begins an instruction subsection on converting time into equatorial right ascension.",
+        "Book III introduction, not yet the numbered rectification chapter."
+      ],
+      [
+        "method",
+        "erecting a Figure by Tables Regiomontanus",
+        "Lilly says the conversion is used when erecting a chart by the tables of Regiomontanus.",
+        "Historical house-construction algorithm."
+      ],
+      [
+        "method",
+        "one hour makes fifteen degrees in Aequator",
+        "He reiterates 15 angular degrees for one hour of time.",
+        "Numerical rule repeated from printed table."
+      ],
+      [
+        "method",
+        "one minute hour makes fifteen minutes of Aequator",
+        "He states fifteen arcminutes per minute of clock time.",
+        "Scale factor, not new independent observation."
+      ],
+      [
+        "method",
+        "convert hours before and after noon",
+        "Hours around noon are converted to angular degrees/minutes before chart construction.",
+        "Original time convention requires calendar/local hour input."
+      ],
+      [
+        "method",
+        "Right ascension of time",
+        "He calls the resulting angular measure the right ascension of time.",
+        "Distinguish RA of elapsed time from right ascension of the Sun."
+      ],
+      [
+        "method",
+        "add RA of Sun",
+        "He adds right ascension of time to the Sun's right ascension.",
+        "Requires original solar ecliptic longitude and a right ascension table."
+      ],
+      [
+        "method",
+        "cusp of tenth house",
+        "He maps resulting equatorial angular amount via right ascensions to an ecliptic degree for the tenth-house cusp.",
+        "Ascendant still needs a separate oblique ascension step."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      524
+    ],
+    "label": "Worked 12 June 1647 3:25 PM Sun Cancer house-ten computation",
+    "claims": [
+      [
+        "source_example",
+        "Saturday 12 June 1647 3 25 PM",
+        "The worked chart time is printed Saturday 12 June 1647 at 3:25 PM.",
+        "Historical local civil time and Old Style date not independently resolved."
+      ],
+      [
+        "source_example",
+        "Sun 0 51 Cancer",
+        "Lilly gives the Sun at 0°51 of Cancer.",
+        "Sun longitude is source-provided, not independently recomputed."
+      ],
+      [
+        "source_approximation",
+        "take one whole degree Cancer",
+        "He rounds the Sun's Cancer longitude to one whole degree.",
+        "Introduces a source-authorized approximation before table lookup."
+      ],
+      [
+        "source_example",
+        "RA Sun 91 degrees 5 minutes",
+        "At 1° Cancer the printed right-ascensions table yields 91°05′ for the Sun.",
+        "This numerical value is original example context and needs direct independent table validation."
+      ],
+      [
+        "source_example",
+        "3 hours give 45 degrees",
+        "Three elapsed hours convert to 45 angular degrees.",
+        "Exact multiplication by 15."
+      ],
+      [
+        "source_example",
+        "25 minutes give 6 degrees 15 minutes",
+        "Twenty-five time minutes convert to 6°15′.",
+        "25 × 15 arcminutes = 375′ = 6°15′."
+      ],
+      [
+        "source_example",
+        "91 05 plus 45 plus 6 15 equals 142 20",
+        "Right ascension Sun 91°05′ plus time conversion 51°15′ yields 142°20′.",
+        "Arithmetic independently checkable, but input solar longitude is historical."
+      ],
+      [
+        "source_example",
+        "20 of Leo cusp of tenth",
+        "Lilly reads the corresponding ecliptic position as approximately 20° Leo for the tenth-house cusp.",
+        "Historical table lookup, chart system and rounding parity open."
+      ]
+    ]
+  }
+]

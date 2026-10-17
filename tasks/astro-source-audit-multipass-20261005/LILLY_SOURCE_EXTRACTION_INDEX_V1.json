@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_II_PRINTED_PROSE_THROUGH_XCVII_AND_SIGNED_CONCLUSION_ADMITTED_TABLE_NUMERIC_PARITY_OPEN_NEXT_BOOK_III",
-  "records_count": 5753,
+  "status": "BOOK_III_INTRO_TIME_AND_ASCENSION_TABLE_IMAGE_WITNESSES_ADMITTED_NEXT_PRINTED_XCVIII_RECTIFICATION_OPEN",
+  "records_count": 5824,
   "read_numbered_chapters": [
     1,
     2,
@@ -609,22 +609,28 @@
       "records_count": 114,
       "sha256": "d8c0bc63e03e7e0c85443463345c1486ca767e464d251e64dd08247b3ae48d6c",
       "scope": "William Lilly (1647) original printed Book II CHAP XCVII/editorial XCVIII method for variable planetary hours and examples, original PDF516-519, signed conclusion 11 June 1647 PDF520, separate Book III title PDF521; 109 historical method and conclusion annotations plus five next-book navigation, 13 source passage groups, 30 caveats, 3 internal clock calculations passing tests. Previous planetary-hour table numeric cells still incompletely digitized; no empirical claims or runtime change."
+    },
+    {
+      "id": "B04v",
+      "path": "batches/B04v/RULES.json",
+      "records_count": 71,
+      "sha256": "0535d315f091f9661e0e8db31d842cbee3286d6a12b52232c2bcca153309026e",
+      "scope": "Original William Lilly (1647) Book III nativity title/unprinted verso, time-to-equatorial-degree table PDF523, Regiomontanus use & worked 12 June 1647 house cusp example PDF524-525, right ascensions PDF526-527, oblique ascensions for latitudes 34,49,53 PDF528-533, navigation to first printed rectification CHAP XCVIII PDF534. 68 substantive introductory/table-image annotations + 3 navigation, 14 source spans and 24 limits. Printed 142d20m +90d ->230d20m inconsistent mathematically (232d20m). Numeric tables not fully digitized."
     }
   ],
   "next": {
-    "pdf_page": 521,
-    "printed_page": null,
-    "chapter": "BOOK_III_TITLE_AND_NATIVITY_PROCEDURE",
-    "printed_chapter_numeral": null,
-    "heading": "An Easie and plaine Method Teaching How to judge upon Nativities",
-    "include_opening_paragraph": false,
+    "pdf_page": 534,
+    "printed_page": 500,
+    "chapter": "XCIX",
+    "printed_chapter_numeral": "XCVIII",
+    "heading": "Divers wayes of rectifying Nativities",
+    "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Separate first-edition Book III title original PDF521; following natality principles must begin original PDF522 onward. Do not include natal rules as Book II.",
-    "outstanding_previous_book_data": [
+    "position": "Original PDF534/printed500, first numbered Book III chapter includes a merchant nativity chart. Need full historical next-chapter boundary and rectification procedure extraction.",
+    "outstanding_prior_numeric_reference_tables": [
       {
-        "type": "PLANETARY_HOUR_TABLE_FULL_NUMERIC_TRANSCRIPTION",
-        "original_pdf_pages": [
+        "source_pdf_pages": [
           508,
           509,
           510,
@@ -634,8 +640,23 @@
           514,
           515
         ],
-        "status": "OPEN",
-        "original_image_pages_complete": true
+        "table": "BOOK_II_PLANETARY_HOUR_NUMERIC_CELLS",
+        "status": "NOT_FULLY_DIGITIZED"
+      },
+      {
+        "source_pdf_pages": [
+          523,
+          526,
+          527,
+          528,
+          529,
+          530,
+          531,
+          532,
+          533
+        ],
+        "table": "BOOK_III_TIME_RA_OBLIQUE_ASCENSION_NUMERIC_CELLS",
+        "status": "NOT_FULLY_DIGITIZED"
       }
     ]
   },
@@ -644,7 +665,7 @@
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04u_CHAPTER_XCVIII_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04v_BOOK_III_INTRO_COMPLETE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -709,5 +730,6 @@
   "postchapter_20261017_original_source_correction": "Original scan PDF516 explicitly prints CHAP. XCVII on planetary hours after an eight-page table PDF508–515; prior assertion that XCVI was final numbered Book II chapter is superseded. No source annotations added.",
   "essex_unumbered_1644_historical_acceptance_note": "43 source-only annotations R5587–R5629, 7 original passage groups, 20 caveats. Historic England verifies parliamentary arms surrender Sep2 1644 but Essex himself departed by sea Sep1. Not a contemporaneously authenticated astrology prediction.",
   "planetary_hour_table_source_acceptance_note": "10 historical documentary annotations R5630–R5639: eight original table-page image witnesses + two next-chapter navigation markers; eight table pages PDF508–515 preserved by exact hashes; ~1,488 numeric hour boundaries NOT transcribed or independently checked. No empirical prediction or runtime promotion.",
-  "chapter_XCVIII_source_acceptance_note": "114 original historical annotations R5640–R5753: 109 printed method and signed conclusion clauses plus 5 Book III title navigation. Three printed examples arithmetic verified for Monday at 9:30 AM Mars, 5:20 PM Sun, 11:10 PM Mars; no independent human outcome or ephemeris. Table 508–515 cell digitization remains open."
+  "chapter_XCVIII_source_acceptance_note": "114 original historical annotations R5640–R5753: 109 printed method and signed conclusion clauses plus 5 Book III title navigation. Three printed examples arithmetic verified for Monday at 9:30 AM Mars, 5:20 PM Sun, 11:10 PM Mars; no independent human outcome or ephemeris. Table 508–515 cell digitization remains open.",
+  "book_iii_intro_source_note": "71 original-source annotations R5754-R5824 across PDF521-534, 14 source passage groups, 24 limits; printed arithmetic contradiction 142d20m+90d as 230d20m instead of 232d20m and resulting ascendant source discrepancy preserved; all numeric grids not fully machine-transcribed. No empirically validated natal rectification."
 }

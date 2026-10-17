@@ -1,0 +1,135 @@
+[
+  {
+    "pages": [
+      524,
+      525
+    ],
+    "label": "MC to ascendant +90° printed discrepancy crossing source pages",
+    "claims": [
+      [
+        "method",
+        "add ninety degrees to Mid-heaven RA",
+        "Lilly instructs adding 90° to right ascension of the tenth-house cusp before Ascendant lookup.",
+        "This is the formal step of his Regiomontanus house-construction procedure."
+      ],
+      [
+        "original_numeric_claim",
+        "142.20 plus 90 printed 230.20",
+        "The first-edition print appears to claim adding 90° to 142°20′ produces 230°20′.",
+        "Numerically false: 142°20′ + 90° = 232°20′, a two-degree discrepancy. Do not silently repair either printed value."
+      ],
+      [
+        "mathematical_check",
+        "142.20 and ninety degrees",
+        "Independent integer-arcminute arithmetic gives 232°20′.",
+        "Contradicts the printed 230°20′, retained as explicit historical numerical error."
+      ],
+      [
+        "method",
+        "Table of Oblique ascensions belonging to 53 latitude",
+        "He routes the result into the oblique-ascension table corresponding to geographic latitude 53°.",
+        "Latitude-specific data rather than universal sign mapping."
+      ],
+      [
+        "source_continuation",
+        "degree of the ascendant for that Elevation",
+        "The description of using the 53° oblique table to find the Ascendant continues onto PDF525.",
+        "One continuous calculation, not separate horoscopes."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      525
+    ],
+    "label": "Printed Scorpio ascendant lookup and interpolation caveats",
+    "claims": [
+      [
+        "original_numeric_claim",
+        "cannot find 230.20 precise",
+        "Lilly says 230°20′ is not listed exactly in the oblique-ascension table.",
+        "He follows the printed 230°20′ rather than mathematically implied 232°20′."
+      ],
+      [
+        "source_example",
+        "five Scorpio 230.52",
+        "He says 5° Scorpio corresponds to oblique ascension 230°52′ at 53° latitude.",
+        "Look-up of a specific printed source-table cell; machine-independent parity incomplete."
+      ],
+      [
+        "method",
+        "take a proportional part",
+        "He says to interpolate a proportional fraction to obtain a less than five-degree position.",
+        "Interpolation interval and rounding should be verified before encoding a fully reliable calculator."
+      ],
+      [
+        "source_internal_result",
+        "Ascendant four degrees and more not fully five",
+        "He concludes the Ascendant is about four degrees of Scorpio, not fully five.",
+        "Numerical result depends on the internally inconsistent 230°20′ premise."
+      ],
+      [
+        "authorial_scope",
+        "more exact nativity than ordinary questions",
+        "He distinguishes precise nativity figure computation from less meticulous ordinary horary questions.",
+        "A method preference, not empirical evidence natal charts are accurate."
+      ],
+      [
+        "method",
+        "inserted four Tables",
+        "Lilly indicates the following four tabular groupings support erecting a figure.",
+        "Count refers to groups/types, whereas the full physical source runs over many page faces."
+      ],
+      [
+        "authorial_scope",
+        "teach Tyroes",
+        "The examples are pedagogical approximations for beginning students.",
+        "An introduction rather than a fully worked independent rectification outcome."
+      ]
+    ]
+  },
+  {
+    "pages": [
+      525
+    ],
+    "label": "Alternative time conversion without tables and MC modular arithmetic",
+    "claims": [
+      [
+        "method",
+        "multiply hours by fifteen",
+        "Lilly offers direct arithmetic conversion of clock hours into equatorial degrees without consulting the first table.",
+        "Equivalent to the linear 15° per time hour relation."
+      ],
+      [
+        "method",
+        "divide minutes by four",
+        "He instructs dividing minutes of time by four to obtain degrees of equatorial arc.",
+        "25 minutes / 4 = 6.25°, i.e., 6°15′."
+      ],
+      [
+        "method",
+        "time RA plus Sun RA",
+        "He reiterates adding the time angle to the Sun's right ascension for the midheaven.",
+        "Depends on chosen reference time and precise Sun RA."
+      ],
+      [
+        "method",
+        "if more than three hundred sixty cast away 360",
+        "He reduces angular totals over 360° by subtracting a full turn.",
+        "Modular arithmetic for zodiacal/RA angles."
+      ],
+      [
+        "method",
+        "lookup answering degree of Ecliptick",
+        "He maps the resulting right ascension to the corresponding ecliptic position using the right-ascensions table.",
+        "Data-dependent conversion, not pure linear arithmetic."
+      ],
+      [
+        "historical_qualification",
+        "punctually upon a Nativitie",
+        "Lilly recommends punctual chart erection for nativities.",
+        "This is original pedagogical precision advice, not observed predictive improvement."
+      ]
+    ]
+  }
+]

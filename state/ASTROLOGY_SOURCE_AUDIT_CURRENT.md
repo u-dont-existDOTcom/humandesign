@@ -1,3 +1,9 @@
+# Original Lilly Book III introduction and numeric table witnesses
+
+2026-10-17: 71 new source records R5754–R5824 locally accepted. After verified publication Lilly **5,824** + Ptolemy **1,066** = **6,890** historical annotations. Original PDF521-534 title, time conversion and RA/oblique tables; large grids not fully digitized. Confirmed source arithmetic discrepancy: author prints **142°20′ + 90° = 230°20′** whereas correct result is **232°20′**. Next printed CHAP XCVIII (editorial XCIX) rectification PDF534. Book II numeric tables remain open; zero empirical forecasts or runtime changes. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04v_BOOK_III_INTRO_COMPLETE.md.
+
+---
+
 # Lilly Book II method and conclusion accepted, numeric table parity open; Book III begins
 
 2026-10-17: 114 first-edition historical source records R5640–R5753 locally admitted (printed XCVII/editorial XCVIII, method PDF516–519, author signed 11 June 1647 PDF520, Book III title navigation PDF521). Once published: **5,753 Lilly + 1,066 Ptolemy = 6,819** historical records. Three printed planetary-hour examples arithmetically pass; no human validations. Prior planetary-hour table PDF508–515 images preserved, ~1,488 numeric cells not fully transcribed. Next original Book III starts PDF521; source research OPEN.
