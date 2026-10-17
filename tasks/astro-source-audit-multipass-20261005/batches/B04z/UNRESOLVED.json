@@ -1,0 +1,102 @@
+{
+  "batch": "B04z",
+  "issues": [
+    {
+      "id": "B04z-U01",
+      "issue": "Original printed Chapter CI/editorial CII begins lower half PDF553/printed519, continues PDF554-557, and ends before next CHAP CII on PDF558/printed524."
+    },
+    {
+      "id": "B04z-U02",
+      "issue": "The worked Regiomontanus figure inherits an anonymous merchant birth time and place from a previously event-fitted horoscope, not a verified birth certificate."
+    },
+    {
+      "id": "B04z-U03",
+      "issue": "Original date Thursday September 19 1616 and 2:24:25PM must be interpreted in historical calendar and local clock frame, not modern UTC without a conversion record."
+    },
+    {
+      "id": "B04z-U04",
+      "issue": "Original latitude 53° and birthplace east of London have no recorded geographic coordinate or named city here; the 1h7m offset cannot be geographically cross-validated."
+    },
+    {
+      "id": "B04z-U05",
+      "issue": "Solar longitude Libra 6°37 and right-ascensions 6° Libra185°30 and7° Libra186°25 are 1647 ephemeris/table source values, not independent astronomical parity."
+    },
+    {
+      "id": "B04z-U06",
+      "issue": "Sun RA interpolation 55′×37/60=33.9167′ would round to34′; Lilly truncates to33′ giving 186°03 for Sun RA."
+    },
+    {
+      "id": "B04z-U07",
+      "issue": "Source original birth time 2:24:25 PM contrasts with page554 time-angle line using30 seconds; 25 seconds time contributes6′15″ arc, while30 contributes7′30″."
+    },
+    {
+      "id": "B04z-U08",
+      "issue": "Displayed time angle 36°07 is coarsely rounded/truncated; exact 2h24m25s is36°06′15″."
+    },
+    {
+      "id": "B04z-U09",
+      "issue": "Despite individual rounding shortcuts, precise interpolated solarRA186°03′55″ plus exact time angle36°06′15″ yields MC222°10′10″, close to printed222°10; do not describe final MC as demonstrably wrong."
+    },
+    {
+      "id": "B04z-U10",
+      "issue": "The MC ecliptic Scorpio14°39 is determined by source right-ascension lookup; mathematical interpolation assumes original table spacing."
+    },
+    {
+      "id": "B04z-U11",
+      "issue": "Regiomontanus tables introduce distinct pole-elevation values for intermediate houses: 33°34′ and 48°59′ at natal latitude53°."
+    },
+    {
+      "id": "B04z-U12",
+      "issue": "Lilly rounds pole33°34 to34° and48°59 to49°, explicitly admitting approximation rather than exact proportional interpolation."
+    },
+    {
+      "id": "B04z-U13",
+      "issue": "Additional cusps use oblique ascensions, not the same geographic latitude for all houses: pole34 for 11th/3rd, pole49 for 12th/2nd, geographic53 for Asc."
+    },
+    {
+      "id": "B04z-U14",
+      "issue": "Source right/oblique ascension data are not all independently machine-transcribed, and period house-system geometry has not been verified against a second implementation."
+    },
+    {
+      "id": "B04z-U15",
+      "issue": "With twelfth-house interpolation OA Sagittarius14°281°09 to15°282°25 target282°10, 61/76×60=48.16′; printed Sagittarius14°49 is rounded upward."
+    },
+    {
+      "id": "B04z-U16",
+      "issue": "Ascendant interpolation Capricorn6 OA311°31 to7 OA312°30 with target312°10 gives39/59×60≈39.66′, but Lilly prints Capricorn6°37. Difference roughly three arcminutes left unresolved."
+    },
+    {
+      "id": "B04z-U17",
+      "issue": "Original source six cusps MC Scorpio14°39, eleventh Scorpio30°, twelfth Sagittarius14°49, asc Capricorn6°37, second Aquarius23°30, third Aries18°34; opposite house cusps are implied but not given as distinct rows."
+    },
+    {
+      "id": "B04z-U18",
+      "issue": "Third cusp OA342°10+30°=372°10→12°10 requires modulo360 handling; no negative angle in time of day."
+    },
+    {
+      "id": "B04z-U19",
+      "issue": "Night and daylight historical house tables and dense oblique ascensions remain image-preserved from prior batch but not independently fully digitized."
+    },
+    {
+      "id": "B04z-U20",
+      "issue": "Planetary ephemeris must be moved from mean reference time to birth timestamp and historical reference longitude; source uses an Origanus 1h07 correction."
+    },
+    {
+      "id": "B04z-U21",
+      "issue": "Adding1h07m to exact2:24:25 PM gives3:31:25, whereas Lilly instructs taking 3h31m for practical planetary correction."
+    },
+    {
+      "id": "B04z-U22",
+      "issue": "The source says alternative sun-degree time adjustment was little used by some contemporaries, a historical claim not validated as universally optimal method."
+    },
+    {
+      "id": "B04z-U23",
+      "issue": "The following CHAP CII deals with natal judgment/planetary dignities and is not the same as original house chart erection."
+    },
+    {
+      "id": "B04z-U24",
+      "issue": "Arithmetic check internal to a chart is only computational reproducibility, not a test of the merchant's actual corrected birth time, self-reported events, clinical status or causal/predictive power."
+    }
+  ],
+  "status": "SOURCE_TABLE_ROUNDING_AND_HISTORICAL_UNCERTAINTIES_RETAINED"
+}

@@ -1,0 +1,95 @@
+{
+  "batch": "B04z",
+  "kind": "ARITHMETIC_CONSISTENCY_NOT_NATAL_VALIDATION",
+  "source_pages": [
+    554,
+    555,
+    556,
+    557
+  ],
+  "source_original_natal_clock": "14:24:25",
+  "solar_ra_bracket": {
+    "ecliptic_lower": "Libra 6°",
+    "ra_lower": "185°30′",
+    "ecliptic_upper": "Libra 7°",
+    "ra_upper": "186°25′",
+    "interpolated_ecliptic_fraction": 0.6166666666666667,
+    "ra_increment_arcminutes": 33.916666666666664,
+    "more_exact_ra": "186°03′55″",
+    "source_rounded_ra": "186°03′"
+  },
+  "time_angle": {
+    "hours": 2,
+    "minutes": 24,
+    "source_original_birth_seconds": 25,
+    "intermediate_written_seconds": 30,
+    "computed_exact": "36°06′15″",
+    "source_used": "36°07′"
+  },
+  "midheaven": {
+    "source_target_ra": "222°10′",
+    "computed_with_precise_intermediates": "222°10′10″",
+    "difference_arcseconds": 10,
+    "printed_ecliptic_cusp": "Scorpio 14°39′"
+  },
+  "other_cusps": [
+    {
+      "house": 11,
+      "source_oa": "252°10′",
+      "pole_latitude_deg": 34,
+      "source_cusp": "Scorpio 30° = Sagittarius 0°"
+    },
+    {
+      "house": 12,
+      "source_oa": "282°10′",
+      "pole_latitude_deg": 49,
+      "source_cusp": "Sagittarius 14°49′",
+      "source_interpolation_input_arcminutes": [
+        61,
+        76
+      ],
+      "computed_zodiac_arcminutes": 48.1578947368421,
+      "source_result_zodiac_arcminutes": 49
+    },
+    {
+      "house": 1,
+      "source_oa": "312°10′",
+      "pole_latitude_deg": 53,
+      "source_cusp": "Capricorn 6°37′",
+      "source_interpolation_input_arcminutes": [
+        39,
+        59
+      ],
+      "computed_zodiac_arcminutes": 39.66101694915254,
+      "source_result_zodiac_arcminutes": 37
+    },
+    {
+      "house": 2,
+      "source_oa": "342°10′",
+      "pole_latitude_deg": 49,
+      "source_cusp": "Aquarius 23°30′"
+    },
+    {
+      "house": 3,
+      "source_oa": "12°10′",
+      "pole_latitude_deg": 34,
+      "source_cusp": "Aries 18°34′"
+    }
+  ],
+  "pole_rounding": {
+    "native_latitude_deg": 53,
+    "house_11_3_exact": "33°34′",
+    "house_11_3_used": 34,
+    "house_12_2_exact": "48°59′",
+    "house_12_2_used": 49
+  },
+  "ephemeris_motion_time": {
+    "original": "2:24:25",
+    "source_location_correction": "1:07:00",
+    "computed_sum": "3:31:25",
+    "source_rounded_used": "3:31"
+  },
+  "all_ephemeris_chart_parity_complete": false,
+  "independently_authenticated_merchant_birth_time": false,
+  "empirical_predictive_validation": false
+}

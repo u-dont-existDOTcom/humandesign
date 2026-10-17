@@ -1,0 +1,475 @@
+{
+  "batch": "B04z",
+  "source_spans": 6,
+  "source_units": 70,
+  "source_groups": [
+    {
+      "pages": [
+        553
+      ],
+      "label": "Following printed Chapter CI Regiomontanus house-chart erection and input birth figure",
+      "claims": [
+        [
+          "heading",
+          "CHAP. CI. To erect a Scheame ... by Tables of REGIOMONTANUS",
+          "New printed Chapter CI (sequential editorial CII) demonstrates constructing a natal chart using Regiomontanus house tables.",
+          "Separate from accident-fitting Chapter C above the original printed divider."
+        ],
+        [
+          "source_example",
+          "Thursday the 19. of September 1616",
+          "The merchant's example gives birth Thursday 19 September 1616.",
+          "Historical Julian calendar, identity, and birth-time evidence not independently authenticated."
+        ],
+        [
+          "source_example",
+          "2 hours 24 min 25 seconds P M",
+          "The merchant's corrected/reported time is specifically 2:24:25 PM.",
+          "A source number, not a modern certified civil birth clock."
+        ],
+        [
+          "source_example",
+          "elevation of 53 degrees",
+          "The birthplace is represented at latitude/pole elevation 53°.",
+          "Place name and longitude are unspecified here."
+        ],
+        [
+          "method",
+          "fit place of Sun to that houre",
+          "Lilly first adjusts the Sun's longitude to the stated natal time.",
+          "Solar ephemeris input required."
+        ],
+        [
+          "method",
+          "allowing time in Ephemeris of Origanus 1 ho 7 min",
+          "He mentions an adjustment of 1 hour 7 minutes related to Origanus's ephemeris and the location.",
+          "Historical reference correction to inspect against original ephemeris."
+        ],
+        [
+          "source_example",
+          "Sun 6 37 Libra",
+          "The source gives the Sun at Libra 6°37′ for the example.",
+          "Source-ecliptic longitude not independently recomputed."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        554
+      ],
+      "label": "Solar RA table interpolation and exact-versus-rounded equatorial time",
+      "claims": [
+        [
+          "method",
+          "look Table right ascensions 6 Libra 185 30",
+          "At Libra 6°, Lilly gives right ascension 185°30′.",
+          "Source numeric reference, needs independent astronomical parity."
+        ],
+        [
+          "source_example",
+          "7 Libra 186 25",
+          "At 7° Libra, source right ascension is 186°25′.",
+          "Upper bracket of table interpolation."
+        ],
+        [
+          "arithmetic_example",
+          "difference is 00 55",
+          "The RA difference between 7° and 6° Libra is 55 arcminutes.",
+          "Exact subtraction."
+        ],
+        [
+          "method",
+          "if 60 give 55 what 37 give",
+          "For Sun at 6°37 Libra he interpolates an increment from 55′ per zodiac degree.",
+          "Linear interpolation across one ecliptic degree."
+        ],
+        [
+          "arithmetic_example",
+          "55 times37 divided60 rounded33",
+          "Computed increment 55×37/60≈33.92′, source reports 33′.",
+          "Source's truncation/rounding method matters (nearest minute would be 34′)."
+        ],
+        [
+          "source_example",
+          "RA Sun is 186 03",
+          "He adds the printed 33′ to RA185°30′, producing source solar RA186°03′.",
+          "This differs by about one arcminute from nearest-minute rounding."
+        ],
+        [
+          "method",
+          "two hours gives 30 degrees",
+          "Source converts 2 hours of clock time into 30° equatorial motion.",
+          "15° per hour."
+        ],
+        [
+          "method",
+          "24 min of hour 06 00",
+          "Twenty-four time minutes contribute 6° equatorial arc.",
+          "4 minutes time per angular degree."
+        ],
+        [
+          "original_numeric_discrepancy",
+          "30 seconds of an hour give 00 7",
+          "The worked clock conversion refers to 30 seconds, although the original natal time is 25 seconds.",
+          "Five-second time discrepancy; arcminutes are rounded/truncated."
+        ],
+        [
+          "arithmetic_example",
+          "time RA 36 07",
+          "He adds the rounded time-angle components to 36°07′.",
+          "For exact natal time 2:24:25, correct angular increment is 36°06′15″; source uses coarser rounded 36°07′."
+        ],
+        [
+          "arithmetic_example",
+          "RA Sun 186 03 plus time36 07 yields MC222 10",
+          "The source obtains meridian/MC right ascension 222°10′.",
+          "Elementary rounded sum matches source."
+        ],
+        [
+          "method",
+          "nearest RA222 31 at Scorpio15",
+          "He looks for corresponding ecliptic degree from RA table, finding 15° Scorpio at 222°31′.",
+          "Upper bracket for interpolation."
+        ],
+        [
+          "method",
+          "lesser RA at Scorpio14",
+          "He chooses the RA value for 14° Scorpio as lower bracket.",
+          "No leap from direct RA to ecliptic degree without lookup."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        555
+      ],
+      "label": "Tenth cusp Scorpio14°39 and Regiomontanus intermediate house-pole inputs",
+      "claims": [
+        [
+          "source_example",
+          "RA15 Scorpio222 31, RA14 Scorpio221 31",
+          "Lilly uses values for 15° Scorpio and 14° Scorpio, differing 1° RA.",
+          "Original round-number RA table values."
+        ],
+        [
+          "arithmetic_example",
+          "target RA222 10 minus RA14Scorpio221 31 =39",
+          "The 39 arcminutes toward the next degree place MC at Scorpio14°39′.",
+          "Printed interpolation corresponds to ecliptic arc minutes treated at unit slope in this row."
+        ],
+        [
+          "source_internal_result",
+          "cusp Midheaven 14 degrees 39 minutes Scorpio",
+          "He fixes tenth-house cusp Scorpio14°39′.",
+          "Example outcome of source computation, not independently verified natal configuration."
+        ],
+        [
+          "method",
+          "continual addition of thirty degrees to RA Midheaven",
+          "For subsequent house positions he adds 30° to the MC RA in equatorial longitude.",
+          "Uses Regiomontanus house-system construction; 12th, 11th, Asc, 2nd, 3rd at spaced equatorial arcs."
+        ],
+        [
+          "method",
+          "enter Table oblique ascensions belonging to every house",
+          "Translate those equatorial arcs via an oblique-ascension table for corresponding house pole.",
+          "House-pole latitude differs by cusp."
+        ],
+        [
+          "historical_attribution",
+          "Regiomontanus page175 circles of position",
+          "He directs students to Regiomontanus p175 for the positions/elevations of intermediary house circles.",
+          "Referenced source not independently retrieved."
+        ],
+        [
+          "prerequisite",
+          "Nativity pole 53 deg",
+          "The geographic natal latitude is 53° for this example.",
+          "Source latitude assumed."
+        ],
+        [
+          "source_example",
+          "polar number houses11 and3 33 34",
+          "At latitude 53°, Lilly obtains 33°34′ as the house-pole value for 11th and 3rd.",
+          "Distinct intermediate pole from geographic 53°."
+        ],
+        [
+          "source_approximation",
+          "take pole 34 degrees instead",
+          "He rounds 33°34′ to 34° to avoid interpolation and notes a small degree-level difference.",
+          "Approximate computational shortcut, not exact Regiomontanus geometry."
+        ],
+        [
+          "source_example",
+          "polar number houses12 and2 48 59",
+          "At latitude 53°, the table gives ~48°59′ for twelfth and second houses.",
+          "Different pole from 11th/3rd."
+        ],
+        [
+          "source_approximation",
+          "take latitude49 for 12th and2nd",
+          "He chooses 49° table as nearly equal to 48°59′.",
+          "Rounding simplified to available tables."
+        ],
+        [
+          "source_example",
+          "MC RA222 10 plus30 =>252 10 for eleventh",
+          "The eleventh cusp's equatorial OA target is 252°10′.",
+          "One 30° step."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        556
+      ],
+      "label": "Six Regiomontanus house cusp oblique ascensions and worked interpolation",
+      "claims": [
+        [
+          "source_example",
+          "OA eleventh cusp 252 10 under pole34",
+          "The target for the eleventh-house cusp is 252°10′ using the 34° oblique-ascension grid.",
+          "Source calculation, not independent chart parity."
+        ],
+        [
+          "source_internal_result",
+          "30 Scorpio or 0 Sagittarius",
+          "The eleventh cusp is at end of Scorpio, equivalently Sagittarius 0°.",
+          "Zodiac boundary equivalence; historic sign glyph checked."
+        ],
+        [
+          "source_example",
+          "OA twelfth cusp282 10 at pole49",
+          "The twelfth-house oblique ascension target is 282°10′ in the 49° pole table.",
+          "Additional 30-degree RA progression from eleventh."
+        ],
+        [
+          "table_example",
+          "14 Sagittarius281 09, 15 Sagittarius282 25",
+          "The 49° OA table brackets twelfth cusp with Sagittarius 14° and 15° values.",
+          "Original end points need independent source table parity."
+        ],
+        [
+          "arithmetic_example",
+          "282 25 minus 281 09 equals1 16",
+          "The twelfth cusp interval between consecutive tabular degrees is 1°16′, or 76 arcminutes.",
+          "Arithmetic check."
+        ],
+        [
+          "arithmetic_example",
+          "OA target282 10 minus281 09 =61",
+          "The desired target lies 61′ of OA above Sagittarius14°.",
+          "Source interpolation offset."
+        ],
+        [
+          "arithmetic_example",
+          "61 by60 divided76 approximately49",
+          "The source estimates 61/76 of zodiac degree as 49 zodiac arcminutes.",
+          "Numerical interpolation matches 48.16′, rounded source ≈49′."
+        ],
+        [
+          "source_internal_result",
+          "12th cusp Sagittarius14 49",
+          "He records the twelfth cusp approximately Sagittarius14°49′.",
+          "Rounded example figure."
+        ],
+        [
+          "source_example",
+          "OA first cusp312 10 pole53",
+          "The Ascendant OA target is 312°10′ under actual geographic latitude 53°.",
+          "Source natal latitude."
+        ],
+        [
+          "table_example",
+          "Capricorn6 OA311 31, Capricorn7 OA312 30",
+          "The Ascendant is bracketed in the 53° OA table by Capricorn6° and 7°.",
+          "Published source numerical values."
+        ],
+        [
+          "arithmetic_example",
+          "312 30 minus311 31=59",
+          "The table difference between these positions is 59′.",
+          "Source sign degree interval."
+        ],
+        [
+          "arithmetic_example",
+          "312 10 minus311 31=39",
+          "The desired OA is 39′ above Capricorn6°.",
+          "Source offset."
+        ],
+        [
+          "arithmetic_example",
+          "39 times60 /59 ≈39",
+          "Zodiac interpolation gives about 39′ into the sixth degree, but the printed figure takes 37′.",
+          "Source p556 seems to say 37′ despite displayed 39:59 ratio; arithmetic requires ~39.7′. Preserve as possible numerical error."
+        ],
+        [
+          "original_numeric_discrepancy",
+          "source prints 37 min Ascendant from39/59",
+          "The printed conclusion gives Ascendant Capricorn6°37′ rather than the ~6°40′ implied by the displayed table values 311°31′, 312°30′ and target312°10′.",
+          "Three-arcminute disagreement; could reflect illegible source value or earlier rounding, requires independent table image check."
+        ],
+        [
+          "source_internal_result",
+          "true cusp Horoscope Capricorn6 37",
+          "Lilly's final ascendant is Capricorn6°37′.",
+          "Use original output separately from corrected interpolation."
+        ],
+        [
+          "source_example",
+          "Asc OA312 10 +30 -> second OA342 10",
+          "The 2nd cusp equatorial OA target becomes 342°10′.",
+          "30° step."
+        ],
+        [
+          "source_internal_result",
+          "second cusp Aquarius23 30",
+          "He gives second cusp Aquarius23°30′.",
+          "Uses the 49° table."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        557
+      ],
+      "label": "Third cusp and final six-cusp table; planet ephemeris time correction",
+      "claims": [
+        [
+          "arithmetic_example",
+          "342 10 plus30 =>372 10 minus360=12 10",
+          "Third-house target wraps 372°10′ to 12°10′.",
+          "Modulo360 arithmetic."
+        ],
+        [
+          "source_example",
+          "3rd cusp pole34",
+          "Third cusp uses the same rounded 34° house-pole table as eleventh.",
+          "Consistent with house symmetry."
+        ],
+        [
+          "source_internal_result",
+          "third cusp Aries18 34",
+          "Final third-house cusp is Aries18°34′.",
+          "Original numerical table result."
+        ],
+        [
+          "table_schema",
+          "10th Scorpio14 39 RA222 10",
+          "Cusp ten Scorpio14°39′ with RA222°10′.",
+          "Anchor."
+        ],
+        [
+          "table_schema",
+          "11th Scorpio30 00 OA252 10",
+          "Cusp eleven Scorpio30° or Sagittarius0°, OA252°10′.",
+          "Sign-end boundary."
+        ],
+        [
+          "table_schema",
+          "12th Sagittarius14 49 OA282 10",
+          "Cusp twelve Sagittarius14°49′, OA282°10′.",
+          "Latitude49 pole."
+        ],
+        [
+          "table_schema",
+          "first Capricorn6 37 OA312 10",
+          "Asc Capricorn6°37′, OA312°10′.",
+          "Retain source interpolation discrepancy."
+        ],
+        [
+          "table_schema",
+          "second Aquarius23 30 OA342 10",
+          "Second cusp Aquarius23°30′, OA342°10′.",
+          "Latitude49 pole."
+        ],
+        [
+          "table_schema",
+          "third Aries18 34 OA12 10",
+          "Third cusp Aries18°34′, OA12°10′ modulo full circle.",
+          "Latitude34 pole."
+        ],
+        [
+          "method",
+          "opposite houses opposite signs",
+          "Houses four through nine are implicitly obtained by zodiacal opposition to the six listed cusps.",
+          "Original example lists six; do not fabricate a separate printed second half."
+        ],
+        [
+          "method",
+          "reduce diurnal motion Planets to time of Birth",
+          "Planetary positions must be adjusted by diurnal motion to exact natal clock.",
+          "Ephemeris sampling at correct time and latitude necessary."
+        ],
+        [
+          "method",
+          "add Part Fortune north south nodes",
+          "He instructs including Part of Fortune and lunar nodes in the chart.",
+          "Derived points in separate computation."
+        ],
+        [
+          "method",
+          "allow motion required latitude and pole",
+          "He calls for geographical/time adjustments before final planetary positions.",
+          "Approximate and historically reference-based."
+        ],
+        [
+          "source_example",
+          "birth time 2h24m25s",
+          "The original birth time is repeated explicitly as 2:24:25 PM.",
+          "Contrasts earlier 30-second interpolative shortcut."
+        ],
+        [
+          "source_example",
+          "add Origanus London correction1h7m =>3h31m",
+          "He adds an ephemeris/London correction of about 1h07m and says use ~3h31m motion.",
+          "2:24:25 +1:07 = 3:31:25; rounds to whole minutes."
+        ],
+        [
+          "source_qualification",
+          "birth place more east than London",
+          "He says the birthplace lies east of London, motivating the offset.",
+          "Actual place name and longitude unresolved."
+        ],
+        [
+          "source_qualification",
+          "slight discrepancy acceptable without sensible error",
+          "He treats minute-level rounding in ephemeris motion as immaterial.",
+          "Authorial precision judgment, not validated astronomy parity."
+        ],
+        [
+          "authorial_context",
+          "Bredon Allen used alternative equating little",
+          "He attributes a less-used alternate way of adjusting birth time to Bredon and Allen.",
+          "Historical practitioners, references not independently audited."
+        ]
+      ]
+    },
+    {
+      "pages": [
+        558
+      ],
+      "label": "Following printed Chapter CII preliminary nativity judgment, navigation only",
+      "claims": [
+        [
+          "next_navigation",
+          "CHAP. CII Of things considerable before judgement",
+          "The following chapter begins at original PDF558/printed524 and concerns preliminary chart conditions.",
+          "Printed CII/editorial CIII; separate independent chapter."
+        ],
+        [
+          "next_navigation",
+          "having rectified your Nativity by Accidents",
+          "Its opening treats accident-based correction as the surest of the historical methods.",
+          "This premise belongs to next chapter, not independently validated here."
+        ],
+        [
+          "next_navigation",
+          "consider fortitudes and debilities all Planets",
+          "It introduces evaluating strengths/debilities of planets in houses and zodiac signs.",
+          "Belief system not an independent predictive result."
+        ]
+      ]
+    }
+  ]
+}

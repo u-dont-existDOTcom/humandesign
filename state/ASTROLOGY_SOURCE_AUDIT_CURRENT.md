@@ -1,3 +1,9 @@
+# First edition Regiomontanus house construction documented; natal judgment next
+
+2026-10-17: 70 historical source annotations R6146-R6215 accepted locally, total after verified branch publication **6,215 Lilly + 1,066 Ptolemy = 7,281**. Source arithmetic near MC222deg10, six house cusps, and source year/time rounding preserved; Asc printed Capricorn6deg37 versus direct source OA 39/59 interpolation near6deg40 unresolved. Frontiers next original PDF558 printed CHAP CII natal considerations. No empirical human birth-time outcomes, predictive validations or runtime promotions.
+
+---
+
 # Original Lilly accident-based rectification completed as historical source; Regiomontanus next
 
 2026-10-17: accepted locally R5958-R6145 (188 new), cumulative if verified **6,145 Lilly + 1,066 Ptolemy = 7,211** historical source records. Four known merchant life accidents fitted retrospectively; main first-edition fever-age mismatch 20y10m versus chosen 19y10m10d and biquintile 105/205 discrepancy are unresolved. All original source scans PDF541-554 frozen. No empirically validated predictions or runtime promotions. Next original printed CHAP CI/editorial CII Regiomontanus starts PDF553. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04y_ACCIDENT_RECTIFICATION.md.

@@ -1,3 +1,9 @@
+# Historical astrology original-source progress — latest accepted Regiomontanus chapter
+
+2026-10-17: original Lilly documentary frontier through PDF557 of 894 scans, approximately 62.3% by physical scan position; this is NOT total scientific project progress or numeric table-cell completion. Cumulative **6,215 Lilly + 1,066 Ptolemy = 7,281** source records, consisting of historic instructions, examples, caveats and image-documentary units, not independently successful predictions. Last admission reconstructed period 1647 Regiomontanus source with precise time and ascension arithmetic, retains Asc interpolation ≈3 arcminutes discrepancy. Unverified merchant birth clock and longitudes, all dense source tables digitization still OPEN. Independent astro-validity tests and runtime promotions new in source lane zero. NEXT printed CII natal judgment original PDF558.
+
+---
+
 # Astrology original-source study — updated 2026-10-17 after accident rectification
 
 Accepted first-edition Lilly original PDF body now through page 553 of a scanned 894-page volume: **61.9% by scan position**, not full digitization or predictive model completion. Historical source annotations: **6,145 Lilly + 1,066 Ptolemy = 7,211**. This count comprises conditions, qualifications, historical anecdotes, examples and source-image witness records, not 7,211 independent predictions. Remaining numeric work: Book II planetary hours PDF508-515; Book III ascension/time tables PDF523 and PDF526-533; gestation PDF536 and the merchant speculum graphic PDF543. All partially image-preserved but not fully cell transcribed.
