@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "task_id": "lilly-book3-domain-census-20261017",
+  "audit_status": "ORIGINAL_TOC_CONTENTS_SUBJECT_CENSUS_ACCEPTED_NO_ASTRO_PREDICTION",
+  "source": {
+    "title": "William Lilly Christian Astrology (1647), Book III original printed contents",
+    "archive_id": "b30338724",
+    "original_ocr_url": "https://archive.org/download/b30338724/b30338724_djvu.txt",
+    "full_source_bytes": 2005702,
+    "full_source_sha256": "7c08b55359c41049c5d43901b8da869a326f8eb852e4a30603a4b698533626aa",
+    "contents_char_start": 86275,
+    "contents_char_end": 96952,
+    "reproduction_source": "Local copy of original archived public-domain OCR, verified against an existing independently accepted source hash",
+    "printed_page_precision": "Approximate original OCR TOC page spans; not facsimile adjudication or verified chart-rule conditions"
+  },
+  "findings": {
+    "grouped_major_book_III_topics": 29,
+    "v7_question_count": 79,
+    "v7_family_count": 29,
+    "classification": {
+      "absent": 6,
+      "proxy_only": 6,
+      "partial": 4,
+      "outside_behavioral_survey_scope": 2,
+      "exclude_from_routine_survey": 4,
+      "not_a_participant_trait": 7
+    },
+    "technical_methods_are_not_personality_items": true,
+    "related_prior_accepted_extractions": {
+      "lilly_book_III_religion_and_dreams_20261017_source_units": 31,
+      "ptolemy_book_III_source_claims": 17,
+      "ptolemy_book_IV_life_domains": 9
+    },
+    "do_not_add_unit_counts": "Grouped contents subjects are a different unit type from chapter-body rule claims."
+  },
+  "verification": {
+    "focused_tests_passed": 4,
+    "root_tests_passed": 1101,
+    "root_tests_skipped": 6,
+    "skips": "Swiss astronomical ephemeris files unavailable to these unrelated smoke tests",
+    "ruff": "PASS",
+    "generator_bytes_and_hash_reproduced": true,
+    "original_source_ocr_hash_reproduced": true,
+    "privacy": "No participant records, birth inputs or confidential credentials used."
+  },
+  "behavior": {
+    "existing_live_gpt_changed": false,
+    "existing_railway_server_changed": false,
+    "existing_v7_questions_changed": false,
+    "astrohd_or_hd_chart_scorer_changed": false,
+    "no_chart_result_or_predictive_claim": true,
+    "existing_participants_not_requestioned": true
+  },
+  "deliverables": [
+    "LILLY3-NATAL-DOMAIN-CENSUS-v1.json",
+    "SOURCE-TO-SURVEY-RESULT.md",
+    "VERIFICATION-RECEIPT.json",
+    "build_toc_census.py",
+    "original-public-domain-Lilly-1647-full-ocr.txt",
+    "START-HERE.md"
+  ],
+  "owner_folder": "~/Téléchargements/Life-Patterns-Astrology-Source-Audit-2026-10-17/Lilly-Book-III-Contents-Census/",
+  "remaining_source_lane": "Original 1647 printed page facsimile and chapter-body rule-level conditions for character, understanding, profession, religious/dream aspects, followed by other natal traditions; no scoring before source verification."
+}
