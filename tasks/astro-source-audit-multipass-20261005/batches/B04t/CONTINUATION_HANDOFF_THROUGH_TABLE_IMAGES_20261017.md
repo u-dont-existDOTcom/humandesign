@@ -1,0 +1,9 @@
+# Lilly source research — planetary-hours table image preservation
+
+Authenticated on HumanDesign branch research/astro-b04t-planetary-hour-table-20261017, commit `ed0908c999245c831b483b820c55a4041c654ed4`, matching remote head and source/index/report GitHub readback.
+
+Historical accepted baseline: **5,639 Lilly + 1,066 Ptolemy = 6,705 documentary annotations**. B04t records **R5630–R5639** are eight original table-image page witnesses (PDF508–515) and two navigation records for printed Chapter XCVII on PDF516. The eight original scanned images, table structural schema and source limitations were archived. The estimated **1,488 numeric time boundary cells are NOT fully digitized nor numerically independently verified**; keep this an open separate source-digitization task and never represent these ten page annotations as full numeric table validation. No empirical predictions or runtime changes.
+
+The owner ZIP is already in Linux Downloads `Astrology-Lilly-Planetary-Hour-Table-Original-Scans-20261017.zip`, SHA-256 `b551e109c36f06fdfdde5150793f8c251cbc1af21a41181fbf8fc755a4bc0371`. Full extraction passed CRC, per-file SHA hashes, 15 replayed tests; 20 integrated tests passed.
+
+**Next:** isolated B04u for **printed Chapter XCVII / editorial sequential XCVIII**, beginning original PDF516/printed482 and continuing to original PDF520/printed486 with Lilly's **11 June 1647** signed conclusion. Book III begins PDF521 title page. Read all original 516–521 scans visually, distinguish days and nights and twelve unequal planetary-hour divisions, example calculations, practical timing methods, calendar and computational caveats. Then source-first/reverse-map, admissions and tests, owner ZIP, guarded append-only canonical index, GitHub readback and handoff. The source study is OPEN until this printed chapter, conclusion and fully transcribed table numeric source coverage are resolved. Next record **R5640**.
