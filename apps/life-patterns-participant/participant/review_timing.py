@@ -94,7 +94,15 @@ def clarification_progress(payload: dict) -> dict:
         pending = [payload["pending_clarification"]]
     total = len(pending) if status == "clarification_needed" else 0
     ready = status == "ready"
-    if ready:
+    closed = bool(payload.get("clarification_intake_closed"))
+    if closed and not ready:
+        stage = "final_evidence_review_no_further_questions"
+        message = (
+            "You chose no more questions. No clarification questions remain; "
+            "independent evidence synthesis is still pending and may take time. "
+            "Unanswered distinctions remain unknown."
+        )
+    elif ready:
         stage = "independent_review_complete"
         message = (
             "Independent evidence review is complete. No more reviewer questions are "
@@ -127,8 +135,8 @@ def clarification_progress(payload: dict) -> dict:
         "clarifications_answered_or_skipped_total": len(history),
         "current_batch_question_count": total,
         "current_batch_only": True,
-        "overall_clarifications_remaining": 0 if ready else None,
-        "overall_remaining_known": ready,
+        "overall_clarifications_remaining": 0 if ready or closed else None,
+        "overall_remaining_known": ready or closed,
         "full_evidence_review_ready": ready,
         "remaining_after_ready": []
         if not ready

@@ -1,0 +1,384 @@
+{
+  "schema": "astrology-tradition-to-life-patterns-v7-domain-audit-v0",
+  "status": "SOURCE_CONVENTIONS_AND_MEASUREMENT_COVERAGE_ONLY_NOT_ASTROLOGY_VALIDATION",
+  "survey_authority": "tasks/scenario-survey-v7-redesign-20260922/interviewer-bank-v7.json",
+  "survey_version": "scenario-bank-v7.0-20260922",
+  "source_conventions": [
+    {
+      "id": "PT-III-SOUL",
+      "work": "Ptolemy Tetrabiblos III.13–14 On the Quality of the Soul",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/3D%2A.html",
+      "attests": "mind and reason (Mercury), sensory/affective soul (Moon), philosophical and religious dispositions in natal interpretation",
+      "limitation": "Interpretive convention, not proven ability to predict participant scores."
+    },
+    {
+      "id": "LILLY-9-HOUSE",
+      "work": "William Lilly Christian Astrology I, Ninth House description (1647/1659)",
+      "url": "https://en.wikisource.org/wiki/Page%3AChristian_Astrology_(Lilly%2C_1659).djvu/80",
+      "attests": "religion/clergy, dreams, visions, books, learning, long travel as ninth-house subjects",
+      "limitation": "House topic list in introductory/horary material, not a prevalidated quantified natal measurement."
+    },
+    {
+      "id": "LILLY-NATAL-III",
+      "work": "Lilly Christian Astrology Book III: Nativities, chapters on Ninth House",
+      "url": "https://books.google.com/books?id=JBB8ycvNCwYC",
+      "attests": "Book III includes natal judgements on ninth-house journeys and religion (contents)",
+      "limitation": "Full natal rule-level evidence and direct predictive direction not yet extracted here."
+    },
+    {
+      "id": "PSYCH-MEANING",
+      "work": "Meaning in Life Questionnaire source study",
+      "url": "https://doi.org/10.1037/0022-0167.53.1.80",
+      "attests": "distinct presence of meaning vs search for meaning",
+      "limitation": "External psychological construct, not an astrological natal rule."
+    }
+  ],
+  "interpretation_policy": {
+    "chart_domain_claim": "Historical chart convention is not empirical predictive validity.",
+    "survey_coverage": "Direct means a V7 question asks the relevant behavioral construct, not that astrology successfully predicts it.",
+    "cross_systems": "AstroHD reduced six-rule lunar/Jupiter/Saturn profile is separate from canonical HD V4.3 and from classical natal astrology.",
+    "prediction": "No new chart mapping may be fit from same participant after responses; freeze on independent people first.",
+    "instrument_safety": "Some chart topics are sensitive life outcomes and should not be smuggled into a routine personality questionnaire."
+  },
+  "matrix": [
+    {
+      "id": "religion_worldview_spiritual_belief",
+      "claim_sources": [
+        "PT-III-SOUL",
+        "LILLY-9-HOUSE",
+        "LILLY-NATAL-III"
+      ],
+      "survey_status": "absent",
+      "families": [],
+      "measurement": "Beliefs, shifts in worldview, personal practice separate from intensity of supernatural conviction",
+      "pilot_item_ids": [
+        "EM06"
+      ]
+    },
+    {
+      "id": "awe_wonder",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "absent",
+      "families": [],
+      "measurement": "Frequency and intensity of awe; specific awe is a modern experiential extrapolation rather than an explicit classical natal item",
+      "pilot_item_ids": [
+        "EM03"
+      ]
+    },
+    {
+      "id": "self_surprise",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "absent",
+      "families": [],
+      "measurement": "Surprise about one's own thoughts/actions versus about world/other people",
+      "pilot_item_ids": [
+        "EM01",
+        "EM02"
+      ]
+    },
+    {
+      "id": "sudden_insight_revelation",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "proxy_only",
+      "families": [
+        "understanding",
+        "development"
+      ],
+      "measurement": "Sudden lived realization, deep revision, impact on behavior; V7 only tests planning/problem understanding and life-phase changes",
+      "pilot_item_ids": [
+        "EM04"
+      ]
+    },
+    {
+      "id": "life_predictability_perspective_shifts",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "proxy_only",
+      "families": [
+        "rhythm_change",
+        "development"
+      ],
+      "measurement": "Felt predictability of one's life and episodes of abrupt self-revision",
+      "pilot_item_ids": [
+        "EM05"
+      ]
+    },
+    {
+      "id": "meaningful_coincidence_synchronicity",
+      "claim_sources": [
+        "LILLY-9-HOUSE"
+      ],
+      "survey_status": "absent",
+      "families": [],
+      "measurement": "Noticing coincidences, assigning meaning, later appraisal; historical dreams/visions do NOT directly assert synchronicity frequency",
+      "pilot_item_ids": [
+        "EM07"
+      ]
+    },
+    {
+      "id": "perceived_higher_guidance",
+      "claim_sources": [
+        "LILLY-9-HOUSE"
+      ],
+      "survey_status": "absent",
+      "families": [],
+      "measurement": "Frequency and conviction in a sense of being guided; neutral to divine/nondivine interpretation; classical source is indirect",
+      "pilot_item_ids": [
+        "EM06"
+      ]
+    },
+    {
+      "id": "dreams_visions_omens",
+      "claim_sources": [
+        "LILLY-9-HOUSE"
+      ],
+      "survey_status": "absent",
+      "families": [],
+      "measurement": "Dream recall, vivid dreams, dream-meaning interpretations separate from literal predictive claims",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "personal_meaning_life_mission",
+      "claim_sources": [
+        "LILLY-NATAL-III"
+      ],
+      "survey_status": "proxy_only",
+      "families": [
+        "purpose"
+      ],
+      "measurement": "Meaning in ordinary life, felt purpose; V7 G16 asks worth of one volunteer project, not global meaning",
+      "pilot_item_ids": [
+        "EM08"
+      ]
+    },
+    {
+      "id": "contribution_legacy",
+      "claim_sources": [
+        "LILLY-NATAL-III"
+      ],
+      "survey_status": "proxy_only",
+      "families": [
+        "purpose",
+        "resources"
+      ],
+      "measurement": "Difference between wish to matter and perceived actual impact on others/world",
+      "pilot_item_ids": [
+        "EM08"
+      ]
+    },
+    {
+      "id": "intellect_learning_philosophical_method",
+      "claim_sources": [
+        "PT-III-SOUL",
+        "LILLY-9-HOUSE"
+      ],
+      "survey_status": "partial",
+      "families": [
+        "understanding",
+        "method",
+        "practice_focus"
+      ],
+      "measurement": "Real-world epistemic methods captured; broader philosophy and fascination not directly measured",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "social_roles_recognition",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "partial",
+      "families": [
+        "external_role",
+        "group_entry",
+        "resources"
+      ],
+      "measurement": "How one enters roles and responds to recognition; not status life history",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "friendship_social_bonds",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "direct",
+      "families": [
+        "connections",
+        "friend_company",
+        "trust"
+      ],
+      "measurement": "Relationship behaviors under situational constraints",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "romance_attachment_relationships",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "direct",
+      "families": [
+        "romance"
+      ],
+      "measurement": "Attraction, ongoing closeness and physical-affection preferences",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "ethics_conscience_values",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "partial",
+      "families": [
+        "shared_meal_needs",
+        "correction",
+        "promise",
+        "trust"
+      ],
+      "measurement": "Moral responses to dilemmas partially sampled, not complete value commitments",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "career_vocation_ambition",
+      "claim_sources": [
+        "LILLY-NATAL-III"
+      ],
+      "survey_status": "proxy_only",
+      "families": [
+        "work_energy",
+        "purpose"
+      ],
+      "measurement": "Work sustainability/project choices do not show actual occupation, vocational calling or ambitions",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "money_resources_possessions",
+      "claim_sources": [
+        "LILLY-NATAL-III"
+      ],
+      "survey_status": "partial",
+      "families": [
+        "resources"
+      ],
+      "measurement": "Preference and use of resources measured; actual wealth events and long-term economic change not",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "creativity_play_aesthetic_interests",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "absent",
+      "families": [],
+      "measurement": "Creative behavior, taste, art engagement and aesthetic sensitivity not measured by social planning scenes",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "family_home_roots",
+      "claim_sources": [
+        "LILLY-NATAL-III"
+      ],
+      "survey_status": "absent",
+      "families": [],
+      "measurement": "Home/family belonging, attitudes to relatives and identity over upbringing; sensitive history not compulsory",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "parenting_children",
+      "claim_sources": [
+        "LILLY-NATAL-III"
+      ],
+      "survey_status": "absent",
+      "families": [],
+      "measurement": "Optional actual life events and caregiving values, not forced hypothetical parenthood or speculative medical prediction",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "foreign_travel_cross_cultural_experience",
+      "claim_sources": [
+        "LILLY-9-HOUSE",
+        "LILLY-NATAL-III"
+      ],
+      "survey_status": "proxy_only",
+      "families": [
+        "understanding"
+      ],
+      "measurement": "Trip planning scene is not longitudinal travel, exploration, or foreign-cultural interest",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "emotional_baseline_regulation",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "partial",
+      "families": [
+        "emotion",
+        "retreat"
+      ],
+      "measurement": "Background emotion/social recovery sampled; atypical mood not comprehensively covered",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "physical_vitality_temperament",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "partial",
+      "families": [
+        "work_energy",
+        "surroundings"
+      ],
+      "measurement": "Work-related energy and room sensitivity sampled; no biomedical predictions justified",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "adversity_stress_fear_response",
+      "claim_sources": [
+        "PT-III-SOUL"
+      ],
+      "survey_status": "partial",
+      "families": [
+        "risk_cues",
+        "emotion",
+        "retreat"
+      ],
+      "measurement": "A subset of reactions to ordinary uncertainty/strain, not life trauma history",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "life_turning_points_and_event_timing",
+      "claim_sources": [
+        "LILLY-NATAL-III"
+      ],
+      "survey_status": "proxy_only",
+      "families": [
+        "development",
+        "rhythm_change"
+      ],
+      "measurement": "Changes in choices and routines, not verified timelines, external events, or predictive historical dates",
+      "pilot_item_ids": []
+    },
+    {
+      "id": "health_loss_mortality_forecasts",
+      "claim_sources": [
+        "LILLY-NATAL-III"
+      ],
+      "survey_status": "not_suitable_for_routine_personality_survey",
+      "families": [],
+      "measurement": "Sensitive event/medical domain; historical tradition's claim is not a safe diagnosis or predictive instrument",
+      "pilot_item_ids": []
+    }
+  ],
+  "coverage_notes": {
+    "counts_are_descriptive_only": true,
+    "not_full_astrological_corpus": "This is a first source-anchored atlas over representative classic natal and house meanings; not yet every chapter or Jyotish/Hellenistic rule.",
+    "owner_gap": "Need chapter-level inventory from all retained Lilly, Dariot, Ptolemy, Hellenistic and Jyotish texts, each bound to native feature/rule and testable outcome; no target-aware tuning.",
+    "pre_registration": "Future scoring work must have owner-independent source feature mapping and controls before responses, not add points based on compelling case stories."
+  }
+}

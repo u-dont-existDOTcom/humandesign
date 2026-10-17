@@ -75,13 +75,11 @@ def build() -> dict[str, bytes]:
         if constraint not in text:
             raise ValueError("A frozen interview/review constraint disappeared")
     files[INSTR] = text.encode("utf-8")
-    files[ACTION] = (
-        ROOT / "apps/life-patterns-participant/participant/static/action-openapi.yaml"
-    ).read_bytes()
+    files[ACTION] = (TASK / "frozen_source/action-openapi-v1.7.0.json").read_bytes()
     contract = json.loads(files[ACTION])
     if contract["info"]["version"] != "1.7.0":
         raise ValueError("New Action contract version missing")
-    files[GUIDE] = (REF / "ACTION-HANDOFF-GUIDE-v1.md").read_bytes()
+    files[GUIDE] = (TASK / "frozen_source/ACTION-HANDOFF-v1.7.0.md").read_bytes()
     files["UPDATE-EXISTING-GPT.md"] = (TASK / "UPDATE-EXISTING-GPT.md").read_bytes()
     files["TEST-RAILWAY-FINISH.md"] = (TASK / "TEST-RAILWAY-FINISH.md").read_bytes()
     count = sum(name.startswith("knowledge/") for name in files)

@@ -172,7 +172,7 @@ def test_complete_ready_review_to_secure_web_finish_without_reinterview(flow):
     assert fake.count == 0
 
 
-def test_never_issue_a_finish_link_for_queued_or_unknown_review(flow):
+def test_saved_queued_review_has_private_portal_but_unknown_review_does_not(flow):
     s, _, app, c = flow
     start = c.post(
         "/api/gpt/reviews",
@@ -185,13 +185,12 @@ def test_never_issue_a_finish_link_for_queued_or_unknown_review(flow):
     )
     assert start.status_code == 200
     rid = start.json()["review_id"]
-    assert (
-        c.post(
-            f"/api/gpt/reviews/{rid}/finish-link",
-            headers=auth(s.submission_token),
-        ).status_code
-        == 409
-    )
+    token = issue(c, s, rid)
+    assert exchange(c, token).status_code == 200
+    state = c.get("/api/finish/state").json()
+    assert state["status"] == "queued"
+    assert state["clarification_count"] == 0
+    assert "cf003_questions" not in state
     assert (
         c.post(
             "/api/gpt/reviews/R-" + "f" * 32 + "/finish-link",
@@ -333,7 +332,7 @@ def test_existing_clarification_history_and_skips_preserved_through_final_storag
     )
 
 
-def test_issue_link_rechecks_source_ready_when_review_changes_after_link_creation(flow):
+def test_issue_link_rechecks_terminal_review_after_creation(flow):
     s, _, app, c = flow
     rid = ready_review(c, s, candidate_record())
     raw = issue(c, s, rid)
@@ -341,10 +340,10 @@ def test_issue_link_rechecks_source_ready_when_review_changes_after_link_creatio
         db.execute("BEGIN IMMEDIATE")
         row = db.execute("SELECT payload FROM gpt_review_jobs WHERE id=?", (rid,)).fetchone()
         job = app.state.store.decode(row[0])
-        job["status"] = "paused"
+        job["status"] = "withdrawn"
         db.execute(
             "UPDATE gpt_review_jobs SET status=?,payload=? WHERE id=?",
-            ("paused", app.state.store.encode(job), rid),
+            ("withdrawn", app.state.store.encode(job), rid),
         )
         db.commit()
     assert exchange(c, raw).status_code == 409

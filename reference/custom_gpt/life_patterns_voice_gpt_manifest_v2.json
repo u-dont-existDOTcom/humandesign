@@ -34,7 +34,7 @@
     },
     {
       "path": "reference/custom_gpt/ACTION-HANDOFF-GUIDE-v1.md",
-      "sha256": "27d0a1f4119e51b676bb5c8a2a8c8f8969d7e68528882b71b3dacc0b655245c6"
+      "sha256": "92b3f2a2da2a8125d5bff56b39af987238d79e358f40b390b43c63f589823a37"
     },
     {
       "path": "reference/custom_gpt/TENDENCY-FIRST-GUIDE-v1.json",
@@ -63,7 +63,7 @@
   },
   "action_schema": {
     "path": "apps/life-patterns-participant/participant/static/action-openapi.yaml",
-    "sha256": "c73748284535e10436e94f1c8d7dc5a564181e8e189b26294eb66a4594f3d649",
+    "sha256": "cee7f43f01895960d7eb74ccad5d6d833c2b56507acb3d1c735b4f04c56b726a",
     "schema_url": "https://life-patterns-participant-production.up.railway.app/action-openapi.yaml",
     "authentication": "api_key_bearer",
     "privacy_policy_url": "https://life-patterns-participant-production.up.railway.app/privacy",
@@ -95,5 +95,10 @@
     "action_version": "1.7.0",
     "action_name": "issueLifePatternsFinishLink",
     "current_bundle": "reference/custom_gpt/releases/Life-Patterns-GPT-Railway-Finish-2026-10-16.zip"
+  },
+  "early_review_portal_20261017": {
+    "status": "source_not_deployed",
+    "action_version": "1.8.0",
+    "bundle": "reference/custom_gpt/releases/Life-Patterns-GPT-Early-Review-2026-10-17.zip"
   }
 }

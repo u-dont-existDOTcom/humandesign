@@ -15,7 +15,7 @@ from dataclasses import dataclass
 from .store import Conflict, Missing, Store, digest
 
 LINK_TTL_SECONDS = 20 * 60
-SESSION_TTL_SECONDS = 2 * 60 * 60
+SESSION_TTL_SECONDS = 7 * 24 * 60 * 60
 COOKIE_NAME = "lp_finish"
 
 
@@ -62,8 +62,16 @@ class FinishSessions:
             row = db.execute(
                 "SELECT status FROM gpt_review_jobs WHERE id=?", (review_id,)
             ).fetchone()
-            if not row or row[0] != "ready":
-                raise Conflict("Finishing is available only after independent review is ready.")
+            if not row or row[0] not in {
+                "queued",
+                "processing",
+                "clarification_needed",
+                "ready",
+                "paused",
+                "error",
+                "resource_limited",
+            }:
+                raise Conflict("Only an existing active or review-ready record can open Railway.")
             submitted = db.execute(
                 "SELECT 1 FROM gpt_review_finalizations WHERE review_id=?", (review_id,)
             ).fetchone()
@@ -101,8 +109,16 @@ class FinishSessions:
             ready = db.execute(
                 "SELECT status FROM gpt_review_jobs WHERE id=?", (review_id,)
             ).fetchone()
-            if not ready or ready[0] != "ready":
-                raise Conflict("Review is no longer ready; use the original conversation.")
+            if not ready or ready[0] not in {
+                "queued",
+                "processing",
+                "clarification_needed",
+                "ready",
+                "paused",
+                "error",
+                "resource_limited",
+            }:
+                raise Conflict("Review is no longer available; use the original conversation.")
             if db.execute(
                 "SELECT 1 FROM gpt_review_finalizations WHERE review_id=?", (review_id,)
             ).fetchone():

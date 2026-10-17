@@ -27,9 +27,10 @@ def public_question(question: dict) -> dict:
 
     purpose = str(question.get("participant_purpose") or "").strip()
     if not purpose:
-        purpose = active_participant_purpose(str(question["route_id"])) or str(
-            question.get("missing_distinction") or ""
-        ).strip()
+        purpose = (
+            active_participant_purpose(str(question["route_id"]))
+            or str(question.get("missing_distinction") or "").strip()
+        )
     if not purpose:
         purpose = "the specific recurring response or preference this clarification is resolving."
     return {
@@ -221,6 +222,46 @@ def run_fast_review(
     if policy_refresh_required:
         prior_meta = {}
     revision = source_revision(job["candidate_sha256"], history)
+    if job.get("clarification_intake_closed"):
+        # The participant can end QUESTION INTAKE without claiming that the
+        # independent evidence review is complete. Rebuild from the immutable
+        # source and all saved answers/skips, then run the existing independent
+        # full evidence reviewer with behavioral questioning forbidden.
+        state = _rebuild_source_state(job, instrument, version)
+        state["review_only"] = True
+        state["phase"] = "ready"
+        state["pending_question"] = None
+        meta = state["fast_review"]
+        meta.update(
+            stage="final_synthesis",
+            pending_questions=[],
+            deferred_audit_pending=False,
+            source_revision=revision,
+            participant_declined_further_clarifications=True,
+        )
+        if progress:
+            progress("final_synthesis")
+        wrapped = ProgressProvider(provider, progress, fast=False)
+        prepared = dict(job, worker_state=state)
+        status, receipt, saved, question = legacy_run(prepared, provider=wrapped)
+        if status == "clarification_needed" or question is not None:
+            raise RuntimeError("closed_clarification_intake_cannot_produce_new_question")
+        if saved:
+            saved_meta = saved.setdefault("fast_review", {})
+            saved_meta.update(
+                stage="legacy_continuation",
+                source_revision=revision,
+                final_review_completed=status == "ready",
+                participant_declined_further_clarifications=True,
+            )
+        receipt.update(
+            review_protocol=PROTOCOL,
+            source_revision=revision,
+            final_review_completed=status == "ready",
+            participant_declined_further_clarifications=True,
+        )
+        return status, receipt, saved, None
+
     # After full synthesis starts, preserve the Engine's own evidence/clarification
     # continuation mechanics. Existing legacy jobs never enter this adapter.
     if prior_meta.get("stage") == "legacy_continuation":

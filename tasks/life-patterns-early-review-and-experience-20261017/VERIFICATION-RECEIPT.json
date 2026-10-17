@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "task_id": "life-patterns-early-review-and-experience-20261017",
+  "date": "2026-10-17",
+  "parent_goals": {
+    "participant_review": "Provide secure Railway question answering and status immediately after first saved independent review, not only after ready. Participant may close further question intake, with unknowns explicitly preserved; independent final review remains mandatory.",
+    "scientific_coverage": "Document missing source-defined chart topics compared with existing neutral survey; add optional separately versioned first-person experience module, with no new chart scoring."
+  },
+  "current_status": "SOURCE_READY_TESTED_PENDING_MERGE_AND_DEPLOY",
+  "implementation": {
+    "existing_gpt_review_id_retained": true,
+    "early_link_statuses": [
+      "queued",
+      "processing",
+      "clarification_needed",
+      "ready",
+      "paused",
+      "error",
+      "resource_limited"
+    ],
+    "one_time_link_ttl_seconds": 1200,
+    "private_session_ttl_days": 7,
+    "csrf_and_same_origin": true,
+    "fast_batch_answers": true,
+    "legacy_single_answers": true,
+    "browser_auto_check_seconds_visible": 20,
+    "browser_auto_check_seconds_hidden": 60,
+    "future_question_count_before_close": "unknown",
+    "after_consent_to_close_question_intake_future_questions": 0,
+    "independent_ready_required_before_final_submission": true,
+    "original_interview_unchanged": true,
+    "birth_or_chart_data_requested": false,
+    "new_action_operations": 0,
+    "existing_action_operation_updated": "issueLifePatternsFinishLink",
+    "action_version": "1.8.0",
+    "current_private_gpt_editor_changed": false
+  },
+  "pilot": {
+    "separate_opt_in_version": "life-patterns-experience-meaning-pilot-v0",
+    "optional_items": 8,
+    "default_short_optional": 4,
+    "astrology_scoring_authorized": false,
+    "existing_participant_required_to_repeat": false
+  },
+  "survey_chart_gap": {
+    "survey_v7_questions": 79,
+    "survey_v7_families": 29,
+    "source_anchored_domain_candidates": 26,
+    "absent": 9,
+    "proxy_only": 7,
+    "partial": 7,
+    "direct": 2,
+    "unsuitable_for_routine_survey": 1,
+    "inventory_type": "limited_first_pass_not_exhaustive_lilly_hellenistic_jyotish",
+    "classical_chart_topic_conventions_not_empirical_chart_prediction": true
+  },
+  "tests": {
+    "focus_early_review": 8,
+    "pilot_and_gap": 4,
+    "root_repo_passed": 1089,
+    "root_repo_skipped": 6,
+    "whole_participant_app_passed": 256,
+    "browser_fast_batch": "PASS synthetic mobile 390px",
+    "browser_decline_further": "PASS synthetic mobile 390px",
+    "browser_legacy_single": "PASS synthetic mobile 390px",
+    "real_production_review_accessed": false,
+    "docker_build": "PASS",
+    "no_private_answers_or_credentials_in_release": true
+  },
+  "owner_downloads": {
+    "folder": "~/Téléchargements/Life-Patterns-Early-Railway-Review-2026-10-17/",
+    "zip": "~/Téléchargements/Life-Patterns-GPT-Early-Review-2026-10-17.zip",
+    "exact_copy_verified": true
+  },
+  "remaining_actions": [
+    "source_commit_merge",
+    "isolated_railway_deploy",
+    "live_checks",
+    "owner_private_existing_gpt_editor_update"
+  ]
+}
