@@ -1,3 +1,9 @@
+# Original 1647 printed CXXVIII historical medical source accepted
+
+2026-10-17 Africa/Dakar UTC+0. B06e source R7696–R7808 accepted locally, after remote SHA readback 7,808 Lilly + 1,066 Ptolemy = 8,874 original documentary annotations. Eight history-only medical topic groups preserved; no clinical accuracy or scoring promotions. NEXT original printed CXXIX curability on PDF619–620, followed by printed CXXX servants PDF620.
+
+---
+
 # Original Lilly sixth-house historical taxonomy accepted; eyesight next
 
 2026-10-17 Africa/Dakar UTC+0. First-edition B06d R7584–R7695 (112 historic records, 150 semantic source-list items) source-only accepted locally. After verified remote readback 7,695 Lilly plus 1,066 Ptolemy = 8,761 historical annotations. No genuine clinical diagnoses or life-event forecasts validated; zero scoring promotions. NEXT original printed CXXVIII on eye infirmities starts PDF615/printed581.

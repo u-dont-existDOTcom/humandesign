@@ -1,3 +1,9 @@
+# Original Lilly source through printed medical chapter CXXVIII — 2026-10-17
+
+After verified publication **8,874 historical source annotations** (7,808 Lilly + 1,066 Ptolemy). First-edition physical source frontier PDF619/894 (**69.2% scanned page position only**). Printed CXXVIII adds 113 historic subchapter annotations on sight, hearing, speech, teeth, neurological stigma, urinary stone, gout and falls. Next printed CXXIX on historical disease curability begins lower PDF619 and ends upper PDF620. No human clinical or astrological predictions independently validated and no runtime rules promoted. Numerical tables and untouched blind tests remain open.
+
+---
+
 # Lilly original medical source through unnumbered sixth house — 2026-10-17
 
 After verified remote publication **8,761 historical annotations** (7,695 Lilly + 1,066 Ptolemy), first-edition scan position PDF615/894 (**68.8% physical page-position proxy only**, not predictive program completion). The unnumbered sixth-house source adds 112 documentary notes including 26 planetary/zodiac table cells with 150 historically named terms. No clinical validation and zero runtime source rules. The next printed CHAP CXXVIII on eyesight begins on PDF615 after the sixth-house source; hearing, speech and teeth questions follow later. Historic numeric tables, exact rule implementation and independent blinded human tests remain open.
