@@ -1,3 +1,9 @@
+# Original Lilly accident-based rectification completed as historical source; Regiomontanus next
+
+2026-10-17: accepted locally R5958-R6145 (188 new), cumulative if verified **6,145 Lilly + 1,066 Ptolemy = 7,211** historical source records. Four known merchant life accidents fitted retrospectively; main first-edition fever-age mismatch 20y10m versus chosen 19y10m10d and biquintile 105/205 discrepancy are unresolved. All original source scans PDF541-554 frozen. No empirically validated predictions or runtime promotions. Next original printed CHAP CI/editorial CII Regiomontanus starts PDF553. See state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04y_ACCIDENT_RECTIFICATION.md.
+
+---
+
 # Lilly source frontier — Animodar documented; accidents next
 
 2026-10-17: 34 historical source annotations R5924–R5957 locally admitted. After verified publication **5,957 Lilly + 1,066 retained Ptolemy = 7,023** historic source records. Animodar select new/full-Moon degree and essential-dignity winner, then closest Asc/MC. Lilly expressly rates Animodar and Trutine below life-accident rectification; his worked merchant example compared with previously accident-adjusted chart and does not prove actual birth time. Next CHAP C/editorial CI begins original PDF541, accident-based natal correction. Lilly book physical source frontier **~60%** of 894-page scan, but numeric table transcription and independent human validation remain OPEN. Full progress details: state/ASTROLOGY_SOURCE_STUDY_PROGRESS_20261017.md.

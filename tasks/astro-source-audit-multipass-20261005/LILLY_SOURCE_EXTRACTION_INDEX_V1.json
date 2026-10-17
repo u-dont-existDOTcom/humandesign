@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_PRINTED_XCIX_ANIMODAR_SOURCE_ADMITTED_NEXT_ACCIDENTS_RECTIFICATION_OPEN",
-  "records_count": 5957,
+  "status": "BOOK_III_ACCIDENT_RECTIFICATION_ORIGINAL_SOURCE_ACCEPTED_NEXT_REGIOMONTANUS",
+  "records_count": 6145,
   "read_numbered_chapters": [
     1,
     2,
@@ -104,7 +104,8 @@
     97,
     98,
     99,
-    100
+    100,
+    101
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -632,27 +633,42 @@
       "records_count": 34,
       "sha256": "e4b6f0398a087351e290154436079549d20eb3c9bd2a75606d5ae63d4c555a54",
       "scope": "Original Lilly 1647 printed CHAP XCIX/editorial C Animodar rectification; PDF539–540/printed505–506, following accidents CHAP C PDF541 navigation only. 31 source clauses plus three next-navigation, 5 passage spans and 22 limits. Ptolemaic preceding syzygy Sun/Moon above horizon, dignity winner/tie and Asc/MC proximity rules; example merchant 15 Sept 1616 full Moon, Sun 2d32 Libra, Saturn choice, estimated 9d02 Capricorn ascendant. Previously accident-adjusted chart cannot independently verify birth time. Lilly explicitly says Animodar and Trutine less sure than accidents."
+    },
+    {
+      "id": "B04y",
+      "path": "batches/B04y/RULES.json",
+      "records_count": 188,
+      "sha256": "2f3cdfdc63f21fe8f751e2114ccf523dc23dd64789fc11dba0376bc78bb02e0d",
+      "scope": "Original 1647 Lilly printed CHAP C/editorial CI accident-based rectification and graphical speculum, PDF541-553; 185 substantive historical source clauses and 3 following Regiomontanus navigation markers, 13 original page spans and 25 outstanding limits. Prior merchant known accidents and alternative promissors, original biquintile 105/205 discrepancy, term off-by-one warning, 16y7m in-sample career fit, 20y10m fever target versus fitted 19y10m10d. No independent true birth time or unseen event verified."
     }
   ],
   "next": {
-    "pdf_page": 541,
-    "printed_page": 507,
-    "chapter": "CI",
-    "printed_chapter_numeral": "C",
-    "heading": "The Rectification of a Nativity by Accidents, and framing of an Astrologicall Speculum",
+    "pdf_page": 553,
+    "printed_page": 519,
+    "chapter": "CII",
+    "printed_chapter_numeral": "CI",
+    "heading": "To erect a Scheame of heaven by the Tables of Regiomontanus",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original PDF541/printed507 starts new named chapter; primary text continues PDF542 onward. Source-first needed before rules formalization.",
-    "outstanding_numeric_transcription": [
+    "position": "Original PDF553 bottom after the accident-rectification horizontal divider; printed Regiomontanus demonstration continues PDF554 onward.",
+    "outstanding_historical_numeric_data": [
       {
-        "kind": "BOOK_II_PLANETARY_HOUR_BOUNDARIES",
-        "pdf_first": 508,
-        "pdf_last": 515
+        "kind": "BOOK_II_PLANETARY_HOUR_FULL_DIGITIZATION",
+        "original_pdf_pages": [
+          508,
+          509,
+          510,
+          511,
+          512,
+          513,
+          514,
+          515
+        ]
       },
       {
-        "kind": "BOOK_III_RIGHT_AND_OBLIQUE_ASCENSIONS",
-        "pdf_pages": [
+        "kind": "BOOK_III_ASCENSION_NUMERIC_TABLES",
+        "original_pdf_pages": [
           523,
           526,
           527,
@@ -665,8 +681,16 @@
         ]
       },
       {
-        "kind": "BOOK_III_GESTATION_TABLE",
-        "pdf_page": 536
+        "kind": "BOOK_III_GESTATION_NUMERIC_TABLE",
+        "original_pdf_pages": [
+          536
+        ]
+      },
+      {
+        "kind": "MERCHANT_SPECULUM_GRAPHIC_GRID",
+        "original_pdf_pages": [
+          543
+        ]
       }
     ]
   },
@@ -675,7 +699,7 @@
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04x_ANIMODAR_COMPLETE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B04y_ACCIDENT_RECTIFICATION.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -743,5 +767,6 @@
   "chapter_XCVIII_source_acceptance_note": "114 original historical annotations R5640–R5753: 109 printed method and signed conclusion clauses plus 5 Book III title navigation. Three printed examples arithmetic verified for Monday at 9:30 AM Mars, 5:20 PM Sun, 11:10 PM Mars; no independent human outcome or ephemeris. Table 508–515 cell digitization remains open.",
   "book_iii_intro_source_note": "71 original-source annotations R5754-R5824 across PDF521-534, 14 source passage groups, 24 limits; printed arithmetic contradiction 142d20m+90d as 230d20m instead of 232d20m and resulting ascendant source discrepancy preserved; all numeric grids not fully machine-transcribed. No empirically validated natal rectification.",
   "book_iii_trutine_source_note": "99 historic source annotations R5825-R5923. Sign-level use sometimes, degree within 1–3° often fails, 13° Moon/conception acceptance band and 1616/1615 calendar example, life-accident rectification preferred, exact conception-hour alternative explicitly not credited; none independently human-validated.",
-  "book_iii_Animodar_acceptance_note": "34 source-only records R5924–R5957 (31 Animodar clauses, 3 next Accidents chapter navigation), 5 spans, 22 limits. Historical practitioner compares against already accident-corrected natal figure, gives competing Venus possible dignity, and explicitly judges Animodar and Trutine less sure than accident rectification; no independent birth time verified."
+  "book_iii_Animodar_acceptance_note": "34 source-only records R5924–R5957 (31 Animodar clauses, 3 next Accidents chapter navigation), 5 spans, 22 limits. Historical practitioner compares against already accident-corrected natal figure, gives competing Venus possible dignity, and explicitly judges Animodar and Trutine less sure than accident rectification; no independent birth time verified.",
+  "chapter_CI_source_acceptance_note": "188 original source annotations R5958-R6145, 13 passage groups, 25 limits. Historical retrospective fit to four known merchant events; fever 20y10m reported initially vs 19y10m10d selected direction remains mismatched; original 105deg44 biquintile print versus 205deg44 correction source. Multiple free candidate aspects and directions, accepts year-only event ages and birth-time adjustment backward/forward. No out-of-sample success."
 }

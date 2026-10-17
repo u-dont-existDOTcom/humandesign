@@ -16,7 +16,14 @@ class SourceBoundary(unittest.TestCase):
   self.assertEqual(hashlib.sha256(raw).hexdigest(),"5c8ae2ec443d6c2f0a4d360de66a7631ee09412ee41c318e56c75d7ff4666fd1")
   if ROOT is not None:
    live=ROOT/"tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json"
-   if live.is_file():self.assertEqual(live.read_bytes(),raw)
+   if live.is_file():
+    actual=J(live)
+    if actual["records_count"]==5957:
+     self.assertEqual(live.read_bytes(),raw)
+    else:
+     self.assertEqual(actual["records_count"],6145)
+     self.assertEqual(actual["batches"][:-1],I["batches"])
+     self.assertEqual(actual["batches"][-1]["id"],"B04y")
   self.assertEqual(I["records_count"],5957)
   self.assertEqual(I["batches"][-1]["id"],"B04x")
   self.assertEqual(I["next"]["chapter"],"CI")

@@ -1,3 +1,13 @@
+# Astrology original-source study — updated 2026-10-17 after accident rectification
+
+Accepted first-edition Lilly original PDF body now through page 553 of a scanned 894-page volume: **61.9% by scan position**, not full digitization or predictive model completion. Historical source annotations: **6,145 Lilly + 1,066 Ptolemy = 7,211**. This count comprises conditions, qualifications, historical anecdotes, examples and source-image witness records, not 7,211 independent predictions. Remaining numeric work: Book II planetary hours PDF508-515; Book III ascension/time tables PDF523 and PDF526-533; gestation PDF536 and the merchant speculum graphic PDF543. All partially image-preserved but not fully cell transcribed.
+
+The rectification by known accidents chapter PDF541-553 is now documented with 188 source annotations; a prior known apprenticeship event at 16y7m is matched to MC/Mars trine, but the fever target initially at 20y10m conflicts with chosen Asc/Mars direction around 19y10m10d, alongside a 105 vs 205 degree source misprint. Lilly allows retrospective moving of Asc/MC to make known events agree. Independent true-time matching, out-of-sample forecast testing, blinded comparisons against flexible controls, and promotion into the executable runtime remain open and unverified in this source lane.
+
+Next original chapter: printed CI/editorial CII, Regiomontanus chart erection begins original PDF553. Cross-text empirical overall completion percentage cannot responsibly be assigned.
+
+---
+
 # Astrology source study — outcome-focused progress and remaining work
 2026-10-17 (Africa/Dakar UTC+0).
 

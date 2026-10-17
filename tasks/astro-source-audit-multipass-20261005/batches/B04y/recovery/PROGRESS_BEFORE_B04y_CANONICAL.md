@@ -1,0 +1,19 @@
+# Astrology source study — outcome-focused progress and remaining work
+2026-10-17 (Africa/Dakar UTC+0).
+
+## Independent numerical progress estimates
+
+- First-edition Lilly *Christian Astrology* (1647) has **894 scanned PDF pages** (Wellcome source b30338724; public bibliographic metadata also describes printed pages 25-832 and following leaves). Accepted original text frontier through original PDF540, with next distinct chapter beginning PDF541. By simple scan-position metric, **540/894 = 60.4%**. By nominal printed-text position, **506/832 = 60.8%**. These are only positional volume proxies, not verified percentage of transcribed or validated rules.
+- Book I and Book II numbered historical prose/source units and Book II conclusion have been accepted. Book III title/introduction, house and ascension tables (image witnesses only for dense tables), Trutine and Animodar are accepted. Book III still has substantial material from printed 507 through 832 and supplemental leaves.
+- Accepted after authenticated Animodar batch: **5,957 Lilly** source annotations plus **1,066 Ptolemy** retained historical annotations = **7,023 combined historical documentary records**. Most are clauses, caveats, procedures, examples, table images and navigation, NOT distinct empirically predictive rules, not people, and not independent success cases.
+- Outstanding numerics: Book II eight-leaf planetary-hour table PDF508-515 (about 1,488 hour-boundary cells not fully digitized), Book III time-to-angle/right-ascensions/oblique ascensions PDF523/526-533 and historical gestation/month tables PDF536. Full source numeric reconstruction/calibration OPEN.
+- Astrological empirical validity: **zero newly independently verified predictive successes** and **zero source-batch promotions into the executable runtime**. There are other ongoing independent astrology survey and backtest projects; these book-documentation counts must not be construed as their completion or success.
+- Full parent goal: study traditional primary texts, code reproducible rule sets, run independent historical controls / calibration, then prospective blind birth-time/life-outcome comparisons against meaningful non-astrology baselines. Overall cross-book and empirical completion fraction **not responsibly estimable** from these source counts. Ptolemy 1,066 retained but no all-tradition corpus denominator certified here.
+
+## Immediate priority
+
+Next printed Book III CHAP. C, *Rectification by Accidents, and framing of an Astrological Speculum*, opens original PDF541/printed507. Prioritize source rules and admissions for event-based rectification (the author's preferred high-specificity technique), then natal directions/revolutions/profections/transits, while retaining 1647 date/house/astronomy caveats. Do NOT retrofit the current owner's already-known life events as prospective proof. Human outcome testing must use independently frozen targets, later untouched subjects and strong base-rate comparators.
+
+## Provenance and scoping
+
+894 scan pages: Wikimedia Commons source item corresponding to b30338724; Wellcome Collection's original volume pagination printed pp.25–832 with additional unnumbered preliminaries and leaves. Printed-page calculation deliberately uses 832 as a rough upper bound, not the total exact page count. Percentages are approximate progress in one volume; NOT completion of all historical astrology, horoscope inference, birth-time prediction, or scientific verification.
