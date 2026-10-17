@@ -1,3 +1,9 @@
+# Original 1647 father/patrimony source accepted historically, mother next
+
+2026-10-17 Africa/Dakar UTC+0. B05w first-edition R7296–R7357 locally prepared; after GitHub verification 7,357 Lilly + 1,066 Ptolemy = 8,423 historical records. Unnumbered fourth house did not increment chapter count. No genuine human mortality/paternity/ancestry prediction success or runtime rule promotion. NEXT printed CXXII Of the Mother on PDF604.
+
+---
+
 # Original sibling-number Ptolemy comparison accepted; fourth-house parents next
 
 2026-10-17 Africa/Dakar UTC+0. B05v R7253–R7295 locally source-accepted; after verified GitHub push 7,295 Lilly + 1,066 Ptolemy = 8,361 historic records. 43 clause-level annotations, authorial contrast of sibling methods not independent replication. No human birth/death validations and no runtime source rules. Next unnumbered fourth-house father and estate introduction PDF603.

@@ -1,3 +1,9 @@
+# Lilly source through unnumbered fourth-house father/patrimony — 2026-10-17
+
+Once remotely accepted **8,423 historical documentary annotations** (7,357 Lilly + 1,066 Ptolemy), original first-edition source PDF604/894 (**67.6% scanned position only**). Historical father fourth-house source 62 annotations, sect-specific Sun/Saturn, own father chart preference, conflicting welfare and uncertain glyphs. No real parent socioeconomic, medical or mortality forecasts have been independently verified; no runtime promotions. Next printed CHAP CXXII mother PDF604–605. Numeric tables and blind independent research remain open.
+
+---
+
 # Lilly original first edition through sibling-number Ptolemy contrast — 2026-10-17
 
 After remote publication **8,361 historical documentary records** (7,295 Lilly + 1,066 Ptolemy), source body frontier original PDF602/894 (**67.3% scanned page position only, not research validation completion**). Printed CHAP CXXI repeated sibling-number technique adds 43 historical source annotations and an explicit Lilly-attributed Ptolemy dispute, including mother/sect and eleventh-house factors. Neither compared to Ptolemy's text independently nor validated on human birth records. Next UNNUMBERED fourth-house parent/patrimony introduction original PDF603, before printed CXXII. Numeric and blind human prediction lanes remain open.

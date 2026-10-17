@@ -1,0 +1,21 @@
+# HumanDesign original Lilly source study — fourth-house father/patrimony section accepted, mother next
+
+2026-10-17 19:12 Africa/Dakar (UTC+0).
+
+## Canonical historical checkpoint after verified publication
+
+Project `u-dont-existDOTcom/humandesign`. Isolated B05w fourth-house original source branch inherits published B05v sibling/Ptolemy contrast commit `9c311ba7308efb129b4398af6a8763c730d5b5cf`. Upon verified B05w publication the canonical historical index `tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json` contains **7,357 Lilly + 1,066 Ptolemy = 8,423 documentary historical annotations**, last **R7357**, **NEXT R7358**. First-edition source-body scan frontier **PDF604 of 894 (~67.6% page-position proxy)**. This is not the overall completion rate of source-rule digitization, runtime calculations or scientific testing.
+
+## Accepted father/patrimony original source
+
+An **unnumbered fourth-house source section**, *Judgements upon the fourth House. Concerning Parents, and Patrimony of the Father*, begins PDF603/printed569 and ends upper PDF604/printed570 before printed **CHAP CXXII, Of the Mother**. First-edition original images PDF603–605 preserved with SHA-256/bytes; **62 historical records R7296–R7357 (60 substantive, two following-chapter navigation)** in 12 source-first passage groups. Source-first authoring, `RULES.json`, `SOURCE_TO_RECORD_MAP.json`, `ORIGINAL_SOURCE_WITNESS.json`, `UNRESOLVED_SOURCE_LIMITS.json`, `ORIGINAL_SOURCE_REVIEW_20261017.md`, `ACCEPTANCE.json`, tests, archived recovery index and checksums are saved in B05w.
+
+Lilly names fourth house, fourth ruler, **Sun in day / Saturn in night**, occupants of fourth as alleged father significators; fortune and affliction, angular/succedent power, receptions and majority/relative testimony grades. Important exception: author says the father's own natal figure is preferable to the child's for judgments of father. Source also claims father/mother relative social rank and parent/child lifespan or death causes; multiple planetary glyph/operator passages are ambiguous and quarantined. **These are historical assertions, not medical, socioeconomic, lineage or mortality predictions for any actual people**. No independent human successes and no promoted runtime rules.
+
+Source verification: **17 local tests**, **17 extracted-ZIP replay checks**, first-edition images SHA/byte verified. Owner archive `~/Téléchargements/Astrology-Lilly-Fourth-House-Parents-Patrimony-1647-20261017.zip`; exact SHA-256 in B05w `SOURCE_RELEASE_RECEIPT_20261017.json`.
+
+## NEXT printed CHAP CXXII (editorial CXXIII) mother
+
+Start **R7358** on first edition **PDF604/printed570**, printed **CHAP CXXII — Of the Mother** begins midway below a divider, not part of B05w. Original PDF604 states mother's significators: tenth house, tenth ruler, **Venus by day or Moon by night**, planets occupying tenth. A favorable/strong majority allegedly predicts maternal status after the child's birth, while weak/afflicted (especially Moon) implies illness/misery. PDF605/printed571 continues comparative mother vs father fortuna, claims Jupiter/Venus supporting health and long life, Saturn/Mars adverse cases, Moon oriental/occidental differentiations and specific health/death circumstances; all historically asserted, not medical evidence. Original PDF604–605 available in B05w evidence; obtain PDF606–608 and verify full next-chapter seam BEFORE limiting the batch. **Do not cross-read PDF603 father section as mother rules**. Preserve ambiguous disease/organ references, day/night, specific compound aspects and alternative medical claims strictly as unverified archival history. Avoid real-person health advice.
+
+Continue in isolated B05x worktree from exact published B05w commit; source-first groups, original images and bidirectional source-to-record mapping, qualifications, tests, hermetic ZIP replay, guarded canonical append-only numbered chapter count +1, GitHub remote verification and handoff. All work and owner files in HumanDesign/Téléchargements. Previous unrelated global gates (relationship engine test, system-python missing Swiss ephemeris, UDA repository warnings) documented B05p; B05w source verification green; empirical human validation and astronomical table transcription remain open.
