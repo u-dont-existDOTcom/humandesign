@@ -1,0 +1,197 @@
+{
+  "schema": "LILLY_1647_TRAVEL_DIRECTION_MODE_HISTORICAL_SOURCES_V1",
+  "source": "William Lilly original 1647 first-edition Chapter CXXXIX original PDF641-642",
+  "state": "FIRST_EDITION_HISTORICAL_SOURCE_NONEXECUTABLE_NOT_BLINDLY_VALIDATED",
+  "source_methods": [
+    {
+      "id": "M1_Planetary_Directions",
+      "source_locator": "PDF641 lower, printed607",
+      "class": "travel-significator-planets",
+      "directions": {
+        "Sun": "East",
+        "Saturn": "East",
+        "Venus": "South",
+        "Jupiter": "North",
+        "Mars": "West",
+        "Moon": "West",
+        "Mercury": "Direction of the other planet receiving Mercury's aspect; if with Sun/Moon and lacking essential dignity, no direction"
+      },
+      "required_inputs": [
+        "which natal planet(s) actually signify journeys in prior chapter",
+        "planet aspects and source essential dignity",
+        "planet-source conflicts weighted against alternate methods"
+      ],
+      "limits": [
+        "planetary chart glyph certainty pending scholarly verification for some lines",
+        "no dominance weight or deviation tolerance",
+        "no guarantee one unique destination"
+      ]
+    },
+    {
+      "id": "M2_Triplicity_Directions",
+      "source_locator": "PDF642 upper, printed608",
+      "class": "elemental-sign-direction",
+      "directions": {
+        "Fire": "East",
+        "Air": "West",
+        "Earth": "South",
+        "Water": "North"
+      },
+      "signs": {
+        "Fire": [
+          "Aries",
+          "Leo",
+          "Sagittarius"
+        ],
+        "Air": [
+          "Gemini",
+          "Libra",
+          "Aquarius"
+        ],
+        "Earth": [
+          "Taurus",
+          "Virgo",
+          "Capricorn"
+        ],
+        "Water": [
+          "Cancer",
+          "Scorpio",
+          "Pisces"
+        ]
+      },
+      "required_inputs": [
+        "source-defined significator planetary sign positions",
+        "historic triplicities and source sign mapping"
+      ],
+      "limits": [
+        "multiple significators can point to several different compass regions",
+        "no weighting or single best region without after-the-fact selection"
+      ]
+    },
+    {
+      "id": "M3_Ptolemy_Quadrants_Attributed",
+      "source_locator": "PDF642 upper-middle, printed608",
+      "class": "luminary-geocentric-house-quarter",
+      "directions": {
+        "Oriental": [
+          "East",
+          "South-east"
+        ],
+        "Occidental": [
+          "West",
+          "North"
+        ]
+      },
+      "house_groups": {
+        "Oriental": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3
+        ],
+        "Occidental": [
+          9,
+          8,
+          7,
+          6,
+          5,
+          4
+        ]
+      },
+      "required_inputs": [
+        "Sun and Moon natal house quadrants",
+        "house-cusp calculations under specified historical chart geometry"
+      ],
+      "limits": [
+        "Lilly says Ptolemy diverges from other astrologers in these quarter predictions; original Ptolemy passage not collated",
+        "each class maps to 2 coarse compass regions, not one exact bearing",
+        "no dating, route, city or kilometers"
+      ]
+    },
+    {
+      "id": "M4_Mars_Moon_Latitude",
+      "source_locator": "PDF642 middle, printed608",
+      "class": "ecliptic-latitude-addendum",
+      "directions": {
+        "North latitude": "North",
+        "South latitude": "South"
+      },
+      "required_inputs": [
+        "Mars or Moon northern vs southern latitude",
+        "source strength criterion"
+      ],
+      "limits": [
+        "planet-to-earth-geography causal relation untested",
+        "not all planets and aspects eligible",
+        "one or both may have opposite latitude sign"
+      ]
+    },
+    {
+      "id": "M5_Majority_Testimony",
+      "source_locator": "PDF642 middle, printed608",
+      "class": "incomplete-resolution-rule",
+      "rule": "Collect plurality or majority of positive directional testimonies from prior methods; no numeric weights, precedence or tie/failure handling given.",
+      "required_inputs": [
+        "frozen set of eligible methods and indicators",
+        "tie-breaking and no-prediction rule fixed before labels revealed"
+      ],
+      "limits": [
+        "combination undefined mathematically",
+        "cannot select the method fitting known travel biography after the fact"
+      ]
+    },
+    {
+      "id": "M6_Travel_Modes",
+      "source_locator": "PDF642 bottom, printed608",
+      "class": "transport-category-source",
+      "directions": {
+        "fire_or_earth": "travel more by Land than Water",
+        "water_or_air": "Water, or sometimes Water sometimes Land",
+        "quadruped zodiac signs": "Horse and Coach",
+        "humane zodiac signs": "by Foot"
+      },
+      "required_inputs": [
+        "majority of originally selected travel significators",
+        "mutually defined element and historical animal/humane sign classes"
+      ],
+      "limits": [
+        "water/air branch itself allows multiple modes, not a precise prediction",
+        "horse/coach/foot historical vehicle era categories cannot be assumed modern ground transport codes",
+        "travel across land and water on same trip is common"
+      ]
+    },
+    {
+      "id": "M7_Mobility_And_Benefit",
+      "source_locator": "PDF641 mid printed607",
+      "class": "frequency-benefit-duration",
+      "directions": {
+        "many_concurring_signifiers": "frequent and continued journeys",
+        "few_signifiers": "few journeys",
+        "none": "remains in native country",
+        "movable_signs": "profit and speedy travel",
+        "fixed_signs": "long stay abroad and little profit"
+      },
+      "limits": [
+        "mobility duration and economic outcomes are separate endpoints",
+        "fixed and movable different planets may conflict",
+        "no calibrated numbers or financial amount"
+      ]
+    }
+  ],
+  "precommitted_validation_requirements": [
+    "define eligibility of planets/house/signs independent of observed travels",
+    "freeze exact house cusps and astronomical period rulebook",
+    "define whether trips, countries visited, longest stay or most frequent destination is target",
+    "define baseline bearing from source birthplace/country and category width",
+    "give travel-mode labels compatible with era and multi-modal trips",
+    "include conditional no-travel and no-direction output when indicators inconclusive",
+    "register all competing methods separately and a single preregistered combined method without post hoc selection",
+    "score on birth-record-confirmed untouched cohort with geography and mobility base-rate controls",
+    "keep no-match and missed journeys, and require actual outcome denominator"
+  ],
+  "human_travel_predictions_verified": 0,
+  "runtime_promotions": 0,
+  "source_only": true
+}

@@ -1,3 +1,9 @@
+# Lilly original 1647 through historic travel direction and mode — 2026-10-17
+
+After verified publication **9,872 historical records** (8,806 Lilly + 1,066 Ptolemy), physical first-edition scan frontier PDF643/894 (**71.9% physical page position ONLY, not project scientific completion**). Printed CXXXIX added 101 original source historic claims including seven incompatible/overlapping planet, triplicity, Ptolemy-quadrant, celestial latitude and transport/duration/economic source methods preserved in non-executable companion. No real person travel accuracy and no runtime model promotions. NEXT printed CXL `Cause of Travels` begins PDF643 with Haly aphorisms inside; Ptolemy original travel source still needs independent cross-collation. Parallel Chinese BaZi 46 and Zi Wei 26 source-only records separately indexed; complete calendars/chart engines and untouched human validation remain OPEN.
+
+---
+
 # Lilly first edition through unnumbered ninth-house intro — 2026-10-17
 
 After authenticated publication **9,771 historical source records** (8,705 Lilly + 1,066 Ptolemy). Physical book frontier PDF640/894 (**71.6% scanned page position ONLY, not whole scientific project**). 25 original source annotations include 9th house travel indicators and four separate question groups, no religion classification in the source body, and purported Mars-attribution to Ptolemy unverified. Numbered chapter counter unchanged because this section has no original printed chapter numeral. Next separately printed CHAP CXXXIX travel begins lower on SAME PDF640. No predictive human success or runtime rules. Independent Chinese BaZi 46 and Zi Wei 26 source-only records remain separate and full chart engines/blinded studies OPEN.

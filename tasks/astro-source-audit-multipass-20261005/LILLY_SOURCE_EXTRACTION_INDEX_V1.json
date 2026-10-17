@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_UNNUMBERED_NINTH_TRAVEL_INTRO_NEXT_PRINTED_CXXXIX",
-  "records_count": 8705,
+  "status": "BOOK_III_CXXXIX_HISTORIC_TRAVEL_DIRECTION_NEXT_CXL_CAUSES",
+  "records_count": 8806,
   "read_numbered_chapters": [
     1,
     2,
@@ -143,7 +143,8 @@
     136,
     137,
     138,
-    139
+    139,
+    140
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -993,26 +994,33 @@
       "records_count": 25,
       "sha256": "aa28c2bfa12e29061a2ad74fc290a127a352af27e77de0667a752759419ef795",
       "scope": "Original William Lilly Christian Astrology first edition UNNUMBERED ninth-house long Journeys and Religions introduction, original PDF640/printed606 middle, separate next printed CHAP CXXXIX travel also begins lower SAME page. 5 reversible source photo groups, 23 substantive historical questions and two next-printed navigation R8681–R8705. Ninth house/ruler, its occupants, Moon and Mercury, Lilly's unverified Ptolemy attribution of Mars. Enumerated outcomes: far travel yes/no, once/many, lifelong overseas vs rare, destination in relation to natal country and multiple destinations, motives, objective success and danger of death. Despite Religion heading no religion forecasts are supplied in this introductory passage. No independent human travel or life-risk success or executable source runtime rule."
+    },
+    {
+      "id": "B06s",
+      "path": "batches/B06s/RULES.json",
+      "records_count": 101,
+      "sha256": "aa155d46f26551eb5d642b78166684ea8e3f53cdc1498f023face477685a5ba7",
+      "scope": "Original first-edition William Lilly printed CHAP CXXXIX/editorial CXL Whether Native shall travel or not PDF640 lower through PDF642/printed606-608; new separately printed CHAP CXL Cause of Travels begins PDF643. 11 original source groups, 99 historic substantive clauses and two following numbered heading navigation R8706–R8806. Travel occurrence from Moon/Mercury and reciprocal house/planet receptions/aspects, first/ninth lord exchanges, solar contacts, movable signs, travel frequency/propensity and duration/economic outcomes kept distinct. Seven non-executable competing travel direction/mode source methods stored in TRAVEL_QUARTER_HISTORICAL_METHODS_V1.json: Sun/Saturn East Venus South Jupiter North Mars/Moon West, Mercury source-dependent/possibly null; triplicities Fire East Air West Earth South Water North; author-attributed Ptolemy luminaries 10/11/12/1/2/3 oriental East/Southeast vs 9/8/7/6/5/4 occidental West/North; source Mars/Moon latitude North/South; unweighted majority; land/water/horse/coach/foot historic transport and mutable/fixed economic effects. Original conflicting source methods retain ambiguity; no real journeys/geography/safety success and zero promoted runtime source rules."
     }
   ],
   "next": {
-    "pdf_page": 640,
-    "printed_page": 606,
-    "chapter": "CXL",
-    "printed_chapter_numeral": "CXXXIX",
-    "heading": "Whether the Native shall travell or not",
+    "pdf_page": 643,
+    "printed_page": 609,
+    "chapter": "CXLI",
+    "printed_chapter_numeral": "CXL",
+    "heading": "Cause of Travels",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "The printed CHAP CXXXIX begins after a distinct horizontal divider toward bottom of original PDF640/printed606. It follows the UNNUMBERED ninth-house introduction on the SAME page and continues original PDF641 onward. Verify exact next printed chapter boundary before extraction.",
-    "research_scope": "Original ninth-house travel yes/no rules, reciprocal ninth/first house lords and Moon/Mercury configuration, mutable vs fixed signs, travel frequency and geographic directions, with historic hazards and wealth outcomes unvalidated."
+    "position": "Distinct printed CHAP CXL Cause of Travels begins original first-edition PDF643/printed609 at upper page, after original CXXXIX Land/Water mode passage finishes PDF642. It contains source travel motive claims and an internal Haly aphorisms heading near PDF643 bottom and continues PDF644+. Verify exact next printed chapter heading before complete substantive archival extraction.",
+    "research_scope": "Planet and house significators of travel motives and source historical Saturn-like mines/estate versus Jupiter religion/honour/law, ninth lord in first/second/third and Haly-attributed house-by-house travel outcomes, financial profit, hazards and religious or social stereotypes. Source only, no actual predictive person's motives or faith."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B06r_NINTH_HOUSE_INTRO.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261017_B06s_TRAVEL_DIRECTION.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1126,5 +1134,6 @@
   "chapter_CXXXVIII_source_acceptance_note": "B06o source R8398–R8496, 99 historic notes, original PDF634–638 SHA/bytes and 26 archived replayed documentary tests. Women's historical Sun/Mars marriage model with explicitly retained Moon/Venus counterexamples, many outcome switches and author eighth-house husband wealth alternative. Next immediate unnumbered fifth-house section PDF636, next numbered CXXXVIII only PDF638. Zero human prediction or runtime promotion; Chinese BaZi/Zi Wei 72 notes independently indexed.",
   "unnumbered_fifth_house_source_acceptance_note": "B06p original unnumbered source R8497–R8602, 106 historic annotations, 8 groups, original PDF636–639 photo SHA and 31 full extracted archive replay tests. Fifth-over-eleventh priority, Mercury convertible, mixed sign results and unverified child death/infertility outcomes preserved. No human reproductive validity, medical claims or runtime promotion; Chinese BaZi+Zi Wei source counts separate 72.",
   "chapter_CXXXIX_source_acceptance_note": "B06q R8603–R8680 78 historic source records, six image-anchored groups original PDF638–643 photo SHA+bytes, 25 standalone ZIP replay tests. Preserved double/triple child-count sign multiplier overlap, unvalidated offspring sex and mortality, Ptolemy house-method disagreement. No human forecast or runtime promotion. Chinese 72 independent source notes.",
-  "unnumbered_ninth_house_source_acceptance_note": "B06r R8681–R8705, 25 original historic source notes, 5 reversible source groups original PDF640–642 photo SHA, 15 original and ZIP-extracted replay tests. Religions heading but only travel questions specified, Ptolemy Mars attribution unverified and no real-person faith, travel or danger predictions. Numbered chapter count unchanged; Chinese 72 annotations separate."
+  "unnumbered_ninth_house_source_acceptance_note": "B06r R8681–R8705, 25 original historic source notes, 5 reversible source groups original PDF640–642 photo SHA, 15 original and ZIP-extracted replay tests. Religions heading but only travel questions specified, Ptolemy Mars attribution unverified and no real-person faith, travel or danger predictions. Numbered chapter count unchanged; Chinese 72 annotations separate.",
+  "chapter_CXL_source_acceptance_note": "B06s R8706–R8806, 101 first-edition original historic source items, 11 bidirectional groups, photo PDF640–643 hash/bytes, 26 independently extracted ZIP source tests, seven competing non-executable direction/mode systems and explicit Ptolemy methodological disagreement. Zero human travel accuracy or runtime rules; Chinese 72 source notes separate."
 }

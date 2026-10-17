@@ -1,3 +1,9 @@
+# Lilly original CXXXIX travel direction source accepted; CXL travel causes next
+
+2026-10-17 Africa/Dakar UTC+0. Source B06s R8706–R8806 locally accepted, after remote GitHub verification 8,806 Lilly +1,066 Ptolemy = 9,872 historical source notes. Photo/extracted source 26 tests pass; seven historical compass and mode methods are explicitly competing and non-executable as real predictions. No independently verified travels or runtime promotions. NEXT printed CHAP CXL Cause of Travels from PDF643; Chinese BaZi 46 and Zi Wei Dou Shu 26 separately indexed.
+
+---
+
 # Original Lilly ninth-house travel introduction documented; CXXXIX next
 
 2026-10-17 Africa/Dakar UTC+0. B06r unnumbered original ninth-house source R8681–R8705 accepted locally. After remote readback 8,705 Lilly +1,066 Ptolemy = 9,771 historical source annotations. 15 source and independent ZIP replay tests pass; no travel/faith/life-safety real-world prediction validated, no runtime model promotions. Printed numbered chapter total unchanged. Next printed CXXXIX on travel from PDF640 lower. Chinese BaZi 46 and Zi Wei 26 historical source records independently indexed.
