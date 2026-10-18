@@ -1,3 +1,9 @@
+# Lilly first-edition original through Cause of Travel and Haly — 2026-10-18
+
+After verified source publication **9,925 documentary historical annotations** (8,859 Lilly +1,066 Ptolemy), original physical frame 644/894 (**72.0% scanned-page position only, not full scientific completion**). Printed CXL adds 53 period source notes, planetary/house motive classification and attributed Haly ninth ruler placements first–eighth. Historical dangerous travel/death and religion/motive claims are NOT real-world human forecasts and no runtime source rules promoted. NEXT printed CXLI travel success and danger PDF644–645, then printed CXLII religion begins later PDF645. Parallel independent Chinese BaZi 46 and Zi Wei 26 source-only annotations; original astronomy/math, complete Zi Wei and BaZi charting, preregistered blind human evaluation and matched null remain OPEN.
+
+---
+
 # Lilly original 1647 through historic travel direction and mode — 2026-10-17
 
 After verified publication **9,872 historical records** (8,806 Lilly + 1,066 Ptolemy), physical first-edition scan frontier PDF643/894 (**71.9% physical page position ONLY, not project scientific completion**). Printed CXXXIX added 101 original source historic claims including seven incompatible/overlapping planet, triplicity, Ptolemy-quadrant, celestial latitude and transport/duration/economic source methods preserved in non-executable companion. No real person travel accuracy and no runtime model promotions. NEXT printed CXL `Cause of Travels` begins PDF643 with Haly aphorisms inside; Ptolemy original travel source still needs independent cross-collation. Parallel Chinese BaZi 46 and Zi Wei 26 source-only records separately indexed; complete calendars/chart engines and untouched human validation remain OPEN.

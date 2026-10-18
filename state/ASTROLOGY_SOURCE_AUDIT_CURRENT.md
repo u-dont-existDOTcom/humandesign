@@ -1,3 +1,9 @@
+# Original Lilly CXL travel causes/Haly historically accepted, CXLI next
+
+2026-10-18 Africa/Dakar UTC+0. B06t original source R8807–R8859 locally prepared. After authenticated remote publication Lilly 8,859 + Ptolemy 1,066 = 9,925 historical source notes. 24 original source/ZIP integrity replays pass; no source prediction of true human motive, belief, economic status, danger, family illness or travel death validated and zero model promotions. NEXT printed CXLI Of Successe in Travell from mid PDF644–mid PDF645. Chinese BaZi 46/ Zi Wei 26 notes indexed independently.
+
+---
+
 # Lilly original CXXXIX travel direction source accepted; CXL travel causes next
 
 2026-10-17 Africa/Dakar UTC+0. Source B06s R8706–R8806 locally accepted, after remote GitHub verification 8,806 Lilly +1,066 Ptolemy = 9,872 historical source notes. Photo/extracted source 26 tests pass; seven historical compass and mode methods are explicitly competing and non-executable as real predictions. No independently verified travels or runtime promotions. NEXT printed CHAP CXL Cause of Travels from PDF643; Chinese BaZi 46 and Zi Wei Dou Shu 26 separately indexed.
