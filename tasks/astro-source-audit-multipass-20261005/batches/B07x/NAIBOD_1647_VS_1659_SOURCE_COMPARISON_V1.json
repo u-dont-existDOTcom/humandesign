@@ -1,0 +1,231 @@
+{
+  "schema": "LILLY_1647_1659_NAIBOD_PRIMARY_PRINT_COMPARISON_V1",
+  "batch": "B07x",
+  "status": "PARTIAL_CROSS_EDITION_PHOTOGRAPHIC_COLLATION_NO_ENGINE_PROMOTION",
+  "first_edition": {
+    "year": 1647,
+    "source": "William Lilly Christian Astrology Wellcome b30338724 original 1647 first edition",
+    "full_original_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "degrees": {
+      "printed_folio": 713,
+      "pdf_frame": 747,
+      "file": "evidence/pdf_1647-747.jpg",
+      "sha256": "4504fb211a394711fd939c40b3242c79967a81b7ca897e8651b18882efad30cd"
+    },
+    "minutes": {
+      "printed_folio": 714,
+      "pdf_frame": 748,
+      "file": "evidence/pdf_1647-748.jpg",
+      "sha256": "493dfdbc08d830a0536921352390649d5af591695718c6e5d513d02b4b1e5050"
+    }
+  },
+  "second_edition": {
+    "year": 1659,
+    "source": "William Lilly Christian Astrology London John Macock 1659 second edition, Wikimedia Commons DjVu scan",
+    "commons_file": "https://commons.wikimedia.org/wiki/File:Christian_Astrology_(Lilly,_1659).djvu",
+    "commons_image_info_parameters": "action=query&format=json&titles=File:Christian Astrology (Lilly, 1659).djvu&prop=imageinfo&iiprop=url|size&iiurlwidth=2000&iiurlparam=page742 or page743",
+    "degree_table": {
+      "printed_folio": 713,
+      "djvu_scan_page": 742,
+      "file": "evidence/second_edition_1659/1659_djvu_scan_742.jpg",
+      "sha256": "3f72ee094906122f1ab2b09762b4875b24e04b96cb7d04d5dba614d93946cb82"
+    },
+    "minute_table": {
+      "printed_folio": 714,
+      "djvu_scan_page": 743,
+      "file": "evidence/second_edition_1659/1659_djvu_scan_743.jpg",
+      "sha256": "36dfa3326c3ddab8e5ca78d5c30e47c43d6de66fd198fc1c7769ee1558358b85"
+    }
+  },
+  "method": "Direct visual inspection of original 1647 page photos and physically separate 1659 printed second edition; auxiliary searchable modern transcription used only for structured extraction, not as primary evidence.",
+  "comparisons": [
+    {
+      "1647": [
+        70,
+        4,
+        3
+      ],
+      "1659": [
+        70,
+        4,
+        3
+      ],
+      "kind": "degree",
+      "row": 69,
+      "secondary_flattened_year": 69,
+      "status": "AGREE_PRINTED_EDITIONS_DISAGREE_WITH_SECONDARY_TRANSCRIPTION",
+      "note": "Both printings carry an extra year at the 365-day rollover; do not equate printed year to input degree."
+    },
+    {
+      "1647": [
+        81,
+        62,
+        24
+      ],
+      "1659": [
+        81,
+        62,
+        24
+      ],
+      "kind": "degree",
+      "row": 80,
+      "status": "AGREE_PRINTED_WITH_UNNORMALIZED_24_HOURS",
+      "note": "Hours 24 is printed, not stored as silently normalized 0."
+    },
+    {
+      "1647": [
+        91,
+        116,
+        13
+      ],
+      "1659": [
+        91,
+        116,
+        13
+      ],
+      "kind": "degree",
+      "row": 90,
+      "secondary_flattened_year": 90,
+      "status": "AGREE_PRINTED_EDITIONS_DISAGREE_WITH_SECONDARY_TRANSCRIPTION"
+    },
+    {
+      "1647": null,
+      "1659": [
+        6,
+        4
+      ],
+      "kind": "minute",
+      "row": 1,
+      "1647_glyph_candidates": [
+        5,
+        6
+      ],
+      "secondary": [
+        6,
+        4
+      ],
+      "status": "FIRST_EDITION_GLYPH_AMBIGUOUS_SECOND_EDITION_CLEAR",
+      "note": "1647 scan first day glyph looks like 5, but 1659 clear 6; do not retroactively substitute in source-only record until critical visual determination."
+    },
+    {
+      "1647": [
+        44,
+        10
+      ],
+      "1659": [
+        44,
+        10
+      ],
+      "kind": "minute",
+      "row": 8,
+      "secondary": [
+        44,
+        10
+      ],
+      "status": "PERSISTENT_PROBABLE_COMPOSITOR_ERROR",
+      "note": "Expected numerical progression is near 49d10h, but both editions clearly print 44d10h."
+    },
+    {
+      "1647": null,
+      "1659": null,
+      "kind": "minute",
+      "row": 27,
+      "secondary": null,
+      "status": "MISSING_PRINTED_ROW_LABEL_IN_BOTH_EDITIONS",
+      "note": "After minute26 the table jumps to label28; do not synthesize row27 and call it printed."
+    },
+    {
+      "1647": [
+        166,
+        18
+      ],
+      "1659": [
+        166,
+        18
+      ],
+      "kind": "minute",
+      "row": 28,
+      "status": "PERSISTENT_SEQUENCING_ERROR_CANDIDATE",
+      "note": "Corresponds to the extrapolated value for 27 minutes; no automatic correction permitted."
+    },
+    {
+      "1647": [
+        172,
+        23
+      ],
+      "1659": [
+        172,
+        23
+      ],
+      "kind": "minute",
+      "row": 29,
+      "status": "PERSISTENT_SEQUENCING_ERROR_CANDIDATE"
+    },
+    {
+      "1647": [
+        179,
+        3
+      ],
+      "1659": [
+        179,
+        3
+      ],
+      "kind": "minute",
+      "row": 30,
+      "status": "PERSISTENT_SEQUENCING_ERROR_CANDIDATE",
+      "note": "Gap from 179d3h to 191d11h at minute31 is twice the usual step."
+    },
+    {
+      "1647": [
+        271,
+        8
+      ],
+      "1659": [
+        271,
+        18
+      ],
+      "kind": "minute",
+      "row": 44,
+      "secondary": [
+        271,
+        8
+      ],
+      "status": "SECOND_EDITION_CHANGES_PRINTED_HOUR",
+      "note": "1659 visually has two digits 18; 1647 scan and later flat transcription give 8. Consistent with neighboring rows43 and45; editions disagree."
+    },
+    {
+      "1647": [
+        339,
+        17
+      ],
+      "1659": [
+        339,
+        17
+      ],
+      "kind": "minute",
+      "row": 55,
+      "status": "AGREE_AND_USED_IN_PRINTED_WORKED_EXAMPLE"
+    },
+    {
+      "1647": [
+        374,
+        14
+      ],
+      "1659": [
+        374,
+        14
+      ],
+      "kind": "minute",
+      "row": 60,
+      "status": "PERSISTENT_60_MINUTE_BOUNDARY_DISCREPANCY",
+      "note": "60 arcminutes convert to 374d14h in both tables but one full degree on the degree table is printed 1y5d8h (370d8h assuming 365-day year); 4d6h discrepancy."
+    }
+  ],
+  "first_edition_documentary_values_never_overwritten_from_later_edition": true,
+  "numerical_correction_candidates_are_not_accepted_primary_source_values": true,
+  "full_1659_source_table_digit_corpus_checked": false,
+  "full_1647_source_table_digit_corpus_checked": false,
+  "historical_algorithm_martial_natal_accuracy_validated": false,
+  "independent_real_human_predictions_validated": 0,
+  "runtime_promotions": 0
+}
