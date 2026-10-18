@@ -1,3 +1,9 @@
+# Zi Wei original Volume II Chinese source-only progress (V3)
+
+**45 newly anchored historical Zi Wei records ZWD-R0052–ZWD-R0096**, 45/45 exact original Simplified Chinese section/quote matches against Wikisource pinned revision 1963110, raw SHA256 1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72. **46 BaZi +96 Zi Wei =142 Chinese documentary annotations**; original Chinese V1 72 and V2 97 preserved unchanged. 160 source/placement/prior-Chinese tests replayed after standalone archive extraction with CRC and SHA/bytes proof. **12,472 Lilly +1,066 Ptolemy =13,538 Western history notes unchanged**; printed Lilly CLXVI numerical methods remain PROVISIONAL. Next Chinese Zi Wei **ZWD-R0097**, BaZi **BZI-R0047**. No independently established classical edition provenance, full birth calendar/14-main-star engine or blind human accuracy; zero model runtime promotions.
+
+## Earlier accepted checkpoint retained verbatim
+
 # Chinese astrology source study: Zi Wei Volume II source-verified expansion
 
 2026-10-18 UTC. The current canonical source-only Chinese index is `CHINESE_SOURCE_AUDIT_INDEX_V2.json`: **46 BaZi +51 Zi Wei=97 historical documentary annotations**, including **25 new Chinese source-anchored records ZWD-R0027–ZWD-R0051** against pinned Wikisource Volume II oldid 1963110/raw SHA256 1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72. Original retained index V1 remains unchanged at 72. Source glyph fidelity verified for short raw anchor strings; independent sinological translation/full-chart parity not established.
