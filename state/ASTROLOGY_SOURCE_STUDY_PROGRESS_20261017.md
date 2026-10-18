@@ -1,3 +1,9 @@
+# Original Lilly through unnumbered twelfth-house enemies — 2026-10-18
+
+After remote verified publication **11,108 historical source annotations** (10,042 Lilly +1,066 Ptolemy). First-edition source frontier PDF674/894 (**75.4% scanned physical page position ONLY, not full historical/computational/human validity**). B07g records 23 old alternatives for number of enemies and nonoccurrence, after CLI two-nativity source, before separate printed CLIII quality on SAME PDF674. No printed CLII heading observed; numbered chapter counter unchanged for this UNNUMBERED section. No human danger or adversary accuracy tested, no runtime scorer promoted. Chinese BaZi46/Zi Wei26 separate.
+
+---
+
 # Original Lilly first edition through two-nativity CLI — 2026-10-18
 
 After authenticated publication **11,085 historic source annotations** (10,019 Lilly +1,066 Ptolemy), original first-edition physical scan frontier PDF673/894 (**75.3% scanned page position ONLY, not full source or predictive science completion**). B07f adds 93 historic clauses for two-nativity concord/discord, natural asymmetrical planet affinity, same Ascendant and ruler, four reception/aspect routes and directional affection. No real paired participant has been scored and no source runtime rules promoted. NEXT UNNUMBERED twelfth-house enemies introduction PDF673–674; printed CLIII enemies quality later PDF674; historical CLII printed heading absent. Chinese BaZi46, Zi Wei26 separately indexed.
