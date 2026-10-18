@@ -1,0 +1,1944 @@
+{
+  "schema": "life-patterns-source-first-chart-domain-audit-v2",
+  "status": "HISTORICAL_CLAIMS_AND_SURVEY_COVERAGE_ONLY_NOT_PREDICTION_VALIDATION",
+  "audit_date": "2026-10-18",
+  "owner_issue": "Comprehensive audit of historical chart claims versus existing actual questionnaire domains, after earlier survey-first promise was not completed.",
+  "source_types_and_limits": {
+    "ptolemy_book3_natal_soul_quality": "13 claims already source-anchored + two new direct checked conditions",
+    "lilly_house_topic_horary_intro": "4 subject headings, not natal horoscope rules",
+    "ptolemy_book4_natal_life_topic": "9 chapter topics, no full calculation or prospectively tested natal rules",
+    "lilly_book3_1647_natal_contents": "29 original contents topics only",
+    "lilly_book3_1647_religion_dreams": "31 source candidate rules, glyph uncertainty in pinned committed v1",
+    "brihat_jataka_ch15_natal_yoga": "4 verse-level natal conditions from online Sanskrit/English rendering; translation ambiguities, not manuscript-verified"
+  },
+  "pinned_external_lilly_snapshot_provenance": {
+    "LILLY3-NATAL-DOMAIN-CENSUS-v1.json": {
+      "sha256": "0e62ce02d703fff539603b2e8342ee945054a471edc93331d32d8759a94bef37",
+      "commit": "e26338838c757ef2450edacedf7854b3b97f98a9",
+      "rows": 29,
+      "source_status": "CONTENTS_ONLY_NOT_RULE_LEVEL_OR_PREDICTIVE_VALIDATION"
+    },
+    "LILLY-BOOK3-RELIGION-DREAMS-CLAIMS-v1.json": {
+      "sha256": "9de2eaaae83c528f56adcf999a3263af21f0775f29f0f8741965fbe0daad8e91",
+      "commit": "61781f3fab2b9587635aa686ee90e61384c641c8",
+      "rows": 31,
+      "source_status": "SOURCE_TWIN_WITNESS_TEXT_AUDIT_FACSIMILE_SYMBOLS_NOT_YET_ADJUDICATED"
+    }
+  },
+  "accepted_local_source_paths": [
+    "tasks/astrology-phenomenology-source-anchors-20261017/PRIMARY-SOURCE-CLAIM-ANCHORS-v1.json",
+    "tasks/astrology-phenomenology-source-anchors-20261017/PTOLEMY-BOOK-IV-LIFE-DOMAINS-v1.json"
+  ],
+  "surveys_compared": {
+    "v7_route_count": 79,
+    "tendency_first_v1_direct_question_count": 25,
+    "experience_meaning_v2_question_count": 8,
+    "cf003_addendum_questions": 3,
+    "role_entry_v33": "small optional role inventory only",
+    "idiographic_unusual_behavior_v3": "free self-reported unique behaviors; not automatic chart prediction"
+  },
+  "denominator_cautions": [
+    "Number of source records is not a count of distinct astrological rules or validated testable hypotheses.",
+    "A documented house topic does not prove a natal calculation predicts that topic.",
+    "Direct questionnaire sampling does not establish validity, respondent coverage, or independent astrology predictions.",
+    "Missing psych constructs are not necessarily missing claims in every astrology system.",
+    "This is not exhaustive for Hellenistic, Jyotish, Dariot or modern astrology."
+  ],
+  "counts": {
+    "all_historical_claim_ids_accounted_for": 92,
+    "unique_domain_ids": 46,
+    "historically_attested_domains": 32,
+    "domains_only_modern_extrapolation": 14,
+    "survey_v7_domain_counts": {
+      "absent": 18,
+      "partial": 9,
+      "proxy_only": 13,
+      "outside_scope": 6
+    },
+    "all_em8_ids_covered": true,
+    "candidate_questions_grounded_to_one_or_more_domains": true,
+    "predictive_accuracy_established": false
+  },
+  "domains": [
+    {
+      "domain_id": "religious_spiritual_disposition",
+      "label": "Religious and spiritual orientation",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "BELIEF"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Felt guidance is not equivalent to religious belief.",
+      "historical_source_claim_ids": [
+        "L3-TOC-018",
+        "LILLY3-R03",
+        "LILLY3-R04",
+        "LILLY3-R05",
+        "LILLY3-R10",
+        "LILLY3-R13",
+        "LILLY3-R15",
+        "LILLY3-R19",
+        "PT-JUPITER-DEVOTION",
+        "PT-RELIGIOUS-SIGNS",
+        "LILLY-NINTH-RELIGION",
+        "LILLY-JUPITER-NINTH"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "spiritual_or_ritual_practice",
+      "label": "Actual spiritual or ritual practices",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "BELIEF"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Frequency of meditation or ritual is not measured by awe.",
+      "historical_source_claim_ids": [
+        "LILLY3-R02",
+        "LILLY3-R06",
+        "LILLY3-R08",
+        "LILLY3-R09",
+        "LILLY3-R11",
+        "PT-RELIGIOUS-OBSERVANCE"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "ascetic_renunciation_and_initiation",
+      "label": "Ascetic commitment and periods of renunciation",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "RENUNCIATION"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Religious practice or awe does not establish deliberate renunciation, vows, or initiation.",
+      "historical_source_claim_ids": [
+        "BJ-15.1",
+        "BJ-15.2",
+        "BJ-15.3",
+        "BJ-15.4"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "belief_conversion_or_worldview_change",
+      "label": "Changes in religious or philosophical convictions",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "BELIEF_CHANGE"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Life-change insight is not necessarily religious conversion.",
+      "historical_source_claim_ids": [
+        "LILLY3-R01",
+        "LILLY3-R14",
+        "LILLY3-R16",
+        "LILLY3-R17",
+        "LILLY3-R18"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "esoteric_interests_omens_divination",
+      "label": "Interest in hidden matters and divination",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "MYSTERY"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Interest in omens differs from interpreting coincidences as meaningful.",
+      "historical_source_claim_ids": [
+        "LILLY3-R07",
+        "LILLY3-R12",
+        "PT-MYSTERY-INTEREST",
+        "PT-OMENS"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "dream_content_and_tone",
+      "label": "Dream content, emotional tone and recurring themes",
+      "outcome_kind": "subjective_experience",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "DREAM"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Dream content is not proof that dreams foretell events.",
+      "historical_source_claim_ids": [
+        "L3-TOC-019",
+        "LILLY3-D05",
+        "LILLY3-D06",
+        "LILLY3-D07",
+        "LILLY3-D08",
+        "LILLY3-D09",
+        "LILLY3-D10",
+        "LILLY3-D11",
+        "PT-VENUS-DREAM-TONE",
+        "LILLY-NINTH-DREAMS"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "dream_interpretation_and_beliefs",
+      "label": "Dream recall and interpretation",
+      "outcome_kind": "subjective_experience",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "DREAM"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Dream recall and dream interpretation are different measurements.",
+      "historical_source_claim_ids": [
+        "LILLY3-D01",
+        "LILLY3-D02",
+        "LILLY3-D03",
+        "LILLY3-D04",
+        "PT-DREAM-INTERPRET"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "cognitive_style_and_learning",
+      "label": "Thinking and learning style",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "partial",
+      "tf1_questionnaire_coverage": "direct",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G01",
+        "G02",
+        "TF1-G01",
+        "TF1-G02"
+      ],
+      "interpretation_limit": "Specific reasoning scenes are not a cognitive ability assessment.",
+      "historical_source_claim_ids": [
+        "L3-TOC-007",
+        "PT-MIND-REASON"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "philosophical_scientific_curiosity",
+      "label": "Sustained philosophical/scientific curiosity",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "proxy_only",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "MYSTERY"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "G01",
+        "TF1-G01"
+      ],
+      "interpretation_limit": "Solving a planning problem is not sustained philosophical investigation.",
+      "historical_source_claim_ids": [
+        "PT-JUPITER-MERCURY-PHILOSOPHY",
+        "PT-NATURE-INQUIRY"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "creative_production",
+      "label": "Creative production and making",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "ART"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Enjoying beauty does not establish creative production.",
+      "historical_source_claim_ids": [
+        "PT-VENUS-ART"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "aesthetic_music_engagement",
+      "label": "Art/music/beauty appreciation",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "ART"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Liking art and producing art need separate variables.",
+      "historical_source_claim_ids": [
+        "PT-MUSIC"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "opinion_revision_and_flexibility",
+      "label": "Long-term revision of beliefs and opinions",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "partial",
+      "tf1_questionnaire_coverage": "partial",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "BELIEF_CHANGE"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "G24",
+        "TF1-G10"
+      ],
+      "interpretation_limit": "Contextual action changes are not global belief transformation.",
+      "historical_source_claim_ids": [
+        "PT-REVISION-VERSATILITY"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "play_humor_spontaneous_enjoyment",
+      "label": "Playfulness, humor and enjoyment",
+      "outcome_kind": "subjective_experience",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "PLAY"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Awe and creative achievement are not ordinary playfulness.",
+      "historical_source_claim_ids": [
+        "PT-III-MARS-VENUS-PLAY"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "personality_emotional_temperament",
+      "label": "Habitual emotional and personality style",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "partial",
+      "tf1_questionnaire_coverage": "partial",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G14",
+        "G18",
+        "TF1-B0"
+      ],
+      "interpretation_limit": "Emotion and recovery scenarios only partially sample temperament.",
+      "historical_source_claim_ids": [
+        "L3-TOC-006"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "moral_values_boundaries",
+      "label": "Moral values and stable standards",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "partial",
+      "tf1_questionnaire_coverage": "partial",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G17",
+        "M03",
+        "TF1-G17"
+      ],
+      "interpretation_limit": "Conditional behavior is not a complete moral worldview.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "motivation_action_initiation",
+      "label": "Internal drive and initiative",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "partial",
+      "tf1_questionnaire_coverage": "partial",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "E0",
+        "M01",
+        "TF1-M01"
+      ],
+      "interpretation_limit": "CF003 Moon/Mars role constructs are not classical natal equivalences.",
+      "historical_source_claim_ids": [
+        "PT-III-MARS-ACTION"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "self_expression_and_communication",
+      "label": "Expression and explanation",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "partial",
+      "tf1_questionnaire_coverage": "partial",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G02",
+        "TF1-G02"
+      ],
+      "interpretation_limit": "Ptolemy's Mercury reason/mind is broader than communication.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "actual_finances_resources",
+      "label": "Actual financial and resource history",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "proxy_only",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "RESOURCES"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "G20",
+        "TF1-G20"
+      ],
+      "interpretation_limit": "A hypothetical windfall choice cannot establish actual wealth history.",
+      "historical_source_claim_ids": [
+        "L3-TOC-010",
+        "PT-IV-02"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "kinship_siblings",
+      "label": "Relationships with siblings and kin",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "KINSHIP"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Not everyone has siblings or wishes to discuss them.",
+      "historical_source_claim_ids": [
+        "L3-TOC-011"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "parents_home_roots",
+      "label": "Family background, household and roots",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "HOME"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Place belonging is a modern extrapolation from parents and household topics.",
+      "historical_source_claim_ids": [
+        "L3-TOC-012"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "parenthood_caregiving",
+      "label": "Actual parenting and caregiving roles",
+      "outcome_kind": "sensitive_optional_life_history",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "PARENTING"
+      ],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "No pregnancy, fertility or mandatory parental assumptions.",
+      "historical_source_claim_ids": [
+        "L3-TOC-016",
+        "PT-IV-06"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "actual_marriage_partnership_history",
+      "label": "History of actual romantic and marital relationships",
+      "outcome_kind": "sensitive_optional_life_history",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "BONDS"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "G12",
+        "G13"
+      ],
+      "interpretation_limit": "Attraction scenarios are not the same as actual relationships.",
+      "historical_source_claim_ids": [
+        "L3-TOC-015",
+        "PT-IV-05"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "actual_foreign_travel_migration",
+      "label": "Actual travel, migration and cross-cultural lives",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "TRAVEL"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "G01"
+      ],
+      "interpretation_limit": "Trip planning is not actual travel history.",
+      "historical_source_claim_ids": [
+        "L3-TOC-017",
+        "PT-IV-08"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "actual_public_rank_and_recognition",
+      "label": "Actual social rank, public roles and recognition",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "proxy_only",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "STATUS"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "STATUS",
+        "TF1-STATUS"
+      ],
+      "interpretation_limit": "Desiring praise is not occupying a public role.",
+      "historical_source_claim_ids": [
+        "L3-TOC-020",
+        "PT-IV-03"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "actual_occupation_and_vocation",
+      "label": "Occupation, vocation and long-term career",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "proxy_only",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "VOCATION"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "G15",
+        "G16",
+        "TF1-G15",
+        "TF1-G16"
+      ],
+      "interpretation_limit": "Work energy or meaningful volunteering is not occupational biography.",
+      "historical_source_claim_ids": [
+        "L3-TOC-021",
+        "LILLY-TENTH-WORK",
+        "PT-IV-04"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "friendship_conflict_longterm",
+      "label": "Actual friendships, durable ties and conflict",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "partial",
+      "tf1_questionnaire_coverage": "partial",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "BONDS"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "G07",
+        "G25",
+        "TF1-A0"
+      ],
+      "interpretation_limit": "How one handles a friend is not history of friendships.",
+      "historical_source_claim_ids": [
+        "L3-TOC-022",
+        "L3-TOC-023",
+        "PT-IV-07"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "actual_life_turning_points",
+      "label": "Major actual life transitions",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "proxy_only",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "TIMELINE"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "LIFE-PHASE",
+        "G24"
+      ],
+      "interpretation_limit": "A hypothetical phase shift is not a dated life event.",
+      "historical_source_claim_ids": [
+        "PT-IV-10"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "overall_life_circumstances",
+      "label": "Material and biographical fortune over time",
+      "outcome_kind": "actual_life_history",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "proxy_only",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "TIMELINE"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "G21"
+      ],
+      "interpretation_limit": "General routine preference does not summarize real external events.",
+      "historical_source_claim_ids": [
+        "L3-TOC-009"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "physical_vitality_appearance",
+      "label": "Physical traits and body constitution",
+      "outcome_kind": "outside_routine_personality_survey",
+      "v7_questionnaire_coverage": "outside_scope",
+      "tf1_questionnaire_coverage": "outside_scope",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G11"
+      ],
+      "interpretation_limit": "No clinical or morphological inference from personality answers.",
+      "historical_source_claim_ids": [
+        "L3-TOC-005",
+        "L3-TOC-008"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "high_stakes_health_death_confinement",
+      "label": "Medical, mortality and captivity claims",
+      "outcome_kind": "excluded_high_stakes",
+      "v7_questionnaire_coverage": "outside_scope",
+      "tf1_questionnaire_coverage": "outside_scope",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "No compulsory clinical, violence or death prediction questions.",
+      "historical_source_claim_ids": [
+        "L3-TOC-003",
+        "L3-TOC-013",
+        "L3-TOC-024",
+        "L3-TOC-025",
+        "PT-IV-09"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "historical_servitude_livestock",
+      "label": "Period-specific servitude and livestock holdings",
+      "outcome_kind": "historical_social_institution",
+      "v7_questionnaire_coverage": "outside_scope",
+      "tf1_questionnaire_coverage": "outside_scope",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Not a universal modern psychological measurement.",
+      "historical_source_claim_ids": [
+        "L3-TOC-014"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "natal_timing_techniques",
+      "label": "Directions, profections, returns, transits",
+      "outcome_kind": "technical_not_participant_outcome",
+      "v7_questionnaire_coverage": "outside_scope",
+      "tf1_questionnaire_coverage": "outside_scope",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Calculation rules are not human traits; dated events are separately collected.",
+      "historical_source_claim_ids": [
+        "L3-TOC-026",
+        "L3-TOC-027",
+        "L3-TOC-028",
+        "L3-TOC-029"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "natal_technical_preconditions",
+      "label": "Birth-time rectification and natal prerequisites",
+      "outcome_kind": "technical_not_participant_outcome",
+      "v7_questionnaire_coverage": "outside_scope",
+      "tf1_questionnaire_coverage": "outside_scope",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Not a person-facing trait item.",
+      "historical_source_claim_ids": [
+        "L3-TOC-001",
+        "L3-TOC-002",
+        "L3-TOC-004"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "interpretive_freedom_and_non_determinism",
+      "label": "Historical noncompulsion qualifier",
+      "outcome_kind": "historical_methodological_boundary",
+      "v7_questionnaire_coverage": "outside_scope",
+      "tf1_questionnaire_coverage": "outside_scope",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "The historical author qualifies celestial causes; do not force self-report.",
+      "historical_source_claim_ids": [
+        "LILLY3-R20"
+      ],
+      "historically_attested_in_this_snapshot": true
+    },
+    {
+      "domain_id": "self_surprise",
+      "label": "Being surprised by oneself",
+      "outcome_kind": "modern_subjective_experience",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [
+        "EM01"
+      ],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "No direct natal frequency rule was located in checked passages.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "surprise_people_world",
+      "label": "Surprise about others and the world",
+      "outcome_kind": "modern_subjective_experience",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [
+        "EM02"
+      ],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Not directly attested as a rate in checked natal passages.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "awe_wonder",
+      "label": "Awe and wonder",
+      "outcome_kind": "modern_subjective_experience",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [
+        "EM03"
+      ],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Aesthetics or piety is not an awe intensity rule.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "sudden_realizations",
+      "label": "Sudden revelations and insights",
+      "outcome_kind": "modern_subjective_experience",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [
+        "EM04"
+      ],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G24"
+      ],
+      "interpretation_limit": "Different from a changed opinion or external turning point.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "felt_life_predictability",
+      "label": "Daily felt predictability",
+      "outcome_kind": "modern_subjective_experience",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [
+        "EM05"
+      ],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G21"
+      ],
+      "interpretation_limit": "Different from actual events or astrological timing technique.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "subjective_guidance",
+      "label": "Feeling guided beyond one's plans",
+      "outcome_kind": "modern_subjective_experience",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [
+        "EM06"
+      ],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Subjective feeling is not independent evidence of an external guide.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "meaningful_coincidences",
+      "label": "Meaningful coincidences",
+      "outcome_kind": "modern_subjective_experience",
+      "v7_questionnaire_coverage": "absent",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [
+        "EM07"
+      ],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [],
+      "interpretation_limit": "Not equivalent to practicing divination or omen reading.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "personal_life_meaning",
+      "label": "Personal sense of life's meaning",
+      "outcome_kind": "modern_subjective_experience",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "proxy_only",
+      "em_v2_direct_question_ids": [
+        "EM08"
+      ],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G16",
+        "TF1-G16"
+      ],
+      "interpretation_limit": "Meaning in life differs from one project's value.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "perceived_contribution",
+      "label": "Perceived benefit to others/the world",
+      "outcome_kind": "modern_subjective_experience",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "proxy_only",
+      "em_v2_direct_question_ids": [
+        "EM08"
+      ],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G16",
+        "TF1-G16"
+      ],
+      "interpretation_limit": "Do not collapse perceived impact and private meaning.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "unusual_practical_innovations",
+      "label": "Distinctive nonstandard behaviors and inventions",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "partial",
+      "tf1_questionnaire_coverage": "partial",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G04",
+        "TF1-G04"
+      ],
+      "interpretation_limit": "Already covered when the V3 unusual behaviors are directly reported.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "place_sensory_sensitivity",
+      "label": "Ordinary environmental comfort and sensitivity",
+      "outcome_kind": "habitual_disposition",
+      "v7_questionnaire_coverage": "partial",
+      "tf1_questionnaire_coverage": "absent",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [],
+      "related_existing_questions_not_necessarily_direct": [
+        "G11",
+        "ROOM-EFFECT"
+      ],
+      "interpretation_limit": "A room-preference scenario is not evidence of illness.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    },
+    {
+      "domain_id": "community_belonging",
+      "label": "Felt belonging in community",
+      "outcome_kind": "modern_subjective_experience",
+      "v7_questionnaire_coverage": "proxy_only",
+      "tf1_questionnaire_coverage": "proxy_only",
+      "em_v2_direct_question_ids": [],
+      "optional_future_question_ids": [
+        "HOME"
+      ],
+      "related_existing_questions_not_necessarily_direct": [
+        "G06",
+        "TF1-G06"
+      ],
+      "interpretation_limit": "Felt belonging is not identical to family relationship history.",
+      "historical_source_claim_ids": [],
+      "historically_attested_in_this_snapshot": false
+    }
+  ],
+  "historical_source_claims": [
+    {
+      "claim_id": "L3-TOC-001",
+      "domain_id": "natal_technical_preconditions",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "birth-time rectification",
+      "source_locator": "printed p. 500–509 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-002",
+      "domain_id": "natal_technical_preconditions",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "preconditions before judging a nativity",
+      "source_locator": "printed p. 524 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-003",
+      "domain_id": "high_stakes_health_death_confinement",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "claims about longevity",
+      "source_locator": "printed p. 525–530 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-004",
+      "domain_id": "natal_technical_preconditions",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "lord of geniture chart technique",
+      "source_locator": "printed p. 531 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-005",
+      "domain_id": "physical_vitality_appearance",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "body complexion and temperament",
+      "source_locator": "printed p. 532–533 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-006",
+      "domain_id": "personality_emotional_temperament",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "character and manners",
+      "source_locator": "printed p. 534–542 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-007",
+      "domain_id": "cognitive_style_and_learning",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "understanding and intellectual ability",
+      "source_locator": "printed p. 543–545 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-008",
+      "domain_id": "physical_vitality_appearance",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "physical stature and appearance",
+      "source_locator": "printed p. 546–550 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-009",
+      "domain_id": "overall_life_circumstances",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "actual overall life fortune",
+      "source_locator": "printed p. 551–552 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-010",
+      "domain_id": "actual_finances_resources",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "wealth acquisition and retention",
+      "source_locator": "printed p. 553–563 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-011",
+      "domain_id": "kinship_siblings",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "siblings and kinship relations",
+      "source_locator": "printed p. 564–568 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-012",
+      "domain_id": "parents_home_roots",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "parents, inheritance and household family",
+      "source_locator": "printed p. 569–575 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-013",
+      "domain_id": "high_stakes_health_death_confinement",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "bodily illness and disability claims",
+      "source_locator": "printed p. 576–585 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-014",
+      "domain_id": "historical_servitude_livestock",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "servants and livestock",
+      "source_locator": "printed p. 586 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-015",
+      "domain_id": "actual_marriage_partnership_history",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "marriage history and spousal relations",
+      "source_locator": "printed p. 587–602 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-016",
+      "domain_id": "parenthood_caregiving",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "children and parenthood claims",
+      "source_locator": "printed p. 603–605 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-017",
+      "domain_id": "actual_foreign_travel_migration",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "foreign travel and journeys",
+      "source_locator": "printed p. 606–611 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-018",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "religious conviction and affiliation",
+      "source_locator": "printed p. 611–613 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-019",
+      "domain_id": "dream_content_and_tone",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "dreams and dream interpretation",
+      "source_locator": "printed p. 613–614 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-020",
+      "domain_id": "actual_public_rank_and_recognition",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "honors, recognition and public rank",
+      "source_locator": "printed p. 615–623 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-021",
+      "domain_id": "actual_occupation_and_vocation",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "occupation and vocation",
+      "source_locator": "printed p. 624–633 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-022",
+      "domain_id": "friendship_conflict_longterm",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "actual friendships and concord",
+      "source_locator": "printed p. 634–638 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-023",
+      "domain_id": "friendship_conflict_longterm",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "opposition and personal conflict",
+      "source_locator": "printed p. 639–642 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-024",
+      "domain_id": "high_stakes_health_death_confinement",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "captivity and imprisonment outcomes",
+      "source_locator": "printed p. 643 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-025",
+      "domain_id": "high_stakes_health_death_confinement",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "mortality and violent death claims",
+      "source_locator": "printed p. 644–648 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-026",
+      "domain_id": "natal_timing_techniques",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "astrological directions and timing technique",
+      "source_locator": "printed p. 651–714 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-027",
+      "domain_id": "natal_timing_techniques",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "annual profections and year lords",
+      "source_locator": "printed p. 715–733 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-028",
+      "domain_id": "natal_timing_techniques",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "revolutions and planetary returns",
+      "source_locator": "printed p. 734–740 (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "L3-TOC-029",
+      "domain_id": "natal_timing_techniques",
+      "source_type": "lilly_book3_1647_natal_contents",
+      "evidence_level": "contents_heading_only",
+      "historical_subject_paraphrase": "transits and worked merchant nativity",
+      "source_locator": "printed p. 741–742 onward (OCR contents estimate)",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Table of contents: NOT original rule predicates."
+    },
+    {
+      "claim_id": "LILLY3-R01",
+      "domain_id": "belief_conversion_or_worldview_change",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Weak religious attachment, religious deviation or sectarianism as judged by Lilly",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.611",
+      "source_condition": "Saturn, Mars or South Node in ninth; Saturn/Mars in opposing third; movable sign; Jupiter weakened and afflicted",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R02",
+      "domain_id": "spiritual_or_ritual_practice",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Favorable inclination to the religion of one's upbringing",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.611",
+      "source_condition": "Jupiter, Venus or North Node in ninth or third",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R03",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Moderate religious disposition, increased/decreased by listed aspects",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.611",
+      "source_condition": "Sun, Moon, Mercury or Part of Fortune in ninth/third; modified by aspect to benefics or malefics",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R04",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Religious or good-minded inclination",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.611",
+      "source_condition": "No planets third/ninth; Jupiter in own house/exaltation, angular or reception with designated planets",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R05",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Contrary religious disposition to above",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.611",
+      "source_condition": "Jupiter peregrine/fallen/detrimental, cadent and afflicted by malefics",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R06",
+      "domain_id": "spiritual_or_ritual_practice",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Pious or religious party",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.612",
+      "source_condition": "Jupiter, Venus or North Node in ninth/third or with Spica Virgo",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R07",
+      "domain_id": "esoteric_interests_omens_divination",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "An aptitude for prophecy and divination",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.612",
+      "source_condition": "Jupiter and Venus in/near cazimi with Sun (wording uncertain)",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R08",
+      "domain_id": "spiritual_or_ritual_practice",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Strong piety, religious preferment and preaching",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.612",
+      "source_condition": "Sun in ninth",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R09",
+      "domain_id": "spiritual_or_ritual_practice",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Religion, chastity and faith",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.612",
+      "source_condition": "Saturn in ninth in one of its essential dignities",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R10",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Right judgement, little social credibility",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.612",
+      "source_condition": "Lord of ninth is a fortune but ill disposed",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R11",
+      "domain_id": "spiritual_or_ritual_practice",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Piety, qualified as less sincere/firm than direct benefic placement",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.612",
+      "source_condition": "Saturn or Mars third/ninth, direct in fixed sign, positively aspected by fortunes",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R12",
+      "domain_id": "esoteric_interests_omens_divination",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Speech described as oracular",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.612",
+      "source_condition": "Sun and Jupiter govern ninth, dignity in Mercury/Moon/ascendant places plus aspects",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R13",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Mixed religious goodness",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.612",
+      "source_condition": "Several planets in ninth",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R14",
+      "domain_id": "belief_conversion_or_worldview_change",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Instability of religion, heresy, blasphemy or atheism in Lilly's normative vocabulary",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.613",
+      "source_condition": "Saturn/Mars/South Node in ninth/third mutable signs, Jupiter weak/cadent/afflicted",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R15",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Contempt for godliness (historical value judgment)",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.613",
+      "source_condition": "Lord of ninth unfortunate in angles; retrograde strengthens alleged effect",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R16",
+      "domain_id": "belief_conversion_or_worldview_change",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Religious heterodoxy or changing original religion",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.613",
+      "source_condition": "Moon, Mercury and ascendant lord in bicorporeal signs",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R17",
+      "domain_id": "belief_conversion_or_worldview_change",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Variable religious opinions and interest in divination",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.613",
+      "source_condition": "Venus or Moon in ninth in movable/bicorporeal sign",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R18",
+      "domain_id": "belief_conversion_or_worldview_change",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Conversion from one religion to another",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.613",
+      "source_condition": "Mercury in ninth",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R19",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Little interest in religion",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.613",
+      "source_condition": "Moon conjunct South Node in ninth",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-R20",
+      "domain_id": "interpretive_freedom_and_non_determinism",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Stars do not force or cause religion; they are said to describe natural inclination",
+      "source_locator": "Book III CXLII — Of the Religion of the Native printed p.611",
+      "source_condition": "Lilly's own explicit interpretive restriction; not a planetary rule",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D01",
+      "domain_id": "dream_interpretation_and_beliefs",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Dreams said to have corresponding effects",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.613",
+      "source_condition": "Jupiter or Venus in ninth, potent and unafflicted",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D02",
+      "domain_id": "dream_interpretation_and_beliefs",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Dreams described as deceptive or unfavorable",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.613",
+      "source_condition": "Malefics located in ninth",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D03",
+      "domain_id": "dream_interpretation_and_beliefs",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Dreams judged ambiguous, sometimes true and sometimes false",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.613",
+      "source_condition": "Benefics in ninth weakened or afflicted",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D04",
+      "domain_id": "dream_interpretation_and_beliefs",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Dream judgement falls back to ninth-house ruler",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.613",
+      "source_condition": "No planets in ninth; inspect sign at cusp and its ruler",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D05",
+      "domain_id": "dream_content_and_tone",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Dreams of darkness, digging, graves, subterranean objects, frightening spirits",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.614",
+      "source_condition": "Saturn is chosen dream significator",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D06",
+      "domain_id": "dream_content_and_tone",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Pleasant dreams involving clergy, rulers, preferment or nobility",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.614",
+      "source_condition": "Jupiter is chosen dream significator",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D07",
+      "domain_id": "dream_content_and_tone",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Dreams of conflict, fights, enemies, war and hunting",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.614",
+      "source_condition": "Mars is chosen dream significator",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D08",
+      "domain_id": "dream_content_and_tone",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Dreams of gold, money, power, rank or high-status people",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.614",
+      "source_condition": "Sun is chosen dream significator",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D09",
+      "domain_id": "dream_content_and_tone",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Pleasant dreams of pleasures, feasts, attractiveness, fine clothing or pictures",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.614",
+      "source_condition": "Venus is chosen dream significator",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D10",
+      "domain_id": "dream_content_and_tone",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Dreams of travel, learning, books, accounting and children",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.614",
+      "source_condition": "Mercury is chosen dream significator",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "LILLY3-D11",
+      "domain_id": "dream_content_and_tone",
+      "source_type": "lilly_book3_1647_religion_dreams",
+      "evidence_level": "original_OCR_plus_retyped_witness_glyphs_pending_v1",
+      "historical_subject_paraphrase": "Dreams of water/navigation/work/flying; with Saturn dark or fearful",
+      "source_locator": "Book III CXLIII — Of Dreames printed p.614",
+      "source_condition": "Moon chosen dream significator, Saturn conjunction modifies",
+      "prediction_validated": false,
+      "source_caution": "Historical evaluative vocabulary is not endorsed; symbols unresolved in this exact committed v1."
+    },
+    {
+      "claim_id": "PT-MIND-REASON",
+      "domain_id": "cognitive_style_and_learning",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Mercury is used for intellectual/rational qualities; the Moon for sensory/emotional qualities.",
+      "source_locator": "§13 opening; printed pp.333–335",
+      "source_condition": "Mercury and Moon placement/aspects analyzed in combination",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-MYSTERY-INTEREST",
+      "domain_id": "esoteric_interests_omens_divination",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Interest in hidden matters, the unknown, mysteries, and philosophical or occult activities is discussed as a soul quality.",
+      "source_locator": "§13 orientation/stations; printed pp.335–337",
+      "source_condition": "Specified planetary station/orientation involving Mercury or Venus",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-OMENS",
+      "domain_id": "esoteric_interests_omens_divination",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Reading omens is among the occupations/interests ascribed to certain configurations.",
+      "source_locator": "§13 orientation/stations; printed p.337",
+      "source_condition": "Specific configurations of planets in evening or beneath-horizon stations",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-DREAM-INTERPRET",
+      "domain_id": "dream_interpretation_and_beliefs",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Interpreting dreams appears among interest/occupation examples.",
+      "source_locator": "§13 orientation/stations; printed p.337",
+      "source_condition": "Planetary stations affecting disposition",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-RELIGIOUS-OBSERVANCE",
+      "domain_id": "spiritual_or_ritual_practice",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Dispositions toward religious ceremonies, secret rites, initiations and mystical practices are ascribed.",
+      "source_locator": "§13 Saturn with Venus; printed p.345",
+      "source_condition": "Saturn combined with Venus in the relevant position",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-JUPITER-DEVOTION",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Piety and reverence are part of the described character, contrasted with superstition.",
+      "source_locator": "§13 Jupiter alone; printed pp.347–349",
+      "source_condition": "Jupiter governing the soul in a favorable or unfavorable condition",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-JUPITER-MERCURY-PHILOSOPHY",
+      "domain_id": "philosophical_scientific_curiosity",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Philosophical, religious, intellectual, teaching and rhetorical interests are listed.",
+      "source_locator": "§13 Jupiter with Mercury; printed pp.351–353",
+      "source_condition": "Jupiter and Mercury governing soul, with dignity/conditions",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-VENUS-DREAM-TONE",
+      "domain_id": "dream_content_and_tone",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Favorable Venus description includes pleasant dreaming, art and enjoyment.",
+      "source_locator": "§13 Venus alone; printed p.357",
+      "source_condition": "Venus as ruler of soul in favorable conditions",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-VENUS-ART",
+      "domain_id": "creative_production",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Interest in art, beauty, poetry and learned pursuits is described.",
+      "source_locator": "§13 Venus with Mercury; printed p.359",
+      "source_condition": "Venus with Mercury in honorable conditions",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-MUSIC",
+      "domain_id": "aesthetic_music_engagement",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Musical tastes and versatility/changeability are mentioned.",
+      "source_locator": "§13 zodiac sign classes; printed p.335",
+      "source_condition": "Signs classified as bicorporeal influencing the relevant soul rulers",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-REVISION-VERSATILITY",
+      "domain_id": "opinion_revision_and_flexibility",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Change of mind and versatility are attributed to certain zodiacal/lunar conditions.",
+      "source_locator": "§13 zodiac signs and Moon; printed pp.335,361–363",
+      "source_condition": "Bicorporeal sign class or lunar orbital phase/position",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-NATURE-INQUIRY",
+      "domain_id": "philosophical_scientific_curiosity",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Intellectual inquiry into nature, invention, calculation and pursuit of mysteries are described.",
+      "source_locator": "§13 Mercury alone; printed pp.361–363",
+      "source_condition": "Mercury in honorable condition governing soul",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-RELIGIOUS-SIGNS",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "passage_anchored_natal",
+      "historical_subject_paraphrase": "Attention to gods and divinatory interests are included in sign-based character claims.",
+      "source_locator": "§13 zodiacal sign classes; printed p.335",
+      "source_condition": "Solstitial sign class affecting soul rulers",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "LILLY-NINTH-RELIGION",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "lilly_house_topic_horary_intro",
+      "evidence_level": "house_topic_only_nonnatal",
+      "historical_subject_paraphrase": "Religious people, clergy, books, learning and foreign journeys are assigned to the ninth house.",
+      "source_locator": "p.55 Ninth House paragraph",
+      "source_condition": "Ninth house as a general topic; not an individual natal rule by itself",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "LILLY-NINTH-DREAMS",
+      "domain_id": "dream_content_and_tone",
+      "source_type": "lilly_house_topic_horary_intro",
+      "evidence_level": "house_topic_only_nonnatal",
+      "historical_subject_paraphrase": "Dreams and visions are named among ninth-house matters.",
+      "source_locator": "p.55 Ninth House paragraph",
+      "source_condition": "Ninth house general signification",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "LILLY-JUPITER-NINTH",
+      "domain_id": "religious_spiritual_disposition",
+      "source_type": "lilly_house_topic_horary_intro",
+      "evidence_level": "house_topic_only_nonnatal",
+      "historical_subject_paraphrase": "Lilly describes Jupiter in the ninth as associated with a devout religious disposition.",
+      "source_locator": "p.55 Ninth House paragraph, second section",
+      "source_condition": "Jupiter placed in the ninth house",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "LILLY-TENTH-WORK",
+      "domain_id": "actual_occupation_and_vocation",
+      "source_type": "lilly_house_topic_horary_intro",
+      "evidence_level": "house_topic_only_nonnatal",
+      "historical_subject_paraphrase": "Trade, profession, authority and public office are designated tenth-house topics.",
+      "source_locator": "p.55 Tenth House paragraph",
+      "source_condition": "Tenth house general topic, not an individualized event prediction",
+      "prediction_validated": false,
+      "source_caution": "Source report, not a quantitatively validated modern measure."
+    },
+    {
+      "claim_id": "PT-IV-02",
+      "domain_id": "actual_finances_resources",
+      "source_type": "ptolemy_book4_natal_life_topic",
+      "evidence_level": "chapter_level_life_domain_summary",
+      "historical_subject_paraphrase": "Ptolemy assigns calculation of material acquisitions, wealth and losses to the Lot of Fortune and related planetary relations.",
+      "source_locator": "Tetrabiblos IV.2",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Chapter domain, not full literal conditional horoscope algorithm."
+    },
+    {
+      "claim_id": "PT-IV-03",
+      "domain_id": "actual_public_rank_and_recognition",
+      "source_type": "ptolemy_book4_natal_life_topic",
+      "evidence_level": "chapter_level_life_domain_summary",
+      "historical_subject_paraphrase": "Ptolemy uses luminaries, attendant planets and angles for predictions of honor, rank and public dignity.",
+      "source_locator": "Tetrabiblos IV.3",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Chapter domain, not full literal conditional horoscope algorithm."
+    },
+    {
+      "claim_id": "PT-IV-04",
+      "domain_id": "actual_occupation_and_vocation",
+      "source_type": "ptolemy_book4_natal_life_topic",
+      "evidence_level": "chapter_level_life_domain_summary",
+      "historical_subject_paraphrase": "Ptolemy describes occupations/quality of action, including teaching, commerce, medicine, skilled trades, interpreting dreams, ritual occupations and arts.",
+      "source_locator": "Tetrabiblos IV.4",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Chapter domain, not full literal conditional horoscope algorithm."
+    },
+    {
+      "claim_id": "PT-IV-05",
+      "domain_id": "actual_marriage_partnership_history",
+      "source_type": "ptolemy_book4_natal_life_topic",
+      "evidence_level": "chapter_level_life_domain_summary",
+      "historical_subject_paraphrase": "Ptolemy discusses marital timing, number of unions and attributed spouse qualities.",
+      "source_locator": "Tetrabiblos IV.5",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Chapter domain, not full literal conditional horoscope algorithm."
+    },
+    {
+      "claim_id": "PT-IV-06",
+      "domain_id": "parenthood_caregiving",
+      "source_type": "ptolemy_book4_natal_life_topic",
+      "evidence_level": "chapter_level_life_domain_summary",
+      "historical_subject_paraphrase": "Ptolemy treats children and offspring outcomes as a distinct natal topic.",
+      "source_locator": "Tetrabiblos IV.6",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Chapter domain, not full literal conditional horoscope algorithm."
+    },
+    {
+      "claim_id": "PT-IV-07",
+      "domain_id": "friendship_conflict_longterm",
+      "source_type": "ptolemy_book4_natal_life_topic",
+      "evidence_level": "chapter_level_life_domain_summary",
+      "historical_subject_paraphrase": "Ptolemy distinguishes durable mutual affinity and hostility from occasional acquaintance or quarrels.",
+      "source_locator": "Tetrabiblos IV.7",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Chapter domain, not full literal conditional horoscope algorithm."
+    },
+    {
+      "claim_id": "PT-IV-08",
+      "domain_id": "actual_foreign_travel_migration",
+      "source_type": "ptolemy_book4_natal_life_topic",
+      "evidence_level": "chapter_level_life_domain_summary",
+      "historical_subject_paraphrase": "Ptolemy gives a natal interpretation of journeys and foreign travel with related circumstances.",
+      "source_locator": "Tetrabiblos IV.8",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Chapter domain, not full literal conditional horoscope algorithm."
+    },
+    {
+      "claim_id": "PT-IV-09",
+      "domain_id": "high_stakes_health_death_confinement",
+      "source_type": "ptolemy_book4_natal_life_topic",
+      "evidence_level": "chapter_level_life_domain_summary",
+      "historical_subject_paraphrase": "Ptolemy discusses character of death as a natal life-event claim.",
+      "source_locator": "Tetrabiblos IV.9",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Chapter domain, not full literal conditional horoscope algorithm."
+    },
+    {
+      "claim_id": "PT-IV-10",
+      "domain_id": "actual_life_turning_points",
+      "source_type": "ptolemy_book4_natal_life_topic",
+      "evidence_level": "chapter_level_life_domain_summary",
+      "historical_subject_paraphrase": "Ptolemy assigns temporal periods and directions to different life-domain events.",
+      "source_locator": "Tetrabiblos IV.10",
+      "source_condition": null,
+      "prediction_validated": false,
+      "source_caution": "Chapter domain, not full literal conditional horoscope algorithm."
+    },
+    {
+      "claim_id": "PT-III-MARS-VENUS-PLAY",
+      "domain_id": "play_humor_spontaneous_enjoyment",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "new_direct_primary_passage_check",
+      "historical_subject_paraphrase": "In one qualified Mars with Venus configuration, Ptolemy depicts play, cheerfulness, dancing and artistic pursuits.",
+      "source_locator": "Tetrabiblos Book III.13, printed p.355",
+      "source_condition": "Mars with Venus in honorable positions; counterconditions also stated.",
+      "prediction_validated": false,
+      "source_url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/3D%2A.html",
+      "source_caution": "Historically asserted character tendency, never modern frequency or validity proof."
+    },
+    {
+      "claim_id": "PT-III-MARS-ACTION",
+      "domain_id": "motivation_action_initiation",
+      "source_type": "ptolemy_book3_natal_soul_quality",
+      "evidence_level": "new_direct_primary_passage_check",
+      "historical_subject_paraphrase": "Ptolemy describes martial spirit, initiative, assertiveness and force under one Mars-dominant configuration.",
+      "source_locator": "Tetrabiblos Book III.13, printed p.353",
+      "source_condition": "Mars alone dominating the soul in honorable position; contrasts with opposite positions.",
+      "prediction_validated": false,
+      "source_url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/3D%2A.html",
+      "source_caution": "Historically asserted character tendency, never modern frequency or validity proof."
+    },
+    {
+      "claim_id": "BJ-15.1",
+      "domain_id": "ascetic_renunciation_and_initiation",
+      "source_type": "brihat_jataka_ch15_natal_yoga",
+      "evidence_level": "online_secondary_translation_with_sanskrit_verse",
+      "historical_subject_paraphrase": "Four or more strong planets in one sign are linked to named ascetic paths, with qualification for falling away.",
+      "source_locator": "Varahamihira Brhat Jataka Chapter XV verse 1",
+      "source_condition": "A multi-planet strength conjunction and its qualified cancellation.",
+      "source_url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-15",
+      "source_caution": "Online Sanskrit + translator exposition, some readings uncertain; not original manuscript verification or empirical chart validation.",
+      "prediction_validated": false
+    },
+    {
+      "claim_id": "BJ-15.2",
+      "domain_id": "ascetic_renunciation_and_initiation",
+      "source_type": "brihat_jataka_ch15_natal_yoga",
+      "evidence_level": "online_secondary_translation_with_sanskrit_verse",
+      "historical_subject_paraphrase": "Planetary combustion or defeat is described as qualifying formal initiation or continued devotion.",
+      "source_locator": "Varahamihira Brhat Jataka Chapter XV verse 2",
+      "source_condition": "Sun rays or defeated/aspected planets; online translator explicitly calls readings uncertain.",
+      "source_url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-15",
+      "source_caution": "Online Sanskrit + translator exposition, some readings uncertain; not original manuscript verification or empirical chart validation.",
+      "prediction_validated": false
+    },
+    {
+      "claim_id": "BJ-15.3",
+      "domain_id": "ascetic_renunciation_and_initiation",
+      "source_type": "brihat_jataka_ch15_natal_yoga",
+      "evidence_level": "online_secondary_translation_with_sanskrit_verse",
+      "historical_subject_paraphrase": "Initiation is discussed with Saturn's aspects, Moon-sign ruler and lunar divisional placements.",
+      "source_locator": "Varahamihira Brhat Jataka Chapter XV verse 3",
+      "source_condition": "Saturn with the Moon-sign lord, or Moon divisional placements and Saturn aspects.",
+      "source_url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-15",
+      "source_caution": "Online Sanskrit + translator exposition, some readings uncertain; not original manuscript verification or empirical chart validation.",
+      "prediction_validated": false
+    },
+    {
+      "claim_id": "BJ-15.4",
+      "domain_id": "ascetic_renunciation_and_initiation",
+      "source_type": "brihat_jataka_ch15_natal_yoga",
+      "evidence_level": "online_secondary_translation_with_sanskrit_verse",
+      "historical_subject_paraphrase": "A ninth-house and Raja Yoga combination is linked to a spiritual leader or ruler entering religious initiation.",
+      "source_locator": "Varahamihira Brhat Jataka Chapter XV verse 4",
+      "source_condition": "Ninth house Jupiter or Saturn combined with lunar, ascendant and Saturn relationships.",
+      "source_url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-15",
+      "source_caution": "Online Sanskrit + translator exposition, some readings uncertain; not original manuscript verification or empirical chart validation.",
+      "prediction_validated": false
+    }
+  ]
+}

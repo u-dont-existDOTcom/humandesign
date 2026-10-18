@@ -1,0 +1,397 @@
+{
+  "schema": "life-patterns-astrology-derived-optional-question-candidates-v1",
+  "status": "SURVEY_DESIGN_CANDIDATE_NOT_LIVE_NOT_SCORED",
+  "version": "2026-10-18",
+  "intent": "Ask what existing astrological natal source texts discuss that the Life Patterns instrument fails to measure directly; do not require astrology belief or compel any life-history disclosure.",
+  "routing": {
+    "entry": "After the existing respondent interview and eight experience questions, ask whether they want other optional life areas checked for completeness. Display topic choices first, not every question.",
+    "core_required_count": 0,
+    "default_offer_priorities": [
+      "DREAM",
+      "BELIEF",
+      "RENUNCIATION",
+      "ART",
+      "MYSTERY",
+      "TIMELINE",
+      "VOCATION",
+      "HOME"
+    ],
+    "stop_rules": [
+      "Never ask a topic that is already directly answered in the participant source, when the answer includes the relevant period and measurement dimensions.",
+      "An explicit 'not relevant', 'never', 'unknown' or 'prefer not to say' completes that topic.",
+      "No automatic chart-based question selection in research-blind collection.",
+      "No apparent astrology 'expected' response is shown; responses are independent of natal/chart data.",
+      "Life-history timeline is separate from stable personality and from subjective phenomenology.",
+      "Keep sensitive family/parenthood/finance/relationship topics separately selectable and skippable.",
+      "Source-topic presence is not sufficient reason to lengthen the survey; pilot burden and redundancy first."
+    ],
+    "max_questions_initial": 0,
+    "max_optional_topics_per_session": 5,
+    "source_check": "Existing 79 V7 scenarios, 25 TF1 direct patterns, eight EM v2 experiences, CF003 broad centrality prompts and existing unusual-behavior source check"
+  },
+  "source_status_definitions": {
+    "verified_passage": "Historical natal text passage actually checked, not a validated prediction",
+    "natal_contents_heading": "Subject occurs in natal source table of contents, rule direction not validated from heading",
+    "provisional_glyph": "Historical natal source candidates have two textual witnesses; some original astrological symbols not fully adjudicated in committed v1",
+    "modern_extrapolation": "Question construct motivated by modern human-life measurement rather than a directly quantified natal source rule"
+  },
+  "questions": [
+    {
+      "id": "DREAM",
+      "priority": "high",
+      "label": "Dreaming and what dreams mean to you",
+      "mode": "phenomenology",
+      "source_domains": [
+        "dream_content_and_tone",
+        "dream_interpretation_and_beliefs"
+      ],
+      "recall_window": "typical_last_3_months",
+      "question": "In a typical recent month, how often do you remember dreams after waking up, if ever?",
+      "answer_dimensions": [
+        "recall_frequency",
+        "vividness_when_remembered_optional",
+        "usual_emotional_tone_optional",
+        "meaning_assigned_optional"
+      ],
+      "optional_followup": "If you remember them, do particular subjects recur, or do dreams ever influence how you think or act while awake? You can say no or skip.",
+      "interpretation_limit": "Dream recall frequency is not a claim that dreams foretell events. Do not infer dream content from beliefs about omens.",
+      "prior_art": "Mannheim Dream questionnaire (MADRE): dream recall, emotion, nightmares, lucid dreaming and attitudes; compare wording and burden, do not copy scale verbatim.",
+      "sensitivity": "ordinary_optional"
+    },
+    {
+      "id": "BELIEF",
+      "priority": "high",
+      "label": "Worldview and regular spiritual/religious practice",
+      "mode": "self_report_worldview",
+      "source_domains": [
+        "religious_spiritual_disposition",
+        "spiritual_or_ritual_practice"
+      ],
+      "recall_window": "current_and_past_year",
+      "question": "What, if anything, plays a regular part in your life: religious observance, meditation or other spiritual practice, philosophical reflection, a secular worldview, or none of these?",
+      "answer_dimensions": [
+        "actual_current_practice_type_optional",
+        "practice_frequency_optional",
+        "current_self_description_optional"
+      ],
+      "optional_followup": "Do these activities reflect deep personal conviction, routine, community belonging, curiosity, or something else?",
+      "interpretation_limit": "Do not infer religious identity from a sensed higher power, awe or synchronicity. No identity is assumed; refusal is complete.",
+      "sensitivity": "protected_beliefs_fully_optional"
+    },
+    {
+      "id": "BELIEF_CHANGE",
+      "priority": "high",
+      "label": "Important changes in your beliefs or convictions",
+      "mode": "autobiographical_change",
+      "source_domains": [
+        "belief_conversion_or_worldview_change",
+        "opinion_revision_and_flexibility"
+      ],
+      "recall_window": "lifetime",
+      "question": "Have your most important beliefs or convictions stayed broadly stable, shifted gradually, changed suddenly, or changed several times across your life?",
+      "answer_dimensions": [
+        "change_pattern",
+        "approximate_age_period_optional",
+        "self_reported_change_domains_optional"
+      ],
+      "optional_followup": "If something changed, what would you consider the most significant shift and roughly when?",
+      "interpretation_limit": "A change of mind is not necessarily a religious conversion, a revelation or evidence of being guided. Do not force a narrative.",
+      "sensitivity": "protected_beliefs_fully_optional"
+    },
+    {
+      "id": "RENUNCIATION",
+      "priority": "high",
+      "label": "Deliberate renunciation, retreat or initiation",
+      "mode": "optional_life_course_role",
+      "source_domains": [
+        "ascetic_renunciation_and_initiation"
+      ],
+      "recall_window": "lifetime",
+      "question": "Have there been any significant periods in your life when you deliberately stepped back from worldly goals, possessions, status or ordinary social roles, whether through spiritual/religious commitment, simplicity, retreat or something else?",
+      "answer_dimensions": [
+        "applicability",
+        "chosen_commitment_vs_external_constraint_optional",
+        "approximate_age_period_optional",
+        "duration_optional",
+        "formal_initiation_optional",
+        "later_return_optional"
+      ],
+      "optional_followup": "If so, was this a formal commitment or more a personal way of living, and did it last or later change?",
+      "interpretation_limit": "Voluntary renunciation and formal initiation are distinct from generalized spiritual experiences, introversion, depression, poverty or enforced isolation. This is not an assumed religious identity or a medical state.",
+      "source_note": "Varahamihira Brihat Jataka Chapter XV verses 1-4, Sanskrit and secondary English translation; wording uncertainties noted. Four natal yoga conditions are historical assertions, not verified chart predictions.",
+      "sensitivity": "protected_beliefs_fully_optional"
+    },
+    {
+      "id": "ART",
+      "priority": "high",
+      "label": "Making things creatively versus appreciating beauty",
+      "mode": "two_independent_axes",
+      "source_domains": [
+        "creative_production",
+        "aesthetic_music_engagement"
+      ],
+      "recall_window": "past_year",
+      "question": "Over the past year, how often have you actively made, written, designed, performed or invented something for its own sake? Separately, how often have art, music, beauty or aesthetics been important experiences for you?",
+      "answer_dimensions": [
+        "creative_production_frequency",
+        "aesthetic_appreciation_frequency",
+        "example_domain_optional",
+        "creative_achievement_optional"
+      ],
+      "optional_followup": "If they differ, what do you create yourself and what do you mostly appreciate or enjoy?",
+      "interpretation_limit": "Enjoying art and producing it are different; school/work outputs need not be excluded or automatically counted. Avoid confusing achievement with aesthetic preference.",
+      "prior_art": "Creative Achievement Questionnaire (CAQ) covers actual accomplishments across ten creative domains. Use only as external comparator, not as a copied scale.",
+      "sensitivity": "ordinary_optional"
+    },
+    {
+      "id": "MYSTERY",
+      "priority": "high",
+      "label": "Interest in hidden, philosophical or unusual questions",
+      "mode": "interest_and_method",
+      "source_domains": [
+        "esoteric_interests_omens_divination",
+        "philosophical_scientific_curiosity"
+      ],
+      "recall_window": "past_year_and_long_term",
+      "question": "How often, if at all, do you actively explore unresolved philosophical questions, hidden or mysterious subjects, divination, scientific puzzles, or other ways of investigating what you do not yet understand?",
+      "answer_dimensions": [
+        "actual_activities_frequency",
+        "subject_area_tags_optional",
+        "evidence_evaluation_style_optional"
+      ],
+      "optional_followup": "When you encounter an unusual claim, what tends to convince you it is true or mistaken?",
+      "interpretation_limit": "Interest in omens, interest in science, personal intuition and beliefs about causes are different. Do not collapse into an occult-or-not binary.",
+      "sensitivity": "ordinary_optional"
+    },
+    {
+      "id": "TIMELINE",
+      "priority": "high",
+      "label": "Actual turning points and life phases",
+      "mode": "life_event_timeline",
+      "source_domains": [
+        "actual_life_turning_points",
+        "overall_life_circumstances"
+      ],
+      "recall_window": "lifetime",
+      "question": "If you look across your life, what are up to three changes or turning points that most clearly divide it into a before and after? You may say none or decline.",
+      "answer_dimensions": [
+        "event_description_optional",
+        "approximate_age_or_year_optional",
+        "external_event_vs_inner_change_optional",
+        "life_domain_optional",
+        "confidence_in_date_optional"
+      ],
+      "optional_followup": "For each event you choose, was the change mostly in external circumstances, your understanding/identity, or both?",
+      "interpretation_limit": "Do not require trauma, death, health events or intimate details. A major inner transformation is distinct from actual marriage, job, family or residence events. Not a live forecasting instrument.",
+      "prior_art": "Event History Calendar and Life History Calendar methods support cue-based recall and approximate retrospective event timing; do not claim exact dates from memory.",
+      "sensitivity": "fully_optional_life_history"
+    },
+    {
+      "id": "VOCATION",
+      "priority": "high",
+      "label": "Actual work, calling and long-running roles",
+      "mode": "life_history_and_identity",
+      "source_domains": [
+        "actual_occupation_and_vocation"
+      ],
+      "recall_window": "current_and_lifetime",
+      "question": "What kinds of work or contribution have actually occupied the most of your life so far? Has there been one lasting vocation, several distinct phases, or no clear occupation or calling?",
+      "answer_dimensions": [
+        "actual_role_history_optional",
+        "felt_vocation_separate_optional",
+        "approximate_transitions_optional"
+      ],
+      "optional_followup": "If an occupation or calling has changed, what changed and around what period?",
+      "interpretation_limit": "Actual jobs and public roles are not inferred from how mentally draining computer work feels or a volunteer hypothetical. Unemployment or unpaid care are valid contexts.",
+      "sensitivity": "ordinary_optional"
+    },
+    {
+      "id": "HOME",
+      "priority": "high",
+      "label": "Home, family roots and belonging",
+      "mode": "experiential_belonging",
+      "source_domains": [
+        "parents_home_roots",
+        "kinship_siblings"
+      ],
+      "recall_window": "lifetime_and_current",
+      "question": "Where, with whom, or in what situations have you felt most at home or a sense of belonging, if anywhere? Has that changed over your life?",
+      "answer_dimensions": [
+        "belonging_context_optional",
+        "period_changes_optional",
+        "kinship_vs_place_distinction_optional"
+      ],
+      "optional_followup": "Do family relationships, chosen community, or places themselves play the biggest role, if any?",
+      "interpretation_limit": "Do not presume supportive parents, siblings, a family home or a stable residence. No personal identification details required.",
+      "sensitivity": "fully_optional_private_relationships"
+    },
+    {
+      "id": "KINSHIP",
+      "priority": "medium",
+      "label": "Actual sibling and extended-family roles",
+      "mode": "life_history",
+      "source_domains": [
+        "kinship_siblings",
+        "parents_home_roots"
+      ],
+      "recall_window": "lifetime",
+      "question": "Without naming anyone, what role—if any—have siblings or extended relatives played in your life, and how has that changed?",
+      "answer_dimensions": [
+        "applicability",
+        "actual_relational_role_optional",
+        "change_over_time_optional"
+      ],
+      "optional_followup": "Would you say these ties have been central, occasional, absent, or too variable to summarize?",
+      "interpretation_limit": "Not everyone has siblings or safe family relationships; skip is not an absence of empathy or attachment.",
+      "sensitivity": "fully_optional_private_relationships"
+    },
+    {
+      "id": "BONDS",
+      "priority": "medium",
+      "label": "Actual long-term friendship and partnership patterns",
+      "mode": "relational_life_history",
+      "source_domains": [
+        "friendship_conflict_longterm",
+        "actual_marriage_partnership_history"
+      ],
+      "recall_window": "lifetime",
+      "question": "Looking at your actual close bonds over time, have long friendships or partnerships tended to last, change, end and begin again, or follow different patterns?",
+      "answer_dimensions": [
+        "friendship_stability_optional",
+        "romantic_history_optional",
+        "approximate_phase_change_optional"
+      ],
+      "optional_followup": "Would an answer about friendship be different from one about romantic partnership?",
+      "interpretation_limit": "Do not force relationship trauma, marital status, sexuality or specific partner details. Existing hypothetical romance reactions are not actual relationship histories.",
+      "sensitivity": "fully_optional_private_relationships"
+    },
+    {
+      "id": "TRAVEL",
+      "priority": "medium",
+      "label": "Living elsewhere and encounters with different cultures",
+      "mode": "life_history",
+      "source_domains": [
+        "actual_foreign_travel_migration"
+      ],
+      "recall_window": "lifetime",
+      "question": "How much have actual travel, relocation, languages or living among different cultures shaped your life, if at all?",
+      "answer_dimensions": [
+        "actual_vs_desired_travel_optional",
+        "duration_or_phase_optional",
+        "felt_impact_optional"
+      ],
+      "optional_followup": "Has this been recurring over many years or concentrated in one period?",
+      "interpretation_limit": "Desire for travel and one hypothetical itinerary are not evidence of actual journeys. No precise addresses requested.",
+      "sensitivity": "ordinary_optional"
+    },
+    {
+      "id": "STATUS",
+      "priority": "medium",
+      "label": "Changes in public responsibility or recognition",
+      "mode": "actual_role_history",
+      "source_domains": [
+        "actual_public_rank_and_recognition"
+      ],
+      "recall_window": "lifetime",
+      "question": "Have public responsibilities, influence or recognition actually been a major or changing part of your life, or mostly not?",
+      "answer_dimensions": [
+        "actual_roles_optional",
+        "historical_changes_optional",
+        "desire_for_recognition_separately_optional"
+      ],
+      "optional_followup": "Is that different from how much you personally care about recognition?",
+      "interpretation_limit": "Separate actual status and responsibility from whether praise feels rewarding (which TF1 already asks).",
+      "sensitivity": "ordinary_optional"
+    },
+    {
+      "id": "RESOURCES",
+      "priority": "medium",
+      "label": "Broad material circumstances over time",
+      "mode": "private_life_history",
+      "source_domains": [
+        "actual_finances_resources"
+      ],
+      "recall_window": "lifetime",
+      "question": "Without giving amounts, have your material circumstances generally been stable, improving, worsening, cyclical, or too varied to summarize?",
+      "answer_dimensions": [
+        "overall_life_course_pattern_optional",
+        "approximate_phase_optional",
+        "objective_vs_subjective_security_optional"
+      ],
+      "optional_followup": "Do financial security and material possessions matter to you in the same way, or differently?",
+      "interpretation_limit": "No specific income, account data, inherited amounts or debt disclosures requested. Windfall spending preference does not establish actual wealth.",
+      "sensitivity": "fully_optional_financial_privacy"
+    },
+    {
+      "id": "PARENTING",
+      "priority": "medium",
+      "label": "Caregiving and parenting when applicable",
+      "mode": "role_and_life_history",
+      "source_domains": [
+        "parenthood_caregiving"
+      ],
+      "recall_window": "current_and_lifetime",
+      "question": "Has caring for children or other dependents been part of your actual life? If so, how central has it been and has your role changed?",
+      "answer_dimensions": [
+        "role_applicability",
+        "role_centrality_optional",
+        "phase_changes_optional"
+      ],
+      "optional_followup": "If care matters to you, is it a chosen role, a practical obligation, or both?",
+      "interpretation_limit": "Do not assume children, fertility, caregiving or family plans. Never turn natal fertility/death claims into medical predictions.",
+      "sensitivity": "fully_optional_family_privacy"
+    },
+    {
+      "id": "PLAY",
+      "priority": "medium",
+      "label": "Playfulness and spontaneous enjoyment",
+      "mode": "frequency_and_style",
+      "source_domains": [
+        "play_humor_spontaneous_enjoyment"
+      ],
+      "recall_window": "past_year",
+      "question": "During ordinary life over the past year, how often have you been playful, amused, silly, or spontaneously drawn into enjoyment, if at all?",
+      "answer_dimensions": [
+        "frequency_optional",
+        "typical_context_optional",
+        "social_vs_solitary_optional"
+      ],
+      "optional_followup": "Does playfulness usually arise with other people, on your own, or in both settings?",
+      "interpretation_limit": "Enjoyment is not necessarily awe, creativity or optimistic mood. Playfulness is historically adjacent, not an established natal predictor of frequency.",
+      "sensitivity": "ordinary_optional"
+    }
+  ],
+  "optional_domain_modules_not_promoted": [
+    "health diagnoses, disability and treatment outcomes",
+    "death or violence predictions and natal lifespan",
+    "incarceration/captivity",
+    "pregnancy/fertility diagnostics",
+    "stigmatizing value judgements about any belief system, gender or sexual behavior"
+  ],
+  "measurement_framework_reuse": [
+    {
+      "method": "Mannheim Dream questionnaire MADRE",
+      "paper": "https://journals.ub.uni-heidelberg.de/index.php/IJoDR/article/view/16675",
+      "disposition": "adapt concepts, do not paste validated item wording",
+      "domains": [
+        "DREAM"
+      ]
+    },
+    {
+      "method": "Creative Achievement Questionnaire",
+      "paper": "https://doi.org/10.1207/s15326934crj1701_4",
+      "disposition": "benchmark creative accomplishment separately from liking art; check use permissions",
+      "domains": [
+        "ART"
+      ]
+    },
+    {
+      "method": "Event History Calendar",
+      "paper": "https://pubmed.ncbi.nlm.nih.gov/9829098/",
+      "disposition": "adapt recall cues and event timelines; no forced precision",
+      "domains": [
+        "TIMELINE"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+domain_id|label|kind|v7_status|tf1_status|em_direct|optional_questions|nearest_previous_questions|interpretation_limit
+religious_spiritual_disposition|Religious and spiritual orientation|habitual_disposition|absent|absent||BELIEF||Felt guidance is not equivalent to religious belief.
+spiritual_or_ritual_practice|Actual spiritual or ritual practices|habitual_disposition|absent|absent||BELIEF||Frequency of meditation or ritual is not measured by awe.
+ascetic_renunciation_and_initiation|Ascetic commitment and periods of renunciation|actual_life_history|absent|absent||RENUNCIATION||Religious practice or awe does not establish deliberate renunciation, vows, or initiation.
+belief_conversion_or_worldview_change|Changes in religious or philosophical convictions|actual_life_history|absent|absent||BELIEF_CHANGE||Life-change insight is not necessarily religious conversion.
+esoteric_interests_omens_divination|Interest in hidden matters and divination|habitual_disposition|absent|absent||MYSTERY||Interest in omens differs from interpreting coincidences as meaningful.
+dream_content_and_tone|Dream content, emotional tone and recurring themes|subjective_experience|absent|absent||DREAM||Dream content is not proof that dreams foretell events.
+dream_interpretation_and_beliefs|Dream recall and interpretation|subjective_experience|absent|absent||DREAM||Dream recall and dream interpretation are different measurements.
+cognitive_style_and_learning|Thinking and learning style|habitual_disposition|partial|direct|||G01,G02,TF1-G01,TF1-G02|Specific reasoning scenes are not a cognitive ability assessment.
+philosophical_scientific_curiosity|Sustained philosophical/scientific curiosity|habitual_disposition|proxy_only|proxy_only||MYSTERY|G01,TF1-G01|Solving a planning problem is not sustained philosophical investigation.
+creative_production|Creative production and making|habitual_disposition|absent|absent||ART||Enjoying beauty does not establish creative production.
+aesthetic_music_engagement|Art/music/beauty appreciation|habitual_disposition|absent|absent||ART||Liking art and producing art need separate variables.
+opinion_revision_and_flexibility|Long-term revision of beliefs and opinions|habitual_disposition|partial|partial||BELIEF_CHANGE|G24,TF1-G10|Contextual action changes are not global belief transformation.
+play_humor_spontaneous_enjoyment|Playfulness, humor and enjoyment|subjective_experience|absent|absent||PLAY||Awe and creative achievement are not ordinary playfulness.
+personality_emotional_temperament|Habitual emotional and personality style|habitual_disposition|partial|partial|||G14,G18,TF1-B0|Emotion and recovery scenarios only partially sample temperament.
+moral_values_boundaries|Moral values and stable standards|habitual_disposition|partial|partial|||G17,M03,TF1-G17|Conditional behavior is not a complete moral worldview.
+motivation_action_initiation|Internal drive and initiative|habitual_disposition|partial|partial|||E0,M01,TF1-M01|CF003 Moon/Mars role constructs are not classical natal equivalences.
+self_expression_and_communication|Expression and explanation|habitual_disposition|partial|partial|||G02,TF1-G02|Ptolemy's Mercury reason/mind is broader than communication.
+actual_finances_resources|Actual financial and resource history|actual_life_history|proxy_only|proxy_only||RESOURCES|G20,TF1-G20|A hypothetical windfall choice cannot establish actual wealth history.
+kinship_siblings|Relationships with siblings and kin|actual_life_history|absent|absent||KINSHIP||Not everyone has siblings or wishes to discuss them.
+parents_home_roots|Family background, household and roots|actual_life_history|absent|absent||HOME||Place belonging is a modern extrapolation from parents and household topics.
+parenthood_caregiving|Actual parenting and caregiving roles|sensitive_optional_life_history|absent|absent||PARENTING||No pregnancy, fertility or mandatory parental assumptions.
+actual_marriage_partnership_history|History of actual romantic and marital relationships|sensitive_optional_life_history|proxy_only|absent||BONDS|G12,G13|Attraction scenarios are not the same as actual relationships.
+actual_foreign_travel_migration|Actual travel, migration and cross-cultural lives|actual_life_history|proxy_only|absent||TRAVEL|G01|Trip planning is not actual travel history.
+actual_public_rank_and_recognition|Actual social rank, public roles and recognition|actual_life_history|proxy_only|proxy_only||STATUS|STATUS,TF1-STATUS|Desiring praise is not occupying a public role.
+actual_occupation_and_vocation|Occupation, vocation and long-term career|actual_life_history|proxy_only|proxy_only||VOCATION|G15,G16,TF1-G15,TF1-G16|Work energy or meaningful volunteering is not occupational biography.
+friendship_conflict_longterm|Actual friendships, durable ties and conflict|actual_life_history|partial|partial||BONDS|G07,G25,TF1-A0|How one handles a friend is not history of friendships.
+actual_life_turning_points|Major actual life transitions|actual_life_history|proxy_only|proxy_only||TIMELINE|LIFE-PHASE,G24|A hypothetical phase shift is not a dated life event.
+overall_life_circumstances|Material and biographical fortune over time|actual_life_history|proxy_only|proxy_only||TIMELINE|G21|General routine preference does not summarize real external events.
+physical_vitality_appearance|Physical traits and body constitution|outside_routine_personality_survey|outside_scope|outside_scope|||G11|No clinical or morphological inference from personality answers.
+high_stakes_health_death_confinement|Medical, mortality and captivity claims|excluded_high_stakes|outside_scope|outside_scope||||No compulsory clinical, violence or death prediction questions.
+historical_servitude_livestock|Period-specific servitude and livestock holdings|historical_social_institution|outside_scope|outside_scope||||Not a universal modern psychological measurement.
+natal_timing_techniques|Directions, profections, returns, transits|technical_not_participant_outcome|outside_scope|outside_scope||||Calculation rules are not human traits; dated events are separately collected.
+natal_technical_preconditions|Birth-time rectification and natal prerequisites|technical_not_participant_outcome|outside_scope|outside_scope||||Not a person-facing trait item.
+interpretive_freedom_and_non_determinism|Historical noncompulsion qualifier|historical_methodological_boundary|outside_scope|outside_scope||||The historical author qualifies celestial causes; do not force self-report.
+self_surprise|Being surprised by oneself|modern_subjective_experience|absent|absent|EM01|||No direct natal frequency rule was located in checked passages.
+surprise_people_world|Surprise about others and the world|modern_subjective_experience|absent|absent|EM02|||Not directly attested as a rate in checked natal passages.
+awe_wonder|Awe and wonder|modern_subjective_experience|absent|absent|EM03|||Aesthetics or piety is not an awe intensity rule.
+sudden_realizations|Sudden revelations and insights|modern_subjective_experience|proxy_only|absent|EM04||G24|Different from a changed opinion or external turning point.
+felt_life_predictability|Daily felt predictability|modern_subjective_experience|proxy_only|absent|EM05||G21|Different from actual events or astrological timing technique.
+subjective_guidance|Feeling guided beyond one's plans|modern_subjective_experience|absent|absent|EM06|||Subjective feeling is not independent evidence of an external guide.
+meaningful_coincidences|Meaningful coincidences|modern_subjective_experience|absent|absent|EM07|||Not equivalent to practicing divination or omen reading.
+personal_life_meaning|Personal sense of life's meaning|modern_subjective_experience|proxy_only|proxy_only|EM08||G16,TF1-G16|Meaning in life differs from one project's value.
+perceived_contribution|Perceived benefit to others/the world|modern_subjective_experience|proxy_only|proxy_only|EM08||G16,TF1-G16|Do not collapse perceived impact and private meaning.
+unusual_practical_innovations|Distinctive nonstandard behaviors and inventions|habitual_disposition|partial|partial|||G04,TF1-G04|Already covered when the V3 unusual behaviors are directly reported.
+place_sensory_sensitivity|Ordinary environmental comfort and sensitivity|habitual_disposition|partial|absent|||G11,ROOM-EFFECT|A room-preference scenario is not evidence of illness.
+community_belonging|Felt belonging in community|modern_subjective_experience|proxy_only|proxy_only||HOME|G06,TF1-G06|Felt belonging is not identical to family relationship history.
