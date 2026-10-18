@@ -1,3 +1,9 @@
+# Original Lilly through CXLIIII status and source numbering anomaly — 2026-10-18
+
+After publication 10,378 historical documentary annotations (9,312 Lilly +1,066 Ptolemy), original scanned source position PDF655/894 (~73.3% physical page order ONLY). B06y added 188 qualified source clauses, source-six-star coordinates without epoch parity and a critical beggar/king social-class-relative counterexample; printed numbering jumps CXLIIII to CXLVI. No human predictive successes or runtime model promotions. Next printed CXLVI source begins PDF655. Chinese source only BaZi46 and ZiWei26 remain separate; full physics/maths and blind tests open.
+
+---
+
 # Lilly first edition through unnumbered tenth-house honors — 2026-10-18
 
 After source publication 10,190 historical annotations (9,124 Lilly +1,066 Ptolemy), original PDF649/894 (72.6% physical scan position only). B06x adds 19 records preserving the four priority classes and specific orb/magnitude conditions; no actual career/rank accuracy and no runtime model change. The unnumbered source does not increment chapter count. NEXT original printed CXLIIII on status PDF649 onward; Chinese BaZi 46 and Zi Wei 26 notes separate.
