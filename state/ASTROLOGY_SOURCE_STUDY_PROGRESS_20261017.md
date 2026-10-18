@@ -1,3 +1,9 @@
+# Lilly first edition through printed CXLI travel safety and fortunes — 2026-10-18
+
+After authenticated publication **10,001 original documentary historical notes** (8,935 Lilly +1,066 Ptolemy), source frontier first-edition PDF645/894 (**72.1% physical scanned position ONLY, not predictive or research completion**). B06u adds 76 historic conditions on travel success, hazards and claimed fortunate regions, with source exceptions and period geographic lookup at printed page93 still unresolved. No independent human travel danger or fortune results validated; no executable source rule promotions. NEXT printed CXLII on religion of native, PDF645–647; source explicitly denies stellar compulsion of faith. Parallel separate BaZi 46 and Zi Wei 26 source-only notes remain open; exact astrological and blinded studies not complete.
+
+---
+
 # Lilly first-edition original through Cause of Travel and Haly — 2026-10-18
 
 After verified source publication **9,925 documentary historical annotations** (8,859 Lilly +1,066 Ptolemy), original physical frame 644/894 (**72.0% scanned-page position only, not full scientific completion**). Printed CXL adds 53 period source notes, planetary/house motive classification and attributed Haly ninth ruler placements first–eighth. Historical dangerous travel/death and religion/motive claims are NOT real-world human forecasts and no runtime source rules promoted. NEXT printed CXLI travel success and danger PDF644–645, then printed CXLII religion begins later PDF645. Parallel independent Chinese BaZi 46 and Zi Wei 26 source-only annotations; original astronomy/math, complete Zi Wei and BaZi charting, preregistered blind human evaluation and matched null remain OPEN.
