@@ -1,3 +1,9 @@
+# Original Lilly 1647 directions effects through PDF688 — 2026-10-18
+
+After verified publication 11,661 historical original-source annotations (10,595 Lilly +1,066 Ptolemy), original PDF688/894 (~77.0% physical scanned position ONLY, not total research/predictive completion). B07m 127 source-only notes preserve Significator/Promittor timing claims, Lilly's acknowledged misses and critical 2–3° Ascendant rectification shifting alleged event timing by YEARS. No original numerical Regiomontanus/Argolus parity, no frozen prospective event tests, zero human successes or source runtime promotions. Next printed CLVII effects-duration PDF688–689, printed CLVIII from PDF690. Separate Chinese BaZi46, ZiWei26 historic source-only notes remain open.
+
+---
+
 # Original Lilly 1647 through printed CLVI historical mortality — 2026-10-18
 
 Following remote verified publication **11,534 historical documentary annotations** (10,468 Lilly +1,066 Ptolemy), original first-edition photograph frontier PDF685/894 (**76.6% physical scanned-page position ONLY, not scientific research/predictive completion**). B07l adds 222 source-only CLVI records, 6 period fixed-star source coordinates, dozens of compound fatal/nonfatal outcomes but MAIN original caveats that aphorisms cannot operate alone and astrologers must not state certain time of death. Zero human mortality outcomes tested, no runtime scorer promotions. NEXT major UNNUMBERED original `THE EFFECTS OF DIRECTIONS` PDF685–688 before printed CLVII later PDF688. Directions timing/birth-time uncertainty crucial to independent blind research. Chinese 46 BaZi +26 Zi Wei source-only notes remain separate.

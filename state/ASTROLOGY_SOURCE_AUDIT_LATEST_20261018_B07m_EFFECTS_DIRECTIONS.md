@@ -1,0 +1,37 @@
+# Original Lilly 1647 Effects of Directions source documented
+
+# Original Lilly 1647 unnumbered THE EFFECTS OF DIRECTIONS — documentary research
+
+[2026-10-18 14:51 UTC] Africa/Dakar. The following preserves historical assertions, NOT verified methods for individual human event prediction, birth rectification or medical/legal risk.
+
+## Physical original source
+
+William Lilly, *Christian Astrology* (original 1647, Wellcome b30338724), major substantive **UNNUMBERED `THE EFFECTS OF DIRECTIONS`** begins at original **PDF685/printed651**, after printed CHAP CLVI `Of Death, whether Violent or Natural` ends on PDF684. The source runs through **PDF686/printed652**, **PDF687/printed653**, and terminates on the upper part of **PDF688/printed654**. Distinct separately numbered **CHAP CLVII `How long the Effects of a Direction shall last`** begins after the dividing horizontal line later PDF688; printed CLVIII starts PDF690. Original photographed PDF685–690 SHA256/byte and printed folio witnesses are frozen, with PDF689–690 only following-chapter context.
+
+## Mathematical attribution versus actual execution
+
+Lilly credits Regiomontanus, Maginus, Leovitius, Manginus, Zobolus, Ptolemy, Origanus, and particularly Argolus with methods for primary directions and positions of planetary bodies away from house cusps. Bibliographic references include Origanus printed page 391 and Argolus page 283. These are historical citations, not independently collated mathematical implementations. **The author explicitly refers the reader elsewhere for numeric directional computation**, saying that carrying it out is not the present task. Hence this section gives a speculative event-effect taxonomy, NOT a complete validated chart/time algorithm.
+
+The technical description directs a **Significator** to the position/aspect of a **Promittor** and alleges this can time a marriage, travel, advancement or increase of estate down to years, months, weeks and days. Each of these is a separate future event and timing outcome. The source uses a five-step interpretation: (1) determine favorable versus adverse direction by aspect; (2) in favorable cases assess the significator's intrinsic meaning plus accidental natal house/rulership; (3) attribute favorable cause to the promittor and meeting-house context; (4) evaluate adverse outcomes from significator under adverse direction; (5) attribute cause of adversity to promittor/its contextual house. Cause, type, magnitude and timing are different endpoints.
+
+## Particularly important source statements on prediction failure
+
+**Original PDF686/printed652**: Lilly admits that astrologers often do not hit predicted event dates correctly but attributes this to the practitioner's inadequate rectification rather than astrology itself. He explicitly calls verifying the Ascendant exceptionally difficult and states that an error of **two or three degrees** can cause events to fall **many years earlier or later**. Similar errors in Midheaven longitude are identified. For empirical evaluation this is an exceptionally flexible retrospective repair mechanism: one cannot shift a birth time after seeing the event and then count the same event as a held-out predictive hit.
+
+A separate `DIRECTIONS_EMPIRICAL_FIREWALL_V1.json` accordingly requires authenticated birth time/place, source and geometric parity, frozen chart/directions/timing windows, a set of rectification/fitting events permanently excluded from the test set, untouched dated holdout events including no-event negatives, matched nonastrological calendars and decoy charts, and all misses reported at original tolerances. This is a future test specification; none of it has been executed on real participants.
+
+## Five in description versus ten actual listed points
+
+Original PDF687 says directions concern these "Places and Planets, in number **five**", then enumerates exactly **TEN** objects across PDF687–688: (1) Ascendant for health/body/mood; (2) Moon for body/travel/marriage/family; (3) Sun for health, father, honors and esteem; (4) Midheaven for official preferment, profession and mother; (5) Part of Fortune for wealth; (6) Saturn for ancestors, property, agriculture and anxiety; (7) Jupiter for status/wealth/children/religion; (8) Mars for conflict/legal disputes/siblings; (9) Venus for relationships, ornamentation and women; (10) Mercury for intellect, travel, commerce, younger siblings and scholarly activity. The source's count inconsistency is preserved without deleting later items or pretending the two numbers match. The traditional five *hylegiacal* points may explain the distinction, but the original passage is left unaltered rather than silently "corrected."
+
+Lilly expressly **rejects** the notion that directions of the Part of Fortune cause or demonstrate bodily/medical effects even though some other astrologers believed this; instead he associates Fortune chiefly with financial matters. He also notes differing forward and reverse directional procedures, expressing preference for sequence of zodiac signs. These are competing historical methods, not modern tested causal effects.
+
+## Archival acceptance versus predictive validity
+
+**127 source-only original historical annotations R10469–R10595**, **125 substantive, 2 next printed chapter navigation**, in **8 reversible page-image groups**. Original photos PDF685–690, source-to-record mapping and empirical firewall all hash-verifiable. **36 focused source/provenance/qualification tests pass**, plus independent ZIP extraction of the exact archive with member CRC/SHA/bytes and replaying all **36** source tests. This checks documentation and preservation, NOT statistical validity of the celestial claims.
+
+Upon authenticated GitHub publication, cumulative Western historical records become **10,595 Lilly +1,066 retained Ptolemy =11,661 documentary annotations**, original physical frame frontier **PDF688 of 894 ≈77.0% scanned position only**. Chinese historical source lane remains separate **46 BaZi +26 Zi Wei Dou Shu=72 source notes**, no verified human calculations or predictions. Zero independent human event-time successes and zero newly promoted runtime source rules.
+
+NEXT distinct original printed **CHAP CLVII `How long the Effects of a Direction shall last`** starts after divider on original PDF688/printed654, continues to PDF689/printed655 and ends before separate original printed CLVIII (PDF690/printed656). This next chapter concerns strength of Significator/Promittor, apparent magnitude and duration and different strength cases. Do not merge it into this unnumbered catalogue. Freeze the original CLVII full image source, mathematical limitations and human timing nonpromotions separately.
+
+After authenticated GitHub publication 10,595 Lilly +1,066 Ptolemy=11,661 documentary source notes, 36 photo/ZIP archive tests pass. None of the human event timing, medical or morality predictions validated, no executable source scorer promotion.

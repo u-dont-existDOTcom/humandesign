@@ -1,0 +1,46 @@
+{
+  "batch": "B07m",
+  "as_of_utc": "2026-10-18T14:56:00Z",
+  "source_specific_checks": {
+    "ruff_passed": true,
+    "focused_tests_passed": 36,
+    "independent_zip_archive_tests_replayed": 36,
+    "all_member_sha256_and_bytes_and_zip_crc_verified": true
+  },
+  "project_full_unittest": {
+    "exit_code": 1,
+    "tests_discovered": 91,
+    "errors": 3,
+    "reason": "System python missing pyswisseph/swisseph for preexisting research imports"
+  },
+  "repository_local_audit": {
+    "exit_code": 2,
+    "reason": "scripts/audit_codex_github.py absent in project repository"
+  },
+  "external_canonical_UDA_audit": {
+    "exit_code": 1,
+    "errors": 90,
+    "warnings": 73,
+    "reason": "Repository-wide workflow permissions, concurrency, version pinning and continuity profile issues; unchanged baseline unrelated to source-only new records"
+  },
+  "logs": {
+    "REPOSITORY_UNITTEST_GATE_FULL_LOG_20261018.txt": {
+      "bytes": 17691,
+      "sha256": "4936768b15c8d37b1f2d30ba9aa92da63511d37fd13a164e1b9b07fdcf967590",
+      "lines": 163
+    },
+    "REPOSITORY_UDA_LOCAL_AUDIT_GATE_LOG_20261018.txt": {
+      "bytes": 179,
+      "sha256": "235e48e6c872c88ae7672db897a77673cd3a2e4655fc284a14f5efd9ca66919c",
+      "lines": 1
+    },
+    "REPOSITORY_UDA_CANONICAL_AUDIT_GATE_LOG_20261018.txt": {
+      "bytes": 43641,
+      "sha256": "896f542c3027c30f9b15fb55b7af3dbf99ab73cf455becf15f9b28862a644a79",
+      "lines": 277
+    }
+  },
+  "full_repo_gates_all_green": false,
+  "production_prediction_code_modified": false,
+  "human_scientific_accuracy_tested": false
+}

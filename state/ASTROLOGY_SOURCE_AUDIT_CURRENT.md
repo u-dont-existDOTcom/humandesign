@@ -1,3 +1,9 @@
+# Original Lilly unnumbered Effects of Directions documented; CLVII next
+
+2026-10-18 Africa/Dakar UTC+0. B07m source R10469–R10595 locally admitted pending verified GitHub push; then 10,595 Lilly+1,066 Ptolemy=11,661 source-only historical notes. 36 original photo/ZIP tests pass, no actual human event prediction accuracy or runtime promotion. Critical original warning about birth-time rectification/forecast drift by years. Next printed CLVII duration of directions from PDF688. Chinese historical BaZi46/ZiWei26 remain independently indexed.
+
+---
+
 # Lilly original CLVI historical death source admitted; directions source next
 
 2026-10-18 Africa/Dakar UTC+0. B07l R10247–R10468 locally accepted and pending authenticated GitHub remote SHA. After publication 10,468 Lilly +1,066 Ptolemy =11,534 historical source notes, 36 first-edition/portable ZIP source checks pass. NO human death prediction, dates, injury risk or actual legal/moral classifications, no runtime source scoring promotions. Next UNNUMBERED `THE EFFECTS OF DIRECTIONS` original PDF685–688, then printed CLVII and CLVIII separate. Chinese BaZi46 +ZiWei26 sources separately preserved.
