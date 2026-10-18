@@ -1,0 +1,74 @@
+{
+  "schema": "ASTROLOGY_CHINESE_SOURCE_EXTRACTION_INDEX_V2",
+  "status": "SOURCE_FIRST_ZIWEI_VOLUME2_PART_A_ANCHORS_VERIFIED_NO_MODEL_PROMOTION",
+  "as_of_utc": "2026-10-18",
+  "prior_index": "CHINESE_SOURCE_AUDIT_INDEX_V1.json",
+  "prior_index_sha256": "5c517955e8544c93300d0aabf43b31ef8cfd4b19335bfc682af006c4066beece",
+  "systems": [
+    {
+      "id": "bazi",
+      "native": "八字 / 四柱",
+      "accepted_source_annotations": 46,
+      "current_ids": "BZI-R0001–BZI-R0046",
+      "next_id": "BZI-R0047",
+      "current_batch": "ChineseAstro-01",
+      "source_file": "bazi/BAZI_SOURCE_FIRST_RULES_V1.json",
+      "chapter_coverage": "Selected source-first claims across Joey Yap 2005 Book1 and 2006/2018 Book2; NOT full page-by-page audit",
+      "complete_birth_chart_engine": false,
+      "human_predictive_validations": 0
+    },
+    {
+      "id": "ziwei_doushu",
+      "native": "紫微斗數",
+      "accepted_source_annotations": 51,
+      "current_ids": "ZWD-R0001–ZWD-R0051",
+      "next_id": "ZWD-R0052",
+      "current_batch": "ChineseAstro-02",
+      "source_file": "ziwei/ZIWEI_SOURCE_FIRST_RULES_V1.json",
+      "chapter_coverage": "Selected Vol1–3 historical notes plus pinned oldid1963110 Vol2 25 auxiliary-star, four-transformation and palace/source mechanic notes. NOT exhaustive, no independently verified star/birth-calendar parity.",
+      "complete_birth_chart_engine": false,
+      "human_predictive_validations": 0,
+      "source_files": [
+        "ziwei/ZIWEI_SOURCE_FIRST_RULES_V1.json",
+        "batches/ChineseAstro-02/ZIWEI_VOLUME2_PART_A_SOURCE_NOTES_V1.json"
+      ]
+    }
+  ],
+  "sum_source_annotations": 97,
+  "source_manifest": "SOURCE_MANIFEST_V1.json",
+  "initial_historical_witness": "ZIWEI_SOURCE_FIRST_RULES_V1.json",
+  "accepted_batches": [
+    {
+      "id": "ChineseAstro-01",
+      "accepted_bazi_source_annotations": 46,
+      "accepted_ziwei_source_annotations": 26,
+      "index_snapshot": "CHINESE_SOURCE_AUDIT_INDEX_V1.json"
+    },
+    {
+      "id": "ChineseAstro-02",
+      "added_bazi_source_annotations": 0,
+      "added_ziwei_source_annotations": 25,
+      "start": "ZWD-R0027",
+      "end": "ZWD-R0051",
+      "path": "batches/ChineseAstro-02/ZIWEI_VOLUME2_PART_A_SOURCE_NOTES_V1.json",
+      "rules_sha256": "96f0b1d902a1b194c615cae552465d99f982dad0441edc9a2baaeb107d78a098",
+      "witness_path": "batches/ChineseAstro-02/SOURCE_REVISION_ANCHOR_WITNESS_V1.json",
+      "witness_sha256": "2bf3be23eefec17a80479230df11a594b4861ad2bf785e99f6a2cfe5a15bce62",
+      "source_permalink_revision": 1963110,
+      "wikitext_sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+      "independent_human_predictions_validated": 0,
+      "runtime_rules_promoted": 0
+    }
+  ],
+  "full_ziwei_original_text_collation_finished": false,
+  "all_14_principal_stars_verified": false,
+  "ziwei_complete_natal_calendar_engine_verified": false,
+  "chinese_bazi_solar_term_engine_verified": false,
+  "historical_glyph_and_translator_limits": "Wikisource pinned 1963110 raw wikitext is Simplified; Traditional viewer glyphs are derived rendering. Short source anchors match exact raw bytes, but no independent expert transcription/translation or edition-critical parity.",
+  "original_chinese_source_anchors_checked_against_revision": 25,
+  "separate_lilly_source_count_at_this_revision": 11325,
+  "separate_ptolemy_source_count_at_this_revision": 1066,
+  "independently_validated_real_human_claims": 0,
+  "runtime_promotions": 0,
+  "next": "Continue Zi Wei Quan Shu volume 2 separate constellation and timing rules from pinned first-edition witness ZWD-R0052 onward; complete BaZi and classical source audits separately; independent chart/calendars and blinded human validation not established."
+}

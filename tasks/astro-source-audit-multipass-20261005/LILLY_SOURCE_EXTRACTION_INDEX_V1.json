@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_UNNUMBERED_MOON_FIXED_STARS_NEXT_CLXV_FORTUNE_DIRECTIONS",
-  "records_count": 12268,
+  "status": "BOOK_III_CLXV_FORTUNE_NEXT_CLXVI_NUMERICAL_TIME_MEASURE",
+  "records_count": 12472,
   "read_numbered_chapters": [
     1,
     2,
@@ -167,7 +167,8 @@
     160,
     161,
     162,
-    163
+    163,
+    164
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1220,27 +1221,33 @@
       "records_count": 100,
       "sha256": "6e10df98da17ec2e122f93e9ee2d4e707297bec9db5e9d3b48fa514991adced6",
       "scope": "Original 1647 UNNUMBERED 'The Moon Directed to FIXED STARRES', source starts PDF735/printed701 below CHAP CLXIIII and ends above the separately numbered CHAP CLXV Part of Fortune divider on PDF737/printed703. 100 historical-only annotations R12169-R12268 (98 substantive, 2 CLXV navigation), 15 reversible original-photo source groups, 13 historical lunar fixed-star headings and old zodiac coordinates; Swan tail inherits Hydra effects, original left Orion shoulder 15 Gemini distinguished from prior Midheaven 15.40, period 0°10 Pisces and other explicit minutes retained. Four original PDF735-738 JPEGs, SHA/byte witness and 53 portable ZIP CRC/sha tests passed. No increment to numbered-chapter count. Medical/death/crime, religion, sex and class stereotypes remain documentary-only: ZERO verified people or model runtime promotions. Independent Chinese V2 97 unchanged."
+    },
+    {
+      "id": "B07w",
+      "path": "batches/B07w/RULES.json",
+      "records_count": 204,
+      "sha256": "0e92ce93d4b5466773770da9bffaa785b87e8fbd926c1763749b75e06b4f4d00",
+      "scope": "William Lilly original 1647 Christian Astrology numbered CHAP CLXV The Directions of the PART OF FORTUNE, PDF737 lower/printed703 through PDF742 upper/printed708, physical divider before independently printed CLXVI numeric directions time chapter. 204 archival source annotations R12269-R12472 (201 substantive plus 3 following-chapter navigation), 35 reversible first-edition photo-anchored passage groups, 7 original JPEG source witnesses with CRC/hash/byte archive replay 62/62. Source planetary combined aspects preserved; twelve Part Fortune house cusps; three period fixed-star headings Spica Lion-heart South Balance with NO printed coordinates, null rather than invented degrees. Period mortality/crime/gender/class/religion and moralizing allegations are historical source claims only, no human predictive successes or runtime model promotions. 97 independent Chinese source notes preserved."
     }
   ],
   "next": {
-    "pdf_page": 737,
-    "printed_page": 703,
-    "chapter": "CLXV",
-    "printed_chapter_numeral": "CLXV",
-    "heading": "The Directions of the PART OF FORTUNE",
-    "numbered": true,
+    "pdf_page": 742,
+    "printed_page": 708,
+    "chapter": "CLXVI",
+    "printed_chapter_numeral": "CLXVI",
+    "heading": "Of the measure of time in DIRECTIONS",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original printed CHAP CLXV starts BELOW independent divider on PDF737/printed703 after final unnumbered Moon-to-Hercules stellar case. Part-of-Fortune directions to planetary bodies and aspects continue through PDF738-741 and all 12 house cusps to upper PDF742/printed708. Next printed CHAP CLXVI Of the measure of time in DIRECTIONS begins below divider PDF742. Next source annotation R12269; do NOT double count Moon stars.",
-    "research_scope": "First-edition Part Fortune directions, interplanetary aspects, star headings and 12 house cusps, source-only; following CLXVI contains numeric direction-year calculation methods."
+    "position": "Distinct numbered CHAP CLXVI begins BELOW the horizontal Part Fortune divider mid PDF742/printed708. It compares competing timing methods Ptolemy, Antonius Maginus and annual-measure table after PDF744. Independently locate its ending chapter boundary, audit source numerical worked examples and table cells. Next R12473.",
+    "research_scope": "Quantitative angular directions to event-time conversions, period astronomy and 1647 sexagesimal tables, explicit historical alternatives and corrected worked examples, not human predictive validation."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B07v_MOON_FIXED_STARS.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B07w_PART_FORTUNE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1383,5 +1390,6 @@
   "chapter_CLXII_original_sun_directions_source_acceptance_note": "B07s original first-edition source-only 306 clauses R11416-R11721, 40 reversible groups with PDF713-723, 13 original/correctly sourced photographic images 713-725; 105 archive replay tests. Sun-Venus and Sun-Mercury opposition feasibility caveats recorded. Solar direction time engine, human clinical/danger/financial or personality validity unverified. 97 Chinese historical notes separate.",
   "chapter_CLXIII_original_sun_fixed_stars_acceptance_note": "B07t 104 historical-only annotations R11722-R11825 across 13 original reversible photo groups, 11 printed star effects and 13 old stellar entries, PDF723-725. Archive 62 independent replay tests. Modern star identity/epoch and direction-time engines unverified, zero predictive human successes or runtime promotions. Separate Chinese V2 97 retained.",
   "chapter_CLXIIII_moon_promittors_source_acceptance_note": "B07u original-1647 343 historical source notes R11826-R12168, 41 groups, PDF725-735. The next Moon-to-Fixed-Stars heading PDF735 is genuinely unnumbered and preserved, not fake CLXV. 108 archive replayed source/window tests, zero human predictive validation, zero runtime promotions. Chinese V2 97 remains separate.",
-  "unnumbered_moon_fixed_starres_source_acceptance_note": "B07v original-first-edition unnumbered lunar fixed-star unit R12169-R12268, 100 notes, 13 stellar headings, 15 original photo groups PDF735-737, 53 independently extracted archive tests. Numbered chapter count unchanged, next printed CHAP CLXV PDF737. No individual empirical predictions or live model promotion; separate Chinese V2 97 unchanged."
+  "unnumbered_moon_fixed_starres_source_acceptance_note": "B07v original-first-edition unnumbered lunar fixed-star unit R12169-R12268, 100 notes, 13 stellar headings, 15 original photo groups PDF735-737, 53 independently extracted archive tests. Numbered chapter count unchanged, next printed CHAP CLXV PDF737. No individual empirical predictions or live model promotion; separate Chinese V2 97 unchanged.",
+  "chapter_CLXV_fortuna_directions_source_acceptance_note": "B07w original source R12269-R12472, 204 archival notes in 35 reversible groups PDF737-742; three unlocated-as-numbers star headings and 12 individual house cusps. 62 independently ZIP-extracted source tests pass. Next CLXVI original numerical arc/year method starts PDF742, R12473. No predictive human accuracy or model promotions."
 }

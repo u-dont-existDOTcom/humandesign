@@ -1,3 +1,9 @@
+# Original Lilly 1647 printed CLXV Part Fortune source accepted
+
+**204 historical source annotations R12269–R12472** (201 substantive plus three next CLXVI navigation) in 35 reversible original photo groups across PDF737–742. Original ecliptic longitudes for the three fixed-star headings were not printed and remain null. **12,472 Lilly +1,066 Ptolemy=13,538 Western historic notes**, separate **97 Chinese BaZi/Zi Wei historical source notes**. Next **R12473 original printed CLXVI Of the measure of time in DIRECTIONS** begins PDF742/printed708, with competing methods and an annual-direction numerical table. 62 ZIP-extracted photo/source CRC/sha tests passed; this proves documentary mapping, not event-time accuracy or personally valid health, money, moral, crime or mortality predictions. No runtime promotions.
+
+## Earlier retained research state
+
 # Original Lilly 1647 unnumbered Moon fixed-star source accepted
 
 **100 historical-documentary annotations R12169–R12268**, 98 substantive +2 next-chapter navigation, from 15 reversible original-photo groups PDF735–737/printed701–703 and 13 historic lunar star headings, with 53 CRC/hash ZIP-extracted tests. **12,268 Lilly +1,066 Ptolemy=13,334 Western historical notes**; independent **97 Chinese BaZi and Zi Wei historic-only notes**. Next printed **CHAP CLXV Part of Fortune Directions** starts lower PDF737/printed703 at **R12269**; following CHAP CLXVI original direction time calculation begins PDF742. No numbered chapter added for this unnumbered source unit. No empirical human predictive successes, medical or mortality validity, verified old-to-modern stellar epoch conversion, or executed model promotions.
