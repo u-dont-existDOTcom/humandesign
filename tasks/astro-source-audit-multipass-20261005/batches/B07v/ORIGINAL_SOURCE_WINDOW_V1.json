@@ -1,0 +1,68 @@
+{
+  "schema": "LILLY_1647_UNNUMBERED_MOON_FIXED_STARS_WINDOW_V1",
+  "batch": "B07v",
+  "source": "William Lilly Christian Astrology first edition 1647 Wellcome b30338724",
+  "original_full_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "original_full_pdf_bytes": 141842963,
+  "prior_lilly_records": 12168,
+  "prior_ptolemy_records": 1066,
+  "independent_chinese_historical_count": 97,
+  "prior_canonical_index_sha256": "ecdf52e4ec84b81fdfd47656765cf198cf4005e1b02810d7864952f0408cf57f",
+  "first_new_historical_record": "R12169",
+  "unnumbered_heading": "The Moon Directed to FIXED STARRES",
+  "unnumbered_heading_original_pdf": 735,
+  "body_original_pdf_frames": [
+    735,
+    736,
+    737
+  ],
+  "following_printed_numbered_chapter": "CLXV",
+  "following_heading": "The Directions of the PART OF FORTUNE",
+  "following_printed_heading_original_pdf": 737,
+  "following_printed_heading_page": 703,
+  "following_context_frame": 738,
+  "source_seam_note": "The last Moon/Hercules historical effect is ABOVE an explicit printed CHAP CLXV horizontal divider on original PDF737/printed703; Part of Fortune direction paragraphs begin BELOW that divider.",
+  "source_is_numbered_chapter": false,
+  "numbered_chapter_delta_on_acceptance": 0,
+  "source_only": true,
+  "human_predictions_validated": 0,
+  "runtime_promotions": 0,
+  "photos": {
+    "735": {
+      "file": "evidence/pdf_1647-735.jpg",
+      "original_pdf_frame": 735,
+      "printed_page": 701,
+      "bytes": 523612,
+      "sha256": "2cb21bff8419903f2f8160003ff010bdba538bbc1db7c05fdb9873b4b36ac83a",
+      "source_method": "ORIGINAL_B07u_SHA_LOCKED_JPEG_RENDER",
+      "scope": "MOON_FIXED_STARRES_AND_PRECEDING_HOUSE_END"
+    },
+    "736": {
+      "file": "evidence/pdf_1647-736.jpg",
+      "original_pdf_frame": 736,
+      "printed_page": 702,
+      "bytes": 504360,
+      "sha256": "c49b1a8975d6470a947abb7a37c8b8a4dfccfca9b4ba7abaf556cff3a0dc68c8",
+      "source_method": "ORIGINAL_B07u_SHA_LOCKED_JPEG_RENDER",
+      "scope": "MOON_FIXED_STARRES_BODY"
+    },
+    "737": {
+      "file": "evidence/pdf_1647-737.jpg",
+      "original_pdf_frame": 737,
+      "printed_page": 703,
+      "bytes": 532126,
+      "sha256": "518f98df4d4485c9c3f7ed201abebbc6b09ac1a3358087cd698600ad2e19b83d",
+      "source_method": "FIRST_EDITION_IMMUTABLE_PDF_POPPLER_SCALE_TO_1600_JPEG_Q93",
+      "scope": "MOON_FIXED_STARRES_AND_NEXT_CLXV_HEADING"
+    },
+    "738": {
+      "file": "evidence/pdf_1647-738.jpg",
+      "original_pdf_frame": 738,
+      "printed_page": 704,
+      "bytes": 506191,
+      "sha256": "ca561cdfe4fa6469a047cc5b67d334d8eb90f5ad03df305d16ea639387680333",
+      "source_method": "FIRST_EDITION_IMMUTABLE_PDF_POPPLER_SCALE_TO_1600_JPEG_Q93",
+      "scope": "CLXV_NEXT_CHAPTER_CONTEXT_ONLY"
+    }
+  }
+}

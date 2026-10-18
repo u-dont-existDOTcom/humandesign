@@ -1,3 +1,9 @@
+# Original Lilly 1647 unnumbered Moon fixed-star source accepted
+
+**100 historical-documentary annotations R12169–R12268**, 98 substantive +2 next-chapter navigation, from 15 reversible original-photo groups PDF735–737/printed701–703 and 13 historic lunar star headings, with 53 CRC/hash ZIP-extracted tests. **12,268 Lilly +1,066 Ptolemy=13,334 Western historical notes**; independent **97 Chinese BaZi and Zi Wei historic-only notes**. Next printed **CHAP CLXV Part of Fortune Directions** starts lower PDF737/printed703 at **R12269**; following CHAP CLXVI original direction time calculation begins PDF742. No numbered chapter added for this unnumbered source unit. No empirical human predictive successes, medical or mortality validity, verified old-to-modern stellar epoch conversion, or executed model promotions.
+
+## Earlier retained research state
+
 # Latest original 1647 Lilly source checkpoint: printed CLXIIII Moon directions
 
 **343 historical documentary source annotations R11826–R12168** (341 substantive, 2 next-unit navigation) across 41 reversible original 1647 photo-anchored groups PDF725–735. **12,168 Lilly +1,066 Ptolemy=13,234 Western historical annotations**, and independent **97 Chinese BaZi/Zi Wei documentary annotations**. Next source **R12169**, the **unnumbered Moon Directed to FIXED STARRES** heading starts PDF735/printed701 below the CLXIIII twelfth-house text. Original annual-measure table near PDF745 is a later separate numerical source unit. **108 independently extracted ZIP CRC/sha/source tests pass**. Historical medical, death, legal, religion, sexual, personality or money claims are NOT verified human predictions. No modern chart-time engine parity or runtime inference rules have been promoted.
