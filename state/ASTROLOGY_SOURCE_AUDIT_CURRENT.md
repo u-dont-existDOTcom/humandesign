@@ -1,3 +1,9 @@
+# Lilly CL friend types documented, two-nativity concord source next
+
+2026-10-18 Africa/Dakar UTC+0. Original B07e source R9863-R9926 prepared, GitHub publication pending. After verified push 9,926 Lilly +1,066 Ptolemy =10,992 historical notes; 20 first edition source and ZIP extraction tests pass. No actual human friendships/careers/reputation verified and no model promotions. NEXT printed CLI two-person concord PDF671 onward. Chinese BaZi 46 + Zi Wei26 sources separate.
+
+---
+
 # Lilly eleventh-house friends unnumbered introduction documented; CL next
 
 2026-10-18 Africa/Dakar UTC+0. B07d R9778–R9862 locally admitted pending remote publication; after authenticated GitHub readback 9,862 Lilly +1,066 Ptolemy=10,928 historic source-only annotations. 25 original/ZIP replays pass; no real person friendship/loyalty, support, public esteem or enemy counts validated and no scoring rule promotions. Section UNNUMBERED, chapter count unchanged. NEXT printed CL PDF670 then printed CLI PDF671. Chinese source BaZi46 + Zi Wei26 separately preserved.

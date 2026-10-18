@@ -1,3 +1,9 @@
+# Original Lilly through printed CL Quality of Friends — 2026-10-18
+
+After verified publication **10,992 historical source records** (9,926 Lilly +1,066 Ptolemy), source original PDF671/894 (**75.1% scanned physical page position only, not computational/research completion**). B07e 64 source-only friend type and constancy qualifiers, including period seven planetary social categories and fixed/movable/common signs. No actual human friend occupation/appearance/trust data, source runtime promotions zero. NEXT printed CLI on concord of TWO birth charts from PDF671 onward. Chinese BaZi46 / ZiWei26 original sources separately indexed.
+
+---
+
 # Original Lilly through unnumbered eleventh-house friendship — 2026-10-18
 
 After remote verified acceptance **10,928 documentary historical records** (9,862 Lilly +1,066 Ptolemy). First-edition physical page position PDF670/894 (**74.9% scanned physical page order ONLY, not model/empirical completion**). B07d 85 historical source records distinguish friend number, sincerity, help, public acquaintances, enemy number, political favor and mixed cases. Unnumbered eleventh-house Speciall Rules continue on PDF670 before printed CL. No human loyalty/morality forecasting validated and no runtime source promotions. NEXT printed CL quality of friends PDF670–671, then CLI friendship concord on PDF671. Chinese BaZi46/Zi Wei26 source notes independent.
