@@ -1,3 +1,9 @@
+# Lilly eleventh-house friends unnumbered introduction documented; CL next
+
+2026-10-18 Africa/Dakar UTC+0. B07d R9778–R9862 locally admitted pending remote publication; after authenticated GitHub readback 9,862 Lilly +1,066 Ptolemy=10,928 historic source-only annotations. 25 original/ZIP replays pass; no real person friendship/loyalty, support, public esteem or enemy counts validated and no scoring rule promotions. Section UNNUMBERED, chapter count unchanged. NEXT printed CL PDF670 then printed CLI PDF671. Chinese source BaZi46 + Zi Wei26 separately preserved.
+
+---
+
 # Original Lilly CXLIX old professional aphorisms documented; friends next
 
 2026-10-18 Africa/Dakar UTC+0. B07c original source R9527–R9777 accepted locally and pending GitHub verification, after remote source acceptance 9,777 Lilly +1,066 Ptolemy =10,843 historical notes. 33 first-edition images/source and portable ZIP replay checks pass, no independently verified real human occupation or runtime promotions. Next unnumbered eleventh-house friendship intro PDF668–669, then separately printed CHAP CL on PDF670. Chinese BaZi46/Zi Wei26 historic notes separately preserved.

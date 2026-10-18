@@ -1,3 +1,9 @@
+# Original Lilly through unnumbered eleventh-house friendship — 2026-10-18
+
+After remote verified acceptance **10,928 documentary historical records** (9,862 Lilly +1,066 Ptolemy). First-edition physical page position PDF670/894 (**74.9% scanned physical page order ONLY, not model/empirical completion**). B07d 85 historical source records distinguish friend number, sincerity, help, public acquaintances, enemy number, political favor and mixed cases. Unnumbered eleventh-house Speciall Rules continue on PDF670 before printed CL. No human loyalty/morality forecasting validated and no runtime source promotions. NEXT printed CL quality of friends PDF670–671, then CLI friendship concord on PDF671. Chinese BaZi46/Zi Wei26 source notes independent.
+
+---
+
 # Lilly original 1647 through printed CXLIX profession aphorisms — 2026-10-18
 
 After verified source publication **10,843 documentary historical annotations** (9,777 Lilly +1,066 Ptolemy). First-edition scanned source frontier PDF668/894 (**74.7% physical scanned page position ONLY, not project completion**). B07c adds 251 historic source claims across 14 passages on Mars/Venus/Mercury, mixed signifiers, strength/malefic exceptions, dozens of old professional alternatives, source career success and elemental trade taxonomies attributed to unverified Albubater. No independently verified human profession accuracy and no promoted source rules. NEXT substantive UNNUMBERED eleventh-house friendship introduction PDF668–669, printed CL quality of friends begins PDF670. Chinese BaZi46, Zi Wei26 remain separate; full chart engines and blind human testing open.
