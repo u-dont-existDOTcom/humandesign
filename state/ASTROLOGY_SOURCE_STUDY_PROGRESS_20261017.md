@@ -1,3 +1,9 @@
+# Latest original Lilly 1647 source acceptance: printed CLXI fixed stars
+
+**90 historical documentary annotations R11326–R11415** (88 substantive +2 following CLXII navigation), 14 period fixed-star entries across 12 photo-anchored groups PDF711–713, 50 focused independently replayed source tests. **11,415 Lilly +1,066 Ptolemy=12,481 Western documentary source annotations** and separate **97 Chinese historic annotations**. Next original printed CHAP CLXII Sun directions starts lower PDF713/printed679, **next R11416**. This source count does NOT validate astrology; directions arc/date/old stellar epoch and individual human medical, mortality, class, crime, economic or relationship predictions remain unverified.
+
+## Earlier retained research state
+
 # Latest original Lilly 1647 source acceptance: printed CLX Midheaven
 
 Original first-edition photographic clauses from printed PDF702/folio668 through upper PDF711/folio677 accepted as **258 historical documentary annotations R11068–R11325** (256 substantive +2 CLXI navigation), **27 reversible groups**; no empirical human prediction or runtime promotion. **11,325 Lilly +1,066 retained Ptolemy=12,391 Western source records**; separate **72 Chinese source annotations**. Next printed CLXI fixed stars begins mid PDF711; next R11326. Archive 71 independent extracted tests. No independently validated predictive forecasting; direction arc-to-date engine and historical epoch parity unverified.
