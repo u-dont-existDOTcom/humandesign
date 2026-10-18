@@ -1,3 +1,9 @@
+# Lilly original first-edition through causes of preferment — 2026-10-18
+
+Following remote verification **10,433 historical source annotations** (9,367 Lilly +1,066 Ptolemy), original book scanned-frame frontier PDF656/894 (**73.4% physical page-position only**, NOT research completion). New CXLVI adds 55 source-only notes on planetary and house possible causes of preferment plus alternative eligibility/fallback methods. Zero actual human occupational/rank accuracy and no runtime model promotion. NEXT printed CXLVII persistence of honors starts PDF656, ends before printed CXLVIII on PDF658. Chinese BaZi46/Zi Wei26 source notes separate.
+
+---
+
 # Original Lilly through CXLIIII status and source numbering anomaly — 2026-10-18
 
 After publication 10,378 historical documentary annotations (9,312 Lilly +1,066 Ptolemy), original scanned source position PDF655/894 (~73.3% physical page order ONLY). B06y added 188 qualified source clauses, source-six-star coordinates without epoch parity and a critical beggar/king social-class-relative counterexample; printed numbering jumps CXLIIII to CXLVI. No human predictive successes or runtime model promotions. Next printed CXLVI source begins PDF655. Chinese source only BaZi46 and ZiWei26 remain separate; full physics/maths and blind tests open.

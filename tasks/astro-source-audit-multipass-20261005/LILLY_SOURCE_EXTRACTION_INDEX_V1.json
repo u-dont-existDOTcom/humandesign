@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CXLIIII_DIGNITIES_NEXT_PRINTED_CXLVI_ORIGINAL_GAP",
-  "records_count": 9312,
+  "status": "BOOK_III_CXLVI_PREFERMENT_CAUSES_NEXT_CXLVII_CONTINUATION",
+  "records_count": 9367,
   "read_numbered_chapters": [
     1,
     2,
@@ -149,7 +149,8 @@
     142,
     143,
     144,
-    145
+    145,
+    146
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1048,26 +1049,33 @@
       "records_count": 188,
       "sha256": "9063dc68c2b196e018a0e59c3b1ebdb6db402d386be98eb48b144cdb75d04d3f",
       "scope": "Original Lilly 1647 printed CHAP CXLIIII on dignity/preferment PDF649 middle to PDF655 upper/printed615-621. 12 reversible photographed groups, 186 substantive historical source conditions plus 2 next-heading navigation R9125-R9312. Domicile/exaltation/essential reception vs lesser dignity and eighth/cadent source anomaly, fixed-regal-star +/-5degree contacts and six original source zodiac star positions without modern coordinate parity. Explicit beggar-versus-king social-class reference counterexample, divergent solar/lunar time, royal genitures and Sun/Moon/Midheaven/Ascendant/stellar alternatives including temporary rise/calamity, with glyph ambiguities and no scorable human forecasts. Original numbering jumps printed CXLIIII to CXLVI with NO separately headed CXLV in studied frames, a documented numbering anomaly not a missing source to fabricate. Zero runtime rule promotions."
+    },
+    {
+      "id": "B06z",
+      "path": "batches/B06z/RULES.json",
+      "records_count": 55,
+      "sha256": "244b7ec4090ec33d378538f76664a8819941195cd95eb658cc15e380a1141b0f",
+      "scope": "Lilly Christian Astrology original first edition 1647 printed CHAP CXLVI How the Kind/Quality/Cause of Preferment, original PDF655 middle through PDF656 middle (printed621–622), after original skipped printed CHAP CXLV, before distinct CHAP CXLVII If Honour shall continue later PDF656. Four reversible source/photo groups and 53 substantive historical annotations + two next-chapter navigation R9313–R9367. Eligibility of planets partile-aspecting better fortified luminary, Saturn inheritance and elders, Jupiter/Venus virtues/lawful people, Mars military expedition and Mercury education/oratory/merchants. Natal house of planet modifies alleged causes (first own industry, second riches). Source conditional fallback if no light-aspecting planet -> strongest tenth occupant -> if empty lord of tenth with natal house, plus an alternative astrologers' luminary-dispositor or tenth-ruler partile method with no validated priority. No actual human career prediction, person-level moral inference or runtime promotions."
     }
   ],
   "next": {
-    "pdf_page": 655,
-    "printed_page": 621,
-    "chapter": "CXLVI",
-    "printed_chapter_numeral": "CXLVI",
-    "heading": "What manner of Preferment, or its quality and cause",
+    "pdf_page": 656,
+    "printed_page": 622,
+    "chapter": "CXLVII",
+    "printed_chapter_numeral": "CXLVII",
+    "heading": "If the Dignity or Honour shall continue",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original printed CHAP CXLVI starts after divider mid original PDF655/printed621. The preceding CXLIIII ends at this seam; no separately headed CXLV appears through PDF649-655, preserve rather than invent a chapter. Study CXLVI source through its actual next printed heading.",
-    "research_scope": "Historic causes/types of official preferment by planets partile aspecting luminaries and house positions, source Saturn hereditary/elderly vs Jupiter/Venus law/honour/virtue, Mars military, Mercury speech/learning, and source status exceptions; no person occupation or class forecast validated."
+    "position": "Printed CHAP CXLVII starts after divider in lower original PDF656/printed622 following CXLVI causes, runs through PDF657/printed623 and PDF658/printed624 upper, including internal Speciall Aphorismes. Next printed CXLVIII Of Magistery/Profession starts later PDF658. Verify exact seam before accepting CXLVII.",
+    "research_scope": "Historical persistence, increasing/decreasing reputation, sudden loss/temporary interruptions, luminary partile contacts, tenth-house occupancy, tenth ruler signs/aspects and internal fixed-star aphorisms; no real person's career prognosis."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B06y_DIGNITIES.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B06z_PREFERMENT_CAUSES.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1188,5 +1196,6 @@
   "chapter_CXLIII_source_acceptance_note": "B06v original R8936-R9039, 104 source notes, PDF645-649 SHA images and 29 independent archive tests; source explicit denial of celestial religious causation; zero human prediction and runtime promotions.",
   "chapter_CXLIV_source_acceptance_note": "B06w original R9040-R9105, 66 historic records, PDF647-651 images SHA and 21 archive-replayed documentary tests. Dream truth vs dream content explicitly distinguished; no actual future-event validation, sleep diagnosis or runtime promotions.",
   "unnumbered_tenth_source_acceptance_note": "B06x historic R9106-R9124, 19 archival claims, original PDF649-651 SHA photos, 12 extracted ZIP replays. Four source-priority classes preserved and numbered chapter count unchanged.",
-  "chapter_CXLV_source_acceptance_note": "B06y R9125-R9312 188 source-only historical annotations, 12 original source groups, original PDF649-660 SHA images and 30 independent archive tests. Exact period six-regal-star table frozen without modern parity, beggar/king source outcome-switch and original printed CXLIIII -> CXLVI numbering gap preserved. Zero real status predictions, no runtime promotion."
+  "chapter_CXLV_source_acceptance_note": "B06y R9125-R9312 188 source-only historical annotations, 12 original source groups, original PDF649-660 SHA images and 30 independent archive tests. Exact period six-regal-star table frozen without modern parity, beggar/king source outcome-switch and original printed CXLIIII -> CXLVI numbering gap preserved. Zero real status predictions, no runtime promotion.",
+  "chapter_CXLVI_cause_source_acceptance_note": "B06z historic R9313–R9367, 55 annotations, PDF655–658 source SHA and 20 extracted archive tests, verified multi-step source fallback and separate alternative author method. Original printed CXLV omission preserved, Chinese 72 source records independent. No human status accuracy and no runtime rules."
 }

@@ -1,3 +1,9 @@
+# Lilly original CXLVI types/causes of preferment documented; CXLVII next
+
+2026-10-18 Africa/Dakar UTC+0. B06z R9313–R9367 prepared; after verified remote readback 9,367 Lilly +1,066 Ptolemy =10,433 archival source notes. 20 image/source/portable ZIP tests PASS. No human career or financial status prediction validated, no model promotions. NEXT printed CXLVII honor duration from lower PDF656; Chinese source-only BaZi46/Zi Wei26 independently preserved.
+
+---
+
 # Lilly CXLIIII dignity/preferment original accepted; CXLVI next
 
 2026-10-18 Africa/Dakar UTC+0. B06y R9125-R9312 prepared for authenticated remote publication; then 9,312 Lilly +1,066 Ptolemy=10,378 historical source-only annotations. 30 first-edition/ZIP tests pass, original CXLV printed heading absent, period fixed-star table preserved without modern parity, social-class counterexample retained. No human ranking or status predictions validated. No production scoring rules promoted. NEXT printed CXLVI at PDF655, China source BaZi46/Zi Wei26 still separate.
