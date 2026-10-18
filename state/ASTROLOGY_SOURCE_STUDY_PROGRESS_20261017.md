@@ -1,3 +1,9 @@
+# Original Lilly 1647 through CLIII enemy quality — 2026-10-18
+
+After authenticated source publication **11,148 historical notes** (10,082 Lilly +1,066 Ptolemy), original first-edition scan frontier PDF675/894 (**75.5% physical page position only, NOT full research/scientific completion**). B07h adds 40 historic open/covert enemy type and relative power/source-dignity claims, including original benefic-powerful exception. Zero verified real person hostility, safety or character predictions, no runtime promotion. NEXT printed CLIIII on whether native overcomes adversaries begins PDF675 then printed CLV captivity from PDF676. Chinese BaZi46/Zi Wei26 remain original-source only and separate.
+
+---
+
 # Original Lilly through unnumbered twelfth-house enemies — 2026-10-18
 
 After remote verified publication **11,108 historical source annotations** (10,042 Lilly +1,066 Ptolemy). First-edition source frontier PDF674/894 (**75.4% scanned physical page position ONLY, not full historical/computational/human validity**). B07g records 23 old alternatives for number of enemies and nonoccurrence, after CLI two-nativity source, before separate printed CLIII quality on SAME PDF674. No printed CLII heading observed; numbered chapter counter unchanged for this UNNUMBERED section. No human danger or adversary accuracy tested, no runtime scorer promoted. Chinese BaZi46/Zi Wei26 separate.

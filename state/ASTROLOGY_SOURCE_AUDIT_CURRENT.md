@@ -1,3 +1,9 @@
+# Lilly first-edition CLIII enemies quality documented; CLIIII next
+
+2026-10-18 Africa/Dakar UTC+0. B07h source R10043–R10082 accepted locally pending remote verification. After verified GitHub publication 10,082 Lilly +1,066 Ptolemy=11,148 historical notes; 17 source/ZIP replays PASS, no real person enemy assessment or runtime promotions. NEXT printed CLIIII on conflicts from PDF675; following printed CLV captivity starts PDF676. Chinese 72 source notes separate.
+
+---
+
 # Original twelfth-house unnumbered enemy-count source documented; CLIII next
 
 2026-10-18 Africa/Dakar UTC+0. B07g original R10020–R10042 locally accepted pending GitHub remote verification. After verified source publication 10,042 Lilly +1,066 Ptolemy=11,108 historical notes. 13 first-edition photo/ZIP integrity tests pass; no real human enemies/moral/danger forecasts or runtime promotions. Section unnumbered (chapter counter unchanged); next printed CLIII from PDF674, original CLII heading absent. Chinese 72 notes separately indexed.
