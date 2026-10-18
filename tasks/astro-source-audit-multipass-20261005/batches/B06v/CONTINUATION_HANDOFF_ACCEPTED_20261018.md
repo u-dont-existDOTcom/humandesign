@@ -1,0 +1,35 @@
+# HumanDesign Lilly original first edition: printed CXLII religion documented; dreams next
+
+[2026-10-18 01:43 UTC] Africa/Dakar. This is a historical primary-source study, not assessment of any living person's beliefs.
+
+## Accepted canonical checkpoint after GitHub remote readback
+
+Repository `u-dont-existDOTcom/humandesign`, source task branch `research/astro-b06v-original-religion-20261018`, inherits published travel-success research commit `140087716ddf591a87fe9ca6008abb255e69e7b6`. After verified GitHub push SHA, canonical index `tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json` will hold **9,039 Lilly + 1,066 Ptolemy = 10,105 historical documentary annotations**, last **R9039**, NEXT **R9040**. Source book position original PDF647/894 (**72.4% physical scanned-page position only**), not predictive research completion or executable rules.
+
+## Accepted first-edition source and separate causal guard
+
+Original William Lilly 1647 *Christian Astrology*, Wellcome b30338724, **printed CHAP CXLII/editorial CXLIII `Of the Religion of the Native`** starts below divider lower **PDF645/printed611**, occupies **PDF646/printed612**, ends after internal `Aphorismes signifying IMPIETY` on **PDF647/printed613** before separate printed **CHAP CXLIII `Of DREAMES`** begins lower PDF647. Both unnumbered internal *Piety* and *Impiety* aphorism subsections belong to CXLII and have been fully preserved. Original photos PDF645–649 carry SHA256/byte/folio provenance, with later PDFs context only.
+
+**104 historical annotations R8936–R9039** (102 substantive plus 2 next-heading navigation), seven reversible original source groups. Artifacts: `SOURCE_FIRST_AUTHORING_20261018.json`, `RULES.json`, `SOURCE_TO_RECORD_MAP.json`, `ORIGINAL_SOURCE_WITNESS.json`, `UNRESOLVED_SOURCE_LIMITS.json`, `RELIGION_SOURCE_CAUSAL_SCOPE_V1.json`, source review, acceptance, 29 source tests, portable archive SHA receipt, guarded source-index plus rollback. **29/29 original focused/photo tests PASS, independently extracted portable ZIP CRC/SHA/member-byte and 29 tests replay PASS**, Ruff clean.
+
+Owner ZIP: `~/Téléchargements/Astrology-Lilly-Printed-CXLII-Religion-Noncausation-1647-20261018.zip`. Exact SHA256 **4b5b27bb684d9b6849c25616d7fc292801ff7246dab103707468ccefd246ce63**, see B06v/`SOURCE_RELEASE_RECEIPT_20261018.json`.
+
+### Central historical finding and nonnegotiable interpretation scope
+
+**LILLY EXPLICITLY DENIES stars either enforce or CAUSE religious affiliation, piety or lack of faith** in original PDF646. He attributes piety to divine grace (historical theology), while claiming horoscopes might convey only natural disposition and persistence or variability. Separate machine-readable `RELIGION_SOURCE_CAUSAL_SCOPE_V1.json` freezes each aspect and forbids direct faith/moral-person classification or causal attribution. Neither theological account nor astrologically inferred disposition is experimentally validated.
+
+The author's source labels and planetary conditions reflect seventeenth-century Christianity, not universal objective psychological virtues: ninth/third house Jupiter/Venus and nodes versus malefic Saturn/Mars, essential dignities, retrograde/cadent, benefic receptions, Sun/Moon/Mercury, Spica, Cazimi, and two explicit exceptions where **Saturn ninth in own dignity** and **direct malefics with supportive benefics in fixed signs** can allegedly indicate piety, contrary to simple malefic=impious. This chapter also mixes religious affiliation, practicing inherited faith, changing convictions, charity, social recognition, alleged divination/prophecy and old sectarian/atheism labels—all different historical targets and NONE real personal facts. Unresolved glyphs tagged, no executable scorable operator; **ZERO independent human psychological, affiliation, moral or supernatural result and ZERO runtime source model promotions**.
+
+## NEXT first-edition printed CXLIII dreams, then unnumbered tenth house
+
+**Start R9040** at original **PDF647/printed613 lower**, printed **CHAP CXLIII `Of DREAMES`**. Original source continues through **PDF648/printed614**, ending bottom of that image; a distinct **UNNUMBERED tenth-house honors/dignities introduction** begins **PDF649/printed615 top**, and separately printed **CHAP CXLIIII `Whether Native shall have Dignity or Preferments, or none at all`** begins after divider later PDF649. Original PDF647–649 photographs already in B06v/evidence; full source witness and next boundary can be confirmed visually.
+
+The dream chapter deals with supposed true/misleading dream reports from ninth-house benefics/malefics, fallback ninth house ruler, historical dream themes attributed individually to Saturn, Jupiter, Mars, Sun, Venus, Mercury and Moon, and claimed dream-to-real-event correspondence. Distinguish **dream content** vs **believing dream** vs **dreams objectively predicting future events**. None are independently verified. Preserve planetary exceptions, seventh-century dream and psycho-social stereotypes; do not classify actual dreamers or infer mental disorders.
+
+Create B06w isolated worktree from exact authenticated B06v remote SHA; original PDF647–649 photos and any following context, source-first reversible annotations, source uncertainties/limitations, original photo SHA and 20+ focused tests, ZIP full CRC/SHA/extracted replay, guarded canonical append with +1 numbered chapter (printed CXLIII only), source state and recovery, publish task branch and verify GitHub SHA, owner ZIP and continuation handoff. Do NOT skip the independent unnumbered tenth-house intro after dreams.
+
+## Parallel Chinese astrology and broader science
+
+Chinese work in same HumanDesign repo `tasks/astro-chinese-primary-sources-20261017/`, separate `CHINESE_SOURCE_AUDIT_INDEX_V1.json`, accepted **46 BaZi +26 Zi Wei Dou Shu=72 historical source-only annotations**, 38 focused/portable archive partial chart-mechanics tests. Original Chinese Zi Wei Quan Shu via Wikisource and owner-provided Joey Yap modern volumes referenced by hash but copyrighted bytes not committed. No complete solar-term conversion, full Zi Wei star/Four Transformations chart, or true blind human validation.
+
+Documentary notes and 72.4% scanned-page position DO NOT measure successful predictive astrology. Remaining empirical study: complete original Book III and historical numerical tables, exact Regiomontanus and ephemeris provenance, Ptolemy/Haly collation, deterministic conflict/falsifier rule encoding, blinded prospective humans with user wonder/awe/synchronicity constructs, negative outcomes, matched chart/calendar/geographic/demographic nulls. Prior unrelated repository-wide unittest/UDA audit failures documented separately; these batches changed original source lane only with focused tests PASS. Follow UDA + HumanDesign AGENTS, save all source files in humandesign and owner's Téléchargements. Bootstrap for resumption: `Resume the long task from this GitHub handoff; verify current state and continue unless genuine owner tradeoff required.`

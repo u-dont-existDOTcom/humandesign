@@ -1,3 +1,9 @@
+# Lilly original historical source through religion — 2026-10-18
+
+After remote verification 10,105 historical documentary source notes (9,039 Lilly + 1,066 Ptolemy). Original first-edition physical scan PDF647/894 (72.4% page position, NOT scientific completion). B06v adds 104 source notes across seven passage groups and a separate author causal-scope guard. Lilly says stars cannot force or cause religion, while proposing natural inclination/persistence as a symbolic historical judgment. No individual beliefs or behaviors validated. Next printed CXLIII Dreams from PDF647. Chinese BaZi 46 and Zi Wei 26 source-only notes kept separately indexed, full computational and blind human validations OPEN.
+
+---
+
 # Lilly first edition through printed CXLI travel safety and fortunes — 2026-10-18
 
 After authenticated publication **10,001 original documentary historical notes** (8,935 Lilly +1,066 Ptolemy), source frontier first-edition PDF645/894 (**72.1% physical scanned position ONLY, not predictive or research completion**). B06u adds 76 historic conditions on travel success, hazards and claimed fortunate regions, with source exceptions and period geographic lookup at printed page93 still unresolved. No independent human travel danger or fortune results validated; no executable source rule promotions. NEXT printed CXLII on religion of native, PDF645–647; source explicitly denies stellar compulsion of faith. Parallel separate BaZi 46 and Zi Wei 26 source-only notes remain open; exact astrological and blinded studies not complete.

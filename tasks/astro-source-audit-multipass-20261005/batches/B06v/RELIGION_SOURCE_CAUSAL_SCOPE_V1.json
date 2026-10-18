@@ -1,0 +1,67 @@
+{
+  "schema": "LILLY_1647_CXLII_RELIGION_CAUSAL_SCOPE_V1",
+  "author": "William Lilly",
+  "source": "Christian Astrology (1647) first edition Wellcome b30338724",
+  "printed_chapter": "CXLII",
+  "source_original_pdf": 646,
+  "original_anchor_short": "not the Causers of ones being either Religious or contrary",
+  "strict_source_scope": {
+    "denies_stars_enforce_faith": true,
+    "denies_stars_cause_religion_or_irreligion": true,
+    "author_claims_divine_grace_effects_piety": true,
+    "author_claims_stars_interpret_natural_propensity": true,
+    "author_claims_stars_interpret_constancy_or_change": true,
+    "author_theology_is_not_empirical_evidence": true,
+    "cannot_equate_causal_prediction_with_disposition": true,
+    "historical_categories_are_christian_sectarian_not_universal": true,
+    "source_is_historical_not_human_validation": true
+  },
+  "targets_to_keep_distinct": [
+    {
+      "target": "historical_attributed_piety",
+      "operationalized": false,
+      "personal_classifier_authorized": false
+    },
+    {
+      "target": "religious_affiliation_or_label",
+      "operationalized": false,
+      "personal_classifier_authorized": false
+    },
+    {
+      "target": "religious_practice_or_charity",
+      "operationalized": false,
+      "personal_classifier_authorized": false
+    },
+    {
+      "target": "religious_conversion_or_change",
+      "operationalized": false,
+      "personal_classifier_authorized": false
+    },
+    {
+      "target": "persistence_of_conviction",
+      "operationalized": false,
+      "personal_classifier_authorized": false
+    },
+    {
+      "target": "theological_judgment_true_false_piety",
+      "operationalized": false,
+      "personal_classifier_authorized": false
+    },
+    {
+      "target": "divination_or_prophetic_claims",
+      "operationalized": false,
+      "personal_classifier_authorized": false
+    }
+  ],
+  "no_automatic_transfer_to_other_astrology_systems": true,
+  "candidate_nonneutral_targets_preregister_before_humans": [
+    "changes in stated values or commitments over multi-year periods (neutral self-report, without judging right/wrong beliefs)",
+    "self-rated stability of philosophical perspectives (neutral and not a religious-faith classifier)",
+    "reported subjective synchronicity/awe as separate constructs, not substitutes for piety or occult capability"
+  ],
+  "development_only": true,
+  "original_glyphs_and_authorship_layers_unresolved": true,
+  "human_validation_count": 0,
+  "runtime_rules_promoted": 0,
+  "guard": "Do not classify any real person's religion, piety, morality, alleged heresy, atheism, sectarian status, divinatory power or private conscience from a natal chart. Astrology cannot be presented as religious causation based on this source."
+}
