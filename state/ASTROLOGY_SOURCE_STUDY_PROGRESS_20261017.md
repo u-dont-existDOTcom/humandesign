@@ -1,3 +1,9 @@
+# Lilly first edition through unnumbered tenth-house honors — 2026-10-18
+
+After source publication 10,190 historical annotations (9,124 Lilly +1,066 Ptolemy), original PDF649/894 (72.6% physical scan position only). B06x adds 19 records preserving the four priority classes and specific orb/magnitude conditions; no actual career/rank accuracy and no runtime model change. The unnumbered source does not increment chapter count. NEXT original printed CXLIIII on status PDF649 onward; Chinese BaZi 46 and Zi Wei 26 notes separate.
+
+---
+
 # Original Lilly study through printed CHAP CXLIII Dreams — 2026-10-18
 
 After authenticated publication 10,171 historical source annotations (9,105 Lilly +1,066 Ptolemy); original PDF648/894 (72.5% source page position ONLY, not scientific completion). B06w documents 66 historical dream-source clauses, truth/falsehood conditions and separate dream content categories. No real dream or future-event validation or runtime rule promotions. NEXT unnumbered tenth-house honours introduction on PDF649, followed by numbered CXLIIII on same page. Chinese 46 BaZi/26 Zi Wei source notes remain separate; complete chart engines and blind humans still open.

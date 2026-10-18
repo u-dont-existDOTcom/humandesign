@@ -1,3 +1,9 @@
+# Lilly tenth-house unnumbered introduction complete; numbered CXLIIII next
+
+2026-10-18 Africa/Dakar UTC+0. B06x source R9106-R9124 prepared for remote source publication. After verified publication 9,124 Lilly +1,066 Ptolemy =10,190 archival historic notes. No real honor/career predictions validated or scoring rule promotions. 12 archive-replayed integrity tests PASS. Original numbered chapter count unchanged. NEXT printed CXLIIII later PDF649; Chinese source notes remain 46 BaZi and 26 Zi Wei.
+
+---
+
 # Lilly original dream source documented; tenth-house intro next
 
 2026-10-18 Africa/Dakar UTC+0. B06w historical R9040-R9105 complete, remote acceptance pending. After GitHub verification 9,105 Lilly +1,066 Ptolemy=10,171 source-only documents. No independently validated dream prediction or executable scorer; all 21 source/archive tests pass. Next UNNUMBERED tenth-house status on original PDF649; separate Chinese studies retained.
