@@ -1,3 +1,9 @@
+# Lilly printed CLI on two natal charts documented; enemies introduction next
+
+2026-10-18 Africa/Dakar UTC+0. B07f historical records R9927–R10019 prepared and pending verified GitHub remote. After publication 10,019 Lilly +1,066 Ptolemy =11,085 original source notes. 26 image/archive integrity checks pass; no actual relationship/morality/danger accuracy or runtime model promotions. NEXT unnumbered twelfth-house `Of Enemies` from PDF673 to PDF674 (then numbered CLIII). Chinese BaZi46/ZiWei26 separate historic notes.
+
+---
+
 # Lilly CL friend types documented, two-nativity concord source next
 
 2026-10-18 Africa/Dakar UTC+0. Original B07e source R9863-R9926 prepared, GitHub publication pending. After verified push 9,926 Lilly +1,066 Ptolemy =10,992 historical notes; 20 first edition source and ZIP extraction tests pass. No actual human friendships/careers/reputation verified and no model promotions. NEXT printed CLI two-person concord PDF671 onward. Chinese BaZi 46 + Zi Wei26 sources separate.

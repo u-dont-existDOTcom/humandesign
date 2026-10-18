@@ -1,3 +1,9 @@
+# Original Lilly first edition through two-nativity CLI — 2026-10-18
+
+After authenticated publication **11,085 historic source annotations** (10,019 Lilly +1,066 Ptolemy), original first-edition physical scan frontier PDF673/894 (**75.3% scanned page position ONLY, not full source or predictive science completion**). B07f adds 93 historic clauses for two-nativity concord/discord, natural asymmetrical planet affinity, same Ascendant and ruler, four reception/aspect routes and directional affection. No real paired participant has been scored and no source runtime rules promoted. NEXT UNNUMBERED twelfth-house enemies introduction PDF673–674; printed CLIII enemies quality later PDF674; historical CLII printed heading absent. Chinese BaZi46, Zi Wei26 separately indexed.
+
+---
+
 # Original Lilly through printed CL Quality of Friends — 2026-10-18
 
 After verified publication **10,992 historical source records** (9,926 Lilly +1,066 Ptolemy), source original PDF671/894 (**75.1% scanned physical page position only, not computational/research completion**). B07e 64 source-only friend type and constancy qualifiers, including period seven planetary social categories and fixed/movable/common signs. No actual human friend occupation/appearance/trust data, source runtime promotions zero. NEXT printed CLI on concord of TWO birth charts from PDF671 onward. Chinese BaZi46 / ZiWei26 original sources separately indexed.

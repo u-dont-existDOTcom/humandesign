@@ -1,0 +1,70 @@
+{
+  "schema": "LILLY_CLI_PAIRWISE_HISTORICAL_NONPROMOTION_V1",
+  "source": "William Lilly Christian Astrology 1647 original printed CLI, PDF671–673",
+  "status": "DOCUMENTARY_ONLY_NOT_BLIND_DYAD_ACCURACY",
+  "input_requirements": [
+    "chart_A: independently established birth data, local time and timezone with source quality",
+    "chart_B: separately established independent birth input and birth-time quality",
+    "historical fixed tropical zodiac / houses / essential-dignity chart geometry must be frozen before dyad outputs",
+    "original directional lord-Aspects, reception, planetary friendship and house swaps must be computed deterministically before seeing pair history"
+  ],
+  "independent_future_targets": [
+    {
+      "target": "initial_mutual_affinity",
+      "directional": true,
+      "measured": false
+    },
+    {
+      "target": "both_party_agreement_on_affection",
+      "directional": true,
+      "measured": false
+    },
+    {
+      "target": "self_reported_mutual_help_and_respect",
+      "directional": false,
+      "measured": false
+    },
+    {
+      "target": "friendship_or_romance_long_term_duration",
+      "directional": false,
+      "measured": false
+    },
+    {
+      "target": "conflict_frequency_and_resolution",
+      "directional": false,
+      "measured": false
+    },
+    {
+      "target": "competitive_relationship_aspects",
+      "directional": false,
+      "measured": false
+    },
+    {
+      "target": "unreciprocated_affection",
+      "directional": true,
+      "measured": false
+    }
+  ],
+  "asymmetry_to_preserve": [
+    "Saturn and Venus friend/enemy sets may not be symmetric",
+    "Mars calls Venus a friend while the source explicitly denies Venus reciprocates Mars",
+    "Each person's Ascendant lord may apply/receive differently, so A-to-B rating is not automatically B-to-A",
+    "Two same-sign contacts and different chart times may produce multiple contradictory testimonies"
+  ],
+  "alternative_success_claims_prohibited": [
+    "Do not use one party's retrospective positive feeling to excuse the other party's predeclared negative result",
+    "Do not choose loyalty/benefit/conflict/romance after participant answers to claim a 'hit'",
+    "Do not classify a person as violent, manipulative, disloyal, immoral, dangerous, abusive or likely to harm anyone from natal astrology",
+    "Do not compare same people's birth chart or actual known couple without a frozen held-out dyad outcome and exact null/denominator"
+  ],
+  "needs_frozen_nulls": [
+    "matched date/time/age/geography/sex and opportunity/control charts to estimate chance of apparent compatibility",
+    "label/permutation null over pairs, and socioeconomic/education/language/contact context baselines",
+    "balanced real concordant/discordant dyad labels with fully specified missing data and consent",
+    "all failures and abstentions retained"
+  ],
+  "original_glyphs_fully_cross_collated": false,
+  "original_causal_claims_verified": false,
+  "real_dyad_outcomes_validated": 0,
+  "runtime_promotions": 0
+}

@@ -1,0 +1,29 @@
+# Original Lilly CLI two-nativity mutual concord historically documented
+
+# Original first-edition Lilly printed CLI: whether two nativities agree
+
+2026-10-18 Africa/Dakar UTC+0. Historical documentary study, not a reliable relationship assessment or actual human psychological/moral prediction.
+
+## Exact physical source and boundary
+
+William Lilly's first-edition 1647 *Christian Astrology* (Wellcome Collection b30338724) printed **CHAP CLI**, `Whether there may be Concord or Unity betwixt two`, begins beneath a divider in the middle of **original PDF671/printed637**, continues **PDF672/printed638**, and ends in the **upper part PDF673/printed639**, immediately before a different substantial **UNNUMBERED twelfth-house section, `Of Enemies`**, opens after its own divider. The enemy introduction continues to the **top of original PDF674/printed640**, where a distinct printed **CHAP CLIII** `What manner of Enemies? their Quality` begins after a divider. No separately headed **CHAP CLII** was found in the examined original PDF671–674. Preserve this numbering anomaly without fabricating missing pages/sections. Original source photos PDF671–675 and byte/SHA256/folio witnesses are archived; PDF674–675 are context for the following enemies material.
+
+## Original requirement: both charts, not a single horoscope
+
+Lilly explicitly instructs comparing **two persons' Nativities**, examining both Ascendants/horoscopes, their occupant planets, each Ascendant ruler, corresponding signs, reception by dignity, and favorable aspects. Similar planets, temperament and manners are alleged to produce agreement; differences and planetary natural enmities are alleged to produce contention. The author does not specify an objective base rate, scoring weights, forecast time window or how to handle missing exact birth times.
+
+The source prints a catalog of each planet's supposed natural friends and enemies, including Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon and abbreviated nodal glyphs. **This planetary friendship relation is not symmetric**: the original explicitly says Mars has Venus as its friend but Venus does not return Mars's love. Saturn's hostility toward Venus allegedly exceeds its hostility toward Mars. Other rows attribute friends to the Sun, Mercury and Moon. Condensed lunar node marks remain partly uncollated, so this is not yet an executable direction matrix.
+
+Lilly then gives **four conditional Ascendant-ruler concord routes**: same ruling planet; reception by domicile or exaltation; actual conjunction of the two rulers; or sextile/trine. If all fail, the author alleges the friendship won't last. Later alternative methods use two-way swaps of Suns, Moons, benefics and other planetary placements. Different combinations are alleged to produce stronger or weaker friendship, rival economic interests, temporary affection, conflict, or frankly prejudicial claims about selfishness and wickedness. He also separately attributes honesty, utility, pleasure or contextual convenience to certain planetary placements in the other chart. These are **different predeclared endpoints**, not extra confirmations of one generic compatibility outcome.
+
+The last `Whether of the Friends is more sincere` subsection is explicitly **directional**: compare each person's Ascendant ruler and its aspects/occupants to allegedly infer which feels more affection. A favorable Ascendant-ruler application by sinister sextile/trine is one listed indicator. An unfounded categorical negative claims people cannot agree if one person's Ascendant sign corresponds to the other's sixth, eighth or twelfth-house sign. Such claims cannot establish genuine affection, hostility, aggression, consent, abusive tendencies or any real person's moral worth.
+
+## Documentary acceptance and scientific separation
+
+**93 historical source annotations R9927–R10019**: **89 substantive clauses and four next-source/navigation notes**, in eight reversible photographic passage groups. **26 focused original-photo, record, clause/exception and source-boundary tests** pass. Independently extracted ZIP replay verifies archive CRC, SHA256/member bytes and all **26 test replays**, establishing archive reproducibility but **not relationship accuracy**. `DYAD_HISTORICAL_VALIDATION_GUARD_V1.json` preserves separate, potentially directional targets for mutual affection, unreciprocated affection, durability, conflicts and competing motives; no real pairs or chart computations were tested.
+
+After verified remote publication the Western historical source corpus is **10,019 Lilly +1,066 Ptolemy = 11,085 documentary annotations**, original scanned frame **673 of 894 ≈75.3% physical source position ONLY**, not scientific/project completion. Chinese BaZi **46** + Zi Wei Dou Shu **26** source-only notes remain a separate 72-record lane. No independently verified human dyadic predictions or promoted runtime rules.
+
+Next first-edition source: **UNNUMBERED twelfth-house `Of Enemies` introduction**, lower original PDF673 through upper PDF674, followed by **printed CLIII `What manner of Enemies? their Quality`** later PDF674. The introduction should be admitted separately without incrementing printed chapter count, preserving enemies *count* versus moral/type/strength/danger classifications and avoiding any actual person harm predictions.
+
+After GitHub verified publication 10,019 Lilly +1,066 Ptolemy =11,085 historical source records. 26 first-edition source and ZIP archive replays pass, no real dyadic compatibility/conflict/person prediction or production rules validated.
