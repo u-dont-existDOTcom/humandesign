@@ -16,6 +16,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from pydantic import BaseModel, ConfigDict, Field
 
 from .domain import target_exposure, utc
+from .experience import public_instrument, validate_experience_record
 from .finish_portal import (
     COOKIE_NAME,
     SESSION_TTL_SECONDS,
@@ -55,6 +56,7 @@ class FinishSubmit(SourceBody):
     submit_to_research: Literal[True]
     answers: list[FinalAnswer] = Field(min_length=3, max_length=3)
     metadata: FinishMetadata
+    experience_record: dict | None = None  # Separate optional unscored post-review evidence
 
 
 class PortalBatchAnswer(SourceBody):
@@ -258,6 +260,7 @@ def mount_finish_routes(
                 "original_turn_count": len(original),
                 "clarification_count": len(review.get("clarification_history") or []),
                 "cf003_questions": questions,
+                "experience_instrument": public_instrument(),
                 "csrf_token": token,
                 "submission": None,
             }
@@ -358,6 +361,13 @@ def mount_finish_routes(
         confirmed_at = utc()
         primary = frozen_primary(review, confirmed_at=confirmed_at)
         secondary = cf003_secondary(fixed, entries, body.metadata.model_dump())
+        experience = (
+            validate_experience_record(body.experience_record)
+            if body.experience_record is not None
+            else None
+        )
+        if experience is not None and experience["collection_mode"] != "railway_finish":
+            raise ValueError("Railway experience answers must name the Railway channel.")
         submitted = gpt_submission_type(
             research_use_consented=True,
             review_id=session.review_id,
@@ -366,15 +376,14 @@ def mount_finish_routes(
         )
         validated_primary, linked_secondary, primary_hash = validate_submission(submitted)
         secondary_hash = digest(canonical(linked_secondary))
-        submission_hash = digest(
-            canonical(
-                {
-                    "review_id": session.review_id,
-                    "primary_record": validated_primary,
-                    "cf003_record": linked_secondary,
-                }
-            )
-        )
+        content = {
+            "review_id": session.review_id,
+            "primary_record": validated_primary,
+            "cf003_record": linked_secondary,
+        }
+        if experience is not None:
+            content["experience_record"] = experience
+        submission_hash = digest(canonical(content))
         payload = {
             "schema": "life-patterns-gpt-submission-v1",
             "received_at_utc": confirmed_at,
@@ -390,6 +399,9 @@ def mount_finish_routes(
             "primary_record": validated_primary,
             "cf003_record": linked_secondary,
         }
+        if experience is not None:
+            payload["experience_record"] = experience
+            payload["experience_record_sha256"] = digest(canonical(experience))
         submission_id, stored, duplicate = store.create_gpt_submission(
             payload,
             submission_hash,
@@ -404,6 +416,11 @@ def mount_finish_routes(
                 "independent_review_completed": True,
                 "primary_record_sha256": stored["primary_record_sha256"],
                 "cf003_record_sha256": stored["cf003_record_sha256"],
+                **(
+                    {"experience_record_sha256": stored["experience_record_sha256"]}
+                    if experience is not None
+                    else {}
+                ),
                 "duplicate": duplicate,
             }
         )

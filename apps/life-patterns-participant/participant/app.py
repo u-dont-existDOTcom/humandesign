@@ -28,6 +28,7 @@ from .domain import (
     utc,
 )
 from .engine import PAYMENT_ERROR, Engine, ProviderError, Venice
+from .experience import validate_experience_record
 from .fast_review import PROTOCOL, source_revision
 from .review_timing import review_guidance
 from .store import Conflict, Missing, Store, canonical, digest
@@ -210,6 +211,9 @@ class GptSubmission(Body):
     cf003_record: dict | None = None
     primary_record_json: str | None = Field(default=None, min_length=2, max_length=1_500_000)
     cf003_record_json: str | None = Field(default=None, min_length=2, max_length=500_000)
+    # Additive post-review research; never part of primary/CF003 or chart scoring.
+    experience_record: dict | None = None
+    experience_record_json: str | None = Field(default=None, min_length=2, max_length=50_000)
 
 
 class GptReviewedSubmission(GptSubmission):
@@ -874,11 +878,11 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
 
     @app.get("/action-openapi.yaml")
     def action_openapi():
-        return FileResponse(STATIC / "action-openapi.yaml", media_type="application/yaml")
+        return FileResponse(STATIC / "action-openapi-v1.9.yaml", media_type="application/yaml")
 
     @app.get("/assets/{name}")
     def assets(name: str):
-        if name not in {"app.js", "style.css", "admin.js", "finish.js", "finish.css"}:
+        if name not in {"app.js", "style.css", "admin.js", "finish.js", "finish.css", "experience.js"}:
             raise HTTPException(404)
         return FileResponse(STATIC / name)
 
@@ -1143,15 +1147,31 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
         gpt_submitter(request)
         primary, secondary, primary_sha256 = validate_gpt_submission(body)
         cf003_sha256 = digest(canonical(secondary))
-        submission_sha256 = digest(
-            canonical(
-                {
-                    "review_id": body.review_id,
-                    "primary_record": primary,
-                    "cf003_record": secondary,
-                }
+        experience = None
+        if body.experience_record is not None or body.experience_record_json is not None:
+            parsed = (
+                strict_json(body.experience_record_json)
+                if body.experience_record_json is not None
+                else None
             )
-        )
+            if (
+                parsed is not None and body.experience_record is not None
+                and canonical(parsed) != canonical(body.experience_record)
+            ):
+                raise ValueError("Experience object and JSON string must match.")
+            experience = validate_experience_record(body.experience_record or parsed)
+            if experience["collection_mode"] != "gpt_optional":
+                raise ValueError("The GPT experience record must name the GPT channel.")
+            if body.review_id is None:
+                raise ValueError("Optional experience evidence requires an independently ready review.")
+        content = {
+            "review_id": body.review_id,
+            "primary_record": primary,
+            "cf003_record": secondary,
+        }
+        if experience is not None:
+            content["experience_record"] = experience
+        submission_sha256 = digest(canonical(content))
         payload = {
             "schema": "life-patterns-gpt-submission-v1",
             "received_at_utc": utc(),
@@ -1173,6 +1193,9 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "primary_record": primary,
             "cf003_record": secondary,
         }
+        if experience is not None:
+            payload["experience_record"] = experience
+            payload["experience_record_sha256"] = digest(canonical(experience))
         submission_id, stored, duplicate = store.create_gpt_submission(payload, submission_sha256)
         return {
             "schema": "life-patterns-gpt-submission-receipt-v1",
@@ -1182,6 +1205,10 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             "review_id": stored["review_id"],
             "primary_record_sha256": stored["primary_record_sha256"],
             "cf003_record_sha256": stored["cf003_record_sha256"],
+            **(
+                {"experience_record_sha256": stored["experience_record_sha256"]}
+                if experience is not None else {}
+            ),
             "stored_encrypted": True,
             "independent_review_completed": body.review_id is not None,
             "inference_started": False,
@@ -1263,6 +1290,21 @@ def create_app(settings: Settings, provider=None, instrument=None) -> FastAPI:
             media_type="application/json",
             headers={
                 "Content-Disposition": 'attachment; filename="life-patterns-cf003-secondary-v0.json"'
+            },
+        )
+
+    @app.get("/api/admin/gpt-submissions/{submission_id}/experience")
+    def gpt_submission_experience(request: Request, submission_id: str):
+        admin(request)
+        payload = store.gpt_submission_read(submission_id)
+        if "experience_record" not in payload:
+            raise HTTPException(404, "This submission has no optional experience addendum.")
+        return Response(
+            canonical(payload["experience_record"]),
+            media_type="application/json",
+            headers={
+                "Cache-Control": "private, no-store",
+                "Content-Disposition": 'attachment; filename="life-patterns-experience-addendum-v2.json"',
             },
         )
 

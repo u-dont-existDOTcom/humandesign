@@ -198,6 +198,9 @@
           (data.clarification_count || 0) + " saved reviewer clarifications.";
         showEvidence(Array.isArray(data.review_summary) ? data.review_summary : []);
         showFinalQuestions(data.cf003_questions);
+        if (window.LifePatternsExperience) {
+          window.LifePatternsExperience.setup(data.experience_instrument);
+        }
         showPanel("review");
       }
       clearTimeout(timer);
@@ -323,8 +326,11 @@
     busy = true;
     find("submit-button").disabled = true;
     try {
+      const experience = window.LifePatternsExperience
+        ? window.LifePatternsExperience.collect() : null;
       showDone(await api("/api/finish/submit", {
-        confirmed_review: true, submit_to_research: true, answers, metadata
+        confirmed_review: true, submit_to_research: true, answers, metadata,
+        ...(experience ? {experience_record: experience} : {})
       }));
     } catch (err) {
       alertMessage(err.message || "Final storage failed; your earlier answers remain saved.");

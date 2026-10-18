@@ -292,6 +292,10 @@ class Store:
                     "collection_mode": primary.get("collection_mode", "unknown"),
                     "primary_turn_count": len(primary.get("turns") or []),
                     "cf003_turn_count": len(secondary.get("turns") or []),
+                    "optional_experience_count": len(
+                        (payload.get("experience_record") or {}).get("responses") or []
+                    ),
+                    "optional_experience_present": "experience_record" in payload,
                     "primary_record_sha256": payload.get("primary_record_sha256"),
                 }
             )
