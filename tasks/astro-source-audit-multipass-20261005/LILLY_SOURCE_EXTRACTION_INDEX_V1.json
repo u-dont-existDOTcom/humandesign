@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CXLVIII_VOCATION_SOURCE_NEXT_CXLIX_PROFESSIONAL_APHORISMS",
-  "records_count": 9526,
+  "status": "BOOK_III_CXLIX_PROFESSION_APHORISMS_NEXT_UNNUMBERED_ELEVENTH",
+  "records_count": 9777,
   "read_numbered_chapters": [
     1,
     2,
@@ -152,7 +152,8 @@
     145,
     146,
     147,
-    148
+    148,
+    149
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1072,26 +1073,35 @@
       "records_count": 82,
       "sha256": "15573cf709cff286cc361b0e05293127f6425056f4eed82d034d14b4473ff2fd",
       "scope": "Original Lilly 1647 first edition printed CHAP CXLVIII Magistery/Exercitation/Profession, PDF658 middle to PDF660 upper (printed624–626). Six image-anchored source groups: 80 substantive period clauses and 2 next CXLIX navigation R9445–R9526. Historical magistery defined as main lifetime study, delight, occupation, livelihood, esteem and time use; three distinct questions: presence, type, fortune/fame. Mars body/strength, Venus delight, Mercury mind; eligible candidates tenth/first/seventh, dignified and not combust/under beams, fallback to one of three ruling MC with dignity, then closest partile Moon aspects prioritizing strength, aspect and sinister orientation; ambiguous Moon half-orb fallback excluding malefic conjunction/square/opposition, last solar antecedence selection, lower-tier alleged no/ignoble negligent vocation stereotypes. Separate Ptolemy-attributed two-way morning Sun-riser and MC ruler/occupant with Moon, both routes preferred but one permitted, not independently cross-collated. No tested human jobs or runtime promotions."
+    },
+    {
+      "id": "B07c",
+      "path": "batches/B07c/RULES.json",
+      "records_count": 251,
+      "sha256": "ba855871357be40a3bb57ae86dadda3a3a6cc358e766b3c1ddd059fbad1b4783",
+      "scope": "Original William Lilly 1647 Christian Astrology printed CHAP CXLIX 'Severall experimented Aphorismes' for Magistery, Trades and Profession from lower PDF660/printed626 through upper PDF668/printed634, ending BEFORE a separate substantive unnumbered eleventh-house Friendship source on SAME PDF668. Fourteen original reversible photo-source groups, 248 substantive historical clauses, 3 next-source navigation R9527-R9777. Mercury alone/joined Saturn Mars Jupiter Sun Moon, Venus alone and combinations Saturn Jupiter Sun/cazimi, Mars alone strong/moderate/weak/night birth, Mars with Saturn Jupiter Sun Moon, Mercury+Venus/Mercury+Mars/Mars+Venus, success/fame vs profession-type source, zodiac movable/fixed EXCEPT Scorpio, humane/quad/water/earth, and elemental trade lists attributed to uncollated Albubater. Many mutually incompatible occupations and unverified period crime/morality/occult accusations explicitly not real person labels. Modern occupational mapping, original glyph parity and independent birth-verified human tests OPEN. Next unnumbered 11th-house friends PDF668-669, then printed CHAP CL PDF670. Zero actual human predictive validation and zero model runtime promotions."
     }
   ],
   "next": {
-    "pdf_page": 660,
-    "printed_page": 626,
-    "chapter": "CXLIX",
-    "printed_chapter_numeral": "CXLIX",
-    "heading": "Severall experimented Aphorismes concerning the Native's Magistery, Trade or Profession",
+    "pdf_page": 668,
+    "printed_page": 634,
+    "chapter": "UNNUMBERED_ELEVENTH_HOUSE_FRIENDS",
+    "printed_chapter_numeral": null,
+    "heading": "Judgments appertaining unto the eleventh House. Of Friends, &c.",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Printed CHAP CXLIX begins after a divider mid original PDF660/printed626, following CXLVIII's Ptolemy-attributed profession significator method. It continues PDF661 onwards with unnumbered Mercury/Venus/Mars and source mixture subsections; inspect original PDF661–677 and true next printed chapter boundary. Treat vocation occupation catalogue separate from CXLVIII existence/kind/fortune questions.",
-    "research_scope": "Detailed historical profession categories by Mercury Venus Mars single/combined with Jupiter Saturn and luminaries, positive vs malefic aspects, signs/houses/orbs, old social class/moral stereotypes, magic/divination claims, and trade counts. No actual modern occupational prediction validated, source only."
+    "following_printed_chapter_numeral": "CL",
+    "following_original_pdf_page": 670,
+    "position": "A substantive UNNUMBERED eleventh-house friendship introduction begins after divider mid/lower original PDF668/printed634, following the final trade sign aphorisms of CXLIX. Continues PDF669/printed635 including internal 'Speciall Rules concerning Friends'. Distinct numbered CHAP CL Quality of Friends begins original PDF670/printed636. Do NOT increment printed chapter count for the unnumbered intro.",
+    "research_scope": "Historical judgments about friends by eleventh house occupants and aspects, first-house planets, lord eleventh and planetary strengths, benefic/malefic configurations, friendship count and loyalty/support, and special rules. Do not infer actual person's interpersonal trust, morality, criminality or relationships."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B07b_PROFESSION.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B07c_PROFESSION_APHORISMS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1215,5 +1225,6 @@
   "chapter_CXLV_source_acceptance_note": "B06y R9125-R9312 188 source-only historical annotations, 12 original source groups, original PDF649-660 SHA images and 30 independent archive tests. Exact period six-regal-star table frozen without modern parity, beggar/king source outcome-switch and original printed CXLIIII -> CXLVI numbering gap preserved. Zero real status predictions, no runtime promotion.",
   "chapter_CXLVI_cause_source_acceptance_note": "B06z historic R9313–R9367, 55 annotations, PDF655–658 source SHA and 20 extracted archive tests, verified multi-step source fallback and separate alternative author method. Original printed CXLV omission preserved, Chinese 72 source records independent. No human status accuracy and no runtime rules.",
   "chapter_CXLVII_honor_duration_acceptance_note": "B07a R9368-R9444 77 original source notes, 6 reversible photo groups PDF656–660 SHA and 26 extracted archive replay tests. Duration, reversal and infamy are separate historical claims, zero human prediction or runtime source promotions. Chinese 72 source notes independently indexed.",
-  "chapter_CXLVIII_profession_source_acceptance_note": "B07b R9445–R9526 82 source only records, six original image groups PDF658–662 SHA/bytes, 26 extracted ZIP source tests. Separate three target questions, competing professional signifier tiers and unverified alternative Ptolemy source. Zero actual human vocation or runtime model promotions; Chinese 72 source notes independently indexed."
+  "chapter_CXLVIII_profession_source_acceptance_note": "B07b R9445–R9526 82 source only records, six original image groups PDF658–662 SHA/bytes, 26 extracted ZIP source tests. Separate three target questions, competing professional signifier tiers and unverified alternative Ptolemy source. Zero actual human vocation or runtime model promotions; Chinese 72 source notes independently indexed.",
+  "chapter_CXLIX_occupational_historical_acceptance_note": "B07c historic R9527-R9777, 251 source annotations, 14 reversible groups original PDF660-670 photos with source SHA/byte witnesses and 33 extracted archive integrity replays. Old occupational lists highly non-specific and sometimes criminally stigmatizing; separate primary work, income, skill, time use and fame targets before any blind test. Chinese 72 historical notes separate. Zero actual human accuracy and zero runtime promotions."
 }

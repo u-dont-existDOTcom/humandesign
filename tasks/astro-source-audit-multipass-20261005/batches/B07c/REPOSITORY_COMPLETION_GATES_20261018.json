@@ -1,0 +1,46 @@
+{
+  "batch": "B07c",
+  "as_of_utc": "2026-10-18T12:42:00Z",
+  "source_only_focus": {
+    "focused_tests_passed": 33,
+    "portable_archive_extracted_replay_passed": 33,
+    "ruff_passed": true,
+    "validated_humans": 0
+  },
+  "broader_repository_completion_gates": {
+    "unittest": {
+      "original_log": "REPOSITORY_UNITTEST_GATE_FULL_LOG_20261018.txt",
+      "bytes": 17691,
+      "sha256": "acf404d0e5fc63f240f38409715edb9f4adbaaea85b4bb70acba57b685602d57",
+      "lines": 163,
+      "summary_excerpt": "\n----------------------------------------------------------------------\nRan 91 tests in 0.093s\n\nFAILED (errors=3)",
+      "exit_code": 1,
+      "tests_run": 91,
+      "import_errors": 3,
+      "reason": "System Python missing swisseph/pyswisseph, existing astrological/mandane research tests fail at import; unrelated to B07c source-only changes."
+    },
+    "repository_ud_audit_path": {
+      "original_log": "REPOSITORY_UDA_AUDIT_GATE_FULL_LOG_20261018.txt",
+      "bytes": 179,
+      "sha256": "c40070251f16e669f1929a5bb96c40bc2fd1f1e96ad30f6e2eccec2eb846792a",
+      "lines": 1,
+      "summary_excerpt": "python3: can't open file '/mnt/hdd/storage/joel/development-worktrees/humandesign/astro-original-b07c-20261018/scripts/audit_codex_github.py': [Errno 2] No such file or directory",
+      "exit_code": 2,
+      "reason": "Project-local scripts/audit_codex_github.py missing. Available external canonical UDA script executed separately."
+    },
+    "canonical_ud_audit": {
+      "original_log": "REPOSITORY_UDA_CANONICAL_AUDIT_LOG_20261018.txt",
+      "bytes": 43641,
+      "sha256": "896f542c3027c30f9b15fb55b7af3dbf99ab73cf455becf15f9b28862a644a79",
+      "lines": 277,
+      "summary_excerpt": "[WARNING] actions.ref.unpinned (.github/workflows/v43-profile-netinfo-audit.yml): Remote action or reusable workflow `actions/setup-python@v5` is not pinned to an immutable 40-character commit SHA.\n  Fix: Pin the dependency to a reviewed full commit SHA and let Dependabot propose controlled updates.\n[WARNING] continuity.current-state.incomplete (state/CURRENT-STATE.md): The recovery checkpoint is missing expected sections: authority / baseline, current checkpoint, remaining, blockers / unresolved, evidence / artifacts, next safe action\n\nSummary: 90 error(s), 73 warning(s), 0 informational finding(s).",
+      "exit_code": 1,
+      "errors": 90,
+      "warnings": 73,
+      "reason": "Repository-wide action concurrency, top-level write permissions, job timeout, profile-schema differences and action version-pinning; pre-existing unrelated governance findings."
+    }
+  },
+  "overall_repository_gates_passed": false,
+  "change_introduced_production_scoring": false,
+  "conclusion": "The archival source batch passes its own photo/hash/record tests. Broad repository gates remain failing or unavailable on the already existing project baseline; do not describe global validation as passed and do not infer actual astrology predictive validity."
+}

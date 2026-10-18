@@ -1,0 +1,65 @@
+{
+  "schema": "LILLY_1647_CXLIX_PROFESSION_VALIDATION_REQUIREMENTS_V1",
+  "status": "HISTORICAL_SOURCE_ONLY_NOT_SCORABLE",
+  "original_section": "Printed CXLIX profession aphorisms source PDF660–668",
+  "separate_targets": [
+    {
+      "target": "primary_paid_occupation",
+      "definition": "One principal income-producing occupation over a predeclared interval",
+      "currently_operationalized": false
+    },
+    {
+      "target": "secondary_paid_trades",
+      "definition": "Paid secondary trades with predeclared minimum income/hours threshold",
+      "currently_operationalized": false
+    },
+    {
+      "target": "unpaid_passion_main_lifetime_activity",
+      "definition": "Self-reported primary long-term unpaid pursuit, not automatically a trade",
+      "currently_operationalized": false
+    },
+    {
+      "target": "occupation_skill_or_achievement",
+      "definition": "Independent job performance or skill, not equivalent to professional title",
+      "currently_operationalized": false
+    },
+    {
+      "target": "professional_income_and_success",
+      "definition": "Income or occupational success benchmark against class and era",
+      "currently_operationalized": false
+    },
+    {
+      "target": "workplace_reputation",
+      "definition": "Employer/peer reports or professional awards measured independently",
+      "currently_operationalized": false
+    },
+    {
+      "target": "vocation_stability_and_switches",
+      "definition": "Longitudinal number/duration of trade changes, not inferred from title",
+      "currently_operationalized": false
+    },
+    {
+      "target": "interest_occult_or_spiritual_topics",
+      "definition": "Neutral self-report interest, separate from belief or ability",
+      "currently_operationalized": false
+    }
+  ],
+  "source_conditions_not_yet_computable": [
+    "selection of actual Mars/Venus/Mercury professional significator under the prior CXLVIII hierarchy",
+    "planetary essential/accidental dignities, partile aspects, signs, angularity, oriental/occidental",
+    "which body/aspect is the final overriding occupational master",
+    "source-specific interpretation of all zodiac glyphs and old social period names",
+    "original Albubater passages independently collated and provenance verified",
+    "modern labor ontology crosswalk, occupational base rates by sex, location, birth cohort, education and class",
+    "predeclared unique rank/probability for multiple source outputs and a no-prediction condition"
+  ],
+  "unscorable_source_categories": [
+    "thieves, murderers, poisoners, perjurers, sorcerers, witches, morally good/bad, cowardly, lazy, violent",
+    "heretic, sectary, religion true/false, divination/prophecy ability and other protected-belief or pejorative values"
+  ],
+  "explicit_nonpromotion": true,
+  "core_warning": "Occupation type, work quality, fame and income are independent endpoints. Lists of alternative 1647 professions are not modern job predictions. Never label real people criminal, immoral, dangerous, occultly gifted or otherwise based on historical source astrology.",
+  "real_human_occupation_validation": 0,
+  "calibrated_probabilistic_model": false,
+  "runtime_promotions": 0
+}

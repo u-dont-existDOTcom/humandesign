@@ -1,3 +1,9 @@
+# Original Lilly CXLIX old professional aphorisms documented; friends next
+
+2026-10-18 Africa/Dakar UTC+0. B07c original source R9527–R9777 accepted locally and pending GitHub verification, after remote source acceptance 9,777 Lilly +1,066 Ptolemy =10,843 historical notes. 33 first-edition images/source and portable ZIP replay checks pass, no independently verified real human occupation or runtime promotions. Next unnumbered eleventh-house friendship intro PDF668–669, then separately printed CHAP CL on PDF670. Chinese BaZi46/Zi Wei26 historic notes separately preserved.
+
+---
+
 # Lilly CXLVIII Magistery profession source documented; CXLIX next
 
 2026-10-18 Africa/Dakar UTC+0. B07b source R9445–R9526 locally complete, pending remote publication. After verified readback, 9,526 Lilly +1,066 Ptolemy =10,592 archival source records, 26 image and independent ZIP-replay tests pass. No human occupation ranking, moral/financial accuracy or promoted source runtime rules. Next printed CXLIX from PDF660; Chinese 46 BaZi +26 Zi Wei still separately indexed.
