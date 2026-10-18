@@ -1,0 +1,28 @@
+# B07t accepted first-edition Lilly source — Sun to fixed stars, next Moon directions
+
+2026-10-18 Africa/Dakar UTC+0. HumanDesign primary-source astrology research, historical documentary only, NOT valid human diagnosis, criminality, mortality, safety or economic predictions.
+
+## Accepted documentary frontier
+
+This source-only batch was built atop **B07s printed CLXII accepted commit** 2bf981e7f3e527a4342306510e0ec00c3d625841 in branch `research/astro-b07t-sun-fixed-stars-20261018`. Original 1647 first edition William Lilly *Christian Astrology*, Wellcome b30338724 full scan SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. Original PDF frames **723–725/printed689–691**, cross-chapter dividers physically inspected: printed **CHAP CLXIII, The Sunne Directed to FIXED STARRES**, starts lower PDF723 after separate CLXII divider and ends upper PDF725 before printed **CHAP CLXIIII, Directions of the Moon to PROMITTORS**. The three original JPEG photographs are retained byte-identical from the previously accepted B07s scan in B07t/evidence with SHA and bytes.
+
+**104 historical-source annotations R11722–R11825**, 102 substantive plus 2 following-chapter navigation, across **13 reversible original-photo passage groups** and 11 distinct printed stellar effects headings. Source table has **13 old stellar entries** because two headings pair two different historical designations/coordinates (*Cheles* 8/9 Scorpio; *two Asses* 2/3 Leo); those are common interpretation paragraphs, **not independent empirical successes**. No missing arcminute is invented as zero. The specific Northern/Southern Ass to 2/3 Leo assignment is deliberately unresolved. Crab-breast *Cratch* remains 2 Leo as printed rather than modernized; all epoch/modern-star correspondence unverified.
+
+Important historical contradictions retained: Lion's Heart status benefits with a simultaneous illness explicitly said **not fatal**; Bull's Eye early improvement **followed by a tragic reversal**; Cheles source negative health with alternative positive martial work; Spica church/civic rewards **conditioned on culmination and direction**; severe Two Asses consequences are explicitly said preventable by prudence; Cratch/Praesepe crime/mortality rhetoric is attributed to earlier authorities and author anecdotes, **not blinded evidence**. Printed Rigel at **11 Gemini** in CLXIII contrasts with earlier printed CLXI Rigel **11°34 Gemini**; no harmonization or precession parity claimed. No person-level clinical or safety inference allowed.
+
+Canonical source index `tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json` now has **11,825 Lilly documentary source notes +1,066 Ptolemy =12,891 Western historical-source records**. Independent Chinese `CHINESE_SOURCE_AUDIT_INDEX_V2.json` remains **46 BaZi +51 Zi Wei=97 source-only notes**. All pre-B07t accepted bytes preserved in `recovery/` and referenced by exact SHA. **Next R11826** printed CLXIIII Moon Promittors begins below divider on **PDF725/printed691**, but its actual end is not yet confirmed.
+
+## Executed verification
+
+Original-source documentary test suite **53/53 passed**, original-photo/source-window **9/9**, total **62/62**. Portable owner archive in Downloads: `Astrology-Lilly-Printed-CLXIII-Sun-Fixed-Stars-1647-20261018.zip`, SHA256 `7721eb59f3cf9f5f503e536e9c8379fbf3e2cfd1da3b960398714f12d06002fb`, 1,608,059 bytes. Complete independently extracted ZIP **CRC + SHA256 + member byte lengths** and replay of all **62 tests** passed. Ruff checks passed. `SOURCE_RELEASE_RECEIPT_20261018.json`, `CANONICAL_PREPARE_RECEIPT_20261018.json`, `ORIGINAL_SOURCE_REVIEW_20261018.md`, original JPEGs, reversible map, unaccepted earlier index backups and 13-entry stellar source table are durable.
+
+**Remote GitHub commit and SHA readback must be verified after this note is pushed; no publication success is claimed from the local commit alone.** Full repository application tests, modern star epoch/arc-to-date computation, human predictive backtests, other tradition texts and full future forecasts have NOT been validated by the 62 source-focused tests. The long-term owner research task remains OPEN.
+
+## Next actionable work, without repeated accepted source material
+
+1. Start fresh isolated `B07u` worktree at this B07t accepted commit. Locate the **physical end of CHAP CLXIIII Moon to Promittors** from original first-edition PDF725 onward; the original complete 894-frame PDF is available on authorized owner host and must be SHA-checked. Store original photo witnesses and draft new clauses **R11826 onward**. Do not admit any without actual following numbered chapter seam and source-fidelity verification.
+2. Then next separate printed lunar-star or next actual chapter in separate source batch; keep original printed numerals and page positions, not modern renumbering. Prior original source records should not be regenerated or silently normalized.
+3. Parallel Chinese primary-source lane is at 97 historical-only source annotations. Next Zi Wei **ZWD-R0052** after pinned original Volume II short Chinese glyph/source anchors, BaZi **BZI-R0047** only with inspected original book/classical lines. No borrowing the Chinese note count into Western history index; full Birth/calendar engines are incomplete.
+4. Continue other primary texts, reproducible mathematical directions, independent era-star and calendar parity, preregistered blind real-human outcomes against decoys and non-astrology baselines. Zero new human predictive validations and zero runtime promotions.
+
+No genuine owner decision is needed to continue ordinary source research. Preserve this historical checkpoint and continue autonomously.
