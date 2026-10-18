@@ -1,0 +1,27 @@
+# Lilly original printed CLVIII Ascendant-to-Saturn historically documented
+
+# Original Lilly 1647 printed CLVIII — Ascendant directed to Saturn and his aspects
+
+[2026-10-18 15:15 UTC] Africa/Dakar. Primary source history only; not individual illness, death, injury or relationship predictions.
+
+## Physical original page and chapter boundary
+
+In Lilly's first edition *Christian Astrology* (Wellcome b30338724), separately printed **CHAP CLVIII** `The Effects of the five HYLEGIACALL Places, viz. the Ascendant, Mid-heaven, Sun, Moon and Part of Fortune directed to their PROMITTORS` starts below its own horizontal divider original **PDF690/printed656**. Despite the broadly phrased title, the substantive content of this short chapter concerns **the Ascendant directed to the body, sextile/trine, square/opposition or terms of SATURN**, from the middle of PDF690 through upper/middle **PDF691/printed657**. Another independent divider introduces separately printed **CHAP CLIX `The Ascendant directed to the Body of JUPITER, and his Aspects`** lower on PDF691. Full source photos PDF690–692 with SHA256/byte/printed folio; PDF692 is next CLIX context only. All originally downloaded further photos PDF693–710 belong to future source CLIX and later chapters, NOT the substantive body of CLVIII.
+
+## Source's highly flexible old medical and behavioral categories
+
+**Ascendant meeting the body of Saturn** is associated with an exceptionally broad list of seventeenth-century humoral/clinical and psychological diagnoses: cold/dry illness and excessive phlegm, old classes of fever, chronic coughs, giddiness, lingering/wasting illness, distressing thoughts, alleged dullness, malaise or idle/irritable disposition. Historical sex- and age-dependent examples include "green-sickness" in girls and consumption/wasting in youths. Its water-danger claim is further qualified by a **watery sign** and proximity to **violent fixed stars**. No real person may be diagnosed or given safety advice from these untested associations.
+
+**Ascendant directed to Saturn's sextile or trine**, by contrast, allegedly improves gravity, temperance and contact with respected older people. It is associated with reputation, rural affairs and trading in durable goods, estates, building/repair, orchard gardening, leasing properties or receiving support/legacy from elderly parties. The source explicitly says reputation may improve **more than profit**, while mine discovery requires a mine actually present on the land. It also adds supposed improvement in resolve and cooperation between children and parents. These are numerous unrelated, non-unique outcome alternatives; one can neither silently count all as successes nor select after seeing the biography.
+
+**Ascendant directed to Saturn's square, opposition or terms** is associated with a long catalog of feared diseases, bodily afflictions, sadness, delays, reputational loss and alleged personality defects. Critically, the most serious source **death/danger** language contains extra qualifications: **other malevolent Promittors must concur OR Saturn must be Anareta**. No isolated Saturn hard aspect satisfies that high-stakes claim on its own. The author assigns fire/water/air/earth signs to traditional dry/moist/blood/melancholic modifiers; these are obsolete humoral categories, not evidence of pathophysiology.
+
+## Documentary acceptance and empirical limits
+
+**75 historical first-edition annotations R10658–R10732**, **73 substantive clauses and two following original CLIX navigation** in **six reversible photographed source groups**. **25 focused original-image, source-condition and exception tests pass**, independently extracted ZIP archive checked for CRC, per-file SHA256/bytes with **25 test replays**. Source guard `CLVIII_SATURN_HISTORICAL_NONPROMOTION_GUARD_V1.json` forbids person-level medical, mortality, morality, sex/gender or danger inference.
+
+After authenticated GitHub remote acceptance, Western documentary corpus becomes **10,732 Lilly +1,066 retained Ptolemy =11,798 historical source notes**, source frame PDF691/894 (~77.3% physical scan position only). Independent Chinese historical source study 46 BaZi +26 Zi Wei Dou Shu =72 remains separate. None of these archival tests validates actual health, timing, natural death or other person-level outcomes; zero runtime source rules promoted.
+
+NEXT **printed CHAP CLIX**, original **PDF691/printed657 lower** through an extended series of Ascendant-to-Jupiter directions and aspects, ending before separately printed **CHAP CLX** `Directions of the Mid-heaven to PROMITTORS` original **PDF702/printed668** (visually verified contact-photo boundary). Study all original intervening ascendant-to-jupiter/mars/sun/venus/mercury/moon etc internal conditions, without importing printed CLX. The CLIX source is large, and no completed mathematical directions engine is established.
+
+After GitHub verified publication 10,732 Lilly +1,066 Ptolemy =11,798 first-edition historical source notes, 25 photo/ZIP source checks pass. Zero independent actual person illness, mortality/social accuracy or production runtime source promotions.

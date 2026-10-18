@@ -1,3 +1,9 @@
+# Original Lilly 1647 through printed CLVIII Saturn directions — 2026-10-18
+
+After verified source publication **11,798 historic documentary annotations** (10,732 Lilly +1,066 Ptolemy), physical first-edition scan frontier PDF691/894 (~77.3% physical page position ONLY, not full empirical project completion). B07o adds 75 history-only Ascendant-to-Saturn old body/sextile/trine/square/opposition/terms rules with high-stakes requirements and source exceptions. NO human illness, safety, life-event or moral forecasts validated and NO executable runtime rule promotions. NEXT printed CLIX Ascendant-to-Jupiter and multiple other aspects, original PDF691–702, then printed CLX from PDF702. Chinese original BaZi46/ ZiWei26 historical notes indexed independently.
+
+---
+
 # Original Lilly through printed CLVII effect strength — 2026-10-18
 
 After verified publication **11,723 historical documentary source notes** (10,657 Lilly +1,066 Ptolemy), original PDF690/894 (~77.2% physical scan position only, NOT total science/model completion). B07n adds 62 original source statements on natal Significator/Promittor strength, relative effect and conflicting same-year directions. Original permits zero-effect under very weak indicators, and uses annual Profections/Revolutions to resolve health disagreements. No medical event, date or duration human validation and no runtime source promotion. NEXT printed CLVIII five Hylegiacall Places PDF690 onward. Chinese separate BaZi46 ZiWei26 historical-only intake.
