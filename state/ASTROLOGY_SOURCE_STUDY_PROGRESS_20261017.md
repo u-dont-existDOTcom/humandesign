@@ -1,3 +1,9 @@
+# Original Lilly 1647 through honor-duration CXLVII — 2026-10-18
+
+After publication **10,510 historical source records** (9,444 Lilly +1,066 Ptolemy). First-edition physical source frontier PDF658/894 (**73.6% scanned page position ONLY, not scientific completion**). B07a 77 historic conditions preserves strong/moderate/weak planet timecourses, recovery vs total collapse, fixed-star triggers and the original King's/nation two-chart condition. No real human forecast and no runtime scorer. NEXT printed CXLVIII occupation/profession from PDF658 onward. Separate Chinese BaZi46/Zi Wei26 source notes remain open.
+
+---
+
 # Lilly original first-edition through causes of preferment — 2026-10-18
 
 Following remote verification **10,433 historical source annotations** (9,367 Lilly +1,066 Ptolemy), original book scanned-frame frontier PDF656/894 (**73.4% physical page-position only**, NOT research completion). New CXLVI adds 55 source-only notes on planetary and house possible causes of preferment plus alternative eligibility/fallback methods. Zero actual human occupational/rank accuracy and no runtime model promotion. NEXT printed CXLVII persistence of honors starts PDF656, ends before printed CXLVIII on PDF658. Chinese BaZi46/Zi Wei26 source notes separate.
