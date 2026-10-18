@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CXLII_HISTORICAL_RELIGION_NEXT_CXLIII_DREAMS",
-  "records_count": 9039,
+  "status": "BOOK_III_CXLIII_DREAMS_NEXT_UNNUMBERED_TENTH_HOUSE",
+  "records_count": 9105,
   "read_numbered_chapters": [
     1,
     2,
@@ -147,7 +147,8 @@
     140,
     141,
     142,
-    143
+    143,
+    144
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1025,26 +1026,35 @@
       "records_count": 104,
       "sha256": "6a61608b0692a3846e56baa56d8717b6a8e8e87b075abad94138e8fd98929db2",
       "scope": "Original 1647 first-edition printed CXLII, source PDF645-647; seven reversible groups, 102 historical conditions and two next-chapter navigation, R8936-R9039. Historic Christian piety and impiety rubrics, multiple explicit Saturn/benefic exceptions, and Lilly's crucial stated rejection of stellar causation of faith. Separate causal scope and image/record details retained in B06v. No person-level religion, moral or divinatory classification established and zero runtime promotions."
+    },
+    {
+      "id": "B06w",
+      "path": "batches/B06w/RULES.json",
+      "records_count": 66,
+      "sha256": "fd15153aa73bcffe08f063bee423494d749e5ad5884121292be0170c4120014f",
+      "scope": "Original first-edition 1647 printed CHAP CXLIII Of Dreames, PDF647 lower through PDF648 bottom/printed613-614. Seven reversible original photo source groups, 64 substantive historical dream claims and two following navigation R9040-R9105. Jupiter/Venus strong ninth alleged corresponding dreams, malefic ninth alleged false dreams, weak benefics allow ambiguous sometimes true/sometimes false; empty ninth fallback to cusp/lord. Content themes historically attributed to Saturn/Jupiter/Mars/Sun/Venus/Mercury/Moon and Saturn+Moon frightening case. Dream content, psychological interpretation and future event verification are entirely different targets. No source claims validated on independently observed humans, no production predictions or runtime promotions. Next immediate original source UNNUMBERED tenth-house honours introduction PDF649, then numbered CXLIIII."
     }
   ],
   "next": {
-    "pdf_page": 647,
-    "printed_page": 613,
-    "chapter": "CXLIV",
-    "printed_chapter_numeral": "CXLIII",
-    "heading": "Of Dreames",
+    "pdf_page": 649,
+    "printed_page": 615,
+    "chapter": "UNNUMBERED_TENTH_HOUSE_HONOURS_DIGNITIES",
+    "printed_chapter_numeral": null,
+    "heading": "The tenth House, and the Judgments thereunto appertaining",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Printed CXLIII on Dreams begins below divider on original PDF647/printed613. Continues PDF648 and later; establish next numbered heading before complete extraction.",
-    "research_scope": "Historical dream quality/content and alleged prophecy from ninth-house planets, categories, dignity and aspects. No actual dream-event prediction validation."
+    "following_printed_chapter_numeral": "CXLIIII",
+    "following_original_pdf_page": 649,
+    "position": "The original unnumbered tenth-house introduction starts upper PDF649/printed615 after dreams end on PDF648. It lists the sources for honours/dignities, then separately numbered CHAP CXLIIII begins on the SAME PDF649, below horizontal divider. Accept the unnumbered source separately first.",
+    "research_scope": "Original historical hierarchy of Sun and luminaries, lord of Midheaven, tenth-house occupant planets, and first/second-magnitude regal stars near first/tenth cusps. No actual social rank or professional status predictions validated."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B06v_RELIGION.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B06w_DREAMS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1162,5 +1172,6 @@
   "chapter_CXL_source_acceptance_note": "B06s R8706–R8806, 101 first-edition original historic source items, 11 bidirectional groups, photo PDF640–643 hash/bytes, 26 independently extracted ZIP source tests, seven competing non-executable direction/mode systems and explicit Ptolemy methodological disagreement. Zero human travel accuracy or runtime rules; Chinese 72 source notes separate.",
   "chapter_CXLI_source_acceptance_note": "B06t R8807–R8859, 53 original historic annotations, four photographic pages PDF643–646 SHA/bytes and 24 independent extracted ZIP/source tests; planet/house travel causes and HALY only first through eighth house, no fabricated 9–12 branches, Haly attribution not collated. Zero real travel, economic, medical or mortality validity and no runtime promotions. Chinese source count 72 separately indexed.",
   "chapter_CXLII_source_acceptance_note": "B06u original R8860–R8935, 76 historic source clauses with original PDF644–648 SHA/bytes and 26 independently extracted ZIP tests. Explicit Saturn-fixed Scorpio exception and compound watery drowning conditions; no original country/zodiac table page93 collation and node glyphs unresolved; zero human danger or travel geo-validity and no runtime promotions. Chinese 72 records separately indexed.",
-  "chapter_CXLIII_source_acceptance_note": "B06v original R8936-R9039, 104 source notes, PDF645-649 SHA images and 29 independent archive tests; source explicit denial of celestial religious causation; zero human prediction and runtime promotions."
+  "chapter_CXLIII_source_acceptance_note": "B06v original R8936-R9039, 104 source notes, PDF645-649 SHA images and 29 independent archive tests; source explicit denial of celestial religious causation; zero human prediction and runtime promotions.",
+  "chapter_CXLIV_source_acceptance_note": "B06w original R9040-R9105, 66 historic records, PDF647-651 images SHA and 21 archive-replayed documentary tests. Dream truth vs dream content explicitly distinguished; no actual future-event validation, sleep diagnosis or runtime promotions."
 }

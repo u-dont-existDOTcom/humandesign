@@ -1,3 +1,9 @@
+# Lilly original dream source documented; tenth-house intro next
+
+2026-10-18 Africa/Dakar UTC+0. B06w historical R9040-R9105 complete, remote acceptance pending. After GitHub verification 9,105 Lilly +1,066 Ptolemy=10,171 source-only documents. No independently validated dream prediction or executable scorer; all 21 source/archive tests pass. Next UNNUMBERED tenth-house status on original PDF649; separate Chinese studies retained.
+
+---
+
 # Lilly printed CXLII historical religion complete, CXLIII dreams next
 
 2026-10-18 Africa/Dakar UTC+0. B06v source R8936–R9039 prepared for authenticated publication; after remote readback 9,039 Lilly + 1,066 Ptolemy = 10,105 source notes. Author explicitly rejects stellar causation of religion. No person religion or moral classification validated, no executable source rules promoted. 29 source and ZIP replay integrity tests pass. NEXT CXLIII Dreams on original PDF647. Independent Chinese source 72 notes unchanged.

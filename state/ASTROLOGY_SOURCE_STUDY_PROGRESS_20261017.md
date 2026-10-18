@@ -1,3 +1,9 @@
+# Original Lilly study through printed CHAP CXLIII Dreams — 2026-10-18
+
+After authenticated publication 10,171 historical source annotations (9,105 Lilly +1,066 Ptolemy); original PDF648/894 (72.5% source page position ONLY, not scientific completion). B06w documents 66 historical dream-source clauses, truth/falsehood conditions and separate dream content categories. No real dream or future-event validation or runtime rule promotions. NEXT unnumbered tenth-house honours introduction on PDF649, followed by numbered CXLIIII on same page. Chinese 46 BaZi/26 Zi Wei source notes remain separate; complete chart engines and blind humans still open.
+
+---
+
 # Lilly original historical source through religion — 2026-10-18
 
 After remote verification 10,105 historical documentary source notes (9,039 Lilly + 1,066 Ptolemy). Original first-edition physical scan PDF647/894 (72.4% page position, NOT scientific completion). B06v adds 104 source notes across seven passage groups and a separate author causal-scope guard. Lilly says stars cannot force or cause religion, while proposing natural inclination/persistence as a symbolic historical judgment. No individual beliefs or behaviors validated. Next printed CXLIII Dreams from PDF647. Chinese BaZi 46 and Zi Wei 26 source-only notes kept separately indexed, full computational and blind human validations OPEN.
