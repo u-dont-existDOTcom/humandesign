@@ -15,7 +15,9 @@ class OriginalMidheavenSourceWindow(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.window = json.loads((B / "ORIGINAL_SOURCE_WINDOW_V1.json").read_text())
-        cls.index = json.loads(IDX.read_text())
+        pre_index = B / "recovery" / "INDEX_BEFORE_B07q.json"
+        cls.index_source = pre_index if pre_index.exists() else IDX
+        cls.index = json.loads(cls.index_source.read_text())
         cls.chinese = json.loads(CHINA.read_text())
 
     def test_01_original_photographs_sha_bytes_folios(self):
@@ -31,7 +33,7 @@ class OriginalMidheavenSourceWindow(unittest.TestCase):
         self.assertEqual(self.index["batches"][-1]["id"], "B07p")
         self.assertEqual(
             self.window["accepted_index_sha256"],
-            hashlib.sha256(IDX.read_bytes()).hexdigest(),
+            hashlib.sha256(self.index_source.read_bytes()).hexdigest(),
         )
         self.assertEqual(self.window["historical_records_added"], 0)
         self.assertEqual(self.window["numbered_chapters_added"], 0)

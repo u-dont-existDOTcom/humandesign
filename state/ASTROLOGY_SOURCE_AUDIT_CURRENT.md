@@ -1,3 +1,9 @@
+# Latest original Lilly 1647 source acceptance: printed CLX Midheaven
+
+Original first-edition photographic clauses from printed PDF702/folio668 through upper PDF711/folio677 accepted as **258 historical documentary annotations R11068–R11325** (256 substantive +2 CLXI navigation), **27 reversible groups**; no empirical human prediction or runtime promotion. **11,325 Lilly +1,066 retained Ptolemy=12,391 Western source records**; separate **72 Chinese source annotations**. Next printed CLXI fixed stars begins mid PDF711; next R11326. Archive 71 independent extracted tests. No independently validated predictive forecasting; direction arc-to-date engine and historical epoch parity unverified.
+
+## Earlier retained research state
+
 # Lilly CLIX original Ascendant directions documented, CLX next
 
 2026-10-18 Africa/Dakar UTC+0. Original B07p historical source R10733–R11067 accepted locally; after GitHub remote readback 11,067 Lilly +1,066 Ptolemy =12,133 documentary records. Original PDF702/894 78.5% physical source frontier, 38 original-source plus extracted ZIP tests pass. No actual people or real-world danger/health/career outcomes validated and zero model promotions. Next separately printed CLX Mid-heaven directions at PDF702; Chinese BaZi46 + ZiWei26 remain independent.

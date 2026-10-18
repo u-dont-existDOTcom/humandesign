@@ -1,3 +1,9 @@
+# Latest original Lilly 1647 source acceptance: printed CLX Midheaven
+
+Original first-edition photographic clauses from printed PDF702/folio668 through upper PDF711/folio677 accepted as **258 historical documentary annotations R11068–R11325** (256 substantive +2 CLXI navigation), **27 reversible groups**; no empirical human prediction or runtime promotion. **11,325 Lilly +1,066 retained Ptolemy=12,391 Western source records**; separate **72 Chinese source annotations**. Next printed CLXI fixed stars begins mid PDF711; next R11326. Archive 71 independent extracted tests. No independently validated predictive forecasting; direction arc-to-date engine and historical epoch parity unverified.
+
+## Earlier retained research state
+
 # Lilly original first edition through CLIX Ascendant directions — 2026-10-18
 
 After GitHub remote publication **12,133 original source annotations** (11,067 Lilly +1,066 Ptolemy). Source frontier original PDF702/894 (**78.5% scanned physical page position ONLY**, not predictive or mathematical research completion). B07p 335 period-source clauses of separate Ascendant directions to 6 planets, nodes, Part Fortune, house cusps and 16 fixed stars; requires original radix and age/time calculations not done. No independent human life outcomes, disease/mortality or personal safety accuracy and no executable natal scoring. NEXT printed CLX directions of Midheaven starts same original PDF702 after divider. Chinese BaZi46+ZiWei26 source-only separate.
