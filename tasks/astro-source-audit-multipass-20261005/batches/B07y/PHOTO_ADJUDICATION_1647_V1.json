@@ -1,0 +1,523 @@
+{
+  "schema": "LILLY_1647_B07y_PHOTO_DERIVATIVE_CONFLICT_ADJUDICATION_V1",
+  "status": "PHOTO_CHECK_BY_ONE_REVIEWER_NOT_FULL_TABLE_COLLATION",
+  "original_source": {
+    "title": "William Lilly Christian Astrology original 1647",
+    "wellcome_id": "b30338724",
+    "original_894_frame_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+    "frame": 745,
+    "printed_page": 711,
+    "archived_3500_image": "evidence/original_1647_annual_measure_pdf745_3500.jpg",
+    "source_3500_sha256": "fb75055af87141aba6acda0beaa697af48767217b8f03079453fee0c0ade4feb"
+  },
+  "comparator_source": {
+    "title": "William Lilly Christian Astrology second edition 1659 Wikimedia Commons djvu",
+    "page_number_in_djvu": 740,
+    "photo_file": "evidence/1659_annual_measure_table_page740.jpg",
+    "photo_sha256": "4e7d5c7601f64109e134f77b47dce237d9832370afbadaccda9691740f4f39ac",
+    "comparison_status": "SECOND_EDITION_AUXILIARY_REFERENCE_NOT_FULLY_GLYPH_COLLATED"
+  },
+  "inherited_reference": "../B07x/ANNUAL_DIRECTION_MEASURE_372_CANDIDATES_V1.json",
+  "evidence_nature": "Manually read from original first edition scan by one research reader; high-confidence glyphs not independently blind re-read. Original photo full frame committed; derived text candidates never silently replaced.",
+  "photo_readings": [
+    {
+      "sign": "Leo",
+      "degree": 0,
+      "inherited_derivative_pair": [
+        59,
+        24
+      ],
+      "original_1647_photo_pair": [
+        59,
+        34
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "DIFFERS_FROM_DERIVATIVE",
+      "note": "First-edition PDF745 prints 59′34″; derivative has 59′24″.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Libra",
+      "degree": 7,
+      "inherited_derivative_pair": [
+        54,
+        25
+      ],
+      "original_1647_photo_pair": [
+        54,
+        25
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE_AND_PRINTED_WORKED_EXAMPLE",
+      "note": "Historical worked example and both editions give Libra 7° =54′25″.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Libra",
+      "degree": 21,
+      "inherited_derivative_pair": [
+        55,
+        55
+      ],
+      "original_1647_photo_pair": [
+        55,
+        55
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "Reference row before the source's discontinuity.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Libra",
+      "degree": 22,
+      "inherited_derivative_pair": [
+        56,
+        32
+      ],
+      "original_1647_photo_pair": [
+        56,
+        32
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "SUSPECT_PRINTED_DISCONTINUITY",
+      "note": "First-edition appears 56′32″; previous row 55′55″ and next 56′11″; source value not silently fixed.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Libra",
+      "degree": 23,
+      "inherited_derivative_pair": [
+        56,
+        11
+      ],
+      "original_1647_photo_pair": [
+        56,
+        11
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "Reference row immediately after anomalous Libra 22°.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Capricorn",
+      "degree": 12,
+      "inherited_derivative_pair": [
+        66,
+        16
+      ],
+      "original_1647_photo_pair": [
+        66,
+        16
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "Preceding row used to anchor original Capricorn 13°.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Capricorn",
+      "degree": 13,
+      "inherited_derivative_pair": [
+        60,
+        10
+      ],
+      "original_1647_photo_pair": [
+        66,
+        10
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "DIFFERS_FROM_DERIVATIVE",
+      "note": "First-edition prints 66′10″, not derivative's 60′10″.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Capricorn",
+      "degree": 14,
+      "inherited_derivative_pair": [
+        66,
+        4
+      ],
+      "original_1647_photo_pair": [
+        66,
+        4
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "Following rate agrees with source and reveals derivative 13° error.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Capricorn",
+      "degree": 15,
+      "inherited_derivative_pair": [
+        66,
+        2
+      ],
+      "original_1647_photo_pair": null,
+      "original_1647_glyph_alternatives": [
+        [
+          65,
+          57
+        ],
+        [
+          66,
+          2
+        ]
+      ],
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "GLYPH_UNRESOLVED_WITH_DERIVATIVE_CONFLICT",
+      "note": "The first-edition minute glyph is uncertain; do not repair from the neighboring rates.",
+      "visual_read_confidence": "low",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Aquarius",
+      "degree": 0,
+      "inherited_derivative_pair": [
+        66,
+        33
+      ],
+      "original_1647_photo_pair": [
+        63,
+        33
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "DIFFERS_FROM_PRIOR_PHOTO_ATTESTATION",
+      "note": "First edition prints 63′33″. B07x wrongly marked derivative 66′33″ as verified photo reading.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Aquarius",
+      "degree": 1,
+      "inherited_derivative_pair": [
+        63,
+        21
+      ],
+      "original_1647_photo_pair": [
+        63,
+        21
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "First-edition printed next degree at 63′21″.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Aquarius",
+      "degree": 2,
+      "inherited_derivative_pair": [
+        63,
+        9
+      ],
+      "original_1647_photo_pair": [
+        63,
+        9
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "First-edition printed 63′09″.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Aquarius",
+      "degree": 3,
+      "inherited_derivative_pair": [
+        63,
+        57
+      ],
+      "original_1647_photo_pair": [
+        62,
+        57
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "DIFFERS_FROM_DERIVATIVE",
+      "note": "First-edition prints 62′57″, derivative transcribed 63′57″.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Aquarius",
+      "degree": 4,
+      "inherited_derivative_pair": [
+        62,
+        45
+      ],
+      "original_1647_photo_pair": [
+        62,
+        45
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "Following 62′45″ supports 62′57″ at 3°.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Pisces",
+      "degree": 0,
+      "inherited_derivative_pair": [
+        57,
+        35
+      ],
+      "original_1647_photo_pair": [
+        57,
+        35
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "Original first edition Pisces first row.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Pisces",
+      "degree": 4,
+      "inherited_derivative_pair": [
+        56,
+        55
+      ],
+      "original_1647_photo_pair": [
+        56,
+        55
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "Row before the printed irregularity.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Pisces",
+      "degree": 5,
+      "inherited_derivative_pair": [
+        56,
+        6
+      ],
+      "original_1647_photo_pair": [
+        56,
+        6
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "PERSISTENT_PRINTED_ANOMALY",
+      "note": "1647 text visibly reads 56′06″ amid roughly ten-second decrements; preserve print.",
+      "visual_read_confidence": "medium",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Pisces",
+      "degree": 6,
+      "inherited_derivative_pair": [
+        56,
+        17
+      ],
+      "original_1647_photo_pair": [
+        56,
+        37
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "DIFFERS_FROM_DERIVATIVE",
+      "note": "Original scan reads 56′37″, derivative text lists 56′17″.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Pisces",
+      "degree": 7,
+      "inherited_derivative_pair": [
+        56,
+        29
+      ],
+      "original_1647_photo_pair": [
+        56,
+        29
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "Next original row reads 56′29″.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Pisces",
+      "degree": 21,
+      "inherited_derivative_pair": [
+        54,
+        54
+      ],
+      "original_1647_photo_pair": [
+        54,
+        54
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "Reference before printed late-Pisces inconsistencies.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Pisces",
+      "degree": 22,
+      "inherited_derivative_pair": [
+        54,
+        0
+      ],
+      "original_1647_photo_pair": [
+        54,
+        0
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "PERSISTENT_PRINTED_ANOMALY",
+      "note": "First-edition row prints 54′00″ in a series near 54′50″; do not infer 54′49″ as source.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Pisces",
+      "degree": 23,
+      "inherited_derivative_pair": [
+        53,
+        36
+      ],
+      "original_1647_photo_pair": [
+        53,
+        36
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_BUT_SUSPECT_SOURCE",
+      "note": "1647 appears 53′36″; historical decrease in adjacent rows is irregular.",
+      "visual_read_confidence": "medium",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Pisces",
+      "degree": 25,
+      "inherited_derivative_pair": [
+        54,
+        40
+      ],
+      "original_1647_photo_pair": [
+        54,
+        40
+      ],
+      "original_1647_glyph_alternatives": null,
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "MATCHES_SOURCE",
+      "note": "Source row after uncertain 24° is 54′40″.",
+      "visual_read_confidence": "high",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    },
+    {
+      "sign": "Pisces",
+      "degree": 24,
+      "inherited_derivative_pair": [
+        45,
+        43
+      ],
+      "original_1647_photo_pair": null,
+      "original_1647_glyph_alternatives": [
+        [
+          53,
+          43
+        ],
+        [
+          54,
+          43
+        ]
+      ],
+      "source_page": "PDF745/printed711",
+      "comparison_to_derivative": "GLYPH_UNRESOLVED_WITH_DERIVATIVE_CONFLICT",
+      "note": "The 1647 minute glyph appears 53 or 54, not clearly 45. Do not assign corrected source value.",
+      "visual_read_confidence": "low",
+      "source_edit_applied_to_earlier_batch": false,
+      "historical_performance_prediction_validated": false,
+      "runtime_rule_promoted": false
+    }
+  ],
+  "total_manual_review_positions": 24,
+  "unambiguous_original_photo_readings": 22,
+  "unresolved_original_photo_readings": 2,
+  "independent_second_reader_verified": false,
+  "full_1647_372_cells_verified": false,
+  "human_prediction_validations": 0,
+  "runtime_promotions": 0
+}
