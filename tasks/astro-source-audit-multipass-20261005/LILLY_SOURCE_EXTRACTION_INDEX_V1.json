@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXI_FIXED_STAR_MIDHEAVEN_NEXT_CLXII_SUN_DIRECTIONS",
-  "records_count": 11415,
+  "status": "BOOK_III_CLXII_SUN_PROMITTORS_NEXT_CLXIII_FIXED_STARS",
+  "records_count": 11721,
   "read_numbered_chapters": [
     1,
     2,
@@ -164,7 +164,8 @@
     157,
     158,
     159,
-    160
+    160,
+    161
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1189,26 +1190,33 @@
       "records_count": 90,
       "sha256": "03461f7c7b7c4dfccb065ff8fa5a81befc1c500b6450b0e338707ea0982c258e",
       "scope": "Original 1647 printed CHAP CLXI, The Mid-heaven Directed to FIXED STARRES, physically PDF711 lower/printed677 through PDF713 upper/printed679, then independent CLXII Sun-direction heading after divider SAME PDF713. 90 historical source notes R11326-R11415, 88 substantive +2 CLXII navigation, 12 original photo-anchored reversible source groups, 14 original period stellar designations/coordinates including right Orion shoulder ut supra with NO source coordinate here, and degrees-only MINUTES NULL. Original epoch, star identifications, directional time conversion and human claims unvalidated. Highly stigmatizing violence, imprisonment, mortality, religious/gender/class claims historical ONLY. 50 independent extracted ZIP replay tests; zero individual empirical validations and runtime promotions. Chinese V2 97 source records separately preserved."
+    },
+    {
+      "id": "B07s",
+      "path": "batches/B07s/RULES.json",
+      "records_count": 306,
+      "sha256": "b2c83494cd54300349ae0e707d1a145c6db2848ae9220622940b2fca335bda4e",
+      "scope": "Original 1647 Lilly Christian Astrology printed CHAP CLXII, Sunne directed to Promittors PDF713 lower/printed679 through PDF723 upper/printed689, distinct CHAP CLXIII Sun directed to Fixed Starres begins after divider SAME PDF723. 306 historical-only source annotations R11416–R11721, 304 substantive and 2 CLXIII navigation; 40 reversible photo-anchored source groups, original PDF713-725 SHA/bytes and PDF restoration from exact original immutable full scan. Sun to Saturn Jupiter Mars Venus Mercury Moon body and aspects and period terms, lunar North/South Nodes, Part Fortune, all 12 house cusps. Lilly's original objection to feasible Sun-Venus and Sun-Mercury opposition preserved without date engine, along with radix, hyleg, anareta, profection, revolution, age, rank, office and planetary mitigating conditions. Medical, mortality, violence, criminality, religion, class and relationship stereotyping source ONLY. 105 source/window focused tests independently extracted ZIP replayed with CRC+SHA/member byte equality. ZERO human validation, ZERO runtime promotions; Chinese V2 97 source notes untouched."
     }
   ],
   "next": {
-    "pdf_page": 713,
-    "printed_page": 679,
-    "chapter": "CLXII",
-    "printed_chapter_numeral": "CLXII",
-    "heading": "The Sunne directed to PROMITTORS",
+    "pdf_page": 723,
+    "printed_page": 689,
+    "chapter": "CLXIII",
+    "printed_chapter_numeral": "CLXIII",
+    "heading": "The Sunne Directed to Fixed Starres",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Distinct original first-edition printed CHAP CLXII begins lower original PDF713/printed679 below rule after Algol paragraph ending printed CLXI. Original PDF714-720 contextual photos already in B07q but CLXII TRUE following numbered chapter seam NOT yet located; extend original photo window before acceptance.",
-    "research_scope": "Sun body/sextile/trine/square/opposition/terms and following source cases as printed; source-only until complete original seam verified."
+    "position": "Original first-edition CHAP CLXIII starts after divider mid PDF723/printed689; source includes original PDF724 and ends above next divider PDF725/printed691, where printed CHAP CLXIIII Directions of the Moon to Promittors begins. Original source photos PDF723–725 are preserved in B07s. Next historic source annotation R11722.",
+    "research_scope": "Source collation Sun directions to fixed stars, original first-edition star coordinates and conditional cases. Modern ephemeris and human predictive parity unverified."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B07r_MIDHEAVEN_FIXED_STARS.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B07s_SUN_DIRECTIONS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1347,5 +1355,6 @@
   "chapter_CLVIII_original_source_acceptance_note": "B07o original R10658–R10732, 75 historic source notes, six reversible original photo groups PDF690–692 SHA/bytes and 25 portable ZIP test replays. CLVIII is a SHORT Saturn-specific chapter despite five-place general heading. Ancient diseases/moralities not real clinical predictions; source mortality claims additionally require adverse Promittor agreement or Saturn Anareta. No real people or runtime models; Chinese 72 source notes independent.",
   "chapter_CLIX_directions_source_acceptance_note": "B07p 335 original historic annotations R10733–R11067, 17 reversible source groups, first-edition PDF691–703 SHA/byte photos and 38 independent archive replay tests. Separate planet/aspect/terms/cusps and 16 period stellar longitudes preserved, epoch and actual primary-direction date engines unverified, medical/harm/morality labels not real forecasts. Chinese BaZi46/ Zi Wei26 source notes separately indexed.",
   "chapter_CLX_source_acceptance_note": "B07q 258 original first-edition historical source notes R11068-R11325; 27 reversible groups PDF702-711 and context to PDF720, 71 portable archive replay checks. False human forecast, medical/danger validity and runtime promotion claims prohibited. CLXI starts PDF711. Chinese 72 separately indexed source notes not changed.",
-  "chapter_CLXI_original_fixed_star_source_acceptance_note": "B07r original source-only R11326-R11415, 90 historic notes in 12 groups, 14 period stellar entries, original PDF711-714 SHA/bytes, 50 independent archive tests. No high-stakes forecast, source epoch/modern stars and angle-date engines unverified. Separate Chinese V2 97 retained."
+  "chapter_CLXI_original_fixed_star_source_acceptance_note": "B07r original source-only R11326-R11415, 90 historic notes in 12 groups, 14 period stellar entries, original PDF711-714 SHA/bytes, 50 independent archive tests. No high-stakes forecast, source epoch/modern stars and angle-date engines unverified. Separate Chinese V2 97 retained.",
+  "chapter_CLXII_original_sun_directions_source_acceptance_note": "B07s original first-edition source-only 306 clauses R11416-R11721, 40 reversible groups with PDF713-723, 13 original/correctly sourced photographic images 713-725; 105 archive replay tests. Sun-Venus and Sun-Mercury opposition feasibility caveats recorded. Solar direction time engine, human clinical/danger/financial or personality validity unverified. 97 Chinese historical notes separate."
 }

@@ -1,0 +1,95 @@
+{
+  "batch": "B07s",
+  "reason": "Preserve identical outcome constructs under distinct planet/aspect/term passage IDs",
+  "source_roles_before_unique": false,
+  "after_unique": true,
+  "repaired_roles": 17,
+  "items": [
+    {
+      "source_group_index_zero_based": 1,
+      "old_role": "saturn_eye",
+      "new_role": "saturn_eye_body"
+    },
+    {
+      "source_group_index_zero_based": 3,
+      "old_role": "saturn_eye",
+      "new_role": "saturn_eye_adverse"
+    },
+    {
+      "source_group_index_zero_based": 1,
+      "old_role": "saturn_fall",
+      "new_role": "saturn_fall_body"
+    },
+    {
+      "source_group_index_zero_based": 3,
+      "old_role": "saturn_fall",
+      "new_role": "saturn_fall_adverse"
+    },
+    {
+      "source_group_index_zero_based": 5,
+      "old_role": "jupiter_wealth",
+      "new_role": "jupiter_wealth_body"
+    },
+    {
+      "source_group_index_zero_based": 8,
+      "old_role": "jupiter_wealth",
+      "new_role": "jupiter_wealth_terms"
+    },
+    {
+      "source_group_index_zero_based": 5,
+      "old_role": "jupiter_king",
+      "new_role": "jupiter_king_body"
+    },
+    {
+      "source_group_index_zero_based": 7,
+      "old_role": "jupiter_king",
+      "new_role": "jupiter_king_adverse"
+    },
+    {
+      "source_group_index_zero_based": 9,
+      "old_role": "mars_fever",
+      "new_role": "mars_fever_body"
+    },
+    {
+      "source_group_index_zero_based": 11,
+      "old_role": "mars_fever",
+      "new_role": "mars_fever_adverse"
+    },
+    {
+      "source_group_index_zero_based": 12,
+      "old_role": "mars_fever",
+      "new_role": "mars_fever_terms"
+    },
+    {
+      "source_group_index_zero_based": 14,
+      "old_role": "venus_women",
+      "new_role": "venus_women_benefic"
+    },
+    {
+      "source_group_index_zero_based": 16,
+      "old_role": "venus_women",
+      "new_role": "venus_women_terms"
+    },
+    {
+      "source_group_index_zero_based": 21,
+      "old_role": "moon_eye",
+      "new_role": "moon_eye_body"
+    },
+    {
+      "source_group_index_zero_based": 23,
+      "old_role": "moon_eye",
+      "new_role": "moon_eye_adverse"
+    },
+    {
+      "source_group_index_zero_based": 21,
+      "old_role": "moon_journey",
+      "new_role": "moon_journey_body"
+    },
+    {
+      "source_group_index_zero_based": 22,
+      "old_role": "moon_journey",
+      "new_role": "moon_journey_benefic"
+    }
+  ],
+  "canonical_records_changed": 0
+}

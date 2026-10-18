@@ -1,0 +1,9 @@
+# B07s provisional: Sun directed to Promittors original first-edition source
+
+2026-10-18 UTC, historic source only; **NOT accepted yet**. Parent B07r printed CLXI accepted source checkpoint last R11415, Lilly 11415 + Ptolemy 1066, separate Chinese 97.
+
+Original 1647 first edition Wellcome b30338724 *Christian Astrology*: printed CHAP CLXII begins lower original PDF713/printed679, ends ABOVE a divider halfway original PDF723/printed689. Printed CLXIII Sun to FIXED STARRES begins BELOW that same divider PDF723, continues through upper PDF725, followed by CHAP CLXIIII Moon to Promittors BELOW divider PDF725. All boundaries visually checked from exact-source images. Evidence PDF713–725 with SHA/bytes and differences between source-origin photographs and original-PDF Poppler renders in `ORIGINAL_SOURCE_WINDOW_V1.json`.
+
+Five source-first draft parts propose **306 unique historical annotations R11416–R11721** in 40 reversible source groups: Sun directed to Saturn, Jupiter, Mars, Venus, Mercury, Moon, North/South lunar nodes and Part of Fortune, then each of twelve house cusps. Two final records navigate separate CLXIII. All old medical, death, criminal, gender, occupation and class labels remain quarantined to historic source; natal and annual chart conditions kept distinct. Rare Sun-Venus and Sun-Mercury supposed opposition geometry objections retained without inventing an executable directions engine.
+
+Prior photographic source-window 24 tests pass; new 81 focused source tests pass locally; need independent owner ZIP full manifest+CRC/member SHA+bytes and replay both suites, guarded canonical append only after all pass, exact remote SHA. Expected if accepted: **Lilly 11721 + Ptolemy 1066 = 12787 Western historical records**, independent China 97 unchanged, next **R11722** printed **CLXIII** from PDF723. No real human predictive validation or model promotion. Continue until accepted; this preliminary handoff is not acceptance.

@@ -1,3 +1,9 @@
+# Latest original 1647 Lilly source checkpoint: printed CLXII Sun directions
+
+**306 historical-only source annotations R11416–R11721** across 40 reversible photo-anchored first-edition passage groups; 11-body-frame printed 679–689 Sun-to-Promittors source and 2 overlapping next-chapter photograph frames. **11,721 Lilly +1,066 Ptolemy=12,787 Western historical source records**, independent **46 BaZi+51 Zi Wei=97 Chinese source notes**. Next distinct printed **CHAP CLXIII Sunne to FIXED STARRES** starts lower **PDF723/printed689, R11722**; its following CHAP CLXIIII Moon Promittors starts lower PDF725/printed691. **105 verified independently ZIP-extracted documentary/photo tests**, zero empirical real-human prediction validations and zero executable runtime promotions. Historical mortality, medical, crime, sexual/moral, legal and economic assertions are NOT valid real-person forecasts.
+
+## Earlier retained research state
+
 # Latest original Lilly 1647 source acceptance: printed CLXI fixed stars
 
 **90 historical documentary annotations R11326–R11415** (88 substantive +2 following CLXII navigation), 14 period fixed-star entries across 12 photo-anchored groups PDF711–713, 50 focused independently replayed source tests. **11,415 Lilly +1,066 Ptolemy=12,481 Western documentary source annotations** and separate **97 Chinese historic annotations**. Next original printed CHAP CLXII Sun directions starts lower PDF713/printed679, **next R11416**. This source count does NOT validate astrology; directions arc/date/old stellar epoch and individual human medical, mortality, class, crime, economic or relationship predictions remain unverified.

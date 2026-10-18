@@ -3,14 +3,15 @@
 
 import hashlib
 import json
+import os
 import shutil
 from pathlib import Path
 
 B = Path(__file__).resolve().parent
 ROOT = B.parents[3]
 PRIOR = B.parent / "B07q"
-SOURCE_PDF = Path("/mnt/hdd/home/joel/ai-research-source-cache/lilly-1647-b30338724-original.pdf")
-NEW = Path("/mnt/hdd/var/tmp/b07s_photo_probe")
+SOURCE_PDF = Path(os.environ["LILLY_1647_SOURCE_PDF"])
+NEW = Path(os.environ["LILLY_1647_RENDER_DIR"])
 INDEX = ROOT / "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json"
 CHINA = ROOT / "tasks/astro-chinese-primary-sources-20261017/CHINESE_SOURCE_AUDIT_INDEX_V2.json"
 
@@ -42,9 +43,7 @@ for page in range(713, 726):
         method = "ORIGINAL_WELLCOME_FIRST_EDITION_JPEG_PREVIOUS_B07q"
     else:
         original = NEW / f"page-{page}.jpg"
-        method = "SOURCE_PDF_POPPLER_PD fTOPPM_F_721_L_729_SCALE_TO_1600_JPEG_Q93".replace(
-            "PD fTOPPM", "PDFTOPPM"
-        )
+        method = "SOURCE_PDF_POPPLER_PDFTOPPM_F_721_L_729_SCALE_TO_1600_JPEG_Q93"
     target = B / "evidence" / f"pdf_1647-{page}.jpg"
     if not target.exists():
         shutil.copyfile(original, target)
@@ -75,7 +74,7 @@ window = {
     "original_pdf_sha256": sha(SOURCE_PDF),
     "original_pdf_bytes": SOURCE_PDF.stat().st_size,
     "source_pdf_frame_count": 894,
-    "original_pdf_local_private_cache_path": str(SOURCE_PDF),
+    "original_pdf_public_source_url": "https://archive.org/download/b30338724/b30338724.pdf",
     "local_rasterization_note": (
         "PDF pages 721-725 are faithful Poppler renders from the SHA-locked "
         "primary original PDF. Earlier JPEGs 713-720 are retained photo "
