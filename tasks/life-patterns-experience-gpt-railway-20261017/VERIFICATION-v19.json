@@ -1,0 +1,62 @@
+{
+  "schema": "life-patterns-experience-v19-source-verification",
+  "date": "2026-10-18",
+  "owner_outcome": "Keep original eight answers and provide separately consented post-review experience module in existing GPT and Railway finish",
+  "baseline_branch": "research/life-patterns-guided-eight-assessment-20261015",
+  "baseline_commit": "6e2a491bc6519609bac8726fecdfae5a109c1185",
+  "release_state": "SOURCE_VERIFIED_PRE_MERGE_PRE_DEPLOYMENT",
+  "gpt_bundle": {
+    "version": "2026-10-17.2-experience-and-railway",
+    "sha256": "bc16e98b7dc08a4bbfe1059dac40aca1762e04ea08a6f558e570cee84b952c8b",
+    "strict_instructions_chars": 7964,
+    "knowledge_files": 10,
+    "action_version": "1.9.0",
+    "old_schema_preserved": true,
+    "editor_applied": false
+  },
+  "test_receipts": {
+    "full_unit_and_participant": {
+      "passed": 1308,
+      "skipped": 6,
+      "reason": "Uninstalled unrelated Swiss Ephemeris fixtures"
+    },
+    "focused": {
+      "passed": 20
+    },
+    "closed_network_browser": {
+      "baseline_no_optin": true,
+      "optional_optin": true,
+      "note_loss_guard": true,
+      "mobile_viewport_px": 375,
+      "mobile_scroll_width_px": 375,
+      "network_requests_outside_mock": 0,
+      "javascript_errors": 0
+    },
+    "docker": {
+      "result": "PASS",
+      "path": "apps/life-patterns-participant/Dockerfile"
+    },
+    "ruff": "PASS with existing unrelated E501 excluded",
+    "node_syntax": "PASS",
+    "git_diff": "PASS"
+  },
+  "privacy": {
+    "prior_primary_immutable": true,
+    "cf003_immutable": true,
+    "addendum_not_astro_scored": true,
+    "fully_separate_consent": true,
+    "original_private_user_responses_not_committed": true
+  },
+  "railway": {
+    "existing_service_only": true,
+    "production_deployed": false,
+    "original_encrypted_volume_preserve": true,
+    "unrelated_staged_changes": 4
+  },
+  "open": [
+    "protected merge and CI",
+    "single existing-service deployment with isolated Dockerfile config and no staged-change promotion",
+    "exact live health, Action version and unauthorized API probes",
+    "private GPT package handoff and existing GPT owner-editor change"
+  ]
+}

@@ -6,6 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Continue your Life Patterns review</title>
 <link rel="stylesheet" href="/assets/finish.css">
+<script src="/assets/experience.js" defer></script>
 <script src="/assets/finish.js" defer></script>
 </head>
 <body>
@@ -80,9 +81,27 @@
         <select name="target_information_exposure" required></select>
       </label>
     </fieldset>
+    <fieldset id="experience-optional" hidden>
+      <legend>Optional: experience and meaning</legend>
+      <p>Separate, exploratory self-report questions about awe, surprises, insights and meaning. They do not change your original answers, independent review, or astrology score. You can skip individual topics or decline this entire section.</p>
+      <label class="checkline">
+        <input type="checkbox" id="experience-opt-in">
+        <span>I separately agree to include optional experience-and-meaning answers in this study.</span>
+      </label>
+      <div id="experience-questions" hidden>
+        <p id="experience-context" class="subtle"></p>
+        <div id="experience-core-items"></div>
+        <fieldset>
+          <legend>More optional experience topics</legend>
+          <p>Choose only what interests you. Unselected topics remain unanswered, not “never”.</p>
+          <div id="experience-additional-options"></div>
+        </fieldset>
+        <div id="experience-additional-items"></div>
+      </div>
+    </fieldset>
     <label class="checkline">
       <input type="checkbox" id="final-consent" required>
-      <span>I want to submit my confirmed original record and these three final answers to the study's encrypted storage.</span>
+      <span>I want to submit my confirmed original record, three final answers, and any separately opted-in experience answers to the study's encrypted storage.</span>
     </label>
     <div class="actions">
       <button type="button" id="back-button" class="secondary">Back to review</button>

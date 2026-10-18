@@ -1,0 +1,216 @@
+{
+  "schema": "life-patterns-experience-collection-instrument-v2",
+  "version": "experience-meaning-v2-20261017",
+  "status": "OPTIONAL_SEPARATE_UNSCORED_POST_REVIEW",
+  "consent_text": "Would you also like to answer a few optional questions about your lived experience? These are separate from the original interview, not astrology predictions, and can be skipped individually.",
+  "core_ids": [
+    "EM01",
+    "EM03",
+    "EM04",
+    "EM08"
+  ],
+  "optional_ids": [
+    "EM02",
+    "EM05",
+    "EM06",
+    "EM07"
+  ],
+  "items": [
+    {
+      "id": "EM01",
+      "label": "Surprise about yourself",
+      "question": "Over the past year, how often have your own thoughts, feelings, or actions genuinely surprised you?",
+      "mode": "frequency",
+      "default": true
+    },
+    {
+      "id": "EM02",
+      "label": "Surprise about people and the world",
+      "question": "Over the past year, how often have other people or events in the world genuinely surprised or shocked you?",
+      "mode": "frequency",
+      "default": false
+    },
+    {
+      "id": "EM03",
+      "label": "Awe and wonder",
+      "question": "Over the past year, how often have you felt awe or wonder?",
+      "mode": "frequency",
+      "default": true
+    },
+    {
+      "id": "EM04",
+      "label": "Sudden realizations",
+      "question": "Over the past year, how often have you suddenly understood something important in a way that changed your perspective?",
+      "mode": "frequency",
+      "default": true
+    },
+    {
+      "id": "EM05",
+      "label": "Felt predictability",
+      "question": "Over the past year, how predictable or unpredictable has your day-to-day life felt?",
+      "mode": "predictability",
+      "default": false
+    },
+    {
+      "id": "EM06",
+      "label": "Sensed guidance",
+      "question": "Over the past year, how often, if ever, have events felt guided by something beyond your own plans? The feeling does not require belief in an external cause.",
+      "mode": "frequency",
+      "default": false
+    },
+    {
+      "id": "EM07",
+      "label": "Meaningful coincidences",
+      "question": "Over the past year, how often have coincidences felt unusually meaningful? This asks about your experience, not a proven cause.",
+      "mode": "frequency",
+      "default": false
+    },
+    {
+      "id": "EM08",
+      "label": "Personal meaning and contribution",
+      "question": "Right now, how meaningful does life feel to you personally? Separately, how much difference do you feel you make to others or the world?",
+      "mode": "dual_meaning",
+      "default": true
+    }
+  ],
+  "frequency_options": [
+    [
+      "never",
+      "Never"
+    ],
+    [
+      "once_twice",
+      "Once or twice"
+    ],
+    [
+      "few_months",
+      "Every few months"
+    ],
+    [
+      "monthly",
+      "Roughly monthly"
+    ],
+    [
+      "weekly",
+      "Roughly weekly"
+    ],
+    [
+      "most_days",
+      "Most days"
+    ],
+    [
+      "varies",
+      "Varies by period"
+    ],
+    [
+      "unknown",
+      "Not sure"
+    ],
+    [
+      "skip",
+      "Prefer not to answer"
+    ]
+  ],
+  "intensity_options": [
+    [
+      "none",
+      "None"
+    ],
+    [
+      "faint",
+      "Faint"
+    ],
+    [
+      "noticeable",
+      "Noticeable"
+    ],
+    [
+      "strong",
+      "Strong"
+    ],
+    [
+      "overwhelming",
+      "Overwhelming"
+    ],
+    [
+      "varies",
+      "Varies"
+    ],
+    [
+      "unknown",
+      "Not sure"
+    ]
+  ],
+  "predictability_options": [
+    [
+      "very_low",
+      "Very unpredictable"
+    ],
+    [
+      "low",
+      "Somewhat unpredictable"
+    ],
+    [
+      "mixed",
+      "Mixed"
+    ],
+    [
+      "high",
+      "Somewhat predictable"
+    ],
+    [
+      "very_high",
+      "Very predictable"
+    ],
+    [
+      "varies",
+      "Varies greatly"
+    ],
+    [
+      "unknown",
+      "Not sure"
+    ],
+    [
+      "skip",
+      "Prefer not to answer"
+    ]
+  ],
+  "meaning_options": [
+    [
+      "none",
+      "Not meaningful / no perceived contribution"
+    ],
+    [
+      "slight",
+      "A little"
+    ],
+    [
+      "moderate",
+      "Moderately"
+    ],
+    [
+      "strong",
+      "Very"
+    ],
+    [
+      "very_strong",
+      "Extremely"
+    ],
+    [
+      "varies",
+      "Varies"
+    ],
+    [
+      "unknown",
+      "Not sure"
+    ],
+    [
+      "not_answered",
+      "Prefer not to answer this part"
+    ]
+  ],
+  "context_note": "Frequency reflects occurrence in the last year. If an event occurs, usual intensity and maximum intensity are separate optional fields. Do not convert maximum intensity into typical intensity. An example or interpretation is optional.",
+  "scoring": "excluded_from_primary_and_cf003",
+  "validation": "Separate research-use opt-in required. Historical scores remain frozen.",
+  "source": "Questionnaire development version following v1 peak-versus-typical-intensity feedback, no new astrology predictions."
+}

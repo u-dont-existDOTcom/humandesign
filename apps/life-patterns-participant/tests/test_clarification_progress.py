@@ -8,7 +8,7 @@ from pathlib import Path
 from participant.review_timing import clarification_progress, review_guidance
 
 ROOT = Path(__file__).resolve().parents[3]
-ACTION = ROOT / "apps/life-patterns-participant/participant/static/action-openapi.yaml"
+ACTION = ROOT / "apps/life-patterns-participant/participant/static/action-openapi-v1.9.yaml"
 
 
 def case(status: str, *, pending: int = 0, answered: int = 0) -> dict:
@@ -80,7 +80,7 @@ def test_legacy_single_question_shape_is_handled_without_fictitious_total():
 
 def test_current_action_schema_declares_readonly_progress():
     contract = json.loads(ACTION.read_text())
-    assert contract["info"]["version"] == "1.8.0"
+    assert contract["info"]["version"] == "1.9.0"
     status = contract["components"]["schemas"]["ReviewStatus"]
     entry = status["properties"]["clarification_progress"]
     assert "clarification_progress" not in status["required"]
