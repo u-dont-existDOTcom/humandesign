@@ -1,0 +1,608 @@
+{
+  "schema": "life-patterns-cross-tradition-expanded-domain-audit-v2",
+  "status": "DOCUMENTARY_SOURCE_AUDIT_NOT_QUALITY_CERTIFICATION_OR_PREDICTIVE_TEST",
+  "as_of": "2026-10-18",
+  "baseline": {
+    "source_path": "tasks/life-patterns-source-first-audit-20261018",
+    "documented_historical_records": 92,
+    "normalized_domains": 46,
+    "unactivated_optional_topic_candidates": 16,
+    "sha256": "8f1acb1b7307e33313fb69d11d52195de8d70aa637e661b33e5ed82254335f28"
+  },
+  "added_witnesses": [
+    {
+      "id": "VALENS-I-STARS",
+      "url": "https://github.com/janegca/latex-valens/blob/main/book01/01-stars.tex",
+      "witness_class": "local_pinned_annotated_translation",
+      "translation_caution": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "content_sha256_on_observed_readback": "fbd9cdb44c4de1f63f718bc74f9a85be3643f125478b8d1ac7b31c16fbf59820",
+      "git_commit_if_applicable": "2d4a8b9890cd5cb7714abd52f6bd938272ba8237"
+    },
+    {
+      "id": "VALENS-II-XI",
+      "url": "https://github.com/janegca/latex-valens/blob/main/book02/06-11th.tex",
+      "witness_class": "local_pinned_annotated_translation",
+      "translation_caution": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "content_sha256_on_observed_readback": "24aef177b2e9425768d554e452d51acdf7462ba475d29be449ce999a0cdbd1d5",
+      "git_commit_if_applicable": "2d4a8b9890cd5cb7714abd52f6bd938272ba8237"
+    },
+    {
+      "id": "VALENS-II-IX",
+      "url": "https://github.com/janegca/latex-valens/blob/main/book02/07a-9th.tex",
+      "witness_class": "local_pinned_annotated_translation",
+      "translation_caution": "translator_notes_alternative_soothsaying_vs_finance",
+      "content_sha256_on_observed_readback": "e04a2b0fea8edd752a4314636ab4dfb6f57225aea55b5161aa6e023b0d2cbedc",
+      "git_commit_if_applicable": "2d4a8b9890cd5cb7714abd52f6bd938272ba8237"
+    },
+    {
+      "id": "DOR-I",
+      "url": "https://unifiedastrology.wordpress.com/sources/hellenistic-sources/carmen-astrologicum-of-dorotheus-book-one/",
+      "witness_class": "web_translation_reproduction",
+      "translation_caution": "book_I_direct_English_translation_of_late_Arabic_witness_not_original_Greek",
+      "content_sha256_on_observed_readback": "19f4d9dc646070a42b2eb2676f8e59de92f706d695c4d157c0453bbb2e4b2cf6",
+      "git_commit_if_applicable": null
+    },
+    {
+      "id": "DOR-II",
+      "url": "https://unifiedastrology.wordpress.com/sources/hellenistic-sources/carmen-astrologicum-book-2/",
+      "witness_class": "web_translation_reproduction",
+      "translation_caution": "book_II_direct_English_translation_of_late_Arabic_witness_not_original_Greek",
+      "content_sha256_on_observed_readback": "67cf1e262014f9edb9fc14539c999b71e89a7a15d3e9023cf6f7aa616b293545",
+      "git_commit_if_applicable": null
+    },
+    {
+      "id": "BJ-XVI",
+      "url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-16",
+      "witness_class": "secondary_English_with_Sanskrit",
+      "translation_caution": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "content_sha256_on_observed_readback": "9406386cca6029b6efeeb46fd9f84588334d541e1d25d7e263caf0c56e785aa3",
+      "git_commit_if_applicable": null
+    },
+    {
+      "id": "BJ-XVII",
+      "url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-17",
+      "witness_class": "secondary_English_with_Sanskrit",
+      "translation_caution": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "content_sha256_on_observed_readback": "0267cb1d3e250a530aa807337cb9d0119b201bcac16616a6f842315b861cc2ed",
+      "git_commit_if_applicable": null
+    },
+    {
+      "id": "BJ-XVIII",
+      "url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-18",
+      "witness_class": "secondary_English_with_Sanskrit",
+      "translation_caution": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "content_sha256_on_observed_readback": "5595290e492f0b60e1df8a78f4a5977ed78b20d095533e3373e5299f4ba66d0b",
+      "git_commit_if_applicable": null
+    },
+    {
+      "id": "BJ-XXI",
+      "url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-21",
+      "witness_class": "secondary_English_with_Sanskrit",
+      "translation_caution": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "content_sha256_on_observed_readback": "5957d6a1fdcd7e5f0dfac1a5016834ebe911501bd095963945f3d81bb5d25940",
+      "git_commit_if_applicable": null
+    }
+  ],
+  "counts": {
+    "baseline_source_rows": 92,
+    "new_translated_source_anchors": 28,
+    "cumulative_doc_entries": 120,
+    "baseline_human_domains": 46,
+    "distinct_new_human_domains": 7,
+    "cumulative_domains": 53,
+    "baseline_optional_candidate_topics": 16,
+    "new_optional_topic_candidates": 7,
+    "total_candidate_topics_not_active": 23,
+    "new_witnesses": 9,
+    "source_dispositions": {
+      "refines_existing_domain": 5,
+      "new_domain_candidate": 18,
+      "existing_domain_no_new_question": 3,
+      "source_meaning_ambiguous": 1,
+      "source_interpretation_disagreement": 1
+    },
+    "new_direct_validated_chart_rules": 0,
+    "new_scored_survey_questions": 0
+  },
+  "new_domains": [
+    {
+      "domain_id": "formative_caregiving_arrangements",
+      "human_outcome": "Early-life caregiving setting and household changes",
+      "measurement_kind": "actual_life_history_sensitive",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "em_v2": "absent",
+      "source_claim_ids": [
+        "D-I-UPBRINGING",
+        "D-I-PARENT-SEPARATION",
+        "BJ-XVII-EARLY-SEPARATION"
+      ],
+      "suggested_optional_new_topic_id": "UPBRINGING",
+      "existing_16_question_neighbor_ids": [
+        "HOME",
+        "KINSHIP",
+        "TIMELINE"
+      ],
+      "direct_source_strength": "historical_translated_topic_only_not_empirical_rule_validation",
+      "original_v1_normalized_domain": false
+    },
+    {
+      "domain_id": "education_learning_history",
+      "human_outcome": "Actual education, training, skills and enduring study subjects",
+      "measurement_kind": "real_activity_life_history",
+      "v7_status": "proxy_only",
+      "tf1_status": "proxy_only",
+      "em_v2": "absent",
+      "source_claim_ids": [
+        "V-I-MERCURY-EDUCATION",
+        "D-II-JUPITER-MERCURY-LAW",
+        "BJ-XVIII-LITERACY-MATH"
+      ],
+      "suggested_optional_new_topic_id": "LEARNING_HISTORY",
+      "existing_16_question_neighbor_ids": [
+        "MYSTERY",
+        "VOCATION"
+      ],
+      "direct_source_strength": "historical_translated_topic_only_not_empirical_rule_validation",
+      "original_v1_normalized_domain": false
+    },
+    {
+      "domain_id": "giving_receiving_help",
+      "human_outcome": "Giving and accepting practical/emotional support in real life",
+      "measurement_kind": "habitual_behavior",
+      "v7_status": "proxy_only",
+      "tf1_status": "proxy_only",
+      "em_v2": "absent",
+      "source_claim_ids": [
+        "V-I-JUPITER-BENEFICENCE",
+        "D-II-JUPITER-VENUS-GIVING",
+        "BJ-XVI-GENEROSITY",
+        "BJ-XVII-FAMILY-HELP"
+      ],
+      "suggested_optional_new_topic_id": "RECIPROCITY",
+      "existing_16_question_neighbor_ids": [
+        "PARENTING",
+        "BELIEF"
+      ],
+      "direct_source_strength": "historical_translated_topic_only_not_empirical_rule_validation",
+      "original_v1_normalized_domain": false
+    },
+    {
+      "domain_id": "grievance_duration_repair",
+      "human_outcome": "Duration of anger and separate forgiveness/reconnection",
+      "measurement_kind": "first_person_emotional_process",
+      "v7_status": "partial",
+      "tf1_status": "partial",
+      "em_v2": "absent",
+      "source_claim_ids": [
+        "BJ-XVI-ANGER",
+        "BJ-XVII-FORGIVING",
+        "BJ-XVII-LINGERING-ANGER"
+      ],
+      "suggested_optional_new_topic_id": "ANGER_REPAIR",
+      "existing_16_question_neighbor_ids": [
+        "BONDS"
+      ],
+      "direct_source_strength": "historical_translated_topic_only_not_empirical_rule_validation",
+      "original_v1_normalized_domain": false
+    },
+    {
+      "domain_id": "contentment_satisfaction",
+      "human_outcome": "Contentment with circumstances and desire for change separately",
+      "measurement_kind": "first_person_orientation",
+      "v7_status": "absent",
+      "tf1_status": "absent",
+      "em_v2": "absent",
+      "source_claim_ids": [
+        "BJ-XVI-CONTENTMENT"
+      ],
+      "suggested_optional_new_topic_id": "CONTENTMENT",
+      "existing_16_question_neighbor_ids": [
+        "EM08"
+      ],
+      "direct_source_strength": "historical_translated_topic_only_not_empirical_rule_validation",
+      "original_v1_normalized_domain": false
+    },
+    {
+      "domain_id": "privacy_self_disclosure",
+      "human_outcome": "Inner life disclosure and privacy preferences",
+      "measurement_kind": "habitual_communication_style",
+      "v7_status": "proxy_only",
+      "tf1_status": "proxy_only",
+      "em_v2": "absent",
+      "source_claim_ids": [
+        "V-I-SATURN-PRIVACY"
+      ],
+      "suggested_optional_new_topic_id": "PRIVACY",
+      "existing_16_question_neighbor_ids": [
+        "BONDS"
+      ],
+      "direct_source_strength": "historical_translated_topic_only_not_empirical_rule_validation",
+      "original_v1_normalized_domain": false
+    },
+    {
+      "domain_id": "everyday_sensory_pleasure",
+      "human_outcome": "Ordinary enjoyment of foods, scents, textures, nature and sensory experience",
+      "measurement_kind": "first_person_experience",
+      "v7_status": "partial",
+      "tf1_status": "absent",
+      "em_v2": "absent",
+      "source_claim_ids": [
+        "V-I-VENUS-PLEASURE",
+        "BJ-XVII-FOOD",
+        "BJ-XVII-GARDEN"
+      ],
+      "suggested_optional_new_topic_id": "SENSORY_ENJOYMENT",
+      "existing_16_question_neighbor_ids": [
+        "ART",
+        "PLAY",
+        "HOME"
+      ],
+      "direct_source_strength": "historical_translated_topic_only_not_empirical_rule_validation",
+      "original_v1_normalized_domain": false
+    }
+  ],
+  "source_anchor_dispositions": [
+    {
+      "claim_id": "V-I-MOON-NURTURE",
+      "witness_id": "VALENS-I-STARS",
+      "reference_locator": "Moon nature",
+      "historical_claim_paraphrase": "family and household care among traditional lunar significations",
+      "normalized_domain_id": "parents_home_roots",
+      "disposition": "refines_existing_domain",
+      "source_translation_quality": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "interpretation_caution": "list_not_quantified_predictor",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "V-I-SATURN-PRIVACY",
+      "witness_id": "VALENS-I-STARS",
+      "reference_locator": "Saturn nature",
+      "historical_claim_paraphrase": "solitude and concealment appear in historically pejorative Saturn stereotype",
+      "normalized_domain_id": "privacy_self_disclosure",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "interpretation_caution": "do_not_equate_privacy_with_lying",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "V-I-SATURN-LITIGATION",
+      "witness_id": "VALENS-I-STARS",
+      "reference_locator": "Saturn nature",
+      "historical_claim_paraphrase": "legal conflicts and unemployment listed as misfortunes",
+      "normalized_domain_id": "actual_occupation_and_vocation",
+      "disposition": "existing_domain_no_new_question",
+      "source_translation_quality": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "interpretation_caution": "legal_harm_high_stakes_historical",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "V-I-JUPITER-BENEFICENCE",
+      "witness_id": "VALENS-I-STARS",
+      "reference_locator": "Jupiter nature",
+      "historical_claim_paraphrase": "community support and beneficence appear among Jupiter topics",
+      "normalized_domain_id": "giving_receiving_help",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "interpretation_caution": "not_frequency_or_guaranteed_moral_character",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "V-I-JUPITER-ARBITRATION",
+      "witness_id": "VALENS-I-STARS",
+      "reference_locator": "Jupiter nature",
+      "historical_claim_paraphrase": "arbitration, trust and stewardship as social roles",
+      "normalized_domain_id": "moral_values_boundaries",
+      "disposition": "refines_existing_domain",
+      "source_translation_quality": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "interpretation_caution": "do_not_assume_legal_or_financial_history",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "V-I-VENUS-ART",
+      "witness_id": "VALENS-I-STARS",
+      "reference_locator": "Venus nature",
+      "historical_claim_paraphrase": "appreciation and crafting music among Venus domains",
+      "normalized_domain_id": "aesthetic_music_engagement",
+      "disposition": "existing_domain_no_new_question",
+      "source_translation_quality": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "interpretation_caution": "already_ART_candidate",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "V-I-VENUS-PLEASURE",
+      "witness_id": "VALENS-I-STARS",
+      "reference_locator": "Venus nature",
+      "historical_claim_paraphrase": "ordinary pleasure and sensory comfort appear alongside craftsmanship",
+      "normalized_domain_id": "everyday_sensory_pleasure",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "interpretation_caution": "describes_historical_topic_not_peoples_intensity",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "V-I-MERCURY-EDUCATION",
+      "witness_id": "VALENS-I-STARS",
+      "reference_locator": "Mercury nature",
+      "historical_claim_paraphrase": "actual education and knowledge acquisition among Mercury topics",
+      "normalized_domain_id": "education_learning_history",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "interpretation_caution": "reading_identity_vs_actual_study_distinct",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "V-I-MERCURY-ADVISORY",
+      "witness_id": "VALENS-I-STARS",
+      "reference_locator": "Mercury nature",
+      "historical_claim_paraphrase": "many professional and civic roles listed",
+      "normalized_domain_id": "actual_occupation_and_vocation",
+      "disposition": "refines_existing_domain",
+      "source_translation_quality": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "interpretation_caution": "not_same_as_underlying_public_speech_trait",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "V-II-XI-WEALTH",
+      "witness_id": "VALENS-II-XI",
+      "reference_locator": "The Good Daimon",
+      "historical_claim_paraphrase": "house/sign condition tied to social status and prosperity",
+      "normalized_domain_id": "actual_public_rank_and_recognition",
+      "disposition": "existing_domain_no_new_question",
+      "source_translation_quality": "preliminary_translation_plus_markup_not_critical_Greek_readback",
+      "interpretation_caution": "source_claim_not_validated",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "V-II-IX-AMBIGUOUS",
+      "witness_id": "VALENS-II-IX",
+      "reference_locator": "Ninth House of God",
+      "historical_claim_paraphrase": "translator notes this clause could concern finance instead",
+      "normalized_domain_id": "esoteric_interests_omens_divination",
+      "disposition": "source_meaning_ambiguous",
+      "source_translation_quality": "translator_notes_alternative_soothsaying_vs_finance",
+      "interpretation_caution": "cannot_count_unambiguous_natal_spiritual_claim",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "D-I-UPBRINGING",
+      "witness_id": "DOR-I",
+      "reference_locator": "Book I ch. 10; third-party home",
+      "historical_claim_paraphrase": "conditional upbringing away from birth household described in a historically slavery-related context",
+      "normalized_domain_id": "formative_caregiving_arrangements",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "book_I_direct_English_translation_of_late_Arabic_witness_not_original_Greek",
+      "interpretation_caution": "no_foster_parental_prediction_or_assumed_harm",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "D-I-PARENT-SEPARATION",
+      "witness_id": "DOR-I",
+      "reference_locator": "Book I ch. 14",
+      "historical_claim_paraphrase": "change in actual parental relationship/housing described",
+      "normalized_domain_id": "formative_caregiving_arrangements",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "book_I_direct_English_translation_of_late_Arabic_witness_not_original_Greek",
+      "interpretation_caution": "no_mandatory_private_family_trauma",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "D-I-KINSHIP-CLOSENESS",
+      "witness_id": "DOR-I",
+      "reference_locator": "Book I ch. 16",
+      "historical_claim_paraphrase": "kinship and inheritance treated as relational life topics",
+      "normalized_domain_id": "parents_home_roots",
+      "disposition": "refines_existing_domain",
+      "source_translation_quality": "book_I_direct_English_translation_of_late_Arabic_witness_not_original_Greek",
+      "interpretation_caution": "relationship_quality_not_medical_or_mortality_prediction",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "D-II-JUPITER-MERCURY-LAW",
+      "witness_id": "DOR-II",
+      "reference_locator": "Book II ch. 19",
+      "historical_claim_paraphrase": "legal knowledge and reasoning linked with vocation under a joint planetary condition",
+      "normalized_domain_id": "education_learning_history",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "book_II_direct_English_translation_of_late_Arabic_witness_not_original_Greek",
+      "interpretation_caution": "learning_subject_is_not_political_partisanship",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "D-II-JUPITER-VENUS-GIVING",
+      "witness_id": "DOR-II",
+      "reference_locator": "Book II ch. 19",
+      "historical_claim_paraphrase": "benevolence and favorable social ties in conjunction passage",
+      "normalized_domain_id": "giving_receiving_help",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "book_II_direct_English_translation_of_late_Arabic_witness_not_original_Greek",
+      "interpretation_caution": "outdated_moral_label_cannot_define_personality",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "D-II-JUPITER-MERCURY-REASON",
+      "witness_id": "DOR-II",
+      "reference_locator": "Book II ch. 19",
+      "historical_claim_paraphrase": "reasoning and knowledge described with a joint planetary condition",
+      "normalized_domain_id": "cognitive_style_and_learning",
+      "disposition": "refines_existing_domain",
+      "source_translation_quality": "book_II_direct_English_translation_of_late_Arabic_witness_not_original_Greek",
+      "interpretation_caution": "existing_survey_samples_some_cognitive_processes",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XVI-CONTENTMENT",
+      "witness_id": "BJ-XVI",
+      "reference_locator": "Verse 16.4 Punarvasu",
+      "historical_claim_paraphrase": "self-reported contentment and material appetite described",
+      "normalized_domain_id": "contentment_satisfaction",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "some_parts_of_verse_are_medical_ignore_them",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XVI-GENEROSITY",
+      "witness_id": "BJ-XVI",
+      "reference_locator": "Verse 16.12 Dhanishtha",
+      "historical_claim_paraphrase": "generosity occurs as distinct named trait",
+      "normalized_domain_id": "giving_receiving_help",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "does_not_establish_altruism_frequency",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XVI-ANGER",
+      "witness_id": "BJ-XVI",
+      "reference_locator": "Verse 16.10 Jyeshtha",
+      "historical_claim_paraphrase": "anger reactivity is distinguished from happiness/contentment",
+      "normalized_domain_id": "grievance_duration_repair",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "timeframe_and_context_must_be_separate",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XVII-FORGIVING",
+      "witness_id": "BJ-XVII",
+      "reference_locator": "Verse 17.2 Moon Taurus",
+      "historical_claim_paraphrase": "forgiveness and enduring friendships appear as traits",
+      "normalized_domain_id": "grievance_duration_repair",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "forgiving_not_equivalent_to_reconciliation",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XVII-FOOD",
+      "witness_id": "BJ-XVII",
+      "reference_locator": "Verse 17.3 Moon Gemini",
+      "historical_claim_paraphrase": "ordinary pleasures of food/dance/music occur",
+      "normalized_domain_id": "everyday_sensory_pleasure",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "do_not_turn_into_dietary_medical_advice",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XVII-GARDEN",
+      "witness_id": "BJ-XVII",
+      "reference_locator": "Verse 17.4 Moon Cancer",
+      "historical_claim_paraphrase": "preference for natural settings and water appears",
+      "normalized_domain_id": "everyday_sensory_pleasure",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "environmental_enjoyment_not_biomedical_sensitivity",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XVII-LINGERING-ANGER",
+      "witness_id": "BJ-XVII",
+      "reference_locator": "Verse 17.5 Moon Leo",
+      "historical_claim_paraphrase": "duration of anger described, translation notes contextual ambiguity",
+      "normalized_domain_id": "grievance_duration_repair",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "trifle_vs_wrong_text_ambiguous",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XVII-FAMILY-HELP",
+      "witness_id": "BJ-XVII",
+      "reference_locator": "Verse 17.7 Moon Libra",
+      "historical_claim_paraphrase": "giving assistance to kin distinct from generic ethical principles",
+      "normalized_domain_id": "giving_receiving_help",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "not_an_assumption_everyone_has_kin",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XVII-EARLY-SEPARATION",
+      "witness_id": "BJ-XVII",
+      "reference_locator": "Verse 17.8 Moon Scorpio",
+      "historical_claim_paraphrase": "early-life separation from caregivers occurs as explicit life-history claim",
+      "normalized_domain_id": "formative_caregiving_arrangements",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "leave_health_claims_out_of_questionnaire",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XVIII-LITERACY-MATH",
+      "witness_id": "BJ-XVIII",
+      "reference_locator": "Verse 18.2 Sun Virgo",
+      "historical_claim_paraphrase": "actual study and skill domains occur in specific sign condition",
+      "normalized_domain_id": "education_learning_history",
+      "disposition": "new_domain_candidate",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "translation_sun_sign_inferred_from_context",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    },
+    {
+      "claim_id": "BJ-XXI-INTERPRETIVE-DISPUTE",
+      "witness_id": "BJ-XXI",
+      "reference_locator": "Verse 21.3 on Aquarius ascendant",
+      "historical_claim_paraphrase": "three named ancient interpretive schools conflict about natal rule scope",
+      "normalized_domain_id": "natal_technical_preconditions",
+      "disposition": "source_interpretation_disagreement",
+      "source_translation_quality": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit",
+      "interpretation_caution": "not_a_participant_question",
+      "direct_historical_survey_frequency_rule_proven": false,
+      "empirically_validated_predictor": false
+    }
+  ],
+  "decision": {
+    "recommended_first_survey_pilot_subset": [
+      "LEARNING_HISTORY",
+      "ANGER_REPAIR",
+      "CONTENTMENT",
+      "RECIPROCITY"
+    ],
+    "recommended_privacy_screen": [
+      "UPBRINGING",
+      "PRIVACY"
+    ],
+    "probably_conditional_followup": [
+      "SENSORY_ENJOYMENT"
+    ],
+    "why_not_all": "Respondent burden and existing ART/PLAY/HOME/MYSTERY overlap; only selected, previously unmeasured topical distinctions justify new questions."
+  },
+  "scope_limits": [
+    "The nine verified translated witness files/pages are not the entirety of their books' conditional natal predictions.",
+    "Earlier source entries and translated themes can be thematically duplicate, not independent predictive observations.",
+    "Riley explicitly called his Valens English translation preliminary; a named ambiguity in the Book II ninth-house clause is preserved.",
+    "Dorotheus Pingree English is from a later Middle Eastern transmission; no original Greek version was checked.",
+    "The Brihat Jataka online Sanskrit/English version contains marked translator ambiguities and authorial disagreement on some rules.",
+    "No live GPT, Railway, frozen participant answer or astrology scorer is changed in this design audit."
+  ],
+  "chart_scorer_rule_mapping": "Unresolved: chart configurations in these traditions are conditional and cannot be read as the existing one-planet CF003 Human-Design-derived role map."
+}

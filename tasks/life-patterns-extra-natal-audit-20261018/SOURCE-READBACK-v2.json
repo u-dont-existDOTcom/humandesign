@@ -1,0 +1,354 @@
+{
+  "schema": "life-patterns-cross-tradition-source-phrase-readback-v2",
+  "retrieved_at_utc": "2026-10-18T12:50:36+00:00",
+  "status": "PASS",
+  "valens_nine_book_section_heading_scan": {
+    "headings_by_book": {
+      "1": 66,
+      "2": 71,
+      "3": 25,
+      "4": 32,
+      "5": 12,
+      "6": 11,
+      "7": 6,
+      "8": 9,
+      "9": 20
+    },
+    "total_headings": 252,
+    "full_section_contents_exhaustively_reviewed": false,
+    "scope": "Section and subsection headings only: not natal rule extraction or a proof of no remaining topical omissions."
+  },
+  "source_files_or_pages": {
+    "VALENS-I-STARS": {
+      "id": "VALENS-I-STARS",
+      "source_type": "local_pinned_annotated_translation",
+      "content_sha256": "fbd9cdb44c4de1f63f718bc74f9a85be3643f125478b8d1ac7b31c16fbf59820",
+      "byte_count": 13019,
+      "checked_full_document": true,
+      "mode": "source_git_commit_and_exact_local_file_sha",
+      "url": "https://github.com/janegca/latex-valens/blob/main/book01/01-stars.tex",
+      "source_translation_status": "preliminary_translation_plus_markup_not_critical_Greek_readback"
+    },
+    "VALENS-II-XI": {
+      "id": "VALENS-II-XI",
+      "source_type": "local_pinned_annotated_translation",
+      "content_sha256": "24aef177b2e9425768d554e452d51acdf7462ba475d29be449ce999a0cdbd1d5",
+      "byte_count": 2294,
+      "checked_full_document": true,
+      "mode": "source_git_commit_and_exact_local_file_sha",
+      "url": "https://github.com/janegca/latex-valens/blob/main/book02/06-11th.tex",
+      "source_translation_status": "preliminary_translation_plus_markup_not_critical_Greek_readback"
+    },
+    "VALENS-II-IX": {
+      "id": "VALENS-II-IX",
+      "source_type": "local_pinned_annotated_translation",
+      "content_sha256": "e04a2b0fea8edd752a4314636ab4dfb6f57225aea55b5161aa6e023b0d2cbedc",
+      "byte_count": 1571,
+      "checked_full_document": true,
+      "mode": "source_git_commit_and_exact_local_file_sha",
+      "url": "https://github.com/janegca/latex-valens/blob/main/book02/07a-9th.tex",
+      "source_translation_status": "translator_notes_alternative_soothsaying_vs_finance"
+    },
+    "DOR-I": {
+      "id": "DOR-I",
+      "source_type": "web_translation_reproduction",
+      "content_sha256": "19f4d9dc646070a42b2eb2676f8e59de92f706d695c4d157c0453bbb2e4b2cf6",
+      "byte_count": 166289,
+      "checked_full_document": true,
+      "mode": "retrieved_web_html_short_phrase_check",
+      "url": "https://unifiedastrology.wordpress.com/sources/hellenistic-sources/carmen-astrologicum-of-dorotheus-book-one/",
+      "source_translation_status": "book_I_direct_English_translation_of_late_Arabic_witness_not_original_Greek"
+    },
+    "DOR-II": {
+      "id": "DOR-II",
+      "source_type": "web_translation_reproduction",
+      "content_sha256": "67cf1e262014f9edb9fc14539c999b71e89a7a15d3e9023cf6f7aa616b293545",
+      "byte_count": 181743,
+      "checked_full_document": true,
+      "mode": "retrieved_web_html_short_phrase_check",
+      "url": "https://unifiedastrology.wordpress.com/sources/hellenistic-sources/carmen-astrologicum-book-2/",
+      "source_translation_status": "book_II_direct_English_translation_of_late_Arabic_witness_not_original_Greek"
+    },
+    "BJ-XVI": {
+      "id": "BJ-XVI",
+      "source_type": "secondary_English_with_Sanskrit",
+      "content_sha256": "9406386cca6029b6efeeb46fd9f84588334d541e1d25d7e263caf0c56e785aa3",
+      "byte_count": 160366,
+      "checked_full_document": true,
+      "mode": "retrieved_web_html_short_phrase_check",
+      "url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-16",
+      "source_translation_status": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit"
+    },
+    "BJ-XVII": {
+      "id": "BJ-XVII",
+      "source_type": "secondary_English_with_Sanskrit",
+      "content_sha256": "0267cb1d3e250a530aa807337cb9d0119b201bcac16616a6f842315b861cc2ed",
+      "byte_count": 170585,
+      "checked_full_document": true,
+      "mode": "retrieved_web_html_short_phrase_check",
+      "url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-17",
+      "source_translation_status": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit"
+    },
+    "BJ-XVIII": {
+      "id": "BJ-XVIII",
+      "source_type": "secondary_English_with_Sanskrit",
+      "content_sha256": "5595290e492f0b60e1df8a78f4a5977ed78b20d095533e3373e5299f4ba66d0b",
+      "byte_count": 205707,
+      "checked_full_document": true,
+      "mode": "retrieved_web_html_short_phrase_check",
+      "url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-18",
+      "source_translation_status": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit"
+    },
+    "BJ-XXI": {
+      "id": "BJ-XXI",
+      "source_type": "secondary_English_with_Sanskrit",
+      "content_sha256": "5957d6a1fdcd7e5f0dfac1a5016834ebe911501bd095963945f3d81bb5d25940",
+      "byte_count": 154298,
+      "checked_full_document": true,
+      "mode": "retrieved_web_html_short_phrase_check",
+      "url": "https://vedicpupil.in/library/books/brihat-jataka/chapter-21",
+      "source_translation_status": "secondary_online_translation_text_contains_editorial_uncertainties_not_critical_Sanskrit"
+    }
+  },
+  "anchor_readbacks": [
+    {
+      "anchor_id": "V-I-MOON-NURTURE",
+      "witness_id": "VALENS-I-STARS",
+      "proof_fragment": "nurture, the older brother",
+      "short_anchor_present": true,
+      "disposition": "refines_existing_domain",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "V-I-SATURN-PRIVACY",
+      "witness_id": "VALENS-I-STARS",
+      "proof_fragment": "secretive",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "V-I-SATURN-LITIGATION",
+      "witness_id": "VALENS-I-STARS",
+      "proof_fragment": "lawsuits",
+      "short_anchor_present": true,
+      "disposition": "existing_domain_no_new_question",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "V-I-JUPITER-BENEFICENCE",
+      "witness_id": "VALENS-I-STARS",
+      "proof_fragment": "beneficence",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "V-I-JUPITER-ARBITRATION",
+      "witness_id": "VALENS-I-STARS",
+      "proof_fragment": "arbitrations",
+      "short_anchor_present": true,
+      "disposition": "refines_existing_domain",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "V-I-VENUS-ART",
+      "witness_id": "VALENS-I-STARS",
+      "proof_fragment": "taste for music",
+      "short_anchor_present": true,
+      "disposition": "existing_domain_no_new_question",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "V-I-VENUS-PLEASURE",
+      "witness_id": "VALENS-I-STARS",
+      "proof_fragment": "laughter",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "V-I-MERCURY-EDUCATION",
+      "witness_id": "VALENS-I-STARS",
+      "proof_fragment": "education, letters",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "V-I-MERCURY-ADVISORY",
+      "witness_id": "VALENS-I-STARS",
+      "proof_fragment": "legal advisors",
+      "short_anchor_present": true,
+      "disposition": "refines_existing_domain",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "V-II-XI-WEALTH",
+      "witness_id": "VALENS-II-XI",
+      "proof_fragment": "make men illustrious and rich from youth",
+      "short_anchor_present": true,
+      "disposition": "existing_domain_no_new_question",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "V-II-IX-AMBIGUOUS",
+      "witness_id": "VALENS-II-IX",
+      "proof_fragment": "involved in soothsaying",
+      "short_anchor_present": true,
+      "disposition": "source_meaning_ambiguous",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "D-I-UPBRINGING",
+      "witness_id": "DOR-I",
+      "proof_fragment": "house of strangers",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "D-I-PARENT-SEPARATION",
+      "witness_id": "DOR-I",
+      "proof_fragment": "separation of his parents",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "D-I-KINSHIP-CLOSENESS",
+      "witness_id": "DOR-I",
+      "proof_fragment": "love of son and father",
+      "short_anchor_present": true,
+      "disposition": "refines_existing_domain",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "D-II-JUPITER-MERCURY-LAW",
+      "witness_id": "DOR-II",
+      "proof_fragment": "expert in law",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "D-II-JUPITER-VENUS-GIVING",
+      "witness_id": "DOR-II",
+      "proof_fragment": "merciful",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "D-II-JUPITER-MERCURY-REASON",
+      "witness_id": "DOR-II",
+      "proof_fragment": "perfect in reasoning and intellect",
+      "short_anchor_present": true,
+      "disposition": "refines_existing_domain",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XVI-CONTENTMENT",
+      "witness_id": "BJ-XVI",
+      "proof_fragment": "content with little",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XVI-GENEROSITY",
+      "witness_id": "BJ-XVI",
+      "proof_fragment": "generous, rich, brave, fond of song",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XVI-ANGER",
+      "witness_id": "BJ-XVI",
+      "proof_fragment": "quick to anger",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XVII-FORGIVING",
+      "witness_id": "BJ-XVII",
+      "proof_fragment": "forgiving",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XVII-FOOD",
+      "witness_id": "BJ-XVII",
+      "proof_fragment": "fond of eating",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XVII-GARDEN",
+      "witness_id": "BJ-XVII",
+      "proof_fragment": "fond of water and gardens",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XVII-LINGERING-ANGER",
+      "witness_id": "BJ-XVII",
+      "proof_fragment": "angry for a long time",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XVII-FAMILY-HELP",
+      "witness_id": "BJ-XVII",
+      "proof_fragment": "a helper of his relatives",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XVII-EARLY-SEPARATION",
+      "witness_id": "BJ-XVII",
+      "proof_fragment": "separated from father or elders",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XVIII-LITERACY-MATH",
+      "witness_id": "BJ-XVIII",
+      "proof_fragment": "skilled in script, writing, poetry and mathematics",
+      "short_anchor_present": true,
+      "disposition": "new_domain_candidate",
+      "not_predictive_validation": true
+    },
+    {
+      "anchor_id": "BJ-XXI-INTERPRETIVE-DISPUTE",
+      "witness_id": "BJ-XXI",
+      "proof_fragment": "view goes too far",
+      "short_anchor_present": true,
+      "disposition": "source_interpretation_disagreement",
+      "not_predictive_validation": true
+    }
+  ],
+  "counts": {
+    "source_witnesses": 9,
+    "claimed_source_rows": 28,
+    "verified_short_phrase_rows": 28,
+    "missing_rows": 0,
+    "dispositions": {
+      "refines_existing_domain": 5,
+      "new_domain_candidate": 18,
+      "existing_domain_no_new_question": 3,
+      "source_meaning_ambiguous": 1,
+      "source_interpretation_disagreement": 1
+    }
+  },
+  "missing_anchor_ids": [],
+  "scope": "Brief translated words confirm source topics. No ancient chart prediction or questionnaire response validity is inferred."
+}

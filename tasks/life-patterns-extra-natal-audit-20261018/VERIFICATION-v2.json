@@ -1,0 +1,138 @@
+{
+  "schema": "life-patterns-expanded-natal-source-audit-verification-v2",
+  "date": "2026-10-18",
+  "status": "DOCUMENTARY_RECONCILIATION_COMPLETE_NO_PREDICTIVE_VALIDATION",
+  "owner_outcome": "Continue checking natal astrology sources for other important survey gaps; preserve original respondent answers and chart scoring.",
+  "source_base_branch": "research/life-patterns-guided-eight-assessment-20261015",
+  "source_base_commit": "29048b042240a579785a53757de29bb67e6d2262",
+  "source_and_domain_counts": {
+    "baseline_source_rows": 92,
+    "new_translated_source_anchors": 28,
+    "cumulative_doc_entries": 120,
+    "baseline_human_domains": 46,
+    "distinct_new_human_domains": 7,
+    "cumulative_domains": 53,
+    "baseline_optional_candidate_topics": 16,
+    "new_optional_topic_candidates": 7,
+    "total_candidate_topics_not_active": 23,
+    "new_witnesses": 9,
+    "source_dispositions": {
+      "refines_existing_domain": 5,
+      "new_domain_candidate": 18,
+      "existing_domain_no_new_question": 3,
+      "source_meaning_ambiguous": 1,
+      "source_interpretation_disagreement": 1
+    },
+    "new_direct_validated_chart_rules": 0,
+    "new_scored_survey_questions": 0
+  },
+  "anchored_readback": {
+    "status": "PASS",
+    "source_witnesses": 9,
+    "short_fragments_checked": 28,
+    "absences": 0,
+    "valens_book_headings_counted": 252,
+    "valens_full_rule_text_exhaustively_inspected": false,
+    "short_exact_word_count_by_witness": {
+      "VALENS-I-STARS": 16,
+      "VALENS-II-XI": 7,
+      "VALENS-II-IX": 3,
+      "DOR-I": 12,
+      "DOR-II": 9,
+      "BJ-XVI": 12,
+      "BJ-XVII": 24,
+      "BJ-XVIII": 7,
+      "BJ-XXI": 4
+    },
+    "Valens_preliminary_translation_git_commit": "2d4a8b9890cd5cb7714abd52f6bd938272ba8237"
+  },
+  "accepted_preceding_source_hashes_unchanged": {
+    "SOURCE-TO-SURVEY-CROSSWALK-v2.json": "8f1acb1b7307e33313fb69d11d52195de8d70aa637e661b33e5ed82254335f28",
+    "ADAPTIVE-QUESTION-CANDIDATES-v1.json": "16123063e3cdbe9d834e871bd78c736df79b1930012a9dd6873d674127eaac34",
+    "CF003-PLANET-MAPPING-GAPS-v1.json": "04a57520a159006093e596fbc4ff0a39fbbd2672ce0a0deb7c251a6255828b5c"
+  },
+  "tests": {
+    "focused_and_previous_audit_pytest_passed": 15,
+    "ruff": "PASS",
+    "short_source_fragments_verified": "28/28",
+    "historical_and_modern_construct_claims_kept_separate": true,
+    "combined_23_question_source_wording_preservation": true,
+    "chart_rules_forward_validated": 0,
+    "new_scoring_changes": 0
+  },
+  "privacy_and_scope": {
+    "private_responses_included": false,
+    "participants_reinterviewed": false,
+    "live_railway_changed": false,
+    "custom_gpt_modified": false,
+    "new_questions_live": false,
+    "global_astrology_corpus_exhaustive": false,
+    "source_reliability_limit": "Riley Valens preliminary English; Dorotheus transmitted English; online Sanskrit plus secondary English, ambiguities explicitly recorded."
+  },
+  "files": {
+    "PLAN.md": {
+      "sha256": "b70ee312e74719bfbf0fef0f637ecf2c6f128728c500cb81002fb5816f9d2e87",
+      "bytes": 3515
+    },
+    "RESULT.md": {
+      "sha256": "74f6dde4ee72b5824e6fa37d8479f5519e89761e6519c8981fc6a444e963d609",
+      "bytes": 12491
+    },
+    "START-HERE.md": {
+      "sha256": "b2265a7d303d459acbaa170322466e25444edd63ad29ca26153d924f341a0ee3",
+      "bytes": 2440
+    },
+    "SOURCE-ANCHORS-v2.json": {
+      "sha256": "999e889c10f8ce72758a9e651f920ab7952d106ac2ce159961aa28de05f49483",
+      "bytes": 18138
+    },
+    "SOURCE-READBACK-v2.json": {
+      "sha256": "59609bad1ab93a56546ff3910ee2fe9ead154edfb9b96b149eb580defa23cd60",
+      "bytes": 13135
+    },
+    "SEVEN-NEW-TOPICS-v2.json": {
+      "sha256": "ccd7257f23e54804596bbe9f3ce9e79aabcd18ee7f265c3e054c2dee08ffe2dc",
+      "bytes": 9300
+    },
+    "EXPANDED-DOMAIN-AND-QUESTION-COVERAGE-v2.json": {
+      "sha256": "f6ef9f85ac972ffe8feb2d70acce5bb4318dde672d74c2d1b3c8dbb790386a60",
+      "bytes": 29749
+    },
+    "SEVEN-ADDITIONAL-OPTIONAL-QUESTIONS.md": {
+      "sha256": "78579f467f19fb0cf54467a6298892860ed7b165f72ad5cc84bd12a03338f745",
+      "bytes": 7021
+    },
+    "FIFTY-THREE-DOMAIN-CROSSWALK.csv": {
+      "sha256": "4d71287c6746c71b548f208ec2020fb3baaa20b7160d1512fefda6a6d97727a0",
+      "bytes": 11401
+    },
+    "TWENTY-EIGHT-NEW-SOURCE-ANCHORS.csv": {
+      "sha256": "579c5ac1213996690bd217afce8a5856b9f7df57cf64a0a43bd1c6b5bd409072",
+      "bytes": 8672
+    },
+    "TWENTY-THREE-OPTIONAL-QUESTIONS-v2.json": {
+      "sha256": "28f184effe30fe4013b6257323ec690b0fbd8825f0226642416599d76ebc70a5",
+      "bytes": 24252
+    },
+    "TWENTY-THREE-OPTIONAL-QUESTIONS.md": {
+      "sha256": "ba285efd54a4aff148b3e17ba8a75e841096192b64ecc4dab8d5f49c0dd71125",
+      "bytes": 15872
+    },
+    "verify_source_readback.py": {
+      "sha256": "2283515394a6f4e350b3dab78970ae16ef22c75e56761ac284be85fc02fae190",
+      "bytes": 5638
+    },
+    "build_expanded_audit.py": {
+      "sha256": "4053f0753436e933d5c7c7c939c6c03061c53aceb198446e75e33aed91f3f45a",
+      "bytes": 10699
+    },
+    "build_views.py": {
+      "sha256": "324949f0c8c0eec0a6736ef1f24323fcde55b2ee1a5b60ab1d1ab832eaab41ab",
+      "bytes": 10665
+    },
+    "tests/unit/test_life_patterns_extra_natal_audit_20261018.py": {
+      "sha256": "f30689d96a115e5b443a1d13fc1a31f722028bde6d2940f0bc166dff13e53e7c",
+      "bytes": 9164
+    }
+  }
+}
