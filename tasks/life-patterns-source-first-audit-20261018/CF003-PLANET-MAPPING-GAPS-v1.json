@@ -1,0 +1,155 @@
+{
+  "schema": "life-patterns-cf003-planet-role-vs-classical-natal-source-audit-v1",
+  "status": "SOURCE_FIDELITY_COMPARISON_NOT_ASTROLOGY_REJECTION_OR_REPLACEMENT_MODEL",
+  "source_model": "reference/empirical_astrology/cf003_behavioral_planet_map_v0.json",
+  "source_claim_crosswalk": "SOURCE-TO-SURVEY-CROSSWALK-v2.json",
+  "source_status": "evaluator_only_never_send_to_behavioral_classifier",
+  "counts": {
+    "existing_mappings_checked": 10,
+    "classical_natal_predicates_replaced": 0,
+    "out_of_checked_seven_planet_source": 3,
+    "astrology_predictive_validation_results": 0
+  },
+  "mechanical_mismatch": "Ancient and Lilly source claims can be conditional chains involving Moon and Mercury, ninth-house rulerships, dignity, angles, Lot of Fortune, aspects and combinations; a ten single-planet role label cannot stand in for these natal predicates. Do not treat the mismatch as proof of false astrology.",
+  "rows": [
+    {
+      "construct_id": "T01",
+      "planet": "venus",
+      "existing_mapping_role": "Values, ethics, boundaries, ideals, integrity, or what is worth protecting.",
+      "actual_development_contract": "Explicit standards about what is acceptable, unacceptable, fair, right, wrong, or worth protecting, including boundaries the person repeatedly enforces. General principles about learning or growth do not count unless they function as standards or boundaries.",
+      "source_lineage": "project Human Design role meaning; CF003 development proxy is not a classical natal meaning table",
+      "relationship_to_checked_classical_sources": "semantic_narrowing_or_divergence",
+      "historical_claim_ids": [
+        "PT-VENUS-ART",
+        "PT-VENUS-DREAM-TONE"
+      ],
+      "limitation": "Historical Venus passages address art/beauty/pleasure as well as social relations, unlike an exclusive ethics/boundaries target.",
+      "translation_into_computational_natal_rule_admitted": false,
+      "new_predictive_weight_or_score": null
+    },
+    {
+      "construct_id": "T02",
+      "planet": "pluto",
+      "existing_mapping_role": "Long-duration transformation, truth-seeking, renewal, or a theme that deepens through major experience.",
+      "actual_development_contract": "Long-duration deep change or restructuring after major experience: repeated shedding, rebuilding, truth-seeking, renewal, or sustained transformation. Ordinary skill improvement or routine maturation does not count.",
+      "source_lineage": "project Human Design role meaning; CF003 development proxy is not a classical natal meaning table",
+      "relationship_to_checked_classical_sources": "not_derived_from_checked_classical_seven_planet_texts",
+      "historical_claim_ids": [],
+      "limitation": "Modern Pluto is not a planet in the original Ptolemy/Lilly seven-planet clauses checked; separate modern rule source required.",
+      "translation_into_computational_natal_rule_admitted": false,
+      "new_predictive_weight_or_score": null
+    },
+    {
+      "construct_id": "T03",
+      "planet": "moon",
+      "existing_mapping_role": "Recurring drive or pressure that gets action moving.",
+      "actual_development_contract": "A recurring internal pressure, need, pull, or motivational drive that initiates action. Score the source of recurring motivation here, not the person's style of asserting or confronting.",
+      "source_lineage": "project Human Design role meaning; CF003 development proxy is not a classical natal meaning table",
+      "relationship_to_checked_classical_sources": "different_construct_emphasis",
+      "historical_claim_ids": [
+        "PT-MIND-REASON"
+      ],
+      "limitation": "Ptolemy chiefly assigns the Moon sensory/affective soul qualities here, not a single recurring motive or action-pressure scale.",
+      "translation_into_computational_natal_rule_admitted": false,
+      "new_predictive_weight_or_score": null
+    },
+    {
+      "construct_id": "T04",
+      "planet": "saturn",
+      "existing_mapping_role": "Recurring discipline, accountability, consequence, or demanding lesson that matures into competence.",
+      "actual_development_contract": "Recurring duty, discipline, limitation, accountability, consequence, or sustained constraint that the person repeatedly has to manage. Do not score ordinary developmental change here.",
+      "source_lineage": "project Human Design role meaning; CF003 development proxy is not a classical natal meaning table",
+      "relationship_to_checked_classical_sources": "partial_adjacent_not_conditionally_equivalent",
+      "historical_claim_ids": [
+        "PT-MIND-REASON"
+      ],
+      "limitation": "Duty/discipline has adjacent character vocabulary, but Saturn natal judgments depend on dignity/aspects and cannot be reduced to role labels.",
+      "translation_into_computational_natal_rule_admitted": false,
+      "new_predictive_weight_or_score": null
+    },
+    {
+      "construct_id": "T05",
+      "planet": "sun",
+      "existing_mapping_role": null,
+      "actual_development_contract": "Recurring self-expression, purposeful direction, or concern with showing a recognizable sense of self or being seen for what one expresses. Centrality is scored only by the common rubric, not built into this construct definition.",
+      "source_lineage": "project Human Design role meaning; CF003 development proxy is not a classical natal meaning table",
+      "relationship_to_checked_classical_sources": "partial_adjacent_not_conditionally_equivalent",
+      "historical_claim_ids": [
+        "PT-IV-03"
+      ],
+      "limitation": "Solar/luminary public dignity claims are not identical to inner self-expression or feeling central.",
+      "translation_into_computational_natal_rule_admitted": false,
+      "new_predictive_weight_or_score": null
+    },
+    {
+      "construct_id": "T06",
+      "planet": "uranus",
+      "existing_mapping_role": "Recurring unconventional originality, mutation, or departure from convention.",
+      "actual_development_contract": "Recurring originality, experimentation, nonconformity, disruption of convention, or preference for finding a different way rather than following the established one.",
+      "source_lineage": "project Human Design role meaning; CF003 development proxy is not a classical natal meaning table",
+      "relationship_to_checked_classical_sources": "not_derived_from_checked_classical_seven_planet_texts",
+      "historical_claim_ids": [],
+      "limitation": "Uranus is outside these 1647 and ancient seven-planet natal predicates. This does not reject later modern Uranus astrology.",
+      "translation_into_computational_natal_rule_admitted": false,
+      "new_predictive_weight_or_score": null
+    },
+    {
+      "construct_id": "T07",
+      "planet": "mercury",
+      "existing_mapping_role": "Subjects or messages repeatedly expressed in speech, writing, teaching, explanation, advice, or argument.",
+      "actual_development_contract": "Recurring activity of communicating, explaining, teaching, questioning, advising, writing, debating, or translating ideas for others. A topic merely recurring in thought does not count unless communication itself is part of the pattern.",
+      "source_lineage": "project Human Design role meaning; CF003 development proxy is not a classical natal meaning table",
+      "relationship_to_checked_classical_sources": "semantic_narrowing",
+      "historical_claim_ids": [
+        "PT-MIND-REASON",
+        "PT-NATURE-INQUIRY"
+      ],
+      "limitation": "Ptolemy emphasizes reason, mind, speculation, inquiry and invention; an expression/communication target captures only a subset.",
+      "translation_into_computational_natal_rule_admitted": false,
+      "new_predictive_weight_or_score": null
+    },
+    {
+      "construct_id": "T08",
+      "planet": "jupiter",
+      "existing_mapping_role": "A recurring principle, opportunity pattern, protection, or personal rule associated with sustainable growth.",
+      "actual_development_contract": "Recurring expansion through learning, opportunity, exploration, mentoring, or broadening scope, including guiding principles specifically used to support growth. Ethical boundaries and prohibitions belong elsewhere.",
+      "source_lineage": "project Human Design role meaning; CF003 development proxy is not a classical natal meaning table",
+      "relationship_to_checked_classical_sources": "semantic_divergence_with_overlap",
+      "historical_claim_ids": [
+        "PT-JUPITER-DEVOTION",
+        "PT-JUPITER-MERCURY-PHILOSOPHY"
+      ],
+      "limitation": "Religious conviction, generosity and philosophical inquiry are only partly mirrored in the project growth/expansion role.",
+      "translation_into_computational_natal_rule_admitted": false,
+      "new_predictive_weight_or_score": null
+    },
+    {
+      "construct_id": "T09",
+      "planet": "mars",
+      "existing_mapping_role": "A theme that begins immaturely or awkwardly and develops through repeated experience and maturation.",
+      "actual_development_contract": "Recurring direct action, assertion, initiative, confrontation, competitive effort, or willingness to push into a challenge. Internal motivation alone does not count unless it appears as enacted assertion or initiative.",
+      "source_lineage": "project Human Design role meaning; CF003 development proxy is not a classical natal meaning table",
+      "relationship_to_checked_classical_sources": "partial_overlap_missing_configuration",
+      "historical_claim_ids": [
+        "PT-III-MARS-ACTION",
+        "PT-III-MARS-VENUS-PLAY"
+      ],
+      "limitation": "Historical Mars assertion/action overlaps the role, but joint Mars–Venus playfulness cannot be assigned to Mars alone.",
+      "translation_into_computational_natal_rule_admitted": false,
+      "new_predictive_weight_or_score": null
+    },
+    {
+      "construct_id": "T10",
+      "planet": "neptune",
+      "existing_mapping_role": "Recurring mystery, imagination, spirituality, obscurity, or a domain difficult for the person to see clearly.",
+      "actual_development_contract": "Recurring imagination, symbolic or spiritual orientation, attraction to mystery, porous ambiguity, idealization, or persistent difficulty distinguishing what is clear from what is elusive. Ordinary uncertainty, hedging, or saying 'it depends' does not count.",
+      "source_lineage": "project Human Design role meaning; CF003 development proxy is not a classical natal meaning table",
+      "relationship_to_checked_classical_sources": "not_derived_from_checked_classical_seven_planet_texts",
+      "historical_claim_ids": [],
+      "limitation": "Neptune spirituality/mystery construct is not an ancient or Lilly original seven-planet natal rule; conditional sources needed.",
+      "translation_into_computational_natal_rule_admitted": false,
+      "new_predictive_weight_or_score": null
+    }
+  ],
+  "owner_outcome": "Replace missing source-to-question mappings as a future independently frozen hypothesis lane; do not retroactively fit to participant responses."
+}

@@ -1,0 +1,47 @@
+domain_id,human_domain,source_attested_in_checked_corpus,v7_status,tf1_status,em_v2_direct_ids,proposed_optional_question_ids,historical_claim_count,historical_claim_ids,nearest_existing_questions_do_not_imply_equivalence,interpretation_limit
+religious_spiritual_disposition,Religious and spiritual orientation,True,absent,absent,,BELIEF,12,"L3-TOC-018,LILLY3-R03,LILLY3-R04,LILLY3-R05,LILLY3-R10,LILLY3-R13,LILLY3-R15,LILLY3-R19,PT-JUPITER-DEVOTION,PT-RELIGIOUS-SIGNS,LILLY-NINTH-RELIGION,LILLY-JUPITER-NINTH",,Felt guidance is not equivalent to religious belief.
+spiritual_or_ritual_practice,Actual spiritual or ritual practices,True,absent,absent,,BELIEF,6,"LILLY3-R02,LILLY3-R06,LILLY3-R08,LILLY3-R09,LILLY3-R11,PT-RELIGIOUS-OBSERVANCE",,Frequency of meditation or ritual is not measured by awe.
+ascetic_renunciation_and_initiation,Ascetic commitment and periods of renunciation,True,absent,absent,,RENUNCIATION,4,"BJ-15.1,BJ-15.2,BJ-15.3,BJ-15.4",,"Religious practice or awe does not establish deliberate renunciation, vows, or initiation."
+belief_conversion_or_worldview_change,Changes in religious or philosophical convictions,True,absent,absent,,BELIEF_CHANGE,5,"LILLY3-R01,LILLY3-R14,LILLY3-R16,LILLY3-R17,LILLY3-R18",,Life-change insight is not necessarily religious conversion.
+esoteric_interests_omens_divination,Interest in hidden matters and divination,True,absent,absent,,MYSTERY,4,"LILLY3-R07,LILLY3-R12,PT-MYSTERY-INTEREST,PT-OMENS",,Interest in omens differs from interpreting coincidences as meaningful.
+dream_content_and_tone,"Dream content, emotional tone and recurring themes",True,absent,absent,,DREAM,10,"L3-TOC-019,LILLY3-D05,LILLY3-D06,LILLY3-D07,LILLY3-D08,LILLY3-D09,LILLY3-D10,LILLY3-D11,PT-VENUS-DREAM-TONE,LILLY-NINTH-DREAMS",,Dream content is not proof that dreams foretell events.
+dream_interpretation_and_beliefs,Dream recall and interpretation,True,absent,absent,,DREAM,5,"LILLY3-D01,LILLY3-D02,LILLY3-D03,LILLY3-D04,PT-DREAM-INTERPRET",,Dream recall and dream interpretation are different measurements.
+cognitive_style_and_learning,Thinking and learning style,True,partial,direct,,,2,"L3-TOC-007,PT-MIND-REASON","G01,G02,TF1-G01,TF1-G02",Specific reasoning scenes are not a cognitive ability assessment.
+philosophical_scientific_curiosity,Sustained philosophical/scientific curiosity,True,proxy_only,proxy_only,,MYSTERY,2,"PT-JUPITER-MERCURY-PHILOSOPHY,PT-NATURE-INQUIRY","G01,TF1-G01",Solving a planning problem is not sustained philosophical investigation.
+creative_production,Creative production and making,True,absent,absent,,ART,1,PT-VENUS-ART,,Enjoying beauty does not establish creative production.
+aesthetic_music_engagement,Art/music/beauty appreciation,True,absent,absent,,ART,1,PT-MUSIC,,Liking art and producing art need separate variables.
+opinion_revision_and_flexibility,Long-term revision of beliefs and opinions,True,partial,partial,,BELIEF_CHANGE,1,PT-REVISION-VERSATILITY,"G24,TF1-G10",Contextual action changes are not global belief transformation.
+play_humor_spontaneous_enjoyment,"Playfulness, humor and enjoyment",True,absent,absent,,PLAY,1,PT-III-MARS-VENUS-PLAY,,Awe and creative achievement are not ordinary playfulness.
+personality_emotional_temperament,Habitual emotional and personality style,True,partial,partial,,,1,L3-TOC-006,"G14,G18,TF1-B0",Emotion and recovery scenarios only partially sample temperament.
+moral_values_boundaries,Moral values and stable standards,False,partial,partial,,,0,,"G17,M03,TF1-G17",Conditional behavior is not a complete moral worldview.
+motivation_action_initiation,Internal drive and initiative,True,partial,partial,,,1,PT-III-MARS-ACTION,"E0,M01,TF1-M01",CF003 Moon/Mars role constructs are not classical natal equivalences.
+self_expression_and_communication,Expression and explanation,False,partial,partial,,,0,,"G02,TF1-G02",Ptolemy's Mercury reason/mind is broader than communication.
+actual_finances_resources,Actual financial and resource history,True,proxy_only,proxy_only,,RESOURCES,2,"L3-TOC-010,PT-IV-02","G20,TF1-G20",A hypothetical windfall choice cannot establish actual wealth history.
+kinship_siblings,Relationships with siblings and kin,True,absent,absent,,KINSHIP,1,L3-TOC-011,,Not everyone has siblings or wishes to discuss them.
+parents_home_roots,"Family background, household and roots",True,absent,absent,,HOME,1,L3-TOC-012,,Place belonging is a modern extrapolation from parents and household topics.
+parenthood_caregiving,Actual parenting and caregiving roles,True,absent,absent,,PARENTING,2,"L3-TOC-016,PT-IV-06",,"No pregnancy, fertility or mandatory parental assumptions."
+actual_marriage_partnership_history,History of actual romantic and marital relationships,True,proxy_only,absent,,BONDS,2,"L3-TOC-015,PT-IV-05","G12,G13",Attraction scenarios are not the same as actual relationships.
+actual_foreign_travel_migration,"Actual travel, migration and cross-cultural lives",True,proxy_only,absent,,TRAVEL,2,"L3-TOC-017,PT-IV-08",G01,Trip planning is not actual travel history.
+actual_public_rank_and_recognition,"Actual social rank, public roles and recognition",True,proxy_only,proxy_only,,STATUS,2,"L3-TOC-020,PT-IV-03","STATUS,TF1-STATUS",Desiring praise is not occupying a public role.
+actual_occupation_and_vocation,"Occupation, vocation and long-term career",True,proxy_only,proxy_only,,VOCATION,3,"L3-TOC-021,LILLY-TENTH-WORK,PT-IV-04","G15,G16,TF1-G15,TF1-G16",Work energy or meaningful volunteering is not occupational biography.
+friendship_conflict_longterm,"Actual friendships, durable ties and conflict",True,partial,partial,,BONDS,3,"L3-TOC-022,L3-TOC-023,PT-IV-07","G07,G25,TF1-A0",How one handles a friend is not history of friendships.
+actual_life_turning_points,Major actual life transitions,True,proxy_only,proxy_only,,TIMELINE,1,PT-IV-10,"LIFE-PHASE,G24",A hypothetical phase shift is not a dated life event.
+overall_life_circumstances,Material and biographical fortune over time,True,proxy_only,proxy_only,,TIMELINE,1,L3-TOC-009,G21,General routine preference does not summarize real external events.
+physical_vitality_appearance,Physical traits and body constitution,True,outside_scope,outside_scope,,,2,"L3-TOC-005,L3-TOC-008",G11,No clinical or morphological inference from personality answers.
+high_stakes_health_death_confinement,"Medical, mortality and captivity claims",True,outside_scope,outside_scope,,,5,"L3-TOC-003,L3-TOC-013,L3-TOC-024,L3-TOC-025,PT-IV-09",,"No compulsory clinical, violence or death prediction questions."
+historical_servitude_livestock,Period-specific servitude and livestock holdings,True,outside_scope,outside_scope,,,1,L3-TOC-014,,Not a universal modern psychological measurement.
+natal_timing_techniques,"Directions, profections, returns, transits",True,outside_scope,outside_scope,,,4,"L3-TOC-026,L3-TOC-027,L3-TOC-028,L3-TOC-029",,Calculation rules are not human traits; dated events are separately collected.
+natal_technical_preconditions,Birth-time rectification and natal prerequisites,True,outside_scope,outside_scope,,,3,"L3-TOC-001,L3-TOC-002,L3-TOC-004",,Not a person-facing trait item.
+interpretive_freedom_and_non_determinism,Historical noncompulsion qualifier,True,outside_scope,outside_scope,,,1,LILLY3-R20,,The historical author qualifies celestial causes; do not force self-report.
+self_surprise,Being surprised by oneself,False,absent,absent,EM01,,0,,,No direct natal frequency rule was located in checked passages.
+surprise_people_world,Surprise about others and the world,False,absent,absent,EM02,,0,,,Not directly attested as a rate in checked natal passages.
+awe_wonder,Awe and wonder,False,absent,absent,EM03,,0,,,Aesthetics or piety is not an awe intensity rule.
+sudden_realizations,Sudden revelations and insights,False,proxy_only,absent,EM04,,0,,G24,Different from a changed opinion or external turning point.
+felt_life_predictability,Daily felt predictability,False,proxy_only,absent,EM05,,0,,G21,Different from actual events or astrological timing technique.
+subjective_guidance,Feeling guided beyond one's plans,False,absent,absent,EM06,,0,,,Subjective feeling is not independent evidence of an external guide.
+meaningful_coincidences,Meaningful coincidences,False,absent,absent,EM07,,0,,,Not equivalent to practicing divination or omen reading.
+personal_life_meaning,Personal sense of life's meaning,False,proxy_only,proxy_only,EM08,,0,,"G16,TF1-G16",Meaning in life differs from one project's value.
+perceived_contribution,Perceived benefit to others/the world,False,proxy_only,proxy_only,EM08,,0,,"G16,TF1-G16",Do not collapse perceived impact and private meaning.
+unusual_practical_innovations,Distinctive nonstandard behaviors and inventions,False,partial,partial,,,0,,"G04,TF1-G04",Already covered when the V3 unusual behaviors are directly reported.
+place_sensory_sensitivity,Ordinary environmental comfort and sensitivity,False,partial,absent,,,0,,"G11,ROOM-EFFECT",A room-preference scenario is not evidence of illness.
+community_belonging,Felt belonging in community,False,proxy_only,proxy_only,,HOME,0,,"G06,TF1-G06",Felt belonging is not identical to family relationship history.

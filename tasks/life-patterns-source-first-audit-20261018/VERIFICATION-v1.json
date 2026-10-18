@@ -1,0 +1,108 @@
+{
+  "schema": "life-patterns-source-first-astrology-survey-audit-verification-v1",
+  "date": "2026-10-18",
+  "status": "DOCUMENTARY_SURVEY_COVERAGE_AUDIT_ONLY_NO_EMPIRICAL_PREDICTION_VALIDATION",
+  "original_user_outcome": "Audit traditional astrology chart topics against actual questionnaire for missing domains, not just implement the owners eight self-suggested topics.",
+  "base_commit": "d3b06a0867062c758b499ac8b3ba6eba34520093",
+  "live_service_or_gpt_edited": false,
+  "participant_private_answers_included": false,
+  "original_frozen_scores_altered": false,
+  "counts": {
+    "source_records": 92,
+    "source_book3_heading_records": 29,
+    "source_lilly3_religion_dream_entries": 31,
+    "source_ptolemy3_natal_passage_rows": 15,
+    "source_ptolemy4_chapter_topics": 9,
+    "source_lilly_intro_horary_house_topics": 4,
+    "source_brihat_jataka_ch15_verse_topics": 4,
+    "normalized_domains": 46,
+    "historically_attested_domains_in_this_bounded_corpus": 32,
+    "modern_extrapolated_or_nonattested_domains": 14,
+    "v7_absent_in_full_domain_registry": 18,
+    "v7_partial_in_full_domain_registry": 9,
+    "v7_proxy_only_in_full_domain_registry": 13,
+    "v7_outside_routine_scope_in_full_domain_registry": 6,
+    "unaddressed_historical_participant_relevant_domains": 13,
+    "optional_candidate_topics": 16,
+    "cf003_existing_planet_role_mappings_compared": 10
+  },
+  "source_limitations": [
+    "Lilly table of contents is only a subject inventory.",
+    "31 Lilly natal clauses in committed v1 include two-witness uncertainty and are not full original facsimile adjudication.",
+    "Ptolemy IV are chapter summaries rather than a comprehensive extracted set of natal predicates.",
+    "Brihat Jataka XV online Sanskrit/secondary English includes explicitly uncertain readings; not a manuscript adjudication.",
+    "Neither source-topic attestation nor direct questionnaire coverage proves astrological prediction.",
+    "Full Hellenistic, Jyotish and modern astrology not exhaustively audited."
+  ],
+  "verification": {
+    "deterministic_assembly": "PASS",
+    "claim_id_uniqueness": "PASS",
+    "existing_question_id_links": "PASS",
+    "legacy_horary_vs_natal_separation": "PASS",
+    "no_scored_chart_or_participant_changes": "PASS",
+    "ruff_check": "PASS",
+    "targeted_pytest": "6 passed"
+  },
+  "files": {
+    "START-HERE.md": {
+      "sha256": "0a71aeb88213c66c2ea089eb53f512e70f854d7adbe0a6b4c1a4351c50c35b3d",
+      "bytes": 2203
+    },
+    "RESULT.md": {
+      "sha256": "20c444ff4c86c83741a456c7512cb6dfd7f920834b782e5262f0ed97a5f0d121",
+      "bytes": 13717
+    },
+    "SIXTEEN-OPTIONAL-QUESTIONS.md": {
+      "sha256": "90c428cd9efb453263ebeb214343a53d6f695b678eb58b67503f3e7422cad599",
+      "bytes": 12955
+    },
+    "ADAPTIVE-QUESTION-CANDIDATES-v1.json": {
+      "sha256": "16123063e3cdbe9d834e871bd78c736df79b1930012a9dd6873d674127eaac34",
+      "bytes": 20391
+    },
+    "DOMAIN-COVERAGE-REVIEW.csv": {
+      "sha256": "2294ba11fec63ec8848525ad7724d4741d64d72ffd3d17cd010790121a6002a2",
+      "bytes": 9100
+    },
+    "CF003-PLANET-MAPPING-REVIEW.csv": {
+      "sha256": "ab9a4c007f4efee29e1a689946944f0aae6311304517648d383c60b25093a910",
+      "bytes": 5246
+    },
+    "HISTORICAL-SOURCE-CLAIMS.csv": {
+      "sha256": "598f2f17cf348bb733991537d8ae56a4649206f67fd70535b8a8dde93d30b88c",
+      "bytes": 30592
+    },
+    "DOMAIN-REGISTRY-SOURCE.psv": {
+      "sha256": "26b20d2a1aaf6c945c5e4fda6aeaddd7b003980202c4d91e75c5a6cf7653dc12",
+      "bytes": 8515
+    },
+    "SOURCE-TO-SURVEY-CROSSWALK-v2.json": {
+      "sha256": "8f1acb1b7307e33313fb69d11d52195de8d70aa637e661b33e5ed82254335f28",
+      "bytes": 89854
+    },
+    "CF003-PLANET-MAPPING-GAPS-v1.json": {
+      "sha256": "04a57520a159006093e596fbc4ff0a39fbbd2672ce0a0deb7c251a6255828b5c",
+      "bytes": 11027
+    },
+    "build_crosswalk.py": {
+      "sha256": "1f3bedee5420f949de2624190de5d55eef534f0c5f6795c5079b3cf6f4823ab1",
+      "bytes": 26503
+    },
+    "build_views.py": {
+      "sha256": "66c258255b68ed04d08634ce4084647465c248bdcdae5f2d3ed87b8e9e285471",
+      "bytes": 6650
+    },
+    "PLAN.md": {
+      "sha256": "6f1521b6a36f9fe1edb27a74b92af6271c33df9161d75da386279c5114b8a1ec",
+      "bytes": 4273
+    },
+    "input-snapshots/LILLY3-NATAL-DOMAIN-CENSUS-v1.json": {
+      "sha256": "0e62ce02d703fff539603b2e8342ee945054a471edc93331d32d8759a94bef37",
+      "bytes": 31143
+    },
+    "input-snapshots/LILLY-BOOK3-RELIGION-DREAMS-CLAIMS-v1.json": {
+      "sha256": "9de2eaaae83c528f56adcf999a3263af21f0775f29f0f8741965fbe0daad8e91",
+      "bytes": 33519
+    }
+  }
+}
