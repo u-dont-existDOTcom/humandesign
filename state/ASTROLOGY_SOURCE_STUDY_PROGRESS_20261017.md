@@ -1,3 +1,9 @@
+# Original Lilly 1647 through printed CLVI historical mortality — 2026-10-18
+
+Following remote verified publication **11,534 historical documentary annotations** (10,468 Lilly +1,066 Ptolemy), original first-edition photograph frontier PDF685/894 (**76.6% physical scanned-page position ONLY, not scientific research/predictive completion**). B07l adds 222 source-only CLVI records, 6 period fixed-star source coordinates, dozens of compound fatal/nonfatal outcomes but MAIN original caveats that aphorisms cannot operate alone and astrologers must not state certain time of death. Zero human mortality outcomes tested, no runtime scorer promotions. NEXT major UNNUMBERED original `THE EFFECTS OF DIRECTIONS` PDF685–688 before printed CLVII later PDF688. Directions timing/birth-time uncertainty crucial to independent blind research. Chinese 46 BaZi +26 Zi Wei source-only notes remain separate.
+
+---
+
 # Original Lilly first edition through CLV Captivity — 2026-10-18
 
 After authenticated source publication **11,312 historical documentary annotations** (10,246 Lilly +1,066 Ptolemy). First-edition physical scan frontier PDF678/894 (**75.8% scanned frame position ONLY; NOT scientific completion**). B07j adds 100 historical conditions with multiple and sometimes conflicting hypotheses about custody and length of imprisonment. No real person custody/criminal or medical forecast validated, zero model promotions. NEXT printed CLVI on violent/natural death from PDF678 onward. Chinese source BaZi46/ZiWei26 separate and not yet human-tested.

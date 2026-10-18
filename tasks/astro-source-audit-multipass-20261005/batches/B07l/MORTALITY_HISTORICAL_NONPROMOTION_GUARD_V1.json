@@ -1,0 +1,65 @@
+{
+  "schema": "LILLY_CLVI_HISTORIC_MORTALITY_SOURCE_QUARANTINE_V1",
+  "source": "William Lilly 1647 original first edition printed CLVI PDF678–684",
+  "status": "HISTORICAL_DOCUMENTARY_ONLY_NO_PERSONAL_DEATH_PREDICTION",
+  "nonpromotion": {
+    "source_only": true,
+    "clinical_or_criminal_accuracy_established": false,
+    "individual_death_type_inference_allowed": false,
+    "individual_death_timing_inference_allowed": false,
+    "individual_disease_or_cause_of_death_inference_allowed": false,
+    "person_crime_self_harm_risk_inference_allowed": false,
+    "runtime_promotions": 0
+  },
+  "original_author_source_limits": [
+    "PDF679/printed645: Fortune in Ascendant and other in eighth expressly takes away prior violent-death fear",
+    "PDF680/printed646: two, three or more concordant testimonies preferred, not a single free-standing aspect",
+    "PDF681/printed647: a Benevolent planet mitigates Saturn aphorisms",
+    "PDF682/printed648: Mars death judgments invalid without configuration with one or both luminaries",
+    "PDF684/printed650: aphorisms do not operate by themselves without serious mixture with principal significators",
+    "PDF684/printed650: if no violent-death source rules apparent, author alleges natural death",
+    "PDF684/printed650: time of death in hands of God; astrologer should not be positive about death timing"
+  ],
+  "separate_historic_targets": [
+    {
+      "target": "actual_death_v_nat_other",
+      "measured": false
+    },
+    {
+      "target": "cause_of_death_category",
+      "measured": false
+    },
+    {
+      "target": "accidental_injury_without_death",
+      "measured": false
+    },
+    {
+      "target": "legal_execution_vs_nonlegal_violence",
+      "measured": false
+    },
+    {
+      "target": "death_date_or_age",
+      "measured": false
+    },
+    {
+      "target": "serious_near_miss",
+      "measured": false
+    },
+    {
+      "target": "death_disorder_disease",
+      "measured": false
+    }
+  ],
+  "unresolved_sources": [
+    "source full diplomatic glyph transcription not finished",
+    "six-star original epoch and modern precession parity not established",
+    "ancient Ptolemy/Schoner/Cardanus/Albubater/Haly/Origanus authorship independently uncollated",
+    "planetary priority and essential dignity weights not formalized",
+    "original astronomical house/time geometry not verified",
+    "no prospective human mortality evidence or matched baseline/denominator"
+  ],
+  "historic_source_star_table": "VIOLENT_FIXED_STARS_1647_SOURCE_TABLE_V1.json",
+  "confidence": "photo-anchored selective reversible clauses, no clinical or predictive validity",
+  "real_human_deaths_predicted_or_validated": 0,
+  "runtime_promotions": 0
+}

@@ -1,3 +1,9 @@
+# Lilly original CLVI historical death source admitted; directions source next
+
+2026-10-18 Africa/Dakar UTC+0. B07l R10247–R10468 locally accepted and pending authenticated GitHub remote SHA. After publication 10,468 Lilly +1,066 Ptolemy =11,534 historical source notes, 36 first-edition/portable ZIP source checks pass. NO human death prediction, dates, injury risk or actual legal/moral classifications, no runtime source scoring promotions. Next UNNUMBERED `THE EFFECTS OF DIRECTIONS` original PDF685–688, then printed CLVII and CLVIII separate. Chinese BaZi46 +ZiWei26 sources separately preserved.
+
+---
+
 # Original Lilly CLV prison/captivity source; CLVI death next
 
 2026-10-18 Africa/Dakar UTC+0. B07j R10147–R10246 locally accepted, GitHub remote readback pending. After remote verification 10,246 Lilly +1,066 Ptolemy=11,312 historical source annotations, 24 source-photo/ZIP independent tests pass. No human captivity, judicial, illness or violent death predictions validated and zero promoted runtime rules. NEXT separate printed CLVI on death at PDF678. Chinese BaZi46/Zi Wei26 source-only historical records remain separate.
