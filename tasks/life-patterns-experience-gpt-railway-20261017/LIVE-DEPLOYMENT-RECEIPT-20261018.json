@@ -1,0 +1,68 @@
+{
+  "schema": "life-patterns-experience-v19-live-deployment-receipt",
+  "version_date": "2026-10-18",
+  "status": "RAILWAY_V19_VERIFIED_GPT_OWNER_EDITOR_PENDING",
+  "parent_outcome": "Retain earlier participant evidence; introduce separate opt-in lived-experience research module through existing GPT and Railway completion",
+  "source": {
+    "base_research_branch": "research/life-patterns-guided-eight-assessment-20261015",
+    "merged_pr": 129,
+    "merged_commit": "eda47586e6764c27ca05f27fac17c64a9be655f0",
+    "isolated_deployment_branch": "deploy/life-patterns-experience-v19-20261018",
+    "deployment_commit": "7de212f027e14c198fb58dc91d11df3068d58e56",
+    "deployment_commit_delta": "Only root railway.json selects existing participant Dockerfile instead of unrelated relationship app",
+    "source_pinned_exactly": true
+  },
+  "railway": {
+    "project": "humandesign-relationship",
+    "service": "life-patterns-participant",
+    "environment": "production",
+    "initial_local_upload": "9ea2cab0-03c6-4240-bedd-101310b1e4a2",
+    "pinned_build_deployment": "316b66c9-2141-43e3-ba88-d3242c26811a",
+    "pinned_status": "SUCCESS",
+    "pinned_git_commit": "7de212f027e14c198fb58dc91d11df3068d58e56",
+    "healthcheck_http": 200,
+    "live_action_version": "1.9.0",
+    "action_operations": 7,
+    "finish_page_http": 200,
+    "finish_content_security_policy_present": true,
+    "experience_static_script_http": 200,
+    "anonymous_review_state_http": 401,
+    "anonymous_review_read_http": 401,
+    "anonymous_research_admin_http": 401,
+    "public_original_intake_enabled": false,
+    "original_encrypted_volume_id": "928957b0-0128-4900-86f2-205d3b7f69d7",
+    "mount_path": "/data",
+    "replicas": 1,
+    "unrelated_staged_change_count": 4,
+    "unrelated_staged_changes_applied": false,
+    "one_existing_service_only": true
+  },
+  "build_and_testing": {
+    "python_passed": 1308,
+    "python_skipped": 6,
+    "skip_reason": "uninstalled official Swiss Ephemeris fixtures; unrelated to this module",
+    "docker_build": "PASS",
+    "hosted_ci": "SUCCESS",
+    "closed_network_browser": "PASS opt-in, opt-out, note-only guard, mobile 375px, no unexpected requests or JS errors",
+    "gpt_instruction_strict_characters": 7964,
+    "gpt_knowledge_file_count": 10,
+    "gpt_action_version": "1.9.0",
+    "gpt_bundle_sha256": "bc16e98b7dc08a4bbfe1059dac40aca1762e04ea08a6f558e570cee84b952c8b"
+  },
+  "boundaries": {
+    "historical_primary_mutated": false,
+    "historical_cf003_mutated": false,
+    "new_experience_prospectively_astrology_scored": false,
+    "new_experience_separate_encrypted_optin": true,
+    "private_owner_responses_in_repo": false,
+    "live_real_participant_end_to_end_performed": false
+  },
+  "delivery": {
+    "gpt_package_in_owner_downloads": true,
+    "complete_extracted_package_in_owner_downloads": true,
+    "update_guide_in_package": true,
+    "existing_private_custom_gpt_editor_applied": false
+  },
+  "outstanding_owner_step": "Update the EXISTING Life Patterns Custom GPT editor in place: replace Instructions; install all 10 Knowledge files; replace Action with v1.9.0 while retaining original API key and GPT identity; save.",
+  "followup_note": "Railway warns legacy root railway.json config format will be deprecated on 2026-12-01; move isolated deployment configuration to native infrastructure-as-code before that date if further deployments are needed."
+}
