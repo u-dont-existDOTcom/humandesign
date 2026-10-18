@@ -1,3 +1,9 @@
+# Latest original 1647 Lilly source checkpoint: printed CLXIIII Moon directions
+
+**343 historical documentary source annotations R11826–R12168** (341 substantive, 2 next-unit navigation) across 41 reversible original 1647 photo-anchored groups PDF725–735. **12,168 Lilly +1,066 Ptolemy=13,234 Western historical annotations**, and independent **97 Chinese BaZi/Zi Wei documentary annotations**. Next source **R12169**, the **unnumbered Moon Directed to FIXED STARRES** heading starts PDF735/printed701 below the CLXIIII twelfth-house text. Original annual-measure table near PDF745 is a later separate numerical source unit. **108 independently extracted ZIP CRC/sha/source tests pass**. Historical medical, death, legal, religion, sexual, personality or money claims are NOT verified human predictions. No modern chart-time engine parity or runtime inference rules have been promoted.
+
+## Earlier retained research state
+
 # Lilly original 1647 printed CLXIII Sun fixed-stars source accepted
 
 **104 historical documentary annotations R11722–R11825**, 102 substantive and two following CLXIIII navigation, 13 original photo-anchored reversible source groups across PDF723–725/printed689–691; 11 old-star effects passages / 13 period stellar entries. **11,825 Lilly +1,066 Ptolemy=12,891 Western historical source notes**, plus separate **97 Chinese BaZi+Zi Wei source annotations**. Next printed **CHAP CLXIIII Moon to Promittors** begins below a divider on PDF725/printed691, **next R11826**. **62 ZIP-extracted CRC/hash/documentary tests passed**. All period mortality, clinical, violence, criminal, faith, class, gender, money, and moralizing claims are historic text, NOT validated predictions. No modern epoch/directions-time engine parity; zero human empirical forecast validations and zero model promotions.
