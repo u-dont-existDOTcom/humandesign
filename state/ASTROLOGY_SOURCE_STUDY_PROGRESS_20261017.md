@@ -1,3 +1,9 @@
+# Original Lilly first edition through CLV Captivity — 2026-10-18
+
+After authenticated source publication **11,312 historical documentary annotations** (10,246 Lilly +1,066 Ptolemy). First-edition physical scan frontier PDF678/894 (**75.8% scanned frame position ONLY; NOT scientific completion**). B07j adds 100 historical conditions with multiple and sometimes conflicting hypotheses about custody and length of imprisonment. No real person custody/criminal or medical forecast validated, zero model promotions. NEXT printed CLVI on violent/natural death from PDF678 onward. Chinese source BaZi46/ZiWei26 separate and not yet human-tested.
+
+---
+
 # Original Lilly first edition through CLIIII adversary cases — 2026-10-18
 
 After authenticated publication **11,212 historic source annotations** (10,146 Lilly +1,066 Ptolemy). First-edition physical source frontier PDF676/894 (**75.6% scanned physical page order ONLY, not predictive or mathematical study completion**). B07i adds 64 historical propositions on asserted overcoming of adversaries, and problematic unproven death/illness/prison/accident/relationship warnings. No actual person prediction validity or source runtime promotions. NEXT printed CLV captivity starts PDF676 after divider, continues PDF677 onward. Chinese BaZi46/ZiWei26 historical source records separately indexed.
