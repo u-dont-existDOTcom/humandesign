@@ -1,3 +1,9 @@
+# Original Lilly first edition through CLIIII adversary cases — 2026-10-18
+
+After authenticated publication **11,212 historic source annotations** (10,146 Lilly +1,066 Ptolemy). First-edition physical source frontier PDF676/894 (**75.6% scanned physical page order ONLY, not predictive or mathematical study completion**). B07i adds 64 historical propositions on asserted overcoming of adversaries, and problematic unproven death/illness/prison/accident/relationship warnings. No actual person prediction validity or source runtime promotions. NEXT printed CLV captivity starts PDF676 after divider, continues PDF677 onward. Chinese BaZi46/ZiWei26 historical source records separately indexed.
+
+---
+
 # Original Lilly 1647 through CLIII enemy quality — 2026-10-18
 
 After authenticated source publication **11,148 historical notes** (10,082 Lilly +1,066 Ptolemy), original first-edition scan frontier PDF675/894 (**75.5% physical page position only, NOT full research/scientific completion**). B07h adds 40 historic open/covert enemy type and relative power/source-dignity claims, including original benefic-powerful exception. Zero verified real person hostility, safety or character predictions, no runtime promotion. NEXT printed CLIIII on whether native overcomes adversaries begins PDF675 then printed CLV captivity from PDF676. Chinese BaZi46/Zi Wei26 remain original-source only and separate.
