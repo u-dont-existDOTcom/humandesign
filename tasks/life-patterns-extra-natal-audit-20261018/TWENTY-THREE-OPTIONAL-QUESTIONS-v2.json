@@ -1,0 +1,498 @@
+{
+  "schema": "life-patterns-cross-tradition-23-optional-question-candidates-v2",
+  "status": "EXPERIMENTAL_NOT_LIVE_NOT_SCORED",
+  "version_date": "2026-10-18",
+  "instrument_policy": "Topic selection first; previously answered equivalents bypassed; never ask all 23; explicit refusal or skip; no more than five participant-selected optional topics in one sitting.",
+  "source_record_versions": [
+    "ADAPTIVE-QUESTION-CANDIDATES-v1.json (unchanged existing 16)",
+    "SEVEN-NEW-TOPICS-v2.json (additional seven)"
+  ],
+  "questions": [
+    {
+      "id": "DREAM",
+      "label": "Dreaming and what dreams mean to you",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "high",
+      "question": "In a typical recent month, how often do you remember dreams after waking up, if ever?",
+      "optional_followup": "If you remember them, do particular subjects recur, or do dreams ever influence how you think or act while awake? You can say no or skip.",
+      "answer_dimensions": [
+        "recall_frequency",
+        "vividness_when_remembered_optional",
+        "usual_emotional_tone_optional",
+        "meaning_assigned_optional"
+      ],
+      "time_window": "typical_last_3_months",
+      "privacy_and_source_caution": "Dream recall frequency is not a claim that dreams foretell events. Do not infer dream content from beliefs about omens.",
+      "source_domains": [
+        "dream_content_and_tone",
+        "dream_interpretation_and_beliefs"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "BELIEF",
+      "label": "Worldview and regular spiritual/religious practice",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "high",
+      "question": "What, if anything, plays a regular part in your life: religious observance, meditation or other spiritual practice, philosophical reflection, a secular worldview, or none of these?",
+      "optional_followup": "Do these activities reflect deep personal conviction, routine, community belonging, curiosity, or something else?",
+      "answer_dimensions": [
+        "actual_current_practice_type_optional",
+        "practice_frequency_optional",
+        "current_self_description_optional"
+      ],
+      "time_window": "current_and_past_year",
+      "privacy_and_source_caution": "Do not infer religious identity from a sensed higher power, awe or synchronicity. No identity is assumed; refusal is complete.",
+      "source_domains": [
+        "religious_spiritual_disposition",
+        "spiritual_or_ritual_practice"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "BELIEF_CHANGE",
+      "label": "Important changes in your beliefs or convictions",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "high",
+      "question": "Have your most important beliefs or convictions stayed broadly stable, shifted gradually, changed suddenly, or changed several times across your life?",
+      "optional_followup": "If something changed, what would you consider the most significant shift and roughly when?",
+      "answer_dimensions": [
+        "change_pattern",
+        "approximate_age_period_optional",
+        "self_reported_change_domains_optional"
+      ],
+      "time_window": "lifetime",
+      "privacy_and_source_caution": "A change of mind is not necessarily a religious conversion, a revelation or evidence of being guided. Do not force a narrative.",
+      "source_domains": [
+        "belief_conversion_or_worldview_change",
+        "opinion_revision_and_flexibility"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "RENUNCIATION",
+      "label": "Deliberate renunciation, retreat or initiation",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "high",
+      "question": "Have there been any significant periods in your life when you deliberately stepped back from worldly goals, possessions, status or ordinary social roles, whether through spiritual/religious commitment, simplicity, retreat or something else?",
+      "optional_followup": "If so, was this a formal commitment or more a personal way of living, and did it last or later change?",
+      "answer_dimensions": [
+        "applicability",
+        "chosen_commitment_vs_external_constraint_optional",
+        "approximate_age_period_optional",
+        "duration_optional",
+        "formal_initiation_optional",
+        "later_return_optional"
+      ],
+      "time_window": "lifetime",
+      "privacy_and_source_caution": "Voluntary renunciation and formal initiation are distinct from generalized spiritual experiences, introversion, depression, poverty or enforced isolation. This is not an assumed religious identity or a medical state.",
+      "source_domains": [
+        "ascetic_renunciation_and_initiation"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "ART",
+      "label": "Making things creatively versus appreciating beauty",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "high",
+      "question": "Over the past year, how often have you actively made, written, designed, performed or invented something for its own sake? Separately, how often have art, music, beauty or aesthetics been important experiences for you?",
+      "optional_followup": "If they differ, what do you create yourself and what do you mostly appreciate or enjoy?",
+      "answer_dimensions": [
+        "creative_production_frequency",
+        "aesthetic_appreciation_frequency",
+        "example_domain_optional",
+        "creative_achievement_optional"
+      ],
+      "time_window": "past_year",
+      "privacy_and_source_caution": "Enjoying art and producing it are different; school/work outputs need not be excluded or automatically counted. Avoid confusing achievement with aesthetic preference.",
+      "source_domains": [
+        "creative_production",
+        "aesthetic_music_engagement"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "MYSTERY",
+      "label": "Interest in hidden, philosophical or unusual questions",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "high",
+      "question": "How often, if at all, do you actively explore unresolved philosophical questions, hidden or mysterious subjects, divination, scientific puzzles, or other ways of investigating what you do not yet understand?",
+      "optional_followup": "When you encounter an unusual claim, what tends to convince you it is true or mistaken?",
+      "answer_dimensions": [
+        "actual_activities_frequency",
+        "subject_area_tags_optional",
+        "evidence_evaluation_style_optional"
+      ],
+      "time_window": "past_year_and_long_term",
+      "privacy_and_source_caution": "Interest in omens, interest in science, personal intuition and beliefs about causes are different. Do not collapse into an occult-or-not binary.",
+      "source_domains": [
+        "esoteric_interests_omens_divination",
+        "philosophical_scientific_curiosity"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "TIMELINE",
+      "label": "Actual turning points and life phases",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "high",
+      "question": "If you look across your life, what are up to three changes or turning points that most clearly divide it into a before and after? You may say none or decline.",
+      "optional_followup": "For each event you choose, was the change mostly in external circumstances, your understanding/identity, or both?",
+      "answer_dimensions": [
+        "event_description_optional",
+        "approximate_age_or_year_optional",
+        "external_event_vs_inner_change_optional",
+        "life_domain_optional",
+        "confidence_in_date_optional"
+      ],
+      "time_window": "lifetime",
+      "privacy_and_source_caution": "Do not require trauma, death, health events or intimate details. A major inner transformation is distinct from actual marriage, job, family or residence events. Not a live forecasting instrument.",
+      "source_domains": [
+        "actual_life_turning_points",
+        "overall_life_circumstances"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "VOCATION",
+      "label": "Actual work, calling and long-running roles",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "high",
+      "question": "What kinds of work or contribution have actually occupied the most of your life so far? Has there been one lasting vocation, several distinct phases, or no clear occupation or calling?",
+      "optional_followup": "If an occupation or calling has changed, what changed and around what period?",
+      "answer_dimensions": [
+        "actual_role_history_optional",
+        "felt_vocation_separate_optional",
+        "approximate_transitions_optional"
+      ],
+      "time_window": "current_and_lifetime",
+      "privacy_and_source_caution": "Actual jobs and public roles are not inferred from how mentally draining computer work feels or a volunteer hypothetical. Unemployment or unpaid care are valid contexts.",
+      "source_domains": [
+        "actual_occupation_and_vocation"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "HOME",
+      "label": "Home, family roots and belonging",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "high",
+      "question": "Where, with whom, or in what situations have you felt most at home or a sense of belonging, if anywhere? Has that changed over your life?",
+      "optional_followup": "Do family relationships, chosen community, or places themselves play the biggest role, if any?",
+      "answer_dimensions": [
+        "belonging_context_optional",
+        "period_changes_optional",
+        "kinship_vs_place_distinction_optional"
+      ],
+      "time_window": "lifetime_and_current",
+      "privacy_and_source_caution": "Do not presume supportive parents, siblings, a family home or a stable residence. No personal identification details required.",
+      "source_domains": [
+        "parents_home_roots",
+        "kinship_siblings"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "KINSHIP",
+      "label": "Actual sibling and extended-family roles",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "medium",
+      "question": "Without naming anyone, what role—if any—have siblings or extended relatives played in your life, and how has that changed?",
+      "optional_followup": "Would you say these ties have been central, occasional, absent, or too variable to summarize?",
+      "answer_dimensions": [
+        "applicability",
+        "actual_relational_role_optional",
+        "change_over_time_optional"
+      ],
+      "time_window": "lifetime",
+      "privacy_and_source_caution": "Not everyone has siblings or safe family relationships; skip is not an absence of empathy or attachment.",
+      "source_domains": [
+        "kinship_siblings",
+        "parents_home_roots"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "BONDS",
+      "label": "Actual long-term friendship and partnership patterns",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "medium",
+      "question": "Looking at your actual close bonds over time, have long friendships or partnerships tended to last, change, end and begin again, or follow different patterns?",
+      "optional_followup": "Would an answer about friendship be different from one about romantic partnership?",
+      "answer_dimensions": [
+        "friendship_stability_optional",
+        "romantic_history_optional",
+        "approximate_phase_change_optional"
+      ],
+      "time_window": "lifetime",
+      "privacy_and_source_caution": "Do not force relationship trauma, marital status, sexuality or specific partner details. Existing hypothetical romance reactions are not actual relationship histories.",
+      "source_domains": [
+        "friendship_conflict_longterm",
+        "actual_marriage_partnership_history"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "TRAVEL",
+      "label": "Living elsewhere and encounters with different cultures",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "medium",
+      "question": "How much have actual travel, relocation, languages or living among different cultures shaped your life, if at all?",
+      "optional_followup": "Has this been recurring over many years or concentrated in one period?",
+      "answer_dimensions": [
+        "actual_vs_desired_travel_optional",
+        "duration_or_phase_optional",
+        "felt_impact_optional"
+      ],
+      "time_window": "lifetime",
+      "privacy_and_source_caution": "Desire for travel and one hypothetical itinerary are not evidence of actual journeys. No precise addresses requested.",
+      "source_domains": [
+        "actual_foreign_travel_migration"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "STATUS",
+      "label": "Changes in public responsibility or recognition",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "medium",
+      "question": "Have public responsibilities, influence or recognition actually been a major or changing part of your life, or mostly not?",
+      "optional_followup": "Is that different from how much you personally care about recognition?",
+      "answer_dimensions": [
+        "actual_roles_optional",
+        "historical_changes_optional",
+        "desire_for_recognition_separately_optional"
+      ],
+      "time_window": "lifetime",
+      "privacy_and_source_caution": "Separate actual status and responsibility from whether praise feels rewarding (which TF1 already asks).",
+      "source_domains": [
+        "actual_public_rank_and_recognition"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "RESOURCES",
+      "label": "Broad material circumstances over time",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "medium",
+      "question": "Without giving amounts, have your material circumstances generally been stable, improving, worsening, cyclical, or too varied to summarize?",
+      "optional_followup": "Do financial security and material possessions matter to you in the same way, or differently?",
+      "answer_dimensions": [
+        "overall_life_course_pattern_optional",
+        "approximate_phase_optional",
+        "objective_vs_subjective_security_optional"
+      ],
+      "time_window": "lifetime",
+      "privacy_and_source_caution": "No specific income, account data, inherited amounts or debt disclosures requested. Windfall spending preference does not establish actual wealth.",
+      "source_domains": [
+        "actual_finances_resources"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "PARENTING",
+      "label": "Caregiving and parenting when applicable",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "medium",
+      "question": "Has caring for children or other dependents been part of your actual life? If so, how central has it been and has your role changed?",
+      "optional_followup": "If care matters to you, is it a chosen role, a practical obligation, or both?",
+      "answer_dimensions": [
+        "role_applicability",
+        "role_centrality_optional",
+        "phase_changes_optional"
+      ],
+      "time_window": "current_and_lifetime",
+      "privacy_and_source_caution": "Do not assume children, fertility, caregiving or family plans. Never turn natal fertility/death claims into medical predictions.",
+      "source_domains": [
+        "parenthood_caregiving"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "PLAY",
+      "label": "Playfulness and spontaneous enjoyment",
+      "source_version": "2026-10-18-existing-sixteen",
+      "priority": "medium",
+      "question": "During ordinary life over the past year, how often have you been playful, amused, silly, or spontaneously drawn into enjoyment, if at all?",
+      "optional_followup": "Does playfulness usually arise with other people, on your own, or in both settings?",
+      "answer_dimensions": [
+        "frequency_optional",
+        "typical_context_optional",
+        "social_vs_solitary_optional"
+      ],
+      "time_window": "past_year",
+      "privacy_and_source_caution": "Enjoyment is not necessarily awe, creativity or optimistic mood. Playfulness is historically adjacent, not an established natal predictor of frequency.",
+      "source_domains": [
+        "play_humor_spontaneous_enjoyment"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "LEARNING_HISTORY",
+      "label": "Education Learning History",
+      "source_version": "2026-10-18-second-pass-seven",
+      "priority": 1,
+      "question": "Across your life, what subjects, skills or crafts have you actually spent substantial time studying or learning, if any? Was this mainly formal education, self-directed study or hands-on experience?",
+      "optional_followup": "Which subjects have stayed important over years, and which were brief interests?",
+      "answer_dimensions": [
+        "actual_sustained_learning_topics_optional",
+        "formal_vs_self_directed_vs_practical_optional",
+        "period_and_depth_optional"
+      ],
+      "time_window": "source_specific_optional_timeline",
+      "privacy_and_source_caution": "No IQ estimate, reading-level ranking, academic pedigree gate or claim about actual intelligence.",
+      "source_domains": [
+        "education_learning_history"
+      ],
+      "source_claim_ids": [
+        "V-I-MERCURY-EDUCATION",
+        "D-II-JUPITER-MERCURY-LAW",
+        "BJ-XVIII-LITERACY-MATH"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "ANGER_REPAIR",
+      "label": "Grievance Duration Repair",
+      "source_version": "2026-10-18-second-pass-seven",
+      "priority": 1,
+      "question": "When something genuinely upsets or angers you, how long does that feeling usually matter to you: briefly, hours, days, much longer, rarely, or very differently depending on the situation?",
+      "optional_followup": "If a relationship continues, can you forgive or reconnect before the feeling has fully gone, or does it tend to work differently?",
+      "answer_dimensions": [
+        "typical_duration_and_variability",
+        "time_to_resume_normal_contact_optional",
+        "forgiveness_vs_trust_vs_reconciliation_optional"
+      ],
+      "time_window": "source_specific_optional_timeline",
+      "privacy_and_source_caution": "No forced re-telling of harm or abusive experiences; boundaries and forgiveness are not automatically opposites.",
+      "source_domains": [
+        "grievance_duration_repair"
+      ],
+      "source_claim_ids": [
+        "BJ-XVI-ANGER",
+        "BJ-XVII-FORGIVING",
+        "BJ-XVII-LINGERING-ANGER"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "RECIPROCITY",
+      "label": "Giving Receiving Help",
+      "source_version": "2026-10-18-second-pass-seven",
+      "priority": 2,
+      "question": "In your actual close relationships or communities, how often do you meaningfully help others, and separately how often do you seek or accept help yourself?",
+      "optional_followup": "Does giving come more easily than accepting support, or is it the other way around? Both or neither are valid.",
+      "answer_dimensions": [
+        "giving_frequency",
+        "receiving_frequency",
+        "practical_vs_emotional_optional",
+        "conditions_that_change_the_balance_optional"
+      ],
+      "time_window": "source_specific_optional_timeline",
+      "privacy_and_source_caution": "Frequency of giving is not proof of virtue. Receiving help is included as a design choice, not directly quantified by the cited classical claims.",
+      "source_domains": [
+        "giving_receiving_help"
+      ],
+      "source_claim_ids": [
+        "V-I-JUPITER-BENEFICENCE",
+        "D-II-JUPITER-VENUS-GIVING",
+        "BJ-XVI-GENEROSITY",
+        "BJ-XVII-FAMILY-HELP"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "CONTENTMENT",
+      "label": "Contentment Satisfaction",
+      "source_version": "2026-10-18-second-pass-seven",
+      "priority": 2,
+      "question": "When your basic situation is acceptable, how often do you feel genuinely content with things as they are? Separately, how much do you feel drawn to improve, change or pursue something else?",
+      "optional_followup": "Can you feel content and still strongly motivated to grow, or do those experiences usually pull in different directions?",
+      "answer_dimensions": [
+        "frequency_of_contentment",
+        "frequency_of_desire_for_change",
+        "context_or_time_changes_optional"
+      ],
+      "time_window": "source_specific_optional_timeline",
+      "privacy_and_source_caution": "Treat motivation and contentment as independent axes; avoid labeling contentment as passivity or ambition as greed.",
+      "source_domains": [
+        "contentment_satisfaction"
+      ],
+      "source_claim_ids": [
+        "BJ-XVI-CONTENTMENT"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "UPBRINGING",
+      "label": "Formative Caregiving Arrangements",
+      "source_version": "2026-10-18-second-pass-seven",
+      "priority": 3,
+      "question": "If you want to describe it, did you grow up mainly with one stable set of caregivers or did your living or caregiving arrangements change significantly?",
+      "optional_followup": "If something changed, was it an important turning point for you, or simply a normal part of your childhood?",
+      "answer_dimensions": [
+        "stable_vs_changed_vs_unknown_or_decline",
+        "approximate_period_optional",
+        "impact_on_later_life_optional"
+      ],
+      "time_window": "source_specific_optional_timeline",
+      "privacy_and_source_caution": "No assumption of separation, adoption, trauma, parental death, illness or special household type. Respondent may omit any details.",
+      "source_domains": [
+        "formative_caregiving_arrangements"
+      ],
+      "source_claim_ids": [
+        "D-I-UPBRINGING",
+        "D-I-PARENT-SEPARATION",
+        "BJ-XVII-EARLY-SEPARATION"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "PRIVACY",
+      "label": "Privacy Self Disclosure",
+      "source_version": "2026-10-18-second-pass-seven",
+      "priority": 4,
+      "question": "In everyday relationships, how much of your inner thoughts, feelings and personal life do you generally share, and how much do you prefer to keep private?",
+      "optional_followup": "Does this depend strongly on trust, subject or the other person's response?",
+      "answer_dimensions": [
+        "typical_disclosure_range",
+        "relationship_context_optional",
+        "actual_sharing_vs_desire_optional"
+      ],
+      "time_window": "source_specific_optional_timeline",
+      "privacy_and_source_caution": "The old source's 'secretive' passage is pejorative; it is neither evidence of lying nor a moral judgment. Do not ask what actual secrets are.",
+      "source_domains": [
+        "privacy_self_disclosure"
+      ],
+      "source_claim_ids": [
+        "V-I-SATURN-PRIVACY"
+      ],
+      "already_live": false
+    },
+    {
+      "id": "SENSORY_ENJOYMENT",
+      "label": "Everyday Sensory Pleasure",
+      "source_version": "2026-10-18-second-pass-seven",
+      "priority": 5,
+      "question": "What everyday things bring you noticeable pleasure through the senses—such as food, music, scent, warmth, colors, textures or being in natural places—if any?",
+      "optional_followup": "Do you regularly seek these experiences out, or mostly notice them when they happen?",
+      "answer_dimensions": [
+        "domain_specific_enjoyment_optional",
+        "frequency_and_usual_intensity_optional",
+        "nature_vs_art_vs_food_optional"
+      ],
+      "time_window": "source_specific_optional_timeline",
+      "privacy_and_source_caution": "Do not interpret food pleasure as a nutritional or mental-health diagnosis. Prefer a conditional follow-up over a full independent module.",
+      "source_domains": [
+        "everyday_sensory_pleasure"
+      ],
+      "source_claim_ids": [
+        "V-I-VENUS-PLEASURE",
+        "BJ-XVII-FOOD",
+        "BJ-XVII-GARDEN"
+      ],
+      "already_live": false
+    }
+  ]
+}

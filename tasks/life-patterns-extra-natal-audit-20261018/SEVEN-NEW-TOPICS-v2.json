@@ -1,0 +1,193 @@
+{
+  "schema": "life-patterns-seven-additional-optional-topic-candidates-v2",
+  "version_date": "2026-10-18",
+  "status": "RESEARCH_CANDIDATE_DO_NOT_ACTIVATE_LIVE_OR_SCORE",
+  "parent_previous_bank": "tasks/life-patterns-source-first-audit-20261018/ADAPTIVE-QUESTION-CANDIDATES-v1.json",
+  "previous_candidate_count": 16,
+  "candidates": [
+    {
+      "id": "UPBRINGING",
+      "domain": "formative_caregiving_arrangements",
+      "priority": 3,
+      "kind": "sensitive_optional_life_history",
+      "question": "If you want to describe it, did you grow up mainly with one stable set of caregivers or did your living or caregiving arrangements change significantly?",
+      "dimensions": [
+        "stable_vs_changed_vs_unknown_or_decline",
+        "approximate_period_optional",
+        "impact_on_later_life_optional"
+      ],
+      "followup": "If something changed, was it an important turning point for you, or simply a normal part of your childhood?",
+      "source_claim_ids": [
+        "D-I-UPBRINGING",
+        "D-I-PARENT-SEPARATION",
+        "BJ-XVII-EARLY-SEPARATION"
+      ],
+      "previous_nearest_questions": [
+        "HOME",
+        "KINSHIP",
+        "TIMELINE"
+      ],
+      "newness": "Actual early caregiving arrangements are not measured by where a person now feels at home.",
+      "caution": "No assumption of separation, adoption, trauma, parental death, illness or special household type. Respondent may omit any details.",
+      "research_note": "Dorotheus passages also discuss slavery and death: those are historical contexts, not a predictor or cue to probe trauma."
+    },
+    {
+      "id": "LEARNING_HISTORY",
+      "domain": "education_learning_history",
+      "priority": 1,
+      "kind": "actual_activity_and_life_history",
+      "question": "Across your life, what subjects, skills or crafts have you actually spent substantial time studying or learning, if any? Was this mainly formal education, self-directed study or hands-on experience?",
+      "dimensions": [
+        "actual_sustained_learning_topics_optional",
+        "formal_vs_self_directed_vs_practical_optional",
+        "period_and_depth_optional"
+      ],
+      "followup": "Which subjects have stayed important over years, and which were brief interests?",
+      "source_claim_ids": [
+        "V-I-MERCURY-EDUCATION",
+        "D-II-JUPITER-MERCURY-LAW",
+        "BJ-XVIII-LITERACY-MATH"
+      ],
+      "previous_nearest_questions": [
+        "MYSTERY",
+        "VOCATION",
+        "TF1-D0",
+        "TF1-G01"
+      ],
+      "newness": "How one learns or solves problems is not the actual history of what one studied and practiced.",
+      "caution": "No IQ estimate, reading-level ranking, academic pedigree gate or claim about actual intelligence."
+    },
+    {
+      "id": "RECIPROCITY",
+      "domain": "giving_receiving_help",
+      "priority": 2,
+      "kind": "habitual_behavior_and_life_history",
+      "question": "In your actual close relationships or communities, how often do you meaningfully help others, and separately how often do you seek or accept help yourself?",
+      "dimensions": [
+        "giving_frequency",
+        "receiving_frequency",
+        "practical_vs_emotional_optional",
+        "conditions_that_change_the_balance_optional"
+      ],
+      "followup": "Does giving come more easily than accepting support, or is it the other way around? Both or neither are valid.",
+      "source_claim_ids": [
+        "V-I-JUPITER-BENEFICENCE",
+        "D-II-JUPITER-VENUS-GIVING",
+        "BJ-XVI-GENEROSITY",
+        "BJ-XVII-FAMILY-HELP"
+      ],
+      "previous_nearest_questions": [
+        "TF1-G19",
+        "TF1-G23",
+        "G23",
+        "BELIEF",
+        "PARENTING"
+      ],
+      "newness": "Responding to one group request is not the actual two-way history of providing and accepting support.",
+      "caution": "Frequency of giving is not proof of virtue. Receiving help is included as a design choice, not directly quantified by the cited classical claims."
+    },
+    {
+      "id": "ANGER_REPAIR",
+      "domain": "grievance_duration_repair",
+      "priority": 1,
+      "kind": "repeated_emotional_response",
+      "question": "When something genuinely upsets or angers you, how long does that feeling usually matter to you: briefly, hours, days, much longer, rarely, or very differently depending on the situation?",
+      "dimensions": [
+        "typical_duration_and_variability",
+        "time_to_resume_normal_contact_optional",
+        "forgiveness_vs_trust_vs_reconciliation_optional"
+      ],
+      "followup": "If a relationship continues, can you forgive or reconnect before the feeling has fully gone, or does it tend to work differently?",
+      "source_claim_ids": [
+        "BJ-XVI-ANGER",
+        "BJ-XVII-FORGIVING",
+        "BJ-XVII-LINGERING-ANGER"
+      ],
+      "previous_nearest_questions": [
+        "TF1-B0",
+        "G14",
+        "G25",
+        "TF1-G17"
+      ],
+      "newness": "Emotional baseline and reaction to an unreliable friend do not directly measure the duration of anger or capacity for repair.",
+      "caution": "No forced re-telling of harm or abusive experiences; boundaries and forgiveness are not automatically opposites."
+    },
+    {
+      "id": "CONTENTMENT",
+      "domain": "contentment_satisfaction",
+      "priority": 2,
+      "kind": "lived_affective_orientation",
+      "question": "When your basic situation is acceptable, how often do you feel genuinely content with things as they are? Separately, how much do you feel drawn to improve, change or pursue something else?",
+      "dimensions": [
+        "frequency_of_contentment",
+        "frequency_of_desire_for_change",
+        "context_or_time_changes_optional"
+      ],
+      "followup": "Can you feel content and still strongly motivated to grow, or do those experiences usually pull in different directions?",
+      "source_claim_ids": [
+        "BJ-XVI-CONTENTMENT"
+      ],
+      "previous_nearest_questions": [
+        "EM08",
+        "TF1-G16",
+        "TF1-STATUS",
+        "TF1-ROUTINE-CHANGE"
+      ],
+      "newness": "Contentment differs from existential meaning, resources available, and desire for recognition.",
+      "caution": "Treat motivation and contentment as independent axes; avoid labeling contentment as passivity or ambition as greed."
+    },
+    {
+      "id": "PRIVACY",
+      "domain": "privacy_self_disclosure",
+      "priority": 4,
+      "kind": "communication_choice",
+      "question": "In everyday relationships, how much of your inner thoughts, feelings and personal life do you generally share, and how much do you prefer to keep private?",
+      "dimensions": [
+        "typical_disclosure_range",
+        "relationship_context_optional",
+        "actual_sharing_vs_desire_optional"
+      ],
+      "followup": "Does this depend strongly on trust, subject or the other person's response?",
+      "source_claim_ids": [
+        "V-I-SATURN-PRIVACY"
+      ],
+      "previous_nearest_questions": [
+        "TF1-F0",
+        "G25",
+        "TF1-A0"
+      ],
+      "newness": "Reliability and adapting one's speech do not directly measure privacy versus openness.",
+      "caution": "The old source's 'secretive' passage is pejorative; it is neither evidence of lying nor a moral judgment. Do not ask what actual secrets are."
+    },
+    {
+      "id": "SENSORY_ENJOYMENT",
+      "domain": "everyday_sensory_pleasure",
+      "priority": 5,
+      "kind": "ordinary_lived_experience",
+      "question": "What everyday things bring you noticeable pleasure through the senses—such as food, music, scent, warmth, colors, textures or being in natural places—if any?",
+      "dimensions": [
+        "domain_specific_enjoyment_optional",
+        "frequency_and_usual_intensity_optional",
+        "nature_vs_art_vs_food_optional"
+      ],
+      "followup": "Do you regularly seek these experiences out, or mostly notice them when they happen?",
+      "source_claim_ids": [
+        "V-I-VENUS-PLEASURE",
+        "BJ-XVII-FOOD",
+        "BJ-XVII-GARDEN"
+      ],
+      "previous_nearest_questions": [
+        "ART",
+        "PLAY",
+        "HOME",
+        "G11"
+      ],
+      "newness": "Awe, music appreciation, sensory tolerance and everyday pleasure are not identical; much of this may be a follow-up to ART or PLAY rather than a new question.",
+      "caution": "Do not interpret food pleasure as a nutritional or mental-health diagnosis. Prefer a conditional follow-up over a full independent module."
+    }
+  ],
+  "priority_definition": "1=first pilot focus, 5=low incremental value; priority reflects nonredundant measurement and burden, not chart strength",
+  "selection": "Offer as short optional topic chooser only when not already adequately answered; at most 3 new pilot topics and at most 5 optional topics total in one session; no forced choices. Compare benefit to existing 16 first.",
+  "non_scoring_and_blinding": "These are not prospectively chart-scored; all respondent answers frozen separately, with source lineage and measurement types visible to research team but no expected chart direction disclosed.",
+  "source_evidence_limit": "Online ancient/medieval claims are culturally dated, sometimes pejorative and not empirically validated. Questionnaire choices are modern researcher-built extrapolations."
+}
