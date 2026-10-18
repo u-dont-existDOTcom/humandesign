@@ -1,0 +1,326 @@
+{
+  "schema": "LILLY_1647_CLXVI_TIMING_WORKED_EXAMPLES_SOURCE_FIRST_V1",
+  "batch": "B07x",
+  "status": "NUMERICAL_METHOD_PROVISIONAL_NOT_CANONICALLY_ACCEPTED",
+  "source": "William Lilly Christian Astrology original first edition 1647 Wellcome b30338724",
+  "original_source_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_original_pdf_frames": [
+    742,
+    743,
+    744,
+    745,
+    746,
+    747,
+    748,
+    749
+  ],
+  "next_original_printed_chapter": "CLXVI_REPEATED_ANNUAL_PROFECTIONS",
+  "original_printed_numeral_is_duplicated": true,
+  "source_statements": [
+    {
+      "method": "PTOLEMY_PRIMARY_DIRECTION_DEGREE_PER_YEAR",
+      "photo": 743,
+      "anchor": "oblique ascension of the ascendant 312.10",
+      "original_numeric": {
+        "ascendant": [
+          312,
+          10
+        ]
+      },
+      "status": "visual_source_witness"
+    },
+    {
+      "method": "PTOLEMY_PRIMARY_DIRECTION_DEGREE_PER_YEAR",
+      "photo": 743,
+      "anchor": "oblique ascension of the Termes of Mars 324.5",
+      "original_numeric": {
+        "mars_terms": [
+          324,
+          5
+        ],
+        "printed_diff": [
+          11,
+          55
+        ]
+      },
+      "status": "visual_source_witness"
+    },
+    {
+      "method": "PTOLEMY_PRIMARY_DIRECTION_DEGREE_PER_YEAR",
+      "photo": 743,
+      "anchor": "opposition of Mars 332.2",
+      "original_numeric": {
+        "mars_opposition": [
+          332,
+          2
+        ],
+        "printed_diff": [
+          19,
+          52
+        ]
+      },
+      "status": "visual_source_witness"
+    },
+    {
+      "method": "PTOLEMY_PRIMARY_DIRECTION_DEGREE_PER_YEAR",
+      "photo": 743,
+      "anchor": "for every degree ... one yeere ... for every minute ... six dayes",
+      "original_numeric": {
+        "one_arc_degree_years": 1,
+        "one_arc_minute_days": 6
+      },
+      "status": "visual_source_witness"
+    },
+    {
+      "method": "MAGINUS_APPARENT_SUN_MOTION_RATE",
+      "photo": 744,
+      "anchor": "right ascension 186.58 ... 186.4 ... 54 minutes",
+      "original_numeric": {
+        "sun_right_ascension_day1": [
+          186,
+          4
+        ],
+        "sun_right_ascension_day2": [
+          186,
+          58
+        ],
+        "derived_rate_arcminutes": 54
+      },
+      "status": "visual_source_witness"
+    },
+    {
+      "method": "MAGINUS_APPARENT_SUN_MOTION_RATE",
+      "photo": 745,
+      "anchor": "table entry 7 degrees Libra 54 min 25 seconds",
+      "original_numeric": {
+        "sun_natal_zodiac": "6 degrees 37 minutes Libra",
+        "rounded_lookup_degree": 7,
+        "minutes": 54,
+        "seconds": 25
+      },
+      "status": "visual_single_cell_checked"
+    },
+    {
+      "method": "MAGINUS_ANNUAL_RATE_54_MIN",
+      "photo": 746,
+      "anchor": "degree table 13 years: 11 degrees 42 minutes",
+      "original_numeric": {
+        "whole_years": 13,
+        "achieved_arc": [
+          11,
+          42
+        ],
+        "target_arc": [
+          11,
+          55
+        ],
+        "printed_partial_minutes_used": 42,
+        "reconstructed_remaining_minutes": 13
+      },
+      "status": "visual_checked_internal_arithmetic_discrepancy"
+    },
+    {
+      "method": "MAGINUS_ANNUAL_RATE_54_MIN",
+      "photo": 746,
+      "anchor": "19 degrees 48 minutes for 22 years",
+      "original_numeric": {
+        "whole_years": 22,
+        "achieved_arc": [
+          19,
+          48
+        ],
+        "target_arc": [
+          19,
+          52
+        ],
+        "printed_partial_minutes_used": 48,
+        "reconstructed_remaining_minutes": 4
+      },
+      "status": "visual_checked_internal_arithmetic_discrepancy"
+    },
+    {
+      "method": "NAIBOD_TABULAR_DIRECTION_TIME",
+      "photo": 747,
+      "anchor": "A most exact Table ... Naibod ... degrees of AEquator",
+      "original_numeric": {
+        "11_degrees_year_day_hour": [
+          11,
+          58,
+          21
+        ],
+        "19_degrees_year_day_hour": [
+          19,
+          101,
+          17
+        ],
+        "one_degree_year_day_hour": [
+          1,
+          5,
+          8
+        ]
+      },
+      "status": "visual_selected_source_cells_checked"
+    },
+    {
+      "method": "NAIBOD_TABULAR_DIRECTION_TIME",
+      "photo": 748,
+      "anchor": "minutes table 55 gives 339 days 17 hours; 52 gives 321 days 4 hours",
+      "original_numeric": {
+        "55_minutes_days_hours": [
+          339,
+          17
+        ],
+        "52_minutes_days_hours": [
+          321,
+          4
+        ]
+      },
+      "status": "visual_selected_source_cells_checked"
+    },
+    {
+      "method": "NAIBOD_TABULAR_DIRECTION_TIME",
+      "photo": 749,
+      "anchor": "subtract three hundred sixty five days ... twelve years thirty three days fourteen hours",
+      "original_numeric": {
+        "year_length_for_carry_days": 365,
+        "terms_age": [
+          12,
+          33,
+          14
+        ],
+        "opposition_age": [
+          20,
+          57,
+          21
+        ]
+      },
+      "status": "visual_worked_example_reproduced"
+    },
+    {
+      "method": "PRINTED_CHAPTER_NUMBERING",
+      "photo": 749,
+      "anchor": "CHAP CLXVI Of annual Profections",
+      "original_numeric": {
+        "same_printed_numeral_as_previous_chapter": true,
+        "new_distinct_numbered_heading_on_same_original_page": true
+      },
+      "status": "physical_section_divider_verified"
+    }
+  ],
+  "derived_computation": {
+    "scope": "historical first-edition sexagesimal arithmetic only",
+    "not_validated_astronomy_or_birth_chart": true,
+    "not_a_real_human_forecast": true,
+    "natal_oblique_ascension": {
+      "degree": 312,
+      "minute": 10,
+      "second": 0
+    },
+    "terms_arc": {
+      "degree": 11,
+      "minute": 55,
+      "second": 0
+    },
+    "opposition_arc": {
+      "degree": 19,
+      "minute": 52,
+      "second": 0
+    },
+    "ptolemy_360_day_months_terms": [
+      11,
+      11,
+      0
+    ],
+    "ptolemy_360_day_months_opposition": [
+      19,
+      10,
+      12
+    ],
+    "maginus_original_annual_rate_rounded": {
+      "degree": 0,
+      "minute": 54,
+      "second": 0
+    },
+    "maginus_original_separate_table_rate_7_libra": {
+      "degree": 0,
+      "minute": 54,
+      "second": 25
+    },
+    "maginus_at_rounded_rate_terms": {
+      "completed_years": 13,
+      "remaining_arc": {
+        "degree": 0,
+        "minute": 13,
+        "second": 0
+      },
+      "remainder_year_fraction": "13/54",
+      "original_worked_paragraph_uses_minutes": 42,
+      "actual_difference_from_target_minutes": 13
+    },
+    "maginus_at_rounded_rate_opposition": {
+      "completed_years": 22,
+      "remaining_arc": {
+        "degree": 0,
+        "minute": 4,
+        "second": 0
+      },
+      "remainder_year_fraction": "2/27",
+      "original_worked_paragraph_uses_minutes": 48,
+      "actual_difference_from_target_minutes": 4
+    },
+    "maginus_if_annual_table_rate_used": {
+      "terms": {
+        "years": 13,
+        "remainder": {
+          "degree": 0,
+          "minute": 7,
+          "second": 35
+        }
+      },
+      "opposition": {
+        "years": 21,
+        "remainder": {
+          "degree": 0,
+          "minute": 49,
+          "second": 15
+        }
+      }
+    },
+    "naibod_original_source_degree_11": {
+      "years": 11,
+      "days": 58,
+      "hours": 21
+    },
+    "naibod_original_source_minute_55": {
+      "years": 0,
+      "days": 339,
+      "hours": 17
+    },
+    "naibod_original_result_terms": {
+      "years": 12,
+      "days": 33,
+      "hours": 14
+    },
+    "naibod_original_result_opposition": {
+      "years": 20,
+      "days": 57,
+      "hours": 21
+    }
+  },
+  "internal_arithmetic_discrepancy": "Maginus worked examples use printed year-table fractional minute cells (42' and 48') as if they were the remaining angular arc, whereas subtracting completed-year arcs from stated targets leaves 13' and 4'. The birth-chart and annual rate choices are not independently historically reconciled.",
+  "first_edition_annual_measure_table_cells_expected": 372,
+  "first_edition_annual_measure_table_scalar_numbers_expected": 744,
+  "annual_measure_cells_visually_verified": 1,
+  "annual_measure_degree_rows_inclusive": [
+    0,
+    30
+  ],
+  "naibod_degree_table_rows_expected": 90,
+  "naibod_minute_table_rows_expected": 60,
+  "all_original_numerical_table_cells_collated": false,
+  "anomalous_first_edition_examples_need_secondary_edition_comparison": true,
+  "original_1647_source_technical_epoch_chart_input_validated": false,
+  "historical_math_mechanics_reproduced_on_selected_cases_only": true,
+  "independent_human_life_event_predictions_validated": 0,
+  "runtime_promotions": 0
+}
