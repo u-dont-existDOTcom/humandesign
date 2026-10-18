@@ -1,3 +1,9 @@
+# Original Lilly 1647 source through CXLVIII profession — 2026-10-18
+
+After verified source publication **10,592 documentary historical records** (9,526 Lilly +1,066 Ptolemy), source first-edition PDF660/894 (**73.8% physical scanned frame position only**, NOT full research/predictive validation). B07b adds 82 qualified historic source statements on vocation existence, type and fame/income, conditionally eligible Mars/Venus/Mercury, lunar aspect/MC fallbacks and distinct Ptolemy original-unverified method. Zero real human scores or runtime promotions. NEXT printed CXLIX experimental profession aphorisms from PDF660 onwards. Separate Chinese BaZi46/ ZiWei26 remain source-only.
+
+---
+
 # Original Lilly 1647 through honor-duration CXLVII — 2026-10-18
 
 After publication **10,510 historical source records** (9,444 Lilly +1,066 Ptolemy). First-edition physical source frontier PDF658/894 (**73.6% scanned page position ONLY, not scientific completion**). B07a 77 historic conditions preserves strong/moderate/weak planet timecourses, recovery vs total collapse, fixed-star triggers and the original King's/nation two-chart condition. No real human forecast and no runtime scorer. NEXT printed CXLVIII occupation/profession from PDF658 onward. Separate Chinese BaZi46/Zi Wei26 source notes remain open.
