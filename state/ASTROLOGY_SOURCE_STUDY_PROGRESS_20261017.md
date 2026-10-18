@@ -1,3 +1,9 @@
+# Original Lilly through printed CLVII effect strength — 2026-10-18
+
+After verified publication **11,723 historical documentary source notes** (10,657 Lilly +1,066 Ptolemy), original PDF690/894 (~77.2% physical scan position only, NOT total science/model completion). B07n adds 62 original source statements on natal Significator/Promittor strength, relative effect and conflicting same-year directions. Original permits zero-effect under very weak indicators, and uses annual Profections/Revolutions to resolve health disagreements. No medical event, date or duration human validation and no runtime source promotion. NEXT printed CLVIII five Hylegiacall Places PDF690 onward. Chinese separate BaZi46 ZiWei26 historical-only intake.
+
+---
+
 # Original Lilly 1647 directions effects through PDF688 — 2026-10-18
 
 After verified publication 11,661 historical original-source annotations (10,595 Lilly +1,066 Ptolemy), original PDF688/894 (~77.0% physical scanned position ONLY, not total research/predictive completion). B07m 127 source-only notes preserve Significator/Promittor timing claims, Lilly's acknowledged misses and critical 2–3° Ascendant rectification shifting alleged event timing by YEARS. No original numerical Regiomontanus/Argolus parity, no frozen prospective event tests, zero human successes or source runtime promotions. Next printed CLVII effects-duration PDF688–689, printed CLVIII from PDF690. Separate Chinese BaZi46, ZiWei26 historic source-only notes remain open.
