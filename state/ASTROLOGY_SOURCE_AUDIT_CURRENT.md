@@ -1,3 +1,9 @@
+# Lilly CLIX original Ascendant directions documented, CLX next
+
+2026-10-18 Africa/Dakar UTC+0. Original B07p historical source R10733–R11067 accepted locally; after GitHub remote readback 11,067 Lilly +1,066 Ptolemy =12,133 documentary records. Original PDF702/894 78.5% physical source frontier, 38 original-source plus extracted ZIP tests pass. No actual people or real-world danger/health/career outcomes validated and zero model promotions. Next separately printed CLX Mid-heaven directions at PDF702; Chinese BaZi46 + ZiWei26 remain independent.
+
+---
+
 # Original Lilly CLVIII Ascendant to Saturn source complete; CLIX next
 
 2026-10-18 Africa/Dakar UTC+0. B07o historic R10658–R10732 locally accepted and pending GitHub remote publication. After verified remote 10,732 Lilly +1,066 Ptolemy=11,798 archival source-only notes, 25 source/ZIP integrity tests PASS. No real human medical/religion/moral or death predictions and no runtime model promotions. NEXT long CLIX Ascendant-directed planets/aspects PDF691 onward, printed CLX at PDF702. Chinese 72 separate source-only notes.

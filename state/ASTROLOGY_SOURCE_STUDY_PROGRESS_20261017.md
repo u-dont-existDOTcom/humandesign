@@ -1,3 +1,9 @@
+# Lilly original first edition through CLIX Ascendant directions — 2026-10-18
+
+After GitHub remote publication **12,133 original source annotations** (11,067 Lilly +1,066 Ptolemy). Source frontier original PDF702/894 (**78.5% scanned physical page position ONLY**, not predictive or mathematical research completion). B07p 335 period-source clauses of separate Ascendant directions to 6 planets, nodes, Part Fortune, house cusps and 16 fixed stars; requires original radix and age/time calculations not done. No independent human life outcomes, disease/mortality or personal safety accuracy and no executable natal scoring. NEXT printed CLX directions of Midheaven starts same original PDF702 after divider. Chinese BaZi46+ZiWei26 source-only separate.
+
+---
+
 # Original Lilly 1647 through printed CLVIII Saturn directions — 2026-10-18
 
 After verified source publication **11,798 historic documentary annotations** (10,732 Lilly +1,066 Ptolemy), physical first-edition scan frontier PDF691/894 (~77.3% physical page position ONLY, not full empirical project completion). B07o adds 75 history-only Ascendant-to-Saturn old body/sextile/trine/square/opposition/terms rules with high-stakes requirements and source exceptions. NO human illness, safety, life-event or moral forecasts validated and NO executable runtime rule promotions. NEXT printed CLIX Ascendant-to-Jupiter and multiple other aspects, original PDF691–702, then printed CLX from PDF702. Chinese original BaZi46/ ZiWei26 historical notes indexed independently.
