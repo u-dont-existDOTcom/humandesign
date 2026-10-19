@@ -147,8 +147,12 @@ def main() -> None:
         "schema": "LILLY_B07ax_ORIGINAL_1647_1659_MERCHANT_NATIVITY_SOURCE_V1",
         "batch": "B07ax",
         "source_full_original_1647_pdf_sha256": old["source_sha256"],
-        "original_first_ed_heading": "CHAP. CLXXV. The NATIVITY of an English Merchant Astrologically handled.",
-        "original_second_ed_heading": "CHAP. CLXXV. The NATIVITY of an English Merchant Astrologically handled.",
+        "original_first_ed_heading": (
+            "CHAP. CLXXV. The NATIVITY of an English Merchant Astrologically handled."
+        ),
+        "original_second_ed_heading": (
+            "CHAP. CLXXV. The NATIVITY of an English Merchant Astrologically handled."
+        ),
         "original_first_ed_source_folios": [742, 743, 744, 745],
         "original_1647_photo_source_witness_sha256": sha(PHOTOS),
         "source_antiscion_arithmetic_conflict_SHA256": sha(MERCURY),

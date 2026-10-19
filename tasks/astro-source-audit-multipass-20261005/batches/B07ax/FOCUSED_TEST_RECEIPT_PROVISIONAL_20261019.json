@@ -1,0 +1,35 @@
+{
+  "batch": "B07ax",
+  "status": "TESTED_PROVISIONAL_30_NOT_ADMITTED",
+  "focused_tests_passed": 47,
+  "test_command": "python3 -m unittest discover -s tasks/astro-source-audit-multipass-20261005/batches/B07ax -p test_b07ax_merchant_source.py -q",
+  "original_1647_and_1659_photo_sources": 10,
+  "new_candidate_source_records": 30,
+  "first": "R12871",
+  "last": "R12900",
+  "next": "R12901",
+  "original_natal_Mercury": [
+    "Libra",
+    3,
+    34
+  ],
+  "first_second_printed_antiscion": [
+    "Pisces",
+    26,
+    6
+  ],
+  "source_geometry_computed_antiscion": [
+    "Pisces",
+    26,
+    26
+  ],
+  "source_mismatch_arcminutes": -20,
+  "prior_historical_Lilly_accepted": 12870,
+  "parallel_chinese_V7_count": 355,
+  "actual_human_forecast_validations": 0,
+  "runtime_promotions": 0,
+  "original_1647_ephemeris_engine_verified": false,
+  "archive_replay_pending": true,
+  "canonical_index_unchanged": true,
+  "next_executable_step": "CRC/SHA verified portable source ZIP and replay of 47 tests; guarded canonical source registration."
+}
