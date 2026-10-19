@@ -1,0 +1,11 @@
+# CLXXIII research continuation — interruption-safe checkpoint
+
+2026-10-19 Africa/Dakar UTC+0. Root owner outcome **OPEN**: source-first historic Western Lilly and Chinese Zi Wei/BaZi study, eventually verified original chart/calendar engines and genuinely independent blinded real-human forward/reverse tests with matched decoys and all misses. Documentation totals are NOT predictive success.
+
+Recovered live GitHub state after repeated interruptions: B07au accepted at `cf6f2fc09f168e56ff761194dbba077330ddb927`. Historical source ledger **Lilly 12,803 + Ptolemy 1,066 = Western 13,869**; separately Chinese V7 **154 BaZi+201 Zi Wei =355**. **No real-human predictions validated or runtime astrology promoted.** The earlier user's B07an handoff is stale; do NOT repeat B07an through B07au.
+
+Active branch `research/astro-b07av-clxxiii-radix-returns-20261019`, from accepted B07au SHA. This task-local recovery record is a checkpoint, not a source-history admission. B07au accepted CLXXII end and distinct CLXXIII physical boundary; substantive CLXXIII planetary returns (Saturn/Jupiter etc.) begin **R12804** on first-edition 1647 printed738/PDF772. Source first-edition photos PDF772/773 and separately typeset 1659 DjVu767/768 are **already byte-saved in B07au evidence**; do not reacquire. Full original 1647 Wellcome PDF SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`.
+
+**Next safe actions:** determine actual physical CLXXIII span and section text from original 1647+1659 photos, acquire only missing original pages, commit source-photo/evidence checkpoint, then source-only rule inventory, exact hashes, regression and independent portable ZIP replay, guarded append-only index and remote Git SHA readback. Persist each significant verified checkpoint. Do not convert historical moral, health, relationship, death, financial claims into verified person-level predictions; original star-location/ephemeris/date engine remains unverified. Chinese parallel source index unaffected until independently accepted Chinese batch.
+
+**Restart command:** `git -C /mnt/hdd/storage/joel/development-worktrees/humandesign/astro-chinese-bazi-06-20261019 status --short --branch`; read `batches/B07av/TASK_SCOPE.json`, check exact remote SHA, continue CLXXIII from R12804. Parent task remains OPEN.
