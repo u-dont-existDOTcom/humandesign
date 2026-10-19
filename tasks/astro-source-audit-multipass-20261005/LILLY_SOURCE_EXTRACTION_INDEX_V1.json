@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXVI_TIME_MEASURE_PARTIAL_ANNUAL_RATE_TABLE_P711",
-  "records_count": 12515,
+  "status": "BOOK_III_CLXVI_TIME_MEASURE_PARTIAL_TABLE_USE_MAGINUS_NEXT_NAIBOD",
+  "records_count": 12546,
   "read_numbered_chapters": [
     1,
     2,
@@ -1242,26 +1242,33 @@
       "records_count": 14,
       "sha256": "35e3627652826db786a1bd9d9a36839806ee9dd8b1cce31da3504d1426bc0802",
       "scope": "PARTIAL continuation of original first printed CHAP CLXVI: annual equatorial direction-rate table on PDF745/printed711. 14 historical table-level notes R12502–R12515: header, degree index and twelve 31-degree zodiac sign columns. Separate reversible source-cell table holds all 372 positions previously one-reader photographed B07y–B07ad, 365 legible, seven source glyphs unknown and 14 differences versus modern searchable derivative. 1647 full critical edition and mathematical/year-to-event ephemeris parity unresolved; neither 1659 hints nor trend smoothing are promoted, zero independent actual-person predictive results."
+    },
+    {
+      "id": "B07ai",
+      "path": "batches/B07ai/RULES.json",
+      "records_count": 31,
+      "sha256": "85dc6df8c7da089072e3dafda0fa06339330964a7f29706605198ba6925386b9",
+      "scope": "PARTIAL original first Lilly printed CLXVI time directions, original printed711 bottom/PDF745 table-use instructions and printed712/PDF746 original Maginus worked 24-year 54' accumulation and introduction of Naibod. Source-only 31 historical notes R12516–R12546 with actual 1647 and separately typeset original 1659 photos, one-reader 24-year source table and reversible mathematical diagnostics: 42/48' printed fraction versus 13/4' actual target residual; original 6d18h per minute yields 364.5 nominal days per 54' rather than exactly365. Do not silently fix original printing, verify original natal engine or claim events."
     }
   ],
   "next": {
-    "pdf_page": 746,
-    "printed_page": 712,
+    "pdf_page": 747,
+    "printed_page": 713,
     "chapter": "CLXVI",
     "printed_chapter_numeral": "CLXVI",
-    "heading": "Of the measure of time in DIRECTIONS — continued worked time examples",
+    "heading": "Of the measure of time in DIRECTIONS — Naibod exact table continued",
     "include_opening_paragraph": false,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Following original first CLXVI table printed711, turn to first-edition printed712/PDF746: The use of the Table (Sun degrees+more than 30 minutes advances row), 7 Libra=54'25\", annual time accumulation, and Maginus remainder discrepancy 42/48 vs 13/4; Naibod tables follow. Next historical record R12516. Preserve following separate duplicated printed CHAP CLXVI annual profections.",
-    "research_scope": "Historic table lookup and competing source timing calculation, Naibod source degree/minute table and actual source-specific errors; real chart ephemeris and human predictive validity unverified."
+    "position": "First original CLXVI direction-time chapter, next original printed713/PDF747 begins Naibod source table for conversion of equatorial degrees into years/days/hours, continued across printed714/PDF748 minute source table. Naibod minute27 source missing and other early print discrepancies preserved; next Lilly historical source R12547. The distinct later physically printed duplicated CLXVI annual Profections chapter begins around PDF749, not the same source unit.",
+    "research_scope": "Source-first numerical original Naibod 90 degree and 60 nominal minute entries, first and independently typeset second original editions, exact sexagesimal arithmetic and unresolved cells; real-human forecasts and natal true astronomic engine not verified."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07ah_ANNUAL_TABLE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07ai_MAGINUS_PARTIAL.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [
     {
@@ -1269,15 +1276,17 @@
       "source_unit": "first of two physically separate headings printed CLXVI",
       "chapter_heading": "Of the measure of time in DIRECTIONS",
       "physical_source_start_pdf": 742,
-      "accepted_through_pdf": 745,
-      "next_unaccepted_pdf": 746,
-      "next_record": "R12516",
+      "accepted_through_pdf": 746,
+      "next_unaccepted_pdf": 747,
+      "next_record": "R12547",
       "accepted_batch": "B07ag",
       "complete": false,
       "original_numerical_tables_exhaustively_verified": false,
-      "latest_accepted_batch": "B07ah",
+      "latest_accepted_batch": "B07ai",
       "annual_1647_rate_table_documented_with_unresolved_glyphs": true,
-      "original_1647_full_372_source_glyphs_critically_verified": false
+      "original_1647_full_372_source_glyphs_critically_verified": false,
+      "Maginus_print_vs_target_fraction_problem_open": true,
+      "source_one_arcminute_6d18h_approximation_open": true
     }
   ],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1423,5 +1432,6 @@
   "unnumbered_moon_fixed_starres_source_acceptance_note": "B07v original-first-edition unnumbered lunar fixed-star unit R12169-R12268, 100 notes, 13 stellar headings, 15 original photo groups PDF735-737, 53 independently extracted archive tests. Numbered chapter count unchanged, next printed CHAP CLXV PDF737. No individual empirical predictions or live model promotion; separate Chinese V2 97 unchanged.",
   "chapter_CLXV_fortuna_directions_source_acceptance_note": "B07w original source R12269-R12472, 204 archival notes in 35 reversible groups PDF737-742; three unlocated-as-numbers star headings and 12 individual house cusps. 62 independently ZIP-extracted source tests pass. Next CLXVI original numerical arc/year method starts PDF742, R12473. No predictive human accuracy or model promotions.",
   "chapter_CLXVI_partial_original_opening_acceptance_note": "B07ag accepts only 29 source-only first three page annotations, Ptolemaic and Maginus competing time method descriptions and corrected modern derivative 7°37' versus actual first+second editions 7°36'. The physically distinct subsequent duplicated heading CHAP CLXVI on annual profections is not merged. Complete time chapter not yet accepted, historical engine unverified, human evaluations zero.",
-  "chapter_CLXVI_partial_annual_rate_table_acceptance_note": "B07ah adds fourteen source-only table-level notes with 372 reversible historical table cells (365 first-edition one-reader legible and seven original glyphs unresolved). No independent classic print second reader, no complete numeric direction-time engine, no real-person predictive outcome. First printed CLXVI chapter remains PARTIAL and later duplicated CLXVI annual profections a separate heading."
+  "chapter_CLXVI_partial_annual_rate_table_acceptance_note": "B07ah adds fourteen source-only table-level notes with 372 reversible historical table cells (365 first-edition one-reader legible and seven original glyphs unresolved). No independent classic print second reader, no complete numeric direction-time engine, no real-person predictive outcome. First printed CLXVI chapter remains PARTIAL and later duplicated CLXVI annual profections a separate heading.",
+  "chapter_CLXVI_partial_original_maginus_table_use_note": "B07ai 31 source-only notes document original Sun zodiac degree selection, 54'25\" Libra7 source to 54' simplified annual table, 24 source accumulated-year entries, original printed 42'/48' fractions contrasted with exact 13'/4' target residuals, and Naibod introduction. Both independently typeset 1647/1659 paper sources carried original arithmetic; cause and correct prognostic method unverified. Same first printed CLXVI remains PARTIAL; later duplicated CLXVI annual profections distinct."
 }

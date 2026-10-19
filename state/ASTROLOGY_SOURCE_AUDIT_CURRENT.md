@@ -1,3 +1,9 @@
+# Lilly 1647 first CLXVI original worked table and Maginus source (B07ai, PARTIAL)
+
+**31 original historical annotations R12516–R12546** include the printed711/PDF745 end of annual-table instructions and printed712/PDF746 24-year 54' annual source table, Maginus two actual first-and-second edition worked examples and Naibod introduction. Original exact table lookup Sun6°37′ Libra -> Libra7=54′25″, omit seconds to 54′. Source **42′→284days and48′→324days** disagrees with arithmetic residual **13′ and4′**; source explicitly 6d18h per arcminute implies 54' accumulates 364.5 nominal days. Both original print and calculation are preserved, neither is validated predictive astronomy. **Lilly 12,546 + Ptolemy 1,066 =13,612 Western historical notes**; Chinese historical V5 **101 BaZi +161 Zi Wei=262** unchanged. The first printed CLXVI remains PARTIAL; next **R12547** at original PDF747/printed713 Naibod table. Human prediction validations zero, runtime promotions zero.
+
+## Previous accepted historical checkpoint retained verbatim
+
 # Original Lilly 1647 CLXVI annual-rate source table accepted PARTIALLY (B07ah)
 
 **14 historical source-only annotations R12502–R12515** document the original PDF745/printed711 table of 12 zodiac signs×31 degrees. Full reversible source crosswalk preserves 372 cells, 365 one-reader legible original first edition and seven unresolved, with 14 contradictions to the modern derivative searchable transcription. No inferred repaired glyph and no calendar/event model promotion. **12,515 Lilly +1,066 Ptolemy =13,581 Western historical notes**; Chinese V5 **101 BaZi +161 Zi Wei =262** unchanged. The first physically printed directions CLXVI remains PARTIAL, not another completed numbered chapter. Next **R12516** begins PDF746/printed712 original Table Use and Maginus examples; a separate later CHAP CLXVI concerns annual Profections. Empirical human predictions validated zero, runtime promotions zero.
