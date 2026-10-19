@@ -1,3 +1,9 @@
+# Original Lilly second printed CLXVI Annual Profections physically covered (B07al)
+
+**30 source-only historical records R12582–R12611** preserve the separate duplicated printed CHAP CLXVI Annual Profections p715–718/PDF749–752. 30 degrees/one sign per solar-return year, 12-year cycle, source literal 13 monthly parts, printed diurnal 2d3h54min/sign, and nominal 12d4h12min per degree. Merchant example 72 historical year rows 1616–1687 physically evidenced, but individual chart cells NOT critically collated. **12,611 Lilly+1,066 Ptolemy =13,677 Western source records**; Chinese V5 101 BaZi+161 Zi Wei=262 unchanged. The next physical **CHAP CLXVII Use of Profections and their Effects** begins original **R12612 PDF752/printed718** after divider. Both printed CLXVI headings remain separately indexed. No real-person predictive success, actual original-era chart engine or runtime promotion verified.
+
+## Previous accepted source checkpoint retained verbatim
+
 # Original Lilly first printed CLXVI physically covered (B07ak)
 
 **14 historical source-only records R12568–R12581** attest to original Naibod end-of-chapter p715/PDF749 and duplicate original next printed **CHAP CLXVI annual Profections** heading after the physical divider. Independently typeset 1647 and1659 originals agree: Mars terms **12y33d14h**, Mars opposition **20y57d21h** under 365day nominal carry. **12,581 Lilly+1,066 Ptolemy=13,647 Western historical source notes**, Chinese V5 101 BaZi+161 Zi Wei=262 unchanged. First physical directions-time CLXVI source pages708–715 COVERED (editorial ordinal165), NOT fully source-critically verified (seven rate glyphs/Naibod missing minute27 and original mathematical errors). New distinct printed CLXVI **annual Profections** begins **R12582** on same PDF749 printed715 (editorial ordinal166). Zero actual human predictive validations and zero runtime promotions.

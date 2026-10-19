@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_FIRST_PHYSICAL_CLXVI_DIRECTIONS_TIME_SOURCE_SPAN_COVERED_NEXT_SEPARATE_CLXVI_PROFECTIONS",
-  "records_count": 12581,
+  "status": "BOOK_III_SECOND_PRINTED_CLXVI_ANNUAL_PROFECTIONS_PHYSICAL_SOURCE_COVERED_NEXT_CLXVII",
+  "records_count": 12611,
   "read_numbered_chapters": [
     1,
     2,
@@ -169,7 +169,8 @@
     162,
     163,
     164,
-    165
+    165,
+    166
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1264,27 +1265,34 @@
       "records_count": 14,
       "sha256": "a78c0eb33f1c53c4937ae6d40487bae88961460ed31c7dc8aa3e03d0f7ed39d8",
       "scope": "Source-only original 1647 first printed CLXVI final folio715/PDF749 Naibod 365day+24hour carries, independently typeset original 1659 comparand, physical horizontal divider before separate annual Profections chapter repeating printed CLXVI numeral. Historical source notes R12568–R12581. First directions-time chapter now PHYSICALLY COVERED, not expert diplomatically verified because seven annual-rate print glyphs unresolved, Naibod minute27 absent, original inter-edition discrepancies and Maginus residual unresolved. True 1647 natal astronomy and human predictive accuracy zero."
+    },
+    {
+      "id": "B07al",
+      "path": "batches/B07al/RULES.json",
+      "records_count": 30,
+      "sha256": "cfaade22811512bbc23ed0c21141616e581b705da5caf547f3445bbe013522d1",
+      "scope": "Original SECOND distinct printed CHAP CLXVI on annual Profections, original 1647 PDF749–752 printed715–718; 30 source-only historical annotations R12582–R12611. One sign/solar return year with 12year cycle, annual sign shift preserving natal degrees/minutes, original monthly 13 equal parts and diurnal 2d3h54min per sign, merchant example annual table physically shows 72 years 1616–1687 but individual glyph tracks not critically collated. Year25 uses 24 completed years, example profected ascendant Capricorn6°37, nominal one degree12d4h12m. Physically new CLXVII heading starts on PDF752, not merged. Source/old calendar/year mechanics and human event prediction unvalidated."
     }
   ],
   "next": {
-    "pdf_page": 749,
-    "printed_page": 715,
-    "chapter": "CLXVI",
-    "printed_chapter_numeral": "CLXVI",
-    "editorial_source_sequence_ordinal": 166,
-    "heading": "Of annual Profections, and by what means to find out the Profectionall Signe of every yeer",
+    "pdf_page": 752,
+    "printed_page": 718,
+    "chapter": "CLXVII",
+    "printed_chapter_numeral": "CLXVII",
+    "editorial_source_sequence_ordinal": 167,
+    "heading": "Of the Use of Profections, and their Effects",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Start below original physical horizontal divider p715/PDF749. A DISTINCT following physical heading also prints CHAP CLXVI but concerns annual Profections, not the prior 1647 annual direction-time chapter. Next historical source R12582. Do not infer original human event accuracy from source checks.",
-    "research_scope": "Original printed annual Profections source definitions, 30-degree yearly movement and subsequent types; preserve repeated literal Roman numeral and independent source edition/context."
+    "position": "Original 1647 PDF752/printed718 below horizontal divider begins CHAP CLXVII of annual Profections' use/effects. Preceding second printed CLXVI chapter is physically covered, but merchant chart table individual glyphs not expert collated and no human predictive validation. Next R12612.",
+    "research_scope": "Original historical profection and direction conjunction rules, timing claims and qualifications, not measured person data."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 81,
+  "read_headed_units_count": 82,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07ak_CLXVI_PHYSICAL_END.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07al_PROFECTIONS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1458,7 +1466,24 @@
       "full_source_critical_edition_complete": false,
       "real_event_predictions_validated": 0,
       "runtime_model_promoted": false
+    },
+    {
+      "printed_chapter": "CLXVI",
+      "editorial_source_ordinal": 166,
+      "source_unit": "SECOND physically separate original printed CLXVI annual Profections",
+      "heading": "Of annual Profections, and by what means to find out the Profectionall Signe of every yeer",
+      "physical_start_pdf": 749,
+      "physical_end_pdf": 752,
+      "accepted_batch": "B07al",
+      "physical_pages_traversed": true,
+      "merchant_table_72_historical_years_visible": true,
+      "all_merchant_table_zodiac_cells_independently_verified": false,
+      "complete": true,
+      "full_expert_critical_edition_complete": false,
+      "true_original_solar_return_date_and_chart_engine_verified": false,
+      "actual_human_prediction_accuracy_validated": false
     }
   ],
-  "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166."
+  "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166.",
+  "source_duplicate_printed_CLXVI_preservation_note": "First distinct physically printed CLXVI original directions-time is editorial ordinal165 source pages PDF742–749; second distinct physically printed CLXVI annual Profections editorial ordinal166 PDF749–752. Original duplicated Roman text preserved. Following printed CLXVII starts PDF752. Physical reading complete but critical star table text, proper original natal/calendar engine and actual-person predictions not verified."
 }
