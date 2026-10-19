@@ -1,3 +1,9 @@
+# Original Lilly 1647 Naibod tables accepted as PARTIAL source (B07aj)
+
+**21 historical documentary notes R12547–R12567** preserve original printed713–714 first/second-edition Naibod tables, 90 degree source rows plus 59 explicitly labeled minute rows (minute27 missing). Source first-minute day digit unresolved; degree69 printed year70, degree80 24 hours, minute8 44days, minute44 first/second-edition difference, minute60 374days14hours all retained, not math-corrected. **12,567 Lilly+1,066 Ptolemy =13,633 Western historical records**, independent Chinese V5 **101 BaZi+161 Zi Wei=262**, unchanged. First original physically printed CLXVI directions-time chapter remains PARTIAL; next **R12568 original PDF749 printed715** Naibod calculations and separate following duplicate-numbered annual Profections. Zero real-person predictions or runtime model promotions.
+
+## Earlier accepted historical checkpoint preserved
+
 # Lilly 1647 first CLXVI original worked table and Maginus source (B07ai, PARTIAL)
 
 **31 original historical annotations R12516–R12546** include the printed711/PDF745 end of annual-table instructions and printed712/PDF746 24-year 54' annual source table, Maginus two actual first-and-second edition worked examples and Naibod introduction. Original exact table lookup Sun6°37′ Libra -> Libra7=54′25″, omit seconds to 54′. Source **42′→284days and48′→324days** disagrees with arithmetic residual **13′ and4′**; source explicitly 6d18h per arcminute implies 54' accumulates 364.5 nominal days. Both original print and calculation are preserved, neither is validated predictive astronomy. **Lilly 12,546 + Ptolemy 1,066 =13,612 Western historical notes**; Chinese historical V5 **101 BaZi +161 Zi Wei=262** unchanged. The first printed CLXVI remains PARTIAL; next **R12547** at original PDF747/printed713 Naibod table. Human prediction validations zero, runtime promotions zero.

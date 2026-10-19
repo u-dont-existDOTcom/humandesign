@@ -1,0 +1,419 @@
+{
+  "batch": "B07aj",
+  "status": "PARTIAL_ORIGINAL_1647_NAIBOD_DEGREE_AND_MINUTE_TABLES_SOURCE",
+  "record_count": 21,
+  "first_record": "R12547",
+  "last_record": "R12567",
+  "source_groups": 2,
+  "body_pdf_frames": [
+    747,
+    748
+  ],
+  "original_naibod_first_print_degrees90_minutes59_not60": true,
+  "original_minute27_missing_and_one_day_glyph_unresolved": true,
+  "full_first_CLXVI_source_chapter_complete": false,
+  "source_crosswalk_SHA256": "647f618852603b8ee1b3f5f25316a6e538907b929e262647ed0fc284305ee992",
+  "human_prediction_validations": 0,
+  "runtime_promotions": 0,
+  "rules": [
+    {
+      "id": "R12547",
+      "record_number": 12547,
+      "batch": "B07aj",
+      "source_span": "B07aj-S001",
+      "original_pdf_frames": [
+        747
+      ],
+      "original_printed_folio": 713,
+      "role": "degree_table_original_heading",
+      "source_anchor_not_diplomatic": "degree table original heading",
+      "historical_meaning_only": "Naibod exact conversion of equatorial degrees, historical heading; not independently validated accuracy.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12548",
+      "record_number": 12548,
+      "batch": "B07aj",
+      "source_span": "B07aj-S001",
+      "original_pdf_frames": [
+        747
+      ],
+      "original_printed_folio": 713,
+      "role": "degree_rows_1_30",
+      "source_anchor_not_diplomatic": "degree rows 1 30",
+      "historical_meaning_only": "Original first block equatorial degrees1–30 yields printed years/days/hours.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12549",
+      "record_number": 12549,
+      "batch": "B07aj",
+      "source_span": "B07aj-S001",
+      "original_pdf_frames": [
+        747
+      ],
+      "original_printed_folio": 713,
+      "role": "degree_rows_31_60",
+      "source_anchor_not_diplomatic": "degree rows 31 60",
+      "historical_meaning_only": "Original second block equatorial degrees31–60 yields printed years/days/hours.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12550",
+      "record_number": 12550,
+      "batch": "B07aj",
+      "source_span": "B07aj-S001",
+      "original_pdf_frames": [
+        747
+      ],
+      "original_printed_folio": 713,
+      "role": "degree_rows_61_90",
+      "source_anchor_not_diplomatic": "degree rows 61 90",
+      "historical_meaning_only": "Original third block equatorial degrees61–90 yields printed years/days/hours.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12551",
+      "record_number": 12551,
+      "batch": "B07aj",
+      "source_span": "B07aj-S001",
+      "original_pdf_frames": [
+        747
+      ],
+      "original_printed_folio": 713,
+      "role": "degree69_printed_year70",
+      "source_anchor_not_diplomatic": "degree69 printed year70",
+      "historical_meaning_only": "Original degree69 explicitly has printed year70 and four days three hours, differing from modern flattened text.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12552",
+      "record_number": 12552,
+      "batch": "B07aj",
+      "source_span": "B07aj-S001",
+      "original_pdf_frames": [
+        747
+      ],
+      "original_printed_folio": 713,
+      "role": "degree80_printed_hour24",
+      "source_anchor_not_diplomatic": "degree80 printed hour24",
+      "historical_meaning_only": "Original degree80 prints 81 years, 62 days, 24 hours; do not normalize 24h.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12553",
+      "record_number": 12553,
+      "batch": "B07aj",
+      "source_span": "B07aj-S001",
+      "original_pdf_frames": [
+        747
+      ],
+      "original_printed_folio": 713,
+      "role": "degree90_printed_year91",
+      "source_anchor_not_diplomatic": "degree90 printed year91",
+      "historical_meaning_only": "Original degree90 prints year91, 116 days, 13 hours in both editions.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12554",
+      "record_number": 12554,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "minute_table_original_heading",
+      "source_anchor_not_diplomatic": "minute table original heading",
+      "historical_meaning_only": "Original 1647 folio714 converts equatorial minutes into days and hours.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12555",
+      "record_number": 12555,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "minute_rows_1_26",
+      "source_anchor_not_diplomatic": "minute rows 1 26",
+      "historical_meaning_only": "Minute first block source labels1–26; original minute1 day glyph uncertain five/six.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12556",
+      "record_number": 12556,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "missing_minute27",
+      "source_anchor_not_diplomatic": "missing minute27",
+      "historical_meaning_only": "After printed minute26 the original source jumps directly to minute28.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12557",
+      "record_number": 12557,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "minute28_30_printed_values",
+      "source_anchor_not_diplomatic": "minute28 30 printed values",
+      "historical_meaning_only": "Original labels minute28–30 are retained literally, not shifted into fabricated minute27.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12558",
+      "record_number": 12558,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "minute_second_block31_60",
+      "source_anchor_not_diplomatic": "minute second block31 60",
+      "historical_meaning_only": "Second block minute31–60 literal days/hours retained separately.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12559",
+      "record_number": 12559,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "minute8_44days",
+      "source_anchor_not_diplomatic": "minute8 44days",
+      "historical_meaning_only": "Original minute8 prints 44 days 10 hours despite progression suggesting different value.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12560",
+      "record_number": 12560,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "minute44_two_editions_disagree",
+      "source_anchor_not_diplomatic": "minute44 two editions disagree",
+      "historical_meaning_only": "1647 minute44 reads 271days8hours; 1659 copy reads 271days18hours.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12561",
+      "record_number": 12561,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "minute55_worked_339days17h",
+      "source_anchor_not_diplomatic": "minute55 worked 339days17h",
+      "historical_meaning_only": "Printed minute55 gives 339 days 17 hours, used by worked terms example.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12562",
+      "record_number": 12562,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "minute60_374days14h",
+      "source_anchor_not_diplomatic": "minute60 374days14h",
+      "historical_meaning_only": "Printed 60-minute value is 374days14h, inconsistent with degree-one row.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12563",
+      "record_number": 12563,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "two_tables_explicitly_distinguished",
+      "source_anchor_not_diplomatic": "two tables explicitly distinguished",
+      "historical_meaning_only": "Lilly's prose states first table converts degrees; second table converts minutes.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12564",
+      "record_number": 12564,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "mars_terms_historical_target",
+      "source_anchor_not_diplomatic": "mars terms historical target",
+      "historical_meaning_only": "Worked ascendant to Mars terms has 11 degrees 55 minutes of equatorial arc.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12565",
+      "record_number": 12565,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "naibod_degree11_11y58d21h",
+      "source_anchor_not_diplomatic": "naibod degree11 11y58d21h",
+      "historical_meaning_only": "Original degree11 row is 11 years 58 days 21 hours.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12566",
+      "record_number": 12566,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "naibod_minute55_339d17h",
+      "source_anchor_not_diplomatic": "naibod minute55 339d17h",
+      "historical_meaning_only": "Original minute55 row adds 339 days 17 hours.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12567",
+      "record_number": 12567,
+      "batch": "B07aj",
+      "source_span": "B07aj-S002",
+      "original_pdf_frames": [
+        748
+      ],
+      "original_printed_folio": 714,
+      "role": "naibod_partial_sum_before_carry",
+      "source_anchor_not_diplomatic": "naibod partial sum before carry",
+      "historical_meaning_only": "Source prints 11 years, 397 days and 38 hours before carrying excess days/hours.",
+      "historical_source_documented_by_one_reader": true,
+      "source_original_table_crosswalk": "batches/B07aj/ORIGINAL_1647_NAIBOD_149_PRINTED_TABLE_ROWS_V1.json",
+      "source_critical_second_reader_149_cells_verified": false,
+      "original_natal_epoch_direction_math_validated": false,
+      "independent_human_predictive_event_validation": false,
+      "runtime_model_promoted": false
+    }
+  ]
+}
