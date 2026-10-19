@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXVII_USE_OF_PROFECTIONS_PARTIAL_TO_P720_NEXT_TIME_TABLE",
-  "records_count": 12625,
+  "status": "BOOK_III_CLXVII_PROFECTION_TIME_TABLES_PARTIAL_THREE_SOURCE_EXAMPLES",
+  "records_count": 12649,
   "read_numbered_chapters": [
     1,
     2,
@@ -1279,27 +1279,34 @@
       "records_count": 14,
       "sha256": "2d6c24145ea3a4b4a2f7a07acb3bbdad24d1edca41e79ab6653d963773526bc4",
       "scope": "Original 1647 printed CLXVII Use of Profections and Effects begins lower printed718/PDF752 and continues printed719–720 PDF753–754. 14 source-only historical annotations R12612–R12625 on corroborating directions, differing profectional effects, lord-of-year sign ruler, within-sign degree limits, and instructions to use future degree/minute calendar table. P721/PDF755 tabular cells not yet transcribed; full CLXVII physically open, no measured human predictive validity."
+    },
+    {
+      "id": "B07an",
+      "path": "batches/B07an/RULES.json",
+      "records_count": 24,
+      "sha256": "18eb6c489c38069eb4bee7b6ebe089ec4f47ab3321fe59e10c6c2935f3d8ab16",
+      "scope": "Partial original printed CLXVII Use of Profections source first edition folios721–724/PDF755–758. Twenty-four source-only historical annotations R12626–R12649 from two physical degree/minute time tables, nativity-specific calendar date chart, 1640 nativity and three worked timing examples; actual 1647 and independently typeset original 1659 print images with per-file SHA witnesses retained. Nine sampled first-edition table cells manually checked; full 30-degree, 60-minute and year/month table glyph census NOT complete. Third worked 6°23 target erroneously looks up minute37 instead of minute23 (source 80d13h21 versus reconstructed 77d17h11); original both editions retain this discrepancy. One-degree and minute60 table cells differ by one clock minute. Source academic validity, full birth calendar, real people's life outcomes and runtime model promotion remain unvalidated."
     }
   ],
   "next": {
-    "pdf_page": 755,
-    "printed_page": 721,
+    "pdf_page": 759,
+    "printed_page": 725,
     "chapter": "CLXVII",
     "printed_chapter_numeral": "CLXVII",
     "editorial_source_sequence_ordinal": 167,
-    "heading": "Of the Use of Profections, and their Effects — degree and minute time tables",
+    "heading": "Of the Use of Profections, and their Effects — mid-heaven and other Hylegical places",
     "include_opening_paragraph": false,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Original 1647 printed721/PDF755 contains two tabular physical conversions for profectional degrees and minutes into day/hour/minute intervals; the original 1647 source has unusual printed entries. Do not infer accurate natal calendar dates or all source cells before source-critical collation. Next R12626. Original CLXVII chapter remains PARTIAL.",
-    "research_scope": "Original historical 1647 degree and minute time tabulation, print/edition fidelity; later actual ephemeris and human forecasts separate."
+    "position": "Original 1647 printed725/PDF759 continues the Mid-heaven examples from p724 after three Ascendant examples and 1647/1659 source-proven 6°23 vs 37-minute lookup conflict. The first CLXVII remains PARTIAL and original 30-degree/60-minute and calendar day tables not fully source-critically collated. Next historical source R12650.",
+    "research_scope": "Original source calculations of Midheaven, Sun, Moon and other hylegical place prosectional directions, source edition and numerical errors versus calendar parity; no real-person test or actual birthday ephemeris inferred."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 82,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07am_CLXVII_PARTIAL.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07an_PROFECTION_TIMING.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [
     {
@@ -1307,14 +1314,17 @@
       "editorial_source_ordinal": 167,
       "source_unit": "Of the Use of Profections, and their Effects",
       "physical_source_start_pdf": 752,
-      "accepted_through_pdf": 754,
-      "next_unaccepted_pdf": 755,
-      "next_record": "R12626",
+      "accepted_through_pdf": 758,
+      "next_unaccepted_pdf": 759,
+      "next_record": "R12650",
       "accepted_batch": "B07am",
       "complete": false,
       "next_calendar_table_original_glyphs_read": false,
       "independent_original_edition_critically_verified": false,
-      "genuine_real_human_event_predictions_validated": 0
+      "genuine_real_human_event_predictions_validated": 0,
+      "latest_accepted_batch": "B07an",
+      "all_original_degree_minute_table_glyphs_critically_verified": false,
+      "third_worked_profection_minute_lookup_discrepancy_documented": true
     }
   ],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1507,5 +1517,6 @@
     }
   ],
   "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166.",
-  "source_duplicate_printed_CLXVI_preservation_note": "First distinct physically printed CLXVI original directions-time is editorial ordinal165 source pages PDF742–749; second distinct physically printed CLXVI annual Profections editorial ordinal166 PDF749–752. Original duplicated Roman text preserved. Following printed CLXVII starts PDF752. Physical reading complete but critical star table text, proper original natal/calendar engine and actual-person predictions not verified."
+  "source_duplicate_printed_CLXVI_preservation_note": "First distinct physically printed CLXVI original directions-time is editorial ordinal165 source pages PDF742–749; second distinct physically printed CLXVI annual Profections editorial ordinal166 PDF749–752. Original duplicated Roman text preserved. Following printed CLXVII starts PDF752. Physical reading complete but critical star table text, proper original natal/calendar engine and actual-person predictions not verified.",
+  "chapter_CLXVII_partial_1647_source_table_issue_note": "B07an 24 historic source-only observations of original 1647/1659 profection date tables p721-724. Full original tabular data not independently collated: only nine literal rows manually checked. The printed third 6°23 angle source uses minute37 not minute23, yielding 80d13h21 versus 77d17h11 under the printed table. No actual-person outcome, natal ephemeris or full calendar engine verified; first physical CLXVII remains PARTIAL."
 }

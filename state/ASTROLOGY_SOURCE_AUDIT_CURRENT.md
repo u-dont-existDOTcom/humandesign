@@ -1,3 +1,9 @@
+# Lilly original printed CLXVII profection timing sources partially accepted (B07an)
+
+**24 new historical documentary records R12626–R12649** from original first 1647 printed721–724/PDF755–758 and independently typeset 1659 print, source photos and hashes preserved. Degree and minute conversion tables plus old nativity calendar-day table remain only sampled, not fully critically collated. Original two examples produce **17d20h34m / October6** and **29d10h08m / October17**. Original third example prints arc **6°23′** but uses **37′** row, giving **80d13h21m** instead of the printed table's 23′ row giving **77d17h11m**. Do not repair original document, claim verified natal engine or treat the dates as observed human predictions. **12,649 Lilly +1,066 Ptolemy=13,715 Western historical notes**, Chinese V7 **154 BaZi+201 Zi Wei=355** unchanged. The first original CLXVII chapter stays PARTIAL; next **R12650 original PDF759/printed725 Mid-heaven examples**. Zero independently verified human predictions and zero runtime model promotions.
+
+## Previous accepted original-source checkpoint retained
+
 # Original Lilly CLXVII opening PARTIAL p718–720 (B07am)
 
 **14 new source-only historical annotations R12612–R12625**, physically anchored to original printed718–720/PDF752–754 after prior original CLXVI annual Profections chapter. Lilly discusses concordance/contradiction of directions and profections, lord-of-year, separate fifteen-degree segments and use of a following conversion table. These are historically conditional interpretive statements, not measured life predictions. Lilly source count **12,625** + Ptolemy **1,066** = Western **13,691**; parallel Chinese V5 **101 BaZi+161 Zi Wei=262** unchanged. Chapter CLXVII remains PARTIAL, next original **R12626 PDF755 printed721** two original conversion tables. No full birth-era calendar/astronomy proof, human prediction validation or runtime promotion.

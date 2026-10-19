@@ -1,0 +1,661 @@
+{
+  "schema": "LILLY_1647_CLXVII_PROFECTION_TABLES_AND_WORKED_SOURCE_P755_758_V1",
+  "batch": "B07an",
+  "original_full_1647_PDF_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "source_images": {
+    "first_edition_pdf755": {
+      "file": "evidence/1647_original-755.jpg",
+      "source_year": 1647,
+      "pdf_frame": 755,
+      "printed_folio": 721,
+      "source_image_SHA256": "712fee2a65ffafdc92d44aca2b11f03927d3872b880d93ca3bcd3b5ddc6fbb1d",
+      "source_image_exact_bytes": 1668288
+    },
+    "first_edition_pdf756": {
+      "file": "evidence/1647_original-756.jpg",
+      "source_year": 1647,
+      "pdf_frame": 756,
+      "printed_folio": 722,
+      "source_image_SHA256": "f73b8619f1febd5fa15c670b56b3be2733fb8c1ba00288c5acd934fdf6994703",
+      "source_image_exact_bytes": 1741483
+    },
+    "first_edition_pdf757": {
+      "file": "evidence/1647_original-757.jpg",
+      "source_year": 1647,
+      "pdf_frame": 757,
+      "printed_folio": 723,
+      "source_image_SHA256": "884098fadfc2200d18df10d556ca7567c31c3949b687abfeaa905b50acc7fe5e",
+      "source_image_exact_bytes": 1801172
+    },
+    "first_edition_pdf758": {
+      "file": "evidence/1647_original-758.jpg",
+      "source_year": 1647,
+      "pdf_frame": 758,
+      "printed_folio": 724,
+      "source_image_SHA256": "2fb4b587c2e1d8eb5ec132db97183492d0102a08c59bb4538c518388523aed64",
+      "source_image_exact_bytes": 1505410
+    },
+    "second_edition_djvu750": {
+      "file": "evidence/1659_original_djvu_750.jpg",
+      "source_year": 1659,
+      "djvu_frame": 750,
+      "printed_folio": 721,
+      "source_image_SHA256": "52d3ca6e9b387d645ad9dea9a184caa9bb4cd98aaf0013b03d7f95352e33490e",
+      "source_image_exact_bytes": 420110
+    },
+    "second_edition_djvu751": {
+      "file": "evidence/1659_original_djvu_751.jpg",
+      "source_year": 1659,
+      "djvu_frame": 751,
+      "printed_folio": 722,
+      "source_image_SHA256": "8cce3ceaf513dc19b5e782b1cfe20a6893d48a5799e23c6592662bf8079c1d7c",
+      "source_image_exact_bytes": 452642
+    },
+    "second_edition_djvu752": {
+      "file": "evidence/1659_original_djvu_752.jpg",
+      "source_year": 1659,
+      "djvu_frame": 752,
+      "printed_folio": 723,
+      "source_image_SHA256": "4c5ced505599a8bd5add98281067d3a4e98ca181c9c326239fafce0077fa9d4b",
+      "source_image_exact_bytes": 420039
+    },
+    "second_edition_djvu753": {
+      "file": "evidence/1659_original_djvu_753.jpg",
+      "source_year": 1659,
+      "djvu_frame": 753,
+      "printed_folio": 724,
+      "source_image_SHA256": "ab983b9ec5e3efa433a3e019f7008aceaa9fd360bae982dbff69fdb03ed70dd1",
+      "source_image_exact_bytes": 352886
+    }
+  },
+  "source_original_printed_pages": [
+    721,
+    722,
+    723,
+    724
+  ],
+  "source_derivative_used_as_authoritative_source": false,
+  "source_expected_table_degree_rows": 30,
+  "source_expected_table_minute_rows": 60,
+  "source_full_30_and_60_digit_columns_critically_collated": false,
+  "source_365day_month_table_all_cells_critically_collated": false,
+  "source_sample_one_reader_table_rows": [
+    {
+      "table": "degree",
+      "printed_label": 1,
+      "first_edition_1647_time_dhm": [
+        12,
+        4,
+        12
+      ],
+      "second_edition_1659_one_reader_agrees": true,
+      "source_first_edition_one_reader_not_independent_expert_review": true,
+      "calculation_or_predictive_accuracy_verified": false
+    },
+    {
+      "table": "degree",
+      "printed_label": 2,
+      "first_edition_1647_time_dhm": [
+        24,
+        8,
+        23
+      ],
+      "second_edition_1659_one_reader_agrees": true,
+      "source_first_edition_one_reader_not_independent_expert_review": true,
+      "calculation_or_predictive_accuracy_verified": false
+    },
+    {
+      "table": "degree",
+      "printed_label": 6,
+      "first_edition_1647_time_dhm": [
+        73,
+        1,
+        10
+      ],
+      "second_edition_1659_one_reader_agrees": true,
+      "source_first_edition_one_reader_not_independent_expert_review": true,
+      "calculation_or_predictive_accuracy_verified": false
+    },
+    {
+      "table": "degree",
+      "printed_label": 30,
+      "first_edition_1647_time_dhm": [
+        365,
+        5,
+        49
+      ],
+      "second_edition_1659_one_reader_agrees": true,
+      "source_first_edition_one_reader_not_independent_expert_review": true,
+      "calculation_or_predictive_accuracy_verified": false
+    },
+    {
+      "table": "minute",
+      "printed_label": 23,
+      "first_edition_1647_time_dhm": [
+        4,
+        16,
+        1
+      ],
+      "second_edition_1659_one_reader_agrees": true,
+      "source_first_edition_one_reader_not_independent_expert_review": true,
+      "calculation_or_predictive_accuracy_verified": false
+    },
+    {
+      "table": "minute",
+      "printed_label": 25,
+      "first_edition_1647_time_dhm": [
+        5,
+        1,
+        45
+      ],
+      "second_edition_1659_one_reader_agrees": true,
+      "source_first_edition_one_reader_not_independent_expert_review": true,
+      "calculation_or_predictive_accuracy_verified": false
+    },
+    {
+      "table": "minute",
+      "printed_label": 28,
+      "first_edition_1647_time_dhm": [
+        5,
+        16,
+        22
+      ],
+      "second_edition_1659_one_reader_agrees": true,
+      "source_first_edition_one_reader_not_independent_expert_review": true,
+      "calculation_or_predictive_accuracy_verified": false
+    },
+    {
+      "table": "minute",
+      "printed_label": 37,
+      "first_edition_1647_time_dhm": [
+        7,
+        12,
+        11
+      ],
+      "second_edition_1659_one_reader_agrees": true,
+      "source_first_edition_one_reader_not_independent_expert_review": true,
+      "calculation_or_predictive_accuracy_verified": false
+    },
+    {
+      "table": "minute",
+      "printed_label": 60,
+      "first_edition_1647_time_dhm": [
+        12,
+        4,
+        13
+      ],
+      "second_edition_1659_one_reader_agrees": true,
+      "source_first_edition_one_reader_not_independent_expert_review": true,
+      "calculation_or_predictive_accuracy_verified": false
+    }
+  ],
+  "source_selected_original_printing_1659_one_reader_review": true,
+  "third_worked_case_discrepancy_retained_not_repaired": true,
+  "original_1647_natal_chart_ephemeris_conversion_verified": false,
+  "independent_real_person_predictions_validated": 0,
+  "runtime_promotions": 0,
+  "proposed_source_record_count": 24,
+  "proposed_source_first": "R12626",
+  "proposed_source_last": "R12649",
+  "next_source_id": "R12650",
+  "next_source_original_PDF": 759,
+  "original_printed_1647_date_table_and_examples": [
+    {
+      "case": "first_Jupiter_antiscia",
+      "original_target": [
+        8,
+        5
+      ],
+      "original_ascendant": [
+        6,
+        37
+      ],
+      "printed_arc": [
+        1,
+        28
+      ],
+      "source_degree_row_dhm": [
+        12,
+        4,
+        12
+      ],
+      "source_minute_row": [
+        28,
+        5,
+        16,
+        22
+      ],
+      "printed_total_dhm": [
+        17,
+        20,
+        34
+      ],
+      "printed_rounded_day": 18,
+      "printed_month_day": "October 6",
+      "original_year_case": 1640
+    },
+    {
+      "case": "second_Saturn_trine",
+      "original_target": [
+        9,
+        2
+      ],
+      "original_ascendant": [
+        6,
+        37
+      ],
+      "printed_arc": [
+        2,
+        25
+      ],
+      "source_degree_row_dhm": [
+        24,
+        8,
+        23
+      ],
+      "source_minute_row": [
+        25,
+        5,
+        1,
+        45
+      ],
+      "printed_total_dhm": [
+        29,
+        10,
+        8
+      ],
+      "printed_rounded_day": 29,
+      "printed_month_day": "October 17",
+      "original_year_case": 1640
+    },
+    {
+      "case": "third_Jupiter_terms",
+      "original_target": [
+        13,
+        0
+      ],
+      "original_ascendant": [
+        6,
+        37
+      ],
+      "printed_arc": [
+        6,
+        23
+      ],
+      "source_degree_row_dhm": [
+        73,
+        1,
+        10
+      ],
+      "printed_minute_row_actually_used": [
+        37,
+        7,
+        12,
+        11
+      ],
+      "mathematically_corresponding_minute_row": [
+        23,
+        4,
+        16,
+        1
+      ],
+      "printed_total_dhm": [
+        80,
+        13,
+        21
+      ],
+      "recalculated_total_using_23_row_dhm": [
+        77,
+        17,
+        11
+      ],
+      "difference_using_37_vs_23_row_dhm": [
+        2,
+        20,
+        10
+      ],
+      "printed_rounded_day": 80,
+      "printed_month_day": "December 7",
+      "original_year_case": 1640,
+      "printed_source_arithmetic_inconsistency": true
+    }
+  ],
+  "source_notes": [
+    {
+      "candidate_id": "B07an-C001",
+      "planned_id": "R12626",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "degree_table_header",
+      "source_photo_locator_only": "Table converts degrees into days hours and minutes",
+      "source_historical_meaning": "Original first-edition degree table has printed degree labels 1–30 and three time-unit columns",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C002",
+      "planned_id": "R12627",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "minute_table_header",
+      "source_photo_locator_only": "Table converts minutes into days hours and minutes",
+      "source_historical_meaning": "Separate original first-edition table has printed minute labels 1–60 and three time-unit columns",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C003",
+      "planned_id": "R12628",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "degree_1",
+      "source_photo_locator_only": "1 degree / 12 4 12",
+      "source_historical_meaning": "Printed one-degree conversion is 12 days, 4 hours, 12 minutes",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C004",
+      "planned_id": "R12629",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "degree_2",
+      "source_photo_locator_only": "2 degrees / 24 8 23",
+      "source_historical_meaning": "Printed two-degree conversion is 24 days, 8 hours, 23 minutes",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C005",
+      "planned_id": "R12630",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "degree_6",
+      "source_photo_locator_only": "6 degrees / 73 1 10",
+      "source_historical_meaning": "Printed six-degree conversion is 73 days, 1 hour, 10 minutes",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C006",
+      "planned_id": "R12631",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "degree_30",
+      "source_photo_locator_only": "30 degrees / 365 5 49",
+      "source_historical_meaning": "Printed thirty-degree conversion is 365 days, 5 hours, 49 minutes",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C007",
+      "planned_id": "R12632",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "minute_23",
+      "source_photo_locator_only": "23 minutes / 4 16 1",
+      "source_historical_meaning": "Minute 23 row prints 4 days, 16 hours, 1 minute",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C008",
+      "planned_id": "R12633",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "minute_25",
+      "source_photo_locator_only": "25 minutes / 5 1 45",
+      "source_historical_meaning": "Minute 25 row prints 5 days, 1 hour, 45 minutes",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C009",
+      "planned_id": "R12634",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "minute_28",
+      "source_photo_locator_only": "28 minutes / 5 16 22",
+      "source_historical_meaning": "Minute 28 row prints 5 days, 16 hours, 22 minutes",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C010",
+      "planned_id": "R12635",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "minute_37",
+      "source_photo_locator_only": "37 minutes / 7 12 11",
+      "source_historical_meaning": "Minute 37 row prints 7 days, 12 hours, 11 minutes",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C011",
+      "planned_id": "R12636",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "minute_60",
+      "source_photo_locator_only": "60 minutes / 12 4 13",
+      "source_historical_meaning": "Minute 60 row prints 12 days, 4 hours, 13 minutes",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C012",
+      "planned_id": "R12637",
+      "original_first_edition_pdf_frame": 755,
+      "original_1647_printed_folio": 721,
+      "original_1659_printed_folio": 721,
+      "role": "one_degree_sixty_minute_1min_discrepancy",
+      "source_photo_locator_only": "degree1 vs minute60 mismatch",
+      "source_historical_meaning": "The source two table rows differ by one nominal time minute; not a source-print identity",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C013",
+      "planned_id": "R12638",
+      "original_first_edition_pdf_frame": 756,
+      "original_1647_printed_folio": 722,
+      "original_1659_printed_folio": 722,
+      "role": "table_of_days_of_year",
+      "source_photo_locator_only": "Table of the dayes of the yeer collected together",
+      "source_historical_meaning": "Following original p722 calendar-table converts numbered days to a month/day for a specified nativity",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C014",
+      "planned_id": "R12639",
+      "original_first_edition_pdf_frame": 757,
+      "original_1647_printed_folio": 723,
+      "original_1659_printed_folio": 723,
+      "role": "leap_year_feb29_note",
+      "source_photo_locator_only": "February 29 days in Leap yeer",
+      "source_historical_meaning": "Text specifies including Feb29 in a leap-year reckoning; exact old-style calendar parity not independently confirmed",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C015",
+      "planned_id": "R12640",
+      "original_first_edition_pdf_frame": 757,
+      "original_1647_printed_folio": 723,
+      "original_1659_printed_folio": 723,
+      "role": "example_birth_period_start",
+      "source_photo_locator_only": "beginning 19 of September 1640",
+      "source_historical_meaning": "The worked 25th-year profection calendar case starts 19 September 1640",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C016",
+      "planned_id": "R12641",
+      "original_first_edition_pdf_frame": 757,
+      "original_1647_printed_folio": 723,
+      "original_1659_printed_folio": 723,
+      "role": "first_worked_arc_1_28",
+      "source_photo_locator_only": "8°05 minus 6°37 gives 1°28",
+      "source_historical_meaning": "An ascendant-to-antiscia Jupiter example has printed difference 1°28",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C017",
+      "planned_id": "R12642",
+      "original_first_edition_pdf_frame": 757,
+      "original_1647_printed_folio": 723,
+      "original_1659_printed_folio": 723,
+      "role": "first_worked_case_18_days_oct6",
+      "source_photo_locator_only": "17d20h34m rounded to day18; October6",
+      "source_historical_meaning": "One-degree and minute28 table sum 17d20h34, source rounds to day18 yielding October6",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C018",
+      "planned_id": "R12643",
+      "original_first_edition_pdf_frame": 758,
+      "original_1647_printed_folio": 724,
+      "original_1659_printed_folio": 724,
+      "role": "second_arc_2_25",
+      "source_photo_locator_only": "9°02 minus 6°37 gives 2°25",
+      "source_historical_meaning": "Ascendant to dexter trine of Saturn printed difference 2°25",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C019",
+      "planned_id": "R12644",
+      "original_first_edition_pdf_frame": 758,
+      "original_1647_printed_folio": 724,
+      "original_1659_printed_folio": 724,
+      "role": "second_sum_29_days_oct17",
+      "source_photo_locator_only": "29d10h08m; October17",
+      "source_historical_meaning": "Two-degree and minute25 rows sum 29d10h08; source selects October17",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C020",
+      "planned_id": "R12645",
+      "original_first_edition_pdf_frame": 758,
+      "original_1647_printed_folio": 724,
+      "original_1659_printed_folio": 724,
+      "role": "third_arc_6_23",
+      "source_photo_locator_only": "13°00 minus 6°37 gives 6°23",
+      "source_historical_meaning": "Ascendant-to-Jupiter-terms difference is explicitly 6°23",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C021",
+      "planned_id": "R12646",
+      "original_first_edition_pdf_frame": 758,
+      "original_1647_printed_folio": 724,
+      "original_1659_printed_folio": 724,
+      "role": "third_uses_37_not_23",
+      "source_photo_locator_only": "37 minutes give 07 12 11",
+      "source_historical_meaning": "Even after printing residual 6°23, source uses a 37-minute lookup instead of 23",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C022",
+      "planned_id": "R12647",
+      "original_first_edition_pdf_frame": 758,
+      "original_1647_printed_folio": 724,
+      "original_1659_printed_folio": 724,
+      "role": "third_printed_80_13_21",
+      "source_photo_locator_only": "73d1h10 + 7d12h11 => 80d13h21",
+      "source_historical_meaning": "The printed third sum, from the chosen 37-minute table entry, is 80d13h21",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C023",
+      "planned_id": "R12648",
+      "original_first_edition_pdf_frame": 758,
+      "original_1647_printed_folio": 724,
+      "original_1659_printed_folio": 724,
+      "role": "third_calendar_day80_dec7",
+      "source_photo_locator_only": "day80 = December7",
+      "source_historical_meaning": "The source calendar lookup of printed day80 concludes the seventh of December",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "candidate_id": "B07an-C024",
+      "planned_id": "R12649",
+      "original_first_edition_pdf_frame": 758,
+      "original_1647_printed_folio": 724,
+      "original_1659_printed_folio": 724,
+      "role": "continuation_mid_heaven",
+      "source_photo_locator_only": "Mid-heaven continuation",
+      "source_historical_meaning": "Original printed p724 turns from the Ascendant examples to the next Midheaven section continued on original p725",
+      "critical_page_photo_one_reader_inspected": true,
+      "complete_critical_edition_verification": false,
+      "real_person_result_validated": false,
+      "runtime_model_promoted": false
+    }
+  ]
+}
