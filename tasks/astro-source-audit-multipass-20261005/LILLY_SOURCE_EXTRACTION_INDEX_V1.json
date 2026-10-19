@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXXII_SOLAR_REVOLUTION_PHYSICALLY_COVERED_NEXT_CLXXIII_PLANETARY_RETURNS",
-  "records_count": 12803,
+  "status": "BOOK_III_CLXXIII_PLANETARY_RETURNS_PHYSICAL_CHAPTER_COVERED_NEXT_CLXXIV_TRANSITS",
+  "records_count": 12846,
   "read_numbered_chapters": [
     1,
     2,
@@ -176,7 +176,8 @@
     169,
     170,
     171,
-    172
+    172,
+    173
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1341,27 +1342,35 @@
       "records_count": 15,
       "sha256": "ceab848e5c2cba224e02eddc1b8ce37bcce2230282397be537ac451a396c40c7",
       "scope": "Original first Lilly CLXXII source ending in 1647 printed736–737/PDF770–771, with distinct following CLXXIII chapter heading printed738/PDF772; 1659 separately typeset same folios preserved. Fifteen historical source-only notes R12789–R12803 on solar-return versus natal chart, annual ascendant and lord strength/combustion, Moon mitigation, natal 6th/12th/7th context, year-lord malefic contact and conditional cross-chart discord. Historic health, marriage, crime and money assertions NOT independently validated. 1646 natal solar-return calculation/calendar/ephemeris parity and human actual-person prediction accuracy still unverified."
+    },
+    {
+      "id": "B07av",
+      "path": "batches/B07av/RULES.json",
+      "records_count": 43,
+      "sha256": "5676bbca47afbf863e07f59c614857ebe206d73a15a939f0006ac5ad4e21fd36",
+      "scope": "First-edition original Lilly CLXXIII printed738–741/PDF772–775 planetary returns to radix positions, verified against actual separately typeset original second 1659 printed738–741/DjVu767–770 source photographs. Exactly six returning planet headings Saturn/Jupiter/Mars/Venus/Mercury/Moon times seven natal target planet places, 42 distinct historical conditional statements plus one distinct next-chapter physical boundary, R12804–R12846. No Sun returning-planet list exists in this chapter. Explicit natal/return conditionals preserved. Next first-edition heading literally CLXXIIII while independently typeset 1659 literally CLXXIV, both editorial chapter174 'Transit'. All high stakes, morality, health, crimes, relationships and fortune claims remain documentary only, not validated humans or horoscope engine."
     }
   ],
   "next": {
-    "pdf_page": 772,
-    "printed_page": 738,
-    "chapter": "CLXXIII",
-    "printed_chapter_numeral": "CLXXIII",
-    "editorial_source_sequence_ordinal": 173,
-    "heading": "Of the Returne of the Planets to their owne Places, and to the places of other Planets in the Radix",
+    "pdf_page": 775,
+    "printed_page": 741,
+    "chapter": "CLXXIV",
+    "printed_chapter_numeral": "CLXXIIII",
+    "second_1659_edition_printed_chapter_numeral": "CLXXIV",
+    "editorial_source_sequence_ordinal": 174,
+    "heading": "Of the TRANSIT of the Planets",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Next CLXXIII starts below an original physical heading at printed738/PDF772 after CLXXII closes at printed737/PDF771. Saturn section begins on same page and Jupiter section continues on original PDF773/printed739. Both original 1647 and independent 1659 photos already saved in B07au source evidence but NO substantive Saturn/Jupiter rules were accepted as CLXXIII yet. Next historical R12804.",
-    "research_scope": "Document historical planetary-return-to-radix positions by planet with natal-context conditions from actual first and separately typeset second original printed editions, without turning health, relationship, morality or death assertions into verified person-level facts."
+    "position": "New physical transit chapter after last CLXXIII Moon-on-Moon paragraph and horizontal divider on original first-edition printed741/PDF775, source first chapter-heading roman numeral literally CLXXIIII, 1659 second type-set chapter printed CLXXIV. Normalize only editorial sequence as174. Next source R12847. A single physically same-page heading locator already admitted in B07av and must not be repeated as a new substantive transit rule.",
+    "research_scope": "Original first and separately typeset second editions define transits by ephemeris, natal house cusps/natal planet or Nodes/Fortune, benefic and malefic aspects and claimed favorable days; actual date/time ephemeris parity and out-of-sample human predictions remain entirely unverified."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 88,
+  "read_headed_units_count": 89,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07au_CLXXII_END.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07av_CLXXIII.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1659,6 +1668,34 @@
       "solar_return_old_epoch_ephemeris_and_meridian_parity_verified": false,
       "independent_real_person_predictions_validated": 0,
       "runtime_model_promoted": false
+    },
+    {
+      "printed_chapter": "CLXXIII",
+      "editorial_ordinal": 173,
+      "chapter_heading": "Of the Returne of the Planets to their owne Places, and to the places of other Planets in the Radix",
+      "first_edition_original_pdf_from": 772,
+      "first_edition_original_pdf_through": 775,
+      "first_edition_original_printed_folios": [
+        738,
+        739,
+        740,
+        741
+      ],
+      "separate_second_typeset_edition_DjVu_folios": [
+        767,
+        768,
+        769,
+        770
+      ],
+      "historical_source_returning_planet_headings_six": true,
+      "seven_natal_planet_targets_per_heading": true,
+      "all_historical_source_rule_pairs_documented": 42,
+      "physical_source_span_covered": true,
+      "full_independent_expert_diplomatic_edition_review": false,
+      "original_1647_birth_calendar_and_solar_revolution_engine_validated": false,
+      "blind_real_people_predictions_validated": 0,
+      "runtime_astrological_rules_promoted": false,
+      "accepted_batch": "B07av"
     }
   ],
   "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166.",
@@ -1670,5 +1707,6 @@
   "CLXX_Midheaven_Sun_source_only_coverage_note": "B07ar physically covers first original CLXX Midheaven and Sun profections through all twelve original houses and historical conditional geometry/children/capability claims. Original separately typeset 1659 print p731–732 corroborated by a single source reader; not expert edition or predictive truth.",
   "chapter_CLXXI_original_source_history_note": "B07as 22 documentary annotations covering 12 original Part Fortune/second-house house contexts and only first three Alfridary septennial lords by day and night. The CLXXII page734 source physical boundary is proven in both printed editions; 1647/1659 page transcriptions and any actual human predictions remain unverified independently.",
   "source_1646_solar_revolution_historical_example_note": "One-reader physical original 1647/1659 prints agree on source Sun 6°37′ vs day noon6°12′ in Libra, residual25′, nearest diurnal rate59′08″ versus 59′10″ observed, Maginus 20′+5′ fractional times10h08m47s, later truncation to10h08m for source meridian offset and house-table calculation21h43m. No verified 1646 astronomical/calendar parity or real life predictive outcome.",
-  "physical_CLXXII_source_coverage_and_limits": "B07at–B07au cover original first printed CLXXII folios734–737 and record CLXXIII next heading at printed738. First-and-second 1647/1659 source photos preserved, but historical 1646 return astronomy/calendar and natal chart parity, expert critical edition and actual human predictions are NOT verified."
+  "physical_CLXXII_source_coverage_and_limits": "B07at–B07au cover original first printed CLXXII folios734–737 and record CLXXIII next heading at printed738. First-and-second 1647/1659 source photos preserved, but historical 1646 return astronomy/calendar and natal chart parity, expert critical edition and actual human predictions are NOT verified.",
+  "source_CLXXIII_printed_variation_research_note": "The first original printed CLXXIII was traversed in B07av but not expert-critically collated. At printed741/PDF775 first printing the next physically distinct chapter is headed CHAP. CLXXIIII. The 1659 independently typeset printing reads CHAP. CLXXIV. Both editorially mean 174. Preserve literal original headings, unknown astrological birthday/solar return mathematics and zero actually measured human predictions."
 }

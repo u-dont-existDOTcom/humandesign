@@ -131,12 +131,32 @@ def freeze():
         )
     assert len(all_records) == 42
     assert [r["record_number"] for r in all_records] == list(range(12804, 12846))
+    heading_witness = {
+        "schema": "LILLY_TWO_ORIGINAL_EDITION_CLXXIV_ROMAN_NUMERAL_VARIANT_V1",
+        "boundary_original_first_ed_pdf_frame": 775,
+        "boundary_original_printed_page": 741,
+        "original_1647_literal_chapter_heading": "CHAP. CLXXIIII.",
+        "independently_typeset_1659_literal_chapter_heading": "CHAP. CLXXIV.",
+        "editorial_normalized_chapter_numeral": "CLXXIV",
+        "source_first_original_1647_photo_sha256": manifest["first_edition_1647"][741]["sha256"],
+        "source_second_original_1659_photo_sha256": manifest["independently_typeset_1659"][741][
+            "sha256"
+        ],
+        "physical_boundary_below_last_Moon_own_place_statement": True,
+        "independently_typeset_second_book_not_independent_human_predictions": True,
+        "modern_original_1647_natal_chart_verified": False,
+        "real_person_outcome_predictive_validations": 0,
+    }
+    save(B / "SOURCE_CLXXIV_ORIGINAL_TWO_EDITION_NUMERAL_V1.json", heading_witness)
     boundary = {
         "id": "R12846",
         "record_number": 12846,
         "batch": "B07av",
         "original_printed_chapter": "CLXXIII",
         "role": "physical_heading_boundary_next_clxxiv_transits",
+        "literal_next_1647_printed_numeral": "CLXXIIII",
+        "literal_next_1659_printed_numeral": "CLXXIV",
+        "next_editorial_numeral": "CLXXIV",
         "original_pdf_frames": [775],
         "original_printed_folio": 741,
         "source_first_1647_photo_sha256": manifest["first_edition_1647"][741]["sha256"],
@@ -165,7 +185,9 @@ def freeze():
         "first_record": "R12804",
         "last_record": "R12846",
         "next_record": "R12847",
-        "next_printed_chapter": "CLXXIV",
+        "next_printed_chapter": "CLXXIIII",
+        "next_second_edition_printed_chapter": "CLXXIV",
+        "next_editorial_normalized_chapter": "CLXXIV",
         "next_original_pdf_frame": 775,
         "chapter_source_physically_covered": True,
         "complete_expert_original_edition_critical_collation": False,
@@ -200,6 +222,9 @@ def freeze():
         "runtime_model_promotions": 0,
         "records": all_records,
         "physical_boundary_note": boundary,
+        "original_next_heading_two_edition_witness_sha256": sha(
+            B / "SOURCE_CLXXIV_ORIGINAL_TWO_EDITION_NUMERAL_V1.json"
+        ),
     }
     save(B / "ORIGINAL_CLXXIII_42_RETURN_SOURCE_CASES_V1.json", report)
     provenance = {
@@ -216,6 +241,9 @@ def freeze():
         "human_prediction_validations": 0,
         "runtime_model_promotions": 0,
         "source_rule_locators": locators,
+        "source_heading_witness_sha256": sha(
+            B / "SOURCE_CLXXIV_ORIGINAL_TWO_EDITION_NUMERAL_V1.json"
+        ),
     }
     save(B / "SOURCE_RULE_PROVENANCE_V1.json", provenance)
     accept = {
@@ -230,7 +258,9 @@ def freeze():
         "next_original_source_R": "R12847",
         "next_original_pdf_frame": 775,
         "next_original_printed_folio": 741,
-        "next_original_printed_chapter": "CLXXIV",
+        "next_original_printed_chapter": "CLXXIIII",
+        "next_second_edition_printed_chapter": "CLXXIV",
+        "next_editorial_normalized_chapter": "CLXXIV",
         "next_heading": "Of the TRANSIT of the Planets",
         "historical_return_rules_from_six_planets": 42,
         "full_critical_source_edition_collected": False,
@@ -240,6 +270,9 @@ def freeze():
         "rules_sha256": sha(B / "RULES.json"),
         "source_matrix_sha256": sha(B / "ORIGINAL_CLXXIII_42_RETURN_SOURCE_CASES_V1.json"),
         "source_provenance_sha256": sha(B / "SOURCE_RULE_PROVENANCE_V1.json"),
+        "original_next_heading_variant_witness_sha256": sha(
+            B / "SOURCE_CLXXIV_ORIGINAL_TWO_EDITION_NUMERAL_V1.json"
+        ),
     }
     save(B / "ACCEPTANCE.json", accept)
     print(

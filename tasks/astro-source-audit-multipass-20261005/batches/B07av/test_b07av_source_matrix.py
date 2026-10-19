@@ -102,7 +102,26 @@ class OriginalPlanetReturnSource(unittest.TestCase):
         self.assertEqual(self.rules["body_pdf_frames"], [772, 773, 774, 775])
         self.assertEqual(self.data["source_source_printed_page_span"], [738, 739, 740, 741])
         self.assertEqual(self.accept["next_original_pdf_frame"], 775)
-        self.assertEqual(self.accept["next_original_printed_chapter"], "CLXXIV")
+        self.assertEqual(self.accept["next_original_printed_chapter"], "CLXXIIII")
+        self.assertEqual(self.accept["next_second_edition_printed_chapter"], "CLXXIV")
+        self.assertEqual(self.accept["next_editorial_normalized_chapter"], "CLXXIV")
+        original_num = j(B / "SOURCE_CLXXIV_ORIGINAL_TWO_EDITION_NUMERAL_V1.json")
+        self.assertEqual(original_num["original_1647_literal_chapter_heading"], "CHAP. CLXXIIII.")
+        self.assertEqual(
+            original_num["independently_typeset_1659_literal_chapter_heading"], "CHAP. CLXXIV."
+        )
+        self.assertEqual(
+            original_num["source_first_original_1647_photo_sha256"],
+            self.rules["rules"][-1]["source_first_1647_photo_sha256"],
+        )
+        self.assertEqual(
+            original_num["source_second_original_1659_photo_sha256"],
+            self.rules["rules"][-1]["source_independently_typeset_1659_photo_sha256"],
+        )
+        self.assertEqual(
+            self.accept["original_next_heading_variant_witness_sha256"],
+            sha(B / "SOURCE_CLXXIV_ORIGINAL_TWO_EDITION_NUMERAL_V1.json"),
+        )
         self.assertEqual(self.accept["next_heading"], "Of the TRANSIT of the Planets")
 
     def test_original_condition_not_silent_coarse_prediction(self):

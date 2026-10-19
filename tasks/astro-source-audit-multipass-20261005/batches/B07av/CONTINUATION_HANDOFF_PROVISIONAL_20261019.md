@@ -1,0 +1,15 @@
+# B07av 1647/1659 CLXXIII source release and continuation handoff
+
+2026-10-19 Africa/Dakar (UTC+0). User's original all-tradition astrology source/engineering and independently blinded human predictive research task remains OPEN. All historical source-note counts are **NOT** measured actual-person astrology accuracy.
+
+HumanDesign isolated branch `research/astro-b07av-clxxiii-planetary-returns-20261019`, based on verified B07au `cf6f2fc09f168e56ff761194dbba077330ddb927`. Two already-verified interruption-safe original-source GitHub checkpoints committed first:
+- `fdcbe4c1f616bbb7a5467057dd4dcb988719dd97` eight exact first/second source photograph references plus newly fetched printed740/741 photos
+- `079d5083601e8e660af024537d4b5e2b548d06d8` 42-case matrix + 54 mapping/photo tests, *before* canonical acceptance
+
+Original 1647 *Christian Astrology* Wellcome b30338724 894-frame PDF SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. First edition original printed pp738–741/PDF772–775; second actual typeset 1659 printed pp738–741/DjVu767–770. Six returning planets Saturn/Jupiter/Mars/Venus/Mercury/Moon each have seven original natal target clauses Saturn/Jupiter/Mars/Sun/Venus/Mercury/Moon = **42 historically documented rules**; plus physical next-chapter divider = **43 new source-only R12804–R12846**; R12803 previous B07au already has chapter heading, never duplicate. Each source has first/second photo SHA and source-specific caveats. Historical source old health/death/wealth/sexuality/morality assertions NOT usable as real personal predictions.
+
+**New original-edition discovery**: next transit chapter first original 1647 prints `CHAP. CLXXIIII.`, while actual separately typeset 1659 prints `CHAP. CLXXIV.`; both normalized editorial ordinal174. Separate source witness `SOURCE_CLXXIV_ORIGINAL_TWO_EDITION_NUMERAL_V1.json` with actual printed741/PDF775/DjVu770 SHA. Do not overwrite physical first-edition additive Roman number with normalized form. Source CLXXIII ends immediately before divider, same folio.
+
+Acceptance boundary: old Lilly index 12803, Ptolemy1066, independent Chinese V7 355. Guarded B07av adds43 => **Lilly12846, Western13912**, Chinese355 unchanged. Next source R12847 first-edition original PDF775 printed741 transits, physically first label `CLXXIIII`, modern editorial `CLXXIV`. Portable ZIP 54 tests with CRC/hash/byte replay, index mutation with immutable prior history and remote readback required before claiming accepted/published. Full old-epoch solar revolution, natal chart time and human predictive studies remain unvalidated; no live model promotions.
+
+Next authorized action: read first original transit chapter paragraphs and second original printed source without inventing time windows/availability/people outcomes. Continue parallel Chinese Zi Wei ZWD-R0202, BaZi BZI-R0155 from pinned historic oldids. Parent empirical goal is OPEN; owner asks save committed progress frequently due to interruptions. Source-first checkpoints are already published; avoid replaying their original download steps.
