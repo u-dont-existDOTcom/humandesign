@@ -1,0 +1,11 @@
+# Historical chart-method leakage signal — original merchant case
+
+Source: first edition 1647 *Christian Astrology* printed p743/PDF777 original full-page source, independently typeset second edition 1659 same printed folio/DjVu772; binaries and SHA256 in B07ax `ORIGINAL_MERCHANT_1647_1659_PHOTO_CHECKPOINT_V1.json`.
+
+**Source wording, separately from interpretation:** Lilly says the native is personally known to him, after a four-humor tally (hot7, moist6, cold6, dry7) and a conclusion that the qualities are nearly mixed without obvious excess. On the next original p744/PDF778 he associates sanguine tendencies with airy Sun/Venus/Mercury/Moon positions and melancholy with Saturn as Ascendant lord. A separate physically headed CHAP. CLXXVI on p745 and its continuation on p746 further treats stable manners under Saturn.
+
+**Research inference, not source wording:** A chart description combined with prior personal acquaintance is **retrospective/development evidence**, not a blind chart→answer test. A series of partially overlapping symbolic classifications could be reweighted after the observer knows the person, creating flexibility without truly predicting out of sample. The apparent contrast between near-balanced four-humor *temperament* and strong Saturn *manners* may also reflect different intended constructs; it should be examined rather than declared a single contradiction.
+
+**Experimental control implication:** During future real-human astrology tests, freeze complete source-text conditions, chart calculator and predictions **before** collecting or viewing that person's answers or biographical file. Treat pre-known merchant anecdotes as contaminated development cases, not hits. Keep temperament, manners and financial/health categories as independently pre-specified targets when scored; allow ambiguous cases to be marked undecidable and preserve negative/missed events. Benchmark against matched unrelated chart and standard nonastrology baselines. Nothing in the original source photograph supports a numerical forecast effect size.
+
+No new rule, threshold or expert-translation authority is established by this note. Zero real-person predictive validations; no runtime astrology promotion.
