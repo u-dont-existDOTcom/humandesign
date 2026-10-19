@@ -1,0 +1,31 @@
+# Original Lilly 1647 CLXIX original eleven-house omission repaired (B07aq)
+
+**21 original historical source-only annotations R12705–R12725** document Ascendant/Moon profections through **all twelve houses**, printed729–730/PDF763–764 first 1647 edition and actual separately typeset 1659 second edition. The modern searchable secondary transcription SKIPS house **eleven**: both original books include a distinct paragraph on cheerfulness, friends, husbanding time and private fortune. Historic source text, not verified real-person predictive effects. Conditions on age, corroboration, Hyleg direction and natal house strength remain separately documented. **Lilly 12,725 + Ptolemy 1,066 =13,791 Western historical annotations**, independent Chinese V7 **154 BaZi +201 Zi Wei=355** unchanged. Next original **R12726** is new CLXX Sun/Midheaven profections printed731/PDF765; the title is already counted once as a physical source boundary. Empirical human validation zero, runtime promotions zero.
+
+# Original Lilly CLXIX Ascendant/Moon profections: restored missing eleventh house
+
+2026-10-19, Africa/Dakar (UTC+0). This is historical source documentary research, **not** verification of natal astrology, medical outcomes or an independently calibrated real-human forecast.
+
+## Actual physical first and second edition sources
+
+William Lilly, *Christian Astrology* original first printing 1647, Wellcome b30338724 original PDF SHA256 `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`. Chapter **CLXIX, Of the Profections of the Ascendant and the Moon, and what they signifie in every House**, is on printed pages729–730, PDF frames763–764; the next new chapter **CLXX, Of the Profection of Mid-heaven and the Sunne**, starts printed731/PDF765. Actual independently typeset second edition (1659) corresponding printed pages729–731/DjVu frames758–760 corroborates the physical chapter span. All six actual source-page photo binaries are SHA and exact-byte witnessed in `PHOTO_ELEVENTH_1647_1659_SOURCE_WITNESS_V1.json`. Both books are the same historical author/source tradition, not two independent experimental studies; observations were made by one informed reader and are not expert-critical complete diplomatic collation.
+
+## Source omission — eleventh house disappeared from searchable derivative
+
+The searchable derivative excerpt `SECONDARY_CLXIX_NAVIGATOR_OMITS_ELEVENTH.txt` (SHA256 `fa2f78a87c05bb1dee27ba400f6c5bd840364fd7c4962c8697373b5dec0f9bcc`) jumps directly from **“When to the 10th”** to **“When to the 12th”**, omitting a whole source paragraph. The original **1647 printed730/PDF764** and independently typeset **1659 printed730/DjVu759** both visibly contain the eleventh-house rule. One-reader cleaned transcription of the 1647 original:
+
+> When to the eleventh, it signifies a cheerfull heart and person, the encrease of the Native's Friends, it imports the yeer to be very prosperous in all worldly affaires, and it invites the Native to bestirre himselfe and husband time well, whereby he may much advance his private fortune, &c.
+
+A historical 11th-house reading links friendships, subjective cheerfulness, time stewardship and private fortunes. These are source claims only. This missing domain is relevant to an eventual source-completeness audit of astrology-to-questionnaire mapping (social support, proactive effort and friendship), but the statement is **not an independently substantiated human disposition** and is not automatically promoted into a survey or predictive model.
+
+## Twelve historical house domains, with limitations
+
+The original chapter gives a sequence for Ascendant *or* Moon profecting through houses 1–12. House1: cheerfulness/basic material provision; 2: purchasing/trading/property; 3: relatives/journeys/religion; 4: inheritance/housing/building as well as grief/water risk; 5: age-dependent pleasures/agreements/communications; 6: illness, servants and business warnings; 7: marriage/hostility/contests; 8: property/body risk and mortality rhetoric only if an *additional Hyleg mortal direction*; 9: travel/learning/religious and alchemical study; 10: social ambition/career and status qualified by capability; **11: cheerfulness/friendship/time stewardship/private fortune**; 12: hidden illness, enemies, confinement and horses, conditional on the natal 12th. Source explicitly warns of contradictory old Arabic translations and tells readers to consider the annual Revolution's house for an Infortune and the yearly/radical house rulers. These conditions matter: there is no authorized one-house = definite life event rule.
+
+The historical text contains unsupported and potentially dangerous medical, mortality, criminality, finance and moral assertions. They are preserved as text descriptions only and do not constitute medical, financial, relationship or individual-person advice.
+
+## Accepted-source indexing and unfinished empirical work
+
+**21 bounded historical documentary notes R12705–R12725**: twelve original house entries, five explicit contextual safeguards (including age, marriage corroboration, Hyleg mortality, capability and 12th Radix), historical Arabic translation caveat, Revolution-house malefic interpretation, year/house lord context, and next CLXX physical heading. The original eleventh-house evidence has an **explicit missing-secondary-source flag**; every other house record has a stable modern excerpt locator and two original image SHA witnesses. The next substantive source is **R12726** at original PDF765/printed731, **CLXX Mid-heaven/Sun profections**; its heading is already counted only as a physical boundary, not a new interpretive rule.
+
+Upon successful guarded admission Lilly source annotations become **12,725**, Ptolemy remains **1,066**, giving **13,791 Western historical records**; separate Chinese V7 remains **154 BaZi +201 Zi Wei=355**, unchanged. Tests assert all 21 consecutive IDs, independent original photo hashes, searchable-derivative 11th absence, primary 11th presence as read, human-risk nonpromotion, and Western/Chinese source registry immutability. Portable independently extracted ZIP CRC/SHA/bytes checks must pass before publishing. **No actual human outcomes have been predicted or validated; no runtime astrology mapping is promoted.**
