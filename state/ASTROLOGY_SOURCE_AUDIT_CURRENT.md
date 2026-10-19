@@ -1,3 +1,9 @@
+# Original Lilly CLXX Midheaven and Sun profection houses covered (B07ar)
+
+**17 source-only historical annotations R12726–R12742** cover twelve Midheaven/Sun profection house descriptions, four specific historic conditional predicates and a physical divider to CLXXI. Original 1647 first and separate typeset 1659 second printing pp731–732 are SHA witnessed. The source explicitly uses natal Midheaven **or Sun**, not general Sun-sign-only predictions. Conditional case descriptions are historical, not validated human health, status or finance observations. **Lilly 12,742 + Ptolemy 1,066 =13,808 Western historical notes**; separate Chinese V7 **154 BaZi+201 Zi Wei=355** unchanged. Next substantive **R12743**, CLXXI Part of Fortune and second-house sign profections below the physical divider on original printed732/PDF766. Empirical human prediction validations zero; runtime promotions zero.
+
+## Earlier source checkpoint preserved verbatim
+
 # Original Lilly 1647 CLXIX original eleven-house omission repaired (B07aq)
 
 **21 original historical source-only annotations R12705–R12725** document Ascendant/Moon profections through **all twelve houses**, printed729–730/PDF763–764 first 1647 edition and actual separately typeset 1659 second edition. The modern searchable secondary transcription SKIPS house **eleven**: both original books include a distinct paragraph on cheerfulness, friends, husbanding time and private fortune. Historic source text, not verified real-person predictive effects. Conditions on age, corroboration, Hyleg direction and natal house strength remain separately documented. **Lilly 12,725 + Ptolemy 1,066 =13,791 Western historical annotations**, independent Chinese V7 **154 BaZi +201 Zi Wei=355** unchanged. Next original **R12726** is new CLXX Sun/Midheaven profections printed731/PDF765; the title is already counted once as a physical source boundary. Empirical human validation zero, runtime promotions zero.

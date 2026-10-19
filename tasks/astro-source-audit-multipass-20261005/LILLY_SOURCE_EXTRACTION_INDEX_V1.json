@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXIX_ALL_TWELVE_PROFECTION_HOUSES_SOURCE_COVERED_11TH_RESTORED",
-  "records_count": 12725,
+  "status": "BOOK_III_CLXX_MIDHEAVEN_SUN_PROFECTIONS_PHYSICAL_SOURCE_COVERED",
+  "records_count": 12742,
   "read_numbered_chapters": [
     1,
     2,
@@ -173,7 +173,8 @@
     166,
     167,
     168,
-    169
+    169,
+    170
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1310,27 +1311,34 @@
       "records_count": 21,
       "sha256": "ebbf453be8ea9e7d8366f999d684069b6707ed8f4ec4e3fd1fd438a38da6e761",
       "scope": "Original first 1647 CLXIX Ascendant/Moon profections physical printed729–730/PDF763–764, with new distinct CLXX p731/PDF765. 21 source-only historical annotations R12705–R12725 cover all twelve source house descriptions, explicit age/Hyleg/radical and natal exception predicates, older Arabic translation caveat and annual year-lord context. Crucial original 11th-house friends/time-stewardship/prosperity paragraph PRESENT in BOTH original 1647 first and separately typeset 1659 second printings, OMITTED from modern searchable secondary HTML. Six original SHA-pinned photographs and derivative excerpt receipt preserved. Claims about health, death, finances or personal character are historical rhetoric only, not validated individual observations or engine rules."
+    },
+    {
+      "id": "B07ar",
+      "path": "batches/B07ar/RULES.json",
+      "records_count": 17,
+      "sha256": "739643be8254a392cb98913865ee379d228695811aa187934bdee1119667f811",
+      "scope": "First original William Lilly CLXX printed731–732/PDF765–766 Midheaven and Sun profectional twelve house descriptions, separate printed 1659 edition p731–732. 17 documentary annotations R12726–R12742 (12 source house roles, four contextual exceptions and source next CLXXI boundary). Historical trigger explicitly Midheaven OR solar natal sign; secondary transcription misspells 'hosue', not original quote. No verified real-life health, reputation or financial outcomes, independent 1647 birth calendar, or runtime astrological model."
     }
   ],
   "next": {
-    "pdf_page": 765,
-    "printed_page": 731,
-    "chapter": "CLXX",
-    "printed_chapter_numeral": "CLXX",
-    "editorial_source_sequence_ordinal": 170,
-    "heading": "Of the Profection of Mid-heaven and the Sunne, and their Significations",
+    "pdf_page": 766,
+    "printed_page": 732,
+    "chapter": "CLXXI",
+    "printed_chapter_numeral": "CLXXI",
+    "editorial_source_sequence_ordinal": 171,
+    "heading": "The significations of the Profectionall Signe of Part of Fortune, and Signe of the second house",
     "include_opening_paragraph": false,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Substantive next CHAP CLXX original printed731/PDF765 Mid-heaven and Sun house-by-house profection descriptions. The new heading was already source-indexed as B07aq last boundary note, do not duplicate it. Next historical record R12726.",
-    "research_scope": "Original historical conditional Midheaven and Sun profection judgments for all houses, actual original 1647 vs 1659 edition distinctions and missing secondary-transcription provisions. No medical, money, criminality or real-person predictive accuracy is established."
+    "position": "Following CLXX Midheaven and Sun, a new distinct CLXXI chapter begins BELOW a horizontal divider on original printed732/PDF766. The heading was recorded as B07ar source boundary and must not be duplicated as an interpretation note. Next substantive record R12743.",
+    "research_scope": "Historical Part of Fortune/second-house sign profections by twelve houses; then source annual Alfridary lord sequence and CLXXII solar revolution calculations. Human chart and event predictive validation separate."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 85,
+  "read_headed_units_count": 86,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07aq_11TH_HOUSE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07ar_CLXX_SUN_MIDHEAVEN.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1576,6 +1584,21 @@
       "full_source_critical_edition_complete": false,
       "empirical_real_human_claims_validated": 0,
       "runtime_promoted": false
+    },
+    {
+      "printed_chapter": "CLXX",
+      "source_unit": "Original Midheaven and Sun profections",
+      "chapter_heading": "Of the Profection of Mid-heaven and the Sunne, and their Significations",
+      "physical_source_start_pdf": 765,
+      "accepted_through_pdf": 766,
+      "next_unaccepted_pdf": 766,
+      "next_record": "R12743",
+      "accepted_batch": "B07ar",
+      "first_edition_source_physically_covered": true,
+      "complete": true,
+      "full_source_critical_edition_complete": false,
+      "actual_real_person_predictive_accuracy_validated": 0,
+      "runtime_promoted": false
     }
   ],
   "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166.",
@@ -1583,5 +1606,6 @@
   "chapter_CLXVII_partial_1647_source_table_issue_note": "B07an 24 historic source-only observations of original 1647/1659 profection date tables p721-724. Full original tabular data not independently collated: only nine literal rows manually checked. The printed third 6°23 angle source uses minute37 not minute23, yielding 80d13h21 versus 77d17h11 under the printed table. No actual-person outcome, natal ephemeris or full calendar engine verified; first physical CLXVII remains PARTIAL.",
   "original_CLXVII_physical_coverage_not_critical_editor_note": "B07am–B07ao cover original printed CLXVII pp718–725/PDF752–759. All 30 degree and 60 minute conversion table rows and full nativity-specific day-of-year grid NOT independently collation complete. Old printed worked case uses minute37 instead of subtracted minute23, original human outcome not validated. Physical next new CHAP CLXVIII p726/PDF760.",
   "source_CLXVIII_physical_coverage_not_empirical_verification_note": "B07ap covers original 1647 physical CLXVIII printed726–728 with boundary to CLXIX printed729. Year ruler Jupiter/Mars example and natal/annual exceptions are documented only. No independently checked whole physical critical edition or real-human prognostic success, zero runtime promotions.",
-  "CLXIX_source_transcription_11th_missing_repair_note": "Both original independent 1647 and 1659 printings visibly include a complete 11th-house paragraph about friends, cheerfulness, well-used time and private fortune; the secondary HTML excerpt omits it between 10th and 12th. B07aq supplies SHA-pinned six source photographs and a single-reader cleaned source transcription. Historical text does not establish real-life predictive validity."
+  "CLXIX_source_transcription_11th_missing_repair_note": "Both original independent 1647 and 1659 printings visibly include a complete 11th-house paragraph about friends, cheerfulness, well-used time and private fortune; the secondary HTML excerpt omits it between 10th and 12th. B07aq supplies SHA-pinned six source photographs and a single-reader cleaned source transcription. Historical text does not establish real-life predictive validity.",
+  "CLXX_Midheaven_Sun_source_only_coverage_note": "B07ar physically covers first original CLXX Midheaven and Sun profections through all twelve original houses and historical conditional geometry/children/capability claims. Original separately typeset 1659 print p731–732 corroborated by a single source reader; not expert edition or predictive truth."
 }
