@@ -1,3 +1,9 @@
+# Original Lilly 1647 CLXVI annual-rate source table accepted PARTIALLY (B07ah)
+
+**14 historical source-only annotations R12502–R12515** document the original PDF745/printed711 table of 12 zodiac signs×31 degrees. Full reversible source crosswalk preserves 372 cells, 365 one-reader legible original first edition and seven unresolved, with 14 contradictions to the modern derivative searchable transcription. No inferred repaired glyph and no calendar/event model promotion. **12,515 Lilly +1,066 Ptolemy =13,581 Western historical notes**; Chinese V5 **101 BaZi +161 Zi Wei =262** unchanged. The first physically printed directions CLXVI remains PARTIAL, not another completed numbered chapter. Next **R12516** begins PDF746/printed712 original Table Use and Maginus examples; a separate later CHAP CLXVI concerns annual Profections. Empirical human predictions validated zero, runtime promotions zero.
+
+## Previous accepted source checkpoint retained verbatim
+
 # Lilly 1647 original historical CLXVI opening accepted PARTIALLY (B07ag)
 
 **29 new historical source-only rules R12473–R12501** on printed folios708–710/PDF742–744; source photo SHA and modern derivative phrase-locator witnesses recorded. Physical original 1647 and separately typeset 1659 printed p710 both read next-day Sun **7°36′ Libra**, against modern searchable text 7°37′; original Maginus Sun right ascension values remain 186°04′→186°58′ = 54′. **12,501 accepted Lilly historical notes +1,066 Ptolemy =13,567 Western**. Independent Chinese historical V5 **101 BaZi +161 Zi Wei=262**, unchanged. Original printed CLXVI numerical directions-time chapter remains **PARTIAL** (not counted as a completed chapter); next R12502 original PDF745/printed711 annual direction rate table, followed by Maginus/Naibod unresolved mathematics. No real-person predictive validations and no runtime model promotions.
