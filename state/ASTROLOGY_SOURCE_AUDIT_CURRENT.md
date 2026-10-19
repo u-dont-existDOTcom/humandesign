@@ -1,3 +1,9 @@
+# Lilly CLXXI physical source covered: Fortune, second house and first Alfridary periods
+
+**22 historical documentary notes R12743–R12764** from actual 1647 and independent separately printed 1659 pages 732–734. Twelve Part Fortune/second-house house cases, author/context qualifiers and first three seven-year Alfridary lords by day (Sun/Venus/Mercury) and night (Moon/Saturn/Jupiter). No complete lifetime sequence assumed. **12,764 Lilly +1,066 Ptolemy=13,830 Western historical annotations**; parallel Chinese V7 154 BaZi+201 Zi Wei=355 unchanged. First printed CLXXI is physically covered but not expert-critically verified or empirically validated. Next **R12765, CLXXII Of Revolutions**, same printed p734/PDF768 below physical divider. Zero blinded real-human predictive validation and zero runtime model promotions.
+
+## Earlier accepted source checkpoint preserved verbatim
+
 # Original Lilly CLXX Midheaven and Sun profection houses covered (B07ar)
 
 **17 source-only historical annotations R12726–R12742** cover twelve Midheaven/Sun profection house descriptions, four specific historic conditional predicates and a physical divider to CLXXI. Original 1647 first and separate typeset 1659 second printing pp731–732 are SHA witnessed. The source explicitly uses natal Midheaven **or Sun**, not general Sun-sign-only predictions. Conditional case descriptions are historical, not validated human health, status or finance observations. **Lilly 12,742 + Ptolemy 1,066 =13,808 Western historical notes**; separate Chinese V7 **154 BaZi+201 Zi Wei=355** unchanged. Next substantive **R12743**, CLXXI Part of Fortune and second-house sign profections below the physical divider on original printed732/PDF766. Empirical human prediction validations zero; runtime promotions zero.
