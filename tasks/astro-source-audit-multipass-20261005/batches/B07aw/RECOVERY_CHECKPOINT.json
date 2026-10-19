@@ -2,7 +2,7 @@
   "schema": "LILLY_B07aw_INTERRUPTION_RECOVERY_V1",
   "task_id": "ASTRO_SOURCE_MULTITRADITION_20261005",
   "exclusive_for_branch": true,
-  "status": "OPEN_PROGRESS_SAVED_PRE_SOURCE_ADMISSION",
+  "status": "OPEN_TESTED_SOURCE_RECORDS_COMMITTED_CANONICAL_ADMISSION_PENDING",
   "parent_outcome": "OPEN",
   "source_baseline_sha": "044bf9ef6012c9e4488aa100d2bac442a29b2c6c",
   "branch": "research/astro-b07aw-original-transit-planet-glyphs-20261019",
@@ -62,9 +62,20 @@
   "completed_this_increment": [
     "Recovered exact B07au published remote SHA without repeating its source work",
     "Verified existing B07aw worktree is uncommitted and has no live competing process",
-    "Pinned six already acquired original page/crop evidence SHA-256 and byte lengths"
+    "Pinned six already acquired original page/crop evidence SHA-256 and byte lengths",
+    "Derived 22 nonduplicated source-only records R12847-R12868",
+    "Verified both 1647 and 1659 original distinct Mars time unit and Jupiter/Venus glyphs",
+    "40 focused source/integrity tests passed",
+    "Preserved modern inaccurate transcript strictly as navigational text"
   ],
-  "next_action": "Read actual 1647 and 1659 CLXXIIII/CLXXIV transits pages, map source-specific claims without bypassing context, test source anchoring and publish accepted source-only batch.",
+  "next_action": "Build portable B07aw ZIP and independently extracted 40-test replay, guard append-only index 12846->12868, commit/push and exact remote readback; then continue CLXXV R12869.",
   "human_predictive_validations": 0,
-  "runtime_promotions": 0
+  "runtime_promotions": 0,
+  "evidence_artifacts_SHA256": {
+    "ORIGINAL_CLXXIV_TRANSITS_TWO_EDITIONS_SOURCE_V1.json": "0dc6ceb078afd33242d09b48487d14bf284cf2c0a39b879aaa58e4627087b241",
+    "RULES.json": "e9fa22425e001c858dda51924c8bb79571622dbd1f51924bd03ff7659d863b2f",
+    "ACCEPTANCE.json": "b35375feed1ac4ce39a9ba07562e34f240134bd25446d7f4a8fe12c3c6e1f9f2",
+    "SECONDARY_SEARCH_NAVIGATOR_TRANSITS.txt": "b911e0f0c62b79bffd461631af6216fd8cfa808f13657c33b260478258b82792",
+    "test_b07aw_original_transit_source.py": "e9c21cab219c6e207f4e171d1e64f278559f301508dcc3cdd0748f78374d7de4"
+  }
 }

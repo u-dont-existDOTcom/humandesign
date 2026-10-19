@@ -1,0 +1,14 @@
+# Lilly 1647 CLXXIIII and 1659 CLXXIV — original transit chapter
+
+Source-only historical checkpoint, 2026-10-19. The 1647 first edition of *Christian Astrology* (Wellcome b30338724; original PDF frame 775 / printed folio 741) prints chapter **CLXXIIII**, while a separately typeset 1659 edition (DjVu page 770 / printed folio 741) prints **CLXXIV**. These are the same transits discussion, not two independently validated sets of predictions. The following original folio 742/PDF776 begins distinct **CLXXV**, on an English merchant's nativity; the transit text is physically a one-page source unit.
+
+The original directs readers to an ephemeris and to transits of natal house cusps, natal seven-planet placements, lunar nodes and Fortune, with conjunction/body and sextile, trine, square or opposition conditions. It proposes favorable and adverse daily effects associated with the Ascendant, Midheaven and second/third house; these are 17th-century claims **not independently tested or licensed as judgments about actual people**. Do not manufacture additional house-specific predictions from its brief extension to the other houses.
+
+Two source-critical differences require preservation rather than normalization:
+
+- **The original 1647 and 1659 printings say Jupiter OR VENUS for a purported favorable transit over the natal Ascendant**. A searchable modern transcription incorrectly gives Jupiter OR MARS. Treat that derivative as navigation only.
+- On Mars crossing the natal Ascendant, **the first 1647 printing reads 'two or three dayes' while the separately typeset 1659 text reads 'two or three yeares'**. The time units differ by orders of magnitude. Neither is an empirically validated duration or a license to select a good-fitting value. The historical cause of the alteration is unproven.
+
+The two original printed source pages and the next chapter boundary pages are backed by photographic SHA-256 and exact bytes in `ORIGINAL_CLXXIV_TRANSITS_TWO_EDITIONS_SOURCE_V1.json`; the faulty derivative locator is in `SECONDARY_SEARCH_NAVIGATOR_TRANSITS.txt`, separately labeled. This packet contains **22 provisional source-only historical records R12847–R12868**, retaining the distinct next heading at **R12869/PDF776** for future extraction. A focused **40-test** suite verifies source image hashes, 22 locator offsets, source cases and nonpromotion flags. Final portable ZIP replay, index admission and exact GitHub remote readback remain to be completed.
+
+Earlier accepted Lilly source history: **12,846** annotations through B07av, separate Chinese V7 **355** historical annotations, and Ptolemy **1,066**. If source-only B07aw admission passes, Lilly becomes **12,868** and Western with Ptolemy **13,934**. The root empirical astrology project remains OPEN. Zero actual-human prediction validations, zero runtime model promotions, no proven natal planetary transits or ephemeris parity.
