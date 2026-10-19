@@ -1,3 +1,9 @@
+# Original Lilly CLXXIII planet returns to natal Radix covered (B07av)
+
+**42 historical source-only annotations R12804–R12845** represent six annual-return planets×seven radix planet positions in original 1647 printed738–741/PDF772–775 and separately typeset 1659 prints. Historical conditional clauses and moral/medical claims are documented, NOT real-human prediction evidence. First 1647 original next transit heading prints **CHAP. CLXXIIII.** while 1659 prints **CHAP. CLXXIV.**, editorial sequence ordinal174; preserve this literal edition difference. **12,845 Lilly +1,066 Ptolemy =13,911 Western historical notes**, Chinese V7 **154 BaZi +201 Zi Wei=355** unchanged. Next **R12846 original PDF775/printed741**, the new chapter *Of the TRANSIT of the Planets.* Actual natal astronomical engine, independent historical textual second-reader, and genuinely blinded human predictive validation remain OPEN. **Zero predictive validations, zero runtime promotions.**
+
+## Previous accepted historical checkpoint retained
+
 # Original Lilly CLXXII solar revolution chapter physically covered (B07au)
 
 **15 historical documentary notes R12789–R12803** on the 1647 CLXXII ending through printed737/PDF771, plus the distinct **CLXXIII planetary return** physical heading at printed738/PDF772. Annual-versus-natal ascendant/lord configurations, contextual Moon mitigation and old house/malefic claims are preserved as historical text only. **Lilly 12,803+Ptolemy1,066=13,869 Western historical notes**; Chinese V7 **154 BaZi+201 Zi Wei=355** unchanged. Original CLXXII physically covered but old-epoch solar return engine, expert edition accuracy and actual human predictions unverified. Next **R12804 CLXXIII** original PDF772/printed738 planetary returns. Zero actual-person predictive validations and zero runtime promotions.
