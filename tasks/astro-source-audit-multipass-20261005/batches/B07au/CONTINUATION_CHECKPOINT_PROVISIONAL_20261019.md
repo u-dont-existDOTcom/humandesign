@@ -1,0 +1,3 @@
+# B07au next Lilly source pages prepared, not accepted
+
+After canonical B07at R12765–R12788, next R12789 begins at original 1647 PDF770 printed736 CLXXII *Of Revolutions*. Pages PDF770–773 (printed736–739) were already rendered from the verified original 1647 Wellcome PDF and were moved without byte changes from B07at to this distinct **unreviewed** B07au evidence directory. Per-file SHA256 and bytes in SOURCE_EVIDENCE_PREP_ONLY_V1.json. Do not repeat render/fetch or assert historical annotations until original-page reading, second-edition comparison, tests and guarded source-index admission. Root owner empirical outcome OPEN, no actual human predictive accuracy or runtime promotions.

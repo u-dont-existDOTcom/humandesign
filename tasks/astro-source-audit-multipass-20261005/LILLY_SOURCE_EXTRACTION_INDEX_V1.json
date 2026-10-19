@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXXI_FORTUNE_SECOND_HOUSE_SOURCE_PHYSICALLY_COVERED_NEXT_CLXXII",
-  "records_count": 12764,
+  "status": "BOOK_III_CLXXII_SOLAR_REVOLUTION_SOURCE_OPENING_PARTIAL_1646_EXAMPLE",
+  "records_count": 12788,
   "read_numbered_chapters": [
     1,
     2,
@@ -1326,29 +1326,54 @@
       "records_count": 22,
       "sha256": "77ee90d5baabadd5cfea73aeac271256852761408b714b484636a1360c0cfd41",
       "scope": "Lilly original CLXXI Part of Fortune and second-house annual profection source printed732–734/PDF766–768, 1647 and separate 1659 original physical editions. Twelve house claim contexts and ten historical settings, first three septennial alfridary lords day Sun/Venus/Mercury and night Moon/Saturn/Jupiter; NO full lifetime order inferred. 22 source-only historical annotations R12743–R12764. Original 1647 CLXXII begins below physical divider on printed734/PDF768, not merged into CLXXI. Human event efficacy, moral/health/wealth predictions and authentic ephemeris/calendar engine not independently validated."
+    },
+    {
+      "id": "B07at",
+      "path": "batches/B07at/RULES.json",
+      "records_count": 24,
+      "sha256": "74de01014d757edce7117a6f2c0019b7e1b6ff979f20867ca9183be6acee5bd9",
+      "scope": "First original Lilly 1647 CHAP CLXXII Of Revolutions, printed734–735/PDF768–769 compared against actual separately typeset 1659 original print. 24 historical observations R12765–R12788 covering exact zodiacal solar return definition, warning about Sun's natal minute, old Origanus 19Sept1646 noon 6°12′ Libra vs radix 6°37′ Libra (remaining25′), source daily motion59′10″ vs Maginus nearby table59′08″, 20′ and5′ entries producing 10h08m47s then source truncates to10h08m, subtracts westward 1h07m, adds house-table 12h26m and time equation16m yielding 21h43m. No historical birth-date epoch astronomical validation, real human outcomes or runtime rule promotions; first CLXXII physically partial."
     }
   ],
   "next": {
-    "pdf_page": 768,
-    "printed_page": 734,
+    "pdf_page": 770,
+    "printed_page": 736,
     "chapter": "CLXXII",
     "printed_chapter_numeral": "CLXXII",
     "editorial_source_sequence_ordinal": 172,
-    "heading": "Of Revolutions",
-    "include_opening_paragraph": true,
+    "heading": "Of Revolutions — house interpretation and annual return effects continued",
+    "include_opening_paragraph": false,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "The separately printed CLXXII begins below a physical divider on first-edition printed734/PDF768 after the abbreviated nocturnal Alfridary source. First substantive new historical record R12765. Lilly describes a return of the Sun to exact natal zodiacal longitude and a calendar interpolation method; independent astronomical and actual birth-era predictive parity remain untested.",
-    "research_scope": "Original printed solar revolution, return timing, epoch and true apparent Sun motion; compare exact first and separately typeset second printed numerical examples, never promote self-consistent source as human validation."
+    "position": "After original first printed CLXXII source pages734–735, next substantive source record R12789 on printed736/PDF770. Original 1647 photos for PDF770–773 were rendered locally but not critically source-admitted in B07at. Preserve them for the next independent batch. Complete solar-return ephemeris/calendar engine and human prediction tests remain open.",
+    "research_scope": "Historical interpretation of revolution ascendant relative to natal radical houses, significators and planetary configurations. Source-only documentary claim extraction must not be represented as real-person outcomes."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 87,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07as_CLXXI.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07at_SOLAR_REVOLUTION.md",
   "body_table_or_medical_claims_validated": false,
-  "partial_numbered_chapters": [],
+  "partial_numbered_chapters": [
+    {
+      "printed_chapter": "CLXXII",
+      "editorial_ordinal": 172,
+      "chapter_heading": "Of Revolutions",
+      "physical_source_start_pdf": 768,
+      "accepted_through_pdf": 769,
+      "next_unaccepted_pdf": 770,
+      "next_record": "R12789",
+      "accepted_batch": "B07at",
+      "latest_accepted_batch": "B07at",
+      "complete": false,
+      "source_single_reader_first_and_second_photographs": true,
+      "all_original_1646_calendar_and_birth_solar_times_verified": false,
+      "source_ephemeris_and_latitude_offset_independent_parity_verified": false,
+      "empirical_real_human_predictions_validated": 0,
+      "runtime_model_promotions": 0
+    }
+  ],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
   "chapter_L_source_acceptance_note": "Documentary source intake only; 75 issue entries include repaired misreadings and still unresolved grammar/glyphs. Source-to-record map and bounded image audit are not independent word-for-word certification. No empirical validation, clinical use or real-person inference.",
   "chapter_LI_source_acceptance_note": "42 historical editorial source units (one LII boundary), manual reverse original-image-first 35 passages, 22 extracted-archive source-only tests, 11 retained uncertainties including 5 literal e-contra and 1 differently phrased contrary; no diplomatic source certification, no empirical or runtime validation.",
@@ -1629,5 +1654,6 @@
   "source_CLXVIII_physical_coverage_not_empirical_verification_note": "B07ap covers original 1647 physical CLXVIII printed726–728 with boundary to CLXIX printed729. Year ruler Jupiter/Mars example and natal/annual exceptions are documented only. No independently checked whole physical critical edition or real-human prognostic success, zero runtime promotions.",
   "CLXIX_source_transcription_11th_missing_repair_note": "Both original independent 1647 and 1659 printings visibly include a complete 11th-house paragraph about friends, cheerfulness, well-used time and private fortune; the secondary HTML excerpt omits it between 10th and 12th. B07aq supplies SHA-pinned six source photographs and a single-reader cleaned source transcription. Historical text does not establish real-life predictive validity.",
   "CLXX_Midheaven_Sun_source_only_coverage_note": "B07ar physically covers first original CLXX Midheaven and Sun profections through all twelve original houses and historical conditional geometry/children/capability claims. Original separately typeset 1659 print p731–732 corroborated by a single source reader; not expert edition or predictive truth.",
-  "chapter_CLXXI_original_source_history_note": "B07as 22 documentary annotations covering 12 original Part Fortune/second-house house contexts and only first three Alfridary septennial lords by day and night. The CLXXII page734 source physical boundary is proven in both printed editions; 1647/1659 page transcriptions and any actual human predictions remain unverified independently."
+  "chapter_CLXXI_original_source_history_note": "B07as 22 documentary annotations covering 12 original Part Fortune/second-house house contexts and only first three Alfridary septennial lords by day and night. The CLXXII page734 source physical boundary is proven in both printed editions; 1647/1659 page transcriptions and any actual human predictions remain unverified independently.",
+  "source_1646_solar_revolution_historical_example_note": "One-reader physical original 1647/1659 prints agree on source Sun 6°37′ vs day noon6°12′ in Libra, residual25′, nearest diurnal rate59′08″ versus 59′10″ observed, Maginus 20′+5′ fractional times10h08m47s, later truncation to10h08m for source meridian offset and house-table calculation21h43m. No verified 1646 astronomical/calendar parity or real life predictive outcome."
 }

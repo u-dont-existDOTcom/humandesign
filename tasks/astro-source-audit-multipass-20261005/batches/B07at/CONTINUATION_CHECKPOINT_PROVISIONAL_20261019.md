@@ -1,0 +1,11 @@
+# Recoverable B07at checkpoint — 2026-10-19
+
+Root owner task OPEN: complete Western Lilly and Chinese classical source study, verifiable astronomical and calendar engines, then pre-registered blinded actual-human chart↔survey validation against null/decoy baselines. Historical source annotations are NOT human predictive successes.
+
+Working branch `research/astro-b07at-clxxii-revolutions-opening-20261019` based on accepted original CLXXI B07as remote commit `cea02f3067a67f21569813bde6da0e0cfa811630`, at `/mnt/hdd/storage/joel/development-worktrees/humandesign/astro-chinese-bazi-06-20261019`.
+
+Latest accepted Lilly source index 12,764 (plus 1,066 Ptolemy = Western 13,830); independent Chinese V7 index 355 (154 BaZi+201 Zi Wei). Next unaccepted original Lilly historical ID R12765 at physical first edition PDF768, printed734, heading **CHAP CLXXII Of Revolutions**, below proven divider from preceding CLXXI. Original 1647 scan SHA `2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b`.
+
+B07at local evidence created, **not admitted**: first-edition original 1647 PDF769–773 photos in `evidence/1647_original-*.jpg`; separately typeset original 1659 printed p735 DjVu764 photo `evidence/1659_original_djvu_764.jpg`; already accepted B07as first 1647 p734/PDF768 and 1659 p734/DjVu763 should be reused, not re-fetched. The original 1647/1659 p735 prints a 1646 worked solar-return calculation: natal Sun 6°37′ Libra, target noon Sun 6°12′, difference 25′, daily motion 59′10″, Maginus nearest 59′08″ table row; 20′→8h7m2s plus5′→2h1m45s = 10h8m47s, text rounds time 10h8m, subtracts 1h7m meridian correction to 9h1m, adds noon reference12h26m and equation of time16m to obtain21h43m. These are historical print/source arithmetic, NOT independently verified astronomy, geographical offset or human event outcomes.
+
+Next authorized work: freeze source-only p734–735 documentary claims and exact literal-versus-rounded arithmetic, preserve old-style date/calendar and ephemeris uncertainty; run hashed photo tests, portable archive/CRC/bytes and independent extraction replay; guarded append-only partial CLXXII source index; commit/push and remote SHA. Then resume CLXXII later original pages without repeating source fetches or accepted work. If interrupted, check live Git branch/index/accepted source before any destructive retry.

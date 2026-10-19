@@ -1,3 +1,9 @@
+# Lilly first original CLXXII solar return source partially documented (B07at)
+
+**24 historical source-only records R12765–R12788** on original printed734–735/PDF768–769 and distinct original 1659 second edition. Lilly defines solar return as matching natal Sun longitude and computes a 19Sep1646 example: Sun radix6°37′ Libra, noon6°12′, difference25′, old Maginus nearby rate 59′08″, table 20′+5′ =10h08m47s, later printed times truncate to minute before meridian/house table yielding21h43m. This is **historic source arithmetic, not verified original ephemeris, Julian-civil time conversion or human prediction**. **Lilly 12,788+Ptolemy1,066=13,854 Western historical notes**; independent Chinese V7 154 BaZi+201 Zi Wei=355 unchanged. Original CLXXII still PARTIAL. Next **R12789**, original PDF770/printed736. Real person validations zero, runtime astrological model promotions zero.
+
+## Previous accepted historical checkpoint preserved
+
 # Lilly CLXXI physical source covered: Fortune, second house and first Alfridary periods
 
 **22 historical documentary notes R12743–R12764** from actual 1647 and independent separately printed 1659 pages 732–734. Twelve Part Fortune/second-house house cases, author/context qualifiers and first three seven-year Alfridary lords by day (Sun/Venus/Mercury) and night (Moon/Saturn/Jupiter). No complete lifetime sequence assumed. **12,764 Lilly +1,066 Ptolemy=13,830 Western historical annotations**; parallel Chinese V7 154 BaZi+201 Zi Wei=355 unchanged. First printed CLXXI is physically covered but not expert-critically verified or empirically validated. Next **R12765, CLXXII Of Revolutions**, same printed p734/PDF768 below physical divider. Zero blinded real-human predictive validation and zero runtime model promotions.

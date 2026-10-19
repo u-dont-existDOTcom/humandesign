@@ -1,0 +1,427 @@
+{
+  "batch": "B07at",
+  "status": "FIRST_ORIGINAL_1647_CLXXII_SOLAR_REVOLUTION_OPENING_SOURCE_ONLY",
+  "record_count": 24,
+  "first_record": "R12765",
+  "last_record": "R12788",
+  "body_pdf_frames": [
+    768,
+    769
+  ],
+  "source_groups": 2,
+  "next_original_record": "R12789",
+  "source_full_CLXXII_complete": false,
+  "1646_example_historical_astronomy_validated": false,
+  "independent_real_human_predictions_validated": 0,
+  "runtime_promotions": 0,
+  "rules": [
+    {
+      "id": "R12765",
+      "record_number": 12765,
+      "batch": "B07at",
+      "source_span": "B07at-S001",
+      "original_pdf_frames": [
+        768
+      ],
+      "role": "CLXXII_physical_heading",
+      "historical_meaning_only": "Distinct printed CHAP CLXXII Of Revolutions begins below the CLXXI page734 divider.",
+      "first_original_photo_sha256": "9df48e28ece83009631e7adab33ad30961a570090d89a8b210152323d9e060e9",
+      "independent_1659_print_photo_sha256": "25ffaf597f41dcc56254f67846041c8b0c5787f9a5d28bb707a0ed02b49e2ba4",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12766",
+      "record_number": 12766,
+      "batch": "B07at",
+      "source_span": "B07at-S001",
+      "original_pdf_frames": [
+        768
+      ],
+      "role": "definition_sun_return",
+      "historical_meaning_only": "A historical solar revolution is defined as Sun returning to natal radix exact zodiacal longitude.",
+      "first_original_photo_sha256": "9df48e28ece83009631e7adab33ad30961a570090d89a8b210152323d9e060e9",
+      "independent_1659_print_photo_sha256": "25ffaf597f41dcc56254f67846041c8b0c5787f9a5d28bb707a0ed02b49e2ba4",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12767",
+      "record_number": 12767,
+      "batch": "B07at",
+      "source_span": "B07at-S001",
+      "original_pdf_frames": [
+        768
+      ],
+      "role": "natal_solar_hour_accuracy",
+      "historical_meaning_only": "The text asks natal solar place at the actual hour of birth, not just the natal civil date.",
+      "first_original_photo_sha256": "9df48e28ece83009631e7adab33ad30961a570090d89a8b210152323d9e060e9",
+      "independent_1659_print_photo_sha256": "25ffaf597f41dcc56254f67846041c8b0c5787f9a5d28bb707a0ed02b49e2ba4",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12768",
+      "record_number": 12768,
+      "batch": "B07at",
+      "source_span": "B07at-S001",
+      "original_pdf_frames": [
+        768
+      ],
+      "role": "one_arcminute_24minute_time_warning",
+      "historical_meaning_only": "Lilly warns that one arcminute error of solar motion causes approximately 24 minutes timing error.",
+      "first_original_photo_sha256": "9df48e28ece83009631e7adab33ad30961a570090d89a8b210152323d9e060e9",
+      "independent_1659_print_photo_sha256": "25ffaf597f41dcc56254f67846041c8b0c5787f9a5d28bb707a0ed02b49e2ba4",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12769",
+      "record_number": 12769,
+      "batch": "B07at",
+      "source_span": "B07at-S001",
+      "original_pdf_frames": [
+        768
+      ],
+      "role": "ephemeris_next_day_compare",
+      "historical_meaning_only": "Select annual return-day ephemeris Sun longitude nearest natal zodiacal longitude, subtract remaining arcminutes.",
+      "first_original_photo_sha256": "9df48e28ece83009631e7adab33ad30961a570090d89a8b210152323d9e060e9",
+      "independent_1659_print_photo_sha256": "25ffaf597f41dcc56254f67846041c8b0c5787f9a5d28bb707a0ed02b49e2ba4",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12770",
+      "record_number": 12770,
+      "batch": "B07at",
+      "source_span": "B07at-S001",
+      "original_pdf_frames": [
+        768
+      ],
+      "role": "motion_to_fractional_day",
+      "historical_meaning_only": "Divide remaining solar longitude arc by full diurnal Sun motion and scale by 24 hours for return time.",
+      "first_original_photo_sha256": "9df48e28ece83009631e7adab33ad30961a570090d89a8b210152323d9e060e9",
+      "independent_1659_print_photo_sha256": "25ffaf597f41dcc56254f67846041c8b0c5787f9a5d28bb707a0ed02b49e2ba4",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12771",
+      "record_number": 12771,
+      "batch": "B07at",
+      "source_span": "B07at-S001",
+      "original_pdf_frames": [
+        768
+      ],
+      "role": "historical_alt_authors",
+      "historical_meaning_only": "Author cites Maginus and Argol as alternative procedures; neither is independently verified here.",
+      "first_original_photo_sha256": "9df48e28ece83009631e7adab33ad30961a570090d89a8b210152323d9e060e9",
+      "independent_1659_print_photo_sha256": "25ffaf597f41dcc56254f67846041c8b0c5787f9a5d28bb707a0ed02b49e2ba4",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12772",
+      "record_number": 12772,
+      "batch": "B07at",
+      "source_span": "B07at-S001",
+      "original_pdf_frames": [
+        768
+      ],
+      "role": "historic_31st_year_case",
+      "historical_meaning_only": "Announces a sample revolution for a native in the thirty-first year.",
+      "first_original_photo_sha256": "9df48e28ece83009631e7adab33ad30961a570090d89a8b210152323d9e060e9",
+      "independent_1659_print_photo_sha256": "25ffaf597f41dcc56254f67846041c8b0c5787f9a5d28bb707a0ed02b49e2ba4",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12773",
+      "record_number": 12773,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "origanus_solar_noon_year_1646",
+      "historical_meaning_only": "Origanus 19 September 1646 at noon places Sun at 6 degrees 12 arcminutes Libra.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12774",
+      "record_number": 12774,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "natal_radix_solar_6_37_Libra",
+      "historical_meaning_only": "Natal source Sun is 6 degrees 37 minutes Libra.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12775",
+      "record_number": 12775,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "source_solar_remaining_25_arcminutes",
+      "historical_meaning_only": "Subtracting the source noon return-day Sun from natal Sun leaves 25 arcminutes.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12776",
+      "record_number": 12776,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "source_sun_diurnal_59_10",
+      "historical_meaning_only": "Daily solar motion from ephemeris is 59 arcminutes 10 arcseconds.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12777",
+      "record_number": 12777,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "maginus_nearest_daily_59_08",
+      "historical_meaning_only": "Old Maginus table uses nearby 59 arcminutes 8 arcseconds, not exact 59 arcminutes 10 seconds.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12778",
+      "record_number": 12778,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "twenty_arcminute_fractional_hours",
+      "historical_meaning_only": "Historical Maginus 20-arcminute cell contributes 8 hours 7 minutes 2 seconds.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12779",
+      "record_number": 12779,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "five_arcminute_fractional_hours",
+      "historical_meaning_only": "Historical Maginus 5-arcminute cell contributes 2 hours 1 minute 45 seconds.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12780",
+      "record_number": 12780,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "sum_fractional_10h08m47s",
+      "historical_meaning_only": "Source table cell sums yield 10 hours 8 minutes 47 seconds; later text quotes time only through minutes.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12781",
+      "record_number": 12781,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "Frankfurt_19Sep1646_10h08m",
+      "historical_meaning_only": "Lilly dates solar return at Frankfurt 19 September 1646 around 10 hours 8 minutes after noon.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12782",
+      "record_number": 12782,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "Westward_meridian_subtract_1h07m",
+      "historical_meaning_only": "Source corrects westward meridian offset by subtracting 1 hour 7 minutes from Frankfurt's time.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12783",
+      "record_number": 12783,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "local_9h01m_after_noon",
+      "historical_meaning_only": "After source's whole-minute truncation, meridian correction yields 9 hours 1 minute after noon.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12784",
+      "record_number": 12784,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "house_table_latitude53_noon_12h26m",
+      "historical_meaning_only": "The historical 53-degree latitude house table contributes 12 hours 26 minutes in Lilly's account.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12785",
+      "record_number": 12785,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "equation_time_16min",
+      "historical_meaning_only": "Source appends an equation of time of 16 minutes to the house-table calculation.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12786",
+      "record_number": 12786,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "combined_21h43m",
+      "historical_meaning_only": "The historical 9h01m + 12h26m + 0h16m equals 21h43m.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12787",
+      "record_number": 12787,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "midheaven_23Aquarius",
+      "historical_meaning_only": "The author's resulting house-table example locates MC at 23 degrees Aquarius.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12788",
+      "record_number": 12788,
+      "batch": "B07at",
+      "source_span": "B07at-S002",
+      "original_pdf_frames": [
+        769
+      ],
+      "role": "ascendant_0Cancer32",
+      "historical_meaning_only": "The author's resulting ascendant is Cancer 0 degrees 32 minutes.",
+      "first_original_photo_sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "independent_1659_print_photo_sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "historical_source_documented_by_one_reader": true,
+      "original_natal_chart_and_timing_engine_verified": false,
+      "real_person_prediction_validated": false,
+      "runtime_model_promoted": false
+    }
+  ]
+}
