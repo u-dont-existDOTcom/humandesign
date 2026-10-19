@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_FIRST_CLXVII_PROFECTIONS_SOURCE_PHYSICAL_END_NEXT_CLXVIII",
-  "records_count": 12671,
+  "status": "BOOK_III_CLXVIII_PROFECTION_JUDGMENT_PHYSICAL_SOURCE_SPAN_COVERED",
+  "records_count": 12704,
   "read_numbered_chapters": [
     1,
     2,
@@ -171,7 +171,8 @@
     164,
     165,
     166,
-    167
+    167,
+    168
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1294,27 +1295,34 @@
       "records_count": 22,
       "sha256": "b9f5bc374bdbadc62098af28685b87a80fd32d33849e095aac26923072259d7d",
       "scope": "Original first 1647 CLXVII final Midheaven, Sun and Moon profection timing chart printed725/PDF759 with corresponding independently typeset 1659 p725; the following distinct printed CHAP CLXVIII How to judge upon a Figure of Profections begins 1647 p726/PDF760. Twenty-two source-only historical annotations R12650–R12671, one-reader source example sightings. Physical previous CLXVII source pages718–725 are now covered; the earlier 30-degree/60-minute/day-of-year tables are NOT completely source-critically read, and original B07an 6deg23-vs-minute37 arithmetic discrepancy persists. No actual historic or forward-blind person outcomes validated."
+    },
+    {
+      "id": "B07ap",
+      "path": "batches/B07ap/RULES.json",
+      "records_count": 33,
+      "sha256": "4bc08d81be9fda0365deccd102b9fe127b3787265f3884aab1ece39a201328ad",
+      "scope": "Historical first-edition 1647 CHAP CLXVIII How to judge upon a Figure of Profections, printed726–728/PDF760–762 and physically separate next chapter CLXIX printed729/PDF763. Thirty-three bounded documentary source notes R12672–R12704 with eight first and independently typeset second 1659 edition page photographs and byte SHA witnesses. Natal vs annual year lord, radical houses, profectional dignities, two rulers and Pisces6°37 23°23 remainder example giving 284d16h28m to a June29 boundary. Old health, morality and wealth prognoses are historical rhetoric only, not verified. Source physical pages covered, NOT independently philologically or empirically validated natal astrology."
     }
   ],
   "next": {
-    "pdf_page": 760,
-    "printed_page": 726,
-    "chapter": "CLXVIII",
-    "printed_chapter_numeral": "CLXVIII",
-    "editorial_source_sequence_ordinal": 168,
-    "heading": "How to judge upon a Figure of Profections",
-    "include_opening_paragraph": true,
+    "pdf_page": 763,
+    "printed_page": 729,
+    "chapter": "CLXIX",
+    "printed_chapter_numeral": "CLXIX",
+    "editorial_source_sequence_ordinal": 169,
+    "heading": "Of the Profections of the Ascendant and Moon in every House",
+    "include_opening_paragraph": false,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Physical original 1647 printed726/PDF760 begins a NEW CHAP CLXVIII after the ending Mid-heaven/Sun/Moon table from prior CLXVII p725/PDF759. This original profection-judgment source describes radical natal house sign classifications, angles/succedents/cadents, sign ruler, benefic/malefic context and five rhetorical health conditions. Next source-only historical record R12672.",
-    "research_scope": "Original interpretive profection rules, natal-house and annual figure contextual predicates and conditional exceptions. Medical/character claims from 1647 are documentary history only, not modern person-level prognoses."
+    "position": "Begin substantive content below the new physical CHAP CLXIX heading on original printed729/PDF763. The title/physical separator are already documentary boundary notes in B07ap; do not double-count them as independent rules. Next source ID R12705. Source says Ascendant and Moon by twelve houses.",
+    "research_scope": "Source-only original house-by-house Ascendant and Moon profections, contextual natal and annual predicates, conditional exceptions. Historical health, crime and morality assertions are not modern person-level predictions."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 83,
+  "read_headed_units_count": 84,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07ao_CLXVII_END.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07ap_CLXVIII_JUDGMENT.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1527,10 +1535,27 @@
       "source_1647_vs_1659_comparison_all_rows_verified": false,
       "actual_human_predictions_validated": 0,
       "runtime_model_promoted": false
+    },
+    {
+      "printed_chapter": "CLXVIII",
+      "chapter_heading": "How to judge upon a Figure of Profections",
+      "source_unit": "original first edition distinct physical CLXVIII",
+      "physical_source_start_pdf": 760,
+      "accepted_through_pdf": 763,
+      "end_before_new_chapter": "CLXIX",
+      "next_unaccepted_pdf": 763,
+      "next_record": "R12705",
+      "accepted_batch": "B07ap",
+      "first_edition_source_physically_covered": true,
+      "complete": true,
+      "full_source_critical_edition_complete": false,
+      "empirical_real_human_claims_validated": 0,
+      "runtime_promoted": false
     }
   ],
   "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166.",
   "source_duplicate_printed_CLXVI_preservation_note": "First distinct physically printed CLXVI original directions-time is editorial ordinal165 source pages PDF742–749; second distinct physically printed CLXVI annual Profections editorial ordinal166 PDF749–752. Original duplicated Roman text preserved. Following printed CLXVII starts PDF752. Physical reading complete but critical star table text, proper original natal/calendar engine and actual-person predictions not verified.",
   "chapter_CLXVII_partial_1647_source_table_issue_note": "B07an 24 historic source-only observations of original 1647/1659 profection date tables p721-724. Full original tabular data not independently collated: only nine literal rows manually checked. The printed third 6°23 angle source uses minute37 not minute23, yielding 80d13h21 versus 77d17h11 under the printed table. No actual-person outcome, natal ephemeris or full calendar engine verified; first physical CLXVII remains PARTIAL.",
-  "original_CLXVII_physical_coverage_not_critical_editor_note": "B07am–B07ao cover original printed CLXVII pp718–725/PDF752–759. All 30 degree and 60 minute conversion table rows and full nativity-specific day-of-year grid NOT independently collation complete. Old printed worked case uses minute37 instead of subtracted minute23, original human outcome not validated. Physical next new CHAP CLXVIII p726/PDF760."
+  "original_CLXVII_physical_coverage_not_critical_editor_note": "B07am–B07ao cover original printed CLXVII pp718–725/PDF752–759. All 30 degree and 60 minute conversion table rows and full nativity-specific day-of-year grid NOT independently collation complete. Old printed worked case uses minute37 instead of subtracted minute23, original human outcome not validated. Physical next new CHAP CLXVIII p726/PDF760.",
+  "source_CLXVIII_physical_coverage_not_empirical_verification_note": "B07ap covers original 1647 physical CLXVIII printed726–728 with boundary to CLXIX printed729. Year ruler Jupiter/Mars example and natal/annual exceptions are documented only. No independently checked whole physical critical edition or real-human prognostic success, zero runtime promotions."
 }

@@ -1,3 +1,9 @@
+# Original Lilly CLXVIII profection judgments physically covered (B07ap)
+
+**33 historical source-only annotations R12672–R12704** record Lilly's original 1647 printed726–728/PDF760–762 with separately typeset 1659 page witnesses. The source Pisces6°37 remainder 23°23 is converted by its table to 284 days 16 hours 28 minutes, with Jupiter/Mars year-lord transition near June29. Context includes natal/annual house strength, profection rulers and exceptions; period health, character and monetary prognoses remain unverified rhetoric. **Lilly 12,704 + Ptolemy 1,066 =13,770 Western historical annotations**, independent Chinese V7 **154 BaZi +201 Zi Wei=355** unchanged. CLXVIII source span physically COVERED, not expert critical edition or evidence of human predictive accuracy. Next **R12705** is CLXIX substantive Ascendant/Moon profections below heading on original PDF763/printed729. No real-person validations and zero model promotions.
+
+## Earlier historical checkpoint preserved verbatim
+
 # Original Lilly 1647 CLXVII physical source span completed (B07ao)
 
 **22 new historical annotations R12650–R12671** document the original final CLXVII Mid-heaven/Sun/Moon promittor time tables on printed725/PDF759 and the new **CHAP CLXVIII** source heading on printed726/PDF760, both seen in separately typeset first 1647 and second 1659 original printings. Prior CLXVII original physical source pp718–725 are COVERED, but not all 30-degree, 60-minute and calendar-day original table glyphs are independently critically verified, and B07an source 6deg23 vs 37-minute lookup discrepancy remains. **Lilly 12,671 + Ptolemy 1,066 = Western historical 13,737**; Chinese V7 **154 BaZi +201 Zi Wei=355** unchanged. Next **R12672** at printed726/PDF760 beginning new CLXVIII How to judge upon a Figure of Profections. No human-outcome validation or astrological runtime promotion.

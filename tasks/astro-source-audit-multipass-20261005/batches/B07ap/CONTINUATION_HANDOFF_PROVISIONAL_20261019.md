@@ -1,0 +1,11 @@
+# B07ap continuation checkpoint — original Lilly CLXVIII contextual judgment
+
+2026-10-19 Africa/Dakar UTC+0. The owner requested a complete primary Western/Chinese astrology source audit, verified actual birth-chart engines, and blinded real human chart↔survey predictive evaluation. **Parent outcome OPEN; source-annotation counts never prove astrology predicts life.**
+
+Branch `research/astro-b07ap-clxviii-judgment-20261019`, isolated shared worktree `/mnt/hdd/storage/joel/development-worktrees/humandesign/astro-chinese-bazi-06-20261019`, parent accepted B07ao `49b824d73d75537b2302e9facb6ddc9b5870e1e5`. Starting historical source Lilly12671, Ptolemy1066, Chinese V7 154 BaZi+201 Zi Wei=355. Original first CLXVIII printed726–728 PDF760–762, next physically separate CLXIX at printed729 PDF763, original 1659 separately typeset pp726–729 DjVu755–758. Eight raw-photo SHA witnesses, 33 new bounded historical source notes **R12672–R12704** in `CLXVIII_ORIGINAL_SOURCE_JUDGMENT_33_NOTES_V1.json`, source math and first/second print provenance.
+
+Source insights: Original annual-year ruler is the ruler of the profectional sign; two successive year lords if annual position crosses the sign. Worked Pisces6°37 leaves 23°23; source table23deg=280d0h27m, minute23=4d16h1m, total **284d16h28m**, Jupiter rules to June29/Mars remainder to September19. Old health/character/financial proclamations are **source-only unvalidated rhetoric**, and method depends on natal+annual dignities, houses, aspects and exception contexts, not a single preposterous Sun-sign trait.
+
+**46 focused tests pass.** Portable independent ZIP CRC/SHA/bytes+46 source replays, guarded append-only canonical source index, post-index tests and actual GitHub push/readback are required before saying published. On acceptance: Lilly12704, Western with Ptolemy13770, Chinese355 unchanged. Next original **R12705**, new **CHAP CLXIX** p729/PDF763 (Ascendant/Moon profections by house). The following p730 and onward source pages remain to examine, plus Chinese Zi Wei ZWD-R0202 and BaZi BZI-R0155.
+
+True birth calendar/astronomical time-angle parity and prospective blinded decoy-controlled actual-human evaluation remain unfinished, with zero human prediction validations and no promoted runtime astrology. No owner input required for further reversible source research.
