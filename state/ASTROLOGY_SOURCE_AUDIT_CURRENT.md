@@ -1,3 +1,9 @@
+# Original Lilly 1647 CLXVII physical source span completed (B07ao)
+
+**22 new historical annotations R12650–R12671** document the original final CLXVII Mid-heaven/Sun/Moon promittor time tables on printed725/PDF759 and the new **CHAP CLXVIII** source heading on printed726/PDF760, both seen in separately typeset first 1647 and second 1659 original printings. Prior CLXVII original physical source pp718–725 are COVERED, but not all 30-degree, 60-minute and calendar-day original table glyphs are independently critically verified, and B07an source 6deg23 vs 37-minute lookup discrepancy remains. **Lilly 12,671 + Ptolemy 1,066 = Western historical 13,737**; Chinese V7 **154 BaZi +201 Zi Wei=355** unchanged. Next **R12672** at printed726/PDF760 beginning new CLXVIII How to judge upon a Figure of Profections. No human-outcome validation or astrological runtime promotion.
+
+## Earlier source checkpoint retained verbatim
+
 # Lilly original printed CLXVII profection timing sources partially accepted (B07an)
 
 **24 new historical documentary records R12626–R12649** from original first 1647 printed721–724/PDF755–758 and independently typeset 1659 print, source photos and hashes preserved. Degree and minute conversion tables plus old nativity calendar-day table remain only sampled, not fully critically collated. Original two examples produce **17d20h34m / October6** and **29d10h08m / October17**. Original third example prints arc **6°23′** but uses **37′** row, giving **80d13h21m** instead of the printed table's 23′ row giving **77d17h11m**. Do not repair original document, claim verified natal engine or treat the dates as observed human predictions. **12,649 Lilly +1,066 Ptolemy=13,715 Western historical notes**, Chinese V7 **154 BaZi+201 Zi Wei=355** unchanged. The first original CLXVII chapter stays PARTIAL; next **R12650 original PDF759/printed725 Mid-heaven examples**. Zero independently verified human predictions and zero runtime model promotions.
