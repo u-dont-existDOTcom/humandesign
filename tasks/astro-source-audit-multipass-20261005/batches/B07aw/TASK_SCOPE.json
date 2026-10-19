@@ -1,0 +1,31 @@
+{
+  "schema": "HUMANDESIGN_ASTROLOGY_LILLY_CONTINUATION_V1",
+  "status": "OPEN_SOURCE_NOT_YET_ACCEPTED",
+  "parent_task": "Complete original Western Lilly and Chinese astrology source audit, chart/calendar parity and independently blinded real-human tests",
+  "owner_constraint": "Commit and push each verified research checkpoint immediately to survive repeated interruptions",
+  "active_branch": "research/astro-b07aw-original-transits-20261019",
+  "parent_accepted_git_sha": "1762c2126cdf1f6ecb7377218438cab3d463a4fe",
+  "parent_accepted_batch": "B07av",
+  "prior_lilly_accepted_history": 12845,
+  "prior_ptolemy": 1066,
+  "parallel_chinese_V7": 355,
+  "next_id": "R12846",
+  "next_physical_original_1647_pdf_frame": 775,
+  "next_printed_folio": 741,
+  "first_original_1647_literal_chapter": "CLXXIIII",
+  "second_original_1659_literal_chapter": "CLXXIV",
+  "editorial_ordinal": 174,
+  "first_original_chapter_title": "Of the TRANSIT of the Planets.",
+  "existing_original_first_1647_photo": "batches/B07av/evidence/1647_original-775.jpg",
+  "existing_original_second_1659_photo": "batches/B07av/evidence/1659_original_djvu_770.jpg",
+  "expected_following_chapter": "Nativity of an English Merchant astrologically handled, physical next page to inspect",
+  "next_actions": [
+    "Inspect first 1647 original/transmitted 1659 source, compare ephemeris transit setup, planet/cusp aspects and timing claims",
+    "Acquire only missing following original page(s) and SHA witness physical boundary",
+    "Record source-only historic rules with their exact source folios and conditions, keeping risk vs validated human evidence distinct",
+    "Run focused source tests and portable ZIP extract/hash/CRC replay",
+    "Guarded append-only Lilly index, commit/push and verify exact remote SHA, then continue"
+  ],
+  "root_predicted_human_successes_validated": 0,
+  "runtime_promotions": 0
+}
