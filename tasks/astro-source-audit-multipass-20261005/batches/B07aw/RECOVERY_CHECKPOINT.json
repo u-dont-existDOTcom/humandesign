@@ -1,0 +1,70 @@
+{
+  "schema": "LILLY_B07aw_INTERRUPTION_RECOVERY_V1",
+  "task_id": "ASTRO_SOURCE_MULTITRADITION_20261005",
+  "exclusive_for_branch": true,
+  "status": "OPEN_PROGRESS_SAVED_PRE_SOURCE_ADMISSION",
+  "parent_outcome": "OPEN",
+  "source_baseline_sha": "044bf9ef6012c9e4488aa100d2bac442a29b2c6c",
+  "branch": "research/astro-b07aw-original-transit-planet-glyphs-20261019",
+  "owner_instruction": "Continue long HumanDesign Western Lilly and Chinese astrology original-source research; save each verified batch to humandesign rather than lose work to repeated interruption.",
+  "prior_verified_Lilly_historical_records": 12846,
+  "prior_verified_Chinese_historical_records": 355,
+  "next_unaccepted_Lilly_record": "R12847",
+  "next_1647_source_pdf_frame": 775,
+  "next_1647_source_printed_page": 741,
+  "original_first_edition_printed_chapter": "CLXXIIII",
+  "separate_1659_printed_chapter": "CLXXIV",
+  "canonical_editorial_ordinal": 174,
+  "original_1647_full_pdf_SHA256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "evidence": [
+    {
+      "file": "evidence/independent_1659_djvu771.jpg",
+      "sha256": "c545d6ffd3da2d2d7bddd30d3fa65342fbea8ef2f85274da5e8d93c86d1a9008",
+      "bytes": 318981,
+      "evidence_class": "original_page_snapshot"
+    },
+    {
+      "file": "evidence/inspect_duration_1647_original_775-775.jpg",
+      "sha256": "81be403b7f353cdad3f1d432ab36fc2d1bcf25d2bca9fc7540d84c108741a0a3",
+      "bytes": 332932,
+      "evidence_class": "derived_crop_of_original_source"
+    },
+    {
+      "file": "evidence/inspect_duration_independent_1659_djvu770.jpg",
+      "sha256": "6f4986070026bfde20b914625ec27b01641707dd661e9ed6845b7e50a7522508",
+      "bytes": 225987,
+      "evidence_class": "derived_crop_of_original_source"
+    },
+    {
+      "file": "evidence/inspection_symbols_1647_original_775-775.jpg",
+      "sha256": "d4710c6c01473e569cbe55c3a790c4eb6fd28fa42a283b89985367979042fd6a",
+      "bytes": 349109,
+      "evidence_class": "derived_crop_of_original_source"
+    },
+    {
+      "file": "evidence/inspection_symbols_independent_1659_djvu770.jpg",
+      "sha256": "6bd3bc7c17019bb6ca059f57a3f6cc0252c0a7db1a52a4ad51fd69832767680d",
+      "bytes": 251905,
+      "evidence_class": "derived_crop_of_original_source"
+    },
+    {
+      "file": "evidence/original_1647_pdf776-776.jpg",
+      "sha256": "44a8e6ebb78fd950ba2b836be23cd8d7d08921c734672bad3646b61fe26011ea",
+      "bytes": 891516,
+      "evidence_class": "original_page_snapshot"
+    }
+  ],
+  "preserved_source_issues": [
+    "1647 first edition prints CLXXIIII; 1659 edition prints CLXXIV; do not conflate",
+    "Physical source photos and derived crops do not establish an independently verified astronomical ephemeris",
+    "One researcher's reading or cross-edition printed agreement does not demonstrate predictions about people"
+  ],
+  "completed_this_increment": [
+    "Recovered exact B07au published remote SHA without repeating its source work",
+    "Verified existing B07aw worktree is uncommitted and has no live competing process",
+    "Pinned six already acquired original page/crop evidence SHA-256 and byte lengths"
+  ],
+  "next_action": "Read actual 1647 and 1659 CLXXIIII/CLXXIV transits pages, map source-specific claims without bypassing context, test source anchoring and publish accepted source-only batch.",
+  "human_predictive_validations": 0,
+  "runtime_promotions": 0
+}
