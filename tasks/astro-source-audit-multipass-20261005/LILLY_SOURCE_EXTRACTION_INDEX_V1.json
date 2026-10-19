@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXXIII_PLANETARY_RETURNS_PHYSICAL_CHAPTER_COVERED_NEXT_CLXXIV_TRANSITS",
-  "records_count": 12846,
+  "status": "ORIGINAL_1647_CLXXIIII_TRANSIT_ONE_PAGE_PHYSICAL_SOURCE_COVERED_NEXT_CLXXV_MERCHANT",
+  "records_count": 12868,
   "read_numbered_chapters": [
     1,
     2,
@@ -177,7 +177,8 @@
     170,
     171,
     172,
-    173
+    173,
+    174
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1349,28 +1350,34 @@
       "records_count": 43,
       "sha256": "5676bbca47afbf863e07f59c614857ebe206d73a15a939f0006ac5ad4e21fd36",
       "scope": "First-edition original Lilly CLXXIII printed738–741/PDF772–775 planetary returns to radix positions, verified against actual separately typeset original second 1659 printed738–741/DjVu767–770 source photographs. Exactly six returning planet headings Saturn/Jupiter/Mars/Venus/Mercury/Moon times seven natal target planet places, 42 distinct historical conditional statements plus one distinct next-chapter physical boundary, R12804–R12846. No Sun returning-planet list exists in this chapter. Explicit natal/return conditionals preserved. Next first-edition heading literally CLXXIIII while independently typeset 1659 literally CLXXIV, both editorial chapter174 'Transit'. All high stakes, morality, health, crimes, relationships and fortune claims remain documentary only, not validated humans or horoscope engine."
+    },
+    {
+      "id": "B07aw",
+      "path": "batches/B07aw/RULES.json",
+      "records_count": 22,
+      "sha256": "e9fa22425e001c858dda51924c8bb79571622dbd1f51924bd03ff7659d863b2f",
+      "scope": "Original William Lilly Christian Astrology first 1647 printed741 original PDF775 transit chapter, independently printed 1659 folio741/DjVu770. Physical CLXXIIII first-edition numeral versus CLXXIV second-edition spelling is preserved. Twenty-two source-only annotations R12847–R12868 cover ephemeris method, natal cusps/natal planets/nodes/Fortune, sextile/trine/square/opposition, Ascendant/second/third-house historic favorable/unfavorable day claims. The original first+second editions name Jupiter/Venus at Ascendant, contrary to searchable derivative Jupiter/Mars. For Mars crossing Ascendant first 1647 prints two/three dayes but second 1659 two/three yeares. Neither source is a verified independent human forecast or accurate natal astronomical time engine. First CLXXIIII transit physical text ends before next CLXXV English merchant chart on PDF776."
     }
   ],
   "next": {
-    "pdf_page": 775,
-    "printed_page": 741,
-    "chapter": "CLXXIV",
-    "printed_chapter_numeral": "CLXXIIII",
-    "second_1659_edition_printed_chapter_numeral": "CLXXIV",
-    "editorial_source_sequence_ordinal": 174,
-    "heading": "Of the TRANSIT of the Planets",
+    "pdf_page": 776,
+    "printed_page": 742,
+    "chapter": "CLXXV",
+    "printed_chapter_numeral": "CLXXV",
+    "editorial_source_sequence_ordinal": 175,
+    "heading": "The NATIVITY of an English Merchant Astrologically handled",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "New physical transit chapter after last CLXXIII Moon-on-Moon paragraph and horizontal divider on original first-edition printed741/PDF775, source first chapter-heading roman numeral literally CLXXIIII, 1659 second type-set chapter printed CLXXIV. Normalize only editorial sequence as174. Next source R12847. A single physically same-page heading locator already admitted in B07av and must not be repeated as a new substantive transit rule.",
-    "research_scope": "Original first and separately typeset second editions define transits by ephemeris, natal house cusps/natal planet or Nodes/Fortune, benefic and malefic aspects and claimed favorable days; actual date/time ephemeris parity and out-of-sample human predictions remain entirely unverified."
+    "position": "Original first 1647 p742/PDF776 contains nativity chart of English Merchant born 19 Sept 1616, old-style Gregorian/Julian date interpretation unverified. Preserve exact original chart planet degrees, latitude, oblique/right ascension and antiscions with independently printed 1659 edition; do not infer human event accuracy or retune scoring. Next R12869.",
+    "research_scope": "Historical original 1647 Merchant chart and matched 1659 printing; detailed natal astronomical source as text before independent ephemeris epoch/calendrical parity or actual human forward blind tests."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 89,
+  "read_headed_units_count": 90,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07av_CLXXIII.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07aw_TRANSITS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1696,6 +1703,20 @@
       "blind_real_people_predictions_validated": 0,
       "runtime_astrological_rules_promoted": false,
       "accepted_batch": "B07av"
+    },
+    {
+      "original_first_1647_chapter_numeral": "CLXXIIII",
+      "second_1659_chapter_numeral": "CLXXIV",
+      "editorial_source_ordinal": 174,
+      "original_first_edition_pdf_frame": 775,
+      "original_first_edition_printed_folio": 741,
+      "source_current_batch": "B07aw",
+      "source_physically_complete": true,
+      "critical_two_reader_source_collation_complete": false,
+      "Mars_duration_day_vs_year_edition_variation": true,
+      "original_Ascendant_benefics_Jupiter_Venus": true,
+      "source_ephemeris_validation_complete": false,
+      "independent_actual_human_predictive_successes": 0
     }
   ],
   "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166.",
@@ -1708,5 +1729,6 @@
   "chapter_CLXXI_original_source_history_note": "B07as 22 documentary annotations covering 12 original Part Fortune/second-house house contexts and only first three Alfridary septennial lords by day and night. The CLXXII page734 source physical boundary is proven in both printed editions; 1647/1659 page transcriptions and any actual human predictions remain unverified independently.",
   "source_1646_solar_revolution_historical_example_note": "One-reader physical original 1647/1659 prints agree on source Sun 6°37′ vs day noon6°12′ in Libra, residual25′, nearest diurnal rate59′08″ versus 59′10″ observed, Maginus 20′+5′ fractional times10h08m47s, later truncation to10h08m for source meridian offset and house-table calculation21h43m. No verified 1646 astronomical/calendar parity or real life predictive outcome.",
   "physical_CLXXII_source_coverage_and_limits": "B07at–B07au cover original first printed CLXXII folios734–737 and record CLXXIII next heading at printed738. First-and-second 1647/1659 source photos preserved, but historical 1646 return astronomy/calendar and natal chart parity, expert critical edition and actual human predictions are NOT verified.",
-  "source_CLXXIII_printed_variation_research_note": "The first original printed CLXXIII was traversed in B07av but not expert-critically collated. At printed741/PDF775 first printing the next physically distinct chapter is headed CHAP. CLXXIIII. The 1659 independently typeset printing reads CHAP. CLXXIV. Both editorially mean 174. Preserve literal original headings, unknown astrological birthday/solar return mathematics and zero actually measured human predictions."
+  "source_CLXXIII_printed_variation_research_note": "The first original printed CLXXIII was traversed in B07av but not expert-critically collated. At printed741/PDF775 first printing the next physically distinct chapter is headed CHAP. CLXXIIII. The 1659 independently typeset printing reads CHAP. CLXXIV. Both editorially mean 174. Preserve literal original headings, unknown astrological birthday/solar return mathematics and zero actually measured human predictions.",
+  "chapter_CLXXIIII_CLXXIV_transits_two_edition_photo_note": "B07aw one-page original photo source physically closed CLXXIIII editorial174; independent 1659 prints CLXXIV. 1647 first edition writes Mars Ascendant two/three dayes, 1659 second writes two/three yeares. Both original editions say Jupiter or Venus on Ascendant, derivative Jupiter or Mars is an error. Historical book's mood/wealth/health prognoses are neither actual human evidence nor a validated original natal transit ephemeris."
 }

@@ -2,14 +2,14 @@
   "schema": "LILLY_B07aw_INTERRUPTION_RECOVERY_V1",
   "task_id": "ASTRO_SOURCE_MULTITRADITION_20261005",
   "exclusive_for_branch": true,
-  "status": "OPEN_TESTED_SOURCE_RECORDS_COMMITTED_CANONICAL_ADMISSION_PENDING",
+  "status": "CANONICAL_SOURCE_ADMITTED_LOCAL_AND_TESTED_REMOTE_READBACK_PENDING",
   "parent_outcome": "OPEN",
   "source_baseline_sha": "044bf9ef6012c9e4488aa100d2bac442a29b2c6c",
   "branch": "research/astro-b07aw-original-transit-planet-glyphs-20261019",
   "owner_instruction": "Continue long HumanDesign Western Lilly and Chinese astrology original-source research; save each verified batch to humandesign rather than lose work to repeated interruption.",
   "prior_verified_Lilly_historical_records": 12846,
   "prior_verified_Chinese_historical_records": 355,
-  "next_unaccepted_Lilly_record": "R12847",
+  "next_unaccepted_Lilly_record": "R12869",
   "next_1647_source_pdf_frame": 775,
   "next_1647_source_printed_page": 741,
   "original_first_edition_printed_chapter": "CLXXIIII",
@@ -66,9 +66,12 @@
     "Derived 22 nonduplicated source-only records R12847-R12868",
     "Verified both 1647 and 1659 original distinct Mars time unit and Jupiter/Venus glyphs",
     "40 focused source/integrity tests passed",
-    "Preserved modern inaccurate transcript strictly as navigational text"
+    "Preserved modern inaccurate transcript strictly as navigational text",
+    "Source ZIP passed 40 tests from independent extraction (CRC, SHA256, exact bytes)",
+    "Guarded append-only source index advanced 12846 to 12868, Chinese V7 unchanged",
+    "13 additional post-index checks passed"
   ],
-  "next_action": "Build portable B07aw ZIP and independently extracted 40-test replay, guard append-only index 12846->12868, commit/push and exact remote readback; then continue CLXXV R12869.",
+  "next_action": "Verify remote B07aw accepted commit equals local; then continue CLXXV at R12869 from already saved original PDF776 and 1659 DjVu771, preserving source natal chart uncertainties and no human-prediction claim.",
   "human_predictive_validations": 0,
   "runtime_promotions": 0,
   "evidence_artifacts_SHA256": {
@@ -77,5 +80,11 @@
     "ACCEPTANCE.json": "b35375feed1ac4ce39a9ba07562e34f240134bd25446d7f4a8fe12c3c6e1f9f2",
     "SECONDARY_SEARCH_NAVIGATOR_TRANSITS.txt": "b911e0f0c62b79bffd461631af6216fd8cfa808f13657c33b260478258b82792",
     "test_b07aw_original_transit_source.py": "e9c21cab219c6e207f4e171d1e64f278559f301508dcc3cdd0748f78374d7de4"
-  }
+  },
+  "new_accepted_historical_Lilly_count": 12868,
+  "new_accepted_historical_Western_with_Ptolemy": 13934,
+  "remaining_owner_goal": "Complete original classical astrology source lanes, reliable historical astronomical/Chinese calendar natal computation and independent human forward/reverse blind validation",
+  "next_source_chapter": "CLXXV English merchant natal chart printed742/PDF776",
+  "new_index_SHA256": "5bec3675b8ec3300c6a2037560f51540a2875208c915009ce8bbaf5bed13914f",
+  "portable_release_SHA256": "20eff0370776cc868cdb0ffec9747b7c358726016a5d3c1e54d3428fc05ef83f"
 }
