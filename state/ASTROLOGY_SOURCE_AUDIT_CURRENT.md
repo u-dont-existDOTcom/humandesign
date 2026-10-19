@@ -1,3 +1,9 @@
+# Lilly 1647 original historical CLXVI opening accepted PARTIALLY (B07ag)
+
+**29 new historical source-only rules R12473–R12501** on printed folios708–710/PDF742–744; source photo SHA and modern derivative phrase-locator witnesses recorded. Physical original 1647 and separately typeset 1659 printed p710 both read next-day Sun **7°36′ Libra**, against modern searchable text 7°37′; original Maginus Sun right ascension values remain 186°04′→186°58′ = 54′. **12,501 accepted Lilly historical notes +1,066 Ptolemy =13,567 Western**. Independent Chinese historical V5 **101 BaZi +161 Zi Wei=262**, unchanged. Original printed CLXVI numerical directions-time chapter remains **PARTIAL** (not counted as a completed chapter); next R12502 original PDF745/printed711 annual direction rate table, followed by Maginus/Naibod unresolved mathematics. No real-person predictive validations and no runtime model promotions.
+
+## Previous accepted historical checkpoint retained verbatim
+
 # Original Lilly 1647 printed CLXV Part Fortune source accepted
 
 **204 historical source annotations R12269–R12472** (201 substantive plus three next CLXVI navigation) in 35 reversible original photo groups across PDF737–742. Original ecliptic longitudes for the three fixed-star headings were not printed and remain null. **12,472 Lilly +1,066 Ptolemy=13,538 Western historic notes**, separate **97 Chinese BaZi/Zi Wei historical source notes**. Next **R12473 original printed CLXVI Of the measure of time in DIRECTIONS** begins PDF742/printed708, with competing methods and an annual-direction numerical table. 62 ZIP-extracted photo/source CRC/sha tests passed; this proves documentary mapping, not event-time accuracy or personally valid health, money, moral, crime or mortality predictions. No runtime promotions.

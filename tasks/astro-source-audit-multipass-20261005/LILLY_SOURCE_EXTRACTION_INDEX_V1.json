@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXV_FORTUNE_NEXT_CLXVI_NUMERICAL_TIME_MEASURE",
-  "records_count": 12472,
+  "status": "BOOK_III_CLXVI_TIME_MEASURE_PARTIAL_SOURCE_PAGES708_710_NEXT_ANNUAL_TABLE",
+  "records_count": 12501,
   "read_numbered_chapters": [
     1,
     2,
@@ -1228,28 +1228,48 @@
       "records_count": 204,
       "sha256": "0e92ce93d4b5466773770da9bffaa785b87e8fbd926c1763749b75e06b4f4d00",
       "scope": "William Lilly original 1647 Christian Astrology numbered CHAP CLXV The Directions of the PART OF FORTUNE, PDF737 lower/printed703 through PDF742 upper/printed708, physical divider before independently printed CLXVI numeric directions time chapter. 204 archival source annotations R12269-R12472 (201 substantive plus 3 following-chapter navigation), 35 reversible first-edition photo-anchored passage groups, 7 original JPEG source witnesses with CRC/hash/byte archive replay 62/62. Source planetary combined aspects preserved; twelve Part Fortune house cusps; three period fixed-star headings Spica Lion-heart South Balance with NO printed coordinates, null rather than invented degrees. Period mortality/crime/gender/class/religion and moralizing allegations are historical source claims only, no human predictive successes or runtime model promotions. 97 independent Chinese source notes preserved."
+    },
+    {
+      "id": "B07ag",
+      "path": "batches/B07ag/RULES.json",
+      "records_count": 29,
+      "sha256": "4819aa3b5216eea2b7f7b41a542befc7f2ebc325d36f47c0af1eabb902c22e19",
+      "scope": "PARTIAL printed first original Lilly CHAP CLXVI directions time method, PDF742–744 printed708–710, only first three source pages. 29 historical source annotations R12473–R12501, three original 1647 source photo frames plus separately typeset 1659 print p710. Both original editions read next-day Sun 7°36' Libra, conflicting with modern derivative 7°37'; 54 arcmin annual RA example otherwise unchanged. Annual 372 source-rate cells, Naibod printed tables, Maginus residual and true directional chronology are NOT accepted. Numbered first CLXVI remains PARTIAL; no additional completed chapter; zero predictive human validations or runtime promotions."
     }
   ],
   "next": {
-    "pdf_page": 742,
-    "printed_page": 708,
+    "pdf_page": 745,
+    "printed_page": 711,
     "chapter": "CLXVI",
     "printed_chapter_numeral": "CLXVI",
-    "heading": "Of the measure of time in DIRECTIONS",
-    "include_opening_paragraph": true,
+    "heading": "Of the measure of time in DIRECTIONS — continued original annual rate table",
+    "include_opening_paragraph": false,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "Distinct numbered CHAP CLXVI begins BELOW the horizontal Part Fortune divider mid PDF742/printed708. It compares competing timing methods Ptolemy, Antonius Maginus and annual-measure table after PDF744. Independently locate its ending chapter boundary, audit source numerical worked examples and table cells. Next R12473.",
-    "research_scope": "Quantitative angular directions to event-time conversions, period astronomy and 1647 sexagesimal tables, explicit historical alternatives and corrected worked examples, not human predictive validation."
+    "position": "Same first printed CLXVI, source annual zodiac 12 signs×31 rows original PDF745/printed711; original one-reader 365 legible, seven ambiguous and 1659 hints do not resolve 1647 print. Then follow printed 712–715 Maginus and Naibod time calculations until separate duplicated-number CLXVI annual-profections heading. Next historical source R12502; do not accept full chapter yet.",
+    "research_scope": "First-edition literal rate table, printed Maginus and Naibod work examples, independent 1659 comparator and exact historical arithmetic; source-epoch chart/time engine and real-human validity unverified."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
   "read_headed_units_count": 80,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261018_B07w_PART_FORTUNE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261019_B07ag_PARTIAL_CLXVI.md",
   "body_table_or_medical_claims_validated": false,
-  "partial_numbered_chapters": [],
+  "partial_numbered_chapters": [
+    {
+      "printed_chapter": "CLXVI",
+      "source_unit": "first of two physically separate headings printed CLXVI",
+      "chapter_heading": "Of the measure of time in DIRECTIONS",
+      "physical_source_start_pdf": 742,
+      "accepted_through_pdf": 744,
+      "next_unaccepted_pdf": 745,
+      "next_record": "R12502",
+      "accepted_batch": "B07ag",
+      "complete": false,
+      "original_numerical_tables_exhaustively_verified": false
+    }
+  ],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
   "chapter_L_source_acceptance_note": "Documentary source intake only; 75 issue entries include repaired misreadings and still unresolved grammar/glyphs. Source-to-record map and bounded image audit are not independent word-for-word certification. No empirical validation, clinical use or real-person inference.",
   "chapter_LI_source_acceptance_note": "42 historical editorial source units (one LII boundary), manual reverse original-image-first 35 passages, 22 extracted-archive source-only tests, 11 retained uncertainties including 5 literal e-contra and 1 differently phrased contrary; no diplomatic source certification, no empirical or runtime validation.",
@@ -1391,5 +1411,6 @@
   "chapter_CLXIII_original_sun_fixed_stars_acceptance_note": "B07t 104 historical-only annotations R11722-R11825 across 13 original reversible photo groups, 11 printed star effects and 13 old stellar entries, PDF723-725. Archive 62 independent replay tests. Modern star identity/epoch and direction-time engines unverified, zero predictive human successes or runtime promotions. Separate Chinese V2 97 retained.",
   "chapter_CLXIIII_moon_promittors_source_acceptance_note": "B07u original-1647 343 historical source notes R11826-R12168, 41 groups, PDF725-735. The next Moon-to-Fixed-Stars heading PDF735 is genuinely unnumbered and preserved, not fake CLXV. 108 archive replayed source/window tests, zero human predictive validation, zero runtime promotions. Chinese V2 97 remains separate.",
   "unnumbered_moon_fixed_starres_source_acceptance_note": "B07v original-first-edition unnumbered lunar fixed-star unit R12169-R12268, 100 notes, 13 stellar headings, 15 original photo groups PDF735-737, 53 independently extracted archive tests. Numbered chapter count unchanged, next printed CHAP CLXV PDF737. No individual empirical predictions or live model promotion; separate Chinese V2 97 unchanged.",
-  "chapter_CLXV_fortuna_directions_source_acceptance_note": "B07w original source R12269-R12472, 204 archival notes in 35 reversible groups PDF737-742; three unlocated-as-numbers star headings and 12 individual house cusps. 62 independently ZIP-extracted source tests pass. Next CLXVI original numerical arc/year method starts PDF742, R12473. No predictive human accuracy or model promotions."
+  "chapter_CLXV_fortuna_directions_source_acceptance_note": "B07w original source R12269-R12472, 204 archival notes in 35 reversible groups PDF737-742; three unlocated-as-numbers star headings and 12 individual house cusps. 62 independently ZIP-extracted source tests pass. Next CLXVI original numerical arc/year method starts PDF742, R12473. No predictive human accuracy or model promotions.",
+  "chapter_CLXVI_partial_original_opening_acceptance_note": "B07ag accepts only 29 source-only first three page annotations, Ptolemaic and Maginus competing time method descriptions and corrected modern derivative 7°37' versus actual first+second editions 7°36'. The physically distinct subsequent duplicated heading CHAP CLXVI on annual profections is not merged. Complete time chapter not yet accepted, historical engine unverified, human evaluations zero."
 }
