@@ -1,3 +1,9 @@
+# Original Lilly CLXVII opening PARTIAL p718–720 (B07am)
+
+**14 new source-only historical annotations R12612–R12625**, physically anchored to original printed718–720/PDF752–754 after prior original CLXVI annual Profections chapter. Lilly discusses concordance/contradiction of directions and profections, lord-of-year, separate fifteen-degree segments and use of a following conversion table. These are historically conditional interpretive statements, not measured life predictions. Lilly source count **12,625** + Ptolemy **1,066** = Western **13,691**; parallel Chinese V5 **101 BaZi+161 Zi Wei=262** unchanged. Chapter CLXVII remains PARTIAL, next original **R12626 PDF755 printed721** two original conversion tables. No full birth-era calendar/astronomy proof, human prediction validation or runtime promotion.
+
+## Earlier accepted checkpoint retained
+
 # Original Lilly second printed CLXVI Annual Profections physically covered (B07al)
 
 **30 source-only historical records R12582–R12611** preserve the separate duplicated printed CHAP CLXVI Annual Profections p715–718/PDF749–752. 30 degrees/one sign per solar-return year, 12-year cycle, source literal 13 monthly parts, printed diurnal 2d3h54min/sign, and nominal 12d4h12min per degree. Merchant example 72 historical year rows 1616–1687 physically evidenced, but individual chart cells NOT critically collated. **12,611 Lilly+1,066 Ptolemy =13,677 Western source records**; Chinese V5 101 BaZi+161 Zi Wei=262 unchanged. The next physical **CHAP CLXVII Use of Profections and their Effects** begins original **R12612 PDF752/printed718** after divider. Both printed CLXVI headings remain separately indexed. No real-person predictive success, actual original-era chart engine or runtime promotion verified.
