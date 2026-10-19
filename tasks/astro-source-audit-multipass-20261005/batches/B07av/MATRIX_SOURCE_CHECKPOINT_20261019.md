@@ -1,0 +1,9 @@
+# B07av source matrix checkpoint — not yet admitted
+
+Verified original photographs and exact hashes already pushed in earlier B07av commits; 1647 original printed folios 738–741 (PDF772–775) and independently typeset 1659 printed folios738–741 (DjVu767–770). Source physical chapter CLXXIII ends at printed741 and the next original first-edition heading prints **CHAP. CLXXIIII**, whereas 1659 prints **CHAP. CLXXIV**, preserved as edition difference with cropped/hashed photographs.
+
+Provisional machine-readable `RADIX_RETURN_42_SOURCE_CLAIMS_PROVISIONAL_V1.json` contains **42 historical predictions as text claims**, 6 returning-planet sections ×7 radix/natal planet positions, with contiguous source-only candidate identifiers R12804–R12845. Domain tags and conditions separate old source rhetoric from actual evidence; particularly preserve Saturn well-affected/midheaven, Jupiter-to-Saturn natal-good/ill, Venus-to-Sun dignified natal Sun, Venus-to-Saturn combust/unfortunate, Venus-to-Mercury well-affected and Moon-to-Moon natal-fortunate versus weak. This is **not** a human predictive validation or working 1647 natal chart engine.
+
+The `test_b07av_source_preflight.py` 52 tests verify source photo hashes, original edition variants, 42 source identity keys/conditions and no person-level or runtime promotion. It is a preliminary investigator transcription, not a separately independent philological collation. The accepted historical Lilly canonical index remains **R12803** pending the full guarded batch, Chinese V7 remains355.
+
+**Immediate restart:** run `python3 -m unittest discover -s tasks/astro-source-audit-multipass-20261005/batches/B07av -p test_b07av_source_preflight.py -q`, then build source-only `RULES.json`, original source witness, portable ZIP CRC/SHA/bytes independent replay, guarded canonical index and remote Git SHA. If anything fails, repair safely without changing accepted older source. Parent owner empirical goal OPEN.
