@@ -1,3 +1,9 @@
+# Original Lilly CLXXII solar revolution chapter physically covered (B07au)
+
+**15 historical documentary notes R12789–R12803** on the 1647 CLXXII ending through printed737/PDF771, plus the distinct **CLXXIII planetary return** physical heading at printed738/PDF772. Annual-versus-natal ascendant/lord configurations, contextual Moon mitigation and old house/malefic claims are preserved as historical text only. **Lilly 12,803+Ptolemy1,066=13,869 Western historical notes**; Chinese V7 **154 BaZi+201 Zi Wei=355** unchanged. Original CLXXII physically covered but old-epoch solar return engine, expert edition accuracy and actual human predictions unverified. Next **R12804 CLXXIII** original PDF772/printed738 planetary returns. Zero actual-person predictive validations and zero runtime promotions.
+
+## Earlier accepted source checkpoint retained verbatim
+
 # Lilly first original CLXXII solar return source partially documented (B07at)
 
 **24 historical source-only records R12765–R12788** on original printed734–735/PDF768–769 and distinct original 1659 second edition. Lilly defines solar return as matching natal Sun longitude and computes a 19Sep1646 example: Sun radix6°37′ Libra, noon6°12′, difference25′, old Maginus nearby rate 59′08″, table 20′+5′ =10h08m47s, later printed times truncate to minute before meridian/house table yielding21h43m. This is **historic source arithmetic, not verified original ephemeris, Julian-civil time conversion or human prediction**. **Lilly 12,788+Ptolemy1,066=13,854 Western historical notes**; independent Chinese V7 154 BaZi+201 Zi Wei=355 unchanged. Original CLXXII still PARTIAL. Next **R12789**, original PDF770/printed736. Real person validations zero, runtime astrological model promotions zero.
