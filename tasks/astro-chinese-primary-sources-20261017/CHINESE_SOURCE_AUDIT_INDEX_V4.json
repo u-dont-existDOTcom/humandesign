@@ -1,0 +1,108 @@
+{
+  "schema": "ASTROLOGY_CHINESE_SOURCE_EXTRACTION_INDEX_V4",
+  "status": "ZIWEI_VOLUME2_LIFE_BODY_LORDS_EIGHTEEN_SOURCE_STARS_DOCUMENTED",
+  "as_of_utc": "2026-10-19",
+  "prior_index": "CHINESE_SOURCE_AUDIT_INDEX_V3.json",
+  "prior_index_sha256": "7082c693327cf8b0781c704ea9d9907246670af5c01d002271d4a38ea69d2793",
+  "systems": [
+    {
+      "id": "bazi",
+      "native": "八字 / 四柱",
+      "accepted_source_annotations": 46,
+      "current_ids": "BZI-R0001–BZI-R0046",
+      "next_id": "BZI-R0047",
+      "current_batch": "ChineseAstro-01",
+      "source_file": "bazi/BAZI_SOURCE_FIRST_RULES_V1.json",
+      "chapter_coverage": "Selected source-first claims across Joey Yap 2005 Book1 and 2006/2018 Book2; NOT full page-by-page audit",
+      "complete_birth_chart_engine": false,
+      "human_predictive_validations": 0
+    },
+    {
+      "id": "ziwei_doushu",
+      "native": "紫微斗數",
+      "accepted_source_annotations": 161,
+      "current_ids": "ZWD-R0001–ZWD-R0161",
+      "next_id": "ZWD-R0162",
+      "current_batch": "ChineseAstro-04",
+      "source_file": "ziwei/ZIWEI_SOURCE_FIRST_RULES_V1.json",
+      "chapter_coverage": "Selected transmitted Zi Wei vol1–3 with pinned Volume II exact 135 short Chinese quote anchors (previous 70 plus new 65), including Life and Body Lords, historical sex-coded palace strengths, eight idle-star classes, annual Ji-Chou example, historically mixed element taxonomy and source eighteen-star list. Not the full ancient codex, not a Gregorian-to-lunar calendar or actual 14 principal-star natal engine, and not empirically predictive.",
+      "complete_birth_chart_engine": false,
+      "human_predictive_validations": 0,
+      "source_files": [
+        "ziwei/ZIWEI_SOURCE_FIRST_RULES_V1.json",
+        "batches/ChineseAstro-02/ZIWEI_VOLUME2_PART_A_SOURCE_NOTES_V1.json",
+        "batches/ChineseAstro-03/ZIWEI_VOLUME2_AUXILIARY_45_SOURCE_NOTES_V1.json",
+        "batches/ChineseAstro-04/ZIWEI_VOLUME2_LIFE_BODY_TAXONOMY_SOURCE_NOTES_V1.json"
+      ]
+    }
+  ],
+  "sum_source_annotations": 207,
+  "source_manifest": "SOURCE_MANIFEST_V1.json",
+  "initial_historical_witness": "ZIWEI_SOURCE_FIRST_RULES_V1.json",
+  "accepted_batches": [
+    {
+      "id": "ChineseAstro-01",
+      "accepted_bazi_source_annotations": 46,
+      "accepted_ziwei_source_annotations": 26,
+      "index_snapshot": "CHINESE_SOURCE_AUDIT_INDEX_V1.json"
+    },
+    {
+      "id": "ChineseAstro-02",
+      "added_bazi_source_annotations": 0,
+      "added_ziwei_source_annotations": 25,
+      "start": "ZWD-R0027",
+      "end": "ZWD-R0051",
+      "path": "batches/ChineseAstro-02/ZIWEI_VOLUME2_PART_A_SOURCE_NOTES_V1.json",
+      "rules_sha256": "96f0b1d902a1b194c615cae552465d99f982dad0441edc9a2baaeb107d78a098",
+      "witness_path": "batches/ChineseAstro-02/SOURCE_REVISION_ANCHOR_WITNESS_V1.json",
+      "witness_sha256": "2bf3be23eefec17a80479230df11a594b4861ad2bf785e99f6a2cfe5a15bce62",
+      "source_permalink_revision": 1963110,
+      "wikitext_sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+      "independent_human_predictions_validated": 0,
+      "runtime_rules_promoted": 0
+    },
+    {
+      "id": "ChineseAstro-03",
+      "added_bazi_source_annotations": 0,
+      "added_ziwei_source_annotations": 45,
+      "start": "ZWD-R0052",
+      "end": "ZWD-R0096",
+      "path": "batches/ChineseAstro-03/ZIWEI_VOLUME2_AUXILIARY_45_SOURCE_NOTES_V1.json",
+      "rules_sha256": "818986528731bb404adff645560d7df03f4a9fe85224a4023f8f8d7adc8dd973",
+      "witness_path": "batches/ChineseAstro-03/SOURCE_REVISION_ANCHOR_WITNESS_V1.json",
+      "witness_sha256": "819fdc38c53a2a88e809041410d670d9de26a1df00ab724e1fe671f711d9541b",
+      "wikisource_revision_id": 1963110,
+      "original_raw_sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+      "portable_tests_replayed": 160,
+      "independent_human_predictions_validated": 0,
+      "runtime_rules_promoted": 0
+    },
+    {
+      "id": "ChineseAstro-04",
+      "added_bazi_source_annotations": 0,
+      "added_ziwei_source_annotations": 65,
+      "start": "ZWD-R0097",
+      "end": "ZWD-R0161",
+      "path": "batches/ChineseAstro-04/ZIWEI_VOLUME2_LIFE_BODY_TAXONOMY_SOURCE_NOTES_V1.json",
+      "rules_sha256": "98a5aba4e5f61b86519a2357e74c44ab2c51675b8ffbb9fe44203b95668d822e",
+      "witness_path": "batches/ChineseAstro-04/SOURCE_REVISION_ANCHOR_WITNESS_V1.json",
+      "witness_sha256": "68377e22dabf135fa664986614c881231ae8e101f7827b197088b240aa874148",
+      "wikisource_revision_id": 1963110,
+      "original_raw_sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+      "portable_tests_replayed": 249,
+      "independent_human_predictions_validated": 0,
+      "runtime_rules_promoted": 0
+    }
+  ],
+  "full_ziwei_original_text_collation_finished": false,
+  "all_14_principal_stars_verified": false,
+  "ziwei_complete_natal_calendar_engine_verified": false,
+  "chinese_bazi_solar_term_engine_verified": false,
+  "historical_glyph_and_translator_limits": "135 exact short original Chinese phrases from transmitted online simplified source oldid1963110 across B02–B04, not an independently authenticated Ming woodblock original. Original life/body lord ambiguous 火玲星 preserved; source lists 18 regular stars and mixed five-element labels, not proof of actual modern chart engine. Infant death and sex-coded historical classifications are never person-level facts, zero human predictive validation.",
+  "original_chinese_source_anchors_checked_against_revision": 135,
+  "separate_lilly_source_count_at_this_revision": 12472,
+  "separate_ptolemy_source_count_at_this_revision": 1066,
+  "independently_validated_real_human_claims": 0,
+  "runtime_promotions": 0,
+  "next": "Original Zi Wei Volume II ZWD-R0162 onward: continue remaining minor star element classification and water/wood/metal/fire/earth bureau tables from pinned primary source with reversible old-format chart diagrams. Independent original BaZi BZI-R0047 from traditional Chinese source edition. Separately finish original Lilly CLXVI numeric direction source, genuine astronomical age engine and pre-registered human blinded decoy tests."
+}
