@@ -1,0 +1,35 @@
+{
+  "schema": "LILLY_B07ax_ORIGINAL_MERCHANT_SOURCE_RECOVERY_V1",
+  "task_id": "ASTRO_SOURCE_MULTITRADITION_20261005",
+  "parent_owner_goal": "OPEN",
+  "batch": "B07ax",
+  "status": "ACTIVE_ORIGINAL_SOURCE_INVENTORY_PENDING",
+  "branch": "research/astro-b07ax-merchant-nativity-chart-20261019",
+  "base_accepted_commit": "fed8d4d80485b5d5f0dbe48a7d9396f21d1a6392",
+  "accepted_historical_Lilly_before": 12868,
+  "Chinese_V7_accepted_before": 355,
+  "next_unaccepted_historical_R": "R12869",
+  "first_1647_physical_source_frame": 776,
+  "first_1647_printed_folio": 742,
+  "first_1647_chapter_printed": "CLXXV",
+  "second_1659_physical_source_frame": 771,
+  "source_1647_original_book_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+  "photo_witnesses": [
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B07aw/evidence/original_1647_pdf776-776.jpg",
+      "sha256": "44a8e6ebb78fd950ba2b836be23cd8d7d08921c734672bad3646b61fe26011ea",
+      "bytes": 891516
+    },
+    {
+      "path": "tasks/astro-source-audit-multipass-20261005/batches/B07aw/evidence/independent_1659_djvu771.jpg",
+      "sha256": "c545d6ffd3da2d2d7bddd30d3fa65342fbea8ef2f85274da5e8d93c86d1a9008",
+      "bytes": 318981
+    }
+  ],
+  "known_unevaluated_source_material": "Historical English merchant chart with birth date, time and latitude plus planetary latitude/antiscions; verify exact original glyphs from two editions before acceptance.",
+  "original_printed_chart_human_outcomes_verified": false,
+  "ephemeris_calendar_parity_verified": false,
+  "independent_real_person_predictions": 0,
+  "runtime_promotions": 0,
+  "next_action": "Read and compare original first-1647 and second-1659 printed742 merchant natal figure and next prose page, document natal time/date/chart symbols with explicit source uncertainties; save source-only historical batch."
+}
