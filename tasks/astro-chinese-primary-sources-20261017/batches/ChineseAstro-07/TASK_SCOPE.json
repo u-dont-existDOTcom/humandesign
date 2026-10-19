@@ -1,0 +1,22 @@
+{
+  "schema": "HUMANDESIGN_ASTROLOGY_TASK_LOCAL_V1",
+  "root_outcome": "OPEN",
+  "batch": "ChineseAstro-07",
+  "required_branch": "research/astro-chinese-07-ziwei-auxiliary-bureaus-20261019",
+  "source_baseline_commit": "2b3aeb3a1efb429566f362ca8c208a83015217ee",
+  "source_original_sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+  "prior_chinese_accepted": 315,
+  "prior_western_lilly_at_branch": 12611,
+  "pending_note_ids": [
+    "ZWD-R0162",
+    "ZWD-R0201"
+  ],
+  "next_after_acceptance": "ZWD-R0202 following Fire-six diagram, BZI-R0155 and separate Western CLXVII lane",
+  "owner_task": "Source-audit Western and Chinese astrology in humandesign, implement and test chart engines and blinded human empirical predictions",
+  "claims_not_made": [
+    "full Zi Wei lunar placement engine",
+    "empirically supported astrology",
+    "physically authenticated early printing"
+  ],
+  "no_promotion": true
+}
