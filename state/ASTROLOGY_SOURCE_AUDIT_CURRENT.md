@@ -1,3 +1,9 @@
+# Lilly original printed transit chapter accepted as historical source-only B07aw
+
+**25 original historical annotations R12846-R12870** from first 1647 printed741/PDF775 chapter CLXXIIII and independently typeset 1659 CLXXIV, with two further original next-page edition photos proving Merchant Nativity CLXXV starts at PDF776/printed742. **1647 Mars Ascendant says two or three dayes, 1659 says two or three years**: real edition conflict preserved, no timing window chosen as validated. **Lilly historical 12,870 plus Ptolemy 1,066 = Western 13,936**. Separate Chinese V7 **154 BaZi+201 Zi Wei=355** untouched. The one-page original transit chapter is physically covered, not independently critically collated or predictive validated. Next **R12871** original PDF776/printed742, separate CLXXV English Merchant Nativity. Historical genuine-person prediction validations zero; runtime astrological promotions zero.
+
+## Previous accepted historical checkpoint retained
+
 # Original Lilly CLXXIII planet returns to natal Radix covered (B07av)
 
 **42 historical source-only annotations R12804–R12845** represent six annual-return planets×seven radix planet positions in original 1647 printed738–741/PDF772–775 and separately typeset 1659 prints. Historical conditional clauses and moral/medical claims are documented, NOT real-human prediction evidence. First 1647 original next transit heading prints **CHAP. CLXXIIII.** while 1659 prints **CHAP. CLXXIV.**, editorial sequence ordinal174; preserve this literal edition difference. **12,845 Lilly +1,066 Ptolemy =13,911 Western historical notes**, Chinese V7 **154 BaZi +201 Zi Wei=355** unchanged. Next **R12846 original PDF775/printed741**, the new chapter *Of the TRANSIT of the Planets.* Actual natal astronomical engine, independent historical textual second-reader, and genuinely blinded human predictive validation remain OPEN. **Zero predictive validations, zero runtime promotions.**
