@@ -1,3 +1,9 @@
+# Original Lilly first printed CLXVI physically covered (B07ak)
+
+**14 historical source-only records R12568–R12581** attest to original Naibod end-of-chapter p715/PDF749 and duplicate original next printed **CHAP CLXVI annual Profections** heading after the physical divider. Independently typeset 1647 and1659 originals agree: Mars terms **12y33d14h**, Mars opposition **20y57d21h** under 365day nominal carry. **12,581 Lilly+1,066 Ptolemy=13,647 Western historical source notes**, Chinese V5 101 BaZi+161 Zi Wei=262 unchanged. First physical directions-time CLXVI source pages708–715 COVERED (editorial ordinal165), NOT fully source-critically verified (seven rate glyphs/Naibod missing minute27 and original mathematical errors). New distinct printed CLXVI **annual Profections** begins **R12582** on same PDF749 printed715 (editorial ordinal166). Zero actual human predictive validations and zero runtime promotions.
+
+## Earlier historical checkpoint retained verbatim
+
 # Original Lilly 1647 Naibod tables accepted as PARTIAL source (B07aj)
 
 **21 historical documentary notes R12547–R12567** preserve original printed713–714 first/second-edition Naibod tables, 90 degree source rows plus 59 explicitly labeled minute rows (minute27 missing). Source first-minute day digit unresolved; degree69 printed year70, degree80 24 hours, minute8 44days, minute44 first/second-edition difference, minute60 374days14hours all retained, not math-corrected. **12,567 Lilly+1,066 Ptolemy =13,633 Western historical records**, independent Chinese V5 **101 BaZi+161 Zi Wei=262**, unchanged. First original physically printed CLXVI directions-time chapter remains PARTIAL; next **R12568 original PDF749 printed715** Naibod calculations and separate following duplicate-numbered annual Profections. Zero real-person predictions or runtime model promotions.

@@ -1,0 +1,367 @@
+{
+  "schema": "LILLY_1647_FIRST_CLXVI_NAIBOD_WORKED_CARRY_AND_DUPLICATED_HEADING_V1",
+  "batch": "B07ak",
+  "source_photographic_first_and_second_edition_witnesses": {
+    "original_1647": {
+      "original_full_1647_pdf_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
+      "source_pdf_frame": 749,
+      "source_printed_folio": 715,
+      "relative_source": "tasks/astro-source-audit-multipass-20261005/batches/B07x/evidence/pdf_1647-749.jpg",
+      "photo_sha256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "bytes": 561740
+    },
+    "separately_typeset_1659": {
+      "source_djvu_frame": 744,
+      "source_printed_folio": 715,
+      "relative_source": "tasks/astro-source-audit-multipass-20261005/batches/B07ak/evidence/1659_independent_printed715_djvu744.jpg",
+      "photo_sha256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "bytes": 421763
+    }
+  },
+  "source_first_printed_CLXVI_directions_time_text_physically_ends_PDF749": true,
+  "second_distinct_original_PRINTED_CLXVI_starts_same_PDF749": true,
+  "source_verified_by_one_reader_not_critical_expert_editions": true,
+  "prior_b07aj_149_table_rows_SHA256": "647f618852603b8ee1b3f5f25316a6e538907b929e262647ed0fc284305ee992",
+  "source_1647_original_rate_table_seven_unresolved_glyphs_remain": true,
+  "source_Naibod_original_minute27_label_missing": true,
+  "source_all_1647_numbered_chapter_physical_pages_attempted": true,
+  "source_first_CLXVI_full_expert_diplomatic_critical_edition_complete": false,
+  "source_old_astrological_chart_time_engine_mathematically_verified": false,
+  "independently_blinded_actual_person_predictions": 0,
+  "runtime_promotions": 0,
+  "cases": [
+    {
+      "case": "Mars_terms",
+      "arc_target_degrees_minutes": [
+        11,
+        55
+      ],
+      "degree_lookup": [
+        11,
+        58,
+        21
+      ],
+      "minute_lookup": [
+        339,
+        17
+      ],
+      "before_hours_carry": [
+        11,
+        397,
+        38
+      ],
+      "after_hours_carry": [
+        11,
+        398,
+        14
+      ],
+      "after_365day_year_carry": [
+        12,
+        33,
+        14
+      ],
+      "literal_1647_1659_witness_agreement": true
+    },
+    {
+      "case": "Mars_opposition",
+      "arc_target_degrees_minutes": [
+        19,
+        52
+      ],
+      "degree_lookup": [
+        19,
+        101,
+        17
+      ],
+      "minute_lookup": [
+        321,
+        4
+      ],
+      "before_hours_carry": [
+        19,
+        422,
+        21
+      ],
+      "after_hours_carry": [
+        20,
+        57,
+        21
+      ],
+      "after_365day_year_carry": [
+        20,
+        57,
+        21
+      ],
+      "literal_1647_1659_witness_agreement": true
+    }
+  ],
+  "note_count": 14,
+  "records": [
+    {
+      "id": "R12568",
+      "record_number": 12568,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "terms_hour_sum",
+      "source_anchor_label_not_diplomatic_quote": "11 years 397 days 38 hours",
+      "source_historical_meaning_only": "The original terms example starts with 11y397d38h before carrying.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12569",
+      "record_number": 12569,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "terms_24hour_carry",
+      "source_anchor_label_not_diplomatic_quote": "make one day to be added to 397",
+      "source_historical_meaning_only": "Convert 38 hours to one whole day plus fourteen hours.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12570",
+      "record_number": 12570,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "terms_398_days",
+      "source_anchor_label_not_diplomatic_quote": "11 398 14",
+      "source_historical_meaning_only": "The source intermediate result is 11 years 398 days fourteen hours.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12571",
+      "record_number": 12571,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "terms_365day_year",
+      "source_anchor_label_not_diplomatic_quote": "subtract three hundred and sixty five dayes",
+      "source_historical_meaning_only": "Lilly carries 365 nominal days into one full year.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12572",
+      "record_number": 12572,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "terms_final_time",
+      "source_anchor_label_not_diplomatic_quote": "twelve yeeres ... thirty three dayes ... fourteen houres",
+      "source_historical_meaning_only": "The terms example concludes 12y33d14h.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12573",
+      "record_number": 12573,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "mars_opposition_arc",
+      "source_anchor_label_not_diplomatic_quote": "nineteen degrees and fifty two minutes",
+      "source_historical_meaning_only": "Mars-opposition directed arc target is 19°52′.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12574",
+      "record_number": 12574,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "opposition_degree_lookup",
+      "source_anchor_label_not_diplomatic_quote": "nineteen yeers ... hundred and one days ... seventeen hours",
+      "source_historical_meaning_only": "The degree19 table lookup contributes 19y101d17h.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12575",
+      "record_number": 12575,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "opposition_minute_lookup",
+      "source_anchor_label_not_diplomatic_quote": "fifty two min. ... three hundred twenty one dayes ... four hours",
+      "source_historical_meaning_only": "Minute52 contributes 321d4h.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12576",
+      "record_number": 12576,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "opposition_first_sum",
+      "source_anchor_label_not_diplomatic_quote": "nineteen yeers ... four hundred twenty two dayes ... twenty one hours",
+      "source_historical_meaning_only": "Lilly adds to 19y422d21h.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12577",
+      "record_number": 12577,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "opposition_365day_carry",
+      "source_anchor_label_not_diplomatic_quote": "three hundred sixty five dayes",
+      "source_historical_meaning_only": "The second example subtracts a 365-day nominal year.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12578",
+      "record_number": 12578,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "opposition_final_time",
+      "source_anchor_label_not_diplomatic_quote": "aged twenty yeers ... fifty seven dayes ... twenty one hours",
+      "source_historical_meaning_only": "The printed conclusion is 20y57d21h.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12579",
+      "record_number": 12579,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "original_first_CLXVI_ends",
+      "source_anchor_label_not_diplomatic_quote": "horizontal divider",
+      "source_historical_meaning_only": "A physical rule after the Naibod example terminates the first printed CLXVI directions-time source unit.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12580",
+      "record_number": 12580,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "duplicated_next_CLXVI_heading",
+      "source_anchor_label_not_diplomatic_quote": "CHAP. CLXVI.",
+      "source_historical_meaning_only": "A separate chapter begins on the same page with the identical printed numeral, not the same discussion.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    {
+      "id": "R12581",
+      "record_number": 12581,
+      "batch": "B07ak",
+      "source_span": "B07ak-S001",
+      "original_pdf_frames": [
+        749
+      ],
+      "original_printed_folio": 715,
+      "role": "next_annual_profections_heading",
+      "source_anchor_label_not_diplomatic_quote": "Of annual Profections",
+      "source_historical_meaning_only": "The next distinct source unit concerns annual profections and the profectional sign of each year.",
+      "original_first_ed_photo_SHA256": "6b1537073a6747916cf615d5aecf4d3a3fc22f8cd6125a8c103ad92f6a8faff8",
+      "original_second_ed_photo_SHA256": "b220aa040522df63c24d79d2cfed6d5591d0b3d1b3b9b9c47eb81fd3f9d95409",
+      "source_one_reader_physical_print_witnessed": true,
+      "original_1647_time_engine_verified": false,
+      "human_event_prediction_validated": false,
+      "runtime_model_promoted": false
+    }
+  ]
+}
