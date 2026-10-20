@@ -1,0 +1,74 @@
+{
+  "schema": "CHINESE_V12_LIFE_STAR_9_12_COLD_SOURCE_RECEIPT",
+  "batch": "ChineseAstro-12SRC-Life",
+  "source_original_oldid": 1963110,
+  "status": "SOURCE_ZIP_VERIFIED_CANONICAL_ADMISSION_NOT_YET",
+  "filename": "Astrology-ZiWei-Original-Life-Third-Four-Stars-83-Sources-V12-20261020.zip",
+  "owner_local_archive_path": "/home/joel/Téléchargements/Astrology-ZiWei-Original-Life-Third-Four-Stars-83-Sources-V12-20261020.zip",
+  "archive_sha256": "a22ce6d39eab139aaad004a7a1090072471829a090cdf15e5fe83cf81fd4a43e",
+  "archive_size_bytes": 175097,
+  "original_source_member_count": 13,
+  "source_exact_member_sha256_bytes": {
+    "tasks/astro-chinese-primary-sources-20261017/CHINESE_SOURCE_AUDIT_INDEX_V11.json": {
+      "sha256": "86451a64172a37192026b701ab3cd0df54759ea7cfe1ccee6be83b8ec3de916e",
+      "bytes": 16426
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-07/SOURCE_ORIGINAL_ZIWEI_VOL2_1963110_RAW.txt": {
+      "sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+      "bytes": 106736
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-11SRC-Life/ZIWEI_LIFE_PALACE_NEXT_FOUR_90_SOURCE_NOTES_V1.json": {
+      "sha256": "4f2ce897a1298223d283c449950223d2b9a6da20a91e40660ccf8c41d2ef1f42",
+      "bytes": 140781
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-12SRC-Life/ACCEPTANCE.json": {
+      "sha256": "348e01d01985e257ce35caac3a00558c6f99888366da925204cbd9004b9419fd",
+      "bytes": 1140
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-12SRC-Life/ORIGINAL_SOURCE_REVIEW_20261020.md": {
+      "sha256": "6e2b82fc4fa7fa7c597b11d24035e59660731ed33dd497ac719a5f8a3e387743",
+      "bytes": 4198
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-12SRC-Life/SOURCE_1963110_LIFE_PALACE_THIRD_FOUR_EXACT_EXCERPT.txt": {
+      "sha256": "ebdc54002a05ffee6479c79fa2982f55882718076c3b46bc91215ba986cdeead",
+      "bytes": 7198
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-12SRC-Life/SOURCE_LIFE_THIRD_FOUR_83_EXACT_OFFSET_WITNESS_V1.json": {
+      "sha256": "e219ae84e94bef859e24575fa65c87a1799b6965699231b76723fdbd36c334b8",
+      "bytes": 20862
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-12SRC-Life/WORKING_CHECKPOINT_20261020.md": {
+      "sha256": "eeec7881584d71f15bb1895df4da1c55be8152d35e86758a7e33e2dd6cd90f97",
+      "bytes": 2021
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-12SRC-Life/ZIWEI_LIFE_PALACE_THIRD_FOUR_83_SOURCE_NOTES_V1.json": {
+      "sha256": "ad7bb2cda037765f456944f7dccf2e90271d45b884738d87f5bb14c2c7237f2e",
+      "bytes": 131024
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-12SRC-Life/build_chinese12src_portable_archive.py": {
+      "sha256": "a0c9fb71aa49ed51a8f47412ed789c44caaa54a3d70264038eb7644f843df6e7",
+      "bytes": 4297
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-12SRC-Life/freeze_ziwei_life_third_four_original.py": {
+      "sha256": "3e2f3c94f820870a7124d2e25f5593b550e083abae33017e99e8e42e07ae4ade",
+      "bytes": 15066
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-12SRC-Life/test_chinese12src_ziwei_life_original.py": {
+      "sha256": "54c44880d3c465074535e88069635374b8235ca383af7a1d9b803b75857cd8fc",
+      "bytes": 10615
+    },
+    "tasks/astro-source-audit-multipass-20261005/LILLY_SOURCE_EXTRACTION_INDEX_V1.json": {
+      "sha256": "c3233591a5ce1199e52b1a7e00e09f0dff45538733211b0acb3e9a5dc02851c8",
+      "bytes": 217594
+    }
+  },
+  "zip_CRC_verified": true,
+  "all_member_SHA_and_bytes_verified": true,
+  "independently_cold_replayed_source_tests": 15,
+  "independently_cold_replayed_tests_green": 15,
+  "new_historical_documentary_annotations": 83,
+  "previous_V11_index_unchanged": true,
+  "original_Ming_imprint_authenticated": false,
+  "actual_human_predictive_validations": 0,
+  "runtime_astrology_model_promotions": 0
+}
