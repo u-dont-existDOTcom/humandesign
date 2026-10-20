@@ -1,3 +1,9 @@
+# Zi Wei original Volume II further diagrams, Chinese source V8
+
+**19 exact source-only notes ZWD-R0202–ZWD-R0220** freeze original post-bureau Tian Fu, life/year-limit risk, four-transformations and 12-branch seven-grade star-conditions diagrams with exact Chinese text and individual byte offsets in oldid1963110. No calendar/chart decoder parity, mortality forecast or personal prediction established. **Chinese historical 154 BaZi + 220 Zi Wei = 374**. Independently already accepted Western **13,044 Lilly + 1,066 Ptolemy = 14,110** retained. V1–V7 immutable. Next **ZWD-R0221 Life palace** and **BZI-R0155**. **Actual human validations 0; runtime astrology promotions 0.**
+
+## Previous accepted historical checkpoint retained
+
 # Chinese original-source progress V7: auxiliary Zi Wei stars and five original bureau diagrams
 
 **40 new exact Chinese source annotations ZWD-R0162–ZWD-R0201** from transmitted Zi Wei Quan Shu Volume II oldid1963110: 29 auxiliary star lines, the distinction from the eighteen regular stars, five original elemental-bureau verses and five exact preserved source palace/day diagrams. Pinned full raw document, original text excerpt, 40 SHA/offset witnesses and five diagram hashes retained with **58 independent ZIP replay source tests**. **Chinese historical annotations: 154 BaZi +201 Zi Wei =355**, old versions V1–V6 byte-preserved. Independent Western source branch at B07al **12611 Lilly+1066 Ptolemy=13677** unchanged; parallel later B07am must be reconciled separately. Actual bureau day-to-palace decodings, old print author authenticity, lunar calendar/time-zone engine and real-human forecast validity unverified. **Zero human predictive validations; no runtime promotions.** Next **ZWD-R0202** and **BZI-R0155**.
