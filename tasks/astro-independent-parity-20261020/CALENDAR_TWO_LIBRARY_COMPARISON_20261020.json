@@ -1,0 +1,1432 @@
+{
+  "schema": "CHINESE_DATE_ONLY_TWO_LIBRARY_COMPARISON_V1",
+  "calendar_policy": "Proleptic Gregorian input dates, China civil 12:00 clock; sources not independently authenticated. Not exact solar-term instant or historical LMT.",
+  "roles": {
+    "sxtwl": "Gregorian-to-lunar, lunar-year if getYearGZ(True), LiChun-year if getYearGZ(False), LiChun-month by DATE, hour pillar at integer civil hour",
+    "lunar_python": "lunar conversion and clock-time exact eight-character conventions"
+  },
+  "libraries": {
+    "sxtwl": "2.0.7",
+    "lunar_python": "1.4.7"
+  },
+  "sample_count": 2036,
+  "sample_first": "1600-01-01",
+  "sample_last": "2100-12-28",
+  "sample_dates_sha256": "710ed86f9fda08b82b8b370dfadb3b46dd4d695fc956a5e43f94cc26abc03cd4",
+  "counts": {
+    "same_lunar": {
+      "matched": 2036,
+      "mismatched": 0
+    },
+    "same_day_pillar": {
+      "matched": 2036,
+      "mismatched": 0
+    },
+    "same_lunar_new_year_pillar": {
+      "matched": 2036,
+      "mismatched": 0
+    },
+    "same_year_pillar_date_vs_exact_time": {
+      "matched": 2031,
+      "mismatched": 5
+    },
+    "same_month_pillar_date_vs_exact_time": {
+      "matched": 2012,
+      "mismatched": 24
+    },
+    "same_hour_pillar": {
+      "matched": 2036,
+      "mismatched": 0
+    }
+  },
+  "mismatches_all": {
+    "same_lunar": [],
+    "same_day_pillar": [],
+    "same_lunar_new_year_pillar": [],
+    "same_year_pillar_date_vs_exact_time": [
+      {
+        "gregorian_china_calendar_date": "1900-02-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          1900,
+          1,
+          5,
+          false
+        ],
+        "lunar_python_lunar": [
+          1900,
+          1,
+          5,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": false,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "庚子",
+          "戊寅",
+          "戊申",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "己亥",
+          "丁丑",
+          "戊申",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "庚子",
+        "lunar_python_lunar_year_pillar": "庚子"
+      },
+      {
+        "gregorian_china_calendar_date": "1950-02-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          1949,
+          12,
+          18,
+          false
+        ],
+        "lunar_python_lunar": [
+          1949,
+          12,
+          18,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": false,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "庚寅",
+          "戊寅",
+          "庚午",
+          "壬午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "己丑",
+          "丁丑",
+          "庚午",
+          "壬午"
+        ],
+        "sxtwl_lunar_year_pillar": "己丑",
+        "lunar_python_lunar_year_pillar": "己丑"
+      },
+      {
+        "gregorian_china_calendar_date": "2000-02-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          1999,
+          12,
+          29,
+          false
+        ],
+        "lunar_python_lunar": [
+          1999,
+          12,
+          29,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": false,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "庚辰",
+          "戊寅",
+          "壬辰",
+          "丙午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "己卯",
+          "丁丑",
+          "壬辰",
+          "丙午"
+        ],
+        "sxtwl_lunar_year_pillar": "己卯",
+        "lunar_python_lunar_year_pillar": "己卯"
+      },
+      {
+        "gregorian_china_calendar_date": "2024-02-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2023,
+          12,
+          25,
+          false
+        ],
+        "lunar_python_lunar": [
+          2023,
+          12,
+          25,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": false,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "甲辰",
+          "丙寅",
+          "戊戌",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "癸卯",
+          "乙丑",
+          "戊戌",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "癸卯",
+        "lunar_python_lunar_year_pillar": "癸卯"
+      },
+      {
+        "gregorian_china_calendar_date": "2025-02-03",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2025,
+          1,
+          6,
+          false
+        ],
+        "lunar_python_lunar": [
+          2025,
+          1,
+          6,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": false,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "乙巳",
+          "戊寅",
+          "癸卯",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "甲辰",
+          "丁丑",
+          "癸卯",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "乙巳",
+        "lunar_python_lunar_year_pillar": "乙巳"
+      }
+    ],
+    "same_month_pillar_date_vs_exact_time": [
+      {
+        "gregorian_china_calendar_date": "1700-04-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          1700,
+          2,
+          15,
+          false
+        ],
+        "lunar_python_lunar": [
+          1700,
+          2,
+          15,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": false,
+        "sxtwl_date_based_pillars": [
+          "庚辰",
+          "庚辰",
+          "己卯",
+          "庚午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "庚辰",
+          "己卯",
+          "己卯",
+          "庚午"
+        ],
+        "sxtwl_lunar_year_pillar": "庚辰",
+        "lunar_python_lunar_year_pillar": "庚辰"
+      },
+      {
+        "gregorian_china_calendar_date": "1900-02-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          1900,
+          1,
+          5,
+          false
+        ],
+        "lunar_python_lunar": [
+          1900,
+          1,
+          5,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": false,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "庚子",
+          "戊寅",
+          "戊申",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "己亥",
+          "丁丑",
+          "戊申",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "庚子",
+        "lunar_python_lunar_year_pillar": "庚子"
+      },
+      {
+        "gregorian_china_calendar_date": "1950-02-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          1949,
+          12,
+          18,
+          false
+        ],
+        "lunar_python_lunar": [
+          1949,
+          12,
+          18,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": false,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "庚寅",
+          "戊寅",
+          "庚午",
+          "壬午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "己丑",
+          "丁丑",
+          "庚午",
+          "壬午"
+        ],
+        "sxtwl_lunar_year_pillar": "己丑",
+        "lunar_python_lunar_year_pillar": "己丑"
+      },
+      {
+        "gregorian_china_calendar_date": "2000-02-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          1999,
+          12,
+          29,
+          false
+        ],
+        "lunar_python_lunar": [
+          1999,
+          12,
+          29,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": false,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "庚辰",
+          "戊寅",
+          "壬辰",
+          "丙午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "己卯",
+          "丁丑",
+          "壬辰",
+          "丙午"
+        ],
+        "sxtwl_lunar_year_pillar": "己卯",
+        "lunar_python_lunar_year_pillar": "己卯"
+      },
+      {
+        "gregorian_china_calendar_date": "2000-04-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2000,
+          2,
+          30,
+          false
+        ],
+        "lunar_python_lunar": [
+          2000,
+          2,
+          30,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "庚辰",
+          "庚辰",
+          "壬辰",
+          "丙午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "庚辰",
+          "己卯",
+          "壬辰",
+          "丙午"
+        ],
+        "sxtwl_lunar_year_pillar": "庚辰",
+        "lunar_python_lunar_year_pillar": "庚辰"
+      },
+      {
+        "gregorian_china_calendar_date": "2023-01-05",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2022,
+          12,
+          14,
+          false
+        ],
+        "lunar_python_lunar": [
+          2022,
+          12,
+          14,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "壬寅",
+          "癸丑",
+          "癸亥",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "壬寅",
+          "壬子",
+          "癸亥",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "壬寅",
+        "lunar_python_lunar_year_pillar": "壬寅"
+      },
+      {
+        "gregorian_china_calendar_date": "2023-07-07",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2023,
+          5,
+          20,
+          false
+        ],
+        "lunar_python_lunar": [
+          2023,
+          5,
+          20,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "癸卯",
+          "己未",
+          "丙寅",
+          "甲午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "癸卯",
+          "戊午",
+          "丙寅",
+          "甲午"
+        ],
+        "sxtwl_lunar_year_pillar": "癸卯",
+        "lunar_python_lunar_year_pillar": "癸卯"
+      },
+      {
+        "gregorian_china_calendar_date": "2023-10-08",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2023,
+          8,
+          24,
+          false
+        ],
+        "lunar_python_lunar": [
+          2023,
+          8,
+          24,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "癸卯",
+          "壬戌",
+          "己亥",
+          "庚午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "癸卯",
+          "辛酉",
+          "己亥",
+          "庚午"
+        ],
+        "sxtwl_lunar_year_pillar": "癸卯",
+        "lunar_python_lunar_year_pillar": "癸卯"
+      },
+      {
+        "gregorian_china_calendar_date": "2023-12-07",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2023,
+          10,
+          25,
+          false
+        ],
+        "lunar_python_lunar": [
+          2023,
+          10,
+          25,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "癸卯",
+          "甲子",
+          "己亥",
+          "庚午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "癸卯",
+          "癸亥",
+          "己亥",
+          "庚午"
+        ],
+        "sxtwl_lunar_year_pillar": "癸卯",
+        "lunar_python_lunar_year_pillar": "癸卯"
+      },
+      {
+        "gregorian_china_calendar_date": "2024-02-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2023,
+          12,
+          25,
+          false
+        ],
+        "lunar_python_lunar": [
+          2023,
+          12,
+          25,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": false,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "甲辰",
+          "丙寅",
+          "戊戌",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "癸卯",
+          "乙丑",
+          "戊戌",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "癸卯",
+        "lunar_python_lunar_year_pillar": "癸卯"
+      },
+      {
+        "gregorian_china_calendar_date": "2024-04-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2024,
+          2,
+          26,
+          false
+        ],
+        "lunar_python_lunar": [
+          2024,
+          2,
+          26,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "甲辰",
+          "戊辰",
+          "戊戌",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "甲辰",
+          "丁卯",
+          "戊戌",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "甲辰",
+        "lunar_python_lunar_year_pillar": "甲辰"
+      },
+      {
+        "gregorian_china_calendar_date": "2024-06-05",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2024,
+          4,
+          29,
+          false
+        ],
+        "lunar_python_lunar": [
+          2024,
+          4,
+          29,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "甲辰",
+          "庚午",
+          "庚子",
+          "壬午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "甲辰",
+          "己巳",
+          "庚子",
+          "壬午"
+        ],
+        "sxtwl_lunar_year_pillar": "甲辰",
+        "lunar_python_lunar_year_pillar": "甲辰"
+      },
+      {
+        "gregorian_china_calendar_date": "2024-07-06",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2024,
+          6,
+          1,
+          false
+        ],
+        "lunar_python_lunar": [
+          2024,
+          6,
+          1,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "甲辰",
+          "辛未",
+          "辛未",
+          "甲午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "甲辰",
+          "庚午",
+          "辛未",
+          "甲午"
+        ],
+        "sxtwl_lunar_year_pillar": "甲辰",
+        "lunar_python_lunar_year_pillar": "甲辰"
+      },
+      {
+        "gregorian_china_calendar_date": "2024-12-06",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2024,
+          11,
+          6,
+          false
+        ],
+        "lunar_python_lunar": [
+          2024,
+          11,
+          6,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "甲辰",
+          "丙子",
+          "甲辰",
+          "庚午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "甲辰",
+          "乙亥",
+          "甲辰",
+          "庚午"
+        ],
+        "sxtwl_lunar_year_pillar": "甲辰",
+        "lunar_python_lunar_year_pillar": "甲辰"
+      },
+      {
+        "gregorian_china_calendar_date": "2025-02-03",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2025,
+          1,
+          6,
+          false
+        ],
+        "lunar_python_lunar": [
+          2025,
+          1,
+          6,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": false,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "乙巳",
+          "戊寅",
+          "癸卯",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "甲辰",
+          "丁丑",
+          "癸卯",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "乙巳",
+        "lunar_python_lunar_year_pillar": "乙巳"
+      },
+      {
+        "gregorian_china_calendar_date": "2025-03-05",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2025,
+          2,
+          6,
+          false
+        ],
+        "lunar_python_lunar": [
+          2025,
+          2,
+          6,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "乙巳",
+          "己卯",
+          "癸酉",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "乙巳",
+          "戊寅",
+          "癸酉",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "乙巳",
+        "lunar_python_lunar_year_pillar": "乙巳"
+      },
+      {
+        "gregorian_china_calendar_date": "2025-04-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2025,
+          3,
+          7,
+          false
+        ],
+        "lunar_python_lunar": [
+          2025,
+          3,
+          7,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "乙巳",
+          "庚辰",
+          "癸卯",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "乙巳",
+          "己卯",
+          "癸卯",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "乙巳",
+        "lunar_python_lunar_year_pillar": "乙巳"
+      },
+      {
+        "gregorian_china_calendar_date": "2025-05-05",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2025,
+          4,
+          8,
+          false
+        ],
+        "lunar_python_lunar": [
+          2025,
+          4,
+          8,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "乙巳",
+          "辛巳",
+          "甲戌",
+          "庚午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "乙巳",
+          "庚辰",
+          "甲戌",
+          "庚午"
+        ],
+        "sxtwl_lunar_year_pillar": "乙巳",
+        "lunar_python_lunar_year_pillar": "乙巳"
+      },
+      {
+        "gregorian_china_calendar_date": "2025-06-05",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2025,
+          5,
+          10,
+          false
+        ],
+        "lunar_python_lunar": [
+          2025,
+          5,
+          10,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "乙巳",
+          "壬午",
+          "乙巳",
+          "壬午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "乙巳",
+          "辛巳",
+          "乙巳",
+          "壬午"
+        ],
+        "sxtwl_lunar_year_pillar": "乙巳",
+        "lunar_python_lunar_year_pillar": "乙巳"
+      },
+      {
+        "gregorian_china_calendar_date": "2025-08-07",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2025,
+          6,
+          14,
+          true
+        ],
+        "lunar_python_lunar": [
+          2025,
+          6,
+          14,
+          true
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "乙巳",
+          "甲申",
+          "戊申",
+          "戊午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "乙巳",
+          "癸未",
+          "戊申",
+          "戊午"
+        ],
+        "sxtwl_lunar_year_pillar": "乙巳",
+        "lunar_python_lunar_year_pillar": "乙巳"
+      },
+      {
+        "gregorian_china_calendar_date": "2025-09-07",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2025,
+          7,
+          16,
+          false
+        ],
+        "lunar_python_lunar": [
+          2025,
+          7,
+          16,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "乙巳",
+          "乙酉",
+          "己卯",
+          "庚午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "乙巳",
+          "甲申",
+          "己卯",
+          "庚午"
+        ],
+        "sxtwl_lunar_year_pillar": "乙巳",
+        "lunar_python_lunar_year_pillar": "乙巳"
+      },
+      {
+        "gregorian_china_calendar_date": "2025-11-07",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2025,
+          9,
+          18,
+          false
+        ],
+        "lunar_python_lunar": [
+          2025,
+          9,
+          18,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "乙巳",
+          "丁亥",
+          "庚辰",
+          "壬午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "乙巳",
+          "丙戌",
+          "庚辰",
+          "壬午"
+        ],
+        "sxtwl_lunar_year_pillar": "乙巳",
+        "lunar_python_lunar_year_pillar": "乙巳"
+      },
+      {
+        "gregorian_china_calendar_date": "2050-04-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2050,
+          3,
+          13,
+          false
+        ],
+        "lunar_python_lunar": [
+          2050,
+          3,
+          13,
+          false
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "庚午",
+          "庚辰",
+          "甲寅",
+          "庚午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "庚午",
+          "己卯",
+          "甲寅",
+          "庚午"
+        ],
+        "sxtwl_lunar_year_pillar": "庚午",
+        "lunar_python_lunar_year_pillar": "庚午"
+      },
+      {
+        "gregorian_china_calendar_date": "2099-04-04",
+        "china_civil_hour": 12,
+        "sxtwl_lunar": [
+          2099,
+          2,
+          14,
+          true
+        ],
+        "lunar_python_lunar": [
+          2099,
+          2,
+          14,
+          true
+        ],
+        "same_lunar": true,
+        "same_day_pillar": true,
+        "same_lunar_new_year_pillar": true,
+        "same_year_pillar_date_vs_exact_time": true,
+        "same_month_pillar_date_vs_exact_time": false,
+        "same_hour_pillar": true,
+        "sxtwl_has_solar_term_on_date": true,
+        "sxtwl_date_based_pillars": [
+          "己未",
+          "戊辰",
+          "辛未",
+          "甲午"
+        ],
+        "lunar_python_clock_based_pillars": [
+          "己未",
+          "丁卯",
+          "辛未",
+          "甲午"
+        ],
+        "sxtwl_lunar_year_pillar": "己未",
+        "lunar_python_lunar_year_pillar": "己未"
+      }
+    ],
+    "same_hour_pillar": []
+  },
+  "fixed_research_examples": [
+    {
+      "gregorian_china_calendar_date": "1616-09-19",
+      "china_civil_hour": 12,
+      "sxtwl_lunar": [
+        1616,
+        8,
+        9,
+        false
+      ],
+      "lunar_python_lunar": [
+        1616,
+        8,
+        9,
+        false
+      ],
+      "same_lunar": true,
+      "same_day_pillar": true,
+      "same_lunar_new_year_pillar": true,
+      "same_year_pillar_date_vs_exact_time": true,
+      "same_month_pillar_date_vs_exact_time": true,
+      "same_hour_pillar": true,
+      "sxtwl_has_solar_term_on_date": false,
+      "sxtwl_date_based_pillars": [
+        "丙辰",
+        "丁酉",
+        "丁未",
+        "丙午"
+      ],
+      "lunar_python_clock_based_pillars": [
+        "丙辰",
+        "丁酉",
+        "丁未",
+        "丙午"
+      ],
+      "sxtwl_lunar_year_pillar": "丙辰",
+      "lunar_python_lunar_year_pillar": "丙辰"
+    },
+    {
+      "gregorian_china_calendar_date": "1616-09-29",
+      "china_civil_hour": 12,
+      "sxtwl_lunar": [
+        1616,
+        8,
+        19,
+        false
+      ],
+      "lunar_python_lunar": [
+        1616,
+        8,
+        19,
+        false
+      ],
+      "same_lunar": true,
+      "same_day_pillar": true,
+      "same_lunar_new_year_pillar": true,
+      "same_year_pillar_date_vs_exact_time": true,
+      "same_month_pillar_date_vs_exact_time": true,
+      "same_hour_pillar": true,
+      "sxtwl_has_solar_term_on_date": false,
+      "sxtwl_date_based_pillars": [
+        "丙辰",
+        "丁酉",
+        "丁巳",
+        "丙午"
+      ],
+      "lunar_python_clock_based_pillars": [
+        "丙辰",
+        "丁酉",
+        "丁巳",
+        "丙午"
+      ],
+      "sxtwl_lunar_year_pillar": "丙辰",
+      "lunar_python_lunar_year_pillar": "丙辰"
+    },
+    {
+      "gregorian_china_calendar_date": "1985-01-29",
+      "china_civil_hour": 12,
+      "sxtwl_lunar": [
+        1984,
+        12,
+        9,
+        false
+      ],
+      "lunar_python_lunar": [
+        1984,
+        12,
+        9,
+        false
+      ],
+      "same_lunar": true,
+      "same_day_pillar": true,
+      "same_lunar_new_year_pillar": true,
+      "same_year_pillar_date_vs_exact_time": true,
+      "same_month_pillar_date_vs_exact_time": true,
+      "same_hour_pillar": true,
+      "sxtwl_has_solar_term_on_date": false,
+      "sxtwl_date_based_pillars": [
+        "甲子",
+        "丁丑",
+        "戊辰",
+        "戊午"
+      ],
+      "lunar_python_clock_based_pillars": [
+        "甲子",
+        "丁丑",
+        "戊辰",
+        "戊午"
+      ],
+      "sxtwl_lunar_year_pillar": "甲子",
+      "lunar_python_lunar_year_pillar": "甲子"
+    },
+    {
+      "gregorian_china_calendar_date": "2023-03-22",
+      "china_civil_hour": 12,
+      "sxtwl_lunar": [
+        2023,
+        2,
+        1,
+        true
+      ],
+      "lunar_python_lunar": [
+        2023,
+        2,
+        1,
+        true
+      ],
+      "same_lunar": true,
+      "same_day_pillar": true,
+      "same_lunar_new_year_pillar": true,
+      "same_year_pillar_date_vs_exact_time": true,
+      "same_month_pillar_date_vs_exact_time": true,
+      "same_hour_pillar": true,
+      "sxtwl_has_solar_term_on_date": false,
+      "sxtwl_date_based_pillars": [
+        "癸卯",
+        "乙卯",
+        "己卯",
+        "庚午"
+      ],
+      "lunar_python_clock_based_pillars": [
+        "癸卯",
+        "乙卯",
+        "己卯",
+        "庚午"
+      ],
+      "sxtwl_lunar_year_pillar": "癸卯",
+      "lunar_python_lunar_year_pillar": "癸卯"
+    },
+    {
+      "gregorian_china_calendar_date": "2024-02-04",
+      "china_civil_hour": 12,
+      "sxtwl_lunar": [
+        2023,
+        12,
+        25,
+        false
+      ],
+      "lunar_python_lunar": [
+        2023,
+        12,
+        25,
+        false
+      ],
+      "same_lunar": true,
+      "same_day_pillar": true,
+      "same_lunar_new_year_pillar": true,
+      "same_year_pillar_date_vs_exact_time": false,
+      "same_month_pillar_date_vs_exact_time": false,
+      "same_hour_pillar": true,
+      "sxtwl_has_solar_term_on_date": true,
+      "sxtwl_date_based_pillars": [
+        "甲辰",
+        "丙寅",
+        "戊戌",
+        "戊午"
+      ],
+      "lunar_python_clock_based_pillars": [
+        "癸卯",
+        "乙丑",
+        "戊戌",
+        "戊午"
+      ],
+      "sxtwl_lunar_year_pillar": "癸卯",
+      "lunar_python_lunar_year_pillar": "癸卯"
+    },
+    {
+      "gregorian_china_calendar_date": "2024-02-04",
+      "china_civil_hour": 20,
+      "sxtwl_lunar": [
+        2023,
+        12,
+        25,
+        false
+      ],
+      "lunar_python_lunar": [
+        2023,
+        12,
+        25,
+        false
+      ],
+      "same_lunar": true,
+      "same_day_pillar": true,
+      "same_lunar_new_year_pillar": true,
+      "same_year_pillar_date_vs_exact_time": true,
+      "same_month_pillar_date_vs_exact_time": true,
+      "same_hour_pillar": true,
+      "sxtwl_has_solar_term_on_date": true,
+      "sxtwl_date_based_pillars": [
+        "甲辰",
+        "丙寅",
+        "戊戌",
+        "壬戌"
+      ],
+      "lunar_python_clock_based_pillars": [
+        "甲辰",
+        "丙寅",
+        "戊戌",
+        "壬戌"
+      ],
+      "sxtwl_lunar_year_pillar": "癸卯",
+      "lunar_python_lunar_year_pillar": "癸卯"
+    },
+    {
+      "gregorian_china_calendar_date": "2024-02-04",
+      "china_civil_hour": 23,
+      "sxtwl_lunar": [
+        2023,
+        12,
+        25,
+        false
+      ],
+      "lunar_python_lunar": [
+        2023,
+        12,
+        25,
+        false
+      ],
+      "same_lunar": true,
+      "same_day_pillar": false,
+      "same_lunar_new_year_pillar": true,
+      "same_year_pillar_date_vs_exact_time": true,
+      "same_month_pillar_date_vs_exact_time": true,
+      "same_hour_pillar": true,
+      "sxtwl_has_solar_term_on_date": true,
+      "sxtwl_date_based_pillars": [
+        "甲辰",
+        "丙寅",
+        "戊戌",
+        "甲子"
+      ],
+      "lunar_python_clock_based_pillars": [
+        "甲辰",
+        "丙寅",
+        "己亥",
+        "甲子"
+      ],
+      "sxtwl_lunar_year_pillar": "癸卯",
+      "lunar_python_lunar_year_pillar": "癸卯"
+    },
+    {
+      "gregorian_china_calendar_date": "2026-10-20",
+      "china_civil_hour": 12,
+      "sxtwl_lunar": [
+        2026,
+        9,
+        11,
+        false
+      ],
+      "lunar_python_lunar": [
+        2026,
+        9,
+        11,
+        false
+      ],
+      "same_lunar": true,
+      "same_day_pillar": true,
+      "same_lunar_new_year_pillar": true,
+      "same_year_pillar_date_vs_exact_time": true,
+      "same_month_pillar_date_vs_exact_time": true,
+      "same_hour_pillar": true,
+      "sxtwl_has_solar_term_on_date": false,
+      "sxtwl_date_based_pillars": [
+        "丙午",
+        "戊戌",
+        "丁卯",
+        "丙午"
+      ],
+      "lunar_python_clock_based_pillars": [
+        "丙午",
+        "戊戌",
+        "丁卯",
+        "丙午"
+      ],
+      "sxtwl_lunar_year_pillar": "丙午",
+      "lunar_python_lunar_year_pillar": "丙午"
+    }
+  ],
+  "interpretation_limits": [
+    "Agreement of two related implementers is NOT independent physical Chinese manuscript source authenticity.",
+    "SXTWL lunar New-Year True vs lunar_python getYearInGanZhi, and SXTWL LiChun False vs lunar_python getYearInGanZhiExact are matched like-for-like. SXTWL solar-term year/month getters are DATE-only; lunar_python exact forms switch at instant within a Jieqi day.",
+    "No time-zone/birthplace LMT or Chinese true solar-time conversion; no exact traditional natal calendar validation.",
+    "Neither library is used to infer personality, mortality, wealth, moral character or actual human outcomes."
+  ],
+  "whole_natal_calendar_chart_engine_verified": false,
+  "independent_real_human_predictions_validated": 0,
+  "runtime_astrology_promotions": 0
+}
