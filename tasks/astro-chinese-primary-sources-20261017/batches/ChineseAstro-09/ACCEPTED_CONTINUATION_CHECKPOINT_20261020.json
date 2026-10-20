@@ -1,0 +1,33 @@
+{
+  "task": "HumanDesign original Western Lilly/Ptolemy and Chinese BaZi/ZiWei source + chart/time parity + prereg blind human evaluation",
+  "status": "OPEN",
+  "accepted_source_commit": "49ccbaa0ad06f976c0d49613ef7a1c4d8889c052",
+  "branch": "research/astro-chinese-09-bazi-dts-13-18-20261020",
+  "Chinese_V9_index_sha256": "b84922b8614017fb20403f1556a885f2b3d8ed55314566140d67109e4c2022ad",
+  "Chinese_V9_BaZi": 210,
+  "Chinese_V9_ZiWei": 220,
+  "Chinese_V9_total": 430,
+  "Western_B07bc_Lilly": 13044,
+  "Western_Ptolemy": 1066,
+  "Western_total": 14110,
+  "new_ChAstro09": 56,
+  "source_original_chapters": [
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18"
+  ],
+  "next_BaZi": "BZI-R0211",
+  "next_ZiWei": "ZWD-R0221",
+  "next_Lilly": "R13045 CLXXXI Marriage",
+  "portable_archive": "Astrology-BaZi-DiTianSui-13-18-56-Historical-Sources-ChineseAstro09-20261020.zip",
+  "portable_archive_sha256": "4b4de9001d2b605b52c9ba040caefcb77297401879a5a5d1fea4ab1fbc0b22a4",
+  "focused_tests_independent_archive_replay": 75,
+  "post_index_tests": 14,
+  "independent_calculated_traditional_chart_parity": false,
+  "pre_registered_blind_human_validations": 0,
+  "runtime_astrology_promotions": 0,
+  "high_priority_methodological_gap": "Earlier Di Tian Sui 18 source 十有九驗 claims alleged high accuracy without cases; also mentions geography and family conditions to rationalize different lives despite identical four pillars; freeze covariates before seeing outcomes to prevent post-hoc rescue."
+}
