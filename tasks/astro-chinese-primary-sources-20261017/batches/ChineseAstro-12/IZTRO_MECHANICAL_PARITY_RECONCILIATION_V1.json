@@ -1,0 +1,86 @@
+{
+  "schema": "HumanDesign ChineseAstro-12, external independent algorithmic mechanical chart comparison, no human forecasting",
+  "status": "RESEARCH_ONLY_DRAFT_SOURCE_ENGINE_NO_HISTORICAL_REGISTRY_CHANGE",
+  "accepted_baseline_commits": {
+    "source_chinese_v9": "09111bb87399dc2e681854cb247db3af6ff2381d",
+    "source_lilly_b07bc": "6047f72d89e6b0a3b9198c244a8538c6abb1a076",
+    "source_internal_ziwei_calendar_v11": "29f76089739271dab0695f8699081d52600cb10b"
+  },
+  "external_engine": {
+    "name": "iztro",
+    "developer": "SylarLong",
+    "github": "https://github.com/SylarLong/iztro",
+    "npm_version": "2.6.0",
+    "npm_temporary_package_lock_sha256": "77f95d231b6237bae0b972badb7ecb619171de70043805153f52fee8fef65b96",
+    "code_or_dependencies_copied_to_repository": false,
+    "algorithm": "default",
+    "yearDivide": "normal",
+    "dayDivide": "forward",
+    "horoscopeDivide": "normal",
+    "gender_impact_on_14_major_star_positions": "none observed in 312 synthetic tests",
+    "not_independent_ancient_manuscript": true
+  },
+  "original_source_engine": {
+    "transmitted": "紫微斗數全書 卷二, Wikisource oldid1963110, SHA256 1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+    "birth_year_policy": "official Chinese Lunar New Year",
+    "original_leap_month_palace_rule": "advance to next lunar month irrespective of leap day",
+    "other_original_source_errors": "two NaYin couplet typos and three source diagram lacunae are separately preserved, with conditional documented variants opt-in for parity",
+    "original_rule_retained": true,
+    "full_city_local_timestamp_birth_conversion": false
+  },
+  "frozen_comparison": {
+    "test_type": "synthetic computational cross-implementation comparison, 10 original-HKO-confirmed lunar dates x 12 hour branches x 2 historical male/female software fields, with both modern leap options on 3 leap dates",
+    "synthetic_chart_cases": 312,
+    "different_hko_official_lunar_dates": 10,
+    "ordinary_nonleap_cases": 168,
+    "ordinary_nonleap_full_agreement_life_body_bureau_14_stars": 168,
+    "leap_month_cases": 144,
+    "leap_original_rule_vs_modern_default_agreements": 24,
+    "leap_original_rule_vs_modern_default_disagreements": 120,
+    "original_rule_total_matching": 192,
+    "original_rule_total_nonmatching": 120,
+    "original_rule_all_mismatches_only_leap": true,
+    "differing_fields_count_across_120_cases": {
+      "life_palace": 120,
+      "body_palace": 120,
+      "five_element_bureau": 60,
+      "fourteen_principal_star_positions": 60
+    },
+    "vendor_fixLeap_true": {
+      "rule": "first 15 lunar days unchanged, days 16+ advanced to next month",
+      "synthetic_cases": 72,
+      "agreement_under_unmodified_transmitted_rule": 24
+    },
+    "vendor_fixLeap_false": {
+      "rule": "all leap days use nonadvanced month",
+      "synthetic_cases": 72,
+      "agreement_under_unmodified_transmitted_rule": 0
+    },
+    "vendor_same_policy_nonleap": "all ordinary 168 cases exactly match without interpolation",
+    "frozen_case_output_sha256_canonical_stream": "37a5a7f18203b92a218a1b33adee36818928cfc2148558e083aa17793016ffdb",
+    "full_case_file": "IZTRO_2_6_0_FULL_312_CHART_COMPARISON_V1.json"
+  },
+  "explicit_comparison_after_normalizing_only_leap_policy": {
+    "year_stem_lunar_month_day_hour_source_unchanged": true,
+    "is_leap_month_for_source_engine": "original source (always advance) is NOT altered; replay comparator calls separate source engine using is_leap_month=(is_leap and fixLeap and lunar_day>15) to emulate vendor options",
+    "source_variant_switch_1_nayin": true,
+    "source_variant_switch_2_original_day_diagram": true,
+    "matching_312_synthetic_cases": 312,
+    "remaining_discrepancies": 0,
+    "scientific_meaning": "the two syntactic mechanical implementations encode compatible rules when school convention is held equal; does NOT independently validate original historical provenance, traditional birth-hour resolution, original secular astronomy, astrology predictions or the accuracy of any human questionnaire",
+    "all_120_source_default_disagreements_still_in_original_report": true
+  },
+  "negative_controls_and_limits": {
+    "original_versus_vendor_leap_disagreements_discarded": false,
+    "software_rule_alignment_is_not_empirical_predictive_power": true,
+    "human_participant_data_used": false,
+    "independently_known_person_birth_charts_used": false,
+    "year_LiChun_and_true_solar_birth_hour_parity": false,
+    "complete_auxiliary_SiHua_luck_cycle_chart": false,
+    "blind_real_person_forward_and_reverse": 0,
+    "real_human_predictive_success_claims": 0,
+    "runtime_forecast_promotions": 0
+  },
+  "accepted_historical_annotation_total_unchanged": 14540,
+  "new_historical_annotations": 0
+}
