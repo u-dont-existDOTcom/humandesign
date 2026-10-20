@@ -1,0 +1,65 @@
+{
+  "schema": "ChineseAstro-10 Zi Wei NaYin research parity evidence v1",
+  "status": "source-locked mechanical layer; not full-chart independently validated",
+  "source": {
+    "prior_accepted_source": "Wikisource Zi Wei Quan Shu Volume II pinned oldid1963110",
+    "path": "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-07/SOURCE_ORIGINAL_ZIWEI_VOL2_1963110_RAW.txt",
+    "sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+    "section": "六十花甲子纳音歌",
+    "original_couplets": 30,
+    "two_character_pillar_count": 60,
+    "original_valid_pillars": 58,
+    "original_invalid_pillars": ["甲戊", "已亥"],
+    "original_120_year_palace_paths_resolvable": 116
+  },
+  "documented_variant_collation": [
+    {
+      "transmitted_original": "甲戊乙亥山头火",
+      "witness_normalization": "甲戌乙亥山头火",
+      "exact_changed_pillar": "甲戊 -> 甲戌",
+      "support": [
+        "https://www.shidianguji.com/zh/book/HY1439/chapter/1m70sj2411nvn",
+        "https://m.gushiwen.cn/guwen/bookv_46fc9880f58c.aspx",
+        "https://ctext.org/wiki.pl?chapter=466438&if=gb"
+      ],
+      "status": "later-text witness supported, ancient imprint unverified"
+    },
+    {
+      "transmitted_original": "戊戌已亥平地木",
+      "witness_normalization": "戊戌己亥平地木",
+      "exact_changed_pillar": "已亥 -> 己亥",
+      "support": [
+        "https://www.shidianguji.com/zh/book/HY1439/chapter/1m70sj2411nvn"
+      ],
+      "counterwitness": "https://m.gushiwen.cn/guwen/bookv_46fc9880f58c.aspx",
+      "status": "later-text witness supported with countertranscription; ancient imprint unverified"
+    }
+  ],
+  "second_scan_page_66": {
+    "prior_turn_reported_corrected_pairs": true,
+    "independent_image_identifier_recovered": false,
+    "source_binary_hash_recovered": false,
+    "counts_as_independently_verified_image_witness": false
+  },
+  "explicit_emendation_option": {
+    "original_lines_mutated": false,
+    "raw_map_pillars": 58,
+    "emended_map_pillars": 60,
+    "original_120_year_palace_paths": 116,
+    "emended_120_year_palace_paths": 120,
+    "affected_year_palace_paths": 4,
+    "two_valid_neighbor_pillars_keep_direct_original_provenance": true,
+    "source_scope_only": true
+  },
+  "limits": {
+    "independent_original_Ming_imprint": false,
+    "full_birth_local_to_lunar_calendar": false,
+    "independent_fourteen_principal_stars_parity": false,
+    "complete_chinese_natal_chart": false,
+    "validated_predictions_on_real_humans": 0,
+    "runtime_astrological_promotions": 0
+  },
+  "canonical_source_index_update": false,
+  "western_registry_update": false,
+  "source_count_delta": 0
+}
