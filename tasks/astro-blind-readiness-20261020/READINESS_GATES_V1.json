@@ -1,0 +1,231 @@
+{
+  "schema": "HUMANDESIGN_ASTROLOGY_BLIND_TEST_READINESS_V1",
+  "status": "PROTOCOL_REVIEW_ONLY_NOT_PREREGISTERED_OR_RECRUITING",
+  "as_of_utc": "2026-10-20",
+  "research_root_goal": "Independent traditional natal Western and Chinese astrology charts tested forward and reverse blind against chart decoys and non-astrology baselines after a rule, chart, questionnaire and score freeze",
+  "distinct_research_tracks": [
+    "western_lilly_ptolemy",
+    "chinese_ziwei_doushu",
+    "chinese_bazi",
+    "predeclared_combined_model_only_if_later_frozen"
+  ],
+  "source_provenance": {
+    "chinese_accepted_branch": "research/astro-chinese-v14-ziwei-life-aux-first-four-20261020",
+    "chinese_accepted_commit": "3ed26be4f5b411350260265abdc416c08868219a",
+    "chinese_accepted_index": "tasks/astro-chinese-primary-sources-20261017/CHINESE_SOURCE_AUDIT_INDEX_V14.json",
+    "chinese_bazi_source_annotations": 210,
+    "chinese_ziwei_source_annotations": 586,
+    "western_latest_independent_branch": "research/astro-b07bg-clxxxiiii-honours-source-20261020",
+    "western_latest_independent_commit": "6fc30d221adfc51917cdb04c7bf895989cbb5762",
+    "western_lilly_source_annotations_in_other_branch": 13236,
+    "western_ptolemy_source_annotations_in_other_branch": 1066,
+    "cross_branch_historical_documentary_total_not_empirical_results": 15098,
+    "western_current_parent_snapshot_is_older_B07bc": true,
+    "cross_branch_registry_integrated": false,
+    "independent_real_human_predictive_validations": 0,
+    "real_human_participant_birth_records_in_this_artifact": 0,
+    "participant_scored_responses_in_this_artifact": 0,
+    "astrology_production_rules_promoted": 0,
+    "chinese_accepted_index_sha256": "c3a85dd972e010398b671730d86b2eea671db3da313494807bcb42e2c209c770"
+  },
+  "evidence_classifications": {
+    "source_text_verified": "An old text fragment exists and has source/quote and version hashes, not evidence its claim is true",
+    "mechanical_synthetic": "Two implementations or source tables yield corresponding calculations, not real-person behavior",
+    "limited_engine_partial": "Calculation has supported input policies and known exclusions/fail-closed branches",
+    "unresolved": "Required independent proof or complete implementation absent",
+    "owner_gate": "Explicit participant consent, intended recruitment or final model scope requires human owner decision",
+    "prospective_validation": "Only possible after immutable predictions precede untouched outcomes and controls"
+  },
+  "source_and_engine_evidence": [
+    {
+      "id": "source_ziwei_14_main_prose",
+      "status": "source_text_verified",
+      "interpretation": "All fourteen principal-star individual Life-palace profile descriptions covered by source V10–V13; auxiliary text incomplete",
+      "evidence_local": "tasks/astro-chinese-primary-sources-20261017/CHINESE_SOURCE_AUDIT_INDEX_V14.json",
+      "does_not_validate": [
+        "historical original woodblock",
+        "14-star human birth chart",
+        "life outcome predictions"
+      ]
+    },
+    {
+      "id": "source_ziwei_aux_partial",
+      "status": "source_text_verified",
+      "interpretation": "Wen Chang, Wen Qu, Zuo Fu, You Bi original descriptive source lines covered; more auxiliary profiles and other houses open",
+      "evidence_local": "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-14SRC-Life/ZIWEI_LIFE_FIRST_FOUR_AUXILIARY_58_SOURCE_NOTES_V1.json",
+      "does_not_validate": [
+        "auxiliary star placements",
+        "Four Transformations",
+        "traditional time predictions"
+      ]
+    },
+    {
+      "id": "chinese_14_principal_star_synthetic_calculation",
+      "status": "limited_engine_partial",
+      "interpretation": "Separate ChineseAstro-10–13 engineering branches source-lock 14-star positions; 312 synthetic external Iztro comparisons align when leap-month school rules are explicitly normalized",
+      "independent_branch": "research/astro-chinese-iztro-external-chart-parity-20261020",
+      "independent_commit": "6f4a75febc1624e44b54d724422804a05f31fd12",
+      "unresolved": [
+        "birth-location reference calendar policy",
+        "auxiliary stars",
+        "real person predicted traits"
+      ]
+    },
+    {
+      "id": "chinese_calendar_external_1901_2100",
+      "status": "limited_engine_partial",
+      "interpretation": "Two software packages agreed 73019 of 73049 daily calendar inputs but disagreed all 30 days 2057-09-28 through 2057-10-27; only ten modern original HKO API samples externally matched",
+      "independent_branch": "research/astro-chinese-calendar-parity-20261020",
+      "independent_commit": "29f76089739271dab0695f8699081d52600cb10b",
+      "unresolved": [
+        "official historical calendar 1901–2100 complete truth",
+        "2057 disagreements",
+        "ancient era birth policy",
+        "Li Chun"
+      ]
+    },
+    {
+      "id": "chinese_iana_civil_vs_mean_solar",
+      "status": "limited_engine_partial",
+      "interpretation": "Exact time zone and DST fold/gap plus explicitly distinct modern fixed UTC+8 calendar reference and local mean-solar two-hour branch implemented in separate engine, true apparent solar and day-boundary alternatives incomplete",
+      "independent_branch": "research/astro-chinese-13-timezones-localmean-20261020",
+      "independent_commit": "fb6b30b1ca67ff62fecc0c4ea7f3e4d0553640d4",
+      "unresolved": [
+        "true apparent solar time",
+        "historical date standard",
+        "23h Zi-day alternative",
+        "nonzero time uncertainty propagation"
+      ]
+    },
+    {
+      "id": "western_merchant_1616_source_mechanics",
+      "status": "limited_engine_partial",
+      "interpretation": "Original old known-merchant 1647 chart under hypothetical Julian date/UT 7 of 7 natal zodiac signs matched Swiss; Mercury and Venus longitude residuals remain, four original Regiomontanus house cusps agreed within 8 arcminutes when original RA-MC supplied",
+      "independent_branch": "research/astro-western-regiomontanus-house-source-parity-20261020",
+      "independent_commit": "5792f1a567320a4734cd81dd986455c68ccb470a",
+      "unresolved": [
+        "authentic merchant true historical birth local time/place",
+        "natal planet residuals",
+        "actual outcomes",
+        "historical directions"
+      ]
+    },
+    {
+      "id": "western_original_solar_return_1646",
+      "status": "limited_engine_partial",
+      "interpretation": "Original 1646 Sun daily speed near modern Swiss ephemeris, but original noon longitude differed about ten arcminutes; source Frankfurt historical clock and meridian unknown",
+      "independent_branch": "research/astro-western-clxxii-solar-return-swieph-20261020",
+      "independent_commit": "ac9a3f38c18f1bbbfd357dd3401a8da007bab20e",
+      "unresolved": [
+        "actual 1646 revolution time",
+        "birth time basis",
+        "real future events"
+      ]
+    },
+    {
+      "id": "original_bazi_ditian_sui",
+      "status": "source_text_verified",
+      "interpretation": "210 BaZi original text annotations up to Di Tian Sui section18; source section19 and independent true JieQi four-pillar temporal calculations incomplete",
+      "evidence_local": "tasks/astro-chinese-primary-sources-20261017/CHINESE_SOURCE_AUDIT_INDEX_V14.json",
+      "unresolved": [
+        "Di Tian Sui section19 onward",
+        "year/month solar-term engine",
+        "human predictions"
+      ]
+    },
+    {
+      "id": "empirical_human_results",
+      "status": "unresolved",
+      "interpretation": "No preregistered untouched human forward/reverse astrology predictions measured so far",
+      "independent_human_tests": 0,
+      "results_available_for_accuracy_claim": false
+    }
+  ],
+  "candidate_pilot_gates": [
+    {
+      "id": "G01_bounded_birth_population",
+      "status": "unresolved",
+      "blocking": true,
+      "requirement": "Freeze prospective eligibility/time-zone/calendar/year regime, exact DOB/time source quality, allowed uncertainty; fail closed on boundary ambiguity"
+    },
+    {
+      "id": "G02_single_named_model_and_rule_version",
+      "status": "unresolved",
+      "blocking": true,
+      "requirement": "Select separately labeled Western or Chinese limited-source chart model, exact source conventions and all prior outcome-independent rule weights; explicitly disallow cherry-picking a more favourable school post hoc"
+    },
+    {
+      "id": "G03_birth_chart_withheld_and_reproducible",
+      "status": "unresolved",
+      "blocking": true,
+      "requirement": "Verify and pin complete birth-date -> selected limited-feature chart path, code and ephemeris/calendar hashes, date/time uncertainty handling and independent known-input oracle; no unverified features enabled"
+    },
+    {
+      "id": "G04_questionnaire_mapping_freeze",
+      "status": "unresolved",
+      "blocking": true,
+      "requirement": "Map chosen source rules to behavior-first nonleading questions with explicit negative/positive branches, conditional dependency clusters, target direction and missing-response handling, hashed before any scored human answers"
+    },
+    {
+      "id": "G05_calibrated_prediction_and_predeclared_score",
+      "status": "unresolved",
+      "blocking": true,
+      "requirement": "Freeze supported option distributions from development-only data (or use descriptive predeclared rank metric instead); use proper scoring only for calibrated probabilities; define one primary statistic"
+    },
+    {
+      "id": "G06_decoy_and_nonastrological_controls",
+      "status": "unresolved",
+      "blocking": true,
+      "requirement": "Predefine matched alternative birth charts by demographic/time/place opportunity, independent nonastrological baselines, chart-label permutation null, tie and multiplicity policies"
+    },
+    {
+      "id": "G07_data_protection_and_participant_consent",
+      "status": "owner_gate",
+      "blocking": true,
+      "requirement": "Explicit consent, separate private participant identifiers/real birth data, permitted retention and chart-reveal schedule, no public Git source files with identifiable birth records"
+    },
+    {
+      "id": "G08_immutable_pre_response_package",
+      "status": "unresolved",
+      "blocking": true,
+      "requirement": "Hash participant input, feature vector, source model, question set, prediction options/probabilities, decoys, scoring, software revision, timezone/calendrical source and timestamp strictly before scored responses"
+    },
+    {
+      "id": "G09_untouched_cohort_and_power_plan",
+      "status": "unresolved",
+      "blocking": true,
+      "requirement": "Recruit new untouched human respondents, exclude previously interpreted owner/Hale charts from validation, prereg sample/censoring/precision or simulation-informed N and one interim-analysis rule"
+    },
+    {
+      "id": "G10_permutation_null_and_negative_disclosure",
+      "status": "unresolved",
+      "blocking": true,
+      "requirement": "Complete prespecified full cohort N-by-N chart-to-response score/rank, sign/likelihood/permutation null, report all negative/ambiguous/excluded/unanswered and sensitivity analyses"
+    }
+  ],
+  "pilot_eligibility": {
+    "this_version_is_a_preregistration": false,
+    "scored_human_recruitment_authorized": false,
+    "scored_human_questionnaire_authorized": false,
+    "candidate_pilot_ready": false,
+    "full_traditional_western_and_chinese_model_ready": false,
+    "full_human_prospective_or_reverse_model_validated": false,
+    "development_only_synthetic_chart_tests_may_continue": true,
+    "historical_original_source_study_may_continue": true,
+    "already_inspected_owner_Hale_ineligible_as_untouched_final_test": true,
+    "historical_gender_disease_longevity_and_moral_claims_excluded_from_medicine_and_human_stereotyping": true
+  },
+  "next_smallest_high_value_work": [
+    "Choose a narrowly defined source-limited Chinese or Western model and freeze exact temporal/house conventions on purely synthetic and trusted original worked examples",
+    "Inventory source-text positive and negative outcomes into concealed behavior questions and independent nonastrological control predictors without viewing new people",
+    "Write a concrete prospective evaluation package and synthetic negative-control permutation test before seeking informed consenting untouched human participants"
+  ],
+  "not_done": [
+    "No model or questionnaire frozen",
+    "No actual owner-approved recruitment or participant consent",
+    "No actual human scoring or prediction results",
+    "No combined-model interpretation weights frozen",
+    "No statistical sample size/power selected",
+    "No real participant birth information in this public research artifact"
+  ]
+}

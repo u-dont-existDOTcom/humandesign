@@ -1,0 +1,13 @@
+# HumanDesign astrology — empirical validation readiness audit, 20 October 2026
+
+**Root scientific goal OPEN**: independently source-verified Western Lilly/Ptolemy, Chinese BaZi/Zi Wei natal/time models, then fully frozen/preregistered truly blinded real-human chart-to-question forward predictions and response-to-chart reverse matches vs matched chart decoys and nonastrology controls. Actual independently blinded human tests **0**. Source-documentation count is NOT empirical validation.
+
+This is separate non-source-history branch research/astro-blind-prereg-readiness-20261020 from accepted original Chinese source V14 exact 3ed26be4f5b411350260265abdc416c08868219a, at source BaZi210+ZiWei586 and older West B07bc snapshot. Latest independently accepted Western B07bg original source SHA 6fc30d221adfc51917cdb04c7bf895989cbb5762, Lilly13236+Ptolemy1066 on DIFFERENT source branch, aggregate documentary notes15098 across separate histories, 0 human study. Do not merge source registries or misrepresent newer West files as if part of Chinese source worktree.
+
+No personal participant files, actual birth records or personal conditions in this protocol. Reuse general blind flow from docs/20_forward_blind_prospective_validation.md, but that flow is Human Design, not a verified astrology mapping. The original natal chart and astrology question mapping are not yet frozen; do not claim a human study can begin simply because sources have 15k annotations.
+
+Prepare machine-readable gate matrix/checker and a non-preregistered draft spec separating minimal source-limited pilot, synthetic/engineering tests, and later comprehensive confirmatory validation. Preserve strict go/no-go evidence, no confirmatory claims before method freeze, consented untouched participants and scores versus controls. Save to repo/remote with tests.
+
+## Readiness matrix/checker verified
+
+Ten explicitly blocking gates G01–G10 in `READINESS_GATES_V1.json`, source index exact checksum verified; no actual scored human record, no permission to recruit/freeze as if ready. `ASTROLOGY_BLIND_VALIDATION_PROTOCOL_DRAFT_V1.md` keeps Western, ZiWei, BaZi models separate, explains why a source-limited pilot can be scientifically meaningful before full historical text completion PROVIDED natal input and mapping/decoy/scoring/consent gates are actually closed. `check_astrology_readiness.py` returns `NOT_READY_SOURCE_AND_ENGINEERING_ONLY`, identifies all 10 unmet gates. Twelve unit tests including attempted bypass/false ready flags, changed source hashes, pretended human evidence, historic discriminatory medical/social claims all passed; Ruff source lint green. No changes to canonical source indexes or personal participant data; not a registered trial or model freeze.
