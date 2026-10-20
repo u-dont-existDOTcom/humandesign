@@ -6,7 +6,7 @@
 
 Joel reports Pangram 4.1 GUI now shades individual sentences; dark green means **definitely Human**, light green **probably Human**, while red/pink signals AI concern. His observed phenomenon: light-green sentences sometimes become red in longer *real context* windows. Working instruction: aim for dark green across sentences when achievable through honest, faithful writing, and use natural-context checks to identify regression. Neither the color nor its supposed robustness establishes authorship. Do not optimize by false facts, generic filler, unrelated human prose, or escalating spending.
 
-This correction extends—not overrides—the Oct 20 credit safeguards: work at most one natural section/approximately five paragraphs, two new detector submissions per paragraph repair lineage, stop after two wrong predictions and ask Joel for his Human tells, section-level check only after individual passes with one justified section retest, whole-article checks only at final readiness. Different GUI/API versions and sentence/paragraph/section classifications must be independently recorded.
+This correction extends—not overrides—the Oct 20 credit safeguards: work at most one natural section/approximately five paragraphs, up to six new submissions per paragraph lineage with a specific concrete diagnosis for every next attempt; stop early when no credible fix remains or two unexplained misses recur on the same unresolved target, section-level check only after individual passes with one justified section retest, whole-article checks only at final readiness. Different GUI/API versions and sentence/paragraph/section classifications must be independently recorded.
 
 ## Cross-repository work
 
