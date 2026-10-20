@@ -1,0 +1,3 @@
+# V13 source-only focused verification, 20 Oct 2026
+
+The original Zi Wei Life-palace final two principal star descriptions are verified by 14 original-source line/citation/byte-offset/negative tests in test_chinese13src_final_principal_original.py. After guarded V13 append, use 12 post-index immutability/integration tests in test_chinese13src_post_index.py. The independently cold-extracted ZIP replayed 14 source tests and independently hash-verified 13 members. Earlier V12 post-index tests deliberately require the old V12 terminal frontier and are not expected to pass if applied to V13 current source as though V12 remained last. No actual human predictive studies completed and no runtime astrology promotions.

@@ -1,3 +1,9 @@
+# Chinese V13 — all fourteen principal star Life-profile prose source covered
+
+**46 historical source-only annotations ZWD-R0483–ZWD-R0528**, QiSha22 and PoJun23 exact source lines plus one next WenChang auxiliary-source navigation. All 14 main star descriptive profiles in this transmitted oldid1963110 Life-palace source now historically annotated, with full exact UTF8 byte offsets and SHA; NOT the complete Life-palace (auxiliary passages after cp30135 remain) or an ancient authenticated Ming imprint, accurate complete natal chart or real human prediction. **Chinese BaZi210 + ZiWei528=738** text annotations. Latest independent Western B07bg Lilly13236+Ptolemy1066 produces aggregate **15,040** historical source notes on DIFFERENT source branches; not 15,040 people. Next **ZWD-R0529 WenChang**, original cp30135, BaZi **BZI-R0211** Di Tian Sui section19. Actual human blind predictive validations **0**, runtime astrology promotions **0**.
+
+## Prior original Chinese source checkpoint retained
+
 # Chinese V12 — original Zi Wei Life-palace third four star profiles
 
 **83 source-only historical annotations ZWD-R0400–ZWD-R0482**: TanLang21, JuMen22, TianXiang21, TianLiang18 verbatim source lines plus next QiSha navigation marker. Exact oldid1963110 original UTF8 byte offsets, quote SHA and segments preserved, with missing dedicated TianLiang female poem heading explicitly documented, NOT fabricated. Full original Life-palace source is still PARTIAL, original Ming-era printed imprint unverified; old sex/medical/mortality claims unvalidated and not advice. **Chinese BaZi210 + ZiWei482 =692** historical source notes. Separate Western B07bg Lilly13236+Ptolemy1066 on independent branch means aggregate **14,994** text notes, not subjects or predictive hits. Next **ZWD-R0483 QiSha** cp28621, BaZi **BZI-R0211**. Genuine human blind validations **0**, runtime astrology promotions **0**.
