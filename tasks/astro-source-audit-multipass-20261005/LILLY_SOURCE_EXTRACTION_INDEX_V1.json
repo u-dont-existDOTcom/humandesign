@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXXX_SICKNESSE_SERVANTS_PHYSICAL_SOURCE_COVERED_NEXT_CLXXXI_MARRIAGE",
-  "records_count": 13044,
+  "status": "BOOK_III_CLXXXI_MARRIAGE_PHYSICAL_SOURCE_COVERED_NEXT_CLXXXII_CHILDREN",
+  "records_count": 13101,
   "read_numbered_chapters": [
     1,
     2,
@@ -184,7 +184,8 @@
     177,
     178,
     179,
-    180
+    180,
+    181
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1405,27 +1406,34 @@
       "records_count": 27,
       "sha256": "eff93d28fa9d7204c760d0f49d294df6806f530c75d2b748cca8b834bb6d1f81",
       "scope": "Original Lilly 1647 CLXXX sixth-house Sicknesse, Servants printed753–754/PDF787–788, compared with independently typeset 1659 printed753–754/DjVu782–783. 27 source-only historical R13018–R13044: Mercury sixth/servants lord, Saturn ascendant ruler, Moon/Oculus Taurus and Mars conditions, archaic blood corruption and fever causality, illness variation and purported mitigation, old page119/247 crossrefs, social/servant predictions and discriminatory red-haired stereotype. Original aspect glyphs, real diagnoses/records, chart parity, independent outcomes unverified. CLXXXI Marriage distinct below divider printed754/PDF788. Zero human predictions validated; zero runtime rules promoted."
+    },
+    {
+      "id": "B07bd",
+      "path": "batches/B07bd/RULES.json",
+      "records_count": 57,
+      "sha256": "2986e9d1a1c6d39d655438764792543bcaf784817a6e20f99b4e846c407f5d96",
+      "scope": "Original first 1647 and independent 1659 printed CLXXXI seventh-house Marriage folios754-757/PDF788-791: 57 source-only R13045-R13101; prediction of late marriage after29, exactly two wives and two sweethearts; contrary one-marriage astrological testimony; spouse features, wealth, east/west geography and terms-vs-months time ambiguity. Mercury/Venus Cazimi source nominal17arcmin vs modern SWIEPH73-76arcmin under explicit unverified 1616 Julian-clock assumptions. Known merchant, no independent marriage records or human predictive success; next CLXXXII Children below folio757 physical divider."
     }
   ],
   "next": {
-    "pdf_page": 788,
-    "printed_page": 754,
-    "chapter": "CLXXXI",
-    "printed_chapter_numeral": "CLXXXI",
-    "editorial_source_sequence_ordinal": 181,
-    "heading": "Of Marriage",
+    "pdf_page": 791,
+    "printed_page": 757,
+    "chapter": "CLXXXII",
+    "printed_chapter_numeral": "CLXXXII",
+    "editorial_source_sequence_ordinal": 182,
+    "heading": "Of Children",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "1647 printed754/PDF788 below clear divider from sixth-house CLXXX; seventh-house CHAP CLXXXI Of Marriage starts on same folio. Next historical note R13045. Previous medical/servants forecasts are source-only and not outcomes.",
-    "research_scope": "Original seventh-house marriage source clauses about known native. No real-person confirmation or unblinded human predictive validation."
+    "position": "1647 first printed757/PDF791, below physical divider from CLXXXI Marriage after only first two lines on this page. Full children text not extracted by B07bd, next source record R13102.",
+    "research_scope": "Source-only fifth-house children case about known merchant, number/sex/birth/relationship claims not empirically validated."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 96,
+  "read_headed_units_count": 97,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261020_B07bc_SICKNESSE_SERVANTS.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261020_B07bd_MARRIAGE.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1854,6 +1862,34 @@
       "historical_servant_behavior_independently_verified": false,
       "independent_human_predictions_validated": 0,
       "runtime_model_promoted": false
+    },
+    {
+      "printed_chapter": "CLXXXI",
+      "editorial_ordinal": 181,
+      "heading": "Of Marriage",
+      "physical_source_start_pdf": 788,
+      "accepted_through_pdf": 791,
+      "printed_folios": [
+        754,
+        755,
+        756,
+        757
+      ],
+      "source_batch": "B07bd",
+      "historical_start": "R13045",
+      "historical_end": "R13101",
+      "complete": true,
+      "physical_source_span_covered": true,
+      "two_original_printed_edition_images_sha_verified": true,
+      "whole_1659_source_binary_sha_verified": false,
+      "full_expert_diplomatic_source_critical_edition_finished": false,
+      "original_marriage_predictions_known_to_author_and_not_blind": true,
+      "verified_real_merchant_marital_history": false,
+      "original_venus_cazimi_at_17arcmin_source": true,
+      "modern_Sun_Venus_separation_far_beyond_17arcmin_under_hypothetical_UT": true,
+      "original_meridian_historical_UT_and_birthplace_verified": false,
+      "independent_person_predictive_accuracy_validated": 0,
+      "production_rules_promoted": false
     }
   ],
   "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166.",
@@ -1873,5 +1909,6 @@
   "chapter_CLXXVII_source_case_not_a_blind_person_prediction": "B07az original 1647/1659 Of Riches case for a merchant already known to Lilly, 29 documentary annotations; predictions about wealth before age35, later property/inheritance, relatives and lawsuits are historical source claims and no actual human outcomes validated. Second-house Aquarius 23°30 source versus shortened secondary 23.3. First CLXXVII chapter physically ends p751 above new CLXXVIII Brethren.",
   "chapter_CLXXVIII_known_count_posthoc_source_warning": "B07ba original 1647/1659 chapter states few siblings under a strict Ptolemaic indicator, then reports already known 7 brothers and 1 sister and reinterprets additional factors. The source itself warns it is difficult to judge exact number. Do not count reported siblings as independent validation, the later reconciliation as preregistered matching, or health/mortality/estate conjectures as proved individual events.",
   "chapter_CLXXIX_historical_parent_claims_not_empirically_tested": "B07bb prints historical source conjectures about real parents of a previously known merchant, but neither father/mother actual birth chart, independent parents' lifespan, affection, property or other outcomes are validated. Ptolemy-derived hypothetical parent chart is not a natal chart with independently sourced real birth data; not a human predictive success.",
-  "chapter_CLXXX_historical_medical_social_claims_unverified": "Original 1647/1659 first/second printing preserved as historical sixth-house and servants predictions for known merchant. No independent real patient records, medical etiological truth, servants trust outcomes, source-critical astrological glyphs, or old-epoch chart engine validated. Avoid historical discriminatory servant selection advice."
+  "chapter_CLXXX_historical_medical_social_claims_unverified": "Original 1647/1659 first/second printing preserved as historical sixth-house and servants predictions for known merchant. No independent real patient records, medical etiological truth, servants trust outcomes, source-critical astrological glyphs, or old-epoch chart engine validated. Avoid historical discriminatory servant selection advice.",
+  "chapter_CLXXXI_original_specific_numerical_outcome_caution": "Lilly original 1647/1659 known merchant marriage source predicts only two wives/two sweethearts and marriage after age29, spouse appearances, inheritance and opposing wife origins; nothing is independently biographically verified or a blinded predictive success. Claimed Venus in Cazimi is at 17arcmin original printed exact whole-minute border, but differs >73arcmin from SWIEPH under one explicitly uncertain true-Julian UT hypothesis. This is a source/chart input inconsistency, not evidence about a real wife."
 }
