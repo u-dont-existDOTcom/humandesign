@@ -79,7 +79,7 @@ def build_result(ephemeris_dir,kernel_file):
               'independent_full_original_natal_chart_1616_verified':False})
     absvals=[r['abs_matched_TT_longitude_difference_arcseconds'] for r in rows]
     naive_absvals=[r['abs_naive_UTC_comparison_arcseconds'] for r in rows]
-    return {'schema':'MODERN_JPL_DE440S_VS_SWISS_SE1_PLANETARY_LONGITUDE_DIAGNOSTIC_V1',
+    result = {'schema':'MODERN_JPL_DE440S_VS_SWISS_SE1_PLANETARY_LONGITUDE_DIAGNOSTIC_V1',
       'astronomical_comparison_scope':'Five named civil UT1 nominal timestamps x 7 traditional planets; primary longitude comparison fixes common dynamical terrestrial time (TT). Also retains pre-1972 modern UTC mapping mismatch. No houses/directions, social claims or real humans.',
       'JPL_kernels_nasa_source_URI':JPL_KERNEL_URL,'JPL_original_DE440s_SHA256':sha(kernel_file),
       'JPL_DE440s_bytes':Path(kernel_file).stat().st_size,'JPL_DE440s_coverage':'1849-12-25 to 2150-01-21; EXCLUDES 1616',
@@ -102,6 +102,8 @@ def build_result(ephemeris_dir,kernel_file):
       'Regiomontanus_houses_lunar_calendar_14_stars_and_timing_full_parity_verified':False,
       'prospective_blinded_human_predictive_results':0,'runtime_model_promotions':0,
       'planetary_comparison_records':rows}
+    kernel.close()  # avoid leaving the NASA SPK file descriptor open between tests
+    return result
 
 
 def main():

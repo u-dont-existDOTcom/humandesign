@@ -28,4 +28,6 @@ runs/*/revealed_key*
 # Provisioned from pinned official Swiss Ephemeris upstream by
 # scripts/fetch_swisseph_ephemeris.py. Do not accidentally vendor binary data.
 data/ephemeris/*.se1
+# NASA DE440s binary is downloaded on demand for research; SHA provenance in task.
+data/ephemeris/de440s.bsp
 data/ephemeris/swisseph_ephemeris_manifest.json
