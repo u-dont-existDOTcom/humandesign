@@ -1,0 +1,53 @@
+{
+  "schema": "ASTROLOGY_EXPLICIT_SYNTHETIC_RESPONSE_BATCH_V1",
+  "status": "MOCK_OUTCOMES_CONSTRUCTED_AFTER_DESIGN_FOR_POSITIVE_AND_NULL_TESTS",
+  "scenario": "deliberately_opposite_control",
+  "real_human_data": false,
+  "actual_birth_chart_data": false,
+  "cases": [
+    {
+      "case_id": "SYNTH-P01",
+      "true_chart_id": "SYNTH-CHART-01",
+      "mock_responses": {
+        "Q_DECISIVE": 0,
+        "Q_ARGUMENT": 4,
+        "Q_HELPING": 0,
+        "Q_COMPETE": 0
+      },
+      "synthetic_case": true
+    },
+    {
+      "case_id": "SYNTH-P02",
+      "true_chart_id": "SYNTH-CHART-02",
+      "mock_responses": {
+        "Q_DECISIVE": 0,
+        "Q_ARGUMENT": 0,
+        "Q_HELPING": 4,
+        "Q_COMPETE": 0
+      },
+      "synthetic_case": true
+    },
+    {
+      "case_id": "SYNTH-P03",
+      "true_chart_id": "SYNTH-CHART-03",
+      "mock_responses": {
+        "Q_DECISIVE": 0,
+        "Q_ARGUMENT": 0,
+        "Q_HELPING": 0,
+        "Q_COMPETE": 4
+      },
+      "synthetic_case": true
+    },
+    {
+      "case_id": "SYNTH-P04",
+      "true_chart_id": "SYNTH-CHART-04",
+      "mock_responses": {
+        "Q_DECISIVE": 4,
+        "Q_ARGUMENT": 0,
+        "Q_HELPING": 0,
+        "Q_COMPETE": 0
+      },
+      "synthetic_case": true
+    }
+  ]
+}

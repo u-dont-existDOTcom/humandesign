@@ -1,0 +1,49 @@
+{
+  "schema": "HUMANDESIGN_ASTROLOGY_FOUR_ANCHOR_SYNTHETIC_ONLY_CHECKPOINT_V1",
+  "status": "SOURCE_AND_SYNTHETIC_ENGINEERING_PASSED_REAL_HUMAN_RESEARCH_OPEN",
+  "original_source_excerpt_candidates": 4,
+  "source_note_ids": [
+    "ZWD-R0287",
+    "ZWD-R0330",
+    "ZWD-R0464",
+    "ZWD-R0505"
+  ],
+  "original_verified_source_map_sha256": "acd1fef1b9764bfac4525785ee1fd42e7dac2727880e829ee038aa9562db8a62",
+  "synthetic_chart_tokens_sha256": "d707a8d40fc1700bffa9bd3dcb2ca599da107b3ad44c5741eae82193262a9a07",
+  "synthetic_seal_sha256": "1d8afab60008362edfd36d3ed989d1d62d683e8c1051a4f781e0da4e7144b1e2",
+  "synthetic_seal_inner_payload_sha256": "90c2efca96e284c9a319bd6fd348911463998abd2bc037ebaeb1d684da7aaf34",
+  "instrument_prior_art_crosswalk_sha256": "d27d7b8213ece9be3bd8f81434473cab58f1ab6bce2c30e88b8f94a99c927105",
+  "portable_archive_sha256": "62acf9a644f6d749aab3d45374912f776357d57ee60e9a6d5c41c1dd4c295410",
+  "portable_archive_member_count": 30,
+  "independent_cold_source_and_synthetic_tests_green": 20,
+  "toy_scenarios": {
+    "POSITIVE": {
+      "SHA256": "b86d39e8792d334fd54572952b38e1d1da46852ccd0fa4f66089bd7bb8cf072a",
+      "diagonal_advantage_toy_only": 0.75,
+      "mean_true_chart_percentile_toy_only": 1.0,
+      "seeded_permutation_p_is_not_human_evidence": 0.03508771929824561
+    },
+    "NULL": {
+      "SHA256": "7c9fe568c218f8fde062ff2c9de5bd3e6b77c8894e89a43d34feac2ec531c232",
+      "diagonal_advantage_toy_only": 0.0,
+      "mean_true_chart_percentile_toy_only": 0.5,
+      "seeded_permutation_p_is_not_human_evidence": 1.0
+    },
+    "OPPOSITE": {
+      "SHA256": "b715cc5e466fd0e70cbf89716cc889126697e4cc3ab83eecc603b848749964aa",
+      "diagonal_advantage_toy_only": -0.25,
+      "mean_true_chart_percentile_toy_only": 0.33333333333333337,
+      "seeded_permutation_p_is_not_human_evidence": 1.0
+    }
+  },
+  "real_human_readiness_gates_unmet": 10,
+  "preregistration_completed": false,
+  "mock_chart_is_an_authentic_birth_derived_ziwei_chart": false,
+  "questionnaire_human_psychometric_validation_completed": false,
+  "nonastrological_external_baseline_complete": false,
+  "all_input_chart_time_and_conditional_source_rules_frozen": false,
+  "real_human_participants_in_public_artifact": 0,
+  "empirical_human_predictive_validations": 0,
+  "runtime_astrological_rule_promotions": 0,
+  "next_safe_work": "Independently birth-calculate one limited source chart subset and verify original traditional time rules, then finalize validated question instruments and proper controls before consented untouched humans."
+}

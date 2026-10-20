@@ -1,0 +1,3 @@
+# Astrology source-to-question synthetic engineering checkpoint (2026-10-20)
+
+This development-only methods branch now includes a source hash-backed four-question draft, 4 fake chart tokens, three contrived toy response control fixtures, source and rubric/code pre-response hash seal, existing HD rank/seeded permutation reusable scorer, 20 unit/negative tests and independent cold-extracted package. See `tasks/astro-source-four-anchor-synthetic-20261020/CONTINUATION_HANDOFF_ACCEPTED_20261020.md` for exact state and next safe action. The source-to-question model is NOT verified for human use, not preregistered and contains no actual birth data, human outcomes or astrology result. Parent source histories immutable; empirical blind astrology validation count0.

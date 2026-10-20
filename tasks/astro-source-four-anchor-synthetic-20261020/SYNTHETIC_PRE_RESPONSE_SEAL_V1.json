@@ -1,0 +1,57 @@
+{
+  "sealed_payload": {
+    "schema": "ASTROLOGY_SOURCE_CANDIDATE_SYNTHETIC_PRE_RESPONSE_SEAL_V1",
+    "status": "SYNTHETIC_ENGINEERING_SEAL_NOT_AUTHENTIC_PREREGISTRATION",
+    "source_mapping_SHA256": "acd1fef1b9764bfac4525785ee1fd42e7dac2727880e829ee038aa9562db8a62",
+    "mock_chart_fixture_SHA256": "d707a8d40fc1700bffa9bd3dcb2ca599da107b3ad44c5741eae82193262a9a07",
+    "code_dependency_SHA256": {
+      "scorer": "07a0f7875e19f4681ab3a63f4311f6f5f25810c09f0356b639109b8cebafd9a2",
+      "hdmatch_metric": "6424c1fc834484b96486e3e0c7f493a5c0a40558f885a44927bf2aa4f38b5532",
+      "hdmatch_label_permutation": "f9168d83e6f714e22b3f51f259b19bfe06c476fc6a5cf0dacbf9f202c5b8d691"
+    },
+    "question_ids": [
+      "Q_ARGUMENT",
+      "Q_COMPETE",
+      "Q_DECISIVE",
+      "Q_HELPING"
+    ],
+    "star_question_pairs": [
+      [
+        "武曲",
+        "Q_DECISIVE"
+      ],
+      [
+        "廉贞",
+        "Q_ARGUMENT"
+      ],
+      [
+        "天梁",
+        "Q_HELPING"
+      ],
+      [
+        "破军",
+        "Q_COMPETE"
+      ]
+    ],
+    "mock_chart_ids": [
+      "SYNTH-CHART-01",
+      "SYNTH-CHART-02",
+      "SYNTH-CHART-03",
+      "SYNTH-CHART-04"
+    ],
+    "source_original_rev": 1963110,
+    "score_policy": "UNVALIDATED_ORDINAL_SOURCE_SUPPORT_NO_CALIBRATED_PROBABILITIES",
+    "toy_response_scale_0_to_4": true,
+    "synthetic_null_permutations": 512,
+    "synthetic_null_seed": 190526,
+    "synthetic_nuisance_stratum": "toy_all_equal_not_a_real_demographic_match",
+    "real_world_chart_engine_is_verified": false,
+    "source_to_human_questionnaire_mapping_is_frozen": false,
+    "scored_actual_human_responses": 0,
+    "participant_birth_records_included": 0,
+    "mock_case_truth_labels_included": false,
+    "real_preregistration_timestamp_exists": false,
+    "real_human_prediction_accuracy_claim": false
+  },
+  "sealed_payload_sha256": "90c2efca96e284c9a319bd6fd348911463998abd2bc037ebaeb1d684da7aaf34"
+}

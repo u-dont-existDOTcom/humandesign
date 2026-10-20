@@ -1,0 +1,61 @@
+{
+  "schema": "ASTROLOGY_SOURCE_BEHAVIOR_INSTRUMENT_EXISTING_WORK_CROSSWALK_V1",
+  "status": "PRIOR_ART_SCREENED_NOT_ADOPTED_NOT_PSYCHOMETRICALLY_VALIDATED",
+  "source_candidate_manifest": "SOURCE_TO_BEHAVIOR_CANDIDATES_V1.json",
+  "scholarly_search_performed": true,
+  "primary_sources_checked": true,
+  "systematic_review_completed": false,
+  "full_primary_papers_accessed_and_scales_reproduced": false,
+  "validated_multi_item_battery_selected": false,
+  "study_questionnaire_preregistered": false,
+  "real_human_scored_data_collected": 0,
+  "licensed_instrument_text_copied": false,
+  "crosswalk": [
+    {
+      "candidate_id": "AZ-WUQU-DECISIVENESS",
+      "source_record": "ZWD-R0287",
+      "target_construct": "decision commitment / resoluteness",
+      "possible_existing_instrument": "Scott & Bruce General Decision-Making Style inventory; Frost & Shows Indecisiveness Scale",
+      "original_DOIs": ["10.1177/0013164495055005017", "10.1016/0005-7967(93)90121-A"],
+      "key_gap": "spontaneous decision making, compulsive indecisiveness and durable decision commitment differ; source working translation not certified",
+      "scale_adopted_for_humans": false,
+      "direction_and_probabilities_validated": false
+    },
+    {
+      "candidate_id": "AZ-LIANZHEN-ARGUMENT",
+      "source_record": "ZWD-R0330",
+      "target_construct": "contentious disagreement",
+      "possible_existing_instrument": "Infante and Rancer Argumentativeness scale",
+      "original_DOIs": ["10.1207/s15327752jpa4601_13"],
+      "critical_counterevidence_DOI": "10.1177/0261927X11425037",
+      "key_gap": "argument approach/avoidance is not hostile arguing; validity and actual behavior correspondence have published competing assessments",
+      "scale_adopted_for_humans": false,
+      "direction_and_probabilities_validated": false
+    },
+    {
+      "candidate_id": "AZ-TIANLIANG-HELP",
+      "source_record": "ZWD-R0464",
+      "target_construct": "voluntary helping without expected gain",
+      "possible_existing_instrument": "Carlo and Randall Prosocial Tendencies Measure",
+      "original_DOIs": ["10.1023/A:1014033032440"],
+      "replication_or_cross_cultural_source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5723663/",
+      "key_gap": "six distinct forms of prosocial behavior, need opportunity exposure and careful translation/generalization beyond college samples",
+      "scale_adopted_for_humans": false,
+      "direction_and_probabilities_validated": false
+    },
+    {
+      "candidate_id": "AZ-POJUN-COMPETE",
+      "source_record": "ZWD-R0505",
+      "target_construct": "competitiveness / desire to prevail",
+      "possible_existing_instrument": "Houston and colleagues Revised Competitiveness Index",
+      "original_DOIs": ["10.2466/pr0.2002.90.1.31"],
+      "key_gap": "enjoyment of competition vs contentiousness are separate; overlap with Lian Zhen argument item must be dependency-limited; source wording may mean rivalry beyond games",
+      "scale_adopted_for_humans": false,
+      "direction_and_probabilities_validated": false
+    }
+  ],
+  "source_morale_health_and_sex_stereotypes_can_be_included_in_scored_person_predictions": false,
+  "existing_HD_rank_and_permutation_modules_reused_for_synthetic_only": true,
+  "runtime_astrology_rule_promotions": 0,
+  "real_human_predictive_validations": 0
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "ASTROLOGY_SOURCE_FOUR_ANCHORS_SYNTHETIC_SMOKE_RESULT_V1",
+  "status": "SYNTHETIC_ANSWERS_NOT_HUMAN_PREDICTIONS",
+  "source_model_candidate_is_frozen_for_humans": false,
+  "real_chart_engine_implemented_for_this_example": false,
+  "ordinal_support_is_calibrated_probability": false,
+  "nonastrological_external_baseline_tested": false,
+  "stratification_is_real_nuisance_matched": false,
+  "actual_preregistration_timestamp_exists": false,
+  "source_text_empirical_truth_confirmed": false,
+  "human_predictive_validations": 0,
+  "scenario": "constant_null_control",
+  "sealed_payload_sha256": "90c2efca96e284c9a319bd6fd348911463998abd2bc037ebaeb1d684da7aaf34",
+  "sealed_mapping_SHA256": "acd1fef1b9764bfac4525785ee1fd42e7dac2727880e829ee038aa9562db8a62",
+  "mock_responses_SHA256": "ca6a819b4d80fcb23a58c5bafdedbabd546d35148026187d7debb8253f96d46a",
+  "toy_candidate_chart_ids": [
+    "SYNTH-CHART-01",
+    "SYNTH-CHART-02",
+    "SYNTH-CHART-03",
+    "SYNTH-CHART-04"
+  ],
+  "toy_response_to_chart_score_matrix": [
+    [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ]
+  ],
+  "mean_diagonal_minus_no_chart_row_mean": 0.0,
+  "toy_case_rank_diagnostics": [
+    {
+      "fake_case": "SYNTH-P01",
+      "own_chart_score": 0.5,
+      "toy_row_mean_without_chart": 0.5,
+      "own_minus_toy_row_mean": 0.0,
+      "true_chart_midrank": 2.5,
+      "true_chart_percentile": 0.5,
+      "top1_tie_aware_credit": 0.25
+    },
+    {
+      "fake_case": "SYNTH-P02",
+      "own_chart_score": 0.5,
+      "toy_row_mean_without_chart": 0.5,
+      "own_minus_toy_row_mean": 0.0,
+      "true_chart_midrank": 2.5,
+      "true_chart_percentile": 0.5,
+      "top1_tie_aware_credit": 0.25
+    },
+    {
+      "fake_case": "SYNTH-P03",
+      "own_chart_score": 0.5,
+      "toy_row_mean_without_chart": 0.5,
+      "own_minus_toy_row_mean": 0.0,
+      "true_chart_midrank": 2.5,
+      "true_chart_percentile": 0.5,
+      "top1_tie_aware_credit": 0.25
+    },
+    {
+      "fake_case": "SYNTH-P04",
+      "own_chart_score": 0.5,
+      "toy_row_mean_without_chart": 0.5,
+      "own_minus_toy_row_mean": 0.0,
+      "true_chart_midrank": 2.5,
+      "true_chart_percentile": 0.5,
+      "top1_tie_aware_credit": 0.25
+    }
+  ],
+  "HD_existing_rank_metrics_reused": {
+    "case_count": 4,
+    "evaluated_case_count": 4,
+    "unevaluable_case_count": 0,
+    "top_1": 0.25,
+    "top_3": 0.75,
+    "top_5": 1.0,
+    "mean_reciprocal_rank": 0.4,
+    "mean_percentile": 0.5,
+    "mean_midrank": 2.5,
+    "median_midrank": 2.5,
+    "tie_rate": 1.0,
+    "tie_policy": "fractional-credit-random-within-tie"
+  },
+  "HD_existing_seeded_label_permutation_reused": {
+    "permutations": 512,
+    "observed_statistic": 0.0,
+    "null_mean": 0.0,
+    "null_standard_deviation": 0.0,
+    "null_q025": 0.0,
+    "null_median": 0.0,
+    "null_q975": 0.0,
+    "p_value": 1.0,
+    "alternative": "greater",
+    "seed": 190526,
+    "fixed_singleton_strata": []
+  },
+  "synthetic_only_interpretation": "Simulation proves scoring and tamper checks only. Its p-value does not test astrology in humans."
+}
