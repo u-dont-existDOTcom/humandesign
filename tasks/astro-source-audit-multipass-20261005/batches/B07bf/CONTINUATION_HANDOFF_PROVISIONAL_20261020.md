@@ -1,0 +1,11 @@
+# Original Lilly Travels B07bf provisional continuation — 20 October 2026
+
+Parent accepted source SHA fe84cb135a3aa976de34140ea39d99e0138aa862, Lilly 13,131 historical source records, Ptolemy 1,066; separate Chinese V9 BaZi210+ZiWei220. Isolated worktree /mnt/hdd/storage/joel/development-worktrees/humandesign/astro-lilly-b07bf-travels-20261020, branch research/astro-b07bf-clxxxiii-travels-source-20261020. Verify remote SHA before resuming. THIS BRANCH IS PROVISIONAL BEFORE CANONICAL INDEX APPEND.
+
+Original independently printed 1647 and 1659 Lilly CLXXXIII Of Travels covers folios758–760/PDF792–794. Eight page photos 758–761 exact SHA witnessed, 761 is next chapter boundary only. Source contains 61 provisional notes R13132–R13192, next R13193 CLXXXIIII/modern CLXXXIV Of Honours beginning bottom p760/PDF794. No older accepted rules modified.
+
+**Important:** Marginal prior merchant disclosure of 3 journeys by sea (2 Barbary,1 Holland) is not a prospective chart inference nor independently verified biography. Source future travel/prosperity/geography/danger conjectures remain historically conditional and unverified. The source has explicit overruling favorable directions and geographical conditions; no actual human accuracy. Full source review and leakage audit in B07bf.
+
+11 focused source tests and 11 cold ZIP-extracted source tests passed. Portable ZIP 20 original/source/code members with SHA/bytes and CRC: ~/Téléchargements/Astrology-Lilly-Original-Travels-1647-1659-B07bf-20261020.zip, size5492404, SHA256 59807f4c4ac7efcdab26a360e61fad6e40d46235f8af72b3061fe21ba8789c9b. Do not repeat successful original downloads or archive without source modification.
+
+**Next safe action:** guarded append source index from 13,131 to 13,192 Lilly, write recovery copies of old index/current state/Chinese V7, verify original photo and archive hashes, 61 source-only record IDs and no prediction promotion, create B07bf post-index tests and final remote commit/readback. Previous B07be post-index tests apply only to its frozen branch (expect prior terminal R13131). Do not merge separate Chinese source registers. Root goal remains full original Western/Chinese chart models and preregistered blinded human forward/reverse validation versus decoys/nonastrology baselines, 0 independently validated humans.

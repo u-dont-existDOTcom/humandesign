@@ -1,0 +1,42 @@
+{
+  "schema": "B07bf historical original source leakage, specific-vs-conditional forecast audit v1",
+  "status": "HISTORICAL_SOURCE_METHOD_AUDIT_ONLY_NOT_PREREGISTERED",
+  "source": "William Lilly, Christian Astrology, original 1647 & separately printed 1659, CLXXXIII Of Travels, original folios 758-760",
+  "merchant_was_already_known_to_author": true,
+  "source_author_preknown_voyage_report": {
+    "reported_total_beyond_sea": 3,
+    "reported_Barbary": 2,
+    "reported_Holland": 1,
+    "original_source_note_folio": 758,
+    "source_annotated_record_roles": [
+      "REPORTED_THREE_PREVIOUS_SEA_VOYAGES",
+      "REPORTED_TWO_BARBARY_VOYAGES",
+      "REPORTED_ONE_HOLLAND_VOYAGE"
+    ],
+    "biography_independently_verified": false,
+    "score_as_correct_chart_prediction": false,
+    "score_as_true_biographical_outcome": false,
+    "candidate_leakage_type": "already_disclosed_outcome_known_to_interpreter"
+  },
+  "preexisting_chart_residuals": {
+    "unverified_actual_1616_birthplace_clock": true,
+    "original_natal_Mercury_Venus_vs_verified_SWIEPH_discrepancy_open": true,
+    "original_1646_solar_revolution_local_meridian_clock_unverified": true
+  },
+  "conditional_claims_not_precise_outcomes": {
+    "shipwreck_and_fire_require_malevolent_direction": true,
+    "benevolent_direction_may_cancel_mars_danger": true,
+    "no_concrete_dates_for_shipwreck_fire_or_robbery": true,
+    "southeast_direction_is_qualified_by_Saturn": true,
+    "country_zodiac_regions_not_equivalent_to_geocoded_modern_nation": true,
+    "religion_dreams_partly_deferred_to_native": true
+  },
+  "provisional_batch_records": 61,
+  "historical_original_source_page_coverage": [758, 759, 760],
+  "new_next_chapter_boundary_printed_page": 760,
+  "actual_passed_forward_blind_human_tests": 0,
+  "actual_passed_reverse_blind_human_tests": 0,
+  "confirmed_merchant_voyages": 0,
+  "known_independent_travel_disaster_outcomes": 0,
+  "rule_model_runtime_promotions": 0
+}
