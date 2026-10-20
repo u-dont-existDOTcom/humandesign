@@ -1,0 +1,241 @@
+{
+  "title": "Lilly original 1646 September 19 CLXXII Sun return: old source daily interpolation vs true Swiss DE441 solar longitude and crossing",
+  "status": "SOURCE-ASTRONOMY-AND-TIMING-CALCULATION_ONLY; NO_HUMAN_PREDICTIVE_VALIDATION",
+  "source_original_review": "1647 first and 1659 second original printed735; source anchor images already stored",
+  "source_B07at_index_file": "tasks/astro-source-audit-multipass-20261005/batches/B07at/ORIGINAL_CLXXII_RETURN_INTERPOLATION_OPENING_V1.json",
+  "original_B07at_source_file_SHA256": "e78590e6c9cde54f356519f6c6b6f78b6a2348d91097cb7f9ed8aae1b27e5506",
+  "source_original_1647_1659_photo_witnesses": {
+    "original_1647_printed735": {
+      "repository_path": "tasks/astro-source-audit-multipass-20261005/batches/B07at/evidence/1647_original-769.jpg",
+      "sha256": "1bfe43b33cb3a2b5dceb754c0e8ae6a28127ef368b1acece01dbfbd0dd75b229",
+      "bytes": 789355,
+      "physical_original_source_perspective": "original_1647_printed735"
+    },
+    "independent_1659_printed735": {
+      "repository_path": "tasks/astro-source-audit-multipass-20261005/batches/B07at/evidence/1659_original_djvu_764.jpg",
+      "sha256": "b187fddab66a0b8a7f12f84b6fd3be2ff8737ee607fffc14e01f4989a1e811aa",
+      "bytes": 482841,
+      "physical_original_source_perspective": "independent_1659_printed735"
+    }
+  },
+  "source_original_day_solar_interpolation_values": {
+    "example_year_written": 1646,
+    "calendar_style_independently_confirmed": false,
+    "historical_source_month_day": "September 19",
+    "original_natal_longitude_sign": "Libra",
+    "original_natal_longitude_deg_min": [
+      6,
+      37
+    ],
+    "original_ephemeris_noon_deg_min": [
+      6,
+      12
+    ],
+    "remaining_arcminutes": 25,
+    "source_sun_daily_motion_arcminute_arcsecond": [
+      59,
+      10
+    ],
+    "historical_nearby_table_rate_arcminute_arcsecond": [
+      59,
+      8
+    ],
+    "twenty_arcminute_time_hms": [
+      8,
+      7,
+      2
+    ],
+    "five_arcminute_time_hms": [
+      2,
+      1,
+      45
+    ],
+    "source_sum_unrounded_time_hms": [
+      10,
+      8,
+      47
+    ],
+    "printed_later_minute_level_time_hm": [
+      10,
+      8
+    ],
+    "source_westward_meridian_subtract_hm": [
+      1,
+      7
+    ],
+    "source_local_time_after_noon_hm": [
+      9,
+      1
+    ],
+    "house_table_latitude_degrees": 53,
+    "house_table_noon_hm": [
+      12,
+      26
+    ],
+    "source_equation_of_time_hm": [
+      0,
+      16
+    ],
+    "source_house_table_final_hm": [
+      21,
+      43
+    ],
+    "source_MC_zodiac_sign": "Aquarius",
+    "source_MC_zodiac_degrees": 23,
+    "source_ascendant_sign": "Cancer",
+    "source_ascendant_deg_min": [
+      0,
+      32
+    ],
+    "printed_arithmetic_checked_not_actual_1646_sun_ephemeris": true
+  },
+  "swisseph_library_version": "2.10.03",
+  "ephe_files_verified_outside_repo": {
+    "sepl_12.se1": {
+      "original_upstream_url": "https://raw.githubusercontent.com/aloistr/swisseph/master/ephe/sepl_12.se1",
+      "sha256": "8dccace2557601a223d5f8a7cf64de4e6bbb8a82b9b130b95a54d49adfbe546d",
+      "bytes": 483743,
+      "released_outside_repo_binary_copied_into_humandesign": false
+    },
+    "semo_12.se1": {
+      "original_upstream_url": "https://raw.githubusercontent.com/aloistr/swisseph/master/ephe/semo_12.se1",
+      "sha256": "1c65fdbb854f350d3de36afc3e4ac126a53f360ae4f6dcb57beed7c690e7eb61",
+      "bytes": 1305932,
+      "released_outside_repo_binary_copied_into_humandesign": false
+    }
+  },
+  "solar_calculation_flags_request": 258,
+  "solar_calculation_return_flags": [
+    258,
+    258,
+    258
+  ],
+  "every_modern_solar_longitude_actual_swieph": true,
+  "no_moshier_fallback": true,
+  "reference_clock_unverified": "1646-09-19 12h UT is an analytic assumption, NOT original Frankfurt clock",
+  "original_17th_century_local_UT_and_date_style_resolved": false,
+  "source_known_merchant_retrospective_only": true,
+  "solar_return_source_modern_comparison": {
+    "original_source_ephemeris_nominal_calendar_date": [
+      1646,
+      9,
+      19
+    ],
+    "calendar_independent_year_month_day_old_style_verified": false,
+    "source_sun_noon_longitude_deg": 186.2,
+    "source_sun_natal_longitude_deg": 186.616666667,
+    "source_printed_noon_to_natal_arcmin": 25,
+    "source_daily_sun_motion_arcmin_arcsec": [
+      59,
+      10
+    ],
+    "source_Maginus_nearby_rate_arcmin_arcsec": [
+      59,
+      8
+    ],
+    "modern_Julian_date_noon_UT_sun_longitude_deg": 186.36618544,
+    "modern_Gregorian_date_noon_UT_sun_longitude_deg": 176.5398834,
+    "modern_Julian_noon_sun_degree_in_tropical_Libra": 6.36618544,
+    "modern_Julian_noon_minus_old_ephemeris_noon_arcmin": 9.97112642,
+    "modern_noon_Julian_daily_rate_arcmin_per_day": 59.136022207,
+    "modern_noon_Julian_daily_rate_arcmin_arcsecond": [
+      59,
+      8.1613324
+    ],
+    "source_Maginus_rate_minus_modern_noon_rate_arcsec": -0.1613324,
+    "source_daily_motion_minus_modern_noon_rate_arcsec": 1.8386676,
+    "source_time_20_arcmin_hms": [
+      8,
+      7,
+      2
+    ],
+    "source_time_5_arcmin_hms": [
+      2,
+      1,
+      45
+    ],
+    "source_time_addition_seconds": 36527,
+    "source_time_exact_sum_hms": [
+      10,
+      8,
+      47
+    ],
+    "source_truncated_clock_hm": [
+      10,
+      8
+    ],
+    "source_time_by_exact_25_over_Maginus_59_08_rate_seconds": 36527.6212,
+    "source_printed_10h08m47_if_UT_interpreted_as_HHMMSS": [
+      22,
+      8,
+      47
+    ],
+    "source_after_westward_meridian_subtraction_minutes": [
+      1,
+      7
+    ],
+    "source_house_table_final_hm_NOT_UT": [
+      21,
+      43
+    ],
+    "source_house_table_final_is_not_a_direct_astronomical_UT_datetime": true,
+    "modern_sun_when_original_source_6deg37_target_crossed": {
+      "crossing_JD_UT": 2322521.2541057356,
+      "target_original_or_modern_tropical_longitude_degrees": 186.616666667,
+      "longitude_at_computed_crossing_degrees": 186.616666657,
+      "sun_daily_speed_arcmin_per_day_at_crossing": 59.14605103,
+      "hours_after_1646_09_19_Julian_noon_assumed_UT": 6.09853765,
+      "source_day_is_Julian_not_modern_Gregorian": true,
+      "julian_calendar_root_date_time": {
+        "year": 1646,
+        "month": 9,
+        "day": 19,
+        "hour_decimal_UT_assumed": 18.09853765
+      },
+      "gregorian_calendar_root_date_time": {
+        "year": 1646,
+        "month": 9,
+        "day": 29,
+        "hour_decimal_UT_assumed": 18.09853765
+      },
+      "search_iterations_max": 65,
+      "returned_swieph": true,
+      "returned_moshier": false,
+      "historical_observed_return_clock_verified": false
+    },
+    "modern_1616_Julian_natal_at_assumed_UT_Sun_longitude_degrees": 186.728146277,
+    "modern_sun_when_modern_natal_Julian_1616_target_crossed": {
+      "crossing_JD_UT": 2322521.367190685,
+      "target_original_or_modern_tropical_longitude_degrees": 186.728146277,
+      "longitude_at_computed_crossing_degrees": 186.728146282,
+      "sun_daily_speed_arcmin_per_day_at_crossing": 59.15052377,
+      "hours_after_1646_09_19_Julian_noon_assumed_UT": 8.81257644,
+      "source_day_is_Julian_not_modern_Gregorian": true,
+      "julian_calendar_root_date_time": {
+        "year": 1646,
+        "month": 9,
+        "day": 19,
+        "hour_decimal_UT_assumed": 20.81257644
+      },
+      "gregorian_calendar_root_date_time": {
+        "year": 1646,
+        "month": 9,
+        "day": 29,
+        "hour_decimal_UT_assumed": 20.81257644
+      },
+      "search_iterations_max": 65,
+      "returned_swieph": true,
+      "returned_moshier": false,
+      "historical_observed_return_clock_verified": false
+    },
+    "modern_crossing_modern_natal_minus_crossing_old_natal_arcminutes": 6.688777,
+    "nominal_1646_source_clock_UT_equivalence_unverified": true,
+    "daily_rate_parity_does_not_prove_noon_original_longitude_or_return_clock": true
+  },
+  "historic_birth_certificate_and_source_UT_unverified": true,
+  "historically_exact_revolution_and_house_timings_authenticated": false,
+  "retrospective_merchant_study_not_blind": true,
+  "independently_scored_blind_actual_humans": 0,
+  "runtime_astrology_promotions": 0,
+  "new_historical_source_annotation_ids": 0
+}
