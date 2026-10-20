@@ -1,3 +1,9 @@
+# Chinese source V9: pinned BaZi Di Tian Sui chapters 13–18
+
+**56 source-only annotations BZI-R0155–BZI-R0210** from six pinned exact original transmitted Chinese oldids, seven original verses and 49 commentary spans. Important methodological limitations: calendar timing rules unverified, sex/morality stereotypes unendorsed, `十有九驗` apparent high-accuracy claim **not supported by any independently tested cases**. **Chinese 210 BaZi + 220 Zi Wei = 430 historical original-text annotations** (V1–V8 unchanged). Western **13,044 Lilly + 1,066 Ptolemy = 14,110** unchanged. Next **BZI-R0211**, **ZWD-R0221**. **Verified real-human forecasts 0; runtime promotions 0**.
+
+## Previously accepted source checkpoints retained
+
 # Zi Wei original Volume II further diagrams, Chinese source V8
 
 **19 exact source-only notes ZWD-R0202–ZWD-R0220** freeze original post-bureau Tian Fu, life/year-limit risk, four-transformations and 12-branch seven-grade star-conditions diagrams with exact Chinese text and individual byte offsets in oldid1963110. No calendar/chart decoder parity, mortality forecast or personal prediction established. **Chinese historical 154 BaZi + 220 Zi Wei = 374**. Independently already accepted Western **13,044 Lilly + 1,066 Ptolemy = 14,110** retained. V1–V7 immutable. Next **ZWD-R0221 Life palace** and **BZI-R0155**. **Actual human validations 0; runtime astrology promotions 0.**
