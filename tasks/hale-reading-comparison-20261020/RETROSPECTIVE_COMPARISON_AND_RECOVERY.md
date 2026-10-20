@@ -1,3 +1,5 @@
+> **2026-10-20 CORRECTION — PRIOR MATCH COUNTS WITHDRAWN:** The “six strong” versus “four strong” retrospective descriptive tallies below **did not consistently penalize opposite alternatives, hedged possibilities, broad menus or untested capacities**. They must not be cited as a ranking. See [ALTERNATIVE_OUTCOME_CONTRADICTION_AUDIT_V2.md](ALTERNATIVE_OUTCOME_CONTRADICTION_AUDIT_V2.md) for the corrected symmetric rules and full twelve-domain disposition. The discussion below is historical audit provenance, not current scored results.
+
 # Extended Lahiri reading versus frozen HumanDesign model — recovery and provisional comparison
 Date: 2026-10-20 (Africa/Dakar, UTC+0)
 Status: RETROSPECTIVE_QUALITATIVE_AUDIT; NOT BLINDED PREDICTIVE VALIDATION
@@ -39,7 +41,7 @@ Code: S = strong directional qualitative resonance; P = partial/generic resonanc
 | 11. Actual external visibility, reputation and recognition | U | U | Subjective survey alone does not establish external success, public reputation, job rank or third-party impressions |
 | 12. Dated life events and precise period timing | U | U | The survey contains no suitable independently dated events; future time windows remain open |
 
-Counts across exactly these twelve selected topics:
+HISTORICAL / SUPERSEDED — counts across exactly these twelve selected topics:
 - Extended Vedic: 6 S, 3 P, 1 M, 2 U.
 - Frozen astrology-only V2: 4 S, 3 P, 1 M, 2 N, 2 U.
 - These **must not** be reported as 60%, 40%, hit rate, NetInformation, p-value, or a head-to-head win. Different claim volume, conditioning, domain selection after observation, dependence among responses, and absent decoys invalidate that interpretation.
