@@ -1,3 +1,9 @@
+# Chinese source V10 — first four Zi Wei Life-palace original profiles
+
+**89 historical source-only annotations ZWD-R0221–ZWD-R0309** (88 original lines for ZiWei/TianJi/TaiYang/WuQu and 1 next TianTong navigation marker) each original exact Unicode codepoint and UTF8 source byte offset/SHA independently verified against Wikitext oldid1963110. This is PARTIAL Life-palace text, not authentic Ming woodblock or real-person predictive evidence. Old fortune/body/sex/mortality claims have no human validations. **Chinese BaZi210 unchanged + ZiWei309 =519** source notes; Western accepted B07bg Lilly13236+Ptolemy1066 lives on separate branch (aggregate source counts **14,821**, not merged). Inherited Western B07bc historical snapshot remains unmodified. Next **ZWD-R0310 TianTong**, original codepoint22909, **BZI-R0211** Di Tian Sui section19. Human real prospective/reverse blind tests **0**, runtime astro rules promoted **0**.
+
+## Previous accepted historical source retained
+
 # Chinese source V9: pinned BaZi Di Tian Sui chapters 13–18
 
 **56 source-only annotations BZI-R0155–BZI-R0210** from six pinned exact original transmitted Chinese oldids, seven original verses and 49 commentary spans. Important methodological limitations: calendar timing rules unverified, sex/morality stereotypes unendorsed, `十有九驗` apparent high-accuracy claim **not supported by any independently tested cases**. **Chinese 210 BaZi + 220 Zi Wei = 430 historical original-text annotations** (V1–V8 unchanged). Western **13,044 Lilly + 1,066 Ptolemy = 14,110** unchanged. Next **BZI-R0211**, **ZWD-R0221**. **Verified real-human forecasts 0; runtime promotions 0**.
