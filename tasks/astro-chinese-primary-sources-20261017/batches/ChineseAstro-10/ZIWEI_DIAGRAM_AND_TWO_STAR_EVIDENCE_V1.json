@@ -1,0 +1,90 @@
+{
+  "schema": "ChineseAstro-10 Zi Wei five-bureau source-diagram and two-star partial natal mechanics v1",
+  "status": "PROVISIONAL RESEARCH ENGINE PARITY ONLY; historical annotation registry immutable",
+  "source": {
+    "original_transmitted_chinese": "紫微斗數全書 卷二, Wikisource pinned oldid 1963110",
+    "canonical_exact_full_text_sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+    "frozen_source_path": "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-07/SOURCE_ORIGINAL_ZIWEI_VOL2_1963110_RAW.txt",
+    "earliest_printed_imprint_authenticated": false,
+    "source_sections": ["安身命例", "起五行寅例", "六十花甲子纳音歌", "水二局", "木三局", "金四局", "土五局", "火六局", "安天府图"]
+  },
+  "five_original_bureau_diagrams": {
+    "raw_number_of_diagrams": 5,
+    "total_possible_bureau_day_pairs": 150,
+    "printed_labels": 149,
+    "distinct_calendar_day_entries": 148,
+    "raw_unambiguous_source_positions": 147,
+    "two_missing_day_positions": [
+      {"bureau": "Wood3", "day": 5, "qualified_placement": "Yin", "qualified_status": "modern_collation, not in original diagram"},
+      {"bureau": "Metal4", "day": 30, "qualified_placement": "Hai", "qualified_status": "rule_inference, not in original diagram"}
+    ],
+    "one_ambiguous_day_position": {
+      "bureau": "Wood3",
+      "day": 9,
+      "source_palaces": ["Chen", "Yin"],
+      "qualified_placement": "Chen",
+      "qualified_status": "ambiguity_resolved, not an unambiguous original reading"
+    },
+    "separate_modern_remainder_complement_comparator": {
+      "n": "element bureau 2,3,4,5,6",
+      "d": "independently resolved lunar day 1..30",
+      "complement": "(n - d%n)%n",
+      "quotient": "(d+complement)//n",
+      "start": "Yin + quotient - 1",
+      "remaining_adjustment": "complement forward if even; backward if odd",
+      "original_unambiguous_readings_matching": 147,
+      "original_unambiguous_readings_tested": 147,
+      "post_variant_readings_matching": 150,
+      "post_variant_readings_tested": 150,
+      "independent_classical_print_parity": false,
+      "independent_real_person_accuracy": false
+    }
+  },
+  "composite_year_stem_life_palace_lunar_day_space": {
+    "total": 3600,
+    "raw_direct": 3412,
+    "raw_unresolved_bureau": 120,
+    "raw_missing_purple": 46,
+    "raw_ambiguous_purple": 22,
+    "raw_unresolved_total": 188,
+    "opted_in_emendation_syntactically_resolved": 3600,
+    "parity_against_same_modern_source_algorithm": 3600,
+    "not_claimed_as_independent_natal_chart_parity": true
+  },
+  "bounded_two_star_skeleton": {
+    "inputs": ["original_source_convention_year_heavenly_stem", "resolved_chinese_lunar_month", "resolved_earthly_branch_birth_hour", "resolved_chinese_lunar_day"],
+    "life_body_palaces": "existing volume-II month/hour directional rule",
+    "palace_stem": "existing original year-stem -> Yin-first-stem mapping",
+    "bureau": "NaYin source with explicit optional variant normalization",
+    "ziwei": "original five source diagrams, source-variant switches opt in",
+    "tianfu": "original 安天府图 reflection, birth Zi Wei branch index j => Tian Fu index (4-j)%12",
+    "principal_stars_reproduced_of_14": 2,
+    "original_worked_source_rule_example": {
+      "inputs": "Jia year, first lunar month, Zi birth hour, lunar day one",
+      "life_body": ["Yin", "Yin"],
+      "palace_stem": "Bing",
+      "bureau": 6,
+      "ziwei": "You",
+      "tianfu": "Wei"
+    },
+    "leap_month_choice": "pinned traditional QuanShu 'leap as next' is explicitly chosen; alternatives untested",
+    "runtimes_promoted": 0
+  },
+  "gates": {
+    "original_source_hash_enforced": true,
+    "source_diagram_parser_structural_unit_tests_passed": 11,
+    "two_star_skeleton_unit_tests_passed": 9,
+    "previous_nayin_unit_tests_passed": 12,
+    "existing_chinese_source_mechanics_passed": 38,
+    "gregorian_to_lunar_calendar": false,
+    "lunar_month_and_birth_hour_true_solar_time_parity": false,
+    "independent_full_fourteen_star_chart_parity": false,
+    "original_ming_dated_witness": false,
+    "frozen_human_model": false,
+    "preregistered_actual_person_tests": 0,
+    "independently_successful_human_predictions": 0
+  },
+  "historical_source_index_unchanged": true,
+  "western_source_index_unchanged": true,
+  "next_sources": ["Lilly R13045 CLXXXI", "BZI-R0211 Di Tian Sui", "ZWD-R0221 Life-palace section"]
+}
