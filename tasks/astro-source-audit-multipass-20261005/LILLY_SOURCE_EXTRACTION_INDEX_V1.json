@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXXXIII_TRAVELS_PHYSICAL_SOURCE_COVERED_NEXT_CLXXXIIII_HONOURS",
-  "records_count": 13192,
+  "status": "BOOK_III_CLXXXIIII_HONOURS_SOURCE_COVERED_NEXT_FRIENDS_PRINTED_CLXXXIII",
+  "records_count": 13236,
   "read_numbered_chapters": [
     1,
     2,
@@ -187,7 +187,8 @@
     180,
     181,
     182,
-    183
+    183,
+    184
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1429,27 +1430,34 @@
       "records_count": 61,
       "sha256": "babc033509b29aa97ab93c517d283bf4d8d2060fcb699c367686ed47206b9710",
       "scope": "Original Lilly independent 1647 and separately typeset 1659 CLXXXIII Ninth-house Of Travels printed folios758-760/first PDF792-794 (next CLXXXIIII Honours begins below divider on p760). 61 source-only R13132-R13192 including author-disclosed past sea voyages two Barbary and one Holland (NOT blind forecasts), nonvalidated directional, business success, conditional shipping/fire/robbery hazard, benevolent direction mitigation and zodiac-country associations; no merchant travel documentation, no actual human predictive results and no runtime promoted rules."
+    },
+    {
+      "id": "B07bg",
+      "path": "batches/B07bg/RULES.json",
+      "records_count": 44,
+      "sha256": "54ce55bfd25014677c5eb0cc6e77e7394593cdb07d4f586a510c6311673d9b21",
+      "scope": "Original Lilly independent 1647/1659 tenth-house literal Chap CLXXXIIII (editorial184), Honours, Preferment, Magistery p760–762/PDF794–796, 44 historical source-only R13193–R13236. Profession/career choices and trades Mars/metal, Venus/jewels, Mercury/accounts, class and effort qualifications, conditional directed advancement, possible fame and office. Reuses old same Venus Cazimi natal premise from Marriage and is not independent human evidence. Next eleventh-house Friends original p762 is printed CLXXXIII, repeated from earlier Travels and numerically backwards after CLXXXIIII; editorial sequence ordinal185. No actual merchant career records/honours corroborated, no prospective human predictive study, no runtime promotion."
     }
   ],
   "next": {
-    "pdf_page": 794,
-    "printed_page": 760,
-    "chapter": "CLXXXIIII",
-    "printed_chapter_numeral": "CLXXXIIII",
-    "editorial_source_sequence_ordinal": 184,
-    "heading": "Honours, Preferment, Magistery, and with what repute",
+    "pdf_page": 796,
+    "printed_page": 762,
+    "chapter": "CLXXXIII",
+    "printed_chapter_numeral": "CLXXXIII",
+    "editorial_source_sequence_ordinal": 185,
+    "heading": "Of Friends",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "First 1647 original p760/PDF794 begins CLXXXIIII Honours below a horizontal divider after CLXXXIII Travels, continuing p761; first next source annotation R13193. The 1659 original similarly has a physically separate tenth-house chapter.",
-    "research_scope": "Known native vocational standing and honours interpreted by Mars tenth, Venus/Mercury/Sun and fixed stars, not blind real human career/fame validation."
+    "position": "1647 first original p762/PDF796 below hard divider from source CLXXXIIII Honours contains new eleventh-house printed CLXXXIII Of Friends, repeating prior Travels roman heading. The separately printed 1659 edition has the same source anomaly. First next historic source note R13237. Folio763 already photographed first/second for physical next chapter boundary.",
+    "research_scope": "Original source relations/friends and social standing for known merchant, not modern friend-selection or empirically validated relationship or business partner predictions."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 99,
+  "read_headed_units_count": 100,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261020_B07bf_TRAVELS.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261020_B07bg_HONOURS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1962,6 +1970,31 @@
       "benevolent_directions_can_override_source_bad_travel_inference": true,
       "actual_real_human_predictive_test_count": 0,
       "runtime_astrological_promotions": 0
+    },
+    {
+      "printed_chapter": "CLXXXIIII",
+      "editorial_ordinal": 184,
+      "heading": "Honours, Preferment, Magistery",
+      "original_source_start_pdf": 794,
+      "accepted_through_original_pdf": 796,
+      "printed_folios": [
+        760,
+        761,
+        762
+      ],
+      "source_batch": "B07bg",
+      "historical_start": "R13193",
+      "historical_end": "R13236",
+      "physical_source_span_covered": true,
+      "complete": true,
+      "original_printings_two_edition_page_SHA_and_bytes_verified": true,
+      "original_birth_Sun_Venus_Cazimi_reused_from_prior_marriage": true,
+      "source_epoch_birth_UT_and_cazimi_independent_astronomy_verified": false,
+      "printed_next_Friends_Roman_CLXXXIII_regresses_to_earlier_Travels_label": true,
+      "expert_blinded_diplomatic_edition_all_astro_glyphs_finished": false,
+      "actual_known_merchant_occupation_reputation_verified": false,
+      "human_predictive_accuracy_validations": 0,
+      "runtime_astrological_promotions": 0
     }
   ],
   "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166.",
@@ -1984,5 +2017,6 @@
   "chapter_CLXXX_historical_medical_social_claims_unverified": "Original 1647/1659 first/second printing preserved as historical sixth-house and servants predictions for known merchant. No independent real patient records, medical etiological truth, servants trust outcomes, source-critical astrological glyphs, or old-epoch chart engine validated. Avoid historical discriminatory servant selection advice.",
   "chapter_CLXXXI_original_specific_numerical_outcome_caution": "Lilly original 1647/1659 known merchant marriage source predicts only two wives/two sweethearts and marriage after age29, spouse appearances, inheritance and opposing wife origins; nothing is independently biographically verified or a blinded predictive success. Claimed Venus in Cazimi is at 17arcmin original printed exact whole-minute border, but differs >73arcmin from SWIEPH under one explicitly uncertain true-Julian UT hypothesis. This is a source/chart input inconsistency, not evidence about a real wife.",
   "chapter_CLXXXII_children_source_conflicting_count_and_survival": "17th-century author's own known-merchant fifth-house example first asserts combustion and barren Gemini contraindicate issue, then overrides it to predict children. Interim 'probability of four' is qualified by two claimed lost children and two/three female possibilities; the Moon–Mars sextile is used as both favorable for fertility and negative child mortality testimony. No independent children register, survival or gender record; no medical validity or production astrology rule.",
-  "chapter_CLXXXIII_source_leakage_and_conditions_note": "Lilly's original 1647/1659 CLXXXIII printed marginal report says his already-known merchant previously travelled by sea three times, twice Barbary and once Holland. This is preknown narrative data, not a successful chart inference or verified travel manifest. Other travel directions/fortune/disasters are conditional on mutable astrological directions and some can be cancelled; no merchant real-life events or prospective forecast validity authenticated."
+  "chapter_CLXXXIII_source_leakage_and_conditions_note": "Lilly's original 1647/1659 CLXXXIII printed marginal report says his already-known merchant previously travelled by sea three times, twice Barbary and once Holland. This is preknown narrative data, not a successful chart inference or verified travel manifest. Other travel directions/fortune/disasters are conditional on mutable astrological directions and some can be cancelled; no merchant real-life events or prospective forecast validity authenticated.",
+  "chapter_CLXXXIIII_printed_roman_regression_and_cazimi_source_warning": "Original first+second edition Honours literally CLXXXIIII but next Friends literally CLXXXIII even though editorially numbered185, reusing earlier Travels literal. Source again cites Venus Cazimi from same old chart as Marriage: nominal printed17 arcminute Sun-Venus vs independent modern Swiss ~75 arcminute at uncertain Julian UT, not second independent chart support. Broad multiple professions/wealth/honours are not real-person blind predictions."
 }

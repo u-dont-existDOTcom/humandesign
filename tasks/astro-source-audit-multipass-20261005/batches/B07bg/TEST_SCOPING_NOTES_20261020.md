@@ -1,0 +1,3 @@
+# Test scopes for B07bg original Honours
+
+The original source fixture `test_b07bg_original_honours.py` has 13 source/photograph/qualified-Cazimi/Roman-numeral tests. After guarded acceptance `test_b07bg_post_index.py` has 12 index recovery, earlier-source immutability and empirical-nonvalidation tests. Older B07bf post-index tests deliberately assert prior last batch B07bf and must not run against the valid B07bg current source index; they remain correct in its frozen predecessor branch. Source cold portable ZIP replays original-only tests13/13. No genuine real-person academic predictive validation.
