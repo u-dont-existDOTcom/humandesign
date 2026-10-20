@@ -1,0 +1,43 @@
+{
+  "schema": "ZIWEI_TIANFU_CONDITIONAL_MIRROR_12_PALACES_V1",
+  "source_witness": {
+    "original_oldid": 1963110,
+    "original_Chinese_excerpt_sha256": "af275fb6c7b4c2235fea69d3a338066f7ed640541df8f44ed3fd8357d5d200e7",
+    "source_original_diagram_witness_sha256": "22b22edb3f6e757237375c1a38385b7eecf59ec5ac198ffe3e81c92c8ca7c8c9",
+    "independent_physical_early_edition_authenticated": false
+  },
+  "derivation": "Involution i -> (4-i) mod12, reflecting 12 branches about fixed Yin and Shen axes, consistent with accepted transmitted reference diagram and Chou/Mao example.",
+  "branch_order": [
+    "Zi",
+    "Chou",
+    "Yin",
+    "Mao",
+    "Chen",
+    "Si",
+    "Wu",
+    "Wei",
+    "Shen",
+    "You",
+    "Xu",
+    "Hai"
+  ],
+  "tianfu_branch_if_given_ziwei_branch": {
+    "Zi": "Chen",
+    "Chou": "Mao",
+    "Yin": "Yin",
+    "Mao": "Chou",
+    "Chen": "Zi",
+    "Si": "Hai",
+    "Wu": "Xu",
+    "Wei": "You",
+    "Shen": "Shen",
+    "You": "Wei",
+    "Xu": "Wu",
+    "Hai": "Si"
+  },
+  "ziwei_principal_star_birth_palace_known_from_calendar": false,
+  "independently_verified_against_classical_early_source_or_golden_chart": false,
+  "can_generate_fourteen_principal_stars": false,
+  "human_outcomes_and_predictions_validated": 0,
+  "runtime_astrology_promotions": 0
+}
