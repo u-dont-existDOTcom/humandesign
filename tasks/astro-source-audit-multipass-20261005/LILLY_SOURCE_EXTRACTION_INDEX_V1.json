@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXXIX_PARENTS_PHYSICAL_SOURCE_COVERED_NEXT_CLXXX_SICKNESSE_SERVANTS",
-  "records_count": 13017,
+  "status": "BOOK_III_CLXXX_SICKNESSE_SERVANTS_PHYSICAL_SOURCE_COVERED_NEXT_CLXXXI_MARRIAGE",
+  "records_count": 13044,
   "read_numbered_chapters": [
     1,
     2,
@@ -183,7 +183,8 @@
     176,
     177,
     178,
-    179
+    179,
+    180
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1397,27 +1398,34 @@
       "records_count": 26,
       "sha256": "d7da95d19c8c7862febd422765ea4322130b823ba303b2053dc1a6dc4033dfe4",
       "scope": "Original first-edition Lilly CLXXIX Of Parents printed752–753 PDF786–787, compared with independently typeset 1659 printed752–753. 26 source-only annotations R12992–R13017. Lilly conjectures parental character, stature, property, parental marriage, affection and possible mother longer lived without independent observation. He attributes to Ptolemy a derived hypothetical parent chart from firstborn child's chart with day/night significator conditions, 40-degree parent significator pole, plus30-degree solar oblique ascension house technique, example father 6°37 Libra. No actual parent birth time, checked horoscope/ephemeris, external Ptolemy original corroboration or successful human out-of-sample prediction. Separate following CLXXX Sicknesse, Servants begins printed753 after physical divider; zero human validations and model promotions."
+    },
+    {
+      "id": "B07bc",
+      "path": "batches/B07bc/RULES.json",
+      "records_count": 27,
+      "sha256": "eff93d28fa9d7204c760d0f49d294df6806f530c75d2b748cca8b834bb6d1f81",
+      "scope": "Original Lilly 1647 CLXXX sixth-house Sicknesse, Servants printed753–754/PDF787–788, compared with independently typeset 1659 printed753–754/DjVu782–783. 27 source-only historical R13018–R13044: Mercury sixth/servants lord, Saturn ascendant ruler, Moon/Oculus Taurus and Mars conditions, archaic blood corruption and fever causality, illness variation and purported mitigation, old page119/247 crossrefs, social/servant predictions and discriminatory red-haired stereotype. Original aspect glyphs, real diagnoses/records, chart parity, independent outcomes unverified. CLXXXI Marriage distinct below divider printed754/PDF788. Zero human predictions validated; zero runtime rules promoted."
     }
   ],
   "next": {
-    "pdf_page": 787,
-    "printed_page": 753,
-    "chapter": "CLXXX",
-    "printed_chapter_numeral": "CLXXX",
-    "editorial_source_sequence_ordinal": 180,
-    "heading": "Sicknesse, Servants",
+    "pdf_page": 788,
+    "printed_page": 754,
+    "chapter": "CLXXXI",
+    "printed_chapter_numeral": "CLXXXI",
+    "editorial_source_sequence_ordinal": 181,
+    "heading": "Of Marriage",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "First original Lilly 1647 printed p753/PDF787, below the Parents chapter divider begins distinct CHAP CLXXX Sicknesse, Servants. Next historical source R13018. Prior Parents source contains unverified mortality, family affection and hypothetical parent chart; do not re-extract that accepted chapter.",
-    "research_scope": "Historical sixth-house conditions, diseases and servitude of known native chart; document old health rhetoric only, without clinical inferences, prescriptions or real human medical prediction validity."
+    "position": "1647 printed754/PDF788 below clear divider from sixth-house CLXXX; seventh-house CHAP CLXXXI Of Marriage starts on same folio. Next historical note R13045. Previous medical/servants forecasts are source-only and not outcomes.",
+    "research_scope": "Original seventh-house marriage source clauses about known native. No real-person confirmation or unblinded human predictive validation."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 95,
+  "read_headed_units_count": 96,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261020_B07bb_PARENTS.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261020_B07bc_SICKNESSE_SERVANTS.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1823,6 +1831,29 @@
       "derived_parent_birth_chart_independently_verified": false,
       "independent_human_predictions_validated": 0,
       "runtime_model_promoted": false
+    },
+    {
+      "printed_chapter": "CLXXX",
+      "editorial_ordinal": 180,
+      "chapter_heading": "Sicknesse, Servants",
+      "physical_source_start_pdf": 787,
+      "accepted_through_pdf": 788,
+      "printed_folios": [
+        753,
+        754
+      ],
+      "source_batch": "B07bc",
+      "historical_start": "R13018",
+      "historical_end": "R13044",
+      "complete": true,
+      "physical_source_span_covered": true,
+      "source_expert_diplomatic_collation_complete": false,
+      "original_astrological_glyphs_fully_collated": false,
+      "independent_historical_chart_engine_parity": false,
+      "historical_merchant_medical_outcomes_independently_verified": false,
+      "historical_servant_behavior_independently_verified": false,
+      "independent_human_predictions_validated": 0,
+      "runtime_model_promoted": false
     }
   ],
   "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166.",
@@ -1841,5 +1872,6 @@
   "source_CLXXVI_negative_evidence_and_original_boundary_note": "B07ay covers all five printed pages745–749 of first CHAP CLXXVI, with 1659 independent printing witnesses, and explicitly preserves the historical Saturn throat blemish conjecture followed by 'I can find none.' as negative evidence. Physical chapter ends on p749 above separate CLXXVII. Single-reader source documentation does not verify natal chart epoch, human traits, predictive accuracy or independent expert textual collation.",
   "chapter_CLXXVII_source_case_not_a_blind_person_prediction": "B07az original 1647/1659 Of Riches case for a merchant already known to Lilly, 29 documentary annotations; predictions about wealth before age35, later property/inheritance, relatives and lawsuits are historical source claims and no actual human outcomes validated. Second-house Aquarius 23°30 source versus shortened secondary 23.3. First CLXXVII chapter physically ends p751 above new CLXXVIII Brethren.",
   "chapter_CLXXVIII_known_count_posthoc_source_warning": "B07ba original 1647/1659 chapter states few siblings under a strict Ptolemaic indicator, then reports already known 7 brothers and 1 sister and reinterprets additional factors. The source itself warns it is difficult to judge exact number. Do not count reported siblings as independent validation, the later reconciliation as preregistered matching, or health/mortality/estate conjectures as proved individual events.",
-  "chapter_CLXXIX_historical_parent_claims_not_empirically_tested": "B07bb prints historical source conjectures about real parents of a previously known merchant, but neither father/mother actual birth chart, independent parents' lifespan, affection, property or other outcomes are validated. Ptolemy-derived hypothetical parent chart is not a natal chart with independently sourced real birth data; not a human predictive success."
+  "chapter_CLXXIX_historical_parent_claims_not_empirically_tested": "B07bb prints historical source conjectures about real parents of a previously known merchant, but neither father/mother actual birth chart, independent parents' lifespan, affection, property or other outcomes are validated. Ptolemy-derived hypothetical parent chart is not a natal chart with independently sourced real birth data; not a human predictive success.",
+  "chapter_CLXXX_historical_medical_social_claims_unverified": "Original 1647/1659 first/second printing preserved as historical sixth-house and servants predictions for known merchant. No independent real patient records, medical etiological truth, servants trust outcomes, source-critical astrological glyphs, or old-epoch chart engine validated. Avoid historical discriminatory servant selection advice."
 }

@@ -9,3 +9,5 @@ Verified starting Git state: source admission 964d08bb; subsequent handoff-only 
 This is a recovery checkpoint, not accepted scientific or documentary results.
 
 Original 1659 printed754 / DjVu783 source photograph retrieved and visually inspected on distinct independently typeset print. Archived `evidence/1659_original_djvu_783.jpg`, SHA-256 81bee657eb018148ba1ab2fede8ea9a19047f0fda99a4425bbeee30ac050dfc3; its source URL and retrieval chain are in `SOURCE_IMAGE_1659_754_RETRIEVAL.json`. This is a hosted page-image derivative; full original DjVu binary hash is **not** claimed. CLXXXI divider agrees with first edition.
+
+**Source admission prepared on B07bc worktree:** 27 records R13018–R13044, four SHA-witnessed page images, archived ZIP with 44 extracted tests, guarded index append and 12 new post-index tests passed. The original B07bb 12 tests pass on original B07bb checkpoint only; test assumptions pin original ledger. Canonical changes are staged for exact Git remote publication; this working-stage file is superseded by any later accepted handoff.

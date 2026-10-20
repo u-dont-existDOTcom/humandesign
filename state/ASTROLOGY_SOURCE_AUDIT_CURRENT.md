@@ -1,3 +1,9 @@
+# Lilly 1647/1659 original CLXXX Sicknesse, Servants — source covered (B07bc)
+
+**27 source-only documentary notes R13018–R13044** from original printed753–754/PDF787–788 and independent 1659 typesetting. Historical sixth-house health rhetoric includes blood-corruption theory, fever, illness changes, mitigating directions and remedies; servants section makes unsupported trustworthiness and red-haired stereotypes. Neither constitutes medical truth, personnel advice or independent predictions. **13,044 Lilly + 1,066 Ptolemy = 14,110 Western historical annotations**. Chinese V7 **154 BaZi + 201 Zi Wei = 355**, unchanged. Physical original CLXXX chapter boundary covered but critical glyphs, independently calculated natal/timing engine and human prediction outcomes remain unverified. Next **R13045**, original PDF788/printed754 **CLXXXI Of Marriage** below divider. Zero validated human forecasts, no runtime model promotion.
+
+## Previous accepted historical checkpoint retained
+
 # Lilly 1647 original CLXXIX Of Parents: physical source covered (B07bb)
 
 **26 historical documentary records R12992–R13017** from original 1647 printed752–753/PDF786–787 and separately typeset 1659 originals. The text conjectures parents' character, affection, finances and relative lifespan in a known merchant case and reports a Ptolemy-attributed technique to derive a hypothetical parent's chart from the firstborn's natal chart. No independent parent's actual birth time, real natal horoscope or observed family outcome has been verified. **13,017 Lilly + 1,066 Ptolemy = 14,083 Western historical annotations**; Chinese V7 **154 BaZi + 201 Zi Wei = 355**, unchanged. CLXXIX original source span covered but critical textual verification and predictive outcomes remain unproven. Next **R13018**, original PDF787/printed753 **CLXXX Sicknesse, Servants**, below the distinct physical divider. Zero actual human predictive validations and no model runtime promotions.
