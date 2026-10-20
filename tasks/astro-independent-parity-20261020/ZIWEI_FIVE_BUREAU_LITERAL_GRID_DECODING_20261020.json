@@ -1,0 +1,1671 @@
+{
+  "schema": "ZIWEI_FIVE_ORIGINAL_BUREAU_DAY_GRID_LITERAL_DECODER_V1",
+  "source_Chinese_Wikisource_oldid": 1963110,
+  "source_original_full_text_sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+  "source_author_original_printing_authenticated": false,
+  "scope": "Recover written day labels from vertically stacked original ASCII source grids, NO birthday/calendar engine and no actual star positions unless input bureau and literal table both verified.",
+  "total_source_diagrams": 5,
+  "total_missing_day_labels": 2,
+  "total_duplicate_day_labels": 1,
+  "all_five_grid_day_maps_unique_and_complete": false,
+  "source_to_birth_calendar_engine_parity_verified": false,
+  "astronomical_birthhour_month_bureau_mapping_verified": false,
+  "empirical_real_person_prediction_validation": 0,
+  "runtime_astrology_model_promotions": 0,
+  "source_original_diagrams_decoded_with_explicit_anomalies": [
+    {
+      "original_source_bureau": "水二局",
+      "original_absolute_codepoint_span": [
+        4306,
+        5795
+      ],
+      "original_grid_utf8_SHA256": "e87516e6c9d75133ce8be8ea4b4cba8b87f446f748517a78b13a6bbc9b4c477f",
+      "transmitted_original_label_count": 30,
+      "unique_lunar_days_present": 30,
+      "day_to_palace_only_when_single_original_label": {
+        "1": "Chou",
+        "2": "Yin",
+        "3": "Yin",
+        "4": "Mao",
+        "5": "Mao",
+        "6": "Chen",
+        "7": "Chen",
+        "8": "Si",
+        "9": "Si",
+        "10": "Wu",
+        "11": "Wu",
+        "12": "Wei",
+        "13": "Wei",
+        "14": "Shen",
+        "15": "Shen",
+        "16": "You",
+        "17": "You",
+        "18": "Xu",
+        "19": "Xu",
+        "20": "Hai",
+        "21": "Hai",
+        "22": "Zi",
+        "23": "Zi",
+        "24": "Chou",
+        "25": "Chou",
+        "26": "Yin",
+        "27": "Yin",
+        "28": "Mao",
+        "29": "Mao",
+        "30": "Chen"
+      },
+      "duplicate_original_day_assignments": {},
+      "missing_days_1_to_30": [],
+      "raw_cell_labels_reversible": [
+        {
+          "palace": "Si",
+          "prefix_row": "初初",
+          "unit_row": "八九",
+          "printed_earthly_branch": "巳"
+        },
+        {
+          "palace": "Wu",
+          "prefix_row": "初十",
+          "unit_row": "十一",
+          "printed_earthly_branch": "午"
+        },
+        {
+          "palace": "Wei",
+          "prefix_row": "十十",
+          "unit_row": "二三",
+          "printed_earthly_branch": "未"
+        },
+        {
+          "palace": "Shen",
+          "prefix_row": "十十",
+          "unit_row": "四五",
+          "printed_earthly_branch": "申"
+        },
+        {
+          "palace": "Chen",
+          "prefix_row": "初初三",
+          "unit_row": "六七十",
+          "printed_earthly_branch": "辰"
+        },
+        {
+          "palace": "You",
+          "prefix_row": "十十",
+          "unit_row": "六七",
+          "printed_earthly_branch": "酉"
+        },
+        {
+          "palace": "Mao",
+          "prefix_row": "初初廿廿",
+          "unit_row": "四五八九",
+          "printed_earthly_branch": "卯"
+        },
+        {
+          "palace": "Xu",
+          "prefix_row": "十十",
+          "unit_row": "八九",
+          "printed_earthly_branch": "戌"
+        },
+        {
+          "palace": "Yin",
+          "prefix_row": "初初廿廿",
+          "unit_row": "二三六七",
+          "printed_earthly_branch": "寅"
+        },
+        {
+          "palace": "Chou",
+          "prefix_row": "初廿廿",
+          "unit_row": "一四五",
+          "printed_earthly_branch": "丑"
+        },
+        {
+          "palace": "Zi",
+          "prefix_row": "廿廿",
+          "unit_row": "二三",
+          "printed_earthly_branch": "子"
+        },
+        {
+          "palace": "Hai",
+          "prefix_row": "二廿",
+          "unit_row": "十一",
+          "printed_earthly_branch": "亥"
+        }
+      ],
+      "literal_decoded_day_glyphs": [
+        {
+          "day": 8,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "初八"
+        },
+        {
+          "day": 9,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "初九"
+        },
+        {
+          "day": 10,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "初十"
+        },
+        {
+          "day": 11,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "十一"
+        },
+        {
+          "day": 12,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "十二"
+        },
+        {
+          "day": 13,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "十三"
+        },
+        {
+          "day": 14,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "十四"
+        },
+        {
+          "day": 15,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "十五"
+        },
+        {
+          "day": 6,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "初六"
+        },
+        {
+          "day": 7,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "初七"
+        },
+        {
+          "day": 30,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "三",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "三十"
+        },
+        {
+          "day": 16,
+          "palace_earthly_branch": "You",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "十六"
+        },
+        {
+          "day": 17,
+          "palace_earthly_branch": "You",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "十七"
+        },
+        {
+          "day": 4,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "初四"
+        },
+        {
+          "day": 5,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "初五"
+        },
+        {
+          "day": 28,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "廿八"
+        },
+        {
+          "day": 29,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "廿九"
+        },
+        {
+          "day": 18,
+          "palace_earthly_branch": "Xu",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "十八"
+        },
+        {
+          "day": 19,
+          "palace_earthly_branch": "Xu",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "十九"
+        },
+        {
+          "day": 2,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "初二"
+        },
+        {
+          "day": 3,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "初三"
+        },
+        {
+          "day": 26,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "廿六"
+        },
+        {
+          "day": 27,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "廿七"
+        },
+        {
+          "day": 1,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "初一"
+        },
+        {
+          "day": 24,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "廿四"
+        },
+        {
+          "day": 25,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "廿五"
+        },
+        {
+          "day": 22,
+          "palace_earthly_branch": "Zi",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "廿二"
+        },
+        {
+          "day": 23,
+          "palace_earthly_branch": "Zi",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "廿三"
+        },
+        {
+          "day": 20,
+          "palace_earthly_branch": "Hai",
+          "original_prefix_glyph": "二",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "二十"
+        },
+        {
+          "day": 21,
+          "palace_earthly_branch": "Hai",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "廿一"
+        }
+      ],
+      "can_assert_complete_day_placement_from_this_source_only": true
+    },
+    {
+      "original_source_bureau": "木三局",
+      "original_absolute_codepoint_span": [
+        5864,
+        7353
+      ],
+      "original_grid_utf8_SHA256": "5df4c5ac8e0217e0773f4e1dd3d45270b9b928199703f484f669d814e3521859",
+      "transmitted_original_label_count": 30,
+      "unique_lunar_days_present": 29,
+      "day_to_palace_only_when_single_original_label": {
+        "1": "Chen",
+        "2": "Chou",
+        "3": "Yin",
+        "4": "Si",
+        "6": "Mao",
+        "7": "Wu",
+        "8": "Mao",
+        "10": "Wei",
+        "11": "Chen",
+        "12": "Si",
+        "13": "Shen",
+        "14": "Si",
+        "15": "Wu",
+        "16": "You",
+        "17": "Wu",
+        "18": "Wei",
+        "19": "Xu",
+        "20": "Wei",
+        "21": "Shen",
+        "22": "Hai",
+        "23": "Shen",
+        "24": "You",
+        "25": "Zi",
+        "26": "You",
+        "27": "Xu",
+        "28": "Chou",
+        "29": "Xu",
+        "30": "Hai"
+      },
+      "duplicate_original_day_assignments": {
+        "9": [
+          "Chen",
+          "Yin"
+        ]
+      },
+      "missing_days_1_to_30": [
+        5
+      ],
+      "raw_cell_labels_reversible": [
+        {
+          "palace": "Si",
+          "prefix_row": "初十十",
+          "unit_row": "四二四",
+          "printed_earthly_branch": "巳"
+        },
+        {
+          "palace": "Wu",
+          "prefix_row": "初十十",
+          "unit_row": "七五七",
+          "printed_earthly_branch": "午"
+        },
+        {
+          "palace": "Wei",
+          "prefix_row": "初十二",
+          "unit_row": "十八十",
+          "printed_earthly_branch": "未"
+        },
+        {
+          "palace": "Shen",
+          "prefix_row": "十廿廿",
+          "unit_row": "三一三",
+          "printed_earthly_branch": "申"
+        },
+        {
+          "palace": "Chen",
+          "prefix_row": "初初十",
+          "unit_row": "一九一",
+          "printed_earthly_branch": "辰"
+        },
+        {
+          "palace": "You",
+          "prefix_row": "十廿廿",
+          "unit_row": "六四六",
+          "printed_earthly_branch": "酉"
+        },
+        {
+          "palace": "Mao",
+          "prefix_row": "初初",
+          "unit_row": "六八",
+          "printed_earthly_branch": "卯"
+        },
+        {
+          "palace": "Xu",
+          "prefix_row": "十廿廿",
+          "unit_row": "九七九",
+          "printed_earthly_branch": "戌"
+        },
+        {
+          "palace": "Yin",
+          "prefix_row": "初初",
+          "unit_row": "三九",
+          "printed_earthly_branch": "寅"
+        },
+        {
+          "palace": "Chou",
+          "prefix_row": "初廿",
+          "unit_row": "二八",
+          "printed_earthly_branch": "丑"
+        },
+        {
+          "palace": "Zi",
+          "prefix_row": "廿",
+          "unit_row": "五",
+          "printed_earthly_branch": "子"
+        },
+        {
+          "palace": "Hai",
+          "prefix_row": "廿三",
+          "unit_row": "二十",
+          "printed_earthly_branch": "亥"
+        }
+      ],
+      "literal_decoded_day_glyphs": [
+        {
+          "day": 4,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "初四"
+        },
+        {
+          "day": 12,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "十二"
+        },
+        {
+          "day": 14,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "十四"
+        },
+        {
+          "day": 7,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "初七"
+        },
+        {
+          "day": 15,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "十五"
+        },
+        {
+          "day": 17,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "十七"
+        },
+        {
+          "day": 10,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "初十"
+        },
+        {
+          "day": 18,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "十八"
+        },
+        {
+          "day": 20,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "二",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "二十"
+        },
+        {
+          "day": 13,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "十三"
+        },
+        {
+          "day": 21,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "廿一"
+        },
+        {
+          "day": 23,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "廿三"
+        },
+        {
+          "day": 1,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "初一"
+        },
+        {
+          "day": 9,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "初九"
+        },
+        {
+          "day": 11,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "十一"
+        },
+        {
+          "day": 16,
+          "palace_earthly_branch": "You",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "十六"
+        },
+        {
+          "day": 24,
+          "palace_earthly_branch": "You",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "廿四"
+        },
+        {
+          "day": 26,
+          "palace_earthly_branch": "You",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "廿六"
+        },
+        {
+          "day": 6,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "初六"
+        },
+        {
+          "day": 8,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "初八"
+        },
+        {
+          "day": 19,
+          "palace_earthly_branch": "Xu",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "十九"
+        },
+        {
+          "day": 27,
+          "palace_earthly_branch": "Xu",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "廿七"
+        },
+        {
+          "day": 29,
+          "palace_earthly_branch": "Xu",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "廿九"
+        },
+        {
+          "day": 3,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "初三"
+        },
+        {
+          "day": 9,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "初九"
+        },
+        {
+          "day": 2,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "初二"
+        },
+        {
+          "day": 28,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "廿八"
+        },
+        {
+          "day": 25,
+          "palace_earthly_branch": "Zi",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "廿五"
+        },
+        {
+          "day": 22,
+          "palace_earthly_branch": "Hai",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "廿二"
+        },
+        {
+          "day": 30,
+          "palace_earthly_branch": "Hai",
+          "original_prefix_glyph": "三",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "三十"
+        }
+      ],
+      "can_assert_complete_day_placement_from_this_source_only": false
+    },
+    {
+      "original_source_bureau": "金四局",
+      "original_absolute_codepoint_span": [
+        7422,
+        8913
+      ],
+      "original_grid_utf8_SHA256": "7eef0a0fe6bee8b4fe53e0eb88580f383ab1c1436027bd96bc97cbb8c5c8dbb7",
+      "transmitted_original_label_count": 29,
+      "unique_lunar_days_present": 29,
+      "day_to_palace_only_when_single_original_label": {
+        "1": "Hai",
+        "2": "Chen",
+        "3": "Chou",
+        "4": "Yin",
+        "5": "Zi",
+        "6": "Si",
+        "7": "Yin",
+        "8": "Mao",
+        "9": "Chou",
+        "10": "Wu",
+        "11": "Mao",
+        "12": "Chen",
+        "13": "Yin",
+        "14": "Wei",
+        "15": "Chen",
+        "16": "Si",
+        "17": "Mao",
+        "18": "Shen",
+        "19": "Si",
+        "20": "Wu",
+        "21": "Chen",
+        "22": "You",
+        "23": "Wu",
+        "24": "Wei",
+        "25": "Si",
+        "26": "Xu",
+        "27": "Wei",
+        "28": "Shen",
+        "29": "Wu"
+      },
+      "duplicate_original_day_assignments": {},
+      "missing_days_1_to_30": [
+        30
+      ],
+      "raw_cell_labels_reversible": [
+        {
+          "palace": "Si",
+          "prefix_row": "初十十廿",
+          "unit_row": "六六九五",
+          "printed_earthly_branch": "巳"
+        },
+        {
+          "palace": "Wu",
+          "prefix_row": "初二廿廿",
+          "unit_row": "十十三九",
+          "printed_earthly_branch": "午"
+        },
+        {
+          "palace": "Wei",
+          "prefix_row": "十廿廿",
+          "unit_row": "四四七",
+          "printed_earthly_branch": "未"
+        },
+        {
+          "palace": "Shen",
+          "prefix_row": "十廿",
+          "unit_row": "八八",
+          "printed_earthly_branch": "申"
+        },
+        {
+          "palace": "Chen",
+          "prefix_row": "初十十廿",
+          "unit_row": "二二五一",
+          "printed_earthly_branch": "辰"
+        },
+        {
+          "palace": "You",
+          "prefix_row": "廿",
+          "unit_row": "二",
+          "printed_earthly_branch": "酉"
+        },
+        {
+          "palace": "Mao",
+          "prefix_row": "初十十",
+          "unit_row": "八一七",
+          "printed_earthly_branch": "卯"
+        },
+        {
+          "palace": "Xu",
+          "prefix_row": "廿",
+          "unit_row": "六",
+          "printed_earthly_branch": "戌"
+        },
+        {
+          "palace": "Yin",
+          "prefix_row": "初初十",
+          "unit_row": "四七三",
+          "printed_earthly_branch": "寅"
+        },
+        {
+          "palace": "Chou",
+          "prefix_row": "初初",
+          "unit_row": "三九",
+          "printed_earthly_branch": "丑"
+        },
+        {
+          "palace": "Zi",
+          "prefix_row": "初",
+          "unit_row": "五",
+          "printed_earthly_branch": "子"
+        },
+        {
+          "palace": "Hai",
+          "prefix_row": "初",
+          "unit_row": "一",
+          "printed_earthly_branch": "亥"
+        }
+      ],
+      "literal_decoded_day_glyphs": [
+        {
+          "day": 6,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "初六"
+        },
+        {
+          "day": 16,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "十六"
+        },
+        {
+          "day": 19,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "十九"
+        },
+        {
+          "day": 25,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "廿五"
+        },
+        {
+          "day": 10,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "初十"
+        },
+        {
+          "day": 20,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "二",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "二十"
+        },
+        {
+          "day": 23,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "廿三"
+        },
+        {
+          "day": 29,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "廿九"
+        },
+        {
+          "day": 14,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "十四"
+        },
+        {
+          "day": 24,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "廿四"
+        },
+        {
+          "day": 27,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "廿七"
+        },
+        {
+          "day": 18,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "十八"
+        },
+        {
+          "day": 28,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "廿八"
+        },
+        {
+          "day": 2,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "初二"
+        },
+        {
+          "day": 12,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "十二"
+        },
+        {
+          "day": 15,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "十五"
+        },
+        {
+          "day": 21,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "廿一"
+        },
+        {
+          "day": 22,
+          "palace_earthly_branch": "You",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "廿二"
+        },
+        {
+          "day": 8,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "初八"
+        },
+        {
+          "day": 11,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "十一"
+        },
+        {
+          "day": 17,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "十七"
+        },
+        {
+          "day": 26,
+          "palace_earthly_branch": "Xu",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "廿六"
+        },
+        {
+          "day": 4,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "初四"
+        },
+        {
+          "day": 7,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "初七"
+        },
+        {
+          "day": 13,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "十三"
+        },
+        {
+          "day": 3,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "初三"
+        },
+        {
+          "day": 9,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "初九"
+        },
+        {
+          "day": 5,
+          "palace_earthly_branch": "Zi",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "初五"
+        },
+        {
+          "day": 1,
+          "palace_earthly_branch": "Hai",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "初一"
+        }
+      ],
+      "can_assert_complete_day_placement_from_this_source_only": false
+    },
+    {
+      "original_source_bureau": "土五局",
+      "original_absolute_codepoint_span": [
+        9016,
+        10505
+      ],
+      "original_grid_utf8_SHA256": "ee04e1c71eac992601876950e0f2681ca12f8b9cc08634eff69a3154c3c357b6",
+      "transmitted_original_label_count": 30,
+      "unique_lunar_days_present": 30,
+      "day_to_palace_only_when_single_original_label": {
+        "1": "Wu",
+        "2": "Hai",
+        "3": "Chen",
+        "4": "Chou",
+        "5": "Yin",
+        "6": "Wei",
+        "7": "Zi",
+        "8": "Si",
+        "9": "Yin",
+        "10": "Mao",
+        "11": "Shen",
+        "12": "Chou",
+        "13": "Wu",
+        "14": "Mao",
+        "15": "Chen",
+        "16": "You",
+        "17": "Yin",
+        "18": "Wei",
+        "19": "Chen",
+        "20": "Si",
+        "21": "Xu",
+        "22": "Mao",
+        "23": "Shen",
+        "24": "Si",
+        "25": "Wu",
+        "26": "Hai",
+        "27": "Chen",
+        "28": "You",
+        "29": "Wu",
+        "30": "Wei"
+      },
+      "duplicate_original_day_assignments": {},
+      "missing_days_1_to_30": [],
+      "raw_cell_labels_reversible": [
+        {
+          "palace": "Si",
+          "prefix_row": "初二廿",
+          "unit_row": "八十四",
+          "printed_earthly_branch": "巳"
+        },
+        {
+          "palace": "Wu",
+          "prefix_row": "初十廿廿",
+          "unit_row": "一三五九",
+          "printed_earthly_branch": "午"
+        },
+        {
+          "palace": "Wei",
+          "prefix_row": "初十三",
+          "unit_row": "六八十",
+          "printed_earthly_branch": "未"
+        },
+        {
+          "palace": "Shen",
+          "prefix_row": "十廿",
+          "unit_row": "一三",
+          "printed_earthly_branch": "申"
+        },
+        {
+          "palace": "Chen",
+          "prefix_row": "初十十廿",
+          "unit_row": "三五九七",
+          "printed_earthly_branch": "辰"
+        },
+        {
+          "palace": "You",
+          "prefix_row": "十廿",
+          "unit_row": "六八",
+          "printed_earthly_branch": "酉"
+        },
+        {
+          "palace": "Mao",
+          "prefix_row": "初十廿",
+          "unit_row": "十四二",
+          "printed_earthly_branch": "卯"
+        },
+        {
+          "palace": "Xu",
+          "prefix_row": "廿",
+          "unit_row": "一",
+          "printed_earthly_branch": "戌"
+        },
+        {
+          "palace": "Yin",
+          "prefix_row": "初初十",
+          "unit_row": "五九七",
+          "printed_earthly_branch": "寅"
+        },
+        {
+          "palace": "Chou",
+          "prefix_row": "初十",
+          "unit_row": "四二",
+          "printed_earthly_branch": "丑"
+        },
+        {
+          "palace": "Zi",
+          "prefix_row": "初",
+          "unit_row": "七",
+          "printed_earthly_branch": "子"
+        },
+        {
+          "palace": "Hai",
+          "prefix_row": "初廿",
+          "unit_row": "二六",
+          "printed_earthly_branch": "亥"
+        }
+      ],
+      "literal_decoded_day_glyphs": [
+        {
+          "day": 8,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "初八"
+        },
+        {
+          "day": 20,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "二",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "二十"
+        },
+        {
+          "day": 24,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "廿四"
+        },
+        {
+          "day": 1,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "初一"
+        },
+        {
+          "day": 13,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "十三"
+        },
+        {
+          "day": 25,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "廿五"
+        },
+        {
+          "day": 29,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "廿九"
+        },
+        {
+          "day": 6,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "初六"
+        },
+        {
+          "day": 18,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "十八"
+        },
+        {
+          "day": 30,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "三",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "三十"
+        },
+        {
+          "day": 11,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "十一"
+        },
+        {
+          "day": 23,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "廿三"
+        },
+        {
+          "day": 3,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "初三"
+        },
+        {
+          "day": 15,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "十五"
+        },
+        {
+          "day": 19,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "十九"
+        },
+        {
+          "day": 27,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "廿七"
+        },
+        {
+          "day": 16,
+          "palace_earthly_branch": "You",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "十六"
+        },
+        {
+          "day": 28,
+          "palace_earthly_branch": "You",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "廿八"
+        },
+        {
+          "day": 10,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "初十"
+        },
+        {
+          "day": 14,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "十四"
+        },
+        {
+          "day": 22,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "廿二"
+        },
+        {
+          "day": 21,
+          "palace_earthly_branch": "Xu",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "廿一"
+        },
+        {
+          "day": 5,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "初五"
+        },
+        {
+          "day": 9,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "初九"
+        },
+        {
+          "day": 17,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "十七"
+        },
+        {
+          "day": 4,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "初四"
+        },
+        {
+          "day": 12,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "十二"
+        },
+        {
+          "day": 7,
+          "palace_earthly_branch": "Zi",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "初七"
+        },
+        {
+          "day": 2,
+          "palace_earthly_branch": "Hai",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "初二"
+        },
+        {
+          "day": 26,
+          "palace_earthly_branch": "Hai",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "廿六"
+        }
+      ],
+      "can_assert_complete_day_placement_from_this_source_only": true
+    },
+    {
+      "original_source_bureau": "火六局",
+      "original_absolute_codepoint_span": [
+        10591,
+        12080
+      ],
+      "original_grid_utf8_SHA256": "f84749f4ff6052e13b2a515aece0157315faf662b128bcda92aaaecff094ac3c",
+      "transmitted_original_label_count": 30,
+      "unique_lunar_days_present": 30,
+      "day_to_palace_only_when_single_original_label": {
+        "1": "You",
+        "2": "Wu",
+        "3": "Hai",
+        "4": "Chen",
+        "5": "Chou",
+        "6": "Yin",
+        "7": "Xu",
+        "8": "Wei",
+        "9": "Zi",
+        "10": "Si",
+        "11": "Yin",
+        "12": "Mao",
+        "13": "Hai",
+        "14": "Shen",
+        "15": "Chou",
+        "16": "Wu",
+        "17": "Mao",
+        "18": "Chen",
+        "19": "Zi",
+        "20": "You",
+        "21": "Yin",
+        "22": "Wei",
+        "23": "Chen",
+        "24": "Si",
+        "25": "Chou",
+        "26": "Xu",
+        "27": "Mao",
+        "28": "Shen",
+        "29": "Si",
+        "30": "Wu"
+      },
+      "duplicate_original_day_assignments": {},
+      "missing_days_1_to_30": [],
+      "raw_cell_labels_reversible": [
+        {
+          "palace": "Si",
+          "prefix_row": "初廿廿",
+          "unit_row": "十四九",
+          "printed_earthly_branch": "巳"
+        },
+        {
+          "palace": "Wu",
+          "prefix_row": "初十三",
+          "unit_row": "二六十",
+          "printed_earthly_branch": "午"
+        },
+        {
+          "palace": "Wei",
+          "prefix_row": "初廿",
+          "unit_row": "八二",
+          "printed_earthly_branch": "未"
+        },
+        {
+          "palace": "Shen",
+          "prefix_row": "十廿",
+          "unit_row": "四八",
+          "printed_earthly_branch": "申"
+        },
+        {
+          "palace": "Chen",
+          "prefix_row": "初十廿",
+          "unit_row": "四八三",
+          "printed_earthly_branch": "辰"
+        },
+        {
+          "palace": "You",
+          "prefix_row": "初二",
+          "unit_row": "一十",
+          "printed_earthly_branch": "酉"
+        },
+        {
+          "palace": "Mao",
+          "prefix_row": "十十廿",
+          "unit_row": "二七七",
+          "printed_earthly_branch": "卯"
+        },
+        {
+          "palace": "Xu",
+          "prefix_row": "初廿",
+          "unit_row": "七六",
+          "printed_earthly_branch": "戌"
+        },
+        {
+          "palace": "Yin",
+          "prefix_row": "初十廿",
+          "unit_row": "六一一",
+          "printed_earthly_branch": "寅"
+        },
+        {
+          "palace": "Chou",
+          "prefix_row": "初十廿",
+          "unit_row": "五五五",
+          "printed_earthly_branch": "丑"
+        },
+        {
+          "palace": "Zi",
+          "prefix_row": "初十",
+          "unit_row": "九九",
+          "printed_earthly_branch": "子"
+        },
+        {
+          "palace": "Hai",
+          "prefix_row": "初十",
+          "unit_row": "三三",
+          "printed_earthly_branch": "亥"
+        }
+      ],
+      "literal_decoded_day_glyphs": [
+        {
+          "day": 10,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "初十"
+        },
+        {
+          "day": 24,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "廿四"
+        },
+        {
+          "day": 29,
+          "palace_earthly_branch": "Si",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "廿九"
+        },
+        {
+          "day": 2,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "初二"
+        },
+        {
+          "day": 16,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "十六"
+        },
+        {
+          "day": 30,
+          "palace_earthly_branch": "Wu",
+          "original_prefix_glyph": "三",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "三十"
+        },
+        {
+          "day": 8,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "初八"
+        },
+        {
+          "day": 22,
+          "palace_earthly_branch": "Wei",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "廿二"
+        },
+        {
+          "day": 14,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "十四"
+        },
+        {
+          "day": 28,
+          "palace_earthly_branch": "Shen",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "廿八"
+        },
+        {
+          "day": 4,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "四",
+          "original_combined_glyph": "初四"
+        },
+        {
+          "day": 18,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "八",
+          "original_combined_glyph": "十八"
+        },
+        {
+          "day": 23,
+          "palace_earthly_branch": "Chen",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "廿三"
+        },
+        {
+          "day": 1,
+          "palace_earthly_branch": "You",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "初一"
+        },
+        {
+          "day": 20,
+          "palace_earthly_branch": "You",
+          "original_prefix_glyph": "二",
+          "original_unit_glyph": "十",
+          "original_combined_glyph": "二十"
+        },
+        {
+          "day": 12,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "二",
+          "original_combined_glyph": "十二"
+        },
+        {
+          "day": 17,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "十七"
+        },
+        {
+          "day": 27,
+          "palace_earthly_branch": "Mao",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "廿七"
+        },
+        {
+          "day": 7,
+          "palace_earthly_branch": "Xu",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "七",
+          "original_combined_glyph": "初七"
+        },
+        {
+          "day": 26,
+          "palace_earthly_branch": "Xu",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "廿六"
+        },
+        {
+          "day": 6,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "六",
+          "original_combined_glyph": "初六"
+        },
+        {
+          "day": 11,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "十一"
+        },
+        {
+          "day": 21,
+          "palace_earthly_branch": "Yin",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "一",
+          "original_combined_glyph": "廿一"
+        },
+        {
+          "day": 5,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "初五"
+        },
+        {
+          "day": 15,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "十五"
+        },
+        {
+          "day": 25,
+          "palace_earthly_branch": "Chou",
+          "original_prefix_glyph": "廿",
+          "original_unit_glyph": "五",
+          "original_combined_glyph": "廿五"
+        },
+        {
+          "day": 9,
+          "palace_earthly_branch": "Zi",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "初九"
+        },
+        {
+          "day": 19,
+          "palace_earthly_branch": "Zi",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "九",
+          "original_combined_glyph": "十九"
+        },
+        {
+          "day": 3,
+          "palace_earthly_branch": "Hai",
+          "original_prefix_glyph": "初",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "初三"
+        },
+        {
+          "day": 13,
+          "palace_earthly_branch": "Hai",
+          "original_prefix_glyph": "十",
+          "original_unit_glyph": "三",
+          "original_combined_glyph": "十三"
+        }
+      ],
+      "can_assert_complete_day_placement_from_this_source_only": true
+    }
+  ]
+}
