@@ -1,0 +1,29 @@
+{
+  "schema": "ASTRO_HUMANDESIGN_TASK_LOCAL_V1",
+  "parent_outcome": "OPEN",
+  "task_id": "ASTRO_SOURCE_MULTITRADITION_20261005",
+  "batch": "B07az",
+  "status": "TESTED_DRAFT_AWAITING_ARCHIVE_AND_CANONICAL",
+  "required_branch": "research/astro-b07az-clxxvii-riches-source-20261020",
+  "parent_commit": "750cf696a28faf991d23beec15b11e25629fa502",
+  "base_Lilly_source_count": 12940,
+  "Chinese_V7_source_count": 355,
+  "new_documentary_notes": 29,
+  "proposed_first": "R12941",
+  "proposed_last": "R12969",
+  "proposed_next": "R12970",
+  "source_pdf_frames": [
+    783,
+    784,
+    785
+  ],
+  "unverified_real_people_predictions": 0,
+  "runtime_promotions": 0,
+  "required_next": [
+    "archive independent ZIP replay 41 tests",
+    "guard append-only canonical index",
+    "post-index test",
+    "commit/push remote SHA",
+    "continue CLXXVIII after divider"
+  ]
+}
