@@ -22,4 +22,9 @@ This correction extends—not overrides—the Oct 20 credit safeguards: work at 
 - **No other paragraph, combined section, or whole-article Pangram submission was performed. No automatic retry.** First recover exact History/provider billing evidence and available credit; fix GUI 4.1 readout with non-billable fixtures; await owner review of proposed wording before installing.
 - Predictions belong to the proposed-article receipt, but their correctness remains **unscored** until a real matched detector result exists.
 
-This note is a recovery pointer and not a competing normative owner of the Joel Articles or Pangram Lab rule. 
+This note is a recovery pointer and not a competing normative owner of the Joel Articles or Pangram Lab rule.
+
+## 2026-10-20 later owner correction — continuation checkpoint
+
+The former **two-try** per-paragraph production ceiling is superseded by **at most six tests per paragraph**, each later test contingent on a specific, credible, meaning-preserving repair hypothesis. Fixing one red sentence may reveal another; this can justify a new test without resetting the six-count. Stop immediately without a credible next fix or after repeated unexplained misses on the same unresolved target. Section certification remains one initial and one justified retest; whole-article checks remain final-only. The revised normative rule is on Joel Articles PR #203, and the lab's source-bound instruction/lesson/test changes are on Pangram Lab PR #178. This is editorial coordination only; no astrology/HumanDesign research data changed, no further Pangram request submitted, and the earlier single ambiguous request remains unreconciled.
+ 
