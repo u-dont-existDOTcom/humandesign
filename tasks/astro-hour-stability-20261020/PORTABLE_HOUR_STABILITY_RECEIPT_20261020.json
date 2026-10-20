@@ -1,0 +1,66 @@
+{
+  "schema": "HUMANDESIGN_FOUR_ANCHOR_HOUR_STABILITY_PORTABLE_ORIGINAL_SOURCE_V1",
+  "status": "COLD_SOURCE_AND_SYNTHETIC_TESTS_PASSED_NOT_HUMAN_ASTROLOGY",
+  "archive_name": "Astrology-ZiWei-Four-Anchors-Hour-Stability-20261020.zip",
+  "archive_on_owner_computer": "/home/joel/Téléchargements/Astrology-ZiWei-Four-Anchors-Hour-Stability-20261020.zip",
+  "archive_sha256": "3402f5e0050c033dceb95882a03be22738289780e88c621802ff93bcd07c48db",
+  "archive_bytes": 114155,
+  "member_count": 12,
+  "all_member_exact_source_bytes_SHA256": {
+    "tasks/astro-chart-eligibility-20261020/ORIGINAL_312_SOURCE_ORACLE_SNAPSHOT.json": {
+      "bytes": 899155,
+      "sha256": "01efe5181d7c9d07a6c9f780df9d03b557b356baa4ca3770464f38e8552feaa5"
+    },
+    "tasks/astro-chart-eligibility-20261020/SYNTHETIC_CHART_FOUR_ANCHOR_ELIGIBILITY_AUDIT_V1.json": {
+      "bytes": 8935,
+      "sha256": "f571b1c17db513f868bc2e645fb2a51ee21f91e5a287537f4e733a6d998f2c99"
+    },
+    "tasks/astro-chart-eligibility-20261020/audit_synthetic_natal_feature_coverage.py": {
+      "bytes": 16891,
+      "sha256": "1e114ccb205569feea91b250461cdc4f7c36f0b6b644252cf0d1a6a451c68080"
+    },
+    "tasks/astro-chinese-primary-sources-20261017/CHINESE_SOURCE_AUDIT_INDEX_V14.json": {
+      "bytes": 21458,
+      "sha256": "c3a85dd972e010398b671730d86b2eea671db3da313494807bcb42e2c209c770"
+    },
+    "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-07/SOURCE_ORIGINAL_ZIWEI_VOL2_1963110_RAW.txt": {
+      "bytes": 106736,
+      "sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72"
+    },
+    "tasks/astro-hour-stability-20261020/CONSERVATIVE_SOURCE_HOUR_FINDINGS_20261020.md": {
+      "bytes": 6026,
+      "sha256": "f979867bc876842d1c2731c0f03d453103f4613244592cd6be91ba9aeaab2715"
+    },
+    "tasks/astro-hour-stability-20261020/FOUR_ANCHOR_SOURCE_FEATURE_HOUR_SENSITIVITY_V1.json": {
+      "bytes": 109426,
+      "sha256": "1303731a6ae0c1906dd439509c28951f15fa1ec2df6b17d04fc8a44c5b365d11"
+    },
+    "tasks/astro-hour-stability-20261020/WORKING_CHECKPOINT_20261020.md": {
+      "bytes": 2371,
+      "sha256": "197c8280bdf6ad73ef24ea18f9637ec1ba630607c06a0b5d175c8ff5bfed3737"
+    },
+    "tasks/astro-hour-stability-20261020/audit_conservative_feature_states.py": {
+      "bytes": 13498,
+      "sha256": "0acb96c25ecfa849ce365a26eeb244c7a1eb3ff5aa12854e5f2b06b7f3ea251f"
+    },
+    "tasks/astro-hour-stability-20261020/build_portable_hour_stability_archive.py": {
+      "bytes": 5286,
+      "sha256": "3ef34ba9779e39739ac698878d580acad1c04e4c5dbcfa399eb0035805460f2e"
+    },
+    "tasks/astro-hour-stability-20261020/test_source_hour_stability.py": {
+      "bytes": 10065,
+      "sha256": "80eb389564d524def2ed49a26ab4a22262b1d98168aeae20750e427d2387ba39"
+    },
+    "tasks/astro-source-four-anchor-synthetic-20261020/SOURCE_TO_BEHAVIOR_CANDIDATES_V1.json": {
+      "bytes": 9935,
+      "sha256": "acd1fef1b9764bfac4525785ee1fd42e7dac2727880e829ee038aa9562db8a62"
+    }
+  },
+  "independent_ZIP_CRC_verified": true,
+  "all_member_sha_verified": true,
+  "original_312_synthetic_oracle_sha256": "01efe5181d7c9d07a6c9f780df9d03b557b356baa4ca3770464f38e8552feaa5",
+  "independent_cold_source_hour_tests_passed": 18,
+  "real_birth_records": 0,
+  "real_human_scored_predictions": 0,
+  "production_astrological_rules": 0
+}
