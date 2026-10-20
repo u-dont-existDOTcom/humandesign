@@ -1,0 +1,35 @@
+# HumanDesign original Zi Wei V14 auxiliary-star source checkpoint — 20 Oct 2026
+
+**Root scientific task STILL OPEN**: historical primary-source Western Lilly/Ptolemy and Chinese BaZi/Zi Wei studies; exact traditional astronomical lunar/solar/hour/house and natal chart engine; frozen source-to-question hypotheses and preregistered actual consenting untouched human forward/reverse blind tests vs matched chart decoys and nonastrology baselines. Real human predictive validations **0**, runtime astrology promotions **0**. Neither original text quantity, original symbolic social/medical claims nor synthetic chart algorithm parity proves astrology predicts.
+
+## Accepted state and distinct branches
+
+Original Chinese Zi Wei source-only V14 branch `research/astro-chinese-v14-ziwei-life-aux-first-four-20261020`, worktree `/mnt/hdd/storage/joel/development-worktrees/humandesign/astro-chinese-v14-ziwei-life-20261020`. Parent V13 accepted original source SHA `dcb6d3b0a1d40a73dc40a752884f56a53bca9ee5`, original Chinese V13 canonical index SHA `4695dea848caacac65f4cd9d0baebf1a85a26b022ba8414b83aecc6ca5c13682`. Verify newest V14 exact Git local and remote SHA and clean tree at resumption.
+
+**Accepted source Chinese V14: BaZi210 unchanged + ZiWei586 =796 original historical annotations**; 58 new source-only IDs **ZWD-R0529–ZWD-R0586**, next ZiWei **ZWD-R0587 Lu Cun** and BaZi **BZI-R0211 Di Tian Sui section19** unaltered. The latest separately accepted Western B07bg branch has **Lilly13236+Ptolemy1066**, bringing separate cross-branch aggregate to **15,098 historical source notes**, not 15,098 humans and not one merged source index. This Chinese source lineage still includes the *older* separately accepted Western B07bc snapshot Lilly13044+Ptolemy1066, intentionally preserved bytewise without merging later Western source documents.
+
+## Exact source
+
+Transmitted Simplified Chinese original-text Wikisource `紫微斗數全書 卷二`, revision oldid1963110, full source UTF8 SHA256 `1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72`,106736 bytes. This is NOT independently authenticated original Ming woodblock, expert critical edition or proof of actual natal chart correctness. Earlier V10–V13 sources covered **all fourteen individually named principal-star Life-palace profile descriptions** to cp30135. V14 now covers the NEXT FOUR **auxiliary-star descriptions**:
+- Wen Chang 文昌 cp30135–30665 **16** literal lines, four palace-grade rows, male/female/timing headings;
+- Wen Qu 文曲 cp30665–31212 **18** literal lines, four palace-grade rows, three headings;
+- Zuo Fu 左辅 cp31212–31613 **13** literal lines, **zero** standalone palace-grade rows but three poetic headings;
+- You Bi 右弼 cp31613–31937 **10** literal lines, **zero** palace-grade rows and **NO dedicated female poetic heading**, only male and timing verse headings.
+
+57 substantive original source lines + **one navigational Lu Cun 禄存 prefix** at cp31937 =58 historical source annotations. Last record ZWD-R0586 is not substantive Lu Cun source study. Source full first Life-palace remains INCOMPLETE through original `===二兄弟===` at cp37269, and the other eleven classical Chinese house text sections aren't critically completed. The absent You Bi female heading and Zuo Fu/You Bi grade tables are **original text omissions**, not to be fabricated from template or modern later text. Original source source dossier `ZIWEI_LIFE_FIRST_FOUR_AUXILIARY_58_SOURCE_NOTES_V1.json`, quote offsets/source SHA `SOURCE_LIFE_FIRST_FOUR_AUXILIARY_58_EXACT_OFFSET_WITNESS_V1.json`, exact excerpt `SOURCE_1963110_LIFE_FIRST_FOUR_AUX_EXACT_EXCERPT.txt`, source review `ORIGINAL_SOURCE_REVIEW_20261020.md`. Original period health/sex/mortality/social/honour claims are NOT medicine, observed real human behaviour or moral/social rules.
+
+## Test and immutable acceptance
+
+Source-focused first four aux exact original Unicode codepoint/UTF8 byte and source omission tests **13/13 passed**; independently extracted cold portable original source ZIP original tests **13/13** passed, all **13** ZIP members SHA+bytes/CRC verified. Archive saved on user computer `~/Téléchargements/Astrology-ZiWei-Life-Auxiliary-First-Four-58-Original-Sources-V14-20261020.zip`, **160108 bytes**, SHA256 `af5f10f467c2a6eba03e38bfd73f9025ffef88feb58d4c68f5a3e445bb31a6c0`. Not a sandbox download link. Source archived release receipt `SOURCE_RELEASE_RECEIPT_PROVISIONAL_20261020.json`.
+
+Guarded immutable original index append verifies old V13 original source index SHA, old raw Wikitext original, exact 58 source IDs and offsets, independent archive, other Chinese previous accepted indexes and BaZi unchanged, old Western B07bc source bytes unchanged, and zero actual human forecasts. Old accepted index/source/current-state snapshots under `ChineseAstro-14SRC-Life/recovery`. V14 new canonical `CHINESE_SOURCE_AUDIT_INDEX_V14.json` exact SHA256 **`c3a85dd972e010398b671730d86b2eea671db3da313494807bcb42e2c209c770`**. Source+post-index tests **25/25 passed**, after separate independent cold archive13/13; source-scoped tests, whole repository integration/CI not claimed. Guard receipt `CANONICAL_PREPARE_RECEIPT_20261020.json`, old source V13 checksum `4695dea848caacac65f4cd9d0baebf1a85a26b022ba8414b83aecc6ca5c13682`. Source old fixed Western and true Chinese totals always distinct; no real-person predictive accuracy.
+
+## Next safe autonomous work
+
+1. Check new accepted V14 GitHub exact SHA readback and clean status.
+2. Next isolated Chinese V15 source from V14 accepted SHA, original Lu Cun 禄存 starts cp31937, **ZWD-R0587**, then next auxiliary descriptions with original evidence to Brothers heading cp37269. The remaining original source text is not a natal algorithm; don't treat source counts as personal prediction successes or fill missing gender/grade lines.
+3. Separate original Chinese BaZi Di Tian Sui section19 from **BZI-R0211**, source-pin original Chinese online revision and original verse/commentary, independent source/witness tests, old Western snapshot remains unchanged.
+4. Separate Western Lilly original next Friends **R13237** on original printed p762/PDF796 in 1647/1659. Original Friends heading printed CLXXXIII even though it follows Honours CLXXXIIII (editorial ordinal185), a literal original Roman numbering regression preserved in Western B07bg.
+5. Important scientific work not yet met: independently verify full original-source chart/calendar/hour/true solar/time derivation, freeze selected source rules/behavioral questionnaire predictions before collecting new untouched human participants with proper consent, decoy and non-astrology baselines, compare prospective and reverse blinded matches with negatives and uncertainty fully published. User and Hale charts already examined so not untouched final cohort. Present human empirically validated predictions **zero**.
+
+Always save verified work to humandesign GitHub with matching local/remote HEAD, clean worktree, portable source/line evidence and branch handoff; follow UDA and repo AGENTS; never claim background work unless monitored. No owner permission for safe source-only tasks.

@@ -1,3 +1,9 @@
+# Chinese V14 — first four auxiliary Zi Wei Life-palace star profiles
+
+**58 source-only historical notes ZWD-R0529–ZWD-R0586**: WenChang16 WenQu18 ZuoFu13 YouBi10 exact original text lines plus one LuCun next-source prefix only. Source Wikitext oldid1963110 has exact UTF8 quote codepoint/byte offsets and hashes, but lacks separate palace-grade rows for ZuoFu/YouBi and dedicated YouBi female poem heading. Never fabricate. The source's other auxiliary profiles remain open to original Brothers heading cp37269, old Ming printing unverified. **Chinese BaZi210 +ZiWei586 =796** historical source notes. Separate Western B07bg Lilly13236 + Ptolemy1066 gives aggregate **15,098** documentary annotations across independent branches; **not** real-person prediction hits. Next **ZWD-R0587 LuCun**, **BZI-R0211 Di Tian Sui**. Independent human blind tests **0**, runtime promotions **0**.
+
+## Prior accepted Chinese original-source checkpoint retained
+
 # Chinese V13 — all fourteen principal star Life-profile prose source covered
 
 **46 historical source-only annotations ZWD-R0483–ZWD-R0528**, QiSha22 and PoJun23 exact source lines plus one next WenChang auxiliary-source navigation. All 14 main star descriptive profiles in this transmitted oldid1963110 Life-palace source now historically annotated, with full exact UTF8 byte offsets and SHA; NOT the complete Life-palace (auxiliary passages after cp30135 remain) or an ancient authenticated Ming imprint, accurate complete natal chart or real human prediction. **Chinese BaZi210 + ZiWei528=738** text annotations. Latest independent Western B07bg Lilly13236+Ptolemy1066 produces aggregate **15,040** historical source notes on DIFFERENT source branches; not 15,040 people. Next **ZWD-R0529 WenChang**, original cp30135, BaZi **BZI-R0211** Di Tian Sui section19. Actual human blind predictive validations **0**, runtime astrology promotions **0**.

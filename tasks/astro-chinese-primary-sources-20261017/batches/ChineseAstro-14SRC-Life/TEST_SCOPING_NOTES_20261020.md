@@ -1,0 +1,3 @@
+# V14 original source and guarded index tests
+
+The source SHA/offset/poem-omission original fixture 13 cases `test_chinese14src_original_auxiliaries.py`; after guarded V14 append new 12 `test_chinese14src_post_index.py` index immutability/source totals tests. Cold extracted portable ZIP replays focused source13. Old V13 post-index tests assert prior terminal V13 and should not be run against V14 as if previous source still last; they remain valid in frozen V13 accepted branch. The traditional statements about illness, death, moral status and sex-coded conduct are historical text, not observed humans, diagnosis, social classification or empirical astrology. No runtime promotions.
