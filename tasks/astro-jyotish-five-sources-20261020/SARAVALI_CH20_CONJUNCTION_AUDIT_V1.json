@@ -1,0 +1,974 @@
+{
+  "schema_version": 1,
+  "source_id": "JYOT-SARAVALI-EN",
+  "source_sha256": "b6fd2523fb349095a8a595e7d9750bacd8ff0ec7f495a0b58287a38f2c79baa6",
+  "chapter": 20,
+  "chapter_title": "Combinations for renunciation",
+  "location": "Uploaded English-only Saravali PDF pages 40-43; conjunction clauses all from slokas 2-19 pp40-41; remaining slokas 20-37 are nontrivial cancellation/configuration or ascetic type mappings.",
+  "status": "EDITORIAL_ENGLISH_RENDERING_TRANSCRIPTION_ONLY_NOT_ORIGINAL_CRITICALLY_COLLATED",
+  "legend": {
+    "SU": "Sun",
+    "MO": "Moon",
+    "MA": "Mars",
+    "ME": "Mercury",
+    "JU": "Jupiter",
+    "VE": "Venus",
+    "SA": "Saturn",
+    "luminaries_expanded_to": "SU MO"
+  },
+  "logic_flags": [
+    "The source often says conjunction or together but does not set a modern angular orb threshold in this excerpt",
+    "Planetary strength may condition some entire groups or only a subclause; do not assume identical strength requirements",
+    "Specific ascetic outcomes are not interchangeable with generic renunciation",
+    "A set of five/six planets contains multiple 4-planet subsets: no precedence or tie-breaking policy established",
+    "Repeated sets across different verses are textual dependencies, not independent predictors",
+    "The different labels for some identical sets may be compatible elaborations; the honored vs sorrowful label pair is a material apparent tension requiring original-language review."
+  ],
+  "counts": {
+    "slokas_transcribed": 18,
+    "clauses": 47,
+    "unique_sets": 37,
+    "distinct_repeated_sets": 9,
+    "duplicate_excess_clauses": 10,
+    "proper_subset_supergroup_pairs": 88
+  },
+  "groups": [
+    {
+      "id": "SAR20-02-1",
+      "sloka": 2,
+      "clause": 1,
+      "pdf_page": 40,
+      "planet_set": [
+        "JU",
+        "MA",
+        "MO",
+        "SU",
+        "VE"
+      ],
+      "outcome": "ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-02-2",
+      "sloka": 2,
+      "clause": 2,
+      "pdf_page": 40,
+      "planet_set": [
+        "MA",
+        "ME",
+        "MO",
+        "SU"
+      ],
+      "outcome": "ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-02-3",
+      "sloka": 2,
+      "clause": 3,
+      "pdf_page": 40,
+      "planet_set": [
+        "MA",
+        "ME",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-03-1",
+      "sloka": 3,
+      "clause": 1,
+      "pdf_page": 40,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "MO",
+        "SU"
+      ],
+      "outcome": "MENDICANT",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-03-2",
+      "sloka": 3,
+      "clause": 2,
+      "pdf_page": 40,
+      "planet_set": [
+        "ME",
+        "MO",
+        "SA",
+        "SU"
+      ],
+      "outcome": "MENDICANT",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-03-3",
+      "sloka": 3,
+      "clause": 3,
+      "pdf_page": 40,
+      "planet_set": [
+        "MA",
+        "MO",
+        "SA",
+        "SU"
+      ],
+      "outcome": "MENDICANT",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-04-1",
+      "sloka": 4,
+      "clause": 1,
+      "pdf_page": 40,
+      "planet_set": [
+        "JU",
+        "ME",
+        "SA",
+        "SU"
+      ],
+      "outcome": "MENDICANT",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-04-2",
+      "sloka": 4,
+      "clause": 2,
+      "pdf_page": 40,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "SU"
+      ],
+      "outcome": "MENDICANT",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-05-1",
+      "sloka": 5,
+      "clause": 1,
+      "pdf_page": 40,
+      "planet_set": [
+        "MA",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-05-2",
+      "sloka": 5,
+      "clause": 2,
+      "pdf_page": 40,
+      "planet_set": [
+        "JU",
+        "MA",
+        "SA",
+        "SU"
+      ],
+      "outcome": "ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-05-3",
+      "sloka": 5,
+      "clause": 3,
+      "pdf_page": 40,
+      "planet_set": [
+        "JU",
+        "MA",
+        "MO",
+        "SA"
+      ],
+      "outcome": "ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-06-1",
+      "sloka": 6,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "SA"
+      ],
+      "outcome": "RELIGIOUS_INITIATION",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-06-2",
+      "sloka": 6,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "ME",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "RELIGIOUS_INITIATION",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-06-3",
+      "sloka": 6,
+      "clause": 3,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "MO",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "RELIGIOUS_INITIATION",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-07-1",
+      "sloka": 7,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "FOREST_MENDICANT",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-07-2",
+      "sloka": 7,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "MO",
+        "SA"
+      ],
+      "outcome": "FOREST_MENDICANT",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-07-3",
+      "sloka": 7,
+      "clause": 3,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "ME",
+        "MO",
+        "SA",
+        "VE"
+      ],
+      "outcome": "FOREST_MENDICANT",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-08-1",
+      "sloka": 8,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "MO",
+        "SU"
+      ],
+      "outcome": "HONORED_SAGE",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-08-2",
+      "sloka": 8,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "ME",
+        "MO",
+        "SU",
+        "VE"
+      ],
+      "outcome": "HONORED_SAGE",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-09-1",
+      "sloka": 9,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "MO",
+        "SA",
+        "SU"
+      ],
+      "outcome": "RELIGIOUS_INITIATION",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-09-2",
+      "sloka": 9,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "MO",
+        "SA",
+        "SU"
+      ],
+      "outcome": "RELIGIOUS_INITIATION",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-09-3",
+      "sloka": 9,
+      "clause": 3,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "ME",
+        "MO",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "RELIGIOUS_INITIATION",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-10-1",
+      "sloka": 10,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MO",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "FAMOUS_SAGE",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-10-2",
+      "sloka": 10,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "ME",
+        "MO",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "FAMOUS_SAGE",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-11-1",
+      "sloka": 11,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-11-2",
+      "sloka": 11,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "ME",
+        "MO",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-12-1",
+      "sloka": 12,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MO",
+        "SA",
+        "SU"
+      ],
+      "outcome": "ROOT_FRUIT_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-12-2",
+      "sloka": 12,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "MO",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "ROOT_FRUIT_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-12-3",
+      "sloka": 12,
+      "clause": 3,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "SU"
+      ],
+      "outcome": "ROOT_FRUIT_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-13-1",
+      "sloka": 13,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "ME",
+        "SU",
+        "VE"
+      ],
+      "outcome": "BARK_GARMENTS",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-13-2",
+      "sloka": 13,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "MO"
+      ],
+      "outcome": "BARK_GARMENTS",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-14-1",
+      "sloka": 14,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "ME",
+        "MO",
+        "SA"
+      ],
+      "outcome": "PATIENT_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-14-2",
+      "sloka": 14,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "SA"
+      ],
+      "outcome": "PATIENT_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-15-1",
+      "sloka": 15,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "ME",
+        "MO",
+        "SU",
+        "VE"
+      ],
+      "outcome": "FRUIT_ONLY_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-15-2",
+      "sloka": 15,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "ME",
+        "SA",
+        "VE"
+      ],
+      "outcome": "FRUIT_ONLY_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-15-3",
+      "sloka": 15,
+      "clause": 3,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MO",
+        "SA",
+        "VE"
+      ],
+      "outcome": "FRUIT_ONLY_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-16-1",
+      "sloka": 16,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "MO",
+        "SU",
+        "VE"
+      ],
+      "outcome": "HONORED_FOREST_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-16-2",
+      "sloka": 16,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "ME",
+        "MO",
+        "SU"
+      ],
+      "outcome": "HONORED_FOREST_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-16-3",
+      "sloka": 16,
+      "clause": 3,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "outcome": "HONORED_FOREST_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-16-4",
+      "sloka": 16,
+      "clause": 4,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "MO",
+        "VE"
+      ],
+      "outcome": "HONORED_FOREST_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-17-1",
+      "sloka": 17,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "MO",
+        "SA",
+        "VE"
+      ],
+      "outcome": "SORROWFUL_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-17-2",
+      "sloka": 17,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "MO",
+        "VE"
+      ],
+      "outcome": "SORROWFUL_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-17-3",
+      "sloka": 17,
+      "clause": 3,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "MO",
+        "SU"
+      ],
+      "outcome": "SORROWFUL_ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-18-1",
+      "sloka": 18,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "SA",
+        "VE"
+      ],
+      "outcome": "BARK_GARMENTS",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-18-2",
+      "sloka": 18,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "ME",
+        "MO",
+        "SA",
+        "SU"
+      ],
+      "outcome": "BARK_GARMENTS",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-19-1",
+      "sloka": 19,
+      "clause": 1,
+      "pdf_page": 41,
+      "planet_set": [
+        "MA",
+        "ME",
+        "MO",
+        "SU",
+        "VE"
+      ],
+      "outcome": "ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    },
+    {
+      "id": "SAR20-19-2",
+      "sloka": 19,
+      "clause": 2,
+      "pdf_page": 41,
+      "planet_set": [
+        "JU",
+        "MA",
+        "MO",
+        "SU",
+        "VE"
+      ],
+      "outcome": "ASCETIC",
+      "verse_as_rendered_in_english": "English-only modern compilation; source original text not yet collated"
+    }
+  ],
+  "duplicated_sets": [
+    {
+      "planet_set": [
+        "JU",
+        "MA",
+        "MO",
+        "SU",
+        "VE"
+      ],
+      "clauses": [
+        {
+          "id": "SAR20-02-1",
+          "sloka": 2,
+          "outcome": "ASCETIC"
+        },
+        {
+          "id": "SAR20-19-2",
+          "sloka": 19,
+          "outcome": "ASCETIC"
+        }
+      ]
+    },
+    {
+      "planet_set": [
+        "MA",
+        "ME",
+        "MO",
+        "SU"
+      ],
+      "clauses": [
+        {
+          "id": "SAR20-02-2",
+          "sloka": 2,
+          "outcome": "ASCETIC"
+        },
+        {
+          "id": "SAR20-16-2",
+          "sloka": 16,
+          "outcome": "HONORED_FOREST_ASCETIC"
+        }
+      ]
+    },
+    {
+      "planet_set": [
+        "MA",
+        "ME",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "clauses": [
+        {
+          "id": "SAR20-02-3",
+          "sloka": 2,
+          "outcome": "ASCETIC"
+        },
+        {
+          "id": "SAR20-06-2",
+          "sloka": 6,
+          "outcome": "RELIGIOUS_INITIATION"
+        }
+      ]
+    },
+    {
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "MO",
+        "SU"
+      ],
+      "clauses": [
+        {
+          "id": "SAR20-03-1",
+          "sloka": 3,
+          "outcome": "MENDICANT"
+        },
+        {
+          "id": "SAR20-08-1",
+          "sloka": 8,
+          "outcome": "HONORED_SAGE"
+        },
+        {
+          "id": "SAR20-17-3",
+          "sloka": 17,
+          "outcome": "SORROWFUL_ASCETIC"
+        }
+      ]
+    },
+    {
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "SU"
+      ],
+      "clauses": [
+        {
+          "id": "SAR20-04-2",
+          "sloka": 4,
+          "outcome": "MENDICANT"
+        },
+        {
+          "id": "SAR20-12-3",
+          "sloka": 12,
+          "outcome": "ROOT_FRUIT_ASCETIC"
+        }
+      ]
+    },
+    {
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "SA"
+      ],
+      "clauses": [
+        {
+          "id": "SAR20-06-1",
+          "sloka": 6,
+          "outcome": "RELIGIOUS_INITIATION"
+        },
+        {
+          "id": "SAR20-14-2",
+          "sloka": 14,
+          "outcome": "PATIENT_ASCETIC"
+        }
+      ]
+    },
+    {
+      "planet_set": [
+        "MA",
+        "ME",
+        "MO",
+        "SU",
+        "VE"
+      ],
+      "clauses": [
+        {
+          "id": "SAR20-08-2",
+          "sloka": 8,
+          "outcome": "HONORED_SAGE"
+        },
+        {
+          "id": "SAR20-19-1",
+          "sloka": 19,
+          "outcome": "ASCETIC"
+        }
+      ]
+    },
+    {
+      "planet_set": [
+        "JU",
+        "MA",
+        "ME",
+        "MO",
+        "SA",
+        "SU"
+      ],
+      "clauses": [
+        {
+          "id": "SAR20-09-1",
+          "sloka": 9,
+          "outcome": "RELIGIOUS_INITIATION"
+        },
+        {
+          "id": "SAR20-09-2",
+          "sloka": 9,
+          "outcome": "RELIGIOUS_INITIATION"
+        }
+      ]
+    },
+    {
+      "planet_set": [
+        "JU",
+        "ME",
+        "MO",
+        "SA",
+        "SU",
+        "VE"
+      ],
+      "clauses": [
+        {
+          "id": "SAR20-10-2",
+          "sloka": 10,
+          "outcome": "FAMOUS_SAGE"
+        },
+        {
+          "id": "SAR20-11-2",
+          "sloka": 11,
+          "outcome": "ASCETIC"
+        }
+      ]
+    }
+  ],
+  "material_internal_tension": {
+    "planet_set": [
+      "JU",
+      "MA",
+      "ME",
+      "MO",
+      "SU"
+    ],
+    "source_clause_ids": [
+      "SAR20-03-1",
+      "SAR20-08-1",
+      "SAR20-17-3"
+    ],
+    "labels": [
+      "MENDICANT",
+      "HONORED_SAGE",
+      "SORROWFUL_ASCETIC"
+    ],
+    "why": "The translated list assigns distinct (partly opposing) social/outcome descriptions to exactly the same five planets; cannot sum as corroboration or pick the most flattering label after seeing biography."
+  },
+  "remaining_slokas": [
+    {
+      "range": "20-21",
+      "kind": "failure/cancellation/aspiration",
+      "pdf_pages": [
+        41,
+        42
+      ]
+    },
+    {
+      "range": "22-29",
+      "kind": "additional configurations, Moon/Saturn and strong/weak status",
+      "pdf_pages": [
+        42
+      ]
+    },
+    {
+      "range": "30-36",
+      "kind": "planet as religious-order/class significator",
+      "pdf_pages": [
+        42,
+        43
+      ]
+    },
+    {
+      "range": "37",
+      "kind": "Raja Yoga co-occurrence/outcome override",
+      "pdf_pages": [
+        43
+      ]
+    }
+  ],
+  "human_predictions_ran": 0,
+  "production_rules_promoted": 0
+}
