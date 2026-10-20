@@ -38,3 +38,13 @@ Tests: prior NaYin **12/12** and previously existing Chinese mechanics **38/38**
 - Independent independently published traditional Zi Wei chart examples with authenticated birth calendar/time-zone treatment; implement all 14 principal stars and Four Transformations, date-hour conversions with tests across leap months.
 - Independently check exact source and date boundaries for BaZi day/solar terms, and Lilly historical 1647/1659 original printed page754 Chapter CLXXXI R13045, in separate worktrees; preserve source original and errors.
 - Freeze model, target mapping and participant blind/test protocol before any human outcomes or decoy scoring. Publish each tested checkpoint to an isolated Git branch with SHA readback and keep negatives.
+
+## 14 primary stars from original Chinese directional mnemonic, validated on independent published modern worked layouts
+
+`ziwei/quan_shu_fourteen_stars.py` verifies exact two transmitted source mnemonic lines and oldid1963110 SHA before placing six Purple-family principal stars using reverse offsets [0,-1,-3,-4,-5,-8], and eight TianFu-family principal stars forward [0,+1,+2,+3,+4,+5,+6,+10]. Tian Fu itself is based on the original Yin–Shen mirror. Inputs originate ONLY from the explicitly qualified lunar-input mechanical chain, NOT from a Gregorian date. 12/12 possible Purple anchors yield the expected 14 uniquely named principal star positions.
+
+Two independent modern explanatory worked placements used as **external arithmetic parity**, neither source authenticated early historical originals or real birth-derived observations:
+- https://askziwei.com/blog/en/zi-wei-dou-shu-star-placement-formulas.html: example Fire-six day16 yields ZiWei Wu / TianFu Xu, with main-star groups including QiSha Chen, TaiYang/TianLiang Mao and PoJun Shen. First independent-worked-chart expected-position test failed because the *test* inadvertently predicted PoJun Wei; reinspection of the published source +10 Fu-Xu shift and its Career palace name proved it must be Shen. Test corrected; implementation unchanged. Failure retained in observer telemetry.
+- https://www.doushu.ai/star-rules: ZiWei Mao and TianFu Chou demonstrated, with TianJi and TaiYin Yin, QiSha Wei, PoJun Hai, etc.; consistent.
+
+New `tests/test_ziwei_fourteen_stars.py`: focused 10/10 green after expectation correction. Old source corpus/historical Chinese V9 and Western B07bc indexes unchanged. Existence of 14 positions is NOT a complete 14-star natal chart computed from actual civil birth data, independently authenticated original-page edition, or validated human fortune prediction. The remaining scientific validation is still the dominant project milestone.

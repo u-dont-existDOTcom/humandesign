@@ -1,0 +1,45 @@
+{
+  "title": "Traditional Zi Wei six-plus-eight principal-star mechanical placement, SOURCE-ONLY",
+  "status": "RESEARCH-ONLY, NO CIVIL-DATE CHART AND NO HUMAN VALIDATION",
+  "source": {
+    "transmitted": "紫微斗數全書 卷二 oldid1963110, 安南北斗诸星诀",
+    "sha256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+    "verse_1_exact": "紫微天机逆行旁，隔一阳武天同当，又隔二位廉贞地，空三复见紫微郎，",
+    "verse_2_exact": "天府太阴与贪狼，巨门天相及天梁，七杀空三破军位，八星顺数细推详。",
+    "authenticated_early_original_Ming_imprint": false,
+    "source_frozen_byte_hash_enforced": true
+  },
+  "branch_order": "Zi Chou Yin Mao Chen Si Wu Wei Shen You Xu Hai",
+  "ziwei_family_counterclockwise_steps": {
+    "ZiWei": 0, "TianJi": -1, "TaiYang": -3, "WuQu": -4, "TianTong": -5, "LianZhen": -8
+  },
+  "tianfu_family_clockwise_steps": {
+    "TianFu": 0, "TaiYin": 1, "TanLang": 2, "JuMen": 3, "TianXiang": 4, "TianLiang": 5, "QiSha": 6, "PoJun": 10
+  },
+  "independent_modern_comparison": {
+    "source_one": "https://askziwei.com/blog/en/zi-wei-dou-shu-star-placement-formulas.html",
+    "source_two": "https://www.doushu.ai/star-rules",
+    "source_one_example": "Zi Wei Wu, Tian Fu Xu, Life Chen, Po Jun Shen (Career), Qi Sha Chen, Tai Yang/Tian Liang Mao; 14 positions reproduced",
+    "source_two_example": "Zi Wei Mao, Tian Fu Chou, and respective Yin, Hai, Wei positions reproduced",
+    "tested_12_ziwei_anchor_positions": 12,
+    "discrepancies": 0,
+    "independent_birth_calendar_or_classical_edition_validation": false,
+    "first_expected_value_error": "Initial test incorrectly expected Po Jun Wei; exact published formula +10 from Tian Fu Xu places Po Jun in Shen, which IS the Career palace if Life is Chen. Corrected independent example expectation before acceptance; kept test telemetry."
+  },
+  "integrated_source_chain": "already-resolved lunar year stem + month + hour branch + day -> Life/Body -> palace stem -> NaYin 2/3/4/5/6 bureau -> original day grids -> ZiWei -> Fu reflected -> 6+8 principal stars",
+  "source_variant_status": "Uncorrected original table errors remain unresolved; opt-in variant correction carries qualified_source_variant, never silently normalized.",
+  "not_implemented": [
+    "independent birth date/timezone longitude -> Chinese lunar date and year conventions",
+    "historical true solar time and Zi hour policy",
+    "independent actual natal date example/chart parity",
+    "four-transformations per all ten stems",
+    "minor/auxiliary stars complete chart and timing",
+    "freeze registered falsifiable predictive model",
+    "blind real-person forward and reverse outcomes"
+  ],
+  "n_new_historical_source_annotations": 0,
+  "n_blind_human_successes": 0,
+  "n_production_runtime_promotions": 0,
+  "source_specific_main_star_unit_tests": 10,
+  "note": "12/12 + 11/11 + 9/9 earlier tests green, 38/38 original Chinese mechanics green; a full prospective observational study is still absent."
+}
