@@ -1,0 +1,739 @@
+{
+  "schema": "ZIWEI_FOURTEEN_MAJOR_STARS_SOURCE_CONDITIONAL_RHYME_V1",
+  "original_source_witness": {
+    "original_Vol2_revision_oldid": 1963110,
+    "original_raw_SHA256": "1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72",
+    "original_14_star_verse_exact": "紫微天机逆行旁，隔一阳武天同当，又隔二位廉贞地，空三复见紫微郎，\n天府太阴与贪狼，巨门天相及天梁，七杀空三破军位，八星顺数细推详。",
+    "original_14_star_verse_sha256": "b4f431d4c22b7f251ab167f801b51c5be008bf6282dcb368da750f1432178634",
+    "verse_start_original_codepoint_offset": 810,
+    "verse_start_original_utf8_byte_offset": 2036,
+    "original_worked_example_exact": "如甲生人安命在寅却起甲己之年丙为首，是丙寅丁卯炉中火，却去火局寻某日生期起紫微帝王，\n如是正月初一生者是火局，酉宫起初一日，就从酉宫起紫微，数无差迟，若错了则失之毫厘，差之千里矣。",
+    "original_worked_example_sha256": "34568fe3e7603a15d78c74e2d762ddafb54db65d7cda815614324df593869481",
+    "modern_secondary_explainer_for_crossreading_only": "https://xingge.tw/en/quanshu/anming-zhuxing",
+    "source_ancient_Ming_physical_edition_verified": false,
+    "expert_textual_critical_collation_complete": false
+  },
+  "basis": "Given ZiWei original day/bureau palace, derive TianFu mirror and 6 counterclockwise/8 clockwise major stars by exact classical mnemonic gaps.",
+  "source_branches": "Zi,Chou,Yin,Mao,Chen,Si,Wu,Wei,Shen,You,Xu,Hai",
+  "original_star_source_six_group": [
+    {
+      "name": "ZiWei",
+      "original_Chinese": "紫微",
+      "relative_branch_offset": 0
+    },
+    {
+      "name": "TianJi",
+      "original_Chinese": "天机",
+      "relative_branch_offset": -1
+    },
+    {
+      "name": "TaiYang",
+      "original_Chinese": "太阳",
+      "relative_branch_offset": -3
+    },
+    {
+      "name": "WuQu",
+      "original_Chinese": "武曲",
+      "relative_branch_offset": -4
+    },
+    {
+      "name": "TianTong",
+      "original_Chinese": "天同",
+      "relative_branch_offset": -5
+    },
+    {
+      "name": "LianZhen",
+      "original_Chinese": "廉贞",
+      "relative_branch_offset": -8
+    }
+  ],
+  "original_star_source_eight_group": [
+    {
+      "name": "TianFu",
+      "original_Chinese": "天府",
+      "relative_branch_offset": 0
+    },
+    {
+      "name": "TaiYin",
+      "original_Chinese": "太阴",
+      "relative_branch_offset": 1
+    },
+    {
+      "name": "TanLang",
+      "original_Chinese": "贪狼",
+      "relative_branch_offset": 2
+    },
+    {
+      "name": "JuMen",
+      "original_Chinese": "巨门",
+      "relative_branch_offset": 3
+    },
+    {
+      "name": "TianXiang",
+      "original_Chinese": "天相",
+      "relative_branch_offset": 4
+    },
+    {
+      "name": "TianLiang",
+      "original_Chinese": "天梁",
+      "relative_branch_offset": 5
+    },
+    {
+      "name": "QiSha",
+      "original_Chinese": "七杀",
+      "relative_branch_offset": 6
+    },
+    {
+      "name": "PoJun",
+      "original_Chinese": "破军",
+      "relative_branch_offset": 10
+    }
+  ],
+  "source_14_stars_derived_for_all_12_possible_ZiWei_base_branches": true,
+  "all_12_anchor_configurations": [
+    {
+      "ziwei_base_branch": "Zi",
+      "tianfu_base_branch": "Chen",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Zi",
+        "TianJi": "Hai",
+        "TaiYang": "You",
+        "WuQu": "Shen",
+        "TianTong": "Wei",
+        "LianZhen": "Chen"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Chen",
+        "TaiYin": "Si",
+        "TanLang": "Wu",
+        "JuMen": "Wei",
+        "TianXiang": "Shen",
+        "TianLiang": "You",
+        "QiSha": "Xu",
+        "PoJun": "Yin"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Zi",
+        "TianJi": "Hai",
+        "TaiYang": "You",
+        "WuQu": "Shen",
+        "TianTong": "Wei",
+        "LianZhen": "Chen",
+        "TianFu": "Chen",
+        "TaiYin": "Si",
+        "TanLang": "Wu",
+        "JuMen": "Wei",
+        "TianXiang": "Shen",
+        "TianLiang": "You",
+        "QiSha": "Xu",
+        "PoJun": "Yin"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "Chou",
+      "tianfu_base_branch": "Mao",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Chou",
+        "TianJi": "Zi",
+        "TaiYang": "Xu",
+        "WuQu": "You",
+        "TianTong": "Shen",
+        "LianZhen": "Si"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Mao",
+        "TaiYin": "Chen",
+        "TanLang": "Si",
+        "JuMen": "Wu",
+        "TianXiang": "Wei",
+        "TianLiang": "Shen",
+        "QiSha": "You",
+        "PoJun": "Chou"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Chou",
+        "TianJi": "Zi",
+        "TaiYang": "Xu",
+        "WuQu": "You",
+        "TianTong": "Shen",
+        "LianZhen": "Si",
+        "TianFu": "Mao",
+        "TaiYin": "Chen",
+        "TanLang": "Si",
+        "JuMen": "Wu",
+        "TianXiang": "Wei",
+        "TianLiang": "Shen",
+        "QiSha": "You",
+        "PoJun": "Chou"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "Yin",
+      "tianfu_base_branch": "Yin",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Yin",
+        "TianJi": "Chou",
+        "TaiYang": "Hai",
+        "WuQu": "Xu",
+        "TianTong": "You",
+        "LianZhen": "Wu"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Yin",
+        "TaiYin": "Mao",
+        "TanLang": "Chen",
+        "JuMen": "Si",
+        "TianXiang": "Wu",
+        "TianLiang": "Wei",
+        "QiSha": "Shen",
+        "PoJun": "Zi"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Yin",
+        "TianJi": "Chou",
+        "TaiYang": "Hai",
+        "WuQu": "Xu",
+        "TianTong": "You",
+        "LianZhen": "Wu",
+        "TianFu": "Yin",
+        "TaiYin": "Mao",
+        "TanLang": "Chen",
+        "JuMen": "Si",
+        "TianXiang": "Wu",
+        "TianLiang": "Wei",
+        "QiSha": "Shen",
+        "PoJun": "Zi"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "Mao",
+      "tianfu_base_branch": "Chou",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Mao",
+        "TianJi": "Yin",
+        "TaiYang": "Zi",
+        "WuQu": "Hai",
+        "TianTong": "Xu",
+        "LianZhen": "Wei"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Chou",
+        "TaiYin": "Yin",
+        "TanLang": "Mao",
+        "JuMen": "Chen",
+        "TianXiang": "Si",
+        "TianLiang": "Wu",
+        "QiSha": "Wei",
+        "PoJun": "Hai"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Mao",
+        "TianJi": "Yin",
+        "TaiYang": "Zi",
+        "WuQu": "Hai",
+        "TianTong": "Xu",
+        "LianZhen": "Wei",
+        "TianFu": "Chou",
+        "TaiYin": "Yin",
+        "TanLang": "Mao",
+        "JuMen": "Chen",
+        "TianXiang": "Si",
+        "TianLiang": "Wu",
+        "QiSha": "Wei",
+        "PoJun": "Hai"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "Chen",
+      "tianfu_base_branch": "Zi",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Chen",
+        "TianJi": "Mao",
+        "TaiYang": "Chou",
+        "WuQu": "Zi",
+        "TianTong": "Hai",
+        "LianZhen": "Shen"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Zi",
+        "TaiYin": "Chou",
+        "TanLang": "Yin",
+        "JuMen": "Mao",
+        "TianXiang": "Chen",
+        "TianLiang": "Si",
+        "QiSha": "Wu",
+        "PoJun": "Xu"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Chen",
+        "TianJi": "Mao",
+        "TaiYang": "Chou",
+        "WuQu": "Zi",
+        "TianTong": "Hai",
+        "LianZhen": "Shen",
+        "TianFu": "Zi",
+        "TaiYin": "Chou",
+        "TanLang": "Yin",
+        "JuMen": "Mao",
+        "TianXiang": "Chen",
+        "TianLiang": "Si",
+        "QiSha": "Wu",
+        "PoJun": "Xu"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "Si",
+      "tianfu_base_branch": "Hai",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Si",
+        "TianJi": "Chen",
+        "TaiYang": "Yin",
+        "WuQu": "Chou",
+        "TianTong": "Zi",
+        "LianZhen": "You"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Hai",
+        "TaiYin": "Zi",
+        "TanLang": "Chou",
+        "JuMen": "Yin",
+        "TianXiang": "Mao",
+        "TianLiang": "Chen",
+        "QiSha": "Si",
+        "PoJun": "You"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Si",
+        "TianJi": "Chen",
+        "TaiYang": "Yin",
+        "WuQu": "Chou",
+        "TianTong": "Zi",
+        "LianZhen": "You",
+        "TianFu": "Hai",
+        "TaiYin": "Zi",
+        "TanLang": "Chou",
+        "JuMen": "Yin",
+        "TianXiang": "Mao",
+        "TianLiang": "Chen",
+        "QiSha": "Si",
+        "PoJun": "You"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "Wu",
+      "tianfu_base_branch": "Xu",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Wu",
+        "TianJi": "Si",
+        "TaiYang": "Mao",
+        "WuQu": "Yin",
+        "TianTong": "Chou",
+        "LianZhen": "Xu"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Xu",
+        "TaiYin": "Hai",
+        "TanLang": "Zi",
+        "JuMen": "Chou",
+        "TianXiang": "Yin",
+        "TianLiang": "Mao",
+        "QiSha": "Chen",
+        "PoJun": "Shen"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Wu",
+        "TianJi": "Si",
+        "TaiYang": "Mao",
+        "WuQu": "Yin",
+        "TianTong": "Chou",
+        "LianZhen": "Xu",
+        "TianFu": "Xu",
+        "TaiYin": "Hai",
+        "TanLang": "Zi",
+        "JuMen": "Chou",
+        "TianXiang": "Yin",
+        "TianLiang": "Mao",
+        "QiSha": "Chen",
+        "PoJun": "Shen"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "Wei",
+      "tianfu_base_branch": "You",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Wei",
+        "TianJi": "Wu",
+        "TaiYang": "Chen",
+        "WuQu": "Mao",
+        "TianTong": "Yin",
+        "LianZhen": "Hai"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "You",
+        "TaiYin": "Xu",
+        "TanLang": "Hai",
+        "JuMen": "Zi",
+        "TianXiang": "Chou",
+        "TianLiang": "Yin",
+        "QiSha": "Mao",
+        "PoJun": "Wei"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Wei",
+        "TianJi": "Wu",
+        "TaiYang": "Chen",
+        "WuQu": "Mao",
+        "TianTong": "Yin",
+        "LianZhen": "Hai",
+        "TianFu": "You",
+        "TaiYin": "Xu",
+        "TanLang": "Hai",
+        "JuMen": "Zi",
+        "TianXiang": "Chou",
+        "TianLiang": "Yin",
+        "QiSha": "Mao",
+        "PoJun": "Wei"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "Shen",
+      "tianfu_base_branch": "Shen",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Shen",
+        "TianJi": "Wei",
+        "TaiYang": "Si",
+        "WuQu": "Chen",
+        "TianTong": "Mao",
+        "LianZhen": "Zi"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Shen",
+        "TaiYin": "You",
+        "TanLang": "Xu",
+        "JuMen": "Hai",
+        "TianXiang": "Zi",
+        "TianLiang": "Chou",
+        "QiSha": "Yin",
+        "PoJun": "Wu"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Shen",
+        "TianJi": "Wei",
+        "TaiYang": "Si",
+        "WuQu": "Chen",
+        "TianTong": "Mao",
+        "LianZhen": "Zi",
+        "TianFu": "Shen",
+        "TaiYin": "You",
+        "TanLang": "Xu",
+        "JuMen": "Hai",
+        "TianXiang": "Zi",
+        "TianLiang": "Chou",
+        "QiSha": "Yin",
+        "PoJun": "Wu"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "You",
+      "tianfu_base_branch": "Wei",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "You",
+        "TianJi": "Shen",
+        "TaiYang": "Wu",
+        "WuQu": "Si",
+        "TianTong": "Chen",
+        "LianZhen": "Chou"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Wei",
+        "TaiYin": "Shen",
+        "TanLang": "You",
+        "JuMen": "Xu",
+        "TianXiang": "Hai",
+        "TianLiang": "Zi",
+        "QiSha": "Chou",
+        "PoJun": "Si"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "You",
+        "TianJi": "Shen",
+        "TaiYang": "Wu",
+        "WuQu": "Si",
+        "TianTong": "Chen",
+        "LianZhen": "Chou",
+        "TianFu": "Wei",
+        "TaiYin": "Shen",
+        "TanLang": "You",
+        "JuMen": "Xu",
+        "TianXiang": "Hai",
+        "TianLiang": "Zi",
+        "QiSha": "Chou",
+        "PoJun": "Si"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "Xu",
+      "tianfu_base_branch": "Wu",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Xu",
+        "TianJi": "You",
+        "TaiYang": "Wei",
+        "WuQu": "Wu",
+        "TianTong": "Si",
+        "LianZhen": "Yin"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Wu",
+        "TaiYin": "Wei",
+        "TanLang": "Shen",
+        "JuMen": "You",
+        "TianXiang": "Xu",
+        "TianLiang": "Hai",
+        "QiSha": "Zi",
+        "PoJun": "Chen"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Xu",
+        "TianJi": "You",
+        "TaiYang": "Wei",
+        "WuQu": "Wu",
+        "TianTong": "Si",
+        "LianZhen": "Yin",
+        "TianFu": "Wu",
+        "TaiYin": "Wei",
+        "TanLang": "Shen",
+        "JuMen": "You",
+        "TianXiang": "Xu",
+        "TianLiang": "Hai",
+        "QiSha": "Zi",
+        "PoJun": "Chen"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    {
+      "ziwei_base_branch": "Hai",
+      "tianfu_base_branch": "Si",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "Hai",
+        "TianJi": "Xu",
+        "TaiYang": "Shen",
+        "WuQu": "Wei",
+        "TianTong": "Wu",
+        "LianZhen": "Mao"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Si",
+        "TaiYin": "Wu",
+        "TanLang": "Wei",
+        "JuMen": "Shen",
+        "TianXiang": "You",
+        "TianLiang": "Xu",
+        "QiSha": "Hai",
+        "PoJun": "Mao"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "Hai",
+        "TianJi": "Xu",
+        "TaiYang": "Shen",
+        "WuQu": "Wei",
+        "TianTong": "Wu",
+        "LianZhen": "Mao",
+        "TianFu": "Si",
+        "TaiYin": "Wu",
+        "TanLang": "Wei",
+        "JuMen": "Shen",
+        "TianXiang": "You",
+        "TianLiang": "Xu",
+        "QiSha": "Hai",
+        "PoJun": "Mao"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    }
+  ],
+  "unretuned_authorial_JiaYin_Fire_day1_exemplary_14_star_result": {
+    "input_birth_yearstem": "Jia",
+    "input_life_palace": "Yin",
+    "input_lunar_day": 1,
+    "source_edition_policy": "strict_oldid1963110",
+    "source_bureau": {
+      "yearstem_input": "Jia",
+      "life_palace_branch_input": "Yin",
+      "edition_policy_requested": "strict_oldid1963110",
+      "primary_oldid_original_label": "丙寅丁卯",
+      "derived_exact_sexagenary_name": "丙寅",
+      "original_primary_source_strict_valid": true,
+      "primary_original_non_emended_bureau": "火六局",
+      "effective_bureau_candidate_under_requested_source_policy": "火六局",
+      "evidence_status": "EXACT_TRANSMITTED_NAYIN_SOURCE_LABEL_NOT_BIRTH_CHART_VALIDATION",
+      "correction_applied_from_secondary": false,
+      "secondary_evidence_PDF_first_source_page": null,
+      "secondary_source_photo_SHA256": null,
+      "source_original_early_edition_authenticated": false,
+      "individual_natal_chart_or_human_prediction_validated": false,
+      "runtime_model_promoted": false
+    },
+    "source_ZiWei_lunar_day_original": {
+      "source_transmitted_bureau": "火六局",
+      "supplied_lunar_day": 1,
+      "source_literal_status": "SINGLE_TRANSMITTED_SOURCE_LABEL_NOT_VALIDATED_BIRTH_CHART",
+      "literal_ziwei_branch_if_single_source_label": "You",
+      "derived_tianfu_branch_if_single_ziwei_label": "Wei",
+      "printed_duplicate_ziwei_candidate_branches": [],
+      "source_original_full_document_revision": 1963110,
+      "excerpt_SHA256": "af275fb6c7b4c2235fea69d3a338066f7ed640541df8f44ed3fd8357d5d200e7",
+      "first_original_Ming_print_verified": false,
+      "independent_natal_calendar_or_bureau_calculation_verified": false,
+      "independently_confirmed_ziwei_14_star_birthday_chart": false,
+      "actual_person_predictions_validated": 0
+    },
+    "conditional_fourteen_stars": {
+      "ziwei_base_branch": "You",
+      "tianfu_base_branch": "Wei",
+      "counterclockwise_six_ziwei_group": {
+        "ZiWei": "You",
+        "TianJi": "Shen",
+        "TaiYang": "Wu",
+        "WuQu": "Si",
+        "TianTong": "Chen",
+        "LianZhen": "Chou"
+      },
+      "clockwise_eight_tianfu_group": {
+        "TianFu": "Wei",
+        "TaiYin": "Shen",
+        "TanLang": "You",
+        "JuMen": "Xu",
+        "TianXiang": "Hai",
+        "TianLiang": "Zi",
+        "QiSha": "Chou",
+        "PoJun": "Si"
+      },
+      "all_fourteen_primary_stars_conditional_on_source_palaces": {
+        "ZiWei": "You",
+        "TianJi": "Shen",
+        "TaiYang": "Wu",
+        "WuQu": "Si",
+        "TianTong": "Chen",
+        "LianZhen": "Chou",
+        "TianFu": "Wei",
+        "TaiYin": "Shen",
+        "TanLang": "You",
+        "JuMen": "Xu",
+        "TianXiang": "Hai",
+        "TianLiang": "Zi",
+        "QiSha": "Chou",
+        "PoJun": "Si"
+      },
+      "group_star_counts": {
+        "ZiWeiGroup": 6,
+        "TianFuGroup": 8
+      },
+      "source_trine_TanLang_QiSha_PoJun_spacing_equals_four_houses": true,
+      "physical_early_Ming_original_authenticated": false,
+      "independent_original_birth_calendar_computed_and_verified": false,
+      "personal_predictions_validated": 0
+    },
+    "result_status": "FOURTEEN_SOURCE_CONDITIONAL_STAR_PALACES_CALCULATED_NOT_NATAL_VALIDATED",
+    "full_historical_birth_chart_parity_verified": false,
+    "human_predictions_validated": 0
+  },
+  "not_an_independently_verified_classical_birth_chart": true,
+  "source_malformed_grid_and_nayin_labels_remaining": true,
+  "birth_year_timezone_lunar_leap_month_and_true_solar_time_parity_verified": false,
+  "full_actual_birth_natal_chart_calculation_independently_verified": false,
+  "past_or_future_real_human_predictions_validated": 0,
+  "runtime_promotions": 0
+}
