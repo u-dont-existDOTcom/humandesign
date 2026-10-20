@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "status": "SOURCE_INVENTORIED_FIRST_READ_OPEN",
+  "isolation": {
+    "branch": "research/astro-jyotish-five-sources-reader-20261020",
+    "base_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
+    "owner_goal": "Add five user-uploaded Jyotish reference books to the astrology research and read them independently of the other active astrology reader; preserve scientific blinding and parallel-work isolation."
+  },
+  "archival_policy": {
+    "repository_visibility": "public",
+    "raw_files_published": false,
+    "reason": "Modern editions/translations carry copyright or unclear redistribution rights. GitHub research branch stores fingerprints, source locations, short analytical paraphrases and bounded quotations, not full books.",
+    "source_availability": "Uploaded into the initiating conversation; raw files must be reattached in a fresh session unless held separately by the owner.",
+    "research_status": "Source annotations are NOT observed successes, independent confirmations, frozen production rules, or prospective human validation."
+  },
+  "sources": [
+    {
+      "id": "JYOT-SC-BHASIN",
+      "title": "Sarvarth Chintamani",
+      "original_author": "Vyankatesh/Venkatesha Sharma",
+      "edition": "English translation with translator notes, J. N. Bhasin, Ranjan Publications; edition date not verified",
+      "filename": "ebharati-pdf-1621242374Sarvartha-Chintamani-JN-Bhasin_compressed.pdf",
+      "sha256": "b47358c872f3a22c0c60cab140e97efdcaeffe4450420c8b8827a00242915456",
+      "bytes": 47326784,
+      "format": "pdf",
+      "pdf_pages": 374,
+      "language": "English with Sanskrit verse images",
+      "risk_notes": [
+        "Scan OCR noisy, diagrams and glyphs may require direct page-image verification",
+        "Translator expressly inserts original-absent Rahu/Ketu aspect notes and proposes nonstandard Lahiri correction; mark as commentator-only"
+      ]
+    },
+    {
+      "id": "JYOT-BPHS-KERR-PT",
+      "title": "Brihat Parashara Hora Shastra",
+      "original_author": "Traditionally attributed to Parashara",
+      "edition": "Portuguese adaptation translated by André Kerr from an English translation, with Santhanam-attributed additions; not Sanskrit critical edition",
+      "filename": "Parashara_Muni_Brihat_Parashara_Hora_Shastra_txt -- 592200637b652d7524a8e6a68a2fb777 -- Anna’s Archive.txt",
+      "sha256": "d271b96457dade884ae4fd0c268d09e88696beeca707fce2b1d2159aa6084b62",
+      "bytes": 641138,
+      "format": "txt",
+      "text_lines": 5941,
+      "encoding": "Windows-1252 / cp1252",
+      "language": "Portuguese",
+      "risk_notes": [
+        "Reading as UTF-8 corrupts accent characters",
+        "Text internally puts 10th among both kendras and apoklimas",
+        "D-30 enumerates five segments but only four planetary rulers in the Portuguese text; suspected omission, do not repair without source collation",
+        "Do not adopt introductory historical dating claim without independent specialist verification"
+      ]
+    },
+    {
+      "id": "JYOT-JAIMINI-RATH-V1",
+      "title": "A Course on Jaimini Maharṣi's Upadeśa Sūtra, Volume 1",
+      "original_author": "Jaimini sutras as interpreted and taught by Sanjay Rath",
+      "edition": "Sanjay Rath, Sagittarius Publications, first published 2009, 2017 reprint; copyright 2007",
+      "filename": "A course on Jaimini Maharṣi's Upadeśa Sūtra -- Rath, Sanjay, Jaimini (Astrologer)_ Jaiminisūtra_ English & -- New Delhi, 2009- -- New Delhi _ -- isbn13 9780976517726 -- 6419d043d526aba45e37d0588d0f8160 -- Anna’s Archive.pdf",
+      "sha256": "f05759d39fa8b19200a51544130fcc1a1f51ffee321e7c8b255fb97b14f4487d",
+      "bytes": 32270100,
+      "format": "pdf",
+      "pdf_pages": 520,
+      "language": "English with Sanskrit source excerpts",
+      "risk_notes": [
+        "Publisher expressly restricts reproduction",
+        "Modern course and school interpretation must not be equated with unambiguous ancient sutra text",
+        "PDF OCR noisy in contents and Sanskrit; page image better"
+      ]
+    },
+    {
+      "id": "JYOT-JP-SASTRI",
+      "title": "Jataka Parijata",
+      "original_author": "Vaidyanatha Dikshita",
+      "edition": "English translation, notes and examples by V. Subramanya Sastri; Ranjan Publications reprint of stated 1932 edition",
+      "filename": "455383441-kupdf-net-jataka-parijata-vol-1-3-pdf.pdf",
+      "sha256": "fc6c5eed810847d14c82004746cedaac077acb971bb6140f613168ded0a21250",
+      "bytes": 18417320,
+      "format": "pdf",
+      "pdf_pages": 1094,
+      "language": "English with Sanskrit",
+      "risk_notes": [
+        "Scan OCR distorted; verify verse and page on images before promotion",
+        "Author expressly describes work as abridging Saravali in Adhyaya I sloka 3; overlapping wording is not independent evidence",
+        "Preface says extant text includes interpolations; do not assume all passages original"
+      ]
+    },
+    {
+      "id": "JYOT-SARAVALI-EN",
+      "title": "Saravali",
+      "original_author": "Kalyana Varma",
+      "edition": "English-only formatted PDF, translator and underlying Sanskrit edition not identified from front matter",
+      "filename": "477349002-kupdf-net-saravali-of-kalyana-varma-pdf.pdf",
+      "sha256": "b6fd2523fb349095a8a595e7d9750bacd8ff0ec7f495a0b58287a38f2c79baa6",
+      "bytes": 10116808,
+      "format": "pdf",
+      "pdf_pages": 150,
+      "language": "English",
+      "risk_notes": [
+        "English chapter/sloka paraphrases may combine multiple verses",
+        "Translation history and Sanskrit critical edition unverified",
+        "Modern formatting/compilation; textual independence from later epitomes must be controlled"
+      ]
+    }
+  ],
+  "totals": {
+    "files": 5,
+    "pdfs": 4,
+    "pdf_pages": 2138,
+    "text_files": 1,
+    "first_pass_validation": "hash and PDF page count computed against uploaded bytes"
+  },
+  "next": "Read and cross-collate renunciation, spiritual vocation, varga computations, house significations; independently verify Sanskrit/editions before admitting executable rules. No change to Western/Chinese historical counts or frozen model."
+}
