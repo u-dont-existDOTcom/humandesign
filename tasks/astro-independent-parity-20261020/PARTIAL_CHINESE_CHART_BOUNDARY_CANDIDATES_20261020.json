@@ -1,0 +1,429 @@
+{
+  "schema": "PARTIAL_TRADITIONAL_BAZI_ZIWEI_CANDIDATE_CST_EXAMPLES_V1",
+  "input_scope": "Modern fixed UTC+08 clock only, NOT general birthplace/timezone, old calendar nor universal charts",
+  "bazi_year_and_month_policy": "lunar_python exact JieQi at civil instant (disagreement with SXTWL date-only disclosed)",
+  "bazi_day_23h_day_roll_policy": "Both calendar-day and next-day-at-23 alternatives preserved; neither selected as universal for test participants",
+  "ziwei_year_policy": "Lunar New Year stem from both SXTWL and lunar_python; not necessarily same as LiChun BaZi year",
+  "ziwei_leap_policy": "Quan Shu transmitted source takes leap month as following month; author/lineage alternatives not calibrated",
+  "ziwei_source_partial_engine": "Existing source-anchored life_and_body_palaces and palace_stem_from_yin only; NO bureau/14 stars/full timing",
+  "demo_scenarios": {
+    "winter_1985_noon": {
+      "at_center": {
+        "input_china_UTC_plus_8": "1985-01-29T12:00:00+08:00",
+        "lunar_ymd": [
+          1984,
+          12,
+          9
+        ],
+        "source_lunar_leap_month": false,
+        "bazi_year_LiChun_exact": "甲子",
+        "bazi_month_exact_jieqi": "丁丑",
+        "bazi_calendar_day_pillar": "戊辰",
+        "bazi_day_23h_next_day_convention": "戊辰",
+        "bazi_day_unresolved_for_23h": false,
+        "bazi_hour_pillar": "戊午",
+        "bazi_four_pillars_if_policy_lunar_python_exact": [
+          "甲子",
+          "丁丑",
+          "戊辰",
+          "戊午"
+        ],
+        "source_sxtwl_four_pillars_date_convention": [
+          "甲子",
+          "丁丑",
+          "戊辰",
+          "戊午"
+        ],
+        "original_sxtwl_has_JieQi_on_date": false,
+        "sxtwl_exact_year_month_conventions_agree": true,
+        "sxtwl_lunar_new_year_equals_lunar_python": true,
+        "ziwei_calendar_year_stem_lunar_new_year": "Jia",
+        "ziwei_month_for_palace_rule": 12,
+        "ziwei_chosen_lunar_leap_policy": "quan_shu_as_next (source-specific, not universal)",
+        "ziwei_life_palace_partial": "Wei",
+        "ziwei_body_palace_partial": "Wei",
+        "ziwei_life_palace_stem_partial": "Xin",
+        "no_full_ziwei_14_star_calculation": true,
+        "no_independent_original_calendar_policy_confirmation": true,
+        "actual_person_predictions_validated": false,
+        "runtime_model_promoted": false
+      },
+      "full_minute_level_time_uncertainty_envelope": {
+        "time_center_CST_fixed_UTC8": "1985-01-29T12:00:00+08:00",
+        "uncertainty_radius_minutes": 0,
+        "evaluated_clock_minute_points": 1,
+        "possible_distinct_variants": [
+          {
+            "bazi_exact_four_pillars": [
+              "甲子",
+              "丁丑",
+              "戊辰",
+              "戊午"
+            ],
+            "bazi_civil_day_policy": "戊辰",
+            "bazi_late_zi_unresolved": false,
+            "ziwei_partial_life": "Wei",
+            "ziwei_partial_body": "Wei",
+            "ziwei_life_palace_stem": "Xin"
+          }
+        ],
+        "unique_partial_states": 1,
+        "all_minute_samples_disagreeing_with_sxtwl_date_level_year_or_month": 0,
+        "full_traditional_source_calendar_14_star_engine_verified": false,
+        "independent_real_human_predictions_validated": 0,
+        "runtime_promotions": 0
+      }
+    },
+    "leap_month_2023": {
+      "at_center": {
+        "input_china_UTC_plus_8": "2023-03-22T12:00:00+08:00",
+        "lunar_ymd": [
+          2023,
+          2,
+          1
+        ],
+        "source_lunar_leap_month": true,
+        "bazi_year_LiChun_exact": "癸卯",
+        "bazi_month_exact_jieqi": "乙卯",
+        "bazi_calendar_day_pillar": "己卯",
+        "bazi_day_23h_next_day_convention": "己卯",
+        "bazi_day_unresolved_for_23h": false,
+        "bazi_hour_pillar": "庚午",
+        "bazi_four_pillars_if_policy_lunar_python_exact": [
+          "癸卯",
+          "乙卯",
+          "己卯",
+          "庚午"
+        ],
+        "source_sxtwl_four_pillars_date_convention": [
+          "癸卯",
+          "乙卯",
+          "己卯",
+          "庚午"
+        ],
+        "original_sxtwl_has_JieQi_on_date": false,
+        "sxtwl_exact_year_month_conventions_agree": true,
+        "sxtwl_lunar_new_year_equals_lunar_python": true,
+        "ziwei_calendar_year_stem_lunar_new_year": "Gui",
+        "ziwei_month_for_palace_rule": 3,
+        "ziwei_chosen_lunar_leap_policy": "quan_shu_as_next (source-specific, not universal)",
+        "ziwei_life_palace_partial": "Xu",
+        "ziwei_body_palace_partial": "Xu",
+        "ziwei_life_palace_stem_partial": "Ren",
+        "no_full_ziwei_14_star_calculation": true,
+        "no_independent_original_calendar_policy_confirmation": true,
+        "actual_person_predictions_validated": false,
+        "runtime_model_promoted": false
+      },
+      "full_minute_level_time_uncertainty_envelope": {
+        "time_center_CST_fixed_UTC8": "2023-03-22T12:00:00+08:00",
+        "uncertainty_radius_minutes": 0,
+        "evaluated_clock_minute_points": 1,
+        "possible_distinct_variants": [
+          {
+            "bazi_exact_four_pillars": [
+              "癸卯",
+              "乙卯",
+              "己卯",
+              "庚午"
+            ],
+            "bazi_civil_day_policy": "己卯",
+            "bazi_late_zi_unresolved": false,
+            "ziwei_partial_life": "Xu",
+            "ziwei_partial_body": "Xu",
+            "ziwei_life_palace_stem": "Ren"
+          }
+        ],
+        "unique_partial_states": 1,
+        "all_minute_samples_disagreeing_with_sxtwl_date_level_year_or_month": 0,
+        "full_traditional_source_calendar_14_star_engine_verified": false,
+        "independent_real_human_predictions_validated": 0,
+        "runtime_promotions": 0
+      }
+    },
+    "lichun_2024_China_clock_uncertain": {
+      "at_center": {
+        "input_china_UTC_plus_8": "2024-02-04T16:26:00+08:00",
+        "lunar_ymd": [
+          2023,
+          12,
+          25
+        ],
+        "source_lunar_leap_month": false,
+        "bazi_year_LiChun_exact": "癸卯",
+        "bazi_month_exact_jieqi": "乙丑",
+        "bazi_calendar_day_pillar": "戊戌",
+        "bazi_day_23h_next_day_convention": "戊戌",
+        "bazi_day_unresolved_for_23h": false,
+        "bazi_hour_pillar": "庚申",
+        "bazi_four_pillars_if_policy_lunar_python_exact": [
+          "癸卯",
+          "乙丑",
+          "戊戌",
+          "庚申"
+        ],
+        "source_sxtwl_four_pillars_date_convention": [
+          "甲辰",
+          "丙寅",
+          "戊戌",
+          "庚申"
+        ],
+        "original_sxtwl_has_JieQi_on_date": true,
+        "sxtwl_exact_year_month_conventions_agree": false,
+        "sxtwl_lunar_new_year_equals_lunar_python": true,
+        "ziwei_calendar_year_stem_lunar_new_year": "Gui",
+        "ziwei_month_for_palace_rule": 12,
+        "ziwei_chosen_lunar_leap_policy": "quan_shu_as_next (source-specific, not universal)",
+        "ziwei_life_palace_partial": "Si",
+        "ziwei_body_palace_partial": "You",
+        "ziwei_life_palace_stem_partial": "Ding",
+        "no_full_ziwei_14_star_calculation": true,
+        "no_independent_original_calendar_policy_confirmation": true,
+        "actual_person_predictions_validated": false,
+        "runtime_model_promoted": false
+      },
+      "full_minute_level_time_uncertainty_envelope": {
+        "time_center_CST_fixed_UTC8": "2024-02-04T16:26:00+08:00",
+        "uncertainty_radius_minutes": 5,
+        "evaluated_clock_minute_points": 11,
+        "possible_distinct_variants": [
+          {
+            "bazi_exact_four_pillars": [
+              "癸卯",
+              "乙丑",
+              "戊戌",
+              "庚申"
+            ],
+            "bazi_civil_day_policy": "戊戌",
+            "bazi_late_zi_unresolved": false,
+            "ziwei_partial_life": "Si",
+            "ziwei_partial_body": "You",
+            "ziwei_life_palace_stem": "Ding"
+          },
+          {
+            "bazi_exact_four_pillars": [
+              "甲辰",
+              "丙寅",
+              "戊戌",
+              "庚申"
+            ],
+            "bazi_civil_day_policy": "戊戌",
+            "bazi_late_zi_unresolved": false,
+            "ziwei_partial_life": "Si",
+            "ziwei_partial_body": "You",
+            "ziwei_life_palace_stem": "Ding"
+          }
+        ],
+        "unique_partial_states": 2,
+        "all_minute_samples_disagreeing_with_sxtwl_date_level_year_or_month": 7,
+        "full_traditional_source_calendar_14_star_engine_verified": false,
+        "independent_real_human_predictions_validated": 0,
+        "runtime_promotions": 0
+      }
+    },
+    "late_zi_2024_two_day_policies": {
+      "at_center": {
+        "input_china_UTC_plus_8": "2024-02-04T23:30:00+08:00",
+        "lunar_ymd": [
+          2023,
+          12,
+          25
+        ],
+        "source_lunar_leap_month": false,
+        "bazi_year_LiChun_exact": "甲辰",
+        "bazi_month_exact_jieqi": "丙寅",
+        "bazi_calendar_day_pillar": "戊戌",
+        "bazi_day_23h_next_day_convention": "己亥",
+        "bazi_day_unresolved_for_23h": true,
+        "bazi_hour_pillar": "甲子",
+        "bazi_four_pillars_if_policy_lunar_python_exact": [
+          "甲辰",
+          "丙寅",
+          "己亥",
+          "甲子"
+        ],
+        "source_sxtwl_four_pillars_date_convention": [
+          "甲辰",
+          "丙寅",
+          "戊戌",
+          "甲子"
+        ],
+        "original_sxtwl_has_JieQi_on_date": true,
+        "sxtwl_exact_year_month_conventions_agree": true,
+        "sxtwl_lunar_new_year_equals_lunar_python": true,
+        "ziwei_calendar_year_stem_lunar_new_year": "Gui",
+        "ziwei_month_for_palace_rule": 12,
+        "ziwei_chosen_lunar_leap_policy": "quan_shu_as_next (source-specific, not universal)",
+        "ziwei_life_palace_partial": "Chou",
+        "ziwei_body_palace_partial": "Chou",
+        "ziwei_life_palace_stem_partial": "Yi",
+        "no_full_ziwei_14_star_calculation": true,
+        "no_independent_original_calendar_policy_confirmation": true,
+        "actual_person_predictions_validated": false,
+        "runtime_model_promoted": false
+      },
+      "full_minute_level_time_uncertainty_envelope": {
+        "time_center_CST_fixed_UTC8": "2024-02-04T23:30:00+08:00",
+        "uncertainty_radius_minutes": 0,
+        "evaluated_clock_minute_points": 1,
+        "possible_distinct_variants": [
+          {
+            "bazi_exact_four_pillars": [
+              "甲辰",
+              "丙寅",
+              "己亥",
+              "甲子"
+            ],
+            "bazi_civil_day_policy": "戊戌",
+            "bazi_late_zi_unresolved": true,
+            "ziwei_partial_life": "Chou",
+            "ziwei_partial_body": "Chou",
+            "ziwei_life_palace_stem": "Yi"
+          }
+        ],
+        "unique_partial_states": 1,
+        "all_minute_samples_disagreeing_with_sxtwl_date_level_year_or_month": 0,
+        "full_traditional_source_calendar_14_star_engine_verified": false,
+        "independent_real_human_predictions_validated": 0,
+        "runtime_promotions": 0
+      }
+    },
+    "leap_day_2000": {
+      "at_center": {
+        "input_china_UTC_plus_8": "2000-02-29T12:00:00+08:00",
+        "lunar_ymd": [
+          2000,
+          1,
+          25
+        ],
+        "source_lunar_leap_month": false,
+        "bazi_year_LiChun_exact": "庚辰",
+        "bazi_month_exact_jieqi": "戊寅",
+        "bazi_calendar_day_pillar": "丁巳",
+        "bazi_day_23h_next_day_convention": "丁巳",
+        "bazi_day_unresolved_for_23h": false,
+        "bazi_hour_pillar": "丙午",
+        "bazi_four_pillars_if_policy_lunar_python_exact": [
+          "庚辰",
+          "戊寅",
+          "丁巳",
+          "丙午"
+        ],
+        "source_sxtwl_four_pillars_date_convention": [
+          "庚辰",
+          "戊寅",
+          "丁巳",
+          "丙午"
+        ],
+        "original_sxtwl_has_JieQi_on_date": false,
+        "sxtwl_exact_year_month_conventions_agree": true,
+        "sxtwl_lunar_new_year_equals_lunar_python": true,
+        "ziwei_calendar_year_stem_lunar_new_year": "Geng",
+        "ziwei_month_for_palace_rule": 1,
+        "ziwei_chosen_lunar_leap_policy": "quan_shu_as_next (source-specific, not universal)",
+        "ziwei_life_palace_partial": "Shen",
+        "ziwei_body_palace_partial": "Shen",
+        "ziwei_life_palace_stem_partial": "Jia",
+        "no_full_ziwei_14_star_calculation": true,
+        "no_independent_original_calendar_policy_confirmation": true,
+        "actual_person_predictions_validated": false,
+        "runtime_model_promoted": false
+      },
+      "full_minute_level_time_uncertainty_envelope": {
+        "time_center_CST_fixed_UTC8": "2000-02-29T12:00:00+08:00",
+        "uncertainty_radius_minutes": 0,
+        "evaluated_clock_minute_points": 1,
+        "possible_distinct_variants": [
+          {
+            "bazi_exact_four_pillars": [
+              "庚辰",
+              "戊寅",
+              "丁巳",
+              "丙午"
+            ],
+            "bazi_civil_day_policy": "丁巳",
+            "bazi_late_zi_unresolved": false,
+            "ziwei_partial_life": "Shen",
+            "ziwei_partial_body": "Shen",
+            "ziwei_life_palace_stem": "Jia"
+          }
+        ],
+        "unique_partial_states": 1,
+        "all_minute_samples_disagreeing_with_sxtwl_date_level_year_or_month": 0,
+        "full_traditional_source_calendar_14_star_engine_verified": false,
+        "independent_real_human_predictions_validated": 0,
+        "runtime_promotions": 0
+      }
+    },
+    "october_2026": {
+      "at_center": {
+        "input_china_UTC_plus_8": "2026-10-20T12:00:00+08:00",
+        "lunar_ymd": [
+          2026,
+          9,
+          11
+        ],
+        "source_lunar_leap_month": false,
+        "bazi_year_LiChun_exact": "丙午",
+        "bazi_month_exact_jieqi": "戊戌",
+        "bazi_calendar_day_pillar": "丁卯",
+        "bazi_day_23h_next_day_convention": "丁卯",
+        "bazi_day_unresolved_for_23h": false,
+        "bazi_hour_pillar": "丙午",
+        "bazi_four_pillars_if_policy_lunar_python_exact": [
+          "丙午",
+          "戊戌",
+          "丁卯",
+          "丙午"
+        ],
+        "source_sxtwl_four_pillars_date_convention": [
+          "丙午",
+          "戊戌",
+          "丁卯",
+          "丙午"
+        ],
+        "original_sxtwl_has_JieQi_on_date": false,
+        "sxtwl_exact_year_month_conventions_agree": true,
+        "sxtwl_lunar_new_year_equals_lunar_python": true,
+        "ziwei_calendar_year_stem_lunar_new_year": "Bing",
+        "ziwei_month_for_palace_rule": 9,
+        "ziwei_chosen_lunar_leap_policy": "quan_shu_as_next (source-specific, not universal)",
+        "ziwei_life_palace_partial": "Chen",
+        "ziwei_body_palace_partial": "Chen",
+        "ziwei_life_palace_stem_partial": "Ren",
+        "no_full_ziwei_14_star_calculation": true,
+        "no_independent_original_calendar_policy_confirmation": true,
+        "actual_person_predictions_validated": false,
+        "runtime_model_promoted": false
+      },
+      "full_minute_level_time_uncertainty_envelope": {
+        "time_center_CST_fixed_UTC8": "2026-10-20T12:00:00+08:00",
+        "uncertainty_radius_minutes": 0,
+        "evaluated_clock_minute_points": 1,
+        "possible_distinct_variants": [
+          {
+            "bazi_exact_four_pillars": [
+              "丙午",
+              "戊戌",
+              "丁卯",
+              "丙午"
+            ],
+            "bazi_civil_day_policy": "丁卯",
+            "bazi_late_zi_unresolved": false,
+            "ziwei_partial_life": "Chen",
+            "ziwei_partial_body": "Chen",
+            "ziwei_life_palace_stem": "Ren"
+          }
+        ],
+        "unique_partial_states": 1,
+        "all_minute_samples_disagreeing_with_sxtwl_date_level_year_or_month": 0,
+        "full_traditional_source_calendar_14_star_engine_verified": false,
+        "independent_real_human_predictions_validated": 0,
+        "runtime_promotions": 0
+      }
+    }
+  },
+  "full_natal_engine_validated": false,
+  "human_predictions_validated": 0,
+  "runtime_model_promoted": false
+}
