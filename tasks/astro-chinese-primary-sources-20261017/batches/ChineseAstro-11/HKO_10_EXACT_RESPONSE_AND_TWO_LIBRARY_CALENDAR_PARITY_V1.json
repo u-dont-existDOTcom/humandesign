@@ -1,0 +1,246 @@
+{
+  "scope": "10 HKO independently published exact-response daily observations, two separate open source date algorithms; modern Chinese official calendar only",
+  "retrieved_utc": "2026-10-20T17:12:18.760473+00:00",
+  "hko_api_documentation": "https://data.weather.gov.hk/weatherAPI/doc/HKO_Open_Data_API_Documentation.pdf",
+  "hko_supported_window": "2023 through current year plus two; do not extrapolate API to 1985/2036",
+  "source_6tail": "https://github.com/6tail/lunar-python",
+  "source_sxtwl": "https://pypi.org/project/sxtwl/",
+  "lunar_python_pypi_version": "1.4.8",
+  "sxtwl_pypi_version": "2.0.7",
+  "samples": [
+    {
+      "gregorian_date": "2023-03-21",
+      "hko_url": "https://data.weather.gov.hk/weatherAPI/opendata/lunardate.php?date=2023-03-21",
+      "hko_response_original_utf8_sha256": "88912236cb1f0ee759ba6e236b9895c71e35b160264d8bcb5a58c03151a62c6d",
+      "hko_response_bytes": 58,
+      "hko_json": {
+        "LunarYear": "癸卯年，兔",
+        "LunarDate": "二月三十"
+      },
+      "lunar_python": {
+        "year": 2023,
+        "month": 2,
+        "day": 30,
+        "official_lunar_year_ganzhi": "癸卯",
+        "li_chun_day_ganzhi": "癸卯"
+      },
+      "sxtwl": {
+        "year": 2023,
+        "month": 2,
+        "day": 30,
+        "leap_month": false
+      }
+    },
+    {
+      "gregorian_date": "2023-03-22",
+      "hko_url": "https://data.weather.gov.hk/weatherAPI/opendata/lunardate.php?date=2023-03-22",
+      "hko_response_original_utf8_sha256": "44a21f5941419088610a3b58ddf01fe9c4c1e638f52c9e095b997e76b405d86b",
+      "hko_response_bytes": 61,
+      "hko_json": {
+        "LunarYear": "癸卯年，兔",
+        "LunarDate": "閏二月初一"
+      },
+      "lunar_python": {
+        "year": 2023,
+        "month": -2,
+        "day": 1,
+        "official_lunar_year_ganzhi": "癸卯",
+        "li_chun_day_ganzhi": "癸卯"
+      },
+      "sxtwl": {
+        "year": 2023,
+        "month": 2,
+        "day": 1,
+        "leap_month": true
+      }
+    },
+    {
+      "gregorian_date": "2023-04-19",
+      "hko_url": "https://data.weather.gov.hk/weatherAPI/opendata/lunardate.php?date=2023-04-19",
+      "hko_response_original_utf8_sha256": "763420df9895ec61b092ca258cb68adf2a038576e4740d788dc088dba8b9b5ea",
+      "hko_response_bytes": 61,
+      "hko_json": {
+        "LunarYear": "癸卯年，兔",
+        "LunarDate": "閏二月廿九"
+      },
+      "lunar_python": {
+        "year": 2023,
+        "month": -2,
+        "day": 29,
+        "official_lunar_year_ganzhi": "癸卯",
+        "li_chun_day_ganzhi": "癸卯"
+      },
+      "sxtwl": {
+        "year": 2023,
+        "month": 2,
+        "day": 29,
+        "leap_month": true
+      }
+    },
+    {
+      "gregorian_date": "2023-04-20",
+      "hko_url": "https://data.weather.gov.hk/weatherAPI/opendata/lunardate.php?date=2023-04-20",
+      "hko_response_original_utf8_sha256": "ec79ad78f6864a714f588d0f77e6b9169409967ef794a5e2bae950fcefc328e0",
+      "hko_response_bytes": 58,
+      "hko_json": {
+        "LunarYear": "癸卯年，兔",
+        "LunarDate": "三月初一"
+      },
+      "lunar_python": {
+        "year": 2023,
+        "month": 3,
+        "day": 1,
+        "official_lunar_year_ganzhi": "癸卯",
+        "li_chun_day_ganzhi": "癸卯"
+      },
+      "sxtwl": {
+        "year": 2023,
+        "month": 3,
+        "day": 1,
+        "leap_month": false
+      }
+    },
+    {
+      "gregorian_date": "2025-07-25",
+      "hko_url": "https://data.weather.gov.hk/weatherAPI/opendata/lunardate.php?date=2025-07-25",
+      "hko_response_original_utf8_sha256": "b161f056ddaf140ab9f2c830e4a6bfc515d4ac7aeff4c73f02cf1e5bdf34d401",
+      "hko_response_bytes": 61,
+      "hko_json": {
+        "LunarYear": "乙巳年，蛇",
+        "LunarDate": "閏六月初一"
+      },
+      "lunar_python": {
+        "year": 2025,
+        "month": -6,
+        "day": 1,
+        "official_lunar_year_ganzhi": "乙巳",
+        "li_chun_day_ganzhi": "乙巳"
+      },
+      "sxtwl": {
+        "year": 2025,
+        "month": 6,
+        "day": 1,
+        "leap_month": true
+      }
+    },
+    {
+      "gregorian_date": "2026-02-16",
+      "hko_url": "https://data.weather.gov.hk/weatherAPI/opendata/lunardate.php?date=2026-02-16",
+      "hko_response_original_utf8_sha256": "7c9070027b7403f3e35a97678e07586847ff5d9a507e6dd48c6f06d883530a61",
+      "hko_response_bytes": 61,
+      "hko_json": {
+        "LunarYear": "乙巳年，蛇",
+        "LunarDate": "十二月廿九"
+      },
+      "lunar_python": {
+        "year": 2025,
+        "month": 12,
+        "day": 29,
+        "official_lunar_year_ganzhi": "乙巳",
+        "li_chun_day_ganzhi": "丙午"
+      },
+      "sxtwl": {
+        "year": 2025,
+        "month": 12,
+        "day": 29,
+        "leap_month": false
+      }
+    },
+    {
+      "gregorian_date": "2026-02-17",
+      "hko_url": "https://data.weather.gov.hk/weatherAPI/opendata/lunardate.php?date=2026-02-17",
+      "hko_response_original_utf8_sha256": "ed29b4df69c9ca1d991a02fc0e891adeb60d958e866825db8562c357041044ff",
+      "hko_response_bytes": 58,
+      "hko_json": {
+        "LunarYear": "丙午年，馬",
+        "LunarDate": "正月初一"
+      },
+      "lunar_python": {
+        "year": 2026,
+        "month": 1,
+        "day": 1,
+        "official_lunar_year_ganzhi": "丙午",
+        "li_chun_day_ganzhi": "丙午"
+      },
+      "sxtwl": {
+        "year": 2026,
+        "month": 1,
+        "day": 1,
+        "leap_month": false
+      }
+    },
+    {
+      "gregorian_date": "2026-10-20",
+      "hko_url": "https://data.weather.gov.hk/weatherAPI/opendata/lunardate.php?date=2026-10-20",
+      "hko_response_original_utf8_sha256": "abbc902baaec921190ed6d3c4b2474fd0293958ae2445edfcb7f1fd99834220b",
+      "hko_response_bytes": 58,
+      "hko_json": {
+        "LunarYear": "丙午年，馬",
+        "LunarDate": "九月十一"
+      },
+      "lunar_python": {
+        "year": 2026,
+        "month": 9,
+        "day": 11,
+        "official_lunar_year_ganzhi": "丙午",
+        "li_chun_day_ganzhi": "丙午"
+      },
+      "sxtwl": {
+        "year": 2026,
+        "month": 9,
+        "day": 11,
+        "leap_month": false
+      }
+    },
+    {
+      "gregorian_date": "2027-02-06",
+      "hko_url": "https://data.weather.gov.hk/weatherAPI/opendata/lunardate.php?date=2027-02-06",
+      "hko_response_original_utf8_sha256": "82ed25d155b31b4b55703de418324f27c96117713e48730bead22df29213ed62",
+      "hko_response_bytes": 58,
+      "hko_json": {
+        "LunarYear": "丁未年，羊",
+        "LunarDate": "正月初一"
+      },
+      "lunar_python": {
+        "year": 2027,
+        "month": 1,
+        "day": 1,
+        "official_lunar_year_ganzhi": "丁未",
+        "li_chun_day_ganzhi": "丁未"
+      },
+      "sxtwl": {
+        "year": 2027,
+        "month": 1,
+        "day": 1,
+        "leap_month": false
+      }
+    },
+    {
+      "gregorian_date": "2028-01-01",
+      "hko_url": "https://data.weather.gov.hk/weatherAPI/opendata/lunardate.php?date=2028-01-01",
+      "hko_response_original_utf8_sha256": "3893fd58729b05d860082a2ab04aaa05c80344abb798f11ae2b116eb62edcb07",
+      "hko_response_bytes": 61,
+      "hko_json": {
+        "LunarYear": "丁未年，羊",
+        "LunarDate": "十二月初五"
+      },
+      "lunar_python": {
+        "year": 2027,
+        "month": 12,
+        "day": 5,
+        "official_lunar_year_ganzhi": "丁未",
+        "li_chun_day_ganzhi": "丁未"
+      },
+      "sxtwl": {
+        "year": 2027,
+        "month": 12,
+        "day": 5,
+        "leap_month": false
+      }
+    }
+  ],
+  "all_two_implementations_agree": true,
+  "year_method_in_hko": "lunar_new_year_not_li_chun",
+  "independent_real_human_chart_comparison": false,
+  "claim_of_astrological_prediction_validity": false
+}
