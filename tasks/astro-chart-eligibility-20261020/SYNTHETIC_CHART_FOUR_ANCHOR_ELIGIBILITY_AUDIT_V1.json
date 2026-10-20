@@ -1,0 +1,233 @@
+{
+  "schema": "HUMANDESIGN_ZIWEI_FOUR_ANCHOR_SYNTHETIC_CHART_ELIGIBILITY_AUDIT_V1",
+  "status": "MECHANICAL_SOURCE_CHART_ELIGIBILITY_ONLY_NO_HUMAN_PREDICTIONS",
+  "pin_independent_engine_commit": "6f4a75febc1624e44b54d724422804a05f31fd12",
+  "pin_independent_engine_source_path": "tasks/astro-chinese-primary-sources-20261017/batches/ChineseAstro-12/IZTRO_2_6_0_FULL_312_CHART_COMPARISON_V1.json",
+  "pin_independent_engine_fixture_sha256": "01efe5181d7c9d07a6c9f780df9d03b557b356baa4ca3770464f38e8552feaa5",
+  "pin_unvalidated_four_question_source_map_sha256": "acd1fef1b9764bfac4525785ee1fd42e7dac2727880e829ee038aa9562db8a62",
+  "source_oracle_vendor": "Iztro 2.6.0 independently computed comparison",
+  "source_leap_month_school_rule": "transmitted Quan Shu leap month always counts as following month",
+  "no_birthplace_historical_iana_or_apparent_solar_time_verification": true,
+  "source_star_profile_texts_not_independent_natal_chart_truth": true,
+  "all_312_records_are_synthetic_comparison_not_real_subjects": true,
+  "number_of_selected_reference_dates": 10,
+  "number_of_synthetic_hour_branches_per_date": 12,
+  "raw_comparison_counts_not_independent_source_chart_cases": {
+    "cases": 312,
+    "matched": 192,
+    "mismatched": 120,
+    "leap_comparisons": 144,
+    "nonleap_comparisons": 168
+  },
+  "dedupe_key": "synthetic_reference_date plus two-hour Earthly Branch; verify identical source chart despite gender/fixLeap comparator variants",
+  "unique_source_chart_coverage_counts": {
+    "unique_source_chart_states": 120,
+    "any_selected_star_states": 34,
+    "no_selected_star_states": 86,
+    "exactly_one_selected_star_states": 31,
+    "two_selected_stars_states": 3,
+    "selected_stars_with_any_conjunction": 22,
+    "sole_selected_without_any_other_principal_star": 12,
+    "life_palace_star_count_1": 59,
+    "nonleap_unique_states": 84,
+    "life_palace_star_count_0": 23,
+    "sole_selected_any_vendor_match": 10,
+    "sole_selected_all_vendor_match": 10,
+    "life_palace_star_count_2": 38,
+    "leap_unique_states": 36
+  },
+  "strict_sole_star_counts": {
+    "LianZhen": 2,
+    "PoJun": 6,
+    "TianLiang": 4,
+    "WuQu": 0
+  },
+  "grouped_independent_vendor_raw_parity": {
+    "all_vendor_match": 84,
+    "any_vendor_match": 96,
+    "none_vendor_match": 24,
+    "interpretation": "84 non-leap states match every duplicate comparison; 12 leap states have some matching comparator; never choose a vendor leap policy after seeing a person's answers."
+  },
+  "ten_selected_reference_dates_each_twelve_synthetic_branch_outcomes": {
+    "2023-03-21": {
+      "synthetic_hour_branch_states": 12,
+      "strict_mock_eligibility_states": 1,
+      "any_selected_star_states": 1,
+      "nonleap_states": 12,
+      "leap_states": 0
+    },
+    "2023-03-22": {
+      "synthetic_hour_branch_states": 12,
+      "strict_mock_eligibility_states": 1,
+      "any_selected_star_states": 1,
+      "nonleap_states": 0,
+      "leap_states": 12
+    },
+    "2023-04-19": {
+      "synthetic_hour_branch_states": 12,
+      "strict_mock_eligibility_states": 0,
+      "any_selected_star_states": 1,
+      "nonleap_states": 0,
+      "leap_states": 12
+    },
+    "2023-04-20": {
+      "synthetic_hour_branch_states": 12,
+      "strict_mock_eligibility_states": 1,
+      "any_selected_star_states": 1,
+      "nonleap_states": 12,
+      "leap_states": 0
+    },
+    "2025-07-25": {
+      "synthetic_hour_branch_states": 12,
+      "strict_mock_eligibility_states": 1,
+      "any_selected_star_states": 7,
+      "nonleap_states": 0,
+      "leap_states": 12
+    },
+    "2026-02-16": {
+      "synthetic_hour_branch_states": 12,
+      "strict_mock_eligibility_states": 0,
+      "any_selected_star_states": 5,
+      "nonleap_states": 12,
+      "leap_states": 0
+    },
+    "2026-02-17": {
+      "synthetic_hour_branch_states": 12,
+      "strict_mock_eligibility_states": 1,
+      "any_selected_star_states": 3,
+      "nonleap_states": 12,
+      "leap_states": 0
+    },
+    "2026-10-20": {
+      "synthetic_hour_branch_states": 12,
+      "strict_mock_eligibility_states": 3,
+      "any_selected_star_states": 5,
+      "nonleap_states": 12,
+      "leap_states": 0
+    },
+    "2027-02-06": {
+      "synthetic_hour_branch_states": 12,
+      "strict_mock_eligibility_states": 1,
+      "any_selected_star_states": 5,
+      "nonleap_states": 12,
+      "leap_states": 0
+    },
+    "2028-01-01": {
+      "synthetic_hour_branch_states": 12,
+      "strict_mock_eligibility_states": 3,
+      "any_selected_star_states": 5,
+      "nonleap_states": 12,
+      "leap_states": 0
+    }
+  },
+  "all_12_sole_selected_synthetic_cases": [
+    {
+      "synthetic_reference_date": "2023-03-21",
+      "hour_branch": "Si",
+      "sole_selected_principal_star": "PoJun",
+      "source_original_leap_month": false,
+      "all_vendor_variant_outputs_match_source": true,
+      "any_vendor_variant_output_matches_source": true
+    },
+    {
+      "synthetic_reference_date": "2023-03-22",
+      "hour_branch": "Shen",
+      "sole_selected_principal_star": "LianZhen",
+      "source_original_leap_month": true,
+      "all_vendor_variant_outputs_match_source": false,
+      "any_vendor_variant_output_matches_source": false
+    },
+    {
+      "synthetic_reference_date": "2023-04-20",
+      "hour_branch": "Shen",
+      "sole_selected_principal_star": "LianZhen",
+      "source_original_leap_month": false,
+      "all_vendor_variant_outputs_match_source": true,
+      "any_vendor_variant_output_matches_source": true
+    },
+    {
+      "synthetic_reference_date": "2025-07-25",
+      "hour_branch": "Shen",
+      "sole_selected_principal_star": "TianLiang",
+      "source_original_leap_month": true,
+      "all_vendor_variant_outputs_match_source": false,
+      "any_vendor_variant_output_matches_source": false
+    },
+    {
+      "synthetic_reference_date": "2026-02-17",
+      "hour_branch": "Chen",
+      "sole_selected_principal_star": "PoJun",
+      "source_original_leap_month": false,
+      "all_vendor_variant_outputs_match_source": true,
+      "any_vendor_variant_output_matches_source": true
+    },
+    {
+      "synthetic_reference_date": "2026-10-20",
+      "hour_branch": "Chen",
+      "sole_selected_principal_star": "TianLiang",
+      "source_original_leap_month": false,
+      "all_vendor_variant_outputs_match_source": true,
+      "any_vendor_variant_output_matches_source": true
+    },
+    {
+      "synthetic_reference_date": "2026-10-20",
+      "hour_branch": "You",
+      "sole_selected_principal_star": "TianLiang",
+      "source_original_leap_month": false,
+      "all_vendor_variant_outputs_match_source": true,
+      "any_vendor_variant_output_matches_source": true
+    },
+    {
+      "synthetic_reference_date": "2026-10-20",
+      "hour_branch": "Zi",
+      "sole_selected_principal_star": "PoJun",
+      "source_original_leap_month": false,
+      "all_vendor_variant_outputs_match_source": true,
+      "any_vendor_variant_output_matches_source": true
+    },
+    {
+      "synthetic_reference_date": "2027-02-06",
+      "hour_branch": "Wu",
+      "sole_selected_principal_star": "PoJun",
+      "source_original_leap_month": false,
+      "all_vendor_variant_outputs_match_source": true,
+      "any_vendor_variant_output_matches_source": true
+    },
+    {
+      "synthetic_reference_date": "2028-01-01",
+      "hour_branch": "Chou",
+      "sole_selected_principal_star": "PoJun",
+      "source_original_leap_month": false,
+      "all_vendor_variant_outputs_match_source": true,
+      "any_vendor_variant_output_matches_source": true
+    },
+    {
+      "synthetic_reference_date": "2028-01-01",
+      "hour_branch": "Hai",
+      "sole_selected_principal_star": "PoJun",
+      "source_original_leap_month": false,
+      "all_vendor_variant_outputs_match_source": true,
+      "any_vendor_variant_output_matches_source": true
+    },
+    {
+      "synthetic_reference_date": "2028-01-01",
+      "hour_branch": "Wei",
+      "sole_selected_principal_star": "TianLiang",
+      "source_original_leap_month": false,
+      "all_vendor_variant_outputs_match_source": true,
+      "any_vendor_variant_output_matches_source": true
+    }
+  ],
+  "strict_sole_model_abstentions": 108,
+  "strict_sole_model_eligible_cases": 12,
+  "strict_sole_model_eligibility_fraction_toy_dataset": 0.1,
+  "model_candidate_decision": "Current four-straight-single-star toy tokens require explicit abstention or a separately preselected multi-star combination rule; cannot be a representative valid single-star birth population model.",
+  "other_major_stars_and_all_source_modifiers_not_resolved": true,
+  "source_original_leap_policy_not_overwritten": true,
+  "source_gender_sex_chart_variant_not_human_gender_measurement": true,
+  "selected_dates_not_statistical_representative_population": true,
+  "empirical_human_chart_predictions_validated": 0,
+  "real_person_birth_records_included": 0,
+  "participant_questionnaire_data_included": 0,
+  "astrological_production_rules_promoted": 0
+}

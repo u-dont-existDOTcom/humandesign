@@ -1,0 +1,9 @@
+# Earlier ancestor repository-wide checks — separate from source-only mechanical audit
+
+These broader checks were executed against the parent synthetic four-anchor methods branch at committed SHA `d4598eba9e7cc6c896917360c211dd1c37813555`, without editing unrelated application or workflows. No rerun against unchanged source/tests was needed for the isolated eligibility computation.
+
+- Root `python -m unittest discover -s tests -v`: **99 tests, 0 failures, 1 skipped**.
+- Repository-declared full `python -m pytest -q`: **397 passed, 4 skipped, 1 failed**. Failure: `tests/unit/test_relationship_study.py::test_prediction_freeze_binds_models_but_stays_locked_without_engines` expected `INSUFFICIENT_BIRTH_DATA` but existing relationship layer returned `UNAVAILABLE`. The exact focused failure was independently reproduced on the older unchanged parent readiness branch `research/astro-blind-prereg-readiness-20261020` at SHA `b232d56200c3b8d8562304c8c738be1e7f5740eb`, proving not introduced by the four-anchor/eligibility source test code.
+- Canonical Universal Development Architecture repository audit (original checkout lacked script at `scripts/audit_codex_github.py`, used `/home/joel/universal-dev-architecture/scripts/audit_codex_github.py` with `--root . --fail-on error`): **90 errors and 73 warnings**, mainly many preexisting GitHub Actions workflow permissions, missing concurrency/timeout, and `state/CURRENT-STATE.md` metadata. The source-only branch added no workflows; don't silently claim this unrelated full-repo gate passed.
+
+Affected source/chart eligibility tests are green 20/20 locally and 20/20 cold-extracted; this does not resolve the inherited unrelated repository-wide failures. Do not broadly alter repository workflow security policies in a side-scoped natal research branch.

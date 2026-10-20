@@ -1,0 +1,53 @@
+{
+  "schema": "HUMANDESIGN_SYNTHETIC_FOUR_STAR_CHART_ELIGIBILITY_PORTABLE_V1",
+  "status": "VERIFIED_PORTABLE_EXACT_SOURCE_AND_20_COLD_TOY_TESTS_NOT_HUMAN_ASTROLOGY",
+  "owner_local_zip_path": "/home/joel/Téléchargements/Astrology-Four-Star-Life-Palace-Synthetic-Coverage-20261020.zip",
+  "zip_filename": "Astrology-Four-Star-Life-Palace-Synthetic-Coverage-20261020.zip",
+  "zip_SHA256": "939d4addf1dd2e2fff69d1547374a98221f8d83392aa4a201f1f321d446af984",
+  "zip_size_bytes": 60277,
+  "member_count": 8,
+  "original_member_SHA256_and_bytes": {
+    "tasks/astro-chart-eligibility-20261020/audit_synthetic_natal_feature_coverage.py": {
+      "sha256": "1e114ccb205569feea91b250461cdc4f7c36f0b6b644252cf0d1a6a451c68080",
+      "bytes": 16891
+    },
+    "tasks/astro-chart-eligibility-20261020/test_synthetic_natal_feature_coverage.py": {
+      "sha256": "7b3ec22873dc12ecefa5cbd1a87a478f6c73d66405c9dd1faa4ab5e269614bd8",
+      "bytes": 9468
+    },
+    "tasks/astro-chart-eligibility-20261020/SYNTHETIC_CHART_FOUR_ANCHOR_ELIGIBILITY_AUDIT_V1.json": {
+      "sha256": "f571b1c17db513f868bc2e645fb2a51ee21f91e5a287537f4e733a6d998f2c99",
+      "bytes": 8935
+    },
+    "tasks/astro-chart-eligibility-20261020/SYNTHETIC_CHART_ELIGIBILITY_FINDINGS_20261020.md": {
+      "sha256": "19e5dc35d4aa8dea146a51e6ff85c00e191bd4458b879cf1fc01d8ced18f7222",
+      "bytes": 6745
+    },
+    "tasks/astro-chart-eligibility-20261020/WORKING_CHECKPOINT_20261020.md": {
+      "sha256": "81b70d3f0b8be1e19dbd085ef9744ae985c6579e72209550c51bf3566362436c",
+      "bytes": 3890
+    },
+    "tasks/astro-chart-eligibility-20261020/build_portable_chart_eligibility_archive.py": {
+      "sha256": "884f8f9e85725d4aa8031e1aa68614eb7f2045df697aa4e7c35a78ac3625def8",
+      "bytes": 5318
+    },
+    "tasks/astro-source-four-anchor-synthetic-20261020/SOURCE_TO_BEHAVIOR_CANDIDATES_V1.json": {
+      "sha256": "acd1fef1b9764bfac4525785ee1fd42e7dac2727880e829ee038aa9562db8a62",
+      "bytes": 9935
+    },
+    "tasks/astro-chart-eligibility-20261020/ORIGINAL_312_SOURCE_ORACLE_SNAPSHOT.json": {
+      "sha256": "01efe5181d7c9d07a6c9f780df9d03b557b356baa4ca3770464f38e8552feaa5",
+      "bytes": 899155
+    }
+  },
+  "zip_CRC_verified": true,
+  "member_exact_SHA_and_bytes_verified": true,
+  "source_original_fixture_sha256": "01efe5181d7c9d07a6c9f780df9d03b557b356baa4ca3770464f38e8552feaa5",
+  "source_original_fixture_commit": "6f4a75febc1624e44b54d724422804a05f31fd12",
+  "independent_cold_test_suite_executed": 20,
+  "independent_cold_test_suite_green": 20,
+  "actual_real_person_birth_records": 0,
+  "actual_scored_human_responses": 0,
+  "actual_validated_human_predictions": 0,
+  "production_astrology_rules_promoted": 0
+}
