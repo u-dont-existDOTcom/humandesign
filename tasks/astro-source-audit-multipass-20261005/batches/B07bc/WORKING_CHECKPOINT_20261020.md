@@ -7,3 +7,5 @@ Verified starting Git state: source admission 964d08bb; subsequent handoff-only 
 **Open tasks:** Independently witness original 1659 printed754/DjVu783 if available; source-anchor and classify each separate CLXXX claim, preserving uncertain original glyphs rather than guesses; prepare portable independent verification with exact member hashes; append-only index update after tests; commit/push and remote SHA readback. Independently continue Chinese BZI-R0155/ZWD-R0202 only in separate guarded batch; neither original calendrical parity nor genuine predictive evaluation is complete.
 
 This is a recovery checkpoint, not accepted scientific or documentary results.
+
+Original 1659 printed754 / DjVu783 source photograph retrieved and visually inspected on distinct independently typeset print. Archived `evidence/1659_original_djvu_783.jpg`, SHA-256 81bee657eb018148ba1ab2fede8ea9a19047f0fda99a4425bbeee30ac050dfc3; its source URL and retrieval chain are in `SOURCE_IMAGE_1659_754_RETRIEVAL.json`. This is a hosted page-image derivative; full original DjVu binary hash is **not** claimed. CLXXXI divider agrees with first edition.
