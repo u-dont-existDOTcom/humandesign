@@ -1,3 +1,9 @@
+# Lilly original Riches chapter CLXXVII source-covered (B07az)
+
+**29 source-only documentary annotations R12941–R12969** record a known merchant's historical riches, age-related wealth, property, family/inheritance and lawsuit claims from original 1647 and separately typeset 1659 folios749–751. These are **not independently verified outcomes**. The first 1647 Aquarius second-house cusp prints **23°30′** versus shortened secondary transcript 23.3; original source retained without assuming chart-era calculation parity. Chapter ends above printed751/PDF785 horizontal divider; next distinct **CLXXVIII Of Brethren begins same page**. **12,969 Lilly+1,066 Ptolemy=14,035 Western** historical annotations; Chinese V7 **154 BaZi+201 Zi Wei=355** unchanged. Next historical source **R12970**, PDF785/printed751. Critical expert collation, measured human prediction success and runtime astrology model promotion remain zero/unverified.
+
+## Earlier accepted historical checkpoint
+
 # Lilly original Manners chapter source coverage completed (B07ay)
 
 **40 historical source annotations R12901–R12940** preserve all five physical printed folios745–749 (PDF779–783) from first 1647 CLXXVI on Manners, supported by separately typeset original 1659 source images. Lilly knew the subject; this is retrospective text, **not an independent person forecast**. The original conjecture about a throat blemish ends **'I can find none.'**, a negative observation preserved rather than coded as success. Original CLXXVI ends above physical divider on printed749; CLXXVII Of Riches begins on same page. **12,940 Lilly+1,066 Ptolemy=14,006 Western historical notes**, Chinese V7 **154 BaZi+201 Zi Wei=355**, unchanged. Next source **R12941**, CLXXVII PDF783/printed749. Original critical text expertise, epoch ephemeris and genuine prospective blind human prediction remain unverified; zero human forecast validations and zero runtime promotions.
