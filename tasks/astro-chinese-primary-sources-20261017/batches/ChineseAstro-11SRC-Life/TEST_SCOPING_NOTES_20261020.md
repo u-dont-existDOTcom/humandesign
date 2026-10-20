@@ -1,0 +1,3 @@
+# V11 original Chinese source testing scope
+
+Source `test_chinese11src_ziwei_life_original.py` 15 source/citation/line-by-line original-offset tests; after guarded append `test_chinese11src_post_index.py` 12 old-index immutable and new-index acceptance checks; combined 27/27. Separate previously accepted V10 post-index tests intentionally require the old *terminal* latest Chinese source and cannot be rerun against V11 index expecting it to be V10; they remain correct on the frozen V10 source branch and older V10 parent source files must be unchanged. Independently extracted cold source ZIP replay 15/15. No real humans and no runtime predictive model.

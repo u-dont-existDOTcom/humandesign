@@ -1,3 +1,9 @@
+# Chinese V11 — original Zi Wei Life-palace next four source stars
+
+**90 historical source-only notes ZWD-R0310–ZWD-R0399**, TianTong20, LianZhen26, TianFu20, TaiYin23 original lines, plus one TanLang next-star navigation. Exact oldid1963110 original codepoint+UTF8 byte-offset SHA for every line and full source witness; earlier V10 TianTong prefix was navigation only. Source Life-palace section still PARTIAL, original Ming woodblock imprint and independent specialist translation not authenticated. Historic medical/sex/moral/fate claims not empirical truth or real personal predictions. **Chinese BaZi210 unchanged + ZiWei399 =609** historic annotations; separately latest accepted Western B07bg **Lilly13236+Ptolemy1066** lives on another research branch, aggregate **14,911 source documents** (not people/test successes). Next **ZWD-R0400 TanLang** cp25795 and **BZI-R0211**. Human blind predictive studies **0**, runtime promotions **0**.
+
+## Previous Chinese accepted source checkpoint retained
+
 # Chinese source V10 — first four Zi Wei Life-palace original profiles
 
 **89 historical source-only annotations ZWD-R0221–ZWD-R0309** (88 original lines for ZiWei/TianJi/TaiYang/WuQu and 1 next TianTong navigation marker) each original exact Unicode codepoint and UTF8 source byte offset/SHA independently verified against Wikitext oldid1963110. This is PARTIAL Life-palace text, not authentic Ming woodblock or real-person predictive evidence. Old fortune/body/sex/mortality claims have no human validations. **Chinese BaZi210 unchanged + ZiWei309 =519** source notes; Western accepted B07bg Lilly13236+Ptolemy1066 lives on separate branch (aggregate source counts **14,821**, not merged). Inherited Western B07bc historical snapshot remains unmodified. Next **ZWD-R0310 TianTong**, original codepoint22909, **BZI-R0211** Di Tian Sui section19. Human real prospective/reverse blind tests **0**, runtime astro rules promoted **0**.
