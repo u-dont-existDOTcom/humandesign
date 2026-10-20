@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B02",
+  "source_ids": [
+    "JYOT-JP-SASTRI",
+    "JYOT-SARAVALI-EN"
+  ],
+  "source_sha256": [
+    "fc6c5eed810847d14c82004746cedaac077acb971bb6140f613168ded0a21250",
+    "b6fd2523fb349095a8a595e7d9750bacd8ff0ec7f495a0b58287a38f2c79baa6"
+  ],
+  "comparison_scope": "JP Adhyaya XV slokas 26-39 vs Saravali chapter 20 slokas 6-19, manually transcribed from supplied English editions; parallel sloka alignment by semantic and sequence concordance, not an original-language critical edition.",
+  "method": "Normalize each conjunction to sorted seven-planet codes, expand 'luminaries' into Sun and Moon, and compare exact sets within corresponding verse pair. A repeated set within a source verse counts once for that verse. No claim of textual independence or predictive reliability.",
+  "legend": {
+    "SU": "Sun",
+    "MO": "Moon",
+    "MA": "Mars",
+    "ME": "Mercury",
+    "JU": "Jupiter",
+    "VE": "Venus",
+    "SA": "Saturn"
+  },
+  "counts": {
+    "jp_verses": 14,
+    "saravali_verses": 14,
+    "jp_planet_clauses": 37,
+    "exact_overlapping_planet_sets_within_aligned_verse_pairs": 28,
+    "not_exact_overlap_clauses": 9,
+    "full_equal_verse_pairs": [
+      27,
+      28,
+      32,
+      33,
+      34,
+      35,
+      38
+    ]
+  },
+  "rows": [
+    {
+      "jp_sloka": 26,
+      "jp_pdf_pages": [
+        918
+      ],
+      "saravali_sloka": 6,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "JU+MA+MO+SA+SU",
+        "MA+ME+SA+SU+VE",
+        "MA+MO+SA+SU+VE"
+      ],
+      "saravali_planet_sets": [
+        "JU+MA+ME+SA",
+        "MA+ME+SA+SU+VE",
+        "MA+MO+SA+SU+VE"
+      ],
+      "exact_set_overlaps": [
+        "MA+ME+SA+SU+VE",
+        "MA+MO+SA+SU+VE"
+      ],
+      "jp_not_in_saravali": [
+        "JU+MA+MO+SA+SU"
+      ],
+      "saravali_not_in_jp": [
+        "JU+MA+ME+SA"
+      ],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 27,
+      "jp_pdf_pages": [
+        918
+      ],
+      "saravali_sloka": 7,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "JU+MA+SA+SU+VE",
+        "JU+MA+ME+MO+SA",
+        "MA+ME+MO+SA+VE"
+      ],
+      "saravali_planet_sets": [
+        "JU+MA+SA+SU+VE",
+        "JU+MA+ME+MO+SA",
+        "MA+ME+MO+SA+VE"
+      ],
+      "exact_set_overlaps": [
+        "JU+MA+SA+SU+VE",
+        "JU+MA+ME+MO+SA",
+        "MA+ME+MO+SA+VE"
+      ],
+      "jp_not_in_saravali": [],
+      "saravali_not_in_jp": [],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 28,
+      "jp_pdf_pages": [
+        919
+      ],
+      "saravali_sloka": 8,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "JU+MA+ME+MO+SU",
+        "MA+ME+MO+SU+VE"
+      ],
+      "saravali_planet_sets": [
+        "JU+MA+ME+MO+SU",
+        "MA+ME+MO+SU+VE"
+      ],
+      "exact_set_overlaps": [
+        "JU+MA+ME+MO+SU",
+        "MA+ME+MO+SU+VE"
+      ],
+      "jp_not_in_saravali": [],
+      "saravali_not_in_jp": [],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 29,
+      "jp_pdf_pages": [
+        919,
+        920
+      ],
+      "saravali_sloka": 9,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "JU+MA+ME+MO+SU+VE",
+        "JU+MA+ME+MO+SA+SU",
+        "MA+ME+MO+SA+SU+VE"
+      ],
+      "saravali_planet_sets": [
+        "JU+MA+ME+MO+SA+SU",
+        "MA+ME+MO+SA+SU+VE"
+      ],
+      "exact_set_overlaps": [
+        "JU+MA+ME+MO+SA+SU",
+        "MA+ME+MO+SA+SU+VE"
+      ],
+      "jp_not_in_saravali": [
+        "JU+MA+ME+MO+SU+VE"
+      ],
+      "saravali_not_in_jp": [],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 30,
+      "jp_pdf_pages": [
+        919,
+        920
+      ],
+      "saravali_sloka": 10,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "JU+MA+MO+SA+SU+VE",
+        "JU+ME+MO+SA+SU+VE"
+      ],
+      "saravali_planet_sets": [
+        "JU+MO+SA+SU+VE",
+        "JU+ME+MO+SA+SU+VE"
+      ],
+      "exact_set_overlaps": [
+        "JU+ME+MO+SA+SU+VE"
+      ],
+      "jp_not_in_saravali": [
+        "JU+MA+MO+SA+SU+VE"
+      ],
+      "saravali_not_in_jp": [
+        "JU+MO+SA+SU+VE"
+      ],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 31,
+      "jp_pdf_pages": [
+        919,
+        920
+      ],
+      "saravali_sloka": 11,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "JU+MA+ME+SA+SU+VE",
+        "JU+MA+ME+MO+SA+VE"
+      ],
+      "saravali_planet_sets": [
+        "JU+MA+ME+SA+SU+VE",
+        "JU+ME+MO+SA+SU+VE"
+      ],
+      "exact_set_overlaps": [
+        "JU+MA+ME+SA+SU+VE"
+      ],
+      "jp_not_in_saravali": [
+        "JU+MA+ME+MO+SA+VE"
+      ],
+      "saravali_not_in_jp": [
+        "JU+ME+MO+SA+SU+VE"
+      ],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 32,
+      "jp_pdf_pages": [
+        920
+      ],
+      "saravali_sloka": 12,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "JU+MO+SA+SU",
+        "MO+SA+SU+VE",
+        "JU+MA+ME+SU"
+      ],
+      "saravali_planet_sets": [
+        "JU+MO+SA+SU",
+        "MO+SA+SU+VE",
+        "JU+MA+ME+SU"
+      ],
+      "exact_set_overlaps": [
+        "JU+MO+SA+SU",
+        "MO+SA+SU+VE",
+        "JU+MA+ME+SU"
+      ],
+      "jp_not_in_saravali": [],
+      "saravali_not_in_jp": [],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 33,
+      "jp_pdf_pages": [
+        920
+      ],
+      "saravali_sloka": 13,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "MA+ME+SU+VE",
+        "JU+MA+ME+MO"
+      ],
+      "saravali_planet_sets": [
+        "MA+ME+SU+VE",
+        "JU+MA+ME+MO"
+      ],
+      "exact_set_overlaps": [
+        "MA+ME+SU+VE",
+        "JU+MA+ME+MO"
+      ],
+      "jp_not_in_saravali": [],
+      "saravali_not_in_jp": [],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 34,
+      "jp_pdf_pages": [
+        920
+      ],
+      "saravali_sloka": 14,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "MA+ME+MO+SA",
+        "JU+MA+ME+SA"
+      ],
+      "saravali_planet_sets": [
+        "MA+ME+MO+SA",
+        "JU+MA+ME+SA"
+      ],
+      "exact_set_overlaps": [
+        "MA+ME+MO+SA",
+        "JU+MA+ME+SA"
+      ],
+      "jp_not_in_saravali": [],
+      "saravali_not_in_jp": [],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 35,
+      "jp_pdf_pages": [
+        921
+      ],
+      "saravali_sloka": 15,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "ME+MO+SU+VE",
+        "MA+ME+SA+VE",
+        "JU+MO+SA+VE"
+      ],
+      "saravali_planet_sets": [
+        "ME+MO+SU+VE",
+        "MA+ME+SA+VE",
+        "JU+MO+SA+VE"
+      ],
+      "exact_set_overlaps": [
+        "ME+MO+SU+VE",
+        "MA+ME+SA+VE",
+        "JU+MO+SA+VE"
+      ],
+      "jp_not_in_saravali": [],
+      "saravali_not_in_jp": [],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 36,
+      "jp_pdf_pages": [
+        921
+      ],
+      "saravali_sloka": 16,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "MA+MO+SU+VE",
+        "MA+ME+MO+SU",
+        "JU+SA+SU+VE",
+        "JU+MO+SA+VE",
+        "MA+ME+MO+VE"
+      ],
+      "saravali_planet_sets": [
+        "MA+MO+SU+VE",
+        "MA+ME+MO+SU",
+        "JU+SA+SU+VE",
+        "JU+MA+MO+VE"
+      ],
+      "exact_set_overlaps": [
+        "MA+MO+SU+VE",
+        "MA+ME+MO+SU",
+        "JU+SA+SU+VE"
+      ],
+      "jp_not_in_saravali": [
+        "JU+MO+SA+VE",
+        "MA+ME+MO+VE"
+      ],
+      "saravali_not_in_jp": [
+        "JU+MA+MO+VE"
+      ],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 37,
+      "jp_pdf_pages": [
+        921
+      ],
+      "saravali_sloka": 17,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "JU+MA+MO+SA+VE",
+        "JU+MA+ME+MO+VE",
+        "JU+MA+ME+SA+SU"
+      ],
+      "saravali_planet_sets": [
+        "JU+MA+MO+SA+VE",
+        "JU+MA+ME+MO+VE",
+        "JU+MA+ME+MO+SU"
+      ],
+      "exact_set_overlaps": [
+        "JU+MA+MO+SA+VE",
+        "JU+MA+ME+MO+VE"
+      ],
+      "jp_not_in_saravali": [
+        "JU+MA+ME+SA+SU"
+      ],
+      "saravali_not_in_jp": [
+        "JU+MA+ME+MO+SU"
+      ],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 38,
+      "jp_pdf_pages": [
+        922
+      ],
+      "saravali_sloka": 18,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "JU+MA+ME+SA+VE",
+        "MA+ME+MO+SA+SU"
+      ],
+      "saravali_planet_sets": [
+        "JU+MA+ME+SA+VE",
+        "MA+ME+MO+SA+SU"
+      ],
+      "exact_set_overlaps": [
+        "JU+MA+ME+SA+VE",
+        "MA+ME+MO+SA+SU"
+      ],
+      "jp_not_in_saravali": [],
+      "saravali_not_in_jp": [],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    },
+    {
+      "jp_sloka": 39,
+      "jp_pdf_pages": [
+        922
+      ],
+      "saravali_sloka": 19,
+      "saravali_pdf_page": 41,
+      "jp_planet_sets": [
+        "JU+MA+ME+MO+SU+VE",
+        "JU+MA+MO+SA+SU+VE"
+      ],
+      "saravali_planet_sets": [
+        "MA+ME+MO+SU+VE",
+        "JU+MA+MO+SU+VE"
+      ],
+      "exact_set_overlaps": [],
+      "jp_not_in_saravali": [
+        "JU+MA+ME+MO+SU+VE",
+        "JU+MA+MO+SA+SU+VE"
+      ],
+      "saravali_not_in_jp": [
+        "MA+ME+MO+SU+VE",
+        "JU+MA+MO+SU+VE"
+      ],
+      "status": "TRANSLATION_TO_TRANSLATION_SYMBOLIC_COMPARISON_ONLY"
+    }
+  ],
+  "status": "SOURCE_COMPARISON_ONLY_NOT_VERIFIED_ORIGINAL_VARIANTS",
+  "interpretation": "Same-sequence lists partly match exactly and partly differ. These differences may reflect edition, translation, interpolation, transcription or original textual transmission; source does not license choosing the better-fitting version after observing a person. Reconcile against independent Sanskrit editions and print images first.",
+  "future_model_policy": "If both transmissions are retained after verification, freeze variant selection for each model before blind evaluation; do not score both and cherry-pick retrospectively.",
+  "human_predicted": 0
+}
