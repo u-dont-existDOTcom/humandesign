@@ -1,0 +1,16 @@
+# Zi Wei Dou Shu: post-bureau four original chart/condition tables — ChineseAstro-08
+
+Transmitted *紫微斗數全書/卷二* original Simplified Chinese Wikitext from Wikisource **oldid1963110**, full 106,736 UTF-8 bytes, original raw SHA256 `1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72`. This is preserved online transcription, **not independently authenticated an original physical Ming-edition woodblock** nor a reliable professional translation. V7 had already preserved the preceding eighteen regular-star categorization, 29 distinct auxiliary-star entries, five elemental-bureau placement poems and five day/palace diagrams through `火六局`. No earlier note is recounted here.
+
+The next original source is one `<nowiki>...</nowiki>` diagram block starting at original Unicode codepoint **12085**, ending before the separate `===一 命宫===` heading at **19953**. We preserve its **original exact bytes**, both as a verbatim excerpt with SHA256 and as 19 source-anchored notes with individual UTF-8 byte offsets, codepoint offsets, original SHA256 and separation from researcher gloss. The **four diagram/table blocks** are:
+
+1. **`安天府图`**: Tian Fu reference map relative to Zi Wei (`天府惟寅申二宫紫府同宫`, see exact original data); diagram preserved without treating schematic or printed mirror shorthand as confirmed natal placement calculation.
+2. **`殇使祸福紧慢图岁限为灾之局`**: traditional fatalistic timing diagram involving `天殇`, `天使` and claims that certain year-limit positions portend death. This is documented as archaic historical rhetoric, **not a mortality prediction validated on any person**, and never health advice.
+3. **`禄权科忌图`**: original diagram of four transformations and traditional good/bad conditions; the source matrix is not a validated transformative timing/natal engine.
+4. **A twelve-earthly-branch × seven-condition table**, with original column heading `庙`, `旺`, `得地`, `利益`, `平和`, `不得地`, `落陷`. The table records abbreviated star glyphs in each branch; 12 raw three-line branch excerpts are preserved exactly, without prematurely assigning modern full star names or quantitative scores.
+
+A separate record notes the next **`===一 命宫===`** Life-palace section boundary only, leaving its substantive astrology claims unextracted. The chart labels are not proof of accurate natal calculation, and the ordinal/documentary note count is not a measure of prediction success.
+
+**V8 contingent acceptance:** **19 new notes ZWD-R0202–ZWD-R0220**, next **ZWD-R0221** within the Life-palace interpretation; BaZi remains **154** notes and next **BZI-R0155**. Chinese original documentary index after acceptance **154 BaZi + 220 Zi Wei = 374**; independent Western accepted **13,044 Lilly + 1,066 Ptolemy = 14,110** unchanged. Both diagnostic and real-human predictive validations **zero**; runtime astrology promotions **zero**. Older Chinese V1–V7 indexes must stay byte-for-byte unchanged.
+
+Open genuine outcome: critically assess original-source authentication, original star glyphs and leap-month/hour calendar conventions; independently reproduce classic charts/timing and test example parity, freeze source-to-prediction model, preregister blinded real-human forward/reverse tests against matched chart decoys and non-astrology baselines. Include misses and negative evidence, never retroactively reinterpret them as successes.
