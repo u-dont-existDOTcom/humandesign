@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
+  "status": "OPEN_SOURCE_READING",
+  "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
+  "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
+  "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
+  "isolated_from_other_reader": true,
+  "global_exclusive_task_lock": false,
+  "last_checkpoint": "READING_NOTES_B02.md",
+  "documents": [
+    "SOURCE_MANIFEST.json",
+    "SOURCE_CANDIDATES_B01.json",
+    "READING_NOTES_B01.md",
+    "SARAVALI_CH20_CONJUNCTION_AUDIT_V1.json",
+    "JP_SARAVALI_CONJUNCTION_CROSSWALK_V1.json",
+    "SOURCE_CANDIDATES_B02.json",
+    "READING_NOTES_B02.md"
+  ],
+  "confirmed": {
+    "uploaded_files": 5,
+    "verified_pdf_pages": 2138,
+    "pdf_files": 4,
+    "plain_text_files": 1,
+    "bibliographic_candidate_annotations": 34,
+    "saravali_ch20_conjunction_clauses": 47,
+    "saravali_ch20_unique_planet_sets": 37,
+    "saravali_ch20_duplicate_distinct_sets": 9,
+    "jataka_ch15_parallel_conjunction_clauses": 37,
+    "exactly_matching_pairs_in_verse_aligned_comparison": 28,
+    "observed_prospective_human_prediction_successes": 0,
+    "production_rules_promoted": 0
+  },
+  "pending_actions": [
+    "Keep source text custody explicit; no raw copyrighted uploads to public repository without rights/approved private target.",
+    "Inspect all remaining critical pages in the five sources; continue extracting source-only notes on spiritual practice, exact chart methods and timing.",
+    "Independent Sanskrit/print-text critical collation of JP/Saravali variants and corrupt BPHS Portuguese rules.",
+    "Freeze chart computation + interpretation variants before using real humans; blinded forward/reverse with matched decoys and negative results separately.",
+    "Integrate accepted source-derived candidates only after independent reading and verification, preserving other active reader lane."
+  ],
+  "next_exact_source_frontier": "Jataka Parijata Adhyaya XV original print 902-915 (PDF912-925), Saravali ch20 remaining nonconjunction slok20-37 and ch32, BPHS Portuguese line5509 onward, Sarvartha ninth house and dasha chapters, Rath Charakaraka lesson15 plus Argala/Arudha.",
+  "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
+  "model_classification": "SOURCE_ANNOTATIONS_ONLY",
+  "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub."
+}
