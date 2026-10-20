@@ -2,7 +2,7 @@
 
 **Owner request:** add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).
 
-**Exact isolated GitHub branch:** `research/astro-jyotish-five-sources-reader-20261020`, based on independently accepted astrology-research commit `964d08bb4c61f6fc410052cb996b121180f5f855`. This is **not** a modification of the other reader's work. Load UDA `AGENTS.md` at next turn and this branch-scoped `TASK_STATUS.json` before selecting the next work item.
+**Draft review:** [PR #136](https://github.com/u-dont-existDOTcom/humandesign/pull/136), base `research/astro-b07bb-clxxix-parents-source-20261020`. All nine changed files are in this task directory; do not merge without review.\n\n**Exact isolated GitHub branch:** `research/astro-jyotish-five-sources-reader-20261020`, based on independently accepted astrology-research commit `964d08bb4c61f6fc410052cb996b121180f5f855`. This is **not** a modification of the other reader's work. Load UDA `AGENTS.md` at next turn and this branch-scoped `TASK_STATUS.json` before selecting the next work item.
 
 ## Saved evidence
 
