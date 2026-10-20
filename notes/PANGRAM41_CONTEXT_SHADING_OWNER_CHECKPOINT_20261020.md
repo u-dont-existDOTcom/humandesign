@@ -10,7 +10,7 @@ This correction extends—not overrides—the Oct 20 credit safeguards: work at 
 
 ## Cross-repository work
 
-- Joel Articles PR **#202**: normative sentence-shading/context stability rule in `docs/PANGRAM-PRODUCTION-BUDGET-20261020.md`, shared humanization gate and index; separate **unapproved** four-paragraph proposal `articles/intentional-communities/candidate/pangram41-20261020/PROPOSAL.md` and `candidate.txt`. Source authority preserved.
+- Joel Articles PR **#202**: normative sentence-shading/context stability rule in `docs/PANGRAM-PRODUCTION-BUDGET-20261020.md`, shared humanization gate and index; separate **unapproved** four-paragraph proposal `work/intentional-communities-pangram41-20261020/PROPOSAL.md` and `candidate.txt`. Source authority preserved.
 - Pangram Lab PR **#177**: owner execution binding, agent/index/working lessons, closeout ledger, and `state/PANGRAM-41-GUI-READOUT-INCIDENT-20261020.md` (provisional technical failure, not evidence about writing).
 - The screenshot juxtaposed legal/privacy rules from a **later** part of the article and integration/sitter passages from an **earlier** section. The replacement covers only four contiguous integration/support paragraphs; legal/privacy prose remains unchanged. Never test this screenshot collage as a single natural context.
 
