@@ -1,3 +1,9 @@
+# Lilly 1647 original CLXXIX Of Parents: physical source covered (B07bb)
+
+**26 historical documentary records R12992–R13017** from original 1647 printed752–753/PDF786–787 and separately typeset 1659 originals. The text conjectures parents' character, affection, finances and relative lifespan in a known merchant case and reports a Ptolemy-attributed technique to derive a hypothetical parent's chart from the firstborn's natal chart. No independent parent's actual birth time, real natal horoscope or observed family outcome has been verified. **13,017 Lilly + 1,066 Ptolemy = 14,083 Western historical annotations**; Chinese V7 **154 BaZi + 201 Zi Wei = 355**, unchanged. CLXXIX original source span covered but critical textual verification and predictive outcomes remain unproven. Next **R13018**, original PDF787/printed753 **CLXXX Sicknesse, Servants**, below the distinct physical divider. Zero actual human predictive validations and no model runtime promotions.
+
+## Previous accepted historical checkpoint retained
+
 # Original Lilly CLXXVIII sibling-count evidence preserved (B07ba)
 
 **22 historical documentary source notes R12970–R12991** from 1647 printed751–752 and separately typeset 1659 originals, cover the full CLXXVIII *Of Brethren*. Strict Ptolemy reasoning would imply few siblings, yet author already knew his merchant had **seven brothers and one sister** and adjusted the chart explanation accordingly; source also calls exact sibling number difficult. These reported counts are NOT independently verified or a blinded prediction. Claimed sickness, early mortality, family discord and uncle-estate disputes remain untested. **12,991 Lilly+1,066 Ptolemy=14,057 Western historical notes**, Chinese V7 **154 BaZi+201 Zi Wei=355** unchanged. Next **R12992**, original PDF786/printed752 **CLXXIX Of Parents** below physical divider. Zero prospective human validations, no runtime astrology rules promoted.
