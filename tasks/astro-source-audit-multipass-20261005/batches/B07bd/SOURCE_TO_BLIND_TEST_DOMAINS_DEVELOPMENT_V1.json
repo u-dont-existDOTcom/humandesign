@@ -1,0 +1,61 @@
+{
+  "scope": "B07bd original 1647/1659 historical CLXXXI married merchant, source-to-future-test coverage audit only",
+  "status": "NOT_FROZEN, NOT_PREREGISTERED, NOT_APPLIED_TO_ANY_PARTICIPANT",
+  "source_original_annotations": 57,
+  "merchant_is_retrospective_and_known_to_author": true,
+  "domains": [
+    {
+      "domain": "legal_marriage_history_count",
+      "source_1647_claim": "exactly two marriages",
+      "candidate_outcome_type": "integer>=0",
+      "acceptable_independent_human_measurement": "voluntary documented legal marriage count and observation/censoring window",
+      "problems": "age cohort censoring, cultural law variation, divorce/remarriage policy, incomplete lifetimes",
+      "pre_validation_rule_selected": false
+    },
+    {
+      "domain": "first_marriage_age_threshold",
+      "source_1647_claim": "not in youth, after age 29",
+      "candidate_outcome_type": "age at first recorded marriage, censored if unmarried",
+      "acceptable_independent_human_measurement": "documented legal first-marriage date against verified birth date",
+      "problems": "book's threshold is not an exact year prediction, different epoch life expectancy, uncertain merchant birth time",
+      "pre_validation_rule_selected": false
+    },
+    {
+      "domain": "significant_extra_marital_romances",
+      "source_1647_claim": "two sweethearts besides wives",
+      "candidate_outcome_type": "clearly predefined, voluntary and privacy-respecting relationship count",
+      "acceptable_independent_human_measurement": "consented self-report with operational definition, not marriage register",
+      "problems": "ambiguity of sweetheart, privacy, recall errors, value judgment and underreporting",
+      "pre_validation_rule_selected": false
+    },
+    {
+      "domain": "spouse_appearance_and_markers",
+      "source_1647_claim": "first-wife complexion and facial blemish; second-wife mole on forehead near left eye",
+      "candidate_outcome_type": "predefined marker/visible attribute with observer consent",
+      "acceptable_independent_human_measurement": "independent blinded observer ratings where consented, not retrospective astrologer fitting",
+      "problems": "multiple traits, ethnic variance, missing consent, observer disagreement, age changes",
+      "pre_validation_rule_selected": false
+    },
+    {
+      "domain": "spouse_relative_geography",
+      "source_1647_claim": "first wife east/south of merchant birth, second wife far west yet English",
+      "candidate_outcome_type": "great-circle compass bearing and geographic distance",
+      "acceptable_independent_human_measurement": "independently documented birth geocoordinates of both partners",
+      "problems": "original birthplace unknown, meaning of live vs born uncertain, historical political shire boundaries, bearing target must be frozen",
+      "pre_validation_rule_selected": false
+    },
+    {
+      "domain": "spouse_wealth_inheritance_obstacles",
+      "source_1647_claim": "one or more wives brings inheritance or estate with resistance and delay",
+      "candidate_outcome_type": "binary event + timing window + amount with independent records",
+      "acceptable_independent_human_measurement": "voluntary financial records corroborating receipt and contest",
+      "problems": "loss of privacy and historic property rights, vague source time 'three months or Terms' MUST NOT be silently treated as precise",
+      "pre_validation_rule_selected": false
+    }
+  ],
+  "no_merchant_or_other_known_person_scores_generated": true,
+  "no_questionnaire_randomization_or_model_predictive_probabilities_frozen": true,
+  "actual_forward_blind_person_tests": 0,
+  "actual_reverse_blind_person_tests": 0,
+  "runtime_astrological_promotions": 0
+}
