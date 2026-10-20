@@ -1,3 +1,9 @@
+# Original Lilly CLXXVIII sibling-count evidence preserved (B07ba)
+
+**22 historical documentary source notes R12970–R12991** from 1647 printed751–752 and separately typeset 1659 originals, cover the full CLXXVIII *Of Brethren*. Strict Ptolemy reasoning would imply few siblings, yet author already knew his merchant had **seven brothers and one sister** and adjusted the chart explanation accordingly; source also calls exact sibling number difficult. These reported counts are NOT independently verified or a blinded prediction. Claimed sickness, early mortality, family discord and uncle-estate disputes remain untested. **12,991 Lilly+1,066 Ptolemy=14,057 Western historical notes**, Chinese V7 **154 BaZi+201 Zi Wei=355** unchanged. Next **R12992**, original PDF786/printed752 **CLXXIX Of Parents** below physical divider. Zero prospective human validations, no runtime astrology rules promoted.
+
+## Earlier accepted source checkpoint
+
 # Lilly original Riches chapter CLXXVII source-covered (B07az)
 
 **29 source-only documentary annotations R12941–R12969** record a known merchant's historical riches, age-related wealth, property, family/inheritance and lawsuit claims from original 1647 and separately typeset 1659 folios749–751. These are **not independently verified outcomes**. The first 1647 Aquarius second-house cusp prints **23°30′** versus shortened secondary transcript 23.3; original source retained without assuming chart-era calculation parity. Chapter ends above printed751/PDF785 horizontal divider; next distinct **CLXXVIII Of Brethren begins same page**. **12,969 Lilly+1,066 Ptolemy=14,035 Western** historical annotations; Chinese V7 **154 BaZi+201 Zi Wei=355** unchanged. Next historical source **R12970**, PDF785/printed751. Critical expert collation, measured human prediction success and runtime astrology model promotion remain zero/unverified.
