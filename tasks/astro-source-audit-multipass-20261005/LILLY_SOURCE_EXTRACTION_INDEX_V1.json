@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_id": "LILLY1647_WELLCOME_B30338724",
   "source_sha256": "2cb53e20e122ffc6e47917ba10241f6c49687cd7a4696f3b5db655a2a1aab28b",
-  "status": "BOOK_III_CLXXXI_MARRIAGE_PHYSICAL_SOURCE_COVERED_NEXT_CLXXXII_CHILDREN",
-  "records_count": 13101,
+  "status": "BOOK_III_CLXXXII_CHILDREN_PHYSICAL_SOURCE_COVERED_NEXT_CLXXXIII_TRAVELS",
+  "records_count": 13131,
   "read_numbered_chapters": [
     1,
     2,
@@ -185,7 +185,8 @@
     178,
     179,
     180,
-    181
+    181,
+    182
   ],
   "chapter_count_complete_book_not_established": false,
   "batches": [
@@ -1413,27 +1414,34 @@
       "records_count": 57,
       "sha256": "2986e9d1a1c6d39d655438764792543bcaf784817a6e20f99b4e846c407f5d96",
       "scope": "Original first 1647 and independent 1659 printed CLXXXI seventh-house Marriage folios754-757/PDF788-791: 57 source-only R13045-R13101; prediction of late marriage after29, exactly two wives and two sweethearts; contrary one-marriage astrological testimony; spouse features, wealth, east/west geography and terms-vs-months time ambiguity. Mercury/Venus Cazimi source nominal17arcmin vs modern SWIEPH73-76arcmin under explicit unverified 1616 Julian-clock assumptions. Known merchant, no independent marriage records or human predictive success; next CLXXXII Children below folio757 physical divider."
+    },
+    {
+      "id": "B07be",
+      "path": "batches/B07be/RULES.json",
+      "records_count": 30,
+      "sha256": "6728de4515ac78c19394e166cabf7e7b7ebd16321bf21f80fe71d2c59df952e6",
+      "scope": "Original first 1647 + separately typeset 1659 short Children CLXXXII on printed folio757/PDF791 with separate next original CLXXXIII Travels physical heading printed758/PDF792. 30 historical source-only R13102–R13131: old negative Mercury combustion/Gemini barren and Jupiter twelfth arguments overruled by Moon/aspects, tentative four-child count then reductions and contradictory male/female survival conjectures, sibling harmony and Venus child preferment. No actual merchant children record verified, no medicine, no real human predictive success, zero astrological runtime promotion."
     }
   ],
   "next": {
-    "pdf_page": 791,
-    "printed_page": 757,
-    "chapter": "CLXXXII",
-    "printed_chapter_numeral": "CLXXXII",
-    "editorial_source_sequence_ordinal": 182,
-    "heading": "Of Children",
+    "pdf_page": 792,
+    "printed_page": 758,
+    "chapter": "CLXXXIII",
+    "printed_chapter_numeral": "CLXXXIII",
+    "editorial_source_sequence_ordinal": 183,
+    "heading": "Of Travels",
     "include_opening_paragraph": true,
     "extracted": false,
     "boundary_image_read": true,
-    "position": "1647 first printed757/PDF791, below physical divider from CLXXXI Marriage after only first two lines on this page. Full children text not extracted by B07bd, next source record R13102.",
-    "research_scope": "Source-only fifth-house children case about known merchant, number/sex/birth/relationship claims not empirically validated."
+    "position": "1647 original printed758/PDF792 begins new ninth-house CLXXXIII Travels with a side note already claiming known travel to Barbary and Holland. Neither side note nor first prose paragraph is semantically scored in B07be, next R13132. Earlier original source photos p758 and p759 already prefetched.",
+    "research_scope": "Original eighteenth-century (1647) historical merchant long-distance travel interpretations; existing marginal 'thrice beyond Sea' source is already-known retrospective, not a blinded astrological prediction."
   },
   "ptolemy_registry": "PTOLEMY_ENGLISH_EXTRACTION_INDEX_V1.json",
   "runtime_promotions": 0,
   "empirical_validations": 0,
-  "read_headed_units_count": 97,
+  "read_headed_units_count": 98,
   "chapter_label_note": "Two successive XVI headings are distinct units: divisions and profiles. Number labels alone are not a unit count.",
-  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261020_B07bd_MARRIAGE.md",
+  "current_state": "state/ASTROLOGY_SOURCE_AUDIT_LATEST_20261020_B07be_CHILDREN.md",
   "body_table_or_medical_claims_validated": false,
   "partial_numbered_chapters": [],
   "read_headed_units_count_note": "Legacy cumulative headed-unit count is not recomputed here. B02v SOURCE_ORDER preserves 49 editorial section markers (48 printed-heading candidates and one prose lead-in); those have a narrower candidate definition.",
@@ -1890,6 +1898,35 @@
       "original_meridian_historical_UT_and_birthplace_verified": false,
       "independent_person_predictive_accuracy_validated": 0,
       "production_rules_promoted": false
+    },
+    {
+      "printed_chapter": "CLXXXII",
+      "editorial_ordinal": 182,
+      "heading": "Of Children",
+      "physical_source_start_pdf": 791,
+      "accepted_through_pdf": 792,
+      "printed_folios": [
+        757,
+        758
+      ],
+      "children_substantive_original_folios": [
+        757
+      ],
+      "next_travels_source_heading_original_folio": 758,
+      "source_batch": "B07be",
+      "historical_start": "R13102",
+      "historical_end": "R13131",
+      "complete": true,
+      "physical_original_source_span_covered": true,
+      "original_1647_1659_two_printings_pageSHA_checked": true,
+      "original_Astro_glyphs_complete_expert_critical_edition": false,
+      "original_no_issue_negative_overridden_by_positive_children": true,
+      "original_four_children_are_tentative_not_undisputed_final_count": true,
+      "original_Moon_Mars_positive_then_mortality_negative_reused": true,
+      "real_merchant_children_count_birth_certificates_unverified": true,
+      "medical_or_child_health_accuracy_unverified": true,
+      "blind_real_human_predictive_tests": 0,
+      "runtime_astrological_promotions": 0
     }
   ],
   "first_printed_CLXVI_source_span_covered_not_verified_note": "B07ag–B07ak collectively traverse original PDF742–749 printed708–715 first physically printed CLXVI directions-time text. Source still contains seven one-reader unresolved zodiac annual-rate glyphs, missing original Naibod minute27, cross-edition table variants, Maginus 42/48-vs-13/4 residual arithmetic issue. Full critical edition, birth-era ephemeris/time model, human forecast validation and runtime promotion remain unresolved. Next printed distinct CLXVI annual Profections editorial ordinal166.",
@@ -1910,5 +1947,6 @@
   "chapter_CLXXVIII_known_count_posthoc_source_warning": "B07ba original 1647/1659 chapter states few siblings under a strict Ptolemaic indicator, then reports already known 7 brothers and 1 sister and reinterprets additional factors. The source itself warns it is difficult to judge exact number. Do not count reported siblings as independent validation, the later reconciliation as preregistered matching, or health/mortality/estate conjectures as proved individual events.",
   "chapter_CLXXIX_historical_parent_claims_not_empirically_tested": "B07bb prints historical source conjectures about real parents of a previously known merchant, but neither father/mother actual birth chart, independent parents' lifespan, affection, property or other outcomes are validated. Ptolemy-derived hypothetical parent chart is not a natal chart with independently sourced real birth data; not a human predictive success.",
   "chapter_CLXXX_historical_medical_social_claims_unverified": "Original 1647/1659 first/second printing preserved as historical sixth-house and servants predictions for known merchant. No independent real patient records, medical etiological truth, servants trust outcomes, source-critical astrological glyphs, or old-epoch chart engine validated. Avoid historical discriminatory servant selection advice.",
-  "chapter_CLXXXI_original_specific_numerical_outcome_caution": "Lilly original 1647/1659 known merchant marriage source predicts only two wives/two sweethearts and marriage after age29, spouse appearances, inheritance and opposing wife origins; nothing is independently biographically verified or a blinded predictive success. Claimed Venus in Cazimi is at 17arcmin original printed exact whole-minute border, but differs >73arcmin from SWIEPH under one explicitly uncertain true-Julian UT hypothesis. This is a source/chart input inconsistency, not evidence about a real wife."
+  "chapter_CLXXXI_original_specific_numerical_outcome_caution": "Lilly original 1647/1659 known merchant marriage source predicts only two wives/two sweethearts and marriage after age29, spouse appearances, inheritance and opposing wife origins; nothing is independently biographically verified or a blinded predictive success. Claimed Venus in Cazimi is at 17arcmin original printed exact whole-minute border, but differs >73arcmin from SWIEPH under one explicitly uncertain true-Julian UT hypothesis. This is a source/chart input inconsistency, not evidence about a real wife.",
+  "chapter_CLXXXII_children_source_conflicting_count_and_survival": "17th-century author's own known-merchant fifth-house example first asserts combustion and barren Gemini contraindicate issue, then overrides it to predict children. Interim 'probability of four' is qualified by two claimed lost children and two/three female possibilities; the Moon–Mars sextile is used as both favorable for fertility and negative child mortality testimony. No independent children register, survival or gender record; no medical validity or production astrology rule."
 }
