@@ -1,0 +1,524 @@
+{
+  "title": "Original independent Chinese civil-to-lunar software disagreement census",
+  "status": "CALENDAR-SOFTWARE CROSS-CHECK ONLY; mismatches always unresolved",
+  "scope_gregorian_inclusive": [
+    "1901-01-01",
+    "2100-12-31"
+  ],
+  "packages_pinned": {
+    "lunar_python": "1.4.8",
+    "sxtwl": "2.0.7"
+  },
+  "date_count": 73049,
+  "agreed_dates": 73019,
+  "disagreed_dates": 30,
+  "exception_dates": 0,
+  "disagreement_fraction": 0.0004106832400169749,
+  "comparison_input_output_stream_sha256": "9534597eb6270df2be1f656acc9b229c0e7ac2443434934ef801605e55f666e4",
+  "disagreement_windows": [
+    {
+      "start": "2057-09-28",
+      "end": "2057-10-27",
+      "days": 30,
+      "first_disagreement": {
+        "date": "2057-09-28",
+        "lunar_python": [
+          2057,
+          8,
+          30,
+          false
+        ],
+        "sxtwl": [
+          2057,
+          9,
+          1,
+          false
+        ]
+      },
+      "last_disagreement": {
+        "date": "2057-10-27",
+        "lunar_python": [
+          2057,
+          9,
+          29,
+          false
+        ],
+        "sxtwl": [
+          2057,
+          9,
+          30,
+          false
+        ]
+      }
+    }
+  ],
+  "disagreement_dates": [
+    {
+      "date": "2057-09-28",
+      "lunar_python": [
+        2057,
+        8,
+        30,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        1,
+        false
+      ]
+    },
+    {
+      "date": "2057-09-29",
+      "lunar_python": [
+        2057,
+        9,
+        1,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        2,
+        false
+      ]
+    },
+    {
+      "date": "2057-09-30",
+      "lunar_python": [
+        2057,
+        9,
+        2,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        3,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-01",
+      "lunar_python": [
+        2057,
+        9,
+        3,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        4,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-02",
+      "lunar_python": [
+        2057,
+        9,
+        4,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        5,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-03",
+      "lunar_python": [
+        2057,
+        9,
+        5,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        6,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-04",
+      "lunar_python": [
+        2057,
+        9,
+        6,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        7,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-05",
+      "lunar_python": [
+        2057,
+        9,
+        7,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        8,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-06",
+      "lunar_python": [
+        2057,
+        9,
+        8,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        9,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-07",
+      "lunar_python": [
+        2057,
+        9,
+        9,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        10,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-08",
+      "lunar_python": [
+        2057,
+        9,
+        10,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        11,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-09",
+      "lunar_python": [
+        2057,
+        9,
+        11,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        12,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-10",
+      "lunar_python": [
+        2057,
+        9,
+        12,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        13,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-11",
+      "lunar_python": [
+        2057,
+        9,
+        13,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        14,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-12",
+      "lunar_python": [
+        2057,
+        9,
+        14,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        15,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-13",
+      "lunar_python": [
+        2057,
+        9,
+        15,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        16,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-14",
+      "lunar_python": [
+        2057,
+        9,
+        16,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        17,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-15",
+      "lunar_python": [
+        2057,
+        9,
+        17,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        18,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-16",
+      "lunar_python": [
+        2057,
+        9,
+        18,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        19,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-17",
+      "lunar_python": [
+        2057,
+        9,
+        19,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        20,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-18",
+      "lunar_python": [
+        2057,
+        9,
+        20,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        21,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-19",
+      "lunar_python": [
+        2057,
+        9,
+        21,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        22,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-20",
+      "lunar_python": [
+        2057,
+        9,
+        22,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        23,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-21",
+      "lunar_python": [
+        2057,
+        9,
+        23,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        24,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-22",
+      "lunar_python": [
+        2057,
+        9,
+        24,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        25,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-23",
+      "lunar_python": [
+        2057,
+        9,
+        25,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        26,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-24",
+      "lunar_python": [
+        2057,
+        9,
+        26,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        27,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-25",
+      "lunar_python": [
+        2057,
+        9,
+        27,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        28,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-26",
+      "lunar_python": [
+        2057,
+        9,
+        28,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        29,
+        false
+      ]
+    },
+    {
+      "date": "2057-10-27",
+      "lunar_python": [
+        2057,
+        9,
+        29,
+        false
+      ],
+      "sxtwl": [
+        2057,
+        9,
+        30,
+        false
+      ]
+    }
+  ],
+  "exception_examples": [],
+  "all_exceptions_recorded": true,
+  "per_year_disagreements": {
+    "2057": 30
+  },
+  "elapsed_wall_seconds": 45.635,
+  "HKO_1901_2100_truth_verified": false,
+  "official_HKO_API_observed_dates": 10,
+  "HKO_identified_near_midnight_future_dates": [
+    "2057-09-28",
+    "2089-09-04",
+    "2097-08-07"
+  ],
+  "hko_caution_url": "https://www.hko.gov.hk/en/gts/time/conversion.htm",
+  "independently_validated_traditional_natal_chart": false,
+  "real_human_predictive_validations": 0,
+  "script": "tasks/astro-chinese-primary-sources-20261017/tests/scan_dual_chinese_calendar_1901_2100.py"
+}

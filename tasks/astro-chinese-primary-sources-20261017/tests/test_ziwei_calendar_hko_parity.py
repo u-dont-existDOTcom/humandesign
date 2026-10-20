@@ -180,5 +180,36 @@ class DualExternalSoftwareChecks(unittest.TestCase):
             c.dual_library_reference_date("2057-09-28")
 
 
+class FrozenTwoCenturyDifferentialEvidence(unittest.TestCase):
+    def test_17_exhaustive_1901_2100_census_all_failures_preserved(self):
+        import datetime
+        report_path = (BASE / "batches/ChineseAstro-11/DUAL_CALENDAR_1901_2100_CENSUS_V1.json")
+        result = json.loads(report_path.read_text())
+        self.assertEqual(result["scope_gregorian_inclusive"], ["1901-01-01", "2100-12-31"])
+        self.assertEqual(result["date_count"], 73049)
+        self.assertEqual(result["agreed_dates"], 73019)
+        self.assertEqual(result["disagreed_dates"], 30)
+        self.assertEqual(result["exception_dates"], 0)
+        self.assertEqual(result["per_year_disagreements"], {"2057": 30})
+        self.assertEqual(result["comparison_input_output_stream_sha256"],
+                         "9534597eb6270df2be1f656acc9b229c0e7ac2443434934ef801605e55f666e4")
+        self.assertEqual(len(result["disagreement_windows"]), 1)
+        window = result["disagreement_windows"][0]
+        self.assertEqual((window["start"], window["end"], window["days"]),
+                         ("2057-09-28", "2057-10-27", 30))
+        first = result["disagreement_dates"][0]
+        last = result["disagreement_dates"][-1]
+        self.assertEqual(first["lunar_python"], [2057, 8, 30, False])
+        self.assertEqual(first["sxtwl"], [2057, 9, 1, False])
+        self.assertEqual(last["lunar_python"], [2057, 9, 29, False])
+        self.assertEqual(last["sxtwl"], [2057, 9, 30, False])
+        initial = datetime.date.fromisoformat(window["start"])
+        self.assertEqual([item["date"] for item in result["disagreement_dates"]],
+                         [(initial + datetime.timedelta(days=i)).isoformat()
+                          for i in range(30)])
+        self.assertFalse(result["HKO_1901_2100_truth_verified"])
+        self.assertEqual(result["real_human_predictive_validations"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()
