@@ -1,3 +1,9 @@
+# Chinese V12 — original Zi Wei Life-palace third four star profiles
+
+**83 source-only historical annotations ZWD-R0400–ZWD-R0482**: TanLang21, JuMen22, TianXiang21, TianLiang18 verbatim source lines plus next QiSha navigation marker. Exact oldid1963110 original UTF8 byte offsets, quote SHA and segments preserved, with missing dedicated TianLiang female poem heading explicitly documented, NOT fabricated. Full original Life-palace source is still PARTIAL, original Ming-era printed imprint unverified; old sex/medical/mortality claims unvalidated and not advice. **Chinese BaZi210 + ZiWei482 =692** historical source notes. Separate Western B07bg Lilly13236+Ptolemy1066 on independent branch means aggregate **14,994** text notes, not subjects or predictive hits. Next **ZWD-R0483 QiSha** cp28621, BaZi **BZI-R0211**. Genuine human blind validations **0**, runtime astrology promotions **0**.
+
+## Previous Chinese accepted source checkpoint retained
+
 # Chinese V11 — original Zi Wei Life-palace next four source stars
 
 **90 historical source-only notes ZWD-R0310–ZWD-R0399**, TianTong20, LianZhen26, TianFu20, TaiYin23 original lines, plus one TanLang next-star navigation. Exact oldid1963110 original codepoint+UTF8 byte-offset SHA for every line and full source witness; earlier V10 TianTong prefix was navigation only. Source Life-palace section still PARTIAL, original Ming woodblock imprint and independent specialist translation not authenticated. Historic medical/sex/moral/fate claims not empirical truth or real personal predictions. **Chinese BaZi210 unchanged + ZiWei399 =609** historic annotations; separately latest accepted Western B07bg **Lilly13236+Ptolemy1066** lives on another research branch, aggregate **14,911 source documents** (not people/test successes). Next **ZWD-R0400 TanLang** cp25795 and **BZI-R0211**. Human blind predictive studies **0**, runtime promotions **0**.

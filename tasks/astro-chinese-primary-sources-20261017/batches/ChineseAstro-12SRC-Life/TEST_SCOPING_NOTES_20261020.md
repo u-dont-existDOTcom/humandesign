@@ -1,0 +1,3 @@
+# Chinese original source V12 test scope
+
+Run original source fixture 15 and V12 post-index 12 tests (27 together) only on V12 latest accepted source branch. Previous V11 post-index tests deliberately require that V11 is the last accepted index and cannot be treated as failures when applied to newer valid V12. Earlier V11 and separate Western/BaZi original source files stay byte-identical. Independently cold portable source ZIP replay verified 15/15 source tests and exact 13 file SHA/bytes. No real human natal outcome or prediction tested, and source original warnings about old moral/health/sex claims are not endorsement.
