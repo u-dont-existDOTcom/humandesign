@@ -1,0 +1,400 @@
+{
+  "title": "Original Lilly English Merchant RA-MC, latitude and four house cusps vs eight independent modern house methods",
+  "evidence_status": "SOURCE-READING_AND_GEOMETRY_ONLY_NOT_PERSON_REAL_NATAL_OR_FORECAST_VALIDATION",
+  "original_source_editions": {
+    "1647_first_printed_742": {
+      "source_path": "tasks/astro-source-audit-multipass-20261005/batches/B07aw/evidence/1647_original-776.jpg",
+      "sha256": "29d25ae08284733e07dc950f7f5b4762e10f2ada3ec2ab866a75bd442aeae760",
+      "byte_length": 1017906,
+      "historical_source": "original physical scan",
+      "human_transcribed_manually": true,
+      "independently_expert_critical_editional_reading": false
+    },
+    "1659_second_printed_742": {
+      "source_path": "tasks/astro-source-audit-multipass-20261005/batches/B07aw/evidence/1659_original_djvu_771.jpg",
+      "sha256": "c545d6ffd3da2d2d7bddd30d3fa65342fbea8ef2f85274da5e8d93c86d1a9008",
+      "byte_length": 318981,
+      "historical_source": "original physical scan",
+      "human_transcribed_manually": true,
+      "independently_expert_critical_editional_reading": false
+    }
+  },
+  "original_chart_source_record_reference": "tasks/astro-source-audit-multipass-20261005/batches/B07ax/MERCHANT_MERCURY_ANTISCION_ORIGINAL_EDITION_SOURCE_CONFLICT_V1.json",
+  "source_original_ra_mc_deg_min": [
+    222,
+    10
+  ],
+  "source_original_oblique_asc_deg_min": [
+    312,
+    10
+  ],
+  "original_oblique_asc_minus_ra_mc": 90,
+  "source_original_latitude_deg": 53.0,
+  "source_printed_cusps_glyph_reading": {
+    "ASC": {
+      "house": 1,
+      "zodiac": "Capricorn",
+      "deg": 6,
+      "arcmin": 37
+    },
+    "HOUSE2": {
+      "house": 2,
+      "zodiac": "Aquarius",
+      "deg": 23,
+      "arcmin": 30
+    },
+    "HOUSE3": {
+      "house": 3,
+      "zodiac": "Aries",
+      "deg": 18,
+      "arcmin": 34
+    },
+    "MC": {
+      "house": 10,
+      "zodiac": "Scorpio",
+      "deg": 14,
+      "arcmin": 39
+    }
+  },
+  "source_printed_four_numeric_cusp_longitudes": {
+    "ASC": 276.61666667,
+    "HOUSE2": 323.5,
+    "HOUSE3": 18.56666667,
+    "MC": 224.65
+  },
+  "original_glyph_reading_method": "Manually inspected exactly hashed original 1647/1659 original page scans; expert collation still open",
+  "source_period_julian_date_treated_as_hypothesis": [
+    1616,
+    9,
+    19
+  ],
+  "historical_utc_clock_assumed_for_obliquity_only": "14:24:39 UT",
+  "original_printed_clock_was_UT_verified": false,
+  "original_merchant_geographical_birth_longitude_known": false,
+  "requested_obliquity_swieph": true,
+  "returned_obliquity_flags": 2,
+  "actual_obliquity_swieph_flag": true,
+  "calculated_true_obliquity_at_original_julian_date_deg": 23.49158764284,
+  "swisseph_version": "2.10.03",
+  "original_2026_DE441_file_binary_witnesses": {
+    "sepl_12.se1": {
+      "original_upstream_url": "https://raw.githubusercontent.com/aloistr/swisseph/master/ephe/sepl_12.se1",
+      "sha256": "8dccace2557601a223d5f8a7cf64de4e6bbb8a82b9b130b95a54d49adfbe546d",
+      "bytes": 483743,
+      "released_outside_repo_binary_copied_into_humandesign": false
+    },
+    "semo_12.se1": {
+      "original_upstream_url": "https://raw.githubusercontent.com/aloistr/swisseph/master/ephe/semo_12.se1",
+      "sha256": "1c65fdbb854f350d3de36afc3e4ac126a53f360ae4f6dcb57beed7c690e7eb61",
+      "bytes": 1305932,
+      "released_outside_repo_binary_copied_into_humandesign": false
+    }
+  },
+  "source_ra_mc_supplied_to_all_methods_without_backfitting": 222.16666666666666,
+  "methods": [
+    {
+      "method": "Regiomontanus",
+      "swe_house_system_code": "R",
+      "source_4_house_cusps": {
+        "ASC": {
+          "source_first_and_second_printed_longitude_degrees": 276.61666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 276.66968542,
+          "signed_computed_minus_printed_arcmin": 3.181125,
+          "abs_arcmin": 3.181125
+        },
+        "HOUSE2": {
+          "source_first_and_second_printed_longitude_degrees": 323.5,
+          "calculated_ecliptic_tropical_longitude_degrees": 323.57076902,
+          "signed_computed_minus_printed_arcmin": 4.246141,
+          "abs_arcmin": 4.246141
+        },
+        "HOUSE3": {
+          "source_first_and_second_printed_longitude_degrees": 18.56666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 18.4414501,
+          "signed_computed_minus_printed_arcmin": -7.512994,
+          "abs_arcmin": 7.512994
+        },
+        "MC": {
+          "source_first_and_second_printed_longitude_degrees": 224.65,
+          "calculated_ecliptic_tropical_longitude_degrees": 224.64061724,
+          "signed_computed_minus_printed_arcmin": -0.562965,
+          "abs_arcmin": 0.562965
+        }
+      },
+      "max_abs_residual_arcmin": 7.512994,
+      "median_abs_residual_arcmin": 3.713633,
+      "all_four_cusps_within_ten_arcmin": true
+    },
+    {
+      "method": "Placidus",
+      "swe_house_system_code": "P",
+      "source_4_house_cusps": {
+        "ASC": {
+          "source_first_and_second_printed_longitude_degrees": 276.61666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 276.66968542,
+          "signed_computed_minus_printed_arcmin": 3.181125,
+          "abs_arcmin": 3.181125
+        },
+        "HOUSE2": {
+          "source_first_and_second_printed_longitude_degrees": 323.5,
+          "calculated_ecliptic_tropical_longitude_degrees": 329.40037081,
+          "signed_computed_minus_printed_arcmin": 354.022249,
+          "abs_arcmin": 354.022249
+        },
+        "HOUSE3": {
+          "source_first_and_second_printed_longitude_degrees": 18.56666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 16.32418979,
+          "signed_computed_minus_printed_arcmin": -134.548612,
+          "abs_arcmin": 134.548612
+        },
+        "MC": {
+          "source_first_and_second_printed_longitude_degrees": 224.65,
+          "calculated_ecliptic_tropical_longitude_degrees": 224.64061724,
+          "signed_computed_minus_printed_arcmin": -0.562965,
+          "abs_arcmin": 0.562965
+        }
+      },
+      "max_abs_residual_arcmin": 354.022249,
+      "median_abs_residual_arcmin": 68.864869,
+      "all_four_cusps_within_ten_arcmin": false
+    },
+    {
+      "method": "Campanus",
+      "swe_house_system_code": "C",
+      "source_4_house_cusps": {
+        "ASC": {
+          "source_first_and_second_printed_longitude_degrees": 276.61666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 276.66968542,
+          "signed_computed_minus_printed_arcmin": 3.181125,
+          "abs_arcmin": 3.181125
+        },
+        "HOUSE2": {
+          "source_first_and_second_printed_longitude_degrees": 323.5,
+          "calculated_ecliptic_tropical_longitude_degrees": 352.50537691,
+          "signed_computed_minus_printed_arcmin": 1740.322615,
+          "abs_arcmin": 1740.322615
+        },
+        "HOUSE3": {
+          "source_first_and_second_printed_longitude_degrees": 18.56666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 30.23590032,
+          "signed_computed_minus_printed_arcmin": 700.154019,
+          "abs_arcmin": 700.154019
+        },
+        "MC": {
+          "source_first_and_second_printed_longitude_degrees": 224.65,
+          "calculated_ecliptic_tropical_longitude_degrees": 224.64061724,
+          "signed_computed_minus_printed_arcmin": -0.562965,
+          "abs_arcmin": 0.562965
+        }
+      },
+      "max_abs_residual_arcmin": 1740.322615,
+      "median_abs_residual_arcmin": 351.667572,
+      "all_four_cusps_within_ten_arcmin": false
+    },
+    {
+      "method": "Alcabitius",
+      "swe_house_system_code": "B",
+      "source_4_house_cusps": {
+        "ASC": {
+          "source_first_and_second_printed_longitude_degrees": 276.61666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 276.66968542,
+          "signed_computed_minus_printed_arcmin": 3.181125,
+          "abs_arcmin": 3.181125
+        },
+        "HOUSE2": {
+          "source_first_and_second_printed_longitude_degrees": 323.5,
+          "calculated_ecliptic_tropical_longitude_degrees": 316.43265685,
+          "signed_computed_minus_printed_arcmin": -424.040589,
+          "abs_arcmin": 424.040589
+        },
+        "HOUSE3": {
+          "source_first_and_second_printed_longitude_degrees": 18.56666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 0.58137891,
+          "signed_computed_minus_printed_arcmin": -1079.117265,
+          "abs_arcmin": 1079.117265
+        },
+        "MC": {
+          "source_first_and_second_printed_longitude_degrees": 224.65,
+          "calculated_ecliptic_tropical_longitude_degrees": 224.64061724,
+          "signed_computed_minus_printed_arcmin": -0.562965,
+          "abs_arcmin": 0.562965
+        }
+      },
+      "max_abs_residual_arcmin": 1079.117265,
+      "median_abs_residual_arcmin": 213.610857,
+      "all_four_cusps_within_ten_arcmin": false
+    },
+    {
+      "method": "Porphyry",
+      "swe_house_system_code": "O",
+      "source_4_house_cusps": {
+        "ASC": {
+          "source_first_and_second_printed_longitude_degrees": 276.61666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 276.66968542,
+          "signed_computed_minus_printed_arcmin": 3.181125,
+          "abs_arcmin": 3.181125
+        },
+        "HOUSE2": {
+          "source_first_and_second_printed_longitude_degrees": 323.5,
+          "calculated_ecliptic_tropical_longitude_degrees": 319.32666269,
+          "signed_computed_minus_printed_arcmin": -250.400238,
+          "abs_arcmin": 250.400238
+        },
+        "HOUSE3": {
+          "source_first_and_second_printed_longitude_degrees": 18.56666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 1.98363997,
+          "signed_computed_minus_printed_arcmin": -994.981602,
+          "abs_arcmin": 994.981602
+        },
+        "MC": {
+          "source_first_and_second_printed_longitude_degrees": 224.65,
+          "calculated_ecliptic_tropical_longitude_degrees": 224.64061724,
+          "signed_computed_minus_printed_arcmin": -0.562965,
+          "abs_arcmin": 0.562965
+        }
+      },
+      "max_abs_residual_arcmin": 994.981602,
+      "median_abs_residual_arcmin": 126.790682,
+      "all_four_cusps_within_ten_arcmin": false
+    },
+    {
+      "method": "Equal",
+      "swe_house_system_code": "E",
+      "source_4_house_cusps": {
+        "ASC": {
+          "source_first_and_second_printed_longitude_degrees": 276.61666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 276.66968542,
+          "signed_computed_minus_printed_arcmin": 3.181125,
+          "abs_arcmin": 3.181125
+        },
+        "HOUSE2": {
+          "source_first_and_second_printed_longitude_degrees": 323.5,
+          "calculated_ecliptic_tropical_longitude_degrees": 306.66968542,
+          "signed_computed_minus_printed_arcmin": -1009.818875,
+          "abs_arcmin": 1009.818875
+        },
+        "HOUSE3": {
+          "source_first_and_second_printed_longitude_degrees": 18.56666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 336.66968542,
+          "signed_computed_minus_printed_arcmin": -2513.818875,
+          "abs_arcmin": 2513.818875
+        },
+        "MC": {
+          "source_first_and_second_printed_longitude_degrees": 224.65,
+          "calculated_ecliptic_tropical_longitude_degrees": 224.64061724,
+          "signed_computed_minus_printed_arcmin": -0.562965,
+          "abs_arcmin": 0.562965
+        }
+      },
+      "max_abs_residual_arcmin": 2513.818875,
+      "median_abs_residual_arcmin": 506.5,
+      "all_four_cusps_within_ten_arcmin": false
+    },
+    {
+      "method": "Koch",
+      "swe_house_system_code": "K",
+      "source_4_house_cusps": {
+        "ASC": {
+          "source_first_and_second_printed_longitude_degrees": 276.61666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 276.66968542,
+          "signed_computed_minus_printed_arcmin": 3.181125,
+          "abs_arcmin": 3.181125
+        },
+        "HOUSE2": {
+          "source_first_and_second_printed_longitude_degrees": 323.5,
+          "calculated_ecliptic_tropical_longitude_degrees": 304.88046843,
+          "signed_computed_minus_printed_arcmin": -1117.171894,
+          "abs_arcmin": 1117.171894
+        },
+        "HOUSE3": {
+          "source_first_and_second_printed_longitude_degrees": 18.56666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 352.24550514,
+          "signed_computed_minus_printed_arcmin": -1579.269692,
+          "abs_arcmin": 1579.269692
+        },
+        "MC": {
+          "source_first_and_second_printed_longitude_degrees": 224.65,
+          "calculated_ecliptic_tropical_longitude_degrees": 224.64061724,
+          "signed_computed_minus_printed_arcmin": -0.562965,
+          "abs_arcmin": 0.562965
+        }
+      },
+      "max_abs_residual_arcmin": 1579.269692,
+      "median_abs_residual_arcmin": 560.17651,
+      "all_four_cusps_within_ten_arcmin": false
+    },
+    {
+      "method": "Whole_Sign",
+      "swe_house_system_code": "W",
+      "source_4_house_cusps": {
+        "ASC": {
+          "source_first_and_second_printed_longitude_degrees": 276.61666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 276.66968542,
+          "signed_computed_minus_printed_arcmin": 3.181125,
+          "abs_arcmin": 3.181125
+        },
+        "HOUSE2": {
+          "source_first_and_second_printed_longitude_degrees": 323.5,
+          "calculated_ecliptic_tropical_longitude_degrees": 300.0,
+          "signed_computed_minus_printed_arcmin": -1410.0,
+          "abs_arcmin": 1410.0
+        },
+        "HOUSE3": {
+          "source_first_and_second_printed_longitude_degrees": 18.56666667,
+          "calculated_ecliptic_tropical_longitude_degrees": 330.0,
+          "signed_computed_minus_printed_arcmin": -2914.0,
+          "abs_arcmin": 2914.0
+        },
+        "MC": {
+          "source_first_and_second_printed_longitude_degrees": 224.65,
+          "calculated_ecliptic_tropical_longitude_degrees": 224.64061724,
+          "signed_computed_minus_printed_arcmin": -0.562965,
+          "abs_arcmin": 0.562965
+        }
+      },
+      "max_abs_residual_arcmin": 2914.0,
+      "median_abs_residual_arcmin": 706.590563,
+      "all_four_cusps_within_ten_arcmin": false
+    }
+  ],
+  "best_correspondence_on_4_development_source_readings": "Regiomontanus",
+  "source_specific_house_system_predeclared_independently_blind": false,
+  "hypothetical_RA_MC_derived_longitudes_for_5_UT_clocks": [
+    {
+      "assumed_printed_clock_mapped_to_UT_offset_hours": -2,
+      "greenwich_sidereal_right_ascension_deg": 194.74365006,
+      "conditional_longitude_east_deg_to_match_original_RA_MC": 27.4230166,
+      "longitude_is_independently_real_birthplace_observed": false
+    },
+    {
+      "assumed_printed_clock_mapped_to_UT_offset_hours": -1,
+      "greenwich_sidereal_right_ascension_deg": 209.78471929,
+      "conditional_longitude_east_deg_to_match_original_RA_MC": 12.38194738,
+      "longitude_is_independently_real_birthplace_observed": false
+    },
+    {
+      "assumed_printed_clock_mapped_to_UT_offset_hours": 0,
+      "greenwich_sidereal_right_ascension_deg": 224.82578836,
+      "conditional_longitude_east_deg_to_match_original_RA_MC": -2.65912169,
+      "longitude_is_independently_real_birthplace_observed": false
+    },
+    {
+      "assumed_printed_clock_mapped_to_UT_offset_hours": 1,
+      "greenwich_sidereal_right_ascension_deg": 239.86685745,
+      "conditional_longitude_east_deg_to_match_original_RA_MC": -17.70019078,
+      "longitude_is_independently_real_birthplace_observed": false
+    },
+    {
+      "assumed_printed_clock_mapped_to_UT_offset_hours": 2,
+      "greenwich_sidereal_right_ascension_deg": 254.90792672,
+      "conditional_longitude_east_deg_to_match_original_RA_MC": -32.74126005,
+      "longitude_is_independently_real_birthplace_observed": false
+    }
+  ],
+  "longitude_is_actual_birthplace": false,
+  "houses_derived_without_UT_or_birthplace_after_source_RA_MC_known": true,
+  "independently_verified_early_time_or_actual_birthplace": false,
+  "independent_prediction_on_unseen_humans": 0,
+  "runtime_forecast_promotions": 0,
+  "new_accepted_historical_annotation_records": 0
+}
