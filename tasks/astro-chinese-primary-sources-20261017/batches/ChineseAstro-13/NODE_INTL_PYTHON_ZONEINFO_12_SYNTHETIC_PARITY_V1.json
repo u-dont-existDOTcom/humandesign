@@ -1,0 +1,142 @@
+{
+  "status": "synthetic timezone edge-case engineering cross-check only",
+  "source_reference": "https://peps.python.org/pep-0495/",
+  "HKO_summer_time_reference": "https://www.hko.gov.hk/en/gts/time/Summertime.htm",
+  "python_timezone_implementation": "Python standard zoneinfo system tzdb",
+  "second_implementation": "Node.js ECMAScript Intl",
+  "node_runtime_version": "26.8.1",
+  "node_ICU_version": "78.3",
+  "node_tzdb_version": "2026c",
+  "sample_count": 12,
+  "identical_civil_dates_and_hours": 12,
+  "disagreement_count": 0,
+  "sample_rows_sha256_canonical": "861970c4035adc4314da88ddd6e72294e817706b288e3f5f324d1b54cc4a9173",
+  "cases": [
+    {
+      "id": "hko-1965-summer-early",
+      "utc_instant": "1965-06-30T15:30:00Z",
+      "iana_zone": "Asia/Hong_Kong",
+      "python_zoneinfo_local_clock": "1965-07-01T00:30:00",
+      "node_intl_local_clock": "1965-07-01T00:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": 32400,
+      "python_zoneinfo_fold": 0
+    },
+    {
+      "id": "hko-1965-summer-late",
+      "utc_instant": "1965-07-01T15:30:00Z",
+      "iana_zone": "Asia/Hong_Kong",
+      "python_zoneinfo_local_clock": "1965-07-02T00:30:00",
+      "node_intl_local_clock": "1965-07-02T00:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": 32400,
+      "python_zoneinfo_fold": 0
+    },
+    {
+      "id": "hko-2026-cny",
+      "utc_instant": "2026-02-16T23:30:00Z",
+      "iana_zone": "Asia/Hong_Kong",
+      "python_zoneinfo_local_clock": "2026-02-17T07:30:00",
+      "node_intl_local_clock": "2026-02-17T07:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": 28800,
+      "python_zoneinfo_fold": 0
+    },
+    {
+      "id": "hko-1979-autumn-dst",
+      "utc_instant": "1979-10-21T00:00:00Z",
+      "iana_zone": "Asia/Hong_Kong",
+      "python_zoneinfo_local_clock": "1979-10-21T08:00:00",
+      "node_intl_local_clock": "1979-10-21T08:00:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": 28800,
+      "python_zoneinfo_fold": 0
+    },
+    {
+      "id": "ny-2026-spring-before",
+      "utc_instant": "2026-03-08T06:30:00Z",
+      "iana_zone": "America/New_York",
+      "python_zoneinfo_local_clock": "2026-03-08T01:30:00",
+      "node_intl_local_clock": "2026-03-08T01:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": -18000,
+      "python_zoneinfo_fold": 0
+    },
+    {
+      "id": "ny-2026-spring-after",
+      "utc_instant": "2026-03-08T07:30:00Z",
+      "iana_zone": "America/New_York",
+      "python_zoneinfo_local_clock": "2026-03-08T03:30:00",
+      "node_intl_local_clock": "2026-03-08T03:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": -14400,
+      "python_zoneinfo_fold": 0
+    },
+    {
+      "id": "ny-2026-autumn-fold0",
+      "utc_instant": "2026-11-01T05:30:00Z",
+      "iana_zone": "America/New_York",
+      "python_zoneinfo_local_clock": "2026-11-01T01:30:00",
+      "node_intl_local_clock": "2026-11-01T01:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": -14400,
+      "python_zoneinfo_fold": 0
+    },
+    {
+      "id": "ny-2026-autumn-fold1",
+      "utc_instant": "2026-11-01T06:30:00Z",
+      "iana_zone": "America/New_York",
+      "python_zoneinfo_local_clock": "2026-11-01T01:30:00",
+      "node_intl_local_clock": "2026-11-01T01:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": -18000,
+      "python_zoneinfo_fold": 1
+    },
+    {
+      "id": "apia-2011-skipped-prev",
+      "utc_instant": "2011-12-30T09:30:00Z",
+      "iana_zone": "Pacific/Apia",
+      "python_zoneinfo_local_clock": "2011-12-29T23:30:00",
+      "node_intl_local_clock": "2011-12-29T23:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": -36000,
+      "python_zoneinfo_fold": 0
+    },
+    {
+      "id": "apia-2011-skipped-next",
+      "utc_instant": "2011-12-30T10:30:00Z",
+      "iana_zone": "Pacific/Apia",
+      "python_zoneinfo_local_clock": "2011-12-31T00:30:00",
+      "node_intl_local_clock": "2011-12-31T00:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": 50400,
+      "python_zoneinfo_fold": 0
+    },
+    {
+      "id": "dakar-2026",
+      "utc_instant": "2026-02-16T21:30:00Z",
+      "iana_zone": "Africa/Dakar",
+      "python_zoneinfo_local_clock": "2026-02-16T21:30:00",
+      "node_intl_local_clock": "2026-02-16T21:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": 0,
+      "python_zoneinfo_fold": 0
+    },
+    {
+      "id": "ny-2026-summer",
+      "utc_instant": "2026-07-01T17:30:00Z",
+      "iana_zone": "America/New_York",
+      "python_zoneinfo_local_clock": "2026-07-01T13:30:00",
+      "node_intl_local_clock": "2026-07-01T13:30:00",
+      "agree": true,
+      "python_zoneinfo_offset_seconds": -14400,
+      "python_zoneinfo_fold": 0
+    }
+  ],
+  "limitations": [
+    "IANA/ICU may share historical timezone source input",
+    "Pre-1970 records may change between tzdb releases",
+    "HK DST clock is not synonymous with UTC+8 standard lunar reference",
+    "No independent true solar time or human predictive outcome tested"
+  ]
+}

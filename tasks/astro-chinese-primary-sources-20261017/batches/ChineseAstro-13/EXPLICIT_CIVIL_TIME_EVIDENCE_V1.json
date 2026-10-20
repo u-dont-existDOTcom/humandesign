@@ -1,0 +1,76 @@
+{
+  "title": "Bounded modern civil-date/timezone and local mean solar hour bridge into original Zi Wei 14-principal-star positions",
+  "status": "RESEARCH_ONLY_WITH_SOURCE_CONVENTIONS_EXPLICIT; NO_EMPIRICAL_HUMAN_VALIDATION",
+  "baseline_acceptance": {
+    "source_first_Chinese_V9": "09111bb87399dc2e681854cb247db3af6ff2381d",
+    "prior_iztro_source_engine": "6f4a75febc1624e44b54d724422804a05f31fd12",
+    "historical_records_added": 0,
+    "cumulative_original_Western": 14110,
+    "cumulative_original_Chinese": 430
+  },
+  "standard_time": {
+    "birth_input": "ISO YYYY-MM-DDTHH:MM:SS naive wall clock plus explicit IANA zone, exact fold and zero stated clock uncertainty",
+    "zone_data_provenance": "zoneinfo matched IANA zone, with exact TZIF binary SHA when filesystem backing exists",
+    "dst_folds": "requires explicit 0 or 1 when autumn local time is repeated",
+    "dst_gaps": "reject nonexistent local wall clock",
+    "official_modern_chinese_calendar_reference": "fixed UTC+08:00; not historical Asia/Hong_Kong daylight civil time",
+    "calendar_day_choices": [
+      "same instant at fixed UTC+08:00",
+      "birthplace civil Gregorian date looked up using current HKO-derived lunar calendar algorithm"
+    ],
+    "normalization_problem": "an outside-China birth UTC instant can map to a different reference Gregorian and lunar date depending explicitly selected convention"
+  },
+  "solar_hour": {
+    "recorded_civil_clock": "civil hour with any historical DST or law-shift already encoded in selected IANA zone",
+    "local_mean_solar_longitude": "UTC instant plus 4 minutes per degree east longitude, not equation-of-time apparent Sun",
+    "longitude_source": "explicit caller-supplied east-positive longitude; never inferred from IANA timezone",
+    "apparent_true_solar": false,
+    "late_Zi_day_23": false,
+    "nonzero_recorded_clock_uncertainty": false,
+    "LiChun_year_method": false
+  },
+  "negative_or_variant_examples": [
+    {
+      "synthetic_civil_input": "2026-02-16 21:30 Africa/Dakar",
+      "same_instant_fixed_UTC_plus_8_date": "2026-02-17",
+      "birthplace_civil_date": "2026-02-16",
+      "different_lunar_year_boundary": true
+    },
+    {
+      "synthetic_civil_input": "2026-07-01 13:30 America/New_York at longitude -74",
+      "recorded_civil_hour_branch": "Wei",
+      "local_mean_solar_hour_branch": "Wu",
+      "solar_hour_difference_mins_from_local_civil": -56
+    },
+    {
+      "synthetic_civil_input": "1965-07-01 00:30 Asia/Hong_Kong (historical summer time UTC+9)",
+      "birth_utc": "1965-06-30T15:30:00Z",
+      "birth_site_local_calendar_date": "1965-07-01",
+      "official_fixed_UTC_plus_8_date": "1965-06-30",
+      "reference_day_difference": 1
+    },
+    {
+      "synthetic_civil_input": "2026-11-01 01:30 America/New_York",
+      "two_utc_instants": ["2026-11-01T05:30:00Z", "2026-11-01T06:30:00Z"],
+      "without_fold": "reject"
+    },
+    {
+      "synthetic_civil_input": "2026-03-08 02:30 America/New_York",
+      "status": "nonexistent DST local time, always reject"
+    },
+    {
+      "synthetic_civil_input": "2011-12-30 noon Pacific/Apia",
+      "status": "nonexistent local date due dateline law change, always reject"
+    }
+  ],
+  "independent_software_projection_evidence": {
+    "python_ZoneInfo_Node_ECMAScript_Intl_source_only_samples": 12,
+    "identical_12": true,
+    "original_timezone_records_not_independently_authenticated": true,
+    "stored_evidence": "NODE_INTL_PYTHON_ZONEINFO_12_SYNTHETIC_PARITY_V1.json",
+    "canonical_digest": "861970c4035adc4314da88ddd6e72294e817706b288e3f5f324d1b54cc4a9173"
+  },
+  "medical_or_personal_predictions": "none",
+  "actual_human_blinded_predictions": 0,
+  "production_astrology_promotions": 0
+}
