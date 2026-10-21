@@ -1,0 +1,259 @@
+{
+  "schema": "ASTRO_TIBETAN_T53_BOUNDED_CALCULATOR_SOURCE_AND_AUDIT_V1",
+  "batch": "T53",
+  "source_ids": [
+    "TIB-CORNU-1997",
+    "TIB-JANSON-2014"
+  ],
+  "reuses_historical_source_note_ids": [
+    "TIB-R0467",
+    "TIB-R0468",
+    "TIB-R0469",
+    "TIB-R0470",
+    "TIB-R0472",
+    "TIB-R0473",
+    "TIB-R0474",
+    "TIB-R0475",
+    "TIB-R0476",
+    "TIB-R0477",
+    "TIB-R0478",
+    "TIB-R0479",
+    "TIB-R0480",
+    "TIB-R0481",
+    "TIB-R0482",
+    "TIB-R0483",
+    "TIB-R0484",
+    "TIB-R0485",
+    "TIB-R0486",
+    "TIB-R0487",
+    "TIB-R0488"
+  ],
+  "new_historical_source_notes": 0,
+  "code": "tibetan_calendar_reference.py",
+  "test": "../../verify_t51_t53_calendar.py",
+  "status": "TESTED_SUBSET_ONLY_NOT_COMPLETE_CHART_ENGINE",
+  "timestamp_policy": {
+    "birth_datetime_to_Tibetan_calendar_date": "NOT_IMPLEMENTED",
+    "source_year_label": "Gregorian year when Tibetan Losar begins, supplied explicitly by caller",
+    "calendar_day_JDN": "Must be supplied for an already resolved local Tibetan calendar day; cannot derive from UTC timestamp because the traditional day begins at dawn",
+    "measured_julian_day_as_UTC_instant": "NOT_IMPLEMENTED",
+    "sidereal_longitude": "NOT_IMPLEMENTED",
+    "natal_hour_double_animal": "Supplied explicitly, not derived from civil clock",
+    "Tsurphu_day_mewa": "UNRESOLVED without independent true astronomical solstice",
+    "consultation_time_and_parents": "Outside this module"
+  },
+  "formulas": [
+    {
+      "id": "E.1–E.5",
+      "name": "year attributes",
+      "fields": [
+        "year power",
+        "animal",
+        "polarity",
+        "life",
+        "body",
+        "fortune",
+        "spirit",
+        "central/life/power mewa"
+      ],
+      "year_offset": 1984
+    },
+    {
+      "id": "E.6–E.8",
+      "name": "month attributes",
+      "fields": [
+        "animal",
+        "sexagenary polarity",
+        "element",
+        "Tsurphu-only mewa"
+      ]
+    },
+    {
+      "id": "E.9–E.11",
+      "name": "lunar day attributes",
+      "fields": [
+        "animal",
+        "element",
+        "trigram",
+        "mewa"
+      ]
+    },
+    {
+      "id": "E.12–E.16",
+      "name": "Julian-day civil calendar day attributes",
+      "fields": [
+        "element",
+        "animal",
+        "trigram",
+        "polarity",
+        "Phugpa mewa",
+        "five forces"
+      ],
+      "unresolved": "Tsurphu daily mewa needs solstice direction reversal"
+    },
+    {
+      "id": "5.2 and A.2",
+      "name": "leap month",
+      "fields": [
+        "Phugpa leap index48/49; Tsurphu index0/1",
+        "true month counts"
+      ],
+      "epoch_variants": {
+        "phugpa": [
+          806,
+          1927,
+          1987
+        ],
+        "tsurphu": [
+          1732,
+          1852
+        ]
+      }
+    },
+    {
+      "id": "Cornu 115–116",
+      "name": "double hour elemental progression",
+      "note": "Requires named double-hour supplied, no timezone conversion."
+    }
+  ],
+  "source_grounded_fixture_examples": [
+    {
+      "kind": "year",
+      "year_label": 1984,
+      "source": "Janson Table23 and Phugpa Losar Table1",
+      "result": {
+        "power": "wood",
+        "animal": "mouse",
+        "life": "water",
+        "body": "iron",
+        "fortune": "wood",
+        "spirit": "iron",
+        "central_mewa": 7
+      }
+    },
+    {
+      "kind": "year",
+      "year_label": 1950,
+      "source": "Cornu printed pp216–219 and Janson Table23",
+      "result": {
+        "power": "iron",
+        "animal": "tiger",
+        "life": "wood",
+        "body": "wood",
+        "fortune": "iron",
+        "spirit": "water",
+        "central_mewa": 5,
+        "life_mewa": 2,
+        "power_mewa": 8
+      }
+    },
+    {
+      "kind": "year",
+      "year_label": 1958,
+      "source": "Cornu printed pp106 and Janson Table23",
+      "result": {
+        "power": "earth",
+        "animal": "dog",
+        "body": "wood",
+        "central_mewa": 6,
+        "life_mewa": 3,
+        "power_mewa": 9
+      }
+    },
+    {
+      "kind": "month",
+      "year_label": 1950,
+      "month": 10,
+      "policy": "phugpa",
+      "source": "Cornu printed pp216–217 and Janson E6/Table24",
+      "result": {
+        "animal": "ox",
+        "element": "water"
+      }
+    },
+    {
+      "kind": "lunar_day",
+      "year_label": 1950,
+      "month": 10,
+      "day": 6,
+      "policy": "phugpa",
+      "source": "Cornu printed pp216–220 and Janson E9–E11",
+      "result": {
+        "animal": "ox",
+        "element": "wood",
+        "mewa": 3
+      }
+    },
+    {
+      "kind": "lunar_day",
+      "year_label": 1950,
+      "month": 10,
+      "day": 1,
+      "policy": "phugpa",
+      "result": {
+        "mewa": 7
+      }
+    },
+    {
+      "kind": "double_hour",
+      "lunar_day_element": "wood",
+      "traditional_hour_animal": "monkey",
+      "source": "Cornu printed p216 and double-hour example pp115–116",
+      "result": {
+        "element": "fire"
+      }
+    },
+    {
+      "kind": "leap",
+      "year_label": 2000,
+      "month": 1,
+      "epoch": 1927,
+      "policy": "phugpa",
+      "source": "Janson Remark 4 following 5.8",
+      "result": {
+        "intercalation_index": 48,
+        "is_leap": true
+      }
+    },
+    {
+      "kind": "calendar_day",
+      "JD": 2454102,
+      "source": "Janson §2 and E.12–16",
+      "result": {
+        "Gregorian_date_proleptic": "2007-01-01"
+      }
+    }
+  ],
+  "Cornu_1950_Paris_errata": {
+    "civil_input": "1950-11-15T17:00:00 Europe/Paris",
+    "timezone_historical_offset": "+01:00",
+    "unambiguous_UTC": "1950-11-15T16:00:00Z",
+    "longitude_for_mean_solar": "2.3522 degrees East",
+    "local_mean_solar": "1950-11-15 16:09:24.528",
+    "printed_labels_summary": "Book printed pp216–219 subtracts one hour from 17:00 and calls the result local solar time, then adds roughly nine longitude minutes to 16:00 and labels 16:09 GMT.",
+    "issue": "TIB-CONFLICT-010_CLOCK_LABELS_SWAPPED_OR_CONFLATED",
+    "source_status": "Original English author worked example; no valid golden UTC reference until independent historical clock chain fixed",
+    "ayanamsa_printed_p220": "23°81′",
+    "ayanamsa_source_decimal": "23.31 degrees",
+    "computed_DMS": "23°18′36″",
+    "ayanamsa_issue": "TIB-CONFLICT-011_INVALID_DMS",
+    "calculation": "(1950-285)*0.014 degrees = 23.31 decimal degrees",
+    "actual_ayanamsa_ephemeris": "NOT_DERIVED: this is only Cornu's historically approximate model, not modern sidereal truth."
+  },
+  "independent_testing": {
+    "status": "FOCUSED_SUITES_PASS",
+    "Table23_body_year_rows": 60,
+    "year_mewa_cycle": 180,
+    "Phugpa_and_Tsurphu_leap_month_count_in_65y": 24,
+    "lunar_day_Cornu1950_example_reproduced": true,
+    "JulianDay_500_consecutive_test_indices": true,
+    "medical_or_personality_human_validated": 0
+  },
+  "study_readiness": {
+    "mathematical_algorithm_subset": "PARTIAL_CORRECT_TO_SOURCE_FIXTURES",
+    "source_completeness": "Cornu/Henning/Janson/Erlewine and Tibetan original texts remain partially unread",
+    "model_mappings_frozen": false,
+    "calendar_date_from_UTC_implemented": false,
+    "predictive_accuracy_claim_allowed": false
+  }
+}
