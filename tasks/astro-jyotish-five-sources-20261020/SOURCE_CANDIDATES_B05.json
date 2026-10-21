@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B05",
+  "status": "SOURCE_ONLY_TECHNICAL_COMPARISON_NO_MODEL",
+  "record_count": 20,
+  "records": [
+    {
+      "id": "B05-001",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF355, Sutra1.1.4 and Rath commentary",
+      "domain": "jaimini_primary_argala",
+      "claim": "The Sanskrit sutra as rendered identifies 4th, 2nd, 11th signs/planets from a sign as intervening primary argala.",
+      "layer": "classical_sutra_as_translated",
+      "limitation": "Exact Katapayadi decoding vs original Sanskrit must be checked; Rath's insider/outsider rationale is separate commentary.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-002",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF361, Sutra1.1.5 and Rath BPHS comparison",
+      "domain": "argala_obstruction_strength",
+      "claim": "Rath compares primary argala in second/fourth/eleventh with obstruction in twelfth/tenth/third; third-house malefics introduce stronger special argala.",
+      "layer": "sutra_plus_modern_reconciliation",
+      "limitation": "The BPHS Portuguese version at line2659 likewise states blocking houses but source-school exception priority still open.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-003",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF377-378, Sutra1.1.30",
+      "domain": "arudha_pada_counting",
+      "claim": "Core Arudha-sign placement counts from source sign to lord and equal distance from lord.",
+      "layer": "sutra_plus_modern_exposition",
+      "limitation": "Does not by itself establish an exact within-sign longitude.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-004",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF379, alternative Arudha longitudes",
+      "domain": "arudha_longitude_alternatives",
+      "claim": "Rath reports traditional use of source sign's 9°50 position vs his own end-of-sign reflected 20°10 position for the same Arudha sign in a worked illustration.",
+      "layer": "explicit_school_choice",
+      "limitation": "Rath invites comparison: no source-selection or empirical superiority established. Matters for finer vargas and exact cusps.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-005",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF379-381, Sutras1.1.31-32 and Arudha riders",
+      "domain": "arudha_exception_when_self_opposite",
+      "claim": "After the standard Arudha count, when result is same/opposite sign, an exception moves it to tenth from temporary position; printed fourth/seventh cases detailed.",
+      "layer": "sutra_and_rath_interpretation",
+      "limitation": "Source itself disputes pronunciation/syllabic derivation; verify Sanskrit and sign indexing in code.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-006",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF382, Table64",
+      "domain": "upapada_a12",
+      "claim": "Rath's table identifies Upapada with A12, listing spouse/expenses/meditation imagery.",
+      "layer": "modern_edition_tabular_mapping",
+      "limitation": "Portuguese BPHS editor at line2625 separately describes second-house alternative for even signs; do not conflate.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-007",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF415-418, lesson20 Special Ascendants",
+      "domain": "special_ascendant_solar_rates",
+      "claim": "Rath computes Bhava/Hora/Ghatika special ascendants from solar longitude at sunrise and elapsed local time, with 15°,30°,75° per hour rates.",
+      "layer": "modern_computational_formula_with_original_tradition_claim",
+      "limitation": "Require astronomy, local sunrise, civil date rollover and birth-place/timezone; source has multiple solar reference wording choices.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-008",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "TXT lines524,530,536 Special Lagnas",
+      "domain": "bhava_hora_ghati_rates",
+      "claim": "Portuguese BPHS describes Bhava as 120-minute cycle, Hora as 60-minute, Ghati as 24-minute, corresponding to 15, 30 and 75 degrees per hour.",
+      "layer": "second_hand_ancient_attribution",
+      "limitation": "Corresponds structurally to Rath's modern math, but no independent source Sanskrit collated.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-009",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "TXT line564 Varnada Effects",
+      "domain": "duplicate_sibling_role",
+      "claim": "The supplied Portuguese text assigns both the 11th and 3rd from Varnada to the longevity of older siblings.",
+      "layer": "textual_possible_error",
+      "limitation": "Likely missing younger/older distinction; preserve source verbatim as unresolved, no automatic correction.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-010",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "TXT line570 Varnada Effects",
+      "domain": "special_lagna_geography_ambiguity",
+      "claim": "Portuguese text says natal ascendant varies with birthplace but the special Bhava/Hora Lagnas are common to all places, despite formulas depending on sunrise.",
+      "layer": "textual_possible_error_or_context_loss",
+      "limitation": "Do not accept geographic invariance without clarifying original source and solar/sunrise reference.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-011",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF423-425, lesson21",
+      "domain": "varnada_sign_based_vs_degree_based",
+      "claim": "Rath explains a sign-count Varnada method then an alternative degree-based method advocated by some astrologers.",
+      "layer": "two_frozen_method_variants",
+      "limitation": "Do not silently select finer degree method from a sign-based source when modern explanatory variant differs.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-012",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "TXT lines552,558,570 Varnada",
+      "domain": "varnada_dasha_and_ages",
+      "claim": "Portuguese BPHS gives sign/parity counting for Varnada and sign-specific dasa/antardasa durations; ascendant and Hora roles are central.",
+      "layer": "historical_timing_formula",
+      "limitation": "Careful school/odd-even/reverse counting and accurate time references required; no outcome validation.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-013",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF452, ParaSara 3.71-72 and Rath commentary",
+      "domain": "pranapada_formula",
+      "claim": "Pranapada is described using solar trinal correction plus elapsed birth time since sunrise multiplied by twenty times Bhava-Lagna's rotational rate.",
+      "layer": "quoted_sanskrit_plus_modern_interpretation",
+      "limitation": "Separate classical snippet from Rath's modern derivation; sunrise/date must be verified.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-014",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF453, derivation and Willa Keizer example",
+      "domain": "pranapada_300degrees_per_hour",
+      "claim": "Rath's explicit worked formula is Konarka + 300° times elapsed hours after sunrise, modulo 360°, with civil-midnight rollover handling.",
+      "layer": "explicit_calculation",
+      "limitation": "Extreme time precision sensitivity. An arithmetic equivalence is not empirical validation of predicted life.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-015",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF453, mathematical derivative of source formula",
+      "domain": "pranapada_sensitivity",
+      "claim": "The source formula implies 5° per minute = 0.083333° per second; a 0.5° division may change after six seconds.",
+      "layer": "derived_math_from_source",
+      "limitation": "Rates assume sunrise/Sun/correction fixed for local time perturbation; quantify error window before D9/D60 tests.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-016",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF473, Pranapada marriage/children timing rules7-11",
+      "domain": "relationship_event_dasha_pratyantar",
+      "claim": "Rath uses third from Pranapada to time marriage/childbirth and assigns major/sub/sub-sub dashas to native/spouse/physical event.",
+      "layer": "modern_method_not_verified",
+      "limitation": "Claims explicitly treated differently for love and arranged marriage; any use needs preregistered cohort-specific target definitions.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-017",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF454, Rath conception argument",
+      "domain": "pranapada_conception_viability_claim",
+      "claim": "Rath argues that Moon-to-Pranapada trines or oppositions govern whether conception sustains or child is born alive.",
+      "layer": "modern_spiritual_biological_claim",
+      "limitation": "Not established medical or obstetric science; do not apply to pregnancy, miscarriage or neonatal counselling.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-018",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF382, second-level-truth exposition",
+      "domain": "unsupported_neuropsychology_analogy",
+      "claim": "Rath associates literal left brain with Jupiter/intuitive understanding and right brain with Venus/will and logic.",
+      "layer": "modern_commentary_not_empirically_verified",
+      "limitation": "Do not incorporate as neuroscience or treat brain lateralization and astrological personality as established.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-019",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF439, chart-based moral/spiritual reformation retrospective",
+      "domain": "retrospective_known_case",
+      "claim": "The text narrates an astrologer's known client case where Buddhist/nonviolent reformation was interpreted during dasha.",
+      "layer": "nonblind_case_narrative",
+      "limitation": "Outcome and astrological explanation are in same narrative, not an independent forecast; no validation count.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    },
+    {
+      "id": "B05-020",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "PDF445, Prabhupada chart",
+      "domain": "renunciation_known_case_dasha",
+      "claim": "Rath retrospectively associates a named spiritual teacher's renunciation with Mercury/Venus period and Varnada interpretation.",
+      "layer": "retrospective_historical_example",
+      "limitation": "Birth-time source and independent life-event data not verified; development only, not a blind success.",
+      "verification_class": "PAGE_TEXT_INSPECTED; SOURCE CRITICAL AND OUTCOME VERIFICATION PENDING"
+    }
+  ],
+  "numeric_precision": {
+    "rath_formula": "pranapada_deg = (konarka_deg + 300 * elapsed_hours_since_sunrise) mod 360",
+    "deg_per_hour": 300,
+    "deg_per_minute": 5,
+    "deg_per_second": 0.08333333333333333,
+    "minutes_per_30deg_sign": 6,
+    "seconds_per_0_5deg_division": 6,
+    "consequence": "Even seconds of birth-time uncertainty can move Pranapada across small divisional boundaries; exact birth time uncertainty must be propagated.",
+    "type": "arithmetic_derivation_only_no_human_validation"
+  },
+  "next": "Continue critical school-specific chart computation and map extra-personality events; preserve school differences until independent source collation."
+}
