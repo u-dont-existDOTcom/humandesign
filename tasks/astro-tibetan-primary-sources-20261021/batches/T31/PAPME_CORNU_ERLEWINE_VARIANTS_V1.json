@@ -1,0 +1,126 @@
+{
+  "schema": "TIBETAN_T31_PAPME_COMPETING_SOURCE_POLICIES_V1",
+  "batch": "T31",
+  "new_documentary_source_notes": 0,
+  "source_cornu_id": "TIB-CORNU-1997",
+  "source_erlewine_id": "TIB-ERLEWINE-2007",
+  "linked_notes": [
+    "TIB-R0023",
+    "TIB-R0024",
+    "TIB-R0293",
+    "TIB-R0294",
+    "TIB-R0295",
+    "TIB-R0296",
+    "TIB-R0297"
+  ],
+  "Cornu": {
+    "policy_id": "CORN_PAPME_NATAL_YEAR_POLARITY",
+    "source": "Cornu Tibetan Astrology printed pp118–119 (PDF66)",
+    "switch_input": "natal_sexagenary_year_polarity",
+    "masculine_year_direction": "left_east_then_counterclockwise",
+    "feminine_year_direction": "left_east_then_clockwise",
+    "individual_sex_ignored": true,
+    "examples": [
+      {
+        "birth_year": 1956,
+        "year_polarity": "masculine",
+        "natal_mewa": 8,
+        "ages1_to4": [
+          8,
+          6,
+          2,
+          4
+        ]
+      },
+      {
+        "birth_year": 1957,
+        "year_polarity": "feminine",
+        "natal_mewa": 7,
+        "ages1_to4": [
+          7,
+          5,
+          6,
+          2
+        ]
+      }
+    ]
+  },
+  "Erlewine": {
+    "policy_id": "ERLEWINE_PAPME_SUBJECT_SEX",
+    "source": "Erlewine Tibetan Astrology, author-hosted PDF pp309–310 (PDF page index309–310); visually inspect figure for counting axis",
+    "switch_input": "subject_sex",
+    "male_route": "left_east_then_counterclockwise",
+    "female_route": "left_east_then_clockwise",
+    "year_polarity_ignored": true,
+    "linked_previous_notes": [
+      "TIB-R0023",
+      "TIB-R0024"
+    ]
+  },
+  "independent_difference_cases": [
+    {
+      "sex": "male",
+      "natal_year_polarity": "feminine",
+      "natal_mewa": 7,
+      "cornu_ages1_to4": [
+        7,
+        5,
+        6,
+        2
+      ],
+      "erlewine_ages1_to4": [
+        7,
+        5,
+        1,
+        3
+      ]
+    },
+    {
+      "sex": "female",
+      "natal_year_polarity": "masculine",
+      "natal_mewa": 8,
+      "cornu_ages1_to4": [
+        8,
+        6,
+        2,
+        4
+      ],
+      "erlewine_ages1_to4": [
+        8,
+        6,
+        7,
+        3
+      ]
+    }
+  ],
+  "common_baseline": {
+    "square_base_center_5": [
+      [
+        4,
+        9,
+        2
+      ],
+      [
+        3,
+        5,
+        7
+      ],
+      [
+        8,
+        1,
+        6
+      ]
+    ],
+    "orientation": "diagram north up, East at left in Tibetan schema, start from center to middle-left"
+  },
+  "source_reconciliation_state": "REAL_DISAGREEMENT_IN_EXPLICIT_SWITCH_INPUT; unknown whether distinct lineages, pedagogic simplification, or translation/convention error",
+  "rule_freeze_requirement": "Treat policies as separate registered algorithms before accessing any subject answers; compare source calculations on synthetic inputs first.",
+  "source_provenance_risks": [
+    "Do not collapse to one Papme function with automatic selection of better fit.",
+    "The annual Parkha rotation in Cornu, unlike Cornu Papme, DOES depend on individual's sex.",
+    "Year sexagenary polarity is not subject biological sex.",
+    "Lunar new-year and Tibetan inclusive age must be computed independently for real dates."
+  ],
+  "human_blind_results": 0,
+  "model_promotions": 0
+}
