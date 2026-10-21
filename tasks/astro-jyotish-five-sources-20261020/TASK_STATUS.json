@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B11_SOURCE_COMPUTABILITY_AND_EDITORIAL_VARIANTS_ACCEPTED",
+  "status": "OPEN_B14_SANSKRIT_CRITICAL_ARITHMETIC_CHECKPOINT",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "READING_NOTES_B11.md",
+  "last_checkpoint": "READING_NOTES_B13_B14.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -40,7 +40,12 @@
     "IMPOSSIBLE_EXTREME_DIGNITY_RULES_B11.json",
     "SOURCE_CANDIDATES_B11.json",
     "READING_NOTES_B11.md",
-    "SARAVALI_CHAPTER_COVERAGE_V2.json"
+    "SARAVALI_CHAPTER_COVERAGE_V2.json",
+    "SANSKRIT_ASHTAKAVARGA_RECENSION_B12.json",
+    "READING_NOTES_B12.md",
+    "SANSKRIT_PINDA_MULTIPLIER_RECONCILIATION_B13.json",
+    "SANSKRIT_SHODHANA_STAGES_B14.json",
+    "READING_NOTES_B13_B14.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
@@ -93,17 +98,25 @@
     "b10_bphs_reconciled_contributions_sum": 337,
     "b10_jataka_source_neutral_state_documented": true,
     "b11_astronomically_impossible_all_seven_extreme_dignity_rules": 2,
-    "b11_portuguese_pinda_sadhana_multiple_inconsistent_multipliers": true
+    "b11_portuguese_pinda_sadhana_multiple_inconsistent_multipliers": true,
+    "b12_source_witnesses_for_saturn_lagna_sixth": 2,
+    "b12_sanskrit_saturn_target_favorable_positions": 39,
+    "b12_uploaded_english_saturn_target_favorable_positions": 38,
+    "b12_edition_chapter_order_changes": 3,
+    "b13_rasimana_sign_multipliers_documented": 12,
+    "b13_grahamana_planet_multipliers_documented": 7,
+    "b13_portuguese_prose_multiplier_conflict_resolved_textually": true,
+    "b14_trikona_simple_reduction_source_verified": true,
+    "b14_ekadhipatya_full_conditional_algorithm_resolved": false
   },
   "pending_actions": [
-    "Check independent Sanskrit and alternate printed editions for Saturn Ashtakavarga: missing Lagna sixth offset, source-level Bindu/Rekha marker conventions and JP Mars 10th lunar neutral contribution.",
-    "Resolve original-source computation of Trikon Shodana, Ekadhipatya Shodana and contradictory Pinda Sadhana multipliers; no production calculation until exact convention is selected.",
-    "Continue broad research across 35 Saravali chapters with no registered source candidates, other uploaded texts and non-spiritual life domains.",
-    "Never count physically impossible antecedents (all seven exalted/debilitated) as forecast successes from their absence.",
-    "Preserve parallel reader isolation, participant blinding, human-data separation, model integrity and negative results.",
-    "Raw copyright-protected editions remain outside public GitHub."
+    "Compare BPHS Ch68 Ekadhipatya Shodhana planet-occupancy conditional cases against at least one textual/critical source and construct source-versioned math without ambiguous heuristic defaults.",
+    "Retain both uploaded English Saravali Saturn-Lagna table total336 and source-critical Sanskrit variant total337; only use latter after explicit version declaration.",
+    "Continue systematic nonduplicate source-located study of remaining 35 Saravali chapters and other four uploaded works beyond spirituality/dreams/calculation.",
+    "Do not confuse 181 historical source annotations with verified human predictions; retain zeros for predictive evidence and production rules.",
+    "Keep all work on isolated draft PR, no full copyrighted texts in public GitHub, no participant or alternate-reader files touched."
   ],
-  "next_exact_source_frontier": "Collate precise Saturn-Lagna sixth favorability and Portuguese Pinda multiplier contradictions against one independent authoritative Sanskrit text; then extend Saravali 35 unregistered chapter categories and systematic rest-of-book coverage for all five uploads.",
+  "next_exact_source_frontier": "Resolve ambiguous planet-occupancy reduction cases in Parashara 68 via Sanskrit critical comparison, then expand broad unregistered source chapters; keep 181 source annotations unchanged pending new substantive verse extraction.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -114,7 +127,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": null,
     "all_changed_paths_within_task_directory": true,
-    "note": "Changed-file count pending independent readback after B10/B11. Exact branch-scoped artifacts preserved.",
+    "note": "PR file count awaits final remote check after B12-B14; earlier checks remain historical, not current.",
     "remote_readback_scope": "Direct GitHub readback of all 26 PR changed pathnames, B01–B07 counts, all 153 distinct candidate IDs and foreign-key source manifest membership on 2026-10-21.",
     "doc_updated_in_pr": true
   },
