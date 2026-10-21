@@ -1,0 +1,57 @@
+{
+  "schema": "TIBETAN_T29_ADJACENT_PROSE_TABLE_CONFLICTS_V1",
+  "batch": "T29",
+  "new_source_notes": 0,
+  "source_id": "TIB-DORJE-2001",
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "conflicts": [
+    {
+      "id": "TIB-CONFLICT-004",
+      "page_pdf": 236,
+      "printed_page": 235,
+      "figure": "Plate 9 fig.10",
+      "context": "Mouse/Pig natal sign, Khon current trigram, current year of enemy relationship",
+      "published_prose": [
+        "ox",
+        "dragon",
+        "sheep",
+        "dog"
+      ],
+      "published_figure": [
+        "sheep"
+      ],
+      "source_text_not_OCR_only": true,
+      "action": "keep two distinct literal candidate sets, do not select based on respondent history"
+    },
+    {
+      "id": "TIB-CONFLICT-005",
+      "page_pdf": 253,
+      "printed_page": 252,
+      "figure": "Plate 9 fig.5",
+      "context": "Earth-element multiple-of-nine coincidence with Khon/Khen/Gin/Zon",
+      "published_prose": [
+        "hare",
+        "pig"
+      ],
+      "published_figure": [
+        "mouse",
+        "pig"
+      ],
+      "source_text_not_OCR_only": true,
+      "action": "leave year-animal set unresolved pending alternate/original Tibetan witness"
+    },
+    {
+      "id": "TIB-EDITORIAL-CORRECTION-006",
+      "page_pdf": 235,
+      "printed_page": 234,
+      "figure": "Plate 9 fig.7",
+      "context": "combined Gin/Khen trigram omen",
+      "published_english_prose": "Gin and Khen (error on plate) as 'two feet digging earth'",
+      "published_table_or_figure": "Publisher explicitly reports an error; corrected layout/reading needs original chart collation",
+      "action": "do not promote original plate pairing silently; textual editorial note documented"
+    }
+  ],
+  "resolution_status": "UNRESOLVED_AT_ORIGINAL_TIBETAN_WITNESS_LEVEL",
+  "consequence": "No variant-aware human scoring until readings frozen independently of outcomes",
+  "human_tests": 0
+}
