@@ -1,0 +1,405 @@
+{
+  "schema": "TIBETAN_T47_THIRTY_COMPUTATIONAL_CHARTS_SOURCE_NOTES_V1",
+  "batch": "T47",
+  "source_witness_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source": "Gyurme Dorje (2001), White Beryl Chapter 26 and Moonbeams extracted text, PDF pages361–388/printed360–387",
+  "source_notes": [
+    {
+      "id": "TIB-R0417",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 361,
+        "printed_page": 360,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "thirty_continuous_vs_fifteen_split",
+      "paraphrase": "White Beryl Chapter 26 and illustrated manuscript Plate14 number thirty computational charts consecutively without a Chinese/Tibetan break. The introductory White Beryl allocation and Moonbeams present different 15-Chinese/15-Tibetan partitions. These are conflicting editorial taxonomies, not independent empirical astrological systems.",
+      "required_inputs": [
+        "catalogue_scheme"
+      ],
+      "source_output_class": "source_classification_variant",
+      "dependency_family": "THIRTY-INDEX-VARIANTS",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0418",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 361,
+        "printed_page": 360,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "Moonbeams_six_topics",
+      "paraphrase": "Moonbeams f17a–b groups traditional elemental divination into the thirty Chinese/Tibetan computational charts, natal divination, marriage, obstacle years, ill-health and death; it explicitly places the thirty-chart system first.",
+      "required_inputs": [
+        "tradition_work"
+      ],
+      "source_output_class": "six_documentary_subject_families",
+      "dependency_family": "THIRTY-SIX-TOPICS",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0419",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 361,
+        "printed_page": 360,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "Moonbeams_noncontiguous_reindex",
+      "paraphrase": "Moonbeams classifies White Beryl chapter26 charts 1–7 as Chinese 1–7, 8–14 Tibetan 1–7, 15–22 Chinese 8–15 and 23–30 Tibetan 8–15. This differs from simply labeling charts 1–15 Chinese and 16–30 Tibetan.",
+      "required_inputs": [
+        "chapter26_original_index"
+      ],
+      "source_output_class": "Moonbeams_chinese_tibetan_family_number",
+      "dependency_family": "THIRTY-INDEX-VARIANTS",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0420",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 362,
+        "printed_page": 361,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "initial_30_start_groups",
+      "paraphrase": "White Beryl describes fifteen Chinese-chart starting animal pairs beginning Mouse/Ox identity, Tiger/Hare son, Dragon/Snake friend, Horse/Sheep enemy and Bird/Monkey mother relations, then cycles through other pairs; Tibetan starting-point groups are separately specified.",
+      "required_inputs": [
+        "Chinese_or_Tibetan_classification",
+        "starting_animal_pair",
+        "element_relation"
+      ],
+      "source_output_class": "chart_origin_sector",
+      "dependency_family": "THIRTY-BASE-START",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0421",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 362,
+        "printed_page": 361,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "year_polarity_traversal",
+      "paraphrase": "The source counts anticlockwise from the female member of a starting year-sign pair for a subject born under a feminine-polarity year; clockwise from the male member of the pair for a masculine-polarity year. Year polarity must not be replaced with the person's sex.",
+      "required_inputs": [
+        "subject_birth_year_polarity",
+        "chart_start_animal_pair"
+      ],
+      "source_output_class": "traversal_direction",
+      "dependency_family": "THIRTY-POLARITY",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0422",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 363,
+        "printed_page": 362,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "eight_basic_element_comparisons",
+      "paraphrase": "Each chart assesses eight ordered comparisons: log-men with vitality four backward; log-men with body four forward; log-men with destiny eleven backward; log-men with luck eleven forward; natal vitality with vitality seven backward; natal body with body seven forward; log-men with destiny at its own sector; log-men with luck at its own sector.",
+      "required_inputs": [
+        "computed_logmen",
+        "natal_four_elements",
+        "elemental_offset_rules",
+        "year_polarity"
+      ],
+      "source_output_class": "eight_pebble_relation_state",
+      "dependency_family": "THIRTY-EIGHT-PREDICATES",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0423",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 363,
+        "printed_page": 362,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "pebble_color_relation_encoding",
+      "paraphrase": "For the thirty-chart calculation, mother relation gives three white markers, friend two white, identity Earth/Water one white, son one white and one black, identity Fire/Iron/Wood one black, enemy two black. These are category encodings, not observed occurrence counts.",
+      "required_inputs": [
+        "directed_element_relation",
+        "identity_element"
+      ],
+      "source_output_class": "pebble_color_multiplicity",
+      "dependency_family": "THIRTY-COLOR-CODE",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0424",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 363,
+        "printed_page": 362,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "two_hundred_forty_markers",
+      "paraphrase": "Thirty named charts multiplied by eight basic comparisons each gives 240 base pebbles in the elaborate procedure. The text also acknowledges moderate and concise variants, which cannot be assumed to share all 240 markers.",
+      "required_inputs": [
+        "chart_inventory_30",
+        "eight_comparisons",
+        "chosen_mode"
+      ],
+      "source_output_class": "240_symbolic_marker_design",
+      "dependency_family": "THIRTY-COUNT",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0425",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 363,
+        "printed_page": 362,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "fire_dragon_king_example",
+      "paraphrase": "An exemplary royal chart for a Fire Dragon subject begins from Fire Mouse and proceeds clockwise because of a male-polarity natal year; its eight worked elemental contrasts are illustrated as colored pebbles. This verifies source procedure, not the king's outcomes.",
+      "required_inputs": [
+        "Fire_Dragon_birth_year",
+        "chart_for_kings",
+        "logmen_start"
+      ],
+      "source_output_class": "worked_symbolic_chart",
+      "dependency_family": "THIRTY-EXAMPLE",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0426",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 364,
+        "printed_page": 363,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "Moonbeams_directional_qualifications",
+      "paraphrase": "Moonbeams ff19b–20a qualifies backward/forward offsets of four, seven and eleven sectors by whether the subject was born in a masculine or feminine year. The shorthand fixed direction list and the conditional verse must remain source-differentiated until reconciled numerically.",
+      "required_inputs": [
+        "year_polarity",
+        "chosen_base_sector",
+        "offset_kind"
+      ],
+      "source_output_class": "variant_sensitive_offset_policy",
+      "dependency_family": "THIRTY-POLARITY",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0427",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 364,
+        "printed_page": 363,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "rare_commentary_provenance",
+      "paraphrase": "The book attributes fine-grained prognoses to a commentary called 'Phrul-gyi mig-tshags', described as a rare witness held in the Potala archive. The commentator recommends consulting it; that text itself has not been directly read in this project.",
+      "required_inputs": [
+        "independent_commentary_witness"
+      ],
+      "source_output_class": "source_access_gap",
+      "dependency_family": "THIRTY-PRIMARY-WITNESS",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0428",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 364,
+        "printed_page": 363,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "first_royal_social_charts",
+      "paraphrase": "Charts 1–7 in chapter order separately address kings/potentates, spiritual friends, mantrins, Bon priests, dignitaries/elders, adult men, and women/wives. This is a role-conditioned divination taxonomy, not seven universal birth traits.",
+      "required_inputs": [
+        "chart_number",
+        "subject_social_role"
+      ],
+      "source_output_class": "role_specific_symbolic_question",
+      "dependency_family": "THIRTY-ROLE-DEPENDENCY",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0429",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 369,
+        "printed_page": 368,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "eight_through_twelve_roles",
+      "paraphrase": "Charts 8–12 address children, young girls, servants/retainers, riding animals such as horses/mules, and cleft-hoofed animals such as yaks and sheep. Several subjects are nonhuman or property, so no uniform personality-scoring framework follows from the chart inventory.",
+      "required_inputs": [
+        "chart_number",
+        "subject_role_or_animal"
+      ],
+      "source_output_class": "role_specific_omen",
+      "dependency_family": "THIRTY-ROLE-DEPENDENCY",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0430",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 373,
+        "printed_page": 372,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "spouse_bride_house_13_to_17",
+      "paraphrase": "Charts 13–17 separately address compatible spouses, bridal departure timing, household/land, estate quality and metal household artefacts. These categories overlap source families already studied but are not independent confirmations of marriage/electional outcomes.",
+      "required_inputs": [
+        "chart_number",
+        "birth_pair",
+        "wedding_or_site_context"
+      ],
+      "source_output_class": "relationship_or_placement_claim",
+      "dependency_family": "THIRTY-MARRIAGE-GEOMANCY",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0431",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 377,
+        "printed_page": 376,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "childbirth_demons_and_elderly_18_to_21",
+      "paraphrase": "Charts 18–21 cover childbirth, temple pollution, malevolent demon interpretations and good luck of elderly subjects, respectively. The source includes both potentially observable and doctrinally supernatural target claims.",
+      "required_inputs": [
+        "chart_number",
+        "event_context"
+      ],
+      "source_output_class": "heterogeneous_outcome_class",
+      "dependency_family": "THIRTY-BIRTH-CULTURE",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0432",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 380,
+        "printed_page": 379,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "sick_death_burial_22_to_26",
+      "paraphrase": "Charts 22–26 address duration of illness, death/funeral preparations, modes of corpse disposal, tomb qualities and ritual charms; these are post-event or high-stakes religious categories rather than legitimate individual medical predictions.",
+      "required_inputs": [
+        "chart_number",
+        "illness_or_funeral_context"
+      ],
+      "source_output_class": "illness_funerary_symbolic_class",
+      "dependency_family": "THIRTY-ILLNESS-FUNERAL",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0433",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 385,
+        "printed_page": 384,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "sex_and_force_specific_27_to_30",
+      "paraphrase": "Charts 27–30 address male vitality, young children's body element, women's destiny element, and luck of important/educated people. The target personal force and subject category must be bound before selecting one of these rules.",
+      "required_inputs": [
+        "chart_number",
+        "subject_social_role",
+        "vitality_body_destiny_luck_axis"
+      ],
+      "source_output_class": "specialized_eight_marker_profile",
+      "dependency_family": "THIRTY-FOUR-FORCES",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0434",
+      "source_id": "TIB-DORJE-2001",
+      "source_edition": "Gyurme Dorje 2001 English study/translations of White Beryl and Moonbeams, not original Tibetan direct reading",
+      "page": {
+        "pdf_page_1based": 388,
+        "printed_page": 387,
+        "source_folios": "White Beryl ff.300b–313b, commentary on Chapter26 and Moonbeams ff17a–20a"
+      },
+      "rule_key": "three_row_omen_aggregation",
+      "paraphrase": "The book adds general rules for groups of lower, central and upper pebbles: color composition changes its alleged reading for later life, present property and kinship. They require the chart-specific source assignment and are not standalone personality test observations.",
+      "required_inputs": [
+        "chart_3_row_marker_pattern",
+        "chosen_subject_chart"
+      ],
+      "source_output_class": "aggregate_omen",
+      "dependency_family": "THIRTY-PATTERN-GROUPS",
+      "source_only": true,
+      "human_validation": false,
+      "model_promoted": false
+    }
+  ],
+  "note_count": 18,
+  "first_id": "TIB-R0417",
+  "last_id": "TIB-R0434",
+  "methodological_warnings": [
+    "Chapter 26 1–30 indexing and two Chinese/Tibetan 15/15 schemes are not the same partition.",
+    "Both an illustrative 8-sector computation and distinct consulted-source verbal predictions exist; no human accuracy measurements.",
+    "Source names certain nonhuman property, animal and spirit targets; do not reinterpret as survey traits.",
+    "Year polarity changes count direction and is independent of subject sex.",
+    "Some moral/cultural assertions and dangers are not medical, legal, cultural or ritual advice.",
+    "Original Tibetan and rare 'Phrul-gyi mig-tshags' remain unread."
+  ],
+  "new_human_blind_validation_count": 0,
+  "model_promotions": 0,
+  "next_source_note": "TIB-R0435",
+  "next_read": "Thirteen Bal-mo ldingskor charts in Dorje PDF391–399, then remaining plates/appendices and unread Cornu/Henning/Erlewine/Janson."
+}
