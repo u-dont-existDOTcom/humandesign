@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B42",
+  "artifact_kind": "CROSS_BOOK_OUTCOME_DEPENDENCY_NOT_HUMAN_TEST",
+  "source_layers": [
+    "Jataka original Sanskrit alongside Sastri translated text, page images XI.23–25, XI.61–64, XIV.68, XVII.82–83",
+    "Portuguese Parashara second-hand translation lines1753,1785,2019,2931,2985,3886,3888",
+    "Earlier Saravali local/foreign fortune domain in B01 32.3–5"
+  ],
+  "groups": [
+    {
+      "target": "ever_foreign_residence",
+      "sources": [
+        "Jataka XI.23",
+        "BPHS 6th lord in 2nd (1753)",
+        "BPHS 11th lord in 6th (2019)"
+      ],
+      "unit": "Has lived outside birth country for preregistered minimum duration",
+      "nonidentity": "A short trip is not residence."
+    },
+    {
+      "target": "permanent_overseas_settlement",
+      "sources": [
+        "Jataka XI.23 Venus friend-aspect",
+        "Jataka XI.24 favorable vs native exception"
+      ],
+      "unit": "Years resident after initial migration and intention/legal continuity; date-specific",
+      "nonidentity": "First migration is not lifetime/permanent settlement."
+    },
+    {
+      "target": "foreign_country_financial_fortune",
+      "sources": [
+        "Jataka XI.25 movable vs fixed",
+        "Jataka XIV.68 native vs foreign D9",
+        "BPHS 6th lord 10th (1785)",
+        "BPHS Rajju (2985)"
+      ],
+      "unit": "Location of documented majority earnings/asset growth under fixed currency and exchange-rate rules",
+      "nonidentity": "Earning money abroad differs from being abroad."
+    },
+    {
+      "target": "nomadic_lifestyle",
+      "sources": [
+        "BPHS Rajju yoga definition2931 and outcome2985"
+      ],
+      "unit": "Number of moves, average residential spell, years without stable base",
+      "nonidentity": "Permanent emigration is not nomadism."
+    },
+    {
+      "target": "timed_foreign_travel",
+      "sources": [
+        "Jataka XVII.82–83 Kalachakra Dasha",
+        "BPHS Mercury period line3886",
+        "BPHS Ketu period line3888"
+      ],
+      "unit": "Departure and return dates compared to independently calculated planetary periods",
+      "nonidentity": "An undated lifetime travel description cannot confirm timed outcome."
+    },
+    {
+      "target": "negative_or_home_country_counterprediction",
+      "sources": [
+        "Jataka XI.24 inimical relative second",
+        "Jataka XI.25 fixed-lagna group",
+        "BPHS 11th lord6th adverse co-outcomes"
+      ],
+      "unit": "Home-country prosperity, absence of migration or adverse overseas experience explicitly declared as separate predictions",
+      "nonidentity": "A positive rule cannot be rescued by unrelated negative experience."
+    },
+    {
+      "target": "travel_destination_granularity",
+      "sources": [
+        "Jataka XI.23 small town versus wealthy municipality"
+      ],
+      "unit": "Destination urbanization/status with independent 20th-century comparable population metrics",
+      "nonidentity": "International country is not settlement type."
+    },
+    {
+      "target": "debt_vs_treasure_separate",
+      "sources": [
+        "Jataka XI.61–64"
+      ],
+      "unit": "Debt/financial liabilities versus unexpected valuable acquisition verified separately",
+      "nonidentity": "Any wealth change does not prove treasure or indebtedness."
+    }
+  ],
+  "dependency_edges": [
+    [
+      "Jataka XI.23",
+      "BPHS 1753",
+      "same event: foreign residence, different antecedents"
+    ],
+    [
+      "Jataka XI.25",
+      "BPHS 1785",
+      "same event: overseas prosperity, different antecedents"
+    ],
+    [
+      "Jataka XVII.82–83",
+      "BPHS Mercury/Ketu major periods",
+      "timing model competitors, not independent time confirmations"
+    ],
+    [
+      "BPHS Rajju",
+      "earlier Saravali Nabhasa Asraya",
+      "may share traditional historical source; not independently collated Sanskrit"
+    ]
+  ],
+  "experiment_rules": [
+    "Freeze original source astrological predicates, sign/house, D9/D60, Dasha selection before outcomes.",
+    "No participant chart or personal history used during preparation.",
+    "Use geographically and demographically matched non-astrological migration and income baselines.",
+    "Score failed forecasts, nonmigrants and missing dates; no direction switch after observed result.",
+    "Foreign status with travel, income and legal residence are correlated but must not multiply one event into several wins."
+  ],
+  "test_status": "EXPLORATORY_CANDIDATE_ONLY_NOT_PREREGISTERED",
+  "human_predictions": 0,
+  "source_claims_added_by_this_matrix": 0
+}
