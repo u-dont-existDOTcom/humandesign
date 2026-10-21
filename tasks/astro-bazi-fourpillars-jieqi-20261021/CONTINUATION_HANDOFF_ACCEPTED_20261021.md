@@ -1,0 +1,34 @@
+# HumanDesign — exact BaZi JieQi Four-Pillar dual-witness engineering handoff
+
+21 October 2026. **Root user scientific astrology goal OPEN:** original Western/Chinese source study; independently accurate natal chart/calendar computation; frozen, preregistered chart-to-answer predictions and matched decoy/nonastrology baselines BEFORE collecting untouched consenting real-human responses, then properly report forward/reverse blind results and misses. Original-source annotations or synthetic software parity are not real-person prediction accuracy.
+
+## Accepted source branch versus new isolated engineering work
+
+Source parent Chinese V30 accepted Git SHA **2447052f894fc3a11b7fe17dfb0ba1cb08465a13**, cumulative Chinese original-source index SHA256 **6e46e87ca2019945301b1f47f8d3ee91bd58c1a89461912d50bace74bc9543de**, 230 BaZi +1059 Zi Wei = **1289 historical documentary annotations**, unchanged by this task.
+
+New isolated methods-only branch **research/astro-bazi-fourpillars-jieqi-dual-parity-20261021** in SSD sparse worktree **/home/joel/development-worktrees/humandesign/astro-bazi-fourpillars-jieqi-20261021**. The owner's HDD previously was nearly full, so do not spawn new full worktrees there or delete any unrelated files. No real DOBs, identities, surveys, runtime forecast changes, Chinese source registry changes or Western writer collisions.
+
+### New exact full Four-Pillars software comparator
+
+Study is 100% fictional **whole-second Gregorian fixed UTC+8 reference-clock** samples; NOT foreign birthplace walltime, IANA DST, true/mean solar birth clock, historic local calendar or independent old Chinese printed source. Choose explicit Li Chun year, Jie month, midnight day (lunar-python EightChar sect2) and two-hour reference-clock branch. Software inputs are separately pinned optional owner-temp dependencies **lunar-python 1.4.8** and **sxtwl 2.0.7** located under /tmp/hd-calendar-parity-20261020. Source/original binary SHA + byte manifest is recorded in fixture; binaries NOT redistributed. Both libraries may share astronomical assumptions; software agreement is not an astronomical oracle.
+
+- Module dual_witness_bazi_fourpillars.py returns source-named year/month/day/hour sexagenary pillars; refuses unsupported, timezone-aware or fractional timestamp and mismatched versions; no authorized real-person chart function. A mismatch ALWAYS yields **ABSTAIN_DIFFERENT_GANZHI_WITNESSES**, not a chart selected for an astrologically favorable outcome.
+- Deterministic runner run_fictional_fourpillars_parity.py and fixture **BAZI_FOURPILLARS_480_RANDOM_PLUS_36_BOUNDARY_SYNTHETIC_V1.json**, SHA256 **bf67f3a45078676a0ccf45c26b2296b1b7c7ec0249f1a434034885c57c8ee78e**, exact 480 synthetic seeded dates across 12 test years + 36 synthetic term-crossing clocks at 6 solar terms; original source-version/byte hashes and all disagreements frozen.
+- Naive sxtwl calendar day-only year/month versus lunar-python 8/480 differences, all at same civil-day Jie boundary before crossing. Reading precise sxtwl solar-term instant and using the previous day's year/month if before crossing yields **480/480 agreement** for this chosen sample (not a universe-wide correct calendar).
+- Near the actual software term second, 4/36 deliberately selected clocks disagree on year and/or month pillars, fully retained. Exact fictional reference instants: **2023-02-04 10:42:21**, **2026-01-05 16:22:54**, **2026-02-04 04:01:52**, **2057-08-07 07:33:10**. Lunar-python first switch minus sxtwl term time: **+12.143829s, +16.647186s, +16.607216s, −0.093262s, +50.396576s, −0.080078s** on the six explicitly ordered dates 2023-02-04, 2026-01-05, 2026-02-04, 1912-12-07, 2057-08-07, 1965-12-07. Disagreement examples produce honest abstentions.
+- These clock samples were purposefully chosen; 4/36 is NOT a population error rate or real human success. The 2057 August Jie clock offset is separate from already documented late Sep–Oct 2057 lunar-date discrepancy in earlier research.
+
+### Tests, reproducibility and owner's artifacts
+
+- Focused source/negative suite test_bazi_fourpillars_jieqi.py **18/18 passed**, including frozen original Chinese V30 index, all external package original-file SHA pins, 480+36 outputs, 8 naive and 0 corrected ordinary disagreements, all four preserved solar-term abstentions, 6 original switch offsets, invalid/missing/wrong dependency, invalid timestamp/year/fractional input, deliberately corrupted witness, and bitwise deterministic generator reproduction.
+- Owner archive **/home/joel/Téléchargements/Astrology-BaZi-FourPillars-Jieqi-516-Synthetic-Parity-20261021.zip**, **49,529 bytes**, SHA256 **001a25a2ad332439e891083b85ce739f462a197c4a6b8ead386d563a2443bb9e**; 11 ZIP members with CRC/all SHA+byte counts checked, **18/18 tests reproduced after independent cold extraction** while loading pinned external versions already present on owner's machine. No vendor compiled files or private DOBs in ZIP.
+- SCIENCE_VS_ENGINEERING_REVIEW_20261021.md states exact source boundaries, original meanings, uncertainties, human-study limits and evidence class. UNRESOLVED_SOURCE_AND_HUMAN_LIMITS.json lists all unsatisfied human/astronomy gates. Previous V30 source branch remains preserved.
+
+### Next high-impact steps
+
+1. **Validate exact JieQi ephemeris independently**, ideally a third original astronomical solar-longitude/timescale/timezone oracle, at all six source transitions, including discordant sub-minute cases. Until independently verified, abstain from charts near source disagreement. Do not favor the version that matches a known life.
+2. Compose prior accepted historic IANA birth-clock resolver, longitude policy, civil date and lunar/reference-school alternatives with the verified Four-Pillars source result, initially synthetic cases only. Require precise source-school/sect2 boundary; fail closed on unresolved time/calendar ambiguity.
+3. User's source-to-behavior mapping/prospective test readiness already has candidate Zi Wei four constructs with source-linguistic overlaps and an engineering-only sealed toy scorer. Do not repeat 73k lunar scan, 312 modern Iztro charts or old toy scorer; bring only the narrowly supported chart features into a predeclared psychometric outcome and decoy/nonastrology score. No actual human participant recruitment or score until model, consent, privacy, calibrated outcome and pre-response freeze legitimately complete.
+4. Source-only Chinese next BaZi section25 begins **BZI-R0231**, separately source-pin revision on a different writer; Zi Wei ZWD-R1060 requires separate Volume III. Western Lilly B07bi is another writer; reconcile before touches.
+
+**Root task OPEN; real-person independently blinded astrological predictive validations = 0; runtime astrology rule promotions = 0.** Mark this methods branch remotely accepted only after GitHub commit/index/frozen fixture readback.
