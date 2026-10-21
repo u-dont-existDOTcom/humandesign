@@ -1,3 +1,9 @@
+# Chinese BaZi V26 — original Di Tian Sui section20 Connection/Obstruction
+
+**Two new historical source-only notes BZI-R0217–BZI-R0218**, one full verse and one full commentary paragraph in pinned Chinese Wikitext oldid844370, exact SHA/CP/UTF8 quote witnesses. Symbolic Five Phase mediating relations are not five empirically distinct predictions. **BaZi218+ZiWei1059=1277 historical source annotations**, not humans. Next **BZI-R0219 Di Tian Sui section21**, pending separately pinned source; next possible Zi Wei source ZWD-R1060 needs independent Volume III. Ancient print authenticity, chart/calendar engine and actual blind human tests still OPEN. Human forecast validations **0**, runtime promotions **0**.
+
+## Previous Chinese V25 original checkpoint
+
 # Chinese BaZi V25 — transmitted Di Tian Sui section19 Source and Flow
 
 **6 new original historical source documentary annotations BZI-R0211–BZI-R0216** from pinned Wikisource oldid844368, 1 exact verse, 3 full commentary paragraphs, 2 four-pillar example rows with time/day/month/year columns. Short text and expanded Chan Wei transmit incompatible glyphs (流向可方住 vs 流到何方住; 無從引助 vs 得從引助; 僧 vs 憎); keep separate until older printed critical edition verified. **216 BaZi +1059 Zi Wei =1275 Chinese historical text annotations**, not real people. Next **BZI-R0217 Di Tian Sui section20 通隔論**; Zi Wei next potential ZWD-R1060 requires separate Volume III source. No independent natal calendar/birth-engine validation or human forecast data; genuine blinded human validations **0**, runtime promotions **0**.
