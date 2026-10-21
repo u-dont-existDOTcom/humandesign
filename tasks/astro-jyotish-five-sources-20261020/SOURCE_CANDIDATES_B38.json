@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B38",
+  "date": "2026-10-21",
+  "status": "SOURCE_ONLY_COMPARATIVE_METHODS",
+  "record_count": 2,
+  "records": [
+    {
+      "id": "B38-001",
+      "source_id": "JYOT-BPHS-KERR-PT",
+      "locator": "CP1252 lines2305–2321; original Sanskrit BPHS Chapter26 verses2–9, particularly 26.6–9",
+      "domain": "bphs_exact_graha_aspect_zero_below_thirty_degrees",
+      "source_paraphrase": "The translation first distinguishes planetary from sign aspects, then gives exact (sphuta) aspect strength through a piecewise oriented planetary longitude separation. Positive general aspect strength starts only beyond one 30° sign (verse26.9); the gap from 300° around zero to 30° has no ordinary positive aspect in the standard full formulation.",
+      "source_layer": "Portuguese English-mediated BPHS with external Sanskrit 26.6–9 crosscheck (VedicPupil transcription), plus English published speculum; not independent critical manuscript edition",
+      "qualifications": [
+        "This is GENERAL graha aspect strength, not special Mars/Jupiter/Saturn aspects or final Shadbala/Drigbala sum.",
+        "Mercury stays less than 30° in ecliptic longitude from Sun under a deliberately conservative physical bound (<29°). It therefore receives zero ordinary Sun aspect according to this formula in either directed elongation.",
+        "No human trait/outcome evidence; no production formula promoted."
+      ],
+      "sanskrit_source_urls": [
+        "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-6",
+        "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-9"
+      ]
+    },
+    {
+      "id": "B38-002",
+      "source_id": "JYOT-JAIMINI-RATH-V1",
+      "locator": "Sanjay Rath Lesson13, original Sutra1.1.2 and explicit commentary, uploaded PDF257–260",
+      "domain": "jaimini_rasi_drsti_excludes_sun_mercury_same_adjacent_signs",
+      "source_paraphrase": "The printed short Jaimini 1.1.2 refers to facing and flanking signs; Rath's detailed commentary operationalizes movable signs aspecting fixed signs except their adjacent fixed sign, fixed signs aspecting nonadjacent movable signs, and dual signs aspecting other dual signs. Same/adjacent sign pairs do not aspect in this school version.",
+      "source_layer": "Jaimini Sanskrit 1.1.2 PLUS separate school-specific Rath interpretation, not verbatim original sutra for all enumeration conditions",
+      "qualifications": [
+        "Rasi drsti is sign-sign aspect and is not identical to BPHS continuous-degree graha drsti or Saravali ordinary planetary aspect.",
+        "Sun and Mercury remain in one sign or adjacent signs under conservative <29° separation, so none of these Rasi-drsti pairings applies to their signs.",
+        "Other Jaimini interpretations may differ; no human outcomes used."
+      ],
+      "sanskrit_source_urls": []
+    }
+  ],
+  "source_critical_companion": "ASPECT_MODEL_COMPARISON_B38.json",
+  "math_module": "comparative_aspect_methods_B38.py",
+  "tests": "test_comparative_aspect_methods_B38.py",
+  "prospective_human_validation": 0,
+  "model_promotions": 0
+}
