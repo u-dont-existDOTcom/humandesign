@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B36",
+  "date": "2026-10-21",
+  "record_count": 2,
+  "status": "FIRST_PASS_VERIFIED_TEXT_WITH_SEPARATE_CONDITIONAL_ASTRONOMY_NOT_HUMAN_VALIDATION",
+  "records": [
+    {
+      "id": "B36-001",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Uploaded English Sārāvalī Ch35.168 physical PDF105; original Sanskrit Ch35.169 CSU p36 lines846–848",
+      "source_layer": "Translated classical verse checked against digitized Sanskrit; not manuscript-critical edition",
+      "original_predicate_paraphrase": "With Mercury as reference, Sun third, Venus fourth, all remaining relevant classical planets fifth, and none debilitated or in enemies' signs: the verse associates the configuration with political rule.",
+      "original_source_short": "रविस्तृतीयो भृगुनन्दन: सुखे बुधस्य चान्ये यदि पञ्चमे स्थिताः",
+      "astronomical_inference_separate": "Under inclusive whole-sign counting third from Mercury means Sun/Mercury longitude bins two signs apart, minimum 30°, exceeding Mercury's approximate 28° maximum solar elongation. Therefore the stated third-from-Mercury antecedent is impossible in that model.",
+      "scope_limit": "Other source meanings of bhava vs exact longitude/house not established; no real-world outcome or birth chart evaluated.",
+      "status": "SOURCE_ONLY_CONDITIONALLY_EMPTY_WHOLE_SIGN"
+    },
+    {
+      "id": "B36-002",
+      "source_id": "JYOT-SARAVALI-EN",
+      "locator": "Uploaded English Ch35.79 physical PDF100; Sanskrit Ch35.80 CSU p36 lines443–449 and Jain printed transcript line2235–2236",
+      "source_layer": "English translator vs two digitized Sanskrit witnesses; no independent manuscript genealogy established",
+      "english_literal": "Moon in own sign; Mercury Jupiter Saturn in fourth and own Navamsas, described as aspected by Sun.",
+      "sanskrit_supported_reading": "Moon own sign and bright; Mercury Jupiter Venus (dānava-ijya = Venus) in own subdivisions in fourth, and aspected by Sun.",
+      "sanskrit_short": "स्वांशे स्थिता बुधबृहस्पतिदानवेज्याः । पातालगा दिनकरेण निरीक्षिताश्च",
+      "source_discrepancy": "English Sani/Saturn versus Sanskrit dānava-ijya (Venus), materially changes the predicted planet set.",
+      "astronomical_inference_separate": "Under Sārāvalī Ch4.32–33 sign-aspect convention, Sun casts its minimum specified aspect to the third (2 signs offset), at least 30° from Sun's sign. Mercury is always within roughly 28° of Sun, so Mercury cannot receive any of those sign-defined solar aspects, including the stated fourth-house aspect, if the verse applies that same convention.",
+      "scope_limit": "The verse's aspect modality and planetary-house convention must be frozen before a universal impossibility claim; does not prove that an independently specified alternate aspect calculation is empty.",
+      "status": "SOURCE_ONLY_TRANSLATION_CORRECTION_AND_CONDITIONAL_GRAHA_DRSTI_EMPTY"
+    }
+  ],
+  "evidence": [
+    {
+      "ref": "JYOT-SARAVALI-EN",
+      "sha256": "b6fd2523fb349095a8a595e7d9750bacd8ff0ec7f495a0b58287a38f2c79baa6",
+      "pages": [
+        11,
+        100,
+        105
+      ]
+    },
+    {
+      "url": "https://www.csu-lucknow.edu.in/e-books/saravali/p36.html",
+      "location": "original Sanskrit v80 and v169"
+    },
+    {
+      "url": "https://jainqq.org/booktext/Saravali/009887",
+      "location": "printed Sanskrit v80 in digitization text line2235; manuscript independence not claimed"
+    }
+  ],
+  "model_promotions": 0,
+  "participants_accessed": 0,
+  "human_forecast_accuracy_results": 0
+}
