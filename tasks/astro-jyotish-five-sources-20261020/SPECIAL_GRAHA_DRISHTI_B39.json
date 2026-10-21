@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B39",
+  "status": "SOURCE_DERIVED_NONPRODUCTION_ALGORITHM_WITH_UNRESOLVED_BOUNDARY",
+  "source_reading": [
+    {
+      "name": "Saturn",
+      "url": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-10",
+      "portuguese_locator": "BPHS translated lines2323–2327",
+      "special_intervals": [
+        "30-60: 2*(d-30)",
+        "60-90: 60-(d-60)/2",
+        "240-270: 30+(d-240)",
+        "270-300: 2*(300-d)"
+      ]
+    },
+    {
+      "name": "Mars",
+      "url": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-11",
+      "portuguese_locator": "BPHS translated lines2331–2335",
+      "special_intervals": [
+        "60-90: 15+1.5*(d-60)",
+        "90-120: 60-(d-90)",
+        "180-210: constant full 60",
+        "210-240: 60-(d-210)"
+      ]
+    },
+    {
+      "name": "Jupiter",
+      "url": "https://vedicpupil.in/library/books/brihat-parashara-hora-shastra/chapter-26/verse-12",
+      "portuguese_locator": "BPHS translated lines2339–2343",
+      "special_intervals": [
+        "90-120:45+(d-90)/2",
+        "120-150:60-2*(d-120)",
+        "210-240:45+(d-210)/2",
+        "240-270:60-2*(d-240)"
+      ]
+    }
+  ],
+  "algorithm_policy": {
+    "orientation": "(target_longitude-source_longitude)%360, ecliptic geocentric",
+    "base_formula": "B38 general BPHS Ch26.6–9 only",
+    "overrides": "Each special planet overrides only cited angular intervals, otherwise fallback to base. Does not implement Drigbala aggregation in Ch27.",
+    "units": "Virupas 0–60",
+    "sign_boundary": "Explicit half-open interval chosen where source letter uses degrees traversed in sign; not a claimed universally established original boundary. See Jupiter at270."
+  },
+  "expected_special_values": [
+    {
+      "planet": "Saturn",
+      "degrees": 60,
+      "virupas": 60
+    },
+    {
+      "planet": "Saturn",
+      "degrees": 270,
+      "virupas": 60
+    },
+    {
+      "planet": "Mars",
+      "degrees": 90,
+      "virupas": 60
+    },
+    {
+      "planet": "Mars",
+      "degrees": 210,
+      "virupas": 60
+    },
+    {
+      "planet": "Jupiter",
+      "degrees": 120,
+      "virupas": 60
+    },
+    {
+      "planet": "Jupiter",
+      "degrees": 240,
+      "virupas": 60
+    },
+    {
+      "planet": "Jupiter",
+      "degrees": 255,
+      "virupas": 30
+    }
+  ],
+  "boundary_warning": {
+    "planet": "Jupiter",
+    "degrees": 270,
+    "left_limiting_value": 0,
+    "right_limiting_value": 15,
+    "value_at_exact_270_under_this_implementation": 15,
+    "why": "Under Sanskrit 'fourth/eighth sign' degrees-within-sign 240<=d<270, 60-2*(d-240) approaches zero. Just above270 this implementation returns ordinary 15. Abrupt jump results; do not smooth it silently or assume every Sanskrit recension establishes this source scheme."
+  },
+  "secondary_documentation_errors": {
+    "url": "https://saravali.github.io/astrology/drishti_sputa.html",
+    "not_classical_author": "Modern software documentation named Saravali, not Kalyana Varma's original Saravali.",
+    "examples": [
+      {
+        "planet": "Mars",
+        "d": 105,
+        "source_rule": 45,
+        "modern_table": "45+(105-90)/2=52.5",
+        "issue": "different special interval orientation"
+      },
+      {
+        "planet": "Jupiter",
+        "d": 255,
+        "source_rule": 30,
+        "modern_table": "15+2*(270-255)/3=25",
+        "issue": "not aligned with Sanskrit 60 minus twice degree offset"
+      },
+      {
+        "planet": "Saturn",
+        "d": 315,
+        "source_rule": 0,
+        "modern_table": "2*(300-315)=-30",
+        "issue": "negative output from overlong interval"
+      }
+    ]
+  },
+  "tests": {
+    "module": "bphs_special_aspect_B39.py",
+    "test_file": "test_bphs_special_aspect_B39.py",
+    "locally_executed_unittest_cases": 7,
+    "results": "PASS",
+    "source_blob_expected": "898666123457b0dc0a50f26cabc5133f04d32603",
+    "test_blob_expected": "5060c2415b457ea9d3f23169962537fdb1bad40c",
+    "coverage": "0.1-degree grid for each of three planets checks 0<=aspect<=60, special peaks and discontinuity are explicit, ordinary fallback checked, no default planet"
+  },
+  "limits": [
+    "One source's Sanskrit electronic transmission and one Portuguese secondhand translation; not a complete manuscript critical edition.",
+    "Source mathematical demonstration is not empirical validity or causal planetary influence.",
+    "No birth charts or respondent outcomes used, no production changes."
+  ],
+  "new_documentary_source_rules": 3,
+  "predictive_human_successes": 0
+}
