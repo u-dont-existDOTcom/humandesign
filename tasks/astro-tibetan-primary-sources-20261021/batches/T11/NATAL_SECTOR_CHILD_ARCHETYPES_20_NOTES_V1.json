@@ -39,7 +39,7 @@
         "white_beryl_folio": "214a"
       },
       "rule_key": "five-inauspicious-luck-conditions",
-      "paraphrase": "A five-column adverse-luck chart compares natal trigram and numeric-square categories against flourishing enemy elements. The first prose example gives Dva or Zin trigram with Red Seven or Blue Three, but the extracted table has a conflicting/ambiguous numeral; do not use an unverified numeric cell.",
+      "paraphrase": "Visual audit of Dorje PDF page 179 confirms the prose explicitly says natal trigrams Dva or Zin combined with Red Seven or Blue Three, whereas the immediately adjacent table prints Red 2 or Blue 3. This is a genuine inconsistency within the English edition, not merely an OCR artifact. The numeric mapping remains unresolved.",
       "required_inputs": [
         "natal_trigram",
         "natal_mewa",
@@ -465,7 +465,7 @@
     }
   ],
   "source_issues": [
-    "PDF179 prose says Red Seven/Blue Three for Dva/Zin while extracted table text seems to say Red Two/Blue Three; need close visual and original Tibetan check before digitizing that specific cell.",
+    "CONFIRMED INTERNAL ENGLISH-EDITION DISCREPANCY: PDF179 / printed178, prose 'Red Seven or Blue Three' versus Plate5 fig19 table 'Red 2; Blue 3'. Verified visually against both regions; original Tibetan unresolved. No numeric T11 rule shall enter runtime.",
     "The following verses have textual alternatives, broad outcomes, and cultural/ethical claims; never count as validated medical or human behavioral results.",
     "Twenty-one child types and forty-eight similes are descriptive source enumerations, not 69 independent predictive successes.",
     "Four-generation prediction requires data for four actual generations, impossible from a solitary natal birth input.",
