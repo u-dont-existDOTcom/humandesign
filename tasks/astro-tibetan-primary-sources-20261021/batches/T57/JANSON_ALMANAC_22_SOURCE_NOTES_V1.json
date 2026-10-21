@@ -1,0 +1,374 @@
+{
+  "schema": "TIBETAN_T57_JANSON_ALMANAC_SOURCE_NOTES_V1",
+  "batch": "T57",
+  "parent_accepted_historical_source_annotations": 500,
+  "source_id": "TIB-JANSON-2014",
+  "source_title": "Svante Janson, Tibetan calendar mathematics, arXiv 1401.6285v1",
+  "source_url": "https://arxiv.org/html/1401.6285v1",
+  "reading_scope": "Section 10 Further calculations, 10.1 Some special days; contextual equation 7.23 and §12.1",
+  "notes": [
+    {
+      "id": "TIB-R0501",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10, introductory paragraphs",
+      "rule_key": "five-almanac-components",
+      "paraphrase": "Janson describes the conventional five components as weekday, lunar day, lunar mansion, yoga and karaṇa; a footnote reports a different source that includes the Sun's longitude instead of weekday.",
+      "required_inputs": [
+        "calendar_day_JDN",
+        "lunar_day",
+        "Sun_and_Moon_model"
+      ],
+      "output_class": "five_classification_tuple",
+      "dependency_family": "TIB-ALMANAC-OVERLAP-JYOTISH",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0502",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10 (i), 7.22",
+      "rule_key": "true-weekday-fractional",
+      "paraphrase": "The almanac records the weekday and fractional calendar day at the end of the lunar day as (true_date+2) modulo seven; integer weekday names follow Janson Table 5, not a Gregorian civil timestamp.",
+      "required_inputs": [
+        "fractional_true_tithi_end_JDN"
+      ],
+      "output_class": "fractional_true_weekday",
+      "dependency_family": "TIB-ALMANAC-WEEKDAY",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0503",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10.1",
+      "rule_key": "moon-longitude-at-tithi-end",
+      "paraphrase": "The traditionally computed Moon longitude at end of lunar day is true_sun(d,n)+d/30 modulo a full circle: the source uses theoretical elongation by definition of a tithi.",
+      "required_inputs": [
+        "true_sun_at_lunar_day_end",
+        "lunar_day_number_1_to_30"
+      ],
+      "output_class": "traditional_Moon_end_longitude_circle",
+      "dependency_family": "TIB-ALMANAC-MOON",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0504",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10.2",
+      "rule_key": "moon-longitude-at-civil-day-start",
+      "paraphrase": "Moon longitude at the beginning of its associated calendar day subtracts frac(true_date)/27 from the lunar-day-ending Moon longitude. This is an approximate constant-speed lunar motion assumption, not a measured geocentric Moon position.",
+      "required_inputs": [
+        "fractional_true_date",
+        "Moon_at_tithi_end"
+      ],
+      "output_class": "traditional_Moon_at_civil_day_start_circle",
+      "dependency_family": "TIB-ALMANAC-MOON",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0505",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10.3",
+      "rule_key": "zero-based-27-mansion-index",
+      "paraphrase": "The traditional calendar-day lunar mansion index is floor(27×Moon_calendar_day) with Moon longitude in [0,1), producing indices 0–26. The names come from Henning's appendix, not the numeric derivation itself.",
+      "required_inputs": [
+        "traditional_Moon_at_civil_day_start_circle"
+      ],
+      "output_class": "nakshatra_index_0_to_26",
+      "dependency_family": "TIB-ALMANAC-MANSION",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0506",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10 (v), 7.23",
+      "rule_key": "calendar-day-solar-time-convention",
+      "paraphrase": "The so-called true Sun longitude used in a daily almanac is computed for the END of the lunar day, but the same value is carried into the calendar-day line unchanged; this differs from the Moon's start-of-day correction.",
+      "required_inputs": [
+        "true_sun_at_lunar_day_end"
+      ],
+      "output_class": "almanac_Sun_longitude_circle",
+      "dependency_family": "TIB-ALMANAC-SUN",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0507",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10.4, footnote 34",
+      "rule_key": "yoga-nonsimultaneous-angles",
+      "paraphrase": "Almanac yoga longitude is Moon_calendar_day + true_sun (mod 1). Janson cites Henning's criticism: the Moon and Sun values refer to different moments, and their sum has no direct physical astronomical meaning.",
+      "required_inputs": [
+        "Moon_at_calendar_day_start",
+        "Sun_at_tithi_end"
+      ],
+      "output_class": "almanac_yoga_longitude_circle",
+      "dependency_family": "TIB-ALMANAC-YOGA",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0508",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10.5",
+      "rule_key": "zero-based-27-yoga-index",
+      "paraphrase": "The almanac's yoga number is floor(27×yoga_longitude), 0–26; its traditional list of names differs from lunar-mansion names, even when indices coincide.",
+      "required_inputs": [
+        "yoga_longitude_circle"
+      ],
+      "output_class": "yoga_index_0_to_26",
+      "dependency_family": "TIB-ALMANAC-YOGA",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0509",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10 (viii)",
+      "rule_key": "karana-sixty-half-tithis",
+      "paraphrase": "Every lunar month contains 60 named half-tithi positions and eleven karaṇa types, with four fixed and seven recurrent changing types. The positions are labels in a ritual almanac, not independent observed events.",
+      "required_inputs": [
+        "tithi_1_to_30",
+        "half_selector_first_second"
+      ],
+      "output_class": "karana_type",
+      "dependency_family": "TIB-ALMANAC-KARANA",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0510",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10 (viii), half positions 1,58,59,60",
+      "rule_key": "four-fixed-half-tithis",
+      "paraphrase": "The four fixed karaṇas occur at H=1,58,59,60: first half of lunar day1, second half of day29, both halves of day30; treating day29's FIRST half as fixed is incorrect.",
+      "required_inputs": [
+        "half_tithi_position_H_1_to_60"
+      ],
+      "output_class": "fixed_karana_position",
+      "dependency_family": "TIB-ALMANAC-KARANA",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0511",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10 (viii), seven-cycle",
+      "rule_key": "changing-karana-amod",
+      "paraphrase": "For the remaining 56 half-tithi positions H=2…57, the changing karaṇa number is (H−1) amod 7. Exact named karaṇas and cultural interpretations require a separate source witness.",
+      "required_inputs": [
+        "half_tithi_position_H_2_to_57"
+      ],
+      "output_class": "changing_karana_index_1_to_7",
+      "dependency_family": "TIB-ALMANAC-KARANA",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0512",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10 (viii), last paragraph",
+      "rule_key": "karana-midpoint-uncertainty",
+      "paraphrase": "Janson explicitly states that the precise rule for when each tithi divides into two half-tithis is unclear to him; Henning uses equal-duration halves but variants may exist. The half-index table alone does not determine karana at a particular calendar sunrise.",
+      "required_inputs": [
+        "tithi_start_and_end_instant",
+        "half_duration_policy"
+      ],
+      "output_class": "conditional_karana_at_civil_dawn",
+      "dependency_family": "TIB-ALMANAC-KARANA-AMBIGUITY",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0513",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10 (ix), 7.5",
+      "rule_key": "mean-Sun-not-true-Sun",
+      "paraphrase": "Separate from corrected true_sun, daily almanacs provide mean_sun in 12 zodiac signs of 30 degrees and fractional notation; this is a distinct source value and should not be replaced by physical ephemeris longitude.",
+      "required_inputs": [
+        "true_month",
+        "lunar_day",
+        "epoch_solar_offset"
+      ],
+      "output_class": "mean_solar_longitude",
+      "dependency_family": "TIB-ALMANAC-SUN",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0514",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10 (x), note 35",
+      "rule_key": "karana-word-two-meanings",
+      "paraphrase": "The Sanskrit-derived term karaṇa is used both for half-tithi names in the five components and for a separate alternative astronomical calculation method (compared to siddhānta). These are different entities requiring different data types.",
+      "required_inputs": [
+        "source_context_halftithi_or_astronomy"
+      ],
+      "output_class": "disambiguated_karana_concept",
+      "dependency_family": "TIB-ALMANAC-KARANA-HOMONYM",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0515",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10 (x), footnote 36",
+      "rule_key": "karana-astronomical-Moon-calculation",
+      "paraphrase": "The karaṇa astronomical model yields another Moon longitude at the beginning of the same *correct calendar day*, requiring independently running all calendar calculations under that model; it cannot be derived simply by relabeling the Phugpa Moon value.",
+      "required_inputs": [
+        "calendar_day",
+        "separate_Kalacakra_karana_engine"
+      ],
+      "output_class": "karana_astronomical_Moon_longitude",
+      "dependency_family": "TIB-ALMANAC-KARANA-SYSTEM",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0516",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10, almanac printed precision",
+      "rule_key": "almanac-truncation-no-rounding",
+      "paraphrase": "The source reports almanac longitudes/day fractions commonly truncated to three significant mixed-radix terms, not rounded to nearest; reproducing printed numbers needs the correct truncation rather than computer float formatting.",
+      "required_inputs": [
+        "mixed_radix_exact_fraction",
+        "requested_precision_terms"
+      ],
+      "output_class": "source_print_format",
+      "dependency_family": "TIB-ALMANAC-PRECISION",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0517",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10, skipped-day note",
+      "rule_key": "omitted-day-almanac-columns",
+      "paraphrase": "A skipped lunar-day number has no corresponding civil date, but Janson reports almanacs commonly retain its true weekday and Sun longitude as tithi-ending reference values.",
+      "required_inputs": [
+        "skipped_lunar_day_true_date",
+        "traditional_Sun_longitude"
+      ],
+      "output_class": "skipped_day_reference_only",
+      "dependency_family": "TIB-ALMANAC-DUPSKIP",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0518",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10, repeated-day note",
+      "rule_key": "first-repeated-day-moon-correction",
+      "paraphrase": "For the FIRST civil day carrying a duplicated tithi, the almanac uses Moon_end−1/27 rather than Moon_end−frac(true_date)/27; the second occurrence retains the regular formula. Solar longitude is held the same across both printed days.",
+      "required_inputs": [
+        "duplicated_tithi_flag",
+        "first_or_second_occurrence",
+        "Moon_at_tithi_end",
+        "true_date_fraction"
+      ],
+      "output_class": "occurrence_specific_Moon_and_yoga",
+      "dependency_family": "TIB-ALMANAC-DUPSKIP",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0519",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10, duplicated-day caution, footnote 39",
+      "rule_key": "moon-discontinuity-from-almanac-approx",
+      "paraphrase": "Janson warns that the Moon estimate for the first duplicated day can be less than the estimate at the end of preceding lunar day, an artifact of the approximation, not an astronomical retrograde event.",
+      "required_inputs": [
+        "duplicate_first_day_Moon",
+        "previous_lunar_day_Moon"
+      ],
+      "output_class": "possible_source_approximation_artifact",
+      "dependency_family": "TIB-ALMANAC-DUPSKIP",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0520",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10.1, definition-points",
+      "rule_key": "special-mean-solar-day-families",
+      "paraphrase": "Traditional almanacs record when model MEAN Sun reaches sign entries every 30°, definition points at 8°+30k, and midpoint points at 23°+30k. These are computed mean-model dates, not observed equinox or conjunction timestamps.",
+      "required_inputs": [
+        "mean_solar_linear_model",
+        "target_longitude_degree",
+        "chosen_series"
+      ],
+      "output_class": "special_mean_solar_crossing",
+      "dependency_family": "TIB-ALMANAC-SOLAR-CROSSINGS",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0521",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "10.6–10.7",
+      "rule_key": "fractional-lunar-day-mean-crossing",
+      "paraphrase": "Janson derives the crossing of a chosen MEAN solar longitude using fractional lunar day count d=(lambda+Y−Y0−s0)/s2 and mean date m0+d×m2 (with carefully unwrapped longitude and epoch); plugging only modulo-1 longitude can select a wrong year.",
+      "required_inputs": [
+        "target_unwrapped_longitude",
+        "epoch_mean_sun",
+        "epoch_mean_date",
+        "linear_rates"
+      ],
+      "output_class": "source_model_fractional_crossing",
+      "dependency_family": "TIB-ALMANAC-SOLAR-CROSSINGS",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    },
+    {
+      "id": "TIB-R0522",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "12.1, model-vs-astronomy",
+      "rule_key": "historical-mean-sun-drift",
+      "paraphrase": "Janson contrasts model true solar longitude with actual astronomical equinox and reports a ~36° underestimation around the 2013 equinox. This is model error, not a validated natal longitude, and should remain separate from modern ephemeris positions.",
+      "required_inputs": [
+        "calendar_model_epoch",
+        "modern_comparison_epoch"
+      ],
+      "output_class": "historical_longitude_discrepancy",
+      "dependency_family": "TIB-ALMANAC-ASTRONOMY-QUALITY",
+      "source_type": "2014 modern mathematical exposition; not direct Tibetan primary witness",
+      "actual_real_human_outcome_validated": false,
+      "production_model_promoted": false
+    }
+  ],
+  "count": 22,
+  "first_id": "TIB-R0501",
+  "last_id": "TIB-R0522",
+  "historical_human_prediction_successes": 0,
+  "real_physical_astronomical_validation": 0,
+  "scope_limits": [
+    "Gregorian civil date/tithi conversion was already tested in T54; these are new almanac components, not a second validation of civil dates.",
+    "The source notes explicitly admit that lunar mansion, yoga and karana use approximate/culturally inherited models.",
+    "Karana at dawn needs an independent explicit within-tithi half-duration convention; not an established unique source result.",
+    "Direct original Tibetan text and exact sources of names/ritual interpretations remain unread."
+  ]
+}
