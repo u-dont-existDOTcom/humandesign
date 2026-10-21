@@ -1,0 +1,174 @@
+{
+  "schema": "ASTRO_TIBETAN_T03_SOURCE_NOTES_V1",
+  "batch": "T03",
+  "source_note_count": 6,
+  "first_note_id": "TIB-R0027",
+  "last_note_id": "TIB-R0032",
+  "status": "SOURCE_ONLY",
+  "reading_focus": "White Beryl natal year animal, sexagenary year, four birth pebbles, family and 101 divinations; printed pp145-149 and177-178",
+  "source_notes": [
+    {
+      "id": "TIB-R0027",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 146,
+        "printed_page": 145,
+        "primary_witness": "White Beryl ff.163a–177a"
+      },
+      "claim_kind": "four-pebble-judgment",
+      "paraphrase": "The White Beryl assigns outcome predicates to the white/black status of four 'precious pebbles' corresponding respectively to natal year, month, day, and hour. White natal-year king pebble forecasts absence of royal punishment and public/market good fortune; black forecasts punishment. The other three address social trust/status, disputes, and household/material resources.",
+      "required_inputs": [
+        "year_pebble_status",
+        "month_pebble_status",
+        "day_pebble_status",
+        "hour_pebble_status"
+      ],
+      "output_class": [
+        "social_status",
+        "legal_disputes",
+        "material_resources"
+      ],
+      "dependency_family": "TIB-PEBBLE",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "human_outcome_validated": false,
+      "study_warning": "These are historically situated ambiguous or context-specific descriptions, not numerically calibrated probabilities. Extract actual derivation of each pebble before runtime use."
+    },
+    {
+      "id": "TIB-R0028",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 146,
+        "printed_page": 145,
+        "primary_witness": "White Beryl ff.163a–164a"
+      },
+      "claim_kind": "animal-year-profile",
+      "paraphrase": "The twelve year-animal profiles attribute personality and behavior tendencies beyond the individual's year element. Examples include independent/brave/harsh speech and risk-taking for Tiger, fewer social ties and solitude for Hare, and energetic/helpful but restless/little sleep for Horse.",
+      "required_inputs": [
+        "natal_12_animal_year"
+      ],
+      "output_class": [
+        "traits",
+        "social_preference",
+        "risk_preference",
+        "sleep_tendency"
+      ],
+      "dependency_family": "TIB-CHINESE-YEAR-ANIMAL",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "human_outcome_validated": false,
+      "study_warning": "Shared with broader Chinese year-sign tradition, low specific information per person; negative profiles sometimes culturally harsh and require neutral observable question mapping."
+    },
+    {
+      "id": "TIB-R0029",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 149,
+        "printed_page": 148,
+        "primary_witness": "White Beryl ff.164a–169a"
+      },
+      "claim_kind": "sixty-year-profile-example",
+      "paraphrase": "The Earth Dragon polarity-male sexagenary year entry attributes alleged deception, indolence and enjoyment of alcohol/adultery, an average lifespan of 55, six obstacles, five or seven children, and substantial material wealth.",
+      "required_inputs": [
+        "natal_sexagenary_year_polarity_element_animal"
+      ],
+      "output_class": [
+        "traits",
+        "alleged_mean_lifespan",
+        "obstacle_count",
+        "children_count",
+        "wealth"
+      ],
+      "dependency_family": "TIB-60-YEAR-PROFILE",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "human_outcome_validated": false,
+      "study_warning": "The sexagenary polarity male/female labels are year yin/yang, not automatically the subject's biological sex. 'Average lifespan' is a group claim, not an exact individual death prediction; 5 OR 7 children is nonunique."
+    },
+    {
+      "id": "TIB-R0030",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 150,
+        "printed_page": 149,
+        "primary_witness": "White Beryl ff.164a–169a"
+      },
+      "claim_kind": "sixty-year-profile-example",
+      "paraphrase": "The Fire Ox polarity-female sexagenary entry gives a proposed average lifespan of 71, eight obstacles, an exact family claim of one son and two daughters, and claims of wealth/property and vision issues.",
+      "required_inputs": [
+        "natal_sexagenary_year_polarity_element_animal"
+      ],
+      "output_class": [
+        "alleged_mean_lifespan",
+        "obstacle_count",
+        "offspring_sex_count",
+        "wealth",
+        "vision"
+      ],
+      "dependency_family": "TIB-60-YEAR-PROFILE",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "human_outcome_validated": false,
+      "study_warning": "Reproductive outcomes are right-censored for living participants; use documented full life histories only under appropriate test design. Eye disease claims are not medical advice."
+    },
+    {
+      "id": "TIB-R0031",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 178,
+        "printed_page": 177,
+        "primary_witness": "White Beryl ff.212b–213a"
+      },
+      "claim_kind": "parent-dependent-child-outcome",
+      "paraphrase": "A chart for coincident father/mother ages, log-men and trigrams forecasts fatal/accidental risk or family-line discontinuation for a child with specified sex-conditional combinations. The text gives distinct son and daughter example rows.",
+      "required_inputs": [
+        "father_birth_age",
+        "mother_birth_age",
+        "father_logmen",
+        "mother_logmen",
+        "father_trigram",
+        "mother_trigram",
+        "child_birth_year_month",
+        "child_sex"
+      ],
+      "output_class": [
+        "childhood_mortality_or_injury_historical_claim"
+      ],
+      "dependency_family": "TIB-PARENT-CHILD",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "human_outcome_validated": false,
+      "study_warning": "Source predicts severe harm; keep as historical object of scientific evaluation only. Cannot score as self-contained individual's natal chart unless independent parental inputs are provided."
+    },
+    {
+      "id": "TIB-R0032",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 179,
+        "printed_page": 178,
+        "primary_witness": "White Beryl f.214a and ff.214b–221a"
+      },
+      "claim_kind": "multidimensional-natal-outcome",
+      "paraphrase": "A five-coincidence method covers elemental vitality, body, destiny and luck and assesses white/black pebble correlations for five elemental relations; translator reports 101 divinations. Growth-and-decline calculations involve 12 sectors grouped into six favorable/unfavorable pairs with three gradations each, producing outcomes for longevity, kin relations, destitution, illness and more.",
+      "required_inputs": [
+        "natal_trigram",
+        "natal_mewa",
+        "vitality_element",
+        "body_element",
+        "destiny_element",
+        "luck_element",
+        "growth_decline_sector",
+        "elemental_relation",
+        "pebble_status"
+      ],
+      "output_class": [
+        "longevity",
+        "kin_relations",
+        "wealth",
+        "ill_health"
+      ],
+      "dependency_family": "TIB-MULTI-FORCE-NATAL",
+      "source_status": "SOURCE_CLAIM_ONLY",
+      "human_outcome_validated": false,
+      "study_warning": "The '101 predictions' is the source's own enumerative claim, not 101 validated cases. Need actual distinct parameter combinations and chart tables read before counting unique independent predicates."
+    }
+  ],
+  "root_outcome": "OPEN",
+  "human_blind_predictions": 0,
+  "model_promotions": 0
+}
