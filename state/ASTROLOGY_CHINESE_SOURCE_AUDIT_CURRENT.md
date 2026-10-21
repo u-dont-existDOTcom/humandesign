@@ -1,3 +1,9 @@
+# Chinese BaZi V30 — original Di Tian Sui 眾寡論 source-only
+
+**Two additional original historical source notes BZI-R0229–BZI-R0230** from pinned Wikitext oldid844375 (one verse and one whole commentary). CRC/source SHA and 9/9 fresh cold-extracted original tests passed. **BaZi230 + ZiWei1059 =1289 documentary Chinese annotations**, NOT verified humans. Next **BZI-R0231 section25**, Zi Wei next possible ZWD-R1060 only with new Volume III. No authenticated original early printing, full natal chart calculation or genuine blind human prediction validation; human wins **0**, runtime promotions **0**.
+
+## Previous accepted V29 source checkpoint
+
 # Chinese BaZi V29 — original Di Tian Sui 隱顯論 source-only
 
 **Two additional original historical source notes BZI-R0227–BZI-R0228** from pinned Wikitext oldid844373 (one verse and one whole commentary). CRC/source SHA and 9/9 fresh cold-extracted original tests passed. **BaZi228 + ZiWei1059 =1287 documentary Chinese annotations**, NOT verified humans. Next **BZI-R0229 section24**, Zi Wei next possible ZWD-R1060 only with new Volume III. No authenticated original early printing, full natal chart calculation or genuine blind human prediction validation; human wins **0**, runtime promotions **0**.
