@@ -1,0 +1,116 @@
+{
+  "schema": "ASTRO_TIBETAN_SOURCE_CATALOG_V1",
+  "source_lane": "TIB",
+  "created_utc_date": "2026-10-21",
+  "status": "OPEN_FIRST_PASS",
+  "owner_request_verbatim": "ok then start reading everything you need that's free plus these, in turns, to merge into the other readings we are doing for astro system",
+  "parent_outcome": "Complete source-grounded Western/Chinese/Indian/Tibetan astrological rule study, independent chart/date engine, frozen blinded forward/reverse prediction comparisons against decoys and non-astrology baselines. Root outcome OPEN.",
+  "base_accepted_western_commit": "6fc30d221adfc51917cdb04c7bf895989cbb5762",
+  "materials": [
+    {
+      "id": "TIB-DORJE-2001",
+      "title": "Tibetan Elemental Divination Paintings: Illuminated Manuscripts from the White Beryl with the Moonbeams Treatise",
+      "author": "Gyurme Dorje, translator and commentator; underlying works conventionally attributed to Sangs-rgyas rGya-mtsho and Lo-chen Dharmaśrī",
+      "year": 2001,
+      "origin": "user-uploaded PDF",
+      "sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+      "pdf_pages": 434,
+      "access": "LOCAL_READ",
+      "type": "English translation of selected text + interpretation + illustrative manuscript; NOT a full literal edition of White Beryl",
+      "first_pass": "preface, introduction, natal printed pp. 140-177 (selected), specific marriage/ill-health chapters still open",
+      "source_quality": "High for locating the translated claims; distinguish authorial Tibetan text vs translator prose and translation variants."
+    },
+    {
+      "id": "TIB-CORNU-1997",
+      "title": "Tibetan Astrology",
+      "author": "Philippe Cornu; English translation Hamish Gregor",
+      "year": 1997,
+      "upload_label_year": 2002,
+      "origin": "user-uploaded PDF",
+      "sha256": "8c7a7d8eb4f9d11793d02f1667979363cf520b02754365390f8e966a4452c472",
+      "pdf_pages": 156,
+      "access": "LOCAL_READ",
+      "type": "modern instructional synthesis",
+      "first_pass": "contents, origin discussion, natal worked example printed pp. 216-223; calendar and interpretive chapters remain open",
+      "source_quality": "Search text distorted by two-up scan/OCR; verify tables and exact terms visually before computational promotion."
+    },
+    {
+      "id": "TIB-HENNING-2007",
+      "title": "Kālacakra and the Tibetan Calendar",
+      "author": "Edward Henning",
+      "year": 2007,
+      "origin": "user-uploaded PDF",
+      "sha256": "3fa6c44d4c25c4c69937e9575c0653265e1e77bb1b6923a19ef69ec10f539fd5",
+      "pdf_pages": 413,
+      "access": "LOCAL_READ",
+      "type": "mathematical reconstruction + translations of Kālacakra and Vimalaprabhā selections",
+      "first_pass": "introduction and Chapter I, printed pp.1-30 (selected); Chapters II-VI remain open",
+      "source_quality": "Text-searchable, source constants and variants clearly described; astronomy is not evidence of personality predictions."
+    },
+    {
+      "id": "TIB-JANSON-2014",
+      "title": "Tibetan calendar mathematics",
+      "author": "Svante Janson",
+      "year": 2014,
+      "url": "https://arxiv.org/abs/1401.6285",
+      "origin": "free author paper via arXiv",
+      "access": "ONLINE_FULLTEXT_READ_INTRO_AND_TABLE_1",
+      "type": "secondary independent mathematical presentation based on Henning, Schuh, almanacs",
+      "first_pass": "introduction, main version distinction, table of Phugpa Losar dates; full equations not yet audited"
+    },
+    {
+      "id": "TIB-ERLEWINE-2008",
+      "title": "Tibetan Astrology",
+      "author": "Michael Erlewine",
+      "year": 2008,
+      "url": "https://www.astrologysoftware.com/books/index.html",
+      "direct_pdf_from_author_site_html": "https://www.astrologysoftware.com/books/pdf/Tibetan-Astrology.pdf",
+      "origin": "author-public free PDF",
+      "access": "CATALOG_CONFIRMED_DOWNLOAD_AND_TEXT_READ_NOT_YET_VERIFIED",
+      "type": "modern secondary instructional source",
+      "first_pass": "author page only; 827 pages advertised"
+    },
+    {
+      "id": "TIB-PRIMARY-WHITE-BERYL",
+      "title": "White Beryl (Vaidūrya dkar po), Tibetan original",
+      "author": "traditionally Desi Sangye Gyatso; Henning reports a contested authorial attribution",
+      "origin": "classical Tibetan; textual editions to be audited",
+      "access": "NOT_YET_READ_DIRECT_TIBETAN_WITNESS",
+      "type": "primary"
+    },
+    {
+      "id": "TIB-PRIMARY-MOONBEAMS",
+      "title": "Moonbeams: An Esoteric Instruction on Elemental Divination",
+      "author": "Lo-chen Dharmaśrī",
+      "year": 1684,
+      "origin": "Tibetan original, English verse translations embedded in Dorje",
+      "access": "ENGLISH_EXCERPTS_READ; ORIGINAL_NOT_READ",
+      "type": "primary_embedded_translation"
+    }
+  ],
+  "coverage_classes": [
+    "birth year/month/day/hour natal elements and mewa/parkha",
+    "natal constitutional relations/pebble calculus",
+    "element+animal character tendencies",
+    "parent/family outcomes and number of children",
+    "marriage compatibility",
+    "obstacle years/annual cycles",
+    "illness",
+    "death/funeral",
+    "divination-hour omen method",
+    "auspicious action timing/electional",
+    "geomancy and local spirit lords",
+    "Kālacakra mathematical astronomy/planetary positions",
+    "traditional variants Phugpa/Tsurphu/Bon",
+    "historical/ritual cosmology"
+  ],
+  "provenance_rules": [
+    "Book descriptions and table readings are historical source claims, not human predictive validation.",
+    "Original Tibetan, embedded translation, commentary, worked example, and this project's own inference have separate authority.",
+    "Mark derived ideas overlapping Chinese BaZi or Indian Jyotish as dependent; no double count independent confirmations.",
+    "Do not silently choose among incompatible Tibetan computational or classificatory variants.",
+    "Keep input dependencies: birth time, parents' birth years, divination time and place, sex-specific conventions, remedy/ritual intervention.",
+    "Do not check known life stories to fit the new system; use sealed human tests and untouched participants when model freezes.",
+    "Do not commit copyrighted PDF bytes or personal participant data; preserve local witness hashes, exact page anchors and paraphrases."
+  ]
+}
