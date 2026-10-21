@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B33",
+  "kind": "SIDE_BY_SIDE_DIGITIZED_SANSKRIT_AND_ENGLISH_TRANSLATION_VARIANTS",
+  "source_id": "JYOT-SARAVALI-EN",
+  "uploaded_pdf_physical_pages": [
+    104,
+    105
+  ],
+  "english_sha256": "b6fd2523fb349095a8a595e7d9750bacd8ff0ec7f495a0b58287a38f2c79baa6",
+  "sanskrit_witnesses": [
+    {
+      "name": "Central Sanskrit University e-book",
+      "url": "https://www.csu-lucknow.edu.in/e-books/saravali/p36.html",
+      "locator": "Chapter35 verses157–165, lines800–833",
+      "critical_note": "Contains editorial parentheses (triṁśe = 30th) alongside viṁśe (20th) for Jupiter Sagittarius."
+    },
+    {
+      "name": "Jain Quantum scan printed Sanskrit",
+      "url": "https://jainqq.org/booktext/Saravali/009887",
+      "locator": "Chapter35 verses157–163 around digitized text line2370",
+      "critical_note": "Reads Jupiter Sagittarius twentieth, Leo fifth; later scanned preface on 2012 edition may recycle 1928 Pandurang Javji printing; manuscript independence not proven."
+    },
+    {
+      "name": "User uploaded English edition",
+      "locator": "Chapter35 verses156–164, PDF104–105",
+      "critical_note": "English one verse behind Sanskrit in these nine aligned passages; Sun/Mercury Leo fifteenth disagrees with Sanskrit fifth."
+    }
+  ],
+  "aligned_verses": [
+    {
+      "english_chapter": 35,
+      "english_verse": 156,
+      "sanskrit_chapter": 35,
+      "sanskrit_verse": 157,
+      "english_claim": "Moon eighth portion of Aquarius while in trine",
+      "sanskrit_fragment": "कुम्भस्याष्टमभागे",
+      "disposition": "Same numerical eighth, astrological trine conditional"
+    },
+    {
+      "english_chapter": 35,
+      "english_verse": 157,
+      "sanskrit_chapter": 35,
+      "sanskrit_verse": 158,
+      "english_claim": "Mars seventh of Aries or twenty-first of Gemini",
+      "sanskrit_fragment": "मेषस्य सप्तमांशे; एकाधिकविंशेंऽशे नरमिथुनांशे",
+      "disposition": "CSU includes parenthetical Leo-fifth alternative; Jain text wording differs, needs manuscript collation"
+    },
+    {
+      "english_chapter": 35,
+      "english_verse": 158,
+      "sanskrit_chapter": 35,
+      "sanskrit_verse": 159,
+      "english_claim": "Moon fifteenth of Aquarius or tenth of Cancer",
+      "sanskrit_fragment": "कुम्भस्य पञ्चदशके भागे; कर्कटस्य च दशमे",
+      "disposition": "Fifteenth and tenth align in source wordings"
+    },
+    {
+      "english_chapter": 35,
+      "english_verse": 159,
+      "sanskrit_chapter": 35,
+      "sanskrit_verse": 160,
+      "english_claim": "Jupiter twentieth Sagittarius OR Sun/Mercury fifteenth Leo",
+      "sanskrit_fragment": "धनुषि च (त्रिशे)विंशे ... सिंहस्य पञ्चमांशे",
+      "disposition": "TRANSLATION ERROR: Leo fifteenth vs Sanskrit FIFTH. Jupiter twentieth common to older print, CSU also notes parenthetical 'thirtieth' variant."
+    },
+    {
+      "english_chapter": 35,
+      "english_verse": 160,
+      "sanskrit_chapter": 35,
+      "sanskrit_verse": 161,
+      "english_claim": "Moon fifteenth of any sign with five Vargas of same sign",
+      "sanskrit_fragment": "एकस्मिन्पञ्चकृतौ पञ्चदशस्वास्थितश्चन्द्र:",
+      "disposition": "Source conditional five Vargas crucial and exact-varga definitions unresolved"
+    },
+    {
+      "english_chapter": 35,
+      "english_verse": 161,
+      "sanskrit_chapter": 35,
+      "sanskrit_verse": 162,
+      "english_claim": "Saturn fifth of Capricorn",
+      "sanskrit_fragment": "मकरस्य पञ्चमांशे",
+      "disposition": "Consistent fifth wording with Leo Sanskrit in preceding verse"
+    },
+    {
+      "english_chapter": 35,
+      "english_verse": 162,
+      "sanskrit_chapter": 35,
+      "sanskrit_verse": 163,
+      "english_claim": "Moon and Jupiter fifth of Cancer",
+      "sanskrit_fragment": "कर्कटके शशिजीवौ पञ्चसु भागेषु",
+      "disposition": "Contains two planets in fifth parts; whether each exact longitudinal point vs degree-bin must be predeclared"
+    },
+    {
+      "english_chapter": 35,
+      "english_verse": 163,
+      "sanskrit_chapter": 35,
+      "sanskrit_verse": 164,
+      "english_claim": "Moon Pushya, Krittika or Ashwini, vargottama or Tripushkara",
+      "sanskrit_fragment": "चन्द्र: पुष्ये ... त्रिपुष्करे",
+      "disposition": "Uploaded translator explicitly labels Tripushkara interpretation uncertain in a NOTES paragraph"
+    },
+    {
+      "english_chapter": 35,
+      "english_verse": 164,
+      "sanskrit_chapter": 35,
+      "sanskrit_verse": 165,
+      "english_claim": "Mars in Ashwini, Anuradha or Dhanishtha, with vargottama or exaltation",
+      "sanskrit_fragment": "अश्विन्यनुराधास्थ: ... स्वोच्चमुपगतो वर्गोत्तमगश्च",
+      "disposition": "Sanskrit and English preserve essential conjunction of nakshatra plus strength condition"
+    }
+  ],
+  "critical_flags": [
+    {
+      "id": "B33-D01",
+      "location": "English35.159/Sanskrit35.160",
+      "predicate": "Sun or Mercury Leo degree segment",
+      "english_number": 15,
+      "sanskrit_number": 5,
+      "status": "HIGH_CONFIDENCE_ENGLISH_NUMERIC_DISCREPANCY"
+    },
+    {
+      "id": "B33-D02",
+      "location": "English35.159/Sanskrit35.160",
+      "predicate": "Jupiter Sagittarius degree segment",
+      "uploaded_english": 20,
+      "jain_sanskrit": 20,
+      "csu_main_sanskrit": 20,
+      "csu_parenthetical_variant": 30,
+      "status": "TEXTUAL_VARIANT_NOT_A_TRANSLATION_REPAIR"
+    },
+    {
+      "id": "B33-D03",
+      "location": "English35.156–164/Sanskrit35.157–165",
+      "predicate": "Original verse numbering",
+      "offset": 1,
+      "status": "EDITION_NUMBERING_DIFFERENCE"
+    }
+  ],
+  "interpretation_limits": [
+    "Sanskrit 'pañcamāṃśe' denotes fifth part/degree in this local text; whether a traditional segment means ordinal 4°–5° or a precise longitude boundary requires explicit source semantics.",
+    "The widely copied English fifteenth-degree Leo statement is not an independently verified Sanskrit variant.",
+    "A historical claim that someone 'becomes king' requires opportunity/base rates and independent outcome evidence; none here.",
+    "No model source option selected based on an actual person's chart."
+  ],
+  "new_human_validation": 0,
+  "new_source_annotations_from_this_matrix": 0,
+  "production_rule_promotions": 0
+}
