@@ -1,0 +1,32 @@
+id|related_existing_23_topics|disposition|evidence_class|design_decision
+Q01|LEARNING_HISTORY|ADAPT|observed_activity|Record actual study hours and course grouping without arbitrary binary cutoffs
+Q02|VOCATION,ART|ADAPT|observed_activity|Separate text work and duration from financial compensation; allow independent and unpaid activity
+Q03|VOCATION,MYSTERY|ADAPT|observed_activity|Measure troubleshooting practice irrespective of formal employer or salary
+Q04|MYSTERY,ANGER_REPAIR|CONDITIONAL_PROBE|recurring_tendency|Ask typical evidence-first disagreement behavior with opportunities and exceptions
+Q05|VOCATION|CONDITIONAL_PROBE|observer_feedback|Keep unsolicited feedback distinct from confirmed trait; split standards and detail from criticism
+Q06|ART|ADAPT|observed_activity|Actual creative output and reach are helpful but do not require publication to a set audience
+Q07|ART,PLAY|ADAPT|observed_activity|Allow creatively meaningful pursuits outside prescribed arts list; do not silently classify martial arts
+Q08|ART,HOME,RESOURCES|REJECT_PERSONALITY_PROXY|financial_outcome|Decor spending is not a valid substitute for liking art or aesthetic sensitivity
+Q09|BELIEF,HOME|CONDITIONAL_PROBE|recurring_tendency|Distinguish chosen reflection and solitude from enforced isolation or solo work
+Q10|BELIEF_CHANGE,HOME|CONDITIONAL_PROBE|life_history|Optional record of voluntary group withdrawal versus disbandment or changed opportunity
+Q11|BELIEF|ADAPT|observed_activity|Record actual repeated contemplative practice and changing frequency without arbitrary weekly threshold
+Q12|LEARNING_HISTORY,MYSTERY|ADAPT|observed_activity|Describe learning interests and time invested without arbitrary finished-book cutoff
+Q13|VOCATION,STATUS|CONDITIONAL_PROBE|life_history|Actual leadership opportunities must be separate from confidence and preference for leading
+Q14|VOCATION,RESOURCES|ADAPT|life_history|Self-employment and income context can be noted without personality inference from dollar thresholds
+Q15|VOCATION,LEARNING_HISTORY|ADAPT|observed_activity|Teaching and mentoring are real activities whether formal informal paid or unpaid
+Q16|BONDS|ADAPT|life_history_sensitive|Long-term partnership history is separate from attachment style and current preferences
+Q17|BONDS|CONDITIONAL_PROBE|self_reported_preference|Allow respondent-chosen priorities ties other attributes and a full open ranking
+Q18|TRAVEL,TIMELINE|ADAPT|life_history|Actual relocation history with approximate timing not rigid distance threshold
+Q19|VOCATION,CONTENTMENT|CONDITIONAL_PROBE|recurring_tendency|Ask denominator of attempted projects and distinctions between failure and deliberate reprioritization
+Q20|ANGER_REPAIR,BONDS|ADAPT|life_history|Actual prolonged responsibility disputes not a durable personality trait by themselves
+Q21|BONDS,HOME|REJECT_FORCED_CHOICE|self_reported_preference|Keep depends on people purpose and context as valid answer; reject fixed two-choice
+Q22|HOME,ART|ADAPT|observed_activity|Home fixing and organizing is different from aesthetic spending or creative preference
+Q23|VOCATION,TIMELINE|ADAPT|life_history|Measure occupational transitions including self-employment and informal work
+Q24|TRAVEL,TIMELINE|DEPENDENT_EVENT|life_history|Narrower window on Q18 relocation is not independent evidence
+Q25|LEARNING_HISTORY|DEPENDENT_EVENT|life_history|Same study domain as Q01 with different threshold; do not assume exact duplication or independent evidence
+Q26|VOCATION,STATUS|ADAPT|life_history|Informally recognized recurring work responsibilities can matter without formal titles
+Q27|STATUS|FUTURE_ONLY|future_outcome|Keep unobserved until prospective window and minimum tenure elapsed
+Q28|LEARNING_HISTORY|FUTURE_ONLY|future_outcome|Do not convert a future credential outcome to current personality
+Q29|HOME,RESOURCES|FUTURE_ONLY|future_outcome|Future aesthetic spending is not a personality metric
+Q30|VOCATION|FUTURE_ONLY|future_outcome|Evaluate teaching opportunity only after scheduled time has elapsed
+Q31|VOCATION,RESOURCES|FUTURE_ONLY|future_outcome|Prospective income raise separated from stable trait and opportunity to earn

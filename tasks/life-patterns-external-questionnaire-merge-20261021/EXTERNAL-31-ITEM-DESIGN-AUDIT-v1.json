@@ -1,0 +1,562 @@
+{
+  "schema": "life-patterns-external-31-item-design-audit-v1",
+  "status": "DESIGN_REVIEW_ONLY_NO_PERSONAL_DATA",
+  "source": "One user-provided 7-page OpenDocument Drawing with 31 numbered items.",
+  "source_identity_privacy": "Original marks/notes, exact date windows and personal identity are held only in the separate owner-private archive.",
+  "external_questions_reviewed": 31,
+  "decisions": [
+    {
+      "source_question_id": "Q01",
+      "existing_topics": [
+        "LEARNING_HISTORY"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "observed_activity",
+      "design_decision": "Record actual study hours and course grouping without arbitrary binary cutoffs",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q02",
+      "existing_topics": [
+        "VOCATION",
+        "ART"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "observed_activity",
+      "design_decision": "Separate text work and duration from financial compensation; allow independent and unpaid activity",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q03",
+      "existing_topics": [
+        "VOCATION",
+        "MYSTERY"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "observed_activity",
+      "design_decision": "Measure troubleshooting practice irrespective of formal employer or salary",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q04",
+      "existing_topics": [
+        "MYSTERY",
+        "ANGER_REPAIR"
+      ],
+      "disposition": "CONDITIONAL_PROBE",
+      "evidence_class": "recurring_tendency",
+      "design_decision": "Ask typical evidence-first disagreement behavior with opportunities and exceptions",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q05",
+      "existing_topics": [
+        "VOCATION"
+      ],
+      "disposition": "CONDITIONAL_PROBE",
+      "evidence_class": "observer_feedback",
+      "design_decision": "Keep unsolicited feedback distinct from confirmed trait; split standards and detail from criticism",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q06",
+      "existing_topics": [
+        "ART"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "observed_activity",
+      "design_decision": "Actual creative output and reach are helpful but do not require publication to a set audience",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q07",
+      "existing_topics": [
+        "ART",
+        "PLAY"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "observed_activity",
+      "design_decision": "Allow creatively meaningful pursuits outside prescribed arts list; do not silently classify martial arts",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q08",
+      "existing_topics": [
+        "ART",
+        "HOME",
+        "RESOURCES"
+      ],
+      "disposition": "REJECT_PERSONALITY_PROXY",
+      "evidence_class": "financial_outcome",
+      "design_decision": "Decor spending is not a valid substitute for liking art or aesthetic sensitivity",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q09",
+      "existing_topics": [
+        "BELIEF",
+        "HOME"
+      ],
+      "disposition": "CONDITIONAL_PROBE",
+      "evidence_class": "recurring_tendency",
+      "design_decision": "Distinguish chosen reflection and solitude from enforced isolation or solo work",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q10",
+      "existing_topics": [
+        "BELIEF_CHANGE",
+        "HOME"
+      ],
+      "disposition": "CONDITIONAL_PROBE",
+      "evidence_class": "life_history",
+      "design_decision": "Optional record of voluntary group withdrawal versus disbandment or changed opportunity",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q11",
+      "existing_topics": [
+        "BELIEF"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "observed_activity",
+      "design_decision": "Record actual repeated contemplative practice and changing frequency without arbitrary weekly threshold",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q12",
+      "existing_topics": [
+        "LEARNING_HISTORY",
+        "MYSTERY"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "observed_activity",
+      "design_decision": "Describe learning interests and time invested without arbitrary finished-book cutoff",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q13",
+      "existing_topics": [
+        "VOCATION",
+        "STATUS"
+      ],
+      "disposition": "CONDITIONAL_PROBE",
+      "evidence_class": "life_history",
+      "design_decision": "Actual leadership opportunities must be separate from confidence and preference for leading",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q14",
+      "existing_topics": [
+        "VOCATION",
+        "RESOURCES"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "life_history",
+      "design_decision": "Self-employment and income context can be noted without personality inference from dollar thresholds",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q15",
+      "existing_topics": [
+        "VOCATION",
+        "LEARNING_HISTORY"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "observed_activity",
+      "design_decision": "Teaching and mentoring are real activities whether formal informal paid or unpaid",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q16",
+      "existing_topics": [
+        "BONDS"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "life_history_sensitive",
+      "design_decision": "Long-term partnership history is separate from attachment style and current preferences",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q17",
+      "existing_topics": [
+        "BONDS"
+      ],
+      "disposition": "CONDITIONAL_PROBE",
+      "evidence_class": "self_reported_preference",
+      "design_decision": "Allow respondent-chosen priorities ties other attributes and a full open ranking",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q18",
+      "existing_topics": [
+        "TRAVEL",
+        "TIMELINE"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "life_history",
+      "design_decision": "Actual relocation history with approximate timing not rigid distance threshold",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q19",
+      "existing_topics": [
+        "VOCATION",
+        "CONTENTMENT"
+      ],
+      "disposition": "CONDITIONAL_PROBE",
+      "evidence_class": "recurring_tendency",
+      "design_decision": "Ask denominator of attempted projects and distinctions between failure and deliberate reprioritization",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q20",
+      "existing_topics": [
+        "ANGER_REPAIR",
+        "BONDS"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "life_history",
+      "design_decision": "Actual prolonged responsibility disputes not a durable personality trait by themselves",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q21",
+      "existing_topics": [
+        "BONDS",
+        "HOME"
+      ],
+      "disposition": "REJECT_FORCED_CHOICE",
+      "evidence_class": "self_reported_preference",
+      "design_decision": "Keep depends on people purpose and context as valid answer; reject fixed two-choice",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q22",
+      "existing_topics": [
+        "HOME",
+        "ART"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "observed_activity",
+      "design_decision": "Home fixing and organizing is different from aesthetic spending or creative preference",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q23",
+      "existing_topics": [
+        "VOCATION",
+        "TIMELINE"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "life_history",
+      "design_decision": "Measure occupational transitions including self-employment and informal work",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q24",
+      "existing_topics": [
+        "TRAVEL",
+        "TIMELINE"
+      ],
+      "disposition": "DEPENDENT_EVENT",
+      "evidence_class": "life_history",
+      "design_decision": "Narrower window on Q18 relocation is not independent evidence",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q25",
+      "existing_topics": [
+        "LEARNING_HISTORY"
+      ],
+      "disposition": "DEPENDENT_EVENT",
+      "evidence_class": "life_history",
+      "design_decision": "Same study domain as Q01 with different threshold; do not assume exact duplication or independent evidence",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q26",
+      "existing_topics": [
+        "VOCATION",
+        "STATUS"
+      ],
+      "disposition": "ADAPT",
+      "evidence_class": "life_history",
+      "design_decision": "Informally recognized recurring work responsibilities can matter without formal titles",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q27",
+      "existing_topics": [
+        "STATUS"
+      ],
+      "disposition": "FUTURE_ONLY",
+      "evidence_class": "future_outcome",
+      "design_decision": "Keep unobserved until prospective window and minimum tenure elapsed",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q28",
+      "existing_topics": [
+        "LEARNING_HISTORY"
+      ],
+      "disposition": "FUTURE_ONLY",
+      "evidence_class": "future_outcome",
+      "design_decision": "Do not convert a future credential outcome to current personality",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q29",
+      "existing_topics": [
+        "HOME",
+        "RESOURCES"
+      ],
+      "disposition": "FUTURE_ONLY",
+      "evidence_class": "future_outcome",
+      "design_decision": "Future aesthetic spending is not a personality metric",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q30",
+      "existing_topics": [
+        "VOCATION"
+      ],
+      "disposition": "FUTURE_ONLY",
+      "evidence_class": "future_outcome",
+      "design_decision": "Evaluate teaching opportunity only after scheduled time has elapsed",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    },
+    {
+      "source_question_id": "Q31",
+      "existing_topics": [
+        "VOCATION",
+        "RESOURCES"
+      ],
+      "disposition": "FUTURE_ONLY",
+      "evidence_class": "future_outcome",
+      "design_decision": "Prospective income raise separated from stable trait and opportunity to earn",
+      "contains_private_user_answer": false,
+      "new_chart_score": null
+    }
+  ],
+  "positive_features": [
+    {
+      "id": "G01",
+      "feature": "actual_activity_over_only_hypothetical_situations",
+      "adopt": "Offer prior real-world activity as optional evidence without assuming stable personality from event occurrence.",
+      "external_ids": [
+        "Q02",
+        "Q06",
+        "Q11",
+        "Q14",
+        "Q16",
+        "Q18"
+      ]
+    },
+    {
+      "id": "G02",
+      "feature": "explicit_recall_periods",
+      "adopt": "Use participant-understandable recall windows for actual events and habitual reference periods, without leaking concealed birth/chart data.",
+      "external_ids": [
+        "Q01",
+        "Q05",
+        "Q11",
+        "Q19",
+        "Q23"
+      ]
+    },
+    {
+      "id": "G03",
+      "feature": "repeated_opportunities_and_duration",
+      "adopt": "Ask exposure/opportunity and continuity when materially useful; avoid arbitrary hard binary cutoffs.",
+      "external_ids": [
+        "Q04",
+        "Q07",
+        "Q11",
+        "Q13",
+        "Q19"
+      ]
+    },
+    {
+      "id": "G04",
+      "feature": "unknown_distinct_from_no_and_verbatim_comments",
+      "adopt": "Preserve status separately from label and note; do not silently recode or strip respondent-defined scope.",
+      "external_ids": [
+        "Q02",
+        "Q03",
+        "Q07",
+        "Q21",
+        "Q25"
+      ]
+    },
+    {
+      "id": "G05",
+      "feature": "independent_others_feedback_optional",
+      "adopt": "Support separately sourced external observations, distinct from the person's own repeated behavior.",
+      "external_ids": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "G06",
+      "feature": "eventual_future_outcomes_separate_from_current_survey",
+      "adopt": "Keep a separate time-bound future-outcome evidence lane, never preregister personality ratings by using future blanks.",
+      "external_ids": [
+        "Q27",
+        "Q28",
+        "Q29",
+        "Q30",
+        "Q31"
+      ]
+    }
+  ],
+  "bad_features_and_repairs": [
+    {
+      "id": "F01",
+      "condition": "paid_formal_work_only",
+      "repair": "Ask what work/activity actually occurred, then independently ask whether there was wages, donations, clients, indirect revenue or no compensation. Do not make money a prerequisite for a personality trait.",
+      "external_ids": [
+        "Q02",
+        "Q03",
+        "Q13",
+        "Q14",
+        "Q15",
+        "Q26"
+      ]
+    },
+    {
+      "id": "F02",
+      "condition": "arbitrary_dichotomized_threshold",
+      "repair": "Keep raw duration/quantity when known and the relevant opportunity denominator; do not call an arbitrary hours/dollars/audience cutoff a personality measure. Use a prespecified threshold only for a truly independent frozen prospective outcome.",
+      "external_ids": [
+        "Q01",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q12",
+        "Q13",
+        "Q22"
+      ]
+    },
+    {
+      "id": "F03",
+      "condition": "forced_social_binary",
+      "repair": "Record the actual conditional preference and the people, purpose or situation that changes it; 'depends' is a complete answer.",
+      "external_ids": [
+        "Q21"
+      ]
+    },
+    {
+      "id": "F04",
+      "condition": "restricted_ranking",
+      "repair": "Capture the full respondent-authored ranking where offered, allow ties, added attributes, uncertainty, and context.",
+      "external_ids": [
+        "Q17"
+      ]
+    },
+    {
+      "id": "F05",
+      "condition": "observer_label_conflation",
+      "repair": "Separate the independent source who said something, the behavior they observed and the person's self-assessment; do not lump thoroughness, rigid perfectionism and criticism together.",
+      "external_ids": [
+        "Q05"
+      ]
+    },
+    {
+      "id": "F06",
+      "condition": "unaffordable_aesthetic_spending_proxy",
+      "repair": "Aesthetic tastes and actual decoration/making are distinct from material resources. Spending a certain amount does not validate an artistic disposition.",
+      "external_ids": [
+        "Q08",
+        "Q29"
+      ]
+    },
+    {
+      "id": "F07",
+      "condition": "duplicate_or_dependent_event",
+      "repair": "Correlate overlapping life events at source level, retaining the narrower reference window without counting it as independent trait evidence.",
+      "external_ids": [
+        "Q01",
+        "Q18",
+        "Q24",
+        "Q25"
+      ]
+    },
+    {
+      "id": "F08",
+      "condition": "future_unobserved_as_no",
+      "repair": "A future observation cannot be scored before the specified interval and persistence condition have elapsed. Use FUTURE_PENDING.",
+      "external_ids": [
+        "Q27",
+        "Q28",
+        "Q29",
+        "Q30",
+        "Q31"
+      ]
+    },
+    {
+      "id": "F09",
+      "condition": "chart_age_or_selected_prediction_window_in_blind_survey",
+      "repair": "Do not reveal birthday-derived anchoring or chart-chosen time windows in a generic personality interviewer; keep confidential precommitted predictions in an evaluator-only outcome lane.",
+      "external_ids": [
+        "Q01",
+        "Q18",
+        "Q23",
+        "Q24",
+        "Q25"
+      ]
+    },
+    {
+      "id": "F10",
+      "condition": "unjustified_personality_from_one_episode",
+      "repair": "For recurring personality, ask typical tendency, number of actual opportunities, exceptions, and age/setting changes; date one actual event only when the event itself is the target.",
+      "external_ids": [
+        "Q04",
+        "Q13",
+        "Q19",
+        "Q20"
+      ]
+    }
+  ],
+  "disposition_counts": {
+    "ADAPT": 15,
+    "CONDITIONAL_PROBE": 7,
+    "REJECT_PERSONALITY_PROXY": 1,
+    "REJECT_FORCED_CHOICE": 1,
+    "DEPENDENT_EVENT": 2,
+    "FUTURE_ONLY": 5
+  },
+  "source_frozen_json_available_and_verified": false,
+  "participant_answers_retrospective_development_only": true,
+  "archival_risk": "A 96-answer interview associated with another participant was explicitly excluded from owner-only personal source merge."
+}
