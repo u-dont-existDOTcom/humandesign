@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch_id": "JYOT_B30",
+  "kind": "SOURCE_CRITICISM_AND_INDEPENDENT_ASTRONOMICAL_FEASIBILITY_AUDIT",
+  "status": "EXPLORATORY_NOT_CANONICAL_SWIEPH_NOT_HUMAN_TEST",
+  "date": "2026-10-21",
+  "source": {
+    "source_id": "JYOT-SARAVALI-EN",
+    "english": "Ch19.8 PDF40: five or six planets 'normally' indicate adverse outcomes, ascribed to Kandalas; Ch19.1 and 19.7 include distinct favorable outcomes for particular six-planet sets.",
+    "sanskrit": {
+      "url": "https://www.csu-lucknow.edu.in/e-books/saravali/p20.html",
+      "chapter": 19,
+      "verse": 8,
+      "snippet": "प्रायो दरिद्रदु:खी मूर्ख: षट्पञ्चसंयुतैर्विहगै:",
+      "semantic_comment": "प्रायो (prāyo) = generally/often, not every chart. Verse is qualified, so apparent tension with particular exceptions cannot be called a strict universal contradiction without precedence analysis."
+    }
+  },
+  "astronomical_method": {
+    "period_start_inclusive": "1800-01-01",
+    "period_end_exclusive": "2200-01-01",
+    "sample_interval": "each Gregorian civil date at 00:00 UTC",
+    "sampled_days": 146097,
+    "engine": "Swiss Ephemeris library via pyswisseph 2.10.03, explicitly FLG_MOSEPH (Moshier, not SWIEPH .se1) | FLG_SIDEREAL",
+    "returned_flags": 65604,
+    "requested_flags": 65540,
+    "ayanamsa": "Lahiri SIDM_LAHIRI=1",
+    "coordinates": "geocentric ecliptic longitude",
+    "planets": [
+      "Sun",
+      "Moon",
+      "Mars",
+      "Mercury",
+      "Jupiter",
+      "Venus",
+      "Saturn"
+    ],
+    "sign": "sidereal 30-degree longitude bins; same-sign proxy, not necessarily same narrow conjunction or unequal-house-system Bhava",
+    "reference_input": "Source chapters18–20 refer to together/in one bhava without single uniformly defined orb; this test operationalizes *only* one explicit proxy."
+  },
+  "results": {
+    "daily_snapshots_exactly_five": 1274,
+    "exactly_six": 106,
+    "exactly_seven": 4,
+    "episodes_exactly_five": 444,
+    "episodes_exactly_six": 42,
+    "episodes_exactly_seven": 2,
+    "max_simultaneous_in_same_sign": 7,
+    "distinct_full_5_or_more_planet_sets_observed": 29,
+    "exact_five_subset_types_observed": 21,
+    "seven_events": [
+      {
+        "start_utc_00": "1821-04-02",
+        "end_utc_00": "1821-04-03",
+        "sign_index_0_11": 11,
+        "sign": "Pisces",
+        "nights_sampled": 2
+      },
+      {
+        "start_utc_00": "1962-02-04",
+        "end_utc_00": "1962-02-05",
+        "sign_index_0_11": 9,
+        "sign": "Capricorn",
+        "nights_sampled": 2
+      }
+    ],
+    "sample_fraction_percent_by_exact_occupancy": {
+      "5": 0.87202,
+      "6": 0.07255,
+      "7": 0.00274
+    },
+    "daily_runs_are_not_independent_birth_people": true
+  },
+  "validation": {
+    "all_calc_return_flags_moshier_sidereal": true,
+    "full_daily_sweep_completed": true,
+    "sidereal_seven_planet_dates_checked_individually": true,
+    "same_sign_possible": true,
+    "simultaneous_all_seven_exalted_still_impossible": true,
+    "recorded_7_sign_positions_examples": {
+      "1821-04-02": [
+        350.5701,
+        341.5233,
+        332.9697,
+        337.7719,
+        346.3295,
+        337.1875,
+        354.5524
+      ],
+      "1962-02-04": [
+        291.3671,
+        277.3277,
+        278.2575,
+        294.7774,
+        295.0493,
+        293.1866,
+        280.3627
+      ]
+    }
+  },
+  "independent_context": {
+    "url": "https://vedicmystics.com/2020/04/18/all-grahas-in-one-sign/",
+    "role": "Community article independently lists April 1821 and February 1962 visible seven-body conjunction episodes; not independent ephemeris parity or any predictive proof."
+  },
+  "limitations": [
+    "Daily 00 UTC samples are neither all possible intra-day instants nor exhaustive root-isolated sign-crossing intervals; short events can be missed.",
+    "Moshier calculations are exploratory, NOT canonical verified SWIEPH se1 mode required for the production chart engine.",
+    "Sidereal same-sign inclusion does NOT imply a narrow angular conjunction and may differ from quadrant-house Bhava.",
+    "Past 400-year days are not a random independent participant sample; multi-day episodes and nested five/six subgroups are correlated.",
+    "Source Sanskrit digitization and English translation may share a printed ancestor. Precise classical conjunction threshold remains unresolved.",
+    "An occurrence of a configuration does not mean the predicted wealth, profession, religion or mortality actually followed."
+  ],
+  "model_impact": "No production changes. A candidate model must freeze same-sign versus Bhava versus angular-orb and issue one outcome vector per event, not every nested combination as separate success.",
+  "source_candidates_added": 0,
+  "person_charts_used": 0,
+  "independent_human_predictions_run": 0,
+  "production_rules_promoted": 0
+}
