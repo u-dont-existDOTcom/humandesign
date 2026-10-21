@@ -1,3 +1,9 @@
+# Chinese V18 — transmitted Zi Wei Spouses palace historical source
+
+**25 source-only annotations ZWD-R0770–ZWD-R0794**, from original online Wikitext oldid1963110 cp38238–39218. Preserved a physical line continuing a previous star description rather than inventing a separate rule. Heading +23 body lines + next Children source navigation only. **BaZi 210 + Zi Wei 794 = 1,004 historical source annotations**, on isolated `research/astro-chinese-v18-ziwei-spouses-original-source-20261021`; inherited previous index V17 unaltered. Next **ZWD-R0795 四子女 cp39218** and **BZI-R0211 Di Tian Sui section19**. Early printed Zi Wei woodblock collation remains unverified; publisher reports important older-edition variants potentially affecting chart computation. Independently blinded real-person validations **0**, runtime model promotions **0**. Source-level direct GitHub SHA/CP/UTF8 assertions passed; **no Python/cold-ZIP test** executed this continuation.
+
+## Earlier Chinese V17 checkpoint (retained)
+
 # Chinese V17 — Brothers/Siblings original text source-only
 
 **24 accepted documentary annotations ZWD-R0746–ZWD-R0769**: section heading +22 original star-group lines from transmitted oldid1963110 codepoints 37269–38238, then next Spouses navigation marker. The original includes one likely later modern-style sentence and two ambiguous classical-text readings, preserved verbatim with warnings; no early Ming woodblock authenticated. **210 BaZi + 769 Zi Wei = 979 historical Chinese source records** on this isolated branch. Earlier Chinese V16 and inherited old Western B07bc are unchanged; latest separate Western B07bh still requires parallel-branch reconciliation. Next **ZWD-R0770 三妻妾 cp38238**, **BZI-R0211 Di Tian Sui section19**. Real blinded human predictive validations **0**, runtime astrology promotions **0**.
