@@ -1,0 +1,247 @@
+{
+  "schema": "TIBETAN_T34_CONSULTATION_HOUR_12_SOURCE_NOTES_V1",
+  "batch": "T34",
+  "source_id": "TIB-DORJE-2001",
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source": "Gyurme Dorje 2001 White Beryl Part VII, printed pp262–280/PDF263–281, chapters f428a–435b",
+  "note_count": 12,
+  "source_notes": [
+    {
+      "id": "TIB-R0313",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 263,
+        "printed_page": 262
+      },
+      "key": "consultation-hours-seven-dayparts",
+      "paraphrase": "The impact-of-hour chapter allows queries at daybreak, sunrise, morning, noon, early afternoon, late afternoon and sunset, with distinct traditional portents; it recommends no divinations after sunset or before daybreak.",
+      "required_inputs": [
+        "consultation_local_time",
+        "tradition_daypart_boundary"
+      ],
+      "output_class": "seven_daypart_omens",
+      "dependency_family": "QUERY-TIME-SEVEN-PARTS",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0314",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 263,
+        "printed_page": 262
+      },
+      "key": "7770-versus-1554-pebbles",
+      "paraphrase": "The introduction notes separate divination procedures using 7,770 or 1,554 pebbles for past, present or future circumstances; these figures refer to different calculation complexities, not observed prediction samples.",
+      "required_inputs": [
+        "divination_method_variant",
+        "query_context"
+      ],
+      "output_class": "method_size",
+      "dependency_family": "QUERY-TIME-VARIANTS",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0315",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 265,
+        "printed_page": 264
+      },
+      "key": "seven-negative-hour-profiles",
+      "paraphrase": "Plate 20 fig.6 catalogues separate adverse narratives for all seven permitted consultation dayparts, spanning household disputes, lost resources and culturally interpreted spirit afflictions.",
+      "required_inputs": [
+        "consultation_daypart"
+      ],
+      "output_class": "daypart_historical_omen",
+      "dependency_family": "QUERY-TIME-SEVEN-PARTS",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0316",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 269,
+        "printed_page": 268
+      },
+      "key": "five-destiny-hour-profiles",
+      "paraphrase": "Plates9 fig18 and 10 fig4 classify the hour's destiny element Wood/Fire/Earth/Iron/Water, with separate columns for subject's class, children, spouse, parents, neighbors, livestock, property and land.",
+      "required_inputs": [
+        "consultation_hour_destiny_element",
+        "subject_context"
+      ],
+      "output_class": "multidomain_query_profile",
+      "dependency_family": "QUERY-TIME-DESTINY",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0317",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 269,
+        "printed_page": 268
+      },
+      "key": "destiny-Wood-children",
+      "paraphrase": "The Wood-hour destiny-element row asserts partly favorable family status but also alleges child survival and other outcomes; such descriptions are query-time claims, not birth-only personality outcomes.",
+      "required_inputs": [
+        "consultation_hour_destiny_element_Wood"
+      ],
+      "output_class": "offspring_family_omen",
+      "dependency_family": "QUERY-TIME-DESTINY",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0318",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 271,
+        "printed_page": 270
+      },
+      "key": "eight-query-trigram-omens",
+      "paraphrase": "Plate21 fig2 presents a different profile per trigram controlling the hour, including architectural directions, colors, objects and alleged causes of interruption. This is separate from elemental destiny-hour rows.",
+      "required_inputs": [
+        "consultation_hour_trigram",
+        "observer_setting"
+      ],
+      "output_class": "eight_trigram_query_omens",
+      "dependency_family": "QUERY-TIME-TRIGRAM",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0319",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 272,
+        "printed_page": 271
+      },
+      "key": "nine-query-mewa-mirrors",
+      "paraphrase": "White Beryl ff.430a–435b describes a further nine numeric-square system controlling the consultation hour and classifying people, property, spirits and shapes; the chart must not be read as a natal mewa alone.",
+      "required_inputs": [
+        "consultation_hour_mewa",
+        "query_subject"
+      ],
+      "output_class": "nine_mewa_query_profiles",
+      "dependency_family": "QUERY-TIME-MEWA",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0320",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 274,
+        "printed_page": 273
+      },
+      "key": "supine-body-mewa-map",
+      "paraphrase": "A body-grid divination sets the subject lying on their back with head facing west and projects numeric-square sectors onto specific body parts, used for family-relative and life-stage prognoses.",
+      "required_inputs": [
+        "body_orientation",
+        "query_numeric_square",
+        "relative_life_stage"
+      ],
+      "output_class": "body_part_relative_mapping",
+      "dependency_family": "QUERY-BODY-SPATIAL",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0321",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 279,
+        "printed_page": 278
+      },
+      "key": "nine-sector-three-generations",
+      "paraphrase": "In the three-generations numeric-square method the day's mewa occupies the chart center, the remaining eight sequentially occupy E,SE,S,SW,W,NW,N,NE, and each position is compared to the year or day's square.",
+      "required_inputs": [
+        "divination_day_mewa",
+        "divination_year_mewa",
+        "Lo_Shu_order"
+      ],
+      "output_class": "nine_sector_comparison",
+      "dependency_family": "QUERY-THREE-GENERATIONS",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0322",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 279,
+        "printed_page": 278
+      },
+      "key": "east-paternal-three-generations",
+      "paraphrase": "The east sector is read for father, grandfather, great-grandfather; outcomes differ when the sector's element inhibits the annual one versus the reverse directed relation.",
+      "required_inputs": [
+        "query_day_mewa",
+        "east_sector_mewa",
+        "year_mewa",
+        "directional_enemy_relation"
+      ],
+      "output_class": "paternal_relative_omen",
+      "dependency_family": "QUERY-THREE-GENERATIONS",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0323",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 280,
+        "printed_page": 279
+      },
+      "key": "southeast-maternal-three-generations",
+      "paraphrase": "The southeast sector is read for mother, grandmother, great-grandmother, and the source explicitly contrasts the sector mewa with the day's square, not always the year's square.",
+      "required_inputs": [
+        "query_day_mewa",
+        "southeast_sector_mewa",
+        "directed_element_relation"
+      ],
+      "output_class": "maternal_relative_omen",
+      "dependency_family": "QUERY-THREE-GENERATIONS",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0324",
+      "source_id": "TIB-DORJE-2001",
+      "anchor": {
+        "pdf_page_1based": 281,
+        "printed_page": 280
+      },
+      "key": "nine-negative-square-sectors",
+      "paraphrase": "Plate21 fig4 allocates nine named adverse symbolic sectors to each mewa, from paternal loss of homeland and widowhood to divorce, household conflict and prosperity for livestock; these are historical associations not independent real cases.",
+      "required_inputs": [
+        "query_mewa",
+        "nine_omen_sector"
+      ],
+      "output_class": "nine_cultural_symbolic_categories",
+      "dependency_family": "QUERY-NINE-SECTORS",
+      "status": "English commentary/translated source claim, not original Tibetan collation",
+      "human_predictive_validation": false,
+      "model_promoted": false
+    }
+  ],
+  "first": "TIB-R0313",
+  "last": "TIB-R0324",
+  "key_distinction": "Consultation-hour fate is not a natal birth-hour prediction and contains observational/ritual side inputs.",
+  "unread_next": "Part VII PDF 282 onward through printed page293, before ill-health",
+  "human_blind_tests": 0,
+  "runtime_promotions": 0
+}
