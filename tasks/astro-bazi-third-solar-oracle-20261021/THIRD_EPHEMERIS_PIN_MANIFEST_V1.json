@@ -1,0 +1,29 @@
+{
+  "schema": "BAZI_THIRD_SOLAR_ORACLE_DEPENDENCY_PIN_20261021",
+  "purpose": "Independent numerical tropical geocentric apparent Sun ecliptic longitude term-crossing source using Swiss Ephemeris Moshier, not authoritative ancient printed calendar or real-person prediction",
+  "source_license_note": "Swiss Ephemeris Moshier astronomical source library installed research-only under owner /tmp; do not redistribute its binaries in source repository or user ZIP",
+  "dependency_package": "pysweph",
+  "dependency_version": "2.10.3.6",
+  "embedded_swiss_ephemeris_version": "2.10.03",
+  "python_module": "swisseph",
+  "library_source_binary_absolute_owner_path": "/tmp/hd-bazi-third-ephemeris-20261021/swisseph.cpython-312-x86_64-linux-gnu.so",
+  "source_binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+  "source_binary_bytes": 2391504,
+  "expected_calc_ut_returnflags": 260,
+  "required_flags": "FLG_MOSEPH | FLG_SPEED",
+  "geocentric_solar_longitude": "apparent tropical ecliptic of date; default with Moshier/UT delta-T conversion internal",
+  "reference_clock": "fictional Gregorian fixed UTC+08:00 shifted eight hours backward for UT Julian date",
+  "only_predeclared_dated_terms": {
+    "2023-02-04": 315,
+    "2026-01-05": 285,
+    "2026-02-04": 315,
+    "1912-12-07": 255,
+    "2057-08-07": 135,
+    "1965-12-07": 255
+  },
+  "source_previous_dual_witness_report_sha256": "bf67f3a45078676a0ccf45c26b2296b1b7c7ec0249f1a434034885c57c8ee78e",
+  "source_library_docs": "https://github.com/astrorigin/pyswisseph/blob/master/docs/programmers_manual/steps_to_get_a_planets_position.rst",
+  "source_provider_notes": "Moshier software model is an independent numerical comparison, not JPL ephemeris file or authority for historical classical original; preserve its assumptions and residuals",
+  "real_human_predictive_validations": 0,
+  "runtime_promotions": 0
+}
