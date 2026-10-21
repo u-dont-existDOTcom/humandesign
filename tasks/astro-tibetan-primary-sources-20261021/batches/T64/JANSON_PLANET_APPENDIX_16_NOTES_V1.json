@@ -1,0 +1,174 @@
+{
+  "schema": "TIBETAN_T64_JANSON_APPENDIX_D_PLANETS_V1",
+  "source_url": "https://arxiv.org/html/1401.6285v1",
+  "source_id": "TIB-JANSON-2014",
+  "source_title": "Svante Janson (2014) Tibetan calendar mathematics Appendix D",
+  "first_id": "TIB-R575",
+  "last_id": "TIB-R590",
+  "note_count": 16,
+  "notes": [
+    {
+      "id": "TIB-R575",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.1",
+      "rule_key": "general_day_known_civil_JDN",
+      "paraphrase": "General day is integer local calendar JDN minus epoch JDN; E1927 uses 2424972. This is not Julian Date of an exact UTC instant.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R576",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.1 Remark32",
+      "rule_key": "traditional_general_day_approx_then_weekday",
+      "paraphrase": "Traditional general-day recovery from mean lunar count can be off by one; Janson documents a weekday check that repairs it.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R577",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.2 eq D.5",
+      "rule_key": "planet_particular_day_multiplier",
+      "paraphrase": "Mercury uses 100×general day, Venus 10×, and Mars/Jupiter/Saturn 1× before applying planet-specific epoch offsets.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R578",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.2 Table11",
+      "rule_key": "five_period_and_epoch_constants",
+      "paraphrase": "E1927 source constants R=(8797,2247,687,4332,10766), offsets=(4639,301,157,3964,6286) for Mercury/Venus/Mars/Jupiter/Saturn, respectively.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R579",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.2 eq D.6",
+      "rule_key": "mean_heliocentric_longitude_fraction",
+      "paraphrase": "Mean heliocentric longitude is particular_day/R modulo one full circle, normally rendered in mansion fractions and a planet-specific final radix.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R580",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.2 Table11",
+      "rule_key": "planet_birthsign_is_aphelion_reference",
+      "paraphrase": "The planet-specific so-called birth-sign is a modeled aphelion/reference longitude, not the natal zodiac sign of a person.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R581",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.3 eq D.7–9",
+      "rule_key": "mean_sun_end_of_calendar_day",
+      "paraphrase": "Planetary mean solar longitude uses separate daily rate18382/6714405 and epoch1−458772/6714405 in E1927, rather than the tithi-ending mean Sun.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R582",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.3 Tsurphu qualification",
+      "rule_key": "planetary_solar_policy_variant",
+      "paraphrase": "Janson notes the Tsurphu solar term can use the lunar-day mean Sun or another true-Sun variant; E1927 Phugpa constants do not define a Tsurphu planetary engine.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R583",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.4 eq D.10",
+      "rule_key": "inner_vs_outer_slow_indices",
+      "paraphrase": "For Mercury/Venus, slow mean is Sun and step index is heliocentric planet; for Mars/Jupiter/Saturn the assignments are reversed.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R584",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.4 Table12",
+      "rule_key": "slow_equation_interpolated_signed_cycle",
+      "paraphrase": "Slow correction is based on 12×(mean_slow−birthsign) and planet-specific Table12 values with antisymmetry and linear interpolation.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R585",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.4 eq D.12",
+      "rule_key": "true_slow_aphelion_correction",
+      "paraphrase": "Traditional true slow longitude equals mean slow minus source table correction divided by 27×60, preserving circle periodicity.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R586",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.5 Table13",
+      "rule_key": "fast_table_twenty_seven_steps",
+      "paraphrase": "Final correction uses 27 steps, planet-specific Table13 positive values at indices0–13, antisymmetry for the remaining half, and linear interpolation.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R587",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.5 eq D.13–15",
+      "rule_key": "geocentric_model_fast_longitude",
+      "paraphrase": "Traditional geocentric model longitude equals true slow plus fast step correction divided by 27×60; it is not an observed modern planetary longitude.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R588",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.6 eq D.16–17",
+      "rule_key": "Rahu_6900_lunar_days",
+      "paraphrase": "Rahu node period is 6900 lunar days=230 lunar months; this corresponds to about6792 calendar days, distinct from a 6900-solar-day period.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R589",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.6 eq D.18",
+      "rule_key": "Rahu_epoch_true_month",
+      "paraphrase": "Rahu uses x=30n+D+30 rd0 lunar days, with rd0=187 at E1927 and 10 at E1987; the correct true-month count/calendar policy must be supplied.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R590",
+      "source_id": "TIB-JANSON-2014",
+      "anchor": "D.6 eq D.19–20",
+      "rule_key": "Rahu_retrograde_head_tail",
+      "paraphrase": "Node Head longitude is (−x/6900) mod1 and Tail is Head+1/2 mod1; the node index is a mathematical category, not a physical planet.",
+      "source_status": "Modern mathematical exposition based partly on Henning/Schuh; not independent original Tibetan witness",
+      "human_validated": false,
+      "model_promoted": false
+    }
+  ],
+  "scope": "Appendix D.1–D.6, Table11–13, exact mathematical source rules; no physical ephemeris validation",
+  "human_prediction_test_count": 0,
+  "production_model_promotions": 0
+}
