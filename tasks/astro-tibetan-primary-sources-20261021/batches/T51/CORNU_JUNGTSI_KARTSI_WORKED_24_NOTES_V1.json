@@ -1,0 +1,429 @@
+{
+  "schema": "ASTRO_TIBETAN_T51_CORNU_JUNGTSI_KARTSI_NATAL_SOURCE_NOTES_V1",
+  "batch": "T51",
+  "source_id": "TIB-CORNU-1997",
+  "source_sha256": "8c7a7d8eb4f9d11793d02f1667979363cf520b02754365390f8e966a4452c472",
+  "book": "Philippe Cornu, Tibetan Astrology, Hamish Gregor English translation, Shambhala edition; two-up scanned PDF",
+  "source_note_count": 24,
+  "first_id": "TIB-R0448",
+  "last_id": "TIB-R0471",
+  "notes": [
+    {
+      "id": "TIB-R0448",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 33,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "five_transforming_elements",
+      "paraphrase": "Cornu distinguishes the Chinese-derived Jungtsi dynamic Wood/Fire/Earth/Iron/Water agents from the Indian set of earth/water/fire/air/ether, cautioning that superficial analogies such as wood–air do not make the systems identical.",
+      "required_inputs": [
+        "source_tradition"
+      ],
+      "output_class": "element_ontology",
+      "dependency_family": "JUNGTSI_VS_JYOTISH",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0449",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 37,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "production_and_defeat_order",
+      "paraphrase": "The generative sequence is Wood→Fire→Earth→Metal→Water→Wood; the destructive cycle is Metal defeats Wood, Fire defeats Metal, Water defeats Fire, Earth defeats Water, Wood defeats Earth. Source identifies direction, so reversing an ordered relation is not equivalent.",
+      "required_inputs": [
+        "source_element",
+        "target_element"
+      ],
+      "output_class": "directed_five_element_relation",
+      "dependency_family": "CHINESE_ELEMENT_ALGEBRA",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0450",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 37,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "six_pebble_relations",
+      "paraphrase": "Cornu ranks white/black pebble relations as mother (three white), friend (two white), Earth/Water identity (one white), son (white/black), Fire/Metal/Wood identity (one black), enemy (two black). These are traditional categories, not outcome observations.",
+      "required_inputs": [
+        "two_elements",
+        "directed_relation"
+      ],
+      "output_class": "pebble_color_multiplicity",
+      "dependency_family": "PEBBLE_COLOR_RULE_CORN",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0451",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 38,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "sexagenary_polarity",
+      "paraphrase": "An element-year has active/passive or male/female polarity independent of an individual person's biological sex; the text illustrates masculine/feminine forms of each of five elements.",
+      "required_inputs": [
+        "sexagenary_year_polarity"
+      ],
+      "output_class": "element_symbolic_polarity",
+      "dependency_family": "GANZHI_OVERLAP",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0452",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 38,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "four_calendar_animal_slots",
+      "paraphrase": "Twelve animal signs name Tibetan years, months, days and double-hours; calculations for the four positions are not interchangeable and need their respective calendar-derived time units.",
+      "required_inputs": [
+        "calendar_convention",
+        "year_month_day_double_hour"
+      ],
+      "output_class": "four_animal_positions",
+      "dependency_family": "JUNGTSI_CALENDAR_INPUTS",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0453",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 49,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "five_personal_force_domains",
+      "paraphrase": "The source distinguishes five person-level forces: La (spirit), Sok (life/vitality), Lü (body/health), Wangthang (personal power), Lungta (wind-horse/fortune). Its traditional accounts of demons and remedies are cultural descriptions, not medical mechanisms.",
+      "required_inputs": [
+        "person_year_animal_element",
+        "five_element_correspondences"
+      ],
+      "output_class": "five_force_features",
+      "dependency_family": "TIBETAN_FIVE_FORCES",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0454",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 51,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "year_animal_vitality_groups",
+      "paraphrase": "Traditional natal vitality element depends on animal group: Tiger/Hare Wood; Horse/Snake Fire; Monkey/Bird Iron; Mouse/Pig Water; Ox/Sheep/Dog/Dragon Earth. These groups can be computed from a documented Tibetan year animal.",
+      "required_inputs": [
+        "year_animal"
+      ],
+      "output_class": "vitality_element",
+      "dependency_family": "TIBETAN_ANIMAL_LIFE",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0455",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 51,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "four_windhorse_trines",
+      "paraphrase": "Windhorse element follows four compatible animal trines: Mouse/Dragon/Monkey Wood; Ox/Snake/Bird Water; Tiger/Horse/Dog Iron; Hare/Sheep/Pig Fire; there is no Earth windhorse trine in this scheme.",
+      "required_inputs": [
+        "year_animal"
+      ],
+      "output_class": "fortune_element",
+      "dependency_family": "CHINESE_ANIMAL_TRINES",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0456",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 52,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "year_over_natal_five_axes",
+      "paraphrase": "Annual changes in the five personal forces are evaluated by comparing current year elemental counterparts with natal year counterparts, including mother/son/identity/friend/enemy distinctions. Different axes must not be scored as independent individuals.",
+      "required_inputs": [
+        "natal_five_force_elements",
+        "current_year_five_force_elements"
+      ],
+      "output_class": "annual_five_force_relation",
+      "dependency_family": "ANNUAL_ELEMENTS",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0457",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 70,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "Indian_Kartsi_vs_Chinese_Naktsi",
+      "paraphrase": "Cornu presents Kartsi as Indian-derived, primarily astronomical/zodiacal astrology, distinct from the Chinese-origin Naktsi/Jungtsi calendar-elemental systems; merging shared representations would erase method boundaries.",
+      "required_inputs": [
+        "school_or_calendar_family"
+      ],
+      "output_class": "method_family",
+      "dependency_family": "TRADITION_BOUNDARY",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0458",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 73,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "lunar_mansion_geometry",
+      "paraphrase": "Kartsi describes 27 lunar mansions (gyukar) and also mentions 28 constellation guardians; the 27 equal lunar zodiac divisions used for chart calculation should not be confused with the set of 28 named star groups.",
+      "required_inputs": [
+        "lunar_longitude",
+        "mansion_variant"
+      ],
+      "output_class": "gyukar_index",
+      "dependency_family": "LUNAR_MANSIONS",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0459",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 74,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "gyukar_zero_based_index",
+      "paraphrase": "In Cornu's Tibetan counting, 27 mansions are numbered from 0 through 26, contrasting Indian 1–27 indexing; any software crosswalk must specify zero- versus one-based convention.",
+      "required_inputs": [
+        "mansion_zero_based_index"
+      ],
+      "output_class": "mansion_display_number",
+      "dependency_family": "LUNAR_MANSIONS",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0460",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 74,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "sidereal_natal_moon",
+      "paraphrase": "For natal gyukar, first interpolate Moon's tropical geocentric longitude at birth, then subtract a declared ayanāṃśa and map into sidereal mansion sectors. Solar-year approximation and precise astronomical ephemeris are distinct choices.",
+      "required_inputs": [
+        "ephemeris",
+        "birth_UTC",
+        "ayanamsa"
+      ],
+      "output_class": "sidereal_moon_longitude",
+      "dependency_family": "SIDEREAL_PROJECTION",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0461",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 74,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "Cornu_ayanamsa_reference",
+      "paraphrase": "The instructional calculation uses a coincidence epoch near CE285 and annual precession of 0.014 degrees, a historical approximation rather than a universally endorsed modern sidereal zero-point.",
+      "required_inputs": [
+        "civil_year",
+        "Cornu_approximation_policy"
+      ],
+      "output_class": "approximate_ayanamsa",
+      "dependency_family": "SIDEREAL_PROJECTION",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0462",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 85,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "planetary_mansion_interpretation",
+      "paraphrase": "The author demonstrates planetary and lunar-mansion classifications on an illustrative 1957 chart; assertions about long life, accidents and powers are textual predictions, not observed or validated outcomes.",
+      "required_inputs": [
+        "planetary_positions",
+        "natal_gyukar",
+        "year_class"
+      ],
+      "output_class": "traditional_prognosis",
+      "dependency_family": "KARTSI_PLANETS",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0463",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 96,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "collective_personal_electional_day",
+      "paraphrase": "The Tibetan-day chapter separates general auspicious days for specific activities from personal days assessed relative to someone's natal features; neither should be treated as an independent birth-only personality prediction.",
+      "required_inputs": [
+        "current_day_calendar",
+        "activity",
+        "optionally_natal_chart"
+      ],
+      "output_class": "electional_auspiciousness",
+      "dependency_family": "ELECTIONAL_TIMING",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0464",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 115,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "twelve_double_hours",
+      "paraphrase": "Cornu's day uses twelve animal-named double-hours starting with Hare around 05:00–07:00 (local solar daypart); the entire time convention including historical timezone/summer offset must be fixed before converting a timestamp.",
+      "required_inputs": [
+        "time_zone",
+        "local_solar_hour"
+      ],
+      "output_class": "animal_double_hour",
+      "dependency_family": "HOUR_ANIMAL",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0465",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 116,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "double_hour_element_son_of_day",
+      "paraphrase": "Hour elements start with the son of the lunar day element for Hare, then progress through the generating five-element sequence at every succeeding double-hour. Worked Water Dragon day: Hare Wood, Dragon Fire, Snake Earth, Horse Metal, Sheep Water.",
+      "required_inputs": [
+        "lunar_day_element",
+        "double_hour_animal"
+      ],
+      "output_class": "hour_element",
+      "dependency_family": "HOUR_ELEMENT_CALCULATOR",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0466",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 117,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "1950_illustrative_four_pillars",
+      "paraphrase": "The book's Paris example dated 15 November 1950, 17:00 civil time, is placed on Tibetan month 10 day 6, Iron Tiger year, Monkey hour, with Water Ox month, Wood Ox day, Fire Monkey hour; this is one authored chart, not independently validated astronomy.",
+      "required_inputs": [
+        "civil_datetime",
+        "calendar_conversion",
+        "Cornu_table_22"
+      ],
+      "output_class": "four_pillars_worked_example",
+      "dependency_family": "CORN_1950_EXAMPLE",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0467",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 118,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "1950_five_force_natal",
+      "paraphrase": "For the same Iron Tiger natal year the author gives vitality Wood, body Wood, power Iron, fortune Iron, and La Water; this is a source-level numerical illustration agreeing structurally with Janson's later year-element formulas.",
+      "required_inputs": [
+        "natal_Iron_Tiger_year"
+      ],
+      "output_class": "five_elemental_axes",
+      "dependency_family": "CORN_1950_EXAMPLE",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0468",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 118,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "1950_mewa_natal",
+      "paraphrase": "For the same year the text gives Yellow Five natal/body mewa, Black Two vitality mewa and White Eight power mewa, with Black Two luck mewa. Its natal day 6 is Blue Three after natal day 1 Red Seven.",
+      "required_inputs": [
+        "year",
+        "lunar_month_day"
+      ],
+      "output_class": "year_and_day_mewa",
+      "dependency_family": "CORN_1950_EXAMPLE",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0469",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 117,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "Paris_time_system_conflict",
+      "paraphrase": "Cornu labels 17:00 Paris civil time minus one hour as 'local solar time' (16:00), then on p219 calls 16:09 'GMT'. Under the historical Paris UTC+1 rule and Paris longitude, these are UTC and local mean solar time respectively; the labels are reversed or conflated, so the worked planetary angles require independent recomputation.",
+      "required_inputs": [
+        "1950_Paris_civil_time",
+        "Europe_Paris_timezone",
+        "Paris_longitude"
+      ],
+      "output_class": "unresolved_GMT_vs_LMT",
+      "dependency_family": "CORN_SOURCE_ERRATUM",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0470",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 119,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "invalid_ayanamsa_DMS",
+      "paraphrase": "Printed page 220 gives (1950−285)×0.014 = 23.31 = 23°81′. This last value is invalid sexagesimal minute notation; 23.31 decimal degrees instead equals 23°18′36″. Do not silently interpret 23°81′ as a permissible angle.",
+      "required_inputs": [
+        "approximate_ayanamsa_decimal_deg"
+      ],
+      "output_class": "source_numeric_contradiction",
+      "dependency_family": "CORN_SOURCE_ERRATUM",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    },
+    {
+      "id": "TIB-R0471",
+      "source_id": "TIB-CORNU-1997",
+      "pdf_page_1based": 120,
+      "source_part": "Part II practical astrology, book chapters 4–10",
+      "key": "interpretive_weighting_of_four_slots",
+      "paraphrase": "Cornu's interpretive hierarchy gives natal year animal broad character, month more weight to element, and natal hour more weight to animal; the example's 12-factor element count is Wood4/Fire2/Earth2/Metal3/Water1, a descriptive scheme rather than calibrated probability.",
+      "required_inputs": [
+        "natal_year_month_day_hour_features",
+        "interpretation_method"
+      ],
+      "output_class": "qualitative_profile",
+      "dependency_family": "CORN_JUNGTSI_INTERPRETATION",
+      "kind": "modern instructional source statement, not classical Tibetan original nor empirical case",
+      "human_blind_validated": false,
+      "promoted_into_model": false
+    }
+  ],
+  "new_results_status": "DOCUMENTARY_NOT_VALIDATED",
+  "witness_method": "Chapter passages independently examined in supplied PDF text; source arithmetic and key diagrams verified from page images. Excerpts and conclusions bounded to listed pages; NOT all Cornu text yet read.",
+  "overlap": "Jungtsi year animals, windhorse trines, sidereal sky positions, and calendrical ideas overlap Chinese BaZi and Indian Jyotish. Multiple books sharing them are NOT independent human confirmations.",
+  "scope_warnings": [
+    "Cornu translated year 'male/female' is sexagenary polarity; cannot assume person's sex.",
+    "1950 worked civil→UTC/LMT labels are internally inconsistent; use historical timezone database, not Cornu result as UTC golden until independently verified.",
+    "Printed 23°81′ is not a valid angular coordinate; decimal result 23.31° is coherent.",
+    "Traditional diagnostic, mortality and ritual claims are not clinical or human predictive evidence."
+  ],
+  "actual_human_blind_successes": 0,
+  "model_promotions": 0,
+  "next_id": "TIB-R0472"
+}
