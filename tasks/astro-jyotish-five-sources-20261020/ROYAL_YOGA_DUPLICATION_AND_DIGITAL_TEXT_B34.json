@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B34",
+  "status": "SOURCE_CRITICAL_ADDENDUM_NO_HUMAN_TEST",
+  "source_id": "JYOT-SARAVALI-EN",
+  "source_sha256": "b6fd2523fb349095a8a595e7d9750bacd8ff0ec7f495a0b58287a38f2c79baa6",
+  "sources": [
+    {
+      "id": "EN_57",
+      "work": "User-uploaded 2012 English compilation of Saravali",
+      "locator": "Ch35 verse57, physical PDF99, page image inspected",
+      "finding": "Moon and Jupiter together in fifth; Mars/Mercury in twelfth or third; Moon, Mercury, Mars not debilitated and each in own Navamsa; Mars/Mercury not combust."
+    },
+    {
+      "id": "EN_143",
+      "work": "Same uploaded English edition",
+      "locator": "Ch35 verse143, physical PDF104, page image inspected",
+      "finding": "Mars, Moon and Mercury put in twelfth/third, while fifth contains Jupiter and Moon. Taken strictly, Moon must occupy two nonidentical houses."
+    },
+    {
+      "id": "JAIN_58",
+      "work": "Older printed Sanskrit Saravali via Jain Quantum",
+      "url": "https://jainqq.org/explore/009887/157",
+      "locator": "Digital scan page157, Sanskrit Ch35 verse58",
+      "finding": "Kalyanavarman text uses a compound referring to Moon, Mercury, Mars and ends with Jupiter in fifth conjoined Moon; sequence also reappears at 144."
+    },
+    {
+      "id": "JAIN_144",
+      "work": "Same printed Sanskrit, later repetition",
+      "url": "https://jainqq.org/explore/009887/166",
+      "locator": "Digital scan page166, Sanskrit Ch35 verse144",
+      "finding": "Substantially the same verse as 58 with variant first-word ending; repeats outcome of a celebrated ruler. Digital OCR has damage in locative word at both instances."
+    },
+    {
+      "id": "JAIN_57_61_62",
+      "work": "Same older printing",
+      "url": "https://jainqq.org/explore/009887/157",
+      "locator": "Verse57: bright Moon in lotus-friend's Navamsa with benefics in angles; verse61 watery sign/Navamsa Moon plus benefic Lagna; verse62 Vargottama Moon plus horses-dust image",
+      "finding": "Three substantively different Sanskrit verses, numbered distinctly in older printing."
+    },
+    {
+      "id": "CSU_DIGITAL",
+      "work": "Central Sanskrit University online text",
+      "url": "https://www.csu-lucknow.edu.in/e-books/saravali/p36.html",
+      "locator": "Ch35 at page text lines335–373, verses56–62",
+      "finding": "Digital text lacks a distinguishable labeled 57; its labeled 58 is made of malformed/repeated text, and 61/62 contain almost identical Vargottama Moon lines; different from printed Jain evidence."
+    },
+    {
+      "id": "WIKISOURCE_DIGITAL",
+      "work": "Sanskrit Wikisource",
+      "url": "https://sa.wikisource.org/wiki/सारावली",
+      "locator": "Ch35 57–62, around textual lines3821–3835",
+      "finding": "Reproduces missing/corrupted 57–58 and duplicated 61–62 pattern; not an independent manuscript corroboration."
+    },
+    {
+      "id": "MODERN_GLOSS",
+      "work": "VedicPupil online translation",
+      "url": "https://vedicpupil.in/library/books/saravali/chapter-35/verse-57",
+      "locator": "35.57 Sanskrit and English explanation",
+      "finding": "Interprets planets as NOT in 12th or 3rd; differs in polarity from user's coherent English 57 treatment. Do not regard online paraphrase as independent original source."
+    },
+    {
+      "id": "JAIN_155",
+      "work": "Printed Sanskrit",
+      "url": "https://www.csu-lucknow.edu.in/e-books/saravali/p36.html",
+      "locator": "35.155 around lines789–791, equals English Ch35.154",
+      "finding": "Contains explicit shashi-ravi-kshiti-putra (Moon, Sun, Mars), supporting Sun whose name is marked (?) in user's English PDF104."
+    }
+  ],
+  "critical_discrepancies": [
+    {
+      "id": "B34-D01",
+      "type": "REPEATED_CLASSICAL_YOGA",
+      "passages": [
+        "JAIN_58",
+        "JAIN_144"
+      ],
+      "status": "SOURCE_TEXT_ALMOST_IDENTICAL; NOT_TWO_INDEPENDENT_ASTRO_SIGNATURES"
+    },
+    {
+      "id": "B34-D02",
+      "type": "ENGLISH_LITERAL_LOCATION_CONTRADICTION",
+      "passages": [
+        "EN_57",
+        "EN_143"
+      ],
+      "status": "EN_143_LITERAL_IMPOSSIBLE_MOON_IN_TWO_HOUSES; EARLIER_EN_57_POSSIBLY_RESOLVES_SCOPE; GRAMMAR_NOT_CRITICALLY_COLLATED"
+    },
+    {
+      "id": "B34-D03",
+      "type": "DIGITAL_SANSKRIT_TRANSCRIPTION_DAMAGE",
+      "passages": [
+        "JAIN_57_61_62",
+        "CSU_DIGITAL",
+        "WIKISOURCE_DIGITAL"
+      ],
+      "status": "LITERAL_DIGITIZATION_ERROR_NOT_PROVEN_MANUSCRIPT_VARIANT"
+    },
+    {
+      "id": "B34-D04",
+      "type": "TRANSLATOR_MODERN_GLOSS_POLARITY",
+      "passages": [
+        "EN_57",
+        "MODERN_GLOSS"
+      ],
+      "status": "COMPETING_HOUSE_NEGATION_SCOPES; NOT_PRESELECTED"
+    },
+    {
+      "id": "B34-D05",
+      "type": "SOURCE_PLANET_UNCERTAINTY_LOCALLY_RESOLVED",
+      "passages": [
+        "EN_143",
+        "JAIN_155"
+      ],
+      "status": "ENGLISH_35_154_SUN_MARKED_QUESTION; SANSKRIT_35_155_EXPLICIT_SUN"
+    }
+  ],
+  "important_original_words": [
+    {
+      "verse": "35.58",
+      "span": "शशिबुधरुधिराङ्गैः",
+      "parse": "Moon/Mercury/Mars (printed Jain)"
+    },
+    {
+      "verse": "35.144",
+      "span": "शशिबुधरुधिराख्यैः",
+      "parse": "Moon/Mercury/Mars, variant compound"
+    },
+    {
+      "verse": "35.155",
+      "span": "शशिरविक्षितिपुत्रैः",
+      "parse": "Moon/Sun/Mars"
+    }
+  ],
+  "methodological_disposition": [
+    "Keep two literal English readings and printed-source parallel, no silent correction.",
+    "Do not deem the ancient original impossibly conditioned solely from contradictory English 143.",
+    "No source supports independent double-counting of two almost-identical yogas.",
+    "Future exact rule requires Sanskrit syntax of location modifiers and house convention.",
+    "Mark CSU/Wikisource digital verse 57/61 corruption as source-level issue, not two independently printed Sanskrit traditions."
+  ],
+  "source_annotations_added": 0,
+  "human_validations": 0,
+  "production_rule_changes": 0
+}
