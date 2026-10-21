@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "task_id": "astro-jyotish-five-source-reader-20261020",
+  "batch": "JYOT_B14",
+  "status": "SANSKRIT_BASED_REDUCTION_PHASE_PARTIAL_PROVENANCE_NO_RUNTIME_CHANGE",
+  "source_texts": [
+    {
+      "source": "user uploaded Portuguese BPHS",
+      "locator": "CP1252 line5314, Trikon Shodana; 5317–21, Ekadhipatya Shodana",
+      "summary": "Translation describes subtraction in Trikona ambiguously as subtracting from largest; more granular paired-sign conditional rules are difficult and incomplete."
+    },
+    {
+      "source": "Sanskrit BPHS Ch67",
+      "url": "https://www.transliteral.org/pages/z110726085701/view",
+      "alternative_url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-67/",
+      "locator": "Chapter67 verses2–5",
+      "summary": "four trines, subtract min from all three, if any zero no reduction, all-equal zero; following stage Ekadhipatya."
+    },
+    {
+      "source": "Sanskrit BPHS Ch68",
+      "url": "https://enjoylearningsanskrit.com/scriptures/parashara/chapter-68/",
+      "alternative_url": "https://sa.wikisource.org/wiki/बृहत्पाराशरहोराशास्त्रम्/अध्यायः_६८_(अथैकाधिपत्यशोधनाध्यायः)",
+      "locator": "Chapter68 verses1–6",
+      "summary": "Pairs of signs sharing lords, with different transformations depending on planetary occupancy, equality and unequal values. Multiple clauses require ordering and source edition/semantic review."
+    }
+  ],
+  "trikona_shodana": {
+    "confidence": "HIGH for the basic Sanskrit relative reduction as described; no unique ephemeris involved",
+    "input": "Twelve unsigned integer favorable Rekha counts for ONE planet-target Aṣṭakavarga, before Ekadhipatya.",
+    "sign_order": [
+      "Aries",
+      "Taurus",
+      "Gemini",
+      "Cancer",
+      "Leo",
+      "Virgo",
+      "Libra",
+      "Scorpio",
+      "Sagittarius",
+      "Capricorn",
+      "Aquarius",
+      "Pisces"
+    ],
+    "one_based_trine_sign_numbers": [
+      [
+        1,
+        5,
+        9
+      ],
+      [
+        2,
+        6,
+        10
+      ],
+      [
+        3,
+        7,
+        11
+      ],
+      [
+        4,
+        8,
+        12
+      ]
+    ],
+    "algorithm": "Process each disjoint trine independently. If any of the three counts is zero, leave the triple unchanged. Otherwise subtract its minimum from each of the three counts; equality reduces all to zero.",
+    "reference_sanskrit_short": "त्रिकोणेषु च यन्न्यूनं तत्तुल्यं त्रिषु शोधयेत्",
+    "verse": "BPHS 67.4",
+    "boundary_conditions": "No negative input or output; equality of all inputs yields three zeros; zero initial input leaves triple unchanged.",
+    "small_math_validation_examples": [
+      {
+        "input": [
+          0,
+          3,
+          6
+        ],
+        "expected": [
+          0,
+          3,
+          6
+        ],
+        "reason": "any zero in trine leaves it unchanged"
+      },
+      {
+        "input": [
+          2,
+          3,
+          6
+        ],
+        "expected": [
+          0,
+          1,
+          4
+        ],
+        "reason": "minimum of 2 subtracted from all"
+      },
+      {
+        "input": [
+          4,
+          4,
+          4
+        ],
+        "expected": [
+          0,
+          0,
+          0
+        ],
+        "reason": "equal triple becomes zeros"
+      },
+      {
+        "input": [
+          3,
+          7,
+          3
+        ],
+        "expected": [
+          0,
+          4,
+          0
+        ],
+        "reason": "two equal minima yield two zeros"
+      }
+    ],
+    "release_status": "DOCUMENTARY_DERIVED_ARITHMETIC_ONLY_NOT_PRODUCTION_IMPLEMENTATION"
+  },
+  "ekadhipatya_shodana": {
+    "stage_order": "After trine reduction and before Pinda",
+    "sanskrit_location": "BPHS 68.1–6",
+    "pair_signs": [
+      [
+        "Aries",
+        "Scorpio"
+      ],
+      [
+        "Taurus",
+        "Libra"
+      ],
+      [
+        "Gemini",
+        "Virgo"
+      ],
+      [
+        "Sagittarius",
+        "Pisces"
+      ],
+      [
+        "Capricorn",
+        "Aquarius"
+      ]
+    ],
+    "single_sign_lords": [
+      "Cancer",
+      "Leo"
+    ],
+    "certain_clauses": [
+      "Both signs occupied by planets -> no reduction (68.3 first line).",
+      "Equal numbers in sign with planet and partner empty -> empty sign loses its number (68.5).",
+      "Single Sun/Moon signs Cancer and Leo not paired for two-sign owner stage (68.6)."
+    ],
+    "unresolved_clauses": [
+      "How exactly to transform different unequal 2-sign counts when occupied sign has fewer/further points, versus unoccupied sign.",
+      "Meaning of abandonment of all in Sanskrit 68.4 in context: all points in unoccupied sign? all correction? The provided auto translation is not unambiguous.",
+      "Case both empty and equal sign counts; literal wording might zero both, but preserve verse context and boundary state first."
+    ],
+    "status": "NOT_YET_UNIQUELY_SOURCE_IMPLEMENTABLE; NO WORKING CALCULATOR CLAIM"
+  },
+  "pinda_final": {
+    "reference": "B13 Sanskrit corrected sign/planet multipliers",
+    "status": "NUMERIC_MULTIPLIERS_RESOLVED_FOR_SANSKRIT_RECENSION_BUT_FULL_PIPELINE_NOT_PROMOTED",
+    "stages": [
+      "Input favorable Bindu/Rekha arrays (Saturn sixth original Sanskrit correction as separate variant).",
+      "Trikona reduction (locally unambiguous).",
+      "Ekadhipatya reduction (multiple unresolved occupancy cases).",
+      "Rashi and Graha multiplier aggregation (B13)."
+    ],
+    "model_promotions": 0
+  },
+  "independent_human_results": 0
+}
