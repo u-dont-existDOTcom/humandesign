@@ -1,0 +1,27 @@
+# JYOT B19 — broad non-spiritual source coverage and scoreability (2026-10-21)
+
+**Recovery:** resumes after accepted B18 source-computation variants. Exactly **21 new source-only annotations** are already committed in `SOURCE_CANDIDATES_B19.json` (B19-001…B19-021). Uploaded source verified directly against the previous SHA-256 fingerprint `b6fd2523fb349095a8a595e7d9750bacd8ff0ec7f495a0b58287a38f2c79baa6`. This note is the first completed B19 checkpoint; earlier 205 records are not repeated or modified. **Total after B19: 226 historical annotations, 0 actual human predictive validations, 0 production promotions.**
+
+## New coverage classes, not simply extra horoscope adjectives
+
+- **Planet in rāśi**: chapters **22–25 and 27–29** have distinct twelve-sign categories for Sun, Moon, Mars, Jupiter, Venus and Saturn. These contain many claims about occupation, education, wealth, travel, family and general nature. Each sign-level statement is a bundled, correlated outcome, not dozens of independently verified human predictions. Moon-in-Taurus first/second-half outcomes are historically sensitive; no personal medical/family prognosis is justified.
+- **Moon in navāṃśa, with aspects**: **Chapter 24, PDF54–55**, describes the combination of lunar D9 lord and aspecting planetary lord. **24.22–24, PDF55** adds a documented exception/precedence: vargottama and own navāṃśa strength change whether sign or navāṃśa results dominate. PDF54/55 page text checked directly; D9 degree boundaries must be preserved before implementation.
+- **Planets in houses**: **Chapter 30, PDF71–76** has seven classical bodies × twelve natal houses, many of which differ materially from ordinary sign-based predictions. **30.14–15, PDF72** links lunar ascendant statements to specific rāśis and lunar fullness, showing that “Moon in first/second” without sign/phase loses indispensable source conditions.
+- **Two planets in particular angles**: **Chapter 31, PDF76–80** puts pairs in Lagna, fourth, seventh or tenth. This is more specific than a two-planet conjunction anywhere (Chapter 15), and the two should be counted as dependent, not independent supporting predictions.
+- **Planetary-ray alternative authorities**: **Chapter 36, PDF106–107**, reports different maximum rays across seven planets. One school has vector 10,9,5,5,7,8,5 for Sun→Saturn while another assigns seven rays to all. **36.7–9** also contains divisional dignity, combustion, retrograde beginning and return to direct motion modifiers. Its high ray total is mapped to extraordinary political rank and other social outcomes; these cannot be treated as demonstrated percentages or literal power without social-opportunity baselines.
+- **Five Mahāpuruṣa yogas**: **Chapter 37, PDF108** says Venus, Mars, Saturn, Jupiter or Mercury in own/exalted sign while angular produce Malavya, Ruchaka, Śaśa, Haṃsa and Bhadra respectively. The same pages attach bodily details, imagined political spheres and lengths of life. Actual testable astrology would separately freeze the five chart predicates; sensitive/body and alleged-longevity outcomes remain historical only.
+- **Multiple longevity calculations**: **Chapter 40, PDF113**, selects aṃśāyurdaya, piṇḍāyu, nisargāyu or another authority according to whichever of Lagna/Sun/Moon is stronger. **40.6–8** include whether strength multipliers stack or only strongest multiplier is used, with different named authorities. This is a *school disagreement* and not a clinical lifespan predictor.
+- **Negative effects with cancellation**: **Chapters 43–44, PDF122**, place adverse daśā hypotheses directly before their alleged cancellation rules, conditional on benefic dignity and the commencement of a period. An honest source reader must record original negative premise and cancellation together, not select one retrospectively after learning an event.
+- **Historical death-cause rules**: **Chapter 47, PDF126–127**, contains specific but ethically and medically unsuitable mortality-cause claims. The source is documented without recommending any individual-level forecast.
+
+## Textual and methodological qualifications
+
+1. The uploaded PDF is a **modern English-only edition** whose Sanskrit parent/translator identity remains uncertain. The paragraphs in B19 are first-pass English translations, not independently critically collated Sanskrit.
+2. The page spans were checked with PyMuPDF directly from the uploaded file; physical page images are retained in conversation-side research working directories, not published as copyrighted scans in this public repository.
+3. Do not combine highly related sign/house/pair/yoga predictions into independent wins for one participant.
+4. Source math, strength rules, and precedence must be versioned: **no** live D9, ray, longevity, or daśā implementation was changed.
+5. All person-level blind evaluation, matched decoy ranks, source version freeze, negative results and calibration remain future work.
+
+## Exact next frontier
+
+Audit text samples from the remaining less-covered books (Bhasin, Rath, Sastri, Portuguese Parāśara), prioritize distinct observable non-personality event domains and rules with explicit qualifications. Then return to *Sārāvalī* remaining structurally unread material. Record each source-derived candidate as documentary evidence only, with precise locators and an unambiguous distinction between original verse, later translator commentary, and modern inference. Do not repeat the accepted B01–B19 batches.
