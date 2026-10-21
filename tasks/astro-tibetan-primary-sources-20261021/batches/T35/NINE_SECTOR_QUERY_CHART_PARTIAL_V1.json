@@ -13,7 +13,8 @@
   "chart_definition": {
     "center_is": "mewa_of_day_of_consultation",
     "remaining_numerals": "remaining eight mewa values sequentially placed around compass",
-    "directions": [
+    "directions": "UNRESOLVED_EIGHTH_NINTH_SECTOR_CONFLICT",
+    "directions_in_intro_prose": [
       "center",
       "east",
       "southeast",
@@ -23,6 +24,17 @@
       "northwest",
       "north",
       "northeast"
+    ],
+    "directions_in_printed_table": [
+      "center",
+      "east",
+      "southeast",
+      "south",
+      "southwest",
+      "west",
+      "northwest",
+      "northeast",
+      "north"
     ]
   },
   "verified_sector_rows": [
@@ -60,21 +72,58 @@
       "outcome_target": "house_land_tombs",
       "relative_comparison": "sector_mewa_v_year_mewa",
       "source_relation": "sector inhibits year adverse; reverse not same"
+    },
+    {
+      "ordinal": 6,
+      "direction": "west",
+      "outcome_target": "siblings_paternal_and_maternal_cousins",
+      "relative_comparison": "sector_mewa_v_year_mewa",
+      "source_relation": "sector inhibits year adverse, reverse not equivalent"
+    },
+    {
+      "ordinal": 7,
+      "direction": "northwest",
+      "outcome_target": "residences_of_sister_brother_nephew_niece",
+      "relative_comparison": "sector_mewa_v_year_mewa",
+      "source_relation": "sector ENHANCES year adverse (distinct from other rows' inhibition); source says inhibition does not carry this omen"
+    },
+    {
+      "ordinal": 8,
+      "direction": "northeast_in_printed_table",
+      "outcome_target": "maternal_uncles_great_uncles_and_great_great_uncles",
+      "relative_comparison": "sector_mewa_v_year_mewa",
+      "source_relation": "sector inhibits year adverse, reverse not equivalent"
+    },
+    {
+      "ordinal": 9,
+      "direction": "north_in_printed_table",
+      "outcome_target": "daughters_granddaughters_great_granddaughters",
+      "relative_comparison": "sector_mewa_v_year_mewa",
+      "source_relation": "sector inhibits year adverse, reverse not equivalent"
     }
   ],
-  "unextracted_sectors": [
-    "west",
-    "northwest",
-    "north",
-    "northeast"
-  ],
+  "unextracted_sectors": [],
   "warnings": [
-    "Only five of nine sectors are reconstructed here; do not invent remaining four.",
     "Source comparisons differ between day and year; no global year-only simplification.",
     "The chart requires consultation-day and consultation-year mewa and an independently defined day-start/calendar convention.",
     "The direction of element inhibition changes interpretation; not symmetric.",
-    "The chart is a culturally contingent divination, no demonstrated human predictive value."
+    "The chart is a culturally contingent divination, no demonstrated human predictive value.",
+    "Printed introductory sequence swaps North/Northeast relative to the detailed sector-8 and sector-9 table; both preserved and unresolved."
   ],
   "human_prediction_validation": 0,
-  "source_reading_status": "PARTIAL_NINE_SECTOR_MATERIAL"
+  "source_reading_status": "ALL_NINE_PRINTED_SECTOR_CELLS_READ_WITH_NORTH_NORTHEAST_INTERNAL_CONFLICT",
+  "source_conflicts": [
+    {
+      "id": "TIB-CONFLICT-007",
+      "pdf_intro_page": 279,
+      "pdf_table_page": 280,
+      "printed_intro_page": 278,
+      "printed_table_page": 279,
+      "context": "Nine-sector query-day mewa chart numbering of last two directions",
+      "intro_narrative": "8 North; 9 North-east",
+      "printed_table": "8 North-east maternal uncles; 9 North daughters",
+      "status": "INTERNAL_ENGLISH_EDITION_TEXT_VS_TABLE_POSITION_CONFLICT",
+      "rule_promotion": "BLOCK_UNTIL_WITNESS_RESOLUTION"
+    }
+  ]
 }
