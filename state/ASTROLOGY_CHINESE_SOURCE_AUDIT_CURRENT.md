@@ -1,3 +1,9 @@
+# Chinese V17 — Brothers/Siblings original text source-only
+
+**24 accepted documentary annotations ZWD-R0746–ZWD-R0769**: section heading +22 original star-group lines from transmitted oldid1963110 codepoints 37269–38238, then next Spouses navigation marker. The original includes one likely later modern-style sentence and two ambiguous classical-text readings, preserved verbatim with warnings; no early Ming woodblock authenticated. **210 BaZi + 769 Zi Wei = 979 historical Chinese source records** on this isolated branch. Earlier Chinese V16 and inherited old Western B07bc are unchanged; latest separate Western B07bh still requires parallel-branch reconciliation. Next **ZWD-R0770 三妻妾 cp38238**, **BZI-R0211 Di Tian Sui section19**. Real blinded human predictive validations **0**, runtime astrology promotions **0**.
+
+## Previous accepted Chinese source checkpoints
+
 # Chinese V16 — transmitted online original Zi Wei Life-palace text through Brothers
 
 **105 new source-only historical annotations ZWD-R0641–ZWD-R0745**, 104 literal source lines across 15 groups from Huo Xing to Dou Jun cp33783–37269 plus **one original Brothers heading navigation-only marker**. Original combined Huo/Ling and DiJie/TianKong passages kept together; mixed traditional/simplified Hua Lu glyphs preserved. Online Life-palace Wikitext section annotated to Brothers; other eleven houses and authentic Ming edition still unstudied. **BaZi210 + ZiWei745 =955 Chinese historical text records**; latest separately accepted Western B07bh Lilly13271+Ptolemy1066 is on another branch. Next **ZWD-R0746 兄弟 cp37269** and **BZI-R0211 Di Tian Sui section19**. Actual human blind validations **0**, runtime promotions **0**.
