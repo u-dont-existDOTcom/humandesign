@@ -2,13 +2,13 @@
   "schema_version": 1,
   "task_id": "astro-jyotish-five-source-reader-20261020",
   "owner_request_verbatim": "add these to github and start reading them to add to our astro research (i'm running you in parallel to the other reader chat with other books from before).",
-  "status": "OPEN_B32_VERSE_STRUCTURE_REPRODUCIBLE_NONEXHAUSTIVE",
+  "status": "OPEN_B33_RAJAYOGA_NUMERIC_SOURCE_CRITICISM_CHECKPOINT",
   "scope": "Only the five new user-uploaded Jyotish works and their independent source research. Do not mutate Western Lilly/Ptolemy or Chinese ledgers, other reader branches, surveys, participant responses or frozen model.",
   "required_branch": "research/astro-jyotish-five-sources-reader-20261020",
   "base_verified_accepted_commit": "964d08bb4c61f6fc410052cb996b121180f5f855",
   "isolated_from_other_reader": true,
   "global_exclusive_task_lock": false,
-  "last_checkpoint": "READING_NOTES_B32.md",
+  "last_checkpoint": "READING_NOTES_B33.md",
   "documents": [
     "SOURCE_MANIFEST.json",
     "SOURCE_CANDIDATES_B01.json",
@@ -94,14 +94,17 @@
     "READING_NOTES_B31.md",
     "SARAVALI_VERSE_STRUCTURE_B32.json",
     "saravali_verse_structure_B32.py",
-    "READING_NOTES_B32.md"
+    "READING_NOTES_B32.md",
+    "RAJAYOGA_DEGREE_RECENSION_B33.json",
+    "SOURCE_CANDIDATES_B33.json",
+    "READING_NOTES_B33.md"
   ],
   "confirmed": {
     "uploaded_files": 5,
     "verified_pdf_pages": 2138,
     "pdf_files": 4,
     "plain_text_files": 1,
-    "bibliographic_candidate_annotations": 391,
+    "bibliographic_candidate_annotations": 405,
     "saravali_ch20_conjunction_clauses": 47,
     "saravali_ch20_unique_planet_sets": 37,
     "saravali_ch20_duplicate_distinct_sets": 9,
@@ -240,17 +243,25 @@
       "JYOT-JP-SASTRI": 70,
       "JYOT-JAIMINI-RATH-V1": 64
     },
-    "b32_source_annotations_added": 0
+    "b32_source_annotations_added": 0,
+    "b33_new_source_annotations": 14,
+    "b33_english_leo_fifteenth_vs_sanskrit_fifth": true,
+    "b33_jupiter_sagittarius_degree_variants": [
+      20,
+      30
+    ],
+    "b33_english_sanskrit_verse_offset": 1,
+    "b33_unresolved_degree_ordinal_intervals": true
   },
   "pending_actions": [
-    "Source-only registry holds 391 unique records, never interpret 391 as prospective successes.",
-    "B32 shows 55 English chapters and 2532 ordinal verse units from 1429 range headings; source chapter sampling is NOT complete reading of verses or translation scholarship.",
-    "Two explicit counting fixes: printed Ch47 44–15 corrected to 44–45 from Sanskrit ch46; extracted Ch50 l5 parsed 15 after visual confirmation.",
-    "Prioritize actual verse-level reading and source-specific computational exceptions; exact/including subset logic in B31 unresolved.",
-    "Source-scan B30 is exploratory Moshier and not verified production SWIEPH; avoid mixing astronomy feasibility with observed behavioral validity.",
-    "Keep draft PR isolated; don't touch other astrology readers, private respondent files, current survey or live model; copyrighted book binaries remain excluded."
+    "All 405 registered annotations are SOURCE ONLY, zero independently tested human predictions and zero natal model promotions.",
+    "English Saravali Ch35.159 Sun/Mercury Leo 15 disagrees with Sanskrit Ch35.160 fifth; Sanskrit Jupiter Sagittarius 20 main/30 parenthetical variant, English one verse behind Sanskrit in passage.",
+    "Do not silently repair modern translated text, infer degree-ordinal exact instant vs 1-degree interval, or choose method by person-level outcomes.",
+    "B32 source audit identifies 55 chapters and 2532 verse ordinal units, not complete literary reading.",
+    "B30/B31 sky feasibility and 119 nested subgroup predicates are source-neutral math, not predictions.",
+    "Preserve independent draft PR scope; no copyrighted modern source binaries in GitHub, no Western/Chinese other-reader/model/survey/participant changes."
   ],
-  "next_exact_source_frontier": "Use B32 hash-gated 1429-range / 2532-numbered-unit source index to deepen truly under-reviewed Saravali verse clusters (especially Ch35, 10, 32, 51), then original Sanskrit and other uploaded-book collation. Exact-source-reading only; no respondent/story fitting.",
+  "next_exact_source_frontier": "Continue from B33: inspect additional royal-yoga Sanskrit numerical conditions and original absolute-vs-ordinal degree terminology; develop nonproduction source-variant boundary fixtures if helpful; do not score human biographies.",
   "publication_rights": "PUBLIC_REPOSITORY_RAW_BOOK_BINARY_UPLOAD_NOT_PERFORMED",
   "model_classification": "SOURCE_ANNOTATIONS_ONLY",
   "owner_decision_possible": "If owner wants original PDFs/TXT durably held beyond this chat, establish an authorized private document store or evidence of redistribution rights before publishing raw books in public GitHub.",
@@ -261,7 +272,7 @@
     "status": "OPEN_DRAFT_NOT_MERGED",
     "changed_files_verified": null,
     "all_changed_paths_within_task_directory": true,
-    "note": "B32 parser and source evidence saved, all-file PR isolation readback pending.",
+    "note": "B33 source and status now saved; final PR file count and readback pending.",
     "remote_readback_scope": "2026-10-21 same-turn direct GitHub readback of 18 selected source, coverage, status/handoff files plus all PR changed filenames; 13 batch count/uniqueness checked.",
     "doc_updated_in_pr": true,
     "pr_title": "Five-book Jyotish source reader: 296 documentary notes, corrections and isolated tests"
