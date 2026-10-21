@@ -1,0 +1,179 @@
+{
+  "schema": "TIBETAN_T13_MARRIAGE_OPENING_V1",
+  "batch": "T13",
+  "first": "TIB-R0163",
+  "last": "TIB-R0174",
+  "note_count": 12,
+  "source_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source": "Gyurme Dorje 2001, marriage printed pages194–201; White Beryl ff228b–236b",
+  "source_notes": [
+    {
+      "id": "TIB-R0163",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 195,
+      "printed_page": 194,
+      "key": "hidden-points",
+      "paraphrase": "Three marriage-divination methods: trigrams for compatibility, numeric squares for travel/departure timing, year signs for ritual procedures.",
+      "required_inputs": [
+        "both_natal_charts",
+        "marriage_date"
+      ],
+      "dependency_family": "TIB-MARRIAGE-METHODS",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0164",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 195,
+      "printed_page": 194,
+      "key": "destiny-relation",
+      "paraphrase": "Five named destiny-element relationship types are used in partner evaluation, with multiple possible narrated outcomes.",
+      "required_inputs": [
+        "two_destiny_elements"
+      ],
+      "dependency_family": "TIB-DESTINY-MARRIAGE",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0165",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 196,
+      "printed_page": 195,
+      "key": "animal-categories",
+      "paraphrase": "Animal-year combinations are presented in distinct lists for compatible affection, many children, prosperity and poor family continuity.",
+      "required_inputs": [
+        "two_animal_years"
+      ],
+      "dependency_family": "TIB-ANIMAL-MARRIAGE",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0166",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 197,
+      "printed_page": 196,
+      "key": "inherited-year-omens",
+      "paraphrase": "Pre-existing sexagenary-year omen classifications are reused when assessing marriage; this is not a new independent set of predictors.",
+      "required_inputs": [
+        "sexagenary_years"
+      ],
+      "dependency_family": "TIB-ANIMAL-MARRIAGE",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0167",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 197,
+      "printed_page": 196,
+      "key": "six-unfavorable-pairs",
+      "paraphrase": "The text lists six distinct unfavorable animal-year unions: Mouse/Hare, Ox/Tiger, Dragon/Snake, Pig/Dog, Horse/Bird, Monkey/Sheep.",
+      "required_inputs": [
+        "two_animal_years"
+      ],
+      "dependency_family": "TIB-ANIMAL-MARRIAGE",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0168",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 197,
+      "printed_page": 196,
+      "key": "thirteen-pebbles",
+      "paraphrase": "Moonbeams describes a thirteen-pebble compatibility procedure combining four elemental personal forces, calendar inputs, constitutional types and symbolic conjunctions.",
+      "required_inputs": [
+        "two_people_four_forces",
+        "natal_months",
+        "trigrams"
+      ],
+      "dependency_family": "TIB-MARRIAGE-PEBBLES",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0169",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 199,
+      "printed_page": 198,
+      "key": "four-forces",
+      "paraphrase": "Four relationship domains are assigned respectively to vitality, body, destiny and luck comparisons: endurance, family/health, resources and social standing.",
+      "required_inputs": [
+        "two_people_four_forces"
+      ],
+      "dependency_family": "TIB-MARRIAGE-FOUR-AXES",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0170",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 199,
+      "printed_page": 198,
+      "key": "destiny-pair-children",
+      "paraphrase": "The five elemental destiny categories generate fifteen unordered partner combinations with differing claimed children-number and prosperity outcomes.",
+      "required_inputs": [
+        "two_destiny_elements"
+      ],
+      "dependency_family": "TIB-MARRIAGE-CHILDREN",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0171",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 200,
+      "printed_page": 199,
+      "key": "weighted-parity",
+      "paraphrase": "Collective pebbles use Wood=1, Earth=2, Water=3, Fire=4, Iron=5; an even tally is interpreted as favorable and odd as unfavorable.",
+      "required_inputs": [
+        "two_people_four_forces"
+      ],
+      "dependency_family": "TIB-MARRIAGE-PARITY",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0172",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 201,
+      "printed_page": 200,
+      "key": "month-hour",
+      "paraphrase": "Natal months, days and hours are examined for enemy relations, tomb signs and seventh-removed aspects.",
+      "required_inputs": [
+        "two_natal_months",
+        "birth_days",
+        "birth_hours"
+      ],
+      "dependency_family": "TIB-MARRIAGE-TIMING",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0173",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 201,
+      "printed_page": 200,
+      "key": "favorable-trigrams",
+      "paraphrase": "The heavenly-medicine chart lists Li/Kham, Khon/Khen, Dva/Gin, Zin/Zon as favorable pair categories.",
+      "required_inputs": [
+        "two_natal_trigrams"
+      ],
+      "dependency_family": "TIB-MARRIAGE-TRIGRAM",
+      "status": "source_only_not_human_validated"
+    },
+    {
+      "id": "TIB-R0174",
+      "source_id": "TIB-DORJE-2001",
+      "pdf_page_1based": 201,
+      "printed_page": 200,
+      "key": "variant-trigram-issue",
+      "paraphrase": "The sustaining-vitality class in the extracted prose appears to duplicate Zin in two pairs; preserve it as unresolved until the visual table is independently checked.",
+      "required_inputs": [
+        "two_natal_trigrams"
+      ],
+      "dependency_family": "TIB-MARRIAGE-TRIGRAM",
+      "status": "source_only_not_human_validated"
+    }
+  ],
+  "source_issues": [
+    "Culturally contingent ancient marital claims are not current advice.",
+    "Favorable trigram groups have source-table discrepancies to resolve.",
+    "Children-count predictions must preserve sex and right censoring."
+  ],
+  "human_validation": 0,
+  "model_promotions": 0
+}
