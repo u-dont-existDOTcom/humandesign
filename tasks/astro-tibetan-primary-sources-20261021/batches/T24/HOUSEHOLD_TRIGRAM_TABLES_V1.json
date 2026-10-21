@@ -1,0 +1,491 @@
+{
+  "schema": "TIBETAN_T24_HOUSEHOLD_AND_ANNUAL_TRIGRAM_TABLES_V1",
+  "batch": "T24",
+  "source_id": "TIB-DORJE-2001",
+  "source_pdf_sha256": "485d25eece33ed6af1dd8e5080f7b03967594dbd6a908a1ebc7e090d44d62530",
+  "source_pages_pdf": "235–241",
+  "new_source_notes": 0,
+  "previously_recorded_note_ids": [
+    "TIB-R0221",
+    "TIB-R0229",
+    "TIB-R0230",
+    "TIB-R0231",
+    "TIB-R0232",
+    "TIB-R0233",
+    "TIB-R0236",
+    "TIB-R0237",
+    "TIB-R0239"
+  ],
+  "structure": {
+    "five_charts_for_current_year": {
+      "plate": "18 fig.5",
+      "pdf_page": 241,
+      "rows": [
+        {
+          "group": [
+            "mouse",
+            "pig"
+          ],
+          "mother": [
+            "Dva"
+          ],
+          "son": [
+            "Zin"
+          ],
+          "identity": [
+            "Kham"
+          ],
+          "enemy": [
+            "Khon",
+            "Khen",
+            "Gin",
+            "Zon"
+          ],
+          "friend": [
+            "Li"
+          ]
+        },
+        {
+          "group": [
+            "tiger",
+            "hare"
+          ],
+          "mother": [
+            "Kham"
+          ],
+          "son": [
+            "Li"
+          ],
+          "identity": [
+            "Zin"
+          ],
+          "enemy": [
+            "Dva"
+          ],
+          "friend": [
+            "Khon",
+            "Khen",
+            "Gin",
+            "Zon"
+          ]
+        },
+        {
+          "group": [
+            "horse",
+            "snake"
+          ],
+          "mother": [
+            "Zin"
+          ],
+          "son": [
+            "Khon",
+            "Khen",
+            "Gin",
+            "Zon"
+          ],
+          "identity": [
+            "Li"
+          ],
+          "enemy": [
+            "Kham"
+          ],
+          "friend": [
+            "Dva"
+          ]
+        },
+        {
+          "group": [
+            "bird",
+            "monkey"
+          ],
+          "mother": [
+            "Khon",
+            "Khen",
+            "Gin",
+            "Zon"
+          ],
+          "son": [
+            "Kham"
+          ],
+          "identity": [
+            "Dva"
+          ],
+          "enemy": [
+            "Li"
+          ],
+          "friend": [
+            "Zin"
+          ]
+        },
+        {
+          "group": [
+            "ox",
+            "sheep",
+            "dog",
+            "dragon"
+          ],
+          "mother": [
+            "Li"
+          ],
+          "son": [
+            "Dva"
+          ],
+          "identity": [
+            "Khon",
+            "Khen",
+            "Gin",
+            "Zon"
+          ],
+          "enemy": [
+            "Zin"
+          ],
+          "friend": [
+            "Kham"
+          ]
+        }
+      ],
+      "relationship_to_category": {
+        "mother": "heavenly_medicine",
+        "son": "intimation_of_luck",
+        "identity": "growth_through_glory",
+        "enemy": "cutting_influence_of_demons",
+        "friend": "five_demons"
+      }
+    },
+    "securely_cherished": {
+      "plate": "9 fig.9",
+      "pdf_page": 236,
+      "rows": [
+        {
+          "majority": [
+            "horse",
+            "snake"
+          ],
+          "trigram": "Li",
+          "minority": [
+            "bird",
+            "monkey"
+          ]
+        },
+        {
+          "majority": [
+            "tiger",
+            "hare"
+          ],
+          "trigram": "Zin",
+          "minority": [
+            "ox",
+            "sheep",
+            "dog",
+            "dragon"
+          ]
+        },
+        {
+          "majority": [
+            "mouse",
+            "pig"
+          ],
+          "trigram": "Kham",
+          "minority": [
+            "horse",
+            "snake"
+          ]
+        },
+        {
+          "majority": [
+            "bird",
+            "monkey"
+          ],
+          "trigram": "Dva",
+          "minority": [
+            "tiger",
+            "hare"
+          ]
+        },
+        {
+          "majority": [
+            "ox",
+            "sheep",
+            "dog",
+            "dragon"
+          ],
+          "trigram": "Khon",
+          "minority": [
+            "mouse",
+            "pig"
+          ]
+        }
+      ]
+    },
+    "five_confusions": {
+      "plate": "9 fig.10",
+      "pdf_page": 236,
+      "rows": [
+        {
+          "natal": [
+            "horse",
+            "snake"
+          ],
+          "trigram": "Kham",
+          "current_year": [
+            "mouse",
+            "pig"
+          ]
+        },
+        {
+          "natal": [
+            "bird",
+            "monkey"
+          ],
+          "trigram": "Li",
+          "current_year": [
+            "horse",
+            "snake"
+          ]
+        },
+        {
+          "natal": [
+            "mouse",
+            "pig"
+          ],
+          "trigram": "Khon",
+          "current_year": [
+            "sheep"
+          ],
+          "prose_alternative": [
+            "ox",
+            "dragon",
+            "sheep",
+            "dog"
+          ],
+          "status": "conflict_between_PDF_p236_prose_and_Plate9_fig10"
+        },
+        {
+          "natal": [
+            "tiger",
+            "hare"
+          ],
+          "trigram": "Dva",
+          "current_year": [
+            "bird",
+            "monkey"
+          ]
+        },
+        {
+          "natal": [
+            "ox",
+            "sheep",
+            "dog",
+            "dragon"
+          ],
+          "trigram": "Zin",
+          "current_year": [
+            "tiger",
+            "hare"
+          ]
+        }
+      ]
+    },
+    "natural_year_trigram": {
+      "plate": "17 fig.16",
+      "pdf_page": 237,
+      "rows": [
+        {
+          "year": [
+            "horse",
+            "snake"
+          ],
+          "trigram": "Li"
+        },
+        {
+          "year": [
+            "sheep"
+          ],
+          "trigram": "Khon"
+        },
+        {
+          "year": [
+            "bird",
+            "monkey"
+          ],
+          "trigram": "Dva"
+        },
+        {
+          "year": [
+            "dog"
+          ],
+          "trigram": "Khen"
+        },
+        {
+          "year": [
+            "mouse",
+            "pig"
+          ],
+          "trigram": "Kham"
+        },
+        {
+          "year": [
+            "ox"
+          ],
+          "trigram": "Gin"
+        },
+        {
+          "year": [
+            "tiger",
+            "hare"
+          ],
+          "trigram": "Zin"
+        },
+        {
+          "year": [
+            "dragon"
+          ],
+          "trigram": "Zon"
+        }
+      ]
+    },
+    "heaven_earth_gates": {
+      "plate": "9 fig.11",
+      "pdf_page": 237,
+      "rows": [
+        {
+          "year": [
+            "tiger",
+            "hare"
+          ],
+          "heaven": [
+            "Kham"
+          ],
+          "earth": [
+            "Li"
+          ]
+        },
+        {
+          "year": [
+            "horse",
+            "snake"
+          ],
+          "heaven": [
+            "Zin"
+          ],
+          "earth": [
+            "Khon",
+            "Khen",
+            "Gin",
+            "Zon"
+          ]
+        },
+        {
+          "year": [
+            "bird",
+            "monkey"
+          ],
+          "heaven": [
+            "Khon"
+          ],
+          "earth": [
+            "Kham"
+          ]
+        },
+        {
+          "year": [
+            "mouse",
+            "pig"
+          ],
+          "heaven": [
+            "Dva"
+          ],
+          "earth": [
+            "Zin"
+          ]
+        },
+        {
+          "year": [
+            "ox",
+            "sheep",
+            "dog",
+            "dragon"
+          ],
+          "heaven": [
+            "Li"
+          ],
+          "earth": [
+            "Dva"
+          ]
+        }
+      ],
+      "extra_any_year": {
+        "heaven": [
+          "Khen"
+        ],
+        "earth": [
+          "Khon"
+        ]
+      }
+    },
+    "four_tombs_majority_minority": {
+      "plate": "18 fig.3",
+      "pdf_page": 240,
+      "rows": [
+        {
+          "majority_trigram": "Li",
+          "majority_element": "fire",
+          "minority_elements": [
+            "iron",
+            "water"
+          ]
+        },
+        {
+          "majority_trigram": "Kham",
+          "majority_element": "water",
+          "minority_elements": [
+            "earth",
+            "fire"
+          ]
+        },
+        {
+          "majority_trigram": "Zin",
+          "majority_element": "wood",
+          "minority_elements": [
+            "earth",
+            "iron"
+          ]
+        },
+        {
+          "majority_trigram": "Dva",
+          "majority_element": "iron",
+          "minority_elements": [
+            "wood",
+            "fire"
+          ]
+        }
+      ]
+    }
+  },
+  "source_conflicts": [
+    {
+      "id": "TIB-CONFLICT-004",
+      "pdf_page": 236,
+      "printed_page": 235,
+      "natal_group": [
+        "mouse",
+        "pig"
+      ],
+      "current_trigram": "Khon",
+      "prose_current_years": [
+        "ox",
+        "dragon",
+        "sheep",
+        "dog"
+      ],
+      "plate_current_years": [
+        "sheep"
+      ],
+      "status": "directly visually checked published prose and table differ; no source-grounded full equivalence proved"
+    }
+  ],
+  "epistemic_boundary": "Symbolic traditional categorical mappings. Input is a household distribution and current signs, not solely the subject's natal data. No validation on human outcomes.",
+  "source_witness_translation_only": true,
+  "empirical_human_cases": 0,
+  "code_promotion": false
+}
