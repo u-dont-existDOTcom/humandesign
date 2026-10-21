@@ -1,0 +1,326 @@
+{
+  "schema": "ASTRO_TIBETAN_T30_CORNU_MEWA_PAPME_SOURCE_NOTES_V1",
+  "batch": "T30",
+  "source_id": "TIB-CORNU-1997",
+  "source_sha256": "8c7a7d8eb4f9d11793d02f1667979363cf520b02754365390f8e966a4452c472",
+  "source_work": "Philippe Cornu, Tibetan Astrology, English translation Hamish Gregor, Shambhala 1997",
+  "scope": "printed pp102-119, two-up scanned PDF pages58-66; original scans read for method passages",
+  "note_count": 16,
+  "source_notes": [
+    {
+      "id": "TIB-R0282",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 58,
+        "printed_page": 102
+      },
+      "key": "nine-square-sum15",
+      "paraphrase": "Cornu presents the nine-number mewa Lo Shu square with all eight straight rows, columns and diagonals summing to 15, and places the squares in the directions of the compass.",
+      "required_inputs": [
+        "Lo_Shu_layout"
+      ],
+      "output_class": "numeric_identity",
+      "dependency_family": "CORN-MEWA",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0283",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 58,
+        "printed_page": 103
+      },
+      "key": "mewa-elements-colors",
+      "paraphrase": "The numbers 1,6,8 are white metal, 2 black water, 3 blue water, 4 green wood, 5 yellow earth, 7,9 red fire, each also assigned a direction.",
+      "required_inputs": [
+        "mewa_number"
+      ],
+      "output_class": "mewa_element_color_direction",
+      "dependency_family": "CORN-MEWA",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0284",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 59,
+        "printed_page": 104
+      },
+      "key": "animal-mewa-allowed-triplets",
+      "paraphrase": "Cornu groups natal mewa by twelve-year animals: Tiger/Monkey/Pig/Snake admit 8,2,5; Rat/Horse/Bird/Hare admit 7,4,1; Ox/Sheep/Dog/Dragon admit 9,6,3.",
+      "required_inputs": [
+        "year_animal",
+        "180_year_cycle"
+      ],
+      "output_class": "allowed_natal_mewa",
+      "dependency_family": "CORN-ANIMAL-MEWA",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0285",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 60,
+        "printed_page": 106
+      },
+      "key": "annual-mewa-180-cycle",
+      "paraphrase": "The annual natal mewa sequence comprises three distinct sixty-year rounds in a 180-year cycle, starting with White One, Green Four, and Red Seven respectively in Wood Rat years.",
+      "required_inputs": [
+        "year",
+        "sexagenary_cycle_position",
+        "180_cycle_epoch"
+      ],
+      "output_class": "natal_mewa",
+      "dependency_family": "CORN-MEWA-180",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0286",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 60,
+        "printed_page": 106
+      },
+      "key": "mewa-vitality-power-body",
+      "paraphrase": "With natal mewa in the middle of its Lo Shu square, vitality is in the southwestern cell, personal power northeastern cell, and body the central natal mewa.",
+      "required_inputs": [
+        "natal_mewa",
+        "square_orientation"
+      ],
+      "output_class": "vitality_mewa_power_mewa_body_mewa",
+      "dependency_family": "CORN-MEWA-FORCES",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0287",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 60,
+        "printed_page": 106
+      },
+      "key": "1958-mewa-golden",
+      "paraphrase": "In Cornu's worked Earth Dog 1958 example, natal/body mewa White Six maps to vitality Blue Three and power Red Nine.",
+      "required_inputs": [
+        "1958_year",
+        "natal_mewa_6"
+      ],
+      "output_class": "natal6_vitality3_power9",
+      "dependency_family": "CORN-MEWA-WORKED",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0288",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 60,
+        "printed_page": 106
+      },
+      "key": "1984-windhorse-example",
+      "paraphrase": "Cornu derives the windhorse mewa of Wood Rat year 1984 (Red Seven natal) from Wood Tiger's vitality mewa, yielding White Eight.",
+      "required_inputs": [
+        "1984_wood_rat",
+        "wood_tiger_related_year"
+      ],
+      "output_class": "windhorse_mewa8",
+      "dependency_family": "CORN-WINDHORSE",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0289",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 60,
+        "printed_page": 107
+      },
+      "key": "mewa-cycle-cross-phases",
+      "paraphrase": "Cornu states the natal mewa of each sexagenary 60-year round corresponds to the vitality or power mewa of other rounds; this is cycle correspondence, not empirical corroboration.",
+      "required_inputs": [
+        "180_year_epoch",
+        "cycle_position"
+      ],
+      "output_class": "three_phase_mewa_relation",
+      "dependency_family": "CORN-180-STRUCTURE",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0290",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 63,
+        "printed_page": 112
+      },
+      "key": "annual-parkha-subject-sex",
+      "paraphrase": "For simple annual Parkha movement Cornu explicitly uses the person's sex; men's cycle starts Li and runs clockwise, women's starts Kham and runs counterclockwise.",
+      "required_inputs": [
+        "subject_sex",
+        "age"
+      ],
+      "output_class": "annual_parkha",
+      "dependency_family": "CORN-ANNUAL-PARKHA",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0291",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 63,
+        "printed_page": 113
+      },
+      "key": "annual-parkha-two-series",
+      "paraphrase": "Cornu gives the male sequence Li,Khon,Da,Khen,Kham,Kin,Tsin,Zon and the reverse female sequence Kham,Khen,Da,Khon,Li,Zon,Tsin,Kin, stating that the series meet in Da years.",
+      "required_inputs": [
+        "subject_sex",
+        "traditional_age"
+      ],
+      "output_class": "age_parkha_sequence",
+      "dependency_family": "CORN-ANNUAL-PARKHA",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0292",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 63,
+        "printed_page": 113
+      },
+      "key": "mewa-to-parkha",
+      "paraphrase": "The text associates mewa Red9=Li, Black2=Khon, Red7=Da, White6=Khen, White1=Kham, White8=Kin, Blue3=Tsin, Green4=Zon; Yellow5 is central/unassigned.",
+      "required_inputs": [
+        "mewa_number"
+      ],
+      "output_class": "parkha_correspondence",
+      "dependency_family": "CORN-MEWA-PARKHA",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0293",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 66,
+        "printed_page": 118
+      },
+      "key": "papme-year-polarity-not-sex",
+      "paraphrase": "In contrast to its annual parkha method, Cornu explicitly makes Papme rotation depend on masculine versus feminine natal YEAR polarity, not the sex of the person.",
+      "required_inputs": [
+        "birth_year_polarity",
+        "natal_mewa",
+        "traditional_age"
+      ],
+      "output_class": "papme_trajectory",
+      "dependency_family": "CORN-PAPME-YEAR",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0294",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 66,
+        "printed_page": 118
+      },
+      "key": "papme-masculine-route",
+      "paraphrase": "For masculine natal-year Papme, begin with natal mewa at age one, move toward the eastern cell (printed diagram left), then turn left and continue around the square.",
+      "required_inputs": [
+        "masculine_year",
+        "natal_mewa",
+        "age"
+      ],
+      "output_class": "year_polarity_Papme",
+      "dependency_family": "CORN-PAPME-YEAR",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0295",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 66,
+        "printed_page": 119
+      },
+      "key": "papme-feminine-route",
+      "paraphrase": "For feminine natal-year Papme, again start at center and the East cell, but then turn right and continue around the square; the text makes no reference to natal subject's sex as a route switch.",
+      "required_inputs": [
+        "feminine_year",
+        "natal_mewa",
+        "age"
+      ],
+      "output_class": "year_polarity_Papme",
+      "dependency_family": "CORN-PAPME-YEAR",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0296",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 66,
+        "printed_page": 119
+      },
+      "key": "papme-1956-masculine-example",
+      "paraphrase": "For a person born in 1956 Fire Monkey, a masculine year, Cornu's worked four first Papme values are 8,6,2,4.",
+      "required_inputs": [
+        "1956_Fire_Monkey",
+        "natal_White8",
+        "ages_1_to_4"
+      ],
+      "output_class": "worked_Papme_8_6_2_4",
+      "dependency_family": "CORN-PAPME-FIXTURE",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    },
+    {
+      "id": "TIB-R0297",
+      "source_id": "TIB-CORNU-1997",
+      "anchor": {
+        "pdf_page_1based": 66,
+        "printed_page": 119
+      },
+      "key": "papme-1957-feminine-example",
+      "paraphrase": "For a person born in 1957 Fire Bird, a feminine year, Cornu's worked four first Papme values are 7,5,6,2.",
+      "required_inputs": [
+        "1957_Fire_Bird",
+        "natal_Red7",
+        "ages_1_to_4"
+      ],
+      "output_class": "worked_Papme_7_5_6_2",
+      "dependency_family": "CORN-PAPME-FIXTURE",
+      "status": "Cornu's modern synthesis; not primary Tibetan original",
+      "blind_human_validated": false,
+      "model_promoted": false
+    }
+  ],
+  "source_conflict_with_older_Erlewine": [
+    "Cornu Papme traversal is switched by birth-year polarity, not person's sex; Erlewine pp309–310 says men/women. These are not the same method. No resolution by selecting favorable charts.",
+    "Cornu annual Parkha progression, unlike his Papme, does explicitly use subject sex."
+  ],
+  "source_differences": "Cornu presentation includes I Ching Chinese-derived features; do not treat as independent corroboration of BaZi.",
+  "next_note_id": "TIB-R0298",
+  "human_validation": 0,
+  "runtime_model_promotions": 0
+}
