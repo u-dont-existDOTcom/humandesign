@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "batch": "JYOT_B36",
+  "type": "NONPRODUCTION_SOURCE_NEUTRAL_EPHEMERIS_SCREEN",
+  "engine": "pyswisseph 2.10.03 MOSEPH sidereal Lahiri, geocentric, 00 UTC daily",
+  "calendar": "Proleptic Gregorian, astronomical year numbering",
+  "period": "-2999-01-01 through +2999-12-31 inclusive",
+  "days": 2191090,
+  "required_exaltation_signs": {
+    "Sun": "Aries",
+    "Moon": "Taurus",
+    "Mars": "Capricorn",
+    "Jupiter": "Cancer",
+    "Venus": "Pisces",
+    "Saturn": "Libra"
+  },
+  "omitted_planet": "Mercury",
+  "algorithm": "At 10-day boundaries screen Jupiter Cancer and Saturn Libra with ±15° padding, then examine every 00UTC day in candidate blocks for the exact six signs; the 15° guard comfortably exceeds Jupiter/Saturn movement over 10 days, though continuous-ingress proof is outstanding.",
+  "counts": {
+    "candidate_ten_day_blocks": 6916,
+    "jupiter_and_saturn_matching_days": 17355,
+    "also_mars": 1153,
+    "also_sun": 77,
+    "also_venus": 0,
+    "all_six": 0
+  },
+  "sun_aries_candidate_episodes": [
+    [
+      "-1817-03-12",
+      "-1817-03-22",
+      11
+    ],
+    [
+      "-0963-03-28",
+      "-0963-03-28",
+      1
+    ],
+    [
+      "-0049-03-24",
+      "-0049-04-17",
+      25
+    ],
+    [
+      "+0188-04-10",
+      "+0188-04-18",
+      9
+    ],
+    [
+      "+0805-03-29",
+      "+0805-04-14",
+      17
+    ],
+    [
+      "+1042-04-01",
+      "+1042-04-14",
+      14
+    ]
+  ],
+  "venus_signs_on_77_candidate_midnights": {
+    "Aquarius": 14,
+    "Aries": 10,
+    "Taurus": 36,
+    "Gemini": 17
+  },
+  "moon_taurus_on_77_candidate_midnights": 9,
+  "check_400y": "Same search reproduced 1800-2199 direct full scan: 1339 Jupiter/Saturn, 85 plus Mars, 0 plus Sun.",
+  "limits": [
+    "Zero sampled matches does NOT prove impossible at every time or under every zodiac convention.",
+    "MOSEPH is not project's canonical pinned SWIEPH and ancient-date precision has limits.",
+    "00 UTC sampling can miss short intervals; guarded screen has not been independently root-isolated.",
+    "No natal human data, no behavioral outcome, no production model change."
+  ],
+  "new_source_notes": 0,
+  "human_predictions": 0
+}
