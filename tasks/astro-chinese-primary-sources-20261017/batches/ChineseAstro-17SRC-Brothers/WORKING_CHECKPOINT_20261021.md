@@ -1,0 +1,11 @@
+# Chinese V17 Brothers/Siblings source — working checkpoint (2026-10-21)
+
+**Root empirical astrology task OPEN.** Continue original Western/Chinese source study, verify natal/calendar/chart engines, freeze prospective human chart-to-answer hypotheses, then run untouched blinded people against decoys/nonastrology. Historic text is not observed human prediction.
+
+Exact accepted predecessor: Chinese V16 `research/astro-chinese-v16-ziwei-life-complete-online-source-20261021` at commit `f1bda85b050dea037579d1df8b879e38674386c3`, 210 BaZi +745 Zi Wei =955 accepted historical original Wikitext source records. This V17 writer branch owns only `batches/ChineseAstro-17SRC-Brothers/` plus its own next canonical Chinese version and versioned state, not any concurrent Western/source/production branch.
+
+Original transmitted Chinese source: `紫微斗數全書 卷二`, Wikisource oldid1963110 exact full text SHA256 `1e255c6ae99e6f89ae124ab342554ef1347fc8e68fb8908cba7290d1a38cbb72`. Brothers `===二兄弟===` starts codepoint37269, previous V16 recorded ONLY next-section navigation. The next actual section `===三妻妾===` begins codepoint38238. V17 proposes exact original line/offset records with source-native caveats; no source authentication or modern model promotion.
+
+**Critical text alert:** a modern-sounding line `兄弟感情融洽，但兄弟不多。` is embedded inside the 廉贞 item in the online Chinese text. Other derivative sites copy it and one modern annotated edition also flags it as likely intrusive. This is a documented *suspected later interpolation*, not authenticated ancient material. Source also contains `羊玲` where nearby parallel text has different compounds; preserve exact characters and record uncertainty. Do not delete or silently correct any literal source.
+
+NEXT: freeze exact source excerpt and full Unicode/UTF8 offsets, preserve 22 substantive original lines plus section heading and next Wife navigation. Add focused reproducible tests, source-critical review, guarded V17 index and true GitHub readback. Actual real-person blinded forecasts=0 and runtime promotions=0.
